@@ -140,6 +140,35 @@ table.pair td { padding: 12px 14px; }
 
 .notes h3, .review-log h3 { color: var(--slate); }
 .notes h4, .review-log h4 { color: var(--gold); margin-bottom: 2px; }
+.notes h5, .review-log h5 { color: var(--slate); margin-bottom: 2px; font-size: 1rem; }
+
+/* Rendered Markdown blocks (notes, review log) — no raw syntax leaks. */
+.notes blockquote, .review-log blockquote {
+  margin: 10px 0;
+  padding: 8px 14px;
+  background: #fff8e9;
+  border-inline-start: 3px solid var(--gold);
+  color: #4a3b18;
+}
+.notes blockquote p, .review-log blockquote p { margin: 0; }
+.notes code, .review-log code, .notes strong code {
+  background: #eef2f6;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 4px;
+  font-family: "Noto Sans Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.88em;
+}
+.notes ul, .review-log ul { padding-inline-start: 22px; }
+table.md-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+table.md-table th { background: var(--slate); color: #fff; font-weight: 600; }
+table.md-table th, table.md-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: start;
+  vertical-align: top;
+}
+table.md-table tbody tr:nth-child(even) { background: var(--zebra); }
 
 footer {
   text-align: center;

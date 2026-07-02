@@ -2,13 +2,17 @@
 
 ## Non-official reference translation
 
-This repository contains a **verified concise reference translation** of Book One
-/ الباب الأول (Articles 1–34) of the Saudi Companies Law, in Arabic and Chinese.
+This repository contains an **internally reviewed concise reference translation** of Book One
+/ الباب الأول (Articles 1–34) of the Saudi Companies Law, in Arabic and Chinese. "Internally
+reviewed" means QA-reviewed against the attached reference translation source — it has **not**
+yet been verified article-by-article against the official *Umm Al-Qura* text.
 
-- **中文：** 本文件为沙特《公司法》第一编（第一条至第三十四条）完整范围的经核验参考译本，
-  采用摘要式法律表达，**并非官方译本或逐字全文翻译**。
-- **العربية:** هذه الوثيقة ترجمة مرجعية موجزة ومحققة للباب الأول كاملًا من نظام الشركات السعودي،
-  المواد 1–34، **وليست ترجمة رسمية أو حرفية كاملة للنص النظامي**.
+- **中文：** 本文件为沙特《公司法》第一编（第一条至第三十四条）完整范围的**经内部审校**参考译本，
+  已对照所附参考翻译来源进行内部质检，但**尚未逐条对照官方文本核验**，采用摘要式法律表达，
+  **并非官方译本或逐字全文翻译**。
+- **العربية:** هذه الوثيقة ترجمة مرجعية موجزة ومراجَعة داخليًا مقابل مصدر الترجمة المرفق للباب الأول
+  كاملًا من نظام الشركات السعودي، المواد 1–34، ولم تُدقَّق بعد مادةً مادةً مقابل النص الرسمي،
+  **وليست ترجمة رسمية أو حرفية كاملة للنص النظامي**.
 
 ## Not legal advice
 

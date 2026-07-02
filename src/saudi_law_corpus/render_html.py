@@ -88,40 +88,122 @@ def render(out_path: str = DEFAULT_OUT) -> str:
 # --------------------------------------------------------------------------
 # Pure-Python fallback renderer (no Jinja2 required)
 # --------------------------------------------------------------------------
+def _md_inline(text: str) -> str:
+    """Inline Markdown -> HTML: escape, then `code`, **bold**, *italic*.
+
+    Escaping happens first so user text can never inject HTML; the Markdown
+    markers themselves are plain ASCII and survive escaping unchanged.
+    """
+    import re
+
+    out = html.escape(text)
+    out = re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
+    out = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", out)
+    out = re.sub(r"(?<!\*)\*(?!\*)([^*]+)\*(?!\*)", r"<em>\1</em>", out)
+    return out
+
+
+def _is_table_separator(line: str) -> bool:
+    s = line.strip()
+    if "|" not in s or set(s) - set("|-: "):
+        return False
+    cells = [c.strip() for c in s.strip("|").split("|")]
+    return bool(cells) and all(set(c) <= set("-: ") and "-" in c for c in cells)
+
+
+def _split_row(line: str) -> List[str]:
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+
 def _md_to_html(md: str) -> str:
-    """Minimal Markdown -> HTML for notes (headings, lists, paragraphs)."""
+    """Minimal but complete Markdown -> HTML for notes / review log.
+
+    Supports: ATX headings (#..######), unordered lists, blockquotes, GitHub-style
+    pipe tables, bold, italics, and inline code. Deterministic and dependency-free
+    so the rendered book never leaks raw Markdown syntax (**, `|`, `>`, backticks).
+    """
     lines = md.splitlines()
     out: List[str] = []
+    i, n = 0, len(lines)
     in_list = False
-    for line in lines:
-        s = line.rstrip()
-        if not s:
-            if in_list:
-                out.append("</ul>")
-                in_list = False
+    quote_buf: List[str] = []
+
+    def close_list():
+        nonlocal in_list
+        if in_list:
+            out.append("</ul>")
+            in_list = False
+
+    def flush_quote():
+        if quote_buf:
+            inner = " ".join(_md_inline(q) for q in quote_buf)
+            out.append(f"<blockquote><p>{inner}</p></blockquote>")
+            quote_buf.clear()
+
+    while i < n:
+        s = lines[i].rstrip()
+
+        # blockquote (group consecutive '>' lines)
+        if s.lstrip().startswith(">"):
+            close_list()
+            quote_buf.append(s.lstrip()[1:].lstrip())
+            i += 1
             continue
-        if s.startswith("### "):
-            if in_list:
-                out.append("</ul>"); in_list = False
-            out.append(f"<h4>{html.escape(s[4:])}</h4>")
-        elif s.startswith("## "):
-            if in_list:
-                out.append("</ul>"); in_list = False
-            out.append(f"<h3>{html.escape(s[3:])}</h3>")
-        elif s.startswith("# "):
-            if in_list:
-                out.append("</ul>"); in_list = False
-            out.append(f"<h2>{html.escape(s[2:])}</h2>")
-        elif s.lstrip().startswith(("- ", "* ")):
+        flush_quote()
+
+        if not s.strip():
+            close_list()
+            i += 1
+            continue
+
+        # pipe table: a '|' header line followed by a separator line
+        if s.lstrip().startswith("|") and i + 1 < n and _is_table_separator(lines[i + 1]):
+            close_list()
+            header = _split_row(s)
+            i += 2
+            body: List[List[str]] = []
+            while i < n and lines[i].strip().startswith("|"):
+                body.append(_split_row(lines[i]))
+                i += 1
+            out.append('<table class="md-table"><thead><tr>')
+            out.extend(f"<th>{_md_inline(c)}</th>" for c in header)
+            out.append("</tr></thead><tbody>")
+            for row in body:
+                cells = row + [""] * (len(header) - len(row))
+                out.append("<tr>" + "".join(f"<td>{_md_inline(c)}</td>" for c in cells) + "</tr>")
+            out.append("</tbody></table>")
+            continue
+
+        # headings
+        heading = None
+        for level, prefix in ((4, "### "), (3, "## "), (2, "# ")):
+            if s.startswith(prefix):
+                heading = (level, s[len(prefix):])
+                break
+        if s.startswith("#### "):
+            heading = (5, s[5:])
+        if heading:
+            close_list()
+            lvl, txt = heading
+            out.append(f"<h{lvl}>{_md_inline(txt)}</h{lvl}>")
+            i += 1
+            continue
+
+        # unordered list
+        if s.lstrip().startswith(("- ", "* ")):
             if not in_list:
                 out.append("<ul>"); in_list = True
-            out.append(f"<li>{html.escape(s.lstrip()[2:])}</li>")
-        else:
-            if in_list:
-                out.append("</ul>"); in_list = False
-            out.append(f"<p>{html.escape(s)}</p>")
-    if in_list:
-        out.append("</ul>")
+            out.append(f"<li>{_md_inline(s.lstrip()[2:])}</li>")
+            i += 1
+            continue
+
+        # paragraph
+        close_list()
+        out.append(f"<p>{_md_inline(s)}</p>")
+        i += 1
+
+    flush_quote()
+    close_list()
     return "\n".join(out)
 
 

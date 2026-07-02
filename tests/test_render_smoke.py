@@ -55,3 +55,79 @@ def test_html_has_rtl_and_ltr(tmp_path):
     assert 'dir="rtl"' in html
     assert 'lang="ar"' in html
     assert 'lang="zh"' in html
+
+
+def _section(html: str, cls: str) -> str:
+    start = html.find(f'<section class="{cls}"')
+    assert start != -1, f"section {cls} not found"
+    end = html.find("</section>", start)
+    return html[start:end]
+
+
+def test_no_raw_markdown_artifacts_in_rendered_book(tmp_path):
+    """Rendered notes/review-log must not leak raw Markdown syntax (10/10 book)."""
+    from saudi_law_corpus.render_html import render
+
+    out = tmp_path / "book1.html"
+    render(out_path=str(out))
+    html = out.read_text(encoding="utf-8")
+
+    # No raw pipe-table syntax anywhere in the rendered document.
+    assert "| # |" not in html
+    assert "|---" not in html
+    assert "| ---" not in html
+
+    notes = _section(html, "notes")
+    review = _section(html, "review-log")
+
+    # No literal bold/inline-code/blockquote markers survive in these sections.
+    for section_html in (notes, review):
+        assert "**" not in section_html
+        assert "`" not in section_html            # backticks converted to <code>
+        assert "<p>&gt;" not in section_html       # blockquote markers converted
+
+
+def test_review_log_renders_as_table(tmp_path):
+    from saudi_law_corpus.render_html import render
+
+    out = tmp_path / "book1.html"
+    render(out_path=str(out))
+    review = _section(out.read_text(encoding="utf-8"), "review-log")
+    assert '<table class="md-table"' in review
+    assert "<th>" in review and "<td>" in review
+
+
+def test_notes_render_rich_markdown(tmp_path):
+    from saudi_law_corpus.render_html import render
+
+    out = tmp_path / "book1.html"
+    render(out_path=str(out))
+    notes = _section(out.read_text(encoding="utf-8"), "notes")
+    assert "<blockquote>" in notes
+    assert "<strong>" in notes
+    assert "<code>" in notes
+
+
+def test_needs_official_check_renders_cleanly(tmp_path):
+    from saudi_law_corpus.render_html import render
+
+    out = tmp_path / "book1.html"
+    render(out_path=str(out))
+    html = out.read_text(encoding="utf-8")
+    assert "NEEDS_OFFICIAL_TEXT_CHECK" in html
+    # Must not appear as a raw Markdown blockquote/bold artifact.
+    assert "> **NEEDS_OFFICIAL_TEXT_CHECK**" not in html
+    assert "&gt; NEEDS_OFFICIAL_TEXT_CHECK" not in html
+
+
+def test_trust_wording_not_overclaimed(work):
+    """Disclaimers must not claim official verification that has not happened."""
+    ts = work["translation_status"]
+    assert ts.get("official_text_verified") is False
+    # No 'verified against official' style overclaim in the reader-facing text.
+    blob = " ".join([ts.get("note_en", ""), ts.get("disclaimer_ar", ""),
+                     ts.get("disclaimer_zh", "")])
+    assert "经核验" not in blob            # replaced by 经内部审校
+    assert "ومحققة" not in blob            # replaced by مراجَعة داخليًا
+    assert "internally reviewed" in ts.get("note_en", "").lower()
+    assert "尚未逐条对照官方文本" in ts.get("disclaimer_zh", "")

@@ -3,15 +3,19 @@
 
 沙特《公司法》第一编 阿拉伯语–中文 **参考译本** — 结构化优先的、可验证的、面向 LLM/RAG 的法律翻译语料库。
 
-> **Non-official reference translation. Not legal advice.** This is a verified concise
-> reference translation of the whole of Book One (Articles 1–34), **not** an official or
-> word-for-word full legal translation. The only binding text is the Arabic original in the
-> official gazette *Umm Al-Qura*. See [`NOTICE.md`](NOTICE.md).
+> **Non-official reference translation. Not legal advice.** This is an **internally reviewed**
+> concise reference translation of the whole of Book One (Articles 1–34) — QA-reviewed against
+> the attached reference translation source, **not** yet verified article-by-article against the
+> official *Umm Al-Qura* text, and **not** an official or word-for-word full legal translation.
+> The only binding text is the Arabic original in the official gazette *Umm Al-Qura*.
+> See [`NOTICE.md`](NOTICE.md).
 >
-> - **العربية:** هذه الوثيقة ترجمة مرجعية موجزة ومحققة للباب الأول كاملًا من نظام الشركات السعودي،
->   المواد 1–34، وليست ترجمة رسمية أو حرفية كاملة للنص النظامي.
-> - **中文：** 本文件为沙特《公司法》第一编（第一条至第三十四条）完整范围的经核验参考译本，
->   采用摘要式法律表达，并非官方译本或逐字全文翻译。
+> - **العربية:** هذه الوثيقة ترجمة مرجعية موجزة ومراجَعة داخليًا مقابل مصدر الترجمة المرفق للباب الأول
+>   كاملًا من نظام الشركات السعودي، المواد 1–34، ولم تُدقَّق بعد مادةً مادةً مقابل النص الرسمي، وليست
+>   ترجمة رسمية أو حرفية كاملة للنص النظامي.
+> - **中文：** 本文件为沙特《公司法》第一编（第一条至第三十四条）完整范围的**经内部审校**参考译本，
+>   已对照所附参考翻译来源进行内部质检，但**尚未逐条对照官方文本核验**，采用摘要式法律表达，
+>   并非官方译本或逐字全文翻译。
 
 ---
 
@@ -43,6 +47,20 @@ The print PDF also differs from the HTML by design: the cover is a full title pa
 coverage matrix is a **one-page compact overview** (المادة | الحالة | ملاحظة). The full
 six-column matrix is available in the HTML view.
 
+### Build outputs (`dist/`) policy
+
+`dist/book1.html` and `dist/book1.pdf` are **generated artifacts and are git-ignored** — they
+are **not** tracked in the repository. Regenerate them from the canonical data at any time:
+
+```bash
+make build          # -> dist/book1.html (+ dist/book1.pdf if WeasyPrint is installed)
+make html           # -> dist/book1.html only
+```
+
+Only `dist/.gitkeep` is tracked, so the directory exists on a fresh clone. If you want a
+browsable HTML committed into the repo, that is an explicit owner decision — say so and it can
+be force-tracked; by default it stays generated-on-demand.
+
 ---
 
 ## Repository layout
@@ -62,7 +80,7 @@ six-column matrix is available in the HTML view.
 | `scripts/` | CLI entry points (`gen_articles`, `build_jsonl`, `validate_corpus`, renderers) |
 | `templates/` | `book.html.j2` + `styles.css` |
 | `tests/` | pytest: coverage, schema, terminology, render smoke |
-| `dist/` | Build output (`book1.html`, `book1.pdf`) |
+| `dist/` | Build output (`book1.html`, `book1.pdf`) — **generated, git-ignored** (see below) |
 
 ---
 
