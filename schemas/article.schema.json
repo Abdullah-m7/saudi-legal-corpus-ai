@@ -19,7 +19,7 @@
     "section_zh": {"type": "string", "minLength": 1},
     "arabic_reference_summary": {"type": "string", "minLength": 1},
     "chinese_translation": {"type": "string", "minLength": 1},
-    "translation_mode": {"type": "string", "enum": ["verified_summary"]},
+    "translation_mode": {"type": "string", "enum": ["internally_reviewed_summary"]},
     "coverage_status": {
       "type": "string",
       "enum": ["covered", "expanded_after_review", "needs_official_text_check"]

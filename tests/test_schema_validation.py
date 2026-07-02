@@ -32,3 +32,21 @@ def test_official_text_check_flagged(articles):
     # Provenance honesty: nothing is claimed as officially checked in this build.
     for a in articles:
         assert a["source"]["official_text_check"] in ("checked", "needs_check")
+
+
+def test_translation_mode_is_internally_reviewed(articles):
+    # Trust posture: internally reviewed, NOT officially verified.
+    for a in articles:
+        assert a["translation_mode"] == "internally_reviewed_summary", a["article_number"]
+
+
+def test_no_verified_summary_in_canonical_json_or_schema(repo_root):
+    import os
+
+    targets = [
+        os.path.join(repo_root, "data", "articles", "book1_articles_001_034.json"),
+        os.path.join(repo_root, "schemas", "article.schema.json"),
+    ]
+    for path in targets:
+        with open(path, encoding="utf-8") as fh:
+            assert "verified_summary" not in fh.read(), path
