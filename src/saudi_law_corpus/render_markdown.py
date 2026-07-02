@@ -10,6 +10,8 @@ import json
 import os
 from typing import Any, Dict, List
 
+from . import books
+
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.dirname(os.path.dirname(_HERE))
 
@@ -22,11 +24,21 @@ def _read(path: str) -> Any:
         return json.load(fh)
 
 
-def _load() -> Dict[str, Any]:
-    doc = _read(os.path.join(DATA, "articles", "book1_articles_001_034.json"))
-    work = _read(os.path.join(DATA, "metadata", "work.json"))
+def _load(book: int = 1) -> Dict[str, Any]:
+    import copy
+
+    spec = books.get_book(book)
+    doc = _read(spec.articles_json)
+    work = copy.deepcopy(_read(books.WORK_JSON))
+    # Per-book title/scope over shared disclaimers/instrument.
+    work["title_ar"] = spec.display_title_ar
+    work["title_zh"] = spec.display_title_zh
+    work["scope_ar"] = doc.get("scope_ar", work.get("scope_ar", ""))
+    work["scope_zh"] = doc.get("scope_zh", work.get("scope_zh", ""))
     return {
         "work": work,
+        "doc": doc,
+        "spec": spec,
         "articles": sorted(doc["articles"], key=lambda a: a["article_number"]),
     }
 
@@ -95,12 +107,13 @@ def render_bilingual(ctx: Dict[str, Any]) -> str:
     return "\n".join(out)
 
 
-def render_all() -> List[str]:
-    ctx = _load()
+def render_all(book: int = 1) -> List[str]:
+    ctx = _load(book)
+    spec = ctx["spec"]
     targets = [
-        (os.path.join(CONTENT, "ar", "book1.md"), render_arabic(ctx)),
-        (os.path.join(CONTENT, "zh", "book1.md"), render_chinese(ctx)),
-        (os.path.join(CONTENT, "bilingual", "book1_bilingual.md"), render_bilingual(ctx)),
+        (spec.md_ar, render_arabic(ctx)),
+        (spec.md_zh, render_chinese(ctx)),
+        (spec.md_bilingual, render_bilingual(ctx)),
     ]
     for path, text in targets:
         _write(path, text)

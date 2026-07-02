@@ -7,19 +7,24 @@ report matching the QA checklist in the project brief.
 
 from __future__ import annotations
 
+import argparse
 import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
-from saudi_law_corpus.validate import validate_all  # noqa: E402
+from saudi_law_corpus.validate import validate_book  # noqa: E402
 
 
 def main() -> int:
-    ok, report = validate_all()
+    ap = argparse.ArgumentParser(description="Validate a book's corpus (default: Book One)")
+    ap.add_argument("--book", type=int, default=1, help="book number (1 or 2)")
+    args = ap.parse_args()
+
+    ok, report = validate_book(args.book)
     print("=" * 60)
-    print("Saudi Companies Law — Book One corpus validation")
+    print(f"Saudi Companies Law — Book {args.book} corpus validation")
     print("=" * 60)
     failures = 0
     for section, problems in report.items():

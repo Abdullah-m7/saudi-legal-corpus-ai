@@ -1,24 +1,38 @@
-# Saudi Companies Law — Book One corpus build
+# Saudi Companies Law — multi-book corpus build
 # Structured-first: JSON is canonical; JSONL/HTML/PDF are generated from it.
+# Book One (Articles 1-34) and Book Two (Articles 35-50) build independently.
 
 PY ?= python3
 export PYTHONPATH := src:$(PYTHONPATH)
 
-.PHONY: help data jsonl markdown validate test html pdf build clean all
+.PHONY: help data jsonl markdown validate book1-validate test html pdf build all clean \
+        book2-data book2-jsonl book2-validate book2-html book2-pdf book2-build books-build
 
 help:
-	@echo "Targets:"
-	@echo "  make data      - regenerate canonical articles JSON from scripts/gen_articles.py"
-	@echo "  make jsonl     - build data/articles/*.jsonl from canonical JSON"
-	@echo "  make markdown  - render content/{ar,zh,bilingual} Markdown books"
-	@echo "  make validate  - run schema + legal-translation QA checks"
-	@echo "  make test      - run pytest"
-	@echo "  make html      - render dist/book1.html (searchable/copyable canonical text)"
-	@echo "  make pdf       - render dist/book1.pdf via WeasyPrint (optional; print-ready)"
-	@echo "  make build     - jsonl + validate + html (+ pdf if WeasyPrint available)"
-	@echo "  make all       - data + build + test"
-	@echo "  make clean     - remove generated artifacts in dist/ and the JSONL"
+	@echo "Book One (default) targets:"
+	@echo "  make data          - regenerate Book One canonical JSON + coverage"
+	@echo "  make jsonl         - build Book One data/articles/*.jsonl"
+	@echo "  make markdown      - render Book One content/{ar,zh,bilingual} Markdown"
+	@echo "  make validate      - validate Book One (schema + QA)"
+	@echo "  make book1-validate- alias for 'make validate'"
+	@echo "  make html          - render dist/book1.html (searchable canonical text)"
+	@echo "  make pdf           - render dist/book1.pdf via WeasyPrint (optional)"
+	@echo "  make build         - Book One: jsonl + markdown + validate + html (+ pdf)"
+	@echo "  make test          - run the full pytest suite (both books)"
+	@echo "  make all           - data + build + test"
+	@echo ""
+	@echo "Book Two (شركة التضامن / 无限公司) targets:"
+	@echo "  make book2-data    - regenerate Book Two canonical JSON + coverage"
+	@echo "  make book2-jsonl   - build Book Two data/articles/*.jsonl"
+	@echo "  make book2-validate- validate Book Two (schema + QA)"
+	@echo "  make book2-html    - render dist/book2.html + Book Two Markdown"
+	@echo "  make book2-pdf     - render dist/book2.pdf via WeasyPrint (optional)"
+	@echo "  make book2-build   - Book Two: jsonl + validate + html (+ pdf)"
+	@echo "  make books-build   - build both books"
+	@echo ""
+	@echo "  make clean         - remove generated dist/ artifacts and JSONL files"
 
+# -- Book One (default; unchanged behaviour) -------------------------------
 data:
 	$(PY) scripts/gen_articles.py
 
@@ -29,7 +43,9 @@ markdown:
 	$(PY) scripts/render_markdown.py
 
 validate:
-	$(PY) scripts/validate_corpus.py
+	$(PY) scripts/validate_corpus.py --book 1
+
+book1-validate: validate
 
 test:
 	$(PY) -m pytest
@@ -46,5 +62,28 @@ build: jsonl markdown validate html
 
 all: data build test
 
+# -- Book Two --------------------------------------------------------------
+book2-data:
+	$(PY) scripts/gen_book2_articles.py
+
+book2-jsonl:
+	$(PY) scripts/build_book2_jsonl.py
+
+book2-validate:
+	$(PY) scripts/validate_corpus.py --book 2
+
+book2-html:
+	$(PY) scripts/render_book2_html.py
+
+book2-pdf: book2-html
+	-$(PY) scripts/render_book2_pdf_weasyprint.py
+
+book2-build: book2-jsonl book2-validate book2-html
+	-$(PY) scripts/render_book2_pdf_weasyprint.py
+	@echo "book2 build complete: dist/book2.html (canonical text) + dist/book2.pdf (if WeasyPrint present)"
+
+books-build: build book2-build
+
 clean:
-	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl
+	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
+	      dist/book2.html dist/book2.pdf data/articles/book2_articles_035_050.jsonl

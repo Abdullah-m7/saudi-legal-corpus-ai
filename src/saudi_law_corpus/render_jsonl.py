@@ -8,14 +8,17 @@ from __future__ import annotations
 
 import json
 import os
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
+
+from . import books
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.dirname(os.path.dirname(_HERE))
 
-ARTICLES_JSON = os.path.join(_REPO_ROOT, "data", "articles", "book1_articles_001_034.json")
-WORK_JSON = os.path.join(_REPO_ROOT, "data", "metadata", "work.json")
-OUT_JSONL = os.path.join(_REPO_ROOT, "data", "articles", "book1_articles_001_034.jsonl")
+# Book One defaults kept as module constants for backward compatibility.
+ARTICLES_JSON = books.get_book(1).articles_json
+WORK_JSON = books.WORK_JSON
+OUT_JSONL = books.get_book(1).articles_jsonl
 
 
 def _read(path: str) -> Any:
@@ -56,9 +59,13 @@ def build_chunk(article: Dict[str, Any], work: Dict[str, Any]) -> Dict[str, Any]
     }
 
 
-def build_jsonl(articles_json: str = ARTICLES_JSON,
+def build_jsonl(articles_json: Optional[str] = None,
                 work_json: str = WORK_JSON,
-                out_path: str = OUT_JSONL) -> int:
+                out_path: Optional[str] = None,
+                book: int = 1) -> int:
+    spec = books.get_book(book)
+    articles_json = articles_json or spec.articles_json
+    out_path = out_path or spec.articles_jsonl
     doc = _read(articles_json)
     work = _read(work_json)
     articles: List[Dict[str, Any]] = sorted(

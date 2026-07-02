@@ -170,6 +170,58 @@ Disclaimer says non-official & not legal advice · 12. Scope says Articles 1–3
 
 Instrument: نظام الشركات — المرسوم الملكي رقم (م/132) وتاريخ 1443/12/1هـ (2022).
 
+## Book Two / الباب الثاني — شركة التضامن / 无限公司 · Articles 35–50
+
+Book Two covers the **general partnership** (شركة التضامن / 无限公司（普通合伙性质）), Articles
+35–50, from formation to termination. It uses the **same structured-first architecture** as Book
+One; the shared loader, validators and renderers are book-aware (`--book 1` / `--book 2`), and all
+Book One commands continue to work unchanged.
+
+- **العربية:** الباب الثاني كاملًا: شركة التضامن — من التأسيس إلى الانتهاء — المواد 35–50.
+- **中文：** 第二编（全）：无限公司 — 从设立到终止（第三十五条 至 第五十条）。
+
+**Generated files**
+
+| File | What |
+|------|------|
+| `data/articles/book2_articles_035_050.json` | Canonical Book Two articles (35–50) |
+| `data/articles/book2_articles_035_050.jsonl` | LLM/RAG chunks (one line per article) |
+| `data/coverage/book2_coverage_matrix.json` | Coverage matrix (16 rows) |
+| `content/{ar,zh,bilingual}/book2.md` | Generated Markdown books |
+| `content/notes/book2_translator_notes.md`, `book2_review_log.md` | Notes & review log |
+| `dist/book2.html` (git-ignored) | Searchable/copyable canonical HTML view |
+| `dist/book2.pdf` (git-ignored) | Print-ready visual PDF (local, if WeasyPrint present) |
+
+**Build**
+
+```bash
+make book2-validate   # schema + Book Two QA rules
+make book2-jsonl      # -> data/articles/book2_articles_035_050.jsonl
+make book2-html       # -> dist/book2.html (+ Book Two Markdown)
+make book2-pdf        # -> dist/book2.pdf (optional; WeasyPrint)
+make book2-build      # jsonl + validate + html (+ pdf)
+make books-build      # build both books
+```
+
+**LLM / RAG usage** — identical to Book One; load the JSONL (one article per line) and cite
+`article_number` + `source_provenance`. Use Book Two for `شركة التضامن` questions and always keep
+the legal-personality caveat below in view.
+
+**Trust limitations (Book Two)** — this is an **internally reviewed** reference translation
+(مراجَعة داخليًا / 经内部审校), QA-reviewed against the attached reference source. It has **not**
+been verified article-by-article against the official *Umm Al-Qura* text: every Book Two article
+has `translation_mode: internally_reviewed_summary` and `source.official_text_check: needs_check`.
+It is **not** an official translation and **not** legal advice.
+
+> **Legal-personality caveat.** Saudi **شركة التضامن** is translated functionally as
+> **无限公司（普通合伙性质）** but has an **independent legal personality** under Saudi law and is
+> **not** identical to Chinese partnership entities (普通合伙企业). The functional use of
+> 合伙人 / 普通合伙人 does not erase that legal personality. **Unlimited joint liability**
+> (无限连带责任) and **merchant status** (商人资格) attach to partners — general partnership
+> carries very high personal risk.
+
+Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
+
 ## License
 
 Source code: **MIT** ([`LICENSE`](LICENSE)). Legal content: see [`NOTICE.md`](NOTICE.md).
