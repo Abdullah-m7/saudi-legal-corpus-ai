@@ -150,6 +150,7 @@ def _fallback_render(ctx: Dict[str, Any]) -> str:
     parts.append(f'<p class="scope" dir="rtl" lang="ar">{e(work["scope_ar"])}</p>')
     parts.append(f'<p class="scope" lang="zh">{e(work["scope_zh"])}</p>')
     parts.append(f'<p class="decree" dir="rtl" lang="ar">{e(work["instrument"]["royal_decree_ar"])}</p>')
+    parts.append('<hr class="cover-rule">')
     parts.append("</header>")
 
     # disclaimer
@@ -160,8 +161,31 @@ def _fallback_render(ctx: Dict[str, Any]) -> str:
     parts.append(f'<p lang="en">{e(ts["binding_text_note_en"])}</p>')
     parts.append("</section>")
 
-    # coverage matrix
-    parts.append('<section class="coverage"><h2>覆盖矩阵 / مصفوفة التغطية（المواد 1–34）</h2>')
+    # coverage — compact (print/PDF only)
+    parts.append('<section class="coverage coverage-compact">'
+                 '<h2>覆盖概览 / ملخص التغطية（المواد 1–34）</h2>')
+    parts.append('<table class="compact"><thead><tr>'
+                 '<th class="c-num">المادة<br>条</th>'
+                 '<th class="c-status">الحالة / 状态</th>'
+                 '<th class="c-note">ملاحظة قصيرة / 简注</th>'
+                 "</tr></thead><tbody>")
+    for r in coverage["rows"]:
+        expanded = r["coverage_status"] == "expanded_after_review"
+        cls = "expanded" if expanded else ""
+        status = "扩充 · expanded" if expanded else "标准 · covered"
+        note = r["note"] or f'{r["article_title_zh"]} / {r["article_title_ar"]}'
+        parts.append(
+            f'<tr class="{cls}"><td class="c-num">{r["article_number"]}</td>'
+            f'<td class="c-status" lang="zh">{e(status)}</td>'
+            f'<td class="c-note" lang="zh">{e(note)}</td></tr>'
+        )
+    parts.append("</tbody></table>"
+                 '<p class="coverage-hint">完整六列矩阵见 HTML 版本 / '
+                 'الجدول الكامل بست أعمدة متاح في نسخة HTML.</p></section>')
+
+    # coverage — full six-column matrix (screen/HTML only)
+    parts.append('<section class="coverage coverage-full">'
+                 '<h2>覆盖矩阵 / مصفوفة التغطية（المواد 1–34）</h2>')
     parts.append("<table><thead><tr>"
                  "<th>#</th><th>العنوان (AR)</th><th>标题 (ZH)</th>"
                  "<th>coverage_status</th><th>expression_mode</th><th>注 / ملاحظة</th>"

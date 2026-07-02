@@ -29,8 +29,19 @@ data/articles/*.json   →  canonical source of truth (34 articles)
         └─ scripts/render_pdf_weasyprint →  dist/book1.pdf          (print/share-ready)
 ```
 
-- **HTML = searchable/copyable canonical text view** (no rasterized legal text; RTL/LTR correct).
-- **PDF = print/share-ready visual version** (via WeasyPrint; optional).
+- **HTML = searchable/copyable canonical text view** (no rasterized legal text; RTL/LTR correct;
+  Arabic **and** Chinese are real selectable/searchable text).
+- **PDF = print/share-ready *visual* version** (via WeasyPrint; optional).
+
+> **On the PDF text layer.** The PDF is a *visual/print-ready* rendering. Its Chinese text is
+> clean, but Arabic (RTL, shaped/joined script) does **not** always copy or search cleanly from
+> the PDF text layer — this is a known limitation of PDF text extraction for Arabic, not a
+> defect in the data. For reliable copy/paste/search of Arabic, use **`dist/book1.html`**, which
+> is the canonical text view. No low-level ActualText PDF hacks are attempted in this phase.
+
+The print PDF also differs from the HTML by design: the cover is a full title page, and the
+coverage matrix is a **one-page compact overview** (المادة | الحالة | ملاحظة). The full
+six-column matrix is available in the HTML view.
 
 ---
 

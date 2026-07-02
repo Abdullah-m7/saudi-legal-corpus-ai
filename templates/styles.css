@@ -32,21 +32,39 @@ body {
   direction: rtl;
 }
 
-[lang="zh"] {
+[lang="zh"], .zh {
   font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* Chinese wraps by character at natural line ends, but keep breaks strict so
+     multi-character legal terms are not orphaned into single-char columns. */
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-break: strict;
 }
 
 main, .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
 .cover {
   text-align: center;
-  padding: 48px 20px 32px;
+  padding: 72px 32px 56px;
   border-bottom: 4px solid var(--gold);
   background: linear-gradient(180deg, var(--gold-soft), #fff);
 }
-.cover h1 { margin: 6px 0; font-size: 1.9rem; color: var(--slate); }
-.cover .scope { margin: 4px 0; color: var(--ink); font-weight: 600; }
-.cover .decree { margin-top: 12px; color: var(--gold); font-weight: 700; }
+.cover h1 { margin: 14px 0; font-size: 2.6rem; line-height: 1.35; color: var(--slate); }
+.cover h1[lang="ar"] { font-size: 2.9rem; }
+.cover .scope { margin: 12px auto; max-width: 40em; color: var(--ink); font-weight: 600; font-size: 1.12rem; }
+.cover .decree { margin-top: 28px; color: var(--gold); font-weight: 700; letter-spacing: 0.02em; }
+.cover .cover-rule { width: 96px; height: 3px; background: var(--gold); border: 0; margin: 26px auto 0; }
+
+/* Coverage: full matrix on screen, compact one-pager in print. */
+.coverage-compact { display: none; }
+.coverage-full { display: block; }
+.coverage-hint { color: #888; font-size: 0.85rem; margin-top: 8px; }
+
+table.compact { table-layout: auto; }
+table.compact th, table.compact td { padding: 5px 9px; }
+table.compact .c-num { width: 3rem; text-align: center; font-weight: 700; }
+table.compact .c-status { width: 22%; white-space: nowrap; }
+table.compact .c-note { width: auto; }
 
 section { max-width: 1080px; margin: 0 auto; padding: 28px 20px; }
 section > h2 {
@@ -104,8 +122,10 @@ tr.expanded { background: var(--expanded) !important; }
 
 table.pair { table-layout: fixed; }
 table.pair td { width: 50%; }
-table.pair td.ar { background: #fcfaf4; }
+table.pair td.ar { background: #fcfaf4; font-size: 1.02rem; }
 table.pair td.zh { background: #fbfdff; }
+/* Give bilingual cells room so Chinese terms wrap on natural lines, not columns. */
+table.pair td { padding: 12px 14px; }
 
 .legal-notes {
   margin: 6px 0 4px;
@@ -138,8 +158,46 @@ footer {
   @bottom-right { content: counter(page) " / " counter(pages); color: #999; font-size: 9pt; }
 }
 @media print {
-  .cover { break-after: page; }
+  html { font-size: 11pt; }
+
+  /* Cover fills the first page and reads like a book title page. */
+  .cover {
+    break-after: page;
+    min-height: 62vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24mm;
+    border-bottom: none;
+  }
+  .cover h1 { font-size: 30pt; }
+  .cover h1[lang="ar"] { font-size: 33pt; }
+  .cover .scope { font-size: 13pt; }
+
+  /* Coverage: hide the long six-column matrix, show the one-page compact table. */
+  .coverage-full { display: none !important; }
+  .coverage-compact { display: block !important; break-before: page; break-inside: avoid; }
+  /* Fixed layout + single-line rows guarantee all 34 rows on ONE page.
+     Full (wrapping) notes remain available in the HTML six-column matrix. */
+  table.compact { table-layout: fixed; width: 100%; font-size: 8pt; line-height: 1.2; }
+  table.compact th, table.compact td { padding: 2px 7px; }
+  .coverage-compact > h2 { font-size: 13pt; margin: 0 0 6px; }
+  .coverage-compact .coverage-hint { margin-top: 5px; }
+  table.compact .c-num { width: 8%; }
+  table.compact .c-status { width: 27%; }
+  table.compact .c-note {
+    width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   section { break-inside: auto; }
   .art { break-inside: avoid; }
+  .art table.pair td { font-size: 9.6pt; line-height: 1.55; }
+  .art table.pair td.ar { font-size: 10pt; }
   thead { display: table-header-group; }
+
+  /* Keep the disclaimer and article body from starting a run of blank space. */
+  .disclaimer { break-inside: avoid; }
 }

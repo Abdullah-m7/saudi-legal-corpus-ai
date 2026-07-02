@@ -17,6 +17,7 @@
   <p class="scope" dir="rtl" lang="ar">{{ work.scope_ar }}</p>
   <p class="scope" lang="zh">{{ work.scope_zh }}</p>
   <p class="decree" dir="rtl" lang="ar">{{ work.instrument.royal_decree_ar }}</p>
+  <hr class="cover-rule">
 </header>
 
 <section class="disclaimer">
@@ -26,7 +27,30 @@
   <p lang="en">{{ work.translation_status.binding_text_note_en }}</p>
 </section>
 
-<section class="coverage">
+{#- Compact one-page coverage: shown in PRINT/PDF only (3 columns). -#}
+<section class="coverage coverage-compact">
+  <h2>覆盖概览 / ملخص التغطية（المواد 1–34）</h2>
+  <table class="compact">
+    <thead><tr>
+      <th class="c-num">المادة<br>条</th>
+      <th class="c-status">الحالة / 状态</th>
+      <th class="c-note">ملاحظة قصيرة / 简注</th>
+    </tr></thead>
+    <tbody>
+    {%- for r in coverage.rows %}
+      <tr class="{{ 'expanded' if r.coverage_status == 'expanded_after_review' else '' }}">
+        <td class="c-num">{{ r.article_number }}</td>
+        <td class="c-status" lang="zh">{{ '扩充 · expanded' if r.coverage_status == 'expanded_after_review' else '标准 · covered' }}</td>
+        <td class="c-note" lang="zh">{{ r.note or (r.article_title_zh ~ ' / ' ~ r.article_title_ar) }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+  <p class="coverage-hint">完整六列矩阵见 HTML 版本 / الجدول الكامل بست أعمدة متاح في نسخة HTML.</p>
+</section>
+
+{#- Full six-column matrix: shown on SCREEN/HTML only. -#}
+<section class="coverage coverage-full">
   <h2>覆盖矩阵 / مصفوفة التغطية（المواد 1–34）</h2>
   <table>
     <thead><tr>
