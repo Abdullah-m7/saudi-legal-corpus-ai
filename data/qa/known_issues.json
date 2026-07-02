@@ -1,0 +1,43 @@
+{
+  "qa_id": "sa-companies-book1-known-issues",
+  "book": 1,
+  "description_en": "Known limitations and open QA items for the Book One corpus. Tracked so downstream users do not mistake reference summaries for verified official text.",
+  "issues": [
+    {
+      "id": "OFFICIAL_TEXT_CHECK",
+      "severity": "high",
+      "status": "open",
+      "flag": "NEEDS_OFFICIAL_TEXT_CHECK",
+      "summary_en": "No article has been independently verified against the official Umm Al-Qura Arabic text in this build. Every article's source.official_text_check is 'needs_check'.",
+      "scope": "all_articles"
+    },
+    {
+      "id": "ARABIC_RECONSTRUCTED",
+      "severity": "medium",
+      "status": "open",
+      "summary_en": "Arabic reference summaries are manually reconstructed MSA (the PDF Arabic layer extracts garbled). They are concise reference summaries, not statutory text.",
+      "scope": "all_articles"
+    },
+    {
+      "id": "ART8_NO_GOOD_FAITH_THIRD_PARTY",
+      "severity": "high",
+      "status": "resolved",
+      "summary_en": "Article 8 must use 第三人 only, never 善意第三人 (Arabic says الغير without a good-faith qualifier). Enforced by validation and tests.",
+      "scope": "article_8"
+    },
+    {
+      "id": "SCOPE_1_34",
+      "severity": "high",
+      "status": "resolved",
+      "summary_en": "Scope corrected from the PDF's internal '1-15' part title to the unified Book One range 1-34. Enforced by validation.",
+      "scope": "book"
+    },
+    {
+      "id": "ART17_SOCPA_IN_NOTES",
+      "severity": "low",
+      "status": "resolved",
+      "summary_en": "Article 17 body uses '王国认可的会计准则'; the SOCPA/IFRS explanation lives in translator notes rather than the article body.",
+      "scope": "article_17"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "canonical_source_model": "structured-first",
+  "principle": "The attached PDF is the current design/reference artifact, not the canonical long-term source. Canonical structured sources (data/articles/*.json) are authored first; readable outputs (HTML/PDF/Markdown) are generated from them.",
+  "primary_input": {
+    "type": "reference_translation_pdf",
+    "path": "inputs/bab1_source.pdf",
+    "description_en": "Arabic–Chinese reference translation of Book One / الباب الأول of the Saudi Companies Law, covering Articles 1-34.",
+    "pages": 31,
+    "internal_parts": [
+      {"part": 1, "articles": "1-15", "topic_zh": "总则与公司设立"},
+      {"part": 2, "articles": "16-25", "topic_zh": "公司财务、利润分配与股权转让"},
+      {"part": 3, "articles": "26-34", "topic_zh": "公司管理、治理与责任"}
+    ],
+    "note_en": "The combined file is treated as one continuous Book One (Articles 1-34). Internal titles that imply only Articles 1-15 have been superseded by the unified Book One scope."
+  },
+  "extraction": {
+    "method": "direct_text_extraction",
+    "tool": "pypdf",
+    "chinese_layer": "extracted cleanly and used as the reference Chinese text (with the targeted legal upgrades applied)",
+    "arabic_layer": "extracted in garbled form; NOT used verbatim. Arabic reference summaries were manually reconstructed in Modern Standard Arabic and must not be treated as official statutory text.",
+    "ocr_used": false
+  },
+  "official_text_status": {
+    "checked_against_official_gazette": false,
+    "default_article_flag": "needs_check",
+    "note_en": "No article has been independently verified against the official Umm Al-Qura text in this repository build. Points that cannot be verified from the provided PDF are flagged NEEDS_OFFICIAL_TEXT_CHECK.",
+    "official_gazette": "Umm Al-Qura (أم القرى)"
+  },
+  "copyright_note_en": "This repository contains concise reference summaries and structured metadata. It does not reproduce the full official Arabic statutory text beyond what is necessary for reference, consistent with the user-provided translation source.",
+  "upgrades_applied": {
+    "round": "third_review",
+    "label_ar": "المراجعة الثالثة — رفع الباب الأول إلى نسخة 10/10",
+    "label_zh": "第三轮审校：第一编 10/10 提升版",
+    "expanded_articles": [5, 6, 8, 9, 12, 13, 14, 17, 19, 20, 29],
+    "terminology_corrections": [27, 31, 34]
+  }
+}
