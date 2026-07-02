@@ -1,0 +1,232 @@
+/* Saudi Companies Law — Book One bilingual book styles.
+   Visual style close to the reference PDF: dark slate headings, gold accents,
+   clean bilingual tables. All text is real selectable text (no rasterization). */
+
+:root {
+  --ink: #1c2733;
+  --slate: #2f4356;
+  --gold: #b3852a;
+  --gold-soft: #f4ecd8;
+  --line: #d7dde3;
+  --zebra: #f7f9fb;
+  --expanded: #eaf5ec;
+  --expanded-line: #b8dcc0;
+  --bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: "Noto Sans", "Noto Sans SC", "Noto Naskh Arabic", "Segoe UI",
+    Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+}
+
+[dir="rtl"], [lang="ar"] {
+  font-family: "Noto Naskh Arabic", "Amiri", "Traditional Arabic", serif;
+  direction: rtl;
+}
+
+[lang="zh"], .zh {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* Chinese wraps by character at natural line ends, but keep breaks strict so
+     multi-character legal terms are not orphaned into single-char columns. */
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+main, .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+.cover {
+  text-align: center;
+  padding: 72px 32px 56px;
+  border-bottom: 4px solid var(--gold);
+  background: linear-gradient(180deg, var(--gold-soft), #fff);
+}
+.cover h1 { margin: 14px 0; font-size: 2.6rem; line-height: 1.35; color: var(--slate); }
+.cover h1[lang="ar"] { font-size: 2.9rem; }
+.cover .scope { margin: 12px auto; max-width: 40em; color: var(--ink); font-weight: 600; font-size: 1.12rem; }
+.cover .decree { margin-top: 28px; color: var(--gold); font-weight: 700; letter-spacing: 0.02em; }
+.cover .cover-rule { width: 96px; height: 3px; background: var(--gold); border: 0; margin: 26px auto 0; }
+
+/* Coverage: full matrix on screen, compact one-pager in print. */
+.coverage-compact { display: none; }
+.coverage-full { display: block; }
+.coverage-hint { color: #888; font-size: 0.85rem; margin-top: 8px; }
+
+table.compact { table-layout: auto; }
+table.compact th, table.compact td { padding: 5px 9px; }
+table.compact .c-num { width: 3rem; text-align: center; font-weight: 700; }
+table.compact .c-status { width: 22%; white-space: nowrap; }
+table.compact .c-note { width: auto; }
+
+section { max-width: 1080px; margin: 0 auto; padding: 28px 20px; }
+section > h2 {
+  color: var(--slate);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 6px;
+  font-size: 1.4rem;
+}
+
+.disclaimer {
+  background: #fbf6ea;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  margin: 24px auto;
+}
+.disclaimer p { margin: 8px 0; }
+.disclaimer [lang="en"] { color: #555; font-size: 0.95rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  vertical-align: top;
+  text-align: start;
+}
+thead th { background: var(--slate); color: #fff; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--zebra); }
+tr.expanded { background: var(--expanded) !important; }
+
+.coverage table td:first-child { text-align: center; font-weight: 700; width: 3.2rem; }
+
+.section-head {
+  margin-top: 30px;
+  color: var(--gold);
+  font-size: 1.15rem;
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 4px;
+}
+
+.art { margin: 18px 0; padding-top: 4px; }
+.art h4 { margin: 10px 0 6px; color: var(--slate); font-size: 1.05rem; }
+.art h4 .num { color: var(--gold); font-weight: 700; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+.badge.covered { background: #eef2f6; color: var(--slate); border: 1px solid var(--line); }
+.badge.expanded { background: var(--expanded); color: #1d6b32; border: 1px solid var(--expanded-line); }
+
+table.pair { table-layout: fixed; }
+table.pair td { width: 50%; }
+table.pair td.ar { background: #fcfaf4; font-size: 1.02rem; }
+table.pair td.zh { background: #fbfdff; }
+/* Give bilingual cells room so Chinese terms wrap on natural lines, not columns. */
+table.pair td { padding: 12px 14px; }
+
+.legal-notes {
+  margin: 6px 0 4px;
+  padding: 8px 12px;
+  background: #fff8e9;
+  border-inline-start: 3px solid var(--gold);
+  font-size: 0.92rem;
+}
+.legal-notes ul { margin: 4px 0; padding-inline-start: 20px; }
+
+.glossary table td:last-child { color: #666; font-size: 0.9rem; }
+
+.notes h3, .review-log h3 { color: var(--slate); }
+.notes h4, .review-log h4 { color: var(--gold); margin-bottom: 2px; }
+.notes h5, .review-log h5 { color: var(--slate); margin-bottom: 2px; font-size: 1rem; }
+
+/* Rendered Markdown blocks (notes, review log) — no raw syntax leaks. */
+.notes blockquote, .review-log blockquote {
+  margin: 10px 0;
+  padding: 8px 14px;
+  background: #fff8e9;
+  border-inline-start: 3px solid var(--gold);
+  color: #4a3b18;
+}
+.notes blockquote p, .review-log blockquote p { margin: 0; }
+.notes code, .review-log code, .notes strong code {
+  background: #eef2f6;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 4px;
+  font-family: "Noto Sans Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.88em;
+}
+.notes ul, .review-log ul { padding-inline-start: 22px; }
+table.md-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+table.md-table th { background: var(--slate); color: #fff; font-weight: 600; }
+table.md-table th, table.md-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: start;
+  vertical-align: top;
+}
+table.md-table tbody tr:nth-child(even) { background: var(--zebra); }
+
+footer {
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+}
+
+/* Print / WeasyPrint */
+@page {
+  size: A4;
+  margin: 18mm 15mm;
+  @bottom-center { content: "沙特公司法 · 第一编（1–34）· نظام الشركات — الباب الأول"; color: #999; font-size: 9pt; }
+  @bottom-right { content: counter(page) " / " counter(pages); color: #999; font-size: 9pt; }
+}
+@media print {
+  html { font-size: 11pt; }
+
+  /* Cover fills the first page and reads like a book title page. */
+  .cover {
+    break-after: page;
+    min-height: 62vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24mm;
+    border-bottom: none;
+  }
+  .cover h1 { font-size: 30pt; }
+  .cover h1[lang="ar"] { font-size: 33pt; }
+  .cover .scope { font-size: 13pt; }
+
+  /* Coverage: hide the long six-column matrix, show the one-page compact table. */
+  .coverage-full { display: none !important; }
+  .coverage-compact { display: block !important; break-before: page; break-inside: avoid; }
+  /* Fixed layout + single-line rows guarantee all 34 rows on ONE page.
+     Full (wrapping) notes remain available in the HTML six-column matrix. */
+  table.compact { table-layout: fixed; width: 100%; font-size: 8pt; line-height: 1.2; }
+  table.compact th, table.compact td { padding: 2px 7px; }
+  .coverage-compact > h2 { font-size: 13pt; margin: 0 0 6px; }
+  .coverage-compact .coverage-hint { margin-top: 5px; }
+  table.compact .c-num { width: 8%; }
+  table.compact .c-status { width: 27%; }
+  table.compact .c-note {
+    width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  section { break-inside: auto; }
+  .art { break-inside: avoid; }
+  .art table.pair td { font-size: 9.6pt; line-height: 1.55; }
+  .art table.pair td.ar { font-size: 10pt; }
+  thead { display: table-header-group; }
+
+  /* Keep the disclaimer and article body from starting a run of blank space. */
+  .disclaimer { break-inside: avoid; }
+}

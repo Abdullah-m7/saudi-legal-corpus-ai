@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/article.schema.json",
+  "title": "Saudi Companies Law Book One Article",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "book", "article_number", "article_title_ar", "article_title_zh",
+    "section_ar", "section_zh", "arabic_reference_summary",
+    "chinese_translation", "translation_mode", "coverage_status",
+    "legal_notes", "terminology", "risk_flags", "source", "llm"
+  ],
+  "properties": {
+    "book": {"const": 1},
+    "article_number": {"type": "integer", "minimum": 1, "maximum": 34},
+    "article_title_ar": {"type": "string", "minLength": 1},
+    "article_title_zh": {"type": "string", "minLength": 1},
+    "section_ar": {"type": "string", "minLength": 1},
+    "section_zh": {"type": "string", "minLength": 1},
+    "arabic_reference_summary": {"type": "string", "minLength": 1},
+    "chinese_translation": {"type": "string", "minLength": 1},
+    "translation_mode": {"type": "string", "enum": ["internally_reviewed_summary"]},
+    "coverage_status": {
+      "type": "string",
+      "enum": ["covered", "expanded_after_review", "needs_official_text_check"]
+    },
+    "legal_notes": {"type": "array", "items": {"type": "string"}},
+    "terminology": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ar", "zh"],
+        "properties": {
+          "ar": {"type": "string"},
+          "zh": {"type": "string"}
+        }
+      }
+    },
+    "risk_flags": {"type": "array", "items": {"type": "string"}},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_pdf", "page_hint", "official_text_check"],
+      "properties": {
+        "input_pdf": {"type": "string"},
+        "page_hint": {"type": ["integer", "null"]},
+        "official_text_check": {"type": "string", "enum": ["checked", "needs_check"]}
+      }
+    },
+    "llm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chunk_id", "retrieval_title", "keywords_ar", "keywords_zh", "summary_en"],
+      "properties": {
+        "chunk_id": {"type": "string", "pattern": "^sa-companies-book1-art[0-9]{3}$"},
+        "retrieval_title": {"type": "string", "minLength": 1},
+        "keywords_ar": {"type": "array", "items": {"type": "string"}},
+        "keywords_zh": {"type": "array", "items": {"type": "string"}},
+        "summary_en": {"type": "string"}
+      }
+    }
+  }
+}

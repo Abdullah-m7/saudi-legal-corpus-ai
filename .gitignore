@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Generated build artifacts (regenerable from canonical data).
+# The JSONL is a derivative of data/articles/*.json.
+dist/book1.html
+dist/book1.pdf
+/tmp_pdf_text.txt
+
+# Keep dist/ tracked via .gitkeep
+!dist/.gitkeep

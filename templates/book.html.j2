@@ -1,0 +1,144 @@
+{#- Jinja2 template for the bilingual Book One HTML.
+    Rendered by src/saudi_law_corpus/render_html.py. All legal text is real
+    selectable text; no rasterized content. -#}
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ work.title_zh }}</title>
+<style>{{ styles }}</style>
+</head>
+<body>
+
+<header class="cover">
+  <h1 dir="rtl" lang="ar">{{ work.title_ar }}</h1>
+  <h1 lang="zh">{{ work.title_zh }}</h1>
+  <p class="scope" dir="rtl" lang="ar">{{ work.scope_ar }}</p>
+  <p class="scope" lang="zh">{{ work.scope_zh }}</p>
+  <p class="decree" dir="rtl" lang="ar">{{ work.instrument.royal_decree_ar }}</p>
+  <hr class="cover-rule">
+</header>
+
+<section class="disclaimer">
+  <h2>免责声明 / إخلاء المسؤولية</h2>
+  <p dir="rtl" lang="ar">{{ work.translation_status.disclaimer_ar }}</p>
+  <p lang="zh">{{ work.translation_status.disclaimer_zh }}</p>
+  <p lang="en">{{ work.translation_status.binding_text_note_en }}</p>
+</section>
+
+{#- Compact one-page coverage: shown in PRINT/PDF only (3 columns). -#}
+<section class="coverage coverage-compact">
+  <h2>覆盖概览 / ملخص التغطية（المواد 1–34）</h2>
+  <table class="compact">
+    <thead><tr>
+      <th class="c-num">المادة<br>条</th>
+      <th class="c-status">الحالة / 状态</th>
+      <th class="c-note">ملاحظة قصيرة / 简注</th>
+    </tr></thead>
+    <tbody>
+    {%- for r in coverage.rows %}
+      <tr class="{{ 'expanded' if r.coverage_status == 'expanded_after_review' else '' }}">
+        <td class="c-num">{{ r.article_number }}</td>
+        <td class="c-status" lang="zh">{{ '扩充 · expanded' if r.coverage_status == 'expanded_after_review' else '标准 · covered' }}</td>
+        <td class="c-note" lang="zh">{{ r.note or (r.article_title_zh ~ ' / ' ~ r.article_title_ar) }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+  <p class="coverage-hint">完整六列矩阵见 HTML 版本 / الجدول الكامل بست أعمدة متاح في نسخة HTML.</p>
+</section>
+
+{#- Full six-column matrix: shown on SCREEN/HTML only. -#}
+<section class="coverage coverage-full">
+  <h2>覆盖矩阵 / مصفوفة التغطية（المواد 1–34）</h2>
+  <table>
+    <thead><tr>
+      <th>#</th><th>العنوان (AR)</th><th>标题 (ZH)</th>
+      <th>coverage_status</th><th>expression_mode</th><th>注 / ملاحظة</th>
+    </tr></thead>
+    <tbody>
+    {%- for r in coverage.rows %}
+      <tr class="{{ 'expanded' if r.coverage_status == 'expanded_after_review' else '' }}">
+        <td>{{ r.article_number }}</td>
+        <td dir="rtl" lang="ar">{{ r.article_title_ar }}</td>
+        <td lang="zh">{{ r.article_title_zh }}</td>
+        <td>{{ r.coverage_status }}</td>
+        <td>{{ r.expression_mode }}</td>
+        <td lang="zh">{{ r.note }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="articles">
+  <h2>条文 / المواد</h2>
+  {%- set ns = namespace(section=None) %}
+  {%- for a in articles %}
+    {%- if a.section_zh != ns.section %}
+      {%- set ns.section = a.section_zh %}
+      <h3 class="section-head">
+        <span dir="rtl" lang="ar">{{ a.section_ar }}</span> ·
+        <span lang="zh">{{ a.section_zh }}</span>
+      </h3>
+    {%- endif %}
+    {%- set badge = 'expanded' if a.coverage_status == 'expanded_after_review' else 'covered' %}
+    <article class="art" id="art{{ '%03d' % a.article_number }}">
+      <h4>
+        <span class="num">第{{ a.article_number }}条 / المادة {{ a.article_number }}</span>
+        <span dir="rtl" lang="ar">{{ a.article_title_ar }}</span> ·
+        <span lang="zh">{{ a.article_title_zh }}</span>
+        <span class="badge {{ badge }}">{{ badge }}</span>
+      </h4>
+      <table class="pair"><tr>
+        <td class="ar" dir="rtl" lang="ar">{{ a.arabic_reference_summary }}</td>
+        <td class="zh" lang="zh">{{ a.chinese_translation }}</td>
+      </tr></table>
+      {%- if a.legal_notes %}
+      <div class="legal-notes"><strong>ملاحظات / 注释:</strong>
+        <ul>
+        {%- for note in a.legal_notes %}
+          <li dir="rtl" lang="ar">{{ note }}</li>
+        {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+    </article>
+  {%- endfor %}
+</section>
+
+<section class="glossary">
+  <h2>术语表 / قاموس المصطلحات</h2>
+  <table>
+    <thead><tr><th>العربية</th><th>中文</th><th>拼音</th></tr></thead>
+    <tbody>
+    {%- for t in glossary.terms %}
+      <tr>
+        <td dir="rtl" lang="ar">{{ t.ar }}</td>
+        <td lang="zh">{{ t.zh }}</td>
+        <td>{{ t.pinyin if t.pinyin is defined else '' }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+</section>
+
+{%- if translator_notes_html %}
+<section class="notes">
+  <h2>译者注释 / ملاحظات المترجم</h2>
+  {{ translator_notes_html | safe }}
+</section>
+{%- endif %}
+
+{%- if review_log_html %}
+<section class="review-log">
+  <h2>审校记录 / سجل المراجعة</h2>
+  {{ review_log_html | safe }}
+</section>
+{%- endif %}
+
+<footer><p>HTML = searchable/copyable canonical text view · PDF = print/share-ready visual version</p></footer>
+
+</body>
+</html>
