@@ -537,6 +537,29 @@ English Legal LLM coverage.
   `make english-legal-llm-validate`.
 - **Not legal advice.**
 
+## Chinese Legal LLM-ready layer (pilot)
+
+The **Chinese Legal LLM-ready layer** has been **started with a Book Four Section 1 pilot only**
+— it is **not** full Chinese Legal LLM coverage.
+
+- **Scope:** Book Four / Part 4 — Section 1 (Establishment and Capital / 设立与资本), article groups
+  **[58], [59], [60], [66]** — **4 `article_reference` records**
+  ([`data/chinese_legal_llm/book4_section1_zh_legal_llm.json`](data/chinese_legal_llm/book4_section1_zh_legal_llm.json)).
+- **Source:** the **existing internal Chinese provision text** already in the repo — each record's
+  **`legal_rule_text_zh` is copied verbatim** from the corresponding provision's `chinese_translation`
+  field in [`data/articles/book4_provisions_058_066.json`](data/articles/book4_provisions_058_066.json).
+  There is **no new/machine translation**, **no model-generated summary**, and **no
+  `legal_rule_summary_zh`** field (the schema's `additionalProperties:false` forbids it). `keywords_zh`
+  reuses the provision's own approved `llm.keywords_zh`; the other derived metadata is kept conservative
+  and traceable to that provision's own Chinese text.
+- **Chinese is an internal working translation / LLM-ready metadata only; Arabic remains governing**
+  (`source_trust.chinese_source_status = internal_working_translation`, `governing_text_language = ar`,
+  `official_text_check = needs_check`, `manual_review_status = needs_manual_check`).
+- **Not an official Chinese translation. Not legal advice. Not full Chinese Legal LLM coverage** — no
+  Books 1–3 and no Book Four Sections 2–5 Chinese records yet.
+- Schema `schemas/chinese_legal_llm.schema.json`; build `make chinese-legal-llm-book4-section1-data`;
+  validate `make chinese-legal-llm-validate`.
+
 ## License
 
 Source code: **MIT** ([`LICENSE`](LICENSE)). Legal content: see [`NOTICE.md`](NOTICE.md).
