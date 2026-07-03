@@ -423,6 +423,34 @@ existing article/provision wording or Chinese translations, and is **not legal a
 - **Not an official translation and not legal advice.** The binding text is the Arabic in
   *Umm al-Qura*.
 
+## Official Arabic statutory text foundation
+
+The repository is being moved toward a **true official-Arabic-grounded** legal corpus, where the
+**official Arabic statutory text is the canonical legal source** and every English/Chinese/LLM layer
+aligns to official Arabic article IDs. This section is an honest status marker for that direction.
+
+- **Current Arabic content is internally reviewed reference/summary material, *not* official
+  statutory text.** The Arabic under `data/arabic_legal_llm/` and `data/articles/` is manually
+  reconstructed Modern Standard Arabic (the reference PDF's Arabic layer extracted garbled) and has
+  **not** been verified article-by-article against the official *Umm Al-Qura* text.
+- **Official Arabic ingestion/verification is now explicitly planned and scaffolded** — schema,
+  target data folder, source-packet requirements, verification plan, validator, and tests — but
+  **no official Arabic text has been ingested or verified yet** (`official_arabic_text_status =
+  not_ingested`, `article_by_article_verified = false`).
+- **Arabic remains the governing legal language.** Until official Arabic **article-by-article
+  verification** is completed, **do not treat the current Arabic summaries as official statutory
+  text.**
+- Architecture:
+  [`schemas/official_arabic_article.schema.json`](schemas/official_arabic_article.schema.json),
+  [`data/official_arabic/`](data/official_arabic/) (manifest
+  [`ingestion_status.json`](data/official_arabic/ingestion_status.json)),
+  [`docs/official_arabic_text/SOURCE_PACKET_REQUIREMENTS_AR.md`](docs/official_arabic_text/SOURCE_PACKET_REQUIREMENTS_AR.md),
+  [`docs/official_arabic_text/OFFICIAL_ARABIC_VERIFICATION_PLAN_AR.md`](docs/official_arabic_text/OFFICIAL_ARABIC_VERIFICATION_PLAN_AR.md).
+  Validate the scaffold with `make official-arabic-foundation-validate`.
+- **To begin:** provide an official source packet (official gazette / official government source)
+  per the source-packet requirements; ingestion then follows the verification plan. This is **not**
+  a claim of a full official Arabic corpus — it is the foundation stage only. Not legal advice.
+
 ## Official English guidance source
 
 The repository now tracks an **official English guidance translation** source of the
