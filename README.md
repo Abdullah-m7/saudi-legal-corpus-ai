@@ -303,6 +303,37 @@ Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
   disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.
 - **Not an official translation and not legal advice.**
 
+## Arabic Legal LLM-ready layer
+
+A **structured Arabic legal-understanding layer** built **on top of** the corpus to power
+**Arabic legal RAG / search / reasoning** (retrieval, question answering, rule extraction). It is
+**metadata only** — it does **not** replace the official statutory text, does **not** change any
+existing article/provision wording or Chinese translations, and is **not legal advice**.
+
+- **Schema:** [`schemas/arabic_legal_llm.schema.json`](schemas/arabic_legal_llm.schema.json)
+  (draft-07). One record schema serves **both** per-article records for Books 1–3
+  (`record_type: "article"`) **and** thematic **provision** records for Book Four model-1b
+  (`record_type: "provision"`, one or more `article_numbers`). Each record carries structured
+  Arabic fields: `legal_subject_ar`, `legal_rule_summary_ar`, `legal_basis_type`, `actors_ar`,
+  `rights_ar`, `obligations_ar`, `prohibitions_ar`, `conditions_ar`, `exceptions_ar`,
+  `legal_effects_ar`, `liability_ar`, `monetary_thresholds`, `deadlines_ar`,
+  `competent_authorities_ar`, `cross_references_ar`, `keywords_ar`, `search_queries_ar`,
+  `risk_flags`, and `source_trust`.
+- **Data:** [`data/arabic_legal_llm/`](data/arabic_legal_llm/). The **pilot** is
+  [`data/arabic_legal_llm/book4_section1_ar_legal_llm.json`](data/arabic_legal_llm/book4_section1_ar_legal_llm.json),
+  derived **only** from the existing Book Four Section 1 provisions — records for **Articles 58,
+  59, 60, 66 only**. **Articles 61–65 remain uncovered** and get **no records** (no invented
+  content).
+- **Build / validate:** `make arabic-legal-llm-data` (regenerate the pilot) and
+  `make arabic-legal-llm-validate` (schema + guardrails). Tests:
+  [`tests/test_arabic_legal_llm_layer.py`](tests/test_arabic_legal_llm_layer.py).
+- **Trust posture unchanged:** the underlying text stays an internally-reviewed reference
+  summary/provision (`text_type: internally_reviewed_summary` / `internally_reviewed_provision`);
+  every record keeps `source_trust.official_text_check = needs_check`; banned overclaim terms
+  (`verified` / `محققة` / `经核验`) never appear.
+- **Not an official translation and not legal advice.** The binding text is the Arabic in
+  *Umm al-Qura*.
+
 ## License
 
 Source code: **MIT** ([`LICENSE`](LICENSE)). Legal content: see [`NOTICE.md`](NOTICE.md).

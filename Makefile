@@ -9,7 +9,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         book2-data book2-jsonl book2-validate book2-html book2-pdf book2-build books-build \
         book3-data book3-jsonl book3-validate book3-html book3-pdf book3-build \
         book4-coverage book4-validate book4-model-check book4-coverage-check \
-        book4-section1-data book4-section1-jsonl book4-section1-html book4-section1-build
+        book4-section1-data book4-section1-jsonl book4-section1-html book4-section1-build \
+        arabic-legal-llm-data arabic-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -138,6 +139,13 @@ book4-section1-html:
 
 book4-section1-build: book4-section1-data book4-section1-jsonl book4-validate book4-section1-html
 	@echo "book4 section1 build complete: provisions (58,59,60,66) + section HTML (NOT full Book Four)"
+
+# -- Arabic Legal LLM-ready layer (structured Arabic metadata; pilot) --------
+arabic-legal-llm-data:
+	$(PY) scripts/gen_arabic_legal_llm_book4_section1.py
+
+arabic-legal-llm-validate:
+	$(PY) scripts/validate_arabic_legal_llm.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
