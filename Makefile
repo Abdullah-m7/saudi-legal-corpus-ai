@@ -13,6 +13,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         book4-section2-data book4-section2-jsonl book4-section2-html book4-section2-build \
         book4-section3-data book4-section3-jsonl book4-section3-html book4-section3-build \
         book4-section4-data book4-section4-jsonl book4-section4-html book4-section4-build \
+        book4-section5-data book4-section5-jsonl book4-section5-html book4-section5-build \
         arabic-legal-llm-data arabic-legal-llm-book4-section2-data \
         arabic-legal-llm-book4-section3-data arabic-legal-llm-book4-section4-data \
         arabic-legal-llm-validate \
@@ -193,6 +194,20 @@ book4-section4-html:
 
 book4-section4-build: book4-section4-data book4-section4-jsonl book4-validate book4-section4-html
 	@echo "book4 section4 build complete: provisions (108,113,115,117) + section HTML (NOT full Book Four)"
+
+# -- Book Four Section 5 (provisions for explicit articles 123,124,126,127,128,129,130,132,133) --
+# Coverage matrix and source PDF agree on the explicit set (no reclassification).
+book4-section5-data:
+	$(PY) scripts/gen_book4_section5_provisions.py
+
+book4-section5-jsonl:
+	$(PY) scripts/build_book4_section5_jsonl.py
+
+book4-section5-html:
+	$(PY) scripts/render_book4_section5_html.py
+
+book4-section5-build: book4-section5-data book4-section5-jsonl book4-validate book4-section5-html
+	@echo "book4 section5 build complete: provisions (123,124,126,127,128,129,130,132,133) + section HTML (NOT full Book Four)"
 
 # -- Arabic Legal LLM-ready layer (structured Arabic metadata) ---------------
 arabic-legal-llm-data:

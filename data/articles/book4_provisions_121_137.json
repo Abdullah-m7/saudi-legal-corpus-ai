@@ -1,0 +1,291 @@
+{
+  "book": 4,
+  "book_title_ar": "الباب الرابع",
+  "book_title_zh": "第四编",
+  "section_key": "finance_profits_and_capital_changes",
+  "section_title_ar": "المالية والأرباح وتغيير رأس المال",
+  "section_title_zh": "财务、利润与资本变更",
+  "article_range": "121-137",
+  "model": "model_1b_thematic_provisions",
+  "scope_note_ar": "أحكام مختارة من الباب الرابع (شركة المساهمة) للمواد المغطاة صراحةً في المصدر ضمن قسم المالية والأرباح وتغيير رأس المال: 123، 124، 126، 127، 128، 129، 130، 132، 133 — وليست ترجمة كاملة للقسم. (المواد 121، 122، 125، 131، 134، 135، 136، 137 غير مغطاة في المصدر).",
+  "scope_note_zh": "第四编（股份公司）财务、利润与资本变更一节中，源文件明确涵盖的条款（第123、124、126、127、128、129、130、132、133条）择要；并非本节全文翻译。（第121、122、125、131、134、135、136、137条在源文件中未涵盖）。",
+  "explicit_articles": [
+    123,
+    124,
+    126,
+    127,
+    128,
+    129,
+    130,
+    132,
+    133
+  ],
+  "uncovered_articles": [
+    121,
+    122,
+    125,
+    131,
+    134,
+    135,
+    136,
+    137
+  ],
+  "reconciliation_note": "Coverage matrix and source PDF agree on the Section 5 explicit set; no reclassification needed. Articles 134 & 135 appear only as a cross-reference in the capital-reduction block and remain not_explicit_in_source.",
+  "provisions": [
+    {
+      "book": 4,
+      "provision_id": "sa-companies-book4-prov019",
+      "source_article_numbers": [
+        123,
+        124
+      ],
+      "thematic_section": "finance_profits_and_capital_changes",
+      "provision_title_ar": "الاحتياطيات: تكوينها واستخدامها",
+      "provision_title_zh": "储备金的提取与动用",
+      "arabic_reference_summary": "للنظام الأساس أن يقتطع نسبةً من صافي الأرباح لتكوين احتياطي مخصّص لأغراضٍ محددة، ولا يُستخدم الاحتياطي المخصّص إلا بقرارٍ من الجمعية العامة غير العادية؛ أما الاحتياطي غير المخصّص فتقرّر الجمعية العامة العادية استخدامه بناءً على اقتراح مجلس الإدارة.",
+      "chinese_translation": "公司章程可提取净利润的一定比例，作为用于特定用途的专项储备；专项储备的使用须经非常大会（EGM）决议。非专项储备则由普通大会（OGM）依董事会的提议动用。",
+      "translation_mode": "internally_reviewed_summary",
+      "coverage_status": "covered",
+      "legal_notes": [],
+      "terminology": [
+        {
+          "ar": "الاحتياطي المخصّص",
+          "zh": "专项储备"
+        },
+        {
+          "ar": "الاحتياطي غير المخصّص",
+          "zh": "非专项储备"
+        }
+      ],
+      "risk_flags": [],
+      "source": {
+        "input_pdf": "inputs/bab4_source.pdf",
+        "page_hint": null,
+        "official_text_check": "needs_check",
+        "source_coverage_status": "explicit_in_source"
+      },
+      "llm": {
+        "chunk_id": "sa-companies-book4-prov019",
+        "retrieval_title": "Articles 123 & 124 — Formation and Use of Reserves",
+        "keywords_ar": [
+          "الاحتياطي المخصّص",
+          "الاحتياطي غير المخصّص",
+          "صافي الأرباح",
+          "الجمعية غير العادية"
+        ],
+        "keywords_zh": [
+          "专项储备",
+          "非专项储备",
+          "净利润",
+          "EGM"
+        ],
+        "summary_en": "The bylaws may set aside a percentage of net profits to form a reserve for specific purposes; the earmarked reserve may be used only by an EGM decision, while the non-earmarked reserve is used by an OGM decision on the board's proposal."
+      }
+    },
+    {
+      "book": 4,
+      "provision_id": "sa-companies-book4-prov020",
+      "source_article_numbers": [
+        126,
+        127
+      ],
+      "thematic_section": "finance_profits_and_capital_changes",
+      "provision_title_ar": "زيادة رأس المال: شروطها وطرقها",
+      "provision_title_zh": "增资的条件与方式",
+      "arabic_reference_summary": "تكون زيادة رأس المال بقرارٍ من الجمعية العامة غير العادية وبشرط أن يكون رأس المال المصدر قد دُفع بالكامل. وطرق الزيادة: إصدار أسهمٍ جديدة نقدية أو عينية، أو مقابل ديونٍ (تحويل الديون إلى أسهم)، أو رسملة الاحتياطي (أسهم منحة)، أو مقابل أدوات دينٍ أو صكوك.",
+      "chinese_translation": "增资须经非常大会（EGM）决议，且已发行资本须已全额缴清；方式包括：发行新股（现金或实物）、以债权抵充（债转股）、资本化储备（红股），或对应债务工具/融资凭证发行。",
+      "translation_mode": "internally_reviewed_summary",
+      "coverage_status": "covered",
+      "legal_notes": [],
+      "terminology": [
+        {
+          "ar": "رسملة الاحتياطي",
+          "zh": "资本化储备"
+        },
+        {
+          "ar": "أسهم منحة",
+          "zh": "红股"
+        }
+      ],
+      "risk_flags": [
+        "capital_increase_egm_paid_up"
+      ],
+      "source": {
+        "input_pdf": "inputs/bab4_source.pdf",
+        "page_hint": null,
+        "official_text_check": "needs_check",
+        "source_coverage_status": "explicit_in_source"
+      },
+      "llm": {
+        "chunk_id": "sa-companies-book4-prov020",
+        "retrieval_title": "Articles 126 & 127 — Capital Increase: Conditions and Methods",
+        "keywords_ar": [
+          "زيادة رأس المال",
+          "الجمعية غير العادية",
+          "رسملة الاحتياطي",
+          "أسهم منحة",
+          "تحويل الديون"
+        ],
+        "keywords_zh": [
+          "增资",
+          "EGM",
+          "资本化储备",
+          "红股",
+          "债转股"
+        ],
+        "summary_en": "A capital increase requires an EGM decision and full payment of the issued capital; methods include issuing new (cash or in-kind) shares, converting debt into shares, capitalising reserves (bonus shares), or against debt instruments/sukuk."
+      }
+    },
+    {
+      "book": 4,
+      "provision_id": "sa-companies-book4-prov021",
+      "source_article_numbers": [
+        128,
+        129,
+        130
+      ],
+      "thematic_section": "finance_profits_and_capital_changes",
+      "provision_title_ar": "حق الأولوية في الاكتتاب والتنازل عنه وإلغاؤه",
+      "provision_title_zh": "优先认购权及其转让与取消",
+      "arabic_reference_summary": "للمساهمين وقت صدور قرار الزيادة حقُّ الأولوية في الاكتتاب بالأسهم النقدية الجديدة، ولهم بيع هذا الحق أو التنازل عنه. ويجوز للجمعية العامة غير العادية — إذا نصّ النظام الأساس على ذلك وبما يحقّق مصلحة الشركة — إلغاء حق الأولوية أو منحه لغير المساهمين.",
+      "chinese_translation": "在增资决议作出时的股东，对新发行的现金股份享有优先认购权，并可出售或转让该权利。若公司章程有规定，非常大会（EGM）可为公司利益取消优先认购权，或将其授予非股东。",
+      "translation_mode": "internally_reviewed_summary",
+      "coverage_status": "covered",
+      "legal_notes": [],
+      "terminology": [
+        {
+          "ar": "حق الأولوية",
+          "zh": "优先认购权"
+        }
+      ],
+      "risk_flags": [
+        "preemption_cancellation_minority_dilution"
+      ],
+      "source": {
+        "input_pdf": "inputs/bab4_source.pdf",
+        "page_hint": null,
+        "official_text_check": "needs_check",
+        "source_coverage_status": "explicit_in_source"
+      },
+      "llm": {
+        "chunk_id": "sa-companies-book4-prov021",
+        "retrieval_title": "Articles 128, 129 & 130 — Pre-emption Right, its Transfer and Cancellation",
+        "keywords_ar": [
+          "حق الأولوية",
+          "الاكتتاب",
+          "التنازل عن الحق",
+          "إلغاء الأولوية",
+          "الجمعية غير العادية"
+        ],
+        "keywords_zh": [
+          "优先认购权",
+          "认购",
+          "权利转让",
+          "取消优先权",
+          "EGM"
+        ],
+        "summary_en": "Shareholders at the time of the increase decision have a pre-emption right over new cash shares and may sell or assign it; the EGM may — if the bylaws so provide and for the company's interest — cancel the pre-emption right or grant it to non-shareholders."
+      }
+    },
+    {
+      "book": 4,
+      "provision_id": "sa-companies-book4-prov022",
+      "source_article_numbers": [
+        132
+      ],
+      "thematic_section": "finance_profits_and_capital_changes",
+      "provision_title_ar": "الخسائر الفادحة (بلوغ الخسائر نصف رأس المال)",
+      "provision_title_zh": "重大亏损",
+      "arabic_reference_summary": "إذا بلغت الخسائر نصف رأس المال المصدر، وجب على مجلس الإدارة الإفصاح عنها خلال ستين (60) يوماً من علمه بها، ودعوة الجمعية العامة غير العادية للانعقاد خلال مئة وثمانين (180) يوماً للنظر في استمرار الشركة، أو معالجة الخسائر، أو حلّها.",
+      "chinese_translation": "当亏损达到已发行资本的二分之一时，董事会须自知悉之日起六十（60）日内予以披露，并在一百八十（180）日内召集非常大会（EGM），审议公司存续、亏损处置或解散。",
+      "translation_mode": "internally_reviewed_summary",
+      "coverage_status": "covered",
+      "legal_notes": [],
+      "terminology": [
+        {
+          "ar": "الخسائر الفادحة",
+          "zh": "重大亏损"
+        }
+      ],
+      "risk_flags": [
+        "grave_losses_60_180_day_egm"
+      ],
+      "source": {
+        "input_pdf": "inputs/bab4_source.pdf",
+        "page_hint": null,
+        "official_text_check": "needs_check",
+        "source_coverage_status": "explicit_in_source"
+      },
+      "llm": {
+        "chunk_id": "sa-companies-book4-prov022",
+        "retrieval_title": "Article 132 — Grave Losses (losses reaching half the capital)",
+        "keywords_ar": [
+          "الخسائر الفادحة",
+          "نصف رأس المال",
+          "60 يوماً",
+          "180 يوماً",
+          "استمرار الشركة"
+        ],
+        "keywords_zh": [
+          "重大亏损",
+          "资本二分之一",
+          "60日",
+          "180日",
+          "公司存续"
+        ],
+        "summary_en": "If losses reach half the issued capital, the board must disclose within sixty (60) days of becoming aware and call an EGM within one hundred eighty (180) days to consider the company's continuation, remedying the losses, or dissolution."
+      }
+    },
+    {
+      "book": 4,
+      "provision_id": "sa-companies-book4-prov023",
+      "source_article_numbers": [
+        133
+      ],
+      "thematic_section": "finance_profits_and_capital_changes",
+      "provision_title_ar": "تخفيض رأس المال: طرقه",
+      "provision_title_zh": "减资的方式",
+      "arabic_reference_summary": "يكون تخفيض رأس المال بإحدى الطرق: إلغاء أسهم؛ أو تخفيض القيمة الاسمية (بإلغاء جزءٍ يعادل الخسائر، أو بردّ جزءٍ للمساهم، أو بإبراء الجزء غير المدفوع)؛ أو شراء الشركة أسهمها وإلغائها. وتفصيل حماية الدائنين وحقّ الاعتراض ورد في المادتين 134 و135 (غير مغطاتين في هذا المصدر).",
+      "chinese_translation": "减资的方式包括：注销股份；下调面值（注销相当于亏损的部分、向股东返还一部分，或豁免未缴部分）；或由公司回购并注销股份。债权人保护与异议的细则见第134–135条（在本源文件中未涵盖）。",
+      "translation_mode": "internally_reviewed_summary",
+      "coverage_status": "covered",
+      "legal_notes": [
+        "المصدر يحيل تفاصيل حماية الدائنين والاعتراض إلى المادتين 134 و135 — وهما غير مغطاتين في هذا المصدر (تظهران كإحالةٍ فقط)."
+      ],
+      "terminology": [
+        {
+          "ar": "تخفيض رأس المال",
+          "zh": "减资"
+        }
+      ],
+      "risk_flags": [
+        "capital_reduction_creditor_protection"
+      ],
+      "source": {
+        "input_pdf": "inputs/bab4_source.pdf",
+        "page_hint": null,
+        "official_text_check": "needs_check",
+        "source_coverage_status": "explicit_in_source"
+      },
+      "llm": {
+        "chunk_id": "sa-companies-book4-prov023",
+        "retrieval_title": "Article 133 — Capital Reduction: Methods",
+        "keywords_ar": [
+          "تخفيض رأس المال",
+          "إلغاء الأسهم",
+          "القيمة الاسمية",
+          "شراء الأسهم",
+          "حماية الدائنين"
+        ],
+        "keywords_zh": [
+          "减资",
+          "注销股份",
+          "面值",
+          "回购股份",
+          "债权人保护"
+        ],
+        "summary_en": "Capital reduction is by one of: cancelling shares; reducing the nominal value (cancelling a part equal to losses, refunding a part to shareholders, or waiving the unpaid part); or the company buying back and cancelling shares. Creditor-protection and objection detail is in Articles 134-135 (not covered in this source)."
+      }
+    }
+  ]
+}
