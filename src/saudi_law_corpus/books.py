@@ -108,6 +108,26 @@ _REGISTRY: Dict[int, BookSpec] = {
         pdf_out=os.path.join(DIST, "book2.pdf"),
         expanded_articles=[],
     ),
+    3: BookSpec(
+        book=3,
+        slug="book3",
+        articles_json=os.path.join(DATA, "articles", "book3_articles_051_057.json"),
+        articles_jsonl=os.path.join(DATA, "articles", "book3_articles_051_057.jsonl"),
+        coverage_json=os.path.join(DATA, "coverage", "book3_coverage_matrix.json"),
+        first_article=51,
+        last_article=57,
+        input_pdf="inputs/bab3_source.pdf",
+        display_title_ar="نظام الشركات السعودي — ترجمة مرجعية عربية–صينية (الباب الثالث: شركة التوصية البسيطة)",
+        display_title_zh="沙特《公司法》阿拉伯语–中文参考译本（第三编：两合公司）",
+        md_ar=os.path.join(CONTENT, "ar", "book3.md"),
+        md_zh=os.path.join(CONTENT, "zh", "book3.md"),
+        md_bilingual=os.path.join(CONTENT, "bilingual", "book3_bilingual.md"),
+        translator_notes=os.path.join(CONTENT, "notes", "book3_translator_notes.md"),
+        review_log=os.path.join(CONTENT, "notes", "book3_review_log.md"),
+        html_out=os.path.join(DIST, "book3.html"),
+        pdf_out=os.path.join(DIST, "book3.pdf"),
+        expanded_articles=[],
+    ),
 }
 
 # Shared metadata (trust posture, instrument, disclaimers) applies to all books.

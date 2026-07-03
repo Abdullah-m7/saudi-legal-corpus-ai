@@ -222,6 +222,57 @@ It is **not** an official translation and **not** legal advice.
 
 Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
 
+## Book Three / الباب الثالث — شركة التوصية البسيطة / 两合公司 · Articles 51–57
+
+Book Three covers the **limited partnership** (شركة التوصية البسيطة / 两合公司（有限合伙性质）),
+Articles 51–57. Same structured-first, book-aware architecture as Books One and Two; all prior
+commands continue to work unchanged.
+
+- **العربية:** الباب الثالث كاملًا: شركة التوصية البسيطة — المواد 51–57.
+- **中文：** 第三编（全）：两合公司（有限合伙性质）（第五十一条 至 第五十七条）。
+
+**Generated files**
+
+| File | What |
+|------|------|
+| `data/articles/book3_articles_051_057.json` | Canonical Book Three articles (51–57) |
+| `data/articles/book3_articles_051_057.jsonl` | LLM/RAG chunks (one line per article) |
+| `data/coverage/book3_coverage_matrix.json` | Coverage matrix (7 rows) |
+| `content/{ar,zh,bilingual}/book3.md` | Generated Markdown books |
+| `content/notes/book3_translator_notes.md`, `book3_review_log.md` | Notes & review log |
+| `dist/book3.html` (git-ignored) | Searchable/copyable canonical HTML view |
+| `dist/book3.pdf` (git-ignored) | Print-ready visual PDF (local, if WeasyPrint present) |
+
+**Build**
+
+```bash
+make book3-validate   # schema + Book Three QA rules
+make book3-jsonl      # -> data/articles/book3_articles_051_057.jsonl
+make book3-html       # -> dist/book3.html (+ Book Three Markdown)
+make book3-pdf        # -> dist/book3.pdf (optional; WeasyPrint)
+make book3-build      # jsonl + validate + html (+ pdf)
+make books-build      # build all books
+```
+
+**LLM / RAG usage** — identical to Books One and Two; load the JSONL (one article per line) and
+cite `article_number` + `source_provenance`. Use Book Three for `شركة التوصية البسيطة` questions.
+
+**Trust limitations (Book Three)** — this is an **internally reviewed** reference translation
+(مراجَعة داخليًا / 经内部审校), QA-reviewed against the attached reference source. It has **not**
+been verified article-by-article against the official *Umm Al-Qura* text: every Book Three article
+has `translation_mode: internally_reviewed_summary` and `source.official_text_check: needs_check`.
+It is **not** an official translation and **not** legal advice.
+
+> **Two partner classes.** A **general partner** (الشريك المتضامن / 普通合伙人（无限责任合伙人）)
+> bears unlimited joint liability; a **limited partner** (الشريك الموصي / 有限合伙人) is liable
+> **only up to its contribution** (仅以出资额为限), does **not** acquire merchant status
+> (有限合伙人不取得商人资格), and may **not** take part in external management (有限合伙人不得参与
+> 对外管理) — doing so exposes it to personal joint liability. Saudi `شركة التوصية البسيطة` has
+> independent legal personality and is **not** identical to Chinese limited partnership entities
+> (有限合伙企业).
+
+Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
+
 ## License
 
 Source code: **MIT** ([`LICENSE`](LICENSE)). Legal content: see [`NOTICE.md`](NOTICE.md).
