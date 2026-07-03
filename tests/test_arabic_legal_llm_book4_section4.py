@@ -143,9 +143,9 @@ def test_english_reference_unchanged_no_section4():
 def test_no_english_llm_directory():
     # English Legal LLM layer started (Book Four Section 1 pilot); only that file may exist.
     _elf = glob.glob(os.path.join(ROOT, "data", "english_legal_llm", "*_en_legal_llm.json"))
-    assert set(os.path.basename(p) for p in _elf) <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json"}, _elf
+    assert set(os.path.basename(p) for p in _elf) <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json", "book4_section5_en_legal_llm.json"}, _elf
     stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"), recursive=True)
-    assert set(os.path.basename(p) for p in stray) <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json"}, stray
+    assert set(os.path.basename(p) for p in stray) <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json", "book4_section5_en_legal_llm.json"}, stray
 
 
 def test_book4_section4_provisions_unchanged():
