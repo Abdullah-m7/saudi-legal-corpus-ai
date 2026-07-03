@@ -37,9 +37,11 @@ UNITS = [
     ("Book 4 Section 2", "book4_section2_en_reference.json", [67, 68, 71, 72, 75, 77]),
     ("Book 4 Section 3", "book4_section3_en_reference.json", [85, 87, 92, 93, 99, 101, 102]),
     ("Book 4 Section 4", "book4_section4_en_reference.json", [108, 113, 115, 117]),
+    ("Book 4 Section 5", "book4_section5_en_reference.json",
+     [123, 124, 126, 127, 128, 129, 130, 132, 133]),
 ]
 BOOKS_1_3_TOTAL = 57   # 34 + 16 + 7
-TOTAL_EXPECTED = 78    # 57 + 4 (S1) + 6 (S2) + 7 (S3) + 4 (S4)
+TOTAL_EXPECTED = 87    # 57 + 4 (S1) + 6 (S2) + 7 (S3) + 4 (S4) + 9 (S5)
 # Per-section forbidden Book Four articles that must NEVER get an English reference
 # record in that section's scope.
 FORBIDDEN_BY_LABEL = {
@@ -55,6 +57,10 @@ FORBIDDEN_BY_LABEL = {
     # (earlier sections) and 121-137.
     "Book 4 Section 4": ({103, 104, 105, 106, 107, 109, 110, 111, 112, 114, 116, 118, 119, 120}
                          | set(range(58, 108)) | set(range(121, 138))),
+    # Section 5: uncovered Section-5 articles (incl. 134 & 135, which exist in the
+    # English source but are cross-reference only in the model-1b source) plus
+    # 58-120 (earlier sections).
+    "Book 4 Section 5": ({121, 122, 125, 131, 134, 135, 136, 137} | set(range(58, 121))),
 }
 
 # Positive overclaim assertions that must NOT appear in the reference data.
@@ -161,7 +167,7 @@ def main() -> int:
                 problems.append("%s: forbidden overclaim term in data: '%s'" % (label, term))
 
     print("=" * 60)
-    print("Official English REFERENCE layer validation (Books 1-3 + Book 4 Sections 1-4)")
+    print("Official English REFERENCE layer validation (Books 1-3 + Book 4 Sections 1-5)")
     print("=" * 60)
     if problems:
         for p in problems:
@@ -170,7 +176,8 @@ def main() -> int:
         return 1
     print("[PASS] %d records — Books 1-3 (Arts 1-34 / 35-50 / 51-57) + "
           "Book 4 Section 1 (58,59,60,66) + Book 4 Section 2 (67,68,71,72,75,77) + "
-          "Book 4 Section 3 (85,87,92,93,99,101,102) + Book 4 Section 4 (108,113,115,117); "
+          "Book 4 Section 3 (85,87,92,93,99,101,102) + Book 4 Section 4 (108,113,115,117) + "
+          "Book 4 Section 5 (123,124,126,127,128,129,130,132,133); "
           "official_guidance_translation; governing=ar; "
           "manual_review_status=needs_manual_check; no English LLM layer" % total)
     print("RESULT: ALL CHECKS PASSED ✓")

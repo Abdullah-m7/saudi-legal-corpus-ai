@@ -437,7 +437,7 @@ Translation Department** (Royal Decree No. M/132).
 ## Official English reference alignment
 
 The **English reference alignment** now covers **Books One–Three (Articles 1–57)** plus the
-**Book Four Section 1, Section 2, Section 3 and Section 4** provision-covered articles:
+**Book Four Section 1, Section 2, Section 3, Section 4 and Section 5** provision-covered articles:
 
 - **Book One / Part 1 — General Provisions:** Articles **1–34**.
 - **Book Two / Part 2 — General Partnerships:** Articles **35–50**.
@@ -463,6 +463,13 @@ The **English reference alignment** now covers **Books One–Three (Articles 1�
   reclassified Article 110 as `not_explicit_in_source` (no distinct provision in the source PDF).
   Articles **103–107, 109, 110, 111, 112, 114, 116, 118–120 remain uncovered**, and Articles
   121–137 are not part of this scope. Book Four stays model 1b — **not** full Book Four coverage.
+- **Book Four / Part 4 — Joint-Stock Company, Section 5 (Finance, Profits and Capital Changes):**
+  Articles **123, 124, 126, 127, 128, 129, 130, 132, 133 only** (model 1b) — **per-article, 9
+  records**. **Articles 134 & 135** ("Issuance of a Capital Decrease Decision" / "Capital Decrease
+  Procedures") **are excluded even though they appear in the official English source**: the Book
+  Four model-1b source treats them as **cross-reference only** in the capital-reduction block.
+  Articles **121, 122, 125, 131, 134, 135, 136, 137 remain uncovered**. Book Four stays model 1b —
+  **not** full Book Four coverage.
 
 - **Source:** the Bureau of Experts at the Council of Ministers / Official Translation
   Department English **guidance** PDF (`inputs/companies_law_official_english_guidance.pdf`).
@@ -476,13 +483,14 @@ The **English reference alignment** now covers **Books One–Three (Articles 1�
   `*_en_legal_llm.json`, no English reasoning metadata.
 - Files: `data/english_reference/book{1,2,3}_en_reference.json`,
   `book4_section1_en_reference.json`, `book4_section2_en_reference.json`,
-  `book4_section3_en_reference.json` and `book4_section4_en_reference.json` (+ `.jsonl`), schema
+  `book4_section3_en_reference.json`, `book4_section4_en_reference.json` and
+  `book4_section5_en_reference.json` (+ `.jsonl`), schema
   `schemas/english_reference.schema.json`. Build:
   `make english-reference-book1-data` / `english-reference-book2-data` /
   `english-reference-book3-data` / `english-reference-book4-section1-data` /
   `english-reference-book4-section2-data` / `english-reference-book4-section3-data` /
-  `english-reference-book4-section4-data`;
-  validate: `make english-reference-validate` (**78 records** total).
+  `english-reference-book4-section4-data` / `english-reference-book4-section5-data`;
+  validate: `make english-reference-validate` (**87 records** total).
 - **Not legal advice.**
 
 ## License
