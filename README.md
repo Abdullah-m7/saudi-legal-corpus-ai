@@ -319,14 +319,24 @@ existing article/provision wording or Chinese translations, and is **not legal a
   `legal_effects_ar`, `liability_ar`, `monetary_thresholds`, `deadlines_ar`,
   `competent_authorities_ar`, `cross_references_ar`, `keywords_ar`, `search_queries_ar`,
   `risk_flags`, and `source_trust`.
-- **Data:** [`data/arabic_legal_llm/`](data/arabic_legal_llm/). The **pilot** is
-  [`data/arabic_legal_llm/book4_section1_ar_legal_llm.json`](data/arabic_legal_llm/book4_section1_ar_legal_llm.json),
-  derived **only** from the existing Book Four Section 1 provisions — records for **Articles 58,
-  59, 60, 66 only**. **Articles 61–65 remain uncovered** and get **no records** (no invented
-  content).
-- **Build / validate:** `make arabic-legal-llm-data` (regenerate the pilot) and
-  `make arabic-legal-llm-validate` (schema + guardrails). Tests:
-  [`tests/test_arabic_legal_llm_layer.py`](tests/test_arabic_legal_llm_layer.py).
+- **Data:** [`data/arabic_legal_llm/`](data/arabic_legal_llm/).
+  - **Books 1–3 backfill** — one per-article record for every stable article:
+    [`book1_ar_legal_llm.json`](data/arabic_legal_llm/book1_ar_legal_llm.json) (34 records,
+    Articles 1–34), [`book2_ar_legal_llm.json`](data/arabic_legal_llm/book2_ar_legal_llm.json)
+    (16 records, Articles 35–50), and
+    [`book3_ar_legal_llm.json`](data/arabic_legal_llm/book3_ar_legal_llm.json) (7 records,
+    Articles 51–57). Each record's `legal_rule_summary_ar` is the article's own
+    internally-reviewed Arabic reference summary; the other Arabic fields are derived
+    understanding of it.
+  - **Book Four Section 1 pilot** —
+    [`book4_section1_ar_legal_llm.json`](data/arabic_legal_llm/book4_section1_ar_legal_llm.json),
+    derived **only** from the existing Book Four Section 1 provisions — records for **Articles 58,
+    59, 60, 66 only**. **Articles 61–65 remain uncovered** and get **no records** (no invented
+    content).
+- **Build / validate:** `make arabic-legal-llm-data` (regenerate all layer files) and
+  `make arabic-legal-llm-validate` (schema + guardrails over every layer file). Tests:
+  [`tests/test_arabic_legal_llm_layer.py`](tests/test_arabic_legal_llm_layer.py) and
+  [`tests/test_arabic_legal_llm_books1_3.py`](tests/test_arabic_legal_llm_books1_3.py).
 - **Trust posture unchanged:** the underlying text stays an internally-reviewed reference
   summary/provision (`text_type: internally_reviewed_summary` / `internally_reviewed_provision`);
   every record keeps `source_trust.official_text_check = needs_check`; banned overclaim terms
