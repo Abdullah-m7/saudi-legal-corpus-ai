@@ -235,13 +235,19 @@ def test_group_117_debt_instruments_sukuk_egm_convertible_capital_market_law():
     assert "可转换为股份" in text and "非常大会" in text
 
 
-# -- only Sections 1 + 2 + 3 + 4 Chinese LLM files --------------------------
+# -- only repo book4 Sections 1-5 Chinese LLM files; Section 4 present -------
+# Section 5 (finance/profits/capital changes) was added as a sanctioned extension (repo
+# book4 Sections 1-5 now complete); the Section 4 file must still be present and unchanged,
+# and no file outside Sections 1-5 may exist.
+_ALLOWED_ZH_LLM = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
+                   "book4_section3_zh_legal_llm.json", "book4_section4_zh_legal_llm.json",
+                   "book4_section5_zh_legal_llm.json"}
+
+
 def test_only_sections_1_2_3_4_chinese_llm_files():
     files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")))
-    assert files == ["book4_section1_zh_legal_llm.json",
-                     "book4_section2_zh_legal_llm.json",
-                     "book4_section3_zh_legal_llm.json",
-                     "book4_section4_zh_legal_llm.json"], files
+    assert "book4_section4_zh_legal_llm.json" in files, files
+    assert set(files) <= _ALLOWED_ZH_LLM, files
 
 
 def test_section1_chinese_llm_unchanged():
@@ -260,10 +266,8 @@ def test_section3_chinese_llm_unchanged():
 
 
 def test_no_books_1_3_or_section_5_chinese_llm_files():
-    allowed = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
-               "book4_section3_zh_legal_llm.json", "book4_section4_zh_legal_llm.json"}
     for f in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")):
-        assert os.path.basename(f) in allowed, os.path.basename(f)
+        assert os.path.basename(f) in _ALLOWED_ZH_LLM, os.path.basename(f)
 
 
 # -- existing layers unchanged ----------------------------------------------
