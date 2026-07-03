@@ -27,13 +27,18 @@ SCHEMA = os.path.join(ROOT, "schemas", "english_reference.schema.json")
 META = os.path.join(ROOT, "data", "metadata", "official_english_source.json")
 REF_DIR = os.path.join(ROOT, "data", "english_reference")
 
-# Book -> (filename, expected article numbers). All must be present and exact.
-BOOKS = {
-    1: ("book1_en_reference.json", list(range(1, 35))),
-    2: ("book2_en_reference.json", list(range(35, 51))),
-    3: ("book3_en_reference.json", list(range(51, 58))),
-}
-TOTAL_EXPECTED = 57  # 34 + 16 + 7 across Books 1-3
+# (label, filename, expected article numbers). All must be present and exact.
+# Book Four Section 1 follows model 1b coverage: provision-covered articles only.
+UNITS = [
+    ("Book 1", "book1_en_reference.json", list(range(1, 35))),
+    ("Book 2", "book2_en_reference.json", list(range(35, 51))),
+    ("Book 3", "book3_en_reference.json", list(range(51, 58))),
+    ("Book 4 Section 1", "book4_section1_en_reference.json", [58, 59, 60, 66]),
+]
+BOOKS_1_3_TOTAL = 57   # 34 + 16 + 7
+TOTAL_EXPECTED = 61    # 57 + 4 (Book Four Section 1)
+# Book Four articles that must NEVER get an English reference record in this scope.
+FORBIDDEN_BOOK4 = set(range(61, 66)) | set(range(67, 138))  # 61-65 and 67-137
 
 # Positive overclaim assertions that must NOT appear in the reference data.
 BANNED = [
@@ -68,26 +73,35 @@ def main() -> int:
 
     schema = _read(SCHEMA) if os.path.exists(SCHEMA) else None
     total = 0
+    books_1_3_total = 0
 
-    for book, (fname, expected) in sorted(BOOKS.items()):
+    for label, fname, expected in UNITS:
         path = os.path.join(REF_DIR, fname)
         if not os.path.exists(path):
-            problems.append("Book %d English reference file missing: %s" % (book, fname))
+            problems.append("%s English reference file missing: %s" % (label, fname))
             continue
         records = _read(path).get("records", [])
         nums = [r.get("article_number") for r in records]
         total += len(records)
+        if label != "Book 4 Section 1":
+            books_1_3_total += len(records)
 
         if len(records) != len(expected):
-            problems.append("book %d: expected %d records, got %d" % (book, len(expected), len(records)))
+            problems.append("%s: expected %d records, got %d" % (label, len(expected), len(records)))
         if nums != expected:
-            problems.append("book %d: article numbers must be exactly %d..%d in order (got %r)"
-                            % (book, expected[0], expected[-1], nums[:40]))
+            problems.append("%s: article numbers must be exactly %r (got %r)"
+                            % (label, expected, nums[:40]))
         if len(set(nums)) != len(nums):
-            problems.append("book %d: duplicate article numbers present" % book)
+            problems.append("%s: duplicate article numbers present" % label)
+        # Book Four Section 1 must never contain 61-65 or 67-137.
+        if label == "Book 4 Section 1":
+            leaked = sorted(set(nums) & FORBIDDEN_BOOK4)
+            if leaked:
+                problems.append("%s: forbidden Book Four articles present (must be none of 61-65/67-137): %s"
+                                % (label, leaked))
 
         for r in records:
-            rid = "b%s.a%s" % (book, r.get("article_number", "?"))
+            rid = "%s.a%s" % (label, r.get("article_number", "?"))
             if schema is not None:
                 for msg in _validate_record(r, schema):
                     problems.append("%s: %s" % (rid, msg))
@@ -105,8 +119,11 @@ def main() -> int:
             if "Official Translation Department" not in str(src.get("department", "")):
                 problems.append("%s: source.department must be Official Translation Department" % rid)
 
+    if books_1_3_total != BOOKS_1_3_TOTAL:
+        problems.append("Books 1-3 English reference total must be %d (got %d)"
+                        % (BOOKS_1_3_TOTAL, books_1_3_total))
     if total != TOTAL_EXPECTED:
-        problems.append("total English reference records across Books 1-3 must be %d (got %d)"
+        problems.append("total English reference records must be %d (got %d)"
                         % (TOTAL_EXPECTED, total))
 
     # No English LLM layer yet.
@@ -117,25 +134,25 @@ def main() -> int:
         problems.append("English LLM record files must not exist yet: %s" % stray)
 
     # No overclaim wording in any reference data file.
-    for book, (fname, _) in sorted(BOOKS.items()):
+    for label, fname, _ in UNITS:
         path = os.path.join(REF_DIR, fname)
         if not os.path.exists(path):
             continue
         blob = open(path, encoding="utf-8").read().lower()
         for term in BANNED:
             if term in blob:
-                problems.append("book %d: forbidden overclaim term in data: '%s'" % (book, term))
+                problems.append("%s: forbidden overclaim term in data: '%s'" % (label, term))
 
     print("=" * 60)
-    print("Official English REFERENCE layer validation (Books 1-3)")
+    print("Official English REFERENCE layer validation (Books 1-3 + Book 4 Section 1)")
     print("=" * 60)
     if problems:
         for p in problems:
             print("  -", p)
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
-    print("[PASS] %d records across Books 1-3 (Arts 1-34 / 35-50 / 51-57); "
-          "official_guidance_translation; governing=ar; "
+    print("[PASS] %d records — Books 1-3 (Arts 1-34 / 35-50 / 51-57) + "
+          "Book 4 Section 1 (58,59,60,66); official_guidance_translation; governing=ar; "
           "manual_review_status=needs_manual_check; no English LLM layer" % total)
     print("RESULT: ALL CHECKS PASSED ✓")
     return 0
