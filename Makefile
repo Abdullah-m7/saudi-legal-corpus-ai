@@ -6,7 +6,8 @@ PY ?= python3
 export PYTHONPATH := src:$(PYTHONPATH)
 
 .PHONY: help data jsonl markdown validate book1-validate test html pdf build all clean \
-        book2-data book2-jsonl book2-validate book2-html book2-pdf book2-build books-build
+        book2-data book2-jsonl book2-validate book2-html book2-pdf book2-build books-build \
+        book3-data book3-jsonl book3-validate book3-html book3-pdf book3-build
 
 help:
 	@echo "Book One (default) targets:"
@@ -28,7 +29,15 @@ help:
 	@echo "  make book2-html    - render dist/book2.html + Book Two Markdown"
 	@echo "  make book2-pdf     - render dist/book2.pdf via WeasyPrint (optional)"
 	@echo "  make book2-build   - Book Two: jsonl + validate + html (+ pdf)"
-	@echo "  make books-build   - build both books"
+	@echo ""
+	@echo "Book Three (شركة التوصية البسيطة / 两合公司) targets:"
+	@echo "  make book3-data    - regenerate Book Three canonical JSON + coverage"
+	@echo "  make book3-jsonl   - build Book Three data/articles/*.jsonl"
+	@echo "  make book3-validate- validate Book Three (schema + QA)"
+	@echo "  make book3-html    - render dist/book3.html + Book Three Markdown"
+	@echo "  make book3-pdf     - render dist/book3.pdf via WeasyPrint (optional)"
+	@echo "  make book3-build   - Book Three: jsonl + validate + html (+ pdf)"
+	@echo "  make books-build   - build all books"
 	@echo ""
 	@echo "  make clean         - remove generated dist/ artifacts and JSONL files"
 
@@ -82,8 +91,29 @@ book2-build: book2-jsonl book2-validate book2-html
 	-$(PY) scripts/render_book2_pdf_weasyprint.py
 	@echo "book2 build complete: dist/book2.html (canonical text) + dist/book2.pdf (if WeasyPrint present)"
 
-books-build: build book2-build
+# -- Book Three ------------------------------------------------------------
+book3-data:
+	$(PY) scripts/gen_book3_articles.py
+
+book3-jsonl:
+	$(PY) scripts/build_book3_jsonl.py
+
+book3-validate:
+	$(PY) scripts/validate_corpus.py --book 3
+
+book3-html:
+	$(PY) scripts/render_book3_html.py
+
+book3-pdf: book3-html
+	-$(PY) scripts/render_book3_pdf_weasyprint.py
+
+book3-build: book3-jsonl book3-validate book3-html
+	-$(PY) scripts/render_book3_pdf_weasyprint.py
+	@echo "book3 build complete: dist/book3.html (canonical text) + dist/book3.pdf (if WeasyPrint present)"
+
+books-build: build book2-build book3-build
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
-	      dist/book2.html dist/book2.pdf data/articles/book2_articles_035_050.jsonl
+	      dist/book2.html dist/book2.pdf data/articles/book2_articles_035_050.jsonl \
+	      dist/book3.html dist/book3.pdf data/articles/book3_articles_051_057.jsonl

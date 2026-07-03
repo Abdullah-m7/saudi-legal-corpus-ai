@@ -355,3 +355,120 @@ def run_all_book2(articles: List[Dict[str, Any]], work: Dict[str, Any],
         "b2_14_art39_business_asset": rule_b2_art39_business_asset(articles),
         "b2_15_glossary_business_asset": rule_b2_glossary_business_asset(glossary),
     }
+
+
+# ==========================================================================
+# Book Three — شركة التوصية البسيطة / 两合公司（有限合伙性质）— Articles 51–57
+# ==========================================================================
+BOOK3_RANGE = list(range(51, 58))
+
+
+def rule_b3_book_number(articles: List[Dict[str, Any]]) -> List[str]:
+    return [f"Article {a['article_number']}: book must be 3"
+            for a in articles if a.get("book") != 3]
+
+
+def rule_b3_company_form(glossary: Dict[str, Any]) -> List[str]:
+    """شركة التوصية البسيطة must map to 两合公司（有限合伙性质）."""
+    terms = {t["ar"]: t["zh"] for t in glossary.get("terms", [])}
+    zh = terms.get("شركة التوصية البسيطة", "")
+    if "两合公司" in zh and "有限合伙性质" in zh:
+        return []
+    return ["glossary: شركة التوصية البسيطة must map to 两合公司（有限合伙性质）"]
+
+
+def rule_b3_partner_terms(glossary: Dict[str, Any]) -> List[str]:
+    """General/limited partner terminology must be present and correct."""
+    terms = {t["ar"]: t["zh"] for t in glossary.get("terms", [])}
+    problems = []
+    gen = terms.get("الشريك المتضامن", "")
+    if "普通合伙人" not in gen or "无限责任" not in gen:
+        problems.append("glossary: الشريك المتضامن must map to 普通合伙人（无限责任合伙人）")
+    if terms.get("الشريك الموصي", "") != "有限合伙人":
+        problems.append("glossary: الشريك الموصي must map to 有限合伙人")
+    return problems
+
+
+def rule_b3_limited_partner_liability(articles: List[Dict[str, Any]]) -> List[str]:
+    """Art 51: limited partner liable only up to contribution (出资额为限)."""
+    a = _by_number(articles).get(51)
+    if not a:
+        return ["Article 51 missing"]
+    zh = a.get("chinese_translation", "")
+    problems = []
+    if "有限合伙人" not in zh:
+        problems.append("Article 51: must mention 有限合伙人")
+    if "出资额为限" not in zh:
+        problems.append("Article 51: limited partner liability must be capped (出资额为限)")
+    return problems
+
+
+def rule_b3_limited_partner_no_merchant(articles: List[Dict[str, Any]]) -> List[str]:
+    """Art 51: limited partner does NOT acquire merchant status."""
+    a = _by_number(articles).get(51)
+    if not a:
+        return ["Article 51 missing"]
+    if "有限合伙人不取得商人资格" not in a.get("chinese_translation", ""):
+        return ["Article 51: must contain 有限合伙人不取得商人资格"]
+    return []
+
+
+def rule_b3_no_external_management(articles: List[Dict[str, Any]]) -> List[str]:
+    """Art 53: limited partner must NOT participate in external management."""
+    a = _by_number(articles).get(53)
+    if not a:
+        return ["Article 53 missing"]
+    zh = a.get("chinese_translation", "")
+    problems = []
+    if "有限合伙人" not in zh or "对外管理" not in zh:
+        problems.append("Article 53: must address 有限合伙人 / 对外管理")
+    if "不得" not in zh:
+        problems.append("Article 53: must prohibit (不得) external-management participation")
+    # Liability consequence of interfering must be captured (present in source).
+    if "连带责任" not in zh:
+        problems.append("Article 53: interference liability (连带责任) must be captured")
+    return problems
+
+
+def rule_b3_legal_personality_caveat(articles: List[Dict[str, Any]]) -> List[str]:
+    """Preserve caveat: Saudi توصية بسيطة not identical to Chinese limited partnership."""
+    a = _by_number(articles).get(51)
+    if not a:
+        return ["Article 51 missing"]
+    blob = " ".join(a.get("legal_notes", []))
+    if "有限合伙企业" in blob and "الشخصية الاعتبارية" in blob:
+        return []
+    return ["Article 51: legal-personality caveat (not identical to Chinese 有限合伙企业) "
+            "must be preserved in legal_notes"]
+
+
+def rule_scope_51_57(doc: Dict[str, Any]) -> List[str]:
+    problems = []
+    scope_zh = doc.get("scope_zh", "")
+    scope_ar = doc.get("scope_ar", "")
+    if "第五十一条" not in scope_zh or "第五十七条" not in scope_zh:
+        problems.append("book3 scope_zh must state 第五十一条 至 第五十七条")
+    if "51" not in scope_ar or "57" not in scope_ar:
+        problems.append("book3 scope_ar must state المواد 51–57")
+    return problems
+
+
+def run_all_book3(articles: List[Dict[str, Any]], work: Dict[str, Any],
+                  glossary: Dict[str, Any], doc: Dict[str, Any]) -> Dict[str, List[str]]:
+    """Run Book Three QA rules; returns {rule_name: [problems]}."""
+    return {
+        "b3_1_range_51_57": rule_range(articles, BOOK3_RANGE),
+        "b3_2_no_duplicate_numbers": rule_no_duplicates(articles),
+        "b3_3_bilingual_present": rule_bilingual_present(articles),
+        "b3_4_book_number_3": rule_b3_book_number(articles),
+        "b3_5_trust_posture": rule_trust_posture(articles),
+        "b3_6_no_verified_wording": rule_no_verified_wording(articles),
+        "b3_7_company_form": rule_b3_company_form(glossary),
+        "b3_8_partner_terms": rule_b3_partner_terms(glossary),
+        "b3_9_limited_partner_liability": rule_b3_limited_partner_liability(articles),
+        "b3_10_limited_partner_no_merchant": rule_b3_limited_partner_no_merchant(articles),
+        "b3_11_no_external_management": rule_b3_no_external_management(articles),
+        "b3_12_legal_personality_caveat": rule_b3_legal_personality_caveat(articles),
+        "b3_13_disclaimer_non_official": rule_disclaimer_non_official(work),
+        "b3_14_scope_51_57": rule_scope_51_57(doc),
+    }

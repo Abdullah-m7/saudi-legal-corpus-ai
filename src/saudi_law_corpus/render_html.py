@@ -140,6 +140,7 @@ def _md_to_html(md: str) -> str:
     i, n = 0, len(lines)
     in_list = False
     quote_buf: List[str] = []
+    para_buf: List[str] = []
 
     def close_list():
         nonlocal in_list
@@ -153,11 +154,19 @@ def _md_to_html(md: str) -> str:
             out.append(f"<blockquote><p>{inner}</p></blockquote>")
             quote_buf.clear()
 
+    def flush_para():
+        # Join soft-wrapped paragraph lines before inline rendering so bold/code
+        # spans that wrap across source lines are not split into raw markers.
+        if para_buf:
+            out.append(f"<p>{_md_inline(' '.join(para_buf))}</p>")
+            para_buf.clear()
+
     while i < n:
         s = lines[i].rstrip()
 
         # blockquote (group consecutive '>' lines)
         if s.lstrip().startswith(">"):
+            flush_para()
             close_list()
             quote_buf.append(s.lstrip()[1:].lstrip())
             i += 1
@@ -165,12 +174,14 @@ def _md_to_html(md: str) -> str:
         flush_quote()
 
         if not s.strip():
+            flush_para()
             close_list()
             i += 1
             continue
 
         # pipe table: a '|' header line followed by a separator line
         if s.lstrip().startswith("|") and i + 1 < n and _is_table_separator(lines[i + 1]):
+            flush_para()
             close_list()
             header = _split_row(s)
             i += 2
@@ -196,6 +207,7 @@ def _md_to_html(md: str) -> str:
         if s.startswith("#### "):
             heading = (5, s[5:])
         if heading:
+            flush_para()
             close_list()
             lvl, txt = heading
             out.append(f"<h{lvl}>{_md_inline(txt)}</h{lvl}>")
@@ -204,18 +216,20 @@ def _md_to_html(md: str) -> str:
 
         # unordered list
         if s.lstrip().startswith(("- ", "* ")):
+            flush_para()
             if not in_list:
                 out.append("<ul>"); in_list = True
             out.append(f"<li>{_md_inline(s.lstrip()[2:])}</li>")
             i += 1
             continue
 
-        # paragraph
+        # paragraph (buffer soft-wrapped lines; emitted by flush_para)
         close_list()
-        out.append(f"<p>{_md_inline(s)}</p>")
+        para_buf.append(s.strip())
         i += 1
 
     flush_quote()
+    flush_para()
     close_list()
     return "\n".join(out)
 

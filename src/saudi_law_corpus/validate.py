@@ -94,6 +94,8 @@ def validate_book(book: int = 1) -> Tuple[bool, Dict[str, List[str]]]:
         qa = qa_rules.run_all(articles, work)
     elif book == 2:
         qa = qa_rules.run_all_book2(articles, work, glossary, articles_doc)
+    elif book == 3:
+        qa = qa_rules.run_all_book3(articles, work, glossary, articles_doc)
     else:
         qa = {}
     for name, problems in qa.items():
