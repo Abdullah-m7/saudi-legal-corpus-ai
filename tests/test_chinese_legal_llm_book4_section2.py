@@ -234,12 +234,13 @@ def test_group_77_board_powers_binding_bad_faith():
     assert "恶意" in text and "越权" in text
 
 
-# -- only Sections 1-4 Chinese LLM files; Section 2 present and unchanged ----
-# Sections 3 (general_assemblies) and 4 (shares/debt/sukuk) were added as sanctioned
-# extensions; the Section 2 file must still be present and unchanged, and no file outside
-# Sections 1-4 may exist.
+# -- only repo book4 Sections 1-5 Chinese LLM files; Section 2 present -------
+# Sections 3-5 were added as sanctioned extensions (repo book4 Sections 1-5 now complete);
+# the Section 2 file must still be present and unchanged, and no file outside Sections 1-5
+# may exist.
 _ALLOWED_ZH_LLM = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
-                   "book4_section3_zh_legal_llm.json", "book4_section4_zh_legal_llm.json"}
+                   "book4_section3_zh_legal_llm.json", "book4_section4_zh_legal_llm.json",
+                   "book4_section5_zh_legal_llm.json"}
 
 
 def test_only_sections_1_2_chinese_llm_files():
