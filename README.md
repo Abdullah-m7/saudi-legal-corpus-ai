@@ -537,12 +537,12 @@ English Legal LLM coverage.
   `make english-legal-llm-validate`.
 - **Not legal advice.**
 
-## Chinese Legal LLM-ready layer (Book Four Sections 1–2)
+## Chinese Legal LLM-ready layer (Book Four Sections 1–3)
 
-The **Chinese Legal LLM-ready layer** currently covers **Book Four Sections 1 and 2 only**
+The **Chinese Legal LLM-ready layer** currently covers **Book Four Sections 1, 2 and 3 only**
 — it is **not** full Chinese Legal LLM coverage.
 
-- **Scope:** Book Four / Part 4 — **9 `article_reference` records** across two sections:
+- **Scope:** Book Four / Part 4 — **14 `article_reference` records** across three sections:
   - **Section 1** (Establishment and Capital / 设立与资本), article groups **[58], [59], [60], [66]**
     — 4 records
     ([`data/chinese_legal_llm/book4_section1_zh_legal_llm.json`](data/chinese_legal_llm/book4_section1_zh_legal_llm.json)).
@@ -550,10 +550,16 @@ The **Chinese Legal LLM-ready layer** currently covers **Book Four Sections 1 an
     **[67, 68], [71], [72], [75], [77]** — 5 records (the source groups Articles 67 & 68 into one
     provision, preserved exactly; no records for uncovered Articles 69, 70, 73, 74, 76, 78–83)
     ([`data/chinese_legal_llm/book4_section2_zh_legal_llm.json`](data/chinese_legal_llm/book4_section2_zh_legal_llm.json)).
+  - **Section 3** (General Assemblies / 股东大会), source-preserved provision groups
+    **[85, 87], [92, 93], [99], [101], [102]** — 5 records (the source groups Articles 85 & 87 and
+    92 & 93 into one provision each, preserved exactly; no records for uncovered Articles 84, 86, 88,
+    89, 90, 91, 94–98, 100 — Articles 84, 89 and 100 remain owner-reconciled excluded)
+    ([`data/chinese_legal_llm/book4_section3_zh_legal_llm.json`](data/chinese_legal_llm/book4_section3_zh_legal_llm.json)).
 - **Source:** the **existing internal Chinese provision text** already in the repo — each record's
   **`legal_rule_text_zh` is copied verbatim** from the corresponding provision's `chinese_translation`
   field (Section 1 from [`data/articles/book4_provisions_058_066.json`](data/articles/book4_provisions_058_066.json),
-  Section 2 from [`data/articles/book4_provisions_067_083.json`](data/articles/book4_provisions_067_083.json)).
+  Section 2 from [`data/articles/book4_provisions_067_083.json`](data/articles/book4_provisions_067_083.json),
+  Section 3 from [`data/articles/book4_provisions_084_102.json`](data/articles/book4_provisions_084_102.json)).
   There is **no new/machine translation**, **no model-generated summary**, and **no
   `legal_rule_summary_zh`** field (the schema's `additionalProperties:false` forbids it). `keywords_zh`
   reuses the provision's own approved `llm.keywords_zh`; the other derived metadata is kept conservative
@@ -562,9 +568,10 @@ The **Chinese Legal LLM-ready layer** currently covers **Book Four Sections 1 an
   (`source_trust.chinese_source_status = internal_working_translation`, `governing_text_language = ar`,
   `official_text_check = needs_check`, `manual_review_status = needs_manual_check`).
 - **Not an official Chinese translation. Not legal advice. Not full Chinese Legal LLM coverage** — no
-  Books 1–3 and no Book Four Sections 3–5 Chinese records yet.
-- Schema `schemas/chinese_legal_llm.schema.json`; build `make chinese-legal-llm-book4-section1-data`
-  and `make chinese-legal-llm-book4-section2-data`; validate `make chinese-legal-llm-validate`.
+  Books 1–3 and no Book Four Sections 4–5 Chinese records yet.
+- Schema `schemas/chinese_legal_llm.schema.json`; build `make chinese-legal-llm-book4-section1-data`,
+  `make chinese-legal-llm-book4-section2-data` and `make chinese-legal-llm-book4-section3-data`;
+  validate `make chinese-legal-llm-validate`.
 
 ## License
 

@@ -1,0 +1,358 @@
+{
+  "layer_id": "sa-companies-chinese-legal-llm",
+  "layer_status": "pilot_extension",
+  "scope": "book4_section3_general_assemblies",
+  "book": 4,
+  "section_key": "general_assemblies",
+  "section_title_zh": "股东大会",
+  "article_range": "84-102",
+  "explicit_articles": [
+    85,
+    87,
+    92,
+    93,
+    99,
+    101,
+    102
+  ],
+  "provision_groups": [
+    [
+      85,
+      87
+    ],
+    [
+      92,
+      93
+    ],
+    [
+      99
+    ],
+    [
+      101
+    ],
+    [
+      102
+    ]
+  ],
+  "uncovered_articles_excluded": [
+    84,
+    86,
+    88,
+    89,
+    90,
+    91,
+    94,
+    95,
+    96,
+    97,
+    98,
+    100
+  ],
+  "source_field": "chinese_translation",
+  "summary_source": "legal_rule_text_zh is copied verbatim from the provision's chinese_translation field in data/articles/book4_provisions_084_102.json (no new/machine translation, no model-generated summary).",
+  "chinese_source_status": "internal_working_translation",
+  "governing_text_language": "ar",
+  "official_text_check": "needs_check",
+  "disclaimer_zh": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本；具约束力的法定文本为阿拉伯文原文。仅第四编第三节（股东大会）——非完整中文法律 LLM 覆盖，非官方翻译，非法律意见。",
+  "records": [
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-prov010",
+      "article_numbers": [
+        85,
+        87
+      ],
+      "legal_subject_zh": "普通大会与非常大会的职权",
+      "legal_rule_text_zh": "普通大会（OGM）职权：选举与解聘董事、任命审计师、审议财务报表与报告、分配利润、提取储备。非常大会（EGM）职权：修改公司章程（不得剥夺股东的基本权利，增加财务负担须经全体股东同意）、决定公司存续或解散、批准公司回购自身股份。",
+      "legal_basis_type": "mixed",
+      "actors_zh": [
+        "普通大会",
+        "非常大会",
+        "董事",
+        "审计师"
+      ],
+      "rights_zh": [
+        "选举与解聘董事",
+        "任命审计师",
+        "审议财务报表与报告",
+        "分配利润",
+        "提取储备"
+      ],
+      "obligations_zh": [],
+      "prohibitions_zh": [
+        "不得剥夺股东的基本权利"
+      ],
+      "conditions_zh": [
+        "增加财务负担须经全体股东同意"
+      ],
+      "exceptions_zh": [],
+      "legal_effects_zh": [
+        "修改公司章程",
+        "决定公司存续或解散",
+        "批准公司回购自身股份"
+      ],
+      "liability_zh": [],
+      "monetary_thresholds": [],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "普通大会",
+        "非常大会",
+        "职权",
+        "修改章程",
+        "公司解散"
+      ],
+      "search_queries_zh": [
+        "普通大会有哪些职权？",
+        "非常大会可以修改公司章程吗？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_084_102.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    },
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-prov011",
+      "article_numbers": [
+        92,
+        93
+      ],
+      "legal_subject_zh": "普通大会与非常大会的法定人数与表决多数",
+      "legal_rule_text_zh": "普通大会（OGM）法定人数：首次会议须代表四分之一股份（章程可上调，但不超过二分之一）；第二次会议无论出席多少均有效；决议以出席所代表表决权的多数通过。非常大会（EGM）法定人数：首次须二分之一（章程可上调，但不超过三分之二），第二次须四分之一，第三次无论出席多少均有效；决议以所代表表决权的三分之二通过；若涉及增减资本、延长公司期限、提前解散、合并或分立，则须四分之三多数。",
+      "legal_basis_type": "procedural",
+      "actors_zh": [
+        "普通大会",
+        "非常大会"
+      ],
+      "rights_zh": [],
+      "obligations_zh": [],
+      "prohibitions_zh": [],
+      "conditions_zh": [
+        "首次会议须代表四分之一股份",
+        "第二次会议无论出席多少均有效",
+        "决议以出席所代表表决权的多数通过",
+        "决议以所代表表决权的三分之二通过"
+      ],
+      "exceptions_zh": [],
+      "legal_effects_zh": [
+        "若涉及增减资本、延长公司期限、提前解散、合并或分立，则须四分之三多数"
+      ],
+      "liability_zh": [],
+      "monetary_thresholds": [
+        {
+          "amount": 0.75,
+          "currency": "ratio",
+          "description_zh": "须四分之三多数"
+        }
+      ],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "法定人数",
+        "表决多数",
+        "普通大会",
+        "非常大会",
+        "四分之三"
+      ],
+      "search_queries_zh": [
+        "普通大会的法定人数是多少？",
+        "非常大会的表决多数要求是多少？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_084_102.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    },
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-prov012",
+      "article_numbers": [
+        99
+      ],
+      "legal_subject_zh": "撤销股东大会决议",
+      "legal_rule_text_zh": "在会上提出异议、或有正当理由缺席的股东，可请求撤销违反本法或公司章程的决议；自决议作出之日起满九十（90）日后不予受理；原告须在诉讼全程保持股东身份；不影响善意第三人的权利。",
+      "legal_basis_type": "mixed",
+      "actors_zh": [
+        "股东",
+        "原告",
+        "善意第三人"
+      ],
+      "rights_zh": [
+        "可请求撤销违反本法或公司章程的决议"
+      ],
+      "obligations_zh": [],
+      "prohibitions_zh": [],
+      "conditions_zh": [
+        "在会上提出异议、或有正当理由缺席的股东",
+        "原告须在诉讼全程保持股东身份"
+      ],
+      "exceptions_zh": [],
+      "legal_effects_zh": [
+        "不影响善意第三人的权利"
+      ],
+      "liability_zh": [],
+      "monetary_thresholds": [],
+      "deadlines_zh": [
+        "自决议作出之日起满九十（90）日后不予受理"
+      ],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "撤销决议",
+        "异议",
+        "90日",
+        "股东身份",
+        "善意第三人"
+      ],
+      "search_queries_zh": [
+        "哪些股东可以请求撤销股东大会决议？",
+        "撤销决议的期限是多久？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_084_102.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    },
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-prov013",
+      "article_numbers": [
+        101
+      ],
+      "legal_subject_zh": "以传阅方式作出决议",
+      "legal_rule_text_zh": "非上市公司中，普通大会事项可以传阅方式以表决权多数通过，非常大会事项须以至少百分之七十五（75%）的表决权通过；公司章程要求更高比例的，从其规定。",
+      "legal_basis_type": "procedural",
+      "actors_zh": [
+        "非上市公司",
+        "普通大会",
+        "非常大会"
+      ],
+      "rights_zh": [],
+      "obligations_zh": [],
+      "prohibitions_zh": [],
+      "conditions_zh": [
+        "公司章程要求更高比例的，从其规定"
+      ],
+      "exceptions_zh": [],
+      "legal_effects_zh": [
+        "普通大会事项可以传阅方式以表决权多数通过",
+        "非常大会事项须以至少百分之七十五（75%）的表决权通过"
+      ],
+      "liability_zh": [],
+      "monetary_thresholds": [
+        {
+          "amount": 0.75,
+          "currency": "ratio",
+          "description_zh": "非常大会事项须以至少百分之七十五（75%）的表决权通过"
+        }
+      ],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "传阅决议",
+        "非上市公司",
+        "75%",
+        "非常大会"
+      ],
+      "search_queries_zh": [
+        "非上市公司可以传阅方式作出决议吗？",
+        "传阅决议的表决比例是多少？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_084_102.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    },
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-prov014",
+      "article_numbers": [
+        102
+      ],
+      "legal_subject_zh": "申请对公司进行检查",
+      "legal_rule_text_zh": "持有公司资本百分之五（5%）的股东，在有理由怀疑董事会成员或审计师行为的情形下，可向主管司法机关申请对公司进行检查；主管司法机关可判令由申请人承担检查费用。",
+      "legal_basis_type": "mixed",
+      "actors_zh": [
+        "股东",
+        "董事会成员",
+        "审计师",
+        "主管司法机关",
+        "申请人"
+      ],
+      "rights_zh": [
+        "可向主管司法机关申请对公司进行检查"
+      ],
+      "obligations_zh": [],
+      "prohibitions_zh": [],
+      "conditions_zh": [
+        "持有公司资本百分之五（5%）的股东",
+        "在有理由怀疑董事会成员或审计师行为的情形下"
+      ],
+      "exceptions_zh": [],
+      "legal_effects_zh": [
+        "主管司法机关可判令由申请人承担检查费用"
+      ],
+      "liability_zh": [],
+      "monetary_thresholds": [
+        {
+          "amount": 0.05,
+          "currency": "ratio",
+          "description_zh": "持有公司资本百分之五（5%）的股东"
+        }
+      ],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [
+        "主管司法机关"
+      ],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "公司检查",
+        "5%",
+        "司法机关",
+        "检查费用"
+      ],
+      "search_queries_zh": [
+        "哪些股东可以申请对公司进行检查？",
+        "申请公司检查的费用由谁承担？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_084_102.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    }
+  ]
+}

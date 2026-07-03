@@ -228,11 +228,12 @@ def test_art66_in_kind_valuation_voting_restriction():
     assert "须经该出资人同意" in text
 
 
-# -- only Sections 1-2 Chinese LLM files; no Books 1-3 / Sections 3-5 --------
-# Section 2 (board_and_governance) was added as a sanctioned extension; the Section 1
-# pilot file must still be present and unchanged, and no file outside Sections 1-2 may
-# exist.
-_ALLOWED_ZH_LLM = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json"}
+# -- only Sections 1-3 Chinese LLM files; no Books 1-3 / Sections 4-5 --------
+# Sections 2 (board_and_governance) and 3 (general_assemblies) were added as sanctioned
+# extensions; the Section 1 pilot file must still be present and unchanged, and no file
+# outside Sections 1-3 may exist.
+_ALLOWED_ZH_LLM = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
+                   "book4_section3_zh_legal_llm.json"}
 
 
 def test_only_pilot_chinese_llm_file():
