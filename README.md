@@ -364,6 +364,25 @@ Translation Department** (Royal Decree No. M/132).
   validation `make official-english-source-validate`.
 - **Not legal advice.**
 
+## Official English reference alignment
+
+A **Book One English reference alignment pilot** now exists for **Articles 1–34**
+(Part 1, General Provisions).
+
+- **Source:** the Bureau of Experts at the Council of Ministers / Official Translation
+  Department English **guidance** PDF (`inputs/companies_law_official_english_guidance.pdf`).
+- The English is **official guidance / reference only**
+  (`english_source_status = official_guidance_translation`); the text is the source's own
+  wording, segmented by its `Article N:` headings — **not** model-written.
+- **Arabic remains governing** (`governing_text_language = ar`). Article-level alignment is
+  `manual_review_status = needs_manual_check` (not yet human-verified).
+- The **English Legal LLM-ready layer is not created yet** — no `data/english_legal_llm/`, no
+  `*_en_legal_llm.json`, no English reasoning metadata.
+- Files: `data/english_reference/book1_en_reference.json` (+ `.jsonl`),
+  schema `schemas/english_reference.schema.json`. Build: `make english-reference-book1-data`;
+  validate: `make english-reference-validate`.
+- **Not legal advice.**
+
 ## License
 
 Source code: **MIT** ([`LICENSE`](LICENSE)). Legal content: see [`NOTICE.md`](NOTICE.md).
