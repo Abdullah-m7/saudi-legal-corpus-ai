@@ -38,8 +38,13 @@ def _articles_with_provision_records():
 # Articles explicitly rendered in inputs/bab4_source.pdf (from preflight inspection).
 # Articles 134–135 are only REFERENCED (creditor-protection detail), not rendered,
 # so they are treated as not_explicit_in_source.
+# Section 3 reconciliation (owner Option 1, see BOOK4_SECTION3_SCOPE_DECISION.md):
+# Articles 84 and 89 were over-listed at preflight but are NOT distinctly rendered in
+# the source (89 absent entirely; 84 has no separate block — the powers block is
+# tagged 85、87), so they are reclassified to not_explicit_in_source. Article 100
+# also stays not_explicit_in_source (the source tags circulation as 101 only).
 EXPLICIT = {
-    58, 59, 60, 66, 67, 68, 71, 72, 75, 77, 84, 85, 87, 89, 92, 93, 99, 101, 102,
+    58, 59, 60, 66, 67, 68, 71, 72, 75, 77, 85, 87, 92, 93, 99, 101, 102,
     108, 110, 113, 115, 117, 123, 124, 126, 127, 128, 129, 130, 132, 133,
 }
 
@@ -56,10 +61,8 @@ EXPLICIT_NOTES = {
     72: "禁止向董事提供贷款 / حظر التمويل",
     75: "重大资产出售 / بيع الأصول الجوهرية",
     77: "董事会对第三人的权限 / صلاحيات المجلس تجاه الغير",
-    84: "OGM 职权 / اختصاصات الجمعية العادية",
-    85: "OGM/EGM 职权 / الاختصاصات",
-    87: "EGM 职权 / اختصاصات غير العادية",
-    89: "类别股东专门大会 / الجمعية الخاصة",
+    85: "大会职权（OGM/EGM） / اختصاصات الجمعيتين",
+    87: "普通大会职权 / اختصاصات الجمعية العادية",
     92: "法定人数与多数决 / النصاب والأغلبية",
     93: "EGM 法定人数/多数 / نصاب وأغلبية غير العادية",
     99: "决议撤销 / إبطال القرار",
