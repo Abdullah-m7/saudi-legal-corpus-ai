@@ -100,6 +100,22 @@ def _norm(s):
 _ART_RE = re.compile(r"^###\s+المادة\s+(.+?)\s*$")
 _ANY_HEADING_RE = re.compile(r"^#{1,6}\s+")
 
+# Non-statutory source-packet boundary / commentary markers. Lines containing any of these
+# are NOT article text and are excluded from official_text_ar. These phrases never occur in
+# genuine statutory article wording, so a keyword match is safe.
+PACKET_MARKER_KEYWORDS = (
+    "نهاية النص", "النص المرشح", "نهاية الملف", "نهاية الحزمة",
+    "source packet", "end of packet", "end of file", "end of text",
+)
+
+
+def is_packet_marker(line):
+    s = line.strip()
+    if not s:
+        return False
+    low = s.lower()
+    return any(k.lower() in low for k in PACKET_MARKER_KEYWORDS)
+
 
 def _sha256(text):
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
@@ -131,8 +147,10 @@ def parse(md_text):
         while j < len(lines) and not _ANY_HEADING_RE.match(lines[j]):
             body_lines.append(lines[j])
             j += 1
-        # drop horizontal-rule separators; keep all legal text verbatim
-        body_lines = [b for b in body_lines if b.strip() not in ("---", "***", "___")]
+        # drop markdown horizontal-rule separators and non-statutory source-packet boundary /
+        # commentary markers; keep all legal text verbatim
+        body_lines = [b for b in body_lines
+                      if b.strip() not in ("---", "***", "___") and not is_packet_marker(b)]
         body = "\n".join(body_lines).strip()
         if not body:
             raise SystemExit("article %d (%s): empty official_text_ar" % (n, ordinal))

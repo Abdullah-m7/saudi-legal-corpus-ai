@@ -70,6 +70,25 @@ def test_article_281_title_is_law_enforcement():
     assert _arts()[-1]["article_number"] == 281
 
 
+def test_article_281_text_has_no_source_packet_marker():
+    a281 = _arts()[-1]
+    assert a281["article_number"] == 281
+    txt = a281["official_text_ar"]
+    assert "نهاية النص" not in txt
+    assert "النص المرشح" not in txt
+    # Article 281 official_text_ar must be exactly the statutory text only.
+    assert txt == "يعمل بالنظام بعد (مائة وثمانين) يومًا من تاريخ نشره في الجريدة الرسمية.", repr(txt)
+
+
+def test_no_official_text_contains_source_packet_markers():
+    banned = ("نهاية النص", "النص المرشح", "نهاية الملف", "نهاية الحزمة",
+              "source packet", "end of packet", "end of file", "end of text")
+    for a in _arts():
+        low = a["official_text_ar"].lower()
+        for m in banned:
+            assert m.lower() not in low, (a["article_number"], m)
+
+
 def test_no_empty_official_text():
     for a in _arts():
         assert a["official_text_ar"].strip(), a["article_number"]

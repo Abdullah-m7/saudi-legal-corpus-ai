@@ -37,6 +37,13 @@ RECORDS = os.path.join(OA_DIR, "companies_law_m132_1443_official_arabic_user_pro
 
 TARGET = 281
 
+# Non-statutory source-packet boundary / commentary markers that must NEVER appear inside
+# official_text_ar (they are packet decoration, not statutory text).
+BANNED_MARKERS = (
+    "نهاية النص", "النص المرشح", "نهاية الملف", "نهاية الحزمة",
+    "source packet", "end of packet", "end of file", "end of text",
+)
+
 
 def _read(path):
     with open(path, "r", encoding="utf-8") as fh:
@@ -94,6 +101,11 @@ def main() -> int:
             want = hashlib.sha256(txt.encode("utf-8")).hexdigest()
             if a.get("text_hash_sha256") != want:
                 problems.append("art %s: text_hash_sha256 does not match official_text_ar" % n)
+            low = txt.lower()
+            for marker in BANNED_MARKERS:
+                if marker.lower() in low:
+                    problems.append("art %s: official_text_ar contains non-statutory source-packet "
+                                    "marker/commentary: %r" % (n, marker))
 
     # ingestion_status manifest consistency (honest, unverified)
     if os.path.exists(STATUS):
