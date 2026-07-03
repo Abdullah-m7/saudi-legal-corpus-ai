@@ -504,14 +504,27 @@ Companies Law structure; repo book4 is the modeled Joint-Stock Company scope.)
   validate: `make english-reference-validate` (**87 records** total).
 - **Not legal advice.**
 
-## English Legal LLM-ready layer (repo book4 Sections 1–5)
+## English Legal LLM-ready layer (Books 1–3 + repo book4 Sections 1–5)
 
-The **English Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5**
-— all five thematic sections of the modeled Joint-Stock Company scope (repo book4 convention; an
-internal repository label, not a claim about the official Companies Law structure) — but **not**
-Books 1–3, so it is still **not** full English Legal LLM coverage.
+The **English Legal LLM-ready layer** currently covers **Books 1–3 (Articles 1–57)** plus **repo
+book4 Sections 1, 2, 3, 4 and 5** — the five thematic sections of the modeled Joint-Stock Company
+scope (repo book4 convention; an internal repository label, not a claim about the official Companies
+Law structure). This is **not** full Saudi Companies Law coverage: repo book4 stays model-1b
+(provision-covered articles only, not all of Articles 58–137).
 
-- **Scope:**
+- **Books 1–3 (backfill) — one `article_reference` record per article:**
+  - **Book 1 (General Provisions):** **Articles 1–34** — **34 records**
+    ([`data/english_legal_llm/book1_en_legal_llm.json`](data/english_legal_llm/book1_en_legal_llm.json)).
+  - **Book 2 (General Partnerships):** **Articles 35–50** — **16 records**
+    ([`data/english_legal_llm/book2_en_legal_llm.json`](data/english_legal_llm/book2_en_legal_llm.json)).
+  - **Book 3 (Limited Partnership):** **Articles 51–57** — **7 records**
+    ([`data/english_legal_llm/book3_en_legal_llm.json`](data/english_legal_llm/book3_en_legal_llm.json)).
+  - **57 records total.** For this backfill the derived metadata is kept deliberately conservative:
+    `legal_subject_en` reuses the reference record's own `article_heading_en`, `keywords_en` reuses the
+    reference's approved `llm.keywords_en`, `legal_basis_type` is the conservative catch-all `mixed`,
+    and the other derived arrays are left empty rather than inventing legal implications — the
+    authoritative content is the verbatim `legal_rule_text_en`.
+- **repo book4 Sections 1–5 (Joint-Stock Company modeled scope):**
   - **Section 1 (Establishment and Capital):** **Articles 58, 59, 60, 66** — **4 `article_reference`
     records** ([`data/english_legal_llm/book4_section1_en_legal_llm.json`](data/english_legal_llm/book4_section1_en_legal_llm.json)).
   - **Section 2 (Board of Directors and Governance):** **Articles 67, 68, 71, 72, 75, 77** — **6
@@ -533,7 +546,9 @@ Books 1–3, so it is still **not** full English Legal LLM coverage.
     ([`data/english_legal_llm/book4_section5_en_legal_llm.json`](data/english_legal_llm/book4_section5_en_legal_llm.json)).
     **Articles 134 & 135** remain **excluded / uncovered** (cross-reference-only in the model-1b
     scope), and the other uncovered Section-5 articles (121, 122, 125, 131, 136, 137) get **no records**.
-  - **30 records total.**
+  - **30 records total** (repo book4 Sections 1–5).
+- **English Legal LLM total: 8 files / 87 records** — Books 1–3 = 57 records; repo book4 Sections 1–5
+  = 30 records.
 - Each record's **`legal_rule_text_en` is copied verbatim** from the corresponding official English
   **reference alignment** record's `english_reference_text` — there are **no model-generated English
   legal summaries** and **no `legal_rule_summary_en`** field (the schema's `additionalProperties:false`
@@ -542,11 +557,12 @@ Books 1–3, so it is still **not** full English Legal LLM coverage.
 - **English is guidance / reference only; Arabic remains governing**
   (`source_trust.english_source_status = official_guidance_translation`,
   `governing_text_language = ar`, `manual_review_status = needs_manual_check`).
-- **Not** full English Legal LLM coverage — Book Four Sections 1–5 are complete, but there are **no**
-  Books 1–3 English Legal LLM records yet.
-- Schema `schemas/english_legal_llm.schema.json`; build `make english-legal-llm-book4-section1-data`
-  / `-section2-data` / `-section3-data` / `-section4-data` / `-section5-data`; validate
-  `make english-legal-llm-validate`.
+- **Not** full Saudi Companies Law English Legal LLM coverage — this covers **Books 1–3 plus repo
+  book4 Sections 1–5**; repo book4 stays model-1b (not all of Articles 58–137), and "book4" remains an
+  internal repository label for the modeled Joint-Stock Company scope.
+- Schema `schemas/english_legal_llm.schema.json`; build `make english-legal-llm-book1-data` /
+  `-book2-data` / `-book3-data` / `-book4-section1-data` / `-section2-data` / `-section3-data` /
+  `-section4-data` / `-section5-data`; validate `make english-legal-llm-validate`.
 - **Not legal advice.**
 
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)

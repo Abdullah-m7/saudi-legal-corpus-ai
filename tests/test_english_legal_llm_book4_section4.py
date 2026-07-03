@@ -252,7 +252,7 @@ def test_only_sections_1_to_4_files():
     files = set(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
     need = {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json"}
     assert need <= files, files
-    assert files <= (need | {"book4_section5_en_legal_llm.json"}), files
+    assert files <= (need | {"book1_en_legal_llm.json", "book2_en_legal_llm.json", "book3_en_legal_llm.json", "book4_section5_en_legal_llm.json"}), files
 
 
 def test_sections_1_2_3_unchanged():

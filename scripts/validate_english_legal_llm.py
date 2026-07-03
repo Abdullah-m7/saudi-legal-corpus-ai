@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Validate the English Legal LLM-ready layer (repo book4 Sections 1-5).
+"""Validate the English Legal LLM-ready layer (Books 1-3 + repo book4 Sections 1-5).
 
 "book4" is an internal repository label for the modeled Joint-Stock Company chapter/part
 scope (repo book4 convention), not a claim about the whole Saudi Companies Law structure.
 
 Enforces:
-- exactly the sanctioned files exist: book4_section1/2/3/4/5_en_legal_llm.json; no other
-  sections/books;
-- 30 records total — S1 [58],[59],[60],[66]; S2 [67],[68],[71],[72],[75],[77];
-  S3 [85],[87],[92],[93],[99],[101],[102]; S4 [108],[113],[115],[117];
-  S5 [123],[124],[126],[127],[128],[129],[130],[132],[133]; no uncovered articles;
+- exactly the sanctioned files exist: book1/2/3_en_legal_llm.json +
+  book4_section1/2/3/4/5_en_legal_llm.json; no other books/sections;
+- 87 records total — Book 1 [1..34]; Book 2 [35..50]; Book 3 [51..57] (one per article);
+  repo book4 S1 [58,59,60,66]; S2 [67,68,71,72,75,77]; S3 [85,87,92,93,99,101,102];
+  S4 [108,113,115,117]; S5 [123,124,126,127,128,129,130,132,133]; no uncovered articles;
 - every record passes schemas/english_legal_llm.schema.json;
+- each record's book field matches its unit's book (1/2/3/4);
 - legal_rule_text_en is byte-identical to the corresponding english_reference_text;
 - no legal_rule_summary_en / generated-summary field;
 - trust posture (official_guidance_translation / ar / needs_manual_check);
@@ -32,22 +33,29 @@ LLM_DIR = os.path.join(ROOT, "data", "english_legal_llm")
 REF_DIR = os.path.join(ROOT, "data", "english_reference")
 
 ALL_BOOK4 = set(range(58, 138))
+# Full article set per book, used to reject any leakage outside a unit's covered set.
+BOOK_ALL = {1: set(range(1, 35)), 2: set(range(35, 51)), 3: set(range(51, 58)), 4: ALL_BOOK4}
 
-# (llm filename, English reference source filename, covered articles). Each covered
-# article maps to exactly one single-article record; anything else in Book Four is
-# forbidden for that unit.
+# (llm filename, English reference source filename, book, covered articles). Each covered
+# article maps to exactly one single-article record; anything else in that book is
+# forbidden for that unit. Books 1-3 cover their full article range; repo book4 sections
+# stay model-1b (provision-covered articles only).
 UNITS = [
-    ("book4_section1_en_legal_llm.json", "book4_section1_en_reference.json", [58, 59, 60, 66]),
-    ("book4_section2_en_legal_llm.json", "book4_section2_en_reference.json", [67, 68, 71, 72, 75, 77]),
-    ("book4_section3_en_legal_llm.json", "book4_section3_en_reference.json",
+    ("book1_en_legal_llm.json", "book1_en_reference.json", 1, list(range(1, 35))),
+    ("book2_en_legal_llm.json", "book2_en_reference.json", 2, list(range(35, 51))),
+    ("book3_en_legal_llm.json", "book3_en_reference.json", 3, list(range(51, 58))),
+    ("book4_section1_en_legal_llm.json", "book4_section1_en_reference.json", 4, [58, 59, 60, 66]),
+    ("book4_section2_en_legal_llm.json", "book4_section2_en_reference.json", 4,
+     [67, 68, 71, 72, 75, 77]),
+    ("book4_section3_en_legal_llm.json", "book4_section3_en_reference.json", 4,
      [85, 87, 92, 93, 99, 101, 102]),
-    ("book4_section4_en_legal_llm.json", "book4_section4_en_reference.json",
+    ("book4_section4_en_legal_llm.json", "book4_section4_en_reference.json", 4,
      [108, 113, 115, 117]),
-    ("book4_section5_en_legal_llm.json", "book4_section5_en_reference.json",
+    ("book4_section5_en_legal_llm.json", "book4_section5_en_reference.json", 4,
      [123, 124, 126, 127, 128, 129, 130, 132, 133]),
 ]
 EXPECTED_FILES = sorted(u[0] for u in UNITS)
-TOTAL_EXPECTED = 30   # 4 (S1) + 6 (S2) + 7 (S3) + 4 (S4) + 9 (S5)
+TOTAL_EXPECTED = 87   # 34 (B1) + 16 (B2) + 7 (B3) + 30 (repo book4 S1-5)
 
 # Positive overclaim assertions that must NOT appear in the data.
 BANNED = [
@@ -81,7 +89,7 @@ def main() -> int:
         problems.append("expected exactly English LLM files %r, found %r" % (EXPECTED_FILES, files))
 
     total = 0
-    for fname, ref_fname, covered in UNITS:
+    for fname, ref_fname, book, covered in UNITS:
         path = os.path.join(LLM_DIR, fname)
         ref_path = os.path.join(REF_DIR, ref_fname)
         reftext = {}
@@ -100,9 +108,9 @@ def main() -> int:
         nums = [r.get("article_numbers") for r in records]
         if nums != [[n] for n in covered]:
             problems.append("%s: article groups must be %r (got %r)" % (fname, [[n] for n in covered], nums))
-        # Nothing outside this unit's covered set may appear (within repo book4 scope).
+        # Nothing outside this unit's covered set may appear (within this book's range).
         flat = {n for g in nums for n in (g or [])}
-        forbidden = (ALL_BOOK4 - set(covered))
+        forbidden = (BOOK_ALL[book] - set(covered))
         leaked = sorted(flat & forbidden)
         if leaked:
             problems.append("%s: forbidden article numbers present (uncovered/other sections): %s" % (fname, leaked))
@@ -122,8 +130,8 @@ def main() -> int:
                     problems.append("%s:%s: %s" % (fname, rid, msg))
             if r.get("record_type") != "article_reference":
                 problems.append("%s:%s: record_type must be article_reference" % (fname, rid))
-            if r.get("book") != 4:
-                problems.append("%s:%s: book must be 4" % (fname, rid))
+            if r.get("book") != book:
+                problems.append("%s:%s: book must be %d" % (fname, rid, book))
             if "legal_rule_summary_en" in r:
                 problems.append("%s:%s: legal_rule_summary_en must not exist" % (fname, rid))
             # legal_rule_text_en must equal the English reference text verbatim.
@@ -152,17 +160,17 @@ def main() -> int:
             problems.append("%s must not exist" % p)
 
     print("=" * 60)
-    print("English Legal LLM-ready layer validation (repo book4 Sections 1-5)")
+    print("English Legal LLM-ready layer validation (Books 1-3 + repo book4 Sections 1-5)")
     print("=" * 60)
     if problems:
         for p in problems:
             print("  -", p)
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
-    print("[PASS] %d records — repo book4 Sections 1-5 "
-          "(58,59,60,66 / 67,68,71,72,75,77 / 85,87,92,93,99,101,102 / 108,113,115,117 / "
-          "123,124,126,127,128,129,130,132,133); legal_rule_text_en verbatim from English "
-          "reference; official_guidance_translation; governing=ar; needs_manual_check; "
+    print("[PASS] %d records — Book 1 (1-34) + Book 2 (35-50) + Book 3 (51-57) + repo book4 "
+          "Sections 1-5 (58,59,60,66 / 67,68,71,72,75,77 / 85,87,92,93,99,101,102 / "
+          "108,113,115,117 / 123,124,126,127,128,129,130,132,133); legal_rule_text_en verbatim "
+          "from English reference; official_guidance_translation; governing=ar; needs_manual_check; "
           "no generated summaries" % total)
     print("RESULT: ALL CHECKS PASSED ✓")
     return 0

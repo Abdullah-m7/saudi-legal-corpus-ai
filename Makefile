@@ -27,6 +27,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-reference-book4-section4-data english-reference-book4-section4-jsonl \
         english-reference-book4-section5-data english-reference-book4-section5-jsonl \
         english-reference-validate \
+        english-legal-llm-book1-data english-legal-llm-book2-data english-legal-llm-book3-data \
         english-legal-llm-book4-section1-data english-legal-llm-book4-section2-data \
         english-legal-llm-book4-section3-data english-legal-llm-book4-section4-data \
         english-legal-llm-book4-section5-data english-legal-llm-validate \
@@ -299,8 +300,19 @@ english-reference-book4-section5-jsonl: english-reference-book4-section5-data
 english-reference-validate:
 	$(PY) scripts/validate_english_reference.py
 
-# -- English Legal LLM-ready layer (PILOT: Book Four Section 1 only; 58,59,60,66) --
+# -- English Legal LLM-ready layer --
 # legal_rule_text_en is verbatim from the English reference; no generated summaries.
+# Books 1-3 backfill: one article_reference record per article (1-34 / 35-50 / 51-57).
+english-legal-llm-book1-data:
+	$(PY) scripts/gen_english_legal_llm_book1.py
+
+english-legal-llm-book2-data:
+	$(PY) scripts/gen_english_legal_llm_book2.py
+
+english-legal-llm-book3-data:
+	$(PY) scripts/gen_english_legal_llm_book3.py
+
+# repo book4 Section 1 — provision-covered articles only (58,59,60,66).
 english-legal-llm-book4-section1-data:
 	$(PY) scripts/gen_english_legal_llm_book4_section1.py
 
