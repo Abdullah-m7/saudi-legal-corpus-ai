@@ -3,10 +3,10 @@
 """Validate the English Legal LLM-ready layer (Book Four Sections 1, 2 & 3).
 
 Enforces:
-- exactly the sanctioned files exist: book4_section1/2/3_en_legal_llm.json; no other
+- exactly the sanctioned files exist: book4_section1/2/3/4_en_legal_llm.json; no other
   sections/books;
-- 17 records total — Section 1 [58],[59],[60],[66]; Section 2 [67],[68],[71],[72],[75],[77];
-  Section 3 [85],[87],[92],[93],[99],[101],[102]; no uncovered articles;
+- 21 records total — S1 [58],[59],[60],[66]; S2 [67],[68],[71],[72],[75],[77];
+  S3 [85],[87],[92],[93],[99],[101],[102]; S4 [108],[113],[115],[117]; no uncovered articles;
 - every record passes schemas/english_legal_llm.schema.json;
 - legal_rule_text_en is byte-identical to the corresponding english_reference_text;
 - no legal_rule_summary_en / generated-summary field;
@@ -37,9 +37,11 @@ UNITS = [
     ("book4_section2_en_legal_llm.json", "book4_section2_en_reference.json", [67, 68, 71, 72, 75, 77]),
     ("book4_section3_en_legal_llm.json", "book4_section3_en_reference.json",
      [85, 87, 92, 93, 99, 101, 102]),
+    ("book4_section4_en_legal_llm.json", "book4_section4_en_reference.json",
+     [108, 113, 115, 117]),
 ]
 EXPECTED_FILES = sorted(u[0] for u in UNITS)
-TOTAL_EXPECTED = 17   # 4 (S1) + 6 (S2) + 7 (S3)
+TOTAL_EXPECTED = 21   # 4 (S1) + 6 (S2) + 7 (S3) + 4 (S4)
 
 # Positive overclaim assertions that must NOT appear in the data.
 BANNED = [
@@ -144,7 +146,7 @@ def main() -> int:
             problems.append("%s must not exist" % p)
 
     print("=" * 60)
-    print("English Legal LLM-ready layer validation (Book 4 Sections 1, 2 & 3)")
+    print("English Legal LLM-ready layer validation (Book 4 Sections 1-4)")
     print("=" * 60)
     if problems:
         for p in problems:
@@ -152,8 +154,8 @@ def main() -> int:
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
     print("[PASS] %d records — Book 4 Section 1 (58,59,60,66) + Section 2 "
-          "(67,68,71,72,75,77) + Section 3 (85,87,92,93,99,101,102); "
-          "legal_rule_text_en verbatim from English reference; "
+          "(67,68,71,72,75,77) + Section 3 (85,87,92,93,99,101,102) + Section 4 "
+          "(108,113,115,117); legal_rule_text_en verbatim from English reference; "
           "official_guidance_translation; governing=ar; needs_manual_check; "
           "no generated summaries" % total)
     print("RESULT: ALL CHECKS PASSED ✓")

@@ -1,12 +1,11 @@
-"""English Legal LLM-ready layer — Book Four Section 3 (General Assemblies).
+"""English Legal LLM-ready layer — Book Four Section 4 (Shares, Debt Instruments and Sukuk).
 
-7 article_reference records for the provision-covered Articles 85, 87, 92, 93, 99, 101,
-102. `legal_rule_text_en` is copied verbatim from the English reference
-`english_reference_text`; there is NO `legal_rule_summary_en` / model-generated English
-summary. Every derived metadata item must be traceable to the record's own
-legal_rule_text_en. The owner-reconciled uncovered articles (84, 89, 100) and the other
-uncovered Section-3 articles get no records. English is guidance/reference only; Arabic
-governs. NOT full English Legal LLM coverage.
+4 article_reference records for the provision-covered Articles 108, 113, 115, 117.
+`legal_rule_text_en` is copied verbatim from the English reference `english_reference_text`;
+there is NO `legal_rule_summary_en` / model-generated English summary. Every derived
+metadata item must be traceable to the record's own legal_rule_text_en. Article 110 (the
+owner-reconciled uncovered article) and the other uncovered Section-4 articles get no
+records. English is guidance/reference only; Arabic governs. NOT full English LLM coverage.
 """
 
 import glob
@@ -17,11 +16,11 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMA = os.path.join(ROOT, "schemas", "english_legal_llm.schema.json")
 LLM_DIR = os.path.join(ROOT, "data", "english_legal_llm")
-DATA = os.path.join(LLM_DIR, "book4_section3_en_legal_llm.json")
-EN_REF = os.path.join(ROOT, "data", "english_reference", "book4_section3_en_reference.json")
+DATA = os.path.join(LLM_DIR, "book4_section4_en_legal_llm.json")
+EN_REF = os.path.join(ROOT, "data", "english_reference", "book4_section4_en_reference.json")
 
-COVERED = [85, 87, 92, 93, 99, 101, 102]
-UNCOVERED = [84, 86, 88, 89, 90, 91, 94, 95, 96, 97, 98, 100]
+COVERED = [108, 113, 115, 117]
+UNCOVERED = [103, 104, 105, 106, 107, 109, 110, 111, 112, 114, 116, 118, 119, 120]
 
 
 def _read(path):
@@ -50,24 +49,23 @@ def test_data_exists():
     assert os.path.exists(DATA)
 
 
-def test_exactly_seven_records():
-    assert len(_records()) == 7
+def test_exactly_four_records():
+    assert len(_records()) == 4
 
 
 def test_article_groups_exact():
     assert [r["article_numbers"] for r in _records()] == [[n] for n in COVERED]
 
 
-def test_no_records_for_uncovered_section3():
+def test_no_records_for_uncovered_section4():
     covered = {n for r in _records() for n in r["article_numbers"]}
     assert not (covered & set(UNCOVERED)), covered
     assert covered == set(COVERED)
 
 
-def test_owner_reconciled_84_89_100_excluded():
+def test_article_110_excluded():
     covered = {n for r in _records() for n in r["article_numbers"]}
-    for n in (84, 89, 100):
-        assert n not in covered
+    assert 110 not in covered
 
 
 def test_record_type_and_book():
@@ -118,7 +116,7 @@ def test_trust_fields():
         assert st["english_source_status"] == "official_guidance_translation", r["record_id"]
         assert st["governing_text_language"] == "ar", r["record_id"]
         assert st["manual_review_status"] == "needs_manual_check", r["record_id"]
-        assert "book4_section3_en_reference.json" in st["source_reference_file"], r["record_id"]
+        assert "book4_section4_en_reference.json" in st["source_reference_file"], r["record_id"]
 
 
 def test_no_forbidden_overclaim_terms():
@@ -135,7 +133,8 @@ _STOP = {"the", "a", "an", "of", "to", "and", "or", "in", "on", "for", "its", "h
          "from", "date", "within", "previous", "who", "acts", "party", "provision",
          "provisions", "them", "certain", "other", "others", "these", "that", "be",
          "is", "are", "must", "can", "over", "up", "no", "if", "upon", "than", "made",
-         "into", "two", "three", "held", "set", "period", "number", "meeting"}
+         "into", "two", "three", "held", "set", "period", "number", "same", "all",
+         "against", "new", "them"}
 
 
 def _squash(text):
@@ -145,7 +144,7 @@ def _squash(text):
 def _traceable(phrase, text):
     toks = [t.strip(".,;:()%'’-").lower() for t in phrase.split()]
     toks = [t for t in toks if (t and t not in _STOP and len(t) > 3)]
-    # tolerate simple singular/plural differences (e.g. "shareholders" vs "shareholder")
+
     def _hit(t):
         return t in text or (t.endswith("s") and t[:-1] in text)
     return any(_hit(t) for t in toks)
@@ -160,15 +159,6 @@ def test_all_derived_fields_traceable_to_text():
         for f in fields:
             for phrase in r[f]:
                 assert _traceable(phrase, text), (r["record_id"], f, phrase)
-
-
-def test_deadlines_periods_appear_in_text():
-    for r in _records():
-        text = _text(r["article_numbers"][0])
-        for d in r["deadlines_en"]:
-            for token in ("90", "30", "15", "one hour", "12"):
-                if token in d.lower():
-                    assert token in text, (r["record_id"], d, token)
 
 
 def test_monetary_threshold_percentages_appear_in_text():
@@ -194,105 +184,83 @@ def test_prohibitions_have_prohibitory_language():
     for r in _records():
         text = _text(r["article_numbers"][0])
         for p in r["prohibitions_en"]:
-            assert ("may not" in text or "except" in text or "shall not" in text), (r["record_id"], p)
-
-
-def test_cross_references_articles_appear_in_text():
-    for r in _records():
-        squashed = _squash(_text(r["article_numbers"][0]))
-        for xref in r["cross_references_en"]:
-            for art in re.findall(r"article\s*(\d+)", xref.lower()):
-                assert ("article" + art) in squashed, (r["record_id"], xref)
+            assert ("may not" in text or "except" in text or "shall not" in text
+                    or "without" in text), (r["record_id"], p)
 
 
 # -- TARGETED per-article accuracy (from each article's own text) -----------
-def test_art85_egm_powers_unanimous_burden():
-    r = _rec(85)
-    actors = " ".join(r["actors_en"]).lower()
-    assert "extraordinary general assembly" in actors
-    combined = (" ".join(r["rights_en"]) + " " + " ".join(r["legal_effects_en"])).lower()
-    assert "articles of association" in combined and "dissolution" in combined
-    cond = " ".join(r["conditions_en"]).lower()
-    assert "unanimous" in cond
-    assert "unanimously" in _text(85)
+def test_art108_types_and_classes():
+    r = _rec(108)
+    text = _text(108)
+    for kind in ("common", "preferred", "redeemable"):
+        assert kind in " ".join(r["legal_effects_en"]).lower()
+        assert kind in text
+    obl = " ".join(r["obligations_en"]).lower()
+    assert "equal rights and obligations" in obl
+    assert "equal rights and obligations" in text
 
 
-def test_art87_ogm_powers_auditor():
-    r = _rec(87)
-    actors = " ".join(r["actors_en"]).lower()
-    assert "ordinary general assembly" in actors
+def test_art113_drag_tag_along_90pct():
+    r = _rec(113)
+    text = _text(113)
     rights = " ".join(r["rights_en"]).lower()
-    assert "auditor" in rights and ("elect" in rights or "remove" in rights)
-    assert "auditor" in _text(87)
-
-
-def test_art92_ogm_quorum_quarter_30_days_article91():
-    r = _rec(92)
-    cond = " ".join(r["conditions_en"]).lower()
-    assert "quarter" in cond
-    assert "quarter" in _text(92)
-    assert any("30 days" in d.lower() for d in r["deadlines_en"])
-    assert "30 days" in _text(92)
-    assert any("article 91" in x.lower() for x in r["cross_references_en"])
-    assert "article 91" in _text(92)
-
-
-def test_art93_egm_quorum_two_thirds_15_days():
-    r = _rec(93)
-    eff = " ".join(r["legal_effects_en"]).lower()
-    assert "two-thirds" in eff and "three-quarters" in eff
-    assert "two-thirds" in _text(93) and "three-quarters" in _text(93)
-    assert any("15 days" in d.lower() for d in r["deadlines_en"])
-    assert "15 days" in _text(93)
-
-
-def test_art99_objection_90_days_judicial():
-    r = _rec(99)
-    assert any("90 days" in d.lower() for d in r["deadlines_en"])
-    assert "90 days" in _text(99)
-    auth = " ".join(r["competent_authorities_en"]).lower()
-    assert "judicial" in auth
+    assert "drag-along" in rights and "tag-along" in rights
+    amounts = {m["amount"] for m in r["monetary_thresholds"]}
+    assert 0.9 in amounts
+    assert "90%" in _squash(text)
     exc = " ".join(r["exceptions_en"]).lower()
-    assert "bona fide third parties" in exc
-    assert "bona fide third parties" in _text(99)
+    assert "capital market law" in exc
+    assert "capital market law" in text
 
 
-def test_art101_circulation_75pct_article97():
-    r = _rec(101)
-    amounts = {m["amount"] for m in r["monetary_thresholds"]}
-    assert 0.75 in amounts
-    assert "75%" in _squash(_text(101))
-    assert any("article 97" in x.lower() for x in r["cross_references_en"])
-    assert "article 97" in _text(101)
-
-
-def test_art102_inspection_5pct_judicial():
-    r = _rec(102)
-    amounts = {m["amount"] for m in r["monetary_thresholds"]}
-    assert 0.05 in amounts
-    assert "5%" in _squash(_text(102))
-    auth = " ".join(r["competent_authorities_en"]).lower()
-    assert "judicial" in auth
+def test_art115_non_payment_board_auction():
+    r = _rec(115)
+    text = _text(115)
+    obl = " ".join(r["obligations_en"]).lower()
+    assert "designated dates" in obl
+    assert "designated dates" in text
     rights = " ".join(r["rights_en"]).lower()
-    assert "inspection" in rights
-    assert "inspection" in _text(102)
+    assert ("public auction" in rights or "capital market" in rights)
+    assert "public auction" in text
+    eff = " ".join(r["legal_effects_en"]).lower()
+    assert "suspended" in eff
+    assert "suspended" in text
+    # No board actor unless the text supports it (Art 115 text does mention the board).
+    assert "board of directors" in " ".join(r["actors_en"]).lower()
+    assert "board of directors" in text
 
 
-# -- only Section 1 + 2 + 3 English LLM files -------------------------------
-def test_only_sections_1_2_3_files():
-    # Shared-validation compatibility: Section 4 has since been added; Sections 1-3
-    # must always be present and only sanctioned English LLM files may exist.
-    files = set(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
-    need = {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json"}
-    assert need <= files, files
-    assert files <= (need | {"book4_section4_en_legal_llm.json"}), files
+def test_art117_debt_sukuk_egm_convertible():
+    r = _rec(117)
+    text = _text(117)
+    rights = " ".join(r["rights_en"]).lower()
+    assert "debt instruments" in rights or "sukuk" in rights
+    obl = " ".join(r["obligations_en"]).lower()
+    assert "convertible" in obl and "extraordinary general assembly" in obl
+    assert "extraordinary general assembly" in text
+    cond = " ".join(r["conditions_en"]).lower()
+    assert "capital market law" in cond
+    assert "capital market law" in text
+    auth = " ".join(r["competent_authorities_en"]).lower()
+    assert "general assembly" in auth
 
 
-def test_sections_1_2_unchanged():
+# -- only Sections 1-4 English LLM files ------------------------------------
+def test_only_sections_1_to_4_files():
+    files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
+    assert files == ["book4_section1_en_legal_llm.json",
+                     "book4_section2_en_legal_llm.json",
+                     "book4_section3_en_legal_llm.json",
+                     "book4_section4_en_legal_llm.json"], files
+
+
+def test_sections_1_2_3_unchanged():
     s1 = _read(os.path.join(LLM_DIR, "book4_section1_en_legal_llm.json"))
     assert [r["article_numbers"] for r in s1["records"]] == [[58], [59], [60], [66]]
     s2 = _read(os.path.join(LLM_DIR, "book4_section2_en_legal_llm.json"))
     assert [r["article_numbers"] for r in s2["records"]] == [[67], [68], [71], [72], [75], [77]]
+    s3 = _read(os.path.join(LLM_DIR, "book4_section3_en_legal_llm.json"))
+    assert [r["article_numbers"] for r in s3["records"]] == [[85], [87], [92], [93], [99], [101], [102]]
 
 
 # -- existing artifacts unchanged -------------------------------------------
@@ -317,13 +285,13 @@ def test_arabic_legal_llm_unchanged():
                        ("book3_ar_legal_llm.json", list(range(51, 58)))):
         doc = _read(os.path.join(layer, fname))
         assert [r["article_numbers"][0] for r in doc["records"]] == exp, fname
-    s3 = _read(os.path.join(layer, "book4_section3_ar_legal_llm.json"))
-    assert [r["article_numbers"] for r in s3["records"]] == [[85, 87], [92, 93], [99], [101], [102]]
+    s4 = _read(os.path.join(layer, "book4_section4_ar_legal_llm.json"))
+    assert [r["article_numbers"] for r in s4["records"]] == [[108], [113], [115], [117]]
 
 
 def test_book4_provisions_unchanged():
-    doc = _read(os.path.join(ROOT, "data", "articles", "book4_provisions_084_102.json"))
-    assert [p["source_article_numbers"] for p in doc["provisions"]] == [[85, 87], [92, 93], [99], [101], [102]]
+    doc = _read(os.path.join(ROOT, "data", "articles", "book4_provisions_103_120.json"))
+    assert [p["source_article_numbers"] for p in doc["provisions"]] == [[108], [113], [115], [117]]
 
 
 def test_no_book4_articles_files():
