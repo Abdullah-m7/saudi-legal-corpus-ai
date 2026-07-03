@@ -44,9 +44,14 @@ class BookSpec:
         disclaimer_ar: str,
         disclaimer_zh: str,
         expanded_articles: Optional[List[int]] = None,
+        mode: str = "per_article",
     ) -> None:
         self.book = book
         self.slug = slug
+        # mode: "per_article" (Books 1–3) or "model_1b_thematic_provisions" (Book 4).
+        # In model_1b, there is NO complete per-article dataset; the source is a
+        # thematic summary and only explicitly-covered provisions become records.
+        self.mode = mode
         self.articles_json = articles_json
         self.articles_jsonl = articles_jsonl
         self.coverage_json = coverage_json
@@ -163,6 +168,43 @@ _REGISTRY: Dict[int, BookSpec] = {
             "核验，采用摘要式法律表达，并非官方译本或逐字全文翻译。"
         ),
         expanded_articles=[],
+    ),
+    4: BookSpec(
+        book=4,
+        slug="book4",
+        # model_1b: thematic PROVISIONS dataset (not per-article). These paths are
+        # declared for the future content stage; they are NOT expected to exist in
+        # this infrastructure PR, and default per-article loaders must not require them.
+        articles_json=os.path.join(DATA, "articles", "book4_provisions_058_137.json"),
+        articles_jsonl=os.path.join(DATA, "articles", "book4_provisions_058_137.jsonl"),
+        coverage_json=os.path.join(DATA, "coverage", "book4_coverage_matrix.json"),
+        first_article=58,
+        last_article=137,
+        input_pdf="inputs/bab4_source.pdf",
+        display_title_ar="نظام الشركات السعودي — ترجمة مرجعية عربية–صينية (الباب الرابع: شركة المساهمة)",
+        display_title_zh="沙特《公司法》阿拉伯语–中文参考译本（第四编：股份公司 JSC）",
+        md_ar=os.path.join(CONTENT, "ar", "book4.md"),
+        md_zh=os.path.join(CONTENT, "zh", "book4.md"),
+        md_bilingual=os.path.join(CONTENT, "bilingual", "book4_bilingual.md"),
+        translator_notes=os.path.join(CONTENT, "notes", "book4_translator_notes.md"),
+        review_log=os.path.join(CONTENT, "notes", "book4_review_log.md"),
+        html_out=os.path.join(DIST, "book4.html"),
+        pdf_out=os.path.join(DIST, "book4.pdf"),
+        disclaimer_ar=(
+            "هذه الوثيقة ملخص مرجعي موجز ومراجَع داخليًا مقابل مصدر الترجمة المرفق لأهم أحكام الباب "
+            "الرابع من نظام الشركات السعودي: شركة المساهمة، المواد 58–137، وهي عرض موضوعي مختار وليست "
+            "ترجمة حرفية كاملة لجميع المواد؛ ولم تُدقَّق بعد مادةً مادةً مقابل النص الرسمي (جريدة أم "
+            "القرى)، وليست ترجمة رسمية. وما يتعلق بالإدراج والسوق المالية يجب أن يُقرأ مع نظام السوق "
+            "المالية ولوائح الهيئة."
+        ),
+        disclaimer_zh=(
+            "本文件为沙特《公司法》第四编（股份公司，第五十八条至第一百三十七条）核心条款的经内部审校"
+            "参考译本，以专题择要方式呈现，并非对全部条文的逐条全文翻译；已对照所附参考翻译来源进行"
+            "内部质检，但尚未逐条对照官方文本（乌姆·库拉报）核验，并非官方译本。涉及上市与资本市场"
+            "事项须并读《资本市场法》及其实施条例。"
+        ),
+        expanded_articles=[],
+        mode="model_1b_thematic_provisions",
     ),
 }
 

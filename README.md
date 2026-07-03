@@ -273,6 +273,31 @@ It is **not** an official translation and **not** legal advice.
 
 Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
 
+## Book Four / الباب الرابع — شركة المساهمة / 股份公司 (JSC) · Articles 58–137 — status
+
+**Book Four is in the model-1b infrastructure stage. Full content generation has NOT started.**
+
+- Book Four covers the **joint-stock company** (شركة المساهمة / 股份公司, JSC), **Articles 58–137
+  (80 articles)**.
+- The reference source (`inputs/bab4_source.pdf`) is a **thematic / tabular summary of core
+  provisions**, **not** a per-article translation — only ~33 of the 80 articles are explicitly
+  covered.
+- **Data-model 1b (owner-approved):** canonical **provision** records are created only for
+  explicitly-covered provisions (a provision may map to one or more article numbers); a
+  **coverage matrix tracks all Articles 58–137**
+  (`data/coverage/book4_coverage_matrix.json`), and **uncovered articles remain
+  `needs_official_text_check`** with **no invented content**. See
+  [`docs/book4_preflight/BOOK4_MODEL_1B_DECISION.md`](docs/book4_preflight/BOOK4_MODEL_1B_DECISION.md)
+  and [`schemas/book4_provision.schema.json`](schemas/book4_provision.schema.json).
+- Infrastructure validation: `make book4-validate` (coverage matrix + guardrails; no content is
+  built). There is intentionally **no `make book4-build`** yet.
+- Future Book Four content lands as **section-split PRs** (58–66 / 67–83 / 84–102 / 103–120 /
+  121–137).
+- Trust posture unchanged: internally reviewed (مراجَعة داخليًا / 经内部审校);
+  `official_text_check = needs_check`; never `verified` / `محققة` / `经核验`; book-specific
+  disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.
+- **Not an official translation and not legal advice.**
+
 ## License
 
 Source code: **MIT** ([`LICENSE`](LICENSE)). Legal content: see [`NOTICE.md`](NOTICE.md).

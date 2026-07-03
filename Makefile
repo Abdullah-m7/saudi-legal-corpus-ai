@@ -7,7 +7,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
 
 .PHONY: help data jsonl markdown validate book1-validate test html pdf build all clean \
         book2-data book2-jsonl book2-validate book2-html book2-pdf book2-build books-build \
-        book3-data book3-jsonl book3-validate book3-html book3-pdf book3-build
+        book3-data book3-jsonl book3-validate book3-html book3-pdf book3-build \
+        book4-coverage book4-validate book4-model-check book4-coverage-check
 
 help:
 	@echo "Book One (default) targets:"
@@ -112,6 +113,17 @@ book3-build: book3-jsonl book3-validate book3-html
 	@echo "book3 build complete: dist/book3.html (canonical text) + dist/book3.pdf (if WeasyPrint present)"
 
 books-build: build book2-build book3-build
+
+# -- Book Four (model 1b — infrastructure stage; NO content build) ----------
+book4-coverage:
+	$(PY) scripts/gen_book4_coverage.py
+
+book4-validate:
+	$(PY) scripts/validate_corpus.py --book 4
+
+# Convenience aliases (same infrastructure validation; no content is built).
+book4-model-check: book4-validate
+book4-coverage-check: book4-validate
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
