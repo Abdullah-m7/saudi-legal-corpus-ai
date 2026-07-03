@@ -305,14 +305,16 @@ Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
   Section-2 articles (69, 70, 73, 74, 76, 78–83) remain uncovered / `needs_official_text_check`** with
   no invented content. Section-only outputs `content/*/book4_section2.md` — **not** a full Book Four
   translation and no `content/*/book4.md`.
-- **Section 3 (股东大会 / الجمعية العامة, Articles 84–102): NEEDS OWNER SCOPE DECISION — no
-  provisions generated yet.** The coverage matrix lists Articles **84 and 89** as
-  `explicit_in_source`, but `inputs/bab4_source.pdf` renders **no distinct content** for them
-  (Article 89 does not appear at all; Article 84 has no separate block). Authoring them would
-  require inventing content, which is prohibited, so Section-3 content is **deferred pending an
-  owner decision**. See
-  [`docs/book4_preflight/BOOK4_SECTION3_SCOPE_DECISION.md`](docs/book4_preflight/BOOK4_SECTION3_SCOPE_DECISION.md).
-  No Section-3 provisions, content, or coverage changes exist yet.
+- **Section 3 (股东大会 / الجمعية العامة)**: model-1b provision records added **after owner scope
+  reconciliation** (Option 1 — reconcile to the source; see
+  [`docs/book4_preflight/BOOK4_SECTION3_SCOPE_DECISION.md`](docs/book4_preflight/BOOK4_SECTION3_SCOPE_DECISION.md)).
+  Provision records for the **explicit source articles 85, 87, 92, 93, 99, 101, 102 only**
+  (grouped by the source's thematic blocks: [85,87], [92,93], [99], [101], [102]) —
+  `data/articles/book4_provisions_084_102.json`; build via `make book4-section3-build`.
+  **Articles 84, 89 and 100 were reclassified to uncovered / `needs_official_text_check`** (84 & 89
+  have no distinct source content; 100 because the source tags circulation as 101 only), and the
+  other Section-3 articles (86, 88, 90, 91, 94–98) remain uncovered. Section-only outputs
+  `content/*/book4_section3.md` — **not** a full Book Four translation and no `content/*/book4.md`.
 - Trust posture unchanged: internally reviewed (مراجَعة داخليًا / 经内部审校);
   `official_text_check = needs_check`; never `verified` / `محققة` / `经核验`; book-specific
   disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.

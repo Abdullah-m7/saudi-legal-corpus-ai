@@ -1,9 +1,33 @@
-# Book Four — Section 3 scope decision (BLOCKING) / قرار نطاق القسم الثالث
+# Book Four — Section 3 scope decision / قرار نطاق القسم الثالث
 
-> **Status: NEEDS OWNER SCOPE DECISION.** No Section-3 provision records, content, or
-> coverage changes are generated in this PR. This document records a blocking
-> inconsistency between two source-of-truth files so the owner can decide the
-> explicit-article set before any content is authored. **No content was invented.**
+> **Status: RESOLVED — Owner selected Option 1 (reconcile to the source).** See the
+> "Owner decision" section at the end. The blocking-ambiguity documentation below is
+> retained as decision history. **No content was invented.**
+
+## Owner decision (RESOLVED)
+
+- **Owner selected Option 1: reconcile Book Four Section 3 to the source PDF.**
+- **Final explicit source-covered set:** **85, 87, 92, 93, 99, 101, 102**.
+- **Articles 84 and 89 reclassified** from `explicit_in_source` to
+  `not_explicit_in_source` (→ `official_text_check = needs_official_text_check`,
+  `content_record_status = no_record_until_source_available`) — the source renders no
+  distinct content for them.
+- **Article 100 remains `not_explicit_in_source`** because the Book Four source tags
+  the circulation provision as **101 only** (even though official English numbering
+  splits circulation across 100 and 101).
+- Provision records created for the source's thematic blocks:
+  **[85, 87]**, **[92, 93]**, **[99]**, **[101]**, **[102]**.
+- **No content invented**; provisions map only to the reconciled explicit set; the
+  coverage matrix stays at 80 rows.
+
+---
+
+## Original ambiguity documentation (decision history)
+
+> **Status at the time: NEEDS OWNER SCOPE DECISION.** No Section-3 provision records,
+> content, or coverage changes were generated in that PR. This documented a blocking
+> inconsistency between two source-of-truth files so the owner could decide the
+> explicit-article set before any content was authored. **No content was invented.**
 
 ## Section resolved (unambiguous)
 
