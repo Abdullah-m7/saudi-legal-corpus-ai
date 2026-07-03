@@ -52,6 +52,10 @@ def load_context(book: int = 1) -> Dict[str, Any]:
     work_view["title_zh"] = spec.display_title_zh
     work_view["scope_ar"] = doc.get("scope_ar", work.get("scope_ar", ""))
     work_view["scope_zh"] = doc.get("scope_zh", work.get("scope_zh", ""))
+    # Book-specific disclaimer scope (trust wording stays identical across books).
+    work_view.setdefault("translation_status", {})
+    work_view["translation_status"]["disclaimer_ar"] = spec.disclaimer_ar
+    work_view["translation_status"]["disclaimer_zh"] = spec.disclaimer_zh
 
     translator_notes = _maybe_read(spec.translator_notes) if spec.translator_notes else ""
     review_log = _maybe_read(spec.review_log) if spec.review_log else ""
