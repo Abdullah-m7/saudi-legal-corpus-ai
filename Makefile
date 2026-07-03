@@ -20,6 +20,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-reference-book3-data english-reference-book3-jsonl \
         english-reference-book4-section1-data english-reference-book4-section1-jsonl \
         english-reference-book4-section2-data english-reference-book4-section2-jsonl \
+        english-reference-book4-section3-data english-reference-book4-section3-jsonl \
         english-reference-validate
 
 help:
@@ -225,6 +226,13 @@ english-reference-book4-section2-data:
 	$(PY) scripts/gen_english_reference_book4_section2.py
 
 english-reference-book4-section2-jsonl: english-reference-book4-section2-data
+
+# Book Four Section 3 — model 1b provision-covered articles only (85,87,92,93,99,101,102).
+# Article 100 is out of scope (exists in the English source but maps to Article 101).
+english-reference-book4-section3-data:
+	$(PY) scripts/gen_english_reference_book4_section3.py
+
+english-reference-book4-section3-jsonl: english-reference-book4-section3-data
 
 english-reference-validate:
 	$(PY) scripts/validate_english_reference.py
