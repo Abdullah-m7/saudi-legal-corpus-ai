@@ -326,6 +326,16 @@ Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
   112, 114, 116, 118–120) remain uncovered / `needs_official_text_check` with no invented content.
   Section-only outputs `content/*/book4_section4.md` — **not** a full Book Four translation, **not**
   an official translation, **not** legal advice, and no `content/*/book4.md`.
+- **Section 5 (财务、利润与资本变更 / المالية والأرباح وتغيير رأس المال)**: model-1b provision records for
+  the **explicit source articles 123, 124, 126, 127, 128, 129, 130, 132, 133 only** (grouped by the
+  source's thematic blocks: [123,124] reserves, [126,127] capital increase, [128,129,130] pre-emption
+  rights, [132] grave losses, [133] capital reduction) — `data/articles/book4_provisions_121_137.json`;
+  build via `make book4-section5-build`. Here the **coverage matrix and the source PDF agree** on the
+  explicit set — no reclassification was needed. **Articles 121, 122, 125, 131, 134, 135, 136, 137
+  remain uncovered / `needs_official_text_check`** (134 & 135 appear only as a cross-reference in the
+  capital-reduction block) with no invented content. Section-only outputs `content/*/book4_section5.md`
+  — **not** a full Book Four translation, **not** an official translation, **not** legal advice, and no
+  `content/*/book4.md`.
 - Trust posture unchanged: internally reviewed (مراجَعة داخليًا / 经内部审校);
   `official_text_check = needs_check`; never `verified` / `محققة` / `经核验`; book-specific
   disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.
