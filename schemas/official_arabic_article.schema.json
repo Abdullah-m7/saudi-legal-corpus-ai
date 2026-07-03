@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/official_arabic_article.schema.json",
+  "title": "Official Arabic statutory article",
+  "description": "One article of the OFFICIAL Arabic statutory text of the Saudi Companies Law, ingested from an official government / official-gazette source. This is the FUTURE CANONICAL legal source. `official_text_ar` must be the verbatim official Arabic statutory text of the article as published — it is NOT a summary and NOT a reconstruction. A record must not set verification_status to `verified_against_official_gazette` unless it has actually been checked article-by-article against the official gazette source recorded here. `additionalProperties` is false.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "law_id",
+    "article_number",
+    "official_text_ar",
+    "source_authority",
+    "source_publication",
+    "royal_decree_number",
+    "royal_decree_date_hijri",
+    "official_gazette_name",
+    "extraction_method",
+    "verification_status",
+    "manual_review_status",
+    "text_hash_sha256",
+    "notes"
+  ],
+  "properties": {
+    "law_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable identifier for the law, e.g. 'sa-companies-law-m132-1443'."
+    },
+    "article_number": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 281,
+      "description": "Official article number (the Saudi Companies Law has 281 articles)."
+    },
+    "article_title_ar": {
+      "type": "string",
+      "description": "Optional official Arabic article heading, if the official source provides one."
+    },
+    "official_text_ar": {
+      "type": "string",
+      "minLength": 1,
+      "description": "VERBATIM official Arabic statutory text of the article from the official source. Not a summary, not a reconstruction, not machine-generated."
+    },
+    "source_authority": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Issuing / publishing authority, e.g. official gazette 'Umm Al-Qura (أم القرى)' or the Bureau of Experts at the Council of Ministers."
+    },
+    "source_publication": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Publication descriptor for the official source packet the article was extracted from."
+    },
+    "royal_decree_number": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Royal Decree number of the instrument, e.g. 'M/132'."
+    },
+    "royal_decree_date_hijri": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Royal Decree date in the Hijri calendar, e.g. '1443/12/01'."
+    },
+    "official_gazette_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name of the official gazette, e.g. 'Umm Al-Qura (أم القرى)'."
+    },
+    "official_gazette_issue": {
+      "type": "string",
+      "description": "Optional official gazette issue number."
+    },
+    "official_gazette_date": {
+      "type": "string",
+      "description": "Optional official gazette publication date."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "Optional URL of the official source (should be an official government / gazette URL, not an unofficial copy)."
+    },
+    "source_file": {
+      "type": "string",
+      "description": "Optional path to the official source file registered in the repository source packet."
+    },
+    "extraction_method": {
+      "type": "string",
+      "minLength": 1,
+      "description": "How official_text_ar was obtained from the source, e.g. 'official_text_layer', 'manual_transcription_from_official_pdf', 'ocr_of_official_scan_then_manual_correction'."
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "pending_official_source",
+        "ingested_unverified",
+        "verified_against_official_gazette"
+      ],
+      "description": "Verification state. 'verified_against_official_gazette' may ONLY be used after a real article-by-article check against the recorded official source."
+    },
+    "manual_review_status": {
+      "type": "string",
+      "enum": ["needs_manual_check", "manually_reviewed"],
+      "description": "Whether a human has reviewed this record."
+    },
+    "text_hash_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 hex digest of official_text_ar (UTF-8), used to detect drift and to prove the verified text is unchanged."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes, e.g. amendment/version notes or reviewer remarks."
+    }
+  }
+}
