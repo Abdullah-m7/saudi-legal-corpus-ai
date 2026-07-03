@@ -82,8 +82,8 @@ def main() -> int:
             problems.append("missing doc: docs/official_english_source/%s" % name)
 
     # -- English LLM layer is a SEPARATE layer (validated by
-    #    scripts/validate_english_legal_llm.py). The Book Four Section 1 pilot has
-    #    started; only that pilot file may exist, and only under data/english_legal_llm/.
+    #    scripts/validate_english_legal_llm.py). The repo book4 English LLM sections have
+    #    started; only those sanctioned files may exist, and only under data/english_legal_llm/.
     import glob
     allowed = {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json", "book4_section5_en_legal_llm.json"}
     stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"), recursive=True)
