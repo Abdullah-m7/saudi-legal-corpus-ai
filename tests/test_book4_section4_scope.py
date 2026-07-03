@@ -4,8 +4,13 @@ The next thematic section after Section 3 is unambiguous — الأسهم وأد
 والصكوك / 股份、债务工具与融资凭证, Articles 103–120 — but the explicit-article set is
 NOT: the coverage matrix marks Article 110 `explicit_in_source` while the source PDF
 renders no distinct provision for it (110 is only cross-referenced with 89 under the
-Article-108 class/type rule). This PR documents that ambiguity only. It creates NO
-provision records, NO content, and NO coverage changes, pending an owner decision.
+Article-108 class/type rule).
+
+The original scope-decision PR documented that ambiguity only. Owner then selected
+Option 1 (reconcile to the source), applied by the Section-4 reconciled-provisions PR:
+Article 110 reclassified to not_explicit_in_source; provisions created for [108],[113],
+[115],[117]. The assertions below are updated (shared-validation compatibility) to the
+resolved state while keeping the scope-decision doc's history checks.
 """
 
 import json
@@ -50,10 +55,14 @@ def test_doc_documents_article_110_conflict():
     assert "reconcile" in txt.lower()
 
 
-# -- NO provision records / content / coverage changes were generated -------
-def test_no_section4_provision_file():
-    for name in ("book4_provisions_103_120.json", "book4_provisions_103_120.jsonl"):
-        assert not os.path.exists(os.path.join(ARTICLES_DIR, name)), name
+# -- resolved state: reconciled provisions + content now exist (Option 1) ----
+def test_section4_provision_file_present_with_reconciled_groups():
+    # Shared-validation compatibility: the reconciled-provisions PR created these.
+    path = os.path.join(ARTICLES_DIR, "book4_provisions_103_120.json")
+    assert os.path.exists(path)
+    assert os.path.exists(os.path.join(ARTICLES_DIR, "book4_provisions_103_120.jsonl"))
+    doc = _read(path)
+    assert [p["source_article_numbers"] for p in doc["provisions"]] == [[108], [113], [115], [117]]
 
 
 def test_no_book4_articles_files():
@@ -61,10 +70,10 @@ def test_no_book4_articles_files():
         assert not f.startswith("book4_articles_"), f
 
 
-def test_no_section4_content_files():
+def test_section4_content_files_present():
     for p in ("content/ar/book4_section4.md", "content/zh/book4_section4.md",
               "content/bilingual/book4_section4_bilingual.md"):
-        assert not os.path.exists(os.path.join(ROOT, p)), p
+        assert os.path.exists(os.path.join(ROOT, p)), p
 
 
 def test_no_full_book4_content():
@@ -73,17 +82,19 @@ def test_no_full_book4_content():
         assert not os.path.exists(os.path.join(ROOT, p)), p
 
 
-# -- coverage matrix untouched (still 80 rows; 110 still as-was) -------------
-def test_coverage_matrix_unchanged_80_rows():
+# -- coverage matrix still 80 rows; 110 reclassified per owner Option 1 ------
+def test_coverage_matrix_still_80_rows():
     rows = _read(COVERAGE)["rows"]
     assert len(rows) == 80
     assert [r["article_number"] for r in rows] == list(range(58, 138))
 
 
-def test_article_110_row_left_as_is():
+def test_article_110_row_reclassified_uncovered():
     by = {r["article_number"]: r for r in _read(COVERAGE)["rows"]}
-    # This PR must NOT reclassify 110 — that is the owner's decision.
-    assert by[CONFLICT]["source_coverage_status"] == "explicit_in_source", CONFLICT
+    # Owner Option 1 reconciliation: 110 moved from explicit_in_source to uncovered.
+    assert by[CONFLICT]["source_coverage_status"] == "not_explicit_in_source", CONFLICT
+    assert by[CONFLICT]["official_text_check"] == "needs_official_text_check", CONFLICT
+    assert by[CONFLICT]["content_record_status"] == "no_record_until_source_available", CONFLICT
 
 
 def test_pdf_explicit_rows_untouched():
