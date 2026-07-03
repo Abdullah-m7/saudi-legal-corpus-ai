@@ -85,7 +85,7 @@ def main() -> int:
     #    scripts/validate_english_legal_llm.py). The Book Four Section 1 pilot has
     #    started; only that pilot file may exist, and only under data/english_legal_llm/.
     import glob
-    allowed = {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json"}
+    allowed = {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json"}
     stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"), recursive=True)
     unexpected = [p for p in stray if os.path.basename(p) not in allowed
                   or os.path.basename(os.path.dirname(p)) != "english_legal_llm"]

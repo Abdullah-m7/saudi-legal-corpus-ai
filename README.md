@@ -493,9 +493,9 @@ The **English reference alignment** now covers **Books One–Three (Articles 1�
   validate: `make english-reference-validate` (**87 records** total).
 - **Not legal advice.**
 
-## English Legal LLM-ready layer (Book Four Sections 1 & 2)
+## English Legal LLM-ready layer (Book Four Sections 1, 2 & 3)
 
-The **English Legal LLM-ready layer** currently covers **Book Four Section 1 and Section 2 only**
+The **English Legal LLM-ready layer** currently covers **Book Four Sections 1, 2 and 3 only**
 — it is **not** full English Legal LLM coverage.
 
 - **Scope:**
@@ -505,7 +505,12 @@ The **English Legal LLM-ready layer** currently covers **Book Four Section 1 and
     `article_reference` records**
     ([`data/english_legal_llm/book4_section2_en_legal_llm.json`](data/english_legal_llm/book4_section2_en_legal_llm.json)).
     The other Section-2 articles (69, 70, 73, 74, 76, 78–83) get **no records**.
-  - **10 records total.**
+  - **Section 3 (General Assemblies):** **Articles 85, 87, 92, 93, 99, 101, 102** — **7
+    `article_reference` records**
+    ([`data/english_legal_llm/book4_section3_en_legal_llm.json`](data/english_legal_llm/book4_section3_en_legal_llm.json)).
+    The owner-reconciled uncovered articles (84, 89, 100) and the other uncovered Section-3 articles
+    (86, 88, 90, 91, 94–98) get **no records**.
+  - **17 records total.**
 - Each record's **`legal_rule_text_en` is copied verbatim** from the corresponding official English
   **reference alignment** record's `english_reference_text` — there are **no model-generated English
   legal summaries** and **no `legal_rule_summary_en`** field (the schema's `additionalProperties:false`
@@ -514,10 +519,11 @@ The **English Legal LLM-ready layer** currently covers **Book Four Section 1 and
 - **English is guidance / reference only; Arabic remains governing**
   (`source_trust.english_source_status = official_guidance_translation`,
   `governing_text_language = ar`, `manual_review_status = needs_manual_check`).
-- **Not** full English Legal LLM coverage — **no** Books 1–3 records and **no** Book Four Sections 3–5
+- **Not** full English Legal LLM coverage — **no** Books 1–3 records and **no** Book Four Sections 4–5
   records yet.
 - Schema `schemas/english_legal_llm.schema.json`; build `make english-legal-llm-book4-section1-data`
-  / `make english-legal-llm-book4-section2-data`; validate `make english-legal-llm-validate`.
+  / `make english-legal-llm-book4-section2-data` / `make english-legal-llm-book4-section3-data`;
+  validate `make english-legal-llm-validate`.
 - **Not legal advice.**
 
 ## License
