@@ -170,7 +170,7 @@ def test_english_llm_files_are_sanctioned_only():
     # sanctioned English LLM files may exist (Section 1 must always be present).
     files = set(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
     assert "book4_section1_en_legal_llm.json" in files, files
-    assert files <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json"}, files
+    assert files <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json"}, files
 
 
 def test_no_english_llm_records_in_reference_dir():
