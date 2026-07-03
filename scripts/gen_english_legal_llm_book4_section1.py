@@ -111,34 +111,72 @@ RECORDS = [
         "en-llm-book4-art059", [59],
         "Capital of a Joint-Stock Company",
         "mandatory",
-        actors_en=["joint-stock company", "shareholders"],
-        obligations_en=["the company's capital must meet the minimum set by the Regulations"],
-        keywords_en=["minimum capital", "joint-stock company", "share capital"],
-        search_queries_en=["What is the minimum capital of a joint-stock company?",
-                           "How is the capital of a JSC determined?"]),
+        actors_en=["joint-stock company", "incorporators / shareholders"],
+        obligations_en=[
+            "the issued capital of a joint-stock company must be at least five hundred thousand riyals",
+            "the paid-up capital upon incorporation must be at least one quarter of the issued capital",
+        ],
+        monetary_thresholds=[
+            {"amount": 500000, "currency": "SAR",
+             "description_en": "Minimum issued capital of a joint-stock company: not less than five "
+                               "hundred thousand riyals."},
+            {"amount": 0.25, "currency": "ratio",
+             "description_en": "Paid-up capital upon incorporation: not less than a quarter (one "
+                               "quarter) of the issued capital."},
+        ],
+        keywords_en=["minimum issued capital", "500,000 riyals", "paid-up capital", "one quarter",
+                     "joint-stock company"],
+        search_queries_en=["What is the minimum issued capital of a joint-stock company?",
+                            "How much paid-up capital is required on incorporation of a JSC?"]),
 
     rec(
         "en-llm-book4-art060", [60],
         "Issued and Authorized Capital",
         "procedural",
-        actors_en=["joint-stock company", "extraordinary general assembly"],
-        conditions_en=["distinction between issued capital and authorized capital"],
-        legal_effects_en=["governs issued vs authorized capital of the company"],
-        keywords_en=["issued capital", "authorized capital", "joint-stock company"],
+        actors_en=["joint-stock company", "board of directors", "subscribers / shareholders"],
+        conditions_en=[
+            "the issued capital must be paid in full before the board increases it within the "
+            "authorized capital",
+        ],
+        legal_effects_en=[
+            "the company has issued capital representing the subscribed shares",
+            "the articles of association may provide for authorized capital",
+            "the board of directors may increase the issued capital within the limits of the "
+            "authorized capital",
+        ],
+        keywords_en=["issued capital", "authorized capital", "subscribed shares", "board of directors",
+                     "paid in full"],
         search_queries_en=["What is the difference between issued and authorized capital?",
-                           "How is authorized capital set for a JSC?"]),
+                            "Can the board increase the issued capital within the authorized capital?"]),
 
     rec(
         "en-llm-book4-art066", [66],
         "Valuation of In-Kind Contributions",
         "procedural",
-        actors_en=["joint-stock company", "shareholders", "valuer / competent authority"],
-        obligations_en=["in-kind contributions must be valued per the prescribed procedure"],
-        conditions_en=["valuation requirements for non-cash (in-kind) contributions"],
-        legal_effects_en=["establishes how in-kind contributions to capital are valued"],
-        keywords_en=["in-kind contributions", "valuation", "non-cash capital", "shares"],
+        actors_en=["accredited valuer", "incorporators", "extraordinary general assembly",
+                   "providers of in-kind contributions", "joint-stock company"],
+        obligations_en=[
+            "in-kind contributions must be valued by an accredited valuer who prepares a report "
+            "indicating their fair value",
+        ],
+        prohibitions_en=[
+            "providers of in-kind contributions may not vote on the decision related to the "
+            "valuation report",
+        ],
+        conditions_en=[
+            "a reduction of the value stated in the report must be approved by the providers of the "
+            "in-kind contributions",
+            "the period between the valuer's report and the issuance of shares must not exceed the "
+            "period specified in the Regulations",
+        ],
+        legal_effects_en=[
+            "the valuer's report on fair value is presented to the incorporators or the "
+            "extraordinary general assembly for deliberation",
+        ],
+        keywords_en=["in-kind contributions", "accredited valuer", "fair value", "extraordinary "
+                     "general assembly", "voting restriction"],
         search_queries_en=["How are in-kind contributions valued for a joint-stock company?",
-                           "What are the rules for non-cash contributions to JSC capital?"]),
+                            "Can providers of in-kind contributions vote on the valuation report?"]),
 ]
 
 

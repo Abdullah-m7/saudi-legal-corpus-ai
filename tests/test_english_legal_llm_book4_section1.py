@@ -110,6 +110,53 @@ def test_trust_fields():
         assert "book4_section1_en_reference.json" in st["source_reference_file"], r["record_id"]
 
 
+def _rec(n):
+    return next(r for r in _records() if r["article_numbers"] == [n])
+
+
+# -- derived-metadata accuracy (must be faithful to legal_rule_text_en) ------
+def test_article_59_monetary_thresholds_and_obligations():
+    r = _rec(59)
+    mt_blob = json.dumps(r["monetary_thresholds"], ensure_ascii=False).lower()
+    assert "500000" in mt_blob or "500,000" in mt_blob, r["monetary_thresholds"]
+    assert "quarter" in mt_blob, r["monetary_thresholds"]
+    # amounts present numerically
+    amounts = {m["amount"] for m in r["monetary_thresholds"]}
+    assert 500000 in amounts, amounts
+    # Must NOT claim the minimum is set by the Regulations (not in Article 59 text).
+    text = r["legal_rule_text_en"].lower()
+    obl = " ".join(r["obligations_en"]).lower()
+    if "regulation" not in text:
+        assert "regulation" not in obl, r["obligations_en"]
+    assert any("five hundred thousand" in o.lower() or "500" in o for o in r["obligations_en"])
+    assert any("quarter" in o.lower() for o in r["obligations_en"])
+
+
+def test_article_60_actors_and_conditions():
+    r = _rec(60)
+    actors = " ".join(r["actors_en"]).lower()
+    assert "board of directors" in actors, r["actors_en"]
+    text = r["legal_rule_text_en"].lower()
+    if "extraordinary general assembly" not in text:
+        assert "extraordinary general assembly" not in actors, r["actors_en"]
+    combined = (" ".join(r["conditions_en"]) + " " + " ".join(r["legal_effects_en"])).lower()
+    assert "paid in full" in combined, combined
+    assert "authorized capital" in combined, combined
+
+
+def test_article_66_actors_prohibitions_conditions():
+    r = _rec(66)
+    actors = " ".join(r["actors_en"]).lower()
+    for who in ("accredited valuer", "incorporators", "extraordinary general assembly",
+                "providers of in-kind contributions"):
+        assert who in actors, (who, r["actors_en"])
+    prohib = " ".join(r["prohibitions_en"]).lower()
+    assert "may not vote" in prohib, r["prohibitions_en"]
+    cond = " ".join(r["conditions_en"]).lower()
+    assert "approved by the providers" in cond or "approved by the providers of" in cond, r["conditions_en"]
+    assert "regulations" in cond, r["conditions_en"]
+
+
 def test_no_forbidden_overclaim_terms():
     blob = open(DATA, encoding="utf-8").read().lower()
     for term in ("binding english text", "governing english text", "english is binding",
