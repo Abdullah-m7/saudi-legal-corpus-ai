@@ -10,6 +10,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         book3-data book3-jsonl book3-validate book3-html book3-pdf book3-build \
         book4-coverage book4-validate book4-model-check book4-coverage-check \
         book4-section1-data book4-section1-jsonl book4-section1-html book4-section1-build \
+        book4-section2-data book4-section2-jsonl book4-section2-html book4-section2-build \
         arabic-legal-llm-data arabic-legal-llm-validate \
         official-english-source-extract official-english-source-validate \
         english-reference-book1-data english-reference-book1-jsonl \
@@ -145,6 +146,19 @@ book4-section1-html:
 
 book4-section1-build: book4-section1-data book4-section1-jsonl book4-validate book4-section1-html
 	@echo "book4 section1 build complete: provisions (58,59,60,66) + section HTML (NOT full Book Four)"
+
+# -- Book Four Section 2 (provisions for explicit articles 67,68,71,72,75,77) --
+book4-section2-data:
+	$(PY) scripts/gen_book4_section2_provisions.py
+
+book4-section2-jsonl:
+	$(PY) scripts/build_book4_section2_jsonl.py
+
+book4-section2-html:
+	$(PY) scripts/render_book4_section2_html.py
+
+book4-section2-build: book4-section2-data book4-section2-jsonl book4-validate book4-section2-html
+	@echo "book4 section2 build complete: provisions (67,68,71,72,75,77) + section HTML (NOT full Book Four)"
 
 # -- Arabic Legal LLM-ready layer (structured Arabic metadata) ---------------
 arabic-legal-llm-data:
