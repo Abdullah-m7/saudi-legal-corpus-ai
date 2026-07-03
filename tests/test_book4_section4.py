@@ -208,8 +208,13 @@ def test_english_reference_unchanged():
                        ("book4_section3_en_reference.json", [85, 87, 92, 93, 99, 101, 102])):
         doc = _read(os.path.join(ref, fname))
         assert [r["article_number"] for r in doc["records"]] == exp, fname
-    # No Section-4 English reference file (out of scope for this PR).
-    assert not os.path.exists(os.path.join(ref, "book4_section4_en_reference.json"))
+    # The Section-4 English reference file, if present, contains exactly the
+    # reconciled provision-covered articles (added by the Section 4 English
+    # reference PR); shared-validation compatibility — Article 110 stays excluded.
+    s4_ref = os.path.join(ref, "book4_section4_en_reference.json")
+    if os.path.exists(s4_ref):
+        doc = _read(s4_ref)
+        assert [r["article_number"] for r in doc["records"]] == [108, 113, 115, 117]
 
 
 def test_arabic_legal_llm_unchanged():
