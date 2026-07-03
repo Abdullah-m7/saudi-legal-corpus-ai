@@ -293,6 +293,11 @@ Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
   built). There is intentionally **no `make book4-build`** yet.
 - Future Book Four content lands as **section-split PRs** (58–66 / 67–83 / 84–102 / 103–120 /
   121–137).
+- **Section 1 (设立与资本 / التأسيس ورأس المال)**: provision records added for the **explicit source
+  articles 58, 59, 60, 66 only** (`data/articles/book4_provisions_058_066.json`; build via
+  `make book4-section1-build`). **Articles 61–65 remain uncovered / `needs_official_text_check`**.
+  This is **not** a full Book Four translation and there is no `content/*/book4.md` — only
+  `content/*/book4_section1.md` (clearly labelled Section 1, provisions-based).
 - Trust posture unchanged: internally reviewed (مراجَعة داخليًا / 经内部审校);
   `official_text_check = needs_check`; never `verified` / `محققة` / `经核验`; book-specific
   disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.
