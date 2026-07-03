@@ -43,6 +43,13 @@ B4_SECTIONS = [
         "groups": [[108], [113], [115], [117]],
         "uncovered": {103, 104, 105, 106, 107, 109, 110, 111, 112, 114, 116, 118, 119, 120},
     },
+    {
+        "label": "book4 section5",
+        "layer": os.path.join(LAYER_DIR, "book4_section5_ar_legal_llm.json"),
+        "provisions": os.path.join(ROOT, "data", "articles", "book4_provisions_121_137.json"),
+        "groups": [[123, 124], [126, 127], [128, 129, 130], [132], [133]],
+        "uncovered": {121, 122, 125, 131, 134, 135, 136, 137},
+    },
 ]
 
 

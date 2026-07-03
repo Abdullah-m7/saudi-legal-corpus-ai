@@ -391,9 +391,17 @@ existing article/provision wording or Chinese translations, and is **not legal a
     **Article 110 remains uncovered** (owner Option 1 reclassified it `not_explicit_in_source`),
     and Articles **103–107, 109, 111, 112, 114, 116, 118–120** also remain uncovered — all get
     **no records** (`needs_official_text_check`).
+  - **Book Four Section 5 (财务、利润与资本变更 / المالية والأرباح وتغيير رأس المال)** —
+    [`book4_section5_ar_legal_llm.json`](data/arabic_legal_llm/book4_section5_ar_legal_llm.json),
+    derived **only** from the Book Four Section 5 model-1b provisions — **5 provision records**
+    mapped to **[123,124], [126,127], [128,129,130], [132], [133]**. Each record's
+    `legal_rule_summary_ar` is read verbatim from the corresponding provision's
+    `arabic_reference_summary` (exact-match tested). **Articles 121, 122, 125, 131, 134, 135,
+    136, 137 remain uncovered** — all get **no records** (134 & 135 appear only as a
+    cross-reference in the source's capital-reduction block).
   - Book Four stays **model 1b** (provision-covered articles only) — this is **not** full
     Book Four article coverage; uncovered articles remain `needs_official_text_check`.
-    Arabic Legal LLM now covers **Books 1–3 + Book Four Sections 1, 2, 3, 4** (7 files, 75 records).
+    Arabic Legal LLM now covers **Books 1–3 + Book Four Sections 1, 2, 3, 4, 5** (8 files, 80 records).
 - **Build / validate:** `make arabic-legal-llm-data` (regenerate all layer files) and
   `make arabic-legal-llm-validate` (schema + guardrails over every layer file). Tests:
   [`tests/test_arabic_legal_llm_layer.py`](tests/test_arabic_legal_llm_layer.py),
