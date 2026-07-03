@@ -175,8 +175,12 @@ def test_arabic_legal_llm_unchanged():
     assert sorted(r["article_numbers"][0] for r in s1["records"]) == [58, 59, 60, 66]
     s2 = _read(os.path.join(layer, "book4_section2_ar_legal_llm.json"))
     assert [r["article_numbers"] for r in s2["records"]] == [[67, 68], [71], [72], [75], [77]]
-    # No Arabic Legal LLM Section 3 file yet (out of scope for this PR).
-    assert not os.path.exists(os.path.join(layer, "book4_section3_ar_legal_llm.json"))
+    # The Section 3 Arabic Legal LLM layer, if present, mirrors the Section 3
+    # provision groups exactly (added by the Section 3 Arabic LLM PR).
+    s3_path = os.path.join(layer, "book4_section3_ar_legal_llm.json")
+    if os.path.exists(s3_path):
+        s3 = _read(s3_path)
+        assert [r["article_numbers"] for r in s3["records"]] == [[85, 87], [92, 93], [99], [101], [102]]
 
 
 def test_books_1_3_canonical_unchanged():

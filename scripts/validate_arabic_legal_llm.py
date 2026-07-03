@@ -18,11 +18,25 @@ LAYER_DIR = os.path.join(ROOT, "data", "arabic_legal_llm")
 SCHEMA = os.path.join(ROOT, "schemas", "arabic_legal_llm.schema.json")
 BANNED = ["verified_summary", "verified", "محققة", "经核验"]
 
-# Book Four Section 2 — model-1b Arabic LLM records must mirror the provisions.
-B4S2_LAYER = os.path.join(LAYER_DIR, "book4_section2_ar_legal_llm.json")
-B4S2_PROVISIONS = os.path.join(ROOT, "data", "articles", "book4_provisions_067_083.json")
-B4S2_GROUPS = [[67, 68], [71], [72], [75], [77]]
-B4S2_UNCOVERED = {69, 70, 73, 74, 76, 78, 79, 80, 81, 82, 83}
+# Book Four model-1b Arabic LLM sections — records must mirror their provisions
+# exactly (groups + legal_rule_summary_ar), map to no uncovered article, and use
+# text_type = internally_reviewed_summary.
+B4_SECTIONS = [
+    {
+        "label": "book4 section2",
+        "layer": os.path.join(LAYER_DIR, "book4_section2_ar_legal_llm.json"),
+        "provisions": os.path.join(ROOT, "data", "articles", "book4_provisions_067_083.json"),
+        "groups": [[67, 68], [71], [72], [75], [77]],
+        "uncovered": {69, 70, 73, 74, 76, 78, 79, 80, 81, 82, 83},
+    },
+    {
+        "label": "book4 section3",
+        "layer": os.path.join(LAYER_DIR, "book4_section3_ar_legal_llm.json"),
+        "provisions": os.path.join(ROOT, "data", "articles", "book4_provisions_084_102.json"),
+        "groups": [[85, 87], [92, 93], [99], [101], [102]],
+        "uncovered": {84, 86, 88, 89, 90, 91, 94, 95, 96, 97, 98, 100},
+    },
+]
 
 
 def _read(path):
@@ -67,34 +81,37 @@ def main() -> int:
             if not rec.get("legal_rule_summary_ar", "").strip():
                 problems.append(f"{label}:{rid}: legal_rule_summary_ar empty")
 
-    # -- Book Four Section 2 specific guardrails ------------------------------
-    if os.path.exists(B4S2_LAYER):
-        s2 = _read(B4S2_LAYER).get("records", [])
-        groups = [r.get("article_numbers") for r in s2]
-        if len(s2) != 5:
-            problems.append(f"book4 section2: expected 5 records, got {len(s2)}")
-        if groups != B4S2_GROUPS:
-            problems.append(f"book4 section2: article groups must be {B4S2_GROUPS} (got {groups})")
+    # -- Book Four model-1b section guardrails (Sections 2 and 3) -------------
+    for sec in B4_SECTIONS:
+        label = sec["label"]
+        if not os.path.exists(sec["layer"]):
+            continue  # section layer is optional until its PR lands
+        recs = _read(sec["layer"]).get("records", [])
+        groups = [r.get("article_numbers") for r in recs]
+        if len(recs) != len(sec["groups"]):
+            problems.append(f"{label}: expected {len(sec['groups'])} records, got {len(recs)}")
+        if groups != sec["groups"]:
+            problems.append(f"{label}: article groups must be {sec['groups']} (got {groups})")
         covered = {n for g in groups for n in g}
-        if covered & B4S2_UNCOVERED:
-            problems.append(f"book4 section2: records map to uncovered articles {sorted(covered & B4S2_UNCOVERED)}")
-        for r in s2:
+        if covered & sec["uncovered"]:
+            problems.append(f"{label}: records map to uncovered articles {sorted(covered & sec['uncovered'])}")
+        for r in recs:
             rid = r.get("record_id", "?")
             if r.get("record_type") != "provision":
-                problems.append(f"book4 section2:{rid}: record_type must be provision")
+                problems.append(f"{label}:{rid}: record_type must be provision")
             if r.get("source_trust", {}).get("text_type") != "internally_reviewed_summary":
-                problems.append(f"book4 section2:{rid}: text_type must be internally_reviewed_summary")
+                problems.append(f"{label}:{rid}: text_type must be internally_reviewed_summary")
         # legal_rule_summary_ar must EXACTLY match the corresponding provision summary.
-        if os.path.exists(B4S2_PROVISIONS):
+        if os.path.exists(sec["provisions"]):
             prov = {tuple(p["source_article_numbers"]): p["arabic_reference_summary"]
-                    for p in _read(B4S2_PROVISIONS).get("provisions", [])}
-            for r in s2:
+                    for p in _read(sec["provisions"]).get("provisions", [])}
+            for r in recs:
                 key = tuple(r.get("article_numbers", []))
                 if prov.get(key) != r.get("legal_rule_summary_ar"):
-                    problems.append(f"book4 section2:{r.get('record_id')}: "
+                    problems.append(f"{label}:{r.get('record_id')}: "
                                     f"legal_rule_summary_ar != provision arabic_reference_summary")
         else:
-            problems.append("book4 section2: provisions file book4_provisions_067_083.json missing")
+            problems.append(f"{label}: provisions file {os.path.basename(sec['provisions'])} missing")
 
     print("=" * 60)
     print("Arabic Legal LLM-ready layer validation")

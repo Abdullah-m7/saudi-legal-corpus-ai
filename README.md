@@ -356,6 +356,12 @@ existing article/provision wording or Chinese translations, and is **not legal a
     mapped to **[67, 68], [71], [72], [75], [77]**. Each record's `legal_rule_summary_ar` is
     read verbatim from the corresponding provision's `arabic_reference_summary` (exact-match
     tested). **Articles 69, 70, 73, 74, 76, 78–83 remain uncovered** and get **no records**.
+  - **Book Four Section 3 (股东大会 / الجمعية العامة)** —
+    [`book4_section3_ar_legal_llm.json`](data/arabic_legal_llm/book4_section3_ar_legal_llm.json),
+    derived **only** from the Book Four Section 3 model-1b provisions — **5 provision records**
+    mapped to **[85, 87], [92, 93], [99], [101], [102]**. Each record's `legal_rule_summary_ar`
+    is read verbatim from the corresponding provision's `arabic_reference_summary` (exact-match
+    tested). **Articles 84, 86, 88, 89, 90, 91, 94–98, 100 remain uncovered** and get **no records**.
   - Book Four stays **model 1b** (provision-covered articles only) — this is **not** full
     Book Four article coverage; uncovered articles remain `needs_official_text_check`.
 - **Build / validate:** `make arabic-legal-llm-data` (regenerate all layer files) and
