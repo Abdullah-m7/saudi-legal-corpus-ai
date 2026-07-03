@@ -27,18 +27,21 @@
     "official_gazette": "Umm Al-Qura (أم القرى)"
   },
   "official_arabic_foundation": {
-    "note_en": "Foundation stage for the official Arabic statutory text (the future canonical legal source). Authoritative operational record: data/official_arabic/ingestion_status.json. Design/verification docs: docs/official_arabic_text/. No official Arabic statutory text has been ingested or verified yet.",
-    "official_arabic_text_status": "not_ingested",
+    "note_en": "Foundation for the official Arabic statutory text (the future canonical legal source). A full USER-PROVIDED Arabic text candidate has been ingested and segmented into 281 article records; it is NOT yet verified against Umm Al-Qura or the Bureau of Experts. Authoritative operational record: data/official_arabic/ingestion_status.json (article records: data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json). Design/verification docs: docs/official_arabic_text/.",
+    "official_arabic_text_status": "user_provided_source_ingested",
     "current_arabic_summary_status": "internally_reviewed_reference_summary_not_official",
     "official_source_required": true,
-    "verification_status": "pending_official_source",
+    "verification_status": "ingested_unverified",
     "article_by_article_verified": false,
-    "source_document_type": "official_gazette_or_official_government_source_required",
-    "source_authority": "Umm Al-Qura (أم القرى) official gazette / Bureau of Experts at the Council of Ministers — REQUIRED, not yet provided",
-    "source_publication_reference": "Companies Law issued by Royal Decree No. (M/132), dated 1443/12/01 AH — official gazette text of all 281 articles required",
-    "source_url_or_file_reference": null,
-    "extraction_method": "not_started",
-    "reviewer_notes": "Until article-by-article verification against an official source is completed, the current Arabic content must not be treated as official statutory text. Arabic remains governing."
+    "articles_ingested": 281,
+    "articles_verified": 0,
+    "source_document_type": "user_provided_markdown_packet_pending_official_source_verification",
+    "source_authority": "user_provided_text_claimed_official_pending_gazette_or_boe_verification",
+    "source_publication_reference": "Companies Law issued by Royal Decree No. (M/132), dated 1443/12/01 AH",
+    "source_url_or_file_reference": "inputs/official_arabic_companies_law_m132_1443_user_provided.md",
+    "article_records_file": "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json",
+    "extraction_method": "direct_user_provided_markdown_packet",
+    "reviewer_notes": "The ingested Arabic text is a user_provided_official_text_candidate, ingested_unverified. Until article-by-article verification against an official source (Umm Al-Qura / Bureau of Experts) is completed, it must not be marked verified and the current Arabic summaries must not be treated as official statutory text. Arabic remains governing."
   },
   "copyright_note_en": "This repository contains concise reference summaries and structured metadata. It does not reproduce the full official Arabic statutory text beyond what is necessary for reference, consistent with the user-provided translation source.",
   "upgrades_applied": {

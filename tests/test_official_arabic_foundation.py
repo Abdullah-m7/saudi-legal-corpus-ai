@@ -60,9 +60,11 @@ def test_ingestion_status_has_all_provenance_fields():
         assert f in status, f
 
 
-def test_official_arabic_text_status_is_explicit_and_not_ingested():
+def test_official_arabic_text_status_is_explicit():
+    # A user-provided candidate has now been ingested (unverified); the status must stay
+    # explicit and non-official-verified, and an official source is still required.
     status = _read(STATUS)
-    assert status["official_arabic_text_status"] == "not_ingested"
+    assert status["official_arabic_text_status"] in ("not_ingested", "user_provided_source_ingested")
     assert status["official_source_required"] is True
 
 
@@ -74,11 +76,14 @@ def test_current_arabic_summaries_not_marked_official():
 
 
 def test_no_premature_verification():
+    # Ingestion of a user-provided candidate may set articles_ingested > 0, but nothing may be
+    # marked verified: article_by_article_verified stays false, articles_verified stays 0, and
+    # verification_status must never be the verified value. The manifest keeps no inline records.
     status = _read(STATUS)
     assert status["article_by_article_verified"] is False
     assert status["articles_verified"] == 0
-    assert status["articles_ingested"] == 0
-    assert status["verification_status"] == "pending_official_source"
+    assert status["verification_status"] in ("pending_official_source", "ingested_unverified")
+    assert status["verification_status"] != "verified_against_official_gazette"
     assert status.get("articles", []) == []
 
 
@@ -86,8 +91,9 @@ def test_source_provenance_keeps_arabic_non_official():
     prov = _read(PROVENANCE)
     assert prov["official_text_status"]["checked_against_official_gazette"] is False
     oaf = prov["official_arabic_foundation"]
-    assert oaf["official_arabic_text_status"] == "not_ingested"
+    assert oaf["official_arabic_text_status"] in ("not_ingested", "user_provided_source_ingested")
     assert oaf["article_by_article_verified"] is False
+    assert oaf["verification_status"] != "verified_against_official_gazette"
     assert "not_official" in oaf["current_arabic_summary_status"]
 
 
@@ -121,13 +127,16 @@ def test_schema_forbids_additional_properties():
     assert schema.get("additionalProperties") is False
 
 
-def test_no_official_article_records_present_yet():
-    # No file under data/official_arabic/ (other than the manifest) may carry official_text_ar.
+def test_no_official_article_records_marked_verified():
+    # A user-provided candidate file with official_text_ar records is allowed once ingested,
+    # but NONE of those records may be marked verified against the official gazette.
     for path in glob.glob(os.path.join(OA_DIR, "*.json")):
         if os.path.basename(path) == "ingestion_status.json":
             continue
-        blob = open(path, encoding="utf-8").read()
-        assert "official_text_ar" not in blob, path
+        doc = _read(path)
+        for r in doc.get("articles", doc.get("records", [])):
+            if isinstance(r, dict) and "official_text_ar" in r:
+                assert r.get("verification_status") != "verified_against_official_gazette", path
 
 
 # -- no derived layer changed / claims premature verification ----------------

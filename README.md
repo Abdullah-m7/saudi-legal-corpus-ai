@@ -451,6 +451,29 @@ aligns to official Arabic article IDs. This section is an honest status marker f
   per the source-packet requirements; ingestion then follows the verification plan. This is **not**
   a claim of a full official Arabic corpus — it is the foundation stage only. Not legal advice.
 
+## Official Arabic user-provided text ingestion
+
+A **full user-provided Arabic text packet** of the Companies Law (Royal Decree M/132, 1443/12/01 AH)
+has been **ingested and segmented into exactly 281 article records**, each carrying its verbatim
+`official_text_ar` and a SHA-256 hash.
+
+- **Status: user-provided official text *candidate*, `ingested_unverified`.** It is **not yet
+  verified** against *Umm Al-Qura* or the Bureau of Experts at the Council of Ministers
+  (`article_by_article_verified = false`, `articles_verified = 0`). It is the **candidate official
+  Arabic source for the upcoming verification** (Phases E–F of the verification plan).
+- **Files:** raw packet
+  [`inputs/official_arabic_companies_law_m132_1443_user_provided.md`](inputs/official_arabic_companies_law_m132_1443_user_provided.md);
+  structured records
+  [`data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json`](data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json)
+  (281 records, 1–281; Article 1 = التعريفات, Article 281 = نفاذ النظام). Build with
+  `make official-arabic-user-provided-data`; validate with `make official-arabic-ingestion-validate`.
+- **Arabic remains the governing legal language.** The **current Arabic summaries remain secondary
+  and non-official** until this candidate is verified against an official source and the layers are
+  reconciled. The Arabic/English/Chinese LLM layers are unchanged by this ingestion.
+- The ingestion preserves the legal text verbatim (no rewriting/paraphrasing/normalization; the
+  Royal Decree / Council of Ministers preamble is kept as source metadata, not as article records).
+  Not legal advice.
+
 ## Official English guidance source
 
 The repository now tracks an **official English guidance translation** source of the
