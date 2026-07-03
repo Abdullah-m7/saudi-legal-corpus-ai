@@ -164,10 +164,13 @@ def test_no_forbidden_overclaim_terms():
         assert term not in blob, term
 
 
-# -- this is the ONLY English LLM file (pilot) ------------------------------
-def test_only_pilot_english_llm_file():
-    files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
-    assert files == ["book4_section1_en_legal_llm.json"], files
+# -- English LLM files are limited to the sanctioned set --------------------
+def test_english_llm_files_are_sanctioned_only():
+    # Shared-validation compatibility: Section 2 has since been added; only the
+    # sanctioned English LLM files may exist (Section 1 must always be present).
+    files = set(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
+    assert "book4_section1_en_legal_llm.json" in files, files
+    assert files <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json"}, files
 
 
 def test_no_english_llm_records_in_reference_dir():

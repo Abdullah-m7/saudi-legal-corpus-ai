@@ -159,12 +159,12 @@ def test_article_102_inspection_request():
 def test_no_english_llm_directory():
     # English Legal LLM layer started (Book Four Section 1 pilot); only that file may exist.
     _elf = glob.glob(os.path.join(ROOT, "data", "english_legal_llm", "*_en_legal_llm.json"))
-    assert sorted(os.path.basename(p) for p in _elf) in ([], ["book4_section1_en_legal_llm.json"]), _elf
+    assert set(os.path.basename(p) for p in _elf) <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json"}, _elf
 
 
 def test_no_english_llm_record_files():
     stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"), recursive=True)
-    assert sorted(os.path.basename(p) for p in stray) in ([], ["book4_section1_en_legal_llm.json"]), stray
+    assert set(os.path.basename(p) for p in stray) <= {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json"}, stray
 
 
 # -- no overclaim -----------------------------------------------------------
