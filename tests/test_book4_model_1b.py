@@ -91,12 +91,13 @@ def test_model_doc_does_not_overclaim_verification():
 
 
 # -- no full Book Four content exists ---------------------------------------
-def test_no_book4_article_dataset():
+def test_no_book4_per_article_dataset():
+    # Enduring guardrail: model 1b forbids a full PER-ARTICLE Book Four dataset.
+    # Thematic PROVISION datasets (book4_provisions_*) are the approved model and
+    # may exist from Section content PRs onward.
     articles_dir = os.path.join(ROOT, "data", "articles")
     for f in os.listdir(articles_dir):
         assert not f.startswith("book4_articles_"), f
-        # provisions dataset must also not exist yet
-        assert not (f.startswith("book4_provisions") and f.endswith((".json", ".jsonl"))), f
 
 
 def test_no_book4_content_markdown():

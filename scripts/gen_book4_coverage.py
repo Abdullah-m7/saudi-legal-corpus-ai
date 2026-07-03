@@ -10,6 +10,7 @@ and does NOT invent article titles or legal text for uncovered articles.
 Writes: data/coverage/book4_coverage_matrix.json
 """
 
+import glob
 import json
 import os
 
@@ -18,6 +19,21 @@ ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, "data", "coverage", "book4_coverage_matrix.json")
 
 FIRST, LAST = 58, 137
+
+
+def _articles_with_provision_records():
+    """Scan any committed Book Four provision datasets and return the set of
+    article numbers that already have a provision record. This keeps the coverage
+    matrix's content_record_status a reproducible function of what exists."""
+    covered = set()
+    pattern = os.path.join(ROOT, "data", "articles", "book4_provisions_*.json")
+    for path in sorted(glob.glob(pattern)):
+        with open(path, "r", encoding="utf-8") as fh:
+            doc = json.load(fh)
+        for prov in doc.get("provisions", []):
+            for n in prov.get("source_article_numbers", []):
+                covered.add(n)
+    return covered
 
 # Articles explicitly rendered in inputs/bab4_source.pdf (from preflight inspection).
 # Articles 134–135 are only REFERENCED (creditor-protection detail), not rendered,
@@ -82,10 +98,15 @@ def section_of(n):
 
 
 def main():
+    provisioned = _articles_with_provision_records()
     rows = []
     for n in range(FIRST, LAST + 1):
         key, sec_ar, sec_zh = section_of(n)
         explicit = n in EXPLICIT
+        if explicit:
+            record_status = "provision_created" if n in provisioned else "pending"
+        else:
+            record_status = "no_record_until_source_available"
         rows.append({
             "book": 4,
             "article_number": n,
@@ -99,7 +120,7 @@ def main():
             "article_title_zh": None,
             "source_coverage_status": "explicit_in_source" if explicit else "not_explicit_in_source",
             "official_text_check": "needs_check" if explicit else "needs_official_text_check",
-            "content_record_status": "pending" if explicit else "no_record_until_source_available",
+            "content_record_status": record_status,
             "note": EXPLICIT_NOTES.get(n, "" if explicit else "not rendered in source PDF; no invented content"),
         })
 

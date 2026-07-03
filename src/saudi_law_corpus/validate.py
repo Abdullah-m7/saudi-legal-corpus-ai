@@ -100,10 +100,64 @@ def validate_book4() -> Tuple[bool, Dict[str, List[str]]]:
             report[name] = problems
 
     # Provision schema must exist for the future content stage.
-    prov_schema = os.path.join(SCHEMAS, "book4_provision.schema.json")
-    if not os.path.exists(prov_schema):
+    prov_schema_path = os.path.join(SCHEMAS, "book4_provision.schema.json")
+    if not os.path.exists(prov_schema_path):
         report["b4_10_provision_schema_exists"] = [
             "schemas/book4_provision.schema.json must exist"]
+
+    # -- Validate any Book Four provision datasets that exist (model 1b) --
+    import glob
+
+    prov_schema = _read(prov_schema_path) if os.path.exists(prov_schema_path) else None
+    explicit = set(coverage.get("explicit_in_source", []))
+    provisioned_articles = set()
+    prov_problems: List[str] = []
+    trust_problems: List[str] = []
+
+    for path in sorted(glob.glob(os.path.join(DATA, "articles", "book4_provisions_*.json"))):
+        doc = _read(path)
+        label = os.path.basename(path)
+        for p in doc.get("provisions", []):
+            if prov_schema is not None:
+                prov_problems += validate_against_schema(
+                    p, prov_schema, f"{label}:{p.get('provision_id')}")
+            nums = p.get("source_article_numbers", [])
+            provisioned_articles.update(nums)
+            # Every mapped article must be explicit_in_source (never an uncovered one).
+            for n in nums:
+                if n not in explicit:
+                    trust_problems.append(
+                        f"{label}:{p.get('provision_id')} maps to non-explicit article {n}")
+            src = p.get("source", {})
+            if p.get("translation_mode") != "internally_reviewed_summary":
+                trust_problems.append(f"{p.get('provision_id')}: translation_mode must be internally_reviewed_summary")
+            if src.get("official_text_check") != "needs_check":
+                trust_problems.append(f"{p.get('provision_id')}: official_text_check must be needs_check")
+            if src.get("source_coverage_status") != "explicit_in_source":
+                trust_problems.append(f"{p.get('provision_id')}: source_coverage_status must be explicit_in_source")
+        # No trust overclaim anywhere in the provisions file.
+        with open(path, "r", encoding="utf-8") as fh:
+            blob = fh.read()
+        for term in ("verified_summary", "verified", "محققة", "经核验"):
+            if term in blob:
+                trust_problems.append(f"{label}: banned trust term '{term}'")
+
+    if prov_problems:
+        report["b4_11_provision_schema_valid"] = prov_problems
+    if trust_problems:
+        report["b4_12_provision_trust_posture"] = trust_problems
+
+    # Coverage/provision consistency: rows for provisioned articles must be
+    # provision_created; provision_created rows must have a provision.
+    cov_created = {r["article_number"] for r in coverage.get("rows", [])
+                   if r.get("content_record_status") == "provision_created"}
+    consistency = []
+    if provisioned_articles != cov_created:
+        consistency.append(
+            f"coverage provision_created {sorted(cov_created)} != provisioned "
+            f"articles {sorted(provisioned_articles)}")
+    if consistency:
+        report["b4_13_coverage_provision_consistency"] = consistency
 
     ok = all(len(v) == 0 for v in report.values())
     return ok, report

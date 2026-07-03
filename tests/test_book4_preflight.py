@@ -71,7 +71,9 @@ def test_no_book4_canonical_data_created():
     ]
     for rel in forbidden:
         assert not os.path.exists(os.path.join(ROOT, rel)), f"unexpected: {rel}"
-    # No book4 article json/jsonl of any name.
+    # No full PER-ARTICLE Book Four dataset. (Thematic provision datasets
+    # book4_provisions_* are the approved model 1b and may exist from the
+    # Section content PRs onward.)
     articles_dir = os.path.join(ROOT, "data", "articles")
     for f in os.listdir(articles_dir):
-        assert not f.startswith("book4_"), f"unexpected canonical file: {f}"
+        assert not f.startswith("book4_articles_"), f"unexpected per-article file: {f}"

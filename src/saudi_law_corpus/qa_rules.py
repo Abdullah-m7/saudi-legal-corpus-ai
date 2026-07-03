@@ -483,7 +483,7 @@ BOOK4_RANGE = list(range(58, 138))
 _B4_BANNED = ["verified_summary", "verified", "محققة", "经核验"]
 _B4_ALLOWED_COVERAGE = {"explicit_in_source", "not_explicit_in_source"}
 _B4_ALLOWED_CHECK = {"needs_check", "needs_official_text_check"}
-_B4_ALLOWED_RECORD = {"pending", "no_record_until_source_available"}
+_B4_ALLOWED_RECORD = {"pending", "no_record_until_source_available", "provision_created"}
 # Coverage rows must NOT carry legal provision text (that belongs on provision
 # records under model 1b, not the coverage matrix).
 _B4_FORBIDDEN_ROW_KEYS = {"arabic_reference_summary", "chinese_translation"}
