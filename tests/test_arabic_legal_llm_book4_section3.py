@@ -121,8 +121,13 @@ def test_english_reference_unchanged():
                        ("book4_section2_en_reference.json", [67, 68, 71, 72, 75, 77])):
         doc = _read(os.path.join(ref, fname))
         assert [r["article_number"] for r in doc["records"]] == exp, fname
-    # No English reference Section 3 file yet (out of scope for this PR).
-    assert not os.path.exists(os.path.join(ref, "book4_section3_en_reference.json"))
+    # The English reference Section 3 file, if present, contains exactly the
+    # reconciled provision-covered articles (added by the Section 3 English
+    # reference PR); Article 100 stays excluded.
+    s3_ref = os.path.join(ref, "book4_section3_en_reference.json")
+    if os.path.exists(s3_ref):
+        doc = _read(s3_ref)
+        assert [r["article_number"] for r in doc["records"]] == [85, 87, 92, 93, 99, 101, 102]
 
 
 def test_book4_section3_provisions_unchanged():
