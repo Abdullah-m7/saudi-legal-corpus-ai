@@ -305,6 +305,14 @@ Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
   Section-2 articles (69, 70, 73, 74, 76, 78–83) remain uncovered / `needs_official_text_check`** with
   no invented content. Section-only outputs `content/*/book4_section2.md` — **not** a full Book Four
   translation and no `content/*/book4.md`.
+- **Section 3 (股东大会 / الجمعية العامة, Articles 84–102): NEEDS OWNER SCOPE DECISION — no
+  provisions generated yet.** The coverage matrix lists Articles **84 and 89** as
+  `explicit_in_source`, but `inputs/bab4_source.pdf` renders **no distinct content** for them
+  (Article 89 does not appear at all; Article 84 has no separate block). Authoring them would
+  require inventing content, which is prohibited, so Section-3 content is **deferred pending an
+  owner decision**. See
+  [`docs/book4_preflight/BOOK4_SECTION3_SCOPE_DECISION.md`](docs/book4_preflight/BOOK4_SECTION3_SCOPE_DECISION.md).
+  No Section-3 provisions, content, or coverage changes exist yet.
 - Trust posture unchanged: internally reviewed (مراجَعة داخليًا / 经内部审校);
   `official_text_check = needs_check`; never `verified` / `محققة` / `经核验`; book-specific
   disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.
