@@ -1,11 +1,12 @@
-"""Chinese Legal LLM-ready layer — Book Four Section 2 (Board of Directors and Governance).
+"""Chinese Legal LLM-ready layer — Book Four Section 4
+(Shares, Debt Instruments and Sukuk / 股份、债务工具与融资凭证).
 
-5 article_reference records for the provision groups [67,68], [71], [72], [75], [77] (the
-source groups Articles 67 & 68 into one provision — preserved exactly). `legal_rule_text_zh`
-is copied verbatim from each provision's `chinese_translation` field in
-data/articles/book4_provisions_067_083.json. There is NO `legal_rule_summary_zh` /
+4 article_reference records for the provision groups [108], [113], [115], [117].
+`legal_rule_text_zh` is copied verbatim from each provision's `chinese_translation` field in
+data/articles/book4_provisions_103_120.json. There is NO `legal_rule_summary_zh` /
 new/machine translation / generated summary. Chinese is an internal working translation
-only; Arabic governs. NOT full Chinese Legal LLM coverage.
+only; Arabic governs. Article 110 remains owner-reconciled excluded. NOT full Chinese Legal
+LLM coverage.
 """
 
 import glob
@@ -16,13 +17,13 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMA = os.path.join(ROOT, "schemas", "chinese_legal_llm.schema.json")
 LLM_DIR = os.path.join(ROOT, "data", "chinese_legal_llm")
-DATA = os.path.join(LLM_DIR, "book4_section2_zh_legal_llm.json")
-PROVISIONS = os.path.join(ROOT, "data", "articles", "book4_provisions_067_083.json")
+DATA = os.path.join(LLM_DIR, "book4_section4_zh_legal_llm.json")
+PROVISIONS = os.path.join(ROOT, "data", "articles", "book4_provisions_103_120.json")
 
 SOURCE_FIELD = "chinese_translation"
-GROUPS = [[67, 68], [71], [72], [75], [77]]
-COVERED = {67, 68, 71, 72, 75, 77}
-UNCOVERED = [69, 70, 73, 74, 76, 78, 79, 80, 81, 82, 83]
+GROUPS = [[108], [113], [115], [117]]
+COVERED = {108, 113, 115, 117}
+UNCOVERED = [103, 104, 105, 106, 107, 109, 110, 111, 112, 114, 116, 118, 119, 120]
 
 
 def _read(path):
@@ -52,18 +53,23 @@ def test_data_exists():
     assert os.path.exists(DATA)
 
 
-def test_exactly_five_records():
-    assert len(_records()) == 5
+def test_exactly_four_records():
+    assert len(_records()) == 4
 
 
 def test_article_groups_exact():
     assert [r["article_numbers"] for r in _records()] == GROUPS
 
 
-def test_no_records_for_uncovered_section2():
+def test_no_records_for_uncovered_section4():
     covered = {n for r in _records() for n in r["article_numbers"]}
     assert not (covered & set(UNCOVERED)), covered
     assert covered == COVERED
+
+
+def test_article_110_specifically_excluded():
+    covered = {n for r in _records() for n in r["article_numbers"]}
+    assert 110 not in covered
 
 
 def test_record_type_and_book():
@@ -115,7 +121,7 @@ def test_trust_fields():
         assert st["governing_text_language"] == "ar", r["record_id"]
         assert st["official_text_check"] == "needs_check", r["record_id"]
         assert st["manual_review_status"] == "needs_manual_check", r["record_id"]
-        assert "book4_provisions_067_083.json" in st["source_reference_file"], r["record_id"]
+        assert "book4_provisions_103_120.json" in st["source_reference_file"], r["record_id"]
 
 
 def test_no_forbidden_overclaim_terms():
@@ -168,84 +174,74 @@ def test_monetary_thresholds_descriptions_are_substrings():
 
 
 # -- TARGETED per-group accuracy (Chinese substring checks against source) ---
-def test_group_67_68_board_composition():
-    r = _rec([67, 68])
-    text = _text([67, 68])
-    assert "董事会" in " ".join(r["actors_zh"]) and "普通股东大会" in " ".join(r["actors_zh"])
-    assert "董事会" in text and "普通股东大会" in text
-    cond = "".join(r["conditions_zh"])
-    assert "三" in cond and "任期" in cond
-    assert "自然人" in text and "任期" in text
-    assert "解聘" in "".join(r["rights_zh"])
-    assert "解聘" in text
-
-
-def test_group_71_disclosure_no_vote_liability():
-    r = _rec([71])
-    text = _text([71])
-    obl = "".join(r["obligations_zh"])
-    assert "披露" in obl and "会议纪要" in obl
-    assert "披露" in text and "会议纪要" in text
-    prohib = "".join(r["prohibitions_zh"])
-    assert "不得" in prohib and "表决" in prohib
-    assert "不得在董事会或股东大会就该事项表决" in text
-    assert any("责任" in x for x in r["liability_zh"])
-    assert "责任" in text
-
-
-def test_group_72_loan_prohibition_nullity_exceptions():
-    r = _rec([72])
-    text = _text([72])
-    prohib = "".join(r["prohibitions_zh"])
-    assert "不得" in prohib and "贷款" in prohib
-    assert "公司不得向其任何董事提供贷款" in text
+def test_group_108_share_types_and_classes():
+    r = _rec([108])
+    text = _text([108])
+    # Three share types and equal rights/obligations within a type or class.
+    for kind in ("普通股", "优先股", "可赎回股"):
+        assert kind in text, kind
     eff = "".join(r["legal_effects_zh"])
-    assert "合同无效" in eff
-    assert "合同无效" in text
-    exc = "".join(r["exceptions_zh"])
-    assert "银行" in exc and "员工激励" in exc
-    assert "银行及融资公司" in text and "员工激励计划" in text
+    assert "普通股" in eff and "可赎回股" in eff
+    assert "权利与义务相等" in eff
+    assert "权利与义务相等" in text
+    # Class-right change requires the special (class-holders') assembly.
+    assert "专门大会" in "".join(r["actors_zh"])
+    assert "专门大会" in text
 
 
-def test_group_75_asset_sale_50pct_approval():
-    r = _rec([75])
-    text = _text([75])
-    obl = "".join(r["obligations_zh"])
-    assert "股东大会批准" in obl and "50%" in obl
-    assert "百分之五十（50%）" in text
-    amounts = {m["amount"] for m in r["monetary_thresholds"]}
-    assert 0.5 in amounts
-    dl = "".join(r["deadlines_zh"])
-    assert "十二" in dl or "12" in dl
-    assert "十二（12）个月" in text
-
-
-def test_group_77_board_powers_binding_bad_faith():
-    r = _rec([77])
-    text = _text([77])
+def test_group_113_drag_along_tag_along_90pct_capital_market_law():
+    r = _rec([113])
+    text = _text([113])
+    actors = " ".join(r["actors_zh"])
+    assert "多数股东" in actors and "少数股东" in actors
     rights = "".join(r["rights_zh"])
-    assert "权限" in rights
-    assert "权限" in text
+    assert "强制" in rights and "少数股东" in rights
+    assert "拖售权" in text and "随售权" in text
+    conds = "".join(r["conditions_zh"])
+    assert "资本市场法" in conds
+    assert "《资本市场法》" in text
+    # 90% voting-power threshold.
+    assert "百分之九十（90%）" in text
+    descs = "".join(m["description_zh"] for m in r["monetary_thresholds"])
+    assert "90%" in descs or "百分之九十" in descs
+    assert 0.9 in {m["amount"] for m in r["monetary_thresholds"]}
+
+
+def test_group_115_unpaid_shares_auction_suspension():
+    r = _rec([115])
+    text = _text([115])
     eff = "".join(r["legal_effects_zh"])
-    assert "约束" in eff
-    assert "约束" in text
-    exc = "".join(r["exceptions_zh"])
-    assert "恶意" in exc or "越权" in exc
-    assert "恶意" in text and "越权" in text
+    # Board may auction/sell the defaulting shares; rights suspended until sale or payment.
+    assert "拍卖" in eff or "出售该违约股份" in eff
+    assert "拍卖" in text
+    assert "暂停" in eff
+    assert "暂停该股份相关的权利" in text
+    conds = "".join(r["conditions_zh"])
+    assert "未缴清" in conds or "股款" in conds
+    assert "未缴清其股款" in text
 
 
-# -- only Sections 1-4 Chinese LLM files; Section 2 present and unchanged ----
-# Sections 3 (general_assemblies) and 4 (shares/debt/sukuk) were added as sanctioned
-# extensions; the Section 2 file must still be present and unchanged, and no file outside
-# Sections 1-4 may exist.
-_ALLOWED_ZH_LLM = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
-                   "book4_section3_zh_legal_llm.json", "book4_section4_zh_legal_llm.json"}
+def test_group_117_debt_instruments_sukuk_egm_convertible_capital_market_law():
+    r = _rec([117])
+    text = _text([117])
+    assert "股份公司" in "".join(r["actors_zh"])
+    eff = "".join(r["legal_effects_zh"])
+    assert "债务工具" in eff and "融资凭证" in eff
+    assert "债务工具" in text and "融资凭证" in text
+    assert "《资本市场法》" in text
+    conds = "".join(r["conditions_zh"])
+    # Convertible instruments require an extraordinary general assembly (EGM) resolution.
+    assert "可转换" in conds and "非常大会" in conds
+    assert "可转换为股份" in text and "非常大会" in text
 
 
-def test_only_sections_1_2_chinese_llm_files():
+# -- only Sections 1 + 2 + 3 + 4 Chinese LLM files --------------------------
+def test_only_sections_1_2_3_4_chinese_llm_files():
     files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")))
-    assert "book4_section2_zh_legal_llm.json" in files, files
-    assert set(files) <= _ALLOWED_ZH_LLM, files
+    assert files == ["book4_section1_zh_legal_llm.json",
+                     "book4_section2_zh_legal_llm.json",
+                     "book4_section3_zh_legal_llm.json",
+                     "book4_section4_zh_legal_llm.json"], files
 
 
 def test_section1_chinese_llm_unchanged():
@@ -253,10 +249,21 @@ def test_section1_chinese_llm_unchanged():
     assert [r["article_numbers"] for r in s1["records"]] == [[58], [59], [60], [66]]
 
 
-def test_no_books_1_3_or_other_section_chinese_llm_files():
+def test_section2_chinese_llm_unchanged():
+    s2 = _read(os.path.join(LLM_DIR, "book4_section2_zh_legal_llm.json"))
+    assert [r["article_numbers"] for r in s2["records"]] == [[67, 68], [71], [72], [75], [77]]
+
+
+def test_section3_chinese_llm_unchanged():
+    s3 = _read(os.path.join(LLM_DIR, "book4_section3_zh_legal_llm.json"))
+    assert [r["article_numbers"] for r in s3["records"]] == [[85, 87], [92, 93], [99], [101], [102]]
+
+
+def test_no_books_1_3_or_section_5_chinese_llm_files():
+    allowed = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
+               "book4_section3_zh_legal_llm.json", "book4_section4_zh_legal_llm.json"}
     for f in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")):
-        base = os.path.basename(f)
-        assert base in _ALLOWED_ZH_LLM, base
+        assert os.path.basename(f) in allowed, os.path.basename(f)
 
 
 # -- existing layers unchanged ----------------------------------------------
@@ -274,8 +281,8 @@ def test_english_legal_llm_unchanged_5_files_30_records():
 
 def test_arabic_legal_llm_unchanged():
     layer = os.path.join(ROOT, "data", "arabic_legal_llm")
-    s2 = _read(os.path.join(layer, "book4_section2_ar_legal_llm.json"))
-    assert [r["article_numbers"] for r in s2["records"]] == [[67, 68], [71], [72], [75], [77]]
+    s4 = _read(os.path.join(layer, "book4_section4_ar_legal_llm.json"))
+    assert [r["article_numbers"] for r in s4["records"]] == [[108], [113], [115], [117]]
     for fname, exp in (("book1_ar_legal_llm.json", list(range(1, 35))),
                        ("book2_ar_legal_llm.json", list(range(35, 51))),
                        ("book3_ar_legal_llm.json", list(range(51, 58)))):
@@ -285,13 +292,13 @@ def test_arabic_legal_llm_unchanged():
 
 def test_english_reference_unchanged():
     ref = os.path.join(ROOT, "data", "english_reference")
-    for fname, exp in (("book4_section2_en_reference.json", [67, 68, 71, 72, 75, 77]),
+    for fname, exp in (("book4_section4_en_reference.json", [108, 113, 115, 117]),
                        ("book4_section5_en_reference.json", [123, 124, 126, 127, 128, 129, 130, 132, 133])):
         doc = _read(os.path.join(ref, fname))
         assert [r["article_number"] for r in doc["records"]] == exp, fname
 
 
-def test_book4_section2_provisions_unchanged():
+def test_book4_section4_provisions_unchanged():
     doc = _read(PROVISIONS)
     assert [p["source_article_numbers"] for p in doc["provisions"]] == GROUPS
     for p in doc["provisions"]:

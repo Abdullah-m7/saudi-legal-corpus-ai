@@ -239,12 +239,17 @@ def test_group_102_company_inspection_minority_shareholder():
     assert "主管司法机关" in text
 
 
-# -- only Sections 1 + 2 + 3 Chinese LLM files ------------------------------
+# -- only Sections 1-4 Chinese LLM files; Section 3 present and unchanged ----
+# Section 4 (shares/debt/sukuk) was added as a sanctioned extension; the Section 3 file must
+# still be present and unchanged, and no file outside Sections 1-4 may exist.
+_ALLOWED_ZH_LLM = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
+                   "book4_section3_zh_legal_llm.json", "book4_section4_zh_legal_llm.json"}
+
+
 def test_only_sections_1_2_3_chinese_llm_files():
     files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")))
-    assert files == ["book4_section1_zh_legal_llm.json",
-                     "book4_section2_zh_legal_llm.json",
-                     "book4_section3_zh_legal_llm.json"], files
+    assert "book4_section3_zh_legal_llm.json" in files, files
+    assert set(files) <= _ALLOWED_ZH_LLM, files
 
 
 def test_section1_chinese_llm_unchanged():
@@ -258,10 +263,8 @@ def test_section2_chinese_llm_unchanged():
 
 
 def test_no_books_1_3_or_section_4_5_chinese_llm_files():
-    allowed = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
-               "book4_section3_zh_legal_llm.json"}
     for f in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")):
-        assert os.path.basename(f) in allowed, os.path.basename(f)
+        assert os.path.basename(f) in _ALLOWED_ZH_LLM, os.path.basename(f)
 
 
 # -- existing layers unchanged ----------------------------------------------
