@@ -17,6 +17,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-reference-book2-data english-reference-book2-jsonl \
         english-reference-book3-data english-reference-book3-jsonl \
         english-reference-book4-section1-data english-reference-book4-section1-jsonl \
+        english-reference-book4-section2-data english-reference-book4-section2-jsonl \
         english-reference-validate
 
 help:
@@ -199,6 +200,12 @@ english-reference-book4-section1-data:
 	$(PY) scripts/gen_english_reference_book4_section1.py
 
 english-reference-book4-section1-jsonl: english-reference-book4-section1-data
+
+# Book Four Section 2 — model 1b provision-covered articles only (67,68,71,72,75,77).
+english-reference-book4-section2-data:
+	$(PY) scripts/gen_english_reference_book4_section2.py
+
+english-reference-book4-section2-jsonl: english-reference-book4-section2-data
 
 english-reference-validate:
 	$(PY) scripts/validate_english_reference.py
