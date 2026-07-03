@@ -303,7 +303,10 @@ def test_art133_capital_decrease_methods():
 # -- only Sections 1-5 English LLM files ------------------------------------
 def test_only_sections_1_to_5_files():
     files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
-    assert files == ["book4_section1_en_legal_llm.json",
+    assert files == ["book1_en_legal_llm.json",
+                     "book2_en_legal_llm.json",
+                     "book3_en_legal_llm.json",
+                     "book4_section1_en_legal_llm.json",
                      "book4_section2_en_legal_llm.json",
                      "book4_section3_en_legal_llm.json",
                      "book4_section4_en_legal_llm.json",
@@ -321,10 +324,16 @@ def test_sections_1_4_unchanged():
     assert [r["article_numbers"] for r in s4["records"]] == [[108], [113], [115], [117]]
 
 
-# -- no Books 1-3 English LLM files ------------------------------------------
-def test_no_books_1_3_english_llm_files():
+# -- only the sanctioned English LLM files (Books 1-3 + repo book4 Sections 1-5) ----
+# Books 1-3 English Legal LLM were added as a sanctioned backfill; only book1/2/3 and the
+# five repo book4 section files may exist.
+def test_only_sanctioned_english_llm_files():
+    allowed = {"book1_en_legal_llm.json", "book2_en_legal_llm.json", "book3_en_legal_llm.json",
+               "book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json",
+               "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json",
+               "book4_section5_en_legal_llm.json"}
     for f in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")):
-        assert os.path.basename(f).startswith("book4_"), f
+        assert os.path.basename(f) in allowed, f
 
 
 # -- existing artifacts unchanged -------------------------------------------

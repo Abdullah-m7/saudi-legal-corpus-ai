@@ -271,16 +271,19 @@ def test_no_books_1_3_or_section_5_chinese_llm_files():
 
 
 # -- existing layers unchanged ----------------------------------------------
-def test_english_legal_llm_unchanged_5_files_30_records():
+def test_english_legal_llm_unchanged_8_files_87_records():
     d = os.path.join(ROOT, "data", "english_legal_llm")
     files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(d, "*_en_legal_llm.json")))
-    assert files == ["book4_section1_en_legal_llm.json",
+    assert files == ["book1_en_legal_llm.json",
+                     "book2_en_legal_llm.json",
+                     "book3_en_legal_llm.json",
+                     "book4_section1_en_legal_llm.json",
                      "book4_section2_en_legal_llm.json",
                      "book4_section3_en_legal_llm.json",
                      "book4_section4_en_legal_llm.json",
                      "book4_section5_en_legal_llm.json"], files
     total = sum(len(_read(p)["records"]) for p in glob.glob(os.path.join(d, "*_en_legal_llm.json")))
-    assert total == 30, total
+    assert total == 87, total
 
 
 def test_arabic_legal_llm_unchanged():
