@@ -12,7 +12,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         book4-section1-data book4-section1-jsonl book4-section1-html book4-section1-build \
         arabic-legal-llm-data arabic-legal-llm-validate \
         official-english-source-extract official-english-source-validate \
-        english-reference-book1-data english-reference-book1-jsonl english-reference-validate
+        english-reference-book1-data english-reference-book1-jsonl \
+        english-reference-book2-data english-reference-book2-jsonl \
+        english-reference-book3-data english-reference-book3-jsonl english-reference-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -164,6 +166,13 @@ english-reference-book1-data:
 
 # The JSONL is produced together with the JSON by the generator above.
 english-reference-book1-jsonl: english-reference-book1-data
+
+# Books Two and Three share the Book One extraction/segmentation logic.
+english-reference-book2-data english-reference-book3-data:
+	$(PY) scripts/gen_english_reference_books2_3.py
+
+english-reference-book2-jsonl: english-reference-book2-data
+english-reference-book3-jsonl: english-reference-book3-data
 
 english-reference-validate:
 	$(PY) scripts/validate_english_reference.py
