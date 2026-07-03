@@ -29,7 +29,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-reference-validate \
         english-legal-llm-book4-section1-data english-legal-llm-book4-section2-data \
         english-legal-llm-book4-section3-data english-legal-llm-book4-section4-data \
-        english-legal-llm-validate
+        english-legal-llm-book4-section5-data english-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -312,6 +312,10 @@ english-legal-llm-book4-section3-data:
 # Book Four Section 4 — provision-covered articles only (108,113,115,117).
 english-legal-llm-book4-section4-data:
 	$(PY) scripts/gen_english_legal_llm_book4_section4.py
+
+# Book Four Section 5 — provision-covered articles only (123,124,126,127,128,129,130,132,133).
+english-legal-llm-book4-section5-data:
+	$(PY) scripts/gen_english_legal_llm_book4_section5.py
 
 english-legal-llm-validate:
 	$(PY) scripts/validate_english_legal_llm.py

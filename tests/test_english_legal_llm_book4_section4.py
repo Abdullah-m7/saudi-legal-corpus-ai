@@ -247,11 +247,12 @@ def test_art117_debt_sukuk_egm_convertible():
 
 # -- only Sections 1-4 English LLM files ------------------------------------
 def test_only_sections_1_to_4_files():
-    files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
-    assert files == ["book4_section1_en_legal_llm.json",
-                     "book4_section2_en_legal_llm.json",
-                     "book4_section3_en_legal_llm.json",
-                     "book4_section4_en_legal_llm.json"], files
+    # Shared-validation compatibility: Section 5 has since been added; Sections 1-4
+    # must always be present and only sanctioned English LLM files may exist.
+    files = set(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
+    need = {"book4_section1_en_legal_llm.json", "book4_section2_en_legal_llm.json", "book4_section3_en_legal_llm.json", "book4_section4_en_legal_llm.json"}
+    assert need <= files, files
+    assert files <= (need | {"book4_section5_en_legal_llm.json"}), files
 
 
 def test_sections_1_2_3_unchanged():
