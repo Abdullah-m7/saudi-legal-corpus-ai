@@ -14,7 +14,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         official-english-source-extract official-english-source-validate \
         english-reference-book1-data english-reference-book1-jsonl \
         english-reference-book2-data english-reference-book2-jsonl \
-        english-reference-book3-data english-reference-book3-jsonl english-reference-validate
+        english-reference-book3-data english-reference-book3-jsonl \
+        english-reference-book4-section1-data english-reference-book4-section1-jsonl \
+        english-reference-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -173,6 +175,12 @@ english-reference-book2-data english-reference-book3-data:
 
 english-reference-book2-jsonl: english-reference-book2-data
 english-reference-book3-jsonl: english-reference-book3-data
+
+# Book Four Section 1 — model 1b provision-covered articles only (58,59,60,66).
+english-reference-book4-section1-data:
+	$(PY) scripts/gen_english_reference_book4_section1.py
+
+english-reference-book4-section1-jsonl: english-reference-book4-section1-data
 
 english-reference-validate:
 	$(PY) scripts/validate_english_reference.py
