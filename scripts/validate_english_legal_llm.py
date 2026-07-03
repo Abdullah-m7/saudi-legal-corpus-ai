@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Validate the English Legal LLM-ready layer (PILOT: Book Four Section 1 only).
+"""Validate the English Legal LLM-ready layer (Book Four Sections 1 & 2).
 
 Enforces:
-- exactly one English Legal LLM file exists: book4_section1_en_legal_llm.json;
-- exactly 4 records, article groups [58], [59], [60], [66]; no 61-65; no other sections/books;
+- exactly the sanctioned files exist: book4_section1_en_legal_llm.json,
+  book4_section2_en_legal_llm.json; no other sections/books;
+- 10 records total — Section 1 [58],[59],[60],[66]; Section 2 [67],[68],[71],[72],[75],[77];
+  no uncovered Section-2 articles (69,70,73,74,76,78-83);
 - every record passes schemas/english_legal_llm.schema.json;
 - legal_rule_text_en is byte-identical to the corresponding english_reference_text;
 - no legal_rule_summary_en / generated-summary field;
@@ -23,12 +25,19 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMA = os.path.join(ROOT, "schemas", "english_legal_llm.schema.json")
 LLM_DIR = os.path.join(ROOT, "data", "english_legal_llm")
-EN_REF = os.path.join(ROOT, "data", "english_reference", "book4_section1_en_reference.json")
+REF_DIR = os.path.join(ROOT, "data", "english_reference")
 
-PILOT_FILE = "book4_section1_en_legal_llm.json"
-COVERED = [58, 59, 60, 66]
-FORBIDDEN_ARTICLES = set(range(61, 66)) | set(range(67, 138)) | set(range(1, 58))
-TOTAL_EXPECTED = 4
+ALL_BOOK4 = set(range(58, 138))
+
+# (llm filename, English reference source filename, covered articles). Each covered
+# article maps to exactly one single-article record; anything else in Book Four is
+# forbidden for that unit.
+UNITS = [
+    ("book4_section1_en_legal_llm.json", "book4_section1_en_reference.json", [58, 59, 60, 66]),
+    ("book4_section2_en_legal_llm.json", "book4_section2_en_reference.json", [67, 68, 71, 72, 75, 77]),
+]
+EXPECTED_FILES = sorted(u[0] for u in UNITS)
+TOTAL_EXPECTED = 10   # 4 (Section 1) + 6 (Section 2)
 
 # Positive overclaim assertions that must NOT appear in the data.
 BANNED = [
@@ -57,66 +66,69 @@ def main() -> int:
     if schema is None:
         problems.append("schema missing: schemas/english_legal_llm.schema.json")
 
-    files = sorted(glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
-    names = [os.path.basename(p) for p in files]
-    if names != [PILOT_FILE]:
-        problems.append("expected exactly one English LLM file %r, found %r" % ([PILOT_FILE], names))
-
-    path = os.path.join(LLM_DIR, PILOT_FILE)
-    reftext = {}
-    if os.path.exists(EN_REF):
-        reftext = {r["article_number"]: r["english_reference_text"]
-                   for r in _read(EN_REF)["records"]}
-    else:
-        problems.append("English reference source missing: book4_section1_en_reference.json")
+    files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_en_legal_llm.json")))
+    if files != EXPECTED_FILES:
+        problems.append("expected exactly English LLM files %r, found %r" % (EXPECTED_FILES, files))
 
     total = 0
-    if not os.path.exists(path):
-        problems.append("pilot data file missing: %s" % PILOT_FILE)
-    else:
+    for fname, ref_fname, covered in UNITS:
+        path = os.path.join(LLM_DIR, fname)
+        ref_path = os.path.join(REF_DIR, ref_fname)
+        reftext = {}
+        if os.path.exists(ref_path):
+            reftext = {r["article_number"]: r["english_reference_text"]
+                       for r in _read(ref_path)["records"]}
+        else:
+            problems.append("%s: English reference source missing: %s" % (fname, ref_fname))
+        if not os.path.exists(path):
+            problems.append("English LLM data file missing: %s" % fname)
+            continue
+
         doc = _read(path)
         records = doc.get("records", [])
-        total = len(records)
+        total += len(records)
         nums = [r.get("article_numbers") for r in records]
-        if nums != [[n] for n in COVERED]:
-            problems.append("article groups must be %r (got %r)" % ([[n] for n in COVERED], nums))
-        flat = [n for g in nums for n in (g or [])]
-        leaked = sorted(set(flat) & FORBIDDEN_ARTICLES)
+        if nums != [[n] for n in covered]:
+            problems.append("%s: article groups must be %r (got %r)" % (fname, [[n] for n in covered], nums))
+        # Nothing outside this unit's covered set may appear (within Book Four).
+        flat = {n for g in nums for n in (g or [])}
+        forbidden = (ALL_BOOK4 - set(covered))
+        leaked = sorted(flat & forbidden)
         if leaked:
-            problems.append("forbidden article numbers present (uncovered/other sections/books): %s" % leaked)
+            problems.append("%s: forbidden article numbers present (uncovered/other sections): %s" % (fname, leaked))
 
         blob = open(path, encoding="utf-8").read()
         if "legal_rule_summary_en" in blob:
-            problems.append("forbidden field legal_rule_summary_en present (no generated summaries)")
+            problems.append("%s: forbidden field legal_rule_summary_en present (no generated summaries)" % fname)
         low = blob.lower()
         for term in BANNED:
             if term in low:
-                problems.append("forbidden overclaim term in data: '%s'" % term)
+                problems.append("%s: forbidden overclaim term in data: '%s'" % (fname, term))
 
         for r in records:
             rid = r.get("record_id", "?")
             if schema is not None:
                 for msg in _validate_record(r, schema):
-                    problems.append("%s: %s" % (rid, msg))
+                    problems.append("%s:%s: %s" % (fname, rid, msg))
             if r.get("record_type") != "article_reference":
-                problems.append("%s: record_type must be article_reference" % rid)
+                problems.append("%s:%s: record_type must be article_reference" % (fname, rid))
             if r.get("book") != 4:
-                problems.append("%s: book must be 4" % rid)
+                problems.append("%s:%s: book must be 4" % (fname, rid))
             if "legal_rule_summary_en" in r:
-                problems.append("%s: legal_rule_summary_en must not exist" % rid)
+                problems.append("%s:%s: legal_rule_summary_en must not exist" % (fname, rid))
             # legal_rule_text_en must equal the English reference text verbatim.
             ans = r.get("article_numbers") or []
             if len(ans) == 1:
                 n = ans[0]
                 if n in reftext and r.get("legal_rule_text_en") != reftext[n]:
-                    problems.append("%s: legal_rule_text_en != english_reference_text (art %s)" % (rid, n))
+                    problems.append("%s:%s: legal_rule_text_en != english_reference_text (art %s)" % (fname, rid, n))
             st = r.get("source_trust", {})
             if st.get("english_source_status") != "official_guidance_translation":
-                problems.append("%s: source_trust.english_source_status must be official_guidance_translation" % rid)
+                problems.append("%s:%s: source_trust.english_source_status must be official_guidance_translation" % (fname, rid))
             if st.get("governing_text_language") != "ar":
-                problems.append("%s: source_trust.governing_text_language must be ar" % rid)
+                problems.append("%s:%s: source_trust.governing_text_language must be ar" % (fname, rid))
             if st.get("manual_review_status") != "needs_manual_check":
-                problems.append("%s: source_trust.manual_review_status must be needs_manual_check" % rid)
+                problems.append("%s:%s: source_trust.manual_review_status must be needs_manual_check" % (fname, rid))
 
     if total != TOTAL_EXPECTED:
         problems.append("total English Legal LLM records must be %d (got %d)" % (TOTAL_EXPECTED, total))
@@ -130,15 +142,15 @@ def main() -> int:
             problems.append("%s must not exist" % p)
 
     print("=" * 60)
-    print("English Legal LLM-ready layer validation (PILOT: Book 4 Section 1)")
+    print("English Legal LLM-ready layer validation (Book 4 Sections 1 & 2)")
     print("=" * 60)
     if problems:
         for p in problems:
             print("  -", p)
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
-    print("[PASS] %d records — Book 4 Section 1 pilot (58,59,60,66); "
-          "legal_rule_text_en verbatim from English reference; "
+    print("[PASS] %d records — Book 4 Section 1 (58,59,60,66) + Section 2 "
+          "(67,68,71,72,75,77); legal_rule_text_en verbatim from English reference; "
           "official_guidance_translation; governing=ar; needs_manual_check; "
           "no generated summaries" % total)
     print("RESULT: ALL CHECKS PASSED ✓")
