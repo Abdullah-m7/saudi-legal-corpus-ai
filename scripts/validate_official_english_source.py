@@ -81,13 +81,16 @@ def main() -> int:
         if not os.path.exists(os.path.join(DOCS, name)):
             problems.append("missing doc: docs/official_english_source/%s" % name)
 
-    # -- no English LLM layer yet ---------------------------------------
-    if os.path.isdir(os.path.join(ROOT, "data", "english_legal_llm")):
-        problems.append("data/english_legal_llm/ must NOT exist yet")
+    # -- English LLM layer is a SEPARATE layer (validated by
+    #    scripts/validate_english_legal_llm.py). The Book Four Section 1 pilot has
+    #    started; only that pilot file may exist, and only under data/english_legal_llm/.
     import glob
+    allowed = {"book4_section1_en_legal_llm.json"}
     stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"), recursive=True)
-    if stray:
-        problems.append("English LLM record files must not exist yet: %s" % stray)
+    unexpected = [p for p in stray if os.path.basename(p) not in allowed
+                  or os.path.basename(os.path.dirname(p)) != "english_legal_llm"]
+    if unexpected:
+        problems.append("unexpected English LLM record files: %s" % unexpected)
 
     # -- no overclaim wording in metadata + docs ------------------------
     blobs = [(META, open(META, encoding="utf-8").read())]
@@ -112,7 +115,8 @@ def main() -> int:
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
     print("[PASS] metadata + %d docs; trust=official_guidance_translation; "
-          "governing=ar; no English LLM layer yet" % len(REQUIRED_DOCS))
+          "governing=ar; English LLM layer tracked separately (validate_english_legal_llm.py)"
+          % len(REQUIRED_DOCS))
     print("RESULT: ALL CHECKS PASSED ✓")
     return 0
 

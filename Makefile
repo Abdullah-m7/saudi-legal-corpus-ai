@@ -26,7 +26,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-reference-book4-section3-data english-reference-book4-section3-jsonl \
         english-reference-book4-section4-data english-reference-book4-section4-jsonl \
         english-reference-book4-section5-data english-reference-book4-section5-jsonl \
-        english-reference-validate
+        english-reference-validate \
+        english-legal-llm-book4-section1-data english-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -292,6 +293,14 @@ english-reference-book4-section5-jsonl: english-reference-book4-section5-data
 
 english-reference-validate:
 	$(PY) scripts/validate_english_reference.py
+
+# -- English Legal LLM-ready layer (PILOT: Book Four Section 1 only; 58,59,60,66) --
+# legal_rule_text_en is verbatim from the English reference; no generated summaries.
+english-legal-llm-book4-section1-data:
+	$(PY) scripts/gen_english_legal_llm_book4_section1.py
+
+english-legal-llm-validate:
+	$(PY) scripts/validate_english_legal_llm.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

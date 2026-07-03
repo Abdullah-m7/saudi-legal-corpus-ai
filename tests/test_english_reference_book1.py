@@ -95,12 +95,14 @@ def test_article2_definition_of_a_company_heading():
 
 # -- no English LLM layer yet -----------------------------------------------
 def test_no_english_llm_directory():
-    assert not os.path.isdir(os.path.join(ROOT, "data", "english_legal_llm"))
+    # English Legal LLM layer started (Book Four Section 1 pilot); only that file may exist.
+    _elf = glob.glob(os.path.join(ROOT, "data", "english_legal_llm", "*_en_legal_llm.json"))
+    assert sorted(os.path.basename(p) for p in _elf) in ([], ["book4_section1_en_legal_llm.json"]), _elf
 
 
 def test_no_english_llm_record_files():
     stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"), recursive=True)
-    assert stray == [], stray
+    assert sorted(os.path.basename(p) for p in stray) in ([], ["book4_section1_en_legal_llm.json"]), stray
 
 
 # -- no overclaim terms -----------------------------------------------------
