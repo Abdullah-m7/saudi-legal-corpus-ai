@@ -344,6 +344,26 @@ existing article/provision wording or Chinese translations, and is **not legal a
 - **Not an official translation and not legal advice.** The binding text is the Arabic in
   *Umm al-Qura*.
 
+## Official English guidance source
+
+The repository now tracks an **official English guidance translation** source of the
+Companies Law, from the **Bureau of Experts at the Council of Ministers — Official
+Translation Department** (Royal Decree No. M/132).
+
+- This is **source intake only** — provenance, coverage planning, and an optional text
+  extractor. See [`docs/official_english_source/`](docs/official_english_source/) and
+  [`data/metadata/official_english_source.json`](data/metadata/official_english_source.json).
+- Trust label: **`official_guidance_translation`**. The PDF itself states: *"This translation
+  is provided for guidance. The governing text is the Arabic text."*
+- The **English Legal LLM-ready layer is not created yet** and **no English per-article records
+  exist yet** — those are separate future PRs.
+- **Arabic remains the governing legal text** (`governing_text_language = ar`); the English is
+  guidance only.
+- Files: `inputs/companies_law_official_english_guidance.pdf`; optional extractor
+  `make official-english-source-extract` → `data/extracted/…` (git-ignored, regenerable);
+  validation `make official-english-source-validate`.
+- **Not legal advice.**
+
 ## License
 
 Source code: **MIT** ([`LICENSE`](LICENSE)). Legal content: see [`NOTICE.md`](NOTICE.md).

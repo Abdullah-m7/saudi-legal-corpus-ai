@@ -10,7 +10,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         book3-data book3-jsonl book3-validate book3-html book3-pdf book3-build \
         book4-coverage book4-validate book4-model-check book4-coverage-check \
         book4-section1-data book4-section1-jsonl book4-section1-html book4-section1-build \
-        arabic-legal-llm-data arabic-legal-llm-validate
+        arabic-legal-llm-data arabic-legal-llm-validate \
+        official-english-source-extract official-english-source-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -147,6 +148,13 @@ arabic-legal-llm-data:
 
 arabic-legal-llm-validate:
 	$(PY) scripts/validate_arabic_legal_llm.py
+
+# -- Official English guidance source (intake + provenance + planning only) --
+official-english-source-extract:
+	$(PY) scripts/extract_official_english_pdf_text.py
+
+official-english-source-validate:
+	$(PY) scripts/validate_official_english_source.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
