@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Validate the Chinese Legal LLM-ready layer (Book Four Sections 1 & 2).
+"""Validate the Chinese Legal LLM-ready layer (Book Four Sections 1, 2 & 3).
 
 Enforces:
 - exactly the sanctioned files exist: book4_section1_zh_legal_llm.json,
-  book4_section2_zh_legal_llm.json; no other sections/books;
-- 9 records total — Section 1 groups [58],[59],[60],[66]; Section 2 groups
-  [67,68],[71],[72],[75],[77]; no uncovered articles;
+  book4_section2_zh_legal_llm.json, book4_section3_zh_legal_llm.json; no other sections/books;
+- 14 records total — Section 1 groups [58],[59],[60],[66]; Section 2 groups
+  [67,68],[71],[72],[75],[77]; Section 3 groups [85,87],[92,93],[99],[101],[102];
+  no uncovered articles;
 - every record passes schemas/chinese_legal_llm.schema.json;
 - legal_rule_text_zh is byte-identical to the corresponding provision's chinese_translation
   in that section's provision source file;
@@ -37,9 +38,11 @@ UNITS = [
      [[58], [59], [60], [66]]),
     ("book4_section2_zh_legal_llm.json", "book4_provisions_067_083.json",
      [[67, 68], [71], [72], [75], [77]]),
+    ("book4_section3_zh_legal_llm.json", "book4_provisions_084_102.json",
+     [[85, 87], [92, 93], [99], [101], [102]]),
 ]
 EXPECTED_FILES = sorted(u[0] for u in UNITS)
-TOTAL_EXPECTED = 9   # 4 (Section 1) + 5 (Section 2)
+TOTAL_EXPECTED = 14   # 4 (Section 1) + 5 (Section 2) + 5 (Section 3)
 
 # Positive overclaim / official-translation assertions that must NOT appear in the data.
 BANNED = [
@@ -146,7 +149,7 @@ def main() -> int:
             problems.append("%s must not exist" % p)
 
     print("=" * 60)
-    print("Chinese Legal LLM-ready layer validation (Book 4 Sections 1 & 2)")
+    print("Chinese Legal LLM-ready layer validation (Book 4 Sections 1, 2 & 3)")
     print("=" * 60)
     if problems:
         for p in problems:
@@ -154,7 +157,8 @@ def main() -> int:
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
     print("[PASS] %d records — Book 4 Section 1 ([58],[59],[60],[66]) + Section 2 "
-          "([67,68],[71],[72],[75],[77]); legal_rule_text_zh verbatim from provision %s; "
+          "([67,68],[71],[72],[75],[77]) + Section 3 ([85,87],[92,93],[99],[101],[102]); "
+          "legal_rule_text_zh verbatim from provision %s; "
           "internal_working_translation; governing=ar; official_text_check=needs_check; "
           "needs_manual_check; no generated summaries" % (total, SOURCE_FIELD))
     print("RESULT: ALL CHECKS PASSED ✓")

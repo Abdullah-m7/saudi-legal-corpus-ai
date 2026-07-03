@@ -31,7 +31,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-legal-llm-book4-section3-data english-legal-llm-book4-section4-data \
         english-legal-llm-book4-section5-data english-legal-llm-validate \
         chinese-legal-llm-book4-section1-data chinese-legal-llm-book4-section2-data \
-        chinese-legal-llm-validate
+        chinese-legal-llm-book4-section3-data chinese-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -331,6 +331,10 @@ chinese-legal-llm-book4-section1-data:
 # Book Four Section 2 — provision groups only ([67,68],[71],[72],[75],[77]).
 chinese-legal-llm-book4-section2-data:
 	$(PY) scripts/gen_chinese_legal_llm_book4_section2.py
+
+# Book Four Section 3 — provision groups only ([85,87],[92,93],[99],[101],[102]).
+chinese-legal-llm-book4-section3-data:
+	$(PY) scripts/gen_chinese_legal_llm_book4_section3.py
 
 chinese-legal-llm-validate:
 	$(PY) scripts/validate_chinese_legal_llm.py

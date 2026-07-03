@@ -1,11 +1,12 @@
-"""Chinese Legal LLM-ready layer — Book Four Section 2 (Board of Directors and Governance).
+"""Chinese Legal LLM-ready layer — Book Four Section 3 (General Assemblies / 股东大会).
 
-5 article_reference records for the provision groups [67,68], [71], [72], [75], [77] (the
-source groups Articles 67 & 68 into one provision — preserved exactly). `legal_rule_text_zh`
-is copied verbatim from each provision's `chinese_translation` field in
-data/articles/book4_provisions_067_083.json. There is NO `legal_rule_summary_zh` /
-new/machine translation / generated summary. Chinese is an internal working translation
-only; Arabic governs. NOT full Chinese Legal LLM coverage.
+5 article_reference records for the source-preserved provision groups [85,87], [92,93],
+[99], [101], [102] (the source groups Articles 85 & 87 and 92 & 93 into one provision each —
+preserved exactly). `legal_rule_text_zh` is copied verbatim from each provision's
+`chinese_translation` field in data/articles/book4_provisions_084_102.json. There is NO
+`legal_rule_summary_zh` / new/machine translation / generated summary. Chinese is an internal
+working translation only; Arabic governs. Articles 84, 89 and 100 remain owner-reconciled
+excluded. NOT full Chinese Legal LLM coverage.
 """
 
 import glob
@@ -16,13 +17,13 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMA = os.path.join(ROOT, "schemas", "chinese_legal_llm.schema.json")
 LLM_DIR = os.path.join(ROOT, "data", "chinese_legal_llm")
-DATA = os.path.join(LLM_DIR, "book4_section2_zh_legal_llm.json")
-PROVISIONS = os.path.join(ROOT, "data", "articles", "book4_provisions_067_083.json")
+DATA = os.path.join(LLM_DIR, "book4_section3_zh_legal_llm.json")
+PROVISIONS = os.path.join(ROOT, "data", "articles", "book4_provisions_084_102.json")
 
 SOURCE_FIELD = "chinese_translation"
-GROUPS = [[67, 68], [71], [72], [75], [77]]
-COVERED = {67, 68, 71, 72, 75, 77}
-UNCOVERED = [69, 70, 73, 74, 76, 78, 79, 80, 81, 82, 83]
+GROUPS = [[85, 87], [92, 93], [99], [101], [102]]
+COVERED = {85, 87, 92, 93, 99, 101, 102}
+UNCOVERED = [84, 86, 88, 89, 90, 91, 94, 95, 96, 97, 98, 100]
 
 
 def _read(path):
@@ -60,10 +61,16 @@ def test_article_groups_exact():
     assert [r["article_numbers"] for r in _records()] == GROUPS
 
 
-def test_no_records_for_uncovered_section2():
+def test_no_records_for_uncovered_section3():
     covered = {n for r in _records() for n in r["article_numbers"]}
     assert not (covered & set(UNCOVERED)), covered
     assert covered == COVERED
+
+
+def test_articles_84_89_100_specifically_excluded():
+    covered = {n for r in _records() for n in r["article_numbers"]}
+    for excluded in (84, 89, 100):
+        assert excluded not in covered, excluded
 
 
 def test_record_type_and_book():
@@ -115,7 +122,7 @@ def test_trust_fields():
         assert st["governing_text_language"] == "ar", r["record_id"]
         assert st["official_text_check"] == "needs_check", r["record_id"]
         assert st["manual_review_status"] == "needs_manual_check", r["record_id"]
-        assert "book4_provisions_067_083.json" in st["source_reference_file"], r["record_id"]
+        assert "book4_provisions_084_102.json" in st["source_reference_file"], r["record_id"]
 
 
 def test_no_forbidden_overclaim_terms():
@@ -168,83 +175,76 @@ def test_monetary_thresholds_descriptions_are_substrings():
 
 
 # -- TARGETED per-group accuracy (Chinese substring checks against source) ---
-def test_group_67_68_board_composition():
-    r = _rec([67, 68])
-    text = _text([67, 68])
-    assert "董事会" in " ".join(r["actors_zh"]) and "普通股东大会" in " ".join(r["actors_zh"])
-    assert "董事会" in text and "普通股东大会" in text
-    cond = "".join(r["conditions_zh"])
-    assert "三" in cond and "任期" in cond
-    assert "自然人" in text and "任期" in text
-    assert "解聘" in "".join(r["rights_zh"])
-    assert "解聘" in text
+def test_group_85_87_assembly_powers():
+    r = _rec([85, 87])
+    text = _text([85, 87])
+    actors = " ".join(r["actors_zh"])
+    assert "普通大会" in actors and "非常大会" in actors
+    assert "普通大会" in text and "非常大会" in text and "职权" in text
+    # OGM powers (electing/removing directors) and EGM power (amending the bylaws).
+    assert any("董事" in x for x in r["rights_zh"])
+    assert "解聘董事" in text
+    assert any("修改公司章程" in x for x in r["legal_effects_zh"])
+    assert "修改公司章程" in text
 
 
-def test_group_71_disclosure_no_vote_liability():
-    r = _rec([71])
-    text = _text([71])
-    obl = "".join(r["obligations_zh"])
-    assert "披露" in obl and "会议纪要" in obl
-    assert "披露" in text and "会议纪要" in text
-    prohib = "".join(r["prohibitions_zh"])
-    assert "不得" in prohib and "表决" in prohib
-    assert "不得在董事会或股东大会就该事项表决" in text
-    assert any("责任" in x for x in r["liability_zh"])
-    assert "责任" in text
-
-
-def test_group_72_loan_prohibition_nullity_exceptions():
-    r = _rec([72])
-    text = _text([72])
-    prohib = "".join(r["prohibitions_zh"])
-    assert "不得" in prohib and "贷款" in prohib
-    assert "公司不得向其任何董事提供贷款" in text
+def test_group_92_93_quorum_and_majority():
+    r = _rec([92, 93])
+    text = _text([92, 93])
+    conds = "".join(r["conditions_zh"])
+    assert "四分之一" in conds or "法定人数" in text
+    assert "四分之一股份" in text
     eff = "".join(r["legal_effects_zh"])
-    assert "合同无效" in eff
-    assert "合同无效" in text
-    exc = "".join(r["exceptions_zh"])
-    assert "银行" in exc and "员工激励" in exc
-    assert "银行及融资公司" in text and "员工激励计划" in text
-
-
-def test_group_75_asset_sale_50pct_approval():
-    r = _rec([75])
-    text = _text([75])
-    obl = "".join(r["obligations_zh"])
-    assert "股东大会批准" in obl and "50%" in obl
-    assert "百分之五十（50%）" in text
+    assert "四分之三" in eff
+    assert "四分之三多数" in text
     amounts = {m["amount"] for m in r["monetary_thresholds"]}
-    assert 0.5 in amounts
+    assert 0.75 in amounts
+
+
+def test_group_99_resolution_challenge():
+    r = _rec([99])
+    text = _text([99])
+    assert any("撤销" in x for x in r["rights_zh"])
+    assert "撤销" in text
     dl = "".join(r["deadlines_zh"])
-    assert "十二" in dl or "12" in dl
-    assert "十二（12）个月" in text
-
-
-def test_group_77_board_powers_binding_bad_faith():
-    r = _rec([77])
-    text = _text([77])
-    rights = "".join(r["rights_zh"])
-    assert "权限" in rights
-    assert "权限" in text
+    assert "九十" in dl or "90" in dl
+    assert "九十（90）日" in text
     eff = "".join(r["legal_effects_zh"])
-    assert "约束" in eff
-    assert "约束" in text
-    exc = "".join(r["exceptions_zh"])
-    assert "恶意" in exc or "越权" in exc
-    assert "恶意" in text and "越权" in text
+    assert "善意第三人" in eff
+    assert "善意第三人" in text
 
 
-# -- only Sections 1-3 Chinese LLM files; Section 2 present and unchanged ----
-# Section 3 (general_assemblies) was added as a sanctioned extension; the Section 2 file
-# must still be present and unchanged, and no file outside Sections 1-3 may exist.
-_ALLOWED_ZH_LLM = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
-                   "book4_section3_zh_legal_llm.json"}
+def test_group_101_circulated_resolution_percentage():
+    r = _rec([101])
+    text = _text([101])
+    eff = "".join(r["legal_effects_zh"])
+    assert "传阅" in eff
+    assert "传阅" in text
+    # 75% voting-power threshold for EGM matters, supported by the source text.
+    assert "百分之七十五（75%）" in text
+    descs = "".join(m["description_zh"] for m in r["monetary_thresholds"])
+    assert "75%" in descs or "百分之七十五" in descs
+    assert 0.75 in {m["amount"] for m in r["monetary_thresholds"]}
 
 
-def test_only_sections_1_2_chinese_llm_files():
+def test_group_102_company_inspection_minority_shareholder():
+    r = _rec([102])
+    text = _text([102])
+    assert any("检查" in x for x in r["rights_zh"])
+    assert "检查" in text
+    conds = "".join(r["conditions_zh"])
+    assert "百分之五" in conds or "5%" in conds
+    assert "百分之五（5%）" in text
+    assert "主管司法机关" in "".join(r["competent_authorities_zh"])
+    assert "主管司法机关" in text
+
+
+# -- only Sections 1 + 2 + 3 Chinese LLM files ------------------------------
+def test_only_sections_1_2_3_chinese_llm_files():
     files = sorted(os.path.basename(p) for p in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")))
-    assert "book4_section2_zh_legal_llm.json" in files, files
-    assert set(files) <= _ALLOWED_ZH_LLM, files
+    assert files == ["book4_section1_zh_legal_llm.json",
+                     "book4_section2_zh_legal_llm.json",
+                     "book4_section3_zh_legal_llm.json"], files
 
 
 def test_section1_chinese_llm_unchanged():
@@ -252,10 +252,16 @@ def test_section1_chinese_llm_unchanged():
     assert [r["article_numbers"] for r in s1["records"]] == [[58], [59], [60], [66]]
 
 
-def test_no_books_1_3_or_other_section_chinese_llm_files():
+def test_section2_chinese_llm_unchanged():
+    s2 = _read(os.path.join(LLM_DIR, "book4_section2_zh_legal_llm.json"))
+    assert [r["article_numbers"] for r in s2["records"]] == [[67, 68], [71], [72], [75], [77]]
+
+
+def test_no_books_1_3_or_section_4_5_chinese_llm_files():
+    allowed = {"book4_section1_zh_legal_llm.json", "book4_section2_zh_legal_llm.json",
+               "book4_section3_zh_legal_llm.json"}
     for f in glob.glob(os.path.join(LLM_DIR, "*_zh_legal_llm.json")):
-        base = os.path.basename(f)
-        assert base in _ALLOWED_ZH_LLM, base
+        assert os.path.basename(f) in allowed, os.path.basename(f)
 
 
 # -- existing layers unchanged ----------------------------------------------
@@ -273,8 +279,8 @@ def test_english_legal_llm_unchanged_5_files_30_records():
 
 def test_arabic_legal_llm_unchanged():
     layer = os.path.join(ROOT, "data", "arabic_legal_llm")
-    s2 = _read(os.path.join(layer, "book4_section2_ar_legal_llm.json"))
-    assert [r["article_numbers"] for r in s2["records"]] == [[67, 68], [71], [72], [75], [77]]
+    s3 = _read(os.path.join(layer, "book4_section3_ar_legal_llm.json"))
+    assert [r["article_numbers"] for r in s3["records"]] == [[85, 87], [92, 93], [99], [101], [102]]
     for fname, exp in (("book1_ar_legal_llm.json", list(range(1, 35))),
                        ("book2_ar_legal_llm.json", list(range(35, 51))),
                        ("book3_ar_legal_llm.json", list(range(51, 58)))):
@@ -284,13 +290,13 @@ def test_arabic_legal_llm_unchanged():
 
 def test_english_reference_unchanged():
     ref = os.path.join(ROOT, "data", "english_reference")
-    for fname, exp in (("book4_section2_en_reference.json", [67, 68, 71, 72, 75, 77]),
+    for fname, exp in (("book4_section3_en_reference.json", [85, 87, 92, 93, 99, 101, 102]),
                        ("book4_section5_en_reference.json", [123, 124, 126, 127, 128, 129, 130, 132, 133])):
         doc = _read(os.path.join(ref, fname))
         assert [r["article_number"] for r in doc["records"]] == exp, fname
 
 
-def test_book4_section2_provisions_unchanged():
+def test_book4_section3_provisions_unchanged():
     doc = _read(PROVISIONS)
     assert [p["source_article_numbers"] for p in doc["provisions"]] == GROUPS
     for p in doc["provisions"]:
