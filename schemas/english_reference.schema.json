@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/english_reference.schema.json",
+  "title": "Official English guidance reference record",
+  "description": "One record per article carrying the OFFICIAL ENGLISH GUIDANCE translation text (Bureau of Experts / Official Translation Department). This is a reference/alignment layer only. The English is guidance; the governing/binding legal text is the Arabic original. This is NOT the English Legal LLM-ready layer and is NOT legal advice.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "book", "article_number", "part_number_en", "part_title_en",
+    "article_heading_en", "english_reference_text", "english_source_status",
+    "governing_text_language", "alignment_status", "manual_review_status",
+    "source", "llm", "risk_flags"
+  ],
+  "properties": {
+    "book": {"type": "integer", "minimum": 1},
+    "article_number": {"type": "integer", "minimum": 1, "maximum": 300},
+    "part_number_en": {"type": "integer", "minimum": 1},
+    "part_title_en": {"type": "string", "minLength": 1},
+    "article_heading_en": {"type": "string", "minLength": 1},
+    "english_reference_text": {"type": "string", "minLength": 1},
+    "english_source_status": {"type": "string", "enum": ["official_guidance_translation"]},
+    "governing_text_language": {"type": "string", "enum": ["ar"]},
+    "alignment_status": {
+      "type": "string",
+      "enum": ["article_heading_extracted", "exact_article_match", "section_level_match", "needs_manual_check", "not_available"]
+    },
+    "manual_review_status": {
+      "type": "string",
+      "enum": ["needs_manual_check", "reviewed"]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_file", "source_authority", "department", "extraction_method", "official_guidance_note"],
+      "properties": {
+        "source_file": {"type": "string", "minLength": 1},
+        "source_authority": {"type": "string", "minLength": 1},
+        "department": {"type": "string", "minLength": 1},
+        "extraction_method": {"type": "string", "minLength": 1},
+        "official_guidance_note": {"type": "string", "minLength": 1}
+      }
+    },
+    "llm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chunk_id", "retrieval_title_en", "keywords_en"],
+      "properties": {
+        "chunk_id": {"type": "string", "minLength": 1},
+        "retrieval_title_en": {"type": "string", "minLength": 1},
+        "keywords_en": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "risk_flags": {"type": "array", "items": {"type": "string"}}
+  }
+}

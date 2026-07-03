@@ -11,7 +11,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         book4-coverage book4-validate book4-model-check book4-coverage-check \
         book4-section1-data book4-section1-jsonl book4-section1-html book4-section1-build \
         arabic-legal-llm-data arabic-legal-llm-validate \
-        official-english-source-extract official-english-source-validate
+        official-english-source-extract official-english-source-validate \
+        english-reference-book1-data english-reference-book1-jsonl english-reference-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -155,6 +156,17 @@ official-english-source-extract:
 
 official-english-source-validate:
 	$(PY) scripts/validate_official_english_source.py
+
+# -- Official English guidance REFERENCE layer (Book One pilot; Articles 1–34) --
+# Reference/alignment text only — NOT the English Legal LLM-ready layer.
+english-reference-book1-data:
+	$(PY) scripts/gen_english_reference_book1.py
+
+# The JSONL is produced together with the JSON by the generator above.
+english-reference-book1-jsonl: english-reference-book1-data
+
+english-reference-validate:
+	$(PY) scripts/validate_english_reference.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
