@@ -121,7 +121,7 @@ def main() -> int:
         if forbidden:
             leaked = sorted(set(nums) & forbidden)
             if leaked:
-                problems.append("%s: forbidden Book Four articles present: %s" % (label, leaked))
+                problems.append("%s: forbidden repo book4 articles present: %s" % (label, leaked))
 
         for r in records:
             rid = "%s.a%s" % (label, r.get("article_number", "?"))
@@ -169,7 +169,7 @@ def main() -> int:
                 problems.append("%s: forbidden overclaim term in data: '%s'" % (label, term))
 
     print("=" * 60)
-    print("Official English REFERENCE layer validation (Books 1-3 + Book 4 Sections 1-5)")
+    print("Official English REFERENCE layer validation (Books 1-3 + repo book4 Sections 1-5)")
     print("=" * 60)
     if problems:
         for p in problems:
@@ -177,9 +177,9 @@ def main() -> int:
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
     print("[PASS] %d records — Books 1-3 (Arts 1-34 / 35-50 / 51-57) + "
-          "Book 4 Section 1 (58,59,60,66) + Book 4 Section 2 (67,68,71,72,75,77) + "
-          "Book 4 Section 3 (85,87,92,93,99,101,102) + Book 4 Section 4 (108,113,115,117) + "
-          "Book 4 Section 5 (123,124,126,127,128,129,130,132,133); "
+          "repo book4 Section 1 (58,59,60,66) + repo book4 Section 2 (67,68,71,72,75,77) + "
+          "repo book4 Section 3 (85,87,92,93,99,101,102) + repo book4 Section 4 (108,113,115,117) + "
+          "repo book4 Section 5 (123,124,126,127,128,129,130,132,133); "
           "official_guidance_translation; governing=ar; "
           "manual_review_status=needs_manual_check" % total)
     print("RESULT: ALL CHECKS PASSED ✓")

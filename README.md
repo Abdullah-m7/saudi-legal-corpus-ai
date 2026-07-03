@@ -273,12 +273,21 @@ It is **not** an official translation and **not** legal advice.
 
 Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
 
-## Book Four / الباب الرابع — شركة المساهمة / 股份公司 (JSC) · Articles 58–137 — status
+## Book Four (repo `book4` convention) — شركة المساهمة / 股份公司 (JSC) · Articles 58–137 — status
 
-**Book Four is in the model-1b infrastructure stage. Full content generation has NOT started.**
+> **Terminology — repo `book4` convention.** In this repository, **`book4` / "Book Four" / "Part 4"
+> is an internal repository label** for the **modeled Joint-Stock Company scope** (شركة المساهمة /
+> 股份公司, JSC — Articles 58–137). It is **not** a claim about the official structure of the Saudi
+> Companies Law, which contains **281 articles across multiple official chapters/parts**. File,
+> path, and Make-target names such as `book4_*` are **established repo conventions** and are kept
+> as-is; wherever this README says "Book Four", read it as **"repo book4 (Joint-Stock Company
+> modeled scope)"**, not as the whole Companies Law.
 
-- Book Four covers the **joint-stock company** (شركة المساهمة / 股份公司, JSC), **Articles 58–137
-  (80 articles)**.
+**The repo book4 (Joint-Stock Company) scope is in the model-1b infrastructure stage. Full content
+generation has NOT started.**
+
+- The repo book4 scope covers the **joint-stock company** (شركة المساهمة / 股份公司, JSC), **Articles
+  58–137 (80 articles)**.
 - The reference source (`inputs/bab4_source.pdf`) is a **thematic / tabular summary of core
   provisions**, **not** a per-article translation — only ~33 of the 80 articles are explicitly
   covered.
@@ -437,7 +446,9 @@ Translation Department** (Royal Decree No. M/132).
 ## Official English reference alignment
 
 The **English reference alignment** now covers **Books One–Three (Articles 1–57)** plus the
-**Book Four Section 1, Section 2, Section 3, Section 4 and Section 5** provision-covered articles:
+**repo book4 Section 1, Section 2, Section 3, Section 4 and Section 5** provision-covered articles.
+(As above, `book N` / `Part N` are **internal repository labels**, not a claim about the official
+Companies Law structure; repo book4 is the modeled Joint-Stock Company scope.)
 
 - **Book One / Part 1 — General Provisions:** Articles **1–34**.
 - **Book Two / Part 2 — General Partnerships:** Articles **35–50**.
@@ -493,11 +504,12 @@ The **English reference alignment** now covers **Books One–Three (Articles 1�
   validate: `make english-reference-validate` (**87 records** total).
 - **Not legal advice.**
 
-## English Legal LLM-ready layer (Book Four Sections 1–5)
+## English Legal LLM-ready layer (repo book4 Sections 1–5)
 
-The **English Legal LLM-ready layer** currently covers **Book Four Sections 1, 2, 3, 4 and 5**
-— all five Book Four thematic sections — but **not** Books 1–3, so it is still **not** full
-English Legal LLM coverage.
+The **English Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5**
+— all five thematic sections of the modeled Joint-Stock Company scope (repo book4 convention; an
+internal repository label, not a claim about the official Companies Law structure) — but **not**
+Books 1–3, so it is still **not** full English Legal LLM coverage.
 
 - **Scope:**
   - **Section 1 (Establishment and Capital):** **Articles 58, 59, 60, 66** — **4 `article_reference`

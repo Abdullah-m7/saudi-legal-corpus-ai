@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Validate the English Legal LLM-ready layer (Book Four Sections 1, 2 & 3).
+"""Validate the English Legal LLM-ready layer (repo book4 Sections 1-5).
+
+"book4" is an internal repository label for the modeled Joint-Stock Company chapter/part
+scope (repo book4 convention), not a claim about the whole Saudi Companies Law structure.
 
 Enforces:
 - exactly the sanctioned files exist: book4_section1/2/3/4/5_en_legal_llm.json; no other
@@ -97,7 +100,7 @@ def main() -> int:
         nums = [r.get("article_numbers") for r in records]
         if nums != [[n] for n in covered]:
             problems.append("%s: article groups must be %r (got %r)" % (fname, [[n] for n in covered], nums))
-        # Nothing outside this unit's covered set may appear (within Book Four).
+        # Nothing outside this unit's covered set may appear (within repo book4 scope).
         flat = {n for g in nums for n in (g or [])}
         forbidden = (ALL_BOOK4 - set(covered))
         leaked = sorted(flat & forbidden)
@@ -149,14 +152,14 @@ def main() -> int:
             problems.append("%s must not exist" % p)
 
     print("=" * 60)
-    print("English Legal LLM-ready layer validation (Book 4 Sections 1-5)")
+    print("English Legal LLM-ready layer validation (repo book4 Sections 1-5)")
     print("=" * 60)
     if problems:
         for p in problems:
             print("  -", p)
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
-    print("[PASS] %d records — Book 4 Sections 1-5 "
+    print("[PASS] %d records — repo book4 Sections 1-5 "
           "(58,59,60,66 / 67,68,71,72,75,77 / 85,87,92,93,99,101,102 / 108,113,115,117 / "
           "123,124,126,127,128,129,130,132,133); legal_rule_text_en verbatim from English "
           "reference; official_guidance_translation; governing=ar; needs_manual_check; "
