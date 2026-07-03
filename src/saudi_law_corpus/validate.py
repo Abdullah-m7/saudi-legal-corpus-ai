@@ -62,21 +62,24 @@ def validate_against_schema(obj: Any, schema: Dict[str, Any], label: str) -> Lis
     return _fallback_check(obj, schema, label)
 
 
-def validate_all() -> Tuple[bool, Dict[str, List[str]]]:
-    """Validate every structured file. Returns (ok, {section: [problems]})."""
+def validate_book(book: int = 1) -> Tuple[bool, Dict[str, List[str]]]:
+    """Validate one book's structured files (schema + QA). Returns (ok, report)."""
+    from . import books
+
+    spec = books.get_book(book)
     report: Dict[str, List[str]] = {}
 
     article_schema = _read(os.path.join(SCHEMAS, "article.schema.json"))
     glossary_schema = _read(os.path.join(SCHEMAS, "glossary.schema.json"))
     coverage_schema = _read(os.path.join(SCHEMAS, "coverage.schema.json"))
 
-    articles_doc = _read(os.path.join(DATA, "articles", "book1_articles_001_034.json"))
+    articles_doc = _read(spec.articles_json)
     articles = articles_doc["articles"]
-    work = _read(os.path.join(DATA, "metadata", "work.json"))
-    glossary = _read(os.path.join(DATA, "glossary", "ar_zh_legal_terms.json"))
-    coverage = _read(os.path.join(DATA, "coverage", "book1_coverage_matrix.json"))
+    work = _read(books.WORK_JSON)
+    glossary = _read(books.GLOSSARY_JSON)
+    coverage = _read(spec.coverage_json)
 
-    # -- schema validation --
+    # -- schema validation (shared schemas) --
     schema_problems: List[str] = []
     for a in articles:
         schema_problems += validate_against_schema(
@@ -86,8 +89,13 @@ def validate_all() -> Tuple[bool, Dict[str, List[str]]]:
     schema_problems += validate_against_schema(coverage, coverage_schema, "coverage")
     report["schema"] = schema_problems
 
-    # -- QA rules --
-    qa = qa_rules.run_all(articles, work)
+    # -- QA rules (per book) --
+    if book == 1:
+        qa = qa_rules.run_all(articles, work)
+    elif book == 2:
+        qa = qa_rules.run_all_book2(articles, work, glossary, articles_doc)
+    else:
+        qa = {}
     for name, problems in qa.items():
         if problems:
             report[name] = problems
@@ -103,3 +111,8 @@ def validate_all() -> Tuple[bool, Dict[str, List[str]]]:
 
     ok = all(len(v) == 0 for v in report.values())
     return ok, report
+
+
+def validate_all() -> Tuple[bool, Dict[str, List[str]]]:
+    """Validate Book One (backward-compatible entry point)."""
+    return validate_book(1)

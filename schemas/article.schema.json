@@ -11,8 +11,8 @@
     "legal_notes", "terminology", "risk_flags", "source", "llm"
   ],
   "properties": {
-    "book": {"const": 1},
-    "article_number": {"type": "integer", "minimum": 1, "maximum": 34},
+    "book": {"type": "integer", "minimum": 1},
+    "article_number": {"type": "integer", "minimum": 1, "maximum": 200},
     "article_title_ar": {"type": "string", "minLength": 1},
     "article_title_zh": {"type": "string", "minLength": 1},
     "section_ar": {"type": "string", "minLength": 1},
@@ -53,7 +53,7 @@
       "additionalProperties": false,
       "required": ["chunk_id", "retrieval_title", "keywords_ar", "keywords_zh", "summary_en"],
       "properties": {
-        "chunk_id": {"type": "string", "pattern": "^sa-companies-book1-art[0-9]{3}$"},
+        "chunk_id": {"type": "string", "pattern": "^sa-companies-book[0-9]+-art[0-9]{3}$"},
         "retrieval_title": {"type": "string", "minLength": 1},
         "keywords_ar": {"type": "array", "items": {"type": "string"}},
         "keywords_zh": {"type": "array", "items": {"type": "string"}},

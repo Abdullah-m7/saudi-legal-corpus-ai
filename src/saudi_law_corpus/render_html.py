@@ -11,17 +11,20 @@ per cell.
 
 from __future__ import annotations
 
+import copy
 import html
 import json
 import os
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
+
+from . import books
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.dirname(os.path.dirname(_HERE))
 
 DATA = os.path.join(_REPO_ROOT, "data")
 TEMPLATES = os.path.join(_REPO_ROOT, "templates")
-DEFAULT_OUT = os.path.join(_REPO_ROOT, "dist", "book1.html")
+DEFAULT_OUT = books.get_book(1).html_out
 
 
 def _read_json(path: str) -> Any:
@@ -34,20 +37,29 @@ def _read_text(path: str) -> str:
         return fh.read()
 
 
-def load_context() -> Dict[str, Any]:
-    doc = _read_json(os.path.join(DATA, "articles", "book1_articles_001_034.json"))
-    work = _read_json(os.path.join(DATA, "metadata", "work.json"))
-    coverage = _read_json(os.path.join(DATA, "coverage", "book1_coverage_matrix.json"))
-    glossary = _read_json(os.path.join(DATA, "glossary", "ar_zh_legal_terms.json"))
+def load_context(book: int = 1) -> Dict[str, Any]:
+    spec = books.get_book(book)
+    doc = _read_json(spec.articles_json)
+    work = _read_json(books.WORK_JSON)
+    coverage = _read_json(spec.coverage_json)
+    glossary = _read_json(books.GLOSSARY_JSON)
     articles = sorted(doc["articles"], key=lambda a: a["article_number"])
 
-    translator_notes = _maybe_read(os.path.join(_REPO_ROOT, "content", "notes", "translator_notes.md"))
-    review_log = _maybe_read(os.path.join(_REPO_ROOT, "content", "notes", "review_log.md"))
+    # Per-book title/scope on top of the shared work metadata (disclaimers,
+    # instrument, trust posture stay identical across books).
+    work_view = copy.deepcopy(work)
+    work_view["title_ar"] = spec.display_title_ar
+    work_view["title_zh"] = spec.display_title_zh
+    work_view["scope_ar"] = doc.get("scope_ar", work.get("scope_ar", ""))
+    work_view["scope_zh"] = doc.get("scope_zh", work.get("scope_zh", ""))
+
+    translator_notes = _maybe_read(spec.translator_notes) if spec.translator_notes else ""
+    review_log = _maybe_read(spec.review_log) if spec.review_log else ""
 
     styles = _read_text(os.path.join(TEMPLATES, "styles.css"))
     return {
         "doc": doc,
-        "work": work,
+        "work": work_view,
         "coverage": coverage,
         "glossary": glossary,
         "articles": articles,
@@ -65,8 +77,9 @@ def _maybe_read(path: str) -> str:
     return ""
 
 
-def render(out_path: str = DEFAULT_OUT) -> str:
-    ctx = load_context()
+def render(out_path: Optional[str] = None, book: int = 1) -> str:
+    out_path = out_path or books.get_book(book).html_out
+    ctx = load_context(book=book)
     try:
         import jinja2  # type: ignore
 

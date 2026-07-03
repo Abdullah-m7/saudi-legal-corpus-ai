@@ -20,20 +20,17 @@ import json
 import os
 from typing import Any, Dict, List, Optional
 
+from . import books
+
 # Repository root: .../src/saudi_law_corpus/load.py -> repo root is three up.
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.dirname(os.path.dirname(_HERE))
 
-ARTICLES_JSON = os.path.join(
-    _REPO_ROOT, "data", "articles", "book1_articles_001_034.json"
-)
-GLOSSARY_JSON = os.path.join(
-    _REPO_ROOT, "data", "glossary", "ar_zh_legal_terms.json"
-)
-WORK_JSON = os.path.join(_REPO_ROOT, "data", "metadata", "work.json")
-COVERAGE_JSON = os.path.join(
-    _REPO_ROOT, "data", "coverage", "book1_coverage_matrix.json"
-)
+# Book One paths kept as module constants for backward compatibility.
+ARTICLES_JSON = books.get_book(1).articles_json
+GLOSSARY_JSON = books.GLOSSARY_JSON
+WORK_JSON = books.WORK_JSON
+COVERAGE_JSON = books.get_book(1).coverage_json
 
 
 def _read_json(path: str) -> Any:
@@ -42,14 +39,19 @@ def _read_json(path: str) -> Any:
 
 
 class Corpus:
-    """In-memory view over the structured corpus files."""
+    """In-memory view over the structured corpus files for a single book.
 
-    def __init__(self, root: Optional[str] = None) -> None:
+    Defaults to Book One so existing callers keep working unchanged.
+    """
+
+    def __init__(self, root: Optional[str] = None, book: int = 1) -> None:
         base = root or _REPO_ROOT
         self.root = base
-        self._articles_doc = _read_json(
-            os.path.join(base, "data", "articles", "book1_articles_001_034.json")
-        )
+        self.book = book
+        spec = books.get_book(book)
+        # Resolve relative to `base` so an alternate root still works.
+        rel = os.path.relpath(spec.articles_json, books.REPO_ROOT)
+        self._articles_doc = _read_json(os.path.join(base, rel))
         self.articles: List[Dict[str, Any]] = self._articles_doc["articles"]
         self._by_number = {a["article_number"]: a for a in self.articles}
 
@@ -99,27 +101,26 @@ class Corpus:
         return hits
 
 
-# -- module-level convenience API (lazy singleton) -------------------------
-_DEFAULT: Optional[Corpus] = None
+# -- module-level convenience API (lazy per-book cache) --------------------
+_CACHE: Dict[int, Corpus] = {}
 
 
-def load_corpus(root: Optional[str] = None) -> Corpus:
-    """Load (and cache) the default corpus."""
-    global _DEFAULT
+def load_corpus(root: Optional[str] = None, book: int = 1) -> Corpus:
+    """Load (and cache) the corpus for a book. Defaults to Book One."""
     if root is not None:
-        return Corpus(root)
-    if _DEFAULT is None:
-        _DEFAULT = Corpus()
-    return _DEFAULT
+        return Corpus(root, book=book)
+    if book not in _CACHE:
+        _CACHE[book] = Corpus(book=book)
+    return _CACHE[book]
 
 
-def list_articles() -> List[Dict[str, Any]]:
-    return load_corpus().list_articles()
+def list_articles(book: int = 1) -> List[Dict[str, Any]]:
+    return load_corpus(book=book).list_articles()
 
 
-def get_article(number: int) -> Optional[Dict[str, Any]]:
-    return load_corpus().get_article(number)
+def get_article(number: int, book: int = 1) -> Optional[Dict[str, Any]]:
+    return load_corpus(book=book).get_article(number)
 
 
-def search_keyword(term: str) -> List[Dict[str, Any]]:
-    return load_corpus().search_keyword(term)
+def search_keyword(term: str, book: int = 1) -> List[Dict[str, Any]]:
+    return load_corpus(book=book).search_keyword(term)

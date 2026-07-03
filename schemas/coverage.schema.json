@@ -7,7 +7,7 @@
   "required": ["coverage_id", "book", "articles_range", "rows"],
   "properties": {
     "coverage_id": {"type": "string"},
-    "book": {"const": 1},
+    "book": {"type": "integer", "minimum": 1},
     "scope_ar": {"type": "string"},
     "scope_zh": {"type": "string"},
     "articles_range": {"type": "string"},
@@ -16,14 +16,13 @@
     "columns": {"type": "array", "items": {"type": "string"}},
     "rows": {
       "type": "array",
-      "minItems": 34,
-      "maxItems": 34,
+      "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
         "required": ["article_number", "article_title_ar", "article_title_zh", "coverage_status", "expression_mode", "note"],
         "properties": {
-          "article_number": {"type": "integer", "minimum": 1, "maximum": 34},
+          "article_number": {"type": "integer", "minimum": 1, "maximum": 200},
           "article_title_ar": {"type": "string"},
           "article_title_zh": {"type": "string"},
           "coverage_status": {"type": "string", "enum": ["covered", "expanded_after_review", "needs_official_text_check"]},

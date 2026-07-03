@@ -178,3 +178,180 @@ def run_all(articles: List[Dict[str, Any]], work: Dict[str, Any]) -> Dict[str, L
         "12_scope_1_34": rule_scope_1_34(work),
     }
     return results
+
+
+# ==========================================================================
+# Book Two — شركة التضامن / 无限公司（普通合伙性质）— Articles 35–50
+# ==========================================================================
+BOOK2_RANGE = list(range(35, 51))
+_INTERNAL_MODE = "internally_reviewed_summary"
+
+
+def rule_range(articles: List[Dict[str, Any]], expected: List[int]) -> List[str]:
+    nums = sorted(a["article_number"] for a in articles)
+    problems = []
+    if nums != expected:
+        missing = sorted(set(expected) - set(nums))
+        extra = sorted(set(nums) - set(expected))
+        if missing:
+            problems.append(f"Missing articles: {missing}")
+        if extra:
+            problems.append(f"Unexpected articles: {extra}")
+    return problems
+
+
+def rule_trust_posture(articles: List[Dict[str, Any]]) -> List[str]:
+    """Every article must be internally-reviewed and flagged needs_check."""
+    problems = []
+    for a in articles:
+        n = a["article_number"]
+        if a.get("translation_mode") != _INTERNAL_MODE:
+            problems.append(
+                f"Article {n}: translation_mode is '{a.get('translation_mode')}', "
+                f"expected '{_INTERNAL_MODE}'"
+            )
+        if a.get("source", {}).get("official_text_check") != "needs_check":
+            problems.append(f"Article {n}: official_text_check must be 'needs_check'")
+    return problems
+
+
+def rule_no_verified_wording(articles: List[Dict[str, Any]]) -> List[str]:
+    """No overclaiming trust wording inside canonical article fields."""
+    banned = ["verified_summary", "经核验", "محققة"]
+    problems = []
+    for a in articles:
+        blob = " ".join([
+            a.get("translation_mode", ""),
+            a.get("arabic_reference_summary", ""),
+            a.get("chinese_translation", ""),
+        ] + a.get("legal_notes", []))
+        for term in banned:
+            if term in blob:
+                problems.append(f"Article {a['article_number']}: banned trust term '{term}'")
+    return problems
+
+
+def rule_b2_company_form(articles: List[Dict[str, Any]], glossary: Dict[str, Any]) -> List[str]:
+    """شركة التضامن must map to 无限公司（普通合伙性质）in the glossary."""
+    terms = {t["ar"]: t["zh"] for t in glossary.get("terms", [])}
+    zh = terms.get("شركة التضامن", "")
+    # Accept an annotated form like 无限公司（普通合伙性质，...）as long as both
+    # anchor tokens are present.
+    if "无限公司" in zh and "普通合伙性质" in zh:
+        return []
+    return ["glossary: شركة التضامن must map to 无限公司（普通合伙性质）"]
+
+
+def rule_b2_unlimited_liability(articles: List[Dict[str, Any]]) -> List[str]:
+    """无限连带责任 must appear in the definition article (35)."""
+    a = _by_number(articles).get(35)
+    if not a:
+        return ["Article 35 missing"]
+    if "无限连带责任" not in a.get("chinese_translation", ""):
+        return ["Article 35: must contain 无限连带责任"]
+    return []
+
+
+def rule_b2_merchant_status(articles: List[Dict[str, Any]]) -> List[str]:
+    """商人资格 (merchant status) must appear in the definition article (35)."""
+    a = _by_number(articles).get(35)
+    if not a:
+        return ["Article 35 missing"]
+    if "商人资格" not in a.get("chinese_translation", ""):
+        return ["Article 35: must contain 商人资格"]
+    return []
+
+
+def rule_b2_legal_personality_caveat(glossary: Dict[str, Any]) -> List[str]:
+    """The glossary must preserve the caveat that Saudi شركة التضامن has legal
+    personality and is NOT identical to Chinese partnership entities."""
+    blob = ""
+    for note in glossary.get("notes", []):
+        blob += " ".join(str(v) for v in note.values())
+    if "法人资格" in blob and ("不" in blob) and ("合伙" in blob):
+        return []
+    return ["glossary: must preserve legal-personality caveat for شركة التضامن "
+            "(Saudi general partnership is not identical to Chinese partnership entities)"]
+
+
+def rule_b2_benefit_of_excussion(articles: List[Dict[str, Any]]) -> List[str]:
+    """Prior-recourse defence (先诉抗辩权) must appear in Article 48."""
+    a = _by_number(articles).get(48)
+    if not a:
+        return ["Article 48 missing"]
+    if "先诉抗辩权" not in a.get("chinese_translation", ""):
+        return ["Article 48: must contain 先诉抗辩权 (benefit of excussion)"]
+    return []
+
+
+def rule_b2_art37_representation(articles: List[Dict[str, Any]]) -> List[str]:
+    """Article 37 must cover legal-person representation and external representation
+    before courts / arbitration bodies / third parties."""
+    a = _by_number(articles).get(37)
+    if not a:
+        return ["Article 37 missing"]
+    zh = a.get("chinese_translation", "")
+    problems = []
+    for token in ["法人合伙人", "法院", "仲裁机构", "第三人"]:
+        if token not in zh:
+            problems.append(f"Article 37: must contain {token}")
+    return problems
+
+
+def rule_b2_art39_business_asset(articles: List[Dict[str, Any]]) -> List[str]:
+    """Article 39 must use 营业资产（商业店铺）, never 营业场所（商号）."""
+    a = _by_number(articles).get(39)
+    if not a:
+        return ["Article 39 missing"]
+    zh = a.get("chinese_translation", "")
+    problems = []
+    if "营业资产（商业店铺）" not in zh:
+        problems.append("Article 39: must contain 营业资产（商业店铺）")
+    if "营业场所（商号）" in zh:
+        problems.append("Article 39: must NOT contain 营业场所（商号）")
+    return problems
+
+
+def rule_b2_glossary_business_asset(glossary: Dict[str, Any]) -> List[str]:
+    """Glossary must map المحل التجاري (المتجر) to 营业资产（商业店铺）, not 商号."""
+    terms = {t["ar"]: t["zh"] for t in glossary.get("terms", [])}
+    zh = terms.get("المحل التجاري (المتجر)", "")
+    problems = []
+    if zh != "营业资产（商业店铺）":
+        problems.append("glossary: المحل التجاري (المتجر) must map to 营业资产（商业店铺）")
+    if "商号" in zh:
+        problems.append("glossary: المحل التجاري (المتجر) must NOT use 商号")
+    return problems
+
+
+def rule_scope_35_50(work: Dict[str, Any], doc: Dict[str, Any]) -> List[str]:
+    problems = []
+    scope_zh = doc.get("scope_zh", "")
+    scope_ar = doc.get("scope_ar", "")
+    if "第三十五条" not in scope_zh or "第五十条" not in scope_zh:
+        problems.append("book2 scope_zh must state 第三十五条 至 第五十条")
+    if "35" not in scope_ar or "50" not in scope_ar:
+        problems.append("book2 scope_ar must state المواد 35–50")
+    return problems
+
+
+def run_all_book2(articles: List[Dict[str, Any]], work: Dict[str, Any],
+                  glossary: Dict[str, Any], doc: Dict[str, Any]) -> Dict[str, List[str]]:
+    """Run Book Two QA rules; returns {rule_name: [problems]}."""
+    return {
+        "b2_1_range_35_50": rule_range(articles, BOOK2_RANGE),
+        "b2_2_no_duplicate_numbers": rule_no_duplicates(articles),
+        "b2_3_bilingual_present": rule_bilingual_present(articles),
+        "b2_4_trust_posture": rule_trust_posture(articles),
+        "b2_5_no_verified_wording": rule_no_verified_wording(articles),
+        "b2_6_company_form_terminology": rule_b2_company_form(articles, glossary),
+        "b2_7_unlimited_joint_liability": rule_b2_unlimited_liability(articles),
+        "b2_8_merchant_status": rule_b2_merchant_status(articles),
+        "b2_9_legal_personality_caveat": rule_b2_legal_personality_caveat(glossary),
+        "b2_10_benefit_of_excussion": rule_b2_benefit_of_excussion(articles),
+        "b2_11_disclaimer_non_official": rule_disclaimer_non_official(work),
+        "b2_12_scope_35_50": rule_scope_35_50(work, doc),
+        "b2_13_art37_representation": rule_b2_art37_representation(articles),
+        "b2_14_art39_business_asset": rule_b2_art39_business_asset(articles),
+        "b2_15_glossary_business_asset": rule_b2_glossary_business_asset(glossary),
+    }

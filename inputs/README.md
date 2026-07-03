@@ -16,10 +16,18 @@ parts (1–15, 16–25, 26–34); the repository treats them as **one continuous
 - The PDF's **Arabic** text layer extracts **garbled**; it was **not** used verbatim.
   Arabic reference summaries in `data/articles/*.json` are manually reconstructed MSA.
 
-### Inspecting the PDF
+## bab2_source.pdf
+
+The Arabic–Chinese reference translation of Book Two / الباب الثاني — **شركة التضامن /
+无限公司** (Articles 35–50, 12 pages). Same canonical-source model as Book One: the Chinese layer
+is used as the reference, the garbled Arabic layer is **not** used verbatim (Arabic summaries in
+`data/articles/book2_articles_035_050.json` are manually reconstructed MSA).
+
+### Inspecting the PDFs
 
 ```bash
 python scripts/extract_pdf_text.py inputs/bab1_source.pdf -o /tmp/bab1_text.txt
+python scripts/extract_pdf_text.py inputs/bab2_source.pdf -o /tmp/bab2_text.txt
 ```
 
 `pypdf` is an optional dependency (`pip install pypdf`). The extractor is a diagnostic
