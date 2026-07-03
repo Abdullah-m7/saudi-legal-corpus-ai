@@ -1,10 +1,34 @@
 # Book Four — Section 4 scope decision / قرار نطاق القسم الرابع
 
-> **Status: NEEDS OWNER SCOPE DECISION.** No Section-4 provision records, content, or
-> coverage changes were generated in this PR. This documents a blocking inconsistency
-> between two source-of-truth files (the coverage matrix and the source PDF) on **one
-> article (110)** so the owner can fix the explicit-article set before any content is
-> authored. **No content was invented.**
+> **Status: RESOLVED — Owner selected Option 1 (reconcile to the source).** See the
+> "Owner decision" section immediately below. The blocking-ambiguity documentation that
+> follows is retained as decision history. **No content was invented.**
+
+## Owner decision (RESOLVED)
+
+- **Owner selected Option 1: reconcile Book Four Section 4 to the source PDF.**
+- **Final explicit source-covered set:** **108, 113, 115, 117**.
+- **Article 110** ("Amendment of Share-Associated Rights and Obligations") **reclassified**
+  from `explicit_in_source` to `not_explicit_in_source` (→ `official_text_check =
+  needs_official_text_check`, `content_record_status = no_record_until_source_available`)
+  — the source renders no distinct provision for it (only the cross-reference
+  `（第110、89条）` under Article 108's types/classes rule).
+- Provision records created as single-article blocks: **[108]**, **[113]**, **[115]**,
+  **[117]** (`data/articles/book4_provisions_103_120.json`).
+- The other Section-4 articles (103, 104, 105, 106, 107, 109, 111, 112, 114, 116, 118,
+  119, 120) remain `not_explicit_in_source`.
+- **No content invented**; provisions map only to the reconciled explicit set; the
+  coverage matrix stays at 80 rows. Not an official translation; not legal advice.
+
+---
+
+## Original ambiguity documentation (decision history)
+
+> **Status at the time: NEEDS OWNER SCOPE DECISION.** No Section-4 provision records,
+> content, or coverage changes were generated in that PR. This documented a blocking
+> inconsistency between two source-of-truth files (the coverage matrix and the source
+> PDF) on **one article (110)** so the owner could fix the explicit-article set before
+> any content was authored. **No content was invented.**
 
 ## Section resolved (unambiguous)
 

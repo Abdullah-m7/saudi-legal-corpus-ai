@@ -315,6 +315,17 @@ Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
   have no distinct source content; 100 because the source tags circulation as 101 only), and the
   other Section-3 articles (86, 88, 90, 91, 94–98) remain uncovered. Section-only outputs
   `content/*/book4_section3.md` — **not** a full Book Four translation and no `content/*/book4.md`.
+- **Section 4 (股份、债务工具与融资凭证 / الأسهم وأدوات الدين والصكوك)**: model-1b provision records added
+  **after owner scope reconciliation** (Option 1 — reconcile to the source; see
+  [`docs/book4_preflight/BOOK4_SECTION4_SCOPE_DECISION.md`](docs/book4_preflight/BOOK4_SECTION4_SCOPE_DECISION.md)).
+  Provision records for the **explicit source articles 108, 113, 115, 117 only** (single-article
+  blocks: [108], [113], [115], [117]) — `data/articles/book4_provisions_103_120.json`; build via
+  `make book4-section4-build`. **Article 110 was reclassified to uncovered /
+  `needs_official_text_check`** (the source only cross-references it as `（第110、89条）` under Article
+  108's types/classes rule; no distinct block), and the other Section-4 articles (103–107, 109, 111,
+  112, 114, 116, 118–120) remain uncovered / `needs_official_text_check` with no invented content.
+  Section-only outputs `content/*/book4_section4.md` — **not** a full Book Four translation, **not**
+  an official translation, **not** legal advice, and no `content/*/book4.md`.
 - Trust posture unchanged: internally reviewed (مراجَعة داخليًا / 经内部审校);
   `official_text_check = needs_check`; never `verified` / `محققة` / `经核验`; book-specific
   disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.

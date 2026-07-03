@@ -43,9 +43,14 @@ def _articles_with_provision_records():
 # the source (89 absent entirely; 84 has no separate block — the powers block is
 # tagged 85、87), so they are reclassified to not_explicit_in_source. Article 100
 # also stays not_explicit_in_source (the source tags circulation as 101 only).
+# Section 4 reconciliation (owner Option 1, see BOOK4_SECTION4_SCOPE_DECISION.md):
+# Article 110 ("Amendment of Share-Associated Rights and Obligations") was over-listed
+# at preflight but is NOT distinctly rendered — the source only cross-references it as
+# （第110、89条）under Article 108's types/classes rule — so it is reclassified to
+# not_explicit_in_source. The source distinctly renders only 108, 113, 115, 117 here.
 EXPLICIT = {
     58, 59, 60, 66, 67, 68, 71, 72, 75, 77, 85, 87, 92, 93, 99, 101, 102,
-    108, 110, 113, 115, 117, 123, 124, 126, 127, 128, 129, 130, 132, 133,
+    108, 113, 115, 117, 123, 124, 126, 127, 128, 129, 130, 132, 133,
 }
 
 # Short, non-inventive topic labels for explicitly covered articles (what the PDF
@@ -69,7 +74,6 @@ EXPLICIT_NOTES = {
     101: "传阅决议 / القرار بالتمرير",
     102: "公司检查（5%） / التفتيش على الشركة",
     108: "股份种类与类别 / أنواع وفئات الأسهم",
-    110: "类别权利变更 / حقوق الفئة",
     113: "拖售权/随售权 / حق السحب والإلحاق",
     115: "违约未缴款 / التخلف عن الدفع",
     117: "债务工具与融资凭证（Sukuk） / أدوات الدين والصكوك",
@@ -88,7 +92,7 @@ SECTIONS = [
     (58, 66, "formation_and_capital", "التأسيس ورأس المال", "设立与资本"),
     (67, 83, "board_and_governance", "مجلس الإدارة والحوكمة", "董事会与治理"),
     (84, 102, "general_assemblies", "الجمعية العامة", "股东大会"),
-    (103, 120, "shares_debt_and_financing", "الأسهم وأدوات الدين والصكوك", "股份、债务工具与融资凭证"),
+    (103, 120, "shares_debt_instruments_sukuk", "الأسهم وأدوات الدين والصكوك", "股份、债务工具与融资凭证"),
     (121, 137, "finance_profits_and_capital_changes", "المالية والأرباح وتغيير رأس المال", "财务、利润与资本变更"),
 ]
 
