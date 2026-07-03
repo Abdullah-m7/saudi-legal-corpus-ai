@@ -35,6 +35,10 @@ def _load(book: int = 1) -> Dict[str, Any]:
     work["title_zh"] = spec.display_title_zh
     work["scope_ar"] = doc.get("scope_ar", work.get("scope_ar", ""))
     work["scope_zh"] = doc.get("scope_zh", work.get("scope_zh", ""))
+    # Book-specific disclaimer scope (trust wording stays identical across books).
+    work.setdefault("translation_status", {})
+    work["translation_status"]["disclaimer_ar"] = spec.disclaimer_ar
+    work["translation_status"]["disclaimer_zh"] = spec.disclaimer_zh
     return {
         "work": work,
         "doc": doc,

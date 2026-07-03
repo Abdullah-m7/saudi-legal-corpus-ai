@@ -41,6 +41,8 @@ class BookSpec:
         review_log: Optional[str],
         html_out: str,
         pdf_out: str,
+        disclaimer_ar: str,
+        disclaimer_zh: str,
         expanded_articles: Optional[List[int]] = None,
     ) -> None:
         self.book = book
@@ -60,6 +62,8 @@ class BookSpec:
         self.review_log = review_log
         self.html_out = html_out
         self.pdf_out = pdf_out
+        self.disclaimer_ar = disclaimer_ar
+        self.disclaimer_zh = disclaimer_zh
         self.expanded_articles = set(expanded_articles or [])
 
     @property
@@ -86,6 +90,16 @@ _REGISTRY: Dict[int, BookSpec] = {
         review_log=os.path.join(CONTENT, "notes", "review_log.md"),
         html_out=os.path.join(DIST, "book1.html"),
         pdf_out=os.path.join(DIST, "book1.pdf"),
+        disclaimer_ar=(
+            "هذه الوثيقة ترجمة مرجعية موجزة ومراجَعة داخليًا مقابل مصدر الترجمة المرفق للباب "
+            "الأول كاملًا من نظام الشركات السعودي، المواد 1–34، ولم تُدقَّق بعد مادةً مادةً مقابل "
+            "النص الرسمي (جريدة أم القرى)، وليست ترجمة رسمية أو حرفية كاملة للنص النظامي."
+        ),
+        disclaimer_zh=(
+            "本文件为沙特《公司法》第一编（第一条至第三十四条）完整范围的经内部审校参考译本，"
+            "已对照所附参考翻译来源进行内部质检，但尚未逐条对照官方文本（乌姆·库拉报）核验，"
+            "采用摘要式法律表达，并非官方译本或逐字全文翻译。"
+        ),
         expanded_articles=[5, 6, 8, 9, 12, 13, 14, 17, 19, 20, 29],
     ),
     2: BookSpec(
@@ -106,6 +120,17 @@ _REGISTRY: Dict[int, BookSpec] = {
         review_log=os.path.join(CONTENT, "notes", "book2_review_log.md"),
         html_out=os.path.join(DIST, "book2.html"),
         pdf_out=os.path.join(DIST, "book2.pdf"),
+        disclaimer_ar=(
+            "هذه الوثيقة ترجمة مرجعية موجزة ومراجَعة داخليًا مقابل مصدر الترجمة المرفق للباب "
+            "الثاني كاملًا من نظام الشركات السعودي: شركة التضامن، المواد 35–50، ولم تُدقَّق بعد "
+            "مادةً مادةً مقابل النص الرسمي (جريدة أم القرى)، وليست ترجمة رسمية أو حرفية كاملة "
+            "للنص النظامي."
+        ),
+        disclaimer_zh=(
+            "本文件为沙特《公司法》第二编（无限公司，第三十五条至第五十条）完整范围的经内部审校"
+            "参考译本，已对照所附参考翻译来源进行内部质检，但尚未逐条对照官方文本（乌姆·库拉报）"
+            "核验，采用摘要式法律表达，并非官方译本或逐字全文翻译。"
+        ),
         expanded_articles=[],
     ),
     3: BookSpec(
@@ -126,6 +151,17 @@ _REGISTRY: Dict[int, BookSpec] = {
         review_log=os.path.join(CONTENT, "notes", "book3_review_log.md"),
         html_out=os.path.join(DIST, "book3.html"),
         pdf_out=os.path.join(DIST, "book3.pdf"),
+        disclaimer_ar=(
+            "هذه الوثيقة ترجمة مرجعية موجزة ومراجَعة داخليًا مقابل مصدر الترجمة المرفق للباب "
+            "الثالث كاملًا من نظام الشركات السعودي: شركة التوصية البسيطة، المواد 51–57، ولم "
+            "تُدقَّق بعد مادةً مادةً مقابل النص الرسمي (جريدة أم القرى)، وليست ترجمة رسمية أو "
+            "حرفية كاملة للنص النظامي."
+        ),
+        disclaimer_zh=(
+            "本文件为沙特《公司法》第三编（两合公司，第五十一条至第五十七条）完整范围的经内部审校"
+            "参考译本，已对照所附参考翻译来源进行内部质检，但尚未逐条对照官方文本（乌姆·库拉报）"
+            "核验，采用摘要式法律表达，并非官方译本或逐字全文翻译。"
+        ),
         expanded_articles=[],
     ),
 }
