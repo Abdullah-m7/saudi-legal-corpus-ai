@@ -62,9 +62,59 @@ def validate_against_schema(obj: Any, schema: Dict[str, Any], label: str) -> Lis
     return _fallback_check(obj, schema, label)
 
 
+def validate_book4() -> Tuple[bool, Dict[str, List[str]]]:
+    """Validate Book Four (model 1b) infrastructure: coverage matrix + guardrails.
+
+    There is NO per-article Book Four dataset at this stage; this validates the
+    80-row coverage matrix, the model-1b decision doc, the registry disclaimer
+    scope, and that no full article dataset has been created.
+    """
+    from . import books
+
+    spec = books.get_book(4)
+    report: Dict[str, List[str]] = {}
+
+    if not os.path.exists(spec.coverage_json):
+        return False, {"coverage_exists": [f"missing {spec.coverage_json}"]}
+
+    with open(spec.coverage_json, "r", encoding="utf-8") as fh:
+        coverage_text = fh.read()
+    coverage = _read(spec.coverage_json)
+
+    model_doc = os.path.join(
+        _REPO_ROOT, "docs", "book4_preflight", "BOOK4_MODEL_1B_DECISION.md"
+    )
+    # A full per-article Book Four dataset must NOT exist at this stage.
+    article_dataset_exists = os.path.exists(spec.articles_json)
+
+    qa = qa_rules.run_all_book4(
+        coverage=coverage,
+        coverage_text=coverage_text,
+        disclaimer_ar=spec.disclaimer_ar,
+        disclaimer_zh=spec.disclaimer_zh,
+        model_doc_exists=os.path.exists(model_doc),
+        article_dataset_exists=article_dataset_exists,
+    )
+    for name, problems in qa.items():
+        if problems:
+            report[name] = problems
+
+    # Provision schema must exist for the future content stage.
+    prov_schema = os.path.join(SCHEMAS, "book4_provision.schema.json")
+    if not os.path.exists(prov_schema):
+        report["b4_10_provision_schema_exists"] = [
+            "schemas/book4_provision.schema.json must exist"]
+
+    ok = all(len(v) == 0 for v in report.values())
+    return ok, report
+
+
 def validate_book(book: int = 1) -> Tuple[bool, Dict[str, List[str]]]:
     """Validate one book's structured files (schema + QA). Returns (ok, report)."""
     from . import books
+
+    if book == 4:
+        return validate_book4()
 
     spec = books.get_book(book)
     report: Dict[str, List[str]] = {}

@@ -472,3 +472,131 @@ def run_all_book3(articles: List[Dict[str, Any]], work: Dict[str, Any],
         "b3_13_disclaimer_non_official": rule_disclaimer_non_official(work),
         "b3_14_scope_51_57": rule_scope_51_57(doc),
     }
+
+
+# ==========================================================================
+# Book Four — شركة المساهمة / 股份公司 (JSC) — Articles 58–137 — MODEL 1b
+# Infrastructure-stage QA: validates the COVERAGE MATRIX (all 80 articles) and
+# the model-1b guardrails, NOT a per-article dataset (which does not exist yet).
+# ==========================================================================
+BOOK4_RANGE = list(range(58, 138))
+_B4_BANNED = ["verified_summary", "verified", "محققة", "经核验"]
+_B4_ALLOWED_COVERAGE = {"explicit_in_source", "not_explicit_in_source"}
+_B4_ALLOWED_CHECK = {"needs_check", "needs_official_text_check"}
+_B4_ALLOWED_RECORD = {"pending", "no_record_until_source_available"}
+# Coverage rows must NOT carry legal provision text (that belongs on provision
+# records under model 1b, not the coverage matrix).
+_B4_FORBIDDEN_ROW_KEYS = {"arabic_reference_summary", "chinese_translation"}
+
+
+def rule_b4_coverage_range(coverage: Dict[str, Any]) -> List[str]:
+    rows = coverage.get("rows", [])
+    nums = [r.get("article_number") for r in rows]
+    problems = []
+    if len(rows) != 80:
+        problems.append(f"coverage must have exactly 80 rows, found {len(rows)}")
+    if sorted(n for n in nums if isinstance(n, int)) != BOOK4_RANGE:
+        problems.append("coverage article numbers must be exactly 58–137")
+    return problems
+
+
+def rule_b4_no_duplicates(coverage: Dict[str, Any]) -> List[str]:
+    nums = [r.get("article_number") for r in coverage.get("rows", [])]
+    dupes = sorted({n for n in nums if nums.count(n) > 1})
+    return [f"coverage duplicate article numbers: {dupes}"] if dupes else []
+
+
+def rule_b4_status_fields(coverage: Dict[str, Any]) -> List[str]:
+    problems = []
+    for r in coverage.get("rows", []):
+        n = r.get("article_number")
+        if r.get("source_coverage_status") not in _B4_ALLOWED_COVERAGE:
+            problems.append(f"article {n}: bad source_coverage_status {r.get('source_coverage_status')!r}")
+        if r.get("official_text_check") not in _B4_ALLOWED_CHECK:
+            problems.append(f"article {n}: bad official_text_check {r.get('official_text_check')!r}")
+        if r.get("content_record_status") not in _B4_ALLOWED_RECORD:
+            problems.append(f"article {n}: bad content_record_status {r.get('content_record_status')!r}")
+    return problems
+
+
+def rule_b4_uncovered_needs_check(coverage: Dict[str, Any]) -> List[str]:
+    problems = []
+    for r in coverage.get("rows", []):
+        if r.get("source_coverage_status") == "not_explicit_in_source":
+            if r.get("official_text_check") != "needs_official_text_check":
+                problems.append(
+                    f"article {r.get('article_number')}: uncovered rows must be "
+                    f"needs_official_text_check")
+            if r.get("content_record_status") != "no_record_until_source_available":
+                problems.append(
+                    f"article {r.get('article_number')}: uncovered rows must be "
+                    f"no_record_until_source_available")
+    return problems
+
+
+def rule_b4_no_invented_text(coverage: Dict[str, Any]) -> List[str]:
+    """Coverage rows must not carry legal provision text or invented titles."""
+    problems = []
+    for r in coverage.get("rows", []):
+        n = r.get("article_number")
+        for k in _B4_FORBIDDEN_ROW_KEYS:
+            if r.get(k):
+                problems.append(f"article {n}: coverage row must not contain '{k}'")
+        # Uncovered rows must not carry invented titles.
+        if r.get("source_coverage_status") == "not_explicit_in_source":
+            if r.get("article_title_ar") not in (None, "", "NEEDS_OFFICIAL_TEXT_CHECK"):
+                problems.append(f"article {n}: uncovered row must not have an invented AR title")
+            if r.get("article_title_zh") not in (None, "", "NEEDS_OFFICIAL_TEXT_CHECK"):
+                problems.append(f"article {n}: uncovered row must not have an invented ZH title")
+    return problems
+
+
+def rule_b4_no_overclaim(coverage_text: str) -> List[str]:
+    return [f"Book Four coverage contains banned trust term '{t}'"
+            for t in _B4_BANNED if t in coverage_text]
+
+
+def rule_b4_disclaimer_scope(disclaimer_ar: str, disclaimer_zh: str) -> List[str]:
+    problems = []
+    if "الباب الرابع" not in disclaimer_ar or "58" not in disclaimer_ar or "137" not in disclaimer_ar:
+        problems.append("book4 disclaimer_ar must state الباب الرابع and المواد 58–137")
+    if "شركة المساهمة" not in disclaimer_ar:
+        problems.append("book4 disclaimer_ar must mention شركة المساهمة")
+    if "第四编" not in disclaimer_zh or "第五十八条" not in disclaimer_zh or "第一百三十七条" not in disclaimer_zh:
+        problems.append("book4 disclaimer_zh must state 第四编 and 第五十八条至第一百三十七条")
+    if "股份公司" not in disclaimer_zh:
+        problems.append("book4 disclaimer_zh must mention 股份公司")
+    # Must not leak prior books' scope.
+    for bad in ("الباب الأول", "الباب الثاني", "الباب الثالث",
+                "第一编", "第二编", "第三编", "1–34", "35–50", "51–57"):
+        if bad in disclaimer_ar or bad in disclaimer_zh:
+            problems.append(f"book4 disclaimer must not contain prior-book scope '{bad}'")
+    return problems
+
+
+def rule_b4_no_full_article_dataset(article_dataset_exists: bool) -> List[str]:
+    return (["Book Four per-article dataset must NOT exist at the model-1b "
+             "infrastructure stage"] if article_dataset_exists else [])
+
+
+def rule_b4_model_doc_exists(model_doc_exists: bool) -> List[str]:
+    return ([] if model_doc_exists else
+            ["docs/book4_preflight/BOOK4_MODEL_1B_DECISION.md must exist"])
+
+
+def run_all_book4(coverage: Dict[str, Any], coverage_text: str,
+                  disclaimer_ar: str, disclaimer_zh: str,
+                  model_doc_exists: bool, article_dataset_exists: bool
+                  ) -> Dict[str, List[str]]:
+    """Book Four (model 1b) infrastructure QA."""
+    return {
+        "b4_1_coverage_range_58_137": rule_b4_coverage_range(coverage),
+        "b4_2_no_duplicate_numbers": rule_b4_no_duplicates(coverage),
+        "b4_3_status_fields": rule_b4_status_fields(coverage),
+        "b4_4_uncovered_needs_check": rule_b4_uncovered_needs_check(coverage),
+        "b4_5_no_invented_text_or_titles": rule_b4_no_invented_text(coverage),
+        "b4_6_no_overclaim": rule_b4_no_overclaim(coverage_text),
+        "b4_7_disclaimer_scope": rule_b4_disclaimer_scope(disclaimer_ar, disclaimer_zh),
+        "b4_8_no_full_article_dataset": rule_b4_no_full_article_dataset(article_dataset_exists),
+        "b4_9_model_1b_doc_exists": rule_b4_model_doc_exists(model_doc_exists),
+    }
