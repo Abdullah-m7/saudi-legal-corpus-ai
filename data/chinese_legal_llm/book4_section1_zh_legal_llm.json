@@ -1,0 +1,234 @@
+{
+  "layer_id": "sa-companies-chinese-legal-llm",
+  "layer_status": "pilot",
+  "scope": "book4_section1_establishment_and_capital",
+  "book": 4,
+  "section_key": "formation_and_capital",
+  "section_title_zh": "设立与资本",
+  "article_range": "58-66",
+  "explicit_articles": [
+    58,
+    59,
+    60,
+    66
+  ],
+  "uncovered_articles_excluded": [
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "source_field": "chinese_translation",
+  "summary_source": "legal_rule_text_zh is copied verbatim from the provision's chinese_translation field in data/articles/book4_provisions_058_066.json (no new/machine translation, no model-generated summary).",
+  "chinese_source_status": "internal_working_translation",
+  "governing_text_language": "ar",
+  "official_text_check": "needs_check",
+  "disclaimer_zh": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本；具约束力的法定文本为阿拉伯文原文。此为试点（仅第四编第一节）——非完整中文法律 LLM 覆盖，非官方翻译，非法律意见。",
+  "records": [
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-art058",
+      "article_numbers": [
+        58
+      ],
+      "legal_subject_zh": "股份公司的定义与责任",
+      "legal_rule_text_zh": "股份公司（JSC）由一人或多人设立，其资本划分为可交易的股份。公司独立对其债务与义务负责，股东的责任仅限于缴付其所认购股份的价值。",
+      "legal_basis_type": "definition",
+      "actors_zh": [
+        "股份公司",
+        "股东"
+      ],
+      "rights_zh": [],
+      "obligations_zh": [],
+      "prohibitions_zh": [],
+      "conditions_zh": [],
+      "exceptions_zh": [],
+      "legal_effects_zh": [
+        "公司独立对其债务与义务负责",
+        "股东的责任仅限于缴付其所认购股份的价值"
+      ],
+      "liability_zh": [],
+      "monetary_thresholds": [],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "股份公司",
+        "股东",
+        "股份",
+        "有限责任"
+      ],
+      "search_queries_zh": [
+        "什么是股份公司？",
+        "股份公司股东承担什么责任？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_058_066.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    },
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-art059",
+      "article_numbers": [
+        59
+      ],
+      "legal_subject_zh": "股份公司的最低资本",
+      "legal_rule_text_zh": "已发行资本不得低于五十万（500,000）里亚尔；设立时实缴部分不得低于已发行资本的四分之一。",
+      "legal_basis_type": "mandatory",
+      "actors_zh": [],
+      "rights_zh": [],
+      "obligations_zh": [
+        "已发行资本不得低于五十万（500,000）里亚尔",
+        "设立时实缴部分不得低于已发行资本的四分之一"
+      ],
+      "prohibitions_zh": [],
+      "conditions_zh": [],
+      "exceptions_zh": [],
+      "legal_effects_zh": [],
+      "liability_zh": [],
+      "monetary_thresholds": [
+        {
+          "amount": 500000,
+          "currency": "SAR",
+          "description_zh": "已发行资本不得低于五十万（500,000）里亚尔"
+        },
+        {
+          "amount": 0.25,
+          "currency": "ratio",
+          "description_zh": "设立时实缴部分不得低于已发行资本的四分之一"
+        }
+      ],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "已发行资本",
+        "最低资本",
+        "实缴"
+      ],
+      "search_queries_zh": [
+        "股份公司的最低已发行资本是多少？",
+        "设立时实缴资本比例是多少？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_058_066.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    },
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-art060",
+      "article_numbers": [
+        60
+      ],
+      "legal_subject_zh": "已发行资本与授权资本",
+      "legal_rule_text_zh": "已发行资本代表已认购的股份。公司章程可规定授权资本。董事会可在授权资本限度内增加已发行资本，但以已发行资本已全额缴清为前提。",
+      "legal_basis_type": "procedural",
+      "actors_zh": [
+        "董事会",
+        "公司"
+      ],
+      "rights_zh": [],
+      "obligations_zh": [],
+      "prohibitions_zh": [],
+      "conditions_zh": [
+        "增加已发行资本以已发行资本已全额缴清为前提"
+      ],
+      "exceptions_zh": [],
+      "legal_effects_zh": [
+        "已发行资本代表已认购的股份",
+        "公司章程可规定授权资本",
+        "董事会可在授权资本限度内增加已发行资本"
+      ],
+      "liability_zh": [],
+      "monetary_thresholds": [],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "已发行资本",
+        "授权资本",
+        "董事会"
+      ],
+      "search_queries_zh": [
+        "已发行资本与授权资本有何区别？",
+        "董事会可以在什么条件下增加已发行资本？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_058_066.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    },
+    {
+      "book": 4,
+      "record_type": "article_reference",
+      "record_id": "zh-llm-book4-art066",
+      "article_numbers": [
+        66
+      ],
+      "legal_subject_zh": "实物出资的评估",
+      "legal_rule_text_zh": "实物出资须由认证评估师评估其公允价值。实物出资人不得参与对其评估决议的表决。若决定下调其实物出资的对价，须经该出资人同意。",
+      "legal_basis_type": "procedural",
+      "actors_zh": [
+        "认证评估师",
+        "实物出资人"
+      ],
+      "rights_zh": [],
+      "obligations_zh": [
+        "实物出资须由认证评估师评估其公允价值"
+      ],
+      "prohibitions_zh": [
+        "实物出资人不得参与对其评估决议的表决"
+      ],
+      "conditions_zh": [
+        "若决定下调其实物出资的对价，须经该出资人同意"
+      ],
+      "exceptions_zh": [],
+      "legal_effects_zh": [],
+      "liability_zh": [],
+      "monetary_thresholds": [],
+      "deadlines_zh": [],
+      "competent_authorities_zh": [],
+      "cross_references_zh": [],
+      "keywords_zh": [
+        "实物出资",
+        "认证评估师",
+        "评估",
+        "公允价值"
+      ],
+      "search_queries_zh": [
+        "实物出资如何评估？",
+        "实物出资人可以参与评估决议的表决吗？"
+      ],
+      "risk_flags": [],
+      "source_trust": {
+        "chinese_source_status": "internal_working_translation",
+        "governing_text_language": "ar",
+        "official_text_check": "needs_check",
+        "manual_review_status": "needs_manual_check",
+        "source_reference_file": "data/articles/book4_provisions_058_066.json",
+        "notes": "中文法律 LLM 元数据层，基于仓库中已有的内部中文条款文本（provision 的 chinese_translation 字段，逐字引用，非新译/机器翻译，非模型生成摘要）。中文仅为内部工作译文，具约束力的法定文本为阿拉伯文原文；official_text_check=needs_check。非官方翻译，非法律意见。"
+      }
+    }
+  ]
+}

@@ -29,7 +29,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-reference-validate \
         english-legal-llm-book4-section1-data english-legal-llm-book4-section2-data \
         english-legal-llm-book4-section3-data english-legal-llm-book4-section4-data \
-        english-legal-llm-book4-section5-data english-legal-llm-validate
+        english-legal-llm-book4-section5-data english-legal-llm-validate \
+        chinese-legal-llm-book4-section1-data chinese-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -319,6 +320,15 @@ english-legal-llm-book4-section5-data:
 
 english-legal-llm-validate:
 	$(PY) scripts/validate_english_legal_llm.py
+
+# -- Chinese Legal LLM-ready layer (PILOT: Book Four Section 1 only; 58,59,60,66) --
+# legal_rule_text_zh is verbatim from each provision's chinese_translation; internal
+# working translation only (Arabic governs); no new/machine translation.
+chinese-legal-llm-book4-section1-data:
+	$(PY) scripts/gen_chinese_legal_llm_book4_section1.py
+
+chinese-legal-llm-validate:
+	$(PY) scripts/validate_chinese_legal_llm.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
