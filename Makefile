@@ -140,9 +140,10 @@ book4-section1-html:
 book4-section1-build: book4-section1-data book4-section1-jsonl book4-validate book4-section1-html
 	@echo "book4 section1 build complete: provisions (58,59,60,66) + section HTML (NOT full Book Four)"
 
-# -- Arabic Legal LLM-ready layer (structured Arabic metadata; pilot) --------
+# -- Arabic Legal LLM-ready layer (structured Arabic metadata) ---------------
 arabic-legal-llm-data:
 	$(PY) scripts/gen_arabic_legal_llm_book4_section1.py
+	$(PY) scripts/gen_arabic_legal_llm_books1_3.py
 
 arabic-legal-llm-validate:
 	$(PY) scripts/validate_arabic_legal_llm.py
