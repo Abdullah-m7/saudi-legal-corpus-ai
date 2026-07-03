@@ -284,6 +284,46 @@ def rule_b2_benefit_of_excussion(articles: List[Dict[str, Any]]) -> List[str]:
     return []
 
 
+def rule_b2_art37_representation(articles: List[Dict[str, Any]]) -> List[str]:
+    """Article 37 must cover legal-person representation and external representation
+    before courts / arbitration bodies / third parties."""
+    a = _by_number(articles).get(37)
+    if not a:
+        return ["Article 37 missing"]
+    zh = a.get("chinese_translation", "")
+    problems = []
+    for token in ["法人合伙人", "法院", "仲裁机构", "第三人"]:
+        if token not in zh:
+            problems.append(f"Article 37: must contain {token}")
+    return problems
+
+
+def rule_b2_art39_business_asset(articles: List[Dict[str, Any]]) -> List[str]:
+    """Article 39 must use 营业资产（商业店铺）, never 营业场所（商号）."""
+    a = _by_number(articles).get(39)
+    if not a:
+        return ["Article 39 missing"]
+    zh = a.get("chinese_translation", "")
+    problems = []
+    if "营业资产（商业店铺）" not in zh:
+        problems.append("Article 39: must contain 营业资产（商业店铺）")
+    if "营业场所（商号）" in zh:
+        problems.append("Article 39: must NOT contain 营业场所（商号）")
+    return problems
+
+
+def rule_b2_glossary_business_asset(glossary: Dict[str, Any]) -> List[str]:
+    """Glossary must map المحل التجاري (المتجر) to 营业资产（商业店铺）, not 商号."""
+    terms = {t["ar"]: t["zh"] for t in glossary.get("terms", [])}
+    zh = terms.get("المحل التجاري (المتجر)", "")
+    problems = []
+    if zh != "营业资产（商业店铺）":
+        problems.append("glossary: المحل التجاري (المتجر) must map to 营业资产（商业店铺）")
+    if "商号" in zh:
+        problems.append("glossary: المحل التجاري (المتجر) must NOT use 商号")
+    return problems
+
+
 def rule_scope_35_50(work: Dict[str, Any], doc: Dict[str, Any]) -> List[str]:
     problems = []
     scope_zh = doc.get("scope_zh", "")
@@ -311,4 +351,7 @@ def run_all_book2(articles: List[Dict[str, Any]], work: Dict[str, Any],
         "b2_10_benefit_of_excussion": rule_b2_benefit_of_excussion(articles),
         "b2_11_disclaimer_non_official": rule_disclaimer_non_official(work),
         "b2_12_scope_35_50": rule_scope_35_50(work, doc),
+        "b2_13_art37_representation": rule_b2_art37_representation(articles),
+        "b2_14_art39_business_asset": rule_b2_art39_business_asset(articles),
+        "b2_15_glossary_business_asset": rule_b2_glossary_business_asset(glossary),
     }

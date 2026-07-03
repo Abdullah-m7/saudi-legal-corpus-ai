@@ -103,6 +103,36 @@ def test_art48_benefit_of_excussion(b2_by_number):
     assert "先诉抗辩权" in b2_by_number[48]["chinese_translation"]
 
 
+def test_art37_representation_complete(b2_by_number):
+    zh = b2_by_number[37]["chinese_translation"]
+    for token in ("法人合伙人", "法院", "仲裁机构", "第三人"):
+        assert token in zh, token
+
+
+def test_art39_business_asset_terminology(b2_by_number):
+    zh = b2_by_number[39]["chinese_translation"]
+    assert "营业资产（商业店铺）" in zh
+    assert "营业场所（商号）" not in zh
+
+
+def test_glossary_business_asset_mapping():
+    glossary = _read("data/glossary/ar_zh_legal_terms.json")
+    terms = {t["ar"]: t["zh"] for t in glossary["terms"]}
+    assert terms.get("المحل التجاري (المتجر)") == "营业资产（商业店铺）"
+    assert "商号" not in terms.get("المحل التجاري (المتجر)", "")
+
+
+def test_forbidden_business_premises_term_absent():
+    """营业场所（商号）must not appear anywhere in Book Two canonical data/glossary."""
+    blobs = [
+        open(os.path.join(ROOT, "data/articles/book2_articles_035_050.json"), encoding="utf-8").read(),
+        open(os.path.join(ROOT, "data/articles/book2_articles_035_050.jsonl"), encoding="utf-8").read(),
+        open(os.path.join(ROOT, "data/glossary/ar_zh_legal_terms.json"), encoding="utf-8").read(),
+    ]
+    for blob in blobs:
+        assert "营业场所（商号）" not in blob
+
+
 def test_company_form_terminology_glossary():
     glossary = _read("data/glossary/ar_zh_legal_terms.json")
     terms = {t["ar"]: t["zh"] for t in glossary["terms"]}
