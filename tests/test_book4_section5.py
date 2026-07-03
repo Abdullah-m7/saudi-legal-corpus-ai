@@ -218,8 +218,13 @@ def test_arabic_legal_llm_unchanged():
     assert [r["article_numbers"] for r in s3["records"]] == [[85, 87], [92, 93], [99], [101], [102]]
     s4 = _read(os.path.join(layer, "book4_section4_ar_legal_llm.json"))
     assert [r["article_numbers"] for r in s4["records"]] == [[108], [113], [115], [117]]
-    # No Section-5 Arabic LLM layer (out of scope for this PR).
-    assert not os.path.exists(os.path.join(layer, "book4_section5_ar_legal_llm.json"))
+    # The Section-5 Arabic LLM layer, if present, mirrors the Section-5 provision
+    # groups exactly (added by the Section 5 Arabic LLM PR); shared-validation
+    # compatibility — Articles 134 & 135 stay excluded.
+    s5_path = os.path.join(layer, "book4_section5_ar_legal_llm.json")
+    if os.path.exists(s5_path):
+        s5 = _read(s5_path)
+        assert [r["article_numbers"] for r in s5["records"]] == [[123, 124], [126, 127], [128, 129, 130], [132], [133]]
 
 
 def test_books_1_3_canonical_unchanged():

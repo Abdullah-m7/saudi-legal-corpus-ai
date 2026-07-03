@@ -16,7 +16,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         book4-section5-data book4-section5-jsonl book4-section5-html book4-section5-build \
         arabic-legal-llm-data arabic-legal-llm-book4-section2-data \
         arabic-legal-llm-book4-section3-data arabic-legal-llm-book4-section4-data \
-        arabic-legal-llm-validate \
+        arabic-legal-llm-book4-section5-data arabic-legal-llm-validate \
         official-english-source-extract official-english-source-validate \
         english-reference-book1-data english-reference-book1-jsonl \
         english-reference-book2-data english-reference-book2-jsonl \
@@ -216,6 +216,7 @@ arabic-legal-llm-data:
 	$(PY) scripts/gen_arabic_legal_llm_book4_section2.py
 	$(PY) scripts/gen_arabic_legal_llm_book4_section3.py
 	$(PY) scripts/gen_arabic_legal_llm_book4_section4.py
+	$(PY) scripts/gen_arabic_legal_llm_book4_section5.py
 
 arabic-legal-llm-book4-section2-data:
 	$(PY) scripts/gen_arabic_legal_llm_book4_section2.py
@@ -225,6 +226,9 @@ arabic-legal-llm-book4-section3-data:
 
 arabic-legal-llm-book4-section4-data:
 	$(PY) scripts/gen_arabic_legal_llm_book4_section4.py
+
+arabic-legal-llm-book4-section5-data:
+	$(PY) scripts/gen_arabic_legal_llm_book4_section5.py
 
 arabic-legal-llm-validate:
 	$(PY) scripts/validate_arabic_legal_llm.py
