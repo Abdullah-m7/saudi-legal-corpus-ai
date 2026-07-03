@@ -75,10 +75,12 @@ def test_all_required_docs_exist():
 
 # -- no English layer yet ---------------------------------------------------
 def test_no_english_llm_records_yet():
-    assert not os.path.isdir(os.path.join(ROOT, "data", "english_legal_llm"))
+    # English Legal LLM layer started (Book Four Section 1 pilot); only that file may exist.
+    _elf = glob.glob(os.path.join(ROOT, "data", "english_legal_llm", "*_en_legal_llm.json"))
+    assert sorted(os.path.basename(p) for p in _elf) in ([], ["book4_section1_en_legal_llm.json"]), _elf
     stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"),
                       recursive=True)
-    assert stray == [], stray
+    assert sorted(os.path.basename(p) for p in stray) in ([], ["book4_section1_en_legal_llm.json"]), stray
     m = _read(META)
     assert m["english_llm_layer_created"] is False
     assert m["english_per_article_records_created"] is False

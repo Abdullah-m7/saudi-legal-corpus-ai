@@ -149,12 +149,14 @@ def main() -> int:
         problems.append("total English reference records must be %d (got %d)"
                         % (TOTAL_EXPECTED, total))
 
-    # No English LLM layer yet.
-    if os.path.isdir(os.path.join(ROOT, "data", "english_legal_llm")):
-        problems.append("data/english_legal_llm/ must NOT exist yet")
-    stray = glob.glob(os.path.join(ROOT, "data", "**", "*_en_legal_llm.json"), recursive=True)
-    if stray:
-        problems.append("English LLM record files must not exist yet: %s" % stray)
+    # The English Legal LLM-ready layer is a SEPARATE layer, validated by
+    # scripts/validate_english_legal_llm.py. This reference validator no longer
+    # asserts its absence (the Book Four Section 1 pilot has started); it only checks
+    # that the English LLM layer never leaks its records into the english_reference dir.
+    ref_stray = glob.glob(os.path.join(REF_DIR, "*_en_legal_llm.json"))
+    if ref_stray:
+        problems.append("English LLM records must live in data/english_legal_llm/, not the "
+                        "english_reference dir: %s" % ref_stray)
 
     # No overclaim wording in any reference data file.
     for label, fname, _ in UNITS:
@@ -179,7 +181,7 @@ def main() -> int:
           "Book 4 Section 3 (85,87,92,93,99,101,102) + Book 4 Section 4 (108,113,115,117) + "
           "Book 4 Section 5 (123,124,126,127,128,129,130,132,133); "
           "official_guidance_translation; governing=ar; "
-          "manual_review_status=needs_manual_check; no English LLM layer" % total)
+          "manual_review_status=needs_manual_check" % total)
     print("RESULT: ALL CHECKS PASSED ✓")
     return 0
 

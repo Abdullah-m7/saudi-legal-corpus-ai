@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/english_legal_llm.schema.json",
+  "title": "English Legal LLM-ready record",
+  "description": "Structured English legal-understanding layer built ON TOP of the official English guidance REFERENCE alignment. The core text `legal_rule_text_en` is copied VERBATIM from the corresponding English reference record's `english_reference_text` — it is NOT a model-generated summary. The English is official GUIDANCE / reference only; the governing/binding text is the Arabic original. This layer is not legal advice. `additionalProperties` is false, so no generated-summary field (e.g. `legal_rule_summary_en`) may appear.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "book", "record_type", "record_id", "article_numbers",
+    "legal_subject_en", "legal_rule_text_en", "legal_basis_type",
+    "actors_en", "rights_en", "obligations_en", "prohibitions_en",
+    "conditions_en", "exceptions_en", "legal_effects_en", "liability_en",
+    "monetary_thresholds", "deadlines_en", "competent_authorities_en",
+    "cross_references_en", "keywords_en", "search_queries_en",
+    "risk_flags", "source_trust"
+  ],
+  "properties": {
+    "book": {"type": "integer", "minimum": 1},
+    "record_type": {
+      "type": "string",
+      "enum": ["article_reference"],
+      "description": "This layer references the official English guidance per article; it is not statutory text."
+    },
+    "record_id": {"type": "string", "minLength": 1},
+    "article_numbers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "integer", "minimum": 1, "maximum": 200},
+      "description": "One or more article numbers this record references."
+    },
+    "legal_subject_en": {"type": "string", "minLength": 1},
+    "legal_rule_text_en": {
+      "type": "string",
+      "minLength": 1,
+      "description": "VERBATIM copy of the corresponding English reference record's `english_reference_text`. Not a model-generated summary."
+    },
+    "legal_basis_type": {
+      "type": "string",
+      "enum": ["mandatory", "default", "permissive", "prohibition", "definition", "procedural", "mixed"]
+    },
+    "actors_en": {"type": "array", "items": {"type": "string"}},
+    "rights_en": {"type": "array", "items": {"type": "string"}},
+    "obligations_en": {"type": "array", "items": {"type": "string"}},
+    "prohibitions_en": {"type": "array", "items": {"type": "string"}},
+    "conditions_en": {"type": "array", "items": {"type": "string"}},
+    "exceptions_en": {"type": "array", "items": {"type": "string"}},
+    "legal_effects_en": {"type": "array", "items": {"type": "string"}},
+    "liability_en": {"type": "array", "items": {"type": "string"}},
+    "monetary_thresholds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["amount", "currency", "description_en"],
+        "properties": {
+          "amount": {"type": "number"},
+          "currency": {"type": "string"},
+          "description_en": {"type": "string"}
+        }
+      }
+    },
+    "deadlines_en": {"type": "array", "items": {"type": "string"}},
+    "competent_authorities_en": {"type": "array", "items": {"type": "string"}},
+    "cross_references_en": {"type": "array", "items": {"type": "string"}},
+    "keywords_en": {"type": "array", "items": {"type": "string"}},
+    "search_queries_en": {"type": "array", "items": {"type": "string"}},
+    "risk_flags": {"type": "array", "items": {"type": "string"}},
+    "source_trust": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "english_source_status", "governing_text_language", "manual_review_status",
+        "source_reference_file", "notes"
+      ],
+      "properties": {
+        "english_source_status": {
+          "type": "string",
+          "enum": ["official_guidance_translation"]
+        },
+        "governing_text_language": {"type": "string", "enum": ["ar"]},
+        "manual_review_status": {"type": "string", "enum": ["needs_manual_check"]},
+        "source_reference_file": {"type": "string", "minLength": 1},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}
