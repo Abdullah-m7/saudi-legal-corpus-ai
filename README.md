@@ -298,6 +298,13 @@ Instrument: same Royal Decree as Book One (م/132, 1443/12/1هـ).
   `make book4-section1-build`). **Articles 61–65 remain uncovered / `needs_official_text_check`**.
   This is **not** a full Book Four translation and there is no `content/*/book4.md` — only
   `content/*/book4_section1.md` (clearly labelled Section 1, provisions-based).
+- **Section 2 (董事会与治理 / مجلس الإدارة والحوكمة)**: next model-1b section. Provision records added
+  for the **explicit source articles 67, 68, 71, 72, 75, 77 only** (the source groups 67 & 68 into
+  one provision, so 5 provisions over 6 articles) —
+  `data/articles/book4_provisions_067_083.json`; build via `make book4-section2-build`. **The other
+  Section-2 articles (69, 70, 73, 74, 76, 78–83) remain uncovered / `needs_official_text_check`** with
+  no invented content. Section-only outputs `content/*/book4_section2.md` — **not** a full Book Four
+  translation and no `content/*/book4.md`.
 - Trust posture unchanged: internally reviewed (مراجَعة داخليًا / 经内部审校);
   `official_text_check = needs_check`; never `verified` / `محققة` / `经核验`; book-specific
   disclaimer (第四编 / الباب الرابع, 58–137). Listing/CMA matters read with the Capital Market Law.
