@@ -1,0 +1,613 @@
+{
+  "stage": "CHINESE_REMEDIATION_BACKLOG_AND_SOURCE_PACKET_PLAN",
+  "not_legal_advice": true,
+  "batch_count": 15,
+  "p0_batch_count": 5,
+  "p1_batch_count": 4,
+  "p2_batch_count": 5,
+  "p3_confirmation_batch_count": 1,
+  "max_articles_per_batch": 20,
+  "ordering": "priority (P0,P1,P2, then P3 confirmation) -> expected_bab -> article_number",
+  "no_chinese_generated_in_this_pr": true,
+  "batches": [
+    {
+      "batch_id": "P0-001",
+      "priority": "P0",
+      "remediation_track": "P0_no_isolable_text",
+      "article_count": 20,
+      "article_numbers": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        73,
+        74,
+        76,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "expected_babs": [
+        4
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "reports/chinese_translation_review/chinese_article_coverage_index_001_281.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توجد ترجمة صينية داخلية جديدة لكل مادة، مطابقة للمعنى العربي الرسمي، موسومة داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P0-002",
+      "priority": "P0",
+      "remediation_track": "P0_no_isolable_text",
+      "article_count": 20,
+      "article_numbers": [
+        86,
+        87,
+        88,
+        89,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        100,
+        103,
+        104,
+        105,
+        106,
+        107,
+        109,
+        110
+      ],
+      "expected_babs": [
+        4
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "reports/chinese_translation_review/chinese_article_coverage_index_001_281.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توجد ترجمة صينية داخلية جديدة لكل مادة، مطابقة للمعنى العربي الرسمي، موسومة داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P0-003",
+      "priority": "P0",
+      "remediation_track": "P0_no_isolable_text",
+      "article_count": 20,
+      "article_numbers": [
+        111,
+        112,
+        114,
+        116,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        134,
+        135
+      ],
+      "expected_babs": [
+        4
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "reports/chinese_translation_review/chinese_article_coverage_index_001_281.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توجد ترجمة صينية داخلية جديدة لكل مادة، مطابقة للمعنى العربي الرسمي، موسومة داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P0-004",
+      "priority": "P0",
+      "remediation_track": "P0_no_isolable_text",
+      "article_count": 20,
+      "article_numbers": [
+        136,
+        137,
+        140,
+        141,
+        143,
+        144,
+        147,
+        148,
+        159,
+        160,
+        161,
+        163,
+        167,
+        168,
+        169,
+        171,
+        175,
+        177,
+        179,
+        180
+      ],
+      "expected_babs": [
+        4,
+        5,
+        6
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "reports/chinese_translation_review/chinese_article_coverage_index_001_281.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توجد ترجمة صينية داخلية جديدة لكل مادة، مطابقة للمعنى العربي الرسمي، موسومة داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P0-005",
+      "priority": "P0",
+      "remediation_track": "P0_no_isolable_text",
+      "article_count": 12,
+      "article_numbers": [
+        188,
+        189,
+        190,
+        191,
+        192,
+        194,
+        218,
+        220,
+        260,
+        261,
+        262,
+        274
+      ],
+      "expected_babs": [
+        7,
+        9,
+        10,
+        13,
+        14
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "reports/chinese_translation_review/chinese_article_coverage_index_001_281.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توجد ترجمة صينية داخلية جديدة لكل مادة، مطابقة للمعنى العربي الرسمي، موسومة داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P1-001",
+      "priority": "P1",
+      "remediation_track": "P1_retranslation_or_manual_review",
+      "article_count": 20,
+      "article_numbers": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        20,
+        35,
+        38,
+        48
+      ],
+      "expected_babs": [
+        1,
+        2
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_internal_llm_semantic_qa_189.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "إعادة ترجمة/مراجعة تُغطّي العناصر القانونية العربية، داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P1-002",
+      "priority": "P1",
+      "remediation_track": "P1_retranslation_or_manual_review",
+      "article_count": 20,
+      "article_numbers": [
+        54,
+        71,
+        72,
+        77,
+        90,
+        99,
+        101,
+        102,
+        108,
+        117,
+        132,
+        138,
+        145,
+        146,
+        149,
+        154,
+        156,
+        157,
+        164,
+        165
+      ],
+      "expected_babs": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_internal_llm_semantic_qa_189.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "إعادة ترجمة/مراجعة تُغطّي العناصر القانونية العربية، داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P1-003",
+      "priority": "P1",
+      "remediation_track": "P1_retranslation_or_manual_review",
+      "article_count": 20,
+      "article_numbers": [
+        166,
+        170,
+        172,
+        174,
+        176,
+        178,
+        183,
+        185,
+        200,
+        201,
+        205,
+        206,
+        207,
+        211,
+        212,
+        213,
+        221,
+        222,
+        225,
+        227
+      ],
+      "expected_babs": [
+        6,
+        7,
+        8,
+        10
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_internal_llm_semantic_qa_189.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "إعادة ترجمة/مراجعة تُغطّي العناصر القانونية العربية، داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P1-004",
+      "priority": "P1",
+      "remediation_track": "P1_retranslation_or_manual_review",
+      "article_count": 16,
+      "article_numbers": [
+        230,
+        233,
+        242,
+        244,
+        248,
+        252,
+        253,
+        255,
+        256,
+        264,
+        266,
+        267,
+        270,
+        271,
+        273,
+        277
+      ],
+      "expected_babs": [
+        10,
+        12,
+        13,
+        14
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_internal_llm_semantic_qa_189.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "إعادة ترجمة/مراجعة تُغطّي العناصر القانونية العربية، داخلية غير رسمية، ومراجعة بشريًا."
+    },
+    {
+      "batch_id": "P2-001",
+      "priority": "P2",
+      "remediation_track": "P2_expansion_needed",
+      "article_count": 20,
+      "article_numbers": [
+        4,
+        10,
+        16,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        37,
+        58,
+        59
+      ],
+      "expected_babs": [
+        1,
+        2,
+        4
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توسعة تُضيف التفاصيل المضغوطة دون تغيير المعنى، داخلية غير رسمية."
+    },
+    {
+      "batch_id": "P2-002",
+      "priority": "P2",
+      "remediation_track": "P2_expansion_needed",
+      "article_count": 20,
+      "article_numbers": [
+        60,
+        66,
+        75,
+        113,
+        115,
+        133,
+        139,
+        142,
+        150,
+        151,
+        152,
+        153,
+        155,
+        158,
+        162,
+        173,
+        181,
+        182,
+        184,
+        186
+      ],
+      "expected_babs": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توسعة تُضيف التفاصيل المضغوطة دون تغيير المعنى، داخلية غير رسمية."
+    },
+    {
+      "batch_id": "P2-003",
+      "priority": "P2",
+      "remediation_track": "P2_expansion_needed",
+      "article_count": 20,
+      "article_numbers": [
+        187,
+        193,
+        195,
+        196,
+        197,
+        198,
+        199,
+        202,
+        203,
+        204,
+        208,
+        209,
+        210,
+        214,
+        215,
+        216,
+        217,
+        219,
+        223,
+        224
+      ],
+      "expected_babs": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توسعة تُضيف التفاصيل المضغوطة دون تغيير المعنى، داخلية غير رسمية."
+    },
+    {
+      "batch_id": "P2-004",
+      "priority": "P2",
+      "remediation_track": "P2_expansion_needed",
+      "article_count": 20,
+      "article_numbers": [
+        226,
+        228,
+        229,
+        231,
+        232,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        243,
+        245,
+        246,
+        247,
+        249,
+        250,
+        251
+      ],
+      "expected_babs": [
+        10,
+        11,
+        12
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توسعة تُضيف التفاصيل المضغوطة دون تغيير المعنى، داخلية غير رسمية."
+    },
+    {
+      "batch_id": "P2-005",
+      "priority": "P2",
+      "remediation_track": "P2_expansion_needed",
+      "article_count": 15,
+      "article_numbers": [
+        254,
+        257,
+        258,
+        259,
+        263,
+        265,
+        268,
+        269,
+        272,
+        275,
+        276,
+        278,
+        279,
+        280,
+        281
+      ],
+      "expected_babs": [
+        12,
+        13,
+        14
+      ],
+      "source_files_required": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "توسعة تُضيف التفاصيل المضغوطة دون تغيير المعنى، داخلية غير رسمية."
+    },
+    {
+      "batch_id": "P3-CONF-001",
+      "priority": "P3",
+      "remediation_track": "P3_retain_internal_reference",
+      "article_count": 18,
+      "article_numbers": [
+        36,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52,
+        53,
+        55,
+        56,
+        57
+      ],
+      "expected_babs": [
+        2,
+        3
+      ],
+      "source_files_required": [
+        "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+        "reports/chinese_translation_review/chinese_internal_llm_semantic_qa_189.json",
+        "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json"
+      ],
+      "output_not_to_create_yet": "remediated internal Chinese reference text for these articles (do NOT generate/correct in this PR)",
+      "future_allowed_output_after_authorization": "new / retranslated / expanded internal Chinese reference text for the listed articles, derived from the official Arabic governing text, ONLY after Abdullah's explicit batch authorization; output stays internal / non-official / non-binding",
+      "acceptance_criteria_ar": "يبقى كمرشح مرجعي داخلي؛ يُراجع ضمن دفعة تأكيد نهائية قبل أي طبقة كاملة."
+    }
+  ]
+}

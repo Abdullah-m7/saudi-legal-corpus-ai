@@ -725,6 +725,22 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   `CHINESE_INTERNAL_LLM_SEMANTIC_QA_AND_GAP_PLAN_AR.md`). Validate:
   `make chinese-internal-llm-semantic-qa-gap-plan-validate`.
 
+### Chinese remediation backlog & source-packet plan
+
+- A **remediation backlog + batch plan + source-packet manifest** now turns the QA/gap plan into an
+  actionable roadmap: **P0 = 92, P1 = 76, P2 = 95, P3 = 18** (263 articles need remediation, 18
+  retained as internal reference). Deterministic future batches (≤20 articles each, ordered
+  P0→P1→P2 then a P3 confirmation batch) with per-batch source requirements.
+- **No new Chinese text is generated in this stage** (`generated_chinese_created = false`;
+  `corrected_chinese_created = false`). The **full Chinese 281 layer is still blocked**, and
+  **trilingual alignment is blocked until P0/P1/P2 are resolved** from the official Arabic
+  governing text. Chinese stays internal / non-official / non-binding; Arabic governs.
+- Artifacts under [`reports/chinese_translation_review/`](reports/chinese_translation_review/)
+  (`chinese_remediation_backlog_001_281.json`, `chinese_remediation_batch_plan.json`,
+  `chinese_remediation_source_packet_manifest.json`,
+  `CHINESE_REMEDIATION_BACKLOG_AND_SOURCE_PACKET_PLAN_AR.md`). Validate:
+  `make chinese-remediation-backlog-source-packet-plan-validate`.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**
