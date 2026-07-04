@@ -1,0 +1,81 @@
+{
+  "stage": "CHINESE_REMEDIATION_BACKLOG_AND_SOURCE_PACKET_PLAN",
+  "not_legal_advice": true,
+  "source_files": [
+    {
+      "path": "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+      "role": "official_arabic_governing_text_controlling_source"
+    },
+    {
+      "path": "data/official_english_legal_llm/companies_law_m132_1443_official_english_legal_llm_001_281.json",
+      "role": "official_english_guidance_only_secondary"
+    },
+    {
+      "path": "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+      "role": "existing_chinese_internal_candidate"
+    },
+    {
+      "path": "reports/chinese_translation_review/chinese_article_coverage_index_001_281.json",
+      "role": "chinese_article_coverage_index"
+    },
+    {
+      "path": "reports/chinese_translation_review/chinese_internal_llm_semantic_qa_189.json",
+      "role": "chinese_semantic_qa"
+    },
+    {
+      "path": "reports/chinese_translation_review/chinese_completion_gap_plan_001_281.json",
+      "role": "chinese_completion_gap_plan"
+    },
+    {
+      "path": "reports/chinese_translation_review/chinese_remediation_backlog_001_281.json",
+      "role": "chinese_remediation_backlog"
+    },
+    {
+      "path": "inputs/chinese_translation_source_pdfs/",
+      "role": "chinese_source_pdfs_optional_historical_context"
+    },
+    {
+      "path": "data/chinese_translation_sources/",
+      "role": "chinese_extracted_sources_optional_historical_context"
+    }
+  ],
+  "protected_files": [
+    "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json",
+    "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+    "data/official_english_legal_llm/companies_law_m132_1443_official_english_legal_llm_001_281.json",
+    "data/english_reference/companies_law_m132_1443_en_reference_001_281.json",
+    "data/chinese_legal_llm/ (old Chinese Legal LLM, 5 files / 23 records)",
+    "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+    "inputs/chinese_translation_source_pdfs/ (Chinese source PDFs)",
+    "data/chinese_translation_sources/ (Chinese extracted source files)",
+    "reports/official_arabic_verification/ (OCR reports/queues)"
+  ],
+  "future_batch_requirements": {
+    "authorization": "each remediation batch requires Abdullah's explicit authorization before any Chinese text is created",
+    "controlling_source": "official_arabic_governing_text",
+    "english_role": "guidance_only_secondary",
+    "output_trust_posture": "internal_working_translation_source; official_translation=false; not_binding=true; governing_text_language=ar",
+    "order": "P0 batches first, then P1, then P2; P3 is a final confirmation batch"
+  },
+  "forbidden_actions": [
+    "no full Chinese 281 layer",
+    "no trilingual alignment",
+    "no official/binding/governing Chinese claim",
+    "no modification of protected layers",
+    "no bulk generation without batch authorization",
+    "no source PDF rewrite",
+    "no OCR/provenance detour"
+  ],
+  "required_trust_posture": {
+    "arabic_governs": true,
+    "chinese_official": false,
+    "chinese_binding": false,
+    "chinese_governing": false,
+    "english_guidance_only": true
+  },
+  "validation_requirements": [
+    "each future remediation PR must keep all protected_files unchanged",
+    "each future remediation PR must add a validator + tests for its batch",
+    "each future remediation PR must not claim official/binding/governing/full Chinese"
+  ]
+}
