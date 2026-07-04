@@ -678,6 +678,21 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   [`reports/chinese_translation_review/`](reports/chinese_translation_review/). Validate:
   `make chinese-bab1-original-pdf-translation-review-validate`. Not legal advice.
 
+### Chinese all-Babs source inventory (Babs 1–14, Articles 1–281)
+
+- The **original Chinese source PDFs for Babs 1–14 now have a full source inventory** covering the
+  expected law range **Articles 1–281**. Babs 1–3 carry per-article headings; Babs 4–14 are
+  thematic-table / summary-style, so per-article Chinese text is only **partially** isolable and is
+  recorded honestly (`extraction_confidence`, `coverage_posture`) — never fabricated.
+- **Chinese remains an internal working/reference translation only — not official; Arabic remains
+  governing.** The **Chinese LLM-ready full layer is not created yet** (`chinese_llm_ready_created
+  = false`; `llm_ready_as_full_translation = false` for all 281). Next work is semantic review /
+  expansion from the official Arabic before any Chinese LLM-ready layer.
+- Artifacts: master inventory + article coverage index (1–281) under
+  [`reports/chinese_translation_review/`](reports/chinese_translation_review/), per-Bab extracted
+  sources under [`data/chinese_translation_sources/`](data/chinese_translation_sources/). Validate:
+  `make chinese-all-babs-source-inventory-validate`.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**
