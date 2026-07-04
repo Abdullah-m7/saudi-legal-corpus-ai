@@ -664,6 +664,20 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   `-section4-data` / `-section5-data`; validate `make english-legal-llm-validate`.
 - **Not legal advice.**
 
+## Chinese Bab 1 original-PDF translation review (Articles 1–34)
+
+- The **original Bab 1 Chinese PDF** source has been ingested and **reviewed** (source-inventory
+  stage), covering **Articles 1–34**. Chinese is an **internal working/reference translation only
+  — not official, not binding; Arabic remains governing.**
+- The review is **not yet converted into a Chinese LLM-ready layer**: many Bab 1 articles are
+  condensed/summary style (e.g. Article 1 lists only the defined terms), so **several articles
+  require expansion or retranslation from the Arabic before any full Chinese LLM-ready use.**
+- Artifacts: source PDF under
+  [`inputs/chinese_translation_source_pdfs/`](inputs/chinese_translation_source_pdfs/), extracted
+  text [`data/chinese_translation_sources/`](data/chinese_translation_sources/), review
+  [`reports/chinese_translation_review/`](reports/chinese_translation_review/). Validate:
+  `make chinese-bab1-original-pdf-translation-review-validate`. Not legal advice.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**
