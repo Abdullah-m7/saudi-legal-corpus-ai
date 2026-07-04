@@ -1,0 +1,598 @@
+{
+  "stage": "CHINESE_BAB1_ORIGINAL_PDF_TRANSLATION_REVIEW",
+  "not_legal_advice": true,
+  "source_pdf": "inputs/chinese_translation_source_pdfs/saudi_companies_law_ar_zh_bab1_full.pdf",
+  "source_pdf_sha256": "e0928753c163dc80264d2a3f10e75621e7b7133f03d04ebf4a312c1342d50374",
+  "article_count": 34,
+  "article_range": [
+    1,
+    34
+  ],
+  "governing_language": "ar",
+  "chinese_source_status": "internal_working_translation_source",
+  "official_chinese_translation_claimed": false,
+  "chinese_binding_claimed": false,
+  "full_translation_claimed": false,
+  "review_method": "automated_initial_review: chinese_text_element_presence_vs_arabic_requirements + range_guidance (needs human confirmation)",
+  "review_summary": {
+    "coverage_status_counts": {
+      "materially_incomplete_needs_retranslation": 8,
+      "summary_needs_expansion": 5,
+      "mostly_aligned_but_condensed": 21
+    },
+    "articles_needing_expansion_or_retranslation": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      21
+    ],
+    "articles_usable_as_internal_reference": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "llm_ready_as_full_translation_any": false,
+    "overall_note_ar": "الباب الأول (المواد 1–34) ترجمة صينية داخلية غير رسمية، كثير من موادها مختصرة/تلخيصية؛ لا يصلح مباشرة كطبقة Chinese LLM-ready كاملة. يُعتمد كمصدر مرجعي داخلي تحت المراجعة، مع توسعة/إعادة ترجمة المواد الناقصة لاحقًا قبل بناء الطبقة الصينية."
+  },
+  "records": [
+    {
+      "article_number": 1,
+      "arabic_article_title": "التعريفات",
+      "chinese_heading": "定义",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تعريف كل مصطلح (لا مجرد سرد المصطلحات)"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 2,
+      "arabic_article_title": "تعريف الشركة",
+      "chinese_heading": "公司的定义",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "المساهمة بمال أو عمل أو بهما",
+        "اقتسام الربح والخسارة"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 3,
+      "arabic_article_title": "جنسية الشركة",
+      "chinese_heading": "公司国籍",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "أغلب عناصر النص العربي غير مُغطّاة أو مضغوطة بشدة"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 4,
+      "arabic_article_title": "أشكال الشركات",
+      "chinese_heading": "公司形式",
+      "coverage_status": "summary_needs_expansion",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية مختصرة/تلخيصية وتحتاج توسعة من النص العربي قبل الاستخدام الكامل."
+    },
+    {
+      "article_number": 5,
+      "arabic_article_title": "اسم الشركة",
+      "chinese_heading": "公司名称",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "قاعدة الاسم بالعربية أو لغة أخرى",
+        "اشتقاق الاسم من الغرض/الاسم/الشريك/اسم مبتكر",
+        "موافقة الشريك/المساهم السابق أو الورثة",
+        "الالتزام بنظام الأسماء التجارية",
+        "إجراءات التعديل"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 6,
+      "arabic_article_title": "طلب تأسيس الشركة",
+      "chinese_heading": "设立申请",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 7,
+      "arabic_article_title": "وثائق تأسيس الشركة",
+      "chinese_heading": "设立文件",
+      "coverage_status": "summary_needs_expansion",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "نماذج/إرشادات الوزارة"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية مختصرة/تلخيصية وتحتاج توسعة من النص العربي قبل الاستخدام الكامل."
+    },
+    {
+      "article_number": 8,
+      "arabic_article_title": "قيد وثائق تأسيس الشركة",
+      "chinese_heading": "文件登记",
+      "coverage_status": "summary_needs_expansion",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "الشكل الكتابي/البطلان",
+        "متطلبات التعديل",
+        "المسؤولية التضامنية"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية مختصرة/تلخيصية وتحتاج توسعة من النص العربي قبل الاستخدام الكامل."
+    },
+    {
+      "article_number": 9,
+      "arabic_article_title": "اكتساب الشخصية الاعتبارية",
+      "chinese_heading": "法人资格",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "المصروفات بعد القيد",
+        "المسؤولية عند عدم إتمام التأسيس"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 10,
+      "arabic_article_title": "أغراض الشركة",
+      "chinese_heading": "经营范围",
+      "coverage_status": "summary_needs_expansion",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية مختصرة/تلخيصية وتحتاج توسعة من النص العربي قبل الاستخدام الكامل."
+    },
+    {
+      "article_number": 11,
+      "arabic_article_title": "اتفاق الشركاء والميثاق العائلي",
+      "chinese_heading": "股东协议与家族宪章",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "الورثة",
+        "سياسة العمل/التوظيف لأفراد العائلة",
+        "التصرف في الحصص/الأسهم",
+        "تسوية المنازعات"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 12,
+      "arabic_article_title": "البيانات الواجب تضمينها في وثائق الشركة",
+      "chinese_heading": "必备信息",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "عنوان المركز الرئيس",
+        "البريد الإلكتروني إن وجد",
+        "رأس المال المدفوع"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 13,
+      "arabic_article_title": "حصة الشريك أو المساهم",
+      "chinese_heading": "出资形式",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 14,
+      "arabic_article_title": "تقديم الحصة",
+      "chinese_heading": "出资的交付",
+      "coverage_status": "materially_incomplete_needs_retranslation",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "قاعدة حق الانتفاع/الاستعمال (الإيجار)",
+        "عائد العمل يعود للشركة",
+        "استثناء حقوق الملكية الفكرية"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "retranslate_full_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية ناقصة جوهريًا وتحتاج إعادة ترجمة كاملة من العربية قبل أي استخدام كطبقة كاملة."
+    },
+    {
+      "article_number": 15,
+      "arabic_article_title": "التأخر في تقديم الحصة",
+      "chinese_heading": "迟延出资",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 16,
+      "arabic_article_title": "السنة المالية للشركة",
+      "chinese_heading": "会计年度",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 17,
+      "arabic_article_title": "السجلات المحاسبية والقوائم المالية",
+      "chinese_heading": "会计记录与财务报表",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 18,
+      "arabic_article_title": "تعيين مراجع حسابات الشركة وعزله واعتزاله",
+      "chinese_heading": "审计师的委任与解聘",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 19,
+      "arabic_article_title": "عدم سريان متطلب تعيين مراجع حسابات",
+      "chinese_heading": "审计师委任要求的豁免",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 20,
+      "arabic_article_title": "التزامات مراجع حسابات الشركة",
+      "chinese_heading": "审计师义务",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 21,
+      "arabic_article_title": "الرقابة على حسابات الشركة",
+      "chinese_heading": "对公司账目的监督",
+      "coverage_status": "summary_needs_expansion",
+      "semantic_alignment_rating": "low",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_from_arabic_before_llm_ready",
+      "reviewer_note_ar": "الترجمة الصينية مختصرة/تلخيصية وتحتاج توسعة من النص العربي قبل الاستخدام الكامل."
+    },
+    {
+      "article_number": 22,
+      "arabic_article_title": "توزيع الأرباح",
+      "chinese_heading": "利润分配",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 23,
+      "arabic_article_title": "تقاسم الأرباح والخسائر",
+      "chinese_heading": "损益分担",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 24,
+      "arabic_article_title": "نصيب الشريك بالعمل في الربح والخسارة",
+      "chinese_heading": "劳务合伙人的份额",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 25,
+      "arabic_article_title": "انتقال ملكية الحصص وتداول الأسهم",
+      "chinese_heading": "份额转让与股份交易",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 26,
+      "arabic_article_title": "واجبات العناية والولاء",
+      "chinese_heading": "忠实与勤勉义务",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 27,
+      "arabic_article_title": "تعارض المصالح والمنافسة واستغلال الأصول",
+      "chinese_heading": "利益冲突、竞业禁止与资产利用",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 28,
+      "arabic_article_title": "مسؤولية الإدارة",
+      "chinese_heading": "管理层责任",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 29,
+      "arabic_article_title": "دعوى الشركة والشريك أو المساهم",
+      "chinese_heading": "公司诉讼与股东代表诉讼",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 30,
+      "arabic_article_title": "عدم سماع الدعوى",
+      "chinese_heading": "诉讼时效",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 31,
+      "arabic_article_title": "قاعدة تقييم القرارات",
+      "chinese_heading": "决策评估规则 — 商业判断规则\nBJR",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 32,
+      "arabic_article_title": "نفقات إقامة دعوى المسؤولية",
+      "chinese_heading": "责任诉讼的费用",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 33,
+      "arabic_article_title": "التنفيذ على أرباح الشريك أو المساهم",
+      "chinese_heading": "对合伙人或股东利润的执行",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    },
+    {
+      "article_number": 34,
+      "arabic_article_title": "التنفيذ على الحصص والأسهم",
+      "chinese_heading": "对份额与股份的执行",
+      "coverage_status": "mostly_aligned_but_condensed",
+      "semantic_alignment_rating": "medium",
+      "llm_ready_as_full_translation": false,
+      "usable_as_internal_reference": true,
+      "missing_or_compressed_elements_ar": [
+        "تفاصيل إجرائية/فرعية مضغوطة مقارنة بالنص العربي الرسمي"
+      ],
+      "misleading_or_risky_elements": [],
+      "recommended_action": "expand_condensed_details_from_arabic_then_review",
+      "reviewer_note_ar": "الترجمة الصينية متوافقة في الأغلب لكنها مضغوطة؛ تصلح كمرجع داخلي وتحتاج توسعة تفاصيل قبل الطبقة الكاملة."
+    }
+  ]
+}
