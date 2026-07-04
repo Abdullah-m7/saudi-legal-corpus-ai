@@ -35,7 +35,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-legal-llm-book4-section3-data chinese-legal-llm-book4-section4-data \
         chinese-legal-llm-book4-section5-data chinese-legal-llm-validate \
         official-arabic-foundation-validate official-arabic-user-provided-data \
-        official-arabic-ingestion-validate
+        official-arabic-ingestion-validate official-arabic-verification-report-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -374,6 +374,12 @@ official-arabic-user-provided-data:
 
 official-arabic-ingestion-validate:
 	$(PY) scripts/validate_official_arabic_ingestion.py
+
+# -- Official Arabic source VERIFICATION (comparison/report only; nothing promoted) --
+# compare_official_arabic_candidate_to_source.py reads the committed OCR artifact (no OCR
+# engine needed) and rewrites the comparison report deterministically.
+official-arabic-verification-report-validate:
+	$(PY) scripts/validate_official_arabic_verification_report.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
