@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Validate Chinese remediation Batch P0-003 (scoped internal Chinese draft, 20 Bab 4 articles).
+"""Validate Chinese remediation Batch P0-004 (scoped internal Chinese draft, 20 articles, Babs 4/5/6).
 
-Confirms the batch covers exactly the 20 authorized P0-003 articles with verbatim-hashed internal
-Chinese text translated from the official Arabic governing text (English guidance only), carries the
-correct internal / non-official / non-binding / non-governing posture with human review pending and
-qa_status pending_future_qa, and touches no protected layer (P0-001, P0-001 QA, P0-001 minor fixes,
-P0-002, P0-002 QA, and the base corpora). Read-only and idempotent.
+Confirms the batch covers exactly the 20 authorized P0-004 articles with verbatim-hashed internal
+Chinese text translated from the official Arabic governing text (English guidance only), that every
+record's bab is in [4,5,6] and equals the official coverage-index expected_bab_number for that
+article, carries the correct internal / non-official / non-binding / non-governing posture with
+human review pending and qa_status pending_future_qa, and touches no protected layer (P0-001..P0-003
+and their QA, plus the base corpora). Read-only and idempotent.
 
-Usage: validate_chinese_remediation_batch_p0_003.py [DATA_JSON_PATH]
+Usage: validate_chinese_remediation_batch_p0_004.py [DATA_JSON_PATH]
 An optional data path (used by the tests to exercise rejection paths) overrides the default committed
 batch file; all other checks read the real repository artifacts.
 
@@ -24,14 +25,16 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DEFAULT = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_003",
-                            "companies_law_m132_1443_zh_internal_remediation_p0_003.json")
+DATA_DEFAULT = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_004",
+                            "companies_law_m132_1443_zh_internal_remediation_p0_004.json")
 MD = os.path.join(ROOT, "reports", "chinese_translation_review",
-                  "CHINESE_REMEDIATION_BATCH_P0_003_AR.md")
+                  "CHINESE_REMEDIATION_BATCH_P0_004_AR.md")
 ARABIC = os.path.join(ROOT, "data", "official_arabic_legal_llm",
                       "companies_law_m132_1443_official_arabic_legal_llm_001_281.json")
 ENGLISH = os.path.join(ROOT, "data", "official_english_legal_llm",
                        "companies_law_m132_1443_official_english_legal_llm_001_281.json")
+COV = os.path.join(ROOT, "reports", "chinese_translation_review",
+                   "chinese_article_coverage_index_001_281.json")
 CANDF = os.path.join(ROOT, "data", "chinese_internal_legal_llm",
                      "companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json")
 CAND_SRC = os.path.join(ROOT, "data", "official_arabic",
@@ -40,11 +43,15 @@ P0_001 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_001",
                       "companies_law_m132_1443_zh_internal_remediation_p0_001.json")
 P0_002 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_002",
                       "companies_law_m132_1443_zh_internal_remediation_p0_002.json")
+P0_003 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_003",
+                      "companies_law_m132_1443_zh_internal_remediation_p0_003.json")
 P0_002_QA = os.path.join(ROOT, "reports", "chinese_translation_review",
                          "chinese_remediation_batch_p0_002_qa.json")
+P0_003_QA = os.path.join(ROOT, "reports", "chinese_translation_review",
+                         "chinese_remediation_batch_p0_003_qa.json")
 
-ARTS = [111, 112, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131,
-        134, 135]
+ARTS = [136, 137, 140, 141, 143, 144, 147, 148, 159, 160, 161, 163, 167, 168, 169, 171, 175, 177,
+        179, 180]
 BANNED = ("official chinese translation", "chinese is official", "chinese is binding",
           "chinese is governing", "full verified chinese translation",
           "governing chinese text", "binding chinese text")
@@ -83,12 +90,13 @@ def main(argv=None) -> int:
 
     ar = {r["article_number"]: r for r in _read(ARABIC)["records"]}
     en = {r["article_number"]: r for r in _read(ENGLISH)["records"]}
+    cov = {r["article_number"]: r for r in _read(COV)["records"]}
 
     # top-level posture / scope
-    if d.get("stage") != "CHINESE_REMEDIATION_BATCH_P0_003":
-        problems.append("stage must be CHINESE_REMEDIATION_BATCH_P0_003")
-    if d.get("batch_id") != "P0-003":
-        problems.append("batch_id must be P0-003")
+    if d.get("stage") != "CHINESE_REMEDIATION_BATCH_P0_004":
+        problems.append("stage must be CHINESE_REMEDIATION_BATCH_P0_004")
+    if d.get("batch_id") != "P0-004":
+        problems.append("batch_id must be P0-004")
     if d.get("priority") != "P0":
         problems.append("priority must be P0")
     if d.get("remediation_track") != "P0_no_isolable_text":
@@ -103,10 +111,10 @@ def main(argv=None) -> int:
         problems.append("translation_basis must be official_arabic_governing_text")
     if d.get("english_guidance_role") != "secondary_guidance_only":
         problems.append("english_guidance_role must be secondary_guidance_only")
-    if d.get("expected_babs") != [4]:
-        problems.append("expected_babs must be [4]")
+    if d.get("expected_babs") != [4, 5, 6]:
+        problems.append("expected_babs must be [4, 5, 6]")
     if d.get("scope_articles") != ARTS:
-        problems.append("scope_articles must exactly match the authorized P0-003 list")
+        problems.append("scope_articles must exactly match the authorized P0-004 list")
     if d.get("article_count") != 20:
         problems.append("article_count must be 20")
     if d.get("internal_reference_only") is not True:
@@ -128,7 +136,7 @@ def main(argv=None) -> int:
     recs = d.get("records", [])
     nums = [r.get("article_number") for r in recs]
     if nums != ARTS:
-        problems.append("record article numbers must be exactly the P0-003 list, no extras")
+        problems.append("record article numbers must be exactly the P0-004 list, no extras")
     if len(set(nums)) != len(nums):
         problems.append("duplicate article numbers in records")
     allowed = set(ARTS)
@@ -147,8 +155,11 @@ def main(argv=None) -> int:
         for f in req_rec:
             if f not in r:
                 problems.append("art %s missing required field %s" % (n, f))
-        if r.get("bab") != 4:
-            problems.append("art %s bab must be 4" % n)
+        if r.get("bab") not in (4, 5, 6):
+            problems.append("art %s bab must be in [4,5,6]" % n)
+        if n in cov and r.get("bab") != cov[n].get("expected_bab_number"):
+            problems.append("art %s bab %r != coverage-index expected_bab_number %r"
+                            % (n, r.get("bab"), cov[n].get("expected_bab_number")))
         if not (r.get("remediated_chinese_text") or "").strip():
             problems.append("art %s remediated_chinese_text empty" % n)
         if r.get("source_status_before") != "excluded_no_isolable_article_text":
@@ -192,20 +203,18 @@ def main(argv=None) -> int:
             problems.append("banned overclaim term present: %r" % term)
 
     # sibling batches / QA unchanged (record counts + posture)
-    if not os.path.exists(P0_001) or len(_read(P0_001)["records"]) != 20:
-        problems.append("P0-001 batch must remain 20 records (untouched)")
-    elif _read(P0_001).get("human_legal_review_status") != "pending_human_legal_review":
-        problems.append("P0-001 posture changed (forbidden)")
-    if not os.path.exists(P0_002) or len(_read(P0_002)["records"]) != 20:
-        problems.append("P0-002 batch must remain 20 records (untouched)")
-    elif _read(P0_002).get("human_legal_review_status") != "pending_human_legal_review":
-        problems.append("P0-002 posture changed (forbidden)")
-    if not os.path.exists(P0_002_QA):
-        problems.append("P0-002 QA must exist and remain unchanged")
-    else:
-        qa = _read(P0_002_QA)
-        if qa.get("final_status") != "QA_PASS" or qa.get("batch_id") != "P0-002":
-            problems.append("P0-002 QA posture changed (forbidden)")
+    for path, label in ((P0_001, "P0-001"), (P0_002, "P0-002"), (P0_003, "P0-003")):
+        if not os.path.exists(path) or len(_read(path)["records"]) != 20:
+            problems.append("%s batch must remain 20 records (untouched)" % label)
+        elif _read(path).get("human_legal_review_status") != "pending_human_legal_review":
+            problems.append("%s posture changed (forbidden)" % label)
+    for path, label in ((P0_002_QA, "P0-002 QA"), (P0_003_QA, "P0-003 QA")):
+        if not os.path.exists(path):
+            problems.append("%s must exist and remain unchanged" % label)
+        else:
+            qa = _read(path)
+            if qa.get("final_status") != "QA_PASS":
+                problems.append("%s posture changed (forbidden)" % label)
 
     # protected base layers unchanged
     if len(_read(CANDF)["records"]) != 189:
@@ -234,25 +243,24 @@ def main(argv=None) -> int:
     if os.path.exists(q) and len(_read(q).get("entries", [])) != 281:
         problems.append("OCR manual_review_queue must remain 281 entries (unchanged)")
 
-    # no later-priority batch files created (P0-004 is now an authorized sibling batch)
-    for later in ("p0_005",):
-        if os.path.isdir(os.path.join(ROOT, "data", "chinese_remediation_batches", later)):
-            problems.append("later batch dir %s must not exist" % later)
+    # no later-priority batch files created
+    if os.path.isdir(os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_005")):
+        problems.append("later batch dir p0_005 must not exist")
 
     print("=" * 60)
-    print("Chinese remediation Batch P0-003 validation")
+    print("Chinese remediation Batch P0-004 validation")
     print("=" * 60)
     if problems:
         for p in problems:
             print("  -", p)
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
-    print("[PASS] Batch P0-003: 20 authorized Bab-4 articles; verbatim-hashed internal Chinese "
-          "from the official Arabic (English guidance only); internal/non-official/non-binding/"
-          "non-governing; human review pending; qa_status pending_future_qa; no full Arabic/English "
-          "text embedded; P0-001 + P0-001 QA/minor-fixes + P0-002 + P0-002 QA + Chinese candidate "
-          "189 + old Chinese 5/23 + Arabic 281 + English 281 + English reference 281 + Arabic "
-          "source + Chinese sources 14 + OCR queue unchanged; no P0-004/P0-005 files.")
+    print("[PASS] Batch P0-004: 20 authorized articles across Babs [4,5,6] (each record bab matches "
+          "the coverage index); verbatim-hashed internal Chinese from the official Arabic (English "
+          "guidance only); internal/non-official/non-binding/non-governing; human review pending; "
+          "qa_status pending_future_qa; no full Arabic/English text embedded; P0-001..P0-003 + their "
+          "QA + Chinese candidate 189 + old Chinese 5/23 + Arabic 281 + English 281 + English "
+          "reference 281 + Arabic source + Chinese sources 14 + OCR queue unchanged; no P0-005 files.")
     print("RESULT: ALL CHECKS PASSED ✓")
     return 0
 

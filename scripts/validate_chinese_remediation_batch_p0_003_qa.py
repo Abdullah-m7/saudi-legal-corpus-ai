@@ -244,8 +244,8 @@ def main(argv=None) -> int:
     if os.path.exists(q) and len(_read(q).get("entries", [])) != 281:
         problems.append("OCR manual_review_queue must remain 281 entries (unchanged)")
 
-    # no later-priority batch files created
-    for later in ("p0_004", "p0_005"):
+    # no later-priority batch files created (P0-004 is now an authorized sibling batch)
+    for later in ("p0_005",):
         if os.path.isdir(os.path.join(ROOT, "data", "chinese_remediation_batches", later)):
             problems.append("later batch dir %s must not exist" % later)
 
