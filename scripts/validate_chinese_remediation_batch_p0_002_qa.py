@@ -1,0 +1,248 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Validate the Batch P0-002 QA (article-by-article review vs the official Arabic; review only).
+
+Confirms the QA covers exactly the 20 P0-002 articles (Bab 4), uses only allowed qa_status values,
+carries the correct legal-hierarchy / non-official / non-binding / non-governing posture with human
+review pending, points at the P0-002 remediation file, embeds no full Arabic/English/Chinese text,
+and touches no protected layer. The validator is read-only (it does not modify the remediation data)
+and idempotent.
+
+Usage: validate_chinese_remediation_batch_p0_002_qa.py [QA_JSON_PATH]
+An optional QA JSON path (used by the tests to exercise rejection paths) overrides the default
+committed QA file; all other checks read the real repository artifacts.
+
+Exit 0 == pass; 1 == problems.
+"""
+
+from __future__ import annotations
+
+import glob
+import json
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+QA_DEFAULT = os.path.join(ROOT, "reports", "chinese_translation_review",
+                          "chinese_remediation_batch_p0_002_qa.json")
+MD = os.path.join(ROOT, "reports", "chinese_translation_review",
+                  "CHINESE_REMEDIATION_BATCH_P0_002_QA_AR.md")
+SRC = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_002",
+                   "companies_law_m132_1443_zh_internal_remediation_p0_002.json")
+SRC_REL = "data/chinese_remediation_batches/p0_002/companies_law_m132_1443_zh_internal_remediation_p0_002.json"
+ARABIC = os.path.join(ROOT, "data", "official_arabic_legal_llm",
+                      "companies_law_m132_1443_official_arabic_legal_llm_001_281.json")
+ENGLISH = os.path.join(ROOT, "data", "official_english_legal_llm",
+                       "companies_law_m132_1443_official_english_legal_llm_001_281.json")
+CANDF = os.path.join(ROOT, "data", "chinese_internal_legal_llm",
+                     "companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json")
+CAND_SRC = os.path.join(ROOT, "data", "official_arabic",
+                        "companies_law_m132_1443_official_arabic_user_provided.json")
+
+ARTS = [86, 87, 88, 89, 91, 92, 93, 94, 95, 96, 97, 98, 100, 103, 104, 105, 106, 107, 109, 110]
+STATUS = {"pass", "minor", "blocked", "fail"}
+FINAL = {"QA_PASS", "QA_PASS_WITH_MINOR_ISSUES", "QA_BLOCKED", "QA_FAIL"}
+REQ_TOP = ("stage", "batch_id", "source_batch_file", "scope_articles", "expected_babs", "qa_method",
+           "legal_hierarchy", "human_legal_review_status", "full_chinese_translation_claimed",
+           "official_chinese_translation_claimed", "chinese_binding_claimed",
+           "chinese_governing_claimed", "qa_summary", "per_article_reviews",
+           "protected_layers_unchanged", "prohibitions_respected", "final_status")
+REQ_REC = ("article_number", "bab", "qa_status", "arabic_controlling_source_checked",
+           "english_guidance_checked", "chinese_internal_reference_checked",
+           "legal_meaning_preserved", "terminology_check", "entity_role_check",
+           "obligation_or_right_check", "condition_exception_deadline_check",
+           "scope_boundary_check", "issue_severity", "issue_summary_ar", "recommendation_ar")
+BANNED = ("official chinese translation", "chinese is official", "chinese is binding",
+          "chinese is governing", "full verified chinese translation",
+          "governing chinese text", "binding chinese text")
+
+
+def _read(p):
+    with open(p, "r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def main(argv=None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    qa_path = argv[0] if argv else QA_DEFAULT
+
+    problems = []
+    for p, label in ((qa_path, "QA JSON"), (MD, "Arabic QA report"), (SRC, "P0-002 remediation file")):
+        if not os.path.exists(p):
+            problems.append("missing: %s (%s)" % (label, os.path.relpath(p, ROOT)))
+    if problems:
+        for p in problems:
+            print("  -", p)
+        print("RESULT: %d problem(s) found ✗" % len(problems))
+        return 1
+
+    try:
+        qa = _read(qa_path)
+    except (ValueError, OSError) as e:
+        print("  - QA JSON is not valid JSON: %s" % e)
+        print("RESULT: 1 problem(s) found ✗")
+        return 1
+
+    src = _read(SRC)
+    ar = {r["article_number"]: r for r in _read(ARABIC)["records"]}
+    en = {r["article_number"]: r for r in _read(ENGLISH)["records"]}
+
+    for f in REQ_TOP:
+        if f not in qa:
+            problems.append("missing required top-level field: %s" % f)
+
+    if qa.get("stage") != "CHINESE_REMEDIATION_BATCH_P0_002_QA":
+        problems.append("stage must be CHINESE_REMEDIATION_BATCH_P0_002_QA")
+    if qa.get("batch_id") != "P0-002":
+        problems.append("batch_id must be P0-002")
+    if qa.get("source_batch_file") != SRC_REL:
+        problems.append("source_batch_file must point to the P0-002 remediation JSON")
+    if qa.get("scope_articles") != ARTS:
+        problems.append("scope_articles must exactly match the P0-002 list")
+    if qa.get("expected_babs") != [4]:
+        problems.append("expected_babs must be [4]")
+    for f in ("full_chinese_translation_claimed", "official_chinese_translation_claimed",
+              "chinese_binding_claimed", "chinese_governing_claimed"):
+        if qa.get(f) is not False:
+            problems.append("%s must be false" % f)
+    if qa.get("human_legal_review_status") != "pending_human_legal_review":
+        problems.append("human_legal_review_status must remain pending_human_legal_review")
+    if qa.get("final_status") not in FINAL:
+        problems.append("final_status must be one of %s" % sorted(FINAL))
+
+    lh = qa.get("legal_hierarchy") or {}
+    if lh.get("arabic") != "governing":
+        problems.append("legal_hierarchy.arabic must be 'governing'")
+    if lh.get("english") not in ("guidance_only", "guidance"):
+        problems.append("legal_hierarchy.english must be guidance only")
+    if lh.get("chinese") != "internal_reference_only":
+        problems.append("legal_hierarchy.chinese must be 'internal_reference_only'")
+    for k in ("chinese_official", "chinese_binding", "chinese_governing"):
+        if lh.get(k) is not False:
+            problems.append("legal_hierarchy.%s must be false" % k)
+
+    recs = qa.get("per_article_reviews", [])
+    nums = [r.get("article_number") for r in recs]
+    if nums != ARTS:
+        problems.append("per_article_reviews must cover exactly the 20 P0-002 articles in order")
+    if len(set(nums)) != len(nums):
+        problems.append("duplicate article numbers in per_article_reviews")
+    for r in recs:
+        n = r.get("article_number")
+        if n not in set(ARTS):
+            problems.append("out-of-scope article %s in per_article_reviews" % n)
+            continue
+        for f in REQ_REC:
+            if f not in r:
+                problems.append("art %s missing required field %s" % (n, f))
+        if r.get("bab") != 4:
+            problems.append("art %s bab must be 4" % n)
+        if r.get("qa_status") not in STATUS:
+            problems.append("art %s invalid qa_status %r" % (n, r.get("qa_status")))
+
+    # final_status must agree with the per-article statuses
+    st = [r.get("qa_status") for r in recs]
+    if "fail" in st:
+        want = "QA_FAIL"
+    elif "blocked" in st:
+        want = "QA_BLOCKED"
+    elif "minor" in st:
+        want = "QA_PASS_WITH_MINOR_ISSUES"
+    else:
+        want = "QA_PASS"
+    if qa.get("final_status") in FINAL and qa.get("final_status") != want:
+        problems.append("final_status %r inconsistent with per-article statuses (expected %s)"
+                        % (qa.get("final_status"), want))
+
+    # qa_summary counts must match
+    s = qa.get("qa_summary") or {}
+    if s:
+        exp = {"article_count": len(recs), "pass": st.count("pass"), "minor": st.count("minor"),
+               "blocked": st.count("blocked"), "fail": st.count("fail")}
+        for k, v in exp.items():
+            if s.get(k) != v:
+                problems.append("qa_summary.%s must be %d" % (k, v))
+
+    # no full Arabic/English text, no full remediated Chinese text embedded; no banned overclaim
+    blob = json.dumps(qa, ensure_ascii=False)
+    src_by = {r["article_number"]: r for r in src["records"]}
+    for n in ARTS:
+        if ar[n]["official_text_ar"] in blob:
+            problems.append("QA must not embed full Arabic text (art %s)" % n)
+            break
+    for n in ARTS:
+        if en[n]["legal_rule_text_en"] in blob:
+            problems.append("QA must not embed full English text (art %s)" % n)
+            break
+    for n in ARTS:
+        if n in src_by and src_by[n]["remediated_chinese_text"] in blob:
+            problems.append("QA must not embed full remediated Chinese text (art %s)" % n)
+            break
+    low = blob.lower()
+    for term in BANNED:
+        if term in low:
+            problems.append("banned overclaim term present: %r" % term)
+
+    # P0-002 remediation file must be intact (read-only; unchanged scope/posture)
+    if [r["article_number"] for r in src["records"]] != ARTS:
+        problems.append("P0-002 remediation file scope changed (must remain the 20 articles)")
+    if src.get("human_legal_review_status") != "pending_human_legal_review":
+        problems.append("P0-002 remediation human_legal_review_status must remain pending")
+    for f in ("official_chinese_translation_claimed", "chinese_binding_claimed",
+              "chinese_governing_claimed", "full_chinese_translation_claimed"):
+        if src.get(f) is not False:
+            problems.append("P0-002 remediation posture flag %s must remain false" % f)
+
+    # protected layers unchanged
+    p0_001 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_001",
+                          "companies_law_m132_1443_zh_internal_remediation_p0_001.json")
+    if not os.path.exists(p0_001) or len(_read(p0_001)["records"]) != 20:
+        problems.append("P0-001 remediation batch must remain 20 records (untouched)")
+    if len(_read(CANDF)["records"]) != 189:
+        problems.append("Chinese internal candidate must remain 189 records")
+    zh = glob.glob(os.path.join(ROOT, "data", "chinese_legal_llm", "*_zh_legal_llm.json"))
+    if len(zh) != 5 or sum(len(_read(x)["records"]) for x in zh) != 23:
+        problems.append("old Chinese Legal LLM must remain 5 files / 23 records")
+    if len(_read(ARABIC)["records"]) != 281:
+        problems.append("Arabic full LLM must remain 281 records")
+    if len(_read(ENGLISH)["records"]) != 281:
+        problems.append("English full LLM must remain 281 records")
+    er = os.path.join(ROOT, "data", "english_reference",
+                      "companies_law_m132_1443_en_reference_001_281.json")
+    if not os.path.exists(er) or len(_read(er)["records"]) != 281:
+        problems.append("English reference full must remain 281 records")
+    if os.path.exists(CAND_SRC):
+        c = _read(CAND_SRC)
+        if len(c.get("articles", [])) != 281 or c.get("verification_status") != "ingested_unverified":
+            problems.append("official Arabic source must remain unchanged")
+    else:
+        problems.append("official Arabic source file missing")
+    if len(glob.glob(os.path.join(ROOT, "data", "chinese_translation_sources",
+                                  "bab*_zh_source_extracted_articles_*.json"))) != 14:
+        problems.append("Chinese source extracted files must remain 14")
+    q = os.path.join(ROOT, "reports", "official_arabic_verification", "manual_review_queue.json")
+    if os.path.exists(q) and len(_read(q).get("entries", [])) != 281:
+        problems.append("OCR manual_review_queue must remain 281 entries (unchanged)")
+
+    print("=" * 60)
+    print("Chinese remediation Batch P0-002 QA validation")
+    print("=" * 60)
+    if problems:
+        for p in problems:
+            print("  -", p)
+        print("RESULT: %d problem(s) found ✗" % len(problems))
+        return 1
+    print("[PASS] QA of 20 P0-002 articles vs official Arabic (English secondary); allowed "
+          "qa_status only; legal hierarchy Arabic-governing / Chinese internal / non-official / "
+          "non-binding / non-governing; human review pending; final_status=%s (pass=%d minor=%d "
+          "blocked=%d fail=%d); no full Arabic/English/Chinese text embedded; P0-002 remediation "
+          "intact; P0-001 + Chinese candidate 189 + old Chinese 5/23 + Arabic 281 + English 281 + "
+          "English reference 281 + Arabic source + Chinese sources 14 + OCR queue unchanged."
+          % (qa.get("final_status"), st.count("pass"), st.count("minor"), st.count("blocked"),
+             st.count("fail")))
+    print("RESULT: ALL CHECKS PASSED ✓")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
