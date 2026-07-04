@@ -1,0 +1,86 @@
+{
+  "stage": "OFFICIAL_ARABIC_BOE_SOURCE_PROVENANCE_STATUS_CORRECTION",
+  "not_legal_advice": true,
+  "law_id": "sa-companies-law-m132-1443",
+  "layer_id": "sa-companies-official-arabic-foundation",
+  "summary_en": "Corrects the repository posture so that the owner-provided Bureau of Experts Arabic text plus the scanned PDF packet are documented as the controlling official source packet for the workflow, while OCR artifacts remain supporting evidence only. Source-provenance confidence is separated from article-by-article automated verification: the text is official-source provided, but no direct automated article-by-article verification against live BOE HTML has been performed, so article_by_article_verified stays false and articles_verified stays 0.",
+  "summary_ar": "تصحيح وضع المستودع بحيث يُوثَّق النص العربي المقدَّم من المالك من مصدر هيئة الخبراء بمجلس الوزراء مع حزمة الـPDF الممسوحة بوصفهما حزمة المصدر الرسمية الحاكمة لسير العمل، مع بقاء مخرجات الـOCR أدلة داعمة فقط. تُفصَل ثقة مصدرية النص عن التحقق الآلي مادةً بمادة: النص مقدَّم من مصدر رسمي، لكن لم يُجرَ تحقق آلي مباشر مادةً بمادة مقابل صفحات هيئة الخبراء الحية، لذا يبقى article_by_article_verified=false و articles_verified=0.",
+
+  "source_authority": "Bureau of Experts at the Council of Ministers",
+  "source_authority_ar": "هيئة الخبراء بمجلس الوزراء",
+  "text_source_status": "owner_provided_from_official_boe_source",
+  "pdf_source_status": "owner_provided_from_official_boe_source",
+  "controlling_source_packet": "owner_provided_boe_text_plus_pdf_packet",
+  "ocr_role": "supporting_artifact_only_not_controlling_gate",
+  "direct_automated_capture_status": "blocked_or_unsuitable",
+  "article_count": 281,
+  "candidate_text_changed": false,
+  "no_legal_text_changed": true,
+  "no_article_promoted_by_ocr": true,
+
+  "corrected_status_values": {
+    "official_arabic_text_status": "owner_provided_official_boe_source_packet",
+    "verification_status": "official_boe_source_packet_owner_provided",
+    "source_packet_status": "official_boe_owner_provided",
+    "controlling_source_basis": "owner_provided_boe_text_plus_pdf_packet",
+    "ocr_comparison_role": "supporting_artifact_only"
+  },
+
+  "retained_ingestion_axis_values": {
+    "note_en": "These enum fields describe the ingestion / article-by-article automated-verification axis ONLY and are retained unchanged; they must NOT be read as doubting the source provenance.",
+    "official_arabic_text_status": "user_provided_source_ingested",
+    "verification_status": "ingested_unverified",
+    "article_by_article_verified": false,
+    "articles_verified": 0
+  },
+
+  "axes": {
+    "source_provenance_axis": "official_boe_owner_provided",
+    "verification_axis": "article_by_article_automated_verification_not_yet_performed"
+  },
+
+  "verified_by_ocr": false,
+  "verified_against_official_gazette": false,
+
+  "source_packet_references": {
+    "text_packet": "inputs/official_arabic_companies_law_m132_1443_user_provided.md",
+    "pdf_packet_dir": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/",
+    "candidate_records_file": "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json"
+  },
+
+  "candidate_integrity": {
+    "article_count": 281,
+    "aggregate_official_text_ar_sha256": "3d446f7aa2c2ded299947df710de31d39fe7eb86ab3bad2d254b68996b6b4499",
+    "note_en": "SHA-256 over the concatenation of every article's official_text_ar in document order; recomputed by the validator to guarantee no candidate legal text was changed by this correction."
+  },
+
+  "manual_review_queue": {
+    "present": true,
+    "path": "reports/official_arabic_verification/manual_review_queue.json",
+    "role": "supporting_triage_artifact_only",
+    "is_controlling_source_confidence_gate": false,
+    "note_en": "The OCR manual-review queue remains present as a supporting triage artifact; it is NOT the controlling source-confidence gate. OCR-batch review is retired as the trust gate (see closed PR #46)."
+  },
+
+  "ocr_batch_review_status": "retired_as_controlling_gate_supporting_evidence_only",
+
+  "not_done_in_this_correction": [
+    "no official_text_ar changed",
+    "no article rewritten",
+    "no OCR-based text correction",
+    "no P1/P2 OCR batch review continued",
+    "no article marked verified by OCR",
+    "no article marked verified_against_official_gazette",
+    "no correction PR",
+    "no verification promotion PR",
+    "no Arabic/English/Chinese LLM layer regenerated"
+  ],
+
+  "reason": "We are separating source-provenance confidence from article-by-article automated verification. The text is official-source (Bureau of Experts) owner-provided, but the repository has not performed a direct automated article-by-article verification against live BOE HTML; direct automated BOE capture was blocked or unsuitable.",
+
+  "artifacts": {
+    "provenance_document_ar": "docs/official_arabic_text/BOE_OFFICIAL_SOURCE_PROVENANCE_AR.md",
+    "ingestion_status": "data/official_arabic/ingestion_status.json",
+    "source_provenance_metadata": "data/metadata/source_provenance.json"
+  }
+}

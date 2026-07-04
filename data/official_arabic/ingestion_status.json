@@ -10,12 +10,52 @@
   "target_article_count": 281,
   "articles_ingested": 281,
   "articles_verified": 0,
-  "source_document_type": "user_provided_markdown_packet_pending_official_source_verification",
-  "source_authority": "user_provided_text_claimed_official_pending_gazette_or_boe_verification",
+  "source_document_type": "owner_provided_official_boe_source_packet_text_plus_scanned_pdf",
+  "source_authority": "Bureau of Experts at the Council of Ministers (owner-provided official source packet; article-by-article automated verification pending)",
+  "source_authority_ar": "هيئة الخبراء بمجلس الوزراء",
   "source_publication_reference": "Companies Law issued by Royal Decree No. (M/132), dated 1443/12/01 AH",
   "source_url_or_file_reference": "inputs/official_arabic_companies_law_m132_1443_user_provided.md",
   "extraction_method": "direct_user_provided_markdown_packet",
   "article_records_file": "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json",
-  "reviewer_notes": "A full user-provided Arabic text packet was ingested and segmented into 281 article records (each with a SHA-256 of its verbatim official_text_ar). This is a user_provided_official_text_candidate, NOT verified against Umm Al-Qura or the Bureau of Experts at the Council of Ministers. Official gazette / Bureau of Experts verification is still required before any verified status; article_by_article_verified stays false and articles_verified stays 0 until Phase E-F of docs/official_arabic_text/OFFICIAL_ARABIC_VERIFICATION_PLAN_AR.md is completed. The committed raw packet's SHA-256 differs from the owner-reported handoff hash (see raw_source_file in the article records file); the 281-article content (count, sequence, first article التعريفات, last article نفاذ النظام) was checked and each article carries its own text hash. Arabic remains governing; current Arabic summaries remain secondary / non-official.",
+  "reviewer_notes": "The full Arabic Companies Law text and the scanned PDF packet were owner-provided from the official Bureau of Experts at the Council of Ministers source and together form the controlling source packet for the workflow (see boe_source_provenance below). The text was ingested and segmented into 281 article records (each with a SHA-256 of its verbatim official_text_ar). Source-provenance confidence is separated from article-by-article automated verification: the repository has NOT performed a direct automated article-by-article verification against live BOE HTML (direct automated capture was blocked or unsuitable), so article_by_article_verified stays false and articles_verified stays 0. The enum fields official_arabic_text_status=user_provided_source_ingested and verification_status=ingested_unverified describe the ingestion / automated-verification axis ONLY and must not be read as doubting the source provenance. OCR artifacts are supporting evidence only, not the source-confidence gate; no legal text was changed and no article was promoted by OCR. Arabic remains governing; current Arabic summaries remain secondary / non-official.",
+  "boe_source_provenance": {
+    "correction_stage": "OFFICIAL_ARABIC_BOE_SOURCE_PROVENANCE_STATUS_CORRECTION",
+    "not_legal_advice": true,
+    "source_authority": "Bureau of Experts at the Council of Ministers",
+    "source_authority_ar": "هيئة الخبراء بمجلس الوزراء",
+    "text_source_status": "owner_provided_from_official_boe_source",
+    "pdf_source_status": "owner_provided_from_official_boe_source",
+    "controlling_source_packet": "owner_provided_boe_text_plus_pdf_packet",
+    "controlling_source_basis": "owner_provided_boe_text_plus_pdf_packet",
+    "ocr_role": "supporting_artifact_only_not_controlling_gate",
+    "ocr_comparison_role": "supporting_artifact_only",
+    "direct_automated_capture_status": "blocked_or_unsuitable",
+    "article_count": 281,
+    "candidate_text_changed": false,
+    "no_legal_text_changed": true,
+    "no_article_promoted_by_ocr": true,
+    "verified_by_ocr": false,
+    "article_by_article_verified": false,
+    "articles_verified": 0,
+    "corrected_status_values": {
+      "official_arabic_text_status": "owner_provided_official_boe_source_packet",
+      "verification_status": "official_boe_source_packet_owner_provided",
+      "source_packet_status": "official_boe_owner_provided",
+      "controlling_source_basis": "owner_provided_boe_text_plus_pdf_packet",
+      "ocr_comparison_role": "supporting_artifact_only"
+    },
+    "axes": {
+      "source_provenance_axis": "official_boe_owner_provided",
+      "verification_axis": "article_by_article_automated_verification_not_yet_performed"
+    },
+    "source_packet_references": {
+      "text_packet": "inputs/official_arabic_companies_law_m132_1443_user_provided.md",
+      "pdf_packet_dir": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/"
+    },
+    "manual_review_queue_is_controlling_gate": false,
+    "provenance_correction_report": "reports/official_arabic_verification/boe_official_source_provenance_correction.json",
+    "provenance_document": "docs/official_arabic_text/BOE_OFFICIAL_SOURCE_PROVENANCE_AR.md",
+    "note_en": "The full Arabic text and scanned PDF packet were owner-provided from the official Bureau of Experts source and are the controlling source packet. Provenance confidence is separated from article-by-article automated verification, which has NOT been performed (article_by_article_verified stays false, articles_verified stays 0). OCR is supporting evidence only, not the source-confidence gate."
+  },
   "articles": []
 }
