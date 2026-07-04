@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/official_arabic_legal_llm.schema.json",
+  "title": "Official Arabic full-text Legal LLM-ready record",
+  "description": "LLM/RAG-ready layer over the FULL official Arabic statutory text (281 articles), built directly on the exact official_text_ar ingested from the Bureau of Experts owner-provided source packet. This layer carries the verbatim statutory text plus mechanical retrieval metadata only — it does NOT summarize, paraphrase, analyze, or OCR-correct the legal text, and it does NOT claim article-by-article verification against live BOE HTML. Arabic is governing. Not legal advice.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "law_id",
+    "article_number",
+    "article_title_ar",
+    "record_id",
+    "record_type",
+    "language",
+    "governing_text_language",
+    "official_text_ar",
+    "official_text_hash_sha256",
+    "llm_title_ar",
+    "retrieval_title_ar",
+    "article_path",
+    "keywords_ar",
+    "search_queries_ar",
+    "source_trust"
+  ],
+  "properties": {
+    "law_id": {"type": "string", "const": "sa-companies-law-m132-1443"},
+    "article_number": {"type": "integer", "minimum": 1, "maximum": 281},
+    "article_title_ar": {"type": "string", "minLength": 1},
+    "record_id": {"type": "string", "minLength": 1},
+    "record_type": {"type": "string", "const": "official_arabic_article"},
+    "language": {"type": "string", "const": "ar"},
+    "governing_text_language": {"type": "string", "const": "ar"},
+    "official_text_ar": {"type": "string", "minLength": 1,
+      "description": "Verbatim official Arabic statutory text, copied exactly from the ingested BOE owner-provided candidate. Never rewritten, summarized, normalized, or OCR-corrected."},
+    "official_text_hash_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 of the exact official_text_ar (UTF-8)."},
+    "llm_title_ar": {"type": "string", "minLength": 1,
+      "description": "Mechanical display title from article number + title only."},
+    "retrieval_title_ar": {"type": "string", "minLength": 1,
+      "description": "Mechanical retrieval title from article number + title only."},
+    "article_path": {"type": "string", "pattern": "^companies_law/articles/[0-9]{3}$"},
+    "keywords_ar": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "description": "Conservative title-derived keywords. May be empty if uncertain. No invented legal conclusions."
+    },
+    "search_queries_ar": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "description": "Conservative mechanical retrieval queries (article-number and title based). No invented legal conclusions."
+    },
+    "source_trust": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_authority",
+        "source_authority_ar",
+        "source_status",
+        "source_packet_status",
+        "controlling_source_basis",
+        "ocr_role",
+        "text_type",
+        "article_by_article_verified",
+        "verification_status",
+        "notes"
+      ],
+      "properties": {
+        "source_authority": {"type": "string", "const": "Bureau of Experts at the Council of Ministers"},
+        "source_authority_ar": {"type": "string", "const": "هيئة الخبراء بمجلس الوزراء"},
+        "source_status": {"type": "string", "const": "owner_provided_from_official_boe_source"},
+        "source_packet_status": {"type": "string", "const": "official_boe_owner_provided"},
+        "controlling_source_basis": {"type": "string", "const": "owner_provided_boe_text_plus_pdf_packet"},
+        "ocr_role": {"type": "string", "const": "supporting_artifact_only_not_controlling_gate"},
+        "text_type": {"type": "string", "const": "official_arabic_statutory_text"},
+        "article_by_article_verified": {"type": "boolean", "const": false},
+        "verification_status": {"type": "string", "const": "official_boe_source_packet_owner_provided_not_live_html_verified"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

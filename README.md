@@ -451,6 +451,23 @@ aligns to official Arabic article IDs. This section is an honest status marker f
   per the source-packet requirements; ingestion then follows the verification plan. This is **not**
   a claim of a full official Arabic corpus — it is the foundation stage only. Not legal advice.
 
+## Full official Arabic LLM-ready layer (281 articles)
+
+- A **full official Arabic LLM-ready layer now exists** with **281 records** (Articles 1–281),
+  built directly on the **exact `official_text_ar`** ingested from the Bureau of Experts
+  owner-provided source packet — copied verbatim and SHA-256-checked, with mechanical retrieval
+  metadata only (titles, path, conservative keywords/queries). **No OCR text is used**, and the
+  layer adds **no summaries or legal analysis**.
+- It is **separate from** the older Arabic summary/provision LLM layer under
+  `data/arabic_legal_llm/` (8 files / 80 records), which is left untouched. New layer:
+  [`data/official_arabic_legal_llm/`](data/official_arabic_legal_llm/), schema
+  [`schemas/official_arabic_legal_llm.schema.json`](schemas/official_arabic_legal_llm.schema.json).
+- **Arabic remains governing.** `article_by_article_verified` remains **false** because no direct
+  automated verification against live BOE HTML has been performed — LLM-ready here means
+  structured, retrievable, source-linked, and exact-text based, not verified. Not legal advice.
+- Regenerate/validate with `make official-arabic-legal-llm-full-data` /
+  `make official-arabic-legal-llm-full-validate`.
+
 ## Official Arabic user-provided text ingestion
 
 A **full user-provided Arabic text packet** of the Companies Law (Royal Decree M/132, 1443/12/01 AH)

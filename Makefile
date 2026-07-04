@@ -37,7 +37,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         official-arabic-foundation-validate official-arabic-user-provided-data \
         official-arabic-ingestion-validate official-arabic-verification-report-validate \
         official-arabic-manual-review-queue-validate official-arabic-p0-article3-review-validate \
-        official-arabic-queue-p0-resolution-validate official-arabic-boe-source-provenance-validate
+        official-arabic-queue-p0-resolution-validate official-arabic-boe-source-provenance-validate \
+        official-arabic-legal-llm-full-data official-arabic-legal-llm-full-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -401,6 +402,13 @@ official-arabic-queue-p0-resolution-validate:
 # -- Official Arabic BOE source provenance/status correction (provenance only; verifies nothing) --
 official-arabic-boe-source-provenance-validate:
 	$(PY) scripts/validate_official_arabic_boe_source_provenance.py
+
+# -- Official Arabic FULL LLM-ready layer (281 articles; exact official_text_ar; no OCR) --
+official-arabic-legal-llm-full-data:
+	$(PY) scripts/gen_official_arabic_legal_llm_full_281.py
+
+official-arabic-legal-llm-full-validate:
+	$(PY) scripts/validate_official_arabic_legal_llm_full_281.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
