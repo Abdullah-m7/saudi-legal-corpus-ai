@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/official_english_legal_llm.schema.json",
+  "title": "Official English full-text Legal LLM-ready record",
+  "description": "LLM/RAG-ready layer over the FULL official English BOE guidance translation (281 articles), built directly on the exact english_reference_text from the full English reference alignment file. This layer carries the verbatim English guidance text plus mechanical retrieval metadata only — it does NOT summarize, paraphrase, translate, analyze, or OCR-correct the text. English is an official guidance translation only (NOT binding, NOT governing); the Arabic text is governing. Not legal advice.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "law_id",
+    "article_number",
+    "article_heading_en",
+    "record_id",
+    "record_type",
+    "language",
+    "governing_text_language",
+    "legal_rule_text_en",
+    "legal_rule_text_hash_sha256",
+    "llm_title_en",
+    "retrieval_title_en",
+    "article_path",
+    "keywords_en",
+    "search_queries_en",
+    "source_trust"
+  ],
+  "properties": {
+    "law_id": {"type": "string", "const": "sa-companies-law-m132-1443"},
+    "article_number": {"type": "integer", "minimum": 1, "maximum": 281},
+    "article_heading_en": {"type": "string", "minLength": 1},
+    "record_id": {"type": "string", "minLength": 1},
+    "record_type": {"type": "string", "const": "official_english_guidance_article"},
+    "language": {"type": "string", "const": "en"},
+    "governing_text_language": {"type": "string", "const": "ar"},
+    "legal_rule_text_en": {"type": "string", "minLength": 1,
+      "description": "Verbatim official English guidance text, copied exactly from the full English reference alignment's english_reference_text. Never rewritten, summarized, translated, or OCR-corrected."},
+    "legal_rule_text_hash_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 of the exact legal_rule_text_en (UTF-8)."},
+    "llm_title_en": {"type": "string", "minLength": 1,
+      "description": "Mechanical display title from article number + heading only."},
+    "retrieval_title_en": {"type": "string", "minLength": 1,
+      "description": "Mechanical retrieval title from article number + heading only."},
+    "article_path": {"type": "string", "pattern": "^companies_law/articles/[0-9]{3}/en$"},
+    "keywords_en": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "description": "Conservative heading-derived keywords (reused from the reference layer). May be empty. No invented legal conclusions."
+    },
+    "search_queries_en": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "description": "Conservative mechanical retrieval queries (article-number and heading based). No invented legal conclusions."
+    },
+    "source_trust": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "english_source_status",
+        "source_authority",
+        "department",
+        "source_file",
+        "source_reference_file",
+        "governing_text_language",
+        "manual_review_status",
+        "guidance_note",
+        "binding_status",
+        "notes"
+      ],
+      "properties": {
+        "english_source_status": {"type": "string", "const": "official_guidance_translation"},
+        "source_authority": {"type": "string", "const": "Bureau of Experts at the Council of Ministers"},
+        "department": {"type": "string", "const": "Official Translation Department"},
+        "source_file": {"type": "string", "const": "inputs/companies_law_official_english_guidance.pdf"},
+        "source_reference_file": {"type": "string", "const": "data/english_reference/companies_law_m132_1443_en_reference_001_281.json"},
+        "governing_text_language": {"type": "string", "const": "ar"},
+        "manual_review_status": {"type": "string", "const": "needs_manual_check"},
+        "guidance_note": {"type": "string", "const": "This translation is provided for guidance. The governing text is the Arabic text."},
+        "binding_status": {"type": "string", "const": "guidance_only_not_binding"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}
