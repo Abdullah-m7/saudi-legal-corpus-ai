@@ -588,6 +588,21 @@ Companies Law structure; repo book4 is the modeled Joint-Stock Company scope.)
   Build/validate: `make english-reference-full-281-data` /
   `make english-reference-full-281-validate`.
 
+## Full English Legal LLM-ready layer (281 articles)
+
+- A **full official English Legal LLM-ready layer now exists** with **281 records** (Articles
+  1–281), built directly from the full official English BOE guidance **reference alignment**.
+- Each record's **`legal_rule_text_en` is copied verbatim** from the reference
+  `english_reference_text` (SHA-256-checked), with mechanical retrieval metadata only (titles,
+  path, conservative keywords/queries) — no summaries, no translation, no legal analysis.
+- It is **separate from** the old **87-record** English Legal LLM layer under
+  `data/english_legal_llm/` (left untouched). New layer:
+  [`data/official_english_legal_llm/`](data/official_english_legal_llm/), schema
+  [`schemas/official_english_legal_llm.schema.json`](schemas/official_english_legal_llm.schema.json).
+- **English is official guidance only (`guidance_only_not_binding`); Arabic remains governing.**
+  Build/validate: `make official-english-legal-llm-full-data` /
+  `make official-english-legal-llm-full-validate`.
+
 ## English Legal LLM-ready layer (Books 1–3 + repo book4 Sections 1–5)
 
 The **English Legal LLM-ready layer** currently covers **Books 1–3 (Articles 1–57)** plus **repo
