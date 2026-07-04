@@ -51,7 +51,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-backlog-source-packet-plan-validate \
         chinese-remediation-batch-p0-001-validate \
         chinese-remediation-batch-p0-001-qa-validate \
-        chinese-remediation-batch-p0-001-minor-fixes-validate
+        chinese-remediation-batch-p0-001-minor-fixes-validate \
+        chinese-remediation-batch-p0-002-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -483,6 +484,10 @@ chinese-remediation-batch-p0-001-qa-validate:
 # -- Chinese remediation Batch P0-001 minor fixes (Articles 61 & 74 terminology only) --
 chinese-remediation-batch-p0-001-minor-fixes-validate:
 	$(PY) scripts/validate_chinese_remediation_batch_p0_001_minor_fixes.py
+
+# -- Chinese remediation Batch P0-002 (scoped internal Chinese draft; 20 Bab 4 articles; from Arabic) --
+chinese-remediation-batch-p0-002-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p0_002.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
