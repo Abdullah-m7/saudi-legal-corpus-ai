@@ -810,6 +810,21 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   `CHINESE_REMEDIATION_BATCH_P0_002_QA_AR.md`. Validate:
   `make chinese-remediation-batch-p0-002-qa-validate`.
 
+### Chinese remediation Batch P0-003 (20 Bab 4 articles)
+
+- The **third remediation batch (P0-003)** provides **new internal Chinese reference text for 20
+  more P0 articles from Bab 4** (111, 112, 114, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+  127, 128, 129, 130, 131, 134, 135), created **from the official Arabic governing text** with
+  **English used as secondary guidance only**. Each record carries SHA-256 hashes for the Chinese,
+  Arabic-source, and English-guidance text, and `qa_status = pending_future_qa`.
+- **Chinese remains internal / non-official / non-binding / non-governing; Arabic governs.**
+  **Human legal review remains pending** (`human_legal_review_status = pending_human_legal_review`).
+  This is **not** a full Chinese 281 layer and creates **no trilingual alignment**. Batches P0-001
+  and P0-002 (and their QA) are unchanged.
+- Data under [`data/chinese_remediation_batches/p0_003/`](data/chinese_remediation_batches/p0_003/);
+  report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P0_003_AR.md`. Validate:
+  `make chinese-remediation-batch-p0-003-validate`.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**
