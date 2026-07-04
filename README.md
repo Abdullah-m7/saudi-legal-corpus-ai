@@ -572,6 +572,22 @@ Companies Law structure; repo book4 is the modeled Joint-Stock Company scope.)
   validate: `make english-reference-validate` (**87 records** total).
 - **Not legal advice.**
 
+### Full English reference alignment (281 articles)
+
+- A **full official English BOE reference alignment now exists** with **281 records**
+  (Articles 1–281), segmented from the official English guidance PDF by `Article N:` headings and
+  preserving the verbatim official English text as `english_reference_text` (minimal whitespace
+  normalization only — no translation, no summaries).
+- It is **separate from** the older **87-record split** reference layer above (which is left
+  untouched for backward compatibility). New file:
+  [`data/english_reference/companies_law_m132_1443_en_reference_001_281.json`](data/english_reference/companies_law_m132_1443_en_reference_001_281.json).
+- **English is official guidance only; Arabic remains governing.** `manual_review_status =
+  needs_manual_check`; the file makes no binding/governing/verified claim, and per-part/book
+  segmentation is deferred to manual review (conservative single mechanical grouping).
+- The **English full LLM-ready layer is not created yet** — this is the reference/alignment stage.
+  Build/validate: `make english-reference-full-281-data` /
+  `make english-reference-full-281-validate`.
+
 ## English Legal LLM-ready layer (Books 1–3 + repo book4 Sections 1–5)
 
 The **English Legal LLM-ready layer** currently covers **Books 1–3 (Articles 1–57)** plus **repo

@@ -38,7 +38,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         official-arabic-ingestion-validate official-arabic-verification-report-validate \
         official-arabic-manual-review-queue-validate official-arabic-p0-article3-review-validate \
         official-arabic-queue-p0-resolution-validate official-arabic-boe-source-provenance-validate \
-        official-arabic-legal-llm-full-data official-arabic-legal-llm-full-validate
+        official-arabic-legal-llm-full-data official-arabic-legal-llm-full-validate \
+        english-reference-full-281-data english-reference-full-281-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -409,6 +410,13 @@ official-arabic-legal-llm-full-data:
 
 official-arabic-legal-llm-full-validate:
 	$(PY) scripts/validate_official_arabic_legal_llm_full_281.py
+
+# -- Full official English BOE reference alignment (281 articles; guidance only; Arabic governs) --
+english-reference-full-281-data:
+	$(PY) scripts/gen_english_reference_full_281.py
+
+english-reference-full-281-validate:
+	$(PY) scripts/validate_english_reference_full_281.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
