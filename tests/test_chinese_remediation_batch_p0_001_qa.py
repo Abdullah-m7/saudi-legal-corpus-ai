@@ -98,9 +98,11 @@ def test_trust_posture_and_no_overclaims():
     qa = _qa()
     for f in ("full_chinese_translation_claimed", "official_chinese_translation_claimed",
               "chinese_binding_claimed", "chinese_governing_claimed",
-              "human_legal_review_completed", "remediated_chinese_changed",
+              "human_legal_review_completed",
               "full_chinese_281_layer_created", "trilingual_alignment_created"):
         assert qa[f] is False
+    # remediated_chinese_changed may be true after an authorized minor-fix pass
+    assert isinstance(qa["remediated_chinese_changed"], bool)
     blob = json.dumps(qa, ensure_ascii=False).lower()
     for term in BANNED:
         assert term not in blob, term

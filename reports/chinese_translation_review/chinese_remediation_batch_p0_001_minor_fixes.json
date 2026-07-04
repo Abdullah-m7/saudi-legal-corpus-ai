@@ -1,0 +1,45 @@
+{
+  "stage": "CHINESE_REMEDIATION_BATCH_P0_001_MINOR_FIXES",
+  "not_legal_advice": true,
+  "batch_id": "P0-001",
+  "article_count": 2,
+  "fixed_articles": [
+    61,
+    74
+  ],
+  "source_qa_file": "reports/chinese_translation_review/chinese_remediation_batch_p0_001_qa.json",
+  "source_remediation_file": "data/chinese_remediation_batches/p0_001/companies_law_m132_1443_zh_internal_remediation_p0_001.json",
+  "full_chinese_translation_claimed": false,
+  "official_chinese_translation_claimed": false,
+  "chinese_binding_claimed": false,
+  "chinese_governing_claimed": false,
+  "human_legal_review_completed": false,
+  "full_chinese_281_layer_created": false,
+  "trilingual_alignment_created": false,
+  "records": [
+    {
+      "article_number": 61,
+      "issue_type": "terminology_head_office",
+      "qa_original_decision": "qa_pass_with_minor_fix_recommended",
+      "qa_new_decision": "qa_pass_for_internal_reference_pending_human_review",
+      "previous_chinese_hash_sha256": "fde404b8944fa78daa0fd82efb90adbb95ac49a05b8ddabe2d4121a8b1e2093e",
+      "new_chinese_hash_sha256": "5dccaed2272498696bfd4118f67521793b7919f2bd4eb621a5f2576902cf834f",
+      "arabic_source_hash_sha256": "0b796c2ad236278c0b471a1031a0767d04c6112042da0abd364b94a93158573a",
+      "english_guidance_hash_sha256": "2b77eb66a616c5824241480e38f81600980c2ccf9ae4b6935b1a2a40f399ab21",
+      "fix_description_ar": "توحيد ترجمة «المركز الرئيس»: من «主要住所» إلى «主要营业地» (أدق قانونيًا لمقر الشركة الرئيس) دون تغيير المعنى القانوني.",
+      "reviewer_note_ar": "إصلاح اصطلاحي طفيف فقط؛ لم يتغيّر المعنى القانوني؛ داخلي غير رسمي وغير ملزِم وغير حاكم."
+    },
+    {
+      "article_number": 74,
+      "issue_type": "terminology_commercial_name",
+      "qa_original_decision": "qa_pass_with_minor_fix_recommended",
+      "qa_new_decision": "qa_pass_for_internal_reference_pending_human_review",
+      "previous_chinese_hash_sha256": "e852c5f96e739f681485ee7e8c828ca52c5341f9dfa25838ab3b30ebab489803",
+      "new_chinese_hash_sha256": "bcbfb0412a976d74cc3aa2d12dfb6141455f01d95b7728c886c57d84131142b1",
+      "arabic_source_hash_sha256": "03d6fb3825d8a4ba5206c4dad8b45acad357618ba693d0c2ef4c50975a933813",
+      "english_guidance_hash_sha256": "a9baef193fc61c49161e39c15e4fd7715f5b857e4a2560053436cf1b79540c0a",
+      "fix_description_ar": "توحيد ترجمة «محل الشركة التجاري»: من «营业场所（商号）» إلى «商号（商业名称）» (يعكس الاسم/المحل التجاري دون الخلط بالمكان المادي) دون تغيير المعنى القانوني.",
+      "reviewer_note_ar": "إصلاح اصطلاحي طفيف فقط؛ لم يتغيّر المعنى القانوني؛ داخلي غير رسمي وغير ملزِم وغير حاكم."
+    }
+  ]
+}

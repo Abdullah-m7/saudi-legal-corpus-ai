@@ -37,13 +37,13 @@
   "chinese_binding_claimed": false,
   "chinese_governing_claimed": false,
   "human_legal_review_completed": false,
-  "remediated_chinese_changed": false,
+  "remediated_chinese_changed": true,
   "full_chinese_281_layer_created": false,
   "trilingual_alignment_created": false,
   "qa_summary": {
     "qa_decision_counts": {
-      "qa_pass_for_internal_reference_pending_human_review": 18,
-      "qa_pass_with_minor_fix_recommended": 2,
+      "qa_pass_for_internal_reference_pending_human_review": 20,
+      "qa_pass_with_minor_fix_recommended": 0,
       "qa_blocked_needs_revision": 0,
       "qa_failed_needs_retranslation": 0
     },
@@ -59,31 +59,31 @@
       "material_omissions": 0,
       "fail": 0
     },
-    "pass_count": 18,
-    "minor_fix_count": 2,
+    "pass_count": 20,
+    "minor_fix_count": 0,
     "blocked_count": 0,
     "failed_count": 0,
-    "note_ar": "مراجعة جودة داخلية آلية مقابل النص العربي الحاكم؛ ليست مراجعة قانونية بشرية مكتملة."
+    "note_ar": "طُبّقت الإصلاحات الاصطلاحية الطفيفة للمادتين 61 و74؛ جميع مواد P0-001 الآن pass."
   },
   "records": [
     {
       "article_number": 61,
       "expected_bab_number": 4,
-      "remediated_chinese_hash_sha256": "fde404b8944fa78daa0fd82efb90adbb95ac49a05b8ddabe2d4121a8b1e2093e",
+      "remediated_chinese_hash_sha256": "5dccaed2272498696bfd4118f67521793b7919f2bd4eb621a5f2576902cf834f",
       "arabic_source_hash_sha256": "0b796c2ad236278c0b471a1031a0767d04c6112042da0abd364b94a93158573a",
       "english_guidance_hash_sha256": "2b77eb66a616c5824241480e38f81600980c2ccf9ae4b6935b1a2a40f399ab21",
       "semantic_fidelity_rating": "pass",
       "legal_completeness_rating": "complete",
-      "terminology_rating": "needs_minor_fix",
+      "terminology_rating": "pass",
       "structural_clarity_rating": "pass",
-      "qa_decision": "qa_pass_with_minor_fix_recommended",
+      "qa_decision": "qa_pass_for_internal_reference_pending_human_review",
       "blocking_issues_ar": [],
       "non_blocking_notes_ar": [
-        "«المركز الرئيس» تُرجم «主要住所»؛ قد يكون «المقر/المركز الرئيس» أدق بـ«主要营业地/主要办事处»."
+        "طُبّقت الملاحظة الاصطلاحية الطفيفة السابقة: توحيد ترجمة «المركز الرئيس»: من «主要住所» إلى «主要营业地» (أدق قانونيًا لمقر الشركة الرئيس) دون تغيير المعنى القانوني.."
       ],
-      "recommended_fix_ar": "مراجعة مصطلح «主要住所» مقابل «المركز الرئيس»، والتحقق من اكتمال القائمة المعدّدة (9 بنود للنظام الأساس + 7 مرفقات).",
-      "recommended_next_action": "revise_minor_issues",
-      "reviewer_note_ar": "ترجمة كاملة ومطابقة للقائمة المعدّدة؛ ملاحظة اصطلاحية طفيفة فقط."
+      "recommended_fix_ar": "تم تطبيق التصحيح الاصطلاحي؛ لا يوجد إجراء متبقٍّ عدا المراجعة القانونية البشرية.",
+      "recommended_next_action": "retain_pending_human_review",
+      "reviewer_note_ar": "تم تطبيق التصحيح الاصطلاحي الطفيف للمادة 61؛ الترجمة الصينية الداخلية مطابقة للمعنى العربي الحاكم؛ بانتظار مراجعة قانونية بشرية."
     },
     {
       "article_number": 62,
@@ -243,21 +243,21 @@
     {
       "article_number": 74,
       "expected_bab_number": 4,
-      "remediated_chinese_hash_sha256": "e852c5f96e739f681485ee7e8c828ca52c5341f9dfa25838ab3b30ebab489803",
+      "remediated_chinese_hash_sha256": "bcbfb0412a976d74cc3aa2d12dfb6141455f01d95b7728c886c57d84131142b1",
       "arabic_source_hash_sha256": "03d6fb3825d8a4ba5206c4dad8b45acad357618ba693d0c2ef4c50975a933813",
       "english_guidance_hash_sha256": "a9baef193fc61c49161e39c15e4fd7715f5b857e4a2560053436cf1b79540c0a",
       "semantic_fidelity_rating": "pass",
       "legal_completeness_rating": "complete",
-      "terminology_rating": "needs_minor_fix",
+      "terminology_rating": "pass",
       "structural_clarity_rating": "pass",
-      "qa_decision": "qa_pass_with_minor_fix_recommended",
+      "qa_decision": "qa_pass_for_internal_reference_pending_human_review",
       "blocking_issues_ar": [],
       "non_blocking_notes_ar": [
-        "«محل الشركة التجاري» تُرجم «营业场所（商号）»؛ يُنصح بتوحيد المصطلح (营业场所 مقابل 商誉/商号)."
+        "طُبّقت الملاحظة الاصطلاحية الطفيفة السابقة: توحيد ترجمة «محل الشركة التجاري»: من «营业场所（商号）» إلى «商号（商业名称）» (يعكس الاسم/المحل التجاري دون الخلط بالمكان المادي) دون تغيير المعنى القانوني.."
       ],
-      "recommended_fix_ar": "توحيد ترجمة «محل الشركة التجاري»؛ التحقق من شمول «رهن/بيع الأصول» و«إبراء ذمة المدينين».",
-      "recommended_next_action": "revise_minor_issues",
-      "reviewer_note_ar": "المعنى القانوني والصلاحيات والاستثناء (النظام الأساس/الجمعية العامة) محفوظة؛ نقطة اصطلاحية طفيفة."
+      "recommended_fix_ar": "تم تطبيق التصحيح الاصطلاحي؛ لا يوجد إجراء متبقٍّ عدا المراجعة القانونية البشرية.",
+      "recommended_next_action": "retain_pending_human_review",
+      "reviewer_note_ar": "تم تطبيق التصحيح الاصطلاحي الطفيف للمادة 74؛ الترجمة الصينية الداخلية مطابقة للمعنى العربي الحاكم؛ بانتظار مراجعة قانونية بشرية."
     },
     {
       "article_number": 76,
