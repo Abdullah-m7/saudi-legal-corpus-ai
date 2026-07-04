@@ -710,6 +710,21 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   Build/validate: `make chinese-internal-legal-llm-isolable-data` /
   `make chinese-internal-legal-llm-isolable-validate`.
 
+### Chinese internal candidate — semantic QA & completion gap plan
+
+- A **semantic QA + completion gap plan** now exists for the Chinese internal candidate layer. The
+  **189 candidate articles are reviewed** against the official Arabic for internal-reference
+  suitability (conservative automated heuristic — needs human confirmation), and a **281-article
+  gap plan** keeps the **92 excluded articles blocked** until Arabic-based expansion/retranslation.
+- **Chinese is not official, not binding, not governing; Arabic remains governing.** No Chinese is
+  generated or corrected here. The **full Chinese 281 layer is still not created** — P0 (the 92
+  no-isolable-text articles) and P1 (materially-incomplete candidates) must be resolved from the
+  Arabic governing text first.
+- Artifacts under [`reports/chinese_translation_review/`](reports/chinese_translation_review/)
+  (`chinese_internal_llm_semantic_qa_189.json`, `chinese_completion_gap_plan_001_281.json`,
+  `CHINESE_INTERNAL_LLM_SEMANTIC_QA_AND_GAP_PLAN_AR.md`). Validate:
+  `make chinese-internal-llm-semantic-qa-gap-plan-validate`.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**

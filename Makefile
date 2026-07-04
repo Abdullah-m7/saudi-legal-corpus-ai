@@ -44,7 +44,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-bab1-original-pdf-translation-review-data \
         chinese-bab1-original-pdf-translation-review-validate \
         chinese-all-babs-source-inventory-data chinese-all-babs-source-inventory-validate \
-        chinese-internal-legal-llm-isolable-data chinese-internal-legal-llm-isolable-validate
+        chinese-internal-legal-llm-isolable-data chinese-internal-legal-llm-isolable-validate \
+        chinese-internal-llm-semantic-qa-gap-plan-data \
+        chinese-internal-llm-semantic-qa-gap-plan-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -450,6 +452,13 @@ chinese-internal-legal-llm-isolable-data:
 
 chinese-internal-legal-llm-isolable-validate:
 	$(PY) scripts/validate_chinese_internal_legal_llm_isolable_source_articles.py
+
+# -- Chinese internal candidate semantic QA (189) + completion gap plan (281) (QA/plan only) --
+chinese-internal-llm-semantic-qa-gap-plan-data:
+	$(PY) scripts/gen_chinese_internal_llm_semantic_qa_gap_plan.py
+
+chinese-internal-llm-semantic-qa-gap-plan-validate:
+	$(PY) scripts/validate_chinese_internal_llm_semantic_qa_gap_plan.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
