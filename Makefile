@@ -57,7 +57,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-batch-p0-003-validate \
         chinese-remediation-batch-p0-003-qa-validate \
         chinese-remediation-batch-p0-004-validate \
-        chinese-remediation-batch-p0-004-qa-validate
+        chinese-remediation-batch-p0-004-qa-validate \
+        chinese-remediation-batch-p0-005-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -513,6 +514,10 @@ chinese-remediation-batch-p0-004-validate:
 # -- Chinese remediation Batch P0-004 QA (article-by-article vs Arabic; Babs 4/5/6; review only) --
 chinese-remediation-batch-p0-004-qa-validate:
 	$(PY) scripts/validate_chinese_remediation_batch_p0_004_qa.py
+
+# -- Chinese remediation Batch P0-005 (final P0 batch; 12 articles, Babs 7/9/10/13/14; from Arabic) --
+chinese-remediation-batch-p0-005-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p0_005.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

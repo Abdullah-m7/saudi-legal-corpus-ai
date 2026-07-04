@@ -292,15 +292,16 @@ def test_reject_inconsistent_qa_summary(tmp_path):
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
 
 
-def test_reject_starting_p0_005():
-    p5 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_005")
+def test_reject_starting_p1():
+    # P0-005 is now an authorized sibling batch; only P1/P2/P3 are forbidden.
+    p1 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_001")
     created = False
     try:
-        if not os.path.isdir(p5):
-            os.makedirs(p5)
+        if not os.path.isdir(p1):
+            os.makedirs(p1)
             created = True
         assert _run().returncode != 0
     finally:
         if created:
-            os.rmdir(p5)
+            os.rmdir(p1)
     assert _run().returncode == 0

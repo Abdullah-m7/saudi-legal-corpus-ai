@@ -226,8 +226,9 @@ def test_protected_layers_unchanged():
                                       "bab*_zh_source_extracted_articles_*.json"))) == 14
 
 
-def test_no_p0_005_or_later_files():
-    assert not os.path.isdir(os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_005"))
+def test_no_p1_p2_p3_files():
+    # P0-005 is now an authorized sibling batch; only P1/P2/P3 must not exist yet.
+    assert not glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
 
 
 # --- rejection paths ---
@@ -275,17 +276,18 @@ def test_reject_missing_required_field(tmp_path):
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
 
 
-def test_reject_starting_p0_005(tmp_path):
-    # Simulate a P0-005 batch dir existing: create it, expect validator to fail, then clean up.
-    p5 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p0_005")
+def test_reject_starting_p1(tmp_path):
+    # Simulate a P1 batch dir existing: create it, expect validator to fail, then clean up.
+    # (P0-005 is now authorized and allowed to coexist; only P1/P2/P3 are forbidden.)
+    p1 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_001")
     created = False
     try:
-        if not os.path.isdir(p5):
-            os.makedirs(p5)
+        if not os.path.isdir(p1):
+            os.makedirs(p1)
             created = True
         assert _run().returncode != 0
     finally:
         if created:
-            os.rmdir(p5)
+            os.rmdir(p1)
     # after cleanup the validator passes again
     assert _run().returncode == 0
