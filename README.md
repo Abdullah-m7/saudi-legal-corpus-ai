@@ -693,6 +693,23 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   sources under [`data/chinese_translation_sources/`](data/chinese_translation_sources/). Validate:
   `make chinese-all-babs-source-inventory-validate`.
 
+### Chinese internal LLM-ready candidate layer (isolable-source articles, 189)
+
+- A **Chinese internal LLM-ready candidate layer** now exists for the **189 articles that have
+  isolable per-article Chinese source text** (`chinese_text` copied verbatim from the extracted
+  Chinese source, SHA-256-checked; mechanical retrieval metadata only — no translation, no
+  expansion, no correction, and nothing generated from Arabic/English).
+- **92 articles are excluded** because no isolable per-article Chinese text exists (they are
+  covered only within thematic-table summary groups) — no records are fabricated for them.
+- **Chinese remains internal / reference only — not official and not governing; Arabic remains
+  governing.** The **full Chinese 281 LLM-ready layer is not created yet**
+  (`full_chinese_translation_claimed = false`; `llm_ready_as_full_translation = false` for all
+  records). New layer: [`data/chinese_internal_legal_llm/`](data/chinese_internal_legal_llm/),
+  schema
+  [`schemas/chinese_internal_legal_llm.schema.json`](schemas/chinese_internal_legal_llm.schema.json).
+  Build/validate: `make chinese-internal-legal-llm-isolable-data` /
+  `make chinese-internal-legal-llm-isolable-validate`.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**

@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/chinese_internal_legal_llm.schema.json",
+  "title": "Chinese internal LLM-ready candidate record (isolable source text)",
+  "description": "Internal, non-official Chinese LLM/RAG candidate layer built ONLY from articles that have isolable per-article Chinese source text in the owner-provided Chinese PDFs. Each record carries the verbatim Chinese source text plus mechanical retrieval metadata only — it does NOT translate, expand, correct, summarize, or improve the Chinese, and it is NOT generated from Arabic or English. Chinese is an internal working/reference translation only — NOT official, NOT binding, NOT governing; the Arabic text is governing. This is NOT a full verified Chinese translation of the law. Not legal advice.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "law_id",
+    "article_number",
+    "expected_bab_number",
+    "record_id",
+    "record_type",
+    "language",
+    "governing_text_language",
+    "chinese_text",
+    "chinese_text_hash_sha256",
+    "llm_title_zh",
+    "retrieval_title_zh",
+    "article_path",
+    "keywords_zh",
+    "search_queries_zh",
+    "source_coverage",
+    "source_trust"
+  ],
+  "properties": {
+    "law_id": {"type": "string", "const": "sa-companies-law-m132-1443"},
+    "article_number": {"type": "integer", "minimum": 1, "maximum": 281},
+    "expected_bab_number": {"type": "integer", "minimum": 1, "maximum": 14},
+    "record_id": {"type": "string", "minLength": 1},
+    "record_type": {"type": "string", "const": "chinese_internal_reference_article"},
+    "language": {"type": "string", "const": "zh"},
+    "governing_text_language": {"type": "string", "const": "ar"},
+    "chinese_text": {"type": "string", "minLength": 1,
+      "description": "Verbatim Chinese source text, copied exactly from the extracted Chinese source record. Never rewritten, expanded, corrected, translated, or generated from Arabic/English."},
+    "chinese_text_hash_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "llm_title_zh": {"type": "string", "minLength": 1},
+    "retrieval_title_zh": {"type": "string", "minLength": 1},
+    "article_path": {"type": "string", "pattern": "^companies_law/articles/[0-9]{3}/zh/internal$"},
+    "keywords_zh": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "search_queries_zh": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "source_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_pdf", "source_extracted_file", "chinese_text_nonempty",
+                   "extraction_confidence", "coverage_posture", "likely_translation_style",
+                   "llm_ready_as_full_translation", "usable_as_internal_reference",
+                   "recommended_next_action"],
+      "properties": {
+        "source_pdf": {"type": "string", "minLength": 1},
+        "source_extracted_file": {"type": "string", "minLength": 1},
+        "chinese_text_nonempty": {"type": "boolean", "const": true},
+        "extraction_confidence": {"type": "string", "minLength": 1},
+        "coverage_posture": {"type": "string", "minLength": 1},
+        "likely_translation_style": {"type": "string", "minLength": 1},
+        "llm_ready_as_full_translation": {"type": "boolean", "const": false},
+        "usable_as_internal_reference": {"type": "boolean"},
+        "recommended_next_action": {"type": "string", "minLength": 1}
+      }
+    },
+    "source_trust": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chinese_source_status", "official_translation", "not_binding",
+                   "governing_text_language", "full_translation_claimed",
+                   "internal_reference_only", "arabic_governs", "notes"],
+      "properties": {
+        "chinese_source_status": {"type": "string", "const": "internal_working_translation_source"},
+        "official_translation": {"type": "boolean", "const": false},
+        "not_binding": {"type": "boolean", "const": true},
+        "governing_text_language": {"type": "string", "const": "ar"},
+        "full_translation_claimed": {"type": "boolean", "const": false},
+        "internal_reference_only": {"type": "boolean", "const": true},
+        "arabic_governs": {"type": "boolean", "const": true},
+        "notes": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

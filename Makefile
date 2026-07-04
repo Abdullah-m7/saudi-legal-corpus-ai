@@ -43,7 +43,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         official-english-legal-llm-full-data official-english-legal-llm-full-validate \
         chinese-bab1-original-pdf-translation-review-data \
         chinese-bab1-original-pdf-translation-review-validate \
-        chinese-all-babs-source-inventory-data chinese-all-babs-source-inventory-validate
+        chinese-all-babs-source-inventory-data chinese-all-babs-source-inventory-validate \
+        chinese-internal-legal-llm-isolable-data chinese-internal-legal-llm-isolable-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -442,6 +443,13 @@ chinese-all-babs-source-inventory-data:
 
 chinese-all-babs-source-inventory-validate:
 	$(PY) scripts/validate_chinese_all_babs_source_inventory.py
+
+# -- Chinese internal LLM-ready candidate layer (isolable-source articles only; internal/reference) --
+chinese-internal-legal-llm-isolable-data:
+	$(PY) scripts/gen_chinese_internal_legal_llm_isolable_source_articles.py
+
+chinese-internal-legal-llm-isolable-validate:
+	$(PY) scripts/validate_chinese_internal_legal_llm_isolable_source_articles.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
