@@ -34,7 +34,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-legal-llm-book4-section1-data chinese-legal-llm-book4-section2-data \
         chinese-legal-llm-book4-section3-data chinese-legal-llm-book4-section4-data \
         chinese-legal-llm-book4-section5-data chinese-legal-llm-validate \
-        official-arabic-foundation-validate
+        official-arabic-foundation-validate official-arabic-user-provided-data \
+        official-arabic-ingestion-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -365,6 +366,14 @@ chinese-legal-llm-validate:
 # Validates the scaffold only; does NOT ingest or verify official Arabic text.
 official-arabic-foundation-validate:
 	$(PY) scripts/validate_official_arabic_foundation.py
+
+# -- Official Arabic USER-PROVIDED ingestion (unverified candidate; 281 article records) --
+# Segments the user-provided packet into 281 records + per-article hashes. Nothing verified.
+official-arabic-user-provided-data:
+	$(PY) scripts/ingest_official_arabic_user_provided_text.py
+
+official-arabic-ingestion-validate:
+	$(PY) scripts/validate_official_arabic_ingestion.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
