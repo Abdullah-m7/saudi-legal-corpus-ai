@@ -36,7 +36,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-legal-llm-book4-section5-data chinese-legal-llm-validate \
         official-arabic-foundation-validate official-arabic-user-provided-data \
         official-arabic-ingestion-validate official-arabic-verification-report-validate \
-        official-arabic-manual-review-queue-validate official-arabic-p0-article3-review-validate
+        official-arabic-manual-review-queue-validate official-arabic-p0-article3-review-validate \
+        official-arabic-queue-p0-resolution-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -391,6 +392,11 @@ official-arabic-manual-review-queue-validate:
 # -- Official Arabic P0 Article 3 segmentation review (triage only; promotes nothing) --
 official-arabic-p0-article3-review-validate:
 	$(PY) scripts/validate_official_arabic_p0_article3_review.py
+
+# -- Official Arabic queue P0-resolution update (status only; promotes nothing) --
+# update script re-runs the resolution-aware queue builder deterministically.
+official-arabic-queue-p0-resolution-validate:
+	$(PY) scripts/validate_official_arabic_queue_p0_resolution.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

@@ -16,19 +16,24 @@
 - `likely_ocr_noise_medium_similarity`: **109**
 - `possible_substantive_difference_manual_review`: **41**
 - `low_similarity_manual_review`: **52**
-- `missing_or_segmentation_issue`: **1**
+- `missing_or_segmentation_issue`: **0**
+- `resolved_segmentation_ocr_miss`: **1**
 
 ## العدد حسب الأولوية / Counts by review_priority
-- **P0**: 1
+- **P0**: 0
 - **P1**: 52
 - **P2**: 41
 - **P3**: 109
 - **P4**: 67
 - **P5**: 8
-- **P6**: 3
+- **P6**: 4
 
-## مواد P0 (مفقودة/تقطيع) / P0 articles (missing/segmentation)
-- 3
+## مواد P0 غير المُحلّة / Unresolved P0 articles
+- عدد P0 غير المُحلّة / unresolved P0 count: **0**
+- (لا يوجد / none)
+
+## عناصر P0 المُحلّة / P0 resolved items
+- المادة 3 / Article 3 → **resolved_segmentation_ocr_miss** — Article 3 is present on packet page 6; original P0 was caused by OCR heading ordinal corruption.
 
 ## مواد P1 (تشابه منخفض) / P1 articles (low similarity)
 - 1, 12, 19, 22, 23, 55, 60, 61, 71, 76, 88, 91, 92, 93, 97, 105, 110, 113, 117, 122, 123, 126, 127, 138, 140, 141, 146, 147, 149, 150, 158, 166, 177, 178, 181, 183, 187, 188, 196, 206, 211, 212, 218, 221, 228, 248, 260, 261, 262, 264, 273, 277

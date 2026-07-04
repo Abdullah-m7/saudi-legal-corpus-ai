@@ -50,7 +50,43 @@ BUCKET_PRIORITY = {
     "likely_ocr_noise_high_similarity": "P4",
     "normalized_or_punctuation_review": "P5",
     "exact_match_no_action": "P6",
+    # A P0 item resolved as an OCR segmentation miss (article present in the source, heading
+    # OCR-corrupted) is de-prioritised to P6. This is a triage status change only — no
+    # verification, no promotion, no legal-text change.
+    "resolved_segmentation_ocr_miss": "P6",
 }
+
+# P0 segmentation-review reports whose resolutions are folded into the queue (deterministic).
+import glob as _glob
+_RESOLUTION_REPORTS = sorted(_glob.glob(os.path.join(
+    ROOT, "reports", "official_arabic_verification", "p0_article*_segmentation_review.json")))
+
+
+def _apply_p0_resolutions(entries):
+    """Fold committed P0 segmentation-review resolutions into the queue: a segmentation_ocr_miss
+    (source_location_found, not verified) moves the article to bucket resolved_segmentation_ocr_miss
+    / priority P6 and records the resolution provenance. Returns the sorted list of resolved
+    article numbers."""
+    by_num = {e["article_number"]: e for e in entries}
+    resolved = []
+    for path in _RESOLUTION_REPORTS:
+        with open(path, encoding="utf-8") as fh:
+            r = json.load(fh)
+        n = r.get("article_number")
+        if (r.get("classification") == "segmentation_ocr_miss" and r.get("source_location_found")
+                and r.get("verification_action_allowed") is False and n in by_num):
+            e = by_num[n]
+            e["review_bucket"] = "resolved_segmentation_ocr_miss"
+            e["review_priority"] = "P6"
+            e["p0_resolution_status"] = "resolved"
+            e["p0_resolution_source"] = os.path.relpath(path, ROOT)
+            e["p0_resolution_classification"] = r.get("classification")
+            e["p0_resolution_note"] = (
+                "Article %d is present on packet page %s; original P0 was caused by OCR heading "
+                "ordinal corruption." % (n, r.get("source_page_number_within_packet")))
+            e["verification_action_allowed"] = False
+            resolved.append(n)
+    return sorted(resolved)
 
 _SUSPECTED = {
     "exact_match_no_action": "لا يوجد اختلاف — مطابقة تامة. / None — exact match.",
@@ -168,6 +204,8 @@ def build():
             "verification_action_allowed": False,
         })
 
+    resolved_p0 = _apply_p0_resolutions(entries)
+
     bucket_counts = {}
     prio_counts = {}
     for e in entries:
@@ -179,7 +217,9 @@ def build():
         "not_legal_advice": True,
         "note_en": "Manual-review queue derived from the lossy OCR comparison. This is NOT "
                    "verification and promotes NO article. The candidate text is unchanged and "
-                   "remains ingested_unverified; article_by_article_verified remains false.",
+                   "remains ingested_unverified; article_by_article_verified remains false. "
+                   "Resolved P0 items (OCR segmentation misses) are de-prioritised to P6 with "
+                   "provenance; no legal text is changed.",
         "source_comparison_report": "reports/official_arabic_verification/official_arabic_candidate_comparison_report.json",
         "candidate_file": "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json",
         "verification_status_unchanged": "ingested_unverified",
@@ -190,16 +230,18 @@ def build():
         "priority_counts": prio_counts,
         "p0_articles": sorted(e["article_number"] for e in entries if e["review_priority"] == "P0"),
         "p1_articles": sorted(e["article_number"] for e in entries if e["review_priority"] == "P1"),
+        "resolved_p0_articles": resolved_p0,
+        "unresolved_p0_count": sum(1 for e in entries if e["review_priority"] == "P0"),
         "entries": entries,
     }
     return queue
 
 
 def write_csv(queue):
-    cols = ["review_priority", "article_number", "review_bucket", "original_difference_type",
-            "similarity", "candidate_text_length", "ocr_text_length", "candidate_hash",
-            "official_source_hash", "verification_action_allowed", "article_title_ar",
-            "suspected_issue", "recommended_action"]
+    cols = ["review_priority", "article_number", "review_bucket", "p0_resolution_status",
+            "original_difference_type", "similarity", "candidate_text_length", "ocr_text_length",
+            "candidate_hash", "official_source_hash", "verification_action_allowed",
+            "article_title_ar", "suspected_issue", "recommended_action"]
     rows = sorted(queue["entries"], key=lambda e: (e["review_priority"], e["article_number"]))
     with open(OUT_CSV, "w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore", lineterminator="\n")
@@ -230,15 +272,26 @@ def write_md(queue):
     for b in ["exact_match_no_action", "normalized_or_punctuation_review",
               "likely_ocr_noise_high_similarity", "likely_ocr_noise_medium_similarity",
               "possible_substantive_difference_manual_review", "low_similarity_manual_review",
-              "missing_or_segmentation_issue"]:
+              "missing_or_segmentation_issue", "resolved_segmentation_ocr_miss"]:
         L.append("- `%s`: **%d**" % (b, bc.get(b, 0)))
     L.append("")
     L.append("## العدد حسب الأولوية / Counts by review_priority")
     for p in ["P0", "P1", "P2", "P3", "P4", "P5", "P6"]:
         L.append("- **%s**: %d" % (p, pc.get(p, 0)))
     L.append("")
-    L.append("## مواد P0 (مفقودة/تقطيع) / P0 articles (missing/segmentation)")
+    L.append("## مواد P0 غير المُحلّة / Unresolved P0 articles")
+    L.append("- عدد P0 غير المُحلّة / unresolved P0 count: **%d**" % queue.get("unresolved_p0_count", 0))
     L.append("- " + (", ".join(str(x) for x in queue["p0_articles"]) or "(لا يوجد / none)"))
+    L.append("")
+    L.append("## عناصر P0 المُحلّة / P0 resolved items")
+    resolved = queue.get("resolved_p0_articles", [])
+    if not resolved:
+        L.append("- (لا يوجد / none)")
+    else:
+        for n in resolved:
+            e = next(x for x in queue["entries"] if x["article_number"] == n)
+            L.append("- المادة %d / Article %d → **%s** — %s"
+                     % (n, n, e.get("review_bucket"), e.get("p0_resolution_note", "")))
     L.append("")
     L.append("## مواد P1 (تشابه منخفض) / P1 articles (low similarity)")
     L.append("- " + (", ".join(str(x) for x in queue["p1_articles"]) or "(لا يوجد / none)"))
