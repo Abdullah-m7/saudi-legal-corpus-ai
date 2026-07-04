@@ -42,7 +42,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         english-reference-full-281-data english-reference-full-281-validate \
         official-english-legal-llm-full-data official-english-legal-llm-full-validate \
         chinese-bab1-original-pdf-translation-review-data \
-        chinese-bab1-original-pdf-translation-review-validate
+        chinese-bab1-original-pdf-translation-review-validate \
+        chinese-all-babs-source-inventory-data chinese-all-babs-source-inventory-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -434,6 +435,13 @@ chinese-bab1-original-pdf-translation-review-data:
 
 chinese-bab1-original-pdf-translation-review-validate:
 	$(PY) scripts/validate_chinese_bab1_original_pdf_translation_review.py
+
+# -- Chinese all-Babs (1-14) source coverage inventory (source inventory only; no Chinese LLM-ready) --
+chinese-all-babs-source-inventory-data:
+	$(PY) scripts/gen_chinese_all_babs_source_inventory.py
+
+chinese-all-babs-source-inventory-validate:
+	$(PY) scripts/validate_chinese_all_babs_source_inventory.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
