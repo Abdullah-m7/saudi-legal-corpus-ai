@@ -768,6 +768,18 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   `CHINESE_REMEDIATION_BATCH_P0_001_QA_AR.md`. Validate:
   `make chinese-remediation-batch-p0-001-qa-validate`.
 
+### Batch P0-001 minor fixes (Articles 61 & 74)
+
+- The **two QA-approved minor terminology fixes** have been applied to **Articles 61 and 74 only**
+  (61: `المركز الرئيس` → `主要营业地`; 74: `محل الشركة التجاري` → `商号（商业名称）`) — legal meaning
+  unchanged. **QA now reads 20 pass, 0 minor, 0 blocked, 0 failed.**
+- **Human legal review remains pending**; Chinese stays internal / non-official / non-binding /
+  non-governing; Arabic governs. **No full Chinese 281 layer and no trilingual alignment.**
+- Artifacts:
+  `reports/chinese_translation_review/chinese_remediation_batch_p0_001_minor_fixes.json` +
+  `CHINESE_REMEDIATION_BATCH_P0_001_MINOR_FIXES_AR.md`. Validate:
+  `make chinese-remediation-batch-p0-001-minor-fixes-validate`.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**

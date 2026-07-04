@@ -78,10 +78,14 @@ def main() -> int:
         problems.append("expected_babs must be [4]")
     for f in ("full_chinese_translation_claimed", "official_chinese_translation_claimed",
               "chinese_binding_claimed", "chinese_governing_claimed",
-              "human_legal_review_completed", "remediated_chinese_changed",
+              "human_legal_review_completed",
               "full_chinese_281_layer_created", "trilingual_alignment_created"):
         if qa.get(f) is not False:
             problems.append("QA top-level %s must be false" % f)
+    # remediated_chinese_changed may be true after an authorized minor-fix pass (never implies
+    # human legal review completion, which is gated separately above).
+    if not isinstance(qa.get("remediated_chinese_changed"), bool):
+        problems.append("QA remediated_chinese_changed must be a boolean")
 
     recs = qa.get("records", [])
     nums = [r.get("article_number") for r in recs]
