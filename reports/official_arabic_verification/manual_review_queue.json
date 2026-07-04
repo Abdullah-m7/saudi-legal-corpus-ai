@@ -1,7 +1,7 @@
 {
   "queue_type": "official_arabic_ocr_manual_review_queue",
   "not_legal_advice": true,
-  "note_en": "Manual-review queue derived from the lossy OCR comparison. This is NOT verification and promotes NO article. The candidate text is unchanged and remains ingested_unverified; article_by_article_verified remains false.",
+  "note_en": "Manual-review queue derived from the lossy OCR comparison. This is NOT verification and promotes NO article. The candidate text is unchanged and remains ingested_unverified; article_by_article_verified remains false. Resolved P0 items (OCR segmentation misses) are de-prioritised to P6 with provenance; no legal text is changed.",
   "source_comparison_report": "reports/official_arabic_verification/official_arabic_candidate_comparison_report.json",
   "candidate_file": "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json",
   "verification_status_unchanged": "ingested_unverified",
@@ -11,7 +11,7 @@
   "bucket_counts": {
     "low_similarity_manual_review": 52,
     "possible_substantive_difference_manual_review": 41,
-    "missing_or_segmentation_issue": 1,
+    "resolved_segmentation_ocr_miss": 1,
     "likely_ocr_noise_high_similarity": 67,
     "likely_ocr_noise_medium_similarity": 109,
     "normalized_or_punctuation_review": 8,
@@ -20,15 +20,12 @@
   "priority_counts": {
     "P1": 52,
     "P2": 41,
-    "P0": 1,
+    "P6": 4,
     "P4": 67,
     "P3": 109,
-    "P5": 8,
-    "P6": 3
+    "P5": 8
   },
-  "p0_articles": [
-    3
-  ],
+  "p0_articles": [],
   "p1_articles": [
     1,
     12,
@@ -83,6 +80,10 @@
     273,
     277
   ],
+  "resolved_p0_articles": [
+    3
+  ],
+  "unresolved_p0_count": 0,
   "entries": [
     {
       "article_number": 1,
@@ -123,8 +124,8 @@
       "article_title_ar": "جنسية الشركة",
       "original_difference_type": "missing_in_official_source",
       "similarity": 0.0,
-      "review_bucket": "missing_or_segmentation_issue",
-      "review_priority": "P0",
+      "review_bucket": "resolved_segmentation_ocr_miss",
+      "review_priority": "P6",
       "candidate_hash": "42a8944cf60f240fac299ceae483704d61e77788723d7b8492dace5b16dd6ad0",
       "official_source_hash": null,
       "candidate_text_length": 95,
@@ -133,7 +134,11 @@
       "ocr_snippet_ar": "",
       "suspected_issue": "لم يُعثر على المادة في مخرجات OCR (فشل استخراج العنوان أو فجوة تقطيع). / article not located in OCR (heading miss / segmentation gap).",
       "recommended_action": "مراجعة الصفحة الممسوحة يدويًا وتأكيد وجود/رقم المادة. / manually check the scanned page; confirm the article exists / its number.",
-      "verification_action_allowed": false
+      "verification_action_allowed": false,
+      "p0_resolution_status": "resolved",
+      "p0_resolution_source": "reports/official_arabic_verification/p0_article3_segmentation_review.json",
+      "p0_resolution_classification": "segmentation_ocr_miss",
+      "p0_resolution_note": "Article 3 is present on packet page 6; original P0 was caused by OCR heading ordinal corruption."
     },
     {
       "article_number": 4,

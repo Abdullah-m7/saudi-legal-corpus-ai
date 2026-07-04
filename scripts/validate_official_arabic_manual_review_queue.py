@@ -28,7 +28,8 @@ TARGET = 281
 BUCKETS = {"exact_match_no_action", "normalized_or_punctuation_review",
            "likely_ocr_noise_high_similarity", "likely_ocr_noise_medium_similarity",
            "low_similarity_manual_review", "missing_or_segmentation_issue",
-           "possible_substantive_difference_manual_review"}
+           "possible_substantive_difference_manual_review",
+           "resolved_segmentation_ocr_miss"}
 PRIOS = {"P0", "P1", "P2", "P3", "P4", "P5", "P6"}
 
 

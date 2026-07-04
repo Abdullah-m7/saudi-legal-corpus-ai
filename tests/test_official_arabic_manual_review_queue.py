@@ -24,13 +24,16 @@ TARGET = 281
 BUCKETS = {"exact_match_no_action", "normalized_or_punctuation_review",
            "likely_ocr_noise_high_similarity", "likely_ocr_noise_medium_similarity",
            "low_similarity_manual_review", "missing_or_segmentation_issue",
-           "possible_substantive_difference_manual_review"}
+           "possible_substantive_difference_manual_review",
+           "resolved_segmentation_ocr_miss"}
 PRIOS = {"P0", "P1", "P2", "P3", "P4", "P5", "P6"}
 BUCKET_PRIO = {
     "missing_or_segmentation_issue": "P0", "low_similarity_manual_review": "P1",
     "possible_substantive_difference_manual_review": "P2",
     "likely_ocr_noise_medium_similarity": "P3", "likely_ocr_noise_high_similarity": "P4",
-    "normalized_or_punctuation_review": "P5", "exact_match_no_action": "P6"}
+    "normalized_or_punctuation_review": "P5", "exact_match_no_action": "P6",
+    # a resolved P0 OCR segmentation miss is de-prioritised to P6
+    "resolved_segmentation_ocr_miss": "P6"}
 
 
 def _read(p):
@@ -76,6 +79,13 @@ def test_every_entry_bucket_and_priority():
 
 def test_bucketing_logic_matches_difference_type_and_similarity():
     for e in _entries():
+        # A P0 item resolved as an OCR segmentation miss is intentionally re-bucketed to
+        # resolved_segmentation_ocr_miss (P6); its original difference_type no longer dictates
+        # the bucket.
+        if e.get("p0_resolution_status") == "resolved":
+            assert e["review_bucket"] == "resolved_segmentation_ocr_miss"
+            assert e["review_priority"] == "P6"
+            continue
         dt = e["original_difference_type"]
         sim = e["similarity"] or 0.0
         b = e["review_bucket"]
