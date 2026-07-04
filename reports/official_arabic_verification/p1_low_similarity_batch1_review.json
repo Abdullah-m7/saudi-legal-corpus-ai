@@ -1,0 +1,580 @@
+{
+  "stage": "OFFICIAL_ARABIC_P1_LOW_SIMILARITY_BATCH1_REVIEW",
+  "not_legal_advice": true,
+  "batch_id": "P1_LOW_SIMILARITY_BATCH1",
+  "batch_size": 10,
+  "selection_method": "lowest_similarity_p1_articles_from_manual_review_queue",
+  "selected_articles": [
+    147,
+    140,
+    76,
+    110,
+    277,
+    221,
+    71,
+    123,
+    138,
+    228
+  ],
+  "classification_counts": {
+    "likely_ocr_noise": 3,
+    "segmentation_or_alignment_drift": 7
+  },
+  "candidate_file": "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json",
+  "source_comparison_report": "reports/official_arabic_verification/official_arabic_candidate_comparison_report.json",
+  "ocr_artifact": "reports/official_arabic_verification/ocr_source_pages.json",
+  "verification_status_unchanged": "ingested_unverified",
+  "article_by_article_verified": false,
+  "promoted_to_verified": false,
+  "candidate_text_changed": false,
+  "entries": [
+    {
+      "article_number": 147,
+      "article_title_ar": "القوائم المالية وتقرير عن نشاط الشركة",
+      "queue_similarity": 0.0346,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "يجب على رئيس شركة المساهمة المبسطة أو مديرها أو مجلس إدارتها -بحسب الأحوال- في نهاية كل سنة مالية للشركة، أن يعد القوائم المالية للشركة وتقريرًا عن نشاطها ومركزها المالي عن السنة المالية المنقضية، ويضمّن هذا التقرير الطريقة المقترحة لتوزيع الأرباح إن وجدت. وتعرض هذه الوثائق وتقرير مراجع الحسابات، إن وجد، على المساهمين، وذلك خلال (ستة) أشهر من تاريخ انتهاء السنة المالية للشركة، وعليه إيداع هذه الوثائق وفقًا لما تحدده اللوائح.",
+      "candidate_hash": "5b44edea3530005663481d08a26fc999889d91e594f2529576cc5d28222325ef",
+      "official_source_hash": "8a919f3c0120f1862b6aa6ce6a3a1cb803724887d41e62c832cc7947e4d1582a",
+      "candidate_text_length": 428,
+      "ocr_text_length": 511,
+      "candidate_snippet_ar": "يجب على رئيس شركة المساهمة المبسطة أو مديرها أو مجلس إدارتها -بحسب الأحوال- في نهاية كل سنة مالية للشركة، أن يعد القوائم المالية للشركة وتقريرًا عن نشاطها ومركزها المالي عن السنة المالية المنقضية، ويضمّن هذا التقرير الطر",
+      "ocr_snippet_ar": "يحب على رئيس شركة المساهمة المبسطة أو مديرها أو مجلس إدارتما بحسب الأحوال- في نحاية كل سنة مالية\n\n‏للشركة» أن يعد القوائم المالية للشركة وتقريرًا عن نشاطها ومركزها الماللي عن السنة المالية المنقضية» ويضمّن هذا التقرير\n\n\n",
+      "search_terms_used": [
+        "القوائم المالية وتقرير عن نشاط الشركة",
+        "يجب علي رئيس شركه المساهمه المبسطه",
+        "او مديرها او مجلس ادارتها -بحسب"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "القوائم المالية وتقرير عن نشاط الشركة": [
+            58,
+            69,
+            77
+          ],
+          "يجب علي رئيس شركه المساهمه المبسطه": [],
+          "او مديرها او مجلس ادارتها -بحسب": []
+        },
+        "any_term_hit_pages_global": [
+          58,
+          69,
+          77
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_03_pages_041_060.pdf",
+      "source_page_number_within_packet": 58,
+      "source_page_number_within_part": 18,
+      "evidence_snippets": [
+        {
+          "global_page": 58,
+          "snippet": "المملكة العربية السعودية 57 الرقم 001/1 - لاف 0 سه مس 7 الفصل الخامس: مالية شركة المسامة المادة الحادية والعشرون بعد المائة: القوائم المالية وتقرير عن نشاط الشركة: ‎-١‏ يجب على مجلس الإدارة في نماية كل سنة مالية للشركة أن يعد القوائم المالية للشركة وتقريرا عن نشاطها ومركزها المالي عن السنة المالية المنتقضية» ويضمّن هذا التقرير الطريقة المقترحة لتوزيع الأرباح. ويضع المجلس هذه الوثائق تحت تصرف مراجع"
+        }
+      ],
+      "batch_review_classification": "likely_ocr_noise",
+      "review_confidence": "low",
+      "evidence_summary": "article_title_located_in_source_but_body_opening_not_exact_matched_consistent_with_heavy_ocr_noise",
+      "recommended_next_action": "later queue-update PR: treat as OCR noise; no candidate change",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 140,
+      "article_title_ar": "بيانات نظام الشركة الأساس",
+      "queue_similarity": 0.0459,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "يجب أن يشتمل النظام الأساس لشركة المساهمة المبسطة بصفة خاصة على البيانات الآتية:\n\n- أ- اسم الشركة.\n- ب- المركز الرئيس للشركة.\n- ج- غرض الشركة.\n- د- رأس مال الشركة المصرح به -إن وجد- والمصدر والمدفوع منه.\n- هـ- عدد الأسهم، وأنواعها وفئاتها إن وجدت، والقيمة الاسمية، والحقوق المتصلة بكل نوع أو فئة.\n- و- مدة الشركة، إن وجدت.\n- ز- إدارة الشركة والأحكام الخاصة بذلك.\n- ح- التنازل عن الأسهم.\n- ط- اجتماعات المساهمين، والنصاب اللازم لصحتها.\n- ي- قرارات المساهمين، والنصاب اللازم لصدورها.\n- ك- تاريخ بدء السنة المالية وانتهائها.\n- ل- أي أحكام أو شروط أو بيانات أخرى يتفق المؤسسون أو المساهمون على تضمينها في نظام الشركة الأساس ولا تتعارض مع أحكام النظام.\n\nيجب أن يرفق بالنظام الأساس عند تقديم طلب تأسيس الشركة الآتي:\n\n- أ- أسماء المؤسسين، وعناوينهم، وجنسياتهم.\n- ب- بيان عن الأعمال والنفقات المتوقعة لتأسيس الشركة.\n- ج- إقرار المؤسسين بالاكتتاب بكل أسهم الشركة، وقيمة المدفوع منها.\n- د- شهادة إيداع القدر المدفوع من رأس المال المصدر لدى أحد البنوك المرخص لها في المملكة.\n- هـ- قرار من المؤسسين بتعيين رئيس الشركة أو مديرها أو مجلس إدارتها، بحسب الأحوال، متضمنًا أسماءهم وجنسياتهم، وعناوينهم، وتواريخ ميلادهم.\n- و- إقرار المؤسسين بالالتزام بجميع متطلبات النظام ذات الصلة بتأسيس الشركة.\n- ز- بيان أو تقرير معد من مقيم معتمد أو أكثر يُبين فيه القيمة العادلة للحصص العينية (إن وجدت)، وإقرارٌ من باقي المؤسسين بالموافقة على المقابل المحدد لها.",
+      "candidate_hash": "c591631cf159d9edf6fa474d4f0a7fde8cbd9b87aa02238f023510ccdbbf88dd",
+      "official_source_hash": "49b6dedc442d164f1935d4e5afef6b23d2d6faa16da867175709be61f578b28a",
+      "candidate_text_length": 1331,
+      "ocr_text_length": 1381,
+      "candidate_snippet_ar": "يجب أن يشتمل النظام الأساس لشركة المساهمة المبسطة بصفة خاصة على البيانات الآتية:\n\n- أ- اسم الشركة.\n- ب- المركز الرئيس للشركة.\n- ج- غرض الشركة.\n- د- رأس مال الشركة المصرح به -إن وجد- والمصدر والمدفوع منه.\n- هـ- عدد الأسهم",
+      "ocr_snippet_ar": "‎-١‏ يحب أن يشتمل النظام الأساس لشركة المساهمة المبسطة بصفة خاصة على البيانات الآنية:\n\n‏أ- اسم الشركة.\nب- للركز الرئيس للشركة.\nج- غرض الشركة.\n\n‏د- رأس مال الشركة للصرح به -إن وجذ- والمصدر والمدفوع منه.\n\n‏ه- عدد الأسهم؛ و",
+      "search_terms_used": [
+        "بيانات نظام الشركة الأساس",
+        "يجب ان يشتمل النظام الاساس لشركه",
+        "المساهمه المبسطه بصفه خاصه علي البيانات"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "بيانات نظام الشركة الأساس": [
+            32,
+            65
+          ],
+          "يجب ان يشتمل النظام الاساس لشركه": [
+            32
+          ],
+          "المساهمه المبسطه بصفه خاصه علي البيانات": [
+            65
+          ]
+        },
+        "any_term_hit_pages_global": [
+          32,
+          65
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_02_pages_021_040.pdf",
+      "source_page_number_within_packet": 32,
+      "source_page_number_within_part": 12,
+      "evidence_snippets": [
+        {
+          "global_page": 32,
+          "snippet": "ا 7 التا / / كاه الفصل الثاني: تأسيس شركة المساهمة المادة الحادية والستون: بيانات نظام الشركة الأساس: ‎-١‏ يجب أن يشتمل النظام الأساس لشركة المساهمة بصفة خاصة على البيانات الآنية: أ- اسم الشركة. ب- المركز الرئيس للشركة. ج- غرض الشركة. د- رأس مال الشركة المصرح به -إن وجد- والمصدر والمدفوع منه. ه- عدد الأسهم, وأنواعها وفثاتما إن وجدتء والقيمة الاسمية والحقوق المتصلة بكل نوع أو فئة. و- مدة الشركة» إن"
+        }
+      ],
+      "batch_review_classification": "segmentation_or_alignment_drift",
+      "review_confidence": "medium",
+      "evidence_summary": "distinctive_body_phrase_found_verbatim_in_source_but_per_article_alignment_span_mismatched",
+      "recommended_next_action": "later queue-update PR: re-bucket as OCR/segmentation artifact (not a text change)",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 76,
+      "article_title_ar": "مكافأة أعضاء مجلس الإدارة",
+      "queue_similarity": 0.1116,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "يبين نظام الشركة الأساس طريقة مكافأة أعضاء مجلس الإدارة، ويجوز أن تكون هذه المكافأة مبلغًا معينًا، أو بدل حضور عن الجلسات، أو مزايا عينية، أو نسبة معينة من صافي الأرباح، ويجوز الجمع بين اثنتين أو أكثر مما تقدم، ويجوز كذلك أن يحدد نظام الشركة الأساس الحد الأعلى لتلك المكافآت. وتحدد الجمعية العامة العادية مقدار تلك المكافآت، على أن يراعى أن تكون المكافآت عادلة ومحفزة وتتناسب مع أداء العضو وأداء الشركة. وتحدد اللوائح الضوابط اللازمة لتنفيذ هذه الفقرة.\n\nيجب أن يشتمل تقرير مجلس الإدارة إلى الجمعية العامة العادية في اجتماعها السنوي على بيان شامل لكل ما حصل عليه أو استحق الحصول عليه كل عضو من أعضاء مجلس الإدارة خلال السنة المالية من مكافآت وبدل حضور الجلسات وبدل مصروفات وغير ذلك من المزايا. وأن يشتمل كذلك على بيان ما قبضه أعضاء المجلس بوصفهم عاملين أو إداريين أو ما قبضوه نظير أعمال فنية أو إدارية أو استشارات، وأن يشتمل أيضًا على بيان بعدد جلسات المجلس وعدد الجلسات التي حضرها كل عضو.",
+      "candidate_hash": "3589b764ceb1dfc031b661aaa065a9adbb3f1e8f6168492306bed32306cda486",
+      "official_source_hash": "62a4b3b90d117f4570049335488a0204cf1d7e3b270ffb787af21b0aed821c49",
+      "candidate_text_length": 888,
+      "ocr_text_length": 896,
+      "candidate_snippet_ar": "يبين نظام الشركة الأساس طريقة مكافأة أعضاء مجلس الإدارة، ويجوز أن تكون هذه المكافأة مبلغًا معينًا، أو بدل حضور عن الجلسات، أو مزايا عينية، أو نسبة معينة من صافي الأرباح، ويجوز الجمع بين اثنتين أو أكثر مما تقدم، ويجوز كذل",
+      "ocr_snippet_ar": "‎-١‏ يبين نظام الشركة الأساس طريقة مكافأة أعضاء مجلس الإدارة» ويجوز أن تكون هذه المكافأة مبلعًا معيئاء أو\nبدل حضور عن الجلسات» أو مزايا عينية؛ أو نسبة معينة من صافي الأرباح» ويجوز الجمع بين اثنتين أو أكثر\nثما تقدمء ويجوز",
+      "search_terms_used": [
+        "مكافأة أعضاء مجلس الإدارة",
+        "يبين نظام الشركه الاساس طريقه مكافاه",
+        "اعضاء مجلس الاداره، ويجوز ان تكون"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "مكافأة أعضاء مجلس الإدارة": [
+            39
+          ],
+          "يبين نظام الشركه الاساس طريقه مكافاه": [
+            39
+          ],
+          "اعضاء مجلس الاداره، ويجوز ان تكون": [
+            39
+          ]
+        },
+        "any_term_hit_pages_global": [
+          39
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_02_pages_021_040.pdf",
+      "source_page_number_within_packet": 39,
+      "source_page_number_within_part": 19,
+      "evidence_snippets": [
+        {
+          "global_page": 39,
+          "snippet": "المملكة العربية السعودية 5 الرقم مان ا ضري (رسسه_اه العامة عليها؛ وتحسب هذه النسبة من تاريخ أول صفقة تمت خلال (الاثني عشر) شهرًا السابقة. وللجهة المختصة أن تستثني بعض الأعمال والتصرفات من حكم هذه المادة. المادة السادسة والسبعون: مكافأة أعضاء مجلس الإدارة: ‎-١‏ يبين نظام الشركة الأساس طريقة مكافأة أعضاء مجلس الإدارة» ويجوز أن تكون هذه المكافأة مبلعًا معيئاء أو بدل حضور عن الجلسات» أو مزايا عينية؛ أ"
+        }
+      ],
+      "batch_review_classification": "segmentation_or_alignment_drift",
+      "review_confidence": "medium",
+      "evidence_summary": "distinctive_body_phrase_found_verbatim_in_source_but_per_article_alignment_span_mismatched",
+      "recommended_next_action": "later queue-update PR: re-bucket as OCR/segmentation artifact (not a text change)",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 110,
+      "article_title_ar": "تعديل الحقوق أو الالتزامات المتصلة بالأسهم",
+      "queue_similarity": 0.115,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "إذا كانت أسهم الشركة من أنواع وفئات مختلفة أو كان نظام الشركة الأساس يسمح بإصدار أنواع وفئات مختلفة من الأسهم، فيشترط لتعديل أو إلغاء أيّ من الحقوق أو الالتزامات أو القيود المتصلة بالأسهم، أو لتحويل أي نوع أو فئة من الأسهم إلى نوع أو فئة أخرى إذا نتج عن ذلك تعديل أو إلغاء الحقوق أو الالتزامات المتصلة بنوع أو فئة الأسهم التي ستُحوَّل، أو لإصدار أسهم من نوع أو فئة معينة يترتب عليها مساس بحقوق فئة أخرى من المساهمين؛ الحصول على موافقة جمعية خاصة مكونة وفقًا للمادة (التاسعة والثمانين) من النظام من أصحاب الأسهم الذين يضارون من هذا التعديل أو الإلغاء أو التحويل أو الإصدار، وموافقة الجمعية العامة غير العادية.\n\nإذا كانت ضمن أسهم الشركة أسهم ممتازة أو أسهم قابلة للاسترداد، فلا يجوز إصدار أسهم جديدة تكون لها أولوية على أي من فئاتهما إلا بموافقة جمعية خاصة مكونة وفقًا للمادة (التاسعة والثمانين) من النظام من أصحاب الأسهم الذين يضارون من هذا الإصدار.",
+      "candidate_hash": "9594a0357987bb60bd4e1b874492f7c9714732e0497a278391a57b3e8b433552",
+      "official_source_hash": "d63b75022c57d66d81bf55648a58291f7a8afcfb5f88e38879b72d547394057b",
+      "candidate_text_length": 848,
+      "ocr_text_length": 854,
+      "candidate_snippet_ar": "إذا كانت أسهم الشركة من أنواع وفئات مختلفة أو كان نظام الشركة الأساس يسمح بإصدار أنواع وفئات مختلفة من الأسهم، فيشترط لتعديل أو إلغاء أيّ من الحقوق أو الالتزامات أو القيود المتصلة بالأسهم، أو لتحويل أي نوع أو فئة من الأس",
+      "ocr_snippet_ar": "‎-١‏ إذاكانت أسهم الشركة من أنواع وفئات مختلفة أو كان نظام الشركة الأساس يسمح بإصدار أنواع وفىات مختلفة\nمن الأسهم؛ فيشترط لتعديل أو إلغاء أي من الحقوق أو الالتزامات أو القيود المتصلة بالأسهم؛ أو لتحويل أي\nنوع أو فئة من ا",
+      "search_terms_used": [
+        "تعديل الحقوق أو الالتزامات المتصلة بالأسهم",
+        "اذا كانت اسهم الشركه من انواع",
+        "وفئات مختلفه او كان نظام الشركه"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "تعديل الحقوق أو الالتزامات المتصلة بالأسهم": [
+            54
+          ],
+          "اذا كانت اسهم الشركه من انواع": [
+            54
+          ],
+          "وفئات مختلفه او كان نظام الشركه": [
+            54
+          ]
+        },
+        "any_term_hit_pages_global": [
+          54
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_03_pages_041_060.pdf",
+      "source_page_number_within_packet": 54,
+      "source_page_number_within_part": 14,
+      "evidence_snippets": [
+        {
+          "global_page": 54,
+          "snippet": "المملكة العربية السعودية 5 الرقم وأ زر ديرا َ 0 سي ا / / كاه عام 01 العونهت 156 عة عأمميع 04 بووجييه '- تسري الأحكام الواردة في المادة (العاشرة بعد المائة) من النظام في الحالات التي يترتب فيها على تحويل الأسهم تعديل أو إلغاء الحقوق أو الالتزامات المتصلة بنوع أو فئة السهم. ؛- لا يجوز تحويل الأسهم العادية ولا الأسهم الممتازة ولا أي فئة من فتاتمما إلى أسهم قابلة للاسترداد أو أي من فثاتما؛ إلا بموافقة"
+        }
+      ],
+      "batch_review_classification": "segmentation_or_alignment_drift",
+      "review_confidence": "medium",
+      "evidence_summary": "distinctive_body_phrase_found_verbatim_in_source_but_per_article_alignment_span_mismatched",
+      "recommended_next_action": "later queue-update PR: re-bucket as OCR/segmentation artifact (not a text change)",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 277,
+      "article_title_ar": "إصدار اللوائح",
+      "queue_similarity": 0.1219,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "يصدر الوزير ومجلس الهيئة اللوائح، كل فيما يخصه، خلال مدة أقصاها (مائة وثمانون) يومًا من تاريخ نشر النظام، وتبين اللوائح القواعد والمدد والإجراءات، وتحدد الوثائق أو البيانات اللازمة لتنفيذ أحكام النظام، وتبين ضوابط استعمال التقنية الحديثة في الإبلاغ والدعوة إلى حضور اجتماعات الشركاء أو المساهمين أو جمعيات المساهمين العامة والخاصة، وتبين ضوابط اشتراك الشريك أو المساهم في المداولات والتصويت على القرارات، وضوابط استحقاق حضور اجتماعات الشركاء أو المساهمين أو جمعيات المساهمين والتصويت فيها.\n\nيجوز أن يكون أي من الإجراءات المنصوص عليها في النظام، أو اللوائح؛ إلكترونيًّا، بما في ذلك تقديم طلبات تأسيس الشركات أو تعديل عقود تأسيسها أو أنظمتها الأساسية، وإجراءات القيد والشهر لدى السجل التجاري، والتوقيع على طلبات التأسيس والوثائق والسجلات الخاصة بالشركات، وإيداع القوائم المالية وغير ذلك من الإجراءات.",
+      "candidate_hash": "4515d0393b094479a811d210439f73613016325a3a772094aec0e7dc09f7f70f",
+      "official_source_hash": "1817a4cae4a2c8fee5b6010999e88f19faa49532b11a3d0cd107b6c56b23cc70",
+      "candidate_text_length": 798,
+      "ocr_text_length": 804,
+      "candidate_snippet_ar": "يصدر الوزير ومجلس الهيئة اللوائح، كل فيما يخصه، خلال مدة أقصاها (مائة وثمانون) يومًا من تاريخ نشر النظام، وتبين اللوائح القواعد والمدد والإجراءات، وتحدد الوثائق أو البيانات اللازمة لتنفيذ أحكام النظام، وتبين ضوابط استعما",
+      "ocr_snippet_ar": "‎-١‏ يصدر الوزير ومجلس اميئة اللوائح» كل فيما يخصه؛ خلال مدة أقصاها (ماثة وثمانون) يومًا من تاريخ نشر\nالنظام» وتبين اللوائح القواعد والمدد والإجراءات» وتحدد الوثائق أو البيانات اللازمة لتنفيذ أحكام النظام» وتبين\nضوابط اس",
+      "search_terms_used": [
+        "إصدار اللوائح",
+        "يصدر الوزير ومجلس الهيئه اللوائح، كل",
+        "فيما يخصه، خلال مده اقصاها (مائه"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "إصدار اللوائح": [
+            119
+          ],
+          "يصدر الوزير ومجلس الهيئه اللوائح، كل": [],
+          "فيما يخصه، خلال مده اقصاها (مائه": []
+        },
+        "any_term_hit_pages_global": [
+          119
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_06_pages_101_119.pdf",
+      "source_page_number_within_packet": 119,
+      "source_page_number_within_part": 19,
+      "evidence_snippets": [
+        {
+          "global_page": 119,
+          "snippet": "عو العربية السعودية 1 # الرقم ل-_- د 2 التاريخ / / كله اليك علي ينث /+” المادة السابعة والسبعون بعد الماثتين: إصدار اللوائح: ‎-١‏ يصدر الوزير ومجلس اميئة اللوائح» كل فيما يخصه؛ خلال مدة أقصاها (ماثة وثمانون) يومًا من تاريخ نشر النظام» وتبين اللوائح القواعد والمدد والإجراءات» وتحدد الوثائق أو البيانات اللازمة لتنفيذ أحكام النظام» وتبين ضوابط استعمال التقنية الحديثة في الإبلاغ والدعوة إلى حضور اجتما"
+        }
+      ],
+      "batch_review_classification": "likely_ocr_noise",
+      "review_confidence": "low",
+      "evidence_summary": "article_title_located_in_source_but_body_opening_not_exact_matched_consistent_with_heavy_ocr_noise",
+      "recommended_next_action": "later queue-update PR: treat as OCR noise; no candidate change",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 221,
+      "article_title_ar": "تحول الشركة غير الربحية",
+      "queue_similarity": 0.1231,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "مع مراعاة حكم الفقرة (1) من المادة (العشرين بعد المائتين) من النظام، يجوز تحول الشركة غير الربحية الخاصة دون العامة إلى أي شكل من الشركات ما لم ينص عقد تأسيس الشركة أو نظامها الأساس على غير ذلك، على أن يصرف ما زاد على رأس المال عند التأسيس من أرباح أو احتياطيات أو هبات أو غيرها في المصارف والمجالات غير الربحية المنصوص عليها في عقد تأسيسها أو نظامها الأساس، وأن ترد أي إعفاءات حصلت عليها. وتحدد اللوائح أحكام ذلك.\n\nيجوز تحول أي شركة إلى شركة غير ربحية عامة أو خاصة بإجماع الشركاء أو المساهمين.",
+      "candidate_hash": "7c8a3ca0c530a1e124602399650d76d955fffef36d8cbfb7211b4ec67f914355",
+      "official_source_hash": "2c2471611ffd1cdc5bac31c0debf481865c61e0851d211b15155067e2d3d2670",
+      "candidate_text_length": 494,
+      "ocr_text_length": 505,
+      "candidate_snippet_ar": "مع مراعاة حكم الفقرة (1) من المادة (العشرين بعد المائتين) من النظام، يجوز تحول الشركة غير الربحية الخاصة دون العامة إلى أي شكل من الشركات ما لم ينص عقد تأسيس الشركة أو نظامها الأساس على غير ذلك، على أن يصرف ما زاد على رأ",
+      "ocr_snippet_ar": "‎-١‏ مع مراعاة حكم الفقرة ‎)١(‏ من للمادة (العشرين بعد المائتين) من النظام: يجوز تحول الشركة غير الريحية الخاصة\nدون العامة إلى أي شكل من الشركات ما لم ينص عقد تأسيس الشركة أو نظامها الأساس على غير ذلك»\nعلى أن يصرف ما زاد",
+      "search_terms_used": [
+        "تحول الشركة غير الربحية",
+        "مع مراعاه حكم الفقره (1) من",
+        "الماده (العشرين بعد المائتين) من النظام،"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "تحول الشركة غير الربحية": [
+            97
+          ],
+          "مع مراعاه حكم الفقره (1) من": [],
+          "الماده (العشرين بعد المائتين) من النظام،": []
+        },
+        "any_term_hit_pages_global": [
+          97
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_05_pages_081_100.pdf",
+      "source_page_number_within_packet": 97,
+      "source_page_number_within_part": 17,
+      "evidence_snippets": [
+        {
+          "global_page": 97,
+          "snippet": "المملكة العربية السعودية 5 الرقم 1700/10 لكت سف 1 لد - حو ةعبسب أن تكون جميع حصص الشركة مملوكة ممن تربطهم صلة قرابة أو نسب أو من بينها ما هو مملوك لوقف أو ناشئ عن وصية من أحد الشركاء. ويعد باطلا كل شرط يخالف ما ورد في هذه الفقرة. المادة الحادية والعشرون بعد المائتين: تحول الشركة غير الربحية: ‎-١‏ مع مراعاة حكم الفقرة ‎)١(‏ من للمادة (العشرين بعد المائتين) من النظام: يجوز تحول الشركة غير الريحية ال"
+        }
+      ],
+      "batch_review_classification": "likely_ocr_noise",
+      "review_confidence": "low",
+      "evidence_summary": "article_title_located_in_source_but_body_opening_not_exact_matched_consistent_with_heavy_ocr_noise",
+      "recommended_next_action": "later queue-update PR: treat as OCR noise; no candidate change",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 71,
+      "article_title_ar": "الإفصاح عن المصلحة في الأعمال والعقود",
+      "queue_similarity": 0.1353,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "مع مراعاة حكم المادة (السابعة والعشرين) من النظام، يجب على عضو مجلس الإدارة فور علمه بأي مصلحة له سواء مباشرة أو غير مباشرة في الأعمال والعقود التي تكون لحساب الشركة، أن يبلغ المجلس بذلك، ويثبت هذا الإبلاغ في محضر اجتماع المجلس عند اجتماعه. ولا يجوز لهذا العضو الاشتراك في التصويت على القرار الذي يصدر في هذا الشأن في المجلس والجمعيات العامة. ويبلغ المجلس الجمعية العامة عند انعقادها عن الأعمال والعقود التي يكون لعضو المجلس مصلحة مباشرة أو غير مباشرة فيها، ويرفق بالإبلاغ تقرير خاص من مراجع حسابات الشركة يعد وفق معايير المراجعة المعتمدة في المملكة.\n\nإذا تخلف عضو المجلس عن الإفصاح عن مصلحته المشار إليها في الفقرة (1) من هذه المادة، جاز للشركة أو لكل ذي مصلحة المطالبة أمام الجهة القضائية المختصة بإبطال العقد أو إلزام العضو بأداء أي ربح أو منفعة تحققت له من ذلك.\n\nتقع المسؤولية عن الأضرار الناتجة عن الأعمال والعقود المشار إليها في الفقرة (1) من هذه المادة على العضو صاحب المصلحة من العمل أو العقد، وعلى أعضاء مجلس الإدارة عند تقصيرهم أو إهمالهم في أداء التزاماتهم بالمخالفة لأحكام تلك الفقرة أو إذا ثبت أن تلك الأعمال والعقود غير عادلة أو تنطوي على تعارض في المصالح وتلحق الضرر بالمساهمين.\n\nيعفى أعضاء مجلس الإدارة المعارضون للقرار من المسؤولية متى أثبتوا اعتراضهم صراحة في محضر الاجتماع، ولا يعد الغياب عن حضور الاجتماع الذي يصدر فيه القرار سببًا للإعفاء من المسؤولية إلا إذا ثبت أن العضو الغائب لم يعلم بالقرار أو لم يتمكن من الاعتراض عليه بعد علمه به.",
+      "candidate_hash": "800883012146a6c3ec5bbc8b67379966de223aa394efed167e18bd4b5cb68d6a",
+      "official_source_hash": "48aefc87b05505ae435f912c9803e4bb7d3c271e8ce4a400145ec7bc92a60825",
+      "candidate_text_length": 1358,
+      "ocr_text_length": 1485,
+      "candidate_snippet_ar": "مع مراعاة حكم المادة (السابعة والعشرين) من النظام، يجب على عضو مجلس الإدارة فور علمه بأي مصلحة له سواء مباشرة أو غير مباشرة في الأعمال والعقود التي تكون لحساب الشركة، أن يبلغ المجلس بذلك، ويثبت هذا الإبلاغ في محضر اجتماع",
+      "ocr_snippet_ar": "‎-١‏ مع مراعاة حكم المادة (السابعة والعشرين) من النظام؛ يجب على عضو مجلس الإدارة فور علمه بأي مصلحة\nله سواء مباشرة أو غير مباشرة في الأعمال والعقود التي تكون لحساب الشركة» أن يبلغ امجلس بذلك؛ وينبت\n\nيانه لخدف\" المي بكي 1",
+      "search_terms_used": [
+        "الإفصاح عن المصلحة في الأعمال والعقود",
+        "مع مراعاه حكم الماده (السابعه والعشرين)",
+        "من النظام، يجب علي عضو مجلس"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "الإفصاح عن المصلحة في الأعمال والعقود": [
+            36
+          ],
+          "مع مراعاه حكم الماده (السابعه والعشرين)": [
+            36
+          ],
+          "من النظام، يجب علي عضو مجلس": [
+            36
+          ]
+        },
+        "any_term_hit_pages_global": [
+          36
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_02_pages_021_040.pdf",
+      "source_page_number_within_packet": 36,
+      "source_page_number_within_part": 16,
+      "evidence_snippets": [
+        {
+          "global_page": 36,
+          "snippet": "اع المملكة العربية السعودية الرقم بالل سد 72 000 1 التاريخ / / كاه العف نه عار وى ااا ال 4- مالم ينص نظام الشركة الأساس على غير ذلك» إذا شغر مركز أحد أعضاء مجلس إدارة شركة المساهمة لوفاته أو اعتزاله ولم ينتج عن هذا الشغور إخلال بالشروط اللازمة لصحة انعقاد المجلس بسبب نقص عدد أعضائه عن الحد الأدن المنصوص عليه في النظام أو نظام الشركة الأساس؛ فللمجلس أن يعين -مؤقئًا- في للركز الشاغر من تتوافر فيه ال"
+        }
+      ],
+      "batch_review_classification": "segmentation_or_alignment_drift",
+      "review_confidence": "medium",
+      "evidence_summary": "distinctive_body_phrase_found_verbatim_in_source_but_per_article_alignment_span_mismatched",
+      "recommended_next_action": "later queue-update PR: re-bucket as OCR/segmentation artifact (not a text change)",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 123,
+      "article_title_ar": "تكوين الاحتياطيات",
+      "queue_similarity": 0.1379,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "يجوز النص في نظام الشركة الأساس على تجنيب نسبة معينة من صافي الأرباح لتكوين احتياطي يخصص للأغراض التي يحددها النظام الأساس. وللجهة المختصة وضع ضوابط تكوين الاحتياطيات.\n\nللجمعية العامة العادية -عند تحديد نصيب الأسهم في صافي الأرباح- أن تقرر تكوين احتياطيات أخرى، وذلك بالقدر الذي يحقق مصلحة الشركة أو يكفل توزيع أرباح ثابتة -قدر الإمكان- على المساهمين. وللجمعية المذكورة كذلك أن تقتطع من صافي الأرباح مبالغ لتحقيق أغراض اجتماعية لعاملي الشركة.",
+      "candidate_hash": "290bb6cfe3d3b95084ab37951de9aee21df0582317040416e5f8d5a625e2694a",
+      "official_source_hash": "b92e8db20ad537a24a80a9894299cebb89bb17c87b595eeec34a998c33464c2f",
+      "candidate_text_length": 442,
+      "ocr_text_length": 512,
+      "candidate_snippet_ar": "يجوز النص في نظام الشركة الأساس على تجنيب نسبة معينة من صافي الأرباح لتكوين احتياطي يخصص للأغراض التي يحددها النظام الأساس. وللجهة المختصة وضع ضوابط تكوين الاحتياطيات.\n\nللجمعية العامة العادية -عند تحديد نصيب الأسهم في صا",
+      "ocr_snippet_ar": "‎-١‏ يجوز النص في نظام الشركة الأساس على تحنيب نسبة معينة من صانئي الأرباح لتكوين احتياطي يخصص\nللأغراض التي يحددها النظام الأساس. وللجهة المختصة وضع ضوابط نكوين الاحتياطيات.\n\n‏؟- للجمعية العامة العادية -عند تحديد نصيب ال",
+      "search_terms_used": [
+        "تكوين الاحتياطيات",
+        "يجوز النص في نظام الشركه الاساس",
+        "علي تجنيب نسبه معينه من صافي"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "تكوين الاحتياطيات": [
+            58,
+            81
+          ],
+          "يجوز النص في نظام الشركه الاساس": [
+            53,
+            58
+          ],
+          "علي تجنيب نسبه معينه من صافي": []
+        },
+        "any_term_hit_pages_global": [
+          53,
+          58,
+          81
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_03_pages_041_060.pdf",
+      "source_page_number_within_packet": 53,
+      "source_page_number_within_part": 13,
+      "evidence_snippets": [
+        {
+          "global_page": 53,
+          "snippet": "الم ملكة العربية السعودية الرقم دو نر + لقا 7ه 0 كاجمم»ع 00 هون حر المرفقات المادة السابعة بعد المائة: الحقوق المتصلة بالأسهم: تثبت للمساهم الحقوق المتصلة بالسهم؛ وتشمل حق التصرف فيه وحق حضور جمعيات المساهمين؛ والاشتراك في مداولاتماء والتصويت على قراراتماء والحق في الحصول على نصيب من صافي الأرباح التي يتقرر توزيعهاء وحق انتخاب أعضاء مجلس الإدارة» وحق الاطلاع على سجلات الشركة ووثائقها بما لا يخل بس"
+        }
+      ],
+      "batch_review_classification": "segmentation_or_alignment_drift",
+      "review_confidence": "medium",
+      "evidence_summary": "distinctive_body_phrase_found_verbatim_in_source_but_per_article_alignment_span_mismatched",
+      "recommended_next_action": "later queue-update PR: re-bucket as OCR/segmentation artifact (not a text change)",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 138,
+      "article_title_ar": "مفهوم شركة المساهمة المبسطة",
+      "queue_similarity": 0.1883,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "تسري على شركة المساهمة المبسطة فيما لم يرد به نص خاص في هذا الباب، وبما يتفق مع طبيعتها، أحكام شركة المساهمة عدا المواد: (الحادية والستين)، و(الثالثة والستين)، ومن (السابعة والستين) إلى (الحادية والسبعين)، ومن (الرابعة والسبعين) إلى (الثامنة والثمانين)، ومن (التسعين) إلى (الرابعة والتسعين)، و(الخامسة والتسعين/1)، ومن (السادسة والتسعين) إلى (الثامنة والتسعين)، و(المائة)، و(الأولى بعد المائة)، و(الحادية عشرة بعد المائة/2)، و(الحادية والعشرين بعد المائة)، و(الثانية والعشرين بعد المائة).\n\nللمساهمين في شركة المساهمة المبسطة تنظيم هيكلة الشركة وطريقة عملها، وذلك في نظام الشركة الأساس.\n\nيحل المساهمون محل الجمعية العامة العادية وغير العادية لشركة المساهمة، وذلك في نطاق الأحكام التي تسري على شركة المساهمة المبسطة. وللمساهمين تحديد من يتولى تلك الاختصاصات في نظام الشركة الأساس وذلك فيما لم يرد به نص خاص في هذا الباب.\n\nيمارس رئيس شركة المساهمة المبسطة أو مديرها أو مجلس إدارتها، بحسب الأحوال، جميع الاختصاصات المقررة لرئيس وأعضاء مجلس إدارة شركة المساهمة ويحلون محلهم، وذلك فيما لم يرد به نص خاص في هذا الباب.",
+      "candidate_hash": "0cab5fd6f3842f09125b3832443608fcb33af5b992bce0acafafa4a31f31a5a4",
+      "official_source_hash": "4b1c762b7825153ffbc424bbdc1ff60785f79d4e81cad02e577c2ea3151054c3",
+      "candidate_text_length": 1010,
+      "ocr_text_length": 1132,
+      "candidate_snippet_ar": "تسري على شركة المساهمة المبسطة فيما لم يرد به نص خاص في هذا الباب، وبما يتفق مع طبيعتها، أحكام شركة المساهمة عدا المواد: (الحادية والستين)، و(الثالثة والستين)، ومن (السابعة والستين) إلى (الحادية والسبعين)، ومن (الرابعة و",
+      "ocr_snippet_ar": "‎-١‏ تسري على شركة المساهمة المبسطة فيما لم يرد به نص خاص في هذا الباب؛ وبما يتفق مع طبيعتهاء أحكام\nشركة المساهمة عدا المواد: (الحادية والستين)» و(الثالثة والستين)» ومن (السابعة والستين) إلى (الحادية\nوالسبعين)» ومن (الرا",
+      "search_terms_used": [
+        "مفهوم شركة المساهمة المبسطة",
+        "تسري علي شركه المساهمه المبسطه فيما",
+        "لم يرد به نص خاص في"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "مفهوم شركة المساهمة المبسطة": [
+            64
+          ],
+          "تسري علي شركه المساهمه المبسطه فيما": [
+            64
+          ],
+          "لم يرد به نص خاص في": [
+            64,
+            88
+          ]
+        },
+        "any_term_hit_pages_global": [
+          64,
+          88
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_04_pages_061_080.pdf",
+      "source_page_number_within_packet": 64,
+      "source_page_number_within_part": 4,
+      "evidence_snippets": [
+        {
+          "global_page": 64,
+          "snippet": "المملكة العربية السعودية 5 الرقم سوكين ل سه 22 - وموثهاولاة 01 اأعميامك هآ ثم وأبميع 01 بومن8 ‎-١‏ إذا زاد عدد الأسهم المعروضة للبيع على العدد الذي قررت الشركة شراءه» وجب تخفيض طلبات البيع بنسبة هذه الزيادة. ‏- يقدر تمن شراء أسهم شركات المساهمة غير المدرجة في السوق المالية وفمًا للقيمة العادلة» أما أسهم شركات المساهمة المدرجة فتشترى وفقًا لنظام السوق المالية. ‏الباب الخامس: شركة المساهمة المبسطة ا"
+        }
+      ],
+      "batch_review_classification": "segmentation_or_alignment_drift",
+      "review_confidence": "medium",
+      "evidence_summary": "distinctive_body_phrase_found_verbatim_in_source_but_per_article_alignment_span_mismatched",
+      "recommended_next_action": "later queue-update PR: re-bucket as OCR/segmentation artifact (not a text change)",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    },
+    {
+      "article_number": 228,
+      "article_title_ar": "نفاذ قرار الاندماج",
+      "queue_similarity": 0.2076,
+      "queue_bucket_before": "low_similarity_manual_review",
+      "queue_priority_before": "P1",
+      "candidate_text": "يسري قرار الاندماج ويعد نافذًا من تاريخ قيد بيانات الشركة المندمجة في سجل الشركة الدامجة لدى السجل التجاري، وفيما عدا ذلك يسري قرار الاندماج ويعد نافذًا من تاريخ قيد الشركة الناشئة عنه لدى السجل التجاري.",
+      "candidate_hash": "27ce5d18d80b53f391829ca48fdfb7855595e866be4baad31c0536bbf98b70ad",
+      "official_source_hash": "75abf66ff0eaf2b30d6f0a62397311ca91fcfe2d516185a17334f0e2c9cf50be",
+      "candidate_text_length": 203,
+      "ocr_text_length": 284,
+      "candidate_snippet_ar": "يسري قرار الاندماج ويعد نافذًا من تاريخ قيد بيانات الشركة المندمجة في سجل الشركة الدامجة لدى السجل التجاري، وفيما عدا ذلك يسري قرار الاندماج ويعد نافذًا من تاريخ قيد الشركة الناشئة عنه لدى السجل التجاري.",
+      "ocr_snippet_ar": "يسري قرار الاندماج ويعد نافدًا من تاريخ قيد بيانات الشركة المندمجة في سجل الشركة الدامجة لدى السجل\n\n‏التجاري» وفيما عدا ذلك يسري قرار الاندماج ويعد نافدًا من تاريخ قيد الشركة الناشئة عنه لدى السجل التجاري.\n\n‎5\n\n\nالمملكة ",
+      "search_terms_used": [
+        "نفاذ قرار الاندماج",
+        "يسري قرار الاندماج ويعد نافذا من",
+        "تاريخ قيد بيانات الشركه المندمجه في"
+      ],
+      "ocr_pages_searched": {
+        "scope": "all 119 packet pages (already-captured OCR artifact; no new OCR run)",
+        "total_pages": 119,
+        "term_hit_pages_global": {
+          "نفاذ قرار الاندماج": [
+            99,
+            100
+          ],
+          "يسري قرار الاندماج ويعد نافذا من": [],
+          "تاريخ قيد بيانات الشركه المندمجه في": [
+            99
+          ]
+        },
+        "any_term_hit_pages_global": [
+          99,
+          100
+        ]
+      },
+      "source_location_found": true,
+      "source_part_file": "inputs/official_arabic_verification/nizam_alsharikat_1443h_parts/nizam_alsharikat_1443h_part_05_pages_081_100.pdf",
+      "source_page_number_within_packet": 99,
+      "source_page_number_within_part": 19,
+      "evidence_snippets": [
+        {
+          "global_page": 99,
+          "snippet": "يي المملكة العربية السعودية اترقم سلعتسسده ا م مه 7270-1 المرفقات _ لد المادة السادسة والعشرون بعد المائتين: اندماج الشركة في شركة مالكة لها: تحدد اللوائح ضوابط تنظيم اندماج شركة أو أكثر في شر ركة مالكة ها بالكامل؛ أو اندماج شركتين أو أكثر مملوكة بالكامل لنفس الشركاء أو المساهمين؛ وها استثناء تلك الحالات من بعض الأحكام الواردة في هذا الباب. المادة السابعة والعشرون بعد المائتين: الاعتراض على قرار ا"
+        }
+      ],
+      "batch_review_classification": "segmentation_or_alignment_drift",
+      "review_confidence": "medium",
+      "evidence_summary": "distinctive_body_phrase_found_verbatim_in_source_but_per_article_alignment_span_mismatched",
+      "recommended_next_action": "later queue-update PR: re-bucket as OCR/segmentation artifact (not a text change)",
+      "verification_action_allowed": false,
+      "candidate_text_changed": false,
+      "verification_status_changed": false,
+      "article_by_article_verified": false
+    }
+  ]
+}
