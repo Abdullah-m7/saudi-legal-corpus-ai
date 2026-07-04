@@ -36,7 +36,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-legal-llm-book4-section5-data chinese-legal-llm-validate \
         official-arabic-foundation-validate official-arabic-user-provided-data \
         official-arabic-ingestion-validate official-arabic-verification-report-validate \
-        official-arabic-manual-review-queue-validate
+        official-arabic-manual-review-queue-validate official-arabic-p0-article3-review-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -387,6 +387,10 @@ official-arabic-verification-report-validate:
 # candidate + OCR artifact (no OCR engine) and rewrites the queue deterministically.
 official-arabic-manual-review-queue-validate:
 	$(PY) scripts/validate_official_arabic_manual_review_queue.py
+
+# -- Official Arabic P0 Article 3 segmentation review (triage only; promotes nothing) --
+official-arabic-p0-article3-review-validate:
+	$(PY) scripts/validate_official_arabic_p0_article3_review.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
