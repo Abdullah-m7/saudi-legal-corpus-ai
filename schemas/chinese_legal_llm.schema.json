@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/chinese_legal_llm.schema.json",
+  "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/chinese_legal_llm.schema.json",
   "title": "Chinese Legal LLM-ready record",
   "description": "Structured Chinese legal-understanding layer built ON TOP of the existing internal Chinese provision text. The core text `legal_rule_text_zh` is copied VERBATIM from the corresponding Book Four provision's `chinese_translation` field — it is NOT a new/machine translation and NOT a model-generated summary. The Chinese is an INTERNAL WORKING TRANSLATION / LLM-ready metadata only; the governing/binding text is the Arabic original. This layer is not an official translation and is not legal advice. `additionalProperties` is false, so no generated-summary field (e.g. `legal_rule_summary_zh`) may appear.",
   "type": "object",

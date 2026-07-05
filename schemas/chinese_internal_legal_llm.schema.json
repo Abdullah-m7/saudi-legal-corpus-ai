@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/chinese_internal_legal_llm.schema.json",
+  "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/chinese_internal_legal_llm.schema.json",
   "title": "Chinese internal LLM-ready candidate record (isolable source text)",
   "description": "Internal, non-official Chinese LLM/RAG candidate layer built ONLY from articles that have isolable per-article Chinese source text in the owner-provided Chinese PDFs. Each record carries the verbatim Chinese source text plus mechanical retrieval metadata only — it does NOT translate, expand, correct, summarize, or improve the Chinese, and it is NOT generated from Arabic or English. Chinese is an internal working/reference translation only — NOT official, NOT binding, NOT governing; the Arabic text is governing. This is NOT a full verified Chinese translation of the law. Not legal advice.",
   "type": "object",
