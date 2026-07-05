@@ -9,6 +9,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
 
 ---
 
+## Repository name
+
+- **Current name:** `saudi-legal-corpus-ai` — **former name:**
+  `saudi-companies-law-ar-zh-llm`. The GitHub rename is performed manually; see
+  [`REPOSITORY_RENAME.md`](REPOSITORY_RENAME.md).
+
 ## Baseline
 
 - **Baseline `main` commit:** `0a2e5c3e6457009ddf1d0ba2fb4d669091317ced`

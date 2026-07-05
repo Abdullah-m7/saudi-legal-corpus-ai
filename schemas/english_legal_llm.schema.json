@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/english_legal_llm.schema.json",
+  "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/english_legal_llm.schema.json",
   "title": "English Legal LLM-ready record",
   "description": "Structured English legal-understanding layer built ON TOP of the official English guidance REFERENCE alignment. The core text `legal_rule_text_en` is copied VERBATIM from the corresponding English reference record's `english_reference_text` — it is NOT a model-generated summary. The English is official GUIDANCE / reference only; the governing/binding text is the Arabic original. This layer is not legal advice. `additionalProperties` is false, so no generated-summary field (e.g. `legal_rule_summary_en`) may appear.",
   "type": "object",

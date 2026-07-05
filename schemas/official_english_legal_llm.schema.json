@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/al3obdi/saudi-companies-law-ar-zh-llm/schemas/official_english_legal_llm.schema.json",
+  "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/official_english_legal_llm.schema.json",
   "title": "Official English full-text Legal LLM-ready record",
   "description": "LLM/RAG-ready layer over the FULL official English BOE guidance translation (281 articles), built directly on the exact english_reference_text from the full English reference alignment file. This layer carries the verbatim English guidance text plus mechanical retrieval metadata only — it does NOT summarize, paraphrase, translate, analyze, or OCR-correct the text. English is an official guidance translation only (NOT binding, NOT governing); the Arabic text is governing. Not legal advice.",
   "type": "object",

@@ -10,6 +10,9 @@ not the identity of the project.
 > **[`STATUS.md`](STATUS.md)** · structure **[`REPOSITORY_MAP.md`](REPOSITORY_MAP.md)**
 > · uses **[`USE_CASES.md`](USE_CASES.md)**.
 
+**Repository name:** `saudi-legal-corpus-ai` (former name:
+`saudi-companies-law-ar-zh-llm`). See [`REPOSITORY_RENAME.md`](REPOSITORY_RENAME.md).
+
 ## What this repository is
 
 - A **multilingual, LLM-ready, official-source-based Saudi legal corpus for AI**.

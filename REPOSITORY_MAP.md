@@ -19,6 +19,7 @@ legal advice.
 | `START_HERE.md` | Documentation | Onboarding for developers/reviewers/stakeholders | Yes |
 | `STATUS.md` | Documentation | Single source of truth for current state | Yes |
 | `USE_CASES.md` | Documentation | Practical uses without overclaiming | — |
+| `REPOSITORY_RENAME.md` | Documentation | Repository rename note (`saudi-legal-corpus-ai`; former `saudi-companies-law-ar-zh-llm`) + manual steps | — |
 | `NOTICE.md` | Documentation | Legal notice / non-official-status disclaimer | — |
 | `LICENSE` | Documentation | MIT license for source code | — |
 | `Makefile` | Validator/build | All validation and build targets (`make help`) | Yes |

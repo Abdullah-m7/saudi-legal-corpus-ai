@@ -23,6 +23,10 @@ views), each validated by read-only, idempotent checks.
   enterprises operating in or entering Saudi Arabia, investors, researchers,
   developers, and ordinary users**.
 
+> **Repository name:** `saudi-legal-corpus-ai` (former name:
+> `saudi-companies-law-ar-zh-llm`). The GitHub rename is done manually — see
+> [`REPOSITORY_RENAME.md`](REPOSITORY_RENAME.md).
+
 ## What should I read first?
 
 1. [`README.md`](README.md) — project identity, quick navigation, quick

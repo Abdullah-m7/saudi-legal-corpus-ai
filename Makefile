@@ -62,7 +62,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-batch-p0-005-qa-validate \
         chinese-remediation-batch-p1-001-validate \
         legal-corpus-factory-foundation-validate \
-        repository-ux-docs-validate
+        repository-ux-docs-validate \
+        repository-rename-readiness-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -538,6 +539,10 @@ legal-corpus-factory-foundation-validate:
 # -- Repository UX / navigation docs (README top + START_HERE/STATUS/REPOSITORY_MAP/USE_CASES) --
 repository-ux-docs-validate:
 	$(PY) scripts/validate_repository_ux_docs.py
+
+# -- Repository rename readiness (saudi-companies-law-ar-zh-llm -> saudi-legal-corpus-ai) --
+repository-rename-readiness-validate:
+	$(PY) scripts/validate_repository_rename_readiness.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
