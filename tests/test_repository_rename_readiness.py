@@ -99,9 +99,9 @@ def test_corpus_layers_unchanged():
     assert rc("data/chinese_remediation_batches/p1_001/companies_law_m132_1443_zh_internal_remediation_p1_001.json") == 20
 
 
-def test_no_p1_001_qa_and_no_later_batches():
-    # Rename PR must not start P1-001 QA or any later batch.
-    assert not glob.glob(os.path.join(ROOT, "reports", "chinese_translation_review", "*p1_001_qa*"))
+def test_no_later_batches():
+    # The authorized P1-001 (and its later-authorized QA) may exist; only p1_002+/P2/P3 batch dirs
+    # remain forbidden. (The rename-readiness change itself neither started QA nor any later batch.)
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
              if os.path.basename(x) != "p1_001"]
     assert not later

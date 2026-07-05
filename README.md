@@ -1022,6 +1022,10 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
 - Data under [`data/chinese_remediation_batches/p1_001/`](data/chinese_remediation_batches/p1_001/);
   report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P1_001_AR.md`. Validate:
   `make chinese-remediation-batch-p1-001-validate`.
+- **QA:** article-by-article review of all 20 retranslations against the official Arabic governing text
+  (English secondary) → **PASS (20/20, no minor fixes)**; review only (P1-001 data unchanged).
+  Artifacts: `reports/chinese_translation_review/chinese_remediation_batch_p1_001_qa.json` +
+  `CHINESE_REMEDIATION_BATCH_P1_001_QA_AR.md`. Validate: `make chinese-remediation-batch-p1-001-qa-validate`.
 
 ## Multilingual Saudi legal corpus for AI (foundation)
 
