@@ -74,7 +74,7 @@ def test_status_records_counts():
 def test_status_records_boundaries():
     low = _norm(_read(STATUS))
     for boundary in (
-        "p2-002 onward / p3: not started",
+        "p2-002 qa / p2-003 onward / p3: not started",
         "full chinese 281 layer: not created",
         "trilingual alignment: not created",
         "public release: not created",
