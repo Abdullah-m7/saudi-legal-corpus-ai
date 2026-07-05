@@ -103,11 +103,36 @@ def test_law_profile_does_not_overclaim_chinese():
         assert term not in blob, term
 
 
-def test_law_profile_keeps_human_review_pending():
+def test_repository_legal_review_model():
     prof = _read(PROFILE)
-    assert prof["review_policy"]["human_legal_review_status"] == "pending_human_legal_review"
-    assert prof["review_policy"]["human_legal_review_completed"] is False
+    sb = prof["source_basis"]
+    assert sb["status"] == "official_source_based"
+    assert sb["governing_source_language"] == "ar"
+    rlr = prof["repository_legal_review"]
+    assert rlr["repository_legal_review_status"] == "repository_owner_review_active"
+    assert isinstance(rlr["repository_review_scope"], list) and rlr["repository_review_scope"]
     assert prof["release_policy"]["public_release_created"] is False
+
+
+def test_repository_owner_legal_background_fields():
+    rlr = _read(PROFILE)["repository_legal_review"]
+    assert rlr["repository_owner_has_legal_background"] is True
+    assert rlr["repository_owner_legal_qualification"] == "bachelor_of_law"
+
+
+def test_external_legal_review_optional_model():
+    elr = _read(PROFILE)["external_legal_review"]
+    assert elr["external_legal_review_required_for_repository_use"] is False
+    assert elr["external_legal_review_optional_for_enterprise_or_official_adoption"] is True
+    assert elr["external_legal_review_status"] == "not_performed"
+
+
+def test_no_official_government_adoption_claim():
+    ost = _read(PROFILE)["official_status"]
+    assert ost["official_government_publication"] is False
+    assert ost["official_translation_claimed"] is False
+    assert ost["official_adoption_claimed"] is False
+    assert ost["not_legal_advice"] is True
 
 
 def test_batch_config_matches_existing_qa_scope():
@@ -127,13 +152,14 @@ def test_batch_config_babs_and_distribution_match_existing_qa():
     assert bc_dist == DIST == qa_dist
 
 
-def test_terminology_seed_entries_have_required_fields_and_pending_status():
+def test_terminology_seed_entries_have_required_fields_and_repository_review_status():
+    allowed = {"seed_repository_owner_review_active", "seed_pending_repository_owner_review"}
     terms = _read(TERMS)["terms"]
     assert len(terms) >= 20
     for t in terms:
         for f in ("term_ar", "term_en", "term_zh", "domain_context", "notes_ar", "status"):
             assert f in t, (f, t.get("term_ar"))
-        assert t["status"] == "seed_pending_human_legal_review"
+        assert t["status"] in allowed, t.get("term_ar")
 
 
 def test_schemas_exist_and_parse():
@@ -144,11 +170,22 @@ def test_schemas_exist_and_parse():
         assert "properties" in sc and "required" in sc
 
 
-def test_doctrine_exists_and_contains_arabic_governing_principle():
+def test_doctrine_exists_and_says_arabic_source_governs():
     assert os.path.exists(DOCTRINE)
     with open(DOCTRINE, encoding="utf-8") as fh:
         text = fh.read()
-    assert "العربية هي النص القانوني الحاكم" in text
+    assert ("المصدر العربي الرسمي هو النص الحاكم" in text
+            or "المصدر العربي الرسمي حاكم" in text)
+
+
+def test_doctrine_does_not_imply_external_review_required_for_use():
+    with open(DOCTRINE, encoding="utf-8") as fh:
+        text = fh.read()
+    # external review is stated as OPTIONAL, and the old blanket "pending" framing is gone.
+    assert "المراجعة الخارجية اختيارية" in text
+    for stale in ("human legal review remains pending", "pending_human_legal_review",
+                  "بانتظار مراجعة قانونية بشرية", "المراجعة القانونية البشرية معلّقة"):
+        assert stale not in text, stale
 
 
 def test_doctrine_contains_no_false_official_chinese_claim():
@@ -162,8 +199,8 @@ def test_architecture_exists_and_describes_reusable_components():
     assert os.path.exists(ARCH)
     with open(ARCH, encoding="utf-8") as fh:
         text = fh.read()
-    for comp in ("ملف تعريف النظام", "إعداد الدفعة", "جواز مصدر المادة", "بنك المصطلحات",
-                 "طابور المراجعة البشرية"):
+    for comp in ("طبقات البيانات", "ملفات تعريف الأنظمة", "إعدادات الدفعات", "بنك المصطلحات",
+                 "فئات المستخدمين"):
         assert comp in text, comp
 
 

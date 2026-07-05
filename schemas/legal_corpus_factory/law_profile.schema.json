@@ -16,7 +16,10 @@
     "official_source_status",
     "source_files",
     "legal_hierarchy",
-    "review_policy",
+    "source_basis",
+    "repository_legal_review",
+    "external_legal_review",
+    "official_status",
     "release_policy",
     "created_for_repository",
     "notes"
@@ -46,7 +49,70 @@
         "not_legal_advice": {"type": "boolean"}
       }
     },
-    "review_policy": {"type": "object", "additionalProperties": true},
+    "source_basis": {
+      "type": "object",
+      "required": ["status", "governing_source_language"],
+      "additionalProperties": true,
+      "properties": {
+        "status": {"type": "string"},
+        "governing_source_language": {"type": "string", "enum": ["ar"]},
+        "source_verification_note": {"type": "string"}
+      }
+    },
+    "repository_legal_review": {
+      "type": "object",
+      "required": [
+        "repository_owner_has_legal_background",
+        "repository_owner_legal_qualification",
+        "repository_legal_review_status",
+        "repository_review_scope"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "repository_owner_has_legal_background": {"type": "boolean"},
+        "repository_owner_legal_qualification": {"type": "string"},
+        "repository_legal_review_status": {"type": "string"},
+        "repository_review_scope": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "external_legal_review": {
+      "type": "object",
+      "required": [
+        "external_legal_review_required_for_repository_use",
+        "external_legal_review_optional_for_enterprise_or_official_adoption",
+        "external_legal_review_status"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "external_legal_review_required_for_repository_use": {"type": "boolean"},
+        "external_legal_review_optional_for_enterprise_or_official_adoption": {"type": "boolean"},
+        "external_legal_review_status": {"type": "string"}
+      }
+    },
+    "official_status": {
+      "type": "object",
+      "required": [
+        "official_government_publication",
+        "official_translation_claimed",
+        "official_adoption_claimed",
+        "not_legal_advice"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "official_government_publication": {"type": "boolean"},
+        "official_translation_claimed": {"type": "boolean"},
+        "official_adoption_claimed": {"type": "boolean"},
+        "chinese_official": {"type": "boolean"},
+        "chinese_binding": {"type": "boolean"},
+        "chinese_governing": {"type": "boolean"},
+        "not_legal_advice": {"type": "boolean"}
+      }
+    },
+    "review_policy": {
+      "type": "object",
+      "description": "Deprecated/optional: superseded by repository_legal_review + external_legal_review.",
+      "additionalProperties": true
+    },
     "release_policy": {"type": "object", "additionalProperties": true},
     "created_for_repository": {"type": "string", "minLength": 1},
     "notes": {"type": "string"}

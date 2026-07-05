@@ -1,29 +1,169 @@
 {
-  "schema_note": "Seed terminology aid for the Saudi Companies Law corpus factory. Internal reference only; NOT an official glossary. Every entry is status=seed_pending_human_legal_review. Arabic is the governing legal term; English and Chinese are internal reference aids pending human legal review. Not legal advice.",
+  "schema_note": "Seed terminology aid for the Saudi Companies Law corpus factory. Internal reference only; NOT an official glossary. Every entry is status=seed_repository_owner_review_active. Arabic is the governing legal term; English and Chinese are internal reference aids under active repository-owner review (legal background, bachelor of law). Not legal advice.",
   "not_legal_advice": true,
   "law_id": "sa_companies_law_m132_1443",
   "governing_language": "ar",
-  "bank_status": "seed_pending_human_legal_review",
+  "bank_status": "seed_repository_owner_review_active",
   "terms": [
-    {"term_ar": "شركة مساهمة", "term_en": "joint-stock company", "term_zh": "股份公司", "domain_context": "company_forms", "notes_ar": "الشكل الأساس المنظَّم في الباب الرابع.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "شركة مساهمة مبسطة", "term_en": "simplified joint-stock company", "term_zh": "简易股份公司", "domain_context": "company_forms", "notes_ar": "منظَّمة في الباب الخامس.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "شركة ذات مسؤولية محدودة", "term_en": "limited liability company", "term_zh": "有限责任公司", "domain_context": "company_forms", "notes_ar": "منظَّمة في الباب السادس؛ يُشار إلى أصحابها بالشركاء وحصصهم بالحصص.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "شركة غير ربحية", "term_en": "non-profit company", "term_zh": "非营利公司", "domain_context": "company_forms", "notes_ar": "منظَّمة في الباب السابع؛ يُشار إلى المنتمين إليها بالأعضاء.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "شركة قابضة", "term_en": "holding company", "term_zh": "控股公司", "domain_context": "group_structures", "notes_ar": "الباب التاسع.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "شركة تابعة", "term_en": "subsidiary company", "term_zh": "子公司", "domain_context": "group_structures", "notes_ar": "الباب التاسع.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "حصص", "term_en": "interests (quotas)", "term_zh": "出资份额", "domain_context": "capital_instruments", "notes_ar": "حصص الشركاء في الشركة ذات المسؤولية المحدودة/غيرها؛ مقابل الأسهم في شركة المساهمة.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "أسهم", "term_en": "shares", "term_zh": "股份", "domain_context": "capital_instruments", "notes_ar": "أسهم شركة المساهمة؛ اسمية وغير قابلة للتجزئة في مواجهة الشركة.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "جمعية عامة", "term_en": "general assembly", "term_zh": "股东大会", "domain_context": "governance", "notes_ar": "العادية = 普通股东大会؛ غير العادية = 特别股东大会؛ الخاصة/الفئوية = جمعية خاصة.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "شريك", "term_en": "partner", "term_zh": "合伙人", "domain_context": "membership", "notes_ar": "في الشركة ذات المسؤولية المحدودة والشركات غير المساهمة.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "مساهم", "term_en": "shareholder", "term_zh": "股东", "domain_context": "membership", "notes_ar": "في شركة المساهمة وشركة المساهمة المبسطة.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "مدير", "term_en": "manager", "term_zh": "经理", "domain_context": "management", "notes_ar": "مدير الشركة؛ ومجلس المديرين = مجلس مديرين.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "مجلس إدارة", "term_en": "board of directors", "term_zh": "董事会", "domain_context": "management", "notes_ar": "عضو مجلس الإدارة = 董事会成员؛ رئيس مجلس الإدارة = 董事长.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "رأس المال", "term_en": "capital", "term_zh": "资本", "domain_context": "capital", "notes_ar": "المصدر = 已发行资本؛ المصرح به = 授权资本؛ زيادة/تخفيض رأس المال.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "أداة دين", "term_en": "debt instrument", "term_zh": "债务工具", "domain_context": "financing", "notes_ar": "قابلة للتحويل إلى أسهم وفق نظام السوق المالية.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "صك تمويلي", "term_en": "financing sukuk", "term_zh": "融资凭证", "domain_context": "financing", "notes_ar": "المصطلح الصيني مرجعي داخلي؛ بانتظار مراجعة قانونية بشرية للمقابل الدقيق.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "تحول الشركة", "term_en": "company conversion", "term_zh": "公司形式转换", "domain_context": "restructuring", "notes_ar": "الباب العاشر؛ تحول الشركة إلى شكل آخر.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "مخالفة", "term_en": "violation", "term_zh": "违规", "domain_context": "penalties", "notes_ar": "الباب الثالث عشر (العقوبات).", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "عقوبة", "term_en": "penalty", "term_zh": "罚则", "domain_context": "penalties", "notes_ar": "السجن = 监禁؛ الغرامة = 罚款.", "status": "seed_pending_human_legal_review"},
-    {"term_ar": "لائحة تنفيذية", "term_en": "implementing regulations", "term_zh": "实施条例", "domain_context": "regulatory_framework", "notes_ar": "اللائحة التنفيذية لنظام الشركات؛ مرشحة لإدماج مستقبلي في المصنع.", "status": "seed_pending_human_legal_review"}
+    {
+      "term_ar": "شركة مساهمة",
+      "term_en": "joint-stock company",
+      "term_zh": "股份公司",
+      "domain_context": "company_forms",
+      "notes_ar": "الشكل الأساس المنظَّم في الباب الرابع.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "شركة مساهمة مبسطة",
+      "term_en": "simplified joint-stock company",
+      "term_zh": "简易股份公司",
+      "domain_context": "company_forms",
+      "notes_ar": "منظَّمة في الباب الخامس.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "شركة ذات مسؤولية محدودة",
+      "term_en": "limited liability company",
+      "term_zh": "有限责任公司",
+      "domain_context": "company_forms",
+      "notes_ar": "منظَّمة في الباب السادس؛ يُشار إلى أصحابها بالشركاء وحصصهم بالحصص.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "شركة غير ربحية",
+      "term_en": "non-profit company",
+      "term_zh": "非营利公司",
+      "domain_context": "company_forms",
+      "notes_ar": "منظَّمة في الباب السابع؛ يُشار إلى المنتمين إليها بالأعضاء.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "شركة قابضة",
+      "term_en": "holding company",
+      "term_zh": "控股公司",
+      "domain_context": "group_structures",
+      "notes_ar": "الباب التاسع.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "شركة تابعة",
+      "term_en": "subsidiary company",
+      "term_zh": "子公司",
+      "domain_context": "group_structures",
+      "notes_ar": "الباب التاسع.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "حصص",
+      "term_en": "interests (quotas)",
+      "term_zh": "出资份额",
+      "domain_context": "capital_instruments",
+      "notes_ar": "حصص الشركاء في الشركة ذات المسؤولية المحدودة/غيرها؛ مقابل الأسهم في شركة المساهمة.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "أسهم",
+      "term_en": "shares",
+      "term_zh": "股份",
+      "domain_context": "capital_instruments",
+      "notes_ar": "أسهم شركة المساهمة؛ اسمية وغير قابلة للتجزئة في مواجهة الشركة.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "جمعية عامة",
+      "term_en": "general assembly",
+      "term_zh": "股东大会",
+      "domain_context": "governance",
+      "notes_ar": "العادية = 普通股东大会؛ غير العادية = 特别股东大会؛ الخاصة/الفئوية = جمعية خاصة.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "شريك",
+      "term_en": "partner",
+      "term_zh": "合伙人",
+      "domain_context": "membership",
+      "notes_ar": "في الشركة ذات المسؤولية المحدودة والشركات غير المساهمة.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "مساهم",
+      "term_en": "shareholder",
+      "term_zh": "股东",
+      "domain_context": "membership",
+      "notes_ar": "في شركة المساهمة وشركة المساهمة المبسطة.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "مدير",
+      "term_en": "manager",
+      "term_zh": "经理",
+      "domain_context": "management",
+      "notes_ar": "مدير الشركة؛ ومجلس المديرين = مجلس مديرين.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "مجلس إدارة",
+      "term_en": "board of directors",
+      "term_zh": "董事会",
+      "domain_context": "management",
+      "notes_ar": "عضو مجلس الإدارة = 董事会成员؛ رئيس مجلس الإدارة = 董事长.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "رأس المال",
+      "term_en": "capital",
+      "term_zh": "资本",
+      "domain_context": "capital",
+      "notes_ar": "المصدر = 已发行资本؛ المصرح به = 授权资本؛ زيادة/تخفيض رأس المال.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "أداة دين",
+      "term_en": "debt instrument",
+      "term_zh": "债务工具",
+      "domain_context": "financing",
+      "notes_ar": "قابلة للتحويل إلى أسهم وفق نظام السوق المالية.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "صك تمويلي",
+      "term_en": "financing sukuk",
+      "term_zh": "融资凭证",
+      "domain_context": "financing",
+      "notes_ar": "المصطلح الصيني مرجعي داخلي؛ قيد مراجعة مالك المستودع النشطة للمقابل الدقيق.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "تحول الشركة",
+      "term_en": "company conversion",
+      "term_zh": "公司形式转换",
+      "domain_context": "restructuring",
+      "notes_ar": "الباب العاشر؛ تحول الشركة إلى شكل آخر.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "مخالفة",
+      "term_en": "violation",
+      "term_zh": "违规",
+      "domain_context": "penalties",
+      "notes_ar": "الباب الثالث عشر (العقوبات).",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "عقوبة",
+      "term_en": "penalty",
+      "term_zh": "罚则",
+      "domain_context": "penalties",
+      "notes_ar": "السجن = 监禁؛ الغرامة = 罚款.",
+      "status": "seed_repository_owner_review_active"
+    },
+    {
+      "term_ar": "لائحة تنفيذية",
+      "term_en": "implementing regulations",
+      "term_zh": "实施条例",
+      "domain_context": "regulatory_framework",
+      "notes_ar": "اللائحة التنفيذية لنظام الشركات؛ مرشحة لإدماج مستقبلي في المصنع.",
+      "status": "seed_repository_owner_review_active"
+    }
   ]
 }

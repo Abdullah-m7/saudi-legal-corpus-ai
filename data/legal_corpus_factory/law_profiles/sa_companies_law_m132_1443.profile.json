@@ -71,16 +71,43 @@
     "trilingual_alignment_created": false,
     "full_chinese_translation_claimed": false
   },
-  "review_policy": {
-    "human_legal_review_status": "pending_human_legal_review",
-    "human_legal_review_completed": false,
-    "review_is_explicit_status": true
+  "source_basis": {
+    "status": "official_source_based",
+    "governing_source_language": "ar",
+    "source_verification_note": "Built from official-source materials tracked in the repository; repository validation verifies counts, hashes, and layer boundaries."
+  },
+  "repository_legal_review": {
+    "repository_owner": "Abdullah Almohammedi",
+    "repository_owner_has_legal_background": true,
+    "repository_owner_legal_qualification": "bachelor_of_law",
+    "repository_legal_review_status": "repository_owner_review_active",
+    "repository_review_scope": [
+      "source_consistency",
+      "legal_meaning_preservation",
+      "multilingual_reference_quality",
+      "repository_release_fitness"
+    ]
+  },
+  "external_legal_review": {
+    "external_legal_review_required_for_repository_use": false,
+    "external_legal_review_optional_for_enterprise_or_official_adoption": true,
+    "external_legal_review_status": "not_performed"
+  },
+  "official_status": {
+    "official_government_publication": false,
+    "official_translation_claimed": false,
+    "official_adoption_claimed": false,
+    "chinese_official": false,
+    "chinese_binding": false,
+    "chinese_governing": false,
+    "not_legal_advice": true
   },
   "release_policy": {
     "public_release_created": false,
     "internal_reference_only": true,
-    "release_requires_human_legal_review": true
+    "external_legal_review_required_for_repository_use": false,
+    "external_legal_review_optional_for_enterprise_or_official_adoption": true
   },
   "created_for_repository": "al3obdi/saudi-companies-law-ar-zh-llm",
-  "notes": "Foundation-only law profile reflecting current repository facts. Arabic is the governing legal text; English is reference/guidance; Chinese is internal reference only (not official/binding/governing). This is NOT a complete Chinese translation of the law and creates no trilingual alignment. Human legal review remains pending. Not legal advice."
+  "notes": "Law profile for the first implemented law inside a multilingual, LLM-ready, official-source-based Saudi legal corpus for AI. The official Arabic source governs; English and Chinese are reference/internal layers; no official translation is claimed and Chinese is not official/binding/governing. This is NOT a complete Chinese translation of the law and creates no trilingual alignment. Reviewed by the repository owner (legal background, bachelor of law); external legal review is optional for enterprise or official adoption, not required for repository use. Not an official government publication. Not legal advice."
 }

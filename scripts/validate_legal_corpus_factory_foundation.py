@@ -96,7 +96,9 @@ def main() -> int:
         ("law_profile_schema", ("law_id", "law_name_ar", "law_name_en", "jurisdiction",
                                 "governing_language", "reference_languages", "article_count",
                                 "official_source_status", "source_files", "legal_hierarchy",
-                                "review_policy", "release_policy", "created_for_repository", "notes")),
+                                "source_basis", "repository_legal_review", "external_legal_review",
+                                "official_status", "release_policy", "created_for_repository",
+                                "notes")),
         ("batch_config_schema", ("law_id", "batch_id", "stage", "priority", "remediation_track",
                                  "scope_articles", "expected_babs", "expected_bab_distribution",
                                  "source_status_before", "remediation_action", "translation_basis",
@@ -177,11 +179,39 @@ def main() -> int:
     for f in ("chinese_official", "chinese_binding", "chinese_governing"):
         if lh.get(f) is not False:
             problems.append("profile legal_hierarchy.%s must be false" % f)
-    rp = prof.get("review_policy", {})
-    if rp.get("human_legal_review_status") != "pending_human_legal_review":
-        problems.append("profile human_legal_review_status must remain pending")
-    if rp.get("human_legal_review_completed") is not False:
-        problems.append("profile human_legal_review_completed must be false")
+
+    # 5b. repository-review identity model (official-source-based; repo-owner review; external optional)
+    sb = prof.get("source_basis", {})
+    if sb.get("status") != "official_source_based":
+        problems.append("profile source_basis.status must be official_source_based")
+    if sb.get("governing_source_language") != "ar":
+        problems.append("profile source_basis.governing_source_language must be ar")
+    rlr = prof.get("repository_legal_review", {})
+    if rlr.get("repository_owner_has_legal_background") is not True:
+        problems.append("profile repository_owner_has_legal_background must be true")
+    if rlr.get("repository_owner_legal_qualification") != "bachelor_of_law":
+        problems.append("profile repository_owner_legal_qualification must be bachelor_of_law")
+    if rlr.get("repository_legal_review_status") != "repository_owner_review_active":
+        problems.append("profile repository_legal_review_status must be repository_owner_review_active")
+    if not isinstance(rlr.get("repository_review_scope"), list) or not rlr.get("repository_review_scope"):
+        problems.append("profile repository_review_scope must be a non-empty list")
+    elr = prof.get("external_legal_review", {})
+    if elr.get("external_legal_review_required_for_repository_use") is not False:
+        problems.append("profile external_legal_review_required_for_repository_use must be false")
+    if elr.get("external_legal_review_optional_for_enterprise_or_official_adoption") is not True:
+        problems.append("profile external_legal_review_optional_for_enterprise_or_official_adoption must be true")
+    if elr.get("external_legal_review_status") != "not_performed":
+        problems.append("profile external_legal_review_status must be not_performed")
+    ost = prof.get("official_status", {})
+    for f in ("official_government_publication", "official_translation_claimed",
+              "official_adoption_claimed"):
+        if ost.get(f) is not False:
+            problems.append("profile official_status.%s must be false" % f)
+    for f in ("chinese_official", "chinese_binding", "chinese_governing"):
+        if f in ost and ost.get(f) is not False:
+            problems.append("profile official_status.%s must be false" % f)
+    if ost.get("not_legal_advice") is not True:
+        problems.append("profile official_status.not_legal_advice must be true")
     if prof.get("release_policy", {}).get("public_release_created") is not False:
         problems.append("profile public_release_created must be false")
 
@@ -212,7 +242,8 @@ def main() -> int:
     else:
         problems.append("existing P0-005 QA file missing (cannot cross-check batch config)")
 
-    # 7. terminology seed all pending
+    # 7. terminology seed statuses use the repository-owner review model (no old human-review status)
+    allowed_term_status = {"seed_repository_owner_review_active", "seed_pending_repository_owner_review"}
     terms = docs["terminology_seed"].get("terms", [])
     if not terms:
         problems.append("terminology seed must contain terms")
@@ -220,26 +251,36 @@ def main() -> int:
         for f in ("term_ar", "term_en", "term_zh", "domain_context", "notes_ar", "status"):
             if f not in t:
                 problems.append("terminology entry missing %s: %r" % (f, t.get("term_ar")))
-        if t.get("status") != "seed_pending_human_legal_review":
-            problems.append("terminology entry status must be seed_pending_human_legal_review: %r"
+        if t.get("status") not in allowed_term_status:
+            problems.append("terminology entry status must use the repository-owner review model: %r"
                             % t.get("term_ar"))
 
-    # 8. doctrine/architecture contain required principles; no banned overclaim in any new artifact
+    # 8. doctrine/architecture principles; no banned overclaim; no old blanket human-review framing
     with open(DOCTRINE, encoding="utf-8") as fh:
         doctrine = fh.read()
     with open(ARCH, encoding="utf-8") as fh:
         arch = fh.read()
-    if "العربية هي النص القانوني الحاكم" not in doctrine:
-        problems.append("doctrine must state the Arabic governing principle")
-    if "law profile" not in arch.lower() and "ملف تعريف النظام" not in arch:
+    if "المصدر العربي الرسمي هو النص الحاكم" not in doctrine and \
+            "المصدر العربي الرسمي حاكم" not in doctrine:
+        problems.append("doctrine must state the official Arabic source governs")
+    if "ملف تعريف" not in arch and "law profile" not in arch.lower():
         problems.append("architecture must describe the law profile component")
-    blob = doctrine.lower() + "\n" + arch.lower() + "\n" + \
-        json.dumps(prof, ensure_ascii=False).lower() + "\n" + \
-        json.dumps(bc, ensure_ascii=False).lower() + "\n" + \
-        json.dumps(docs["terminology_seed"], ensure_ascii=False).lower()
+    # doctrine must NOT imply external legal review is required for repository use
+    if "المراجعة الخارجية اختيارية" not in doctrine:
+        problems.append("doctrine must state external review is optional (not required for use)")
+    new_files_text = doctrine + "\n" + arch + "\n" + \
+        json.dumps(prof, ensure_ascii=False) + "\n" + json.dumps(bc, ensure_ascii=False) + "\n" + \
+        json.dumps(docs["terminology_seed"], ensure_ascii=False)
+    blob = new_files_text.lower()
     for term in BANNED:
         if term in blob:
             problems.append("banned overclaim term present in foundation artifacts: %r" % term)
+    # the old blanket "human legal review remains pending" framing must not remain in new files
+    for stale in ("human legal review remains pending", "pending_human_legal_review",
+                  "بانتظار مراجعة قانونية بشرية", "المراجعة القانونية البشرية معلّقة"):
+        if stale in new_files_text:
+            problems.append("stale human-legal-review framing must be removed from foundation "
+                            "files: %r" % stale)
 
     # 9. no P1/P2/P3 batch dirs; no full-Chinese-281 / trilingual artifacts created
     later = glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
@@ -265,13 +306,16 @@ def main() -> int:
             print("  -", p)
         print("RESULT: %d problem(s) found ✗" % len(problems))
         return 1
-    print("[PASS] Foundation: doctrine + architecture + 3 schemas (law_profile/batch_config/"
-          "provenance) + Saudi Companies Law profile (facts match Arabic 281 / English 281 / English "
-          "reference 281 / Chinese candidate 189 / old Chinese 5-files-23-records / Chinese sources "
-          "14 / OCR 281) + example P0-005 QA batch config (matches existing QA scope/babs) + "
-          "terminology seed (all seed_pending_human_legal_review); no false official/binding/"
-          "governing/full-281/trilingual claim; human review pending; no P1/P2/P3; base corpora "
-          "untouched.")
+    print("[PASS] Foundation (multilingual, LLM-ready, official-source-based Saudi legal corpus): "
+          "doctrine + architecture + 3 schemas (law_profile/batch_config/provenance) + Saudi "
+          "Companies Law profile (facts match Arabic 281 / English 281 / English reference 281 / "
+          "Chinese candidate 189 / old Chinese 5-files-23-records / Chinese sources 14 / OCR 281) + "
+          "example P0-005 QA batch config (matches existing QA scope/babs) + terminology seed (all "
+          "seed_repository_owner_review_active); official Arabic source governs; repository-owner "
+          "legal review active (bachelor of law); external legal review optional, not required for "
+          "repository use; no official government publication / official translation / "
+          "official adoption / Chinese binding/governing / full-281 / trilingual claim; no P1/P2/P3; "
+          "base corpora untouched.")
     print("RESULT: ALL CHECKS PASSED ✓")
     return 0
 

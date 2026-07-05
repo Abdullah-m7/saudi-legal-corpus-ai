@@ -23,8 +23,24 @@
   "english_guidance_role": "secondary_guidance_only",
   "qa_required": true,
   "review_only": true,
-  "human_legal_review_required": true,
-  "human_legal_review_status": "pending_human_legal_review",
+  "review_only_qa_completed": true,
+  "human_legal_review_required": false,
+  "repository_legal_review": {
+    "repository_owner_has_legal_background": true,
+    "repository_owner_legal_qualification": "bachelor_of_law",
+    "repository_legal_review_status": "repository_owner_review_active"
+  },
+  "external_legal_review": {
+    "external_legal_review_required_for_repository_use": false,
+    "external_legal_review_optional_for_enterprise_or_official_adoption": true,
+    "external_legal_review_status": "not_performed"
+  },
+  "official_status": {
+    "official_government_publication": false,
+    "official_translation_claimed": false,
+    "official_adoption_claimed": false,
+    "not_legal_advice": true
+  },
   "prohibited_claims": [
     "official_chinese_translation",
     "chinese_binding",
