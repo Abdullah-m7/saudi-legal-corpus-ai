@@ -55,8 +55,9 @@ Additional laws can be onboarded as new profiles.
 Chinese remediation and QA are **completed through P0-005**, and **all P1 batches
 (P1-001..P1-004) remediation + QA are completed** (each PASS, no minor fixes);
 **all five P2 batches (P2-001..P2-005) remediation + QA are completed** (each PASS, no minor fixes) —
-**the full P2 expansion track is complete**; **P3 not started**. See **[`STATUS.md`](STATUS.md)** for
-the authoritative list.
+**the full P2 expansion track is complete**; and the **final P3 confirmation batch (P3-CONF-001)
+confirmation + QA are completed** (PASS 18/18, no minor fixes). **The full Chinese remediation program
+(P0 → P1 → P2 → P3) is complete.** See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
@@ -1140,10 +1141,29 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   P2-004 20/20, P2-005 15/15; no minor fixes); expansion faithfulness, no hallucination / no omission /
   no over-expansion, clause-segment parity, terminology and P2-backlog linkage confirmed; review only
   (remediation data unchanged). Chinese stays internal / non-official / non-binding / non-governing;
-  Arabic governs. This **completes the full P2 expansion track (P2-001..P2-005)**. **P3 not started.**
+  Arabic governs. This **completes the full P2 expansion track (P2-001..P2-005)**.
 - Data under `data/chinese_remediation_batches/{p2_003,p2_004,p2_005}/`; reports + QA under
   `reports/chinese_translation_review/`. Validate: `make chinese-remediation-batch-p2-003-validate`
   (and `-qa-validate`), likewise for `p2-004` and `p2-005`.
+
+### Chinese confirmation Batch P3-CONF-001 (final P3 confirmation batch — remediation program complete)
+
+- P3 is a **confirmation / retain track, not expansion**: the existing internal Chinese candidate for
+  these **18 articles across Babs 2 and 3** (general partnership and limited partnership) is already
+  usable as internal reference (semantic alignment **high**, near-full completeness per the 189 semantic
+  QA). This batch **confirms and retains each candidate verbatim** — **no new Chinese text is generated
+  and nothing is modified**. Each record retains the candidate by hash (== the live 189 candidate == the
+  backlog existing-candidate == the semantic-QA hash) and links to its semantic-QA finding and its P3
+  backlog finding (`P3_retain_internal_reference`).
+- **QA:** article-by-article review of the retain decisions → **PASS (18/18, no minor fixes)**; retain
+  appropriateness, verbatim retention, semantic-alignment re-confirmation, and source/backlog
+  traceability verified; review only (confirmation data and the Chinese candidate unchanged). Chinese
+  stays internal / non-official / non-binding / non-governing; Arabic governs.
+- This **completes the full Chinese remediation program (P0 → P1 → P2 → P3)**. No full Chinese 281 layer,
+  trilingual alignment, or public release created.
+- Data under `data/chinese_remediation_batches/p3_conf_001/`; reports + QA under
+  `reports/chinese_translation_review/`. Validate: `make chinese-remediation-batch-p3-conf-001-validate`
+  (and `-qa-validate`).
 
 ## Multilingual Saudi legal corpus for AI (foundation)
 

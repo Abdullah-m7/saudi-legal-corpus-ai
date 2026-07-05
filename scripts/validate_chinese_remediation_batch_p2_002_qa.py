@@ -339,11 +339,11 @@ def main(argv=None) -> int:
         problems.append("OCR manual_review_queue must remain 281 entries")
 
     # P1-001..P1-004 and P2-001..P2-005 authorized; only p3_* forbidden; no full-281 / trilingual
-    allowed_dirs = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005")
+    allowed_dirs = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005", "p3_conf_001")
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
              if os.path.basename(x) not in allowed_dirs]
     if later:
-        problems.append("only P1-001..P1-004 and P2-001..P2-005 authorized; no p3_* batch dirs: %s"
+        problems.append("only P1-001..P1-004 and P2-001..P2-005 authorized; no p3_* (beyond the authorized P3 confirmation batch) or unauthorized batch dirs: %s"
                         % sorted(os.path.basename(x) for x in later))
     for pat in ("*trilingual*", "*full_chinese_281*", "*chinese_full_281*"):
         hits = glob.glob(os.path.join(ROOT, "data", "**", pat), recursive=True) + \

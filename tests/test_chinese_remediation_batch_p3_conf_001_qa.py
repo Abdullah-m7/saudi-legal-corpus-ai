@@ -1,10 +1,11 @@
-"""Chinese remediation Batch P2-004 QA tests (P2 expansion QA; review vs Arabic; Babs 10/11/12).
+"""Chinese confirmation Batch P3-CONF-001 QA tests (final P3 confirmation QA; review; Babs 2/3).
 
-Review-only QA of the 20 P2-004 expansions vs the official Arabic (English secondary; prior condensed
-candidate as baseline): expansion faithfulness, clause-segment parity, terminology consistency, no
-hallucination / omission / over-expansion, source + P2-backlog traceability. No P2-004 data modified.
-Chinese internal / non-official / non-binding / non-governing. Prior P2 (P2-001/P2-002) + all P1/P0
-(data + QA) and base layers untouched; no p3_* dirs. Exercises the validator rejection paths.
+Review-only QA of the 18 P3 confirmation (retain) decisions: retain appropriate, candidate retained
+verbatim by hash (== live 189 candidate), semantic alignment high / completeness near_full re-confirmed,
+no new Chinese text generated, nothing modified, source + P3 backlog traceability. No P3 confirmation
+data or Chinese candidate modified. Chinese internal / non-official / non-binding / non-governing. All
+P2 + P1 + P0 (data + QA), candidate 189, and base layers untouched; no other p3_* dirs. Exercises the
+validator rejection paths.
 """
 
 import copy
@@ -16,20 +17,22 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QA = os.path.join(ROOT, "reports", "chinese_translation_review",
-                  "chinese_remediation_batch_p2_004_qa.json")
+                  "chinese_remediation_batch_p3_conf_001_qa.json")
 MD = os.path.join(ROOT, "reports", "chinese_translation_review",
-                  "CHINESE_REMEDIATION_BATCH_P2_004_QA_AR.md")
-SRC = os.path.join(ROOT, "data", "chinese_remediation_batches", "p2_004",
-                   "companies_law_m132_1443_zh_internal_remediation_p2_004.json")
+                  "CHINESE_REMEDIATION_BATCH_P3_CONF_001_QA_AR.md")
+SRC = os.path.join(ROOT, "data", "chinese_remediation_batches", "p3_conf_001",
+                   "companies_law_m132_1443_zh_internal_confirmation_p3_conf_001.json")
 COV = os.path.join(ROOT, "reports", "chinese_translation_review",
                    "chinese_article_coverage_index_001_281.json")
 BACKLOG = os.path.join(ROOT, "reports", "chinese_translation_review",
                        "chinese_remediation_backlog_001_281.json")
-VALIDATOR = os.path.join(ROOT, "scripts", "validate_chinese_remediation_batch_p2_004_qa.py")
+VALIDATOR = os.path.join(ROOT, "scripts", "validate_chinese_remediation_batch_p3_conf_001_qa.py")
 
-ARTS = [226, 228, 229, 231, 232, 234, 235, 236, 237, 238, 239, 240, 241, 243, 245, 246, 247, 249, 250, 251]
-BABS = (10, 11, 12)
-DIST = {'10': [226, 228, 229, 231, 232, 234], '11': [235, 236, 237, 238, 239, 240, 241], '12': [243, 245, 246, 247, 249, 250, 251]}
+ARTS = [36, 39, 40, 41, 42, 43, 44, 45, 46, 47, 49, 50, 51, 52, 53, 55, 56, 57]
+DIST = {"2": [36, 39, 40, 41, 42, 43, 44, 45, 46, 47, 49, 50], "3": [51, 52, 53, 55, 56, 57]}
+BANNED = ("official chinese translation", "chinese is official", "chinese is binding",
+          "chinese is governing", "full verified chinese translation",
+          "governing chinese text", "binding chinese text")
 
 
 def _read(p):
@@ -49,7 +52,7 @@ def _run(path=None):
 
 
 def _write_tmp(tmp_path, doc):
-    p = tmp_path / "p2_004_qa_mutated.json"
+    p = tmp_path / "p3_conf_001_qa_mutated.json"
     p.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
     return str(p)
 
@@ -65,17 +68,18 @@ def test_output_files_exist():
 
 def test_stage_and_batch():
     q = _q()
-    assert q["stage"] == "CHINESE_REMEDIATION_BATCH_P2_004_QA"
-    assert q["qa_stage"] == "CHINESE_REMEDIATION_BATCH_P2_004_QA"
-    assert q["batch_id"] == "P2-004"
-    assert q["source_batch_file"].endswith("p2_004/companies_law_m132_1443_zh_internal_remediation_p2_004.json")
-    assert q["source_basis"] == "official_arabic_plus_existing_chinese_candidate"
+    assert q["stage"] == "CHINESE_REMEDIATION_BATCH_P3_CONF_001_QA"
+    assert q["qa_stage"] == "CHINESE_REMEDIATION_BATCH_P3_CONF_001_QA"
+    assert q["batch_id"] == "P3-CONF-001"
+    assert q["source_batch_file"].endswith(
+        "p3_conf_001/companies_law_m132_1443_zh_internal_confirmation_p3_conf_001.json")
+    assert q["source_basis"] == "existing_chinese_internal_candidate"
 
 
 def test_scope_and_babs():
     q = _q()
     assert q["scope_articles"] == ARTS
-    assert q["expected_babs"] == list(BABS)
+    assert q["expected_babs"] == [2, 3]
     assert [r["article_number"] for r in q["per_article_reviews"]] == ARTS
 
 
@@ -88,30 +92,31 @@ def test_each_review_bab_matches_record_and_coverage():
     cov = {r["article_number"]: r for r in _read(COV)["records"]}
     sbab = {r["article_number"]: r["bab"] for r in _read(SRC)["records"]}
     for r in _q()["per_article_reviews"]:
-        nn = r["article_number"]
-        assert r["bab"] in BABS
-        assert r["bab"] == sbab[nn]
-        assert r["bab"] == cov[nn]["expected_bab_number"]
+        n = r["article_number"]
+        assert r["bab"] in (2, 3)
+        assert r["bab"] == sbab[n]
+        assert r["bab"] == cov[n]["expected_bab_number"]
 
 
-def test_result_pass_all():
+def test_result_pass_all_18():
     q = _q()
     assert q["qa_result"] == "PASS"
     assert q["final_status"] == "QA_PASS"
-    assert q["pass_count"] == 20
+    assert q["pass_count"] == 18
     assert q["minor_fix_count"] == 0
     assert q["blocked_count"] == 0
     assert q["fail_count"] == 0
-    assert q["qa_summary"] == {"article_count": 20, "pass": 20, "minor": 0, "blocked": 0, "fail": 0}
+    assert q["qa_summary"] == {"article_count": 18, "pass": 18, "minor": 0, "blocked": 0, "fail": 0}
     assert all(r["qa_status"] == "pass" for r in q["per_article_reviews"])
 
 
 def test_review_only_no_modification():
     q = _q()
-    assert q["p2_004_chinese_text_modified"] is False
-    assert q["p2_004_data_modified"] is False
+    assert q["p3_conf_001_confirmation_modified"] is False
+    assert q["p3_conf_001_data_modified"] is False
+    assert q["chinese_candidate_modified"] is False
     assert q["minor_fixes"] == []
-    assert len(_read(SRC)["records"]) == 20
+    assert len(_read(SRC)["records"]) == 18
 
 
 def test_legal_hierarchy_and_boundaries():
@@ -125,38 +130,53 @@ def test_legal_hierarchy_and_boundaries():
     assert q["official_status"]["not_legal_advice"] is True
 
 
-def test_expansion_quality_checks_for_each_pass():
+def test_confirmation_quality_checks_for_each_pass():
     for r in _q()["per_article_reviews"]:
         if r["qa_status"] == "pass":
             assert r["source_traceability"] == "verified"
-            assert r["semantic_completeness"] == "materially_complete"
-            assert r["arabic_segment_count"] == r["chinese_segment_count"]
+            assert r["retention_appropriate"] is True
+            assert r["candidate_retained_verbatim"] is True
+            assert r["no_new_chinese_text_created"] is True
+            assert r["no_candidate_modification"] is True
+            assert r["semantic_alignment_confirmed"] == "high"
+            assert r["legal_completeness_confirmed"] == "near_full"
             assert r["official_status_boundary"] == "internal_non_official_non_binding_non_governing"
-            assert r["expansion_faithful"] is True
-            assert r["no_hallucinated_legal_content"] is True
-            assert r["no_missing_legal_effect"] is True
-            assert r["no_over_expansion"] is True
             assert r["approved_for_future_layer_integration"] is True
-            assert r["backlog_p2_finding_link_checked"] is True
+            assert r["backlog_p3_finding_link_checked"] is True
 
 
-def test_all_scope_articles_are_p2_in_backlog():
+def test_all_scope_articles_are_p3_in_backlog():
     bk = {r["article_number"]: r for r in _read(BACKLOG)["records"]}
     for r in _q()["per_article_reviews"]:
-        nn = r["article_number"]
-        assert bk[nn]["current_priority"] == "P2"
-        assert bk[nn]["remediation_track"] == "P2_expansion_needed"
+        n = r["article_number"]
+        assert bk[n]["current_priority"] == "P3"
+        assert bk[n]["remediation_track"] == "P3_retain_internal_reference"
 
 
-def test_prior_qa_unchanged():
+def test_no_full_text_embedded_and_no_overclaim():
+    blob = json.dumps(_q(), ensure_ascii=False).lower()
+    for term in BANNED:
+        assert term not in blob, term
+
+
+def test_all_p2_qa_unchanged():
     for fn in ("chinese_remediation_batch_p2_001_qa.json", "chinese_remediation_batch_p2_002_qa.json",
-               "chinese_remediation_batch_p1_004_qa.json"):
+               "chinese_remediation_batch_p2_003_qa.json", "chinese_remediation_batch_p2_004_qa.json",
+               "chinese_remediation_batch_p2_005_qa.json"):
         qa = _read(os.path.join(ROOT, "reports", "chinese_translation_review", fn))
         assert qa["final_status"] == "QA_PASS"
 
 
-def test_no_other_unauthorized_dirs():
-    allowed = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005", "p3_conf_001")
+def test_all_p2_and_p1_data_unchanged():
+    for sub, cnt in {"p1_001": 20, "p1_004": 16, "p2_001": 20, "p2_003": 20, "p2_005": 15}.items():
+        p = os.path.join(ROOT, "data", "chinese_remediation_batches", sub,
+                         "companies_law_m132_1443_zh_internal_remediation_%s.json" % sub)
+        assert len(_read(p)["records"]) == cnt
+
+
+def test_no_other_p3_dirs():
+    allowed = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004",
+               "p2_005", "p3_conf_001")
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
              if os.path.basename(x) not in allowed]
     assert not later
@@ -172,9 +192,7 @@ def test_reject_wrong_scope(tmp_path):
 
 def test_reject_wrong_bab(tmp_path):
     doc = copy.deepcopy(_q())
-    for r in doc["per_article_reviews"]:
-        if r["article_number"] == 226:
-            r["bab"] = 11
+    doc["per_article_reviews"][0]["bab"] = 3  # art 36 is Bab 2
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
 
 
@@ -192,11 +210,11 @@ def test_reject_official_claim_true(tmp_path):
 
 def test_reject_summary_mismatch(tmp_path):
     doc = copy.deepcopy(_q())
-    doc["pass_count"] = 20 - 1
+    doc["pass_count"] = 17
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
 
 
-def test_reject_missing_expansion_quality_flag(tmp_path):
+def test_reject_retain_flag_false(tmp_path):
     doc = copy.deepcopy(_q())
-    doc["per_article_reviews"][0]["no_hallucinated_legal_content"] = False
+    doc["per_article_reviews"][0]["candidate_retained_verbatim"] = False
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0

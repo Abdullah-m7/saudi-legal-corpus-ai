@@ -247,7 +247,7 @@ def main(argv=None) -> int:
     # no post-P0 (P1/P2/P3) batch files created (P0-004 and P0-005 are now authorized sibling batches)
     # P1-001 is the authorized first P1 batch; only p1_003+/P2/P3 dirs remain forbidden.
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005")]
+             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005", "p3_conf_001")]
     if later:
         problems.append("post-P0 batch dirs (P1/P2/P3) must not exist: %s"
                         % sorted(os.path.basename(x) for x in later))

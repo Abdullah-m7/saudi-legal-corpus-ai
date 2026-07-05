@@ -64,7 +64,13 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   article-by-article QA result **PASS (15/15, no minor fixes)**.
 - **All P2 batches (P2-001..P2-005): remediation + QA completed** (each PASS, no minor fixes) — **the
   full P2 expansion track is complete**.
-- **P3: not started.**
+- **P3-CONF-001 (final P3 confirmation batch): confirmation + QA completed** — 18 articles across Babs 2
+  and 3, whose existing internal Chinese candidate is **retained verbatim as internal reference** (P3 is
+  a confirmation/retain track, not expansion: no new Chinese text generated, nothing modified); each
+  retention re-confirms the 189 semantic-QA finding (alignment high, near-full completeness) and the P3
+  backlog finding; article-by-article QA result **PASS (18/18, no minor fixes)**.
+- **The full Chinese remediation program (P0 → P1 → P2 → P3) is complete** — every backlog article is
+  remediated, expanded, or confirmed-and-retained as internal reference, each with passing QA.
 
 ## Not yet created
 
