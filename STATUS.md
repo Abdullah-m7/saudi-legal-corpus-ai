@@ -93,6 +93,16 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   release. Arabic governs; not official/binding/governing; not legal advice. See
   [`data/implementing_regulations/intake_scaffold.json`] and
   [`reports/implementing_regulations/IMPLEMENTING_REGULATIONS_INTAKE_SCAFFOLD_AR.md`].
+- **Listed joint-stock implementing regulation Arabic source intake completed** — 69 articles
+  across 14 chapters + appendix, extracted from the official Umm Al-Qura gazette
+  (uqn.gov.sa/decisions-and-regulations/4001295), published 1448-1-18 AH / 03-07-2026,
+  issued by the Capital Market Authority board under Companies Law M/132 (1443H). This is a
+  **specialized** regulation for listed joint-stock companies only, NOT a general implementing
+  regulation. No English/Chinese text generated; no trilingual alignment; no public release.
+  Arabic governs; not official/binding/governing; not legal advice. See
+  [`data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_source.json`] and
+  [`reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_SOURCE_INTAKE_AR.md`]. Validate:
+  `make implementing-regulations-listed-jsc-arabic-source-validate`.
 
 ## Legal / official-status boundaries
 

@@ -128,11 +128,11 @@ def test_arabic_report_exists():
 
 def test_no_content_files_beyond_scaffold():
     impl_dir = ROOT / "data" / "implementing_regulations"
-    all_files = set()
-    for root, dirs, files in os.walk(impl_dir):
-        for f in files:
-            all_files.add(f)
-    assert all_files == {"intake_scaffold.json", "README.md"}, f"Unexpected files: {all_files}"
+    top_level_files = set()
+    for f in os.listdir(impl_dir):
+        if (impl_dir / f).is_file():
+            top_level_files.add(f)
+    assert top_level_files == {"intake_scaffold.json", "README.md"}, f"Unexpected top-level files: {top_level_files}"
 
 
 def test_parent_law_files_unchanged():

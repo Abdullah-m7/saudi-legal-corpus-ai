@@ -267,20 +267,21 @@ def main() -> int:
         else:
             print(f"  {os.path.relpath(f, ROOT)} exists ✓")
 
-    # --- Check 13: no content files beyond scaffold/README ---
-    print("\n[13] Checking no implementing-regulations content beyond scaffold...")
+    # --- Check 13: no content files beyond scaffold/README at top level ---
+    print("\n[13] Checking no implementing-regulations content beyond scaffold at top level...")
     impl_reg_dir = os.path.join(ROOT, "data", "implementing_regulations")
-    all_files = []
-    for root, dirs, files in os.walk(impl_reg_dir):
-        for f in files:
-            all_files.append(os.path.relpath(os.path.join(root, f), impl_reg_dir))
+    top_level_files = []
+    for f in os.listdir(impl_reg_dir):
+        full_path = os.path.join(impl_reg_dir, f)
+        if os.path.isfile(full_path):
+            top_level_files.append(f)
     allowed = {"intake_scaffold.json", "README.md"}
-    unexpected = [f for f in all_files if f not in allowed]
+    unexpected = [f for f in top_level_files if f not in allowed]
     if unexpected:
-        problems.append(f"Unexpected files in implementing_regulations: {unexpected}")
-        print(f"  FAIL: unexpected files: {unexpected}")
+        problems.append(f"Unexpected top-level files in implementing_regulations: {unexpected}")
+        print(f"  FAIL: unexpected top-level files: {unexpected}")
     else:
-        print(f"  Only scaffold files present ({sorted(all_files)}) ✓")
+        print(f"  Only scaffold files at top level ({sorted(top_level_files)}) ✓")
 
     # --- Check artifact files ---
     print("\n[14] Checking report and README artifacts...")
