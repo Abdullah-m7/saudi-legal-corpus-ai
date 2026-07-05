@@ -262,7 +262,9 @@ def main(argv=None) -> int:
         problems.append("OCR manual_review_queue must remain 281 entries (unchanged)")
 
     # no post-P0 (P1/P2/P3) batch files created (P0-005 is now an authorized sibling batch)
-    later = glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+    # P1-001 is the authorized first P1 batch; only p1_002+/P2/P3 dirs remain forbidden.
+    later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+             if os.path.basename(x) != "p1_001"]
     if later:
         problems.append("post-P0 batch dirs (P1/P2/P3) must not exist: %s"
                         % sorted(os.path.basename(x) for x in later))

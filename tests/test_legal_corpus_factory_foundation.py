@@ -250,7 +250,10 @@ def test_architecture_exists_and_describes_reusable_components():
 
 
 def test_no_p1_p2_p3_dirs():
-    assert not glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+    # P1-001 is the authorized first P1 batch; only p1_002+/P2/P3 dirs remain forbidden.
+    later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+             if os.path.basename(x) != "p1_001"]
+    assert not later
 
 
 def test_no_full_chinese_281_layer():

@@ -321,7 +321,9 @@ def main() -> int:
                                 "file %s: %r" % (rel, stale))
 
     # 9. no P1/P2/P3 batch dirs; no full-Chinese-281 / trilingual artifacts created
-    later = glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+    # P1-001 is the authorized first P1 batch; only p1_002+/P2/P3 dirs remain forbidden.
+    later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+             if os.path.basename(x) != "p1_001"]
     if later:
         problems.append("P1/P2/P3 batch dirs must not exist: %s"
                         % sorted(os.path.basename(x) for x in later))

@@ -293,8 +293,8 @@ def test_reject_inconsistent_qa_summary(tmp_path):
 
 
 def test_reject_starting_p1():
-    # P0-005 is now an authorized sibling batch; only P1/P2/P3 are forbidden.
-    p1 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_001")
+    # P0-005 and the authorized P1-001 may coexist; only p1_002+/P2/P3 are forbidden.
+    p1 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_002")
     created = False
     try:
         if not os.path.isdir(p1):

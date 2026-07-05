@@ -239,7 +239,10 @@ def test_protected_layers_unchanged():
 
 
 def test_no_p1_p2_p3_files():
-    assert not glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+    # P1-001 is the authorized first P1 batch; only p1_002+/P2/P3 dirs remain forbidden.
+    later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+             if os.path.basename(x) != "p1_001"]
+    assert not later
 
 
 # --- rejection paths ---
@@ -287,8 +290,8 @@ def test_reject_missing_required_field(tmp_path):
 
 
 def test_reject_starting_p1_p2_p3():
-    # P0-005 is the final P0 batch; any P1/P2/P3 batch dir must make the validator fail.
-    for name in ("p1_001", "p2_001", "p3_001"):
+    # P1-001 is authorized; any OTHER later batch dir (p1_002+/P2/P3) must make the validator fail.
+    for name in ("p1_002", "p2_001", "p3_001"):
         p = os.path.join(ROOT, "data", "chinese_remediation_batches", name)
         created = False
         try:
