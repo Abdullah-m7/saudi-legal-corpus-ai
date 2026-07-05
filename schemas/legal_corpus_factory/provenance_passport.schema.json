@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://al3obdi/saudi-companies-law-ar-zh-llm/schemas/legal_corpus_factory/provenance_passport.schema.json",
+  "title": "Article provenance passport",
+  "description": "Article-level provenance record tracing an article from its Arabic governing source through reference layers, extraction, remediation, QA, and human review, with a risk lane. Arabic governs. Not legal advice.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "law_id",
+    "article_number",
+    "article_title_ar",
+    "bab",
+    "source_language",
+    "governing_text_source",
+    "governing_text_hash_sha256",
+    "reference_layers",
+    "extraction_status",
+    "remediation_status",
+    "qa_status",
+    "human_legal_review_status",
+    "risk_lane",
+    "risk_reasons",
+    "last_batch_id",
+    "last_changed_commit",
+    "notes"
+  ],
+  "properties": {
+    "law_id": {"type": "string", "minLength": 1},
+    "article_number": {"type": "integer", "minimum": 1},
+    "article_title_ar": {"type": "string"},
+    "bab": {"type": ["integer", "null"]},
+    "source_language": {"type": "string", "enum": ["ar"]},
+    "governing_text_source": {"type": "string", "minLength": 1},
+    "governing_text_hash_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reference_layers": {
+      "type": "object",
+      "description": "Reference/internal layers (e.g. english_reference, chinese_internal) with their per-article status/hash.",
+      "additionalProperties": true
+    },
+    "extraction_status": {"type": "string"},
+    "remediation_status": {"type": "string"},
+    "qa_status": {"type": "string"},
+    "human_legal_review_status": {"type": "string"},
+    "risk_lane": {"type": "string", "enum": ["fast_lane", "strict_lane"]},
+    "risk_reasons": {"type": "array", "items": {"type": "string"}},
+    "last_batch_id": {"type": ["string", "null"]},
+    "last_changed_commit": {"type": ["string", "null"]},
+    "notes": {"type": "string"}
+  }
+}

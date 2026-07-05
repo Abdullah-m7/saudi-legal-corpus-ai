@@ -1,0 +1,86 @@
+{
+  "schema": "schemas/legal_corpus_factory/law_profile.schema.json",
+  "not_legal_advice": true,
+  "law_id": "sa_companies_law_m132_1443",
+  "law_name_ar": "نظام الشركات",
+  "law_name_en": "Saudi Companies Law",
+  "jurisdiction": "Kingdom of Saudi Arabia",
+  "instrument": "Royal Decree No. M/132, 1443 AH",
+  "governing_language": "ar",
+  "reference_languages": ["en", "zh"],
+  "article_count": 281,
+  "official_source_status": "ingested_unverified",
+  "source_files": {
+    "official_arabic_user_provided": {
+      "path": "data/official_arabic/companies_law_m132_1443_official_arabic_user_provided.json",
+      "articles": 281,
+      "verification_status": "ingested_unverified"
+    },
+    "arabic_full_llm": {
+      "path": "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+      "records": 281
+    },
+    "english_full_llm": {
+      "path": "data/official_english_legal_llm/companies_law_m132_1443_official_english_legal_llm_001_281.json",
+      "records": 281
+    },
+    "english_reference": {
+      "path": "data/english_reference/companies_law_m132_1443_en_reference_001_281.json",
+      "records": 281
+    },
+    "chinese_internal_candidate_isolable": {
+      "path": "data/chinese_internal_legal_llm/companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json",
+      "records": 189
+    },
+    "old_chinese_legal_llm": {
+      "path_glob": "data/chinese_legal_llm/*_zh_legal_llm.json",
+      "files": 5,
+      "records": 23
+    },
+    "chinese_source_extracted": {
+      "path_glob": "data/chinese_translation_sources/bab*_zh_source_extracted_articles_*.json",
+      "files": 14
+    },
+    "ocr_manual_review_queue": {
+      "path": "reports/official_arabic_verification/manual_review_queue.json",
+      "entries": 281
+    }
+  },
+  "legal_hierarchy": {
+    "arabic": "governing",
+    "english": "reference_guidance_only",
+    "chinese": "internal_reference_only",
+    "chinese_official": false,
+    "chinese_binding": false,
+    "chinese_governing": false,
+    "not_legal_advice": true
+  },
+  "remediation_status": {
+    "p0_batches_completed": ["P0-001", "P0-002", "P0-003", "P0-004", "P0-005"],
+    "p0_qa_completed": ["P0-001", "P0-002", "P0-003", "P0-004", "P0-005"],
+    "p0_final_batch": "P0-005",
+    "p1_started": false,
+    "p2_started": false,
+    "p3_started": false
+  },
+  "claims": {
+    "full_chinese_281_layer_created": false,
+    "official_chinese_translation_claimed": false,
+    "chinese_binding_claimed": false,
+    "chinese_governing_claimed": false,
+    "trilingual_alignment_created": false,
+    "full_chinese_translation_claimed": false
+  },
+  "review_policy": {
+    "human_legal_review_status": "pending_human_legal_review",
+    "human_legal_review_completed": false,
+    "review_is_explicit_status": true
+  },
+  "release_policy": {
+    "public_release_created": false,
+    "internal_reference_only": true,
+    "release_requires_human_legal_review": true
+  },
+  "created_for_repository": "al3obdi/saudi-companies-law-ar-zh-llm",
+  "notes": "Foundation-only law profile reflecting current repository facts. Arabic is the governing legal text; English is reference/guidance; Chinese is internal reference only (not official/binding/governing). This is NOT a complete Chinese translation of the law and creates no trilingual alignment. Human legal review remains pending. Not legal advice."
+}

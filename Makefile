@@ -59,7 +59,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-batch-p0-004-validate \
         chinese-remediation-batch-p0-004-qa-validate \
         chinese-remediation-batch-p0-005-validate \
-        chinese-remediation-batch-p0-005-qa-validate
+        chinese-remediation-batch-p0-005-qa-validate \
+        legal-corpus-factory-foundation-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -523,6 +524,10 @@ chinese-remediation-batch-p0-005-validate:
 # -- Chinese remediation Batch P0-005 QA (final P0 batch; article-by-article vs Arabic; review only) --
 chinese-remediation-batch-p0-005-qa-validate:
 	$(PY) scripts/validate_chinese_remediation_batch_p0_005_qa.py
+
+# -- Sovereign legal corpus factory foundation (doctrine, architecture, schemas, profile, config, seed) --
+legal-corpus-factory-foundation-validate:
+	$(PY) scripts/validate_legal_corpus_factory_foundation.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

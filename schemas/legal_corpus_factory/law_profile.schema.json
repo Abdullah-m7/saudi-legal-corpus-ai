@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://al3obdi/saudi-companies-law-ar-zh-llm/schemas/legal_corpus_factory/law_profile.schema.json",
+  "title": "Reusable law profile",
+  "description": "A reusable, sovereign-grade profile describing a single Saudi law/regulation for the legal corpus factory. Arabic is the governing text; other languages are reference/internal unless officially authorized. Not legal advice.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "law_id",
+    "law_name_ar",
+    "law_name_en",
+    "jurisdiction",
+    "governing_language",
+    "reference_languages",
+    "article_count",
+    "official_source_status",
+    "source_files",
+    "legal_hierarchy",
+    "review_policy",
+    "release_policy",
+    "created_for_repository",
+    "notes"
+  ],
+  "properties": {
+    "law_id": {"type": "string", "minLength": 1},
+    "law_name_ar": {"type": "string", "minLength": 1},
+    "law_name_en": {"type": "string", "minLength": 1},
+    "jurisdiction": {"type": "string", "minLength": 1},
+    "governing_language": {"type": "string", "enum": ["ar"]},
+    "reference_languages": {"type": "array", "items": {"type": "string"}},
+    "article_count": {"type": "integer", "minimum": 0},
+    "official_source_status": {"type": "string", "minLength": 1},
+    "source_files": {
+      "type": "object",
+      "description": "Named references to source/corpus files with their current record counts.",
+      "additionalProperties": true
+    },
+    "legal_hierarchy": {
+      "type": "object",
+      "required": ["arabic", "english", "chinese"],
+      "additionalProperties": true,
+      "properties": {
+        "arabic": {"type": "string"},
+        "english": {"type": "string"},
+        "chinese": {"type": "string"},
+        "not_legal_advice": {"type": "boolean"}
+      }
+    },
+    "review_policy": {"type": "object", "additionalProperties": true},
+    "release_policy": {"type": "object", "additionalProperties": true},
+    "created_for_repository": {"type": "string", "minLength": 1},
+    "notes": {"type": "string"}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://al3obdi/saudi-companies-law-ar-zh-llm/schemas/legal_corpus_factory/batch_config.schema.json",
+  "title": "Reusable batch config",
+  "description": "A reusable batch config describing a remediation or QA batch as generic factory input. Arabic governs; Chinese is internal reference only unless officially authorized. Not legal advice.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "law_id",
+    "batch_id",
+    "stage",
+    "priority",
+    "remediation_track",
+    "scope_articles",
+    "expected_babs",
+    "expected_bab_distribution",
+    "source_status_before",
+    "remediation_action",
+    "translation_basis",
+    "english_guidance_role",
+    "qa_required",
+    "human_legal_review_required",
+    "prohibited_claims",
+    "protected_layers",
+    "validation_policy"
+  ],
+  "properties": {
+    "law_id": {"type": "string", "minLength": 1},
+    "batch_id": {"type": "string", "minLength": 1},
+    "stage": {"type": "string", "minLength": 1},
+    "priority": {"type": "string"},
+    "remediation_track": {"type": "string"},
+    "scope_articles": {"type": "array", "items": {"type": "integer"}, "minItems": 1},
+    "expected_babs": {"type": "array", "items": {"type": "integer"}},
+    "expected_bab_distribution": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"type": "integer"}}
+    },
+    "source_status_before": {"type": "string"},
+    "remediation_action": {"type": "string"},
+    "translation_basis": {"type": "string"},
+    "english_guidance_role": {"type": "string"},
+    "qa_required": {"type": "boolean"},
+    "human_legal_review_required": {"type": "boolean"},
+    "prohibited_claims": {"type": "array", "items": {"type": "string"}},
+    "protected_layers": {"type": "array", "items": {"type": "string"}},
+    "validation_policy": {"type": "object", "additionalProperties": true}
+  }
+}
