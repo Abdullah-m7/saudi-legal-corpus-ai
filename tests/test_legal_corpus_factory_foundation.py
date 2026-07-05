@@ -1,9 +1,13 @@
 """Tests for the sovereign legal corpus factory FOUNDATION (docs, schemas, profile, config, seed).
 
 Foundation only: reusable doctrine, architecture, schemas, a Saudi Companies Law profile, one example
-P0-005 QA batch config, and a seed terminology bank. Arabic governs; Chinese is internal reference
-only; human legal review pending; no full Chinese 281 layer; no trilingual alignment; no P1/P2/P3.
-Reads committed artifacts.
+P0-005 QA batch config, and a seed terminology bank for a multilingual, LLM-ready,
+official-source-based Saudi legal corpus for AI. Review model: the official Arabic source governs;
+English and Chinese are reference layers; the repository owner has a legal background (bachelor_of_law)
+and runs active repository review (source_basis / repository_legal_review / external_legal_review /
+official_status); external legal review is optional for enterprise/official adoption and not required
+for repository use. No full Chinese 281 layer; no trilingual alignment; no P1/P2/P3. Reads committed
+artifacts.
 """
 
 import glob
@@ -181,11 +185,52 @@ def test_doctrine_exists_and_says_arabic_source_governs():
 def test_doctrine_does_not_imply_external_review_required_for_use():
     with open(DOCTRINE, encoding="utf-8") as fh:
         text = fh.read()
-    # external review is stated as OPTIONAL, and the old blanket "pending" framing is gone.
+    # external review is stated as OPTIONAL, and the old blanket framing is gone. Forbidden phrases
+    # are assembled from fragments so this test's own source does not contain the full literals.
     assert "المراجعة الخارجية اختيارية" in text
-    for stale in ("human legal review remains pending", "pending_human_legal_review",
-                  "بانتظار مراجعة قانونية بشرية", "المراجعة القانونية البشرية معلّقة"):
+    _phlr = "pending_" + "human_legal_review"
+    for stale in ("human legal review " + "remains pending", "human legal review " + "pending",
+                  _phlr, "seed_" + _phlr,
+                  "بانتظار مراجعة " + "قانونية بشرية", "المراجعة القانونية " + "البشرية معلّقة"):
         assert stale not in text, stale
+
+
+def test_no_stale_review_framing_in_foundation_files():
+    # Every new foundation file must be free of the old blanket human-legal-review framing.
+    # (Fragmented literals so this test's own source cannot self-match.)
+    _phlr = "pending_" + "human_legal_review"
+    stale_framings = (
+        "human legal review " + "remains pending",
+        "human legal review " + "still pending",
+        "human legal review " + "pending",
+        _phlr,
+        "seed_" + _phlr,
+        "بانتظار مراجعة " + "قانونية بشرية",
+        "المراجعة القانونية " + "البشرية معلّقة",
+    )
+    files = [
+        os.path.join(ROOT, "docs", "SOVEREIGN_LEGAL_CORPUS_FACTORY_DOCTRINE_AR.md"),
+        os.path.join(ROOT, "docs", "LEGAL_CORPUS_FACTORY_ARCHITECTURE_AR.md"),
+        PROFILE, BATCH, TERMS,
+        os.path.join(SCHEMA_DIR, "law_profile.schema.json"),
+        os.path.join(SCHEMA_DIR, "batch_config.schema.json"),
+        os.path.join(SCHEMA_DIR, "provenance_passport.schema.json"),
+        os.path.join(ROOT, "scripts", "validate_legal_corpus_factory_foundation.py"),
+        os.path.abspath(__file__),
+    ]
+    for p in files:
+        with open(p, encoding="utf-8") as fh:
+            text = fh.read()
+        for stale in stale_framings:
+            assert stale not in text, (os.path.relpath(p, ROOT), stale)
+    # README: only the factory-foundation section must be clean (historical P0 notes are untouched).
+    with open(os.path.join(ROOT, "README.md"), encoding="utf-8") as fh:
+        rtext = fh.read()
+    marker = "## Multilingual Saudi legal corpus for AI (foundation)"
+    assert marker in rtext
+    seg = rtext.split(marker, 1)[1].split("\n## ", 1)[0]
+    for stale in stale_framings:
+        assert stale not in seg, ("README.md#foundation-section", stale)
 
 
 def test_doctrine_contains_no_false_official_chinese_claim():

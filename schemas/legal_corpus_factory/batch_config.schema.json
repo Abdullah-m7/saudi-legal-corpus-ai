@@ -19,7 +19,10 @@
     "translation_basis",
     "english_guidance_role",
     "qa_required",
-    "human_legal_review_required",
+    "source_basis",
+    "repository_legal_review",
+    "external_legal_review",
+    "official_status",
     "prohibited_claims",
     "protected_layers",
     "validation_policy"
@@ -41,7 +44,29 @@
     "translation_basis": {"type": "string"},
     "english_guidance_role": {"type": "string"},
     "qa_required": {"type": "boolean"},
-    "human_legal_review_required": {"type": "boolean"},
+    "source_basis": {
+      "type": "string",
+      "description": "Source basis under the repository review model, e.g. official_source_based."
+    },
+    "repository_legal_review": {
+      "type": "object",
+      "description": "Repository-owner legal review (legal background / bachelor_of_law; repository_owner_review_active).",
+      "additionalProperties": true
+    },
+    "external_legal_review": {
+      "type": "object",
+      "description": "External legal review status (optional for enterprise/official adoption; not required for repository use).",
+      "additionalProperties": true
+    },
+    "official_status": {
+      "type": "object",
+      "description": "Official-status boundaries (no official government publication/translation/adoption; not legal advice).",
+      "additionalProperties": true
+    },
+    "human_legal_review_required": {
+      "type": "boolean",
+      "description": "Deprecated: superseded by repository_legal_review + external_legal_review. Optional for backward compatibility only; not the central review model."
+    },
     "prohibited_claims": {"type": "array", "items": {"type": "string"}},
     "protected_layers": {"type": "array", "items": {"type": "string"}},
     "validation_policy": {"type": "object", "additionalProperties": true}

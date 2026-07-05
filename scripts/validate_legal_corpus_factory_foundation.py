@@ -2,12 +2,18 @@
 # -*- coding: utf-8 -*-
 """Validate the sovereign legal corpus factory FOUNDATION (docs, schemas, profile, config, seed).
 
-Read-only and idempotent. Confirms the foundation artifacts exist and parse, that the schemas carry
-the required top-level structure, that the law profile reflects current repository facts and makes no
-false Chinese official/binding/governing/full-281/trilingual claims (human legal review still
-pending), that the example P0-005 QA batch config matches the existing P0-005 QA scope/babs, that the
-terminology bank is all seed_pending_human_legal_review, and that no P1/P2/P3 batch dirs and no full
-Chinese 281 layer / trilingual alignment exist. Touches no existing corpus data.
+Multilingual, LLM-ready, official-source-based Saudi legal corpus for AI. Read-only and idempotent.
+Confirms the foundation artifacts exist and parse, that the schemas carry the required top-level
+structure, and that the law profile reflects current repository facts under the repository
+legal-review model: the official Arabic source governs; the repository owner has a legal background
+(bachelor_of_law) and runs active repository review (repository_owner_review_active); external legal
+review is optional for enterprise/official adoption and NOT required for repository use; no false
+Chinese official/binding/governing/full-281/trilingual claim and no official government
+publication/translation/adoption claim. Also verifies the example P0-005 QA batch config matches the
+existing P0-005 QA scope/babs, that the terminology bank uses the repository-owner review model
+(seed_repository_owner_review_active / seed_pending_repository_owner_review), that no stale
+human-legal-review framing remains in the foundation files, and that no P1/P2/P3 batch dirs and no
+full Chinese 281 layer / trilingual alignment exist. Touches no existing corpus data.
 
 Exit 0 == pass; 1 == problems.
 """
@@ -102,12 +108,15 @@ def main() -> int:
         ("batch_config_schema", ("law_id", "batch_id", "stage", "priority", "remediation_track",
                                  "scope_articles", "expected_babs", "expected_bab_distribution",
                                  "source_status_before", "remediation_action", "translation_basis",
-                                 "english_guidance_role", "qa_required", "human_legal_review_required",
+                                 "english_guidance_role", "qa_required", "source_basis",
+                                 "repository_legal_review", "external_legal_review", "official_status",
                                  "prohibited_claims", "protected_layers", "validation_policy")),
         ("provenance_schema", ("law_id", "article_number", "article_title_ar", "bab", "source_language",
                                "governing_text_source", "governing_text_hash_sha256", "reference_layers",
                                "extraction_status", "remediation_status", "qa_status",
-                               "human_legal_review_status", "risk_lane", "risk_reasons",
+                               "source_basis", "repository_legal_review_status",
+                               "external_legal_review_status", "official_status",
+                               "risk_lane", "risk_reasons",
                                "last_batch_id", "last_changed_commit", "notes")),
     ):
         sc = docs[label]
@@ -275,12 +284,41 @@ def main() -> int:
     for term in BANNED:
         if term in blob:
             problems.append("banned overclaim term present in foundation artifacts: %r" % term)
-    # the old blanket "human legal review remains pending" framing must not remain in new files
-    for stale in ("human legal review remains pending", "pending_human_legal_review",
-                  "بانتظار مراجعة قانونية بشرية", "المراجعة القانونية البشرية معلّقة"):
-        if stale in new_files_text:
-            problems.append("stale human-legal-review framing must be removed from foundation "
-                            "files: %r" % stale)
+
+    # 8b. the old blanket human-legal-review framing must not remain in ANY foundation file.
+    # The forbidden phrases are assembled from fragments so this validator's own source (and the
+    # test's) does not contain the full literals and cannot self-match.
+    _phlr = "pending_" + "human_legal_review"
+    stale_framings = (
+        "human legal review " + "remains pending",
+        "human legal review " + "still pending",
+        "human legal review " + "pending",
+        _phlr,
+        "seed_" + _phlr,
+        "بانتظار مراجعة " + "قانونية بشرية",
+        "المراجعة القانونية " + "البشرية معلّقة",
+    )
+    foundation_texts = {}
+    for p in (DOCTRINE, ARCH, LAW_PROFILE_SCHEMA, BATCH_SCHEMA, PROV_SCHEMA, PROFILE, BATCH, TERMS,
+              os.path.abspath(__file__),
+              os.path.join(ROOT, "tests", "test_legal_corpus_factory_foundation.py")):
+        if os.path.exists(p):
+            with open(p, encoding="utf-8") as fh:
+                foundation_texts[os.path.relpath(p, ROOT)] = fh.read()
+    # README: scan only the factory-foundation section (historical P0 notes elsewhere are untouched).
+    readme = os.path.join(ROOT, "README.md")
+    if os.path.exists(readme):
+        with open(readme, encoding="utf-8") as fh:
+            rtext = fh.read()
+        marker = "## Multilingual Saudi legal corpus for AI (foundation)"
+        if marker in rtext:
+            seg = rtext.split(marker, 1)[1].split("\n## ", 1)[0]
+            foundation_texts["README.md#foundation-section"] = seg
+    for rel, text in foundation_texts.items():
+        for stale in stale_framings:
+            if stale in text:
+                problems.append("stale human-legal-review framing must be removed from foundation "
+                                "file %s: %r" % (rel, stale))
 
     # 9. no P1/P2/P3 batch dirs; no full-Chinese-281 / trilingual artifacts created
     later = glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))

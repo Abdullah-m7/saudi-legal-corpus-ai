@@ -17,7 +17,10 @@
     "extraction_status",
     "remediation_status",
     "qa_status",
-    "human_legal_review_status",
+    "source_basis",
+    "repository_legal_review_status",
+    "external_legal_review_status",
+    "official_status",
     "risk_lane",
     "risk_reasons",
     "last_batch_id",
@@ -40,7 +43,27 @@
     "extraction_status": {"type": "string"},
     "remediation_status": {"type": "string"},
     "qa_status": {"type": "string"},
-    "human_legal_review_status": {"type": "string"},
+    "source_basis": {
+      "type": "string",
+      "description": "Article-level source basis under the repository review model, e.g. official_source_based."
+    },
+    "repository_legal_review_status": {
+      "type": "string",
+      "description": "Repository-owner review status for this article, e.g. repository_owner_review_active."
+    },
+    "external_legal_review_status": {
+      "type": "string",
+      "description": "External legal review status (optional for enterprise/official adoption; not required for repository use), e.g. not_performed."
+    },
+    "official_status": {
+      "type": "object",
+      "description": "Official-status boundaries for this article (no official translation/adoption; Chinese not official/binding/governing; not legal advice).",
+      "additionalProperties": true
+    },
+    "human_legal_review_status": {
+      "type": "string",
+      "description": "Deprecated: superseded by repository_legal_review_status + external_legal_review_status. Optional for backward compatibility only; not a required or central field."
+    },
     "risk_lane": {"type": "string", "enum": ["fast_lane", "strict_lane"]},
     "risk_reasons": {"type": "array", "items": {"type": "string"}},
     "last_batch_id": {"type": ["string", "null"]},
