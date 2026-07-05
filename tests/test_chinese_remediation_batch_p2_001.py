@@ -1,16 +1,16 @@
-"""Chinese remediation Batch P1-004 tests (P1 retranslation batch; 16 articles, Babs 10/12/13/14).
+"""Chinese remediation Batch P2-001 tests (first P2 expansion batch; 20 articles, Babs 1/2/4).
 
-P1 track = retranslation / manual review: the batch carries fresh internal Chinese retranslated from
-the official Arabic governing text (English guidance only) for exactly the 16 authorized P1-004
-articles, because the prior internal Chinese candidate for these articles was materially incomplete /
-condensed (all 16 are priority P1 in the semantic-QA report). Each record's bab must match the
-official coverage-index expected_bab_number and link to the (unchanged) prior candidate record and its
-P1 finding. Chinese is internal / non-official / non-binding / non-governing under the repository
-review model (official Arabic governs; repository-owner review active / bachelor_of_law; external
-review optional and not required for repository use); qa_status pending_future_qa. No full
-Arabic/English text embedded; all P0 batches + QA, P1-001 (+ QA), P1-002 (+ QA), P1-003 (+ QA) and base
-layers untouched; no other P1/P2/P3 dirs. Reads committed artifacts and exercises the validator's
-rejection paths.
+P2 track = expansion: the batch carries internal Chinese EXPANDED from the official Arabic governing
+text (English guidance only, existing candidate as the starting point) for exactly the 20 authorized
+P2-001 articles, because the prior internal Chinese candidate for these articles existed but was
+condensed (all 20 are priority P2 in the remediation backlog). Each record's bab must match the
+official coverage-index expected_bab_number, link to the (unchanged) prior candidate record, and link
+to its P2 backlog finding (priority/track/blocker/action). Chinese is internal / non-official /
+non-binding / non-governing under the repository review model (official Arabic governs; repository-owner
+review active / bachelor_of_law; external review optional and not required for repository use);
+qa_status pending_future_qa. No full Arabic/English text embedded; all P0 batches + QA, all P1 batches +
+QA, and base layers untouched; no other P2/P3 dirs. Reads committed artifacts and exercises the
+validator's rejection paths.
 """
 
 import copy
@@ -22,10 +22,10 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_004",
-                    "companies_law_m132_1443_zh_internal_remediation_p1_004.json")
+DATA = os.path.join(ROOT, "data", "chinese_remediation_batches", "p2_001",
+                    "companies_law_m132_1443_zh_internal_remediation_p2_001.json")
 MD = os.path.join(ROOT, "reports", "chinese_translation_review",
-                  "CHINESE_REMEDIATION_BATCH_P1_004_AR.md")
+                  "CHINESE_REMEDIATION_BATCH_P2_001_AR.md")
 ARABIC = os.path.join(ROOT, "data", "official_arabic_legal_llm",
                       "companies_law_m132_1443_official_arabic_legal_llm_001_281.json")
 ENGLISH = os.path.join(ROOT, "data", "official_english_legal_llm",
@@ -34,11 +34,11 @@ COV = os.path.join(ROOT, "reports", "chinese_translation_review",
                    "chinese_article_coverage_index_001_281.json")
 CANDF = os.path.join(ROOT, "data", "chinese_internal_legal_llm",
                      "companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json")
-QA189 = os.path.join(ROOT, "reports", "chinese_translation_review",
-                     "chinese_internal_llm_semantic_qa_189.json")
-VALIDATOR = os.path.join(ROOT, "scripts", "validate_chinese_remediation_batch_p1_004.py")
+BACKLOG = os.path.join(ROOT, "reports", "chinese_translation_review",
+                       "chinese_remediation_backlog_001_281.json")
+VALIDATOR = os.path.join(ROOT, "scripts", "validate_chinese_remediation_batch_p2_001.py")
 
-ARTS = [230, 233, 242, 244, 248, 252, 253, 255, 256, 264, 266, 267, 270, 271, 273, 277]
+ARTS = [4, 10, 16, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 58, 59]
 BANNED = ("official chinese translation", "chinese is official", "chinese is binding",
           "chinese is governing", "full verified chinese translation",
           "governing chinese text", "binding chinese text")
@@ -50,6 +50,7 @@ P0_BATCHES = {
     "P0-004": "p0_004/companies_law_m132_1443_zh_internal_remediation_p0_004.json",
     "P0-005": "p0_005/companies_law_m132_1443_zh_internal_remediation_p0_005.json",
 }
+P1_COUNTS = {"p1_001": 20, "p1_002": 20, "p1_003": 20, "p1_004": 16}
 
 
 def _read(p):
@@ -73,7 +74,7 @@ def _run(path=None):
 
 
 def _write_tmp(tmp_path, doc):
-    p = tmp_path / "p1_004_mutated.json"
+    p = tmp_path / "p2_001_mutated.json"
     p.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
     return str(p)
 
@@ -94,41 +95,39 @@ def test_exact_article_scope():
 
 
 def test_exact_expected_babs():
-    assert _d()["expected_babs"] == [10, 12, 13, 14]
+    assert _d()["expected_babs"] == [1, 2, 4]
 
 
 def test_expected_bab_distribution():
     dist = {}
     for r in _d()["records"]:
         dist.setdefault(r["bab"], []).append(r["article_number"])
-    assert dist == {10: [230, 233], 12: [242, 244, 248, 252, 253, 255, 256],
-                    13: [264, 266, 267, 270, 271], 14: [273, 277]}
+    assert dist == {1: [4, 10, 16, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34],
+                    2: [37], 4: [58, 59]}
 
 
 def test_exact_record_count():
-    assert _d()["article_count"] == 16
-    assert len(_d()["records"]) == 16
+    assert _d()["article_count"] == 20
+    assert len(_d()["records"]) == 20
 
 
 def test_no_duplicate_articles():
     nums = [r["article_number"] for r in _d()["records"]]
-    assert len(set(nums)) == 16
-
-
-def test_no_out_of_scope_articles():
-    assert set(r["article_number"] for r in _d()["records"]) == set(ARTS)
+    assert len(set(nums)) == 20
 
 
 def test_priority_and_track():
     d = _d()
-    assert d["priority"] == "P1"
-    assert d["remediation_track"] == "P1_retranslation_or_manual_review"
-    assert d["first_p1_batch"] is False
+    assert d["priority"] == "P2"
+    assert d["remediation_track"] == "P2_expansion_needed"
+    assert d["remediation_action"] == "expand_existing_internal_chinese_from_arabic"
+    assert d["source_basis"] == "official_arabic_plus_existing_chinese_candidate"
+    assert d["first_p2_batch"] is True
 
 
 def test_each_record_bab_in_range():
     for r in _d()["records"]:
-        assert r["bab"] in (10, 12, 13, 14)
+        assert r["bab"] in (1, 2, 4)
 
 
 def test_each_record_bab_matches_coverage_index():
@@ -144,13 +143,14 @@ def test_posture_flags_correct():
         assert r["internal_reference_only"] is True
         assert r["translation_basis"] == "official_arabic_governing_text"
         assert r["english_guidance_role"] == "secondary_guidance_only"
-        assert r["remediation_action"] == "retranslate_internal_chinese_from_arabic"
+        assert r["source_basis"] == "official_arabic_plus_existing_chinese_candidate"
+        assert r["remediation_action"] == "expand_existing_internal_chinese_from_arabic"
+        assert r["source_status_before"] == "condensed_candidate_needs_expansion"
         assert r["qa_status"] == "pending_future_qa"
 
 
 def test_repository_review_model():
     d = _d()
-    assert d["source_basis"] == "official_source_based"
     rlr = d["repository_legal_review"]
     assert rlr["repository_owner_has_legal_background"] is True
     assert rlr["repository_owner_legal_qualification"] == "bachelor_of_law"
@@ -160,7 +160,6 @@ def test_repository_review_model():
     assert elr["external_legal_review_optional_for_enterprise_or_official_adoption"] is True
     assert elr["external_legal_review_status"] == "not_performed"
     for r in d["records"]:
-        assert r["source_basis"] == "official_source_based"
         assert r["repository_legal_review_status"] == "repository_owner_review_active"
         assert r["external_legal_review_status"] == "not_performed"
 
@@ -221,12 +220,16 @@ def test_prior_candidate_link_matches_unchanged_candidate():
         assert r["prior_candidate_record_id"] == c["record_id"]
 
 
-def test_all_scope_articles_are_p1_in_semantic_qa():
-    qa = {r["article_number"]: r for r in _read(QA189)["records"]}
+def test_all_scope_articles_are_p2_in_backlog():
+    bk = {r["article_number"]: r for r in _read(BACKLOG)["records"]}
     for r in _d()["records"]:
-        assert qa[r["article_number"]]["priority"] == "P1"
-        assert r["qa_priority"] == "P1"
-        assert r["qa_recommended_action"] == qa[r["article_number"]]["recommended_action"]
+        b = bk[r["article_number"]]
+        assert b["current_priority"] == "P2"
+        assert b["remediation_track"] == "P2_expansion_needed"
+        assert r["backlog_priority"] == b["current_priority"]
+        assert r["backlog_remediation_track"] == b["remediation_track"]
+        assert r["backlog_remediation_action"] == b["remediation_action"]
+        assert r["backlog_current_blocker"] == b["current_blocker"]
 
 
 def test_no_full_arabic_or_english_text_duplicated():
@@ -244,20 +247,20 @@ def test_all_p0_batches_unchanged():
         assert len(recs) in (12, 20), label
 
 
-def test_p0_and_earlier_p1_qa_unchanged():
+def test_all_p0_and_p1_qa_unchanged():
     for fn in ("chinese_remediation_batch_p0_002_qa.json", "chinese_remediation_batch_p0_003_qa.json",
                "chinese_remediation_batch_p0_004_qa.json", "chinese_remediation_batch_p0_005_qa.json",
                "chinese_remediation_batch_p1_001_qa.json", "chinese_remediation_batch_p1_002_qa.json",
-               "chinese_remediation_batch_p1_003_qa.json"):
+               "chinese_remediation_batch_p1_003_qa.json", "chinese_remediation_batch_p1_004_qa.json"):
         qa = _read(os.path.join(ROOT, "reports", "chinese_translation_review", fn))
         assert qa["final_status"] == "QA_PASS"
 
 
-def test_p1_001_002_003_data_unchanged():
-    for sub in ("p1_001", "p1_002", "p1_003"):
+def test_all_p1_data_unchanged():
+    for sub, cnt in P1_COUNTS.items():
         p = os.path.join(ROOT, "data", "chinese_remediation_batches", sub,
                          "companies_law_m132_1443_zh_internal_remediation_%s.json" % sub)
-        assert len(_read(p)["records"]) == 20
+        assert len(_read(p)["records"]) == cnt
 
 
 def test_protected_layers_unchanged():
@@ -276,9 +279,10 @@ def test_protected_layers_unchanged():
                                       "bab*_zh_source_extracted_articles_*.json"))) == 14
 
 
-def test_only_p1_001_004_authorized_no_other_p1_p2_p3():
+def test_only_authorized_dirs_no_other_p2_p3():
+    allowed = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001")
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001")]
+             if os.path.basename(x) not in allowed]
     assert not later
 
 
@@ -298,7 +302,7 @@ def test_reject_duplicate_article(tmp_path):
 
 def test_reject_wrong_bab(tmp_path):
     doc = copy.deepcopy(_d())
-    doc["records"][0]["bab"] = 12  # art 230 is Bab 10
+    doc["records"][0]["bab"] = 2  # art 4 is Bab 1
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
 
 
@@ -320,7 +324,13 @@ def test_reject_broken_prior_candidate_link(tmp_path):
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
 
 
-def test_reject_external_review_required(tmp_path):
+def test_reject_broken_backlog_link(tmp_path):
     doc = copy.deepcopy(_d())
-    doc["external_legal_review"]["external_legal_review_required_for_repository_use"] = True
+    doc["records"][0]["backlog_remediation_action"] = "wrong_action"
+    assert _run(_write_tmp(tmp_path, doc)).returncode != 0
+
+
+def test_reject_wrong_track(tmp_path):
+    doc = copy.deepcopy(_d())
+    doc["remediation_track"] = "P1_retranslation_or_manual_review"
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
