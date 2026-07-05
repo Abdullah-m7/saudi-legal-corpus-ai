@@ -60,7 +60,10 @@ confirmation + QA are completed** (PASS 18/18, no minor fixes). **The full Chine
 (P0 → P1 → P2 → P3) is complete.** A **closure audit** verifies all 281 articles across 15 batches
 are implemented with QA_PASS, no missing/duplicate articles, no prohibited content. See
 [`reports/chinese_translation_review/CHINESE_REMEDIATION_PROGRAM_CLOSURE_AUDIT_AR.md`]. Validate:
-`make chinese-remediation-program-closure-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+`make chinese-remediation-program-closure-validate`. An **implementing regulations
+intake scaffold** is created as a separate corpus track for future Arabic official
+source intake — no text ingested yet. Validate:
+`make implementing-regulations-intake-scaffold-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 

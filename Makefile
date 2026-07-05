@@ -83,7 +83,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         legal-corpus-factory-foundation-validate \
         repository-ux-docs-validate \
         repository-rename-readiness-validate \
-        chinese-remediation-program-closure-validate
+        chinese-remediation-program-closure-validate \
+        implementing-regulations-intake-scaffold-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -643,6 +644,10 @@ repository-rename-readiness-validate:
 # -- Chinese remediation program closure audit (read-only; P0..P3 complete) --
 chinese-remediation-program-closure-validate:
 	$(PY) scripts/validate_chinese_remediation_program_closure.py
+
+# -- Implementing regulations intake scaffold (scaffold only; no intake/translation) --
+implementing-regulations-intake-scaffold-validate:
+	$(PY) scripts/validate_implementing_regulations_intake_scaffold.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
