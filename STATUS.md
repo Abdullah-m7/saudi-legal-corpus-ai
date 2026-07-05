@@ -84,6 +84,16 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
 - **Trilingual alignment: not created.**
 - **Public release: not created.**
 
+## Implementing regulations
+
+- **Implementing regulations intake scaffold created** — a clean scaffold for future
+  Arabic official source intake of the Implementing Regulations of the Saudi Companies
+  Law (M/132, 1443H), as a **separate corpus track** from the Companies Law. No Arabic
+  text ingested, no English/Chinese text generated, no trilingual alignment, no public
+  release. Arabic governs; not official/binding/governing; not legal advice. See
+  [`data/implementing_regulations/intake_scaffold.json`] and
+  [`reports/implementing_regulations/IMPLEMENTING_REGULATIONS_INTAKE_SCAFFOLD_AR.md`].
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**
