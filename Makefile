@@ -71,6 +71,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-batch-p2-001-validate \
         chinese-remediation-batch-p2-001-qa-validate \
         chinese-remediation-batch-p2-002-validate \
+        chinese-remediation-batch-p2-002-qa-validate \
         legal-corpus-factory-foundation-validate \
         repository-ux-docs-validate \
         repository-rename-readiness-validate
@@ -581,6 +582,10 @@ chinese-remediation-batch-p2-001-qa-validate:
 # -- Chinese remediation Batch P2-002 (second P2 expansion batch; 20 articles, Babs 4/5/6/7) --
 chinese-remediation-batch-p2-002-validate:
 	$(PY) scripts/validate_chinese_remediation_batch_p2_002.py
+
+# -- Chinese remediation Batch P2-002 QA (second P2 expansion QA; review only; Babs 4/5/6/7) --
+chinese-remediation-batch-p2-002-qa-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p2_002_qa.py
 
 # -- Sovereign legal corpus factory foundation (doctrine, architecture, schemas, profile, config, seed) --
 legal-corpus-factory-foundation-validate:

@@ -54,9 +54,8 @@ Additional laws can be onboarded as new profiles.
 
 Chinese remediation and QA are **completed through P0-005**, and **all P1 batches
 (P1-001..P1-004) remediation + QA are completed** (each PASS, no minor fixes);
-**P2-001 remediation + QA are completed** (PASS 20/20, no minor fixes); **P2-002 remediation is
-completed** (20 articles, expansion; QA pending); **P2-002 QA / P2-003 onward / P3 not started**. See
-**[`STATUS.md`](STATUS.md)** for the authoritative list.
+**P2-001 and P2-002 remediation + QA are completed** (each PASS 20/20, no minor fixes); **P2-003 onward
+/ P3 not started**. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
@@ -1113,11 +1112,17 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   condensed** (all 20 are priority **P2** in the remediation backlog). Each record carries SHA-256 hashes
   and links to the (unchanged) prior candidate record and its P2 backlog finding; each expansion keeps
   the Arabic clause-segment count. Chinese stays internal / non-official / non-binding / non-governing;
-  Arabic governs. All P0, all P1, and the P2-001 batches (and their QA) are unchanged; **QA not yet
-  started** (qa_status pending_future_qa); **P2-002 QA / P2-003 onward / P3 not started**.
+  Arabic governs. All P0, all P1, and the P2-001 batches (and their QA) are unchanged.
 - Data under [`data/chinese_remediation_batches/p2_002/`](data/chinese_remediation_batches/p2_002/);
   report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P2_002_AR.md`. Validate:
   `make chinese-remediation-batch-p2-002-validate`.
+- **QA:** article-by-article review of all 20 expansions against the official Arabic governing text
+  (English secondary; prior condensed candidate as the baseline) → **PASS (20/20, no minor fixes)**;
+  expansion faithfulness, no hallucination / no omission / no over-expansion, clause-segment parity, and
+  P2-backlog linkage confirmed; review only (P2-002 data unchanged). Artifacts:
+  `reports/chinese_translation_review/chinese_remediation_batch_p2_002_qa.json` +
+  `CHINESE_REMEDIATION_BATCH_P2_002_QA_AR.md`. Validate: `make chinese-remediation-batch-p2-002-qa-validate`.
+  **P2-003 onward / P3 not started.**
 
 ## Multilingual Saudi legal corpus for AI (foundation)
 
