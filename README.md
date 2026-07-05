@@ -54,8 +54,9 @@ Additional laws can be onboarded as new profiles.
 
 Chinese remediation and QA are **completed through P0-005**, and **all P1 batches
 (P1-001..P1-004) remediation + QA are completed** (each PASS, no minor fixes);
-**P2-001 and P2-002 remediation + QA are completed** (each PASS 20/20, no minor fixes); **P2-003 onward
-/ P3 not started**. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+**all five P2 batches (P2-001..P2-005) remediation + QA are completed** (each PASS, no minor fixes) —
+**the full P2 expansion track is complete**; **P3 not started**. See **[`STATUS.md`](STATUS.md)** for
+the authoritative list.
 
 ## Quick navigation
 
@@ -1122,7 +1123,27 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   P2-backlog linkage confirmed; review only (P2-002 data unchanged). Artifacts:
   `reports/chinese_translation_review/chinese_remediation_batch_p2_002_qa.json` +
   `CHINESE_REMEDIATION_BATCH_P2_002_QA_AR.md`. Validate: `make chinese-remediation-batch-p2-002-qa-validate`.
-  **P2-003 onward / P3 not started.**
+
+### Chinese remediation Batches P2-003, P2-004, P2-005 (remaining P2 expansion batches — P2 complete)
+
+- The remaining P2 batches **expand** the internal Chinese reference from the official Arabic governing
+  text (English guidance only; existing candidate as the starting point), because the prior internal
+  Chinese candidates existed but were condensed (all are priority **P2** in the remediation backlog).
+  Each expansion keeps the Arabic clause-segment count and links to the (unchanged) prior candidate and
+  its P2 backlog finding.
+  - **P2-003** — 20 articles across Babs 7, 8, 9 and 10 (non-profit, professional, holding, and company
+    conversion/merger/division).
+  - **P2-004** — 20 articles across Babs 10, 11 and 12 (merger/division, foreign companies, and
+    termination/liquidation).
+  - **P2-005** — 15 articles across Babs 12, 13 and 14 (liquidation, penalties, and final provisions).
+- **QA (each batch):** article-by-article review against the official Arabic → **PASS** (P2-003 20/20,
+  P2-004 20/20, P2-005 15/15; no minor fixes); expansion faithfulness, no hallucination / no omission /
+  no over-expansion, clause-segment parity, terminology and P2-backlog linkage confirmed; review only
+  (remediation data unchanged). Chinese stays internal / non-official / non-binding / non-governing;
+  Arabic governs. This **completes the full P2 expansion track (P2-001..P2-005)**. **P3 not started.**
+- Data under `data/chinese_remediation_batches/{p2_003,p2_004,p2_005}/`; reports + QA under
+  `reports/chinese_translation_review/`. Validate: `make chinese-remediation-batch-p2-003-validate`
+  (and `-qa-validate`), likewise for `p2-004` and `p2-005`.
 
 ## Multilingual Saudi legal corpus for AI (foundation)
 
