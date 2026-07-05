@@ -82,7 +82,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-batch-p3-conf-001-qa-validate \
         legal-corpus-factory-foundation-validate \
         repository-ux-docs-validate \
-        repository-rename-readiness-validate
+        repository-rename-readiness-validate \
+        chinese-remediation-program-closure-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -638,6 +639,10 @@ repository-ux-docs-validate:
 # -- Repository rename readiness (saudi-companies-law-ar-zh-llm -> saudi-legal-corpus-ai) --
 repository-rename-readiness-validate:
 	$(PY) scripts/validate_repository_rename_readiness.py
+
+# -- Chinese remediation program closure audit (read-only; P0..P3 complete) --
+chinese-remediation-program-closure-validate:
+	$(PY) scripts/validate_chinese_remediation_program_closure.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

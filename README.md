@@ -57,7 +57,10 @@ Chinese remediation and QA are **completed through P0-005**, and **all P1 batche
 **all five P2 batches (P2-001..P2-005) remediation + QA are completed** (each PASS, no minor fixes) —
 **the full P2 expansion track is complete**; and the **final P3 confirmation batch (P3-CONF-001)
 confirmation + QA are completed** (PASS 18/18, no minor fixes). **The full Chinese remediation program
-(P0 → P1 → P2 → P3) is complete.** See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+(P0 → P1 → P2 → P3) is complete.** A **closure audit** verifies all 281 articles across 15 batches
+are implemented with QA_PASS, no missing/duplicate articles, no prohibited content. See
+[`reports/chinese_translation_review/CHINESE_REMEDIATION_PROGRAM_CLOSURE_AUDIT_AR.md`]. Validate:
+`make chinese-remediation-program-closure-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
