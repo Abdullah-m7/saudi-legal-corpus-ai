@@ -54,8 +54,9 @@ Additional laws can be onboarded as new profiles.
 
 Chinese remediation and QA are **completed through P0-005**, and **all P1 batches
 (P1-001..P1-004) remediation + QA are completed** (each PASS, no minor fixes);
-**P2-001 remediation + QA are completed** (PASS 20/20, no minor fixes); **P2-002 onward / P3 not
-started**. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+**P2-001 remediation + QA are completed** (PASS 20/20, no minor fixes); **P2-002 remediation is
+completed** (20 articles, expansion; QA pending); **P2-002 QA / P2-003 onward / P3 not started**. See
+**[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
@@ -1092,7 +1093,7 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   **P2** in the remediation backlog). Each record carries SHA-256 hashes and links to the (unchanged)
   prior candidate record and its P2 backlog finding. Chinese stays
   internal / non-official / non-binding / non-governing; Arabic governs. All P0 and all P1 batches (and
-  their QA) are unchanged; **P2-002 onward / P3 not started**.
+  their QA) are unchanged.
 - Data under [`data/chinese_remediation_batches/p2_001/`](data/chinese_remediation_batches/p2_001/);
   report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P2_001_AR.md`. Validate:
   `make chinese-remediation-batch-p2-001-validate`.
@@ -1102,6 +1103,21 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   P2-backlog linkage confirmed; review only (P2-001 data unchanged). Artifacts:
   `reports/chinese_translation_review/chinese_remediation_batch_p2_001_qa.json` +
   `CHINESE_REMEDIATION_BATCH_P2_001_QA_AR.md`. Validate: `make chinese-remediation-batch-p2-001-qa-validate`.
+
+### Chinese remediation Batch P2-002 (second P2 batch; 20 articles, Babs 4/5/6/7; expansion)
+
+- The second P2 batch **expands** the internal Chinese reference for **20 articles across Babs 4, 5, 6
+  and 7** (60, 66, 75, 113, 115, 133, 139, 142, 150, 151, 152, 153, 155, 158, 162, 173, 181, 182, 184,
+  186) **from the official Arabic governing text** (English guidance only; existing candidate as the
+  starting point), because the prior internal Chinese candidate for these articles **existed but was
+  condensed** (all 20 are priority **P2** in the remediation backlog). Each record carries SHA-256 hashes
+  and links to the (unchanged) prior candidate record and its P2 backlog finding; each expansion keeps
+  the Arabic clause-segment count. Chinese stays internal / non-official / non-binding / non-governing;
+  Arabic governs. All P0, all P1, and the P2-001 batches (and their QA) are unchanged; **QA not yet
+  started** (qa_status pending_future_qa); **P2-002 QA / P2-003 onward / P3 not started**.
+- Data under [`data/chinese_remediation_batches/p2_002/`](data/chinese_remediation_batches/p2_002/);
+  report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P2_002_AR.md`. Validate:
+  `make chinese-remediation-batch-p2-002-validate`.
 
 ## Multilingual Saudi legal corpus for AI (foundation)
 
