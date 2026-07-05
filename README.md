@@ -52,8 +52,8 @@ Additional laws can be onboarded as new profiles.
 | Chinese source extracted | Chinese | Source | 14 files |
 | OCR / manual review queue | Arabic | Verification | 281 entries |
 
-Chinese remediation and QA are **completed through P0-005**; the **first P1 batch
-(P1-001) remediation draft** is in (pending future QA); **P1-002 onward / P2 / P3
+Chinese remediation and QA are **completed through P0-005**, and **P1-001 and P1-002
+remediation + QA are completed** (each PASS 20/20); **P1-003 onward / P2 / P3
 not started**. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
@@ -1034,12 +1034,16 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   165) **from the official Arabic governing text** (English guidance only), because the prior internal
   Chinese candidate was **materially incomplete/condensed** (all 20 are priority **P1** in the
   semantic-QA report). Each record carries SHA-256 hashes and links to the (unchanged) prior candidate
-  record and its P1 finding, with `qa_status = pending_future_qa`. Chinese stays internal /
+  record and its P1 finding. Chinese stays internal /
   non-official / non-binding / non-governing; Arabic governs. All P0 and P1-001 batches (and their QA)
-  are unchanged; **P1-002 QA / P1-003 onward / P2 / P3 not started**.
+  are unchanged; **P1-003 onward / P2 / P3 not started**.
 - Data under [`data/chinese_remediation_batches/p1_002/`](data/chinese_remediation_batches/p1_002/);
   report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P1_002_AR.md`. Validate:
   `make chinese-remediation-batch-p1-002-validate`.
+- **QA:** article-by-article review of all 20 retranslations against the official Arabic governing text
+  (English secondary) → **PASS (20/20, no minor fixes)**; review only (P1-002 data unchanged).
+  Artifacts: `reports/chinese_translation_review/chinese_remediation_batch_p1_002_qa.json` +
+  `CHINESE_REMEDIATION_BATCH_P1_002_QA_AR.md`. Validate: `make chinese-remediation-batch-p1-002-qa-validate`.
 
 ## Multilingual Saudi legal corpus for AI (foundation)
 
