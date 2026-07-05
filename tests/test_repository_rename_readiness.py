@@ -100,10 +100,10 @@ def test_corpus_layers_unchanged():
 
 
 def test_no_later_batches():
-    # The authorized P1-001 (and its later-authorized QA) may exist; only p1_002+/P2/P3 batch dirs
+    # The authorized P1-001 (and its later-authorized QA) may exist; only p1_003+/P2/P3 batch dirs
     # remain forbidden. (The rename-readiness change itself neither started QA nor any later batch.)
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) != "p1_001"]
+             if os.path.basename(x) not in ("p1_001", "p1_002")]
     assert not later
 
 

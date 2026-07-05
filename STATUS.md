@@ -40,7 +40,9 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
 - **P1-001 (first P1 batch): remediation + QA completed** — 20 articles across Babs 1–2,
   retranslated from the official Arabic governing text; article-by-article QA result
   **PASS (20/20, no minor fixes)**.
-- **P1-002 onward / P2 / P3: not started.**
+- **P1-002: remediation draft created** — 20 articles across Babs 3–6, retranslated from the
+  official Arabic governing text; `qa_status = pending_future_qa` (P1-002 QA not yet run).
+- **P1-003 onward / P2 / P3: not started.**
 
 ## Not yet created
 
