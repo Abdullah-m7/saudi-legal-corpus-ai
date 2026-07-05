@@ -309,7 +309,7 @@ def main(argv=None) -> int:
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
              if os.path.basename(x) not in ("p1_001", "p1_002")]
     if later:
-        problems.append("only P1-001 authorized; no other P1/P2/P3 batch dirs: %s"
+        problems.append("only P1-001 and P1-002 authorized; no p1_003+/P2/P3 batch dirs: %s"
                         % sorted(os.path.basename(x) for x in later))
     for pat in ("*trilingual*", "*full_chinese_281*", "*chinese_full_281*"):
         hits = glob.glob(os.path.join(ROOT, "data", "**", pat), recursive=True) + \

@@ -6,7 +6,7 @@ P1 track = retranslation / manual review: the prior internal Chinese candidate f
 materially incomplete / condensed (per the semantic-QA report, all 20 are priority P1), so this batch
 carries a fresh internal Chinese retranslation derived from the official Arabic governing text
 (English guidance only). Confirms the batch covers exactly the 20 authorized P1-002 articles with
-verbatim-hashed internal Chinese text, that every record's bab is in [1,2] and equals the
+verbatim-hashed internal Chinese text, that every record's bab is in [3,4,5,6] and equals the
 coverage-index expected_bab_number, that each record links to the (unchanged) prior candidate record
 and to the P1 semantic-QA finding, that it carries the correct internal / non-official / non-binding /
 non-governing posture under the repository review model (official Arabic governs; repository-owner
