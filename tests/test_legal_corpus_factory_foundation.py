@@ -250,9 +250,9 @@ def test_architecture_exists_and_describes_reusable_components():
 
 
 def test_no_p1_p2_p3_dirs():
-    # P1-001 is the authorized first P1 batch; only p1_002+/P2/P3 dirs remain forbidden.
+    # P1-001 is the authorized first P1 batch; only p1_003+/P2/P3 dirs remain forbidden.
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) != "p1_001"]
+             if os.path.basename(x) not in ("p1_001", "p1_002")]
     assert not later
 
 

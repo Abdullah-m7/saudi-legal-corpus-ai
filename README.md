@@ -1027,6 +1027,20 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   Artifacts: `reports/chinese_translation_review/chinese_remediation_batch_p1_001_qa.json` +
   `CHINESE_REMEDIATION_BATCH_P1_001_QA_AR.md`. Validate: `make chinese-remediation-batch-p1-001-qa-validate`.
 
+### Chinese remediation Batch P1-002 (20 articles, Babs 3/4/5/6; retranslation)
+
+- The next P1 batch retranslates the internal Chinese reference for **20 articles across Babs 3, 4, 5
+  and 6** (54, 71, 72, 77, 90, 99, 101, 102, 108, 117, 132, 138, 145, 146, 149, 154, 156, 157, 164,
+  165) **from the official Arabic governing text** (English guidance only), because the prior internal
+  Chinese candidate was **materially incomplete/condensed** (all 20 are priority **P1** in the
+  semantic-QA report). Each record carries SHA-256 hashes and links to the (unchanged) prior candidate
+  record and its P1 finding, with `qa_status = pending_future_qa`. Chinese stays internal /
+  non-official / non-binding / non-governing; Arabic governs. All P0 and P1-001 batches (and their QA)
+  are unchanged; **P1-002 QA / P1-003 onward / P2 / P3 not started**.
+- Data under [`data/chinese_remediation_batches/p1_002/`](data/chinese_remediation_batches/p1_002/);
+  report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P1_002_AR.md`. Validate:
+  `make chinese-remediation-batch-p1-002-validate`.
+
 ## Multilingual Saudi legal corpus for AI (foundation)
 
 - This repository is a **multilingual, LLM-ready, official-source-based Saudi legal corpus** — a

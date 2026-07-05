@@ -11,7 +11,7 @@ semantic-QA-P1 links match the live records), that the QA carries the correct le
 non-official / non-binding / non-governing posture under the repository review model, points at the
 P1-001 remediation file, embeds no full Arabic/English/Chinese text, and touches no protected layer
 (P1-001 data, all P0 batches + QA, and the base corpora). Review only: P1-001 data must be unmodified
-unless a concrete minor fix is recorded. No p1_002+/P2/P3 batch dirs; no full Chinese 281 / trilingual.
+unless a concrete minor fix is recorded. No p1_003+/P2/P3 batch dirs; no full Chinese 281 / trilingual.
 Read-only, idempotent.
 
 Usage: validate_chinese_remediation_batch_p1_001_qa.py [QA_JSON_PATH]
@@ -305,9 +305,9 @@ def main(argv=None) -> int:
     if os.path.exists(q) and len(_read(q).get("entries", [])) != 281:
         problems.append("OCR manual_review_queue must remain 281 entries")
 
-    # P1-001 authorized; only p1_002+/P2/P3 forbidden; no full-281 / trilingual artifacts
+    # P1-001 authorized; only p1_003+/P2/P3 forbidden; no full-281 / trilingual artifacts
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) != "p1_001"]
+             if os.path.basename(x) not in ("p1_001", "p1_002")]
     if later:
         problems.append("only P1-001 authorized; no other P1/P2/P3 batch dirs: %s"
                         % sorted(os.path.basename(x) for x in later))
