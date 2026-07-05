@@ -60,7 +60,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-batch-p0-004-qa-validate \
         chinese-remediation-batch-p0-005-validate \
         chinese-remediation-batch-p0-005-qa-validate \
-        legal-corpus-factory-foundation-validate
+        legal-corpus-factory-foundation-validate \
+        repository-ux-docs-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -528,6 +529,10 @@ chinese-remediation-batch-p0-005-qa-validate:
 # -- Sovereign legal corpus factory foundation (doctrine, architecture, schemas, profile, config, seed) --
 legal-corpus-factory-foundation-validate:
 	$(PY) scripts/validate_legal_corpus_factory_foundation.py
+
+# -- Repository UX / navigation docs (README top + START_HERE/STATUS/REPOSITORY_MAP/USE_CASES) --
+repository-ux-docs-validate:
+	$(PY) scripts/validate_repository_ux_docs.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
