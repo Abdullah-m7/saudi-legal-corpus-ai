@@ -197,7 +197,7 @@ def test_all_p1_and_p2_001_data_unchanged():
 
 
 def test_no_other_p2_p3_dirs():
-    allowed = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002")
+    allowed = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005")
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
              if os.path.basename(x) not in allowed]
     assert not later

@@ -13,7 +13,7 @@ correct internal / non-official / non-binding / non-governing posture under the 
 (official Arabic governs; repository-owner review active with a legal background / bachelor_of_law;
 external legal review optional and not required for repository use), with qa_status pending_future_qa,
 and that it touches no protected layer (all P0 batches + their QA, all P1 batches + their QA, the
-P2-001 batch + its QA, the Chinese candidate 189, and the base corpora). No p2_003+/P3 batch dirs, no
+P2-001 batch + its QA, the Chinese candidate 189, and the base corpora). No p3_* batch dirs, no
 full Chinese 281 layer, no trilingual alignment. Read-only and idempotent.
 
 Usage: validate_chinese_remediation_batch_p2_002.py [DATA_JSON_PATH]
@@ -331,12 +331,12 @@ def main(argv=None) -> int:
     if os.path.exists(q) and len(_read(q).get("entries", [])) != 281:
         problems.append("OCR manual_review_queue must remain 281 entries (unchanged)")
 
-    # P1-001..P1-004, P2-001 and P2-002 authorized; only p2_003+/P3 (and any other) dirs remain forbidden
-    allowed_dirs = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002")
+    # P1-001..P1-004 and P2-001..P2-005 authorized; only p3_* (and any other) dirs remain forbidden
+    allowed_dirs = ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005")
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
              if os.path.basename(x) not in allowed_dirs]
     if later:
-        problems.append("only P1-001..P1-004, P2-001 and P2-002 authorized; no other P2/P3 batch dirs: %s"
+        problems.append("only P1-001..P1-004 and P2-001..P2-005 authorized; no p3_* batch dirs: %s"
                         % sorted(os.path.basename(x) for x in later))
     # no full Chinese 281 / trilingual artifacts
     for pat in ("*trilingual*", "*full_chinese_281*", "*chinese_full_281*"):

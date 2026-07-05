@@ -53,8 +53,18 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
 - **P2-002 (second P2 batch): remediation + QA completed** — 20 articles across Babs 4, 5, 6 and 7,
   internal Chinese expanded from the official Arabic governing text (the prior candidate existed but was
   condensed); article-by-article QA result **PASS (20/20, no minor fixes)**.
-- **All P2 batches so far (P2-001, P2-002): remediation + QA completed** (each PASS, no minor fixes).
-- **P2-003 onward / P3: not started.**
+- **P2-003: remediation + QA completed** — 20 articles across Babs 7, 8, 9 and 10, internal Chinese
+  expanded from the official Arabic governing text (the prior candidate existed but was condensed);
+  article-by-article QA result **PASS (20/20, no minor fixes)**.
+- **P2-004: remediation + QA completed** — 20 articles across Babs 10, 11 and 12, internal Chinese
+  expanded from the official Arabic governing text (the prior candidate existed but was condensed);
+  article-by-article QA result **PASS (20/20, no minor fixes)**.
+- **P2-005: remediation + QA completed** — 15 articles across Babs 12, 13 and 14, internal Chinese
+  expanded from the official Arabic governing text (the prior candidate existed but was condensed);
+  article-by-article QA result **PASS (15/15, no minor fixes)**.
+- **All P2 batches (P2-001..P2-005): remediation + QA completed** (each PASS, no minor fixes) — **the
+  full P2 expansion track is complete**.
+- **P3: not started.**
 
 ## Not yet created
 

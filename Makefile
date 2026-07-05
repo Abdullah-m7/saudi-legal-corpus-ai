@@ -72,6 +72,12 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-batch-p2-001-qa-validate \
         chinese-remediation-batch-p2-002-validate \
         chinese-remediation-batch-p2-002-qa-validate \
+        chinese-remediation-batch-p2-003-validate \
+        chinese-remediation-batch-p2-003-qa-validate \
+        chinese-remediation-batch-p2-004-validate \
+        chinese-remediation-batch-p2-004-qa-validate \
+        chinese-remediation-batch-p2-005-validate \
+        chinese-remediation-batch-p2-005-qa-validate \
         legal-corpus-factory-foundation-validate \
         repository-ux-docs-validate \
         repository-rename-readiness-validate
@@ -586,6 +592,30 @@ chinese-remediation-batch-p2-002-validate:
 # -- Chinese remediation Batch P2-002 QA (second P2 expansion QA; review only; Babs 4/5/6/7) --
 chinese-remediation-batch-p2-002-qa-validate:
 	$(PY) scripts/validate_chinese_remediation_batch_p2_002_qa.py
+
+# -- Chinese remediation Batch P2-003 (P2 expansion batch; 20 articles, Babs 7/8/9/10) --
+chinese-remediation-batch-p2-003-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p2_003.py
+
+# -- Chinese remediation Batch P2-003 QA (P2 expansion QA; review only; Babs 7/8/9/10) --
+chinese-remediation-batch-p2-003-qa-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p2_003_qa.py
+
+# -- Chinese remediation Batch P2-004 (P2 expansion batch; 20 articles, Babs 10/11/12) --
+chinese-remediation-batch-p2-004-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p2_004.py
+
+# -- Chinese remediation Batch P2-004 QA (P2 expansion QA; review only; Babs 10/11/12) --
+chinese-remediation-batch-p2-004-qa-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p2_004_qa.py
+
+# -- Chinese remediation Batch P2-005 (P2 expansion batch; 15 articles, Babs 12/13/14) --
+chinese-remediation-batch-p2-005-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p2_005.py
+
+# -- Chinese remediation Batch P2-005 QA (P2 expansion QA; review only; Babs 12/13/14) --
+chinese-remediation-batch-p2-005-qa-validate:
+	$(PY) scripts/validate_chinese_remediation_batch_p2_005_qa.py
 
 # -- Sovereign legal corpus factory foundation (doctrine, architecture, schemas, profile, config, seed) --
 legal-corpus-factory-foundation-validate:
