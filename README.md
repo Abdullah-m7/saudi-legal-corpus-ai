@@ -63,7 +63,10 @@ are implemented with QA_PASS, no missing/duplicate articles, no prohibited conte
 `make chinese-remediation-program-closure-validate`. An **implementing regulations
 intake scaffold** is created as a separate corpus track for future Arabic official
 source intake — no text ingested yet. Validate:
-`make implementing-regulations-intake-scaffold-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+`make implementing-regulations-intake-scaffold-validate`. A **listed joint-stock implementing
+regulation Arabic source** (69 articles, 14 chapters) has been ingested from the official Umm
+Al-Qura gazette — specialized to listed joint-stock companies only. Validate:
+`make implementing-regulations-listed-jsc-arabic-source-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
