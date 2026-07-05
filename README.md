@@ -53,7 +53,8 @@ Additional laws can be onboarded as new profiles.
 | OCR / manual review queue | Arabic | Verification | 281 entries |
 
 Chinese remediation and QA are **completed through P0-005**, and **P1-001, P1-002 and P1-003
-remediation + QA are completed** (each PASS 20/20); **P1-004 onward / P2 / P3 not started**. See
+remediation + QA are completed** (each PASS 20/20); **P1-004 remediation draft is created
+(pending future QA)**; **P1-005 onward / P2 / P3 not started**. See
 **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
@@ -1062,6 +1063,20 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   (English secondary) → **PASS (20/20, no minor fixes)**; review only (P1-003 data unchanged).
   Artifacts: `reports/chinese_translation_review/chinese_remediation_batch_p1_003_qa.json` +
   `CHINESE_REMEDIATION_BATCH_P1_003_QA_AR.md`. Validate: `make chinese-remediation-batch-p1-003-qa-validate`.
+
+### Chinese remediation Batch P1-004 (16 articles, Babs 10/12/13/14; retranslation)
+
+- The next P1 batch retranslates the internal Chinese reference for **16 articles across Babs 10, 12, 13
+  and 14** (230, 233, 242, 244, 248, 252, 253, 255, 256, 264, 266, 267, 270, 271, 273, 277) **from the
+  official Arabic governing text** (English guidance only), because the prior internal Chinese candidate
+  was **materially incomplete/condensed** (all 16 are priority **P1** in the semantic-QA report). Each
+  record carries SHA-256 hashes and links to the (unchanged) prior candidate record and its P1 finding,
+  with `qa_status = pending_future_qa`. Chinese stays internal / non-official / non-binding /
+  non-governing; Arabic governs. All P0, P1-001, P1-002 and P1-003 batches (and their QA) are unchanged;
+  **P1-004 QA / P1-005 onward / P2 / P3 not started**.
+- Data under [`data/chinese_remediation_batches/p1_004/`](data/chinese_remediation_batches/p1_004/);
+  report `reports/chinese_translation_review/CHINESE_REMEDIATION_BATCH_P1_004_AR.md`. Validate:
+  `make chinese-remediation-batch-p1-004-validate`.
 
 ## Multilingual Saudi legal corpus for AI (foundation)
 

@@ -318,7 +318,7 @@ def main(argv=None) -> int:
 
     # P1-001/P1-002/P1-003 authorized; only p1_004+/P2/P3 forbidden; no full-281 / trilingual artifacts
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003")]
+             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004")]
     if later:
         problems.append("only P1-001/P1-002/P1-003 authorized; no p1_004+/P2/P3 batch dirs: %s"
                         % sorted(os.path.basename(x) for x in later))

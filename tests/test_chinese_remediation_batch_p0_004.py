@@ -230,7 +230,7 @@ def test_no_p1_p2_p3_files():
     # P0-005 is now an authorized sibling batch; only P1/P2/P3 must not exist yet.
     # P1-001 is the authorized first P1 batch; only p1_003+/P2/P3 dirs remain forbidden.
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003")]
+             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004")]
     assert not later
 
 
@@ -281,8 +281,8 @@ def test_reject_missing_required_field(tmp_path):
 
 def test_reject_starting_p1(tmp_path):
     # Simulate an unauthorized later batch dir existing: create it, expect validator to fail, clean up.
-    # (P0-005 and the authorized P1-001/P1-002/P1-003 may coexist; only p1_004+/P2/P3 are forbidden.)
-    p1 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_004")
+    # (P0-005 and the authorized P1-001/P1-002/P1-003/P1-004 may coexist; only p1_005+/P2/P3 are forbidden.)
+    p1 = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_005")
     created = False
     try:
         if not os.path.isdir(p1):
