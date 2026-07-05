@@ -1,4 +1,100 @@
-# Saudi Companies Law — Arabic–Chinese Reference Translation
+# Saudi Legal Corpus for AI
+
+**Multilingual, LLM-ready, official-source-based Saudi legal corpus for AI.**
+It structures Saudi laws and regulations into **auditable, machine-readable
+legal layers**. The **Saudi Companies Law is the first implemented law
+profile**, not the whole project identity; **Chinese is one language layer**,
+not the identity of the project.
+
+> **New here?** Start with **[`START_HERE.md`](START_HERE.md)** · current state
+> **[`STATUS.md`](STATUS.md)** · structure **[`REPOSITORY_MAP.md`](REPOSITORY_MAP.md)**
+> · uses **[`USE_CASES.md`](USE_CASES.md)**.
+
+## What this repository is
+
+- A **multilingual, LLM-ready, official-source-based Saudi legal corpus for AI**.
+- **Official Arabic source governs**; English and Chinese are **reference layers**.
+- Canonical JSON → LLM/RAG chunks → generated human-readable views, each locked
+  by **read-only, idempotent validators**.
+- Built to serve **government entities, AI companies and model builders,
+  enterprises operating in or entering Saudi Arabia, investors, researchers,
+  developers, and ordinary users**.
+
+## What this repository is not
+
+- **Not** an official government publication; **no official translation** and
+  **no official government adoption** are claimed.
+- **Not** a full Chinese 281 layer and **not** a trilingual alignment (neither
+  is created).
+- **Not** a public release, and **not legal advice**.
+- **Not** solely about Chinese, and **not** solely about investment guidance —
+  those are one layer and one use case, respectively.
+
+## Current implemented law profile — Saudi Companies Law
+
+The **Saudi Companies Law (M/132, 1443H)** is the **first implemented law
+profile**. Profile:
+[`data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json`](data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json).
+Additional laws can be onboarded as new profiles.
+
+## Current language / layer status
+
+| Layer | Language | Role | Status |
+|-------|----------|------|--------|
+| Official Arabic full LLM | Arabic | **Governing** | 281 articles |
+| English full LLM | English | Reference/guidance | 281 articles |
+| English reference | English | Reference | 281 articles |
+| Chinese internal candidate | Chinese | Internal reference only | 189 records |
+| Old Chinese Legal LLM | Chinese | Internal reference only | 5 files / 23 records |
+| Chinese source extracted | Chinese | Source | 14 files |
+| OCR / manual review queue | Arabic | Verification | 281 entries |
+
+Chinese remediation and QA are **completed through P0-005**; **P1/P2/P3 not
+started**. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+
+## Quick navigation
+
+| Go to | For |
+|-------|-----|
+| [`START_HERE.md`](START_HERE.md) | Onboarding for developers, reviewers, companies, government/AI stakeholders |
+| [`STATUS.md`](STATUS.md) | Single source of truth: counts, what is complete, what is not |
+| [`REPOSITORY_MAP.md`](REPOSITORY_MAP.md) | What each directory contains and what to open first |
+| [`USE_CASES.md`](USE_CASES.md) | Practical uses, without overclaiming |
+| [`docs/`](docs/) | Arabic doctrine, architecture, and UX principles |
+| [`data/`](data/) | Source data + generated LLM/reference layers |
+| [`schemas/`](schemas/) | JSON Schemas (incl. reusable factory schemas) |
+| [`Makefile`](Makefile) | All validation & build targets (`make help`) |
+
+## Quick validation
+
+```bash
+make legal-corpus-factory-foundation-validate   # foundation (doctrine/schemas/profile)
+make validate                                    # Book One schema + QA
+make book2-validate                              # Book Two
+make book3-validate                              # Book Three
+make book4-validate                              # repo book4 (JSC modeled scope)
+make test                                        # full pytest suite
+```
+
+Per-layer validators (Arabic, English, English reference, Chinese layers, and
+each Chinese remediation batch + QA) are listed by `make help`.
+
+## Repository legal-review model
+
+The **official Arabic source governs**; English and Chinese are reference
+layers. The **repository owner has a legal background (bachelor of law)** and
+runs **active repository legal review** (`repository_owner_review_active`).
+**External legal review is optional** for enterprise or official adoption and
+is **not required for repository use**.
+
+## Official-status boundaries
+
+**No official government publication is claimed. No official government adoption
+is claimed. No official translation is claimed. Chinese is not official, not
+binding, not governing. Not legal advice.**
+
+---
+
 ## Book One / الباب الأول · Articles 1–34 · 第一编（第一条至第三十四条）
 
 沙特《公司法》第一编 阿拉伯语–中文 **参考译本** — 结构化优先的、可验证的、面向 LLM/RAG 的法律翻译语料库。
