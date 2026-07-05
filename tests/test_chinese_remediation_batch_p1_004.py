@@ -1,15 +1,16 @@
-"""Chinese remediation Batch P1-001 tests (first P1 batch; 20 articles, Babs 1/2).
+"""Chinese remediation Batch P1-004 tests (P1 retranslation batch; 16 articles, Babs 10/12/13/14).
 
 P1 track = retranslation / manual review: the batch carries fresh internal Chinese retranslated from
-the official Arabic governing text (English guidance only) for exactly the 20 authorized P1-001
+the official Arabic governing text (English guidance only) for exactly the 16 authorized P1-004
 articles, because the prior internal Chinese candidate for these articles was materially incomplete /
-condensed (all 20 are priority P1 in the semantic-QA report). Each record's bab must match the
+condensed (all 16 are priority P1 in the semantic-QA report). Each record's bab must match the
 official coverage-index expected_bab_number and link to the (unchanged) prior candidate record and its
 P1 finding. Chinese is internal / non-official / non-binding / non-governing under the repository
 review model (official Arabic governs; repository-owner review active / bachelor_of_law; external
 review optional and not required for repository use); qa_status pending_future_qa. No full
-Arabic/English text embedded; all P0 batches + QA and base layers untouched; no other P1/P2/P3 dirs.
-Reads committed artifacts and exercises the validator's rejection paths.
+Arabic/English text embedded; all P0 batches + QA, P1-001 (+ QA), P1-002 (+ QA), P1-003 (+ QA) and base
+layers untouched; no other P1/P2/P3 dirs. Reads committed artifacts and exercises the validator's
+rejection paths.
 """
 
 import copy
@@ -21,10 +22,10 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_001",
-                    "companies_law_m132_1443_zh_internal_remediation_p1_001.json")
+DATA = os.path.join(ROOT, "data", "chinese_remediation_batches", "p1_004",
+                    "companies_law_m132_1443_zh_internal_remediation_p1_004.json")
 MD = os.path.join(ROOT, "reports", "chinese_translation_review",
-                  "CHINESE_REMEDIATION_BATCH_P1_001_AR.md")
+                  "CHINESE_REMEDIATION_BATCH_P1_004_AR.md")
 ARABIC = os.path.join(ROOT, "data", "official_arabic_legal_llm",
                       "companies_law_m132_1443_official_arabic_legal_llm_001_281.json")
 ENGLISH = os.path.join(ROOT, "data", "official_english_legal_llm",
@@ -35,9 +36,9 @@ CANDF = os.path.join(ROOT, "data", "chinese_internal_legal_llm",
                      "companies_law_m132_1443_chinese_internal_legal_llm_isolable_source_articles.json")
 QA189 = os.path.join(ROOT, "reports", "chinese_translation_review",
                      "chinese_internal_llm_semantic_qa_189.json")
-VALIDATOR = os.path.join(ROOT, "scripts", "validate_chinese_remediation_batch_p1_001.py")
+VALIDATOR = os.path.join(ROOT, "scripts", "validate_chinese_remediation_batch_p1_004.py")
 
-ARTS = [1, 2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18, 19, 20, 35, 38, 48]
+ARTS = [230, 233, 242, 244, 248, 252, 253, 255, 256, 264, 266, 267, 270, 271, 273, 277]
 BANNED = ("official chinese translation", "chinese is official", "chinese is binding",
           "chinese is governing", "full verified chinese translation",
           "governing chinese text", "binding chinese text")
@@ -72,7 +73,7 @@ def _run(path=None):
 
 
 def _write_tmp(tmp_path, doc):
-    p = tmp_path / "p1_001_mutated.json"
+    p = tmp_path / "p1_004_mutated.json"
     p.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
     return str(p)
 
@@ -93,17 +94,25 @@ def test_exact_article_scope():
 
 
 def test_exact_expected_babs():
-    assert _d()["expected_babs"] == [1, 2]
+    assert _d()["expected_babs"] == [10, 12, 13, 14]
+
+
+def test_expected_bab_distribution():
+    dist = {}
+    for r in _d()["records"]:
+        dist.setdefault(r["bab"], []).append(r["article_number"])
+    assert dist == {10: [230, 233], 12: [242, 244, 248, 252, 253, 255, 256],
+                    13: [264, 266, 267, 270, 271], 14: [273, 277]}
 
 
 def test_exact_record_count():
-    assert _d()["article_count"] == 20
-    assert len(_d()["records"]) == 20
+    assert _d()["article_count"] == 16
+    assert len(_d()["records"]) == 16
 
 
 def test_no_duplicate_articles():
     nums = [r["article_number"] for r in _d()["records"]]
-    assert len(set(nums)) == 20
+    assert len(set(nums)) == 16
 
 
 def test_no_out_of_scope_articles():
@@ -114,12 +123,12 @@ def test_priority_and_track():
     d = _d()
     assert d["priority"] == "P1"
     assert d["remediation_track"] == "P1_retranslation_or_manual_review"
-    assert d["first_p1_batch"] is True
+    assert d["first_p1_batch"] is False
 
 
 def test_each_record_bab_in_range():
     for r in _d()["records"]:
-        assert r["bab"] in (1, 2)
+        assert r["bab"] in (10, 12, 13, 14)
 
 
 def test_each_record_bab_matches_coverage_index():
@@ -235,11 +244,20 @@ def test_all_p0_batches_unchanged():
         assert len(recs) in (12, 20), label
 
 
-def test_p0_qa_unchanged():
+def test_p0_and_earlier_p1_qa_unchanged():
     for fn in ("chinese_remediation_batch_p0_002_qa.json", "chinese_remediation_batch_p0_003_qa.json",
-               "chinese_remediation_batch_p0_004_qa.json", "chinese_remediation_batch_p0_005_qa.json"):
+               "chinese_remediation_batch_p0_004_qa.json", "chinese_remediation_batch_p0_005_qa.json",
+               "chinese_remediation_batch_p1_001_qa.json", "chinese_remediation_batch_p1_002_qa.json",
+               "chinese_remediation_batch_p1_003_qa.json"):
         qa = _read(os.path.join(ROOT, "reports", "chinese_translation_review", fn))
         assert qa["final_status"] == "QA_PASS"
+
+
+def test_p1_001_002_003_data_unchanged():
+    for sub in ("p1_001", "p1_002", "p1_003"):
+        p = os.path.join(ROOT, "data", "chinese_remediation_batches", sub,
+                         "companies_law_m132_1443_zh_internal_remediation_%s.json" % sub)
+        assert len(_read(p)["records"]) == 20
 
 
 def test_protected_layers_unchanged():
@@ -258,7 +276,7 @@ def test_protected_layers_unchanged():
                                       "bab*_zh_source_extracted_articles_*.json"))) == 14
 
 
-def test_only_p1_001_authorized_no_other_p1_p2_p3():
+def test_only_p1_001_004_authorized_no_other_p1_p2_p3():
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
              if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004")]
     assert not later
@@ -280,7 +298,7 @@ def test_reject_duplicate_article(tmp_path):
 
 def test_reject_wrong_bab(tmp_path):
     doc = copy.deepcopy(_d())
-    doc["records"][17]["bab"] = 1  # art 35 is Bab 2
+    doc["records"][0]["bab"] = 12  # art 230 is Bab 10
     assert _run(_write_tmp(tmp_path, doc)).returncode != 0
 
 

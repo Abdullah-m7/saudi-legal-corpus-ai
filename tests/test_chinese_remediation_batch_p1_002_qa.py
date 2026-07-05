@@ -175,7 +175,7 @@ def test_p1_001_data_unchanged():
 
 def test_no_other_p1_p2_p3_dirs():
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003")]
+             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004")]
     assert not later
 
 
