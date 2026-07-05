@@ -94,7 +94,7 @@ def main(argv=None) -> int:
             if token not in low:
                 problems.append("STATUS.md must record count token %r" % token)
         for boundary in (
-            "p3: not started",
+            "(p0 → p1 → p2 → p3) is complete",
             "full chinese 281 layer: not created",
             "trilingual alignment: not created",
             "public release: not created",

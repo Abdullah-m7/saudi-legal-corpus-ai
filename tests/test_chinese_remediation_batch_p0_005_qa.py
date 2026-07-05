@@ -282,7 +282,7 @@ def test_protected_layers_unchanged():
 
 def test_no_p1_p2_p3_files():
     # P1-001 is the authorized first P1 batch; only p1_003+/P2/P3 dirs remain forbidden.
-    later = [x for x in glob.glob(os.path.join(BD, "p[123]_*")) if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005")]
+    later = [x for x in glob.glob(os.path.join(BD, "p[123]_*")) if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005", "p3_conf_001")]
     assert not later
 
 

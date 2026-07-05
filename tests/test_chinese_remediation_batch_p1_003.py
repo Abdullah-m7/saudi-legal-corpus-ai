@@ -278,7 +278,7 @@ def test_protected_layers_unchanged():
 
 def test_only_p1_001_002_003_authorized_no_other_p1_p2_p3():
     later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
-             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005")]
+             if os.path.basename(x) not in ("p1_001", "p1_002", "p1_003", "p1_004", "p2_001", "p2_002", "p2_003", "p2_004", "p2_005", "p3_conf_001")]
     assert not later
 
 

@@ -74,7 +74,7 @@ def test_status_records_counts():
 def test_status_records_boundaries():
     low = _norm(_read(STATUS))
     for boundary in (
-        "p3: not started",
+        "(p0 → p1 → p2 → p3) is complete",
         "full chinese 281 layer: not created",
         "trilingual alignment: not created",
         "public release: not created",
