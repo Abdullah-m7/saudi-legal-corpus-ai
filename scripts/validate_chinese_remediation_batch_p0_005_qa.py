@@ -265,13 +265,16 @@ def main(argv=None) -> int:
     if os.path.exists(q) and len(_read(q).get("entries", [])) != 281:
         problems.append("OCR manual_review_queue must remain 281 entries (unchanged)")
 
-    # no post-P0 (P1/P2/P3) batch files created; no generic/factory refactor files
+    # no post-P0 (P1/P2/P3) batch files created; no generic/factory refactor files.
+    # The explicitly-authorized sovereign legal corpus factory FOUNDATION validator is exempt;
+    # any OTHER factory script (a generic-validator refactor) is still forbidden.
     later = glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
     if later:
         problems.append("post-P0 batch dirs (P1/P2/P3) must not exist: %s"
                         % sorted(os.path.basename(x) for x in later))
-    factory = glob.glob(os.path.join(ROOT, "scripts", "*factory*")) + \
-        glob.glob(os.path.join(ROOT, "src", "**", "*factory*"), recursive=True)
+    factory = [x for x in (glob.glob(os.path.join(ROOT, "scripts", "*factory*")) +
+                           glob.glob(os.path.join(ROOT, "src", "**", "*factory*"), recursive=True))
+               if os.path.basename(x) != "validate_legal_corpus_factory_foundation.py"]
     if factory:
         problems.append("no generic/factory refactor files must exist yet: %s"
                         % sorted(os.path.relpath(x, ROOT) for x in factory))

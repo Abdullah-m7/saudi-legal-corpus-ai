@@ -906,6 +906,40 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   `CHINESE_REMEDIATION_BATCH_P0_005_QA_AR.md`. Validate:
   `make chinese-remediation-batch-p0-005-qa-validate`.
 
+## Multilingual Saudi legal corpus for AI (foundation)
+
+- This repository is a **multilingual, LLM-ready, official-source-based Saudi legal corpus** — a
+  foundation for structuring Saudi laws and regulations into **auditable, machine-readable legal
+  layers**. It is built to serve **government entities, AI companies and model builders, enterprises
+  operating in or entering the Saudi market, investors, researchers, developers, and ordinary users**.
+  The **Companies Law is the first implemented law profile**, not the whole project identity, and
+  **Chinese is one language layer**, not the identity of the project. Investment guidance is one use
+  case, not the sole purpose.
+- **Foundation only** (no pipeline rewrite): the generic validators, report generator, RAG/API
+  export, and cross-batch tooling are described as **future** components and are **not** implemented
+  here.
+- **Doctrine & architecture (Arabic):**
+  [`docs/SOVEREIGN_LEGAL_CORPUS_FACTORY_DOCTRINE_AR.md`](docs/SOVEREIGN_LEGAL_CORPUS_FACTORY_DOCTRINE_AR.md)
+  and
+  [`docs/LEGAL_CORPUS_FACTORY_ARCHITECTURE_AR.md`](docs/LEGAL_CORPUS_FACTORY_ARCHITECTURE_AR.md)
+  (data layers, profiles, validation, export/RAG readiness, multi-law onboarding, multi-language
+  expansion, user groups).
+- **Reusable schemas:** `schemas/legal_corpus_factory/{law_profile,batch_config,provenance_passport}.schema.json`.
+  **Law profile:** `data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json`
+  (current facts only). **Example batch config:**
+  `data/legal_corpus_factory/batch_configs/sa_companies_law_m132_1443_p0_005_qa.batch.json` (does not
+  replace existing artifacts). **Terminology seed:**
+  `data/legal_corpus_factory/terminology/sa_companies_law_core_terms_ar_en_zh_seed.json`
+  (all entries `seed_repository_owner_review_active`).
+- **Review model:** the **official Arabic source governs**; English and Chinese are reference layers.
+  The **repository owner has a legal background (bachelor of law)** and runs **active repository
+  legal review** (`repository_owner_review_active`). **External legal review is optional** for
+  enterprise procurement or official adoption and is **not required for repository use**. This is
+  **not an official government publication**, **no official translation is claimed**, Chinese is
+  **not official/binding/governing**, there is **no full Chinese 281 layer and no trilingual
+  alignment**, and this is **not legal advice**. Validate:
+  `make legal-corpus-factory-foundation-validate`.
+
 ## Chinese Legal LLM-ready layer (repo book4 Sections 1–5)
 
 The **Chinese Legal LLM-ready layer** currently covers **repo book4 Sections 1, 2, 3, 4 and 5 only**

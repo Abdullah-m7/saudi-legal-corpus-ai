@@ -1,0 +1,76 @@
+{
+  "schema": "schemas/legal_corpus_factory/batch_config.schema.json",
+  "not_legal_advice": true,
+  "example_only": true,
+  "example_note": "Illustrative reusable factory input reconstructing the already-completed P0-005 QA batch. This does NOT replace the existing P0-005 QA artifacts (reports/chinese_translation_review/chinese_remediation_batch_p0_005_qa.json + _AR.md); it demonstrates the future generic factory batch-config shape.",
+  "law_id": "sa_companies_law_m132_1443",
+  "batch_id": "P0-005",
+  "stage": "CHINESE_REMEDIATION_BATCH_P0_005_QA",
+  "priority": "P0",
+  "remediation_track": "P0_no_isolable_text",
+  "scope_articles": [188, 189, 190, 191, 192, 194, 218, 220, 260, 261, 262, 274],
+  "expected_babs": [7, 9, 10, 13, 14],
+  "expected_bab_distribution": {
+    "7": [188, 189, 190, 191, 192, 194],
+    "9": [218],
+    "10": [220],
+    "13": [260, 261, 262],
+    "14": [274]
+  },
+  "source_status_before": "excluded_no_isolable_article_text",
+  "remediation_action": "review_only_qa_of_internal_chinese_reference",
+  "translation_basis": "official_arabic_governing_text",
+  "english_guidance_role": "secondary_guidance_only",
+  "qa_required": true,
+  "review_only": true,
+  "review_only_qa_completed": true,
+  "source_basis": "official_source_based",
+  "human_legal_review_required": false,
+  "repository_legal_review": {
+    "repository_owner_has_legal_background": true,
+    "repository_owner_legal_qualification": "bachelor_of_law",
+    "repository_legal_review_status": "repository_owner_review_active"
+  },
+  "external_legal_review": {
+    "external_legal_review_required_for_repository_use": false,
+    "external_legal_review_optional_for_enterprise_or_official_adoption": true,
+    "external_legal_review_status": "not_performed"
+  },
+  "official_status": {
+    "official_government_publication": false,
+    "official_translation_claimed": false,
+    "official_adoption_claimed": false,
+    "not_legal_advice": true
+  },
+  "prohibited_claims": [
+    "official_chinese_translation",
+    "chinese_binding",
+    "chinese_governing",
+    "full_chinese_281_layer",
+    "trilingual_alignment"
+  ],
+  "protected_layers": [
+    "arabic_full_llm_281",
+    "english_full_llm_281",
+    "english_reference_281",
+    "official_arabic_ingested_unverified_281",
+    "chinese_internal_candidate_189",
+    "old_chinese_legal_llm_5_files_23_records",
+    "chinese_source_extracted_14",
+    "ocr_manual_review_queue_281",
+    "p0_001_through_p0_005_batches_and_qa"
+  ],
+  "legal_hierarchy": {
+    "arabic": "governing",
+    "english": "guidance_only",
+    "chinese": "internal_reference_only"
+  },
+  "validation_policy": {
+    "existing_validator": "scripts/validate_chinese_remediation_batch_p0_005_qa.py",
+    "existing_make_target": "chinese-remediation-batch-p0-005-qa-validate",
+    "read_only": true,
+    "idempotent": true,
+    "hashes_only_no_full_text_embedded": true,
+    "final_status_expected": "QA_PASS"
+  }
+}

@@ -285,7 +285,11 @@ def test_no_p1_p2_p3_files():
 
 
 def test_no_generic_factory_refactor_files():
-    assert not glob.glob(os.path.join(ROOT, "scripts", "*factory*"))
+    # The explicitly-authorized sovereign legal corpus factory FOUNDATION validator is permitted;
+    # any OTHER factory script (a generic-validator refactor) is still forbidden.
+    extra = [x for x in glob.glob(os.path.join(ROOT, "scripts", "*factory*"))
+             if os.path.basename(x) != "validate_legal_corpus_factory_foundation.py"]
+    assert not extra
     assert not glob.glob(os.path.join(ROOT, "src", "**", "*factory*"), recursive=True)
 
 
