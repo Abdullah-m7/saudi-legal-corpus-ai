@@ -205,7 +205,10 @@ def test_protected_layers_unchanged():
 
 def test_no_p1_p2_p3_files():
     # P0-004 and P0-005 are now authorized sibling batches; only P1/P2/P3 must not exist yet.
-    assert not glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+    # P1-001 is the authorized first P1 batch; only p1_002+/P2/P3 dirs remain forbidden.
+    later = [x for x in glob.glob(os.path.join(ROOT, "data", "chinese_remediation_batches", "p[123]_*"))
+             if os.path.basename(x) != "p1_001"]
+    assert not later
 
 
 # --- rejection paths ---

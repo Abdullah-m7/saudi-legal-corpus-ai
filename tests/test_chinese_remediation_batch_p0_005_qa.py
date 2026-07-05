@@ -281,7 +281,9 @@ def test_protected_layers_unchanged():
 
 
 def test_no_p1_p2_p3_files():
-    assert not glob.glob(os.path.join(BD, "p[123]_*"))
+    # P1-001 is the authorized first P1 batch; only p1_002+/P2/P3 dirs remain forbidden.
+    later = [x for x in glob.glob(os.path.join(BD, "p[123]_*")) if os.path.basename(x) != "p1_001"]
+    assert not later
 
 
 def test_no_generic_factory_refactor_files():
@@ -368,7 +370,8 @@ def test_reject_p0_005_chinese_text_modified_true(tmp_path):
 
 
 def test_reject_starting_p1_p2_p3():
-    for name in ("p1_001", "p2_001", "p3_001"):
+    # P1-001 is authorized; any OTHER later batch dir (p1_002+/P2/P3) must make the validator fail.
+    for name in ("p1_002", "p2_001", "p3_001"):
         p = os.path.join(BD, name)
         created = False
         try:
