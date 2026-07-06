@@ -1,0 +1,146 @@
+[
+  {
+    "fixture_id": "EVAL-001",
+    "query": "الشركة",
+    "description_ar": "بحث واسع بكلمة «الشركة» — يجب أن يُرجع عدداً كبيراً من النتائج لمنع انحدار النتائج الفارغة",
+    "expected_min_matches": 300,
+    "expected_top_k_contains_any": [
+      "export-cl-art-002",
+      "export-cl-art-003",
+      "export-cl-art-005"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "broad_term"
+  },
+  {
+    "fixture_id": "EVAL-002",
+    "query": "مجلس الإدارة",
+    "description_ar": "عبارة قانونية دقيقة — يجب أن تطابق مواد مجلس الإدارة في نظام الشركات",
+    "expected_min_matches": 100,
+    "expected_top_k_contains_any": [
+      "export-cl-art-068",
+      "export-cl-art-073",
+      "export-cl-art-077",
+      "export-cl-art-080"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "legal_phrase"
+  },
+  {
+    "fixture_id": "EVAL-003",
+    "query": "الجمعية العامة",
+    "description_ar": "عبارة قانونية دقيقة — يجب أن تطابق مواد الجمعية العامة في نظام الشركات",
+    "expected_min_matches": 100,
+    "expected_top_k_contains_any": [
+      "export-cl-art-084",
+      "export-cl-art-085",
+      "export-cl-art-087",
+      "export-cl-art-088"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "legal_phrase"
+  },
+  {
+    "fixture_id": "EVAL-004",
+    "query": "التصفية",
+    "description_ar": "تصفية بمرشح المسار — يجب أن جميع النتائج من مسار نظام الشركات",
+    "expected_min_matches": 10,
+    "track_filter": "companies_law",
+    "expected_top_k_contains_any": [
+      "export-cl-art-245",
+      "export-cl-art-246",
+      "export-cl-art-247",
+      "export-cl-art-257"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "track_filter"
+  },
+  {
+    "fixture_id": "EVAL-005",
+    "query": "الأسهم",
+    "description_ar": "أسهم بمرشح مسار اللوائح التنفيذية للمساهمة المدرجة",
+    "expected_min_matches": 10,
+    "track_filter": "implementing_regulations_listed_joint_stock",
+    "expected_top_k_contains_any": [
+      "export-irljs-art-023",
+      "export-irljs-art-029",
+      "export-irljs-art-030",
+      "export-irljs-art-044"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "track_filter"
+  },
+  {
+    "fixture_id": "EVAL-006",
+    "query": "نموذج",
+    "description_ar": "بحث بمرشح نوع السجل = نموذج — يجب مطابقة النماذج الأربعة",
+    "expected_min_matches": 4,
+    "record_type_filter": "form",
+    "expected_top_k_contains_any": [
+      "export-irgen-form-001",
+      "export-irgen-form-002",
+      "export-irgen-form-003",
+      "export-irgen-form-004"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "record_type_filter"
+  },
+  {
+    "fixture_id": "EVAL-007",
+    "query": "التوكيل",
+    "description_ar": "بحث بمرشح نوع السجل = ملحق — يجب مطابقة ملحق التوكيل",
+    "expected_min_matches": 1,
+    "record_type_filter": "appendix",
+    "expected_top_k_contains_any": [
+      "export-irljs-appendix-001"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "record_type_filter"
+  },
+  {
+    "fixture_id": "EVAL-008",
+    "query": "الجمعية العامة",
+    "description_ar": "تحقق من صحة مخرجات JSON — يجب أن تكون جميع الحقول صحيحة وقابلة للتحليل",
+    "expected_min_matches": 100,
+    "json_output": true,
+    "expected_top_k_contains_any": [
+      "export-cl-art-084",
+      "export-cl-art-087"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "json_output"
+  },
+  {
+    "fixture_id": "EVAL-009",
+    "query": "مجلس الادارة",
+    "description_ar": "تحقق من التطبيع — «مجلس الادارة» بدون همزة يجب أن يطابق نفس نتائج «مجلس الإدارة»",
+    "expected_min_matches": 100,
+    "expected_top_k_contains_any": [
+      "export-cl-art-068",
+      "export-cl-art-073",
+      "export-cl-art-077",
+      "export-cl-art-080"
+    ],
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "normalization"
+  },
+  {
+    "fixture_id": "EVAL-010",
+    "query": "ثرثربرب",
+    "description_ar": "كلمة غير عربية ولا قانونية — يجب أن تُرجع صفر نتائج",
+    "expected_min_matches": 0,
+    "expected_max_matches": 0,
+    "expected_language": "ar",
+    "boundary_note": "بحث معجمي فقط — لا تفسير قانوني",
+    "evaluation_type": "no_result_or_low_result"
+  }
+]

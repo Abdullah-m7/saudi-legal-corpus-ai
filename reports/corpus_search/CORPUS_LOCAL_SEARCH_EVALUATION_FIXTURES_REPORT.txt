@@ -1,0 +1,141 @@
+================================================================
+STAGE: CORPUS_LOCAL_SEARCH_EVALUATION_FIXTURES
+DATE: 2026-07-06
+================================================================
+
+SUMMARY
+-------
+Added a lightweight, deterministic evaluation fixture layer for the existing
+local lexical search CLI. 10 Arabic query fixtures covering broad terms,
+legal phrases, track/record-type filters, JSON output, normalization, and
+no-result checks. Provides regression protection before future search/RAG
+changes.
+
+This is NOT RAG. NOT embeddings. NOT semantic search. NOT an API.
+NOT a public release. NOT legal advice.
+
+BASELINE_CONFIRMED: 0dc77c20a166c6bf751c29141533226df72ce285
+BRANCH: glm/corpus-local-search-evaluation-fixtures
+
+CHAIN_OF_VERIFICATION
+---------------------
+1. Vision Fit: PASS
+   - Makes local search safer to improve later
+   - Provides regression protection before future RAG/search changes
+   - Adds practical quality signal without overbuilding
+
+2. Legal Boundary: PASS
+   - Fixtures are search evaluation only
+   - No legal advice / interpretation / generated conclusions
+   - Arabic official source governs
+   - No English/Chinese records, no trilingual, no public release
+
+3. Scope Discipline: PASS
+   - Search ranking not modified
+   - primary_arabic_governing_records.jsonl not modified
+   - Source corpus files not modified
+   - No embeddings / semantic search / API / UI / database / network
+
+4. Anti-Overengineering: PASS
+   - 10 fixtures only (within 8-12 range)
+   - No giant benchmark or human-labeled dataset
+   - No LLM-generated answers
+   - Simple deterministic checks only
+
+5. Product/Automation Value: PASS
+   - Fixtures catch obvious search regressions
+   - Understandable by Abdullah and future maintainers
+   - Validator produces clear PASS/FAIL output
+   - Deterministic and locally reproducible
+
+EVALUATION_SCOPE
+----------------
+Local lexical search evaluation only via:
+  scripts/search_primary_arabic_export.py
+Against:
+  data/exports/v1/primary_arabic_governing_records.jsonl (450 records)
+
+FIXTURE_COUNT: 10
+
+FIXTURE_CATEGORIES
+------------------
+EVAL-001  broad_term              الشركة                 ≥300 matches
+EVAL-002  legal_phrase            مجلس الإدارة           ≥100 matches
+EVAL-003  legal_phrase            الجمعية العامة         ≥100 matches
+EVAL-004  track_filter            التصفية (companies_law)  ≥10 matches
+EVAL-005  track_filter            الأسهم (listed_jsc)      ≥10 matches
+EVAL-006  record_type_filter      نموذج (form)            ≥4 matches
+EVAL-007  record_type_filter      التوكيل (appendix)      ≥1 matches
+EVAL-008  json_output             الجمعية العامة (JSON)  ≥100 matches
+EVAL-009  normalization           مجلس الادارة (no hamza) ≥100 matches
+EVAL-010  no_result_or_low_result ثرثربرب                0 matches
+
+SEARCH_SOURCE
+-------------
+File: data/exports/v1/primary_arabic_governing_records.jsonl
+Total: 450 Arabic governing records
+
+INCLUDED_RECORDS
+----------------
+- Companies Law (companies_law): 281 articles
+- General IR (implementing_regulations_general): 95 articles + 4 forms
+- Listed JSC IR (implementing_regulations_listed_joint_stock): 69 articles + 1 appendix
+
+EXCLUDED_RECORDS
+----------------
+- English reference records
+- Chinese internal reference records
+- Closure audit records
+- Trilingual alignment records
+
+VALIDATION
+----------
+make validate                              → PASS
+make test                                  → PASS (2252 passed)
+make corpus-registry-validate              → PASS
+make corpus-export-primary-arabic-validate → PASS
+make corpus-local-search-validate          → PASS
+make corpus-local-search-eval-validate     → PASS (10/10 fixtures)
+make corpus-local-search-smoke             → PASS
+
+SMOKE_RESULTS
+-------------
+Query: الشركة           → 371 matches (showing 5)
+Query: مجلس الإدارة     → 170 matches (showing 5)
+Query: الجمعية العامة   → 184 matches (showing 5, JSON valid)
+
+BOUNDARIES
+----------
+- Arabic official source governs
+- Not legal advice
+- Not official translation
+- No trilingual alignment
+- No public release
+- English reference only
+- Chinese internal reference only
+
+FILES_ADDED
+-----------
+1. data/search_eval/local_search_queries_v1.json
+2. scripts/validate_corpus_local_search_eval.py
+3. tests/test_corpus_local_search_eval.py
+4. docs/CORPUS_LOCAL_SEARCH_EVAL.md
+5. reports/corpus_search/CORPUS_LOCAL_SEARCH_EVALUATION_FIXTURES_AR.md
+6. reports/corpus_search/CORPUS_LOCAL_SEARCH_EVALUATION_FIXTURES_REPORT.txt
+
+FILES_MODIFIED
+--------------
+1. Makefile         (added corpus-local-search-eval-validate target + validate dependency)
+2. README.md        (added evaluation fixtures description)
+3. STATUS.md        (added evaluation fixtures status entry)
+
+HYGIENE
+-------
+- No tool/model/session attribution
+- No co-author attribution
+- Consistent with existing code style
+- No generated/session/co-author/tool/model metadata
+
+================================================================
+FINAL_STATUS: ALL CHECKS PASSED — READY FOR PR
+================================================================
