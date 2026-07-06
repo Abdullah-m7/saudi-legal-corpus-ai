@@ -94,7 +94,12 @@ listed JSC 69+1) suitable for future RAG/search/training workflows. Validate:
 provides deterministic, offline CLI search over the 450 Arabic governing
 records — no embeddings, no API, no network. See
 [`docs/CORPUS_LOCAL_SEARCH.md`](docs/CORPUS_LOCAL_SEARCH.md). Validate:
-`make corpus-local-search-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+`make corpus-local-search-validate`. **Local search evaluation fixtures**
+provide 10 deterministic Arabic query fixtures for regression testing — broad
+terms, legal phrases, track/record-type filters, JSON output, normalization,
+and no-result checks. See
+[`docs/CORPUS_LOCAL_SEARCH_EVAL.md`](docs/CORPUS_LOCAL_SEARCH_EVAL.md).
+Validate: `make corpus-local-search-eval-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 

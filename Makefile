@@ -97,7 +97,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-registry-validate \
         corpus-export-primary-arabic-data \
         corpus-export-primary-arabic-validate \
-        corpus-local-search-validate
+        corpus-local-search-validate \
+        corpus-local-search-eval-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -715,6 +716,10 @@ corpus-local-search-smoke:
 	$(PY) scripts/search_primary_arabic_export.py "مجلس الإدارة" --limit 5
 	@echo "---"
 	$(PY) scripts/search_primary_arabic_export.py "الجمعية العامة" --limit 5 --json
+
+# -- Corpus local search evaluation fixtures (deterministic, offline) --
+corpus-local-search-eval-validate:
+	$(PY) scripts/validate_corpus_local_search_eval.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

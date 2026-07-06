@@ -172,6 +172,13 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`docs/CORPUS_LOCAL_SEARCH.md`]. Validate:
   `make corpus-local-search-validate`.
 
+- **Local search evaluation fixtures:** 10 deterministic Arabic query fixtures
+  for regression testing of the local lexical search. Broad terms, legal
+  phrases, track/record-type filters, JSON output, normalization, and
+  no-result checks. See
+  [`docs/CORPUS_LOCAL_SEARCH_EVAL.md`]. Validate:
+  `make corpus-local-search-eval-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**
