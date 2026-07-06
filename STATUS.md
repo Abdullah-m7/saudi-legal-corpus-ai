@@ -179,6 +179,15 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`docs/CORPUS_LOCAL_SEARCH_EVAL.md`]. Validate:
   `make corpus-local-search-eval-validate`.
 
+- **Retrieval context pack:** Deterministic, offline context pack generator
+  that takes a query, runs the existing local lexical search, and exports
+  top results as a structured evidence/context pack (JSON or Markdown) with
+  full provenance. No embeddings, no API, no network, no LLM calls. Not RAG.
+  Not legal advice. Usage:
+  `python3 scripts/build_retrieval_context_pack.py "مجلس الإدارة"`. See
+  [`docs/CORPUS_RETRIEVAL_CONTEXT_PACK.md`]. Validate:
+  `make corpus-retrieval-context-pack-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**
