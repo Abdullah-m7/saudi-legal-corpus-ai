@@ -1,0 +1,117 @@
+CORPUS_RETRIEVAL_PROMPT_PACK_FOUNDATION_REPORT.txt
+============================================================
+
+STAGE: CORPUS_RETRIEVAL_PROMPT_PACK_FOUNDATION
+RESULT: SUCCESS
+BASELINE_CONFIRMED: 5041afcc5f828f513ecf0e4809dfa212a6e3fe87
+BRANCH: glm/corpus-retrieval-prompt-pack-foundation
+
+MULTI_AGENT_TREE_DEBATE: APPLY — strictly prompt construction only
+1. Legal Architect: No legal answers, no legal advice, only instructions/templates from Arabic governing records, Arabic source governs, no English/Chinese, no official translation, no public release — CONFIRMED
+2. Data/Automation Engineer: Deterministic, offline, reuses existing context pack, no LLM/API/network, stable testable templates, machine-readable + human-readable — CONFIRMED
+3. Product/RAG Pragmatist: Right bridge from context packs to future RAG, safer future LLM usage with boundaries/citations/refusal rules, useful for external/local LLM testing — CONFIRMED
+4. Devil's Advocate: Not premature (search+context pack+eval all complete), rejects answer generation/hidden reasoning/model calls, prompt construction only — CONFIRMED
+5. Founder-Speed Advocate: Ship practical templates now, one CLI + one validator + one test file + one doc + one report, no giant framework, no splitting — CONFIRMED
+
+CHAIN_OF_VERIFICATION: ALL 5 CHECKS PASS
+1. Vision Fit: Moves from retrieval toward usable RAG without building RAG; helps future external/local LLM testing; adds practical value — PASS
+2. Legal Boundary: Arabic governs, not legal advice, not official translation, no legal interpretation, no generated conclusions, no LLM call, no answer generation, no English/Chinese, no trilingual, no public release — PASS
+3. Scope Discipline: Reads from context pack output, does not modify JSONL/source corpus/search ranking, no RAG/embeddings/semantic search/API/UI/database/network — PASS
+4. Anti-Overengineering: One v1 prompt pack schema, three prompt modes, no model-specific APIs, no chains/agents — PASS
+5. Product/Automation Value: Inspectable, deterministic, strict citation and boundary instructions, usable with local/external LLMs later, makes future testing safer — PASS
+
+PROMPT_PACK_SCOPE: Builds prompt templates only. Does NOT execute prompts. Does NOT call any model. Does NOT produce legal answers. Does NOT generate legal advice. Does NOT interpret legal text. Does NOT summarize legal text as legal conclusion. Does NOT create RAG/embeddings/semantic search/API/UI/database/network.
+
+PROMPT_MODES:
+1. evidence_brief (default) — organize retrieved provisions into an evidence brief with strict citation
+2. cautious_answer_draft — draft a cautious, citation-grounded informational answer with boundary note
+3. citation_check — check whether a proposed answer is supported by retrieved records (template only in this stage)
+
+SOURCE_DATA: data/exports/v1/primary_arabic_governing_records.jsonl (450 records)
+
+INCLUDED_RECORDS:
+- Companies Law Arabic articles: 281
+- General implementing regulations articles: 95
+- General implementing regulations forms: 4
+- Listed joint-stock implementing regulation articles: 69
+- Listed joint-stock implementing regulation appendix: 1
+- Total: 450
+
+EXCLUDED_RECORDS:
+- English reference records (281)
+- Chinese internal reference records (281)
+- Closure audit aggregate (169 — duplicates underlying IR records)
+
+CLI_EXAMPLES:
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة"
+- python3 scripts/build_retrieval_prompt_pack.py "الجمعية العامة" --limit 5
+- python3 scripts/build_retrieval_prompt_pack.py "التصفية" --track companies_law --limit 5
+- python3 scripts/build_retrieval_prompt_pack.py "التوكيل" --record-type appendix --limit 1
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --mode evidence_brief
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --mode cautious_answer_draft
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --mode citation_check
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --format json
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --format markdown
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --output /tmp/prompt_pack.json
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --include-full-text --limit 3
+
+JSON_OUTPUT_FIELDS:
+Top-level: prompt_pack_version, query, normalized_query, mode, generated_at_date, source_context_pack_tool, source_search_tool, source_export_file, source_export_record_count, retrieval_method, limit, filters, total_matches, returned, legal_boundaries, prompt_policy, retrieved_records, prompt_text
+
+retrieved_records: rank, score, export_record_id, source_track_id, source_record_id, record_type, language, governing_status, title_ar, article_number/record_number (if available), snippet, text_ar (only with --include-full-text), source_url, source_authority, source_data_path, source_text_sha256
+
+prompt_policy: use_only_retrieved_records, cite_every_legal_statement, no_legal_advice, no_official_translation, no_legal_interpretation_by_tool, no_generated_legal_conclusions_by_tool, no_external_sources, insufficient_context_rule, Arabic official source governs, repository-owner legal review active; external legal review optional for enterprise/official adoption
+
+MARKDOWN_BEHAVIOR:
+- Arabic-friendly RTL layout
+- Heading with query, mode, count
+- Not-a-prompt note prominently displayed
+- Boundary section
+- Prompt policy section
+- Retrieved records section with metadata and snippets
+- Prompt text section in code block
+- Reminder that this is a prompt pack only
+- Full text only when --include-full-text is passed
+
+VALIDATION:
+- make validate: PASS
+- make test: 2361 passed (was 2295; +66 new prompt pack tests)
+- make corpus-registry-validate: PASS
+- make corpus-export-primary-arabic-validate: PASS
+- make corpus-local-search-validate: PASS
+- make corpus-local-search-eval-validate: PASS
+- make corpus-local-search-smoke: PASS
+- make corpus-retrieval-context-pack-validate: PASS
+- make corpus-retrieval-context-pack-smoke: PASS
+- make corpus-retrieval-prompt-pack-validate: PASS (55/55 checks)
+
+SMOKE_RESULTS:
+- python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --limit 3 --mode evidence_brief --format json: PASS
+- python3 scripts/build_retrieval_prompt_pack.py "الجمعية العامة" --limit 3 --mode cautious_answer_draft --format markdown: PASS
+- python3 scripts/build_retrieval_prompt_pack.py "التوكيل" --record-type appendix --limit 1 --mode evidence_brief --format json --include-full-text: PASS
+
+FILES_ADDED:
+1. scripts/build_retrieval_prompt_pack.py — CLI prompt pack builder
+2. scripts/validate_retrieval_prompt_pack.py — read-only validator (55 checks)
+3. tests/test_retrieval_prompt_pack.py — test suite (66 tests)
+4. docs/CORPUS_RETRIEVAL_PROMPT_PACK.md — usage guide and boundaries
+5. reports/corpus_search/CORPUS_RETRIEVAL_PROMPT_PACK_FOUNDATION_AR.md — Arabic report
+
+FILES_MODIFIED:
+1. Makefile — added corpus-retrieval-prompt-pack-validate and corpus-retrieval-prompt-pack-smoke targets; added to .PHONY
+2. README.md — added retrieval prompt pack section
+3. STATUS.md — added retrieval prompt pack entry
+
+HYGIENE:
+- No generated/session/co-author/tool/model attribution
+- No committed prompt outputs
+- Stale untracked files from prior sessions removed before commit
+- Baseline confirmed: 5041afcc5f828f513ecf0e4809dfa212a6e3fe87
+- All existing validators unchanged and passing
+- No source corpus files modified
+- No export JSONL modified
+- No search ranking modified
+
+LOCAL_REPORT_FILE: reports/corpus_search/CORPUS_RETRIEVAL_PROMPT_PACK_FOUNDATION_REPORT.txt
+
+FINAL_STATUS: READY FOR PR

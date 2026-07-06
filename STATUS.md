@@ -188,6 +188,17 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`docs/CORPUS_RETRIEVAL_CONTEXT_PACK.md`]. Validate:
   `make corpus-retrieval-context-pack-validate`.
 
+- **Retrieval prompt pack:** Deterministic, offline prompt pack generator
+  that takes a query, runs the existing retrieval context pack builder, and
+  emits a safe, source-grounded prompt template for future LLM/RAG use.
+  Three prompt modes: evidence_brief (default), cautious_answer_draft,
+  citation_check. Builds prompts only — does NOT call any model, does NOT
+  generate legal answers, does NOT produce legal advice, does NOT interpret
+  legal text. No embeddings, no API, no network, no LLM calls. Usage:
+  `python3 scripts/build_retrieval_prompt_pack.py "مجلس الإدارة"`. See
+  [`docs/CORPUS_RETRIEVAL_PROMPT_PACK.md`]. Validate:
+  `make corpus-retrieval-prompt-pack-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**
