@@ -1,10 +1,11 @@
 # لقطة حالة التسليم — مشغل استرجاع السجل القانوني
 
-## ١. الأساس المؤكد والـ HEAD النهائي
+## ١. الأساس المؤكد والـ HEAD
 
-- **الأساس المؤكد:** `9d85e1c6f16911efe3ac19cf53f4daff1c36e1c1`
-- **الـ HEAD النهائي على main:** `9d85e1c` — Add retrieval operator demo pack foundation
-- **PR المدمج:** PR #101 (squash-merge)
+- **الأساس المؤكد على main قبل هذا الفرع:** `9d85e1c6f16911efe3ac19cf53f4daff1c36e1c1` — Add retrieval operator demo pack foundation
+- **PR المدمج سابقًا:** PR #101 (squash-merge)
+- **التزام هذا الفرع (ليس على main حتى يُدمج الـ PR):** `a2afa5b3a06e1178bfc43d0f0f8c836e5fa90732` — Add retrieval operator handoff status snapshot
+- **ملاحظة:** هذا الفرع ليس على main حتى يُفتح ويُدمج الـ PR
 
 ## ٢. ما هو جاهز محليًا الآن
 
@@ -92,6 +93,7 @@ make corpus-retrieval-demo-scenarios-smoke
 - **لا RAG (توليد معزز بالاسترجاع)**
 - **لا إصدار عام**
 - **مراجعة قانونية من مالك المستودع نشطة؛ المراجعة القانونية الخارجية اختيارية للاعتماد المؤسسي أو الرسمي**
+- **(repository-owner legal review active; external legal review optional for enterprise/official adoption)**
 
 ## ٩. خيارات القرار التالي
 
