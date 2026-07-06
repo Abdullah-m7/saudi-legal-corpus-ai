@@ -160,6 +160,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
 
+- **Corpus export (v1):** 450 primary Arabic governing records in JSONL format
+  (Companies Law 281 + general IR 95+4 + listed JSC 69+1). Excludes English,
+  Chinese, and closure aggregate. See
+  [`data/exports/v1/primary_arabic_governing_records.jsonl`]. Validate:
+  `make corpus-export-primary-arabic-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**
