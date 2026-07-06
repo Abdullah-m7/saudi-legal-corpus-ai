@@ -69,7 +69,12 @@ Al-Qura gazette — specialized to listed joint-stock companies only. Validate:
 `make implementing-regulations-listed-jsc-arabic-source-validate`. A **general implementing
 regulations Arabic source** (95 articles, 7 chapters, 4 forms) has been ingested from the
 official Umm Al-Qura gazette — the general implementing regulation covering all company
-forms. Validate: `make implementing-regulations-general-arabic-source-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+forms. Validate: `make implementing-regulations-general-arabic-source-validate`. A **general implementing
+regulations Arabic Legal LLM-ready layer** (95 article records across 7 chapters + 4
+official form records) has been created from the general implementing regulation source
+intake — official_text_ar preserved verbatim, deterministic metadata for LLM retrieval,
+articles and forms in separate JSON files. Validate:
+`make implementing-regulations-general-arabic-legal-llm-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 

@@ -1,0 +1,38 @@
+STAGE: Implementing regulations intake scaffold
+RESULT: SUCCESS
+BASELINE_CONFIRMED: YES — main @ 3edd3c596790b0d0d53d8d2c4a542b5ded700926
+BRANCH: glm/implementing-regulations-intake-scaffold
+SCAFFOLD_SUMMARY:
+  Clean intake scaffold for the Implementing Regulations of the Saudi Companies Law (M/132, 1443H)
+  as a separate corpus track. No Arabic text ingested, no English/Chinese text generated,
+  no trilingual alignment, no public release. Companies Law corpus and Chinese remediation
+  program unchanged.
+  Metadata placeholders: source provenance (all null), article numbering (unknown),
+  language layers (Arabic governing not-yet-ingested, English/Chinese not-yet-added),
+  validation status (scaffold validated only), legal-status boundaries (all correct).
+  Proposed future directories: official_arabic/, arabic_legal_llm/, english_reference/,
+  english_legal_llm/, chinese_internal/ — none created yet.
+FILES_ADDED:
+  data/implementing_regulations/intake_scaffold.json
+  data/implementing_regulations/README.md
+  reports/implementing_regulations/IMPLEMENTING_REGULATIONS_INTAKE_SCAFFOLD_AR.md
+  scripts/validate_implementing_regulations_intake_scaffold.py
+  tests/test_implementing_regulations_intake_scaffold.py
+FILES_MODIFIED:
+  Makefile (new target: implementing-regulations-intake-scaffold-validate)
+  README.md (scaffold mention)
+  STATUS.md (new "Implementing regulations" section)
+VALIDATION:
+  make validate: ALL CHECKS PASSED ✓
+  make test: 1938 passed ✓
+  make implementing-regulations-intake-scaffold-validate: ALL CHECKS PASSED ✓ (14/14 checks)
+  git diff --exit-code: 0 (no unintended changes; only Makefile/README/STATUS modified)
+IDEMPOTENCE: PASS — scaffold JSON SHA-256 hash unchanged after validator rerun (86aa5d34...), no new/modified files
+HYGIENE: Clean — no tool/model/session/co-author attribution in commit message or PR body; commit author = Ab Mohammedi; working tree clean after commit (merge report .txt is local untracked)
+LOCAL_REPORT_FILE: reports/implementing_regulations/IMPLEMENTING_REGULATIONS_INTAKE_SCAFFOLD_REPORT.txt
+TELEGRAM_REPORT: sent ✓
+PR: #85 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/85
+  Title: Add implementing regulations intake scaffold
+  Head: glm/implementing-regulations-intake-scaffold → Base: main
+  State: open
+FINAL_STATUS: SUCCESS — intake scaffold created, committed, pushed, PR #85 opened. Separate corpus track for implementing regulations, scaffold-only, no content ingested/generated, Companies Law and Chinese remediation program unchanged.

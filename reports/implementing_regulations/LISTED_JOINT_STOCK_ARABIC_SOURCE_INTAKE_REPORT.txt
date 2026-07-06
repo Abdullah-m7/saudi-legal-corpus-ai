@@ -1,0 +1,48 @@
+STAGE: Implementing regulations Arabic source intake (listed joint-stock)
+RESULT: SUCCESS
+BASELINE_CONFIRMED: YES — main @ 2857993e9993f197138b4d20c454dee655845d25
+BRANCH: glm/implementing-regulations-listed-jsc-arabic-source-intake
+SOURCE_STATUS: AVAILABLE — official source ingested from Umm Al-Qura gazette
+SOURCE_PROVENANCE:
+  Source title: اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة
+  Source URL: https://www.uqn.gov.sa/decisions-and-regulations/4001295
+  Publication date (Hijri): 1448-1-18
+  Publication date (Gregorian): 03-07-2026
+  Issuing authority: مجلس هيئة السوق المالية (Capital Market Authority board)
+  Legal basis: نظام الشركات الصادر بالمرسوم الملكي رقم (م/132) وتاريخ 1/12/1443هـ
+  Access date: 2026-07-05
+  Extraction method: curl fetch of Umm Al-Qura official page + HTML parsing
+  Source hash (SHA-256): 38133c8a3c562bbe808008d686c7ff4fd6ff8a718b746490ecc6e9288a2b9a13
+  Original decision: (8-127-2016) dated 16/1/1438 AH — under Companies Law M/3 (1437H)
+  Amendment decision: (3-44-2026) dated 11/10/1447 AH — under Companies Law M/132 (1443H)
+  Uncertainty notes: Text extracted from official Umm Al-Qura page; regulation originally issued under M/3, amended under M/132; this is the amended version published 1448-1-18; specialized to listed joint-stock companies, NOT a general implementing regulation
+SOURCE_SCOPE: Listed joint-stock companies (شركات المساهمة المدرجة) — specialized, NOT general
+ARTICLE_COUNT: 69 articles across 14 chapters + 1 appendix (ملحق 1 — نموذج التوكيل)
+EXTRACTION_SUMMARY: 69 article records with official_text_ar and SHA-256 hashes extracted from the official Umm Al-Qura gazette page; faithful Arabic text preserved; article numbering follows Arabic ordinals (المادة الأولى through المادة التاسعة والستون)
+FILES_ADDED:
+  data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_source.json
+  data/implementing_regulations/listed_joint_stock/source_manifest.json
+  reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_SOURCE_INTAKE_AR.md
+  scripts/validate_implementing_regulations_listed_jsc_arabic_source.py
+  tests/test_implementing_regulations_listed_jsc_arabic_source.py
+FILES_MODIFIED:
+  Makefile (new target: implementing-regulations-listed-jsc-arabic-source-validate)
+  README.md (listed JSC intake mention)
+  STATUS.md (listed JSC intake section)
+  scripts/validate_implementing_regulations_intake_scaffold.py (allow sub-tracks)
+  tests/test_implementing_regulations_intake_scaffold.py (allow sub-tracks)
+VALIDATION:
+  make validate: ALL CHECKS PASSED ✓
+  make test: 1955 passed ✓
+  make implementing-regulations-intake-scaffold-validate: ALL CHECKS PASSED ✓ (14/14 checks)
+  make implementing-regulations-listed-jsc-arabic-source-validate: ALL CHECKS PASSED ✓ (18/18 checks)
+  git diff --exit-code: 0 (no unintended changes; only Makefile/README/STATUS/validators/tests modified)
+IDEMPOTENCE: PASS — intake JSON SHA-256 hash unchanged after validator rerun (f8dd04cc...), no new/modified files
+HYGIENE: Clean — no tool/model/session/co-author attribution in commit message or PR body; commit author = Ab Mohammedi; working tree clean after commit
+LOCAL_REPORT_FILE: reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_SOURCE_INTAKE_REPORT.txt
+TELEGRAM_REPORT: sent ✓
+PR: #86 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/86
+  Title: Add listed joint-stock implementing regulation Arabic source intake
+  Head: glm/implementing-regulations-listed-jsc-arabic-source-intake → Base: main
+  State: open
+FINAL_STATUS: SUCCESS — 69 Arabic articles ingested from official Umm Al-Qura source, specialized to listed joint-stock companies. No English/Chinese text, no trilingual alignment, no public release. Companies Law corpus and Chinese remediation program unchanged. Arabic governs; not official/binding/governing; not legal advice.

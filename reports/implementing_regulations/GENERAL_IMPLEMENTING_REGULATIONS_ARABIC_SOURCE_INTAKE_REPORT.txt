@@ -1,0 +1,85 @@
+============================================================
+STAGE: General Implementing Regulations Arabic Source Intake
+============================================================
+
+RESULT: SUCCESS
+
+BASELINE_CONFIRMED: YES — main @ 424a830f0b9d0ba2650da196eac80466669bdc84
+
+BRANCH: glm/general-implementing-regulations-arabic-source-intake
+
+SOURCE_STATUS: AVAILABLE — official source ingested from Umm Al-Qura gazette
+
+SOURCE_PROVENANCE:
+  Source title: اللائحة التنفيذية لنظام الشركات
+  Source URL: https://www.uqn.gov.sa/details?p=21325
+  Publication date (Hijri): 1444-6-25
+  Publication date (Gregorian): 18-01-2023
+  Source scope: general — all company forms under Companies Law M/132
+  Access date: 2026-07-05
+  Extraction method: curl fetch of Umm Al-Qura official page + HTML parsing
+  Source hash (SHA-256): 0abb819fccff6ba6ac58149046fb3c7769eaf00110b717e21bf478ffbeb7c73e
+  Intake JSON hash (SHA-256): 8ecd9470b6020b20
+
+SOURCE_SCOPE: GENERAL — covers all company forms:
+  1. General provisions (13 articles)
+  2. Unlisted joint-stock companies (48 articles)
+  3. Limited liability companies (8 articles)
+  4. Non-profit companies (4 articles)
+  5. Professional companies (12 articles)
+  6. Transformation, merger, and division (7 articles)
+  7. Final provisions (3 articles)
+
+ARTICLE_COUNT: 95 articles
+CHAPTER_COUNT: 7 chapters
+FORM_COUNT: 4 official forms (نماذج)
+
+EXTRACTION_SUMMARY:
+  95 article records with official_text_ar and SHA-256 hashes extracted from the
+  official Umm Al-Qura gazette page. Faithful Arabic text preserved. Article
+  numbering follows Arabic ordinals (المادة الأولى through المادة الخامسة والتسعون).
+  4 official forms (نماذج) also extracted. Separated from the listed joint-stock
+  sub-track (which is a specialized CMA regulation, NOT the general one).
+
+FILES_ADDED:
+  data/implementing_regulations/general/general_implementing_regulations_arabic_source.json
+  data/implementing_regulations/general/source_manifest.json
+  reports/implementing_regulations/GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_SOURCE_INTAKE_AR.md
+  scripts/validate_implementing_regulations_general_arabic_source.py
+  tests/test_implementing_regulations_general_arabic_source.py
+
+FILES_MODIFIED:
+  Makefile (new target: implementing-regulations-general-arabic-source-validate)
+  README.md (general implementing regulations intake mention)
+  STATUS.md (general implementing regulations intake section)
+
+VALIDATION:
+  make validate:                                  ALL CHECKS PASSED ✓
+  make test:                                       2000 passed ✓
+  make implementing-regulations-intake-scaffold-validate: ALL CHECKS PASSED ✓ (14/14)
+  make implementing-regulations-listed-jsc-arabic-source-validate: ALL CHECKS PASSED ✓ (18/18)
+  make implementing-regulations-general-arabic-source-validate: ALL CHECKS PASSED ✓ (19/19)
+  git diff --exit-code: 1 (intended changes only; no unintended modifications)
+
+IDEMPOTENCE: PASS — intake JSON SHA-256 hash unchanged after validator rerun (8ecd9470b6020b20)
+
+HYGIENE:
+  - No tool/model/session/co-author attribution in commit message or PR body
+  - Companies Law corpus: unchanged
+  - Chinese remediation program: unchanged
+  - Listed joint-stock sub-track: unchanged (separate specialized regulation)
+  - Working tree: clean (untracked local .txt report files only)
+
+LOCAL_REPORT_FILE: reports/implementing_regulations/GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_SOURCE_INTAKE_REPORT.txt
+
+TELEGRAM_REPORT: sent ✓
+
+PR: #87 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/87
+  Title: Add general implementing regulations Arabic source intake
+  Head: glm/general-implementing-regulations-arabic-source-intake → Base: main
+  State: open
+
+FINAL_STATUS: SUCCESS — 95 Arabic articles ingested from official Umm Al-Qura source.
+General implementing regulation covering all company forms. No English/Chinese text,
+no trilingual alignment, no public release. Companies Law corpus, Chinese remediation
+program, and listed joint-stock sub-track all unchanged. Arabic governs; not legal advice.

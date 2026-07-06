@@ -115,6 +115,19 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`data/implementing_regulations/general/general_implementing_regulations_arabic_source.json`] and
   [`reports/implementing_regulations/GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_SOURCE_INTAKE_AR.md`]. Validate:
   `make implementing-regulations-general-arabic-source-validate`.
+- **General implementing regulations Arabic Legal LLM layer completed** — 95 article
+  records across 7 chapters + 4 official form records, structured from the general
+  implementing regulation Arabic source intake. official_text_ar preserved verbatim
+  from the source; deterministic metadata per record (record_id, corpus_track,
+  regulation_scope, chapter_number, chapter_title_ar, article_number, article_ordinal_ar,
+  article_title_ar, official_text_hash, legal_status_boundaries, source_manifest_hash).
+  Articles and forms in separate JSON files. No English/Chinese text generated; no
+  trilingual alignment; no public release. Arabic governs; not official/binding/governing;
+  not legal advice. Companies Law corpus and Chinese remediation program unchanged.
+  Listed joint-stock sub-track is separate. See
+  [`data/implementing_regulations/general/general_implementing_regulations_arabic_legal_llm.json`] and
+  [`reports/implementing_regulations/GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER_REPORT.txt`]. Validate:
+  `make implementing-regulations-general-arabic-legal-llm-validate`.
 
 ## Legal / official-status boundaries
 

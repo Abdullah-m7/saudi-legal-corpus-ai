@@ -1,0 +1,31 @@
+MERGE COMPLETE
+Final main HEAD: 2857993e9993f197138b4d20c454dee655845d25
+Validation:
+  make validate: ALL CHECKS PASSED ✓
+  make test: 1938 passed ✓
+  make implementing-regulations-intake-scaffold-validate: ALL CHECKS PASSED ✓ (14/14 checks)
+  git diff --exit-code: 0 (clean)
+Scope:
+  Scaffold-only stage: no Arabic official text ingested, no English/Chinese text generated
+  No trilingual alignment, no public release
+  Companies Law corpus unchanged ✓
+  Chinese remediation program unchanged ✓
+  Separate corpus track: implementing_regulations
+  Source provenance: not_yet_ingested (all fields null)
+  Article numbering: unknown (total_articles=null)
+  Arabic layer: not_yet_ingested, governing=True
+  English layer: not_yet_added, governing=False, role=reference_guidance_only
+  Chinese layer: not_yet_added, governing=False, role=internal_reference_only, official=False, binding=False
+  Legal-status boundaries: Arabic governs, not official/binding/governing, not legal advice ✓
+Hygiene:
+  PR #85: open → merged (squash), mergeable=True, CI green (6/6 check runs success)
+  Squash commit title: "Add implementing regulations intake scaffold"
+  No generated/session/co-author/tool/model attribution in PR body or squash message
+  Local main == origin/main (2857993) ✓
+  Working tree clean ✓ (2 local untracked .txt report files intentionally kept local)
+  git diff --exit-code: 0 ✓
+  Files added: 5 (scaffold JSON, scaffold README, Arabic report, validator, tests)
+  Files modified: 3 (Makefile, README.md, STATUS.md)
+Local report file: reports/implementing_regulations/IMPLEMENTING_REGULATIONS_INTAKE_SCAFFOLD_MERGE_REPORT.txt
+Telegram report: sent ✓
+Final status: SUCCESS — PR #85 squash-merged into main; implementing regulations intake scaffold is live on main at 2857993. Scaffold-only, no content ingested/generated, Companies Law and Chinese remediation program unchanged.
