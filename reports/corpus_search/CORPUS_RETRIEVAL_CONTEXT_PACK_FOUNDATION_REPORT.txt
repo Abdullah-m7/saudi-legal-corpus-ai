@@ -1,0 +1,290 @@
+================================================================
+STAGE: CORPUS_RETRIEVAL_CONTEXT_PACK_FOUNDATION
+================================================================
+
+RESULT: SUCCESS ✓
+
+BASELINE_CONFIRMED: 0a64e79c22a76733adee5e713fc6a0abd60d647d
+
+BRANCH: glm/corpus-retrieval-context-pack-foundation
+
+================================================================
+MULTI_AGENT_TREE_DEBATE
+================================================================
+
+1. Legal Architect
+   ✓ Does not generate legal answers.
+   ✓ Does not interpret, summarize, or conclude.
+   ✓ Only packages retrieved Arabic governing records.
+   ✓ Arabic official source remains governing.
+   ✓ No English/Chinese records used.
+   ✓ No public release claim.
+
+2. Data/Automation Engineer
+   ✓ Pack is deterministic and offline.
+   ✓ Reads from existing JSONL/search only.
+   ✓ No embeddings, vector DB, API, network, or LLM calls.
+   ✓ Output schema is stable and testable.
+
+3. Product/RAG Pragmatist
+   ✓ Right bridge between search and future RAG.
+   ✓ Context packs useful for QA, prompt construction, review, retrieval testing.
+   ✓ Both JSON and Markdown outputs are useful.
+
+4. Devil's Advocate
+   ✓ Not premature — local search foundation is complete.
+   ✓ Rejected: answer generation, summarization, semantic reranking, embeddings, API.
+   ✓ Kept as packaging, not reasoning.
+
+5. Founder-Speed Advocate
+   ✓ Practical tool shipped now.
+   ✓ Simple and visible: one CLI, one validator, one test file, one doc, one report.
+   ✓ No splitting into many tiny PRs.
+
+DECISION: APPLY — deterministic context packaging only.
+
+================================================================
+CHAIN_OF_VERIFICATION
+================================================================
+
+1. Vision Fit Check
+   ✓ Makes search output more usable.
+   ✓ Bridges toward RAG without building RAG.
+   ✓ Supports review, QA, and prompt construction.
+
+2. Legal Boundary Check
+   ✓ Arabic official source governs.
+   ✓ Not legal advice.
+   ✓ Not official translation.
+   ✓ No legal interpretation.
+   ✓ No generated legal conclusions.
+   ✓ No summarization (metadata labels only).
+   ✓ No English records.
+   ✓ No Chinese records.
+   ✓ No trilingual alignment.
+   ✓ No public release.
+
+3. Scope Discipline Check
+   ✓ Reads from primary_arabic_governing_records.jsonl and search CLI/functions only.
+   ✓ Does not modify export JSONL.
+   ✓ Does not modify source corpus files.
+   ✓ Does not modify official_text_ar.
+   ✓ Does not change search ranking.
+   ✓ No RAG, embeddings, semantic search, API, UI, database, or network.
+
+4. Anti-Overengineering Check
+   ✓ No giant retrieval framework.
+   ✓ No multi-stage pipelines.
+   ✓ No complex schemas.
+   ✓ No LLM prompts for answering.
+   ✓ One v1 context pack format.
+
+5. Product/Automation Value Check
+   ✓ Context pack is easy to inspect.
+   ✓ Context pack is machine-readable.
+   ✓ Includes enough provenance to trust retrieved records.
+   ✓ Reusable for future RAG/prompt/eval stages.
+
+================================================================
+CONTEXT_PACK_SCOPE
+================================================================
+
+A local retrieval context pack generator that:
+- Takes a query
+- Runs deterministic lexical search (existing local search)
+- Exports top N results as structured evidence/context pack
+- Supports JSON and Markdown output formats
+- Includes full provenance for each record
+- Does NOT generate answers, interpret, summarize, or reason
+
+================================================================
+SOURCE_DATA
+================================================================
+
+File: data/exports/v1/primary_arabic_governing_records.jsonl
+Record count: 450
+Tracks: companies_law, implementing_regulations_general,
+        implementing_regulations_listed_joint_stock
+Record types: article, form, appendix
+Language: ar (Arabic only)
+Governing status: arabic_governing_text
+
+================================================================
+INCLUDED_RECORDS
+================================================================
+
+- Companies Law (companies_law): 281 articles
+- General Implementing Regulations: 95 articles + 4 forms/appendices
+- Listed Joint Stock Implementing Regulations: 69 articles + 1 appendix
+Total: 450 Arabic governing records
+
+================================================================
+EXCLUDED_RECORDS
+================================================================
+
+- All English records
+- All Chinese records
+- Trilingual alignment records
+- Non-governing records
+- Records from non-Arabic tracks
+
+================================================================
+CLI_EXAMPLES
+================================================================
+
+python3 scripts/build_retrieval_context_pack.py "مجلس الإدارة"
+python3 scripts/build_retrieval_context_pack.py "الجمعية العامة" --limit 5
+python3 scripts/build_retrieval_context_pack.py "التصفية" --track companies_law --limit 5
+python3 scripts/build_retrieval_context_pack.py "التوكيل" --record-type appendix --limit 3
+python3 scripts/build_retrieval_context_pack.py "مجلس الإدارة" --format json
+python3 scripts/build_retrieval_context_pack.py "مجلس الإدارة" --format markdown
+python3 scripts/build_retrieval_context_pack.py "مجلس الإدارة" --output /tmp/context_pack.json
+python3 scripts/build_retrieval_context_pack.py "مجلس الإدارة" --include-full-text --limit 3
+
+================================================================
+JSON_OUTPUT_FIELDS
+================================================================
+
+Top-level:
+- pack_version (1.0)
+- query
+- normalized_query
+- generated_at_date
+- source_search_tool
+- source_export_file
+- source_export_record_count (450)
+- retrieval_method (deterministic_lexical_search)
+- limit
+- filters (track, record_type)
+- total_matches
+- returned
+- legal_boundaries (8 items)
+- records
+
+Each record:
+- rank (1-based)
+- score
+- export_record_id
+- source_track_id
+- source_record_id
+- corpus_family
+- document_type
+- record_type
+- language (ar)
+- governing_status (arabic_governing_text)
+- title_ar
+- article_number (if applicable)
+- record_number (if applicable)
+- snippet
+- text_ar (only with --include-full-text)
+- source_url (if available)
+- source_authority (if available)
+- publication_date_hijri (if available)
+- publication_date_gregorian (if available)
+- source_data_path
+- source_text_sha256
+
+================================================================
+MARKDOWN_BEHAVIOR
+================================================================
+
+- Arabic-friendly RTL layout
+- Heading with query and match count
+- Boundary note section (8 legal boundaries)
+- Metadata section (pack version, query, date, source info)
+- Numbered list of retrieved records with title, score, IDs, source track, snippet
+- Full text included only when --include-full-text is passed
+
+================================================================
+VALIDATION
+================================================================
+
+Validator: 41 checks, ALL PASSED ✓
+Tests: 43 tests, ALL PASSED ✓
+
+Full validation sequence:
+- make validate ✓
+- make test ✓ (2295 passed)
+- make corpus-registry-validate ✓
+- make corpus-export-primary-arabic-validate ✓
+- make corpus-local-search-validate ✓
+- make corpus-local-search-eval-validate ✓
+- make corpus-local-search-smoke ✓
+- make corpus-retrieval-context-pack-validate ✓
+
+================================================================
+SMOKE_RESULTS
+================================================================
+
+1. python3 scripts/build_retrieval_context_pack.py "مجلس الإدارة" --limit 3 --format json
+   → 170 total matches, 3 returned, JSON valid ✓
+
+2. python3 scripts/build_retrieval_context_pack.py "الجمعية العامة" --limit 3 --format markdown
+   → 184 total matches, 3 returned, Markdown with headings ✓
+
+3. python3 scripts/build_retrieval_context_pack.py "التوكيل" --record-type appendix --limit 1 --format json --include-full-text
+   → appendix record returned, text_ar included ✓
+
+================================================================
+FILES_ADDED
+================================================================
+
+1. scripts/build_retrieval_context_pack.py — CLI context pack builder
+2. scripts/validate_retrieval_context_pack.py — read-only validator (41 checks)
+3. tests/test_retrieval_context_pack.py — 43 tests
+4. docs/CORPUS_RETRIEVAL_CONTEXT_PACK.md — usage guide and boundaries
+5. reports/corpus_search/CORPUS_RETRIEVAL_CONTEXT_PACK_FOUNDATION_AR.md — Arabic report
+6. reports/corpus_search/CORPUS_RETRIEVAL_CONTEXT_PACK_FOUNDATION_REPORT.txt — this report
+
+================================================================
+FILES_MODIFIED
+================================================================
+
+1. Makefile — added corpus-retrieval-context-pack-validate and
+   corpus-retrieval-context-pack-smoke targets; added to all-validate list
+2. README.md — added retrieval context pack section
+3. STATUS.md — added retrieval context pack section
+
+================================================================
+HYGIENE
+================================================================
+
+- No generated/session/co-author/tool/model attribution
+- No modification of source corpus files
+- No committed generated query output (no static fixtures needed)
+- Fully deterministic for same query
+- No network, no API, no embeddings, no vector DB
+- No LLM calls
+- Read-only: does not modify repository files during normal use
+
+================================================================
+LOCAL_REPORT_FILE
+================================================================
+
+reports/corpus_search/CORPUS_RETRIEVAL_CONTEXT_PACK_FOUNDATION_REPORT.txt
+
+================================================================
+TELEGRAM_REPORT
+================================================================
+
+Sent to Telegram.
+
+================================================================
+PR
+================================================================
+
+Title: Add retrieval context pack foundation
+Base: main
+Head: glm/corpus-retrieval-context-pack-foundation
+
+================================================================
+FINAL_STATUS
+================================================================
+
+STAGE: CORPUS_RETRIEVAL_CONTEXT_PACK_FOUNDATION
+RESULT: SUCCESS ✓
+All validation checks passed.
+All tests passed (43 new, 2295 total).
+All smoke tests passed.
+PR created.
+Report sent to Telegram.

@@ -99,7 +99,14 @@ provide 10 deterministic Arabic query fixtures for regression testing — broad
 terms, legal phrases, track/record-type filters, JSON output, normalization,
 and no-result checks. See
 [`docs/CORPUS_LOCAL_SEARCH_EVAL.md`](docs/CORPUS_LOCAL_SEARCH_EVAL.md).
-Validate: `make corpus-local-search-eval-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+Validate: `make corpus-local-search-eval-validate`. A **retrieval context pack**
+generator takes a query, runs the existing local lexical search, and exports
+top results as a structured evidence/context pack (JSON or Markdown) with full
+provenance — deterministic, offline, no embeddings, no API, no network. Not RAG.
+Not legal advice. See
+[`docs/CORPUS_RETRIEVAL_CONTEXT_PACK.md`](docs/CORPUS_RETRIEVAL_CONTEXT_PACK.md).
+Validate: `make corpus-retrieval-context-pack-validate`.
+See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
