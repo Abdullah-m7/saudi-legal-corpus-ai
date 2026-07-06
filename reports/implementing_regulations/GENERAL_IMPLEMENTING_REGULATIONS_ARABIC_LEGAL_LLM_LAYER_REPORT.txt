@@ -2,9 +2,10 @@
 GENERAL IMPLEMENTING REGULATIONS ARABIC LEGAL LLM LAYER REPORT
 ================================================================================
 
-STAGE:          GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER
+STAGE:          GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER_PR_OPEN
 REPO:           al3obdi/saudi-legal-corpus-ai
 BRANCH:         glm/general-implementing-regulations-arabic-legal-llm-layer
+PR:             #88 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/88
 DATE:           2026-07-06
 
 ================================================================================
@@ -87,8 +88,21 @@ DATE:           2026-07-06
   Numbering:               Sequential 1–95 (no gaps)
   Record IDs:              ir-gen-art-001 through ir-gen-art-095
   Record type:             implementing_regulation_article
-  All have article_title_ar: YES (extracted from official text first line)
+  All have article_title_ar: YES (explicit headings from official source)
   Hashes match source:     YES (all 95 SHA-256 hashes verified identical)
+
+  ARTICLE_TITLE_AR POLICY:
+  - All 95 articles follow the official Saudi regulation format:
+    "المادة <ordinal>: <explicit title>\n<body>"
+  - The title is part of the official Arabic text heading — NOT inferred,
+    summarized, or extracted from body content.
+  - No article title is the ordinal itself (e.g., "المادة الأولى" alone).
+  - No article title is null — all 95 have explicit headings.
+  - Article 66 source heading had a trailing colon ("ضوابط شراء الشركة حصصها:")
+    — the generator strips trailing colons from the extracted title for clean
+    metadata; official_text_ar remains verbatim including the colon.
+  - Self-review confirmed: the extraction is deterministic and faithful to the
+    explicit heading in the official source.
 
 ================================================================================
 5. FORM RECORDS
@@ -221,13 +235,16 @@ DATE:           2026-07-06
 FINAL STATUS
 ================================================================================
 
-  STAGE:              GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER
+  STAGE:              GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER_PR_OPEN
   RESULT:             SUCCESS
   BASELINE_CONFIRMED: YES (c597829d3168c4ac9e19ac0e08502ccb309cc5bf)
   BRANCH:             glm/general-implementing-regulations-arabic-legal-llm-layer
+  ARTICLE_TITLE_POLICY: REVIEWED — all 95 titles are explicit headings from
+                        official source; no inferred/summarized titles; Art 66
+                        trailing colon stripped from metadata (text verbatim)
   ARTICLE_RECORDS:    95
   FORM_RECORDS:       4
-  VALIDATION:         ALL PASS (27 validator checks + 55 tests)
+  VALIDATION:         ALL PASS (27 validator checks + 2055 tests)
   IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
   HYGIENE:            CLEAN — no prohibited modifications
-  PR:                 To be created after review
+  PR:                 #88 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/88
