@@ -120,7 +120,14 @@ Accepted citation syntax: `[[export_record_id=<ID>]]` and
 `[[source_record_id=<ID>]]`. Mechanical checking only — does NOT verify
 semantic support, legal correctness, or call any LLM. Not legal advice. See
 [`docs/CORPUS_CITATION_SUPPORT_CHECKER.md`](docs/CORPUS_CITATION_SUPPORT_CHECKER.md).
-Validate: `make corpus-citation-support-checker-validate`.
+Validate: `make corpus-citation-support-checker-validate`. A **retrieval
+workflow runner** orchestrates the existing corpus tools — context pack,
+prompt pack, and citation checker — into one practical end-to-end workflow
+with two modes: `prepare_prompt` (build context + prompt packs) and
+`check_draft` (build packs + check a draft answer's citations). Thin
+orchestration only — no LLM, no RAG, no embeddings, no API, no network. See
+[`docs/CORPUS_RETRIEVAL_WORKFLOW_RUNNER.md`](docs/CORPUS_RETRIEVAL_WORKFLOW_RUNNER.md).
+Validate: `make corpus-retrieval-workflow-runner-validate`.
 See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation

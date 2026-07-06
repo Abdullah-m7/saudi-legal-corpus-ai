@@ -101,7 +101,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-local-search-eval-validate \
         corpus-retrieval-context-pack-validate \
         corpus-retrieval-prompt-pack-validate \
-        corpus-citation-support-checker-validate
+        corpus-citation-support-checker-validate \
+        corpus-retrieval-workflow-runner-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -759,6 +760,17 @@ corpus-citation-support-checker-smoke:
 	$(PY) -c "open('/tmp/_smoke_invalid_draft.md','w').write('هذه إجابة معلوماتية.\n\n[[export_record_id=FAKE-NOT-IN-PACK]].\n')"
 	$(PY) scripts/check_citation_support.py --prompt-pack /tmp/_smoke_prompt_pack.json --draft-answer-file /tmp/_smoke_invalid_draft.md --format json || true
 	@rm -f /tmp/_smoke_prompt_pack.json /tmp/_smoke_valid_draft.md /tmp/_smoke_invalid_draft.md
+
+# -- Corpus retrieval workflow runner (deterministic, offline; thin orchestration) --
+corpus-retrieval-workflow-runner-validate:
+	$(PY) scripts/validate_retrieval_workflow_runner.py
+
+corpus-retrieval-workflow-runner-smoke:
+	$(PY) scripts/run_retrieval_workflow.py "مجلس الإدارة" --mode prepare_prompt --limit 3 --prompt-mode evidence_brief --formats both --output-dir /tmp/_smoke_workflow_prep
+	@echo "---"
+	$(PY) -c "import json; pack=json.load(open('/tmp/_smoke_workflow_prep/prompt_pack.json')); rid=pack['retrieved_records'][0]['export_record_id']; open('/tmp/_smoke_workflow_draft.md','w').write('هذه إجابة معلوماتية وليست استشارة قانونية للمراجعة القانونية [['+'[export_record_id='+rid+']'+']].\n\nوفقًا للنظام [['+'[export_record_id='+rid+']'+']].\n')"
+	$(PY) scripts/run_retrieval_workflow.py "مجلس الإدارة" --mode check_draft --limit 3 --prompt-mode cautious_answer_draft --draft-answer-file /tmp/_smoke_workflow_draft.md --require-citation-per-paragraph --formats both --output-dir /tmp/_smoke_workflow_check
+	@rm -rf /tmp/_smoke_workflow_prep /tmp/_smoke_workflow_check /tmp/_smoke_workflow_draft.md
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
