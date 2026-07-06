@@ -1,0 +1,221 @@
+================================================================================
+CORPUS LOCAL LEXICAL SEARCH FOUNDATION REPORT
+================================================================================
+
+STAGE:          CORPUS_LOCAL_LEXICAL_SEARCH_FOUNDATION
+REPO:           al3obdi/saudi-legal-corpus-ai
+BRANCH:         glm/corpus-local-lexical-search-foundation
+BASELINE:       367c7342499f2f813811dcc35445539a675ebc2d
+DATE:           2026-07-06
+
+================================================================================
+1. BASELINE CONFIRMATION
+================================================================================
+
+  BASELINE_COMMIT:  367c7342499f2f813811dcc35445539a675ebc2d
+  BASELINE_BRANCH:  main
+  CONFIRMED:        YES
+
+================================================================================
+2. MULTI-AGENT TREE DEBATE
+================================================================================
+
+  Legal Architect: Search does not create legal advice, interpretation,
+    summarization, or legal conclusions. Arabic official source remains
+    governing. No English/Chinese records searched. No public-release claim.
+    PASS.
+
+  Data/Automation Engineer: Search uses existing JSONL export as read-only
+    input. Deterministic and offline. No embeddings, no vector DB, no LLM
+    calls, no network. Reusable structure. PASS.
+
+  Product/RAG Pragmatist: Adds visible practical value. CLI helps inspect
+    and test corpus before RAG. Output is useful: track, record id, title,
+    snippet, score, source path. PASS.
+
+  Devil's Advocate: Not premature — 450 records is searchable directly.
+    Reject heavy ranking, semantic search, embeddings, API, UI. Keep it
+    as simple lexical search. AGREED.
+
+  Founder-Speed Advocate: Ship a working local search now. One CLI, one
+    validator, one test file, one doc, one report. AGREED.
+
+  FINAL DECISION: APPLY, but keep it deterministic, offline, and lexical only.
+
+================================================================================
+3. CHAIN OF VERIFICATION
+================================================================================
+
+  1. Vision Fit: PASS — makes corpus more usable now, helps future RAG
+     evaluation, more useful than another internal report.
+
+  2. Legal Boundary: PASS — Arabic governs, not translation, not legal
+     advice, no interpretation/conclusions, no English/Chinese records,
+     no trilingual, no public release.
+
+  3. Scope Discipline: PASS — reads from JSONL only, does not modify export,
+     does not modify source legal text or official_text_ar, does not modify
+     any existing corpus records.
+
+  4. Anti-Overengineering: PASS — no RAG, no embeddings, no vector index,
+     no search API, no web UI, no database, no external services. Simple
+     and explainable lexical search.
+
+  5. Product/Automation Value: PASS — CLI returns real results, output is
+     stable and testable, supports Arabic terms, shows metadata for
+     inspection, future RAG can reuse this foundation.
+
+================================================================================
+4. SEARCH SCOPE
+================================================================================
+
+  Local lexical search over 450 Arabic governing records.
+  Deterministic, offline, no embeddings, no API, no network.
+  Not RAG, not legal advice, not official translation.
+
+================================================================================
+5. SOURCE DATA
+================================================================================
+
+  data/exports/v1/primary_arabic_governing_records.jsonl
+  450 Arabic governing records (read-only input)
+
+================================================================================
+6. INCLUDED RECORDS
+================================================================================
+
+  - Companies Law Arabic articles: 281
+  - General IR articles: 95
+  - General IR forms: 4
+  - Listed JSC articles: 69
+  - Listed JSC appendix: 1
+  TOTAL: 450
+
+================================================================================
+7. EXCLUDED RECORDS
+================================================================================
+
+  - English reference records (not in export)
+  - Chinese internal reference records (not in export)
+  - Closure audit aggregate (not in export)
+
+================================================================================
+8. SEARCH BEHAVIOR
+================================================================================
+
+  Search fields: text_ar, title_ar, article_ordinal_ar
+  Ranking: deterministic lexical scoring
+    - Exact phrase in text: +100
+    - Exact phrase in title: +50
+    - Term in text: +10 per term
+    - Term in title: +15 per term
+    - All terms in text: +25 bonus
+    - All terms in title: +20 bonus
+    - Stable tie-break: export_record_id ascending
+  Arabic normalization (search only, does not alter stored text):
+    - Remove tatweel
+    - Normalize alef forms (أ إ آ → ا)
+    - Normalize ya (ى → ي)
+    - Normalize ta marbuta (ة → ه)
+    - Remove diacritics
+  No generated index — direct JSONL scan (sufficient for 450 records)
+
+================================================================================
+9. CLI EXAMPLES
+================================================================================
+
+  python3 scripts/search_primary_arabic_export.py "الشركة"
+  python3 scripts/search_primary_arabic_export.py "مجلس الإدارة" --limit 10
+  python3 scripts/search_primary_arabic_export.py "التصفية" --track companies_law
+  python3 scripts/search_primary_arabic_export.py "الجمعية العامة" --json
+  python3 scripts/search_primary_arabic_export.py "اندماج" --show-text --limit 3
+
+================================================================================
+10. FILES ADDED
+================================================================================
+
+  1. scripts/search_primary_arabic_export.py — CLI search tool
+  2. scripts/validate_corpus_local_search.py — read-only validator (29 checks)
+  3. tests/test_corpus_local_search.py — test suite
+  4. docs/CORPUS_LOCAL_SEARCH.md — usage guide
+  5. reports/corpus_search/CORPUS_LOCAL_LEXICAL_SEARCH_FOUNDATION_AR.md — Arabic report
+  6. reports/corpus_search/CORPUS_LOCAL_LEXICAL_SEARCH_FOUNDATION_REPORT.txt — this report
+
+================================================================================
+11. FILES MODIFIED
+================================================================================
+
+  1. Makefile — added corpus-local-search-validate and corpus-local-search-smoke targets
+  2. README.md — concise entry
+  3. STATUS.md — concise entry
+
+================================================================================
+12. VALIDATION
+================================================================================
+
+  make validate:                                PASS
+  make test:                                    2231 passed
+  make corpus-registry-validate:                PASS (22/22)
+  make corpus-export-primary-arabic-validate:   PASS (43/43)
+  make implementing-regulations-arabic-program-closure-validate: PASS (26/26)
+  make corpus-local-search-validate:            PASS (29/29)
+
+================================================================================
+13. SMOKE RESULTS
+================================================================================
+
+  Query "الشركة" --limit 5:
+    Total matches: 371, returned: 5
+
+  Query "مجلس الإدارة" --limit 5:
+    Total matches: 170, returned: 5
+
+  Query "الجمعية العامة" --limit 5 --json:
+    Total matches: 184, returned: 5
+    JSON output valid with query, total_matches, returned, results
+
+================================================================================
+14. IDEMPOTENCE
+================================================================================
+
+  No generator — search is stateless and deterministic.
+  Same query always returns same results.
+  No files are created or modified by search.
+  CONFIRMED.
+
+================================================================================
+15. HYGIENE
+================================================================================
+
+  - Export JSONL: UNCHANGED (read-only)
+  - Companies Law corpus: UNCHANGED (read-only)
+  - Chinese remediation program: UNCHANGED (read-only)
+  - General implementing regulations: UNCHANGED (read-only)
+  - Listed joint-stock implementing regulation: UNCHANGED (read-only)
+  - No English text generated
+  - No Chinese text generated
+  - No trilingual alignment
+  - No public release
+  - No source legal text modified
+  - No official_text_ar modified
+  - No embeddings, no vector DB, no API, no network
+  - No co-author/tool/model attribution
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  STAGE:              CORPUS_LOCAL_LEXICAL_SEARCH_FOUNDATION
+  RESULT:             SUCCESS
+  BASELINE_CONFIRMED: YES (367c7342499f2f813811dcc35445539a675ebc2d)
+  BRANCH:             glm/corpus-local-lexical-search-foundation
+  SEARCH_SCOPE:       450 Arabic governing records, lexical, offline
+  SOURCE_DATA:        data/exports/v1/primary_arabic_governing_records.jsonl
+  VALIDATION:         ALL PASS (29 search + 43 export + 22 registry + 26 closure + 2231 tests)
+  SMOKE_RESULTS:      3/3 PASS
+  IDEMPOTENCE:        CONFIRMED (stateless, deterministic)
+  HYGIENE:            CLEAN
+  LOCAL_REPORT_FILE:  reports/corpus_search/CORPUS_LOCAL_LEXICAL_SEARCH_FOUNDATION_REPORT.txt
+  FINAL_STATUS:       SUCCESS
+
+================================================================================
