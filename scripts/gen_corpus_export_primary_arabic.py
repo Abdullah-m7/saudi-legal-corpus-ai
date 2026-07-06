@@ -50,15 +50,13 @@ LEGAL_BOUNDARIES = {
 }
 
 
-def get_git_head_sha():
-    """Get current git HEAD SHA."""
-    import subprocess
+def get_baseline_commit():
+    """Get baseline commit from the corpus registry (stable, not git HEAD)."""
     try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"],
-            capture_output=True, text=True, cwd=REPO_ROOT
-        )
-        return result.stdout.strip()
+        reg_path = os.path.join(REPO_ROOT, REGISTRY_PATH)
+        with open(reg_path, "r", encoding="utf-8") as f:
+            reg = json.load(f)
+        return reg.get("baseline_commit", "unknown")
     except Exception:
         return "unknown"
 
@@ -275,7 +273,7 @@ def generate():
     }
 
     # Build manifest
-    head_sha = get_git_head_sha()
+    head_sha = get_baseline_commit()
     manifest = {
         "export_version": "v1",
         "generated_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
