@@ -1,0 +1,213 @@
+================================================================================
+CORPUS EXPORT FORMATS FOUNDATION REPORT
+================================================================================
+
+STAGE:          CORPUS_EXPORT_FORMATS_FOUNDATION
+REPO:           al3obdi/saudi-legal-corpus-ai
+BRANCH:         glm/corpus-export-formats-foundation
+BASELINE:       0b10aa0c8ab670babaed2185d6bbc2da4ec765bd
+DATE:           2026-07-06
+
+================================================================================
+1. BASELINE CONFIRMATION
+================================================================================
+
+  BASELINE_COMMIT:  0b10aa0c8ab670babaed2185d6bbc2da4ec765bd
+  BASELINE_BRANCH:  main
+  CONFIRMED:        YES
+
+================================================================================
+2. MULTI-AGENT TREE DEBATE
+================================================================================
+
+  Legal Architect: Export does not change legal authority. Arabic official
+    source remains governing. No translation, advice, or public-release claims.
+    English and Chinese are not exported in this stage. PASS.
+
+  Data/Automation Engineer: Export is deterministic, generated from existing
+    canonical corpus files via the registry. Reusable for future laws.
+    No one-off manual file copying. Idempotent. PASS.
+
+  Product/RAG Pragmatist: Export materially improves future RAG/search/training
+    readiness. JSONL is easy to load in Python. Record fields are practical
+    and consistent. Provenance preserved. PASS.
+
+  Devil's Advocate: This is NOT overengineering — one JSONL file, one manifest,
+    one validator, one test file. No embeddings, no search, no API, no schema
+    framework. AGREED.
+
+  Founder-Speed Advocate: Small scope. Ships a usable Arabic export now.
+    One clear v1 format. No split PRs. AGREED.
+
+  FINAL DECISION: APPLY, but keep scope limited to Arabic governing export.
+
+================================================================================
+3. CHAIN OF VERIFICATION
+================================================================================
+
+  1. Vision Fit Check: PASS — improves usable corpus value; moves toward
+     RAG/search/training readiness; more useful than another internal report.
+
+  2. Legal Boundary Check: PASS — Arabic governs; not official translation;
+     not legal advice; no English generation; no Chinese generation; no
+     Chinese export; no trilingual alignment; no public release.
+
+  3. Scope Discipline Check: PASS — uses corpus registry as navigation;
+     does not modify existing corpus records; does not rewrite official_text_ar;
+     does not modify completed Companies Law, Chinese remediation, or
+     implementing regulations layers. Read existing data only.
+
+  4. Anti-Overengineering Check: PASS — no RAG, no search, no embeddings,
+     no API, no large schema framework, no competing export formats.
+     One clear v1 export format.
+
+  5. Product/Automation Value Check: PASS — export is JSONL, easy to load
+     in Python, supports future retrieval/training/QA/legal navigation,
+     preserves provenance and legal boundaries.
+
+================================================================================
+4. EXPORT SCOPE
+================================================================================
+
+  A deterministic JSONL export of primary Arabic governing records.
+  Export foundation only — not RAG, not search, not embeddings, not API,
+  not public release, not a new legal corpus layer.
+
+================================================================================
+5. INCLUDED RECORDS
+================================================================================
+
+  - Companies Law Arabic governing articles: 281
+  - General implementing regulations articles: 95
+  - General implementing regulations forms: 4
+  - Listed joint-stock implementing regulation articles: 69
+  - Listed joint-stock implementing regulation appendix: 1
+  TOTAL: 450 Arabic governing records
+
+================================================================================
+6. EXCLUDED RECORDS
+================================================================================
+
+  - English reference records (281) — not exported in this stage
+  - Chinese internal reference records (281) — not exported in this stage
+  - Closure audit aggregate records (169) — duplicates underlying IR records
+  - No trilingual alignment
+  - No public release
+
+================================================================================
+7. COUNT POLICY
+================================================================================
+
+  counting_method: raw_layer_records_not_deduplicated_legal_article_units
+  primary_arabic_governing_records_included: YES
+  english_reference_records_excluded: YES
+  chinese_internal_reference_records_excluded: YES
+  closure_audit_aggregate_excluded: YES
+  closure_audit_aggregate_duplicates_underlying_ir_records: YES
+  forms_and_appendices_counted: YES
+  formula: 281 + 95 + 4 + 69 + 1 = 450
+
+================================================================================
+8. FINAL COUNTS
+================================================================================
+
+  companies_law_articles:        281
+  general_ir_articles:            95
+  general_ir_forms:                4
+  listed_jsc_articles:            69
+  listed_jsc_appendices:           1
+  total_exported_records:        450
+
+================================================================================
+9. FILES ADDED
+================================================================================
+
+  1. scripts/gen_corpus_export_primary_arabic.py
+     — Deterministic generator
+
+  2. scripts/validate_corpus_export_primary_arabic.py
+     — Read-only validator (38 checks)
+
+  3. data/exports/v1/primary_arabic_governing_records.jsonl
+     — JSONL export, 450 records, one per line
+
+  4. data/exports/v1/export_manifest.json
+     — Export metadata, counts, count_policy, legal boundaries
+
+  5. data/exports/README.md
+     — Human-readable explanation of export format and boundaries
+
+  6. tests/test_corpus_export_primary_arabic.py
+     — Test suite (35 tests)
+
+  7. reports/corpus_exports/CORPUS_EXPORT_FORMATS_FOUNDATION_AR.md
+     — Arabic report
+
+  8. reports/corpus_exports/CORPUS_EXPORT_FORMATS_FOUNDATION_REPORT.txt
+     — This report
+
+================================================================================
+10. FILES MODIFIED
+================================================================================
+
+  1. Makefile — Added corpus-export-primary-arabic-data and
+     corpus-export-primary-arabic-validate targets
+  2. README.md — Added concise entry
+  3. STATUS.md — Added concise entry
+
+================================================================================
+11. VALIDATION
+================================================================================
+
+  make validate:                                    PASS
+  make test:                                        2198 passed
+  make corpus-registry-validate:                    PASS (22/22)
+  make implementing-regulations-arabic-program-closure-validate: PASS (26/26)
+  make corpus-export-primary-arabic-validate:       PASS (38/38)
+  python3 scripts/gen_corpus_export_primary_arabic.py + git diff --exit-code: EXIT 0
+
+================================================================================
+12. IDEMPOTENCE
+================================================================================
+
+  Generator re-run produces identical output:
+    git diff --exit-code → EXIT 0 (no changes)
+  CONFIRMED.
+
+================================================================================
+13. HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED (read-only)
+  - Chinese remediation program: UNCHANGED (read-only)
+  - General implementing regulations: UNCHANGED (read-only)
+  - Listed joint-stock implementing regulation: UNCHANGED (read-only)
+  - No English text generated
+  - No Chinese text generated
+  - No Chinese export in this stage
+  - No trilingual alignment
+  - No public release
+  - No source legal text modified
+  - No official_text_ar modified
+  - No co-author/tool/model attribution
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  STAGE:              CORPUS_EXPORT_FORMATS_FOUNDATION
+  RESULT:             SUCCESS
+  BASELINE_CONFIRMED: YES (0b10aa0c8ab670babaed2185d6bbc2da4ec765bd)
+  BRANCH:             glm/corpus-export-formats-foundation
+  EXPORT_SCOPE:       Arabic governing records only — 450 records
+  INCLUDED:           CL(281) + Gen IR(95+4) + LJS(69+1) = 450
+  EXCLUDED:           English, Chinese, closure aggregate
+  COUNT_POLICY:       raw_layer_records, Arabic governing only
+  FINAL_COUNTS:       281 + 95 + 4 + 69 + 1 = 450
+  VALIDATION:         ALL PASS (38 export + 22 registry + 26 closure + 2198 tests)
+  IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
+  HYGIENE:            CLEAN
+  LOCAL_REPORT_FILE:  reports/corpus_exports/CORPUS_EXPORT_FORMATS_FOUNDATION_REPORT.txt
+  FINAL_STATUS:       SUCCESS
+
+================================================================================

@@ -87,7 +87,10 @@ separate, and all boundaries enforced. Validate:
 index** provides a canonical, machine-readable summary of all completed tracks
 (companies law 281, general IR 95+4, listed JSC 69+1, closure audit 169 total)
 with counts, paths, statuses, boundaries, and validation targets. Validate:
-`make corpus-registry-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+`make corpus-registry-validate`. A **corpus export** (v1) provides a deterministic
+JSONL of 450 primary Arabic governing records (Companies Law 281, general IR 95+4,
+listed JSC 69+1) suitable for future RAG/search/training workflows. Validate:
+`make corpus-export-primary-arabic-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 

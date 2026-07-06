@@ -1,0 +1,146 @@
+================================================================================
+CORPUS REGISTRY INDEX FOUNDATION — MERGE REPORT
+================================================================================
+
+STAGE:          CORPUS_REGISTRY_INDEX_FOUNDATION_MERGE
+REPO:           al3obdi/saudi-legal-corpus-ai
+PR:             #91 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/91
+DATE:           2026-07-06
+
+================================================================================
+MERGE CONFIRMATION
+================================================================================
+
+  MERGE COMPLETE:     YES
+  Merge method:       Squash
+  Merge commit SHA:   0b10aa0c8ab670babaed2185d6bbc2da4ec765bd
+  PR title:           Add corpus registry index foundation
+  PR state:           Merged
+  Head SHA (pre-merge): 8de20bf3c9ee1f5fa08c342bbd5aa7477373e8cf
+  Base SHA (pre-merge): 465776947125066bd1a705cfceacd3dca935ad1f
+
+  Pre-merge checks:
+  - PR open:                    CONFIRMED
+  - PR mergeable:               CONFIRMED
+  - CI green (6/6 check runs):  CONFIRMED
+  - PR body has count_policy:   CONFIRMED
+  - PR body has NO stale 731:   CONFIRMED
+  - PR body confirms 1012:      CONFIRMED
+  - No co-author/tool/model attribution: CONFIRMED
+
+================================================================================
+FINAL MAIN HEAD
+================================================================================
+
+  Final main HEAD:   0b10aa0c8ab670babaed2185d6bbc2da4ec765bd
+  Local == origin:    CONFIRMED
+  Working tree:       CLEAN
+
+  Baseline progression:
+    c597829 → 5bdd771 → 90a9491 → 4657769 → 0b10aa0 (current main)
+
+================================================================================
+COUNT POLICY
+================================================================================
+
+  counting_method: raw_layer_records_not_deduplicated_legal_article_units
+  primary_arabic_governing_records: INCLUDED
+  english_reference_records: INCLUDED
+  chinese_internal_reference_records: INCLUDED
+  forms_and_appendices: COUNTED as records
+  closure_audit_aggregate: NOT counted separately (duplicates underlying IR records)
+  formula: total_registry_counted_records = total_primary_arabic_governing_records
+           + total_reference_records + total_internal_reference_records
+
+================================================================================
+FINAL COUNTS
+================================================================================
+
+  total_primary_arabic_governing_records:  450
+    = Companies Law Arabic(281) + General IR articles(95) + General IR forms(4)
+      + Listed JSC articles(69) + Listed JSC appendix(1)
+
+  total_reference_records:                 281
+    = Companies Law English(281)
+
+  total_internal_reference_records:         281
+    = Companies Law Chinese remediation(281)
+
+  total_implementing_regulations_records:   169
+    = General articles(95) + General forms(4) + Listed JSC articles(69)
+      + Listed JSC appendix(1)
+    (NOTE: equals closure audit total; NOT added to registry total separately)
+
+  total_registry_counted_records:         1012
+    = 450 + 281 + 281
+
+  total_tracks:                              4
+
+================================================================================
+VALIDATION (POST-MERGE)
+================================================================================
+
+  make validate:                                       PASS
+  make test:                                           2163 passed
+  make implementing-regulations-arabic-program-closure-validate: PASS (26/26)
+  make corpus-registry-validate:                      PASS (22/22)
+  python3 scripts/gen_corpus_registry.py + git diff:  EXIT 0 (idempotent)
+
+================================================================================
+SCOPE
+================================================================================
+
+  Lightweight corpus registry/index foundation only.
+  NOT a new legal corpus layer.
+  NOT an export system, RAG demo, search index, or translation tool.
+
+================================================================================
+BOUNDARIES
+================================================================================
+
+  - Arabic official source governs:          CONFIRMED
+  - Not official translation:               CONFIRMED
+  - Not legal advice:                       CONFIRMED
+  - No trilingual alignment:                 CONFIRMED
+  - No public release:                       CONFIRMED
+  - English = reference/guidance only:       CONFIRMED
+  - Chinese = internal reference only:       CONFIRMED
+  - Listed JSC specialized, NOT general:     CONFIRMED
+  - General and listed tracks separate:      CONFIRMED
+
+================================================================================
+HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED (read-only)
+  - Chinese remediation program: UNCHANGED (read-only)
+  - General implementing regulations: UNCHANGED (read-only)
+  - Listed joint-stock implementing regulation: UNCHANGED (read-only)
+  - No English text generated
+  - No Chinese text generated
+  - No trilingual alignment
+  - No public release
+  - No source legal text modified
+  - No official_text_ar modified
+  - No co-author/tool/model attribution
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  MERGE COMPLETE:      YES
+  Final main HEAD:     0b10aa0c8ab670babaed2185d6bbc2da4ec765bd
+  PR:                  #91 — Merged (squash)
+  Merge method:        Squash
+  Validation:          ALL PASS (22 registry + 26 closure + 2163 tests)
+  Count policy:        Explicit count_policy with 6 fields documented
+  Final counts:        4 tracks, 450 primary Arabic, 281 reference,
+                       281 internal reference, 169 IR, 1012 total registry
+  Scope:               Lightweight registry foundation only
+  Boundaries:          All confirmed — Arabic governs, no translation/advice/trilingual/release
+  Hygiene:             CLEAN — no source corpora modified
+  Local report file:   reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_MERGE_REPORT.txt
+  Telegram report:     SENT
+  Final status:        SUCCESS
+
+================================================================================

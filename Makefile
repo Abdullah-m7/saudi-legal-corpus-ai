@@ -94,7 +94,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         implementing-regulations-arabic-program-closure-data \
         implementing-regulations-arabic-program-closure-validate \
         corpus-registry-data \
-        corpus-registry-validate
+        corpus-registry-validate \
+        corpus-export-primary-arabic-data \
+        corpus-export-primary-arabic-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -694,6 +696,13 @@ corpus-registry-data:
 
 corpus-registry-validate:
 	$(PY) scripts/validate_corpus_registry.py
+
+# -- Corpus export — primary Arabic governing records (v1; read-only) --
+corpus-export-primary-arabic-data:
+	$(PY) scripts/gen_corpus_export_primary_arabic.py
+
+corpus-export-primary-arabic-validate:
+	$(PY) scripts/validate_corpus_export_primary_arabic.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
