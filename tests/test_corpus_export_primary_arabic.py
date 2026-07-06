@@ -203,6 +203,27 @@ def test_manifest_export_version(manifest):
     assert manifest["export_version"] == "v1"
 
 
+def test_manifest_source_registry_baseline_commit(manifest):
+    assert "source_registry_baseline_commit" in manifest
+    assert manifest["source_registry_baseline_commit"] != "unknown"
+
+
+def test_manifest_export_stage_input_baseline_commit(manifest):
+    assert "export_stage_input_baseline_commit" in manifest
+    assert manifest["export_stage_input_baseline_commit"] == "0b10aa0c8ab670babaed2185d6bbc2da4ec765bd"
+
+
+def test_manifest_export_manifest_commit_semantics(manifest):
+    cs = manifest.get("export_manifest_commit_semantics", {})
+    assert "source_registry_baseline_commit" in cs
+    assert "export_stage_input_baseline_commit" in cs
+    assert "no_dynamic_git_head" in cs
+
+
+def test_manifest_no_ambiguous_baseline_commit(manifest):
+    assert "baseline_commit" not in manifest, "Ambiguous baseline_commit should be replaced by explicit fields"
+
+
 def test_manifest_included_tracks(manifest):
     tracks = manifest["included_tracks"]
     assert "companies_law" in tracks

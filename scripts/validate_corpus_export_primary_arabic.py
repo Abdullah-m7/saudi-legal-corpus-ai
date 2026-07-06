@@ -183,6 +183,17 @@ def validate():
     check("manifest listed_jsc_appendices = 1", manifest_counts.get("listed_jsc_appendices") == 1)
     check("manifest total_exported_records = 450", manifest_counts.get("total_exported_records") == 450)
 
+    # 17b. Manifest commit semantics — explicit fields (not ambiguous baseline_commit)
+    check("manifest has source_registry_baseline_commit", "source_registry_baseline_commit" in manifest,
+          f"Value: {manifest.get('source_registry_baseline_commit', 'MISSING')}")
+    check("manifest has export_stage_input_baseline_commit", "export_stage_input_baseline_commit" in manifest,
+          f"Value: {manifest.get('export_stage_input_baseline_commit', 'MISSING')}")
+    check("manifest has export_manifest_commit_semantics", "export_manifest_commit_semantics" in manifest)
+    cs = manifest.get("export_manifest_commit_semantics", {})
+    check("manifest commit_semantics has no_dynamic_git_head", "no_dynamic_git_head" in cs)
+    check("manifest does NOT have ambiguous baseline_commit field", "baseline_commit" not in manifest,
+          "Field should be replaced by explicit commit fields")
+
     # 18. Manifest count_policy
     cp = manifest.get("count_policy", {})
     check("manifest count_policy has counting_method", "counting_method" in cp)
