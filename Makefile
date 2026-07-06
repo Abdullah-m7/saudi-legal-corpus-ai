@@ -102,7 +102,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-retrieval-context-pack-validate \
         corpus-retrieval-prompt-pack-validate \
         corpus-citation-support-checker-validate \
-        corpus-retrieval-workflow-runner-validate
+        corpus-retrieval-workflow-runner-validate \
+        corpus-retrieval-demo-scenarios-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -771,6 +772,20 @@ corpus-retrieval-workflow-runner-smoke:
 	$(PY) -c "import json; pack=json.load(open('/tmp/_smoke_workflow_prep/prompt_pack.json')); rid=pack['retrieved_records'][0]['export_record_id']; open('/tmp/_smoke_workflow_draft.md','w').write('هذه إجابة معلوماتية وليست استشارة قانونية للمراجعة القانونية [['+'[export_record_id='+rid+']'+']].\n\nوفقًا للنظام [['+'[export_record_id='+rid+']'+']].\n')"
 	$(PY) scripts/run_retrieval_workflow.py "مجلس الإدارة" --mode check_draft --limit 3 --prompt-mode cautious_answer_draft --draft-answer-file /tmp/_smoke_workflow_draft.md --require-citation-per-paragraph --formats both --output-dir /tmp/_smoke_workflow_check
 	@rm -rf /tmp/_smoke_workflow_prep /tmp/_smoke_workflow_check /tmp/_smoke_workflow_draft.md
+
+# -- Corpus retrieval demo scenarios (deterministic, offline; curated demo layer) --
+
+corpus-retrieval-demo-scenarios-validate:
+	$(PY) scripts/validate_retrieval_demo_scenarios.py
+
+corpus-retrieval-demo-scenarios-smoke:
+	$(PY) scripts/run_retrieval_demo_scenarios.py
+	@echo "---"
+	$(PY) scripts/run_retrieval_workflow.py "مجلس الإدارة" --mode prepare_prompt --limit 3 --prompt-mode evidence_brief --formats both --output-dir /tmp/_smoke_demo_board
+	@echo "---"
+	@echo "Confirming no generated workflow outputs in data/demo_scenarios/..."
+	@ls data/demo_scenarios/ | grep -v "retrieval_demo_scenarios_v1.json" && echo "FAIL: unexpected files" && exit 1 || echo "OK: only scenarios JSON present"
+	@rm -rf /tmp/_smoke_demo_board
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

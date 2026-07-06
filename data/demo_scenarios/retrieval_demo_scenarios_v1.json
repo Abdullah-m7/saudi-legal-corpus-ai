@@ -1,0 +1,145 @@
+{
+  "scenarios_version": "1.0",
+  "source_export_file": "data/exports/v1/primary_arabic_governing_records.jsonl",
+  "source_export_record_count": 450,
+  "source_workflow_runner": "scripts/run_retrieval_workflow.py",
+  "boundary_note": "هذه سيناريوهات عرض توضيحي محلية حصرية. لا تستدعي نماذج لغوية. لا تولد إجابات قانونية. لا تقدم استشارة قانونية. لا تفسر نصوصًا قانونية. المصدر العربي الرسمي هو الحاكم. لا تدعي إصدارًا عامًا.",
+  "scenarios": [
+    {
+      "scenario_id": "demo_001",
+      "title_ar": "مجلس الإدارة",
+      "query": "مجلس الإدارة",
+      "purpose_ar": "استعراض استرجاع السجلات المتعلقة بمجلس الإدارة في نظام الشركات",
+      "mode": "prepare_prompt",
+      "limit": 3,
+      "prompt_mode": "evidence_brief",
+      "formats": "both",
+      "include_full_text": false,
+      "expected_min_total_matches": 1,
+      "expected_artifacts": [
+        "context_pack.json",
+        "context_pack.md",
+        "prompt_pack.json",
+        "prompt_pack.md",
+        "workflow_manifest.json",
+        "WORKFLOW_README.md"
+      ],
+      "boundary_note": "السيناريو يستخرج سجلات استرجاع فقط. لا يولد إجابة قانونية.",
+      "demo_script_ar": "تشغيل سير عمل الاسترجاع لاستخراج السجلات المتعلقة بمجلس الإدارة وتجهيز حزمة سياق وحزمة طلب"
+    },
+    {
+      "scenario_id": "demo_002",
+      "title_ar": "الجمعية العامة",
+      "query": "الجمعية العامة",
+      "purpose_ar": "استعراض استرجاع السجلات المتعلقة بالجمعية العامة للشركاء أو المساهمين",
+      "mode": "prepare_prompt",
+      "prompt_mode": "cautious_answer_draft",
+      "limit": 3,
+      "formats": "both",
+      "include_full_text": false,
+      "expected_min_total_matches": 1,
+      "expected_artifacts": [
+        "context_pack.json",
+        "context_pack.md",
+        "prompt_pack.json",
+        "prompt_pack.md",
+        "workflow_manifest.json",
+        "WORKFLOW_README.md"
+      ],
+      "boundary_note": "السيناريو يجهز قالب طلب حذر دون توليد إجابة فعلية.",
+      "demo_script_ar": "تشغيل سير عمل الاسترجاع لاستخراج سجلات الجمعية العامة وتجهيز قالب طلب حذر"
+    },
+    {
+      "scenario_id": "demo_003",
+      "title_ar": "التصفية في نظام الشركات",
+      "query": "التصفية",
+      "track": "companies_law",
+      "purpose_ar": "استعراض استرجاع السجلات المتعلقة بالتصفية مقيدة بمسار نظام الشركات فقط",
+      "mode": "prepare_prompt",
+      "prompt_mode": "evidence_brief",
+      "limit": 3,
+      "formats": "both",
+      "include_full_text": false,
+      "expected_min_total_matches": 1,
+      "expected_artifacts": [
+        "context_pack.json",
+        "context_pack.md",
+        "prompt_pack.json",
+        "prompt_pack.md",
+        "workflow_manifest.json",
+        "WORKFLOW_README.md"
+      ],
+      "boundary_note": "السيناريو يستخدم مرشح المسار لتقييد الاسترجاع بنظام الشركات فقط.",
+      "demo_script_ar": "تشغيل سير عمل الاسترجاع بكلمة التصفية مع مرشح مسار نظام الشركات"
+    },
+    {
+      "scenario_id": "demo_004",
+      "title_ar": "أسهم الشركات المساهمة المدرجة",
+      "query": "الأسهم",
+      "track": "implementing_regulations_listed_joint_stock",
+      "purpose_ar": "استعراض استرجاع السجلات المتعلقة بالأسهم في اللائحة التنفيذية للشركات المساهمة المدرجة",
+      "mode": "prepare_prompt",
+      "prompt_mode": "evidence_brief",
+      "limit": 3,
+      "formats": "both",
+      "include_full_text": false,
+      "expected_min_total_matches": 1,
+      "expected_artifacts": [
+        "context_pack.json",
+        "context_pack.md",
+        "prompt_pack.json",
+        "prompt_pack.md",
+        "workflow_manifest.json",
+        "WORKFLOW_README.md"
+      ],
+      "boundary_note": "السيناريو يستخدم مرشح مسار اللائحة التنفيذية للشركات المساهمة المدرجة.",
+      "demo_script_ar": "تشغيل سير عمل الاسترجاع بكلمة الأسهم مع مرشح مسار اللائحة التنفيذية للشركات المساهمة المدرجة"
+    },
+    {
+      "scenario_id": "demo_005",
+      "title_ar": "النماذج",
+      "query": "نموذج",
+      "record_type": "form",
+      "purpose_ar": "استعراض استرجاع النماذج الرسمية في اللوائح التنفيذية",
+      "mode": "prepare_prompt",
+      "prompt_mode": "evidence_brief",
+      "limit": 3,
+      "formats": "both",
+      "include_full_text": false,
+      "expected_min_total_matches": 1,
+      "expected_artifacts": [
+        "context_pack.json",
+        "context_pack.md",
+        "prompt_pack.json",
+        "prompt_pack.md",
+        "workflow_manifest.json",
+        "WORKFLOW_README.md"
+      ],
+      "boundary_note": "السيناريو يستخدم مرشح نوع السجل لاستخراج النماذج فقط.",
+      "demo_script_ar": "تشغيل سير عمل الاسترجاع بكلمة نموذج مع مرشح نوع السجل نموذج"
+    },
+    {
+      "scenario_id": "demo_006",
+      "title_ar": "ملحق التوكيل",
+      "query": "التوكيل",
+      "record_type": "appendix",
+      "purpose_ar": "استعراض استرجاع ملاحق اللوائح التنفيذية المتعلقة بالتوكيل",
+      "mode": "prepare_prompt",
+      "prompt_mode": "evidence_brief",
+      "limit": 1,
+      "formats": "both",
+      "include_full_text": true,
+      "expected_min_total_matches": 1,
+      "expected_artifacts": [
+        "context_pack.json",
+        "context_pack.md",
+        "prompt_pack.json",
+        "prompt_pack.md",
+        "workflow_manifest.json",
+        "WORKFLOW_README.md"
+      ],
+      "boundary_note": "السيناريو يستخدم مرشح نوع السجل لاستخراج الملاحق فقط مع تضمين النص الكامل.",
+      "demo_script_ar": "تشغيل سير عمل الاسترجاع بكلمة التوكيل مع مرشح نوع السجل ملحق وتضمين النص الكامل"
+    }
+  ]
+}

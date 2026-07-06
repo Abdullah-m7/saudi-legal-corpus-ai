@@ -223,6 +223,17 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`docs/CORPUS_RETRIEVAL_WORKFLOW_RUNNER.md`]. Validate:
   `make corpus-retrieval-workflow-runner-validate`.
 
+- **Retrieval demo scenarios:** Six curated Arabic demo scenarios that run
+  the existing workflow runner end-to-end for demonstration and rehearsal.
+  Each scenario specifies a query, mode, filters, and expected artifacts.
+  A validator runs all scenarios in temporary directories and confirms
+  PASS/FAIL. A helper script runs all scenarios into a user-provided or
+  temp dir. Deterministic, offline — no LLM, no RAG, no embeddings, no API,
+  no network. Generated outputs are not committed. Usage:
+  `python3 scripts/run_retrieval_demo_scenarios.py`. See
+  [`docs/CORPUS_RETRIEVAL_DEMO_SCENARIOS.md`]. Validate:
+  `make corpus-retrieval-demo-scenarios-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**

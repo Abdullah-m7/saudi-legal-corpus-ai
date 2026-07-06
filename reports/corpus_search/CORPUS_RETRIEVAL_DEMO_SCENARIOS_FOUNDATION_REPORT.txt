@@ -1,0 +1,271 @@
+============================================================================
+STAGE: CORPUS_RETRIEVAL_DEMO_SCENARIOS_FOUNDATION
+============================================================================
+
+RESULT: APPLY — Implemented as deterministic local demo scenarios only
+
+BASELINE_CONFIRMED: 2084fe3d6dd70a8ac0e32c2cc4e71765a54df302
+BRANCH: glm/corpus-retrieval-demo-scenarios-foundation
+
+============================================================================
+MULTI-AGENT TREE DEBATE
+============================================================================
+
+1. Legal Architect
+   - Demo scenarios do not generate legal answers: CONFIRMED
+   - Do not provide legal advice: CONFIRMED
+   - Do not interpret legal text: CONFIRMED
+   - Arabic official source remains governing: CONFIRMED
+   - No English/Chinese records used: CONFIRMED
+   - No public release claim: CONFIRMED
+   - Scenario descriptions are operational, not legal conclusions: CONFIRMED
+
+2. Data/Automation Engineer
+   - Scenarios are deterministic and offline: CONFIRMED
+   - Run existing workflow runner rather than duplicating logic: CONFIRMED
+   - Generated workflow outputs go to temporary directories only: CONFIRMED
+   - No LLM/API/network: CONFIRMED
+   - Scenario schema is stable and testable: CONFIRMED
+
+3. Product/RAG Pragmatist
+   - Demo scenarios make the project easier to show and rehearse: CONFIRMED
+   - Prove the pipeline is usable before future RAG: CONFIRMED
+   - Cover representative company-law retrieval tasks: CONFIRMED
+
+4. Devil's Advocate
+   - Not just documentation bloat: CONFIRMED — scenarios are executable
+   - Rejected: generated answers, screenshots, public artifacts, web UI,
+     API, semantic scoring: CONFIRMED
+   - Kept as curated demo commands + validator only: CONFIRMED
+
+5. Founder-Speed Advocate
+   - Visible demo layer now: CONFIRMED
+   - Small: one scenario JSON, one validator, one helper, one doc, one
+     report: CONFIRMED
+   - No large demo framework: CONFIRMED
+   - Easy for Abdullah to run and show: CONFIRMED
+
+DECISION: APPLY, kept as deterministic local demo scenarios only.
+
+============================================================================
+CHAIN OF VERIFICATION
+============================================================================
+
+1. Vision Fit Check
+   - Makes the project demonstrable now: YES
+   - Helps Abdullah rehearse and show product value: YES
+   - Uses existing workflow runner instead of adding new logic: YES
+
+2. Legal Boundary Check
+   - Arabic official source governs: CONFIRMED
+   - Not legal advice: CONFIRMED
+   - Not official translation: CONFIRMED
+   - No legal interpretation: CONFIRMED
+   - No generated legal conclusions: CONFIRMED
+   - No legal correctness judgment: CONFIRMED
+   - No semantic support verification: CONFIRMED
+   - No LLM call: CONFIRMED
+   - No answer generation: CONFIRMED
+   - No English records: CONFIRMED
+   - No Chinese records: CONFIRMED
+   - No trilingual alignment: CONFIRMED
+   - No public release: CONFIRMED
+
+3. Scope Discipline Check
+   - Use existing workflow runner: CONFIRMED
+   - Do not modify primary_arabic_governing_records.jsonl: CONFIRMED
+   - Do not modify source corpus files: CONFIRMED
+   - Do not modify official_text_ar: CONFIRMED
+   - Do not modify search ranking: CONFIRMED
+   - No RAG/embeddings/semantic/API/UI/database/network: CONFIRMED
+   - Do not commit generated workflow outputs: CONFIRMED
+
+4. Anti-Overengineering Check
+   - No full demo app: CONFIRMED
+   - No screenshots/slides/web pages/videos: CONFIRMED
+   - No large benchmark: CONFIRMED
+   - 6 scenarios only: CONFIRMED
+   - Validator is simple: CONFIRMED
+
+5. Product/Automation Value Check
+   - Scenarios easy to run: CONFIRMED
+   - Cover meaningful query types: CONFIRMED
+   - Produce workflow artifacts in temporary dirs: CONFIRMED
+   - Validator shows clear PASS/FAIL: CONFIRMED
+   - Documentation includes copy-paste commands: CONFIRMED
+
+============================================================================
+DEMO SCENARIO SCOPE
+============================================================================
+
+A small deterministic local demo scenario layer for the retrieval workflow
+runner. 6 curated Arabic query scenarios that run the existing workflow
+runner end-to-end for demonstration and rehearsal. No LLM, no RAG, no
+embeddings, no API, no network, no committed generated outputs.
+
+SCENARIO_COUNT: 6
+
+SCENARIO_LIST:
+  1. demo_001 — مجلس الإدارة (prepare_prompt, evidence_brief, limit 3)
+  2. demo_002 — الجمعية العامة (prepare_prompt, cautious_answer_draft, limit 3)
+  3. demo_003 — التصفية (track=companies_law, prepare_prompt, evidence_brief, limit 3)
+  4. demo_004 — أسهم الشركات المساهمة المدرجة (track=implementing_regulations_listed_joint_stock, prepare_prompt, evidence_brief, limit 3)
+  5. demo_005 — النماذج (record_type=form, prepare_prompt, evidence_brief, limit 3)
+  6. demo_006 — ملحق التوكيل (record_type=appendix, prepare_prompt, evidence_brief, limit 1, include_full_text)
+
+============================================================================
+SOURCE_TOOLS
+============================================================================
+
+- scripts/run_retrieval_workflow.py (retrieval workflow runner)
+- scripts/search_primary_arabic_export.py (local lexical search)
+- scripts/build_retrieval_context_pack.py (context pack builder)
+- scripts/build_retrieval_prompt_pack.py (prompt pack builder)
+- scripts/check_citation_support.py (citation support checker)
+
+============================================================================
+SOURCE_DATA
+============================================================================
+
+- data/exports/v1/primary_arabic_governing_records.jsonl (450 records)
+
+============================================================================
+INCLUDED_RECORDS
+============================================================================
+
+- Companies Law: 281 records
+- Implementing Regulations (general): 95 + 4 records
+- Implementing Regulations (listed joint-stock): 69 + 1 records
+- Total: 450 records
+
+============================================================================
+EXCLUDED_RECORDS
+============================================================================
+
+- English reference records
+- Chinese internal reference records
+- Closure audit aggregate records
+
+============================================================================
+CLI_EXAMPLES
+============================================================================
+
+Validate all scenarios:
+  make corpus-retrieval-demo-scenarios-validate
+
+Run all scenarios into temp dir:
+  python3 scripts/run_retrieval_demo_scenarios.py
+
+Run all scenarios into specific dir:
+  python3 scripts/run_retrieval_demo_scenarios.py --output-dir /tmp/my_demo
+
+Run one manual workflow command:
+  python3 scripts/run_retrieval_workflow.py "مجلس الإدارة" \
+    --mode prepare_prompt --limit 3 --prompt-mode evidence_brief \
+    --formats both --output-dir /tmp/corpus_demo_board
+
+Run scenario with track filter:
+  python3 scripts/run_retrieval_workflow.py "التصفية" \
+    --track companies_law --mode prepare_prompt --limit 3 \
+    --prompt-mode evidence_brief --formats both \
+    --output-dir /tmp/corpus_demo_liquidation
+
+Run scenario with record_type filter:
+  python3 scripts/run_retrieval_workflow.py "نموذج" \
+    --record-type form --mode prepare_prompt --limit 3 \
+    --prompt-mode evidence_brief --formats both \
+    --output-dir /tmp/corpus_demo_forms
+
+============================================================================
+GENERATED_OUTPUT_POLICY
+============================================================================
+
+- All workflow outputs go to temporary directories only.
+- No generated context packs, prompt packs, or workflow manifests are committed.
+- The validator runs each scenario in a fresh tempfile.mkdtemp() directory.
+- Temporary outputs are outside the repository tree.
+- The data/demo_scenarios/ directory contains only the scenarios JSON file.
+
+============================================================================
+VALIDATION
+============================================================================
+
+make validate: PASS
+make test: 2469 passed
+make corpus-registry-validate: PASS
+make corpus-export-primary-arabic-validate: PASS
+make corpus-local-search-validate: PASS
+make corpus-local-search-eval-validate: PASS
+make corpus-local-search-smoke: PASS
+make corpus-retrieval-context-pack-validate: PASS
+make corpus-retrieval-context-pack-smoke: PASS
+make corpus-retrieval-prompt-pack-validate: PASS
+make corpus-retrieval-prompt-pack-smoke: PASS
+make corpus-citation-support-checker-validate: PASS
+make corpus-citation-support-checker-smoke: PASS
+make corpus-retrieval-workflow-runner-validate: PASS
+make corpus-retrieval-workflow-runner-smoke: PASS
+make corpus-retrieval-demo-scenarios-validate: PASS (169/169 checks)
+
+============================================================================
+SMOKE_RESULTS
+============================================================================
+
+make corpus-retrieval-demo-scenarios-smoke: PASS
+  - 6/6 scenarios passed
+  - Manual workflow command: PASS (6 artifacts)
+  - No generated workflow outputs in data/demo_scenarios/: CONFIRMED
+
+Manual workflow command:
+  python3 scripts/run_retrieval_workflow.py "مجلس الإدارة" \
+    --mode prepare_prompt --limit 3 --prompt-mode evidence_brief \
+    --formats both --output-dir /tmp/corpus_demo_board
+  Result: PASS (6 artifacts, 170 total_matches)
+
+============================================================================
+FILES_ADDED
+============================================================================
+
+1. data/demo_scenarios/retrieval_demo_scenarios_v1.json
+2. scripts/validate_retrieval_demo_scenarios.py
+3. scripts/run_retrieval_demo_scenarios.py
+4. tests/test_retrieval_demo_scenarios.py
+5. docs/CORPUS_RETRIEVAL_DEMO_SCENARIOS.md
+6. reports/corpus_search/CORPUS_RETRIEVAL_DEMO_SCENARIOS_FOUNDATION_AR.md
+7. reports/corpus_search/CORPUS_RETRIEVAL_DEMO_SCENARIOS_FOUNDATION_REPORT.txt
+
+============================================================================
+FILES_MODIFIED
+============================================================================
+
+1. Makefile (added validate + smoke targets, added to validate-all)
+2. README.md (added demo scenarios description)
+3. STATUS.md (added demo scenarios entry)
+4. .gitignore (added /tmp/corpus_demo_* pattern)
+
+============================================================================
+HYGIENE
+============================================================================
+
+- No generated context packs committed: CONFIRMED
+- No generated prompt packs committed: CONFIRMED
+- No generated workflow outputs committed: CONFIRMED
+- No temporary /tmp files committed: CONFIRMED
+- No screenshots/slides/web UI/API: CONFIRMED
+- No LLM calls: CONFIRMED
+- No legal answers generated: CONFIRMED
+- No generated/session/co-author/tool/model attribution: CONFIRMED
+- Stale merge report from prior session removed before staging: CONFIRMED
+
+============================================================================
+LOCAL_REPORT_FILE
+============================================================================
+
+reports/corpus_search/CORPUS_RETRIEVAL_DEMO_SCENARIOS_FOUNDATION_REPORT.txt
+
+============================================================================
+FINAL_STATUS
+============================================================================
+
+STAGE COMPLETE — All validation and smoke checks passed.
+Ready for PR.
