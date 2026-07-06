@@ -88,7 +88,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         implementing-regulations-listed-jsc-arabic-source-validate \
         implementing-regulations-general-arabic-source-validate \
         implementing-regulations-general-arabic-legal-llm-data \
-        implementing-regulations-general-arabic-legal-llm-validate
+        implementing-regulations-general-arabic-legal-llm-validate \
+        implementing-regulations-listed-jsc-arabic-legal-llm-data \
+        implementing-regulations-listed-jsc-arabic-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -667,6 +669,13 @@ implementing-regulations-general-arabic-legal-llm-data:
 
 implementing-regulations-general-arabic-legal-llm-validate:
 	$(PY) scripts/validate_implementing_regulations_general_arabic_legal_llm.py
+
+# -- Listed joint-stock implementing regulation Arabic Legal LLM layer (69 article records + 1 appendix) --
+implementing-regulations-listed-jsc-arabic-legal-llm-data:
+	$(PY) scripts/gen_implementing_regulations_listed_jsc_arabic_legal_llm.py
+
+implementing-regulations-listed-jsc-arabic-legal-llm-validate:
+	$(PY) scripts/validate_implementing_regulations_listed_jsc_arabic_legal_llm.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

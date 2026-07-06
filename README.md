@@ -74,7 +74,12 @@ regulations Arabic Legal LLM-ready layer** (95 article records across 7 chapters
 official form records) has been created from the general implementing regulation source
 intake — official_text_ar preserved verbatim, deterministic metadata for LLM retrieval,
 articles and forms in separate JSON files. Validate:
-`make implementing-regulations-general-arabic-legal-llm-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+`make implementing-regulations-general-arabic-legal-llm-validate`. A **listed joint-stock
+implementing regulation Arabic Legal LLM-ready layer** (69 article records + 1 appendix
+record) has been created from the listed joint-stock regulation source intake —
+specialized to listed joint-stock companies only, official_text_ar preserved verbatim,
+deterministic metadata for LLM retrieval, articles and appendix in separate JSON files.
+Validate: `make implementing-regulations-listed-jsc-arabic-legal-llm-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
