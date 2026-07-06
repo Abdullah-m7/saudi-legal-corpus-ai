@@ -212,6 +212,17 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   See [`docs/CORPUS_CITATION_SUPPORT_CHECKER.md`]. Validate:
   `make corpus-citation-support-checker-validate`.
 
+- **Retrieval workflow runner:** Deterministic, offline workflow runner that
+  orchestrates existing corpus tools — context pack, prompt pack, and citation
+  checker — into one practical end-to-end workflow. Two modes: `prepare_prompt`
+  (build context + prompt packs + manifest) and `check_draft` (build packs +
+  check draft answer citations + manifest). Thin orchestration only — reuses
+  existing functions, no logic duplication. No LLM, no RAG, no embeddings, no
+  API, no network. Generated run outputs are not committed. Usage:
+  `python3 scripts/run_retrieval_workflow.py "مجلس الإدارة"`. See
+  [`docs/CORPUS_RETRIEVAL_WORKFLOW_RUNNER.md`]. Validate:
+  `make corpus-retrieval-workflow-runner-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**

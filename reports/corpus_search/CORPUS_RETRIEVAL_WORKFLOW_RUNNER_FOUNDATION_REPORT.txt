@@ -1,0 +1,101 @@
+CORPUS_RETRIEVAL_WORKFLOW_RUNNER_FOUNDATION_REPORT.txt
+============================================================
+
+STAGE: CORPUS_RETRIEVAL_WORKFLOW_RUNNER_FOUNDATION
+RESULT: SUCCESS
+BASELINE_CONFIRMED: aba8af001843c539f1a1684f96c1d3924673abdf
+BRANCH: glm/corpus-retrieval-workflow-runner-foundation
+
+MULTI_AGENT_TREE_DEBATE: APPLY — strictly a thin deterministic workflow runner
+1. Legal Architect: No legal answers/advice/interpretation/correctness, only orchestrates existing tools, Arabic source governs, no English/Chinese, no public release — CONFIRMED
+2. Data/Automation Engineer: Deterministic, offline, reuses existing functions, no LLM/API/network, stable testable outputs, no committed run outputs — CONFIRMED
+3. Product/RAG Pragmatist: Creates usable local workflow before future RAG, one command runs full pipeline, supports prompt creation + draft citation checking — CONFIRMED
+4. Devil's Advocate: Not wrapper bloat, thin orchestration only, rejects duplicated logic/generation/scoring/embeddings/API/UI — CONFIRMED
+5. Founder-Speed Advocate: Ship one practical runner now, one CLI + one validator + one test + one doc + one report, makes project feel usable — CONFIRMED
+
+CHAIN_OF_VERIFICATION: ALL 5 CHECKS PASS
+1. Vision Fit: Makes toolchain practically usable, connects foundations without building RAG, reduces manual steps — PASS
+2. Legal Boundary: Arabic governs, not legal advice, not official translation, no legal interpretation, no generated conclusions, no legal correctness judgment, no semantic support verification, no LLM call, no answer generation, no English/Chinese, no trilingual, no public release — PASS
+3. Scope Discipline: Uses existing tools only, does not modify JSONL/source corpus/search ranking, no RAG/embeddings/semantic search/API/UI/database/network — PASS
+4. Anti-Overengineering: No large framework, no duplicated logic, no agents/chains/model calls, no persistent DB/index, one v1 workflow schema — PASS
+5. Product/Automation Value: Easy to run, produces useful artifacts, supports draft citation checking, clear PASS/FAIL, reusable for local/external LLM testing — PASS
+
+WORKFLOW_RUNNER_SCOPE: Thin deterministic workflow runner. Orchestrates context pack builder, prompt pack builder, and citation support checker. Does NOT call any LLM. Does NOT generate legal answers. Does NOT generate legal advice. Does NOT interpret legal text. Does NOT verify legal correctness. Does NOT verify semantic support. Does NOT create RAG/embeddings/semantic search/API/UI/database/network. Reuses existing functions — no logic duplication.
+
+WORKFLOW_MODES:
+1. prepare_prompt (default) — build context pack + prompt pack + manifest
+2. check_draft — build context pack + prompt pack + citation check + manifest
+
+OUTPUT_ARTIFACTS:
+prepare_prompt: context_pack.json, context_pack.md (if markdown), prompt_pack.json, prompt_pack.md (if markdown), workflow_manifest.json, WORKFLOW_README.md
+check_draft: all prepare_prompt artifacts + citation_check.json, citation_check.md (if markdown)
+
+SOURCE_TOOLS:
+- scripts/build_retrieval_context_pack.py
+- scripts/build_retrieval_prompt_pack.py
+- scripts/check_citation_support.py
+- scripts/search_primary_arabic_export.py
+
+SOURCE_DATA: data/exports/v1/primary_arabic_governing_records.jsonl (450 records)
+
+INCLUDED_RECORDS: CL 281 + Gen IR 95+4 + Listed JSC 69+1 = 450
+EXCLUDED_RECORDS: English 281, Chinese 281, closure aggregate 169
+
+CLI_EXAMPLES:
+- python3 scripts/run_retrieval_workflow.py "مجلس الإدارة"
+- python3 scripts/run_retrieval_workflow.py "مجلس الإدارة" --mode prepare_prompt --limit 3
+- python3 scripts/run_retrieval_workflow.py "مجلس الإدارة" --mode check_draft --draft-answer-file /tmp/draft.md
+- python3 scripts/run_retrieval_workflow.py "مجلس الإدارة" --prompt-mode cautious_answer_draft --formats both
+- python3 scripts/run_retrieval_workflow.py "التصفية" --track companies_law --limit 5
+- python3 scripts/run_retrieval_workflow.py "مجلس الإدارة" --output-dir /tmp/corpus_workflow
+
+MANIFEST_FIELDS:
+workflow_version, mode, query, normalized_query, generated_at_date, baseline_commit, output_dir, source_export_file, source_export_record_count, retrieval_method, limit, filters, prompt_mode, include_full_text, formats, artifacts, draft_answer_file (if applicable), citation_check_result (if applicable), legal_boundaries, limitations, hygiene
+
+VALIDATION:
+- make validate: PASS
+- make test: 2441 passed (+29 new)
+- make corpus-registry-validate: PASS
+- make corpus-export-primary-arabic-validate: PASS
+- make corpus-local-search-validate: PASS
+- make corpus-local-search-eval-validate: PASS
+- make corpus-local-search-smoke: PASS
+- make corpus-retrieval-context-pack-validate: PASS
+- make corpus-retrieval-context-pack-smoke: PASS
+- make corpus-retrieval-prompt-pack-validate: PASS
+- make corpus-retrieval-prompt-pack-smoke: PASS
+- make corpus-citation-support-checker-validate: PASS
+- make corpus-citation-support-checker-smoke: PASS
+- make corpus-retrieval-workflow-runner-validate: PASS (50/50 checks)
+
+SMOKE_RESULTS:
+- prepare_prompt: context pack + prompt pack + manifest created, 8 artifacts ✓
+- check_draft with valid cited draft: PASS, 2 valid citations ✓
+- check_draft with invalid draft: FAIL, correctly detected ✓
+
+FILES_ADDED:
+1. scripts/run_retrieval_workflow.py — CLI workflow runner
+2. scripts/validate_retrieval_workflow_runner.py — read-only validator (50 checks)
+3. tests/test_retrieval_workflow_runner.py — test suite (29 tests)
+4. docs/CORPUS_RETRIEVAL_WORKFLOW_RUNNER.md — usage guide, modes, artifacts, limitations, boundaries
+5. reports/corpus_search/CORPUS_RETRIEVAL_WORKFLOW_RUNNER_FOUNDATION_AR.md — Arabic report
+
+FILES_MODIFIED:
+1. Makefile — added corpus-retrieval-workflow-runner-validate and corpus-retrieval-workflow-runner-smoke targets; added to .PHONY
+2. README.md — added retrieval workflow runner section
+3. STATUS.md — added retrieval workflow runner entry
+
+HYGIENE:
+- No generated/session/co-author/tool/model attribution
+- No committed workflow run outputs
+- Stale untracked files from prior sessions removed before commit
+- Baseline confirmed: aba8af001843c539f1a1684f96c1d3924673abdf
+- All existing validators unchanged and passing
+- No source corpus files modified
+- No export JSONL modified
+- No search ranking modified
+- Workflow runner reuses existing functions — no logic duplication
+
+LOCAL_REPORT_FILE: reports/corpus_search/CORPUS_RETRIEVAL_WORKFLOW_RUNNER_FOUNDATION_REPORT.txt
+
+FINAL_STATUS: READY FOR PR
