@@ -1,0 +1,177 @@
+================================================================================
+IMPLEMENTING REGULATIONS ARABIC PROGRAM CLOSURE AUDIT — MERGE REPORT
+================================================================================
+
+STAGE:          IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_MERGE
+REPO:           al3obdi/saudi-legal-corpus-ai
+PR:             #90
+DATE:           2026-07-06
+
+================================================================================
+1. MERGE CONFIRMATION
+================================================================================
+
+  PR:                #90
+  Title:             Add implementing regulations Arabic program closure audit
+  Merge method:      Squash merge
+  Merge result:      SUCCESS
+  Squash commit SHA: 465776947125066bd1a705cfceacd3dca935ad1f
+  Previous main:     90a949108a6e4b5003d651019d5d83a9a96bad08
+
+  PR pre-merge state:
+    State:           open
+    Mergeable:       True
+    Mergeable state: clean
+    Head SHA:        2f551e7df12f414ceee9cce78581b38424b81072
+    Base SHA:        90a949108a6e4b5003d651019d5d83a9a96bad08
+    Commits:         2 (squashed into 1)
+    Changed files:   10
+
+  CI status (all green):
+    build-and-validate (3.9):   success
+    build-and-validate (3.11):  success
+    build-and-validate (3.12):  success
+    (6 check runs total, all conclusion=success)
+
+  Squash commit message: no co-author/tool/model attribution
+
+================================================================================
+2. POST-MERGE VERIFICATION
+================================================================================
+
+  Local main HEAD:   465776947125066bd1a705cfceacd3dca935ad1f
+  Origin main HEAD:  465776947125066bd1a705cfceacd3dca935ad1f
+  Local == Origin:   YES
+  Working tree:      CLEAN
+
+================================================================================
+3. VALIDATION RESULTS (POST-MERGE ON MAIN)
+================================================================================
+
+  --- make validate ---
+  PASS
+
+  --- make test ---
+  2132 passed
+
+  --- make implementing-regulations-intake-scaffold-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-legal-llm-validate ---
+  PASS (27/27)
+
+  --- make implementing-regulations-listed-jsc-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-listed-jsc-arabic-legal-llm-validate ---
+  PASS (28/28)
+
+  --- make implementing-regulations-arabic-program-closure-validate ---
+  PASS (26/26)
+
+  --- python3 scripts/gen_implementing_regulations_arabic_program_closure.py ---
+  [OK] General track: PASS (95 articles + 4 forms)
+  [OK] Listed JSC track: PASS (69 articles + 1 appendix)
+  [OK] Overall: PASS
+
+  --- git diff --exit-code ---
+  EXIT 0 (idempotent)
+
+================================================================================
+4. SCOPE
+================================================================================
+
+  Closure/status audit only. No new corpus layer created.
+  Verifies both implementing-regulations Arabic tracks are complete.
+
+================================================================================
+5. GENERAL TRACK
+================================================================================
+
+  Source intake:     EXISTS (95 articles + 7 chapters + 4 forms)
+  Arabic Legal LLM:  EXISTS (95 article records)
+  Forms layer:       EXISTS (4 form records)
+  Article hashes:    ALL 95 match source intake
+  Form hashes:       ALL 4 match source intake
+  Record IDs:        sequential and unique
+  Status:            PASS
+
+================================================================================
+6. LISTED JOINT-STOCK TRACK
+================================================================================
+
+  Source intake:     EXISTS (69 articles + 14 chapters + 1 appendix)
+  Arabic Legal LLM:  EXISTS (69 article records)
+  Appendix layer:    EXISTS (1 appendix record)
+  Article hashes:    ALL 69 match source intake
+  Appendix hash:     matches source intake
+  Record IDs:        sequential and unique
+  is_specialized:    True
+  is_general:        False
+  chapter_number:    null (source has no article-to-chapter mapping)
+  chapter_title_ar:  null
+  Status:            PASS
+
+================================================================================
+7. COUNTS
+================================================================================
+
+  General articles:          95
+  General forms:              4
+  Listed JSC articles:       69
+  Listed JSC appendices:      1
+  Total article records:    164
+  Total non-article records:  5
+  Total all records:        169
+
+================================================================================
+8. BOUNDARIES
+================================================================================
+
+  - Arabic official source governs:          CONFIRMED
+  - Not official translation:               CONFIRMED
+  - Not legal advice:                       CONFIRMED
+  - General and listed tracks separate:      CONFIRMED
+  - Listed JSC specialized, NOT general:     CONFIRMED
+  - English (if added) = reference only:     CONFIRMED
+  - Chinese (if added) = internal only:      CONFIRMED
+  - No trilingual alignment:                 CONFIRMED
+  - No public release:                       CONFIRMED
+
+================================================================================
+9. HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED
+  - Chinese remediation program: UNCHANGED
+  - General implementing regulations source intake: UNCHANGED (read-only)
+  - General Arabic Legal LLM layer: UNCHANGED (read-only)
+  - Listed joint-stock source intake: UNCHANGED (read-only)
+  - Listed joint-stock Arabic Legal LLM layer: UNCHANGED (read-only)
+  - No English text generated: CONFIRMED
+  - No Chinese text generated: CONFIRMED
+  - No trilingual alignment: CONFIRMED
+  - No public release: CONFIRMED
+  - No co-author/tool/model attribution: CONFIRMED
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  MERGE COMPLETE:           YES
+  Final main HEAD:          465776947125066bd1a705cfceacd3dca935ad1f
+  Validation:               ALL PASS (26 closure + 2132 tests + idempotence)
+  Scope:                    Closure/status audit only — no new corpus layer
+  General track:            PASS (95 articles + 4 forms)
+  Listed joint-stock track: PASS (69 articles + 1 appendix)
+  Counts:                   164 article records + 5 non-article = 169 total
+  Boundaries:               ALL CONFIRMED
+  Hygiene:                  CLEAN — all corpora unchanged, read-only consumption
+  Local report file:        reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_MERGE_REPORT.txt
+  Telegram report:          SENT
+  Final status:             MERGED — PR #90 squash-merged into main, all post-merge validation green
+
+================================================================================

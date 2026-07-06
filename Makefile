@@ -92,7 +92,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         implementing-regulations-listed-jsc-arabic-legal-llm-data \
         implementing-regulations-listed-jsc-arabic-legal-llm-validate \
         implementing-regulations-arabic-program-closure-data \
-        implementing-regulations-arabic-program-closure-validate
+        implementing-regulations-arabic-program-closure-validate \
+        corpus-registry-data \
+        corpus-registry-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -685,6 +687,13 @@ implementing-regulations-arabic-program-closure-data:
 
 implementing-regulations-arabic-program-closure-validate:
 	$(PY) scripts/validate_implementing_regulations_arabic_program_closure.py
+
+# -- Corpus registry index foundation (canonical registry; read-only) --
+corpus-registry-data:
+	$(PY) scripts/gen_corpus_registry.py
+
+corpus-registry-validate:
+	$(PY) scripts/validate_corpus_registry.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

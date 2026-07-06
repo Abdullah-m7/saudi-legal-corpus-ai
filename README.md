@@ -83,7 +83,11 @@ Validate: `make implementing-regulations-listed-jsc-arabic-legal-llm-validate`. 
 regulations Arabic program closure audit** verifies both tracks (general 95+4, listed
 joint-stock 69+1) are complete with all hashes matching, record IDs sequential, tracks
 separate, and all boundaries enforced. Validate:
-`make implementing-regulations-arabic-program-closure-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+`make implementing-regulations-arabic-program-closure-validate`. A **corpus registry
+index** provides a canonical, machine-readable summary of all completed tracks
+(companies law 281, general IR 95+4, listed JSC 69+1, closure audit 169 total)
+with counts, paths, statuses, boundaries, and validation targets. Validate:
+`make corpus-registry-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
