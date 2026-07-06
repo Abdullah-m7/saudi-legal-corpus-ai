@@ -135,6 +135,11 @@ with clear PASS/FAIL. Deterministic, offline — no LLM, no RAG, no
 embeddings, no API, no network. See
 [`docs/CORPUS_RETRIEVAL_DEMO_SCENARIOS.md`](docs/CORPUS_RETRIEVAL_DEMO_SCENARIOS.md).
 Validate: `make corpus-retrieval-demo-scenarios-validate`.
+A concise **operator demo pack** provides Arabic documentation for running,
+rehearsing, and showing the demo — start guide, presenter script, rehearsal
+checklist, commands, and boundaries. See
+[`docs/operator_demo_pack/`](docs/operator_demo_pack/).
+Validate: `make corpus-retrieval-operator-demo-pack-validate`.
 See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation

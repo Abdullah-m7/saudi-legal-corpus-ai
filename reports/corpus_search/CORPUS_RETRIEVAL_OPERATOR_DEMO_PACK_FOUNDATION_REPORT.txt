@@ -1,0 +1,187 @@
+============================================================================
+STAGE: CORPUS_RETRIEVAL_OPERATOR_DEMO_PACK_FOUNDATION
+============================================================================
+
+RESULT: APPLY — Implemented as local operator documentation pack
+
+BASELINE_CONFIRMED: eaddea5214c3b9cfcc1e1376751828cd08497179
+BRANCH: glm/corpus-retrieval-operator-demo-pack-foundation
+
+============================================================================
+CHAIN OF VERIFICATION
+============================================================================
+
+1. Vision Fit Check
+   - Makes existing workflow easier to run and show: YES
+   - Reduces operator confusion: YES
+   - Avoids adding unnecessary new logic: YES
+
+2. Legal Boundary Check
+   - Arabic official source governs: CONFIRMED
+   - Not legal advice: CONFIRMED
+   - Not official translation: CONFIRMED
+   - No legal interpretation: CONFIRMED
+   - No generated legal conclusions: CONFIRMED
+   - No legal correctness judgment: CONFIRMED
+   - No semantic support verification: CONFIRMED
+   - No LLM call: CONFIRMED
+   - No answer generation: CONFIRMED
+   - No English records: CONFIRMED
+   - No Chinese records: CONFIRMED
+   - No trilingual alignment: CONFIRMED
+   - No public release: CONFIRMED
+
+3. Scope Discipline Check
+   - Use existing workflow runner and demo scenarios: CONFIRMED
+   - Do not modify primary_arabic_governing_records.jsonl: CONFIRMED
+   - Do not modify source corpus files: CONFIRMED
+   - Do not modify official_text_ar: CONFIRMED
+   - Do not modify search ranking: CONFIRMED
+   - No RAG/embeddings/semantic/API/UI/database/network: CONFIRMED
+   - Do not commit generated workflow outputs: CONFIRMED
+
+4. Anti-Overengineering Check
+   - No full demo app: CONFIRMED
+   - No screenshots/slides/videos/web pages: CONFIRMED
+   - No new framework: CONFIRMED
+   - Files short and operator-focused: CONFIRMED
+   - Documentation and simple validation only: CONFIRMED
+
+5. Product/Automation Value Check
+   - Operator can run demo in under a few commands: CONFIRMED
+   - Operator knows what to show and what not to claim: CONFIRMED
+   - Operator can validate readiness before demo: CONFIRMED
+   - Operator has concise rehearsal script: CONFIRMED
+   - Generated outputs stay outside repository: CONFIRMED
+
+============================================================================
+OPERATOR_DEMO_PACK_SCOPE
+============================================================================
+
+Concise local operator documentation pack for the retrieval demo workflow.
+Five Arabic documentation files + one read-only validator + tests.
+No LLM, no RAG, no embeddings, no API, no network, no committed artifacts.
+
+============================================================================
+FILES_ADDED (9)
+============================================================================
+
+1. docs/operator_demo_pack/START_HERE_AR.md
+2. docs/operator_demo_pack/DEMO_SCRIPT_AR.md
+3. docs/operator_demo_pack/REHEARSAL_CHECKLIST_AR.md
+4. docs/operator_demo_pack/COMMANDS_AR.md
+5. docs/operator_demo_pack/BOUNDARIES_AR.md
+6. scripts/validate_operator_demo_pack.py
+7. tests/test_operator_demo_pack.py (28 tests)
+8. reports/corpus_search/CORPUS_RETRIEVAL_OPERATOR_DEMO_PACK_FOUNDATION_AR.md
+9. reports/corpus_search/CORPUS_RETRIEVAL_OPERATOR_DEMO_PACK_FOUNDATION_REPORT.txt
+
+============================================================================
+FILES_MODIFIED (3)
+============================================================================
+
+1. Makefile (validate + smoke targets, added to validate-all)
+2. README.md (operator demo pack description)
+3. STATUS.md (operator demo pack entry)
+
+============================================================================
+COMMANDS_INCLUDED
+============================================================================
+
+- make validate
+- make corpus-retrieval-demo-scenarios-validate
+- make corpus-retrieval-demo-scenarios-smoke
+- make corpus-retrieval-operator-demo-pack-validate
+- make corpus-retrieval-operator-demo-pack-smoke
+- python3 scripts/run_retrieval_demo_scenarios.py
+- python3 scripts/run_retrieval_demo_scenarios.py --output-dir /tmp/my_demo
+- python3 scripts/run_retrieval_workflow.py "مجلس الإدارة" (general search)
+- python3 scripts/run_retrieval_workflow.py "التصفية" --track companies_law (track filter)
+- python3 scripts/run_retrieval_workflow.py "نموذج" --record-type form (record_type filter)
+- python3 scripts/run_retrieval_workflow.py "الجمعية العامة" --prompt-mode cautious_answer_draft
+- python3 scripts/run_retrieval_workflow.py "التوكيل" --record-type appendix --include-full-text
+
+============================================================================
+BOUNDARIES
+============================================================================
+
+- Arabic official source governs
+- Not legal advice
+- Not official translation
+- No legal interpretation
+- No generated legal conclusions
+- No legal correctness judgment
+- No semantic support verification
+- No LLM calls
+- No RAG
+- No public release
+- Repository-owner legal review active; external legal review optional
+
+============================================================================
+GENERATED_OUTPUT_POLICY
+============================================================================
+
+- All workflow outputs go to temporary directories only.
+- No generated artifacts committed in docs/operator_demo_pack/.
+- The pack directory contains only markdown files.
+- No generated context packs or prompt packs committed.
+
+============================================================================
+VALIDATION
+============================================================================
+
+make validate: PASS
+make test: 2497 passed
+make corpus-registry-validate: PASS
+make corpus-export-primary-arabic-validate: PASS
+make corpus-local-search-validate: PASS
+make corpus-local-search-eval-validate: PASS
+make corpus-local-search-smoke: PASS
+make corpus-retrieval-context-pack-validate: PASS
+make corpus-retrieval-context-pack-smoke: PASS
+make corpus-retrieval-prompt-pack-validate: PASS
+make corpus-retrieval-prompt-pack-smoke: PASS
+make corpus-citation-support-checker-validate: PASS
+make corpus-citation-support-checker-smoke: PASS
+make corpus-retrieval-workflow-runner-validate: PASS
+make corpus-retrieval-workflow-runner-smoke: PASS
+make corpus-retrieval-demo-scenarios-validate: PASS (169/169 checks)
+make corpus-retrieval-demo-scenarios-smoke: PASS
+make corpus-retrieval-operator-demo-pack-validate: PASS (66/66 checks)
+
+ALL 18 TARGETS: PASS
+
+============================================================================
+SMOKE_RESULTS
+============================================================================
+
+make corpus-retrieval-operator-demo-pack-smoke: PASS
+  - Validator: 66/66 checks passed
+  - Demo scenarios: 6/6 passed
+  - No generated artifacts in docs/operator_demo_pack/: CONFIRMED
+  - Only markdown files: CONFIRMED
+
+============================================================================
+HYGIENE
+============================================================================
+
+- No generated artifacts committed: CONFIRMED
+- No screenshots/slides/web UI/API: CONFIRMED
+- No LLM calls: CONFIRMED
+- No legal answers generated: CONFIRMED
+- No co-author/tool/model attribution: CONFIRMED
+- docs/operator_demo_pack/ contains only .md files: CONFIRMED
+
+============================================================================
+LOCAL_REPORT_FILE
+============================================================================
+
+reports/corpus_search/CORPUS_RETRIEVAL_OPERATOR_DEMO_PACK_FOUNDATION_REPORT.txt
+
+============================================================================
+FINAL_STATUS
+============================================================================
+
+STAGE COMPLETE — All 18 validation/smoke targets passed.
+2497 tests passed. 66/66 operator pack checks passed.
+Ready for PR.

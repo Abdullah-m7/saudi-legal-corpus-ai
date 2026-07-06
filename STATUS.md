@@ -234,6 +234,14 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`docs/CORPUS_RETRIEVAL_DEMO_SCENARIOS.md`]. Validate:
   `make corpus-retrieval-demo-scenarios-validate`.
 
+- **Retrieval operator demo pack:** Concise Arabic operator documentation
+  for running, rehearsing, and showing the retrieval demo locally. Five
+  files: START_HERE, DEMO_SCRIPT, REHEARSAL_CHECKLIST, COMMANDS, BOUNDARIES.
+  A read-only validator confirms all files, boundary phrases, commands, and
+  referenced scripts exist. No LLM, no RAG, no embeddings, no API, no network.
+  No generated artifacts committed. Validate:
+  `make corpus-retrieval-operator-demo-pack-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**
