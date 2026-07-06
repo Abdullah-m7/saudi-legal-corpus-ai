@@ -128,6 +128,13 @@ with two modes: `prepare_prompt` (build context + prompt packs) and
 orchestration only — no LLM, no RAG, no embeddings, no API, no network. See
 [`docs/CORPUS_RETRIEVAL_WORKFLOW_RUNNER.md`](docs/CORPUS_RETRIEVAL_WORKFLOW_RUNNER.md).
 Validate: `make corpus-retrieval-workflow-runner-validate`.
+Six curated **retrieval demo scenarios** run the workflow runner end-to-end
+for local demonstration — each scenario specifies a query, mode, filters,
+and expected artifacts. A validator runs all scenarios in temp directories
+with clear PASS/FAIL. Deterministic, offline — no LLM, no RAG, no
+embeddings, no API, no network. See
+[`docs/CORPUS_RETRIEVAL_DEMO_SCENARIOS.md`](docs/CORPUS_RETRIEVAL_DEMO_SCENARIOS.md).
+Validate: `make corpus-retrieval-demo-scenarios-validate`.
 See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
