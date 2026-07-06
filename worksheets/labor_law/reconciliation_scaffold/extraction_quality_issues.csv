@@ -1,1 +1,11 @@
 issue_id,article_key,suspicious_text,issue_type,uploaded_candidate_line,official_source_check_needed,resolution_status,corrected_from_official_source_flag,notes
+eqi_001,labor_law_art_002,صاحب العمل / العامل label shift,ARTICLE_2_LABEL_SHIFT,,already_checked,BOE_CONFIRMED_CANDIDATE_BAD,no,BOE confirms both labels exist; uploaded candidate had shift
+eqi_002,labor_law_art_002,M/44 added terms require definition-body reconciliation later,ARTICLE_2_LABEL_SHIFT,,already_checked,NOT_BLOCKING,no,الإسناد and الاستقالة added by M/44; term labels only in this stage
+eqi_003,,Article 11 mukarrar not found as independent BOE article_item,MUKARRAR_LOCATION_UNCLEAR,,already_checked,CARRIED_FORWARD,no,May be embedded in amendment note for Article 11
+eqi_004,,Article 131 mukarrar not found as independent BOE article_item,MUKARRAR_LOCATION_UNCLEAR,,already_checked,CARRIED_FORWARD,no,May be embedded in amendment note for Article 131
+eqi_005,,M/44 count 45 BOE vs 47 prior audit,M44_COUNT_VARIANCE,,already_checked,NOT_BLOCKING,no,2 references may be in amendment notes not captured as separate popups
+eqi_006,,106 BOE changed articles vs 104 prior uploaded audit,AMENDMENT_COUNT_VARIANCE,,already_checked,NOT_BLOCKING,no,Difference likely due to counting method
+eqi_007,labor_law_art_231_renumbered,Article 231/240 renumbered entry needs later handling,RENUMBERED_ENTRY_NEEDS_HANDLING,,already_checked,CARRIED_FORWARD,no,Structural flag only
+eqi_008,labor_law_art_232_renumbered,Article 232/242 renumbered entry needs later handling,RENUMBERED_ENTRY_NEEDS_HANDLING,,already_checked,CARRIED_FORWARD,no,Structural flag only
+eqi_009,,Articles 233/234/235 duplicate BOE item anomaly,DUPLICATE_ARTICLE_ITEM,,already_checked,NOT_BLOCKING,no,Deduplicated in prior stage
+eqi_010,labor_law_art_002,Article 2 M/44 added-term definition bodies not reconciled,ARTICLE_2_MISSING_LABEL,,already_checked,NOT_BLOCKING,no,Term labels confirmed; definition-body reconciliation deferred
