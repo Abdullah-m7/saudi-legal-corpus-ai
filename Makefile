@@ -103,7 +103,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-retrieval-prompt-pack-validate \
         corpus-citation-support-checker-validate \
         corpus-retrieval-workflow-runner-validate \
-        corpus-retrieval-demo-scenarios-validate
+        corpus-retrieval-demo-scenarios-validate \
+        corpus-retrieval-operator-demo-pack-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -786,6 +787,21 @@ corpus-retrieval-demo-scenarios-smoke:
 	@echo "Confirming no generated workflow outputs in data/demo_scenarios/..."
 	@ls data/demo_scenarios/ | grep -v "retrieval_demo_scenarios_v1.json" && echo "FAIL: unexpected files" && exit 1 || echo "OK: only scenarios JSON present"
 	@rm -rf /tmp/_smoke_demo_board
+
+# -- Corpus retrieval operator demo pack (documentation + validator only) --
+
+corpus-retrieval-operator-demo-pack-validate:
+	$(PY) scripts/validate_operator_demo_pack.py
+
+corpus-retrieval-operator-demo-pack-smoke:
+	$(PY) scripts/validate_operator_demo_pack.py
+	@echo "---"
+	@echo "Running demo scenarios smoke to confirm referenced commands work..."
+	$(PY) scripts/run_retrieval_demo_scenarios.py
+	@echo "---"
+	@echo "Confirming no generated artifacts in docs/operator_demo_pack/..."
+	@find docs/operator_demo_pack/ -type f ! -name "*.md" -print -quit | grep -q . && echo "FAIL: non-markdown files" && exit 1 || echo "OK: only markdown files"
+	@rm -rf /tmp/corpus_demo_scenarios_*
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
