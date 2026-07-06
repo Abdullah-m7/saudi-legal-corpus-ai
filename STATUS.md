@@ -166,6 +166,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`data/exports/v1/primary_arabic_governing_records.jsonl`]. Validate:
   `make corpus-export-primary-arabic-validate`.
 
+- **Local lexical search:** Deterministic, offline CLI search over the 450
+  Arabic governing records. No embeddings, no API, no network. Usage:
+  `python3 scripts/search_primary_arabic_export.py "الشركة"`. See
+  [`docs/CORPUS_LOCAL_SEARCH.md`]. Validate:
+  `make corpus-local-search-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**

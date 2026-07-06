@@ -1,0 +1,154 @@
+================================================================================
+CORPUS EXPORT MANIFEST BASELINE SEMANTICS FIX REPORT
+================================================================================
+
+STAGE:          CORPUS_EXPORT_MANIFEST_BASELINE_SEMANTICS_FIX
+REPO:           al3obdi/saudi-legal-corpus-ai
+BRANCH:         glm/export-manifest-baseline-semantics-fix
+PR:             #93 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/93
+BASELINE:       f4a7941a22022e1455b6bed5c59cb029278486d1
+DATE:           2026-07-06
+
+================================================================================
+1. BASELINE CONFIRMATION
+================================================================================
+
+  BASELINE_COMMIT:  f4a7941a22022e1455b6bed5c59cb029278486d1
+  BASELINE_BRANCH:  main
+  CONFIRMED:        YES
+
+================================================================================
+2. CHAIN OF VERIFICATION
+================================================================================
+
+  1. Vision Fit Check: PASS — reduces future ambiguity, not another ceremony,
+     preserves export usefulness and idempotence.
+
+  2. Metadata Semantics Check: PASS — inspected export_manifest.json and
+     generator. baseline_commit was reading 4657769... from the registry but
+     field name did not explain this. Decision: replace with explicit fields.
+
+  3. Idempotence Check: PASS — generator does not use git rev-parse HEAD.
+     Second run produces identical output. No post-merge drift.
+
+  4. Scope Check: PASS — manifest metadata only. JSONL records remain 450
+     Arabic governing records. No corpus text changes.
+
+================================================================================
+3. PROBLEM
+================================================================================
+
+  After PR #92 merged, the export manifest contained a single baseline_commit
+  field whose meaning was ambiguous. It could mean:
+  - the corpus registry baseline commit
+  - the export stage input baseline commit
+  - the current repository HEAD at generation time
+  - the PR merge commit
+
+  The post-merge fix (f4a7941) made the generator read from the registry, but
+  the field name remained unclear.
+
+================================================================================
+4. METADATA SEMANTICS BEFORE
+================================================================================
+
+  "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f"
+
+  Ambiguous — unclear whether this is registry baseline, stage input,
+  git HEAD, or merge commit.
+
+================================================================================
+5. METADATA SEMANTICS AFTER
+================================================================================
+
+  "source_registry_baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f"
+    meaning: baseline_commit recorded inside data/corpus_registry/corpus_registry.json
+             — the registry's own baseline reference
+
+  "export_stage_input_baseline_commit": "0b10aa0c8ab670babaed2185d6bbc2da4ec765bd"
+    meaning: main commit used as the starting baseline for
+             CORPUS_EXPORT_FORMATS_FOUNDATION stage
+
+  "export_manifest_commit_semantics": {
+      "source_registry_baseline_commit": "baseline_commit recorded inside data/corpus_registry/corpus_registry.json — the registry's own baseline reference",
+      "export_stage_input_baseline_commit": "main commit used as the starting baseline for the CORPUS_EXPORT_FORMATS_FOUNDATION stage",
+      "no_dynamic_git_head": "Generated manifest values are stable and idempotent — current git HEAD is NOT used as a manifest value to prevent post-merge drift"
+  }
+
+  Three explicit fields replace one ambiguous field. No dynamic git HEAD.
+
+================================================================================
+6. FILES CHANGED
+================================================================================
+
+  1. scripts/gen_corpus_export_primary_arabic.py
+     — Renamed function, replaced baseline_commit with explicit fields
+
+  2. scripts/validate_corpus_export_primary_arabic.py
+     — Added 5 checks for new commit semantics fields
+
+  3. tests/test_corpus_export_primary_arabic.py
+     — Added 4 tests for new manifest fields
+
+  4. data/exports/v1/export_manifest.json
+     — Regenerated with explicit commit fields
+
+  5. reports/corpus_exports/CORPUS_EXPORT_FORMATS_FOUNDATION_MERGE_REPORT.txt
+     — Included from prior merge
+
+================================================================================
+7. VALIDATION
+================================================================================
+
+  make validate:                                    PASS
+  make test:                                        2202 passed
+  make corpus-registry-validate:                    PASS (22/22)
+  make implementing-regulations-arabic-program-closure-validate: PASS (26/26)
+  make corpus-export-primary-arabic-validate:       PASS (43/43)
+  python3 scripts/gen_corpus_export_primary_arabic.py + git diff:  EXIT 0
+
+================================================================================
+8. IDEMPOTENCE
+================================================================================
+
+  Generator re-run produces identical output:
+    git diff --exit-code → EXIT 0 (no changes)
+  CONFIRMED. No dynamic git HEAD used in generated values.
+
+================================================================================
+9. HYGIENE
+================================================================================
+
+  - Manifest metadata only — no corpus text changes
+  - JSONL records: 450 (unchanged)
+  - Companies Law corpus: UNCHANGED
+  - Chinese remediation: UNCHANGED
+  - Implementing regulations: UNCHANGED
+  - No English text generated
+  - No Chinese text generated
+  - No trilingual alignment
+  - No public release
+  - No official_text_ar modified
+  - No co-author/tool/model attribution
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  STAGE:              CORPUS_EXPORT_MANIFEST_BASELINE_SEMANTICS_FIX
+  RESULT:             SUCCESS
+  BASELINE_CONFIRMED: YES (f4a7941a22022e1455b6bed5c59cb029278486d1)
+  BRANCH:             glm/export-manifest-baseline-semantics-fix
+  PR:                 #93 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/93
+  CHAIN_OF_VERIFICATION: PASS (all 4 checks)
+  PROBLEM:            Ambiguous baseline_commit field in export manifest
+  METADATA_SEMANTICS_BEFORE: Single ambiguous baseline_commit field
+  METADATA_SEMANTICS_AFTER: 3 explicit fields + commit_semantics object
+  FILES_CHANGED:      5
+  VALIDATION:         ALL PASS (43 export + 22 registry + 26 closure + 2202 tests)
+  IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
+  HYGIENE:            CLEAN
+  LOCAL_REPORT_FILE:  reports/corpus_exports/CORPUS_EXPORT_MANIFEST_BASELINE_SEMANTICS_FIX_REPORT.txt
+  FINAL_STATUS:       SUCCESS
+
+================================================================================

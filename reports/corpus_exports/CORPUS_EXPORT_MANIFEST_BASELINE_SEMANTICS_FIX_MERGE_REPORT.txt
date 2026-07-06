@@ -1,0 +1,131 @@
+================================================================================
+CORPUS EXPORT MANIFEST BASELINE SEMANTICS FIX — MERGE REPORT
+================================================================================
+
+STAGE:          CORPUS_EXPORT_MANIFEST_BASELINE_SEMANTICS_FIX_MERGE
+REPO:           al3obdi/saudi-legal-corpus-ai
+PR:             #93 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/93
+DATE:           2026-07-06
+
+================================================================================
+MERGE CONFIRMATION
+================================================================================
+
+  MERGE COMPLETE:     YES
+  Merge method:       Squash
+  Merge commit SHA:   367c7342499f2f813811dcc35445539a675ebc2d
+  PR title:           Clarify export manifest baseline semantics
+  PR state:           Merged
+  Head SHA (pre-merge): 8f04d57102bd72f0e3379119dc7842abcb4afd03
+  Base SHA (pre-merge): f4a7941a22022e1455b6bed5c59cb029278486d1
+
+  Pre-merge checks:
+  - PR open:                    CONFIRMED
+  - PR mergeable:               CONFIRMED
+  - CI green (6/6 check runs):  CONFIRMED
+  - PR body: metadata fix only: CONFIRMED
+  - PR body: 450 unchanged:     CONFIRMED
+  - PR body: no corpus changes: CONFIRMED
+  - No co-author/tool/model attribution: CONFIRMED
+
+================================================================================
+FINAL MAIN HEAD
+================================================================================
+
+  Final main HEAD:   367c7342499f2f813811dcc35445539a675ebc2d
+  Local == origin:    CONFIRMED
+  Working tree:       CLEAN (except untracked local report file)
+
+  Baseline progression:
+    c597829 → 5bdd771 → 90a9491 → 4657769 → 0b10aa0 → 61c079a → f4a7941 → 367c734 (current)
+
+================================================================================
+VALIDATION (POST-MERGE)
+================================================================================
+
+  make validate:                                    PASS
+  make test:                                        2202 passed
+  make corpus-registry-validate:                    PASS (22/22)
+  make implementing-regulations-arabic-program-closure-validate: PASS (26/26)
+  make corpus-export-primary-arabic-validate:       PASS (43/43)
+  python3 scripts/gen_corpus_export_primary_arabic.py + git diff:  EXIT 0 (idempotent)
+
+================================================================================
+METADATA SEMANTICS
+================================================================================
+
+  BEFORE (ambiguous):
+    "baseline_commit": "4657769..." — unclear meaning
+
+  AFTER (explicit):
+    "source_registry_baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f"
+      → baseline_commit from corpus_registry.json
+
+    "export_stage_input_baseline_commit": "0b10aa0c8ab670babaed2185d6bbc2da4ec765bd"
+      → main commit at CORPUS_EXPORT_FORMATS_FOUNDATION stage start
+
+    "export_manifest_commit_semantics": {
+      "source_registry_baseline_commit": "registry's own baseline reference",
+      "export_stage_input_baseline_commit": "stage starting baseline",
+      "no_dynamic_git_head": "stable/idempotent — no git HEAD used"
+    }
+
+  - No ambiguous baseline_commit field: CONFIRMED
+  - No dynamic git HEAD: CONFIRMED
+  - Idempotent: CONFIRMED
+
+================================================================================
+SCOPE
+================================================================================
+
+  Export manifest metadata semantics fix only.
+  No corpus text changes. No JSONL content changes. 450 records unchanged.
+
+================================================================================
+BOUNDARIES
+================================================================================
+
+  - Arabic official source governs:          CONFIRMED
+  - Not official translation:               CONFIRMED
+  - Not legal advice:                       CONFIRMED
+  - No trilingual alignment:                 CONFIRMED
+  - No public release:                       CONFIRMED
+  - English = reference/guidance only:       CONFIRMED (not exported)
+  - Chinese = internal reference only:       CONFIRMED (not exported)
+  - Listed JSC specialized, NOT general:     CONFIRMED
+
+================================================================================
+HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED (read-only)
+  - Chinese remediation program: UNCHANGED (read-only)
+  - General implementing regulations: UNCHANGED (read-only)
+  - Listed joint-stock implementing regulation: UNCHANGED (read-only)
+  - primary_arabic_governing_records.jsonl: UNCHANGED (450 records)
+  - No English text generated
+  - No Chinese text generated
+  - No trilingual alignment
+  - No public release
+  - No source legal text modified
+  - No official_text_ar modified
+  - No co-author/tool/model attribution
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  MERGE COMPLETE:      YES
+  Final main HEAD:     367c7342499f2f813811dcc35445539a675ebc2d
+  PR:                  #93 — Merged (squash)
+  Merge method:        Squash
+  Validation:          ALL PASS (43 export + 22 registry + 26 closure + 2202 tests)
+  Metadata semantics:  3 explicit fields replace 1 ambiguous baseline_commit
+  Scope:               Manifest metadata fix only — no corpus text changes
+  Boundaries:          All confirmed
+  Hygiene:             CLEAN
+  Local report file:   reports/corpus_exports/CORPUS_EXPORT_MANIFEST_BASELINE_SEMANTICS_FIX_MERGE_REPORT.txt
+  Telegram report:     SENT
+  Final status:        SUCCESS
+
+================================================================================

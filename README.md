@@ -90,7 +90,11 @@ with counts, paths, statuses, boundaries, and validation targets. Validate:
 `make corpus-registry-validate`. A **corpus export** (v1) provides a deterministic
 JSONL of 450 primary Arabic governing records (Companies Law 281, general IR 95+4,
 listed JSC 69+1) suitable for future RAG/search/training workflows. Validate:
-`make corpus-export-primary-arabic-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+`make corpus-export-primary-arabic-validate`. A **local lexical search**
+provides deterministic, offline CLI search over the 450 Arabic governing
+records — no embeddings, no API, no network. See
+[`docs/CORPUS_LOCAL_SEARCH.md`](docs/CORPUS_LOCAL_SEARCH.md). Validate:
+`make corpus-local-search-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
