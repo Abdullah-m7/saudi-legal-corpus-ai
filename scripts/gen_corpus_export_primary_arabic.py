@@ -50,8 +50,8 @@ LEGAL_BOUNDARIES = {
 }
 
 
-def get_baseline_commit():
-    """Get baseline commit from the corpus registry (stable, not git HEAD)."""
+def get_registry_baseline_commit():
+    """Get baseline_commit recorded inside corpus_registry.json (stable, not git HEAD)."""
     try:
         reg_path = os.path.join(REPO_ROOT, REGISTRY_PATH)
         with open(reg_path, "r", encoding="utf-8") as f:
@@ -273,13 +273,19 @@ def generate():
     }
 
     # Build manifest
-    head_sha = get_baseline_commit()
+    registry_baseline = get_registry_baseline_commit()
     manifest = {
         "export_version": "v1",
         "generated_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "repository": "al3obdi/saudi-legal-corpus-ai",
-        "baseline_commit": head_sha,
         "source_registry_path": REGISTRY_PATH,
+        "source_registry_baseline_commit": registry_baseline,
+        "export_stage_input_baseline_commit": "0b10aa0c8ab670babaed2185d6bbc2da4ec765bd",
+        "export_manifest_commit_semantics": {
+            "source_registry_baseline_commit": "baseline_commit recorded inside data/corpus_registry/corpus_registry.json — the registry's own baseline reference",
+            "export_stage_input_baseline_commit": "main commit used as the starting baseline for the CORPUS_EXPORT_FORMATS_FOUNDATION stage",
+            "no_dynamic_git_head": "Generated manifest values are stable and idempotent — current git HEAD is NOT used as a manifest value to prevent post-merge drift",
+        },
         "export_files": [
             "data/exports/v1/primary_arabic_governing_records.jsonl",
             "data/exports/v1/export_manifest.json",
@@ -323,7 +329,7 @@ def generate():
     print(f"[OK] Corpus export written: {JSONL_PATH}")
     print(f"     {len(all_records)} records ({counts['companies_law_articles']} CL + {counts['general_ir_articles']} Gen IR art + {counts['general_ir_forms']} Gen IR forms + {counts['listed_jsc_articles']} LJS art + {counts['listed_jsc_appendices']} LJS appendix)")
     print(f"     Manifest: {MANIFEST_PATH}")
-    print(f"     Baseline commit: {head_sha}")
+    print(f"     Registry baseline: {registry_baseline}")
 
 
 if __name__ == "__main__":

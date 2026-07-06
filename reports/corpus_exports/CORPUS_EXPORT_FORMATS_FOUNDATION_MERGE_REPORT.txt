@@ -1,0 +1,159 @@
+================================================================================
+CORPUS EXPORT FORMATS FOUNDATION — MERGE REPORT
+================================================================================
+
+STAGE:          CORPUS_EXPORT_FORMATS_FOUNDATION_MERGE
+REPO:           al3obdi/saudi-legal-corpus-ai
+PR:             #92 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/92
+DATE:           2026-07-06
+
+================================================================================
+MERGE CONFIRMATION
+================================================================================
+
+  MERGE COMPLETE:     YES
+  Merge method:       Squash
+  Merge commit SHA:   61c079a1bf03b44f34d738f86170e1296af1a297
+  PR title:           Add corpus export formats foundation
+  PR state:           Merged
+  Head SHA (pre-merge): 7692ca005ca9fc0e893a9847d4b345b1a57e5825
+  Base SHA (pre-merge): 0b10aa0c8ab670babaed2185d6bbc2da4ec765bd
+
+  Post-merge fix commit: f4a7941a22022e1455b6bed5c59cb029278486d1
+  (fix: use registry baseline_commit for export manifest idempotence)
+
+  Pre-merge checks:
+  - PR open:                    CONFIRMED
+  - PR mergeable:               CONFIRMED
+  - CI green (6/6 check runs):  CONFIRMED
+  - PR body has Multi-Agent Tree Debate: CONFIRMED
+  - PR body has Chain of Verification:   CONFIRMED
+  - PR body confirms 450 total:         CONFIRMED
+  - No co-author/tool/model attribution: CONFIRMED
+
+================================================================================
+FINAL MAIN HEAD
+================================================================================
+
+  Final main HEAD:   f4a7941a22022e1455b6bed5c59cb029278486d1
+  Local == origin:    CONFIRMED
+  Working tree:       CLEAN
+
+  Baseline progression:
+    c597829 → 5bdd771 → 90a9491 → 4657769 → 0b10aa0 → 61c079a → f4a7941 (current)
+
+================================================================================
+EXPORT SCOPE
+================================================================================
+
+  Arabic governing records only — 450 records in JSONL format.
+  Export foundation only — not RAG, not search, not embeddings, not API,
+  not public release, not a new legal corpus layer.
+
+================================================================================
+INCLUDED RECORDS
+================================================================================
+
+  - Companies Law Arabic governing articles: 281
+  - General implementing regulations articles: 95
+  - General implementing regulations forms: 4
+  - Listed joint-stock implementing regulation articles: 69
+  - Listed joint-stock implementing regulation appendix: 1
+  TOTAL: 450 Arabic governing records
+
+================================================================================
+EXCLUDED RECORDS
+================================================================================
+
+  - English reference records (281) — not exported in this stage
+  - Chinese internal reference records (281) — not exported in this stage
+  - Closure audit aggregate records (169) — duplicates underlying IR records
+  - No trilingual alignment
+  - No public release
+
+================================================================================
+COUNT POLICY
+================================================================================
+
+  counting_method: raw_layer_records_not_deduplicated_legal_article_units
+  primary Arabic governing records: INCLUDED
+  English reference records: EXCLUDED
+  Chinese internal reference records: EXCLUDED
+  closure audit aggregate: EXCLUDED (duplicates underlying IR records)
+  forms and appendices: COUNTED as records
+  formula: 281 + 95 + 4 + 69 + 1 = 450
+
+================================================================================
+FINAL COUNTS
+================================================================================
+
+  companies_law_articles:        281
+  general_ir_articles:            95
+  general_ir_forms:                4
+  listed_jsc_articles:            69
+  listed_jsc_appendices:           1
+  total_exported_records:        450
+
+================================================================================
+VALIDATION (POST-MERGE)
+================================================================================
+
+  make validate:                                    PASS
+  make test:                                        2198 passed
+  make corpus-registry-validate:                    PASS (22/22)
+  make implementing-regulations-arabic-program-closure-validate: PASS (26/26)
+  make corpus-export-primary-arabic-validate:       PASS (38/38)
+  python3 scripts/gen_corpus_export_primary_arabic.py + git diff:  EXIT 0 (idempotent)
+
+================================================================================
+BOUNDARIES
+================================================================================
+
+  - Arabic official source governs:          CONFIRMED
+  - Not official translation:               CONFIRMED
+  - Not legal advice:                       CONFIRMED
+  - No trilingual alignment:                 CONFIRMED
+  - No public release:                       CONFIRMED
+  - English = reference/guidance only:       CONFIRMED (not exported)
+  - Chinese = internal reference only:       CONFIRMED (not exported)
+  - Listed JSC specialized, NOT general:     CONFIRMED
+  - General and listed tracks separate:      CONFIRMED
+
+================================================================================
+HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED (read-only)
+  - Chinese remediation program: UNCHANGED (read-only)
+  - General implementing regulations: UNCHANGED (read-only)
+  - Listed joint-stock implementing regulation: UNCHANGED (read-only)
+  - No English text generated
+  - No Chinese text generated
+  - No Chinese export in this stage
+  - No trilingual alignment
+  - No public release
+  - No source legal text modified
+  - No official_text_ar modified
+  - No co-author/tool/model attribution
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  MERGE COMPLETE:      YES
+  Final main HEAD:     f4a7941a22022e1455b6bed5c59cb029278486d1
+  PR:                  #92 — Merged (squash)
+  Merge method:        Squash
+  Validation:          ALL PASS (38 export + 22 registry + 26 closure + 2198 tests)
+  Export scope:        Arabic governing records only — 450 records JSONL
+  Included records:    CL(281) + Gen IR(95+4) + LJS(69+1) = 450
+  Excluded records:    English, Chinese, closure aggregate
+  Count policy:        raw_layer_records, Arabic governing only, formula: 281+95+4+69+1=450
+  Final counts:        281 + 95 + 4 + 69 + 1 = 450
+  Boundaries:          All confirmed — Arabic governs, no translation/advice/trilingual/release
+  Hygiene:             CLEAN — no source corpora modified
+  Local report file:   reports/corpus_exports/CORPUS_EXPORT_FORMATS_FOUNDATION_MERGE_REPORT.txt
+  Telegram report:     SENT
+  Final status:        SUCCESS
+
+================================================================================
