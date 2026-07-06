@@ -1,0 +1,250 @@
+{
+  "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
+  "count_policy": {
+    "chinese_internal_reference_records_included": true,
+    "closure_audit_aggregate_not_counted_separately": true,
+    "closure_audit_total_duplicates_underlying_ir_records": true,
+    "counting_method": "raw_layer_records_not_deduplicated_legal_article_units",
+    "english_reference_records_included": true,
+    "forms_and_appendices_counted": true,
+    "formula_total_implementing_regulations": "general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169",
+    "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 450",
+    "formula_total_reference": "companies_law_english(281)",
+    "formula_total_registry_counted": "total_primary_arabic_governing(450) + total_reference(281) + total_internal_reference(281) = 1012",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer.",
+    "primary_arabic_governing_records_included": true
+  },
+  "generated_date": "2026-07-06",
+  "legal_status_boundaries": {
+    "arabic_official_source_governs": true,
+    "chinese_internal_reference_only": true,
+    "english_reference_guidance_only": true,
+    "no_public_release": true,
+    "no_trilingual_alignment": true,
+    "not_legal_advice": true,
+    "not_official_translation": true
+  },
+  "registry_version": "1.0",
+  "repository": "al3obdi/saudi-legal-corpus-ai",
+  "total_implementing_regulations_records": 169,
+  "total_internal_reference_records": 281,
+  "total_primary_arabic_governing_records": 450,
+  "total_reference_records": 281,
+  "total_registry_counted_records": 1012,
+  "total_tracks": 4,
+  "tracks": [
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "chinese_internal_reference_only": true,
+        "english_reference_only": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+        "data/official_english_legal_llm/companies_law_m132_1443_official_english_legal_llm_001_281.json",
+        "data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json"
+      ],
+      "display_name_ar": "نظام الشركات",
+      "display_name_en": "Saudi Companies Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+          "governing": true,
+          "record_count": 281,
+          "status": "complete"
+        },
+        "chinese": {
+          "closure_audit_path": "reports/chinese_translation_review/chinese_remediation_program_closure_audit.json",
+          "governing": false,
+          "note": "Chinese remediation P0-P3 complete. Internal/non-official/non-binding/non-governing. Not a full public Chinese 281 layer. Not trilingual alignment.",
+          "role": "internal_reference_only",
+          "status": "remediation_complete",
+          "total_articles_implemented": 281,
+          "total_articles_in_plan": 281
+        },
+        "english": {
+          "data_path": "data/official_english_legal_llm/companies_law_m132_1443_official_english_legal_llm_001_281.json",
+          "governing": false,
+          "record_count": 281,
+          "role": "reference_guidance_only",
+          "status": "complete"
+        }
+      },
+      "manifest_paths": [
+        "data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json"
+      ],
+      "notes": "First implemented law profile. 281 articles. Arabic is governing. English is reference/guidance. Chinese is internal remediation complete (not a public full layer).",
+      "publication_date_gregorian": "",
+      "publication_date_hijri": "",
+      "record_counts": {
+        "arabic_articles": 281,
+        "chinese_remediation_articles": 281,
+        "english_articles": 281,
+        "total": 281
+      },
+      "report_paths": [
+        "reports/chinese_translation_review/chinese_remediation_program_closure_audit.json"
+      ],
+      "source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء",
+      "source_url": "",
+      "status": "complete",
+      "track_id": "companies_law",
+      "validator_targets": [
+        "make official-arabic-legal-llm-full-validate",
+        "make english-legal-llm-validate",
+        "make chinese-remediation-program-closure-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "is_general": true,
+        "is_specialized": false,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true
+      },
+      "corpus_family": "implementing_regulation",
+      "data_paths": [
+        "data/implementing_regulations/general/general_implementing_regulations_arabic_source.json",
+        "data/implementing_regulations/general/general_implementing_regulations_arabic_legal_llm.json",
+        "data/implementing_regulations/general/general_implementing_regulations_arabic_forms_llm.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الشركات",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "governing": true,
+          "record_count": 95,
+          "status": "complete"
+        }
+      },
+      "manifest_paths": [
+        "data/implementing_regulations/general/source_manifest.json"
+      ],
+      "notes": "General implementing regulations covering all company forms. 95 articles + 4 forms. Separate from listed joint-stock sub-track.",
+      "publication_date_gregorian": "18-01-2023",
+      "publication_date_hijri": "1444-6-25",
+      "record_counts": {
+        "articles": 95,
+        "forms": 4,
+        "total": 99
+      },
+      "report_paths": [
+        "reports/implementing_regulations/GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER_REPORT.txt"
+      ],
+      "source_authority": "Ministry of Commerce / وزارة التجارة",
+      "source_url": "https://www.uqn.gov.sa/details?p=21325",
+      "status": "complete",
+      "track_id": "implementing_regulations_general",
+      "validator_targets": [
+        "make implementing-regulations-general-arabic-source-validate",
+        "make implementing-regulations-general-arabic-legal-llm-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "is_general": false,
+        "is_specialized": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "specialized_scope": "listed joint-stock companies (شركات المساهمة المدرجة)"
+      },
+      "corpus_family": "implementing_regulation",
+      "data_paths": [
+        "data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_source.json",
+        "data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_legal_llm.json",
+        "data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_appendix_llm.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "governing": true,
+          "record_count": 69,
+          "status": "complete"
+        }
+      },
+      "manifest_paths": [
+        "data/implementing_regulations/listed_joint_stock/source_manifest.json"
+      ],
+      "notes": "Specialized implementing regulation for listed joint-stock companies only. NOT a general implementing regulation. 69 articles + 1 appendix. Issued by Capital Market Authority board.",
+      "publication_date_gregorian": "03-07-2026",
+      "publication_date_hijri": "1448-1-18",
+      "record_counts": {
+        "appendices": 1,
+        "articles": 69,
+        "total": 70
+      },
+      "report_paths": [
+        "reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER_REPORT.txt"
+      ],
+      "source_authority": "مجلس هيئة السوق المالية",
+      "source_url": "https://www.uqn.gov.sa/decisions-and-regulations/4001295",
+      "status": "complete",
+      "track_id": "implementing_regulations_listed_joint_stock",
+      "validator_targets": [
+        "make implementing-regulations-listed-jsc-arabic-source-validate",
+        "make implementing-regulations-listed-jsc-arabic-legal-llm-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true
+      },
+      "corpus_family": "closure_audit",
+      "data_paths": [
+        "reports/implementing_regulations/implementing_regulations_arabic_program_closure_audit.json"
+      ],
+      "display_name_ar": "تدقيق إغلاق برنامج اللوائح التنفيذية العربية",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "governing": true,
+          "status": "complete"
+        }
+      },
+      "manifest_paths": [],
+      "notes": "Closure/status audit for the implementing regulations Arabic program. Covers general (95+4) and listed joint-stock (69+1) tracks. 169 total records.",
+      "record_counts": {
+        "general_articles": 95,
+        "general_forms": 4,
+        "listed_jsc_appendices": 1,
+        "listed_jsc_articles": 69,
+        "total_article_records": 164,
+        "total_non_article_records": 5,
+        "total_records": 169
+      },
+      "report_paths": [
+        "reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_AR.md",
+        "reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_REPORT.txt"
+      ],
+      "source_authority": "",
+      "status": "complete",
+      "track_id": "implementing_regulations_arabic_program_closure",
+      "validator_targets": [
+        "make implementing-regulations-arabic-program-closure-validate"
+      ]
+    }
+  ],
+  "validation_status": "PASS"
+}

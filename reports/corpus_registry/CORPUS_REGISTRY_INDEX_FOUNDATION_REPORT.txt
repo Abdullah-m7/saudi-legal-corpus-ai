@@ -1,0 +1,246 @@
+================================================================================
+CORPUS REGISTRY INDEX FOUNDATION REPORT
+================================================================================
+
+STAGE:          CORPUS_REGISTRY_INDEX_FOUNDATION_COUNT_SEMANTICS_REVIEW_AND_PR_OPEN
+REPO:           al3obdi/saudi-legal-corpus-ai
+BRANCH:         glm/corpus-registry-index-foundation
+PR:             #91 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/91
+DATE:           2026-07-06
+
+================================================================================
+1. BASELINE CONFIRMATION
+================================================================================
+
+  BASELINE_COMMIT:  465776947125066bd1a705cfceacd3dca935ad1f
+  BASELINE_BRANCH:  main
+  CONFIRMED:        YES
+
+================================================================================
+2. MULTI-AGENT TREE DEBATE
+================================================================================
+
+  Legal Architect: Registry does not change legal authority or create
+    translation claims. It only references existing metadata. PASS.
+
+  Data/Automation Engineer: Registry is reusable and deterministic, not a
+    one-off report. Generator is idempotent. PASS.
+
+  Product/RAG Pragmatist: Registry exposes counts, paths, statuses, and
+    validation targets — supports future search/RAG/export readiness. PASS.
+
+  Devil's Advocate: Reject unnecessary ceremony. Keep it small. AGREED —
+    one JSON file, one validator, one test file, one report. No extra schema.
+
+  Founder-Speed Advocate: Avoid large framework. Ship useful registry now.
+    AGREED — static registry with generator for repeatability.
+
+  FINAL DECISION: APPLY, but keep it lightweight.
+
+================================================================================
+3. CHAIN OF VERIFICATION
+================================================================================
+
+  1. Vision Fit Check: PASS — improves navigability and future automation;
+     not another heavy audit ceremony.
+
+  2. Legal Boundary Check: PASS — Arabic governs; not official translation;
+     not legal advice; English reference only; Chinese internal only; no
+     trilingual; no public release.
+
+  3. Scope Discipline Check: PASS — does not modify source corpus records;
+     does not rewrite official_text_ar; does not alter Companies Law corpus,
+     Chinese remediation, or implementing regulations; consumes metadata
+     read-only.
+
+  4. Anti-Overengineering Check: PASS — no export system, no RAG demo, no
+     search index, no embeddings, no multiple registries, no extra schema files.
+
+  5. Product/Automation Value Check: PASS — exposes counts, paths, statuses,
+     languages, boundaries, and validation targets for future automation.
+
+================================================================================
+4. REGISTRY SCOPE
+================================================================================
+
+  A canonical corpus registry/index that summarizes and links all completed
+  corpus tracks. Lightweight, machine-readable, idempotent.
+
+  NOT: a new corpus layer, export system, RAG demo, search index, translation,
+  or legal analysis tool.
+
+================================================================================
+5. TRACKS INCLUDED
+================================================================================
+
+  1. companies_law
+     - Arabic governing layer: 281 articles
+     - English reference/guidance layer: 281 articles
+     - Chinese internal remediation: 281 articles (P0-P3 complete)
+     - Source: Bureau of Experts / هيئة الخبراء بمجلس الوزراء
+
+  2. implementing_regulations_general
+     - Arabic Legal LLM layer: 95 articles
+     - Forms layer: 4 forms
+     - Source: uqn.gov.sa/details?p=21325 (1444-6-25 AH / 18-01-2023)
+     - is_general=True, is_specialized=False
+
+  3. implementing_regulations_listed_joint_stock
+     - Arabic Legal LLM layer: 69 articles
+     - Appendix layer: 1 appendix
+     - Source: uqn.gov.sa/decisions-and-regulations/4001295 (1448-1-18 AH / 03-07-2026)
+     - is_specialized=True, is_general=False
+     - Issuing authority: مجلس هيئة السوق المالية
+
+  4. implementing_regulations_arabic_program_closure
+     - Closure audit: 164 article records + 5 non-article records = 169 total
+
+================================================================================
+6. COUNTS
+================================================================================
+
+  COUNT SEMANTICS REVIEW:
+  The original total_known_records=731 was MISLEADING because:
+  - It used closure aggregate (169) which duplicates underlying IR track records
+  - It excluded Chinese remediation (281) without explanation
+  - The field name did not clarify the counting policy
+
+  RESOLUTION:
+  Replaced the single ambiguous field with explicit count fields + count_policy object.
+
+  COUNT POLICY:
+  - counting_method: raw_layer_records_not_deduplicated_legal_article_units
+  - primary_arabic_governing_records: INCLUDED
+  - english_reference_records: INCLUDED
+  - chinese_internal_reference_records: INCLUDED
+  - forms_and_appendices: COUNTED as records
+  - closure_audit_aggregate: NOT counted separately (duplicates underlying IR records)
+
+  FINAL COUNTS:
+
+  total_primary_arabic_governing_records:  450
+    = Companies Law Arabic(281) + General IR articles(95) + General IR forms(4)
+      + Listed JSC articles(69) + Listed JSC appendix(1)
+
+  total_reference_records:                 281
+    = Companies Law English(281)
+
+  total_internal_reference_records:         281
+    = Companies Law Chinese remediation(281)
+
+  total_implementing_regulations_records:   169
+    = General articles(95) + General forms(4) + Listed JSC articles(69)
+      + Listed JSC appendix(1)
+    (NOTE: this equals closure audit total; NOT added to registry total separately)
+
+  total_registry_counted_records:         1012
+    = total_primary_arabic_governing(450) + total_reference(281)
+      + total_internal_reference(281)
+
+  total_tracks:                              4
+
+================================================================================
+7. BOUNDARIES
+================================================================================
+
+  - Arabic official source governs:          CONFIRMED
+  - Not official translation:               CONFIRMED
+  - Not legal advice:                       CONFIRMED
+  - No trilingual alignment:                 CONFIRMED
+  - No public release:                       CONFIRMED
+  - English = reference/guidance only:       CONFIRMED
+  - Chinese = internal reference only:       CONFIRMED
+  - Listed JSC specialized, NOT general:     CONFIRMED
+  - General and listed tracks separate:      CONFIRMED
+
+================================================================================
+8. FILES ADDED
+================================================================================
+
+  1. scripts/gen_corpus_registry.py
+     — Idempotent registry generator
+
+  2. scripts/validate_corpus_registry.py
+     — Read-only validator (18 checks)
+
+  3. data/corpus_registry/corpus_registry.json
+     — Machine-readable canonical registry
+
+  4. data/corpus_registry/README.md
+     — Human-readable explanation
+
+  5. tests/test_corpus_registry.py
+     — Test suite (24 tests)
+
+  6. reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md
+     — Arabic report
+
+  7. reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_REPORT.txt
+     — This report
+
+================================================================================
+9. FILES MODIFIED
+================================================================================
+
+  1. Makefile — Added corpus-registry-data and corpus-registry-validate targets
+  2. README.md — Added concise entry
+  3. STATUS.md — Added concise entry
+
+================================================================================
+10. VALIDATION
+================================================================================
+
+  --- make validate ---
+  PASS
+
+  --- make test ---
+  2156 passed
+
+  --- make implementing-regulations-arabic-program-closure-validate ---
+  PASS (26/26)
+
+  --- make corpus-registry-validate ---
+  PASS (18/18)
+
+================================================================================
+11. IDEMPOTENCE
+================================================================================
+
+  Generator re-run produces identical output:
+    git diff --exit-code → EXIT 0 (no changes)
+
+================================================================================
+12. HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED (read-only)
+  - Chinese remediation program: UNCHANGED (read-only)
+  - General implementing regulations: UNCHANGED (read-only)
+  - Listed joint-stock implementing regulation: UNCHANGED (read-only)
+  - No English text generated
+  - No Chinese text generated
+  - No trilingual alignment
+  - No public release
+  - No source legal text modified
+  - No official_text_ar modified
+  - No co-author/tool/model attribution
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  STAGE:              CORPUS_REGISTRY_INDEX_FOUNDATION_COUNT_SEMANTICS_REVIEW_AND_PR_OPEN
+  RESULT:             SUCCESS
+  BASELINE_CONFIRMED: YES (465776947125066bd1a705cfceacd3dca935ad1f)
+  BRANCH:             glm/corpus-registry-index-foundation
+  TOTAL_TRACKS:       4
+  TOTAL_REGISTRY_COUNTED_RECORDS: 1012
+  TOTAL_PRIMARY_ARABIC_GOVERNING: 450
+  TOTAL_REFERENCE:    281
+  TOTAL_INTERNAL_REFERENCE: 281
+  VALIDATION:         ALL PASS (22 registry + 2163 tests)
+  IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
+  HYGIENE:            CLEAN
+  PR:                 #91 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/91
+
+================================================================================

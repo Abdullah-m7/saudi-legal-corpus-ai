@@ -151,6 +151,14 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`reports/implementing_regulations/implementing_regulations_arabic_program_closure_audit.json`] and
   [`reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_AR.md`]. Validate:
   `make implementing-regulations-arabic-program-closure-validate`.
+- **Corpus registry index foundation completed** — a canonical, machine-readable
+  registry summarizing all completed tracks (companies law 281 articles Arabic +
+  281 English + Chinese remediation 281; general IR 95 articles + 4 forms; listed
+  JSC 69 articles + 1 appendix; closure audit 169 total records) with counts,
+  paths, statuses, language layers, boundaries, and validation targets. See
+  [`data/corpus_registry/corpus_registry.json`] and
+  [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
+  `make corpus-registry-validate`.
 
 ## Legal / official-status boundaries
 
