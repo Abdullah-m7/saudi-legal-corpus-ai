@@ -2,9 +2,10 @@
 CORPUS REGISTRY INDEX FOUNDATION REPORT
 ================================================================================
 
-STAGE:          CORPUS_REGISTRY_INDEX_FOUNDATION
+STAGE:          CORPUS_REGISTRY_INDEX_FOUNDATION_COUNT_SEMANTICS_REVIEW_AND_PR_OPEN
 REPO:           al3obdi/saudi-legal-corpus-ai
 BRANCH:         glm/corpus-registry-index-foundation
+PR:             #91 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/91
 DATE:           2026-07-06
 
 ================================================================================
@@ -98,15 +99,45 @@ DATE:           2026-07-06
 6. COUNTS
 ================================================================================
 
-  Companies Law Arabic:      281
-  Companies Law English:     281
-  Companies Law Chinese:     281 (remediation)
-  General IR articles:        95
-  General IR forms:            4
-  Listed JSC articles:        69
-  Listed JSC appendices:       1
-  Closure total records:     169
-  Total known records:       731
+  COUNT SEMANTICS REVIEW:
+  The original total_known_records=731 was MISLEADING because:
+  - It used closure aggregate (169) which duplicates underlying IR track records
+  - It excluded Chinese remediation (281) without explanation
+  - The field name did not clarify the counting policy
+
+  RESOLUTION:
+  Replaced the single ambiguous field with explicit count fields + count_policy object.
+
+  COUNT POLICY:
+  - counting_method: raw_layer_records_not_deduplicated_legal_article_units
+  - primary_arabic_governing_records: INCLUDED
+  - english_reference_records: INCLUDED
+  - chinese_internal_reference_records: INCLUDED
+  - forms_and_appendices: COUNTED as records
+  - closure_audit_aggregate: NOT counted separately (duplicates underlying IR records)
+
+  FINAL COUNTS:
+
+  total_primary_arabic_governing_records:  450
+    = Companies Law Arabic(281) + General IR articles(95) + General IR forms(4)
+      + Listed JSC articles(69) + Listed JSC appendix(1)
+
+  total_reference_records:                 281
+    = Companies Law English(281)
+
+  total_internal_reference_records:         281
+    = Companies Law Chinese remediation(281)
+
+  total_implementing_regulations_records:   169
+    = General articles(95) + General forms(4) + Listed JSC articles(69)
+      + Listed JSC appendix(1)
+    (NOTE: this equals closure audit total; NOT added to registry total separately)
+
+  total_registry_counted_records:         1012
+    = total_primary_arabic_governing(450) + total_reference(281)
+      + total_internal_reference(281)
+
+  total_tracks:                              4
 
 ================================================================================
 7. BOUNDARIES
@@ -198,15 +229,18 @@ DATE:           2026-07-06
 FINAL STATUS
 ================================================================================
 
-  STAGE:              CORPUS_REGISTRY_INDEX_FOUNDATION
+  STAGE:              CORPUS_REGISTRY_INDEX_FOUNDATION_COUNT_SEMANTICS_REVIEW_AND_PR_OPEN
   RESULT:             SUCCESS
   BASELINE_CONFIRMED: YES (465776947125066bd1a705cfceacd3dca935ad1f)
   BRANCH:             glm/corpus-registry-index-foundation
   TOTAL_TRACKS:       4
-  TOTAL_KNOWN_RECORDS: 731
-  VALIDATION:         ALL PASS (18 registry + 2156 tests)
+  TOTAL_REGISTRY_COUNTED_RECORDS: 1012
+  TOTAL_PRIMARY_ARABIC_GOVERNING: 450
+  TOTAL_REFERENCE:    281
+  TOTAL_INTERNAL_REFERENCE: 281
+  VALIDATION:         ALL PASS (22 registry + 2163 tests)
   IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
   HYGIENE:            CLEAN
-  PR:                 To be created after review
+  PR:                 #91 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/91
 
 ================================================================================

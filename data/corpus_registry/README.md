@@ -18,20 +18,27 @@ in the repository.
 - Not a translation or legal analysis tool
 - Not an official government publication
 
-## Structure
+## Count Semantics
 
-The registry contains:
+The registry uses explicit count fields with a `count_policy` object to avoid ambiguity.
 
-- **Top-level metadata**: version, date, repository, baseline commit, legal
-  boundaries, total tracks, total known records, validation status
-- **Tracks**: one entry per corpus track, each with:
-  - `track_id`, `display_name_ar`, `corpus_family`, `jurisdiction`
-  - `language_layers` (Arabic governing, English reference, Chinese internal)
-  - `status`, `source_authority`, `source_url`, publication dates
-  - `record_counts` (articles, forms, appendices, totals)
-  - `data_paths`, `manifest_paths`, `validator_targets`, `report_paths`
-  - `boundaries` (Arabic governs, not official translation, not legal advice, etc.)
-  - `notes`
+**Counting method:** raw layer records, not deduplicated legal article units.
+
+**Count fields:**
+
+| Field | Value | Formula |
+|-------|-------|---------|
+| `total_primary_arabic_governing_records` | 450 | CL Arabic(281) + Gen IR articles(95) + Gen IR forms(4) + LJS articles(69) + LJS appendix(1) |
+| `total_reference_records` | 281 | CL English(281) |
+| `total_internal_reference_records` | 281 | CL Chinese remediation(281) |
+| `total_implementing_regulations_records` | 169 | Gen articles(95) + Gen forms(4) + LJS articles(69) + LJS appendix(1) |
+| `total_registry_counted_records` | 1012 | Primary Arabic(450) + Reference(281) + Internal ref(281) |
+
+**Key policy decisions:**
+- Closure audit aggregate (169) is NOT added separately — it duplicates underlying IR records
+- Chinese remediation (281) IS counted as internal reference records
+- Forms and appendices ARE counted as records
+- English reference records ARE counted
 
 ## Tracks
 
