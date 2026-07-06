@@ -1,1 +1,8 @@
 issue_id,article_key,issue_category,issue_description,blocking_flag,owner_decision_needed_flag,resolution_status,notes
+issue_001,,MUKARRAR_ARTICLE_LOCATION,Article 11 mukarrar and 131 mukarrar not found as independent BOE article_item elements,no,no,CARRIED_FORWARD,Needs manual verification in future stage
+issue_002,,AMENDMENT_COUNT_VARIANCE,BOE changed-article CSS count is 106 while prior audit count was 104,no,no,CARRIED_FORWARD,Non-blocking; difference likely due to counting method
+issue_003,,M44_MAPPING_GAP,Prior audit reported 47 M/44 references; BOE extraction found 45 M/44 amendment popups across 45 unique articles,no,no,OPEN,2 references may be in amendment notes not captured as separate popups
+issue_004,labor_law_art_231_renumbered,RENUMBERED_ARTICLE_HANDLING,Article 231/240 renumbered entry needs later reconciliation handling,no,no,CARRIED_FORWARD,Structural flag only; no reconciliation performed
+issue_005,labor_law_art_232_renumbered,RENUMBERED_ARTICLE_HANDLING,Article 232/242 renumbered entry needs later reconciliation handling,no,no,CARRIED_FORWARD,Structural flag only; no reconciliation performed
+issue_006,,AMENDMENT_REFERENCE_EXTRACTION,Some amendment popups have no decree number extracted; decree may be in text not matching regex patterns,no,no,OPEN,Needs manual review of amendment note text
+issue_007,,SOURCE_STRUCTURE_ANOMALY,Articles 233/234/235 appeared duplicated on BOE page in prior stage,no,no,CARRIED_FORWARD,Deduplicated in prior stage; no action needed here
