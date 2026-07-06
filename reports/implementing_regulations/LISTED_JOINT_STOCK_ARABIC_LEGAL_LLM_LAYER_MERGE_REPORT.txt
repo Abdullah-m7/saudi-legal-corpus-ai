@@ -1,0 +1,186 @@
+================================================================================
+LISTED JOINT-STOCK IMPLEMENTING REGULATION ARABIC LEGAL LLM LAYER — MERGE REPORT
+================================================================================
+
+STAGE:          LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER_MERGE
+REPO:           al3obdi/saudi-legal-corpus-ai
+PR:             #89
+DATE:           2026-07-06
+
+================================================================================
+1. MERGE CONFIRMATION
+================================================================================
+
+  PR:                #89
+  Title:             Add listed joint-stock implementing regulation Arabic legal LLM layer
+  Merge method:      Squash merge
+  Merge result:      SUCCESS
+  Squash commit SHA: 90a949108a6e4b5003d651019d5d83a9a96bad08
+  Previous main:     5bdd771197fc67f9f83a55b49a0e48df9d6ef87b
+
+  PR pre-merge state:
+    State:           open
+    Mergeable:       True
+    Mergeable state: clean
+    Head SHA:        39a94570b5a3bdb4df17dd48b8ce49c847d4dc88
+    Base SHA:        5bdd771197fc67f9f83a55b49a0e48df9d6ef87b
+    Commits:         2 (squashed into 1)
+    Changed files:   10
+
+  CI status (all green):
+    build-and-validate (3.9):   success
+    build-and-validate (3.11):  success
+    build-and-validate (3.12):  success
+    (6 check runs total, all conclusion=success)
+
+  Squash commit message:
+    Title:  Add listed joint-stock implementing regulation Arabic legal LLM layer
+    Body:   Structured Arabic Legal LLM-ready JSON layer for the 69 listed
+            joint-stock implementing-regulation articles and 1 appendix...
+            (no co-author/tool/model attribution)
+
+================================================================================
+2. POST-MERGE VERIFICATION
+================================================================================
+
+  Local main HEAD:   90a949108a6e4b5003d651019d5d83a9a96bad08
+  Origin main HEAD:  90a949108a6e4b5003d651019d5d83a9a96bad08
+  Local == Origin:   YES
+  Working tree:      CLEAN
+
+================================================================================
+3. VALIDATION RESULTS (POST-MERGE ON MAIN)
+================================================================================
+
+  --- make validate ---
+  PASS
+
+  --- make test ---
+  2100 passed
+
+  --- make implementing-regulations-intake-scaffold-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-legal-llm-validate ---
+  PASS
+
+  --- make implementing-regulations-listed-jsc-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-listed-jsc-arabic-legal-llm-validate ---
+  PASS (28/28 checks)
+
+  --- python3 scripts/gen_implementing_regulations_listed_jsc_arabic_legal_llm.py ---
+  [OK] Article layer: 69 records, 14 chapters
+  [OK] Appendix layer: 1 record
+
+  --- git diff --exit-code ---
+  EXIT 0 (idempotent — no changes after generator rerun)
+
+================================================================================
+4. SCOPE
+================================================================================
+
+  Input source (read-only consumption):
+    data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_source.json
+    data/implementing_regulations/listed_joint_stock/source_manifest.json
+
+  Source: اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة
+  URL:    https://www.uqn.gov.sa/decisions-and-regulations/4001295
+  Published: 1448-1-18 AH / 03-07-2026
+  Issuing authority: مجلس هيئة السوق المالية
+  Legal basis: نظام الشركات م/132
+
+  Specialized scope: listed joint-stock companies only (شركات المساهمة المدرجة)
+  NOT a general implementing regulation.
+
+  Output:
+    data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_legal_llm.json
+    data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_appendix_llm.json
+
+================================================================================
+5. ARTICLE TITLE POLICY
+================================================================================
+
+  All 69 article titles are from the source intake's explicit article_title field.
+  The official Saudi regulation format is: "المادة <ordinal>: <explicit title>\n<body>"
+
+  - No inferred or summarized titles: CONFIRMED
+  - No title is the ordinal alone: CONFIRMED
+  - official_text_ar remains verbatim: CONFIRMED (all 69 hashes match source)
+  - Trailing colons stripped from metadata where present; official_text_ar unchanged
+
+================================================================================
+6. CHAPTER METADATA POLICY
+================================================================================
+
+  The source intake does not map articles to chapters. The chapters list is
+  ordinal-only (الباب الأول, الباب الثاني, etc.) with no descriptive titles.
+
+  - chapter_number: null for all 69 records: CONFIRMED
+  - chapter_title_ar: null for all 69 records: CONFIRMED
+  - chapter_count: 14 (preserved at layer level, not in article records)
+  - No article-to-chapter mapping inferred or invented: CONFIRMED
+
+================================================================================
+7. RECORDS
+================================================================================
+
+  Article records:  69 (sequential 1–69, no gaps)
+  Appendix records: 1 (ملحق (1) - نموذج التوكيل, record_type=official_appendix)
+  All hashes match source intake: YES (69 articles + 1 appendix)
+
+================================================================================
+8. HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED
+  - Chinese remediation program: UNCHANGED
+  - General implementing regulations source intake: UNCHANGED
+  - General implementing regulations Arabic Legal LLM layer: UNCHANGED
+  - Listed joint-stock source intake: UNCHANGED (read-only consumption)
+  - No English text generated: CONFIRMED
+  - No Chinese text generated: CONFIRMED
+  - No trilingual alignment: CONFIRMED
+  - No public release: CONFIRMED
+  - No paraphrasing or rewriting: CONFIRMED
+  - No legal advice: CONFIRMED
+  - No official translation claim: CONFIRMED
+  - No claim of general implementing regulation: CONFIRMED
+  - No co-author/tool/model attribution in PR or squash message: CONFIRMED
+
+================================================================================
+9. BOUNDARIES
+================================================================================
+
+  - Arabic official source governs
+  - This layer is derived from the listed_joint_stock source intake only
+  - listed_joint_stock is a specialized implementing-regulation sub-track
+  - NOT the general implementing regulation
+  - General implementing regulations remain separate and unchanged
+  - English (if later added) = reference/guidance only
+  - Chinese (if later added) = internal reference only
+  - Not official translation
+  - Not legal advice
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  MERGE COMPLETE:           YES
+  Final main HEAD:          90a949108a6e4b5003d651019d5d83a9a96bad08
+  Validation:               ALL PASS (28 validator checks + 2100 tests + idempotence)
+  Scope:                    LISTED JOINT-STOCK implementing regulation Arabic Legal
+                            LLM layer only (specialized, NOT general)
+  Article title policy:     REVIEWED — all explicit from source article_title field
+  Chapter metadata policy:  REVIEWED — chapter_number/chapter_title_ar null (no source mapping)
+  Records:                  69 articles + 1 appendix
+  Hygiene:                  CLEAN — all boundaries enforced
+  Local report file:        reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER_MERGE_REPORT.txt
+  Telegram report:          SENT
+  Final status:             MERGED — PR #89 squash-merged into main, all post-merge validation green
+
+================================================================================
