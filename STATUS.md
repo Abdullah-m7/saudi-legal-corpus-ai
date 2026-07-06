@@ -199,6 +199,19 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`docs/CORPUS_RETRIEVAL_PROMPT_PACK.md`]. Validate:
   `make corpus-retrieval-prompt-pack-validate`.
 
+- **Citation support checker:** Deterministic, offline citation support
+  checker that takes a draft answer file and a retrieval prompt/context pack,
+  then mechanically checks whether cited record IDs exist in the supplied
+  pack. Accepted citation syntax: `[[export_record_id=<ID>]]` and
+  `[[source_record_id=<ID>]]`. Catches invalid citations, missing citations,
+  and unsupported references. Optional `--require-citation-per-paragraph` and
+  `--require-boundary-note` flags. Mechanical checking only — does NOT verify
+  semantic support, legal correctness, or call any LLM. No embeddings, no API,
+  no network. Usage:
+  `python3 scripts/check_citation_support.py --prompt-pack /tmp/pack.json --draft-answer-file /tmp/draft.md`.
+  See [`docs/CORPUS_CITATION_SUPPORT_CHECKER.md`]. Validate:
+  `make corpus-citation-support-checker-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**

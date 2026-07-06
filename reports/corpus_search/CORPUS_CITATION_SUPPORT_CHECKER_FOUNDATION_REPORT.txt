@@ -1,0 +1,114 @@
+CORPUS_CITATION_SUPPORT_CHECKER_FOUNDATION_REPORT.txt
+============================================================
+
+STAGE: CORPUS_CITATION_SUPPORT_CHECKER_FOUNDATION
+RESULT: SUCCESS
+BASELINE_CONFIRMED: 659fd188625fd80e3516164c230b8db6c0d7886e
+BRANCH: glm/corpus-citation-support-checker-foundation
+
+MULTI_AGENT_TREE_DEBATE: APPLY — strictly mechanical citation checking only
+1. Legal Architect: No legal correctness judgment, no legal answers, no legal advice, only checks citation ID existence in pack, Arabic source governs, no English/Chinese, no public release — CONFIRMED
+2. Data/Automation Engineer: Deterministic, offline, input is pack + draft answer file, no LLM/API/network, JSON + Markdown output, no source files modified — CONFIRMED
+3. Product/RAG Pragmatist: Right guardrail before future LLM/RAG experiments, catches invalid/missing/unsupported citations, helps evaluate model drafts without model execution — CONFIRMED
+4. Devil's Advocate: Not pretending to verify legal truth, explicit limitation: mechanical citation only not semantic/legal support, rejects entailment/interpretation/scoring/generation — CONFIRMED
+5. Founder-Speed Advocate: Ship useful guardrail now, one CLI + one validator + one test + one doc + one report, no giant framework, no splitting — CONFIRMED
+
+CHAIN_OF_VERIFICATION: ALL 5 CHECKS PASS
+1. Vision Fit: Makes future LLM/RAG testing safer, catches obvious citation failures, adds practical value without building RAG — PASS
+2. Legal Boundary: Arabic governs, not legal advice, not official translation, no legal interpretation, no generated conclusions, no semantic/legal correctness judgment, no LLM call, no answer generation, no English/Chinese, no trilingual, no public release — PASS
+3. Scope Discipline: Reads only prompt/context pack and draft answer files, does not modify JSONL/source corpus/search ranking, no RAG/embeddings/semantic search/API/UI/database/network — PASS
+4. Anti-Overengineering: No semantic verifier, no legal entailment, no LLM-as-judge, no complex scoring frameworks, deterministic checks only — PASS
+5. Product/Automation Value: Easy to run, clear PASS/FAIL, identifies invalid citations, identifies uncited paragraphs, usable for external/local LLM draft evaluation — PASS
+
+CHECKER_SCOPE: Mechanical citation support checking only. Verifies that cited record IDs exist in the supplied prompt/context pack. Does NOT verify semantic support. Does NOT verify legal correctness. Does NOT interpret legal text. Does NOT generate answers. Does NOT call any LLM. Does NOT provide legal advice. Does NOT build RAG/embeddings/semantic search/API/UI/database/network.
+
+EXPLICIT_LIMITATIONS:
+- Only verifies mechanical citation presence and ID validity
+- Does NOT verify that the cited record semantically supports the sentence
+- Does NOT verify legal correctness
+- Does NOT replace repository-owner legal review (active); external legal review is optional for enterprise/official adoption
+
+CITATION_SYNTAX:
+- [[export_record_id=<ID>]] — cites a record by its export_record_id
+- [[source_record_id=<ID>]] — cites a record by its source_record_id
+- Vague article-only citations are NOT accepted as valid unless they map to a retrieved record ID
+
+SOURCE_PACK_INPUTS:
+- --prompt-pack PATH: retrieval prompt pack JSON file
+- --context-pack PATH: retrieval context pack JSON file
+- Exactly one required; both rejected; neither rejected
+
+INCLUDED_RECORDS: 450 Arabic governing records (CL 281 + Gen IR 95+4 + Listed JSC 69+1)
+EXCLUDED_RECORDS: English 281, Chinese 281, closure aggregate 169
+
+CLI_EXAMPLES:
+- python3 scripts/check_citation_support.py --prompt-pack /tmp/prompt_pack.json --draft-answer-file /tmp/draft.md
+- python3 scripts/check_citation_support.py --context-pack /tmp/context_pack.json --draft-answer-file /tmp/draft.md
+- python3 scripts/check_citation_support.py --prompt-pack /tmp/prompt_pack.json --draft-answer-file /tmp/draft.md --format json
+- python3 scripts/check_citation_support.py --prompt-pack /tmp/prompt_pack.json --draft-answer-file /tmp/draft.md --format markdown
+- python3 scripts/check_citation_support.py --prompt-pack /tmp/prompt_pack.json --draft-answer-file /tmp/draft.md --require-citation-per-paragraph
+- python3 scripts/check_citation_support.py --prompt-pack /tmp/prompt_pack.json --draft-answer-file /tmp/draft.md --require-boundary-note
+- python3 scripts/check_citation_support.py --prompt-pack /tmp/prompt_pack.json --draft-answer-file /tmp/draft.md --output /tmp/citation_check.json
+
+JSON_OUTPUT_FIELDS:
+Top-level: checker_version, input_pack_type, input_pack_path, draft_answer_file, checked_at_date, result, limitations, legal_boundaries, citation_syntax, retrieved_record_count, citations_found, valid_citations, invalid_citations, citation_findings, uncited_paragraphs, boundary_note_check, record_language_check, governing_status_check, summary
+
+Each citation finding: citation_text, citation_type, cited_id, valid, matched_record, paragraph_index, message
+
+MARKDOWN_BEHAVIOR:
+- Heading with result PASS/FAIL
+- Limitations section
+- Legal boundaries section
+- Citation syntax section
+- Summary counts
+- Input info
+- Invalid citations section (if any)
+- Uncited paragraphs section (if any)
+- Valid citations section (if any)
+- Boundary note check section
+
+VALIDATION:
+- make validate: PASS
+- make test: 2412 passed (+51 new)
+- make corpus-registry-validate: PASS
+- make corpus-export-primary-arabic-validate: PASS
+- make corpus-local-search-validate: PASS
+- make corpus-local-search-eval-validate: PASS
+- make corpus-local-search-smoke: PASS
+- make corpus-retrieval-context-pack-validate: PASS
+- make corpus-retrieval-context-pack-smoke: PASS
+- make corpus-retrieval-prompt-pack-validate: PASS
+- make corpus-retrieval-prompt-pack-smoke: PASS
+- make corpus-citation-support-checker-validate: PASS (49/49 checks)
+
+SMOKE_RESULTS:
+- Valid draft with retrieved citation: PASS
+- Invalid draft with fake record ID: FAIL (correctly detected)
+- All 3 smoke examples work correctly
+
+FILES_ADDED:
+1. scripts/check_citation_support.py — CLI citation support checker
+2. scripts/validate_citation_support_checker.py — read-only validator (49 checks)
+3. tests/test_citation_support_checker.py — test suite (51 tests)
+4. docs/CORPUS_CITATION_SUPPORT_CHECKER.md — usage guide, citation syntax, limitations, boundaries
+5. reports/corpus_search/CORPUS_CITATION_SUPPORT_CHECKER_FOUNDATION_AR.md — Arabic report
+
+FILES_MODIFIED:
+1. Makefile — added corpus-citation-support-checker-validate and corpus-citation-support-checker-smoke targets; added to .PHONY
+2. README.md — added citation support checker section
+3. STATUS.md — added citation support checker entry
+
+HYGIENE:
+- No generated/session/co-author/tool/model attribution
+- No committed prompt/context pack outputs
+- No committed draft answer fixtures (generated in tests/validator at runtime)
+- Stale untracked files from prior sessions removed before commit
+- Baseline confirmed: 659fd188625fd80e3516164c230b8db6c0d7886e
+- All existing validators unchanged and passing
+- No source corpus files modified
+- No export JSONL modified
+- No search ranking modified
+
+LOCAL_REPORT_FILE: reports/corpus_search/CORPUS_CITATION_SUPPORT_CHECKER_FOUNDATION_REPORT.txt
+
+FINAL_STATUS: READY FOR PR

@@ -100,7 +100,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-local-search-validate \
         corpus-local-search-eval-validate \
         corpus-retrieval-context-pack-validate \
-        corpus-retrieval-prompt-pack-validate
+        corpus-retrieval-prompt-pack-validate \
+        corpus-citation-support-checker-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -744,6 +745,20 @@ corpus-retrieval-prompt-pack-smoke:
 	$(PY) scripts/build_retrieval_prompt_pack.py "الجمعية العامة" --limit 3 --mode cautious_answer_draft --format markdown
 	@echo "---"
 	$(PY) scripts/build_retrieval_prompt_pack.py "التوكيل" --record-type appendix --limit 1 --mode evidence_brief --format json --include-full-text
+
+# -- Corpus citation support checker (deterministic, offline; mechanical checking only) --
+corpus-citation-support-checker-validate:
+	$(PY) scripts/validate_citation_support_checker.py
+
+corpus-citation-support-checker-smoke:
+	$(PY) scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --limit 3 --mode cautious_answer_draft --format json --output /tmp/_smoke_prompt_pack.json
+	@echo "---"
+	$(PY) -c "import json; pack=json.load(open('/tmp/_smoke_prompt_pack.json')); rid=pack['retrieved_records'][0]['export_record_id']; open('/tmp/_smoke_valid_draft.md','w').write('هذه إجابة معلوماتية وليست استشارة قانونية للمراجعة القانونية [['+'[export_record_id='+rid+']'+']].\n\nوفقًا للنظام [['+'[export_record_id='+rid+']'+']].\n')"
+	$(PY) scripts/check_citation_support.py --prompt-pack /tmp/_smoke_prompt_pack.json --draft-answer-file /tmp/_smoke_valid_draft.md --require-citation-per-paragraph --format json
+	@echo "---"
+	$(PY) -c "open('/tmp/_smoke_invalid_draft.md','w').write('هذه إجابة معلوماتية.\n\n[[export_record_id=FAKE-NOT-IN-PACK]].\n')"
+	$(PY) scripts/check_citation_support.py --prompt-pack /tmp/_smoke_prompt_pack.json --draft-answer-file /tmp/_smoke_invalid_draft.md --format json || true
+	@rm -f /tmp/_smoke_prompt_pack.json /tmp/_smoke_valid_draft.md /tmp/_smoke_invalid_draft.md
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
