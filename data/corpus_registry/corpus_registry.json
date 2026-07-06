@@ -1,5 +1,20 @@
 {
   "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
+  "count_policy": {
+    "chinese_internal_reference_records_included": true,
+    "closure_audit_aggregate_not_counted_separately": true,
+    "closure_audit_total_duplicates_underlying_ir_records": true,
+    "counting_method": "raw_layer_records_not_deduplicated_legal_article_units",
+    "english_reference_records_included": true,
+    "forms_and_appendices_counted": true,
+    "formula_total_implementing_regulations": "general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169",
+    "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 450",
+    "formula_total_reference": "companies_law_english(281)",
+    "formula_total_registry_counted": "total_primary_arabic_governing(450) + total_reference(281) + total_internal_reference(281) = 1012",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer.",
+    "primary_arabic_governing_records_included": true
+  },
   "generated_date": "2026-07-06",
   "legal_status_boundaries": {
     "arabic_official_source_governs": true,
@@ -12,7 +27,11 @@
   },
   "registry_version": "1.0",
   "repository": "al3obdi/saudi-legal-corpus-ai",
-  "total_known_records": 731,
+  "total_implementing_regulations_records": 169,
+  "total_internal_reference_records": 281,
+  "total_primary_arabic_governing_records": 450,
+  "total_reference_records": 281,
+  "total_registry_counted_records": 1012,
   "total_tracks": 4,
   "tracks": [
     {

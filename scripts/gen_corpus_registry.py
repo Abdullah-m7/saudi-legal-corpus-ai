@@ -86,7 +86,41 @@ def main() -> int:
             "chinese_internal_reference_only": True,
         },
         "total_tracks": 4,
-        "total_known_records": closure["counts"]["total_records"] + companies_ar["record_count"] + companies_en["record_count"],
+        "total_primary_arabic_governing_records": (
+            companies_ar["record_count"]  # 281 Companies Law
+            + gen_llm["record_count"]      # 95 general IR articles
+            + gen_forms["record_count"]    # 4 general IR forms
+            + ljs_llm["record_count"]      # 69 listed JSC articles
+            + ljs_app["record_count"]      # 1 listed JSC appendix
+        ),
+        "total_reference_records": companies_en["record_count"],  # 281 English
+        "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
+        "total_implementing_regulations_records": (
+            gen_llm["record_count"] + gen_forms["record_count"]
+            + ljs_llm["record_count"] + ljs_app["record_count"]
+        ),
+        "total_registry_counted_records": (
+            companies_ar["record_count"]
+            + gen_llm["record_count"] + gen_forms["record_count"]
+            + ljs_llm["record_count"] + ljs_app["record_count"]
+            + companies_en["record_count"]
+            + chinese_audit.get("total_articles_implemented", 281)
+        ),
+        "count_policy": {
+            "counting_method": "raw_layer_records_not_deduplicated_legal_article_units",
+            "primary_arabic_governing_records_included": True,
+            "english_reference_records_included": True,
+            "chinese_internal_reference_records_included": True,
+            "forms_and_appendices_counted": True,
+            "closure_audit_aggregate_not_counted_separately": True,
+            "closure_audit_total_duplicates_underlying_ir_records": True,
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 450",
+            "formula_total_reference": "companies_law_english(281)",
+            "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
+            "formula_total_implementing_regulations": "general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169",
+            "formula_total_registry_counted": "total_primary_arabic_governing(450) + total_reference(281) + total_internal_reference(281) = 1012",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer.",
+        },
         "validation_status": "PASS",
         "tracks": [
             {
@@ -294,7 +328,8 @@ def main() -> int:
 
     _dump_json(registry, OUTPUT_PATH)
     print(f"[OK] Corpus registry written: {OUTPUT_PATH}")
-    print(f"     {registry['total_tracks']} tracks, {registry['total_known_records']} known records")
+    print(f"     {registry['total_tracks']} tracks, {registry['total_registry_counted_records']} registry-counted records")
+    print(f"     Primary Arabic: {registry['total_primary_arabic_governing_records']}, Reference: {registry['total_reference_records']}, Internal ref: {registry['total_internal_reference_records']}")
     return 0
 
 

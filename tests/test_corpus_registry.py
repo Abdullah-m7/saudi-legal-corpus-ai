@@ -38,8 +38,39 @@ class TestRegistryStructure:
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
-    def test_baseline_commit(self, registry):
-        assert registry["baseline_commit"] == "465776947125066bd1a705cfceacd3dca935ad1f"
+    def test_total_primary_arabic(self, registry):
+        assert registry["total_primary_arabic_governing_records"] == 450
+
+    def test_total_reference(self, registry):
+        assert registry["total_reference_records"] == 281
+
+    def test_total_internal_reference(self, registry):
+        assert registry["total_internal_reference_records"] == 281
+
+    def test_total_ir(self, registry):
+        assert registry["total_implementing_regulations_records"] == 169
+
+    def test_total_registry_counted(self, registry):
+        assert registry["total_registry_counted_records"] == 1012
+
+    def test_no_total_known_records(self, registry):
+        assert "total_known_records" not in registry
+
+    def test_count_policy_exists(self, registry):
+        assert "count_policy" in registry
+        cp = registry["count_policy"]
+        assert cp["counting_method"] == "raw_layer_records_not_deduplicated_legal_article_units"
+        assert cp["primary_arabic_governing_records_included"] is True
+        assert cp["english_reference_records_included"] is True
+        assert cp["chinese_internal_reference_records_included"] is True
+        assert cp["closure_audit_aggregate_not_counted_separately"] is True
+
+    def test_count_formula_consistency(self, registry):
+        assert registry["total_registry_counted_records"] == (
+            registry["total_primary_arabic_governing_records"]
+            + registry["total_reference_records"]
+            + registry["total_internal_reference_records"]
+        )
 
 
 class TestTracks:

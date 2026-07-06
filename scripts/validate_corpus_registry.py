@@ -41,7 +41,10 @@ REGISTRY_PATH = os.path.join(ROOT, "data", "corpus_registry", "corpus_registry.j
 
 REQUIRED_TOP_FIELDS = [
     "registry_version", "generated_date", "repository", "baseline_commit",
-    "legal_status_boundaries", "total_tracks", "total_known_records",
+    "legal_status_boundaries", "total_tracks",
+    "total_primary_arabic_governing_records", "total_reference_records",
+    "total_internal_reference_records", "total_implementing_regulations_records",
+    "total_registry_counted_records", "count_policy",
     "validation_status", "tracks",
 ]
 
@@ -184,6 +187,54 @@ def main() -> int:
 
     # [18] Read-only validator
     check("[18] Validator is read-only...", True, "Does not modify any files")
+
+    # [19] Count semantics: explicit count fields
+    check("[19a] total_primary_arabic_governing_records == 450...",
+          registry.get("total_primary_arabic_governing_records") == 450,
+          f"Value: {registry.get('total_primary_arabic_governing_records')}")
+
+    check("[19b] total_reference_records == 281...",
+          registry.get("total_reference_records") == 281,
+          f"Value: {registry.get('total_reference_records')}")
+
+    check("[19c] total_internal_reference_records == 281...",
+          registry.get("total_internal_reference_records") == 281,
+          f"Value: {registry.get('total_internal_reference_records')}")
+
+    check("[19d] total_implementing_regulations_records == 169...",
+          registry.get("total_implementing_regulations_records") == 169,
+          f"Value: {registry.get('total_implementing_regulations_records')}")
+
+    check("[19e] total_registry_counted_records == 1012...",
+          registry.get("total_registry_counted_records") == 1012,
+          f"Value: {registry.get('total_registry_counted_records')}")
+
+    # [20] count_policy exists and has required keys
+    cp = registry.get("count_policy", {})
+    required_cp = [
+        "counting_method", "primary_arabic_governing_records_included",
+        "english_reference_records_included", "chinese_internal_reference_records_included",
+        "forms_and_appendices_counted", "closure_audit_aggregate_not_counted_separately",
+        "closure_audit_total_duplicates_underlying_ir_records",
+        "formula_total_primary_arabic_governing", "formula_total_reference",
+        "formula_total_internal_reference", "formula_total_implementing_regulations",
+        "formula_total_registry_counted", "note",
+    ]
+    missing_cp = [f for f in required_cp if f not in cp]
+    check("[20] count_policy has all required fields...", len(missing_cp) == 0,
+          "All present" if not missing_cp else f"Missing: {missing_cp}")
+
+    # [21] count_policy formulas are consistent with values
+    check("[21] total_registry == primary + reference + internal...",
+          registry.get("total_registry_counted_records") ==
+          registry.get("total_primary_arabic_governing_records", 0)
+          + registry.get("total_reference_records", 0)
+          + registry.get("total_internal_reference_records", 0),
+          f"450 + 281 + 281 = 1012")
+
+    check("[22] No total_known_records field (replaced)...",
+          "total_known_records" not in registry,
+          "Field removed — replaced by explicit count fields")
 
     print_results()
     return 0 if FAILED == 0 else 1
