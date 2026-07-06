@@ -112,7 +112,15 @@ prompt modes (evidence_brief, cautious_answer_draft, citation_check). Builds
 prompts only; does NOT call any model, does NOT generate legal answers, does NOT
 produce legal advice. See
 [`docs/CORPUS_RETRIEVAL_PROMPT_PACK.md`](docs/CORPUS_RETRIEVAL_PROMPT_PACK.md).
-Validate: `make corpus-retrieval-prompt-pack-validate`.
+Validate: `make corpus-retrieval-prompt-pack-validate`. A **citation support
+checker** takes a draft answer file and a retrieval prompt/context pack, then
+mechanically checks whether cited record IDs exist in the supplied pack —
+catches invalid citations, missing citations, and unsupported references.
+Accepted citation syntax: `[[export_record_id=<ID>]]` and
+`[[source_record_id=<ID>]]`. Mechanical checking only — does NOT verify
+semantic support, legal correctness, or call any LLM. Not legal advice. See
+[`docs/CORPUS_CITATION_SUPPORT_CHECKER.md`](docs/CORPUS_CITATION_SUPPORT_CHECKER.md).
+Validate: `make corpus-citation-support-checker-validate`.
 See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
