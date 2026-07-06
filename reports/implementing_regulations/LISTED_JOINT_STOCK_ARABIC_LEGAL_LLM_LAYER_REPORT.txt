@@ -1,0 +1,251 @@
+================================================================================
+LISTED JOINT-STOCK IMPLEMENTING REGULATION ARABIC LEGAL LLM LAYER REPORT
+================================================================================
+
+STAGE:          LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER_PR_OPEN
+REPO:           al3obdi/saudi-legal-corpus-ai
+BRANCH:         glm/listed-jsc-implementing-regulation-arabic-legal-llm-layer
+PR:             #89 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/89
+DATE:           2026-07-06
+
+================================================================================
+1. BASELINE CONFIRMATION
+================================================================================
+
+  BASELINE_COMMIT:  5bdd771197fc67f9f83a55b49a0e48df9d6ef87b
+  BASELINE_BRANCH:  main
+  CONFIRMED:        YES — git fetch && git pull origin main; HEAD matches baseline
+
+================================================================================
+2. INPUT SOURCE
+================================================================================
+
+  Source intake file:
+    data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_source.json
+
+  Source manifest:
+    data/implementing_regulations/listed_joint_stock/source_manifest.json
+
+  Source title:     اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة
+  Source URL:       https://www.uqn.gov.sa/decisions-and-regulations/4001295
+  Publication:      1448-1-18 AH / 03-07-2026
+  Issuing authority: مجلس هيئة السوق المالية (Board of the Capital Market Authority)
+  Legal basis:      نظام الشركات الصادر بالمرسوم الملكي رقم (م/132) وتاريخ 1/12/1443هـ
+  Parent law:       sa_companies_law_m132_1443
+  Source hash:      38133c8a3c562bbe808008d686c7ff4fd6ff8a718b746490ecc6e9288a2b9a13
+
+  Article count:    69
+  Chapter count:    14 (ordinal names only; articles not mapped to chapters in source)
+  Appendix:         1 (ملحق (1) - نموذج التوكيل)
+
+================================================================================
+3. LAYER SUMMARY
+================================================================================
+
+  This stage creates a structured Arabic Legal LLM-ready JSON layer for the
+  69 listed joint-stock implementing-regulation articles and the appendix of
+  the Saudi Companies Law (M/132, 1443H).
+
+  This is a SPECIALIZED implementing regulation for listed joint-stock
+  companies only — NOT a general implementing regulation.
+
+  The layer is Arabic-only structuring:
+    - No translation
+    - No English text generated
+    - No Chinese text generated
+    - No trilingual alignment
+    - No public release
+    - No paraphrasing or rewriting of official Arabic text
+    - official_text_ar preserved verbatim from source intake
+    - Article hashes and source provenance preserved
+
+  Each article record includes deterministic metadata for LLM retrieval:
+    - record_id (ir-ljs-art-001 through ir-ljs-art-069)
+    - corpus_track (implementing_regulations/listed_joint_stock)
+    - regulation_scope (listed_joint_stock)
+    - language (ar)
+    - governing_text (arabic_official_source)
+    - source_url, source_title, publication dates
+    - issuing_authority (مجلس هيئة السوق المالية)
+    - legal_basis (نظام الشركات م/132)
+    - chapter_number (null — source does not map articles to chapters)
+    - chapter_title_ar (null — source chapters are ordinal-only)
+    - article_number, article_ordinal_ar
+    - article_title_ar (from source article_title field, explicit)
+    - official_text_ar (verbatim)
+    - official_text_hash (SHA-256, matching source intake)
+    - legal_status_boundaries
+    - source_manifest_hash
+
+  Appendix is in a separate JSON file with record_type "official_appendix".
+
+================================================================================
+4. ARTICLE TITLE POLICY
+================================================================================
+
+  The source intake provides an explicit article_title field for all 69
+  articles. These titles are part of the official Arabic text heading
+  ("المادة <ordinal>: <title>"). The generator uses this source field
+  directly (with trailing-colon stripping for clean metadata).
+
+  - All 69 titles are explicit headings from the official source: CONFIRMED
+  - No inferred or summarized titles: CONFIRMED
+  - No title is the ordinal alone: CONFIRMED
+  - official_text_ar remains verbatim: CONFIRMED (all 69 hashes match)
+  - chapter_number and chapter_title_ar are null (source has no article-to-
+    chapter mapping): CONFIRMED
+
+================================================================================
+5. ARTICLE RECORDS
+================================================================================
+
+  Total article records:   69
+  Numbering:               Sequential 1–69 (no gaps)
+  Record IDs:              ir-ljs-art-001 through ir-ljs-art-069
+  Record type:             implementing_regulation_article
+  All have article_title_ar: YES (from source article_title field)
+  Hashes match source:     YES (all 69 SHA-256 hashes verified identical)
+  Issuing authority:       مجلس هيئة السوق المالية
+  Legal basis:             نظام الشركات م/132
+
+================================================================================
+6. APPENDIX RECORDS
+================================================================================
+
+  Total appendix records:  1
+  Record ID:               ir-ljs-appendix-001
+  Record type:             official_appendix
+  Appendix title:          ملحق (1) - نموذج التوكيل
+  Hash matches source:     YES (SHA-256 verified)
+
+================================================================================
+7. FILES ADDED
+================================================================================
+
+  1. scripts/gen_implementing_regulations_listed_jsc_arabic_legal_llm.py
+     — Generator script (idempotent, deterministic JSON output)
+
+  2. scripts/validate_implementing_regulations_listed_jsc_arabic_legal_llm.py
+     — Read-only validator (28 checks)
+
+  3. data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_legal_llm.json
+     — Article LLM layer JSON (69 article records)
+
+  4. data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_appendix_llm.json
+     — Appendix LLM layer JSON (1 appendix record)
+
+  5. tests/test_implementing_regulations_listed_jsc_arabic_legal_llm.py
+     — Test suite (45 tests)
+
+  6. reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER_REPORT.txt
+     — This report
+
+================================================================================
+8. FILES MODIFIED
+================================================================================
+
+  1. Makefile
+     — Added targets: implementing-regulations-listed-jsc-arabic-legal-llm-data
+                      implementing-regulations-listed-jsc-arabic-legal-llm-validate
+     — Added to .PHONY list
+
+  2. README.md
+     — Added concise entry for the listed joint-stock Arabic Legal LLM layer
+
+  3. STATUS.md
+     — Added concise entry for the listed joint-stock Arabic Legal LLM layer
+
+================================================================================
+9. VALIDATION
+================================================================================
+
+  --- make validate (book1) ---
+  PASS
+
+  --- make test ---
+  2100 tests passed (45 new + 2055 existing)
+
+  --- make implementing-regulations-intake-scaffold-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-legal-llm-validate ---
+  PASS
+
+  --- make implementing-regulations-listed-jsc-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-listed-jsc-arabic-legal-llm-validate ---
+  PASS (28/28 checks)
+
+================================================================================
+10. IDEMPOTENCE
+================================================================================
+
+  Generator re-run produces identical output:
+    git diff --exit-code → EXIT 0 (no changes)
+
+================================================================================
+11. HYGIENE
+================================================================================
+
+  - Companies Law corpus: NOT MODIFIED
+  - Chinese remediation program: NOT MODIFIED
+  - General implementing regulations source intake: NOT MODIFIED
+  - General implementing regulations Arabic Legal LLM layer: NOT MODIFIED
+  - Listed joint-stock source intake: NOT MODIFIED (read-only consumption)
+  - No English text generated
+  - No Chinese text generated
+  - No trilingual alignment
+  - No public release
+  - No paraphrasing or rewriting
+  - No summarization
+  - No obligations/rights classification
+  - No legal advice
+  - No claim of official translation
+  - No claim of general implementing regulation
+  - No claim of binding authority beyond Arabic official source
+
+================================================================================
+12. REQUIRED BOUNDARIES
+================================================================================
+
+  - Arabic official source governs
+  - This layer is derived from the listed_joint_stock source intake
+  - listed_joint_stock is a specialized implementing-regulation sub-track
+  - General implementing regulations remain a separate general sub-track
+  - English, if later added, is reference/guidance only
+  - Chinese, if later added, is internal reference only
+  - Not official translation
+  - Not legal advice
+
+================================================================================
+13. DISCLAIMER (Arabic)
+================================================================================
+
+  هذه طبقة عربية جاهزة للنماذج اللغوية مشتقة من نص اللائحة التنفيذية
+  لنظام الشركات الخاصة بشركات المساهمة المدرجة الصادرة عن مجلس هيئة
+  السوق المالية. النص العربي محفوظ حرفيًّا من المصدر الرسمي بلا تلخيص
+  ولا إعادة صياغة. العربية هي اللغة الحاكمة. ليست ترجمة رسمية وليست
+  استشارة قانونية. اللائحة التنفيذية العامة مسار منفصل.
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  STAGE:              LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER_PR_OPEN
+  RESULT:             SUCCESS
+  BASELINE_CONFIRMED: YES (5bdd771197fc67f9f83a55b49a0e48df9d6ef87b)
+  BRANCH:             glm/listed-jsc-implementing-regulation-arabic-legal-llm-layer
+  ARTICLE_TITLE_POLICY: REVIEWED — all 69 titles from source article_title field
+  CHAPTER_METADATA_POLICY: REVIEWED — chapter_number/chapter_title_ar null (no source mapping)
+  ARTICLE_RECORDS:    69
+  APPENDIX_RECORDS:   1
+  VALIDATION:         ALL PASS (28 validator checks + 2100 tests)
+  IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
+  HYGIENE:            CLEAN — no prohibited modifications
+  PR:                 #89 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/89
+
+================================================================================
