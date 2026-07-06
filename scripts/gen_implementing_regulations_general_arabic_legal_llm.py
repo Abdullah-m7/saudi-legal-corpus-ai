@@ -120,6 +120,10 @@ def _extract_article_title_ar(text: str) -> str | None:
     if not title_part:
         return None
     # If the title part contains numbers-only or is empty, return None
+    # Strip trailing colons (e.g., Article 66 source has "ضوابط شراء الشركة حصصها:")
+    title_part = title_part.rstrip(":").strip()
+    if not title_part:
+        return None
     return title_part
 
 
