@@ -1,0 +1,152 @@
+{
+  "audit_date": "2026-07-06",
+  "audit_id": "implementing-regulations-arabic-program-closure-audit",
+  "boundaries": {
+    "arabic_governs": true,
+    "chinese_internal_reference_only_if_later_added": true,
+    "english_reference_only_if_later_added": true,
+    "general_and_listed_tracks_are_separate": true,
+    "listed_joint_stock_is_specialized_not_general": true,
+    "no_public_release": true,
+    "no_trilingual_alignment": true,
+    "not_legal_advice": true,
+    "not_official_translation": true
+  },
+  "chinese_remediation_unchanged": {
+    "closure_audit_exists": true,
+    "closure_audit_path": "reports/chinese_translation_review/chinese_remediation_program_closure_audit.json"
+  },
+  "counts": {
+    "general_articles": 95,
+    "general_forms": 4,
+    "listed_jsc_appendices": 1,
+    "listed_jsc_articles": 69,
+    "total_article_records": 164,
+    "total_non_article_records": 5,
+    "total_records": 169
+  },
+  "overall_status": "PASS",
+  "parent_law": "sa_companies_law_m132_1443",
+  "parent_law_unchanged": {
+    "files_checked": [
+      "data/official_arabic_legal_llm/companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+      "data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json"
+    ],
+    "files_exist": true
+  },
+  "repo": "al3obdi/saudi-legal-corpus-ai",
+  "scope": "Implementing Regulations Arabic program — general + listed_joint_stock tracks",
+  "stage": "IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT",
+  "tracks": {
+    "general": {
+      "arabic_legal_llm_exists": true,
+      "article_hash_check": {
+        "all_match": true,
+        "matched": 95,
+        "mismatch_ids": [],
+        "mismatched": 0,
+        "total": 95
+      },
+      "article_record_ids": {
+        "all_valid": true,
+        "sequential": true,
+        "total": 95,
+        "unique": true
+      },
+      "corpus_track": "implementing_regulations/general",
+      "form_hash_check": {
+        "all_match": true,
+        "matched": 4,
+        "mismatch_ids": [],
+        "mismatched": 0,
+        "total": 4
+      },
+      "form_record_count": 4,
+      "form_record_ids": {
+        "all_valid": true,
+        "sequential": true,
+        "total": 4,
+        "unique": true
+      },
+      "form_record_type": "official_form",
+      "forms_llm_exists": true,
+      "is_general": true,
+      "is_specialized": false,
+      "llm_article_range": [
+        1,
+        95
+      ],
+      "llm_article_record_count": 95,
+      "llm_record_type": "implementing_regulation_article",
+      "llm_stage": "GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER",
+      "source_article_count": 95,
+      "source_chapter_count": 7,
+      "source_form_count": 4,
+      "source_intake_exists": true,
+      "source_manifest_exists": true,
+      "source_title": "اللائحة التنفيذية لنظام الشركات",
+      "source_url": "https://www.uqn.gov.sa/details?p=21325",
+      "status": "PASS",
+      "track_name": "general"
+    },
+    "listed_joint_stock": {
+      "appendix_hash_check": {
+        "layer_hash": "0d4ac07d49796626...",
+        "matched": true,
+        "source_hash": "0d4ac07d49796626..."
+      },
+      "appendix_llm_exists": true,
+      "appendix_record_count": 1,
+      "appendix_record_type": "official_appendix",
+      "arabic_legal_llm_exists": true,
+      "article_hash_check": {
+        "all_match": true,
+        "matched": 69,
+        "mismatch_ids": [],
+        "mismatched": 0,
+        "total": 69
+      },
+      "article_record_ids": {
+        "all_valid": true,
+        "sequential": true,
+        "total": 69,
+        "unique": true
+      },
+      "article_titles_explicit": true,
+      "chapter_metadata_null": true,
+      "corpus_track": "implementing_regulations/listed_joint_stock",
+      "is_general": false,
+      "is_specialized": true,
+      "issuing_authority": "مجلس هيئة السوق المالية",
+      "legal_basis": "نظام الشركات الصادر بالمرسوم الملكي رقم (م/132) وتاريخ 1/12/1443هـ",
+      "llm_article_range": [
+        1,
+        69
+      ],
+      "llm_article_record_count": 69,
+      "llm_is_general": false,
+      "llm_is_specialized": true,
+      "llm_record_type": "implementing_regulation_article",
+      "llm_stage": "LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER",
+      "source_appendix_title": "ملحق (1) - نموذج التوكيل",
+      "source_article_count": 69,
+      "source_chapter_count": 14,
+      "source_has_appendix": true,
+      "source_intake_exists": true,
+      "source_manifest_exists": true,
+      "source_title": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+      "source_url": "https://www.uqn.gov.sa/decisions-and-regulations/4001295",
+      "specialized_scope": "listed joint-stock companies (شركات المساهمة المدرجة)",
+      "status": "PASS",
+      "track_name": "listed_joint_stock"
+    }
+  },
+  "validators_pass": {
+    "arabic_program_closure": "make implementing-regulations-arabic-program-closure-validate",
+    "general_arabic_legal_llm": "make implementing-regulations-general-arabic-legal-llm-validate",
+    "general_arabic_source": "make implementing-regulations-general-arabic-source-validate",
+    "intake_scaffold": "make implementing-regulations-intake-scaffold-validate",
+    "listed_jsc_arabic_legal_llm": "make implementing-regulations-listed-jsc-arabic-legal-llm-validate",
+    "listed_jsc_arabic_source": "make implementing-regulations-listed-jsc-arabic-source-validate"
+  }
+}

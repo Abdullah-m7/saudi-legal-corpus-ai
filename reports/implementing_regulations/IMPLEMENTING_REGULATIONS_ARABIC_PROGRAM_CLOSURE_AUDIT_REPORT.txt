@@ -1,0 +1,195 @@
+================================================================================
+IMPLEMENTING REGULATIONS ARABIC PROGRAM CLOSURE AUDIT REPORT
+================================================================================
+
+STAGE:          IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_PR_OPEN
+REPO:           al3obdi/saudi-legal-corpus-ai
+BRANCH:         glm/implementing-regulations-arabic-program-closure-audit
+PR:             #90 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/90
+DATE:           2026-07-06
+
+================================================================================
+1. BASELINE CONFIRMATION
+================================================================================
+
+  BASELINE_COMMIT:  90a949108a6e4b5003d651019d5d83a9a96bad08
+  BASELINE_BRANCH:  main
+  CONFIRMED:        YES
+
+================================================================================
+2. AUDIT SCOPE
+================================================================================
+
+  1. General implementing regulations:
+     - Arabic source intake
+     - Arabic Legal LLM-ready layer (articles)
+     - Forms layer
+
+  2. Listed joint-stock implementing regulation:
+     - Arabic source intake
+     - Arabic Legal LLM-ready layer (articles)
+     - Appendix layer
+
+================================================================================
+3. GENERAL TRACK STATUS
+================================================================================
+
+  Source intake:        EXISTS (95 articles + 7 chapters + 4 forms)
+  Source manifest:      EXISTS
+  Arabic Legal LLM:     EXISTS (95 article records)
+  Forms LLM:            EXISTS (4 form records)
+  Article hashes:       ALL 95 MATCH source intake
+  Form hashes:          ALL 4 MATCH source intake
+  Article record IDs:   SEQUENTIAL + UNIQUE (ir-gen-art-001 to ir-gen-art-095)
+  Form record IDs:      SEQUENTIAL + UNIQUE (ir-gen-form-001 to ir-gen-form-004)
+  Track status:         PASS
+
+  Source: اللائحة التنفيذية لنظام الشركات
+  URL: https://www.uqn.gov.sa/details?p=21325
+  Published: 1444-6-25 AH / 18-01-2023
+
+================================================================================
+4. LISTED JOINT-STOCK TRACK STATUS
+================================================================================
+
+  Source intake:        EXISTS (69 articles + 14 chapters + 1 appendix)
+  Source manifest:      EXISTS
+  Arabic Legal LLM:     EXISTS (69 article records)
+  Appendix LLM:         EXISTS (1 appendix record)
+  Article hashes:       ALL 69 MATCH source intake
+  Appendix hash:        MATCHES source intake
+  Article record IDs:   SEQUENTIAL + UNIQUE (ir-ljs-art-001 to ir-ljs-art-069)
+  Is specialized:       YES (is_specialized=True, is_general=False)
+  Chapter metadata:     NULL for all 69 records (source has no article-to-chapter mapping)
+  Article titles:       ALL EXPLICIT from source article_title field (not ordinal, not null)
+  Issuing authority:    مجلس هيئة السوق المالية
+  Legal basis:          نظام الشركات م/132
+  Track status:         PASS
+
+  Source: اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة
+  URL: https://www.uqn.gov.sa/decisions-and-regulations/4001295
+  Published: 1448-1-18 AH / 03-07-2026
+
+================================================================================
+5. COUNTS
+================================================================================
+
+  General articles:          95
+  General forms:              4
+  Listed JSC articles:       69
+  Listed JSC appendices:      1
+  Total article records:    164
+  Total non-article records:  5
+  Total all records:        169
+
+================================================================================
+6. BOUNDARIES
+================================================================================
+
+  - Arabic official source governs:          CONFIRMED
+  - No official translation claim:           CONFIRMED
+  - No legal advice claim:                   CONFIRMED
+  - No trilingual alignment:                 CONFIRMED
+  - No public release:                       CONFIRMED
+  - General and listed tracks separate:      CONFIRMED
+  - Listed JSC is specialized, NOT general:  CONFIRMED
+  - English (if added) = reference only:     CONFIRMED
+  - Chinese (if added) = internal only:      CONFIRMED
+
+================================================================================
+7. FILES ADDED
+================================================================================
+
+  1. scripts/gen_implementing_regulations_arabic_program_closure.py
+     — Closure audit generator (idempotent)
+
+  2. scripts/validate_implementing_regulations_arabic_program_closure.py
+     — Read-only validator (26 checks)
+
+  3. reports/implementing_regulations/implementing_regulations_arabic_program_closure_audit.json
+     — Machine-readable JSON audit report
+
+  4. reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_AR.md
+     — Formal Arabic markdown report
+
+  5. tests/test_implementing_regulations_arabic_program_closure.py
+     — Test suite (32 tests)
+
+  6. reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_REPORT.txt
+     — This report
+
+================================================================================
+8. FILES MODIFIED
+================================================================================
+
+  1. Makefile — Added closure audit targets
+  2. README.md — Added concise entry
+  3. STATUS.md — Added concise entry
+
+================================================================================
+9. VALIDATION
+================================================================================
+
+  --- make validate ---
+  PASS
+
+  --- make test ---
+  2132 passed
+
+  --- make implementing-regulations-intake-scaffold-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-legal-llm-validate ---
+  PASS (27/27)
+
+  --- make implementing-regulations-listed-jsc-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-listed-jsc-arabic-legal-llm-validate ---
+  PASS (28/28)
+
+  --- make implementing-regulations-arabic-program-closure-validate ---
+  PASS (26/26)
+
+================================================================================
+10. IDEMPOTENCE
+================================================================================
+
+  Generator re-run produces identical output:
+    git diff --exit-code → EXIT 0 (no changes)
+
+================================================================================
+11. HYGIENE
+================================================================================
+
+  - Companies Law corpus: UNCHANGED
+  - Chinese remediation program: UNCHANGED
+  - General implementing regulations source intake: UNCHANGED (read-only)
+  - General implementing regulations Arabic Legal LLM layer: UNCHANGED (read-only)
+  - Listed joint-stock source intake: UNCHANGED (read-only)
+  - Listed joint-stock Arabic Legal LLM layer: UNCHANGED (read-only)
+  - No English text generated: CONFIRMED
+  - No Chinese text generated: CONFIRMED
+  - No trilingual alignment: CONFIRMED
+  - No public release: CONFIRMED
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  STAGE:              IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_PR_OPEN
+  RESULT:             SUCCESS
+  BASELINE_CONFIRMED: YES (90a949108a6e4b5003d651019d5d83a9a96bad08)
+  BRANCH:             glm/implementing-regulations-arabic-program-closure-audit
+  GENERAL_TRACK:      PASS (95 articles + 4 forms)
+  LISTED_JSC_TRACK:   PASS (69 articles + 1 appendix)
+  COUNTS:             164 article records + 5 non-article records = 169 total
+  VALIDATION:         ALL PASS (26 closure checks + 2132 tests)
+  IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
+  HYGIENE:            CLEAN
+  PR:                 #90 — https://github.com/al3obdi/saudi-legal-corpus-ai/pull/90
+
+================================================================================

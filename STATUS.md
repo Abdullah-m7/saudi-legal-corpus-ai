@@ -142,6 +142,15 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   [`data/implementing_regulations/listed_joint_stock/listed_joint_stock_implementing_regulation_arabic_legal_llm.json`] and
   [`reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_LEGAL_LLM_LAYER_REPORT.txt`]. Validate:
   `make implementing-regulations-listed-jsc-arabic-legal-llm-validate`.
+- **Implementing regulations Arabic program closure audit completed** — verifies both
+  tracks (general: 95 articles + 4 forms; listed joint-stock: 69 articles + 1 appendix)
+  are complete, all hashes match source intake, record IDs sequential and unique, tracks
+  separate, listed joint-stock is specialized (not general), Arabic governs, no
+  English/Chinese/trilingual/public release, Companies Law corpus and Chinese remediation
+  unchanged. See
+  [`reports/implementing_regulations/implementing_regulations_arabic_program_closure_audit.json`] and
+  [`reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_PROGRAM_CLOSURE_AUDIT_AR.md`]. Validate:
+  `make implementing-regulations-arabic-program-closure-validate`.
 
 ## Legal / official-status boundaries
 

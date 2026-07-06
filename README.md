@@ -79,7 +79,11 @@ implementing regulation Arabic Legal LLM-ready layer** (69 article records + 1 a
 record) has been created from the listed joint-stock regulation source intake —
 specialized to listed joint-stock companies only, official_text_ar preserved verbatim,
 deterministic metadata for LLM retrieval, articles and appendix in separate JSON files.
-Validate: `make implementing-regulations-listed-jsc-arabic-legal-llm-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
+Validate: `make implementing-regulations-listed-jsc-arabic-legal-llm-validate`. An **implementing
+regulations Arabic program closure audit** verifies both tracks (general 95+4, listed
+joint-stock 69+1) are complete with all hashes matching, record IDs sequential, tracks
+separate, and all boundaries enforced. Validate:
+`make implementing-regulations-arabic-program-closure-validate`. See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
 
