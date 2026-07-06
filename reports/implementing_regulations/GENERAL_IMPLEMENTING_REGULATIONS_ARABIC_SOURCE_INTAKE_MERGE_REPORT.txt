@@ -1,0 +1,57 @@
+============================================================
+MERGE REPORT — PR #87
+General Implementing Regulations Arabic Source Intake
+============================================================
+
+MERGE COMPLETE: YES
+
+PR #87:
+  Title: Add general implementing regulations Arabic source intake
+  Head: 963a771cfac8908362725e7d0db06e60f868ece6
+  Base: 424a830f0b9d0ba2650da196eac80466669bdc84
+  Merge method: squash
+  Merge commit: c597829d3168c4ac9e19ac0e08502ccb309cc5bf
+  PR state: merged
+
+Final main HEAD: c597829d3168c4ac9e19ac0e08502ccb309cc5bf
+
+Local main == origin/main: YES
+  local:  c597829d3168c4ac9e19ac0e08502ccb309cc5bf
+  origin: c597829d3168c4ac9e19ac0e08502ccb309cc5bf
+
+CI: GREEN (6/6 check runs passed — Python 3.9, 3.11, 3.12)
+
+Validation:
+  make validate:                                  ALL CHECKS PASSED ✓
+  make test:                                       2000 passed ✓
+  make implementing-regulations-intake-scaffold-validate: ALL CHECKS PASSED ✓ (14/14)
+  make implementing-regulations-listed-jsc-arabic-source-validate: ALL CHECKS PASSED ✓ (18/18)
+  make implementing-regulations-general-arabic-source-validate: ALL CHECKS PASSED ✓ (19/19)
+  git diff --exit-code:                            0 (clean) ✓
+
+Scope:
+  - General implementing regulations covering all company forms
+  - 95 Arabic articles across 7 chapters + 4 official forms
+  - Separate from listed_joint_stock specialized sub-track
+  - Arabic source intake only — no English/Chinese text generated
+  - No trilingual alignment; no public release
+
+Source:
+  Title: اللائحة التنفيذية لنظام الشركات
+  URL: https://www.uqn.gov.sa/details?p=21325
+  Publication: 1444-6-25 AH / 18-01-2023
+  Legal basis: Companies Law M/132 (1443H)
+  Source hash SHA-256: 0abb819fccff6ba6ac58149046fb3c7769eaf00110b717e21bf478ffbeb7c73e
+
+Hygiene:
+  - Squash commit message: no tool/model/session/co-author attribution
+  - PR body: no tool/model/session/co-author attribution
+  - Companies Law corpus: unchanged
+  - Chinese remediation program: unchanged
+  - Listed joint-stock sub-track: unchanged
+  - Working tree: clean (only untracked local .txt report files)
+  - git diff --exit-code: 0 (resolved from pre-merge 1 to post-merge 0)
+
+Local report file: reports/implementing_regulations/GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_SOURCE_INTAKE_MERGE_REPORT.txt
+
+Final status: SUCCESS — PR #87 squash-merged. Main HEAD advanced from 424a830 to c597829. All validations green. 2000 tests passed. git diff --exit-code returns 0. Arabic official source governs. Not legal advice.

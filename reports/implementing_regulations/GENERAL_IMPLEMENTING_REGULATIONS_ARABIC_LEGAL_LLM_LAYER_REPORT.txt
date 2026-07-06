@@ -1,0 +1,233 @@
+================================================================================
+GENERAL IMPLEMENTING REGULATIONS ARABIC LEGAL LLM LAYER REPORT
+================================================================================
+
+STAGE:          GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER
+REPO:           al3obdi/saudi-legal-corpus-ai
+BRANCH:         glm/general-implementing-regulations-arabic-legal-llm-layer
+DATE:           2026-07-06
+
+================================================================================
+1. BASELINE CONFIRMATION
+================================================================================
+
+  BASELINE_COMMIT:  c597829d3168c4ac9e19ac0e08502ccb309cc5bf
+  BASELINE_BRANCH:  main
+  CONFIRMED:        YES — git fetch && git pull origin main; HEAD matches baseline
+
+================================================================================
+2. INPUT SOURCE
+================================================================================
+
+  Source intake file:
+    data/implementing_regulations/general/general_implementing_regulations_arabic_source.json
+
+  Source manifest:
+    data/implementing_regulations/general/source_manifest.json
+
+  Source title:     اللائحة التنفيذية لنظام الشركات
+  Source URL:       https://www.uqn.gov.sa/details?p=21325
+  Publication:      1444-6-25 AH / 18-01-2023
+  Parent law:       sa_companies_law_m132_1443
+  Source hash:      0abb819fccff6ba6ac58149046fb3c7769eaf00110b717e21bf478ffbeb7c73e
+
+  Article count:    95
+  Chapter count:    7
+  Form count:       4
+
+  Chapters:
+    1. الباب الأول: أحكام عامة (13 articles)
+    2. الباب الثاني: شركة المساهمة غير المدرجة في السوق المالية (48 articles)
+    3. الباب الثالث: الشركة ذات المسؤولية المحدودة (8 articles)
+    4. الباب الرابع: الشركة غير الربحية (4 articles)
+    5. الباب الخامس: الشركة المهنية (12 articles)
+    6. الباب السادس: تحول الشركات واندماجها وتقسيمها (7 articles)
+    7. الباب السابع: أحكام ختامية (3 articles)
+
+================================================================================
+3. LAYER SUMMARY
+================================================================================
+
+  This stage creates a structured Arabic Legal LLM-ready JSON layer for the
+  95 general implementing-regulation articles and the 4 official forms of the
+  Saudi Companies Law (M/132, 1443H).
+
+  The layer is Arabic-only structuring:
+    - No translation
+    - No English text generated
+    - No Chinese text generated
+    - No trilingual alignment
+    - No public release
+    - No paraphrasing or rewriting of official Arabic text
+    - official_text_ar preserved verbatim from source intake
+    - Article hashes and source provenance preserved
+
+  Each article record includes deterministic metadata for LLM retrieval:
+    - record_id (ir-gen-art-001 through ir-gen-art-095)
+    - corpus_track (implementing_regulations/general)
+    - regulation_scope (general)
+    - language (ar)
+    - governing_text (arabic_official_source)
+    - source_url, source_title, publication dates
+    - chapter_number, chapter_title_ar
+    - article_number, article_ordinal_ar
+    - article_title_ar (extracted deterministically from first line, or null)
+    - official_text_ar (verbatim)
+    - official_text_hash (SHA-256, matching source intake)
+    - legal_status_boundaries
+    - source_manifest_hash
+
+  Forms are in a separate JSON file with record_type "official_form".
+
+================================================================================
+4. ARTICLE RECORDS
+================================================================================
+
+  Total article records:   95
+  Numbering:               Sequential 1–95 (no gaps)
+  Record IDs:              ir-gen-art-001 through ir-gen-art-095
+  Record type:             implementing_regulation_article
+  All have article_title_ar: YES (extracted from official text first line)
+  Hashes match source:     YES (all 95 SHA-256 hashes verified identical)
+
+================================================================================
+5. FORM RECORDS
+================================================================================
+
+  Total form records:      4
+  Record IDs:              ir-gen-form-001 through ir-gen-form-004
+  Record type:             official_form
+  Hashes match source:     YES (all 4 SHA-256 hashes verified identical)
+
+  Forms:
+    1. النموذج رقم (1) — نموذج التوكيل
+    2. النموذج رقم (2) — نموذج طلب الرهن الصادر عن المرتهن
+    3. النموذج رقم (3) — نموذج طلب فك الرهن (بيانات المساهم الراهن)
+    4. النموذج رقم (4) — نموذج طلب فك الرهن
+
+================================================================================
+6. FILES ADDED
+================================================================================
+
+  1. scripts/gen_implementing_regulations_general_arabic_legal_llm.py
+     — Generator script (idempotent, deterministic JSON output)
+
+  2. scripts/validate_implementing_regulations_general_arabic_legal_llm.py
+     — Read-only validator (27 checks)
+
+  3. data/implementing_regulations/general/general_implementing_regulations_arabic_legal_llm.json
+     — Article LLM layer JSON (95 article records)
+
+  4. data/implementing_regulations/general/general_implementing_regulations_arabic_forms_llm.json
+     — Forms LLM layer JSON (4 form records)
+
+  5. tests/test_implementing_regulations_general_arabic_legal_llm.py
+     — Test suite (55 tests)
+
+  6. reports/implementing_regulations/GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER_REPORT.txt
+     — This report
+
+================================================================================
+7. FILES MODIFIED
+================================================================================
+
+  1. Makefile
+     — Added targets: implementing-regulations-general-arabic-legal-llm-data
+                      implementing-regulations-general-arabic-legal-llm-validate
+     — Added to .PHONY list
+
+  2. README.md
+     — Added concise entry for the Arabic Legal LLM layer
+
+  3. STATUS.md
+     — Added concise entry for the Arabic Legal LLM layer
+
+================================================================================
+8. VALIDATION
+================================================================================
+
+  --- make validate (book1) ---
+  PASS
+
+  --- make test ---
+  55 tests passed (test_implementing_regulations_general_arabic_legal_llm.py)
+  Full suite: 2055 tests passed (all existing tests still pass)
+
+  --- make implementing-regulations-intake-scaffold-validate ---
+  PASS
+
+  --- make implementing-regulations-listed-jsc-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-source-validate ---
+  PASS
+
+  --- make implementing-regulations-general-arabic-legal-llm-validate ---
+  PASS (27/27 checks)
+
+================================================================================
+9. IDEMPOTENCE
+================================================================================
+
+  Generator re-run produces identical output:
+    git diff --exit-code → EXIT 0 (no changes)
+
+  This is verified by:
+    - test_generator_is_idempotence in the test suite
+    - Manual re-run: python3 scripts/gen_implementing_regulations_general_arabic_legal_llm.py
+      followed by git diff --exit-code
+
+================================================================================
+10. HYGIENE
+================================================================================
+
+  - Companies Law corpus: NOT MODIFIED
+  - Chinese remediation program: NOT MODIFIED
+  - Listed joint-stock source intake: NOT MODIFIED
+  - General Arabic source intake: NOT MODIFIED (read-only consumption)
+  - No English text generated
+  - No Chinese text generated
+  - No trilingual alignment
+  - No public release
+  - No paraphrasing or rewriting
+  - No summarization
+  - No obligations/rights classification
+  - No legal advice
+  - No claim of official translation
+  - No claim of binding authority beyond Arabic official source
+
+================================================================================
+11. REQUIRED BOUNDARIES
+================================================================================
+
+  - Arabic official source governs
+  - This layer is derived from the general implementing regulations source intake
+  - listed_joint_stock remains a separate specialized implementing-regulation sub-track
+  - English, if later added, is reference/guidance only
+  - Chinese, if later added, is internal reference only
+  - Not official translation
+  - Not legal advice
+
+================================================================================
+12. DISCLAIMER (Arabic)
+================================================================================
+
+  هذه طبقة عربية جاهزة للنماذج اللغوية مشتقة من نص اللائحة التنفيذية
+  العامة لنظام الشركات الصادرة من أم القرى. النص العربي محفوظ حرفيًّا
+  من المصدر الرسمي بلا تلخيص ولا إعادة صياغة. العربية هي اللغة الحاكمة.
+  ليست ترجمة رسمية وليست استشارة قانونية. الشركات المدرجة مسار منفصل متخصص.
+
+================================================================================
+FINAL STATUS
+================================================================================
+
+  STAGE:              GENERAL_IMPLEMENTING_REGULATIONS_ARABIC_LEGAL_LLM_LAYER
+  RESULT:             SUCCESS
+  BASELINE_CONFIRMED: YES (c597829d3168c4ac9e19ac0e08502ccb309cc5bf)
+  BRANCH:             glm/general-implementing-regulations-arabic-legal-llm-layer
+  ARTICLE_RECORDS:    95
+  FORM_RECORDS:       4
+  VALIDATION:         ALL PASS (27 validator checks + 55 tests)
+  IDEMPOTENCE:        CONFIRMED (git diff --exit-code = 0)
+  HYGIENE:            CLEAN — no prohibited modifications
+  PR:                 To be created after review

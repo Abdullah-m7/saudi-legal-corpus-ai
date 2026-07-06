@@ -1,0 +1,56 @@
+============================================================
+MERGE REPORT — PR #86
+Listed Joint-Stock Implementing Regulation Arabic Source Intake
+============================================================
+
+MERGE COMPLETE: YES
+
+PR #86:
+  Title: Add listed joint-stock implementing regulation Arabic source intake
+  Head: 8f278c2779bd378ec6a6a954aab4c03724de05b3
+  Base: 2857993e9993f197138b4d20c454dee655845d25
+  Merge method: squash
+  Merge commit: 424a830f0b9d0ba2650da196eac80466669bdc84
+  PR state: merged
+
+Final main HEAD: 424a830f0b9d0ba2650da196eac80466669bdc84
+
+Local main == origin/main: YES
+  local:  424a830f0b9d0ba2650da196eac80466669bdc84
+  origin: 424a830f0b9d0ba2650da196eac80466669bdc84
+
+CI: GREEN (6/6 check runs passed — Python 3.9, 3.11, 3.12)
+
+Validation:
+  make validate:                                  ALL CHECKS PASSED ✓
+  make test:                                       1955 passed ✓
+  make implementing-regulations-intake-scaffold-validate: ALL CHECKS PASSED ✓ (14/14)
+  make implementing-regulations-listed-jsc-arabic-source-validate: ALL CHECKS PASSED ✓ (18/18)
+  git diff --exit-code:                            0 (clean) ✓
+
+Scope:
+  - Specialized to listed joint-stock companies (شركات المساهمة المدرجة) only
+  - NOT a general implementing regulation for all Companies Law entities
+  - 69 Arabic articles across 14 chapters + 1 appendix
+  - Arabic source intake only — no English/Chinese text generated
+  - No trilingual alignment; no public release
+
+Source:
+  Title: اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة
+  URL: https://www.uqn.gov.sa/decisions-and-regulations/4001295
+  Publication: 1448-1-18 AH / 03-07-2026
+  Issuing authority: مجلس هيئة السوق المالية (CMA board)
+  Legal basis: Companies Law M/132 (1443H)
+  Source hash SHA-256: 38133c8a3c562bbe808008d686c7ff4fd6ff8a718b746490ecc6e9288a2b9a13
+  Intake JSON hash SHA-256: f8dd04cc
+
+Hygiene:
+  - Squash commit message: no tool/model/session/co-author attribution
+  - PR body: no tool/model/session/co-author attribution
+  - Companies Law corpus: unchanged
+  - Chinese remediation program: unchanged
+  - Working tree: clean (only untracked local .txt report files, intentionally kept local)
+
+Local report file: reports/implementing_regulations/LISTED_JOINT_STOCK_ARABIC_SOURCE_INTAKE_MERGE_REPORT.txt
+
+Final status: SUCCESS — PR #86 squash-merged. Main HEAD advanced from 2857993 to 424a830. All validations green. 1955 tests passed. Arabic official source governs. Not legal advice.

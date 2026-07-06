@@ -86,7 +86,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chinese-remediation-program-closure-validate \
         implementing-regulations-intake-scaffold-validate \
         implementing-regulations-listed-jsc-arabic-source-validate \
-        implementing-regulations-general-arabic-source-validate
+        implementing-regulations-general-arabic-source-validate \
+        implementing-regulations-general-arabic-legal-llm-data \
+        implementing-regulations-general-arabic-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -658,6 +660,13 @@ implementing-regulations-listed-jsc-arabic-source-validate:
 # -- General implementing regulations Arabic source intake (95 articles; 7 chapters; 4 forms) --
 implementing-regulations-general-arabic-source-validate:
 	$(PY) scripts/validate_implementing_regulations_general_arabic_source.py
+
+# -- General implementing regulations Arabic Legal LLM layer (95 article records + 4 form records) --
+implementing-regulations-general-arabic-legal-llm-data:
+	$(PY) scripts/gen_implementing_regulations_general_arabic_legal_llm.py
+
+implementing-regulations-general-arabic-legal-llm-validate:
+	$(PY) scripts/validate_implementing_regulations_general_arabic_legal_llm.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

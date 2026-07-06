@@ -1,0 +1,33 @@
+STAGE: Implementing regulations Arabic source intake
+RESULT: NEEDS_OFFICIAL_SOURCE
+BASELINE_CONFIRMED: YES — main @ 2857993e9993f197138b4d20c454dee655845d25
+BRANCH: glm/implementing-regulations-arabic-source-intake (created, but no content ingested)
+SOURCE_STATUS: NOT_AVAILABLE — no official source found
+SOURCE_PROVENANCE:
+  Searched: Bureau of Experts at the Council of Ministers (boe.gov.sa) — search returned no results
+  Searched: Umm Al-Qura gazette (uqn.gov.sa) — no results found
+  Searched: DuckDuckGo for site:boe.gov.sa "اللائحة التنفيذية لنظام الشركات" — no results
+  Searched: Local filesystem (~/saudi-legal-corpus-ai/inputs/, ~/Documents/) — no implementing regulations file
+  Conclusion: The Implementing Regulations of the Saudi Companies Law (M/132, 1443H) do not appear
+  to have been issued or published yet by the Saudi government as of the search date.
+  The Companies Law itself (نظام الشركات، م/132، 1443هـ) was issued by Royal Decree M/132 dated
+  1443/12/01 AH, but no corresponding implementing regulations (اللائحة التنفيذية) have been
+  published on the Bureau of Experts website or in the Umm Al-Qura gazette.
+ARTICLE_COUNT: 0 (no source available)
+EXTRACTION_SUMMARY: No extraction performed — no official source available
+FILES_ADDED: 0 (no content created)
+FILES_MODIFIED: 0 (no files modified)
+VALIDATION: N/A — no intake performed
+IDEMPOTENCE: N/A — no content created
+HYGIENE: Clean — no files modified, no content invented, no text reconstructed, working tree clean
+LOCAL_REPORT_FILE: reports/implementing_regulations/IMPLEMENTING_REGULATIONS_ARABIC_SOURCE_INTAKE_REPORT.txt
+TELEGRAM_REPORT: sent ✓
+PR: None — no content to merge
+FINAL_STATUS: NEEDS_OFFICIAL_SOURCE — the Implementing Regulations of the Saudi Companies Law
+  (M/132, 1443H) do not appear to have been issued or published yet. No official Arabic source
+  text is available on the Bureau of Experts website (boe.gov.sa), the Umm Al-Qura gazette
+  (uqn.gov.sa), or in the local filesystem. Per the task instructions: "If source is missing,
+  stop and return NEEDS_OFFICIAL_SOURCE instead of creating content." No text was invented or
+  reconstructed. The scaffold from PR #85 remains in place and is ready to receive the official
+  Arabic source when it becomes available. Companies Law corpus and Chinese remediation program
+  are unchanged.
