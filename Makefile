@@ -99,7 +99,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-export-primary-arabic-validate \
         corpus-local-search-validate \
         corpus-local-search-eval-validate \
-        corpus-retrieval-context-pack-validate
+        corpus-retrieval-context-pack-validate \
+        corpus-retrieval-prompt-pack-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -732,6 +733,17 @@ corpus-retrieval-context-pack-smoke:
 	$(PY) scripts/build_retrieval_context_pack.py "الجمعية العامة" --limit 3 --format markdown
 	@echo "---"
 	$(PY) scripts/build_retrieval_context_pack.py "التوكيل" --record-type appendix --limit 1 --format json --include-full-text
+
+# -- Corpus retrieval prompt pack (deterministic, offline; builds prompts only) --
+corpus-retrieval-prompt-pack-validate:
+	$(PY) scripts/validate_retrieval_prompt_pack.py
+
+corpus-retrieval-prompt-pack-smoke:
+	$(PY) scripts/build_retrieval_prompt_pack.py "مجلس الإدارة" --limit 3 --mode evidence_brief --format json
+	@echo "---"
+	$(PY) scripts/build_retrieval_prompt_pack.py "الجمعية العامة" --limit 3 --mode cautious_answer_draft --format markdown
+	@echo "---"
+	$(PY) scripts/build_retrieval_prompt_pack.py "التوكيل" --record-type appendix --limit 1 --mode evidence_brief --format json --include-full-text
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \

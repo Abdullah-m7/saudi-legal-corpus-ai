@@ -105,7 +105,14 @@ top results as a structured evidence/context pack (JSON or Markdown) with full
 provenance — deterministic, offline, no embeddings, no API, no network. Not RAG.
 Not legal advice. See
 [`docs/CORPUS_RETRIEVAL_CONTEXT_PACK.md`](docs/CORPUS_RETRIEVAL_CONTEXT_PACK.md).
-Validate: `make corpus-retrieval-context-pack-validate`.
+Validate: `make corpus-retrieval-context-pack-validate`. A **retrieval prompt pack**
+generator takes a query, runs the existing retrieval context pack builder, and
+emits a safe, source-grounded prompt template for future LLM/RAG use — three
+prompt modes (evidence_brief, cautious_answer_draft, citation_check). Builds
+prompts only; does NOT call any model, does NOT generate legal answers, does NOT
+produce legal advice. See
+[`docs/CORPUS_RETRIEVAL_PROMPT_PACK.md`](docs/CORPUS_RETRIEVAL_PROMPT_PACK.md).
+Validate: `make corpus-retrieval-prompt-pack-validate`.
 See **[`STATUS.md`](STATUS.md)** for the authoritative list.
 
 ## Quick navigation
