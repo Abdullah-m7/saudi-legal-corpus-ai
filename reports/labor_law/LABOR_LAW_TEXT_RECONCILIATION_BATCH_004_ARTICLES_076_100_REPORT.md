@@ -119,26 +119,26 @@
 ## 16. ملخص تحديثات extraction_quality_issues.csv
 
 - تمت إضافة 6 صفوف جديدة:
-  - 5 صفوف AMENDED_ARTICLE_BOE_POPUP_REQUIRES_RECONCILIATION للمواد 76، 77، 78، 80، 83، 90.
+  - 5 صفوف AMENDED_ARTICLE_BOE_POPUP_REQUIRES_RECONCILIATION للمواد المعدلة الخمس: 76، 77، 80، 83، 90.
   - 1 صف MUKARRAR_ARTICLE_NEEDS_CHECK للمادة 79 مكرر (ملاحظة هيكلية فقط).
+- المادة 78 (ملغاة/محذوفة): لم تتم إضافة صف جديد لها في هذه الدفعة؛ يوجد صف سابق (eqi_016، DELETED_OR_ABOLISHED_NEEDS_CHECK) من دفعة سابقة ويبقى محمولاً.
 - لم يتم تكرار أي قضية موجودة.
 - إجمالي الصفوف: 98.
 
 ## 17. ملخص تحديثات unresolved_issues_log.csv
 
-- تمت إضافة 5 صفوف جديدة:
-  - 4 صفوف AMENDED_ARTICLE_POPUP_RECONCILIATION للمواد المعدلة 76، 77، 80، 83، 90.
-  - 1 صف DELETED_OR_ABOLISHED_STATUS للمادة 78.
+- تمت إضافة 5 صفوف جديدة من نوع AMENDED_ARTICLE_POPUP_RECONCILIATION للمواد المعدلة الخمس: 76، 77، 80، 83، 90 (issue_083 إلى issue_087).
+- المادة 78 (ملغاة/محذوفة): لم تتم إضافة صف جديد لها في هذه الدفعة؛ حيث يوجد صف سابق لها بالفعل (issue_014، DELETED_OR_ABOLISHED_STATUS) تم إنشاؤه في دفعة سابقة، ويبقى محمولاً (carried forward) دون تغيير.
 - blocking_flag=no لجميع القضايا الجديدة (تم وضع علامة needs_manual_review بأمان).
 - owner_decision_needed_flag=yes.
 - resolution_status=NEEDS_MANUAL_REVIEW.
-- إجمالي الصفوف: 87.
-- إجمالي القضايا غير المحلولة: 45.
+- إجمالي صفوف البيانات في unresolved_issues_log.csv: 87.
+- total_unresolved_issues = 87 (يطابق عدد صفوف البيانات في unresolved_issues_log.csv وفق منهجية المشاريع السابقة).
 
 ## 18. نتيجة readiness_summary.csv
 
 - ingestion_readiness_decision = NOT_READY
-- total_unresolved_issues = 45
+- total_unresolved_issues = 87 (يطابق عدد صفوف البيانات في unresolved_issues_log.csv)
 - total_articles = 247
 - ملخص الملاحظات يذكر الدفعة الرابعة والمواد 76–100 وتضمين المادة 79 مكرر.
 - يذكر عدم توليد نص موحد وأن المطابقة عبر النوافذ المنبثقة تم تطبيقها.
