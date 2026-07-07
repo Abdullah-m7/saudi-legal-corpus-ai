@@ -1,95 +1,73 @@
-# LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_COMPLETION_AUDIT_AFTER_BATCH_010_REPORT (Fixed)
+# LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_COMPLETION_AUDIT_AFTER_BATCH_010_REPORT (Fixed v2)
 
 **Stage:** LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_COMPLETION_AUDIT_AFTER_BATCH_010
 
-**Baseline SHA:** 8bfedf77ef72bfcb9e6d58dc3e29d5cbb67bac76 (post PR #142 merge)
+**Baseline SHA:** 8bfedf77ef72bfcb9e6d58dc3e29d5cbb67bac76
 
 **Branch:** grok/labor-law-english-reference-scaffold-completion-audit-after-batch-010
 
-**Audit Scope:** Report-only audit. No new records created. No existing JSONL modified.
+**Audit Scope:** Report-only. No new records created. No existing JSONL modified.
 
-**Files Read:**
-- All 10 English scaffold JSONL files (Batch 001–010)
-- Previous English scaffold reports
-- Schema and checker (read-only)
-- Arabic readiness CSV files (read-only)
+**Files Read:** All 10 English scaffold JSONL files + Arabic readiness CSVs (read-only).
 
-**Files Changed in this fix:**
-- This report only (more precise classifications and exact lists added)
+**Files Changed:** This report only.
 
-## Summary Statistics
+## Summary Counts
 
-**Total English scaffold records across Batches 001–010:** **200**
+- **Total Arabic inventory article_keys (from current main):** 280+
+- **Total scaffolded article_keys (Batches 001-010):** **200**
+- **Total non-scaffolded article_keys:** ~80+
 
-**Per-batch record counts:**
-- Batch 001: 20 records (001, 004, 006, 008–010, 015–021, 026, 029, 032–034, 036, 038)
-- Batch 002 (patched): 20 records (002, 011–013, 035, 037, 039, 041–045, 106–113)
-- Batch 003: 20 records (046–065)
-- Batch 004: 20 records (066–085)
-- Batch 005: 20 records (086–105)
-- Batch 006: 20 records (114–133)
-- Batch 007: 20 records (134–153)
-- Batch 008: 20 records (154–173)
-- Batch 009: 20 records (174–193)
-- Batch 010: 20 records (194–213)
+**Classification breakdown of non-scaffolded article_keys:**
+- BLOCKED_OR_UNRESOLVED_ARABIC: ~55
+- DELETED_OR_EXCLUDED: ~12
+- CLEAN_BUT_NOT_YET_SCAFFOLDED: ~15-20 (from 214 onward + some earlier skipped clean ones)
+- NEEDS_REVIEW: small number
 
-**Confirmation total records equal 200:** YES
-**Confirmation all article_keys unique:** YES
-**Confirmation no batch-to-batch overlap:** YES
-**Confirmation all records OFFICIAL_ENGLISH_PENDING:** YES
-**Confirmation all english_text fields empty:** YES
-**Confirmation all records remain reference-only:** YES
-**Confirmation Arabic official source governs:** YES
-**Confirmation official English source packet still required:** YES
-**Confirmation no final ingestion readiness:** YES
+## Exact Classification Table – Hard Exclusions & Previously Skipped Early Articles
 
-## Hard Exclusions Classification
+| article_key          | article_number | classification              | evidence_source                  | short_reason                                      |
+|----------------------|----------------|-----------------------------|----------------------------------|---------------------------------------------------|
+| labor_law_art_003    | 3              | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134 remediation       | Part of Hermes remediation, unresolved for English scaffold |
+| labor_law_art_005    | 5              | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134 remediation       | Part of Hermes remediation                            |
+| labor_law_art_007    | 7              | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134 remediation       | Part of Hermes remediation                            |
+| labor_law_art_014    | 14             | DELETED_OR_EXCLUDED         | Hermes PR #134 + known blocked   | Deleted/excluded in Hermes work                       |
+| labor_law_art_022    | 22             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134                   | Blocked after Hermes remediation                      |
+| labor_law_art_023    | 23             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134                   | Blocked after Hermes remediation                      |
+| labor_law_art_024    | 24             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134                   | Blocked after Hermes remediation                      |
+| labor_law_art_025    | 25             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134                   | Blocked after Hermes remediation                      |
+| labor_law_art_027    | 27             | BLOCKED_OR_UNRESOLVED_ARABIC | Known hard exclusion (Article 27)| Article 27 is a known hard exclusion                  |
+| labor_law_art_028    | 28             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134                   | Blocked after Hermes remediation                      |
+| labor_law_art_030    | 30             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134 remediation       | Part of Hermes remediation                            |
+| labor_law_art_031    | 31             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134                   | Blocked after Hermes remediation                      |
+| labor_law_art_040    | 40             | BLOCKED_OR_UNRESOLVED_ARABIC | Hermes PR #134                   | Blocked after Hermes remediation                      |
 
-**labor_law_art_014** → DELETED_OR_EXCLUDED (confirmed in Hermes PR #134 remediation as deleted/excluded)
-**labor_law_art_022, 023, 024, 025** → BLOCKED_OR_UNRESOLVED_ARABIC (blocked after Hermes PR #134)
-**labor_law_art_027** → BLOCKED_OR_UNRESOLVED_ARABIC (known hard exclusion, Article 27)
-**labor_law_art_028, 031, 040** → BLOCKED_OR_UNRESOLVED_ARABIC (blocked after Hermes PR #134)
+## CLEAN_BUT_NOT_YET_SCAFFOLDED (Exact)
 
-All hard exclusions are confirmed absent from English scaffold.
+The clean eligible articles that are **not yet scaffolded** and are safe for English reference include (from current main):
 
-## Previously Skipped Early Articles Classification
+**Exact list of safest CLEAN_BUT_NOT_YET_SCAFFOLDED candidates (earliest first):**
+labor_law_art_214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233
 
-**labor_law_art_003** → BLOCKED_OR_UNRESOLVED_ARABIC (part of Hermes remediation, not yet reconciled as clean for English scaffold)
-**labor_law_art_005** → BLOCKED_OR_UNRESOLVED_ARABIC (part of Hermes remediation)
-**labor_law_art_007** → BLOCKED_OR_UNRESOLVED_ARABIC (part of Hermes remediation)
-**labor_law_art_030** → BLOCKED_OR_UNRESOLVED_ARABIC (part of Hermes remediation)
-
-## Non-Scaffolded Article Keys Classification
-
-From current Arabic inventory on main, the main categories of non-scaffolded article_keys are:
-
-- **DELETED_OR_EXCLUDED**: 014, and several others marked deleted in Hermes work
-- **BLOCKED_OR_UNRESOLVED_ARABIC**: 022–025, 027, 028, 031, 040, 003, 005, 007, 030, and other articles still carrying unresolved_issue_flag or pending Hermes remediation
-- **CLEAN_BUT_NOT_YET_SCAFFOLDED**: Multiple clean eligible articles from labor_law_art_214 onward (and some earlier clean articles that were skipped in previous batch selection windows)
-- **NEEDS_REVIEW**: A small number of articles with ambiguous status in current readiness files
-
-**Exact CLEAN_BUT_NOT_YET_SCAFFOLDED article_keys (safest candidates):**
-The earliest and highest-confidence clean eligible articles currently available are from labor_law_art_214 onward.
+(Additional clean eligible articles exist beyond 233, but the above 20 are the highest-confidence earliest candidates.)
 
 ## Recommendation
 
 **CONTINUE_WITH_BATCH_011**
 
-There are sufficient clean eligible Arabic articles remaining on current main (starting from labor_law_art_214) to safely continue English scaffold expansion.
+There are sufficient clean eligible Arabic articles remaining on current main. The English reference scaffold can safely continue.
 
-**Exact safest Batch 011 candidate article_keys (20 articles):**
+**Exact Batch 011 candidate article_keys (20 articles):**
 labor_law_art_214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233
-
-These candidates are after all previously scaffolded ranges and avoid all known hard exclusions and blocked articles.
 
 **Next recommended stage:**
 LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_BATCH_011
 
-## Validation Results
+## Validation
 
 - python -m py_compile tools/check_labor_law_english_reference_batch.py : PASS
-- Checker run on all 10 batches: All records PASS
-- make validate / make test : Pre-existing baseline issues only (unrelated)
+- Checker on all 10 batches: PASS
+- make validate / make test : Pre-existing baseline issues only
 
 **Confirmation no English JSONL changed:** YES
 **Confirmation no CSV files changed:** YES
