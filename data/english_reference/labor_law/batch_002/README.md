@@ -1,35 +1,21 @@
-# Labor Law English Reference Layer - Batch 002 Scaffold
+# Labor Law English Reference Layer - Batch 002 (Patched)
 
-**Scope:** Second scaffold batch for 20 high-confidence clean Arabic Labor Law articles (no overlap with Batch 001).
+**Scope:** 20 clean Arabic Labor Law articles after Arabic remediation consistency patch (post PR #134 merge).
 
-**Purpose:** Extend the English reference scaffold. All records OFFICIAL_ENGLISH_PENDING pending official English source packet.
+**Purpose:** Maintain accurate English reference scaffold aligned with current Arabic governing status.
 
-**Selection Criteria:**
-- Clean/reconciled from official Arabic source
-- No unresolved_issue_flag
-- Not deleted/abolished
-- Not amendment-popup/manual/pending/renumbered/mukarrar
-- No overlap with Batch 001 article_keys
-- Not dependent on unmerged Hermes PR #131
-- Early clean articles preferred
+**Patch Summary:**
+- Removed 8 ineligible articles (deleted or blocked after PR #134)
+- Replaced with 8 new clean eligible articles (106-113)
+- Updated notes for PR #134 captured articles
 
-**Official English Source Status:** SOURCE_PACKET_REQUIRED (no official English Labor Law guidance source present).
+**Official English Source Status:** SOURCE_PACKET_REQUIRED
 
 All records have:
 - english_reference_status = OFFICIAL_ENGLISH_PENDING
 - english_text = ""
 - source_packet_required = true
 
-**Records:** 20
-**No overlap with Batch 001:** Confirmed
-
-**Excluded articles (dependent on unmerged Hermes PR #131 or blocked):**
-- labor_law_art_003
-- labor_law_art_005
-- labor_law_art_007
-- labor_law_art_027 (DO_NOT_INGEST_YET / BLOCKED_POPUP_BASE_STRUCTURE)
-- labor_law_art_030
-
-**Validation:** Run the existing checker from Batch 001.
+**Records:** 20 (maintained)
 
 No legal advice. No official translation claim. Reference layer only.
