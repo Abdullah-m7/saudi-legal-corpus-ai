@@ -34,12 +34,12 @@ No official English Labor Law guidance source is present in the repository (conf
 - reports/labor_law/LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_BATCH_001_REPORT.md
 - tools/check_labor_law_english_reference_batch.py
 
-**Checker summary:**
-The checker validates JSONL parsing, required fields, const values (reference_only=true, arabic_official_source_governs=true, etc.), pending status rules (empty english_text), and absence of prohibited claims.
+**Checker summary (FIXED):**
+The checker now **actually loads the --schema JSON file** and performs real schema validation (required fields, additionalProperties=false, types, const, enum, minLength, minimum) without external dependencies. It also performs **duplicate article_key detection** across the entire JSONL batch. All original business rules (PENDING/CAPTURED logic, prohibited claims, const flags) are preserved and integrated.
 
 **Validation results:**
 - python -m py_compile tools/check_labor_law_english_reference_batch.py : PASS
-- python tools/check_labor_law_english_reference_batch.py --jsonl ... : All 20 records PASS
+- python tools/check_labor_law_english_reference_batch.py --jsonl data/english_reference/labor_law/batch_001/labor_law_english_reference_batch_001.jsonl --schema schemas/labor_law_english_reference_record.schema.json : All 20 records PASS + duplicate check PASS
 - make validate / make test : Pre-existing baseline issues only (unrelated to this English scaffold); no new failures introduced. No files mutated.
 
 **Non-overlap with Hermes confirmation:** YES - No modifications to any docs/labor_law_reconciliation/REMEDIATION_* files, tools/check_labor_law_remediation_batch.py, or any Arabic remediation artifacts/CSVs/branches.
@@ -58,6 +58,6 @@ The checker validates JSONL parsing, required fields, const values (reference_on
 
 **Recommended next stage:** LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_BATCH_002 (or source packet acquisition for official English guidance).
 
-**Explicit statement that PR is open and not merged:** Branch pushed; PR will be opened against main but intentionally not merged per stage instructions.
+**Explicit statement that PR is open and not merged:** Branch pushed with fixes; PR #130 remains open against main and intentionally not merged per stage instructions.
 
 **No legal advice. Not an official translation. Arabic official source governs. English is reference/guidance only.**
