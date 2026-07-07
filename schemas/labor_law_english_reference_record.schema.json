@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/labor_law_english_reference_record.schema.json",
+  "title": "Labor Law English Reference Record (Batch Scaffold)",
+  "description": "One record per clean Arabic Labor Law article for English reference layer scaffold. English is reference/guidance only. Arabic official source governs. No legal advice, no official translation, no legal interpretation. This is a scaffold stage only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "law_id", "layer", "article_key", "article_number",
+    "arabic_governing_status", "english_reference_status", "english_text",
+    "official_english_source_url", "official_english_source_status",
+    "source_packet_required", "reference_only", "arabic_official_source_governs",
+    "no_legal_advice", "no_official_translation_claim", "unresolved_arabic_issue_flag"
+  ],
+  "properties": {
+    "law_id": { "type": "string", "const": "labor_law" },
+    "layer": { "type": "string", "const": "english_reference" },
+    "article_key": { "type": "string", "minLength": 1 },
+    "article_number": { "type": "integer", "minimum": 1 },
+    "arabic_governing_status": { "type": "string", "enum": ["CLEAN_RECONCILED_OFFICIAL_ARABIC", "PENDING_ARABIC", "EXCLUDED"] },
+    "english_reference_status": { "type": "string", "enum": ["OFFICIAL_ENGLISH_PENDING", "OFFICIAL_ENGLISH_CAPTURED"] },
+    "english_text": { "type": "string" },
+    "official_english_source_url": { "type": "string" },
+    "official_english_source_status": { "type": "string", "enum": ["SOURCE_PACKET_REQUIRED", "OFFICIAL_SOURCE_REFERENCED"] },
+    "source_packet_required": { "type": "boolean" },
+    "reference_only": { "type": "boolean", "const": true },
+    "arabic_official_source_governs": { "type": "boolean", "const": true },
+    "no_legal_advice": { "type": "boolean", "const": true },
+    "no_official_translation_claim": { "type": "boolean", "const": true },
+    "unresolved_arabic_issue_flag": { "type": "boolean", "const": false },
+    "exclusion_reason": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}
