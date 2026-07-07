@@ -6,12 +6,19 @@
 
 **Branch:** grok/labor-law-english-reference-layer-scaffold-batch-002
 
-**Batch 002 scope:** 20 additional high-confidence clean Arabic Labor Law articles (no overlap with Batch 001).
+**Batch 002 scope:** 20 additional high-confidence clean Arabic Labor Law articles (no overlap with Batch 001, and no dependency on Hermes PR #131).
 
 **Selected article_keys:**
-labor_law_art_002, labor_law_art_003, labor_law_art_005, labor_law_art_007, labor_law_art_011, labor_law_art_012, labor_law_art_013, labor_law_art_014, labor_law_art_022, labor_law_art_023, labor_law_art_024, labor_law_art_025, labor_law_art_027, labor_law_art_028, labor_law_art_030, labor_law_art_031, labor_law_art_035, labor_law_art_037, labor_law_art_039, labor_law_art_040
+labor_law_art_002, labor_law_art_011, labor_law_art_012, labor_law_art_013, labor_law_art_014, labor_law_art_022, labor_law_art_023, labor_law_art_024, labor_law_art_025, labor_law_art_028, labor_law_art_031, labor_law_art_035, labor_law_art_037, labor_law_art_039, labor_law_art_040, labor_law_art_041, labor_law_art_042, labor_law_art_043, labor_law_art_044, labor_law_art_045
 
-**Confirmation no overlap with Batch 001:** YES - All 20 article_keys are different from Batch 001's 20 articles.
+**Confirmation no overlap with Batch 001:** YES - All 20 article_keys are different from Batch 001.
+
+**Confirmation no dependency on Hermes PR #131:** YES - None of the selected articles are part of Hermes remediation work in PR #131.
+
+**Article 27 exclusion:** labor_law_art_027 was excluded because it is blocked/open (DO_NOT_INGEST_YET / BLOCKED_POPUP_BASE_STRUCTURE) and must never be included in English scaffold.
+
+**Excluded because dependent on unmerged Hermes PR #131 or blocked/open:**
+labor_law_art_003, labor_law_art_005, labor_law_art_007, labor_law_art_027, labor_law_art_030
 
 **Selection criteria:**
 - Clean/reconciled from official Arabic source (TEXT_RECONCILED_BATCH_*)
@@ -19,7 +26,8 @@ labor_law_art_002, labor_law_art_003, labor_law_art_005, labor_law_art_007, labo
 - Not deleted/abolished
 - Not amendment-popup/manual/pending/renumbered/mukarrar/structural review
 - No overlap with Batch 001
-- Early clean articles from batches 001-002 preferred
+- No dependency on unmerged Hermes PR #131
+- Early clean articles preferred
 
 **Official English source status:** SOURCE_PACKET_REQUIRED
 No official English Labor Law guidance source present in repository.
@@ -36,30 +44,31 @@ No official English Labor Law guidance source present in repository.
 - reports/labor_law/LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_BATCH_002_REPORT.md
 
 **Checker summary:**
-Used existing checker from Batch 001 (no modifications). Validates schema compliance, required fields, const values, PENDING rules, and duplicate article_key (within this batch and implicitly against previous via selection).
+Used existing checker from Batch 001 (no modifications). Validates schema compliance, required fields, const values, PENDING rules, and duplicate article_key.
 
 **Validation results:**
-- python -m py_compile tools/check_labor_law_english_reference_batch.py : PASS (existing)
-- python tools/check_labor_law_english_reference_batch.py --jsonl data/english_reference/labor_law/batch_002/labor_law_english_reference_batch_002.jsonl --schema schemas/labor_law_english_reference_record.schema.json : All 20 records PASS + no duplicates within batch
-- No overlap with Batch 001 article_keys: Confirmed manually via selection
+- python -m py_compile tools/check_labor_law_english_reference_batch.py : PASS
+- python tools/check_labor_law_english_reference_batch.py --jsonl data/english_reference/labor_law/batch_002/labor_law_english_reference_batch_002.jsonl --schema schemas/labor_law_english_reference_record.schema.json : All 20 records PASS + no duplicates
+- No overlap with Batch 001: Confirmed
+- None of the excluded articles (003,005,007,027,030) appear in final Batch 002: Confirmed
 - make validate / make test : Pre-existing baseline issues only (unrelated); no new failures
 
-**Non-overlap with Hermes confirmation:** YES - No modifications to any Hermes remediation files, branches (including PR #131 and hermes/labor-law-amendment-popup-remediation-pilot-articles-001-015), or tools.
+**Non-overlap with Hermes confirmation:** YES - No modifications to any Hermes remediation files, branches (including PR #131), or tools.
 
-**No CSV modification confirmation:** YES - No changes to any reconciliation CSVs.
+**No CSV modification confirmation:** YES
 
-**No Arabic remediation confirmation:** YES - No popup remediation or unresolved issue handling.
+**No Arabic remediation confirmation:** YES
 
-**No final ingestion confirmation:** YES - Scaffold only; no consolidated text or ingestion.
+**No final ingestion confirmation:** YES
 
-**English reference-only confirmation:** YES - All records explicitly OFFICIAL_ENGLISH_PENDING with empty english_text; reference_only=true, no_legal_advice=true, no_official_translation_claim=true.
+**English reference-only confirmation:** YES - All records explicitly OFFICIAL_ENGLISH_PENDING with empty english_text.
 
-**Arabic official source governs confirmation:** YES - All records reference CLEAN_RECONCILED_OFFICIAL_ARABIC.
+**Arabic official source governs confirmation:** YES
 
-**No legal advice / no official translation confirmation:** YES - Explicit flags and pending status; no English text invented.
+**No legal advice / no official translation confirmation:** YES
 
-**Recommended next stage:** LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_BATCH_003 (continue adding clean non-overlapping articles) or source packet acquisition.
+**Recommended next stage:** LABOR_LAW_ENGLISH_REFERENCE_LAYER_SCAFFOLD_BATCH_003
 
-**Explicit statement that PR is open and not merged:** Branch pushed; PR will be opened against main but intentionally not merged per stage instructions.
+**Explicit statement that PR is open and not merged:** Branch pushed with fixes; PR #132 remains open against main and intentionally not merged.
 
 **No legal advice. Not an official translation. Arabic official source governs. English is reference/guidance only.**
