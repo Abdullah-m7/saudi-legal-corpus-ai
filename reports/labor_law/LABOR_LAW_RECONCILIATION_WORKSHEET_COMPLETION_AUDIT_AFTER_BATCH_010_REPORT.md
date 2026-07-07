@@ -412,17 +412,44 @@ PASS: Labor Law reconciliation batch structural check completed
 
 ### 16.1 مخاطر غير حاجبة (non-blocking risks)
 
-1. **مقالات معدّلة معلّقة (amended articles with popup reconciliation needed):** 106 مادة معدّلة تحتاج معالجة يدوية لدمج النص الأساسي مع نص نافذة التعديل قبل الاستيعاب. موثّقة في `unresolved_issues_log.csv` (114 قضية) و `extraction_quality_issues.csv`.
+1. **مقالات معدّلة معلّقة (amended articles with popup reconciliation needed):** 106 مادة معدّلة تحتاج استراتيجية لاحقة لتحديد ما إذا كان النص العربي الرسمي الحالي يمكن التقاطه مباشرة من BOE أو مصدر رسمي عربي آخر. إذا تعذّر التقاط النص الرسمي الحالي بوضوح، يجب أن تبقى هذه المواد بوضع `DO_NOT_INGEST_YET` / `needs_manual_review`. **لا يجوز إنشاء نص قانوني موحد من النص الأساسي مع نافذة التعديل.** لا يوجد أي تفويض بدمج أو توليف النص الأساسي مع نص النافذة المنبثقة (no base+popup synthesis authorized by this audit). موثّقة في `unresolved_issues_log.csv` (114 قضية) و `extraction_quality_issues.csv`.
 
 2. **مقالات محذوفة/ملغاة:** 30 مادة محذوفة/ملغاة موثّقة بـ `DO_NOT_INGEST` — لا تحتاج استيعابًا.
 
 3. **مقالات معاد ترقيمها:** 5 مواد معاد ترقيمها تحتاج معالجة يدوية لتأكيد الترقيم الحالي.
 
-4. **مقالات مكررة (mukarrar):** مادتان مكررتان (11 مكرر و 131 مكرر) تحتاجان تحققًا يدويًا.
+4. **مقالات مكررة (mukarrar):** راجع قسم 16.3 أدناه للحصول على توضيح مفصل حول عدّ المقالات المكررة.
 
 5. **اختلاف تنسيق معرّفات eqi:** معرّفات `eqi_52` إلى `eqi_60` تستخدم تنسيقًا بدون حشو صفر، بينما المعرّفات الأقدم تستخدم حشو صفر (`eqi_001`). اختلاف تجميلي غير مؤثر.
 
 6. **تباين العدد المتوقع للدفعة 010:** المواد 240 و242 و246 و247 غير موجودة في المخزون ولا في BOE. هذا ملاحظة تدقيق وليس خطأً هيكليًا.
+
+### 16.3 توضيح عدّ المقالات المكررة (mukarrar count clarification)
+
+**الوقائع الملاحظة:**
+
+- `readiness_summary.csv` يسجّل `total_mukarrar_articles = 2`.
+- `article_inventory.csv` يحتوي على صفّين فقط بـ `mukarrar_flag = yes`:
+  - `labor_law_art_079_mukarrar` (المادة 79 مكرر)
+  - `labor_law_art_229_mukarrar` (المادة 229 مكرر)
+- الدفعة 010 تشمل المادة 229 مكرر كصف نظيف تم التقاطه بمصدر `MUKARRAR_ARTICLE_TEXT_CAPTURED` وحالة `RECONCILED_FROM_BOE_OFFICIAL_AR`.
+- بالإضافة إلى ذلك، توجد مقالتان في الدفعات تحملان علم `mukarrar_or_renumbered_or_deleted_flag = mukarrar` لكنهما لا تحملان `mukarrar_flag = yes` في المخزون:
+  - `labor_law_art_011` (المادة 11) في الدفعة 001 — علم popup = mukarrar، حالة `DO_NOT_INGEST_YET`
+  - `labor_law_art_131` (المادة 131) في الدفعة 006 — علم popup = mukarrar، حالة `DO_NOT_INGEST_YET`
+
+**التحليل:**
+
+- `readiness_summary.csv total_mukarrar_articles = 2` يقيس عدّ المخزون فقط (article_inventory.csv `mukarrar_flag = yes`)، وهو يتطابق مع صفّي المخزون 79 مكرر و 229 مكرر.
+- المادتان 11 و 131 لهما علم `mukarrar` في حقل `mukarrar_or_renumbered_or_deleted_flag` داخل ملفات الدفعات فقط، لكن `mukarrar_flag` في `article_inventory.csv` لهما ليس `yes` — مما يعني أن المخزون لا يصنّفهما كمقالات مكررة مستقلة، بل كمقالات معدّلة لها علاقة بـ mukarrar.
+- المادة 229 مكرر **مدرجة** في `article_inventory.csv` بـ `mukarrar_flag = yes` **ومشمولة** في عدّ `readiness_summary total_mukarrar_articles = 2`.
+
+**النتيجة:**
+
+- `readiness_summary total_mukarrar_articles = 2` **متسق** مع `article_inventory.csv` (صفّان فقط بـ `mukarrar_flag = yes`).
+- عدم تطابق ظاهري بين ذكر "مادتان مكررتان (11 مكرر و 131 مكرر)" في النسخة الأصلية من هذا التقرير وبين الواقع الفعلي: المادتان 11 و 131 ليستا مكررتين مستقلتين في المخزون، بل هما مقالتان معدّلتان لهما علم `mukarrar` في الدفعات فقط. المقالتان المكررتان الحقيقيتان المسجلتان في المخزون هما 79 مكرر و 229 مكرر.
+- **هذا توضيح تدقيق (audit clarification) وليس تناقضًا هيكليًا يتطلب تصحيح ملفات CSV.**
+- **لم يتم تعديل `readiness_summary.csv` أو `article_inventory.csv` في مرحلة التدقيق هذه.**
+- يوصى في مرحلة لاحقة بمراجعة ما إذا كان ينبغي إضافة `mukarrar_flag = yes` للمادتين 11 و 131 في `article_inventory.csv` أو ما إذا كان وضعهما الحالي (مقالات معدّلة لها علاقة بـ mukarrar) صحيحًا.
 
 ### 16.2 مخاطر حاجبة (blocking risks)
 
@@ -460,6 +487,7 @@ PASS: Labor Law reconciliation batch structural check completed
 | إجمالي صفوف الدفعات 001–010 | 247 |
 | التكرارات الحقيقية | 0 (التكرارات في article_number_current مقصودة ومبررة) |
 | الفجوات | 0 (لا توجد صفوف خارج الدفعات) |
+| mukarrar (مكرر) | readiness_summary = 2 (79 مكرر و 229 مكرر) — متسق مع المخزون؛ راجع قسم 16.3 |
 | readiness_summary total_unresolved_issues | 114 |
 | unresolved_issues_log row count | 114 |
 | extraction_quality_issues row count | 125 |
