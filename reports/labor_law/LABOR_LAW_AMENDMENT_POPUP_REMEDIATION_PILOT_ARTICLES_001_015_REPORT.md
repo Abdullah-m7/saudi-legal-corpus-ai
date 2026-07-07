@@ -4,7 +4,8 @@
 LABOR_LAW_AMENDMENT_POPUP_REMEDIATION_PILOT_ARTICLES_001_015
 
 ## رقم الالتزام الأساسي (Baseline SHA)
-090086f21ede838beab7c8e5184a00c9afb4c7c8
+- Original execution baseline: 090086f21ede838beab7c8e5184a00c9afb4c7c8
+- PR base after main advanced by the English scout report: c6a885e1ff4124b9f63a9dcde03132be055aef4d
 
 ## الفرع
 hermes/labor-law-amendment-popup-remediation-pilot-articles-001-015
@@ -63,8 +64,11 @@ hermes/labor-law-amendment-popup-remediation-pilot-articles-001-015
 1 مادة محظورة:
 - المادة 27 (labor_law_art_027): النافذة المنبثقة للمرسوم م/44 تصف استبدال كلمة "قنوات" محل كلمتي "وحدة" و"وحدات" فقط، ولا تقدم النص الكامل الحالي بصيغة "لتكون بالنص الآتي". لا يمكن توليد أو تركيب النص. تبقى DO_NOT_INGEST_YET.
 
-## عدد المواد المتبقية للمراجعة اليدوية
-0 مادة (جميع المواد إما التُقطت أو حُظرت بتوثيق).
+## عدد المواد المتبقية أو المحظورة في هذه الدفعة
+1 مادة: المادة 27 بقيت DO_NOT_INGEST_YET / BLOCKED_POPUP_BASE_STRUCTURE لأنها لا تعرض نصاً كاملاً حالياً، بل تعرض استبدال كلمة فقط. لم يتم توليد أو تركيب النص.
+- 14 مادة التُقطت وأُغلقت مسائلها بدليل
+- 1 مادة محظورة وتبقى مفتوحة / DO_NOT_INGEST_YET
+- 100 مسألة متبقية إجمالياً (كانت 114، أُغلق 14)
 
 ## المسائل المغلقة
 14 مسألة مغلقة بدليل:
@@ -94,7 +98,7 @@ hermes/labor-law-amendment-popup-remediation-pilot-articles-001-015
 5. worksheets/labor_law/reconciliation_scaffold/readiness_summary.csv — تحديث العدد من 114 إلى 100
 
 ## ملف جديد
-- worksheets/labor_law/remediation_batches/labor_law_amendment_popup_remediation_pilot_articles_001_015.csv (15 صفاً)
+- worksheets/labor_law/remediation_batches/labor_law_amendment_popup_remediation_pilot_articles_001_015.csv (15 صف بيانات + صف رأس)
 
 ## الأساس الدليلي لكل إغلاق
 كل مسألة مغلقة لديها:
