@@ -2,17 +2,9 @@
 
 **Scope:** Fifth scaffold batch for 20 additional high-confidence clean Arabic Labor Law articles (no overlap with Batch 001–004).
 
-**Purpose:** Continue building the English reference scaffold. All records OFFICIAL_ENGLISH_PENDING. Independent of unmerged Hermes PR #134.
+**Purpose:** Continue building the English reference scaffold. All records OFFICIAL_ENGLISH_PENDING.
 
-**Selection Criteria:**
-- Clean/reconciled from official Arabic source
-- No unresolved_issue_flag
-- Not deleted/abolished
-- Not amendment-popup/manual/pending/renumbered/mukarrar
-- No overlap with previous batches
-- Not dependent on unmerged Hermes PR #134
-- Article 27 excluded (blocked)
-- Early clean articles preferred
+**Note on consistency:** After Hermes PR #134 and Grok PR #137 (Batch 002 consistency patch), Batch 005 articles (086-105) remain fully valid with no overlap against the patched Batch 002.
 
 **Official English Source Status:** SOURCE_PACKET_REQUIRED
 
@@ -22,8 +14,7 @@ All records have:
 - source_packet_required = true
 
 **Records:** 20
-**No overlap with previous batches:** Confirmed
-**No dependency on unmerged PR #134:** Confirmed
+**No overlap with previous batches or patched Batch 002:** Confirmed
 
 **Validation:** Run the existing checker.
 
