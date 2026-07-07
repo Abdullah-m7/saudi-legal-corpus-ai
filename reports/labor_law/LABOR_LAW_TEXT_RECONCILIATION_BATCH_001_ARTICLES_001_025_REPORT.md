@@ -12,15 +12,15 @@
 ## 3. الملفات المعدلة والمنشأة
 
 ### ملفات منشأة:
-1. `worksheets/labor_law/reconciliation_batches/labor_law_text_reconciliation_batch_001_articles_001_025.csv` — ملف تطابق النصوص للدفعة الأولى
-2. `reports/labor_law/LABOR_LAW_TEXT_RECONCILIATION_BATCH_001_ARTICLES_001_025_REPORT.md` — هذا التقرير
+1. `worksheets/labor_law/reconciliation_batches/labor_law_text_reconciliation_batch_001_articles_001_025.csv`
+2. `reports/labor_law/LABOR_LAW_TEXT_RECONCILIATION_BATCH_001_ARTICLES_001_025_REPORT.md`
 
 ### ملفات معدلة:
-1. `worksheets/labor_law/reconciliation_scaffold/article_inventory.csv` — تحديث 25 صفاً للمواد 1–25 (الإصلاح: المادة 2 إلى NEEDS_MANUAL_CAPTURE / DO_NOT_INGEST)
-2. `worksheets/labor_law/reconciliation_scaffold/article_source_checklist.csv` — تحديث 25 صفاً للمواد 1–25 (الإصلاح: المادة 2 إلى NEEDS_MANUAL_CAPTURE)
-3. `worksheets/labor_law/reconciliation_scaffold/extraction_quality_issues.csv` — 57 صف (الإصلاح: إضافة صف لقضية المادة 2)
-4. `worksheets/labor_law/reconciliation_scaffold/unresolved_issues_log.csv` — 45 صفاً (الإصلاح: تحديث قضية المادة 2)
-5. `worksheets/labor_law/reconciliation_scaffold/readiness_summary.csv` — تحديث الملخص (الإصلاح: ملاحظة المادة 2)
+1. `worksheets/labor_law/reconciliation_scaffold/article_inventory.csv`
+2. `worksheets/labor_law/reconciliation_scaffold/article_source_checklist.csv`
+3. `worksheets/labor_law/reconciliation_scaffold/extraction_quality_issues.csv`
+4. `worksheets/labor_law/reconciliation_scaffold/unresolved_issues_log.csv`
+5. `worksheets/labor_law/reconciliation_scaffold/readiness_summary.csv`
 
 ## 4. المصدر المستخدم
 
@@ -30,9 +30,11 @@
 
 ## 5. الطريقة المستخدمة
 
-استخراج نص المادة من نموذج DOM الرسمي (BOE_DOM_ARTICLE_TEXT) لكل مادة من المواد 1–25، مع استبعاد نص ملاحظات التعديلات (article_item_popup) والاحتفاظ بالنص الرسمي المعروض للمادة فقط.
+استخراج نص المادة من نموذج DOM الرسمي (BOE_DOM_ARTICLE_TEXT) لكل مادة من المواد غير المعدلة، مع استبعاد نص ملاحظات التعديلات (article_item_popup).
 
-**إصلاح المادة 2:** بعد الفحص الدقيق لنموذج DOM الرسمي، تبين أن الصفحة الرسمية نفسها تعرض تسمية «صاحب العمل» في الموضع الذي يجب أن تظهر فيه تسمية «العامل». وقد أكدت ملاحظة تعديل المرسوم الملكي رقم م/134 أن التسمية الصحيحة هي «العامل». لذلك تم تخفيض حالة المادة 2 إلى NEEDS_MANUAL_CAPTURE ولا يُسمح بتخزين النص المنزوح كنص رسمي مطبق.
+**إصلاح المادة 2 (الإصلاح الأول):** تبين أن نص DOM الرسمي يحمل انزياحاً في التسمية (صاحب العمل بدلاً من العامل). تم تأجيل المادة 2 إلى NEEDS_MANUAL_CAPTURE.
+
+**إصلاح المواد المعدلة (الإصلاح الثاني):** تبين أن صفحة BOE الرسمية تعرض النص الأصلي/الأساسي في نص المادة الرئيسي، بينما تظهر تفاصيل التعديل من خلال زر «تعديلات المادة» المنبثق. لذلك، استخراج نص DOM الرئيسي فقط لا يكفي للمواد المعدلة. تم تخفيض جميع المواد المعدلة إلى DO_NOT_INGEST_YET.
 
 ## 6. المواد المشمولة
 
@@ -41,122 +43,128 @@
 ## 7. عدد صفوف ملف الدفعة
 
 - **عدد الصفوف:** 25 صف بيانات (بالإضافة إلى صف العناوين)
-- **عدد المواد الملتقطة من BOE:** 24 مادة (المواد 1، 3–25)
-- **عدد المواد المؤجلة:** 1 مادة (المادة 2 — NEEDS_MANUAL_CAPTURE)
+- **النصوص الملتقطة من BOE:** 13 مادة (المواد غير المعدلة: 1، 4، 6، 8–10، 15–21)
+- **المواد المؤجلة:** 12 مادة (المادة 2 + 11 مادة معدلة: 3، 5، 7، 11–14، 22–25)
 
 ## 8. عدد النصوص الرسمية الملتقطة من BOE
 
-- **العدد:** 24 مادة (المواد 1 و3–25 تم التقاطها بنجاح)
-- **المادة 2:** مؤجلة إلى NEEDS_MANUAL_CAPTURE بسبب انزياح التسمية في نص DOM الرسمي
+- **العدد:** 13 مادة (المواد غير المعدلة فقط)
+- **المواد المعدلة (11):** مؤجلة لأن نص DOM الرئيسي قد يكون النص الأصلي/الأساسي
+- **المادة 2:** مؤجلة بسبب انزياح التسمية في نص DOM
 
 ## 9. عدد المواد التي تحتاج مراجعة يدوية
 
-- **العدد:** 2 مادة
-  - **المادة 2:** مؤجلة بالكامل إلى NEEDS_MANUAL_CAPTURE؛ النص المنزوح محذوف من official_arabic_text_reconciled؛ لا يُسمح بالإدخال حتى إعادة الالتقاط اليدوي من المصدر الرسمي
-  - **المادة 11:** مسألة المادة المكرر المتبقية من مرحلة سابقة (ليست عنصراً مستقلاً في BOE)
+- **العدد:** 12 مادة
+  - **المادة 2:** NEEDS_MANUAL_CAPTURE (انزياح التسمية في DOM)
+  - **المواد 3، 5، 7، 11، 12، 13، 14، 22، 23، 24، 25:** DO_NOT_INGEST_YET (مواد معدلة؛ نص DOM قد يكون أصلي/أساسي؛ التعديل يظهر من خلال popup)
 
 ## 10. ملخص مقارنة المرشح المرفوع
 
 - **المرشح المرفوع:** غير متاح محلياً للمقارنة المباشرة
-- **النتيجة:** لم تتم مقارنة مباشرة مع ملف مرشح مرفوع
-- **المادة 2:** BOE DOM نفسه يحمل انزياح التسمية (صاحب العمل بدلاً من العامل) — تم تأكيده بملاحظة تعديل م/134؛ النص المنزوح محذوف وتم تخفيض الحالة إلى uploaded_candidate_corrupted
+- **النتيجة:** لم تتم مقارنة مباشرة
 
 ## 11. معالجة المادة الأولى
 
-تم العثور على نص المادة الأولى في عنصر div.article_item ولكن مع عنوان فصل (الفصل الأول: التعريفات) في نفس العنصر. تم استخراج النص الرسمي من الحاوية HTMLContainer: «يسمى هذا النظام نظام العمل.» — والنص سليم ومكتمل. تم تحديد طريقة المصدر كـ BOE_DOM_ARTICLE_TEXT.
+تم العثور على نص المادة الأولى في عنصر div.article_item وتم استخراج النص الرسمي: «يسمى هذا النظام نظام العمل.» — سليم ومكتمل. غير معدلة، لذا تبقى RECONCILED_FROM_BOE_OFFICIAL_AR.
 
-## 12. معالجة المادة الثانية — إصلاح قبل الدمج
+## 12. معالجة المادة الثانية
+
+تبقى NEEDS_MANUAL_CAPTURE من الإصلاح الأول. النص المنزوح محذوف. لا يُسمح بالإدخال حتى إعادة الالتقاط اليدوي.
+
+## 13. معالجة المواد المعدلة — إصلاح ثانٍ قبل الدمج
 
 ### المشكلة الحاجبة:
-كانت المادة 2 في الدفعة الأصلية (commit d5f9157) تحتوي على نص BOE الملتقط كنص رسمي مطبق، ولكن هذا النص يحمل انزياح التسمية المعروف: التسمية «صاحب العمل» تظهر في الموضع الذي يجب أن تظهر فيه «العامل»، ونص التعريف الذي يليها هو تعريف العامل وليس تعريف صاحب العمل. تسمية «العامل» مفقودة تماماً من النص الملتقط.
+كانت الدفعة تعامل المواد المعدلة كنصوص مطبقة بنجاح (RECONCILED_FROM_BOE_OFFICIAL_AR) بينما يذكر تتبع التعديلات أن لها تعديلات.
+
+### سلوك BOE الحرج:
+صفحة BOE الرسمية تعرض النص الأصلي/الأساسي في نص المادة الرئيسي، بينما تظهر تفاصيل التعديل أو النص المعدل من خلال زر «تعديلات المادة» المنبثق (article_item_popup). لذلك، استخراج نص DOM الرئيسي فقط لا يكفي للمواد المعدلة.
 
 ### التحقق من BOE:
-تم فحص نموذج DOM الرسمي لـ BOE وتأكد ما يلي:
-- الصفحة الرسمية نفسها تعرض التسمية «صاحب العمل:» في الموضع الذي يجب أن تكون فيه «العامل:»
-- نص التعريف «كل شخص طبيعي يعمل لمصلحة صاحب عمل وتحت إدارته أو إشرافه مقابل أجر» هو تعريف العامل وليس صاحب العمل
-- ملاحظة تعديل المرسوم الملكي رقم م/134 تنص صراحة على «تعديل تعريف العامل» مما يؤكد أن التسمية الصحيحة هي «العامل»
-- التسمية «العامل» غير موجودة كعنصر strong مستقل في النص الرئيسي المعروض
-
-### الخيار المطبق: Option B — تأجيل إلى NEEDS_MANUAL_CAPTURE
-- official_arabic_text_reconciled: فارغ
-- official_arabic_text_hash_sha256: فارغ
-- official_arabic_text_length_chars: 0
-- official_arabic_text_source_method: NEEDS_MANUAL_CAPTURE
-- uploaded_candidate_match_status: uploaded_candidate_corrupted
-- uploaded_candidate_issue_type: article_2_label_shift
-- reconciliation_status: NEEDS_MANUAL_REVIEW
-- ready_for_future_ingestion_flag: needs_manual_review
+تم التحقق من خلال فحص نماذج DOM للمواد 3، 5، 7:
+- المادة 3: النص الرئيسي ينتهي بـ «المواطنون متساوون في حق العمل» (أصلي)، بينما popup م/134 يضيف «دون أي تمييز على أساس الجنس...» (معدل)
+- المادة 5: النص الرئيسي يقول «كل عقد يلتزم» (أصلي)، بينما popup م/46 يقول «كل عقد عمل يلتزم» (معدل — يضيف «عمل»)
+- المادة 7: النص الرئيسي يستخدم ترقيم رقمي (1، 2، 3...)، بينما popup التعديل يستخدم ترقيم حرفي (أ، ب، ج...)
 
 ### النتيجة:
-لا يوجد نص منزوح للمادة 2 مخزن كنص رسمي مطبق. النص المنزوح محذوف بالكامل.
+تم تخفيض جميع المواد المعدلة إلى DO_NOT_INGEST_YET مع تفريغ official_arabic_text_reconciled. لم يتم توليد أي نص قانوني موحد.
 
-## 13. ملخص تحديثات article_inventory
+## 14. ملخص تحديثات article_inventory
 
-- **عدد الصفوف المعدلة:** 25
-- **المادة 2:** official_text_capture_status = NEEDS_MANUAL_CAPTURE، reconciliation_status = DO_NOT_INGEST، unresolved_issue_flag = needs_manual_check
-- **باقي المواد 1 و3–25:** official_text_capture_status = OFFICIAL_TEXT_CAPTURED_BATCH، reconciliation_status = TEXT_RECONCILED_BATCH_001
-- **إجمالي صفوف article_inventory.csv:** 247 صف (لم يتغير)
+- **عدد الصفوف المعدلة:** 25 (12 بمشاكل + 13 نظيفة)
+- **المواد المعدلة (11):** official_text_capture_status = NEEDS_MANUAL_CAPTURE، reconciliation_status = DO_NOT_INGEST، unresolved_issue_flag = needs_manual_check
+- **المادة 2:** NEEDS_MANUAL_CAPTURE / DO_NOT_INGEST (من الإصلاح الأول)
+- **المواد غير المعدلة (13):** OFFICIAL_TEXT_CAPTURED_BATCH / TEXT_RECONCILED_BATCH_001
+- **إجمالي الصفوف:** 247 (لم يتغير)
 
-## 14. ملخص تحديثات article_source_checklist
+## 15. ملخص تحديثات article_source_checklist
 
-- **عدد الصفوف المعدلة:** 25
-- **المادة 2:** source_location_status = NEEDS_MANUAL_ARTICLE_LOCATION، official_text_capture_status = NEEDS_MANUAL_CAPTURE
-- **باقي المواد 1 و3–25:** source_location_status = ARTICLE_TEXT_CAPTURED_FROM_BOE، official_text_capture_status = OFFICIAL_TEXT_CAPTURED_BATCH
-- **arabic_source_verified_by_owner_flag:** pending_owner_review للجميع
-- **إجمالي صفوف article_source_checklist.csv:** 247 صف (لم يتغير)
+- **المواد المعدلة (11):** source_location_status = SOURCE_PAGE_IDENTIFIED، official_text_capture_status = NEEDS_MANUAL_CAPTURE
+- **المادة 2:** NEEDS_MANUAL_ARTICLE_LOCATION / NEEDS_MANUAL_CAPTURE (من الإصلاح الأول)
+- **المواد غير المعدلة (13):** ARTICLE_TEXT_CAPTURED_FROM_BOE / OFFICIAL_TEXT_CAPTURED_BATCH
+- **إجمالي الصفوف:** 247 (لم يتغير)
 
-## 15. ملخص تحديثات extraction_quality_issues
+## 16. ملخص تحديثات extraction_quality_issues
 
-- **الصفوف الموجودة قبل الإصلاح:** 56
-- **الصفوف بعد الإصلاح:** 57 (إضافة صف واحد جديد لقضية المادة 2)
-- **الصف الجديد:** issue_057 — ARTICLE_2_LABEL_SHIFT — NEEDS_MANUAL_REVIEW
-- **ملاحظة:** prior batch capture carried known label-shift pattern; BOE DOM displays صاحب العمل where العامل should be (confirmed by M/134 amendment popup); Article 2 must not be treated as cleanly reconciled until corrected from official BOE source; official text deferred to NEEDS_MANUAL_CAPTURE
+- **الصفوف قبل الإصلاح:** 57
+- **الصفوف بعد الإصلاح:** 68 (إضافة 11 صف جديد)
+- **الصفوف الجديدة:** AMENDED_ARTICLE_BOE_POPUP_REQUIRES_RECONCILIATION لكل من المواد 3، 5، 7، 11، 12، 13، 14، 22، 23، 24، 25
 
-## 16. ملخص تحديثات unresolved_issues_log
+## 17. ملخص تحديثات unresolved_issues_log
 
-- **الصفوف:** 45 (لم يتغير العدد)
-- **تحديث قضية المادة 2 (issue_044):**
-  - blocking_flag = no
-  - owner_decision_needed_flag = yes
-  - resolution_status = NEEDS_MANUAL_REVIEW
-  - تم تحديث الوصف ليعكس أن النص المنزوح محذوف والحالة مؤجلة
+- **الصفوف قبل الإصلاح:** 45
+- **الصفوف بعد الإصلاح:** 56 (إضافة 11 صف جديد)
+- **الصفوف الجديدة:** AMENDED_ARTICLE_POPUP_RECONCILIATION لكل من المواد المعدلة
 
-## 17. نتيجة readiness_summary
+## 18. نتيجة readiness_summary
 
-- **ingestion_readiness_decision:** NOT_READY (لم يتغير)
-- **total_unresolved_issues:** 45
-- **ملاحظة:** Batch 001 is populated for Articles 1-25, but Article 2 is not cleanly reconciled until clean official-source capture/manual review resolves the label-shift issue. 25 articles in batch; 24 captured from BOE; 1 (Article 2) deferred to NEEDS_MANUAL_CAPTURE. No final ingestion. No registry/export/runtime/validator changes.
+- **ingestion_readiness_decision:** NOT_READY
+- **total_unresolved_issues:** 56
+- **ملاحظة:** Batch 001 is populated, but amended articles in Articles 1-25 require amendment-popup/current-text reconciliation before future ingestion. No generated consolidation was performed. 25 articles in batch; 13 cleanly reconciled from BOE; 12 need manual review (11 amended + Article 2 label shift). No final ingestion. No registry/export/runtime/validator changes.
 
-## 18. ما لم يتم فعله عمداً
+## 19. ما لم يتم فعله عمداً
 
-- لم يتم إدخال نصوص نظام العمل في السجل النهائي للمدونة
+- لم يتم إدخال نصوص نظام العمل في السجل النهائي
 - لم يتم إنشاء سجلات مواد نهائية خارج ملف الدفعة
-- لم يتم تعديل سجلات التصدير أو السجل أو منطقة التشغيل أو المدققات
+- لم يتم تعديل سجلات التصدير أو السجل أو التشغيل أو المدققات
 - لم يتم إنشاء سجلات باللغة الإنجليزية
 - لم يتم إنشاء تطابق ثنائي أو ثلاثي اللغات
-- لم يتم نسخ نصوص مصدرية أو ملفات PDF أو HTML أو ملفات مرفوعة
+- لم يتم توليد أو تركيب نص قانوني موحد من النص الأصلي + ملاحظة التعديل
 - لم يتم إنشاء ملفات JSON أو JSONL أو XLSX أو PDF
-- لم يتم إضافة RAG أو واجهة مستخدم أو API أو LLM أو شبكة أو تضمينات
 
-## 19. تأكيد عدم حدوث إدخال نهائي
+## 20. تأكيد عدم حدوث إدخال نهائي
 
-أؤكد أن نصوص نظام العمل لم يتم إدخالها في السجل النهائي للمدونة. النصوص الرسمية موجودة فقط في ملف الدفعة المخصص. المادة 2 لا تحتوي على أي نص رسمي مطبق (فارغ — NEEDS_MANUAL_CAPTURE).
+أؤكد أن نصوص نظام العمل لم يتم إدخالها في السجل النهائي للمدونة. النصوص الرسمية موجودة فقط في ملف الدفعة المخصص للمواد غير المعدلة (13 مادة). المواد المعدلة (12 مادة) لا تحتوي على نص رسمي مطبق.
 
-## 20. تأكيد عدم إنشاء سجلات إنجليزية أو تطابق لغوي
+## 21. تأكيد عدم إنشاء سجلات إنجليزية أو تطابق لغوي
 
-أؤكد أنه لم يتم إنشاء سجلات باللغة الإنجليزية أو تطابق ثنائي أو ثلاثي اللغات. النصوص الملتقطة عربية فقط.
+أؤكد أنه لم يتم إنشاء سجلات باللغة الإنجليزية أو تطابق ثنائي أو ثلاثي اللغات.
 
-## 21. تأكيد عدم التزام ملفات ممنوعة
+## 22. تأكيد عدم التزام ملفات ممنوعة
 
-أؤكد أنه لم يتم التزام أي ملفات مصدرية أو PDF رسمية أو HTML من BOE أو ملفات مرفوعة أو ملفات تفريغ مصدر. لم يتم إنشاء ملفات JSON أو JSONL أو XLSX أو PDF.
+أؤكد أنه لم يتم التزام أي ملفات مصدرية أو PDF رسمية أو HTML أو ملفات مرفوعة أو ملفات تفريغ مصدر.
 
-## 22. نتائج التحقق
+## 23. نتائج التحقق
 
-- `make validate` — تم التشغيل (النتيجة مسجلة أدناه)
-- `make test` — تم التشغيل (14 فشل: نفس عدد الفشل على main؛ 9 فشل chinese_remediation معروف مسبقاً + 5 test_generator_is_byte_stable artifacts؛ لا فشل جديد)
-- لا توجد فشل جديد متوقع خارج الفشل المعروف مسبقاً
+- `make validate` — PASS
+- `make test` — 14 فشل (نفس عدد الفشل على main؛ لا فشل جديد)
 
-## 23. الحدود القانونية والمنتجية
+## 24. إصلاح PR #115 قبل الدمج (الإصلاح الثاني)
+
+تم إصلاح PR #115 مرة أخرى قبل الدمج بسبب قضية المواد المعدلة:
+1. قد تعرض BOE النص الأصلي/الأساسي في النص الرئيسي وتفاصيل التعديل من خلال popup
+2. استخراج نص DOM الرئيسي فقط لا يكفي للمواد المعدلة
+3. تم إعادة تقييم المواد المعدلة المشمولة في هذه الدفعة
+4. المواد غير المعدلة النظيفة تبقى مطبقة (13 مادة)
+5. المادة 2 تبقى NEEDS_MANUAL_CAPTURE من الإصلاح السابق
+6. المواد المعدلة مخفضة إلى DO_NOT_INGEST_YET
+7. لم يتم توليد أي نص قانوني موحد
+8. لم يحدث إدخال نهائي
+9. لم تحدث تغييرات على السجل أو التصدير أو التشغيل أو المدققات
+10. لم تُنشأ سجلات إنجليزية أو تطابق لغوي
+11. المصدر العربي الرسمي هو الحاكم
+12. تم تحديث نص PR ليعكس العدد الحقيقي بعد الإصلاح
+
+## 25. الحدود القانونية والمنتجية
 
 - المصدر العربي الرسمي هو الحاكم
 - ليست استشارة قانونية
@@ -165,26 +173,13 @@
 - لا يوجد استنتاج قانوني مولّد
 - لا يوجد حكم على الصحة القانونية
 - السجلات الإنجليزية هي مرجعية فقط
-- الترجمة الإنجليزية الرسمية هي داعم مرجعي فقط
 - السجلات الصينية هي مرجع داخلي فقط
 - لا يوجد تطابق ثلاثي اللغات
 - لا يوجد ادعاء إصدار عام
-- لا يوجد RAG أو LLM أو API أو شبكة أو تضمينات أو واجهة مستخدم
+- لا يوجد RAG أو LLM أو API أو شبكة أو تضمينات
 - repository-owner legal review active; external legal review optional for enterprise/official adoption
 
-## 24. إصلاح PR #115 قبل الدمج
-
-تم إصلاح PR #115 قبل الدمج بسبب قضية المادة 2 الحاجبة:
-1. كان صف المادة 2 الأصلي يحمل نمط انزياح التسمية المعروف (صاحب العمل بدلاً من العامل)
-2. تم تخفيض المادة 2 إلى NEEDS_MANUAL_CAPTURE / NEEDS_MANUAL_REVIEW
-3. لا يوجد نص منزوح للمادة 2 مخزن كنص رسمي مطبق
-4. النص العربي الرسمي يبقى فقط في ملف CSV للدفعة
-5. لم يحدث إدخال نهائي
-6. لم تحدث تغييرات على السجل أو التصدير أو التشغيل أو المدققات
-7. لم تُنشأ سجلات إنجليزية أو تطابق لغوي
-8. لم تُلتزم ملفات مصدرية أو تفريغات
-
-## 25. المرحلة التالية الموصى بها
+## 26. المرحلة التالية الموصى بها
 
 LABOR_LAW_TEXT_RECONCILIATION_BATCH_002_ARTICLES_026_050
 (فقط بعد دمج PR #115 المُصحح)
