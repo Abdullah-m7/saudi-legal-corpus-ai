@@ -1,0 +1,331 @@
+{
+  "stage": "PDPL_ARABIC_LAW_ARTICLE_INVENTORY_QA",
+  "baseline": "cb117736e01296049d248adbfbaa290e035a63fe",
+  "inventory_file": "sources/pdpl/inventory/pdpl_arabic_law_article_inventory.jsonl",
+  "summary_file": "sources/pdpl/inventory/pdpl_arabic_law_article_inventory_summary.json",
+  "heading_index_file": "sources/pdpl/ocr/pdpl_arabic_law_ocr_article_heading_index.json",
+  "record_count": 43,
+  "jsonl_parse_status": "PASS",
+  "required_fields_status": "PASS",
+  "sequence_status": "PASS",
+  "heading_status": "PASS",
+  "page_status": "PASS",
+  "boundary_status": "PASS",
+  "summary_consistency_status": "PASS",
+  "inventory_status_counts": {
+    "READY_FOR_NEXT_LAYER_REVIEW": 42,
+    "NEEDS_MANUAL_REVIEW": 1
+  },
+  "manual_review_articles": [
+    {
+      "article_number": 32,
+      "article_key": "pdpl_law_art_032",
+      "severity": "BLOCKING_FOR_VERIFIED_TEXT_NOT_BLOCKING_FOR_INVENTORY_STRUCTURE",
+      "reason": "OCR text suspiciously short; requires manual review against Arabic PDF before verified text layer."
+    }
+  ],
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    {
+      "article_number": 32,
+      "article_key": "pdpl_law_art_032",
+      "type": "SUSPICIOUSLY_SHORT_TEXT",
+      "severity": "BLOCKING_FOR_VERIFIED_TEXT_NOT_BLOCKING_FOR_INVENTORY_STRUCTURE",
+      "description": "OCR text is suspiciously short ('ملفاة .' — 7 chars after heading). Requires manual review against Arabic PDF before verified text layer.",
+      "current_status": "NEEDS_MANUAL_REVIEW"
+    },
+    {
+      "article_number": 1,
+      "article_key": "pdpl_law_art_001",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=5, '0'→'ب'=0, ';'→'؛'=3, ','→'،'=2",
+      "counts": {
+        "article_number": 1,
+        "article_key": "pdpl_law_art_001",
+        "digit_9_likely_waw": 5,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 3,
+        "ascii_comma": 2
+      }
+    },
+    {
+      "article_number": 2,
+      "article_key": "pdpl_law_art_002",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=1, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=0",
+      "counts": {
+        "article_number": 2,
+        "article_key": "pdpl_law_art_002",
+        "digit_9_likely_waw": 1,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 4,
+      "article_key": "pdpl_law_art_004",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=2, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=0",
+      "counts": {
+        "article_number": 4,
+        "article_key": "pdpl_law_art_004",
+        "digit_9_likely_waw": 2,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 7,
+      "article_key": "pdpl_law_art_007",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=1, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=0",
+      "counts": {
+        "article_number": 7,
+        "article_key": "pdpl_law_art_007",
+        "digit_9_likely_waw": 1,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 9,
+      "article_key": "pdpl_law_art_009",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=1, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 9,
+        "article_key": "pdpl_law_art_009",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 1,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 10,
+      "article_key": "pdpl_law_art_010",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 10,
+        "article_key": "pdpl_law_art_010",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 13,
+      "article_key": "pdpl_law_art_013",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=2, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=0",
+      "counts": {
+        "article_number": 13,
+        "article_key": "pdpl_law_art_013",
+        "digit_9_likely_waw": 2,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 14,
+      "article_key": "pdpl_law_art_014",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=1, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=0",
+      "counts": {
+        "article_number": 14,
+        "article_key": "pdpl_law_art_014",
+        "digit_9_likely_waw": 1,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 16,
+      "article_key": "pdpl_law_art_016",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=1",
+      "counts": {
+        "article_number": 16,
+        "article_key": "pdpl_law_art_016",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 1
+      }
+    },
+    {
+      "article_number": 18,
+      "article_key": "pdpl_law_art_018",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=1, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=0",
+      "counts": {
+        "article_number": 18,
+        "article_key": "pdpl_law_art_018",
+        "digit_9_likely_waw": 1,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 19,
+      "article_key": "pdpl_law_art_019",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 19,
+        "article_key": "pdpl_law_art_019",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 20,
+      "article_key": "pdpl_law_art_020",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=1, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 20,
+        "article_key": "pdpl_law_art_020",
+        "digit_9_likely_waw": 1,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 23,
+      "article_key": "pdpl_law_art_023",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=1, '0'→'ب'=0, ';'→'؛'=0, ','→'،'=0",
+      "counts": {
+        "article_number": 23,
+        "article_key": "pdpl_law_art_023",
+        "digit_9_likely_waw": 1,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 0,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 30,
+      "article_key": "pdpl_law_art_030",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=3, '0'→'ب'=1, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 30,
+        "article_key": "pdpl_law_art_030",
+        "digit_9_likely_waw": 3,
+        "digit_0_likely_ba": 1,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 31,
+      "article_key": "pdpl_law_art_031",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 31,
+        "article_key": "pdpl_law_art_031",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 33,
+      "article_key": "pdpl_law_art_033",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 33,
+        "article_key": "pdpl_law_art_033",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 36,
+      "article_key": "pdpl_law_art_036",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=1, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=1",
+      "counts": {
+        "article_number": 36,
+        "article_key": "pdpl_law_art_036",
+        "digit_9_likely_waw": 1,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 1
+      }
+    },
+    {
+      "article_number": 37,
+      "article_key": "pdpl_law_art_037",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 37,
+        "article_key": "pdpl_law_art_037",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    },
+    {
+      "article_number": 39,
+      "article_key": "pdpl_law_art_039",
+      "type": "OCR_CHARACTER_SUBSTITUTIONS",
+      "severity": "NON_BLOCKING",
+      "description": "OCR substitutions detected: '9'→'و'=0, '0'→'ب'=0, ';'→'؛'=1, ','→'،'=0",
+      "counts": {
+        "article_number": 39,
+        "article_key": "pdpl_law_art_039",
+        "digit_9_likely_waw": 0,
+        "digit_0_likely_ba": 0,
+        "ascii_semicolon": 1,
+        "ascii_comma": 0
+      }
+    }
+  ],
+  "ocr_defect_counts": {
+    "digit_9_likely_waw": 19,
+    "digit_0_likely_ba": 2,
+    "ascii_semicolon": 13,
+    "ascii_comma": 4
+  },
+  "qa_decision": "PASS_WITH_MANUAL_REVIEW_REQUIRED_FOR_ARTICLE_32",
+  "recommended_next_stage": "PDPL_ARABIC_LAW_ARTICLE_32_MANUAL_SOURCE_REVIEW"
+}
