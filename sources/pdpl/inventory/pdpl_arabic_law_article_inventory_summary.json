@@ -1,0 +1,27 @@
+{
+  "stage": "PDPL_ARABIC_LAW_ARTICLE_INVENTORY_FROM_REVIEWED_OCR",
+  "baseline": "0fd20b125fc6ffc967c0f544c8826675a4b6b12d",
+  "source_ocr_artifact": "sources/pdpl/ocr/pdpl_arabic_law_ocr.txt",
+  "source_review_findings": "sources/pdpl/ocr/pdpl_arabic_law_ocr_review_findings.json",
+  "source_heading_index": "sources/pdpl/ocr/pdpl_arabic_law_ocr_article_heading_index.json",
+  "article_count": 43,
+  "first_article_key": "pdpl_law_art_001",
+  "last_article_key": "pdpl_law_art_043",
+  "missing_articles": [],
+  "duplicate_articles": [],
+  "inventory_status_counts": {
+    "READY_FOR_NEXT_LAYER_REVIEW": 42,
+    "NEEDS_MANUAL_REVIEW": 1
+  },
+  "manual_review_articles": [
+    {
+      "article_number": 32,
+      "article_key": "pdpl_law_art_032",
+      "reason": "OCR text suspiciously short; requires manual review against Arabic PDF."
+    }
+  ],
+  "english_used_for_correction": false,
+  "translation_performed": false,
+  "legal_interpretation_performed": false,
+  "recommended_next_stage": "PDPL_ARABIC_LAW_ARTICLE_INVENTORY_QA"
+}
