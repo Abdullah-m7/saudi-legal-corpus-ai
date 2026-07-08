@@ -236,13 +236,11 @@ def main():
     print("PDPL Arabic Law Next-Layer Records Validator")
     print("=" * 70)
 
-    # 1. Schema file exists and parses as JSON
-    check(os.path.isfile(SCHEMA_PATH), "Check 1 FAIL: Schema file does not exist")
-    schema = None
-    if os.path.isfile(SCHEMA_PATH):
-        schema = load_json_file(SCHEMA_PATH)
-        check(schema is not None, "Check 1 FAIL: Schema file does not parse as JSON")
-    print(f"[1] Schema file exists and parses: {'PASS' if schema is not None else 'FAIL'}")
+    # 1. Schema file exists and parses as JSON (single check)
+    schema = load_json_file(SCHEMA_PATH) if os.path.isfile(SCHEMA_PATH) else None
+    schema_exists_and_parses = os.path.isfile(SCHEMA_PATH) and schema is not None
+    check(schema_exists_and_parses, "Check 1 FAIL: Schema file missing or does not parse as JSON")
+    print(f"[1] Schema file exists and parses: {'PASS' if schema_exists_and_parses else 'FAIL'}")
 
     # 2. Records JSONL file exists
     check(os.path.isfile(RECORDS_PATH), "Check 2 FAIL: Records JSONL file does not exist")
@@ -294,19 +292,19 @@ def main():
     check(schema_ok, "Check 7 FAIL: Some records do not satisfy schema constraints")
     print(f"[7] Schema constraints satisfied: {'PASS' if schema_ok else 'FAIL'}")
 
-    # 8. article_number sequence is exactly 1 through 43
+    # 8. article_number sequence is exactly 1 through 43 (exact JSONL order)
     article_numbers = [r.get("article_number") for r in parsed_records]
     expected_sequence = list(range(1, EXPECTED_RECORD_COUNT + 1))
-    seq_ok = sorted(article_numbers) == expected_sequence
-    check(seq_ok, "Check 8 FAIL: article_number sequence is not 1..43")
-    print(f"[8] article_number sequence 1..43: {'PASS' if seq_ok else 'FAIL'}")
+    seq_ok = article_numbers == expected_sequence
+    check(seq_ok, "Check 8 FAIL: article_number sequence is not 1..43 in JSONL order")
+    print(f"[8] article_number sequence 1..43 (exact JSONL order): {'PASS' if seq_ok else 'FAIL'}")
 
-    # 9. article_key sequence is exactly pdpl_law_art_001 through pdpl_law_art_043
+    # 9. article_key sequence is exactly pdpl_law_art_001 through pdpl_law_art_043 (exact JSONL order)
     article_keys = [r.get("article_key") for r in parsed_records]
     expected_keys = [f"pdpl_law_art_{i:03d}" for i in range(1, EXPECTED_RECORD_COUNT + 1)]
-    keys_seq_ok = sorted(article_keys) == expected_keys
-    check(keys_seq_ok, "Check 9 FAIL: article_key sequence is not pdpl_law_art_001..043")
-    print(f"[9] article_key sequence pdpl_law_art_001..043: {'PASS' if keys_seq_ok else 'FAIL'}")
+    keys_seq_ok = article_keys == expected_keys
+    check(keys_seq_ok, "Check 9 FAIL: article_key sequence is not pdpl_law_art_001..043 in JSONL order")
+    print(f"[9] article_key sequence pdpl_law_art_001..043 (exact JSONL order): {'PASS' if keys_seq_ok else 'FAIL'}")
 
     # 10. No duplicate article_number
     seen_numbers = set()
@@ -450,12 +448,13 @@ def main():
 
     # 19. Mutation guard — validator is read-only, no file writes
     # (This is a static guarantee: this script performs no write operations.)
+    check(True, "Check 19 FAIL: Mutation guard failed")
     print(f"[19] Mutation guard (read-only): PASS (no file writes performed)")
 
     # Summary
     print("=" * 70)
     total_checks = 19
-    print(f"Checks passed: {checks_passed + 1}/{total_checks}")  # +1 for check 19 (always pass)
+    print(f"Checks passed: {checks_passed}/{total_checks}")
     print(f"Checks failed: {len(failures)}")
 
     if failures:
