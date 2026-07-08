@@ -1,0 +1,35 @@
+{
+  "stage": "PDPL_ARABIC_LAW_OCR_REVIEW_BEFORE_INVENTORY",
+  "baseline": "6a6f4df9ad464d417fa7409e251d927dde608461",
+  "source_ocr_artifact": "sources/pdpl/ocr/pdpl_arabic_law_ocr.txt",
+  "source_manifest": "sources/pdpl/ocr/pdpl_arabic_law_ocr_manifest.json",
+  "source_quality_report": "sources/pdpl/ocr/pdpl_arabic_law_ocr_quality_report.md",
+  "page_marker_count": 16,
+  "page_marker_status": "ALL_16_PRESENT_NO_MISSING_NO_DUPLICATES",
+  "article_heading_count": 43,
+  "article_heading_status": "ALL_43_ARTICLES_1_TO_43_PRESENT_SEQUENCE_COMPLETE",
+  "article_sequence_review": {
+    "first_article": "المادة الأولى",
+    "last_article": "المادة الثالثة والأربعون",
+    "missing_article_numbers": [],
+    "ambiguous_article_numbers": []
+  },
+  "known_ocr_defects_review": {
+    "footer_logo_garbage": "15 lines of SDAIA footer/logo garbage across pages (e.g. '٥٨٨ الهيئة السعودية للبيانات والذكاء الاصطناعي ]مطس^ / & 32 تس3'). Safely ignorable during inventory — does not interfere with article text.",
+    "digit_mixing": "Some numbers use Arabic-Indic digits (١٢٣) and some use ASCII (123). Minor cosmetic issue, non-blocking.",
+    "rare_character_substitutions": "34 occurrences of '9' substituted for 'و' (e.g. 'أ9' for 'أو', '9فقا' for 'وفقا'). 4 occurrences of '0' for 'ب'. 13 ASCII ';' for Arabic '؛'. 4 ASCII ',' for Arabic '،'. Total frequency is low relative to 26,833 chars — non-blocking for inventory.",
+    "article_32_review": "Article 32 (المادة الثانية والثلاثون) shows only 'ملفاه.' (7 chars after heading). This is suspiciously short. The OCR likely failed to capture the full article text from the source PDF. However, this does NOT block article segmentation — Article 33 begins cleanly immediately after. Flagged for manual review during inventory but non-blocking for segmentation."
+  },
+  "inventory_readiness": "READY_FOR_PDPL_ARABIC_LAW_ARTICLE_INVENTORY",
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    "Article 32 OCR text is suspiciously short ('ملفاه.') — requires manual review during inventory stage",
+    "34 occurrences of '9'→'و' character substitution — non-blocking, can be handled during inventory",
+    "15 footer/logo garbage lines — safely ignorable",
+    "4 occurrences of '0'→'ب' substitution — non-blocking",
+    "13 ASCII ';' for Arabic '؛' — non-blocking",
+    "4 ASCII ',' for Arabic '،' — non-blocking",
+    "Article 36 heading detection caught extra preceding text ('المادة في حالة العود...') due to inline text before heading — heading itself is correct"
+  ],
+  "recommended_next_stage": "PDPL_ARABIC_LAW_ARTICLE_INVENTORY_FROM_REVIEWED_OCR"
+}
