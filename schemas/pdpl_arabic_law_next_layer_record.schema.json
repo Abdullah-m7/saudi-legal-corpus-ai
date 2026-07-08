@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://al3obdi.github.io/saudi-legal-corpus-ai/schemas/pdpl_arabic_law_next_layer_record.schema.json",
+  "title": "PDPL Arabic Law Next-Layer Record Schema",
+  "description": "JSON Schema for Arabic PDPL law next-layer records derived from reviewed OCR inventory. The Arabic PDF remains the governing source. Records are NOT official verified legal text. This schema does not authorize legal interpretation. This schema does not authorize ingestion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "law_key",
+    "law_component",
+    "language",
+    "record_layer",
+    "article_number",
+    "article_key",
+    "arabic_heading",
+    "article_text",
+    "article_text_source_field",
+    "source_inventory_file",
+    "source_summary_file",
+    "source_ocr_artifact",
+    "source_pdf_sha256",
+    "source_status",
+    "official_text_status",
+    "governing_source_note",
+    "page_start",
+    "page_end",
+    "ocr_review_flags",
+    "english_used_for_correction",
+    "translation_performed",
+    "legal_interpretation_performed",
+    "ready_for_next_layer"
+  ],
+  "properties": {
+    "law_key": {
+      "description": "Law identifier. Fixed to 'pdpl' for the Personal Data Protection Law.",
+      "type": "string",
+      "enum": ["pdpl"]
+    },
+    "law_component": {
+      "description": "Component of the law. Fixed to 'law' for the main law text.",
+      "type": "string",
+      "enum": ["law"]
+    },
+    "language": {
+      "description": "Language of the record. Fixed to 'ar' for Arabic.",
+      "type": "string",
+      "enum": ["ar"]
+    },
+    "record_layer": {
+      "description": "Record layer identifier. Fixed to PDPL_ARABIC_LAW_NEXT_LAYER_PREP.",
+      "type": "string",
+      "enum": ["PDPL_ARABIC_LAW_NEXT_LAYER_PREP"]
+    },
+    "article_number": {
+      "description": "Article number within the PDPL law. Integer from 1 to 43.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 43
+    },
+    "article_key": {
+      "description": "Unique article key following the pattern pdpl_law_art_NNN.",
+      "type": "string",
+      "pattern": "^pdpl_law_art_[0-9]{3}$"
+    },
+    "arabic_heading": {
+      "description": "Arabic heading text for the article. Must be non-empty.",
+      "type": "string",
+      "minLength": 1
+    },
+    "article_text": {
+      "description": "Article text derived from reviewed OCR. Must be non-empty. This is NOT official verified legal text.",
+      "type": "string",
+      "minLength": 1
+    },
+    "article_text_source_field": {
+      "description": "Source field name for the article text. Fixed to 'article_text_ocr'.",
+      "type": "string",
+      "enum": ["article_text_ocr"]
+    },
+    "source_inventory_file": {
+      "description": "Path to the source inventory JSONL file.",
+      "type": "string",
+      "enum": ["sources/pdpl/inventory/pdpl_arabic_law_article_inventory.jsonl"]
+    },
+    "source_summary_file": {
+      "description": "Path to the source inventory summary JSON file.",
+      "type": "string",
+      "enum": ["sources/pdpl/inventory/pdpl_arabic_law_article_inventory_summary.json"]
+    },
+    "source_ocr_artifact": {
+      "description": "Path to the source OCR text artifact.",
+      "type": "string",
+      "enum": ["sources/pdpl/ocr/pdpl_arabic_law_ocr.txt"]
+    },
+    "source_pdf_sha256": {
+      "description": "SHA-256 hash of the source PDF. Must match the known PDPL Arabic law PDF hash.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "enum": ["0bb6d1eb6a85450af4d4eb74b9e87bd2c8f62abab0eb0474087ffcbdf5e2292c"]
+    },
+    "source_status": {
+      "description": "Source status. Fixed to REVIEWED_OCR_INVENTORY_READY_FOR_NEXT_LAYER.",
+      "type": "string",
+      "enum": ["REVIEWED_OCR_INVENTORY_READY_FOR_NEXT_LAYER"]
+    },
+    "official_text_status": {
+      "description": "Official text status. Fixed to REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT. Records are NOT official verified legal text.",
+      "type": "string",
+      "enum": ["REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT"]
+    },
+    "governing_source_note": {
+      "description": "Note indicating the governing source. Must be non-empty. Arabic PDF remains the governing source.",
+      "type": "string",
+      "minLength": 1
+    },
+    "page_start": {
+      "description": "Starting page number in the source PDF. Integer from 1 to 16.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 16
+    },
+    "page_end": {
+      "description": "Ending page number in the source PDF. Integer from 1 to 16.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 16
+    },
+    "ocr_review_flags": {
+      "description": "Array of OCR review flags. May be empty.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "english_used_for_correction": {
+      "description": "Must be false. No English-to-Arabic correction is permitted.",
+      "type": "boolean",
+      "const": false
+    },
+    "translation_performed": {
+      "description": "Must be false. No translation is permitted.",
+      "type": "boolean",
+      "const": false
+    },
+    "legal_interpretation_performed": {
+      "description": "Must be false. No legal interpretation is permitted.",
+      "type": "boolean",
+      "const": false
+    },
+    "ready_for_next_layer": {
+      "description": "Must be true. Indicates the record is ready for the next layer.",
+      "type": "boolean",
+      "const": true
+    }
+  }
+}
