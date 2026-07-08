@@ -1,0 +1,20 @@
+{
+  "stage": "PDPL_SOURCE_PACKET_OCR_PREP",
+  "baseline": "4be4a067dce08d598ee79fb04cd5641e06cb709b",
+  "source_zip_filename": "PDPL_SDAIA.zip",
+  "source_zip_sha256": "d9409fba7d63a7fc4b4bd86c3f54da5a066303e7df02461b7839159763c8d9f3",
+  "target_pdf_filename": "PDPL_نظام_حماية_البيانات_الشخصية_عربي.pdf",
+  "target_pdf_sha256": "0bb6d1eb6a85450af4d4eb74b9e87bd2c8f62abab0eb0474087ffcbdf5e2292c",
+  "target_pdf_pages": 16,
+  "ocr_text_artifact": "sources/pdpl/ocr/pdpl_arabic_law_ocr.txt",
+  "ocr_tooling": "EasyOCR 1.7.2 (Arabic model, CPU mode, 300 DPI rendering via PyMuPDF/fitz)",
+  "ocr_language": "Arabic",
+  "ocr_scope": "PDPL Arabic Law PDF only",
+  "excluded_files": [
+    "PDPL_اللائحة_التنفيذية_عربي.pdf",
+    "PDPL_Personal_Data_Protection_Law_English.pdf",
+    "PDPL_Implementing_Regulation_English.pdf"
+  ],
+  "quality_decision": "ACCEPTABLE_FOR_REVIEW",
+  "governing_text_warning": "OCR output is preliminary extraction for review only and is not yet accepted as verified governing legal text."
+}
