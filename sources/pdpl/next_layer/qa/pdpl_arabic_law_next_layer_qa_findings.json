@@ -1,0 +1,43 @@
+{
+  "stage": "PDPL_ARABIC_LAW_NEXT_LAYER_QA",
+  "baseline": "4264f7dde8cc857d8d5179ed81ccc134d5ab79e8",
+  "records_file": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+  "summary_file": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_summary.json",
+  "source_inventory_file": "sources/pdpl/inventory/pdpl_arabic_law_article_inventory.jsonl",
+  "record_count": 43,
+  "jsonl_parse_status": "PASS",
+  "required_fields_status": "PASS",
+  "sequence_status": "PASS",
+  "boundary_status": "PASS",
+  "source_pdf_sha_status": "PASS",
+  "inventory_mapping_status": "PASS",
+  "summary_consistency_status": "PASS",
+  "article_32_carry_forward_status": "PASS",
+  "text_presence_status": "PASS",
+  "ocr_flags_carry_forward_status": "PASS",
+  "ready_for_next_layer_count": 43,
+  "not_ready_count": 0,
+  "short_text_articles": [
+    {
+      "article_number": 32,
+      "article_key": "pdpl_law_art_032",
+      "article_text": "ملغاة.",
+      "classification": "RESOLVED_REPEALED_MARKER_NOT_BLOCKING"
+    }
+  ],
+  "ocr_flags_summary": {
+    "records_with_flags": 20,
+    "total_flags": 29
+  },
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    {
+      "article_key": "pdpl_law_art_032",
+      "finding": "Article text is short (<25 chars) but classified as resolved repealed marker.",
+      "severity": "NON_BLOCKING",
+      "classification": "RESOLVED_REPEALED_MARKER_NOT_BLOCKING"
+    }
+  ],
+  "qa_decision": "PASS_READY_FOR_SCHEMA_AND_VALIDATOR_DESIGN",
+  "recommended_next_stage": "PDPL_ARABIC_LAW_SCHEMA_AND_VALIDATOR_DESIGN"
+}
