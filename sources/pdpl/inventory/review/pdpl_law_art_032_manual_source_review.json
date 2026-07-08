@@ -1,0 +1,19 @@
+{
+  "stage": "PDPL_ARABIC_LAW_ARTICLE_32_MANUAL_SOURCE_REVIEW",
+  "baseline": "44ac7c64a451704b6130c57646429db588e62a71",
+  "article_number": 32,
+  "article_key": "pdpl_law_art_032",
+  "source_pdf_filename": "PDPL_نظام_حماية_البيانات_الشخصية_عربي.pdf",
+  "source_pdf_sha256": "0bb6d1eb6a85450af4d4eb74b9e87bd2c8f62abab0eb0474087ffcbdf5e2292c",
+  "source_pdf_page_count": 16,
+  "review_page": 13,
+  "review_method": "PyMuPDF 600/800 DPI page rendering + EasyOCR Arabic model visual inspection. Tight crop around Article 32 line. Multiple OCR passes at 600 DPI and 800 DPI with greedy and beamsearch decoders. Original OCR at 300 DPI misread 'ملغاة' as 'ملفاه' due to visual similarity between Arabic letters 'غ' and 'ف'. High-resolution re-extraction at 800 DPI confirmed 'ملغاة.' across all decoder modes.",
+  "source_text_observed": "ملغاة.",
+  "source_review_status": "SOURCE_CONFIRMS_ARTICLE_32_REPEALED_MARKER",
+  "inventory_update_applied": true,
+  "inventory_status_after_review": "READY_FOR_NEXT_LAYER_REVIEW",
+  "english_used_for_correction": false,
+  "translation_performed": false,
+  "legal_interpretation_performed": false,
+  "recommended_next_stage": "PDPL_ARABIC_LAW_NEXT_LAYER_PREP"
+}
