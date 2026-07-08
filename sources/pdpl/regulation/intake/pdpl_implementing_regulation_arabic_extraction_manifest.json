@@ -1,0 +1,36 @@
+{
+  "stage": "PDPL_IMPLEMENTING_REGULATION_ARABIC_INTAKE_PREP",
+  "baseline": "373797cb3d5cf80756177927d944cc61b7a65639",
+  "source_zip_name": "PDPL_SDAIA.zip",
+  "source_zip_sha256": "d9409fba7d63a7fc4b4bd86c3f54da5a066303e7df02461b7839159763c8d9f3",
+  "target_pdf_filename": "PDPL_اللائحة_التنفيذية_عربي.pdf",
+  "target_pdf_sha256": "4b4b24e3bcb744a04a39a65d890454fc63ea282be85501af125d5f36134919df",
+  "target_pdf_page_count": 22,
+  "target_pdf_encrypted": false,
+  "source_layer": "PDPL_REGULATION_ARABIC_GOVERNING_SOURCE",
+  "law_key": "pdpl",
+  "law_component": "implementing_regulation",
+  "language": "ar",
+  "english_reference_used_for_correction": false,
+  "translation_performed": false,
+  "legal_interpretation_performed": false,
+  "ocr_performed": false,
+  "direct_text_extraction_performed": true,
+  "extracted_text_file": "sources/pdpl/regulation/intake/pdpl_implementing_regulation_arabic_extracted_text.txt",
+  "page_markers_count": 22,
+  "pages_with_readable_arabic_text": 20,
+  "pages_with_low_or_no_readable_text": [
+    1,
+    22
+  ],
+  "total_extracted_characters": 41310,
+  "arabic_character_count": 31306,
+  "extraction_quality": "ACCEPTABLE_FOR_REGULATION_ARTICLE_INVENTORY_PREP",
+  "blocking_findings": [],
+  "non_blocking_findings": [
+    "Page 1 and page 22 contain low Arabic text content (cover/back pages).",
+    "PDF extraction exhibits reversed column order due to two-column layout; heading candidates include both article headings and inline references to articles from the law.",
+    "Heading candidate probe is non-authoritative; next stage should perform careful article inventory."
+  ],
+  "recommended_next_stage": "PDPL_IMPLEMENTING_REGULATION_ARABIC_INTAKE_QA"
+}
