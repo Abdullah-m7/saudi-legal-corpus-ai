@@ -1,0 +1,82 @@
+{
+  "stage": "PDPL_ARABIC_LAW_SCHEMA_AND_VALIDATOR_QA",
+  "baseline": "621a905527d4345019ad3b51e0cd06d5ffd425aa",
+  "schema_file": "schemas/pdpl_arabic_law_next_layer_record.schema.json",
+  "validator_file": "scripts/validate_pdpl_arabic_law_next_layer_records.py",
+  "records_file": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+  "summary_file": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_summary.json",
+  "schema_parse_status": "PASS",
+  "schema_structure_status": "PASS",
+  "schema_boundary_status": "PASS",
+  "validator_static_status": "PASS",
+  "validator_positive_execution_status": "PASS",
+  "validator_negative_guard_status": "PASS",
+  "negative_guard_cases": [
+    {
+      "case": "A_official_text_status_claims_verified",
+      "description": "Mutate one record to official_text_status=VERIFIED_OFFICIAL_TEXT",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "case": "B_english_used_for_correction_true",
+      "description": "Mutate one record to english_used_for_correction=true",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "case": "C_translation_performed_true",
+      "description": "Mutate one record to translation_performed=true",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "case": "D_legal_interpretation_performed_true",
+      "description": "Mutate one record to legal_interpretation_performed=true",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "case": "E_jsonl_order_swap",
+      "description": "Swap JSONL order of records 1 and 2 while keeping all article numbers and keys present",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "case": "F_unexpected_extra_field",
+      "description": "Add unauthorized_field to one record (additionalProperties: false)",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "case": "G_article_32_text_mutated",
+      "description": "Mutate Article 32 text from ملغاة. to ملفاه .",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    },
+    {
+      "case": "H_source_pdf_sha256_mutated",
+      "description": "Mutate source_pdf_sha256 to different 64-char lowercase hex string",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "status": "PASS"
+    }
+  ],
+  "record_count_validated": 43,
+  "validator_checks_count": 19,
+  "validator_output_check_count": "19/19",
+  "article_32_guard_status": "PASS",
+  "sequence_order_guard_status": "PASS",
+  "mutation_guard_status": "PASS",
+  "blocking_findings": [],
+  "non_blocking_findings": [],
+  "qa_decision": "PASS_READY_FOR_VALIDATOR_INTEGRATION",
+  "recommended_next_stage": "PDPL_ARABIC_LAW_VALIDATOR_INTEGRATION"
+}
