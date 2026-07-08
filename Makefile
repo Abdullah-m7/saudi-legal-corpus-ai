@@ -104,7 +104,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-citation-support-checker-validate \
         corpus-retrieval-workflow-runner-validate \
         corpus-retrieval-demo-scenarios-validate \
-        corpus-retrieval-operator-demo-pack-validate
+        corpus-retrieval-operator-demo-pack-validate \
+        pdpl-arabic-law-next-layer-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -137,6 +138,9 @@ help:
 	@echo "  make books-build   - build all books"
 	@echo ""
 	@echo "  make clean         - remove generated dist/ artifacts and JSONL files"
+	@echo ""
+	@echo "PDPL Arabic Law targets:"
+	@echo "  make pdpl-arabic-law-next-layer-validate - validate Arabic PDPL law next-layer records"
 
 # -- Book One (default; unchanged behaviour) -------------------------------
 data:
@@ -802,6 +806,10 @@ corpus-retrieval-operator-demo-pack-smoke:
 	@echo "Confirming no generated artifacts in docs/operator_demo_pack/..."
 	@find docs/operator_demo_pack/ -type f ! -name "*.md" -print -quit | grep -q . && echo "FAIL: non-markdown files" && exit 1 || echo "OK: only markdown files"
 	@rm -rf /tmp/corpus_demo_scenarios_*
+
+# -- PDPL Arabic Law next-layer validator (dedicated target; does NOT change make validate) --
+pdpl-arabic-law-next-layer-validate:
+	$(PY) scripts/validate_pdpl_arabic_law_next_layer_records.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
