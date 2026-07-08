@@ -1,0 +1,22 @@
+{
+  "stage": "PDPL_ARABIC_LAW_VALIDATOR_INTEGRATION",
+  "baseline": "51d41c0e61967942c3b7aee5c6b3379fa639d200",
+  "validator_file": "scripts/validate_pdpl_arabic_law_next_layer_records.py",
+  "schema_file": "schemas/pdpl_arabic_law_next_layer_record.schema.json",
+  "records_file": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+  "make_target_added": "pdpl-arabic-law-next-layer-validate",
+  "make_validate_changed": false,
+  "make_test_changed": false,
+  "ci_changed": false,
+  "integration_scope": "DEDICATED_OPERATOR_MAKE_TARGET_ONLY",
+  "record_count_validated": 43,
+  "validator_checks_count": 19,
+  "validator_output_check_count": "19/19",
+  "article_32_guard": "ملغاة.",
+  "official_text_status": "REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT",
+  "source_status": "REVIEWED_OCR_INVENTORY_READY_FOR_NEXT_LAYER",
+  "english_used_for_correction": false,
+  "translation_performed": false,
+  "legal_interpretation_performed": false,
+  "recommended_next_stage": "PDPL_ARABIC_LAW_VALIDATOR_INTEGRATION_QA"
+}
