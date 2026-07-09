@@ -1,7 +1,10 @@
 {
   "stage": "PDPL_IMPLEMENTING_REGULATION_ARABIC_ARTICLE_INVENTORY_SEMANTIC_ALIGNMENT_REMEDIATION",
   "baseline": "df1ac2618685a0e3f0bccde3f8a170336cc290e5",
-  "reviewed_prior_prs": [163, 164],
+  "reviewed_prior_prs": [
+    163,
+    164
+  ],
   "inventory_file": "sources/pdpl/regulation/inventory/pdpl_implementing_regulation_arabic_article_inventory.jsonl",
   "summary_file": "sources/pdpl/regulation/inventory/pdpl_implementing_regulation_arabic_article_inventory_summary.json",
   "article_count_before": 38,
@@ -69,16 +72,42 @@
     "pdpl_reg_art_037",
     "pdpl_reg_art_038"
   ],
-  "records_remaining_manual_review": [],
-  "semantic_alignment_status": "PASS",
-  "blocking_findings": [],
+  "records_remaining_manual_review": [
+    "pdpl_reg_art_004",
+    "pdpl_reg_art_007",
+    "pdpl_reg_art_008",
+    "pdpl_reg_art_015",
+    "pdpl_reg_art_020",
+    "pdpl_reg_art_021",
+    "pdpl_reg_art_025",
+    "pdpl_reg_art_027",
+    "pdpl_reg_art_035",
+    "pdpl_reg_art_036"
+  ],
+  "semantic_alignment_status": "PARTIAL_PASS",
+  "blocking_findings": [
+    "Ten records contain legitimate cross-references to 'المادة' or 'تصحيح البيانات الشخصية' within the last 250 characters of article_text_extracted. These are body-text references (e.g., 'من المادة )العاشرة('), not dangling next-article heading markers. They are marked NEEDS_MANUAL_REVIEW because the validation script's substring check cannot distinguish between legitimate cross-references and dangling heading fragments. The boundary-tail artifacts (actual dangling next-article headings) have been removed from all records."
+  ],
   "non_blocking_findings": [
     "All 38 records were realigned using the NFKC-normalized extracted text with article boundary positions determined from the Arabic source artifacts.",
     "The semantic misalignment was broader than the original five NEEDS_MANUAL_REVIEW records; 27 of 38 records had text starting with the wrong article content.",
     "Article 17 heading was corrected from 'معالجة البيانات لأغراض غير التي جمعت من أجلها' to 'اختيار جهة المعالجة' to match the actual extracted text.",
     "Text was NFKC-normalized from Arabic presentation forms to standard Unicode; this is an encoding normalization, not a translation or legal change.",
-    "Records remain extracted-text inventory only and are not verified official text."
+    "Records remain extracted-text inventory only and are not verified official text.",
+    "All dangling next-article heading fragments at article boundaries have been removed. Remaining 'المادة' occurrences in the last 250 chars of 10 records are legitimate cross-references within the article body text, not boundary artifacts."
   ],
+  "fix_stage": "PDPL_IMPLEMENTING_REGULATION_ARABIC_ARTICLE_INVENTORY_SEMANTIC_ALIGNMENT_REMEDIATION_FIX_BOUNDARY_TAILS",
+  "fix_commit_base": "019ef61fc29b6189a0e8217f9c9de56b420bf7d3",
+  "boundary_tail_fix_applied": true,
+  "boundary_tail_records_fixed": [
+    "pdpl_reg_art_016",
+    "pdpl_reg_art_021",
+    "pdpl_reg_art_034",
+    "pdpl_reg_art_035",
+    "pdpl_reg_art_036"
+  ],
+  "boundary_tail_scan_all_records": true,
+  "unresolved_boundary_tail_records": [],
   "english_used_for_correction": false,
   "translation_performed": false,
   "legal_interpretation_performed": false,
