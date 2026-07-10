@@ -108,7 +108,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         pdpl-arabic-law-next-layer-validate \
         pdpl-implementing-regulation-arabic-next-layer-validate \
         pdpl-implementing-regulation-arabic-cleaned-validate \
-        pdpl-implementing-regulation-arabic-legal-llm-validate
+        pdpl-implementing-regulation-arabic-legal-llm-validate \
+        pdpl-arabic-law-verified-validate \
+        pdpl-arabic-law-legal-llm-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -825,6 +827,14 @@ pdpl-implementing-regulation-arabic-cleaned-validate:
 # -- PDPL implementing-regulation Arabic LLM-ready enrichment layer validator (dedicated target; does NOT change make validate) --
 pdpl-implementing-regulation-arabic-legal-llm-validate:
 	$(PY) scripts/validate_pdpl_implementing_regulation_arabic_legal_llm.py
+
+# -- PDPL law verified/corrected text validator (dedicated target; does NOT change make validate) --
+pdpl-arabic-law-verified-validate:
+	$(PY) scripts/validate_pdpl_arabic_law_verified.py
+
+# -- PDPL law Arabic LLM-ready enrichment layer validator (dedicated target; does NOT change make validate) --
+pdpl-arabic-law-legal-llm-validate:
+	$(PY) scripts/validate_pdpl_arabic_law_legal_llm.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
