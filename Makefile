@@ -115,7 +115,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         investment-law-verified-validate \
         investment-law-legal-llm-validate \
         investment-regulation-verified-validate \
-        investment-regulation-legal-llm-validate
+        investment-regulation-legal-llm-validate \
+        corpus-unified-llm-index-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -860,6 +861,10 @@ investment-regulation-verified-validate:
 # -- Investment Regulations Arabic LLM-ready enrichment layer validator (dedicated target; does NOT change make validate) --
 investment-regulation-legal-llm-validate:
 	$(PY) scripts/validate_investment_regulation_legal_llm.py
+
+# -- Unified cross-law LLM retrieval index generator + validator (dedicated target; does NOT change make validate) --
+corpus-unified-llm-index-validate:
+	$(PY) scripts/validate_corpus_unified_llm_index.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
