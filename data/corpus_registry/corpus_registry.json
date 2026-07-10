@@ -9,10 +9,11 @@
     "forms_and_appendices_counted": true,
     "formula_total_implementing_regulations": "general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 450",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) = 531",
     "formula_total_reference": "companies_law_english(281)",
-    "formula_total_registry_counted": "total_primary_arabic_governing(450) + total_reference(281) + total_internal_reference(281) = 1012",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer.",
+    "formula_total_registry_counted": "total_primary_arabic_governing(531) + total_reference(281) + total_internal_reference(281) = 1093",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer. PDPL Arabic (43+38=81) are primary Arabic governing-language records, not verified official text.",
+    "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) Arabic next-layer records are primary Arabic governing-language records but are NOT verified official text (reviewed OCR / direct extraction). Arabic governs; not official/binding; not legal advice. Kept as separate PDPL corpus tracks.",
     "primary_arabic_governing_records_included": true
   },
   "generated_date": "2026-07-06",
@@ -29,10 +30,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 450,
+  "total_primary_arabic_governing_records": 531,
   "total_reference_records": 281,
-  "total_registry_counted_records": 1012,
-  "total_tracks": 4,
+  "total_registry_counted_records": 1093,
+  "total_tracks": 6,
   "tracks": [
     {
       "boundaries": {
@@ -243,6 +244,88 @@
       "track_id": "implementing_regulations_arabic_program_closure",
       "validator_targets": [
         "make implementing-regulations-arabic-program-closure-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+        "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_summary.json"
+      ],
+      "display_name_ar": "نظام حماية البيانات الشخصية",
+      "display_name_en": "Personal Data Protection Law (PDPL)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+          "governing": true,
+          "record_count": 43,
+          "status": "next_layer_complete"
+        }
+      },
+      "notes": "PDPL law Arabic next-layer: 43 article records from reviewed OCR (Article 32 = ملغاة). Arabic governs; NOT verified official text; no translation / no legal interpretation. Separate PDPL corpus track.",
+      "official_text_status": "REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT",
+      "record_counts": {
+        "arabic_articles": 43,
+        "total": 43
+      },
+      "report_paths": [
+        "reports/pdpl/PDPL_ARABIC_LAW_NEXT_LAYER_QA_REPORT.md"
+      ],
+      "status": "next_layer_complete",
+      "track_id": "pdpl_law",
+      "validator_targets": [
+        "make pdpl-arabic-law-next-layer-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "is_general": false,
+        "is_specialized": false,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "implementing_regulation",
+      "data_paths": [
+        "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_records.jsonl",
+        "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_summary.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام حماية البيانات الشخصية",
+      "display_name_en": "PDPL Implementing Regulation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_records.jsonl",
+          "governing": true,
+          "record_count": 38,
+          "status": "next_layer_complete"
+        }
+      },
+      "notes": "PDPL implementing regulation Arabic next-layer: 38 article records from direct text extraction. Arabic governs; NOT verified official text; no translation / no legal interpretation. Separate PDPL corpus track.",
+      "official_text_status": "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT",
+      "record_counts": {
+        "arabic_articles": 38,
+        "total": 38
+      },
+      "report_paths": [],
+      "status": "next_layer_complete",
+      "track_id": "pdpl_implementing_regulation",
+      "validator_targets": [
+        "make pdpl-implementing-regulation-arabic-next-layer-validate"
       ]
     }
   ],

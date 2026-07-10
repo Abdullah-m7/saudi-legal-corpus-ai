@@ -39,6 +39,8 @@ LJS_LLM = os.path.join(ROOT, "data", "implementing_regulations", "listed_joint_s
 LJS_APP = os.path.join(ROOT, "data", "implementing_regulations", "listed_joint_stock", "listed_joint_stock_implementing_regulation_arabic_appendix_llm.json")
 LJS_MANIFEST = os.path.join(ROOT, "data", "implementing_regulations", "listed_joint_stock", "source_manifest.json")
 CLOSURE_AUDIT = os.path.join(ROOT, "reports", "implementing_regulations", "implementing_regulations_arabic_program_closure_audit.json")
+PDPL_LAW_NL = os.path.join(ROOT, "sources", "pdpl", "next_layer", "pdpl_arabic_law_next_layer_summary.json")
+PDPL_REG_NL = os.path.join(ROOT, "sources", "pdpl", "regulation", "next_layer", "pdpl_implementing_regulation_arabic_next_layer_summary.json")
 
 
 def _load_json(path: str) -> dict[str, Any]:
@@ -70,6 +72,8 @@ def main() -> int:
     ljs_app = _load_json(LJS_APP)
     ljs_manifest = _load_json(LJS_MANIFEST)
     closure = _load_json(CLOSURE_AUDIT)
+    pdpl_law_nl = _load_json(PDPL_LAW_NL)
+    pdpl_reg_nl = _load_json(PDPL_REG_NL)
 
     registry: dict[str, Any] = {
         "registry_version": "1.0",
@@ -85,13 +89,15 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 4,
+        "total_tracks": 6,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]  # 281 Companies Law
             + gen_llm["record_count"]      # 95 general IR articles
             + gen_forms["record_count"]    # 4 general IR forms
             + ljs_llm["record_count"]      # 69 listed JSC articles
             + ljs_app["record_count"]      # 1 listed JSC appendix
+            + pdpl_law_nl["record_count"]  # 43 PDPL law (reviewed OCR, not verified official)
+            + pdpl_reg_nl["record_count"]  # 38 PDPL implementing regulation (extracted, not verified official)
         ),
         "total_reference_records": companies_en["record_count"],  # 281 English
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -103,6 +109,7 @@ def main() -> int:
             companies_ar["record_count"]
             + gen_llm["record_count"] + gen_forms["record_count"]
             + ljs_llm["record_count"] + ljs_app["record_count"]
+            + pdpl_law_nl["record_count"] + pdpl_reg_nl["record_count"]
             + companies_en["record_count"]
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -114,12 +121,13 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 450",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) = 531",
             "formula_total_reference": "companies_law_english(281)",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169",
-            "formula_total_registry_counted": "total_primary_arabic_governing(450) + total_reference(281) + total_internal_reference(281) = 1012",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer.",
+            "formula_total_registry_counted": "total_primary_arabic_governing(531) + total_reference(281) + total_internal_reference(281) = 1093",
+            "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) Arabic next-layer records are primary Arabic governing-language records but are NOT verified official text (reviewed OCR / direct extraction). Arabic governs; not official/binding; not legal advice. Kept as separate PDPL corpus tracks.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer. PDPL Arabic (43+38=81) are primary Arabic governing-language records, not verified official text.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -322,6 +330,88 @@ def main() -> int:
                     "no_public_release": True,
                 },
                 "notes": "Closure/status audit for the implementing regulations Arabic program. Covers general (95+4) and listed joint-stock (69+1) tracks. 169 total records.",
+            },
+            {
+                "track_id": "pdpl_law",
+                "display_name_ar": "نظام حماية البيانات الشخصية",
+                "display_name_en": "Personal Data Protection Law (PDPL)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "next_layer_complete",
+                "official_text_status": "REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT",
+                "language_layers": {
+                    "arabic": {
+                        "status": "next_layer_complete",
+                        "governing": True,
+                        "record_count": pdpl_law_nl["record_count"],
+                        "data_path": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+                    },
+                },
+                "record_counts": {
+                    "arabic_articles": pdpl_law_nl["record_count"],
+                    "total": pdpl_law_nl["record_count"],
+                },
+                "data_paths": [
+                    "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+                    "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_summary.json",
+                ],
+                "validator_targets": [
+                    "make pdpl-arabic-law-next-layer-validate",
+                ],
+                "report_paths": [
+                    "reports/pdpl/PDPL_ARABIC_LAW_NEXT_LAYER_QA_REPORT.md",
+                ],
+                "boundaries": {
+                    "arabic_governs": True,
+                    "not_official_translation": True,
+                    "not_verified_official_text": True,
+                    "not_legal_advice": True,
+                    "no_trilingual_alignment": True,
+                    "no_public_release": True,
+                },
+                "notes": "PDPL law Arabic next-layer: 43 article records from reviewed OCR (Article 32 = ملغاة). Arabic governs; NOT verified official text; no translation / no legal interpretation. Separate PDPL corpus track.",
+            },
+            {
+                "track_id": "pdpl_implementing_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام حماية البيانات الشخصية",
+                "display_name_en": "PDPL Implementing Regulation",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "next_layer_complete",
+                "official_text_status": "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT",
+                "language_layers": {
+                    "arabic": {
+                        "status": "next_layer_complete",
+                        "governing": True,
+                        "record_count": pdpl_reg_nl["record_count"],
+                        "data_path": "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_records.jsonl",
+                    },
+                },
+                "record_counts": {
+                    "arabic_articles": pdpl_reg_nl["record_count"],
+                    "total": pdpl_reg_nl["record_count"],
+                },
+                "data_paths": [
+                    "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_records.jsonl",
+                    "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_summary.json",
+                ],
+                "validator_targets": [
+                    "make pdpl-implementing-regulation-arabic-next-layer-validate",
+                ],
+                "report_paths": [],
+                "boundaries": {
+                    "arabic_governs": True,
+                    "is_general": False,
+                    "is_specialized": False,
+                    "not_official_translation": True,
+                    "not_verified_official_text": True,
+                    "not_legal_advice": True,
+                    "no_trilingual_alignment": True,
+                    "no_public_release": True,
+                },
+                "notes": "PDPL implementing regulation Arabic next-layer: 38 article records from direct text extraction. Arabic governs; NOT verified official text; no translation / no legal interpretation. Separate PDPL corpus track.",
             },
         ],
     }

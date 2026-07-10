@@ -53,6 +53,8 @@ REQUIRED_TRACK_IDS = [
     "implementing_regulations_general",
     "implementing_regulations_listed_joint_stock",
     "implementing_regulations_arabic_program_closure",
+    "pdpl_law",
+    "pdpl_implementing_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -97,7 +99,7 @@ def main() -> int:
 
     # [3] 4 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 4 tracks present...", len(track_ids) == 4 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 6 tracks present...", len(track_ids) == 6 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -129,6 +131,21 @@ def main() -> int:
           f"total_records={closure_counts.get('total_records')}")
     check("    closure: 164 article records...", closure_counts.get("total_article_records") == 164,
           f"total_article_records={closure_counts.get('total_article_records')}")
+
+    # [7b] PDPL tracks (Arabic next-layer; NOT verified official text)
+    pdpl_law = tracks_by_id.get("pdpl_law", {})
+    check("[7b] pdpl_law: 43 Arabic articles...", pdpl_law.get("record_counts", {}).get("arabic_articles") == 43,
+          f"arabic_articles={pdpl_law.get('record_counts', {}).get('arabic_articles')}")
+    check("    pdpl_law: not verified official text...",
+          pdpl_law.get("official_text_status") == "REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT",
+          f"official_text_status={pdpl_law.get('official_text_status')}")
+    pdpl_reg = tracks_by_id.get("pdpl_implementing_regulation", {})
+    check("[7c] pdpl_implementing_regulation: 38 Arabic articles...",
+          pdpl_reg.get("record_counts", {}).get("arabic_articles") == 38,
+          f"arabic_articles={pdpl_reg.get('record_counts', {}).get('arabic_articles')}")
+    check("    pdpl_implementing_regulation: not verified official text...",
+          pdpl_reg.get("official_text_status") == "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT",
+          f"official_text_status={pdpl_reg.get('official_text_status')}")
 
     # [8] data_paths exist
     all_data_paths_exist = True
@@ -189,8 +206,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 450...",
-          registry.get("total_primary_arabic_governing_records") == 450,
+    check("[19a] total_primary_arabic_governing_records == 531...",
+          registry.get("total_primary_arabic_governing_records") == 531,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 281...",
@@ -205,8 +222,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 1012...",
-          registry.get("total_registry_counted_records") == 1012,
+    check("[19e] total_registry_counted_records == 1093...",
+          registry.get("total_registry_counted_records") == 1093,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -230,7 +247,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"450 + 281 + 281 = 1012")
+          f"531 + 281 + 281 = 1093")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -248,12 +265,13 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 4 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 6 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
-              "implementing_regulations_arabic_program_closure). All counts correct, all "
-              "referenced paths exist, all boundaries enforced. Arabic governs; no official "
-              "translation; no legal advice; no trilingual; no public release. English "
-              "reference only; Chinese internal only. Read-only.")
+              "implementing_regulations_arabic_program_closure, pdpl_law, "
+              "pdpl_implementing_regulation). All counts correct, all referenced paths exist, "
+              "all boundaries enforced. Arabic governs; no official translation; no legal advice; "
+              "no trilingual; no public release. English reference only; Chinese internal only. "
+              "PDPL Arabic next-layer records are NOT verified official text. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)
