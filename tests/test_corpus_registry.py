@@ -27,19 +27,19 @@ class TestRegistryStructure:
         assert os.path.isfile(REGISTRY_PATH)
 
     def test_registry_version(self, registry):
-        assert registry["registry_version"] == "1.0"
+        assert registry["registry_version"] == "1.1"
 
     def test_repository(self, registry):
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 6
+        assert registry["total_tracks"] == 8
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 531
+        assert registry["total_primary_arabic_governing_records"] == 584
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 281
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 1093
+        assert registry["total_registry_counted_records"] == 1146
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
