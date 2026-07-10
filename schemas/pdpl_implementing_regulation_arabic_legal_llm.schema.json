@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/al3obdi/saudi-legal-corpus-ai/schemas/pdpl_implementing_regulation_arabic_legal_llm.schema.json",
   "title": "PDPL Implementing Regulation Arabic LLM-ready record",
-  "description": "LLM/RAG retrieval layer over the CLEANED Arabic text of the PDPL Implementing Regulation (38 articles). Carries the de-noised article text plus mechanical retrieval metadata only. The text is a structurally-cleaned PDF extraction, NOT a certified official transcription: record_type is cleaned_extracted_arabic_article and text_status is EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT. No summary, paraphrase, translation, or legal interpretation. Arabic is governing. Not legal advice.",
+  "description": "LLM/RAG retrieval layer over the VERIFIED Arabic text of the PDPL Implementing Regulation (38 articles), where the text is the official SDAIA-published regulation text cross-checked against the repository's independent cleaned extraction. Carries the verified article text plus mechanical retrieval metadata only. record_type is verified_arabic_article and text_status is VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT. No summary, paraphrase, translation, or legal interpretation. Arabic is governing. Not legal advice.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -36,7 +36,7 @@
     "article_key": {"type": "string", "pattern": "^pdpl_reg_art_0(0[1-9]|[1-2][0-9]|3[0-8])$"},
     "article_title_ar": {"type": "string", "minLength": 1},
     "record_id": {"type": "string", "pattern": "^pdpl-reg-llm-art-0(0[1-9]|[1-2][0-9]|3[0-8])$"},
-    "record_type": {"type": "string", "const": "cleaned_extracted_arabic_article"},
+    "record_type": {"type": "string", "const": "verified_arabic_article"},
     "language": {"type": "string", "const": "ar"},
     "governing_text_language": {"type": "string", "const": "ar"},
     "article_text_ar": {"type": "string", "minLength": 1},
@@ -46,7 +46,7 @@
     "article_path": {"type": "string", "pattern": "^pdpl/implementing_regulation/articles/0(0[1-9]|[1-2][0-9]|3[0-8])$"},
     "keywords_ar": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
     "search_queries_ar": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
-    "text_status": {"type": "string", "const": "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT"},
+    "text_status": {"type": "string", "const": "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT"},
     "source_trust": {
       "type": "object",
       "additionalProperties": false,
@@ -55,20 +55,16 @@
         "source_authority_ar",
         "source_status",
         "source_document_ar",
-        "source_pdf_sha256",
-        "source_cleaned_file",
-        "spot_verified_articles",
-        "spot_verify_source"
+        "source_url",
+        "cleaned_corroboration_similarity"
       ],
       "properties": {
         "source_authority": {"type": "string", "minLength": 1},
         "source_authority_ar": {"type": "string", "minLength": 1},
-        "source_status": {"type": "string", "const": "extracted_from_pdf_not_verified_official"},
+        "source_status": {"type": "string", "const": "verified_against_official_sdaia_published_text"},
         "source_document_ar": {"type": "string", "minLength": 1},
-        "source_pdf_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-        "source_cleaned_file": {"type": "string", "minLength": 1},
-        "spot_verified_articles": {"type": "array", "items": {"type": "integer"}},
-        "spot_verify_source": {"type": "string", "minLength": 1}
+        "source_url": {"type": "string", "minLength": 1},
+        "cleaned_corroboration_similarity": {"type": "number", "minimum": 0, "maximum": 1}
       }
     },
     "translation_performed": {"type": "boolean", "const": false},

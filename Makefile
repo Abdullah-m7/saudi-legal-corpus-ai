@@ -108,6 +108,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         pdpl-arabic-law-next-layer-validate \
         pdpl-implementing-regulation-arabic-next-layer-validate \
         pdpl-implementing-regulation-arabic-cleaned-validate \
+        pdpl-implementing-regulation-arabic-verified-validate \
         pdpl-implementing-regulation-arabic-legal-llm-validate \
         pdpl-arabic-law-verified-validate \
         pdpl-arabic-law-legal-llm-validate
@@ -823,6 +824,10 @@ pdpl-implementing-regulation-arabic-next-layer-validate:
 # -- PDPL implementing-regulation cleaned-text generator + validator (dedicated target; does NOT change make validate) --
 pdpl-implementing-regulation-arabic-cleaned-validate:
 	$(PY) scripts/validate_pdpl_implementing_regulation_arabic_cleaned.py
+
+# -- PDPL implementing-regulation verified/corrected text validator (dedicated target; does NOT change make validate) --
+pdpl-implementing-regulation-arabic-verified-validate:
+	$(PY) scripts/validate_pdpl_implementing_regulation_arabic_verified.py
 
 # -- PDPL implementing-regulation Arabic LLM-ready enrichment layer validator (dedicated target; does NOT change make validate) --
 pdpl-implementing-regulation-arabic-legal-llm-validate:

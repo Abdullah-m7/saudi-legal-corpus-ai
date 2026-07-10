@@ -1,0 +1,27 @@
+{
+  "law_key": "pdpl",
+  "law_component": "implementing_regulation",
+  "layer": "PDPL_IMPLEMENTING_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 38,
+  "article_number_range": [
+    1,
+    38
+  ],
+  "official_text_status": "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT",
+  "source_artifact": "sources/pdpl/regulation/verified/pdpl_implementing_regulation_official_sdaia_source.json",
+  "prior_status": "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT",
+  "post_capture_corrections": {
+    "strip_kashida_U+0640": "Non-semantic elongation characters (ـ) removed by the generator.",
+    "fetch_typo_fix": "The fetch tool rendered القواعد as القواعس in articles 23, 32, 35, 36; corrected to القواعد (confirmed against the independent extraction)."
+  },
+  "corroboration_min_similarity": 0.8571,
+  "corroboration_mean_similarity": 0.9478,
+  "boundaries": {
+    "arabic_governs": true,
+    "translation_performed": false,
+    "legal_interpretation_performed": false,
+    "summarized_or_paraphrased": false,
+    "english_used_for_correction": false
+  },
+  "recommended_next_stage": "PDPL_IMPLEMENTING_REGULATION_ARABIC_LEGAL_LLM (verified)"
+}

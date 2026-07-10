@@ -15,9 +15,9 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CLEANED = os.path.join(
-    ROOT, "sources", "pdpl", "regulation", "cleaned",
-    "pdpl_implementing_regulation_arabic_cleaned_records.jsonl",
+VERIFIED = os.path.join(
+    ROOT, "sources", "pdpl", "regulation", "verified",
+    "pdpl_implementing_regulation_arabic_verified_records.jsonl",
 )
 LAYER = os.path.join(
     ROOT, "data", "pdpl_arabic_legal_llm",
@@ -32,16 +32,16 @@ EXPECTED_COUNT = 38
 def main():
     errors = []
 
-    for path in (CLEANED, LAYER, SCHEMA):
+    for path in (VERIFIED, LAYER, SCHEMA):
         if not os.path.isfile(path):
             print("FAIL: missing file: %s" % os.path.relpath(path, ROOT))
             return 1
 
-    cleaned = {}
-    for line in open(CLEANED, encoding="utf-8"):
+    verified = {}
+    for line in open(VERIFIED, encoding="utf-8"):
         if line.strip():
             r = json.loads(line)
-            cleaned[r["article_number"]] = r
+            verified[r["article_number"]] = r
 
     layer = json.load(open(LAYER, encoding="utf-8"))
     records = layer.get("records", [])
@@ -52,8 +52,8 @@ def main():
                       % (layer.get("record_count"), EXPECTED_COUNT))
     if len(records) != EXPECTED_COUNT:
         errors.append("[1] found %d records, expected %d" % (len(records), EXPECTED_COUNT))
-    if layer.get("text_status") != "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT":
-        errors.append("[1] envelope text_status not honest NOT_VERIFIED value")
+    if layer.get("text_status") != "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT":
+        errors.append("[1] envelope text_status not VERIFIED value")
     if layer.get("not_legal_advice") is not True:
         errors.append("[1] envelope not_legal_advice must be True")
 
@@ -73,13 +73,13 @@ def main():
         if r.get("article_path") != "pdpl/implementing_regulation/articles/%03d" % n:
             errors.append("[3] art %s: article_path %r" % (n, r.get("article_path")))
 
-        # [4] text faithful to cleaned source (verbatim) + hash correct
+        # [4] text faithful to verified source (verbatim) + hash correct
         text = r.get("article_text_ar", "")
-        src = cleaned.get(n, {}).get("article_text_cleaned")
+        src = verified.get(n, {}).get("article_text_verified")
         if src is None:
-            errors.append("[4] art %s: no cleaned source record" % n)
+            errors.append("[4] art %s: no verified source record" % n)
         elif text != src:
-            errors.append("[4] art %s: article_text_ar differs from cleaned source" % n)
+            errors.append("[4] art %s: article_text_ar differs from verified source" % n)
         h = hashlib.sha256(text.encode("utf-8")).hexdigest()
         if r.get("article_text_hash_sha256") != h:
             errors.append("[4] art %s: hash mismatch" % n)
@@ -98,17 +98,17 @@ def main():
             errors.append("[5] art %s: empty search_queries_ar" % n)
 
         # [6] honesty boundaries
-        if r.get("record_type") != "cleaned_extracted_arabic_article":
-            errors.append("[6] art %s: record_type over-claims: %r" % (n, r.get("record_type")))
-        if r.get("text_status") != "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT":
-            errors.append("[6] art %s: text_status not NOT_VERIFIED" % n)
+        if r.get("record_type") != "verified_arabic_article":
+            errors.append("[6] art %s: unexpected record_type: %r" % (n, r.get("record_type")))
+        if r.get("text_status") != "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT":
+            errors.append("[6] art %s: text_status not VERIFIED" % n)
         for flag in ("translation_performed", "legal_interpretation_performed",
                      "english_used_for_correction", "text_summarized_or_paraphrased"):
             if r.get(flag) is not False:
                 errors.append("[6] art %s: boundary flag %s must be False" % (n, flag))
         st = r.get("source_trust", {})
-        if st.get("source_status") != "extracted_from_pdf_not_verified_official":
-            errors.append("[6] art %s: source_trust.source_status over-claims" % n)
+        if st.get("source_status") != "verified_against_official_sdaia_published_text":
+            errors.append("[6] art %s: source_trust.source_status wrong" % n)
 
     # [7] JSON Schema (optional)
     schema_note = "skipped (jsonschema not installed)"
@@ -135,9 +135,9 @@ def main():
 
     print("PASS: %d PDPL implementing regulation LLM-ready records" % len(records))
     print("  - sequence 1..%d; ids, paths, hashes consistent" % EXPECTED_COUNT)
-    print("  - article_text_ar verbatim from cleaned source; retrieval metadata derived")
+    print("  - article_text_ar verbatim from verified source; retrieval metadata derived")
     print("  - JSON Schema: %s" % schema_note)
-    print("  - honest boundaries: cleaned_extracted (NOT_VERIFIED), no translation/paraphrase/interpretation")
+    print("  - honest boundaries: verified_arabic_article (SDAIA-published), no translation/paraphrase/interpretation")
     return 0
 
 

@@ -34,6 +34,12 @@ RECORDS = os.path.join(OUT_DIR, "pdpl_arabic_law_verified_records.jsonl")
 SUMMARY = os.path.join(OUT_DIR, "pdpl_arabic_law_verified_summary.json")
 
 REPEALED = {32}
+KASHIDA = "ـ"
+
+
+def normalize_official(text):
+    """Strip non-semantic kashida elongation (ـ, U+0640) from captured official text."""
+    return text.replace(KASHIDA, "")
 
 
 def _norm_tokens(s):
@@ -66,7 +72,7 @@ def build_records():
     records = []
     for n in range(1, 44):
         o = ocr[n]
-        verified = official[str(n)]
+        verified = normalize_official(official[str(n)])
         prior = o["article_text"]
         repealed = n in REPEALED
         records.append({

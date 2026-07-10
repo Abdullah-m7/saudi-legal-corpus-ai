@@ -12,6 +12,9 @@
   "source_url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL",
   "fetch_date": "2026-07-10",
   "capture_method": "Fetched verbatim from the official SDAIA knowledge-center publication of the law in article-range chunks; long articles re-fetched individually to avoid truncation; cross-checked article-by-article against the repository's independent reviewed-OCR text (token-set similarity + near-identical length) and scanned free of non-Arabic/markup contamination. Arabic verbatim; no translation, summary, paraphrase, or interpretation.",
+  "post_capture_corrections": {
+    "strip_kashida_U+0640": "Non-semantic elongation characters (ـ) are removed by gen_pdpl_arabic_law_verified.py. This file holds the RAW fetched text; the correction is applied transparently by the generator."
+  },
   "boundaries": {
     "arabic_governs": true,
     "translation_performed": false,
