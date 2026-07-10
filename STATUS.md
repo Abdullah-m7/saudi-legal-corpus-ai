@@ -257,6 +257,16 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   official; no English correction / no translation / no legal interpretation). Artifacts under
   `sources/pdpl/regulation/next_layer/`. Validate:
   `make pdpl-implementing-regulation-arabic-next-layer-validate`.
+- **PDPL implementing-regulation Arabic cleaned text** — 38 cleaned article records under
+  `sources/pdpl/regulation/cleaned/`, generated deterministically by
+  `scripts/gen_pdpl_implementing_regulation_arabic_cleaned.py`. Removes the two-column
+  extraction artifacts (word-order-reversed title lines, next-article title bleed, stray
+  `! % & # " * ...` markers, `عام` running headers, displaced line-initial diacritics, split
+  list markers) and the Article 1 reversed definition-labels. Body sentences are the inventory
+  extraction verbatim — never reordered or rewritten; spot-checked against the official SDAIA
+  source (Article 3 matched). `official_text_status` stays
+  `EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT` (cleaning is structural, not a certified official
+  transcription). Validate: `make pdpl-implementing-regulation-arabic-cleaned-validate`.
 
 ## Legal / official-status boundaries
 

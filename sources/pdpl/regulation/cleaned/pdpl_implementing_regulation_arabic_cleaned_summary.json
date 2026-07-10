@@ -1,0 +1,40 @@
+{
+  "law_key": "pdpl",
+  "law_component": "implementing_regulation",
+  "language": "ar",
+  "layer": "PDPL_IMPLEMENTING_REGULATION_ARABIC_CLEANED_TEXT",
+  "record_count": 38,
+  "article_number_range": [
+    1,
+    38
+  ],
+  "source_inventory_file": "sources/pdpl/regulation/inventory/pdpl_implementing_regulation_arabic_article_inventory.jsonl",
+  "source_pdf_sha256": "4b4b24e3bcb744a04a39a65d890454fc63ea282be85501af125d5f36134919df",
+  "cleaning_operation_totals": {
+    "article1_label_corrections": 7,
+    "explicit_reversed_title_lines_removed": 6,
+    "leading_title_lines_removed": 42,
+    "trailing_title_lines_removed": 9,
+    "artifact_only_lines_removed": 550,
+    "artifact_chars_stripped": 155,
+    "line_initial_combining_marks_stripped": 2,
+    "bare_list_markers_merged": 274
+  },
+  "text_cleaning_status": "STRUCTURAL_EXTRACTION_ARTIFACTS_REMOVED",
+  "official_text_status": "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT",
+  "spot_verified_against_official_source": {
+    "source": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2",
+    "articles_checked": [
+      3
+    ],
+    "result": "heading and body sentence matched verbatim"
+  },
+  "boundaries": {
+    "arabic_governs": true,
+    "translation_performed": false,
+    "legal_interpretation_performed": false,
+    "english_used_for_correction": false,
+    "body_sentences_reordered_or_rewritten": false
+  },
+  "recommended_next_stage": "PDPL_IMPLEMENTING_REGULATION_ARABIC_CLEANED_TEXT_VALIDATE"
+}
