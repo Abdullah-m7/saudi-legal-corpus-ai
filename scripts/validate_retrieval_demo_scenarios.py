@@ -26,6 +26,8 @@ This does NOT generate legal answers.
 This does NOT provide legal advice.
 """
 
+from __future__ import annotations
+
 import json
 import os
 import re
