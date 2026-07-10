@@ -156,11 +156,11 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   281 English + Chinese remediation 281; general IR 95 articles + 4 forms; listed
   JSC 69 articles + 1 appendix; closure audit 169 total records; **PDPL law 43 +
   PDPL implementing regulation 38 + Investment law 16 + Investment implementing
-  regulation 37**) with counts, paths, statuses, language layers, boundaries, and
-  validation targets. **8 tracks; primary Arabic governing 584; registry-counted
-  1146.** PDPL and Investment Arabic tracks are **verified against official
+  regulation 37 + Civil Transactions Law 721**) with counts, paths, statuses, language layers,
+  boundaries, and validation targets. **9 tracks; primary Arabic governing 1305; registry-counted
+  1867.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (415 records) as a projection (not added to totals). See
+  index (1136 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -335,9 +335,19 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`record_type = verified_arabic_article`), JSON Schema
   `schemas/investment_regulation_legal_llm.schema.json`. Validate:
   `make investment-regulation-legal-llm-validate`.
+- **Civil Transactions Law (نظام المعاملات المدنية) verified + LLM-ready** — 721 article
+  records. Owner-provided full official Arabic text (Royal Decree M/191, 29/11/1444هـ), parsed
+  deterministically into a complete 1..721 sequence (structural كتاب/باب/فصل headings separated as
+  `section_context`), zero junk, spot-corroborated verbatim against an independent public mirror
+  (Articles 1, 70). Source + verified records under `sources/civil/law/`; LLM-ready layer at
+  `data/civil_arabic_legal_llm/civil_transactions_law_legal_llm_001_721.json` (`record_type =
+  official_arabic_article`, `text_status = OWNER_PROVIDED_OFFICIAL_TEXT`); JSON Schema
+  `schemas/civil_transactions_law_legal_llm.schema.json`. Validate:
+  `make civil-transactions-law-verified-validate` and
+  `make civil-transactions-law-legal-llm-validate`.
 - **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`
-  projects all five Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
-  Investment law 16 + Investment regulation 37 = **415 records**) into one flat index at
+  projects all six Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
+  Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 = **1136 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
