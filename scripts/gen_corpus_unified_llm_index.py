@@ -38,6 +38,8 @@ LAYERS = [
      "investment", "law"),
     ("data/investment_arabic_legal_llm/investment_regulation_legal_llm_001_037.json",
      "investment", "implementing_regulation"),
+    ("data/civil_arabic_legal_llm/civil_transactions_law_legal_llm_001_721.json",
+     "civil", "law"),
 ]
 
 

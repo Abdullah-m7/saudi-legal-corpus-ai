@@ -43,6 +43,7 @@ PDPL_LAW_LLM = os.path.join(ROOT, "data", "pdpl_arabic_legal_llm", "pdpl_arabic_
 PDPL_REG_LLM = os.path.join(ROOT, "data", "pdpl_arabic_legal_llm", "pdpl_implementing_regulation_arabic_legal_llm_001_038.json")
 INVESTMENT_LAW_LLM = os.path.join(ROOT, "data", "investment_arabic_legal_llm", "investment_law_legal_llm_001_016.json")
 INVESTMENT_REG_LLM = os.path.join(ROOT, "data", "investment_arabic_legal_llm", "investment_regulation_legal_llm_001_037.json")
+CIVIL_LAW_LLM = os.path.join(ROOT, "data", "civil_arabic_legal_llm", "civil_transactions_law_legal_llm_001_721.json")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
 
@@ -79,10 +80,11 @@ def main() -> int:
     pdpl_reg_llm = _load_json(PDPL_REG_LLM)
     investment_law_llm = _load_json(INVESTMENT_LAW_LLM)
     investment_reg_llm = _load_json(INVESTMENT_REG_LLM)
+    civil_law_llm = _load_json(CIVIL_LAW_LLM)
     unified_index = _load_json(UNIFIED_INDEX)
 
     registry: dict[str, Any] = {
-        "registry_version": "1.1",
+        "registry_version": "1.2",
         "generated_date": "2026-07-10",
         "repository": "al3obdi/saudi-legal-corpus-ai",
         "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
@@ -95,7 +97,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 8,
+        "total_tracks": 9,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -106,6 +108,7 @@ def main() -> int:
             + pdpl_reg_llm["record_count"]      # 38 PDPL implementing regulation (verified vs official SDAIA)
             + investment_law_llm["record_count"]  # 16 Investment law (verified from MISA)
             + investment_reg_llm["record_count"]  # 37 Investment regulation (verified from MISA)
+            + civil_law_llm["record_count"]       # 721 Civil Transactions Law (owner-provided official text)
         ),
         "total_reference_records": companies_en["record_count"],  # 281 English
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -119,6 +122,7 @@ def main() -> int:
             + ljs_llm["record_count"] + ljs_app["record_count"]
             + pdpl_law_llm["record_count"] + pdpl_reg_llm["record_count"]
             + investment_law_llm["record_count"] + investment_reg_llm["record_count"]
+            + civil_law_llm["record_count"]
             + companies_en["record_count"]
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -138,14 +142,15 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) = 584",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) = 1305",
             "formula_total_reference": "companies_law_english(281)",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(584) + total_reference(281) + total_internal_reference(281) = 1146",
+            "formula_total_registry_counted": "total_primary_arabic_governing(1305) + total_reference(281) + total_internal_reference(281) = 1867",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81) and Investment Arabic (16+37=53) are verified primary Arabic governing-language records. The unified retrieval index (415) is a projection of counted records and is NOT added to totals.",
+            "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), parsed deterministically (complete 1..721) and spot-corroborated against an independent mirror; carries an LLM-ready enrichment layer. Arabic governs; not legal advice.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), and Civil Arabic (721) are primary Arabic governing-language records. The unified retrieval index (1136) is a projection of counted records and is NOT added to totals.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -516,6 +521,47 @@ def main() -> int:
                     "no_public_release": True,
                 },
                 "notes": "Investment Implementing Regulations (37 articles), verified verbatim from the official MISA Arabic PDF (render + Arabic-OCR corrected against the images, cross-checked vs the official English edition); LLM-ready enrichment layer.",
+            },
+            {
+                "track_id": "civil_transactions_law",
+                "display_name_ar": "نظام المعاملات المدنية",
+                "display_name_en": "Civil Transactions Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "OWNER_PROVIDED_OFFICIAL_TEXT",
+                "source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء",
+                "language_layers": {
+                    "arabic": {
+                        "status": "complete",
+                        "governing": True,
+                        "record_count": civil_law_llm["record_count"],
+                        "data_path": "data/civil_arabic_legal_llm/civil_transactions_law_legal_llm_001_721.json",
+                    },
+                },
+                "record_counts": {
+                    "arabic_articles": civil_law_llm["record_count"],
+                    "total": civil_law_llm["record_count"],
+                },
+                "data_paths": [
+                    "sources/civil/law/verified/civil_transactions_law_verified_records.jsonl",
+                    "data/civil_arabic_legal_llm/civil_transactions_law_legal_llm_001_721.json",
+                ],
+                "validator_targets": [
+                    "make civil-transactions-law-verified-validate",
+                    "make civil-transactions-law-legal-llm-validate",
+                ],
+                "report_paths": [],
+                "boundaries": {
+                    "arabic_governs": True,
+                    "not_official_translation": True,
+                    "not_verified_official_text": False,
+                    "not_legal_advice": True,
+                    "no_trilingual_alignment": True,
+                    "no_public_release": True,
+                },
+                "notes": "Civil Transactions Law (721 articles), Royal Decree M/191 dated 29/11/1444H. Owner-provided full official Arabic text, parsed deterministically (complete 1..721, section headings separated as context) and spot-corroborated against an independent public mirror; LLM-ready enrichment layer.",
             },
         ],
     }

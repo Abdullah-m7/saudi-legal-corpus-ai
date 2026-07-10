@@ -116,6 +116,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         investment-law-legal-llm-validate \
         investment-regulation-verified-validate \
         investment-regulation-legal-llm-validate \
+        civil-transactions-law-verified-validate \
+        civil-transactions-law-legal-llm-validate \
         corpus-unified-llm-index-validate
 
 help:
@@ -861,6 +863,14 @@ investment-regulation-verified-validate:
 # -- Investment Regulations Arabic LLM-ready enrichment layer validator (dedicated target; does NOT change make validate) --
 investment-regulation-legal-llm-validate:
 	$(PY) scripts/validate_investment_regulation_legal_llm.py
+
+# -- Civil Transactions Law verified text validator (dedicated target; does NOT change make validate) --
+civil-transactions-law-verified-validate:
+	$(PY) scripts/validate_civil_transactions_law_verified.py
+
+# -- Civil Transactions Law Arabic LLM-ready enrichment layer validator (dedicated target; does NOT change make validate) --
+civil-transactions-law-legal-llm-validate:
+	$(PY) scripts/validate_civil_transactions_law_legal_llm.py
 
 # -- Unified cross-law LLM retrieval index generator + validator (dedicated target; does NOT change make validate) --
 corpus-unified-llm-index-validate:

@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 415
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53}
+EXPECTED_TOTAL = 1136
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -31,6 +31,7 @@ SANITY = [
     ("تسرب البيانات الشخصية", "pdpl", 24),
     ("المصادرة غير المباشرة", "investment", 5),
     ("انتخاب أعضاء مجلس الإدارة", "companies_law", 68),
+    ("عقد المقايضة", "civil", 361),
 ]
 
 
@@ -71,6 +72,7 @@ def main():
         "data/pdpl_arabic_legal_llm/pdpl_implementing_regulation_arabic_legal_llm_001_038.json",
         "data/investment_arabic_legal_llm/investment_law_legal_llm_001_016.json",
         "data/investment_arabic_legal_llm/investment_regulation_legal_llm_001_037.json",
+        "data/civil_arabic_legal_llm/civil_transactions_law_legal_llm_001_721.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -104,7 +106,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
