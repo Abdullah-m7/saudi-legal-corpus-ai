@@ -364,6 +364,17 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   reproducibility, and enforces floors (75%/85%/0.80). Validate:
   `make corpus-retrieval-eval-validate`.
 
+## Strict QA gate
+
+- **`make qa-gate`** — one command, everything must pass: **[1]** every
+  `scripts/validate_*.py` in the repository (87 today — discovered from the filesystem, so any new
+  validator automatically joins the gate; exclusions require a written reason in the script's
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 14 deterministic generators
+  are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
+  regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
+  (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any
+  validator, any drift, or any test **fails the gate and blocks the merge**.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**

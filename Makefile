@@ -119,7 +119,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         civil-transactions-law-verified-validate \
         civil-transactions-law-legal-llm-validate \
         corpus-unified-llm-index-validate \
-        corpus-retrieval-eval-validate
+        corpus-retrieval-eval-validate \
+        qa-gate
 
 help:
 	@echo "Book One (default) targets:"
@@ -880,6 +881,14 @@ corpus-unified-llm-index-validate:
 # -- Retrieval eval pack over the unified index (dedicated target; does NOT change make validate) --
 corpus-retrieval-eval-validate:
 	$(PY) scripts/validate_corpus_retrieval_eval.py
+
+# -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
+qa-gate:
+	$(PY) scripts/run_qa_gate.py
+
+# CI variant (pytest already runs as its own CI step)
+qa-gate-ci:
+	$(PY) scripts/run_qa_gate.py --no-tests
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
