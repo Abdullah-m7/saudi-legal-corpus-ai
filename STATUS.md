@@ -156,11 +156,11 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   281 English + Chinese remediation 281; general IR 95 articles + 4 forms; listed
   JSC 69 articles + 1 appendix; closure audit 169 total records; **PDPL law 43 +
   PDPL implementing regulation 38 + Investment law 16 + Investment implementing
-  regulation 37 + Civil Transactions Law 721**) with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **9 tracks; primary Arabic governing 1305; registry-counted
-  1867.** PDPL and Investment Arabic tracks are **verified against official
+  regulation 37 + Civil Transactions Law 721 + GTPL 99 (+99 English reference)**) with counts, paths, statuses, language layers,
+  boundaries, and validation targets. **10 tracks; primary Arabic governing 1404; reference 380; registry-counted
+  2065.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (1136 records) as a projection (not added to totals). See
+  index (1235 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -347,7 +347,7 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   `make civil-transactions-law-legal-llm-validate`.
 - **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`
   projects all six Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
-  Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 = **1136 records**) into one flat index at
+  Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99 = **1235 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
@@ -363,6 +363,17 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   lexical miss remains (civ-004 تعريف الكفالة). Validator re-runs the eval, requires exact
   reproducibility, and enforces floors (75%/85%/0.80). Validate:
   `make corpus-retrieval-eval-validate`.
+
+## GTPL — نظام المنافسات والمشتريات الحكومية (م/128)
+
+- **GTPL current law (M/128, 13/11/1440هـ) verified + LLM-ready + English reference** — 99 Arabic
+  articles captured from a public mirror and **cross-checked token-by-token against the official
+  Ministry of Finance consolidated PDF** (committed at `inputs/gtpl_official_pdfs/`; overlaps
+  0.99/1.00/0.94 for arts 1/50/98 after ligature normalization; Article 98 supersession of the
+  repealed M/58 (1427هـ) verified in both languages). English layer = the **official BOE
+  translation** (owner-provided PDF, 99 articles parsed) — reference/guidance only, non-governing.
+  The repealed 1427 law was intentionally NOT ingested as current. Track files under
+  `sources/gtpl/law/` + `data/gtpl_arabic_legal_llm/`. Validate: `make gtpl-law-track-validate`.
 
 ## Strict QA gate
 

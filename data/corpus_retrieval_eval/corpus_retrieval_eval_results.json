@@ -5,13 +5,13 @@
  "top_k": 5,
  "metrics": {
   "total_queries": 40,
-  "top1_hits": 36,
+  "top1_hits": 35,
   "top3_hits": 39,
   "top5_hits": 39,
-  "top1_accuracy": 0.9,
+  "top1_accuracy": 0.875,
   "top3_accuracy": 0.975,
   "top5_accuracy": 0.975,
-  "mrr_at_5": 0.9292,
+  "mrr_at_5": 0.9167,
   "misses_top5": [
    "civ-004"
   ]
@@ -956,11 +956,16 @@
     "law_component": "law",
     "article_number": 12
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "gtpl-law-llm-art-017",
+     "article_number": 17,
+     "score": 1
+    },
     {
      "record_id": "pdpl-law-llm-art-012",
      "article_number": 12,
