@@ -242,6 +242,18 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   No generated artifacts committed. Validate:
   `make corpus-retrieval-operator-demo-pack-validate`.
 
+## PDPL (Personal Data Protection Law) — separate corpus track
+
+- **PDPL law Arabic next-layer completed** — 43 article records (Article 32 = ملغاة), from reviewed
+  OCR; read-only validator `make pdpl-arabic-law-next-layer-validate`. Status
+  `REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT`.
+- **PDPL implementing-regulation Arabic next-layer completed** — 38 article records
+  (`pdpl_reg_art_001..038`), each `article_text` preserved verbatim from the extracted-text article
+  inventory, source PDF SHA matched, boundaries held (Arabic governs; extracted text NOT verified
+  official; no English correction / no translation / no legal interpretation). Artifacts under
+  `sources/pdpl/regulation/next_layer/`. Validate:
+  `make pdpl-implementing-regulation-arabic-next-layer-validate`.
+
 ## Legal / official-status boundaries
 
 - **Official government adoption: not claimed.**
