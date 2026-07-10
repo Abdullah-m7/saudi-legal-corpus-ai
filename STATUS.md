@@ -353,6 +353,14 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
   flags). No legal text is altered, summarized, or translated. Validate (includes sanity queries
   that must route to the right law): `make corpus-unified-llm-index-validate`.
+- **Retrieval eval pack** — 40 realistic Arabic gold queries over the unified index
+  (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
+  (definitional articles) or official title — not reverse-engineered from search output. Runner
+  `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
+  deterministic results. **Current: top-1 85% / top-3 95% / MRR@5 0.883**, with 2 documented
+  lexical-search misses (civ-004 تعريف الكفالة, pdp-002 شروط الموافقة). Validator re-runs the
+  eval, requires exact reproducibility, and enforces floors (75%/85%/0.80). Validate:
+  `make corpus-retrieval-eval-validate`.
 
 ## Legal / official-status boundaries
 

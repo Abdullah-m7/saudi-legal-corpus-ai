@@ -118,7 +118,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         investment-regulation-legal-llm-validate \
         civil-transactions-law-verified-validate \
         civil-transactions-law-legal-llm-validate \
-        corpus-unified-llm-index-validate
+        corpus-unified-llm-index-validate \
+        corpus-retrieval-eval-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -875,6 +876,10 @@ civil-transactions-law-legal-llm-validate:
 # -- Unified cross-law LLM retrieval index generator + validator (dedicated target; does NOT change make validate) --
 corpus-unified-llm-index-validate:
 	$(PY) scripts/validate_corpus_unified_llm_index.py
+
+# -- Retrieval eval pack over the unified index (dedicated target; does NOT change make validate) --
+corpus-retrieval-eval-validate:
+	$(PY) scripts/validate_corpus_retrieval_eval.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
