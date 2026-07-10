@@ -26,6 +26,11 @@ SUMMARY = os.path.join(ROOT, "sources", "pdpl", "verified",
 EXPECTED = 43
 REPEALED = {32}
 SIM_FLOOR = 0.70   # non-repealed articles must corroborate the independent OCR at least this much
+KASHIDA = "ـ"
+
+
+def _normalize_official(text):
+    return text.replace(KASHIDA, "")
 
 
 def main():
@@ -51,11 +56,13 @@ def main():
         if r.get("article_key") != "pdpl_law_art_%03d" % n:
             errors.append("[2] art %s: article_key %r" % (n, r.get("article_key")))
 
-        # [3] verified text matches committed official source verbatim
-        if r.get("article_text_verified") != official.get(str(n)):
-            errors.append("[3] art %s: article_text_verified != committed official source" % n)
+        # [3] verified text matches committed official source (kashida-normalized) verbatim
+        if r.get("article_text_verified") != _normalize_official(official.get(str(n), "")):
+            errors.append("[3] art %s: article_text_verified != normalized official source" % n)
         if not r.get("article_text_verified", "").strip():
             errors.append("[3] art %s: empty verified text" % n)
+        if KASHIDA in r.get("article_text_verified", ""):
+            errors.append("[3] art %s: residual kashida in verified text" % n)
 
         # [4] corroboration recorded + floor for non-repealed
         corr = r.get("corroboration", {})
