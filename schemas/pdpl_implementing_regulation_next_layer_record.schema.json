@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://al3obdi.github.io/saudi-legal-corpus-ai/schemas/pdpl_implementing_regulation_next_layer_record.schema.json",
+  "title": "PDPL Implementing-Regulation Arabic Next-Layer Record",
+  "description": "One Arabic next-layer record for an article of the PDPL implementing regulation, derived verbatim from the extracted-text article inventory. Arabic governs; the text is NOT verified official text; no English correction, translation, or legal interpretation is performed at this layer.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "law_key",
+    "law_component",
+    "language",
+    "record_layer",
+    "article_number",
+    "article_key",
+    "arabic_heading",
+    "article_text",
+    "article_text_source_field",
+    "source_inventory_file",
+    "source_summary_file",
+    "source_extraction_artifact",
+    "source_pdf_sha256",
+    "source_status",
+    "official_text_status",
+    "governing_source_note",
+    "page_start",
+    "page_end",
+    "extraction_review_flags",
+    "english_used_for_correction",
+    "translation_performed",
+    "legal_interpretation_performed",
+    "ready_for_next_layer"
+  ],
+  "properties": {
+    "law_key": {
+      "description": "Law key. Fixed to 'pdpl'.",
+      "type": "string",
+      "enum": ["pdpl"]
+    },
+    "law_component": {
+      "description": "Component of the law. Fixed to 'implementing_regulation'.",
+      "type": "string",
+      "enum": ["implementing_regulation"]
+    },
+    "language": {
+      "description": "Record language. Fixed to 'ar' (Arabic).",
+      "type": "string",
+      "enum": ["ar"]
+    },
+    "record_layer": {
+      "description": "Record layer. Fixed to PDPL_IMPLEMENTING_REGULATION_ARABIC_NEXT_LAYER_PREP.",
+      "type": "string",
+      "enum": ["PDPL_IMPLEMENTING_REGULATION_ARABIC_NEXT_LAYER_PREP"]
+    },
+    "article_number": {
+      "description": "Article number, 1..38 in the regulation.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 38
+    },
+    "article_key": {
+      "description": "Stable article key, pdpl_reg_art_001 .. pdpl_reg_art_038.",
+      "type": "string",
+      "pattern": "^pdpl_reg_art_0(0[1-9]|[1-2][0-9]|3[0-8])$"
+    },
+    "arabic_heading": {
+      "description": "Arabic article heading carried from the inventory.",
+      "type": "string",
+      "minLength": 1
+    },
+    "article_text": {
+      "description": "Arabic article text preserved verbatim from the inventory's article_text_extracted.",
+      "type": "string",
+      "minLength": 1
+    },
+    "article_text_source_field": {
+      "description": "Inventory field the text is taken from. Fixed to article_text_extracted.",
+      "type": "string",
+      "enum": ["article_text_extracted"]
+    },
+    "source_inventory_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_summary_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_extraction_artifact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_pdf_sha256": {
+      "description": "SHA-256 of the governing regulation PDF (matches the extraction manifest).",
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_status": {
+      "description": "Source status. Fixed to EXTRACTED_TEXT_INVENTORY_READY_FOR_NEXT_LAYER.",
+      "type": "string",
+      "enum": ["EXTRACTED_TEXT_INVENTORY_READY_FOR_NEXT_LAYER"]
+    },
+    "official_text_status": {
+      "description": "Official text status. Fixed to EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT. Records are NOT official verified legal text.",
+      "type": "string",
+      "enum": ["EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT"]
+    },
+    "governing_source_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "page_start": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "page_end": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "extraction_review_flags": {
+      "description": "Extraction/review flags carried verbatim from the inventory (may be empty).",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "english_used_for_correction": {
+      "description": "Boundary guard. Fixed to false.",
+      "type": "boolean",
+      "enum": [false]
+    },
+    "translation_performed": {
+      "description": "Boundary guard. Fixed to false.",
+      "type": "boolean",
+      "enum": [false]
+    },
+    "legal_interpretation_performed": {
+      "description": "Boundary guard. Fixed to false.",
+      "type": "boolean",
+      "enum": [false]
+    },
+    "ready_for_next_layer": {
+      "description": "Whether the record is ready for the next layer. Fixed to true.",
+      "type": "boolean",
+      "enum": [true]
+    }
+  }
+}
