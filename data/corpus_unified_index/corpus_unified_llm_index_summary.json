@@ -1,0 +1,40 @@
+{
+  "index": "CORPUS_UNIFIED_LLM_RETRIEVAL_INDEX",
+  "total_records": 415,
+  "records_per_layer": {
+    "companies_law_m132_1443_official_arabic_legal_llm_001_281.json": 281,
+    "pdpl_arabic_law_legal_llm_001_043.json": 43,
+    "pdpl_implementing_regulation_arabic_legal_llm_001_038.json": 38,
+    "investment_law_legal_llm_001_016.json": 16,
+    "investment_regulation_legal_llm_001_037.json": 37
+  },
+  "records_per_corpus": {
+    "companies_law": 281,
+    "investment": 53,
+    "pdpl": 81
+  },
+  "layers": [
+    "companies_law_m132_1443_official_arabic_legal_llm_001_281.json",
+    "pdpl_arabic_law_legal_llm_001_043.json",
+    "pdpl_implementing_regulation_arabic_legal_llm_001_038.json",
+    "investment_law_legal_llm_001_016.json",
+    "investment_regulation_legal_llm_001_037.json"
+  ],
+  "fields": [
+    "record_id",
+    "corpus",
+    "law_id",
+    "law_component",
+    "law_title_ar",
+    "article_number",
+    "llm_title_ar",
+    "retrieval_title_ar",
+    "article_path",
+    "keywords_ar",
+    "search_queries_ar",
+    "text_ar",
+    "text_status",
+    "source_layer"
+  ],
+  "note": "Flat retrieval index projected from the per-law LLM-ready enrichment layers. No legal text altered, summarized, translated, or re-derived. Arabic governs."
+}

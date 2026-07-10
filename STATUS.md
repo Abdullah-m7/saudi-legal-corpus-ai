@@ -334,6 +334,14 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`record_type = verified_arabic_article`), JSON Schema
   `schemas/investment_regulation_legal_llm.schema.json`. Validate:
   `make investment-regulation-legal-llm-validate`.
+- **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`
+  projects all five Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
+  Investment law 16 + Investment regulation 37 = **415 records**) into one flat index at
+  `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
+  corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
+  scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
+  flags). No legal text is altered, summarized, or translated. Validate (includes sanity queries
+  that must route to the right law): `make corpus-unified-llm-index-validate`.
 
 ## Legal / official-status boundaries
 
