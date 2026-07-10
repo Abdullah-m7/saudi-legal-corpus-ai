@@ -23,6 +23,8 @@ INV = os.path.join(BASE, "inventory", "pdpl_implementing_regulation_arabic_artic
 MANIFEST = os.path.join(BASE, "intake", "pdpl_implementing_regulation_arabic_extraction_manifest.json")
 RECORDS = os.path.join(BASE, "next_layer", "pdpl_implementing_regulation_arabic_next_layer_records.jsonl")
 SUMMARY = os.path.join(BASE, "next_layer", "pdpl_implementing_regulation_arabic_next_layer_summary.json")
+QA_FINDINGS = os.path.join(BASE, "next_layer", "qa",
+                           "pdpl_implementing_regulation_arabic_next_layer_qa_findings.json")
 
 EXPECTED_COUNT = 38
 OFFICIAL_TEXT_STATUS = "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT"
@@ -135,6 +137,20 @@ def main():
     check(summary.get("legal_interpretation_performed") is False, "summary legal_interpretation_performed must be false")
     check(summary.get("english_used_for_correction") is False, "summary english_used_for_correction must be false")
     check(summary.get("stage") == RECORD_LAYER, "summary stage wrong")
+
+    # QA findings consistency (present + all gates PASS + a clean decision)
+    if not os.path.isfile(QA_FINDINGS):
+        problems.append("missing QA findings: %s" % os.path.relpath(QA_FINDINGS, ROOT))
+    else:
+        qa = _read_json(QA_FINDINGS)
+        check(qa.get("stage") == "PDPL_IMPLEMENTING_REGULATION_ARABIC_NEXT_LAYER_QA", "QA stage wrong")
+        check(qa.get("record_count") == EXPECTED_COUNT, "QA record_count must be %d" % EXPECTED_COUNT)
+        bad_gates = [k for k, v in qa.items()
+                     if k.endswith("_status") and k != "official_text_status" and v != "PASS"]
+        check(not bad_gates, "QA gates not all PASS: %s" % bad_gates)
+        check(not qa.get("blocking_findings"), "QA has blocking findings: %s" % qa.get("blocking_findings"))
+        check(qa.get("qa_decision") == "PASS_NEXT_LAYER_READY", "QA decision must be PASS_NEXT_LAYER_READY")
+        check(qa.get("review_only") is True, "QA must be review_only")
 
     print("  • %d records validated" % len(records))
     print("  • article range 1→%d (sequential, unique)" % EXPECTED_COUNT)
