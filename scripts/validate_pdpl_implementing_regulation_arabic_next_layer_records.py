@@ -25,6 +25,7 @@ RECORDS = os.path.join(BASE, "next_layer", "pdpl_implementing_regulation_arabic_
 SUMMARY = os.path.join(BASE, "next_layer", "pdpl_implementing_regulation_arabic_next_layer_summary.json")
 QA_FINDINGS = os.path.join(BASE, "next_layer", "qa",
                            "pdpl_implementing_regulation_arabic_next_layer_qa_findings.json")
+SCHEMA = os.path.join(ROOT, "schemas", "pdpl_implementing_regulation_next_layer_record.schema.json")
 
 EXPECTED_COUNT = 38
 OFFICIAL_TEXT_STATUS = "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT"
@@ -94,6 +95,20 @@ def main():
           "article_key sequence must be pdpl_reg_art_001..%03d in order" % EXPECTED_COUNT)
     check(len(set(nums)) == len(nums), "duplicate article_number present")
     check(len(set(keys)) == len(keys), "duplicate article_key present")
+
+    # JSON Schema validation (each record) — optional dependency; skipped cleanly if absent
+    if not os.path.isfile(SCHEMA):
+        problems.append("missing schema: %s" % os.path.relpath(SCHEMA, ROOT))
+    else:
+        try:
+            import jsonschema
+            schema = _read_json(SCHEMA)
+            validator = jsonschema.Draft7Validator(schema)
+            for r in records:
+                for err in validator.iter_errors(r):
+                    problems.append("art %s schema: %s" % (r.get("article_number"), err.message))
+        except ImportError:
+            print("  • (jsonschema not installed — schema check skipped; field checks still run)")
 
     pdf_sha = manifest.get("target_pdf_sha256")
     for r in records:
