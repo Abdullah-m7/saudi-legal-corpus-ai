@@ -7,16 +7,17 @@
     "counting_method": "raw_layer_records_not_deduplicated_legal_article_units",
     "english_reference_records_included": true,
     "forms_and_appendices_counted": true,
-    "formula_total_implementing_regulations": "general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169",
+    "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) = 531",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) = 584",
     "formula_total_reference": "companies_law_english(281)",
-    "formula_total_registry_counted": "total_primary_arabic_governing(531) + total_reference(281) + total_internal_reference(281) = 1093",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records, not a public full Chinese layer. PDPL Arabic (43+38=81) are primary Arabic governing-language records, not verified official text.",
-    "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) Arabic next-layer records are primary Arabic governing-language records but are NOT verified official text (reviewed OCR / direct extraction). Arabic governs; not official/binding; not legal advice. Kept as separate PDPL corpus tracks.",
+    "formula_total_registry_counted": "total_primary_arabic_governing(584) + total_reference(281) + total_internal_reference(281) = 1146",
+    "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81) and Investment Arabic (16+37=53) are verified primary Arabic governing-language records. The unified retrieval index (415) is a projection of counted records and is NOT added to totals.",
+    "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "primary_arabic_governing_records_included": true
   },
-  "generated_date": "2026-07-06",
+  "generated_date": "2026-07-10",
   "legal_status_boundaries": {
     "arabic_official_source_governs": true,
     "chinese_internal_reference_only": true,
@@ -26,14 +27,14 @@
     "not_legal_advice": true,
     "not_official_translation": true
   },
-  "registry_version": "1.0",
+  "registry_version": "1.1",
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 531,
+  "total_primary_arabic_governing_records": 584,
   "total_reference_records": 281,
-  "total_registry_counted_records": 1093,
-  "total_tracks": 6,
+  "total_registry_counted_records": 1146,
+  "total_tracks": 8,
   "tracks": [
     {
       "boundaries": {
@@ -253,12 +254,12 @@
         "no_trilingual_alignment": true,
         "not_legal_advice": true,
         "not_official_translation": true,
-        "not_verified_official_text": true
+        "not_verified_official_text": false
       },
       "corpus_family": "statutory_law",
       "data_paths": [
-        "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
-        "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_summary.json"
+        "sources/pdpl/verified/pdpl_arabic_law_verified_records.jsonl",
+        "data/pdpl_arabic_legal_llm/pdpl_arabic_law_legal_llm_001_043.json"
       ],
       "display_name_ar": "نظام حماية البيانات الشخصية",
       "display_name_en": "Personal Data Protection Law (PDPL)",
@@ -266,14 +267,14 @@
       "jurisdiction": "Kingdom of Saudi Arabia",
       "language_layers": {
         "arabic": {
-          "data_path": "sources/pdpl/next_layer/pdpl_arabic_law_next_layer_records.jsonl",
+          "data_path": "data/pdpl_arabic_legal_llm/pdpl_arabic_law_legal_llm_001_043.json",
           "governing": true,
           "record_count": 43,
-          "status": "next_layer_complete"
+          "status": "complete"
         }
       },
-      "notes": "PDPL law Arabic next-layer: 43 article records from reviewed OCR (Article 32 = ملغاة). Arabic governs; NOT verified official text; no translation / no legal interpretation. Separate PDPL corpus track.",
-      "official_text_status": "REVIEWED_OCR_NOT_VERIFIED_OFFICIAL_TEXT",
+      "notes": "PDPL law (43 articles, Article 32 = ملغاة), VERIFIED against the official SDAIA-published text and cross-checked vs independent OCR; LLM-ready enrichment layer. Arabic governs; no translation / no legal interpretation.",
+      "official_text_status": "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT",
       "record_counts": {
         "arabic_articles": 43,
         "total": 43
@@ -281,10 +282,11 @@
       "report_paths": [
         "reports/pdpl/PDPL_ARABIC_LAW_NEXT_LAYER_QA_REPORT.md"
       ],
-      "status": "next_layer_complete",
+      "status": "complete",
       "track_id": "pdpl_law",
       "validator_targets": [
-        "make pdpl-arabic-law-next-layer-validate"
+        "make pdpl-arabic-law-verified-validate",
+        "make pdpl-arabic-law-legal-llm-validate"
       ]
     },
     {
@@ -296,12 +298,12 @@
         "no_trilingual_alignment": true,
         "not_legal_advice": true,
         "not_official_translation": true,
-        "not_verified_official_text": true
+        "not_verified_official_text": false
       },
       "corpus_family": "implementing_regulation",
       "data_paths": [
-        "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_records.jsonl",
-        "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_summary.json"
+        "sources/pdpl/regulation/verified/pdpl_implementing_regulation_arabic_verified_records.jsonl",
+        "data/pdpl_arabic_legal_llm/pdpl_implementing_regulation_arabic_legal_llm_001_038.json"
       ],
       "display_name_ar": "اللائحة التنفيذية لنظام حماية البيانات الشخصية",
       "display_name_en": "PDPL Implementing Regulation",
@@ -309,25 +311,122 @@
       "jurisdiction": "Kingdom of Saudi Arabia",
       "language_layers": {
         "arabic": {
-          "data_path": "sources/pdpl/regulation/next_layer/pdpl_implementing_regulation_arabic_next_layer_records.jsonl",
+          "data_path": "data/pdpl_arabic_legal_llm/pdpl_implementing_regulation_arabic_legal_llm_001_038.json",
           "governing": true,
           "record_count": 38,
-          "status": "next_layer_complete"
+          "status": "complete"
         }
       },
-      "notes": "PDPL implementing regulation Arabic next-layer: 38 article records from direct text extraction. Arabic governs; NOT verified official text; no translation / no legal interpretation. Separate PDPL corpus track.",
-      "official_text_status": "EXTRACTED_TEXT_NOT_VERIFIED_OFFICIAL_TEXT",
+      "notes": "PDPL implementing regulation (38 articles), VERIFIED against the official SDAIA-published text and cross-checked vs independent extraction; LLM-ready enrichment layer. Arabic governs; no translation / no legal interpretation.",
+      "official_text_status": "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT",
       "record_counts": {
         "arabic_articles": 38,
         "total": 38
       },
       "report_paths": [],
-      "status": "next_layer_complete",
+      "status": "complete",
       "track_id": "pdpl_implementing_regulation",
       "validator_targets": [
-        "make pdpl-implementing-regulation-arabic-next-layer-validate"
+        "make pdpl-implementing-regulation-arabic-verified-validate",
+        "make pdpl-implementing-regulation-arabic-legal-llm-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/investment/law/verified/investment_law_verified_records.jsonl",
+        "data/investment_arabic_legal_llm/investment_law_legal_llm_001_016.json"
+      ],
+      "display_name_ar": "نظام الاستثمار",
+      "display_name_en": "Saudi Investment Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/investment_arabic_legal_llm/investment_law_legal_llm_001_016.json",
+          "governing": true,
+          "record_count": 16,
+          "status": "complete"
+        }
+      },
+      "notes": "Investment Law (16 articles), Royal Decree M/19 dated 16/1/1446H, verified verbatim from the official MISA bilingual PDF (Arabic governing; English reference only); LLM-ready enrichment layer.",
+      "official_text_status": "VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF",
+      "record_counts": {
+        "arabic_articles": 16,
+        "total": 16
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Investment / وزارة الاستثمار",
+      "status": "complete",
+      "track_id": "investment_law",
+      "validator_targets": [
+        "make investment-law-verified-validate",
+        "make investment-law-legal-llm-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "is_general": false,
+        "is_specialized": false,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "implementing_regulation",
+      "data_paths": [
+        "sources/investment/regulation/verified/investment_regulation_verified_records.jsonl",
+        "data/investment_arabic_legal_llm/investment_regulation_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الاستثمار",
+      "display_name_en": "Investment Law Implementing Regulations",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/investment_arabic_legal_llm/investment_regulation_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "Investment Implementing Regulations (37 articles), verified verbatim from the official MISA Arabic PDF (render + Arabic-OCR corrected against the images, cross-checked vs the official English edition); LLM-ready enrichment layer.",
+      "official_text_status": "VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF",
+      "record_counts": {
+        "arabic_articles": 37,
+        "total": 37
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Investment / وزارة الاستثمار",
+      "status": "complete",
+      "track_id": "investment_implementing_regulation",
+      "validator_targets": [
+        "make investment-regulation-verified-validate",
+        "make investment-regulation-legal-llm-validate"
       ]
     }
   ],
+  "unified_retrieval_index": {
+    "index_path": "data/corpus_unified_index/corpus_unified_llm_index.jsonl",
+    "note": "Flat cross-law retrieval index projecting all Arabic LLM-ready layers. A projection of already-counted records; NOT added to registry totals to avoid double-counting.",
+    "records_per_corpus": {
+      "companies_law": 281,
+      "investment": 53,
+      "pdpl": 81
+    },
+    "search_tool": "scripts/search_corpus_unified.py",
+    "total_records": 415,
+    "validator_target": "make corpus-unified-llm-index-validate"
+  },
   "validation_status": "PASS"
 }

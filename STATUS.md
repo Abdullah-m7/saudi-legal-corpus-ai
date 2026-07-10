@@ -155,11 +155,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   registry summarizing all completed tracks (companies law 281 articles Arabic +
   281 English + Chinese remediation 281; general IR 95 articles + 4 forms; listed
   JSC 69 articles + 1 appendix; closure audit 169 total records; **PDPL law 43 +
-  PDPL implementing regulation 38 Arabic next-layer records**) with counts, paths,
-  statuses, language layers, boundaries, and validation targets. **6 tracks;
-  primary Arabic governing 531; registry-counted 1093.** PDPL Arabic records are
-  primary Arabic governing-language records but **NOT verified official text**
-  (reviewed OCR / extraction). See
+  PDPL implementing regulation 38 + Investment law 16 + Investment implementing
+  regulation 37**) with counts, paths, statuses, language layers, boundaries, and
+  validation targets. **8 tracks; primary Arabic governing 584; registry-counted
+  1146.** PDPL and Investment Arabic tracks are **verified against official
+  published text** (SDAIA / MISA). The registry also records the unified retrieval
+  index (415 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.

@@ -86,10 +86,11 @@ separate, and all boundaries enforced. Validate:
 `make implementing-regulations-arabic-program-closure-validate`. A **corpus registry
 index** provides a canonical, machine-readable summary of all completed tracks
 (companies law 281, general IR 95+4, listed JSC 69+1, closure audit 169 total,
-PDPL law 43 + PDPL implementing regulation 38 Arabic next-layer — 6 tracks,
-registry-counted 1093; PDPL Arabic is not verified official text) with counts,
-paths, statuses, boundaries, and validation targets. Validate:
-`make corpus-registry-validate`. A **corpus export** (v1) provides a deterministic
+PDPL law 43 + PDPL regulation 38 + Investment law 16 + Investment regulation 37 —
+8 tracks, primary Arabic 584, registry-counted 1146; PDPL and Investment Arabic
+are verified against official published text) with counts, paths, statuses,
+boundaries, and validation targets, plus the unified retrieval index (415).
+Validate: `make corpus-registry-validate`. A **corpus export** (v1) provides a deterministic
 JSONL of 450 primary Arabic governing records (Companies Law 281, general IR 95+4,
 listed JSC 69+1) suitable for future RAG/search/training workflows. Validate:
 `make corpus-export-primary-arabic-validate`. A **local lexical search**
