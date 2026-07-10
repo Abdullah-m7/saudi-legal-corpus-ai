@@ -33,6 +33,9 @@ jobs:
       - name: Run tests
         run: make test
 
+      - name: Strict QA gate (all 87+ validators + generator idempotence)
+        run: make qa-gate-ci
+
       - name: Render searchable HTML book
         run: make html
 
