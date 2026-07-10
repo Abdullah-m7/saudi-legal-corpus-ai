@@ -1165,6 +1165,19 @@ Law structure). This is **not** full Saudi Companies Law coverage: repo book4 st
   `reports/chinese_translation_review/`. Validate: `make chinese-remediation-batch-p3-conf-001-validate`
   (and `-qa-validate`).
 
+### Chinese remediation program closure audit (read-only)
+
+- A consolidated, **read-only** closure audit verifies the completed program end to end: **15 batches /
+  281 articles** (P0 5/92 · P1 4/76 · P2 5/95 · P3 1/18), each batch's plan scope equal to its
+  implemented data scope and QA scope with **QA_PASS (15/15, 281 articles, 0 minor / 0 blocked / 0
+  failed)**, implemented coverage exactly the full law **1–281 with no missing and no duplicate
+  articles**, and the internal / non-official / non-binding / non-governing boundaries intact. **No new
+  Chinese text is created**; no full Chinese 281 layer / trilingual alignment / public release /
+  regulations implementation.
+- Artifacts: `reports/chinese_translation_review/chinese_remediation_program_closure_audit.json` +
+  `CHINESE_REMEDIATION_PROGRAM_CLOSURE_AUDIT_AR.md`. Validate:
+  `make chinese-remediation-program-closure-audit-validate`.
+
 ## Multilingual Saudi legal corpus for AI (foundation)
 
 - This repository is a **multilingual, LLM-ready, official-source-based Saudi legal corpus** — a

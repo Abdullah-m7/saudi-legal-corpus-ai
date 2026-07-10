@@ -71,6 +71,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   backlog finding; article-by-article QA result **PASS (18/18, no minor fixes)**.
 - **The full Chinese remediation program (P0 → P1 → P2 → P3) is complete** — every backlog article is
   remediated, expanded, or confirmed-and-retained as internal reference, each with passing QA.
+- **Closure audit completed** — a read-only consolidated audit
+  ([`chinese_remediation_program_closure_audit.json`](reports/chinese_translation_review/chinese_remediation_program_closure_audit.json))
+  verifies all **15 batches / 281 articles**: every batch's plan scope equals its implemented data and
+  QA scope with **QA_PASS (15/15, 281 articles, 0 minor / 0 blocked / 0 failed)**, the implemented
+  coverage is exactly the full law **1–281 with no missing and no duplicate articles**, and the
+  internal / non-official / non-binding / non-governing boundaries hold. No new Chinese text created.
 
 ## Not yet created
 
