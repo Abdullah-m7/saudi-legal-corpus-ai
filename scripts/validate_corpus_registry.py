@@ -58,6 +58,7 @@ REQUIRED_TRACK_IDS = [
     "investment_law",
     "investment_implementing_regulation",
     "civil_transactions_law",
+    "gtpl_law",
 ]
 
 CHECKS: list[str] = []
@@ -100,9 +101,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 9 tracks
+    # [3] 10 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 9 tracks present...", len(track_ids) == 9 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 10 tracks present...", len(track_ids) == 10 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -175,9 +176,16 @@ def main() -> int:
           civil.get("official_text_status") == "OWNER_PROVIDED_OFFICIAL_TEXT",
           f"official_text_status={civil.get('official_text_status')}")
 
+    # [7g2] GTPL track
+    gtpl = tracks_by_id.get("gtpl_law", {})
+    check("[7g2] gtpl_law: 99 Arabic + 99 English reference...",
+          gtpl.get("record_counts", {}).get("arabic_articles") == 99
+          and gtpl.get("record_counts", {}).get("english_articles") == 99,
+          f"counts={gtpl.get('record_counts')}")
+
     # [7g] unified retrieval index present (1136 records, projection not counted in totals)
     uix = registry.get("unified_retrieval_index", {})
-    check("[7g] unified retrieval index: 1136 records...", uix.get("total_records") == 1136,
+    check("[7g] unified retrieval index: 1235 records...", uix.get("total_records") == 1235,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -239,12 +247,12 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 1305...",
-          registry.get("total_primary_arabic_governing_records") == 1305,
+    check("[19a] total_primary_arabic_governing_records == 1404...",
+          registry.get("total_primary_arabic_governing_records") == 1404,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
-    check("[19b] total_reference_records == 281...",
-          registry.get("total_reference_records") == 281,
+    check("[19b] total_reference_records == 380...",
+          registry.get("total_reference_records") == 380,
           f"Value: {registry.get('total_reference_records')}")
 
     check("[19c] total_internal_reference_records == 281...",
@@ -255,8 +263,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 1867...",
-          registry.get("total_registry_counted_records") == 1867,
+    check("[19e] total_registry_counted_records == 2065...",
+          registry.get("total_registry_counted_records") == 2065,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -280,7 +288,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"1305 + 281 + 281 = 1867")
+          f"1404 + 380 + 281 = 2065")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -298,11 +306,11 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 9 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 10 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
-              "civil_transactions_law). Primary Arabic 1305, registry-counted 1867. All counts correct, all referenced paths "
+              "civil_transactions_law, gtpl_law). Primary Arabic 1404, reference 380, registry-counted 2065. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
