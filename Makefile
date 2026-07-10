@@ -105,7 +105,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-retrieval-workflow-runner-validate \
         corpus-retrieval-demo-scenarios-validate \
         corpus-retrieval-operator-demo-pack-validate \
-        pdpl-arabic-law-next-layer-validate
+        pdpl-arabic-law-next-layer-validate \
+        pdpl-implementing-regulation-arabic-next-layer-validate
 
 help:
 	@echo "Book One (default) targets:"
@@ -810,6 +811,10 @@ corpus-retrieval-operator-demo-pack-smoke:
 # -- PDPL Arabic Law next-layer validator (dedicated target; does NOT change make validate) --
 pdpl-arabic-law-next-layer-validate:
 	$(PY) scripts/validate_pdpl_arabic_law_next_layer_records.py
+
+# -- PDPL implementing-regulation next-layer validator (dedicated target; does NOT change make validate) --
+pdpl-implementing-regulation-arabic-next-layer-validate:
+	$(PY) scripts/validate_pdpl_implementing_regulation_arabic_next_layer_records.py
 
 clean:
 	rm -f dist/book1.html dist/book1.pdf data/articles/book1_articles_001_034.jsonl \
