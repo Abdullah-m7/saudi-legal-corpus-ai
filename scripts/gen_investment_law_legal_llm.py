@@ -20,6 +20,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VERIFIED = os.path.join(ROOT, "sources", "investment", "law", "verified",
@@ -57,6 +58,39 @@ def _search_queries(num, title_ar):
     ]
 
 
+
+TEXT_STOPWORDS = {
+    "من", "في", "على", "عن", "إلى", "أو", "و", "أن", "التي", "الذي", "ما",
+    "غير", "قبل", "بعد", "عند", "لدى", "هذه", "هذا", "به", "بها", "لها", "له",
+    "أي", "كل", "ذلك", "تلك", "ذات", "ذوات", "بأي", "بما", "فيها", "فيه", "مع",
+    "ومن", "وأي", "وفي", "وعلى", "أما", "إذا", "كان", "كانت", "يكون", "تكون",
+    "وقد", "قد", "لا", "إلا", "بين", "حسب", "وفق", "وفقا", "بحسب", "فإن", "وإن",
+    "المادة", "النظام", "اللائحة", "أحكام", "يجب", "يجوز", "عليه", "دون", "فيما",
+    "منه", "منها", "وإذا", "حال", "وله", "ولها", "التي", "الآتية", "يأتي", "يلي",
+}
+
+
+def _text_keywords(text, k=5):
+    """Mechanical term-frequency keywords from the article text (index signal only)."""
+    freq = {}
+    order = []
+    for w in re.sub(r"[^ء-ي]+", " ", text).split():
+        if len(w) >= 3 and w not in TEXT_STOPWORDS:
+            if w not in freq:
+                order.append(w)
+            freq[w] = freq.get(w, 0) + 1
+    ranked = sorted(order, key=lambda w: (-freq[w], order.index(w)))
+    return ranked[:k]
+
+
+def _blended_keywords(title_kws, text, cap=8):
+    out = list(title_kws)
+    for w in _text_keywords(text):
+        if w not in out:
+            out.append(w)
+    return out[:cap] if out else [w for w in _text_keywords(text, 1)] or ["نص"]
+
+
 def build_records():
     rows = [json.loads(l) for l in open(VERIFIED, encoding="utf-8") if l.strip()]
     rows.sort(key=lambda r: r["article_number"])
@@ -80,7 +114,7 @@ def build_records():
             "llm_title_ar": "المادة %d: %s" % (num, title),
             "retrieval_title_ar": "%s - المادة %d - %s" % (LAW_AR, num, title),
             "article_path": "investment/law/articles/%03d" % num,
-            "keywords_ar": _keywords(title),
+            "keywords_ar": _blended_keywords(_keywords(title), text),
             "search_queries_ar": _search_queries(num, title),
             "text_status": "VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF",
             "source_trust": {

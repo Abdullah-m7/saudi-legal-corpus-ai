@@ -357,9 +357,11 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 85% / top-3 95% / MRR@5 0.883**, with 2 documented
-  lexical-search misses (civ-004 تعريف الكفالة, pdp-002 شروط الموافقة). Validator re-runs the
-  eval, requires exact reproducibility, and enforces floors (75%/85%/0.80). Validate:
+  deterministic results. **Current: top-1 90% / top-3 97.5% / MRR@5 0.929** (improved from
+  85%/95%/0.883 by blending text term-frequency keywords into the title-only layers — PDPL
+  regulation + Investment law/regulation; the Companies gold layer untouched). One documented
+  lexical miss remains (civ-004 تعريف الكفالة). Validator re-runs the eval, requires exact
+  reproducibility, and enforces floors (75%/85%/0.80). Validate:
   `make corpus-retrieval-eval-validate`.
 
 ## Legal / official-status boundaries

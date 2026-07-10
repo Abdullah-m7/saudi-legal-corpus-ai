@@ -5,16 +5,15 @@
  "top_k": 5,
  "metrics": {
   "total_queries": 40,
-  "top1_hits": 34,
-  "top3_hits": 38,
-  "top5_hits": 38,
-  "top1_accuracy": 0.85,
-  "top3_accuracy": 0.95,
-  "top5_accuracy": 0.95,
-  "mrr_at_5": 0.8833,
+  "top1_hits": 36,
+  "top3_hits": 39,
+  "top5_hits": 39,
+  "top1_accuracy": 0.9,
+  "top3_accuracy": 0.975,
+  "top5_accuracy": 0.975,
+  "mrr_at_5": 0.9292,
   "misses_top5": [
-   "civ-004",
-   "pdp-002"
+   "civ-004"
   ]
  },
  "per_query": [
@@ -689,14 +688,14 @@
      "score": 48
     },
     {
-     "record_id": "pdpl-reg-llm-art-020",
-     "article_number": 20,
+     "record_id": "pdpl-reg-llm-art-012",
+     "article_number": 12,
      "score": 26
     },
     {
-     "record_id": "pdpl-reg-llm-art-032",
-     "article_number": 32,
-     "score": 22
+     "record_id": "pdpl-reg-llm-art-020",
+     "article_number": 20,
+     "score": 26
     }
    ]
   },
@@ -709,25 +708,25 @@
     "law_component": "implementing_regulation",
     "article_number": 11
    },
-   "gold_rank": null,
+   "gold_rank": 2,
    "hit_top1": false,
-   "hit_top3": false,
-   "hit_top5": false,
+   "hit_top3": true,
+   "hit_top5": true,
    "top_hits": [
     {
-     "record_id": "pdpl-reg-llm-art-033",
-     "article_number": 33,
+     "record_id": "pdpl-reg-llm-art-012",
+     "article_number": 12,
+     "score": 36
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-011",
+     "article_number": 11,
+     "score": 32
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-014",
+     "article_number": 14,
      "score": 31
-    },
-    {
-     "record_id": "pdpl-reg-llm-art-028",
-     "article_number": 28,
-     "score": 29
-    },
-    {
-     "record_id": "pdpl-law-llm-art-005",
-     "article_number": 5,
-     "score": 28
     }
    ]
   },
@@ -810,16 +809,16 @@
     {
      "record_id": "pdpl-reg-llm-art-025",
      "article_number": 25,
-     "score": 31
+     "score": 39
     },
     {
-     "record_id": "pdpl-reg-llm-art-024",
-     "article_number": 24,
+     "record_id": "pdpl-reg-llm-art-004",
+     "article_number": 4,
      "score": 21
     },
     {
-     "record_id": "pdpl-reg-llm-art-032",
-     "article_number": 32,
+     "record_id": "pdpl-reg-llm-art-009",
+     "article_number": 9,
      "score": 21
     }
    ]
@@ -833,11 +832,16 @@
     "law_component": "implementing_regulation",
     "article_number": 37
    },
-   "gold_rank": 3,
-   "hit_top1": false,
+   "gold_rank": 1,
+   "hit_top1": true,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-037",
+     "article_number": 37,
+     "score": 27
+    },
     {
      "record_id": "oa-llm-companies-art-274",
      "article_number": 274,
@@ -847,11 +851,6 @@
      "record_id": "oa-llm-companies-art-266",
      "article_number": 266,
      "score": 19
-    },
-    {
-     "record_id": "pdpl-reg-llm-art-037",
-     "article_number": 37,
-     "score": 15
     }
    ]
   },
@@ -903,7 +902,7 @@
     {
      "record_id": "pdpl-reg-llm-art-013",
      "article_number": 13,
-     "score": 26
+     "score": 30
     },
     {
      "record_id": "inv-reg-llm-art-016",
@@ -926,25 +925,25 @@
     "law_component": "implementing_regulation",
     "article_number": 9
    },
-   "gold_rank": 3,
-   "hit_top1": false,
+   "gold_rank": 1,
+   "hit_top1": true,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
     {
-     "record_id": "pdpl-law-llm-art-015",
-     "article_number": 15,
-     "score": 26
-    },
-    {
-     "record_id": "pdpl-law-llm-art-006",
-     "article_number": 6,
-     "score": 25
-    },
-    {
      "record_id": "pdpl-reg-llm-art-009",
      "article_number": 9,
-     "score": 24
+     "score": 40
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-001",
+     "article_number": 1,
+     "score": 27
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-003",
+     "article_number": 3,
+     "score": 26
     }
    ]
   },
@@ -1082,14 +1081,14 @@
      "score": 60
     },
     {
+     "record_id": "inv-law-llm-art-004",
+     "article_number": 4,
+     "score": 19
+    },
+    {
      "record_id": "oa-llm-companies-art-136",
      "article_number": 136,
      "score": 16
-    },
-    {
-     "record_id": "inv-law-llm-art-004",
-     "article_number": 4,
-     "score": 15
     }
    ]
   },
@@ -1237,14 +1236,14 @@
      "score": 29
     },
     {
+     "record_id": "inv-reg-llm-art-019",
+     "article_number": 19,
+     "score": 5
+    },
+    {
      "record_id": "inv-law-llm-art-002",
      "article_number": 2,
      "score": 2
-    },
-    {
-     "record_id": "civil-law-llm-art-033",
-     "article_number": 33,
-     "score": 1
     }
    ]
   }
