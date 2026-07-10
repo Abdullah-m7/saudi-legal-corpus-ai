@@ -1,0 +1,1252 @@
+{
+ "eval_id": "corpus-unified-retrieval-eval-v1",
+ "index_path": "data/corpus_unified_index/corpus_unified_llm_index.jsonl",
+ "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
+ "top_k": 5,
+ "metrics": {
+  "total_queries": 40,
+  "top1_hits": 34,
+  "top3_hits": 38,
+  "top5_hits": 38,
+  "top1_accuracy": 0.85,
+  "top3_accuracy": 0.95,
+  "top5_accuracy": 0.95,
+  "mrr_at_5": 0.8833,
+  "misses_top5": [
+   "civ-004",
+   "pdp-002"
+  ]
+ },
+ "per_query": [
+  {
+   "query_id": "civ-001",
+   "query_ar": "تعريف عقد البيع",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 307
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-307",
+     "article_number": 307,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-365",
+     "article_number": 365,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-002",
+     "article_number": 2,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-002",
+   "query_ar": "تعريف عقد الإيجار",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 407
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-407",
+     "article_number": 407,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-414",
+     "article_number": 414,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-440",
+     "article_number": 440,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-003",
+   "query_ar": "عقد الوكالة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 480
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-480",
+     "article_number": 480,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-502",
+     "article_number": 502,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-036",
+     "article_number": 36,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-004",
+   "query_ar": "تعريف الكفالة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 578
+   },
+   "gold_rank": null,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": false,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-002",
+     "article_number": 2,
+     "score": 9
+    },
+    {
+     "record_id": "oa-llm-companies-art-035",
+     "article_number": 35,
+     "score": 9
+    },
+    {
+     "record_id": "oa-llm-companies-art-051",
+     "article_number": 51,
+     "score": 9
+    }
+   ]
+  },
+  {
+   "query_id": "civ-005",
+   "query_ar": "عقد الهبة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 366
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-366",
+     "article_number": 366,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-369",
+     "article_number": 369,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-375",
+     "article_number": 375,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-006",
+   "query_ar": "عقد الصلح",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 391
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-391",
+     "article_number": 391,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-401",
+     "article_number": 401,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-036",
+     "article_number": 36,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-007",
+   "query_ar": "تعريف عقد القرض",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 382
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-382",
+     "article_number": 382,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-002",
+     "article_number": 2,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-036",
+     "article_number": 36,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-008",
+   "query_ar": "عقد المقاولة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 461
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-461",
+     "article_number": 461,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-475",
+     "article_number": 475,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-476",
+     "article_number": 476,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-009",
+   "query_ar": "حكم العربون عند العدول عن العقد",
+   "category": "provision",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 44
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-044",
+     "article_number": 44,
+     "score": 17
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-012",
+     "article_number": 12,
+     "score": 17
+    },
+    {
+     "record_id": "civil-law-llm-art-106",
+     "article_number": 106,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "civ-010",
+   "query_ar": "حق الشفعة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 658
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-658",
+     "article_number": 658,
+     "score": 6
+    },
+    {
+     "record_id": "civil-law-llm-art-662",
+     "article_number": 662,
+     "score": 6
+    },
+    {
+     "record_id": "oa-llm-companies-art-130",
+     "article_number": 130,
+     "score": 6
+    }
+   ]
+  },
+  {
+   "query_id": "civ-011",
+   "query_ar": "الفضالة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 150
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-150",
+     "article_number": 150,
+     "score": 5
+    },
+    {
+     "record_id": "civil-law-llm-art-151",
+     "article_number": 151,
+     "score": 5
+    },
+    {
+     "record_id": "civil-law-llm-art-156",
+     "article_number": 156,
+     "score": 1
+    }
+   ]
+  },
+  {
+   "query_id": "civ-012",
+   "query_ar": "عقد المقايضة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 361
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-361",
+     "article_number": 361,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-364",
+     "article_number": 364,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-365",
+     "article_number": 365,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "civ-013",
+   "query_ar": "الإثراء بلا سبب",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 144
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-law-llm-art-144",
+     "article_number": 144,
+     "score": 6
+    },
+    {
+     "record_id": "civil-law-llm-art-120",
+     "article_number": 120,
+     "score": 5
+    },
+    {
+     "record_id": "civil-law-llm-art-291",
+     "article_number": 291,
+     "score": 5
+    }
+   ]
+  },
+  {
+   "query_id": "com-001",
+   "query_ar": "انتخاب أعضاء مجلس الإدارة",
+   "category": "governance",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 68
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-068",
+     "article_number": 68,
+     "score": 40
+    },
+    {
+     "record_id": "oa-llm-companies-art-076",
+     "article_number": 76,
+     "score": 30
+    },
+    {
+     "record_id": "oa-llm-companies-art-069",
+     "article_number": 69,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "com-002",
+   "query_ar": "جنسية الشركة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-003",
+     "article_number": 3,
+     "score": 19
+    },
+    {
+     "record_id": "oa-llm-companies-art-002",
+     "article_number": 2,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-005",
+     "article_number": 5,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "com-003",
+   "query_ar": "الرقابة على مجلس الإدارة",
+   "category": "governance",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 73
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-073",
+     "article_number": 73,
+     "score": 36
+    },
+    {
+     "record_id": "oa-llm-companies-art-068",
+     "article_number": 68,
+     "score": 21
+    },
+    {
+     "record_id": "oa-llm-companies-art-069",
+     "article_number": 69,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "com-004",
+   "query_ar": "اختصاصات الجمعية العامة غير العادية",
+   "category": "governance",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 85
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-085",
+     "article_number": 85,
+     "score": 49
+    },
+    {
+     "record_id": "oa-llm-companies-art-086",
+     "article_number": 86,
+     "score": 41
+    },
+    {
+     "record_id": "oa-llm-companies-art-087",
+     "article_number": 87,
+     "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "com-005",
+   "query_ar": "طرق تخفيض رأس المال",
+   "category": "capital",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 133
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-133",
+     "article_number": 133,
+     "score": 39
+    },
+    {
+     "record_id": "oa-llm-companies-art-134",
+     "article_number": 134,
+     "score": 30
+    },
+    {
+     "record_id": "oa-llm-companies-art-135",
+     "article_number": 135,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "com-006",
+   "query_ar": "تصفية الشركة",
+   "category": "dissolution",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 244
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-244",
+     "article_number": 244,
+     "score": 20
+    },
+    {
+     "record_id": "oa-llm-companies-art-002",
+     "article_number": 2,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-003",
+     "article_number": 3,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "com-007",
+   "query_ar": "توزيع الأرباح على الشركاء",
+   "category": "capital",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 22
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-175",
+     "article_number": 175,
+     "score": 35
+    },
+    {
+     "record_id": "oa-llm-companies-art-125",
+     "article_number": 125,
+     "score": 26
+    },
+    {
+     "record_id": "oa-llm-companies-art-022",
+     "article_number": 22,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "com-008",
+   "query_ar": "تعريف الشركة ذات المسؤولية المحدودة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 156
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-156",
+     "article_number": 156,
+     "score": 49
+    },
+    {
+     "record_id": "oa-llm-companies-art-157",
+     "article_number": 157,
+     "score": 40
+    },
+    {
+     "record_id": "oa-llm-companies-art-185",
+     "article_number": 185,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-001",
+   "query_ar": "مدة الإشعار عن حادثة تسرب البيانات الشخصية",
+   "category": "procedural",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 24
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-024",
+     "article_number": 24,
+     "score": 48
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-020",
+     "article_number": 20,
+     "score": 26
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-032",
+     "article_number": 32,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-002",
+   "query_ar": "شروط الموافقة على معالجة البيانات الشخصية",
+   "category": "consent",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 11
+   },
+   "gold_rank": null,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": false,
+   "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-033",
+     "article_number": 33,
+     "score": 31
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-028",
+     "article_number": 28,
+     "score": 29
+    },
+    {
+     "record_id": "pdpl-law-llm-art-005",
+     "article_number": 5,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-003",
+   "query_ar": "تعيين مسؤول حماية البيانات الشخصية",
+   "category": "governance",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 32
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-032",
+     "article_number": 32,
+     "score": 41
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-024",
+     "article_number": 24,
+     "score": 27
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-033",
+     "article_number": 33,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-004",
+   "query_ar": "ضوابط التسويق المباشر",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 29
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-029",
+     "article_number": 29,
+     "score": 20
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-021",
+     "article_number": 21,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-234",
+     "article_number": 234,
+     "score": 9
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-005",
+   "query_ar": "تقييم الأثر لمعالجة البيانات الشخصية",
+   "category": "procedural",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-025",
+     "article_number": 25,
+     "score": 31
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-024",
+     "article_number": 24,
+     "score": 21
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-032",
+     "article_number": 32,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-006",
+   "query_ar": "مدة تقديم الشكوى إلى الجهة المختصة",
+   "category": "procedural",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 37
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-274",
+     "article_number": 274,
+     "score": 20
+    },
+    {
+     "record_id": "oa-llm-companies-art-266",
+     "article_number": 266,
+     "score": 19
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-037",
+     "article_number": 37,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-007",
+   "query_ar": "الامتناع عن تصوير الوثائق الرسمية",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 31
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-031",
+     "article_number": 31,
+     "score": 46
+    },
+    {
+     "record_id": "pdpl-law-llm-art-028",
+     "article_number": 28,
+     "score": 15
+    },
+    {
+     "record_id": "oa-llm-companies-art-121",
+     "article_number": 121,
+     "score": 7
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-008",
+   "query_ar": "موافقة الولي الشرعي على معالجة بيانات ناقص الأهلية",
+   "category": "consent",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-reg-llm-art-013",
+     "article_number": 13,
+     "score": 26
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 16
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-016",
+     "article_number": 16,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-009",
+   "query_ar": "إخفاء هوية صاحب البيانات الشخصية",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 9
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-law-llm-art-015",
+     "article_number": 15,
+     "score": 26
+    },
+    {
+     "record_id": "pdpl-law-llm-art-006",
+     "article_number": 6,
+     "score": 25
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-009",
+     "article_number": 9,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-010",
+   "query_ar": "سياسة الخصوصية",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "law",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-law-llm-art-012",
+     "article_number": 12,
+     "score": 1
+    }
+   ]
+  },
+  {
+   "query_id": "pdp-011",
+   "query_ar": "نطاق تطبيق نظام حماية البيانات الشخصية",
+   "category": "hard",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-law-llm-art-034",
+     "article_number": 34,
+     "score": 35
+    },
+    {
+     "record_id": "pdpl-law-llm-art-001",
+     "article_number": 1,
+     "score": 33
+    },
+    {
+     "record_id": "pdpl-law-llm-art-002",
+     "article_number": 2,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "inv-001",
+   "query_ar": "المصادرة غير المباشرة للاستثمار",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-005",
+     "article_number": 5,
+     "score": 27
+    },
+    {
+     "record_id": "oa-llm-companies-art-041",
+     "article_number": 41,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-085",
+     "article_number": 85,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "inv-002",
+   "query_ar": "حرية تحويل الأموال للمستثمر",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-006",
+     "article_number": 6,
+     "score": 30
+    },
+    {
+     "record_id": "inv-law-llm-art-003",
+     "article_number": 3,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-109",
+     "article_number": 109,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "inv-003",
+   "query_ar": "المساواة في التعامل بين المستثمر المحلي والأجنبي",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-003",
+     "article_number": 3,
+     "score": 60
+    },
+    {
+     "record_id": "oa-llm-companies-art-136",
+     "article_number": 136,
+     "score": 16
+    },
+    {
+     "record_id": "inv-law-llm-art-004",
+     "article_number": 4,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "inv-004",
+   "query_ar": "مركز الخدمة الشاملة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 21
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-021",
+     "article_number": 21,
+     "score": 30
+    },
+    {
+     "record_id": "inv-reg-llm-art-001",
+     "article_number": 1,
+     "score": 3
+    },
+    {
+     "record_id": "inv-law-llm-art-007",
+     "article_number": 7,
+     "score": 3
+    }
+   ]
+  },
+  {
+   "query_id": "inv-005",
+   "query_ar": "قائمة الأنشطة المستثناة",
+   "category": "provision",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-015",
+     "article_number": 15,
+     "score": 30
+    },
+    {
+     "record_id": "inv-law-llm-art-008",
+     "article_number": 8,
+     "score": 30
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "inv-006",
+   "query_ar": "دليل المستثمر",
+   "category": "definitional",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 36
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-036",
+     "article_number": 36,
+     "score": 20
+    },
+    {
+     "record_id": "inv-reg-llm-art-003",
+     "article_number": 3,
+     "score": 10
+    },
+    {
+     "record_id": "inv-reg-llm-art-018",
+     "article_number": 18,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "inv-007",
+   "query_ar": "معايير استحقاق المحفزات الاستثمارية",
+   "category": "provision",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-008",
+     "article_number": 8,
+     "score": 40
+    },
+    {
+     "record_id": "inv-law-llm-art-006",
+     "article_number": 6,
+     "score": 21
+    },
+    {
+     "record_id": "civil-law-llm-art-331",
+     "article_number": 331,
+     "score": 5
+    }
+   ]
+  },
+  {
+   "query_id": "inv-008",
+   "query_ar": "المعاملة العادلة والمنصفة للمستثمر",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-004",
+     "article_number": 4,
+     "score": 29
+    },
+    {
+     "record_id": "inv-law-llm-art-002",
+     "article_number": 2,
+     "score": 2
+    },
+    {
+     "record_id": "civil-law-llm-art-033",
+     "article_number": 33,
+     "score": 1
+    }
+   ]
+  }
+ ]
+}
