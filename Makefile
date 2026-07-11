@@ -122,6 +122,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-retrieval-eval-validate \
         gtpl-law-track-validate \
         gtpl-regulation-track-validate \
+        labor-law-track-validate \
         qa-gate
 
 help:
@@ -891,6 +892,10 @@ gtpl-law-track-validate:
 # -- GTPL Implementing Regulation track validator (dedicated target; does NOT change make validate) --
 gtpl-regulation-track-validate:
 	$(PY) scripts/validate_gtpl_regulation_track.py
+
+# -- Labor Law track validator (dedicated target; does NOT change make validate) --
+labor-law-track-validate:
+	$(PY) scripts/validate_labor_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

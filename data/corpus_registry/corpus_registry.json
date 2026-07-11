@@ -10,15 +10,16 @@
     "forms_and_appendices_counted": true,
     "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) = 1561",
-    "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) = 380",
-    "formula_total_registry_counted": "total_primary_arabic_governing(1561) + total_reference(380) + total_internal_reference(281) = 2222",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) = 1810",
+    "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
+    "formula_total_registry_counted": "total_primary_arabic_governing(1810) + total_reference(614) + total_internal_reference(281) = 2705",
     "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), and Civil Arabic (721) are primary Arabic governing-language records. The unified retrieval index (1136) is a projection of counted records and is NOT added to totals.",
+    "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences; carries an LLM-ready enrichment layer. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249) are primary Arabic governing-language records. The unified retrieval index (1641) is a projection of counted records and is NOT added to totals.",
     "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "primary_arabic_governing_records_included": true
   },
-  "generated_date": "2026-07-10",
+  "generated_date": "2026-07-11",
   "legal_status_boundaries": {
     "arabic_official_source_governs": true,
     "chinese_internal_reference_only": true,
@@ -28,14 +29,14 @@
     "not_legal_advice": true,
     "not_official_translation": true
   },
-  "registry_version": "1.4",
+  "registry_version": "1.5",
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 1561,
-  "total_reference_records": 380,
-  "total_registry_counted_records": 2222,
-  "total_tracks": 11,
+  "total_primary_arabic_governing_records": 1810,
+  "total_reference_records": 614,
+  "total_registry_counted_records": 2705,
+  "total_tracks": 12,
   "tracks": [
     {
       "boundaries": {
@@ -547,6 +548,55 @@
       "validator_targets": [
         "make gtpl-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/labor/law/official_source/labor_law_official_source.json",
+        "sources/labor/law/verified/labor_law_verified_records.jsonl",
+        "data/labor_arabic_legal_llm/labor_law_legal_llm_001_245.json"
+      ],
+      "display_name_ar": "نظام العمل",
+      "display_name_en": "Saudi Labor Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/labor_arabic_legal_llm/labor_law_legal_llm_001_245.json",
+          "governing": true,
+          "record_count": 249,
+          "status": "complete"
+        },
+        "english": {
+          "data_path": "data/english_reference/labor_law/",
+          "governing": false,
+          "record_count": 234,
+          "role": "reference_guidance_only",
+          "status": "complete"
+        }
+      },
+      "notes": "Labor Law M/51 dated 23/8/1426H, official HRSD consolidated text (amendments through M/44 merged): 249 records = 245 articles + 4 مكرر, of which 38 are officially deleted (flagged, placeholder as printed). Cross-verified against the repository's independently captured BOE base texts: 142 verbatim matches, 65 differ exactly where amendment tracking says amended, ZERO unexplained differences. English (234 records) is reference/guidance only. Arabic governs.",
+      "official_text_status": "HRSD_CONSOLIDATED_CROSS_CHECKED_BOE",
+      "record_counts": {
+        "arabic_articles": 249,
+        "english_articles": 234,
+        "total": 249
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية (official consolidated PDF); cross-checked vs independent BOE captures",
+      "status": "complete",
+      "track_id": "labor_law",
+      "validator_targets": [
+        "make labor-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -557,10 +607,11 @@
       "companies_law": 281,
       "gtpl": 256,
       "investment": 53,
+      "labor": 249,
       "pdpl": 81
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 1392,
+    "total_records": 1641,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
