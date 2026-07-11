@@ -1,0 +1,6014 @@
+{
+ "law_meta": {
+  "name": "نظام المعاملات المدنية",
+  "api_serial": "PBbHmywh1XMp-Kyv3NtQLg",
+  "statute_id": "YCtiUU6Pe01ZlwTFggMsdQ",
+  "legal_status": "ساري",
+  "issuance_tool": "المرسوم ملكي رقم م/191",
+  "issuance_date_hijri": "1444-11-29T00:00:00",
+  "publish_date_hijri": "1444-12-01T00:00:00",
+  "classification": "القضاء",
+  "boe_url": "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/655fdb42-8c96-422b-b8c4-b04f0095c94c/1",
+  "pdf_sha256": "16b5abd952a9fb836a191a0ab6e0b415eca63225a5493d7fd06e9f45ffbcaf8a",
+  "pdf_pages": 122
+ },
+ "audit": {
+  "date": "2026-07-11",
+  "kind": "TRUST_UPGRADE cross-verification of committed owner-provided text against MOJ legal-portal database (get-Section-Changes per leaf)",
+  "repo_track": "/home/user/saudi-legal-corpus-ai/sources/civil/law/verified/civil_transactions_law_verified_records.jsonl",
+  "repo_track_sha256": "2d18e2083ee64e8f9ddab9fd5b931d17f3b660c3e3da06c41a474089caf1f257",
+  "similarity_metric": "token-set Jaccard after normalization (NFKC, strip diacritics+tatweel, أإآ→ا, ى→ي, ة→ه, Arabic-Indic→ASCII digits, keep Arabic+digit runs only); seq_similarity = difflib ratio on the normalized token stream",
+  "moj_leaves_total": 753,
+  "moj_madda_leaves": 721,
+  "moj_heading_leaves": 32,
+  "madda_sequence_note": "MOJ DB contains exactly 721 المادة leaves whose Arabic-ordinal labels convert to 1..721 in strict document order — complete, no gaps, no duplicates. The remaining 32 of 753 leaves are structural heading nodes (قسم/subdivision titles) with no sequence and placeholder body text, not articles."
+ },
+ "articles_checked": 721,
+ "results": {
+  "civil_law_art_001": {
+   "similarity": 0.9535,
+   "seq_similarity": 0.9934,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى"
+  },
+  "civil_law_art_002": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية"
+  },
+  "civil_law_art_003": {
+   "similarity": 0.875,
+   "seq_similarity": 0.9783,
+   "status": "DIFFERS_CLAUSE_NUMBERING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة",
+   "note": "non-digit token sequence is identical to MOJ DB; the only difference is MOJ’s clause numerals (١- ٢- ...) which the committed track renders as unnumbered paragraphs. Formatting difference only; committed text NOT modified."
+  },
+  "civil_law_art_004": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة"
+  },
+  "civil_law_art_005": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة"
+  },
+  "civil_law_art_006": {
+   "similarity": 0.9048,
+   "seq_similarity": 0.9851,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة"
+  },
+  "civil_law_art_007": {
+   "similarity": 0.95,
+   "seq_similarity": 0.9932,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة"
+  },
+  "civil_law_art_008": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة"
+  },
+  "civil_law_art_009": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة"
+  },
+  "civil_law_art_010": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة"
+  },
+  "civil_law_art_011": {
+   "similarity": 0.9355,
+   "seq_similarity": 0.9884,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة"
+  },
+  "civil_law_art_012": {
+   "similarity": 0.9091,
+   "seq_similarity": 0.9818,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة"
+  },
+  "civil_law_art_013": {
+   "similarity": 0.9091,
+   "seq_similarity": 0.9796,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة"
+  },
+  "civil_law_art_014": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة"
+  },
+  "civil_law_art_015": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة"
+  },
+  "civil_law_art_016": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة"
+  },
+  "civil_law_art_017": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة"
+  },
+  "civil_law_art_018": {
+   "similarity": 0.9605,
+   "seq_similarity": 0.9945,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة"
+  },
+  "civil_law_art_019": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة"
+  },
+  "civil_law_art_020": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون"
+  },
+  "civil_law_art_021": {
+   "similarity": 0.9429,
+   "seq_similarity": 0.991,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون"
+  },
+  "civil_law_art_022": {
+   "similarity": 0.9545,
+   "seq_similarity": 0.9912,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والعشرون"
+  },
+  "civil_law_art_023": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والعشرون"
+  },
+  "civil_law_art_024": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والعشرون"
+  },
+  "civil_law_art_025": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والعشرون"
+  },
+  "civil_law_art_026": {
+   "similarity": 0.9,
+   "seq_similarity": 0.864,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والعشرون"
+  },
+  "civil_law_art_027": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والعشرون"
+  },
+  "civil_law_art_028": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والعشرون"
+  },
+  "civil_law_art_029": {
+   "similarity": 0.95,
+   "seq_similarity": 0.9919,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والعشرون"
+  },
+  "civil_law_art_030": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثون"
+  },
+  "civil_law_art_031": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثلاثون"
+  },
+  "civil_law_art_032": {
+   "similarity": 0.8947,
+   "seq_similarity": 0.9023,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثلاثون",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"1- التعبير عن الإرادة\"] which MOJ models as separate heading leaves); raw similarity 0.8947. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_033": {
+   "similarity": 0.9394,
+   "seq_similarity": 0.9911,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثلاثون"
+  },
+  "civil_law_art_034": {
+   "similarity": 0.9231,
+   "seq_similarity": 0.9886,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثلاثون"
+  },
+  "civil_law_art_035": {
+   "similarity": 0.95,
+   "seq_similarity": 0.9921,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثلاثون"
+  },
+  "civil_law_art_036": {
+   "similarity": 0.9701,
+   "seq_similarity": 0.9955,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثلاثون"
+  },
+  "civil_law_art_037": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9905,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثلاثون"
+  },
+  "civil_law_art_038": {
+   "similarity": 0.9444,
+   "seq_similarity": 0.993,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثلاثون"
+  },
+  "civil_law_art_039": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثلاثون"
+  },
+  "civil_law_art_040": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعون"
+  },
+  "civil_law_art_041": {
+   "similarity": 0.92,
+   "seq_similarity": 0.9921,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والأربعون"
+  },
+  "civil_law_art_042": {
+   "similarity": 0.9545,
+   "seq_similarity": 0.9946,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والأربعون"
+  },
+  "civil_law_art_043": {
+   "similarity": 0.9643,
+   "seq_similarity": 0.9945,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والأربعون"
+  },
+  "civil_law_art_044": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9903,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والأربعون"
+  },
+  "civil_law_art_045": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والأربعون"
+  },
+  "civil_law_art_046": {
+   "similarity": 0.8636,
+   "seq_similarity": 0.9243,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والأربعون",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"2- أهلية المتعاقدين\"] which MOJ models as separate heading leaves); raw similarity 0.8636. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_047": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والأربعون"
+  },
+  "civil_law_art_048": {
+   "similarity": 0.931,
+   "seq_similarity": 0.9879,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والأربعون"
+  },
+  "civil_law_art_049": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والأربعون"
+  },
+  "civil_law_art_050": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9907,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسون"
+  },
+  "civil_law_art_051": {
+   "similarity": 0.9828,
+   "seq_similarity": 0.995,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والخمسون"
+  },
+  "civil_law_art_052": {
+   "similarity": 0.8,
+   "seq_similarity": 0.978,
+   "status": "DIFFERS_CLAUSE_NUMBERING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والخمسون",
+   "note": "non-digit token sequence is identical to MOJ DB; the only difference is MOJ’s clause numerals (١- ٢- ...) which the committed track renders as unnumbered paragraphs. Formatting difference only; committed text NOT modified."
+  },
+  "civil_law_art_053": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والخمسون"
+  },
+  "civil_law_art_054": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والخمسون"
+  },
+  "civil_law_art_055": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والخمسون"
+  },
+  "civil_law_art_056": {
+   "similarity": 0.875,
+   "seq_similarity": 0.9474,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والخمسون",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"3- عيوب الرضى\"] which MOJ models as separate heading leaves); raw similarity 0.875. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_057": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والخمسون"
+  },
+  "civil_law_art_058": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والخمسون"
+  },
+  "civil_law_art_059": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والخمسون"
+  },
+  "civil_law_art_060": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستون"
+  },
+  "civil_law_art_061": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.988,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والستون"
+  },
+  "civil_law_art_062": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والستون"
+  },
+  "civil_law_art_063": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والستون"
+  },
+  "civil_law_art_064": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والستون"
+  },
+  "civil_law_art_065": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والستون"
+  },
+  "civil_law_art_066": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والستون"
+  },
+  "civil_law_art_067": {
+   "similarity": 0.92,
+   "seq_similarity": 0.9898,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والستون"
+  },
+  "civil_law_art_068": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والستون"
+  },
+  "civil_law_art_069": {
+   "similarity": 0.8889,
+   "seq_similarity": 0.9603,
+   "status": "DIFFERS_CLAUSE_NUMBERING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والستون",
+   "similarity_after_heading_strip": 0.9412,
+   "note": "non-digit token sequence is identical to MOJ DB after removing trailing structural heading line(s) [\"ثانيًا: المحل والسبب\"]; the only difference is MOJ’s clause numerals (١- ٢- ...) which the committed track renders as unnumbered paragraphs. Formatting difference only; committed text NOT modified."
+  },
+  "civil_law_art_070": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعون"
+  },
+  "civil_law_art_071": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والسبعون"
+  },
+  "civil_law_art_072": {
+   "similarity": 0.9737,
+   "seq_similarity": 0.9915,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والسبعون"
+  },
+  "civil_law_art_073": {
+   "similarity": 0.9429,
+   "seq_similarity": 0.99,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والسبعون"
+  },
+  "civil_law_art_074": {
+   "similarity": 0.975,
+   "seq_similarity": 0.9917,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والسبعون"
+  },
+  "civil_law_art_075": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والسبعون"
+  },
+  "civil_law_art_076": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والسبعون"
+  },
+  "civil_law_art_077": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والسبعون"
+  },
+  "civil_law_art_078": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والسبعون"
+  },
+  "civil_law_art_079": {
+   "similarity": 0.9355,
+   "seq_similarity": 0.9921,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والسبعون"
+  },
+  "civil_law_art_080": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9639,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثمانون",
+   "similarity_after_heading_strip": 1.0,
+   "note": "committed text embeds trailing structural heading line(s) [\"ثانيًا: البطلان\"]; similarity without them: 1.0"
+  },
+  "civil_law_art_081": {
+   "similarity": 0.8537,
+   "seq_similarity": 0.9269,
+   "status": "DIFFERS_CLAUSE_NUMBERING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثمانون",
+   "similarity_after_heading_strip": 0.9459,
+   "note": "non-digit token sequence is identical to MOJ DB after removing trailing structural heading line(s) [\"ثالثًا: آثار إبطال العقد وبطلانه\"]; the only difference is MOJ’s clause numerals (١- ٢- ...) which the committed track renders as unnumbered paragraphs. Formatting difference only; committed text NOT modified."
+  },
+  "civil_law_art_082": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثمانون"
+  },
+  "civil_law_art_083": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثمانون"
+  },
+  "civil_law_art_084": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثمانون"
+  },
+  "civil_law_art_085": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثمانون"
+  },
+  "civil_law_art_086": {
+   "similarity": 0.9535,
+   "seq_similarity": 0.9916,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثمانون"
+  },
+  "civil_law_art_087": {
+   "similarity": 0.8947,
+   "seq_similarity": 0.9818,
+   "status": "DIFFERS_CLAUSE_NUMBERING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثمانون",
+   "note": "non-digit token sequence is identical to MOJ DB; the only difference is MOJ’s clause numerals (١- ٢- ...) which the committed track renders as unnumbered paragraphs. Formatting difference only; committed text NOT modified."
+  },
+  "civil_law_art_088": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثمانون"
+  },
+  "civil_law_art_089": {
+   "similarity": 0.96,
+   "seq_similarity": 0.9939,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثمانون"
+  },
+  "civil_law_art_090": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التسعون"
+  },
+  "civil_law_art_091": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والتسعون"
+  },
+  "civil_law_art_092": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والتسعون"
+  },
+  "civil_law_art_093": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والتسعون"
+  },
+  "civil_law_art_094": {
+   "similarity": 0.9459,
+   "seq_similarity": 0.991,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والتسعون"
+  },
+  "civil_law_art_095": {
+   "similarity": 0.9444,
+   "seq_similarity": 0.99,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والتسعون"
+  },
+  "civil_law_art_096": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والتسعون"
+  },
+  "civil_law_art_097": {
+   "similarity": 0.9437,
+   "seq_similarity": 0.9907,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والتسعون"
+  },
+  "civil_law_art_098": {
+   "similarity": 0.9667,
+   "seq_similarity": 0.995,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والتسعون"
+  },
+  "civil_law_art_099": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والتسعون"
+  },
+  "civil_law_art_100": {
+   "similarity": 0.9455,
+   "seq_similarity": 0.9917,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة المائة"
+  },
+  "civil_law_art_101": {
+   "similarity": 0.9434,
+   "seq_similarity": 0.8371,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى بعد المائة"
+  },
+  "civil_law_art_102": {
+   "similarity": 0.9592,
+   "seq_similarity": 0.9937,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية بعد المائة"
+  },
+  "civil_law_art_103": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة بعد المائة"
+  },
+  "civil_law_art_104": {
+   "similarity": 0.9625,
+   "seq_similarity": 0.9942,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة بعد المائة"
+  },
+  "civil_law_art_105": {
+   "similarity": 0.8125,
+   "seq_similarity": 0.905,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة بعد المائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"ثانيًا: خيار الشرط\"] which MOJ models as separate heading leaves); raw similarity 0.8125. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_106": {
+   "similarity": 0.9057,
+   "seq_similarity": 0.9641,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة بعد المائة",
+   "similarity_after_heading_strip": 0.96,
+   "note": "committed text embeds trailing structural heading line(s) [\"ثالثًا: الإخلال بالالتزام\"]; similarity without them: 0.96"
+  },
+  "civil_law_art_107": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة بعد المائة"
+  },
+  "civil_law_art_108": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة بعد المائة"
+  },
+  "civil_law_art_109": {
+   "similarity": 0.9032,
+   "seq_similarity": 0.9389,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة بعد المائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "committed text embeds trailing structural heading line(s) [\"رابعًا: استحالة التنفيذ\"]; similarity without them: 1.0"
+  },
+  "civil_law_art_110": {
+   "similarity": 0.9153,
+   "seq_similarity": 0.9587,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة بعد المائة",
+   "similarity_after_heading_strip": 0.9643,
+   "note": "committed text embeds trailing structural heading line(s) [\"خامسًا: آثار فسخ العقد وانفساخه\"]; similarity without them: 0.9643"
+  },
+  "civil_law_art_111": {
+   "similarity": 0.9487,
+   "seq_similarity": 0.9916,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة بعد المائة"
+  },
+  "civil_law_art_112": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة بعد المائة"
+  },
+  "civil_law_art_113": {
+   "similarity": 0.8333,
+   "seq_similarity": 0.9077,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة بعد المائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"سادسًا: الدفع بعدم التنفيذ\"] which MOJ models as separate heading leaves); raw similarity 0.8333. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_114": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة بعد المائة"
+  },
+  "civil_law_art_115": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة بعد المائة"
+  },
+  "civil_law_art_116": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة بعد المائة"
+  },
+  "civil_law_art_117": {
+   "similarity": 0.9683,
+   "seq_similarity": 0.9953,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة بعد المائة"
+  },
+  "civil_law_art_118": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة بعد المائة"
+  },
+  "civil_law_art_119": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة بعد المائة"
+  },
+  "civil_law_art_120": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون بعد المائة"
+  },
+  "civil_law_art_121": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون بعد المائة"
+  },
+  "civil_law_art_122": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9897,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والعشرون بعد المائة"
+  },
+  "civil_law_art_123": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والعشرون بعد المائة"
+  },
+  "civil_law_art_124": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والعشرون بعد المائة"
+  },
+  "civil_law_art_125": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والعشرون بعد المائة"
+  },
+  "civil_law_art_126": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والعشرون بعد المائة"
+  },
+  "civil_law_art_127": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والعشرون بعد المائة"
+  },
+  "civil_law_art_128": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والعشرون بعد المائة"
+  },
+  "civil_law_art_129": {
+   "similarity": 0.9884,
+   "seq_similarity": 0.9953,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والعشرون بعد المائة"
+  },
+  "civil_law_art_130": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثون بعد المائة"
+  },
+  "civil_law_art_131": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثلاثون بعد المائة"
+  },
+  "civil_law_art_132": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثلاثون بعد المائة"
+  },
+  "civil_law_art_133": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثلاثون بعد المائة"
+  },
+  "civil_law_art_134": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثلاثون بعد المائة"
+  },
+  "civil_law_art_135": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثلاثون بعد المائة"
+  },
+  "civil_law_art_136": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثلاثون بعد المائة"
+  },
+  "civil_law_art_137": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثلاثون بعد المائة"
+  },
+  "civil_law_art_138": {
+   "similarity": 0.9286,
+   "seq_similarity": 0.9899,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثلاثون بعد المائة"
+  },
+  "civil_law_art_139": {
+   "similarity": 0.9565,
+   "seq_similarity": 0.9932,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثلاثون بعد المائة"
+  },
+  "civil_law_art_140": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعون بعد المائة"
+  },
+  "civil_law_art_141": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والأربعون بعد المائة"
+  },
+  "civil_law_art_142": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والأربعون بعد المائة"
+  },
+  "civil_law_art_143": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9928,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والأربعون بعد المائة"
+  },
+  "civil_law_art_144": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والأربعون بعد المائة"
+  },
+  "civil_law_art_145": {
+   "similarity": 0.9394,
+   "seq_similarity": 0.9882,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والأربعون بعد المائة"
+  },
+  "civil_law_art_146": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والأربعون بعد المائة"
+  },
+  "civil_law_art_147": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والأربعون بعد المائة"
+  },
+  "civil_law_art_148": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.989,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والأربعون بعد المائة"
+  },
+  "civil_law_art_149": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والأربعون بعد المائة"
+  },
+  "civil_law_art_150": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسون بعد المائة"
+  },
+  "civil_law_art_151": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والخمسون بعد المائة"
+  },
+  "civil_law_art_152": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والخمسون بعد المائة"
+  },
+  "civil_law_art_153": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والخمسون بعد المائة"
+  },
+  "civil_law_art_154": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والخمسون بعد المائة"
+  },
+  "civil_law_art_155": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والخمسون بعد المائة"
+  },
+  "civil_law_art_156": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والخمسون بعد المائة"
+  },
+  "civil_law_art_157": {
+   "similarity": 0.9636,
+   "seq_similarity": 0.9947,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والخمسون بعد المائة"
+  },
+  "civil_law_art_158": {
+   "similarity": 0.9459,
+   "seq_similarity": 0.9918,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والخمسون بعد المائة"
+  },
+  "civil_law_art_159": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والخمسون بعد المائة"
+  },
+  "civil_law_art_160": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستون بعد المائة"
+  },
+  "civil_law_art_161": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والستون بعد المائة"
+  },
+  "civil_law_art_162": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والستون بعد المائة"
+  },
+  "civil_law_art_163": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والستون بعد المائة"
+  },
+  "civil_law_art_164": {
+   "similarity": 0.9444,
+   "seq_similarity": 0.9904,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والستون بعد المائة"
+  },
+  "civil_law_art_165": {
+   "similarity": 0.9556,
+   "seq_similarity": 0.9924,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والستون بعد المائة"
+  },
+  "civil_law_art_166": {
+   "similarity": 0.9535,
+   "seq_similarity": 0.9935,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والستون بعد المائة"
+  },
+  "civil_law_art_167": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والستون بعد المائة"
+  },
+  "civil_law_art_168": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والستون بعد المائة"
+  },
+  "civil_law_art_169": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والستون بعد المائة"
+  },
+  "civil_law_art_170": {
+   "similarity": 0.9796,
+   "seq_similarity": 0.9912,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعون بعد المائة"
+  },
+  "civil_law_art_171": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والسبعون بعد المائة"
+  },
+  "civil_law_art_172": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والسبعون بعد المائة"
+  },
+  "civil_law_art_173": {
+   "similarity": 0.9375,
+   "seq_similarity": 0.99,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والسبعون بعد المائة"
+  },
+  "civil_law_art_174": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والسبعون بعد المائة"
+  },
+  "civil_law_art_175": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والسبعون بعد المائة"
+  },
+  "civil_law_art_176": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والسبعون بعد المائة"
+  },
+  "civil_law_art_177": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والسبعون بعد المائة"
+  },
+  "civil_law_art_178": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والسبعون بعد المائة"
+  },
+  "civil_law_art_179": {
+   "similarity": 0.9286,
+   "seq_similarity": 0.9899,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والسبعون بعد المائة"
+  },
+  "civil_law_art_180": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثمانون بعد المائة"
+  },
+  "civil_law_art_181": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9903,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثمانون بعد المائة"
+  },
+  "civil_law_art_182": {
+   "similarity": 0.9559,
+   "seq_similarity": 0.9928,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثمانون بعد المائة"
+  },
+  "civil_law_art_183": {
+   "similarity": 0.9778,
+   "seq_similarity": 0.9938,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثمانون بعد المائة"
+  },
+  "civil_law_art_184": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثمانون بعد المائة"
+  },
+  "civil_law_art_185": {
+   "similarity": 0.9455,
+   "seq_similarity": 0.9936,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثمانون بعد المائة"
+  },
+  "civil_law_art_186": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثمانون بعد المائة"
+  },
+  "civil_law_art_187": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثمانون بعد المائة"
+  },
+  "civil_law_art_188": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثمانون بعد المائة"
+  },
+  "civil_law_art_189": {
+   "similarity": 0.95,
+   "seq_similarity": 0.993,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثمانون بعد المائة"
+  },
+  "civil_law_art_190": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التسعون بعد المائة"
+  },
+  "civil_law_art_191": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والتسعون بعد المائة"
+  },
+  "civil_law_art_192": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والتسعون بعد المائة"
+  },
+  "civil_law_art_193": {
+   "similarity": 0.9512,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والتسعون بعد المائة"
+  },
+  "civil_law_art_194": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والتسعون بعد المائة"
+  },
+  "civil_law_art_195": {
+   "similarity": 0.9535,
+   "seq_similarity": 0.9926,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والتسعون بعد المائة"
+  },
+  "civil_law_art_196": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والتسعون بعد المائة"
+  },
+  "civil_law_art_197": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والتسعون بعد المائة"
+  },
+  "civil_law_art_198": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والتسعون بعد المائة"
+  },
+  "civil_law_art_199": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والتسعون بعد المائة"
+  },
+  "civil_law_art_200": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة المائتان"
+  },
+  "civil_law_art_201": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى بعد المائتين"
+  },
+  "civil_law_art_202": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية بعد المائتين"
+  },
+  "civil_law_art_203": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة بعد المائتين"
+  },
+  "civil_law_art_204": {
+   "similarity": 0.9464,
+   "seq_similarity": 0.9915,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة بعد المائتين"
+  },
+  "civil_law_art_205": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة بعد المائتين"
+  },
+  "civil_law_art_206": {
+   "similarity": 0.9231,
+   "seq_similarity": 0.9869,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة بعد المائتين"
+  },
+  "civil_law_art_207": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة بعد المائتين"
+  },
+  "civil_law_art_208": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة بعد المائتين"
+  },
+  "civil_law_art_209": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة بعد المائتين"
+  },
+  "civil_law_art_210": {
+   "similarity": 0.9623,
+   "seq_similarity": 0.994,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة بعد المائتين"
+  },
+  "civil_law_art_211": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9866,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة بعد المائتين"
+  },
+  "civil_law_art_212": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة بعد المائتين"
+  },
+  "civil_law_art_213": {
+   "similarity": 0.9375,
+   "seq_similarity": 0.9916,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة بعد المائتين"
+  },
+  "civil_law_art_214": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة بعد المائتين"
+  },
+  "civil_law_art_215": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة بعد المائتين"
+  },
+  "civil_law_art_216": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة بعد المائتين"
+  },
+  "civil_law_art_217": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة بعد المائتين"
+  },
+  "civil_law_art_218": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة بعد المائتين"
+  },
+  "civil_law_art_219": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة بعد المائتين"
+  },
+  "civil_law_art_220": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون بعد المائتين"
+  },
+  "civil_law_art_221": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون بعد المائتين"
+  },
+  "civil_law_art_222": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والعشرون بعد المائتين"
+  },
+  "civil_law_art_223": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والعشرون بعد المائتين"
+  },
+  "civil_law_art_224": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والعشرون بعد المائتين"
+  },
+  "civil_law_art_225": {
+   "similarity": 0.9286,
+   "seq_similarity": 0.9893,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والعشرون بعد المائتين"
+  },
+  "civil_law_art_226": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والعشرون بعد المائتين"
+  },
+  "civil_law_art_227": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والعشرون بعد المائتين"
+  },
+  "civil_law_art_228": {
+   "similarity": 0.9455,
+   "seq_similarity": 0.9932,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والعشرون بعد المائتين"
+  },
+  "civil_law_art_229": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والعشرون بعد المائتين"
+  },
+  "civil_law_art_230": {
+   "similarity": 0.9355,
+   "seq_similarity": 0.9911,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثون بعد المائتين"
+  },
+  "civil_law_art_231": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثلاثون بعد المائتين"
+  },
+  "civil_law_art_232": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثلاثون بعد المائتين"
+  },
+  "civil_law_art_233": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثلاثون بعد المائتين"
+  },
+  "civil_law_art_234": {
+   "similarity": 0.9565,
+   "seq_similarity": 0.9938,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثلاثون بعد المائتين"
+  },
+  "civil_law_art_235": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثلاثون بعد المائتين"
+  },
+  "civil_law_art_236": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثلاثون بعد المائتين"
+  },
+  "civil_law_art_237": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثلاثون بعد المائتين"
+  },
+  "civil_law_art_238": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثلاثون بعد المائتين"
+  },
+  "civil_law_art_239": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثلاثون بعد المائتين"
+  },
+  "civil_law_art_240": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعون بعد المائتين"
+  },
+  "civil_law_art_241": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والأربعون بعد المائتين"
+  },
+  "civil_law_art_242": {
+   "similarity": 0.913,
+   "seq_similarity": 0.9872,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والأربعون بعد المائتين"
+  },
+  "civil_law_art_243": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والأربعون بعد المائتين"
+  },
+  "civil_law_art_244": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والأربعون بعد المائتين"
+  },
+  "civil_law_art_245": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والأربعون بعد المائتين"
+  },
+  "civil_law_art_246": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والأربعون بعد المائتين"
+  },
+  "civil_law_art_247": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والأربعون بعد المائتين"
+  },
+  "civil_law_art_248": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والأربعون بعد المائتين"
+  },
+  "civil_law_art_249": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.9922,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والأربعون بعد المائتين"
+  },
+  "civil_law_art_250": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسون بعد المائتين"
+  },
+  "civil_law_art_251": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والخمسون بعد المائتين"
+  },
+  "civil_law_art_252": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والخمسون بعد المائتين"
+  },
+  "civil_law_art_253": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والخمسون بعد المائتين"
+  },
+  "civil_law_art_254": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والخمسون بعد المائتين"
+  },
+  "civil_law_art_255": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والخمسون بعد المائتين"
+  },
+  "civil_law_art_256": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والخمسون بعد المائتين"
+  },
+  "civil_law_art_257": {
+   "similarity": 0.9048,
+   "seq_similarity": 0.99,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والخمسون بعد المائتين"
+  },
+  "civil_law_art_258": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والخمسون بعد المائتين"
+  },
+  "civil_law_art_259": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والخمسون بعد المائتين"
+  },
+  "civil_law_art_260": {
+   "similarity": 0.931,
+   "seq_similarity": 0.9882,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستون بعد المائتين"
+  },
+  "civil_law_art_261": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والستون بعد المائتين"
+  },
+  "civil_law_art_262": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والستون بعد المائتين"
+  },
+  "civil_law_art_263": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.9929,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والستون بعد المائتين"
+  },
+  "civil_law_art_264": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والستون بعد المائتين"
+  },
+  "civil_law_art_265": {
+   "similarity": 0.96,
+   "seq_similarity": 0.9941,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والستون بعد المائتين"
+  },
+  "civil_law_art_266": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والستون بعد المائتين"
+  },
+  "civil_law_art_267": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والستون بعد المائتين"
+  },
+  "civil_law_art_268": {
+   "similarity": 0.9388,
+   "seq_similarity": 0.9904,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والستون بعد المائتين"
+  },
+  "civil_law_art_269": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والستون بعد المائتين"
+  },
+  "civil_law_art_270": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعون بعد المائتين"
+  },
+  "civil_law_art_271": {
+   "similarity": 0.9259,
+   "seq_similarity": 0.988,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والسبعون بعد المائتين"
+  },
+  "civil_law_art_272": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والسبعون بعد المائتين"
+  },
+  "civil_law_art_273": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9906,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والسبعون بعد المائتين"
+  },
+  "civil_law_art_274": {
+   "similarity": 0.9846,
+   "seq_similarity": 0.9957,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والسبعون بعد المائتين"
+  },
+  "civil_law_art_275": {
+   "similarity": 0.9565,
+   "seq_similarity": 0.9923,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والسبعون بعد المائتين"
+  },
+  "civil_law_art_276": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والسبعون بعد المائتين"
+  },
+  "civil_law_art_277": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والسبعون بعد المائتين"
+  },
+  "civil_law_art_278": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والسبعون بعد المائتين"
+  },
+  "civil_law_art_279": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والسبعون بعد المائتين"
+  },
+  "civil_law_art_280": {
+   "similarity": 0.9091,
+   "seq_similarity": 0.9844,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثمانون بعد المائتين"
+  },
+  "civil_law_art_281": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثمانون بعد المائتين"
+  },
+  "civil_law_art_282": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثمانون بعد المائتين"
+  },
+  "civil_law_art_283": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثمانون بعد المائتين"
+  },
+  "civil_law_art_284": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثمانون بعد المائتين"
+  },
+  "civil_law_art_285": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثمانون بعد المائتين"
+  },
+  "civil_law_art_286": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثمانون بعد المائتين"
+  },
+  "civil_law_art_287": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثمانون بعد المائتين"
+  },
+  "civil_law_art_288": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثمانون بعد المائتين"
+  },
+  "civil_law_art_289": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثمانون بعد المائتين"
+  },
+  "civil_law_art_290": {
+   "similarity": 0.9375,
+   "seq_similarity": 0.9896,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التسعون بعد المائتين"
+  },
+  "civil_law_art_291": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والتسعون بعد المائتين"
+  },
+  "civil_law_art_292": {
+   "similarity": 0.9355,
+   "seq_similarity": 0.9879,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والتسعون بعد المائتين"
+  },
+  "civil_law_art_293": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والتسعون بعد المائتين"
+  },
+  "civil_law_art_294": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والتسعون بعد المائتين"
+  },
+  "civil_law_art_295": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والتسعون بعد المائتين"
+  },
+  "civil_law_art_296": {
+   "similarity": 0.9672,
+   "seq_similarity": 0.7836,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والتسعون بعد المائتين"
+  },
+  "civil_law_art_297": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والتسعون بعد المائتين"
+  },
+  "civil_law_art_298": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والتسعون بعد المائتين"
+  },
+  "civil_law_art_299": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والتسعون بعد المائتين"
+  },
+  "civil_law_art_300": {
+   "similarity": 0.9459,
+   "seq_similarity": 0.991,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثمائة"
+  },
+  "civil_law_art_301": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى بعد الثلاثمائة"
+  },
+  "civil_law_art_302": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية بعد الثلاثمائة"
+  },
+  "civil_law_art_303": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة بعد الثلاثمائة"
+  },
+  "civil_law_art_304": {
+   "similarity": 0.9677,
+   "seq_similarity": 0.9957,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة بعد الثلاثمائة"
+  },
+  "civil_law_art_305": {
+   "similarity": 0.9189,
+   "seq_similarity": 0.9874,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة بعد الثلاثمائة"
+  },
+  "civil_law_art_306": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة بعد الثلاثمائة"
+  },
+  "civil_law_art_307": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة بعد الثلاثمائة"
+  },
+  "civil_law_art_308": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9889,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة بعد الثلاثمائة"
+  },
+  "civil_law_art_309": {
+   "similarity": 0.9459,
+   "seq_similarity": 0.9909,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة بعد الثلاثمائة"
+  },
+  "civil_law_art_310": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_311": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_312": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_313": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_314": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_315": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_316": {
+   "similarity": 0.96,
+   "seq_similarity": 0.994,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_317": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_318": {
+   "similarity": 0.9487,
+   "seq_similarity": 0.9927,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_319": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة بعد الثلاثمائة"
+  },
+  "civil_law_art_320": {
+   "similarity": 0.9355,
+   "seq_similarity": 0.9887,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_321": {
+   "similarity": 0.9355,
+   "seq_similarity": 0.9901,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_322": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_323": {
+   "similarity": 0.9753,
+   "seq_similarity": 0.9965,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_324": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_325": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_326": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_327": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_328": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_329": {
+   "similarity": 0.9444,
+   "seq_similarity": 0.9919,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والعشرون بعد الثلاثمائة"
+  },
+  "civil_law_art_330": {
+   "similarity": 0.9286,
+   "seq_similarity": 0.9891,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_331": {
+   "similarity": 0.9365,
+   "seq_similarity": 0.9926,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_332": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_333": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_334": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_335": {
+   "similarity": 0.9583,
+   "seq_similarity": 0.9968,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_336": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_337": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.9929,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_338": {
+   "similarity": 0.9759,
+   "seq_similarity": 0.9944,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_339": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثلاثون بعد الثلاثمائة"
+  },
+  "civil_law_art_340": {
+   "similarity": 0.9608,
+   "seq_similarity": 0.994,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_341": {
+   "similarity": 0.9683,
+   "seq_similarity": 0.9954,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_342": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_343": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_344": {
+   "similarity": 0.9024,
+   "seq_similarity": 0.9396,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والأربعون بعد الثلاثمائة",
+   "similarity_after_heading_strip": 0.9737,
+   "note": "committed text embeds trailing structural heading line(s) [\"ثانيًا: التزامات المشتري\"]; similarity without them: 0.9737"
+  },
+  "civil_law_art_345": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_346": {
+   "similarity": 0.9512,
+   "seq_similarity": 0.9916,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_347": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9925,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_348": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_349": {
+   "similarity": 0.9818,
+   "seq_similarity": 0.9947,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والأربعون بعد الثلاثمائة"
+  },
+  "civil_law_art_350": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_351": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_352": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_353": {
+   "similarity": 0.9375,
+   "seq_similarity": 0.9902,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_354": {
+   "similarity": 0.9535,
+   "seq_similarity": 0.9936,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_355": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_356": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_357": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_358": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9911,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_359": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.9907,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والخمسون بعد الثلاثمائة"
+  },
+  "civil_law_art_360": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستون بعد الثلاثمائة"
+  },
+  "civil_law_art_361": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_362": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_363": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_364": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_365": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_366": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_367": {
+   "similarity": 0.9167,
+   "seq_similarity": 0.9866,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_368": {
+   "similarity": 0.9048,
+   "seq_similarity": 0.9882,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_369": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والستون بعد الثلاثمائة"
+  },
+  "civil_law_art_370": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_371": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_372": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_373": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_374": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_375": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_376": {
+   "similarity": 0.9608,
+   "seq_similarity": 0.9943,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_377": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_378": {
+   "similarity": 0.95,
+   "seq_similarity": 0.9923,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_379": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والسبعون بعد الثلاثمائة"
+  },
+  "civil_law_art_380": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_381": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_382": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_383": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_384": {
+   "similarity": 0.92,
+   "seq_similarity": 0.9839,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_385": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_386": {
+   "similarity": 0.9362,
+   "seq_similarity": 0.9909,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_387": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9927,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_388": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_389": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثمانون بعد الثلاثمائة"
+  },
+  "civil_law_art_390": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_391": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_392": {
+   "similarity": 0.9259,
+   "seq_similarity": 0.9869,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_393": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_394": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_395": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_396": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_397": {
+   "similarity": 0.913,
+   "seq_similarity": 0.9844,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_398": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_399": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والتسعون بعد الثلاثمائة"
+  },
+  "civil_law_art_400": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعمائة"
+  },
+  "civil_law_art_401": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى بعد الأربعمائة"
+  },
+  "civil_law_art_402": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية بعد الأربعمائة"
+  },
+  "civil_law_art_403": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة بعد الأربعمائة"
+  },
+  "civil_law_art_404": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة بعد الأربعمائة"
+  },
+  "civil_law_art_405": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة بعد الأربعمائة"
+  },
+  "civil_law_art_406": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة بعد الأربعمائة"
+  },
+  "civil_law_art_407": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة بعد الأربعمائة"
+  },
+  "civil_law_art_408": {
+   "similarity": 0.8824,
+   "seq_similarity": 0.9808,
+   "status": "DIFFERS_CLAUSE_NUMBERING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة بعد الأربعمائة",
+   "note": "non-digit token sequence is identical to MOJ DB; the only difference is MOJ’s clause numerals (١- ٢- ...) which the committed track renders as unnumbered paragraphs. Formatting difference only; committed text NOT modified."
+  },
+  "civil_law_art_409": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة بعد الأربعمائة"
+  },
+  "civil_law_art_410": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة بعد الأربعمائة"
+  },
+  "civil_law_art_411": {
+   "similarity": 0.9516,
+   "seq_similarity": 0.9936,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_412": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_413": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_414": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_415": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_416": {
+   "similarity": 0.9394,
+   "seq_similarity": 0.9899,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_417": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_418": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_419": {
+   "similarity": 0.9877,
+   "seq_similarity": 0.9955,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة بعد الأربعمائة"
+  },
+  "civil_law_art_420": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون بعد الأربعمائة"
+  },
+  "civil_law_art_421": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_422": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9922,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_423": {
+   "similarity": 0.9846,
+   "seq_similarity": 0.9938,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_424": {
+   "similarity": 0.9636,
+   "seq_similarity": 0.9948,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_425": {
+   "similarity": 0.9355,
+   "seq_similarity": 0.9884,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_426": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_427": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_428": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_429": {
+   "similarity": 0.9512,
+   "seq_similarity": 0.9931,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والعشرون بعد الأربعمائة"
+  },
+  "civil_law_art_430": {
+   "similarity": 0.9375,
+   "seq_similarity": 0.991,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_431": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_432": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_433": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_434": {
+   "similarity": 0.973,
+   "seq_similarity": 0.9916,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_435": {
+   "similarity": 0.9444,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_436": {
+   "similarity": 0.9667,
+   "seq_similarity": 0.9953,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_437": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_438": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_439": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثلاثون بعد الأربعمائة"
+  },
+  "civil_law_art_440": {
+   "similarity": 0.9865,
+   "seq_similarity": 0.9956,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_441": {
+   "similarity": 0.9362,
+   "seq_similarity": 0.8743,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_442": {
+   "similarity": 0.9545,
+   "seq_similarity": 0.9914,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_443": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_444": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_445": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_446": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_447": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_448": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_449": {
+   "similarity": 0.98,
+   "seq_similarity": 0.9917,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والأربعون بعد الأربعمائة"
+  },
+  "civil_law_art_450": {
+   "similarity": 0.9211,
+   "seq_similarity": 0.988,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_451": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_452": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_453": {
+   "similarity": 0.9592,
+   "seq_similarity": 0.9941,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_454": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_455": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_456": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_457": {
+   "similarity": 0.9394,
+   "seq_similarity": 0.9913,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_458": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_459": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والخمسون بعد الأربعمائة"
+  },
+  "civil_law_art_460": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9882,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستون بعد الأربعمائة"
+  },
+  "civil_law_art_461": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والستون بعد الأربعمائة"
+  },
+  "civil_law_art_462": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والستون بعد الأربعمائة"
+  },
+  "civil_law_art_463": {
+   "similarity": 0.96,
+   "seq_similarity": 0.9942,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والستون بعد الأربعمائة"
+  },
+  "civil_law_art_464": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والستون بعد الأربعمائة"
+  },
+  "civil_law_art_465": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والستون بعد الأربعمائة"
+  },
+  "civil_law_art_466": {
+   "similarity": 0.9706,
+   "seq_similarity": 0.9958,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والستون بعد الأربعمائة"
+  },
+  "civil_law_art_467": {
+   "similarity": 0.9661,
+   "seq_similarity": 0.9958,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والستون بعد الأربعمائة"
+  },
+  "civil_law_art_468": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والستون بعد الأربعمائة"
+  },
+  "civil_law_art_469": {
+   "similarity": 0.9583,
+   "seq_similarity": 0.9935,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والستون بعد الأربعمائة"
+  },
+  "civil_law_art_470": {
+   "similarity": 0.971,
+   "seq_similarity": 0.9958,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعون بعد الأربعمائة"
+  },
+  "civil_law_art_471": {
+   "similarity": 0.9677,
+   "seq_similarity": 0.9957,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_472": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_473": {
+   "similarity": 0.9394,
+   "seq_similarity": 0.9899,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_474": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_475": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_476": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_477": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_478": {
+   "similarity": 0.9844,
+   "seq_similarity": 0.9933,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_479": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والسبعون بعد الأربعمائة"
+  },
+  "civil_law_art_480": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_481": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_482": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_483": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_484": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_485": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_486": {
+   "similarity": 0.94,
+   "seq_similarity": 0.9902,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_487": {
+   "similarity": 0.9286,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_488": {
+   "similarity": 0.9516,
+   "seq_similarity": 0.9933,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_489": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9924,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثمانون بعد الأربعمائة"
+  },
+  "civil_law_art_490": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التسعون بعد الأربعمائة"
+  },
+  "civil_law_art_491": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.992,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_492": {
+   "similarity": 0.9429,
+   "seq_similarity": 0.9917,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_493": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_494": {
+   "similarity": 0.9565,
+   "seq_similarity": 0.9934,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_495": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9896,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_496": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9884,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_497": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_498": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_499": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والتسعون بعد الأربعمائة"
+  },
+  "civil_law_art_500": {
+   "similarity": 0.9259,
+   "seq_similarity": 0.9888,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسمائة"
+  },
+  "civil_law_art_501": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى بعد الخمسمائة"
+  },
+  "civil_law_art_502": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية بعد الخمسمائة"
+  },
+  "civil_law_art_503": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة بعد الخمسمائة"
+  },
+  "civil_law_art_504": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة بعد الخمسمائة"
+  },
+  "civil_law_art_505": {
+   "similarity": 0.9529,
+   "seq_similarity": 0.9929,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة بعد الخمسمائة"
+  },
+  "civil_law_art_506": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة بعد الخمسمائة"
+  },
+  "civil_law_art_507": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة بعد الخمسمائة"
+  },
+  "civil_law_art_508": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة بعد الخمسمائة"
+  },
+  "civil_law_art_509": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.993,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة بعد الخمسمائة"
+  },
+  "civil_law_art_510": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة بعد الخمسمائة"
+  },
+  "civil_law_art_511": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_512": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_513": {
+   "similarity": 0.9394,
+   "seq_similarity": 0.9894,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_514": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_515": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9922,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_516": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_517": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_518": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_519": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة بعد الخمسمائة"
+  },
+  "civil_law_art_520": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون بعد الخمسمائة"
+  },
+  "civil_law_art_521": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_522": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_523": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_524": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_525": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_526": {
+   "similarity": 0.9649,
+   "seq_similarity": 0.994,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_527": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9891,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_528": {
+   "similarity": 0.98,
+   "seq_similarity": 0.9936,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_529": {
+   "similarity": 0.9444,
+   "seq_similarity": 0.9897,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والعشرون بعد الخمسمائة"
+  },
+  "civil_law_art_530": {
+   "similarity": 0.9362,
+   "seq_similarity": 0.9895,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_531": {
+   "similarity": 0.95,
+   "seq_similarity": 0.9932,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_532": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_533": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_534": {
+   "similarity": 0.9091,
+   "seq_similarity": 0.9853,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_535": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_536": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_537": {
+   "similarity": 0.9667,
+   "seq_similarity": 0.995,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_538": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_539": {
+   "similarity": 0.9574,
+   "seq_similarity": 0.994,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثلاثون بعد الخمسمائة"
+  },
+  "civil_law_art_540": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_541": {
+   "similarity": 0.9512,
+   "seq_similarity": 0.9916,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_542": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_543": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.9919,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_544": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.9934,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_545": {
+   "similarity": 0.9583,
+   "seq_similarity": 0.9943,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_546": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.989,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_547": {
+   "similarity": 0.925,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_548": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_549": {
+   "similarity": 0.9388,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والأربعون بعد الخمسمائة"
+  },
+  "civil_law_art_550": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_551": {
+   "similarity": 0.9459,
+   "seq_similarity": 0.9904,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_552": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_553": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_554": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_555": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9888,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_556": {
+   "similarity": 0.96,
+   "seq_similarity": 0.9934,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_557": {
+   "similarity": 0.9231,
+   "seq_similarity": 0.9885,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_558": {
+   "similarity": 0.9706,
+   "seq_similarity": 0.9915,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_559": {
+   "similarity": 0.94,
+   "seq_similarity": 0.9914,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والخمسون بعد الخمسمائة"
+  },
+  "civil_law_art_560": {
+   "similarity": 0.9459,
+   "seq_similarity": 0.9925,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستون بعد الخمسمائة"
+  },
+  "civil_law_art_561": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والستون بعد الخمسمائة"
+  },
+  "civil_law_art_562": {
+   "similarity": 0.9574,
+   "seq_similarity": 0.9945,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والستون بعد الخمسمائة"
+  },
+  "civil_law_art_563": {
+   "similarity": 0.9556,
+   "seq_similarity": 0.993,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والستون بعد الخمسمائة"
+  },
+  "civil_law_art_564": {
+   "similarity": 0.9459,
+   "seq_similarity": 0.9907,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والستون بعد الخمسمائة"
+  },
+  "civil_law_art_565": {
+   "similarity": 0.9535,
+   "seq_similarity": 0.9932,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والستون بعد الخمسمائة"
+  },
+  "civil_law_art_566": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والستون بعد الخمسمائة"
+  },
+  "civil_law_art_567": {
+   "similarity": 0.9333,
+   "seq_similarity": 0.9896,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والستون بعد الخمسمائة"
+  },
+  "civil_law_art_568": {
+   "similarity": 0.9661,
+   "seq_similarity": 0.9949,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والستون بعد الخمسمائة"
+  },
+  "civil_law_art_569": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والستون بعد الخمسمائة"
+  },
+  "civil_law_art_570": {
+   "similarity": 0.9189,
+   "seq_similarity": 0.8373,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعون بعد الخمسمائة"
+  },
+  "civil_law_art_571": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_572": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_573": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_574": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_575": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_576": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_577": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_578": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_579": {
+   "similarity": 0.9286,
+   "seq_similarity": 0.9878,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والسبعون بعد الخمسمائة"
+  },
+  "civil_law_art_580": {
+   "similarity": 0.9444,
+   "seq_similarity": 0.991,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_581": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_582": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_583": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.9903,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_584": {
+   "similarity": 0.9259,
+   "seq_similarity": 0.9897,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_585": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_586": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_587": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_588": {
+   "similarity": 0.9231,
+   "seq_similarity": 0.9859,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_589": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثمانون بعد الخمسمائة"
+  },
+  "civil_law_art_590": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التسعون بعد الخمسمائة"
+  },
+  "civil_law_art_591": {
+   "similarity": 0.9744,
+   "seq_similarity": 0.9921,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_592": {
+   "similarity": 0.9574,
+   "seq_similarity": 0.9938,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_593": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_594": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_595": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_596": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_597": {
+   "similarity": 0.9512,
+   "seq_similarity": 0.9925,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_598": {
+   "similarity": 0.9487,
+   "seq_similarity": 0.993,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_599": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والتسعون بعد الخمسمائة"
+  },
+  "civil_law_art_600": {
+   "similarity": 0.9231,
+   "seq_similarity": 0.9885,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستمائة"
+  },
+  "civil_law_art_601": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى بعد الستمائة"
+  },
+  "civil_law_art_602": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية بعد الستمائة"
+  },
+  "civil_law_art_603": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة بعد الستمائة"
+  },
+  "civil_law_art_604": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة بعد الستمائة"
+  },
+  "civil_law_art_605": {
+   "similarity": 0.9286,
+   "seq_similarity": 0.989,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة بعد الستمائة"
+  },
+  "civil_law_art_606": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة بعد الستمائة"
+  },
+  "civil_law_art_607": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة بعد الستمائة"
+  },
+  "civil_law_art_608": {
+   "similarity": 0.9375,
+   "seq_similarity": 0.9891,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة بعد الستمائة"
+  },
+  "civil_law_art_609": {
+   "similarity": 0.9535,
+   "seq_similarity": 0.991,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة بعد الستمائة"
+  },
+  "civil_law_art_610": {
+   "similarity": 0.8333,
+   "seq_similarity": 0.8939,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة بعد الستمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"ثانيًا: قيود الملكية\"] which MOJ models as separate heading leaves); raw similarity 0.8333. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_611": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة بعد الستمائة"
+  },
+  "civil_law_art_612": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة بعد الستمائة"
+  },
+  "civil_law_art_613": {
+   "similarity": 0.9661,
+   "seq_similarity": 0.9946,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة بعد الستمائة"
+  },
+  "civil_law_art_614": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة بعد الستمائة"
+  },
+  "civil_law_art_615": {
+   "similarity": 0.94,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة بعد الستمائة"
+  },
+  "civil_law_art_616": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة بعد الستمائة"
+  },
+  "civil_law_art_617": {
+   "similarity": 0.9636,
+   "seq_similarity": 0.992,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة بعد الستمائة"
+  },
+  "civil_law_art_618": {
+   "similarity": 0.8824,
+   "seq_similarity": 0.9223,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة بعد الستمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"ثالثًا: الملكية الشائعة وقسمتها\"] which MOJ models as separate heading leaves); raw similarity 0.8824. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_619": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة بعد الستمائة"
+  },
+  "civil_law_art_620": {
+   "similarity": 0.9661,
+   "seq_similarity": 0.9951,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون بعد الستمائة"
+  },
+  "civil_law_art_621": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون بعد الستمائة"
+  },
+  "civil_law_art_622": {
+   "similarity": 0.9811,
+   "seq_similarity": 0.9947,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والعشرون بعد الستمائة"
+  },
+  "civil_law_art_623": {
+   "similarity": 0.9861,
+   "seq_similarity": 0.9958,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والعشرون بعد الستمائة"
+  },
+  "civil_law_art_624": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والعشرون بعد الستمائة"
+  },
+  "civil_law_art_625": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والعشرون بعد الستمائة"
+  },
+  "civil_law_art_626": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والعشرون بعد الستمائة"
+  },
+  "civil_law_art_627": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والعشرون بعد الستمائة"
+  },
+  "civil_law_art_628": {
+   "similarity": 0.9714,
+   "seq_similarity": 0.9957,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والعشرون بعد الستمائة"
+  },
+  "civil_law_art_629": {
+   "similarity": 0.9672,
+   "seq_similarity": 0.9952,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والعشرون بعد الستمائة"
+  },
+  "civil_law_art_630": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثلاثون بعد الستمائة"
+  },
+  "civil_law_art_631": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_632": {
+   "similarity": 0.9608,
+   "seq_similarity": 0.9941,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_633": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_634": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_635": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9938,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_636": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_637": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_638": {
+   "similarity": 0.9091,
+   "seq_similarity": 0.9902,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثلاثون بعد الستمائة"
+  },
+  "civil_law_art_639": {
+   "similarity": 0.6923,
+   "seq_similarity": 0.7752,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثلاثون بعد الستمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"رابعًا: ملكية الوحدات العقارية\"] which MOJ models as separate heading leaves); raw similarity 0.6923. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_640": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأربعون بعد الستمائة"
+  },
+  "civil_law_art_641": {
+   "similarity": 0.9259,
+   "seq_similarity": 0.986,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والأربعون بعد الستمائة"
+  },
+  "civil_law_art_642": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والأربعون بعد الستمائة"
+  },
+  "civil_law_art_643": {
+   "similarity": 0.5714,
+   "seq_similarity": 0.705,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والأربعون بعد الستمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"ثانيًا: كسب الملكية بالضمان والإرث والوصية\"] which MOJ models as separate heading leaves); raw similarity 0.5714. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_644": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والأربعون بعد الستمائة"
+  },
+  "civil_law_art_645": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والأربعون بعد الستمائة"
+  },
+  "civil_law_art_646": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والأربعون بعد الستمائة"
+  },
+  "civil_law_art_647": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والأربعون بعد الستمائة"
+  },
+  "civil_law_art_648": {
+   "similarity": 0.9412,
+   "seq_similarity": 0.958,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والأربعون بعد الستمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "committed text embeds trailing structural heading line(s) [\"ثالثًا: الالتصاق\"]; similarity without them: 1.0"
+  },
+  "civil_law_art_649": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والأربعون بعد الستمائة"
+  },
+  "civil_law_art_650": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخمسون بعد الستمائة"
+  },
+  "civil_law_art_651": {
+   "similarity": 0.9655,
+   "seq_similarity": 0.9945,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والخمسون بعد الستمائة"
+  },
+  "civil_law_art_652": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والخمسون بعد الستمائة"
+  },
+  "civil_law_art_653": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والخمسون بعد الستمائة"
+  },
+  "civil_law_art_654": {
+   "similarity": 0.8857,
+   "seq_similarity": 0.9602,
+   "status": "UNEXPLAINED_DIFF",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والخمسون بعد الستمائة",
+   "similarity_after_heading_strip": 0.9394,
+   "note": "word-level diff vs MOJ DB after removing trailing structural heading line(s) [\"رابعًا: العقد\"] (similarity then 0.9394): tokens only in committed text = [\"الطرفين\"]; tokens only in MOJ DB = [\"الطرفان\"]. Flagged verbatim; committed text NOT modified."
+  },
+  "civil_law_art_655": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والخمسون بعد الستمائة"
+  },
+  "civil_law_art_656": {
+   "similarity": 0.9048,
+   "seq_similarity": 0.9845,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والخمسون بعد الستمائة"
+  },
+  "civil_law_art_657": {
+   "similarity": 0.8889,
+   "seq_similarity": 0.9372,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والخمسون بعد الستمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"خامسًا: الشفعة\"] which MOJ models as separate heading leaves); raw similarity 0.8889. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_658": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والخمسون بعد الستمائة"
+  },
+  "civil_law_art_659": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والخمسون بعد الستمائة"
+  },
+  "civil_law_art_660": {
+   "similarity": 0.9524,
+   "seq_similarity": 0.9955,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الستون بعد الستمائة"
+  },
+  "civil_law_art_661": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والستون بعد الستمائة"
+  },
+  "civil_law_art_662": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والستون بعد الستمائة"
+  },
+  "civil_law_art_663": {
+   "similarity": 0.9,
+   "seq_similarity": 0.9911,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والستون بعد الستمائة"
+  },
+  "civil_law_art_664": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والستون بعد الستمائة"
+  },
+  "civil_law_art_665": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والستون بعد الستمائة"
+  },
+  "civil_law_art_666": {
+   "similarity": 0.9667,
+   "seq_similarity": 0.9977,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والستون بعد الستمائة"
+  },
+  "civil_law_art_667": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والستون بعد الستمائة"
+  },
+  "civil_law_art_668": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والستون بعد الستمائة"
+  },
+  "civil_law_art_669": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والستون بعد الستمائة"
+  },
+  "civil_law_art_670": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعون بعد الستمائة"
+  },
+  "civil_law_art_671": {
+   "similarity": 0.9429,
+   "seq_similarity": 0.9947,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والسبعون بعد الستمائة"
+  },
+  "civil_law_art_672": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والسبعون بعد الستمائة"
+  },
+  "civil_law_art_673": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والسبعون بعد الستمائة"
+  },
+  "civil_law_art_674": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والسبعون بعد الستمائة"
+  },
+  "civil_law_art_675": {
+   "similarity": 0.9474,
+   "seq_similarity": 0.9914,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والسبعون بعد الستمائة"
+  },
+  "civil_law_art_676": {
+   "similarity": 0.9091,
+   "seq_similarity": 0.9863,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والسبعون بعد الستمائة"
+  },
+  "civil_law_art_677": {
+   "similarity": 0.9245,
+   "seq_similarity": 0.9891,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والسبعون بعد الستمائة"
+  },
+  "civil_law_art_678": {
+   "similarity": 0.9231,
+   "seq_similarity": 0.6275,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والسبعون بعد الستمائة"
+  },
+  "civil_law_art_679": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والسبعون بعد الستمائة"
+  },
+  "civil_law_art_680": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثمانون بعد الستمائة"
+  },
+  "civil_law_art_681": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والثمانون بعد الستمائة"
+  },
+  "civil_law_art_682": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والثمانون بعد الستمائة"
+  },
+  "civil_law_art_683": {
+   "similarity": 0.9697,
+   "seq_similarity": 0.9955,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والثمانون بعد الستمائة"
+  },
+  "civil_law_art_684": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والثمانون بعد الستمائة"
+  },
+  "civil_law_art_685": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والثمانون بعد الستمائة"
+  },
+  "civil_law_art_686": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والثمانون بعد الستمائة"
+  },
+  "civil_law_art_687": {
+   "similarity": 0.9825,
+   "seq_similarity": 0.9943,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والثمانون بعد الستمائة"
+  },
+  "civil_law_art_688": {
+   "similarity": 0.9706,
+   "seq_similarity": 0.9905,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والثمانون بعد الستمائة"
+  },
+  "civil_law_art_689": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والثمانون بعد الستمائة"
+  },
+  "civil_law_art_690": {
+   "similarity": 0.9773,
+   "seq_similarity": 0.9932,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التسعون بعد الستمائة"
+  },
+  "civil_law_art_691": {
+   "similarity": 0.9556,
+   "seq_similarity": 0.9931,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والتسعون بعد الستمائة"
+  },
+  "civil_law_art_692": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية والتسعون بعد الستمائة"
+  },
+  "civil_law_art_693": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة والتسعون بعد الستمائة"
+  },
+  "civil_law_art_694": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة والتسعون بعد الستمائة"
+  },
+  "civil_law_art_695": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة والتسعون بعد الستمائة"
+  },
+  "civil_law_art_696": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة والتسعون بعد الستمائة"
+  },
+  "civil_law_art_697": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة والتسعون بعد الستمائة"
+  },
+  "civil_law_art_698": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة والتسعون بعد الستمائة"
+  },
+  "civil_law_art_699": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة والتسعون بعد الستمائة"
+  },
+  "civil_law_art_700": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السبعمائة"
+  },
+  "civil_law_art_701": {
+   "similarity": 0.7941,
+   "seq_similarity": 0.9124,
+   "status": "UNEXPLAINED_DIFF",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الأولى بعد السبعمائة",
+   "similarity_after_heading_strip": 0.931,
+   "note": "word-level diff vs MOJ DB after removing trailing structural heading line(s) [\"ثانيًا: بعض أنواع حق الارتفاق\"] (similarity then 0.931): tokens only in committed text = [\"عقارين\"]; tokens only in MOJ DB = [\"عقاري\"]. Flagged verbatim; committed text NOT modified."
+  },
+  "civil_law_art_702": {
+   "similarity": 0.9048,
+   "seq_similarity": 0.981,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية بعد السبعمائة"
+  },
+  "civil_law_art_703": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة بعد السبعمائة"
+  },
+  "civil_law_art_704": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة بعد السبعمائة"
+  },
+  "civil_law_art_705": {
+   "similarity": 0.9048,
+   "seq_similarity": 0.9952,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة بعد السبعمائة"
+  },
+  "civil_law_art_706": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة بعد السبعمائة"
+  },
+  "civil_law_art_707": {
+   "similarity": 0.9623,
+   "seq_similarity": 0.9932,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة بعد السبعمائة"
+  },
+  "civil_law_art_708": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة بعد السبعمائة"
+  },
+  "civil_law_art_709": {
+   "similarity": 0.9048,
+   "seq_similarity": 0.9868,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة بعد السبعمائة"
+  },
+  "civil_law_art_710": {
+   "similarity": 0.8095,
+   "seq_similarity": 0.8783,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العاشرة بعد السبعمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"ثالثًا: آثار حق الارتفاق\"] which MOJ models as separate heading leaves); raw similarity 0.8095. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_711": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية عشرة بعد السبعمائة"
+  },
+  "civil_law_art_712": {
+   "similarity": 0.9434,
+   "seq_similarity": 0.9926,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثانية عشرة بعد السبعمائة"
+  },
+  "civil_law_art_713": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثالثة عشرة بعد السبعمائة"
+  },
+  "civil_law_art_714": {
+   "similarity": 0.9375,
+   "seq_similarity": 0.9908,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الرابعة عشرة بعد السبعمائة"
+  },
+  "civil_law_art_715": {
+   "similarity": 0.8947,
+   "seq_similarity": 0.9355,
+   "status": "UNEXPLAINED_DIFF",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الخامسة عشرة بعد السبعمائة",
+   "similarity_after_heading_strip": 0.9444,
+   "note": "word-level diff vs MOJ DB after removing trailing structural heading line(s) [\"رابعًا: انتهاء حق الارتفاق\"] (similarity then 0.9444): tokens only in committed text = [\"جزئ\"]; tokens only in MOJ DB = [\"جزيء\"]. Flagged verbatim; committed text NOT modified."
+  },
+  "civil_law_art_716": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السادسة عشرة بعد السبعمائة"
+  },
+  "civil_law_art_717": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة السابعة عشرة بعد السبعمائة"
+  },
+  "civil_law_art_718": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الثامنة عشرة بعد السبعمائة"
+  },
+  "civil_law_art_719": {
+   "similarity": 0.6,
+   "seq_similarity": 0.7632,
+   "status": "DIFFERS_EMBEDDED_HEADING_ONLY",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة التاسعة عشرة بعد السبعمائة",
+   "similarity_after_heading_strip": 1.0,
+   "note": "body text matches MOJ DB (similarity 1.0 after removing trailing structural heading line(s) [\"أحكام ختامية الفصل الأول: قواعد كلية\"] which MOJ models as separate heading leaves); raw similarity 0.6. No legal-content difference; formatting artifact of the committed track — flagged, text NOT modified."
+  },
+  "civil_law_art_720": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة العشرون بعد السبعمائة"
+  },
+  "civil_law_art_721": {
+   "similarity": 1.0,
+   "seq_similarity": 1.0,
+   "status": "MATCHES_MOJ_DB",
+   "moj_legal_status": "اصلية",
+   "moj_label": "المادة الحادية والعشرون بعد السبعمائة"
+  }
+ },
+ "extra_moj_units": [
+  {
+   "section_id": "sA1lWN0hY4HwvjCjLyfubw",
+   "label": "القسم الأول : الالتزامات (الحقوق الشخصية)",
+   "chapter": "",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "W2U-3kjjLZjtv2WrFuGeig",
+   "label": "أولاً: الرضى",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الأول أركان العقد",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "_T-vueNFFQvDZ4s55uSt0A",
+   "label": "١- التعبير عن الإرادة",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الأول أركان العقد",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "jWQ0DOq2n5ifS6JGjE7Pqg",
+   "label": "٢- أهلية المتعاقدين",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الأول أركان العقد",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "ZULVzJ3MjExmk0G_0uyJ7Q",
+   "label": "٣- عيوب الرضى",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الأول أركان العقد",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "Xlah2wdunPbU8XOTi0VM_g",
+   "label": "ثانياً: المحل والسبب",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الأول أركان العقد",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "T2NnGI6nGvpekx9MtUIrvA",
+   "label": "أولاً: حق الإبطال",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الثاني إبطال العقد وبطلانه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "0TLKDRFMkOXkW9wxF554tA",
+   "label": "ثانياً: البطلان",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الثاني إبطال العقد وبطلانه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "jNGUXZ0ZXUgm48Ci9LaAzA",
+   "label": "ثالثاً: آثار إبطال العقد وبطلانه",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع الثاني إبطال العقد وبطلانه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "UfmFe27FyQfuin7nVHvK9g",
+   "label": "أولاً: الإقالة",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع السادس فسخ العقد وانفساخه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "-vXstlim-oupUOoZ9wIXnA",
+   "label": "ثانياً: خيار الشرط",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع السادس فسخ العقد وانفساخه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "f0Q5pATmAC7KsRJEUac9Gg",
+   "label": "ثالثاً: الإخلال بالالتزام",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع السادس فسخ العقد وانفساخه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "eYsyBxcGFDVbMBVeutLdng",
+   "label": "رابعاً: استحالة التنفيذ",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع السادس فسخ العقد وانفساخه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "K4JFS5la8tCQOPy79uvkVQ",
+   "label": "خامساً: آثار فسخ العقد وانفساخه",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع السادس فسخ العقد وانفساخه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "ll90TLt2M2zWNWde2yGxdQ",
+   "label": "سادساً: الدفع بعدم التنفيذ",
+   "chapter": "الباب الأول مصادر الالتزام > الفصل الأول العقد > الفرع السادس فسخ العقد وانفساخه",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "6sACZK1vGNubegX3yDn8zA",
+   "label": "القسم الثاني: العقود المسماة",
+   "chapter": "",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "4WRE4miRMoRQLCIN3nSflg",
+   "label": "أولاً: التزامات البائع",
+   "chapter": "الباب الأول العقود الواردة على الملكية > الفصل الأول عقد البيع > الفرع الثاني آثار عقد البيع",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "TYWUGR5_GXGmGc-KbeC4Aw",
+   "label": "ثانياً: التزامات المشتري",
+   "chapter": "الباب الأول العقود الواردة على الملكية > الفصل الأول عقد البيع > الفرع الثاني آثار عقد البيع",
+   "legal_status": null,
+   "text_first_80": "ثانياً: التزامات المشتري",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "Az4FMMeNUURqdgQ6RLqB3g",
+   "label": "القسم الثالث: الحقوق العينية",
+   "chapter": "",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "9m3PaLN19zwYHY_F2B4WSw",
+   "label": "أولاً: نطاق الحق",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الأول أحكام عامة لحق الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "USUv_U8hGOeG_4PVLkyTbQ",
+   "label": "ثانياً: قيود الملكية",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الأول أحكام عامة لحق الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "jbp-Yo0sAmzIejZd6_h0EQ",
+   "label": "ثالثاً: الملكية الشائعة وقسمتها",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الأول أحكام عامة لحق الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "ErspcK2b-eMQ5yXO4cGkBg",
+   "label": "رابعاً: ملكية الوحدات العقارية",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الأول أحكام عامة لحق الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "M8qBll-BLCWiEWxcd-kGbA",
+   "label": "أولاً: إحراز المباحات",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الثاني أسباب كسب الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "NXIHhLaDea9RhArh6Us0YA",
+   "label": "ثانياً: كسب الملكية بالضمان والإرث والوصية",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الثاني أسباب كسب الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "kseVPV96jc11od9ii8PMAA",
+   "label": "ثالثاً: الالتصاق",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الثاني أسباب كسب الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "uvbWg0YF2lMrZk3tk8DVEg",
+   "label": "رابعاً: العقد",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الثاني أسباب كسب الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "jYtZugGYJ67MVKXpK1_wwQ",
+   "label": "خامساً: الشفعة",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الأول حق الملكية > الفرع الثاني أسباب كسب الملكية",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "u8R3qwVOeHUAPix31rwnLg",
+   "label": "أولاً: إنشاء حق الارتفاق",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الثاني الحقوق المتفرعة عن حق الملكية > الفرع الرابع حق الارتفاق",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "yuNh_mLlkenOhriwNDy6fg",
+   "label": "ثانياً: بعض أنواع حق الارتفاق",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الثاني الحقوق المتفرعة عن حق الملكية > الفرع الرابع حق الارتفاق",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "-qUTTCgYSkBfifNE8gXk_Q",
+   "label": "ثالثاً: آثار حق الارتفاق",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الثاني الحقوق المتفرعة عن حق الملكية > الفرع الرابع حق الارتفاق",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  },
+  {
+   "section_id": "X8bzEZDWRhqKiaUMefQZdw",
+   "label": "رابعاً: انتهاء حق الارتفاق",
+   "chapter": "الباب الأول الحقوق العينية الأصلية > الفصل الثاني الحقوق المتفرعة عن حق الملكية > الفرع الرابع حق الارتفاق",
+   "legal_status": null,
+   "text_first_80": ".",
+   "get_section_changes": "null (no section-changes record; structural heading node)"
+  }
+ ],
+ "amended_articles": [],
+ "imperfect_similarity_sample": [
+  {
+   "article_number": 1,
+   "similarity": 0.9535,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 6,
+   "similarity": 0.9048,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 7,
+   "similarity": 0.95,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 11,
+   "similarity": 0.9355,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 12,
+   "similarity": 0.9091,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 13,
+   "similarity": 0.9091,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 18,
+   "similarity": 0.9605,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "article_number": 21,
+   "similarity": 0.9429,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 22,
+   "similarity": 0.9545,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 26,
+   "similarity": 0.9,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "article_number": 29,
+   "similarity": 0.95,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "article_number": 33,
+   "similarity": 0.9394,
+   "tokens_only_ours": [],
+   "tokens_only_moj": [
+    "1",
+    "2"
+   ]
+  }
+ ],
+ "stats": {
+  "status_counts": {
+   "MATCHES_MOJ_DB": 700,
+   "DIFFERS_CLAUSE_NUMBERING_ONLY": 6,
+   "DIFFERS_EMBEDDED_HEADING_ONLY": 12,
+   "UNEXPLAINED_DIFF": 3
+  },
+  "articles_with_embedded_trailing_heading": [
+   32,
+   46,
+   56,
+   69,
+   80,
+   81,
+   105,
+   106,
+   109,
+   110,
+   113,
+   344,
+   610,
+   618,
+   639,
+   643,
+   648,
+   657,
+   710,
+   719
+  ],
+  "word_level_variances": {
+   "note": "every article whose non-digit normalized token sequence differs from the MOJ DB text after trailing-heading strip — regardless of similarity score, so nothing is hidden by the 0.90 threshold",
+   "list": [
+    {
+     "article_number": 41,
+     "tokens_only_ours": [
+      "ذا"
+     ],
+     "tokens_only_moj": [
+      "اذا"
+     ],
+     "first_divergence": {
+      "ours": [
+       "ذا",
+       "تم",
+       "التفاوض",
+       "علي"
+      ],
+      "moj": [
+       "اذا",
+       "تم",
+       "التفاوض",
+       "علي"
+      ]
+     }
+    },
+    {
+     "article_number": 148,
+     "tokens_only_ours": [
+      "سيء"
+     ],
+     "tokens_only_moj": [
+      "سيئ"
+     ],
+     "first_divergence": {
+      "ours": [
+       "سيء",
+       "النيه",
+       "فانه",
+       "يلزم"
+      ],
+      "moj": [
+       "سيئ",
+       "النيه",
+       "فانه",
+       "يلزم"
+      ]
+     }
+    },
+    {
+     "article_number": 185,
+     "tokens_only_ours": [
+      "ذا"
+     ],
+     "tokens_only_moj": [],
+     "first_divergence": {
+      "ours": [
+       "ذا",
+       "وفي",
+       "المدين",
+       "الذي"
+      ],
+      "moj": [
+       "اذا",
+       "وفي",
+       "المدين",
+       "الذي"
+      ]
+     }
+    },
+    {
+     "article_number": 296,
+     "tokens_only_ours": [
+      "سيء"
+     ],
+     "tokens_only_moj": [
+      "سيئ"
+     ],
+     "first_divergence": {
+      "ours": [
+       "سيء",
+       "النيه",
+       "او",
+       "ريعا"
+      ],
+      "moj": [
+       "سيئ",
+       "النيه",
+       "او",
+       "ريعا"
+      ]
+     }
+    },
+    {
+     "article_number": 335,
+     "tokens_only_ours": [
+      "سيء"
+     ],
+     "tokens_only_moj": [
+      "سيئ"
+     ],
+     "first_divergence": {
+      "ours": [
+       "سيء",
+       "النيه",
+       "ه",
+       "التعويض"
+      ],
+      "moj": [
+       "سيئ",
+       "النيه",
+       "ه",
+       "التعويض"
+      ]
+     }
+    },
+    {
+     "article_number": 654,
+     "tokens_only_ours": [
+      "الطرفين"
+     ],
+     "tokens_only_moj": [
+      "الطرفان"
+     ],
+     "first_divergence": {
+      "ours": [
+       "الطرفين",
+       "وحسن",
+       "نيه",
+       "كل"
+      ],
+      "moj": [
+       "الطرفان",
+       "وحسن",
+       "نيه",
+       "كل"
+      ]
+     }
+    },
+    {
+     "article_number": 660,
+     "tokens_only_ours": [
+      "والستين"
+     ],
+     "tokens_only_moj": [
+      "والستون"
+     ],
+     "first_divergence": {
+      "ours": [
+       "والستين",
+       "بعد",
+       "الستمائه",
+       "من"
+      ],
+      "moj": [
+       "والستون",
+       "بعد",
+       "الستمائه",
+       "من"
+      ]
+     }
+    },
+    {
+     "article_number": 663,
+     "tokens_only_ours": [
+      "والستين"
+     ],
+     "tokens_only_moj": [
+      "والستون"
+     ],
+     "first_divergence": {
+      "ours": [
+       "والستين",
+       "بعد",
+       "الستمائه",
+       "من"
+      ],
+      "moj": [
+       "والستون",
+       "بعد",
+       "الستمائه",
+       "من"
+      ]
+     }
+    },
+    {
+     "article_number": 666,
+     "tokens_only_ours": [
+      "هذا"
+     ],
+     "tokens_only_moj": [
+      "هذه"
+     ],
+     "first_divergence": {
+      "ours": [
+       "هذا",
+       "الاعذار",
+       "البيانات",
+       "الكافيه"
+      ],
+      "moj": [
+       "هذه",
+       "الاعذار",
+       "البيانات",
+       "الكافيه"
+      ]
+     }
+    },
+    {
+     "article_number": 671,
+     "tokens_only_ours": [
+      "ذا"
+     ],
+     "tokens_only_moj": [],
+     "first_divergence": {
+      "ours": [
+       "ذا",
+       "كانت",
+       "الزياده",
+       "او"
+      ],
+      "moj": [
+       "اذا",
+       "كانت",
+       "الزياده",
+       "او"
+      ]
+     }
+    },
+    {
+     "article_number": 676,
+     "tokens_only_ours": [
+      "سيء"
+     ],
+     "tokens_only_moj": [
+      "سيئ"
+     ],
+     "first_divergence": {
+      "ours": [
+       "سيء",
+       "النيه",
+       "مسؤولا",
+       "عن"
+      ],
+      "moj": [
+       "سيئ",
+       "النيه",
+       "مسؤولا",
+       "عن"
+      ]
+     }
+    },
+    {
+     "article_number": 677,
+     "tokens_only_ours": [],
+     "tokens_only_moj": [
+      "والخمسون"
+     ],
+     "first_divergence": {
+      "ours": [
+       "والخمسين",
+       "بعد",
+       "الستمائه",
+       "و"
+      ],
+      "moj": [
+       "والخمسون",
+       "بعد",
+       "الستمائه",
+       "و"
+      ]
+     }
+    },
+    {
+     "article_number": 678,
+     "tokens_only_ours": [
+      "سيء"
+     ],
+     "tokens_only_moj": [
+      "سيئ"
+     ],
+     "first_divergence": {
+      "ours": [
+       "سيء",
+       "النيه",
+       "مسؤول",
+       "عن"
+      ],
+      "moj": [
+       "سيئ",
+       "النيه",
+       "مسؤول",
+       "عن"
+      ]
+     }
+    },
+    {
+     "article_number": 701,
+     "tokens_only_ours": [
+      "عقارين"
+     ],
+     "tokens_only_moj": [
+      "عقاري"
+     ],
+     "first_divergence": {
+      "ours": [
+       "عقارين",
+       "منفصلين",
+       "ارتفاقا",
+       "ظاهرا"
+      ],
+      "moj": [
+       "عقاري",
+       "منفصلين",
+       "ارتفاقا",
+       "ظاهرا"
+      ]
+     }
+    },
+    {
+     "article_number": 705,
+     "tokens_only_ours": [
+      "ماذونا"
+     ],
+     "tokens_only_moj": [
+      "ماذون"
+     ],
+     "first_divergence": {
+      "ours": [
+       "ماذونا",
+       "فيه",
+       "لري",
+       "ارضه"
+      ],
+      "moj": [
+       "ماذون",
+       "فيه",
+       "لري",
+       "ارضه"
+      ]
+     }
+    },
+    {
+     "article_number": 715,
+     "tokens_only_ours": [
+      "جزئ"
+     ],
+     "tokens_only_moj": [
+      "جزيء"
+     ],
+     "first_divergence": {
+      "ours": [
+       "جزئ",
+       "العقار",
+       "المرتفق",
+       "به"
+      ],
+      "moj": [
+       "جزيء",
+       "العقار",
+       "المرتفق",
+       "به"
+      ]
+     }
+    }
+   ]
+  },
+  "articles_moj_clause_numerals_absent_in_committed": {
+   "count": 243,
+   "note": "MOJ DB numbers multi-clause articles with Arabic-Indic ordinals (١- ٢- ...); the committed track renders the same clauses as unnumbered paragraphs. This is the dominant cause of similarities in the 0.90-0.99 band."
+  },
+  "min_similarity": 0.5714,
+  "mean_similarity": 0.9764,
+  "n_similarity_1_0": 453,
+  "below_090": [
+   {
+    "article_number": 3,
+    "similarity": 0.875,
+    "status": "DIFFERS_CLAUSE_NUMBERING_ONLY"
+   },
+   {
+    "article_number": 32,
+    "similarity": 0.8947,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 46,
+    "similarity": 0.8636,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 52,
+    "similarity": 0.8,
+    "status": "DIFFERS_CLAUSE_NUMBERING_ONLY"
+   },
+   {
+    "article_number": 56,
+    "similarity": 0.875,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 69,
+    "similarity": 0.8889,
+    "status": "DIFFERS_CLAUSE_NUMBERING_ONLY"
+   },
+   {
+    "article_number": 81,
+    "similarity": 0.8537,
+    "status": "DIFFERS_CLAUSE_NUMBERING_ONLY"
+   },
+   {
+    "article_number": 87,
+    "similarity": 0.8947,
+    "status": "DIFFERS_CLAUSE_NUMBERING_ONLY"
+   },
+   {
+    "article_number": 105,
+    "similarity": 0.8125,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 113,
+    "similarity": 0.8333,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 408,
+    "similarity": 0.8824,
+    "status": "DIFFERS_CLAUSE_NUMBERING_ONLY"
+   },
+   {
+    "article_number": 610,
+    "similarity": 0.8333,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 618,
+    "similarity": 0.8824,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 639,
+    "similarity": 0.6923,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 643,
+    "similarity": 0.5714,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 654,
+    "similarity": 0.8857,
+    "status": "UNEXPLAINED_DIFF"
+   },
+   {
+    "article_number": 657,
+    "similarity": 0.8889,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 701,
+    "similarity": 0.7941,
+    "status": "UNEXPLAINED_DIFF"
+   },
+   {
+    "article_number": 710,
+    "similarity": 0.8095,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   },
+   {
+    "article_number": 715,
+    "similarity": 0.8947,
+    "status": "UNEXPLAINED_DIFF"
+   },
+   {
+    "article_number": 719,
+    "similarity": 0.6,
+    "status": "DIFFERS_EMBEDDED_HEADING_ONLY"
+   }
+  ],
+  "anomalies": [
+   "art 654: UNEXPLAINED_DIFF — word-level diff vs MOJ DB after removing trailing structural heading line(s) [\"رابعًا: العقد\"] (similarity then 0.9394): tokens only in committed text = [\"الطرفين\"]; tokens only in MOJ DB = [\"الطرفان\"]. Flagged verbatim; committed text NOT modified.",
+   "art 701: UNEXPLAINED_DIFF — word-level diff vs MOJ DB after removing trailing structural heading line(s) [\"ثانيًا: بعض أنواع حق الارتفاق\"] (similarity then 0.931): tokens only in committed text = [\"عقارين\"]; tokens only in MOJ DB = [\"عقاري\"]. Flagged verbatim; committed text NOT modified.",
+   "art 715: UNEXPLAINED_DIFF — word-level diff vs MOJ DB after removing trailing structural heading line(s) [\"رابعًا: انتهاء حق الارتفاق\"] (similarity then 0.9444): tokens only in committed text = [\"جزئ\"]; tokens only in MOJ DB = [\"جزيء\"]. Flagged verbatim; committed text NOT modified.",
+   "word-level variances (single tokens) vs MOJ DB in 16 articles: [41, 148, 185, 296, 335, 654, 660, 663, 666, 671, 676, 677, 678, 701, 705, 715] — full token diffs in stats.word_level_variances. Includes a committed-text defect class: initial-إ dropped from \"إذا\" (reads \"ذا\") in arts [41, 185, 671]; remaining cases are hamza-seat/orthographic or single-word variants where either side may hold the gazette reading — none smoothed."
+  ]
+ }
+}

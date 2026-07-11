@@ -205,7 +205,7 @@ def main() -> int:
             "formula_total_registry_counted": "total_primary_arabic_governing(2454) + total_reference(614) + total_internal_reference(281) = 3349",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
-            "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), parsed deterministically (complete 1..721) and spot-corroborated against an independent mirror; carries an LLM-ready enrichment layer. Arabic governs; not legal advice.",
+            "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), now CROSS-CHECKED article-by-article against the official MOJ legal-portal database (721/721 aligned, law unamended) with divergences adjudicated visually against the official MOJ PDF (committed): 17 single-word defects corrected and 21 trailing structural headings moved to section_context, all documented in the source artifact and audit files under sources/civil/law/moj_cross_check/. Arabic governs; not legal advice.",
             "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
             "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) and Evidence Arabic (129+24+135+34=322) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (2285) is a projection of counted records and is NOT added to totals.",
         },
@@ -587,7 +587,7 @@ def main() -> int:
                 "jurisdiction": "Kingdom of Saudi Arabia",
                 "governing_language": "ar",
                 "status": "complete",
-                "official_text_status": "OWNER_PROVIDED_OFFICIAL_TEXT",
+                "official_text_status": "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL",
                 "source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء",
                 "language_layers": {
                     "arabic": {
@@ -618,7 +618,7 @@ def main() -> int:
                     "no_trilingual_alignment": True,
                     "no_public_release": True,
                 },
-                "notes": "Civil Transactions Law (721 articles), Royal Decree M/191 dated 29/11/1444H. Owner-provided full official Arabic text, parsed deterministically (complete 1..721, section headings separated as context) and spot-corroborated against an independent public mirror; LLM-ready enrichment layer.",
+                "notes": "Civil Transactions Law (721 articles), Royal Decree M/191 dated 29/11/1444H. Owner-provided full official Arabic text, CROSS-CHECKED article-by-article against the official MOJ legal-portal database (721/721 aligned; law unamended, every article اصلية) with divergences adjudicated visually against the official MOJ PDF (committed at inputs/civil_official_pdfs/ with recorded sha256): 17 single-word defects corrected, 21 trailing structural headings moved to section_context — all documented in the source artifact and the audit files under sources/civil/law/moj_cross_check/. Presentation note: the official print numbers clauses in 243 articles where this text uses unnumbered paragraphs (bodies verbatim). LLM-ready enrichment layer. Arabic governs.",
             },
             {
                 "track_id": "gtpl_law",

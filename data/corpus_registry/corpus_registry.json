@@ -2,7 +2,7 @@
   "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
   "count_policy": {
     "chinese_internal_reference_records_included": true,
-    "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), parsed deterministically (complete 1..721) and spot-corroborated against an independent mirror; carries an LLM-ready enrichment layer. Arabic governs; not legal advice.",
+    "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), now CROSS-CHECKED article-by-article against the official MOJ legal-portal database (721/721 aligned, law unamended) with divergences adjudicated visually against the official MOJ PDF (committed): 17 single-word defects corrected and 21 trailing structural headings moved to section_context, all documented in the source artifact and audit files under sources/civil/law/moj_cross_check/. Arabic governs; not legal advice.",
     "closure_audit_aggregate_not_counted_separately": true,
     "closure_audit_total_duplicates_underlying_ir_records": true,
     "counting_method": "raw_layer_records_not_deduplicated_legal_article_units",
@@ -443,8 +443,8 @@
           "status": "complete"
         }
       },
-      "notes": "Civil Transactions Law (721 articles), Royal Decree M/191 dated 29/11/1444H. Owner-provided full official Arabic text, parsed deterministically (complete 1..721, section headings separated as context) and spot-corroborated against an independent public mirror; LLM-ready enrichment layer.",
-      "official_text_status": "OWNER_PROVIDED_OFFICIAL_TEXT",
+      "notes": "Civil Transactions Law (721 articles), Royal Decree M/191 dated 29/11/1444H. Owner-provided full official Arabic text, CROSS-CHECKED article-by-article against the official MOJ legal-portal database (721/721 aligned; law unamended, every article اصلية) with divergences adjudicated visually against the official MOJ PDF (committed at inputs/civil_official_pdfs/ with recorded sha256): 17 single-word defects corrected, 21 trailing structural headings moved to section_context — all documented in the source artifact and the audit files under sources/civil/law/moj_cross_check/. Presentation note: the official print numbers clauses in 243 articles where this text uses unnumbered paragraphs (bodies verbatim). LLM-ready enrichment layer. Arabic governs.",
+      "official_text_status": "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL",
       "record_counts": {
         "arabic_articles": 721,
         "total": 721
