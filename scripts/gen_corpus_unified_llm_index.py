@@ -42,6 +42,8 @@ LAYERS = [
      "civil", "law"),
     ("data/gtpl_arabic_legal_llm/gtpl_law_legal_llm_001_099.json",
      "gtpl", "law"),
+    ("data/gtpl_arabic_legal_llm/gtpl_regulation_legal_llm_001_157.json",
+     "gtpl", "implementing_regulation"),
 ]
 
 

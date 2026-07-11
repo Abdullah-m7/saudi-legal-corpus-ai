@@ -43,6 +43,7 @@ PDPL_LAW_LLM = os.path.join(ROOT, "data", "pdpl_arabic_legal_llm", "pdpl_arabic_
 PDPL_REG_LLM = os.path.join(ROOT, "data", "pdpl_arabic_legal_llm", "pdpl_implementing_regulation_arabic_legal_llm_001_038.json")
 INVESTMENT_LAW_LLM = os.path.join(ROOT, "data", "investment_arabic_legal_llm", "investment_law_legal_llm_001_016.json")
 INVESTMENT_REG_LLM = os.path.join(ROOT, "data", "investment_arabic_legal_llm", "investment_regulation_legal_llm_001_037.json")
+GTPL_REG_LLM = os.path.join(ROOT, "data", "gtpl_arabic_legal_llm", "gtpl_regulation_legal_llm_001_157.json")
 GTPL_LAW_LLM = os.path.join(ROOT, "data", "gtpl_arabic_legal_llm", "gtpl_law_legal_llm_001_099.json")
 GTPL_EN_REF = os.path.join(ROOT, "sources", "gtpl", "law", "reference_english", "gtpl_m128_official_english_reference.json")
 CIVIL_LAW_LLM = os.path.join(ROOT, "data", "civil_arabic_legal_llm", "civil_transactions_law_legal_llm_001_721.json")
@@ -84,11 +85,12 @@ def main() -> int:
     investment_reg_llm = _load_json(INVESTMENT_REG_LLM)
     civil_law_llm = _load_json(CIVIL_LAW_LLM)
     gtpl_law_llm = _load_json(GTPL_LAW_LLM)
+    gtpl_reg_llm = _load_json(GTPL_REG_LLM)
     gtpl_en_ref = _load_json(GTPL_EN_REF)
     unified_index = _load_json(UNIFIED_INDEX)
 
     registry: dict[str, Any] = {
-        "registry_version": "1.3",
+        "registry_version": "1.4",
         "generated_date": "2026-07-10",
         "repository": "al3obdi/saudi-legal-corpus-ai",
         "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
@@ -101,7 +103,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 10,
+        "total_tracks": 11,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -114,6 +116,7 @@ def main() -> int:
             + investment_reg_llm["record_count"]  # 37 Investment regulation (verified from MISA)
             + civil_law_llm["record_count"]       # 721 Civil Transactions Law (owner-provided official text)
             + gtpl_law_llm["record_count"]        # 99 GTPL M/128 (mirror text cross-checked vs official MOF PDF)
+            + gtpl_reg_llm["record_count"]        # 157 GTPL implementing regulation (re-extracted from official MOF PDF)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"],  # 281 EN companies + 99 EN GTPL
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -127,7 +130,7 @@ def main() -> int:
             + ljs_llm["record_count"] + ljs_app["record_count"]
             + pdpl_law_llm["record_count"] + pdpl_reg_llm["record_count"]
             + investment_law_llm["record_count"] + investment_reg_llm["record_count"]
-            + civil_law_llm["record_count"] + gtpl_law_llm["record_count"]
+            + civil_law_llm["record_count"] + gtpl_law_llm["record_count"] + gtpl_reg_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"]
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -147,11 +150,11 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) = 1404",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) = 1561",
             "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) = 380",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(1404) + total_reference(380) + total_internal_reference(281) = 2065",
+            "formula_total_registry_counted": "total_primary_arabic_governing(1561) + total_reference(380) + total_internal_reference(281) = 2222",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), parsed deterministically (complete 1..721) and spot-corroborated against an independent mirror; carries an LLM-ready enrichment layer. Arabic governs; not legal advice.",
@@ -601,6 +604,33 @@ def main() -> int:
                                "not_verified_official_text": False, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "GTPL M/128 dated 13/11/1440H (99 articles) — the CURRENT law; supersedes M/58 (1427H) per its Article 98. Arabic captured from a public mirror and cross-checked token-by-token against the official MOF consolidated PDF; English is the official BOE translation, reference only.",
+            },
+            {
+                "track_id": "gtpl_implementing_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام المنافسات والمشتريات الحكومية",
+                "display_name_en": "GTPL Implementing Regulation",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "REEXTRACTED_FROM_OFFICIAL_MOF_PDF_CROSS_CHECKED",
+                "source_authority": "Ministry of Finance / وزارة المالية",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": gtpl_reg_llm["record_count"],
+                    "data_path": "data/gtpl_arabic_legal_llm/gtpl_regulation_legal_llm_001_157.json"}},
+                "record_counts": {"arabic_articles": gtpl_reg_llm["record_count"],
+                                  "total": gtpl_reg_llm["record_count"]},
+                "data_paths": [
+                    "sources/gtpl/regulation/official_source/gtpl_regulation_official_source.json",
+                    "sources/gtpl/regulation/verified/gtpl_regulation_verified_records.jsonl",
+                    "data/gtpl_arabic_legal_llm/gtpl_regulation_legal_llm_001_157.json",
+                ],
+                "validator_targets": ["make gtpl-regulation-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "GTPL Implementing Regulation (157 articles, consolidated amended edition), re-extracted at glyph level from the official MOF consolidated PDF (pipeline validated at 0.996 vs the known law text; duplicate copies adjudicated against rendered pages). Arabic governs.",
             },
         ],
     }
