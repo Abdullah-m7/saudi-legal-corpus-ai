@@ -10,12 +10,12 @@
     "forms_and_appendices_counted": true,
     "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) = 1855",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) = 1930",
     "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
-    "formula_total_registry_counted": "total_primary_arabic_governing(1855) + total_reference(614) + total_internal_reference(281) = 2750",
+    "formula_total_registry_counted": "total_primary_arabic_governing(1930) + total_reference(614) + total_internal_reference(281) = 2825",
     "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45=294) are primary Arabic governing-language records. The unified retrieval index (1686) is a projection of counted records and is NOT added to totals.",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3=369) are primary Arabic governing-language records. The unified retrieval index (1761) is a projection of counted records and is NOT added to totals.",
     "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "primary_arabic_governing_records_included": true
   },
@@ -29,14 +29,14 @@
     "not_legal_advice": true,
     "not_official_translation": true
   },
-  "registry_version": "1.6",
+  "registry_version": "1.7",
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 1855,
+  "total_primary_arabic_governing_records": 1930,
   "total_reference_records": 614,
-  "total_registry_counted_records": 2750,
-  "total_tracks": 13,
+  "total_registry_counted_records": 2825,
+  "total_tracks": 14,
   "tracks": [
     {
       "boundaries": {
@@ -627,7 +627,7 @@
           "status": "complete"
         }
       },
-      "notes": "Labor Law Implementing Regulation core text (45 records: articles 1-40 + 5 مكرر; 3 officially deleted flagged), extracted from the official HRSD PDF and verified two ways: rendered-page OCR (all active articles >= 0.91) and the PDF's own verbatim Labor Law quotes cross-checked against the verified labor_law track (45 quotes, all >= 0.95, 39 exact) — corroborating both tracks. Each record links to the law articles it implements (implements_law_articles). The PDF's five annexes are committed but NOT ingested (candidates for follow-up tracks). Arabic governs.",
+      "notes": "Labor Law Implementing Regulation core text (45 records: articles 1-40 + 5 مكرر; 3 officially deleted flagged), extracted from the official HRSD PDF and verified two ways: rendered-page OCR (all active articles >= 0.91) and the PDF's own verbatim Labor Law quotes cross-checked against the verified labor_law track (45 quotes, all >= 0.95, 39 exact) — corroborating both tracks. Each record links to the law articles it implements (implements_law_articles). Annex 1 is ingested as its own track (labor_model_work_regulation); annexes 2-5 are committed but NOT ingested (candidates for follow-up tracks). Arabic governs.",
       "official_text_status": "HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED_LAW_QUOTES",
       "record_counts": {
         "arabic_articles": 45,
@@ -640,6 +640,51 @@
       "validator_targets": [
         "make labor-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "is_general": false,
+        "is_specialized": false,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "implementing_regulation",
+      "data_paths": [
+        "sources/labor/annex1/official_source/labor_annex1_official_source.json",
+        "sources/labor/annex1/verified/labor_annex1_verified_records.jsonl",
+        "data/labor_arabic_legal_llm/labor_annex1_legal_llm_001_072.json",
+        "data/labor_arabic_legal_llm/labor_annex1_violation_tables_llm.json"
+      ],
+      "display_name_ar": "النموذج الموحد للائحة تنظيم العمل",
+      "display_name_en": "Unified Model Work Organization Regulation (Labor Annex 1)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/labor_arabic_legal_llm/labor_annex1_legal_llm_001_072.json",
+          "governing": true,
+          "record_count": 75,
+          "status": "complete"
+        }
+      },
+      "notes": "The Ministry's model work-organization bylaw (annex 1 of the Labor implementing regulation, adopted by its article (3)): 72 articles (complete 1-72, all active, 27 section headings, OCR >= 0.93) + the 3 violation/penalty tables (50 rows; every cell checked against the rendered page images; table text is a mechanical linearization with every cell verbatim). Arabic governs.",
+      "official_text_status": "HRSD_OFFICIAL_PDF_OCR_IMAGE_CROSS_CHECKED",
+      "record_counts": {
+        "arabic_articles": 72,
+        "total": 75,
+        "violation_tables": 3
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+      "status": "complete",
+      "track_id": "labor_model_work_regulation",
+      "validator_targets": [
+        "make labor-annex1-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -650,11 +695,11 @@
       "companies_law": 281,
       "gtpl": 256,
       "investment": 53,
-      "labor": 294,
+      "labor": 369,
       "pdpl": 81
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 1686,
+    "total_records": 1761,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
