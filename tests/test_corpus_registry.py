@@ -27,19 +27,19 @@ class TestRegistryStructure:
         assert os.path.isfile(REGISTRY_PATH)
 
     def test_registry_version(self, registry):
-        assert registry["registry_version"] == "1.8"
+        assert registry["registry_version"] == "1.9"
 
     def test_repository(self, registry):
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 16
+        assert registry["total_tracks"] == 17
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 2022
+        assert registry["total_primary_arabic_governing_records"] == 2030
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 2917
+        assert registry["total_registry_counted_records"] == 2925
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -85,6 +85,13 @@ class TestTracks:
         assert "labor_model_work_regulation" in ids
         assert "labor_saudization_mediation_rules" in ids
         assert "labor_recruitment_services_rules" in ids
+        assert "labor_accessibility_arrangements" in ids
+
+    def test_labor_annex2_counts(self, registry):
+        a2 = next(t for t in registry["tracks"] if t["track_id"] == "labor_accessibility_arrangements")
+        assert a2["record_counts"]["accessibility_tables"] == 8
+        assert a2["record_counts"]["table_rows"] == 40
+        assert a2["official_text_status"] == "HRSD_OFFICIAL_PDF_ACTUALTEXT_OCR_IMAGE_CROSS_CHECKED"
 
     def test_labor_annex34_counts(self, registry):
         a3 = next(t for t in registry["tracks"] if t["track_id"] == "labor_saudization_mediation_rules")
