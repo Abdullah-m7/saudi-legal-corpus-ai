@@ -56,6 +56,8 @@ LAYERS = [
      "labor", "recruitment_mediation_rules"),
     ("data/labor_arabic_legal_llm/labor_annex4_legal_llm_001_072.json",
      "labor", "recruitment_services_rules"),
+    ("data/labor_arabic_legal_llm/labor_annex2_accessibility_tables_llm.json",
+     "labor", "accessibility_arrangements"),
 ]
 
 

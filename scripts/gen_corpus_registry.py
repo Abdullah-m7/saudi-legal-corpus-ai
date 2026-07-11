@@ -54,6 +54,7 @@ LABOR_ANNEX1_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_a
 LABOR_ANNEX1_TAB = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_annex1_violation_tables_llm.json")
 LABOR_ANNEX3_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_annex3_legal_llm_001_020.json")
 LABOR_ANNEX4_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_annex4_legal_llm_001_072.json")
+LABOR_ANNEX2_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_annex2_accessibility_tables_llm.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -101,6 +102,7 @@ def main() -> int:
     labor_annex1_tab = _load_json(LABOR_ANNEX1_TAB)
     labor_annex3_llm = _load_json(LABOR_ANNEX3_LLM)
     labor_annex4_llm = _load_json(LABOR_ANNEX4_LLM)
+    labor_annex2_llm = _load_json(LABOR_ANNEX2_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -108,7 +110,7 @@ def main() -> int:
     unified_index = _load_json(UNIFIED_INDEX)
 
     registry: dict[str, Any] = {
-        "registry_version": "1.8",
+        "registry_version": "1.9",
         "generated_date": "2026-07-11",
         "repository": "al3obdi/saudi-legal-corpus-ai",
         "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
@@ -121,7 +123,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 16,
+        "total_tracks": 17,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -141,6 +143,7 @@ def main() -> int:
             + labor_annex1_tab["record_count"]    # 3 violation/penalty tables (annex 1, 50 rows)
             + labor_annex3_llm["record_count"]    # 20 Saudi-employment mediation rules (annex 3)
             + labor_annex4_llm["record_count"]    # 72 Recruitment and labor-services rules (annex 4)
+            + labor_annex2_llm["record_count"]    # 8 accessibility-arrangements tables (annex 2, 40 rows)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -158,6 +161,7 @@ def main() -> int:
             + labor_law_llm["record_count"] + labor_reg_llm["record_count"]
             + labor_annex1_llm["record_count"] + labor_annex1_tab["record_count"]
             + labor_annex3_llm["record_count"] + labor_annex4_llm["record_count"]
+            + labor_annex2_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -177,16 +181,16 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) = 2022",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) = 2030",
             "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(2022) + total_reference(614) + total_internal_reference(281) = 2917",
+            "formula_total_registry_counted": "total_primary_arabic_governing(2030) + total_reference(614) + total_internal_reference(281) = 2925",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), parsed deterministically (complete 1..721) and spot-corroborated against an independent mirror; carries an LLM-ready enrichment layer. Arabic governs; not legal advice.",
             "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72=461) are primary Arabic governing-language records. The unified retrieval index (1853) is a projection of counted records and is NOT added to totals.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8=469) are primary Arabic governing-language records. The unified retrieval index (1861) is a projection of counted records and is NOT added to totals.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -806,6 +810,35 @@ def main() -> int:
                                "not_verified_official_text": False, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Annex 4 of the Labor implementing regulation: rules for licensing recruitment companies and labor services (72 articles in 7 chapters/10 sub-sections, complete 1-72, all active, OCR >= 0.92; printed latin bullet glyphs and the printed 'Enterprise resource planning (ERP)' phrase kept verbatim and whitelisted). Arabic governs.",
+            },
+            {
+                "track_id": "labor_accessibility_arrangements",
+                "display_name_ar": "جدول الترتيبات والخدمات التيسيرية في بيئة العمل للعمال ذوي الإعاقة",
+                "display_name_en": "Workplace Accessibility Arrangements Tables (Labor Annex 2)",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "HRSD_OFFICIAL_PDF_ACTUALTEXT_OCR_IMAGE_CROSS_CHECKED",
+                "source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": labor_annex2_llm["record_count"],
+                    "data_path": "data/labor_arabic_legal_llm/labor_annex2_accessibility_tables_llm.json"}},
+                "record_counts": {"accessibility_tables": labor_annex2_llm["record_count"],
+                                  "table_rows": 40,
+                                  "total": labor_annex2_llm["record_count"]},
+                "data_paths": [
+                    "sources/labor/annex2/official_source/labor_annex2_official_source.json",
+                    "sources/labor/annex2/verified/labor_annex2_verified_records.jsonl",
+                    "data/labor_arabic_legal_llm/labor_annex2_accessibility_tables_llm.json",
+                ],
+                "validator_targets": ["make labor-annex2-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "is_general": False,
+                               "is_specialized": False, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Annex 2 of the Labor implementing regulation: 8 accessibility-arrangements tables (40 rows across 6 disability sections). The table pages are raster images; text recovered from the PDF's own structure-tree /ActualText, grid rebuilt from ruling rectangles, every row verified against OCR and the rendered page images; table records are mechanical linearizations with every cell verbatim. Printed typesetting defects kept as printed and documented. Arabic governs.",
             },
         ],
     }
