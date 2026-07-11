@@ -27,19 +27,19 @@ class TestRegistryStructure:
         assert os.path.isfile(REGISTRY_PATH)
 
     def test_registry_version(self, registry):
-        assert registry["registry_version"] == "2.0"
+        assert registry["registry_version"] == "2.1"
 
     def test_repository(self, registry):
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 18
+        assert registry["total_tracks"] == 19
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 2132
+        assert registry["total_primary_arabic_governing_records"] == 2261
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 3027
+        assert registry["total_registry_counted_records"] == 3156
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -87,6 +87,12 @@ class TestTracks:
         assert "labor_recruitment_services_rules" in ids
         assert "labor_accessibility_arrangements" in ids
         assert "labor_model_contract_forms" in ids
+        assert "evidence_law" in ids
+
+    def test_evidence_law_counts(self, registry):
+        ev = next(t for t in registry["tracks"] if t["track_id"] == "evidence_law")
+        assert ev["record_counts"]["arabic_articles"] == 129
+        assert ev["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
 
     def test_labor_annex5_counts(self, registry):
         a5 = next(t for t in registry["tracks"] if t["track_id"] == "labor_model_contract_forms")
