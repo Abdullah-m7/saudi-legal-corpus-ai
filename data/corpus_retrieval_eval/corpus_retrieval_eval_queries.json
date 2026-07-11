@@ -1,47 +1,617 @@
 {
-  "eval_id": "corpus-unified-retrieval-eval-v1",
-  "description_ar": "حزمة تقييم استرجاع فوق الفهرس الموحّد: استعلامات عربية واقعية بإجابات ذهبية (قانون + مكوّن + مادة). الإجابات الذهبية مُثبتة يدويًّا من نصوص المواد نفسها (مواد تعريفية أو مواد عناوينها مطابقة للمفهوم). القياس صادق: بعض الاستعلامات صعبة عمدًا وقد لا تصيب top-1.",
-  "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output.",
-  "queries": [
-    {"query_id": "civ-001", "query_ar": "تعريف عقد البيع", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 307}},
-    {"query_id": "civ-002", "query_ar": "تعريف عقد الإيجار", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 407}},
-    {"query_id": "civ-003", "query_ar": "عقد الوكالة", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 480}},
-    {"query_id": "civ-004", "query_ar": "تعريف الكفالة", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 578}},
-    {"query_id": "civ-005", "query_ar": "عقد الهبة", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 366}},
-    {"query_id": "civ-006", "query_ar": "عقد الصلح", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 391}},
-    {"query_id": "civ-007", "query_ar": "تعريف عقد القرض", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 382}},
-    {"query_id": "civ-008", "query_ar": "عقد المقاولة", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 461}},
-    {"query_id": "civ-009", "query_ar": "حكم العربون عند العدول عن العقد", "category": "provision", "gold": {"corpus": "civil", "law_component": "law", "article_number": 44}},
-    {"query_id": "civ-010", "query_ar": "حق الشفعة", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 658}},
-    {"query_id": "civ-011", "query_ar": "الفضالة", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 150}},
-    {"query_id": "civ-012", "query_ar": "عقد المقايضة", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 361}},
-    {"query_id": "civ-013", "query_ar": "الإثراء بلا سبب", "category": "definitional", "gold": {"corpus": "civil", "law_component": "law", "article_number": 144}},
-    {"query_id": "com-001", "query_ar": "انتخاب أعضاء مجلس الإدارة", "category": "governance", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 68}},
-    {"query_id": "com-002", "query_ar": "جنسية الشركة", "category": "definitional", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 3}},
-    {"query_id": "com-003", "query_ar": "الرقابة على مجلس الإدارة", "category": "governance", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 73}},
-    {"query_id": "com-004", "query_ar": "اختصاصات الجمعية العامة غير العادية", "category": "governance", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 85}},
-    {"query_id": "com-005", "query_ar": "طرق تخفيض رأس المال", "category": "capital", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 133}},
-    {"query_id": "com-006", "query_ar": "تصفية الشركة", "category": "dissolution", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 244}},
-    {"query_id": "com-007", "query_ar": "توزيع الأرباح على الشركاء", "category": "capital", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 22}},
-    {"query_id": "com-008", "query_ar": "تعريف الشركة ذات المسؤولية المحدودة", "category": "definitional", "gold": {"corpus": "companies_law", "law_component": "law", "article_number": 156}},
-    {"query_id": "pdp-001", "query_ar": "مدة الإشعار عن حادثة تسرب البيانات الشخصية", "category": "procedural", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 24}},
-    {"query_id": "pdp-002", "query_ar": "شروط الموافقة على معالجة البيانات الشخصية", "category": "consent", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 11}},
-    {"query_id": "pdp-003", "query_ar": "تعيين مسؤول حماية البيانات الشخصية", "category": "governance", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 32}},
-    {"query_id": "pdp-004", "query_ar": "ضوابط التسويق المباشر", "category": "provision", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 29}},
-    {"query_id": "pdp-005", "query_ar": "تقييم الأثر لمعالجة البيانات الشخصية", "category": "procedural", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 25}},
-    {"query_id": "pdp-006", "query_ar": "مدة تقديم الشكوى إلى الجهة المختصة", "category": "procedural", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 37}},
-    {"query_id": "pdp-007", "query_ar": "الامتناع عن تصوير الوثائق الرسمية", "category": "provision", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 31}},
-    {"query_id": "pdp-008", "query_ar": "موافقة الولي الشرعي على معالجة بيانات ناقص الأهلية", "category": "consent", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 13}},
-    {"query_id": "pdp-009", "query_ar": "إخفاء هوية صاحب البيانات الشخصية", "category": "provision", "gold": {"corpus": "pdpl", "law_component": "implementing_regulation", "article_number": 9}},
-    {"query_id": "pdp-010", "query_ar": "سياسة الخصوصية", "category": "provision", "gold": {"corpus": "pdpl", "law_component": "law", "article_number": 12}},
-    {"query_id": "pdp-011", "query_ar": "نطاق تطبيق نظام حماية البيانات الشخصية", "category": "hard", "gold": {"corpus": "pdpl", "law_component": "law", "article_number": 2}},
-    {"query_id": "inv-001", "query_ar": "المصادرة غير المباشرة للاستثمار", "category": "rights", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 5}},
-    {"query_id": "inv-002", "query_ar": "حرية تحويل الأموال للمستثمر", "category": "rights", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 6}},
-    {"query_id": "inv-003", "query_ar": "المساواة في التعامل بين المستثمر المحلي والأجنبي", "category": "rights", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 3}},
-    {"query_id": "inv-004", "query_ar": "مركز الخدمة الشاملة", "category": "definitional", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 21}},
-    {"query_id": "inv-005", "query_ar": "قائمة الأنشطة المستثناة", "category": "provision", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 15}},
-    {"query_id": "inv-006", "query_ar": "دليل المستثمر", "category": "definitional", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 36}},
-    {"query_id": "inv-007", "query_ar": "معايير استحقاق المحفزات الاستثمارية", "category": "provision", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 8}},
-    {"query_id": "inv-008", "query_ar": "المعاملة العادلة والمنصفة للمستثمر", "category": "rights", "gold": {"corpus": "investment", "law_component": "implementing_regulation", "article_number": 4}}
-  ]
+ "eval_id": "corpus-unified-retrieval-eval-v1",
+ "description_ar": "حزمة تقييم استرجاع فوق الفهرس الموحّد: استعلامات عربية واقعية بإجابات ذهبية (قانون + مكوّن + مادة). الإجابات الذهبية مُثبتة يدويًّا من نصوص المواد نفسها (مواد تعريفية أو مواد عناوينها مطابقة للمفهوم). القياس صادق: بعض الاستعلامات صعبة عمدًا وقد لا تصيب top-1.",
+ "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output. Expansion v2 (gtp-001..007, lab-001..014): each gold likewise confirmed by reading the article's committed text first and writing the query from its own wording — covering the GTPL and all eight Labor components that previously had no gold coverage.",
+ "queries": [
+  {
+   "query_id": "civ-001",
+   "query_ar": "تعريف عقد البيع",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 307
+   }
+  },
+  {
+   "query_id": "civ-002",
+   "query_ar": "تعريف عقد الإيجار",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 407
+   }
+  },
+  {
+   "query_id": "civ-003",
+   "query_ar": "عقد الوكالة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 480
+   }
+  },
+  {
+   "query_id": "civ-004",
+   "query_ar": "تعريف الكفالة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 578
+   }
+  },
+  {
+   "query_id": "civ-005",
+   "query_ar": "عقد الهبة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 366
+   }
+  },
+  {
+   "query_id": "civ-006",
+   "query_ar": "عقد الصلح",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 391
+   }
+  },
+  {
+   "query_id": "civ-007",
+   "query_ar": "تعريف عقد القرض",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 382
+   }
+  },
+  {
+   "query_id": "civ-008",
+   "query_ar": "عقد المقاولة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 461
+   }
+  },
+  {
+   "query_id": "civ-009",
+   "query_ar": "حكم العربون عند العدول عن العقد",
+   "category": "provision",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 44
+   }
+  },
+  {
+   "query_id": "civ-010",
+   "query_ar": "حق الشفعة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 658
+   }
+  },
+  {
+   "query_id": "civ-011",
+   "query_ar": "الفضالة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 150
+   }
+  },
+  {
+   "query_id": "civ-012",
+   "query_ar": "عقد المقايضة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 361
+   }
+  },
+  {
+   "query_id": "civ-013",
+   "query_ar": "الإثراء بلا سبب",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil",
+    "law_component": "law",
+    "article_number": 144
+   }
+  },
+  {
+   "query_id": "com-001",
+   "query_ar": "انتخاب أعضاء مجلس الإدارة",
+   "category": "governance",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 68
+   }
+  },
+  {
+   "query_id": "com-002",
+   "query_ar": "جنسية الشركة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 3
+   }
+  },
+  {
+   "query_id": "com-003",
+   "query_ar": "الرقابة على مجلس الإدارة",
+   "category": "governance",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 73
+   }
+  },
+  {
+   "query_id": "com-004",
+   "query_ar": "اختصاصات الجمعية العامة غير العادية",
+   "category": "governance",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 85
+   }
+  },
+  {
+   "query_id": "com-005",
+   "query_ar": "طرق تخفيض رأس المال",
+   "category": "capital",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 133
+   }
+  },
+  {
+   "query_id": "com-006",
+   "query_ar": "تصفية الشركة",
+   "category": "dissolution",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 244
+   }
+  },
+  {
+   "query_id": "com-007",
+   "query_ar": "توزيع الأرباح على الشركاء",
+   "category": "capital",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 22
+   }
+  },
+  {
+   "query_id": "com-008",
+   "query_ar": "تعريف الشركة ذات المسؤولية المحدودة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "companies_law",
+    "law_component": "law",
+    "article_number": 156
+   }
+  },
+  {
+   "query_id": "pdp-001",
+   "query_ar": "مدة الإشعار عن حادثة تسرب البيانات الشخصية",
+   "category": "procedural",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 24
+   }
+  },
+  {
+   "query_id": "pdp-002",
+   "query_ar": "شروط الموافقة على معالجة البيانات الشخصية",
+   "category": "consent",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 11
+   }
+  },
+  {
+   "query_id": "pdp-003",
+   "query_ar": "تعيين مسؤول حماية البيانات الشخصية",
+   "category": "governance",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 32
+   }
+  },
+  {
+   "query_id": "pdp-004",
+   "query_ar": "ضوابط التسويق المباشر",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 29
+   }
+  },
+  {
+   "query_id": "pdp-005",
+   "query_ar": "تقييم الأثر لمعالجة البيانات الشخصية",
+   "category": "procedural",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 25
+   }
+  },
+  {
+   "query_id": "pdp-006",
+   "query_ar": "مدة تقديم الشكوى إلى الجهة المختصة",
+   "category": "procedural",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 37
+   }
+  },
+  {
+   "query_id": "pdp-007",
+   "query_ar": "الامتناع عن تصوير الوثائق الرسمية",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 31
+   }
+  },
+  {
+   "query_id": "pdp-008",
+   "query_ar": "موافقة الولي الشرعي على معالجة بيانات ناقص الأهلية",
+   "category": "consent",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 13
+   }
+  },
+  {
+   "query_id": "pdp-009",
+   "query_ar": "إخفاء هوية صاحب البيانات الشخصية",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "implementing_regulation",
+    "article_number": 9
+   }
+  },
+  {
+   "query_id": "pdp-010",
+   "query_ar": "سياسة الخصوصية",
+   "category": "provision",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "law",
+    "article_number": 12
+   }
+  },
+  {
+   "query_id": "pdp-011",
+   "query_ar": "نطاق تطبيق نظام حماية البيانات الشخصية",
+   "category": "hard",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "law",
+    "article_number": 2
+   }
+  },
+  {
+   "query_id": "inv-001",
+   "query_ar": "المصادرة غير المباشرة للاستثمار",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 5
+   }
+  },
+  {
+   "query_id": "inv-002",
+   "query_ar": "حرية تحويل الأموال للمستثمر",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 6
+   }
+  },
+  {
+   "query_id": "inv-003",
+   "query_ar": "المساواة في التعامل بين المستثمر المحلي والأجنبي",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 3
+   }
+  },
+  {
+   "query_id": "inv-004",
+   "query_ar": "مركز الخدمة الشاملة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 21
+   }
+  },
+  {
+   "query_id": "inv-005",
+   "query_ar": "قائمة الأنشطة المستثناة",
+   "category": "provision",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 15
+   }
+  },
+  {
+   "query_id": "inv-006",
+   "query_ar": "دليل المستثمر",
+   "category": "definitional",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 36
+   }
+  },
+  {
+   "query_id": "inv-007",
+   "query_ar": "معايير استحقاق المحفزات الاستثمارية",
+   "category": "provision",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 8
+   }
+  },
+  {
+   "query_id": "inv-008",
+   "query_ar": "المعاملة العادلة والمنصفة للمستثمر",
+   "category": "rights",
+   "gold": {
+    "corpus": "investment",
+    "law_component": "implementing_regulation",
+    "article_number": 4
+   }
+  },
+  {
+   "query_id": "gtp-001",
+   "query_ar": "تحقيق أفضل قيمة للمال العام ومنع استغلال النفوذ",
+   "category": "title_match",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 2
+   }
+  },
+  {
+   "query_id": "gtp-002",
+   "query_ar": "الإعلان عن المنافسة العامة في البوابة",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 29
+   }
+  },
+  {
+   "query_id": "gtp-003",
+   "query_ar": "لا يلزم تقديم الضمان الابتدائي في الشراء المباشر والمسابقة",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 42
+   }
+  },
+  {
+   "query_id": "gtp-004",
+   "query_ar": "غرامة التأخير في تنفيذ العقد الحكومي",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 72
+   }
+  },
+  {
+   "query_id": "gtp-005",
+   "query_ar": "تخفيض الضمان النهائي في عقود الخدمات ذات التنفيذ المستمر",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 62
+   }
+  },
+  {
+   "query_id": "gtp-006",
+   "query_ar": "شروط استخدام المزايدة العكسية لشراء السلع",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "implementing_regulation",
+    "article_number": 54
+   }
+  },
+  {
+   "query_id": "gtp-007",
+   "query_ar": "المراسلات والتبليغات بين الجهة الحكومية والمتعاقد",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "implementing_regulation",
+    "article_number": 90
+   }
+  },
+  {
+   "query_id": "lab-001",
+   "query_ar": "حساب مكافأة نهاية الخدمة أجر نصف شهر عن كل سنة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 84
+   }
+  },
+  {
+   "query_id": "lab-002",
+   "query_ar": "إجازة سنوية واحد وعشرون يوما تزاد إلى ثلاثين",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 109
+   }
+  },
+  {
+   "query_id": "lab-003",
+   "query_ar": "إجازة الوضع للمرأة العاملة اثنا عشر أسبوعا",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 151
+   }
+  },
+  {
+   "query_id": "lab-004",
+   "query_ar": "فسخ العقد دون مكافأة إذا وقع من العامل اعتداء على صاحب العمل",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 80
+   }
+  },
+  {
+   "query_id": "lab-005",
+   "query_ar": "الحد الأقصى لساعات العمل ثماني ساعات في اليوم",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 98
+   }
+  },
+  {
+   "query_id": "lab-006",
+   "query_ar": "إجازة عيد الفطر وعيد الأضحى واليوم الوطني",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "implementing_regulation",
+    "article_number": 24
+   }
+  },
+  {
+   "query_id": "lab-007",
+   "query_ar": "نقل العامل إلى مكان يقتضي تغيير محل الإقامة",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "implementing_regulation",
+    "article_number": 20
+   }
+  },
+  {
+   "query_id": "lab-008",
+   "query_ar": "استحقاق العلاوة السنوية بناء على المركز المالي للمنشأة",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "model_work_regulation",
+    "article_number": 21
+   }
+  },
+  {
+   "query_id": "lab-009",
+   "query_ar": "المخالفة والجزاءات الإنذار الكتابي كتاب توجهه المنشأة إلى العامل",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "model_work_regulation",
+    "article_number": 58
+   }
+  },
+  {
+   "query_id": "lab-010",
+   "query_ar": "الموافقة المبدئية لتأسيس مكتب توظيف السعوديين",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "recruitment_mediation_rules",
+    "article_number": 4
+   }
+  },
+  {
+   "query_id": "lab-011",
+   "query_ar": "معايير المحاسبة الدولية في حسابات شركات الاستقدام",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "recruitment_services_rules",
+    "article_number": 30
+   }
+  },
+  {
+   "query_id": "lab-012",
+   "query_ar": "تكملة الضمان البنكي بعد السحب خلال ثلاثين يوما",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "recruitment_services_rules",
+    "article_number": 46
+   }
+  },
+  {
+   "query_id": "lab-013",
+   "query_ar": "مترجم لغة إشارة للعمال ذوي الإعاقة السمعية",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "accessibility_arrangements",
+    "article_number": 5
+   }
+  },
+  {
+   "query_id": "lab-014",
+   "query_ar": "جدول المصطلحات في النموذج الموحد لعقد العمل",
+   "category": "title_match",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "model_contract_forms",
+    "article_number": 18
+   }
+  }
+ ]
 }
