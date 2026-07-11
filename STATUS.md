@@ -157,11 +157,11 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   JSC 69 articles + 1 appendix; closure audit 169 total records; **PDPL law 43 +
   PDPL implementing regulation 38 + Investment law 16 + Investment implementing
   regulation 37 + Civil Transactions Law 721 + GTPL 99 (+99 English reference) +
-  GTPL regulation 157 + Labor Law 249 (+234 English reference)**) with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **12 tracks; primary Arabic governing 1810; reference 614; registry-counted
-  2705.** PDPL and Investment Arabic tracks are **verified against official
+  GTPL regulation 157 + Labor Law 249 (+234 English reference) + Labor regulation 45**) with counts, paths, statuses, language layers,
+  boundaries, and validation targets. **13 tracks; primary Arabic governing 1855; reference 614; registry-counted
+  2750.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (1641 records) as a projection (not added to totals). See
+  index (1686 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -347,9 +347,9 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   `make civil-transactions-law-verified-validate` and
   `make civil-transactions-law-legal-llm-validate`.
 - **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`
-  projects all nine Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
+  projects all ten Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
   Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99+157 +
-  Labor Law 249 = **1641 records**) into one flat index at
+  Labor Law 249 + Labor regulation 45 = **1686 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
@@ -360,7 +360,7 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
   deterministic results. **Current: top-1 87.5% / top-3 97.5% / MRR@5 0.9125** over the
-  1641-record index (originally improved from 85%/95%/0.883 by blending text term-frequency
+  1686-record index (originally improved from 85%/95%/0.883 by blending text term-frequency
   keywords into the title-only layers — PDPL regulation + Investment law/regulation; the
   Companies gold layer untouched). One documented
   lexical miss remains (civ-004 تعريف الكفالة). Validator re-runs the eval, requires exact
@@ -398,13 +398,26 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   `sources/labor/law/` + `data/labor_arabic_legal_llm/`. The validator re-verifies the
   MATCHES_BOE_BASE claim against the committed worksheets (142 re-checked ≥0.90 token similarity)
   and fails on any unexplained status. Validate: `make labor-law-track-validate`.
+- **Labor Law Implementing Regulation (core, 45 records) verified + LLM-ready** — articles (1)–(40)
+  + 5 مكرر ((4 مكرر)، (15) مكرر، (16) مكرر (1)، (16) مكرر (2)، (22) مكرر); **3 officially deleted
+  flagged** (2، 36، 37). Source = the **official HRSD PDF** «اللائحة التنفيذية لنظام العمل
+  وملحقاتها» (committed at `inputs/labor_official_pdfs/labor_regulation_hrsd_consolidated_ar.pdf`),
+  core text extracted and verified two ways: tesseract-ara OCR of the 300dpi rendered pages (all
+  active articles ≥0.91, mean 0.978) and — stronger — the PDF's own **verbatim Labor Law quotes
+  cross-checked against the verified labor_law track** (45 quotes, all ≥0.95, 39/45 exactly 1.00),
+  corroborating both tracks at once. Each record carries `implements_law_articles` linking it to
+  the law articles it implements; the validator re-resolves every link against the committed law
+  track (must exist, must not be deleted). The PDF's five annexes (النموذج الموحد للائحة تنظيم
+  العمل، الترتيبات التيسيرية، ضوابط التوسط، قواعد الاستقدام، نماذج العقود) are committed but NOT
+  ingested — each is a candidate follow-up track. Track files under `sources/labor/regulation/` +
+  `data/labor_arabic_legal_llm/`. Validate: `make labor-regulation-track-validate`.
 
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (90 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (91 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 17 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 18 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any

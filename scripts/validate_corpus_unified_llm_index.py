@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 1641
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 249}
+EXPECTED_TOTAL = 1686
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 294}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -34,6 +34,7 @@ SANITY = [
     ("عقد المقايضة", "civil", 361),
     ("المزايدة العكسية", "gtpl", None),
     ("ساعات العمل الإضافية", "labor", None),
+    ("تحويل عقد العمل المؤقت تسعين يوما", "labor", 1),
 ]
 
 
@@ -78,6 +79,7 @@ def main():
         "data/gtpl_arabic_legal_llm/gtpl_law_legal_llm_001_099.json",
         "data/gtpl_arabic_legal_llm/gtpl_regulation_legal_llm_001_157.json",
         "data/labor_arabic_legal_llm/labor_law_legal_llm_001_245.json",
+        "data/labor_arabic_legal_llm/labor_regulation_legal_llm_001_040.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -111,7 +113,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 249; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 294; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 

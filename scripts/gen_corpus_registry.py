@@ -49,6 +49,7 @@ GTPL_LAW_LLM = os.path.join(ROOT, "data", "gtpl_arabic_legal_llm", "gtpl_law_leg
 GTPL_EN_REF = os.path.join(ROOT, "sources", "gtpl", "law", "reference_english", "gtpl_m128_official_english_reference.json")
 CIVIL_LAW_LLM = os.path.join(ROOT, "data", "civil_arabic_legal_llm", "civil_transactions_law_legal_llm_001_721.json")
 LABOR_LAW_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_law_legal_llm_001_245.json")
+LABOR_REG_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_regulation_legal_llm_001_040.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -91,6 +92,7 @@ def main() -> int:
     gtpl_reg_llm = _load_json(GTPL_REG_LLM)
     gtpl_en_ref = _load_json(GTPL_EN_REF)
     labor_law_llm = _load_json(LABOR_LAW_LLM)
+    labor_reg_llm = _load_json(LABOR_REG_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -98,7 +100,7 @@ def main() -> int:
     unified_index = _load_json(UNIFIED_INDEX)
 
     registry: dict[str, Any] = {
-        "registry_version": "1.5",
+        "registry_version": "1.6",
         "generated_date": "2026-07-11",
         "repository": "al3obdi/saudi-legal-corpus-ai",
         "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
@@ -111,7 +113,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 12,
+        "total_tracks": 13,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -126,6 +128,7 @@ def main() -> int:
             + gtpl_law_llm["record_count"]        # 99 GTPL M/128 (mirror text cross-checked vs official MOF PDF)
             + gtpl_reg_llm["record_count"]        # 157 GTPL implementing regulation (re-extracted from official MOF PDF)
             + labor_law_llm["record_count"]       # 249 Labor Law (HRSD consolidated, cross-checked vs BOE captures)
+            + labor_reg_llm["record_count"]       # 45 Labor implementing regulation (HRSD PDF, OCR + law-quote cross-checked)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -140,7 +143,7 @@ def main() -> int:
             + pdpl_law_llm["record_count"] + pdpl_reg_llm["record_count"]
             + investment_law_llm["record_count"] + investment_reg_llm["record_count"]
             + civil_law_llm["record_count"] + gtpl_law_llm["record_count"] + gtpl_reg_llm["record_count"]
-            + labor_law_llm["record_count"]
+            + labor_law_llm["record_count"] + labor_reg_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -160,16 +163,16 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) = 1810",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) = 1855",
             "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(1810) + total_reference(614) + total_internal_reference(281) = 2705",
+            "formula_total_registry_counted": "total_primary_arabic_governing(1855) + total_reference(614) + total_internal_reference(281) = 2750",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), parsed deterministically (complete 1..721) and spot-corroborated against an independent mirror; carries an LLM-ready enrichment layer. Arabic governs; not legal advice.",
-            "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences; carries an LLM-ready enrichment layer. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249) are primary Arabic governing-language records. The unified retrieval index (1641) is a projection of counted records and is NOT added to totals.",
+            "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45=294) are primary Arabic governing-language records. The unified retrieval index (1686) is a projection of counted records and is NOT added to totals.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -675,6 +678,34 @@ def main() -> int:
                                "not_verified_official_text": False, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Labor Law M/51 dated 23/8/1426H, official HRSD consolidated text (amendments through M/44 merged): 249 records = 245 articles + 4 مكرر, of which 38 are officially deleted (flagged, placeholder as printed). Cross-verified against the repository's independently captured BOE base texts: 142 verbatim matches, 65 differ exactly where amendment tracking says amended, ZERO unexplained differences. English (234 records) is reference/guidance only. Arabic governs.",
+            },
+            {
+                "track_id": "labor_implementing_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام العمل",
+                "display_name_en": "Labor Law Implementing Regulation",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED_LAW_QUOTES",
+                "source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": labor_reg_llm["record_count"],
+                    "data_path": "data/labor_arabic_legal_llm/labor_regulation_legal_llm_001_040.json"}},
+                "record_counts": {"arabic_articles": labor_reg_llm["record_count"],
+                                  "total": labor_reg_llm["record_count"]},
+                "data_paths": [
+                    "sources/labor/regulation/official_source/labor_regulation_official_source.json",
+                    "sources/labor/regulation/verified/labor_regulation_verified_records.jsonl",
+                    "data/labor_arabic_legal_llm/labor_regulation_legal_llm_001_040.json",
+                ],
+                "validator_targets": ["make labor-regulation-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "is_general": False,
+                               "is_specialized": False, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Labor Law Implementing Regulation core text (45 records: articles 1-40 + 5 مكرر; 3 officially deleted flagged), extracted from the official HRSD PDF and verified two ways: rendered-page OCR (all active articles >= 0.91) and the PDF's own verbatim Labor Law quotes cross-checked against the verified labor_law track (45 quotes, all >= 0.95, 39 exact) — corroborating both tracks. Each record links to the law articles it implements (implements_law_articles). The PDF's five annexes are committed but NOT ingested (candidates for follow-up tracks). Arabic governs.",
             },
         ],
     }

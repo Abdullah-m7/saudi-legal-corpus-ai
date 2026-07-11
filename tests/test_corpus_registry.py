@@ -27,19 +27,19 @@ class TestRegistryStructure:
         assert os.path.isfile(REGISTRY_PATH)
 
     def test_registry_version(self, registry):
-        assert registry["registry_version"] == "1.5"
+        assert registry["registry_version"] == "1.6"
 
     def test_repository(self, registry):
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 12
+        assert registry["total_tracks"] == 13
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 1810
+        assert registry["total_primary_arabic_governing_records"] == 1855
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 2705
+        assert registry["total_registry_counted_records"] == 2750
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -81,6 +81,12 @@ class TestTracks:
         assert "implementing_regulations_listed_joint_stock" in ids
         assert "implementing_regulations_arabic_program_closure" in ids
         assert "labor_law" in ids
+        assert "labor_implementing_regulation" in ids
+
+    def test_labor_regulation_counts(self, registry):
+        lr = next(t for t in registry["tracks"] if t["track_id"] == "labor_implementing_regulation")
+        assert lr["record_counts"]["arabic_articles"] == 45
+        assert lr["official_text_status"] == "HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED_LAW_QUOTES"
 
     def test_labor_law_counts(self, registry):
         labor = next(t for t in registry["tracks"] if t["track_id"] == "labor_law")
