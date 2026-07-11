@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 71,
-  "top1_hits": 60,
-  "top3_hits": 66,
-  "top5_hits": 69,
-  "top1_accuracy": 0.8451,
-  "top3_accuracy": 0.9296,
-  "top5_accuracy": 0.9718,
-  "mrr_at_5": 0.8901,
+  "total_queries": 74,
+  "top1_hits": 63,
+  "top3_hits": 69,
+  "top5_hits": 72,
+  "top1_accuracy": 0.8514,
+  "top3_accuracy": 0.9324,
+  "top5_accuracy": 0.973,
+  "mrr_at_5": 0.8946,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2216,6 +2216,99 @@
      "record_id": "personal-status-law-llm-art-042",
      "article_number": 42,
      "score": 6
+    }
+   ]
+  },
+  {
+   "query_id": "mrf-001",
+   "query_ar": "طرق الاعتراض على الأحكام الاستئناف والنقض والتماس إعادة النظر",
+   "category": "topical",
+   "gold": {
+    "corpus": "sharia_procedure",
+    "law_component": "law",
+    "article_number": 176
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sharia-procedure-law-llm-art-176",
+     "article_number": 176,
+     "score": 33
+    },
+    {
+     "record_id": "oa-llm-companies-art-170",
+     "article_number": 170,
+     "score": 16
+    },
+    {
+     "record_id": "oa-llm-companies-art-227",
+     "article_number": 227,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "mrf-002",
+   "query_ar": "تطبق المحاكم على القضايا المعروضة أحكام الشريعة الإسلامية وفقا للكتاب والسنة",
+   "category": "topical",
+   "gold": {
+    "corpus": "sharia_procedure",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sharia-procedure-law-llm-art-001",
+     "article_number": 1,
+     "score": 30
+    },
+    {
+     "record_id": "personal-status-law-llm-art-251",
+     "article_number": 251,
+     "score": 16
+    },
+    {
+     "record_id": "evidence-manuals-llm-art-135",
+     "article_number": 135,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "mrf-003",
+   "query_ar": "أسباب رد القاضي عن نظر الدعوى",
+   "category": "topical",
+   "gold": {
+    "corpus": "sharia_procedure",
+    "law_component": "law",
+    "article_number": 96
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sharia-procedure-law-llm-art-096",
+     "article_number": 96,
+     "score": 13
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-024",
+     "article_number": 24,
+     "score": 10
+    },
+    {
+     "record_id": "evidence-law-llm-art-080",
+     "article_number": 80,
+     "score": 10
     }
    ]
   }
