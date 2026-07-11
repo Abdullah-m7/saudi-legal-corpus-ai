@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 3959
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 98}
+EXPECTED_TOTAL = 4232
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -55,8 +55,10 @@ SANITY = [
     ("الأحكام النهائية هي الأحكام المكتسبة للقطعية", "criminal_procedure", 210),
     ("يباشر المحقق معاينة مكان وقوع الجريمة بنفسه وله ندب أحد رجال الضبط الجنائي", "criminal_procedure", 54),
     ("ضبط الأموال والأرصدة لدى البنوك في مرحلة التحقيق", "criminal_procedure", 58),
-    ("سند التنفيذ هو ما يتضمن التزاما مما يجري تنفيذه جبرا", "enforcement", 15),
+    ("التنفيذ الجبري لا يكون إلا بسند تنفيذي لحق محقق الوجود حال الأداء", "enforcement", 9),
     ("يختص قاضي التنفيذ بالفصل في منازعات التنفيذ", "enforcement", 3),
+    ("يكون توقيع المحضر في مكان المال المحجوز إن أمكن وعلى كل صفحة من صفحاته", "enforcement", 134),
+    ("الحجز على العقار حجز على غلته ويبلغ المستأجر بالحجز التنفيذي", "enforcement", 143),
 ]
 
 
@@ -119,6 +121,7 @@ def main():
         "data/criminal_procedure_arabic_legal_llm/criminal_procedure_law_legal_llm_001_222.json",
         "data/criminal_procedure_arabic_legal_llm/criminal_procedure_regulation_legal_llm_001_181.json",
         "data/enforcement_arabic_legal_llm/enforcement_law_legal_llm_001_098.json",
+        "data/enforcement_arabic_legal_llm/enforcement_regulation_legal_llm_001_273.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -152,7 +155,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 98; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
