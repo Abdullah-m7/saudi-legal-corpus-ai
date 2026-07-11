@@ -1,0 +1,1588 @@
+{
+ "document": "ملحق رقم (5) النماذج الموحدة لعقد العمل بأنواعه",
+ "document_en": "Unified Model Employment Contract Forms (Annex 5 of the Labor Law Implementing Regulation)",
+ "annex_number": 5,
+ "issuing_authority_ar": "وزارة الموارد البشرية والتنمية الاجتماعية",
+ "issuing_authority_en": "Ministry of Human Resources and Social Development (HRSD)",
+ "provenance": {
+  "source_url": "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة التنفيذية لنظام العمل وملحقاتها.pdf",
+  "source_pdf_committed": "inputs/labor_official_pdfs/labor_regulation_hrsd_consolidated_ar.pdf",
+  "source_pdf_sha256": "3f6cacf3158fa559651cab5115cf20129c49f2d34bf0c8e296f395472db6ad23",
+  "capture_method": "Annex 5 (pages 64-94 of the official HRSD PDF, 1-indexed): the four model employment contract forms — permanent (bilingual, 17 units incl. clauses 1-16 + an 8-row bilingual glossary table), part-time (30 units), casual/temporary (25 units), seasonal (29 units) = 101 units. The permanent form's two language columns were separated by coordinates; Arabic and English were never mixed inside one field. The three short forms' table bodies render as images; their text was transcribed from 300dpi renders and checked against grid-cropped cell OCR and direct page reads. Verification: every unit checked against tesseract OCR (ara for Arabic, eng for the permanent form's English) — 14 units conclusively by OCR alone (all >= 0.85), 87 units additionally verified directly on the rendered page images (dotted fill-in blanks and signature blocks OCR poorly by nature; per-unit method recorded in the 'verification' field). Fill-in blanks, dot runs, and printed misprints kept verbatim as printed and listed in stats.anomalies (e.g. the English column's duplicated 11.2/11.10 numbering, '18.4.3' for 14.8.3, Arabic '2,1,9' for 9.1.2). The English text is part of the official bilingual form itself and is captured as a NON-GOVERNING reference field (text_en_reference); it is not our translation. No text translated, paraphrased, summarized, or legally interpreted. Arabic governs."
+ },
+ "forms": [
+  {
+   "form_key": "permanent",
+   "title_ar": "نموذج عقد العمل الدائم",
+   "title_en": "",
+   "bilingual": true,
+   "pages": [
+    64,
+    81
+   ],
+   "units": [
+    {
+     "unit_key": "permanent_001_contract_info",
+     "unit_label_ar": "1 بيانات العقد",
+     "unit_label_en": "Contract Information",
+     "text_ar": "رقم العقد\nنوع العقد من حيث مدته\nعقد محدد المدة/ غير محدد المدة (يتم اختيار نوع العقد من قائمة منسدلة)\nتاريخ إبرام العقد\nتاريخ مباشرة العمل\nتاريخ نهاية العقد\n(للعقد محدد المدة)\nمكان إبرام العقد",
+     "text_en_reference": "Contract No.\nContract Type\nFixed-term Contract / Open-ended Contract (the contract type is to be selected from a dropdown menu).\nContract Execution Date\nStarting Date\nContract End Date\n(Fixed-term Contract)\nContract Execution Location",
+     "ocr_similarity_ar": 0.919,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      65
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_002_first_party",
+     "unit_label_ar": "2 بيانات الطرف الأول (شخص اعتباري)",
+     "unit_label_en": "First Party’s Information (Legal Person)",
+     "text_ar": "اسم المنشأة (صاحب العمل)\nنوع المنشأة\nرقم المنشأة في وزارة الموارد البشرية والتنمية الاجتماعية\nالرقم الوطني الموحد\nالعنوان الوطني المختصر\nرقم هاتف المنشأة\nرقم الجوال\nالبريد الإلكتروني الرسمي للمنشأة\nيمثله في توقيع هذا العقد\nرقم الهوية للممثل:\nصفته:\nمستند الصفة:\nيشار إليه في هذا العقد بــ (بالطرف الأول).",
+     "text_en_reference": "Establishment Name (Employer)\nEstablishment Type\nEstablishment HRSD ID\nUnified National No.\nNational Address\nEstablishment Phone Number\nMobile Number\nOfficial Email of the Establishment\nSignatory Representative\nID No.\nCapacity\nHereinafter referred to as the (“First Party”)",
+     "ocr_similarity_ar": 0.885,
+     "ocr_similarity_en": 0.95,
+     "pages": [
+      65,
+      66
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_003_second_party",
+     "unit_label_ar": "3 بيانات الطرف الثاني",
+     "unit_label_en": "Second Party’s Information",
+     "text_ar": "اسم العامل\nالجنسية\nنوع الهوية (وطنية/مقيم)\nرقم الهوية\nرقم الجواز\nفي حال كان العامل غير سعودي\nالجنس\nالحالة الاجتماعية\nتاريخ الميلاد\nالعنوان الوطني المختصر\nرقم الجوال\nالبريد الالكتروني\nويشار إليه في هذا العقد (بالطرف الثاني).",
+     "text_en_reference": "Employee name\nNationality\nID Type (National/Resident)\nID No.\nPassport number\nIf the Employee is non-Saudi\nGender\nMarital Status\nBirth Date\nNational Address\nMobile Number\nE-mail\nHereinafter referred to as the (“Second Party”)",
+     "ocr_similarity_ar": 0.744,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      66
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "permanent_004_parties_statement",
+     "unit_label_ar": "ويشار لهما معاً بـ (الأطراف أو الطرفان)",
+     "unit_label_en": "",
+     "text_ar": "ويشار لهما معاً بـ (الأطراف أو الطرفان) أو (طرف أو الطرف) حسب السياق.\nتعتبر البيانات المذكورة في البنود أعلاه (من 1 إلى 3) والملحق أدناه جزءاً لا يتجزأ من هذا العقد، ومفسراً ومكملاً له.",
+     "text_en_reference": "Both Parties are, collectively, referred to as the “Parties” and, separately, as the “Party” as per the context.\nThe data mentioned in the above clauses (1 to 3) and the appendix below are considered an integral part of this contract, interpreted and complementary to it.",
+     "ocr_similarity_ar": 0.973,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      66,
+      67
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_005_clause4_profession",
+     "unit_label_ar": "4 المهنة ومعلومات العمل",
+     "unit_label_en": "4. Profession & Work’s Location",
+     "text_ar": "المسمى الوظيفي\nنطاق العمل\nداخل المملكة\nمقر العمل\nالمدينة\nنوع عقد العمل\nيحدد (عمل أصلي)",
+     "text_en_reference": "Job Title\nWork Domain\nInside KSA\nWork Location\ncity\nWork Type\nTo be determined (Original Contract)",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      67
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_006_clause5_duration",
+     "unit_label_ar": "5 مدة العقد",
+     "unit_label_en": "Contract Period",
+     "text_ar": "1.5 يسري هذا العقد لمدة غير محددة تبدأ من تاريخ مباشرة العمل الوارد في البند رقم (1).\n(يظهر هذا البند في حال اختياره للعقد غير محدد المدة)\n(لا يظهر هذا الخيار للعامل غير السعودي)\n1.5 يسري هذا العقد لمدة (تحدد مدة العقد) تبدأ من تاريخ مباشرة العمل الوارد في البند رقم (1) وتنتهي بنهاية مدته بتاريخ (تاريخ نهاية العقد).\n(يظهر هذا البند في حال اختياره للعقد محدد المدة)\n1.5 يسري هذا العقد لمدة (تحدد مدة العقد) تبدأ من تاريخ مباشرة العمل الوارد في البند رقم (1)، ويتجدد تلقائيا (لمدة مماثلة أو / لمدد مماثلة أو / تحدد مدة أخرى)، ما لم يخطر أحد الطرفين الطرف الآخر بعدم رغبته بالتجديد من خلال المنصة وذلك قبل (...) يوماً من تاريخ نهاية العقد.\n(يتفق الطَّرفان على اختيار إحدى الفقرتين أعلاه للعقد محدد المدة)",
+     "text_en_reference": "5.1 This contract is valid for an indefinite period starting from the commencement date mentioned in Clause No. (1).\n(This clause appears if an open-ended contract is selected)\n(This option does not appear for non-Saudi employee)\n5.1 This contract is valid for a period of (contract duration to be specified), starting from the commencement date mentioned in Clause No. (1) and ending on (contract end date).\n(This clause appears if a fixed-term contract is selected)\n5.1 This contract is valid for a period of (contract duration to be specified), starting from the commencement date mentioned in Clause No. (1), and it will be automatically renewed (for an equivalent period / for equivalent periods / for another specified period), unless one party notifies the other of their desire not to renew through the Portal, at least (...) days before the contract end date.\n(The two parties agree to choose one of the above clauses for the fixed-term contract)",
+     "ocr_similarity_ar": 0.984,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      67,
+      68
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_007_clause6_probation",
+     "unit_label_ar": "6 مدة التجربة",
+     "unit_label_en": "6. Probationary Period",
+     "text_ar": "(تظهر هذه الفقرة في حال اختيارها)\n1.6 يخضع الطرف الثاني لمدة تجربة محددة بــ (عدد أيام مدة التجربة/ رقم) يوماً تبدأ من تاريخ مباشرة العمل، ولا يدخل في حسابها إجازة عيدي الفطر والأضحى وإجازة اليوم الوطني، وإجازة يوم التأسيس، والإجازة المرضية.\n2.6 يجوز لأي من الطرفين إنهاء هذا العقد خلال مدة التجربة عبر المنصة.",
+     "text_en_reference": "(This paragraph appears when choosing it)\n6.1 The Second Party is subject to a specified probationary period of (Number of working days in letters and figures) days, starting from the commencement date of work. The following days do not count towards this period: Eid al-Fitr, Eid al-Adha, National Day, Foundation Day, and sick leave.\n6.2 Either party may terminate this contract during the probationary period via the Portal.",
+     "ocr_similarity_ar": 0.887,
+     "ocr_similarity_en": 0.942,
+     "pages": [
+      68
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_008_clause7_hours",
+     "unit_label_ar": "7 ساعات العمل والراحة الأسبوعية",
+     "unit_label_en": "7. Work Hours & Weekly Rest",
+     "text_ar": "تحدد أيام العمل العادية بـ (عدد أيام العمل/ رقم) أيام في الأسبوع وتحدد ساعات العمل (اليومية/ الأسبوعية) بــ (عدد ساعات العمل/ رقم) ساعة ويحق للطرف الثاني (عدد أيام الراحة/ رقم) يوم راحة أسبوعية.\n(تعبأ الخانات بحسب المعيار المقرر لدى الطرف الأول)",
+     "text_en_reference": "Normal working days shall be (Number of working days in letters and figures) days per week and working hours shall be (WEEKLY/DAILY) (Number of working hours in letters and figures). In addition, the Second Party shall be entitled to (Number of resting days in letters and figures) rest days per week.\n(The fields are to be filled out according to the standards set by the First Party).",
+     "ocr_similarity_ar": 0.977,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      68,
+      69
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_009_clause8_leave",
+     "unit_label_ar": "8 الإجازات السنوية",
+     "unit_label_en": "8. Annual Leaves",
+     "text_ar": "1.8 يستحق الطرف الثاني عن كل عام إجازة سنوية مدفوعة الأجر مقدماً، ومدتها (عدد أيام الإجازة/ رقم) يوم.\n2.8 لا يسقط حق الطرف الثاني في الحصول على أجرة عن أيام الإجازات المستحقة التي لم يتمتع بها أثناء خدمته، ويستحق الطرف الثاني عوضاً مالياً مقابل أيام هذه الإجازات عند انتهاء خدمته لدى الطرف الأول.\n3.8 للطرف الأول تحديد مواعيد الإجازة السنوية، كما للطرف الأول تأجيل الإجازة السنوية بعد نهاية سنة استحقاقها إذا اقتضت ظروف العمل ذلك لمدة لا تزيد على (90) يوماً، فإذا اقتضت ظروف العمل استمرار التأجيل وجب الحصول على موافقة العامل كتابة، على ألا يتعدى التأجيل نهاية السنة التالية لسنة استحقاق الإجازة.",
+     "text_en_reference": "8.1 The Second Party shall be entitled to a pre-paid vacation of (Number of leave days in letters and figures) calendar days, each year.\n8.2 The Second Party's right to receive payment for accrued vacation days that were not taken during their service shall not be forfeited. The Second Party is entitled to financial compensation for these vacation days upon the termination of their service with the First Party.\n8.3 The First Party has the right to determine the dates of the annual leave, and the First Party has the right to postpone the annual leave after the end of its entitlement year if the work conditions require that for a period not exceeding (90) days. If work conditions necessitate further postponement, written consent from the employee shall be obtained, provided that the postponement does not extend beyond the end of the following year of the leave entitlement.",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": 0.993,
+     "pages": [
+      69
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_010_clause9_wage",
+     "unit_label_ar": "9 الأجر والمزايا",
+     "unit_label_en": "9. Wage & Benefits",
+     "text_ar": "1.9 يدفع الطرف الأول للطرف الثاني الأجر والمزايا والبدلات في تاريخ الاستحقاق كما هو موضح أدناه:\n1.1.9 الأجر:\n1.1.1.9 الأجر الأساسي\n(شهري / يحدد تاريخ)\n2.1.1.9 بدل السكن\n(شهري / يحدد تاريخ)\n3.1.1.9 بدل النقل\n(شهري / يحدد تاريخ)\n4.1.1.9 إجمالي بدلات نقدية أخرى:\n(شهري / يحدد تاريخ)\n5.1.1.9 إجمالي الأجر:\n(رقماً وكتابةً وتحدد العملة ريال سعودي)\n(شهري/يحدد تاريخ)\n6.1.1.9 استقطاع اشتراك المؤسسة العامة للتأمينات الاجتماعية\nيحسم بنسبة (... %)\n(شهري/يحدد تاريخ)\n7.1.1.9 صافي الأجر\n(رقماً وكتابةً وتحدد ريال سعودي)\n2,1,9 يلتزم الطرف الأول بسداد صافي الأجر المستحق من خلال وسيلة السداد المعتمدة لدى وزارة الموارد البشرية والتنمية الاجتماعية.\nتاريخ الاستحقاق\n(يحدد تاريخ من كل شهر)\n(يحدد تاريخ من كل أسبوع حسب نوع العقد)\n3.1.9 العمولات (تظهر هذه الفقرة في حال اختيارها)\nنسبة العمولة\nالاستحقاق\n(نص حر النسبة وتحديد سبب العمولة والنسبة) %\nشهري ربع سنوي (.......)\n4.1.9 المزايا العينية\n(تظهر هذه الفقرة في حال اختيارها)\n#\nالوصف\nتاريخ الاستحقاق\n# (وصف المزايا العينية) (التاريخ الميلادي والهجري) | (شهري/ سنوي) |\n# (وصف المزايا العينية) (التاريخ الميلادي والهجري) | (شهري/ سنوي) |\n(ملاحظة: البدلات والمزايا يتم تحديدها (اختياريا) حسب اتفاق الأطراف)",
+     "text_en_reference": "9.1 The First Party shall pay the Second Party the wages, benefits, and allowances on the due date as clarified below:\n9.1.1 Wage:\n9.1.1.1 Basic Wage\n(Monthly/ Date to be specified)\n9.1.1.2 Housing Allowance\n(Monthly/ Date to be specified)\n9.1.1.3 Transportation Allowance\n(Monthly/ Date to be specified)\n9.1.1.4 Total Other Cash Allowances:\n(Monthly/ Date to be specified)\n9.1.1.5 Total Wage\n(In figures and letters and specified in SAR)\n| (Monthly/ Date to be specified)\n9.1.1.6 Deduction for Public Authority for Social Insurance Subscription\nDeducted at a rate of (….%)\n(Monthly/ Date to be specified)\n9.1.1.7 Net Wage\n(In figures and letters and specified in SAR)\n9.1.2 The First Party is obligated to pay the net wage due through the payment method approved by the Ministry of Human Resources and Social Development (HRSD).\nDue Date\n(Date to be specified each month)\n(Date to be specified each week, according to the contract type)\n9.1.3 Commission (This paragraph appears when choosing it)\nCommission Percentage\nEntitlement\n(Percentage and reason for the commission and the percentage)\n(Monthly, Quarterly, …)\n9.1.4 In-kind Benefits\n(This paragraph appears when choosing it)\nDescription\nDue Date\n(Description of in-kind benefits) Gregorian and Hijri Dates Monthly/ Annually\n(Description of in-kind benefits) Gregorian and Hijri Dates Monthly/ Annually\n(Note: Allowances and benefits are to be determined (optionally) as per the Parties’ agreement)",
+     "ocr_similarity_ar": 0.975,
+     "ocr_similarity_en": 0.962,
+     "pages": [
+      69,
+      70,
+      71,
+      72
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_011_clause10_bank",
+     "unit_label_ar": "10 معلومات الحساب البنكي للطرف الثاني",
+     "unit_label_en": "10. Second Party’s Bank Account Information",
+     "text_ar": "اسم البنك\nرقم الايبان",
+     "text_en_reference": "Bank name\nIBAN",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      72
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_012_clause11_first_party_obligations",
+     "unit_label_ar": "11 التزامات الطرف الأول",
+     "unit_label_en": "First Party’s Obligations",
+     "text_ar": "1.11 يلتزم الطرف الأول بدفع أجر الطرف الثاني حسب المذكور في البند (9)، وتوثيق الدفع عبر منصة الأجور المعتمدة لدى وزارة الموارد البشرية والتنمية الاجتماعية.\n2.11 يلتزم الطرف الأول بدفع العمولات الواردة في الفقرة (3.1.9) من البند رقم (9) للطرف الثاني في تاريخ الاستحقاق. (تظهر الفقرة 2.11 في حال اختيار العمولات)\n3.11 يلتزم الطرف الأول بتسليم المزايا العينية الواردة في الفقرة (4.1.9) من البند رقم (9) لصالح الطرف الثاني في تاريخ الاستحقاق. (تظهر الفقرة 3.11 في حال اختيار مزايا عينية)\n4.11 عند تكليف الطرف الثاني بساعات عمل إضافية، يلتزم الطرف الأول بتكليف الطرف الثاني بها كتابياً (أو إلكترونياً)، ويدفع الطرف الأول أجراً إضافياً عن ساعات العمل الإضافية يوازي أجر الساعة الإجمالي مضافاً إليه (50%) من أجر الساعة الأساسي، ويتم دفعه من خلال وسيلة الدفع المذكورة في البند رقم (9).\n1.4.11 يجوز للطرف الأول بموافقة الطرف الثاني كتابياً (أو إلكترونياً) أن يحتسب للطرف الثاني أيام إجازة تعويضية مدفوعة الأجر بدلاً عن الأجر المستحق للطرف الثاني لساعات العمل الإضافية وفقاً لأحكام اللائحة التنفيذية لنظام العمل.\n2.4.11 يلتزم الطرف الأول بعدم تجاوز الحد الأعلى لساعات العمل الإضافية المحددة في نظام العمل ولائحته التنفيذية عند تكليف الطرف الثاني، ويجوز بموافقة الطرف الثاني كتابياً (أو إلكترونياً) زيادة عدد الساعات الإضافية عن الحد الأعلى.\n5.11 يلتزم الطرف الأول بتوفير العناية الصحية الوقائية والعلاجية للطرف الثاني مع مراعاة ما يوفره نظام الضمان الصحي التعاوني\n6.11 يلتزم الطرف الأول بتسجيل الطرف الثاني لدى المؤسسة العامة للتأمينات الاجتماعية، وسداد الاشتراكات حسب أنظمتها.\n1.6.11 يلتزم الطرف الأول بدفع رسوم استقدام الطرف الثاني، ورسوم الإقامة ورخصة العمل وتجديدهما وما يترتب على تأخير ذلك من غرامات يتسبب بها الطرف الأول، ورسوم تغيير المهنة، والخروج والعودة وتذكرة عودة الطرف الثاني إلى موطنه بعد انتهاء العلاقة بين الطرفين، ويستثنى من ذلك تكاليف عودة الطرف الثاني إلى بلده لعدم صلاحيته للعمل أو رغبته في العودة إلى بلده دون سبب مشروع. (مرتبط بالعامل غير السعودي فقط).\n7.11 يلتزم الطرف الأول بمنح الطرف الثاني الإجازة السنوية المنصوص عليها في الفقرة (1.8)، والعطل الرسمية والإجازات المرضية والإجازات الأخرى المنصوص عليها في نظام العمل ولائحة تنظيم العمل المعتمدة من وزارة الموارد البشرية والتنمية الاجتماعية.\n8.11 يلتزم الطرف الأول برد جميع ما أودعه لديه الطرف الثاني من شهادات أو وثائق خلال المدة المنصوص عليها في الفقرة (9.11).\n9.11 يلتزم الطرف الأول بدفع أجر الطرف الثاني وتصفية حقوقه خلال أسبوع- كحد أقصى- من تاريخ انتهاء العقد، وفي حال الإنهاء من الطرف الثاني فيلتزم الطرف الأول بدفع أجر الطرف الثاني وتصفية حقوقه خلال مدة لا تزيد عن أسبوعين من تاريخ انتهاء العقد.\n10.11 يلتزم الطرف الأول بدفع مكافأة نهاية الخدمة للطرف الثاني عند انتهاء العقد خلال المدة المنصوص عليها في الفقرة (9.11)، ويستثنى من ذلك إنهاء العقد خلال مدة التجربة أو استقالة الطرف الثاني وخدمته تقل عن سنتين متتاليتين أو كان إنهاء العقد بحسب إحدى الحالات الواردة بالمادة (٨٠) من نظام العمل.\n11.11 يلتزم الطرف الأول بدفع جميع التكاليف والنفقات التي يتحملها الطرف الثاني في سبيل إنهاء المهمات المكلّف بها من قبل الطرف الأول.",
+     "text_en_reference": "11.1 The First Party shall pay the Second Party's wage mentioned in Clause No. (9) and document the payment via the wage Portal approved by the HRSD.\n11.2 The First Party shall pay the commissions mentioned in Paragraph No. (9.1.4) of Clause No. (9) to the Second Party on the due date. (Paragraph 11.2 applies when choosing commissions)\n11.2 The First Party shall provide the Second Party with the in-kind benefits mentioned in Paragraph No. (9.1.4) of Clause No. (9) on the Due Date. (Paragraph 11.3 applies when choosing in-kind benefits)\n11.4 When assigning the Second Party to additional working hours, the First Party is obligated to assign them to the Second Party in writing (or electronically), and the First Party pays an additional wage for the additional working hours equal to the total hourly wage plus (50%) of the basic hourly wage, to be paid through the payment method mentioned in Clause No. (9).\n11.4.1 The First Party, with the written (or electronic) consent of the Second Party, may count paid compensatory leave days for the Second Party instead of the wages due for the additional working hours in accordance with the provisions of the Executive Regulations of the Labor Law.\n11.4.2 The First Party is obligated not to exceed the maximum limit of additional working hours specified in the Labor Law and its Executive Regulations when assigning the Second Party, and with the written (or electronic) consent of the Second Party, the number of additional hours may be increased beyond the maximum limit.\n11.5 The First Party shall provide the Second Party with preventive and curative health care in accordance with the regulations of the Cooperative Health Insurance Law.\n11.6 The First Party shall register the Second Party in the General Organization for Social Insurance (“GOSI”) and fulfill the payments of contributions according to their systems.\n11.6.1 The First Party is obligated to pay the Second Party’s recruitment fees, residency and work permit fees, and their renewal, as well as any fines resulting from delays caused by the First Party, fees for changing professions, exit and re-entry fees, and the return ticket for the Second Party to their home country after the termination of the relationship between the parties. This excludes the costs of the Second Party's return to their country due to unsuitability for work or their desire to return to their country without a valid reason. (Applicable only to non-Saudi employee).\n11.7 The First Party shall grant the Second Party annual leave stipulated in Paragraph (8.1), and official holidays, sick leaves, and other leaves stipulated in the Labor Law and the work policy approved by the Ministry of Human Resources and Social Development.\n11.8 The First Party shall return to the Second Party all certificates or documents that have been submitted during the period stipulated in Paragraph (11.9) hereof.\n11.9 The First Party shall pay the Second Party’s wage and settle its entitlements within a maximum period of one week from the contract end date. If the Second Party ends the contract, the First Party shall settle all the Second Party’s entitlements within a period not exceeding two weeks as of the Contract Termination Date.\n11.10 The First Party shall pay the Second Party an end-of-service remuneration upon the end of the contract within the period stipulated in paragraph (11.9), except for the termination of the contract during the probationary period, resignation by the Second Party with less than two consecutive years of service, or termination of the contract in accordance with any of the cases stated in Article (80) of the Labor Law.\n11.10 The First Party shall pay all the costs and expenses incurred by the Second Party to complete the tasks assigned by the First Party.",
+     "ocr_similarity_ar": 0.994,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      72,
+      73,
+      74,
+      75
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_013_clause12_second_party_obligations",
+     "unit_label_ar": "12 التزامات الطرف الثاني",
+     "unit_label_en": "12. Second Party’s Obligations",
+     "text_ar": "1.12 يلتزم الطرف الثاني بإنجاز العمل الموكل إليه؛ وفقا لأصول المهنة، ووفقا لتعليمات الطرف الأول، مالم يكن في هذه التعليمات ما يخالف العقد، أو النظام، أو الآداب العامة، ولم يكن في تنفيذها ما يعرضه للخطر.\n2.12 يلتزم الطرف الثاني بأن يعتني عناية كافية بالأدوات، والمهمات المسندة إليه والخامات المملوكة للطرف الأول الموضوعة تحت تصرف الطرف الثاني، أو التي تكون في عهدته، وأن يعيد إلى الطرف الأول المواد غير المستهلكة.\n3.12 يلتزم الطرف الثاني بحسن السلوك والأخلاق أثناء العمل، والالتزام بالأنظمة، والأعراف، والعادات، والآداب المرعية في المملكة العربية السعودية والقواعد واللوائح والتعليمات المعمول بها لدى الطرف الأول، ويتحمل الطرف الثاني كامل الغرامات المالية الناتجة عن مخالفته لتلك الأنظمة.\n4.12 يلتزم الطرف الثاني بأن يقدم كل عون ومساعدة دون أن يشترط لذلك أجراً إضافياً، وذلك في حالات الكوارث والأخطار التي تهدد سلامة مكان العمل أو الأشخاص العاملين فيه.\n5.12 يلتزم الطرف الثاني - عند طلب الطرف الأول- بأداء الفحوصات الطبية التي يرغب الطرف الأول إجرائها عليه قبل الالتحاق بالعمل أو أثناءه لغرض التحقق من خلوه من الأمراض المهنية أو السارية.",
+     "text_en_reference": "12.1 The Second Party is obliged to finish the assigned work in accordance with the principles of the profession and the instructions of the First Party, if these instructions do not violate the contract, Law, or public morals, or have a potential danger.\n12.2 The Second Party is obliged to take adequate care of the tools and tasks assigned and the First Party’s ores that are at the Second Party’s disposal or are in his/her custody, and restore to the First Party the materials that were not used.\n12.3 The Second Party is obliged to commit to good behavior and ethics at work, adhere to laws, customs, rules, and etiquette in the Kingdom of Saudi Arabia, along with the rules, regulations, and directives enforced by the First Party, and bear all fines resulting from breaching these laws.\n12.4 The Second Party is obliged to provide all assistance and support without requiring additional wages in the event of disasters and threats to the safety of the place of work or the people working in it.\n12.5 The Second Party is obliged to undergo medical examination, according to the First Party’s request, prior to or during work to ascertain whether it does not suffer from occupational or communicable diseases.",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      75,
+      76
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_014_clause13_applicable_law",
+     "unit_label_ar": "13 النظام واجب التطبيق وتسوية النزاعات",
+     "unit_label_en": "13. Applicable Law and Settlement of Disputes",
+     "text_ar": "1.13 يطبق نظام العمل ولائحته التنفيذية واللوائح والقرارات الوزارية ولائحة تنظيم العمل بالمنشأة المعتمدة من قبل وزارة الموارد البشرية والتنمية الاجتماعية على هذا العقد وعلى كل ما لم يرد فيه نص في هذا العقد. ويحل هذا العقد محل كافة الاتفاقيات والعقود السابقة الشفهية منها أو الكتابية بين الطرفين إن وجدت.\n2.13 يخضع هذا العقد ويُفسّر وفقًا للأنظمة واللوائح المعمول بها في المملكة العربية السعودية.\n3.13 يعد هذا العقد سنداً تنفيذياً، وينعقد الاختصاص لمحكمة التنفيذ فيما يلي:\n1.3.13 التزام الطرف الأول بدفع صافي الأجر المستحق الوارد في الفقرة (7.1.1.9) من البند رقم (9) من هذا العقد.\n4.13 فيما عدا الحقوق والالتزامات القابلة للتنفيذ الواردة في الفقرة (3.13) من هذا البند، والتي ينعقد الاختصاص فيها لمحكمة التنفيذ وفقًا لنظام التنفيذ، فإن كل نزاع أو خلاف ينشأ عن هذا العقد أو يتعلق به بأي صورة من الصور، بما في ذلك أي شروط وأحكام يتفق عليها الأطراف في بند الشروط الإضافية إن وُجد، يتم حلّه ابتداءً من خلال التسوية الودية. وفي حال تعذر الوصول إلى تسوية، فينعقد الاختصاص بنظر النزاع للمحاكم العمالية في المملكة العربية السعودية.",
+     "text_en_reference": "13.1 The Labor Law, its Executive Regulations, ministerial regulations and decisions, and the work policy approved by the Ministry of Human Resources and Social Development shall apply to this contract and to everything not stated in this contract. This contract supersedes all previous agreements and contracts, whether verbal or written, between the parties, if any.\n13.2 This contract is governed by and construed in accordance with the laws and regulations in force in the Kingdom of Saudi Arabia.\n13.3 This contract is considered an executive document, and the jurisdiction shall be vested in the Enforcement Court for the following matters:\n13.3.1 The obligation of the First Party to pay the net wage due as stated in Clause (9.1.1.7) of Clause No. (9) hereof.\n13.4 Except for the applicable rights and obligations stated in Paragraph (3.13) of this clause, which are under the jurisdiction of the Enforcement Court in accordance with the Enforcement Law, any dispute or disagreement arising from or related to this contract in any form, including any terms and conditions agreed upon by the parties in the Additional Conditions clause if any, shall initially be resolved through amicable settlement. If a settlement cannot be reached, the jurisdiction to consider the dispute shall lie with the labor courts in the Kingdom of Saudi Arabia.",
+     "ocr_similarity_ar": 0.983,
+     "ocr_similarity_en": 0.986,
+     "pages": [
+      76,
+      77
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_015_clause14_general",
+     "unit_label_ar": "14 أحكام عامة",
+     "unit_label_en": "14. General Provisions",
+     "text_ar": "1.14 اتفق الطرفان على أن الإشعارات والإخطارات وأي تصرفات تصدر لأي غرض بناءً على إرادة الطرفين أو أحدهما وذات علاقة بهذا العقد لن تكون منتجة لآثارها القانونية إلا إذا تمّت بواسطة الخدمات أو الوسائل أو النماذج التي تعتمدها المنصة لهذا الغرض ووفقًا لاشتراطاتها ومتطلباتها على أن توثق عبر المنصة، ويسري ذلك على جميع الإشعارات والإخطارات والمراسلات والمكاتبات والتبليغات التي يوجّهها أحد الطَّرفين للآخر أو للجهات الحكوميَّة أو القضائيَّة، ولن تكون منتجة لآثارها إلا إذا تمَّت وفقًا لذلك.\n2.14 باستثناء ما ورد في الفقرة (1.11) من البند (11)، وبما لا يتعارض مع الفقرة (1.14) من هذا البند، يحق للطرفين - في حال عدم توفّر الخدمات اللازمة لتوثيق تصرفاتهم عبر المنصة - توجيه الإشعارات والإخطارات وغيرها بواسطة العنوان الوطني أو بالبريد المسجَّل أو الممتاز أو عبر الهاتف أو البريد الإلكتروني، أو عن طريق التَّسليم باليد مقابل إيصال استلام على العنوان الموضح في بيانات الأطراف في هذا العقد، أو بأيّ وسيلة نظاميَّة معتبرة.\n3.14 يقر الطرفان بعلمهما وقبولهما لكل الشروط والأحكام الواردة في هذا العقد.\n4.14 يوافق الطرف الثاني على استقطاع الطرف الأول للنسبة المقررة عليه من الأجر للاشتراك في المؤسسة العامة للتأمينات الاجتماعية.\n5.14 يجوز للطرفين الاتفاق على إضافة شروط وأحكام إضافية في بند الشروط الإضافية عند إبرام العقد، بشرط عدم تعارضها مع الشروط والأحكام الواردة في هذا العقد، أو نظام العمل ولائحته التنفيذية أو لائحة تنظيم العمل الداخلية المعتمدة من وزارة الموارد البشرية والتنمية الاجتماعية، وفي حال تعارضها، تعد الشروط الإضافية ملغية.\n6.14 يُعمل بالتقويم (الميلادي) في كل ما يتعلق بتنفيذ هــذا العـقد.\n7.14 تعتبر اللغة العربية هي اللغة المعتمدة في تنفيذ وتفسير هذا العقد، ويجوز للطرفين استخدام لغة أخرى إلى جانب اللغة العربية، وفي حال وجود اختلاف، فيعتد بالنص الوارد باللغة العربية.\n8.14 يجوز التعديل على البيانات الواردة في البنود المذكورة أدناه بموافقة الطرفين وفقاً للشروط والإجراءات المعتمدة عبر المنصة، وذلك بما لا يتعارض مع نظام العمل ولائحته التنفيذية ولائحة تنظيم العمل الداخلي والقرارات الوزارية ذات العلاقة:\n1.8.14 بيانات نوع العقد الواردة في البند رقم (1).\n2.8.14 البيانات الواردة في البند رقم (4) فيما يخص المهنة ومعلومات العمل.\n3.8.14 الإجازة السنوية الواردة في البند رقم (8).\n4.8.14 بيانات الأجر والمزايا الواردة في الفقرات رقم (1.1.9- 3.1.9- 4.1.9) من البند رقم (9). (3.1.9- 4.1.9 مرتبطة باختيار هذه البنود)\n5.8.14 معلومات الحساب البنكي الواردة في البند رقم (10).\n9.14 يلتزم الطرف الأول بتوثيق أي تعديل حسب الفقرة (8.14) من خلال المنصة.\n10.14 حرر هذا العقد كنسخة إلكترونية متطابقة لكل من صاحب العمل والعامل وموقعة إلكترونياً من طرفي العقد، وقد تسلم كل طرف نسخته للعمل بموجبها. كما اتفق الطرفان على أن للمنصة الحق في تبادل بيانات هذا العقد وسجل المعاملات المالية وغيرها الناتجة عن تنفيذه.",
+     "text_en_reference": "14.1 The Parties agree that no notices or correspondence issued for any reason, as per the request of the Party(ies), in relation hereto, will be legally effective unless carried out via the services, methods, or forms approved by the Portal for this purpose and in accordance with its terms and requirements, provided that the same shall be documented on the Portal. This shall apply to all notifications, notices, correspondences, letters, and communications directed by one party to the other or to the government or judicial authorities. The same will not be legally effective unless carried out accordingly.\n14.2 Except as mentioned in Paragraph (11.1) of Clause No. (11) and notwithstanding Paragraph (14.1) of this clause, the Parties shall have the right to, in case there are no services available to document their actions on the Portal, send notifications, alerts, and other communications via the National Address, registered or express mail, phone, email, or by hand delivery with a receipt acknowledgment to the address specified in the parties’ information in this contract, or by any legally recognized means.\n14.3 The Parties acknowledge that they have known and understood all the terms and conditions of this contract.\n14.4 The Second Party approves that the First Party will deduct a certain percentage from its monthly wage as a contribution to the GOSI.\n14.5 The Parties may add additional terms and conditions in Additional Terms Clause, provided that they shall not contradict the terms and conditions hereof, the Labor Law and its Executive Regulations, the internal work policy approved by the HRSD, otherwise the Additional Terms will be deemed null and void.\n14.6 The (Gregorian) calendar shall apply with regard to all matters related to the implementation of this Contract.\n14.7 Arabic shall be the official language for the execution and interpretation of this contract. The Parties may use another language alongside Arabic, but in the event of any discrepancy, the Arabic text shall prevail.\n14.8 The data mentioned in the clauses below may be amended with the consent of both parties in accordance with the terms and procedures approved through the Portal, provided that such amendments do not conflict with the Labor Law, its Executive Regulations, the internal work policy, and related ministerial decisions:\n14.8.1 Contract type information as stated in Clause No. (1).\n14.8.2 The information stated in Clause No. (4) regarding the profession and employment details.\n18.4.3 The annual leave as stated in Clause No. (8).\n14.8.4 The wage and benefits information as stated in Paragraphs No. (1.1.9 - 3.1.9 -4.1.9) of Clause No. (9). (Paragraphs 3.1.9 and 4.1.9 are contingent upon the selection of these items)\n14.8.5 The bank account information as stated in Clause No. (10).\n14.9 The First Party shall document any amendment as per Paragraph (14.8) through the Portal.\n14.10 This Contract is made and concluded as an identical electronic counterpart for the Employer and the Employee, who signed it electronically. Each Party has received one copy for necessary action. The Parties agree that the Portal has the right to share the data on this Contract, the financial transaction history, and other matters resulting from the implementation thereof.",
+     "ocr_similarity_ar": 0.988,
+     "ocr_similarity_en": 0.996,
+     "pages": [
+      77,
+      78,
+      79
+     ],
+     "verification": "ocr"
+    },
+    {
+     "unit_key": "permanent_016_clause15_additional_terms",
+     "unit_label_ar": "15 الشروط الإضافية (اختياري)",
+     "unit_label_en": "15. Additional Terms (Optional)",
+     "text_ar": "يجوز للطرفين الاتفاق على إضافة أحكام وشروط إضافية بشرط عدم تعارضها مع الشروط والأحكام الواردة هذا العقد الموحد وفي حال تعارضها، تعد الشروط الإضافية ملغية.\nهنا يتم إضافة البنود الاختيارية التي يتفق عليها الأطراف، على سبيل المثال:\nبند أحكام انتهاء العقد حسب النظام ونوع العقد، بما في ذلك على سبيل المثال لا الحصر:\n- إنهاء العقد باتفاق الطرفين، بشرط موافقة الطرف الثاني (العامل) الكتابية/الإلكترونية.\n- انتهاء العقد بناء على إرادة أحد الطرفين في العقد غير محدد المدة.\n- فسخ العقد وفقاً لأحكام المادة 80 من النظام.\nبند أحكام الملكية الفكرية.\nبند السرية وعدم المنافسة.",
+     "text_en_reference": "The Parties may add additional terms and conditions, provided that the same shall not contradict the Terms and Conditions hereof; otherwise, the additional terms and conditions will be deemed null and void.\nThe optional clauses agreed upon between the Parties shall be added here, for instance:\nClause on the provisions for contract termination in accordance with the Law and the type of contract, including but not limited to:\n- Termination of the contract by mutual agreement of the Parties, provided that the written/electronic consent of the Second Party (the Employee) is obtained;\n- Termination of the contract based on the will of either party in an indefinite-term contract;\n- Termination of the contract in accordance with the provisions of Article 80 of the Law\nClause of the intellectual property provisions.\nClause of confidentiality and non-competition.",
+     "ocr_similarity_ar": 0.802,
+     "ocr_similarity_en": 0.914,
+     "pages": [
+      80
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "permanent_017_clause16_appendix",
+     "unit_label_ar": "16 الملحق",
+     "unit_label_en": "16. Appendix",
+     "text_ar": "يوضح الجدول التَّالي المقصود من بعض المصطلحات الواردة في هذا العقد:",
+     "text_en_reference": "The following table illustrates the meaning of some of the terms mentioned in this Contract:",
+     "ocr_similarity_ar": 0.846,
+     "ocr_similarity_en": 1.0,
+     "pages": [
+      80,
+      81
+     ],
+     "verification": "ocr+image"
+    }
+   ],
+   "glossary_table": {
+    "columns": [
+     "term_ar",
+     "term_en",
+     "definition_ar",
+     "definition_en"
+    ],
+    "rows": [
+     [
+      "المنصة",
+      "Portal",
+      "المنصة الرقمية المعتمدة لدى وزارة الموارد البشرية والتنمية الاجتماعية التي توفر جميع خدمات منظومة العمل في المملكة العربية السعودية، وتمكّن مختلف أطرافها (موظفين، ومنشآت حكومية وخاصة) من تنظيم جميع تعاملاتهم ومتابعتها بطريقة مؤتمتة وفورية.",
+      "The digital platform approved by the HRSD, which provides all services of the labor system in the Kingdom of Saudi Arabia, enabling various stakeholders (employees, governmental and private entities) to organize and monitor all their transactions in an automated and immediate manner."
+     ],
+     [
+      "تاريخ إبرام العقد",
+      "Date of Contract Conclusion",
+      "تاريخ إبرام الطرفين لهذا العقد عبر المنصة، الموضح في البند رقم 1.",
+      "The date of the parties’ conclusion of this contract through the platform, as specified in Clause No. 1."
+     ],
+     [
+      "مكان إبرام العقد",
+      "Place of Contract Conclusion",
+      "المدينة التي أبرم فيها العقد.",
+      "The city where the contract was concluded."
+     ],
+     [
+      "تاريخ مباشرة العمل",
+      "Date of Commencement of Work",
+      "اليوم والتاريخ المحدد الذي يباشر فيه الطرف الثاني للعمل.",
+      "The specific day and date on which the Second Party commences work."
+     ],
+     [
+      "إشعار",
+      "Notice",
+      "أي مراسلة من خلال المنصة تصدر لأي غرض بناءً على إرادة الطرف المرسل وذات علاقة بهذا العقد.",
+      "Any correspondence issued through the Portal for any purpose based on the will of the sending party and related to this contract."
+     ],
+     [
+      "صافي الأجر",
+      "Net Wage",
+      "هو الأجر الأساسي مضافًا إليه سائر البدلات المشار إليها في الفقرة (1.1.9) من البند (9) من هذا العقد محسوماً منه استقطاع الاشتراك في المؤسسة العامة للتأمينات الاجتماعية - إن وجد- والذي يلتزم الطرف الأول بدفعه وفقاً لتاريخ الاستحقاق خلال فترة سريان العقد، والمذكور في الفقرة (7.1.1.9) من البند (9) من هذا العقد، ولا يشمل صافي الأجر الأجور العينية والعمولات.",
+      "It is the basic wage plus all allowances mentioned in paragraph (9.1.1) of Clause (9) of this contract, deducting the contribution to the General Organization for Social Insurance, if any, which the First Party is obligated to pay according to the due date during the contract period, as stated in paragraph (9.1.1.7) of Clause (9) of this contract. The net salary does not include in-kind wages or commissions."
+     ],
+     [
+      "مقر العمل",
+      "Place of work",
+      "المكان الذي يمارس فيه العامل عمله المتفق عليه.",
+      "The place where the Employee performs the agreed-upon work."
+     ],
+     [
+      "يوم",
+      "Day",
+      "يقصد بكلمة يوم الواردة في هذا العقد يوم تقويمي باستثناء بند الإجازات السنوية فقرة (1.8) فيقصد بها يوم عمل. (تظهر العبارة المحددة باللون الأحمر كخيار عند إنشاء العقد)",
+      "The term \"day\" mentioned in this contract refers to a calendar day."
+     ]
+    ],
+    "ocr_similarity_rows": [
+     {
+      "ar": 0.914,
+      "en": 1.0
+     },
+     {
+      "ar": 1.0,
+      "en": 1.0
+     },
+     {
+      "ar": 1.0,
+      "en": 1.0
+     },
+     {
+      "ar": 0.917,
+      "en": 1.0
+     },
+     {
+      "ar": 1.0,
+      "en": 1.0
+     },
+     {
+      "ar": 0.964,
+      "en": 1.0
+     },
+     {
+      "ar": 0.7,
+      "en": 1.0
+     },
+     {
+      "ar": 0.964,
+      "en": 1.0
+     }
+    ],
+    "intro_ar": "يوضح الجدول التَّالي المقصود من بعض المصطلحات الواردة في هذا العقد:",
+    "intro_en": "The following table illustrates the meaning of some of the terms mentioned in this Contract:"
+   }
+  },
+  {
+   "form_key": "part_time",
+   "title_ar": "نموذج عقد عمل لبعض الوقت",
+   "title_en": "",
+   "bilingual": false,
+   "pages": [
+    82,
+    85
+   ],
+   "inner_title_ar": "عقد عمل لبعض الوقت",
+   "units": [
+    {
+     "unit_key": "part_time_001_preamble",
+     "unit_label_ar": "عقد عمل لبعض الوقت — التمهيد",
+     "unit_label_en": "",
+     "text_ar": "إنه في يوم …./…./…14هــ الموافق …./…/…20م تم الاتفاق بين كلِّ من:\nاولاً: - شركة/مؤسسة ………………….. سجل تجاري رقم ………….. - وعنوانها ………. ص.ب ……. – الرمز البريدي…………… - هاتف ……………….- فاكس ……………،البريد الالكتروني. ……………@…………….. - ويمثلها في التوقيع على هذا العقد ……………………… بصفته ……………….     ويشار إليها فيما بعد بالطرف الأول\nثانياً: - الاسم:……………………….. - الجنسية …………. - بطاقة الهوية/ الإقامة ………………………..  رقم جواز السفر…………. صادر من…………….. بتاريخ  …./…./……… عنوانه ……………….. هاتف…………… ص.ب …….. الرمز البريدي………… البريد الالكتروني ………….@………………     - رقم الهاتف المحمول ...................         ويشار إليه فيما بعد بالطرف الثاني\nبعد أن أقر الطرفان بأهليتهما المعتبرة شرعًا . ونظامًا لإبرام مثل هذا العقد . فقد اتفقا على ما يلي:",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.469,
+     "ocr_similarity_en": null,
+     "pages": [
+      83
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "part_time_002_table_header",
+     "unit_label_ar": "م / تصنيف البند / نص البند",
+     "unit_label_en": "",
+     "text_ar": "م\nتصنيف البند\nنص البند",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.75,
+     "ocr_similarity_en": null,
+     "pages": [
+      83
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "part_time_003_s1_r1",
+     "unit_label_ar": "أولاً: موضوع العقد — 1",
+     "unit_label_en": "",
+     "text_ar": "اتفق الطرفان على أن يعمل الطرف الثاني لدى الطرف الأول تحت إدارته، أو إشرافه بوظيفة (........) ، ومباشرة الأعمال التي يكلف بها بما يتناسب مع قدراته العلمية، والعملية، والفنية؛ وفقًا لاحتياجات العمل، ووفقًا لقواعد وضوابط تنظيم العمل لبعض الوقت الواردة في المادة (27) من اللائحة التنفيذية لنظام وتعديلاتها، وبما لا يتعارض مع الاحكام المنصوص عليها في المواد (الثامنة والخمسون، التاسعة والخمسون، الستون) من نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.984,
+     "ocr_similarity_en": null,
+     "pages": [
+      83
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_004_s1_r2",
+     "unit_label_ar": "أولاً: موضوع العقد — 2",
+     "unit_label_en": "",
+     "text_ar": "مدة هذا العقد (......)، تبدأ من تاريخ مباشرة الطرف الثاني للعمل في تاريخ .../.../...... وتنتهي في تاريخ .../.../...... .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.938,
+     "ocr_similarity_en": null,
+     "pages": [
+      83
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_005_s1_r3",
+     "unit_label_ar": "أولاً: موضوع العقد — 3",
+     "unit_label_en": "",
+     "text_ar": "ويتجدد هذا العقد لمدة مماثلة، أو لمدة (......)، ما لم يُشعر أحد الطرفين الأخر خطيًا بعدم رغبته في التجديد قبل .......... يومًا من تاريخ انتهاء العقد.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.84,
+     "ocr_similarity_en": null,
+     "pages": [
+      83
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "اختياري"
+    },
+    {
+     "unit_key": "part_time_006_s2_r1",
+     "unit_label_ar": "ثانيًا: أيام، وساعات العمل — 1",
+     "unit_label_en": "",
+     "text_ar": "تحدد أيام العمل العادية بـ .... أيام في الأسبوع، وتحدد ساعات العمل بـ (......) يوميًا، أو بـ (.....) ساعة عمل أسبوعيًا، ويلتزم الطرف الأول بأن يدفع للطرف الثاني أجرًا إضافيًا عن ساعات العمل الإضافية يوازي أجر الساعة، مضافا إليه (50 %) من أجره الأساسي، ويجوز للطرف الأول (بموافقة الطرف الثاني) أن يحتسب للطرف الثاني أيام إجازة تعويضية مدفوعة الأجر بدلا عن الأجر المستحق للطرف الثاني لساعات العمل الإضافية وذلك وفق أحكام المادة 22 مكرر من اللائحة التنفيذية لنظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.989,
+     "ocr_similarity_en": null,
+     "pages": [
+      83
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي بحيث تقل عن نصف ساعات العمل اليومية المعتادة لدى للمنشأة، سواء أكان العمل يؤدى يوميًا، أو بعض أيام الأسبوع"
+    },
+    {
+     "unit_key": "part_time_007_s3_r1",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 1",
+     "unit_label_en": "",
+     "text_ar": "يدفع الطرف الأول للطرف الثاني أجرًا أساسيًا قدره (......) فقط .......... ريال سعودي فقط لا غير، يستحق في نهاية كل (.........).",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.96,
+     "ocr_similarity_en": null,
+     "pages": [
+      83
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي إذا كان الأجر شهريًا أو أسبوعيًا"
+    },
+    {
+     "unit_key": "part_time_008_s3_r2",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 2",
+     "unit_label_en": "",
+     "text_ar": "كما يلتزم الطرف الأول للطرف الثاني بالآتي:\n1) ..........................................................................\n2) ..........................................................................\n3) ..........................................................................",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "اختياري في حال الاتفاق على البدلات، أو امتيازات"
+    },
+    {
+     "unit_key": "part_time_009_s3_r3",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 3",
+     "unit_label_en": "",
+     "text_ar": "يستحق الطرف الثاني عن كل عام، إجازة سنوية مدتها (.......) يومًا مدفوعة الأجر وفقًا لأحكام المادة التاسعة بعد المائة، ويحدد الطرف الأول تاريخها خلال سنة الاستحقاق؛ وفقًا لظروف العمل، على أن يتم دفع أجر الإجازة مقدمًا عند استحقاقها، وللطرف الأول حسب مقتضيات ظروف العمل تأجيل الإجازة بعد نهاية سنة استحقاقها لمدة لا تزيد على (90) يومًا، كما له حسب مقتضيات ظروف العمل الاستمرار بتأجيلها بعد الحصول على موافقة الطرف الثاني كتابة، على ألا يتعدى التأجيل نهاية السنة التالية لسنة استحقاق الإجازة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.964,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي بحيث لا تقل عن (21) يوما، إذا كانت خدمة العامل أقل من خمس سنوات ولا تقل عن (30) يوما إذا زادت خدمة العامل عن خمس سنوات في العقد الأصلي"
+    },
+    {
+     "unit_key": "part_time_010_s3_r4",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 4",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بتسجيل الطرف الثاني كعامل لبعض الوقت لدى المؤسسة العامة للتأمينات الاجتماعية، وسداد الاشتراكات حسب أنظمتها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_011_s3_r5",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 5",
+     "unit_label_en": "",
+     "text_ar": "1- تستحق المرأة العاملة إجازة وضع بأجر كامل لمدة (اثني عشر) أسبوعا، منها وجوبيا الأسابيع الستة التالية للوضع، ولها ان توزع الأسابيع الستة المتبقية وفق ما تراه، ابتداءً من أربعة أسابيع قبل التاريخ المرجح للوضع. ويحدد التاريخ المرجح للوضع بموجب شهادة طبية مصدقة من جهة صحية. وفي حال قل المتبقي من مدة الاجازة عن (ستة) اسابيع نتيجة تأخر الوضع عن تاريخه المرجح، فتحتسب المدة المكملة لها اجازة دون اجر، وفي جميع الأحوال يحق للمرأة العاملة تمديد هذه الإجازة (شهرا) دون أجر.\n2- كما تستحق المرأة العاملة -في حالة إنجاب طفل مريض أو من ذوي الإعاقة وتتطلب حالته الصحية مرافقا مستمرا له- إجازة مدتها (شهر) بأجر كامل تبدأ بعد انتهاء مدة إجازة الوضع، ولها الحق في تمديد الإجازة لمدة شهر دون أجر.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.967,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي (خاص بالمرأة )"
+    },
+    {
+     "unit_key": "part_time_012_s3_r6",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 6",
+     "unit_label_en": "",
+     "text_ar": "يحق للعاملة عندما تعود إلى مزاولة عملها بعد إجازة الوضع، أن تأخذ بقصد إرضاع مولودها فترة، أو فترات للاستراحة على ألا تزيد في مجموعها على الساعة في اليوم الواحد، وتحسب هذه الفترة، أو الفترات من ساعات العمل الفعلية.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي (خاص بالمرأة)"
+    },
+    {
+     "unit_key": "part_time_013_s3_r7",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 7",
+     "unit_label_en": "",
+     "text_ar": "يحق للعاملة في حالة وفاة زوجها، إجازة عدة بأجر كامل لمدة لا تقل عن أربعة أشهر وعشرة أيام من تاريخ الوفاة، ولها الحق في تمديد هذه الاجازة دون أجر إن كانت حاملا -خلال هذه الفترة- حتى تضع حملها، ولا يجوز لها الاستفادة من باقي إجازة العدة الممنوحة لها بعد وضع حملها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.981,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي للعاملة المسلمة"
+    },
+    {
+     "unit_key": "part_time_014_s3_r8",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 8",
+     "unit_label_en": "",
+     "text_ar": "يحق للعاملة في حالة وفاة زوجها، إجازة بأجر كامل لمدة خمسة عشر يوما.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي للعاملة غير المسلمة"
+    },
+    {
+     "unit_key": "part_time_015_s4_r1",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 1",
+     "unit_label_en": "",
+     "text_ar": "يتحمل الطرف الثاني تكاليف عودته إلى بلده في حالة عدم صلاحيته للعمل، أو إذا رغب في العودة دون سبب مشروع .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي (خاص بالعامل غير السعودي )"
+    },
+    {
+     "unit_key": "part_time_016_s4_r2",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 2",
+     "unit_label_en": "",
+     "text_ar": "أن ينجز العمل الموكل إليه؛ وفقا لأصول المهنة، ووفق تعليمات الطرف الأول ، إذا لم يكن في هذه التعليمات ما يخالف العقد، أو النظام، أو الآداب العامة، ولم يكن في تنفيذها ما يعرضه للخطر .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.941,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_017_s4_r3",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 3",
+     "unit_label_en": "",
+     "text_ar": "أن يخضع – وفقا لطلب الطرف الأول – للفحوص الطبية التي يرغب في إجرائها عليه قبل الالتحاق بالعمل أو أثناءه، للتحقق من خلوه من الأمراض المهنية، أو السارية .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.963,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_018_s4_r4",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 4",
+     "unit_label_en": "",
+     "text_ar": "أن يقدم كل عون، ومساعدة دون أن يشترط لذلك أجرا إضافيا في حالات الكوارث و الأخطار التي تهدد سلامة مكان العمل أو الأشخاص العاملين فيه.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      84
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_019_s4_r5",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 5",
+     "unit_label_en": "",
+     "text_ar": "أن يلتزم الطرف الثاني بحسن السلوك، والأخلاق أثناء العمل، وفي جميع الأوقات يلتزم بالأنظمة، والأعراف، والعادات، والآداب المرعية في المملكة العربية السعودية، وكذلك بالقواعد، واللوائح، والتعليمات المعمول بها لدى الطرف الأول، ويتحمل كافة الغرامات المالية الناتجة عن مخالفته لتلك الأنظمة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.976,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_020_s4_r6",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 6",
+     "unit_label_en": "",
+     "text_ar": "أن يعتني عناية كافية بالآلات، والأدوات، والمهمات المسندة إليه، والخامات المملوكة للطرف الأول؛ الموضوعة تحت تصرفه، أو التي تكون في عهدته ، وأن يعيد إلى صاحب العمل المواد غير المستهلكة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.967,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_021_s5_r1",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 1",
+     "unit_label_en": "",
+     "text_ar": "ينتهي هذا العقد بانتهاء مدته، أو بالاستقالة أو باتفاق الطرفين على إنهائه بشرط موافقة الطرف الثاني كتابة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_022_s5_r2",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 2",
+     "unit_label_en": "",
+     "text_ar": "يحق للطرف الأول فسخ العقد دون إشعار الطرف الثاني أو تعويضه، شريطة إتاحة الفرصة للطرف الثاني في إبداء أسباب معارضته للفسخ، وذلك طبقا للحالات الواردة في المادة (الثمانون) من نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.969,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_023_s5_r3",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 3",
+     "unit_label_en": "",
+     "text_ar": "يحق للطرف الثاني ترك العمل، وإنهاء العقد دون إشعار الطرف الأول مع احتفاظه بحقوقه النظامية، وذلك طبقا للحالات الواردة في المادة (الحادية والثمانون) من نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_024_s5_r4",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 4",
+     "unit_label_en": "",
+     "text_ar": "في حال إنهاء العقد من قبل أحد الطرفين قبل انقضاء مدته دون سبب مشروع، للطرف المتضرر من الفسخ المطالبة بأجور بقية مدة العقد.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_025_s5_r5",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 5",
+     "unit_label_en": "",
+     "text_ar": "في حال إنهاء العقد من قبل أحد الطرفين قبل انقضاء مدته دون سبب مشروع، يحق للطرف المتضرر من هذا الإنهاء تعويضا قدره (....) ريال سعودي فقط.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "اختياري"
+    },
+    {
+     "unit_key": "part_time_026_s6_r1",
+     "unit_label_ar": "سادسًا: النظام الواجب التطبيق والاختصاص القضائي — 1",
+     "unit_label_en": "",
+     "text_ar": "يخضع هذا العقد لنظام العمل السعودي، ولائحته التنفيذية، والقرارات الصادرة تنفيذا له؛ فيما لم يرد به نص مما يتعلق بالسلامة والصحة المهنية وإصابات العمل والإجازات والراحة الأسبوعية والعطل الرسمية والعمل الإضافي وما يقرره الوزير، ويحل هذا العقد محل كافة الاتفاقيات، والعقود السابقة الشفهية منها، أو الكتابية إن وُجدت.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.98,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_027_s6_r2",
+     "unit_label_ar": "سادسًا: النظام الواجب التطبيق والاختصاص القضائي — 2",
+     "unit_label_en": "",
+     "text_ar": "في حالة نشوء خلاف بين الطرفين حول هذا العقد، فإن الاختصاص القضائي ينعقد للجهة المختصة بنظر القضايا العمالية في المملكة العربية السعودية.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_028_s7_r1",
+     "unit_label_ar": "سابعًا: الإخطارات والإشعارات ونسخ العقد — 1",
+     "unit_label_en": "",
+     "text_ar": "تتم الإخطارات، والإشعارات بين الطرفين كتابة على العنوان الموضح بصدر هذا العقد عن طريق البريد المسجل، أو البريد الممتاز، أو البريد الإلكتروني لكل من الطرفين، ويلتزم كل طرف بإشعار الطرف الآخر خطيًا في حال تغييره للعنوان الخاص به، أو تغيير البريد الإلكتروني، وإلا أعتبر العنوان، أو البريد الإلكتروني المدونان أعلاه، هما المعمول بهما نظامًا.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.945,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_029_s7_r2",
+     "unit_label_ar": "سابعًا: الإخطارات والإشعارات ونسخ العقد — 2",
+     "unit_label_en": "",
+     "text_ar": "حُرر هذا العقد من نسختين أصليتين، وقد تسلم كل طرف نسخة منه للعمل بموجبها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "part_time_030_signatures",
+     "unit_label_ar": "توقيعات الطرفين",
+     "unit_label_en": "",
+     "text_ar": "الطرف الأول\nالإسم:\nالتوقيع:\nالطرف الثاني\nالإسم:\nالتوقيع:",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      85
+     ],
+     "verification": "ocr+image"
+    }
+   ]
+  },
+  {
+   "form_key": "casual_temporary",
+   "title_ar": "نموذج عقد عمل عرضي/مؤقت",
+   "title_en": "",
+   "bilingual": false,
+   "pages": [
+    86,
+    89
+   ],
+   "inner_title_ar": "عقد عمل عرضي/ مؤقت",
+   "units": [
+    {
+     "unit_key": "casual_temporary_001_preamble",
+     "unit_label_ar": "عقد عمل عرضي/ مؤقت — التمهيد",
+     "unit_label_en": "",
+     "text_ar": "إنه في يوم …./…./…14هــ الموافق …./…/…20م تم الاتفاق بين كلِّ من:\nاولاً: شركة/مؤسسة ………………….. سجل تجاري رقم ………….. - وعنوانها ………. ص.ب ……. – الرمز البريدي…………… - هاتف ……………….- فاكس ……………،البريد الالكتروني. ……………@…………….. - ويمثلها في التوقيع على هذا العقد ……………………… بصفته ……………….     ويشار إليها فيما بعد بالطرف الأول\nثانياً : الاسم: ……………………….. - الجنسية …………. - بطاقة الهوية / الإقامة……………………….. – رقم جواز السفر: ............. صادر من…………….. بتاريخ  …./…./……… عنوانه ……………….. هاتف…………… ص.ب …….. الرمز البريدي………… البريد الالكتروني ………….@………………    - رقم الهاتف المحمول ...................              ويشار إليه فيما بعد بالطرف الثاني\nبعد أن أقر الطرفان بأهليتهما المعتبرة شرعًا . ونظامًا لإبرام مثل هذا العقد . فقد اتفقا على ما يلي:",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.691,
+     "ocr_similarity_en": null,
+     "pages": [
+      87
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "casual_temporary_002_table_header",
+     "unit_label_ar": "م / تصنيف البند / نص البند",
+     "unit_label_en": "",
+     "text_ar": "م\nتصنيف البند\nنص البند",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      87
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "casual_temporary_003_s1_r1",
+     "unit_label_ar": "أولاً: موضوع العقد — 1",
+     "unit_label_en": "",
+     "text_ar": "اتفق الطرفان على أن يعمل الطرف الثاني لدى الطرف الأول تحت إدارته، أو إشرافه بوظيفة (........) ، ومباشرة الأعمال التي يكلف بها بما يتناسب مع قدراته العلمية، والعملية، والفنية؛ وفقا لاحتياجات العمل، ووفقا لقواعد وضوابط تنظيم العمل العرضي والمؤقت الواردة في المادة السادسة من نظام العمل، والمادة الأولى من اللائحة التنفيذية لنظام العمل، وبما لا يتعارض مع الاحكام المنصوص عليها في المواد ( الثامنة والخمسون، التاسعة والخمسون، الستون) من نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.986,
+     "ocr_similarity_en": null,
+     "pages": [
+      87
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_004_s1_r2",
+     "unit_label_ar": "أولاً: موضوع العقد — 2",
+     "unit_label_en": "",
+     "text_ar": "مدة هذا العقد (......)، تبدأ من تاريخ مباشرة الطرف الثاني للعمل في تاريخ .../.../...... وتنتهي في تاريخ .../.../...... ، وفي حال استمرار الطرفين في العمل لمدة تجاوزت تسعين يوما، تحول هذا العقد إلى عقد عمل يخضع لجميع أحكام نظام العمل دون النظر لمسمى تأشيرة العمل التي قدم بها العامل -إذا كان وافدا- ومدة الإقامة الممنوحة له بموجبها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      87
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي على ألا تزيد المدة عن 90 يوما"
+    },
+    {
+     "unit_key": "casual_temporary_005_s2_r1",
+     "unit_label_ar": "ثانيًا: أيام، وساعات العمل ، وفترات الراحة — 1",
+     "unit_label_en": "",
+     "text_ar": "تحدد أيام العمل العادية بـ .... أيام في الأسبوع، وتحدد ساعات العمل بـ (......) يوميًا، أو بـ (.....) ساعة عمل أسبوعيًا، ويلتزم الطرف الأول بأن يدفع للطرف الثاني أجرًا إضافيًا عن ساعات العمل الإضافية يوازي أجر الساعة، مضافا إليه (50 %) من أجره الأساسي، ويجوز للطرف الأول (بموافقة الطرف الثاني) أن يحتسب للطرف الثاني أيام إجازة تعويضية مدفوعة الأجر بدلا عن الأجر المستحق للطرف الثاني لساعات العمل الإضافية وذلك وفق أحكام المادة 22 مكرر من اللائحة التنفيذية لنظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.978,
+     "ocr_similarity_en": null,
+     "pages": [
+      87
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي بحيث لا يزيد عدد أيام العمل عن (6) أيام في الأسبوع، و لا تزيد ساعات العمل عن (48) ساعة في الأسبوع"
+    },
+    {
+     "unit_key": "casual_temporary_006_s2_r2",
+     "unit_label_ar": "ثانيًا: أيام، وساعات العمل ، وفترات الراحة — 2",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بإعطاء الطرف الثاني فترات للراحة وفقا لأحكام نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      87
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_007_s3_r1",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 1",
+     "unit_label_en": "",
+     "text_ar": "يدفع الطرف الأول للطرف الثاني أجرًا أساسيًا قدره (........) ريال سعودي فقط لا غير، يستحق في نهاية كل (.........).",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      87
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي إذا كان الأجر شهريًا أو أسبوعيًا"
+    },
+    {
+     "unit_key": "casual_temporary_008_s3_r2",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 2",
+     "unit_label_en": "",
+     "text_ar": "اتفق الطرفان على أن يدفع الطرف الأول للطرف الثاني حسب الإنتاج، بحيث يستحق مبلغ (....) ريال سعودي فقط لا غير ، عن كل قطعة يتم انتاجها، ويستحق الأجر عن مجموع القطع المنتجة في نهاية كل أسبوع.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.923,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي إذا كان الأجر بالقطعة"
+    },
+    {
+     "unit_key": "casual_temporary_009_s3_r3",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 3",
+     "unit_label_en": "",
+     "text_ar": "كما يلتزم الطرف الأول للطرف الثاني بالآتي:\n1) ..........................................................................\n2) ..........................................................................\n3) ..........................................................................",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.933,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "اختياري في حال الاتفاق على البدلات، أو امتيازات"
+    },
+    {
+     "unit_key": "casual_temporary_010_s3_r4",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 4",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بتوفير الرعاية الطبية للطرف الثاني بتأمين الصحي، وفقا لأحكام نظام الضمان الصحي التعاوني.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_011_s3_r5",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 5",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بتسجيل الطرف الثاني لدى المؤسسة العامة للتأمينات الاجتماعية، وسداد الاشتراكات حسب أنظمتها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.938,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_012_s3_r6",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 6",
+     "unit_label_en": "",
+     "text_ar": "يتحمل الطرف الأول رسوم (استقدام الطرف الثاني)/(نقل خدماته إليه) ، ورسوم الإقامة ورخصة العمل، وتجديدهما، وما يترتب على تأخير ذلك من غرامات يتسبب بها صاحب العمل، ورسوم تغيير المهنة، والخروج والعودة، وتذكرة عودة الطرف الثاني إلى موطنه بعد انتهاء العلاقة بين الطرفين.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.979,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي ( خاص بالعامل غير السعودي )"
+    },
+    {
+     "unit_key": "casual_temporary_013_s3_r7",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 7",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بنفقات تجهيز جثمان الطرف الثاني، ونقله إلى الجهة التي أبرم فيها العقد، أو استقدم العامل منها، مالم يدفن بموافقة ذويه داخل المملكة، أو تلتزم المؤسسة العامة للتأمينات الاجتماعية بذلك.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي ( خاص بالعامل غير السعودي )"
+    },
+    {
+     "unit_key": "casual_temporary_014_s4_r1",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 1",
+     "unit_label_en": "",
+     "text_ar": "يتحمل الطرف الثاني تكاليف عودته إلى بلده في حالة عدم صلاحيته للعمل، أو إذا رغب في العودة دون سبب مشروع .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي (خاص بالعامل غير السعودي )"
+    },
+    {
+     "unit_key": "casual_temporary_015_s4_r2",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 2",
+     "unit_label_en": "",
+     "text_ar": "أن ينجز العمل الموكل إليه؛ وفقا لأصول المهنة، ووفق تعليمات الطرف الأول ، إذا لم يكن في هذه التعليمات ما يخالف العقد، أو النظام، أو الآداب العامة، ولم يكن في تنفيذها ما يعرضه للخطر .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.941,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_016_s4_r3",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 3",
+     "unit_label_en": "",
+     "text_ar": "أن يخضع – وفقا لطلب الطرف الأول – للفحوص الطبية التي يرغب في إجرائها عليه قبل الالتحاق بالعمل أو أثناءه، للتحقق من خلوه من الأمراض المهنية، أو السارية .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.963,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_017_s4_r4",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 4",
+     "unit_label_en": "",
+     "text_ar": "أن يقدم كل عون، ومساعدة دون أن يشترط لذلك أجرا إضافيا في حالات الكوارث و الأخطار التي تهدد سلامة مكان العمل أو الأشخاص العاملين فيه.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.96,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_018_s4_r5",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 5",
+     "unit_label_en": "",
+     "text_ar": "أن يلتزم الطرف الثاني بحسن السلوك، والأخلاق أثناء العمل، وفي جميع الأوقات يلتزم بالأنظمة، والأعراف، والعادات، والآداب المرعية في المملكة العربية السعودية، وكذلك بالقواعد، واللوائح، والتعليمات المعمول بها لدى الطرف الأول، ويتحمل كافة الغرامات المالية الناتجة عن مخالفته لتلك الأنظمة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_019_s4_r6",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 6",
+     "unit_label_en": "",
+     "text_ar": "أن يعتني عناية كافية بالآلات، والأدوات، والمهمات المسندة إليه، والخامات المملوكة للطرف الأول؛ الموضوعة تحت تصرفه، أو التي تكون في عهدته ، وأن يعيد إلى صاحب العمل المواد غير المستهلكة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_020_s5_r1",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 1",
+     "unit_label_en": "",
+     "text_ar": "ينتهي هذا العقد بانتهاء مدته، أو بإستقالة الطرف الثاني أو باتفاق الطرفين على إنهائه بشرط موافقة الطرف الثاني كتابة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      88
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_021_s6_r2",
+     "unit_label_ar": "سادسًا: النظام الواجب التطبيق والاختصاص القضائي — 2",
+     "unit_label_en": "",
+     "text_ar": "يخضع هذا العقد لنظام العمل السعودي، ولائحته التنفيذية، والقرارات الصادرة تنفيذا له؛ في كل ما لم يرد به نص مما يتعلق بالأحكام الخاصة بالواجبات وقواعد التأديب ، والحد الأقصى لساعات العمل ، وفترات الراحة اليومية والراحة الأسبوعية ، والتشغيل الإضافي ، والعطلات الرسمية ، وقواعد السلامة ، والصحة المهنية ، وإصابات العمل والتعويض عنها، ويحل هذا العقد محل كافة الاتفاقيات، والعقود  السابقة الشفهية منها، أو الكتابية إن وُجدت.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      88,
+      89
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_022_s6_r3",
+     "unit_label_ar": "سادسًا: النظام الواجب التطبيق والاختصاص القضائي — 3",
+     "unit_label_en": "",
+     "text_ar": "في حالة نشوء خلاف بين الطرفين حول هذا العقد، فإن الاختصاص القضائي ينعقد للجهة المختصة بنظر القضايا العمالية في المملكة العربية السعودية.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.957,
+     "ocr_similarity_en": null,
+     "pages": [
+      89
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_023_s7_r4",
+     "unit_label_ar": "سابعًا: الإخطارات والإشعارات ونسخ العقد — 4",
+     "unit_label_en": "",
+     "text_ar": "تتم الإخطارات، والإشعارات بين الطرفين كتابة على العنوان الموضح بصدر هذا العقد عن طريق البريد المسجل، أو البريد الممتاز، أو البريد الإلكتروني لكل من الطرفين، ويلتزم كل طرف بإشعار الطرف الآخر خطيًا في حال تغييره للعنوان الخاص به، أو تغيير البريد الإلكتروني، وإلا أعتبر العنوان، أو البريد الإلكتروني المدونان أعلاه، هما المعمول بهما نظامًا.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.927,
+     "ocr_similarity_en": null,
+     "pages": [
+      89
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_024_s7_r5",
+     "unit_label_ar": "سابعًا: الإخطارات والإشعارات ونسخ العقد — 5",
+     "unit_label_en": "",
+     "text_ar": "حُرر هذا العقد من نسختين أصليتين، وقد تسلم كل طرف نسخة منه للعمل بموجبها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.933,
+     "ocr_similarity_en": null,
+     "pages": [
+      89
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "casual_temporary_025_signatures",
+     "unit_label_ar": "والله الموفق — توقيعات الطرفين",
+     "unit_label_en": "",
+     "text_ar": "والله الموفق\nالطرف الأول\nالإسم:\nالتوقيع:\nالختم:\nالطرف الثاني\nالإسم:\nالتوقيع:",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.364,
+     "ocr_similarity_en": null,
+     "pages": [
+      89
+     ],
+     "verification": "ocr+image"
+    }
+   ]
+  },
+  {
+   "form_key": "seasonal",
+   "title_ar": "نموذج عقد عمل موسمي",
+   "title_en": "",
+   "bilingual": false,
+   "pages": [
+    90,
+    93
+   ],
+   "inner_title_ar": "عقد عمل موسمي",
+   "units": [
+    {
+     "unit_key": "seasonal_001_preamble",
+     "unit_label_ar": "عقد عمل موسمي — التمهيد",
+     "unit_label_en": "",
+     "text_ar": "إنه في يوم …./…./…14هــ الموافق …./…/…20م تم الاتفاق بين كلِّ من:\nاولاً: شركة/مؤسسة ………………….. سجل تجاري رقم ………….. - وعنوانها ………. ص.ب ……. – الرمز البريدي…………… - هاتف ……………….- فاكس ……………،البريد الالكتروني. ……………@…………….. - ويمثلها في التوقيع على هذا العقد ……………………… بصفته ……………….     ويشار إليها فيما بعد بالطرف الأول\nثانياً : الاسم: ……………………….. - الجنسية …………. - بطاقة الهوية/الإقامة……………………….. – رقم جواز السفر: ………. صادر من…………….. بتاريخ  …./…./………- العنوان……………….. هاتف…………… ص.ب …….. الرمز البريدي………… البريد الالكتروني ………….@………………   - رقم الهاتف المحمول ...................               ويشار إليه فيما بعد بالطرف الثاني\nبعد أن أقر الطرفان بأهليتهما المعتبرة شرعًا . ونظامًا لإبرام مثل هذا العقد . فقد اتفقا على ما يلي:",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.407,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "seasonal_002_table_header",
+     "unit_label_ar": "م / تصنيف البند / نص البند",
+     "unit_label_en": "",
+     "text_ar": "م\nتصنيف البند\nنص البند",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.75,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image"
+    },
+    {
+     "unit_key": "seasonal_003_s1_r1",
+     "unit_label_ar": "أولاً: موضوع العقد — 1",
+     "unit_label_en": "",
+     "text_ar": "اتفق الطرفان على أن يعمل الطرف الثاني لدى الطرف الأول تحت إدارته، أو إشرافه بوظيفة (........) ، ومباشرة الأعمال التي يكلف بها بما يتناسب مع قدراته العلمية، والعملية، والفنية؛ وفقا لاحتياجات العمل، ووفقا لقواعد وضوابط تنظيم العمل الموسمي الواردة في المادة السادسة من نظام العمل، وبما لا يتعارض مع الاحكام المنصوص عليها في المواد ( الثامنة والخمسون، التاسعة والخمسون، الستون) من نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.984,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_004_s1_r2",
+     "unit_label_ar": "أولاً: موضوع العقد — 2",
+     "unit_label_en": "",
+     "text_ar": "مدة هذا العقد أثناء موسم (......)، تبدأ من تاريخ مباشرة الطرف الثاني للعمل في تاريخ .../.../...... وذلك لمدة ...... فقط.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_005_s2_r1",
+     "unit_label_ar": "ثانيًا: أيام، وساعات العمل، وفترات الراحة — 1",
+     "unit_label_en": "",
+     "text_ar": "تحدد أيام العمل العادية بـ .... أيام في الأسبوع، وتحدد ساعات العمل بـ (......) يوميًا، أو بـ (.....) ساعة عمل أسبوعيًا، ويلتزم الطرف الأول بأن يدفع للطرف الثاني أجرًا إضافيًا عن ساعات العمل الإضافية يوازي أجر الساعة، مضافا إليه (50 %) من أجره الأساسي، ويجوز للطرف الأول (بموافقة الطرف الثاني) أن يحتسب للطرف الثاني أيام إجازة تعويضية مدفوعة الأجر بدلا عن الأجر المستحق للطرف الثاني لساعات العمل الإضافية وذلك وفق أحكام المادة 22 مكرر من اللائحة التنفيذية لنظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.978,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي بحيث لا يزيد عدد أيام العمل عن (6) أيام في الأسبوع، و لا تزيد ساعات العمل عن (48) ساعة في الأسبوع"
+    },
+    {
+     "unit_key": "seasonal_006_s2_r2",
+     "unit_label_ar": "ثانيًا: أيام، وساعات العمل، وفترات الراحة — 2",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بإعطاء الطرف الثاني فترات للراحة وفقا لأحكام نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_007_s3_r1",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 1",
+     "unit_label_en": "",
+     "text_ar": "يدفع الطرف الأول للطرف الثاني أجرًا أساسيًا قدره (........) ريال سعودي فقط لا غير، يستحق في نهاية كل (.........).",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي إذا كان الأجر شهريًا أو أسبوعيًا"
+    },
+    {
+     "unit_key": "seasonal_008_s3_r2",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 2",
+     "unit_label_en": "",
+     "text_ar": "اتفق الطرفان على أن يدفع الطرف الأول للطرف الثاني حسب الإنتاج، بحيث يستحق مبلغ (....) ريال سعودي فقط لا غير، عن كل قطعة يتم انتاجها، ويستحق الأجر عن مجموع القطع المنتجة في نهاية كل أسبوع.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.974,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي اذا كان الأجر بالقطعة"
+    },
+    {
+     "unit_key": "seasonal_009_s3_r3",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 3",
+     "unit_label_en": "",
+     "text_ar": "كما يلتزم الطرف الأول للطرف الثاني بالآتي:\n1) ..........................................................................\n2) ..........................................................................\n3) ..........................................................................",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.933,
+     "ocr_similarity_en": null,
+     "pages": [
+      91
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "اختياري في حال الاتفاق على البدلات، أو امتيازات"
+    },
+    {
+     "unit_key": "seasonal_010_s3_r4",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 4",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بتوفير الرعاية الطبية للطرف الثاني بتأمين الصحي، وفقا لأحكام نظام الضمان الصحي التعاوني.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_011_s3_r5",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 5",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بتسجيل الطرف الثاني لدى المؤسسة العامة للتأمينات الاجتماعية، وسداد الاشتراكات حسب أنظمتها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.875,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_012_s3_r6",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 6",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول من خلال مقاول المشروع او الشركة او المؤسسة المعتمدة، بتوفير التأمين الطبي على جميع العمالة الموسمية خلال فترة وجودهم، وتأمين سكنهم واسقبالهم وتنقلاتهم ، وإعاشتهم ، وصرف جميع حقوقهم المالية ومتابعة عملهم لحين مغادرتهم.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.949,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي في موسم الحج"
+    },
+    {
+     "unit_key": "seasonal_013_s3_r7",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 7",
+     "unit_label_en": "",
+     "text_ar": "يتحمل الطرف الأول رسوم (استقدام الطرف الثاني)/(نقل خدماته إليه) ، ورسوم الإقامة ورخصة العمل، وتجديدهما، وما يترتب على تأخير ذلك من غرامات يتسبب بها صاحب العمل، ورسوم تغيير المهنة، والخروج والعودة، وتذكرة عودة الطرف الثاني إلى موطنه بعد انتهاء العلاقة بين الطرفين.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي ( خاص بالعامل غير السعودي )"
+    },
+    {
+     "unit_key": "seasonal_014_s3_r8",
+     "unit_label_ar": "ثالثا: التزامات الطرف الأول — 8",
+     "unit_label_en": "",
+     "text_ar": "يلتزم الطرف الأول بنفقات تجهيز جثمان الطرف الثاني، ونقله إلى الجهة التي أبرم فيها العقد، أو استقدم العامل منها، مالم يدفن بموافقة ذويه داخل المملكة، أو تلتزم المؤسسة العامة للتأمينات الاجتماعية بذلك.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي ( خاص بالعامل غير السعودي )"
+    },
+    {
+     "unit_key": "seasonal_015_s4_r1",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 1",
+     "unit_label_en": "",
+     "text_ar": "يتحمل الطرف الثاني تكاليف عودته إلى بلده في حالة عدم صلاحيته للعمل، أو إذا رغب في العودة دون سبب مشروع.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.96,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي (خاص بالعامل غير السعودي )"
+    },
+    {
+     "unit_key": "seasonal_016_s4_r2",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 2",
+     "unit_label_en": "",
+     "text_ar": "أن ينجز العمل الموكل إليه؛ وفقا لأصول المهنة، ووفق تعليمات الطرف الأول ، إذا لم يكن في هذه التعليمات ما يخالف العقد، أو النظام، أو الآداب العامة، ولم يكن في تنفيذها ما يعرضه للخطر .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.971,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_017_s4_r3",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 3",
+     "unit_label_en": "",
+     "text_ar": "أن يخضع – وفقا لطلب الطرف الأول – للفحوص الطبية التي يرغب في إجرائها عليه قبل الالتحاق بالعمل أو أثناءه، للتحقق من خلوه من الأمراض المهنية، أو السارية .",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_018_s4_r4",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 4",
+     "unit_label_en": "",
+     "text_ar": "أن يقدم كل عون، ومساعدة دون أن يشترط لذلك أجرا إضافيا في حالات الكوارث و الأخطار التي تهدد سلامة مكان العمل أو الأشخاص العاملين فيه.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_019_s4_r5",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 5",
+     "unit_label_en": "",
+     "text_ar": "أن يلتزم الطرف الثاني بحسن السلوك، والأخلاق أثناء العمل، وفي جميع الأوقات يلتزم بالأنظمة، والأعراف، والعادات، والآداب المرعية في المملكة العربية السعودية، وكذلك بالقواعد، واللوائح، والتعليمات المعمول بها لدى الطرف الأول، ويتحمل كافة الغرامات المالية الناتجة عن مخالفته لتلك الأنظمة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.951,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_020_s4_r6",
+     "unit_label_ar": "رابعًا: التزامات الطرف الثاني — 6",
+     "unit_label_en": "",
+     "text_ar": "أن يعتني عناية كافية بالآلات، والأدوات، والمهمات المسندة إليه، والخامات المملوكة للطرف الأول؛ الموضوعة تحت تصرفه، أو التي تكون في عهدته ، وأن يعيد إلى صاحب العمل المواد غير المستهلكة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.967,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "اختياري"
+    },
+    {
+     "unit_key": "seasonal_021_s5_r1",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 1",
+     "unit_label_en": "",
+     "text_ar": "ينتهي هذا العقد بانتهاء مدته، أو بإستقالة الطرف الثاني أو باتفاق الطرفين على إنهائه بشرط موافقة الطرف الثاني كتابة.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_022_s5_r2",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 2",
+     "unit_label_en": "",
+     "text_ar": "يحق للطرف الأول فسخ العقد دون مكافأة، أو إشعار للطرف الثاني، أو تعويضه، شريطة إتاحة الفرصة للطرف الثاني في إبداء أسباب معارضته للفسخ، وذلك طبقا للحالات الواردة في المادة (الثمانون) من نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.941,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_023_s5_r3",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 3",
+     "unit_label_en": "",
+     "text_ar": "يحق للطرف الثاني ترك العمل، وإنهاء العقد دون إشعار الطرف الأول مع احتفاظه بحقه بالحصول على كافة مستحقاته، طبقا للحالات الواردة في المادة (الحادية والثمانون) من نظام العمل.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 1.0,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_024_s5_r4",
+     "unit_label_ar": "خامسًا: انتهاء العقد أو إنهاءه — 4",
+     "unit_label_en": "",
+     "text_ar": "في حال إنهاء العقد من قبل أحد الطرفين قبل انقضاء مدته دون سبب مشروع، يحق للطرف الآخر مقابل هذا الإنهاء تعويضا قدره (....) ................. ريال سعودي.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.96,
+     "ocr_similarity_en": null,
+     "pages": [
+      92
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "اختياري"
+    },
+    {
+     "unit_key": "seasonal_025_s6_r1",
+     "unit_label_ar": "سادسًا: النظام الواجب التطبيق والاختصاص القضائي — 1",
+     "unit_label_en": "",
+     "text_ar": "يخضع هذا العقد لنظام العمل السعودي، ولائحته التنفيذية، والقرارات الصادرة تنفيذا له؛ في كل ما لم يرد به نص مما يتعلق بالأحكام الخاصة بالواجبات وقواعد التأديب ، والحد الأقصى لساعات العمل ، وفترات الراحة اليومية والراحة الأسبوعية ، والتشغيل الإضافي ، والعطلات الرسمية ، وقواعد السلامة ، والصحة المهنية ، وإصابات العمل والتعويض عنها ، ويحل هذا العقد محل كافة الاتفاقيات، والعقود السابقة الشفهية منها، أو الكتابية إن وُجدت.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.903,
+     "ocr_similarity_en": null,
+     "pages": [
+      93
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_026_s6_r2",
+     "unit_label_ar": "سادسًا: النظام الواجب التطبيق والاختصاص القضائي — 2",
+     "unit_label_en": "",
+     "text_ar": "في حالة نشوء خلاف بين الطرفين حول هذا العقد، فإن الاختصاص القضائي ينعقد للجهة المختصة بنظر القضايا العمالية في المملكة العربية السعودية.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.957,
+     "ocr_similarity_en": null,
+     "pages": [
+      93
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_027_s7_r1",
+     "unit_label_ar": "سابعًا: الإخطارات والإشعارات ونسخ العقد — 1",
+     "unit_label_en": "",
+     "text_ar": "تتم الإخطارات، والإشعارات بين الطرفين كتابة على العنوان الموضح بصدر هذا العقد عن طريق البريد المسجل، أو البريد الممتاز، أو البريد الإلكتروني لكل من الطرفين، ويلتزم كل طرف بإشعار الطرف الآخر خطيًا في حال تغييره للعنوان الخاص به، أو تغيير البريد الإلكتروني، وإلا أعتبر العنوان، أو البريد الإلكتروني المدونان أعلاه، هما المعمول بهما نظامًا.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.964,
+     "ocr_similarity_en": null,
+     "pages": [
+      93
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_028_s7_r2",
+     "unit_label_ar": "سابعًا: الإخطارات والإشعارات ونسخ العقد — 2",
+     "unit_label_en": "",
+     "text_ar": "حُرر هذا العقد من نسختين أصليتين، وقد تسلم كل طرف نسخة منه للعمل بموجبها.",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.867,
+     "ocr_similarity_en": null,
+     "pages": [
+      93
+     ],
+     "verification": "ocr+image",
+     "classification_ar": "إلزامي"
+    },
+    {
+     "unit_key": "seasonal_029_signatures",
+     "unit_label_ar": "والله الموفق — توقيعات الطرفين",
+     "unit_label_en": "",
+     "text_ar": "والله الموفق\nالطرف الأول\nالإسم:\nالتوقيع:\nالختم:\nالطرف الثاني\nالإسم:\nالتوقيع:",
+     "text_en_reference": "",
+     "ocr_similarity_ar": 0.455,
+     "ocr_similarity_en": null,
+     "pages": [
+      93
+     ],
+     "verification": "ocr+image"
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "form_count": 4,
+  "unit_count": 101,
+  "bilingual_unit_count": 17,
+  "glossary_rows": 8,
+  "min_ocr_ar": 0.364,
+  "min_ocr_en": 0.914,
+  "verification_counts": {
+   "ocr": 14,
+   "ocr+image": 87
+  },
+  "anomalies": [
+   "Permanent form, English column printed numbering errors kept verbatim: '11.2' printed for both the commissions paragraph and the in-kind-benefits paragraph (Arabic 2.11 and 3.11); '11.10' printed for both the end-of-service paragraph and the costs/expenses paragraph (Arabic 10.11 and 11.11); '18.4.3' printed where 14.8.3 is meant.",
+   "Permanent form, Arabic paragraph number for clause 9.1.2 is printed with commas as '2,1,9'; kept verbatim.",
+   "Repeated continuation table headers ('First Party's Obligations 11' on pages 73-75, '12. Second Party's Obligations' on page 76, '14. General Provisions' on pages 78-79) are page-continuation headers of single clauses; each clause is captured once as one unit spanning its pages (clause 11 is one clause across pages 72-75, not three).",
+   "Casual/temporary form: printed row numbering continues across section boundaries as printed - section 'سادسًا' rows are numbered 2 and 3, section 'سابعًا' rows are numbered 4 and 5.",
+   "Part-time form, section I row 1 prints 'من اللائحة التنفيذية لنظام وتعديلاتها' (the word 'العمل' appears to be omitted in the official print); kept verbatim (zoom-verified against 350dpi render).",
+   "Part-time form, section II row 1 classification prints 'المعتادة لدى للمنشأة' (apparent doubled preposition in the official print); kept verbatim.",
+   "Dotted fill-in blanks are preserved as printed placeholders; the exact number of fill dots in long dot-runs is approximate.",
+   "The table bodies of the three short forms (pages 83-85, 87-89, 91-93) are image-rendered in the PDF with no usable text layer; their Arabic was transcribed from 300dpi renders and verified against tesseract cell-level OCR plus direct visual inspection of every page ('ocr+image').",
+   "Glossary 'Day' row: the English description column does not include the red parenthetical note that appears in the Arabic column; captured as printed.",
+   "Permanent form glossary row 'مقر العمل' and clause 15/16 headings (white-on-green / red print) score low on OCR because tesseract misses reversed-contrast text; verified directly against the rendered page images."
+  ]
+ }
+}
