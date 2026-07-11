@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 86,
+  "total_queries": 89,
   "top1_hits": 74,
-  "top3_hits": 81,
-  "top5_hits": 84,
-  "top1_accuracy": 0.8605,
-  "top3_accuracy": 0.9419,
-  "top5_accuracy": 0.9767,
-  "mrr_at_5": 0.9035,
+  "top3_hits": 84,
+  "top5_hits": 87,
+  "top1_accuracy": 0.8315,
+  "top3_accuracy": 0.9438,
+  "top5_accuracy": 0.9775,
+  "mrr_at_5": 0.8861,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -880,8 +880,8 @@
      "score": 15
     },
     {
-     "record_id": "sharia-procedure-regulation-llm-prov-634",
-     "article_number": 634,
+     "record_id": "enforcement-regulation-llm-prov-049",
+     "article_number": 49,
      "score": 10
     }
    ]
@@ -1247,14 +1247,14 @@
      "score": 29
     },
     {
-     "record_id": "inv-reg-llm-art-019",
-     "article_number": 19,
+     "record_id": "enforcement-regulation-llm-prov-051",
+     "article_number": 51,
      "score": 5
     },
     {
-     "record_id": "inv-law-llm-art-002",
-     "article_number": 2,
-     "score": 2
+     "record_id": "inv-reg-llm-art-019",
+     "article_number": 19,
+     "score": 5
     }
    ]
   },
@@ -2270,14 +2270,14 @@
      "score": 20
     },
     {
-     "record_id": "sharia-procedure-regulation-llm-prov-100",
-     "article_number": 100,
+     "record_id": "enforcement-regulation-llm-prov-019",
+     "article_number": 19,
      "score": 18
     },
     {
-     "record_id": "enforcement-law-llm-art-004",
-     "article_number": 4,
-     "score": 17
+     "record_id": "sharia-procedure-regulation-llm-prov-100",
+     "article_number": 100,
+     "score": 18
     }
    ]
   },
@@ -2600,25 +2600,25 @@
     "law_component": "law",
     "article_number": 70
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 3,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
     {
-     "record_id": "enforcement-law-llm-art-070",
-     "article_number": 70,
+     "record_id": "enforcement-regulation-llm-prov-126",
+     "article_number": 126,
+     "score": 23
+    },
+    {
+     "record_id": "enforcement-regulation-llm-prov-057",
+     "article_number": 57,
      "score": 21
     },
     {
-     "record_id": "enforcement-law-llm-art-069",
-     "article_number": 69,
-     "score": 20
-    },
-    {
-     "record_id": "enforcement-law-llm-art-060",
-     "article_number": 60,
-     "score": 18
+     "record_id": "enforcement-law-llm-art-070",
+     "article_number": 70,
+     "score": 21
     }
    ]
   },
@@ -2631,25 +2631,25 @@
     "law_component": "law",
     "article_number": 45
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 3,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
     {
-     "record_id": "enforcement-law-llm-art-045",
-     "article_number": 45,
+     "record_id": "enforcement-regulation-llm-prov-262",
+     "article_number": 262,
+     "score": 17
+    },
+    {
+     "record_id": "enforcement-regulation-llm-prov-108",
+     "article_number": 108,
      "score": 16
     },
     {
-     "record_id": "enforcement-law-llm-art-009",
-     "article_number": 9,
-     "score": 15
-    },
-    {
-     "record_id": "enforcement-law-llm-art-034",
-     "article_number": 34,
-     "score": 15
+     "record_id": "enforcement-law-llm-art-045",
+     "article_number": 45,
+     "score": 16
     }
    ]
   },
@@ -2662,11 +2662,16 @@
     "law_component": "law",
     "article_number": 73
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "enforcement-regulation-llm-prov-231",
+     "article_number": 231,
+     "score": 22
+    },
     {
      "record_id": "enforcement-law-llm-art-073",
      "article_number": 73,
@@ -2676,10 +2681,98 @@
      "record_id": "pdpl-reg-llm-art-004",
      "article_number": 4,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "mtl-001",
+   "query_ar": "تبلغ الجهة التي صدرت منها وثيقة تملك العقار بالتأشير بالحجز على سجل العقار",
+   "category": "topical",
+   "gold": {
+    "corpus": "enforcement",
+    "law_component": "implementing_regulation",
+    "article_number": 142
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "enforcement-regulation-llm-prov-142",
+     "article_number": 142,
+     "score": 35
     },
     {
-     "record_id": "pdpl-reg-llm-art-008",
-     "article_number": 8,
+     "record_id": "enforcement-law-llm-art-045",
+     "article_number": 45,
+     "score": 13
+    },
+    {
+     "record_id": "oa-llm-companies-art-112",
+     "article_number": 112,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "mtl-002",
+   "query_ar": "إذا تعذر استلام أصل صك العقار تصدر الدائرة نسخة من سجل صك العقار",
+   "category": "topical",
+   "gold": {
+    "corpus": "enforcement",
+    "law_component": "implementing_regulation",
+    "article_number": 145
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "enforcement-regulation-llm-prov-145",
+     "article_number": 145,
+     "score": 25
+    },
+    {
+     "record_id": "enforcement-regulation-llm-prov-190",
+     "article_number": 190,
+     "score": 11
+    },
+    {
+     "record_id": "enforcement-regulation-llm-prov-191",
+     "article_number": 191,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "mtl-003",
+   "query_ar": "يودع الحارس القضائي الغلة في حساب التنفيذ حسب الأحوال",
+   "category": "topical",
+   "gold": {
+    "corpus": "enforcement",
+    "law_component": "implementing_regulation",
+    "article_number": 231
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "enforcement-regulation-llm-prov-231",
+     "article_number": 231,
+     "score": 21
+    },
+    {
+     "record_id": "enforcement-regulation-llm-prov-198",
+     "article_number": 198,
+     "score": 18
+    },
+    {
+     "record_id": "enforcement-regulation-llm-prov-165",
+     "article_number": 165,
      "score": 17
     }
    ]
