@@ -48,6 +48,10 @@ LAYERS = [
      "labor", "law"),
     ("data/labor_arabic_legal_llm/labor_regulation_legal_llm_001_040.json",
      "labor", "implementing_regulation"),
+    ("data/labor_arabic_legal_llm/labor_annex1_legal_llm_001_072.json",
+     "labor", "model_work_regulation"),
+    ("data/labor_arabic_legal_llm/labor_annex1_violation_tables_llm.json",
+     "labor", "model_work_regulation"),
 ]
 
 
