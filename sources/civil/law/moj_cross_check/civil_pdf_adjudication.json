@@ -1,0 +1,254 @@
+{
+ "source_pdf": "moj_civil_official.pdf (official MOJ print of نظام المعاملات المدنية, 122 pages)",
+ "method": "Article headings located via PDF text layer (all 721 mapped), each target article region rendered at 300dpi and read visually; disputed words re-cropped at 600-700dpi where letterforms needed confirmation. Crops saved under civil_adj/.",
+ "word_variances": [
+  {
+   "article": 41,
+   "ours": "ذا",
+   "moj_db": "اذا",
+   "printed_form": "إذا",
+   "verdict": "OURS_DEFECTIVE",
+   "evidence_page": 9,
+   "crop": "civil_adj/art_41.png",
+   "note": "Print: '١- إذا تمَّ التفاوض على عقد...'. Committed text dropped the initial إ/ا of إذا. Print agrees with MOJ DB."
+  },
+  {
+   "article": 148,
+   "ours": "سيء",
+   "moj_db": "سيئ",
+   "printed_form": "سيئ",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 26,
+   "crop": "civil_adj/art_148.png; zoom civil_adj/art_148_zoom.png",
+   "note": "Print: 'وإذا كان سيئ النيَّة فإنه يُلزم...' and again 'أصبح فيه سيئ النيَّة' — hamza seated on yeh (سيئ), not trailing ء."
+  },
+  {
+   "article": 185,
+   "ours": "ذا",
+   "moj_db": "اذا",
+   "printed_form": "إذا",
+   "verdict": "OURS_DEFECTIVE",
+   "evidence_page": 31,
+   "crop": "civil_adj/art_185.png",
+   "note": "Print clause ٢: '٢- إذا وفى المدين الذي أحاطت ديونه بأمواله أحد دائنيه قبل حلول الأجل...'. Full إذا present; committed text begins the clause with bare ذا."
+  },
+  {
+   "article": 296,
+   "ours": "سيء",
+   "moj_db": "سيئ",
+   "printed_form": "سيئ",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 49,
+   "crop": "civil_adj/art_296.png",
+   "note": "Print: 'في ذمة حائزٍ سيئ النية أو ريعاً واجباً...' — سيئ."
+  },
+  {
+   "article": 335,
+   "ours": "سيء",
+   "moj_db": "سيئ",
+   "printed_form": "سيئ",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 56,
+   "crop": "civil_adj/art_335_0.png",
+   "note": "Print item د: 'النفقات الكمالية إذا كان البائع سيئ النية.' — سيئ."
+  },
+  {
+   "article": 654,
+   "ours": "الطرفين",
+   "moj_db": "الطرفان",
+   "printed_form": "الطرفان",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 108,
+   "crop": "civil_adj/art_654.png; zoom civil_adj/art_654_zoom.png",
+   "note": "Print: 'مع مراعاة الضرر الذي وقع وحال الطرفان وحسن نية كل منهما.' Zoom confirms الطرفان (alif-nun). Grammatically odd after وحال, but that is what the official print shows."
+  },
+  {
+   "article": 660,
+   "ours": "والستين",
+   "moj_db": "والستون",
+   "printed_form": "والستون",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 109,
+   "crop": "civil_adj/art_660.png",
+   "note": "Print: 'من المادة (السادسة والستون بعد الستمائة) من هذا النظام' — nominative والستون in the cross-reference."
+  },
+  {
+   "article": 663,
+   "ours": "والستين",
+   "moj_db": "والستون",
+   "printed_form": "والستون",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 109,
+   "crop": "civil_adj/art_663.png",
+   "note": "Print: 'وفقا للمادة (الحادية والستون بعد الستمائة) من هذا النظام؛' — والستون."
+  },
+  {
+   "article": 666,
+   "ours": "هذا",
+   "moj_db": "هذه",
+   "printed_form": "هذه",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 110,
+   "crop": "civil_adj/art_666.png; zoom civil_adj/art_666_zoom.png",
+   "note": "Print clause ب: 'على أن يتضمن هذه الأعذار البيانات الكافية...' Zoom confirms هذه. Note: print also spells الأعذار (hamza above) where committed text has الإعذار."
+  },
+  {
+   "article": 671,
+   "ours": "ذا",
+   "moj_db": "اذا",
+   "printed_form": "إذا",
+   "verdict": "OURS_DEFECTIVE",
+   "evidence_page": 111,
+   "crop": "civil_adj/art_671_1.png",
+   "note": "Print clause ٢: '٢- إذا كانت الزيادة أو البناء أو الغراس بعد الإعلام؛ فللشفيع...'. Full إذا present; committed clause begins with bare ذا."
+  },
+  {
+   "article": 676,
+   "ours": "سيء",
+   "moj_db": "سيئ",
+   "printed_form": "سيئ",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 111,
+   "crop": "civil_adj/art_676_0.png",
+   "note": "Print clause ٢: 'يكون الحائز سيئ النية مسؤولاً عن جميع الثمار... أصبح فيه سيئ النية' — سيئ both times."
+  },
+  {
+   "article": 677,
+   "ours": "والخمسين (both refs)",
+   "moj_db": "والخمسون (first ref)",
+   "printed_form": "والخمسون ... والخمسين",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 112,
+   "crop": "civil_adj/art_677.png; zoom civil_adj/art_677_zoom.png",
+   "note": "Print clause ٢: 'أحكام المادتين (الحادية والخمسون بعد الستمائة) و(الثانية والخمسين بعد الستمائة) من هذا النظام.' Zoom confirms first ref = والخمسون, second = والخمسين. Committed text has والخمسين in both; no word is missing in ours — it is a والخمسون→والخمسين substitution in the first reference."
+  },
+  {
+   "article": 678,
+   "ours": "سيء",
+   "moj_db": "سيئ",
+   "printed_form": "سيئ",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 112,
+   "crop": "civil_adj/art_678.png",
+   "note": "Print clause ٢: 'الحائزُ سيئ النية مسؤولٌ عن هلاك الشيء أو تلفه...' — سيئ."
+  },
+  {
+   "article": 701,
+   "ours": "عقارين",
+   "moj_db": "عقاري",
+   "printed_form": "عقاري",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 116,
+   "crop": "civil_adj/art_701_1.png; zoom civil_adj/art_701_zoom.png",
+   "note": "Print: 'إذا أنشأ مالك عقاري منفصلين ارتفاقاً ظاهراً بينهما بقي الحق...' Zoom confirms عقاري (no ن) — dual-construct spelling; ours عقارين diverges from the print."
+  },
+  {
+   "article": 705,
+   "ours": "ماذونا (مأذونًا)",
+   "moj_db": "ماذون (مأذون)",
+   "printed_form": "مأذون",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 116,
+   "crop": "civil_adj/art_705.png; zoom civil_adj/art_705_zoom.png",
+   "note": "Print: 'من أنشأ جدولاً أو مجرى ماء مأذون فيه لريِّ أرضه...' Zoom confirms مأذون without tanwin alif."
+  },
+  {
+   "article": 715,
+   "ours": "جزئ",
+   "moj_db": "جزيء",
+   "printed_form": "جزيء",
+   "verdict": "PRINT_MATCHES_MOJ",
+   "evidence_page": 118,
+   "crop": "civil_adj/art_715.png; zoom civil_adj/art_715_zoom.png",
+   "note": "Print: 'إذا جزيء العقار المُرتَفَقُ به بقي حق الارتفاق على كل جزء منه'. Zoom confirms جزيء (ج-ز-ي-ء), an unusual spelling of the verb جُزِّئ, but it is what the official print shows."
+  }
+ ],
+ "clause_numbering": {
+  "samples": [
+   {
+    "article": 3,
+    "verdict": "PRINT_HAS_NUMERALS",
+    "evidence_page": 1,
+    "crop": "civil_adj/art_3.png",
+    "printed": "١- تبدأ شخصية الإنسان... ٢- حقوق الحمل المستكن..."
+   },
+   {
+    "article": 52,
+    "verdict": "PRINT_HAS_NUMERALS",
+    "evidence_page": 11,
+    "crop": "civil_adj/art_52.png",
+    "printed": "١- تصرفات المعتوه... ٢- تصرفات المجنون..."
+   },
+   {
+    "article": 69,
+    "verdict": "PRINT_HAS_NUMERALS",
+    "evidence_page": 13,
+    "crop": "civil_adj/art_69.png",
+    "printed": "١- الغبن زيادة العوض... ٢- ليس للمتعاقد... ٣- لا يجوز الطعن..."
+   },
+   {
+    "article": 81,
+    "verdict": "PRINT_HAS_NUMERALS",
+    "evidence_page": 15,
+    "crop": "civil_adj/art_81.png",
+    "printed": "١- إذا وقع العقد باطلاً... ٢- لا تسمع دعوى البطلان..."
+   },
+   {
+    "article": 87,
+    "verdict": "PRINT_HAS_NUMERALS",
+    "evidence_page": 16,
+    "crop": "civil_adj/art_87.png",
+    "printed": "١- يصح التعاقد بالنيابة؛... ٢- تكون النيابة في التعاقد..."
+   },
+   {
+    "article": 408,
+    "verdict": "PRINT_HAS_NUMERALS",
+    "evidence_page": 67,
+    "crop": "civil_adj/art_408.png",
+    "printed": "١- يصح أن يكون المأجور عيناً... ٢- يصح أن يكون المأجور حصَّةً شائعة."
+   }
+  ],
+  "conclusion": "PRINT_HAS_NUMERALS in all 6 sampled articles: the official print numbers clauses with Arabic-Indic numerals (١- ٢- ٣-) exactly as the MOJ DB does. The committed track's unnumbered paragraphs deviate from the official print's presentation (text content itself matches)."
+ },
+ "trailing_headings": {
+  "samples": [
+   {
+    "article": 46,
+    "stripped_heading": "2- أهلية المتعاقدين",
+    "evidence_page": 10,
+    "crop": "civil_adj/art_46.png",
+    "finding": "Article body in print ends '...عُدَّت جزءاً من العقد.' The sub-heading text is NOT printed inside the article body; at the heading's structural position between art 46 and art 47 the print shows only a bare '.' placeholder line (heading text absent from this PDF export). Confirms heading is structurally separate from the article body."
+   },
+   {
+    "article": 105,
+    "stripped_heading": "ثانيًا: خيار الشرط",
+    "evidence_page": 19,
+    "crop": "civil_adj/art_105.png",
+    "finding": "Article body ends '...وتطبق على الإقالة شروط العقد.' Between art 105 and art 106 the print shows only a bare '.' placeholder; the sub-heading text itself is not printed. (Same page shows the higher-level heading 'الفرع السادس فسخ العقد وانفساخه' printed standalone in green between art 104 and art 105 — headings are standalone elements, never article-body text.)"
+   },
+   {
+    "article": 643,
+    "stripped_heading": "ثانيًا: كسب الملكية بالضمان والإرث والوصية",
+    "evidence_page": 106,
+    "crop": "civil_adj/art_643.png",
+    "finding": "Article body ends 'تسري على عقارات الدولة النصوص النظامية الخاصة بها.' Only a bare '.' placeholder appears between art 643 and art 644; sub-heading text absent from print, not part of article body."
+   },
+   {
+    "article": 719,
+    "stripped_heading": "أحكام ختامية الفصل الأول: قواعد كلية",
+    "evidence_page": 120,
+    "crop": "civil_adj/art_719_1.png",
+    "finding": "Print shows 'أحكام ختامية' (large green standalone heading) and 'الفصل الأول قواعد كلية' (bold standalone heading) between art 719 and art 720 — exactly the heading text our committed art 719 carries as trailing lines. Confirmed standalone section headings between articles, not article-body text."
+   }
+  ],
+  "conclusion": "Confirmed for all 4 samples: the headings our committed text carries as trailing lines are structural section headings between articles, never part of the article body in the official print. High-level headings (باب/فصل/فرع, e.g. after 678 and 719) are printed as standalone styled lines; low-level sub-headings (أولًا/ثانيًا/numbered sub-sections, after 46/105/643) are not printed at all in this PDF export — only a bare '.' placeholder line marks their position. MOJ DB's modeling of them as separate heading leaves matches the print's structure."
+ },
+ "anomalies": [
+  "The PDF renders every article body twice (once at ~12.6pt, once at ~10.8pt duplicate below) — an export artifact; both copies read identically and do not affect adjudication.",
+  "Low-level sub-headings are missing from the print entirely, leaving bare '.' placeholder lines between articles (seen after arts 46, 105, 643, 654 and others). Their text exists only in the MOJ DB structure.",
+  "Art 666: print spells the noun 'الأعذار' (hamza above alif) in both occurrences where the committed text has 'الإعذار' (hamza below); normalization hid this in the cross-check token diff.",
+  "Art 654 print 'وحال الطرفان' and art 701 print 'مالك عقاري منفصلين' are grammatically unusual, but the print unambiguously shows these forms (600-700dpi zooms) — the MOJ DB faithfully reproduces the print; the committed text's grammatical 'corrections' (الطرفين, عقارين) diverge from the official text.",
+  "Art 715 print 'جزيء' (noun-like spelling where verb جُزِّئ expected) — print matches MOJ DB.",
+  "All 16 word-level variances resolve in favor of the MOJ DB; in no case does the official print support the committed track's form."
+ ]
+}

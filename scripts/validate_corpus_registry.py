@@ -185,7 +185,7 @@ def main() -> int:
           civil.get("record_counts", {}).get("arabic_articles") == 721,
           f"arabic_articles={civil.get('record_counts', {}).get('arabic_articles')}")
     check("    civil_transactions_law: owner-provided official text...",
-          civil.get("official_text_status") == "OWNER_PROVIDED_OFFICIAL_TEXT",
+          civil.get("official_text_status") == "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL",
           f"official_text_status={civil.get('official_text_status')}")
 
     # [7g2] GTPL track

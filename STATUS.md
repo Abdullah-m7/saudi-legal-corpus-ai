@@ -339,14 +339,21 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`record_type = verified_arabic_article`), JSON Schema
   `schemas/investment_regulation_legal_llm.schema.json`. Validate:
   `make investment-regulation-legal-llm-validate`.
-- **Civil Transactions Law (نظام المعاملات المدنية) verified + LLM-ready** — 721 article
-  records. Owner-provided full official Arabic text (Royal Decree M/191, 29/11/1444هـ), parsed
-  deterministically into a complete 1..721 sequence (structural كتاب/باب/فصل headings separated as
-  `section_context`), zero junk, spot-corroborated verbatim against an independent public mirror
-  (Articles 1, 70). Source + verified records under `sources/civil/law/`; LLM-ready layer at
-  `data/civil_arabic_legal_llm/civil_transactions_law_legal_llm_001_721.json` (`record_type =
-  official_arabic_article`, `text_status = OWNER_PROVIDED_OFFICIAL_TEXT`); JSON Schema
-  `schemas/civil_transactions_law_legal_llm.schema.json`. Validate:
+- **Civil Transactions Law (نظام المعاملات المدنية) verified + LLM-ready + MOJ cross-checked** —
+  721 article records. Owner-provided full official Arabic text (Royal Decree M/191,
+  29/11/1444هـ), parsed deterministically into a complete 1..721 sequence, and now
+  **cross-checked article-by-article against the official MOJ legal-portal database** (721/721
+  aligned one-to-one; the law is **unamended** — every article `اصلية`). Divergences were
+  adjudicated visually on the official MOJ PDF (committed at `inputs/civil_official_pdfs/` with
+  recorded sha256; contested letterforms zoomed at 600–700dpi): **17 single-word defects in the
+  owner text corrected** (e.g. dropped-alef "ذا"→"إذا" ×3, سيء→سيئ ×7, a cross-reference case
+  ending in art 677) and **21 trailing structural headings moved** to the following article's
+  `section_context` — every change documented in the source artifact's `moj_cross_check` block
+  and enforced by the validator; full audit artifacts under `sources/civil/law/moj_cross_check/`.
+  Documented presentation difference kept as-is: the official print numbers clauses (١- ٢-) in
+  243 articles where this text uses unnumbered paragraphs (bodies verbatim). LLM-ready layer at
+  `data/civil_arabic_legal_llm/civil_transactions_law_legal_llm_001_721.json` (`text_status =
+  OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL`). Validate:
   `make civil-transactions-law-verified-validate` and
   `make civil-transactions-law-legal-llm-validate`.
 - **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`

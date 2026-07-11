@@ -85,7 +85,7 @@ def build_records():
             "article_path": "civil/law/articles/%03d" % num,
             "keywords_ar": _keywords(text),
             "search_queries_ar": _search_queries(num),
-            "text_status": "OWNER_PROVIDED_OFFICIAL_TEXT",
+            "text_status": "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL",
             "source_trust": {
                 "source_authority": "Bureau of Experts at the Council of Ministers",
                 "source_authority_ar": "هيئة الخبراء بمجلس الوزراء",
@@ -117,7 +117,7 @@ def main():
         "article_range": [1, 721],
         "source_verified_file": os.path.relpath(VERIFIED, ROOT),
         "schema": SCHEMA_REL,
-        "text_status": "OWNER_PROVIDED_OFFICIAL_TEXT",
+        "text_status": "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL",
         "not_legal_advice": True,
         "disclaimer_ar": (
             "طبقة استرجاعية جاهزة للنماذج اللغوية مبنية على النص الرسمي الكامل لنظام "

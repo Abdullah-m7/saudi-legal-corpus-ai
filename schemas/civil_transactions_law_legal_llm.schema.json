@@ -32,7 +32,7 @@
     "article_path": {"type": "string", "pattern": "^civil/law/articles/[0-9]{3}$"},
     "keywords_ar": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
     "search_queries_ar": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
-    "text_status": {"type": "string", "const": "OWNER_PROVIDED_OFFICIAL_TEXT"},
+    "text_status": {"type": "string", "const": "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL"},
     "source_trust": {
       "type": "object",
       "additionalProperties": false,

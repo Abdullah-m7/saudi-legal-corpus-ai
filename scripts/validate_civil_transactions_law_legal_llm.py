@@ -39,7 +39,7 @@ def main():
         errors.append("[1] envelope record_count %r != %d" % (layer.get("record_count"), EXPECTED))
     if len(records) != EXPECTED:
         errors.append("[1] found %d records, expected %d" % (len(records), EXPECTED))
-    if layer.get("text_status") != "OWNER_PROVIDED_OFFICIAL_TEXT":
+    if layer.get("text_status") != "OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL":
         errors.append("[1] envelope text_status wrong")
     if layer.get("not_legal_advice") is not True:
         errors.append("[1] envelope not_legal_advice must be True")
