@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 1963
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571}
+EXPECTED_TOTAL = 2092
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 129}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -40,6 +40,7 @@ SANITY = [
     ("استقبال وإيواء العمالة المستقدمة", "labor", 52),
     ("الترتيبات التيسيرية للإعاقات البصرية", "labor", 4),
     ("نموذج عقد عمل موسمي", "labor", None),
+    ("حجية الدليل الرقمي في الإثبات", "evidence", 55),
 ]
 
 
@@ -91,6 +92,7 @@ def main():
         "data/labor_arabic_legal_llm/labor_annex4_legal_llm_001_072.json",
         "data/labor_arabic_legal_llm/labor_annex2_accessibility_tables_llm.json",
         "data/labor_arabic_legal_llm/labor_annex5_contract_forms_llm.json",
+        "data/evidence_arabic_legal_llm/evidence_law_legal_llm_001_129.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -124,7 +126,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 129; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 

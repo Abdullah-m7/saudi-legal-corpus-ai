@@ -1,7 +1,7 @@
 {
  "eval_id": "corpus-unified-retrieval-eval-v1",
  "description_ar": "حزمة تقييم استرجاع فوق الفهرس الموحّد: استعلامات عربية واقعية بإجابات ذهبية (قانون + مكوّن + مادة). الإجابات الذهبية مُثبتة يدويًّا من نصوص المواد نفسها (مواد تعريفية أو مواد عناوينها مطابقة للمفهوم). القياس صادق: بعض الاستعلامات صعبة عمدًا وقد لا تصيب top-1.",
- "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output. Expansion v2 (gtp-001..007, lab-001..014): each gold likewise confirmed by reading the article's committed text first and writing the query from its own wording — covering the GTPL and all eight Labor components that previously had no gold coverage.",
+ "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output. Expansion v2 (gtp-001..007, lab-001..014): each gold likewise confirmed by reading the article's committed text first and writing the query from its own wording — covering the GTPL and all eight Labor components that previously had no gold coverage. Expansion v3 (ith-001..003): Evidence Law golds, same text-first methodology.",
  "queries": [
   {
    "query_id": "civ-001",
@@ -611,6 +611,36 @@
     "corpus": "labor",
     "law_component": "model_contract_forms",
     "article_number": 18
+   }
+  },
+  {
+   "query_id": "ith-001",
+   "query_ar": "حجية الدليل الرقمي حكم الإثبات بالكتابة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "law",
+    "article_number": 55
+   }
+  },
+  {
+   "query_id": "ith-002",
+   "query_ar": "تعريف اليمين الحاسمة واليمين المتممة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "law",
+    "article_number": 92
+   }
+  },
+  {
+   "query_id": "ith-003",
+   "query_ar": "حجية الأمر المقضي فيما فصلت فيه من الحقوق",
+   "category": "topical",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "law",
+    "article_number": 86
    }
   }
  ]

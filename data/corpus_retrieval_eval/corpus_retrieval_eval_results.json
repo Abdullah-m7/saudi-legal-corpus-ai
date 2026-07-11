@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 61,
-  "top1_hits": 52,
-  "top3_hits": 57,
-  "top5_hits": 59,
-  "top1_accuracy": 0.8525,
-  "top3_accuracy": 0.9344,
-  "top5_accuracy": 0.9672,
-  "mrr_at_5": 0.8954,
+  "total_queries": 64,
+  "top1_hits": 54,
+  "top3_hits": 60,
+  "top5_hits": 62,
+  "top1_accuracy": 0.8438,
+  "top3_accuracy": 0.9375,
+  "top5_accuracy": 0.9688,
+  "mrr_at_5": 0.8898,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1906,6 +1906,99 @@
      "record_id": "labor-annex5-llm-008-permanent",
      "article_number": 8,
      "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "ith-001",
+   "query_ar": "حجية الدليل الرقمي حكم الإثبات بالكتابة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "law",
+    "article_number": 55
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "evidence-law-llm-art-055",
+     "article_number": 55,
+     "score": 29
+    },
+    {
+     "record_id": "evidence-law-llm-art-063",
+     "article_number": 63,
+     "score": 20
+    },
+    {
+     "record_id": "evidence-law-llm-art-054",
+     "article_number": 54,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "ith-002",
+   "query_ar": "تعريف اليمين الحاسمة واليمين المتممة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "law",
+    "article_number": 92
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "evidence-law-llm-art-105",
+     "article_number": 105,
+     "score": 12
+    },
+    {
+     "record_id": "evidence-law-llm-art-106",
+     "article_number": 106,
+     "score": 12
+    },
+    {
+     "record_id": "evidence-law-llm-art-092",
+     "article_number": 92,
+     "score": 9
+    }
+   ]
+  },
+  {
+   "query_id": "ith-003",
+   "query_ar": "حجية الأمر المقضي فيما فصلت فيه من الحقوق",
+   "category": "topical",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "law",
+    "article_number": 86
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "evidence-law-llm-art-086",
+     "article_number": 86,
+     "score": 20
+    },
+    {
+     "record_id": "oa-llm-companies-art-107",
+     "article_number": 107,
+     "score": 12
+    },
+    {
+     "record_id": "oa-llm-companies-art-110",
+     "article_number": 110,
+     "score": 12
     }
    ]
   }

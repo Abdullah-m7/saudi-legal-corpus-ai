@@ -10,12 +10,12 @@
     "forms_and_appendices_counted": true,
     "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) = 2132",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) = 2261",
     "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
-    "formula_total_registry_counted": "total_primary_arabic_governing(2132) + total_reference(614) + total_internal_reference(281) = 3027",
+    "formula_total_registry_counted": "total_primary_arabic_governing(2261) + total_reference(614) + total_internal_reference(281) = 3156",
     "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (1963) is a projection of counted records and is NOT added to totals.",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) and Evidence Law (129) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (2092) is a projection of counted records and is NOT added to totals.",
     "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "primary_arabic_governing_records_included": true
   },
@@ -29,14 +29,14 @@
     "not_legal_advice": true,
     "not_official_translation": true
   },
-  "registry_version": "2.0",
+  "registry_version": "2.1",
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 2132,
+  "total_primary_arabic_governing_records": 2261,
   "total_reference_records": 614,
-  "total_registry_counted_records": 3027,
-  "total_tracks": 18,
+  "total_registry_counted_records": 3156,
+  "total_tracks": 19,
   "tracks": [
     {
       "boundaries": {
@@ -865,6 +865,47 @@
       "validator_targets": [
         "make labor-annex5-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/evidence/law/official_source/evidence_law_official_source.json",
+        "sources/evidence/law/verified/evidence_law_verified_records.jsonl",
+        "data/evidence_arabic_legal_llm/evidence_law_legal_llm_001_129.json"
+      ],
+      "display_name_ar": "نظام الإثبات",
+      "display_name_en": "Saudi Evidence Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/evidence_arabic_legal_llm/evidence_law_legal_llm_001_129.json",
+          "governing": true,
+          "record_count": 129,
+          "status": "complete"
+        }
+      },
+      "notes": "Evidence Law M/43 dated 26/5/1443H (129 articles in 11 chapters incl. الدليل الرقمي), unamended (every article 'اصلية'). All articles fetched from the official MOJ legal-portal database and cross-verified against the official MOJ PDF from the same portal (min similarity 0.90, mean 0.995, zero unexplained differences; PDF committed with recorded sha256). Arabic governs.",
+      "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+      "record_counts": {
+        "arabic_articles": 129,
+        "total": 129
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "status": "complete",
+      "track_id": "evidence_law",
+      "validator_targets": [
+        "make evidence-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -873,13 +914,14 @@
     "records_per_corpus": {
       "civil": 721,
       "companies_law": 281,
+      "evidence": 129,
       "gtpl": 256,
       "investment": 53,
       "labor": 571,
       "pdpl": 81
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 1963,
+    "total_records": 2092,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

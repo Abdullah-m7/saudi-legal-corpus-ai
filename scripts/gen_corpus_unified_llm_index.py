@@ -60,6 +60,8 @@ LAYERS = [
      "labor", "accessibility_arrangements"),
     ("data/labor_arabic_legal_llm/labor_annex5_contract_forms_llm.json",
      "labor", "model_contract_forms"),
+    ("data/evidence_arabic_legal_llm/evidence_law_legal_llm_001_129.json",
+     "evidence", "law"),
 ]
 
 
