@@ -11,7 +11,7 @@
   "top1_accuracy": 0.875,
   "top3_accuracy": 0.975,
   "top5_accuracy": 0.975,
-  "mrr_at_5": 0.9167,
+  "mrr_at_5": 0.9125,
   "misses_top5": [
    "civ-004"
   ]
@@ -956,11 +956,16 @@
     "law_component": "law",
     "article_number": 12
    },
-   "gold_rank": 2,
+   "gold_rank": 3,
    "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "labor-law-llm-art-042",
+     "article_number": 42,
+     "score": 5
+    },
     {
      "record_id": "gtpl-law-llm-art-017",
      "article_number": 17,
