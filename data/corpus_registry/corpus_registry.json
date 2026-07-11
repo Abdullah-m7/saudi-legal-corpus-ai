@@ -10,12 +10,12 @@
     "forms_and_appendices_counted": true,
     "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) = 4401",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) + judiciary_law(85) = 4486",
     "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
-    "formula_total_registry_counted": "total_primary_arabic_governing(4401) + total_reference(614) + total_internal_reference(281) = 5296",
+    "formula_total_registry_counted": "total_primary_arabic_governing(4486) + total_reference(614) + total_internal_reference(281) = 5381",
     "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), and Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (4232) is a projection of counted records and is NOT added to totals.",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts), and Judiciary Arabic (85 law, the foundational court-organization statute) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (4317) is a projection of counted records and is NOT added to totals.",
     "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "primary_arabic_governing_records_included": true
   },
@@ -29,14 +29,14 @@
     "not_legal_advice": true,
     "not_official_translation": true
   },
-  "registry_version": "2.9",
+  "registry_version": "3.0",
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 4401,
+  "total_primary_arabic_governing_records": 4486,
   "total_reference_records": 614,
-  "total_registry_counted_records": 5296,
-  "total_tracks": 30,
+  "total_registry_counted_records": 5381,
+  "total_tracks": 31,
   "tracks": [
     {
       "boundaries": {
@@ -1414,6 +1414,53 @@
       "validator_targets": [
         "make enforcement-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/judiciary/law/official_source/judiciary_law_official_source.json",
+        "sources/judiciary/law/verified/judiciary_law_verified_records.jsonl",
+        "data/judiciary_arabic_legal_llm/judiciary_law_legal_llm_001_085.json"
+      ],
+      "display_name_ar": "نظام القضاء",
+      "display_name_en": "Law of the Judiciary",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/judiciary_arabic_legal_llm/judiciary_law_legal_llm_001_085.json",
+          "governing": true,
+          "record_count": 85,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of the Judiciary M/78 dated 19/9/1428H (85 records: complete 1..85, no مكرر). The FOUNDATIONAL court-organization statute — its Article 9 defines the court structure (المحكمة العليا, محاكم الاستئناف, and five first-degree courts: العامة/الجزائية/الأحوال الشخصية/التجارية/العمالية) and the المجلس الأعلى للقضاء referenced throughout the procedure and enforcement laws. In force; per its Article 85 it replaces the former Law of the Judiciary (M/64, 14/7/1395H). CONSOLIDATED AMENDED but lightly: 82 اصلية / 3 معدلة (arts 5, 35, 72, by M/95) / 0 ملغاة / 0 مضافة; each amended article carries its history and its current amended body matches the PDF. The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence). Fetched article-by-article from the official MOJ legal-portal database and cross-verified against the official MOJ PDF from the same portal (82/85 outright, mean 0.990; the 3 flagged — art 9 the court-structure enumeration, art 71 numbered dash clauses, art 85 the one-line closing article — visually adjudicated verbatim on pages 2/11/14; PDF committed with recorded sha256). No decorative in-word tatweel present (all tatweel are the هـ enumerator or space-bounded enumerator dashes, kept). Arabic governs; not legal advice.",
+      "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+      "record_counts": {
+        "arabic_articles": 85,
+        "legal_status_breakdown": {
+          "اصلية": 82,
+          "مضافة": 0,
+          "معدلة": 3,
+          "ملغاة": 0
+        },
+        "total": 85
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "status": "complete",
+      "track_id": "judiciary_law",
+      "validator_targets": [
+        "make judiciary-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -1427,13 +1474,14 @@
       "evidence": 322,
       "gtpl": 256,
       "investment": 53,
+      "judiciary": 85,
       "labor": 571,
       "pdpl": 81,
       "personal_status": 293,
       "sharia_procedure": 880
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 4232,
+    "total_records": 4317,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

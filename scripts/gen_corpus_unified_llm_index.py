@@ -84,6 +84,8 @@ LAYERS = [
      "enforcement", "law"),
     ("data/enforcement_arabic_legal_llm/enforcement_regulation_legal_llm_001_273.json",
      "enforcement", "implementing_regulation"),
+    ("data/judiciary_arabic_legal_llm/judiciary_law_legal_llm_001_085.json",
+     "judiciary", "law"),
 ]
 
 
