@@ -125,6 +125,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         labor-law-track-validate \
         labor-regulation-track-validate \
         labor-annex1-track-validate \
+        labor-annex34-tracks-validate \
         qa-gate
 
 help:
@@ -906,6 +907,10 @@ labor-regulation-track-validate:
 # -- Labor Annex 1 (model work organization regulation) track validator --
 labor-annex1-track-validate:
 	$(PY) scripts/validate_labor_annex1_track.py
+
+# -- Labor Annex 3 + 4 tracks validator --
+labor-annex34-tracks-validate:
+	$(PY) scripts/validate_labor_annex34_tracks.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

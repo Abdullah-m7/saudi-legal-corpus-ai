@@ -27,19 +27,19 @@ class TestRegistryStructure:
         assert os.path.isfile(REGISTRY_PATH)
 
     def test_registry_version(self, registry):
-        assert registry["registry_version"] == "1.7"
+        assert registry["registry_version"] == "1.8"
 
     def test_repository(self, registry):
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 14
+        assert registry["total_tracks"] == 16
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 1930
+        assert registry["total_primary_arabic_governing_records"] == 2022
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 2825
+        assert registry["total_registry_counted_records"] == 2917
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -83,6 +83,16 @@ class TestTracks:
         assert "labor_law" in ids
         assert "labor_implementing_regulation" in ids
         assert "labor_model_work_regulation" in ids
+        assert "labor_saudization_mediation_rules" in ids
+        assert "labor_recruitment_services_rules" in ids
+
+    def test_labor_annex34_counts(self, registry):
+        a3 = next(t for t in registry["tracks"] if t["track_id"] == "labor_saudization_mediation_rules")
+        assert a3["record_counts"]["arabic_articles"] == 20
+        a4 = next(t for t in registry["tracks"] if t["track_id"] == "labor_recruitment_services_rules")
+        assert a4["record_counts"]["arabic_articles"] == 72
+        for t in (a3, a4):
+            assert t["official_text_status"] == "HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED"
 
     def test_labor_annex1_counts(self, registry):
         a1 = next(t for t in registry["tracks"] if t["track_id"] == "labor_model_work_regulation")
