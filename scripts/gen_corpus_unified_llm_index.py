@@ -62,6 +62,12 @@ LAYERS = [
      "labor", "model_contract_forms"),
     ("data/evidence_arabic_legal_llm/evidence_law_legal_llm_001_129.json",
      "evidence", "law"),
+    ("data/evidence_arabic_legal_llm/evidence_electronic_rules_legal_llm_001_024.json",
+     "evidence", "electronic_procedures_rules"),
+    ("data/evidence_arabic_legal_llm/evidence_procedural_manuals_legal_llm_001_135.json",
+     "evidence", "procedural_manuals"),
+    ("data/evidence_arabic_legal_llm/evidence_expertise_rules_legal_llm_001_034.json",
+     "evidence", "expertise_rules"),
 ]
 
 
