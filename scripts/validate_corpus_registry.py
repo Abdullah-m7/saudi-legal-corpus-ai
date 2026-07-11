@@ -66,6 +66,7 @@ REQUIRED_TRACK_IDS = [
     "labor_saudization_mediation_rules",
     "labor_recruitment_services_rules",
     "labor_accessibility_arrangements",
+    "labor_model_contract_forms",
 ]
 
 CHECKS: list[str] = []
@@ -108,9 +109,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 17 tracks
+    # [3] 18 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 17 tracks present...", len(track_ids) == 17 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 18 tracks present...", len(track_ids) == 18 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -242,10 +243,20 @@ def main() -> int:
           and labora2.get("record_counts", {}).get("table_rows") == 40
           and labora2.get("official_text_status") == "HRSD_OFFICIAL_PDF_ACTUALTEXT_OCR_IMAGE_CROSS_CHECKED",
           f"counts={labora2.get('record_counts')}")
+    labora5 = tracks_by_id.get("labor_model_contract_forms", {})
+    check("[7g10] labor_model_contract_forms: 102 records (101 units + glossary)...",
+          labora5.get("record_counts", {}).get("total") == 102
+          and labora5.get("record_counts", {}).get("form_units") == 101
+          and labora5.get("official_text_status") == "HRSD_OFFICIAL_PDF_OCR_IMAGE_CROSS_CHECKED_BILINGUAL_FORM",
+          f"counts={labora5.get('record_counts')}")
+    check("    labor_model_contract_forms: embedded English non-governing...",
+          labora5.get("language_layers", {}).get("english", {}).get("governing") is False
+          and labora5.get("language_layers", {}).get("english", {}).get("role") == "reference_guidance_only",
+          f"english={labora5.get('language_layers', {}).get('english', {}).get('role')}")
 
     # [7g] unified retrieval index present (projection not counted in totals)
     uix = registry.get("unified_retrieval_index", {})
-    check("[7g] unified retrieval index: 1861 records...", uix.get("total_records") == 1861,
+    check("[7g] unified retrieval index: 1963 records...", uix.get("total_records") == 1963,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -307,8 +318,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 2030...",
-          registry.get("total_primary_arabic_governing_records") == 2030,
+    check("[19a] total_primary_arabic_governing_records == 2132...",
+          registry.get("total_primary_arabic_governing_records") == 2132,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -323,8 +334,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 2925...",
-          registry.get("total_registry_counted_records") == 2925,
+    check("[19e] total_registry_counted_records == 3027...",
+          registry.get("total_registry_counted_records") == 3027,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -348,7 +359,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"2030 + 614 + 281 = 2925")
+          f"2132 + 614 + 281 = 3027")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -366,21 +377,22 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 17 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 18 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
               "civil_transactions_law, gtpl_law, gtpl_implementing_regulation, labor_law, "
               "labor_implementing_regulation, labor_model_work_regulation, "
               "labor_saudization_mediation_rules, labor_recruitment_services_rules, "
-              "labor_accessibility_arrangements). "
-              "Primary Arabic 2030, reference 614, registry-counted 2925. All counts correct, all referenced paths "
+              "labor_accessibility_arrangements, labor_model_contract_forms). "
+              "Primary Arabic 2132, reference 614, registry-counted 3027. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
-              "text; Civil is owner-provided official text; the seven Labor tracks are the official "
+              "text; Civil is owner-provided official text; the eight Labor tracks are the official "
               "HRSD texts, cross-checked (BOE captures / OCR + law quotes / page images / "
-              "ActualText). Unified retrieval index (1861) projects counted records. Read-only.")
+              "ActualText), completing the full HRSD regulation document (annexes 1-5). Unified "
+              "retrieval index (1963) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)
