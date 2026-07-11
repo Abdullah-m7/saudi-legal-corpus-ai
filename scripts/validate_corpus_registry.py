@@ -74,6 +74,7 @@ REQUIRED_TRACK_IDS = [
     "personal_status_law",
     "personal_status_implementing_regulation",
     "sharia_procedure_law",
+    "sharia_procedure_implementing_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -116,9 +117,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 25 tracks
+    # [3] 26 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 25 tracks present...", len(track_ids) == 25 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 26 tracks present...", len(track_ids) == 26 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -301,7 +302,20 @@ def main() -> int:
           sharia_counts.get("legal_status_breakdown") == {"اصلية": 153, "معدلة": 14, "ملغاة": 75, "مضافة": 1},
           f"breakdown={sharia_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 2821 records...", uix.get("total_records") == 2821,
+    # [7g16] Sharia Procedure implementing regulation (dual-status, consolidated)
+    sreg = tracks_by_id.get("sharia_procedure_implementing_regulation", {})
+    sreg_counts = sreg.get("record_counts", {})
+    check("[7g16] sharia_procedure_implementing_regulation: 637 provisions...",
+          sreg_counts.get("arabic_articles") == 637
+          and sreg.get("official_text_status") == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+          f"counts={sreg_counts}")
+    check("    sharia regulation: dual-status breakdowns + 149 superseded...",
+          sreg_counts.get("pdf_document_status_breakdown") == {"اصلية": 536, "معدلة": 17, "ملغاة": 63, "مضافة": 21}
+          and sreg_counts.get("portal_legal_status_breakdown") == {"اصلية": 388, "معدلة": 16, "ملغاة": 212, "مضافة": 21}
+          and sreg_counts.get("superseded_by_evidence_law") == 149,
+          f"pdf={sreg_counts.get('pdf_document_status_breakdown')} portal={sreg_counts.get('portal_legal_status_breakdown')} superseded={sreg_counts.get('superseded_by_evidence_law')}")
+
+    check("[7g] unified retrieval index: 3458 records...", uix.get("total_records") == 3458,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -363,8 +377,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 2990...",
-          registry.get("total_primary_arabic_governing_records") == 2990,
+    check("[19a] total_primary_arabic_governing_records == 3627...",
+          registry.get("total_primary_arabic_governing_records") == 3627,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -379,8 +393,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 3885...",
-          registry.get("total_registry_counted_records") == 3885,
+    check("[19e] total_registry_counted_records == 4522...",
+          registry.get("total_registry_counted_records") == 4522,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -404,7 +418,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"2990 + 614 + 281 = 3885")
+          f"3627 + 614 + 281 = 4522")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -422,7 +436,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 25 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 26 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -432,8 +446,9 @@ def print_results() -> None:
               "labor_accessibility_arrangements, labor_model_contract_forms, evidence_law, "
               "evidence_electronic_procedures_rules, evidence_procedural_manuals, "
               "evidence_expertise_rules, personal_status_law, "
-              "personal_status_implementing_regulation, sharia_procedure_law). "
-              "Primary Arabic 2990, reference 614, registry-counted 3885. All counts correct, all referenced paths "
+              "personal_status_implementing_regulation, sharia_procedure_law, "
+              "sharia_procedure_implementing_regulation). "
+              "Primary Arabic 3627, reference 614, registry-counted 4522. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -443,8 +458,10 @@ def print_results() -> None:
               "Evidence tracks are the official MOJ portal database cross-checked against the "
               "official MOJ PDFs, as are the Personal Status law + implementing regulation and the "
               "Law of Sharia Procedure (243 records, consolidated amended law: 153 اصلية / 14 معدلة "
-              "/ 75 ملغاة / 1 مضافة, repealed articles flagged not deleted). "
-              "Unified retrieval index (2821) projects counted records. Read-only.")
+              "/ 75 ملغاة / 1 مضافة) and its implementing regulation (637 records, dual-status: PDF "
+              "badge governs, portal legal status + 149 Evidence-Law-superseded provisions also "
+              "recorded; repealed/superseded provisions flagged not deleted). "
+              "Unified retrieval index (3458) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)

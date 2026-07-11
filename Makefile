@@ -132,6 +132,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         evidence-companions-tracks-validate \
         personal-status-tracks-validate \
         sharia-procedure-law-track-validate \
+        sharia-procedure-regulation-track-validate \
         qa-gate
 
 help:
@@ -941,6 +942,10 @@ personal-status-tracks-validate:
 # -- Law of Sharia Procedure track validator --
 sharia-procedure-law-track-validate:
 	$(PY) scripts/validate_sharia_procedure_law_track.py
+
+# -- Sharia Procedure implementing-regulation track validator --
+sharia-procedure-regulation-track-validate:
+	$(PY) scripts/validate_sharia_procedure_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
