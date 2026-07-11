@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 2285
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322}
+EXPECTED_TOTAL = 2578
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -43,6 +43,9 @@ SANITY = [
     ("حجية الدليل الرقمي في الإثبات", "evidence", 55),
     ("التوقيع الرقمي في إجراءات الإثبات", "evidence", 2),
     ("قيد الخبراء أمام المحاكم", "evidence", 2),
+    ("الخطبة والوعد بالزواج", "personal_status", 1),
+    ("المهر ملك للمرأة", "personal_status", 38),
+    ("انتفاء الخلوة بين الزوجين", "personal_status", 1),
 ]
 
 
@@ -98,6 +101,8 @@ def main():
         "data/evidence_arabic_legal_llm/evidence_electronic_rules_legal_llm_001_024.json",
         "data/evidence_arabic_legal_llm/evidence_procedural_manuals_legal_llm_001_135.json",
         "data/evidence_arabic_legal_llm/evidence_expertise_rules_legal_llm_001_034.json",
+        "data/personal_status_arabic_legal_llm/personal_status_law_legal_llm_001_252.json",
+        "data/personal_status_arabic_legal_llm/personal_status_regulation_legal_llm_001_041.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -131,7 +136,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 

@@ -130,6 +130,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         labor-annex5-track-validate \
         evidence-law-track-validate \
         evidence-companions-tracks-validate \
+        personal-status-tracks-validate \
         qa-gate
 
 help:
@@ -931,6 +932,10 @@ evidence-law-track-validate:
 # -- Evidence Law companion tracks validator (electronic rules + manuals + expertise) --
 evidence-companions-tracks-validate:
 	$(PY) scripts/validate_evidence_companions_tracks.py
+
+# -- Personal Status Law + regulation tracks validator --
+personal-status-tracks-validate:
+	$(PY) scripts/validate_personal_status_tracks.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

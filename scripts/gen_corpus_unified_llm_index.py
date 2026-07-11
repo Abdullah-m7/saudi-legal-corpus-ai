@@ -68,6 +68,10 @@ LAYERS = [
      "evidence", "procedural_manuals"),
     ("data/evidence_arabic_legal_llm/evidence_expertise_rules_legal_llm_001_034.json",
      "evidence", "expertise_rules"),
+    ("data/personal_status_arabic_legal_llm/personal_status_law_legal_llm_001_252.json",
+     "personal_status", "law"),
+    ("data/personal_status_arabic_legal_llm/personal_status_regulation_legal_llm_001_041.json",
+     "personal_status", "implementing_regulation"),
 ]
 
 

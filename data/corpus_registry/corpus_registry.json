@@ -10,12 +10,12 @@
     "forms_and_appendices_counted": true,
     "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) = 2454",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) = 2747",
     "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
-    "formula_total_registry_counted": "total_primary_arabic_governing(2454) + total_reference(614) + total_internal_reference(281) = 3349",
+    "formula_total_registry_counted": "total_primary_arabic_governing(2747) + total_reference(614) + total_internal_reference(281) = 3642",
     "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) and Evidence Arabic (129+24+135+34=322) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (2285) is a projection of counted records and is NOT added to totals.",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), and Personal Status Arabic (252+41=293) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (2578) is a projection of counted records and is NOT added to totals.",
     "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "primary_arabic_governing_records_included": true
   },
@@ -29,14 +29,14 @@
     "not_legal_advice": true,
     "not_official_translation": true
   },
-  "registry_version": "2.2",
+  "registry_version": "2.3",
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 2454,
+  "total_primary_arabic_governing_records": 2747,
   "total_reference_records": 614,
-  "total_registry_counted_records": 3349,
-  "total_tracks": 22,
+  "total_registry_counted_records": 3642,
+  "total_tracks": 24,
   "tracks": [
     {
       "boundaries": {
@@ -1035,6 +1035,90 @@
       "validator_targets": [
         "make evidence-companions-tracks-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/personal_status/law/official_source/personal_status_law_official_source.json",
+        "sources/personal_status/law/verified/personal_status_law_verified_records.jsonl",
+        "data/personal_status_arabic_legal_llm/personal_status_law_legal_llm_001_252.json"
+      ],
+      "display_name_ar": "نظام الأحوال الشخصية",
+      "display_name_en": "Saudi Personal Status Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/personal_status_arabic_legal_llm/personal_status_law_legal_llm_001_252.json",
+          "governing": true,
+          "record_count": 252,
+          "status": "complete"
+        }
+      },
+      "notes": "Personal Status Law M/73 dated 6/8/1443H (252 articles in 8 chapters), unamended (every article 'اصلية'). Fetched article-by-article from the official MOJ legal-portal database and cross-verified against the official MOJ PDF (min similarity 0.84, mean 0.995; the 3 sub-0.90 articles were visually adjudicated on the PDF as OCR-channel artifacts — stored text matches the print verbatim). One decorative in-word tatweel removed (art 87); the official 'هـ' fifth-item enumerator tatweel kept. Arabic governs.",
+      "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+      "record_counts": {
+        "arabic_articles": 252,
+        "total": 252
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "status": "complete",
+      "track_id": "personal_status_law",
+      "validator_targets": [
+        "make personal-status-tracks-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "is_general": false,
+        "is_specialized": false,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "implementing_regulation",
+      "data_paths": [
+        "sources/personal_status/regulation/official_source/personal_status_regulation_official_source.json",
+        "sources/personal_status/regulation/verified/personal_status_regulation_verified_records.jsonl",
+        "data/personal_status_arabic_legal_llm/personal_status_regulation_legal_llm_001_041.json"
+      ],
+      "display_name_ar": "لائحة نظام الأحوال الشخصية",
+      "display_name_en": "Implementing Regulation of the Personal Status Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/personal_status_arabic_legal_llm/personal_status_regulation_legal_llm_001_041.json",
+          "governing": true,
+          "record_count": 41,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Personal Status Law (41 articles), Supreme Order 59641 of 1446H, unamended. Fetched from the official MOJ portal database and cross-verified against the official MOJ PDF (min 0.95, mean 0.998). Arabic governs.",
+      "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+      "record_counts": {
+        "arabic_articles": 41,
+        "total": 41
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Justice / وزارة العدل (Supreme Order 59641, 17/8/1446H; official legal portal)",
+      "status": "complete",
+      "track_id": "personal_status_implementing_regulation",
+      "validator_targets": [
+        "make personal-status-tracks-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -1047,10 +1131,11 @@
       "gtpl": 256,
       "investment": 53,
       "labor": 571,
-      "pdpl": 81
+      "pdpl": 81,
+      "personal_status": 293
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 2285,
+    "total_records": 2578,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
