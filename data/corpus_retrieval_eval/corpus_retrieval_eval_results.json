@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 80,
-  "top1_hits": 69,
-  "top3_hits": 75,
-  "top5_hits": 78,
-  "top1_accuracy": 0.8625,
-  "top3_accuracy": 0.9375,
-  "top5_accuracy": 0.975,
-  "mrr_at_5": 0.9025,
+  "total_queries": 83,
+  "top1_hits": 71,
+  "top3_hits": 78,
+  "top5_hits": 81,
+  "top1_accuracy": 0.8554,
+  "top3_accuracy": 0.9398,
+  "top5_accuracy": 0.9759,
+  "mrr_at_5": 0.9,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2425,13 +2425,13 @@
      "score": 13
     },
     {
-     "record_id": "criminal-procedure-law-llm-art-109",
-     "article_number": 109,
+     "record_id": "criminal-procedure-regulation-llm-art-080",
+     "article_number": 80,
      "score": 11
     },
     {
-     "record_id": "labor-annex5-llm-007-permanent",
-     "article_number": 7,
+     "record_id": "criminal-procedure-law-llm-art-109",
+     "article_number": 109,
      "score": 11
     }
    ]
@@ -2445,25 +2445,25 @@
     "law_component": "law",
     "article_number": 153
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 26
+    },
     {
      "record_id": "criminal-procedure-law-llm-art-153",
      "article_number": 153,
      "score": 26
     },
     {
-     "record_id": "criminal-procedure-law-llm-art-022",
-     "article_number": 22,
-     "score": 21
-    },
-    {
-     "record_id": "criminal-procedure-law-llm-art-017",
-     "article_number": 17,
-     "score": 19
+     "record_id": "criminal-procedure-regulation-llm-art-103",
+     "article_number": 103,
+     "score": 22
     }
    ]
   },
@@ -2487,14 +2487,107 @@
      "score": 11
     },
     {
-     "record_id": "criminal-procedure-law-llm-art-046",
-     "article_number": 46,
+     "record_id": "criminal-procedure-regulation-llm-art-028",
+     "article_number": 28,
      "score": 10
     },
     {
-     "record_id": "criminal-procedure-law-llm-art-087",
-     "article_number": 87,
-     "score": 6
+     "record_id": "criminal-procedure-law-llm-art-046",
+     "article_number": 46,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "mjr-001",
+   "query_ar": "ندب الخبير لإبداء رأيه في مسألة متعلقة بالتحقيق",
+   "category": "topical",
+   "gold": {
+    "corpus": "criminal_procedure",
+    "law_component": "implementing_regulation",
+    "article_number": 50
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-050",
+     "article_number": 50,
+     "score": 16
+    },
+    {
+     "record_id": "evidence-law-llm-art-111",
+     "article_number": 111,
+     "score": 11
+    },
+    {
+     "record_id": "oa-llm-companies-art-265",
+     "article_number": 265,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "mjr-002",
+   "query_ar": "يجوز استعمال المخدر عند تنفيذ القطع حدا والقصاص فيما دون النفس",
+   "category": "topical",
+   "gold": {
+    "corpus": "criminal_procedure",
+    "law_component": "implementing_regulation",
+    "article_number": 164
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-164",
+     "article_number": 164,
+     "score": 27
+    },
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-157",
+     "article_number": 157,
+     "score": 12
+    },
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-156",
+     "article_number": 156,
+     "score": 9
+    }
+   ]
+  },
+  {
+   "query_id": "mjr-003",
+   "query_ar": "جلد الرجل قائما والمرأة قاعدة عند تنفيذ عقوبة الجلد",
+   "category": "topical",
+   "gold": {
+    "corpus": "criminal_procedure",
+    "law_component": "implementing_regulation",
+    "article_number": 165
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-165",
+     "article_number": 165,
+     "score": 20
+    },
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-157",
+     "article_number": 157,
+     "score": 11
+    },
+    {
+     "record_id": "criminal-procedure-regulation-llm-art-166",
+     "article_number": 166,
+     "score": 11
     }
    ]
   }

@@ -78,6 +78,8 @@ LAYERS = [
      "sharia_procedure", "implementing_regulation"),
     ("data/criminal_procedure_arabic_legal_llm/criminal_procedure_law_legal_llm_001_222.json",
      "criminal_procedure", "law"),
+    ("data/criminal_procedure_arabic_legal_llm/criminal_procedure_regulation_legal_llm_001_181.json",
+     "criminal_procedure", "implementing_regulation"),
 ]
 
 

@@ -27,19 +27,19 @@ class TestRegistryStructure:
         assert os.path.isfile(REGISTRY_PATH)
 
     def test_registry_version(self, registry):
-        assert registry["registry_version"] == "2.6"
+        assert registry["registry_version"] == "2.7"
 
     def test_repository(self, registry):
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 27
+        assert registry["total_tracks"] == 28
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 3849
+        assert registry["total_primary_arabic_governing_records"] == 4030
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 4744
+        assert registry["total_registry_counted_records"] == 4925
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -96,6 +96,7 @@ class TestTracks:
         assert "sharia_procedure_law" in ids
         assert "sharia_procedure_implementing_regulation" in ids
         assert "criminal_procedure_law" in ids
+        assert "criminal_procedure_implementing_regulation" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -128,6 +129,13 @@ class TestTracks:
         assert cp["record_counts"]["legal_status_breakdown"] == {
             "اصلية": 219, "معدلة": 3, "ملغاة": 0, "مضافة": 0}
         assert cp["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_criminal_procedure_regulation_counts(self, registry):
+        cr = next(t for t in registry["tracks"] if t["track_id"] == "criminal_procedure_implementing_regulation")
+        assert cr["record_counts"]["arabic_articles"] == 181
+        assert cr["record_counts"]["legal_status_breakdown"] == {
+            "اصلية": 174, "معدلة": 7, "ملغاة": 0, "مضافة": 0}
+        assert cr["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

@@ -161,12 +161,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   work regulation 72+3 tables + Labor mediation rules 20 + Labor recruitment rules 72 + Labor
   accessibility tables 8 + Labor contract forms 102 + Evidence Law 129 + Evidence companions
   24+135+34 + Personal Status Law 252 + Personal Status regulation 41 + Law of Sharia Procedure 243
-  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222**)
+  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181**)
   with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **27 tracks; primary Arabic governing 3849; reference 614; registry-counted
-  4744.** PDPL and Investment Arabic tracks are **verified against official
+  boundaries, and validation targets. **28 tracks; primary Arabic governing 4030; reference 614; registry-counted
+  4925.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (3680 records) as a projection (not added to totals). See
+  index (3861 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -359,10 +359,10 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   `make civil-transactions-law-verified-validate` and
   `make civil-transactions-law-legal-llm-validate`.
 - **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`
-  projects all twenty-five Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
+  projects all twenty-six Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
   Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99+157 +
   Labor 571 across its eight components + Evidence 322 across its four components +
-  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 222 = **3680 records**) into one flat index at
+  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) = **3861 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
@@ -372,11 +372,11 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 86.2% / top-3 93.8% / top-5 97.5% / MRR@5 0.9025**
-  over the 3680-record index with **80 golds** — expanded from 40 (v2: gtp-001..007 +
-  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal procedure) so that GTPL, all eight
+  deterministic results. **Current: top-1 85.5% / top-3 94.0% / top-5 97.6% / MRR@5 0.9000**
+  over the 3861-record index with **83 golds** — expanded from 40 (v2: gtp-001..007 +
+  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation) so that GTPL, all eight
   Labor components, all four Evidence components, the Personal Status law + regulation, the
-  Law of Sharia Procedure + its implementing regulation, and the Law of Criminal Procedure have
+  Law of Sharia Procedure + its implementing regulation, the Law of Criminal Procedure + its implementing regulation have
   gold coverage; every new
   gold was confirmed by reading the article's committed text first and writing the query from
   its own wording. Two documented
@@ -588,12 +588,26 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (art 11) kept. Track under `sources/criminal_procedure/law/` +
   `data/criminal_procedure_arabic_legal_llm/`. Validate: `make criminal-procedure-law-track-validate`.
 
+- **Implementing Regulation of the Law of Criminal Procedure verified + LLM-ready.** **اللائحة
+  التنفيذية لنظام الإجراءات الجزائية** (قرار مجلس الوزراء ١٤٢، ٢١/٣/١٤٣٦هـ) — **181 records** (complete
+  1–181, sequential ordinal labels, no مكرر). In force. Same double-official MOJ pipeline (portal
+  database × official MOJ PDF, 25 pages, committed with recorded sha256). Like the law it is **lightly
+  amended and single-status**: **174 اصلية / 7 معدلة (arts 21, 71, 92, 93, 157, 163, 179, by Cabinet
+  decision 860) / 0 ملغاة / 0 مضافة** — no dual-status divergence (section-API status equals the PDF
+  status for every article), the 7 amended bodies match the print. Cross-check: **178/181 matched
+  outright (mean 0.993)**; the 3 flagged articles were **visually adjudicated verbatim** — arts 57 and
+  164 (in-word decorative tatweel that OCR mangled, pages 8/22) and art 181 (the one-line
+  effective-in-30-days closing article, page 24). 39 decorative in-word tatweel removed (this PDF is
+  heavily justified); the "هـ" enumerator and space-bounded enumerator dashes kept. Track under
+  `sources/criminal_procedure/regulation/` + `data/criminal_procedure_arabic_legal_llm/`. Validate:
+  `make criminal-procedure-regulation-track-validate`.
+
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (101 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (102 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 28 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 29 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any
