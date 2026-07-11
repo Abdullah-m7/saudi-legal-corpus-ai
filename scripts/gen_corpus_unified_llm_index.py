@@ -46,6 +46,8 @@ LAYERS = [
      "gtpl", "implementing_regulation"),
     ("data/labor_arabic_legal_llm/labor_law_legal_llm_001_245.json",
      "labor", "law"),
+    ("data/labor_arabic_legal_llm/labor_regulation_legal_llm_001_040.json",
+     "labor", "implementing_regulation"),
 ]
 
 

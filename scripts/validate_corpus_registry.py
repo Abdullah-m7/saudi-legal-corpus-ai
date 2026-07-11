@@ -61,6 +61,7 @@ REQUIRED_TRACK_IDS = [
     "gtpl_law",
     "gtpl_implementing_regulation",
     "labor_law",
+    "labor_implementing_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -103,9 +104,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 12 tracks
+    # [3] 13 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 12 tracks present...", len(track_ids) == 12 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 13 tracks present...", len(track_ids) == 13 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -201,9 +202,18 @@ def main() -> int:
           labor.get("official_text_status") == "HRSD_CONSOLIDATED_CROSS_CHECKED_BOE",
           f"official_text_status={labor.get('official_text_status')}")
 
+    # [7g5] Labor implementing regulation track
+    laborr = tracks_by_id.get("labor_implementing_regulation", {})
+    check("[7g5] labor_implementing_regulation: 45 Arabic articles...",
+          laborr.get("record_counts", {}).get("arabic_articles") == 45,
+          f"counts={laborr.get('record_counts')}")
+    check("    labor_implementing_regulation: HRSD PDF OCR + law-quote cross-checked...",
+          laborr.get("official_text_status") == "HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED_LAW_QUOTES",
+          f"official_text_status={laborr.get('official_text_status')}")
+
     # [7g] unified retrieval index present (projection not counted in totals)
     uix = registry.get("unified_retrieval_index", {})
-    check("[7g] unified retrieval index: 1641 records...", uix.get("total_records") == 1641,
+    check("[7g] unified retrieval index: 1686 records...", uix.get("total_records") == 1686,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -265,8 +275,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 1810...",
-          registry.get("total_primary_arabic_governing_records") == 1810,
+    check("[19a] total_primary_arabic_governing_records == 1855...",
+          registry.get("total_primary_arabic_governing_records") == 1855,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -281,8 +291,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 2705...",
-          registry.get("total_registry_counted_records") == 2705,
+    check("[19e] total_registry_counted_records == 2750...",
+          registry.get("total_registry_counted_records") == 2750,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -306,7 +316,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"1810 + 614 + 281 = 2705")
+          f"1855 + 614 + 281 = 2750")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -324,18 +334,19 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 12 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 13 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
-              "civil_transactions_law, gtpl_law, gtpl_implementing_regulation, labor_law). "
-              "Primary Arabic 1810, reference 614, registry-counted 2705. All counts correct, all referenced paths "
+              "civil_transactions_law, gtpl_law, gtpl_implementing_regulation, labor_law, "
+              "labor_implementing_regulation). "
+              "Primary Arabic 1855, reference 614, registry-counted 2750. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
-              "text; Civil is owner-provided official text; Labor is the official HRSD consolidated "
-              "text cross-checked vs BOE captures. Unified retrieval index (1641) projects "
-              "counted records. Read-only.")
+              "text; Civil is owner-provided official text; Labor law + implementing regulation are "
+              "the official HRSD texts, cross-checked (BOE captures / OCR + law quotes). Unified "
+              "retrieval index (1686) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)
