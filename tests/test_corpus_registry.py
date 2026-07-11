@@ -27,19 +27,19 @@ class TestRegistryStructure:
         assert os.path.isfile(REGISTRY_PATH)
 
     def test_registry_version(self, registry):
-        assert registry["registry_version"] == "2.2"
+        assert registry["registry_version"] == "2.3"
 
     def test_repository(self, registry):
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 22
+        assert registry["total_tracks"] == 24
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 2454
+        assert registry["total_primary_arabic_governing_records"] == 2747
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 3349
+        assert registry["total_registry_counted_records"] == 3642
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -91,6 +91,16 @@ class TestTracks:
         assert "evidence_electronic_procedures_rules" in ids
         assert "evidence_procedural_manuals" in ids
         assert "evidence_expertise_rules" in ids
+        assert "personal_status_law" in ids
+        assert "personal_status_implementing_regulation" in ids
+
+    def test_personal_status_counts(self, registry):
+        law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
+        assert law["record_counts"]["arabic_articles"] == 252
+        reg = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_implementing_regulation")
+        assert reg["record_counts"]["arabic_articles"] == 41
+        for t in (law, reg):
+            assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

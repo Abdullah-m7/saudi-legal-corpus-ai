@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 67,
-  "top1_hits": 56,
-  "top3_hits": 62,
-  "top5_hits": 65,
-  "top1_accuracy": 0.8358,
-  "top3_accuracy": 0.9254,
-  "top5_accuracy": 0.9701,
-  "mrr_at_5": 0.8836,
+  "total_queries": 71,
+  "top1_hits": 60,
+  "top3_hits": 66,
+  "top5_hits": 69,
+  "top1_accuracy": 0.8451,
+  "top3_accuracy": 0.9296,
+  "top5_accuracy": 0.9718,
+  "mrr_at_5": 0.8901,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -911,8 +911,8 @@
      "score": 16
     },
     {
-     "record_id": "pdpl-reg-llm-art-016",
-     "article_number": 16,
+     "record_id": "personal-status-law-llm-art-158",
+     "article_number": 158,
      "score": 12
     }
    ]
@@ -2092,6 +2092,130 @@
      "record_id": "labor-annex5-llm-050-casual-temporary",
      "article_number": 50,
      "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "ahw-001",
+   "query_ar": "تعريف الخطبة طلب الزواج والوعد به",
+   "category": "definitional",
+   "gold": {
+    "corpus": "personal_status",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "personal-status-law-llm-art-001",
+     "article_number": 1,
+     "score": 21
+    },
+    {
+     "record_id": "oa-llm-companies-art-051",
+     "article_number": 51,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-185",
+     "article_number": 185,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "ahw-002",
+   "query_ar": "المهر ملك للمرأة لا تجبر على التصرف فيه",
+   "category": "topical",
+   "gold": {
+    "corpus": "personal_status",
+    "law_component": "law",
+    "article_number": 38
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "personal-status-law-llm-art-038",
+     "article_number": 38,
+     "score": 23
+    },
+    {
+     "record_id": "oa-llm-companies-art-151",
+     "article_number": 151,
+     "score": 12
+    },
+    {
+     "record_id": "oa-llm-companies-art-256",
+     "article_number": 256,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "ahw-003",
+   "query_ar": "ترتيب الحقوق المتعلقة بالتركة تجهيز الميت وقضاء الديون",
+   "category": "topical",
+   "gold": {
+    "corpus": "personal_status",
+    "law_component": "law",
+    "article_number": 198
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "personal-status-law-llm-art-198",
+     "article_number": 198,
+     "score": 22
+    },
+    {
+     "record_id": "oa-llm-companies-art-107",
+     "article_number": 107,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-110",
+     "article_number": 110,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "ahw-004",
+   "query_ar": "صور انتفاء الخلوة بين الزوجين",
+   "category": "topical",
+   "gold": {
+    "corpus": "personal_status",
+    "law_component": "implementing_regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "personal-status-reg-llm-art-001",
+     "article_number": 1,
+     "score": 21
+    },
+    {
+     "record_id": "personal-status-law-llm-art-007",
+     "article_number": 7,
+     "score": 10
+    },
+    {
+     "record_id": "personal-status-law-llm-art-042",
+     "article_number": 42,
+     "score": 6
     }
    ]
   }
