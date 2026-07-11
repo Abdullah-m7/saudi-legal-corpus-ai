@@ -68,6 +68,7 @@ CRIM_PROC_LAW_LLM = os.path.join(ROOT, "data", "criminal_procedure_arabic_legal_
 CRIM_PROC_REG_LLM = os.path.join(ROOT, "data", "criminal_procedure_arabic_legal_llm", "criminal_procedure_regulation_legal_llm_001_181.json")
 ENFORCEMENT_LAW_LLM = os.path.join(ROOT, "data", "enforcement_arabic_legal_llm", "enforcement_law_legal_llm_001_098.json")
 ENFORCEMENT_REG_LLM = os.path.join(ROOT, "data", "enforcement_arabic_legal_llm", "enforcement_regulation_legal_llm_001_273.json")
+JUDICIARY_LAW_LLM = os.path.join(ROOT, "data", "judiciary_arabic_legal_llm", "judiciary_law_legal_llm_001_085.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -129,6 +130,7 @@ def main() -> int:
     crim_proc_reg_llm = _load_json(CRIM_PROC_REG_LLM)
     enforcement_law_llm = _load_json(ENFORCEMENT_LAW_LLM)
     enforcement_reg_llm = _load_json(ENFORCEMENT_REG_LLM)
+    judiciary_law_llm = _load_json(JUDICIARY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -136,7 +138,7 @@ def main() -> int:
     unified_index = _load_json(UNIFIED_INDEX)
 
     registry: dict[str, Any] = {
-        "registry_version": "2.9",
+        "registry_version": "3.0",
         "generated_date": "2026-07-11",
         "repository": "al3obdi/saudi-legal-corpus-ai",
         "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
@@ -149,7 +151,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 30,
+        "total_tracks": 31,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -183,6 +185,7 @@ def main() -> int:
             + crim_proc_reg_llm["record_count"]    # 181 Criminal Procedure implementing regulation (consolidated)
             + enforcement_law_llm["record_count"]  # 98 Enforcement Law (consolidated, MOJ portal cross-checked)
             + enforcement_reg_llm["record_count"]  # 273 Enforcement implementing regulation (consolidated)
+            + judiciary_law_llm["record_count"]    # 85 Law of the Judiciary (foundational court-organization law)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -207,6 +210,7 @@ def main() -> int:
             + sharia_proc_law_llm["record_count"] + sharia_proc_reg_llm["record_count"]
             + crim_proc_law_llm["record_count"] + crim_proc_reg_llm["record_count"]
             + enforcement_law_llm["record_count"] + enforcement_reg_llm["record_count"]
+            + judiciary_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -226,16 +230,16 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) = 4401",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) + judiciary_law(85) = 4486",
             "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(4401) + total_reference(614) + total_internal_reference(281) = 5296",
+            "formula_total_registry_counted": "total_primary_arabic_governing(4486) + total_reference(614) + total_internal_reference(281) = 5381",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), now CROSS-CHECKED article-by-article against the official MOJ legal-portal database (721/721 aligned, law unamended) with divergences adjudicated visually against the official MOJ PDF (committed): 17 single-word defects corrected and 21 trailing structural headings moved to section_context, all documented in the source artifact and audit files under sources/civil/law/moj_cross_check/. Arabic governs; not legal advice.",
             "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), and Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (4232) is a projection of counted records and is NOT added to totals.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts), and Judiciary Arabic (85 law, the foundational court-organization statute) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (4317) is a projection of counted records and is NOT added to totals.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -1256,6 +1260,34 @@ def main() -> int:
                                "not_verified_official_text": False, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Law of Enforcement (Minister of Justice decision 526, 20/2/1439H), 273 records (clause-labeled X/Y, keyed by document order 1..273). In force. CONSOLIDATED AMENDED but lightly (by decision 7207): 266 اصلية / 2 معدلة (٧/٦, ٢/٨٣) / 2 ملغاة (٥/٤٦, ١/٧٥) / 3 مضافة (٣/٨٣, ٤/٨٣, ٣/٨٤). The repealed provisions keep their full text and are FLAGGED, not deleted (the official PDF retains their bodies with ملغاة badges, verified on page 14); the LLM title gets a '(ملغاة)' suffix so retrieval never presents them as in force. Unlike the Sharia Procedure regulation there is NO dual-status divergence — the section-API status equals the statuteStructure/PDF status for every provision — and there are no duplicate labels or exact redundancies. Fetched provision-by-provision from the official MOJ legal-portal database and cross-verified against the official MOJ PDF from the same portal (272/273 outright, mean 0.997; the 1 flagged — clause ١/٤٢, a short clause carrying digit cross-references (١/٣٢)/(٢/٣٢) — visually adjudicated verbatim on page 13; PDF committed with recorded sha256). Decorative in-word tatweel removed; the 'هـ' enumerator and space-bounded enumerator dashes kept. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "judiciary_law",
+                "display_name_ar": "نظام القضاء",
+                "display_name_en": "Law of the Judiciary",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+                "source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": judiciary_law_llm["record_count"],
+                    "data_path": "data/judiciary_arabic_legal_llm/judiciary_law_legal_llm_001_085.json"}},
+                "record_counts": {"arabic_articles": judiciary_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 82, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
+                                  "total": judiciary_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/judiciary/law/official_source/judiciary_law_official_source.json",
+                    "sources/judiciary/law/verified/judiciary_law_verified_records.jsonl",
+                    "data/judiciary_arabic_legal_llm/judiciary_law_legal_llm_001_085.json",
+                ],
+                "validator_targets": ["make judiciary-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of the Judiciary M/78 dated 19/9/1428H (85 records: complete 1..85, no مكرر). The FOUNDATIONAL court-organization statute — its Article 9 defines the court structure (المحكمة العليا, محاكم الاستئناف, and five first-degree courts: العامة/الجزائية/الأحوال الشخصية/التجارية/العمالية) and the المجلس الأعلى للقضاء referenced throughout the procedure and enforcement laws. In force; per its Article 85 it replaces the former Law of the Judiciary (M/64, 14/7/1395H). CONSOLIDATED AMENDED but lightly: 82 اصلية / 3 معدلة (arts 5, 35, 72, by M/95) / 0 ملغاة / 0 مضافة; each amended article carries its history and its current amended body matches the PDF. The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence). Fetched article-by-article from the official MOJ legal-portal database and cross-verified against the official MOJ PDF from the same portal (82/85 outright, mean 0.990; the 3 flagged — art 9 the court-structure enumeration, art 71 numbered dash clauses, art 85 the one-line closing article — visually adjudicated verbatim on pages 2/11/14; PDF committed with recorded sha256). No decorative in-word tatweel present (all tatweel are the هـ enumerator or space-bounded enumerator dashes, kept). Arabic governs; not legal advice.",
             },
         ],
     }

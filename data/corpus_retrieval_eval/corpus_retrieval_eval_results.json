@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 89,
-  "top1_hits": 74,
-  "top3_hits": 84,
-  "top5_hits": 87,
-  "top1_accuracy": 0.8315,
-  "top3_accuracy": 0.9438,
-  "top5_accuracy": 0.9775,
-  "mrr_at_5": 0.8861,
+  "total_queries": 92,
+  "top1_hits": 77,
+  "top3_hits": 87,
+  "top5_hits": 90,
+  "top1_accuracy": 0.837,
+  "top3_accuracy": 0.9457,
+  "top5_accuracy": 0.9783,
+  "mrr_at_5": 0.8899,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1128,8 +1128,8 @@
      "score": 5
     },
     {
-     "record_id": "labor-annex4-llm-art-057",
-     "article_number": 57,
+     "record_id": "judiciary-law-llm-art-045",
+     "article_number": 45,
      "score": 5
     }
    ]
@@ -2368,8 +2368,8 @@
      "score": 12
     },
     {
-     "record_id": "personal-status-law-llm-art-214",
-     "article_number": 214,
+     "record_id": "judiciary-law-llm-art-018",
+     "article_number": 18,
      "score": 11
     }
    ]
@@ -2774,6 +2774,99 @@
      "record_id": "enforcement-regulation-llm-prov-165",
      "article_number": 165,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "mqd-001",
+   "query_ar": "يتكون المجلس الأعلى للقضاء من رئيس وعشرة أعضاء",
+   "category": "topical",
+   "gold": {
+    "corpus": "judiciary",
+    "law_component": "law",
+    "article_number": 49
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judiciary-law-llm-art-049",
+     "article_number": 49,
+     "score": 21
+    },
+    {
+     "record_id": "judiciary-law-llm-art-060",
+     "article_number": 60,
+     "score": 21
+    },
+    {
+     "record_id": "judiciary-law-llm-art-007",
+     "article_number": 7,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "mqd-002",
+   "query_ar": "درجات السلك القضائي ملازم قضائي ثم قاض",
+   "category": "topical",
+   "gold": {
+    "corpus": "judiciary",
+    "law_component": "law",
+    "article_number": 84
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judiciary-law-llm-art-084",
+     "article_number": 84,
+     "score": 15
+    },
+    {
+     "record_id": "judiciary-law-llm-art-047",
+     "article_number": 47,
+     "score": 11
+    },
+    {
+     "record_id": "judiciary-law-llm-art-048",
+     "article_number": 48,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "mqd-003",
+   "query_ar": "تشرف وزارة العدل على المحاكم إشرافا إداريا وماليا",
+   "category": "topical",
+   "gold": {
+    "corpus": "judiciary",
+    "law_component": "law",
+    "article_number": 71
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judiciary-law-llm-art-071",
+     "article_number": 71,
+     "score": 12
+    },
+    {
+     "record_id": "sharia-procedure-law-llm-art-240",
+     "article_number": 240,
+     "score": 12
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-001",
+     "article_number": 1,
+     "score": 12
     }
    ]
   }
