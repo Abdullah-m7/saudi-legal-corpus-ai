@@ -57,6 +57,9 @@ LABOR_ANNEX4_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_a
 LABOR_ANNEX2_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_annex2_accessibility_tables_llm.json")
 LABOR_ANNEX5_LLM = os.path.join(ROOT, "data", "labor_arabic_legal_llm", "labor_annex5_contract_forms_llm.json")
 EVIDENCE_LAW_LLM = os.path.join(ROOT, "data", "evidence_arabic_legal_llm", "evidence_law_legal_llm_001_129.json")
+EVIDENCE_ELEC_LLM = os.path.join(ROOT, "data", "evidence_arabic_legal_llm", "evidence_electronic_rules_legal_llm_001_024.json")
+EVIDENCE_MANUALS_LLM = os.path.join(ROOT, "data", "evidence_arabic_legal_llm", "evidence_procedural_manuals_legal_llm_001_135.json")
+EVIDENCE_EXPERT_LLM = os.path.join(ROOT, "data", "evidence_arabic_legal_llm", "evidence_expertise_rules_legal_llm_001_034.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -107,6 +110,9 @@ def main() -> int:
     labor_annex2_llm = _load_json(LABOR_ANNEX2_LLM)
     labor_annex5_llm = _load_json(LABOR_ANNEX5_LLM)
     evidence_law_llm = _load_json(EVIDENCE_LAW_LLM)
+    evidence_elec_llm = _load_json(EVIDENCE_ELEC_LLM)
+    evidence_manuals_llm = _load_json(EVIDENCE_MANUALS_LLM)
+    evidence_expert_llm = _load_json(EVIDENCE_EXPERT_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -114,7 +120,7 @@ def main() -> int:
     unified_index = _load_json(UNIFIED_INDEX)
 
     registry: dict[str, Any] = {
-        "registry_version": "2.1",
+        "registry_version": "2.2",
         "generated_date": "2026-07-11",
         "repository": "al3obdi/saudi-legal-corpus-ai",
         "baseline_commit": "465776947125066bd1a705cfceacd3dca935ad1f",
@@ -127,7 +133,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 19,
+        "total_tracks": 22,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -150,6 +156,9 @@ def main() -> int:
             + labor_annex2_llm["record_count"]    # 8 accessibility-arrangements tables (annex 2, 40 rows)
             + labor_annex5_llm["record_count"]    # 102 model contract form units (annex 5, 4 forms + glossary)
             + evidence_law_llm["record_count"]    # 129 Evidence Law (MOJ portal DB cross-checked vs official MOJ PDF)
+            + evidence_elec_llm["record_count"]   # 24 electronic evidentiary procedures rules
+            + evidence_manuals_llm["record_count"]  # 135 procedural manuals for the Evidence Law
+            + evidence_expert_llm["record_count"]   # 34 rules regulating expert affairs before the courts
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -168,7 +177,8 @@ def main() -> int:
             + labor_annex1_llm["record_count"] + labor_annex1_tab["record_count"]
             + labor_annex3_llm["record_count"] + labor_annex4_llm["record_count"]
             + labor_annex2_llm["record_count"] + labor_annex5_llm["record_count"]
-            + evidence_law_llm["record_count"]
+            + evidence_law_llm["record_count"] + evidence_elec_llm["record_count"]
+            + evidence_manuals_llm["record_count"] + evidence_expert_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -188,16 +198,16 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) = 2261",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) = 2454",
             "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(2261) + total_reference(614) + total_internal_reference(281) = 3156",
+            "formula_total_registry_counted": "total_primary_arabic_governing(2454) + total_reference(614) + total_internal_reference(281) = 3349",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), parsed deterministically (complete 1..721) and spot-corroborated against an independent mirror; carries an LLM-ready enrichment layer. Arabic governs; not legal advice.",
             "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) and Evidence Law (129) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (2092) is a projection of counted records and is NOT added to totals.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) and Evidence Arabic (129+24+135+34=322) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (2285) is a projection of counted records and is NOT added to totals.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -906,6 +916,90 @@ def main() -> int:
                                "not_verified_official_text": False, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Evidence Law M/43 dated 26/5/1443H (129 articles in 11 chapters incl. الدليل الرقمي), unamended (every article 'اصلية'). All articles fetched from the official MOJ legal-portal database and cross-verified against the official MOJ PDF from the same portal (min similarity 0.90, mean 0.995, zero unexplained differences; PDF committed with recorded sha256). Arabic governs.",
+            },
+            {
+                "track_id": "evidence_electronic_procedures_rules",
+                "display_name_ar": "ضوابط إجراءات الإثبات إلكترونياً",
+                "display_name_en": "Controls of the Electronic Evidentiary Procedures",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+                "source_authority": "Ministry of Justice / وزارة العدل (decision 921, 16/03/1444H; official legal portal)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": evidence_elec_llm["record_count"],
+                    "data_path": "data/evidence_arabic_legal_llm/evidence_electronic_rules_legal_llm_001_024.json"}},
+                "record_counts": {"arabic_articles": evidence_elec_llm["record_count"],
+                                  "total": evidence_elec_llm["record_count"]},
+                "data_paths": [
+                    "sources/evidence/electronic_rules/official_source/evidence_electronic_rules_official_source.json",
+                    "sources/evidence/electronic_rules/verified/evidence_electronic_rules_verified_records.jsonl",
+                    "data/evidence_arabic_legal_llm/evidence_electronic_rules_legal_llm_001_024.json",
+                ],
+                "validator_targets": ["make evidence-companions-tracks-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "is_general": False,
+                               "is_specialized": False, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Controls of the electronic evidentiary procedures (24 articles in 7 chapters), MoJ decision 921 of 1444H, unamended. Fetched from the official MOJ portal database and cross-verified against the official MOJ PDF (min 0.98). Arabic governs.",
+            },
+            {
+                "track_id": "evidence_procedural_manuals",
+                "display_name_ar": "الأدلة الإجرائية لنظام الإثبات",
+                "display_name_en": "Procedural Manuals for the Evidence Law",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+                "source_authority": "Ministry of Justice / وزارة العدل (decision 921, 16/03/1444H; official legal portal)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": evidence_manuals_llm["record_count"],
+                    "data_path": "data/evidence_arabic_legal_llm/evidence_procedural_manuals_legal_llm_001_135.json"}},
+                "record_counts": {"arabic_articles": evidence_manuals_llm["record_count"],
+                                  "total": evidence_manuals_llm["record_count"]},
+                "data_paths": [
+                    "sources/evidence/procedural_manuals/official_source/evidence_procedural_manuals_official_source.json",
+                    "sources/evidence/procedural_manuals/verified/evidence_procedural_manuals_verified_records.jsonl",
+                    "data/evidence_arabic_legal_llm/evidence_procedural_manuals_legal_llm_001_135.json",
+                ],
+                "validator_targets": ["make evidence-companions-tracks-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "is_general": False,
+                               "is_specialized": False, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Procedural manuals for the Evidence Law (135 articles in 13 chapters), MoJ decision 921 of 1444H, unamended. Fetched from the official MOJ portal database and cross-verified against the official MOJ PDF (min 0.94). One source typo documented: position 132's printed label omits 'بعد المائة' in both the database and the PDF (kept verbatim, keyed by document order). Arabic governs.",
+            },
+            {
+                "track_id": "evidence_expertise_rules",
+                "display_name_ar": "القواعد الخاصة بتنظيم شؤون الخبرة أمام المحاكم",
+                "display_name_en": "Rules Regulating Expert Affairs Before the Courts",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+                "source_authority": "Ministry of Justice / وزارة العدل (decision 921, 16/03/1444H; official legal portal)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": evidence_expert_llm["record_count"],
+                    "data_path": "data/evidence_arabic_legal_llm/evidence_expertise_rules_legal_llm_001_034.json"}},
+                "record_counts": {"arabic_articles": evidence_expert_llm["record_count"],
+                                  "total": evidence_expert_llm["record_count"]},
+                "data_paths": [
+                    "sources/evidence/expertise_rules/official_source/evidence_expertise_rules_official_source.json",
+                    "sources/evidence/expertise_rules/verified/evidence_expertise_rules_verified_records.jsonl",
+                    "data/evidence_arabic_legal_llm/evidence_expertise_rules_legal_llm_001_034.json",
+                ],
+                "validator_targets": ["make evidence-companions-tracks-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "is_general": False,
+                               "is_specialized": False, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules regulating expert affairs before the courts (34 articles in 7 chapters), MoJ decision 921 of 1444H, unamended. Fetched from the official MOJ portal database and cross-verified against the official MOJ PDF (min 0.91). Arabic governs.",
             },
         ],
     }

@@ -1,7 +1,7 @@
 {
  "eval_id": "corpus-unified-retrieval-eval-v1",
  "description_ar": "حزمة تقييم استرجاع فوق الفهرس الموحّد: استعلامات عربية واقعية بإجابات ذهبية (قانون + مكوّن + مادة). الإجابات الذهبية مُثبتة يدويًّا من نصوص المواد نفسها (مواد تعريفية أو مواد عناوينها مطابقة للمفهوم). القياس صادق: بعض الاستعلامات صعبة عمدًا وقد لا تصيب top-1.",
- "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output. Expansion v2 (gtp-001..007, lab-001..014): each gold likewise confirmed by reading the article's committed text first and writing the query from its own wording — covering the GTPL and all eight Labor components that previously had no gold coverage. Expansion v3 (ith-001..003): Evidence Law golds, same text-first methodology.",
+ "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output. Expansion v2 (gtp-001..007, lab-001..014): each gold likewise confirmed by reading the article's committed text first and writing the query from its own wording — covering the GTPL and all eight Labor components that previously had no gold coverage. Expansion v3 (ith-001..003): Evidence Law golds, same text-first methodology. Expansion v4 (ith-004..006): Evidence companion instruments, same text-first methodology.",
  "queries": [
   {
    "query_id": "civ-001",
@@ -641,6 +641,36 @@
     "corpus": "evidence",
     "law_component": "law",
     "article_number": 86
+   }
+  },
+  {
+   "query_id": "ith-004",
+   "query_ar": "تقديم دليل الإثبات إلكترونيا عبر الإجراء الإلكتروني المعتمد",
+   "category": "topical",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "electronic_procedures_rules",
+    "article_number": 7
+   }
+  },
+  {
+   "query_id": "ith-005",
+   "query_ar": "اتفاق الخصوم على إجراء من إجراءات الإثبات",
+   "category": "topical",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "procedural_manuals",
+    "article_number": 9
+   }
+  },
+  {
+   "query_id": "ith-006",
+   "query_ar": "تصنيف الخبراء بحسب التخصص وقائمة المرخصين",
+   "category": "topical",
+   "gold": {
+    "corpus": "evidence",
+    "law_component": "expertise_rules",
+    "article_number": 6
    }
   }
  ]
