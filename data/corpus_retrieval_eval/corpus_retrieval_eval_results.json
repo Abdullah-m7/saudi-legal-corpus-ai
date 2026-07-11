@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 40,
-  "top1_hits": 35,
-  "top3_hits": 38,
-  "top5_hits": 38,
-  "top1_accuracy": 0.875,
-  "top3_accuracy": 0.95,
-  "top5_accuracy": 0.95,
-  "mrr_at_5": 0.9042,
+  "total_queries": 61,
+  "top1_hits": 52,
+  "top3_hits": 57,
+  "top5_hits": 59,
+  "top1_accuracy": 0.8525,
+  "top3_accuracy": 0.9344,
+  "top5_accuracy": 0.9672,
+  "mrr_at_5": 0.8954,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1255,6 +1255,657 @@
      "record_id": "inv-law-llm-art-002",
      "article_number": 2,
      "score": 2
+    }
+   ]
+  },
+  {
+   "query_id": "gtp-001",
+   "query_ar": "تحقيق أفضل قيمة للمال العام ومنع استغلال النفوذ",
+   "category": "title_match",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gtpl-law-llm-art-002",
+     "article_number": 2,
+     "score": 16
+    },
+    {
+     "record_id": "oa-llm-companies-art-049",
+     "article_number": 49,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-064",
+     "article_number": 64,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "gtp-002",
+   "query_ar": "الإعلان عن المنافسة العامة في البوابة",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 29
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gtpl-reg-llm-art-033",
+     "article_number": 33,
+     "score": 22
+    },
+    {
+     "record_id": "gtpl-law-llm-art-029",
+     "article_number": 29,
+     "score": 22
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-085",
+     "article_number": 85,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "gtp-003",
+   "query_ar": "لا يلزم تقديم الضمان الابتدائي في الشراء المباشر والمسابقة",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 42
+   },
+   "gold_rank": 5,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-015",
+     "article_number": 15,
+     "score": 16
+    },
+    {
+     "record_id": "gtpl-law-llm-art-061",
+     "article_number": 61,
+     "score": 14
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-070",
+     "article_number": 70,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "gtp-004",
+   "query_ar": "غرامة التأخير في تنفيذ العقد الحكومي",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 72
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gtpl-law-llm-art-072",
+     "article_number": 72,
+     "score": 12
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-124",
+     "article_number": 124,
+     "score": 11
+    },
+    {
+     "record_id": "gtpl-law-llm-art-092",
+     "article_number": 92,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "gtp-005",
+   "query_ar": "تخفيض الضمان النهائي في عقود الخدمات ذات التنفيذ المستمر",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "law",
+    "article_number": 62
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gtpl-law-llm-art-062",
+     "article_number": 62,
+     "score": 24
+    },
+    {
+     "record_id": "gtpl-law-llm-art-056",
+     "article_number": 56,
+     "score": 22
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-116",
+     "article_number": 116,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "gtp-006",
+   "query_ar": "شروط استخدام المزايدة العكسية لشراء السلع",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "implementing_regulation",
+    "article_number": 54
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gtpl-reg-llm-art-054",
+     "article_number": 54,
+     "score": 18
+    },
+    {
+     "record_id": "gtpl-law-llm-art-034",
+     "article_number": 34,
+     "score": 11
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-055",
+     "article_number": 55,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "gtp-007",
+   "query_ar": "المراسلات والتبليغات بين الجهة الحكومية والمتعاقد",
+   "category": "topical",
+   "gold": {
+    "corpus": "gtpl",
+    "law_component": "implementing_regulation",
+    "article_number": 90
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gtpl-reg-llm-art-090",
+     "article_number": 90,
+     "score": 23
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-109",
+     "article_number": 109,
+     "score": 17
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-155",
+     "article_number": 155,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "lab-001",
+   "query_ar": "حساب مكافأة نهاية الخدمة أجر نصف شهر عن كل سنة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 84
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-law-llm-art-084",
+     "article_number": 84,
+     "score": 19
+    },
+    {
+     "record_id": "oa-llm-companies-art-076",
+     "article_number": 76,
+     "score": 12
+    },
+    {
+     "record_id": "inv-reg-llm-art-021",
+     "article_number": 21,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "lab-002",
+   "query_ar": "إجازة سنوية واحد وعشرون يوما تزاد إلى ثلاثين",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 109
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-law-llm-art-109",
+     "article_number": 109,
+     "score": 15
+    },
+    {
+     "record_id": "labor-annex1-llm-art-033",
+     "article_number": 33,
+     "score": 11
+    },
+    {
+     "record_id": "labor-law-llm-art-069",
+     "article_number": 69,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "lab-003",
+   "query_ar": "إجازة الوضع للمرأة العاملة اثنا عشر أسبوعا",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 151
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-law-llm-art-151",
+     "article_number": 151,
+     "score": 18
+    },
+    {
+     "record_id": "labor-annex1-llm-art-050",
+     "article_number": 50,
+     "score": 18
+    },
+    {
+     "record_id": "labor-law-llm-art-160",
+     "article_number": 160,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "lab-004",
+   "query_ar": "فسخ العقد دون مكافأة إذا وقع من العامل اعتداء على صاحب العمل",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 80
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-law-llm-art-080",
+     "article_number": 80,
+     "score": 33
+    },
+    {
+     "record_id": "labor-reg-llm-art-027",
+     "article_number": 27,
+     "score": 29
+    },
+    {
+     "record_id": "labor-reg-llm-art-014",
+     "article_number": 14,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "lab-005",
+   "query_ar": "الحد الأقصى لساعات العمل ثماني ساعات في اليوم",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "law",
+    "article_number": 98
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-law-llm-art-098",
+     "article_number": 98,
+     "score": 22
+    },
+    {
+     "record_id": "labor-law-llm-art-100",
+     "article_number": 100,
+     "score": 22
+    },
+    {
+     "record_id": "labor-law-llm-art-101",
+     "article_number": 101,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "lab-006",
+   "query_ar": "إجازة عيد الفطر وعيد الأضحى واليوم الوطني",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "implementing_regulation",
+    "article_number": 24
+   },
+   "gold_rank": 4,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inv-reg-llm-art-009",
+     "article_number": 9,
+     "score": 10
+    },
+    {
+     "record_id": "inv-law-llm-art-009",
+     "article_number": 9,
+     "score": 10
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-034",
+     "article_number": 34,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "lab-007",
+   "query_ar": "نقل العامل إلى مكان يقتضي تغيير محل الإقامة",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "implementing_regulation",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-reg-llm-art-020",
+     "article_number": 20,
+     "score": 19
+    },
+    {
+     "record_id": "labor-annex1-llm-art-009",
+     "article_number": 9,
+     "score": 18
+    },
+    {
+     "record_id": "labor-annex1-llm-art-012",
+     "article_number": 12,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "lab-008",
+   "query_ar": "استحقاق العلاوة السنوية بناء على المركز المالي للمنشأة",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "model_work_regulation",
+    "article_number": 21
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-242",
+     "article_number": 242,
+     "score": 19
+    },
+    {
+     "record_id": "labor-annex1-llm-art-021",
+     "article_number": 21,
+     "score": 14
+    },
+    {
+     "record_id": "oa-llm-companies-art-279",
+     "article_number": 279,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "lab-009",
+   "query_ar": "المخالفة والجزاءات الإنذار الكتابي كتاب توجهه المنشأة إلى العامل",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "model_work_regulation",
+    "article_number": 58
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-annex1-llm-art-058",
+     "article_number": 58,
+     "score": 22
+    },
+    {
+     "record_id": "labor-annex1-llm-violation-table-3",
+     "article_number": 3,
+     "score": 17
+    },
+    {
+     "record_id": "labor-annex1-llm-art-068",
+     "article_number": 68,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "lab-010",
+   "query_ar": "الموافقة المبدئية لتأسيس مكتب توظيف السعوديين",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "recruitment_mediation_rules",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-annex3-llm-art-004",
+     "article_number": 4,
+     "score": 32
+    },
+    {
+     "record_id": "labor-annex3-llm-art-001",
+     "article_number": 1,
+     "score": 24
+    },
+    {
+     "record_id": "labor-annex3-llm-art-003",
+     "article_number": 3,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "lab-011",
+   "query_ar": "معايير المحاسبة الدولية في حسابات شركات الاستقدام",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "recruitment_services_rules",
+    "article_number": 30
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-annex4-llm-art-030",
+     "article_number": 30,
+     "score": 21
+    },
+    {
+     "record_id": "oa-llm-companies-art-018",
+     "article_number": 18,
+     "score": 11
+    },
+    {
+     "record_id": "oa-llm-companies-art-019",
+     "article_number": 19,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "lab-012",
+   "query_ar": "تكملة الضمان البنكي بعد السحب خلال ثلاثين يوما",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "recruitment_services_rules",
+    "article_number": 46
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-annex4-llm-art-046",
+     "article_number": 46,
+     "score": 17
+    },
+    {
+     "record_id": "labor-law-llm-art-072",
+     "article_number": 72,
+     "score": 15
+    },
+    {
+     "record_id": "labor-annex3-llm-art-017",
+     "article_number": 17,
+     "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "lab-013",
+   "query_ar": "مترجم لغة إشارة للعمال ذوي الإعاقة السمعية",
+   "category": "topical",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "accessibility_arrangements",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-annex2-llm-table-5",
+     "article_number": 5,
+     "score": 24
+    },
+    {
+     "record_id": "labor-annex2-llm-table-8",
+     "article_number": 8,
+     "score": 18
+    },
+    {
+     "record_id": "labor-annex2-llm-table-7",
+     "article_number": 7,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "lab-014",
+   "query_ar": "جدول المصطلحات في النموذج الموحد لعقد العمل",
+   "category": "title_match",
+   "gold": {
+    "corpus": "labor",
+    "law_component": "model_contract_forms",
+    "article_number": 18
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "labor-annex5-llm-018-permanent",
+     "article_number": 18,
+     "score": 34
+    },
+    {
+     "record_id": "labor-annex5-llm-002-permanent",
+     "article_number": 2,
+     "score": 23
+    },
+    {
+     "record_id": "labor-annex5-llm-008-permanent",
+     "article_number": 8,
+     "score": 22
     }
    ]
   }

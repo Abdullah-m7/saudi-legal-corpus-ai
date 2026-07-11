@@ -358,14 +358,15 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
   flags). No legal text is altered, summarized, or translated. Validate (includes sanity queries
   that must route to the right law): `make corpus-unified-llm-index-validate`.
-- **Retrieval eval pack** — 40 realistic Arabic gold queries over the unified index
+- **Retrieval eval pack** — 61 realistic Arabic gold queries over the unified index
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 87.5% / top-3 95% / MRR@5 0.9042** over the
-  1963-record index (originally improved from 85%/95%/0.883 by blending text term-frequency
-  keywords into the title-only layers — PDPL regulation + Investment law/regulation; the
-  Companies gold layer untouched). Two documented
+  deterministic results. **Current: top-1 85.2% / top-3 93.4% / top-5 96.7% / MRR@5 0.8954**
+  over the 1963-record index with **61 golds** — expanded from 40 (v2: gtp-001..007 +
+  lab-001..014) so that GTPL and all eight Labor components now have gold coverage; every new
+  gold was confirmed by reading the article's committed text first and writing the query from
+  its own wording. Two documented
   lexical misses remain (civ-004 تعريف الكفالة; pdp-010 سياسة الخصوصية — the gold PDPL article
   does not contain the query phrase verbatim, so labor-annex records now outscore it). Validator re-runs the eval, requires exact
   reproducibility, and enforces floors (75%/85%/0.80). Validate:
