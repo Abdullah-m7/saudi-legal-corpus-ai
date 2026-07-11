@@ -75,6 +75,7 @@ REQUIRED_TRACK_IDS = [
     "personal_status_implementing_regulation",
     "sharia_procedure_law",
     "sharia_procedure_implementing_regulation",
+    "criminal_procedure_law",
 ]
 
 CHECKS: list[str] = []
@@ -117,9 +118,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 26 tracks
+    # [3] 27 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 26 tracks present...", len(track_ids) == 26 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 27 tracks present...", len(track_ids) == 27 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -315,7 +316,18 @@ def main() -> int:
           and sreg_counts.get("superseded_by_evidence_law") == 149,
           f"pdf={sreg_counts.get('pdf_document_status_breakdown')} portal={sreg_counts.get('portal_legal_status_breakdown')} superseded={sreg_counts.get('superseded_by_evidence_law')}")
 
-    check("[7g] unified retrieval index: 3458 records...", uix.get("total_records") == 3458,
+    # [7g17] Law of Criminal Procedure (consolidated, single-status)
+    crim = tracks_by_id.get("criminal_procedure_law", {})
+    crim_counts = crim.get("record_counts", {})
+    check("[7g17] criminal_procedure_law: 222 Arabic articles...",
+          crim_counts.get("arabic_articles") == 222
+          and crim.get("official_text_status") == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+          f"counts={crim_counts}")
+    check("    criminal_procedure_law: status breakdown 219/3/0/0...",
+          crim_counts.get("legal_status_breakdown") == {"اصلية": 219, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={crim_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 3680 records...", uix.get("total_records") == 3680,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -377,8 +389,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 3627...",
-          registry.get("total_primary_arabic_governing_records") == 3627,
+    check("[19a] total_primary_arabic_governing_records == 3849...",
+          registry.get("total_primary_arabic_governing_records") == 3849,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -393,8 +405,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 4522...",
-          registry.get("total_registry_counted_records") == 4522,
+    check("[19e] total_registry_counted_records == 4744...",
+          registry.get("total_registry_counted_records") == 4744,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -418,7 +430,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"3627 + 614 + 281 = 4522")
+          f"3849 + 614 + 281 = 4744")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -436,7 +448,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 26 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 27 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -447,8 +459,8 @@ def print_results() -> None:
               "evidence_electronic_procedures_rules, evidence_procedural_manuals, "
               "evidence_expertise_rules, personal_status_law, "
               "personal_status_implementing_regulation, sharia_procedure_law, "
-              "sharia_procedure_implementing_regulation). "
-              "Primary Arabic 3627, reference 614, registry-counted 4522. All counts correct, all referenced paths "
+              "sharia_procedure_implementing_regulation, criminal_procedure_law). "
+              "Primary Arabic 3849, reference 614, registry-counted 4744. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -460,8 +472,9 @@ def print_results() -> None:
               "Law of Sharia Procedure (243 records, consolidated amended law: 153 اصلية / 14 معدلة "
               "/ 75 ملغاة / 1 مضافة) and its implementing regulation (637 records, dual-status: PDF "
               "badge governs, portal legal status + 149 Evidence-Law-superseded provisions also "
-              "recorded; repealed/superseded provisions flagged not deleted). "
-              "Unified retrieval index (3458) projects counted records. Read-only.")
+              "recorded; repealed/superseded provisions flagged not deleted) — and the Law of Criminal "
+              "Procedure (222 records, consolidated: 219 اصلية / 3 معدلة, no dual-status). "
+              "Unified retrieval index (3680) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 77,
-  "top1_hits": 66,
-  "top3_hits": 72,
-  "top5_hits": 75,
-  "top1_accuracy": 0.8571,
-  "top3_accuracy": 0.9351,
-  "top5_accuracy": 0.974,
-  "mrr_at_5": 0.8987,
+  "total_queries": 80,
+  "top1_hits": 69,
+  "top3_hits": 75,
+  "top5_hits": 78,
+  "top1_accuracy": 0.8625,
+  "top3_accuracy": 0.9375,
+  "top5_accuracy": 0.975,
+  "mrr_at_5": 0.9025,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2252,12 +2252,12 @@
   },
   {
    "query_id": "mrf-002",
-   "query_ar": "تطبق المحاكم على القضايا المعروضة أحكام الشريعة الإسلامية وفقا للكتاب والسنة",
+   "query_ar": "نطاق الاختصاص المكاني للمحكمة التي يقع في نطاقها موطن المدعى عليه",
    "category": "topical",
    "gold": {
     "corpus": "sharia_procedure",
     "law_component": "law",
-    "article_number": 1
+    "article_number": 36
    },
    "gold_rank": 1,
    "hit_top1": true,
@@ -2265,19 +2265,19 @@
    "hit_top5": true,
    "top_hits": [
     {
-     "record_id": "sharia-procedure-law-llm-art-001",
-     "article_number": 1,
-     "score": 30
+     "record_id": "sharia-procedure-law-llm-art-036",
+     "article_number": 36,
+     "score": 20
     },
     {
-     "record_id": "personal-status-law-llm-art-251",
-     "article_number": 251,
-     "score": 16
+     "record_id": "sharia-procedure-regulation-llm-prov-100",
+     "article_number": 100,
+     "score": 18
     },
     {
-     "record_id": "evidence-manuals-llm-art-135",
-     "article_number": 135,
-     "score": 12
+     "record_id": "sharia-procedure-regulation-llm-prov-204",
+     "article_number": 204,
+     "score": 15
     }
    ]
   },
@@ -2402,6 +2402,99 @@
      "record_id": "personal-status-law-llm-art-160",
      "article_number": 160,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "mjz-001",
+   "query_ar": "مدة التوقيف الاحتياطي وتجديدها من قبل المحقق",
+   "category": "topical",
+   "gold": {
+    "corpus": "criminal_procedure",
+    "law_component": "law",
+    "article_number": 114
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "criminal-procedure-law-llm-art-114",
+     "article_number": 114,
+     "score": 13
+    },
+    {
+     "record_id": "criminal-procedure-law-llm-art-109",
+     "article_number": 109,
+     "score": 11
+    },
+    {
+     "record_id": "labor-annex5-llm-007-permanent",
+     "article_number": 7,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "mjz-002",
+   "query_ar": "رفع الدعوى الجزائية العامة من هيئة التحقيق والادعاء العام",
+   "category": "topical",
+   "gold": {
+    "corpus": "criminal_procedure",
+    "law_component": "law",
+    "article_number": 153
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "criminal-procedure-law-llm-art-153",
+     "article_number": 153,
+     "score": 26
+    },
+    {
+     "record_id": "criminal-procedure-law-llm-art-022",
+     "article_number": 22,
+     "score": 21
+    },
+    {
+     "record_id": "criminal-procedure-law-llm-art-017",
+     "article_number": 17,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "mjz-003",
+   "query_ar": "تفتيش المساكن وضبط الأشياء المتعلقة بالجريمة",
+   "category": "topical",
+   "gold": {
+    "corpus": "criminal_procedure",
+    "law_component": "law",
+    "article_number": 80
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "criminal-procedure-law-llm-art-080",
+     "article_number": 80,
+     "score": 11
+    },
+    {
+     "record_id": "criminal-procedure-law-llm-art-046",
+     "article_number": 46,
+     "score": 10
+    },
+    {
+     "record_id": "criminal-procedure-law-llm-art-087",
+     "article_number": 87,
+     "score": 6
     }
    ]
   }
