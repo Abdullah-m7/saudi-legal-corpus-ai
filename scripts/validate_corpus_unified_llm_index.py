@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 3680
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 222}
+EXPECTED_TOTAL = 3861
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -53,6 +53,8 @@ SANITY = [
     ("يكتب التاريخ الهجري أولا بحسب تقويم أم القرى", "sharia_procedure", 16),
     ("لا يجوز القبض على أي إنسان أو توقيفه إلا بأمر من السلطة المختصة", "criminal_procedure", 35),
     ("الأحكام النهائية هي الأحكام المكتسبة للقطعية", "criminal_procedure", 210),
+    ("يباشر المحقق معاينة مكان وقوع الجريمة بنفسه وله ندب أحد رجال الضبط الجنائي", "criminal_procedure", 54),
+    ("ضبط الأموال والأرصدة لدى البنوك في مرحلة التحقيق", "criminal_procedure", 58),
 ]
 
 
@@ -113,6 +115,7 @@ def main():
         "data/sharia_procedure_arabic_legal_llm/sharia_procedure_law_legal_llm_001_243.json",
         "data/sharia_procedure_arabic_legal_llm/sharia_procedure_regulation_legal_llm_001_637.json",
         "data/criminal_procedure_arabic_legal_llm/criminal_procedure_law_legal_llm_001_222.json",
+        "data/criminal_procedure_arabic_legal_llm/criminal_procedure_regulation_legal_llm_001_181.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -146,7 +149,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 222; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
