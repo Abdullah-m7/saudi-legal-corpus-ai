@@ -10,12 +10,12 @@
     "forms_and_appendices_counted": true,
     "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
     "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
-    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) = 2990",
+    "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) = 3627",
     "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
-    "formula_total_registry_counted": "total_primary_arabic_governing(2990) + total_reference(614) + total_internal_reference(281) = 3885",
+    "formula_total_registry_counted": "total_primary_arabic_governing(3627) + total_reference(614) + total_internal_reference(281) = 4522",
     "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243, consolidated amended law) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (2821) is a projection of counted records and is NOT added to totals.",
+    "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (3458) is a projection of counted records and is NOT added to totals.",
     "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
     "primary_arabic_governing_records_included": true
   },
@@ -29,14 +29,14 @@
     "not_legal_advice": true,
     "not_official_translation": true
   },
-  "registry_version": "2.4",
+  "registry_version": "2.5",
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 2990,
+  "total_primary_arabic_governing_records": 3627,
   "total_reference_records": 614,
-  "total_registry_counted_records": 3885,
-  "total_tracks": 25,
+  "total_registry_counted_records": 4522,
+  "total_tracks": 26,
   "tracks": [
     {
       "boundaries": {
@@ -1166,6 +1166,62 @@
       "validator_targets": [
         "make sharia-procedure-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "is_general": false,
+        "is_specialized": false,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": false
+      },
+      "corpus_family": "implementing_regulation",
+      "data_paths": [
+        "sources/sharia_procedure/regulation/official_source/sharia_procedure_regulation_official_source.json",
+        "sources/sharia_procedure/regulation/verified/sharia_procedure_regulation_verified_records.jsonl",
+        "data/sharia_procedure_arabic_legal_llm/sharia_procedure_regulation_legal_llm_001_637.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام المرافعات الشرعية",
+      "display_name_en": "Implementing Regulation of the Law of Sharia Procedure",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/sharia_procedure_arabic_legal_llm/sharia_procedure_regulation_legal_llm_001_637.json",
+          "governing": true,
+          "record_count": 637,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law of Sharia Procedure (Minister of Justice decree 39933, 19/5/1435H), 637 records (639 portal nodes fetched; 2 exact redundancies — labels ١/٢٣٢ and ١٢/٢٢٨ — removed to match the official PDF, which prints each once, verified on pages 56/58). CONSOLIDATED AMENDED, DUAL-STATUS model: every provision carries pdf_document_status_ar (the badge the official PDF prints — the governing anchor: 536 اصلية / 17 معدلة / 63 ملغاة / 21 مضافة) AND portal_legal_status_ar (the MOJ portal's live legal database: 388 اصلية / 16 معدلة / 212 ملغاة / 21 مضافة). The portal additionally marks 149 provisions ملغاة — the evidence chapters (الوقائع/الاستجواب/الإقرار/اليمين/الشهادة/القرائن/الخبرة) and the cassation/reconsideration chapters — because the standalone Law of Evidence (نظام الإثبات م/43) superseded them; those carry is_superseded=True + superseded_by_ar and are marked in the retrieval title so an LLM never presents them as current. Both statuses recorded, neither hidden. Repealed provisions keep full text and are flagged, not deleted. Fetched provision-by-provision from the MOJ portal database and cross-verified against the official MOJ PDF (633/639 outright; 6 flagged provisions visually adjudicated: 5 digit-in-parenthetical artifacts + 1 معدلة body preferred from the PDF; PDF committed with recorded sha256). Arabic governs; not legal advice.",
+      "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+      "record_counts": {
+        "arabic_articles": 637,
+        "pdf_document_status_breakdown": {
+          "اصلية": 536,
+          "مضافة": 21,
+          "معدلة": 17,
+          "ملغاة": 63
+        },
+        "portal_legal_status_breakdown": {
+          "اصلية": 388,
+          "مضافة": 21,
+          "معدلة": 16,
+          "ملغاة": 212
+        },
+        "superseded_by_evidence_law": 149,
+        "total": 637
+      },
+      "report_paths": [],
+      "source_authority": "Ministry of Justice / وزارة العدل (Minister of Justice decree 39933, 19/5/1435H; official legal portal)",
+      "status": "complete",
+      "track_id": "sharia_procedure_implementing_regulation",
+      "validator_targets": [
+        "make sharia-procedure-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -1180,10 +1236,10 @@
       "labor": 571,
       "pdpl": 81,
       "personal_status": 293,
-      "sharia_procedure": 243
+      "sharia_procedure": 880
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 2821,
+    "total_records": 3458,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

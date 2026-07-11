@@ -160,12 +160,13 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   GTPL regulation 157 + Labor Law 249 (+234 English reference) + Labor regulation 45 + Labor model
   work regulation 72+3 tables + Labor mediation rules 20 + Labor recruitment rules 72 + Labor
   accessibility tables 8 + Labor contract forms 102 + Evidence Law 129 + Evidence companions
-  24+135+34 + Personal Status Law 252 + Personal Status regulation 41 + Law of Sharia Procedure 243**)
+  24+135+34 + Personal Status Law 252 + Personal Status regulation 41 + Law of Sharia Procedure 243
+  + Sharia Procedure regulation 637**)
   with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **25 tracks; primary Arabic governing 2990; reference 614; registry-counted
-  3885.** PDPL and Investment Arabic tracks are **verified against official
+  boundaries, and validation targets. **26 tracks; primary Arabic governing 3627; reference 614; registry-counted
+  4522.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (2821 records) as a projection (not added to totals). See
+  index (3458 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -358,24 +359,24 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   `make civil-transactions-law-verified-validate` and
   `make civil-transactions-law-legal-llm-validate`.
 - **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`
-  projects all twenty-three Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
+  projects all twenty-four Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
   Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99+157 +
   Labor 571 across its eight components + Evidence 322 across its four components +
-  Personal Status 293 (law 252 + regulation 41) + Law of Sharia Procedure 243 = **2821 records**) into one flat index at
+  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) = **3458 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
   flags). No legal text is altered, summarized, or translated. Validate (includes sanity queries
   that must route to the right law): `make corpus-unified-llm-index-validate`.
-- **Retrieval eval pack** — 74 realistic Arabic gold queries over the unified index
+- **Retrieval eval pack** — 77 realistic Arabic gold queries over the unified index
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 85.1% / top-3 93.2% / top-5 97.3% / MRR@5 0.8946**
-  over the 2821-record index with **74 golds** — expanded from 40 (v2: gtp-001..007 +
-  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003) so that GTPL, all eight
+  deterministic results. **Current: top-1 85.7% / top-3 93.5% / top-5 97.4% / MRR@5 0.8987**
+  over the 3458-record index with **77 golds** — expanded from 40 (v2: gtp-001..007 +
+  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation) so that GTPL, all eight
   Labor components, all four Evidence components, the Personal Status law + regulation, and the
-  Law of Sharia Procedure have
+  Law of Sharia Procedure + its implementing regulation have
   gold coverage; every new
   gold was confirmed by reading the article's committed text first and writing the query from
   its own wording. Two documented
@@ -545,12 +546,35 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   `sources/sharia_procedure/law/` + `data/sharia_procedure_arabic_legal_llm/`. Validate:
   `make sharia-procedure-law-track-validate`.
 
+- **Implementing Regulation of the Law of Sharia Procedure verified + LLM-ready — first DUAL-STATUS
+  track.** **اللائحة التنفيذية لنظام المرافعات الشرعية** (قرار وزير العدل 39933، 19/5/1435هـ) —
+  **637 provisions** captured with the same double-official MOJ pipeline (portal database × official
+  MOJ PDF, 61 pages, committed with sha256). This regulation carries a genuine dual status that we
+  record honestly on **every** provision, neither side hidden: `pdf_document_status_ar` — the badge
+  the official PDF actually prints (**536 اصلية / 17 معدلة / 63 ملغاة / 21 مضافة**, the governing
+  anchor driving is_repealed/is_amended/is_added) — and `portal_legal_status_ar` — the MOJ portal's
+  live legal database (**388 اصلية / 16 معدلة / 212 ملغاة / 21 مضافة**). The portal additionally marks
+  **149 provisions** ملغاة — the evidence chapters (الوقائع/الاستجواب/الإقرار/اليمين/الشهادة/القرائن/
+  الخبرة) and the النقض/التماس إعادة النظر chapters — because the standalone **Law of Evidence (م/43)**
+  superseded them, even though the published regulation PDF still prints them in force; those carry
+  `is_superseded=True` + `superseded_by_ar` and are marked "(مستبدلة بنظام الإثبات م/٤٣)" in the
+  retrieval title so an LLM never presents a superseded provision as current. Verification: 633/639
+  matched outright; the **6 flagged provisions were visually adjudicated on the rendered pages** — 5
+  are digit-in-parenthetical text-layer/OCR artifacts (stored text matches the print verbatim: ٢/٧,
+  ٧/٣١, ٧/٣٣, ٥/١٩٠, ٦/١٩٠), and ٢/٢٢٧ had a real difference where the official PDF prints the معدلة
+  body (used) while the section-API returned the pre-amendment original. **2 exact portal
+  redundancies** (labels ١/٢٣٢ and ١٢/٢٢٨ — identical text and status) were removed to match the
+  official PDF, which prints each once (verified on pages 56/58): 639 portal nodes → 637 distinct
+  provisions. Repealed/superseded provisions keep their full text and are flagged, not deleted. Track
+  under `sources/sharia_procedure/regulation/` + `data/sharia_procedure_arabic_legal_llm/`. Validate:
+  `make sharia-procedure-regulation-track-validate`.
+
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (99 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (100 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 26 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 27 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any
