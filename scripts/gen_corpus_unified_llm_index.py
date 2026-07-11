@@ -72,6 +72,8 @@ LAYERS = [
      "personal_status", "law"),
     ("data/personal_status_arabic_legal_llm/personal_status_regulation_legal_llm_001_041.json",
      "personal_status", "implementing_regulation"),
+    ("data/sharia_procedure_arabic_legal_llm/sharia_procedure_law_legal_llm_001_243.json",
+     "sharia_procedure", "law"),
 ]
 
 
