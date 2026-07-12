@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 4343
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26}
+EXPECTED_TOTAL = 4399
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 56}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -64,6 +64,8 @@ SANITY = [
     ("ديوان المظالم هيئة قضاء إداري مستقلة يرتبط مباشرة بالملك", "board_of_grievances", 1),
     ("تختص المحاكم الإدارية بالفصل في دعاوى إلغاء القرارات الإدارية النهائية وإساءة استعمال السلطة", "board_of_grievances", 13),
     ("يُنشأ في الديوان مجلس يسمى مجلس القضاء الإداري ويتكون من رئيس ديوان المظالم واثنين من ذوي الخبرة والاختصاص", "board_of_grievances", 4),
+    ("يقصد بمهنة المحاماة الترافع عن الغير أمام المحاكم واللجان ومزاولة الاستشارات الشرعية والنظامية", "law_practice", 1),
+    ("يقصد بمكتب المحاماة الأجنبي المنشأة غير السعودية التي تزاول أعمال مهنة المحاماة والترخيص له في المملكة", "law_practice", 44),
 ]
 
 
@@ -129,6 +131,7 @@ def main():
         "data/enforcement_arabic_legal_llm/enforcement_regulation_legal_llm_001_273.json",
         "data/judiciary_arabic_legal_llm/judiciary_law_legal_llm_001_085.json",
         "data/board_of_grievances_arabic_legal_llm/board_of_grievances_law_legal_llm_001_026.json",
+        "data/law_practice_arabic_legal_llm/law_practice_law_legal_llm_001_056.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -162,7 +165,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 56; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
