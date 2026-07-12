@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 95,
-  "top1_hits": 78,
-  "top3_hits": 90,
-  "top5_hits": 93,
-  "top1_accuracy": 0.8211,
-  "top3_accuracy": 0.9474,
-  "top5_accuracy": 0.9789,
-  "mrr_at_5": 0.8828,
+  "total_queries": 98,
+  "top1_hits": 80,
+  "top3_hits": 93,
+  "top5_hits": 96,
+  "top1_accuracy": 0.8163,
+  "top3_accuracy": 0.949,
+  "top5_accuracy": 0.9796,
+  "mrr_at_5": 0.8813,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2960,6 +2960,99 @@
      "record_id": "board-of-grievances-law-llm-art-006",
      "article_number": 6,
      "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "muh-001",
+   "query_ar": "يقصد بمهنة المحاماة الترافع عن الغير أمام المحاكم ومزاولة الاستشارات الشرعية والنظامية",
+   "category": "topical",
+   "gold": {
+    "corpus": "law_practice",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "law-practice-law-llm-art-001",
+     "article_number": 1,
+     "score": 41
+    },
+    {
+     "record_id": "law-practice-law-llm-art-051",
+     "article_number": 51,
+     "score": 19
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-001",
+     "article_number": 1,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "muh-002",
+   "query_ar": "الترخيص لمكتب المحاماة الأجنبي المنشأة غير السعودية لمزاولة مهنة المحاماة في المملكة",
+   "category": "topical",
+   "gold": {
+    "corpus": "law_practice",
+    "law_component": "law",
+    "article_number": 44
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "law-practice-law-llm-art-045",
+     "article_number": 45,
+     "score": 33
+    },
+    {
+     "record_id": "law-practice-law-llm-art-044",
+     "article_number": 44,
+     "score": 30
+    },
+    {
+     "record_id": "law-practice-law-llm-art-048",
+     "article_number": 48,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "muh-003",
+   "query_ar": "لا يجوز للمحامي أن يشتري الحقوق المتنازع عليها التي يكون وكيلا عليها",
+   "category": "topical",
+   "gold": {
+    "corpus": "law_practice",
+    "law_component": "law",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "law-practice-law-llm-art-025",
+     "article_number": 25,
+     "score": 31
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 15
+    },
+    {
+     "record_id": "oa-llm-companies-art-110",
+     "article_number": 110,
+     "score": 13
     }
    ]
   }
