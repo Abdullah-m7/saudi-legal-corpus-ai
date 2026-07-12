@@ -161,12 +161,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   work regulation 72+3 tables + Labor mediation rules 20 + Labor recruitment rules 72 + Labor
   accessibility tables 8 + Labor contract forms 102 + Evidence Law 129 + Evidence companions
   24+135+34 + Personal Status Law 252 + Personal Status regulation 41 + Law of Sharia Procedure 243
-  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85**)
+  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85 + Law of the Board of Grievances 26**)
   with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **31 tracks; primary Arabic governing 4486; reference 614; registry-counted
-  5381.** PDPL and Investment Arabic tracks are **verified against official
+  boundaries, and validation targets. **32 tracks; primary Arabic governing 4512; reference 614; registry-counted
+  5407.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (4317 records) as a projection (not added to totals). See
+  index (4343 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -359,10 +359,10 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   `make civil-transactions-law-verified-validate` and
   `make civil-transactions-law-legal-llm-validate`.
 - **Unified cross-law retrieval index + search** — `scripts/gen_corpus_unified_llm_index.py`
-  projects all twenty-nine Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
+  projects all thirty Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
   Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99+157 +
   Labor 571 across its eight components + Evidence 322 across its four components +
-  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 = **4317 records**) into one flat index at
+  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 + Board of Grievances 26 = **4343 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
@@ -372,11 +372,11 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 83.7% / top-3 94.6% / top-5 97.8% / MRR@5 0.8899**
-  over the 4317-record index with **92 golds** — expanded from 40 (v2: gtp-001..007 +
-  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary) so that GTPL, all eight
+  deterministic results. **Current: top-1 82.1% / top-3 94.7% / top-5 97.9% / MRR@5 0.8828**
+  over the 4343-record index with **95 golds** — expanded from 40 (v2: gtp-001..007 +
+  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary; v13: dmz-001..003 board-of-grievances) so that GTPL, all eight
   Labor components, all four Evidence components, the Personal Status law + regulation, the
-  Law of Sharia Procedure + its implementing regulation, the Law of Criminal Procedure + its implementing regulation, the Law of Enforcement + its regulation, and the Law of the Judiciary have
+  Law of Sharia Procedure + its implementing regulation, the Law of Criminal Procedure + its implementing regulation, the Law of Enforcement + its regulation, the Law of the Judiciary, and the Law of the Board of Grievances have
   gold coverage; every new
   gold was confirmed by reading the article's committed text first and writing the query from
   its own wording. Two documented
@@ -660,12 +660,40 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   implementing regulation (2 provisions) — which was corrected in the same change (2 double-dashes
   restored; the 37 genuine in-word tatweel removals are unchanged).
 
+## نظام ديوان المظالم — Law of the Board of Grievances (م/78، 1428هـ)
+
+- **Law of the Board of Grievances (M/78, 19/9/1428هـ) verified + LLM-ready — the administrative-
+  judiciary statute.** **نظام ديوان المظالم** — **26 records** (complete 1–26, no مكرر). Issued under
+  the *same* royal decree as نظام القضاء; it organizes the independent administrative judiciary
+  (قضاء إداري مستقل يرتبط مباشرة بالملك): the المحكمة الإدارية العليا / محاكم الاستئناف الإدارية /
+  المحاكم الإدارية and the مجلس القضاء الإداري. In force; per its Article 26 it replaced the former
+  Board Law (M/51, 1402هـ).
+- **Different sourcing route (user-approved).** The Board sits under a separate authority and is **not
+  on the MOJ legal portal**, and the BOE consolidated database (`laws.boe.gov.sa`) is **network-
+  unreachable** here (TLS reset). So the text was taken from the **Board's own official machine-
+  readable DOCX** and adjudicated **VISUALLY, page-by-page, against the Board's certified official PDF**
+  (صورة طبق الأصل / هيئة الخبراء بمجلس الوزراء; 13 pages, committed with recorded sha256; the same scan
+  is independently held by **WIPO Lex**, corroborating provenance). All **26/26** articles confirmed
+  verbatim; OCR similarity (0.80–0.90) was noise-limited by scan quality, not divergence, so the visual
+  read is the anchor.
+- **Consolidated, minimally amended: 25 اصلية / 1 معدّلة / 0 ملغاة / 0 مضافة.** The single amendment is
+  **Article 4** (composition of مجلس القضاء الإداري), amended by **قرار مجلس الوزراء 594 / المرسوم م/180
+  (17/8/1446هـ)**, published in **جريدة أم القرى العدد 5072 (21 Feb 2025)** — it adds a fifth member
+  category (عضوان من ذوي الخبرة والاختصاص) and a 4-year renewable royal-order tenure for items 4 and 5.
+  Article 4 carries both its current amended body and its original 1428 body in `amendment_history`.
+  The amendment **scope (Article 4 only) and substance are officially confirmed by the SPA
+  Council-of-Ministers announcement**; its verbatim wording is from a secondary rendering of gazette
+  5072 (BOE unreachable) and is **flagged at a slightly lower verbatim-trust tier** in the source
+  artifact — the other 25 articles are double-official. Decorative in-word tatweel removed; the هـ
+  enumerator and space-bounded enumerator dashes kept. Track under `sources/board_of_grievances/law/` +
+  `data/board_of_grievances_arabic_legal_llm/`. Validate: `make board-of-grievances-law-track-validate`.
+
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (105 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (106 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 32 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 33 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any

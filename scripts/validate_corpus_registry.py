@@ -80,6 +80,7 @@ REQUIRED_TRACK_IDS = [
     "enforcement_law",
     "enforcement_implementing_regulation",
     "judiciary_law",
+    "board_of_grievances_law",
 ]
 
 CHECKS: list[str] = []
@@ -122,9 +123,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 31 tracks
+    # [3] 32 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 31 tracks present...", len(track_ids) == 31 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 32 tracks present...", len(track_ids) == 32 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -375,7 +376,18 @@ def main() -> int:
           jud_counts.get("legal_status_breakdown") == {"اصلية": 82, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
           f"breakdown={jud_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 4317 records...", uix.get("total_records") == 4317,
+    # [7g22] Law of the Board of Grievances (administrative-judiciary statute)
+    bog = tracks_by_id.get("board_of_grievances_law", {})
+    bog_counts = bog.get("record_counts", {})
+    check("[7g22] board_of_grievances_law: 26 Arabic articles...",
+          bog_counts.get("arabic_articles") == 26
+          and bog.get("official_text_status") == "BOARD_OFFICIAL_PDF_VISUALLY_ADJUDICATED_GAZETTE_CONFIRMED",
+          f"counts={bog_counts}")
+    check("    board_of_grievances_law: status breakdown 25/1/0/0...",
+          bog_counts.get("legal_status_breakdown") == {"اصلية": 25, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={bog_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 4343 records...", uix.get("total_records") == 4343,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -437,8 +449,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 4486...",
-          registry.get("total_primary_arabic_governing_records") == 4486,
+    check("[19a] total_primary_arabic_governing_records == 4512...",
+          registry.get("total_primary_arabic_governing_records") == 4512,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -453,8 +465,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 5381...",
-          registry.get("total_registry_counted_records") == 5381,
+    check("[19e] total_registry_counted_records == 5407...",
+          registry.get("total_registry_counted_records") == 5407,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -478,7 +490,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"4486 + 614 + 281 = 5381")
+          f"4512 + 614 + 281 = 5407")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -496,7 +508,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 31 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 32 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -509,8 +521,8 @@ def print_results() -> None:
               "personal_status_implementing_regulation, sharia_procedure_law, "
               "sharia_procedure_implementing_regulation, criminal_procedure_law, "
               "criminal_procedure_implementing_regulation, enforcement_law, "
-              "enforcement_implementing_regulation, judiciary_law). "
-              "Primary Arabic 4486, reference 614, registry-counted 5381. All counts correct, all referenced paths "
+              "enforcement_implementing_regulation, judiciary_law, board_of_grievances_law). "
+              "Primary Arabic 4512, reference 614, registry-counted 5407. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -527,8 +539,11 @@ def print_results() -> None:
               "single-status (219+174 اصلية / 3+7 معدلة, no dual-status) — and the Law of Enforcement "
               "(98 records) and its implementing regulation (273 records), both consolidated single-status "
               "with flagged repeals (94+266 اصلية; repealed/added provisions flagged not deleted) — and the "
-              "foundational Law of the Judiciary (85 records, court-organization statute: 82 اصلية / 3 معدلة). "
-              "Unified retrieval index (4317) projects counted records. Read-only.")
+              "foundational Law of the Judiciary (85 records, court-organization statute: 82 اصلية / 3 معدلة) — "
+              "and the Law of the Board of Grievances (26 records, administrative-judiciary statute: 25 اصلية / "
+              "1 معدلة; Board certified PDF visually adjudicated + Article 4's م/180 amendment from Umm Al-Qura "
+              "5072, SPA-confirmed). "
+              "Unified retrieval index (4343) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)

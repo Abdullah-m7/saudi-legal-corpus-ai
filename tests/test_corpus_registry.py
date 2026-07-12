@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 31
+        assert registry["total_tracks"] == 32
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 4486
+        assert registry["total_primary_arabic_governing_records"] == 4512
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 5381
+        assert registry["total_registry_counted_records"] == 5407
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -100,6 +100,7 @@ class TestTracks:
         assert "enforcement_law" in ids
         assert "enforcement_implementing_regulation" in ids
         assert "judiciary_law" in ids
+        assert "board_of_grievances_law" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -160,6 +161,13 @@ class TestTracks:
         assert jl["record_counts"]["legal_status_breakdown"] == {
             "اصلية": 82, "معدلة": 3, "ملغاة": 0, "مضافة": 0}
         assert jl["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_board_of_grievances_law_counts(self, registry):
+        bog = next(t for t in registry["tracks"] if t["track_id"] == "board_of_grievances_law")
+        assert bog["record_counts"]["arabic_articles"] == 26
+        assert bog["record_counts"]["legal_status_breakdown"] == {
+            "اصلية": 25, "معدلة": 1, "ملغاة": 0, "مضافة": 0}
+        assert bog["official_text_status"] == "BOARD_OFFICIAL_PDF_VISUALLY_ADJUDICATED_GAZETTE_CONFIRMED"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),
