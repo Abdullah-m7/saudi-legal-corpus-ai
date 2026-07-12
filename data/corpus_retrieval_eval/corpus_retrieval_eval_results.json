@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 104,
-  "top1_hits": 85,
-  "top3_hits": 99,
-  "top5_hits": 102,
-  "top1_accuracy": 0.8173,
-  "top3_accuracy": 0.9519,
-  "top5_accuracy": 0.9808,
-  "mrr_at_5": 0.8833,
+  "total_queries": 107,
+  "top1_hits": 88,
+  "top3_hits": 102,
+  "top5_hits": 105,
+  "top1_accuracy": 0.8224,
+  "top3_accuracy": 0.9533,
+  "top5_accuracy": 0.9813,
+  "mrr_at_5": 0.8866,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2239,13 +2239,13 @@
      "score": 33
     },
     {
-     "record_id": "oa-llm-companies-art-170",
-     "article_number": 170,
+     "record_id": "commercial-courts-regulation-llm-art-215",
+     "article_number": 215,
      "score": 16
     },
     {
-     "record_id": "oa-llm-companies-art-227",
-     "article_number": 227,
+     "record_id": "oa-llm-companies-art-170",
+     "article_number": 170,
      "score": 16
     }
    ]
@@ -2864,7 +2864,7 @@
      "score": 12
     },
     {
-     "record_id": "commercial-courts-law-llm-art-001",
+     "record_id": "commercial-courts-regulation-llm-art-001",
      "article_number": 1,
      "score": 12
     }
@@ -3169,13 +3169,13 @@
      "score": 22
     },
     {
-     "record_id": "commercial-courts-law-llm-art-001",
-     "article_number": 1,
-     "score": 15
+     "record_id": "commercial-courts-regulation-llm-art-228",
+     "article_number": 228,
+     "score": 17
     },
     {
-     "record_id": "commercial-courts-law-llm-art-013",
-     "article_number": 13,
+     "record_id": "commercial-courts-regulation-llm-art-001",
+     "article_number": 1,
      "score": 15
     }
    ]
@@ -3231,14 +3231,107 @@
      "score": 33
     },
     {
+     "record_id": "commercial-courts-regulation-llm-art-250",
+     "article_number": 250,
+     "score": 22
+    },
+    {
      "record_id": "sharia-procedure-law-llm-art-179",
      "article_number": 179,
      "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "tjl-001",
+   "query_ar": "يشترط لرفع الدعوى الجماعية اتحاد موضوع المطالبة والسبب والمدعى عليه",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_courts",
+    "law_component": "implementing_regulation",
+    "article_number": 252
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-courts-regulation-llm-art-252",
+     "article_number": 252,
+     "score": 30
     },
     {
-     "record_id": "evidence-expertise-llm-art-015",
-     "article_number": 15,
-     "score": 19
+     "record_id": "commercial-courts-regulation-llm-art-272",
+     "article_number": 272,
+     "score": 13
+    },
+    {
+     "record_id": "commercial-courts-regulation-llm-art-076",
+     "article_number": 76,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "tjl-002",
+   "query_ar": "تراعي المحكمة عند تقريرها الاعتماد على خبير واحد مشترك من عدمه في الدعوى التجارية",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_courts",
+    "law_component": "implementing_regulation",
+    "article_number": 144
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-courts-regulation-llm-art-144",
+     "article_number": 144,
+     "score": 28
+    },
+    {
+     "record_id": "commercial-courts-law-llm-art-013",
+     "article_number": 13,
+     "score": 24
+    },
+    {
+     "record_id": "commercial-courts-law-llm-art-016",
+     "article_number": 16,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "tjl-003",
+   "query_ar": "تعقد المحكمة جلسة تحضيرية قبل المرافعة يجري فيها التحقق من الاختصاص وعرض الصلح",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_courts",
+    "law_component": "implementing_regulation",
+    "article_number": 90
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-courts-regulation-llm-art-090",
+     "article_number": 90,
+     "score": 32
+    },
+    {
+     "record_id": "sharia-procedure-regulation-llm-prov-170",
+     "article_number": 170,
+     "score": 20
+    },
+    {
+     "record_id": "commercial-courts-regulation-llm-art-272",
+     "article_number": 272,
+     "score": 14
     }
    ]
   }
