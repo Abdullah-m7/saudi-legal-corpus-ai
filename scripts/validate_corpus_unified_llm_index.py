@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 4489
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146}
+EXPECTED_TOTAL = 4585
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 96}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -68,6 +68,8 @@ SANITY = [
     ("يقصد بمكتب المحاماة الأجنبي المنشأة غير السعودية التي تزاول أعمال مهنة المحاماة والترخيص له في المملكة", "law_practice", 44),
     ("يلتزم المحامي عند تقديم أعمال المهنة عبر منصة إلكترونية وسيطة بالمحافظة على خصوصية عملائه وسرية البيانات", "law_practice", 19),
     ("يقتصر منح الترخيص المؤقت لمكتب المحاماة الأجنبي على الاستشارات لمشروعات نوعية أو متخصصة تحتاج إليها المملكة", "law_practice", 62),
+    ("تختص المحكمة التجارية بالنظر في المنازعات التي تنشأ بين التجار بسبب أعمالهم التجارية الأصلية أو التبعية", "commercial_courts", 16),
+    ("يجوز للمدين التظلم من أمر الأداء الصادر بحقه أمام المحكمة المختصة خلال خمسة عشر يوماً", "commercial_courts", 71),
 ]
 
 
@@ -135,6 +137,7 @@ def main():
         "data/board_of_grievances_arabic_legal_llm/board_of_grievances_law_legal_llm_001_026.json",
         "data/law_practice_arabic_legal_llm/law_practice_law_legal_llm_001_056.json",
         "data/law_practice_arabic_legal_llm/law_practice_regulation_legal_llm_001_090.json",
+        "data/commercial_courts_arabic_legal_llm/commercial_courts_law_legal_llm_001_096.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -168,7 +171,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 96; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 

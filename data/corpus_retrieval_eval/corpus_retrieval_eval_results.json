@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 101,
-  "top1_hits": 83,
-  "top3_hits": 96,
-  "top5_hits": 99,
-  "top1_accuracy": 0.8218,
-  "top3_accuracy": 0.9505,
-  "top5_accuracy": 0.9802,
-  "mrr_at_5": 0.8848,
+  "total_queries": 104,
+  "top1_hits": 85,
+  "top3_hits": 99,
+  "top5_hits": 102,
+  "top1_accuracy": 0.8173,
+  "top3_accuracy": 0.9519,
+  "top5_accuracy": 0.9808,
+  "mrr_at_5": 0.8833,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2259,11 +2259,16 @@
     "law_component": "law",
     "article_number": 36
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "commercial-courts-law-llm-art-017",
+     "article_number": 17,
+     "score": 26
+    },
     {
      "record_id": "sharia-procedure-law-llm-art-036",
      "article_number": 36,
@@ -2272,11 +2277,6 @@
     {
      "record_id": "enforcement-regulation-llm-prov-019",
      "article_number": 19,
-     "score": 18
-    },
-    {
-     "record_id": "sharia-procedure-regulation-llm-prov-100",
-     "article_number": 100,
      "score": 18
     }
    ]
@@ -2864,7 +2864,7 @@
      "score": 12
     },
     {
-     "record_id": "evidence-expertise-llm-art-001",
+     "record_id": "commercial-courts-law-llm-art-001",
      "article_number": 1,
      "score": 12
     }
@@ -3146,6 +3146,99 @@
      "record_id": "law-practice-regulation-llm-art-052",
      "article_number": 52,
      "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "tjr-001",
+   "query_ar": "تختص المحكمة التجارية بالمنازعات التي تنشأ بين التجار بسبب أعمالهم التجارية",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_courts",
+    "law_component": "law",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-courts-law-llm-art-016",
+     "article_number": 16,
+     "score": 22
+    },
+    {
+     "record_id": "commercial-courts-law-llm-art-001",
+     "article_number": 1,
+     "score": 15
+    },
+    {
+     "record_id": "commercial-courts-law-llm-art-013",
+     "article_number": 13,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "tjr-002",
+   "query_ar": "يجوز للمدين التظلم من أمر الأداء الصادر بحقه أمام المحكمة المختصة",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_courts",
+    "law_component": "law",
+    "article_number": 71
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-courts-law-llm-art-071",
+     "article_number": 71,
+     "score": 27
+    },
+    {
+     "record_id": "inv-law-llm-art-012",
+     "article_number": 12,
+     "score": 20
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-028",
+     "article_number": 28,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "tjr-003",
+   "query_ar": "تكون المهلة المحددة للاستئناف على الأحكام ثلاثين يوما من تاريخ تسليم صورة نسخة الحكم",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_courts",
+    "law_component": "law",
+    "article_number": 79
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-courts-law-llm-art-079",
+     "article_number": 79,
+     "score": 33
+    },
+    {
+     "record_id": "sharia-procedure-law-llm-art-179",
+     "article_number": 179,
+     "score": 19
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-015",
+     "article_number": 15,
+     "score": 19
     }
    ]
   }
