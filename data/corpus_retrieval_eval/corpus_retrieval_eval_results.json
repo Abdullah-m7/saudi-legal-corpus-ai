@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 98,
-  "top1_hits": 80,
-  "top3_hits": 93,
-  "top5_hits": 96,
-  "top1_accuracy": 0.8163,
-  "top3_accuracy": 0.949,
-  "top5_accuracy": 0.9796,
-  "mrr_at_5": 0.8813,
+  "total_queries": 101,
+  "top1_hits": 83,
+  "top3_hits": 96,
+  "top5_hits": 99,
+  "top1_accuracy": 0.8218,
+  "top3_accuracy": 0.9505,
+  "top5_accuracy": 0.9802,
+  "mrr_at_5": 0.8848,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -3053,6 +3053,99 @@
      "record_id": "oa-llm-companies-art-110",
      "article_number": 110,
      "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "mhl-001",
+   "query_ar": "يلتزم المحامي عند تقديم أعماله عبر منصة إلكترونية وسيطة بالمحافظة على خصوصية عملائه",
+   "category": "topical",
+   "gold": {
+    "corpus": "law_practice",
+    "law_component": "implementing_regulation",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "law-practice-regulation-llm-art-019",
+     "article_number": 19,
+     "score": 23
+    },
+    {
+     "record_id": "law-practice-regulation-llm-art-033",
+     "article_number": 33,
+     "score": 11
+    },
+    {
+     "record_id": "personal-status-law-llm-art-246",
+     "article_number": 246,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "mhl-002",
+   "query_ar": "الترخيص المؤقت لمكتب المحاماة الأجنبي لمشروعات نوعية أو متخصصة تحتاج إليها المملكة",
+   "category": "topical",
+   "gold": {
+    "corpus": "law_practice",
+    "law_component": "implementing_regulation",
+    "article_number": 62
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "law-practice-regulation-llm-art-062",
+     "article_number": 62,
+     "score": 37
+    },
+    {
+     "record_id": "law-practice-law-llm-art-045",
+     "article_number": 45,
+     "score": 23
+    },
+    {
+     "record_id": "law-practice-law-llm-art-048",
+     "article_number": 48,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "mhl-003",
+   "query_ar": "يلتزم مكتب المحاماة الأجنبي بنسب التوطين وخطة سنوية لنقل المعرفة والتدريب للسعوديين",
+   "category": "topical",
+   "gold": {
+    "corpus": "law_practice",
+    "law_component": "implementing_regulation",
+    "article_number": 60
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "law-practice-regulation-llm-art-060",
+     "article_number": 60,
+     "score": 26
+    },
+    {
+     "record_id": "law-practice-regulation-llm-art-061",
+     "article_number": 61,
+     "score": 22
+    },
+    {
+     "record_id": "law-practice-regulation-llm-art-052",
+     "article_number": 52,
+     "score": 20
     }
    ]
   }
