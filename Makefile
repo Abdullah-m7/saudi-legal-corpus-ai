@@ -138,6 +138,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         enforcement-law-track-validate \
         enforcement-regulation-track-validate \
         judiciary-law-track-validate \
+        board-of-grievances-law-track-validate \
         qa-gate
 
 help:
@@ -971,6 +972,10 @@ enforcement-regulation-track-validate:
 # -- Law of the Judiciary track validator --
 judiciary-law-track-validate:
 	$(PY) scripts/validate_judiciary_law_track.py
+
+# -- Law of the Board of Grievances track validator --
+board-of-grievances-law-track-validate:
+	$(PY) scripts/validate_board_of_grievances_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

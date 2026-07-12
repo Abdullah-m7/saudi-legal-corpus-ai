@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 92,
-  "top1_hits": 77,
-  "top3_hits": 87,
-  "top5_hits": 90,
-  "top1_accuracy": 0.837,
-  "top3_accuracy": 0.9457,
-  "top5_accuracy": 0.9783,
-  "mrr_at_5": 0.8899,
+  "total_queries": 95,
+  "top1_hits": 78,
+  "top3_hits": 90,
+  "top5_hits": 93,
+  "top1_accuracy": 0.8211,
+  "top3_accuracy": 0.9474,
+  "top5_accuracy": 0.9789,
+  "mrr_at_5": 0.8828,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1123,13 +1123,13 @@
      "score": 30
     },
     {
-     "record_id": "gtpl-reg-llm-art-007",
-     "article_number": 7,
+     "record_id": "board-of-grievances-law-llm-art-022",
+     "article_number": 22,
      "score": 5
     },
     {
-     "record_id": "judiciary-law-llm-art-045",
-     "article_number": 45,
+     "record_id": "gtpl-reg-llm-art-007",
+     "article_number": 7,
      "score": 5
     }
    ]
@@ -2817,11 +2817,16 @@
     "law_component": "law",
     "article_number": 84
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "board-of-grievances-law-llm-art-023",
+     "article_number": 23,
+     "score": 15
+    },
     {
      "record_id": "judiciary-law-llm-art-084",
      "article_number": 84,
@@ -2831,11 +2836,6 @@
      "record_id": "judiciary-law-llm-art-047",
      "article_number": 47,
      "score": 11
-    },
-    {
-     "record_id": "judiciary-law-llm-art-048",
-     "article_number": 48,
-     "score": 10
     }
    ]
   },
@@ -2867,6 +2867,99 @@
      "record_id": "evidence-expertise-llm-art-001",
      "article_number": 1,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "dmz-001",
+   "query_ar": "يجوز لمجلس القضاء الإداري إحداث محاكم متخصصة أخرى بعد موافقة الملك في ديوان المظالم",
+   "category": "topical",
+   "gold": {
+    "corpus": "board_of_grievances",
+    "law_component": "law",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "board-of-grievances-law-llm-art-008",
+     "article_number": 8,
+     "score": 26
+    },
+    {
+     "record_id": "board-of-grievances-law-llm-art-005",
+     "article_number": 5,
+     "score": 26
+    },
+    {
+     "record_id": "board-of-grievances-law-llm-art-014",
+     "article_number": 14,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "dmz-002",
+   "query_ar": "لا يجوز لمحاكم ديوان المظالم النظر في الدعاوى المتعلقة بأعمال السيادة",
+   "category": "topical",
+   "gold": {
+    "corpus": "board_of_grievances",
+    "law_component": "law",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "board-of-grievances-law-llm-art-014",
+     "article_number": 14,
+     "score": 45
+    },
+    {
+     "record_id": "board-of-grievances-law-llm-art-001",
+     "article_number": 1,
+     "score": 21
+    },
+    {
+     "record_id": "board-of-grievances-law-llm-art-002",
+     "article_number": 2,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "dmz-003",
+   "query_ar": "يتكون مجلس القضاء الإداري من رئيس ديوان المظالم واثنين من ذوي الخبرة والاختصاص عضوين",
+   "category": "topical",
+   "gold": {
+    "corpus": "board_of_grievances",
+    "law_component": "law",
+    "article_number": 4
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "board-of-grievances-law-llm-art-005",
+     "article_number": 5,
+     "score": 30
+    },
+    {
+     "record_id": "board-of-grievances-law-llm-art-004",
+     "article_number": 4,
+     "score": 29
+    },
+    {
+     "record_id": "board-of-grievances-law-llm-art-006",
+     "article_number": 6,
+     "score": 27
     }
    ]
   }
