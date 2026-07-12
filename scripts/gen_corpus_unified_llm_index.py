@@ -92,6 +92,8 @@ LAYERS = [
      "law_practice", "law"),
     ("data/law_practice_arabic_legal_llm/law_practice_regulation_legal_llm_001_090.json",
      "law_practice", "implementing_regulation"),
+    ("data/commercial_courts_arabic_legal_llm/commercial_courts_law_legal_llm_001_096.json",
+     "commercial_courts", "law"),
 ]
 
 
