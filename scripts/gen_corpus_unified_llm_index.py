@@ -90,6 +90,8 @@ LAYERS = [
      "board_of_grievances", "law"),
     ("data/law_practice_arabic_legal_llm/law_practice_law_legal_llm_001_056.json",
      "law_practice", "law"),
+    ("data/law_practice_arabic_legal_llm/law_practice_regulation_legal_llm_001_090.json",
+     "law_practice", "implementing_regulation"),
 ]
 
 
