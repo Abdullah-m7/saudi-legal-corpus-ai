@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 148,
-  "top1_hits": 127,
-  "top3_hits": 143,
-  "top5_hits": 146,
-  "top1_accuracy": 0.8581,
-  "top3_accuracy": 0.9662,
-  "top5_accuracy": 0.9865,
-  "mrr_at_5": 0.9113,
+  "total_queries": 150,
+  "top1_hits": 129,
+  "top3_hits": 145,
+  "top5_hits": 148,
+  "top1_accuracy": 0.86,
+  "top3_accuracy": 0.9667,
+  "top5_accuracy": 0.9867,
+  "mrr_at_5": 0.9124,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -4603,6 +4603,68 @@
      "record_id": "real-estate-finance-law-llm-art-002",
      "article_number": 2,
      "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "wih-001",
+   "query_ar": "لكل مالك أرض بصك مستوف للمتطلبات الشرعية والنظامية أن يبني عليها بناء ويفرزه إلى وحدات مستقلة",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_units",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-units-law-llm-art-002",
+     "article_number": 2,
+     "score": 32
+    },
+    {
+     "record_id": "civil-law-llm-art-653",
+     "article_number": 653,
+     "score": 16
+    },
+    {
+     "record_id": "sharia-procedure-law-llm-art-081",
+     "article_number": 81,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "wih-002",
+   "query_ar": "يجوز إعادة فرز العقار المشترك أو جزء منه أو تغير استعمالاته بعد موافقة الجمعية العامة وموافقة المرتهن إن وجد",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_units",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-units-law-llm-art-003",
+     "article_number": 3,
+     "score": 34
+    },
+    {
+     "record_id": "real-estate-units-law-llm-art-030",
+     "article_number": 30,
+     "score": 24
+    },
+    {
+     "record_id": "oa-llm-companies-art-093",
+     "article_number": 93,
+     "score": 24
     }
    ]
   }

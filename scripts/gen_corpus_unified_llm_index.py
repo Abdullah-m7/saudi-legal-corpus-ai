@@ -136,6 +136,8 @@ LAYERS = [
      "real_estate_mortgage", "law"),
     ("data/real_estate_finance_arabic_legal_llm/real_estate_finance_law_legal_llm_001_015.json",
      "real_estate_finance", "law"),
+    ("data/real_estate_units_arabic_legal_llm/real_estate_units_law_legal_llm_001_033.json",
+     "real_estate_units", "law"),
 ]
 
 
