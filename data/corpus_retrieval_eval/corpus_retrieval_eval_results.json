@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 151,
-  "top1_hits": 130,
-  "top3_hits": 146,
-  "top5_hits": 149,
-  "top1_accuracy": 0.8609,
-  "top3_accuracy": 0.9669,
-  "top5_accuracy": 0.9868,
-  "mrr_at_5": 0.913,
+  "total_queries": 153,
+  "top1_hits": 132,
+  "top3_hits": 148,
+  "top5_hits": 151,
+  "top1_accuracy": 0.8627,
+  "top3_accuracy": 0.9673,
+  "top5_accuracy": 0.9869,
+  "mrr_at_5": 0.9142,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1252,8 +1252,8 @@
      "score": 5
     },
     {
-     "record_id": "inv-reg-llm-art-019",
-     "article_number": 19,
+     "record_id": "foreign-ownership-law-llm-art-007",
+     "article_number": 7,
      "score": 5
     }
    ]
@@ -2704,14 +2704,14 @@
      "score": 35
     },
     {
-     "record_id": "real-estate-registration-law-llm-art-001",
-     "article_number": 1,
-     "score": 14
+     "record_id": "foreign-ownership-law-llm-art-002",
+     "article_number": 2,
+     "score": 17
     },
     {
-     "record_id": "enforcement-law-llm-art-045",
-     "article_number": 45,
-     "score": 13
+     "record_id": "foreign-ownership-law-llm-art-008",
+     "article_number": 8,
+     "score": 17
     }
    ]
   },
@@ -4533,14 +4533,14 @@
      "score": 26
     },
     {
-     "record_id": "real-estate-mortgage-law-llm-art-020",
-     "article_number": 20,
-     "score": 16
+     "record_id": "foreign-ownership-law-llm-art-001",
+     "article_number": 1,
+     "score": 17
     },
     {
-     "record_id": "real-estate-mortgage-law-llm-art-015",
-     "article_number": 15,
-     "score": 15
+     "record_id": "foreign-ownership-law-llm-art-006",
+     "article_number": 6,
+     "score": 17
     }
    ]
   },
@@ -4696,6 +4696,68 @@
      "record_id": "oa-llm-companies-art-256",
      "article_number": 256,
      "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "gsr-001",
+   "query_ar": "لغير السعودي تملك العقار أو اكتساب الحقوق العينية الأخرى على العقار في المملكة في النطاق الجغرافي الذي يحدده مجلس الوزراء",
+   "category": "topical",
+   "gold": {
+    "corpus": "foreign_ownership",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "foreign-ownership-law-llm-art-002",
+     "article_number": 2,
+     "score": 47
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-008",
+     "article_number": 8,
+     "score": 39
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-006",
+     "article_number": 6,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gsr-002",
+   "query_ar": "يجوز على أساس المعاملة بالمثل للممثليات الدبلوماسية المعتمدة بالمملكة تملك المقر الرسمي لها ومقر السكن لرئيسها وأعضائها",
+   "category": "topical",
+   "gold": {
+    "corpus": "foreign_ownership",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "foreign-ownership-law-llm-art-007",
+     "article_number": 7,
+     "score": 46
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-002",
+     "article_number": 2,
+     "score": 12
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-003",
+     "article_number": 3,
+     "score": 12
     }
    ]
   }
