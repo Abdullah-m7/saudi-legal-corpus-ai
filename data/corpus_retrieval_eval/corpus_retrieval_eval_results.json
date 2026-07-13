@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 144,
-  "top1_hits": 123,
-  "top3_hits": 139,
-  "top5_hits": 142,
-  "top1_accuracy": 0.8542,
-  "top3_accuracy": 0.9653,
-  "top5_accuracy": 0.9861,
-  "mrr_at_5": 0.9088,
+  "total_queries": 146,
+  "top1_hits": 125,
+  "top3_hits": 141,
+  "top5_hits": 144,
+  "top1_accuracy": 0.8562,
+  "top3_accuracy": 0.9658,
+  "top5_accuracy": 0.9863,
+  "mrr_at_5": 0.91,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -4479,6 +4479,68 @@
      "record_id": "real-estate-registration-regulation-llm-art-002",
      "article_number": 2,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "rhn-001",
+   "query_ar": "تعريف الرهن العقاري المسجل عقد يكسب به المرتهن الدائن حقا عينيا على عقار معين له سجل",
+   "category": "definitional",
+   "gold": {
+    "corpus": "real_estate_mortgage",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-mortgage-law-llm-art-001",
+     "article_number": 1,
+     "score": 42
+    },
+    {
+     "record_id": "real-estate-mortgage-law-llm-art-041",
+     "article_number": 41,
+     "score": 30
+    },
+    {
+     "record_id": "real-estate-mortgage-law-llm-art-020",
+     "article_number": 20,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "rhn-002",
+   "query_ar": "إذا كان الراهن غير مالك للعقار المرهون كان رهنه موقوفا على إجازة موثقة من المالك",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_mortgage",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-mortgage-law-llm-art-003",
+     "article_number": 3,
+     "score": 26
+    },
+    {
+     "record_id": "real-estate-mortgage-law-llm-art-020",
+     "article_number": 20,
+     "score": 16
+    },
+    {
+     "record_id": "real-estate-mortgage-law-llm-art-015",
+     "article_number": 15,
+     "score": 15
     }
    ]
   }
