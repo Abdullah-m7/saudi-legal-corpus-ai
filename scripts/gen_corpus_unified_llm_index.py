@@ -140,6 +140,8 @@ LAYERS = [
      "real_estate_units", "law"),
     ("data/real_estate_units_arabic_legal_llm/real_estate_units_regulation_legal_llm_001_041.json",
      "real_estate_units", "implementing_regulation"),
+    ("data/foreign_ownership_arabic_legal_llm/foreign_ownership_law_legal_llm_001_015.json",
+     "foreign_ownership", "law"),
 ]
 
 
