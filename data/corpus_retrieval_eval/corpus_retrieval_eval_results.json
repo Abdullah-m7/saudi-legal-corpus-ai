@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 146,
-  "top1_hits": 125,
-  "top3_hits": 141,
-  "top5_hits": 144,
-  "top1_accuracy": 0.8562,
-  "top3_accuracy": 0.9658,
-  "top5_accuracy": 0.9863,
-  "mrr_at_5": 0.91,
+  "total_queries": 148,
+  "top1_hits": 127,
+  "top3_hits": 143,
+  "top5_hits": 146,
+  "top1_accuracy": 0.8581,
+  "top3_accuracy": 0.9662,
+  "top5_accuracy": 0.9865,
+  "mrr_at_5": 0.9113,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -4541,6 +4541,68 @@
      "record_id": "real-estate-mortgage-law-llm-art-015",
      "article_number": 15,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "tml-001",
+   "query_ar": "عقد التمويل العقاري عقد الدفع الآجل لتملك المستفيد للسكن",
+   "category": "definitional",
+   "gold": {
+    "corpus": "real_estate_finance",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-finance-law-llm-art-001",
+     "article_number": 1,
+     "score": 30
+    },
+    {
+     "record_id": "real-estate-finance-law-llm-art-002",
+     "article_number": 2,
+     "score": 20
+    },
+    {
+     "record_id": "real-estate-finance-law-llm-art-003",
+     "article_number": 3,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "tml-002",
+   "query_ar": "يزاول الممول العقاري أعمال التمويل العقاري بما لا يتعارض مع أحكام الشريعة الإسلامية",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_finance",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-finance-law-llm-art-003",
+     "article_number": 3,
+     "score": 46
+    },
+    {
+     "record_id": "real-estate-finance-law-llm-art-001",
+     "article_number": 1,
+     "score": 22
+    },
+    {
+     "record_id": "real-estate-finance-law-llm-art-002",
+     "article_number": 2,
+     "score": 22
     }
    ]
   }
