@@ -106,6 +106,10 @@ LAYERS = [
      "judicial_costs", "law"),
     ("data/judicial_costs_arabic_legal_llm/judicial_costs_regulation_legal_llm_001_017.json",
      "judicial_costs", "implementing_regulation"),
+    ("data/arbitration_arabic_legal_llm/arbitration_law_legal_llm_001_058.json",
+     "arbitration", "law"),
+    ("data/arbitration_arabic_legal_llm/arbitration_regulation_legal_llm_001_019.json",
+     "arbitration", "implementing_regulation"),
 ]
 
 

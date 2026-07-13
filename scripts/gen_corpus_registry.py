@@ -79,6 +79,8 @@ BANKRUPTCY_REG_LLM = os.path.join(ROOT, "data", "bankruptcy_arabic_legal_llm", "
 BANKRUPTCY_RULES_LLM = os.path.join(ROOT, "data", "bankruptcy_arabic_legal_llm", "bankruptcy_case_rules_legal_llm_001_024.json")
 JUDICIAL_COSTS_LAW_LLM = os.path.join(ROOT, "data", "judicial_costs_arabic_legal_llm", "judicial_costs_law_legal_llm_001_023.json")
 JUDICIAL_COSTS_REG_LLM = os.path.join(ROOT, "data", "judicial_costs_arabic_legal_llm", "judicial_costs_regulation_legal_llm_001_017.json")
+ARBITRATION_LAW_LLM = os.path.join(ROOT, "data", "arbitration_arabic_legal_llm", "arbitration_law_legal_llm_001_058.json")
+ARBITRATION_REG_LLM = os.path.join(ROOT, "data", "arbitration_arabic_legal_llm", "arbitration_regulation_legal_llm_001_019.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -151,6 +153,8 @@ def main() -> int:
     bankruptcy_rules_llm = _load_json(BANKRUPTCY_RULES_LLM)
     judicial_costs_law_llm = _load_json(JUDICIAL_COSTS_LAW_LLM)
     judicial_costs_reg_llm = _load_json(JUDICIAL_COSTS_REG_LLM)
+    arbitration_law_llm = _load_json(ARBITRATION_LAW_LLM)
+    arbitration_reg_llm = _load_json(ARBITRATION_REG_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -171,7 +175,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 41,
+        "total_tracks": 43,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -216,6 +220,8 @@ def main() -> int:
             + bankruptcy_rules_llm["record_count"]  # 24 Bankruptcy Case Rules (MOJ portal cross-checked; fresh issuance)
             + judicial_costs_law_llm["record_count"]  # 23 Judicial Costs Law (MOJ portal cross-checked; fresh issuance)
             + judicial_costs_reg_llm["record_count"]  # 17 Judicial Costs Regulation (MOJ portal cross-checked; fresh issuance)
+            + arbitration_law_llm["record_count"]  # 58 Arbitration Law (MOJ portal cross-checked; consolidated)
+            + arbitration_reg_llm["record_count"]  # 19 Arbitration Regulation (MOJ portal cross-checked; consolidated)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -251,6 +257,8 @@ def main() -> int:
             + bankruptcy_rules_llm["record_count"]
             + judicial_costs_law_llm["record_count"]
             + judicial_costs_reg_llm["record_count"]
+            + arbitration_law_llm["record_count"]
+            + arbitration_reg_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -270,16 +278,16 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) + judiciary_law(85) + board_of_grievances_law(26) + law_practice_law(56) + law_practice_regulation(90) + commercial_courts_law(96) + commercial_courts_regulation(281) + bankruptcy_law(231) + bankruptcy_regulation(98) + bankruptcy_case_rules(24) + judicial_costs_law(23) + judicial_costs_regulation(17) = 5428",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) + judiciary_law(85) + board_of_grievances_law(26) + law_practice_law(56) + law_practice_regulation(90) + commercial_courts_law(96) + commercial_courts_regulation(281) + bankruptcy_law(231) + bankruptcy_regulation(98) + bankruptcy_case_rules(24) + judicial_costs_law(23) + judicial_costs_regulation(17) + arbitration_law(58) + arbitration_regulation(19) = 5505",
             "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(5428) + total_reference(614) + total_internal_reference(281) = 6323",
+            "formula_total_registry_counted": "total_primary_arabic_governing(5505) + total_reference(614) + total_internal_reference(281) = 6400",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), now CROSS-CHECKED article-by-article against the official MOJ legal-portal database (721/721 aligned, law unamended) with divergences adjudicated visually against the official MOJ PDF (committed): 17 single-word defects corrected and 21 trailing structural headings moved to section_context, all documented in the source artifact and audit files under sources/civil/law/moj_cross_check/. Arabic governs; not legal advice.",
             "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts), Judiciary Arabic (85 law, the foundational court-organization statute), and Board of Grievances Arabic (26 law, the administrative-judiciary statute; 25 اصلية + 1 معدّلة, sourced from the Board's certified PDF with Article 4's م/180 amendment from Umm Al-Qura 5072, SPA-confirmed), and Code of Law Practice Arabic (56 law + 90 implementing regulation = 146; the law is 35 اصلية / 8 معدلة / 12 مضافة / 1 ملغاة consolidated through M/21 1447H, the regulation is the fresh 1446H Active issuance all 90 اصلية superseding the InActive 1423H one, MOJ portal cross-checked), and Commercial Courts Arabic (96 law; 75 اصلية / 1 معدلة / 20 ملغاة, consolidated M/93 1441H — its evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 articles, the fresh 1441H Active issuance all اصلية), MOJ portal cross-checked), and Bankruptcy Arabic (231 law; 229 اصلية / 2 معدلة, consolidated M/89 1439H — per its art 230 the law repeals arts 103-137 of the old Commercial Court Law and the old Protective Settlement law, MOJ portal cross-checked) and its implementing regulation (98 articles; 97 اصلية / 1 معدلة — the fresh 1440H Active issuance by Council of Ministers Decision 622, art 2 amended by Decision 171 1443H, MOJ portal cross-checked, 98/98 matched outright) and the Rules Organizing Bankruptcy Case Procedures before the Commercial Courts (24 articles; fresh 1441H Active issuance all اصلية by Minister of Justice Decision 6421, MOJ portal cross-checked, 24/24 matched outright), and the Judicial Costs Law (23 articles; fresh 1443H Active issuance all اصلية by Royal Decree M/16, MOJ portal cross-checked) with its implementing regulation (17 articles; fresh 1443H Active issuance all اصلية by Council of Ministers Decision 519, MOJ portal cross-checked) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (5259) is a projection of counted records and is NOT added to totals.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts), Judiciary Arabic (85 law, the foundational court-organization statute), and Board of Grievances Arabic (26 law, the administrative-judiciary statute; 25 اصلية + 1 معدّلة, sourced from the Board's certified PDF with Article 4's م/180 amendment from Umm Al-Qura 5072, SPA-confirmed), and Code of Law Practice Arabic (56 law + 90 implementing regulation = 146; the law is 35 اصلية / 8 معدلة / 12 مضافة / 1 ملغاة consolidated through M/21 1447H, the regulation is the fresh 1446H Active issuance all 90 اصلية superseding the InActive 1423H one, MOJ portal cross-checked), and Commercial Courts Arabic (96 law; 75 اصلية / 1 معدلة / 20 ملغاة, consolidated M/93 1441H — its evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 articles, the fresh 1441H Active issuance all اصلية), MOJ portal cross-checked), and Bankruptcy Arabic (231 law; 229 اصلية / 2 معدلة, consolidated M/89 1439H — per its art 230 the law repeals arts 103-137 of the old Commercial Court Law and the old Protective Settlement law, MOJ portal cross-checked) and its implementing regulation (98 articles; 97 اصلية / 1 معدلة — the fresh 1440H Active issuance by Council of Ministers Decision 622, art 2 amended by Decision 171 1443H, MOJ portal cross-checked, 98/98 matched outright) and the Rules Organizing Bankruptcy Case Procedures before the Commercial Courts (24 articles; fresh 1441H Active issuance all اصلية by Minister of Justice Decision 6421, MOJ portal cross-checked, 24/24 matched outright), and the Judicial Costs Law (23 articles; fresh 1443H Active issuance all اصلية by Royal Decree M/16, MOJ portal cross-checked) with its implementing regulation (17 articles; fresh 1443H Active issuance all اصلية by Council of Ministers Decision 519, MOJ portal cross-checked), and the Arbitration Law (58 articles; consolidated M/34 1433H, 55 اصلية / 3 معدلة, MOJ portal cross-checked — the official source labels the 31st article «الحادية والعشرون», a documented drafting anomaly preserved verbatim and numbered by ordinal position) with its implementing regulation (19 articles; 18 اصلية / 1 ملغاة by Council of Ministers Decision 541 1438H, MOJ portal cross-checked) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (5336) is a projection of counted records and is NOT added to totals.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -1608,6 +1616,62 @@ def main() -> int:
                                "not_verified_official_text": False, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Judicial Costs Law «اللائحة التنفيذية لنظام التكاليف القضائية» — issued by Council of Ministers Decision No. 519 dated 11/9/1443H (legalStatus Active), 17 records (complete 1..17, no مكرر) across 4 chapters: estimating judicial costs (the percentage tiers by claim value and the fixed amounts for value-undetermined actions), estimating costs for requests, the final estimate and how it is collected, and closing provisions. FRESH FULL ISSUANCE: all 17 اصلية (0 معدلة / 0 ملغاة / 0 مضافة). The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence). Fetched article-by-article from the official MOJ legal-portal database (get-Section-Changes) and cross-verified against the official MOJ PDF from the same portal (16/17 outright, mean 0.954; the percentage-table article 2 visually adjudicated verbatim on the rendered page; PDF committed with recorded sha256, 5 pages). Text-layer folding handled the PDF's Arabic-Presentation-Forms/Farsi-yeh glyphs. Decorative in-word kashida removed; the 'هـ' enumerator and space-bounded enumerator dashes kept. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "arbitration_law",
+                "display_name_ar": "نظام التحكيم",
+                "display_name_en": "Arbitration Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+                "source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": arbitration_law_llm["record_count"],
+                    "data_path": "data/arbitration_arabic_legal_llm/arbitration_law_legal_llm_001_058.json"}},
+                "record_counts": {"arabic_articles": arbitration_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 55, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
+                                  "total": arbitration_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/arbitration/law/official_source/arbitration_law_official_source.json",
+                    "sources/arbitration/law/verified/arbitration_law_verified_records.jsonl",
+                    "data/arbitration_arabic_legal_llm/arbitration_law_legal_llm_001_058.json",
+                ],
+                "validator_targets": ["make arbitration-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Arbitration Law «نظام التحكيم» — Royal Decree M/34 dated 18/7/1433H (legalStatus Active), 58 records (numbered 1..58 by ordinal position, no مكرر) across 8 chapters (أبواب): general provisions, the arbitration agreement, the arbitral tribunal, arbitration proceedings, the arbitral award, nullity of the award, enforcement of the award, and closing provisions — the governing statute for domestic and international commercial arbitration seated in the Kingdom. CONSOLIDATED AMENDED: 55 اصلية / 3 معدلة (arts 10, 24, 50) / 0 ملغاة / 0 مضافة; each amended article carries its history. Art 24 amended by Royal Decree M/8 (18/1/1443H); arts 10 and 50 amended by Royal Decree M/21 (26/1/1447H). NUMBERING ANOMALY (documented): the official source (BOTH the portal database AND the published PDF) labels the 31st article «المادة الحادية والعشرون» — a duplicate of article 21's label; there is no «الحادية والثلاثون». The official label is preserved verbatim; the ordinal position (31) is used for indexing and a factual positional note is appended to the LLM title. The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence). Fetched article-by-article from the official MOJ legal-portal database (get-Section-Changes) and cross-verified against the official MOJ PDF from the same portal (57/58 outright, mean 0.961; the list article 42 visually adjudicated verbatim on the rendered page; PDF committed with recorded sha256, 12 pages). Text-layer folding handled the PDF's Arabic-Presentation-Forms/Farsi-yeh glyphs. Decorative in-word kashida removed; the 'هـ' enumerator and space-bounded enumerator dashes kept. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "arbitration_implementing_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام التحكيم",
+                "display_name_en": "Implementing Regulation of the Arbitration Law",
+                "corpus_family": "implementing_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+                "source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": arbitration_reg_llm["record_count"],
+                    "data_path": "data/arbitration_arabic_legal_llm/arbitration_regulation_legal_llm_001_019.json"}},
+                "record_counts": {"arabic_articles": arbitration_reg_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 18, "معدلة": 0, "ملغاة": 1, "مضافة": 0},
+                                  "total": arbitration_reg_llm["record_count"]},
+                "data_paths": [
+                    "sources/arbitration/regulation/official_source/arbitration_regulation_official_source.json",
+                    "sources/arbitration/regulation/verified/arbitration_regulation_verified_records.jsonl",
+                    "data/arbitration_arabic_legal_llm/arbitration_regulation_legal_llm_001_019.json",
+                ],
+                "validator_targets": ["make arbitration-regulation-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Arbitration Law «اللائحة التنفيذية لنظام التحكيم» — issued by Council of Ministers Decision No. 541 dated 14/9/1438H (legalStatus Active), 19 records (complete 1..19, no مكرر) — defining the competent court, tribunal constitution and appointment of arbitrators by the competent court, notifications, and the interplay with the Law. CONSOLIDATED: 18 اصلية / 0 معدلة / 1 ملغاة (art 7, repealed by Council of Ministers Decision No. 249) / 0 مضافة; the repealed article keeps its body (flagged, not deleted) and carries its history. The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence). Fetched article-by-article from the official MOJ legal-portal database (get-Section-Changes) and cross-verified against the official MOJ PDF from the same portal (19/19 outright, mean 0.964; no article required visual adjudication; PDF committed with recorded sha256, 3 pages). Text-layer folding handled the PDF's Arabic-Presentation-Forms/Farsi-yeh glyphs. Decorative in-word kashida removed; the 'هـ' enumerator and space-bounded enumerator dashes kept. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -148,6 +148,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         bankruptcy-case-rules-track-validate \
         judicial-costs-law-track-validate \
         judicial-costs-regulation-track-validate \
+        arbitration-law-track-validate \
+        arbitration-regulation-track-validate \
         qa-gate
 
 help:
@@ -1016,6 +1018,12 @@ judicial-costs-law-track-validate:
 
 judicial-costs-regulation-track-validate:
 	$(PY) scripts/validate_judicial_costs_regulation_track.py
+
+arbitration-law-track-validate:
+	$(PY) scripts/validate_arbitration_law_track.py
+
+arbitration-regulation-track-validate:
+	$(PY) scripts/validate_arbitration_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
