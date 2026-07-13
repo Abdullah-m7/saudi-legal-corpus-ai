@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 150,
-  "top1_hits": 129,
-  "top3_hits": 145,
-  "top5_hits": 148,
-  "top1_accuracy": 0.86,
-  "top3_accuracy": 0.9667,
-  "top5_accuracy": 0.9867,
-  "mrr_at_5": 0.9124,
+  "total_queries": 151,
+  "top1_hits": 130,
+  "top3_hits": 146,
+  "top5_hits": 149,
+  "top1_accuracy": 0.8609,
+  "top3_accuracy": 0.9669,
+  "top5_accuracy": 0.9868,
+  "mrr_at_5": 0.913,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -4665,6 +4665,37 @@
      "record_id": "oa-llm-companies-art-093",
      "article_number": 93,
      "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "wir-001",
+   "query_ar": "تفتح الجمعية حساباً مصرفياً باسمها في أحد البنوك المرخص لها بالعمل داخل المملكة وتودع جميع أموال الجمعية فيه",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_units",
+    "law_component": "implementing_regulation",
+    "article_number": 31
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-units-reg-llm-art-031",
+     "article_number": 31,
+     "score": 37
+    },
+    {
+     "record_id": "oa-llm-companies-art-236",
+     "article_number": 236,
+     "score": 20
+    },
+    {
+     "record_id": "oa-llm-companies-art-256",
+     "article_number": 256,
+     "score": 16
     }
    ]
   }

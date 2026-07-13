@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 5922
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 33}
+EXPECTED_TOTAL = 5963
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -105,6 +105,7 @@ SANITY = [
     ("يزاول الممول العقاري أعمال التمويل العقاري بما لا يتعارض مع أحكام الشريعة الإسلامية", "real_estate_finance", 3),
     ("لكل مالك أرض بصك مستوف للمتطلبات الشرعية والنظامية أن يبني عليها بناء ويفرزه إلى وحدات مستقلة", "real_estate_units", 2),
     ("يجوز إعادة فرز العقار المشترك أو جزء منه أو تغير استعمالاته بعد موافقة الجمعية العامة وموافقة المرتهن إن وجد", "real_estate_units", 3),
+    ("تفتح الجمعية حساباً مصرفياً باسمها في أحد البنوك المرخص لها بالعمل داخل المملكة وتودع جميع أموال الجمعية فيه", "real_estate_units", 31),
 ]
 
 
@@ -195,6 +196,7 @@ def main():
         "data/real_estate_mortgage_arabic_legal_llm/real_estate_mortgage_law_legal_llm_001_046.json",
         "data/real_estate_finance_arabic_legal_llm/real_estate_finance_law_legal_llm_001_015.json",
         "data/real_estate_units_arabic_legal_llm/real_estate_units_law_legal_llm_001_033.json",
+        "data/real_estate_units_arabic_legal_llm/real_estate_units_regulation_legal_llm_001_041.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -228,7 +230,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 33; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
