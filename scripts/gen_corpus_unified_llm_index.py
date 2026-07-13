@@ -112,6 +112,10 @@ LAYERS = [
      "arbitration", "implementing_regulation"),
     ("data/commercial_papers_arabic_legal_llm/commercial_papers_law_legal_llm_001_121.json",
      "commercial_papers", "law"),
+    ("data/commercial_register_arabic_legal_llm/commercial_register_law_legal_llm_001_029.json",
+     "commercial_register", "law"),
+    ("data/trade_names_arabic_legal_llm/trade_names_law_legal_llm_001_023.json",
+     "trade_names", "law"),
 ]
 
 

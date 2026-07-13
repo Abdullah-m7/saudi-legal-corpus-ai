@@ -161,12 +161,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   work regulation 72+3 tables + Labor mediation rules 20 + Labor recruitment rules 72 + Labor
   accessibility tables 8 + Labor contract forms 102 + Evidence Law 129 + Evidence companions
   24+135+34 + Personal Status Law 252 + Personal Status regulation 41 + Law of Sharia Procedure 243
-  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85 + Law of the Board of Grievances 26 + Code of Law Practice 56 + Code of Law Practice regulation 90 + Commercial Courts Law 96 + Commercial Courts Law regulation 281 + Bankruptcy Law 231 + Bankruptcy Law regulation 98 + Bankruptcy case rules 24 + Judicial Costs Law 23 + Judicial Costs regulation 17 + Arbitration Law 58 + Arbitration regulation 19 + Commercial Papers Law 121**)
+  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85 + Law of the Board of Grievances 26 + Code of Law Practice 56 + Code of Law Practice regulation 90 + Commercial Courts Law 96 + Commercial Courts Law regulation 281 + Bankruptcy Law 231 + Bankruptcy Law regulation 98 + Bankruptcy case rules 24 + Judicial Costs Law 23 + Judicial Costs regulation 17 + Arbitration Law 58 + Arbitration regulation 19 + Commercial Papers Law 121 + Commercial Register Law 29 + Trade Names Law 23**)
   with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **44 tracks; primary Arabic governing 5626; reference 614; registry-counted
-  6521.** PDPL and Investment Arabic tracks are **verified against official
+  boundaries, and validation targets. **46 tracks; primary Arabic governing 5678; reference 614; registry-counted
+  6573.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (5457 records) as a projection (not added to totals). See
+  index (5509 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -362,7 +362,7 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   projects all thirty-four Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
   Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99+157 +
   Labor 571 across its eight components + Evidence 322 across its four components +
-  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 + Board of Grievances 26 + Law Practice 146 (law 56 + regulation 90) + Commercial Courts 377 (law 96 + regulation 281) + Bankruptcy 353 (law 231 + regulation 98 + case rules 24) + Judicial Costs 40 (law 23 + regulation 17) + Arbitration 77 (law 58 + regulation 19) + Commercial Papers 121 (law) = **5457 records**) into one flat index at
+  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 + Board of Grievances 26 + Law Practice 146 (law 56 + regulation 90) + Commercial Courts 377 (law 96 + regulation 281) + Bankruptcy 353 (law 231 + regulation 98 + case rules 24) + Judicial Costs 40 (law 23 + regulation 17) + Arbitration 77 (law 58 + regulation 19) + Commercial Papers 121 (law) + Commercial Register 29 (law) + Trade Names 23 (law) = **5509 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
@@ -372,9 +372,9 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 83.2% / top-3 96.0% / top-5 98.4% / MRR@5 0.8949**
-  over the 5457-record index with **125 golds** — expanded from 40 (v2: gtp-001..007 +
-  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary; v13: dmz-001..003 board-of-grievances; v14: muh-001..003 law-practice; v15: mhl-001..003 law-practice-regulation; v16: tjr-001..003 commercial-courts; v17: tjl-001..003 commercial-courts-regulation; v18: ifl-001..003 bankruptcy law; v19: ilr-001..003 bankruptcy regulation; v20: icr-001..003 bankruptcy case rules; v21: tkq-001..002 judicial-costs law + tkr-001 regulation; v22: thk-001..002 arbitration law + thr-001 regulation; v23: awt-001..003 commercial-papers law) so that GTPL, all eight
+  deterministic results. **Current: top-1 83.6% / top-3 96.1% / top-5 98.4% / MRR@5 0.8974**
+  over the 5509-record index with **128 golds** — expanded from 40 (v2: gtp-001..007 +
+  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary; v13: dmz-001..003 board-of-grievances; v14: muh-001..003 law-practice; v15: mhl-001..003 law-practice-regulation; v16: tjr-001..003 commercial-courts; v17: tjl-001..003 commercial-courts-regulation; v18: ifl-001..003 bankruptcy law; v19: ilr-001..003 bankruptcy regulation; v20: icr-001..003 bankruptcy case rules; v21: tkq-001..002 judicial-costs law + tkr-001 regulation; v22: thk-001..002 arbitration law + thr-001 regulation; v23: awt-001..003 commercial-papers law; v24: sjt-001..002 commercial-register + ast-001 trade-names) so that GTPL, all eight
   Labor components, all four Evidence components, the Personal Status law + regulation, the
   Law of Sharia Procedure + its implementing regulation, the Law of Criminal Procedure + its implementing regulation, the Law of Enforcement + its regulation, the Law of the Judiciary, the Law of the Board of Grievances, the Code of Law Practice + its regulation, and the Commercial Courts Law + its regulation have
   gold coverage; every new
@@ -848,12 +848,29 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   under `sources/commercial_papers/law/` + `data/commercial_papers_arabic_legal_llm/`. Validate:
   `make commercial-papers-law-track-validate`.
 
+## نظام السجل التجاري + نظام الأسماء التجارية (م/83، 1446هـ)
+
+- **Commercial Register Law (M/83, 19/03/1446هـ) verified + LLM-ready.** **نظام السجل التجاري** —
+  **29 records** (complete 1–29, no مكرر) across 6 chapters: entry in the register, cancellation/
+  suspension, the registration certificate's evidentiary weight, and violations. Fresh full issuance
+  (**all 29 اصلية**) superseding the former law (م/1، 1416هـ). Track under `sources/commercial_register/law/`.
+  Validate: `make commercial-register-law-track-validate`.
+- **Trade Names Law (M/83, 19/03/1446هـ) verified + LLM-ready.** **نظام الأسماء التجارية** — **23 records**
+  (complete 1–23, no مكرر) across 5 chapters: the trade name, its reservation and registration,
+  cancellation/removal, and violations. Fresh full issuance (**all 23 اصلية**) superseding the former law
+  (م/15، 1420هـ). Both laws were issued together by the same decree م/83. Track under `sources/trade_names/law/`.
+  Validate: `make trade-names-law-track-validate`.
+- **Provenance (disclosed):** both laws use the same BOE-via-Wayback route as the Commercial Papers Law —
+  the official Bureau of Experts text, **cross-verified byte-identical across two independent-date snapshots**
+  (السجل: 2025-01 + 2025-04؛ الأسماء: 2024-11 + 2025-12), with both raw snapshots committed under
+  `inputs/commercial_registration_boe_snapshots/` + recorded sha256, and a recorded corpus-text sha256.
+
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (118 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (120 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 45 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 47 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any

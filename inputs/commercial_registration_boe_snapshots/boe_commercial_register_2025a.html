@@ -1,0 +1,1031 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1.0, user-scalable=no">    
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/images/favicon.ico">
+    <link rel="icon" type="image/ico" href="/Content/images/favicon.ico" />
+
+    <link href='/Content/css/bootstrap-rtl.min.css' rel="stylesheet" type="text/css" />
+    <link href='/Content/new/css/bootstrap-grid.rtl.min.css' rel="stylesheet" type="text/css" />
+    <link href='/Content/new/css/bootstrap-utilities.rtl.min.css' rel="stylesheet" type="text/css" />
+
+    <link href="/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/css/colorbox.css" rel="stylesheet" />
+    <link id="sitecss" href='/Content/css/main-rtl.css' rel="stylesheet" type="text/css" />
+    <link id="sitecss" href='/Content/new/css/forntend-rtl.css?d=07012025' rel="stylesheet" type="text/css" />
+    <!--<link href='~/Content/css/fonts-rtl.css' rel="stylesheet" type="text/css" />-->
+
+
+    <link href="/Content/new/css/styles.css" rel="stylesheet" />
+    <link href="/Content/new/css/app-styles.css" rel="stylesheet" />
+
+    <script src="/Scripts/jquery-3.4.1.min.js"></script>
+    <script>var ROOT_URL = '' || '';</script>
+    <title>
+        نظام السجل التجاري
+    </title>
+    <script src="/Scripts/fontawesome-all.js"></script>
+</head>
+
+<body>
+    <main class="inner-page">
+        <header class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md-3 d-flex align-items-center">
+                        <a href="http://www.boe.gov.sa" class="page-header__logo" title="الصفحة الرئيسية">
+                            <img alt="header-logo" src='/Content/new/images/logo.svg' />
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-9 d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end align-items-center gap-2 gap-lg-3 mb-3">
+                                <a href="/BoeLaws/Laws/Search" target="_blank" class="header-search-btn">
+                                    <img src="/Content/new/images/search-systems-icon.svg" alt="search-systems-icon" />
+                                    <span>البحث في الوثائق النظامية</span>
+                                </a>
+                                    <a href="https://laws.boe.gov.sa/Identity/Account/Login/" class="header-login-btn">
+                                        <img src="/Content/new/images/user-login-icon.svg" alt="user-login-icon" />
+                                        <span>تسجيل الدخول</span>
+                                    </a>
+                                <a class="language-switcher switch-lang" href="JavaScript:void(0);" id="lang-switcher" title="English">EN</a>
+
+                                <div class="page-settings-dropdown">
+                                    <a class="page-settings-dropdown__btn" href="#" title="اعدادات الصفحة"></a>
+                                    <div class="page-settings-dropdown__menu">
+                                        <div class="page-settings-dropdown__menu__item">
+                                            <h5 class="page-settings-dropdown__menu__title">حجم الخط</h5>
+                                            <div class="font-resize-btns">
+                                                <button type="button" class="font-resize-btns__item font-resize-btns--increaser" title="زيادة حجم الخط">+</button>
+                                                <button type="button" class="font-resize-btns__item font-resize-btns--decreaser" title="تقليل حجم الخط">-</button>
+                                            </div>
+                                        </div>
+                                        <div class="page-settings-dropdown__menu__item">
+                                            <h5 class="page-settings-dropdown__menu__title">اللون الرمادي</h5>
+                                            <a class="grayscale-switcher" href="#" title="التبديل إلى اللون الرمادي"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="title-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 d-flex flex-column mb-5 mb-md-0">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h1 class="page-title">نظام السجل التجاري</h1>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                        <div class="page-actions">
+                            <div class="share-page-dropdown">
+                                <a class="page-actions__btn page-actions__btn--share" href="#" title="نشر الصفحة"></a>
+                                <div class="share-page-dropdown__menu">
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="x_share" title="نشر الصفحة على منصة إكس">
+                                        <img src="/Content/new/images/social-media-icons/x.svg" alt="x" />
+                                    </a>
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="linkedin_share" title="نشر الصفحة على لينكدان">
+                                        <img src="/Content/new/images/social-media-icons/linkedin.svg" alt="linkedin" />
+                                    </a>
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="facebook_share" title="نشر الصفحة على فيسبوك">
+                                        <img src="/Content/new/images/social-media-icons/facebook.svg" alt="facebook" />
+                                    </a>
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="whatsApp_share" title="نشر الصفحة على واتس اب">
+                                        <img src="/Content/new/images/social-media-icons/whatsapp.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="page-actions__btn page-actions__btn--email" href="#!" title="إرسال لصديق" id="mail_share"></a>
+                            <a class="page-actions__btn page-actions__btn--print" href="javascript:void(0);" title="طباعة الصفحة" onclick="window.print();" id="page_print"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">الوثائق النظامية</a></li>
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">أنظمة عادية</a></li>
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">التجارة والاقتصاد والاستثمار</a></li>
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">نظام السجل التجاري</a></li>
+
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="inner-page-content" id="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div id="page-content-wrapper" class="col-12">
+                        
+
+<div id="CustomValidationSummary"></div>
+
+
+<input data-val="true" data-val-number="حقل LanguageId يجب أن يكون رقم." id="LanguageId" name="LanguageId" type="hidden" value="1" />
+
+<div class="app_inner_pages_bg" id="ele2">
+    <div class="app_inner_pages_container">
+            <h1 class="system_title mb-5">نظام السجل التجاري</h1>
+            <div class="system_details_box mb-4">
+                <div class="browse_count">
+                    <span>عدد مرات التصفح</span><strong><span>8462</span></strong>
+                    <a href="#" id="LawsSubscription" class="ancReportIssue px-3" data-lawid="d0e0ea69-e88b-471a-9773-b20900a51be6">
+                        <i class="fas fa-envelope-open"></i>
+                        <span>طلب اشعار</span>
+                    </a>
+                    
+                </div>
+                <div class="col system_brief">
+                    <h4 class="mb-4">نبذة عن النظام</h4>
+                    <div class="HTMLContainer">
+                        <p>حل هذا النظام محل نظام السجل التجاري، الصادر بالمرسوم الملكي رقم (م / 1) وتاريخ 21 / 2 / 1416هـ، وتضمن: أحكام عامة، القيد فالسجل التجاري، شطب القيد في السجل التجاري وتعليقة، الاطلاع على بيانات شهادة القيد وحجيتها، المخالفات، أحكام ختامية، يعمل بالنظام بعد (180) يوماً من تاريخ نشره في الجريدة الرسمية.</p>
+                    </div>
+                    <br />
+                </div>
+
+                <div class="col system_info">
+                    <div>
+                        <label for="">الاسم</label> <span>نظام السجل التجاري</span>
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">تاريخ الإصدار</label>
+                        <span> 1446/03/19 هـ  الموافق : 22/09/2024 مـ</span>
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">تاريخ النشر</label>
+                        <span>
+                            1446/04/01  هـ الموافق : 04/10/2024 مـ
+                        </span>
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">الحالة</label>
+
+                                <span>ساري بعد مدة 180 يوم من تاريخ النشر</span>
+                        
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">أدوات إصدار النظام</label>
+                        <ul>
+                                <li><a href="/BoeLaws/Laws/Viewer/9c2cd8ea-f117-4080-9d2a-b20900a51bf4?lawId=d0e0ea69-e88b-471a-9773-b20900a51be6">مرسوم ملكي رقم (م/83) وتاريخ 1446/3/19هـ</a></li>
+                                <li><a href="/BoeLaws/Laws/Viewer/18aca7c1-9d06-493b-8078-b20900a51c31?lawId=d0e0ea69-e88b-471a-9773-b20900a51be6">قرار مجلس الوزراء رقم (237) وتاريخ 1446/3/14هـ</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <form id="frmSearch" action="/BoeLaws/Laws/SearchDetails/" method="get">
+                <link href="/Content/new/css/searchprint.css" rel="stylesheet" />
+                <div class="search_results_filter">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label for="">
+                                البحث في النظام
+                                <span data-toggle="tooltip" data-placement="top" title="بإمكانك البحث بأكثر من كلمة بإضافة فاصلة بينهم">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                            </label>
+                            <input class="form_control" data-val="true" data-val-regex="لا يسمح بكتابة سكريبت في حقل Query" data-val-regex-pattern="^[^&lt;>{}]+$" id="queryInput" name="Query" placeholder="بإمكانك البحث بأكثر من كلمة بإضافة فاصلة بينهم" type="text" value="" />
+                            <span class="field-validation-valid text-danger help-block" data-valmsg-for="Query" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end gap-3">
+                            <button class="btn btn-primary">تصفية النتائج</button>
+                            <button type="button" class="btn btn-outline-primary" id="clearResultBtn">مسح النتائج</button>
+                        </div>
+                    </div>
+                </div>
+                <input data-val="true" data-val-regex="لا يسمح بكتابة سكريبت في حقل Id" data-val-regex-pattern="^[^&lt;>{}]+$" id="Id" name="Id" type="hidden" value="d0e0ea69-e88b-471a-9773-b20900a51be6" />
+            </form>
+            <h1 class="system_title system_terms_title">نـــص النظـــام</h1>
+            <div class="system_terms_tools">
+                <div class="legend">
+                    <span class="modified"><i></i>مادة معدلة</span>
+                    <span class="canceled"><i></i>مادة ملغية</span>
+                </div>
+                <a href="/BoeLaws/Laws/Viewer/60f24863-ac4d-427f-a349-b20900a51ccc?lawId=d0e0ea69-e88b-471a-9773-b20900a51be6" target="_blank">
+                    <img src='/Content/new/images/sys-icons/document-icon.svg' alt="document-icon" />
+                    <span>اصل الوثيقة</span>
+                </a>
+                
+
+
+
+                <a href="#" id="ancPrintLaw">
+                    <img src='/Content/new/images/sys-icons/print-icon.svg' alt="print-icon" />
+                    <span>طباعة</span>
+                </a>
+                <a href="#" id="ancReportIssue" class="ancReportIssue" data-lawid="d0e0ea69-e88b-471a-9773-b20900a51be6">
+                    <img src='/Content/new/images/sys-icons/report-icon.svg' alt="report-icon" />
+                    <span>الملاحظات والتعليقات</span>
+                </a>
+
+
+                <a id="ancLawPrevVersions" data-versions="0" href="#" class="inactive">
+                    <img src='/Content/new/images/sys-icons/versions-icon.svg' alt="versions-icon" />
+                    <span>الإصدارات</span>
+                </a>
+                <i class="fas fa-globe"></i>
+                <span>اللغات</span>
+                <select data-lawRelatedCode="d0e0ea69-e88b-471a-9773-b20900a51be6" id="ddlLawLanguages" name="LanguageId"><option selected="selected" value="1">العربية</option>
+</select>
+
+            </div>
+
+<div class="system_terms_textbox" id="divLawText">
+    <div>
+        <h3 class="center">نظام السجل التجاري</h3>
+        <h3 class="center">1446 هـ</h3>
+
+            <p class="center">بسم الله الرحمن الرحيم</p>
+            <h4 class="center">مرسوم ملكي رقم (م/83) وتاريخ 1446/3/19هـ</h4>
+            <div class="HTMLContainer">
+                <p><p><strong>بعون الله تعالـى<br />
+&nbsp; &nbsp; &nbsp; &nbsp; نحن سلمان بن عبدالعزيز آل سعود<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ملك المملكة العربية السعودية</strong><br />
+بناءً على المادة (السبعين) من النظام الأساسي للحكم، الصادر بالأمر الملكي رقم (أ / 90) بتاريخ 27 / 8 / 1412هـ.&nbsp;<br />
+وبناءً على المادة (العشرين) من نظام مجلس الوزراء، الصادر بالأمر الملكي رقم (أ / 13) بتاريخ 3 / 3 / 1414هـ.&nbsp;<br />
+وبناءً على المادة (الثامنة عشرة) من نظام مجلس الشورى، الصادر بالأمر الملكي رقم (أ / 91) بتاريخ 27 / 8 / 1412هـ.&nbsp;<br />
+وبعد الاطلاع على قرار مجلس الشورى رقم (265 / 25) بتاريخ 13 / 10 / 1445هـ.<br />
+وبعد الاطلاع على قرار مجلس الوزراء رقم (237) بتاريخ 14 / 3 / 1446هـ.&nbsp;</p>
+
+<p style="text-align:center"><strong>رسمنا بما هو آت:</strong></p>
+
+<p><strong>أولاً: </strong>الموافقة على نظام السجل التجاري، بالصيغة المرافقة.<br />
+<strong>ثانياً:</strong> الموافقة على نظام الأسماء التجارية، بالصيغة المرافقة.<br />
+<strong>ثالثاً: </strong>يمنح المقيدون في السجل التجاري مهلة مدتها (خمس) سنوات تبدأ من تاريخ نفاذ النظام المشار إليه في البند (أولاً) من هذا المرسوم، لتصحيح أوضاع سجلاتهم التجارية الفرعية. وتُشطب جميع سجلاتهم الفرعية بانتهاء تلك المهلة وفق آلية تحددها وزارة التجارة.<br />
+<strong>رابعاً: </strong>لا تُخل أحكام النظام -المشار إليه في البند (ثانياً) من هذا المرسوم- بالأسماء التجارية المقيدة قبل نفاذه، وذلك وفقاً لما تحدده وزارة التجارة.<br />
+<strong>خامساً: </strong>على سمو رئيس مجلس الوزراء والوزراء ورؤساء الأجهزة المعنية المستقلة -كل فيما يخُصُّه- تنفيذ مرسومنا هذا.</p>
+
+<p style="text-align:left"><strong>سلمان بن عبدالعزيز آل سعود</strong></p></p>
+            </div>
+
+
+            <p class="center">بسم الله الرحمن الرحيم</p>
+            <h4 class="center">قرار مجلس الوزراء رقم (237) وتاريخ 1446/3/14هـ</h4>
+            <p><p><strong>إن مجلس الوزراء</strong><br />
+<strong>بعد الاطلاع </strong>على المعاملة الواردة من الديوان الملكي برقم 74905 وتاريخ 16 / 10 / 1445هـ، المشتملة على خطاب معالي وزير التجارة رقم 4277 وتاريخ 9 / 2 / 1443هـ، في شأن مشروعي نظام السجل التجاري ونظام الأسماء التجارية.<br />
+<strong>وبعد الاطلاع</strong> على مشروع نظام السجل التجاري، المشار إليه.<br />
+<strong>وبعد الاطلاع </strong>على مشروع نظام الأسماء التجارية، المشار إليه.<br />
+<strong>&nbsp;وبعد الاطلاع</strong> على نظام السجل التجاري، الصادر بالمرسوم الملكي رقم (م / 1) وتاريخ 21 / 2 / 1416هـ.<br />
+<strong>وبعد الاطلاع</strong> على نظام الأسماء التجارية، الصادر بالمرسوم الملكي رقم (م / 15) وتاريخ 12 / 8 / 1420هـ.<br />
+<strong>وبعد الاطلاع</strong> على تنظيم المركز السعودي للأعمال الاقتصادية، الصادر بقرار مجلس الوزراء رقم (456) وتاريخ 11 / 8 / 1440هـ.<br />
+<strong>وبعد الاطلاع </strong>على الأمر السامي رقم (39929) وتاريخ 28 / 6 / 1443هـ.<br />
+<strong>وبعد الاطلاع</strong> على المذكرات رقم (1647) وتاريخ 9 / 5 / 1445هـ، ورقم (2114) وتاريخ 12 / 6 / 1445هـ، ورقم (3949) وتاريخ 19 / 11 / 1445هـ، ورقم (775) وتاريخ 2 / 3 / 1446هـ، المعدة في هيئة الخبراء بمجلس الوزراء.<br />
+<strong>وبعد الاطلاع</strong> على توصية مجلس الشؤون الاقتصادية والتنمية رقم (1-8 / 45 / ت) وتاريخ 15 / 6 / 1445هـ.<br />
+<strong>وبعد النظر</strong> في قرار مجلس الشورى رقم (265 / 25) وتاريخ 13 / 10 / 1445هـ.<br />
+<strong>وبعد الاطلاع </strong>على توصية اللجنة العامة لمجلس الوزراء رقم (2508) وتاريخ 13 / 3 / 1446هـ.</p>
+
+<p style="text-align:center"><strong>يقرر ما يلي:</strong></p>
+
+<p><strong>أولاً:</strong> الموافقة على نظام السجل التجاري، بالصيغة المرافقة.<br />
+<strong>ثانياً</strong>: الموافقة على نظام الأسماء التجارية، بالصيغة المرافقة.<br />
+<strong>ثالثاً:</strong> يمنح المقيدون في السجل التجاري مهلة مدتها (خمس) سنوات تبدأ من تاريخ نفاذ النظام المشار إليه في البند (أولاً) من هذا القرار، لتصحيح أوضاع سجلاتهم التجارية الفرعية. وتُشطب جميع سجلاتهم الفرعية بانتهاء تلك المهلة وفق آلية تحددها وزارة التجارة.<br />
+<strong>رابعاً: </strong>لا تُخل أحكام النظام -المشار إليه في البند (ثانياً) من هذا القرار- بالأسماء التجارية المقيدة قبل نفاذه، وذلك وفقاً لما تحدده وزارة التجارة.<br />
+<strong>وقد أعد مشروع مرسوم ملكي بذلك، صيغته مرافقة لهذا.<br />
+خامساً:</strong> يُحدد المقابل المالي -المذكور في المادة (السابعة والعشرين) من النظام المشار إليه في البند (أولاً) من هذا القرار، وفي المادة (الحادية والعشرين) من النظام المشار إليه في البند (ثانياً) من هذا القرار- بالاتفاق مع وزارة المالية ومركز تنمية الإيرادات غير النفطية، وذلك إلى حين بدء اللجنة المركزية للرسوم والمقابلات المالية المشكَّلة بناءً على التوجيه الكريم المبلغ ببرقية الديوان الملكي رقم 83347 وتاريخ 2 / 12 / 1444هـ أعمالها.<br />
+<strong>سادساً: </strong>قيام وزارة التجارة بمراعاة ما قضى به الأمر السامي رقم (39929) وتاريخ 28 / 6 / 1443هـ، عند إعداد اللائحة التنفيذية للنظام المشار إليه في البند (ثانياً) من هذا القرار.<br />
+<strong>سابعاً: </strong>قيام المركز السعودي للأعمال الاقتصادية -بالتنسيق مع وزارة التجارة ووزارة الاستثمار والهيئة السعودية للملكية الفكرية- بالنظر في مدى مناسبة إنشاء منصة اقتصادية شاملة وموحدة تلائم جميع قطاع الأعمال بالمملكة، وذلك بناءً على اختصاصه المشار إليه في الفقرة (2) من المادة (الرابعة) من تنظيمه الصادر بقرار مجلس الوزراء رقم (456) وتاريخ 11 / 8 / 1440هـ، والرفع عما يلزم.&nbsp;</p>
+
+<p style="text-align:left"><strong>رئيس مجلس الوزراء</strong></p></p>
+
+        <div style="text-align: center"> <h1 class="system_title">نظام السجل التجاري</h1></div>
+
+            <h3 class="center">الفصل الأول: أحكام عامة:</h3>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الأولى: التعريفات</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p><strong>يُقصد بالكلمات والعبارات الآتية- أينما وردت في هذا النظام- المعاني المبينة أمام كل منها:<br />
+النظام</strong>: نظام السجل التجاري.<br />
+<strong>اللائحة</strong>: اللائحة التنفيذية للنظام.<br />
+<strong>الوزارة</strong>: وزارة التجارة.<br />
+<strong>الوزير</strong>: وزير التجارة.&nbsp;<br />
+<strong>التاجر</strong>: شخص ذو صفة طبيعية أو اعتبارية ينطبق عليه وصف التاجر وفقًا للنظام التجاري.<br />
+<strong>السجل التجاري</strong>: سجل يحتوي على بيانات التجار من خلال قاعدة بيانات إلكترونية مركزية.&nbsp;<br />
+<strong>المسجل</strong>: الجهة الحكومية المحددة من الوزير لإدارة السجل التجاري.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثانية: الأهداف</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p><strong>يهدف النظام إلى تيسير مزاولة الأعمال التجارية في المملكة، بتنظيم إجراءات القيد في السجل التجاري، مع ضمان تحقيق الآتي:&nbsp;</strong></p>
+
+<ol>
+	<li>&nbsp;الشفافية، وذلك بأن تكون البيانات المقيدة في السجل التجاري متاحة للاطلاع، بما يكفل سهولة البحث عنها والحصول عليها. &nbsp;</li>
+	<li>الموثوقية، وذلك بأن تكون البيانات المقيدة في السجل التجاري صحيحة ودقيقة، وأن تُحدث دوريًّا.</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثالثة: السجل التجاري</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>تنشئ الوزارة السجل التجاري، وتقيد فيه البيانات التي يحددها النظام واللائحة والأنظمة ذات العلاقة، وكل تحديث يطرأ عليها.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الرابعة: اختصاصات المسجل ومهماته</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p><strong>يتولى المسجل الاختصاصات والمهمات الآتية:</strong></p>
+
+<ol>
+	<li>قيد الأسماء التجارية وبيانات التجار، وإصدار شهادات القيد.&nbsp;</li>
+	<li>تقديم التوصيات، بشأن المسائل المتعلقة بالسجل التجاري، للجهات ذات العلاقة.&nbsp;</li>
+	<li>تطوير إجراءات القيد في السجل التجاري بالاستفادة من الممارسات المثلى.</li>
+	<li>التوعية والتثقيف بأحكام النظام.</li>
+	<li>إجراء أي تصحيح لازم للبيانات المقيدة في السجل التجاري وفقًا للمادة (التاسعة عشرة) من النظام.</li>
+	<li>طلب البيانات، المتعلقة بالتجار المقيدين في السجل التجاري، من الجهات ذات العلاقة؛ للاستفادة منها فيما يعزز تطوير قطاع الأعمال في المملكة.</li>
+	<li>أي اختصاصات أو مهمات أخرى تنص عليها اللائحة بما يحقق أهداف النظام.</li>
+</ol></div></p>
+                </div>
+            <h3 class="center">الفصل الثاني: القيد في السجل التجاري</h3>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الخامسة: الالتزام بالقيد</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><ol>
+	<li>يجب على كل تاجر القيد في السجل التجاري. &nbsp;&nbsp;</li>
+	<li>للوزارة -بناءً على ضوابط تحدد في اللائحة- استثناء بعض فئات التجار من القيد في السجل التجاري وتحديد الآثار المترتبة على ذلك.</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة السادسة: البيانات الواجب تضمينها في طلب القيد في السجل التجاري</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><ol>
+	<li><strong>مع مراعاة الأنظمة ذات العلاقة، يجب أن يشتمل طلب القيد على البيانات الآتية:</strong><br />
+	<strong>أ-</strong> اسم طالب القيد وعنوانه، ورقم هويته.&nbsp;<br />
+	<strong>ب-</strong> الاسم التجاري الذي يرغب التاجر في مزاولة النشاط التجاري من خلاله.<br />
+	<strong>ج-</strong> الشكل النظامي للتاجر.<br />
+	<strong>د-</strong> مقدار رأس مال التاجر.<br />
+	<strong>هـ-</strong> اسم المدير أو المديرين أو أعضاء مجلس الإدارة وصلاحياتهم.<br />
+	<strong>و-</strong> عنوان المركز الرئيس لمزاولة التاجر أعماله.&nbsp;<br />
+	<strong>ز-</strong> أي بيانات أخرى وفقاً لما تحدده اللائحة.</li>
+	<li><strong>للوزارة أن تحدد في اللائحة الأحكام المتعلقة ببيانات الحساب البنكي والبيانات الأخرى الواجب تقديمها بعد القيد في السجل التجاري.</strong></li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة السابعة: إجراءات تقديم الطلب</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><ol>
+	<li>يقدم طلب القيد في السجل التجاري إلى المسجل.</li>
+	<li>يبتّ المسجل في الطلب المستوفي البيانات المطلوبة خلال (عشرة) أيام من تاريخ تقديمه. وللمسجل في حالات تحددها اللائحة تمديد تلك المدة.&nbsp;</li>
+	<li>يجوز لطالب القيد، في حال رفض الطلب لوجود خطأ أو نقص، تصحيح الطلب أو استكماله خلال المدة التي تحددها اللائحة، وإلا أُلغي الطلب، وله تقديم طلب جديد.&nbsp;</li>
+	<li>في حال رفض الطلب، يجب أن يكون القرار مسببًا، ويُبلغ به طالب القيد وفقًا لما تحدده اللائحة، ويحق له التظلم أمام الوزارة خلال (ستين) يومًا من تاريخ إبلاغه برفضه.&nbsp;</li>
+	<li>يحدد المسجل النماذج المتعلقة بطلبات القيد والتحديث والتأكيد السنوي والشطب والمستخرجات وصور الشهادات والوثائق المطلوبة للقيد وأي نموذج آخر ذي علاقة، وذلك وفقًا للنظام والأنظمة الأخرى ذات العلاقة.</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثامنة: طريقة تقديم الطلب</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يكون تقديم جميع الطلبات واتخاذ الإجراءات في السجل التجاري إلكترونيًّا. وتبين اللائحة الأحكام اللازمة لذلك ووسيلة تقديم الطلب عند تعذر تقديمه إلكترونيًّا.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة التاسعة: قيد أنشطة مختلفة</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يجوز للتاجر قيد أنشطة مختلفة في السجل التجاري، ولا يشترط التجانس بينها، وذلك دون إخلال بأحكام الأنظمة الأخرى ذات العلاقة.&nbsp;</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة العاشرة: التحديث في السجل التجاري</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يجب على التاجر، عند حدوث أي تغيير أو تعديل على البيانات المقيدة في السجل التجاري، أن يحدّثها خلال (خمسة عشر) يومًا من حدوث ذلك التغيير أو التعديل.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الحادية عشرة: التأكيد السنوي</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يجب على التاجر أن يقدم سنويًّا إلى المسجل تأكيدًا للبيانات المقيدة في السجل التجاري، وذلك وفقًا لما تحدده اللائحة.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثانية عشرة: المسؤولية عن صحة البيانات</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>لا يتحمل المسجل المسؤولية عن صحة ودقة البيانات المقدمة من التاجر بشأن أي من خدمات السجل التجاري.</p></div></p>
+                </div>
+            <h3 class="center">الفصل الثالث: شطب القيد في السجل التجاري وتعليقه</h3>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثالثة عشرة: الشطب الاختياري</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>مع مراعاة أحكام نظام الشركات والأنظمة الأخرى ذات العلاقة، للتاجر التقدم بطلب شطب قيده في السجل التجاري اختياريًّا إذا توقف عن مزاولة نشاطه التجاري، وذلك وفقًا لما تحدده اللائحة.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الرابعة عشرة: الشطب الوجوبي</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p><strong>يجب على المسجل شطب قيد التاجر في السجل التجاري في الحالات الآتية:</strong></p>
+
+<ol>
+	<li>صدور حكم قضائي نهائي بشطب القيد من السجل التجاري.&nbsp;</li>
+	<li>انتهاء التصفية بناءً على نظام الشركات أو نظام الإفلاس.&nbsp;</li>
+	<li>وفاة التاجر، ما لم يطلب ورثته تعديل القيد. ويتعين على المسجل قبل إجراء الشطب إشعارهم، وذلك وفقًا لما تحدده اللائحة.</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الخامسة عشرة: تعليق القيد في السجل التجاري</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><ol>
+	<li>يُعلق المسجل قيد التاجر إذا لم يقدم التأكيد السنوي خلال (تسعين) يومًا من تاريخ استحقاقه.&nbsp;</li>
+	<li>يتعين على المسجل، قبل إجراء التعليق وفقًا للفقرة (1) من هذه المادة، إنذار التاجر بأنه سيُعلَّق قيده بعد (أربعة عشر) يومًا من تاريخ الإنذار. وفي حال انقضت المدة دون تقديم التاجر التأكيد السنوي، يُشعر التاجر بقرار تعليق قيده.</li>
+	<li>يقيد المسجل قرار تعليق القيد في السجل التجاري، ويترتب على ذلك تعليق جميع التراخيص الصادرة للقيد المعلق، وتبين اللائحة الآثار الأخرى المترتبة على قرار تعليق القيد.</li>
+	<li>يُعلق القيد في السجل التجاري لمدة (سنة). وعلى المسجل رفع التعليق عن قيد التاجر إذا تقدم خلال هذه المدة بطلب رفعه مع تقديم التأكيد السنوي وأداء المقابل المالي المقرر مضافًا إليه الغرامة المالية المقررة بناءً على المادة (الحادية والعشرين) من النظام.&nbsp;</li>
+	<li>فيما عدا الشركة وفرع الشركة الأجنبية، إذا لم يتخذ التاجر ما يلزم وفق الفقرة (4) من هذه المادة، يشطب المسجل قيده.&nbsp;</li>
+	<li>إذا لم تتخذ الشركة أو فرع الشركة الأجنبية ما يلزم وفق الفقرة (4) من هذه المادة، فلا يحق لها طلب رفع التعليق. وللوزارة، عند انتهاء المدة المشار إليها في الفقرة (4) من هذه المادة، مطالبة الشركاء أو المساهمين بحل الشركة أو طلب حل الشركة من المحكمة المختصة.</li>
+</ol></div></p>
+                </div>
+            <h3 class="center">الفصل الرابع: الاطلاع على بيانات شهادة القيد وحجيتها</h3>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة السادسة عشرة: عرض بيانات القيد</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يجب على التاجر عرض بيانات القيد في السجل التجاري في مكان واضح في المتجر الذي يزاول فيه أعماله، وذلك وفقًا لما تحدده اللائحة.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة السابعة عشرة: حجية بيانات القيد</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>تُعد البيانات المقيدة في السجل التجاري حجة للتاجر أو عليه من تاريخ قيدها، ولا يجوز الاحتجاج على الغير بأي بيان واجب قيده أو تحديثه ما لم يُقيد أو يُحدث. ومع ذلك، يجوز لذي المصلحة الاحتجاج بهذا البيان في مواجهة التاجر.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثامنة عشرة: الاطلاع على بيانات القيد</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><ol>
+	<li>يجوز لأي شخص الاطلاع على البيانات الأساسية المقيدة في السجل التجاري وفقًا لما تحدده اللائحة.&nbsp;</li>
+	<li>يجوز لأي شخص أن يطلب من المسجل مستخرج بيانات تفصيلية بالقيد في السجل التجاري أو أي بيانات أخرى محددة، وذلك وفقًا لما تحدده اللائحة. وفي حالة عدم وجود قيد، يُمنح طالب المستخرج شهادة بذلك.&nbsp;</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة التاسعة عشرة: تصحيح الأخطاء</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><ol>
+	<li>إذا تبين للمسجل وقوع خطأ مادي -إملائي أو حسابي- أو إجرائي أثناء عملية القيد أو التعديل، فيتعين تصحيحه خلال (خمسة) أيام من تاريخ اكتشاف الخطأ أو من تاريخ تقديم طلب التصحيح من التاجر.&nbsp;</li>
+	<li>في حال قيام المسجل بالتصحيح من تلقاء نفسه، فيجب عليه إشعار التاجر بمضمون التصحيح خلال (خمسة) أيام من حدوث التصحيح.</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة العشرون: قيد الأحكام النهائية</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p><strong>تشعر المحكمة المختصة المسجل بصدور أي من الأحكام والقرارات النهائية الآتية، وذلك خلال (ثلاثين) يومًا من تاريخ صدور أي منها:&nbsp;</strong></p>
+
+<ol>
+	<li>أحكام أو قرارات قبول الإيداع القضائي بشأن افتتاح أي من إجراءات الإفلاس المنصوص عليها في نظام الإفلاس، أو إنهائها.</li>
+	<li>أحكام حل وتصفية الشركات أو بطلانها وتعيين المصفين أو عزلهم بناءً على نظام الشركات. &nbsp;&nbsp;</li>
+	<li>أحكام إنهاء وانتهاء التصفية بناءً على نظام الشركات.&nbsp;</li>
+	<li>أحكام رد الاعتبار للتجار.&nbsp;</li>
+	<li>الأحكام والقرارات الصادرة بإيقاع الحجر أو الولاية أو تعيين الوكلاء عن الغائبين أو عزلهم أو رفع الحجر.</li>
+	<li>الأحكام والقرارات الصادرة بمنح الإذن للقاصر أو نائبه بالتجارة أو بسحب الإذن أو تقييده.</li>
+	<li>الأحكام الصادرة بإيقاع عقوبات جزائية تمنع التاجر من مزاولة أعماله، واسم القيّم وتاريخ تعيينه.&nbsp;</li>
+	<li>أحكام إخراج الشركاء أو المساهمين أو عزل المديرين. &nbsp;</li>
+	<li>الأحكام الصادرة في شأن الحراسة القضائية وحصر الورثة للتاجر.&nbsp;<br />
+	ويقيد في السجل التجاري مقتضى هذه الأحكام والقرارات بمجرد الإشعار بها.</li>
+</ol></div></p>
+                </div>
+            <h3 class="center">الفصل الخامس: المخالفات</h3>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الحادية والعشرون: بيان المخالفات</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>&nbsp;</p>
+
+<ol>
+	<li><strong>دون إخلال بأية عقوبة ينص عليها نظام آخر، يعاقب بغرامة لا تزيد على (خمسين) ألف ريال:</strong><br />
+	أ- من قدم بيانات غير صحيحة لقيدها في السجل التجاري.<br />
+	ب- التاجر الذي لم يلتزم بأحكام الفقرة (1) من المادة (الخامسة) والمواد: (العاشرة) و(الحادية عشرة) و(السادسة عشرة) من النظام.&nbsp;<br />
+	ج- التاجر الذي لم يلتزم بالأحكام التي تحددها الوزارة بناءً على الفقرة (2) من المادة (السادسة) من النظام.</li>
+	<li><strong>يجوز أن تضاعف الغرامة في حال التكرار. ويكون التكرار بارتكاب المخالفة نفسها الصادر بثبوتها قرار نهائي خلال (ثلاث) سنوات من تاريخ صدور القرار.</strong></li>
+	<li><strong>يراعى في تحديد الغرامة جسامة المخالفة وظروفها، وملابساتها، وآثارها، وحجم المنشأة. وتحدد اللائحة جدول تصنيف المخالفات.</strong></li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثانية والعشرون: ضبط المخالفات</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><ol>
+	<li>يتولى ضبط ما يقع من مخالفات لأحكام النظام موظفون يصدر بتسميتهم قرار من الوزير، وتكون لهم صفة الضبط.</li>
+	<li>يصدر الوزير قواعد تنظم عمل ومهمات الموظفين المشار إليهم في الفقرة (1) من هذه المادة.</li>
+	<li>يصدر الوزير قواعد منح المكافآت المالية للعاملين على كشف المخالفات المنصوص عليها في النظام، وذلك بالاتفاق مع وزارة المالية ووزارة الموارد البشرية والتنمية الاجتماعية.</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثالثة والعشرون: لجنة النظر في المخالفات</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>تكوّن بقرار من الوزير لجنة (أو أكثر) من أعضاء لا يقل عددهم عن (ثلاثة)، ويرأسها ذو تأهيل نظامي، وتختص بالنظر في المخالفات وإيقاع العقوبة المنصوص عليها في المادة (الحادية والعشرين) من النظام، ويكون للوزير تحديد المخالفات التي يجوز إيقاع العقوبات مباشرة بشأنها دون عرضها على اللجنة. وتصدر قواعد عمل اللجنة وتحدد مكافآت رئيسها وأعضائها وأمانتها، بقرار من الوزير.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الرابعة والعشرون: الإجراءات البديلة</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p><strong>إذا ثبت أن التاجر قد ارتكب أيًّا من المخالفات الواردة في المادة (الحادية والعشرين) من النظام، فيحق للجنة أن تتخذ -بالإضافة إلى العقوبة المقررة أو بدلًا عنها- أيًّا من الآتي:&nbsp;</strong></p>
+
+<ol>
+	<li>إنذار التاجر.</li>
+	<li>إلزام التاجر باتخاذ الخطوات الضرورية لتجنب وقوع المخالفة مستقبلًا.</li>
+	<li>إلزام التاجر باتخاذ الخطوات التصحيحية اللازمة لمعالجة آثار المخالفة.</li>
+	<li>إصدار قرار بتصحيح البيانات المقيدة في السجل التجاري.</li>
+</ol></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الخامسة والعشرون: التظلم على القرارات</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يحق لمن صدر ضده أي قرار بناءً على أحكام النظام التظلم منه أمام المحكمة المختصة خلال (ثلاثين) يومًا من تاريخ التبليغ به وفقًا لما تحدده اللائحة.</p></div></p>
+                </div>
+            <h3 class="center">الفصل السادس: أحكام ختامية</h3>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة السادسة والعشرون: إسناد المهمات</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>للوزير الاستعانة بالجهات العامة أو الخاصة للقيام بالمهمات المقررة للمسجل، وله إسناد بعضها إلى تلك الجهات.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة السابعة والعشرون: المقابل المالي</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>تحدد اللائحة المقابل المالي للخدمات المقدمة من المسجل تنفيذًا لأحكام النظام. &nbsp;</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة الثامنة والعشرون: إصدار اللائحة</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يصدر الوزير اللائحة خلال (مائة وثمانين) يومًا من تاريخ نشر النظام في الجريدة الرسمية، ويعمل بها من تاريخ نفاذه.</p></div></p>
+                </div>
+                <div class="article_item no_alternate ">
+                    <h3 class="center">المادة التاسعة والعشرون: نفاذ النظام</h3>
+
+                    <div class="article_btns">
+                    </div>
+
+                    <p><div class="HTMLContainer"><p>يحل النظام محل نظام السجل التجاري، الصادر بالمرسوم الملكي رقم (م / 1) وتاريخ 21 / 2 / 1416هــ، ويعمل به بعد (مائة وثمانين) يومًا من تاريخ نشره في الجريدة الرسمية.</p></div></p>
+                </div>
+    </div>
+</div>            <div class="d-flex justify-content-center">
+            </div>
+            <div class="white_gradient"></div>
+            <div style="display: none;" id="divReportIssueContainer">
+                
+
+
+
+
+<form action="/BoeLaws/Laws/ReportIssue" enctype="multipart/form-data" id="frmReportIssue" method="post"><div id="CustomValidationSummary"></div><input data-val="true" data-val-required="حقل النظام/اللائحة مطلوب" id="LawId" name="LawId" type="hidden" value="d0e0ea69-e88b-471a-9773-b20900a51be6" /><input data-val="true" data-val-number="حقل LanguageId يجب أن يكون رقم." id="LanguageId" name="LanguageId" type="hidden" value="1" /><div id="CustomValidationSummary"></div>        <div class="row g-2 mt-5">
+                <div class="col-12 col-md-6">
+                    <label for="SenderName">الإسم</label>
+                    <input class="form_control" data-val="true" data-val-length="حجم النص لحقل الإسم لا يجب ان يزيد عن 250" data-val-length-max="250" data-val-regex="لا يسمح بكتابة سكريبت في حقل الإسم" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل الإسم مطلوب" id="SenderName" name="SenderName" type="text" value="" />
+                    <span class="field-validation-valid text-danger help-block" data-valmsg-for="SenderName" data-valmsg-replace="true"></span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="Email">البريد الإلكتروني</label>
+                    <input class="form_control" data-val="true" data-val-email="صيغة البريد الإلكتروني غير صحيحة" data-val-length="حجم النص لحقل البريد الإلكتروني لا يجب ان يزيد عن 50" data-val-length-max="50" data-val-regex="لا يسمح بكتابة سكريبت في حقل البريد الإلكتروني" data-val-regex-pattern="^[^&lt;>{}]+$" id="Email" name="Email" type="text" value="" />
+                    <span class="field-validation-valid text-danger help-block" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                </div>
+            <div class="col-12 col-md-6">
+                <label for="Phone">رقم الجوال</label>
+                <input class="form_control" data-val="true" data-val-length="حجم النص لحقل رقم الجوال لا يجب ان يزيد عن 10" data-val-length-max="10" data-val-regex="رقم هاتف غير صحيح" data-val-regex-pattern="^(05)[0-9]{8}$" data-val-required="حقل رقم الجوال مطلوب" id="Phone" name="Phone" type="text" value="" />
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <label for="ReportIssueTypeId">النوع</label>
+                <select class="form_control ReportIssue" data-val="true" data-val-number="حقل النوع يجب أن يكون رقم." data-val-required="حقل النوع مطلوب" id="ddlReportIssueType" name="ReportIssueTypeId"><option value="">- اختر -</option>
+<option value="5">تعليق</option>
+<option value="1">خطأ لغوي </option>
+<option value="2">خطأ في مادة</option>
+<option value="3">خطأ في تاريخ </option>
+<option value="4">أخرى</option>
+</select>
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="ReportIssueTypeId" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <label for="ArticleId">المادة</label>
+                <select class="form_control ReportIssue" id="ddlArticle" name="ArticleId"><option value="">- اختر -</option>
+<option value="62cad694-48fe-44c0-a172-b20900a7347d">المادة الخامسة: الالتزام بالقيد </option>
+<option value="ddcb4d67-a6f8-4191-bad0-b20900a622da">المادة الأولى: التعريفات </option>
+<option value="a7102649-3b79-413b-9702-b20900a98c7c">المادة السادسة عشرة: عرض بيانات القيد </option>
+<option value="478e7319-bfb2-41ef-a771-b20900aae2e5">المادة الحادية والعشرون: بيان المخالفات </option>
+<option value="010f945d-7bf5-4aab-9e08-b20900ab9034">المادة السادسة والعشرون: إسناد المهمات </option>
+<option value="add95302-7db3-40da-bc0f-b20900a85702">المادة الثالثة عشرة: الشطب الاختياري </option>
+<option value="c18a55c8-74c8-4443-80a2-b20900a8759d">المادة الرابعة عشرة: الشطب الوجوبي </option>
+<option value="151c0eaa-8a76-4625-93c6-b20900ab9f09">المادة السابعة والعشرون: المقابل المالي </option>
+<option value="a9857b00-623e-458e-b94d-b20900ab05d8">المادة الثانية والعشرون: ضبط المخالفات </option>
+<option value="39b275c4-01f2-470f-b1c1-b20900a9a44c">المادة السابعة عشرة: حجية بيانات القيد </option>
+<option value="b3b40b5a-fa6c-43ec-a89c-b20900a64a5c">المادة الثانية: الأهداف </option>
+<option value="d010d1bc-32d7-4a1e-875b-b20900a7abbc">المادة السادسة: البيانات الواجب تضمينها في طلب القيد في السجل التجاري </option>
+<option value="c68dbfa5-6fa6-4102-96be-b20900a7d43b">المادة السابعة: إجراءات تقديم الطلب </option>
+<option value="a6e89b31-55a1-4e38-a832-b20900a65b96">المادة الثالثة: السجل التجاري </option>
+<option value="b21bad60-cc3f-494d-8708-b20900a9dd6c">المادة الثامنة عشرة: الاطلاع على بيانات القيد </option>
+<option value="66415c06-7971-4330-b33b-b20900ab1a05">المادة الثالثة والعشرون: لجنة النظر في المخالفات </option>
+<option value="43e612ce-3c9c-47e0-a92a-b20900abae6b">المادة الثامنة والعشرون: إصدار اللائحة </option>
+<option value="5e6ecefa-5758-4d4b-9ec2-b20900a8a1ad">المادة الخامسة عشرة: تعليق القيد في السجل التجاري </option>
+<option value="a4dfb581-4076-4ff6-b906-b20900abc1aa">المادة التاسعة والعشرون: نفاذ النظام </option>
+<option value="9c9b8f90-140a-4654-9ea7-b20900ab446d">المادة الرابعة والعشرون: الإجراءات البديلة </option>
+<option value="0a923cd8-8e5d-444d-81d7-b20900a9f582">المادة التاسعة عشرة: تصحيح الأخطاء </option>
+<option value="96d1fd9d-8d0e-4a48-a301-b20900a6eaba">المادة الرابعة: اختصاصات المسجل ومهماته </option>
+<option value="6087eafc-d657-4899-b197-b20900a7e751">المادة الثامنة: طريقة تقديم الطلب </option>
+<option value="ccc23207-273e-406a-8bbb-b20900a7f71a">المادة التاسعة: قيد أنشطة مختلفة </option>
+<option value="feb18022-e6a6-47fa-86bf-b20900aa44d2">المادة العشرون: قيد الأحكام النهائية </option>
+<option value="5bb1af70-082d-4af2-bd86-b20900ab54c5">المادة الخامسة والعشرون: التظلم على القرارات </option>
+<option value="49d4034f-c818-47e4-99a0-b20900a8092c">المادة العاشرة: التحديث في السجل التجاري </option>
+<option value="9b77fda2-6ebe-4b9c-9ba5-b20900a81829">المادة الحادية عشرة: التأكيد السنوي </option>
+<option value="49dc8735-af34-4e1d-b895-b20900a828c6">المادة الثانية عشرة: المسؤولية عن صحة البيانات </option>
+</select>
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="ArticleId" data-valmsg-replace="true"></span>
+                <span id="lblArticlevalidation" style="display: none;color: red" class="text-danger help-block">حقل المادة مطلوب</span>
+            </div>
+
+            <div class="col-12">
+                <label for="Description">الوصف</label>
+                <textarea class="form_control" cols="20" data-val="true" data-val-length="حجم النص لحقل الوصف لا يجب ان يزيد عن 4000" data-val-length-max="4000" data-val-regex="لا يسمح بكتابة سكريبت في حقل الوصف" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل الوصف مطلوب" id="Description" name="Description" rows="2">
+</textarea>
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+            </div>
+            <div class="col-12 app_captcha">
+                <div id='divCaptchaContainer_captchaI8MJ' class='captcha-box'>
+	                <div class='col-md-6'>
+		                <div class='form-group form-group-lg'>
+                            <label class='control-label' for='Captcha'>رمز التحقق</label>
+			                <input autocomplete="off" class="input-validation-error form-control captcha-input" data-val="true" data-val-length="حجم النص لحقل رمز التحقق لا يجب ان يزيد عن 6" data-val-length-max="6" data-val-regex="لا يسمح بكتابة سكريبت في حقل رمز التحقق" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل رمز التحقق مطلوب" id="Captcha" name="Captcha" placeholder="" type="text"></input>
+		                </div>
+		                <div class='form-group'>
+			                <div class='captcha-img'>
+				                <img class='img-captcha' src='/EmbeddedResources/Captcha/Image/captchaI8MJ' alt='captcha-image'>
+			                </div>
+			                <a href='#' class='captcha-refresh img-captcha-reload'><i class='fas fa-sync'></i></a>
+                        </div>
+<span class="field-validation-valid text-danger help-block captcha-danger" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+	                </div>
+                </div>
+                <span id="lblCaptchavalidation" style="display: none;color: red" class="text-danger help-block">قيمة الرمز المدخل غير صحيح</span>
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-3">
+                
+                <input class="btn btn-primary" id="btnSaveReportIssue" type="submit" value="إرسال" />
+            </div>
+        </div>
+</form>
+
+
+<script id="402511743" src="/EmbeddedResources/v1/Widgets/Captcha/CaptchaWidget.js"></script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaI8MJ = new CaptchaWidget('divCaptchaContainer_captchaI8MJ', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaI8MJ.load(); 
+                    }); </script>
+ 
+            </div>
+            <div style="display: none;" id="divSubscripeContainer">
+                
+
+
+<div>
+
+<form action="/BoeLaws/Laws/LawsSubscription" enctype="multipart/form-data" id="frmSubscriptiond0e0ea69-e88b-471a-9773-b20900a51be6" method="post"><div id="CustomValidationSummary"></div><input data-val="true" data-val-required="حقل النظام/اللائحة مطلوب" id="LawId" name="LawId" type="hidden" value="d0e0ea69-e88b-471a-9773-b20900a51be6" /><input data-val="true" data-val-number="حقل LanguageId يجب أن يكون رقم." id="LanguageId" name="LanguageId" type="hidden" value="1" /><div id="CustomValidationSummary"></div>    <div class="row g-2 mt-5">
+
+            <div class="col-12 col-md-6">
+                <label for="Name">الإسم</label>
+                <input class="form_control" data-val="true" data-val-length="حجم النص لحقل الإسم لا يجب ان يزيد عن 250" data-val-length-max="250" data-val-regex="لا يسمح بكتابة سكريبت في حقل الإسم" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل الإسم مطلوب" id="Name" name="Name" type="text" value="" />
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="Email">البريد الإلكتروني</label>
+                <input class="form_control" data-val="true" data-val-email="صيغة البريد الإلكتروني غير صحيحة" data-val-length="حجم النص لحقل البريد الإلكتروني لا يجب ان يزيد عن 50" data-val-length-max="50" data-val-regex="لا يسمح بكتابة سكريبت في حقل البريد الإلكتروني" data-val-regex-pattern="^[^&lt;>{}]+$" id="Email" name="Email" type="text" value="" />
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
+        <div class="col-12">
+            <label for="LogNotificationIdTypes">يرجى اختيار الحدث ليصلكم اشعار بذلك على البريد الإلكتروني</label>
+            <div><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="2" />اضافة</label><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="3" />تعديل</label><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="4" />حذف</label><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="5" />أبلغني حين توافر النظام باللغة الإنجليزية</label></div>
+            <span class="field-validation-valid text-danger help-block" data-valmsg-for="PostedTypes" data-valmsg-replace="true"></span>
+        </div>
+            <div class="col-12 app_captcha">
+                <div id='divCaptchaContainer_captcha87TJ' class='captcha-box'>
+	                <div class='col-md-6'>
+		                <div class='form-group form-group-lg'>
+                            <label class='control-label' for='Captcha'>رمز التحقق</label>
+			                <input autocomplete="off" class="input-validation-error form-control captcha-input" data-val="true" data-val-length="حجم النص لحقل رمز التحقق لا يجب ان يزيد عن 6" data-val-length-max="6" data-val-regex="لا يسمح بكتابة سكريبت في حقل رمز التحقق" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل رمز التحقق مطلوب" id="Captcha" name="Captcha" placeholder="" type="text"></input>
+		                </div>
+		                <div class='form-group'>
+			                <div class='captcha-img'>
+				                <img class='img-captcha' src='/EmbeddedResources/Captcha/Image/captcha87TJ' alt='captcha-image'>
+			                </div>
+			                <a href='#' class='captcha-refresh img-captcha-reload'><i class='fas fa-sync'></i></a>
+                        </div>
+<span class="field-validation-valid text-danger help-block captcha-danger" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+	                </div>
+                </div>
+                <span id="lblCaptchavalidation" style="display: none;color: red" class="text-danger help-block">قيمة الرمز المدخل غير صحيح</span>
+            </div>
+                    <div class="col-12">
+                <label class="checkbox-inline" for="agreement-d0e0ea69-e88b-471a-9773-b20900a51be6">
+                    <input type="checkbox" id="agreement-d0e0ea69-e88b-471a-9773-b20900a51be6" class="chk-agreement" />
+                    إشعار إخلاء مسؤولية:
+الإخطارات المرسلة عبر خدمة الاشتراك قد تتأخر لأسباب فنية خارجة عن إرادتنا. الهيئة غير مسؤولة عن أي أضرار أو خسائر ناتجة عن التأخير أو عدم وصول الإخطارات، وكذلك عن دقة أو اكتمال محتواها.
+المستخدم مسؤول عن المتابعة والتحقق من المعلومات، ولا تعد الإخطارات بديلاً عن المتابعة الشخصية.
+باستخدام الخدمة، أنت توافق على شروط إخلاء المسؤولية وتدرك حدود الخدمة والمسؤوليات المتعلقة بها
+                </label>
+                <span class="text-danger help-block">يجب الموافقة على إشعار إخلاء المسؤولية لتتمكن من الاستمرار</span>
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-3">
+                <input class="btn btn-primary btnSubscription" id="btnSubscription" type="submit" data-lawid='d0e0ea69-e88b-471a-9773-b20900a51be6' disabled value="إرسال" />
+            </div>
+    </div>
+</form>
+</div>
+<script>
+    $(document).ready(function () {
+        $('input[type="checkbox"][id="agreement-d0e0ea69-e88b-471a-9773-b20900a51be6"]').change(function () {
+            var isChecked = $(this).is(':checked');
+            $('input[type="checkbox"][id="agreement-d0e0ea69-e88b-471a-9773-b20900a51be6"]').prop('checked', isChecked);
+
+            if (this.checked) {
+                $('.modal .btnSubscription').prop('disabled', false);
+            } else {
+                $('.modal .btnSubscription').prop('disabled', true);
+            }
+        });
+    });
+</script>
+
+<script id="402511743" src="/EmbeddedResources/v1/Widgets/Captcha/CaptchaWidget.js"></script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaI8MJ = new CaptchaWidget('divCaptchaContainer_captchaI8MJ', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaI8MJ.load(); 
+                    }); </script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captcha87TJ = new CaptchaWidget('divCaptchaContainer_captcha87TJ', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captcha87TJ.load(); 
+                    }); </script>
+ 
+            </div>
+            <div id="divAddReportIssueSuccess" style="display: none;">
+                <h3 class="text-center mb-4">
+                    تم إضافة البلاغ بنجاح. شكرا لمشاركتكم
+                </h3>
+                <div class="modal-footer text-center">
+                    <input class="app_btn" id="btnCloseReportIssue" type="submit" value="إغلاق" />
+                </div>
+            </div>
+            <div id="divAddSubscriptionSuccess" style="display: none;">
+                <h3 class="text-center mb-4">
+                    تم إضافة الاشتراك بنجاح. شكرا لمشاركتكم 
+                </h3>
+                <div class="modal-footer text-center">
+                    <input class="app_btn" id="btnCloseSubscription" type="submit" value="إغلاق" />
+                </div>
+            </div>
+            <div id="divAAddVisitorFavoriteSuccess" style="display: none;">
+                <h3 class="text-center mb-4">
+                    تم إضافة النظام للمفضلة بنجاح
+                </h3>
+                <div class="modal-footer text-center">
+                    <input class="app_btn" id="btnCloseAddToFavorite" type="submit" value="إغلاق" />
+                </div>
+            </div>
+            <div style="display: none;" id="divPrevVersionsContainer" class="popup-list">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                الإصدار
+                            </th>
+                            <th>
+                                تاريخ النظام
+                            </th>
+
+                            <th>
+                                الحالة
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+
+                </table>
+
+            </div>
+    </div>
+</div>
+
+<a href="#" style="display:block" title="الملاحظات والتعليقات" class="ancReportIssue ancReportIssueTemp" data-lawid="d0e0ea69-e88b-471a-9773-b20900a51be6">
+    <i class="fas fa-comments"></i>
+</a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="divOverlay" class="loader-overlay">
+            <div class="loader-overlay-shape"></div>
+            <div class="loader-overlay-text" id="dvOverLayText"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="container">
+                <div class="page-footer__top">
+                    <div class="row justify-content-center">
+                        <a class="page-footer__logo" href="/" title="الرئيسية">
+                            <img src="/Content/new/images/logo-white.svg" alt="logo-white" />
+                        </a>
+                    </div>
+                </div>
+                <div class="page-footer__bottom">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                            <span class="copyrights">جميع الحقوق محفوظة © <span class="copyrights__year">2025 - 1446</span></span>
+                        </div>
+                        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <ul class="page-footer__bottom__links" id="footer-bottom-links">
+                                <li><a href='http://www.boe.gov.saar/Pages/Privacy.aspx' title="سياسة الخصوصية">سياسة الخصوصية</a></li>
+                                <li><a href='http://www.boe.gov.saar/Pages/TermsOfUse.aspx' title="شروط الاستخدام">شروط الاستخدام</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="scroll-to-top-btn" title="الصعود لأعلى الصفحة">
+                <img src="/Content/new/images/arrow-top-icon.svg" alt="go to top" />
+            </a>
+        </footer>
+
+    </main>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/fontawesome-all.js"></script>
+    <script src="/Scripts/jquery.hoverIntent.minified.js"></script>
+    <script src="/Scripts/jquery.slicknav.js"></script>
+    <script src="/Scripts/slick.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/Scripts/tabso.js"></script>
+
+    <script type="text/javascript" src="/EmbeddedResources/v1.0/Scripts/common.js"></script>
+
+    <script src="/Scripts/App/frontend-custom.js"></script>
+    <script src="/Scripts/App/frontend.js"></script>
+    <script src="/Scripts/jQuery.print.js"></script>
+    
+    <script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <link href="/Content/css/jquery.modal.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery.modal.min.js"></script>
+    <script src="/Scripts/App/app-frontend.lawdetails.js"></script>
+    <script type="text/javascript">
+
+        //$("img").hide();
+        //$("#imglogo").show();
+        //$(".img-captcha").show();
+
+        document.getElementById('clearResultBtn').addEventListener('click', function () {
+            document.getElementById('queryInput').value = '';
+            document.getElementById('frmSearch').action = '/BoeLaws/Laws/SearchDetails/?Query=';
+            document.getElementById('frmSearch').submit();
+        });
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+
+            var keywordsInput = $("#queryInput").val();
+            // Get keywords from the textbox separated by commas
+            var keywords = $.map(keywordsInput.split("،"), $.trim);
+            $(".search_result_item").each(function () {
+                var content = $(this).html();
+
+                keywords.forEach(function (keyword, index) {
+                    //    content = content.replace(new RegExp('(?<!\\p{L}\\p{M}*|[\\p{N}_])(?:' + keyword + ')(?![\\p{L}\\p{N}_])', 'igu'),
+                    //        '<span class="highlight key-background-color-' + index +'">$&</span>');
+                    content = content.replaceAll(keyword, '<span class="highlight key-background-color-' + index + '">' + keyword + '</span>')
+                });
+                $(this).html(content);
+            });
+        });
+
+    </script>
+
+
+    
+    <script src="/Content/new/js/scripts.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132578258-1"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#LawsNotifications').click(function (e) {
+                e.preventDefault();
+                $("#divNotificationContainer").modal({
+                    escapeClose: false,
+                    clickClose: false,
+                    showClose: true,
+                    closeText: ''
+                });
+            });
+        });
+		$('header img, footer img').removeAttr('style')
+		localStorage.setItem('portalUrl', 'http://www.boe.gov.sa');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-132578258-1');
+    </script>
+
+<script id="402511743" src="/EmbeddedResources/v1/Widgets/Captcha/CaptchaWidget.js"></script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaI8MJ = new CaptchaWidget('divCaptchaContainer_captchaI8MJ', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaI8MJ.load(); 
+                    }); </script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captcha87TJ = new CaptchaWidget('divCaptchaContainer_captcha87TJ', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captcha87TJ.load(); 
+                    }); </script>
+</body>
+
+</html>

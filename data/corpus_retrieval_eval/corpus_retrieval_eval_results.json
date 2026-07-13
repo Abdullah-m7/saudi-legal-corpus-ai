@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 125,
-  "top1_hits": 104,
-  "top3_hits": 120,
-  "top5_hits": 123,
-  "top1_accuracy": 0.832,
-  "top3_accuracy": 0.96,
-  "top5_accuracy": 0.984,
-  "mrr_at_5": 0.8949,
+  "total_queries": 128,
+  "top1_hits": 107,
+  "top3_hits": 123,
+  "top5_hits": 126,
+  "top1_accuracy": 0.8359,
+  "top3_accuracy": 0.9609,
+  "top5_accuracy": 0.9844,
+  "mrr_at_5": 0.8974,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -3890,6 +3890,99 @@
      "record_id": "commercial-papers-law-llm-art-092",
      "article_number": 92,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "sjt-001",
+   "query_ar": "تنشئ الوزارة السجل التجاري وتقيد فيه البيانات التي يحددها النظام واللائحة وكل تحديث يطرأ عليها",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_register",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-register-law-llm-art-003",
+     "article_number": 3,
+     "score": 49
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-002",
+     "article_number": 2,
+     "score": 27
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-017",
+     "article_number": 17,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "sjt-002",
+   "query_ar": "يجب على كل تاجر القيد في السجل التجاري وللوزارة استثناء بعض فئات التجار",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_register",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-register-law-llm-art-005",
+     "article_number": 5,
+     "score": 38
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-014",
+     "article_number": 14,
+     "score": 28
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-016",
+     "article_number": 16,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "ast-001",
+   "query_ar": "يجب على كل تاجر اتخاذ اسم تجاري وقيده في السجل التجاري ويجوز حجز الاسم التجاري لمدة مؤقتة لدى المسجل",
+   "category": "topical",
+   "gold": {
+    "corpus": "trade_names",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trade-names-law-llm-art-003",
+     "article_number": 3,
+     "score": 41
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-005",
+     "article_number": 5,
+     "score": 29
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-014",
+     "article_number": 14,
+     "score": 28
     }
    ]
   }

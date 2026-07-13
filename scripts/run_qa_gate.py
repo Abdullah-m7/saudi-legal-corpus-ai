@@ -85,6 +85,8 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_arbitration_law_track.py",
     "scripts/gen_arbitration_regulation_track.py",
     "scripts/gen_commercial_papers_law_track.py",
+    "scripts/gen_commercial_register_law_track.py",
+    "scripts/gen_trade_names_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/run_corpus_retrieval_eval.py",

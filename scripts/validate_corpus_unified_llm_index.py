@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 5457
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121}
+EXPECTED_TOTAL = 5509
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -82,6 +82,8 @@ SANITY = [
     ("إذا كانت هيئة التحكيم مشكلة من محكم واحد ولم يتفق طرفا التحكيم على اختياره تولت المحكمة المختصة اختياره", "arbitration", 10),
     ("تشتمل الكمبيالة على البيانات الآتية كلمة كمبيالة مكتوبة في متن الصك وأمر غير معلق على شرط بوفاء مبلغ معين", "commercial_papers", 1),
     ("يعاقب بالحبس وبغرامة كل من سحب بسوء نية شيكا لا يكون له مقابل وفاء قائم وقابل للسحب", "commercial_papers", 118),
+    ("تنشئ الوزارة السجل التجاري وتقيد فيه البيانات التي يحددها النظام واللائحة وكل تحديث يطرأ عليها", "commercial_register", 3),
+    ("يجب على كل تاجر اتخاذ اسم تجاري وقيده في السجل التجاري ويجوز حجز الاسم التجاري لمدة مؤقتة لدى المسجل", "trade_names", 3),
 ]
 
 
@@ -159,6 +161,8 @@ def main():
         "data/arbitration_arabic_legal_llm/arbitration_law_legal_llm_001_058.json",
         "data/arbitration_arabic_legal_llm/arbitration_regulation_legal_llm_001_019.json",
         "data/commercial_papers_arabic_legal_llm/commercial_papers_law_legal_llm_001_121.json",
+        "data/commercial_register_arabic_legal_llm/commercial_register_law_legal_llm_001_029.json",
+        "data/trade_names_arabic_legal_llm/trade_names_law_legal_llm_001_023.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -192,7 +196,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
