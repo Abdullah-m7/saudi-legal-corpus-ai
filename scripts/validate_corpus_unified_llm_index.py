@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 5259
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40}
+EXPECTED_TOTAL = 5336
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -78,6 +78,8 @@ SANITY = [
     ("تتولى الوحدة المختصة في المحكمة إدارة قضايا الإفلاس وقيد الطلبات والاعتراضات والمذكرات", "bankruptcy", 8),
     ("تفرض تكاليف قضائية على الدعوى بمبلغ لا يزيد على نسبة خمسة بالمئة من قيمة المطالبة وبحد أعلى مليون ريال", "judicial_costs", 3),
     ("لا تفرض التكاليف القضائية على المسجونين والموقوفين والعمال المشمولين بنظام العمل والوزارات والأجهزة الحكومية", "judicial_costs", 17),
+    ("لا تقبل دعوى بطلان حكم التحكيم إلا إذا لم يوجد اتفاق تحكيم أو كان باطلاً أو خالف حكم التحكيم النظام العام", "arbitration", 50),
+    ("إذا كانت هيئة التحكيم مشكلة من محكم واحد ولم يتفق طرفا التحكيم على اختياره تولت المحكمة المختصة اختياره", "arbitration", 10),
 ]
 
 
@@ -152,6 +154,8 @@ def main():
         "data/bankruptcy_arabic_legal_llm/bankruptcy_case_rules_legal_llm_001_024.json",
         "data/judicial_costs_arabic_legal_llm/judicial_costs_law_legal_llm_001_023.json",
         "data/judicial_costs_arabic_legal_llm/judicial_costs_regulation_legal_llm_001_017.json",
+        "data/arbitration_arabic_legal_llm/arbitration_law_legal_llm_001_058.json",
+        "data/arbitration_arabic_legal_llm/arbitration_regulation_legal_llm_001_019.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -185,7 +189,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 119,
-  "top1_hits": 98,
-  "top3_hits": 114,
-  "top5_hits": 117,
-  "top1_accuracy": 0.8235,
-  "top3_accuracy": 0.958,
-  "top5_accuracy": 0.9832,
-  "mrr_at_5": 0.8896,
+  "total_queries": 122,
+  "top1_hits": 101,
+  "top3_hits": 117,
+  "top5_hits": 120,
+  "top1_accuracy": 0.8279,
+  "top3_accuracy": 0.959,
+  "top5_accuracy": 0.9836,
+  "mrr_at_5": 0.8923,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1123,13 +1123,13 @@
      "score": 30
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-022",
-     "article_number": 22,
+     "record_id": "arbitration-regulation-llm-art-007",
+     "article_number": 7,
      "score": 5
     },
     {
-     "record_id": "gtpl-reg-llm-art-007",
-     "article_number": 7,
+     "record_id": "board-of-grievances-law-llm-art-022",
+     "article_number": 22,
      "score": 5
     }
    ]
@@ -1531,8 +1531,8 @@
      "score": 11
     },
     {
-     "record_id": "bankruptcy-regulation-llm-art-064",
-     "article_number": 64,
+     "record_id": "arbitration-law-llm-art-058",
+     "article_number": 58,
      "score": 10
     }
    ]
@@ -3704,6 +3704,99 @@
      "record_id": "judicial-costs-law-llm-art-009",
      "article_number": 9,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "thk-001",
+   "query_ar": "يجوز أن يكون اتفاق التحكيم سابقاً على قيام النزاع سواء أكان مستقلاً بذاته أم ورد في عقد",
+   "category": "topical",
+   "gold": {
+    "corpus": "arbitration",
+    "law_component": "law",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "arbitration-law-llm-art-009",
+     "article_number": 9,
+     "score": 38
+    },
+    {
+     "record_id": "arbitration-law-llm-art-050",
+     "article_number": 50,
+     "score": 25
+    },
+    {
+     "record_id": "arbitration-law-llm-art-001",
+     "article_number": 1,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "thk-002",
+   "query_ar": "لا تقبل دعوى بطلان حكم التحكيم إلا إذا لم يوجد اتفاق تحكيم أو كان باطلاً أو خالف النظام العام",
+   "category": "topical",
+   "gold": {
+    "corpus": "arbitration",
+    "law_component": "law",
+    "article_number": 50
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "arbitration-law-llm-art-050",
+     "article_number": 50,
+     "score": 38
+    },
+    {
+     "record_id": "arbitration-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 26
+    },
+    {
+     "record_id": "arbitration-law-llm-art-003",
+     "article_number": 3,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "thr-001",
+   "query_ar": "إذا كانت هيئة التحكيم من محكم واحد ولم يتفق الطرفان تولت المحكمة المختصة اختياره",
+   "category": "topical",
+   "gold": {
+    "corpus": "arbitration",
+    "law_component": "implementing_regulation",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "arbitration-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 38
+    },
+    {
+     "record_id": "arbitration-law-llm-art-015",
+     "article_number": 15,
+     "score": 33
+    },
+    {
+     "record_id": "arbitration-law-llm-art-039",
+     "article_number": 39,
+     "score": 28
     }
    ]
   }
