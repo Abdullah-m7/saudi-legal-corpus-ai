@@ -76,6 +76,7 @@ COMMERCIAL_COURTS_LAW_LLM = os.path.join(ROOT, "data", "commercial_courts_arabic
 COMMERCIAL_COURTS_REG_LLM = os.path.join(ROOT, "data", "commercial_courts_arabic_legal_llm", "commercial_courts_regulation_legal_llm_001_281.json")
 BANKRUPTCY_LAW_LLM = os.path.join(ROOT, "data", "bankruptcy_arabic_legal_llm", "bankruptcy_law_legal_llm_001_231.json")
 BANKRUPTCY_REG_LLM = os.path.join(ROOT, "data", "bankruptcy_arabic_legal_llm", "bankruptcy_regulation_legal_llm_001_098.json")
+BANKRUPTCY_RULES_LLM = os.path.join(ROOT, "data", "bankruptcy_arabic_legal_llm", "bankruptcy_case_rules_legal_llm_001_024.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -145,6 +146,7 @@ def main() -> int:
     commercial_courts_reg_llm = _load_json(COMMERCIAL_COURTS_REG_LLM)
     bankruptcy_law_llm = _load_json(BANKRUPTCY_LAW_LLM)
     bankruptcy_reg_llm = _load_json(BANKRUPTCY_REG_LLM)
+    bankruptcy_rules_llm = _load_json(BANKRUPTCY_RULES_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -165,7 +167,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 38,
+        "total_tracks": 39,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -207,6 +209,7 @@ def main() -> int:
             + commercial_courts_reg_llm["record_count"]  # 281 Implementing Regulation of the Commercial Courts Law (1441H, MOJ portal cross-checked)
             + bankruptcy_law_llm["record_count"]  # 231 Bankruptcy Law (MOJ portal cross-checked; consolidated)
             + bankruptcy_reg_llm["record_count"]  # 98 Bankruptcy Regulation (MOJ portal cross-checked; consolidated)
+            + bankruptcy_rules_llm["record_count"]  # 24 Bankruptcy Case Rules (MOJ portal cross-checked; fresh issuance)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -239,6 +242,7 @@ def main() -> int:
             + commercial_courts_reg_llm["record_count"]
             + bankruptcy_law_llm["record_count"]
             + bankruptcy_reg_llm["record_count"]
+            + bankruptcy_rules_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -258,16 +262,16 @@ def main() -> int:
             "forms_and_appendices_counted": True,
             "closure_audit_aggregate_not_counted_separately": True,
             "closure_audit_total_duplicates_underlying_ir_records": True,
-            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) + judiciary_law(85) + board_of_grievances_law(26) + law_practice_law(56) + law_practice_regulation(90) + commercial_courts_law(96) + commercial_courts_regulation(281) + bankruptcy_law(231) + bankruptcy_regulation(98) = 5364",
+            "formula_total_primary_arabic_governing": "companies_law_arabic(281) + general_ir_articles(95) + general_ir_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) + pdpl_law(43) + pdpl_implementing_regulation(38) + investment_law(16) + investment_implementing_regulation(37) + civil_transactions_law(721) + gtpl_law(99) + gtpl_implementing_regulation(157) + labor_law(249) + labor_implementing_regulation(45) + labor_model_work_regulation(72) + labor_annex1_violation_tables(3) + labor_annex3_mediation_rules(20) + labor_annex4_recruitment_rules(72) + labor_annex2_accessibility_tables(8) + labor_annex5_contract_forms(102) + evidence_law(129) + evidence_electronic_rules(24) + evidence_procedural_manuals(135) + evidence_expertise_rules(34) + personal_status_law(252) + personal_status_regulation(41) + sharia_procedure_law(243) + sharia_procedure_regulation(637) + criminal_procedure_law(222) + criminal_procedure_regulation(181) + enforcement_law(98) + enforcement_regulation(273) + judiciary_law(85) + board_of_grievances_law(26) + law_practice_law(56) + law_practice_regulation(90) + commercial_courts_law(96) + commercial_courts_regulation(281) + bankruptcy_law(231) + bankruptcy_regulation(98) + bankruptcy_case_rules(24) = 5388",
             "formula_total_reference": "companies_law_english(281) + gtpl_english_boe_translation(99) + labor_law_english(234) = 614",
             "formula_total_internal_reference": "companies_law_chinese_remediation(281)",
             "formula_total_implementing_regulations": "companies-family only: general_articles(95) + general_forms(4) + listed_jsc_articles(69) + listed_jsc_appendix(1) = 169 (PDPL and Investment regulations are counted under their own primary Arabic tracks)",
-            "formula_total_registry_counted": "total_primary_arabic_governing(5364) + total_reference(614) + total_internal_reference(281) = 6259",
+            "formula_total_registry_counted": "total_primary_arabic_governing(5388) + total_reference(614) + total_internal_reference(281) = 6283",
             "pdpl_arabic_records_status": "PDPL law (43) and implementing regulation (38) are now VERIFIED against the official SDAIA-published text (cross-checked against independent OCR/extraction) and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "investment_arabic_records_status": "Investment law (16) and implementing regulation (37) are verified from the official Ministry of Investment (MISA) Arabic PDFs and carry LLM-ready enrichment layers. Arabic governs; not legal advice.",
             "civil_arabic_records_status": "Civil Transactions Law (721) is the owner-provided full official Arabic text (Royal Decree M/191, 1444H), now CROSS-CHECKED article-by-article against the official MOJ legal-portal database (721/721 aligned, law unamended) with divergences adjudicated visually against the official MOJ PDF (committed): 17 single-word defects corrected and 21 trailing structural headings moved to section_context, all documented in the source artifact and audit files under sources/civil/law/moj_cross_check/. Arabic governs; not legal advice.",
             "labor_arabic_records_status": "Labor Law (249 records: 245 articles + 4 مكرر; 38 officially deleted flagged) is the official HRSD consolidated text (Royal Decree M/51, 1426H, amendments through M/44 merged), cross-verified against the repository's independently captured BOE base texts with ZERO unexplained differences. The Labor implementing regulation (45 records: articles 1-40 + 5 مكرر; 3 deleted flagged) is the official HRSD PDF core text, verified against rendered-page OCR and against the law track via the PDF's own verbatim law quotes (all >= 0.95). Both carry LLM-ready enrichment layers. The 234 English labor records are reference/guidance only. Arabic governs; not legal advice.",
-            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts), Judiciary Arabic (85 law, the foundational court-organization statute), and Board of Grievances Arabic (26 law, the administrative-judiciary statute; 25 اصلية + 1 معدّلة, sourced from the Board's certified PDF with Article 4's م/180 amendment from Umm Al-Qura 5072, SPA-confirmed), and Code of Law Practice Arabic (56 law + 90 implementing regulation = 146; the law is 35 اصلية / 8 معدلة / 12 مضافة / 1 ملغاة consolidated through M/21 1447H, the regulation is the fresh 1446H Active issuance all 90 اصلية superseding the InActive 1423H one, MOJ portal cross-checked), and Commercial Courts Arabic (96 law; 75 اصلية / 1 معدلة / 20 ملغاة, consolidated M/93 1441H — its evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 articles, the fresh 1441H Active issuance all اصلية), MOJ portal cross-checked), and Bankruptcy Arabic (231 law; 229 اصلية / 2 معدلة, consolidated M/89 1439H — per its art 230 the law repeals arts 103-137 of the old Commercial Court Law and the old Protective Settlement law, MOJ portal cross-checked) and its implementing regulation (98 articles; 97 اصلية / 1 معدلة — the fresh 1440H Active issuance by Council of Ministers Decision 622, art 2 amended by Decision 171 1443H, MOJ portal cross-checked, 98/98 matched outright) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (5195) is a projection of counted records and is NOT added to totals.",
+            "note": "Closure audit total (169) equals total_implementing_regulations_records and is NOT added separately to avoid double-counting. Chinese remediation articles (281) are internal reference records. PDPL Arabic (43+38=81), Investment Arabic (16+37=53), Civil Arabic (721), and Labor Arabic (249+45+72+3+20+72+8+102=571) Evidence Arabic (129+24+135+34=322), Personal Status Arabic (252+41=293), and Sharia Procedure Arabic (243 law + 637 implementing regulation = 880, consolidated amended texts), Criminal Procedure Arabic (222 law + 181 implementing regulation = 403, consolidated amended texts), Enforcement Arabic (98 law + 273 implementing regulation = 371, consolidated amended texts), Judiciary Arabic (85 law, the foundational court-organization statute), and Board of Grievances Arabic (26 law, the administrative-judiciary statute; 25 اصلية + 1 معدّلة, sourced from the Board's certified PDF with Article 4's م/180 amendment from Umm Al-Qura 5072, SPA-confirmed), and Code of Law Practice Arabic (56 law + 90 implementing regulation = 146; the law is 35 اصلية / 8 معدلة / 12 مضافة / 1 ملغاة consolidated through M/21 1447H, the regulation is the fresh 1446H Active issuance all 90 اصلية superseding the InActive 1423H one, MOJ portal cross-checked), and Commercial Courts Arabic (96 law; 75 اصلية / 1 معدلة / 20 ملغاة, consolidated M/93 1441H — its evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 articles, the fresh 1441H Active issuance all اصلية), MOJ portal cross-checked), and Bankruptcy Arabic (231 law; 229 اصلية / 2 معدلة, consolidated M/89 1439H — per its art 230 the law repeals arts 103-137 of the old Commercial Court Law and the old Protective Settlement law, MOJ portal cross-checked) and its implementing regulation (98 articles; 97 اصلية / 1 معدلة — the fresh 1440H Active issuance by Council of Ministers Decision 622, art 2 amended by Decision 171 1443H, MOJ portal cross-checked, 98/98 matched outright) and the Rules Organizing Bankruptcy Case Procedures before the Commercial Courts (24 articles; fresh 1441H Active issuance all اصلية by Minister of Justice Decision 6421, MOJ portal cross-checked, 24/24 matched outright) are primary Arabic governing-language records. The annex-5 records embed the official bilingual form's printed English column as a non-governing text_en_reference field (not counted as separate reference records). The unified retrieval index (5219) is a projection of counted records and is NOT added to totals.",
         },
         "validation_status": "PASS",
         "tracks": [
@@ -1512,6 +1516,34 @@ def main() -> int:
                                "not_verified_official_text": False, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Bankruptcy Law «اللائحة التنفيذية لنظام الإفلاس» — issued by Council of Ministers Decision No. 622 dated 4/1/1440H (legalStatus Active), 98 records (complete 1..98, no مكرر) across 18 chapters: general provisions, common provisions across bankruptcy procedures, the preventive-settlement / financial-reorganization / liquidation procedures and their small-debtor variants, administrative liquidation, set-off and mutual debts, debt priority, security and set-off arrangements for financial transactions, objection to judgments, provisions for a deceased debtor, the Bankruptcy Committee, the Bankruptcy Register, trustees and experts, and closing provisions. CONSOLIDATED AMENDED: 97 اصلية / 1 معدلة (المادة الثانية, amended by Council of Ministers Decision No. 171 dated 20/3/1443H, adding a sub-paragraph to paragraph (1)) / 0 ملغاة / 0 مضافة; the amended article carries its history. The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence). Fetched article-by-article from the official MOJ legal-portal database (get-Section-Changes) and cross-verified against the official MOJ PDF from the same portal (98/98 outright, mean 0.968, min 0.913; no article required visual adjudication; PDF committed with recorded sha256, 21 pages). Text-layer folding handled the PDF's Arabic-Presentation-Forms/Farsi-yeh glyphs. Decorative in-word kashida removed; the 'هـ' enumerator and space-bounded enumerator dashes kept. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "bankruptcy_case_rules",
+                "display_name_ar": "القواعد المنظمة لإجراءات قضايا الإفلاس في المحاكم التجارية",
+                "display_name_en": "Rules Organizing Bankruptcy Case Procedures before the Commercial Courts",
+                "corpus_family": "procedural_rules",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+                "source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": bankruptcy_rules_llm["record_count"],
+                    "data_path": "data/bankruptcy_arabic_legal_llm/bankruptcy_case_rules_legal_llm_001_024.json"}},
+                "record_counts": {"arabic_articles": bankruptcy_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 24, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": bankruptcy_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/bankruptcy/case_rules/official_source/bankruptcy_case_rules_official_source.json",
+                    "sources/bankruptcy/case_rules/verified/bankruptcy_case_rules_verified_records.jsonl",
+                    "data/bankruptcy_arabic_legal_llm/bankruptcy_case_rules_legal_llm_001_024.json",
+                ],
+                "validator_targets": ["make bankruptcy-case-rules-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": False, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules Organizing Bankruptcy Case Procedures before the Commercial Courts «القواعد المنظمة لإجراءات قضايا الإفلاس في المحاكم التجارية» — issued by Minister of Justice Decision No. 6421 (published 9/4/1441H, legalStatus Active), 24 records (complete 1..24, no مكرر) across 9 chapters: general provisions, jurisdiction, the court unit managing bankruptcy cases, filing and registering the request, examining and deciding the request, stay of claims and precautionary requests, judicial notifications, issuing and objecting to judgments/decisions, and closing provisions. These are the procedural (litigation) rules that govern how bankruptcy cases run before the commercial courts, complementary to the Bankruptcy Law (M/89) and its implementing regulation. FRESH FULL ISSUANCE: all 24 اصلية (0 معدلة / 0 ملغاة / 0 مضافة). The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence). Fetched article-by-article from the official MOJ legal-portal database (get-Section-Changes) and cross-verified against the official MOJ PDF from the same portal (24/24 outright, mean 0.960, min 0.912; no article required visual adjudication; PDF committed with recorded sha256, 9 pages). Text-layer folding handled the PDF's Arabic-Presentation-Forms/Farsi-yeh glyphs. Decorative in-word kashida removed; the 'هـ' enumerator and space-bounded enumerator dashes kept. Arabic governs; not legal advice.",
             },
         ],
     }
