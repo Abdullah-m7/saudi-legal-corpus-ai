@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 110,
-  "top1_hits": 91,
-  "top3_hits": 105,
-  "top5_hits": 108,
-  "top1_accuracy": 0.8273,
-  "top3_accuracy": 0.9545,
-  "top5_accuracy": 0.9818,
-  "mrr_at_5": 0.8897,
+  "total_queries": 113,
+  "top1_hits": 93,
+  "top3_hits": 108,
+  "top5_hits": 111,
+  "top1_accuracy": 0.823,
+  "top3_accuracy": 0.9558,
+  "top5_accuracy": 0.9823,
+  "mrr_at_5": 0.8882,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1221,8 +1221,8 @@
      "score": 21
     },
     {
-     "record_id": "civil-law-llm-art-331",
-     "article_number": 331,
+     "record_id": "bankruptcy-regulation-llm-art-002",
+     "article_number": 2,
      "score": 5
     }
    ]
@@ -1531,8 +1531,8 @@
      "score": 11
     },
     {
-     "record_id": "evidence-expertise-llm-art-015",
-     "article_number": 15,
+     "record_id": "bankruptcy-regulation-llm-art-064",
+     "article_number": 64,
      "score": 10
     }
    ]
@@ -2177,13 +2177,13 @@
      "score": 22
     },
     {
-     "record_id": "oa-llm-companies-art-107",
-     "article_number": 107,
+     "record_id": "bankruptcy-regulation-llm-art-076",
+     "article_number": 76,
      "score": 10
     },
     {
-     "record_id": "oa-llm-companies-art-110",
-     "article_number": 110,
+     "record_id": "oa-llm-companies-art-107",
+     "article_number": 107,
      "score": 10
     }
    ]
@@ -3355,13 +3355,13 @@
      "score": 24
     },
     {
-     "record_id": "bankruptcy-law-llm-art-183",
-     "article_number": 183,
+     "record_id": "bankruptcy-regulation-llm-art-078",
+     "article_number": 78,
      "score": 22
     },
     {
-     "record_id": "bankruptcy-law-llm-art-185",
-     "article_number": 185,
+     "record_id": "bankruptcy-law-llm-art-183",
+     "article_number": 183,
      "score": 22
     }
    ]
@@ -3425,6 +3425,99 @@
      "record_id": "bankruptcy-law-llm-art-128",
      "article_number": 128,
      "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "ilr-001",
+   "query_ar": "متى تكون حصيلة بيع أصول التفليسة غير مجدية في إجراء التصفية الإدارية",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy",
+    "law_component": "implementing_regulation",
+    "article_number": 70
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-law-llm-art-167",
+     "article_number": 167,
+     "score": 27
+    },
+    {
+     "record_id": "bankruptcy-regulation-llm-art-070",
+     "article_number": 70,
+     "score": 24
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-195",
+     "article_number": 195,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "ilr-002",
+   "query_ar": "اختصاصات لجنة الإفلاس في إصدار قواعد حفظ وإدارة سجل الإفلاس",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy",
+    "law_component": "implementing_regulation",
+    "article_number": 85
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-regulation-llm-art-085",
+     "article_number": 85,
+     "score": 25
+    },
+    {
+     "record_id": "bankruptcy-regulation-llm-art-072",
+     "article_number": 72,
+     "score": 21
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-179",
+     "article_number": 179,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "ilr-003",
+   "query_ar": "يجوز أن تجرى التعاملات المنصوص عليها في نظام الإفلاس أو اللائحة إلكترونياً",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy",
+    "law_component": "implementing_regulation",
+    "article_number": 95
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-regulation-llm-art-095",
+     "article_number": 95,
+     "score": 36
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-009",
+     "article_number": 9,
+     "score": 28
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-205",
+     "article_number": 205,
+     "score": 23
     }
    ]
   }
