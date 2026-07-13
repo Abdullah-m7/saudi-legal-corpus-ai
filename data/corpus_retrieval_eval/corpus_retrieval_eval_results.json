@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 107,
-  "top1_hits": 88,
-  "top3_hits": 102,
-  "top5_hits": 105,
-  "top1_accuracy": 0.8224,
-  "top3_accuracy": 0.9533,
-  "top5_accuracy": 0.9813,
-  "mrr_at_5": 0.8866,
+  "total_queries": 110,
+  "top1_hits": 91,
+  "top3_hits": 105,
+  "top5_hits": 108,
+  "top1_accuracy": 0.8273,
+  "top3_accuracy": 0.9545,
+  "top5_accuracy": 0.9818,
+  "mrr_at_5": 0.8897,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -410,13 +410,13 @@
      "score": 6
     },
     {
-     "record_id": "civil-law-llm-art-120",
-     "article_number": 120,
+     "record_id": "bankruptcy-law-llm-art-054",
+     "article_number": 54,
      "score": 5
     },
     {
-     "record_id": "civil-law-llm-art-291",
-     "article_number": 291,
+     "record_id": "civil-law-llm-art-120",
+     "article_number": 120,
      "score": 5
     }
    ]
@@ -3332,6 +3332,99 @@
      "record_id": "commercial-courts-regulation-llm-art-272",
      "article_number": 272,
      "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "ifl-001",
+   "query_ar": "إجراءات الإفلاس التسوية الوقائية وإعادة التنظيم المالي والتصفية وإجراءات صغار المدينين",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-law-llm-art-002",
+     "article_number": 2,
+     "score": 24
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-183",
+     "article_number": 183,
+     "score": 22
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-185",
+     "article_number": 185,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "ifl-002",
+   "query_ar": "يستوفى عند التصفية الدين ذو الأولوية الأعلى قبل الدين ذي الأولوية الأقل",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy",
+    "law_component": "law",
+    "article_number": 196
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-law-llm-art-196",
+     "article_number": 196,
+     "score": 14
+    },
+    {
+     "record_id": "civil-law-llm-art-604",
+     "article_number": 604,
+     "score": 11
+    },
+    {
+     "record_id": "oa-llm-companies-art-245",
+     "article_number": 245,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "ifl-003",
+   "query_ar": "للمدين عند طلب افتتاح إجراء التسوية الوقائية أن يطلب من المحكمة تعليق المطالبات",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy",
+    "law_component": "law",
+    "article_number": 17
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-law-llm-art-017",
+     "article_number": 17,
+     "score": 37
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-013",
+     "article_number": 13,
+     "score": 28
+    },
+    {
+     "record_id": "bankruptcy-law-llm-art-128",
+     "article_number": 128,
+     "score": 27
     }
    ]
   }
