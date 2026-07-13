@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 46
+        assert registry["total_tracks"] == 47
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 5678
+        assert registry["total_primary_arabic_governing_records"] == 5684
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 6573
+        assert registry["total_registry_counted_records"] == 6579
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -115,6 +115,7 @@ class TestTracks:
         assert "commercial_papers_law" in ids
         assert "commercial_register_law" in ids
         assert "trade_names_law" in ids
+        assert "commercial_agencies_law" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -280,6 +281,13 @@ class TestTracks:
         assert tn["record_counts"]["legal_status_breakdown"] == {
             "اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert tn["official_text_status"] == "BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED"
+
+    def test_commercial_agencies_law_counts(self, registry):
+        ca = next(t for t in registry["tracks"] if t["track_id"] == "commercial_agencies_law")
+        assert ca["record_counts"]["arabic_articles"] == 6
+        assert ca["record_counts"]["legal_status_breakdown"] == {
+            "اصلية": 3, "معدلة": 3, "ملغاة": 0, "مضافة": 0}
+        assert ca["official_text_status"] == "BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),
