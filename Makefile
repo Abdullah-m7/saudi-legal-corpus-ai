@@ -157,6 +157,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         chambers-of-commerce-law-track-validate \
         commercial-books-law-track-validate \
         aml-law-track-validate \
+        tawtheeq-law-track-validate \
         qa-gate
 
 help:
@@ -1052,6 +1053,9 @@ commercial-books-law-track-validate:
 
 aml-law-track-validate:
 	$(PY) scripts/validate_aml_law_track.py
+
+tawtheeq-law-track-validate:
+	$(PY) scripts/validate_tawtheeq_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
