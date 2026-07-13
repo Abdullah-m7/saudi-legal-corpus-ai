@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 59
+        assert registry["total_tracks"] == 62
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 6147
+        assert registry["total_primary_arabic_governing_records"] == 6194
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 7042
+        assert registry["total_registry_counted_records"] == 7089
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -128,6 +128,9 @@ class TestTracks:
         assert "real_estate_units_law" in ids
         assert "real_estate_units_implementing_regulation" in ids
         assert "foreign_ownership_law" in ids
+        assert "municipal_realestate_law" in ids
+        assert "municipal_realestate_implementing_regulation" in ids
+        assert "gcc_ownership_law" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -384,6 +387,24 @@ class TestTracks:
         assert rfo["record_counts"]["legal_status_breakdown"] == {
             "اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert rfo["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_municipal_realestate_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "municipal_realestate_law")
+        assert t["record_counts"]["arabic_articles"] == 6
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 6, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_municipal_realestate_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "municipal_realestate_implementing_regulation")
+        assert t["record_counts"]["arabic_articles"] == 35
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 31, "معدلة": 3, "ملغاة": 0, "مضافة": 1}
+        assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_gcc_ownership_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "gcc_ownership_law")
+        assert t["record_counts"]["arabic_articles"] == 6
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 6, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),
