@@ -97,6 +97,7 @@ REQUIRED_TRACK_IDS = [
     "trade_names_law",
     "commercial_agencies_law",
     "chambers_of_commerce_law",
+    "commercial_books_law",
 ]
 
 CHECKS: list[str] = []
@@ -139,9 +140,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 48 tracks
+    # [3] 49 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 48 tracks present...", len(track_ids) == 48 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 49 tracks present...", len(track_ids) == 49 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -512,8 +513,17 @@ def main() -> int:
     check("    chambers_of_commerce_law: status breakdown 66/0/0/0...",
           chl_counts.get("legal_status_breakdown") == {"اصلية": 66, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={chl_counts.get('legal_status_breakdown')}")
+    cbl = tracks_by_id.get("commercial_books_law", {})
+    cbl_counts = cbl.get("record_counts", {})
+    check("[7g35] commercial_books_law: 16 Arabic articles...",
+          cbl_counts.get("arabic_articles") == 16
+          and cbl.get("official_text_status") == "BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED",
+          f"counts={cbl_counts}")
+    check("    commercial_books_law: status breakdown 16/0/0/0...",
+          cbl_counts.get("legal_status_breakdown") == {"اصلية": 16, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={cbl_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 5581 records...", uix.get("total_records") == 5581,
+    check("[7g] unified retrieval index: 5597 records...", uix.get("total_records") == 5597,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -575,8 +585,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 5750...",
-          registry.get("total_primary_arabic_governing_records") == 5750,
+    check("[19a] total_primary_arabic_governing_records == 5766...",
+          registry.get("total_primary_arabic_governing_records") == 5766,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -591,8 +601,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 6645...",
-          registry.get("total_registry_counted_records") == 6645,
+    check("[19e] total_registry_counted_records == 6661...",
+          registry.get("total_registry_counted_records") == 6661,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -616,7 +626,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"5750 + 614 + 281 = 6645")
+          f"5766 + 614 + 281 = 6661")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -634,7 +644,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 48 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 49 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -648,7 +658,7 @@ def print_results() -> None:
               "sharia_procedure_implementing_regulation, criminal_procedure_law, "
               "criminal_procedure_implementing_regulation, enforcement_law, "
               "enforcement_implementing_regulation, judiciary_law, board_of_grievances_law). "
-              "Primary Arabic 5750, reference 614, registry-counted 6645. All counts correct, all referenced paths "
+              "Primary Arabic 5766, reference 614, registry-counted 6661. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -670,8 +680,8 @@ def print_results() -> None:
               "1 معدلة; Board certified PDF visually adjudicated + Article 4's م/180 amendment from Umm Al-Qura "
               "5072, SPA-confirmed) — and the Code of Law Practice (56 records: 35 اصلية / 8 معدلة / 12 مضافة / 1 "
               "ملغاة, consolidated through M/21 1447H) and its current implementing regulation (90 records, fresh "
-              "1446H Active issuance all اصلية, superseding the InActive 1423H one) — and the Commercial Courts Law (96 records: 75 اصلية / 1 معدلة / 20 ملغاة; the evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 records, fresh 1441H Active issuance all اصلية) — and the Bankruptcy Law (231 records: 229 اصلية / 2 معدلة, consolidated M/89 1439H; per art 230 it repeals old commercial-court/settlement provisions) and its implementing regulation (98 records: 97 اصلية / 1 معدلة, Council of Ministers Decision 622 1440H, art 2 amended by Decision 171 1443H; 98/98 matched outright) and the bankruptcy case rules (24 records: all اصلية, Minister of Justice Decision 6421 1441H; 24/24 matched outright) — and the Judicial Costs Law (23 records: all اصلية, Royal Decree M/16 1443H) and its implementing regulation (17 records: all اصلية, Council of Ministers Decision 519 1443H) — and the Arbitration Law (58 records: 55 اصلية / 3 معدلة, consolidated M/34 1433H; official-source label anomaly at art 31 preserved verbatim) and its implementing regulation (19 records: 18 اصلية / 1 ملغاة, Council of Ministers Decision 541 1438H) — and the Commercial Papers Law (121 records: 118 اصلية / 3 معدلة, consolidated M/37 1383H; sourced from the BOE official portal via Wayback archive, cross-verified byte-identical across two independent-date snapshots) — and the Commercial Register Law (29 records: all اصلية, M/83 1446H) and the Trade Names Law (23 records: all اصلية, M/83 1446H), both BOE official portal via Wayback archive — and the Commercial Agencies Law (6 records: 3 اصلية / 3 معدلة, consolidated M/11 1382H, BOE via Wayback archive) — and the Chambers of Commerce Law (66 records: all اصلية, consolidated M/37 1442H, BOE via Wayback archive). "
-              "Unified retrieval index (5581) projects counted records. Read-only.")
+              "1446H Active issuance all اصلية, superseding the InActive 1423H one) — and the Commercial Courts Law (96 records: 75 اصلية / 1 معدلة / 20 ملغاة; the evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 records, fresh 1441H Active issuance all اصلية) — and the Bankruptcy Law (231 records: 229 اصلية / 2 معدلة, consolidated M/89 1439H; per art 230 it repeals old commercial-court/settlement provisions) and its implementing regulation (98 records: 97 اصلية / 1 معدلة, Council of Ministers Decision 622 1440H, art 2 amended by Decision 171 1443H; 98/98 matched outright) and the bankruptcy case rules (24 records: all اصلية, Minister of Justice Decision 6421 1441H; 24/24 matched outright) — and the Judicial Costs Law (23 records: all اصلية, Royal Decree M/16 1443H) and its implementing regulation (17 records: all اصلية, Council of Ministers Decision 519 1443H) — and the Arbitration Law (58 records: 55 اصلية / 3 معدلة, consolidated M/34 1433H; official-source label anomaly at art 31 preserved verbatim) and its implementing regulation (19 records: 18 اصلية / 1 ملغاة, Council of Ministers Decision 541 1438H) — and the Commercial Papers Law (121 records: 118 اصلية / 3 معدلة, consolidated M/37 1383H; sourced from the BOE official portal via Wayback archive, cross-verified byte-identical across two independent-date snapshots) — and the Commercial Register Law (29 records: all اصلية, M/83 1446H) and the Trade Names Law (23 records: all اصلية, M/83 1446H), both BOE official portal via Wayback archive — and the Commercial Agencies Law (6 records: 3 اصلية / 3 معدلة, consolidated M/11 1382H, BOE via Wayback archive) — and the Chambers of Commerce Law (66 records: all اصلية, consolidated M/37 1442H, BOE via Wayback archive) — and the Commercial Books Law (16 records: all اصلية, consolidated M/61 1409H, BOE via Wayback archive). "
+              "Unified retrieval index (5597) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)

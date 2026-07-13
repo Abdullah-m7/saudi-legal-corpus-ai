@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 132,
-  "top1_hits": 111,
-  "top3_hits": 127,
-  "top5_hits": 130,
-  "top1_accuracy": 0.8409,
-  "top3_accuracy": 0.9621,
-  "top5_accuracy": 0.9848,
-  "mrr_at_5": 0.9005,
+  "total_queries": 134,
+  "top1_hits": 113,
+  "top3_hits": 129,
+  "top5_hits": 132,
+  "top1_accuracy": 0.8433,
+  "top3_accuracy": 0.9627,
+  "top5_accuracy": 0.9851,
+  "mrr_at_5": 0.902,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -3174,8 +3174,8 @@
      "score": 17
     },
     {
-     "record_id": "commercial-courts-regulation-llm-art-001",
-     "article_number": 1,
+     "record_id": "commercial-books-law-llm-art-014",
+     "article_number": 14,
      "score": 15
     }
    ]
@@ -4107,6 +4107,68 @@
      "record_id": "chambers-of-commerce-law-llm-art-007",
      "article_number": 7,
      "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "dft-001",
+   "query_ar": "يجب على كل تاجر أن يمسك الدفاتر التجارية التي تستلزمها طبيعة تجارته بطريقة تكفل بيان مركزه المالي",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_books",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-books-law-llm-art-001",
+     "article_number": 1,
+     "score": 43
+    },
+    {
+     "record_id": "commercial-books-law-llm-art-007",
+     "article_number": 7,
+     "score": 18
+    },
+    {
+     "record_id": "commercial-courts-regulation-llm-art-155",
+     "article_number": 155,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "dft-002",
+   "query_ar": "تقيد في دفتر اليومية الأصلي جميع العمليات المالية التي يقوم بها التاجر ومسحوباته الشخصية",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_books",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-books-law-llm-art-003",
+     "article_number": 3,
+     "score": 37
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-004",
+     "article_number": 4,
+     "score": 18
+    },
+    {
+     "record_id": "commercial-books-law-llm-art-005",
+     "article_number": 5,
+     "score": 17
     }
    ]
   }
