@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 142,
-  "top1_hits": 121,
-  "top3_hits": 137,
-  "top5_hits": 140,
-  "top1_accuracy": 0.8521,
-  "top3_accuracy": 0.9648,
-  "top5_accuracy": 0.9859,
-  "mrr_at_5": 0.9075,
+  "total_queries": 144,
+  "top1_hits": 123,
+  "top3_hits": 139,
+  "top5_hits": 142,
+  "top1_accuracy": 0.8542,
+  "top3_accuracy": 0.9653,
+  "top5_accuracy": 0.9861,
+  "mrr_at_5": 0.9088,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -4321,8 +4321,8 @@
      "score": 23
     },
     {
-     "record_id": "real-estate-registration-law-llm-art-039",
-     "article_number": 39,
+     "record_id": "real-estate-registration-regulation-llm-art-002",
+     "article_number": 2,
      "score": 21
     }
    ]
@@ -4409,14 +4409,76 @@
      "score": 41
     },
     {
+     "record_id": "real-estate-registration-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 30
+    },
+    {
      "record_id": "real-estate-registration-law-llm-art-001",
      "article_number": 1,
      "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "aqrr-001",
+   "query_ar": "يشكل في الهيئة لجنة عليا للتسجيل العيني للعقار برئاسة الرئيس التنفيذي للهيئة أو من ينيبه وستة أعضاء",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_registration",
+    "law_component": "implementing_regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-registration-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 35
     },
     {
-     "record_id": "real-estate-registration-law-llm-art-003",
-     "article_number": 3,
-     "score": 27
+     "record_id": "real-estate-registration-regulation-llm-art-047",
+     "article_number": 47,
+     "score": 28
+    },
+    {
+     "record_id": "real-estate-registration-law-llm-art-008",
+     "article_number": 8,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "aqrr-002",
+   "query_ar": "يصدر المسؤول الأول الدليل الإجرائي لتوثيق التصرفات اللاحقة للتسجيل العيني الأول للعقار",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_registration",
+    "law_component": "implementing_regulation",
+    "article_number": 50
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-registration-regulation-llm-art-050",
+     "article_number": 50,
+     "score": 45
+    },
+    {
+     "record_id": "real-estate-registration-law-llm-art-008",
+     "article_number": 8,
+     "score": 31
+    },
+    {
+     "record_id": "real-estate-registration-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 23
     }
    ]
   }

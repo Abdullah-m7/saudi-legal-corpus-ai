@@ -160,6 +160,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         tawtheeq-law-track-validate \
         tawtheeq-regulation-track-validate \
         real-estate-registration-law-track-validate \
+        real-estate-registration-regulation-track-validate \
         qa-gate
 
 help:
@@ -1064,6 +1065,9 @@ tawtheeq-regulation-track-validate:
 
 real-estate-registration-law-track-validate:
 	$(PY) scripts/validate_real_estate_registration_law_track.py
+
+real-estate-registration-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_registration_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
