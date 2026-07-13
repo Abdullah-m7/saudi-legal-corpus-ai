@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 140,
-  "top1_hits": 119,
-  "top3_hits": 135,
-  "top5_hits": 138,
-  "top1_accuracy": 0.85,
-  "top3_accuracy": 0.9643,
-  "top5_accuracy": 0.9857,
-  "mrr_at_5": 0.9062,
+  "total_queries": 142,
+  "top1_hits": 121,
+  "top3_hits": 137,
+  "top5_hits": 140,
+  "top1_accuracy": 0.8521,
+  "top3_accuracy": 0.9648,
+  "top5_accuracy": 0.9859,
+  "mrr_at_5": 0.9075,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1531,9 +1531,9 @@
      "score": 11
     },
     {
-     "record_id": "arbitration-law-llm-art-058",
-     "article_number": 58,
-     "score": 10
+     "record_id": "real-estate-registration-law-llm-art-021",
+     "article_number": 21,
+     "score": 11
     }
    ]
   },
@@ -2704,14 +2704,14 @@
      "score": 35
     },
     {
+     "record_id": "real-estate-registration-law-llm-art-001",
+     "article_number": 1,
+     "score": 14
+    },
+    {
      "record_id": "enforcement-law-llm-art-045",
      "article_number": 45,
      "score": 13
-    },
-    {
-     "record_id": "commercial-papers-law-llm-art-047",
-     "article_number": 47,
-     "score": 12
     }
    ]
   },
@@ -4316,14 +4316,14 @@
      "score": 38
     },
     {
-     "record_id": "commercial-courts-law-llm-art-094",
-     "article_number": 94,
-     "score": 17
+     "record_id": "real-estate-registration-law-llm-art-008",
+     "article_number": 8,
+     "score": 23
     },
     {
-     "record_id": "labor-annex4-llm-art-001",
-     "article_number": 1,
-     "score": 14
+     "record_id": "real-estate-registration-law-llm-art-039",
+     "article_number": 39,
+     "score": 21
     }
    ]
   },
@@ -4355,6 +4355,68 @@
      "record_id": "judiciary-law-llm-art-080",
      "article_number": 80,
      "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "aqr-001",
+   "query_ar": "يسري النظام على جميع العقارات الواقعة في إقليم المملكة",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_registration",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-registration-law-llm-art-002",
+     "article_number": 2,
+     "score": 33
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 13
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "aqr-002",
+   "query_ar": "تحدد المنطقة العقارية بقرار من الجهة المختصة ويتضمن المدة المحددة لاستقبال طلبات التسجيل العيني",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_registration",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-registration-law-llm-art-007",
+     "article_number": 7,
+     "score": 41
+    },
+    {
+     "record_id": "real-estate-registration-law-llm-art-001",
+     "article_number": 1,
+     "score": 29
+    },
+    {
+     "record_id": "real-estate-registration-law-llm-art-003",
+     "article_number": 3,
+     "score": 27
     }
    ]
   }
