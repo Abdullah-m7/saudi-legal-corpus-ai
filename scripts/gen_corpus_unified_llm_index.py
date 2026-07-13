@@ -100,6 +100,8 @@ LAYERS = [
      "bankruptcy", "law"),
     ("data/bankruptcy_arabic_legal_llm/bankruptcy_regulation_legal_llm_001_098.json",
      "bankruptcy", "implementing_regulation"),
+    ("data/bankruptcy_arabic_legal_llm/bankruptcy_case_rules_legal_llm_001_024.json",
+     "bankruptcy", "case_procedure_rules"),
 ]
 
 

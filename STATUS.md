@@ -161,12 +161,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   work regulation 72+3 tables + Labor mediation rules 20 + Labor recruitment rules 72 + Labor
   accessibility tables 8 + Labor contract forms 102 + Evidence Law 129 + Evidence companions
   24+135+34 + Personal Status Law 252 + Personal Status regulation 41 + Law of Sharia Procedure 243
-  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85 + Law of the Board of Grievances 26 + Code of Law Practice 56 + Code of Law Practice regulation 90 + Commercial Courts Law 96 + Commercial Courts Law regulation 281 + Bankruptcy Law 231 + Bankruptcy Law regulation 98**)
+  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85 + Law of the Board of Grievances 26 + Code of Law Practice 56 + Code of Law Practice regulation 90 + Commercial Courts Law 96 + Commercial Courts Law regulation 281 + Bankruptcy Law 231 + Bankruptcy Law regulation 98 + Bankruptcy case rules 24**)
   with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **38 tracks; primary Arabic governing 5364; reference 614; registry-counted
-  6259.** PDPL and Investment Arabic tracks are **verified against official
+  boundaries, and validation targets. **39 tracks; primary Arabic governing 5388; reference 614; registry-counted
+  6283.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (5195 records) as a projection (not added to totals). See
+  index (5219 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -362,7 +362,7 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   projects all thirty-four Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
   Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99+157 +
   Labor 571 across its eight components + Evidence 322 across its four components +
-  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 + Board of Grievances 26 + Law Practice 146 (law 56 + regulation 90) + Commercial Courts 377 (law 96 + regulation 281) + Bankruptcy 329 (law 231 + regulation 98) = **5195 records**) into one flat index at
+  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 + Board of Grievances 26 + Law Practice 146 (law 56 + regulation 90) + Commercial Courts 377 (law 96 + regulation 281) + Bankruptcy 353 (law 231 + regulation 98 + case rules 24) = **5219 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
@@ -372,9 +372,9 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 82.3% / top-3 95.6% / top-5 98.2% / MRR@5 0.8882**
-  over the 5195-record index with **113 golds** — expanded from 40 (v2: gtp-001..007 +
-  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary; v13: dmz-001..003 board-of-grievances; v14: muh-001..003 law-practice; v15: mhl-001..003 law-practice-regulation; v16: tjr-001..003 commercial-courts; v17: tjl-001..003 commercial-courts-regulation; v18: ifl-001..003 bankruptcy law; v19: ilr-001..003 bankruptcy regulation) so that GTPL, all eight
+  deterministic results. **Current: top-1 82.8% / top-3 95.7% / top-5 98.3% / MRR@5 0.8911**
+  over the 5219-record index with **116 golds** — expanded from 40 (v2: gtp-001..007 +
+  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary; v13: dmz-001..003 board-of-grievances; v14: muh-001..003 law-practice; v15: mhl-001..003 law-practice-regulation; v16: tjr-001..003 commercial-courts; v17: tjl-001..003 commercial-courts-regulation; v18: ifl-001..003 bankruptcy law; v19: ilr-001..003 bankruptcy regulation; v20: icr-001..003 bankruptcy case rules) so that GTPL, all eight
   Labor components, all four Evidence components, the Personal Status law + regulation, the
   Law of Sharia Procedure + its implementing regulation, the Law of Criminal Procedure + its implementing regulation, the Law of Enforcement + its regulation, the Law of the Judiciary, the Law of the Board of Grievances, the Code of Law Practice + its regulation, and the Commercial Courts Law + its regulation have
   gold coverage; every new
@@ -750,7 +750,7 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   supersession added). No dual-status divergence. Track under `sources/commercial_courts/regulation/` +
   `data/commercial_courts_arabic_legal_llm/`. Validate: `make commercial-courts-regulation-track-validate`.
 
-## نظام الإفلاس — Bankruptcy Law (م/89، 1439هـ) + اللائحة التنفيذية
+## نظام الإفلاس — Bankruptcy Law (م/89، 1439هـ) + اللائحة التنفيذية + القواعد الإجرائية
 
 - **Bankruptcy Law (M/89, 28/5/1439هـ) verified + LLM-ready — the substantive insolvency
   framework.** **نظام الإفلاس** — **231 records** (complete 1–231, no مكرر) across the full
@@ -773,13 +773,24 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   98/98 matched outright (mean 0.968, min 0.913) — no article required visual adjudication.** No
   dual-status divergence. Track under `sources/bankruptcy/regulation/` +
   `data/bankruptcy_arabic_legal_llm/`. Validate: `make bankruptcy-regulation-track-validate`.
+- **Rules Organizing Bankruptcy Case Procedures before the Commercial Courts verified + LLM-ready
+  — completing the bankruptcy file (law + regulation + case rules).** **القواعد المنظمة لإجراءات
+  قضايا الإفلاس في المحاكم التجارية** — **24 records** (complete 1–24, no مكرر) across 9 chapters:
+  jurisdiction, the court unit managing bankruptcy cases, filing/registering the request, stay of
+  claims, judicial notifications, and issuing/objecting to judgments. These are the litigation
+  procedure rules that run bankruptcy cases before the commercial courts. Issued by Minister of
+  Justice Decision No. 6421 (09/04/1441هـ). **All 24 اصلية** (fresh full issuance). Same
+  double-official MOJ pipeline (portal database × official MOJ PDF, 9 pages, committed with recorded
+  sha256). **Cross-check: 24/24 matched outright (mean 0.960, min 0.912) — no visual adjudication.**
+  No dual-status divergence. Track under `sources/bankruptcy/case_rules/` +
+  `data/bankruptcy_arabic_legal_llm/`. Validate: `make bankruptcy-case-rules-track-validate`.
 
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (112 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (113 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 39 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 40 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any
