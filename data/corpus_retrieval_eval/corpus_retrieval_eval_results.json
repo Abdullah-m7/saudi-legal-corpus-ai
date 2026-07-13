@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 153,
-  "top1_hits": 132,
-  "top3_hits": 148,
-  "top5_hits": 151,
-  "top1_accuracy": 0.8627,
-  "top3_accuracy": 0.9673,
-  "top5_accuracy": 0.9869,
-  "mrr_at_5": 0.9142,
+  "total_queries": 156,
+  "top1_hits": 135,
+  "top3_hits": 151,
+  "top5_hits": 154,
+  "top1_accuracy": 0.8654,
+  "top3_accuracy": 0.9679,
+  "top5_accuracy": 0.9872,
+  "mrr_at_5": 0.9158,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2151,9 +2151,9 @@
      "score": 12
     },
     {
-     "record_id": "oa-llm-companies-art-256",
-     "article_number": 256,
-     "score": 10
+     "record_id": "municipal-realestate-law-llm-art-005",
+     "article_number": 5,
+     "score": 12
     }
    ]
   },
@@ -4750,14 +4750,107 @@
      "score": 46
     },
     {
-     "record_id": "foreign-ownership-law-llm-art-002",
-     "article_number": 2,
-     "score": 12
+     "record_id": "gcc-ownership-llm-art-006",
+     "article_number": 6,
+     "score": 15
     },
     {
-     "record_id": "foreign-ownership-law-llm-art-003",
+     "record_id": "gcc-ownership-llm-art-003",
      "article_number": 3,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "mbl-001",
+   "query_ar": "الأموال العامة التابعة للبلديات غير قابلة للتصرف ولكن يجوز في حدود ما تقر الأنظمة واللوائح الترخيص بالانتفاع بها",
+   "category": "topical",
+   "gold": {
+    "corpus": "municipal_realestate",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "municipal-realestate-law-llm-art-001",
+     "article_number": 1,
+     "score": 43
+    },
+    {
+     "record_id": "oa-llm-companies-art-195",
+     "article_number": 195,
+     "score": 32
+    },
+    {
+     "record_id": "oa-llm-companies-art-085",
+     "article_number": 85,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "mbr-001",
+   "query_ar": "تتولى الوزارة إعداد عقود استثمار موحدة نماذج تعتمد بقرار من الوزير ليتم التقيد بها عند إبرام عقود الاستثمار في جميع العقارات البلدية",
+   "category": "topical",
+   "gold": {
+    "corpus": "municipal_realestate",
+    "law_component": "implementing_regulation",
+    "article_number": 31
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "municipal-realestate-reg-llm-art-031",
+     "article_number": 31,
+     "score": 50
+    },
+    {
+     "record_id": "municipal-realestate-reg-llm-art-010",
+     "article_number": 10,
+     "score": 31
+    },
+    {
+     "record_id": "municipal-realestate-reg-llm-art-017",
+     "article_number": 17,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "khj-001",
+   "query_ar": "يسمح لمواطني دول مجلس التعاون من الأشخاص الطبيعيين أو الاعتباريين باستئجار وتملك العقارات المبنية والأراضي لغرض السكن أو الاستثمار",
+   "category": "topical",
+   "gold": {
+    "corpus": "gcc_ownership",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gcc-ownership-llm-art-001",
+     "article_number": 1,
+     "score": 62
+    },
+    {
+     "record_id": "gcc-ownership-llm-art-004",
+     "article_number": 4,
+     "score": 23
+    },
+    {
+     "record_id": "gcc-ownership-llm-art-002",
+     "article_number": 2,
+     "score": 22
     }
    ]
   }

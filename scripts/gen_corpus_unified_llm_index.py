@@ -142,6 +142,12 @@ LAYERS = [
      "real_estate_units", "implementing_regulation"),
     ("data/foreign_ownership_arabic_legal_llm/foreign_ownership_law_legal_llm_001_015.json",
      "foreign_ownership", "law"),
+    ("data/municipal_realestate_arabic_legal_llm/municipal_realestate_law_legal_llm_001_006.json",
+     "municipal_realestate", "law"),
+    ("data/municipal_realestate_arabic_legal_llm/municipal_realestate_regulation_legal_llm_001_035.json",
+     "municipal_realestate", "implementing_regulation"),
+    ("data/gcc_ownership_arabic_legal_llm/gcc_ownership_law_legal_llm_001_006.json",
+     "gcc_ownership", "law"),
 ]
 
 

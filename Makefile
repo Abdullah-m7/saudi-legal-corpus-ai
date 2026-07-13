@@ -166,6 +166,9 @@ export PYTHONPATH := src:$(PYTHONPATH)
         real-estate-units-law-track-validate \
         real-estate-units-regulation-track-validate \
         foreign-ownership-law-track-validate \
+        municipal-realestate-law-track-validate \
+        municipal-realestate-regulation-track-validate \
+        gcc-ownership-law-track-validate \
         qa-gate
 
 help:
@@ -1088,6 +1091,15 @@ real-estate-units-regulation-track-validate:
 
 foreign-ownership-law-track-validate:
 	$(PY) scripts/validate_foreign_ownership_law_track.py
+
+municipal-realestate-law-track-validate:
+	$(PY) scripts/validate_municipal_realestate_law_track.py
+
+municipal-realestate-regulation-track-validate:
+	$(PY) scripts/validate_municipal_realestate_regulation_track.py
+
+gcc-ownership-law-track-validate:
+	$(PY) scripts/validate_gcc_ownership_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

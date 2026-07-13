@@ -1,7 +1,7 @@
 {
   "eval_id": "corpus-unified-retrieval-eval-v1",
   "description_ar": "حزمة تقييم استرجاع فوق الفهرس الموحّد: استعلامات عربية واقعية بإجابات ذهبية (قانون + مكوّن + مادة). الإجابات الذهبية مُثبتة يدويًّا من نصوص المواد نفسها (مواد تعريفية أو مواد عناوينها مطابقة للمفهوم). القياس صادق: بعض الاستعلامات صعبة عمدًا وقد لا تصيب top-1.",
-  "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output. Expansion v2 (gtp-001..007, lab-001..014): each gold likewise confirmed by reading the article's committed text first and writing the query from its own wording — covering the GTPL and all eight Labor components that previously had no gold coverage. Expansion v3 (ith-001..003): Evidence Law golds, same text-first methodology. Expansion v4 (ith-004..006): Evidence companion instruments, same text-first methodology. Expansion v5 (ahw-001..004): Personal Status Law + regulation, same text-first methodology. Expansion v6 (mrf-001..003): Law of Sharia Procedure (in-force articles), same text-first methodology. Expansion v7 (gsl-001..002): Anti-Money Laundering Law offences (arts 2, 3), same text-first methodology. Expansion v8 (twq-001..002): Notarization Law (arts 2, 3), same text-first methodology. Expansion v9 (twr-001..002): Notarization Regulation (arts 29, 2), same text-first methodology. Expansion v10 (aqr-001..002): Real Estate In-Kind Registration Law (arts 2, 7), same text-first methodology. Expansion v11 (aqrr-001..002): Real Estate Registration Regulation (arts 2, 50), same text-first methodology. Expansion v12 (rhn-001..002): Registered Real Estate Mortgage Law (arts 1, 3), same text-first methodology. Expansion v13 (tml-001..002): Real Estate Finance Law (arts 1, 3), same text-first methodology. Expansion v14 (wih-001..002): Real Estate Unit Ownership Law (arts 2, 3), same text-first methodology. Expansion v15 (wir-001): Real Estate Unit Ownership Law Implementing Regulation (art 31), same text-first methodology. Expansion v16 (gsr-001..002): Non-Saudi Real Estate Ownership Law (arts 2, 7), same text-first methodology.",
+  "gold_basis": "Each gold was manually confirmed against the article's own text (definitional articles) or its official title (title-matching articles). Not reverse-engineered from search output. Expansion v2 (gtp-001..007, lab-001..014): each gold likewise confirmed by reading the article's committed text first and writing the query from its own wording — covering the GTPL and all eight Labor components that previously had no gold coverage. Expansion v3 (ith-001..003): Evidence Law golds, same text-first methodology. Expansion v4 (ith-004..006): Evidence companion instruments, same text-first methodology. Expansion v5 (ahw-001..004): Personal Status Law + regulation, same text-first methodology. Expansion v6 (mrf-001..003): Law of Sharia Procedure (in-force articles), same text-first methodology. Expansion v7 (gsl-001..002): Anti-Money Laundering Law offences (arts 2, 3), same text-first methodology. Expansion v8 (twq-001..002): Notarization Law (arts 2, 3), same text-first methodology. Expansion v9 (twr-001..002): Notarization Regulation (arts 29, 2), same text-first methodology. Expansion v10 (aqr-001..002): Real Estate In-Kind Registration Law (arts 2, 7), same text-first methodology. Expansion v11 (aqrr-001..002): Real Estate Registration Regulation (arts 2, 50), same text-first methodology. Expansion v12 (rhn-001..002): Registered Real Estate Mortgage Law (arts 1, 3), same text-first methodology. Expansion v13 (tml-001..002): Real Estate Finance Law (arts 1, 3), same text-first methodology. Expansion v14 (wih-001..002): Real Estate Unit Ownership Law (arts 2, 3), same text-first methodology. Expansion v15 (wir-001): Real Estate Unit Ownership Law Implementing Regulation (art 31), same text-first methodology. Expansion v16 (gsr-001..002): Non-Saudi Real Estate Ownership Law (arts 2, 7), same text-first methodology. Expansion v17 (mbl-001, mbr-001, khj-001): Municipal Real Estate Disposal Law + Regulation and GCC Citizens Ownership Regulation, same text-first methodology.",
   "queries": [
     {
       "query_id": "civ-001",
@@ -1531,6 +1531,36 @@
         "corpus": "foreign_ownership",
         "law_component": "law",
         "article_number": 7
+      }
+    },
+    {
+      "query_id": "mbl-001",
+      "query_ar": "الأموال العامة التابعة للبلديات غير قابلة للتصرف ولكن يجوز في حدود ما تقر الأنظمة واللوائح الترخيص بالانتفاع بها",
+      "category": "topical",
+      "gold": {
+        "corpus": "municipal_realestate",
+        "law_component": "law",
+        "article_number": 1
+      }
+    },
+    {
+      "query_id": "mbr-001",
+      "query_ar": "تتولى الوزارة إعداد عقود استثمار موحدة نماذج تعتمد بقرار من الوزير ليتم التقيد بها عند إبرام عقود الاستثمار في جميع العقارات البلدية",
+      "category": "topical",
+      "gold": {
+        "corpus": "municipal_realestate",
+        "law_component": "implementing_regulation",
+        "article_number": 31
+      }
+    },
+    {
+      "query_id": "khj-001",
+      "query_ar": "يسمح لمواطني دول مجلس التعاون من الأشخاص الطبيعيين أو الاعتباريين باستئجار وتملك العقارات المبنية والأراضي لغرض السكن أو الاستثمار",
+      "category": "topical",
+      "gold": {
+        "corpus": "gcc_ownership",
+        "law_component": "law",
+        "article_number": 1
       }
     }
   ]
