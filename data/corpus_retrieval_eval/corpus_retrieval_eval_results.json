@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 134,
-  "top1_hits": 113,
-  "top3_hits": 129,
-  "top5_hits": 132,
-  "top1_accuracy": 0.8433,
-  "top3_accuracy": 0.9627,
-  "top5_accuracy": 0.9851,
-  "mrr_at_5": 0.902,
+  "total_queries": 136,
+  "top1_hits": 115,
+  "top3_hits": 131,
+  "top5_hits": 134,
+  "top1_accuracy": 0.8456,
+  "top3_accuracy": 0.9632,
+  "top5_accuracy": 0.9853,
+  "mrr_at_5": 0.9034,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1061,13 +1061,13 @@
      "score": 30
     },
     {
-     "record_id": "inv-law-llm-art-003",
-     "article_number": 3,
-     "score": 10
+     "record_id": "aml-law-llm-art-002",
+     "article_number": 2,
+     "score": 11
     },
     {
-     "record_id": "oa-llm-companies-art-109",
-     "article_number": 109,
+     "record_id": "inv-law-llm-art-003",
+     "article_number": 3,
      "score": 10
     }
    ]
@@ -4169,6 +4169,68 @@
      "record_id": "commercial-books-law-llm-art-005",
      "article_number": 5,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "gsl-001",
+   "query_ar": "يعد مرتكباً جريمة غسل الأموال كل من قام بأي من الأفعال الآتية",
+   "category": "topical",
+   "gold": {
+    "corpus": "aml",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "aml-law-llm-art-002",
+     "article_number": 2,
+     "score": 33
+    },
+    {
+     "record_id": "aml-law-llm-art-026",
+     "article_number": 26,
+     "score": 27
+    },
+    {
+     "record_id": "aml-law-llm-art-004",
+     "article_number": 4,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "gsl-002",
+   "query_ar": "متى يعد الشخص الاعتباري مرتكباً جريمة غسل الأموال",
+   "category": "topical",
+   "gold": {
+    "corpus": "aml",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "aml-law-llm-art-003",
+     "article_number": 3,
+     "score": 33
+    },
+    {
+     "record_id": "aml-law-llm-art-004",
+     "article_number": 4,
+     "score": 26
+    },
+    {
+     "record_id": "aml-law-llm-art-033",
+     "article_number": 33,
+     "score": 26
     }
    ]
   }
