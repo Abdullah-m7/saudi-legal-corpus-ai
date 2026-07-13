@@ -126,6 +126,8 @@ LAYERS = [
      "aml", "law"),
     ("data/tawtheeq_arabic_legal_llm/tawtheeq_law_legal_llm_001_057.json",
      "tawtheeq", "law"),
+    ("data/tawtheeq_arabic_legal_llm/tawtheeq_regulation_legal_llm_001_031.json",
+     "tawtheeq", "implementing_regulation"),
 ]
 
 

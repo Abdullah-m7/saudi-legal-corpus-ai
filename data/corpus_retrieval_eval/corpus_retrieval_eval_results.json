@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 138,
-  "top1_hits": 117,
-  "top3_hits": 133,
-  "top5_hits": 136,
-  "top1_accuracy": 0.8478,
-  "top3_accuracy": 0.9638,
-  "top5_accuracy": 0.9855,
-  "mrr_at_5": 0.9048,
+  "total_queries": 140,
+  "top1_hits": 119,
+  "top3_hits": 135,
+  "top5_hits": 138,
+  "top1_accuracy": 0.85,
+  "top3_accuracy": 0.9643,
+  "top5_accuracy": 0.9857,
+  "mrr_at_5": 0.9062,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -4293,6 +4293,68 @@
      "record_id": "evidence-expertise-llm-art-025",
      "article_number": 25,
      "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "twr-001",
+   "query_ar": "يصدر وكيل الوزارة للتوثيق والتسجيل العيني للعقار قواعد السلوك المهني والأدلة الإجرائية للعمل بأحكام النظام واللائحة",
+   "category": "topical",
+   "gold": {
+    "corpus": "tawtheeq",
+    "law_component": "implementing_regulation",
+    "article_number": 29
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tawtheeq-regulation-llm-art-029",
+     "article_number": 29,
+     "score": 38
+    },
+    {
+     "record_id": "commercial-courts-law-llm-art-094",
+     "article_number": 94,
+     "score": 17
+    },
+    {
+     "record_id": "labor-annex4-llm-art-001",
+     "article_number": 1,
+     "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "twr-002",
+   "query_ar": "الخبرة التي يعتد بها لشغل وظائف كتاب العدل هي العمل في القضاء أو التحقيق أو المحاماة",
+   "category": "topical",
+   "gold": {
+    "corpus": "tawtheeq",
+    "law_component": "implementing_regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tawtheeq-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 39
+    },
+    {
+     "record_id": "labor-annex2-llm-table-8",
+     "article_number": 8,
+     "score": 20
+    },
+    {
+     "record_id": "judiciary-law-llm-art-080",
+     "article_number": 80,
+     "score": 18
     }
    ]
   }
