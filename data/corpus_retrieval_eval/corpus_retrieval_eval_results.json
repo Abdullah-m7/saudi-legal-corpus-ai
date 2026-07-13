@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 116,
-  "top1_hits": 96,
-  "top3_hits": 111,
-  "top5_hits": 114,
-  "top1_accuracy": 0.8276,
-  "top3_accuracy": 0.9569,
-  "top5_accuracy": 0.9828,
-  "mrr_at_5": 0.8911,
+  "total_queries": 119,
+  "top1_hits": 98,
+  "top3_hits": 114,
+  "top5_hits": 117,
+  "top1_accuracy": 0.8235,
+  "top3_accuracy": 0.958,
+  "top5_accuracy": 0.9832,
+  "mrr_at_5": 0.8896,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -3611,6 +3611,99 @@
      "record_id": "bankruptcy-case-rules-llm-art-004",
      "article_number": 4,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "tkq-001",
+   "query_ar": "تفرض تكاليف قضائية على الدعوى بما لا يزيد على خمسة بالمئة من قيمة المطالبة وبحد أعلى مليون ريال",
+   "category": "topical",
+   "gold": {
+    "corpus": "judicial_costs",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judicial-costs-law-llm-art-003",
+     "article_number": 3,
+     "score": 34
+    },
+    {
+     "record_id": "oa-llm-companies-art-116",
+     "article_number": 116,
+     "score": 25
+    },
+    {
+     "record_id": "judicial-costs-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "tkq-002",
+   "query_ar": "الفئات المعفاة من التكاليف القضائية المسجونون والعمال والوزارات والأجهزة الحكومية",
+   "category": "topical",
+   "gold": {
+    "corpus": "judicial_costs",
+    "law_component": "law",
+    "article_number": 17
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judicial-costs-law-llm-art-017",
+     "article_number": 17,
+     "score": 24
+    },
+    {
+     "record_id": "judicial-costs-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 21
+    },
+    {
+     "record_id": "judicial-costs-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "tkr-001",
+   "query_ar": "تقدير التكاليف القضائية في الدعاوى غير محددة القيمة الجزائية الخاصة والتجارية والمستعجلة",
+   "category": "topical",
+   "gold": {
+    "corpus": "judicial_costs",
+    "law_component": "implementing_regulation",
+    "article_number": 3
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judicial-costs-law-llm-art-017",
+     "article_number": 17,
+     "score": 24
+    },
+    {
+     "record_id": "judicial-costs-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 23
+    },
+    {
+     "record_id": "judicial-costs-law-llm-art-009",
+     "article_number": 9,
+     "score": 23
     }
    ]
   }

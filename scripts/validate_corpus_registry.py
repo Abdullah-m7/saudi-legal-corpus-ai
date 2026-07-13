@@ -88,6 +88,8 @@ REQUIRED_TRACK_IDS = [
     "bankruptcy_law",
     "bankruptcy_implementing_regulation",
     "bankruptcy_case_rules",
+    "judicial_costs_law",
+    "judicial_costs_implementing_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -130,9 +132,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 39 tracks
+    # [3] 41 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 39 tracks present...", len(track_ids) == 39 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 41 tracks present...", len(track_ids) == 41 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -422,8 +424,26 @@ def main() -> int:
     check("    bankruptcy case rules: status breakdown 24/0/0/0...",
           bkc_counts.get("legal_status_breakdown") == {"اصلية": 24, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={bkc_counts.get('legal_status_breakdown')}")
+    jcl = tracks_by_id.get("judicial_costs_law", {})
+    jcl_counts = jcl.get("record_counts", {})
+    check("[7g26] judicial_costs_law: 23 Arabic articles...",
+          jcl_counts.get("arabic_articles") == 23
+          and jcl.get("official_text_status") == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+          f"counts={jcl_counts}")
+    check("    judicial_costs_law: status breakdown 23/0/0/0...",
+          jcl_counts.get("legal_status_breakdown") == {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={jcl_counts.get('legal_status_breakdown')}")
+    jcr = tracks_by_id.get("judicial_costs_implementing_regulation", {})
+    jcr_counts = jcr.get("record_counts", {})
+    check("[7g27] judicial_costs_implementing_regulation: 17 Arabic articles...",
+          jcr_counts.get("arabic_articles") == 17
+          and jcr.get("official_text_status") == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+          f"counts={jcr_counts}")
+    check("    judicial_costs regulation: status breakdown 17/0/0/0...",
+          jcr_counts.get("legal_status_breakdown") == {"اصلية": 17, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={jcr_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 5219 records...", uix.get("total_records") == 5219,
+    check("[7g] unified retrieval index: 5259 records...", uix.get("total_records") == 5259,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -485,8 +505,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 5388...",
-          registry.get("total_primary_arabic_governing_records") == 5388,
+    check("[19a] total_primary_arabic_governing_records == 5428...",
+          registry.get("total_primary_arabic_governing_records") == 5428,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -501,8 +521,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 6283...",
-          registry.get("total_registry_counted_records") == 6283,
+    check("[19e] total_registry_counted_records == 6323...",
+          registry.get("total_registry_counted_records") == 6323,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -526,7 +546,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"5388 + 614 + 281 = 6283")
+          f"5428 + 614 + 281 = 6323")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -544,7 +564,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 39 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 41 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -558,7 +578,7 @@ def print_results() -> None:
               "sharia_procedure_implementing_regulation, criminal_procedure_law, "
               "criminal_procedure_implementing_regulation, enforcement_law, "
               "enforcement_implementing_regulation, judiciary_law, board_of_grievances_law). "
-              "Primary Arabic 5388, reference 614, registry-counted 6283. All counts correct, all referenced paths "
+              "Primary Arabic 5428, reference 614, registry-counted 6323. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -580,8 +600,8 @@ def print_results() -> None:
               "1 معدلة; Board certified PDF visually adjudicated + Article 4's م/180 amendment from Umm Al-Qura "
               "5072, SPA-confirmed) — and the Code of Law Practice (56 records: 35 اصلية / 8 معدلة / 12 مضافة / 1 "
               "ملغاة, consolidated through M/21 1447H) and its current implementing regulation (90 records, fresh "
-              "1446H Active issuance all اصلية, superseding the InActive 1423H one) — and the Commercial Courts Law (96 records: 75 اصلية / 1 معدلة / 20 ملغاة; the evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 records, fresh 1441H Active issuance all اصلية) — and the Bankruptcy Law (231 records: 229 اصلية / 2 معدلة, consolidated M/89 1439H; per art 230 it repeals old commercial-court/settlement provisions) and its implementing regulation (98 records: 97 اصلية / 1 معدلة, Council of Ministers Decision 622 1440H, art 2 amended by Decision 171 1443H; 98/98 matched outright) and the bankruptcy case rules (24 records: all اصلية, Minister of Justice Decision 6421 1441H; 24/24 matched outright). "
-              "Unified retrieval index (5219) projects counted records. Read-only.")
+              "1446H Active issuance all اصلية, superseding the InActive 1423H one) — and the Commercial Courts Law (96 records: 75 اصلية / 1 معدلة / 20 ملغاة; the evidence chapter arts 38-57 repealed by the Evidence Law M/43) and its implementing regulation (281 records, fresh 1441H Active issuance all اصلية) — and the Bankruptcy Law (231 records: 229 اصلية / 2 معدلة, consolidated M/89 1439H; per art 230 it repeals old commercial-court/settlement provisions) and its implementing regulation (98 records: 97 اصلية / 1 معدلة, Council of Ministers Decision 622 1440H, art 2 amended by Decision 171 1443H; 98/98 matched outright) and the bankruptcy case rules (24 records: all اصلية, Minister of Justice Decision 6421 1441H; 24/24 matched outright) — and the Judicial Costs Law (23 records: all اصلية, Royal Decree M/16 1443H) and its implementing regulation (17 records: all اصلية, Council of Ministers Decision 519 1443H). "
+              "Unified retrieval index (5259) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)
