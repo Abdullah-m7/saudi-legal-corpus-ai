@@ -122,6 +122,8 @@ LAYERS = [
      "chambers_of_commerce", "law"),
     ("data/commercial_books_arabic_legal_llm/commercial_books_law_legal_llm_001_016.json",
      "commercial_books", "law"),
+    ("data/aml_arabic_legal_llm/aml_law_legal_llm_001_052.json",
+     "aml", "law"),
 ]
 
 
