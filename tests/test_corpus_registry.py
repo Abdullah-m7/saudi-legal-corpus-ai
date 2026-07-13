@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 51
+        assert registry["total_tracks"] == 52
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 5875
+        assert registry["total_primary_arabic_governing_records"] == 5906
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 6770
+        assert registry["total_registry_counted_records"] == 6801
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -120,6 +120,7 @@ class TestTracks:
         assert "commercial_books_law" in ids
         assert "aml_law" in ids
         assert "tawtheeq_law" in ids
+        assert "tawtheeq_implementing_regulation" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -320,6 +321,13 @@ class TestTracks:
         assert tw["record_counts"]["legal_status_breakdown"] == {
             "اصلية": 52, "معدلة": 5, "ملغاة": 0, "مضافة": 0}
         assert tw["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_tawtheeq_regulation_counts(self, registry):
+        twr = next(t for t in registry["tracks"] if t["track_id"] == "tawtheeq_implementing_regulation")
+        assert twr["record_counts"]["arabic_articles"] == 31
+        assert twr["record_counts"]["legal_status_breakdown"] == {
+            "اصلية": 31, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert twr["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),
