@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 122,
-  "top1_hits": 101,
-  "top3_hits": 117,
-  "top5_hits": 120,
-  "top1_accuracy": 0.8279,
-  "top3_accuracy": 0.959,
-  "top5_accuracy": 0.9836,
-  "mrr_at_5": 0.8923,
+  "total_queries": 125,
+  "top1_hits": 104,
+  "top3_hits": 120,
+  "top5_hits": 123,
+  "top1_accuracy": 0.832,
+  "top3_accuracy": 0.96,
+  "top5_accuracy": 0.984,
+  "mrr_at_5": 0.8949,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2709,8 +2709,8 @@
      "score": 13
     },
     {
-     "record_id": "oa-llm-companies-art-112",
-     "article_number": 112,
+     "record_id": "commercial-papers-law-llm-art-047",
+     "article_number": 47,
      "score": 12
     }
    ]
@@ -3797,6 +3797,99 @@
      "record_id": "arbitration-law-llm-art-039",
      "article_number": 39,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "awt-001",
+   "query_ar": "البيانات التي تشتمل عليها الكمبيالة كلمة كمبيالة وأمر غير معلق على شرط بوفاء مبلغ معين واسم المسحوب عليه",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_papers",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-papers-law-llm-art-001",
+     "article_number": 1,
+     "score": 31
+    },
+    {
+     "record_id": "commercial-papers-law-llm-art-091",
+     "article_number": 91,
+     "score": 20
+    },
+    {
+     "record_id": "commercial-papers-law-llm-art-025",
+     "article_number": 25,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "awt-002",
+   "query_ar": "عقوبة من سحب بسوء نية شيكا لا يكون له مقابل وفاء قائم وقابل للسحب",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_papers",
+    "law_component": "law",
+    "article_number": 118
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-papers-law-llm-art-118",
+     "article_number": 118,
+     "score": 25
+    },
+    {
+     "record_id": "commercial-papers-law-llm-art-119",
+     "article_number": 119,
+     "score": 14
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-026",
+     "article_number": 26,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "awt-003",
+   "query_ar": "لا يعتبر الصك الخالي من بيان ميعاد الاستحقاق كمبيالة إلا أنه يعد مستحق الوفاء لدى الاطلاع",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_papers",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-papers-law-llm-art-002",
+     "article_number": 2,
+     "score": 21
+    },
+    {
+     "record_id": "commercial-papers-law-llm-art-088",
+     "article_number": 88,
+     "score": 19
+    },
+    {
+     "record_id": "commercial-papers-law-llm-art-092",
+     "article_number": 92,
+     "score": 17
     }
    ]
   }

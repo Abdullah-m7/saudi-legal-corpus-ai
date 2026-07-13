@@ -110,6 +110,8 @@ LAYERS = [
      "arbitration", "law"),
     ("data/arbitration_arabic_legal_llm/arbitration_regulation_legal_llm_001_019.json",
      "arbitration", "implementing_regulation"),
+    ("data/commercial_papers_arabic_legal_llm/commercial_papers_law_legal_llm_001_121.json",
+     "commercial_papers", "law"),
 ]
 
 
