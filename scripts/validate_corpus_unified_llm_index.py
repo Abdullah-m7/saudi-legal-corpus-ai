@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 5097
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 231}
+EXPECTED_TOTAL = 5195
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 329}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -74,6 +74,7 @@ SANITY = [
     ("تراعي المحكمة عند تقريرها الاعتماد على خبير واحد مشترك من عدمه", "commercial_courts", 144),
     ("يهدف النظام إلى تنظيم إجراءات الإفلاس وهي التسوية الوقائية وإعادة التنظيم المالي والتصفية", "bankruptcy", 2),
     ("تكون أولوية الديون في إجراء التصفية الديون المضمونة ضمانا عينيا ثم التمويل المضمون", "bankruptcy", 196),
+    ("تكون حصيلة بيع أصول التفليسة غير مجدية إذا كانت التكلفة المقدرة للبيع تساوي أو تزيد على القيمة المقدرة لبيعه", "bankruptcy", 70),
 ]
 
 
@@ -144,6 +145,7 @@ def main():
         "data/commercial_courts_arabic_legal_llm/commercial_courts_law_legal_llm_001_096.json",
         "data/commercial_courts_arabic_legal_llm/commercial_courts_regulation_legal_llm_001_281.json",
         "data/bankruptcy_arabic_legal_llm/bankruptcy_law_legal_llm_001_231.json",
+        "data/bankruptcy_arabic_legal_llm/bankruptcy_regulation_legal_llm_001_098.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -177,7 +179,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 231; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 329; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
