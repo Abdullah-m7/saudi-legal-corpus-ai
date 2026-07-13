@@ -103,6 +103,7 @@ REQUIRED_TRACK_IDS = [
     "tawtheeq_implementing_regulation",
     "real_estate_registration_law",
     "real_estate_registration_implementing_regulation",
+    "real_estate_mortgage_law",
 ]
 
 CHECKS: list[str] = []
@@ -145,9 +146,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 54 tracks
+    # [3] 55 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 54 tracks present...", len(track_ids) == 54 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 55 tracks present...", len(track_ids) == 55 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -572,8 +573,17 @@ def main() -> int:
     check("    real_estate_registration regulation: status breakdown 51/0/0/0...",
           rerr_counts.get("legal_status_breakdown") == {"اصلية": 51, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={rerr_counts.get('legal_status_breakdown')}")
+    rem = tracks_by_id.get("real_estate_mortgage_law", {})
+    rem_counts = rem.get("record_counts", {})
+    check("[7g41] real_estate_mortgage_law: 46 Arabic articles...",
+          rem_counts.get("arabic_articles") == 46
+          and rem.get("official_text_status") == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+          f"counts={rem_counts}")
+    check("    real_estate_mortgage_law: status breakdown 46/0/0/0...",
+          rem_counts.get("legal_status_breakdown") == {"اصلية": 46, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={rem_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 5828 records...", uix.get("total_records") == 5828,
+    check("[7g] unified retrieval index: 5874 records...", uix.get("total_records") == 5874,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -635,8 +645,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 5997...",
-          registry.get("total_primary_arabic_governing_records") == 5997,
+    check("[19a] total_primary_arabic_governing_records == 6043...",
+          registry.get("total_primary_arabic_governing_records") == 6043,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -651,8 +661,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 6892...",
-          registry.get("total_registry_counted_records") == 6892,
+    check("[19e] total_registry_counted_records == 6938...",
+          registry.get("total_registry_counted_records") == 6938,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -676,7 +686,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"5997 + 614 + 281 = 6892")
+          f"6043 + 614 + 281 = 6938")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -694,7 +704,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 54 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 55 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -708,7 +718,7 @@ def print_results() -> None:
               "sharia_procedure_implementing_regulation, criminal_procedure_law, "
               "criminal_procedure_implementing_regulation, enforcement_law, "
               "enforcement_implementing_regulation, judiciary_law, board_of_grievances_law). "
-              "Primary Arabic 5997, reference 614, registry-counted 6892. All counts correct, all referenced paths "
+              "Primary Arabic 6043, reference 614, registry-counted 6938. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -735,8 +745,9 @@ def print_results() -> None:
               "(57 records: 52 اصلية / 5 معدلة, consolidated M/164 1441H, all amendments by M/21 1447H and M/191 1444H, MOJ portal cross-checked against the official MOJ PDF, additionally corroborated against the Bureau of Experts official portal) and its implementing regulation "
               "(31 records: all اصلية, Minister of Justice Decision 1948 1442H; 10 list articles adjudicated visually verbatim, OCR channel unavailable for that PDF), and the Real Estate In-Kind Registration Law "
               "(40 records: 37 اصلية / 3 معدلة, in-force M/91 1443H superseding the repealed M/6 1423H, MOJ portal cross-checked against the official MOJ PDF) and its implementing regulation "
-              "(51 records: all اصلية, in-force 27/1/1444H superseding the repealed 1425H regulation; 5 long/table articles adjudicated visually verbatim, art 42 keeping official English spec tokens). "
-              "Unified retrieval index (5828) projects counted records. Read-only.")
+              "(51 records: all اصلية, in-force 27/1/1444H superseding the repealed 1425H regulation; 5 long/table articles adjudicated visually verbatim, art 42 keeping official English spec tokens), and the Registered Real Estate Mortgage Law "
+              "(46 records: all اصلية, fresh M/49 1433H; 2 long articles adjudicated visually verbatim). "
+              "Unified retrieval index (5874) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)
