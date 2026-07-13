@@ -116,6 +116,8 @@ LAYERS = [
      "commercial_register", "law"),
     ("data/trade_names_arabic_legal_llm/trade_names_law_legal_llm_001_023.json",
      "trade_names", "law"),
+    ("data/commercial_agencies_arabic_legal_llm/commercial_agencies_law_legal_llm_001_006.json",
+     "commercial_agencies", "law"),
 ]
 
 

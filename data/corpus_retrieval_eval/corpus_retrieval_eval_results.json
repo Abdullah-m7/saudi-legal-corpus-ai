@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 128,
-  "top1_hits": 107,
-  "top3_hits": 123,
-  "top5_hits": 126,
-  "top1_accuracy": 0.8359,
-  "top3_accuracy": 0.9609,
-  "top5_accuracy": 0.9844,
-  "mrr_at_5": 0.8974,
+  "total_queries": 130,
+  "top1_hits": 109,
+  "top3_hits": 125,
+  "top5_hits": 128,
+  "top1_accuracy": 0.8385,
+  "top3_accuracy": 0.9615,
+  "top5_accuracy": 0.9846,
+  "mrr_at_5": 0.899,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -3983,6 +3983,68 @@
      "record_id": "commercial-register-law-llm-art-014",
      "article_number": 14,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "wkl-001",
+   "query_ar": "لا يجوز لغير السعوديين أشخاصا طبيعيين أو معنويين أن يكونوا وكلاء تجاريين في المملكة",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_agencies",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-agencies-law-llm-art-001",
+     "article_number": 1,
+     "score": 21
+    },
+    {
+     "record_id": "labor-annex3-llm-art-003",
+     "article_number": 3,
+     "score": 20
+    },
+    {
+     "record_id": "labor-annex3-llm-art-001",
+     "article_number": 1,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "wkl-002",
+   "query_ar": "رسوم القيد في سجل الوكالات خمسمائة ريال للتاجر الفرد والشركة تدفع لمرة واحدة",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_agencies",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-agencies-law-llm-art-005",
+     "article_number": 5,
+     "score": 33
+    },
+    {
+     "record_id": "commercial-agencies-law-llm-art-003",
+     "article_number": 3,
+     "score": 12
+    },
+    {
+     "record_id": "commercial-agencies-law-llm-art-004",
+     "article_number": 4,
+     "score": 11
     }
    ]
   }

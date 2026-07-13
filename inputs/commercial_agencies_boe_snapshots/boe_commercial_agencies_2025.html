@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1.0, user-scalable=no">    
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/images/favicon.ico">
+    <link rel="icon" type="image/ico" href="/Content/images/favicon.ico" />
+
+    <link href='/Content/css/bootstrap-rtl.min.css' rel="stylesheet" type="text/css" />
+    <link href='/Content/new/css/bootstrap-grid.rtl.min.css' rel="stylesheet" type="text/css" />
+    <link href='/Content/new/css/bootstrap-utilities.rtl.min.css' rel="stylesheet" type="text/css" />
+
+    <link href="/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/css/colorbox.css" rel="stylesheet" />
+    <link id="sitecss" href='/Content/css/main-rtl.css?d=06102025' rel="stylesheet" type="text/css" />
+    <link id="sitecss" href='/Content/new/css/forntend-rtl.css?d=07012025' rel="stylesheet" type="text/css" />
+    <!--<link href='~/Content/css/fonts-rtl.css' rel="stylesheet" type="text/css" />-->
+
+
+    <link href="/Content/new/css/styles.css" rel="stylesheet" />
+    <link href="/Content/new/css/app-styles.css?v=1" rel="stylesheet" />
+
+    <script type="text/javascript">
+//<![CDATA[
+window["_csrf_"] = "084060b2ce84e000b9d7e0508341bf30be71f06dbf4e2be615bffe08e179809d7cd32d594f42e6ebae6b4d2f383c336c00f2801830de82b04b9af26ee2f0c4fe0091cd0fca72bd54b7e22a5a294a50a3b8b7a2362d78d2aa83fd186865365aa71e0c87f83c2f78e26d2477a67b1d6a17547c40858e4a7724d89335661210af044bb4a1023de4db71a204efd92170701968affc0db7c6ac8fd00296717c69584a5653761afbea9051a9b380256bedd1ca30c153c6aedda8ea5d01ecaf8dc023681bcecd171909c9f20a91d884de2c1dd90c9c2a6e3b2affa98a9f4af72e45959b6d161b3feee74dec";
+//]]>
+</script><script type="text/javascript" src="/TSbd/081f4722beab200081284c83bf4f47c1e1df04a78f8f6df26e427448a90e4c6c7399636d26f62dee?type=2"></script><script src="/Scripts/jquery-3.4.1.min.js"></script>
+    <script>var ROOT_URL = '' || '';</script>
+    <title>
+        نظام الوكالات التجارية
+    </title>
+    <script src="/Scripts/fontawesome-all.js"></script>
+</head>
+
+<body>
+    <main class="inner-page">
+        <header class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md-3 d-flex align-items-center">
+                        <a href="http://www.boe.gov.sa" class="page-header__logo" title="الصفحة الرئيسية">
+                            <img alt="header-logo" src='/Content/new/images/logo.svg' />
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-9 d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end align-items-center gap-2 gap-lg-3 mb-3">
+                                <a href="/BoeLaws/Laws/Search" target="_blank" class="header-search-btn">
+                                    <img src="/Content/new/images/search-systems-icon.svg" alt="search-systems-icon" />
+                                    <span>البحث في الوثائق النظامية</span>
+                                </a>
+                                    <a href="https://laws.boe.gov.sa/Identity/Account/Login/" class="header-login-btn">
+                                        <img src="/Content/new/images/user-login-icon.svg" alt="user-login-icon" />
+                                        <span>تسجيل الدخول</span>
+                                    </a>
+                                <a class="language-switcher switch-lang" href="JavaScript:void(0);" id="lang-switcher" title="English">EN</a>
+
+                                <div class="page-settings-dropdown">
+                                    <a class="page-settings-dropdown__btn" href="#" title="اعدادات الصفحة"></a>
+                                    <div class="page-settings-dropdown__menu">
+                                        <div class="page-settings-dropdown__menu__item">
+                                            <h5 class="page-settings-dropdown__menu__title">حجم الخط</h5>
+                                            <div class="font-resize-btns">
+                                                <button type="button" class="font-resize-btns__item font-resize-btns--increaser" title="زيادة حجم الخط">+</button>
+                                                <button type="button" class="font-resize-btns__item font-resize-btns--decreaser" title="تقليل حجم الخط">-</button>
+                                            </div>
+                                        </div>
+                                        <div class="page-settings-dropdown__menu__item">
+                                            <h5 class="page-settings-dropdown__menu__title">اللون الرمادي</h5>
+                                            <a class="grayscale-switcher" href="#" title="التبديل إلى اللون الرمادي"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="title-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 d-flex flex-column mb-5 mb-md-0">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h1 class="page-title">نظام الوكالات التجارية</h1>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                        <div class="page-actions">
+                            <div class="share-page-dropdown">
+                                <a class="page-actions__btn page-actions__btn--share" href="#" title="نشر الصفحة"></a>
+                                <div class="share-page-dropdown__menu">
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="x_share" title="نشر الصفحة على منصة إكس">
+                                        <img src="/Content/new/images/social-media-icons/x.svg" alt="x" />
+                                    </a>
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="linkedin_share" title="نشر الصفحة على لينكدان">
+                                        <img src="/Content/new/images/social-media-icons/linkedin.svg" alt="linkedin" />
+                                    </a>
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="facebook_share" title="نشر الصفحة على فيسبوك">
+                                        <img src="/Content/new/images/social-media-icons/facebook.svg" alt="facebook" />
+                                    </a>
+                                    <a href="#!" class="share-page-dropdown__menu__item" target="_blank" id="whatsApp_share" title="نشر الصفحة على واتس اب">
+                                        <img src="/Content/new/images/social-media-icons/whatsapp.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="page-actions__btn page-actions__btn--email" href="#!" title="إرسال لصديق" id="mail_share"></a>
+                            <a class="page-actions__btn page-actions__btn--print" href="javascript:void(0);" title="طباعة الصفحة" onclick="window.print();" id="page_print"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">الوثائق النظامية</a></li>
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">أنظمة عادية</a></li>
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">التجارة والاقتصاد والاستثمار</a></li>
+    <li class="breadcrumb-item"><a href="/BoeLaws/Laws/Folders/1">نظام الوكالات التجارية</a></li>
+
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="inner-page-content" id="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div id="page-content-wrapper" class="col-12">
+                        
+
+<div id="CustomValidationSummary"></div>
+
+
+<input data-val="true" data-val-number="حقل LanguageId يجب أن يكون رقم." id="LanguageId" name="LanguageId" type="hidden" value="1" />
+
+<div class="app_inner_pages_bg" id="ele2">
+    <div class="app_inner_pages_container">
+            <h1 class="system_title mb-5">نظام الوكالات التجارية</h1>
+            <div class="system_details_box mb-4">
+                <div class="browse_count">
+                    <span>عدد مرات التصفح</span><strong><span>203499</span></strong>
+                    <a href="#" id="LawsSubscription" class="ancReportIssue px-3" data-lawid="b19a8aa6-7b50-43f0-ab8c-a9a700f1a446">
+                        <i class="fas fa-envelope-open"></i>
+                        <span>طلب اشعار</span>
+                    </a>
+                    
+                </div>
+                <div class="col system_brief">
+                    <h4 class="mb-4">نبذة عن النظام</h4>
+                    <div class="HTMLContainer">
+                        <big> يتضمن النظام ما يلي: </big><br>
+ قصر الوكالات التجارية على السعوديين، وجوب تسجيل الوكلاء السعوديين في سجل خاص لدى وزارة التجارة والصناعة، بيان عقوبات مخالفة النظام، تحديد رسوم القيد في سجل الوكالات.
+                    </div>
+                    <br />
+                        <div dir="ltr">
+                            <h4>Law name</h4>
+                            <div dir="ltr" class="HTMLContainer">
+                                Law of Commercial Agencies
+                            </div>
+                        </div>
+                        <div dir="ltr">
+                            <h4>Law description</h4>
+
+
+                            <div dir="ltr" class="HTMLContainer">
+
+                                Law of Commercial Agencies
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col system_info">
+                    <div>
+                        <label for="">الاسم</label> <span>نظام الوكالات التجارية</span>
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">تاريخ الإصدار</label>
+                        <span> 1382/01/01 هـ  الموافق : 03/06/1962 مـ</span>
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">تاريخ النشر</label>
+                        <span>
+                            1382/01/01  هـ الموافق : 03/06/1962 مـ
+                        </span>
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">الحالة</label>
+
+                                <span>ساري</span>
+                        
+                    </div>
+                    <span class="clr"></span>
+                    <div>
+                        <label for="">أدوات إصدار النظام</label>
+                        <ul>
+                                <li><a href="/BoeLaws/Laws/Viewer/2a162a7a-ccb7-41bb-84df-fab28857e3f0?lawId=b19a8aa6-7b50-43f0-ab8c-a9a700f1a446">مرسوم ملكي رقم 11 بتاريخ 20 / 2 / 1382</a></li>
+                                <li><a href="/BoeLaws/Laws/Viewer/2fbcaa23-8732-4596-b92a-7d683154dd37?lawId=b19a8aa6-7b50-43f0-ab8c-a9a700f1a446">قرار مجلس الوزراء رقم 89 بتاريخ 13 / 2 / 1382</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <form id="frmSearch" action="/BoeLaws/Laws/SearchDetails/" method="get">
+                <link href="/Content/new/css/searchprint.css" rel="stylesheet" />
+                <div class="search_results_filter">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <label for="">
+                                البحث في النظام
+                                <span data-toggle="tooltip" data-placement="top" title="بإمكانك البحث بأكثر من كلمة بإضافة فاصلة بينهم">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                            </label>
+                            <input class="form_control" data-val="true" data-val-regex="لا يسمح بكتابة سكريبت في حقل Query" data-val-regex-pattern="^[^&lt;>{}]+$" id="queryInput" name="Query" placeholder="بإمكانك البحث بأكثر من كلمة بإضافة فاصلة بينهم" type="text" value="" />
+                            <span class="field-validation-valid text-danger help-block" data-valmsg-for="Query" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end gap-3">
+                            <button class="btn btn-primary">تصفية النتائج</button>
+                            <button type="button" class="btn btn-outline-primary" id="clearResultBtn">مسح النتائج</button>
+                        </div>
+                    </div>
+                </div>
+                <input data-val="true" data-val-regex="لا يسمح بكتابة سكريبت في حقل Id" data-val-regex-pattern="^[^&lt;>{}]+$" id="Id" name="Id" type="hidden" value="b19a8aa6-7b50-43f0-ab8c-a9a700f1a446" />
+            </form>
+            <h1 class="system_title system_terms_title">نـــص النظـــام</h1>
+            <div class="system_terms_tools">
+                <div class="legend">
+                    <span class="modified"><i></i>مادة معدلة</span>
+                    <span class="canceled"><i></i>مادة ملغية</span>
+                </div>
+                <a href="/BoeLaws/Laws/Viewer/8320b644-a6e1-42e7-8f36-f0732fd0e6ac?lawId=b19a8aa6-7b50-43f0-ab8c-a9a700f1a446" target="_blank">
+                    <img src='/Content/new/images/sys-icons/document-icon.svg' alt="document-icon" />
+                    <span>اصل الوثيقة</span>
+                </a>
+                
+
+                    <a href="/Files/Download/?attId=a2071bc2-10bc-4cc1-82fc-adbb01220390" target="_blank">
+                        <img src='/Content/new/images/sys-icons/document-icon.svg' alt="document-icon" />
+                        <span>Translated document</span>
+                    </a>
+
+
+                <a href="#" id="ancPrintLaw">
+                    <img src='/Content/new/images/sys-icons/print-icon.svg' alt="print-icon" />
+                    <span>طباعة</span>
+                </a>
+                <a href="#" id="ancReportIssue" class="ancReportIssue" data-lawid="b19a8aa6-7b50-43f0-ab8c-a9a700f1a446">
+                    <img src='/Content/new/images/sys-icons/report-icon.svg' alt="report-icon" />
+                    <span>الملاحظات والتعليقات</span>
+                </a>
+
+
+                <a id="ancLawPrevVersions" data-versions="0" href="#" class="inactive">
+                    <img src='/Content/new/images/sys-icons/versions-icon.svg' alt="versions-icon" />
+                    <span>الإصدارات</span>
+                </a>
+                <i class="fas fa-globe"></i>
+                <span>اللغات</span>
+                <select data-lawRelatedCode="b19a8aa6-7b50-43f0-ab8c-a9a700f1a446" id="ddlLawLanguages" name="LanguageId"><option selected="selected" value="1">العربية</option>
+<option value="2">الإنجليزية  (English)</option>
+</select>
+
+            </div>
+
+<div class="system_terms_textbox" id="divLawText">
+    <div>
+        <h3 class="center">نظام الوكالات التجارية</h3>
+        <h3 class="center">1382 هـ</h3>
+
+            <p class="center">بسم الله الرحمن الرحيم</p>
+            <h4 class="center">مرسوم ملكي رقم 11 بتاريخ 20 / 2 / 1382</h4>
+            <div class="HTMLContainer">
+                <p><p>بعون الله تعالى<br />
+باسم جلالة الملك<br />
+نحن فيصل بن عبد العزيز آل سعود<br />
+نائب جلالة ملك المملكة العربية السعودية&nbsp;<br />
+بعد الاطلاع على المادة التاسعة عشرة من نظام مجلس الوزراء، الصادر بالمرسوم الملكي رقم (٣٨) وتاريخ ٢٢ / ١٠ / ١٣٧٧ هـ .<br />
+وبناء على قرار مجلس الوزراء رقم (٨٩) وتاريخ ١٣ / ٢ / ١٣٨٢هـ<br />
+وبناء على ما عرضه علينا نائب رئيس مجلس الوزراء<br />
+<strong>نرسم بما هو آت:</strong><br />
+أولًا- نصادق على نظام الوكالات التجارية بالصيغة المرافقة لهذا.<br />
+ثانيًا - على نائب رئيس مجلس الوزراء ووزير التجارة والصناعة تنفيذ مرسومنا هذا.<br />
+والله ولي التوفيق ، ، ،</p></p>
+            </div>
+
+
+            <p class="center">بسم الله الرحمن الرحيم</p>
+            <h4 class="center">قرار مجلس الوزراء رقم 89 بتاريخ 13 / 2 / 1382</h4>
+            <p><p>إن مجلس الوزراء&nbsp;<br />
+بعد اطلاعه على المعاملة الواردة من ديوان رئاسة مجلس الوزراء برقم (٤٣١) وتاريخ ١١ / ١ / ١٣٨٢هـ، والمتعلقة بمشروع نظام الوكالات التجارية المقدم من وزارة التجارة والصناعة.<br />
+وبعد الاطلاع على مشروع نظام الوكالات التجارية .<br />
+وبناء على توصية لجنة الأنظمة رقم (٢٢) وتاريخ ٣٠ / ١ / ١٣٨٢هـ<br />
+<strong>يقرر ما يأتي:</strong><br />
+١ - الموافقة على نظام الوكالات التجارية بالصيغة المرافقة لهذا.<br />
+٢ - تنظيم مشروع مرسوم ملكي بذلك صورته مرافقة لهذا.<br />
+ولما ذكر حرر ، ، ،</p>
+
+<p style="text-align:left"><strong>رئيس مجلس الوزراء</strong></p></p>
+
+        <div style="text-align: center"> <h1 class="system_title">نظام الوكالات التجارية</h1></div>
+            <div class="article_item no_alternate ">
+                <h3 class="center">المادة (1): 
+</h3>
+                <div class="HTMLContainer">
+                    لا يجوز لغير السعوديين سواء بصفة أشخاص طبيعيين أو معنويين أن يكونوا <SPAN ClusterID=1477>وكلاء تجاريين </SPAN>في المملكة العربية السعودية، على أن الشركات السعودية التي تقوم بأعمال <SPAN ClusterID=1478>الوكالات التجارية </SPAN>يجب أن يكون رأس مالها بالكامل سعوديًّا، وأن يكون أعضاء مجالس إدارتها ومن لهم حق التوقيع باسمها سعوديين. 
+                </div>
+                <div class="article_btns">
+
+
+                </div>
+
+            </div>
+            <div class="article_item no_alternate ">
+                <h3 class="center">المادة (2): 
+</h3>
+                <div class="HTMLContainer">
+                    <SPAN ClusterID=1477>الوكلاء التجاريون </SPAN>الذين يمارسون عملهم وقت صدور هذا النظام ولا ينطبق عليهم نص المادة الأولى يمنحون فترة لتصفية أعمالهم ونقلها إلى <SPAN ClusterID=1477>الوكلاء التجاريين السعوديين </SPAN>خلال مدة لا تزيد على سنتين من تاريخ العمل بهذا النظام. ويحدد <SPAN ClusterID=1131>وزير التجارة والصناعة </SPAN>هذه الفترة بالنسبة لكل وكيل على حدة مراعيًا في ذلك سرعة التصفية وطبيعة عمله والقيد الزمني المشار إليه آنفًا. 
+                </div>
+                <div class="article_btns">
+
+
+                </div>
+
+            </div>
+            <div class="article_item no_alternate ">
+                <h3 class="center">المادة (3): 
+</h3>
+                <div class="HTMLContainer">
+                    لا يجوز أن يقوم بعمل <SPAN ClusterID=1477>الوكيل التجاري </SPAN>إلا من كان مقيدًا في السجل المعد لهذا الغرض في <SPAN ClusterID=917>وزارة التجارة والصناعة</SPAN>، ويصدر <SPAN ClusterID=1131>وزير التجارة والصناعة </SPAN>قرارًا بإنشاء هذا السجل، وتشتمل بيانات السجل المذكور على اسم التاجر أو الشركة، ونوع البضاعة الموكل فيها، والشركة والمؤسسة الموكلة، وتاريخ التوكيل، ومدته إن كانت الوكالة محددة بأجل. وتقدم طلبات القيد بهذا السجل مع المستندات المسوغة للقيد إلى <SPAN ClusterID=925>وكيل وزارة التجارة والصناعة</SPAN>، ولا يجوز رفض القيد إلا لغير السعودي أو لمن كان سعوديًّا ممنوعًا من مزاولة التجارة وغير أهل لممارستها، ويجوز لمن رفض قيده أن يتظلم إلى <SPAN ClusterID=1131>وزير التجارة والصناعة</SPAN>. 
+                </div>
+                <div class="article_btns">
+
+
+                </div>
+
+            </div>
+            <div class="article_item no_alternate changed-article">
+                <h3 class="center">المادة (4): 
+</h3>
+                <div class="HTMLContainer">
+                    كل من يزاول أعمال <SPAN ClusterID=1478>الوكالات التجارية </SPAN>بالمخالفة لأحكام هذا النظام يعاقب بغرامة لا تقل عن ألف ريال ولا تزيد على خمسة آلاف ريال، فإن كانت المخالفة منسوبة لأجنبي أو لشركة سعودية فيها شريك أو أكثر غير سعوديين كانت العقوبة بالإضافة إلى الغرامة المنصوص عليها في الفقرة السابقة تصفية الأعمال إداريًّا في <SPAN ClusterID=1478>الوكالة التجارية </SPAN>مع جواز الحرمان من ممارسة التجارة أبدًا أو لمدة معينة. ويجوز <SPAN ClusterID=35>لوزير الداخلية </SPAN>بناء على توصية من <SPAN ClusterID=1131>وزير التجارة والصناعة </SPAN>الأمر بترحيل الأجنبي من البلاد .
+                </div>
+                <div class="article_btns">
+
+
+                        <a href="#" data-articleid="eefd0590-53ea-4814-adfa-a9a700f1a4f8" class="ancArticlePrevVersions hidden-print"><i class="fas fa-edit hidden-print"></i>تعديلات المادة</a>
+                        <div style="display: none;" class="eefd0590-53ea-4814-adfa-a9a700f1a4f8 popup-list ">
+                                <div class="article_item_popup">
+                                    <h3>المادة (4):</h3>
+                                    <div class="HTMLContainer">
+                                        عدلت هذه المادة بموجب المرسوم الملكي رقم (م/32) بتاريخ 10 / 8 / 1400 هـ ، <big>لتكون كما يلى :</big><br />
+كل من يخالف أحكام هذا النظام ولائحته التنفيذية يعاقب بغرامة لا تقل عن خمسة آلاف ريال ولا تتجاوز خمسين ألف ريال مع نشر العقوبة على نفقة المخالف وذلك دون إخلال بحق من لحقه ضرر من المخالفة في المطالبة بالتعويض. <br />فإن كانت المخالفة منسوبة لأجنبي أو لشركة سعودية فيها شريك أو أكثر غير سعودي أصبحت العقوبة بالإضافة إلى الغرامة تصفية الأعمال إداريا مع جواز الحرمان من ممارسة التجارة دائما أو لمدة معنية، ويجوز  <span ClusterID=35> لوزير الداخلية </span>   الأمر   بترحيل الأجنبي    من البلاد في ضوء العقوبة المحكوم بها، وعلى  <span ClusterID=917> وزارة التجارة </span>   إبلاغه عن الأجنبي أو الشريك الغير سعودي.
+                                    </div>
+                                        <a href="/BoeLaws/Laws/Viewer/144bd99c-09b4-410a-af22-9ec1290704f8?attachmentTitle=المادة (4):" target="_blank" class="hidden-print"></a>
+                                </div>
+                        </div>
+                </div>
+
+            </div>
+            <div class="article_item no_alternate changed-article">
+                <h3 class="center">المادة (5): 
+</h3>
+                <div class="HTMLContainer">
+                    <big>تحدد رسوم القيد في <SPAN ClusterID=1476>سجل الوكالات </SPAN>كالآتي:</big>
+<BR>خمسون ريال للتاجر الفرد. <BR>مائة ريال للشركة. <BR>وتدفع الرسوم لمرة واحدة.
+                </div>
+                <div class="article_btns">
+
+
+                        <a href="#" data-articleid="69664fcb-2f84-4401-be89-a9a700f1a52d" class="ancArticlePrevVersions hidden-print"><i class="fas fa-edit hidden-print"></i>تعديلات المادة</a>
+                        <div style="display: none;" class="69664fcb-2f84-4401-be89-a9a700f1a52d popup-list ">
+                                <div class="article_item_popup">
+                                    <h3>المادة (5):</h3>
+                                    <div class="HTMLContainer">
+                                        تم تعديل هذه المادة بموجب المرسوم الملكي رقم (م/8) وتاريخ 20 / 3 / 1393 هـ ، <big>لتصبح بالنص الآتي:</big><br>
+" تحدد رسوم القيد في <span ClusterID=1476> سجل الوكالات </span>   كالآتي:
+<br />خمسمائة ريال للتاجر الفرد والشركة.<br />وتدفع الرسوم لمرة واحدة."
+                                    </div>
+                                        <a href="/BoeLaws/Laws/Viewer/6b58d79c-1495-45b4-bce8-94ed1f944c1e?attachmentTitle=المادة (5):" target="_blank" class="hidden-print"></a>
+                                </div>
+                        </div>
+                </div>
+
+            </div>
+            <div class="article_item no_alternate changed-article">
+                <h3 class="center">المادة (6): 
+</h3>
+                <div class="HTMLContainer">
+                    يعمل بهذا النظام بعد ثلاثة أشهر من تاريخ نشره .
+                </div>
+                <div class="article_btns">
+
+
+                        <a href="#" data-articleid="51b4fd7d-75d0-46ac-b987-a9a700f1a550" class="ancArticlePrevVersions hidden-print"><i class="fas fa-edit hidden-print"></i>تعديلات المادة</a>
+                        <div style="display: none;" class="51b4fd7d-75d0-46ac-b987-a9a700f1a550 popup-list ">
+                                <div class="article_item_popup">
+                                    <h3>المادة (6): 
+</h3>
+                                    <div class="HTMLContainer">
+                                        يضاف النص التالي إلى نظام (الوكالات التجارية) الصادر بالمرسوم الملكي رقم (11) لعام 1382. ونظام (المعايرة والمقاييس) الصادر بالمرسوم الملكي رقم (29) لعام 1383هـ ، بموجب المرسوم الملكي رقم م / 5 وتاريخ 11 / 6 / 1389 هـ . <br>
+1 – تشكل هيئة في وزارة التجارة والصناعة بقرار من وزيرها من ثلاثة أعضاء لتطبيق العقوبات الواردة في نظام الوكالات التجارية ونظام المعايرة والمقاييس.<br> 
+2 – يجوز التظلم من قرارات هذه الهيئة أمام وزير التجارة والصناعة في خلال خمسة عشر يومًا من إبلاغها للمتظلم أو من ينوب عنه، وإلا أصبحت قراراتها نهائية بمضي المدة المذكورة وتصديق وزير التجارة والصناعة عليها. 
+
+                                    </div>
+                                        <a href="/BoeLaws/Laws/Viewer/d90da66e-79ee-4633-9672-35844ef5fd77?attachmentTitle=المادة (6): 
+" target="_blank" class="hidden-print"></a>
+                                </div>
+                                <div class="article_item_popup">
+                                    <h3>المادة (6):</h3>
+                                    <div class="HTMLContainer">
+                                        تضاف المواد التالية إلى نظام الوكالات التجارية بموجب المرسوم الملكي رقم (م / 32)  وتاريخ  10/ 8 / 1400هـ ، <big>ونصها كما يلي:</big> <br>
+<big>المادة الأولى:</big><br>
+مع عدم الإخلال بأية أنظمة أخرى يسرى نظام الوكالات التجارية الصادر بالمرسوم الملكي رقم (11)  وتاريخ 20/ 2 /1382هـ، وتعديلاته على كل من يتعاقد مع المنتج أو من يقوم مقامه في بلده للقيام بالأعمال التجارية سواء كان وكيلا أو موزعا بأية صورة من صور الوكالة أو التوزيع.<br> 
+<big>المادة الثانية:</big><br>
+بدون أي إخلال بالأنظمة والقرارات الخاصة بتأمين الصيانة وقطع الغيار ملتزم الوكيل والموزع بما يلي:- <br>
+أ‌ )	أن يؤمن بصفة دائمة قطع الغيار التي يطلبها المستهلكون عادة بشكل مستمرة بالنسبة للمنتجات موضوع الوكالة وأن يؤمن قطع الغيار الأخرى خلال مدة معقولة وذلك وفقا لللائحة التنفيذية. <br>
+ب‌ )	تأمين الصيانة اللازمة للمنتجات وضمان جودة الصنع والشروط التي يضعها المنتجون عادة وذلك بصفة مستمرة طوال مدة الوكالة ولمدة سنة تالية لتاريخ انتهائها أو لتاريخ تعيين وكيل جديد أيهما أسبق وذلك وفقا لللائحة التنفيذية.<br>
+<big>المادة الثالثة:</big><br>
+يصدر وزير التجارة اللائحة التنفيذية به لنظام الوكالات التجارية وتنشر في الجريدة الرسمية.<br>
+<big>المادة الرابعة:</big><br>
+تعد وزارة التجارة نماذج للعقود يسترشد بها الوكلاء والموزعون وتتضمن كافة البيانات الأساسية للعقد مثل أطراف العقد ومحله ونطاقه الزمني والمكاني وكيفية تجديده وإنهائه والتزامات طرفي العقد قبل بعضها البعض والتزاماتهما قبل المستهلك خاصة فيما يتعلق بتأمين الصيانة وقطع الغيار.<br> 
+<big>ثالثًا - </big> يسري حكم المادة الثانية من البند ثانيا من هذا المرسوم على المستوردين ولو لم يكونوا وكلاء أو موزعين وعلى كل من اتخذ من عملية البيع مباشرة أو بالواسطة حرفة له بقصد الربح ويطبق على كل من يخالف هذه المادة العقوبات التي توقع على الوكلاء والموزعين.
+                                    </div>
+                                        <a href="/BoeLaws/Laws/Viewer/144bd99c-09b4-410a-af22-9ec1290704f8?attachmentTitle=المادة (6):" target="_blank" class="hidden-print"></a>
+                                </div>
+                        </div>
+                </div>
+
+            </div>
+
+    </div>
+</div>            <div class="d-flex justify-content-center">
+            </div>
+            <div class="white_gradient"></div>
+            <div style="display: none;" id="divReportIssueContainer">
+                
+
+
+
+
+<form action="/BoeLaws/Laws/ReportIssue" enctype="multipart/form-data" id="frmReportIssue" method="post"><div id="CustomValidationSummary"></div><input data-val="true" data-val-required="حقل النظام/اللائحة مطلوب" id="LawId" name="LawId" type="hidden" value="b19a8aa6-7b50-43f0-ab8c-a9a700f1a446" /><input data-val="true" data-val-number="حقل LanguageId يجب أن يكون رقم." id="LanguageId" name="LanguageId" type="hidden" value="1" /><div id="CustomValidationSummary"></div>        <div class="row g-2 mt-5">
+                <div class="col-12 col-md-6">
+                    <label for="SenderName">الإسم</label>
+                    <input class="form_control" data-val="true" data-val-length="حجم النص لحقل الإسم لا يجب ان يزيد عن 250" data-val-length-max="250" data-val-regex="لا يسمح بكتابة سكريبت في حقل الإسم" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل الإسم مطلوب" id="SenderName" name="SenderName" type="text" value="" />
+                    <span class="field-validation-valid text-danger help-block" data-valmsg-for="SenderName" data-valmsg-replace="true"></span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="Email">البريد الإلكتروني</label>
+                    <input class="form_control" data-val="true" data-val-email="صيغة البريد الإلكتروني غير صحيحة" data-val-length="حجم النص لحقل البريد الإلكتروني لا يجب ان يزيد عن 50" data-val-length-max="50" data-val-regex="لا يسمح بكتابة سكريبت في حقل البريد الإلكتروني" data-val-regex-pattern="^[^&lt;>{}]+$" id="Email" name="Email" type="text" value="" />
+                    <span class="field-validation-valid text-danger help-block" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                </div>
+            <div class="col-12 col-md-6">
+                <label for="Phone">رقم الجوال</label>
+                <input class="form_control" data-val="true" data-val-length="حجم النص لحقل رقم الجوال لا يجب ان يزيد عن 10" data-val-length-max="10" data-val-regex="رقم هاتف غير صحيح" data-val-regex-pattern="^(05)[0-9]{8}$" data-val-required="حقل رقم الجوال مطلوب" id="Phone" name="Phone" type="text" value="" />
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <label for="ReportIssueTypeId">النوع</label>
+                <select class="form_control ReportIssue" data-val="true" data-val-number="حقل النوع يجب أن يكون رقم." data-val-required="حقل النوع مطلوب" id="ddlReportIssueType" name="ReportIssueTypeId"><option value="">- اختر -</option>
+<option value="5">تعليق</option>
+<option value="1">خطأ لغوي </option>
+<option value="2">خطأ في مادة</option>
+<option value="3">خطأ في تاريخ </option>
+<option value="4">أخرى</option>
+</select>
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="ReportIssueTypeId" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <label for="ArticleId">المادة</label>
+                <select class="form_control ReportIssue" id="ddlArticle" name="ArticleId"><option value="">- اختر -</option>
+<option value="3f3e58ec-8f5e-4f8d-b9d7-a9a700f1a4f8">المادة (1): 
+ </option>
+<option value="08318fcb-c80d-413e-900b-a9a700f1a4f8">المادة (2): 
+ </option>
+<option value="a51d605d-df53-40dd-ad39-a9a700f1a4f8">المادة (3): 
+ </option>
+<option value="eefd0590-53ea-4814-adfa-a9a700f1a4f8">المادة (4): 
+ </option>
+<option value="69664fcb-2f84-4401-be89-a9a700f1a52d">المادة (5): 
+ </option>
+<option value="51b4fd7d-75d0-46ac-b987-a9a700f1a550">المادة (6): 
+ </option>
+</select>
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="ArticleId" data-valmsg-replace="true"></span>
+                <span id="lblArticlevalidation" style="display: none;color: red" class="text-danger help-block">حقل المادة مطلوب</span>
+            </div>
+
+            <div class="col-12">
+                <label for="Description">الوصف</label>
+                <textarea class="form_control" cols="20" data-val="true" data-val-length="حجم النص لحقل الوصف لا يجب ان يزيد عن 4000" data-val-length-max="4000" data-val-regex="لا يسمح بكتابة سكريبت في حقل الوصف" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل الوصف مطلوب" id="Description" name="Description" rows="2">
+</textarea>
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+            </div>
+            <div class="col-12 app_captcha">
+                <div id='divCaptchaContainer_captchaN3H3' class='captcha-box'>
+	                <div class='col-md-6'>
+		                <div class='form-group form-group-lg'>
+                            <label class='control-label' for='Captcha'>رمز التحقق</label>
+			                <input autocomplete="off" class="input-validation-error form-control captcha-input" data-val="true" data-val-length="حجم النص لحقل رمز التحقق لا يجب ان يزيد عن 6" data-val-length-max="6" data-val-regex="لا يسمح بكتابة سكريبت في حقل رمز التحقق" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل رمز التحقق مطلوب" id="Captcha" name="Captcha" placeholder="" type="text"></input>
+		                </div>
+		                <div class='form-group'>
+			                <div class='captcha-img'>
+				                <img class='img-captcha' src='/EmbeddedResources/Captcha/Image/captchaN3H3' alt='captcha-image'>
+			                </div>
+			                <a href='#' class='captcha-refresh img-captcha-reload'><i class='fas fa-sync'></i></a>
+                        </div>
+<span class="field-validation-valid text-danger help-block captcha-danger" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+	                </div>
+                </div>
+                <span id="lblCaptchavalidation" style="display: none;color: red" class="text-danger help-block">قيمة الرمز المدخل غير صحيح</span>
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-3">
+                
+                <input class="btn btn-primary" id="btnSaveReportIssue" type="submit" value="إرسال" />
+            </div>
+        </div>
+</form>
+
+
+<script id="402511743" src="/EmbeddedResources/v1/Widgets/Captcha/CaptchaWidget.js"></script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaN3H3 = new CaptchaWidget('divCaptchaContainer_captchaN3H3', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaN3H3.load(); 
+                    }); </script>
+ 
+            </div>
+            <div style="display: none;" id="divSubscripeContainer">
+                
+
+
+<div>
+
+<form action="/BoeLaws/Laws/LawsSubscription" enctype="multipart/form-data" id="frmSubscriptionb19a8aa6-7b50-43f0-ab8c-a9a700f1a446" method="post"><div id="CustomValidationSummary"></div><input data-val="true" data-val-required="حقل النظام/اللائحة مطلوب" id="LawId" name="LawId" type="hidden" value="b19a8aa6-7b50-43f0-ab8c-a9a700f1a446" /><input data-val="true" data-val-number="حقل LanguageId يجب أن يكون رقم." id="LanguageId" name="LanguageId" type="hidden" value="1" /><div id="CustomValidationSummary"></div>    <div class="row g-2 mt-5">
+
+            <div class="col-12 col-md-6">
+                <label for="Name">الإسم</label>
+                <input class="form_control" data-val="true" data-val-length="حجم النص لحقل الإسم لا يجب ان يزيد عن 250" data-val-length-max="250" data-val-regex="لا يسمح بكتابة سكريبت في حقل الإسم" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل الإسم مطلوب" id="Name" name="Name" type="text" value="" />
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="Email">البريد الإلكتروني</label>
+                <input class="form_control" data-val="true" data-val-email="صيغة البريد الإلكتروني غير صحيحة" data-val-length="حجم النص لحقل البريد الإلكتروني لا يجب ان يزيد عن 50" data-val-length-max="50" data-val-regex="لا يسمح بكتابة سكريبت في حقل البريد الإلكتروني" data-val-regex-pattern="^[^&lt;>{}]+$" id="Email" name="Email" type="text" value="" />
+                <span class="field-validation-valid text-danger help-block" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
+        <div class="col-12">
+            <label for="LogNotificationIdTypes">يرجى اختيار الحدث ليصلكم اشعار بذلك على البريد الإلكتروني</label>
+            <div><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="2" />اضافة</label><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="3" />تعديل</label><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="4" />حذف</label><label class="checkbox-inline"><input name="PostedTypes" type="checkbox" value="5" />أبلغني حين توافر النظام باللغة الإنجليزية</label></div>
+            <span class="field-validation-valid text-danger help-block" data-valmsg-for="PostedTypes" data-valmsg-replace="true"></span>
+        </div>
+            <div class="col-12 app_captcha">
+                <div id='divCaptchaContainer_captchaZ09P' class='captcha-box'>
+	                <div class='col-md-6'>
+		                <div class='form-group form-group-lg'>
+                            <label class='control-label' for='Captcha'>رمز التحقق</label>
+			                <input autocomplete="off" class="input-validation-error form-control captcha-input" data-val="true" data-val-length="حجم النص لحقل رمز التحقق لا يجب ان يزيد عن 6" data-val-length-max="6" data-val-regex="لا يسمح بكتابة سكريبت في حقل رمز التحقق" data-val-regex-pattern="^[^&lt;>{}]+$" data-val-required="حقل رمز التحقق مطلوب" id="Captcha" name="Captcha" placeholder="" type="text"></input>
+		                </div>
+		                <div class='form-group'>
+			                <div class='captcha-img'>
+				                <img class='img-captcha' src='/EmbeddedResources/Captcha/Image/captchaZ09P' alt='captcha-image'>
+			                </div>
+			                <a href='#' class='captcha-refresh img-captcha-reload'><i class='fas fa-sync'></i></a>
+                        </div>
+<span class="field-validation-valid text-danger help-block captcha-danger" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+	                </div>
+                </div>
+                <span id="lblCaptchavalidation" style="display: none;color: red" class="text-danger help-block">قيمة الرمز المدخل غير صحيح</span>
+            </div>
+                    <div class="col-12">
+                <label class="checkbox-inline" for="agreement-b19a8aa6-7b50-43f0-ab8c-a9a700f1a446">
+                    <input type="checkbox" id="agreement-b19a8aa6-7b50-43f0-ab8c-a9a700f1a446" class="chk-agreement" />
+                    إشعار إخلاء مسؤولية:
+الإخطارات المرسلة عبر خدمة الاشتراك قد تتأخر لأسباب فنية خارجة عن إرادتنا. الهيئة غير مسؤولة عن أي أضرار أو خسائر ناتجة عن التأخير أو عدم وصول الإخطارات، وكذلك عن دقة أو اكتمال محتواها.
+المستخدم مسؤول عن المتابعة والتحقق من المعلومات، ولا تعد الإخطارات بديلاً عن المتابعة الشخصية.
+باستخدام الخدمة، أنت توافق على شروط إخلاء المسؤولية وتدرك حدود الخدمة والمسؤوليات المتعلقة بها
+                </label>
+                <span class="text-danger help-block">يجب الموافقة على إشعار إخلاء المسؤولية لتتمكن من الاستمرار</span>
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-3">
+                <input class="btn btn-primary btnSubscription" id="btnSubscription" type="submit" data-lawid='b19a8aa6-7b50-43f0-ab8c-a9a700f1a446' disabled value="إرسال" />
+            </div>
+    </div>
+</form>
+</div>
+<script>
+    $(document).ready(function () {
+        $('input[type="checkbox"][id="agreement-b19a8aa6-7b50-43f0-ab8c-a9a700f1a446"]').change(function () {
+            var isChecked = $(this).is(':checked');
+            $('input[type="checkbox"][id="agreement-b19a8aa6-7b50-43f0-ab8c-a9a700f1a446"]').prop('checked', isChecked);
+
+            if (this.checked) {
+                $('.modal .btnSubscription').prop('disabled', false);
+            } else {
+                $('.modal .btnSubscription').prop('disabled', true);
+            }
+        });
+    });
+</script>
+
+<script id="402511743" src="/EmbeddedResources/v1/Widgets/Captcha/CaptchaWidget.js"></script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaN3H3 = new CaptchaWidget('divCaptchaContainer_captchaN3H3', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaN3H3.load(); 
+                    }); </script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaZ09P = new CaptchaWidget('divCaptchaContainer_captchaZ09P', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaZ09P.load(); 
+                    }); </script>
+ 
+            </div>
+            <div id="divAddReportIssueSuccess" style="display: none;">
+                <h3 class="text-center mb-4">
+                    تم إضافة البلاغ بنجاح. شكرا لمشاركتكم
+                </h3>
+                <div class="modal-footer text-center">
+                    <input class="app_btn" id="btnCloseReportIssue" type="submit" value="إغلاق" />
+                </div>
+            </div>
+            <div id="divAddSubscriptionSuccess" style="display: none;">
+                <h3 class="text-center mb-4">
+                    تم إضافة الاشتراك بنجاح. شكرا لمشاركتكم 
+                </h3>
+                <div class="modal-footer text-center">
+                    <input class="app_btn" id="btnCloseSubscription" type="submit" value="إغلاق" />
+                </div>
+            </div>
+            <div id="divAAddVisitorFavoriteSuccess" style="display: none;">
+                <h3 class="text-center mb-4">
+                    تم إضافة النظام للمفضلة بنجاح
+                </h3>
+                <div class="modal-footer text-center">
+                    <input class="app_btn" id="btnCloseAddToFavorite" type="submit" value="إغلاق" />
+                </div>
+            </div>
+            <div style="display: none;" id="divPrevVersionsContainer" class="popup-list">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                الإصدار
+                            </th>
+                            <th>
+                                تاريخ النظام
+                            </th>
+
+                            <th>
+                                الحالة
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+
+                </table>
+
+            </div>
+    </div>
+</div>
+
+<a href="#" style="display:block" title="الملاحظات والتعليقات" class="ancReportIssue ancReportIssueTemp" data-lawid="b19a8aa6-7b50-43f0-ab8c-a9a700f1a446">
+    <i class="fas fa-comments"></i>
+</a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="divOverlay" class="loader-overlay">
+            <div class="loader-overlay-shape"></div>
+            <div class="loader-overlay-text" id="dvOverLayText"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="container">
+                <div class="page-footer__top">
+                    <div class="row justify-content-center">
+                        <a class="page-footer__logo" href="/" title="الرئيسية">
+                            <img src="/Content/new/images/logo-white.svg" alt="logo-white" />
+                        </a>
+                    </div>
+                </div>
+                <div class="page-footer__bottom">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                            <span class="copyrights">جميع الحقوق محفوظة © <span class="copyrights__year">2025 - 1447</span></span>
+                        </div>
+                        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <ul class="page-footer__bottom__links" id="footer-bottom-links">
+                                <li><a href='http://www.boe.gov.saar/Pages/Privacy.aspx' title="سياسة الخصوصية">سياسة الخصوصية</a></li>
+                                <li><a href='http://www.boe.gov.saar/Pages/TermsOfUse.aspx' title="شروط الاستخدام">شروط الاستخدام</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="scroll-to-top-btn" title="الصعود لأعلى الصفحة">
+                <img src="/Content/new/images/arrow-top-icon.svg" alt="go to top" />
+            </a>
+        </footer>
+
+    </main>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/fontawesome-all.js"></script>
+    <script src="/Scripts/jquery.hoverIntent.minified.js"></script>
+    <script src="/Scripts/jquery.slicknav.js"></script>
+    <script src="/Scripts/slick.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/Scripts/tabso.js"></script>
+
+    <script type="text/javascript" src="/EmbeddedResources/v1.0/Scripts/common.js"></script>
+
+    <script src="/Scripts/App/frontend-custom.js"></script>
+    <script src="/Scripts/App/frontend.js"></script>
+    <script src="/Scripts/jQuery.print.js"></script>
+    
+    <script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <link href="/Content/css/jquery.modal.min.css" rel="stylesheet" />
+    <script src="/Scripts/jquery.modal.min.js"></script>
+    <script src="/Scripts/App/app-frontend.lawdetails.js"></script>
+    <script type="text/javascript">
+
+        //$("img").hide();
+        //$("#imglogo").show();
+        //$(".img-captcha").show();
+
+        document.getElementById('clearResultBtn').addEventListener('click', function () {
+            document.getElementById('queryInput').value = '';
+            document.getElementById('frmSearch').action = '/BoeLaws/Laws/SearchDetails/?Query=';
+            document.getElementById('frmSearch').submit();
+        });
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+
+            var keywordsInput = $("#queryInput").val();
+            // Get keywords from the textbox separated by commas
+            var keywords = $.map(keywordsInput.split("،"), $.trim);
+            $(".search_result_item").each(function () {
+                var content = $(this).html();
+
+                keywords.forEach(function (keyword, index) {
+                    //    content = content.replace(new RegExp('(?<!\\p{L}\\p{M}*|[\\p{N}_])(?:' + keyword + ')(?![\\p{L}\\p{N}_])', 'igu'),
+                    //        '<span class="highlight key-background-color-' + index +'">$&</span>');
+                    content = content.replaceAll(keyword, '<span class="highlight key-background-color-' + index + '">' + keyword + '</span>')
+                });
+                $(this).html(content);
+            });
+        });
+
+    </script>
+
+
+    
+    <script src="/Content/new/js/scripts.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132578258-1"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#LawsNotifications').click(function (e) {
+                e.preventDefault();
+                $("#divNotificationContainer").modal({
+                    escapeClose: false,
+                    clickClose: false,
+                    showClose: true,
+                    closeText: ''
+                });
+            });
+        });
+		$('header img, footer img').removeAttr('style')
+		localStorage.setItem('portalUrl', 'http://www.boe.gov.sa');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-132578258-1');
+    </script>
+
+<script id="402511743" src="/EmbeddedResources/v1/Widgets/Captcha/CaptchaWidget.js"></script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaN3H3 = new CaptchaWidget('divCaptchaContainer_captchaN3H3', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaN3H3.load(); 
+                    }); </script>
+<script type="text/javascript" language="javascript"> $(function () { 
+                        var captchaWidLoader_captchaZ09P = new CaptchaWidget('divCaptchaContainer_captchaZ09P', '/EmbeddedResources/Captcha/Image/');
+                        captchaWidLoader_captchaZ09P.load(); 
+                    }); </script>
+</body>
+
+</html>
