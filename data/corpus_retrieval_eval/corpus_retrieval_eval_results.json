@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 162,
-  "top1_hits": 141,
-  "top3_hits": 157,
-  "top5_hits": 160,
-  "top1_accuracy": 0.8704,
-  "top3_accuracy": 0.9691,
-  "top5_accuracy": 0.9877,
-  "mrr_at_5": 0.9189,
+  "total_queries": 164,
+  "top1_hits": 143,
+  "top3_hits": 159,
+  "top5_hits": 162,
+  "top1_accuracy": 0.872,
+  "top3_accuracy": 0.9695,
+  "top5_accuracy": 0.9878,
+  "mrr_at_5": 0.9199,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -5037,6 +5037,68 @@
      "record_id": "oa-llm-companies-art-082",
      "article_number": 82,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "hmb-001",
+   "query_ar": "التعاون مع المحكمة بما يكفل أداء الشهود لشهادتهم دون تأثير أو تأخير على جهات الرقابة والضبط والتحقيق في الجرائم المشمولة بأحكام النظام",
+   "category": "definitional",
+   "gold": {
+    "corpus": "whistleblower",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "whistleblower-law-llm-art-002",
+     "article_number": 2,
+     "score": 46
+    },
+    {
+     "record_id": "whistleblower-law-llm-art-001",
+     "article_number": 1,
+     "score": 20
+    },
+    {
+     "record_id": "oa-llm-companies-art-270",
+     "article_number": 270,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "hmb-002",
+   "query_ar": "يعاقب بالسجن مدة لا تتجاوز سنتين وبغرامة لا تزيد على ثلاثمئة ألف ريال كل من هدد المشمول بالحماية أو ابتزه",
+   "category": "topical",
+   "gold": {
+    "corpus": "whistleblower",
+    "law_component": "law",
+    "article_number": 26
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "whistleblower-law-llm-art-026",
+     "article_number": 26,
+     "score": 43
+    },
+    {
+     "record_id": "whistleblower-law-llm-art-025",
+     "article_number": 25,
+     "score": 31
+    },
+    {
+     "record_id": "terrorism-law-llm-art-040",
+     "article_number": 40,
+     "score": 26
     }
    ]
   }
