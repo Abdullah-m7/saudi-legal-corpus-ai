@@ -174,6 +174,8 @@ LAYERS = [
      "judicial_documents", "regulation"),
     ("data/bankruptcy_fees_arabic_legal_llm/bankruptcy_fees_regulation_legal_llm_001_020.json",
      "bankruptcy_fees", "regulation"),
+    ("data/enforcement_providers_arabic_legal_llm/enforcement_providers_regulation_legal_llm_001_018.json",
+     "enforcement_providers", "regulation"),
 ]
 
 
