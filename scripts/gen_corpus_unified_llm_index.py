@@ -170,6 +170,8 @@ LAYERS = [
      "muslaha", "regulation"),
     ("data/iflas_hudud_arabic_legal_llm/iflas_hudud_regulation_legal_llm_001_023.json",
      "iflas_hudud", "regulation"),
+    ("data/judicial_documents_arabic_legal_llm/judicial_documents_regulation_legal_llm_001_023.json",
+     "judicial_documents", "regulation"),
 ]
 
 

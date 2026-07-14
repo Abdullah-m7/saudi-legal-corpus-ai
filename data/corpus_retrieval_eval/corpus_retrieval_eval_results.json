@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 176,
-  "top1_hits": 155,
-  "top3_hits": 171,
-  "top5_hits": 174,
-  "top1_accuracy": 0.8807,
-  "top3_accuracy": 0.9716,
-  "top5_accuracy": 0.9886,
-  "mrr_at_5": 0.9254,
+  "total_queries": 178,
+  "top1_hits": 157,
+  "top3_hits": 173,
+  "top5_hits": 176,
+  "top1_accuracy": 0.882,
+  "top3_accuracy": 0.9719,
+  "top5_accuracy": 0.9888,
+  "mrr_at_5": 0.9262,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2735,14 +2735,14 @@
      "score": 25
     },
     {
+     "record_id": "judicial-documents-regulation-llm-art-014",
+     "article_number": 14,
+     "score": 17
+    },
+    {
      "record_id": "qismah-regulation-llm-art-014",
      "article_number": 14,
      "score": 13
-    },
-    {
-     "record_id": "qismah-regulation-llm-art-019",
-     "article_number": 19,
-     "score": 12
     }
    ]
   },
@@ -5471,6 +5471,68 @@
      "record_id": "iflas-hudud-regulation-llm-art-020",
      "article_number": 20,
      "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "jud-001",
+   "query_ar": "تسري أحكام هذه اللائحة على محاكم الدرجة الأولى ومحاكم الاستئناف والمحكمة العليا",
+   "category": "topical",
+   "gold": {
+    "corpus": "judicial_documents",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judicial-documents-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 36
+    },
+    {
+     "record_id": "sharia-procedure-law-llm-art-184",
+     "article_number": 184,
+     "score": 28
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "jud-002",
+   "query_ar": "ينشأ لكل قضية بعد اكتساب الحكم الصفة النهائية ملف في المحكمة مصدرة الحكم يحفظ فيه محاضر الضبط وأصل الصك ويأخذ رقم قيد القضية",
+   "category": "topical",
+   "gold": {
+    "corpus": "judicial_documents",
+    "law_component": "regulation",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judicial-documents-regulation-llm-art-020",
+     "article_number": 20,
+     "score": 46
+    },
+    {
+     "record_id": "judicial-documents-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 29
+    },
+    {
+     "record_id": "judicial-documents-regulation-llm-art-011",
+     "article_number": 11,
+     "score": 22
     }
    ]
   }

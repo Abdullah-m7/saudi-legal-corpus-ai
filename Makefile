@@ -180,6 +180,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         aawan-regulation-track-validate \
         muslaha-regulation-track-validate \
         iflas-hudud-regulation-track-validate \
+        judicial-documents-regulation-track-validate \
         qa-gate
 
 help:
@@ -1144,6 +1145,9 @@ muslaha-regulation-track-validate:
 
 iflas-hudud-regulation-track-validate:
 	$(PY) scripts/validate_iflas_hudud_regulation_track.py
+
+judicial-documents-regulation-track-validate:
+	$(PY) scripts/validate_judicial_documents_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
