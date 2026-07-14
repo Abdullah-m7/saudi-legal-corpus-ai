@@ -174,6 +174,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         juveniles-law-track-validate \
         juveniles-regulation-track-validate \
         whistleblower-law-track-validate \
+        judicial-inspection-regulation-track-validate \
         qa-gate
 
 help:
@@ -1120,6 +1121,9 @@ juveniles-regulation-track-validate:
 
 whistleblower-law-track-validate:
 	$(PY) scripts/validate_whistleblower_law_track.py
+
+judicial-inspection-regulation-track-validate:
+	$(PY) scripts/validate_judicial_inspection_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

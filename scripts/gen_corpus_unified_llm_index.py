@@ -158,6 +158,8 @@ LAYERS = [
      "juveniles", "implementing_regulation"),
     ("data/whistleblower_arabic_legal_llm/whistleblower_law_legal_llm_001_037.json",
      "whistleblower", "law"),
+    ("data/judicial_inspection_arabic_legal_llm/judicial_inspection_regulation_legal_llm_001_068.json",
+     "judicial_inspection", "regulation"),
 ]
 
 
