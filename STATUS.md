@@ -161,12 +161,12 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   work regulation 72+3 tables + Labor mediation rules 20 + Labor recruitment rules 72 + Labor
   accessibility tables 8 + Labor contract forms 102 + Evidence Law 129 + Evidence companions
   24+135+34 + Personal Status Law 252 + Personal Status regulation 41 + Law of Sharia Procedure 243
-  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85 + Law of the Board of Grievances 26 + Code of Law Practice 56 + Code of Law Practice regulation 90 + Commercial Courts Law 96 + Commercial Courts Law regulation 281 + Bankruptcy Law 231 + Bankruptcy Law regulation 98 + Bankruptcy case rules 24 + Judicial Costs Law 23 + Judicial Costs regulation 17 + Arbitration Law 58 + Arbitration regulation 19 + Commercial Papers Law 121 + Commercial Register Law 29 + Trade Names Law 23 + Commercial Agencies Law 6 + Chambers of Commerce Law 66 + Commercial Books Law 16 + Anti-Money Laundering Law 52 + Notarization Law 57 + Notarization Regulation 31 + Real Estate Registration Law 40 + Real Estate Registration Regulation 51 + Registered Real Estate Mortgage Law 46 + Real Estate Finance Law 15 + Real Estate Unit Ownership Law 33 + Real Estate Unit Ownership Regulation 41 + Non-Saudi Real Estate Ownership Law 15 + Municipal Real Estate Disposal Law 6 + Municipal Real Estate Disposal Regulation 35 + GCC Citizens Ownership Regulation 6 + Combating Terrorism Crimes and Financing 99 + its Implementing Regulation 28 + Juveniles Law 24 + its Implementing Regulation 13 + Whistleblower, Witness, Expert and Victim Protection Law 37 + Judicial Inspection Regulation 68 + Regulation on the Division of Jointly-Owned Property 48**)
+  + Sharia Procedure regulation 637 + Law of Criminal Procedure 222 + Criminal Procedure regulation 181 + Law of Enforcement 98 + Enforcement regulation 273 + Law of the Judiciary 85 + Law of the Board of Grievances 26 + Code of Law Practice 56 + Code of Law Practice regulation 90 + Commercial Courts Law 96 + Commercial Courts Law regulation 281 + Bankruptcy Law 231 + Bankruptcy Law regulation 98 + Bankruptcy case rules 24 + Judicial Costs Law 23 + Judicial Costs regulation 17 + Arbitration Law 58 + Arbitration regulation 19 + Commercial Papers Law 121 + Commercial Register Law 29 + Trade Names Law 23 + Commercial Agencies Law 6 + Chambers of Commerce Law 66 + Commercial Books Law 16 + Anti-Money Laundering Law 52 + Notarization Law 57 + Notarization Regulation 31 + Real Estate Registration Law 40 + Real Estate Registration Regulation 51 + Registered Real Estate Mortgage Law 46 + Real Estate Finance Law 15 + Real Estate Unit Ownership Law 33 + Real Estate Unit Ownership Regulation 41 + Non-Saudi Real Estate Ownership Law 15 + Municipal Real Estate Disposal Law 6 + Municipal Real Estate Disposal Regulation 35 + GCC Citizens Ownership Regulation 6 + Combating Terrorism Crimes and Financing 99 + its Implementing Regulation 28 + Juveniles Law 24 + its Implementing Regulation 13 + Whistleblower, Witness, Expert and Victim Protection Law 37 + Judicial Inspection Regulation 68 + Regulation on the Division of Jointly-Owned Property 48 + Professional Conduct Rules for Lawyers 47**)
   with counts, paths, statuses, language layers,
-  boundaries, and validation targets. **69 tracks; primary Arabic governing 6511; reference 614; registry-counted
-  7406.** PDPL and Investment Arabic tracks are **verified against official
+  boundaries, and validation targets. **70 tracks; primary Arabic governing 6558; reference 614; registry-counted
+  7453.** PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
-  index (6342 records) as a projection (not added to totals). See
+  index (6389 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and
   [`reports/corpus_registry/CORPUS_REGISTRY_INDEX_FOUNDATION_AR.md`]. Validate:
   `make corpus-registry-validate`.
@@ -362,7 +362,7 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   projects all thirty-four Arabic LLM-ready layers (Companies 281 + PDPL law 43 + PDPL regulation 38 +
   Investment law 16 + Investment regulation 37 + Civil Transactions Law 721 + GTPL 99+157 +
   Labor 571 across its eight components + Evidence 322 across its four components +
-  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 + Board of Grievances 26 + Law Practice 146 (law 56 + regulation 90) + Commercial Courts 377 (law 96 + regulation 281) + Bankruptcy 353 (law 231 + regulation 98 + case rules 24) + Judicial Costs 40 (law 23 + regulation 17) + Arbitration 77 (law 58 + regulation 19) + Commercial Papers 121 (law) + Commercial Register 29 (law) + Trade Names 23 (law) + Commercial Agencies 6 (law) + Chambers of Commerce 66 (law) + Commercial Books 16 (law) + Anti-Money Laundering 52 (law) + Notarization 88 (law 57 + regulation 31) + Real Estate Registration 91 (law 40 + regulation 51) + Real Estate Mortgage 46 (law) + Real Estate Finance 15 (law) + Real Estate Units 74 (law 33 + regulation 41) + Non-Saudi Ownership 15 (law) + Municipal Real Estate 41 (law 6 + regulation 35) + GCC Ownership 6 (law) + Counter-Terrorism 127 (law 99 + regulation 28) + Juveniles 37 (law 24 + regulation 13) + Whistleblower Protection Law 37 (law) + Judicial Inspection Regulation 68 (regulation) + Qismah Regulation 48 (regulation) = **6342 records**) into one flat index at
+  Personal Status 293 (law 252 + regulation 41) + Sharia Procedure 880 (law 243 + regulation 637) + Criminal Procedure 403 (law 222 + regulation 181) + Enforcement 371 (law 98 + regulation 273) + Judiciary 85 + Board of Grievances 26 + Law Practice 146 (law 56 + regulation 90) + Commercial Courts 377 (law 96 + regulation 281) + Bankruptcy 353 (law 231 + regulation 98 + case rules 24) + Judicial Costs 40 (law 23 + regulation 17) + Arbitration 77 (law 58 + regulation 19) + Commercial Papers 121 (law) + Commercial Register 29 (law) + Trade Names 23 (law) + Commercial Agencies 6 (law) + Chambers of Commerce 66 (law) + Commercial Books 16 (law) + Anti-Money Laundering 52 (law) + Notarization 88 (law 57 + regulation 31) + Real Estate Registration 91 (law 40 + regulation 51) + Real Estate Mortgage 46 (law) + Real Estate Finance 15 (law) + Real Estate Units 74 (law 33 + regulation 41) + Non-Saudi Ownership 15 (law) + Municipal Real Estate 41 (law 6 + regulation 35) + GCC Ownership 6 (law) + Counter-Terrorism 127 (law 99 + regulation 28) + Juveniles 37 (law 24 + regulation 13) + Whistleblower Protection Law 37 (law) + Judicial Inspection Regulation 68 (regulation) + Qismah Regulation 48 (regulation) + Professional Conduct Rules for Lawyers 47 (regulation) = **6389 records**) into one flat index at
   `data/corpus_unified_index/corpus_unified_llm_index.jsonl` with a common schema. Query the whole
   corpus at once with `python3 scripts/search_corpus_unified.py "<عربي>"` (deterministic lexical
   scorer over each record's keywords / search_queries / titles / text; `--corpus` and `--top`
@@ -372,9 +372,9 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   (`data/corpus_retrieval_eval/`), each gold manually confirmed against the article's own text
   (definitional articles) or official title — not reverse-engineered from search output. Runner
   `scripts/run_corpus_retrieval_eval.py` computes top-1/top-3/top-5 accuracy + MRR@5 and writes
-  deterministic results. **Current: top-1 87.5% / top-3 97.0% / top-5 98.8% / MRR@5 0.9218**
-  over the 6342-record index with **168 golds** — expanded from 40 (v2: gtp-001..007 +
-  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary; v13: dmz-001..003 board-of-grievances; v14: muh-001..003 law-practice; v15: mhl-001..003 law-practice-regulation; v16: tjr-001..003 commercial-courts; v17: tjl-001..003 commercial-courts-regulation; v18: ifl-001..003 bankruptcy law; v19: ilr-001..003 bankruptcy regulation; v20: icr-001..003 bankruptcy case rules; v21: tkq-001..002 judicial-costs law + tkr-001 regulation; v22: thk-001..002 arbitration law + thr-001 regulation; v23: awt-001..003 commercial-papers law; v24: sjt-001..002 commercial-register + ast-001 trade-names; v25: wkl-001..002 commercial-agencies; v26: ghr-001..002 chambers-of-commerce; v27: dft-001..002 commercial-books; v28: hmb-001..002 whistleblower-protection; v29: tft-001..002 judicial-inspection; v30: qsm-001..002 qismah-division) so that GTPL, all eight
+  deterministic results. **Current: top-1 87.6% / top-3 97.1% / top-5 98.8% / MRR@5 0.9227**
+  over the 6389-record index with **170 golds** — expanded from 40 (v2: gtp-001..007 +
+  lab-001..014; v3: ith-001..003; v4: ith-004..006; v5: ahw-001..004; v6: mrf-001..003 law; v7: mrf-004..006 regulation; v8: mjz-001..003 criminal-procedure law; v9: mjr-001..003 criminal-procedure regulation; v10: mtn-001..003 enforcement law; v11: mtl-001..003 enforcement regulation; v12: mqd-001..003 judiciary; v13: dmz-001..003 board-of-grievances; v14: muh-001..003 law-practice; v15: mhl-001..003 law-practice-regulation; v16: tjr-001..003 commercial-courts; v17: tjl-001..003 commercial-courts-regulation; v18: ifl-001..003 bankruptcy law; v19: ilr-001..003 bankruptcy regulation; v20: icr-001..003 bankruptcy case rules; v21: tkq-001..002 judicial-costs law + tkr-001 regulation; v22: thk-001..002 arbitration law + thr-001 regulation; v23: awt-001..003 commercial-papers law; v24: sjt-001..002 commercial-register + ast-001 trade-names; v25: wkl-001..002 commercial-agencies; v26: ghr-001..002 chambers-of-commerce; v27: dft-001..002 commercial-books; v28: hmb-001..002 whistleblower-protection; v29: tft-001..002 judicial-inspection; v30: qsm-001..002 qismah-division; v31: slk-001..002 sulook-professional-conduct) so that GTPL, all eight
   Labor components, all four Evidence components, the Personal Status law + regulation, the
   Law of Sharia Procedure + its implementing regulation, the Law of Criminal Procedure + its implementing regulation, the Law of Enforcement + its regulation, the Law of the Judiciary, the Law of the Board of Grievances, the Code of Law Practice + its regulation, and the Commercial Courts Law + its regulation have
   gold coverage; every new
@@ -1132,12 +1132,26 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   min 0.913; no visual adjudication needed). PDF committed (6 pages). Track under `sources/qismah/regulation/`.
   Validate: `make qismah-regulation-track-validate`.
 
+## قواعد السلوك المهني للمحامين — Professional Conduct Rules for Lawyers (24/12/1442هـ)
+
+- **Professional Conduct Rules for Lawyers (Minister of Justice Decision 3453, 24/12/1442هـ, consolidated through
+  Decision 676, 19/4/1446هـ) verified + LLM-ready.** **قواعد السلوك المهني للمحامين** — **47 records** (numbered
+  1–42, 44–46, plus 2 مكرر rules 9 and 45): general rules, the lawyer-client relationship, legal consultations,
+  court pleadings, dealings with non-clients, dealings with the media, legal establishments, and closing provisions.
+  In force. CONSOLIDATED AMENDED: **44 اصلية / 1 معدلة (rule 38) / 2 مضافة (rules 9 مكرر, 45 مكرر)**, each carrying
+  full version history. **DOCUMENTED SOURCE ANOMALY:** rule 43 (القاعدة الثالثة والأربعون) is entirely absent from
+  both the official MOJ portal statute structure and the official MOJ PDF — chapter 7 (Legal Establishments) ends
+  at rule 42 and chapter 8 (Closing Provisions) opens directly at rule 44, independently confirmed on the rendered
+  PDF pages, not a fetch artifact; preserved verbatim as issued, not filled or renumbered. MOJ double-official
+  pipeline: **all 47/47 matched outright** (mean 0.9551, min 0.900; no visual adjudication needed). PDF committed
+  (10 pages). Track under `sources/sulook/regulation/`. Validate: `make sulook-regulation-track-validate`.
+
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (143 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (144 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 70 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 71 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any

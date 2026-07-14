@@ -162,6 +162,8 @@ LAYERS = [
      "judicial_inspection", "regulation"),
     ("data/qismah_arabic_legal_llm/qismah_regulation_legal_llm_001_048.json",
      "qismah", "regulation"),
+    ("data/sulook_arabic_legal_llm/sulook_regulation_legal_llm_001_047.json",
+     "sulook", "regulation"),
 ]
 
 
