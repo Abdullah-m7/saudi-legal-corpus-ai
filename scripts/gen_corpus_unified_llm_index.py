@@ -172,6 +172,8 @@ LAYERS = [
      "iflas_hudud", "regulation"),
     ("data/judicial_documents_arabic_legal_llm/judicial_documents_regulation_legal_llm_001_023.json",
      "judicial_documents", "regulation"),
+    ("data/bankruptcy_fees_arabic_legal_llm/bankruptcy_fees_regulation_legal_llm_001_020.json",
+     "bankruptcy_fees", "regulation"),
 ]
 
 
