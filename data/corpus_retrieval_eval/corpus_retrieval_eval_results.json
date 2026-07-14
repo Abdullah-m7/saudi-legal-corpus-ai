@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 159,
-  "top1_hits": 138,
-  "top3_hits": 154,
-  "top5_hits": 157,
-  "top1_accuracy": 0.8679,
-  "top3_accuracy": 0.9686,
-  "top5_accuracy": 0.9874,
-  "mrr_at_5": 0.9174,
+  "total_queries": 162,
+  "top1_hits": 141,
+  "top3_hits": 157,
+  "top5_hits": 160,
+  "top1_accuracy": 0.8704,
+  "top3_accuracy": 0.9691,
+  "top5_accuracy": 0.9877,
+  "mrr_at_5": 0.9189,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2425,14 +2425,14 @@
      "score": 13
     },
     {
-     "record_id": "terrorism-reg-llm-art-012",
-     "article_number": 12,
+     "record_id": "juveniles-law-llm-art-009",
+     "article_number": 9,
      "score": 13
     },
     {
-     "record_id": "criminal-procedure-regulation-llm-art-080",
-     "article_number": 80,
-     "score": 11
+     "record_id": "terrorism-reg-llm-art-012",
+     "article_number": 12,
+     "score": 13
     }
    ]
   },
@@ -4944,6 +4944,99 @@
      "record_id": "terrorism-reg-llm-art-021",
      "article_number": 21,
      "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "ahd-001",
+   "query_ar": "لا يساءل جزائيا من لم يتم السابعة من عمره وقت ارتكاب الفعل المعاقب عليه",
+   "category": "definitional",
+   "gold": {
+    "corpus": "juveniles",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "juveniles-law-llm-art-002",
+     "article_number": 2,
+     "score": 33
+    },
+    {
+     "record_id": "labor-reg-llm-art-033",
+     "article_number": 33,
+     "score": 13
+    },
+    {
+     "record_id": "juveniles-law-llm-art-015",
+     "article_number": 15,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "ahd-002",
+   "query_ar": "في جميع الأحوال لا يكون إجراء تبليغ الحدث صحيحا إلا إذا بلغ ولي أمره أو من يقوم مقامه",
+   "category": "topical",
+   "gold": {
+    "corpus": "juveniles",
+    "law_component": "law",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "juveniles-law-llm-art-006",
+     "article_number": 6,
+     "score": 42
+    },
+    {
+     "record_id": "juveniles-reg-llm-art-007",
+     "article_number": 7,
+     "score": 27
+    },
+    {
+     "record_id": "juveniles-law-llm-art-005",
+     "article_number": 5,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "ahr-001",
+   "query_ar": "تقوم الدار فور إيداع الحدث لديها بإعداد تقرير اجتماعي عن حالته يشتمل على كل ما يفيد القاضي في إصدار حكمه",
+   "category": "topical",
+   "gold": {
+    "corpus": "juveniles",
+    "law_component": "implementing_regulation",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "juveniles-reg-llm-art-009",
+     "article_number": 9,
+     "score": 32
+    },
+    {
+     "record_id": "juveniles-law-llm-art-012",
+     "article_number": 12,
+     "score": 27
+    },
+    {
+     "record_id": "oa-llm-companies-art-082",
+     "article_number": 82,
+     "score": 17
     }
    ]
   }

@@ -152,6 +152,10 @@ LAYERS = [
      "terrorism", "law"),
     ("data/terrorism_arabic_legal_llm/terrorism_regulation_legal_llm_001_028.json",
      "terrorism", "implementing_regulation"),
+    ("data/juveniles_arabic_legal_llm/juveniles_law_legal_llm_001_024.json",
+     "juveniles", "law"),
+    ("data/juveniles_arabic_legal_llm/juveniles_regulation_legal_llm_001_013.json",
+     "juveniles", "implementing_regulation"),
 ]
 
 

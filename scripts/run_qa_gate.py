@@ -105,6 +105,8 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_gcc_ownership_law_track.py",
     "scripts/gen_terrorism_law_track.py",
     "scripts/gen_terrorism_regulation_track.py",
+    "scripts/gen_juveniles_law_track.py",
+    "scripts/gen_juveniles_regulation_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/run_corpus_retrieval_eval.py",

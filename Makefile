@@ -171,6 +171,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         gcc-ownership-law-track-validate \
         terrorism-law-track-validate \
         terrorism-regulation-track-validate \
+        juveniles-law-track-validate \
+        juveniles-regulation-track-validate \
         qa-gate
 
 help:
@@ -1108,6 +1110,12 @@ terrorism-law-track-validate:
 
 terrorism-regulation-track-validate:
 	$(PY) scripts/validate_terrorism_regulation_track.py
+
+juveniles-law-track-validate:
+	$(PY) scripts/validate_juveniles_law_track.py
+
+juveniles-regulation-track-validate:
+	$(PY) scripts/validate_juveniles_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
