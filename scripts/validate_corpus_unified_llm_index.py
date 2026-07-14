@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 6499
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23}
+EXPECTED_TOTAL = 6519
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23, "bankruptcy_fees": 20}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -132,6 +132,8 @@ SANITY = [
     ("للأمين الأجنبي خلال المدة من تقديم طلب الاعتراف بإجراء الإفلاس الأجنبي إلى حين البت فيه أن يتقدم إلى المحكمة بطلب مساعدة قضائية عند الاقتضاء لحماية أصول المدين", "iflas_hudud", 10),
     ("مع مراعاة المتطلبات النظامية التي من شأنها إضفاء الموثوقية والسلامة في البيانات تدون الوثائق القضائية الكترونيا ويكون لها حكم المحررات المكتوبة", "judicial_documents", 5),
     ("لا يجوز تعديل الضبط بعد اعتماده فإن رأت الدائرة حاجة لذلك فيكون في محضر لاحق يذكر فيه ما يراد إضافته أو تعديله", "judicial_documents", 10),
+    ("تهدف هذه القواعد إلى حوكمة تقدير أتعاب الأمناء والخبراء وتعزيز الثقة والشفافية في إجراءات الإفلاس", "bankruptcy_fees", 2),
+    ("تغطي أتعاب الأمين المعين في إجراء الإفلاس جميع الأعمال المنصوص عليها في النظام واللوائح والقواعد ذات الصلة بأداء المهمة", "bankruptcy_fees", 4),
 ]
 
 
@@ -239,6 +241,7 @@ def main():
         "data/muslaha_arabic_legal_llm/muslaha_regulation_legal_llm_001_029.json",
         "data/iflas_hudud_arabic_legal_llm/iflas_hudud_regulation_legal_llm_001_023.json",
         "data/judicial_documents_arabic_legal_llm/judicial_documents_regulation_legal_llm_001_023.json",
+        "data/bankruptcy_fees_arabic_legal_llm/bankruptcy_fees_regulation_legal_llm_001_020.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -272,7 +275,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23 + bankruptcy_fees 20; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 

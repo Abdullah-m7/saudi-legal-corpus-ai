@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 178,
-  "top1_hits": 157,
-  "top3_hits": 173,
-  "top5_hits": 176,
-  "top1_accuracy": 0.882,
-  "top3_accuracy": 0.9719,
-  "top5_accuracy": 0.9888,
-  "mrr_at_5": 0.9262,
+  "total_queries": 180,
+  "top1_hits": 159,
+  "top3_hits": 175,
+  "top5_hits": 178,
+  "top1_accuracy": 0.8833,
+  "top3_accuracy": 0.9722,
+  "top5_accuracy": 0.9889,
+  "mrr_at_5": 0.927,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -1717,9 +1717,9 @@
      "score": 14
     },
     {
-     "record_id": "oa-llm-companies-art-279",
-     "article_number": 279,
-     "score": 10
+     "record_id": "bankruptcy-fees-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 11
     }
    ]
   },
@@ -2363,14 +2363,14 @@
      "score": 18
     },
     {
+     "record_id": "bankruptcy-fees-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 13
+    },
+    {
      "record_id": "sharia-procedure-regulation-llm-prov-269",
      "article_number": 269,
      "score": 12
-    },
-    {
-     "record_id": "judiciary-law-llm-art-018",
-     "article_number": 18,
-     "score": 11
     }
    ]
   },
@@ -3355,13 +3355,13 @@
      "score": 24
     },
     {
-     "record_id": "bankruptcy-regulation-llm-art-078",
-     "article_number": 78,
-     "score": 22
+     "record_id": "bankruptcy-fees-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 23
     },
     {
-     "record_id": "bankruptcy-law-llm-art-183",
-     "article_number": 183,
+     "record_id": "bankruptcy-regulation-llm-art-078",
+     "article_number": 78,
      "score": 22
     }
    ]
@@ -3515,9 +3515,9 @@
      "score": 28
     },
     {
-     "record_id": "bankruptcy-law-llm-art-205",
-     "article_number": 205,
-     "score": 23
+     "record_id": "bankruptcy-fees-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 26
     }
    ]
   },
@@ -5437,9 +5437,9 @@
      "score": 32
     },
     {
-     "record_id": "iflas-hudud-regulation-llm-art-020",
-     "article_number": 20,
-     "score": 23
+     "record_id": "bankruptcy-fees-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 25
     }
    ]
   },
@@ -5533,6 +5533,68 @@
      "record_id": "judicial-documents-regulation-llm-art-011",
      "article_number": 11,
      "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "atb-001",
+   "query_ar": "تهدف هذه القواعد إلى حوكمة تقدير أتعاب الأمناء والخبراء وتعزيز الثقة والشفافية في إجراءات الإفلاس",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy_fees",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-fees-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 48
+    },
+    {
+     "record_id": "bankruptcy-fees-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 28
+    },
+    {
+     "record_id": "bankruptcy-case-rules-llm-art-002",
+     "article_number": 2,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "atb-002",
+   "query_ar": "تغطي أتعاب الأمين المعين في إجراء الإفلاس جميع الأعمال المنصوص عليها في النظام واللوائح والقواعد ذات الصلة بأداء المهمة",
+   "category": "topical",
+   "gold": {
+    "corpus": "bankruptcy_fees",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "bankruptcy-fees-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 49
+    },
+    {
+     "record_id": "bankruptcy-fees-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 37
+    },
+    {
+     "record_id": "bankruptcy-fees-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 28
     }
    ]
   }
