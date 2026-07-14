@@ -166,6 +166,8 @@ LAYERS = [
      "sulook", "regulation"),
     ("data/aawan_arabic_legal_llm/aawan_regulation_legal_llm_001_035.json",
      "aawan", "regulation"),
+    ("data/muslaha_arabic_legal_llm/muslaha_regulation_legal_llm_001_029.json",
+     "muslaha", "regulation"),
 ]
 
 
