@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 170,
-  "top1_hits": 149,
-  "top3_hits": 165,
-  "top5_hits": 168,
-  "top1_accuracy": 0.8765,
-  "top3_accuracy": 0.9706,
-  "top5_accuracy": 0.9882,
-  "mrr_at_5": 0.9227,
+  "total_queries": 172,
+  "top1_hits": 151,
+  "top3_hits": 167,
+  "top5_hits": 170,
+  "top1_accuracy": 0.8779,
+  "top3_accuracy": 0.9709,
+  "top5_accuracy": 0.9884,
+  "mrr_at_5": 0.9236,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -5285,6 +5285,68 @@
      "record_id": "oa-llm-companies-art-071",
      "article_number": 71,
      "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "awn-001",
+   "query_ar": "يقصد بأعوان القضاء من يعين الدائرة في عملها المنصوص عليه نظاما",
+   "category": "definitional",
+   "gold": {
+    "corpus": "aawan",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "aawan-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 40
+    },
+    {
+     "record_id": "aawan-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 18
+    },
+    {
+     "record_id": "aawan-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "awn-002",
+   "query_ar": "تسلم صحائف الدعاوى والطلبات وكافة الأوراق المطلوب إعلانها من المختص وقيدها في السجل الخاص بذلك ويجب أن يشمل السجل اسم الجهة المعلنة",
+   "category": "topical",
+   "gold": {
+    "corpus": "aawan",
+    "law_component": "regulation",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "aawan-regulation-llm-art-014",
+     "article_number": 14,
+     "score": 33
+    },
+    {
+     "record_id": "commercial-papers-law-llm-art-054",
+     "article_number": 54,
+     "score": 19
+    },
+    {
+     "record_id": "inv-reg-llm-art-009",
+     "article_number": 9,
+     "score": 16
     }
    ]
   }
