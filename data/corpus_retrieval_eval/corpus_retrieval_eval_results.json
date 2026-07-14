@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 172,
-  "top1_hits": 151,
-  "top3_hits": 167,
-  "top5_hits": 170,
-  "top1_accuracy": 0.8779,
-  "top3_accuracy": 0.9709,
-  "top5_accuracy": 0.9884,
-  "mrr_at_5": 0.9236,
+  "total_queries": 174,
+  "top1_hits": 153,
+  "top3_hits": 169,
+  "top5_hits": 172,
+  "top1_accuracy": 0.8793,
+  "top3_accuracy": 0.9713,
+  "top5_accuracy": 0.9885,
+  "mrr_at_5": 0.9245,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2678,9 +2678,9 @@
      "score": 18
     },
     {
-     "record_id": "pdpl-reg-llm-art-004",
-     "article_number": 4,
-     "score": 17
+     "record_id": "muslaha-regulation-llm-muslaha_annex_ahwal_shakhsiyyah",
+     "article_number": 28,
+     "score": 18
     }
    ]
   },
@@ -5347,6 +5347,68 @@
      "record_id": "inv-reg-llm-art-009",
      "article_number": 9,
      "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "msl-001",
+   "query_ar": "يشترط لتسجيل المصلح الشروط الآتية أن يكون كامل الأهلية أن يكون حسن السيرة والسلوك غير محكوم عليه بحكم مخل بالأمانة والشرف",
+   "category": "definitional",
+   "gold": {
+    "corpus": "muslaha",
+    "law_component": "regulation",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "muslaha-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 31
+    },
+    {
+     "record_id": "arbitration-law-llm-art-014",
+     "article_number": 14,
+     "score": 28
+    },
+    {
+     "record_id": "personal-status-law-llm-art-140",
+     "article_number": 140,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "msl-002",
+   "query_ar": "دعوى مالية بعشرين ألف ريال فما دون الحد الأعلى لموعد الجلسة الأولى من حين قيد الطلب واحد وعشرون يوما",
+   "category": "topical",
+   "gold": {
+    "corpus": "muslaha",
+    "law_component": "regulation",
+    "article_number": 27
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "muslaha-regulation-llm-muslaha_annex_aammah",
+     "article_number": 27,
+     "score": 37
+    },
+    {
+     "record_id": "muslaha-regulation-llm-muslaha_annex_ahwal_shakhsiyyah",
+     "article_number": 28,
+     "score": 31
+    },
+    {
+     "record_id": "muslaha-regulation-llm-muslaha_annex_jazai",
+     "article_number": 29,
+     "score": 31
     }
    ]
   }
