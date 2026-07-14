@@ -4,17 +4,19 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 184,
+  "total_queries": 186,
   "top1_hits": 163,
   "top3_hits": 179,
   "top5_hits": 182,
-  "top1_accuracy": 0.8859,
-  "top3_accuracy": 0.9728,
-  "top5_accuracy": 0.9891,
-  "mrr_at_5": 0.9286,
+  "top1_accuracy": 0.8763,
+  "top3_accuracy": 0.9624,
+  "top5_accuracy": 0.9785,
+  "mrr_at_5": 0.9186,
   "misses_top5": [
    "civ-004",
-   "pdp-010"
+   "pdp-010",
+   "dmz-001",
+   "dmz-003"
   ]
  },
  "per_query": [
@@ -2786,11 +2788,16 @@
     "law_component": "law",
     "article_number": 49
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-001",
+     "article_number": 1,
+     "score": 22
+    },
     {
      "record_id": "judiciary-law-llm-art-049",
      "article_number": 49,
@@ -2800,11 +2807,6 @@
      "record_id": "judiciary-law-llm-art-060",
      "article_number": 60,
      "score": 21
-    },
-    {
-     "record_id": "judiciary-law-llm-art-007",
-     "article_number": 7,
-     "score": 20
     }
    ]
   },
@@ -2879,25 +2881,25 @@
     "law_component": "law",
     "article_number": 8
    },
-   "gold_rank": 1,
-   "hit_top1": true,
-   "hit_top3": true,
-   "hit_top5": true,
+   "gold_rank": null,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": false,
    "top_hits": [
     {
-     "record_id": "board-of-grievances-law-llm-art-008",
-     "article_number": 8,
-     "score": 26
+     "record_id": "judiciary-bog-mechanism-llm-art-010",
+     "article_number": 10,
+     "score": 39
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-005",
-     "article_number": 5,
-     "score": 26
+     "record_id": "judiciary-bog-mechanism-llm-art-011",
+     "article_number": 11,
+     "score": 31
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-014",
-     "article_number": 14,
-     "score": 24
+     "record_id": "judiciary-bog-mechanism-llm-art-013",
+     "article_number": 13,
+     "score": 31
     }
    ]
   },
@@ -2921,14 +2923,14 @@
      "score": 45
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-001",
-     "article_number": 1,
-     "score": 21
+     "record_id": "judiciary-bog-mechanism-llm-art-010",
+     "article_number": 10,
+     "score": 23
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-002",
-     "article_number": 2,
-     "score": 20
+     "record_id": "judiciary-bog-mechanism-llm-art-011",
+     "article_number": 11,
+     "score": 22
     }
    ]
   },
@@ -2941,25 +2943,25 @@
     "law_component": "law",
     "article_number": 4
    },
-   "gold_rank": 2,
+   "gold_rank": null,
    "hit_top1": false,
-   "hit_top3": true,
-   "hit_top5": true,
+   "hit_top3": false,
+   "hit_top5": false,
    "top_hits": [
     {
-     "record_id": "board-of-grievances-law-llm-art-005",
-     "article_number": 5,
-     "score": 30
+     "record_id": "judiciary-bog-mechanism-llm-art-010",
+     "article_number": 10,
+     "score": 44
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-004",
-     "article_number": 4,
-     "score": 29
+     "record_id": "judiciary-bog-mechanism-llm-art-013",
+     "article_number": 13,
+     "score": 33
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-006",
-     "article_number": 6,
-     "score": 27
+     "record_id": "judiciary-bog-mechanism-llm-art-014",
+     "article_number": 14,
+     "score": 33
     }
    ]
   },
@@ -4347,14 +4349,14 @@
      "score": 39
     },
     {
-     "record_id": "labor-annex2-llm-table-8",
-     "article_number": 8,
-     "score": 20
+     "record_id": "judiciary-bog-mechanism-llm-art-001",
+     "article_number": 1,
+     "score": 25
     },
     {
-     "record_id": "judiciary-law-llm-art-080",
-     "article_number": 80,
-     "score": 18
+     "record_id": "judiciary-bog-mechanism-llm-art-009",
+     "article_number": 9,
+     "score": 23
     }
    ]
   },
@@ -5313,9 +5315,9 @@
      "score": 18
     },
     {
-     "record_id": "aawan-regulation-llm-art-009",
+     "record_id": "judiciary-bog-mechanism-llm-art-009",
      "article_number": 9,
-     "score": 13
+     "score": 15
     }
    ]
   },
@@ -5719,6 +5721,68 @@
      "record_id": "oa-llm-companies-art-019",
      "article_number": 19,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "jbm-001",
+   "query_ar": "تنقل إلى القضاء العام بعد تعديل نظام المرافعات الشرعية ونظام الإجراءات الجزائية اختصاصات اللجان شبه القضائية التي تنظر في قضايا جزائية أو منازعات تجارية أو مدنية",
+   "category": "topical",
+   "gold": {
+    "corpus": "judiciary_bog",
+    "law_component": "mechanism",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-009",
+     "article_number": 9,
+     "score": 65
+    },
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-006",
+     "article_number": 6,
+     "score": 35
+    },
+    {
+     "record_id": "criminal-procedure-law-llm-art-218",
+     "article_number": 218,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "jbm-002",
+   "query_ar": "لا تتجاوز الفترة الانتقالية التي يحددها المجلس الأعلى للقضاء ومجلس القضاء الإداري بحسب الأحوال مدة ثلاث سنوات من تاريخ تعديل نظام المرافعات الشرعية وتعديل نظام الإجراءات الجزائية",
+   "category": "topical",
+   "gold": {
+    "corpus": "judiciary_bog",
+    "law_component": "mechanism",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-015",
+     "article_number": 15,
+     "score": 55
+    },
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-006",
+     "article_number": 6,
+     "score": 42
+    },
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-005",
+     "article_number": 5,
+     "score": 40
     }
    ]
   }

@@ -184,6 +184,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         bankruptcy-fees-regulation-track-validate \
         enforcement-providers-regulation-track-validate \
         alimony-fund-regulation-track-validate \
+        judiciary-bog-mechanism-track-validate \
         qa-gate
 
 help:
@@ -1160,6 +1161,9 @@ enforcement-providers-regulation-track-validate:
 
 alimony-fund-regulation-track-validate:
 	$(PY) scripts/validate_alimony_fund_regulation_track.py
+
+judiciary-bog-mechanism-track-validate:
+	$(PY) scripts/validate_judiciary_bog_mechanism_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
