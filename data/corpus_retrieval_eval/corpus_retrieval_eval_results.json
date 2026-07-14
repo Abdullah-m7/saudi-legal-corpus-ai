@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 166,
-  "top1_hits": 145,
-  "top3_hits": 161,
-  "top5_hits": 164,
-  "top1_accuracy": 0.8735,
-  "top3_accuracy": 0.9699,
-  "top5_accuracy": 0.988,
-  "mrr_at_5": 0.9209,
+  "total_queries": 168,
+  "top1_hits": 147,
+  "top3_hits": 163,
+  "top5_hits": 166,
+  "top1_accuracy": 0.875,
+  "top3_accuracy": 0.9702,
+  "top5_accuracy": 0.9881,
+  "mrr_at_5": 0.9218,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2735,14 +2735,14 @@
      "score": 25
     },
     {
-     "record_id": "enforcement-regulation-llm-prov-190",
-     "article_number": 190,
-     "score": 11
+     "record_id": "qismah-regulation-llm-art-014",
+     "article_number": 14,
+     "score": 13
     },
     {
-     "record_id": "enforcement-regulation-llm-prov-191",
-     "article_number": 191,
-     "score": 11
+     "record_id": "qismah-regulation-llm-art-019",
+     "article_number": 19,
+     "score": 12
     }
    ]
   },
@@ -4693,9 +4693,9 @@
      "score": 20
     },
     {
-     "record_id": "oa-llm-companies-art-256",
-     "article_number": 256,
-     "score": 16
+     "record_id": "qismah-regulation-llm-art-028",
+     "article_number": 28,
+     "score": 18
     }
    ]
   },
@@ -5161,6 +5161,68 @@
      "record_id": "judicial-inspection-regulation-llm-art-013",
      "article_number": 13,
      "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "qsm-001",
+   "query_ar": "يراعى في قسمة المال المشترك المتضمن لنصيب قاصر أو غائب أو مفقود أو وقف أو وصية في جميع مراحل القسمة أو التصفية الأحكام الخاصة",
+   "category": "topical",
+   "gold": {
+    "corpus": "qismah",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "qismah-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 48
+    },
+    {
+     "record_id": "qismah-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 25
+    },
+    {
+     "record_id": "qismah-regulation-llm-art-040",
+     "article_number": 40,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "qsm-002",
+   "query_ar": "على الدائرة أن تتخذ عند الاقتضاء جميع ما يجب بصفة مستعجلة للمحافظة على الأموال المشتركة وحراستها ولها أن تعهد إلى الهيئة العامة للولاية على أموال القاصرين",
+   "category": "topical",
+   "gold": {
+    "corpus": "qismah",
+    "law_component": "regulation",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "qismah-regulation-llm-art-020",
+     "article_number": 20,
+     "score": 57
+    },
+    {
+     "record_id": "qismah-regulation-llm-art-015",
+     "article_number": 15,
+     "score": 26
+    },
+    {
+     "record_id": "qismah-regulation-llm-art-021",
+     "article_number": 21,
+     "score": 26
     }
    ]
   }
