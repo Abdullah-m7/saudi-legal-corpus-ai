@@ -113,6 +113,8 @@ REQUIRED_TRACK_IDS = [
     "gcc_ownership_law",
     "terrorism_law",
     "terrorism_implementing_regulation",
+    "juveniles_law",
+    "juveniles_implementing_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -155,9 +157,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 64 tracks
+    # [3] 66 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 64 tracks present...", len(track_ids) == 64 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 66 tracks present...", len(track_ids) == 66 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -672,8 +674,26 @@ def main() -> int:
     check("    terrorism_implementing_regulation: status breakdown 18/7/1/2...",
           terrreg_counts.get("legal_status_breakdown") == {"اصلية": 18, "معدلة": 7, "ملغاة": 1, "مضافة": 2},
           f"breakdown={terrreg_counts.get('legal_status_breakdown')}")
+    jl = tracks_by_id.get("juveniles_law", {})
+    jl_counts = jl.get("record_counts", {})
+    check("[7g51] juveniles_law: 24 Arabic articles...",
+          jl_counts.get("arabic_articles") == 24
+          and jl.get("official_text_status") == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+          f"counts={jl_counts}")
+    check("    juveniles_law: status breakdown 24/0/0/0...",
+          jl_counts.get("legal_status_breakdown") == {"اصلية": 24, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={jl_counts.get('legal_status_breakdown')}")
+    jr = tracks_by_id.get("juveniles_implementing_regulation", {})
+    jr_counts = jr.get("record_counts", {})
+    check("[7g52] juveniles_implementing_regulation: 13 Arabic articles...",
+          jr_counts.get("arabic_articles") == 13
+          and jr.get("official_text_status") == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF",
+          f"counts={jr_counts}")
+    check("    juveniles_implementing_regulation: status breakdown 13/0/0/0...",
+          jr_counts.get("legal_status_breakdown") == {"اصلية": 13, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={jr_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 6152 records...", uix.get("total_records") == 6152,
+    check("[7g] unified retrieval index: 6189 records...", uix.get("total_records") == 6189,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -735,8 +755,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 6321...",
-          registry.get("total_primary_arabic_governing_records") == 6321,
+    check("[19a] total_primary_arabic_governing_records == 6358...",
+          registry.get("total_primary_arabic_governing_records") == 6358,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -751,8 +771,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 7216...",
-          registry.get("total_registry_counted_records") == 7216,
+    check("[19e] total_registry_counted_records == 7253...",
+          registry.get("total_registry_counted_records") == 7253,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -776,7 +796,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"6321 + 614 + 281 = 7216")
+          f"6358 + 614 + 281 = 7253")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -794,7 +814,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 64 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 66 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -808,7 +828,7 @@ def print_results() -> None:
               "sharia_procedure_implementing_regulation, criminal_procedure_law, "
               "criminal_procedure_implementing_regulation, enforcement_law, "
               "enforcement_implementing_regulation, judiciary_law, board_of_grievances_law). "
-              "Primary Arabic 6321, reference 614, registry-counted 7216. All counts correct, all referenced paths "
+              "Primary Arabic 6358, reference 614, registry-counted 7253. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -837,7 +857,7 @@ def print_results() -> None:
               "(40 records: 37 اصلية / 3 معدلة, in-force M/91 1443H superseding the repealed M/6 1423H, MOJ portal cross-checked against the official MOJ PDF) and its implementing regulation "
               "(51 records: all اصلية, in-force 27/1/1444H superseding the repealed 1425H regulation; 5 long/table articles adjudicated visually verbatim, art 42 keeping official English spec tokens), and the Registered Real Estate Mortgage Law "
               "(46 records: all اصلية, fresh M/49 1433H; 2 long articles adjudicated visually verbatim). "
-              "Unified retrieval index (6152) projects counted records. Read-only.")
+              "Unified retrieval index (6189) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)
