@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 66
+        assert registry["total_tracks"] == 68
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 6358
+        assert registry["total_primary_arabic_governing_records"] == 6463
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 7253
+        assert registry["total_registry_counted_records"] == 7358
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -135,6 +135,8 @@ class TestTracks:
         assert "terrorism_implementing_regulation" in ids
         assert "juveniles_law" in ids
         assert "juveniles_implementing_regulation" in ids
+        assert "whistleblower_law" in ids
+        assert "judicial_inspection_regulation" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -432,6 +434,18 @@ class TestTracks:
         t = next(x for x in registry["tracks"] if x["track_id"] == "juveniles_implementing_regulation")
         assert t["record_counts"]["arabic_articles"] == 13
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 13, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_whistleblower_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "whistleblower_law")
+        assert t["record_counts"]["arabic_articles"] == 37
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 37, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_judicial_inspection_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "judicial_inspection_regulation")
+        assert t["record_counts"]["arabic_articles"] == 68
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 68, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
 
     def test_evidence_companions_counts(self, registry):
