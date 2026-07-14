@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 158,
-  "top1_hits": 137,
-  "top3_hits": 153,
-  "top5_hits": 156,
-  "top1_accuracy": 0.8671,
-  "top3_accuracy": 0.9684,
-  "top5_accuracy": 0.9873,
-  "mrr_at_5": 0.9169,
+  "total_queries": 159,
+  "top1_hits": 138,
+  "top3_hits": 154,
+  "top5_hits": 157,
+  "top1_accuracy": 0.8679,
+  "top3_accuracy": 0.9686,
+  "top5_accuracy": 0.9874,
+  "mrr_at_5": 0.9174,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -2425,13 +2425,13 @@
      "score": 13
     },
     {
-     "record_id": "criminal-procedure-regulation-llm-art-080",
-     "article_number": 80,
-     "score": 11
+     "record_id": "terrorism-reg-llm-art-012",
+     "article_number": 12,
+     "score": 13
     },
     {
-     "record_id": "criminal-procedure-law-llm-art-109",
-     "article_number": 109,
+     "record_id": "criminal-procedure-regulation-llm-art-080",
+     "article_number": 80,
      "score": 11
     }
    ]
@@ -4913,6 +4913,37 @@
      "record_id": "oa-llm-companies-art-261",
      "article_number": 261,
      "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "irr-001",
+   "query_ar": "لأغراض تطبيق المادة الخامسة من النظام عند القبض على المشتبه بارتكابه إحدى الجرائم المنصوص عليها في النظام يتم إشعار النيابة العامة فور القبض عليه وبشكل مباشر",
+   "category": "topical",
+   "gold": {
+    "corpus": "terrorism",
+    "law_component": "implementing_regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "terrorism-reg-llm-art-005",
+     "article_number": 5,
+     "score": 50
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-021",
+     "article_number": 21,
+     "score": 31
+    },
+    {
+     "record_id": "terrorism-reg-llm-art-021",
+     "article_number": 21,
+     "score": 30
     }
    ]
   }
