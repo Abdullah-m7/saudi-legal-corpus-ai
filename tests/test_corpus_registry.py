@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 73
+        assert registry["total_tracks"] == 74
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 6645
+        assert registry["total_primary_arabic_governing_records"] == 6668
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 7540
+        assert registry["total_registry_counted_records"] == 7563
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -142,6 +142,7 @@ class TestTracks:
         assert "aawan_regulation" in ids
         assert "muslaha_regulation" in ids
         assert "iflas_hudud_regulation" in ids
+        assert "judicial_documents_regulation" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -479,6 +480,12 @@ class TestTracks:
 
     def test_iflas_hudud_regulation_counts(self, registry):
         t = next(x for x in registry["tracks"] if x["track_id"] == "iflas_hudud_regulation")
+        assert t["record_counts"]["arabic_articles"] == 23
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
+
+    def test_judicial_documents_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "judicial_documents_regulation")
         assert t["record_counts"]["arabic_articles"] == 23
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF"
