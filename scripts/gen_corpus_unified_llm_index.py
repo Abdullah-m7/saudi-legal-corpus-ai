@@ -176,6 +176,8 @@ LAYERS = [
      "bankruptcy_fees", "regulation"),
     ("data/enforcement_providers_arabic_legal_llm/enforcement_providers_regulation_legal_llm_001_018.json",
      "enforcement_providers", "regulation"),
+    ("data/alimony_fund_arabic_legal_llm/alimony_fund_regulation_legal_llm_001_017.json",
+     "alimony_fund", "regulation"),
 ]
 
 

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 182,
-  "top1_hits": 161,
-  "top3_hits": 177,
-  "top5_hits": 180,
-  "top1_accuracy": 0.8846,
-  "top3_accuracy": 0.9725,
-  "top5_accuracy": 0.989,
-  "mrr_at_5": 0.9278,
+  "total_queries": 184,
+  "top1_hits": 163,
+  "top3_hits": 179,
+  "top5_hits": 182,
+  "top1_accuracy": 0.8859,
+  "top3_accuracy": 0.9728,
+  "top5_accuracy": 0.9891,
+  "mrr_at_5": 0.9286,
   "misses_top5": [
    "civ-004",
    "pdp-010"
@@ -5657,6 +5657,68 @@
      "record_id": "enforcement-providers-regulation-llm-art-004",
      "article_number": 4,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "nfq-001",
+   "query_ar": "يهدف الصندوق إلى ضمان صرف النفقة للمستفيدين دون تأخير وذلك وفقا للأحكام الواردة في التنظيم",
+   "category": "topical",
+   "gold": {
+    "corpus": "alimony_fund",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "alimony-fund-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 44
+    },
+    {
+     "record_id": "alimony-fund-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 28
+    },
+    {
+     "record_id": "alimony-fund-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "nfq-002",
+   "query_ar": "تودع جميع أموال الصندوق في حسابات خاصة لدى مؤسسة النقد العربي السعودي ويصرف منها وفقا للقواعد والإجراءات التي يحددها المجلس",
+   "category": "topical",
+   "gold": {
+    "corpus": "alimony_fund",
+    "law_component": "regulation",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "alimony-fund-regulation-llm-art-013",
+     "article_number": 13,
+     "score": 44
+    },
+    {
+     "record_id": "oa-llm-companies-art-256",
+     "article_number": 256,
+     "score": 17
+    },
+    {
+     "record_id": "oa-llm-companies-art-019",
+     "article_number": 19,
+     "score": 15
     }
    ]
   }
