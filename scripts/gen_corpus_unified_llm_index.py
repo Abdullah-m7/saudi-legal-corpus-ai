@@ -148,6 +148,8 @@ LAYERS = [
      "municipal_realestate", "implementing_regulation"),
     ("data/gcc_ownership_arabic_legal_llm/gcc_ownership_law_legal_llm_001_006.json",
      "gcc_ownership", "law"),
+    ("data/terrorism_arabic_legal_llm/terrorism_law_legal_llm_001_099.json",
+     "terrorism", "law"),
 ]
 
 
