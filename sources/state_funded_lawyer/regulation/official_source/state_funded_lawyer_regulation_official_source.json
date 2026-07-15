@@ -1,0 +1,229 @@
+{
+  "document": "آلية الاستعانة بمحام على نفقة الدولة للمتهم في الجرائم الكبيرة",
+  "document_en": "Mechanism for a Defendant in Major/Serious Crimes to Seek Legal Counsel at the State's Expense",
+  "decree": "قرار وزير العدل رقم (1529)",
+  "decree_date_hijri": "06/05/1439",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "وزير العدل",
+  "issuing_authority_en": "Minister of Justice",
+  "provenance": {
+    "api_source": "MOJ legal portal (laws-gateway.moj.gov.sa/apis/legislations/v1) — statute detail + section changes",
+    "api_serial": "GE-StIXcjF_Wfc2MFGx8ww",
+    "statute_id": "MylPJFcFKGmwPp-wwS196g",
+    "pdf_source_committed": "inputs/state_funded_lawyer_official_pdfs/state_funded_lawyer_regulation_moj_official_ar.pdf",
+    "pdf_sha256": "98edb2f88749a3d60232bdec16a366ab0a46cdff065ed0c77ee1ae35a107faa7",
+    "pdf_pages": 2,
+    "capture_method": "All 11 items (statuteStructure leaf 'items', type=1, Arabic ordinal-word sequence labels أولاً–حادي عشر, not مادة-numbered) fetched from the MOJ legal portal database via statute/get-Statute-gateway-Detail (Serial=GE-StIXcjF_Wfc2MFGx8ww) and cross-verified item-by-item against section/get-Section-Changes (0 text divergences between the two endpoints for all 11 items; each item's get-Section-Changes history array contains exactly 1 version with legalStatusName=اصلية, decree=null, decreeDate=null — a fresh, single-status, never-amended issuance) and against the official MOJ PDF (2 pages, downloaded via document/download using the pdfCopy.documentId token). Portal HTML fragments (<p>/<br>/&nbsp;) were converted to plain text (one line per paragraph/break, tags stripped, &nbsp; collapsed to space) with no character content altered. Automated scoring: both sides NFKC-normalized + Farsi-yeh/kaf/heh folded + diacritics/tatweel stripped + hamza/alef-forms and taa-marbuta folded + digits folded, then difflib SequenceMatcher sliding-window best-match ratio computed against the full PDF text across three independent extraction channels — (a) plain PyMuPDF text-layer, (b) a per-line word-reversed variant of the same text-layer (the PDF exhibits the known RTL word-order glyph-extraction artifact seen elsewhere in this corpus, so channel (a) alone scores low: mean ~0.40), and (c) 300dpi tesseract-ara OCR — taking pdf_similarity = max across all three channels. 6 of 11 items (1, 4, 6, 8, 10, 11) matched the >=0.90 floor outright (via the OCR or reversed-text-layer channel); the remaining 5 items (2, 3, 5, 7, 9) scored 0.8700-0.8867 (below floor, mostly due to short item length amplifying the effect of minor OCR list-numbering/digit artifacts — e.g. OCR misread the article cross-references 'المادة (٩٦)' [96] in item 3 as '(17)' — not genuine text divergences) and were therefore read directly off the rendered official PDF pages (200dpi, both pages, full page) as a direct visual cross-check; all matched the portal text verbatim, including the digits OCR had misread. All 11 items / both pages were visually read in full. Overall: mean 0.9216, min 0.8700.",
+    "section_vs_structure_divergences": 0,
+    "tatweel_removed_decorative": 0,
+    "otherRelatedLegal": [
+      {
+        "id": "JE3m2ESotnGGcFtu_geuHQ",
+        "serial": "PP5rr6HnHC8skiEH5baGkg",
+        "name": "نظام المحاماة ",
+        "type": 1,
+        "typeName": "نظام"
+      },
+      {
+        "id": "trMAgdtC7YeIqZmgbaQAKw",
+        "serial": "JmI0BPgVlA5GuIxkJUi08A",
+        "name": "قواعد السلوك المهني للمحامين",
+        "type": 0,
+        "typeName": "قواعد"
+      },
+      {
+        "id": "XXIrOC6Uho_rlRd-SlIZGA",
+        "serial": "W5tPRDglkBBvnFlIanOIhw",
+        "name": "قواعد الضبط ورفع الدعوى التأديبية ونظرها",
+        "type": 2,
+        "typeName": "لائحة"
+      },
+      {
+        "id": "OO_crn14vZdWlCGVmaXmUw",
+        "serial": "jshTIqy_QxzHAIUsstL8HQ",
+        "name": "اللائحة التنفيذية لتنظيم الترخيص لمكاتب المحاماة الأجنبية",
+        "type": 2,
+        "typeName": "لائحة"
+      },
+      {
+        "id": "G1gc8EqUw2K5WyroQHW9Hg",
+        "serial": "30RYRishoFCZjgSzDPI0ag",
+        "name": "قواعد الحدّ من تعارض المصالح لمن سبق له العمل في السلك القضائي -ومن في حكمه-عند مزاولة مهنة المحاماة",
+        "type": 0,
+        "typeName": "قواعد"
+      },
+      {
+        "id": "_X-8MnWxMdUmf4pYJ_RnyQ",
+        "serial": "5huwCrAuvCK62BbuXv7fjg",
+        "name": "اللائحة التنفيذية لنظام المحاماة 1446هـ",
+        "type": 2,
+        "typeName": "لائحة"
+      }
+    ],
+    "issuing_authority_note": "issuanceDepartmentTool field reads 'قرار وزير العدل رقم (1529)' (Minister of Justice Decision No. 1529), issuanceDate 1439-05-06H (6 Jumada al-Awwal 1439H), publishDate 1439-06-02H (2 Jumada al-Thani 1439H); legalStatueName 'ساري' (in force). Despite the document's own title containing the word 'آلية' (mechanism), the MOJ portal's own legalType/legalTypeId classification for this instrument is 'لائحة' (legalTypeId=2, regulation) — NOT 'آلية' — hence law_component='regulation' was used per project convention (use the portal's own classificationName/legalType, not the document's title word). classificationName='المحاماة' (Legal Practice), classificationId=4. otherRelatedLegal (6 entries, all captured from the API): نظام المحاماة (Legal Practice Law, نظام, serial PP5rr6HnHC8skiEH5baGkg), قواعد السلوك المهني للمحامين (قواعد), قواعد الضبط ورفع الدعوى التأديبية ونظرها (لائحة), اللائحة التنفيذية لتنظيم الترخيص لمكاتب المحاماة الأجنبية (لائحة), قواعد الحد من تعارض المصالح لمن سبق له العمل في السلك القضائي عند مزاولة مهنة المحاماة (قواعد), and اللائحة التنفيذية لنظام المحاماة 1446هـ (لائحة, serial 5huwCrAuvCK62BbuXv7fjg) — none of these is the Criminal Procedure Law/Regulation already in this corpus, so the substantive cross-reference to that instrument was NOT surfaced by otherRelatedLegal and was instead found directly in the article text: item 3 (ثالثاً) cites 'المادة (٩٦)' [Article 96] and item 8 (ثامناً) cites 'المادة (٩٧)' [Article 97] of 'اللائحة التنفيذية لنظام الإجراءات الجزائية' (the Executive Regulation of the Criminal Procedure Law) — already ingested in this corpus at sources/criminal_procedure/regulation/ as jza_reg_art_096 and jza_reg_art_097. jza_reg_art_097 §3 explicitly reads 'تُدفع أتعاب المحامين المندوبين على نفقة الدولة وفق آلية تضعها الوزارة لصرف استحقاقاتهم' — this state_funded_lawyer regulation IS that آلية. In turn, jza_reg_art_096 §1 traces back to 'المادة (التاسعة والثلاثين بعد المائة) من النظام' [Article 139] of نظام الإجراءات الجزائية (the Criminal Procedure Law itself, already ingested as sources/criminal_procedure/law/, article_key jza_law_art_139), which is the primary statutory basis authorizing a defendant in major/serious crimes to seek court-appointed counsel at state expense 'وفقاً لما تبينه اللائحة' (per what the Regulation specifies) — this state_funded_lawyer/regulation track is that 'اللائحة' chain's operative implementing mechanism. No law_key collision: a search of sources/ for 'state_funded_lawyer' / 'محام' returned no existing track under this law_key prior to this ingestion.",
+    "known_source_anomaly": "None found. All 11 items (both algorithmically-floored and visually-adjudicated) match verbatim between the portal database and the rendered official PDF, including internal cross-reference digits (e.g. item 3's 'المادة (٩٦)' and item 8's 'المادة (٩٧)' were independently visually confirmed against the rendered PDF page — the 300dpi tesseract-ara OCR channel had misread these digits, e.g. '96' as '17', but this was purely an OCR extraction artifact of this run, not a discrepancy between the two official sources, and no anomaly is recorded in the source text itself)."
+  },
+  "article_count": 11,
+  "status_counts": {
+    "اصلية": 11
+  },
+  "stats": {
+    "mean_similarity": 0.9216,
+    "min_similarity": 0.87,
+    "amended_articles": [],
+    "added_articles": [],
+    "visually_adjudicated": [
+      "state_funded_lawyer_art_002",
+      "state_funded_lawyer_art_003",
+      "state_funded_lawyer_art_005",
+      "state_funded_lawyer_art_007",
+      "state_funded_lawyer_art_009"
+    ]
+  },
+  "articles": {
+    "state_funded_lawyer_art_001": {
+      "number_label_ar": "أولاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تعد الإدارة العامة للمحاماة قوائم مقترحة للمحامين المرشحين للترافع عن المتهمين في الجرائم الكبيرة في كل منطقة ويتم تحديثها بشكل سنوي وتكون هذه القوائم معتمدة من قبل معالي وكيل الوزارة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 1.0,
+      "history": [],
+      "section_id": "vUne06l52RnhKCEgJjI18g"
+    },
+    "state_funded_lawyer_art_002": {
+      "number_label_ar": "ثانياً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تشكل في الوزارة لجنة لترشيح المحامين للترافع في هذه القضايا من ما يلي:\n١- مدير الإدارة العامة للمحاماة رئيساً\n٢- مستشار شرعي من وكالة الشؤون القضائية عضواً\n٣- مستشار نظامي من وكالة الأنظمة والتعاون الدولي عضواً\n٤- ممثل من الإدارة المالية عضواً\nوتسمي الإدارة العامة للمحاماة أحد العاملين فيها مقرراً لأعمال اللجنة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.87,
+      "history": [],
+      "section_id": "dAi4NlKIV59V3EeRxXrJ4w"
+    },
+    "state_funded_lawyer_art_003": {
+      "number_label_ar": "ثالثاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تتلقى اللجنة الطلب الوارد من المحكمة وفقاً للفقرة رقم (٥) من المادة (٩٦) من اللائحة التنفيذية لنظام الإجراءات الجزائية بطلب تسمية محام للترافع عن المتهم على أن يكون الطلب المرفوع من المحكمة قبل موعد الجلسة بوقت كاف، وعلى اللجنة البت في الطلب خلال مدة لا تتجاوز خمسة أيام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8765,
+      "history": [],
+      "section_id": "zBp0GEjgzVSQI0bzWE1qwg"
+    },
+    "state_funded_lawyer_art_004": {
+      "number_label_ar": "رابعاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ترشح اللجنة محامياً من القوائم المعدة من الإدارة العامة للمحاماة وتبلغه للمحامي وتبعثه للمحكمة خلال مدة لا تقل عن خمسة أيام قبل موعد الجلسة المحددة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9524,
+      "history": [],
+      "section_id": "EBhNXxZKXueHmAKyHuLQaA"
+    },
+    "state_funded_lawyer_art_005": {
+      "number_label_ar": "خامساً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "أن تتوافر في المحامي المندوب الشروط التالية:\nأ- أن يكون مقيداً في جدول المحامين الممارسين.\nب- عدم صدور عقوبة تأديبية بحقه.\nج- أن لا يرد عليه ملاحظات من المحكمة المختصة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8867,
+      "history": [],
+      "section_id": "mAn51N7E3SOiRmGqfF71MQ"
+    },
+    "state_funded_lawyer_art_006": {
+      "number_label_ar": "سادساً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تصدر اللجنة قرارها بندب المحامي المرشح وعدم قبول اعتذاره عن الاستمرار في القضية، وفي حال اعتذار المحامي عن القضية فعليه أن يتقدم بذلك كتابياً للجنة خلال مدة لا تقل عن عشرة أيام من موعد الجلسة موضحاً فيه سبب الاعتذار وعليه حضور الجلسات إلى أن تبت اللجنة في طلبه ، كما أن للوزارة حق إنهاء التعاقد إما بطلب من ناظر القضية أو بكتاب من المتهم مرفق فيه المبررات لذلك ، ويكون احتساب الأتعاب للمحامي وفق ما تم إنجازه طبقاً لأحكام الآلية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9413,
+      "history": [],
+      "section_id": "OMYMbcAtW9qAxCHWs-thWw"
+    },
+    "state_funded_lawyer_art_007": {
+      "number_label_ar": "سابعاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تحدد الأتعاب كحد أعلا يجوز النزول عنه بحسب القضية وطبيعتها وفقاً للآتي:\n١/ يكون مقدار ما يتقاضاه المحامي إذا كانت القضية ضد متهم واحد عن الجلسة خمسة آلاف ريال كحد أعلى ، وثلاثة آلاف ريال كحد أدنى على أن لا يتجاوز مجموع ذلك عن كافة الجلسات مائة ألف ريال كحد أعلى لمجموع الأتعاب وفقاً لطبيعة ونوع القضية.\n٢/ في حال تعدد المتهمين في القضية الواحدة فيتقاضى المحامي المندوب مبلغ خمسة آلاف ريال عن المتهم الأول كحد أعلى وثلاثة آلاف ريال كحد أدنى ، ومبلغ ألفي ريال عن كل متهم آخر في الجلسة الواحدة كحد أعلى وألف ريال كحد أدنى ، على أن لا يتجاوز مجموع ذلك في الجلسة الواحدة عن كل المتهمين خمسة عشر ألف ريال ، وأن لا يتجاوز جميع ما يتقاضاه عن جميع المتهمين في جلسات القضية عن مائة وخمسين ألف ريال ، كحد أعلى.\n٣/ إذا لم يتم فتح الجلسة لسبب عائد لغير المحامي فيستحق نصف المبلغ المحدد للجلسة.\n٤/ إذا كانت القضية خارج مدينة مقر مكتب المحامي فيصرف له مبلغ ألف ريال عن الجلسة الواحدة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8847,
+      "history": [],
+      "section_id": "9M_7REaaxDCYjveTiKh64A"
+    },
+    "state_funded_lawyer_art_008": {
+      "number_label_ar": "ثامناً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقدم المحامي للوزارة الشهادة المسلمة له من المحكمة بموجب الفقرة (١) من المادة (٩٧) من اللائحة التنفيذية لنظام الإجراءات الجزائية عن كل جلسة لصرف أتعابه ، وتصدر اللجنة المشار إليها قراراً بما يستحقه المحامي من أتعاب ، ويحال إلى الإدارة المختصة لاستكمال مسوغات الصرف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9545,
+      "history": [],
+      "section_id": "tzkFVbG8KjMdHypDTbcUuA"
+    },
+    "state_funded_lawyer_art_009": {
+      "number_label_ar": "تاسعاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "صرف الاستحقاق لا يسقط حق المتهم من تولي المحامي المندوب تقديم التماس إعادة النظر في الأحوال التي قررها النظام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8788,
+      "history": [],
+      "section_id": "xb9KapJMdH03Z90Kf2glBQ"
+    },
+    "state_funded_lawyer_art_010": {
+      "number_label_ar": "عاشراً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يتم تحرير عقد ما بين إدارة المحاماة والمحامي المندوب لتولي القضية وفق نموذج يعد وفق هذه الآلية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9263,
+      "history": [],
+      "section_id": "vOfEkLLOZ7mGP_tRgMrmsw"
+    },
+    "state_funded_lawyer_art_011": {
+      "number_label_ar": "حادي عشر",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا أخل الطرف الثاني في أداء واجباته فيعامل وفقاً لأحكام نظام المحاماة ولائحته التنفيذية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9659,
+      "history": [],
+      "section_id": "_xTkPuDK0TRAXjdYaElD9A"
+    }
+  }
+}
