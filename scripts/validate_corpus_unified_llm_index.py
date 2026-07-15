@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 6618
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23, "bankruptcy_fees": 20, "enforcement_providers": 18, "alimony_fund": 17, "judiciary_bog": 15, "documentation_settlement": 15, "mosalaha_center": 10, "medical_reports": 13, "marriage_non_saudi": 11}
+EXPECTED_TOTAL = 6629
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23, "bankruptcy_fees": 20, "enforcement_providers": 18, "alimony_fund": 17, "judiciary_bog": 15, "documentation_settlement": 15, "mosalaha_center": 10, "medical_reports": 13, "marriage_non_saudi": 11, "state_funded_lawyer": 11}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -143,6 +143,8 @@ SANITY = [
     ("يلزم -عند الاقتضاء، وقبل إصدار التقرير- الاطلاع على السجلات الطبية، والتقارير السابقة لدى أي منشأة صحية", "medical_reports", 3),
     ("تكون الموافقة على طلبات الزواج التي تقدم من غير الفئات الواردة في المادة الأولى بإذن من وزير الداخلية أو من يفوضه", "marriage_non_saudi", 2),
     ("السعودي الذي يرغب الزواج من غير سعودية أو السعودية التي ترغب الزواج من غير سعودي يشترط ألا يكون غير السعودي أو غير السعودية من غير المرغوب فيهم", "marriage_non_saudi", 6),
+    ("تعد الإدارة العامة للمحاماة قوائم مقترحة للمحامين المرشحين للترافع عن المتهمين في الجرائم الكبيرة في كل منطقة ويتم تحديثها بشكل سنوي", "state_funded_lawyer", 1),
+    ("إذا أخل الطرف الثاني في أداء واجباته فيعامل وفقاً لأحكام نظام المحاماة ولائحته التنفيذية", "state_funded_lawyer", 11),
 ]
 
 
@@ -258,6 +260,7 @@ def main():
         "data/mosalaha_center_arabic_legal_llm/mosalaha_center_regulation_legal_llm_001_010.json",
         "data/medical_reports_arabic_legal_llm/medical_reports_regulation_legal_llm_001_013.json",
         "data/marriage_non_saudi_arabic_legal_llm/marriage_non_saudi_regulation_legal_llm_001_011.json",
+        "data/state_funded_lawyer_arabic_legal_llm/state_funded_lawyer_regulation_legal_llm_001_011.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -291,7 +294,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23 + bankruptcy_fees 20 + enforcement_providers 18 + alimony_fund 17 + judiciary_bog 15 + documentation_settlement 15 + mosalaha_center 10 + medical_reports 13 + marriage_non_saudi 11; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23 + bankruptcy_fees 20 + enforcement_providers 18 + alimony_fund 17 + judiciary_bog 15 + documentation_settlement 15 + mosalaha_center 10 + medical_reports 13 + marriage_non_saudi 11 + state_funded_lawyer 11; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
