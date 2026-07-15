@@ -182,6 +182,8 @@ LAYERS = [
      "judiciary_bog", "mechanism"),
     ("data/documentation_settlement_arabic_legal_llm/documentation_settlement_regulation_legal_llm_001_015.json",
      "documentation_settlement", "regulation"),
+    ("data/mosalaha_center_arabic_legal_llm/mosalaha_center_regulation_legal_llm_001_010.json",
+     "mosalaha_center", "regulation"),
 ]
 
 

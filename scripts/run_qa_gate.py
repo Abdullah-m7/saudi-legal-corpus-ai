@@ -120,6 +120,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_alimony_fund_regulation_track.py",
     "scripts/gen_judiciary_bog_mechanism_track.py",
     "scripts/gen_documentation_settlement_regulation_track.py",
+    "scripts/gen_mosalaha_center_regulation_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/run_corpus_retrieval_eval.py",

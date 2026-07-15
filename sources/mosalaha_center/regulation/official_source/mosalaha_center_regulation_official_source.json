@@ -1,0 +1,175 @@
+{
+  "document": "تنظيم مركز المصالحة",
+  "document_en": "Regulation of the Conciliation Center",
+  "decree": "قرار مجلس الوزراء رقم (103)",
+  "decree_date_hijri": "08/04/1434",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "مجلس الوزراء",
+  "issuing_authority_en": "Council of Ministers",
+  "provenance": {
+    "api_source": "MOJ legal portal (laws-gateway.moj.gov.sa) — statute detail + section changes",
+    "api_serial": "mCPOIfIgk6kj3UgjqgQr_g",
+    "statute_id": "RtHt2_M-nOQ9aYp4UUP67w",
+    "pdf_source_committed": "inputs/mosalaha_center_official_pdfs/mosalaha_center_regulation_moj_official_ar.pdf",
+    "pdf_sha256": "3860f34bf22104500a5b5eea03dc83092a7590ef975aff25618eeef67a4528a7",
+    "pdf_pages": 2,
+    "capture_method": "Every article fetched from the MOJ portal database (statuteStructure and get-Section-Changes, identical text, 0 divergences) and cross-verified against the official MOJ PDF (text-layer NFKC/Farsi-yeh-alef-maksura-folded + hamza/taa-marbuta-folded + diacritics/tatweel-stripped + digit-folded; three extraction channels scored — raw PDF text layer and a per-line-reversed variant, both of which exhibit the known RTL/ligature glyph-extraction artifact seen elsewhere in this corpus and score low (plain mean ~0.36, reversed mean ~0.29), and 300dpi tesseract-ara OCR, which is clean and used as the scoring channel; pdf_similarity = max of channels, anchored via difflib longest-common-substring alignment). All 10 matched outright (mean 0.9896, min 0.9683); no article required visual-only adjudication to clear the 0.90 floor, but all 10 were additionally read in full against the rendered 300dpi PDF page images as a direct visual cross-check.",
+    "amendment_note": "Fresh full issuance by Council of Ministers Decision 103 (08/04/1434H, published in Um Al-Qura 02/06/1434H): all 10 records اصلية (0 معدلة / 0 ملغاة / 0 مضافة). The section-API status equals the statuteStructure/PDF status for every article (no dual-status divergence).",
+    "section_vs_structure_divergences": 0,
+    "tatweel_removed_decorative": 0,
+    "otherRelatedLegal": [
+      {
+        "id": "9r_Vnqr_drVqSa_rhtqC2A",
+        "serial": "YNVUhtA-DFDvjZuGr7BgvQ",
+        "name": "قواعد العمل في مكاتب المصالحة وإجراءاته",
+        "type": 2,
+        "typeName": "لائحة"
+      }
+    ],
+    "known_source_anomaly": "Article 1, definition item 2 ('الوزارة'): the official text reads 'الوزارة: ىوزارة العدل.' in the portal DB (get-Section-Changes and statuteStructure agree verbatim) — an anomalous character precedes 'وزارة العدل' where 'الوزارة: وزارة العدل.' would be the grammatically expected phrasing. Direct visual inspection of the rendered 300dpi PDF page 1 (crop of item 2) confirms the official PDF itself also prints an anomalous character in the same position (a dotted-below glyph resembling 'ب', i.e. 'بوزارة العدل.'), independently corroborating that this is a genuine anomaly in the original issued text (not a portal transcription artifact), most likely a drafting/typesetting typo in the original decree. Per project policy this was NOT silently corrected; the portal DB text is carried verbatim as the governing 'text' field, and this note documents the anomaly and its independent cross-source visual confirmation."
+  },
+  "article_count": 10,
+  "status_counts": {
+    "اصلية": 10
+  },
+  "stats": {
+    "mean_similarity": 0.9897,
+    "min_similarity": 0.968,
+    "amended_articles": [],
+    "added_articles": [],
+    "visually_adjudicated": []
+  },
+  "articles": {
+    "mosalaha_center_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تكون للألفاظ والعبارات الآتية - حيثما وردت في هذا التنظيم - المعاني الموضحة أمام كل منها:\n١.المركز: مركز المصالحة.\n٢.الوزارة: ىوزارة العدل.\n٣.الوزير: وزير العدل.\n٤.الأمين العام: الأمين العام للمركز .\n٥.المصالحة: وسيلة رضائية لتسوية المنازعات - تتولاها مكاتب المصالحة - صلحاً كليّاً أو جزئيّاً.\n٦.مكاتب المصالحة: المكاتب التابعة للمركز.\n٧.المصلح: من يتولى أعمال المصالحة وفقاً لأحكام هذا التنظيم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.995,
+      "history": [],
+      "section_id": "hBCBhxCc_vvLLPhmUJH2lw"
+    },
+    "mosalaha_center_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ينشأ في الوزارة مركز يسمى \" مركز المصالحة \"، ويكون عمله وفقاً لأحكام هذا التنظيم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 1.0,
+      "history": [],
+      "section_id": "F7C28EBfwNuvtUITL6FqxQ"
+    },
+    "mosalaha_center_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع عدم الإخلال بما تقضي به أحكام الشريعة الإسلامية والأنظمة ذات الصلة، تكون مهمة المركز السعي إلى تسوية المنازعات صلحاً من خلال مكاتب المصالحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.993,
+      "history": [],
+      "section_id": "2IHgdSqJB6uqk31-_T95EA"
+    },
+    "mosalaha_center_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تنشأ مكاتب المصالحة في مقرات المحاكم أو كتابات العدل ، ويتكون كل مكتب من مُصلح أو أكثر يُختارون من منسوبي الوزارة أو من موظفي الدولة - بعد أخذ موافقة جهات عملهم - ، أو من غيرهم ممن تتوافر فيهم الشروط التي يحددها الوزير بقرار منه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.982,
+      "history": [],
+      "section_id": "XEnND5YehH8UsG813-96sQ"
+    },
+    "mosalaha_center_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون للمركز أمين عام يُسمى بقرار من الوزير.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 1.0,
+      "history": [],
+      "section_id": "mYntZKCVVusm93ARYzuc9w"
+    },
+    "mosalaha_center_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يتولى الأمين العام الإشراف على المركز ومكاتب المصالحة، وله على وجه خاص ما يأتي:\n١ - مراقبة أداء العاملين في المركز ومكاتب المصالحة، والعمل على رفع كفايتهم الإنتاجية.\n٢ - الإشراف على إعداد التقرير السنوي تمهيداً لرفعه إلى الوزير.\n٣ - أي مهمة يرى الوزير إسنادها إليه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.968,
+      "history": [],
+      "section_id": "3OLm6S-x0EGgHl4_Ma_QSg"
+    },
+    "mosalaha_center_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا يجوز لمن يعمل في مكاتب المصالحة - ولو بعد انتهاء عمله - إفشاء سر اؤتمن عليه، أو عرفه عن طريق عمله في تلك المكاتب ، ما لم يكن هناك مقتضٍ شرعي أو نظامي يوجب ذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.98,
+      "history": [],
+      "section_id": "YgPOfNYcGSstNDFuseDWfw"
+    },
+    "mosalaha_center_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا تخل أحكام هذا التنظيم بحق الأطراف في إنهاء منازعاتهم صلحاً خارج إطار مكاتب المصالحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 1.0,
+      "history": [],
+      "section_id": "SGX2yK4Xz79GktHjAkjdYg"
+    },
+    "mosalaha_center_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يصدر الوزير قواعد العمل في مكاتب المصالحة وإجراءاته، والقرارات اللازمة لتنفيذ هذا التنظيم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.989,
+      "history": [],
+      "section_id": "JVr90kiQP95Quu81iBsuXA"
+    },
+    "mosalaha_center_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعمل بهذا التنظيم بعد مضي (تسعين) يوماً من تاريخ نشره في الجريدة الرسمية، ويلغي كل ما يتعارض معه من أحكام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.99,
+      "history": [],
+      "section_id": "9hCwH2ltxicquVhgBOfNlQ"
+    }
+  }
+}
