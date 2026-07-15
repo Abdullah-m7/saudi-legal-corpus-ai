@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 192,
-  "top1_hits": 169,
-  "top3_hits": 185,
-  "top5_hits": 188,
-  "top1_accuracy": 0.8802,
-  "top3_accuracy": 0.9635,
-  "top5_accuracy": 0.9792,
-  "mrr_at_5": 0.9212,
+  "total_queries": 194,
+  "top1_hits": 171,
+  "top3_hits": 187,
+  "top5_hits": 190,
+  "top1_accuracy": 0.8814,
+  "top3_accuracy": 0.9639,
+  "top5_accuracy": 0.9794,
+  "mrr_at_5": 0.922,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5969,6 +5969,68 @@
      "record_id": "evidence-law-llm-art-125",
      "article_number": 125,
      "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "mzj-001",
+   "query_ar": "منسوبو القوات المسلحة في وزارة الدفاع والطيران، والحرس الوطني، وقوات الأمن الداخلي، سواء أكانوا ضباطاً أو أفراداً",
+   "category": "topical",
+   "gold": {
+    "corpus": "marriage_non_saudi",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marriage-non-saudi-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 21
+    },
+    {
+     "record_id": "inv-law-llm-art-009",
+     "article_number": 9,
+     "score": 21
+    },
+    {
+     "record_id": "labor-annex2-llm-table-8",
+     "article_number": 8,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "mzj-002",
+   "query_ar": "عدم السماح بدخول الزوجة أو الزوج الأجنبي الى المملكة وإنهاء اقامتهما إذا كان مقيمين داخل المملكة",
+   "category": "topical",
+   "gold": {
+    "corpus": "marriage_non_saudi",
+    "law_component": "regulation",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marriage-non-saudi-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 23
+    },
+    {
+     "record_id": "oa-llm-companies-art-236",
+     "article_number": 236,
+     "score": 22
+    },
+    {
+     "record_id": "oa-llm-companies-art-213",
+     "article_number": 213,
+     "score": 14
     }
    ]
   }
