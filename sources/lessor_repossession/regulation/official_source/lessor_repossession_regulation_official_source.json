@@ -1,0 +1,147 @@
+{
+  "document": "ضوابط تسلم المؤجر الأصول المنقولة",
+  "document_en": "Controls for the Lessor's Repossession of Movable Assets",
+  "decree": "قرار وزير العدل رقم (1448)",
+  "decree_date_hijri": "04/04/1440",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "وزير العدل",
+  "issuing_authority_en": "Minister of Justice",
+  "provenance": {
+    "api_source": "MOJ legal portal (laws-gateway.moj.gov.sa/apis/legislations/v1) — statute detail + section changes",
+    "api_serial": "HhAP0DcfNk8sKHJPtNg1dQ",
+    "statute_id": "y6khB1uPMaGaI6QIYtsOog",
+    "pdf_source_committed": "inputs/lessor_repossession_official_pdfs/lessor_repossession_regulation_moj_official_ar.pdf",
+    "pdf_sha256": "a89cf032b461ae18b48822258081835cee42fa68fd662eb25c1151b67f51facf",
+    "pdf_pages": 2,
+    "capture_method": "All 7 items (statuteStructure leaf entries, type=1; item 1 labeled 'تمهيد' [Preamble] and items 2-7 labeled with the Arabic ordinal-word sequence أولاً-سادساً, not مادة-numbered) fetched from the MOJ legal portal database via statute/get-Statute-gateway-Detail (Serial=HhAP0DcfNk8sKHJPtNg1dQ, statuteId=y6khB1uPMaGaI6QIYtsOog) and cross-verified item-by-item against section/get-Section-Changes (0 text divergences between the two endpoints for all 7 items; each item's get-Section-Changes history array contains exactly 1 version with legalStatusName=اصلية, decree=null, decreeDate=null — a fresh, single-status, never-amended issuance) and against the official MOJ PDF (2 pages, downloaded via document/download using the pdfCopy.documentId token). Portal HTML fragments (<p>/&nbsp;) were converted to plain text (one line per paragraph, tags stripped, &nbsp; collapsed to space, sub-item indentation preserved as leading spaces) with no character content altered. Automated scoring: both sides NFKC-normalized + Farsi-yeh/kaf/heh folded + diacritics/tatweel stripped + hamza/alef-forms and taa-marbuta folded + digits folded, then an anchor-based difflib SequenceMatcher approach was used — matching blocks (size>=3) between the full normalized channel text and each item's normalized text were used to locate and extract the aligned span in the channel (with small padding), and the item was scored against that extracted span (max of a first-pass and a refined second-pass window) rather than a blind fixed-length slide — computed across three independent extraction channels: (a) plain PyMuPDF text-layer, (b) a per-line word-reversed variant of the same text-layer (the PDF exhibits the known RTL word-order glyph-extraction artifact seen elsewhere in this corpus, so channel (a) alone scores very low, e.g. items scoring 0.03-0.43 on that channel alone), and (c) 300dpi tesseract-ara OCR — taking pdf_similarity = max across all three channels. 4 of 7 items (1, 2, 3, 4) matched the >=0.90 floor outright via the OCR channel; the remaining 3 items (5, 6, 7 — رابعاً, خامساً, سادساً) scored 0.7976-0.8740 (below floor; these are the shortest single-sentence items in the instrument, so short absolute length amplifies the effect of a small number of OCR artifacts, e.g. an extra stray 'ق' glyph OCR'd after 'العلاقة' in item 5 and the percentage figure '٢.٥%' in item 7 being OCR-garbled as '907.5' — not genuine text divergences) and were therefore read directly off the rendered official PDF page 2 (200dpi, full page) as a direct visual cross-check; all three matched the portal text verbatim, including the percentage figure and all other punctuation/wording. All 7 items / both pages were visually read in full (both directly for adjudication and as a general sanity check of items 1-4).",
+    "section_vs_structure_divergences": 0,
+    "tatweel_removed_decorative": 0,
+    "otherRelatedLegal": [
+      {
+        "id": "4HfAnXMLC1ae7WYMlEms-Q",
+        "serial": "2KK9IIMLdTfAJnqAEC5WgQ",
+        "name": "اللائحة التنفيذية لنظام التنفيذ",
+        "type": 2,
+        "typeName": "لائحة"
+      },
+      {
+        "id": "F79BJ7u-JDhHoIT4w5hyQQ",
+        "serial": "03EAOZXr3s2hStbtwGClTA",
+        "name": "لائحة مقدمي خدمات التنفيذ",
+        "type": 2,
+        "typeName": "لائحة"
+      }
+    ],
+    "issuing_authority_note": "issuanceDepartmentTool field reads 'قرار وزير العدل رقم (1448)' (Minister of Justice Decision No. 1448), issuanceDate 1440-04-04H (4 Rabi' al-Thani 1440H), publishDate 1440-04-06H (6 Rabi' al-Thani 1440H); legalStatueName 'ساري' (in force). The MOJ portal's own legalType/legalTypeId classification for this instrument is 'لائحة' (legalTypeId=2, regulation), hence law_component='regulation' was used per project convention. classificationName='القضاء' (The Judiciary), classificationId=1. The instrument's own issuance decree (قرار وزير العدل رقم ١٤٤٨ وتاريخ ١٤٤٠/٤/٤هـ, signed by وزير العدل وليد بن محمد الصمعاني [Minister of Justice Walid bin Mohammed Al-Samaani]) was separately fetched and visually read (scanned image, no text layer; issuanceDepartmentList[0].documentId, rendered at 200dpi) — it independently confirms decree number 1448 dated 4/4/1440H, and its own recital cites 'الفقرة (١/هـ) من المادة الثالثة والتسعين من نظام التنفيذ' (paragraph 1, item (هـ) of Article 93 of the Enforcement Law) as the enabling provision, i.e. the enabling clause allowing the Ministry of Justice to license 'شركات متخصصة تتولى الإشراف على عملية تسلم المؤجر الأصول المنقولة وفقاً لضوابط تضعها وزارة العدل بالتنسيق مع وزارة الداخلية' — this exact clause is present verbatim as sub-item (هـ) of the numbered point (١) of Article 93 of نظام التنفيذ (Enforcement Law), already ingested in this corpus at sources/enforcement/law/ as tnf_law_art_093 (see known_source_anomaly for the discrepancy this reveals in this regulation's own preamble citation). relatedLegalName (primary related instrument returned by the portal) = 'نظام التنفيذ' (Enforcement Law, نظام, serial H5Ynhc6GX76jQI6LXWAI4g, relatedLegalId=3VaYgGGJVTGwW7j_J8n7Ng) — already ingested in this corpus at sources/enforcement/law/. otherRelatedLegal (2 entries, both captured from the API): اللائحة التنفيذية لنظام التنفيذ (Executive Regulation of the Enforcement Law, لائحة, serial 2KK9IIMLdTfAJnqAEC5WgQ) — already ingested in this corpus at sources/enforcement/regulation/ — and لائحة مقدمي خدمات التنفيذ (Regulation of Enforcement Service Providers, لائحة, serial 03EAOZXr3s2hStbtwGClTA, decree cited in item 3/ثانياً's own text as 'قرار معالي وزير العدل رقم ١١٣٢٦ وتاريخ ١٤٣٧/٥/١٤هـ') — already ingested in this corpus at sources/enforcement_providers/regulation/. Items 2/أولاً and 3/ثانياً additionally cite 'نظام الإيجار التمويلي الصادر بالمرسوم الملكي رقم م/٤٨ وتاريخ ١٤٣٣/٨/١٣هـ ولائحته' (the Financing Lease Law and its executive regulation, Royal Decree No. M/48) as the substantive contractual basis for the 'مؤجر'/'مستأجر'/'العقد' relationship this instrument regulates — this Financing Lease Law does NOT appear to be separately ingested in this corpus under any existing law_key (a search of sources/ for 'الإيجار التمويلي' / 'tamweel' / 'lease' / 'ijar' found no match; the closest related tracks are sources/real_estate_finance/ [نظام التمويل العقاري, a distinct real-estate-specific financing instrument, Royal Decree M/50] and sources/real_estate_mortgage/ — neither is the Financing Lease Law itself). No law_key collision: a search of sources/ for 'lessor_repossession' / 'تسلم المؤجر' returned no existing track under this law_key prior to this ingestion.",
+    "known_source_anomaly": "Item 1 (تمهيد/Preamble) cites its own statutory basis as 'المادة (٩٣/د) من نظام التنفيذ' (Article 93, sub-item (د) of the Enforcement Law) — this exact citation is confirmed present verbatim in BOTH official sources of this document (the portal DB text via statuteStructure and get-Section-Changes, and the rendered official PDF page 1, both independently read/OCR'd and agreeing character-for-character). However, cross-referencing Article 93 of the Enforcement Law itself (نظام التنفيذ), already verified and ingested in this corpus at sources/enforcement/law/verified/enforcement_law_verified_records.jsonl as article_key tnf_law_art_093, shows that Article 93's numbered point (١) lists six licensable enforcement-service-provider categories under sub-letters أ through و, where sub-item (د) is 'الخازن القضائي' (the Judicial Custodian/Treasurer) — an entirely different, unrelated enforcement-service-provider category — while sub-item (هـ), the FIFTH sub-letter, is 'شركات متخصصة تتولى الإشراف على عملية تسلُّم المؤجر الأصول المنقولة وفقاً لضوابط تضعها وزارة العدل بالتنسيق مع وزارة الداخلية' — this is verbatim the enabling clause for THIS regulation. Confirming the point further, this regulation's own separately-fetched promulgating decree (قرار وزير العدل رقم ١٤٤٨ وتاريخ ١٤٤٠/٤/٤هـ, visually read from the scanned issuanceDepartmentList document) correctly cites 'الفقرة (١/هـ) من المادة الثالثة والتسعين من نظام التنفيذ' (paragraph 1, item (هـ) of Article 93) as its enabling provision — matching tnf_law_art_093's actual sub-item (هـ), NOT sub-item (د). This regulation's own preamble text (item 1/تمهيد) therefore appears to contain a genuine citation typo — '٩٣/د' where '٩٣/١/هـ' (or '٩٣/هـ') would be the substantively correct pinpoint cite — that is carried consistently and identically in both official sources of THIS document's own text (portal DB and PDF). Per project policy this was NOT silently corrected; the portal DB text '٩٣/د' is carried verbatim as the governing text field for item 1. This is a genuine anomaly in the source's own internal cross-reference, not an extraction or OCR artifact, and not a divergence between the portal DB and the PDF for this document (both agree with each other) — it is only detectable by cross-referencing a third, separately-ingested instrument (Article 93 of the Enforcement Law) and the regulation's own promulgating decree."
+  },
+  "article_count": 7,
+  "status_counts": {
+    "اصلية": 7
+  },
+  "stats": {
+    "mean_similarity": 0.9049,
+    "min_similarity": 0.7976,
+    "amended_articles": [],
+    "added_articles": [],
+    "visually_adjudicated": [
+      "lessor_repossession_art_005",
+      "lessor_repossession_art_006",
+      "lessor_repossession_art_007"
+    ]
+  },
+  "articles": {
+    "lessor_repossession_art_001": {
+      "number_label_ar": "تمهيد",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "أعدت هذه الضوابط إعمالاً للمادة (٩٣/د) من نظام التنفيذ ولائحته الصادر بالمرسوم الملكي رقم م/٥٣ وتاريخ ١٤٣٣/٨/١٣هـ والذي أوكل لوزارة العدل الترخيص لمقدمي خدمات التنفيذ ، ومنهم شركات متخصصة تتولى الإشراف على عملية تسلُّم المؤجر الأصول المنقولة، وذلك وفق ضوابط تضعها وزارة العدل بالتنسيق مع وزارة الداخلية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9177,
+      "history": [],
+      "section_id": "SyG7JW606twvWViBv-Y5Iw"
+    },
+    "lessor_repossession_art_002": {
+      "number_label_ar": "أولاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقصد بالألفاظ والعبارات الآتية -أينما وردت في هذه الضوابط- المعاني المبينة أمام كل منها، ما لم يقتض السياق خلاف ذلك:\n   ١. الشركة المرخصة بتسجيل العقود: الشركة المساهمة المختصة بتسجيل عقود الإيجار التمويلي.\n   ٢. المؤجر: الشركة المساهمة المرخص لها بمزاولة الإيجار التمويلي.\n   ٣. المستأجر: من يملك منفعة الأصل المؤجر بموجب العقد.\n   ٤. العقد: عقد الإيجار التمويلي.\n   ٥. مقدم الخدمة: مقدم خدمة تسليم المؤجر الأصول المنقولة.\n   ٦. المنقول: ما أمكن نقله كالسيارات والمعدات ونحوها.\n   ٧. الموجودات: ما يعثر عليه داخل المنقول عند استلامه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9537,
+      "history": [],
+      "section_id": "ZFSXxoOElJJKYmLXlqnmsQ"
+    },
+    "lessor_repossession_art_003": {
+      "number_label_ar": "ثانياً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع مراعاة ما نصت عليه لائحة مقدمي خدمات التنفيذ الصادرة بقرار معالي وزير العدل رقم ١١٣٢٦ وتاريخ ١٤٣٧/٥/١٤هـ، ونظام الإيجار التمويلي الصادر بالمرسوم الملكي رقم م/٤٨ وتاريخ ١٤٣٣/٨/١٣هـ ولائحته؛ تكون آلية عمل تسليم المؤجر الأصول المنقولة وفق الخطوات الآتية:\nأ- يُشعر المؤجر المستأجر- حال إخلاله بالتزاماته- بوجوب وفائه بشروط العقد خلال خمسة أيام عمل.\nب- في حال عدم وفاء المستأجر بالتزاماته بشكل جوهري ومتحقق، وبعد تقدُم المؤجر بطلب استرداد المنقول؛ يُشعر المؤجر الشركة المرخصة بتسجيل العقود بعد (١٥) يوماً من عدم الوفاء بواقعة إخلال المستأجر بشروط العقد.\nج- يُشعَر المستأجر بطلب المؤجر استرداد الأصل المنقول.\nد- تقوم الشركة المرخصة بتسجيل العقود -بعد التحقق من أحقية جهة التمويل باسترداد المنقول- بإشعار مقدم الخدمة بواقعة مخالفة المستأجر لشروط العقد في الحالات التي يتضمن فيها العقد حق المؤجر في استرداد المنقول، مع تزويده بكامل بيانات العميل.\nهـ- يكون تبليغ الإشعارات عبر الوسائل الإلكترونية، وذلك من خلال إرسال رسالة نصية إلى الهاتف المحمول، أو الإرسال إلى البريد الإلكتروني، المدون في العقد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9586,
+      "history": [],
+      "section_id": "qk6Ywu-V8Nq6e7sN1rcTSg"
+    },
+    "lessor_repossession_art_004": {
+      "number_label_ar": "ثالثاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تكون آلية عمل مقدم الخدمة وفق الآتي:\nأ- يقوم مقدم الخدمة باسترداد المنقول بواسطة موظفين اثنين على الأقل يعملان بشكل رسمي، ويعد محضر بذلك -وفق نموذج معتمد- يتضمن الآتي:\n   ١. بيانات المستأجر، وبيانات الأصل المؤجر تشمل على سبيل المثال لا الحصر (نوع المنقول ولونه وحالته وسنة الصنع وصفاته التي تختلف بها قيمته ورقم سند تملكه) وأي معلومات أخرى تفيد في إثبات حالته.\n   ٢. رقم إشعار الاسترداد الوارد من شركة التسجيل وتاريخه.\n   ٣. توثيق حال المنقول بتقرير مصور يثبت حالته أثناء الاستلام.\n   ٤. حصر بجميع الموجودات في الأصل المؤجر -في حال وجودها-.\n   ٥. تاريخ ومكان الاسترداد ووقته واسم محرر المحضر وتوقيعه.\nب- لمقدم الخدمة -عند الحاجة- الاستعانة بمن يرى من المتخصصين (فنيين، أمنيين، غيرهم) لإعانته على التنفيذ.\nج- على مقدم الخدمة تمكين المستأجر من استلام جميع الموجودات المملوكة له في المنقول، مع إعداد بيان بذلك يثبت استلام المستأجر لها.\nد- في حال غياب المستأجر أو امتناعه عن استلام متعلقاته فيكون التصرف في الموجودات وفق الحالات التالية:\n   ١- إذا كانت الموجودات أوراق رسمية كالهوية الوطنية أو جواز السفر أو أي أوراق أخرى تصدر عن جهة مختصة؛ فتسلم لجهة إصدارها بخطاب رسمي.\n   ٢- إذا كانت الموجودات مما له قيمة مالية فيكون التصرف بها وفقاً لما يأتي:\n        أ- إذا كانت مما لا يخشى عليه التلف فتحفظ لمدة ٣٠ يوماً فإن لم يحضر لاستلامها فتقيم من مقيم معتمد، وتباع، وتودع قيمتها لدى جهة الاختصاص.\n       ب- إذا كانت مما يخشى عليه التلف فتقيم من مقيم معتمد، وتباع، وتودع قيمتها لدى جهة الاختصاص.\n   ٣- إذا كانت الموجودات مما ليس له قيمة مالية فتحفظ لمدة ٣٠ يوماً فإن لم يحضر لاستلامها فيتم إتلافها بمحضر يحفظ في ملف الطلب.\n   ٤- إذا كانت الموجودات محظورة فيتم مخاطبة الجهة المختصة لمباشرة الحالة وأخذ التوجيه في تسليم العين المؤجرة.\nهـ- على مقدم الخدمة حفظ المنقول حال استرداده -بما يحفظ به مثله عادة- من وقت استلامه إلى حين تسليمه للمؤجر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9771,
+      "history": [],
+      "section_id": "UMPoykUHC9mDc0VWkGHt7Q"
+    },
+    "lessor_repossession_art_005": {
+      "number_label_ar": "رابعاً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقوم مقدم الخدمة بتسليم المنقول للمؤجر بمحضر -موقع من أطراف العلاقة- يثبت فيه حال المنقول وتاريخه ووقت الاستلام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.874,
+      "history": [],
+      "section_id": "sjrH6YKbUOWSl0ZCnFH6AA"
+    },
+    "lessor_repossession_art_006": {
+      "number_label_ar": "خامساً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "في حال تبين إخفاء المستأجر للمنقول أو ادعائه خلاف الحقيقة فللمؤجر التقدم للمحكمة المختصة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8558,
+      "history": [],
+      "section_id": "GG7Mz6mt4LJAJQXlVS2y_w"
+    },
+    "lessor_repossession_art_007": {
+      "number_label_ar": "سادساً",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تحدد أجرة مقدم الخدمة في العقد، بشرط عدم زيادته عن ٢.٥% من قيمة العقد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7976,
+      "history": [],
+      "section_id": "C5eErbRdTuh4LjRWeRN3GQ"
+    }
+  }
+}

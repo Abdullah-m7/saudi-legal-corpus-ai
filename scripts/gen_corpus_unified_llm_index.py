@@ -190,6 +190,8 @@ LAYERS = [
      "marriage_non_saudi", "regulation"),
     ("data/state_funded_lawyer_arabic_legal_llm/state_funded_lawyer_regulation_legal_llm_001_011.json",
      "state_funded_lawyer", "regulation"),
+    ("data/lessor_repossession_arabic_legal_llm/lessor_repossession_regulation_legal_llm_001_007.json",
+     "lessor_repossession", "regulation"),
 ]
 
 
