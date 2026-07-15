@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 186,
-  "top1_hits": 163,
-  "top3_hits": 179,
-  "top5_hits": 182,
-  "top1_accuracy": 0.8763,
-  "top3_accuracy": 0.9624,
-  "top5_accuracy": 0.9785,
-  "mrr_at_5": 0.9186,
+  "total_queries": 188,
+  "top1_hits": 165,
+  "top3_hits": 181,
+  "top5_hits": 184,
+  "top1_accuracy": 0.8777,
+  "top3_accuracy": 0.9628,
+  "top5_accuracy": 0.9787,
+  "mrr_at_5": 0.9195,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1130,9 +1130,9 @@
      "score": 10
     },
     {
-     "record_id": "arbitration-regulation-llm-art-007",
-     "article_number": 7,
-     "score": 5
+     "record_id": "documentation-settlement-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 10
     }
    ]
   },
@@ -5713,14 +5713,14 @@
      "score": 44
     },
     {
+     "record_id": "documentation-settlement-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 22
+    },
+    {
      "record_id": "oa-llm-companies-art-256",
      "article_number": 256,
      "score": 17
-    },
-    {
-     "record_id": "oa-llm-companies-art-019",
-     "article_number": 19,
-     "score": 15
     }
    ]
   },
@@ -5783,6 +5783,68 @@
      "record_id": "judiciary-bog-mechanism-llm-art-005",
      "article_number": 5,
      "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "esd-001",
+   "query_ar": "ينشأ بموجب هذا التنظيم مركز يسمى مركز الإسناد والتصفية يتمتع بالشخصية الاعتبارية وبالاستقلال المالي والإداري ويرتبط تنظيميا بالوزير ويكون مقره الرئيس في مدينة الرياض",
+   "category": "topical",
+   "gold": {
+    "corpus": "documentation_settlement",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "documentation-settlement-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 62
+    },
+    {
+     "record_id": "documentation-settlement-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 26
+    },
+    {
+     "record_id": "documentation-settlement-regulation-llm-art-015",
+     "article_number": 15,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "esd-002",
+   "query_ar": "يهدف المركز إلى تحقيق التعاون بين الجهات القضائية والحكومية فيما يسند إليه من مهمات تتعلق بالتصفية والبيع من خلال إسنادها إلى الجهات المتخصصة فنيا",
+   "category": "topical",
+   "gold": {
+    "corpus": "documentation_settlement",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "documentation-settlement-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 37
+    },
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-009",
+     "article_number": 9,
+     "score": 18
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-032",
+     "article_number": 32,
+     "score": 15
     }
    ]
   }

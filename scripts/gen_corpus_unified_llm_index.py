@@ -180,6 +180,8 @@ LAYERS = [
      "alimony_fund", "regulation"),
     ("data/judiciary_bog_arabic_legal_llm/judiciary_bog_mechanism_legal_llm_001_015.json",
      "judiciary_bog", "mechanism"),
+    ("data/documentation_settlement_arabic_legal_llm/documentation_settlement_regulation_legal_llm_001_015.json",
+     "documentation_settlement", "regulation"),
 ]
 
 
