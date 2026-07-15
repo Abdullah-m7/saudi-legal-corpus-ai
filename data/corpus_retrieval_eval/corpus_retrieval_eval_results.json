@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 198,
-  "top1_hits": 175,
-  "top3_hits": 191,
-  "top5_hits": 194,
-  "top1_accuracy": 0.8838,
-  "top3_accuracy": 0.9646,
-  "top5_accuracy": 0.9798,
-  "mrr_at_5": 0.9236,
+  "total_queries": 200,
+  "top1_hits": 177,
+  "top3_hits": 193,
+  "top5_hits": 196,
+  "top1_accuracy": 0.885,
+  "top3_accuracy": 0.965,
+  "top5_accuracy": 0.98,
+  "mrr_at_5": 0.9243,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6155,6 +6155,68 @@
      "record_id": "inv-reg-llm-art-021",
      "article_number": 21,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "tqe-001",
+   "query_ar": "يكون موعد (الجلسة المرئية) خلال ساعات العمل. وللدائرة عقدها خارج وقت الدوام خلال أيام العمل الرسمية بما لا يتجاوز الساعة الخامسة مساءً، بعد موافقة المجلس الأعلى للقضاء",
+   "category": "topical",
+   "gold": {
+    "corpus": "elitigation_guide",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "elitigation-guide-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 37
+    },
+    {
+     "record_id": "judiciary-bog-mechanism-llm-art-001",
+     "article_number": 1,
+     "score": 34
+    },
+    {
+     "record_id": "labor-annex5-llm-024-part-time",
+     "article_number": 24,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "tqe-002",
+   "query_ar": "يرسل النظام رسالة نصية لأطراف الدعوى قبل موعد (الجلسة المرئية) بيوم تحتوي على رابط الدخول إلى الجلسة",
+   "category": "topical",
+   "gold": {
+    "corpus": "elitigation_guide",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "elitigation-guide-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 28
+    },
+    {
+     "record_id": "commercial-courts-law-llm-art-022",
+     "article_number": 22,
+     "score": 14
+    },
+    {
+     "record_id": "commercial-courts-regulation-llm-art-220",
+     "article_number": 220,
+     "score": 13
     }
    ]
   }
