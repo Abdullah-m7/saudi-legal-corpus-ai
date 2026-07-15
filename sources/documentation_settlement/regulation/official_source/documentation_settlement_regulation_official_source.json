@@ -1,0 +1,262 @@
+{
+  "document": "تنظيم مركز الاسناد والتصفية",
+  "document_en": "Regulation of the Center for Assignment (Referral) and Liquidation",
+  "decree": "قرار مجلس الوزراء رقم (415)",
+  "decree_date_hijri": "19/07/1440",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "مجلس الوزراء",
+  "issuing_authority_en": "Council of Ministers",
+  "provenance": {
+    "api_source": "MOJ legal portal (laws-gateway.moj.gov.sa) — statute detail + section changes",
+    "api_serial": "QVtXRU6y2h9rjbxiiuy5Fw",
+    "statute_id": "YxXvYwKCWvhDN7mRdgiCxA",
+    "pdf_source_committed": "inputs/documentation_settlement_official_pdfs/documentation_settlement_regulation_moj_official_ar.pdf",
+    "pdf_sha256": "78eaef6829d917b745267d107829bd8c529ab45c41ef0ea79adfdd13ef583f60",
+    "pdf_pages": 4,
+    "capture_method": "Every article fetched from the MOJ portal database (statute/get-Statute-gateway-Detail + section/get-Section-Changes, 0 divergences between the two across all 15 articles) and cross-verified against the official MOJ PDF (document/download via pdfCopy.documentId, 4 pages). Portal HTML fragments (<p>/<strong>/&nbsp;/<br>) were converted to plain text (one line per paragraph, tags stripped, &nbsp; collapsed to space) with no character content altered. Automated scoring: both sides NFKC-normalized + Farsi-yeh/kaf/heh folded + diacritics/tatweel-decoration stripped + hamza/alef-forms and taa-marbuta folded, then difflib SequenceMatcher sliding-window best-match ratio computed against every PDF page in both a plain-line-order channel and a per-line word-reversed channel (the PDF text layer exhibits the known RTL per-line word-order extraction artifact seen elsewhere in this corpus), taking the max across all pages/channels; the correct page was independently located via word-overlap-by-page scoring. This capped automated similarity below the 0.90 floor for 12 of 15 articles (0.6117-0.8647) despite the underlying text being verbatim-correct, so those 12 were read directly off the rendered official PDF pages (200dpi, all 4 pages) and confirmed verbatim against the portal text word-for-word; the remaining 3 articles (6, 7, 14) scored >=0.90 automatically (0.9173-0.9639). All 4 PDF pages were visually read in full (all 15 articles), including the metadata header block (تصنيف: القضاء، نوع التشريع: تنظيم، تاريخ الإصدار 19 رجب 1440هـ، تاريخ النشر 07 شعبان 1440هـ، حالة التشريع: ساري) and the summary block, both of which match the portal's search/detail metadata exactly.",
+    "amendment_note": "Council of Ministers Decision No. (415), dated 19/07/1440H (the original full issuance; the issuance instrument أداة الإصدار was independently fetched from the portal and visually confirmed — signed by رئيس مجلس الوزراء, citing الديوان الملكي رقم 19947 بتاريخ 1440/4/12هـ and البيانات التحضيرية ذات الصلة، ويقرر: الموافقة على تنظيم مركز الإسناد والتصفية بالصيغة المرافقة). Article 4 (المادة الرابعة, board composition) carries a 2-version amendment history: originally اصلية (issued with the regulation, 1440H) -> amended by Council of Ministers Decision No. (685) dated 29/11/1443H (2022-06-28, added ثلاثة من القطاع الخاص directly into the sole-representative item هـ) -> amended again by Council of Ministers Decision No. (364) dated 20/05/1447H (2025-11-11, current in-force text — split the item, added a new member representing هيئة السوق المالية as item و, and moved the three private-sector members to a new item ز). The remaining 14 of 15 articles are اصلية (unmodified since the 1440H original issuance); the section/get-Section-Changes API returned exactly 1 history entry (no changes) for each of those 14. NOTE ON ISSUING AUTHORITY: although classified under 'القضاء' (Judiciary) on the MOJ legal portal and Article 2 provides the Center 'يرتبط تنظيميًّا بالوزير' (is administratively/organizationally linked to the Minister of Justice) with its seat in Riyadh, the Regulation itself was issued directly by a Council of Ministers Decision (not a Minister of Justice decision) — a semi-independent body (own legal personality, financial and administrative independence per Article 2) established at the Council-of-Ministers level with MOJ institutional linkage, not a MOJ-issued لائحة. RELATIONSHIP TO ENFORCEMENT LAW: per the portal's otherRelatedLegal list this Regulation is related to نظام التنفيذ (the Enforcement Law) and its اللائحة التنفيذية لنظام التنفيذ (its Implementing Regulation) — consistent with the Center's function of receiving liquidation/asset-sale tasks referred (أسند/إسناد) to it by judicial and government bodies (Article 3), i.e. estate, company, fund and contribution liquidation and asset sales referred from enforcement/judicial proceedings, as well as liquidation/sale requested directly by parties with no pending dispute. No superseded prior version of this Regulation exists on the portal — this is the sole, currently in-force issuance (not a re-issuance of an earlier regulation).",
+    "section_vs_structure_divergences": 0,
+    "tatweel_removed_decorative": 0,
+    "label_anomaly_note": "No character-level source anomalies were found (no Persian/Farsi letter substitutions, no non-standard digit glyphs, no numbering gaps or mislabeled ordinals) across all 15 articles (المادة الأولى .. المادة الخامسة عشرة, sequential, no مكرر), confirmed identically in both portal endpoints and via direct visual inspection of the rendered official MOJ PDF pages (200dpi, all 4 pages). The only tatweel character present is the standard 'هـ' (heh + tatweel) digraph used as the Arabic sub-item enumerator letter (item 5 of Article 4's board-membership list), which is the conventional/required spelling of that letter, not decorative tatweel."
+  },
+  "article_count": 15,
+  "status_counts": {
+    "اصلية": 14,
+    "معدلة": 1
+  },
+  "stats": {
+    "mean_similarity": 0.7999,
+    "min_similarity": 0.6117,
+    "amended_articles": [
+      "documentation_settlement_art_004"
+    ],
+    "added_articles": [],
+    "visually_adjudicated": [
+      "documentation_settlement_art_001",
+      "documentation_settlement_art_002",
+      "documentation_settlement_art_003",
+      "documentation_settlement_art_004",
+      "documentation_settlement_art_005",
+      "documentation_settlement_art_008",
+      "documentation_settlement_art_009",
+      "documentation_settlement_art_010",
+      "documentation_settlement_art_011",
+      "documentation_settlement_art_012",
+      "documentation_settlement_art_013",
+      "documentation_settlement_art_015"
+    ]
+  },
+  "articles": {
+    "documentation_settlement_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون للكلمات الآتية -أينما وردت في هذا التنظيم- المعاني المبينة أمام كل منها:\n١.المركز: مركز الإسناد والتصفية.\n٢.الوزير: وزير العدل.\n٣.المجلس: مجلس إدارة المركز.\n٤.الرئيس: رئيس المجلس.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7545,
+      "history": [],
+      "section_id": "z7YY4DsDjnS5mkphNTfPqw"
+    },
+    "documentation_settlement_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ينشأ بموجب هذا التنظيم مركز يسمى \"مركز الإسناد والتصفية\", يتمتع بالشخصية الاعتبارية وبالاستقلال المالي والإداري، ويرتبط تنظيميًّا بالوزير، ويكون مقره الرئيس في مدينة الرياض, وله إنشاء فروع أو مكاتب داخل المملكة بحسب الحاجة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8238,
+      "history": [],
+      "section_id": "8QA5iytmkOpIy-MAo_C1pg"
+    },
+    "documentation_settlement_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يهدف المركز إلى تحقيق التعاون بين الجهات القضائية والحكومية فيما يسند إليه من مهمات تتعلق بالتصفية والبيع من خلال إسنادها إلى الجهات المتخصصة فنيًّا والإشراف على أعمالها؛ للإسهام في تسريع عملية استيفاء الحقوق وإصدار الأحكام القضائية، وذلك من خلال قيامه بالمهمات والاختصاصات الآتية:\n١.القيام بما يلزم لتصفية التركات والشركات والصناديق والمساهمات، وبيع الأصول، وغير ذلك من الأموال؛ التي تسندها إليه الجهات القضائية والحكومية وفقاً للإجراءات النظامية.\n٢.القيام بما يلزم لتصفية التركات والشركات والصناديق والمساهمات، وبيع الأصول، وغير ذلك من الأموال؛ التي ليس في شأنها نزاع منظور قضاءً وتقدم بطلبهما أصحاب الشأن للمركز، وذلك وفقاً للإجراءات النظامية.\n٣.الاستعانة بالشركات أو المؤسسات أو المكاتب المتخصصة محاسبيًّا وقانونيًّا وتسويقيًّا وغيرها؛ لتنفيذ المهمات التي تتطلبها أعمال التصفية والبيع للأموال المشار إليها في الفقرتين (١) و(٢) من هذه المادة.\n٤.تقديم الخدمات الاستشارية والفنية في أعمال تصفية وبيع الأموال المشار إليها في الفقرتين (١) و(٢) من هذه المادة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7191,
+      "history": [],
+      "section_id": "4LyCWRoMk5vMuUZCfY2H6A"
+    },
+    "documentation_settlement_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "١.يكون للمركز مجلس إدارة برئاسة الوزير وعضوية كل من:\nأ- ممثل لوزارة العدل.\nب- ممثل لوزارة المالية.\nج- ممثل لوزارة التجارة والاستثمار.\nد- ممثل لمؤسسة النقد العربي السعودي.\nهـ- ممثل لديوان المظالم.\nو- ممثل لهيئة السوق المالية.\nز- ثلاثة من القطاع الخاص من ذوي الخبرة في المجالات ذات الصلة بأعمال المركز، يعينون بأمر من رئيس مجلس الوزراء بناء على اقتراح من الرئيس.\n٢.تكون مدة عضوية ممثلي الأجهزة الحكومية والأعضاء من القطاع الخاص ثلاث سنوات قابلة للتجديد لمرة واحدة، ويجب ألا تقل مرتبة ممثلي الأجهزة الحكومية عن (الرابعة عشرة) أو ما يعادلها.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7778,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "قرار مجلس الوزراء رقم (685)",
+          "decreeDate": "29-11-1443",
+          "gregorianDecreeDate": "2022-06-28",
+          "text": "١.يكون للمركز مجلس إدارة برئاسة الوزير وعضوية كل من:\nأ- ممثل لوزارة العدل.\nب- ممثل لوزارة المالية.\nج- ممثل لوزارة التجارة والاستثمار.\nد- ممثل لمؤسسة النقد العربي السعودي.\nهـ- ممثل لديوان المظالم.\nو- ثلاثة من القطاع الخاص من ذوي الخبرة في المجالات ذات الصلة بأعمال المركز، يعينون بأمر من رئيس مجلس الوزراء بناء على اقتراح من الرئيس.\n٢.تكون مدة عضوية ممثلي الأجهزة الحكومية والأعضاء من القطاع الخاص ثلاث سنوات قابلة للتجديد لمرة واحدة، ويجب ألا تقل مرتبة ممثلي الأجهزة الحكومية عن (الرابعة عشرة) أو ما يعادلها."
+        },
+        {
+          "legalStatusName": "اصلية",
+          "decree": null,
+          "decreeDate": null,
+          "gregorianDecreeDate": null,
+          "text": "١.يكون للمركز مجلس إدارة برئاسة الوزير وعضوية كل من:\nأ- ممثل لوزارة العدل.\nب- ممثل لوزارة المالية.\nج- ممثل لوزارة التجارة والاستثمار.\nد- ممثل لمؤسسة النقد العربي السعودي.\nهـ- ثلاثة من القطاع الخاص من ذوي الخبرة في المجالات ذات الصلة بأعمال المركز، يعينون بأمر من رئيس مجلس الوزراء بناء على اقتراح من الرئيس.\n٢.تكون مدة عضوية ممثلي الأجهزة الحكومية والأعضاء من القطاع الخاص ثلاث سنوات قابلة للتجديد لمرة واحدة، ويجب ألا تقل مرتبة ممثلي الأجهزة الحكومية عن (الرابعة عشرة) أو ما يعادلها."
+        }
+      ],
+      "section_id": "BRXVgUQR0ccdm0UbULckGg"
+    },
+    "documentation_settlement_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "للمجلس جميع الصلاحيات اللازمة لإدارة المركز وتصريف شؤونه وتحقيق أهدافه, وبخاصة ما يأتي:\n١.اعتماد السياسات العامة المتعلقة بنشاطات المركز والبرامج اللازمة لتنفيذها.\n٢.إقرار هيكل المركز التنظيمي.\n٣.النظر فيما يقدم إلى المركز من طلبات في ضوء اختصاصاته، وإصدار القرارات اللازمة في شأنها.\n٤.تحديد آلية لإسناد أعمال التصفية والبيع إلى الجهات المتخصصة مع مراعاة الأحكام الشرعية والنظامية.\n٥.الموافقة على فتح حسابات للمركز لدى البنوك المرخص لها بالعمل في المملكة؛ ليقوم المركز بمهماته واختصاصاته المنصوص عليها في المادة (الثالثة) من هذا التنظيم.\n٦.تحديد المقابل المالي لما يقدمه المركز من خدمات وأعمال يرى المجلس استحصال مقابل مالي عنها وفقاً للأحكام الواردة في هذا التنظيم.\n٧.إقرار اللوائح الإدارية والمالية -بالاتفاق مع وزارة المالية- وغيرها من اللوائح الداخلية اللازمة؛ لتسيير شؤون المركز.\n٨.الموافقة على مشروع ميزانية المركز السنوية وحسابه الختامي وتقريره السنوي، تمهيداً لرفعها وفق الإجراءات النظامية المتبعة.\n٩.النظر في التقارير الدورية عن سير العمل في المركز واتخاذ القرارات اللازمة في شأنها.\n١٠.الموافقة على إبرام الاتفاقات والعقود، بحسب الإجراءات النظامية المتبعة.\n١١.قبول الهبات والتبرعات والمنح والوصايا والأوقاف وفقاً للأحكام المنظمة لذلك.\n١٢.تعيين مراجع حسابات خارجي ومراقب مالي داخلي.\n١٣.الموافقة على إنشاء فروع ومكاتب للمركز.\nوللمجلس -في سبيل تحقيق هذه الاختصاصات- تشكيل لجان دائمة أو مؤقتة من أعضائه أو من سواهم, يعهد إليها بما يراه من مهمات, ويحدِّد في قرار تشكيل كل لجنة رئيسها وأعضاءها واختصاصاتها, ويكون لها الاستعانة بمن تراه لتأدية المهمات المعهود بها إليها.\nوللمجلس -كذلك- تفويض بعض اختصاصاته إلى الرئيس أو إلى من يراه من أعضائه أو منسوبي المركز.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7575,
+      "history": [],
+      "section_id": "kMmaxng08o3oQxJG8GIypQ"
+    },
+    "documentation_settlement_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "١.يعقد المجلس اجتماعاته في مقر المركز، وله -عند الاقتضاء- أن يعقدها في مكان آخر داخل المملكة.\n٢.يجتمع المجلس مرة على الأقل كل (ثلاثة) أشهر بناء على دعوة من الرئيس التنفيذي بعد التنسيق مع الرئيس, أو كلما دعت الحاجة, أو إذا طلب ذلك -كتابة- ثلاثة من أعضائه على الأقل.\n٣.يكون اجتماع المجلس صحيحاً إذا حضره أغلبية الأعضاء على الأقل, على أن يكون من بينهم الرئيس أو من ينيبه من الأعضاء ممثلي الجهات الحكومية لرئاسة الاجتماع في حال غيابه. وتصدر قرارات المجلس بأغلبية أصوات الحاضرين، وفي حالة تساوي الأصوات يرجح الجانب الذي صوت معه رئيس الاجتماع.\n٤.تثبت مداولات المجلس وقراراته في محاضر يوقعها رئيس الاجتماع والأعضاء الحاضرون.\n٥.لا يجوز للعضو الامتناع عن التصويت, أو تفويض عضو آخر بالتصويت عنه عند غيابه. وللعضو المعترض تسجيل الاعتراض وأسبابه ضمن محضر اجتماع المجلس.\n٦.لا يجوز للعضو أن يصوت على أي قرار يتعلق بشخص تربطه به علاقة زوجية أو مصاهرة أو قرابة إلى الدرجة الرابعة، أو يترتب عليه حق أو مصلحة للعضو.\n٧.لا يجوز للعضو أن يفشي شيئاً من أسرار المركز.\n٨.للمجلس دعوة من يرى الاستعانة بهم من المختصين والمستشارين لحضور اجتماعاته، دون أن يكون لهم حق التصويت.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9639,
+      "history": [],
+      "section_id": "MMpVVf7fpoeYk8_OR_ylDw"
+    },
+    "documentation_settlement_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون للمركز رئيس تنفيذي، يُعين ويعفى من منصبه بقرار من المجلس، ويحدد القرار أجره ومزاياه المالية الأخرى، ويعد المسؤول عن إدارة شؤون المركز، وتتركز مسؤولياته في حدود هذا التنظيم وما يقرره المجلس، ويتولى الاختصاصات الآتية:\n١.اقتراح السياسات العامة المتعلقة بنشاطات المركز والبرامج اللازمة لتنفيذها.\n٢.اقتراح مشروع هيكل المركز التنظيمي ورفعه إلى المجلس.\n٣.تمثيل المركز أمام الجهات الحكومية والمؤسسات ذات العلاقة، وغيرها من الجهات داخل المملكة وخارجها، وأمام القضاء وله تفويض غيره في ذلك.\n٤.تنفيذ قرارات المجلس ومباشرة ما يخوله إياه من اختصاصات وصلاحيات.\n٥.اقتراح اللوائح الإدارية والمالية التي يسير عليها المركز وغيرها من اللوائح الداخلية، ورفعها إلى المجلس.\n٦.إعداد مشروع ميزانية المركز السنوية وحسابه الختامي وتقريره السنوي، ورفعها إلى المجلس.\n٧.إعداد التقارير الدورية عن سير العمل في المركز، ورفعها إلى المجلس.\n٨.تعيين منسوبي المركز وفقاً للوائح الداخلية المنظمة، والإشراف عليهم.\nوللرئيس التنفيذي أن يفوض بعض اختصاصاته إلى من يراه من منسوبي المركز.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.931,
+      "history": [],
+      "section_id": "5PtG-k0WGiSF_5d7g0HRWA"
+    },
+    "documentation_settlement_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تتألف موارد المركز مما يأتي:\n١.نسبة لا تتجاوز (٥%) من إجمالي حصيلة التصفية أو البيع مما يسند إليه من الجهات القضائية والحكومية شاملة جميع الأتعاب اللازمة لعملية التصفية أو البيع, وتحدد النسبة لكل مهمة بقرار من المجلس، وذلك ما لم تحدد الجهة القضائية المختصة مقابلاً عن ذلك.\n٢.ما يتقاضاه من أصحاب الشأن نظير التصفية أو البيع.\n٣.المقابل المالي للخدمات الاستشارية والفنية في أعمال التصفية أو البيع.\n٤.ما يقبله المجلس من هبات وتبرعات ومنح ووصايا وأوقاف.\n٥.أي مورد آخر يقره المجلس, بما لا يخالف الأنظمة والتعليمات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8647,
+      "history": [],
+      "section_id": "chTzxAD_WDhnB7vjRaVYeQ"
+    },
+    "documentation_settlement_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يفتح المركز حسابات له في مؤسسة النقد العربي السعودي أو في أي من البنوك المرخص لها بالعمل في المملكة, ويتم الصرف من هذه الحسابات وفق ميزانية المركز المعتمدة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7908,
+      "history": [],
+      "section_id": "oIFJHHpgjecRpAS5d3Pyrg"
+    },
+    "documentation_settlement_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "السنة المالية للمركز هي السنة المالية للدولة، واستثناءً من ذلك تبدأ السنة المالية الأولى من تاريخ نفاذ هذا التنظيم وتنتهي بنهاية السنة المالية التالية للدولة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7919,
+      "history": [],
+      "section_id": "Je0dUhPRo6IKdPYz0CtBng"
+    },
+    "documentation_settlement_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يخضع جميع منسوبي المركز لنظام العمل ونظام التأمينات الاجتماعية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.6117,
+      "history": [],
+      "section_id": "6EpxlUEAPkpf49u8Ekq4gA"
+    },
+    "documentation_settlement_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يرفع المركز حسابه الختامي إلى مجلس الوزراء خلال (تسعين) يوماً من تاريخ انتهاء السنة المالية، ويزود ديوان المراقبة العامة بنسخة منه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7471,
+      "history": [],
+      "section_id": "wjA_QSfgO996gBdHopFQ4w"
+    },
+    "documentation_settlement_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يرفع المركز إلى رئيس مجلس الوزراء خلال (تسعين) يوماً من تاريخ انتهاء السنة المالية تقريراً سنويًّا عما حققه من إنجازات خلال السنة المنقضية وما واجهه من صعوبات وما يراه من مقترحات لتحسين سير العمل فيه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.822,
+      "history": [],
+      "section_id": "_7h7u-FCbgNnlLKZoYIScw"
+    },
+    "documentation_settlement_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع عدم الإخلال باختصاص ديوان المراقبة العامة في الرقابة على حسابات المركز، يعين المجلس مراجع حسابات خارجيًّا (أو أكثر) من الأشخاص ذوي الصفة الطبيعية أو الاعتبارية المرخص لهم بالعمل في المملكة, ويحدد أتعابه. ويرفع تقرير مراجع الحسابات إلى المجلس، ويزود ديوان المراقبة العامة بنسخة منه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9173,
+      "history": [],
+      "section_id": "9cy4zZRW8C4rgOEMqNmIag"
+    },
+    "documentation_settlement_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ينشر هذا التنظيم في الجريدة الرسمية، ويعمل به من تاريخ نشره.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7261,
+      "history": [],
+      "section_id": "LJhFAyjxKaZJm5pgkJOKvg"
+    }
+  }
+}
