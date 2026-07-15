@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 6584
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23, "bankruptcy_fees": 20, "enforcement_providers": 18, "alimony_fund": 17, "judiciary_bog": 15, "documentation_settlement": 15}
+EXPECTED_TOTAL = 6594
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23, "bankruptcy_fees": 20, "enforcement_providers": 18, "alimony_fund": 17, "judiciary_bog": 15, "documentation_settlement": 15, "mosalaha_center": 10}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -138,6 +138,7 @@ SANITY = [
     ("ينشأ وفقا لأحكام التنظيم صندوق يسمى صندوق النفقة يرتبط بوزير العدل وتكون له شخصية اعتبارية وميزانية مستقلة ويكون مقره في وزارة العدل", "alimony_fund", 2),
     ("لا تتجاوز الفترة الانتقالية التي يحددها المجلس الأعلى للقضاء ومجلس القضاء الإداري بحسب الأحوال المشار إليها في هذه الآلية مدة ثلاث سنوات من تاريخ تعديل نظام المرافعات الشرعية", "judiciary_bog", 15),
     ("يهدف المركز إلى تحقيق التعاون بين الجهات القضائية والحكومية فيما يسند إليه من مهمات تتعلق بالتصفية والبيع من خلال إسنادها إلى الجهات المتخصصة فنيا والإشراف على أعمالها", "documentation_settlement", 3),
+    ("ينشأ في الوزارة مركز يسمى مركز المصالحة ويكون عمله وفقا لأحكام هذا التنظيم", "mosalaha_center", 2),
 ]
 
 
@@ -250,6 +251,7 @@ def main():
         "data/alimony_fund_arabic_legal_llm/alimony_fund_regulation_legal_llm_001_017.json",
         "data/judiciary_bog_arabic_legal_llm/judiciary_bog_mechanism_legal_llm_001_015.json",
         "data/documentation_settlement_arabic_legal_llm/documentation_settlement_regulation_legal_llm_001_015.json",
+        "data/mosalaha_center_arabic_legal_llm/mosalaha_center_regulation_legal_llm_001_010.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -283,7 +285,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23 + bankruptcy_fees 20 + enforcement_providers 18 + alimony_fund 17 + judiciary_bog 15 + documentation_settlement 15; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23 + bankruptcy_fees 20 + enforcement_providers 18 + alimony_fund 17 + judiciary_bog 15 + documentation_settlement 15 + mosalaha_center 10; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 
