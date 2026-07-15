@@ -184,6 +184,8 @@ LAYERS = [
      "documentation_settlement", "regulation"),
     ("data/mosalaha_center_arabic_legal_llm/mosalaha_center_regulation_legal_llm_001_010.json",
      "mosalaha_center", "regulation"),
+    ("data/medical_reports_arabic_legal_llm/medical_reports_regulation_legal_llm_001_013.json",
+     "medical_reports", "regulation"),
 ]
 
 

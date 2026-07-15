@@ -1,0 +1,225 @@
+{
+  "document": "لائحة التقارير الطبية",
+  "document_en": "Medical Reports Regulation",
+  "decree": "قرار وزير العدل رقم (3411)",
+  "decree_date_hijri": "16/11/1444",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "وزير العدل",
+  "issuing_authority_en": "Minister of Justice",
+  "provenance": {
+    "api_source": "MOJ legal portal (laws-gateway.moj.gov.sa) — statute detail + section changes",
+    "api_serial": "InZySyW64YqKkkChZ2dPQw",
+    "statute_id": "C3O9dWSbRvCEWj78UDAmYA",
+    "pdf_source_committed": "inputs/medical_reports_official_pdfs/medical_reports_regulation_moj_official_ar.pdf",
+    "pdf_sha256": "672db5d1fe0b7878bb2020c253065e88bcc0a8846ccb654a8e825d2eb05ee1a2",
+    "pdf_pages": 2,
+    "capture_method": "Every article fetched from the MOJ portal database (statuteStructure and get-Section-Changes, identical text, 0 divergences) and cross-verified against the official MOJ PDF (text-layer NFKC/Farsi-yeh-alef-maksura-folded + hamza/taa-marbuta-folded + diacritics/tatweel-stripped; three extraction channels attempted — raw PDF text layer and a per-line-reversed variant, both of which exhibit the known RTL/ligature glyph-extraction artifact seen elsewhere in this corpus and score near-zero, and 300dpi tesseract-ara OCR, which is clean and used as the scoring channel, segmented by detecting 'المادة' heading lines and sequentially aligning them to the 13 expected ordinals, then scored per-article via difflib SequenceMatcher ratio against the isolated OCR segment). 9 of 13 matched outright (>=0.90 floor: articles 1,3,4,5,7,8,9,10,11; mean 0.8857, min 0.3884 across all 13). The 4 articles that did not clear the floor via the OCR-segment score (2, 6, 12, 13) were low purely due to OCR punctuation/enumerator-mark noise (e.g. '»' for '،', '؟' misread for '٢-', a mid-sentence page break splitting article 6, and article 13's segment absorbing the PDF's trailing footer/QR-code OCR garbage since it is the last article with no closing heading boundary) — all 4 were visually confirmed verbatim-matching by direct reading of the rendered 300dpi PDF page images (full-page and zoomed crops).",
+    "section_vs_structure_divergences": 0,
+    "tatweel_removed_decorative": 0,
+    "otherRelatedLegal": [
+      {
+        "id": "i69EfU1Fm5k0naYQRJ_EgQ",
+        "serial": "xt6PShke0baUTC0OdfS9AQ",
+        "name": "نظام الأحوال الشخصية",
+        "type": 1,
+        "typeName": "نظام"
+      },
+      {
+        "id": "VirwqImRkJVcEd5jz5h69g",
+        "serial": "41zDyO33ty4qZnGWAhpbNg",
+        "name": "لائحة نظام الأحوال الشخصية",
+        "type": 2,
+        "typeName": "لائحة"
+      }
+    ],
+    "known_source_anomaly": "Article 2 (المادة الثانية), item 1: the official text reads '...بالنص عليه بألفاظـ واضحة ودالة عليه.' — the word 'بألفاظ' carries an extraneous trailing tatweel character (ـ) before the following space and 'واضحة'. Confirmed present verbatim in the portal DB text (statuteStructure and get-Section-Changes agree) AND independently confirmed via direct visual inspection of a zoomed crop of the rendered 300dpi official PDF page 1 (the elongation glyph after ألفاظ is visibly present in the PDF's own typeset text), corroborating a genuine artifact of the original issued text (not a portal transcription error). Per project policy this was NOT silently corrected; the portal DB text is carried verbatim as the governing 'text' field for article 2."
+  },
+  "article_count": 13,
+  "status_counts": {
+    "اصلية": 13
+  },
+  "stats": {
+    "mean_similarity": 0.8857,
+    "min_similarity": 0.3884,
+    "amended_articles": [],
+    "added_articles": [],
+    "visually_adjudicated": [
+      "medical_reports_art_002",
+      "medical_reports_art_006",
+      "medical_reports_art_012",
+      "medical_reports_art_013"
+    ]
+  },
+  "articles": {
+    "medical_reports_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقصد بالألفاظ الآتية -أينما وردت في هذه اللائحة- المعاني المبينة أمام كل منها -ما لم يقتضِ السياق غير ذلك-:\nالنظام: نظام الأحوال الشخصية.\nاللائحة: لائحة التقارير الطبية المنصوص عليها في نظام الأحوال الشخصية.\nالطلب: طلب المحكمة من المنشأة الصحية تقريراً طبياً.\nالتقرير: التقرير الطبي الصادر من المنشأة الصحية بناءً على طلب المحكمة، أو المقدم من أحد الأطراف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9688,
+      "history": [],
+      "section_id": "Vc8jTGVgMlhlqYJ19T6dfQ"
+    },
+    "medical_reports_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "١- يجب أن يتضمن الطلب البيانات الأساسية للأطراف ذوي العلاقة، وموضوعه، وتحديد المطلوب بالنص عليه بألفاظـ واضحة ودالة عليه.\n٢- يجب أن يكتب التقرير باللغة العربية، وأن يتضمن البيانات الأساسية لمن صدر بحقه، بعد التحقق من شخصيته، وموضوع الطلب، والإفادة المفصلة بألفاظ صريحة وجازمة ودالة على المطلوب.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.3884,
+      "history": [],
+      "section_id": "aNPntMvhco2QtPLfT9gqyA"
+    },
+    "medical_reports_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يلزم -عند الاقتضاء، وقبل إصدار التقرير- الاطلاع على السجلات الطبية، والتقارير السابقة لدى أي منشأة صحية، وليس لأي منها الامتناع عن تزويد مصدر التقرير بما يلزم لذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9817,
+      "history": [],
+      "section_id": "DeK_Jqx8mWDE5MAy5J9nXw"
+    },
+    "medical_reports_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجب أن يصدر التقرير المتعلق بنقص الأهلية أو فقدها الطارئين، والتقرير المتعلق بمدة أكثر الحمل، من لجنة طبية مختصة مكونة من ثلاثة أطباء استشاريين، وأن يكون بطلب من المحكمة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9824,
+      "history": [],
+      "section_id": "Gq3RwAYSxMPyHLdaZfVGvg"
+    },
+    "medical_reports_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "فيما عدا الأحوال الواردة في المادة (الرابعة) من هذه اللائحة، يجب أن يصدر التقرير من طبيبين مختصين.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9898,
+      "history": [],
+      "section_id": "fNaAFV-Lec5YuZSq_Rtopg"
+    },
+    "medical_reports_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "للمحكمة - عند الاقتضاء ـ ، أو بناء على طلب أحد الأطراف، وفي أي مرحلة تكون عليها الدعوى- أن تحيل التقرير إلى لجنة مختصة بمراجعة التقارير الطبية لمراجعته لاعتماده، أو بيان ما فيه من قصور أو خطأ، وإعداد تقرير طبي جديد من لجنة أخرى وفق الإجراءات المنصوص عليها في اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8792,
+      "history": [],
+      "section_id": "W4b5oxV2WurroFeL_rTFpA"
+    },
+    "medical_reports_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "فيما لم يرد فيه نص في النظام واللائحة؛ تسري على التقارير الطبية الأحكام الواردة في نظام الإثبات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 1.0,
+      "history": [],
+      "section_id": "Jk-wECUiV8frUymMuSTOew"
+    },
+    "medical_reports_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع مراعاة الأنظمة ذات الصلة، تسري على التقارير الطبية الواردة من خارج المملكة أحكام هذه اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9845,
+      "history": [],
+      "section_id": "z3o7YFmEjSyqH_SyecM91A"
+    },
+    "medical_reports_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون للتقارير الصادرة عبر الأنظمة الإلكترونية المعتمدة، الأحكام المقررة في اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.988,
+      "history": [],
+      "section_id": "GQErTzjxYhkVrk_xHLi1XQ"
+    },
+    "medical_reports_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعد الطلب والتقرير وثيقتين سريّتين تسري عليهما الأنظمة ذات الصلة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 1.0,
+      "history": [],
+      "section_id": "uqyvdNoy-jDyjdhk9zUfgg"
+    },
+    "medical_reports_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يشكل وزير الصحة لجنة أو أكثر من اللجان المنصوص عليها في المادتين (الرابعة) و(السادسة) من اللائحة، ويسمي الأطباء المنصوص عليهم في المادة (الخامسة) من اللائحة، ويحدد قرار التشكيل آلية عمل اللجان.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9896,
+      "history": [],
+      "section_id": "URjDueKQIYN_dmnjKRoG2w"
+    },
+    "medical_reports_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "١- مع مراعاة ما ورد في المادة (الثانية) من هذه اللائحة، تُعَِد نماذج الطلبات والتقارير الطبية -الواردة في النظام واللائحة- من لجنة مكونة من وزارتَي العدل والصحة، وتصدر من وزير العدل.\n٢- تحدد اللجنة -المشار إليها في الفقرة رقم (١) من هذه المادة- البيانات الأساسية الواردة في المادة (الثانية) من هذه اللائحة، والمدة اللازمة لإصدار التقارير الطبية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8035,
+      "history": [],
+      "section_id": "KrtYC62Z5mtwyCzbPa3WQQ"
+    },
+    "medical_reports_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تنشر اللائحة في الجريدة الرسمية، وتلغي كل ما يتعارض معها من أحكام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.5579,
+      "history": [],
+      "section_id": "-IWrIO7aRG-WP_0tTNSuLg"
+    }
+  }
+}

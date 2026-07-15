@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 190,
-  "top1_hits": 167,
-  "top3_hits": 183,
-  "top5_hits": 186,
-  "top1_accuracy": 0.8789,
-  "top3_accuracy": 0.9632,
-  "top5_accuracy": 0.9789,
-  "mrr_at_5": 0.9204,
+  "total_queries": 192,
+  "top1_hits": 169,
+  "top3_hits": 185,
+  "top5_hits": 188,
+  "top1_accuracy": 0.8802,
+  "top3_accuracy": 0.9635,
+  "top5_accuracy": 0.9792,
+  "mrr_at_5": 0.9212,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4633,8 +4633,8 @@
      "score": 16
     },
     {
-     "record_id": "sharia-procedure-law-llm-art-081",
-     "article_number": 81,
+     "record_id": "medical-reports-regulation-llm-art-006",
+     "article_number": 6,
      "score": 12
     }
    ]
@@ -5907,6 +5907,68 @@
      "record_id": "evidence-expertise-llm-art-025",
      "article_number": 25,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "mtr-001",
+   "query_ar": "يجب أن يصدر التقرير المتعلق بنقص الأهلية أو فقدها الطارئين، والتقرير المتعلق بمدة أكثر الحمل، من لجنة طبية مختصة مكونة من ثلاثة أطباء استشاريين",
+   "category": "topical",
+   "gold": {
+    "corpus": "medical_reports",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "medical-reports-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 46
+    },
+    {
+     "record_id": "judicial-inspection-regulation-llm-art-024",
+     "article_number": 24,
+     "score": 15
+    },
+    {
+     "record_id": "labor-annex4-llm-art-062",
+     "article_number": 62,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "mtr-002",
+   "query_ar": "فيما لم يرد فيه نص في النظام واللائحة؛ تسري على التقارير الطبية الأحكام الواردة في نظام الإثبات",
+   "category": "topical",
+   "gold": {
+    "corpus": "medical_reports",
+    "law_component": "regulation",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "medical-reports-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 50
+    },
+    {
+     "record_id": "evidence-law-llm-art-064",
+     "article_number": 64,
+     "score": 32
+    },
+    {
+     "record_id": "evidence-law-llm-art-125",
+     "article_number": 125,
+     "score": 29
     }
    ]
   }
