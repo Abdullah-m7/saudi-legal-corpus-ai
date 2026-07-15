@@ -192,6 +192,8 @@ LAYERS = [
      "state_funded_lawyer", "regulation"),
     ("data/lessor_repossession_arabic_legal_llm/lessor_repossession_regulation_legal_llm_001_007.json",
      "lessor_repossession", "regulation"),
+    ("data/elitigation_guide_arabic_legal_llm/elitigation_guide_regulation_legal_llm_001_005.json",
+     "elitigation_guide", "regulation"),
 ]
 
 

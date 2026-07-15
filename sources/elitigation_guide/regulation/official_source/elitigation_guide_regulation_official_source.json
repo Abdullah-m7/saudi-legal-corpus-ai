@@ -1,0 +1,120 @@
+{
+  "document": "الدليل الإجرائي لخدمة التقاضي الإلكتروني",
+  "document_en": "Procedural Guide for the Electronic Litigation Service",
+  "decree": "قرار وزير العدل رقم (8056)",
+  "decree_date_hijri": "05/10/1441",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "وزير العدل",
+  "issuing_authority_en": "Minister of Justice",
+  "provenance": {
+    "api_source": "MOJ legal portal (laws-gateway.moj.gov.sa/apis/legislations/v1) — statute detail + section changes",
+    "api_serial": "myVO-TMtIwgPSdkK_pOfJw",
+    "statute_id": "hFcjViGKAYGY2kVMwLX03A",
+    "pdf_source_committed": "inputs/elitigation_guide_official_pdfs/elitigation_guide_regulation_moj_official_ar.pdf",
+    "pdf_sha256": "269852408df593a66a08b5cc46fcdea3bcca5d5661a2f0e35633e9af4f57fdf0",
+    "pdf_pages": 3,
+    "capture_method": "All 5 items (statuteStructure leaf entries, type=1; item 1 labeled 'مقدمة' [Preamble] and items 2-5 labeled with the portal's own 'sequence' field, which for this instrument is a full heading combining the Arabic ordinal word and a description — 'أولاً: أحكام عامة', 'ثانياً: تحديد المواعيد وتبليغها', 'ثالثاً: إجراءات جلسات التقاضي الإلكتروني، ونظامها', 'رابعاً: المداولة وإصدار الأحكام' — not bare مادة numbering nor bare ordinal words) fetched from the MOJ legal portal database via statute/get-Statute-gateway-Detail (Serial=myVO-TMtIwgPSdkK_pOfJw, statuteId=hFcjViGKAYGY2kVMwLX03A) and cross-verified item-by-item against section/get-Section-Changes (0 text divergences between the two endpoints for all 5 items; each item's get-Section-Changes history array contains exactly 1 version with legalStatusName=اصلية, decree=null, decreeDate=null — a fresh, single-status, never-amended issuance) and against the official MOJ PDF (3 pages, downloaded via document/download using the pdfCopy.documentId token). Portal HTML fragments (<p>/<ol><li>/&nbsp;) were converted to plain text (one line per paragraph, tags stripped, &nbsp; collapsed to space; the two <ol><li> numbered lists inside item 4/ثالثاً, which render in the portal's HTML as unmarked <li> elements, were rendered with explicit Western-digit '1.'..'N.' numbering matching the official PDF's own visible numbering convention for this document's lists, confirmed by direct visual inspection of the rendered PDF pages — this document uses Western Arabic digits for its numbered-list markers, unlike the Eastern Arabic-Indic numerals ['١.' etc] seen in some other instruments already ingested in this corpus) with no character content otherwise altered. Automated scoring: both sides NFKC-normalized + Farsi-yeh/kaf/heh folding + diacritics/tatweel stripped + hamza/alef-forms and taa-marbuta folded + alef-maksura/yeh folded + digits folded, then an anchor-based difflib SequenceMatcher approach was used — matching blocks (size>=3) between the full normalized channel text and each item's normalized text were used to locate and extract the aligned span in the channel (with padding, plus a refined second-pass window sized ~1.3x the item length centered on the matched region), and the item was scored against the better of the two extracted spans, rather than a blind fixed-length slide — computed across three independent extraction channels: (a) plain PyMuPDF text-layer, (b) a per-line word-reversed variant of the same text-layer (this PDF exhibits the known RTL word-order glyph-extraction artifact seen elsewhere in this corpus, so channel (a) alone scores very low, ~0.15-0.30 across all 5 items), and (c) 300dpi tesseract-ara OCR — taking pdf_similarity = max across all three channels. 3 of 5 items (1, 2, 4) matched the >=0.90 floor outright via the OCR channel; the remaining 2 items (3, 5 — 'ثانياً: تحديد المواعيد وتبليغها' and 'رابعاً: المداولة وإصدار الأحكام', both short two-sentence/one-paragraph items) scored 0.8815 and 0.8982 respectively (below floor, short absolute length amplifying the effect of minor OCR artifacts around the kashida-justified text — not genuine text divergences) and were therefore read directly off the rendered official PDF pages (200dpi, full page, pages 2 and 3) as a direct visual cross-check; both matched the portal text verbatim. All 5 items / all 3 pages were visually read in full (both directly for adjudication and as a general sanity check of items 1, 2, 4). POST-CAPTURE NORMALIZATION: this document exhibits pervasive full-justification decorative kashida (typesetting stretch-justification baked into the portal HTML/PDF source) across items 1, 2, 3, 5 (356 tatweel characters total, 0 in item 4) — a formatting artifact of the source document, not legal content; per this corpus's standing convention (matching the judiciary_bog_mechanism track precedent), all in-word decorative tatweel between two Arabic letters was normalized/removed prior to ingestion, restoring the words to their standard spelling (e.g. 'اسـتكمالا' -> 'استكمالا', 'عليهـا' -> 'عليها'). This did not touch any content, only justification-stretch characters.",
+    "section_vs_structure_divergences": 0,
+    "tatweel_removed_decorative": 356,
+    "otherRelatedLegal": [
+      {
+        "id": "xK7JuI6hG_9WXXCSizagyg",
+        "serial": "sSe-gyvwrajdndY5P08WZg",
+        "name": "نظام المرافعات الشرعية",
+        "type": 1,
+        "typeName": "نظام"
+      },
+      {
+        "id": "Ue6Vp8Mi4oYY4sste0TIww",
+        "serial": "3PpcH7Pox63dH0Jw82s-UA",
+        "name": "اللوائح التنفيذية لنظام المرافعات الشرعية",
+        "type": 2,
+        "typeName": "لائحة"
+      }
+    ],
+    "issuing_authority_note": "issuanceDepartmentTool field reads 'قرار وزير العدل رقم (8056)' (Minister of Justice Decision No. 8056), issuanceDate 1441-10-05H (5 Shawwal 1441H), publishDate 1442-01-01H (1 Muharram 1442H); legalStatueName 'ساري' (in force). The MOJ portal's own legalType/legalTypeId classification for this instrument is 'لائحة' (legalTypeId=2, regulation) — NOT 'دليل' despite the document's own title containing that word — hence law_component='regulation' was used per project convention (use the portal's own classificationName/legalType, not the document's title word), consistent with the precedent set by sources/state_funded_lawyer/ (title word 'آلية', portal legalType 'لائحة'). classificationName='القضاء' (The Judiciary), classificationId=1. relatedLegalName (primary related instrument returned by the portal) = null/None for this instrument. otherRelatedLegal (2 entries, both captured from the API): نظام المرافعات الشرعية (Sharia Procedure Law / Civil Procedure Law, نظام, serial sSe-gyvwrajdndY5P08WZg) — already ingested in this corpus at sources/sharia_procedure/law/ — and اللوائح التنفيذية لنظام المرافعات الشرعية (Executive Regulations of the Sharia Procedure Law, لائحة, serial 3PpcH7Pox63dH0Jw82s-UA) — already ingested in this corpus at sources/sharia_procedure/regulation/. The instrument's own preamble (item 1/مقدمة) additionally cites 'الفقرة (١) من المادة (الحادية والسبعين) من نظام القضاء' (Article 71(1) of the Judiciary Law) — already ingested in this corpus at sources/judiciary/law/ — and 'المادة (السابعة) من نظام المحاكم التجارية' (Article 7 of the Commercial Courts Law) — already ingested in this corpus at sources/commercial_courts/law/ — as further enabling bases for e-litigation procedure, neither of which was surfaced via otherRelatedLegal. Item 4/ثالثاً also cites 'المادة (١/٦٣)' of اللائحة التنفيذية لنظام المرافعات الشرعية and 'المادة (٧١)' and 'المادة ٧٣' of نظام المرافعات الشرعية itself (both already ingested per above). This instrument's own promulgating decree (قرار وزير العدل رقم ٨٠٥٦ وتاريخ ١٤٤١/١٠/٥هـ, signed by وزير العدل وليد بن محمد الصمعاني [Minister of Justice Walid bin Mohammed Al-Samaani]) was separately fetched and visually read (scanned image, no text layer; issuanceDepartmentList[0].documentId, rendered directly) — it independently confirms decree number 8056 dated 5/10/1441H, and cites as its own enabling basis 'المادة (الثانية والسبعين) من نظام المرافعات الشرعية' (Article 72 of the Sharia Procedure Law), 'المادة (السابعة) من نظام المحاكم التجارية' (Article 7 of the Commercial Courts Law), and 'المواد (الثالثة) و(الخامسة/١) و(السادسة) و(السابعة) و(الثامنة) و(التاسعة) من نظام التعاملات الإلكترونية' (Articles 3, 5(1), 6, 7, 8, 9 of the Electronic Transactions Law) — this Electronic Transactions Law does NOT appear to be separately ingested in this corpus under any existing law_key (a search of sources/ for 'التعاملات الإلكترونية' / 'electronic_transactions' found no match). The decree's own recitals ('ثانياً: الموافقة على الدليل الإجرائي لخدمة التقاضي عن بعد (التقاضي الإلكتروني) المرفق') confirm this decree is indeed the promulgating instrument for this exact document. No law_key collision: a search of sources/ for 'elitigation_guide' / 'الدليل الإجرائي' / 'التقاضي الإلكتروني' returned no existing track under this law_key prior to this ingestion.",
+    "known_source_anomaly": "Item 4 (ثالثاً: إجراءات جلسات التقاضي الإلكتروني، ونظامها), first numbered point of the 'النوع الأول: الجلسة الكتابية' sub-list, reads 'تبدأ الجلسة الكتابية) بافتتاح الدائرة القضائية لها في الموعد المحدد...' — the term 'الجلسة الكتابية' is followed by a stray closing parenthesis with no matching opening parenthesis, whereas the term is written consistently in parentheses '(الجلسة الكتابية)' everywhere else in the same item and throughout the rest of the document (including later in this very same numbered point: '...وللدائرة تعليق مدة (الجلسة الكتابية) مؤقتا...'). This exact missing-opening-parenthesis is confirmed present verbatim in BOTH official sources of this document — the portal DB text (statuteStructure / get-Section-Changes, identical) and the rendered official PDF page 2 (independently visually read at 200dpi, confirming '...لها) بافتتاح الدائرة...' — sic — appears exactly as in the portal text, i.e. this is not an extraction or OCR artifact of this run, nor a divergence between the portal DB and the PDF; it is a genuine minor typographical anomaly in the source's own text). Per project policy this was NOT silently corrected; the portal DB text is carried verbatim as the governing text field for item 4."
+  },
+  "article_count": 5,
+  "status_counts": {
+    "اصلية": 5
+  },
+  "stats": {
+    "mean_similarity": 0.938,
+    "min_similarity": 0.8815,
+    "amended_articles": [],
+    "added_articles": [],
+    "visually_adjudicated": [
+      "elitigation_guide_art_003",
+      "elitigation_guide_art_005"
+    ]
+  },
+  "articles": {
+    "elitigation_guide_art_001": {
+      "number_label_ar": "مقدمة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "استكمالا لمنظومة التحول الرقمي، وانسجاماً مع مقتضيات أحكام نظام التعاملات الإلكترونية، ووفقاً لمضامين الفقرة (١) من المادة (الحادية والسبعين) من نظام القضاء، والمادة (الثانية والسبعين) من نظام المرافعات الشرعية والمادة (السابعة) من نظام المحاكم التجارية، وما تضمنته من وضع الأحكام والقواعد الرئيسية لإجراءات التقاضي عن بعد (التقاضي الإلكتروني) ; تقدم الوزارة هذا الدليل لتطبيق إجراءات هذا المسار.\nوتحافظ خدمة (التقاضي الإلكتروني) على الضمانات القضائية وفق حوكمة تضمن تحقيق تلك الضمانات بما يتناسب مع طبيعة هذا المسار، من خلال ما يأتي:\nأولا: تحقيق مبدأ المواجهة\nيتم من خلال خدمة (التقاضي الإلكتروني) استيفاء حق الدفاع بتمكين الأطراف من الاطلاع على كامل ما يقدم في القضية بما في ذلك المذكرات والمستندات التي تقدم أثناء الجلسة أو عند التهيئة والتحضير، ومواجهة الأطراف بها.\nكما تحقق خدمة (التقاضي الإلكتروني) تطبيقا أسهل لما سبق أن أطلقته الوزارة في مشروع (توثيق الجلسات بالصوت والصورة)، وتؤكد اتفاقية استخدام خدمة (التقاضي الإلكتروني) على التزام الوزارة بتسجيل وحفظ سجلات الترافع عن بعد إلكترونية، ويكون لها صفة السرية، ولا يجوز الاطلاع عليها أو تداولها أو نسخها إلا وفق الأحكام المنصوص عليها نظاماً.\nثانيا: مبدأ علنية الجلسات\nيتاح الدخول إلى جلسات (التقاضي الإلكتروني) وفق إجراءات محددة، بما يراعي سلطة المحكمة في ضبط نظام الجلسة، إضافة إلى خدمة تسجيل الجلسات والاحتفاظ بها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9659,
+      "history": [],
+      "section_id": "3f8sYP_HlQY7FYXvB2JRMg"
+    },
+    "elitigation_guide_art_002": {
+      "number_label_ar": "أولاً: أحكام عامة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1. تتضمن خدمة التقاضي الإلكتروني جميع إجراءات التقاضي المنصوص عليها في الأنظمة والتي يمكن تطبيقها إلكترونياً، كتبادل المذكرات والجواب عليها وتقديم المستندات والمحررات وعقد (الجلسة الكتابية) و(الجلسة المرئية)، والنطق بالحكم واستلام نسخة الحكم والاعتراض عليه أمام المحكمة الأعلى درجة\n2. يجري عقد الجلسات في التقاضي الإلكتروني إما عن طريق (الجلسة الكتابية) أو (الجلسة المرئية)، وسيأتي التعريف بهذين النوعين وتفصيل إجراءاتهما في البند (ثالثاً).\n3. يشترط أن يكون لدى جميع الأطراف حساب فعال في النفاذ الوطني الموحد، أو القدرة على إنشائه.\n4. لأطراف الدعوى حق الاطلاع على ملف القضية إلكترونياً.\n5. تكون إجراءات التقاضي الإلكتروني حصرا من خلال منصة (التقاضي الإلكتروني) أو الأنظمة المعتمدة من الوزارة للتقاضي الإلكتروني، ولا يجوز للدائرة بحال أن تجريها من خلال وسائل أخرى.\n6. تراعى الضوابط الخاصة بأداء الشهادة، واليمين، والتلفظ بالخلع والطلاق؛ في التقاضي الإلكتروني.\n7. تصدر الوزارة الأدلة التشغيلية للتقاضي الإلكتروني لأطراف العملية القضائية.\n8. في حال تعذر نظر القضية عبر التقاضي الإلكتروني فيجوز للدائرة عقدها حضورياً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9612,
+      "history": [],
+      "section_id": "CWDRl2Q0iaINxq6-Tz6n8A"
+    },
+    "elitigation_guide_art_003": {
+      "number_label_ar": "ثانياً: تحديد المواعيد وتبليغها",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا تترتب الآثار النظامية في حق من لم يتبلغ من أطراف الدعوى، أو لم يصل إليه رابط الدخول، وعلى الدائرة أن تدون نتيجة التبليغ بالموعد ووصول الرابط في ضبط الجلسة.\nيكون موعد (الجلسة المرئية) خلال ساعات العمل. وللدائرة عقدها خارج وقت الدوام خلال أيام العمل الرسمية بما لا يتجاوز الساعة الخامسة مساءً، بعد موافقة المجلس الأعلى للقضاء.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8815,
+      "history": [],
+      "section_id": "FCcvPl9Hjg6jEVjJeyS_ag"
+    },
+    "elitigation_guide_art_004": {
+      "number_label_ar": "ثالثاً: إجراءات جلسات التقاضي الإلكتروني، ونظامها",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تحقيقا لمقتضى المادة (١/٦٣) من اللائحة التنفيذية لنظام المرافعات الشرعية فقد صممت الخدمة بحيث يعد الإشعار ببدء الجلسة عبر منصة (التقاضي الإلكتروني أو أي وسيلة الكترونية نداء للخصوم يتحقق به إعلامهم بانعقادها كما صممت الخدمة بحيث يعد المدعي والمدعى عليه حاضرين أو أيا منهما عند الكتابة في الجلسة الكتابية) خلال المهلة المحددة من الدائرة، أو دخولهما (الجلسة المرئية) خلال ثلاثين دقيقة من الوقت المحدد الانعقاد الجلسة، فإذا لم يحضر خلالها فيعامل وفقا لأحكام النظام بعد التحقق من التبليغ، ووصول إشعارات (الجلسة الكتابية)، ورابط (الجلسة المرئية).\nوالجلسات التي تعقد عن طريق خدمة (التقاضي الإلكتروني) نوعان:\nالنوع الأول: الجلسة الكتابية: يقصد بـ(الجلسة الكتابية) تمكين الدائرة أطراف الدعوى من الترافع الكتابي، وتبادل المذكرات، وإيداعها، بالإضافة إلى توجيه الطلبات والأسئلة من الدائرة والإجابة عليها كتابياً من قبل الأطراف وإرفاق مستنداتهم.\nالنوع الثاني: الجلسة المرئية: ويقصد بها عقد الدائرة لجلسة مرئية بالصوت والصورة في قاعات إلكترونية، يحضرها الأطراف عبر وسائل الاتصال المعتمدة من الوزارة للتقاضي الإلكتروني، وتتم فيها مناقشة الأطراف، واستكمال إجراءات التقاضي، والنطق بالحكم.\nالنوع الأول: الجلسة الكتابية:\nوتتم (إجراءات الجلسة الكتابية) وفقا لما يلي:\n1. تبدأ الجلسة الكتابية) بافتتاح الدائرة القضائية لها في الموعد المحدد، ويستمر انعقادها حتى تقوم الدائرة بإنهائها خلال مدة أقصاها ثلاثين يوما من افتتاحها، وللدائرة لأسباب تقدرها أن تزيد مدة مماثلة لمرة واحدة، وللدائرة تعليق مدة (الجلسة الكتابية) مؤقتا إذا تعلق نظر القضية القيام بإجراء خارج عن إرادة الدائرة وأطراف الدعوى، كتقرير الخبير، ونحوها.\n2. يكون تقديم المذكرات عبر الحقول الظاهرة بالخدمة، ويراعى فيه الوضوح قدر المستطاع.\n3. لأطراف الدعوى إرفاق الصور والمستندات المشار إليها في (الجلسة الكتابية) أو في المذكرات المقدمة. ولا يجوز لهم إرفاق ذات المستندات مرة أخرى.\n4. للدائرة إمهال أطراف الدعوى لتبادل المذكرات أو الإجابة على الطلبات إلى مدة محددة أثناء انعقاد (الجلسة الكتابية) متى رأت ضرورة ذلك، على أنه لا يجوز تكرار المهلة لذات السبب إلا لعذر تقبله الدائرة.\n5. يتحقق أعوان القضاء في الدائرة أو الجهة المختصة من تبادل أطراف الدعوى للمذكرات وفقا لعدد المذكرات ووقت تقديمها الذي حددته الدائرة.\n6. يرسل من خلال منصة (التقاضي الإلكتروني) رسائل نصية لأطراف الدعوى عن جميع العمليات التي تتم في (الجلسات الكتابية).\n7. مع مراعاة المادة (٧١) من نظام المرافعات الشرعية، يقوم كاتب الضبط بإشراف الدائرة بتحرير محضر ضبط لجميع ما ورد في (الجلسة الكتابية)، وتسري عليه الأحكام النظامية المتعلقة بالوثائق القضائية.\n8. يمكّن الخبير من الدخول إلى (الجلسة الكتابية)، ومن إيداع نسخة من تقرير الخبرة إلكترونياً.\n9. لا يجري النطق بالأحكام أو شطب الدعوى او الحكم بالنكول في (الجلسة الكتابية).\n10. في غير الدعاوى المستعجلة، تحدد الدائرة أمداً للإجابة عن الطلبات أو الأسئلة خلال مدة لا تقل عن خمسة أيام عمل.\nالنوع الثاني: الجلسة المرئية:\nوتكون (الجلسة المرئية) وفق الإجراءات التالية:\n1. يجب على أطراف الدعوى الحضور وتدوين الاسم كاملة باللغة العربية وفقا للهوية الوطنية أو هوية المقيم أو السجل التجاري في خانة المستخدم.\n2. يرسل النظام رسالة نصية لأطراف الدعوى قبل موعد (الجلسة المرئية (بيوم تحتوي على رابط الدخول إلى الجلسة، وعلى أطراف الدعوى الدخول إلى القاعة الإلكترونية قبل موعد (الجلسة المرئية) بوقت كافٍ والتأكد من الاستعداد والجاهزية، وفي حال تعثر دخول أحد أطراف الدعوى أو عدم معرفة آلية الدخول، فيتوجب عليه التواصل مع مركز الاتصال الموحد ١٩٥٠.\n3. يتولى أعوان القضاء تحضير الأنظمة المستخدمة في (الجلسة المرئية)، وتفعيل النظام التقني قبل بدء الجلسة، والتأكد من سلامتها، وعدم وجود أي خلل أو عائق، والتحقق -من خلال الوسائل المعتمدة- من تبلغ الأطراف، ووصول روابط (الجلسات المرئية) لهم.\n4. يتحقق أعوان القضاء من صحة تدوين الاسم بالكامل باللغة العربية والتأكد من جاهزية أطراف الدعوى ووضوح الصوت والصورة.\n5. يقوم أعوان القضاء بتحضير أطراف الدعوى والتحقق من هوياتهم، ومن صفتهم في الدعوى وتدوينها قبل بدء (الجلسة المرئية).\n6. في حال عدم القدرة على عقد الجلسة المرئية أو إكمالها لسبب يعود للدائرة، فيتم إشعار أطراف الدعوى وتحدد الدائرة موعد لاحق بعد بيان مبررات التأجيل.\n7. في حال خروج أحد أطراف الدعوى من (الجلسة المرئية) أثناء انعقادها ولم يعاود الدخول خلال ١٠ دقائق. فتواصل الدائرة عقد الجلسة وفق الأحكام النظامية.\n8. يجب على من يحضر (الجلسة المرئية) المحافظة على نظامها، وكتم اللاقط، وعدم المقاطعة أو التشويش أو الدخول والخروج المتكرر. كما يجب على جميع الحضور تفعيل الكاميرا طيلة وقت (الجلسة المرئية).\n9. ما لم يكن أحد أطراف الدعوى سجينا، لا يجوز عقد جلسة أحد أطرافها حاضراً في قاعة المحكمة، والطرف الأخر في القاعة الإلكترونية.\n10. يكون التحدث -بعد إذن رئيس الجلسة- بهدوء واتزان، وتجنب السرعة أو الابتعاد عن اللاقط الصوتي أثناء الحديث.\n11. على أطراف الدعوى عند عقد (الجلسة المرئية) احترام مجلس القضاء، واختيار المكان اللائق بهيبته. وعلى الدائرة اتخاذ ما يلزم نظاماً وفقا للمادة ٧٣ من نظام المرافعات الشرعية.\n12. لأطراف الدعوى عرض الوثائق والمستندات من خلال مشاركة الشاشة بعد موافقة الدائرة، ولا يجوز بحال إرسال رسائل في المحادثات أثناء عقد (الجلسة المرئية) إلا بإذن الدائرة.\n13. يحرر محضر ضبط لكل (الجلسة المرئية).\n14. يكون حضور القضاة وأعوانهم وأطراف الدعوى وقت (الجلسة المرئية) بالزي الرسمي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9832,
+      "history": [],
+      "section_id": "Ny17HbCOULLXO7xuroi3jg"
+    },
+    "elitigation_guide_art_005": {
+      "number_label_ar": "رابعاً: المداولة وإصدار الأحكام",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون عقد جلسة المداولة بين أعضاء الدائرة إلكترونيا في خدمة (التقاضي الإلكتروني)، مع المحافظة على سريتها، وعدم دخول أو مشاركة غير القضاة الذين سمعوا المرافعة. يكون النطق بالحكم وشطب الدعوى والحكم بالنكول من خلال (الجلسة المرئية) أو (الجلسة الحضورية) وتسلم الأحكام للأطراف إلكترونياً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8982,
+      "history": [],
+      "section_id": "VQsCyYMQIsaEiDnyzGoAxw"
+    }
+  }
+}
