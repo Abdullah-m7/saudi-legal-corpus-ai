@@ -198,6 +198,8 @@ LAYERS = [
      "judicial_training_center", "guide"),
     ("data/judgment_objection_methods_arabic_legal_llm/judgment_objection_methods_regulation_legal_llm_001_062.json",
      "judgment_objection_methods", "regulation"),
+    ("data/real_estate_expropriation_arabic_legal_llm/real_estate_expropriation_law_legal_llm_001_039.json",
+     "real_estate_expropriation", "law"),
 ]
 
 

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 204,
-  "top1_hits": 180,
-  "top3_hits": 197,
-  "top5_hits": 200,
-  "top1_accuracy": 0.8824,
-  "top3_accuracy": 0.9657,
-  "top5_accuracy": 0.9804,
-  "mrr_at_5": 0.9234,
+  "total_queries": 206,
+  "top1_hits": 182,
+  "top3_hits": 199,
+  "top5_hits": 202,
+  "top1_accuracy": 0.8835,
+  "top3_accuracy": 0.966,
+  "top5_accuracy": 0.9806,
+  "mrr_at_5": 0.9241,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4380,14 +4380,14 @@
      "score": 33
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
-     "score": 13
+     "record_id": "real-estate-expropriation-law-llm-art-001",
+     "article_number": 1,
+     "score": 19
     },
     {
-     "record_id": "pdpl-reg-llm-art-006",
-     "article_number": 6,
-     "score": 13
+     "record_id": "real-estate-expropriation-law-llm-art-008",
+     "article_number": 8,
+     "score": 19
     }
    ]
   },
@@ -6341,6 +6341,68 @@
      "record_id": "judicial-costs-regulation-llm-art-016",
      "article_number": 16,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "nzm-001",
+   "query_ar": "تبلغ الهيئة الجهة صاحبة المشروع بقرار لجنة نزع ملكية العقارات ووضع اليد المؤقت على العقارات، وذلك خلال مدة ستين يوماً من تاريخ تقديم الطلب",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_expropriation",
+    "law_component": "law",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-expropriation-law-llm-art-009",
+     "article_number": 9,
+     "score": 82
+    },
+    {
+     "record_id": "real-estate-expropriation-law-llm-art-013",
+     "article_number": 13,
+     "score": 71
+    },
+    {
+     "record_id": "real-estate-expropriation-law-llm-art-008",
+     "article_number": 8,
+     "score": 70
+    }
+   ]
+  },
+  {
+   "query_id": "nzm-002",
+   "query_ar": "يجوز وضع اليد المؤقت على العقارات مقابل تعويض عادل، وذلك تحقيقاً لمصلحة عامة ذات طابع مؤقت",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_expropriation",
+    "law_component": "law",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-expropriation-law-llm-art-025",
+     "article_number": 25,
+     "score": 52
+    },
+    {
+     "record_id": "real-estate-expropriation-law-llm-art-029",
+     "article_number": 29,
+     "score": 42
+    },
+    {
+     "record_id": "real-estate-expropriation-law-llm-art-027",
+     "article_number": 27,
+     "score": 41
     }
    ]
   }
