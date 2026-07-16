@@ -196,6 +196,8 @@ LAYERS = [
      "elitigation_guide", "regulation"),
     ("data/judicial_training_center_arabic_legal_llm/judicial_training_center_guide_legal_llm_001_018.json",
      "judicial_training_center", "guide"),
+    ("data/judgment_objection_methods_arabic_legal_llm/judgment_objection_methods_regulation_legal_llm_001_062.json",
+     "judgment_objection_methods", "regulation"),
 ]
 
 

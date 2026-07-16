@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 202,
-  "top1_hits": 179,
-  "top3_hits": 195,
-  "top5_hits": 198,
-  "top1_accuracy": 0.8861,
-  "top3_accuracy": 0.9653,
-  "top5_accuracy": 0.9802,
-  "mrr_at_5": 0.9251,
+  "total_queries": 204,
+  "top1_hits": 180,
+  "top3_hits": 197,
+  "top5_hits": 200,
+  "top1_accuracy": 0.8824,
+  "top3_accuracy": 0.9657,
+  "top5_accuracy": 0.9804,
+  "mrr_at_5": 0.9234,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -2230,25 +2230,25 @@
     "law_component": "law",
     "article_number": 176
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "judgment-objection-methods-regulation-llm-art-050",
+     "article_number": 50,
+     "score": 34
+    },
     {
      "record_id": "sharia-procedure-law-llm-art-176",
      "article_number": 176,
      "score": 33
     },
     {
-     "record_id": "commercial-courts-regulation-llm-art-215",
-     "article_number": 215,
-     "score": 16
-    },
-    {
-     "record_id": "oa-llm-companies-art-170",
-     "article_number": 170,
-     "score": 16
+     "record_id": "judgment-objection-methods-regulation-llm-art-057",
+     "article_number": 57,
+     "score": 29
     }
    ]
   },
@@ -5501,9 +5501,9 @@
      "score": 28
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
-     "score": 21
+     "record_id": "judgment-objection-methods-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 22
     }
    ]
   },
@@ -6209,14 +6209,14 @@
      "score": 28
     },
     {
+     "record_id": "judgment-objection-methods-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 17
+    },
+    {
      "record_id": "commercial-courts-law-llm-art-022",
      "article_number": 22,
      "score": 14
-    },
-    {
-     "record_id": "commercial-courts-regulation-llm-art-220",
-     "article_number": 220,
-     "score": 13
     }
    ]
   },
@@ -6279,6 +6279,68 @@
      "record_id": "judicial-training-center-guide-llm-art-016",
      "article_number": 16,
      "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "tea-001",
+   "query_ar": "يكون تقديم الطلبات واتخاذ الإجراءات عبر الأنظمة الإلكترونية المعتمدة من وزارة العدل، ويُستغنى عن أي إجراء تحققت غايته باستخدام تلك الأنظمة",
+   "category": "topical",
+   "gold": {
+    "corpus": "judgment_objection_methods",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judgment-objection-methods-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 40
+    },
+    {
+     "record_id": "tawtheeq-regulation-llm-art-020",
+     "article_number": 20,
+     "score": 25
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-008",
+     "article_number": 8,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "tea-002",
+   "query_ar": "تعد الإدارة المختصة ما يلزم لإنفاذ هذه اللائحة، ويصدر باعتماده قرار من وزير العدل، وبالأخص النماذج والحلول الرقمية والأدلة الإجرائية",
+   "category": "topical",
+   "gold": {
+    "corpus": "judgment_objection_methods",
+    "law_component": "regulation",
+    "article_number": 60
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judgment-objection-methods-regulation-llm-art-060",
+     "article_number": 60,
+     "score": 44
+    },
+    {
+     "record_id": "bankruptcy-case-rules-llm-art-022",
+     "article_number": 22,
+     "score": 24
+    },
+    {
+     "record_id": "judicial-costs-regulation-llm-art-016",
+     "article_number": 16,
+     "score": 23
     }
    ]
   }
