@@ -1,0 +1,31 @@
+{
+  "law_key": "regions",
+  "layer": "REGIONS_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 41,
+  "official_text_status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+  "status_counts": {
+    "اصلية": 31,
+    "معدلة": 9,
+    "ملغاة": 0,
+    "مضافة": 1
+  },
+  "decree": "الأمر الملكي رقم (أ/92)",
+  "decree_date_hijri": "27/8/1412",
+  "consolidated_amended_law": true,
+  "verification_methodology_note": "Regions/Provinces Law «نظام المناطق» — Royal Order A/92 dated 27/8/1412H (King Fahd bin Abdulaziz Al Saud), published in Umm Al-Qura Gazette issue 3397, 2/9/1412H. Flat structure, no chapters/أبواب. laws.boe.gov.sa was NOT reachable for this specific LawDetails GUID across ~20 attempts over 45+ minutes this research pass (direct curl, curl+r.jina.ai with varied timeout/wait-for-selector/engine headers, and WebFetch+r.jina.ai) — consistent network-idle timeouts (15-120s), a Cloudflare 524, and rate-limit blocks (401 'bad IP reputation', 403 'consecutive error'). The same method successfully fetched a different BOE law page in 19s this same session, so this appears to be a page-specific hang rather than a systemic block; a follow-up attempt from a fresh session is recommended. In place of BOE, full text rests on CROSS-VERIFIED AGREEMENT BETWEEN TWO INDEPENDENT ARABIC SECONDARY SOURCES: islamport.com ('الموسوعة الشاملة', full consolidated/amended running text with footnoted amendment provenance) and nezams.com (independent Saudi-law search database, original wording + separate amendment annotations) — substantively identical, only trivial OCR/spelling slips found and corrected against the cross-source (art 16(3) 'وكيل الأمارة' -> 'وكيل الإمارة'; art 22 'للما ورد' -> 'لما ورد'; art 39 'أمارة' -> 'إمارة' hamza spelling artifacts). FAOLEX's official English government-submitted translation (faolex.fao.org/docs/pdf/sau213421.pdf) was used only as a WEAKER meaning-level cross-check (English, not Arabic) and was confirmed INCOMPLETE (stops at article 40, omits article 41) and carries an internal date error (its header says 1414H, contradicting its own decree text and all Arabic sources, which agree on 1412H for the original issuance). This is a distinct, clearly-flagged tier: genuine same-language (Arabic-Arabic) two-source convergence, stronger than an English-only fallback, but still short of this corpus's gold-standard BOE/MOJ structured-portal primary source. A single consolidating amendment, Royal Order A/21 dated 30/3/1414H, amended Articles 3, 7, 9, 10, 11, 12, 13, 16(paragraph 3), 37, and added Article 41 — fully incorporated below as the current in-force text (original pre-1414H wording not independently re-extracted article-by-article beyond what the cross-source annotations confirm). A related non-textual instrument, Royal Order A/112 dated 28/6/1414H, implements Article 2 by listing the Kingdom's 13 regions and their administrative seats — supplementary, not part of the 41 articles themselves, not ingested as an article.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "regions_art_all",
+      "description": "laws.boe.gov.sa was not reachable for this law's specific LawDetails page across ~20 attempts this research pass, despite the same method succeeding on a different BOE law page in the same session — suggesting a page-specific hang rather than a systemic block. A follow-up BOE attempt from a fresh session/network path is recommended before this track is treated as fully primary-source-anchored."
+    },
+    {
+      "article_key": "regions_faolex_cross_check",
+      "description": "FAOLEX's English PDF (used only as a meaning-level cross-check, not for wording) is itself incomplete (omits article 41) and carries an internal date error (header says 1414H, contradicting its own decree text and all Arabic sources' 1412H). Not used as a basis for any Arabic text in this track; documented here as a known flaw in that secondary reference only."
+    },
+    {
+      "article_key": "regions_art_112_companion",
+      "description": "Royal Order A/112 (28/6/1414H) implements Article 2 by listing the Kingdom's 13 regions and administrative seats. This is a companion instrument, not a textual amendment to any article, and is NOT ingested as an article of this law."
+    }
+  ],
+  "source_artifact": "sources/regions/law/official_source/regions_law_official_source.json"
+}
