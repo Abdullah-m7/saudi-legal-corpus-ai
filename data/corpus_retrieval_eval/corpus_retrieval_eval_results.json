@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 220,
-  "top1_hits": 196,
-  "top3_hits": 213,
-  "top5_hits": 216,
-  "top1_accuracy": 0.8909,
-  "top3_accuracy": 0.9682,
-  "top5_accuracy": 0.9818,
-  "mrr_at_5": 0.9289,
+  "total_queries": 222,
+  "top1_hits": 198,
+  "top3_hits": 215,
+  "top5_hits": 218,
+  "top1_accuracy": 0.8919,
+  "top3_accuracy": 0.9685,
+  "top5_accuracy": 0.982,
+  "mrr_at_5": 0.9296,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6837,6 +6837,68 @@
      "record_id": "council-of-ministers-law-llm-art-004",
      "article_number": 4,
      "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "rgn-001",
+   "query_ar": "يهدف هذا النظام إلى رفع مستوى العمل الإداري والتنمية في مناطق المملكة، كما يهدف إلى المحافظة على الأمن والنظام",
+   "category": "topical",
+   "gold": {
+    "corpus": "regions",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "regions-law-llm-art-001",
+     "article_number": 1,
+     "score": 41
+    },
+    {
+     "record_id": "labor-annex5-llm-014-permanent",
+     "article_number": 14,
+     "score": 25
+    },
+    {
+     "record_id": "labor-reg-llm-art-038",
+     "article_number": 38,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "rgn-002",
+   "query_ar": "يُشترط في عضو المجلس أن يكون سعودي الجنسية بالأصل والمنشأ، وأن يكون من المشهود لهم بالصلاح والكفاية",
+   "category": "topical",
+   "gold": {
+    "corpus": "regions",
+    "law_component": "law",
+    "article_number": 17
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "regions-law-llm-art-017",
+     "article_number": 17,
+     "score": 35
+    },
+    {
+     "record_id": "council-of-ministers-law-llm-art-003",
+     "article_number": 3,
+     "score": 30
+    },
+    {
+     "record_id": "labor-annex3-llm-art-003",
+     "article_number": 3,
+     "score": 15
     }
    ]
   }
