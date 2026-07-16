@@ -1,0 +1,87 @@
+{
+  "law_key": "electronic_transactions",
+  "layer": "ELECTRONIC_TRANSACTIONS_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 31,
+  "official_text_status": "SINGLE_PRIMARY_SOURCE_WIPO_STRUCTURAL_CROSS_CHECK_MANUAL_LIGATURE_CORRECTION",
+  "status_counts": {
+    "اصلية": 24,
+    "معدلة": 5,
+    "ملغاة": 2,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/18)",
+  "decree_date_hijri": "8/3/1428",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "section_ar": "الفصل الأول: أحكام عامة",
+      "first_article": 1,
+      "last_article": 4
+    },
+    {
+      "section_ar": "الفصل الثاني: الآثار النظامية للتعاملات والسجلات والتوقيعات الإلكترونية",
+      "first_article": 5,
+      "last_article": 9
+    },
+    {
+      "section_ar": "الفصل الثالث: انعقاد التعامل الإلكتروني",
+      "first_article": 10,
+      "last_article": 13
+    },
+    {
+      "section_ar": "الفصل الرابع: التوقيع الإلكتروني",
+      "first_article": 14,
+      "last_article": 14
+    },
+    {
+      "section_ar": "الفصل الخامس: اختصاصات الهيئة",
+      "first_article": 15,
+      "last_article": 15
+    },
+    {
+      "section_ar": "الفصل السادس: المركز الوطني للتصديق الرقمي",
+      "first_article": 16,
+      "last_article": 17
+    },
+    {
+      "section_ar": "الفصل السابع: واجبات مقدم خدمات التصديق ومسؤولياته",
+      "first_article": 18,
+      "last_article": 21
+    },
+    {
+      "section_ar": "الفصل الثامن: مسؤوليات صاحب الشهادة",
+      "first_article": 22,
+      "last_article": 22
+    },
+    {
+      "section_ar": "الفصل التاسع: المخالفات والعقوبات",
+      "first_article": 23,
+      "last_article": 27
+    },
+    {
+      "section_ar": "الفصل العاشر: أحكام ختامية",
+      "first_article": 28,
+      "last_article": 31
+    }
+  ],
+  "verification_methodology_note": "Electronic Transactions Law «نظام التعاملات الإلكترونية» — Royal Decree M/18 dated 8/3/1428H, distinct from the Anti-Cyber Crime Law (M/17, same council session, different decree, different WIPO Lex catalogue entry, non-overlapping subject matter — confirmed via three independent sources). 10 chapters, 31 articles in the original 2007 issuance. laws.boe.gov.sa was unreachable this research pass by every method tried (direct curl TLS reset; r.jina.ai consistently timed out and then rate-limited the IP with a 401 'bad IP reputation'; WebFetch via the same proxy returned 422). PRIMARY SOURCE USED INSTEAD: the official Bureau of Experts/Council of Ministers 'Official Translation Division' bilingual PDF (sdb.gov.sa-hosted, first edition 1431H) — the same booklet BOE itself distributes for this law, downloaded directly with plain curl (no proxy needed, sdb.gov.sa is not blocked). EXTRACTION HAZARD: both pdftotext (poppler) and PyMuPDF extracted this PDF's embedded text with a systematic, deterministic lam+alef ligature-reversal bug (e.g. correct 'التعاملات' extracts as 'التعامالت'; correct 'الإلكترونية' extracts as 'اإللكترونية') confirmed baked into the PDF itself (both independent extraction libraries gave identical corruption); the PDF also renders as entirely blank pages (pdftoppm/pdftocairo/PyMuPDF all rasterize blank paper), ruling out OCR as a cross-check. Corrected via direct native-fluency reading, article by article, rather than blind regex substitution (the corruption is ambiguous: a plain 'ال' can be a genuine alef-lam definite article or a flipped ligature, and both look identical post-corruption). CROSS-VERIFICATION: (1) STRUCTURAL, 100% of articles: the complete official WIPO Lex English translation (all 31 articles, 10 chapters) confirmed every article's chapter placement, paragraph count, and substantive meaning — no structural discrepancies found. (2) Wording spot-checks against independent clean-Unicode Arabic sources (not PDF-derived, immune to the ligature bug): ramilawyer.sa (confirmed 'التعاملات' spelling and arts 23/24 subject matter), qanoniah.com (confirmed Chapter 1/2 exact titles), lexismiddleeast.com and uqn.gov.sa/Umm Al-Qura Gazette (confirmed decree number م/18 and date independently of the BOE PDF). (3) The 2023 amendment text came from a fourth independent, cleanly-encoded HTML source (nezams.com) quoting Council of Ministers Resolution 293/1445H verbatim — never PDF-sourced, needed no ligature correction. CONFIDENCE: high confidence in decree number, Hijri date, chapter/article count and structure, and the substantive content of every article (triple-cross-checked); moderate-to-high but not absolute confidence in the exact character-by-character Arabic wording, since it passed through a manual correction step rather than a byte-exact re-fetch of clean source text — no semantic ambiguity was found unresolved, and cross-checks against independent Arabic sources found zero contradictions, but a lightweight final pass against the live BOE portal or WIPO's Arabic PDF is recommended once network access is available. WIPO LEX METADATA ANOMALY: WIPO Lex's own metadata lists this law with decree number 'M/8' and an extended title 'نظام حماية التعاملات الإلكترونية' (adding 'حماية'/Protection) — three independent sources (the official BOE/CoM translation-bureau PDF, lexismiddleeast.com, and uqn.gov.sa) all consistently give م/18 and the plain title with no 'حماية'; judged a WIPO Lex transcription error (likely conflating the day-of-month '8' from '8 Rabi I 1428H' with the decree number), flagged not silently resolved. 2023 AMENDMENT: Council of Ministers Resolution 293 dated 9/4/1445H replaced Ministry/Communications and Information Technology Commission references with the Digital Government Authority (DGA) and its Board (المجلس), and ABOLISHED Chapter 6 (articles 16-17, National Center for Digital Certification) entirely, per the resolution's own text: 'إلغاء الفصل (السادس)، وإعادة ترتيب الفصول تبعاً لذلك.' Articles 1, 3 (last clause only), the Chapter 5 title, 15, 29, and 30 were textually amended; the amended text for each is given verbatim below.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "electronic_transactions_art_016",
+      "description": "Article 16 (Chapter 6, National Center for Digital Certification) was abolished by Council of Ministers Resolution 293 (9/4/1445H / 2023), which states 'إلغاء الفصل (السادس)، وإعادة ترتيب الفصول تبعاً لذلك' (abolish Chapter 6, and renumber the chapters accordingly). This track flags article 16 as ملغاة (repealed) and preserves its original text rather than deleting it."
+    },
+    {
+      "article_key": "electronic_transactions_art_017",
+      "description": "Article 17 (Chapter 6, National Center for Digital Certification) was abolished by the same 2023 resolution as article 16 — see that article's discrepancy note. Article 15's 2023-amended text (paragraph هـ) absorbs article 17's foreign-certificate-recognition power, so this authority continues to exist in the law, just relocated rather than exercised by the now-abolished Center."
+    },
+    {
+      "article_key": "electronic_transactions_art_post_ch6_renumbering",
+      "description": "The 2023 resolution states chapters after the abolished Chapter 6 are 'renumbered accordingly' (وإعادة ترتيب الفصول تبعاً لذلك), which clearly shifts CHAPTER numbers (old Ch.7-10 likely become Ch.6-9) but does NOT explicitly say ARTICLE numbers 18-31 are renumbered down by 2. The live consolidated BOE text that would confirm the exact current article numbers was unreachable this research pass. This track deliberately preserves the ORIGINAL 1-31 article numbering (with articles 16-17 flagged ملغاة) rather than guessing a renumbering scheme — a follow-up pass once BOE access is restored is recommended to confirm whether articles 18-31 now carry different numbers in the BOE-published consolidated text."
+    },
+    {
+      "article_key": "electronic_transactions_wipo_lex_metadata",
+      "description": "WIPO Lex's own metadata for this law lists decree number 'M/8' and title 'نظام حماية التعاملات الإلكترونية' (adding 'حماية'/Protection) — contradicted by three independent sources (the official BOE/CoM translation-bureau PDF, lexismiddleeast.com, uqn.gov.sa) which all agree on م/18 and the plain title. Judged a WIPO Lex transcription error; not used for this track's decree number or title, but flagged here rather than silently ignored since WIPO Lex is cited elsewhere in this corpus as a cross-check source."
+    }
+  ],
+  "source_artifact": "sources/electronic_transactions/law/official_source/electronic_transactions_law_official_source.json"
+}

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 222,
-  "top1_hits": 198,
-  "top3_hits": 215,
-  "top5_hits": 218,
-  "top1_accuracy": 0.8919,
-  "top3_accuracy": 0.9685,
-  "top5_accuracy": 0.982,
-  "mrr_at_5": 0.9296,
+  "total_queries": 224,
+  "top1_hits": 200,
+  "top3_hits": 217,
+  "top5_hits": 220,
+  "top1_accuracy": 0.8929,
+  "top3_accuracy": 0.9688,
+  "top5_accuracy": 0.9821,
+  "mrr_at_5": 0.9302,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6899,6 +6899,68 @@
      "record_id": "labor-annex3-llm-art-003",
      "article_number": 3,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "etr-001",
+   "query_ar": "يكون للتعاملات والسجلات والتوقيعات الإلكترونية حجيتها الملزمة، ولا يجوز نفي صحتها أو قابليتها للتنفيذ",
+   "category": "topical",
+   "gold": {
+    "corpus": "electronic_transactions",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "electronic-transactions-law-llm-art-005",
+     "article_number": 5,
+     "score": 43
+    },
+    {
+     "record_id": "electronic-transactions-law-llm-art-002",
+     "article_number": 2,
+     "score": 16
+    },
+    {
+     "record_id": "electronic-transactions-law-llm-art-003",
+     "article_number": 3,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "etr-002",
+   "query_ar": "إذا اشتُرط وجود توقيع خطي على مستند أو عقد أو نحوه، فإن التوقيع الإلكتروني الذي يتم وفقاً لهذا النظام يعد مستوفياً لهذا الشرط",
+   "category": "topical",
+   "gold": {
+    "corpus": "electronic_transactions",
+    "law_component": "law",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "electronic-transactions-law-llm-art-014",
+     "article_number": 14,
+     "score": 33
+    },
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 17
+    },
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 17
     }
    ]
   }
