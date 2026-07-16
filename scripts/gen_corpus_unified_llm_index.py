@@ -216,6 +216,8 @@ LAYERS = [
      "council_of_ministers", "law"),
     ("data/regions_arabic_legal_llm/regions_law_legal_llm_001_041.json",
      "regions", "law"),
+    ("data/electronic_transactions_arabic_legal_llm/electronic_transactions_law_legal_llm_001_031.json",
+     "electronic_transactions", "law"),
 ]
 
 
