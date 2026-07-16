@@ -202,6 +202,8 @@ LAYERS = [
      "real_estate_expropriation", "law"),
     ("data/marriage_contract_hearing_arabic_legal_llm/marriage_contract_hearing_regulation_legal_llm_001_010.json",
      "marriage_contract_hearing", "regulation"),
+    ("data/anti_bribery_arabic_legal_llm/anti_bribery_law_legal_llm_001_023.json",
+     "anti_bribery", "law"),
 ]
 
 

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 208,
-  "top1_hits": 184,
-  "top3_hits": 201,
-  "top5_hits": 204,
-  "top1_accuracy": 0.8846,
-  "top3_accuracy": 0.9663,
-  "top5_accuracy": 0.9808,
-  "mrr_at_5": 0.9248,
+  "total_queries": 210,
+  "top1_hits": 186,
+  "top3_hits": 203,
+  "top5_hits": 206,
+  "top1_accuracy": 0.8857,
+  "top3_accuracy": 0.9667,
+  "top5_accuracy": 0.981,
+  "mrr_at_5": 0.9256,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6464,6 +6464,68 @@
     {
      "record_id": "marriage-contract-hearing-regulation-llm-art-003",
      "article_number": 3,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "rsw-001",
+   "query_ar": "كل شخص طلب لنفسه أو لغيره أو قبل أو أخذ وعدا أو عطية لاستعمال نفوذ حقيقي أو مزعوم للحصول أو لمحاولة الحصول من أية سلطة عامة على عمل أو أمر أو قرار أو التزام أو ترخيص أو اتفاق توريد أو على وظيفة أو خدمة أو مزية من أي نوع",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_bribery",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-bribery-law-llm-art-005",
+     "article_number": 5,
+     "score": 58
+    },
+    {
+     "record_id": "anti-bribery-law-llm-art-003",
+     "article_number": 3,
+     "score": 28
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "rsw-002",
+   "query_ar": "كل موظف عام طلب لنفسه أو لغيره أو قبل أو أخذ وعداً أو عطية بسبب وظيفته لمتابعة معاملة في جهة حكومية ولم تنطبق عليه النصوص الأخرى في هذا النظام",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_bribery",
+    "law_component": "law",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-bribery-law-llm-art-006",
+     "article_number": 6,
+     "score": 49
+    },
+    {
+     "record_id": "anti-bribery-law-llm-art-003",
+     "article_number": 3,
+     "score": 39
+    },
+    {
+     "record_id": "anti-bribery-law-llm-art-002",
+     "article_number": 2,
      "score": 35
     }
    ]
