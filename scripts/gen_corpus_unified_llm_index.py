@@ -200,6 +200,8 @@ LAYERS = [
      "judgment_objection_methods", "regulation"),
     ("data/real_estate_expropriation_arabic_legal_llm/real_estate_expropriation_law_legal_llm_001_039.json",
      "real_estate_expropriation", "law"),
+    ("data/marriage_contract_hearing_arabic_legal_llm/marriage_contract_hearing_regulation_legal_llm_001_010.json",
+     "marriage_contract_hearing", "regulation"),
 ]
 
 

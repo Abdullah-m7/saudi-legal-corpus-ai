@@ -1,0 +1,170 @@
+{
+  "document": "الترتيبات الخاصة بسماع الدعوى بإثبات عقد الزواج الذي أُبرم دون إذن الجهة المختصة فيما يشترط له الإذن",
+  "document_en": "Special Arrangements for Hearing the Claim to Prove a Marriage Contract Concluded Without the Permission of the Competent Authority, in Cases Where Such Permission Is Required",
+  "decree": "قرار وزير العدل رقم (5121)",
+  "decree_date_hijri": "3/7/1447",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "وزير العدل",
+  "issuing_authority_en": "Minister of Justice",
+  "provenance": {
+    "api_source": "MOJ legal portal (laws-gateway.moj.gov.sa) — statute detail + section changes",
+    "api_serial": "1AoXN6J0ydAy9kyJKJfpSQ",
+    "statute_id": "SvcXfOISMh0Odp4LFsrhBA",
+    "pdf_source_committed": "inputs/marriage_contract_hearing_official_pdfs/marriage_contract_hearing_regulation_moj_official_ar.pdf",
+    "pdf_sha256": "8a230fcc2a2cb066c9f3da19739c4201917854d8deccc10f24266275855407d0",
+    "pdf_pages": 3,
+    "capture_method": "Every article fetched from the MOJ portal database (statute/get-Statute-gateway-Detail statuteStructure and section/get-Section-Changes, identical text, 0 divergences across all 10 articles) and cross-verified against the official MOJ PDF (document/download via the detail response's hardCopy.documentId field -- pdfCopy was null for this instrument, so hardCopy.documentId was used instead as the WAF-bypass document handle -- 3 pages: page 1 is the Minister of Justice decision cover sheet, pages 2-3 carry the 10 articles). Portal HTML fragments (<p>/<br>/&nbsp;) were converted to plain text (one line per paragraph/break, tags stripped, &nbsp; collapsed to space) with no character content altered. The official PDF has NO extractable text layer at all (pure scanned/image PDF, PyMuPDF get_text() returns empty strings on every page) -- unlike marriage_non_saudi, so the PyMuPDF text-layer and word-reversed channels were unusable, and verification relied on 300dpi tesseract-ara OCR of each page as the sole extraction channel. Automated scoring: both sides NFKC-normalized + Farsi-yeh/kaf/heh folded + diacritics/tatweel stripped + hamza/alef-forms and taa-marbuta folded + digits folded; OCR page text was segmented into per-article chunks by splitting on 'المادة <ordinal>:' boundaries, then each chunk was compared to the corresponding portal article text via a windowed difflib SequenceMatcher best-match ratio (sliding window sized to article length, to avoid trailing page-footer/notary-stamp OCR noise deflating the ratio on the last article of each page). 8 of 10 articles matched the >=0.90 floor outright (mean of those 8: 0.9689). Articles 5 and 10 -- the last article on each of the two content pages -- scored 0.8889 and 0.7848 respectively because their OCR segments run on into page-footer/notary-stamp garbage before the next 'المادة' boundary is reached, deflating the automated ratio; both were individually visually adjudicated (see visually_adjudicated below) by reading 400dpi zoomed crops of the exact rendered PDF regions against the portal text, word for word, and confirmed as exact verbatim matches with no substantive divergence -- the low scores are an artifact of OCR segmentation picking up trailing notary-stamp/footer noise, not a text mismatch. All 10 articles were additionally read in full against the rendered 400dpi PDF page images (full page crops covering the title block and every article) as a direct visual cross-check, together with a 600dpi zoomed crop of the decree number/date line on page 1, which was read as 'قرار رقم (٥١٢١) وتاريخ ٣/٧/١٤٤٧هـ' -- independently confirming decree number 5121 dated 3/7/1447H against the portal's issuanceDepartmentTool field ('قرار وزير العدل رقم (٥١٢١)') and issueDate field ('1447-07-03'). The separately-linked issuanceDepartmentList[0] instrument-of-issuance document (fetched via the same document/download?Document=<documentId> mechanism) was also downloaded and OCR'd for comparison; its single page proved to be textually identical to page 1 of the main hardCopy PDF (same Minister of Justice decision text), so only the 3-page combined hardCopy PDF was committed to the repository -- it already contains the decree/issuance cover page plus all 10 articles in one file.",
+    "section_vs_structure_divergences": 0,
+    "tatweel_removed_decorative": 0,
+    "otherRelatedLegal": [],
+    "issuing_authority_note": "The statute/get-Statute-gateway-Detail response's otherRelatedLegal field returned null for this track (no linked-instrument list was populated by the portal), and concernedAuthorityName, classificationName and legalTypeName were also null/empty (legalType is simply 'ترتيبات' / 'Arrangements'). Substantive cross-references were found directly in the article text and the decree cover sheet instead: Article 1 explicitly defines 'النظام' (the System) as نظام الأحوال الشخصية (Personal Status Law, law_key 'personal_status' in this corpus, decree م/73, 252 articles) and 'اللائحة' (the Regulation) as لائحة زواج السعودي بغير سعودية والسعودية بغير سعودي (the already-ingested marriage_non_saudi track in this corpus, decree 6874/1422H). Article 5 cross-references 'المادتين (التاسعة) و(الحادية عشرة) من النظام' -- Articles 9 and 11 of نظام الأحوال الشخصية, which this corpus already carries under personal_status/law (ahwal_law_art_009: marriage of a minor under 18 requires court authorization; ahwal_law_art_011: marriage of a person of unsound mind requires court authorization) -- confirming this instrument is a downstream procedural companion to both personal_status and marriage_non_saudi, exactly as expected. The decree cover sheet (page 1 of the committed PDF) states the instrument was issued 'بناء على الصلاحيات المخولة له نظاماً، واستناداً إلى الأمر السامي الكريم رقم (5) ... القاضي بالموافقة على لائحة نظام الأحوال الشخصية ... وقيام وزير العدل بوضع الترتيبات الخاصة بسماع الدعوى بإثبات عقد الزواج الذي أُبرم دون إذن الجهة المختصة فيما يشترط له الإذن، بالتنسيق مع الجهات ذوات العلاقة ... وبعد التنسيق مع وزارة الداخلية والجهات ذوات العلاقة' -- i.e. issued directly by Ministerial Decision of the Minister of Justice (قرار وزير العدل رقم 5121 وتاريخ 3/7/1447هـ) following a Royal Order and coordination with the Ministry of Interior, consistent with the instrument's core subject matter (court procedure for hearing marriage-contract-proof claims) sitting within Ministry of Justice competence, while Articles 6-8 assign an information/referral role to وزارة الداخلية (Ministry of Interior) mirroring its substantive authority under the marriage_non_saudi Regulation. This corpus does not yet ingest another track with law_key colliding with 'marriage_contract_hearing'; a keyword/statuteId search of sources/ turned up no existing entry referencing this instrument's statuteId (SvcXfOISMh0Odp4LFsrhBA) or serial (1AoXN6J0ydAy9kyJKJfpSQ).",
+    "known_source_anomaly": "None found. All 10 articles were read in full against the rendered PDF (400dpi page crops plus a 600dpi crop of the decree line) and matched the portal DB text verbatim, including punctuation, parenthetical article cross-references, and the two-paragraph numbered structure of Article 9; no typos, numbering irregularities, or spelling anomalies (of the kind documented for marriage_non_saudi Article 4) were identified in either source."
+  },
+  "article_count": 10,
+  "status_counts": {
+    "اصلية": 10
+  },
+  "stats": {
+    "mean_similarity": 0.9425,
+    "min_similarity": 0.7848,
+    "amended_articles": [],
+    "added_articles": [],
+    "visually_adjudicated": [
+      "marriage_contract_hearing_art_005",
+      "marriage_contract_hearing_art_010"
+    ]
+  },
+  "articles": {
+    "marriage_contract_hearing_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقصد بالألفاظ الآتية -أينما وردت في هذه الترتيبات- المعاني المبينة أمام كل منها:\nالنظام: نظام الأحوال الشخصية.\nاللائحة: لائحة زواج السعودي بغير سعودية والسعودية بغير سعودي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9773,
+      "history": [],
+      "section_id": "_EPvqxmUMqDXI8o8G1M-BA"
+    },
+    "marriage_contract_hearing_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "دون إخلال بالأحكام النظامية ذات الصلة، تطبق هذه الترتيبات على دعوى إثبات عقد الزواج الذي أُبرم بالمخالفة لأحكام اللائحة، والتعليمات الصادرة بشأنها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9502,
+      "history": [],
+      "section_id": "KpfqRNiQzTrpmMqQQnIvGg"
+    },
+    "marriage_contract_hearing_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يشترط لقبول دعوى إثبات عقد الزواج الذي أُبرم بالمخالفة لأحكام اللائحة؛ صدور الإجازة بتوثيقه وفق الأحكام النظامية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9825,
+      "history": [],
+      "section_id": "OAk8RU_pytkiDcxr1NrGWA"
+    },
+    "marriage_contract_hearing_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا تقبل دعوى إثبات عقد الزواج إذا كان أحد أطراف الدعوى من الفئات الواردة في (المادة الأولى) من اللائحة، ولمن حُكم بعدم قبول دعواه استكمال الإجراءات وفقًا لأحكام اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9765,
+      "history": [],
+      "section_id": "wmOIJ-cPVV4bM4iU_m_C-A"
+    },
+    "marriage_contract_hearing_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا تقبل دعوى إثبات عقد الزواج إذا كان أحد أطراف الدعوى من المشمولين بأحكام المادتين (التاسعة) و(الحادية عشرة) من النظام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.8889,
+      "history": [],
+      "section_id": "WA3ZGM4s5o60b729OZKRHw"
+    },
+    "marriage_contract_hearing_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "دون إخلال بما ورد في المادتين (الرابعة) و(الخامسة) من هذه الترتيبات، تقيد الإدارة المختصة في وزارة العدل دعوى طلب إثبات عقد الزواج، وتكتب إلى وزارة الداخلية لاتخاذ ما تراه بشأن هذا الطلب.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9635,
+      "history": [],
+      "section_id": "tzNEvA1KWixOte7eqZHrUQ"
+    },
+    "marriage_contract_hearing_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا أفادت وزارة الداخلية بإجازة صاحب الصلاحية توثيق عقد الزواج، أُحيل الطلب إلى المحكمة للنظر في الدعوى والفصل فيها وفق الأحكام النظامية ذات الصلة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9732,
+      "history": [],
+      "section_id": "sXlXHI56sr5GoSKwW5r-ew"
+    },
+    "marriage_contract_hearing_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا أفادت وزارة الداخلية بعدم إجازة صاحب الصلاحية توثيق عقد الزواج، حكمت المحكمة بعدم قبول الدعوى، ولمن حُكم بعدم قبول دعواه استكمال الإجراءات وفقًا لأحكام اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9668,
+      "history": [],
+      "section_id": "frRMpUyOjDMY-i3EpaUqKA"
+    },
+    "marriage_contract_hearing_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "١- لا تخل الأحكام الواردة في هذه الترتيبات بسماع الدعاوى المتعلقة بالحقوق الناشئة عن عقد الزواج، سواء أكانت من أحد الزوجين لمصلحته أو مصلحة الولد، أم من أحد أولادهما أم من ذي مصلحة من غيرهم، ومن ذلك دعاوى النفقة والفُرقة والإرث وإثبات النسب وغيرها.\n٢- لا تُعد الأحكام الصادرة في الدعاوى الواردة في الفقرة (١) من هذه المادة حجة في إثبات عقد الزواج.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF",
+      "pdf_similarity": 0.9614,
+      "history": [],
+      "section_id": "RnVgCHPp0-eQipQki5WENQ"
+    },
+    "marriage_contract_hearing_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تُنشر هذه الترتيبات في الجريدة الرسمية، ويُعمل بها من تاريخ نشرها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_PDF_VISUALLY_ADJUDICATED",
+      "pdf_similarity": 0.7848,
+      "history": [],
+      "section_id": "JNWZvlYOr_amN0lOERMuZg"
+    }
+  }
+}

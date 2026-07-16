@@ -195,6 +195,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         judicial-training-center-guide-track-validate \
         judgment-objection-methods-regulation-track-validate \
         real-estate-expropriation-law-track-validate \
+        marriage-contract-hearing-regulation-track-validate \
         qa-gate
 
 help:
@@ -1204,6 +1205,9 @@ judgment-objection-methods-regulation-track-validate:
 
 real-estate-expropriation-law-track-validate:
 	$(PY) scripts/validate_real_estate_expropriation_law_track.py
+
+marriage-contract-hearing-regulation-track-validate:
+	$(PY) scripts/validate_marriage_contract_hearing_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
