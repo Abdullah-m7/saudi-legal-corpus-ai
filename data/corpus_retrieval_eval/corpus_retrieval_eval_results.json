@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 200,
-  "top1_hits": 177,
-  "top3_hits": 193,
-  "top5_hits": 196,
-  "top1_accuracy": 0.885,
-  "top3_accuracy": 0.965,
-  "top5_accuracy": 0.98,
-  "mrr_at_5": 0.9243,
+  "total_queries": 202,
+  "top1_hits": 179,
+  "top3_hits": 195,
+  "top5_hits": 198,
+  "top1_accuracy": 0.8861,
+  "top3_accuracy": 0.9653,
+  "top5_accuracy": 0.9802,
+  "mrr_at_5": 0.9251,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6217,6 +6217,68 @@
      "record_id": "commercial-courts-regulation-llm-art-220",
      "article_number": 220,
      "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "mtd-001",
+   "query_ar": "للمركز في سبيل تحقيق أهدافه اتخاذ الوسائل المناسبة، وبخاصة وضع برامج تدريبية وورش عمل للمستويات الوظيفية المختلفة للفئات المستهدفة",
+   "category": "topical",
+   "gold": {
+    "corpus": "judicial_training_center",
+    "law_component": "guide",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judicial-training-center-guide-llm-art-003",
+     "article_number": 3,
+     "score": 39
+    },
+    {
+     "record_id": "judicial-training-center-guide-llm-art-013",
+     "article_number": 13,
+     "score": 27
+    },
+    {
+     "record_id": "judicial-training-center-guide-llm-art-004",
+     "article_number": 4,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "mtd-002",
+   "query_ar": "الإشراف على إدارات المركز وأقسامه وتسيير أعمالها، واقتراح خطط ومنهجية التدريب واعتمادها من الوزير",
+   "category": "topical",
+   "gold": {
+    "corpus": "judicial_training_center",
+    "law_component": "guide",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "judicial-training-center-guide-llm-art-014",
+     "article_number": 14,
+     "score": 39
+    },
+    {
+     "record_id": "judicial-training-center-guide-llm-art-005",
+     "article_number": 5,
+     "score": 36
+    },
+    {
+     "record_id": "judicial-training-center-guide-llm-art-016",
+     "article_number": 16,
+     "score": 19
     }
    ]
   }
