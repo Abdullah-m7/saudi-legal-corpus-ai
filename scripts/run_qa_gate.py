@@ -127,6 +127,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_lessor_repossession_regulation_track.py",
     "scripts/gen_elitigation_guide_regulation_track.py",
     "scripts/gen_judicial_training_center_guide_track.py",
+    "scripts/gen_judgment_objection_methods_regulation_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/run_corpus_retrieval_eval.py",
