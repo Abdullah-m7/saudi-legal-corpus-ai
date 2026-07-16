@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 214,
-  "top1_hits": 190,
-  "top3_hits": 207,
-  "top5_hits": 210,
-  "top1_accuracy": 0.8879,
-  "top3_accuracy": 0.9673,
-  "top5_accuracy": 0.9813,
-  "mrr_at_5": 0.9269,
+  "total_queries": 216,
+  "top1_hits": 192,
+  "top3_hits": 209,
+  "top5_hits": 212,
+  "top1_accuracy": 0.8889,
+  "top3_accuracy": 0.9676,
+  "top5_accuracy": 0.9815,
+  "mrr_at_5": 0.9276,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6651,6 +6651,68 @@
      "record_id": "pdpl-law-llm-art-038",
      "article_number": 38,
      "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "hrs-001",
+   "query_ar": "لا يحول تنازل المجني عليه أو عدم تقديم شكوى دون حق الجهات المختصة -نظاماً- في اتخاذ ما تراه محققاً للمصلحة العامة",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_harassment",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-harassment-law-llm-art-003",
+     "article_number": 3,
+     "score": 45
+    },
+    {
+     "record_id": "oa-llm-companies-art-195",
+     "article_number": 195,
+     "score": 22
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-037",
+     "article_number": 37,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "hrs-002",
+   "query_ar": "يجب على الجهات المعنية في القطاع الحكومي، والقطاع الأهلي، وضع التدابير اللازمة للوقاية من التحرش ومكافحته في إطار بيئة العمل",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_harassment",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-harassment-law-llm-art-005",
+     "article_number": 5,
+     "score": 48
+    },
+    {
+     "record_id": "labor-annex2-llm-table-6",
+     "article_number": 6,
+     "score": 20
+    },
+    {
+     "record_id": "labor-reg-llm-art-014",
+     "article_number": 14,
+     "score": 19
     }
    ]
   }

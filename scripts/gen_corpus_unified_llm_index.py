@@ -208,6 +208,8 @@ LAYERS = [
      "basic_law_of_governance", "law"),
     ("data/anti_cyber_crime_arabic_legal_llm/anti_cyber_crime_law_legal_llm_001_016.json",
      "anti_cyber_crime", "law"),
+    ("data/anti_harassment_arabic_legal_llm/anti_harassment_law_legal_llm_001_008.json",
+     "anti_harassment", "law"),
 ]
 
 
