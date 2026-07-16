@@ -212,6 +212,8 @@ LAYERS = [
      "anti_harassment", "law"),
     ("data/anti_trafficking_arabic_legal_llm/anti_trafficking_law_legal_llm_001_017.json",
      "anti_trafficking", "law"),
+    ("data/council_of_ministers_arabic_legal_llm/council_of_ministers_law_legal_llm_001_032.json",
+     "council_of_ministers", "law"),
 ]
 
 
