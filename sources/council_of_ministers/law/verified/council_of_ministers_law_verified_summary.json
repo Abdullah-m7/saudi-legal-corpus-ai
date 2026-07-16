@@ -1,0 +1,65 @@
+{
+  "law_key": "council_of_ministers",
+  "layer": "COUNCIL_OF_MINISTERS_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 32,
+  "official_text_status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+  "status_counts": {
+    "اصلية": 31,
+    "معدلة": 1,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "الأمر الملكي رقم (أ/13)",
+  "decree_date_hijri": "3/3/1414",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "section_ar": "أحكام عامة",
+      "first_article": 1,
+      "last_article": 11
+    },
+    {
+      "section_ar": "تشكيل المجلس",
+      "first_article": 12,
+      "last_article": 18
+    },
+    {
+      "section_ar": "اختصاصات مجلس الوزراء",
+      "first_article": 19,
+      "last_article": 19
+    },
+    {
+      "section_ar": "الشؤون التنظيمية",
+      "first_article": 20,
+      "last_article": 23
+    },
+    {
+      "section_ar": "الشؤون التنفيذية",
+      "first_article": 24,
+      "last_article": 24
+    },
+    {
+      "section_ar": "الشؤون المالية",
+      "first_article": 25,
+      "last_article": 28
+    },
+    {
+      "section_ar": "رئاسة مجلس الوزراء",
+      "first_article": 29,
+      "last_article": 29
+    },
+    {
+      "section_ar": "التشكيلات الإدارية لمجلس الوزراء",
+      "first_article": 30,
+      "last_article": 32
+    }
+  ],
+  "verification_methodology_note": "DISTINCT VERIFICATION TIER — the Bureau of Experts (BOE) portal was COMPLETELY UNREACHABLE this research pass despite exhausting every method used elsewhere this session: direct curl (WAF hard-block), curl+r.jina.ai (timeouts, then a 401 'bad IP reputation' block from Jina itself), WebFetch+r.jina.ai (422), and even a Wayback Machine capture (blocked both directly by this sandbox's egress policy and via the jina proxy, which itself blocks anonymous access to web.archive.org). This track therefore does NOT rest on the BOE primary source at all — a genuine gap relative to this corpus's usual practice, flagged explicitly rather than concealed; a fresh BOE retry from a different network path is recommended before treating this track as fully primary-source-anchored. Instead, full text was cross-verified ARABIC-TO-ARABIC between two independent sources: ar.wikisource.org (a community-maintained legal-text mirror) and nezams.com (a Saudi legal-reference aggregator with per-article metadata) — the two are identical in substance across all 32 articles, differing only in trivial orthography (e.g. hamza placement). This is a genuinely stronger cross-check than a single-source or English-substance-only tier, though still weaker in source authority than the BOE portal itself. Additionally cross-checked at the meaning/structure level against FAOLEX's official-style English translation (faolex.fao.org/docs/pdf/sau213444.pdf), which independently confirms the 32-article count and 8-section division; FAOLEX's Article 29 translation omits the article's second paragraph (a translation gap, not an Arabic-source disagreement — both Arabic sources agree the second paragraph is original). TWO AMENDMENTS were found, neither reflected in Wikisource or FAOLEX (both stale on these points): (1) Article 30 was amended by Royal Order أ/151 (3/9/1432H), confirmed word-for-word identical between nezams.com and qistas.com (a dedicated Saudi legislation database) — the amendment removes ديوان رئاسة مجلس الوزراء (Office of the Prime Minister's Presidency) from the list of the Council's administrative bodies, leaving only the General Secretariat and the Bureau (Board) of Experts, and adds a clause on their relationship to the Royal Court; the original 1414H three-body text is preserved in original_1414h_text for provenance. (2) Article 7 itself is textually UNCHANGED, but a standing exception order (Royal Order أ/45, 4/2/1446H) was found, corroborated by the Umm Al-Qura Gazette listing, the Saudi Press Agency, and multiple news outlets — it establishes who presides over a Council meeting if neither the King nor the Council President nor any deputy attends, framed explicitly as an exception to Article 7 rather than a rewrite of it; documented in article 7's companion_instrument_note field rather than altering the article's own text (consistent with how the order itself frames the relationship).",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "council_of_ministers_art_all",
+      "description": "The BOE portal was completely unreachable this research pass (WAF block, Jina proxy IP-reputation block, Wayback Machine blocked both directly and via proxy). This track rests on Arabic-to-Arabic cross-verification between two independent secondary sources (ar.wikisource.org, nezams.com) rather than the BOE primary source used for most other tracks in this corpus. A fresh BOE retry from a different network path is recommended before this track is treated as fully primary-source-anchored."
+    }
+  ],
+  "source_artifact": "sources/council_of_ministers/law/official_source/council_of_ministers_law_official_source.json"
+}

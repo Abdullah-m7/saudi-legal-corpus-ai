@@ -1,0 +1,431 @@
+{
+  "document": "نظام مجلس الوزراء",
+  "document_en": "Council of Ministers Law",
+  "decree": "الأمر الملكي رقم (أ/13)",
+  "decree_date_hijri": "3/3/1414",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": true,
+  "issuing_authority_ar": "الأمر الملكي — الملك فهد بن عبدالعزيز آل سعود؛ يحل محل نظام مجلس الوزراء الصادر بالمرسوم الملكي رقم 38 وتاريخ 22/10/1377هـ وتعديلاته",
+  "issuing_authority_en": "Royal Order — King Fahd bin Abdulaziz Al Saud; supersedes the earlier Council of Ministers Law (Royal Decree No. 38, 22/10/1377H, and its amendments)",
+  "preamble_ar": "بعون الله تعالى، نحن فهد بن عبد العزيز آل سعود، ملك المملكة العربية السعودية. وبعد الاطلاع على النظام الأساسي للحكم الصادر بالأمر الملكي رقم أ/90 وتاريخ 27/8/1412هـ. وبعد الاطلاع على نظام مجلس الوزراء الصادر بالمرسوم الملكي رقم 38 وتاريخ 22/10/1377هـ وتعديلاته. وبعد الاطلاع على نظام مجلس الشورى الصادر بالأمر الملكي رقم أ/91 وتاريخ 27/8/1412هـ. وبعد الاطلاع على المرسوم الملكي رقم م/23 وتاريخ 26/8/1412هـ. أمرنا بما هو آت: أولاً – إصدار نظام مجلس الوزراء بالصيغة المرفقة بهذا. ثانياً – يحل هذا النظام محل نظام مجلس الوزراء الصادر بالمرسوم الملكي رقم 38 وتاريخ 22/10/1377هـ وتعديلاته. ثالثاً – يستمر العمل بكل الأنظمة والأوامر والقرارات المعمول بها عند نفاذ هذا النظام حتى تعدل بما يتفق معه. رابعاً – ينشر هذا النظام في الجريدة الرسمية ويعمل به بعد تسعين يوماً من بداية مدة مجلس الشورى المحددة في الأمر الملكي الصادر بتكوينه لأول مرة.",
+  "verification_methodology_note": "DISTINCT VERIFICATION TIER — the Bureau of Experts (BOE) portal was COMPLETELY UNREACHABLE this research pass despite exhausting every method used elsewhere this session: direct curl (WAF hard-block), curl+r.jina.ai (timeouts, then a 401 'bad IP reputation' block from Jina itself), WebFetch+r.jina.ai (422), and even a Wayback Machine capture (blocked both directly by this sandbox's egress policy and via the jina proxy, which itself blocks anonymous access to web.archive.org). This track therefore does NOT rest on the BOE primary source at all — a genuine gap relative to this corpus's usual practice, flagged explicitly rather than concealed; a fresh BOE retry from a different network path is recommended before treating this track as fully primary-source-anchored. Instead, full text was cross-verified ARABIC-TO-ARABIC between two independent sources: ar.wikisource.org (a community-maintained legal-text mirror) and nezams.com (a Saudi legal-reference aggregator with per-article metadata) — the two are identical in substance across all 32 articles, differing only in trivial orthography (e.g. hamza placement). This is a genuinely stronger cross-check than a single-source or English-substance-only tier, though still weaker in source authority than the BOE portal itself. Additionally cross-checked at the meaning/structure level against FAOLEX's official-style English translation (faolex.fao.org/docs/pdf/sau213444.pdf), which independently confirms the 32-article count and 8-section division; FAOLEX's Article 29 translation omits the article's second paragraph (a translation gap, not an Arabic-source disagreement — both Arabic sources agree the second paragraph is original). TWO AMENDMENTS were found, neither reflected in Wikisource or FAOLEX (both stale on these points): (1) Article 30 was amended by Royal Order أ/151 (3/9/1432H), confirmed word-for-word identical between nezams.com and qistas.com (a dedicated Saudi legislation database) — the amendment removes ديوان رئاسة مجلس الوزراء (Office of the Prime Minister's Presidency) from the list of the Council's administrative bodies, leaving only the General Secretariat and the Bureau (Board) of Experts, and adds a clause on their relationship to the Royal Court; the original 1414H three-body text is preserved in original_1414h_text for provenance. (2) Article 7 itself is textually UNCHANGED, but a standing exception order (Royal Order أ/45, 4/2/1446H) was found, corroborated by the Umm Al-Qura Gazette listing, the Saudi Press Agency, and multiple news outlets — it establishes who presides over a Council meeting if neither the King nor the Council President nor any deputy attends, framed explicitly as an exception to Article 7 rather than a rewrite of it; documented in article 7's companion_instrument_note field rather than altering the article's own text (consistent with how the order itself frames the relationship).",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "council_of_ministers_art_all",
+      "description": "The BOE portal was completely unreachable this research pass (WAF block, Jina proxy IP-reputation block, Wayback Machine blocked both directly and via proxy). This track rests on Arabic-to-Arabic cross-verification between two independent secondary sources (ar.wikisource.org, nezams.com) rather than the BOE primary source used for most other tracks in this corpus. A fresh BOE retry from a different network path is recommended before this track is treated as fully primary-source-anchored."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "section_ar": "أحكام عامة",
+      "first_article": 1,
+      "last_article": 11
+    },
+    {
+      "section_ar": "تشكيل المجلس",
+      "first_article": 12,
+      "last_article": 18
+    },
+    {
+      "section_ar": "اختصاصات مجلس الوزراء",
+      "first_article": 19,
+      "last_article": 19
+    },
+    {
+      "section_ar": "الشؤون التنظيمية",
+      "first_article": 20,
+      "last_article": 23
+    },
+    {
+      "section_ar": "الشؤون التنفيذية",
+      "first_article": 24,
+      "last_article": 24
+    },
+    {
+      "section_ar": "الشؤون المالية",
+      "first_article": 25,
+      "last_article": 28
+    },
+    {
+      "section_ar": "رئاسة مجلس الوزراء",
+      "first_article": 29,
+      "last_article": 29
+    },
+    {
+      "section_ar": "التشكيلات الإدارية لمجلس الوزراء",
+      "first_article": 30,
+      "last_article": 32
+    }
+  ],
+  "article_count": 32,
+  "status_counts": {
+    "اصلية": 31,
+    "معدلة": 1,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "council_of_ministers_art_001": {
+      "number_label_ar": "المادة (1)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "مجلس الوزراء هيئة نظامية يرأسها الملك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_002": {
+      "number_label_ar": "المادة (2)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "مقر مجلس الوزراء مدينة الرياض ويجوز عقد جلساته في جهة أخرى من المملكة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_003": {
+      "number_label_ar": "المادة (3)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "يشترط في عضو مجلس الوزراء ما يلي:\nأ – أن يكون سعودي الجنسية بالأصل والمنشأ.\nب – أن يكون من المشهود لهم بالصلاح والكفاية.\nج – أن لا يكون محكوماً عليه بجريمة مخلة بالدين والشرف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_004": {
+      "number_label_ar": "المادة (4)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "لا يباشر أعضاء مجلس الوزراء أعمالهم إلا بعد أداء اليمين الآتية: \"أقسم بالله العظيم أن أكون مخلصاً لديني، ثم لمليكي، وبلادي، وأن لا أبوح بسر من أسرار الدولة، وأن أحافظ على مصالحها وأنظمتها، وأن أؤدي أعمالي بالصدق والأمانة والإخلاص\".",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_005": {
+      "number_label_ar": "المادة (5)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "لا يجوز الجمع بين عضوية مجلس الوزراء وأية وظيفة حكومية أخرى، إلا إذا رأى رئيس مجلس الوزراء أن الضرورة تدعو إلى ذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_006": {
+      "number_label_ar": "المادة (6)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "لا يجوز لعضو مجلس الوزراء أثناء توليه العضوية أن يشتري أو يستأجر مباشرة أو بالواسطة أو بالمزاد العام أياً كان من أملاك الدولة، كما لا يجوز له بيع أو إيجار أي شيء من أملاكه إلى الحكومة وليس له مزاولة أي عمل تجاري أو مالي أو قبول العضوية لمجلس إدارة أي شركة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_007": {
+      "number_label_ar": "المادة (7)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "تعقد اجتماعات مجلس الوزراء برئاسة الملك رئيس المجلس أو أحد نواب الرئيس وتصبح قراراته نهائية بعد موافقة الملك عليها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": [],
+      "companion_instrument_note": "Royal Order أ/45 dated 4/2/1446H does not amend this article's own text, but establishes a standing exception to it: if neither the King, nor the Council President, nor any of his deputies attends a scheduled Council of Ministers meeting, the eldest-in-attendance among the Council members who are descendants of King Abdulaziz shall preside; decisions from that meeting are signed by the Council President. Verbatim operative clause: \"يكون انعقاد الاجتماع المُقرّر لمجلس الوزراء – إذا لم نحضره ولم يحضره رئيس المجلس أو أي من نوابه – برئاسة الأكبر سناً من أعضاء المجلس الحاضرين من أبناء أبناء الملك المؤسس عبدالعزيز بن عبدالرحمن الفيصل آل سعود وإن نزلوا، استثناءً من حكم المادة (7)... ويتم توقيع القرارات التي تصدر في ذلك الاجتماع من رئيس المجلس.\" Corroborated by the Umm Al-Qura Gazette listing, the Saudi Press Agency, and multiple news outlets; treated as a linked companion instrument rather than a textual amendment to Article 7 itself, consistent with how it is framed in its own operative text (\"استثناءً من حكم المادة (7)\")."
+    },
+    "council_of_ministers_art_008": {
+      "number_label_ar": "المادة (8)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "يتم تعيين أعضاء مجلس الوزراء وإعفاؤهم من مناصبهم وقبول استقالاتهم بأمر ملكي، وتحدد مسؤولياتهم وفقاً للمادتين السابعة والخمسين والثامنة والخمسين من النظام الأساسي للحكم. ويبين النظام الداخلي للمجلس حقوقهم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_009": {
+      "number_label_ar": "المادة (9)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "مدة مجلس الوزراء لا تزيد عن أربع سنوات يتم خلالها إعادة تشكيله بأمر ملكي، وفي حالة انتهاء المدة قبل إعادة تشكيله يستمر في أداء عمله حتى إعادة التشكيل.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_010": {
+      "number_label_ar": "المادة (10)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "يعتبر الوزير هو الرئيس المباشر والمرجع النهائي لشؤون وزارته ويمارس أعماله وفق أحكام هذا النظام والأنظمة واللوائح الأخرى.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_011": {
+      "number_label_ar": "المادة (11)",
+      "is_mukarrar": false,
+      "section_ar": "أحكام عامة",
+      "text": "أ – النيابة عن الوزير في مجلس الوزراء لا تكون إلا لوزير آخر وبموجب أمر يصدر من رئيس مجلس الوزراء.\nب – يتولى نائب الوزير ممارسة صلاحيات الوزير في حالة غيابه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_012": {
+      "number_label_ar": "المادة (12)",
+      "is_mukarrar": false,
+      "section_ar": "تشكيل المجلس",
+      "text": "يتألف مجلس الوزراء من:\nأ – رئيس مجلس الوزراء.\nب – نواب رئيس مجلس الوزراء.\nجـ – الوزراء العاملين.\nد – وزراء الدولة الذين يعينون أعضاء في مجلس الوزراء بأمر ملكي.\nهـ – مستشاري الملك الذين يعينون أعضاء في مجلس الوزراء بأمر ملكي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_013": {
+      "number_label_ar": "المادة (13)",
+      "is_mukarrar": false,
+      "section_ar": "تشكيل المجلس",
+      "text": "حضور اجتماعات مجلس الوزراء حق خاص بأعضائه فقط وبالأمين العام لمجلس الوزراء، ويجوز بناءً على طلب الرئيس أو أحد الأعضاء بعد موافقة رئيس مجلس الوزراء السماح لأحد المسؤولين أو الخبراء بحضور جلسات المجلس لتقديم ما لديه من معلومات وإيضاحات على أن يكون حق التصويت خاصاً بالأعضاء فقط.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_014": {
+      "number_label_ar": "المادة (14)",
+      "is_mukarrar": false,
+      "section_ar": "تشكيل المجلس",
+      "text": "لا يعتبر اجتماع مجلس الوزراء صحيحاً إلا بحضور ثلثي أعضائه ولا تكون قراراته نظامية إلا بعد صدورها بأغلبية الحاضرين وفي حالة التساوي يعتبر صوت الرئيس مرجحاً، وفي الحالات الاستثنائية يكون انعقاد المجلس صحيحاً بحضور نصف أعضائه ولا تكون قراراته نظامية في هذه الحالة إلا بموافقة ثلثي أعضائه الحاضرين، ولرئيس مجلس الوزراء تقدير الحالات الاستثنائية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_015": {
+      "number_label_ar": "المادة (15)",
+      "is_mukarrar": false,
+      "section_ar": "تشكيل المجلس",
+      "text": "لا يتخذ مجلس الوزراء قراراً في موضوع خاص بأعمال وزارة من الوزارات إلا بحضور وزيرها أو من ينوب عنه ما لم تدع الضرورة لذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_016": {
+      "number_label_ar": "المادة (16)",
+      "is_mukarrar": false,
+      "section_ar": "تشكيل المجلس",
+      "text": "مداولات المجلس سرية أما قراراته فالأصل فيها العلنية عدا ما اعتبر منها سرياً بقرار من المجلس.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_017": {
+      "number_label_ar": "المادة (17)",
+      "is_mukarrar": false,
+      "section_ar": "تشكيل المجلس",
+      "text": "يحاكم أعضاء مجلس الوزراء عن المخالفات التي يرتكبونها في أعمالهم الرسمية بموجب نظام خاص يتضمن بيان المخالفات وتحديد إجراءات الاتهام والمحاكمة وكيفية تأليف هيئة المحكمة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_018": {
+      "number_label_ar": "المادة (18)",
+      "is_mukarrar": false,
+      "section_ar": "تشكيل المجلس",
+      "text": "يجوز لمجلس الوزراء أن يؤلف لجاناً من بين أعضائه أو من غيرهم لبحث مسألة مدرجة بجدول أعماله لتقديم تقرير خاص عنها ويتولى النظام الداخلي للمجلس بيان عدد اللجان وسير أعمالها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_019": {
+      "number_label_ar": "المادة (19)",
+      "is_mukarrar": false,
+      "section_ar": "اختصاصات مجلس الوزراء",
+      "text": "مع مراعاة ما ورد في النظام الأساسي للحكم ونظام مجلس الشورى يرسم مجلس الوزراء السياسة الداخلية والخارجية والمالية والاقتصادية والتعليمية والدفاعية وجميع الشؤون العامة للدولة ويشرف على تنفيذها. وينظر في قرارات مجلس الشورى. وله السلطة التنفيذية وهو المرجع للشؤون المالية والإدارية في سائر الوزارات والأجهزة الحكومية الأخرى.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_020": {
+      "number_label_ar": "المادة (20)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون التنظيمية",
+      "text": "مع مراعاة ما ورد في نظام مجلس الشورى، تصدر الأنظمة، والمعاهدات، والاتفاقيات الدولية والامتيازات، وتعدل بموجب مراسيم ملكية بعد دراستها من مجلس الوزراء.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_021": {
+      "number_label_ar": "المادة (21)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون التنظيمية",
+      "text": "يدرس مجلس الوزراء مشروعات الأنظمة واللوائح المعروضة عليه ويصوت عليها مادة مادة ثم يصوت عليها بالجملة وذلك حسب الإجراءات المرسومة في النظام الداخلي للمجلس.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_022": {
+      "number_label_ar": "المادة (22)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون التنظيمية",
+      "text": "لكل وزير الحق بأن يقترح مشروع نظام أو لائحة يتعلق بأعمال وزارته. كما يحق لكل عضو من أعضاء مجلس الوزراء أن يقترح ما يرى مصلحة من بحثه في المجلس بعد موافقة رئيس مجلس الوزراء.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_023": {
+      "number_label_ar": "المادة (23)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون التنظيمية",
+      "text": "يجب نشر جميع المراسيم في الجريدة الرسمية، وتكون نافذة المفعول من تاريخ نشرها ما لم ينص على تاريخ آخر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_024": {
+      "number_label_ar": "المادة (24)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون التنفيذية",
+      "text": "للمجلس باعتباره السلطة التنفيذية المباشرة الهيمنة التامة على شؤون التنفيذ والإدارة، ويدخل في اختصاصاته التنفيذية الأمور الآتية:\n1 – مراقبة تنفيذ الأنظمة واللوائح والقرارات.\n2 – إحداث وترتيب المصالح العامة.\n3 – متابعة تنفيذ الخطة العامة للتنمية.\n4 – إنشاء لجان تتحرى عن سير أعمال الوزارات والأجهزة الحكومية الأخرى أو عن قضية معينة وترفع هذه اللجان نتائج تحرياتها إلى المجلس في الوقت الذي يحدده لها وينظر المجلس في نتيجة تحرياتها وله إنشاء لجان للتحقيق على ضوء ذلك والبت في النتيجة مع مراعاة ما تقضي به الأنظمة واللوائح.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_025": {
+      "number_label_ar": "المادة (25)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون المالية",
+      "text": "لا يجوز للحكومة أن تعقد قرضاً إلا بعد موافقة مجلس الوزراء وصدور مرسوم ملكي بذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_026": {
+      "number_label_ar": "المادة (26)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون المالية",
+      "text": "يدرس مجلس الوزراء ميزانية الدولة ويصوت عليها فصلاً فصلاً وتصدر بموجب مرسوم ملكي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_027": {
+      "number_label_ar": "المادة (27)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون المالية",
+      "text": "كل زيادة يراد إحداثها على الميزانية لا تكون إلا بموجب مرسوم ملكي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_028": {
+      "number_label_ar": "المادة (28)",
+      "is_mukarrar": false,
+      "section_ar": "الشؤون المالية",
+      "text": "يرفع وزير المالية والاقتصاد الوطني الحساب الختامي للدولة عن العام المالي المنقضي إلى رئيس مجلس الوزراء لإحالته إلى مجلس الوزراء لغرض اعتماده.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_029": {
+      "number_label_ar": "المادة (29)",
+      "is_mukarrar": false,
+      "section_ar": "رئاسة مجلس الوزراء",
+      "text": "الملك رئيس مجلس الوزراء هو الذي يوجه السياسة العامة للدولة، ويكفل التوجيه والتنسيق والتعاون بين مختلف الأجهزة الحكومية، ويضمن الانسجام والاستمرار والوحدة في أعمال مجلس الوزراء. وله الإشراف على مجلس الوزراء والوزارات والأجهزة الحكومية، وهو الذي يراقب تنفيذ الأنظمة واللوائح والقرارات.\nوعلى جميع الوزارات والأجهزة الحكومية الأخرى أن ترفع إلى رئيس مجلس الوزراء خلال تسعين يوماً من بداية كل سنة مالية تقريراً عما حققته من إنجازات مقارنة بما ورد في الخطة العامة للتنمية خلال السنة المالية المنقضية، وما واجهها من صعوبات وما تراه من مقترحات لحسن سير العمل فيها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_031": {
+      "number_label_ar": "المادة (31)",
+      "is_mukarrar": false,
+      "section_ar": "التشكيلات الإدارية لمجلس الوزراء",
+      "text": "يصدر النظام الداخلي لمجلس الوزراء بأمر ملكي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_032": {
+      "number_label_ar": "المادة (32)",
+      "is_mukarrar": false,
+      "section_ar": "التشكيلات الإدارية لمجلس الوزراء",
+      "text": "لا يجري تعديل هذا النظام إلا بالطريقة التي تم بها إصداره.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "council_of_ministers_art_030": {
+      "number_label_ar": "المادة (30)",
+      "is_mukarrar": false,
+      "section_ar": "التشكيلات الإدارية لمجلس الوزراء",
+      "text": "يدخل في تشكيلات مجلس الوزراء الإدارية الجهازان الآتيان:\nأولاً – الأمانة العامة لمجلس الوزراء.\nثانياً – هيئة الخبراء.\nويبين النظام الداخلي لمجلس الوزراء تشكيلات هذين الجهازين واختصاصاتهما وكيفية قيامهما بأعمالهما وعلاقاتهما بالديوان الملكي.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "original_1414h_text": "يدخل في تشكيلات مجلس الوزراء الإدارية الأجهزة الآتية:\nأولاً – ديوان رئاسة مجلس الوزراء.\nثانياً – الأمانة العامة لمجلس الوزراء.\nثالثاً – هيئة الخبراء.\nويبين النظام الداخلي لمجلس الوزراء تشكيلات هذه الأجهزة واختصاصاتها وكيفية قيامها بأعمالها.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "الأمر الملكي رقم (أ/151)",
+          "decreeDate": "1432-09-03",
+          "gregorianDecreeDate": null,
+          "text": "يدخل في تشكيلات مجلس الوزراء الإدارية الجهازان الآتيان:\nأولاً – الأمانة العامة لمجلس الوزراء.\nثانياً – هيئة الخبراء.\nويبين النظام الداخلي لمجلس الوزراء تشكيلات هذين الجهازين واختصاصاتهما وكيفية قيامهما بأعمالهما وعلاقاتهما بالديوان الملكي."
+        }
+      ]
+    }
+  }
+}

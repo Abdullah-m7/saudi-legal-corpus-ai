@@ -201,6 +201,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         anti-cyber-crime-law-track-validate \
         anti-harassment-law-track-validate \
         anti-trafficking-law-track-validate \
+        council-of-ministers-law-track-validate \
         qa-gate
 
 help:
@@ -1228,6 +1229,9 @@ anti-harassment-law-track-validate:
 
 anti-trafficking-law-track-validate:
 	$(PY) scripts/validate_anti_trafficking_law_track.py
+
+council-of-ministers-law-track-validate:
+	$(PY) scripts/validate_council_of_ministers_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

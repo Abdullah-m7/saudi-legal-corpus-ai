@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 218,
-  "top1_hits": 194,
-  "top3_hits": 211,
-  "top5_hits": 214,
-  "top1_accuracy": 0.8899,
-  "top3_accuracy": 0.9679,
-  "top5_accuracy": 0.9817,
-  "mrr_at_5": 0.9283,
+  "total_queries": 220,
+  "top1_hits": 196,
+  "top3_hits": 213,
+  "top5_hits": 216,
+  "top1_accuracy": 0.8909,
+  "top3_accuracy": 0.9682,
+  "top5_accuracy": 0.9818,
+  "mrr_at_5": 0.9289,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6775,6 +6775,68 @@
      "record_id": "basic-law-of-governance-llm-art-054",
      "article_number": 54,
      "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "cmn-001",
+   "query_ar": "يرسم مجلس الوزراء السياسة الداخلية والخارجية والمالية والاقتصادية والتعليمية والدفاعية وجميع الشؤون العامة للدولة ويشرف على تنفيذها",
+   "category": "topical",
+   "gold": {
+    "corpus": "council_of_ministers",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "council-of-ministers-law-llm-art-019",
+     "article_number": 19,
+     "score": 31
+    },
+    {
+     "record_id": "council-of-ministers-law-llm-art-029",
+     "article_number": 29,
+     "score": 28
+    },
+    {
+     "record_id": "council-of-ministers-law-llm-art-004",
+     "article_number": 4,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "cmn-002",
+   "query_ar": "لا يجوز للحكومة أن تعقد قرضاً إلا بعد موافقة مجلس الوزراء وصدور مرسوم ملكي بذلك",
+   "category": "topical",
+   "gold": {
+    "corpus": "council_of_ministers",
+    "law_component": "law",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "council-of-ministers-law-llm-art-025",
+     "article_number": 25,
+     "score": 49
+    },
+    {
+     "record_id": "council-of-ministers-law-llm-art-007",
+     "article_number": 7,
+     "score": 27
+    },
+    {
+     "record_id": "council-of-ministers-law-llm-art-004",
+     "article_number": 4,
+     "score": 24
     }
    ]
   }
