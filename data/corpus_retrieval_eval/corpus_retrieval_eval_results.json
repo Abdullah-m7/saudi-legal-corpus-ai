@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 206,
-  "top1_hits": 182,
-  "top3_hits": 199,
-  "top5_hits": 202,
-  "top1_accuracy": 0.8835,
-  "top3_accuracy": 0.966,
-  "top5_accuracy": 0.9806,
-  "mrr_at_5": 0.9241,
+  "total_queries": 208,
+  "top1_hits": 184,
+  "top3_hits": 201,
+  "top5_hits": 204,
+  "top1_accuracy": 0.8846,
+  "top3_accuracy": 0.9663,
+  "top5_accuracy": 0.9808,
+  "mrr_at_5": 0.9248,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -2556,9 +2556,9 @@
      "score": 12
     },
     {
-     "record_id": "criminal-procedure-regulation-llm-art-156",
-     "article_number": 156,
-     "score": 9
+     "record_id": "marriage-contract-hearing-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 11
     }
    ]
   },
@@ -3264,14 +3264,14 @@
      "score": 30
     },
     {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 15
+    },
+    {
      "record_id": "commercial-courts-regulation-llm-art-272",
      "article_number": 272,
      "score": 13
-    },
-    {
-     "record_id": "commercial-courts-regulation-llm-art-076",
-     "article_number": 76,
-     "score": 11
     }
    ]
   },
@@ -6403,6 +6403,68 @@
      "record_id": "real-estate-expropriation-law-llm-art-027",
      "article_number": 27,
      "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "zwj-001",
+   "query_ar": "دون إخلال بالأحكام النظامية ذات الصلة، تطبق هذه الترتيبات على دعوى إثبات عقد الزواج الذي أُبرم بالمخالفة لأحكام اللائحة، والتعليمات الصادرة بشأنها",
+   "category": "topical",
+   "gold": {
+    "corpus": "marriage_contract_hearing",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 76
+    },
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 56
+    },
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 52
+    }
+   ]
+  },
+  {
+   "query_id": "zwj-002",
+   "query_ar": "تقيد الإدارة المختصة في وزارة العدل دعوى طلب إثبات عقد الزواج، وتكتب إلى وزارة الداخلية لاتخاذ ما تراه بشأن هذا الطلب",
+   "category": "topical",
+   "gold": {
+    "corpus": "marriage_contract_hearing",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 39
+    },
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 36
+    },
+    {
+     "record_id": "marriage-contract-hearing-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 35
     }
    ]
   }
