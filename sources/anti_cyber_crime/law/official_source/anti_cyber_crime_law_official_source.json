@@ -1,0 +1,210 @@
+{
+  "document": "نظام مكافحة جرائم المعلوماتية",
+  "document_en": "Anti-Cyber Crime Law",
+  "decree": "المرسوم الملكي رقم (م/17)",
+  "decree_date_hijri": "8/3/1428",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "المرسوم الملكي — الملك عبدالله بن عبدالعزيز آل سعود، بناءً على قرار مجلس الوزراء رقم 79 وتاريخ 7/3/1428هـ وقرار مجلس الشورى رقم 68/43 وتاريخ 16/9/1427هـ",
+  "issuing_authority_en": "Royal Decree — King Abdullah bin Abdulaziz Al Saud, per Council of Ministers Resolution No. 79 (7/3/1428H) and Shura Council Resolution No. 68/43 (16/9/1427H)",
+  "preamble_ar": "بسم الله الرحمن الرحيم — مرسوم ملكي رقم م/17 بتاريخ 8/3/1428 — بعون الله تعالى، نحن عبد الله بن عبد العزيز آل سعود، ملك المملكة العربية السعودية. بناء على المادة (السبعين) من النظام الأساسي للحكم، الصادر بالأمر الملكي رقم (أ/90) وتاريخ 27/8/1412هـ. وبناء على المادة (العشرين) من نظام مجلس الوزراء، الصادر بالأمر الملكي رقم (أ/13) وتاريخ 3/3/1414هـ. وبناء على المادة (الثامنة عشرة) من نظام مجلس الشورى، الصادر بالأمر الملكي رقم (أ/91) وتاريخ 27/8/1412هـ. وبعد الاطلاع على قرار مجلس الشورى رقم (68/43) وتاريخ 16/9/1427هـ. وبعد الاطلاع على قرار مجلس الوزراء رقم (79) وتاريخ 7/3/1428هـ. رسمنا بما هو آت: أولًا: الموافقة على نظام مكافحة جرائم المعلوماتية، بالصيغة المرافقة. ثانيًا: على سمو نائب رئيس مجلس الوزراء والوزراء – كل فيما يخصه – تنفيذ مرسومنا هذا.",
+  "verification_methodology_note": "DISTINCT VERIFICATION TIER, but the STRONGEST used anywhere in this corpus outside the primary MOJ-portal pipeline: full EXHAUSTIVE (not spot-check) article-by-article cross-verification across THREE independent sources, all matching word-for-word on all 16 articles. (1) PRIMARY: the Bureau of Experts (BOE) legal portal at laws.boe.gov.sa, LawDetails GUID 25df73d6-0f49-4dc5-b010-a9a700f2ec1d, reached via the WebFetch/curl method through an https://r.jina.ai/<url> reader-proxy prefix (direct sandbox network access to laws.boe.gov.sa is blocked at the TLS handshake/WAF level). (2) WIPO Lex (details/14570), hosting the CITC (Communications and Information Technology Commission) Official Translation Department's Arabic source PDF (a genuinely different production pipeline/host than BOE) at https://wipolex-res.wipo.int/edocs/lexdocs/laws/ar/sa/sa047ar.pdf, committed at inputs/anti_cyber_crime_source_pdfs/anti_cyber_crime_law_wipo_lex_sa047.pdf. (3) The Saudi Ministry of Finance regulations library, a scanned, officially stamped certified copy (visible seals of the Bureau of Experts, the Council of Ministers Presidency Diwan, and the Administrative Communications Center on every page), committed at inputs/anti_cyber_crime_source_pdfs/anti_cyber_crime_law_mof_certified.pdf. Both PDFs have no usable text layer (broken font cmap / pure scans); both were rendered to page images and read visually/OCR'd. A possible amendment to Article 6 (cited by the UN's UNODC SHERLOC legislative database, attributed to Royal Decree M/54 dated 22/7/1436H) was investigated via a dedicated follow-up research pass: the BOE portal (Saudi Arabia's own authoritative current-law database) does NOT show this addition, nor does the CITC regulator's own PDF (the body that administers this exact law); no primary confirmation (Umm Al-Qura Gazette text or a working BOE amendments sub-page) could be located either way despite genuine effort; the specific added clause is also a boilerplate formula reused across multiple unrelated Saudi laws, raising a real possibility of misattribution by whichever secondary source originated the UNODC claim. Given the two most authoritative sources checked (BOE and the administering regulator CITC) both show NO such amendment, this track presents Article 6 as verified by all three primary sources and does NOT include the UNODC-cited addition; the investigated-and-unconfirmed claim is preserved here rather than silently dropped. Separately, a minor Gregorian-date-gloss discrepancy was noted: the BOE portal's own page states the decree's Gregorian equivalent as 27/03/2007, while WIPO Lex, the MOF PDF's cover metadata, and general secondary sources uniformly give 26 March 2007 for 8/3/1428H; the Hijri date itself (8/3/1428H) is not in dispute and is what this track's decree_date_hijri field records. Committed WIPO Lex PDF sha256: 55daf644024ea7dc8ec59f63c7a7a99bd3164418d05fbdd03f2a5d81dce23d2f. Committed MOF certified-copy PDF sha256: 9cde1182f2263b290fd575c06b681b134b31aea82764276343fbad9a7cdc5663.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "anti_cyber_crime_art_006",
+      "description": "UNODC SHERLOC (a UN-maintained legislative database) attributes an added closing sentence to this article via Royal Decree M/54 (22/7/1436H): 'ويجوز تضمين الحكم الصادر بتحديد العقوبة النص على نشر ملخصه على نفقة المحكوم عليه في صحيفة أو أكثر من الصحف المحلية أو في أي وسيلة أخرى مناسبة، وذلك بحسب نوع الجريمة المرتكبة، وجسامتها، وتأثيرها، على أن يكون النشر بعد اكتساب الحكم الصفة النهائية.' This sentence is ABSENT from all three sources cross-verified for this track (BOE portal, WIPO Lex/CITC PDF, MOF certified copy) and from the administering regulator's own current text. A dedicated follow-up research pass could not locate primary confirmation (Umm Al-Qura Gazette text or a working BOE amendments page) either way; the cited clause is also a boilerplate formula reused across other unrelated Saudi laws, suggesting possible misattribution. NOT included in this track's article text pending independent primary-source confirmation."
+    }
+  ],
+  "article_count": 16,
+  "status_counts": {
+    "اصلية": 16
+  },
+  "articles": {
+    "anti_cyber_crime_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقصد بالألفاظ والعبارات الآتية - أينما وردت في هذا النظام - المعاني المبينة أمامها ما لم يقتض السياق خلاف ذلك:\n1. الشخص: أي شخص ذي صفة طبيعية أو اعتبارية، عامة أو خاصة.\n2. النظام المعلوماتي: مجموعة برامج وأدوات معدة لمعالجة البيانات وإدارتها، وتشمل الحاسبات الآلية.\n3. الشبكة المعلوماتية: ارتباط بين أكثر من حاسب آلي أو نظام معلوماتي للحصول على البيانات وتبادلها، مثل الشبكات الخاصة والعامة والشبكة العالمية (الإنترنت).\n4. البيانات: المعلومات، أو الأوامر، أو الرسائل، أو الأصوات، أو الصور التي تعد، أو التي سبق إعدادها، لاستخدامها في الحاسب الآلي، وكل ما يمكن تخزينه، ومعالجته، ونقله، وإنشاؤه بوساطة الحاسب الآلي، كالأرقام والحروف والرموز وغيرها.\n5. برامج الحاسب الآلي: مجموعة من الأوامر، والبيانات التي تتضمن توجيهات أو تطبيقات حين تشغيلها في الحاسب الآلي، أو شبكات الحاسب الآلي، وتقوم بأداء الوظيفة المطلوبة.\n6. الحاسب الآلي: أي جهاز إلكتروني ثابت أو منقول سلكي أو لا سلكي يحتوي على نظام معالجة البيانات، أو تخزينها، أو إرسالها، أو استقبالها، أو تصفحها، يؤدي وظائف محددة بحسب البرامج، والأوامر المعطاة له.\n7. الدخول غير المشروع: دخول شخص بطريقة متعمدة إلى حاسب آلي، أو موقع إلكتروني أو نظام معلوماتي، أو شبكة حاسبات آلية غير مصرح لذلك الشخص بالدخول إليها.\n8. الجريمة المعلوماتية: أي فعل يرتكب متضمنًا استخدام الحاسب الآلي أو الشبكة المعلوماتية بالمخالفة لأحكام هذا النظام.\n9. الموقع الإلكتروني: مكان إتاحة البيانات على الشبكة المعلوماتية من خلال عنوان محدد.\n10. الالتقاط: مشاهدة البيانات، أو الحصول عليها دون مسوغ نظامي صحيح.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يهدف هذا النظام إلى الحد من وقوع جرائم المعلوماتية، وذلك بتحديد هذه الجرائم والعقوبات المقررة لكل منها، وبما يؤدي إلى ما يأتي:\n1. المساعدة على تحقيق الأمن المعلوماتي.\n2. حفظ الحقوق المترتبة على الاستخدام المشروع للحاسبات الآلية والشبكات المعلوماتية.\n3. حماية المصلحة العامة، والأخلاق، والآداب العامة.\n4. حماية الاقتصاد الوطني.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب بالسجن مدة لا تزيد على سنة وبغرامة لا تزيد على خمسمائة ألف ريال، أو بإحدى هاتين العقوبتين؛ كلُّ شخص يرتكب أيًا من الجرائم المعلوماتية الآتية:\n1. التنصت على ما هو مرسل عن طريق الشبكة المعلوماتية أو أحد أجهزة الحاسب الآلي - دون مسوغ نظامي صحيح - أو التقاطه أو اعتراضه.\n2. الدخول غير المشروع لتهديد شخص أو ابتزازه؛ لحمله على القيام بفعل أو الامتناع عنه، ولو كان القيام بهذا الفعل أو الامتناع عنه مشروعًا.\n3. الدخول غير المشروع إلى موقع إلكتروني، أو الدخول إلى موقع الكتروني لتغيير تصاميم هذا الموقع، أو إتلافه، أو تعديله، أو شغل عنوانه.\n4. المساس بالحياة الخاصة عن طريق إساءة استخدام الهواتف النقالة المزودة بالكاميرا، أو ما في حكمها.\n5. التشهير بالآخرين، وإلحاق الضرر بهم، عبر وسائل تقنيات المعلومات المختلفة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب بالسجن مدة لا تزيد على ثلاث سنوات وبغرامة لا تزيد على مليوني ريال، أو بإحدى هاتين العقوبتين؛ كل شخص يرتكب أيًا من الجرائم المعلوماتية الآتية:\n1. الاستيلاء لنفسه أو لغيره على مال منقول أو على سند، أو توقيع هذا السند، وذلك عن طريق الاحتيال، أو اتخاذ اسم كاذب، أو انتحال صفة غير صحيحة.\n2. الوصول - دون مسوغ نظامي صحيح - إلى بيانات بنكية، أو ائتمانية، أو بيانات متعلقة بملكية أوراق مالية للحصول على بيانات، أو معلومات، أو أموال، أو ما تتيحه من خدمات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب بالسجن مدة لا تزيد على أربع سنوات وبغرامة لا تزيد على ثلاثة ملايين ريال، أو بإحدى هاتين العقوبتين؛ كل شخص يرتكب أيًا من الجرائم المعلوماتية الآتية:\n1. الدخول غير المشروع لإلغاء بيانات خاصة، أو حذفها، أو تدميرها، أو تسريبها، أو إتلافها أو تغييرها، أو إعادة نشرها.\n2. إيقاف الشبكة المعلوماتية عن العمل، أو تعطيلها، أو تدمير، أو مسح البرامج، أو البيانات الموجودة، أو المستخدمة فيها، أو حذفها، أو تسريبها، أو إتلافها، أو تعديلها.\n3. إعاقة الوصول إلى الخدمة، أو تشويشها، أو تعطيلها، بأي وسيلة كانت.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب بالسجن مدة لا تزيد على خمس سنوات وبغرامة لا تزيد على ثلاثة ملايين ريال، أو بإحدى هاتين العقوبتين كلُّ شخص يرتكب أيًّا من الجرائم المعلوماتية الآتية:\n1. إنتاج ما من شأنه المساس بالنظام العام، او القيم الدينية، أو الآداب العامة، أو حرمة الحياة الخاصة، أو إعداده، أو إرساله، أو تخزينه عن طريق الشبكة المعلوماتية، أو أحد أجهزة الحاسب الآلي.\n2. إنشاء موقع على الشبكة المعلوماتية، أو أحد أجهزة الحاسب الآلي أو نشره، للاتجار في الجنس البشري، أو تسهيل التعامل به.\n3. إنشاء المواد والبيانات المتعلقة بالشبكات الإباحية، أو أنشطة الميسر المخلة بالآداب العامة أو نشرها أو ترويجها.\n4. إنشاء موقع على الشبكة المعلوماتية، أو أحد أجهزة الحاسب الآلي أو نشره، للاتجار بالمخدرات، أو المؤثرات العقلية، أو ترويجها، أو طرق تعاطيها، أو تسهيل التعامل بها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب بالسجن مدة لا تزيد على عشر سنوات وبغرامة لا تزيد على خمسة ملايين ريال، أو بإحدى هاتين العقوبتين كلُّ شخص يرتكب أيًّا من الجرائم المعلوماتية الآتية:\n1. إنشاء موقع لمنظمات إرهابية على الشبكة المعلوماتية، أو أحد أجهزة الحاسب الآلي أو نشره؛ لتسهيل الاتصال بقيادات تلك المنظمات، أو أي من أعضائها أو ترويج أفكارها أو تمويلها، أو نشر كيفية تصنيع الأجهزة الحارقة، أو المتفجرات، أو أي أداة تستخدم في الأعمال الإرهابية.\n2. الدخول غير المشروع إلى موقع إلكتروني، أو نظام معلوماتي مباشرة، أو عن طريق الشبكة المعلوماتية، أو أحد أجهزة الحاسب الآلي للحصول على بيانات تمس الأمن الداخلي أو الخارجي للدولة، أو اقتصادها الوطني.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا تقل عقوبة السجن أو الغرامة عن نصف حدها الأعلى إذا اقترنت الجريمة بأي من الحالات الآتية:\n1. ارتكاب الجاني الجريمة من خلال عصابة منظمة.\n2. شغل الجاني وظيفة عامة، واتصال الجريمة بهذه الوظيفة، أو ارتكابه الجريمة مستغلًا سلطاته أو نفوذه.\n3. التغرير بالقُصَّر ومن في حكمهم، واستغلالهم.\n4. صدور أحكام محلية أو أجنبية سابقة بالإدانة بحق الجاني في جرائم مماثلة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب كل من حرَّض غيره، أو ساعده، أو اتفق معه على ارتكاب أيٍّ من الجرائم المنصوص عليها في هذا النظام؛ إذا وقعت الجريمة بناء على هذا التحريض، أو المساعدة، أو الاتفاق، بما لا يتجاوز الحد الأعلى للعقوبة المقررة لها، ويعاقب بما لا يتجاوز نصف الحد الأعلى للعقوبة المقررة لها إذا لم تقع الجريمة الأصلية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب كل من شرع في القيام بأي من الجرائم المنصوص عليها في هذا النظام بما لا يتجاوز نصف الحد الأعلى للعقوبة المقررة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "للمحكمة المختصة أن تعفي من هذه العقوبات كل من يبادر من الجناة بإبلاغ السلطة المختصة بالجريمة قبل العلم بها وقبل وقوع الضرر، وإن كان الإبلاغ بعد العلم بالجريمة تعين للإعفاء أن يكون من شأن الإبلاغ ضبط باقي الجناة في حال تعددهم، أو الأدوات المستخدمة في الجريمة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا يخل تطبيق هذا النظام بالأحكام الواردة في الأنظمة ذات العلاقة وخاصة ما يتعلق بحقوق الملكية الفكرية، والاتفاقيات الدولية ذات الصلة التي تكون المملكة طرفًا فيها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع عدم الإخلال بحقوق حسني النية، يجوز الحكم بمصادرة الأجهزة، أو البرامج، أو الوسائل المستخدمة في ارتكاب أي من الجرائم المنصوص عليها في هذا النظام، أو الأموال المحصلة منها. كما يجوز الحكم بإغلاق الموقع الإلكتروني، أو مكان تقديم الخدمة إغلاقًا نهائيًّا أو مؤقتًا متى كان مصدرًا لارتكاب أي من هذه الجرائم، وكانت الجريمة قد ارتكبت بعلم مالكه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تتولى هيئة الاتصالات وتقنية المعلومات وفقًا لاختصاصها تقديم الدعم والمساندة الفنية للجهات الأمنية المختصة خلال مراحل ضبط هذه الجرائم والتحقيق فيها وأثناء المحاكمة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تتولى هيئة التحقيق والادعاء العام التحقيق والادعاء في الجرائم الواردة في هذا النظام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    },
+    "anti_cyber_crime_art_016": {
+      "number_label_ar": "المادة السادسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ينشر هذا النظام في الجريدة الرسمية ويعمل به بعد (مائة وعشرين) يومًا من تاريخ نشره.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED",
+      "history": []
+    }
+  },
+  "provenance": {
+    "boe_portal_url": "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/25df73d6-0f49-4dc5-b010-a9a700f2ec1d/1",
+    "boe_access_method": "WebFetch/curl with https://r.jina.ai/<url> reader-proxy prefix (direct sandbox network access to laws.boe.gov.sa is blocked; this proxy routes the fetch through Anthropic own infrastructure)",
+    "wipo_lex_entry": "details/14570",
+    "wipo_lex_pdf_source_committed": "inputs/anti_cyber_crime_source_pdfs/anti_cyber_crime_law_wipo_lex_sa047.pdf",
+    "wipo_lex_pdf_sha256": "55daf644024ea7dc8ec59f63c7a7a99bd3164418d05fbdd03f2a5d81dce23d2f",
+    "mof_certified_pdf_source_committed": "inputs/anti_cyber_crime_source_pdfs/anti_cyber_crime_law_mof_certified.pdf",
+    "mof_certified_pdf_sha256": "9cde1182f2263b290fd575c06b681b134b31aea82764276343fbad9a7cdc5663",
+    "extraction_method": "Both PDFs have no usable text layer (broken font cmap / pure scan); rendered to page images and read visually/OCR-transcribed."
+  }
+}

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 212,
-  "top1_hits": 188,
-  "top3_hits": 205,
-  "top5_hits": 208,
-  "top1_accuracy": 0.8868,
-  "top3_accuracy": 0.967,
-  "top5_accuracy": 0.9811,
-  "mrr_at_5": 0.9263,
+  "total_queries": 214,
+  "top1_hits": 190,
+  "top3_hits": 207,
+  "top5_hits": 210,
+  "top1_accuracy": 0.8879,
+  "top3_accuracy": 0.9673,
+  "top5_accuracy": 0.9813,
+  "mrr_at_5": 0.9269,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5098,9 +5098,9 @@
      "score": 31
     },
     {
-     "record_id": "terrorism-law-llm-art-040",
-     "article_number": 40,
-     "score": 26
+     "record_id": "anti-cyber-crime-law-llm-art-004",
+     "article_number": 4,
+     "score": 27
     }
    ]
   },
@@ -6589,6 +6589,68 @@
      "record_id": "judiciary-law-llm-art-011",
      "article_number": 11,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "cyb-001",
+   "query_ar": "إنشاء موقع لمنظمات إرهابية على الشبكة المعلوماتية، أو أحد أجهزة الحاسب الآلي أو نشره؛ لتسهيل الاتصال بقيادات تلك المنظمات",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_cyber_crime",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-cyber-crime-law-llm-art-007",
+     "article_number": 7,
+     "score": 43
+    },
+    {
+     "record_id": "anti-cyber-crime-law-llm-art-006",
+     "article_number": 6,
+     "score": 40
+    },
+    {
+     "record_id": "anti-cyber-crime-law-llm-art-001",
+     "article_number": 1,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "cyb-002",
+   "query_ar": "يجوز الحكم بمصادرة الأجهزة، أو البرامج، أو الوسائل المستخدمة في ارتكاب أي من الجرائم المنصوص عليها في هذا النظام، أو الأموال المحصلة منها",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_cyber_crime",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-cyber-crime-law-llm-art-013",
+     "article_number": 13,
+     "score": 28
+    },
+    {
+     "record_id": "terrorism-reg-llm-art-021",
+     "article_number": 21,
+     "score": 27
+    },
+    {
+     "record_id": "pdpl-law-llm-art-038",
+     "article_number": 38,
+     "score": 24
     }
    ]
   }
