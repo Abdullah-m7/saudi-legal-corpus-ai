@@ -1,0 +1,20 @@
+{
+  "law_key": "anti_trafficking",
+  "layer": "ANTI_TRAFFICKING_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 17,
+  "official_text_status": "BOE_WAYBACK_SNAPSHOT_UNODC_ENGLISH_SUBSTANCE_VERIFIED",
+  "status_counts": {
+    "اصلية": 17
+  },
+  "decree": "المرسوم الملكي رقم (م/40)",
+  "decree_date_hijri": "21/7/1430",
+  "consolidated_amended_law": false,
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "ALL",
+      "description": "A 33-article draft replacement law (adding a National Committee, a victims' fund, a revised penalty structure, and an international-cooperation chapter) has cleared public consultation (mid-2022) but has NOT been enacted as of the most recent evidence found (2025 US State Department TIP report; BOE portal snapshot dated 2025-12-12). This is not a live conflict with the currently ingested text — the 17-article 1430H law is confirmed still in force — but is documented here as a significant, well-evidenced pending legislative development that should be watched for future re-verification."
+    }
+  ],
+  "verification_methodology_note": "DISTINCT VERIFICATION TIER: full text extracted from a Wayback Machine capture (dated 2025-12-12) of the Bureau of Experts (BOE) legal portal's LawDetails page, GUID 4e09c59d-f173-4971-8a38-a9a700f27025 — the usual https://r.jina.ai/<url> reader-proxy method (used successfully for four other tracks this session) stopped working for this specific research pass (Jina returned a 401 'bad IP reputation' block, and direct fetch/WebFetch to laws.boe.gov.sa also failed); the Wayback capture is genuine BOE-served HTML (confirmed by inspecting the raw markup, not just cleaned text), so it should faithfully reflect the live portal content, but it is a ~7-month-old snapshot rather than a fresh live fetch. All 17 articles were confirmed complete and gapless against the page's own article-selector dropdown widget (17 entries, exact match). Cross-verified for SUBSTANCE (not exact Arabic wording, since the second source is an English translation) against UNODC's official English translation (unodc.org/cld — Anti-Trafficking in Persons Law, Royal Decree M/40, 21/7/1430H), genuinely independent of BOE (UNODC maintains its own translation pipeline); every substantive element of every article (penalty ranges, riyal amounts, year terms, aggravating-circumstance lists, cross-references, exemption conditions, the corporate-liability fine, the 90-day entry-into-force clause) matched exactly in meaning and structure. Additionally corroborated by the US State Department's 2025 Trafficking in Persons (TIP) Report, which independently cites the same 15-year/1-million-riyal penalty structure and aggravating-circumstance provisions (arts 3-4). This is a weaker tier than this corpus's usual same-language Arabic-to-Arabic text comparison, since no second full-text ARABIC source could be retrieved in this session (hrc.gov.sa and ncct.gov.sa were unreachable both live and via Wayback in the time available). IMPORTANT AMENDMENT-STATUS FINDING: a comprehensive 33-article, 6-chapter DRAFT REPLACEMENT law (submitted by the Human Rights Commission) cleared public consultation on Saudi Arabia's official e-participation portals (istitlaa.ncc.gov.sa, eparticipation.my.gov.sa) in mid-2022 and would explicitly repeal and replace this 17-article law per its own draft Article 31 — but remains UNENACTED as of the most recent evidence found: the 2025 US State Department TIP report explicitly states the government 'did not pass the amendments for the third consecutive reporting period,' and the BOE portal's own December 2025 snapshot still shows the original 17-article text with no amendment-status flags triggered on any article. This track therefore ingests the 17-article 1430H/2009 text as the current, in-force law, with this pending-but-unenacted draft explicitly flagged rather than silently ignored.",
+  "source_artifact": "sources/anti_trafficking/law/official_source/anti_trafficking_law_official_source.json"
+}

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 216,
-  "top1_hits": 192,
-  "top3_hits": 209,
-  "top5_hits": 212,
-  "top1_accuracy": 0.8889,
-  "top3_accuracy": 0.9676,
-  "top5_accuracy": 0.9815,
-  "mrr_at_5": 0.9276,
+  "total_queries": 218,
+  "top1_hits": 194,
+  "top3_hits": 211,
+  "top5_hits": 214,
+  "top1_accuracy": 0.8899,
+  "top3_accuracy": 0.9679,
+  "top5_accuracy": 0.9817,
+  "mrr_at_5": 0.9283,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6713,6 +6713,68 @@
      "record_id": "labor-reg-llm-art-014",
      "article_number": 14,
      "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "trf-001",
+   "query_ar": "تشدد العقوبات المنصوص عليها في هذا النظام إذا ارتكبت الجريمة جماعة إجرامية منظمة، أو إذا ارتكبت ضد امرأة أو أحد من ذوي الاحتياجات الخاصة",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_trafficking",
+    "law_component": "law",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-trafficking-law-llm-art-004",
+     "article_number": 4,
+     "score": 41
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 22
+    },
+    {
+     "record_id": "terrorism-law-llm-art-050",
+     "article_number": 50,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "trf-002",
+   "query_ar": "تختص هيئة التحقيق والادعاء العام بالتحقيق والادعاء في الجرائم المنصوص عليها في هذا النظام",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_trafficking",
+    "law_component": "law",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-trafficking-law-llm-art-016",
+     "article_number": 16,
+     "score": 36
+    },
+    {
+     "record_id": "anti-cyber-crime-law-llm-art-015",
+     "article_number": 15,
+     "score": 28
+    },
+    {
+     "record_id": "basic-law-of-governance-llm-art-054",
+     "article_number": 54,
+     "score": 26
     }
    ]
   }
