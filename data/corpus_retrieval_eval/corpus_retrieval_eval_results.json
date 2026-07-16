@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 210,
-  "top1_hits": 186,
-  "top3_hits": 203,
-  "top5_hits": 206,
-  "top1_accuracy": 0.8857,
-  "top3_accuracy": 0.9667,
-  "top5_accuracy": 0.981,
-  "mrr_at_5": 0.9256,
+  "total_queries": 212,
+  "top1_hits": 188,
+  "top3_hits": 205,
+  "top5_hits": 208,
+  "top1_accuracy": 0.8868,
+  "top3_accuracy": 0.967,
+  "top5_accuracy": 0.9811,
+  "mrr_at_5": 0.9263,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -965,6 +965,11 @@
    "hit_top5": false,
    "top_hits": [
     {
+     "record_id": "basic-law-of-governance-llm-art-055",
+     "article_number": 55,
+     "score": 5
+    },
+    {
      "record_id": "labor-law-llm-art-042",
      "article_number": 42,
      "score": 5
@@ -973,11 +978,6 @@
      "record_id": "labor-annex4-llm-art-019",
      "article_number": 19,
      "score": 5
-    },
-    {
-     "record_id": "gtpl-law-llm-art-017",
-     "article_number": 17,
-     "score": 1
     }
    ]
   },
@@ -6527,6 +6527,68 @@
      "record_id": "anti-bribery-law-llm-art-002",
      "article_number": 2,
      "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "blg-001",
+   "query_ar": "القضاء سلطة مستقلة، ولا سلطان على القضاة في قضائهم لغير سلطان الشريعة الإسلامية",
+   "category": "topical",
+   "gold": {
+    "corpus": "basic_law_of_governance",
+    "law_component": "law",
+    "article_number": 46
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "basic-law-of-governance-llm-art-046",
+     "article_number": 46,
+     "score": 36
+    },
+    {
+     "record_id": "judiciary-law-llm-art-001",
+     "article_number": 1,
+     "score": 29
+    },
+    {
+     "record_id": "judiciary-law-llm-art-011",
+     "article_number": 11,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "blg-002",
+   "query_ar": "يقوم الحكم في المملكة العربية السعودية على أساس العدل والشورى والمساواة، وفق الشريعة الإسلامية",
+   "category": "topical",
+   "gold": {
+    "corpus": "basic_law_of_governance",
+    "law_component": "law",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "basic-law-of-governance-llm-art-008",
+     "article_number": 8,
+     "score": 38
+    },
+    {
+     "record_id": "basic-law-of-governance-llm-art-007",
+     "article_number": 7,
+     "score": 22
+    },
+    {
+     "record_id": "judiciary-law-llm-art-011",
+     "article_number": 11,
+     "score": 17
     }
    ]
   }

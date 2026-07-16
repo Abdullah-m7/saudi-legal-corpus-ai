@@ -204,6 +204,8 @@ LAYERS = [
      "marriage_contract_hearing", "regulation"),
     ("data/anti_bribery_arabic_legal_llm/anti_bribery_law_legal_llm_001_023.json",
      "anti_bribery", "law"),
+    ("data/basic_law_of_governance_arabic_legal_llm/basic_law_of_governance_legal_llm_001_083.json",
+     "basic_law_of_governance", "law"),
 ]
 
 
