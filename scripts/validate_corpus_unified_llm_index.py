@@ -20,8 +20,8 @@ SUMMARY = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import search  # noqa: E402
 
-EXPECTED_TOTAL = 6770
-EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23, "bankruptcy_fees": 20, "enforcement_providers": 18, "alimony_fund": 17, "judiciary_bog": 15, "documentation_settlement": 15, "mosalaha_center": 10, "medical_reports": 13, "marriage_non_saudi": 11, "state_funded_lawyer": 11, "lessor_repossession": 7, "elitigation_guide": 5, "judicial_training_center": 18, "judgment_objection_methods": 62, "real_estate_expropriation": 39, "marriage_contract_hearing": 10}
+EXPECTED_TOTAL = 6795
+EXPECTED_PER_CORPUS = {"companies_law": 281, "pdpl": 81, "investment": 53, "civil": 721, "gtpl": 256, "labor": 571, "evidence": 322, "personal_status": 293, "sharia_procedure": 880, "criminal_procedure": 403, "enforcement": 371, "judiciary": 85, "board_of_grievances": 26, "law_practice": 146, "commercial_courts": 377, "bankruptcy": 353, "judicial_costs": 40, "arbitration": 77, "commercial_papers": 121, "commercial_register": 29, "trade_names": 23, "commercial_agencies": 6, "chambers_of_commerce": 66, "commercial_books": 16, "aml": 52, "tawtheeq": 88, "real_estate_registration": 91, "real_estate_mortgage": 46, "real_estate_finance": 15, "real_estate_units": 74, "foreign_ownership": 15, "municipal_realestate": 41, "gcc_ownership": 6, "terrorism": 127, "juveniles": 37, "whistleblower": 37, "judicial_inspection": 68, "qismah": 48, "sulook": 47, "aawan": 35, "muslaha": 29, "iflas_hudud": 23, "judicial_documents": 23, "bankruptcy_fees": 20, "enforcement_providers": 18, "alimony_fund": 17, "judiciary_bog": 15, "documentation_settlement": 15, "mosalaha_center": 10, "medical_reports": 13, "marriage_non_saudi": 11, "state_funded_lawyer": 11, "lessor_repossession": 7, "elitigation_guide": 5, "judicial_training_center": 18, "judgment_objection_methods": 62, "real_estate_expropriation": 39, "marriage_contract_hearing": 10, "anti_bribery": 25}
 REQUIRED = ["record_id", "corpus", "law_id", "law_component", "law_title_ar",
             "article_number", "llm_title_ar", "retrieval_title_ar", "article_path",
             "keywords_ar", "search_queries_ar", "text_ar", "text_status", "source_layer"]
@@ -157,6 +157,8 @@ SANITY = [
     ("يحل النظام محل نظام نزع ملكية العقارات للمنفعة العامة ووضع اليد المؤقت على العقار الصادر بالمرسوم الملكي رقم (م/١٥) وتاريخ ١١/٣/١٤٢٤هـ", "real_estate_expropriation", 37),
     ("لا تقبل دعوى إثبات عقد الزواج إذا كان أحد أطراف الدعوى من المشمولين بأحكام المادتين (التاسعة) و(الحادية عشرة) من النظام", "marriage_contract_hearing", 5),
     ("لا تخل الأحكام الواردة في هذه الترتيبات بسماع الدعاوى المتعلقة بالحقوق الناشئة عن عقد الزواج", "marriage_contract_hearing", 9),
+    ("كل موظف عام طلب لنفسه أو لغيره أو قبل أو أخذ وعداً أو عطية لأداء عمل من أعمال وظيفته", "anti_bribery", 1),
+    ("يعفى الراشي أو الوسيط من العقوبة الأصلية والتبعية إذا أخبر السلطات بالجريمة قبل اكتشافها", "anti_bribery", 16),
 ]
 
 
@@ -279,6 +281,7 @@ def main():
         "data/judgment_objection_methods_arabic_legal_llm/judgment_objection_methods_regulation_legal_llm_001_062.json",
         "data/real_estate_expropriation_arabic_legal_llm/real_estate_expropriation_law_legal_llm_001_039.json",
         "data/marriage_contract_hearing_arabic_legal_llm/marriage_contract_hearing_regulation_legal_llm_001_010.json",
+        "data/anti_bribery_arabic_legal_llm/anti_bribery_law_legal_llm_001_023.json",
     ):
         env = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
         for r in env["records"]:
@@ -312,7 +315,7 @@ def main():
         return 1
 
     print("PASS: unified LLM retrieval index over %d records" % len(records))
-    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23 + bankruptcy_fees 20 + enforcement_providers 18 + alimony_fund 17 + judiciary_bog 15 + documentation_settlement 15 + mosalaha_center 10 + medical_reports 13 + marriage_non_saudi 11 + state_funded_lawyer 11 + lessor_repossession 7 + elitigation_guide 5 + judicial_training_center 18 + judgment_objection_methods 62 + real_estate_expropriation 39 + marriage_contract_hearing 10; unique ids; text verbatim from source layers")
+    print("  - companies_law 281 + pdpl 81 + investment 53 + civil 721 + gtpl 256 + labor 571 + evidence 322 + personal_status 293 + sharia_procedure 880 + criminal_procedure 403 + enforcement 371 + judiciary 85 + board_of_grievances 26 + law_practice 146 + commercial_courts 377 + bankruptcy 353 + judicial_costs 40 + arbitration 77 + commercial_papers 121 + commercial_register 29 + trade_names 23 + commercial_agencies 6 + chambers_of_commerce 66 + commercial_books 16 + aml 52 + tawtheeq 88 + real_estate_registration 91 + real_estate_mortgage 46 + real_estate_finance 15 + real_estate_units 74 + foreign_ownership 15 + municipal_realestate 41 + gcc_ownership 6 + terrorism 127 + juveniles 37 + whistleblower 37 + judicial_inspection 68 + qismah 48 + sulook 47 + aawan 35 + muslaha 29 + iflas_hudud 23 + judicial_documents 23 + bankruptcy_fees 20 + enforcement_providers 18 + alimony_fund 17 + judiciary_bog 15 + documentation_settlement 15 + mosalaha_center 10 + medical_reports 13 + marriage_non_saudi 11 + state_funded_lawyer 11 + lessor_repossession 7 + elitigation_guide 5 + judicial_training_center 18 + judgment_objection_methods 62 + real_estate_expropriation 39 + marriage_contract_hearing 10 + anti_bribery 25; unique ids; text verbatim from source layers")
     print("  - %d sanity queries each route to the expected law/article" % len(SANITY))
     return 0
 

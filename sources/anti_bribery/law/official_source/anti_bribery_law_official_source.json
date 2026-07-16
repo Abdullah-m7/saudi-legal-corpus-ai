@@ -1,0 +1,445 @@
+{
+  "document": "نظام مكافحة الرشوة",
+  "document_en": "Anti-Bribery Law",
+  "decree": "المرسوم الملكي رقم (م/36)",
+  "decree_date_hijri": "29/12/1412",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": true,
+  "issuing_authority_ar": "المرسوم الملكي (بناءً على قرار مجلس الوزراء رقم 175 وتاريخ 28/12/1412هـ)",
+  "issuing_authority_en": "Royal Decree (approving Council of Ministers Decision No. 175, 28/12/1412H)",
+  "verification_methodology_note": "IMPORTANT — DISTINCT, LOWER-CONFIDENCE VERIFICATION TIER: this track does NOT use this corpus's standard MOJ-portal-database-times-official-PDF double-verification pipeline (this law is not a MOJ-issued instrument and is not present on the MOJ legal portal), and does NOT use the secondary BOE-official-portal-via-Wayback byte-identical-snapshot fallback used for several other tracks (laws.boe.gov.sa and web.archive.org were both confirmed unreachable from the build environment on repeated attempts across three separate research passes: laws.boe.gov.sa fails at the TLS handshake stage with a connection reset on every path/variant tried; web.archive.org is blocked by the sandbox's network egress policy outright). Two verification tiers are used instead, and every article is explicitly tagged with which tier it received via its own status/verification_tier field: (1) SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION — applied to the 16 articles unchanged since the original 1412H enactment: full verbatim text was extracted from a single official source (a scanned booklet at faculty.ksu.edu.sa carrying the Bureau of Experts' own letterhead, 'هيئة الخبراء بمجلس الوزراء', King Fahd National Library catalog entry dated 1417H, ISBN 3-04-831-9960 — committed at inputs/anti_bribery_official_pdfs/anti_bribery_law_1412h_original_ksu.pdf, sha256 ecff778d4e43bedd35a72958baf03906d83e3ab8e2453434c4d162b5e662c9af) and topically corroborated (article count, decree number/date, and each article's operative-clause paraphrase) against a second, independently-hosted 2-page summary table at nawaf-law.com.sa — the table is NOT full verbatim text, so this does not meet this corpus's usual article-by-article byte/text-similarity cross-verification standard; it is a genuinely weaker tier than every other track in this corpus. (2) SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY — applied to the 7 amended articles (5, 8, 9, 14, 15, 17, 21) and the 2 newly-added مكرر articles: their current text was NOT confirmed against any primary official gazette scan or the MOJ/BOE portals directly; it rests entirely on convergence between two Saudi legal-publishing sites (nezams.com and manielaw-sa.com, whose consolidated-text PDF is committed at inputs/anti_bribery_official_pdfs/anti_bribery_law_consolidated_manielaw.pdf, sha256 5ae22e19932dad92761357a8a966522b81778f56961b5a4adac2705056f6ac9b) which are themselves suspected to share a common upstream consolidation source rather than being fully independent of each other, plus search-engine-surfaced corroboration (including one partial, non-full-text confirmation via a live fetch of the official Umm Al-Qura Gazette portal, uqn.gov.sa, for the M/38 1443H amendment's substance) and, for the two مكرر articles specifically, one additional independent WebSearch snippet matching verbatim. This is the WEAKEST verification tier used anywhere in this corpus and should be weighted accordingly by any downstream consumer. The repository owner explicitly reviewed and approved ingestion under this distinct, clearly-flagged tier after two dedicated research passes confirmed the primary MOJ/BOE/Umm-Al-Qura channels were not reachable from the build environment.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "anti_bribery_art_017",
+      "description": "One WebSearch-surfaced synthesis (unattributed/uncertain source) rendered this article with 'وزارة الداخلية' (Ministry of Interior) instead of 'رئاسة أمن الدولة' (State Security Presidency) — i.e. the pre-1440H-amendment wording. Two independently-fetched sources (the manielaw-sa.com consolidated PDF, read directly off the page images, and a direct nezams.com fetch) agree on 'رئاسة أمن الدولة', consistent with the CoM Decision 633 / Royal Decree M/127 (6/11/1440H) amendment substituting the two ministries in Articles 17 and 21. 'رئاسة أمن الدولة' was adopted as the current text on the strength of 2-source agreement, but this specific point was never confirmed against a primary gazette scan and should be verified if one becomes reachable."
+    },
+    {
+      "article_key": "anti_bribery_art_014",
+      "description": "Article 14's committee membership was updated to read 'هيئة الرقابة ومكافحة الفساد' (reflecting the 2024 Royal Decree M/25, 23/1/1446H rename of the national anti-corruption authority) based on the already-updated wording found in the manielaw-sa.com consolidated PDF. The specific consequential-amendment clause of Royal Decree M/25 applying this rename to Article 14 was NOT read directly — only inferred from the secondary source's already-current wording plus general awareness of the 2024 rename from search results. Separately, direct evidence (both manielaw-sa.com and nezams.com) shows Articles 17 and 21 still read 'رئاسة أمن الدولة' (a distinct state-security body, unrelated to the anti-corruption authority) — i.e. the 2024 rename was NOT found to apply to Articles 17/21, only to Article 14's committee reference."
+    },
+    {
+      "article_key": "anti_bribery_art_009_mukarrar_1",
+      "description": "Both sources consulted for this article's text ('كل شخص وعد أو عرض أو منح، عطية...') render a comma between 'منح' and 'عطية' that reads awkwardly and may be a transcription artifact rather than the authentic punctuation (possibly 'منح عطية' without a comma in the original gazette text) — preserved verbatim as found in both sources, not silently corrected."
+    }
+  ],
+  "article_count": 25,
+  "status_counts": {
+    "اصلية": 16,
+    "معدلة": 7,
+    "ملغاة": 0,
+    "مضافة": 2
+  },
+  "articles": {
+    "anti_bribery_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل موظف عام طلب لنفسه أو لغيره أو قبل أو أخذ وعداً أو عطية لأداء عمل من أعمال وظيفته أو يزعم أنه من أعمال وظيفته ولو كان هذا العمل مشروعاً يعد مرتشياً ويعاقب بالسجن مدة لا تتجاوز عشر سنوات وبغرامة لا تزيد عن مليون ريال أو باحدي هاتين العقوبتين ولا يؤثر في قيام الجريمة أتجاه قصد الموظف إلى عدم القيام بالعمل الذي وعد به.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل موظف عام طلب لنفسه أو لغيره أو قبل أو أخذ وعداً أو عطية للامتناع عن عمل من أعمال وظيفته أو يزعم أنه من أعمال وظيفته ولو كان هذا الامتناع مشروعأً يعد مرتشياً ويعاقب بالعقوبة المنصوص عليها في المادة الأولى من هذا النظام ولا يؤثر في قيام الجريمة أتجاه قصد الموظف إلى عدم القيام بما وعد به.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل موظف عام طلب لنفسه أو لغيره أو قبل أو أخذ وعداً أو عطية للأخلال بواجبات وظيفته أو لمكافأته على ما وقع منه ولو كان ذلك بدون اتفاق سابق يعد مرتشياً ويعاقب بالعقوبة المنصوص عليها في المادة الأولى من هذا النظام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل موظف عام أخل بواجبات وظيفته بأن قام بعمل أو امتنع عن عمل من أعمال تلك الوظيفة نتيجة لرجاء أو توصية أو وساطة يعد في حكم المرتشي ويعاقب بالسجن مدة لا تتجاوز ثلاث سنوات وبغرامة لا تزيد عن مائة الف ريال أو بإحدى هاتين العقوبتين.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل موظف عام طلب لنفسه أو لغيره أو قبل أو أخذ وعداً أو عطية بسبب وظيفته لمتابعة معاملة في جهة حكومية ولم تنطبق عليه النصوص الأخرى في هذا النظام يعاقب بالسجن مدة لا تتجاوز سنتين وبغرامة لا تزيد عن خمسين ألف ريال أو بإحدى هاتين العقوبتين، ويعاقب بالعقوبة نفسها من أعطى أو عرض العطية أو وعد بها للغرض المشار إليها وكذلك الوسيط في أية حالة من هذه الحالات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب بالعقوبة المنصوص عليها في المادة الاولى من هذا النظام من يستعمل القوة أو العنف أو التهديد في حق موظف عام ليحصل منه على قضاء أمر غير مشروع أو ليحمله على اجتناب أداء عمل من الأعمال المكلف بها نظاماً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعاقب الراشي والوسيط وكل من اشترك في احدى الجرائم الواردة في هذا النظام بالعقوبة المنصوص عليها في المادة التي تجرمها، ويعتبر شريكاً في الجريمة كل من اتفق أو حرض أو ساعد في ارتكابها مع علمه بذلك متى تمت الجريمة بناء على هذا الاتفاق أو التحريض أو المساعدة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل شخص عينه المرتشي أو الراشي لأخذ الرشوة وقبل ذلك مع علمه بالسبب يعاقب بالسجن مدة لا تتجاوز سنتين وبغرامة لا تزيد عن خمسين الف ريال أو بإحدى هاتين العقوبتين.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعتبر من قبيل الوعد أو العطية في تطبيق هذا النظام كل فائدة أو ميزة يمكن أن يحصل عليها المرتشي أياً كان نوع هذه الفائدة أو تلك الميزة أو أسمها سواء كانت مادية أو غير مادية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يترتب على الحكم بإدانة موظف عام أو من في حكمه بارتكاب إحدى الجرائم المنصوص عليها في هذا النظام العزل من الوظيفة العامة وحرمانه من تولي الوظائف العامة أو القيام بالأعمال التي يعد القائمون بها في حكم الموظفين العامين وفقاً لنص المادة الثامنة من هذا النظام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_016": {
+      "number_label_ar": "المادة السادسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعفى الراشي أو الوسيط من العقوبة الأصلية والتبعية إذا أخبر السلطات بالجريمة قبل اكتشافها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_018": {
+      "number_label_ar": "المادة الثامنة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعتبر عائداً من حكم بإدانته في جريمة من الجرائم المنصوص عليها في هذا النظام إذا ثبت ارتكابه جريمة أخرى وفقاً لأحكامه قبل مضي خمس سنوات من تاريخ انقضاء العقوبة وفي هذه الحالة يجوز الحكم عليه بأكثر من الحد الأعلى للعقوبة المقررة للجريمة بشرط عدم تجاوز ضعف هذا الحد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_019": {
+      "number_label_ar": "المادة التاسعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "على الجهة المختصة بالحكم في جرائم الرشوة الحكم بغرامة لا تتجاوز عشرة أضعاف قيمة الرشوة أو بالحرمان من الدخول مع الوزارات والمصالح الحكومية أو الأجهزة ذات الشخصية المعنوية العامة في عقود لتأمين مشترياتها وتنفيذ مشروعاتها وأعمالها أو بهاتين العقوبتين على أية شركة أو مؤسسة خاصة وطنية أو أجنبية أدين مديرها أو أحد منسوبيها في جريمة من الجرائم المنصوص عليها في هذا النظام إذا ثبت أن الجريمة قد ارتكبت لمصلحتها، ولمجلس الوزراء إعادة النظر في عقوبة الحرمان المشار إليها بعد مضي خمس سنوات على الأقل من صدور الحكم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_020": {
+      "number_label_ar": "المادة العشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا حكم بحرمان أية شركة أو مؤسسة خاصة وطنية أو أجنبية وفقاً للمادة التاسعة عشرة فإن الجهة أو الجهات الحكومية المتعاقدة معها ترفع إلى مجلس الوزراء بما ترى ملائمة اتخاذه فيما يتعلق بالأعمال التي تقوم الشركة أو المؤسسة بتنفيذها ولو لم يكن للجهة أو الجهات الحكومية علاقة بالجريمة سبب الحكم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_022": {
+      "number_label_ar": "المادة الثانية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يحل هذا النظام محل نظام مكافحة الرشوة الصادر بالمرسوم الملكي رقم 15 وتاريخ 1382/3/7هـ وما طرأ عليه من تعديلات ويلغي كل ما يتعارض معه من أحكام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_023": {
+      "number_label_ar": "المادة الثالثة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ينشر هذا النظام في الجريدة الرسمية ويعمل به بعد ثلاثين يوماً من تاريخ نشره.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "verification_tier": "SINGLE_PRIMARY_SOURCE_TOPICAL_CORROBORATION",
+      "pdf_similarity": null,
+      "history": []
+    },
+    "anti_bribery_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل شخص طلب لنفسه أو لغيره أو قبل أو أخذ وعدا أو عطية لاستعمال نفوذ حقيقي أو مزعوم للحصول أو لمحاولة الحصول من أية سلطة عامة على عمل أو أمر أو قرار أو التزام أو ترخيص أو اتفاق توريد أو على وظيفة أو خدمة أو مزية من أي نوع، يعد مرتشيا ويعاقب بالعقوبة المنصوص عليها في المادة الأولى من هذا النظام.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "original_1412h_text": "كل موظف عام طلب لنفسه أو لغيره أو قبل أو أخذ وعداً أو عطية لاستعمال نفوذ حقيقي أو مزعوم للحصول أو لمحاولة الحصول من أية سلطة عامة على عمل أو أمر أو قرار أو التزام أو ترخيص أو اتفاق توريد أو على وظيفة أو خدمة أو مزية من أي نوع يعد مرتشياً ويعاقب بالعقوبة المنصوص عليها في المادة الاولى من هذا النظام.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/38)",
+          "decreeDate": "1443-04-27",
+          "gregorianDecreeDate": "2021-12-03",
+          "text": "كل شخص طلب لنفسه أو لغيره أو قبل أو أخذ وعدا أو عطية لاستعمال نفوذ حقيقي أو مزعوم للحصول أو لمحاولة الحصول من أية سلطة عامة على عمل أو أمر أو قرار أو التزام أو ترخيص أو اتفاق توريد أو على وظيفة أو خدمة أو مزية من أي نوع، يعد مرتشيا ويعاقب بالعقوبة المنصوص عليها في المادة الأولى من هذا النظام."
+        }
+      ]
+    },
+    "anti_bribery_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعد في حكم الموظف العام في تطبيق أحكام هذا النظام:\n١- كل من يعمل لدى الدولة أو لدى أحد الاجهزة ذات الشخصية المعنوية العامة سواء كان يعمل بصفة دائمة أو مؤقتة.\n٢- المحكم أو الخبير المعين من قبل الحكومة أو أية هيئة لها اختصاص قضائي.\n٣- كل مكلف من جهة حكومية أو أية سلطة إدارية أخرى بأداء مهمة معينة.\n٤- كل من يعمل لدى الشركات أو المؤسسات الفردية التي تقوم بإدارة وتشغيل المرافق العامة أو صيانتها أو تقوم بمباشرة خدمة عامة وكذلك كل من يعمل لدى الشركات المساهمة والشركات التي تساهم الحكومة في رأس مالها والشركات أو المؤسسات الفردية التي تزاول الأعمال المصرفية.\n٥- رؤساء وأعضاء مجالس إدارات الشركات المنصوص عليها في الفقرة الرابعة من هذه المادة.\n٦- موظفو الجمعيات الأهلية ذات النفع العام ورؤساء وأعضاء مجالس إدارتها.\n٧- الموظف العمومي الأجنبي وموظفو المؤسسات والمنظمات الدولية فيما يتعلق بتصريف الأعمال التجارية الدولية.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "original_1412h_text": "يعد في حكم الموظف العام في تطبيق أحكام هذا النظام: ١- كل من يعمل لدى الدولة أو لدى أحد الاجهزة ذات الشخصية المعنوية العامة سواء كان يعمل بصفة دائمة أو مؤقتة. ٢- المحكم أو الخبير المعين من قبل الحكومة أو أية هيئة لها اختصاص قضائي. ٣- كل مكلف من جهة حكومية أو أية سلطة إدارية أخرى بأداء مهمة معينة. ٤- كل من يعمل لدى الشركات أو المؤسسات الفردية التي تقوم بإدارة وتشغيل المرافق العامة أو صيانتها أو تقوم بمباشرة خدمة عامة وكذلك كل من يعمل لدى الشركات المساهمة والشركات التي تساهم الحكومة في رأس مالها والشركات أو المؤسسات الفردية التي تزاول الأعمال المصرفية. ٥- رؤساء وأعضاء مجالس إدارات الشركات المنصوص عليها في الفقرة الرابعة من هذه المادة.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/4)",
+          "decreeDate": "1440-01-02",
+          "gregorianDecreeDate": "2018-09-12",
+          "text": "إضافة الفقرتين (٦) و(٧) إلى المادة الثامنة"
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/38)",
+          "decreeDate": "1443-04-27",
+          "gregorianDecreeDate": "2021-12-03",
+          "text": "يعد في حكم الموظف العام في تطبيق أحكام هذا النظام:\n١- كل من يعمل لدى الدولة أو لدى أحد الاجهزة ذات الشخصية المعنوية العامة سواء كان يعمل بصفة دائمة أو مؤقتة.\n٢- المحكم أو الخبير المعين من قبل الحكومة أو أية هيئة لها اختصاص قضائي.\n٣- كل مكلف من جهة حكومية أو أية سلطة إدارية أخرى بأداء مهمة معينة.\n٤- كل من يعمل لدى الشركات أو المؤسسات الفردية التي تقوم بإدارة وتشغيل المرافق العامة أو صيانتها أو تقوم بمباشرة خدمة عامة وكذلك كل من يعمل لدى الشركات المساهمة والشركات التي تساهم الحكومة في رأس مالها والشركات أو المؤسسات الفردية التي تزاول الأعمال المصرفية.\n٥- رؤساء وأعضاء مجالس إدارات الشركات المنصوص عليها في الفقرة الرابعة من هذه المادة.\n٦- موظفو الجمعيات الأهلية ذات النفع العام ورؤساء وأعضاء مجالس إدارتها.\n٧- الموظف العمومي الأجنبي وموظفو المؤسسات والمنظمات الدولية فيما يتعلق بتصريف الأعمال التجارية الدولية."
+        }
+      ]
+    },
+    "anti_bribery_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "من عرض رشوة أو وعد بها ولم تقبل منه يعاقب بالسجن مدة لا تتجاوز عشر سنوات وبغرامة لا تزيد عن مليون ريال أو بإحدى هاتين العقوبتين.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "original_1412h_text": "من عرض رشوة ولم تقبل منه يعاقب بالسجن مدة لا تتجاوز عشر سنوات وبغرامة لا تزيد عن مليون ريال أو بأحدي هاتين العقوبتين.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/4)",
+          "decreeDate": "1440-01-02",
+          "gregorianDecreeDate": "2018-09-12",
+          "text": "من عرض رشوة أو وعد بها ولم تقبل منه يعاقب بالسجن مدة لا تتجاوز عشر سنوات وبغرامة لا تزيد عن مليون ريال أو بإحدى هاتين العقوبتين."
+        }
+      ]
+    },
+    "anti_bribery_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يُصدر وزير الداخلية -بناءً على توصية لجنة تكون من (وزارة الداخلية، ووزارة الموارد البشرية والتنمية الاجتماعية، وهيئة الرقابة ومكافحة الفساد) - قرارًا بإعادة النظر في العقوبات التبعية بعد مضي خمس سنوات من تاريخ انتهاء تنفيذ العقوبة الأصلية، ويعتمد وزير الداخلية آلية وقواعد عمل اللجنة.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "original_1412h_text": "لمجلس الوزراء إعادة النظر في العقوبة التبعية بعد مضي خمس سنوات من تاريخ انتهاء تنفيذ العقوبة الأصلية.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/21)",
+          "decreeDate": "1442-02-14",
+          "gregorianDecreeDate": null,
+          "text": "يُصدر وزير الداخلية -بناءً على توصية لجنة تكون من (وزارة الداخلية، ووزارة الموارد البشرية والتنمية الاجتماعية، وهيئة الرقابة ومكافحة الفساد) - قرارًا بإعادة النظر في العقوبات التبعية بعد مضي خمس سنوات من تاريخ انتهاء تنفيذ العقوبة الأصلية، ويعتمد وزير الداخلية آلية وقواعد عمل اللجنة."
+        }
+      ]
+    },
+    "anti_bribery_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يحكم على من تثبت إدانته في جريمة الرشوة بمصادرة المال أو الميزة أو الفائدة محل الجريمة متى كان ذلك ممكنًا، أو مصادرة قيمته بحسب الأحوال، ومصادرة أي عائدات ترتبت من ذلك المال أو الميزة أو الفائدة.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "original_1412h_text": "يحكم في جميع الاحوال بمصادرة المال أو الميزة أو الفائدة موضوع الجريمة متى كان ذلك ممكناً عملاً.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/38)",
+          "decreeDate": "1443-04-27",
+          "gregorianDecreeDate": "2021-12-03",
+          "text": "يحكم على من تثبت إدانته في جريمة الرشوة بمصادرة المال أو الميزة أو الفائدة محل الجريمة متى كان ذلك ممكنًا، أو مصادرة قيمته بحسب الأحوال، ومصادرة أي عائدات ترتبت من ذلك المال أو الميزة أو الفائدة."
+        }
+      ]
+    },
+    "anti_bribery_art_017": {
+      "number_label_ar": "المادة السابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "كل من أرشد إلى جريمة من الجرائم المنصوص عليها في النظام وأدت معلوماته إلى ثبوت الجريمة ولم يكن راشيًا أو شريكًا أو وسيطًا يمنح مكافأة لا تقل عن خمسة آلاف ريال ولا تزيد عن نصف قيمة المال المصادر، وتقدر المكافأة الجهة التي تحكم في الجريمة، ويجوز لرئاسة أمن الدولة صرف مكافأة أعلى من المبلغ الذي يحدد بمقتضى هذه المادة، وذلك بعد موافقة رئيس مجلس الوزراء عليها.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "original_1412h_text": "كل من أرشد إلى جريمة من الجرائم المنصوص عليها في النظام وأدت معلوماته إلى ثبوت الجريمة ولم يكن راشياً أو شريكاً أو وسيطاً يمنح مكافأة لا تقل عن خمسة الاف ريال ولا تزيد عن نصف قيمة المال المصادر وتقدر المكافأة الجهة التي تحكم في الجريمة، ويجوز لوزارة الداخلية صرف مكافأة أعلى من المبلغ الذي يحدد بمقتضى هذه المادة وذلك بعد موافقة رئيس مجلس الوزراء عليها.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/127) — قرار مجلس الوزراء رقم 633",
+          "decreeDate": "1440-11-06",
+          "gregorianDecreeDate": null,
+          "text": "كل من أرشد إلى جريمة من الجرائم المنصوص عليها في النظام وأدت معلوماته إلى ثبوت الجريمة ولم يكن راشيًا أو شريكًا أو وسيطًا يمنح مكافأة لا تقل عن خمسة آلاف ريال ولا تزيد عن نصف قيمة المال المصادر، وتقدر المكافأة الجهة التي تحكم في الجريمة، ويجوز لرئاسة أمن الدولة صرف مكافأة أعلى من المبلغ الذي يحدد بمقتضى هذه المادة، وذلك بعد موافقة رئيس مجلس الوزراء عليها."
+        }
+      ]
+    },
+    "anti_bribery_art_021": {
+      "number_label_ar": "المادة الحادية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "على رئاسة أمن الدولة نشر الأحكام التي تصدر في جرائم الرشوة وإعلانها.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "original_1412h_text": "على وزارة الداخلية نشر الأحكام التي تصدر في جرائم الرشوة وأعلانها.",
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/127) — قرار مجلس الوزراء رقم 633",
+          "decreeDate": "1440-11-06",
+          "gregorianDecreeDate": null,
+          "text": "على رئاسة أمن الدولة نشر الأحكام التي تصدر في جرائم الرشوة وإعلانها."
+        }
+      ]
+    },
+    "anti_bribery_art_009_mukarrar_1": {
+      "number_label_ar": "التاسعة - مكرر (1)",
+      "is_mukarrar": true,
+      "section_ar": "",
+      "text": "كل شخص وعد أو عرض أو منح، عطية لأي شخص يعمل في الجمعيات الأهلية أو التعاونية أو المؤسسات الأهلية أو الشركات أو المؤسسات الخاصة أو الهيئات المهنية بأي صفة كانت، سواء لمصلحة الشخص نفسه أو لغيره، لأداء عمل من أعمال وظيفته أو الامتناع عن أداء عمل من أعمال وظيفته، مما يشكل إخلالاً بواجباته الوظيفية، يُعد راشيًا، ويعاقب بالسجن لمدة لا تزيد على خمس سنوات، أو بغرامة لا تزيد على خمسمائة ألف ريال، أو بهما معًا.",
+      "legal_status_ar": "مضافة",
+      "structure_status_ar": "مضافة",
+      "section_status_ar": "مضافة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "history": [
+        {
+          "legalStatusName": "مضافة",
+          "decree": "المرسوم الملكي رقم (م/4)",
+          "decreeDate": "1440-01-02",
+          "gregorianDecreeDate": "2018-09-12",
+          "text": "كل شخص وعد أو عرض أو منح، عطية لأي شخص يعمل في الجمعيات الأهلية أو التعاونية أو المؤسسات الأهلية أو الشركات أو المؤسسات الخاصة أو الهيئات المهنية بأي صفة كانت، سواء لمصلحة الشخص نفسه أو لغيره، لأداء عمل من أعمال وظيفته أو الامتناع عن أداء عمل من أعمال وظيفته، مما يشكل إخلالاً بواجباته الوظيفية، يُعد راشيًا، ويعاقب بالسجن لمدة لا تزيد على خمس سنوات، أو بغرامة لا تزيد على خمسمائة ألف ريال، أو بهما معًا."
+        }
+      ]
+    },
+    "anti_bribery_art_009_mukarrar_2": {
+      "number_label_ar": "التاسعة - مكرر (2)",
+      "is_mukarrar": true,
+      "section_ar": "",
+      "text": "كل شخص يعمل في الجمعيات الأهلية أو التعاونية أو المؤسسات الأهلية أو الشركات أو المؤسسات الخاصة أو الهيئات المهنية بأي صفة كانت، طلب لنفسه أو لغيره أو قبل أو أخذ وعدًا أو عطية لأداء عمل من أعمال وظيفته أو الامتناع عن أداء عمل من أعمال وظيفته، مما يشكل إخلالاً بواجباته الوظيفية، يعد مرتشيًا، ويعاقب بالسجن لمدة لا تزيد على خمس سنوات، أو بغرامة لا تزيد على خمسمائة ألف ريال، أو بهما معًا.",
+      "legal_status_ar": "مضافة",
+      "structure_status_ar": "مضافة",
+      "section_status_ar": "مضافة",
+      "status": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "verification_tier": "SECONDARY_SOURCE_CONVERGENCE_UNVERIFIED_PRIMARY",
+      "pdf_similarity": null,
+      "history": [
+        {
+          "legalStatusName": "مضافة",
+          "decree": "المرسوم الملكي رقم (م/4)",
+          "decreeDate": "1440-01-02",
+          "gregorianDecreeDate": "2018-09-12",
+          "text": "كل شخص يعمل في الجمعيات الأهلية أو التعاونية أو المؤسسات الأهلية أو الشركات أو المؤسسات الخاصة أو الهيئات المهنية بأي صفة كانت، طلب لنفسه أو لغيره أو قبل أو أخذ وعدًا أو عطية لأداء عمل من أعمال وظيفته أو الامتناع عن أداء عمل من أعمال وظيفته، مما يشكل إخلالاً بواجباته الوظيفية، يعد مرتشيًا، ويعاقب بالسجن لمدة لا تزيد على خمس سنوات، أو بغرامة لا تزيد على خمسمائة ألف ريال، أو بهما معًا."
+        }
+      ]
+    }
+  }
+}
