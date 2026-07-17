@@ -153,6 +153,7 @@ VAT_LAW_LLM = os.path.join(ROOT, "data", "vat_arabic_legal_llm", "vat_law_legal_
 FRANCHISE_LAW_LLM = os.path.join(ROOT, "data", "franchise_arabic_legal_llm", "franchise_law_legal_llm_001_027.json")
 CIVIL_AVIATION_LAW_LLM = os.path.join(ROOT, "data", "civil_aviation_arabic_legal_llm", "civil_aviation_law_legal_llm_001_180.json")
 ANTI_NARCOTICS_LAW_LLM = os.path.join(ROOT, "data", "anti_narcotics_arabic_legal_llm", "anti_narcotics_law_legal_llm_001_074.json")
+TRAFFIC_LAW_LLM = os.path.join(ROOT, "data", "traffic_arabic_legal_llm", "traffic_law_legal_llm_001_086.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -299,6 +300,7 @@ def main() -> int:
     franchise_law_llm = _load_json(FRANCHISE_LAW_LLM)
     civil_aviation_law_llm = _load_json(CIVIL_AVIATION_LAW_LLM)
     anti_narcotics_law_llm = _load_json(ANTI_NARCOTICS_LAW_LLM)
+    traffic_law_llm = _load_json(TRAFFIC_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -319,7 +321,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 115,
+        "total_tracks": 116,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -438,6 +440,7 @@ def main() -> int:
             + franchise_law_llm["record_count"]  # 27 Franchise Law (DISTINCT TIER: BOE portal via r.jina.ai proxy, qanoniah.com spot cross-verified, see track notes)
             + civil_aviation_law_llm["record_count"]  # 180 Civil Aviation Law (DISTINCT TIER: nezams.com primary, rakadvocate.blogspot.com spot-checked, BOE unreachable, see track notes)
             + anti_narcotics_law_llm["record_count"]  # 74 Anti-Narcotics and Psychotropic Substances Control Law (DISTINCT TIER: BOE via r.jina.ai proxy x nezams.com x qadha.org.sa reference book triple-verified, see track notes)
+            + traffic_law_llm["record_count"]  # 86 Traffic Law (MIXED-CONFIDENCE TIER: BOE portal confirmed genuinely stale for this law, nezams.com preferred with per-article verification_tier, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -547,6 +550,7 @@ def main() -> int:
             + franchise_law_llm["record_count"]
             + civil_aviation_law_llm["record_count"]
             + anti_narcotics_law_llm["record_count"]
+            + traffic_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3977,6 +3981,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Anti-Narcotics and Psychotropic Substances Control Law «نظام مكافحة المخدرات والمؤثرات العقلية» — Royal Decree M/39 dated 8/7/1426H, approving Council of Ministers Resolution 152 (12/6/1426H), following Shura Council Resolution 51/50 (7/11/1425H). Repeals the prior narcotics-trafficking law issued by Supreme Order 3318 (9/4/1353H). 74 records, all اصلية — no amending instrument to the article text itself was found since 1426H (only the annexed substance schedules, Tables 1-4, were administratively updated under Article 70's delegated authority to the Minister of Health, which is not a textual amendment to any article). **NO formal الباب/الفصل structure exists** — confirmed by a full-text grep of a combined law+regulation reference PDF finding zero باب/فصل structural markers; the 74 sequential articles instead carry unnumbered topical headers, modeled as chapter_structure entries with title_ar + article range only. **DISTINCT VERIFICATION TIER:** the official BOE portal returned HTTP 503 on direct WebFetch; the r.jina.ai proxy successfully retrieved the complete text (preamble, Council of Ministers Resolution, all 74 articles), cross-verified word-for-word against nezams.com (full agreement except one textual variant — see below) and additionally triple-verified for the highest-stakes penalty articles (37, the death-penalty article, plus 38, 39, 40, 49) against qadha.org.sa's published reference book (ISBN 978-603-92112-4-2, 1445H). A Wayback Machine cross-check could not be completed (sandbox egress policy blocked archive.org access) — a documented gap, mitigated by the two other independently-sourced full-text copies. Flagged discrepancies: Article 42 paragraph 1 has a textual variant between BOE's coherent 'الدعوى' and nezams.com's apparent OCR/typo 'الدعوة' — the BOE reading was adopted as authoritative, discrepancy documented; Article 35's official heading reads 'المادة الخامسة الثلاثون' (missing the conjunctive و used in every other analogous ordinal), identically present in both primary sources and preserved verbatim rather than silently corrected; an AI-search claim of a 'الباب الثاني/الفصل الأول' structure was investigated and found unsubstantiated; the 'no amendments' conclusion rests on convergent negative evidence rather than a definitive BOE amendment-log feature (none was accessible); unverified AI-search-only claims about amendments to a separate, related National Committee for Combating Drugs organizing regulation (Council of Ministers Resolutions 651/1438H and 211/1443H) are explicitly out of scope and do not amend this law's articles; Article 68's 'مؤسسة النقد العربي السعودي' (SAMA's pre-2020 name) and Articles 12-27's 'وزارة الصحة' (vs. today's Food and Drug Authority) are preserved verbatim as enacted, a real-world regulatory-evolution note not reflected in the 2005 statutory text. A companion Implementing Regulation is confirmed to exist (Council of Ministers Resolution 201, 10/6/1431H) via 4 corroborating sources but not to verbatim-text standard — not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "traffic_law",
+                "display_name_ar": "نظام المرور",
+                "display_name_en": "Traffic Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/85) — BOE portal confirmed genuinely stale for this law; nezams.com preferred for amended articles with per-article verification_tier (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": traffic_law_llm["record_count"],
+                    "data_path": "data/traffic_arabic_legal_llm/traffic_law_legal_llm_001_086.json"}},
+                "record_counts": {"arabic_articles": traffic_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 52, "معدلة": 32, "ملغاة": 1, "مضافة": 1},
+                                  "total": traffic_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/traffic/law/official_source/traffic_law_official_source.json",
+                    "sources/traffic/law/verified/traffic_law_verified_records.jsonl",
+                    "data/traffic_arabic_legal_llm/traffic_law_legal_llm_001_086.json",
+                ],
+                "validator_targets": ["make traffic-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Traffic Law «نظام المرور» — Royal Decree M/85 dated 26/10/1428H, approving Council of Ministers Decision 315 (24/10/1428H), following Royal Order A/175 (17/10/1428H). NOTE: the task premise originally assumed 'M/17 dated 26/6/1428H' — corrected to M/85, 26/10/1428H per primary sources. Replaces the prior نظام المرور issued by Royal Decree M/49 dated 6/11/1391H (Article 83). 86 records (85 numbered articles + Article 50 مكرر, added by Royal Decree M/115, 5/12/1439H) across 8 أبواب: 52 اصلية / 32 معدلة / 1 ملغاة (Article 71, repealed by Council of Ministers Decision 474 dated 7/7/1446H, ratified by Royal Decree M/140 dated 12/7/1446H — pre-repeal text preserved per this corpus's policy of never deleting repealed articles) / 1 مضافة. **UNUSUALLY COMPLEX, MIXED-CONFIDENCE VERIFICATION TIER — this track required TWO independent research passes** because of a genuine, unresolved discrepancy between the official BOE portal and the secondary reference site nezams.com for roughly a third of the law's articles. Across both passes, BOE's live portal was confirmed GENUINELY STALE for this law — not a proxy/rendering artifact — via four independently-verified data points: Article 71's repeal (confirmed via direct Umm Al-Qura gazette text of Royal Decree M/140), Article 74's 2025 rewrite (confirmed via Saudi Press Agency and MOI statements), Article 2's added definition #44 'هيكل المركبة', and the Table 2 violation-schedule item-16 wording. nezams.com's 'current text' is therefore used as the governing text for amended articles where it diverges from BOE's stale text, but this is PATTERN-BASED confidence, not per-article gazette proof: EVERY article record carries a per-article `verification_tier` field — `PRIMARY_INDEPENDENTLY_CONFIRMED` (67 records: all 52 اصلية articles plus Article 71's repeal plus 14 amended articles independently confirmed via gazette/press sources beyond nezams.com alone) vs `SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE` (19 records: 18 amended articles plus Article 50 مكرر resting on nezams.com's pattern-reliability alone, without independent per-article confirmation) — this per-article granularity is deliberately NOT smoothed over by the overall track-level STATUS constant. `original_1428h_text` is populated for only 8 articles (1, 5, 23, 27, 69, 70, 73, 78) where a report explicitly captured verbatim pre-amendment wording; omitted for the other 24 amended articles, documented as gaps rather than fabricated. Flagged discrepancies (11 total, see known_unresolved_discrepancies): the Table 2 item-16 numbering conflict (BOE's item 16 reads 'expired driving license'; M/140's own gazette-confirmed addition reads 'expired vehicle-registration license' — the fate of the old slot is unresolved); Article 2's 43-vs-44 defined-term count; Council of Ministers Decision 586's unconfirmed exact phrase-splice point for Articles 23/27; 17 amended articles where BOE and nezams.com show identical resulting text despite a confirmed amending instrument (no determinable wording delta); the annexed violation tables (1-8) and fee schedules are referenced by article text but not separately modeled as records; the Implementing Regulation (Ministerial Decision 7019, 3/7/1429H, possibly reissued via Ministerial Decision 2249/1441H, unconfirmed) is not extracted in this track. Arabic governs; not legal advice.",
             },
         ],
     }
