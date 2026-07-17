@@ -1,0 +1,135 @@
+{
+  "law_key": "vat",
+  "layer": "VAT_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 53,
+  "official_text_status": "ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 51,
+    "معدلة": 2,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/113)",
+  "decree_date_hijri": "2/11/1438",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "أحكام تمهيدية",
+      "articles": "1-2"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "التسجيل لأغراض الضريبة",
+      "articles": "3-5"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "توريدات السلع والخدمات",
+      "articles": "6-12"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "مكان التوريد",
+      "articles": "13-14"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "القيمة الخاضعة للضريبة",
+      "articles": "15"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "الاستيراد",
+      "articles": "16-17"
+    },
+    {
+      "label_ar": "الفصل السابع",
+      "title_ar": "احتساب الضريبة",
+      "articles": "18-21"
+    },
+    {
+      "label_ar": "الفصل الثامن",
+      "title_ar": "خصم الضريبة",
+      "articles": "22"
+    },
+    {
+      "label_ar": "الفصل التاسع",
+      "title_ar": "الفواتير الضريبية",
+      "articles": "23"
+    },
+    {
+      "label_ar": "الفصل العاشر",
+      "title_ar": "الإقرار الضريبي",
+      "articles": "24-26"
+    },
+    {
+      "label_ar": "الفصل الحادي عشر",
+      "title_ar": "سداد الضريبة",
+      "articles": "27-30"
+    },
+    {
+      "label_ar": "الفصل الثاني عشر",
+      "title_ar": "استرداد الضريبة",
+      "articles": "31-34"
+    },
+    {
+      "label_ar": "الفصل الثالث عشر",
+      "title_ar": "سرية المعلومات وتبادلها",
+      "articles": "35"
+    },
+    {
+      "label_ar": "الفصل الرابع عشر",
+      "title_ar": "حفظ المستندات والمسؤولية التضامنية",
+      "articles": "36-37"
+    },
+    {
+      "label_ar": "الفصل الخامس عشر",
+      "title_ar": "التفتيش والضبط",
+      "articles": "38"
+    },
+    {
+      "label_ar": "الفصل السادس عشر",
+      "title_ar": "التهرب الضريبي والعقوبات",
+      "articles": "39-47"
+    },
+    {
+      "label_ar": "الفصل السابع عشر",
+      "title_ar": "إيقاع العقوبات والنظر في المخالفات",
+      "articles": "48-49"
+    },
+    {
+      "label_ar": "الفصل الثامن عشر",
+      "title_ar": "أحكام ختامية",
+      "articles": "50-53"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCES: this track's current-consolidated text rests on TWO independent official sources in agreement: (1) ZATCA's (Zakat, Tax and Customs Authority) own official consolidated Arabic PDF of the VAT Law, downloaded directly and extracted with pdftotext -- the source for the two amended articles' (2 and 49) current text, with explicit footnotes citing the amending instruments; (2) laws.boe.gov.sa (Bureau of Experts portal), reached via the r.jina.ai proxy after the live page returned HTTP 503, used to cross-verify all other (unamended) articles word-for-word, and also to corroborate decree/preamble metadata (Shura Council Resolution 128/45, Council of Ministers Resolution 654). The Wayback Machine was unreachable this pass (TLS connection reset in all attempts despite a confirmed available snapshot) and was not part of this track's verification chain, unlike some other tracks in this corpus -- see known_unresolved_discrepancies. IMPORTANT: the BOE portal's default view is NOT automatically consolidated with amendments -- for both amended articles (2 and 49) the BOE-portal rendering showed pre-amendment (or truncated/anomalous) text, confirming ZATCA's PDF (not the BOE portal) as the authoritative current-text source for those two articles specifically. Neither article's full pre-amendment original text was captured to primary-source confidence this pass -- no original_1438h_text fields are included for either, per this corpus's zero-fabrication policy; both gaps are documented, not guessed, and flagged as candidates for a dedicated follow-up pass. A companion Implementing Regulation is confirmed to exist (ZATCA Board Decision 3839, 14 Dhul-Hijjah 1438H, amended at least 12 times through 2024/2025) but is not extracted in this track.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "vat_art_002_original_text_gap",
+      "description": "Article 2 is confirmed amended by Royal Order A/638 (15/10/1441H), raising the VAT rate from 5% to 15% (effective 1 July 2020). The pre-amendment original text was NOT reliably recoverable this pass: the BOE portal's rendering of this article (via the r.jina.ai proxy) showed only a single incomplete sentence with no rate percentage and no second paragraph -- inconsistent with the article's known two-paragraph structure -- most likely a rendering/extraction artifact rather than genuine original wording, but this could not be fully ruled out. Per this corpus's zero-fabrication policy, no original_1438h_text field is included -- the gap is documented here, not guessed or reconstructed."
+    },
+    {
+      "article_key": "vat_art_049_original_text_gap",
+      "description": "Article 49 is confirmed amended by Royal Decree M/52 (28/4/1441H) -- the reference to \"الجهة القضائية المختصة\" (the competent judicial body) was replaced with a reference to the newly-created Tax Violations and Disputes Resolution Committees. The BOE portal's default view showed the pre-amendment wording as a single truncated sentence fragment (\"...التظلم منه أمام الجهة القضائية المختصة...\"), confirming the BOE portal's default view is not automatically consolidated with amendments, but the FULL pre-amendment article text was not captured in this research pass. Per this corpus's zero-fabrication policy, no original_1438h_text field is included -- flagged as a candidate for a dedicated follow-up pass to recover the complete original wording directly from the BOE portal."
+    },
+    {
+      "article_key": "vat_publication_date",
+      "description": "The Official Gazette publication date of Royal Decree M/113 is reported inconsistently: laws.boe.gov.sa states \"تاريخ النشر\" = 21/3/1440H (29/11/2018G), while eastlaws.com states Umm Al-Qura issue 4681 dated 5/11/1438H (28/7/2017G) -- roughly 16 months apart. These may refer to different events (original Gazette publication vs. a later BOE-portal listing/registration date), but this could not be confirmed. Not reconciled; both dates recorded here for transparency."
+    },
+    {
+      "article_key": "vat_implementing_regulation_date_anomaly",
+      "description": "ZATCA's own consolidated PDF of the Implementing Regulation prints \"قرار رقم (3839) وتاريخ 14 ذو الحجة 1438هـ الموافق 14 نوفمبر 2016م\" -- but 14 Dhul-Hijjah 1438H computes (via the standard tabular Hijri algorithm) to 5 September 2017, not November 2016, while all other Gregorian-equivalent dates printed elsewhere in the same document check out correctly against the same conversion method. This looks like an isolated error in ZATCA's own PDF (a pdftotext font-mapping warning was also logged on this exact page) -- flagged for visual confirmation against the source PDF, not silently corrected. Not consequential to this track since the Implementing Regulation itself is not extracted."
+    },
+    {
+      "article_key": "vat_article_26_chapter_placement",
+      "description": "Article 26 has no chapter heading immediately preceding it in the source document's own layout and sits under Chapter 10's heading (الإقرار الضريبي / Tax Return) even though its subject matter (tax assessment by the Authority) arguably reads more naturally with Chapter 11 (سداد الضريبة / Tax Payment). Reported exactly as it appears in both primary sources (ZATCA PDF and BOE portal) -- not corrected or re-grouped."
+    },
+    {
+      "article_key": "vat_wayback_unreachable",
+      "description": "Multiple direct-curl attempts to web.archive.org (plain HTTP, HTTPS with/without explicit proxy, forcing TLS 1.2, forcing HTTP/2) all resulted in connection resets at the TLS-handshake stage, despite the Wayback CDX/availability API confirming a snapshot exists (20251116114222). This appears to be a genuine environment-level network restriction. This track's cross-verification instead rests on the ZATCA official PDF (primary, administering-agency source) cross-checked against laws.boe.gov.sa (official BOE portal, reached via the r.jina.ai proxy after the live page returned HTTP 503) -- a Wayback Machine snapshot was not part of this track's verification chain, unlike some other tracks in this corpus."
+    }
+  ],
+  "source_artifact": "sources/vat/law/official_source/vat_law_official_source.json"
+}
