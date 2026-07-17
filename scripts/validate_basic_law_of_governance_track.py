@@ -11,9 +11,14 @@ source: WIPO Lex entry SA016 (OCR'd scan), spot-checked across ~47% of
 articles (all 9 chapters, every chapter boundary) with no divergences found;
 the full 83-article/9-chapter structure was confirmed to match in its
 entirety. Every article carries its own cross_verified_against_wipo_lex tag.
-Fresh consolidated text: all 83 اصلية (no amendment history found/flagged).
-Organized under 9 chapters with section_ar carrying each article's chapter
-heading."""
+
+POST-MERGE CORRECTED, MIXED TIER: 82 articles اصلية on the primary BOE/WIPO
+Lex tier; Article 5 is معدلة (discovered via a cross-track conflict with the
+Allegiance Commission Law), verified via a distinct tier — secondary Arabic
+sources plus primary-source OCR of the actual amending Royal Order PDF — see
+verification_methodology_note in the source artifact for the full
+correction history. Organized under 9 chapters with section_ar carrying
+each article's chapter heading."""
 from __future__ import annotations
 
 import hashlib
@@ -34,7 +39,10 @@ PDF = os.path.join(ROOT, "inputs", "basic_law_of_governance_source_pdfs",
                    "basic_law_of_governance_wipo_lex_sa016.pdf")
 N = 83
 KEY_RE = r"basic_law_of_governance_art_(\d{3})$"
-STATUS = "BOE_PORTAL_PRIMARY_SOURCE_WIPO_LEX_SPOT_CHECKED"
+PRIMARY_TIER = "BOE_PORTAL_PRIMARY_SOURCE_WIPO_LEX_SPOT_CHECKED"
+CORRECTION_TIER = "SECONDARY_SOURCE_PLUS_PRIMARY_OCR_CONFIRMED_AMENDMENT"
+TRUSTED_TIERS = {PRIMARY_TIER, CORRECTION_TIER}
+AMENDED_KEYS = {"basic_law_of_governance_art_005"}
 CHAPTER_RANGES = [
     ("الباب الأول: المبادئ العامة", 1, 4),
     ("الباب الثاني: نظام الحكم", 5, 8),
@@ -90,10 +98,19 @@ def main():
     checked_count = 0
     for k, a in arts.items():
         n = int(re.match(KEY_RE, k).group(1))
-        if a.get("status") != STATUS:
-            e.append("[2] %s: unexpected status %r" % (k, a.get("status")))
+        tier = a.get("verification_tier", a.get("status"))
+        if tier not in TRUSTED_TIERS:
+            e.append("[2] %s: UNTRUSTED/unlabeled verification_tier %r" % (k, tier))
+        if a.get("status") != tier:
+            e.append("[2] %s: status field must equal verification_tier" % k)
+        if k in AMENDED_KEYS and tier != CORRECTION_TIER:
+            e.append("[2] %s: expected CORRECTION_TIER, got %r" % (k, tier))
+        if k not in AMENDED_KEYS and tier != PRIMARY_TIER:
+            e.append("[2] %s: expected PRIMARY_TIER, got %r" % (k, tier))
         ls = a.get("legal_status_ar")
-        if ls != "اصلية":
+        if k in AMENDED_KEYS and ls != "معدلة":
+            e.append("[2] %s: expected legal_status معدلة" % k)
+        if k not in AMENDED_KEYS and ls != "اصلية":
             e.append("[2] %s: unexpected legal_status %r (fresh consolidated text expected)" % (k, ls))
         sc[ls] += 1
         if a.get("structure_status_ar") != ls or a.get("section_status_ar") != ls:
@@ -109,9 +126,15 @@ def main():
             checked_count += 1
         if _bad_tatweel(a["text"]):
             e.append("[2] %s: in-word decorative tatweel present" % k)
+        if k in AMENDED_KEYS and not a.get("history"):
+            e.append("[2] %s: amended article missing amendment_history" % k)
+        if k in AMENDED_KEYS and not a.get("original_1412h_text"):
+            e.append("[2] %s: amended article missing original_1412h_text for provenance" % k)
 
-    if sc.get("اصلية") != N:
-        e.append("[2] status اصلية: %s != %d" % (sc.get("اصلية"), N))
+    if sc.get("اصلية") != N - len(AMENDED_KEYS):
+        e.append("[2] status اصلية: %s != %d" % (sc.get("اصلية"), N - len(AMENDED_KEYS)))
+    if sc.get("معدلة") != len(AMENDED_KEYS):
+        e.append("[2] status معدلة: %s != %d" % (sc.get("معدلة"), len(AMENDED_KEYS)))
     if checked_count != 39:
         e.append("[2f] expected 39 WIPO-Lex-spot-checked articles, found %d" % checked_count)
 
@@ -119,6 +142,8 @@ def main():
         e.append("[2d] missing verification_methodology_note explaining the distinct tier")
     if not src.get("preamble_ar"):
         e.append("[2g] missing preamble_ar (Royal Order promulgating text)")
+    if not src.get("known_unresolved_discrepancies"):
+        e.append("[2h] missing known_unresolved_discrepancies documenting the article 5 correction")
 
     pdf_sha = hashlib.sha256(open(PDF, "rb").read()).hexdigest()
     if pdf_sha != src.get("provenance", {}).get("wipo_lex_pdf_sha256"):
@@ -133,7 +158,8 @@ def main():
         a = arts[r["article_key"]]
         if r["article_text_verified"] != a["text"]:
             e.append("[4] %s: text != source" % r["article_key"])
-        if r.get("official_text_status") != STATUS:
+        expected_tier = CORRECTION_TIER if r["article_key"] in AMENDED_KEYS else PRIMARY_TIER
+        if r.get("official_text_status") != expected_tier:
             e.append("[4] %s: bad status" % r["article_key"])
         if r.get("cross_verified_against_wipo_lex") != a["cross_verified_against_wipo_lex"]:
             e.append("[4] %s: cross_verified_against_wipo_lex mismatch" % r["article_key"])
@@ -160,10 +186,12 @@ def main():
         for x in e[:20]:
             print("  - %s" % x)
         return 1
-    print("PASS: Basic Law of Governance — 83 records (fresh consolidated text: all 83 اصلية)")
+    print("PASS: Basic Law of Governance — 83 records (consolidated: 82 اصلية / 1 معدلة)")
     print("  - DISTINCT TIER: BOE portal primary source (complete/gapless), WIPO Lex spot-checked")
     print("    (39/83 articles individually cross-verified across all 9 chapters, no divergences;")
     print("    full 83-article/9-chapter structure matched between both sources)")
+    print("  - POST-MERGE CORRECTED: article 5 is معدلة (discovered via a cross-track conflict with")
+    print("    the Allegiance Commission Law), verified via secondary sources + primary-source OCR")
     print("  - numbered 1..83 by ordinal position (no مكرر), 9 chapters correctly mapped to section_ar")
     print("  - IN-FORCE Royal Order A/90 (27/8/1412H); committed WIPO Lex PDF hash verified; Arabic governs")
     return 0

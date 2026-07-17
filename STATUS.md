@@ -1612,13 +1612,16 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
 ## النظام الأساسي للحكم — Basic Law of Governance (27/8/1412هـ) — DISTINCT VERIFICATION TIER
 
 - **Basic Law of Governance (Royal Order A/90, 27/8/1412هـ) verified + LLM-ready.**
-  **النظام الأساسي للحكم** — **83 records**, fresh consolidated text: **all 83 اصلية**, organized
-  under **9 chapters** — الباب الأول: المبادئ العامة (arts 1-4)؛ الباب الثاني: نظام الحكم (arts
-  5-8)؛ الباب الثالث: مقومات المجتمع السعودي (arts 9-13)؛ الباب الرابع: المبادئ الاقتصادية (arts
-  14-22)؛ الباب الخامس: الحقوق والواجبات (arts 23-43)؛ الباب السادس: سلطات الدولة (arts 44-71)؛
-  الباب السابع: الشئون المالية (arts 72-78)؛ الباب الثامن: أجهزة الرقابة (arts 79-80)؛ الباب
-  التاسع: أحكام عامة (arts 81-83) — with `section_ar` carrying each article's chapter heading.
-  Saudi Arabia's foundational constitutional-tier instrument.
+  **النظام الأساسي للحكم** — **83 records**, consolidated text: **82 اصلية / 1 معدلة (art 5)**,
+  organized under **9 chapters** — الباب الأول: المبادئ العامة (arts 1-4)؛ الباب الثاني: نظام الحكم
+  (arts 5-8)؛ الباب الثالث: مقومات المجتمع السعودي (arts 9-13)؛ الباب الرابع: المبادئ الاقتصادية
+  (arts 14-22)؛ الباب الخامس: الحقوق والواجبات (arts 23-43)؛ الباب السادس: سلطات الدولة (arts
+  44-71)؛ الباب السابع: الشئون المالية (arts 72-78)؛ الباب الثامن: أجهزة الرقابة (arts 79-80)؛
+  الباب التاسع: أحكام عامة (arts 81-83) — with `section_ar` carrying each article's chapter
+  heading. Saudi Arabia's foundational constitutional-tier instrument.
+  **⚠ POST-MERGE CORRECTION (see below after the spot-check paragraph):** Article 5 was
+  originally ingested as اصلية and has since been corrected to معدلة after a cross-track
+  conflict was discovered while ingesting the Allegiance Commission Law.
   **DISTINCT VERIFICATION TIER — stronger than the Anti-Bribery Law track, but still not this
   corpus's primary MOJ-portal pipeline** (this is a Council-of-Ministers/Bureau-of-Experts
   instrument, not MOJ-issued, absent from the MOJ legal portal). **PRIMARY source:** the Bureau of
@@ -1637,10 +1640,24 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   full 83-article/9-chapter structure was confirmed to match in its entirety. Every article
   carries its own `cross_verified_against_wipo_lex` boolean tag. Two other candidate PDF mirrors
   (ibtissam.sa, nshr.org.sa) were found earlier but determined to be the same underlying scan
-  re-hosted twice, not independent, and were not used. No amendment history was found or flagged
-  by the BOE source for any article — all 83 treated as اصلية, consistent with the primary
-  source's own presentation of the current, in-force (`ساري`) text. WIPO Lex PDF committed (29
-  pages, sha256 recorded). Track under `sources/basic_law_of_governance/law/`. Validate:
+  re-hosted twice, not independent, and were not used. No amendment-tracking endpoint equivalent
+  to the MOJ portal's get-Section-Changes was found on the BOE portal for this instrument — BOE's
+  base "نص النظام" view displays the as-originally-promulgated text without merging subsequent
+  amendments. WIPO Lex PDF committed (29 pages, sha256 recorded).
+  **POST-MERGE CORRECTION:** while ingesting the Allegiance Commission Law, a cross-track
+  conflict was discovered — that law's own promulgation order (Royal Order A/135, 26/9/1427H /
+  2006) claims to amend this law's Article 5, paragraph (ج). A dedicated verification pass
+  confirmed this amendment is genuine and in force, and additionally found a second amendment to
+  Article 5, paragraph (ب) (Royal Order A/256, 26/9/1438H / 2017, the "single branch"
+  succession-diversification restriction), verified via **primary-source OCR of the actual
+  scanned Royal Order PDF** (WIPO Lex document sa102), independently corroborated by a Royal
+  Court transmittal circular reproduced on the same document. Article 5 is now tagged معدلة with
+  the original 1412H text and full amendment history preserved (not deleted), carrying a distinct
+  `verification_tier` (`SECONDARY_SOURCE_PLUS_PRIMARY_OCR_CONFIRMED_AMENDMENT`) from the other 82
+  BOE-portal-primary-verified articles; the track's overall `official_text_status` is accordingly
+  now `MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER`. A full article-by-article amendment-history
+  re-audit of the remaining 82 articles against BOE's dedicated amendments view is recommended as
+  a follow-up, not assumed complete. Track under `sources/basic_law_of_governance/law/`. Validate:
   `make basic-law-of-governance-track-validate`.
 
 ## نظام مكافحة جرائم المعلوماتية — Anti-Cyber Crime Law (8/3/1428هـ) — STRONGEST DISTINCT TIER
