@@ -155,6 +155,7 @@ CIVIL_AVIATION_LAW_LLM = os.path.join(ROOT, "data", "civil_aviation_arabic_legal
 ANTI_NARCOTICS_LAW_LLM = os.path.join(ROOT, "data", "anti_narcotics_arabic_legal_llm", "anti_narcotics_law_legal_llm_001_074.json")
 TRAFFIC_LAW_LLM = os.path.join(ROOT, "data", "traffic_arabic_legal_llm", "traffic_law_legal_llm_001_086.json")
 ENVIRONMENTAL_LAW_LLM = os.path.join(ROOT, "data", "environmental_arabic_legal_llm", "environmental_law_legal_llm_001_049.json")
+INCOME_TAX_LAW_LLM = os.path.join(ROOT, "data", "income_tax_arabic_legal_llm", "income_tax_law_legal_llm_001_081.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -303,6 +304,7 @@ def main() -> int:
     anti_narcotics_law_llm = _load_json(ANTI_NARCOTICS_LAW_LLM)
     traffic_law_llm = _load_json(TRAFFIC_LAW_LLM)
     environmental_law_llm = _load_json(ENVIRONMENTAL_LAW_LLM)
+    income_tax_law_llm = _load_json(INCOME_TAX_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -323,7 +325,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 117,
+        "total_tracks": 118,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -444,6 +446,7 @@ def main() -> int:
             + anti_narcotics_law_llm["record_count"]  # 74 Anti-Narcotics and Psychotropic Substances Control Law (DISTINCT TIER: BOE via r.jina.ai proxy x nezams.com x qadha.org.sa reference book triple-verified, see track notes)
             + traffic_law_llm["record_count"]  # 86 Traffic Law (MIXED-CONFIDENCE TIER: BOE portal confirmed genuinely stale for this law, nezams.com preferred with per-article verification_tier, see track notes)
             + environmental_law_llm["record_count"]  # 49 Environmental Law (STRONG TRIPLE-SOURCE TIER: BOE Wayback x green.org.sa PDF x nezams.com, one flagged BOE self-contradiction at Article 1, see track notes)
+            + income_tax_law_llm["record_count"]  # 81 Income Tax Law (DISTINCT TIER: BOE Wayback x ZATCA PDF x gstc.gov.sa PDF x nezams.com, Chapter 10 BOE+nezams only, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -555,6 +558,7 @@ def main() -> int:
             + anti_narcotics_law_llm["record_count"]
             + traffic_law_llm["record_count"]
             + environmental_law_llm["record_count"]
+            + income_tax_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4041,6 +4045,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Environmental Law «نظام البيئة» — Royal Decree M/165 dated 19/11/1441H, approving Council of Ministers Decision 729 (16/11/1441H). Administered by the Ministry of Environment, Water and Agriculture (MEWA), together with the General Authority of Meteorology and Environmental Protection, the Saudi Wildlife Authority, and the National Centers for the Environment Sector. Repeals several prior instruments including the older 'النظام العام للبيئة' (Royal Decree M/34, 28/7/1422H) — with a narrow carve-over: that older law's waste-related provisions remain in force until dedicated new waste-specific rules are issued; the old M/34 law itself is not modeled in this corpus. 49 records across 9 فصول (this law has NO أبواب/Parts tier, a single-level chapter structure): 48 اصلية / 1 معدلة. **STRONG TRIPLE-SOURCE VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass (HTTP 503 direct, HTTP 422 via r.jina.ai); BOE's own content was instead recovered via the Wayback Machine (15 October 2025 snapshot, cross-checked against 24 September 2024), and independently cross-verified against two further independently-hosted full-text copies — a PDF hosted at green.org.sa and nezams.com. All 49 articles matched verbatim across all three sources EXCEPT ONE flagged point: Article 1's definition of 'الجهة المختصة' (Competent Authority), where BOE's OWN official per-article amendment-log states current wording differs from BOE's OWN main running law-text body — a genuine self-contradiction in BOE's own official data, persistent across two Wayback snapshots over a year apart. This build treats the amendment (Council of Ministers Decision 406, 14/5/1445H, adding 'المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر' to the definition) as operative, following the same reasoning precedent established for the Traffic Law track's 'BOE portal lags behind confirmed amendments' situations, further corroborated by qanoonsa.com independently displaying the amended definition. The pre-amendment wording is preserved verbatim as original_1441h_text — flagged in known_unresolved_discrepancies as warranting dedicated human legal-review confirmation given it rests on BOE's internal self-contradiction plus one secondary corroboration, not a full independent gazette-text confirmation. Additional notes: the multiple topical Implementing Regulations (no single consolidated instrument) are listed indicatively only, not independently verified, and not extracted in this track; monetary figures use Arabic-style period thousand-separators (e.g. '(20.000.000) عشرين مليون ريال'), preserved verbatim rather than reformatted; no official English translation exists per BOE's own site. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "income_tax_law",
+                "display_name_ar": "نظام ضريبة الدخل",
+                "display_name_en": "Income Tax Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/1) — BOE via Wayback x ZATCA's own official PDF x gstc.gov.sa PDF x nezams.com, 3-4-source agreement for 69/81 articles; Chapter 10 BOE+nezams only (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": income_tax_law_llm["record_count"],
+                    "data_path": "data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json"}},
+                "record_counts": {"arabic_articles": income_tax_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 52, "معدلة": 29, "ملغاة": 0, "مضافة": 0},
+                                  "total": income_tax_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/income_tax/law/official_source/income_tax_law_official_source.json",
+                    "sources/income_tax/law/verified/income_tax_law_verified_records.jsonl",
+                    "data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
+                ],
+                "validator_targets": ["make income-tax-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Income Tax Law «نظام ضريبة الدخل» — Royal Decree M/1 dated 15/1/1425H, approving Council of Ministers Resolution 278 (20/11/1424H), signed by King Fahd bin Abdulaziz Al Saud. Repeals the 1370H-era income tax system, the additional oil-company income tax, and the original Natural Gas Investment Tax Law (M/37, 1424H). Administered by what the statute's own current Article 1 still calls 'الهيئة العامة للزكاة والدخل' (GAZT) — a name itself superseded by the 2021 ZATCA merger, never updated by any further Royal-Decree-level amendment; the older term 'المصلحة' is preserved verbatim per-article wherever a specific source literally uses it, not normalized. 81 records across 16 فصول: 52 اصلية / 29 معدلة — 10 individually confirmed via BOE's own 'changed' flag and/or explicit report annotation (Articles 1, 2, 6, 7, 8, 21, 56, 59, 66, 67), 12 from Chapter 10's full replacement by Royal Decree M/70 (11/7/1439H, introducing the Natural Gas Investment Tax framework and cutting its base rate from 30% to 20%), and 7 lower-confidence articles (9, 12, 13, 17, 43, 63, 65) marked معدلة on ZATCA-footnote/ledger evidence alone with no clause-level effect ever stated by the research pass. **DISTINCT VERIFICATION TIER:** current-consolidated text rests on FOUR sources — laws.boe.gov.sa (via the Wayback Machine, reached with an explicit User-Agent header after both direct and r.jina.ai-proxied attempts failed), ZATCA's own official consolidated PDF, an older gstc.gov.sa PDF, and nezams.com — with every one of the 81 articles cross-verified from at least two sources in agreement, and the large majority from three or four. **IMPORTANT LIMITATION:** Chapter 10 (Articles 44-55) is the mirror image of this corpus's VAT-law-track finding — BOTH government-authority PDF sources (ZATCA and gstc.gov.sa) print only a bare repeal notice for this entire 12-article chapter, omitting the substantive M/70 replacement text entirely; the full current text rests on TWO sources only (BOE via Wayback, cross-verified word-for-word against nezams.com), not the usual 3-4. **NO original_1425h_text field is populated for ANY article** — the research report described having seen pre-amendment 'before' text for six articles via BOE's amendment-history popups but never transcribed it verbatim into deliverable form, and on inspection the raw scratchpad data mostly quoted intermediate amendment states rather than clean 1425H originals, so nothing was promoted into this field rather than risk fabricating a reconstructed original; Chapter 10's pre-M/70 text is independently confirmed unrecoverable from any of the four sources. Article 66 carries an unresolved, explicitly dual-dated conflict for Royal Decree M/52 (28/4/1441H per ZATCA's PDF vs 28/7/1441H per BOE's own amendment-history feature) — both candidate dates are recorded in its history entry rather than silently picking one. 14 total flagged discrepancies (see known_unresolved_discrepancies) also cover: BOE's default per-article body being frequently pre-amendment/stale (confirmed for Articles 2, 56, 66, 67, 80) without a full 81-article diff having been performed; ZATCA's footnote apparatus touching more articles than BOE's own 'changed' markup flags, with some footnote-to-clause attributions approximate due to PDF page-break artifacts; nezams.com confirmed stale on the two most recent (1441H) amendments; a single-sourced Official Gazette publication date; and Ministerial Resolution 2194 (12/7/1432H) explicitly distinguished as a non-amending interpretive clarification of Article 3(b)'s 'الإدارة الرئيسة' term, not a textual amendment. A companion Implementing Regulation (Ministerial Resolution 1535, exact Hijri date unconfirmed) is not extracted in this track. Arabic governs; not legal advice.",
             },
         ],
     }
