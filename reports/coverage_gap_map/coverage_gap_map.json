@@ -1,0 +1,183 @@
+{
+  "generated_note": "Planning document only. This is a prioritized gap map identifying major Saudi statutory instruments not yet among the corpus's 121 tracks. Each gap received a LIGHT verification pass (web search cross-check of existence, approximate Royal Decree number/date, and rough article count) — NOT a full research/verbatim-transcription pass. Decree numbers/dates/article counts below should be re-verified against an official source (laws.boe.gov.sa, the issuing ministry/authority PDF, or Umm Al-Qura Gazette) before any build/transcription work begins. Generated 2026-07-17 by a research-only pass; no existing track files, run_qa_gate.py, or shared wiring were touched.",
+  "already_covered_track_count": 121,
+  "methodology": "Cross-checked the 121 REQUIRED_TRACK_IDS in scripts/validate_corpus_registry.py against the requested focus areas (consumer protection, health/medical regulation, IP beyond trademark/copyright, finance companies/consumer finance, real estate development, zakat, customs, anti-trust/IP enforcement, family/inheritance beyond personal status, government tenders, municipalities, maritime/shipping, insurance, financial leasing, secured lending, anti-dumping, professional services regulation, press/media, elections/municipal councils). For each candidate, ran targeted Arabic web searches against laws.boe.gov.sa (Council of Ministers Bureau of Experts portal), SAMA Rulebook, ministry sites, and legal-reference sites (nezams.com, qanoonsa.com, WIPO Lex) to confirm the law exists, find its Royal Decree number/date, and get an approximate article count.",
+  "notable_non_gaps_checked_and_excluded": [
+    {
+      "topic": "Movable/secured lending (الحقوق العينية التبعية / رهن المنقول)",
+      "finding": "Not a standalone law. Registered real rights (mortgage, pledge/lien over movables and immovables) are chapters within the Civil Transactions Law itself, already covered in the corpus as civil_transactions_law (721 Arabic articles, Royal Decree M/191 dated 29/11/1444H). No separate secured-transactions statute was found to exist independently of it."
+    },
+    {
+      "topic": "Off-plan real estate sale/lease (البيع والتأجير على الخارطة) / real estate developers",
+      "finding": "Already covered — this is what real_estate_units_law and real_estate_units_implementing_regulation are. No separate 'real estate developers law' gap was found beyond what those tracks already represent."
+    },
+    {
+      "topic": "Consumer finance (التمويل الاستهلاكي) as a standalone law",
+      "finding": "Not a separate statute. Consumer finance is one of the licensed financing-activity categories (alongside real estate finance, SME finance, finance lease, credit cards, microfinance) regulated under the single Finance Companies Control Law (نظام مراقبة شركات التمويل, M/51, 1433H) — see gap entry below. No distinct 'Consumer Finance Law' Royal Decree was found."
+    }
+  ],
+  "gaps": [
+    {
+      "law_name_ar": "نظام جباية الزكاة ولائحته التنفيذية",
+      "law_name_en": "Zakat Collection Law and its Implementing Regulation",
+      "estimated_decree": "Original system dates to Royal Decree No. (17/2/28/3321) of 21 Muharram 1370H (establishing zakat/income-tax collection); current implementing regulation issued via ministerial decisions (No. 2082 of 1438H, No. 2216 of 1440H) under ZATCA (formerly GAZT). Administering authority: Zakat, Tax and Customs Authority (ZATCA).",
+      "estimated_article_count": "Base law is short (foundational decree); implementing regulation is the operative document, roughly 20-30 articles — needs confirmation",
+      "priority": "high",
+      "priority_rationale": "Zakat is the primary fiscal levy on Saudi/GCC-owned entities (as opposed to income tax, which is already covered and applies to non-Saudi-owned entities/shares). Virtually every Saudi company must compute zakat; this is one of the highest-frequency compliance regimes in daily legal/accounting practice, and it is conspicuously absent given income_tax_law is already in the corpus.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية",
+      "law_name_en": "Law of Patents, Layout Designs of Integrated Circuits, Plant Varieties and Industrial Designs",
+      "estimated_decree": "Royal Decree, approx. 1425H (2004), Council of Ministers Resolution",
+      "estimated_article_count": "Approx. 60-70 articles across its several parts (patents, IC layout designs, plant varieties, industrial designs) — needs confirmation",
+      "priority": "high",
+      "priority_rationale": "The corpus already has trademark_law and copyright_law but no patent law — this is the single biggest hole in the IP family. Administered by SAIP (Saudi Authority for Intellectual Property); heavily used in tech, pharma, and industrial-design practice.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية ولائحته التنفيذية",
+      "law_name_en": "GCC Unified Customs Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/41 dated 3 Dhul-Qi'dah 1423H (2002); in force since 1 January 2003",
+      "estimated_article_count": "Approx. 190+ articles across several chapters (tariff principles, prohibitions/restrictions, import/export, exemptions) — needs confirmation",
+      "priority": "high",
+      "priority_rationale": "Customs law governs all cross-border trade into/out of Saudi Arabia and the GCC customs union; extremely high practical frequency for any import/export, logistics, or trade-remedies practice. Administered by ZATCA.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام مكافحة الغش التجاري",
+      "law_name_en": "Anti-Commercial Fraud Law",
+      "estimated_decree": "Royal Decree No. M/19 dated 23/4/1429H (2008), replacing the 1404H system",
+      "estimated_article_count": "30 articles",
+      "priority": "high",
+      "priority_rationale": "This is the currently operative statutory basis for consumer/market protection in Saudi Arabia (product quality, mislabeling, deceptive trade practices) administered by the Ministry of Commerce's Consumer Protection Agency. A separate all-encompassing 'Consumer Protection Law' was drafted and put to public consultation (منصة استطلاع) around 2022 but could not be confirmed as enacted — see the unconfirmed entry below. Until/unless that broader law is confirmed in force, this Anti-Commercial Fraud Law is the real, currently binding consumer-facing statute and is a clear gap.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام مراقبة شركات التمويل ولائحته التنفيذية",
+      "law_name_en": "Finance Companies Control Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/51 dated 13/8/1433H (2012)",
+      "estimated_article_count": "40 articles (preamble + 8 chapters)",
+      "priority": "high",
+      "priority_rationale": "Governs SAMA-licensed finance companies across real estate finance, productive-asset finance, SME finance, finance lease, credit cards, consumer finance, and microfinance — i.e., the umbrella law for the entire non-bank consumer/commercial lending sector, which has grown rapidly (BNPL, fintech lenders, auto/equipment finance). Distinct from real_estate_finance_law and real_estate_mortgage_law already in the corpus.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام الضمان الصحي التعاوني",
+      "law_name_en": "Cooperative Health Insurance Law",
+      "estimated_decree": "Royal Decree No. M/10 dated 1/5/1420H (1999)",
+      "estimated_article_count": "Approx. 19-20 articles — needs confirmation",
+      "priority": "medium",
+      "priority_rationale": "Mandates health insurance coverage for expatriate workers and dependents; directly intersects with labor law and iqama/residency compliance, both high-frequency HR/immigration practice areas. Distinct from insurance_control_law already covered (which regulates insurers generally, not the health-coverage mandate itself).",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام مزاولة المهن الصحية ولائحته التنفيذية",
+      "law_name_en": "Law of Practicing Healthcare Professions",
+      "estimated_decree": "Royal Decree No. M/59 dated 4/11/1426H (2005), repealing the 1409H physicians/dentists law and the 1398H pharmacy law",
+      "estimated_article_count": "Approx. 33 articles — needs confirmation",
+      "priority": "medium",
+      "priority_rationale": "Governs licensing and liability of physicians, dentists, pharmacists, and other health practitioners; central to medical-malpractice and healthcare-regulatory practice, an increasingly active litigation area.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام الإيجار التمويلي ولائحته التنفيذية",
+      "law_name_en": "Finance Lease Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/48 dated 13/8/1433H (2012)",
+      "estimated_article_count": "Approx. 25-30 articles — needs confirmation",
+      "priority": "medium",
+      "priority_rationale": "Governs finance-lease contracts (equipment, vehicles, aircraft, real property) including title transfer mechanics; widely used in asset-finance transactions and closely related to real_estate_finance_law and the Finance Companies Control Law gap above.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "النظام البحري التجاري",
+      "law_name_en": "Maritime Commercial Law",
+      "estimated_decree": "Royal Decree No. M/33 dated 5/4/1440H (2019), replacing the older maritime commerce system",
+      "estimated_article_count": "Sizeable consolidated code (multiple hundreds of articles across vessel registration, carriage of goods, maritime liens, collision, salvage) — needs confirmation",
+      "priority": "medium",
+      "priority_rationale": "Governs shipping, vessel registration, carriage of goods by sea, and maritime liability — relevant given Saudi Arabia's port/logistics expansion (Jeddah, King Abdullah Port, Red Sea projects) but a comparatively narrower practice area than the top-tier gaps above.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "القانون (النظام) الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون لدول الخليج العربية",
+      "law_name_en": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law",
+      "estimated_decree": "GCC Supreme Council resolution 2003; adopted in Saudi Arabia by Royal Decree No. M/30 dated 17/5/1427H (2006), amended by Royal Decree No. M/7 dated 20/3/1434H (2013)",
+      "estimated_article_count": "Approx. 30-40 articles — needs confirmation",
+      "priority": "medium",
+      "priority_rationale": "Trade-remedies law administered by the General Authority of Foreign Trade (GAFT); relevant to import-competing industries and increasingly invoked as Saudi Arabia diversifies its industrial base, but a narrower practice area than customs or IP.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام مهنة المحاسبة والمراجعة",
+      "law_name_en": "Law of the Accounting and Auditing Profession",
+      "estimated_decree": "Royal Decree, replacing the 1412H Certified Public Accountants Law; exact current decree number/date not confirmed in this pass",
+      "estimated_article_count": "Not confirmed — needs verification",
+      "priority": "medium",
+      "priority_rationale": "Governs licensing, discipline, and practice standards for auditors/accountants (via SOCPA); relevant to every audited company and to professional-liability practice, but institutional/regulatory rather than transactional in nature.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام هيئة الرقابة ومكافحة الفساد (نزاهة)",
+      "law_name_en": "Law of the Control and Anti-Corruption Authority (Nazaha)",
+      "estimated_decree": "Established by Royal Order No. 65/A dated 13/4/1432H (2011); the Authority's organizational system/statute governs its investigative and disciplinary powers",
+      "estimated_article_count": "Not confirmed — needs verification",
+      "priority": "medium",
+      "priority_rationale": "Distinct from anti_bribery_law already in the corpus (which criminalizes bribery itself) — this is the separate statute establishing Nazaha's investigative jurisdiction, administrative-violation powers, and settlement (تسوية) mechanism over corruption offenses. Relevant to white-collar/regulatory-enforcement practice.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام الهيئة العامة للأوقاف",
+      "law_name_en": "Law of the General Authority for Awqaf",
+      "estimated_decree": "Royal Decree No. M/11 dated 26/2/1437H (2016) — note: an earlier search hit suggested M/25, but M/11 is the better-attested number and should be the one verified before use",
+      "estimated_article_count": "Not confirmed — needs verification",
+      "priority": "low-medium",
+      "priority_rationale": "Governs waqf (Islamic charitable/family endowment) administration, a distinct and growing area adjacent to inheritance/personal-status practice and family wealth planning, but narrower in day-to-day frequency than the top gaps.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام الهيئة السعودية للمهندسين",
+      "law_name_en": "Law of the Saudi Council of Engineers",
+      "estimated_decree": "Royal Decree No. M/36 dated 26/9/1423H (2002)",
+      "estimated_article_count": "Not confirmed — needs verification",
+      "priority": "low-medium",
+      "priority_rationale": "Professional-licensing statute for engineers, parallel to the accountants/health-professions gaps above; relevant to construction/infrastructure practice and professional-liability disputes, but a narrower institutional statute.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام المجالس البلدية",
+      "law_name_en": "Municipal Councils Law",
+      "estimated_decree": "Royal Decree No. M/61 dated 4/10/1435H (2014)",
+      "estimated_article_count": "Not confirmed — needs verification; covers council formation, member elections, election appeals, membership rules, sessions, dissolution",
+      "priority": "low-medium",
+      "priority_rationale": "Distinct from regions_law already covered (provincial/regional administration) — this governs municipal council elections and local governance. Practically relevant mainly to administrative/local-governance practice rather than commercial or civil practice.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام المطبوعات والنشر",
+      "law_name_en": "Law on Printed Materials and Publication (Press Law)",
+      "estimated_decree": "Royal Decree No. M/32 dated 3/9/1421H (2000)",
+      "estimated_article_count": "Not confirmed — needs verification",
+      "priority": "low",
+      "priority_rationale": "Governs press, publishing, and media licensing under the Ministry of Media; lower day-to-day practice frequency than the other gaps, and the media/press regulatory landscape has evolved substantially since 2000 (newer media-sector rules may have superseded parts of it) — flag for a currency check before building.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام حماية المستهلك (الشامل)",
+      "law_name_en": "Comprehensive Consumer Protection Law (draft)",
+      "estimated_decree": "Not issued as a Royal Decree as of the last data found in this pass — a draft was published by the Ministry of Commerce for public consultation on the 'Istitlaa' platform around March-May 2022; no confirmation was found that it has since been enacted",
+      "estimated_article_count": "Unknown — still in draft form",
+      "priority": "low (pending confirmation)",
+      "priority_rationale": "If/when enacted, this would likely be a high-priority track (it was designed to consolidate and modernize consumer-rights protections beyond the existing Anti-Commercial Fraud Law). But because enactment could not be confirmed, building it now risks building a draft/superseded text. Recommend periodically re-checking laws.boe.gov.sa for enactment before starting work; the Anti-Commercial Fraud Law gap above is the safer, confirmed target for now.",
+      "confidence_exists": "unconfirmed — appears to still be a draft/proposal, not a confirmed enacted law"
+    },
+    {
+      "law_name_ar": "نظام الشركات المهنية",
+      "law_name_en": "Professional Companies Law",
+      "estimated_decree": "Royal Decree No. M/17 dated 26/1/1441H (2020), 29 articles — but search results indicate it may have been superseded/merged when the new unified Companies Law was issued by Royal Decree No. M/132 dated 1/12/1443H (2022)",
+      "estimated_article_count": "29 articles (original 1441H version); current status relative to the new Companies Law is unclear",
+      "priority": "low (pending confirmation)",
+      "priority_rationale": "This would govern how law firms, audit firms, and other professional-services firms are structured as civil companies — directly relevant to the legal/accounting profession itself. However, because it may already be substantively folded into or superseded by the new Companies Law (M/132, 1443H) — which is very likely the source text already underlying the corpus's existing companies_law track (281 Arabic articles) — this should NOT be treated as a confirmed gap until someone checks whether companies_law's actual source decree is M/132 and, if so, whether it already contains a professional-companies chapter.",
+      "confidence_exists": "confirmed as having existed, but unconfirmed whether it remains a distinct, currently-effective standalone law versus already absorbed into the already-covered companies_law track"
+    }
+  ]
+}
