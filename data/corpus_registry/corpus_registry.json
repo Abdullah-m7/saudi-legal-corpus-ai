@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 7465,
+  "total_primary_arabic_governing_records": 7485,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8360,
-  "total_tracks": 105,
+  "total_registry_counted_records": 8380,
+  "total_tracks": 106,
   "tracks": [
     {
       "boundaries": {
@@ -4940,6 +4940,53 @@
       "validator_targets": [
         "make competition-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/payment_systems/law/official_source/payment_systems_law_official_source.json",
+        "sources/payment_systems/law/verified/payment_systems_law_verified_records.jsonl",
+        "data/payment_systems_arabic_legal_llm/payment_systems_law_legal_llm_001_020.json"
+      ],
+      "display_name_ar": "نظام المدفوعات وخدماتها",
+      "display_name_en": "Payment Systems and Services Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/payment_systems_arabic_legal_llm/payment_systems_law_legal_llm_001_020.json",
+          "governing": true,
+          "record_count": 20,
+          "status": "complete"
+        }
+      },
+      "notes": "Payment Systems and Services Law «نظام المدفوعات وخدماتها» — Royal Decree M/26 dated 22/3/1443H (28 October 2021, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 171 (20/3/1443H), published Umm al-Qura 30/3/1443H. Administering authority: Saudi Central Bank (SAMA). Distinct from the Saudi Central Bank Law (M/36, 1442H) and the Banking Control Law (M/5, 1386H) — a separate instrument governing payment systems and services specifically, not merged into the sama/ or banking_control/ source trees. NO chapter (فصل) divisions — a flat sequence of 20 articles, all اصلية; no amending instrument identified, law confirmed in force (ساري). **DISTINCT VERIFICATION TIER:** the official SAMA PDF has a broken font ToUnicode CMap that corrupts direct pdftotext/PyMuPDF extraction; worked around by rendering pages to images at 300dpi and 400dpi and running two independent Arabic-language OCR passes directly on the glyphs, cross-filling gaps between passes, then cross-verifying the OCR'd text word-for-word against nezams.com's independent raw-HTML transcription. rulebook.sama.gov.sa's law-detail page corroborates decree/date/status/article count; Saudipedia corroborates the fine cap and objectives language. Two flagged discrepancies, both confirmed genuine rather than artifacts: Article 12(5) is a single, extremely long run-on sentence, identical across both OCR passes and nezams.com; the defined term «نظام مدفوعات مهم» is rendered with guillemets in Article 7(6) per nezams.com but with plain parentheses in Article 9 in the same source — OCR could not independently confirm SAMA's original glyph at either location, so each article's punctuation is preserved as transcribed rather than normalized. A companion Implementing Regulation (24/11/1444H, SAMA Circular 44093096) is confirmed to exist but is not extracted in this track — candidate for a follow-up companion-track ingestion. Arabic governs; not legal advice.",
+      "official_text_status": "SAMA_OFFICIAL_PDF_OCR_X_NEZAMS_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 20,
+        "legal_status_breakdown": {
+          "اصلية": 20,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 20
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/26) — official SAMA PDF (rulebook.sama.gov.sa), dual independent OCR passes (300/400dpi), cross-verified word-for-word against nezams.com (see notes)",
+      "status": "complete",
+      "track_id": "payment_systems_law",
+      "validator_targets": [
+        "make payment-systems-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5001,6 +5048,7 @@
       "mosalaha_center": 10,
       "municipal_realestate": 41,
       "muslaha": 29,
+      "payment_systems": 20,
       "pdpl": 81,
       "personal_status": 293,
       "qismah": 48,
@@ -5022,7 +5070,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7296,
+    "total_records": 7316,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

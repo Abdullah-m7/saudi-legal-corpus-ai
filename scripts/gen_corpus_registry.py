@@ -143,6 +143,7 @@ SAMA_LAW_LLM = os.path.join(ROOT, "data", "sama_arabic_legal_llm", "sama_law_leg
 BANKING_CONTROL_LAW_LLM = os.path.join(ROOT, "data", "banking_control_arabic_legal_llm", "banking_control_law_legal_llm_001_026.json")
 CAPITAL_MARKET_LAW_LLM = os.path.join(ROOT, "data", "capital_market_arabic_legal_llm", "capital_market_law_legal_llm_001_068.json")
 COMPETITION_LAW_LLM = os.path.join(ROOT, "data", "competition_arabic_legal_llm", "competition_law_legal_llm_001_028.json")
+PAYMENT_SYSTEMS_LAW_LLM = os.path.join(ROOT, "data", "payment_systems_arabic_legal_llm", "payment_systems_law_legal_llm_001_020.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -279,6 +280,7 @@ def main() -> int:
     banking_control_law_llm = _load_json(BANKING_CONTROL_LAW_LLM)
     capital_market_law_llm = _load_json(CAPITAL_MARKET_LAW_LLM)
     competition_law_llm = _load_json(COMPETITION_LAW_LLM)
+    payment_systems_law_llm = _load_json(PAYMENT_SYSTEMS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -299,7 +301,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 105,
+        "total_tracks": 106,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -408,6 +410,7 @@ def main() -> int:
             + banking_control_law_llm["record_count"]  # 26 Banking Control Law (DISTINCT TIER: dual independent Arabic secondary sources, BOE unreachable for raw text, see track notes)
             + capital_market_law_llm["record_count"]  # 68 Capital Market Law (MIXED TIER: 55 CMA-current x BOE-2003 cross-verified, 12 flagged 2003-only historical fallback, 1 reconstructed, see track notes)
             + competition_law_llm["record_count"]  # 28 Competition Law (DISTINCT TIER: BOE Wayback snapshot x nezams.com cross-verified, see track notes)
+            + payment_systems_law_llm["record_count"]  # 20 Payment Systems and Services Law (DISTINCT TIER: SAMA official PDF, dual OCR pass x nezams.com cross-verified, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -507,6 +510,7 @@ def main() -> int:
             + banking_control_law_llm["record_count"]
             + capital_market_law_llm["record_count"]
             + competition_law_llm["record_count"]
+            + payment_systems_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3657,6 +3661,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Competition Law «نظام المنافسة» — Royal Decree M/75 dated 29/6/1440H (6 March 2019, King Salman bin Abdulaziz Al Saud), approved by Council of Ministers Decision 372 (28/6/1440H). Administering authority: General Authority for Competition (GAC). Confirmed decree date 29/6/1440H via three independent sources agreeing numerically (BOE portal via two Wayback Machine snapshots dated ~Nov 2023 and 2026, WIPO Lex, nezams.com) — corrects the initial task-briefing's hypothesized '29/7/1440H'. Replaces the earlier Competition Law, Royal Decree M/25 (4/5/1425H), per Article 26. NO chapter (فصل) divisions — a flat sequence of 28 articles, confirmed identically by all three sources. All 28 articles اصلية — no confirmed amendments since the 2019 issuance; nezams.com's own metadata field explicitly states no amendments were made, corroborated by the current BOE snapshot. **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass, but a Wayback Machine snapshot (fetched directly, not via r.jina.ai) succeeded at two separate points in time and agrees WORD-FOR-WORD with nezams.com. A third source, WIPO Lex's own Arabic PDF, substantively agrees but has one apparent extra word in Article 3(2) attributable to known PDF bidi-extraction artifacts, not used. A candidate amendment record for Articles 11/12 (Council of Ministers Decision 97, 2/2/1441H) found in a 2023 BOE snapshot was investigated and confirmed to belong to a DIFFERENT instrument (the GAC's own organizational statute) — a probable cross-linking display bug since resolved on BOE's site, flagged not applied. A companion Implementing Regulation exists per Article 27 but its exact issuance decision was not independently confirmed this pass (GAC's own site unreachable) — candidate for follow-up. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "payment_systems_law",
+                "display_name_ar": "نظام المدفوعات وخدماتها",
+                "display_name_en": "Payment Systems and Services Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SAMA_OFFICIAL_PDF_OCR_X_NEZAMS_CROSS_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/26) — official SAMA PDF (rulebook.sama.gov.sa), dual independent OCR passes (300/400dpi), cross-verified word-for-word against nezams.com (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": payment_systems_law_llm["record_count"],
+                    "data_path": "data/payment_systems_arabic_legal_llm/payment_systems_law_legal_llm_001_020.json"}},
+                "record_counts": {"arabic_articles": payment_systems_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": payment_systems_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/payment_systems/law/official_source/payment_systems_law_official_source.json",
+                    "sources/payment_systems/law/verified/payment_systems_law_verified_records.jsonl",
+                    "data/payment_systems_arabic_legal_llm/payment_systems_law_legal_llm_001_020.json",
+                ],
+                "validator_targets": ["make payment-systems-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Payment Systems and Services Law «نظام المدفوعات وخدماتها» — Royal Decree M/26 dated 22/3/1443H (28 October 2021, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 171 (20/3/1443H), published Umm al-Qura 30/3/1443H. Administering authority: Saudi Central Bank (SAMA). Distinct from the Saudi Central Bank Law (M/36, 1442H) and the Banking Control Law (M/5, 1386H) — a separate instrument governing payment systems and services specifically, not merged into the sama/ or banking_control/ source trees. NO chapter (فصل) divisions — a flat sequence of 20 articles, all اصلية; no amending instrument identified, law confirmed in force (ساري). **DISTINCT VERIFICATION TIER:** the official SAMA PDF has a broken font ToUnicode CMap that corrupts direct pdftotext/PyMuPDF extraction; worked around by rendering pages to images at 300dpi and 400dpi and running two independent Arabic-language OCR passes directly on the glyphs, cross-filling gaps between passes, then cross-verifying the OCR'd text word-for-word against nezams.com's independent raw-HTML transcription. rulebook.sama.gov.sa's law-detail page corroborates decree/date/status/article count; Saudipedia corroborates the fine cap and objectives language. Two flagged discrepancies, both confirmed genuine rather than artifacts: Article 12(5) is a single, extremely long run-on sentence, identical across both OCR passes and nezams.com; the defined term «نظام مدفوعات مهم» is rendered with guillemets in Article 7(6) per nezams.com but with plain parentheses in Article 9 in the same source — OCR could not independently confirm SAMA's original glyph at either location, so each article's punctuation is preserved as transcribed rather than normalized. A companion Implementing Regulation (24/11/1444H, SAMA Circular 44093096) is confirmed to exist but is not extracted in this track — candidate for a follow-up companion-track ingestion. Arabic governs; not legal advice.",
             },
         ],
     }
