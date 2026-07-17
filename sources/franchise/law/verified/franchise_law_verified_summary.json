@@ -1,0 +1,108 @@
+{
+  "law_key": "franchise",
+  "layer": "FRANCHISE_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 27,
+  "official_text_status": "BOE_PORTAL_PROXY_RETRIEVED_QANONIAH_SPOT_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 27,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/22)",
+  "decree_date_hijri": "9/2/1441",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "أحكام عامة",
+      "articles": "1-2"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "نطاق تطبيق النظام",
+      "articles": "3-4"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "شروط منح الامتياز",
+      "articles": "5"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "القيد والإفصاح",
+      "articles": "6-7"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "التزامات صاحب الامتياز ومانح الامتياز",
+      "articles": "8-10"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "اتفاقية الامتياز",
+      "articles": "11-12"
+    },
+    {
+      "label_ar": "الفصل السابع",
+      "title_ar": "التنازل عن اتفاقية الامتياز",
+      "articles": "13-14"
+    },
+    {
+      "label_ar": "الفصل الثامن",
+      "title_ar": "تجديد اتفاقية الامتياز أو تمديدها",
+      "articles": "15"
+    },
+    {
+      "label_ar": "الفصل التاسع",
+      "title_ar": "إنهاء اتفاقية الامتياز أو انقضاؤها",
+      "articles": "16-18"
+    },
+    {
+      "label_ar": "الفصل العاشر",
+      "title_ar": "التعويض",
+      "articles": "19-21"
+    },
+    {
+      "label_ar": "الفصل الحادي عشر",
+      "title_ar": "أحكام ختامية",
+      "articles": "22-27"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: laws.boe.gov.sa (Bureau of Experts portal) was fetched successfully this research pass via the r.jina.ai proxy after a direct WebFetch attempt returned HTTP 503; this is the primary source for the full verbatim Arabic text of all 27 articles, the decree preamble (including its own operative clauses 'أولاً' through 'رابعاً'), and the decree/publication metadata. CROSS-VERIFICATION SCOPE: qanoniah.com, an independent secondary Arabic legal database, was used as a cross-check; it confirmed decree number/date and Umm Al-Qura gazette issue metadata, and its rendered article text for Articles 1, 2, 4, and 5 matched the BOE primary text verbatim (only trivial Arabic comma-glyph variation, immaterial to legal content). qanoniah.com's rendering itself appeared incomplete/paginated (it skipped Article 3 and cut off partway through Chapter 4), so this cross-verification is a SPOT CHECK on a subset of articles, not full-corpus corroboration -- Articles 3 and 6-27 rest on the BOE primary source alone this pass, without a second independent source's confirmation. Arabic Wikipedia additionally corroborated the decree number and date (metadata only, not article text). web.archive.org had zero snapshots for the specific BOE law-detail URL (checked via archive.org/wayback/available), so it could not serve as an independent cross-check this pass, consistent with the corpus's prior experience on other tracks. qadha.org.sa (used successfully as a third source in this repo's anti_concealment track) returned HTTP 401 'blocked due to bad IP reputation' via the jina proxy this pass and was not usable. DECREE-NUMBER COLLISION WITH THE ANTI-CONCEALMENT LAW: this Franchise Law's decree, Royal Decree M/22 dated 9/2/1441H (8/10/2019G), is a WHOLLY DIFFERENT, UNRELATED instrument from the original (superseded) Anti-Concealment Law, also Royal Decree M/22 but dated 4/5/1425H -- see sources/anti_concealment/law/official_source/anti_concealment_law_official_source.json, whose own current law (M/4, 1/1/1442H) explicitly recites that it replaces that 1425H M/22 law. Saudi royal decree numbering resets periodically, so the same 'م/22' designator recurring across different Hijri years for two unconnected laws is normal and not an error; the Franchise Law's identity here was confirmed not by decree number alone but by cross-checking the full decree preamble text, which explicitly names 'نظام الامتياز التجاري', against the BOE record. IMPLEMENTING REGULATION (NOT EXTRACTED THIS TRACK): a companion Implementing Regulation is confirmed to exist -- Ministerial Decision No. 591 (00591), issued by the Minister of Commerce and Investment, dated 18/9/1441H, based on Article 26 of this Law, containing 16 articles, published in Umm Al-Qura and effective from its publication date (reported as 22 May 2020). It is NOT extracted in this track, consistent with the task's scope, and is flagged here as a candidate for a follow-up companion-track ingestion, consistent with this corpus's established pattern for other laws' Implementing Regulations. Separately (and out of scope for this Law-level track), an Umm Al-Qura gazette notice (uqn.gov.sa/?p=22360) indicates the Implementing Regulation's own disclosure-document schedule was later amended (deletion of item 13, 'معلومات الوضع المالي لمانح الامتياز') -- this is an amendment to the Regulation, not to the Law, and is noted here only for completeness.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "franchise_task_premise_date_error",
+      "description": "The initial task premise assumed decree metadata of 'Royal Decree M/22, dated 21/2/1441H' -- the confirmed, BOE-sourced decree date is 9/2/1441H (8/10/2019G), based on Council of Ministers Resolution 122 (9/2/1441H). The premise's date does not match any date found on the BOE record or any independent secondary source checked; corrected here rather than silently adopted."
+    },
+    {
+      "article_key": "franchise_m22_decree_collision",
+      "description": "'M/22' is also the decree number of the original (superseded) Anti-Concealment Law (نظام مكافحة التستر), Royal Decree M/22 dated 4/5/1425H -- confirmed by reading this repo's own sources/anti_concealment/law/official_source/anti_concealment_law_official_source.json. This is a wholly different instrument from a different Hijri year; Saudi royal decree numbering resets periodically, so number reuse across years is normal, not an error. The Franchise Law's M/22 (9/2/1441H) was confirmed as the correct, distinct instrument by cross-checking the full decree preamble text (which explicitly names 'نظام الامتياز التجاري') against the BOE record, not by decree number alone. Flagged here for future researchers to avoid conflating the two, consistent with how the anti_concealment track flags the analogous risk from its own side."
+    },
+    {
+      "article_key": "franchise_publication_date_mismatch",
+      "description": "The BOE portal's own page metadata states 'تاريخ النشر 1441/02/24هـ الموافق 23/10/2019م' for this Law's Umm Al-Qura publication, while the Umm Al-Qura gazette reference table on qanoniah.com lists gazette issue No. 4802 dated 2019-10-25 (a 2-day mismatch). Not resolved or normalized -- documented as found in both sources."
+    },
+    {
+      "article_key": "franchise_article4_heading_colon_artifact",
+      "description": "In the BOE-rendered primary source, the heading for Article 4 carries a trailing colon ('المادة الرابعة:') while every other article heading in the same document does not. This is treated as a page-rendering artifact of the BOE source (analogous to the marginal-annotation exclusions documented in this repo's anti_concealment track) rather than a substantive textual variant, and the trailing colon is not reproduced in this track's number_label_ar field for Article 4, to keep the label format consistent with all 26 other articles. The colon does not appear in Article 4's substantive body text in any source checked."
+    },
+    {
+      "article_key": "franchise_qanoniah_secondary_source_incomplete",
+      "description": "The qanoniah.com secondary-source page used for cross-verification appears to be JS-rendered/paginated and was retrieved incomplete: it jumped from the الفصل الثاني heading directly to Article 4, apparently omitting Article 3, and its capture ended entirely partway through Chapter 4 (الفصل الرابع). Assessed as a rendering/pagination artifact of that site rather than a substantive textual variant, because Article 3's text is present, undisputed, and short on the BOE primary source and is not contradicted anywhere. All articles that did render on qanoniah.com (1, 2, 4, 5) matched the BOE text verbatim, word-for-word (only trivial Arabic comma-glyph variation, immaterial to legal content)."
+    },
+    {
+      "article_key": "franchise_wayback_no_snapshot",
+      "description": "web.archive.org had zero snapshots of the specific BOE law-detail URL for this Law when checked directly via the archive.org/wayback/available API -- it could not be used as an independent cross-check this pass. qanoniah.com was substituted as the secondary source instead."
+    },
+    {
+      "article_key": "franchise_cross_verification_scope_limited",
+      "description": "Independent secondary-source cross-verification (qanoniah.com) was only achieved as a spot check on Articles 1, 2, 4, and 5, due to that source's incomplete/paginated rendering (see franchise_qanoniah_secondary_source_incomplete). Articles 3 and 6 through 27 rest on the BOE primary source alone this research pass (retrieved via the r.jina.ai proxy after a direct WebFetch failure), without a second independent Arabic source's confirmation of their verbatim text. This is a genuine scope limitation of the cross-verification performed, documented rather than silently presented as full-corpus double-sourced."
+    },
+    {
+      "article_key": "franchise_2026_council_of_ministers_carveout_non_textual",
+      "description": "On 13/1/2026 (per argaam.com, sourced to the Saudi Press Agency, headlined 'مجلس الوزراء يوافق على تعديل في نظام الامتياز التجاري'), the Council of Ministers, in a session chaired by King Salman bin Abdulaziz, approved 'not implementing one of the requirements contained in the Franchise System on some franchise granters and holders' ('عدم سريان أحد المتطلبات الواردة في نظام الامتياز التجاري على بعض مانحي وأصحاب الامتيازات'), to be applied according to criteria specified in the decision itself. This is NOT a legislative amendment to any article's text -- it is an exercise of the discretionary carve-out power already granted in the original 1441H enabling instrument itself (clause 'ثالثاً' of both the Royal Decree and Council of Ministers Resolution 122, 9/2/1441H: 'يجوز -بقرار من مجلس الوزراء- تقرير عدم سريان بعض المتطلبات الواردة في النظام على بعض الفئات من مانحي وأصحاب الامتيازات التجارية...'). No article in this track is marked معدلة because of it, and its effect is not merged into any article's text field. The specific requirement exempted and the exact criteria/categories used were NOT recoverable from the argaam.com summary (SPA-sourced, no legislative reference number given) -- flagged here as an unrecovered detail, not guessed at."
+    }
+  ],
+  "source_artifact": "sources/franchise/law/official_source/franchise_law_official_source.json"
+}
