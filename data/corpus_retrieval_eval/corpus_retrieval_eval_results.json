@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 232,
-  "top1_hits": 208,
-  "top3_hits": 225,
-  "top5_hits": 228,
-  "top1_accuracy": 0.8966,
-  "top3_accuracy": 0.9698,
-  "top5_accuracy": 0.9828,
-  "mrr_at_5": 0.9326,
+  "total_queries": 234,
+  "top1_hits": 210,
+  "top3_hits": 227,
+  "top5_hits": 230,
+  "top1_accuracy": 0.8974,
+  "top3_accuracy": 0.9701,
+  "top5_accuracy": 0.9829,
+  "mrr_at_5": 0.9332,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5718,9 +5718,9 @@
      "score": 22
     },
     {
-     "record_id": "oa-llm-companies-art-256",
-     "article_number": 256,
-     "score": 17
+     "record_id": "sama-law-llm-art-026",
+     "article_number": 26,
+     "score": 21
     }
    ]
   },
@@ -7147,6 +7147,68 @@
      "record_id": "pdpl-reg-llm-art-006",
      "article_number": 6,
      "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "scb-001",
+   "query_ar": "يهدف البنك المركزي إلى دعم استقرار القطاع المالي، وتعزيز الثقة به",
+   "category": "topical",
+   "gold": {
+    "corpus": "sama",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sama-law-llm-art-003",
+     "article_number": 3,
+     "score": 32
+    },
+    {
+     "record_id": "sama-law-llm-art-002",
+     "article_number": 2,
+     "score": 16
+    },
+    {
+     "record_id": "sama-law-llm-art-010",
+     "article_number": 10,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "scb-002",
+   "query_ar": "يحل نظام البنك المركزي السعودي محل نظام مؤسسة النقد العربي السعودي الصادر بالمرسوم الملكي رقم 23",
+   "category": "topical",
+   "gold": {
+    "corpus": "sama",
+    "law_component": "law",
+    "article_number": 26
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sama-law-llm-art-026",
+     "article_number": 26,
+     "score": 56
+    },
+    {
+     "record_id": "evidence-law-llm-art-128",
+     "article_number": 128,
+     "score": 33
+    },
+    {
+     "record_id": "arbitration-law-llm-art-057",
+     "article_number": 57,
+     "score": 32
     }
    ]
   },
