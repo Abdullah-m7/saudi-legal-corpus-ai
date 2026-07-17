@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 242,
-  "top1_hits": 218,
-  "top3_hits": 235,
-  "top5_hits": 238,
-  "top1_accuracy": 0.9008,
-  "top3_accuracy": 0.9711,
-  "top5_accuracy": 0.9835,
-  "mrr_at_5": 0.9354,
+  "total_queries": 246,
+  "top1_hits": 222,
+  "top3_hits": 239,
+  "top5_hits": 242,
+  "top1_accuracy": 0.9024,
+  "top3_accuracy": 0.9715,
+  "top5_accuracy": 0.9837,
+  "mrr_at_5": 0.9364,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -3176,9 +3176,9 @@
      "score": 17
     },
     {
-     "record_id": "commercial-books-law-llm-art-014",
-     "article_number": 14,
-     "score": 15
+     "record_id": "trademark-law-llm-art-041",
+     "article_number": 41,
+     "score": 17
     }
    ]
   },
@@ -4850,9 +4850,9 @@
      "score": 23
     },
     {
-     "record_id": "gcc-ownership-llm-art-002",
-     "article_number": 2,
-     "score": 22
+     "record_id": "trademark-law-llm-art-001",
+     "article_number": 1,
+     "score": 23
     }
    ]
   },
@@ -7519,6 +7519,130 @@
      "record_id": "payment-systems-law-llm-art-010",
      "article_number": 10,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "min-001",
+   "query_ar": "تقوم الوزارة بوضع الشروط الخاصة بأنواع الرخص، وتحديد إجراءات إصدارها وتجديدها وتمديدها وتحويلها",
+   "category": "topical",
+   "gold": {
+    "corpus": "mining_investment",
+    "law_component": "law",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "mining-investment-law-llm-art-011",
+     "article_number": 11,
+     "score": 17
+    },
+    {
+     "record_id": "inv-reg-llm-art-025",
+     "article_number": 25,
+     "score": 15
+    },
+    {
+     "record_id": "mining-investment-law-llm-art-060",
+     "article_number": 60,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "min-002",
+   "query_ar": "جميع الرواسب ملك للدولة، ولا يجوز أن يكتسبها الغير بالتقادم",
+   "category": "topical",
+   "gold": {
+    "corpus": "mining_investment",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "mining-investment-law-llm-art-002",
+     "article_number": 2,
+     "score": 26
+    },
+    {
+     "record_id": "civil-law-llm-art-710",
+     "article_number": 710,
+     "score": 11
+    },
+    {
+     "record_id": "sharia-procedure-regulation-llm-prov-633",
+     "article_number": 633,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "trd-001",
+   "query_ar": "يعتبر من قام بتسجيل العلامة التجارية بحسن نية مالكا لها، ولا تجوز المنازعة في ملكية العلامة",
+   "category": "topical",
+   "gold": {
+    "corpus": "trademark",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trademark-law-llm-art-007",
+     "article_number": 7,
+     "score": 24
+    },
+    {
+     "record_id": "trademark-law-llm-art-027",
+     "article_number": 27,
+     "score": 21
+    },
+    {
+     "record_id": "trademark-law-llm-art-002",
+     "article_number": 2,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "trd-002",
+   "query_ar": "كل من زور علامة تم تسجيلها طبقا لهذا القانون (النظام)، أو قلدها بطريقة تدعو إلى تضليل الجمهور",
+   "category": "topical",
+   "gold": {
+    "corpus": "trademark",
+    "law_component": "law",
+    "article_number": 42
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trademark-law-llm-art-042",
+     "article_number": 42,
+     "score": 21
+    },
+    {
+     "record_id": "oa-llm-companies-art-272",
+     "article_number": 272,
+     "score": 18
+    },
+    {
+     "record_id": "oa-llm-companies-art-213",
+     "article_number": 213,
+     "score": 14
     }
    ]
   }
