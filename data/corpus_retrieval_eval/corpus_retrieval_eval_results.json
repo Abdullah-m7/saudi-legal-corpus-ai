@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 230,
-  "top1_hits": 206,
-  "top3_hits": 223,
-  "top5_hits": 226,
-  "top1_accuracy": 0.8957,
-  "top3_accuracy": 0.9696,
-  "top5_accuracy": 0.9826,
-  "mrr_at_5": 0.932,
+  "total_queries": 232,
+  "top1_hits": 208,
+  "top3_hits": 225,
+  "top5_hits": 228,
+  "top1_accuracy": 0.8966,
+  "top3_accuracy": 0.9698,
+  "top5_accuracy": 0.9828,
+  "mrr_at_5": 0.9326,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1130,8 +1130,8 @@
      "score": 10
     },
     {
-     "record_id": "documentation-settlement-regulation-llm-art-002",
-     "article_number": 2,
+     "record_id": "telecommunications-law-llm-art-031",
+     "article_number": 31,
      "score": 10
     }
    ]
@@ -6152,9 +6152,9 @@
      "score": 20
     },
     {
-     "record_id": "inv-reg-llm-art-021",
-     "article_number": 21,
-     "score": 12
+     "record_id": "telecommunications-law-llm-art-015",
+     "article_number": 15,
+     "score": 13
     }
    ]
   },
@@ -7085,6 +7085,68 @@
      "record_id": "copyright-law-llm-art-027",
      "article_number": 27,
      "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "tlc-001",
+   "query_ar": "الطيف الترددي ثروة طبيعية تملكها الدولة",
+   "category": "topical",
+   "gold": {
+    "corpus": "telecommunications",
+    "law_component": "law",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "telecommunications-law-llm-art-010",
+     "article_number": 10,
+     "score": 10
+    },
+    {
+     "record_id": "enforcement-regulation-llm-prov-270",
+     "article_number": 270,
+     "score": 10
+    },
+    {
+     "record_id": "telecommunications-law-llm-art-011",
+     "article_number": 11,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "tlc-002",
+   "query_ar": "على مقدم الخدمة الحصول على موافقة المجلس قبل القيام بأي عملية اندماج مع مقدم خدمة آخر في الداخل أو الخارج",
+   "category": "topical",
+   "gold": {
+    "corpus": "telecommunications",
+    "law_component": "law",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "telecommunications-law-llm-art-020",
+     "article_number": 20,
+     "score": 42
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 33
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 25
     }
    ]
   },

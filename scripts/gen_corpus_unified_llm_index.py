@@ -224,6 +224,8 @@ LAYERS = [
      "shura_council", "law"),
     ("data/copyright_arabic_legal_llm/copyright_law_legal_llm_001_028.json",
      "copyright", "law"),
+    ("data/telecommunications_arabic_legal_llm/telecommunications_law_legal_llm_001_041.json",
+     "telecommunications", "law"),
 ]
 
 
