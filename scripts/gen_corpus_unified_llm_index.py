@@ -230,6 +230,8 @@ LAYERS = [
      "sama", "law"),
     ("data/banking_control_arabic_legal_llm/banking_control_law_legal_llm_001_026.json",
      "banking_control", "law"),
+    ("data/capital_market_arabic_legal_llm/capital_market_law_legal_llm_001_068.json",
+     "capital_market", "law"),
 ]
 
 

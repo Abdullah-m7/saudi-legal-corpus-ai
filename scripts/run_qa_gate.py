@@ -144,6 +144,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_telecommunications_law_track.py",
     "scripts/gen_sama_law_track.py",
     "scripts/gen_banking_control_law_track.py",
+    "scripts/gen_capital_market_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/run_corpus_retrieval_eval.py",
