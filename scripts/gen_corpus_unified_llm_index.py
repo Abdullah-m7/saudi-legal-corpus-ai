@@ -240,6 +240,8 @@ LAYERS = [
      "mining_investment", "law"),
     ("data/trademark_arabic_legal_llm/trademark_law_legal_llm_001_052.json",
      "trademark", "law"),
+    ("data/anti_concealment_arabic_legal_llm/anti_concealment_law_legal_llm_001_020.json",
+     "anti_concealment", "law"),
 ]
 
 

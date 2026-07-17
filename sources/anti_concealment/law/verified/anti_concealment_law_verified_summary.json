@@ -1,0 +1,62 @@
+{
+  "law_key": "anti_concealment",
+  "layer": "ANTI_CONCEALMENT_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 20,
+  "official_text_status": "TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+  "status_counts": {
+    "اصلية": 20,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/4)",
+  "decree_date_hijri": "1/1/1442",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "تعريفات",
+      "articles": "1"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "الجرائم والمخالفات",
+      "articles": "2-4"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "الضبط والتحقيق والمحاكمة",
+      "articles": "5-8"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "العقوبات",
+      "articles": "9-16"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "أحكام ختامية",
+      "articles": "17-20"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: laws.boe.gov.sa was completely unreachable this research pass via all three prescribed methods -- direct WebFetch (503/timeout), the r.jina.ai proxy (422 navigation timeout), and a direct Wayback Machine fetch via curl (TLS connection reset, apparently network-policy-blocked in this environment); a further attempt via r.jina.ai-proxied Wayback Machine access was itself blocked by jina's own anti-abuse policy. In the absence of any reachable primary source, this track's verbatim text rests on TRIPLE INDEPENDENT ARABIC SOURCE AGREEMENT: (1) a professionally compiled, footnoted edition hosted at qadha.org.sa, authored by a named Ministry of Commerce assistant legal counsel and published by the Saudi Judicial Scientific Association, which explicitly states a methodology of preserving original gazette texts and cites exact Umm Al-Qura issue numbers per instrument; (2) nezams.com, an independent Arabic legal database, which corroborates the decree number, dates, and confirms no amendments have been made; (3) alrashidi.law, an independent law-firm-authored source, which corroborates decree number, Council of Ministers Resolution number/date, and the chapter/article structure. All three sources agree on the decree metadata; the qadha.org.sa compiled edition was the source of the full verbatim article text. No byte-level primary-source confirmation was achieved this pass -- this is a genuine sourcing limitation, documented rather than silently upgraded to a higher-confidence tier. A companion Implementing Regulation is confirmed to exist (Ministerial Resolution 00479, 20/7/1442H) but is not extracted in this track, nor are the related subordinate instruments referenced by Articles 6, 13, and 18 (status-correction regulation for violators of the prior 1425H law; exemption rules; whistleblower reward rules) -- all distinct instruments from the Law itself, not amendments to it.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "anti_concealment_primary_source_unreachable",
+      "description": "laws.boe.gov.sa (Bureau of Experts portal) was completely unreachable this research pass via all three prescribed methods: direct WebFetch (503/timeout), the r.jina.ai proxy (422 navigation timeout, SPA never reached networkidle), and a direct Wayback Machine fetch via curl (TLS connection reset -- web.archive.org appears blocked at the network/egress-policy layer in this environment); a further attempt via r.jina.ai-proxied Wayback Machine access was blocked by jina's own anti-abuse policy (403). Verbatim text instead rests on a professionally compiled, footnoted edition hosted at qadha.org.sa (authored by a named Ministry of Commerce assistant legal counsel, published by the Saudi Judicial Scientific Association), cross-verified against two further independent secondary sources (nezams.com, alrashidi.law) which corroborate the decree number, dates, chapter/article structure, and (partially) article text. No primary-source byte-level confirmation was achieved this pass -- flagged as a genuine sourcing limitation, not silently upgraded to a higher-confidence tier."
+    },
+    {
+      "article_key": "anti_concealment_task_premise_error",
+      "description": "The initial task premise assumed decree metadata of 'Royal Decree M/162, dated 21/11/1441H' -- this does not correspond to any Anti-Concealment Law found across three independent sources. The confirmed, cross-verified metadata is Royal Decree M/4, dated 1/1/1442H (20/8/2020G), based on Council of Ministers Resolution 785 (28/12/1441H). The premise's date (21/11/1441H) closely matches the Shura Council Resolution date (50/289, 22/11/1441H) that fed into the legislative process -- the likely source of the original confusion, corrected here rather than silently adopted."
+    },
+    {
+      "article_key": "anti_concealment_boe_guid_collision",
+      "description": "laws.boe.gov.sa hosts two distinct law records both titled generically 'نظام مكافحة التستر' under different GUIDs: one for the superseded 1425H law (Royal Decree M/22), and one for the current 1442H law (Royal Decree M/4, this track). Anyone querying the BOE portal by title alone without checking the decree number/date risks retrieving the superseded version -- flagged for future researchers, not applicable to the text ingested here (confirmed M/4 throughout via cross-referenced decree number and date)."
+    },
+    {
+      "article_key": "anti_concealment_marginal_annotations",
+      "description": "The qadha.org.sa compiled source PDF includes marginal cross-reference codes next to several article headings (e.g. references to related Implementing Regulation articles, Exemption Rules articles) -- these are compiler-added navigational annotations, not part of the official statutory text, and were excluded during transcription (a pure editorial-apparatus exclusion, not a textual alteration of the Law's own wording)."
+    }
+  ],
+  "source_artifact": "sources/anti_concealment/law/official_source/anti_concealment_law_official_source.json"
+}

@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 7601,
+  "total_primary_arabic_governing_records": 7621,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8496,
-  "total_tracks": 108,
+  "total_registry_counted_records": 8516,
+  "total_tracks": 109,
   "tracks": [
     {
       "boundaries": {
@@ -5081,6 +5081,53 @@
       "validator_targets": [
         "make trademark-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/anti_concealment/law/official_source/anti_concealment_law_official_source.json",
+        "sources/anti_concealment/law/verified/anti_concealment_law_verified_records.jsonl",
+        "data/anti_concealment_arabic_legal_llm/anti_concealment_law_legal_llm_001_020.json"
+      ],
+      "display_name_ar": "نظام مكافحة التستر",
+      "display_name_en": "Anti-Concealment Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/anti_concealment_arabic_legal_llm/anti_concealment_law_legal_llm_001_020.json",
+          "governing": true,
+          "record_count": 20,
+          "status": "complete"
+        }
+      },
+      "notes": "Anti-Concealment Law «نظام مكافحة التستر» — Royal Decree M/4 dated 1/1/1442H (20/8/2020G, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 785 (28/12/1441H), itself based on Shura Council Resolution 50/289 (22/11/1441H). Confirms and corrects the initial task-briefing's unverifiable premise of 'M/162, 21/11/1441H' — no such decree matches any source; the briefing's date likely conflated the Shura Council Resolution date. Replaces the prior anti-concealment law, Royal Decree M/22 (4/5/1425H). Administering authority: Ministry of Commerce. 20 records, 5 chapters (فصول), all اصلية — no amendments found; nezams.com's own metadata explicitly confirms no amendments. **DISTINCT VERIFICATION TIER — the weakest-sourced tier in this corpus to date:** laws.boe.gov.sa was completely unreachable via ALL THREE prescribed methods (direct WebFetch 503/timeout; r.jina.ai proxy 422 navigation timeout; direct Wayback Machine fetch via curl, TLS connection reset — apparently network-policy-blocked in this environment; a further r.jina.ai-proxied Wayback attempt was itself blocked by jina's own anti-abuse policy). In the total absence of a reachable primary source, this track rests on TRIPLE INDEPENDENT ARABIC SECONDARY SOURCE AGREEMENT: a professionally compiled, footnoted edition hosted at qadha.org.sa (authored by a named Ministry of Commerce assistant legal counsel, published by the Saudi Judicial Scientific Association) for full verbatim text, cross-verified against nezams.com and alrashidi.law for decree metadata and structure. No byte-level primary-source confirmation was achieved — a genuine, explicitly documented sourcing limitation, not silently upgraded to a higher-confidence tier. Additional flagged items: laws.boe.gov.sa hosts two GUID-distinct records both titled generically 'نظام مكافحة التستر' (the superseded 1425H law and the current 1442H law) — a collision risk for future researchers; marginal compiler-added cross-reference codes in the qadha.org.sa source were excluded as editorial apparatus, not statutory text. A companion Implementing Regulation exists (Ministerial Resolution 00479, 20/7/1442H) but is not extracted in this track, nor are related subordinate instruments referenced by Articles 6, 13, and 18 (status-correction regulation for the prior law's violators; exemption rules; whistleblower reward rules). Arabic governs; not legal advice.",
+      "official_text_status": "TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 20,
+        "legal_status_breakdown": {
+          "اصلية": 20,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 20
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/4) — triple independent Arabic secondary sources (qadha.org.sa compiled edition x nezams.com x alrashidi.law), laws.boe.gov.sa unreachable via all methods this pass (see notes)",
+      "status": "complete",
+      "track_id": "anti_concealment_law",
+      "validator_targets": [
+        "make anti-concealment-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5092,6 +5139,7 @@
       "allegiance_commission": 25,
       "aml": 52,
       "anti_bribery": 25,
+      "anti_concealment": 20,
       "anti_cyber_crime": 16,
       "anti_harassment": 8,
       "anti_trafficking": 17,
@@ -5166,7 +5214,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7432,
+    "total_records": 7452,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
