@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 264,
-  "top1_hits": 240,
-  "top3_hits": 257,
-  "top5_hits": 260,
-  "top1_accuracy": 0.9091,
-  "top3_accuracy": 0.9735,
-  "top5_accuracy": 0.9848,
-  "mrr_at_5": 0.9408,
+  "total_queries": 266,
+  "top1_hits": 242,
+  "top3_hits": 259,
+  "top5_hits": 262,
+  "top1_accuracy": 0.9098,
+  "top3_accuracy": 0.9737,
+  "top5_accuracy": 0.985,
+  "mrr_at_5": 0.9412,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1528,13 +1528,13 @@
      "score": 15
     },
     {
-     "record_id": "labor-annex1-llm-art-033",
-     "article_number": 33,
-     "score": 11
+     "record_id": "income-tax-law-llm-art-072",
+     "article_number": 72,
+     "score": 12
     },
     {
-     "record_id": "real-estate-registration-law-llm-art-021",
-     "article_number": 21,
+     "record_id": "labor-annex1-llm-art-033",
+     "article_number": 33,
      "score": 11
     }
    ]
@@ -8200,6 +8200,68 @@
     {
      "record_id": "evidence-elec-llm-art-004",
      "article_number": 4,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "itx-001",
+   "query_ar": "شركة الأموال المقيمة عن الحصص المملوكة بشكل مباشر أو غير مباشر للأشخاص غير السعوديين",
+   "category": "topical",
+   "gold": {
+    "corpus": "income_tax",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "income-tax-law-llm-art-002",
+     "article_number": 2,
+     "score": 32
+    },
+    {
+     "record_id": "oa-llm-companies-art-273",
+     "article_number": 273,
+     "score": 20
+    },
+    {
+     "record_id": "income-tax-law-llm-art-064",
+     "article_number": 64,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "itx-002",
+   "query_ar": "يجب على كل مقيم سواء كان مكلفا أو غير مكلف بمقتضى هذا النظام، وعلى المنشأة الدائمة في المملكة لغير مقيم",
+   "category": "topical",
+   "gold": {
+    "corpus": "income_tax",
+    "law_component": "law",
+    "article_number": 68
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "income-tax-law-llm-art-068",
+     "article_number": 68,
+     "score": 27
+    },
+    {
+     "record_id": "oa-llm-companies-art-187",
+     "article_number": 187,
+     "score": 24
+    },
+    {
+     "record_id": "oa-llm-companies-art-256",
+     "article_number": 256,
      "score": 19
     }
    ]

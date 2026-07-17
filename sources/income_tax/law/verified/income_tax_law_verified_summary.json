@@ -1,0 +1,157 @@
+{
+  "law_key": "income_tax",
+  "layer": "INCOME_TAX_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 81,
+  "official_text_status": "BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY",
+  "status_counts": {
+    "اصلية": 52,
+    "معدلة": 29,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/1)",
+  "decree_date_hijri": "15/1/1425",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "تعريفات",
+      "articles": "1"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "المكلفون",
+      "articles": "2-5"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "الوعاء الضريبي وأسعار الضريبة",
+      "articles": "6-7"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "الدخل الخاضع للضريبة",
+      "articles": "8-11"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "مصاريف تحقيق الدخل",
+      "articles": "12-21"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "قواعد المحاسبة الضريبية",
+      "articles": "22-27"
+    },
+    {
+      "label_ar": "الفصل السابع",
+      "title_ar": "قواعد إضافية لتحديد الوعاء الضريبي",
+      "articles": "28-35"
+    },
+    {
+      "label_ar": "الفصل الثامن",
+      "title_ar": "قواعد الضرائب على شركات الأشخاص",
+      "articles": "36-42"
+    },
+    {
+      "label_ar": "الفصل التاسع",
+      "title_ar": "قواعد الضرائب على شركات الأموال",
+      "articles": "43"
+    },
+    {
+      "label_ar": "الفصل العاشر",
+      "title_ar": "ضريبة استثمار الغاز الطبيعي",
+      "articles": "44-55"
+    },
+    {
+      "label_ar": "الفصل الحادي عشر",
+      "title_ar": "أحكام عامة",
+      "articles": "56-59"
+    },
+    {
+      "label_ar": "الفصل الثاني عشر",
+      "title_ar": "تقديم الإقرارات والربط وإجراءات الاعتراض والاستئناف",
+      "articles": "60-67"
+    },
+    {
+      "label_ar": "الفصل الثالث عشر",
+      "title_ar": "تحصيل الضرائب",
+      "articles": "68-75"
+    },
+    {
+      "label_ar": "الفصل الرابع عشر",
+      "title_ar": "الغرامات",
+      "articles": "76-78"
+    },
+    {
+      "label_ar": "الفصل الخامس عشر",
+      "title_ar": "صلاحيات الوزير",
+      "articles": "79"
+    },
+    {
+      "label_ar": "الفصل السادس عشر",
+      "title_ar": "أحكام ختامية",
+      "articles": "80-81"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCES: this track's current-consolidated text rests on FOUR sources checked this pass, with cross-verification achieved for every one of the 81 articles from at least two independent sources in agreement (BOE + nezams.com at minimum), and the large majority also cross-checked against ZATCA's PDF and/or gstc.gov.sa's PDF (3-4-source agreement): (1) laws.boe.gov.sa (Bureau of Experts / BOE portal), reached via the Wayback Machine's raw-content ('if_') form with an explicit desktop User-Agent header after both a direct fetch (HTTP 503) and an r.jina.ai proxy attempt failed -- this was the single richest structural source, with per-article amendment-history popups quoting decree numbers/dates and replacement text; (2) ZATCA's (Zakat, Tax and Customs Authority) own official consolidated Arabic PDF, downloaded and extracted via pdftotext with Unicode NFKC normalization for a font/glyph-mapping issue (Arabic Presentation-Forms codepoints), carrying >=27 numbered footnotes documenting amendments; (3) gstc.gov.sa's older PDF mirror ('INCOME.pdf'), same extraction method, confirmed to be a less-amended earlier consolidation (lists only 3 amending decrees vs. ZATCA's 5); (4) nezams.com, reached via a direct curl with full browser headers (plain curl without headers returned HTTP 406) and parsed via BeautifulSoup. IMPORTANT LIMITATION -- CHAPTER 10 (Articles 44-55, the Natural Gas Investment Tax chapter, fully replaced by Royal Decree M/70 dated 11/7/1439H): BOTH of the two government-authority PDF sources (ZATCA's own official PDF and gstc.gov.sa's PDF) print ONLY a bare repeal notice for this entire 12-article chapter, without reproducing what M/70 actually enacted in their place -- the mirror image of this corpus's VAT-law-track finding (there ZATCA's PDF was MORE current than BOE for 2 articles; here ZATCA is materially incomplete for an entire chapter). The full substantive current text for Articles 44-55 in this track rests on TWO sources only: the BOE portal (via Wayback) cross-verified word-for-word against nezams.com. All other 69 articles rest on the 4-source base tier described above. IMPORTANT LIMITATION -- ORIGINAL PRE-AMENDMENT TEXT: the research pass reported having seen 'before' wording in BOE amendment-history popups for Article 2(a) [pre-M/153], Article 6, Article 7(b), Article 56, Article 66, and Article 67, but never transcribed that wording verbatim into its deliverable report text (only a narrative description that it was 'recovered'). Per this corpus's zero-fabrication policy, NO original_1425h_text field is populated for ANY article in this track -- this is a documented gap, not a fabrication, and differs from this law's closest structural analog (the VAT-law track) only in that VAT never claimed to have seen any 'before' text at all, whereas here the claim exists but the verbatim text was not delivered in usable form; a dedicated follow-up pass could re-extract it directly from the BOE portal. Twelve articles (44-55) are separately confirmed to have NO recoverable original 1425H text in any of the four sources checked (a bare repeal notice is all that survives) -- this is a stronger, independently-confirmed gap, not merely an un-transcribed one. IMPORTANT LIMITATION -- LOW-CONFIDENCE AMENDED-ARTICLE MARKINGS: Articles 9, 12, 13, 17, 43, 63, and 65 are marked معدلة on the strength of ZATCA-PDF footnote citations and the Section (e) amendment ledger's mention of Royal Decree M/131 and/or M/113 'touching' them, but the research report never states a specific clause-level effect for any of these seven articles (PDF page-break artifacts were noted as occasionally misplacing a footnote's apparent article of origin) -- their history entries are explicitly hedged rather than describing a concrete textual change, and no original-vs-current text split is given for any of them. ADMINISTERING-AUTHORITY ANACHRONISM: the statute's own current Article 1 still defines 'الهيئة' as 'الهيئة العامة للزكاة والدخل' (GAZT) -- itself a 2016-era rename of the original 1425H-era 'مصلحة الزكاة والدخل' (Department of Zakat and Income), itself further superseded by the 2021 GAZT+Customs merger into ZATCA. Neither rename has ever been reflected by a further Royal-Decree-level amendment to Article 1's definitions. 'الهيئة' and 'المصلحة' are preserved verbatim exactly as they appear in the specific source used for each individual article -- not normalized to a single current term. The BOE portal's default per-article view broadly retains 'المصلحة' outside the 9 articles it structurally flags as amended; no exhaustive word-for-word diff of all 81 articles between BOE and ZATCA was performed this pass (only spot-checks), so residual undetected staleness beyond what was checked cannot be fully ruled out. A companion Implementing Regulation (Ministerial Resolution No. 1535) is confirmed to exist via two hosted copies (ZATCA and gstc.gov.sa) but its exact Hijri date could not be verified this pass and it is not extracted in this track.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "income_tax_art_066_m52_date_conflict",
+      "description": "Royal Decree M/52's date is 28/4/1441H per ZATCA's own official consolidated PDF (stated twice: in the document's amendment-history header and in footnote 25 of the body) versus 28/7/1441H per the BOE government legal portal's amendment-history popup for Article 66 -- three months apart, for the same decree number, amending the same article. Not adjudicated this pass (a web search only echoed the ZATCA figure, likely drawing on overlapping indexed content rather than an independent check). BOTH candidate dates are recorded in Article 66's history entry rather than silently picking one. A follow-up should verify against the Umm Al-Qura Gazette issue that actually carried M/52."
+    },
+    {
+      "article_key": "income_tax_chapter10_zatca_gstc_incomplete",
+      "description": "ZATCA's consolidated PDF (and, independently, the older gstc.gov.sa PDF) print only a repeal notice for Chapter 10 (Articles 44-55): 'these articles were repealed by Royal Decree M/70 dated 11/7/1439H, effective from 1/1/2018G' -- without reproducing what M/70 actually enacted in their place. The full substantive text (natural-gas-investment definitions, tax base, the IRR-linked rate table in Article 48) exists only via the BOE portal, independently corroborated word-for-word by nezams.com -- i.e. only 2 of the 4 sources checked for this track, not the usual 3-4. This is the mirror image of this corpus's VAT-law-track finding (there ZATCA's PDF was MORE current than BOE for 2 articles; here, for an entire 12-article chapter, ZATCA and gstc are both materially incomplete). No original 1425H (pre-M/70) text for Articles 44-55 is recoverable from any of the four sources -- only the bare repeal notice survives -- so no original_1425h_text field is populated for these 12 articles."
+    },
+    {
+      "article_key": "income_tax_boe_default_body_staleness",
+      "description": "The BOE portal's default per-article body is frequently pre-amendment/stale: confirmed for Articles 2, 56, 66, and 67 (default body shows superseded text; the article's own amendment-history popup shows the current replacement) and Article 80 (default body is simply truncated -- shows only paragraph (a) of 4). This matches the pattern already documented in this corpus's VAT-law track. BOE's un-flagged article bodies also broadly retain 'المصلحة' (the old Department name) where ZATCA's PDF consistently shows 'الهيئة'. No exhaustive word-for-word diff of all 81 articles between BOE and ZATCA was performed this pass (only spot-checks), so residual staleness beyond what was spot-checked cannot be ruled out. Flagged as a residual verification gap for a dedicated follow-up pass."
+    },
+    {
+      "article_key": "income_tax_zatca_footnotes_exceed_boe_flags",
+      "description": "ZATCA's footnote apparatus reveals more amended provisions than BOE's own 'changed' structural flag captures: BOE flags only 9 articles as amended (1, 2, 6, 7, 8, 21, 56, 66, 67), but ZATCA's PDF carries at least 27 numbered footnotes (mostly citing Royal Decree M/131) touching additional articles/paragraphs (approximately 2, the Article 3/4 boundary, 6, 7, 9, 12, 13, 17, 21, 43, 59, 63, 65-67). Because ZATCA's body already appears to bake these in as 'current,' the final wording captured is likely sound, but exact clause-level attribution of some footnotes is approximate -- PDF page-break artifacts occasionally misplace a footnote's apparent article of origin. Articles 9, 12, 13, 17, 43, 63, and 65 are marked معدلة in this track on this reduced-confidence footnote evidence alone, with no specific clause-level effect stated in any history entry. The ambiguous 'Article 3/4 boundary' footnote could not be attributed to either Article 3 or Article 4 specifically, so NEITHER is marked معدلة in this track -- a genuine unresolved attribution gap, not a considered finding that neither was touched."
+    },
+    {
+      "article_key": "income_tax_nezams_stale_post_1438h",
+      "description": "nezams.com is stale on the two most recent (1441H) amendments: its Article 2 entry carries no amendment note at all for the M/153 (and possibly M/131) changes to paragraph (a); its Article 66 entry documents the M/113 amendment in full but has no mention whatsoever of the subsequent M/52 amendment. nezams.com should not be relied on alone for anything in this law dated after approximately 1438H."
+    },
+    {
+      "article_key": "income_tax_gazette_publication_date_single_sourced",
+      "description": "The Official Gazette publication date (Umm Al-Qura issue 3390, dated 11/3/1425H) comes from one ZATCA-PDF footnote only (footnote 28) and was not independently cross-checked against a second primary citation of that specific Gazette issue."
+    },
+    {
+      "article_key": "income_tax_art_066_paragraph_deletions_single_sourced",
+      "description": "Article 66's stated deletion of paragraphs (ج، د، هـ، و) by Royal Decree M/113 rests on nezams.com alone for the explicit 'deleted by M/113' claim -- the BOE popup only quotes the (a)/(b) replacement text without explicitly stating the other paragraphs were deleted (their absence from the current text is corroborated by 2 sources, but the deletion rationale/instrument attribution is single-sourced)."
+    },
+    {
+      "article_key": "income_tax_art_021_006_007_added_paragraphs_zatca_only",
+      "description": "Article 21(d) and parts of Articles 6 and 7's added paragraphs rest primarily on ZATCA's PDF as the operative single source recovering that specific clause-level text -- BOE's default body for these provisions simply omits them with no popup quoting the addition. Text is included because ZATCA is a first-party administering-authority source, but it is single-sourced at the clause level for these specific additions."
+    },
+    {
+      "article_key": "income_tax_implementing_regulation_date_not_pinned_down",
+      "description": "The Implementing Regulation (اللائحة التنفيذية لنظام ضريبة الدخل) is confirmed to exist via two hosted copies (ZATCA's own site and gstc.gov.sa's older mirror titled 'INCOM2.pdf'), issued as Ministerial Resolution No. 1535. Its exact Hijri date could not be verified this pass -- only the resolution number surfaced in the sources checked. Per task instructions its text is not extracted in this track; flagged as incomplete metadata only."
+    },
+    {
+      "article_key": "income_tax_art_003b_ministerial_resolution_2194_not_an_amendment",
+      "description": "Ministerial Resolution No. 2194 (12/7/1432H) provides an interpretive clarification of the phrase 'الإدارة الرئيسة' (principal management) used in Article 3(b) -- this is explicitly NOT a textual amendment to Article 3 itself; the statutory wording of Article 3(b) is unchanged and Article 3 is marked اصلية in this track. Recorded here so it is not conflated with a genuine amendment."
+    },
+    {
+      "article_key": "income_tax_original_1425h_text_not_populated_despite_claim",
+      "description": "The research report's Section (e) states that actual pre-amendment 'before' text was recovered (quoted by BOE portal amendment-history popups) for Article 2(a) [pre-M/153], Article 6, Article 7(b), Article 56, Article 66, and Article 67 -- but that verbatim wording was never transcribed into the report's own deliverable article-by-article text (Section (c) only carries inline sourcing annotations, not quoted before-text blocks). Per this corpus's zero-fabrication policy, this track does NOT populate original_1425h_text for any of the 81 articles, including these six, since the actually-delivered source material never supplied that verbatim wording in usable form. This is a documented gap for a dedicated follow-up pass, not a fabrication."
+    },
+    {
+      "article_key": "income_tax_administering_authority_terminology_anachronism",
+      "description": "The law is popularly said to be administered by ZATCA (هيئة الزكاة والضريبة والجمارك), but ZATCA did not exist until the 2021 GAZT+Customs merger. The statute's own current Article 1 still defines 'الهيئة' as 'الهيئة العامة للزكاة والدخل' (GAZT) -- itself a 2016-era rename of the original 1425H-era 'مصلحة الزكاة والدخل' (Department of Zakat and Income). Neither the GAZT-to-ZATCA 2021 merger nor the earlier Department-to-GAZT rename has ever been reflected by a further Royal-Decree-level amendment to Article 1's definitions. This is a genuine, confirmed drafting lag in the primary source itself. 'الهيئة' and 'المصلحة' are preserved verbatim exactly as found per-article in the specific source used for that article, and are never normalized to a single current term across this track."
+    },
+    {
+      "article_key": "income_tax_boe_wayback_snapshot_age",
+      "description": "The BOE-derived text in this track reflects a Wayback Machine snapshot dated 15 February 2026 (approximately 5 months old relative to this research pass, 17 July 2026), not a live fetch of the BOE portal. Noted for transparency; considered unlikely to be materially stale given the newest confirmed amendment (Royal Decree M/153) dates to 2020G / 1441H."
+    },
+    {
+      "article_key": "income_tax_preamble_ar_not_verbatim",
+      "description": "The full verbatim Arabic text of Royal Decree M/1's own preamble (the standard royal-decree enactment formula, e.g. 'بعون الله تعالى نحن فهد بن عبدالعزيز آل سعود ملك المملكة العربية السعودية ... رسمنا بما هو آت') was not captured character-for-character in this research pass -- the research report confirms the underlying facts (decree number/date, king's name, statutory citations, Council of Ministers Resolution 278, Shura Council resolutions, Gazette issue number, repealed prior laws) only in summarized English narrative form, not as a quoted Arabic block. The preamble_ar field in this track's source artifact is therefore a factual composite built only from those confirmed citation details, not a literal quotation, unlike some other tracks in this corpus (e.g. VAT, SAMA) where the full verbatim preamble text was captured. Flagged as a gap for a dedicated follow-up extraction directly from the BOE portal's raw preamble HTML."
+    }
+  ],
+  "source_artifact": "sources/income_tax/law/official_source/income_tax_law_official_source.json"
+}

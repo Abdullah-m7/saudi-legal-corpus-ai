@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8141,
+  "total_primary_arabic_governing_records": 8222,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9036,
-  "total_tracks": 117,
+  "total_registry_counted_records": 9117,
+  "total_tracks": 118,
   "tracks": [
     {
       "boundaries": {
@@ -5504,6 +5504,53 @@
       "validator_targets": [
         "make environmental-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/income_tax/law/official_source/income_tax_law_official_source.json",
+        "sources/income_tax/law/verified/income_tax_law_verified_records.jsonl",
+        "data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json"
+      ],
+      "display_name_ar": "نظام ضريبة الدخل",
+      "display_name_en": "Income Tax Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
+          "governing": true,
+          "record_count": 81,
+          "status": "complete"
+        }
+      },
+      "notes": "Income Tax Law «نظام ضريبة الدخل» — Royal Decree M/1 dated 15/1/1425H, approving Council of Ministers Resolution 278 (20/11/1424H), signed by King Fahd bin Abdulaziz Al Saud. Repeals the 1370H-era income tax system, the additional oil-company income tax, and the original Natural Gas Investment Tax Law (M/37, 1424H). Administered by what the statute's own current Article 1 still calls 'الهيئة العامة للزكاة والدخل' (GAZT) — a name itself superseded by the 2021 ZATCA merger, never updated by any further Royal-Decree-level amendment; the older term 'المصلحة' is preserved verbatim per-article wherever a specific source literally uses it, not normalized. 81 records across 16 فصول: 52 اصلية / 29 معدلة — 10 individually confirmed via BOE's own 'changed' flag and/or explicit report annotation (Articles 1, 2, 6, 7, 8, 21, 56, 59, 66, 67), 12 from Chapter 10's full replacement by Royal Decree M/70 (11/7/1439H, introducing the Natural Gas Investment Tax framework and cutting its base rate from 30% to 20%), and 7 lower-confidence articles (9, 12, 13, 17, 43, 63, 65) marked معدلة on ZATCA-footnote/ledger evidence alone with no clause-level effect ever stated by the research pass. **DISTINCT VERIFICATION TIER:** current-consolidated text rests on FOUR sources — laws.boe.gov.sa (via the Wayback Machine, reached with an explicit User-Agent header after both direct and r.jina.ai-proxied attempts failed), ZATCA's own official consolidated PDF, an older gstc.gov.sa PDF, and nezams.com — with every one of the 81 articles cross-verified from at least two sources in agreement, and the large majority from three or four. **IMPORTANT LIMITATION:** Chapter 10 (Articles 44-55) is the mirror image of this corpus's VAT-law-track finding — BOTH government-authority PDF sources (ZATCA and gstc.gov.sa) print only a bare repeal notice for this entire 12-article chapter, omitting the substantive M/70 replacement text entirely; the full current text rests on TWO sources only (BOE via Wayback, cross-verified word-for-word against nezams.com), not the usual 3-4. **NO original_1425h_text field is populated for ANY article** — the research report described having seen pre-amendment 'before' text for six articles via BOE's amendment-history popups but never transcribed it verbatim into deliverable form, and on inspection the raw scratchpad data mostly quoted intermediate amendment states rather than clean 1425H originals, so nothing was promoted into this field rather than risk fabricating a reconstructed original; Chapter 10's pre-M/70 text is independently confirmed unrecoverable from any of the four sources. Article 66 carries an unresolved, explicitly dual-dated conflict for Royal Decree M/52 (28/4/1441H per ZATCA's PDF vs 28/7/1441H per BOE's own amendment-history feature) — both candidate dates are recorded in its history entry rather than silently picking one. 14 total flagged discrepancies (see known_unresolved_discrepancies) also cover: BOE's default per-article body being frequently pre-amendment/stale (confirmed for Articles 2, 56, 66, 67, 80) without a full 81-article diff having been performed; ZATCA's footnote apparatus touching more articles than BOE's own 'changed' markup flags, with some footnote-to-clause attributions approximate due to PDF page-break artifacts; nezams.com confirmed stale on the two most recent (1441H) amendments; a single-sourced Official Gazette publication date; and Ministerial Resolution 2194 (12/7/1432H) explicitly distinguished as a non-amending interpretive clarification of Article 3(b)'s 'الإدارة الرئيسة' term, not a textual amendment. A companion Implementing Regulation (Ministerial Resolution 1535, exact Hijri date unconfirmed) is not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY",
+      "record_counts": {
+        "arabic_articles": 81,
+        "legal_status_breakdown": {
+          "اصلية": 52,
+          "مضافة": 0,
+          "معدلة": 29,
+          "ملغاة": 0
+        },
+        "total": 81
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/1) — BOE via Wayback x ZATCA's own official PDF x gstc.gov.sa PDF x nezams.com, 3-4-source agreement for 69/81 articles; Chapter 10 BOE+nezams only (see notes)",
+      "status": "complete",
+      "track_id": "income_tax_law",
+      "validator_targets": [
+        "make income-tax-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5553,6 +5600,7 @@
       "gcc_ownership": 6,
       "gtpl": 256,
       "iflas_hudud": 23,
+      "income_tax": 81,
       "insurance_control": 25,
       "investment": 53,
       "judgment_objection_methods": 62,
@@ -5598,7 +5646,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7972,
+    "total_records": 8053,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
