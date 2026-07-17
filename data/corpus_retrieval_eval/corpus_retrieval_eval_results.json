@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 236,
-  "top1_hits": 212,
-  "top3_hits": 229,
-  "top5_hits": 232,
-  "top1_accuracy": 0.8983,
-  "top3_accuracy": 0.9703,
-  "top5_accuracy": 0.9831,
-  "mrr_at_5": 0.9338,
+  "total_queries": 238,
+  "top1_hits": 214,
+  "top3_hits": 231,
+  "top5_hits": 234,
+  "top1_accuracy": 0.8992,
+  "top3_accuracy": 0.9706,
+  "top5_accuracy": 0.9832,
+  "mrr_at_5": 0.9343,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7271,6 +7271,68 @@
      "record_id": "oa-llm-companies-art-069",
      "article_number": 69,
      "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "cml-001",
+   "query_ar": "يعد مخالفا لأحكام نظام السوق المالية أي شخص يقوم عمدا بعمل يوجد انطباعا غير صحيح أو مضللا بشأن السوق أو الأسعار أو قيمة أي ورقة مالية",
+   "category": "topical",
+   "gold": {
+    "corpus": "capital_market",
+    "law_component": "law",
+    "article_number": 49
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "capital-market-law-llm-art-049",
+     "article_number": 49,
+     "score": 48
+    },
+    {
+     "record_id": "capital-market-law-llm-art-001",
+     "article_number": 1,
+     "score": 40
+    },
+    {
+     "record_id": "capital-market-law-llm-art-050",
+     "article_number": 50,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "cml-002",
+   "query_ar": "يحظر على أي شخص يحصل على معلومات داخلية أن يتداول بطريق مباشر أو غير مباشر الورقة المالية التي تتعلق بهذه المعلومات",
+   "category": "topical",
+   "gold": {
+    "corpus": "capital_market",
+    "law_component": "law",
+    "article_number": 50
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "capital-market-law-llm-art-050",
+     "article_number": 50,
+     "score": 40
+    },
+    {
+     "record_id": "capital-market-law-llm-art-055",
+     "article_number": 55,
+     "score": 25
+    },
+    {
+     "record_id": "capital-market-law-llm-art-001",
+     "article_number": 1,
+     "score": 23
     }
    ]
   },
