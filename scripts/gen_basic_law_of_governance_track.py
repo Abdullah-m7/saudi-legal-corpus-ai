@@ -26,10 +26,14 @@ sources/basic_law_of_governance/law/official_source/
 basic_law_of_governance_official_source.json's verification_methodology_note
 for the full methodology.
 
-Fresh consolidated text: all 83 records اصلية (no amendment history found or
-flagged by the BOE source for any article). Articles are numbered by
-ordinal position 1..83 (no مكرر), organized under 9 chapters with
-section_ar carrying each article's chapter heading.
+MIXED TIER, POST-MERGE CORRECTED: 82 records اصلية on the primary BOE/WIPO
+Lex tier; Article 5 is معدلة, discovered via a cross-track conflict with the
+Allegiance Commission Law's own promulgation order, and carries a distinct
+verification_tier (SECONDARY_SOURCE_PLUS_PRIMARY_OCR_CONFIRMED_AMENDMENT) —
+see the source artifact's verification_methodology_note and
+known_unresolved_discrepancies for the full correction history. Articles are
+numbered by ordinal position 1..83 (no مكرر), organized under 9 chapters
+with section_ar carrying each article's chapter heading.
 
 No legal text is altered. Arabic governs; no translation/paraphrase/
 interpretation. Read-only over input; deterministic over outputs.
@@ -52,7 +56,8 @@ LLM_PATH = os.path.join(ROOT, "data", "basic_law_of_governance_arabic_legal_llm"
 
 LAW_ID = "sa-basic-law-of-governance-a90-1412"
 LAW_AR = "النظام الأساسي للحكم"
-STATUS = "BOE_PORTAL_PRIMARY_SOURCE_WIPO_LEX_SPOT_CHECKED"
+STATUS = "MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER"
+PRIMARY_TIER = "BOE_PORTAL_PRIMARY_SOURCE_WIPO_LEX_SPOT_CHECKED"
 KEY_RE = r"basic_law_of_governance_art_(\d{3})$"
 STOP = set(("من في على عن إلى أو و أن التي الذي ما غير قبل بعد عند لدى هذه هذا به بها لها له أي كل "
             "ذلك تلك ذات ذوات بأي بما فيها فيه مع ومن وأي وفي وعلى أما إذا كان كانت يكون تكون وقد قد "
@@ -86,8 +91,10 @@ def main():
         a = arts[key]
         n = int(re.match(KEY_RE, key).group(1))
         ls = a.get("legal_status_ar")
+        is_amended = ls == "معدلة"
         text = a["text"]
         checked = a["cross_verified_against_wipo_lex"]
+        tier = a.get("verification_tier", PRIMARY_TIER)
         ver.append({"law_key": "basic_law_of_governance", "law_component": "law", "language": "ar",
                     "record_layer": "BASIC_LAW_OF_GOVERNANCE_ARABIC_VERIFIED_TEXT",
                     "article_number": n, "is_mukarrar": False, "article_key": key,
@@ -95,12 +102,14 @@ def main():
                     "section_ar": a.get("section_ar", ""),
                     "article_text_verified": text,
                     "verification_status": a["status"],
+                    "verification_tier": tier,
                     "cross_verified_against_wipo_lex": checked,
                     "legal_status_ar": ls,
-                    "is_repealed": False, "is_amended": False, "is_added": False,
+                    "is_repealed": False, "is_amended": is_amended, "is_added": False,
                     "amendment_history": a.get("history"),
-                    "official_text_status": STATUS,
-                    "governing_source_note": a["verification_note"],
+                    "original_1412h_text": a.get("original_1412h_text"),
+                    "official_text_status": tier,
+                    "governing_source_note": a.get("verification_note", ""),
                     "translation_performed": False, "legal_interpretation_performed": False,
                     "summarized_or_paraphrased": False, "english_used_for_correction": False})
         llm.append({"law_id": LAW_ID, "law_component": "law", "article_number": n,
@@ -108,7 +117,7 @@ def main():
                     "article_title_ar": a["number_label_ar"],
                     "section_ar": a.get("section_ar", ""),
                     "legal_status_ar": ls, "is_repealed": False,
-                    "is_amended": False, "is_added": False,
+                    "is_amended": is_amended, "is_added": False,
                     "record_id": "basic-law-of-governance-llm-art-%03d" % n,
                     "record_type": "verified_arabic_article", "language": "ar",
                     "governing_text_language": "ar", "article_text_ar": text,
@@ -120,16 +129,21 @@ def main():
                     "search_queries_ar": ["المادة %d %s" % (n, LAW_AR),
                                           "%s المادة %d" % (LAW_AR, n),
                                           "المادة %d النظام الأساسي للحكم" % n],
-                    "text_status": STATUS,
+                    "text_status": tier,
                     "source_trust": {"source_authority": ("Royal Order — Bureau of Experts (BOE) "
                                                           "portal, cross-checked against WIPO Lex "
                                                           "(spot-checked, see cross_verified_"
-                                                          "against_wipo_lex)"),
+                                                          "against_wipo_lex)"
+                                                          if not is_amended else
+                                                          "Royal Order — amendment confirmed via "
+                                                          "secondary sources plus primary-source "
+                                                          "OCR (see verification_tier)"),
                                      "source_authority_ar": "أمر ملكي — بوابة هيئة الخبراء بمجلس الوزراء، تحقق جزئي مقارنة بـ WIPO Lex",
-                                     "source_status": STATUS.lower(),
+                                     "source_status": tier.lower(),
                                      "source_document_ar": LAW_AR,
                                      "legal_status_ar": ls,
                                      "verification_status": a["status"],
+                                     "verification_tier": tier,
                                      "cross_verified_against_wipo_lex": checked},
                     "translation_performed": False, "legal_interpretation_performed": False,
                     "english_used_for_correction": False, "text_summarized_or_paraphrased": False})
@@ -142,20 +156,21 @@ def main():
                "record_count": len(ver), "official_text_status": STATUS,
                "status_counts": src["status_counts"],
                "decree": src["decree"], "decree_date_hijri": src["decree_date_hijri"],
-               "consolidated_amended_law": False,
+               "consolidated_amended_law": True,
                "chapter_structure": src["chapter_structure"],
                "spot_checked_count": sum(1 for a in arts.values() if a["cross_verified_against_wipo_lex"]),
                "verification_methodology_note": src["verification_methodology_note"],
+               "known_unresolved_discrepancies": src.get("known_unresolved_discrepancies", []),
                "source_artifact": os.path.relpath(SRC, ROOT)},
               open(SUMMARY, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     json.dump({"layer_id": "sa-basic-law-of-governance-arabic-legal-llm-full", "law_id": LAW_ID,
                "law_component": "law",
-               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (83 مادة؛ إصدار موحّد: 83 أصلية)",
-               "title_en": "Basic Law of Governance — Arabic LLM-ready layer (83 records)",
+               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (83 مادة؛ نص موحّد: 82 أصلية، 1 معدّلة)",
+               "title_en": "Basic Law of Governance — Arabic LLM-ready layer (83 records, consolidated)",
                "record_type": "verified_arabic_article", "language": "ar",
                "governing_text_language": "ar", "record_count": len(llm),
                "article_range": [1, 83], "text_status": STATUS,
-               "consolidated_amended_law": False, "status_counts": src["status_counts"],
+               "consolidated_amended_law": True, "status_counts": src["status_counts"],
                "not_legal_advice": True, "records": llm},
               open(LLM_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("Wrote %d verified + %d LLM-ready Basic Law of Governance records" % (len(ver), len(llm)))

@@ -966,12 +966,12 @@ def main() -> int:
 
     blg = tracks_by_id.get("basic_law_of_governance", {})
     blg_counts = blg.get("record_counts", {})
-    check("[7g77] basic_law_of_governance: 83 Arabic articles, DISTINCT tier (BOE x WIPO Lex)...",
+    check("[7g77] basic_law_of_governance: 83 Arabic articles, MIXED tier (BOE x WIPO Lex, art 5 post-merge corrected)...",
           blg_counts.get("arabic_articles") == 83
-          and blg.get("official_text_status") == "BOE_PORTAL_PRIMARY_SOURCE_WIPO_LEX_SPOT_CHECKED",
+          and blg.get("official_text_status") == "MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER",
           f"counts={blg_counts}")
-    check("    basic_law_of_governance: status breakdown 83/0/0/0...",
-          blg_counts.get("legal_status_breakdown") == {"اصلية": 83, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+    check("    basic_law_of_governance: status breakdown 82/1/0/0...",
+          blg_counts.get("legal_status_breakdown") == {"اصلية": 82, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
           f"breakdown={blg_counts.get('legal_status_breakdown')}")
 
     acc = tracks_by_id.get("anti_cyber_crime_law", {})

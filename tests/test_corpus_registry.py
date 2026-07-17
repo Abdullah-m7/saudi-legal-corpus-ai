@@ -614,8 +614,8 @@ class TestTracks:
     def test_basic_law_of_governance_counts(self, registry):
         t = next(x for x in registry["tracks"] if x["track_id"] == "basic_law_of_governance")
         assert t["record_counts"]["arabic_articles"] == 83
-        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 83, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
-        assert t["official_text_status"] == "BOE_PORTAL_PRIMARY_SOURCE_WIPO_LEX_SPOT_CHECKED"
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 82, "معدلة": 1, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER"
 
     def test_anti_cyber_crime_law_counts(self, registry):
         t = next(x for x in registry["tracks"] if x["track_id"] == "anti_cyber_crime_law")
