@@ -144,6 +144,8 @@ BANKING_CONTROL_LAW_LLM = os.path.join(ROOT, "data", "banking_control_arabic_leg
 CAPITAL_MARKET_LAW_LLM = os.path.join(ROOT, "data", "capital_market_arabic_legal_llm", "capital_market_law_legal_llm_001_068.json")
 COMPETITION_LAW_LLM = os.path.join(ROOT, "data", "competition_arabic_legal_llm", "competition_law_legal_llm_001_028.json")
 PAYMENT_SYSTEMS_LAW_LLM = os.path.join(ROOT, "data", "payment_systems_arabic_legal_llm", "payment_systems_law_legal_llm_001_020.json")
+MINING_INVESTMENT_LAW_LLM = os.path.join(ROOT, "data", "mining_investment_arabic_legal_llm", "mining_investment_law_legal_llm_001_064.json")
+TRADEMARK_LAW_LLM = os.path.join(ROOT, "data", "trademark_arabic_legal_llm", "trademark_law_legal_llm_001_052.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -281,6 +283,8 @@ def main() -> int:
     capital_market_law_llm = _load_json(CAPITAL_MARKET_LAW_LLM)
     competition_law_llm = _load_json(COMPETITION_LAW_LLM)
     payment_systems_law_llm = _load_json(PAYMENT_SYSTEMS_LAW_LLM)
+    mining_investment_law_llm = _load_json(MINING_INVESTMENT_LAW_LLM)
+    trademark_law_llm = _load_json(TRADEMARK_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -301,7 +305,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 106,
+        "total_tracks": 108,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -411,6 +415,8 @@ def main() -> int:
             + capital_market_law_llm["record_count"]  # 68 Capital Market Law (MIXED TIER: 55 CMA-current x BOE-2003 cross-verified, 12 flagged 2003-only historical fallback, 1 reconstructed, see track notes)
             + competition_law_llm["record_count"]  # 28 Competition Law (DISTINCT TIER: BOE Wayback snapshot x nezams.com cross-verified, see track notes)
             + payment_systems_law_llm["record_count"]  # 20 Payment Systems and Services Law (DISTINCT TIER: SAMA official PDF, dual OCR pass x nezams.com cross-verified, see track notes)
+            + mining_investment_law_llm["record_count"]  # 64 Mining Investment Law (DISTINCT TIER: BOE Wayback snapshot x FAOLEX cross-verified, see track notes)
+            + trademark_law_llm["record_count"]  # 52 Trademark Law (DISTINCT TIER: WIPO Lex primary PDF x BOE status card cross-verified, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -511,6 +517,8 @@ def main() -> int:
             + capital_market_law_llm["record_count"]
             + competition_law_llm["record_count"]
             + payment_systems_law_llm["record_count"]
+            + mining_investment_law_llm["record_count"]
+            + trademark_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3689,6 +3697,62 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Payment Systems and Services Law «نظام المدفوعات وخدماتها» — Royal Decree M/26 dated 22/3/1443H (28 October 2021, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 171 (20/3/1443H), published Umm al-Qura 30/3/1443H. Administering authority: Saudi Central Bank (SAMA). Distinct from the Saudi Central Bank Law (M/36, 1442H) and the Banking Control Law (M/5, 1386H) — a separate instrument governing payment systems and services specifically, not merged into the sama/ or banking_control/ source trees. NO chapter (فصل) divisions — a flat sequence of 20 articles, all اصلية; no amending instrument identified, law confirmed in force (ساري). **DISTINCT VERIFICATION TIER:** the official SAMA PDF has a broken font ToUnicode CMap that corrupts direct pdftotext/PyMuPDF extraction; worked around by rendering pages to images at 300dpi and 400dpi and running two independent Arabic-language OCR passes directly on the glyphs, cross-filling gaps between passes, then cross-verifying the OCR'd text word-for-word against nezams.com's independent raw-HTML transcription. rulebook.sama.gov.sa's law-detail page corroborates decree/date/status/article count; Saudipedia corroborates the fine cap and objectives language. Two flagged discrepancies, both confirmed genuine rather than artifacts: Article 12(5) is a single, extremely long run-on sentence, identical across both OCR passes and nezams.com; the defined term «نظام مدفوعات مهم» is rendered with guillemets in Article 7(6) per nezams.com but with plain parentheses in Article 9 in the same source — OCR could not independently confirm SAMA's original glyph at either location, so each article's punctuation is preserved as transcribed rather than normalized. A companion Implementing Regulation (24/11/1444H, SAMA Circular 44093096) is confirmed to exist but is not extracted in this track — candidate for a follow-up companion-track ingestion. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "mining_investment_law",
+                "display_name_ar": "نظام الاستثمار التعديني",
+                "display_name_en": "Mining Investment Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_PORTAL_WAYBACK_X_FAOLEX_CROSS_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/140) — BOE portal via Wayback Machine snapshot (fetched directly), cross-verified structurally against FAOLEX (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": mining_investment_law_llm["record_count"],
+                    "data_path": "data/mining_investment_arabic_legal_llm/mining_investment_law_legal_llm_001_064.json"}},
+                "record_counts": {"arabic_articles": mining_investment_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 63, "معدلة": 0, "ملغاة": 0, "مضافة": 1},
+                                  "total": mining_investment_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/mining_investment/law/official_source/mining_investment_law_official_source.json",
+                    "sources/mining_investment/law/verified/mining_investment_law_verified_records.jsonl",
+                    "data/mining_investment_arabic_legal_llm/mining_investment_law_legal_llm_001_064.json",
+                ],
+                "validator_targets": ["make mining-investment-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Mining Investment Law «نظام الاستثمار التعديني» — Royal Decree M/140 dated 19/10/1441H (11 June 2020, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 634 (17/10/1441H) and Shura Council Resolution 167/35 (21/8/1441H), published Umm al-Qura 12/11/1441H. Administering authority: Ministry of Industry and Mineral Resources (وزارة الصناعة والثروة المعدنية) and the Saudi Geological Survey (هيئة المساحة الجيولوجية السعودية). Replaces the prior mining law, Royal Decree M/47 (20/8/1425H). 64 records across 8 chapters (أبواب): 63 اصلية / 1 مضافة (Article 56 مكرر, added by Royal Decree M/27, 4/2/1444H, introducing criminal penalties for unlicensed extraction). 13 articles (4, 6, 7, 8, 9, 10, 11, 14, 15, 16, 18, 19, 35) carry a documented commencement-date-only administrative amendment (Royal Decree M/12, 8/1/1442H, bringing them into force early as an exception to Article 63's general 180-day rule) — their SUBSTANTIVE TEXT is unchanged, so per this corpus's text-change-based status policy they remain اصلية, with the administrative note preserved in amendment_history. **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass (503/connection-reset); full text instead rests on a Wayback Machine snapshot of the BOE portal fetched directly via curl (not via r.jina.ai or WebFetch, neither of which can reach archive.org), cross-verified structurally against FAOLEX (whose own text extraction was severely word-scrambled by a known RTL-PDF artifact and was never used as a verbatim-text source), further corroborated by taadeen.sa PDF metadata and nezams.com. Flagged discrepancies: Article 50 has a genuine source-text renumbering irregularity (a '3.' clause immediately followed by another '3-' clause instead of '4.'), preserved verbatim; nezams.com's AI-summarized page claims the law has never been amended, directly contradicted by BOE's own record of Article 56 مكرر's 1444H addition — BOE (the primary/official source) is treated as authoritative. A companion Implementing Regulation exists (Ministerial Decision 1006/1/1442, 9/5/1442H, 166 articles/7 chapters, later amended by Ministerial Decision 3293/1/1444, 5/6/1444H) but is not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "trademark_law",
+                "display_name_ar": "قانون (نظام) العلامات التجارية لدول مجلس التعاون لدول الخليج العربية",
+                "display_name_en": "Trademark Law (GCC unified law, as given force in Saudi Arabia)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "WIPO_LEX_PRIMARY_PDF_X_BOE_STATUS_CARD_CROSS_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/51) — WIPO Lex primary hosted PDF with embedded BOE/National Archives status card confirming ساري (in force) (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": trademark_law_llm["record_count"],
+                    "data_path": "data/trademark_arabic_legal_llm/trademark_law_legal_llm_001_052.json"}},
+                "record_counts": {"arabic_articles": trademark_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 51, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": trademark_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/trademark/law/official_source/trademark_law_official_source.json",
+                    "sources/trademark/law/verified/trademark_law_verified_records.jsonl",
+                    "data/trademark_arabic_legal_llm/trademark_law_legal_llm_001_052.json",
+                ],
+                "validator_targets": ["make trademark-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Trademark Law «قانون (نظام) العلامات التجارية لدول مجلس التعاون لدول الخليج العربية» (the GCC-unified Trademarks Law, given domestic force in Saudi Arabia) — Royal Decree M/51 dated 26/7/1435H (2014, issued in the name of King Abdullah bin Abdulaziz Al Saud, signed by Deputy King Salman bin Abdulaziz Al Saud under Royal Order A/145), based on Council of Ministers Resolution 306 (20/7/1435H) and Shura Council Resolution 13/21 (17/4/1435H), approved by the GCC Supreme Council at its 33rd session. Replaces the prior GCC trademark law, Royal Decree M/94 (23/11/1428H). Administering authority: Saudi Authority for Intellectual Property (SAIP). 52 records, flat structure (no chapters, verified by full-text search): 51 اصلية / 1 معدلة (Article 1 — two of five definitions, «الجهة المختصة» and «الوزير», replaced by Royal Decree M/49, 26/6/1442H, reflecting the transfer of administering authority to SAIP; the other three definitions and the remaining 51 articles are unamended). **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass; full text instead rests on WIPO Lex's own hosted Arabic PDF, which embeds an official «بطاقة النظام» (law status card) sourced from the Saudi National Center for Documents and Archives confirming ساري (in force) — the functional equivalent of a direct BOE-portal confirmation via a different retrieval path. The amending Royal Decree M/49 was a scanned/non-text PDF, recovered via two independent Arabic-language OCR passes that agreed verbatim. **⚠ Flagged conflict:** two secondary sources (misa.gov.sa's own hosted 'official translation', and nezams.com) both still present the SUPERSEDED 2002 law (Royal Decree M/21) as if currently in force — this track proceeds on the primary BOE-status-card-confirmed current law (M/51 as amended by M/49) instead; the conflict is preserved as audit provenance, not silently resolved. Additional flagged discrepancies: inconsistent hijri/gregorian dates for M/51 and M/49 across the sources' own metadata fields, and an unresolved M/21→M/94→M/51 repeal-chain ambiguity. A companion Implementing Regulation is confirmed to exist (GCC Trade Cooperation Committee, 51st meeting, 21 May 2015) but is not extracted in this track. Arabic governs; not legal advice.",
             },
         ],
     }

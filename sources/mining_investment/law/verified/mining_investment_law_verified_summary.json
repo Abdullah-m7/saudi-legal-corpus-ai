@@ -1,0 +1,77 @@
+{
+  "law_key": "mining_investment",
+  "layer": "MINING_INVESTMENT_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 64,
+  "official_text_status": "BOE_PORTAL_WAYBACK_X_FAOLEX_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 63,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 1
+  },
+  "decree": "المرسوم الملكي رقم (م/140)",
+  "decree_date_hijri": "19/10/1441",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الباب الأول",
+      "title_ar": "التعريفات وأحكام أولية",
+      "articles": "1-5"
+    },
+    {
+      "label_ar": "الباب الثاني",
+      "title_ar": "الأراضي والمناطق المشمولة بالنشاط التعديني والمستثناة منها",
+      "articles": "6-10"
+    },
+    {
+      "label_ar": "الباب الثالث",
+      "title_ar": "الأحكام العامة للرخص",
+      "articles": "11-27"
+    },
+    {
+      "label_ar": "الباب الرابع",
+      "title_ar": "الحقوق والالتزامات",
+      "articles": "28-37"
+    },
+    {
+      "label_ar": "الباب الخامس",
+      "title_ar": "حقوق الرخص",
+      "articles": "38-48"
+    },
+    {
+      "label_ar": "الباب السادس",
+      "title_ar": "الأحكام المالية",
+      "articles": "49-55"
+    },
+    {
+      "label_ar": "الباب السابع",
+      "title_ar": "المخالفات والعقوبات",
+      "articles": "56-57 (بما في ذلك المادة 56 مكرر)"
+    },
+    {
+      "label_ar": "الباب الثامن",
+      "title_ar": "أحكام عامة",
+      "articles": "58-63"
+    }
+  ],
+  "verification_methodology_note": "Mining Investment Law «نظام الاستثمار التعديني» — Royal Decree M/140 dated 19/10/1441H (11 June 2020), approving the law text following Council of Ministers Resolution 634 (17/10/1441H) and Shura Council Resolution 167/35 (21/8/1441H); published in the Official Gazette (Umm al-Qura) 12/11/1441H (3 July 2020) and, per its own Article 63, entering into force 180 days after publication. It replaces the earlier Mining Investment Law issued by Royal Decree M/47 dated 20/8/1425H (Article 61). Administered jointly by the Ministry of Industry and Mineral Resources (وزارة الصناعة والثروة المعدنية) and the Saudi Geological Survey (هيئة المساحة الجيولوجية السعودية). PRIMARY SOURCE: the official BOE (Bureau of Experts at the Council of Ministers, laws.boe.gov.sa) law-detail portal page. The live BOE portal endpoint was unreachable during this ingestion pass (503 Service Unavailable / connection reset on every direct attempt, and unreachable via the standard WebFetch/r.jina.ai proxy path as well) -- worked around by fetching a Wayback Machine (web.archive.org) snapshot of the same BOE law-detail page DIRECTLY (raw HTTP fetch against archive.org, not via r.jina.ai or WebFetch, neither of which can reach archive.org through this environment's proxy). The snapshot's full HTML was parsed into ordered Arabic text preserving article sequence, article headings, and the inline 'تعديلات المادة' (Article Amendments) annotation boxes BOE renders for amended/commencement-adjusted articles. This BOE-derived text is the sole verbatim source for every article's 'text' field in this file. Cross-verified structurally (article count, chapter/باب boundaries, decree numbers and Hijri dates, and the existence/date of the Article 56 مكرر insertion) against FAOLEX's (UN FAO's legal database) PDF filing of the same law -- FAOLEX's own extracted body text was NOT usable as a verbatim source because its PDF-to-text extraction of the right-to-left Arabic original is severely word-scrambled (reversed word order within lines, broken diacritic placement), a known artifact of naive RTL-PDF text extraction; FAOLEX was used only for corroborating structural/date metadata, never for sourcing article wording. Additional corroboration obtained from taadeen.sa (the Ministry of Industry and Mineral Resources' own mining-sector portal) PDF metadata (decree number, dates, in-force status) and from nezams.com (secondary legal-reference site). Article count: 63 original articles plus one inserted article (Article 56 مكرر, added by Royal Decree M/27 dated 4/2/1444H, in force 90 days after 13/2/1444H, introducing criminal penalties -- imprisonment and/or fine -- for unlicensed extraction of deposits or drilling/exploitation of Category-A minerals), for 64 total current articles. Thirteen articles (4, 6, 7, 8, 9, 10, 11, 14, 15, 16, 18, 19, 35) carry a BOE 'تعديلات المادة' annotation, but in every one of the 13 cases the annotation is solely a commencement-date acceleration under Royal Decree M/12 (8/1/1442H), bringing those articles (and 'other related provisions') into force from 14/2/1442H as an exception to the normal Article-63 180-day rule -- the underlying substantive text of all 13 is unchanged 1441H original wording. Per this corpus's established status policy (legal status reflects TEXT changes, not administrative/commencement-date changes), these 13 articles are classified legal_status_ar = 'اصلية', not 'معدلة'; the M/12 commencement-date fact is instead recorded in each such article's `history` array so it remains visible and auditable rather than silently dropped. During transcription, one stray CMS/template placeholder line -- 'مرفق المادة __' (a leftover attachment-widget label from BOE's page template, immediately preceding the Article 56 مكرر text in the raw fetched source) -- was removed as a pure extraction artifact with no legal meaning; no other content was removed, reordered, paraphrased, or altered, and the underlying substantive text of every article (including the confirmed Article 50 renumbering irregularity -- see known_unresolved_discrepancies) was otherwise preserved exactly as retrieved. Markdown/HTML structural wrapper syntax introduced purely by the extraction/rendering pipeline (heading markers, bold-emphasis markers, and escaped-dash/zero-width-non-joiner artifacts before a handful of Arabic list-letters such as 'أ‌\\-') was stripped from article 'text' fields as non-substantive formatting noise; no wording was changed in doing so. A companion Implementing Regulation (اللائحة التنفيذية لنظام الاستثمار التعديني) exists, issued via Ministerial Decision 1006/1/1442 dated 9/5/1442H (166 articles across 7 chapters), and was itself later amended by Ministerial Decision 3293/1/1444 dated 5/6/1444H -- it is not extracted in this track and is noted here as a candidate for a follow-up companion-track ingestion, consistent with how this corpus treats companion Implementing Regulations for other laws (e.g. Payment Systems Law). Decorative tatweel characters (U+0640, used for text justification in the source HTML typesetting) were stripped from all article text during transcription -- a pure typographic normalization carrying no phonetic or semantic content, not a textual alteration, consistent with this corpus's established precedent for this exact artifact type.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "mining_investment_art_050",
+      "description": "Article 50 (المادة الخمسون) contains an apparent renumbering irregularity in its official source text: paragraph clause '2.' is followed by a clause marked '3.', which is immediately followed by ANOTHER clause also marked '3-' (not '4.'), so the article effectively has two separate clauses both labelled '3'. This has been confirmed present in the official BOE source text itself (checked directly against the primary source, not merely an OCR/extraction artifact of this pipeline) and is preserved verbatim in the 'text' field -- it has NOT been renumbered or corrected."
+    },
+    {
+      "article_key": "mining_investment_nezams_contradiction",
+      "description": "The secondary reference site nezams.com's metadata for this law states that it has never been amended. This is contradicted by BOE's own official record, which shows Article 56 مكرر (السادسة والخمسون مكرر) was added via Royal Decree M/27 dated 4/2/1444H, in force from 90 days after 13/2/1444H. BOE (the Bureau of Experts portal, the primary/official source for this law) is treated as authoritative over nezams.com on this point; the addition of Article 56 مكرر is modeled in this file with legal_status_ar = 'مضافة'."
+    },
+    {
+      "article_key": "mining_investment_commencement_date_articles",
+      "description": "Thirteen articles (4, 6, 7, 8, 9, 10, 11, 14, 15, 16, 18, 19, 35) each carry an official BOE 'تعديلات المادة' (Article Amendments) annotation citing Royal Decree M/12 dated 8/1/1442H, which accelerated each article's individual commencement date to 14/2/1442H as an exception to the law's normal Article-63 180-day-after-publication rule. This is purely an administrative commencement-date change -- the substantive text of all 13 articles is unchanged from the original 1441H enacted wording. Per this corpus's established policy that legal_status_ar reflects TEXT changes only (not administrative/commencement-date amendments), all 13 remain classified 'اصلية' rather than 'معدلة'. To avoid this fact being silently invisible, each of the 13 articles carries a `history` entry documenting the M/12 commencement-date acceleration, and it is flagged here as a corpus-wide note."
+    },
+    {
+      "article_key": "mining_investment_art_056_mukarrar",
+      "description": "The raw BOE-derived source text for Article 56 مكرر (السادسة والخمسون مكرر) contained a stray CMS/template placeholder line reading 'مرفق المادة __' immediately before the article's actual text. This is a pure extraction artifact -- a leftover label from BOE's page template for an attachment/file widget -- and was removed during transcription as it carries no legal meaning and is not part of the law. The underlying substantive text of Article 56 مكرر (the quoted criminal-penalty provisions introduced by Royal Decree M/27, 4/2/1444H) was otherwise preserved exactly as retrieved, including its original opening/closing quotation marks."
+    }
+  ],
+  "source_artifact": "sources/mining_investment/law/official_source/mining_investment_law_official_source.json"
+}

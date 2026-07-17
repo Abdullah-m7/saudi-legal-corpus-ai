@@ -1,0 +1,40 @@
+{
+  "law_key": "trademark",
+  "layer": "TRADEMARK_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 52,
+  "official_text_status": "WIPO_LEX_PRIMARY_PDF_X_BOE_STATUS_CARD_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 51,
+    "معدلة": 1,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/51)",
+  "decree_date_hijri": "26/7/1435",
+  "consolidated_amended_law": true,
+  "chapter_structure": [],
+  "verification_methodology_note": "PRIMARY SOURCE: laws.boe.gov.sa (Bureau of Experts) was unreachable this pass (consistent 503/connection-reset across direct WebFetch, the r.jina.ai proxy, and direct curl). The verbatim text of all 52 articles was instead recovered from WIPO Lex's own hosted Arabic PDF (wipolex-res.wipo.int/.../sa060ar_1.pdf), fetched via curl and extracted with pdftotext. Critically, this PDF embeds an official 'بطاقة النظام' (law status card) sourced from the Saudi National Center for Documents and Archives (the same body BOE's own portal draws from), which explicitly confirms 'حالة النظام: ساري' (status: in force) for Royal Decree M/51 -- this status card is the functional equivalent of a direct BOE-portal confirmation, obtained via a different retrieval path after the live portal itself proved unreachable. The amending Royal Decree M/49 (Article 1's two redefinitions) was retrieved as a separate WIPO Lex PDF (sa100ar.pdf); this PDF was a scanned/non-text image, so its content was recovered via two independent Arabic-language OCR passes (differing resolution/PSM settings), which agreed verbatim on the substantive amended text. Cross-verification against WIPO Lex's own structured metadata (repeal/amendment cross-reference fields) and the M/21 (2002) record's fields was used to establish the amendment and repeal chain, documented with its ambiguities in known_unresolved_discrepancies rather than silently resolved. Two additional secondary sources -- misa.gov.sa's own hosted 'official translation' PDF and nezams.com -- were consulted and found to BOTH present the superseded 2002 law (Royal Decree M/21) as if currently in force; this conflict is preserved as audit provenance, not resolved, and this track proceeds on the primary BOE-status-card- confirmed current law (M/51 as amended by M/49). A companion Implementing Regulation is confirmed to exist (approved by the GCC Trade Cooperation Committee at its 51st meeting, 21 May 2015; reportedly adopted domestically via Saudi Council of Ministers session of 1/6/2016 per secondary web-search corroboration only, not independently verified against a primary text) but is not extracted in this track. The source PDF's raw ه/ھ glyph-encoding artifact (see known_unresolved_discrepancies) was normalized during transcription as a pure typographic correction; no wording, clause, or sub-item was altered, summarized, or paraphrased.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "trademark_decree_dates",
+      "description": "The hijri/gregorian date of Royal Decree M/51 is inconsistent across the primary source's own metadata: the PDF's Title/metadata field (per pdfinfo) states '25 رجب 1435هـ الموافق ل25 مايو 2014م', while the decree's own body text (in both the royal decree and the Council of Ministers resolution) states '26/7/1435هـ'. A separate WIPO Lex page title states '26 Rajab 1435H (May 26, 2014)'. Three different hijri/gregorian pairings appear across ostensibly the same official documentation chain. This track uses the date consistent across the decree's own body text (26/7/1435H) as decree_date_hijri; the metadata-field variant is flagged, not silently adopted or reconciled."
+    },
+    {
+      "article_key": "trademark_amendment_m49_date",
+      "description": "The hijri date of the amending Royal Decree M/49 is inconsistent between two WIPO Lex records for the same instrument: WIPO Lex's dedicated page for the amendment (and its PDF's HTML title) states 26/06/1442H (15 January 2021); WIPO Lex's own cross-reference list on the M/21 record's 'يُلغيه' (repealed-by) field states the same instrument is dated 1/6/1442H. These two hijri dates do not correspond to the same Gregorian date under standard conversion. This track uses 26/6/1442H (the amendment's own dedicated WIPO Lex record) as the amendment_history date; the discrepant alternate date is flagged, not resolved."
+    },
+    {
+      "article_key": "trademark_repeal_chain",
+      "description": "Repeal-chain ambiguity: Royal Decree M/51's own preamble states it replaces the prior GCC trademark law approved by Royal Decree M/94 dated 23/11/1428H (2007) — it does not mention Royal Decree M/21 (1423H/2002) at all. Yet WIPO Lex's structured 'يُلغيه' (repealed-by) field on the M/21 record names the M/51/M/49 combined instrument as M/21's repealer, skipping M/94 entirely in that specific cross-reference. Whether M/94 (2007) was an intermediate repealer of M/21, or whether M/21 continued in some parallel effect until 2014/2016, could not be conclusively determined from the sources consulted. Documented, not resolved."
+    },
+    {
+      "article_key": "trademark_secondary_source_conflict",
+      "description": "Materially conflicting 'current law' claims across secondary sources: nezams.com presents the OLD Royal Decree M/21 (2002) text (58 articles, structured differently) and labels its status as 'ساري' (in force), with no mention of the current GCC law at all. Similarly, misa.gov.sa (Ministry of Investment of Saudi Arabia) hosts an 'Official Translation' PDF watermarked 'Bureau of Experts at the Council of Ministers, Official Translation Department', titled 'Law of Trademarks, Royal Decree No. M/21, August 7, 2002', carrying a 'Last Update: May 18, 2022' notation — an authoritative- looking, government-affiliated source still republishing the superseded 2002 law as of 2022, eight years after WIPO Lex records it as repealed. This directly contradicts WIPO Lex's structured metadata (M/21 = Repealed) and the boe.gov.sa-sourced status card embedded in the M/51 PDF confirming 'ساري' (in force) for the current GCC law. This track treats the currently-in-force law as the GCC Trademarks Law (M/51 as amended by M/49) based on the primary BOE-sourced status card, not the conflicting secondary sources; the conflict itself is preserved here as audit provenance rather than silently resolved."
+    },
+    {
+      "article_key": "trademark_glyph_artifact",
+      "description": "The primary source PDF's raw text extraction (pdftotext) rendered the letter ه (heh) throughout as ھ (a distinct Unicode Arabic presentation-form glyph, e.g. 'الجمھور' for 'الجمهور', 'لھذا' for 'لهذا') — a font-encoding artifact of the source PDF, not a content variant. This was normalized to standard ه during transcription into this corpus (a pure typographic/encoding correction, not a textual alteration), consistent with this corpus's established precedent for normalizing pure typographic artifacts (e.g. decorative tatweel stripping) — flagged here transparently rather than silently fixed."
+    }
+  ],
+  "source_artifact": "sources/trademark/law/official_source/trademark_law_official_source.json"
+}

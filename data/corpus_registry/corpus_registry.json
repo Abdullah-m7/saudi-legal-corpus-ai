@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 7485,
+  "total_primary_arabic_governing_records": 7601,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8380,
-  "total_tracks": 106,
+  "total_registry_counted_records": 8496,
+  "total_tracks": 108,
   "tracks": [
     {
       "boundaries": {
@@ -4987,6 +4987,100 @@
       "validator_targets": [
         "make payment-systems-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/mining_investment/law/official_source/mining_investment_law_official_source.json",
+        "sources/mining_investment/law/verified/mining_investment_law_verified_records.jsonl",
+        "data/mining_investment_arabic_legal_llm/mining_investment_law_legal_llm_001_064.json"
+      ],
+      "display_name_ar": "نظام الاستثمار التعديني",
+      "display_name_en": "Mining Investment Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/mining_investment_arabic_legal_llm/mining_investment_law_legal_llm_001_064.json",
+          "governing": true,
+          "record_count": 64,
+          "status": "complete"
+        }
+      },
+      "notes": "Mining Investment Law «نظام الاستثمار التعديني» — Royal Decree M/140 dated 19/10/1441H (11 June 2020, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 634 (17/10/1441H) and Shura Council Resolution 167/35 (21/8/1441H), published Umm al-Qura 12/11/1441H. Administering authority: Ministry of Industry and Mineral Resources (وزارة الصناعة والثروة المعدنية) and the Saudi Geological Survey (هيئة المساحة الجيولوجية السعودية). Replaces the prior mining law, Royal Decree M/47 (20/8/1425H). 64 records across 8 chapters (أبواب): 63 اصلية / 1 مضافة (Article 56 مكرر, added by Royal Decree M/27, 4/2/1444H, introducing criminal penalties for unlicensed extraction). 13 articles (4, 6, 7, 8, 9, 10, 11, 14, 15, 16, 18, 19, 35) carry a documented commencement-date-only administrative amendment (Royal Decree M/12, 8/1/1442H, bringing them into force early as an exception to Article 63's general 180-day rule) — their SUBSTANTIVE TEXT is unchanged, so per this corpus's text-change-based status policy they remain اصلية, with the administrative note preserved in amendment_history. **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass (503/connection-reset); full text instead rests on a Wayback Machine snapshot of the BOE portal fetched directly via curl (not via r.jina.ai or WebFetch, neither of which can reach archive.org), cross-verified structurally against FAOLEX (whose own text extraction was severely word-scrambled by a known RTL-PDF artifact and was never used as a verbatim-text source), further corroborated by taadeen.sa PDF metadata and nezams.com. Flagged discrepancies: Article 50 has a genuine source-text renumbering irregularity (a '3.' clause immediately followed by another '3-' clause instead of '4.'), preserved verbatim; nezams.com's AI-summarized page claims the law has never been amended, directly contradicted by BOE's own record of Article 56 مكرر's 1444H addition — BOE (the primary/official source) is treated as authoritative. A companion Implementing Regulation exists (Ministerial Decision 1006/1/1442, 9/5/1442H, 166 articles/7 chapters, later amended by Ministerial Decision 3293/1/1444, 5/6/1444H) but is not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_PORTAL_WAYBACK_X_FAOLEX_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 64,
+        "legal_status_breakdown": {
+          "اصلية": 63,
+          "مضافة": 1,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 64
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/140) — BOE portal via Wayback Machine snapshot (fetched directly), cross-verified structurally against FAOLEX (see notes)",
+      "status": "complete",
+      "track_id": "mining_investment_law",
+      "validator_targets": [
+        "make mining-investment-law-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/trademark/law/official_source/trademark_law_official_source.json",
+        "sources/trademark/law/verified/trademark_law_verified_records.jsonl",
+        "data/trademark_arabic_legal_llm/trademark_law_legal_llm_001_052.json"
+      ],
+      "display_name_ar": "قانون (نظام) العلامات التجارية لدول مجلس التعاون لدول الخليج العربية",
+      "display_name_en": "Trademark Law (GCC unified law, as given force in Saudi Arabia)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/trademark_arabic_legal_llm/trademark_law_legal_llm_001_052.json",
+          "governing": true,
+          "record_count": 52,
+          "status": "complete"
+        }
+      },
+      "notes": "Trademark Law «قانون (نظام) العلامات التجارية لدول مجلس التعاون لدول الخليج العربية» (the GCC-unified Trademarks Law, given domestic force in Saudi Arabia) — Royal Decree M/51 dated 26/7/1435H (2014, issued in the name of King Abdullah bin Abdulaziz Al Saud, signed by Deputy King Salman bin Abdulaziz Al Saud under Royal Order A/145), based on Council of Ministers Resolution 306 (20/7/1435H) and Shura Council Resolution 13/21 (17/4/1435H), approved by the GCC Supreme Council at its 33rd session. Replaces the prior GCC trademark law, Royal Decree M/94 (23/11/1428H). Administering authority: Saudi Authority for Intellectual Property (SAIP). 52 records, flat structure (no chapters, verified by full-text search): 51 اصلية / 1 معدلة (Article 1 — two of five definitions, «الجهة المختصة» and «الوزير», replaced by Royal Decree M/49, 26/6/1442H, reflecting the transfer of administering authority to SAIP; the other three definitions and the remaining 51 articles are unamended). **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass; full text instead rests on WIPO Lex's own hosted Arabic PDF, which embeds an official «بطاقة النظام» (law status card) sourced from the Saudi National Center for Documents and Archives confirming ساري (in force) — the functional equivalent of a direct BOE-portal confirmation via a different retrieval path. The amending Royal Decree M/49 was a scanned/non-text PDF, recovered via two independent Arabic-language OCR passes that agreed verbatim. **⚠ Flagged conflict:** two secondary sources (misa.gov.sa's own hosted 'official translation', and nezams.com) both still present the SUPERSEDED 2002 law (Royal Decree M/21) as if currently in force — this track proceeds on the primary BOE-status-card-confirmed current law (M/51 as amended by M/49) instead; the conflict is preserved as audit provenance, not silently resolved. Additional flagged discrepancies: inconsistent hijri/gregorian dates for M/51 and M/49 across the sources' own metadata fields, and an unresolved M/21→M/94→M/51 repeal-chain ambiguity. A companion Implementing Regulation is confirmed to exist (GCC Trade Cooperation Committee, 51st meeting, 21 May 2015) but is not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "WIPO_LEX_PRIMARY_PDF_X_BOE_STATUS_CARD_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 52,
+        "legal_status_breakdown": {
+          "اصلية": 51,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 52
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/51) — WIPO Lex primary hosted PDF with embedded BOE/National Archives status card confirming ساري (in force) (see notes)",
+      "status": "complete",
+      "track_id": "trademark_law",
+      "validator_targets": [
+        "make trademark-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5045,6 +5139,7 @@
       "marriage_contract_hearing": 10,
       "marriage_non_saudi": 11,
       "medical_reports": 13,
+      "mining_investment": 64,
       "mosalaha_center": 10,
       "municipal_realestate": 41,
       "muslaha": 29,
@@ -5067,10 +5162,11 @@
       "telecommunications": 41,
       "terrorism": 127,
       "trade_names": 23,
+      "trademark": 52,
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7316,
+    "total_records": 7432,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
