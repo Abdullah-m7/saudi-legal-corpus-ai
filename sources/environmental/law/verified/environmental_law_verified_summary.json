@@ -1,0 +1,82 @@
+{
+  "law_key": "environmental",
+  "layer": "ENVIRONMENTAL_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 49,
+  "official_text_status": "BOE_WAYBACK_X_GREEN_ORG_PDF_X_NEZAMS_TRIPLE_VERIFIED_ART1_BOE_SELF_CONTRADICTION",
+  "status_counts": {
+    "اصلية": 48,
+    "معدلة": 1,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/165)",
+  "decree_date_hijri": "19/11/1441",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "أحكام عامة",
+      "articles": "1-5"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "الأوساط البيئية والموارد المائية وحمايتها",
+      "articles": "6-11"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "أراضي الغطاء النباتي",
+      "articles": "12-20"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "البيئة البحرية والساحلية",
+      "articles": "21-22"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "الحياة الفطرية",
+      "articles": "23-28"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "المناطق المحمية",
+      "articles": "29-32"
+    },
+    {
+      "label_ar": "الفصل السابع",
+      "title_ar": "الطوارئ والكوارث البيئية",
+      "articles": "33-34"
+    },
+    {
+      "label_ar": "الفصل الثامن",
+      "title_ar": "المخالفات وضبطها وإيقاع العقوبات",
+      "articles": "35-44"
+    },
+    {
+      "label_ar": "الفصل التاسع",
+      "title_ar": "أحكام ختامية",
+      "articles": "45-49"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE: laws.boe.gov.sa (Bureau of Experts) was unreachable live in this research pass (direct WebFetch returned HTTP 503; r.jina.ai proxy returned HTTP 422). BOE's own content was instead recovered via the Wayback Machine (web.archive.org), fetching the 15 October 2025 snapshot (the most recent capture available per the cdx listing) using the iframe-content URL modifier (plain snapshot URLs returned HTTP 403), and the 24 September 2024 snapshot for cross-checking amendment history. Both were parsed as raw HTML to extract BOE's own structured law-text section, its per-article amendment-history pop-ups, and its مادة معدلة/مادة ملغية legend — this is genuinely BOE's own official primary-source content, accessed via archive rather than live. A second independent source, a PDF hosted at green.org.sa (an environmental-sector portal, not BOE) containing the full decree and law text, was fetched directly and converted to plain text with pdftotext -layout. A third independent source, nezams.com, was fetched via direct curl as a further cross-check. All 49 articles were cross-verified as verbatim-identical across the BOE-via-Wayback text and the green.org.sa PDF text, with nezams.com used for additional spot-checks — no article rests on a single source, and this is a strong triple-source verification tier for 48 of the 49 articles. The ONE exception is Article 1's definition of الجهة المختصة (Competent Authority): BOE's own official per-article amendment-history feature, attached specifically to Article 1 and present identically in both the September 2024 and October 2025 Wayback snapshots, states that Council of Ministers Decision No. 406 (14/5/1445H) added the clause 'أو المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر' to that definition — yet BOE's own main running law-text body, in the SAME archived page and in both snapshots, still displays the pre-amendment wording without that clause. This is a genuine, persistent (over one year, across two independent snapshots) self-contradiction within BOE's own official data, not a one-off caching artifact. nezams.com mirrors BOE's stale main-body text and therefore does not independently resolve the question. qanoonsa.com, which hosts several of this law's Implementing Regulations that reference this same definition, was consulted as a further independent source and displays the definition ALREADY including the coral-reef/turtle-authority clause — consistent with BOE's own amendment note, not with BOE's own stale main-body text. This track follows the same reasoning precedent already established for the Traffic Law track (sources/traffic/law/official_source/traffic_law_official_source.json) for handling a documented 'BOE portal lags behind confirmed amendments' situation: the amendment is treated as operative, Article 1 is marked معدلة with a history entry citing Decision 406/1445H and both corroborating sources, and the pre-amendment wording is preserved verbatim as original_1441h_text (it is not lost -- it is simply the wording still shown in BOE's own main body / green.org.sa / nezams.com). This specific point is flagged prominently, not silently resolved -- see known_unresolved_discrepancies. No other article of this law carries any amendment or repeal marker: BOE's per-article amendment-link markup was checked across the full document and only Article 1 has ever had such a link attached, as of the most recent available snapshot (15 October 2025); no article carries BOE's مادة ملغية (repealed) tag. Supersession of the prior 'النظام العام للبيئة' (Royal Decree M/34, 28/7/1422H) by this 1441H law is explicitly confirmed by the enacting Royal Decree's own text (البند ثانياً/1/د), which lists it among several repealed prior instruments (also repealed: نظام الهيئة السعودية للحياة الفطرية M/22 1406H; نظام صيد الحيوانات والطيور البرية M/8 1420H; نظام الاتجار بالكائنات الفطرية المهددة بالانقراض ومنتجاتها M/9 1421H; نظام المراعي والغابات M/55 1425H; نظام المناطق المحمية للحياة الفطرية M/66 1436H; plus two Council of Ministers decisions on the Environment Council's establishment/governance). The same decree text carves out a narrow exception (البند ثانياً/2): the OLD M/34 law's waste-related provisions (الأحكام المتعلقة بالنفايات) remain in force until dedicated new waste-specific rules are issued -- so the supersession is not total on day one. The old M/34 law itself is NOT modeled in this track (out of scope). This law has a NO-أبواب, فصول-only structure (9 فصول, 49 articles) -- confirmed both by the BOE table of contents and by full-text search of both independent copies, with no باب-level heading appearing anywhere in the source. A companion Implementing Regulation does not exist as a single consolidated instrument for this law (unlike many other Saudi laws) -- MEWA has instead issued multiple separate topical implementing regulations (e.g. for environmental service providers, environmental fees, water-pollution protection, environmental inspection/audit, violation classification/penalties, emergency-response planning). This list is indicative only, drawn from secondary web-search results, not independently verified article-by-article against a primary text, and none of these regulations' text is extracted in this track. Monetary figures in the source use Arabic-style period thousand-separators (e.g. '٢٠.٠٠٠.٠٠٠' rendered here as '(20.000.000) عشرين مليون ريال') -- these are preserved exactly as they appear in the source; the periods are Arabic-convention thousands separators, not decimal points, and were NOT 'corrected' to comma-separated format. No official English translation of this law currently exists per BOE's own site (informational note only, not a discrepancy).",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "environmental_art_001_jihah_mukhtassah_boe_self_contradiction",
+      "description": "MOST IMPORTANT FLAG. Article 1's definition of الجهة المختصة (Competent Authority) is the subject of a genuine, persistent self-contradiction within BOE's own official primary-source data, not a routine cross-source discrepancy. BOE's own official per-article 'تعديلات المادة' (Article Amendment History) feature, attached specifically to Article 1, states verbatim that Council of Ministers Decision No. 406 (14/5/1445H) amended the definition to read: 'الوزارة، أو أي من المراكز الوطنية لقطاع البيئة، أو المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر، كل بحسب اختصاصه، ووفقاً لما تحدده اللوائح' -- adding the newly-created 'المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر' (Public Establishment for the Conservation of Coral Reefs and Turtles in the Red Sea), whose own founding regulation was approved by that same Decision 406/1445H (published Umm Al-Qura Gazette issue No. 5010, 8 December 2023). However, the SAME BOE archived page's main running 'نص النظام' body -- the part meant to show current, consolidated text -- still displays the OLD pre-amendment wording without that clause: 'الوزارة، أو أي من المراكز الوطنية لقطاع البيئة، كل بحسب اختصاصه، ووفقاً لما تحدده اللوائح'. This exact inconsistency (amendment note = new wording; main body = old wording) is present identically in BOTH the 24 September 2024 AND the 15 October 2025 Wayback Machine snapshots of the BOE page -- i.e. it has persisted on the official government portal for over a year, across two independent captures, not a one-off caching glitch. nezams.com mirrors BOE's data and reproduces the identical inconsistency (same stale main text, same amendment note), so it does not count as independent resolution. Independent corroboration that the amended (new) wording is the legally-operative one: qanoonsa.com, which hosts several of this law's Implementing Regulations that reference this exact definition, displays the definition already including the coral-reef/turtle-authority clause, consistent with BOE's own amendment note rather than with BOE's own stale main-body text. This build treats the amendment as operative -- using the newer wording as the current `text` for Article 1, marking it معدلة with a `history` entry citing Decision 406/1445H plus both corroborating sources, and preserving the pre-amendment wording verbatim in `original_1441h_text` -- following the exact same reasoning pattern already established for the Traffic Law track's documented 'BOE portal lags behind confirmed amendments' situations (see sources/traffic/law/official_source/traffic_law_official_source.json). This is NOT, however, a full independent gazette-text confirmation of the amendment's exact current wording -- it rests on the interaction between BOE's own internally-inconsistent self-published data and one independent secondary corroboration (qanoonsa.com). Given the unusual nature of this specific evidentiary basis -- an official source contradicting itself, resolved via its own amendment-log plus a single secondary site -- this specific point would benefit from a dedicated human legal-review confirmation, distinct from the otherwise strong triple-source verification that applies to the other 48 articles of this law."
+    },
+    {
+      "article_key": "environmental_implementing_regulations_not_extracted",
+      "description": "Unlike many Saudi laws, نظام البيئة does not have a single consolidated Implementing Regulation. Article 47 (المادة السابعة والأربعون) lists roughly 15 topics the regulations must cover, and in practice MEWA has issued multiple separate topical implementing regulations, e.g. اللائحة التنفيذية لمقدمي الخدمات البيئية (Ministerial Decision No. 582979/1/1442H, dated 14/11/1442H), اللائحة التنفيذية للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية (Ministerial Decision No. 618660/1/1442H, dated 05/12/1442H), اللائحة التنفيذية لنظام البيئة لحماية الأوساط المائية من التلوث (Ministerial Decision No. 603639/1/1442H), اللائحة التنفيذية للتفتيش والتدقيق البيئي لنظام البيئة (1442H, exact decision number not independently confirmed), اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات (referenced in a 2024/2025 e-participation consultation, suggesting a revision was under public consultation; exact status not verified), and ضوابط إعداد وتنفيذ خطط التأهب والاستجابة لحالات الطوارئ والكوارث البيئية. This list is indicative only, drawn from secondary web-search results, not independently verified article-by-article against a primary text -- it was out of scope for this research task per its own instructions, and none of these regulations' text is extracted in this track."
+    },
+    {
+      "article_key": "environmental_monetary_figures_arabic_thousand_separators",
+      "description": "Monetary figures in the source use Arabic-style period thousand-separators, e.g. the source's own Arabic-Indic numeral '٢٠.٠٠٠.٠٠٠' appears alongside the Western-numeral parenthetical rendering '(20.000.000) عشرين مليون ريال' (Article 38), '(30.000.000) ثلاثين مليون ريال' (Article 40), and '(100،000) مائة ألف ريال' / '(5.000.000) خمسة ملايين ريال' (Article 39) -- the periods (and in one instance the Arabic decimal-style comma) are Arabic-convention thousands separators, not decimal points. These are preserved exactly as captured in the source and were deliberately NOT 'corrected' to comma-separated Western format."
+    },
+    {
+      "article_key": "environmental_no_official_english_translation",
+      "description": "Informational note, not a discrepancy requiring action: no official English translation of this law currently exists per BOE's own site -- BOE's own subscription form for this law includes an opt-in checkbox 'أبلغني حين توافر النظام باللغة الإنجليزية' ('Notify me when the law becomes available in English'), confirming no official English text currently exists on BOE as of the archived snapshot consulted. Any English version circulating elsewhere is unofficial and was not used as a basis for any part of this track."
+    }
+  ],
+  "source_artifact": "sources/environmental/law/official_source/environmental_law_official_source.json"
+}

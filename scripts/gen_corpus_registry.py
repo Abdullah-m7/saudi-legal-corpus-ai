@@ -154,6 +154,7 @@ FRANCHISE_LAW_LLM = os.path.join(ROOT, "data", "franchise_arabic_legal_llm", "fr
 CIVIL_AVIATION_LAW_LLM = os.path.join(ROOT, "data", "civil_aviation_arabic_legal_llm", "civil_aviation_law_legal_llm_001_180.json")
 ANTI_NARCOTICS_LAW_LLM = os.path.join(ROOT, "data", "anti_narcotics_arabic_legal_llm", "anti_narcotics_law_legal_llm_001_074.json")
 TRAFFIC_LAW_LLM = os.path.join(ROOT, "data", "traffic_arabic_legal_llm", "traffic_law_legal_llm_001_086.json")
+ENVIRONMENTAL_LAW_LLM = os.path.join(ROOT, "data", "environmental_arabic_legal_llm", "environmental_law_legal_llm_001_049.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -301,6 +302,7 @@ def main() -> int:
     civil_aviation_law_llm = _load_json(CIVIL_AVIATION_LAW_LLM)
     anti_narcotics_law_llm = _load_json(ANTI_NARCOTICS_LAW_LLM)
     traffic_law_llm = _load_json(TRAFFIC_LAW_LLM)
+    environmental_law_llm = _load_json(ENVIRONMENTAL_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -321,7 +323,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 116,
+        "total_tracks": 117,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -441,6 +443,7 @@ def main() -> int:
             + civil_aviation_law_llm["record_count"]  # 180 Civil Aviation Law (DISTINCT TIER: nezams.com primary, rakadvocate.blogspot.com spot-checked, BOE unreachable, see track notes)
             + anti_narcotics_law_llm["record_count"]  # 74 Anti-Narcotics and Psychotropic Substances Control Law (DISTINCT TIER: BOE via r.jina.ai proxy x nezams.com x qadha.org.sa reference book triple-verified, see track notes)
             + traffic_law_llm["record_count"]  # 86 Traffic Law (MIXED-CONFIDENCE TIER: BOE portal confirmed genuinely stale for this law, nezams.com preferred with per-article verification_tier, see track notes)
+            + environmental_law_llm["record_count"]  # 49 Environmental Law (STRONG TRIPLE-SOURCE TIER: BOE Wayback x green.org.sa PDF x nezams.com, one flagged BOE self-contradiction at Article 1, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -551,6 +554,7 @@ def main() -> int:
             + civil_aviation_law_llm["record_count"]
             + anti_narcotics_law_llm["record_count"]
             + traffic_law_llm["record_count"]
+            + environmental_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4009,6 +4013,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Traffic Law «نظام المرور» — Royal Decree M/85 dated 26/10/1428H, approving Council of Ministers Decision 315 (24/10/1428H), following Royal Order A/175 (17/10/1428H). NOTE: the task premise originally assumed 'M/17 dated 26/6/1428H' — corrected to M/85, 26/10/1428H per primary sources. Replaces the prior نظام المرور issued by Royal Decree M/49 dated 6/11/1391H (Article 83). 86 records (85 numbered articles + Article 50 مكرر, added by Royal Decree M/115, 5/12/1439H) across 8 أبواب: 52 اصلية / 32 معدلة / 1 ملغاة (Article 71, repealed by Council of Ministers Decision 474 dated 7/7/1446H, ratified by Royal Decree M/140 dated 12/7/1446H — pre-repeal text preserved per this corpus's policy of never deleting repealed articles) / 1 مضافة. **UNUSUALLY COMPLEX, MIXED-CONFIDENCE VERIFICATION TIER — this track required TWO independent research passes** because of a genuine, unresolved discrepancy between the official BOE portal and the secondary reference site nezams.com for roughly a third of the law's articles. Across both passes, BOE's live portal was confirmed GENUINELY STALE for this law — not a proxy/rendering artifact — via four independently-verified data points: Article 71's repeal (confirmed via direct Umm Al-Qura gazette text of Royal Decree M/140), Article 74's 2025 rewrite (confirmed via Saudi Press Agency and MOI statements), Article 2's added definition #44 'هيكل المركبة', and the Table 2 violation-schedule item-16 wording. nezams.com's 'current text' is therefore used as the governing text for amended articles where it diverges from BOE's stale text, but this is PATTERN-BASED confidence, not per-article gazette proof: EVERY article record carries a per-article `verification_tier` field — `PRIMARY_INDEPENDENTLY_CONFIRMED` (67 records: all 52 اصلية articles plus Article 71's repeal plus 14 amended articles independently confirmed via gazette/press sources beyond nezams.com alone) vs `SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE` (19 records: 18 amended articles plus Article 50 مكرر resting on nezams.com's pattern-reliability alone, without independent per-article confirmation) — this per-article granularity is deliberately NOT smoothed over by the overall track-level STATUS constant. `original_1428h_text` is populated for only 8 articles (1, 5, 23, 27, 69, 70, 73, 78) where a report explicitly captured verbatim pre-amendment wording; omitted for the other 24 amended articles, documented as gaps rather than fabricated. Flagged discrepancies (11 total, see known_unresolved_discrepancies): the Table 2 item-16 numbering conflict (BOE's item 16 reads 'expired driving license'; M/140's own gazette-confirmed addition reads 'expired vehicle-registration license' — the fate of the old slot is unresolved); Article 2's 43-vs-44 defined-term count; Council of Ministers Decision 586's unconfirmed exact phrase-splice point for Articles 23/27; 17 amended articles where BOE and nezams.com show identical resulting text despite a confirmed amending instrument (no determinable wording delta); the annexed violation tables (1-8) and fee schedules are referenced by article text but not separately modeled as records; the Implementing Regulation (Ministerial Decision 7019, 3/7/1429H, possibly reissued via Ministerial Decision 2249/1441H, unconfirmed) is not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "environmental_law",
+                "display_name_ar": "نظام البيئة",
+                "display_name_en": "Environmental Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_X_GREEN_ORG_PDF_X_NEZAMS_TRIPLE_VERIFIED_ART1_BOE_SELF_CONTRADICTION",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/165) — BOE via Wayback x green.org.sa PDF x nezams.com, triple-verified for 48/49 articles; Article 1 flagged (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": environmental_law_llm["record_count"],
+                    "data_path": "data/environmental_arabic_legal_llm/environmental_law_legal_llm_001_049.json"}},
+                "record_counts": {"arabic_articles": environmental_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 48, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": environmental_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/environmental/law/official_source/environmental_law_official_source.json",
+                    "sources/environmental/law/verified/environmental_law_verified_records.jsonl",
+                    "data/environmental_arabic_legal_llm/environmental_law_legal_llm_001_049.json",
+                ],
+                "validator_targets": ["make environmental-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Environmental Law «نظام البيئة» — Royal Decree M/165 dated 19/11/1441H, approving Council of Ministers Decision 729 (16/11/1441H). Administered by the Ministry of Environment, Water and Agriculture (MEWA), together with the General Authority of Meteorology and Environmental Protection, the Saudi Wildlife Authority, and the National Centers for the Environment Sector. Repeals several prior instruments including the older 'النظام العام للبيئة' (Royal Decree M/34, 28/7/1422H) — with a narrow carve-over: that older law's waste-related provisions remain in force until dedicated new waste-specific rules are issued; the old M/34 law itself is not modeled in this corpus. 49 records across 9 فصول (this law has NO أبواب/Parts tier, a single-level chapter structure): 48 اصلية / 1 معدلة. **STRONG TRIPLE-SOURCE VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass (HTTP 503 direct, HTTP 422 via r.jina.ai); BOE's own content was instead recovered via the Wayback Machine (15 October 2025 snapshot, cross-checked against 24 September 2024), and independently cross-verified against two further independently-hosted full-text copies — a PDF hosted at green.org.sa and nezams.com. All 49 articles matched verbatim across all three sources EXCEPT ONE flagged point: Article 1's definition of 'الجهة المختصة' (Competent Authority), where BOE's OWN official per-article amendment-log states current wording differs from BOE's OWN main running law-text body — a genuine self-contradiction in BOE's own official data, persistent across two Wayback snapshots over a year apart. This build treats the amendment (Council of Ministers Decision 406, 14/5/1445H, adding 'المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر' to the definition) as operative, following the same reasoning precedent established for the Traffic Law track's 'BOE portal lags behind confirmed amendments' situations, further corroborated by qanoonsa.com independently displaying the amended definition. The pre-amendment wording is preserved verbatim as original_1441h_text — flagged in known_unresolved_discrepancies as warranting dedicated human legal-review confirmation given it rests on BOE's internal self-contradiction plus one secondary corroboration, not a full independent gazette-text confirmation. Additional notes: the multiple topical Implementing Regulations (no single consolidated instrument) are listed indicatively only, not independently verified, and not extracted in this track; monetary figures use Arabic-style period thousand-separators (e.g. '(20.000.000) عشرين مليون ريال'), preserved verbatim rather than reformatted; no official English translation exists per BOE's own site. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 262,
-  "top1_hits": 238,
-  "top3_hits": 255,
-  "top5_hits": 258,
-  "top1_accuracy": 0.9084,
-  "top3_accuracy": 0.9733,
-  "top5_accuracy": 0.9847,
-  "mrr_at_5": 0.9403,
+  "total_queries": 264,
+  "top1_hits": 240,
+  "top3_hits": 257,
+  "top5_hits": 260,
+  "top1_accuracy": 0.9091,
+  "top3_accuracy": 0.9735,
+  "top5_accuracy": 0.9848,
+  "mrr_at_5": 0.9408,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8139,6 +8139,68 @@
      "record_id": "anti-narcotics-law-llm-art-031",
      "article_number": 31,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "env-001",
+   "query_ar": "لا يجوز تملك أراضي الغابات والمراعي والمنتزهات الوطنية والبرية والجيولوجية، بأي وجه من أوجه التصرف الناقل للملكية",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental",
+    "law_component": "law",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-law-llm-art-012",
+     "article_number": 12,
+     "score": 41
+    },
+    {
+     "record_id": "environmental-law-llm-art-013",
+     "article_number": 13,
+     "score": 16
+    },
+    {
+     "record_id": "oa-llm-companies-art-151",
+     "article_number": 151,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "env-002",
+   "query_ar": "للوزير اتخاذ ما يلزم من إجراءات وتدابير للاستجابة لأي حالة بيئية طارئة، أو كارثة بيئية، أو خطر وشيك يتعلق بالبيئة",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental",
+    "law_component": "law",
+    "article_number": 34
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-law-llm-art-034",
+     "article_number": 34,
+     "score": 42
+    },
+    {
+     "record_id": "evidence-elec-llm-art-010",
+     "article_number": 10,
+     "score": 20
+    },
+    {
+     "record_id": "evidence-elec-llm-art-004",
+     "article_number": 4,
+     "score": 19
     }
    ]
   }

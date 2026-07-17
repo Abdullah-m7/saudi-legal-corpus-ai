@@ -256,6 +256,8 @@ LAYERS = [
      "anti_narcotics", "law"),
     ("data/traffic_arabic_legal_llm/traffic_law_legal_llm_001_086.json",
      "traffic", "law"),
+    ("data/environmental_arabic_legal_llm/environmental_law_legal_llm_001_049.json",
+     "environmental", "law"),
 ]
 
 

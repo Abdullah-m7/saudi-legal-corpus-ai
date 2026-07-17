@@ -157,6 +157,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_civil_aviation_law_track.py",
     "scripts/gen_anti_narcotics_law_track.py",
     "scripts/gen_traffic_law_track.py",
+    "scripts/gen_environmental_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/run_corpus_retrieval_eval.py",
