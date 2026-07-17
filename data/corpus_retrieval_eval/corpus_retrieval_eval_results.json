@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 246,
-  "top1_hits": 222,
-  "top3_hits": 239,
-  "top5_hits": 242,
-  "top1_accuracy": 0.9024,
-  "top3_accuracy": 0.9715,
-  "top5_accuracy": 0.9837,
-  "mrr_at_5": 0.9364,
+  "total_queries": 248,
+  "top1_hits": 224,
+  "top3_hits": 241,
+  "top5_hits": 244,
+  "top1_accuracy": 0.9032,
+  "top3_accuracy": 0.9718,
+  "top5_accuracy": 0.9839,
+  "mrr_at_5": 0.937,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4938,14 +4938,14 @@
      "score": 50
     },
     {
-     "record_id": "pdpl-reg-llm-art-021",
-     "article_number": 21,
+     "record_id": "anti-concealment-law-llm-art-008",
+     "article_number": 8,
      "score": 31
     },
     {
-     "record_id": "terrorism-reg-llm-art-021",
+     "record_id": "pdpl-reg-llm-art-021",
      "article_number": 21,
-     "score": 30
+     "score": 31
     }
    ]
   },
@@ -6648,9 +6648,9 @@
      "score": 27
     },
     {
-     "record_id": "pdpl-law-llm-art-038",
-     "article_number": 38,
-     "score": 24
+     "record_id": "anti-concealment-law-llm-art-008",
+     "article_number": 8,
+     "score": 25
     }
    ]
   },
@@ -6741,8 +6741,8 @@
      "score": 22
     },
     {
-     "record_id": "terrorism-law-llm-art-050",
-     "article_number": 50,
+     "record_id": "anti-concealment-law-llm-art-009",
+     "article_number": 9,
      "score": 21
     }
    ]
@@ -7643,6 +7643,68 @@
      "record_id": "oa-llm-companies-art-213",
      "article_number": 213,
      "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "tsr-001",
+   "query_ar": "قيام شخص بتمكين غير السعودي من أن يمارس -لحسابه الخاص- نشاطًا اقتصاديًا في المملكة غير مرخص له بممارسته",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_concealment",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-concealment-law-llm-art-003",
+     "article_number": 3,
+     "score": 33
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-013",
+     "article_number": 13,
+     "score": 19
+    },
+    {
+     "record_id": "oa-llm-companies-art-150",
+     "article_number": 150,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "tsr-002",
+   "query_ar": "تودع الغرامات المحصلة بموجب النظام في حساب جاري وزارة المالية لدى مؤسسة النقد العربي السعودي",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_concealment",
+    "law_component": "law",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-concealment-law-llm-art-016",
+     "article_number": 16,
+     "score": 39
+    },
+    {
+     "record_id": "sama-law-llm-art-026",
+     "article_number": 26,
+     "score": 22
+    },
+    {
+     "record_id": "judicial-costs-law-llm-art-019",
+     "article_number": 19,
+     "score": 21
     }
    ]
   }

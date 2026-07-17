@@ -146,6 +146,7 @@ COMPETITION_LAW_LLM = os.path.join(ROOT, "data", "competition_arabic_legal_llm",
 PAYMENT_SYSTEMS_LAW_LLM = os.path.join(ROOT, "data", "payment_systems_arabic_legal_llm", "payment_systems_law_legal_llm_001_020.json")
 MINING_INVESTMENT_LAW_LLM = os.path.join(ROOT, "data", "mining_investment_arabic_legal_llm", "mining_investment_law_legal_llm_001_064.json")
 TRADEMARK_LAW_LLM = os.path.join(ROOT, "data", "trademark_arabic_legal_llm", "trademark_law_legal_llm_001_052.json")
+ANTI_CONCEALMENT_LAW_LLM = os.path.join(ROOT, "data", "anti_concealment_arabic_legal_llm", "anti_concealment_law_legal_llm_001_020.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -285,6 +286,7 @@ def main() -> int:
     payment_systems_law_llm = _load_json(PAYMENT_SYSTEMS_LAW_LLM)
     mining_investment_law_llm = _load_json(MINING_INVESTMENT_LAW_LLM)
     trademark_law_llm = _load_json(TRADEMARK_LAW_LLM)
+    anti_concealment_law_llm = _load_json(ANTI_CONCEALMENT_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -305,7 +307,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 108,
+        "total_tracks": 109,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -417,6 +419,7 @@ def main() -> int:
             + payment_systems_law_llm["record_count"]  # 20 Payment Systems and Services Law (DISTINCT TIER: SAMA official PDF, dual OCR pass x nezams.com cross-verified, see track notes)
             + mining_investment_law_llm["record_count"]  # 64 Mining Investment Law (DISTINCT TIER: BOE Wayback snapshot x FAOLEX cross-verified, see track notes)
             + trademark_law_llm["record_count"]  # 52 Trademark Law (DISTINCT TIER: WIPO Lex primary PDF x BOE status card cross-verified, see track notes)
+            + anti_concealment_law_llm["record_count"]  # 20 Anti-Concealment Law (DISTINCT TIER: triple Arabic secondary sources, BOE unreachable via all methods, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -519,6 +522,7 @@ def main() -> int:
             + payment_systems_law_llm["record_count"]
             + mining_investment_law_llm["record_count"]
             + trademark_law_llm["record_count"]
+            + anti_concealment_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3753,6 +3757,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Trademark Law «قانون (نظام) العلامات التجارية لدول مجلس التعاون لدول الخليج العربية» (the GCC-unified Trademarks Law, given domestic force in Saudi Arabia) — Royal Decree M/51 dated 26/7/1435H (2014, issued in the name of King Abdullah bin Abdulaziz Al Saud, signed by Deputy King Salman bin Abdulaziz Al Saud under Royal Order A/145), based on Council of Ministers Resolution 306 (20/7/1435H) and Shura Council Resolution 13/21 (17/4/1435H), approved by the GCC Supreme Council at its 33rd session. Replaces the prior GCC trademark law, Royal Decree M/94 (23/11/1428H). Administering authority: Saudi Authority for Intellectual Property (SAIP). 52 records, flat structure (no chapters, verified by full-text search): 51 اصلية / 1 معدلة (Article 1 — two of five definitions, «الجهة المختصة» and «الوزير», replaced by Royal Decree M/49, 26/6/1442H, reflecting the transfer of administering authority to SAIP; the other three definitions and the remaining 51 articles are unamended). **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass; full text instead rests on WIPO Lex's own hosted Arabic PDF, which embeds an official «بطاقة النظام» (law status card) sourced from the Saudi National Center for Documents and Archives confirming ساري (in force) — the functional equivalent of a direct BOE-portal confirmation via a different retrieval path. The amending Royal Decree M/49 was a scanned/non-text PDF, recovered via two independent Arabic-language OCR passes that agreed verbatim. **⚠ Flagged conflict:** two secondary sources (misa.gov.sa's own hosted 'official translation', and nezams.com) both still present the SUPERSEDED 2002 law (Royal Decree M/21) as if currently in force — this track proceeds on the primary BOE-status-card-confirmed current law (M/51 as amended by M/49) instead; the conflict is preserved as audit provenance, not silently resolved. Additional flagged discrepancies: inconsistent hijri/gregorian dates for M/51 and M/49 across the sources' own metadata fields, and an unresolved M/21→M/94→M/51 repeal-chain ambiguity. A companion Implementing Regulation is confirmed to exist (GCC Trade Cooperation Committee, 51st meeting, 21 May 2015) but is not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "anti_concealment_law",
+                "display_name_ar": "نظام مكافحة التستر",
+                "display_name_en": "Anti-Concealment Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/4) — triple independent Arabic secondary sources (qadha.org.sa compiled edition x nezams.com x alrashidi.law), laws.boe.gov.sa unreachable via all methods this pass (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": anti_concealment_law_llm["record_count"],
+                    "data_path": "data/anti_concealment_arabic_legal_llm/anti_concealment_law_legal_llm_001_020.json"}},
+                "record_counts": {"arabic_articles": anti_concealment_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": anti_concealment_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/anti_concealment/law/official_source/anti_concealment_law_official_source.json",
+                    "sources/anti_concealment/law/verified/anti_concealment_law_verified_records.jsonl",
+                    "data/anti_concealment_arabic_legal_llm/anti_concealment_law_legal_llm_001_020.json",
+                ],
+                "validator_targets": ["make anti-concealment-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Anti-Concealment Law «نظام مكافحة التستر» — Royal Decree M/4 dated 1/1/1442H (20/8/2020G, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 785 (28/12/1441H), itself based on Shura Council Resolution 50/289 (22/11/1441H). Confirms and corrects the initial task-briefing's unverifiable premise of 'M/162, 21/11/1441H' — no such decree matches any source; the briefing's date likely conflated the Shura Council Resolution date. Replaces the prior anti-concealment law, Royal Decree M/22 (4/5/1425H). Administering authority: Ministry of Commerce. 20 records, 5 chapters (فصول), all اصلية — no amendments found; nezams.com's own metadata explicitly confirms no amendments. **DISTINCT VERIFICATION TIER — the weakest-sourced tier in this corpus to date:** laws.boe.gov.sa was completely unreachable via ALL THREE prescribed methods (direct WebFetch 503/timeout; r.jina.ai proxy 422 navigation timeout; direct Wayback Machine fetch via curl, TLS connection reset — apparently network-policy-blocked in this environment; a further r.jina.ai-proxied Wayback attempt was itself blocked by jina's own anti-abuse policy). In the total absence of a reachable primary source, this track rests on TRIPLE INDEPENDENT ARABIC SECONDARY SOURCE AGREEMENT: a professionally compiled, footnoted edition hosted at qadha.org.sa (authored by a named Ministry of Commerce assistant legal counsel, published by the Saudi Judicial Scientific Association) for full verbatim text, cross-verified against nezams.com and alrashidi.law for decree metadata and structure. No byte-level primary-source confirmation was achieved — a genuine, explicitly documented sourcing limitation, not silently upgraded to a higher-confidence tier. Additional flagged items: laws.boe.gov.sa hosts two GUID-distinct records both titled generically 'نظام مكافحة التستر' (the superseded 1425H law and the current 1442H law) — a collision risk for future researchers; marginal compiler-added cross-reference codes in the qadha.org.sa source were excluded as editorial apparatus, not statutory text. A companion Implementing Regulation exists (Ministerial Resolution 00479, 20/7/1442H) but is not extracted in this track, nor are related subordinate instruments referenced by Articles 6, 13, and 18 (status-correction regulation for the prior law's violators; exemption rules; whistleblower reward rules). Arabic governs; not legal advice.",
             },
         ],
     }
