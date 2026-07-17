@@ -226,6 +226,8 @@ LAYERS = [
      "copyright", "law"),
     ("data/telecommunications_arabic_legal_llm/telecommunications_law_legal_llm_001_041.json",
      "telecommunications", "law"),
+    ("data/sama_arabic_legal_llm/sama_law_legal_llm_001_027.json",
+     "sama", "law"),
 ]
 
 

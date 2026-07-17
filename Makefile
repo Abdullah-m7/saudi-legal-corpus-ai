@@ -208,6 +208,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         shura-council-law-track-validate \
         copyright-law-track-validate \
         telecommunications-law-track-validate \
+        sama-law-track-validate \
         qa-gate
 
 help:
@@ -1256,6 +1257,9 @@ copyright-law-track-validate:
 
 telecommunications-law-track-validate:
 	$(PY) scripts/validate_telecommunications_law_track.py
+
+sama-law-track-validate:
+	$(PY) scripts/validate_sama_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:
