@@ -234,6 +234,8 @@ LAYERS = [
      "capital_market", "law"),
     ("data/competition_arabic_legal_llm/competition_law_legal_llm_001_028.json",
      "competition", "law"),
+    ("data/payment_systems_arabic_legal_llm/payment_systems_law_legal_llm_001_020.json",
+     "payment_systems", "law"),
 ]
 
 

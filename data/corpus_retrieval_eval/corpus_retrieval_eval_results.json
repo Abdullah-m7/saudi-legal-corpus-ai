@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 240,
-  "top1_hits": 216,
-  "top3_hits": 233,
-  "top5_hits": 236,
-  "top1_accuracy": 0.9,
-  "top3_accuracy": 0.9708,
-  "top5_accuracy": 0.9833,
-  "mrr_at_5": 0.9349,
+  "total_queries": 242,
+  "top1_hits": 218,
+  "top3_hits": 235,
+  "top5_hits": 238,
+  "top1_accuracy": 0.9008,
+  "top3_accuracy": 0.9711,
+  "top5_accuracy": 0.9835,
+  "mrr_at_5": 0.9354,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7457,6 +7457,68 @@
      "record_id": "shura-council-law-llm-art-016",
      "article_number": 16,
      "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "pay-001",
+   "query_ar": "يهدف نظام المدفوعات وخدماتها إلى تعزيز سلامة وكفاية البنى التحتية لنظم المدفوعات وخدماتها في المملكة",
+   "category": "topical",
+   "gold": {
+    "corpus": "payment_systems",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "payment-systems-law-llm-art-002",
+     "article_number": 2,
+     "score": 47
+    },
+    {
+     "record_id": "payment-systems-law-llm-art-005",
+     "article_number": 5,
+     "score": 27
+    },
+    {
+     "record_id": "payment-systems-law-llm-art-001",
+     "article_number": 1,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "pay-002",
+   "query_ar": "يلتزم مشغل نظام المدفوعات الذي يصنف بأنه نظام مدفوعات مهم بالعمل وفق قواعد خاصة بنظام المدفوعات المهم",
+   "category": "topical",
+   "gold": {
+    "corpus": "payment_systems",
+    "law_component": "law",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "payment-systems-law-llm-art-009",
+     "article_number": 9,
+     "score": 48
+    },
+    {
+     "record_id": "payment-systems-law-llm-art-011",
+     "article_number": 11,
+     "score": 29
+    },
+    {
+     "record_id": "payment-systems-law-llm-art-010",
+     "article_number": 10,
+     "score": 28
     }
    ]
   }

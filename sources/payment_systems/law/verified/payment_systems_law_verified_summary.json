@@ -1,0 +1,32 @@
+{
+  "law_key": "payment_systems",
+  "layer": "PAYMENT_SYSTEMS_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 20,
+  "official_text_status": "SAMA_OFFICIAL_PDF_OCR_X_NEZAMS_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 20,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/26)",
+  "decree_date_hijri": "22/3/1443",
+  "consolidated_amended_law": true,
+  "chapter_structure": [],
+  "verification_methodology_note": "Payment Systems and Services Law «نظام المدفوعات وخدماتها» — Royal Decree M/26 dated 22/3/1443H (28 October 2021), approved by Council of Ministers Resolution 171 (20/3/1443H) following Shura Council Resolution 175/34 (11/11/1442H), published in the Official Gazette 30/3/1443H. Distinct from both the Saudi Central Bank Law (نظام البنك المركزي السعودي, Royal Decree M/36, 1442H) and the Banking Control Law (نظام مراقبة البنوك, Royal Decree M/5, 1386H) already in this corpus — a separate instrument governing payment systems/services specifically, not conflated with either. The decree's second clause assigns the Banking Disputes Committee (لجنة المنازعات المصرفية), acting through one or more specialized circuits formed for the purpose, as the 'competent judicial authority' referenced in Article 14. The underlying Council of Ministers Resolution 171 also separately amends the Bankruptcy Law's Implementing Regulation (Council of Ministers Resolution 622, 24/12/1439H), Article 2(1), adding a subparagraph covering payment systems, operators, and service providers as bankruptcy-law-covered entities — this is a collateral amendment to a DIFFERENT law's implementing regulation, not to this law itself, and is not modeled as part of this track. NO chapter (فصل) divisions — a flat sequence of 20 articles, confirmed independently three ways (OCR of the official PDF, nezams.com's article navigator, and absence of any 'chapter'/'Part' heading in the official English PDF text). All 20 articles اصلية — no amendments found; nezams.com's own metadata field explicitly states no amendment has occurred. PRIMARY SOURCE: SAMA's own official bilingual PDF, obtained via the SAMA Rulebook mirror site (rulebook.sama.gov.sa) after laws.boe.gov.sa and sama.gov.sa's own DocLib links proved unreachable (WAF errors on every fetch method). The PDF's embedded font has a broken/incomplete ToUnicode CMap for certain Arabic ligatures, corrupting standard text extraction — resolved by rendering all 18 pages to 300dpi and 400dpi images and running two independent Arabic-language OCR passes directly on the visual glyphs, bypassing the broken encoding entirely; the two passes' small gaps were mutually filled. This OCR'd text was cross-verified WORD-FOR-WORD against an independent secondary source, nezams.com (fetched via raw curl, not LLM-summarized) — full agreement across the entire decree preamble, Council of Ministers Resolution text, and all 20 articles. Further corroborated by rulebook.sama.gov.sa's own law-detail page metadata (decree number, date, in-force status, 20-article count) and by Saudipedia.com (fine cap, objectives language, issuance year). Article 12(5) is confirmed to be one extremely long run-on sentence — a genuine property of the primary source text, preserved verbatim. A minor quotation-mark glyph inconsistency for the term 'نظام مدفوعات مهم' could not be independently confirmed against SAMA's exact original glyph — flagged, not normalized. A companion Implementing Regulation exists (issued 24/11/1444H via SAMA Circular 44093096) but was not extracted this pass — candidate for a follow-up companion-track ingestion.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "payment_systems_art_012",
+      "description": "Paragraph 5 of Article 12 is a single, extremely long run-on sentence -- unusually so even by Saudi legislative-drafting standards. This is confirmed to be a genuine property of the primary source text itself, not a transcription artifact -- identical in both independent OCR passes (300dpi and 400dpi) of the official SAMA PDF and in the independent nezams.com transcription. Preserved verbatim, not reformatted or split."
+    },
+    {
+      "article_key": "payment_systems_term_important_payment_system",
+      "description": "The defined term \"نظام مدفوعات مهم\" (important payment system) is rendered with French-style guillemets in Article 7(6) («نظام مدفوعات مهم») per nezams.com's transcription, but with plain parentheses in Article 9 (بـ(نظام المدفوعات المهم)) in the same source. This may reflect either a genuine stylistic inconsistency in the original typeset law or a typographic substitution introduced by nezams.com's own rendering -- OCR of the official SAMA PDF does not reliably distinguish quotation-mark glyphs at this resolution, so the exact original glyph at each location could not be independently confirmed. Flagged, not silently normalized -- each article's punctuation is preserved as transcribed from its primary reading."
+    },
+    {
+      "article_key": "payment_systems_implementing_regulation",
+      "description": "A companion Implementing Regulation (اللائحة التنفيذية لنظام المدفوعات وخدماتها) is confirmed to exist, issued 24/11/1444H (13 June 2023) via SAMA Circular 44093096, repealing and replacing SAMA's earlier 'regulatory framework for payment service providers' (5/6/1441H / 30 January 2020). Structured in numbered 'Parts' (unlike the parent Law, which has no chapter/part structure). Not extracted this pass -- candidate for a follow-up companion-track ingestion."
+    }
+  ],
+  "source_artifact": "sources/payment_systems/law/official_source/payment_systems_law_official_source.json"
+}
