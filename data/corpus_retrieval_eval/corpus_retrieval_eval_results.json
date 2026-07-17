@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 238,
-  "top1_hits": 214,
-  "top3_hits": 231,
-  "top5_hits": 234,
-  "top1_accuracy": 0.8992,
-  "top3_accuracy": 0.9706,
-  "top5_accuracy": 0.9832,
-  "mrr_at_5": 0.9343,
+  "total_queries": 240,
+  "top1_hits": 216,
+  "top3_hits": 233,
+  "top5_hits": 236,
+  "top1_accuracy": 0.9,
+  "top3_accuracy": 0.9708,
+  "top5_accuracy": 0.9833,
+  "mrr_at_5": 0.9349,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1249,13 +1249,13 @@
      "score": 29
     },
     {
-     "record_id": "enforcement-regulation-llm-prov-051",
-     "article_number": 51,
+     "record_id": "competition-law-llm-art-002",
+     "article_number": 2,
      "score": 5
     },
     {
-     "record_id": "foreign-ownership-law-llm-art-007",
-     "article_number": 7,
+     "record_id": "enforcement-regulation-llm-prov-051",
+     "article_number": 51,
      "score": 5
     }
    ]
@@ -6028,9 +6028,9 @@
      "score": 22
     },
     {
-     "record_id": "oa-llm-companies-art-213",
-     "article_number": 213,
-     "score": 14
+     "record_id": "competition-law-llm-art-003",
+     "article_number": 3,
+     "score": 16
     }
    ]
   },
@@ -7333,6 +7333,68 @@
      "record_id": "capital-market-law-llm-art-001",
      "article_number": 1,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "ctp-001",
+   "query_ar": "يهدف نظام المنافسة إلى حماية المنافسة العادلة وتشجيعها ومكافحة ومنع الممارسات الاحتكارية",
+   "category": "topical",
+   "gold": {
+    "corpus": "competition",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "competition-law-llm-art-002",
+     "article_number": 2,
+     "score": 44
+    },
+    {
+     "record_id": "competition-law-llm-art-026",
+     "article_number": 26,
+     "score": 20
+    },
+    {
+     "record_id": "copyright-law-llm-art-027",
+     "article_number": 27,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "ctp-002",
+   "query_ar": "تحظر الاتفاقيات أو العقود بين المنشآت سواء كانت مكتوبة أم شفهية إن كان الهدف منها الإخلال بالمنافسة",
+   "category": "topical",
+   "gold": {
+    "corpus": "competition",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "competition-law-llm-art-005",
+     "article_number": 5,
+     "score": 21
+    },
+    {
+     "record_id": "aml-law-llm-art-033",
+     "article_number": 33,
+     "score": 11
+    },
+    {
+     "record_id": "labor-reg-llm-art-014",
+     "article_number": 14,
+     "score": 11
     }
    ]
   },
