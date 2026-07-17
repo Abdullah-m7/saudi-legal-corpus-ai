@@ -260,6 +260,10 @@ LAYERS = [
      "environmental", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
+    ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",
+     "civil_service", "law"),
+    ("data/social_insurance_arabic_legal_llm/social_insurance_law_legal_llm_001_063.json",
+     "social_insurance", "law"),
 ]
 
 
