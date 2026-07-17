@@ -220,6 +220,8 @@ LAYERS = [
      "electronic_transactions", "law"),
     ("data/allegiance_commission_arabic_legal_llm/allegiance_commission_law_legal_llm_001_025.json",
      "allegiance_commission", "law"),
+    ("data/shura_council_arabic_legal_llm/shura_council_law_legal_llm_001_030.json",
+     "shura_council", "law"),
 ]
 
 
