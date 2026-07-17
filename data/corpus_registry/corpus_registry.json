@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8329,
+  "total_primary_arabic_governing_records": 8400,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9224,
-  "total_tracks": 120,
+  "total_registry_counted_records": 9295,
+  "total_tracks": 121,
   "tracks": [
     {
       "boundaries": {
@@ -5645,6 +5645,53 @@
       "validator_targets": [
         "make social-insurance-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/social_insurance_legacy/law/official_source/social_insurance_legacy_law_official_source.json",
+        "sources/social_insurance_legacy/law/verified/social_insurance_legacy_law_verified_records.jsonl",
+        "data/social_insurance_legacy_arabic_legal_llm/social_insurance_legacy_law_legal_llm_001_071.json"
+      ],
+      "display_name_ar": "نظام التأمينات الاجتماعية (النظام القديم)",
+      "display_name_en": "Social Insurance Law (Old/Legacy System)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/social_insurance_legacy_arabic_legal_llm/social_insurance_legacy_law_legal_llm_001_071.json",
+          "governing": true,
+          "record_count": 71,
+          "status": "complete"
+        }
+      },
+      "notes": "Social Insurance Law (Old/Legacy System) «نظام التأمينات الاجتماعية» — Royal Decree M/33 dated 3/9/1421H, approving Council of Ministers Resolution 199 (17/8/1421H), issued by King Fahd bin Abdulaziz Al Saud, superseding the earlier Royal Decree M/22 (6/9/1389H). Governs everyone enrolled in Saudi social insurance BEFORE 1 July 2025 — it is NOT superseded by the new Social Insurance Law (Royal Decree M/273, tracked separately as social_insurance_law); both instruments remain concurrently in force for different populations while sharing the IDENTICAL Arabic title 'نظام التأمينات الاجتماعية', a genuine naming collision (see that track's notes for the same collision documented from the other side). 71 records (70 numbered articles + Article 58 مكرر, added by Royal Decree M/16 dated 24/3/1431H) across 7 فصول, with الفصل الخامس further divided into 4 nested أقسام: 63 اصلية / 7 معدلة (Articles 2, 10, 41, 43, 62, plus Articles 37 and 38 each carrying genuine historical amendments) / 0 ملغاة / 1 مضافة (58 مكرر). **VERIFICATION TIER:** full text rests on a Wayback Machine snapshot (2026-02-09) of the BOE portal (direct curl with the 'if_' raw-content modifier — no egress-policy circumvention needed or used this pass), cross-verified against nezams.com (20+ articles full-text plus 100% of the nine changed-article amendment-history popups matched verbatim). **Article 10** (board composition): BOE's default rendering is confirmed stale (an old 11-member board); the genuinely current, reconciled text (14 members, chaired by the Minister of Finance) was derived from BOE's own amendment-history popups (Cabinet Resolutions 190/1438H -> 335/1442H -> 419/1442H) and cross-verified verbatim against nezams.com — a further divergence from GOSI's own site (which describes an 8-member board) is documented as unresolved rather than silently adopted. **Article 37** (transport of a deceased subscriber's remains): BOE's default rendering is confirmed stale (a narrow, single-obligation provision); the genuinely current, broader 3-part text (Royal Decree M/49, 22/8/1431H) was independently corroborated via Okaz and Al-Riyadh news coverage quoting the current text verbatim. **Article 38** (retirement pension): no 2024 transitional retirement-age text was merged into this article — only its two genuine, verified historical amendments were applied (Royal Decree M/49 1431H reworded sub-paragraph 1/ج and paragraph 2; Royal Decree M/134 1440H deleted sub-paragraph 1/ج entirely, per nezams.com's explicit citation); the 2024 age-table transitional override actually belongs to the NEW law's own promulgating Royal Decree and lives in that track's `decree_transitional_provisions_ar` field instead, documented here as a discrete non-merge note. Other flagged discrepancies: the dual-law title collision described above; a Cabinet-Resolution sequencing oddity in Article 10's own amendment history (335/1442H then 419/1442H); Article 41 paragraph 3's instrument-type citation mismatch (Royal Decree M/118 per BOE vs. Cabinet Resolution 631 per nezams.com, dated one day apart); a duplicate/glitch amendment-history popup BOE attaches to Article 58 (base) that actually belongs to 58 مكرر; and an unextracted Implementing Regulation (GOSI Board Resolution 735, 25/10/1421H). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED",
+      "record_counts": {
+        "arabic_articles": 71,
+        "legal_status_breakdown": {
+          "اصلية": 63,
+          "مضافة": 1,
+          "معدلة": 7,
+          "ملغاة": 0
+        },
+        "total": 71
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/33) — BOE via Wayback Machine (2026-02-09 snapshot) as primary full-text source, cross-verified against nezams.com (20+ of 71 articles plus 100% of the nine changed-article amendment-history popups), Article 37's reconciled text additionally corroborated via independent Okaz/Al-Riyadh news coverage",
+      "status": "complete",
+      "track_id": "social_insurance_legacy_law",
+      "validator_targets": [
+        "make social-insurance-legacy-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5730,6 +5777,7 @@
       "sharia_procedure": 880,
       "shura_council": 30,
       "social_insurance": 63,
+      "social_insurance_legacy": 71,
       "state_funded_lawyer": 11,
       "sulook": 47,
       "tawtheeq": 88,
@@ -5742,7 +5790,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 8160,
+    "total_records": 8231,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
