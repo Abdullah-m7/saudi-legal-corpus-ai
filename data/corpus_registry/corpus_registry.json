@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 7621,
+  "total_primary_arabic_governing_records": 7646,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8516,
-  "total_tracks": 109,
+  "total_registry_counted_records": 8541,
+  "total_tracks": 110,
   "tracks": [
     {
       "boundaries": {
@@ -5128,6 +5128,53 @@
       "validator_targets": [
         "make anti-concealment-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/insurance_control/law/official_source/insurance_control_law_official_source.json",
+        "sources/insurance_control/law/verified/insurance_control_law_verified_records.jsonl",
+        "data/insurance_control_arabic_legal_llm/insurance_control_law_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "نظام مراقبة شركات التأمين التعاوني",
+      "display_name_en": "Cooperative Insurance Companies Control Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/insurance_control_arabic_legal_llm/insurance_control_law_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 25,
+          "status": "complete"
+        }
+      },
+      "notes": "Cooperative Insurance Companies Control Law «نظام مراقبة شركات التأمين التعاوني» — Royal Decree M/32 dated 2/6/1424H (31/7/2003G, King Fahd bin Abdulaziz Al Saud), based on Council of Ministers Resolution 125 (14/5/1424H), itself based on Shura Council Resolution 24/25 (22/7/1423H). Administering authority: Saudi Central Bank (functionally transferred to a newly-created Insurance Authority, هيئة التأمين, in late 2023 via Cabinet Resolution 85/1445H — but no evidence found of a Royal Decree textually amending this Law's articles to reflect that transfer, flagged not assumed). 25 records, flat structure (no chapters): 17 اصلية / 8 معدلة across two amendment waves — Royal Decree M/30 (27/5/1434H, touching article 22 and first-amending article 20) and Royal Decree M/12 (23/1/1443H, touching articles 2, 3, 6, 18, 19, 21, and second-amending article 20). **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa (503/422) and the Wayback Machine (TLS connection reset) were both unreachable this pass; current-consolidated text instead rests on misa.gov.sa's official bilingual PDF (explicitly headering all three decrees), cross-verified article-by-article against nezams.com. **⚠ Flagged institutional-name divergence:** for the 17 unamended articles, this track follows nezams.com's wording (pre-2020 regulator name «مؤسسة النقد العربي السعودي») rather than misa.gov.sa's current-name reproduction — no source documents a formal per-article amendment renaming the institution in these specific articles. **⚠ IMPORTANT LIMITATION:** pre-amendment original text was NOT transcribed into this build for any of the 8 amended articles — for 6 of them (2, 3, 6, 18, 19, 20) the research pass located but did not retain the original wording; for 2 of them (21, 22) no original text was even located. No original_XXXXh_text fields are included — a documented gap, not a fabrication, and a candidate for a dedicated follow-up pass. A companion Implementing Regulation exists (Ministerial Resolution 596/1, 11/3/1425H) but is not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "MISA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 25,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 8,
+          "ملغاة": 0
+        },
+        "total": 25
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/32) — misa.gov.sa official bilingual PDF cross-verified against nezams.com, laws.boe.gov.sa and the Wayback Machine both unreachable this pass (see notes)",
+      "status": "complete",
+      "track_id": "insurance_control_law",
+      "validator_targets": [
+        "make insurance-control-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5172,6 +5219,7 @@
       "gcc_ownership": 6,
       "gtpl": 256,
       "iflas_hudud": 23,
+      "insurance_control": 25,
       "investment": 53,
       "judgment_objection_methods": 62,
       "judicial_costs": 40,
@@ -5214,7 +5262,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7452,
+    "total_records": 7477,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

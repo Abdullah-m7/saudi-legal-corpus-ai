@@ -1,0 +1,48 @@
+{
+  "law_key": "insurance_control",
+  "layer": "INSURANCE_CONTROL_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 25,
+  "official_text_status": "MISA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_BOE_UNREACHABLE",
+  "status_counts": {
+    "اصلية": 17,
+    "معدلة": 8,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/32)",
+  "decree_date_hijri": "2/6/1424",
+  "consolidated_amended_law": true,
+  "chapter_structure": [],
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: laws.boe.gov.sa (503 direct; 422/401 via r.jina.ai) and the Wayback Machine (direct curl TLS connection reset) were both unreachable this research pass; rulebook.sama.gov.sa was 403/404. In their absence, this track's current-consolidated text rests on misa.gov.sa (Ministry of Investment of Saudi Arabia), an official government portal hosting a bilingual Arabic/English PDF uploaded August 2025 that explicitly headers all three decrees (M/32, M/30, M/12), extracted via pdftotext -layout plus manual RTL reconstruction, and cross-verified article-by-article against nezams.com's raw HTML transcription. For the 17 articles never listed as formally amended, this track's text follows nezams.com's wording (which retains the pre-2020 regulator name \"مؤسسة النقد العربي السعودي\") rather than misa.gov.sa's (which uses the current name throughout) -- see known_unresolved_discrepancies for the full institutional-name-divergence caveat. Saudipedia.com and a maaal.com news article independently corroborate the six M/12-amended articles (2, 3, 6, 19, 20, 21) and the Article 18 replacement. IMPORTANT LIMITATION: for six confirmed-amended articles (2, 3, 6, 18, 19, 20), the research pass located but did NOT transcribe the pre-amendment original wording into this build -- only current text is ingested this pass, per this corpus's zero-fabrication policy (no original text is included unless it was actually verified and is in hand). For articles 21 and 22, no pre-amendment original text was even located. All six gaps are documented as a candidate for a dedicated follow-up pass. A companion Implementing Regulation is confirmed to exist (Ministerial Resolution 596/1, 11/3/1425H) but is not extracted in this track. The functional transfer of insurance-sector regulation to the Insurance Authority (هيئة التأمين, 2023) is NOT reflected as a textual amendment of this Law -- see known_unresolved_discrepancies.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "insurance_control_institutional_name_divergence",
+      "description": "The 17 articles never listed as formally amended (1, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 23, 24, 25) name the regulator as \"مؤسسة النقد العربي السعودي\" (the pre-2020 name) per nezams.com's raw HTML transcription, which is the source used for this track's text of these articles. misa.gov.sa's 2025-dated bilingual official reproduction instead uniformly uses \"البنك المركزي السعودي\" (the current name) throughout ALL 25 articles, including these 17. No source found documents a formal per-article amendment renaming the institution in these specific unamended articles -- the name change likely flows from a general read-across provision in the Saudi Central Bank Law (M/36, 1442H), but this could not be confirmed this pass. This track preserves nezams.com's wording (old name) for these 17 articles as transcribed from the source used, flagged rather than silently normalized to the newer name."
+    },
+    {
+      "article_key": "insurance_control_art_021",
+      "description": "Article 21 is confirmed amended by Royal Decree M/12 (23/1/1443H) -- the fine amount was raised from one million to two million riyals -- but the PRE-2021 ORIGINAL TEXT could not be independently recovered this pass (no source gave an explicit 'amended to become' quotation for this specific article, unlike articles 2, 3, 6, 18, 19, and 20). Per this corpus's zero-fabrication policy, no original_XXXXh_text field is included for this article -- the gap is documented here rather than guessed."
+    },
+    {
+      "article_key": "insurance_control_art_022",
+      "description": "Article 22 is confirmed amended by Royal Decree M/30 (27/5/1434H) -- current text only was retrieved by the research pass; the pre-2013 original text was not independently confirmed as recovered. Per this corpus's zero-fabrication policy, no original_1424h_text field is included for this article -- the gap is documented here rather than guessed."
+    },
+    {
+      "article_key": "insurance_control_original_text_not_retained",
+      "description": "For articles 2, 3, 6, 18, 19, and 20 -- confirmed amended by Royal Decree M/12 (23/1/1443H), and for article 20 also by M/30 (27/5/1434H) -- the research pass reported that pre-amendment original text was located via nezams.com's 'تم تعديل هذه المادة... لتكون بالنص الآتي' footnotes, but the verbatim original wording itself was not transcribed into the research report and is therefore not in hand for corpus ingestion. Per this corpus's zero-fabrication policy, no original_XXXXh_text field is included for any of these six articles this pass -- only the current (post-2021, and for article 20 post-2021-and-2013) text is ingested, with amendment_history documenting the amending instruments. This is a candidate for a dedicated follow-up pass to recover and add the original pre-amendment wording."
+    },
+    {
+      "article_key": "insurance_control_nezams_art21_22_render_bug",
+      "description": "nezams.com's page displays the Appeals-Committee text (which properly belongs to Article 22, amended by M/30 in 2013) a second time, mislabeled as an M/12 (2021) amendment appended under Article 21. Cross-checked against misa.gov.sa (clean, unambiguous: Article 21 = penalty provision, Article 22 = Appeals Committee) and Saudipedia (independently confirms Article 22 was touched only in 2013), this is assessed as a nezams.com scraper/rendering artifact, not a genuine second amendment of Article 21. Documented rather than silently corrected in the underlying source data."
+    },
+    {
+      "article_key": "insurance_control_mof_stale_reproduction",
+      "description": "mof.gov.sa hosts a PDF reproduction of this Law that reflects the 2003 original text with none of the 2013 or 2021 amendments applied -- a caution against assuming government-domain hosting implies currency. Not used as a source for this track's current-consolidated text; used only to corroborate the pre-amendment original wording of Article 2."
+    },
+    {
+      "article_key": "insurance_control_administering_authority_transfer",
+      "description": "As of 23/11/2023, insurance-sector regulatory authority was functionally transferred from the Saudi Central Bank to a newly-created independent Insurance Authority (هيئة التأمين), established by Council of Ministers Resolution 85/1445H, absorbing insurance-related functions from both the Saudi Central Bank and the Health Insurance Council. No evidence was found of any Royal Decree formally amending the TEXT of this Law to replace \"البنك المركزي السعودي\" with \"هيئة التأمين\" in its articles -- every current-dated reproduction found still names the Saudi Central Bank throughout. This appears to be an institutional/administrative reassignment via a separate Cabinet Resolution, not a textual amendment of this Law -- flagged for a dedicated follow-up search rather than assumed either way."
+    }
+  ],
+  "source_artifact": "sources/insurance_control/law/official_source/insurance_control_law_official_source.json"
+}

@@ -147,6 +147,7 @@ PAYMENT_SYSTEMS_LAW_LLM = os.path.join(ROOT, "data", "payment_systems_arabic_leg
 MINING_INVESTMENT_LAW_LLM = os.path.join(ROOT, "data", "mining_investment_arabic_legal_llm", "mining_investment_law_legal_llm_001_064.json")
 TRADEMARK_LAW_LLM = os.path.join(ROOT, "data", "trademark_arabic_legal_llm", "trademark_law_legal_llm_001_052.json")
 ANTI_CONCEALMENT_LAW_LLM = os.path.join(ROOT, "data", "anti_concealment_arabic_legal_llm", "anti_concealment_law_legal_llm_001_020.json")
+INSURANCE_CONTROL_LAW_LLM = os.path.join(ROOT, "data", "insurance_control_arabic_legal_llm", "insurance_control_law_legal_llm_001_025.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -287,6 +288,7 @@ def main() -> int:
     mining_investment_law_llm = _load_json(MINING_INVESTMENT_LAW_LLM)
     trademark_law_llm = _load_json(TRADEMARK_LAW_LLM)
     anti_concealment_law_llm = _load_json(ANTI_CONCEALMENT_LAW_LLM)
+    insurance_control_law_llm = _load_json(INSURANCE_CONTROL_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -307,7 +309,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 109,
+        "total_tracks": 110,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -420,6 +422,7 @@ def main() -> int:
             + mining_investment_law_llm["record_count"]  # 64 Mining Investment Law (DISTINCT TIER: BOE Wayback snapshot x FAOLEX cross-verified, see track notes)
             + trademark_law_llm["record_count"]  # 52 Trademark Law (DISTINCT TIER: WIPO Lex primary PDF x BOE status card cross-verified, see track notes)
             + anti_concealment_law_llm["record_count"]  # 20 Anti-Concealment Law (DISTINCT TIER: triple Arabic secondary sources, BOE unreachable via all methods, see track notes)
+            + insurance_control_law_llm["record_count"]  # 25 Cooperative Insurance Companies Control Law (DISTINCT TIER: misa.gov.sa official PDF x nezams.com, BOE and Wayback both unreachable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -523,6 +526,7 @@ def main() -> int:
             + mining_investment_law_llm["record_count"]
             + trademark_law_llm["record_count"]
             + anti_concealment_law_llm["record_count"]
+            + insurance_control_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3785,6 +3789,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Anti-Concealment Law «نظام مكافحة التستر» — Royal Decree M/4 dated 1/1/1442H (20/8/2020G, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 785 (28/12/1441H), itself based on Shura Council Resolution 50/289 (22/11/1441H). Confirms and corrects the initial task-briefing's unverifiable premise of 'M/162, 21/11/1441H' — no such decree matches any source; the briefing's date likely conflated the Shura Council Resolution date. Replaces the prior anti-concealment law, Royal Decree M/22 (4/5/1425H). Administering authority: Ministry of Commerce. 20 records, 5 chapters (فصول), all اصلية — no amendments found; nezams.com's own metadata explicitly confirms no amendments. **DISTINCT VERIFICATION TIER — the weakest-sourced tier in this corpus to date:** laws.boe.gov.sa was completely unreachable via ALL THREE prescribed methods (direct WebFetch 503/timeout; r.jina.ai proxy 422 navigation timeout; direct Wayback Machine fetch via curl, TLS connection reset — apparently network-policy-blocked in this environment; a further r.jina.ai-proxied Wayback attempt was itself blocked by jina's own anti-abuse policy). In the total absence of a reachable primary source, this track rests on TRIPLE INDEPENDENT ARABIC SECONDARY SOURCE AGREEMENT: a professionally compiled, footnoted edition hosted at qadha.org.sa (authored by a named Ministry of Commerce assistant legal counsel, published by the Saudi Judicial Scientific Association) for full verbatim text, cross-verified against nezams.com and alrashidi.law for decree metadata and structure. No byte-level primary-source confirmation was achieved — a genuine, explicitly documented sourcing limitation, not silently upgraded to a higher-confidence tier. Additional flagged items: laws.boe.gov.sa hosts two GUID-distinct records both titled generically 'نظام مكافحة التستر' (the superseded 1425H law and the current 1442H law) — a collision risk for future researchers; marginal compiler-added cross-reference codes in the qadha.org.sa source were excluded as editorial apparatus, not statutory text. A companion Implementing Regulation exists (Ministerial Resolution 00479, 20/7/1442H) but is not extracted in this track, nor are related subordinate instruments referenced by Articles 6, 13, and 18 (status-correction regulation for the prior law's violators; exemption rules; whistleblower reward rules). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "insurance_control_law",
+                "display_name_ar": "نظام مراقبة شركات التأمين التعاوني",
+                "display_name_en": "Cooperative Insurance Companies Control Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MISA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/32) — misa.gov.sa official bilingual PDF cross-verified against nezams.com, laws.boe.gov.sa and the Wayback Machine both unreachable this pass (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": insurance_control_law_llm["record_count"],
+                    "data_path": "data/insurance_control_arabic_legal_llm/insurance_control_law_legal_llm_001_025.json"}},
+                "record_counts": {"arabic_articles": insurance_control_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 17, "معدلة": 8, "ملغاة": 0, "مضافة": 0},
+                                  "total": insurance_control_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/insurance_control/law/official_source/insurance_control_law_official_source.json",
+                    "sources/insurance_control/law/verified/insurance_control_law_verified_records.jsonl",
+                    "data/insurance_control_arabic_legal_llm/insurance_control_law_legal_llm_001_025.json",
+                ],
+                "validator_targets": ["make insurance-control-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Cooperative Insurance Companies Control Law «نظام مراقبة شركات التأمين التعاوني» — Royal Decree M/32 dated 2/6/1424H (31/7/2003G, King Fahd bin Abdulaziz Al Saud), based on Council of Ministers Resolution 125 (14/5/1424H), itself based on Shura Council Resolution 24/25 (22/7/1423H). Administering authority: Saudi Central Bank (functionally transferred to a newly-created Insurance Authority, هيئة التأمين, in late 2023 via Cabinet Resolution 85/1445H — but no evidence found of a Royal Decree textually amending this Law's articles to reflect that transfer, flagged not assumed). 25 records, flat structure (no chapters): 17 اصلية / 8 معدلة across two amendment waves — Royal Decree M/30 (27/5/1434H, touching article 22 and first-amending article 20) and Royal Decree M/12 (23/1/1443H, touching articles 2, 3, 6, 18, 19, 21, and second-amending article 20). **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa (503/422) and the Wayback Machine (TLS connection reset) were both unreachable this pass; current-consolidated text instead rests on misa.gov.sa's official bilingual PDF (explicitly headering all three decrees), cross-verified article-by-article against nezams.com. **⚠ Flagged institutional-name divergence:** for the 17 unamended articles, this track follows nezams.com's wording (pre-2020 regulator name «مؤسسة النقد العربي السعودي») rather than misa.gov.sa's current-name reproduction — no source documents a formal per-article amendment renaming the institution in these specific articles. **⚠ IMPORTANT LIMITATION:** pre-amendment original text was NOT transcribed into this build for any of the 8 amended articles — for 6 of them (2, 3, 6, 18, 19, 20) the research pass located but did not retain the original wording; for 2 of them (21, 22) no original text was even located. No original_XXXXh_text fields are included — a documented gap, not a fabrication, and a candidate for a dedicated follow-up pass. A companion Implementing Regulation exists (Ministerial Resolution 596/1, 11/3/1425H) but is not extracted in this track. Arabic governs; not legal advice.",
             },
         ],
     }

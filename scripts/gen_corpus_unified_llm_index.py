@@ -242,6 +242,8 @@ LAYERS = [
      "trademark", "law"),
     ("data/anti_concealment_arabic_legal_llm/anti_concealment_law_legal_llm_001_020.json",
      "anti_concealment", "law"),
+    ("data/insurance_control_arabic_legal_llm/insurance_control_law_legal_llm_001_025.json",
+     "insurance_control", "law"),
 ]
 
 

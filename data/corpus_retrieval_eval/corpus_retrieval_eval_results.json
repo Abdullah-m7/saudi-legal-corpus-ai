@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 248,
-  "top1_hits": 224,
-  "top3_hits": 241,
-  "top5_hits": 244,
-  "top1_accuracy": 0.9032,
-  "top3_accuracy": 0.9718,
-  "top5_accuracy": 0.9839,
-  "mrr_at_5": 0.937,
+  "total_queries": 250,
+  "top1_hits": 226,
+  "top3_hits": 243,
+  "top5_hits": 246,
+  "top1_accuracy": 0.904,
+  "top3_accuracy": 0.972,
+  "top5_accuracy": 0.984,
+  "mrr_at_5": 0.9375,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1807,13 +1807,13 @@
      "score": 21
     },
     {
-     "record_id": "oa-llm-companies-art-018",
-     "article_number": 18,
-     "score": 11
+     "record_id": "insurance-control-law-llm-art-002",
+     "article_number": 2,
+     "score": 12
     },
     {
-     "record_id": "oa-llm-companies-art-019",
-     "article_number": 19,
+     "record_id": "oa-llm-companies-art-018",
+     "article_number": 18,
      "score": 11
     }
    ]
@@ -6586,9 +6586,9 @@
      "score": 22
     },
     {
-     "record_id": "judiciary-law-llm-art-011",
-     "article_number": 11,
-     "score": 17
+     "record_id": "insurance-control-law-llm-art-001",
+     "article_number": 1,
+     "score": 19
     }
    ]
   },
@@ -7705,6 +7705,68 @@
      "record_id": "judicial-costs-law-llm-art-019",
      "article_number": 19,
      "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "ins-001",
+   "query_ar": "لا يجوز لأي شخص في المملكة ممارسة أعمال التأمين أو إعادة التأمين أو تقديم الخدمات المساندة للتأمين",
+   "category": "topical",
+   "gold": {
+    "corpus": "insurance_control",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "insurance-control-law-llm-art-003",
+     "article_number": 3,
+     "score": 28
+    },
+    {
+     "record_id": "labor-annex4-llm-art-001",
+     "article_number": 1,
+     "score": 25
+    },
+    {
+     "record_id": "labor-annex4-llm-art-063",
+     "article_number": 63,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "ins-002",
+   "query_ar": "على شركات التأمين وشركات إعادة التأمين أن تخصص حصة من أرباحها السنوية لا تقل عن (20%) كاحتياطي نظامي",
+   "category": "topical",
+   "gold": {
+    "corpus": "insurance_control",
+    "law_component": "law",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "insurance-control-law-llm-art-015",
+     "article_number": 15,
+     "score": 51
+    },
+    {
+     "record_id": "insurance-control-law-llm-art-013",
+     "article_number": 13,
+     "score": 33
+    },
+    {
+     "record_id": "insurance-control-law-llm-art-014",
+     "article_number": 14,
+     "score": 32
     }
    ]
   }
