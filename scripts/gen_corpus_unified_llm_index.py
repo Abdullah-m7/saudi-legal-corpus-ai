@@ -218,6 +218,8 @@ LAYERS = [
      "regions", "law"),
     ("data/electronic_transactions_arabic_legal_llm/electronic_transactions_law_legal_llm_001_031.json",
      "electronic_transactions", "law"),
+    ("data/allegiance_commission_arabic_legal_llm/allegiance_commission_law_legal_llm_001_025.json",
+     "allegiance_commission", "law"),
 ]
 
 
