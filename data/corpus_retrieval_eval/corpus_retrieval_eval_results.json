@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 258,
-  "top1_hits": 234,
-  "top3_hits": 251,
-  "top5_hits": 254,
-  "top1_accuracy": 0.907,
-  "top3_accuracy": 0.9729,
-  "top5_accuracy": 0.9845,
-  "mrr_at_5": 0.9394,
+  "total_queries": 260,
+  "top1_hits": 236,
+  "top3_hits": 253,
+  "top5_hits": 256,
+  "top1_accuracy": 0.9077,
+  "top3_accuracy": 0.9731,
+  "top5_accuracy": 0.9846,
+  "mrr_at_5": 0.9399,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5098,9 +5098,9 @@
      "score": 31
     },
     {
-     "record_id": "anti-cyber-crime-law-llm-art-004",
-     "article_number": 4,
-     "score": 27
+     "record_id": "anti-narcotics-law-llm-art-039",
+     "article_number": 39,
+     "score": 29
     }
    ]
   },
@@ -6736,14 +6736,14 @@
      "score": 41
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
+     "record_id": "anti-narcotics-law-llm-art-057",
+     "article_number": 57,
      "score": 22
     },
     {
-     "record_id": "anti-concealment-law-llm-art-009",
-     "article_number": 9,
-     "score": 21
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 22
     }
    ]
   },
@@ -8015,6 +8015,68 @@
      "record_id": "muslaha-regulation-llm-art-011",
      "article_number": 11,
      "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "nrc-001",
+   "query_ar": "مع مراعاة ما ورد في البند ( ثانيا ) من هذه المادة يعاقب بالقتل تعزيرا من ثبت شرعا بحقه شيء من الأفعال الآتية",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_narcotics",
+    "law_component": "law",
+    "article_number": 37
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-narcotics-law-llm-art-037",
+     "article_number": 37,
+     "score": 24
+    },
+    {
+     "record_id": "evidence-elec-llm-art-012",
+     "article_number": 12,
+     "score": 23
+    },
+    {
+     "record_id": "evidence-manuals-llm-art-063",
+     "article_number": 63,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "nrc-002",
+   "query_ar": "يعفى من العقوبات المقررة عن الجرائم المنصوص عليها في المادة (الثالثة) من هذا النظام، كل من بادر من الجناة",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_narcotics",
+    "law_component": "law",
+    "article_number": 61
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-narcotics-law-llm-art-061",
+     "article_number": 61,
+     "score": 37
+    },
+    {
+     "record_id": "terrorism-law-llm-art-051",
+     "article_number": 51,
+     "score": 30
+    },
+    {
+     "record_id": "anti-concealment-law-llm-art-009",
+     "article_number": 9,
+     "score": 28
     }
    ]
   }

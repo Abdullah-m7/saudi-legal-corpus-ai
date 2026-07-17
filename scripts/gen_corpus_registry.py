@@ -152,6 +152,7 @@ ECOMMERCE_LAW_LLM = os.path.join(ROOT, "data", "ecommerce_arabic_legal_llm", "ec
 VAT_LAW_LLM = os.path.join(ROOT, "data", "vat_arabic_legal_llm", "vat_law_legal_llm_001_053.json")
 FRANCHISE_LAW_LLM = os.path.join(ROOT, "data", "franchise_arabic_legal_llm", "franchise_law_legal_llm_001_027.json")
 CIVIL_AVIATION_LAW_LLM = os.path.join(ROOT, "data", "civil_aviation_arabic_legal_llm", "civil_aviation_law_legal_llm_001_180.json")
+ANTI_NARCOTICS_LAW_LLM = os.path.join(ROOT, "data", "anti_narcotics_arabic_legal_llm", "anti_narcotics_law_legal_llm_001_074.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -297,6 +298,7 @@ def main() -> int:
     vat_law_llm = _load_json(VAT_LAW_LLM)
     franchise_law_llm = _load_json(FRANCHISE_LAW_LLM)
     civil_aviation_law_llm = _load_json(CIVIL_AVIATION_LAW_LLM)
+    anti_narcotics_law_llm = _load_json(ANTI_NARCOTICS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -317,7 +319,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 114,
+        "total_tracks": 115,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -435,6 +437,7 @@ def main() -> int:
             + vat_law_llm["record_count"]  # 53 Value Added Tax Law (DISTINCT TIER: ZATCA official PDF x BOE portal cross-verified, see track notes)
             + franchise_law_llm["record_count"]  # 27 Franchise Law (DISTINCT TIER: BOE portal via r.jina.ai proxy, qanoniah.com spot cross-verified, see track notes)
             + civil_aviation_law_llm["record_count"]  # 180 Civil Aviation Law (DISTINCT TIER: nezams.com primary, rakadvocate.blogspot.com spot-checked, BOE unreachable, see track notes)
+            + anti_narcotics_law_llm["record_count"]  # 74 Anti-Narcotics and Psychotropic Substances Control Law (DISTINCT TIER: BOE via r.jina.ai proxy x nezams.com x qadha.org.sa reference book triple-verified, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -543,6 +546,7 @@ def main() -> int:
             + vat_law_llm["record_count"]
             + franchise_law_llm["record_count"]
             + civil_aviation_law_llm["record_count"]
+            + anti_narcotics_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3945,6 +3949,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Civil Aviation Law «نظام الطيران المدني» — Royal Decree M/44 dated 18/7/1426H, based on Council of Ministers Resolution 185 and Shura Council Resolution 101/79. NOTE: the task premise originally assumed decree date 19/7/1426H — corrected to 18/7/1426H per primary sources. 180 records across 14 أبواب (several with sub-فصول): الأول أحكام عامة (1-14, 3 فصول), الثاني تنظيم النقل الجوي (15-32, 3 فصول), الثالث المطارات ومنشآت الخدمات الملاحية (33-48, 3 فصول), الرابع الطائرات (49-88, 5 فصول), الخامس قواعد الجو (89-90), السادس الإجازات وتعليم الطيران (91-97), السابع عمليات النقل الجوي والأشغال الجوية (98-106, 2 فصول), الثامن حوادث الطيران (107-119), التاسع البحث والإنقاذ (120-132), العاشر المسؤوليات والضمانات المتعلقة بتشغيل الطائرة (133-152, 2 فصول), الحادي عشر الجرائم والأفعال ضد أمن الطيران المدني وسلامته (153-161), الثاني عشر العقوبات والجزاءات (162-174), الثالث عشر الطائرات العسكرية (175-176), الرابع عشر أحكام ختامية (177-180). 168 اصلية / 12 معدلة (Articles 1 §6, 32 §1, 46, 107, 108, 109, 112, 114, 115, 116, 118, 119) — current/integrated text used in `text` with full `history` entries; `original_1426h_text` included only where the source actually captured verbatim pre-amendment wording (11 of 12 amended articles — omitted for Article 46, where only the substituted phrase, not the full original paragraph, was quotable; never fabricated). **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this research pass (HTTP 503 via WebFetch, connection-reset via direct curl, HTTP 401 'bad IP reputation' via the r.jina.ai proxy; the Wayback Machine was not attempted this pass). Full text instead rests on a direct fetch of nezams.com (secondary Arabic legal-reference site, 2.1MB HTML parsed against its structured per-article markup for all 180 articles), spot-checked — not fully cross-verified article-by-article — against rakadvocate.blogspot.com, which matched verbatim only for Article 1 and Article 180 (the sole two spot-checked). This is a lighter verification tier than most tracks in this corpus, flagged as a candidate for a follow-up confirmation pass against BOE once reachable. Flagged discrepancies (9 total, see known_unresolved_discrepancies): (1) an apparent stray/mislabeled 'الفصل الثاني: صلاحيات وواجبات السلطات' sub-chapter heading found in the raw source immediately before Article 149, content-wise reading as a continuation of the preceding sub-chapter rather than a new one — transcribed verbatim as encountered in each article's section_ar, while chapter_structure reflects the content-correct title, with the deliberate divergence documenting the anomaly rather than silently resolving it; (2) Council of Ministers Resolution 158/1445H (the 'المكتب'→'المركز' institutional rename across Articles 108/109/112/114-116/118/119, and the full re-issuance of Article 107 creating المركز الوطني لسلامة النقل) confirmed via only one primary source (nezams.com), not independently corroborated; (3)-(4) two articles (46, 119) where the amendment note's quoted target phrase matches only a specific rendering in the source, and only that literal match was edited, flagged to avoid silent over-application; (5) a stray Unicode object-replacement character in Article 1's raw source (moot after cleanup); (6) Article 107's current text uses Eastern Arabic-Indic numerals, preserved verbatim rather than normalized; (7) a source typo in Article 107 preserved verbatim, not corrected; (8) full BOE-unreachable methodology explanation; (9) no single consolidated Implementing Regulation exists — multiple Civil Aviation Regulations (CARs) are issued under Article 179's authority with no single consolidating date, none extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "anti_narcotics_law",
+                "display_name_ar": "نظام مكافحة المخدرات والمؤثرات العقلية",
+                "display_name_en": "Anti-Narcotics and Psychotropic Substances Control Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_PROXY_X_NEZAMS_X_QADHA_REFERENCE_TRIPLE_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/39) — BOE portal via r.jina.ai proxy x nezams.com x qadha.org.sa reference book (penalty articles triple-verified, see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": anti_narcotics_law_llm["record_count"],
+                    "data_path": "data/anti_narcotics_arabic_legal_llm/anti_narcotics_law_legal_llm_001_074.json"}},
+                "record_counts": {"arabic_articles": anti_narcotics_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 74, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": anti_narcotics_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/anti_narcotics/law/official_source/anti_narcotics_law_official_source.json",
+                    "sources/anti_narcotics/law/verified/anti_narcotics_law_verified_records.jsonl",
+                    "data/anti_narcotics_arabic_legal_llm/anti_narcotics_law_legal_llm_001_074.json",
+                ],
+                "validator_targets": ["make anti-narcotics-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Anti-Narcotics and Psychotropic Substances Control Law «نظام مكافحة المخدرات والمؤثرات العقلية» — Royal Decree M/39 dated 8/7/1426H, approving Council of Ministers Resolution 152 (12/6/1426H), following Shura Council Resolution 51/50 (7/11/1425H). Repeals the prior narcotics-trafficking law issued by Supreme Order 3318 (9/4/1353H). 74 records, all اصلية — no amending instrument to the article text itself was found since 1426H (only the annexed substance schedules, Tables 1-4, were administratively updated under Article 70's delegated authority to the Minister of Health, which is not a textual amendment to any article). **NO formal الباب/الفصل structure exists** — confirmed by a full-text grep of a combined law+regulation reference PDF finding zero باب/فصل structural markers; the 74 sequential articles instead carry unnumbered topical headers, modeled as chapter_structure entries with title_ar + article range only. **DISTINCT VERIFICATION TIER:** the official BOE portal returned HTTP 503 on direct WebFetch; the r.jina.ai proxy successfully retrieved the complete text (preamble, Council of Ministers Resolution, all 74 articles), cross-verified word-for-word against nezams.com (full agreement except one textual variant — see below) and additionally triple-verified for the highest-stakes penalty articles (37, the death-penalty article, plus 38, 39, 40, 49) against qadha.org.sa's published reference book (ISBN 978-603-92112-4-2, 1445H). A Wayback Machine cross-check could not be completed (sandbox egress policy blocked archive.org access) — a documented gap, mitigated by the two other independently-sourced full-text copies. Flagged discrepancies: Article 42 paragraph 1 has a textual variant between BOE's coherent 'الدعوى' and nezams.com's apparent OCR/typo 'الدعوة' — the BOE reading was adopted as authoritative, discrepancy documented; Article 35's official heading reads 'المادة الخامسة الثلاثون' (missing the conjunctive و used in every other analogous ordinal), identically present in both primary sources and preserved verbatim rather than silently corrected; an AI-search claim of a 'الباب الثاني/الفصل الأول' structure was investigated and found unsubstantiated; the 'no amendments' conclusion rests on convergent negative evidence rather than a definitive BOE amendment-log feature (none was accessible); unverified AI-search-only claims about amendments to a separate, related National Committee for Combating Drugs organizing regulation (Council of Ministers Resolutions 651/1438H and 211/1443H) are explicitly out of scope and do not amend this law's articles; Article 68's 'مؤسسة النقد العربي السعودي' (SAMA's pre-2020 name) and Articles 12-27's 'وزارة الصحة' (vs. today's Food and Drug Authority) are preserved verbatim as enacted, a real-world regulatory-evolution note not reflected in the 2005 statutory text. A companion Implementing Regulation is confirmed to exist (Council of Ministers Resolution 201, 10/6/1431H) via 4 corroborating sources but not to verbatim-text standard — not extracted in this track. Arabic governs; not legal advice.",
             },
         ],
     }

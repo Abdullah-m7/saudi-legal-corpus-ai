@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 7932,
+  "total_primary_arabic_governing_records": 8006,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8827,
-  "total_tracks": 114,
+  "total_registry_counted_records": 8901,
+  "total_tracks": 115,
   "tracks": [
     {
       "boundaries": {
@@ -5363,6 +5363,53 @@
       "validator_targets": [
         "make civil-aviation-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/anti_narcotics/law/official_source/anti_narcotics_law_official_source.json",
+        "sources/anti_narcotics/law/verified/anti_narcotics_law_verified_records.jsonl",
+        "data/anti_narcotics_arabic_legal_llm/anti_narcotics_law_legal_llm_001_074.json"
+      ],
+      "display_name_ar": "نظام مكافحة المخدرات والمؤثرات العقلية",
+      "display_name_en": "Anti-Narcotics and Psychotropic Substances Control Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/anti_narcotics_arabic_legal_llm/anti_narcotics_law_legal_llm_001_074.json",
+          "governing": true,
+          "record_count": 74,
+          "status": "complete"
+        }
+      },
+      "notes": "Anti-Narcotics and Psychotropic Substances Control Law «نظام مكافحة المخدرات والمؤثرات العقلية» — Royal Decree M/39 dated 8/7/1426H, approving Council of Ministers Resolution 152 (12/6/1426H), following Shura Council Resolution 51/50 (7/11/1425H). Repeals the prior narcotics-trafficking law issued by Supreme Order 3318 (9/4/1353H). 74 records, all اصلية — no amending instrument to the article text itself was found since 1426H (only the annexed substance schedules, Tables 1-4, were administratively updated under Article 70's delegated authority to the Minister of Health, which is not a textual amendment to any article). **NO formal الباب/الفصل structure exists** — confirmed by a full-text grep of a combined law+regulation reference PDF finding zero باب/فصل structural markers; the 74 sequential articles instead carry unnumbered topical headers, modeled as chapter_structure entries with title_ar + article range only. **DISTINCT VERIFICATION TIER:** the official BOE portal returned HTTP 503 on direct WebFetch; the r.jina.ai proxy successfully retrieved the complete text (preamble, Council of Ministers Resolution, all 74 articles), cross-verified word-for-word against nezams.com (full agreement except one textual variant — see below) and additionally triple-verified for the highest-stakes penalty articles (37, the death-penalty article, plus 38, 39, 40, 49) against qadha.org.sa's published reference book (ISBN 978-603-92112-4-2, 1445H). A Wayback Machine cross-check could not be completed (sandbox egress policy blocked archive.org access) — a documented gap, mitigated by the two other independently-sourced full-text copies. Flagged discrepancies: Article 42 paragraph 1 has a textual variant between BOE's coherent 'الدعوى' and nezams.com's apparent OCR/typo 'الدعوة' — the BOE reading was adopted as authoritative, discrepancy documented; Article 35's official heading reads 'المادة الخامسة الثلاثون' (missing the conjunctive و used in every other analogous ordinal), identically present in both primary sources and preserved verbatim rather than silently corrected; an AI-search claim of a 'الباب الثاني/الفصل الأول' structure was investigated and found unsubstantiated; the 'no amendments' conclusion rests on convergent negative evidence rather than a definitive BOE amendment-log feature (none was accessible); unverified AI-search-only claims about amendments to a separate, related National Committee for Combating Drugs organizing regulation (Council of Ministers Resolutions 651/1438H and 211/1443H) are explicitly out of scope and do not amend this law's articles; Article 68's 'مؤسسة النقد العربي السعودي' (SAMA's pre-2020 name) and Articles 12-27's 'وزارة الصحة' (vs. today's Food and Drug Authority) are preserved verbatim as enacted, a real-world regulatory-evolution note not reflected in the 2005 statutory text. A companion Implementing Regulation is confirmed to exist (Council of Ministers Resolution 201, 10/6/1431H) via 4 corroborating sources but not to verbatim-text standard — not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_PROXY_X_NEZAMS_X_QADHA_REFERENCE_TRIPLE_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 74,
+        "legal_status_breakdown": {
+          "اصلية": 74,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 74
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/39) — BOE portal via r.jina.ai proxy x nezams.com x qadha.org.sa reference book (penalty articles triple-verified, see notes)",
+      "status": "complete",
+      "track_id": "anti_narcotics_law",
+      "validator_targets": [
+        "make anti-narcotics-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5377,6 +5424,7 @@
       "anti_concealment": 20,
       "anti_cyber_crime": 16,
       "anti_harassment": 8,
+      "anti_narcotics": 74,
       "anti_trafficking": 17,
       "arbitration": 77,
       "banking_control": 26,
@@ -5454,7 +5502,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7763,
+    "total_records": 7837,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
