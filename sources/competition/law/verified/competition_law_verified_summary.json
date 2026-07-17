@@ -1,0 +1,32 @@
+{
+  "law_key": "competition",
+  "layer": "COMPETITION_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 28,
+  "official_text_status": "DUAL_PRIMARY_SOURCE_BOE_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 28,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/75)",
+  "decree_date_hijri": "29/6/1440",
+  "consolidated_amended_law": false,
+  "chapter_structure": [],
+  "verification_methodology_note": "Competition Law «نظام المنافسة» — Royal Decree M/75 dated 29/6/1440H (6 March 2019, King Salman bin Abdulaziz Al Saud), approved by Council of Ministers Decision 372 (28/6/1440H) following Shura Council Resolution 120/26 (4/7/1439H), published in the Official Gazette 20/7/1440H, entered into force 180 days after publication per Article 28 (~September 2019). Confirmed decree date 29/6/1440H via three independent sources agreeing numerically (BOE portal via two Wayback Machine snapshots dated ~Nov 2023 and 2026, WIPO Lex, and nezams.com) -- corrects the initial task briefing's hypothesized '29/7/1440H'. Replaces the earlier Competition Law, Royal Decree M/25 (4/5/1425H), per this law's own Article 26. Administering authority: General Authority for Competition (GAC, هيئة المنافسة). NO chapter (فصل) divisions -- a flat sequence of 28 articles, confirmed identically by all three sources (an AI-generated web summary's informal 'five thematic sections' grouping was investigated and confirmed to be that tool's own editorial paraphrase, not part of the actual statutory text). All 28 articles اصلية -- no confirmed amendments since the 2019 issuance; nezams.com's own metadata field explicitly states 'التعديلات: لم يجرَ عليه تعديل' (no amendments made), corroborated by the current BOE snapshot. laws.boe.gov.sa's LIVE portal was unreachable this pass (as expected), but a Wayback Machine snapshot (fetched directly, not via r.jina.ai) succeeded at two separate points in time and agrees WORD-FOR-WORD with an independent secondary source, nezams.com -- this dual-primary-source agreement is the basis of the STATUS tier. A third source, WIPO Lex's own Arabic PDF, substantively agrees but has one apparent extra word in Article 3(2) ('بالكامل') attributable to known PDF bidi-extraction artifacts, not used. A candidate amendment record for Articles 11/12 (Council of Ministers Decision 97, 2/2/1441H) found in a 2023 BOE snapshot was investigated and confirmed to belong to a DIFFERENT instrument (the GAC's own organizational statute) -- a probable cross-linking display bug since resolved on BOE's site, flagged not applied. A companion Implementing Regulation exists per Article 27 but its exact issuance decision was not independently confirmed this pass (GAC's own site unreachable) -- candidate for follow-up.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "competition_bug_articles_011_012",
+      "description": "A 2023 Wayback Machine snapshot of the BOE portal displayed a 'تعديلات المادة' (article amendment) panel attached to Articles 11 and 12, stating that Council of Ministers Decision 97 (2/2/1441H) deleted a general-reserve clause from Article 11 and deleted/renumbered paragraphs from Article 12. This content does NOT match either article's actual subject matter (Art 11 concerns economic-concentration procedure completion; Art 12 concerns board-member business-practice prohibitions -- neither mentions financial reserves or has lettered paragraphs ج/د in any confirmed reading). Follow-up research independently found that Decision 97/1441H actually amends a DIFFERENT, separate instrument: تنظيم الهيئة العامة للمنافسة (the General Authority for Competition's own organizational statute/regulation). The 2026 BOE snapshot no longer displays this note. This is treated as a probable cross-linking/display bug on BOE's site, not a genuine amendment to this law -- nezams.com's own metadata field explicitly states 'التعديلات: لم يجرَ عليه تعديل' (no amendments made), corroborated by the current BOE snapshot. Flagged as a historical site artifact, not applied to this track's article text."
+    },
+    {
+      "article_key": "competition_art_003",
+      "description": "WIPO Lex's Arabic PDF (sa070ar.pdf) renders paragraph 2 with an extra word: 'المؤسسات العامة والشركات المملوكة بالكامل للدولة' ('...companies WHOLLY owned by the State...'), while the BOE portal (both a 2023 and a 2026 snapshot) and nezams.com both agree exactly on the shorter reading without 'بالكامل'. Since BOE and nezams.com agree word-for-word with each other and WIPO's PDF is known to have Arabic-bidi PDF-extraction artifacts, the BOE/nezams wording (without 'بالكامل') is used here as authoritative. Flagged for awareness."
+    },
+    {
+      "article_key": "competition_implementing_regulation",
+      "description": "A companion Implementing Regulation (اللائحة التنفيذية لنظام المنافسة) exists per this law's own Article 27, reportedly issued via GAC Board of Directors Decision 337 (25/1/1441H) -- timing consistent with the statutory 180-day deadline. This specific decision number/date rests only on secondary search-summary evidence; GAC's own site (gac.gov.sa) was unreachable throughout this research pass, so the primary document was not independently confirmed. Not extracted this pass -- candidate for a follow-up companion-track ingestion once GAC's site becomes reachable."
+    }
+  ],
+  "source_artifact": "sources/competition/law/official_source/competition_law_official_source.json"
+}
