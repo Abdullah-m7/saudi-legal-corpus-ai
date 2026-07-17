@@ -248,6 +248,10 @@ LAYERS = [
      "ecommerce", "law"),
     ("data/vat_arabic_legal_llm/vat_law_legal_llm_001_053.json",
      "vat", "law"),
+    ("data/franchise_arabic_legal_llm/franchise_law_legal_llm_001_027.json",
+     "franchise", "law"),
+    ("data/civil_aviation_arabic_legal_llm/civil_aviation_law_legal_llm_001_180.json",
+     "civil_aviation", "law"),
 ]
 
 

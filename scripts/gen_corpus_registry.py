@@ -150,6 +150,8 @@ ANTI_CONCEALMENT_LAW_LLM = os.path.join(ROOT, "data", "anti_concealment_arabic_l
 INSURANCE_CONTROL_LAW_LLM = os.path.join(ROOT, "data", "insurance_control_arabic_legal_llm", "insurance_control_law_legal_llm_001_025.json")
 ECOMMERCE_LAW_LLM = os.path.join(ROOT, "data", "ecommerce_arabic_legal_llm", "ecommerce_law_legal_llm_001_026.json")
 VAT_LAW_LLM = os.path.join(ROOT, "data", "vat_arabic_legal_llm", "vat_law_legal_llm_001_053.json")
+FRANCHISE_LAW_LLM = os.path.join(ROOT, "data", "franchise_arabic_legal_llm", "franchise_law_legal_llm_001_027.json")
+CIVIL_AVIATION_LAW_LLM = os.path.join(ROOT, "data", "civil_aviation_arabic_legal_llm", "civil_aviation_law_legal_llm_001_180.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -293,6 +295,8 @@ def main() -> int:
     insurance_control_law_llm = _load_json(INSURANCE_CONTROL_LAW_LLM)
     ecommerce_law_llm = _load_json(ECOMMERCE_LAW_LLM)
     vat_law_llm = _load_json(VAT_LAW_LLM)
+    franchise_law_llm = _load_json(FRANCHISE_LAW_LLM)
+    civil_aviation_law_llm = _load_json(CIVIL_AVIATION_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -313,7 +317,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 112,
+        "total_tracks": 114,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -429,6 +433,8 @@ def main() -> int:
             + insurance_control_law_llm["record_count"]  # 25 Cooperative Insurance Companies Control Law (DISTINCT TIER: misa.gov.sa official PDF x nezams.com, BOE and Wayback both unreachable, see track notes)
             + ecommerce_law_llm["record_count"]  # 26 E-Commerce Law (DISTINCT TIER: BOE Wayback snapshot x nezams.com cross-verified, see track notes)
             + vat_law_llm["record_count"]  # 53 Value Added Tax Law (DISTINCT TIER: ZATCA official PDF x BOE portal cross-verified, see track notes)
+            + franchise_law_llm["record_count"]  # 27 Franchise Law (DISTINCT TIER: BOE portal via r.jina.ai proxy, qanoniah.com spot cross-verified, see track notes)
+            + civil_aviation_law_llm["record_count"]  # 180 Civil Aviation Law (DISTINCT TIER: nezams.com primary, rakadvocate.blogspot.com spot-checked, BOE unreachable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -535,6 +541,8 @@ def main() -> int:
             + insurance_control_law_llm["record_count"]
             + ecommerce_law_llm["record_count"]
             + vat_law_llm["record_count"]
+            + franchise_law_llm["record_count"]
+            + civil_aviation_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3881,6 +3889,62 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Value Added Tax Law «نظام ضريبة القيمة المضافة» — Royal Decree M/113 dated 2/11/1438H (2017, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 654 (1/11/1438H), following Shura Council Resolution 128/45 (18/10/1438H). Administering authority: Zakat, Tax and Customs Authority (ZATCA, formerly GAZT). 53 records across 18 chapters (فصول): 51 اصلية / 2 معدلة. Article 2 amended by Royal Order A/638 (15/10/1441H), raising the VAT rate from 5% to 15%, effective 1 July 2020. Article 49 amended by Royal Decree M/52 (28/4/1441H), replacing a reference to 'الجهة القضائية المختصة' with a reference to the newly-created Tax Violations and Disputes Resolution Committees (whose own rules of procedure were later superseded by Royal Order 25711, 8/4/1445H). **DISTINCT VERIFICATION TIER:** current-consolidated text rests on TWO independent official sources in agreement — ZATCA's own official consolidated PDF (source of the two amended articles' current text, with explicit amendment footnotes) cross-verified against laws.boe.gov.sa (reached via the r.jina.ai proxy after the live page returned HTTP 503) for all other articles and for decree/preamble metadata; the Wayback Machine was unreachable this pass (TLS connection reset) and was not part of this track's verification chain. **⚠ IMPORTANT LIMITATION:** the BOE portal's default view is NOT automatically consolidated with amendments — for BOTH amended articles (2 and 49) the BOE-portal rendering showed pre-amendment or truncated/anomalous text, confirming ZATCA's PDF as the authoritative current-text source for those two articles; neither article's FULL pre-amendment original text was captured to primary-source confidence this pass, so no original_1438h_text fields are included for either — a documented gap, not a fabrication, flagged as a candidate for a dedicated follow-up pass. Additional flagged discrepancies: a publication-date conflict between BOE and eastlaws.com (~16 months apart); an isolated Gregorian-date-conversion anomaly in ZATCA's own Implementing Regulation PDF; Article 26's chapter placement under Chapter 10 despite its subject matter reading more naturally with Chapter 11, preserved as found. A companion Implementing Regulation is confirmed to exist (ZATCA Board Decision 3839, 14 Dhul-Hijjah 1438H, amended at least 12 times through 2024/2025) but is not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "franchise_law",
+                "display_name_ar": "نظام الامتياز التجاري",
+                "display_name_en": "Franchise Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_PORTAL_PROXY_RETRIEVED_QANONIAH_SPOT_CROSS_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/22) — BOE portal (via r.jina.ai proxy) spot-cross-verified against qanoniah.com for Articles 1, 2, 4, 5 only (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": franchise_law_llm["record_count"],
+                    "data_path": "data/franchise_arabic_legal_llm/franchise_law_legal_llm_001_027.json"}},
+                "record_counts": {"arabic_articles": franchise_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 27, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": franchise_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/franchise/law/official_source/franchise_law_official_source.json",
+                    "sources/franchise/law/verified/franchise_law_verified_records.jsonl",
+                    "data/franchise_arabic_legal_llm/franchise_law_legal_llm_001_027.json",
+                ],
+                "validator_targets": ["make franchise-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Franchise Law «نظام الامتياز التجاري» — Royal Decree M/22 dated 9/2/1441H (8 October 2019, King Salman bin Abdulaziz Al Saud). NOTE: the task premise originally assumed decree date 21/2/1441H — corrected to 9/2/1441H per BOE. This decree number (M/22) collides with, but is entirely unrelated to, the superseded original Anti-Concealment Law's own decree of the same number dated 4/5/1425H, already in this corpus (see sources/anti_concealment/law/official_source/anti_concealment_law_official_source.json) — disambiguated by content, not by decree number alone, since Saudi royal decree numbering resets periodically. 27 records across 11 chapters (فصول), all اصلية — a fresh, still-unamended 2019 law. **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa (the primary official source) was reached this pass via the r.jina.ai proxy after a direct WebFetch attempt returned HTTP 503, supplying the full verbatim text of all 27 articles and the decree preamble. Independent cross-verification against qanoniah.com (a secondary Arabic legal database) was achieved only as a SPOT CHECK on Articles 1, 2, 4, and 5 (that source's own page rendering was incomplete/paginated, skipping Article 3 and cutting off mid-Chapter 4) — Articles 3 and 6-27 rest on the BOE primary source alone this pass, without a second independent source's confirmation; the Wayback Machine had zero snapshots for this law's BOE URL. Flagged discrepancies: a 2-day publication-date mismatch between BOE metadata (23/10/2019G) and qanoniah.com's Umm Al-Qura gazette table (issue 4802, 25/10/2019G); Article 4's BOE-rendered heading carries a stray trailing colon treated as a page-rendering artifact, not reproduced. **NON-TEXTUAL CARVE-OUT (not an amendment):** a Council of Ministers decision dated 13/1/2026G approved a discretionary carve-out disapplying some unspecified requirement(s) of this Law to certain franchisor/franchisee categories, exercised under an enabling clause already present in the original 1441H decree text — this is explicitly NOT a textual amendment to any article, no article is marked معدلة because of it, and its exact substantive scope (which requirement, which categories) could not be recovered from available sources; documented as an unresolved discrepancy rather than guessed at. A companion Implementing Regulation is confirmed to exist (Ministerial Decision 591, 18/9/1441H, 16 articles) but is not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "civil_aviation_law",
+                "display_name_ar": "نظام الطيران المدني",
+                "display_name_en": "Civil Aviation Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_PRIMARY_X_RAKADVOCATE_SPOT_CHECKED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/44) — nezams.com primary fetch, rakadvocate.blogspot.com spot-checked (arts 1, 180 only); BOE portal unreachable (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": civil_aviation_law_llm["record_count"],
+                    "data_path": "data/civil_aviation_arabic_legal_llm/civil_aviation_law_legal_llm_001_180.json"}},
+                "record_counts": {"arabic_articles": civil_aviation_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 168, "معدلة": 12, "ملغاة": 0, "مضافة": 0},
+                                  "total": civil_aviation_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/civil_aviation/law/official_source/civil_aviation_law_official_source.json",
+                    "sources/civil_aviation/law/verified/civil_aviation_law_verified_records.jsonl",
+                    "data/civil_aviation_arabic_legal_llm/civil_aviation_law_legal_llm_001_180.json",
+                ],
+                "validator_targets": ["make civil-aviation-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Civil Aviation Law «نظام الطيران المدني» — Royal Decree M/44 dated 18/7/1426H, based on Council of Ministers Resolution 185 and Shura Council Resolution 101/79. NOTE: the task premise originally assumed decree date 19/7/1426H — corrected to 18/7/1426H per primary sources. 180 records across 14 أبواب (several with sub-فصول): الأول أحكام عامة (1-14, 3 فصول), الثاني تنظيم النقل الجوي (15-32, 3 فصول), الثالث المطارات ومنشآت الخدمات الملاحية (33-48, 3 فصول), الرابع الطائرات (49-88, 5 فصول), الخامس قواعد الجو (89-90), السادس الإجازات وتعليم الطيران (91-97), السابع عمليات النقل الجوي والأشغال الجوية (98-106, 2 فصول), الثامن حوادث الطيران (107-119), التاسع البحث والإنقاذ (120-132), العاشر المسؤوليات والضمانات المتعلقة بتشغيل الطائرة (133-152, 2 فصول), الحادي عشر الجرائم والأفعال ضد أمن الطيران المدني وسلامته (153-161), الثاني عشر العقوبات والجزاءات (162-174), الثالث عشر الطائرات العسكرية (175-176), الرابع عشر أحكام ختامية (177-180). 168 اصلية / 12 معدلة (Articles 1 §6, 32 §1, 46, 107, 108, 109, 112, 114, 115, 116, 118, 119) — current/integrated text used in `text` with full `history` entries; `original_1426h_text` included only where the source actually captured verbatim pre-amendment wording (11 of 12 amended articles — omitted for Article 46, where only the substituted phrase, not the full original paragraph, was quotable; never fabricated). **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this research pass (HTTP 503 via WebFetch, connection-reset via direct curl, HTTP 401 'bad IP reputation' via the r.jina.ai proxy; the Wayback Machine was not attempted this pass). Full text instead rests on a direct fetch of nezams.com (secondary Arabic legal-reference site, 2.1MB HTML parsed against its structured per-article markup for all 180 articles), spot-checked — not fully cross-verified article-by-article — against rakadvocate.blogspot.com, which matched verbatim only for Article 1 and Article 180 (the sole two spot-checked). This is a lighter verification tier than most tracks in this corpus, flagged as a candidate for a follow-up confirmation pass against BOE once reachable. Flagged discrepancies (9 total, see known_unresolved_discrepancies): (1) an apparent stray/mislabeled 'الفصل الثاني: صلاحيات وواجبات السلطات' sub-chapter heading found in the raw source immediately before Article 149, content-wise reading as a continuation of the preceding sub-chapter rather than a new one — transcribed verbatim as encountered in each article's section_ar, while chapter_structure reflects the content-correct title, with the deliberate divergence documenting the anomaly rather than silently resolving it; (2) Council of Ministers Resolution 158/1445H (the 'المكتب'→'المركز' institutional rename across Articles 108/109/112/114-116/118/119, and the full re-issuance of Article 107 creating المركز الوطني لسلامة النقل) confirmed via only one primary source (nezams.com), not independently corroborated; (3)-(4) two articles (46, 119) where the amendment note's quoted target phrase matches only a specific rendering in the source, and only that literal match was edited, flagged to avoid silent over-application; (5) a stray Unicode object-replacement character in Article 1's raw source (moot after cleanup); (6) Article 107's current text uses Eastern Arabic-Indic numerals, preserved verbatim rather than normalized; (7) a source typo in Article 107 preserved verbatim, not corrected; (8) full BOE-unreachable methodology explanation; (9) no single consolidated Implementing Regulation exists — multiple Civil Aviation Regulations (CARs) are issued under Article 179's authority with no single consolidating date, none extracted in this track. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 254,
-  "top1_hits": 230,
-  "top3_hits": 247,
-  "top5_hits": 250,
-  "top1_accuracy": 0.9055,
-  "top3_accuracy": 0.9724,
-  "top5_accuracy": 0.9843,
-  "mrr_at_5": 0.9385,
+  "total_queries": 258,
+  "top1_hits": 234,
+  "top3_hits": 251,
+  "top5_hits": 254,
+  "top1_accuracy": 0.907,
+  "top3_accuracy": 0.9729,
+  "top5_accuracy": 0.9845,
+  "mrr_at_5": 0.9394,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -2184,8 +2184,8 @@
      "score": 10
     },
     {
-     "record_id": "oa-llm-companies-art-107",
-     "article_number": 107,
+     "record_id": "civil-aviation-law-llm-art-061",
+     "article_number": 61,
      "score": 10
     }
    ]
@@ -7891,6 +7891,130 @@
      "record_id": "labor-law-llm-art-229-mukarrar",
      "article_number": 229,
      "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "frn-001",
+   "query_ar": "لا يجوز عرض فرصة الامتياز أو منح الامتياز إلا بعد ممارسة أعمال الامتياز وفقاً لنموذج عمل الامتياز مدة لا تقل عن سنة واحدة",
+   "category": "topical",
+   "gold": {
+    "corpus": "franchise",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "franchise-law-llm-art-005",
+     "article_number": 5,
+     "score": 48
+    },
+    {
+     "record_id": "franchise-law-llm-art-015",
+     "article_number": 15,
+     "score": 24
+    },
+    {
+     "record_id": "franchise-law-llm-art-009",
+     "article_number": 9,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "frn-002",
+   "query_ar": "إذا أخل مانح الامتياز إخلالاً جوهريًّا بالتزاماته -المتعلقة بالإفصاح أو القيد",
+   "category": "topical",
+   "gold": {
+    "corpus": "franchise",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "franchise-law-llm-art-019",
+     "article_number": 19,
+     "score": 36
+    },
+    {
+     "record_id": "franchise-law-llm-art-018",
+     "article_number": 18,
+     "score": 20
+    },
+    {
+     "record_id": "franchise-law-llm-art-001",
+     "article_number": 1,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "cav-001",
+   "query_ar": "تسري أحكام المواد (السابعة والثلاثين) و(التاسعة والثمانين) و(التسعين) من هذا النظام على جميع الطائرات العسكرية الوطنية والأجنبية",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_aviation",
+    "law_component": "law",
+    "article_number": 175
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-aviation-law-llm-art-175",
+     "article_number": 175,
+     "score": 37
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 31
+    },
+    {
+     "record_id": "oa-llm-companies-art-272",
+     "article_number": 272,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "cav-002",
+   "query_ar": "يتولى المركز التحقيق في الحوادث والوقائع التي تقع للطائرات المدنية",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_aviation",
+    "law_component": "law",
+    "article_number": 107
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-aviation-law-llm-art-107",
+     "article_number": 107,
+     "score": 26
+    },
+    {
+     "record_id": "muslaha-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 16
+    },
+    {
+     "record_id": "muslaha-regulation-llm-art-011",
+     "article_number": 11,
+     "score": 13
     }
    ]
   }
