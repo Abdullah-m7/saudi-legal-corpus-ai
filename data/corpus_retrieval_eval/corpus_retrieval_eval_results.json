@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 270,
-  "top1_hits": 246,
-  "top3_hits": 263,
-  "top5_hits": 266,
-  "top1_accuracy": 0.9111,
-  "top3_accuracy": 0.9741,
-  "top5_accuracy": 0.9852,
-  "mrr_at_5": 0.9421,
+  "total_queries": 272,
+  "top1_hits": 248,
+  "top3_hits": 265,
+  "top5_hits": 268,
+  "top1_accuracy": 0.9118,
+  "top3_accuracy": 0.9743,
+  "top5_accuracy": 0.9853,
+  "mrr_at_5": 0.9425,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8387,6 +8387,68 @@
      "record_id": "social-insurance-law-llm-art-043",
      "article_number": 43,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "sil-001",
+   "query_ar": "يُستثنى من التأمينات المنصوص عليها في هذا النِظام : أ - موظفو الدولة المدنيون وأفراد القوات المُسلحة والشرطة الذين يتمتعون بأنظِمة معاشات التقاعُد الخاصة بموظفي الدولة المدنيين والعسكريين",
+   "category": "topical",
+   "gold": {
+    "corpus": "social_insurance_legacy",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-insurance-legacy-law-llm-art-005",
+     "article_number": 5,
+     "score": 33
+    },
+    {
+     "record_id": "basic-law-of-governance-llm-art-033",
+     "article_number": 33,
+     "score": 21
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "sil-002",
+   "query_ar": "يُقصد بالمفقود : المُشترِك الذي ثبت فقدُه في حادِث يغلُّب معهُ هلاكُه ولم يُعثر على جُثمانِه، كأن يُفقد في حادِث غرق أو حريق أو انفِجار أو كارِثة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "social_insurance_legacy",
+    "law_component": "law",
+    "article_number": 58
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-insurance-legacy-law-llm-art-058",
+     "article_number": 58,
+     "score": 22
+    },
+    {
+     "record_id": "labor-annex2-llm-table-8",
+     "article_number": 8,
+     "score": 15
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 14
     }
    ]
   }

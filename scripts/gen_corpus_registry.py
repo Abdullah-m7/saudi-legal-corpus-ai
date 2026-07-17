@@ -158,6 +158,7 @@ ENVIRONMENTAL_LAW_LLM = os.path.join(ROOT, "data", "environmental_arabic_legal_l
 INCOME_TAX_LAW_LLM = os.path.join(ROOT, "data", "income_tax_arabic_legal_llm", "income_tax_law_legal_llm_001_081.json")
 CIVIL_SERVICE_LAW_LLM = os.path.join(ROOT, "data", "civil_service_arabic_legal_llm", "civil_service_law_legal_llm_001_044.json")
 SOCIAL_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_arabic_legal_llm", "social_insurance_law_legal_llm_001_063.json")
+SOCIAL_INSURANCE_LEGACY_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_legacy_arabic_legal_llm", "social_insurance_legacy_law_legal_llm_001_071.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -309,6 +310,7 @@ def main() -> int:
     income_tax_law_llm = _load_json(INCOME_TAX_LAW_LLM)
     civil_service_law_llm = _load_json(CIVIL_SERVICE_LAW_LLM)
     social_insurance_law_llm = _load_json(SOCIAL_INSURANCE_LAW_LLM)
+    social_insurance_legacy_law_llm = _load_json(SOCIAL_INSURANCE_LEGACY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -329,7 +331,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 120,
+        "total_tracks": 121,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -453,6 +455,7 @@ def main() -> int:
             + income_tax_law_llm["record_count"]  # 81 Income Tax Law (DISTINCT TIER: BOE Wayback x ZATCA PDF x gstc.gov.sa PDF x nezams.com, Chapter 10 BOE+nezams only, see track notes)
             + civil_service_law_llm["record_count"]  # 44 Civil Service Law (BOE Wayback x nezams.com full cross-verification, see track notes)
             + social_insurance_law_llm["record_count"]  # 63 Social Insurance Law (New System, M/273) (BOE Wayback primary x nezams.com spot-check x qanoonsa.com structure, see track notes)
+            + social_insurance_legacy_law_llm["record_count"]  # 71 Social Insurance Law (Old/Legacy System, M/33) (BOE Wayback x nezams.com x Okaz/Al-Riyadh news corroboration, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -567,6 +570,7 @@ def main() -> int:
             + income_tax_law_llm["record_count"]
             + civil_service_law_llm["record_count"]
             + social_insurance_law_llm["record_count"]
+            + social_insurance_legacy_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4137,6 +4141,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Social Insurance Law (New System) «نظام التأمينات الاجتماعية» — Royal Decree M/273 dated 26/12/1445H, approving Council of Ministers Resolution 1022 (same date), following Shura Council Resolution 383/36 (26/11/1445H). Effective for new labor-market entrants from 1 July 2025 (those with NO prior contribution history under the old Social Insurance Law, Royal Decree M/33 dated 3/9/1421H, or the Civil Pension Law, Royal Decree M/41 dated 29/7/1393H, as of 3 July 2024). Administered by المؤسسة العامة للتأمينات الاجتماعية (GOSI). **CRITICAL SCOPE NOTE:** Saudi Arabia currently has TWO social-insurance laws simultaneously in force for different populations — this track covers ONLY the new M/273 law; the OLD M/33 law (still governing everyone enrolled before the 2024 restructuring) is a SEPARATE track. Both instruments share the IDENTICAL Arabic title 'نظام التأمينات الاجتماعية' despite being differently-numbered/dated — a genuine naming collision, analogous to the Franchise Law/Anti-Concealment Law M/22 collision already flagged elsewhere in this corpus. 63 records across 6 أبواب (الباب الثالث split into 2 نested فصول: الفصل الأول تعويضات الأخطار المهنية 30-40، الفصل الثاني تعويض الأمومة 41-42؛ المادتان 28-29 مباشرة تحت الباب الثالث قبل الانقسام), all اصلية — no amendments found or expected, the law being under 2 years old. **VERIFICATION TIER:** the research report handed to the build process turned out to contain condensed/paraphrased article summaries rather than genuine verbatim text — per this corpus's zero-fabrication policy, the build agent independently re-fetched the primary source itself (a Wayback Machine archive snapshot dated 2025-12-12 of the official BOE portal, reached via curl with the 'if_' raw-content modifier and a desktop User-Agent header) and parsed its structured markup for all 63 articles directly, rather than transcribing the paraphrased report. Full-text spot-checked (5 of 63 articles: 1, 16, 30, 44, 63) word-for-word against a direct fetch of nezams.com — exact match modulo optional tashkil — with nezams.com's own index additionally confirming the complete gap-free 1-63 sequence and all باب/فصل boundaries; qanoonsa.com corroborates structure/metadata only. The Royal Decree's own transitional provisions (بند أولاً - حادي عشر) are NOT numbered articles and are preserved verbatim in a dedicated `decree_transitional_provisions_ar` field rather than folded into any article. Flagged discrepancies: the dual-law title collision described above; Article 44's unemployment-insurance rate (states 2%/1%+1% as the statutory ceiling, while the companion Cabinet Resolution 1022 fixes the actual starting rate at 1.5%/0.75%+0.75% — both figures documented, not merged into one); Article 16's qualifying period (the law itself defers to a future Cabinet decision, while Resolution 1022 fixes it at 180 months at the outset); a minor BOE-vs-nezams wording variance at Article 21(1)(a) (preserved as found in BOE's primary text); and the related-but-unextracted SANED unemployment-insurance law (M/18, 12/3/1435H, still separately in force for legacy subscribers) and Civil Pension Law (M/41, 29/7/1393H). An Implementing Regulation is confirmed to exist but not independently verified or extracted. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "social_insurance_legacy_law",
+                "display_name_ar": "نظام التأمينات الاجتماعية (النظام القديم)",
+                "display_name_en": "Social Insurance Law (Old/Legacy System)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/33) — BOE via Wayback Machine (2026-02-09 snapshot) as primary full-text source, cross-verified against nezams.com (20+ of 71 articles plus 100% of the nine changed-article amendment-history popups), Article 37's reconciled text additionally corroborated via independent Okaz/Al-Riyadh news coverage",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": social_insurance_legacy_law_llm["record_count"],
+                    "data_path": "data/social_insurance_legacy_arabic_legal_llm/social_insurance_legacy_law_legal_llm_001_071.json"}},
+                "record_counts": {"arabic_articles": social_insurance_legacy_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 63, "معدلة": 7, "ملغاة": 0, "مضافة": 1},
+                                  "total": social_insurance_legacy_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/social_insurance_legacy/law/official_source/social_insurance_legacy_law_official_source.json",
+                    "sources/social_insurance_legacy/law/verified/social_insurance_legacy_law_verified_records.jsonl",
+                    "data/social_insurance_legacy_arabic_legal_llm/social_insurance_legacy_law_legal_llm_001_071.json",
+                ],
+                "validator_targets": ["make social-insurance-legacy-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Social Insurance Law (Old/Legacy System) «نظام التأمينات الاجتماعية» — Royal Decree M/33 dated 3/9/1421H, approving Council of Ministers Resolution 199 (17/8/1421H), issued by King Fahd bin Abdulaziz Al Saud, superseding the earlier Royal Decree M/22 (6/9/1389H). Governs everyone enrolled in Saudi social insurance BEFORE 1 July 2025 — it is NOT superseded by the new Social Insurance Law (Royal Decree M/273, tracked separately as social_insurance_law); both instruments remain concurrently in force for different populations while sharing the IDENTICAL Arabic title 'نظام التأمينات الاجتماعية', a genuine naming collision (see that track's notes for the same collision documented from the other side). 71 records (70 numbered articles + Article 58 مكرر, added by Royal Decree M/16 dated 24/3/1431H) across 7 فصول, with الفصل الخامس further divided into 4 nested أقسام: 63 اصلية / 7 معدلة (Articles 2, 10, 41, 43, 62, plus Articles 37 and 38 each carrying genuine historical amendments) / 0 ملغاة / 1 مضافة (58 مكرر). **VERIFICATION TIER:** full text rests on a Wayback Machine snapshot (2026-02-09) of the BOE portal (direct curl with the 'if_' raw-content modifier — no egress-policy circumvention needed or used this pass), cross-verified against nezams.com (20+ articles full-text plus 100% of the nine changed-article amendment-history popups matched verbatim). **Article 10** (board composition): BOE's default rendering is confirmed stale (an old 11-member board); the genuinely current, reconciled text (14 members, chaired by the Minister of Finance) was derived from BOE's own amendment-history popups (Cabinet Resolutions 190/1438H -> 335/1442H -> 419/1442H) and cross-verified verbatim against nezams.com — a further divergence from GOSI's own site (which describes an 8-member board) is documented as unresolved rather than silently adopted. **Article 37** (transport of a deceased subscriber's remains): BOE's default rendering is confirmed stale (a narrow, single-obligation provision); the genuinely current, broader 3-part text (Royal Decree M/49, 22/8/1431H) was independently corroborated via Okaz and Al-Riyadh news coverage quoting the current text verbatim. **Article 38** (retirement pension): no 2024 transitional retirement-age text was merged into this article — only its two genuine, verified historical amendments were applied (Royal Decree M/49 1431H reworded sub-paragraph 1/ج and paragraph 2; Royal Decree M/134 1440H deleted sub-paragraph 1/ج entirely, per nezams.com's explicit citation); the 2024 age-table transitional override actually belongs to the NEW law's own promulgating Royal Decree and lives in that track's `decree_transitional_provisions_ar` field instead, documented here as a discrete non-merge note. Other flagged discrepancies: the dual-law title collision described above; a Cabinet-Resolution sequencing oddity in Article 10's own amendment history (335/1442H then 419/1442H); Article 41 paragraph 3's instrument-type citation mismatch (Royal Decree M/118 per BOE vs. Cabinet Resolution 631 per nezams.com, dated one day apart); a duplicate/glitch amendment-history popup BOE attaches to Article 58 (base) that actually belongs to 58 مكرر; and an unextracted Implementing Regulation (GOSI Board Resolution 735, 25/10/1421H). Arabic governs; not legal advice.",
             },
         ],
     }

@@ -264,6 +264,8 @@ LAYERS = [
      "civil_service", "law"),
     ("data/social_insurance_arabic_legal_llm/social_insurance_law_legal_llm_001_063.json",
      "social_insurance", "law"),
+    ("data/social_insurance_legacy_arabic_legal_llm/social_insurance_legacy_law_legal_llm_001_071.json",
+     "social_insurance_legacy", "law"),
 ]
 
 
