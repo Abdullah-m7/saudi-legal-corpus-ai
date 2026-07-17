@@ -1,0 +1,28 @@
+{
+  "law_key": "banking_control",
+  "layer": "BANKING_CONTROL_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 26,
+  "official_text_status": "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+  "status_counts": {
+    "اصلية": 25,
+    "معدلة": 1,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/5)",
+  "decree_date_hijri": "22/2/1386",
+  "consolidated_amended_law": true,
+  "chapter_structure": [],
+  "verification_methodology_note": "Banking Control Law «نظام مراقبة البنوك» — Royal Decree M/5 dated 22/2/1386H (11 June 1966), issued by King Faysal bin Abdulaziz Al Saud, based on Council of Ministers Resolution 179 (5/2/1386H), published in Umm al-Qura Gazette, Issue 2126, dated 5/3/1386H. Distinct from the Saudi Central Bank Law (نظام البنك المركزي السعودي, Royal Decree M/36, 1442H, already ingested in this corpus) -- not conflated; this law governs commercial banking licensing/supervision specifically. NO chapter (فصل) divisions -- a flat sequence of 26 articles, confirmed independently by Saudipedia.com's structural summary and both primary PDF sources. PRIMARY SOURCES: laws.boe.gov.sa was unreachable for raw text this research pass (HTTP 503 live; HTTP 422 via r.jina.ai; a Wayback Machine snapshot exists but returned HTTP 403 to direct fetch and was unreachable via WebFetch entirely) -- only BOE's own WebFetch tool-side SUMMARIZATION (not raw text) was obtainable, confirming decree number, date, 26-article count, and issuing authority, but not usable as a primary verbatim-text source. Full verbatim text instead rests on TWO INDEPENDENT Arabic secondary/tertiary PDF reproductions: alsayrfah.com's copy and bfc.gov.sa's copy (a Saudi finance-sector regulator's own reproduction, which uniquely preserves the Umm al-Qura Gazette masthead and the sole amendment's footnote) -- both agree word-for-word on the substantive wording of all 26 articles. Further corroborated structurally (article count, no chapters, decree metadata) by Saudipedia.com and BOE's own tool-side summary. AMENDMENT: Article 13, paragraph 2 was amended by Royal Decree M/2 (6/1/1391H, based on Council of Ministers Resolution 1135, 21/12/1390H) -- only the current wording was recoverable; the pre-1391H original could not be found in any source reached this pass, flagged as an irrecoverable gap rather than reconstructed. TWO FURTHER SOURCE-TEXT IRREGULARITIES flagged and preserved verbatim: Article 16 opens with \"لمؤسسة النقد\" instead of the term \"المؤسسة\" defined in Article 1(هـ) and used consistently elsewhere -- present identically in both independent source PDFs, a probable genuine drafting inconsistency in the original text, not an extraction artifact. Article 1 and Article 11's sub-clause lettering suffered a bidi/RTL-numeral extraction artifact in the alsayrfah.com PDF specifically; resolved using the cleaner bfc.gov.sa rendering (classical abjad أ ب ج د هـ و lettering), internally consistent with Article 23's own cross-reference to \"البنود (أ, ب, ج) من ... المادة الحادية عشرة\" -- a source-quality resolution, not a silent guess. The preamble's raw alsayrfah.com PDF extraction contained a stray \"مجلس الوزراء\" fragment inserted mid-royal-titulature, inconsistent with the standard Royal Decree preamble formula for this period; omitted from the ingested preamble as a probable extraction artifact rather than presented with false certainty either way. A companion Implementing Regulation (قواعد تطبيق أحكام نظام مراقبة البنوك) exists per SAMA's Rulebook catalogue, but its full text was not extracted this pass -- candidate for a follow-up companion-track ingestion. A three-person Adjudication Committee for Banking Control Law Violations (per Article 25) has its own procedural rules, also not extracted this pass.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "banking_control_art_013",
+      "description": "Article 13, paragraph 2 was amended by Royal Decree M/2 (6/1/1391H), based on Council of Ministers Resolution 1135 (21/12/1390H), per an official footnote printed on the bfc.gov.sa copy of the law. Only the CURRENT (post-amendment) wording could be recovered this research pass -- the pre-1391H original wording was not found in either of the two independent PDF sources consulted, nor in BOE (unreachable for raw text), nor in any secondary source reached. This is an irrecoverable gap, documented here rather than reconstructed or guessed, per this corpus's zero-fabrication policy. A follow-up research pass focused specifically on recovering a pre-1391H printing of this law is recommended."
+    },
+    {
+      "article_key": "banking_control_art_016",
+      "description": "Article 16 opens with the phrase \"يجوز لمؤسسة النقد...\" instead of \"يجوز للمؤسسة...\" -- the defined term \"المؤسسة\" (per Article 1, paragraph هـ) used consistently everywhere else in the law. This phrasing is identical across both independent source PDFs consulted (alsayrfah.com and bfc.gov.sa), indicating a genuine drafting inconsistency in the original 1386H text rather than an extraction artifact. Preserved verbatim, not corrected."
+    }
+  ],
+  "source_artifact": "sources/banking_control/law/official_source/banking_control_law_official_source.json"
+}

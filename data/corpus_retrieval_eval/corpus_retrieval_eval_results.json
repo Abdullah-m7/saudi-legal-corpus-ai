@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 234,
-  "top1_hits": 210,
-  "top3_hits": 227,
-  "top5_hits": 230,
-  "top1_accuracy": 0.8974,
-  "top3_accuracy": 0.9701,
-  "top5_accuracy": 0.9829,
-  "mrr_at_5": 0.9332,
+  "total_queries": 236,
+  "top1_hits": 212,
+  "top3_hits": 229,
+  "top5_hits": 232,
+  "top1_accuracy": 0.8983,
+  "top3_accuracy": 0.9703,
+  "top5_accuracy": 0.9831,
+  "mrr_at_5": 0.9338,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7209,6 +7209,68 @@
      "record_id": "arbitration-law-llm-art-057",
      "article_number": 57,
      "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "bnk-001",
+   "query_ar": "يحظر على أي شخص طبيعي أو اعتباري غير مرخص له أن يزاول في المملكة أي عمل من الأعمال المصرفية بصفة أساسية",
+   "category": "topical",
+   "gold": {
+    "corpus": "banking_control",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "banking-control-law-llm-art-002",
+     "article_number": 2,
+     "score": 40
+    },
+    {
+     "record_id": "banking-control-law-llm-art-005",
+     "article_number": 5,
+     "score": 35
+    },
+    {
+     "record_id": "oa-llm-companies-art-071",
+     "article_number": 71,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "bnk-002",
+   "query_ar": "يجوز لمؤسسة النقد إذا تبينت أن بنكاً خالف أحكام هذا النظام أن تتخذ إجراءات مثل تعيين مستشار أو عزل عضو مجلس إدارة",
+   "category": "topical",
+   "gold": {
+    "corpus": "banking_control",
+    "law_component": "law",
+    "article_number": 22
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "banking-control-law-llm-art-022",
+     "article_number": 22,
+     "score": 25
+    },
+    {
+     "record_id": "oa-llm-companies-art-272",
+     "article_number": 272,
+     "score": 23
+    },
+    {
+     "record_id": "oa-llm-companies-art-069",
+     "article_number": 69,
+     "score": 22
     }
    ]
   },
