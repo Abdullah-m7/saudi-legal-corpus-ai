@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 250,
-  "top1_hits": 226,
-  "top3_hits": 243,
-  "top5_hits": 246,
-  "top1_accuracy": 0.904,
-  "top3_accuracy": 0.972,
-  "top5_accuracy": 0.984,
-  "mrr_at_5": 0.9375,
+  "total_queries": 252,
+  "top1_hits": 228,
+  "top3_hits": 245,
+  "top5_hits": 248,
+  "top1_accuracy": 0.9048,
+  "top3_accuracy": 0.9722,
+  "top5_accuracy": 0.9841,
+  "mrr_at_5": 0.938,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7767,6 +7767,68 @@
      "record_id": "insurance-control-law-llm-art-014",
      "article_number": 14,
      "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "ecm-001",
+   "query_ar": "يُعد الإعلان الإلكتروني من الوثائق التعاقدية المكملة للعقود وملزمة لأطراف العقد",
+   "category": "topical",
+   "gold": {
+    "corpus": "ecommerce",
+    "law_component": "law",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ecommerce-law-llm-art-010",
+     "article_number": 10,
+     "score": 27
+    },
+    {
+     "record_id": "personal-status-reg-llm-art-017",
+     "article_number": 17,
+     "score": 13
+    },
+    {
+     "record_id": "elitigation-guide-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "ecm-002",
+   "query_ar": "على التاجر أن يُقيِّد محله الإلكتروني في السجل التجاري وفقاً لنظام السجل التجاري",
+   "category": "topical",
+   "gold": {
+    "corpus": "ecommerce",
+    "law_component": "law",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ecommerce-law-llm-art-015",
+     "article_number": 15,
+     "score": 35
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-001",
+     "article_number": 1,
+     "score": 28
+    },
+    {
+     "record_id": "commercial-register-law-llm-art-014",
+     "article_number": 14,
+     "score": 28
     }
    ]
   }

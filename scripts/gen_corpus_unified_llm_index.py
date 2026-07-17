@@ -244,6 +244,8 @@ LAYERS = [
      "anti_concealment", "law"),
     ("data/insurance_control_arabic_legal_llm/insurance_control_law_legal_llm_001_025.json",
      "insurance_control", "law"),
+    ("data/ecommerce_arabic_legal_llm/ecommerce_law_legal_llm_001_026.json",
+     "ecommerce", "law"),
 ]
 
 
