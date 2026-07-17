@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 7646,
+  "total_primary_arabic_governing_records": 7672,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8541,
-  "total_tracks": 110,
+  "total_registry_counted_records": 8567,
+  "total_tracks": 111,
   "tracks": [
     {
       "boundaries": {
@@ -5175,6 +5175,53 @@
       "validator_targets": [
         "make insurance-control-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/ecommerce/law/official_source/ecommerce_law_official_source.json",
+        "sources/ecommerce/law/verified/ecommerce_law_verified_records.jsonl",
+        "data/ecommerce_arabic_legal_llm/ecommerce_law_legal_llm_001_026.json"
+      ],
+      "display_name_ar": "نظام التجارة الإلكترونية",
+      "display_name_en": "E-Commerce Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/ecommerce_arabic_legal_llm/ecommerce_law_legal_llm_001_026.json",
+          "governing": true,
+          "record_count": 26,
+          "status": "complete"
+        }
+      },
+      "notes": "E-Commerce Law «نظام التجارة الإلكترونية» — Royal Decree M/126 dated 7/11/1440H (2019, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 628 (6/11/1440H), following Shura Council Resolutions 189/47 (19/10/1439H) and 144/39 (1/9/1440H). Administering authority: Ministry of Commerce. 26 records, flat structure (no chapters — the sole occurrence of the word فصل is substantive text inside Article 22, 'الفصل في المنازعات' / 'adjudicate disputes', not a structural heading), all اصلية — a fresh, still-unamended 2019 law; confirmed via the BOE portal's own per-article amendment/repeal CSS-class markers being absent from every article, and nezams.com's explicit 'لم يجرِ عليه تعديل' (no amendment) statement. **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass; full text instead rests on a single successful Wayback Machine snapshot of the BOE portal (fetched directly, not via r.jina.ai or WebFetch, neither of which can reliably reach archive.org) — a second, differently-dated snapshot for byte-identity cross-checking could not be fetched due to repeated network-level connection resets against archive.org, a lighter cross-verification than some other tracks' two-snapshot pattern, flagged as a candidate for a follow-up confirmation pass. Cross-verified against nezams.com. Two flagged discrepancies, both confirmed genuine source-text features rather than artifacts: Article 1's own defined terms still name the ministry 'وزارة التجارة والاستثمار' (the pre-reorganization name, since the Law itself has never been amended); Article 22 has no terminal punctuation in the official BOE source markup itself. A companion Implementing Regulation is confirmed to exist (Ministerial Resolution 200/1441H, 19/5/1441H) but is not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 26,
+        "legal_status_breakdown": {
+          "اصلية": 26,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 26
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/126) — BOE portal via a single Wayback Machine snapshot (fetched directly), cross-verified against nezams.com (see notes)",
+      "status": "complete",
+      "track_id": "ecommerce_law",
+      "validator_targets": [
+        "make ecommerce-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5210,6 +5257,7 @@
       "council_of_ministers": 32,
       "criminal_procedure": 403,
       "documentation_settlement": 15,
+      "ecommerce": 26,
       "electronic_transactions": 31,
       "elitigation_guide": 5,
       "enforcement": 371,
@@ -5262,7 +5310,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7477,
+    "total_records": 7503,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

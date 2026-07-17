@@ -1,0 +1,326 @@
+{
+  "document": "نظام التجارة الإلكترونية",
+  "document_en": "E-Commerce Law",
+  "decree": "المرسوم الملكي رقم (م/126)",
+  "decree_date_hijri": "7/11/1440",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": true,
+  "issuing_authority_ar": "المرسوم الملكي — الملك سلمان بن عبدالعزيز آل سعود؛ بناءً على قرار مجلس الوزراء رقم (628) وتاريخ 6/11/1440هـ، بعد الاطلاع على قراري مجلس الشورى رقم (189/47) وتاريخ 19/10/1439هـ ورقم (144/39) وتاريخ 1/9/1440هـ",
+  "issuing_authority_en": "Royal Decree — King Salman bin Abdulaziz Al Saud; based on Council of Ministers Resolution 628 (6/11/1440H), following Shura Council Resolutions 189/47 (19/10/1439H) and 144/39 (1/9/1440H)",
+  "preamble_ar": "المرسوم الملكي رقم (م/126) وتاريخ 7/11/1440هـ، بالموافقة على نظام التجارة الإلكترونية.\nبعون الله تعالى، نحن سلمان بن عبدالعزيز آل سعود، ملك المملكة العربية السعودية.\nبناءً على المادة (السبعين) من النظام الأساسي للحكم، الصادر بالأمر الملكي رقم (أ/90) وتاريخ 27/8/1412هـ، وبناءً على المادة (العشرين) من نظام مجلس الوزراء، الصادر بالأمر الملكي رقم (أ/13) وتاريخ 3/3/1414هـ، وبعد الاطلاع على قراري مجلس الشورى رقم (189/47) وتاريخ 19/10/1439هـ ورقم (144/39) وتاريخ 1/9/1440هـ، وبعد الاطلاع على قرار مجلس الوزراء رقم (628) وتاريخ 6/11/1440هـ.\nرسمنا بما هو آت: أولاً: الموافقة على نظام التجارة الإلكترونية، بالصيغة المرافقة. ثانياً: على سمو نائب رئيس مجلس الوزراء والوزراء -كل فيما يخصه- تنفيذ مرسومنا هذا.",
+  "verification_methodology_note": "PRIMARY SOURCE: laws.boe.gov.sa's live portal was unreachable this research pass (503 direct; timeout via r.jina.ai). Full text was instead recovered from a Wayback Machine snapshot of the BOE portal's law-detail page, fetched directly via curl (not via r.jina.ai or WebFetch, neither of which can reliably reach archive.org). Only one successful snapshot fetch was achieved this pass -- repeated attempts at a second, differently-dated snapshot for a cross-snapshot byte-identity check hit persistent network-level connection resets against archive.org, not a source-content issue; flagged as a lighter cross-verification than some other tracks' two-snapshot pattern, and a candidate for a follow-up confirmation pass. Cross-verified against one independent secondary source, nezams.com, which agrees on decree number/date, article count (26), and the law's unamended status ('لم يجرِ عليه تعديل'). On the BOE portal itself, article amendment/repeal status is encoded in CSS classes ('modified'/'canceled') on each article's HTML element; none of the 26 articles carry either class, confirming all are اصلية. A companion Implementing Regulation is confirmed to exist (Ministerial Resolution 200/1441H, 19/5/1441H) but its exact Gregorian equivalent date was not independently pinned to primary-source confidence and is not extracted in this track.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "ecommerce_publication_date",
+      "description": "The publication date of Royal Decree M/126 in the Official Gazette is reported inconsistently across sources: the official BOE portal's own metadata panel states 21/11/1440H (24/07/2019G), while nezams.com states 23/11/1440H -- a two-day discrepancy. Not reconciled; both dates recorded here for transparency, with the BOE-stated date used as decree metadata since BOE is the primary source."
+    },
+    {
+      "article_key": "ecommerce_stale_ministry_name",
+      "description": "Article 1's own defined terms read 'الوزارة: وزارة التجارة والاستثمار' and 'الوزير: وزير التجارة والاستثمار' (Ministry/Minister of Commerce AND Investment) -- the ministry has since been renamed 'وزارة التجارة' (Ministry of Commerce) in general government reorganization, and other more recently consolidated laws in this corpus already define the ministry without 'والاستثمار'. Because this Law has never itself been amended, its own text still literally uses the superseded ministry name -- a genuine textual artifact of an unamended law, preserved verbatim, not silently normalized."
+    },
+    {
+      "article_key": "ecommerce_art_022",
+      "description": "Article 22 has no terminal punctuation in the official BOE source markup itself (confirmed directly in the raw captured HTML, not a parsing artifact) -- the article's Arabic text ends with '...أحكام النظام' and no closing period. Preserved exactly as found in the primary source, not corrected."
+    },
+    {
+      "article_key": "ecommerce_single_wayback_snapshot",
+      "description": "This track's primary-source text rests on a single successful Wayback Machine snapshot of the BOE portal page (further snapshot-fetch attempts for a second, differently-dated cross-snapshot byte-identity check hit repeated network-level connection resets against archive.org in this research session, not a source-content issue). Cross-verified against one independent secondary source (nezams.com), which agrees on decree metadata, article count, and unamended status. This is a lighter cross-verification than the two-independent-dated-Wayback-snapshot pattern used for some other tracks in this corpus (e.g. Commercial Papers Law) -- flagged as a candidate for a follow-up second-snapshot confirmation pass."
+    }
+  ],
+  "chapter_structure": [],
+  "article_count": 26,
+  "status_counts": {
+    "اصلية": 26,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "ecommerce_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لأغراض تطبيق أحكام هذا النظام، يقصد بالكلمات والعبارات الآتية -أينما وردت في النظام- المعاني المبينة أمام كل منها، ما لم يقتضِ السياق غير ذلك:\nالنظام: نظام التجارة الإلكترونية.\nاللائحة: اللائحة التنفيذية للنظام.\nالوزارة: وزارة التجارة والاستثمار.\nالوزير: وزير التجارة والاستثمار.\nالتجارة الإلكترونية: نشاط ذو طابع اقتصادي يباشره موفر الخدمة والمستهلك -بصورة كلية أو جزئية- بوسيلة إلكترونية؛ من أجل بيع منتجات أو تقديم خدمات أو الإعلان عنها أو تبادل البيانات الخاصة بها.\nالبيانات: كل بيان مهما كان مصدره أو شكله، يستخدم بشكل مباشر أو غير مباشر عند التعامل بالتجارة الإلكترونية.\nالشخص: الشخص ذو الصفة الطبيعية أو الاعتبارية.\nالتاجر: الشخص المقيد بالسجل التجاري الذي يزاول التجارة الإلكترونية.\nالممارس: الشخص غير المقيد بالسجل التجاري الذي يزاول التجارة الإلكترونية.\nموفر الخدمة: التاجر أو الممارس.\nالمستهلك: الشخص الذي يتعامل بالتجارة الإلكترونية رغبةً في الحصول على المنتجات أو الخدمات التي يوفرها موفر الخدمة.\nالعقد: الاتفاق الذي يُبرم إلكترونيًّا بين الأطراف الذين يتعاملون بالتجارة الإلكترونية.\nالمحل الإلكتروني: منصة إلكترونية تتيح لموفر الخدمة عرض منتج أو بيعه، أو تقديم خدمة، أو الإعلان عنها أو تبادل البيانات الخاصة بها.\nجهات توثيق المحلات الإلكترونية: الجهات التي ترخص لها الوزارة بتولي عملية توثيق المحلات الإلكترونية.\nالخطاب الإلكتروني: بيان أو إعلان أو إشعار أو طلب أو عرض يوجهه أطراف العقد بوسيلة إلكترونية في مرحلة التفاوض في شأن العقد أو أثناء تنفيذه.\nالإعلان الإلكتروني: كل دعاية بوسيلة إلكترونية يقوم بها موفر الخدمة، تهدف إلى تشجيع بيع منتج أو تقديم خدمة بأسلوب مباشر أو غير مباشر.\nوسيلة إلكترونية: أي تقنية استعمال من وسائل تقنية الاتصالات والمعلومات سواء كانت كهربائية، أو كهرومغناطيسية، أو بصرية، أو ضوئية أو رقمية أو أي شكل آخر من وسائل التقنية المشابهة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تسري أحكام النظام على كلٍّ ممن يأتي:\nأ- موفر الخدمة داخل المملكة.\nب- الممارس خارج المملكة الذي يقدم منتجات أو خدمات داخل المملكة من خلال عرضها بطريقة تمكن المستهلك من الوصول إليها.\nج- المستهلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1. يقصد بمقر عمل موفر الخدمة لأغراض تطبيق أحكام النظام ما يأتي:\nأ- بالنسبة إلى التاجر، يكون مقر عمله عنوانه المحدد في سجله التجاري.\nب- بالنسبة إلى الممارس، يكون مقر عمله المكان الذي يحدده في محله الإلكتروني، ما لم يثبت غير ذلك.\n2. إذا كان لموفر الخدمة أكثر من مقر عمل ولم يحدد أحدها، يكون مقر العمل المعتد به هو المقر الأوثق صلة بالعقد، مع مراعاة الظروف التي كان الأطراف على علم بها أو توقعوها في أي وقت قبل إبرام العقد أو عند إبرامه.\n3. إذا لم يكن للممارس ذي الشخصية الطبيعية مقر عمل، يكون المقر المعتد به محل إقامته النظامي، وتحدد اللائحة المعايير والشروط اللازمة لذلك.\n4. لا يعد المكان مقر عمل لمجرد أنه يضم المعدات والتقنية الداعمة لنظام المعلومات الذي يستخدمه موفر الخدمة في إبرام العقد، أو يمكن فيه لأطراف أخرى أن تصل إلى نظام المعلومات المعني.\n5. استخدام موفر الخدمة اسم نطاق أو عنوان بريد إلكتروني ذا صلة بدولة معينة لا ينشئ قرينة على أن مقر عمله يوجد في تلك الدولة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا حدث خطأ من المستهلك في خطاب إلكتروني ولم تتح له تقنية الاتصال تداركه، فله أن يبلغ موفر الخدمة بموضع الخطأ فور علمه به خلال المهلة التي تحددها اللائحة، ويعد هذا الإبلاغ تداركاً للخطأ إن لم يكن قد استفاد من منتج موفر الخدمة أو خدمته أو حصل على منفعة من أي منهما.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1. ما لم يتفق موفر الخدمة والمستهلك على مدة أخرى، ودون إخلال بما يقضي به نظام آخر، لا يجوز لموفر الخدمة الاحتفاظ ببيانات المستهلك الشخصية أو اتصالاته الإلكترونية إلاَّ في المدة التي تقتضيها طبيعة التعامل بالتجارة الإلكترونية، ويجب اتخاذ الوسائل اللازمة لحمايتها والحفاظ على خصوصيتها خلال مدة احتفاظه بها، ويكون موفر الخدمة مسؤولاً عن حماية البيانات الشخصية للمستهلك أو اتصالاته الإلكترونية التي تكون في عهدته أو تحت سيطرة الجهات التي يتعامل معها أو مع وكلائها. وتحدد اللائحة البيانات الشخصية التي يجب المحافظة على خصوصيتها وفقاً لأهميتها.\n2. لا يجوز لموفر الخدمة استعمال بيانات المستهلك الشخصية أو اتصالاته الإلكترونية لأغراض غير مصرح لها أو مسموح بها، أو الإفصاح عنها لجهة أخرى، بمقابل أو بدون مقابل، إلا بموافقة المستهلك الذي تتعلق به البيانات الشخصية أو إذا اقتضت الأنظمة ذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "على موفر الخدمة الإفصاح في محله الإلكتروني عن البيانات الآتية:\nأ- اسمه أو أي بيان مميز له، وعنوانه، ما لم يكن مسجلاً لدى إحدى جهات توثيق المحلات الإلكترونية.\nب- وسائل الاتصال به.\nج- اسم السجل المقيد فيه ورقمه إن كان مقيداً في سجل تجاري أو سجل آخر متاح للعموم.\nد- البيانات الأخرى التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يلتزم موفر الخدمة بتقديم بيان للمستهلك يوضح فيه أحكام العقد المزمع إبرامه وشروطه, على أن يشتمل البيان على ما يأتي:\nأ- الإجراءات الواجب اتخاذها لإبرام العقد.\nب- البيانات المتعلقة بموفر الخدمة.\nج- الخصائص الأساسية للمنتجات أو الخدمات محل العقد.\nد- إجمالي السعر شاملاً جميع الرسوم أو الضرائب أو المبالغ الإضافية المتعلقة بالتسليم إن وجدت.\nهـ- ترتيبات الدفع والتسليم والتنفيذ.\nو- بيانات الضمان إن وجد.\nز- البيانات الأخرى التي تحددها اللائحة.\nوتحدد اللائحة الضوابط اللازمة للبيانات التي يلتزم موفر الخدمة بتقديمها وفقاً لطبيعة كل عملية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "على موفر الخدمة تقديم فاتورة إلى المستهلك بعد إبرام العقد مبين فيها تكاليف شراء كل منتج أو تقديم خدمة، وإجمالي السعر شاملاً جميع الرسوم أو الضرائب أو المبالغ الإضافية المتعلقة بالتسليم إن وجدت، وتاريخ التسليم ومكانه، وذلك وفق ما تحدده اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "على موفر الخدمة الذي يمارس مهنة تخضع لتنظيم معين، وتتطلب ترخيصاً أو تصريحاً بممارستها، الإفصاح عما يأتي:\nأ- الجهة المسجل لديها، وبيانات الترخيص أو التصريح الصادر عنها.\nب- اللقب المهني المعمول به، والدولة التي منحته.\nج- البيانات الأخرى التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1. يُعد الإعلان الإلكتروني من الوثائق التعاقدية المكملة للعقود وملزمة لأطراف العقد.\n2. يجب أن يتضمن الإعلان الإلكتروني ما يأتي:\nأ- اسم المنتج أو الخدمة المعلن عنها.\nب- اسم موفر الخدمة، وأي بيان مميز له، ما لم يكن مسجلاً لدى إحدى جهات توثيق المحلات الإلكترونية.\nج- وسائل الاتصال بموفر الخدمة.\nد- البيانات الأخرى التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يحظر تضمين الإعلان الإلكتروني ما يأتي:\nأ- عرضاً أو بياناً أو ادعاء كاذباً أو مصوغاً بعبارات من شأنها أن تؤدي بصورة مباشرة أو غير مباشرة إلى خداع المستهلك أو تضليله.\nب- شعاراً أو علامة تجارية لا يملك موفر الخدمة حق استعمالها، أو علامة مقلدة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع عدم الإخلال بإيقاع العقوبات الواردة في المادة (الثامنة عشرة) من النظام، إذا ثبت أن موفر الخدمة خالف أيًّا من أحكام الفقرة (2) من المادة (العاشرة) أو المادة (الحادية عشرة) من النظام، فللوزارة إلزامه بإزالة المخالفة أو بسحب الإعلان خلال يوم واحد من تاريخ إبلاغه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1. مع عدم الإخلال بأحكام الضمان الاتفاقية والنظامية، للمستهلك -في غير الحالات المنصوص عليها في الفقرة (2) من هذه المادة- فسخ العقد خلال الأيام السبعة التالية لتاريخ تسلمه المنتج أو لتاريخ التعاقد على تقديم الخدمة، ما دام أنه لم يستخدم منتج موفر الخدمة أو لم يستفد من خدمته أو لم يحصل على منفعة من أيّ منهما، وفي هذه الحالة يتحمل المستهلك التكاليف المترتبة على فسخ العقد إلا إذا اتفق أطراف العقد على غير ذلك.\n2. لا يحق للمستهلك فسخ العقد بموجب الفقرة (1) من هذه المادة في الحالات الآتية:\nأ- إذا كان محل العقد منتجات مصنعة بناء على طلب المستهلك أو وفقاً لمواصفات حددها، ويستثنى من ذلك المنتجات التي بها عيب أو غير المطابقة للمواصفات المتفق عليها.\nب- إذا كان محل العقد أشرطة فيديو أو أسطوانات أو أقراصاً مدمجة أو برامج معلوماتية جرى استخدامها.\nج- إذا كان العقد يتناول شراء صحف أو مجلات أو منشورات أو كتب.\nد- إذا ظهر عيب في المنتج بسبب سوء حيازة المستهلك.\nهـ- إذا كان العقد يتناول تقديم خدمات إيواء أو نقل أو إطعام.\nو- إذا كان العقد يتناول شراء منتجات تحميل البرامج عبر الإنترنت، ويستثنى من ذلك البرامج التي بها عيب يحول دون إتمام التحميل أو غير المطابقة لما اتفق عليه.\nز- الحالات الأخرى التي تحددها اللائحة وفق ما تستدعيه طبيعة المنتجات أو الخدمات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1. ما لم يتفق موفر الخدمة والمستهلك على مدة أخرى لتسليم محل العقد أو تنفيذه، يحق للمستهلك فسخ العقد إذا تأخر موفر الخدمة عن التسليم أو التنفيذ مدة تزيد على (خمسة عشر) يوماً من تاريخ إبرام العقد أو عن الموعد المتفق عليه، وله استرداد ما دفعه بمقتضى العقد مقابل المنتج أو الخدمة أو غير ذلك من تكاليف ترتبت على هذا التأخير، ما لم يكن التأخير بسبب قوة قاهرة.\n2. دون إخلال بما ورد في الفقرة (1) من هذه المادة، يلتزم موفر الخدمة بإبلاغ المستهلك عن أي تأخير متوقع أو صعوبات يكون لها تأثير جوهري في تسليم محل العقد أو تنفيذه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "على التاجر أن يُقيِّد محله الإلكتروني في السجل التجاري وفقاً لنظام السجل التجاري، وتحدد اللائحة الضوابط اللازمة لذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_016": {
+      "number_label_ar": "المادة السادسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تشرف الوزارة على قطاع التجارة الإلكترونية، وتصدر -بحسب الحاجة- القواعد اللازمة لتنظيمه بما يعزز دور التجارة الإلكترونية ويحمي سلامة التعاملات بها، ويشمل ذلك تنظيم ما يأتي:\nأ- جهات توثيق المحلات الإلكترونية.\nب- المنصات الإلكترونية التي تؤدي دور الوساطة بين موفر الخدمة والمستهلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_017": {
+      "number_label_ar": "المادة السابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا خالف موفر الخدمة أيًّا من أحكام النظام أو اللائحة، فللوزير -أو من ينيبه- أن يتخذ في الحالات العاجلة والضرورية قراراً بحجب المحل الإلكتروني -بالتنسيق مع الجهة المختصة- جزئيًّا أو كليًّا إلى أن تتم معالجة المخالفة أو البت فيها أيهما أسبق، وإحالة المخالفة إلى اللجنة المنصوص عليها في الفقرة (1) من المادة (التاسعة عشرة) من النظام خلال مدة أقصاها (ثلاثة) أيام اعتباراً من حجب المحل الإلكتروني؛ على أن تتخذ اللجنة قرارها في شأن المخالفة خلال مدة لا تتجاوز (عشرة) أيام اعتباراً من تاريخ الإحالة، وللجنة وقف قرار حجب المحل الإلكتروني جزئيًّا أو كليًّا إذا رأت مسوغاً لذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_018": {
+      "number_label_ar": "المادة الثامنة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع عدم الاخلال بأي عقوبة أشد ينص عليها نظام آخر، يعاقب كل من يخالف أيًّا من أحكام النظام أو اللائحة بواحدة أو أكثر من العقوبات الآتية:\nأ- الإنذار.\nب- غرامة لا تزيد على (1.000.000) مليون ريال.\nج- إيقاف مزاولة التجارة الإلكترونية مؤقتًا أو دائمًا.\nد- حجب المحل الإلكتروني -بالتنسيق مع الجهة المختصة- جزئيًّا أو كليًّا، مؤقتًا أو دائمًا.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_019": {
+      "number_label_ar": "المادة التاسعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1. تكوّن بقرار من الوزير لجنة (أو أكثر) تتولى النظر في مخالفات أحكام النظام أو اللائحة وتوقيع العقوبات المنصوص عليها في المادة (الثامنة عشرة) من النظام، على ألاّ يقل عدد أعضائها عن (ثلاثة) ويكون من بينهم مستشار نظامي على الأقل، وتصدر قرارات اللجنة بالأغلبية. ويصدر الوزير بقرار منه قواعد عمل اللجنة ويحدد مكافآت أعضائها.\n2. يراعى في اختيار العقوبة جسامة المخالفة وتكرارها وحجم نشاط موفر الخدمة والضرر الذي وقع على الآخرين بسببها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_020": {
+      "number_label_ar": "المادة العشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجوز لمن صدر ضده أي قرار بناءً على النظام الاعتراض عليه أمام المحكمة الإدارية وفقاً لأحكام نظام المرافعات أمام ديوان المظالم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_021": {
+      "number_label_ar": "المادة الحادية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجوز تضمين القرار الصادر بتحديد العقوبة النص على نشر منطوقه على نفقة المخالف في صحيفة (أو أكثر) من الصحف المحلية التي تصدر في محل إقامته، أو في أي وسيلة أخرى مناسبة، وذلك بحسب نوع المخالفة المرتكبة وجسامتها وتأثيرها، على أن يكون النشر بعد تحصن القرار بمضي المدة المحددة نظاماً أو كان الحكم الصادر في شأنه مكتسباً للصفة القطعية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_022": {
+      "number_label_ar": "المادة الثانية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تتولى المحكمة المختصة الفصل في المنازعات، بما في ذلك دعاوى المطالبة بالتعويض الناشئة عن تطبيق أحكام النظام",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_023": {
+      "number_label_ar": "المادة الثالثة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يتولى موظفون -يصدر بتعيينهم قرار من الوزير- أعمال الرقابة والتفتيش على تعاملات التجارة الإلكترونية وضبط مخالفات أحكام النظام واللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_024": {
+      "number_label_ar": "المادة الرابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "فيما لم يرد في شأنه نص خاص في النظام، تسري على التجارة الإلكترونية أحكام نظام التعاملات الإلكترونية والأنظمة الأخرى ذات الصلة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_025": {
+      "number_label_ar": "المادة الخامسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يصدر الوزير اللائحة خلال (تسعين) يوماً من تاريخ نشر النظام في الجريدة الرسمية, ويعمل بها من تاريخ العمل به.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    },
+    "ecommerce_art_026": {
+      "number_label_ar": "المادة السادسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعمل بالنظام بعد مضي (تسعين) يوماً من تاريخ نشره في الجريدة الرسمية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+      "history": []
+    }
+  }
+}

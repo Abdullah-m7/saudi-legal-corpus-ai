@@ -1,0 +1,36 @@
+{
+  "law_key": "ecommerce",
+  "layer": "ECOMMERCE_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 26,
+  "official_text_status": "BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 26,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/126)",
+  "decree_date_hijri": "7/11/1440",
+  "consolidated_amended_law": true,
+  "chapter_structure": [],
+  "verification_methodology_note": "PRIMARY SOURCE: laws.boe.gov.sa's live portal was unreachable this research pass (503 direct; timeout via r.jina.ai). Full text was instead recovered from a Wayback Machine snapshot of the BOE portal's law-detail page, fetched directly via curl (not via r.jina.ai or WebFetch, neither of which can reliably reach archive.org). Only one successful snapshot fetch was achieved this pass -- repeated attempts at a second, differently-dated snapshot for a cross-snapshot byte-identity check hit persistent network-level connection resets against archive.org, not a source-content issue; flagged as a lighter cross-verification than some other tracks' two-snapshot pattern, and a candidate for a follow-up confirmation pass. Cross-verified against one independent secondary source, nezams.com, which agrees on decree number/date, article count (26), and the law's unamended status ('لم يجرِ عليه تعديل'). On the BOE portal itself, article amendment/repeal status is encoded in CSS classes ('modified'/'canceled') on each article's HTML element; none of the 26 articles carry either class, confirming all are اصلية. A companion Implementing Regulation is confirmed to exist (Ministerial Resolution 200/1441H, 19/5/1441H) but its exact Gregorian equivalent date was not independently pinned to primary-source confidence and is not extracted in this track.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "ecommerce_publication_date",
+      "description": "The publication date of Royal Decree M/126 in the Official Gazette is reported inconsistently across sources: the official BOE portal's own metadata panel states 21/11/1440H (24/07/2019G), while nezams.com states 23/11/1440H -- a two-day discrepancy. Not reconciled; both dates recorded here for transparency, with the BOE-stated date used as decree metadata since BOE is the primary source."
+    },
+    {
+      "article_key": "ecommerce_stale_ministry_name",
+      "description": "Article 1's own defined terms read 'الوزارة: وزارة التجارة والاستثمار' and 'الوزير: وزير التجارة والاستثمار' (Ministry/Minister of Commerce AND Investment) -- the ministry has since been renamed 'وزارة التجارة' (Ministry of Commerce) in general government reorganization, and other more recently consolidated laws in this corpus already define the ministry without 'والاستثمار'. Because this Law has never itself been amended, its own text still literally uses the superseded ministry name -- a genuine textual artifact of an unamended law, preserved verbatim, not silently normalized."
+    },
+    {
+      "article_key": "ecommerce_art_022",
+      "description": "Article 22 has no terminal punctuation in the official BOE source markup itself (confirmed directly in the raw captured HTML, not a parsing artifact) -- the article's Arabic text ends with '...أحكام النظام' and no closing period. Preserved exactly as found in the primary source, not corrected."
+    },
+    {
+      "article_key": "ecommerce_single_wayback_snapshot",
+      "description": "This track's primary-source text rests on a single successful Wayback Machine snapshot of the BOE portal page (further snapshot-fetch attempts for a second, differently-dated cross-snapshot byte-identity check hit repeated network-level connection resets against archive.org in this research session, not a source-content issue). Cross-verified against one independent secondary source (nezams.com), which agrees on decree metadata, article count, and unamended status. This is a lighter cross-verification than the two-independent-dated-Wayback-snapshot pattern used for some other tracks in this corpus (e.g. Commercial Papers Law) -- flagged as a candidate for a follow-up second-snapshot confirmation pass."
+    }
+  ],
+  "source_artifact": "sources/ecommerce/law/official_source/ecommerce_law_official_source.json"
+}
