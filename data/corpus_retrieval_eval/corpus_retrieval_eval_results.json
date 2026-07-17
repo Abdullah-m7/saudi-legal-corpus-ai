@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 266,
-  "top1_hits": 242,
-  "top3_hits": 259,
-  "top5_hits": 262,
-  "top1_accuracy": 0.9098,
-  "top3_accuracy": 0.9737,
-  "top5_accuracy": 0.985,
-  "mrr_at_5": 0.9412,
+  "total_queries": 270,
+  "top1_hits": 246,
+  "top3_hits": 263,
+  "top5_hits": 266,
+  "top1_accuracy": 0.9111,
+  "top3_accuracy": 0.9741,
+  "top5_accuracy": 0.9852,
+  "mrr_at_5": 0.9421,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1502,9 +1502,9 @@
      "score": 12
     },
     {
-     "record_id": "inv-reg-llm-art-021",
-     "article_number": 21,
-     "score": 10
+     "record_id": "civil-service-law-llm-art-007",
+     "article_number": 7,
+     "score": 11
     }
    ]
   },
@@ -5656,8 +5656,8 @@
      "score": 27
     },
     {
-     "record_id": "enforcement-providers-regulation-llm-art-004",
-     "article_number": 4,
+     "record_id": "civil-service-law-llm-art-023",
+     "article_number": 23,
      "score": 12
     }
    ]
@@ -8263,6 +8263,130 @@
      "record_id": "oa-llm-companies-art-256",
      "article_number": 256,
      "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "cvs-001",
+   "query_ar": "تصنف وزارة الخدمة المدنية الوظائف، بما فيها وظائف البنود، ويحدد أسلوب تصنيفها ومتطلبات شغلها وفق قواعد تحددها اللائحة",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_service",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-service-law-llm-art-002",
+     "article_number": 2,
+     "score": 52
+    },
+    {
+     "record_id": "civil-service-law-llm-art-007",
+     "article_number": 7,
+     "score": 32
+    },
+    {
+     "record_id": "civil-service-law-llm-art-010",
+     "article_number": 10,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "cvs-002",
+   "query_ar": "مع مراعاة أسباب إنهاء الخدمة التي تنص عليها الأنظمة تنهى خدمة الموظف لأحد الأسباب الآتية: أ - الاستقالة",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_service",
+    "law_component": "law",
+    "article_number": 30
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-service-law-llm-art-030",
+     "article_number": 30,
+     "score": 33
+    },
+    {
+     "record_id": "civil-service-law-llm-art-021",
+     "article_number": 21,
+     "score": 18
+    },
+    {
+     "record_id": "civil-service-law-llm-art-012",
+     "article_number": 12,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "sin-001",
+   "query_ar": "المشترك: كل من يخضع لأي من فروع التأمينات الاجتماعية أو البرامج الادخارية أو المنتجات التأمينية، والتعويضات هي المنافع التي يوفرها كل فرع من فروع التأمينات الاجتماعية للمشترك",
+   "category": "definitional",
+   "gold": {
+    "corpus": "social_insurance",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-insurance-law-llm-art-001",
+     "article_number": 1,
+     "score": 40
+    },
+    {
+     "record_id": "social-insurance-law-llm-art-013",
+     "article_number": 13,
+     "score": 34
+    },
+    {
+     "record_id": "social-insurance-law-llm-art-003",
+     "article_number": 3,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "sin-002",
+   "query_ar": "تحدد اشتراكات فرع التأمين ضد التعطل عن العمل بنسبة (2 %) من الأجر الخاضع للاشتراك: (1 %) يتحملها صاحب العمل، و(1 %) يتحملها المشترك",
+   "category": "topical",
+   "gold": {
+    "corpus": "social_insurance",
+    "law_component": "law",
+    "article_number": 44
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-insurance-law-llm-art-044",
+     "article_number": 44,
+     "score": 40
+    },
+    {
+     "record_id": "social-insurance-law-llm-art-015",
+     "article_number": 15,
+     "score": 30
+    },
+    {
+     "record_id": "social-insurance-law-llm-art-043",
+     "article_number": 43,
+     "score": 23
     }
    ]
   }

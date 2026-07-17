@@ -156,6 +156,8 @@ ANTI_NARCOTICS_LAW_LLM = os.path.join(ROOT, "data", "anti_narcotics_arabic_legal
 TRAFFIC_LAW_LLM = os.path.join(ROOT, "data", "traffic_arabic_legal_llm", "traffic_law_legal_llm_001_086.json")
 ENVIRONMENTAL_LAW_LLM = os.path.join(ROOT, "data", "environmental_arabic_legal_llm", "environmental_law_legal_llm_001_049.json")
 INCOME_TAX_LAW_LLM = os.path.join(ROOT, "data", "income_tax_arabic_legal_llm", "income_tax_law_legal_llm_001_081.json")
+CIVIL_SERVICE_LAW_LLM = os.path.join(ROOT, "data", "civil_service_arabic_legal_llm", "civil_service_law_legal_llm_001_044.json")
+SOCIAL_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_arabic_legal_llm", "social_insurance_law_legal_llm_001_063.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -305,6 +307,8 @@ def main() -> int:
     traffic_law_llm = _load_json(TRAFFIC_LAW_LLM)
     environmental_law_llm = _load_json(ENVIRONMENTAL_LAW_LLM)
     income_tax_law_llm = _load_json(INCOME_TAX_LAW_LLM)
+    civil_service_law_llm = _load_json(CIVIL_SERVICE_LAW_LLM)
+    social_insurance_law_llm = _load_json(SOCIAL_INSURANCE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -325,7 +329,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 118,
+        "total_tracks": 120,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -447,6 +451,8 @@ def main() -> int:
             + traffic_law_llm["record_count"]  # 86 Traffic Law (MIXED-CONFIDENCE TIER: BOE portal confirmed genuinely stale for this law, nezams.com preferred with per-article verification_tier, see track notes)
             + environmental_law_llm["record_count"]  # 49 Environmental Law (STRONG TRIPLE-SOURCE TIER: BOE Wayback x green.org.sa PDF x nezams.com, one flagged BOE self-contradiction at Article 1, see track notes)
             + income_tax_law_llm["record_count"]  # 81 Income Tax Law (DISTINCT TIER: BOE Wayback x ZATCA PDF x gstc.gov.sa PDF x nezams.com, Chapter 10 BOE+nezams only, see track notes)
+            + civil_service_law_llm["record_count"]  # 44 Civil Service Law (BOE Wayback x nezams.com full cross-verification, see track notes)
+            + social_insurance_law_llm["record_count"]  # 63 Social Insurance Law (New System, M/273) (BOE Wayback primary x nezams.com spot-check x qanoonsa.com structure, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -559,6 +565,8 @@ def main() -> int:
             + traffic_law_llm["record_count"]
             + environmental_law_llm["record_count"]
             + income_tax_law_llm["record_count"]
+            + civil_service_law_llm["record_count"]
+            + social_insurance_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4073,6 +4081,62 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Income Tax Law «نظام ضريبة الدخل» — Royal Decree M/1 dated 15/1/1425H, approving Council of Ministers Resolution 278 (20/11/1424H), signed by King Fahd bin Abdulaziz Al Saud. Repeals the 1370H-era income tax system, the additional oil-company income tax, and the original Natural Gas Investment Tax Law (M/37, 1424H). Administered by what the statute's own current Article 1 still calls 'الهيئة العامة للزكاة والدخل' (GAZT) — a name itself superseded by the 2021 ZATCA merger, never updated by any further Royal-Decree-level amendment; the older term 'المصلحة' is preserved verbatim per-article wherever a specific source literally uses it, not normalized. 81 records across 16 فصول: 52 اصلية / 29 معدلة — 10 individually confirmed via BOE's own 'changed' flag and/or explicit report annotation (Articles 1, 2, 6, 7, 8, 21, 56, 59, 66, 67), 12 from Chapter 10's full replacement by Royal Decree M/70 (11/7/1439H, introducing the Natural Gas Investment Tax framework and cutting its base rate from 30% to 20%), and 7 lower-confidence articles (9, 12, 13, 17, 43, 63, 65) marked معدلة on ZATCA-footnote/ledger evidence alone with no clause-level effect ever stated by the research pass. **DISTINCT VERIFICATION TIER:** current-consolidated text rests on FOUR sources — laws.boe.gov.sa (via the Wayback Machine, reached with an explicit User-Agent header after both direct and r.jina.ai-proxied attempts failed), ZATCA's own official consolidated PDF, an older gstc.gov.sa PDF, and nezams.com — with every one of the 81 articles cross-verified from at least two sources in agreement, and the large majority from three or four. **IMPORTANT LIMITATION:** Chapter 10 (Articles 44-55) is the mirror image of this corpus's VAT-law-track finding — BOTH government-authority PDF sources (ZATCA and gstc.gov.sa) print only a bare repeal notice for this entire 12-article chapter, omitting the substantive M/70 replacement text entirely; the full current text rests on TWO sources only (BOE via Wayback, cross-verified word-for-word against nezams.com), not the usual 3-4. **NO original_1425h_text field is populated for ANY article** — the research report described having seen pre-amendment 'before' text for six articles via BOE's amendment-history popups but never transcribed it verbatim into deliverable form, and on inspection the raw scratchpad data mostly quoted intermediate amendment states rather than clean 1425H originals, so nothing was promoted into this field rather than risk fabricating a reconstructed original; Chapter 10's pre-M/70 text is independently confirmed unrecoverable from any of the four sources. Article 66 carries an unresolved, explicitly dual-dated conflict for Royal Decree M/52 (28/4/1441H per ZATCA's PDF vs 28/7/1441H per BOE's own amendment-history feature) — both candidate dates are recorded in its history entry rather than silently picking one. 14 total flagged discrepancies (see known_unresolved_discrepancies) also cover: BOE's default per-article body being frequently pre-amendment/stale (confirmed for Articles 2, 56, 66, 67, 80) without a full 81-article diff having been performed; ZATCA's footnote apparatus touching more articles than BOE's own 'changed' markup flags, with some footnote-to-clause attributions approximate due to PDF page-break artifacts; nezams.com confirmed stale on the two most recent (1441H) amendments; a single-sourced Official Gazette publication date; and Ministerial Resolution 2194 (12/7/1432H) explicitly distinguished as a non-amending interpretive clarification of Article 3(b)'s 'الإدارة الرئيسة' term, not a textual amendment. A companion Implementing Regulation (Ministerial Resolution 1535, exact Hijri date unconfirmed) is not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "civil_service_law",
+                "display_name_ar": "نظام الخدمة المدنية",
+                "display_name_en": "Civil Service Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_X_NEZAMS_FULL_CROSS_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/49) — BOE portal via Wayback Machine, 100% cross-verified against nezams.com; M/139 six-article package additionally corroborated via SPA/Okaz news (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": civil_service_law_llm["record_count"],
+                    "data_path": "data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json"}},
+                "record_counts": {"arabic_articles": civil_service_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 19, "ملغاة": 1, "مضافة": 4},
+                                  "total": civil_service_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/civil_service/law/official_source/civil_service_law_official_source.json",
+                    "sources/civil_service/law/verified/civil_service_law_verified_records.jsonl",
+                    "data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",
+                ],
+                "validator_targets": ["make civil-service-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Civil Service Law «نظام الخدمة المدنية» — Royal Decree M/49 dated 10/7/1397H, approving Council of Ministers Resolution 951 (27/6/1397H), issued by King Khalid bin Abdulaziz Al Saud. Repeals the prior نظام الموظفين العام (Royal Decree M/5, 1/2/1391H). This is the GENERAL PUBLIC-SECTOR employment statute, distinct from the Labor Law (نظام العمل, private sector) already in this corpus. 44 records (40 numbered articles + 4 مكرر additions: 15 مكرر, 25 مكرر, 36 مكرر, 37 مكرر) across 3 أبواب, with الباب الثاني further divided into 6 فصول: 20 اصلية / 19 معدلة / 1 ملغاة (Article 3, repealed by Royal Decree M/95, 15/9/1439H, with no replacement text — pre-repeal text preserved per this corpus's never-delete-repealed-articles policy) / 4 مضافة (15 مكرر, 25 مكرر, 36 مكرر all added by M/95 15/9/1439H; 37 مكرر added by M/57, 24/5/1438H). All 19 amended articles carry a genuinely-recovered original_1397h_text field (never fabricated); three of those (Articles 20, 29, 35) were amended TWICE, with the intermediate amendment recorded only in history, not as a separate original-text field. **VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass (503/422/connection-error across WebFetch, r.jina.ai, and direct curl); full text instead rests on a Wayback Machine snapshot of the BOE portal, cross-verified article-by-article — 100% of all 44 article-entries — against nezams.com. The six-article amendment package under Royal Decree M/139 (19/10/1441H) was additionally corroborated via independent SPA/Okaz news coverage. Flagged discrepancies: BOE citation gaps for 14 amended articles (text confirmed correct via nezams.com, only the amending-decree metadata was under-cited by BOE); Article 25's grammar variant (BOE's anomalous 'لم تحدده' vs. nezams.com's sound 'لما تحدده' — the latter used as current text); Article 25's duplicate BOE amendment-history entry (rendering artifact); the stale institutional name 'وزارة الخدمة المدنية' (merged into HRSD circa 1440H/2019G) persisting verbatim in Articles 25 مكرر, 36 مكرر, and 39's current text; a publication-date discrepancy (BOE: 10/7/1397H vs. nezams.com: 15/7/1397H); Article 11's 'اللباقة'/'اللياقة' spelling variant; Article 24's own duplication typo in BOE's source, preserved verbatim; M/139's unusual date sequencing (decree dated before its own companion Cabinet resolution); companion instruments explicitly out of scope (نظام مجلس الخدمة المدنية, نظام الانضباط الوظيفي M/18 8/2/1443H, نظام تأديب الموظفين); an unverified claim of a possible 1446H amendment round from an unreachable source, not incorporated; and an Implementing Regulation (اللائحة التنفيذية للموارد البشرية في الخدمة المدنية, 1440H, reportedly updated through January 2026) confirmed to exist but not extracted. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "social_insurance_law",
+                "display_name_ar": "نظام التأمينات الاجتماعية (النظام الجديد)",
+                "display_name_en": "Social Insurance Law (New System)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_PRIMARY_X_NEZAMS_SPOTCHECK_X_QANOONSA_STRUCTURE_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/273) — BOE via Wayback Machine as primary full-text source, spot-checked (5/63 articles) against nezams.com, structure/metadata additionally corroborated via qanoonsa.com (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": social_insurance_law_llm["record_count"],
+                    "data_path": "data/social_insurance_arabic_legal_llm/social_insurance_law_legal_llm_001_063.json"}},
+                "record_counts": {"arabic_articles": social_insurance_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 63, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": social_insurance_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/social_insurance/law/official_source/social_insurance_law_official_source.json",
+                    "sources/social_insurance/law/verified/social_insurance_law_verified_records.jsonl",
+                    "data/social_insurance_arabic_legal_llm/social_insurance_law_legal_llm_001_063.json",
+                ],
+                "validator_targets": ["make social-insurance-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Social Insurance Law (New System) «نظام التأمينات الاجتماعية» — Royal Decree M/273 dated 26/12/1445H, approving Council of Ministers Resolution 1022 (same date), following Shura Council Resolution 383/36 (26/11/1445H). Effective for new labor-market entrants from 1 July 2025 (those with NO prior contribution history under the old Social Insurance Law, Royal Decree M/33 dated 3/9/1421H, or the Civil Pension Law, Royal Decree M/41 dated 29/7/1393H, as of 3 July 2024). Administered by المؤسسة العامة للتأمينات الاجتماعية (GOSI). **CRITICAL SCOPE NOTE:** Saudi Arabia currently has TWO social-insurance laws simultaneously in force for different populations — this track covers ONLY the new M/273 law; the OLD M/33 law (still governing everyone enrolled before the 2024 restructuring) is a SEPARATE track. Both instruments share the IDENTICAL Arabic title 'نظام التأمينات الاجتماعية' despite being differently-numbered/dated — a genuine naming collision, analogous to the Franchise Law/Anti-Concealment Law M/22 collision already flagged elsewhere in this corpus. 63 records across 6 أبواب (الباب الثالث split into 2 نested فصول: الفصل الأول تعويضات الأخطار المهنية 30-40، الفصل الثاني تعويض الأمومة 41-42؛ المادتان 28-29 مباشرة تحت الباب الثالث قبل الانقسام), all اصلية — no amendments found or expected, the law being under 2 years old. **VERIFICATION TIER:** the research report handed to the build process turned out to contain condensed/paraphrased article summaries rather than genuine verbatim text — per this corpus's zero-fabrication policy, the build agent independently re-fetched the primary source itself (a Wayback Machine archive snapshot dated 2025-12-12 of the official BOE portal, reached via curl with the 'if_' raw-content modifier and a desktop User-Agent header) and parsed its structured markup for all 63 articles directly, rather than transcribing the paraphrased report. Full-text spot-checked (5 of 63 articles: 1, 16, 30, 44, 63) word-for-word against a direct fetch of nezams.com — exact match modulo optional tashkil — with nezams.com's own index additionally confirming the complete gap-free 1-63 sequence and all باب/فصل boundaries; qanoonsa.com corroborates structure/metadata only. The Royal Decree's own transitional provisions (بند أولاً - حادي عشر) are NOT numbered articles and are preserved verbatim in a dedicated `decree_transitional_provisions_ar` field rather than folded into any article. Flagged discrepancies: the dual-law title collision described above; Article 44's unemployment-insurance rate (states 2%/1%+1% as the statutory ceiling, while the companion Cabinet Resolution 1022 fixes the actual starting rate at 1.5%/0.75%+0.75% — both figures documented, not merged into one); Article 16's qualifying period (the law itself defers to a future Cabinet decision, while Resolution 1022 fixes it at 180 months at the outset); a minor BOE-vs-nezams wording variance at Article 21(1)(a) (preserved as found in BOE's primary text); and the related-but-unextracted SANED unemployment-insurance law (M/18, 12/3/1435H, still separately in force for legacy subscribers) and Civil Pension Law (M/41, 29/7/1393H). An Implementing Regulation is confirmed to exist but not independently verified or extracted. Arabic governs; not legal advice.",
             },
         ],
     }
