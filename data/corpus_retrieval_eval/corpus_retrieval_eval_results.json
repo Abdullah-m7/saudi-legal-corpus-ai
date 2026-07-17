@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 228,
-  "top1_hits": 204,
-  "top3_hits": 221,
-  "top5_hits": 224,
-  "top1_accuracy": 0.8947,
-  "top3_accuracy": 0.9693,
-  "top5_accuracy": 0.9825,
-  "mrr_at_5": 0.9314,
+  "total_queries": 230,
+  "top1_hits": 206,
+  "top3_hits": 223,
+  "top5_hits": 226,
+  "top1_accuracy": 0.8957,
+  "top3_accuracy": 0.9696,
+  "top5_accuracy": 0.9826,
+  "mrr_at_5": 0.932,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -882,8 +882,8 @@
      "score": 15
     },
     {
-     "record_id": "enforcement-regulation-llm-prov-049",
-     "article_number": 49,
+     "record_id": "copyright-law-llm-art-004",
+     "article_number": 4,
      "score": 10
     }
    ]
@@ -7023,6 +7023,68 @@
      "record_id": "shura-council-law-llm-art-022",
      "article_number": 22,
      "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "cpr-001",
+   "query_ar": "يحمي هذا النظام المصنَّفات المبتكرة في الآداب والفنون والعلوم، أياً كان نوع هذه المصنَّفات أو طريقة التعبير عنها",
+   "category": "topical",
+   "gold": {
+    "corpus": "copyright",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "copyright-law-llm-art-002",
+     "article_number": 2,
+     "score": 25
+    },
+    {
+     "record_id": "labor-annex2-llm-table-8",
+     "article_number": 8,
+     "score": 18
+    },
+    {
+     "record_id": "oa-llm-companies-art-142",
+     "article_number": 142,
+     "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "cpr-002",
+   "query_ar": "تكون حماية حق المؤلف في المصنَّف مدى حياة المؤلف، ولمدة خمسين سنة بعد وفاته",
+   "category": "topical",
+   "gold": {
+    "corpus": "copyright",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "copyright-law-llm-art-019",
+     "article_number": 19,
+     "score": 27
+    },
+    {
+     "record_id": "copyright-law-llm-art-015",
+     "article_number": 15,
+     "score": 20
+    },
+    {
+     "record_id": "copyright-law-llm-art-027",
+     "article_number": 27,
+     "score": 20
     }
    ]
   },

@@ -222,6 +222,8 @@ LAYERS = [
      "allegiance_commission", "law"),
     ("data/shura_council_arabic_legal_llm/shura_council_law_legal_llm_001_030.json",
      "shura_council", "law"),
+    ("data/copyright_arabic_legal_llm/copyright_law_legal_llm_001_028.json",
+     "copyright", "law"),
 ]
 
 
