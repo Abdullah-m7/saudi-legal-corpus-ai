@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 260,
-  "top1_hits": 236,
-  "top3_hits": 253,
-  "top5_hits": 256,
-  "top1_accuracy": 0.9077,
-  "top3_accuracy": 0.9731,
-  "top5_accuracy": 0.9846,
-  "mrr_at_5": 0.9399,
+  "total_queries": 262,
+  "top1_hits": 238,
+  "top3_hits": 255,
+  "top5_hits": 258,
+  "top1_accuracy": 0.9084,
+  "top3_accuracy": 0.9733,
+  "top5_accuracy": 0.9847,
+  "mrr_at_5": 0.9403,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8077,6 +8077,68 @@
      "record_id": "anti-concealment-law-llm-art-009",
      "article_number": 9,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "trc-001",
+   "query_ar": "يحل هذا النظام محل نظام المرور، الصادر بالمرسوم الملكي رقم (م/49) تاريخ 6 / 11 / 1391 هـ وتعديلاته",
+   "category": "topical",
+   "gold": {
+    "corpus": "traffic",
+    "law_component": "law",
+    "article_number": 83
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "traffic-law-llm-art-083",
+     "article_number": 83,
+     "score": 49
+    },
+    {
+     "record_id": "telecommunications-law-llm-art-041",
+     "article_number": 41,
+     "score": 35
+    },
+    {
+     "record_id": "arbitration-law-llm-art-057",
+     "article_number": 57,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "trc-002",
+   "query_ar": "تخضع جميع المركبات – على اختلاف أنواعها – لفحص فني دوري للتأكد من صلاحيتها للاستعمال",
+   "category": "topical",
+   "gold": {
+    "corpus": "traffic",
+    "law_component": "law",
+    "article_number": 26
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "traffic-law-llm-art-026",
+     "article_number": 26,
+     "score": 37
+    },
+    {
+     "record_id": "traffic-law-llm-art-024",
+     "article_number": 24,
+     "score": 16
+    },
+    {
+     "record_id": "anti-narcotics-law-llm-art-031",
+     "article_number": 31,
+     "score": 12
     }
    ]
   }

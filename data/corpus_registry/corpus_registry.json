@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8006,
+  "total_primary_arabic_governing_records": 8092,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8901,
-  "total_tracks": 115,
+  "total_registry_counted_records": 8987,
+  "total_tracks": 116,
   "tracks": [
     {
       "boundaries": {
@@ -5410,6 +5410,53 @@
       "validator_targets": [
         "make anti-narcotics-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/traffic/law/official_source/traffic_law_official_source.json",
+        "sources/traffic/law/verified/traffic_law_verified_records.jsonl",
+        "data/traffic_arabic_legal_llm/traffic_law_legal_llm_001_086.json"
+      ],
+      "display_name_ar": "نظام المرور",
+      "display_name_en": "Traffic Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/traffic_arabic_legal_llm/traffic_law_legal_llm_001_086.json",
+          "governing": true,
+          "record_count": 86,
+          "status": "complete"
+        }
+      },
+      "notes": "Traffic Law «نظام المرور» — Royal Decree M/85 dated 26/10/1428H, approving Council of Ministers Decision 315 (24/10/1428H), following Royal Order A/175 (17/10/1428H). NOTE: the task premise originally assumed 'M/17 dated 26/6/1428H' — corrected to M/85, 26/10/1428H per primary sources. Replaces the prior نظام المرور issued by Royal Decree M/49 dated 6/11/1391H (Article 83). 86 records (85 numbered articles + Article 50 مكرر, added by Royal Decree M/115, 5/12/1439H) across 8 أبواب: 52 اصلية / 32 معدلة / 1 ملغاة (Article 71, repealed by Council of Ministers Decision 474 dated 7/7/1446H, ratified by Royal Decree M/140 dated 12/7/1446H — pre-repeal text preserved per this corpus's policy of never deleting repealed articles) / 1 مضافة. **UNUSUALLY COMPLEX, MIXED-CONFIDENCE VERIFICATION TIER — this track required TWO independent research passes** because of a genuine, unresolved discrepancy between the official BOE portal and the secondary reference site nezams.com for roughly a third of the law's articles. Across both passes, BOE's live portal was confirmed GENUINELY STALE for this law — not a proxy/rendering artifact — via four independently-verified data points: Article 71's repeal (confirmed via direct Umm Al-Qura gazette text of Royal Decree M/140), Article 74's 2025 rewrite (confirmed via Saudi Press Agency and MOI statements), Article 2's added definition #44 'هيكل المركبة', and the Table 2 violation-schedule item-16 wording. nezams.com's 'current text' is therefore used as the governing text for amended articles where it diverges from BOE's stale text, but this is PATTERN-BASED confidence, not per-article gazette proof: EVERY article record carries a per-article `verification_tier` field — `PRIMARY_INDEPENDENTLY_CONFIRMED` (67 records: all 52 اصلية articles plus Article 71's repeal plus 14 amended articles independently confirmed via gazette/press sources beyond nezams.com alone) vs `SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE` (19 records: 18 amended articles plus Article 50 مكرر resting on nezams.com's pattern-reliability alone, without independent per-article confirmation) — this per-article granularity is deliberately NOT smoothed over by the overall track-level STATUS constant. `original_1428h_text` is populated for only 8 articles (1, 5, 23, 27, 69, 70, 73, 78) where a report explicitly captured verbatim pre-amendment wording; omitted for the other 24 amended articles, documented as gaps rather than fabricated. Flagged discrepancies (11 total, see known_unresolved_discrepancies): the Table 2 item-16 numbering conflict (BOE's item 16 reads 'expired driving license'; M/140's own gazette-confirmed addition reads 'expired vehicle-registration license' — the fate of the old slot is unresolved); Article 2's 43-vs-44 defined-term count; Council of Ministers Decision 586's unconfirmed exact phrase-splice point for Articles 23/27; 17 amended articles where BOE and nezams.com show identical resulting text despite a confirmed amending instrument (no determinable wording delta); the annexed violation tables (1-8) and fee schedules are referenced by article text but not separately modeled as records; the Implementing Regulation (Ministerial Decision 7019, 3/7/1429H, possibly reissued via Ministerial Decision 2249/1441H, unconfirmed) is not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE",
+      "record_counts": {
+        "arabic_articles": 86,
+        "legal_status_breakdown": {
+          "اصلية": 52,
+          "مضافة": 1,
+          "معدلة": 32,
+          "ملغاة": 1
+        },
+        "total": 86
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/85) — BOE portal confirmed genuinely stale for this law; nezams.com preferred for amended articles with per-article verification_tier (see notes)",
+      "status": "complete",
+      "track_id": "traffic_law",
+      "validator_targets": [
+        "make traffic-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5498,11 +5545,12 @@
       "terrorism": 127,
       "trade_names": 23,
       "trademark": 52,
+      "traffic": 86,
       "vat": 53,
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7837,
+    "total_records": 7923,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

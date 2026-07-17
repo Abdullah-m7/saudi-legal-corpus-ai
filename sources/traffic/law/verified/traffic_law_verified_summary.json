@@ -1,0 +1,105 @@
+{
+  "law_key": "traffic",
+  "layer": "TRAFFIC_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 86,
+  "official_text_status": "BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE",
+  "status_counts": {
+    "اصلية": 52,
+    "معدلة": 32,
+    "ملغاة": 1,
+    "مضافة": 1
+  },
+  "decree": "المرسوم الملكي رقم (م/85)",
+  "decree_date_hijri": "26/10/1428",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الباب الأول",
+      "title_ar": "نطاق سريان النظام وتعريف المصطلحات",
+      "articles": "1-2"
+    },
+    {
+      "label_ar": "الباب الثاني",
+      "title_ar": "تسجيل المركبات ورخص السير",
+      "articles": "3-21"
+    },
+    {
+      "label_ar": "الباب الثالث",
+      "title_ar": "أوزان المركبات وأبعادها وفحصها",
+      "articles": "22-31"
+    },
+    {
+      "label_ar": "الباب الرابع",
+      "title_ar": "رخص القيادة",
+      "articles": "32-49"
+    },
+    {
+      "label_ar": "الباب الخامس",
+      "title_ar": "قواعد السير على الطرق",
+      "articles": "50-58 (بما في ذلك المادة الخمسون مكرر)"
+    },
+    {
+      "label_ar": "الباب السادس",
+      "title_ar": "الحوادث",
+      "articles": "59-65"
+    },
+    {
+      "label_ar": "الباب السابع",
+      "title_ar": "ضبط المخالفات وتحديد الجزاءات",
+      "articles": "66-79"
+    },
+    {
+      "label_ar": "الباب الثامن",
+      "title_ar": "أحكام عامة",
+      "articles": "80-85"
+    }
+  ],
+  "verification_methodology_note": "نظام المرور «Traffic Law» -- Royal Decree No. (م/85) dated 26/10/1428H, approving the law text following Royal Order No. (أ/175) dated 17/10/1428H and Council of Ministers Decision No. (315) dated 24/10/1428H, signed in the name of the Custodian of the Two Holy Mosques by then-Deputy King Sultan bin Abdulaziz Al Saud. NOTE ON TASK PREMISE CORRECTION: the commonly-assumed citation 'Royal Decree M/17 dated 26/6/1428H' is INCORRECT and is corrected here to M/85, 26/10/1428H, independently confirmed via WebSearch AI-summary cross-check, a direct r.jina.ai-proxied fetch of the official Bureau of Experts (BOE) portal page showing the verbatim decree preamble, and nezams.com's independent citation of the same number/date. Per Article 83, this law replaces the prior نظام المرور issued by Royal Decree No. (م/49) dated 6/11/1391H and its amendments. Structure: 8 أبواب (chapters), 85 numbered articles plus one inserted 'مكرر' article (المادة الخمسون مكرر, added by Royal Decree M/115 dated 5/12/1439H) -- 86 records total. DISTINCT VERIFICATION TIER -- this track required TWO independent research passes because of a genuine, unresolved discrepancy between the official BOE portal (laws.boe.gov.sa) and the secondary reference site nezams.com for roughly a third of this law's articles. BOE's live portal was reachable only via the r.jina.ai proxy (direct WebFetch and direct curl both failed with connection resets on every attempt in both research passes -- Saudi .gov.sa domains appear to be blocked or reset at the network/proxy layer in this environment). A follow-up research pass re-fetched BOE fresh and confirmed -- via four independently-verified data points (Article 71's repeal, Article 74's 2025 rewrite via M/50, Article 2's added definition #44, and the Table 2 item-16 wording) -- that BOE's portal is GENUINELY STALE for this specific law (not a proxy/rendering artifact: the identical proxy pipeline correctly rendered fresh nezams.com content confirming the same four points via SPA/MOI/press/Umm-Al-Qura-gazette corroboration in the same research session). Per this corpus's policy of preferring the more reliable source where two diverge, nezams.com's 'CURRENT TEXT' is used as the governing `text` field for amended articles where it differs from BOE's stale text. This is PATTERN-BASED confidence, not per-article gazette proof: each amended article additionally carries a `verification_tier` field -- PRIMARY_INDEPENDENTLY_CONFIRMED (14 of 32 amended articles, plus Article 71's repeal and all 52 unamended/اصلية articles, where independent evidence beyond nezams.com alone was located -- gazette text, SPA/MOI/press corroboration, or a materially-different pre-amendment original confirming genuine change) versus SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE (18 of 32 amended articles, plus the newly-added Article 50 مكرر out of an abundance of caution, resting on nezams.com alone without independent gazette/press confirmation despite real effort in both research passes). This track is therefore one of the LOWER-CONFIDENCE tracks in this corpus for its ~18-19 secondary-source-only articles, and the mixed-confidence reality is deliberately NOT smoothed over by the overall STATUS constant -- see the per-article verification_tier field for the real granularity. Where amended articles' full pre-amendment wording was explicitly given by a source as a complete verbatim block, it is preserved in `original_1428h_text` (8 articles: 1, 5, 23, 27, 69, 70, 73, 78); where only an INTERMEDIATE (multi-step amendment midpoint) text was given, it is documented within the relevant `history` entry's description instead, never promoted to original_1428h_text (Articles 63, 64, 74, 75); where a source explicitly stated original wording was not recovered, or only gave a partial/hedged/bracketed reconstruction, the field is omitted entirely and the gap is documented (Articles 2, 7, 62, 72). Where 17 amended articles show identical resulting text between BOE and nezams.com, that shared text is used with no separate original recorded, since the amendment may have been non-substantive (renumbering only) or BOE may coincidentally be current for those specific articles. For Articles 23 and 27, Council of Ministers Decision 586's exact phrase-insertion point is genuinely ambiguous in nezams.com's own rendering (the annotation describes an insertion that is not actually spliced into the displayed running text) -- this is preserved as a bracketed insertion in the `text` field rather than guessed. Annexed violation tables (جداول المخالفات 1-8) and fee schedules are referenced by number within article text (e.g. Article 68) but are NOT separately modeled as structured records in this track, consistent with how this corpus treats annexed schedules/tables elsewhere. A companion Implementing Regulation (Ministerial Decision 7019, 3/7/1429H, with a possibly-reissued version per Ministerial Decision 2249/1441H, unconfirmed) is likewise not extracted here. See known_unresolved_discrepancies for the complete, itemized list of flagged gaps and conflicts.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "traffic_boe_nezams_pattern_confidence",
+      "description": "BOE's official portal (laws.boe.gov.sa) was re-fetched fresh in the follow-up research pass and confirmed to be genuinely stale for this law (not a proxy/rendering artifact -- the identical r.jina.ai proxy pipeline correctly rendered fresh nezams.com content in the same session, ruling out a pipeline-level explanation). BOE's live portal still shows Article 71 as active (never repealed), Table 2 item 16 as the old 'expired driving license' wording, Article 74's pre-2025 substance, and its own amendment-history footnotes cite only M/70 and M/115 -- omitting M/86, M/140, and M/50 entirely. Four independently-confirmed data points (Article 71's repeal via direct Umm Al-Qura gazette text of M/140; Article 74's 2025 rewrite via M/50, confirmed via SPA/MOI/press; Article 2's added definition #44 'هيكل المركبة'; and the Table 2 item-16 content) all show nezams.com's current text matching primary/official sources while BOE contradicted all four. This is treated as PATTERN-BASED confidence, not per-article gazette proof -- roughly 18 of the 32 amended articles in this track rest on nezams.com alone without independent gazette/press confirmation and are marked verification_tier = SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE. BOE's alternate scanned-original 'Viewer' endpoint returned HTTP 503 on every attempt across both research passes and could not be checked. A Wayback Machine snapshot of the BOE law-detail page (dated 2025-11-16) was located in the follow-up pass but its content could not be retrieved (direct WebFetch to archive.org is blocked by tooling; r.jina.ai proxying to archive.org returned HTTP 403) -- this remains an unexplored/unreachable option for future verification, not a resolved dead end."
+    },
+    {
+      "article_key": "traffic_art_071_table2_item16_conflict",
+      "description": "BOE's fetched violation Table 2 (جدول المخالفات رقم 2) already contains 16 items, with item 16 reading 'القيادة برخصة قيادة مدة صلاحيتها منتهية' (driving with an EXPIRED DRIVING LICENSE) -- an item confirmed present since at least 1438H/2017 via an MOI-sourced violations-schedule PDF, predating even the M/115 amendment. The Article-71-repeal instrument (Royal Decree M/140, 12/7/1446H) was independently confirmed via its own verbatim Umm Al-Qura Gazette text (fetched directly from uqn.gov.sa/details?p=26920): '1- إلغاء المادة (الحادية والسبعين). 2- تعديل جدول المخالفات رقم (2) الملحق بالنظام -المعدل بالمرسوم الملكي رقم (م/115) بتاريخ 5/12/1439هـ- بإضافة فقرة رقمها (16) بالنص الآتي: \"قيادة المركبة في الطرق برخصة سير منتهية\".' (i.e. driving with an EXPIRED VEHICLE-REGISTRATION/CIRCULATION license) -- corroborated by qanoonsa.com, ajel.sa, al-hadath.com, shafaq-e.sa, al-marsd.com, and almuraba.net. This is confirmed to be ONE current table with a single current item 16 (the vehicle-registration reading), not two coexisting tables or a mislabeling. What could NOT be resolved: the fate of the pre-existing 'expired driving license' item 16 -- M/140's own gazette text describes itself as ADDING item 16, implying its drafters believed the slot was vacant, meaning M/115 (or possibly M/207, dated 28/9/1445H, which one AI-search summary attributed a change to item 15 of the same table) may have already removed or renumbered the old item. M/115's own verbatim gazette text could not be located despite multiple targeted searches, so whether the old item was deleted, renumbered to a different slot (e.g. 17), or represents a genuine drafting collision remains genuinely open. This affects the annexed violation tables only (not separately modeled as records in this track) but is documented here since Article 68 cross-references 'جدول المخالفات رقم (1)' through '(8)' by number."
+    },
+    {
+      "article_key": "traffic_art_002_term_count",
+      "description": "Article 2 (definitions): BOE's original text defines 43 terms (1-43, ending at item 43 'اللائحة'). nezams.com's current text defines 44 terms, adding item 44 'هيكل المركبة: جسم المركبة، باستثناء المحرك والمحاور وقاعدة المركبة (الشاصي)' -- confirmed absent from both the BOE text and the underlying 1428H original. This means the definitions article grew by one full defined term, not merely edited wording within existing terms. The BOE-fetched text for this article is presented only as a partial 'differing items' breakdown in the source research (items 18, 20, 33, 36, 40 given verbatim; items 1-17,19,21-32,34-35,37,39,42-43 described only as 'essentially identical' to the current text, not quoted verbatim) -- per this corpus's policy against reconstructing text from partial/hedged descriptions, no original_1428h_text field is populated for Article 2; only the specific confirmed differing items are documented here and in the article's history."
+    },
+    {
+      "article_key": "traffic_art_023_027_com586_insertion_ambiguity",
+      "description": "Council of Ministers Decision No. 586 (22/8/1444H) amended Articles 23 and 27, inserting the phrase 'ورئيس مجلس إدارة الهيئة العامة للطرق' after references to the Minister of Transport in each article. nezams.com's rendering of both articles' current text does not actually show the phrase spliced into running text -- it displays the pre-insertion base sentence with the amendment described only in an accompanying annotation, not integrated into the sentence itself. Per instruction, this has been preserved as bracketed/ambiguous in both articles' `text` fields (i.e., the inserted phrase appears in square brackets at its most plausible insertion point per the source annotation) rather than asserting a specific final spliced wording. Additionally, no ratifying Royal Decree was located for CoM Decision 586 (unlike the M/85/CoM-315 and M/140/CoM-474 pairings elsewhere in this law's history) -- this should be treated as unconfirmed/possibly incomplete sourcing until checked directly against Umm Al-Qura."
+    },
+    {
+      "article_key": "traffic_art_062_original_penalty_figures_not_recovered",
+      "description": "Article 62 (fatal/injurious accident penalties): the text captured from both BOE and nezams.com is identical and already reflects amended-era penalty figures (imprisonment up to 4 years / fine up to 200,000 SAR for a fatal accident). Follow-up research independently found that the article's pre-amendment 1428H original imposed materially lower penalties (imprisonment not exceeding one year, fine not exceeding 10,000 SAR), confirming a genuine substantive amendment occurred via Royal Decree M/115 (5/12/1439H) -- however, this finding rests on an English-language paraphrase in the follow-up research report, not a verbatim Arabic original text block, so no original_1428h_text field has been populated for this article per this corpus's anti-fabrication policy. The exact original Arabic wording was not recovered by either research pass."
+    },
+    {
+      "article_key": "traffic_identical_to_boe_no_delta_articles",
+      "description": "Seventeen amended articles (8, 14, 16, 17, 20, 21, 36, 38, 41, 47, 50, 61, 62, 65, 68, 77, 79) each carry a confirmed amending instrument (Royal Decree M/115, dated 5/12/1439H, in every case) per nezams.com's own annotation, but the resulting current text is identical between the BOE-sourced text and the nezams.com-sourced text for each of these articles. No wording delta could be determined from the available sources for any of these 17 articles -- the amendments may have been non-substantive (renumbering/administrative only), or BOE's portal may coincidentally already reflect the amended wording for these specific articles even though it is confirmed stale for many other M/115-era articles. No original_1428h_text field has been populated for any of these 17 articles since no distinct pre-amendment text block was given by either source."
+    },
+    {
+      "article_key": "traffic_annexed_violation_tables_and_fee_schedules_not_extracted",
+      "description": "This law has 8 annexed violation tables (جداول المخالفات أرقام 1-8, referenced by number within Article 68's text and cross-referenced elsewhere, e.g. Article 65) plus three annexed fee schedules (vehicle circulation/transfer-of-ownership fees; driving-license fees; vehicle-plate fees) and a set of general provisions on traffic signs/signals (warning, regulatory, guide, and worksite/temporary sign categories). Consistent with how this corpus treats other laws' annexed schedules/tables (referenced, not separately modeled), none of these tables' or schedules' individual row-by-row content is extracted as structured records in this track. Tables 1, 3, and 4 have no documented amendment history from either research pass; Tables 5, 6, and 7 were added by Royal Decree M/70 (6/11/1437H); Table 8 (speed-fine schedule) was added by Royal Decree M/115 (5/12/1439H); Table 2 was replaced by M/115 and further amended by M/140 (12/7/1446H) -- see traffic_art_071_table2_item16_conflict for the unresolved item-16 numbering question. These tables' current accuracy is uncertain to the same extent as BOE's general staleness for this law (see traffic_boe_nezams_pattern_confidence), though they are less likely to have been amended further than the numbered articles since only Table 2 has a documented post-M/115 amendment."
+    },
+    {
+      "article_key": "traffic_implementing_regulation_not_extracted",
+      "description": "A companion Implementing Regulation (اللائحة التنفيذية لنظام المرور) exists, originally issued by Ministerial Decision (Minister of Interior) No. 7019 dated 3/7/1429H. Research also surfaced a reference to Ministerial Decision No. 2249 of 1441H approving what one source described as 'the new اللائحة التنفيذية', suggesting the implementing regulation may have been reissued or substantially revised at some point separate from the 1429H original -- this second citation was NOT independently verified by either research pass and is flagged here only as a pointer for future work, not as a verified fact. Neither the original nor any possibly-reissued implementing regulation's text is extracted in this track."
+    },
+    {
+      "article_key": "traffic_art_050_mukarrar_verification_tier",
+      "description": "Article 50 مكرر (added by Royal Decree M/115, 5/12/1439H) is presented in the source research as a single, undisputed text block with no BOE-vs-nezams.com conflict noted by either research pass -- unlike most other M/115-era changes, no discrepancy was flagged for this specific addition. However, since BOE's portal is confirmed to lag behind several other M/115-era changes to EXISTING articles, and neither research pass explicitly attempted to independently verify (via gazette or press source) that this wholly NEW article is present and worded as given on BOE's live portal, this article's verification_tier is conservatively set to SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE rather than PRIMARY_INDEPENDENTLY_CONFIRMED, pending direct confirmation."
+    },
+    {
+      "article_key": "traffic_decree_premise_correction",
+      "description": "The task's original premise cited 'Royal Decree M/17 dated 26/6/1428H' as the enacting instrument for this law. This is INCORRECT on both the decree number and the date. The verified, correct citation -- independently confirmed via (1) WebSearch AI-summary cross-check, (2) a direct r.jina.ai-proxied fetch of the official BOE portal page showing the verbatim royal-decree preamble text, and (3) nezams.com's independent citation of the same number/date -- is Royal Decree No. (م/85) dated 26/10/1428H, following Royal Order No. (أ/175) dated 17/10/1428H and Council of Ministers Decision No. (315) dated 24/10/1428H, signed by then-Deputy King Sultan bin Abdulaziz Al Saud. No source contradicted this corrected citation."
+    },
+    {
+      "article_key": "traffic_status_counts_premise_correction",
+      "description": "The task's suggested amended-article list (29 articles) and status_counts breakdown (55 اصلية / 29 معدلة) omitted three articles that Section (e) of the initial research report explicitly documents as amended: Article 50 (amended by M/115, separately from the addition of Article 50 مكرر by the same decree), Article 69, and Article 70 (both amended by Royal Decree M/70, 6/11/1437H, with full before/after text recovered for both). This file's classification instead reflects direct verification against the research reports' actual content: 32 معدلة articles, yielding 52 اصلية / 32 معدلة / 1 ملغاة / 1 مضافة = 86 total, per the task's own instruction to prioritize verification against the reports over the task's suggested figures."
+    }
+  ],
+  "source_artifact": "sources/traffic/law/official_source/traffic_law_official_source.json"
+}
