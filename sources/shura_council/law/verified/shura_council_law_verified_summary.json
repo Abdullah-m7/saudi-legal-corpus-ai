@@ -1,0 +1,31 @@
+{
+  "law_key": "shura_council",
+  "layer": "SHURA_COUNCIL_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 30,
+  "official_text_status": "MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER",
+  "status_counts": {
+    "اصلية": 24,
+    "معدلة": 6,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "الأمر الملكي رقم (أ/91)",
+  "decree_date_hijri": "27/8/1412",
+  "consolidated_amended_law": true,
+  "verification_methodology_note": "Shura Council Law «نظام مجلس الشورى» — Royal Order A/91 dated 27/8/1412H (King Fahd bin Abdulaziz Al Saud), issued the same day as the Basic Law of Governance (A/90); replaces the earlier 1347H (1928/29) Shura Council law. 30 articles, flat structure, no chapters. The BOE legal portal's exact LawDetails page for this law was located (GUID b5cf540a-e6ac-426a-b348-a9a700f163de) but was UNREACHABLE by every method tried this research pass: direct WebFetch returned HTTP 503; a direct curl attempt through the sandbox's own egress proxy returned a TLS/connection reset; the r.jina.ai reader-proxy returned repeated TimeoutError/422 (page never reached networkidle); and the Wayback Machine, despite valid archived snapshots existing (confirmed via its own availability API), was blocked by this sandbox's network egress policy. MIXED VERIFICATION TIER, tagged per-article: (1) TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE for the 24 unamended articles and the pre-2013 amendment history of the 5 other amended articles (10, 17, 21, 23, 29) and article 3's pre-2013 wording — full text fetched directly (not AI-summarized) from THREE independent Arabic sources: ar.wikisource.org (raw HTML), nezams.com (raw HTML, with the most complete inline amendment-history annotation of the three), and a King Saud University (KSU) faculty-hosted PDF — all three agree word-for-word (modulo trivial OCR/typographic variants) on the preamble and all unamended articles, and on the pre-2013 wording of the amended ones. (2) GOVERNMENT_PRIMARY_SPA_ANNOUNCEMENT_VERIFIED for article 3's CURRENT (2013-amended) text specifically — this is the one point in this track backed by an actual Tier-1 GOVERNMENT PRIMARY SOURCE: the Saudi Press Agency (spa.gov.sa/1067500), which reproduces the full verbatim text of Royal Order أ/44 dated 29/2/1434H (11 Jan 2013, adding the 20% female-representation quota); this matches nezams.com's rendering of the same text exactly. FULL AMENDMENT HISTORY FOUND: article 3 was amended three times (أ/78 1422H: 60->120 members; أ/26 1426H: 120->150 members, quota removed; أ/44 1434H/2013: 150 members retained, 20% female quota added -- CURRENT); articles 10, 21, and 29 were each amended once by أ/181 (1428H, adding 'ومساعده'/'and his assistant' to various officer/body compositions); articles 17 and 23 were each amended once by أ/198 (1424H, decision-routing and legislative-proposal-mechanism changes). No amendments were found after 1434H/2013 to the substantive text of any article, despite specific searches through 1446H/2025 -- a September 2024 (1446H) royal order was located but characterized by search-result evidence as a council-formation/appointment order, not a textual amendment (its exact wording could not be independently fetched, 403 Forbidden, flagged as a residual gap).",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "shura_council_art_003",
+      "description": "Article 3's FIRST amendment, by Royal Order أ/78 dated 1/3/1422H (60 members -> 120 members), was never located as a primary or even a full secondary reproduction -- its existence and effect are known only because two independent secondary sources (nezams.com, and implicitly Wikisource/the KSU PDF) cite it as the 'previous text' superseded by the أ/26 amendment. The exact original wording of the أ/78-amended text (reconstructed here as best available: 'يتكون مجلس الشورى من رئيس ومائة وعشرين عضواً يختارهم الملك من أهل العلم والخبرة والاختصاص') was not independently verified against a primary or full-text secondary source -- flagged as a genuine provenance gap rather than silently presented as confirmed."
+    },
+    {
+      "article_key": "shura_council_art_003_original_1412h",
+      "description": "nezams.com's display of the very original (1412H/1992, pre-first-amendment) Article 3 text has a grammatical inconsistency ('تكون مجلس الشورى' missing the initial 'ي' of 'يتكون', inconsistent with every other version on the same page) -- likely a site-side OCR/typo artifact, not independently verified against a primary source. Reconstructed here as 'يتكون مجلس الشورى من رئيس وستين عضواً يختارهم الملك من أهل العلم والخبرة والاختصاص' (best-available reading), flagged rather than silently presented as fully confirmed."
+    },
+    {
+      "article_key": "shura_council_art_all",
+      "description": "The BOE portal's exact LawDetails page for this law was located (GUID b5cf540a-e6ac-426a-b348-a9a700f163de) but was unreachable by every method tried this research pass (direct fetch 503, curl connection reset, r.jina.ai proxy timeout/422, Wayback Machine blocked by sandbox egress policy). Aside from article 3's current text (SPA primary source), this track rests on triple independent Arabic secondary-source cross-verification rather than the BOE primary source used for most other tracks in this corpus. A September 2024 (1446H) royal order (spa.gov.sa/N2164448) could not be directly fetched (403 Forbidden) to confirm it is purely a council-formation order rather than a textual amendment -- characterized as a formation order based on search-result evidence only, flagged as a lower-confidence inference. A fresh BOE retry from a different network path is recommended before this track is treated as fully primary-source-anchored."
+    }
+  ],
+  "source_artifact": "sources/shura_council/law/official_source/shura_council_law_official_source.json"
+}

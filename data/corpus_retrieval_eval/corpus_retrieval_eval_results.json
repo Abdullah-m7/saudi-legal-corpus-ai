@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 226,
-  "top1_hits": 202,
-  "top3_hits": 219,
-  "top5_hits": 222,
-  "top1_accuracy": 0.8938,
-  "top3_accuracy": 0.969,
-  "top5_accuracy": 0.9823,
-  "mrr_at_5": 0.9308,
+  "total_queries": 228,
+  "top1_hits": 204,
+  "top3_hits": 221,
+  "top5_hits": 224,
+  "top1_accuracy": 0.8947,
+  "top3_accuracy": 0.9693,
+  "top5_accuracy": 0.9825,
+  "mrr_at_5": 0.9314,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6896,9 +6896,9 @@
      "score": 30
     },
     {
-     "record_id": "labor-annex3-llm-art-003",
-     "article_number": 3,
-     "score": 15
+     "record_id": "shura-council-law-llm-art-004",
+     "article_number": 4,
+     "score": 30
     }
    ]
   },
@@ -6965,6 +6965,68 @@
    ]
   },
   {
+   "query_id": "shc-001",
+   "query_ar": "يشترط في عضو مجلس الشورى أن يكون سعودي الجنسية بالأصل والمنشأ، وأن يكون من المشهود لهم بالصلاح والكفاية، وألا يقل عمره عن ثلاثين سنة",
+   "category": "topical",
+   "gold": {
+    "corpus": "shura_council",
+    "law_component": "law",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "shura-council-law-llm-art-004",
+     "article_number": 4,
+     "score": 55
+    },
+    {
+     "record_id": "council-of-ministers-law-llm-art-003",
+     "article_number": 3,
+     "score": 40
+    },
+    {
+     "record_id": "regions-law-llm-art-017",
+     "article_number": 17,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "shc-002",
+   "query_ar": "يبدي مجلس الشورى الرأي في السياسات العامة للدولة التي تحال إليه من رئيس مجلس الوزراء",
+   "category": "topical",
+   "gold": {
+    "corpus": "shura_council",
+    "law_component": "law",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "shura-council-law-llm-art-015",
+     "article_number": 15,
+     "score": 36
+    },
+    {
+     "record_id": "council-of-ministers-law-llm-art-029",
+     "article_number": 29,
+     "score": 33
+    },
+    {
+     "record_id": "shura-council-law-llm-art-022",
+     "article_number": 22,
+     "score": 31
+    }
+   ]
+  },
+  {
    "query_id": "hba-001",
    "query_ar": "تكون بأمر ملكي هيئة تسمى هيئة البيعة على النحو الآتي: أبناء الملك المؤسس عبدالعزيز بن عبدالرحمن الفيصل آل سعود",
    "category": "topical",
@@ -7020,9 +7082,9 @@
      "score": 23
     },
     {
-     "record_id": "allegiance-commission-law-llm-art-018",
-     "article_number": 18,
-     "score": 19
+     "record_id": "shura-council-law-llm-art-016",
+     "article_number": 16,
+     "score": 21
     }
    ]
   }
