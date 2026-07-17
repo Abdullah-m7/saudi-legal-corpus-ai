@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 7672,
+  "total_primary_arabic_governing_records": 7725,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8567,
-  "total_tracks": 111,
+  "total_registry_counted_records": 8620,
+  "total_tracks": 112,
   "tracks": [
     {
       "boundaries": {
@@ -5222,6 +5222,53 @@
       "validator_targets": [
         "make ecommerce-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/vat/law/official_source/vat_law_official_source.json",
+        "sources/vat/law/verified/vat_law_verified_records.jsonl",
+        "data/vat_arabic_legal_llm/vat_law_legal_llm_001_053.json"
+      ],
+      "display_name_ar": "نظام ضريبة القيمة المضافة",
+      "display_name_en": "Value Added Tax Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/vat_arabic_legal_llm/vat_law_legal_llm_001_053.json",
+          "governing": true,
+          "record_count": 53,
+          "status": "complete"
+        }
+      },
+      "notes": "Value Added Tax Law «نظام ضريبة القيمة المضافة» — Royal Decree M/113 dated 2/11/1438H (2017, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 654 (1/11/1438H), following Shura Council Resolution 128/45 (18/10/1438H). Administering authority: Zakat, Tax and Customs Authority (ZATCA, formerly GAZT). 53 records across 18 chapters (فصول): 51 اصلية / 2 معدلة. Article 2 amended by Royal Order A/638 (15/10/1441H), raising the VAT rate from 5% to 15%, effective 1 July 2020. Article 49 amended by Royal Decree M/52 (28/4/1441H), replacing a reference to 'الجهة القضائية المختصة' with a reference to the newly-created Tax Violations and Disputes Resolution Committees (whose own rules of procedure were later superseded by Royal Order 25711, 8/4/1445H). **DISTINCT VERIFICATION TIER:** current-consolidated text rests on TWO independent official sources in agreement — ZATCA's own official consolidated PDF (source of the two amended articles' current text, with explicit amendment footnotes) cross-verified against laws.boe.gov.sa (reached via the r.jina.ai proxy after the live page returned HTTP 503) for all other articles and for decree/preamble metadata; the Wayback Machine was unreachable this pass (TLS connection reset) and was not part of this track's verification chain. **⚠ IMPORTANT LIMITATION:** the BOE portal's default view is NOT automatically consolidated with amendments — for BOTH amended articles (2 and 49) the BOE-portal rendering showed pre-amendment or truncated/anomalous text, confirming ZATCA's PDF as the authoritative current-text source for those two articles; neither article's FULL pre-amendment original text was captured to primary-source confidence this pass, so no original_1438h_text fields are included for either — a documented gap, not a fabrication, flagged as a candidate for a dedicated follow-up pass. Additional flagged discrepancies: a publication-date conflict between BOE and eastlaws.com (~16 months apart); an isolated Gregorian-date-conversion anomaly in ZATCA's own Implementing Regulation PDF; Article 26's chapter placement under Chapter 10 despite its subject matter reading more naturally with Chapter 11, preserved as found. A companion Implementing Regulation is confirmed to exist (ZATCA Board Decision 3839, 14 Dhul-Hijjah 1438H, amended at least 12 times through 2024/2025) but is not extracted in this track. Arabic governs; not legal advice.",
+      "official_text_status": "ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 53,
+        "legal_status_breakdown": {
+          "اصلية": 51,
+          "مضافة": 0,
+          "معدلة": 2,
+          "ملغاة": 0
+        },
+        "total": 53
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/113) — ZATCA official consolidated PDF cross-verified against the BOE portal (via r.jina.ai, live page unreachable) (see notes)",
+      "status": "complete",
+      "track_id": "vat_law",
+      "validator_targets": [
+        "make vat-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5307,10 +5354,11 @@
       "terrorism": 127,
       "trade_names": 23,
       "trademark": 52,
+      "vat": 53,
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7503,
+    "total_records": 7556,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

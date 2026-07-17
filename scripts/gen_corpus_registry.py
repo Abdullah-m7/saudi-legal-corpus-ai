@@ -149,6 +149,7 @@ TRADEMARK_LAW_LLM = os.path.join(ROOT, "data", "trademark_arabic_legal_llm", "tr
 ANTI_CONCEALMENT_LAW_LLM = os.path.join(ROOT, "data", "anti_concealment_arabic_legal_llm", "anti_concealment_law_legal_llm_001_020.json")
 INSURANCE_CONTROL_LAW_LLM = os.path.join(ROOT, "data", "insurance_control_arabic_legal_llm", "insurance_control_law_legal_llm_001_025.json")
 ECOMMERCE_LAW_LLM = os.path.join(ROOT, "data", "ecommerce_arabic_legal_llm", "ecommerce_law_legal_llm_001_026.json")
+VAT_LAW_LLM = os.path.join(ROOT, "data", "vat_arabic_legal_llm", "vat_law_legal_llm_001_053.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -291,6 +292,7 @@ def main() -> int:
     anti_concealment_law_llm = _load_json(ANTI_CONCEALMENT_LAW_LLM)
     insurance_control_law_llm = _load_json(INSURANCE_CONTROL_LAW_LLM)
     ecommerce_law_llm = _load_json(ECOMMERCE_LAW_LLM)
+    vat_law_llm = _load_json(VAT_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -311,7 +313,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 111,
+        "total_tracks": 112,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -426,6 +428,7 @@ def main() -> int:
             + anti_concealment_law_llm["record_count"]  # 20 Anti-Concealment Law (DISTINCT TIER: triple Arabic secondary sources, BOE unreachable via all methods, see track notes)
             + insurance_control_law_llm["record_count"]  # 25 Cooperative Insurance Companies Control Law (DISTINCT TIER: misa.gov.sa official PDF x nezams.com, BOE and Wayback both unreachable, see track notes)
             + ecommerce_law_llm["record_count"]  # 26 E-Commerce Law (DISTINCT TIER: BOE Wayback snapshot x nezams.com cross-verified, see track notes)
+            + vat_law_llm["record_count"]  # 53 Value Added Tax Law (DISTINCT TIER: ZATCA official PDF x BOE portal cross-verified, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -531,6 +534,7 @@ def main() -> int:
             + anti_concealment_law_llm["record_count"]
             + insurance_control_law_llm["record_count"]
             + ecommerce_law_llm["record_count"]
+            + vat_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -3849,6 +3853,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "E-Commerce Law «نظام التجارة الإلكترونية» — Royal Decree M/126 dated 7/11/1440H (2019, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 628 (6/11/1440H), following Shura Council Resolutions 189/47 (19/10/1439H) and 144/39 (1/9/1440H). Administering authority: Ministry of Commerce. 26 records, flat structure (no chapters — the sole occurrence of the word فصل is substantive text inside Article 22, 'الفصل في المنازعات' / 'adjudicate disputes', not a structural heading), all اصلية — a fresh, still-unamended 2019 law; confirmed via the BOE portal's own per-article amendment/repeal CSS-class markers being absent from every article, and nezams.com's explicit 'لم يجرِ عليه تعديل' (no amendment) statement. **DISTINCT VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass; full text instead rests on a single successful Wayback Machine snapshot of the BOE portal (fetched directly, not via r.jina.ai or WebFetch, neither of which can reliably reach archive.org) — a second, differently-dated snapshot for byte-identity cross-checking could not be fetched due to repeated network-level connection resets against archive.org, a lighter cross-verification than some other tracks' two-snapshot pattern, flagged as a candidate for a follow-up confirmation pass. Cross-verified against nezams.com. Two flagged discrepancies, both confirmed genuine source-text features rather than artifacts: Article 1's own defined terms still name the ministry 'وزارة التجارة والاستثمار' (the pre-reorganization name, since the Law itself has never been amended); Article 22 has no terminal punctuation in the official BOE source markup itself. A companion Implementing Regulation is confirmed to exist (Ministerial Resolution 200/1441H, 19/5/1441H) but is not extracted in this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "vat_law",
+                "display_name_ar": "نظام ضريبة القيمة المضافة",
+                "display_name_en": "Value Added Tax Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED",
+                "source_authority": "Royal Decree / مرسوم ملكي (م/113) — ZATCA official consolidated PDF cross-verified against the BOE portal (via r.jina.ai, live page unreachable) (see notes)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": vat_law_llm["record_count"],
+                    "data_path": "data/vat_arabic_legal_llm/vat_law_legal_llm_001_053.json"}},
+                "record_counts": {"arabic_articles": vat_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 51, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+                                  "total": vat_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/vat/law/official_source/vat_law_official_source.json",
+                    "sources/vat/law/verified/vat_law_verified_records.jsonl",
+                    "data/vat_arabic_legal_llm/vat_law_legal_llm_001_053.json",
+                ],
+                "validator_targets": ["make vat-law-track-validate"],
+                "report_paths": [],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Value Added Tax Law «نظام ضريبة القيمة المضافة» — Royal Decree M/113 dated 2/11/1438H (2017, King Salman bin Abdulaziz Al Saud), based on Council of Ministers Resolution 654 (1/11/1438H), following Shura Council Resolution 128/45 (18/10/1438H). Administering authority: Zakat, Tax and Customs Authority (ZATCA, formerly GAZT). 53 records across 18 chapters (فصول): 51 اصلية / 2 معدلة. Article 2 amended by Royal Order A/638 (15/10/1441H), raising the VAT rate from 5% to 15%, effective 1 July 2020. Article 49 amended by Royal Decree M/52 (28/4/1441H), replacing a reference to 'الجهة القضائية المختصة' with a reference to the newly-created Tax Violations and Disputes Resolution Committees (whose own rules of procedure were later superseded by Royal Order 25711, 8/4/1445H). **DISTINCT VERIFICATION TIER:** current-consolidated text rests on TWO independent official sources in agreement — ZATCA's own official consolidated PDF (source of the two amended articles' current text, with explicit amendment footnotes) cross-verified against laws.boe.gov.sa (reached via the r.jina.ai proxy after the live page returned HTTP 503) for all other articles and for decree/preamble metadata; the Wayback Machine was unreachable this pass (TLS connection reset) and was not part of this track's verification chain. **⚠ IMPORTANT LIMITATION:** the BOE portal's default view is NOT automatically consolidated with amendments — for BOTH amended articles (2 and 49) the BOE-portal rendering showed pre-amendment or truncated/anomalous text, confirming ZATCA's PDF as the authoritative current-text source for those two articles; neither article's FULL pre-amendment original text was captured to primary-source confidence this pass, so no original_1438h_text fields are included for either — a documented gap, not a fabrication, flagged as a candidate for a dedicated follow-up pass. Additional flagged discrepancies: a publication-date conflict between BOE and eastlaws.com (~16 months apart); an isolated Gregorian-date-conversion anomaly in ZATCA's own Implementing Regulation PDF; Article 26's chapter placement under Chapter 10 despite its subject matter reading more naturally with Chapter 11, preserved as found. A companion Implementing Regulation is confirmed to exist (ZATCA Board Decision 3839, 14 Dhul-Hijjah 1438H, amended at least 12 times through 2024/2025) but is not extracted in this track. Arabic governs; not legal advice.",
             },
         ],
     }

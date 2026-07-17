@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 252,
-  "top1_hits": 228,
-  "top3_hits": 245,
-  "top5_hits": 248,
-  "top1_accuracy": 0.9048,
-  "top3_accuracy": 0.9722,
-  "top5_accuracy": 0.9841,
-  "mrr_at_5": 0.938,
+  "total_queries": 254,
+  "top1_hits": 230,
+  "top3_hits": 247,
+  "top5_hits": 250,
+  "top1_accuracy": 0.9055,
+  "top3_accuracy": 0.9724,
+  "top5_accuracy": 0.9843,
+  "mrr_at_5": 0.9385,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7829,6 +7829,68 @@
      "record_id": "commercial-register-law-llm-art-014",
      "article_number": 14,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "vat-001",
+   "query_ar": "تطبق الضريبة بنسبة أساسية قدرها (15%) من قيمة التوريد أو الاستيراد",
+   "category": "topical",
+   "gold": {
+    "corpus": "vat",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vat-law-llm-art-002",
+     "article_number": 2,
+     "score": 19
+    },
+    {
+     "record_id": "vat-law-llm-art-015",
+     "article_number": 15,
+     "score": 13
+    },
+    {
+     "record_id": "vat-law-llm-art-021",
+     "article_number": 21,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "vat-002",
+   "query_ar": "يعاقب على التهرب الضريبي بغرامة لا تقل عن قيمة الضريبة المستحقة",
+   "category": "topical",
+   "gold": {
+    "corpus": "vat",
+    "law_component": "law",
+    "article_number": 40
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vat-law-llm-art-040",
+     "article_number": 40,
+     "score": 35
+    },
+    {
+     "record_id": "vat-law-llm-art-042",
+     "article_number": 42,
+     "score": 26
+    },
+    {
+     "record_id": "labor-law-llm-art-229-mukarrar",
+     "article_number": 229,
+     "score": 18
     }
    ]
   }
