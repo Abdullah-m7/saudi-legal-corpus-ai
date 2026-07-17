@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8092,
+  "total_primary_arabic_governing_records": 8141,
   "total_reference_records": 614,
-  "total_registry_counted_records": 8987,
-  "total_tracks": 116,
+  "total_registry_counted_records": 9036,
+  "total_tracks": 117,
   "tracks": [
     {
       "boundaries": {
@@ -5457,6 +5457,53 @@
       "validator_targets": [
         "make traffic-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/environmental/law/official_source/environmental_law_official_source.json",
+        "sources/environmental/law/verified/environmental_law_verified_records.jsonl",
+        "data/environmental_arabic_legal_llm/environmental_law_legal_llm_001_049.json"
+      ],
+      "display_name_ar": "نظام البيئة",
+      "display_name_en": "Environmental Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/environmental_arabic_legal_llm/environmental_law_legal_llm_001_049.json",
+          "governing": true,
+          "record_count": 49,
+          "status": "complete"
+        }
+      },
+      "notes": "Environmental Law «نظام البيئة» — Royal Decree M/165 dated 19/11/1441H, approving Council of Ministers Decision 729 (16/11/1441H). Administered by the Ministry of Environment, Water and Agriculture (MEWA), together with the General Authority of Meteorology and Environmental Protection, the Saudi Wildlife Authority, and the National Centers for the Environment Sector. Repeals several prior instruments including the older 'النظام العام للبيئة' (Royal Decree M/34, 28/7/1422H) — with a narrow carve-over: that older law's waste-related provisions remain in force until dedicated new waste-specific rules are issued; the old M/34 law itself is not modeled in this corpus. 49 records across 9 فصول (this law has NO أبواب/Parts tier, a single-level chapter structure): 48 اصلية / 1 معدلة. **STRONG TRIPLE-SOURCE VERIFICATION TIER:** laws.boe.gov.sa's live portal was unreachable this pass (HTTP 503 direct, HTTP 422 via r.jina.ai); BOE's own content was instead recovered via the Wayback Machine (15 October 2025 snapshot, cross-checked against 24 September 2024), and independently cross-verified against two further independently-hosted full-text copies — a PDF hosted at green.org.sa and nezams.com. All 49 articles matched verbatim across all three sources EXCEPT ONE flagged point: Article 1's definition of 'الجهة المختصة' (Competent Authority), where BOE's OWN official per-article amendment-log states current wording differs from BOE's OWN main running law-text body — a genuine self-contradiction in BOE's own official data, persistent across two Wayback snapshots over a year apart. This build treats the amendment (Council of Ministers Decision 406, 14/5/1445H, adding 'المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر' to the definition) as operative, following the same reasoning precedent established for the Traffic Law track's 'BOE portal lags behind confirmed amendments' situations, further corroborated by qanoonsa.com independently displaying the amended definition. The pre-amendment wording is preserved verbatim as original_1441h_text — flagged in known_unresolved_discrepancies as warranting dedicated human legal-review confirmation given it rests on BOE's internal self-contradiction plus one secondary corroboration, not a full independent gazette-text confirmation. Additional notes: the multiple topical Implementing Regulations (no single consolidated instrument) are listed indicatively only, not independently verified, and not extracted in this track; monetary figures use Arabic-style period thousand-separators (e.g. '(20.000.000) عشرين مليون ريال'), preserved verbatim rather than reformatted; no official English translation exists per BOE's own site. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_X_GREEN_ORG_PDF_X_NEZAMS_TRIPLE_VERIFIED_ART1_BOE_SELF_CONTRADICTION",
+      "record_counts": {
+        "arabic_articles": 49,
+        "legal_status_breakdown": {
+          "اصلية": 48,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 49
+      },
+      "report_paths": [],
+      "source_authority": "Royal Decree / مرسوم ملكي (م/165) — BOE via Wayback x green.org.sa PDF x nezams.com, triple-verified for 48/49 articles; Article 1 flagged (see notes)",
+      "status": "complete",
+      "track_id": "environmental_law",
+      "validator_targets": [
+        "make environmental-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5499,6 +5546,7 @@
       "elitigation_guide": 5,
       "enforcement": 371,
       "enforcement_providers": 18,
+      "environmental": 49,
       "evidence": 322,
       "foreign_ownership": 15,
       "franchise": 27,
@@ -5550,7 +5598,7 @@
       "whistleblower": 37
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 7923,
+    "total_records": 7972,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
