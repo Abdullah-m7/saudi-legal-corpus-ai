@@ -138,6 +138,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_council_of_ministers_law_track.py",
     "scripts/gen_regions_law_track.py",
     "scripts/gen_electronic_transactions_law_track.py",
+    "scripts/gen_allegiance_commission_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/run_corpus_retrieval_eval.py",

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 224,
-  "top1_hits": 200,
-  "top3_hits": 217,
-  "top5_hits": 220,
-  "top1_accuracy": 0.8929,
-  "top3_accuracy": 0.9688,
-  "top5_accuracy": 0.9821,
-  "mrr_at_5": 0.9302,
+  "total_queries": 226,
+  "top1_hits": 202,
+  "top3_hits": 219,
+  "top5_hits": 222,
+  "top1_accuracy": 0.8938,
+  "top3_accuracy": 0.969,
+  "top5_accuracy": 0.9823,
+  "mrr_at_5": 0.9308,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6961,6 +6961,68 @@
      "record_id": "marriage-contract-hearing-regulation-llm-art-005",
      "article_number": 5,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "hba-001",
+   "query_ar": "تكون بأمر ملكي هيئة تسمى هيئة البيعة على النحو الآتي: أبناء الملك المؤسس عبدالعزيز بن عبدالرحمن الفيصل آل سعود",
+   "category": "topical",
+   "gold": {
+    "corpus": "allegiance_commission",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "allegiance-commission-law-llm-art-001",
+     "article_number": 1,
+     "score": 52
+    },
+    {
+     "record_id": "allegiance-commission-law-llm-art-025",
+     "article_number": 25,
+     "score": 26
+    },
+    {
+     "record_id": "allegiance-commission-law-llm-art-012",
+     "article_number": 12,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "hba-002",
+   "query_ar": "لا يكون اجتماع الهيئة نظاميا إلا بحضور ثلثي أعضائها على الأقل بمن فيهم رئيس الهيئة أو من ينوب عنه",
+   "category": "topical",
+   "gold": {
+    "corpus": "allegiance_commission",
+    "law_component": "law",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "allegiance-commission-law-llm-art-020",
+     "article_number": 20,
+     "score": 38
+    },
+    {
+     "record_id": "judiciary-law-llm-art-013",
+     "article_number": 13,
+     "score": 23
+    },
+    {
+     "record_id": "allegiance-commission-law-llm-art-018",
+     "article_number": 18,
+     "score": 19
     }
    ]
   }
