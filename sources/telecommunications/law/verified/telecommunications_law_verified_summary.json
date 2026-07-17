@@ -1,0 +1,95 @@
+{
+  "law_key": "telecommunications",
+  "layer": "TELECOMMUNICATIONS_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 41,
+  "official_text_status": "BOE_PORTAL_PRIMARY_SOURCE_MCIT_PDF_CROSS_CHECKED",
+  "status_counts": {
+    "اصلية": 41,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/106)",
+  "decree_date_hijri": "2/11/1443",
+  "consolidated_amended_law": false,
+  "chapter_structure": [
+    {
+      "section_ar": "الفصل الأول: أحكام عامة",
+      "first_article": 1,
+      "last_article": 3
+    },
+    {
+      "section_ar": "الفصل الثاني: التراخيص",
+      "first_article": 4,
+      "last_article": 9
+    },
+    {
+      "section_ar": "الفصل الثالث: الطيف الترددي",
+      "first_article": 10,
+      "last_article": 14
+    },
+    {
+      "section_ar": "الفصل الرابع: ربط الاتصال البيني والنفاذ",
+      "first_article": 15,
+      "last_article": 16
+    },
+    {
+      "section_ar": "الفصل الخامس: استخدام العقارات",
+      "first_article": 17,
+      "last_article": 19
+    },
+    {
+      "section_ar": "الفصل السادس: المنافسة",
+      "first_article": 20,
+      "last_article": 22
+    },
+    {
+      "section_ar": "الفصل السابع: حماية معلومات المستخدم ووثائقه السرية",
+      "first_article": 23,
+      "last_article": 24
+    },
+    {
+      "section_ar": "الفصل الثامن: الرقابة والتفتيش",
+      "first_article": 25,
+      "last_article": 25
+    },
+    {
+      "section_ar": "الفصل التاسع: المخالفات والعقوبات",
+      "first_article": 26,
+      "last_article": 29
+    },
+    {
+      "section_ar": "الفصل العاشر: أحكام ختامية",
+      "first_article": 30,
+      "last_article": 41
+    }
+  ],
+  "verification_methodology_note": "Telecommunications and Information Technology Act «نظام الاتصالات وتقنية المعلومات» — Royal Decree M/106 dated 2/11/1443H (1 June 2022), approved by Council of Ministers Resolution 592 (1/11/1443H) following Shura Council Resolution 85/16 (16/5/1443H), published in Umm Al-Qura 11/11/1443H (10 June 2022). This is a FRESH REPLACEMENT law, not an amendment: it explicitly repeals and replaces the 2001 telecom law (نظام الاتصالات, Royal Decree M/12, 12/3/1422H) per its own Article 41(1) — confirmed independently via the BOE portal's own 'الحالة: ساري' (status: in force) metadata field for this specific 2022 instrument. 10 chapters, 41 articles. PRIMARY SOURCE: the Bureau of Experts (BOE) legal portal (laws.boe.gov.sa), reached via the https://r.jina.ai/<url> reader-proxy — this worked on this research pass (both via the WebFetch tool and a direct curl through the proxy, the latter avoiding any tool-side text summarization). Full verbatim text extracted: decree preamble, Council of Ministers Resolution text, and all 41 articles with chapter headings, in order, no gaps. CROSS-VERIFICATION: an independent official government PDF hosted at mcit.gov.sa (the Ministry of Communications and IT) was separately downloaded and extracted via pdftotext -layout; it agrees with the BOE text word-for-word across all 41 articles, with ONE identified and resolved extraction artifact — the MCIT PDF's Article 6 paragraph numbering rendered as 1,3,3,4,5 (a digit-rendering/bidi artifact of that specific PDF extraction), corrected to the true 1,2,3,4,5 sequence per the clean BOE text. Further corroborated by CST's own portal page (cst.gov.sa) confirming the same decree number/date, and by nezams.com independently confirming decree number, date, and the 41-article count. IMPORTANT — UNENACTED PROPOSED AMENDMENT: a public consultation titled 'تعديل نظام الاتصالات وتقنية المعلومات' ran 8 July-7 August 2024 on Saudi Arabia's official e-participation portals (istitlaa.ncc.gov.sa / eparticipation.my.gov.sa, consultation ID legal-consultation-42512), proposing changes to Articles 20 (ownership-change threshold for Council approval), 24 (internet-filtering-circumvention language), 25 (inspector-appointment procedures), and 27 (deleting paragraph د, the digital-content-platform blocking penalty), plus a new Tadawul-listing requirement provision. WHETHER THIS AMENDMENT PACKAGE HAS BEEN FORMALLY ENACTED COULD NOT BE CONFIRMED — no BOE record of a subsequent amending instrument was found, and no Umm Al-Qura Gazette notice of an enacted amendment surfaced in search results, but the consultation page itself showed a content-update timestamp as recent as 15 June 2025, suggesting the process may still be active. This track ingests the CONFIRMED BOE 'in force' text (i.e., NOT reflecting these proposed 2024 changes, since they are unconfirmed as enacted) — flagged for periodic re-verification, particularly Articles 20, 24, 25, and 27. Minor unresolved discrepancy: the exact Gregorian effective date (Article 41(2), 180 days after Gazette publication) computes to approximately 7 December 2022 from the BOE-given publication date, while independent law-firm client alerts (Clyde & Co, Pinsent Masons) report 4 December 2022 — a 3-day discrepancy not resolved with full confidence, possibly a Hijri/Gregorian conversion or inclusive/exclusive counting difference; not material to any article's substantive text. NORMALIZATION: Article 25's raw BOE extraction contained decorative tatweel elongation characters (U+0640, e.g. \"إجــراء\", \"التقصــي\") inserted purely for justified-text typographic spacing by the source page's own rendering; these carry no phonetic or semantic content and were stripped during ingestion per this corpus's standard tatweel-normalization practice (see scripts/ingest_official_arabic_user_provided_text.py) — no wording, letters, or diacritics were altered.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "telecommunications_art_020",
+      "description": "A public consultation (8 July-7 August 2024, istitlaa.ncc.gov.sa/eparticipation.my.gov.sa, consultation ID legal-consultation-42512) proposed expanding Article 20(2)'s ownership-change threshold to cover indirect transfers, but whether this amendment was formally enacted could NOT be confirmed. The text ingested here is the confirmed BOE 'in force' text (unamended by this proposal). Flagged for periodic re-verification."
+    },
+    {
+      "article_key": "telecommunications_art_024",
+      "description": "Same 2024 consultation reportedly proposed changes to paragraph (2)'s internet-filtering-circumvention language. Enactment status unconfirmed; text ingested is the confirmed BOE 'in force' text."
+    },
+    {
+      "article_key": "telecommunications_art_025",
+      "description": "Same 2024 consultation reportedly proposed changes to inspector-appointment procedures and new violation-reporting/technical-audit provisions. Enactment status unconfirmed; text ingested is the confirmed BOE 'in force' text."
+    },
+    {
+      "article_key": "telecommunications_art_027",
+      "description": "Same 2024 consultation reportedly proposed deleting paragraph (د) (digital-content-platform blocking penalty) and adding a Tadawul-listing requirement provision elsewhere in the law. Enactment status unconfirmed; text ingested is the confirmed BOE 'in force' text, including paragraph (د) as currently in force."
+    },
+    {
+      "article_key": "telecommunications_art_041",
+      "description": "Article 41(2)'s exact Gregorian effective date has a minor unresolved 3-day discrepancy across sources (~7 December 2022 computed from the BOE publication date vs. 4 December 2022 reported by independent law-firm client alerts) -- not material to the article's own Arabic text, which is given verbatim and unambiguous (180 days after Gazette publication)."
+    },
+    {
+      "article_key": "telecommunications_implementing_regulation",
+      "description": "A companion Implementing Regulation (اللائحة التنفيذية) was located (mcit.gov.sa PDF; referenced on uqn.gov.sa/Umm Al-Qura Gazette) but its full text was not extracted or verified this research pass -- noted as a strong candidate for a follow-up companion-track ingestion."
+    }
+  ],
+  "source_artifact": "sources/telecommunications/law/official_source/telecommunications_law_official_source.json"
+}
