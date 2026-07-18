@@ -14,6 +14,12 @@
     {
       "topic": "Consumer finance (التمويل الاستهلاكي) as a standalone law",
       "finding": "Not a separate statute. Consumer finance is one of the licensed financing-activity categories (alongside real estate finance, SME finance, finance lease, credit cards, microfinance) regulated under the single Finance Companies Control Law (نظام مراقبة شركات التمويل, M/51, 1433H) — see gap entry below. No distinct 'Consumer Finance Law' Royal Decree was found."
+    },
+    {
+      "law_name_ar": "نظام الشركات المهنية",
+      "law_name_en": "Professional Companies Law",
+      "resolution_status": "CONFIRMED NOT A GAP (session follow-up, verified from already-ingested corpus data)",
+      "finding": "Directly inspected this corpus's own already-ingested companies_law track (source decree confirmed as Royal Decree M/132, 1/12/1443H, via the underlying data file naming: companies_law_m132_1443). companies_law's own Articles 197-215 (article_title_ar values: 'تعريف الشركة المهنية', 'شكل الشركة المهنية', 'تأسيس الشركة المهنية', 'تأسيس الشركة المهنية وحلها', 'التغطية التأمينية للأخطاء المهنية', 'تحويل الشركة المهنية') constitute a dedicated Professional Companies chapter already fully covered by the existing 281-article companies_law track. This confirms the gap-map's own original hypothesis: the standalone Professional Companies Law (M/17, 1441H, 2020) has been absorbed into the new unified Companies Law (M/132, 1443H, 2022) rather than remaining a distinct, currently-effective standalone instrument. No separate track is warranted."
     }
   ],
   "gaps": [
@@ -169,15 +175,6 @@
       "priority": "low (pending confirmation)",
       "priority_rationale": "If/when enacted, this would likely be a high-priority track (it was designed to consolidate and modernize consumer-rights protections beyond the existing Anti-Commercial Fraud Law). But because enactment could not be confirmed, building it now risks building a draft/superseded text. Recommend periodically re-checking laws.boe.gov.sa for enactment before starting work; the Anti-Commercial Fraud Law gap above is the safer, confirmed target for now.",
       "confidence_exists": "unconfirmed — appears to still be a draft/proposal, not a confirmed enacted law"
-    },
-    {
-      "law_name_ar": "نظام الشركات المهنية",
-      "law_name_en": "Professional Companies Law",
-      "estimated_decree": "Royal Decree No. M/17 dated 26/1/1441H (2020), 29 articles — but search results indicate it may have been superseded/merged when the new unified Companies Law was issued by Royal Decree No. M/132 dated 1/12/1443H (2022)",
-      "estimated_article_count": "29 articles (original 1441H version); current status relative to the new Companies Law is unclear",
-      "priority": "low (pending confirmation)",
-      "priority_rationale": "This would govern how law firms, audit firms, and other professional-services firms are structured as civil companies — directly relevant to the legal/accounting profession itself. However, because it may already be substantively folded into or superseded by the new Companies Law (M/132, 1443H) — which is very likely the source text already underlying the corpus's existing companies_law track (281 Arabic articles) — this should NOT be treated as a confirmed gap until someone checks whether companies_law's actual source decree is M/132 and, if so, whether it already contains a professional-companies chapter.",
-      "confidence_exists": "confirmed as having existed, but unconfirmed whether it remains a distinct, currently-effective standalone law versus already absorbed into the already-covered companies_law track"
     }
   ]
 }
