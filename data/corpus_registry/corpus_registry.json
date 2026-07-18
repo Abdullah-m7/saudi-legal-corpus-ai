@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8908,
+  "total_primary_arabic_governing_records": 8952,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9803,
-  "total_tracks": 128,
+  "total_registry_counted_records": 9847,
+  "total_tracks": 129,
   "tracks": [
     {
       "boundaries": {
@@ -6035,6 +6035,55 @@
       "validator_targets": [
         "make cooperative-health-insurance-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/healthcare_professions/law/official_source/healthcare_professions_law_official_source.json",
+        "sources/healthcare_professions/law/verified/healthcare_professions_law_verified_records.jsonl",
+        "data/healthcare_professions_arabic_legal_llm/healthcare_professions_law_legal_llm_001_044.json"
+      ],
+      "display_name_ar": "نظام مزاولة المهن الصحية",
+      "display_name_en": "Law of Practicing Healthcare Professions",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/healthcare_professions_arabic_legal_llm/healthcare_professions_law_legal_llm_001_044.json",
+          "governing": true,
+          "record_count": 44,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of Practicing Healthcare Professions «نظام مزاولة المهن الصحية» — Royal Decree M/59, dated 4/11/1426H, approving Council of Ministers Resolution No. 276 (3/11/1426H), published 28/11/1426H. Governs licensing/practice of physicians, dentists, pharmacists, nurses and other healthcare professionals; administered by the Ministry of Health and the Saudi Commission for Health Specialties. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate (approx. 33) was found wrong — the true count is 44, corrected during dedicated research. 44 records across 5 فصول (الترخيص بمزاولة المهنة arts 1-4; واجبات الممارس الصحي arts 5-25, itself subdivided into 3 فرع subsections; المسؤولية المهنية arts 26-32, also subdivided into 3 فرع subsections; التحقيق والمحاكمة arts 33-41; أحكام ختامية arts 42-44) — all 44 اصلية, never amended since enactment, confirmed by both BOE's own zero per-article amendment markers and nezams.com's explicit 'لم يجرِ عليه تعديل' (no amendment) statement. Article 42 confirms this law repeals the prior Physicians/Dentists Law (Royal Decree M/3, 21/2/1409H) and the prior Pharmacy Law (Royal Decree M/18, 18/3/1398H) — modeled as two repeals_full edges in the supersession graph. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot was fetched successfully via https:// (plain http:// returned 403 for this track, the opposite pattern from cooperative_health_insurance_law, both schemes tried per established practice) and cross-verified against a live fetch of nezams.com, agreeing on 42 of 44 articles with zero differences after normalization; the chapter/فرع structure was additionally corroborated article-boundary-exact against moh.gov.sa's own official consolidated Arabic and English PDFs. Flagged discrepancies: nezams.com carries an isolated single-character typo in Article 36 ('الشريعية' vs the correct 'الشرعية', inconsistent with its own usage elsewhere), BOE's text adopted instead; nezams.com's page appends site-navigation footer text after Article 44, a scraping-boundary artifact excluded rather than treated as a textual discrepancy; a Shura-Council-approved (December 2023) but NOT-yet-enacted proposed new Article 4 bis (licensing independent Saudi health practitioners) is documented but not added as a record, since it has not been issued via Royal Decree as of this build; a companion Implementing Regulation (Ministerial Resolution No. 4080489, 2/1/1439H) is confirmed to exist but is out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 44,
+        "legal_status_breakdown": {
+          "اصلية": 44,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 44
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/59, 4/11/1426H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription, additionally structurally corroborated against moh.gov.sa's official consolidated Arabic/English PDFs for the chapter/فرع structure",
+      "status": "complete",
+      "track_id": "healthcare_professions_law",
+      "validator_targets": [
+        "make healthcare-professions-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6088,6 +6137,7 @@
       "franchise": 27,
       "gcc_ownership": 6,
       "gtpl": 256,
+      "healthcare_professions": 44,
       "iflas_hudud": 23,
       "income_tax": 81,
       "insurance_control": 25,
@@ -6139,7 +6189,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 8739,
+    "total_records": 8783,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 284,
-  "top1_hits": 260,
-  "top3_hits": 277,
-  "top5_hits": 280,
-  "top1_accuracy": 0.9155,
-  "top3_accuracy": 0.9754,
-  "top5_accuracy": 0.9859,
-  "mrr_at_5": 0.945,
+  "total_queries": 286,
+  "top1_hits": 262,
+  "top3_hits": 279,
+  "top5_hits": 282,
+  "top1_accuracy": 0.9161,
+  "top3_accuracy": 0.9755,
+  "top5_accuracy": 0.986,
+  "mrr_at_5": 0.9453,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8821,6 +8821,68 @@
      "record_id": "cooperative-health-insurance-law-llm-art-014",
      "article_number": 14,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "hcp-001",
+   "query_ar": "يزاول الممارس الصحي مهنته لمصلحة الفرد والمجتمع في نطاق احترام حق الإنسان في الحياة وسلامته وكرامته",
+   "category": "topical",
+   "gold": {
+    "corpus": "healthcare_professions",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "healthcare-professions-law-llm-art-005",
+     "article_number": 5,
+     "score": 39
+    },
+    {
+     "record_id": "oa-llm-companies-art-206",
+     "article_number": 206,
+     "score": 11
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-014",
+     "article_number": 14,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "hcp-002",
+   "query_ar": "تكون هيئة تسمى الهيئة الصحية الشرعية قاضٍ لا تقل درجته عن قاضي أ يعينه وزير العدل رئيسًا",
+   "category": "topical",
+   "gold": {
+    "corpus": "healthcare_professions",
+    "law_component": "law",
+    "article_number": 33
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "healthcare-professions-law-llm-art-033",
+     "article_number": 33,
+     "score": 33
+    },
+    {
+     "record_id": "law-practice-law-llm-art-005",
+     "article_number": 5,
+     "score": 20
+    },
+    {
+     "record_id": "capital-market-law-llm-art-004",
+     "article_number": 4,
+     "score": 16
     }
    ]
   }

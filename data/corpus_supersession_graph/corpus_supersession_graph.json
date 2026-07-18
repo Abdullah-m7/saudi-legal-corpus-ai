@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 128,
+  "total_tracks_scanned": 129,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 45,
+  "edge_count": 47,
   "relation_counts": {
-    "repeals_full": 38,
+    "repeals_full": 40,
     "repeals_partial": 6,
     "superseded_by": 1
   },
@@ -455,6 +455,26 @@
       "affected_articles": null,
       "note": "anti_fraud_law's own official_source.json article 29 and issuing_authority_ar field: 'يحل هذا النظام محل نظام مكافحة الغش التجاري، الصادر بالمرسوم الملكي رقم (م/11) وتاريخ 29/5/1404هـ.' Predecessor not separately ingested in this corpus.",
       "source_ref": "sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json (article 29)"
+    },
+    {
+      "from_track_id": "healthcare_professions_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام مزاولة مهنة الطب البشري وطب الأسنان (السابق)",
+      "target_decree": "Royal Decree M/3, 21/2/1409H",
+      "affected_articles": null,
+      "note": "healthcare_professions_law's own official_source.json article 42: 'يلغي هذا النظام نظام مزاولة مهنة الطب البشري وطب الأسنان، الصادر بالمرسوم الملكي رقم (م/3) وتاريخ 21/2/1409هـ.' Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/healthcare_professions/law/official_source/healthcare_professions_law_official_source.json (article 42)"
+    },
+    {
+      "from_track_id": "healthcare_professions_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام مزاولة مهنة الصيدلة والاتجار بالأدوية والمستحضرات الطبية (السابق)",
+      "target_decree": "Royal Decree M/18, 18/3/1398H",
+      "affected_articles": null,
+      "note": "healthcare_professions_law's own official_source.json article 42, second repeal clause in the same article: 'كما يلغي نظام مزاولة مهنة الصيدلة والاتجار بالأدوية والمستحضرات الطبية الواردة، الصادر بالمرسوم الملكي رقم (م/18) وتاريخ 18/3/1398هـ.' Modeled as a separate edge from the M/3 repeal above since it is a distinct predecessor instrument named in the same article. Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/healthcare_professions/law/official_source/healthcare_professions_law_official_source.json (article 42)"
     },
     {
       "from_track_id": "copyright_law",
