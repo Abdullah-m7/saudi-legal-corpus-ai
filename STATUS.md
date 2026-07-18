@@ -2888,13 +2888,52 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   RAG application built on top of this corpus) is at
   `reports/schema_manifest/SCHEMA_MANIFEST_GUIDE_EN.md`. Validate:
   `make corpus-schema-manifest-validate`.
+- **Embeddings-ready chunking layer** — a purely additive text-segmentation
+  layer over the unified index (8649 records), preparing the corpus for a
+  real vector-embedding RAG pipeline without computing any embeddings
+  itself (word-based chunking, deliberately not tied to any specific
+  embedding model's tokenizer). Parameters chosen from the corpus's own
+  real length distribution (median 38 words, p99 345 words): a 350-word
+  chunk target/split-threshold, 20% (70-word) overlap, 500-word hard max.
+  **8,786 chunks from 8,649 source records** — only **81 records (0.94%)**
+  needed splitting into multiple chunks (e.g. `customs_regulation`'s
+  6,797-word Article 1), confirming most Saudi statutory articles are
+  short/medium and need no splitting at all. Every multi-chunk article's
+  full original text was verified to reconstruct byte-identically from
+  its own chunks (validated for all 81, not just a sample), and every
+  chunk retains a back-reference (`source_record_id`, `article_number`,
+  `chunk_index`, `total_chunks_for_this_article`) to its parent article.
+  Output: `data/corpus_chunking_layer/corpus_chunking_layer.jsonl`.
+  Validate: `make corpus-chunking-layer-validate`.
+- **Freshness/drift monitor** — a purely additive, two-part tool for
+  periodically re-checking whether a track's primary source may have
+  drifted since it was captured, without needing a full research/build
+  pass every time. **(1)** A deterministic manifest
+  (`data/corpus_freshness_manifest/corpus_freshness_manifest.json`, no
+  network calls, no fabricated timestamps) surveying all 125 tracks'
+  recorded source authorities/URLs and cross-referencing the verification-tier
+  taxonomy. **Exactly 4 tracks flagged `known_source_staleness_risk: true`**
+  — `traffic_law`, `patent_law`, `income_tax_law`, `environmental_law` —
+  each because its own build already documented, independently, that its
+  primary source portal was confirmed genuinely stale (not a proxy
+  artifact); every other track with merely stale *language* about a
+  ministry name or a secondary source was deliberately left unflagged.
+  **(2)** A standalone, read-only live-check CLI
+  (`scripts/check_corpus_freshness.py --track <id>` or `--all`) that
+  attempts a single HEAD/GET per recorded URL and reports reachable /
+  possible-drift / could-not-check — explicitly never treating a network
+  block as "confirmed unreachable," and never attempting any
+  egress-policy-bypass workaround. The live-check tool is intentionally
+  **not** part of the deterministic QA gate (network-dependent); only the
+  manifest generator is. Validate:
+  `make corpus-freshness-manifest-validate`.
 
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
   `scripts/validate_*.py` in the repository (204 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 131 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 133 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any
