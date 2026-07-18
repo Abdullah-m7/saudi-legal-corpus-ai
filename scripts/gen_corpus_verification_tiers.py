@@ -161,6 +161,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_PRIMARY_X_NEZAMS_SPOTCHECK_X_QANOONSA_STRUCTURE_VERIFIED": TIER_4,
     "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED": TIER_4,
     "WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED": TIER_4,
+    "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE": TIER_4,
 }
 
 # Tracks whose `official_text_status` field is absent (None) in the registry — these are the
@@ -305,6 +306,19 @@ RATIONALE_OVERRIDE = {
         "من ZATCA)، وبوابة أم القرى (uqn.gov.sa) استُخدمت فقط للتحقق الموجَّه من حقيقتين محددتين "
         "(تاريخ القرار 1007 وعنوان المادة 13)، وليس كتدقيق حرفي كامل ثانٍ — أدنى من TIER_2 التي "
         "تتطلب تدقيقاً مقارناً شاملاً، وليس موضعياً فقط."
+    ),
+    "customs_law": (
+        "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE': "
+        "بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها في جولة البناء هذه (إعادة تعيين اتصال "
+        "curl، وخطأ 503 عبر WebFetch)؛ الصياغة الحرفية الكاملة لكل المواد تستند إلى مصدر "
+        "رسمي واحد فقط (نسخة PDF الرسمية الموحَّدة من ZATCA، مشتركة مع مسار اللائحة "
+        "التنفيذية)، دون أي تدقيق مقارن من مصدر ثانٍ إطلاقاً — لا حتى تحقق موضعي كما في "
+        "نظام جباية الزكاة، بل غياب كامل للتدقيق المقارن."
+    ),
+    "customs_regulation": (
+        "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE': نفس "
+        "تصنيف نظام الجمارك الموحد (customs_law) — مصدر واحد فقط (نسخة ZATCA الرسمية "
+        "المشتركة)، بوابة BOE متعذرة الوصول، دون أي تدقيق مقارن مستقل."
     ),
     "patent_law": (
         "official_text_status='WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_"

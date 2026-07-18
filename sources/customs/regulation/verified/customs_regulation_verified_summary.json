@@ -1,0 +1,90 @@
+{
+  "law_key": "customs",
+  "layer": "CUSTOMS_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 36,
+  "official_text_status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+  "status_counts": {
+    "اصلية": 34,
+    "مضافة": 2
+  },
+  "decree": "القرار الوزاري رقم (2748)",
+  "decree_date_hijri": "25/11/1423",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "الباب الأول : أسس تحديد القيمة للأغراض الجمركية في النظام \"القانون\" الجمركي الموحد لدول المجلس",
+      "chapters": [],
+      "articles": "1"
+    },
+    {
+      "label_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+      "chapters": [],
+      "articles": "2-13"
+    },
+    {
+      "label_ar": "الباب الثالث : إعادة تصدير البضائع",
+      "chapters": [],
+      "articles": "14-18"
+    },
+    {
+      "label_ar": "الباب الرابع : الاعفاءات الشخصية",
+      "chapters": [],
+      "articles": "19-21"
+    },
+    {
+      "label_ar": "الباب الخامس : إعفاء مستلزمات الجمعيات الخيرية -- والبضائع المستوردة لذوي الاحتياجات الخاصة و المواد اللازمة للإغاثة",
+      "chapters": [],
+      "articles": "22-25"
+    },
+    {
+      "label_ar": "الباب السادس : البضائع الخاضعة لأحكام النطاق الجمركي وشروط النقل داخله",
+      "chapters": [],
+      "articles": "26-28"
+    },
+    {
+      "label_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+      "chapters": [],
+      "articles": "29-34"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE: identical ZATCA consolidated PDF as the customs_law track (same 103-page document; the Implementing Regulation is its own titled section beginning after the Law's closing article) -- see customs_law's verification_methodology_note for the full ligature-bug/line-order-scrambling fix methodology, which is shared verbatim between both tracks (both were extracted, cleaned, and split from the same source PDF via the same pipeline). STATUS constant ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE reflects the same single-source tier; laws.boe.gov.sa was retried this pass for the Regulation specifically and again confirmed unreachable (curl: 'Recv failure: Connection reset by peer'; WebFetch: HTTP 503).\n\nSTRUCTURE-SPECIFIC NOTES: (1) Article 1 (Book 1) is a single, very long article covering customs valuation methodology, internally organized by ordinal clause markers (أولاً through ثامناً) plus an appended 'الملحق التفسيري' (Interpretive Annex) with its own 'رقم المادة:' sub-references and numeric worked examples/tables -- preserved as ONE article's full text with its internal ordinal structure intact, per this corpus's convention of not artificially splitting a single numbered article. Given this article's exceptional length and density of numeric tables/examples, a higher residual risk of minor uncorrected line-wrap artifacts applies to it specifically versus the Regulation's other 35 (much shorter) articles -- flagged in known_unresolved_discrepancies. (2) Three of the Regulation's 7 Books (Book 3 before Art. 14, Book 6 before Art. 26, Book 7 before Art. 29) open with a substantive chapeau paragraph -- confirmed genuine operative text establishing that Book's legal basis in the Law (e.g. 'بناءً على ما ورد في أحكام المادة (95) من نظام \"قانون\" الجمارك الموحد...') -- physically sitting between the Book's heading and its first article's marker in the raw extraction. These were NOT discarded as section-title noise; each was prepended verbatim to its Book's first article (Articles 14, 26, 29 respectively), and the chapter_structure's bab label was shortened back to the Book's own short title. (3) Two مكرر (bis) articles: '2 مكرر' (implements Law Article 48 مكرر, electronic-document acceptance -- confirmed via an in-source margin cross-reference note 'العودة إلى المادة 48 مكرر من النظام', itself stripped as non-substantive navigational text) and '25 مكرر' (implements Law Article 105, confirmed via the analogous margin note 'العودة إلى المادة 105 من النظام'). '25 مكرر''s own header is printed in the source PDF missing its leading 'ال' ('مادة (25 مكرر)' instead of 'المادة (25 مكرر)') -- an isolated, obvious label-only OCR/extraction drop (every other of this track's 36 headers uses 'المادة'), corrected to the form used uniformly elsewhere, not a substantive change. (4) Article 13's paragraph opens '2. إذا انتقلت ملكية المؤسسة الفردية...' -- its point '1.' was not independently recoverable as a separately-numbered clause distinct from the preceding sentence in the raw extraction; presented as extracted rather than guessed at, a minor documented gap.\n\nAMENDMENT ATTRIBUTION -- this Regulation's 6 amending Ministerial/Committee Resolutions (2997, 3766, 939, 986, 955, 1374) are confirmed from the PDF's own cover page (with exact dates), but which specific article(s) each resolution touched is NOT determinable from the consolidated PDF alone (it shows only final, already-merged current text with no per-article revision-history markers, unlike this corpus's MOJ-portal-backed tracks such as bankruptcy_law/bankruptcy_regulation). All 36 articles are therefore presented with legal_status_ar='اصلية' at the level of 'an original-numbered article of the currently-consolidated instrument' (as opposed to 'مضافة' for the 2 مكرر bis insertions) -- this is NOT a claim that no base article's text changed across the 6 amendments, merely that no specific article can be honestly singled out as 'معدلة' without a primary source confirming it; see known_unresolved_discrepancies.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "customs_regulation_amendments_articles_unconfirmed",
+      "description": "This Regulation's 6 amending Ministerial/Committee Resolutions (2997, 3766, 939, 986, 955, 1374) are confirmed from the ZATCA PDF's own cover page (with exact dates), but the specific article(s) each resolution touched could not be determined from the consolidated PDF alone (no per-article revision-history markers, unlike this corpus's MOJ-portal-backed tracks). All 36 articles are presented as legal_status_ar='اصلية' (original-numbered, current text) rather than guessing which specific ones are 'معدلة' -- a documented gap, not a claim that nothing changed."
+    },
+    {
+      "article_key": "customs_regulation_boe_unreachable",
+      "description": "laws.boe.gov.sa was retried this pass: curl returned 'Recv failure: Connection reset by peer' and WebFetch returned HTTP 503 Service Unavailable -- confirmed unreachable, matching this corpus's established BOE-egress-blocked pattern. Not bypassed via any hostname trick."
+    },
+    {
+      "article_key": "customs_regulation_shared_ligature_bug_methodology",
+      "description": "This Regulation was extracted from the SAME ZATCA PDF and cleaned with the SAME normalizer as the customs_law track (general boundary regex for both plain-alef and hamza-alef ligature-transposition, at both the 'ال' and 'لـ+ال' morpheme boundaries, plus a curated dictionary and the ثلاث/ثلاثة/ثلاثين homograph disambiguation) -- see customs_law_official_source.json's verification_methodology_note for the full methodology, shared verbatim between both tracks."
+    },
+    {
+      "article_key": "customs_regulation_article1_valuation_length_residual_risk",
+      "description": "Article 1 (Book 1, customs valuation methodology, including its 'الملحق التفسيري' interpretive annex) is exceptionally long and dense with numeric worked examples and small tables (e.g. the unit-price example under سادساً/1). Given this length and table-heavy content, a higher residual risk of minor uncorrected line-wrap or table-cell-ordering artifacts applies to this article specifically, versus the Regulation's other 35 much shorter articles, even after the general line-reordering and ligature fixes were applied and the article was read in full for sense."
+    },
+    {
+      "article_key": "customs_regulation_bab_chapeau_paragraphs_relocated",
+      "description": "Three of the Regulation's 7 Books (3, 6, 7) open with a substantive chapeau paragraph establishing that Book's legal basis in the Law (e.g. citing Law Articles 95, 121, and 141/9/142/143/144 respectively) that was physically interleaved between the Book's heading and its first article's marker in the raw PDF extraction (a column-layout artifact). These chapeaux were confirmed as genuine operative text (not section-title noise) and prepended verbatim to each Book's first article (Articles 14, 26, 29); the chapter_structure's bab label was correspondingly shortened back to the Book's own short title."
+    },
+    {
+      "article_key": "customs_regulation_25mukarrar_header_missing_al_corrected",
+      "description": "Article '25 مكرر''s own header is printed in the source PDF missing its leading 'ال' ('مادة (25 مكرر)' rather than 'المادة (25 مكرر)', the form used uniformly by every other of this track's 36 article headers) -- corrected as an isolated, obvious label-only OCR/extraction drop, not a substantive change to any article's legal text."
+    },
+    {
+      "article_key": "customs_regulation_article13_clause1_not_independently_recovered",
+      "description": "Article 13's second paragraph begins '2. إذا انتقلت ملكية المؤسسة الفردية...'; a distinctly-numbered '1.' opening clause was not independently recoverable as separate from the preceding sentence in the raw extraction. Presented as extracted rather than reconstructed by guesswork -- a minor documented gap."
+    },
+    {
+      "article_key": "customs_regulation_negation_particle_dropped_lam_postbuild_qa_fix",
+      "description": "A subsequent post-build quality-review pass found the same gap already documented for the customs_law track's customs_law_negation_particle_dropped_lam_postbuild_qa_fix entry: the standalone negation particle لا corrupted to ال (bare, or fused with و/ف/ب or a bare Arabic-letter sub-clause marker per this corpus's list-formatting convention), the exception-particle إلا corrupted to إال, the ل + hamza-alef-noun construct (لأحكام, لأغراض, لإدارة, لإعادة, لإشراف, لإضافة, لاعتبار, لإعفاء, لأشخاص, لأن, لإجراء, لإنجاز, لاستخدامه, للاستهلاك, للأحكام) corrupted to the hamza-then-lam order, and a long tail of individual dictionary words with a transposed or dropped lam (الاستهلاك, عملات (6x, e.g. 'ما يعادلها من عملات دول المجلس'), آلاف, العمولات, معادلات, التسهيلات, الاستهلاك, أعاله->أعلاه ['above'], أولا for أولاً ['firstly'], علاقة (عالقة), الاستدلالية/الإستدلالية (the deductive-value customs-valuation method, 7x), إعلانه, الإعلانات/الإعلام, كلاهما, ملابس, وسلامة) -- plus one genuine drop (وخال->وخلال, Art. 14) and one insertion-needed drop (عمات->عملات, Art. 19). In total 231 additional dropped/transposed-lam instances were found and fixed across this track's articles during this review pass, the large majority concentrated in Article 1 (customs valuation methodology) given its length and density. All fixes were restorations of an unambiguous standard legal-Arabic phrase or dictionary word, verified by reading the full surrounding sentence; none were guessed or fabricated. Two residual, deliberately UNFIXED cases were identified in Article 9 ('وكال بقيادتها' and 'حاصال على رخصة قيادة') because they are fragments of a DIFFERENT, still-undocumented line-order-scrambling artifact in that article (the words مُوكَّلاً and حاصلاً appear split across reordered lines with a floating tanwin mark, analogous to the line-order-scrambling residual risk already flagged for customs_law's 11 hand-reconstructed articles) -- fixing only the lam-position within these two words without also correcting the line order would not have produced coherent text, so they are left as a documented gap for a future line-order-focused pass rather than fixed here."
+    },
+    {
+      "article_key": "customs_regulation_glued_list_markers_postbuild_qa_fix",
+      "description": "A SECOND, separate post-build quality-review pass (independent of, and after, the customs_regulation_negation_particle_dropped_lam_postbuild_qa_fix pass above) found the same glued/reversed lettered-sub-item-marker defect documented for the customs_law track's customs_law_glued_list_markers_postbuild_qa_fix entry (marker+period order reversed and fused directly onto the following word, e.g. source '.أيسمح' rather than this corpus's established 'أ. يسمح' convention). 109 such instances were found and fixed across 15 articles (1, 3, 4, 9, 10, 13, 15, 17, 19, 21, 22, 24, 25, 25 مكرر, 27) -- the large majority (around 90) concentrated in Article 1 (the long customs-valuation-methodology article) given its length and density of enumerated sub-clauses. Three variant manifestations of the same defect were also found and corrected: (a) three instances (Articles 19 and 22 x2) where a zero-width non-joiner control character sat between the marker and its word (e.g. '.أ\\u200cأن') instead of a visible separator -- removed and replaced with the standard 'letter. word' form; (b) Article 19's second and third sub-items, where the marker line consisted only of the marker plus a stray floating shadda ('.ب ّ' / '.ج ّ') with the actual word ('ألا يكون...' / 'ألا يزيد...') printed on the following line -- merged and corrected to 'ب. ألا يكون...' / 'ج. ألا يزيد...', stripping the dislocated shadda as extraction noise; (c) Article 17's third sub-item, where a stray floating damma sat between the marker and its word ('.ج ُتضمن') -- corrected to 'ج. تُضمن', reattaching the single damma to its proper letter rather than discarding it, since (unlike the doubled-diacritic cases below) it is a single, plausibly-genuine mark for the passive verb تُضمن. A further nested-enumeration instance in Article 1 ('.7أ.إذا دعت الحاجة...', a numbered item 7 with lettered sub-item أ) was corrected to '7.أ. إذا دعت الحاجة...', matching this track's numbered-item ('N.word', no space) and lettered-item ('letter. word', with space) conventions. Alongside this, 3 stray-diacritic artifacts (doubled combining marks, extraction noise rather than genuine tashkeel) were found and cleaned in Article 1: 'أن ُُيحدد البائع' (doubled damma) corrected to 'أن يحدد البائع'; 'قُ ِّدم' (floating damma plus a detached kasra+shadda) corrected to 'قدم'; and 'من َمصدَّ ر آخر' (floating fatha plus a detached fatha+shadda) corrected to 'من مصدر آخر'. One further doubled-diacritic instance in Article 1 was identified but deliberately left UNFIXED: 'ومباعة\\nالم ِّ\\n1.في حال كون ملكية البضاعة...' -- the word fragment 'الم' immediately preceding the stray kasra+shadda appears to be truncated by, and entangled with, a distinct, already-documented line-order/table-scrambling artifact specific to this exceptionally long and table-dense article (see customs_regulation_article1_valuation_length_residual_risk above), rather than a simple stray-diacritic case; fixing only the diacritic without also resolving the underlying line-order scramble would not have produced coherent text, so it is left as a documented gap for a future line-order-focused pass rather than guessed at here."
+    }
+  ],
+  "source_artifact": "sources/customs/regulation/official_source/customs_regulation_official_source.json"
+}

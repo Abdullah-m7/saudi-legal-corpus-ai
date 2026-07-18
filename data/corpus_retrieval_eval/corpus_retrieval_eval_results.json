@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 276,
-  "top1_hits": 252,
-  "top3_hits": 269,
-  "top5_hits": 272,
-  "top1_accuracy": 0.913,
-  "top3_accuracy": 0.9746,
-  "top5_accuracy": 0.9855,
-  "mrr_at_5": 0.9434,
+  "total_queries": 278,
+  "top1_hits": 254,
+  "top3_hits": 271,
+  "top5_hits": 274,
+  "top1_accuracy": 0.9137,
+  "top3_accuracy": 0.9748,
+  "top5_accuracy": 0.9856,
+  "mrr_at_5": 0.9438,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1254,8 +1254,8 @@
      "score": 5
     },
     {
-     "record_id": "enforcement-regulation-llm-prov-051",
-     "article_number": 51,
+     "record_id": "customs-law-llm-art-104",
+     "article_number": 99,
      "score": 5
     }
    ]
@@ -4292,8 +4292,8 @@
      "score": 31
     },
     {
-     "record_id": "evidence-expertise-llm-art-025",
-     "article_number": 25,
+     "record_id": "customs-law-llm-art-006",
+     "article_number": 6,
      "score": 14
     }
    ]
@@ -4845,14 +4845,14 @@
      "score": 62
     },
     {
-     "record_id": "gcc-ownership-llm-art-004",
-     "article_number": 4,
-     "score": 23
+     "record_id": "customs-law-llm-art-115",
+     "article_number": 109,
+     "score": 29
     },
     {
-     "record_id": "trademark-law-llm-art-001",
-     "article_number": 1,
-     "score": 23
+     "record_id": "customs-regulation-llm-art-012",
+     "article_number": 11,
+     "score": 25
     }
    ]
   },
@@ -4881,8 +4881,8 @@
      "score": 24
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
+     "record_id": "customs-law-llm-art-145",
+     "article_number": 139,
      "score": 20
     }
    ]
@@ -5656,8 +5656,8 @@
      "score": 27
     },
     {
-     "record_id": "zakat-law-llm-art-079",
-     "article_number": 79,
+     "record_id": "customs-law-llm-art-126",
+     "article_number": 120,
      "score": 14
     }
    ]
@@ -5842,8 +5842,8 @@
      "score": 18
     },
     {
-     "record_id": "evidence-expertise-llm-art-032",
-     "article_number": 32,
+     "record_id": "customs-law-llm-art-085",
+     "article_number": 80,
      "score": 15
     }
    ]
@@ -7857,8 +7857,8 @@
      "score": 13
     },
     {
-     "record_id": "vat-law-llm-art-021",
-     "article_number": 21,
+     "record_id": "customs-regulation-llm-art-001",
+     "article_number": 1,
      "score": 12
     }
    ]
@@ -8038,13 +8038,13 @@
      "score": 24
     },
     {
-     "record_id": "evidence-elec-llm-art-012",
-     "article_number": 12,
-     "score": 23
+     "record_id": "customs-law-llm-art-052",
+     "article_number": 48,
+     "score": 24
     },
     {
-     "record_id": "evidence-manuals-llm-art-063",
-     "article_number": 63,
+     "record_id": "evidence-elec-llm-art-012",
+     "article_number": 12,
      "score": 23
     }
    ]
@@ -8570,9 +8570,71 @@
      "score": 17
     },
     {
-     "record_id": "patent-law-llm-art-048",
-     "article_number": 48,
+     "record_id": "customs-regulation-llm-art-001",
+     "article_number": 1,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "cst-001",
+   "query_ar": "تشكل لجنة للفصل في القيمة من موظفي الإدارة بموجب قرار من المدير العام أو من يفوضه",
+   "category": "topical",
+   "gold": {
+    "corpus": "customs",
+    "law_component": "law",
+    "article_number": 61
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "customs-law-llm-art-066",
+     "article_number": 61,
+     "score": 41
+    },
+    {
+     "record_id": "oa-llm-companies-art-081",
+     "article_number": 81,
+     "score": 19
+    },
+    {
+     "record_id": "oa-llm-companies-art-069",
+     "article_number": 69,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "cst-002",
+   "query_ar": "مع عدم الإخلال بأحكام المواد (9، 142، 143، 144)، وبناءً على ما ورد في نص المادة (141) من نظام قانون الجمارك الموحد، تكون قواعد فرض الغرامات المالية",
+   "category": "topical",
+   "gold": {
+    "corpus": "customs",
+    "law_component": "regulation",
+    "article_number": 29
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "customs-regulation-llm-art-031",
+     "article_number": 29,
+     "score": 50
+    },
+    {
+     "record_id": "customs-law-llm-art-150",
+     "article_number": 143,
+     "score": 42
+    },
+    {
+     "record_id": "customs-law-llm-art-001",
+     "article_number": 1,
+     "score": 41
     }
    ]
   }
