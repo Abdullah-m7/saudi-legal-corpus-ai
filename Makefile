@@ -233,6 +233,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-supersession-graph-validate \
         corpus-cross-reference-graph-validate \
         corpus-glossary-validate \
+        corpus-schema-manifest-validate \
         patent-law-track-validate \
         qa-gate
 
@@ -1357,6 +1358,9 @@ corpus-cross-reference-graph-validate:
 
 corpus-glossary-validate:
 	$(PY) scripts/validate_corpus_glossary.py
+
+corpus-schema-manifest-validate:
+	$(PY) scripts/validate_corpus_schema_manifest.py
 
 patent-law-track-validate:
 	$(PY) scripts/validate_patent_law_track.py
