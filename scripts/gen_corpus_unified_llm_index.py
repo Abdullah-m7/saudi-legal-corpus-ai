@@ -290,6 +290,8 @@ LAYERS = [
      "gcc_anti_dumping", "law"),
     ("data/accounting_auditing_arabic_legal_llm/accounting_auditing_law_legal_llm_001_022.json",
      "accounting_auditing", "law"),
+    ("data/nazaha_arabic_legal_llm/nazaha_law_legal_llm_001_024.json",
+     "nazaha", "law"),
 ]
 
 

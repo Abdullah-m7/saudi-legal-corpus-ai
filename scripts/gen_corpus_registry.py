@@ -171,6 +171,7 @@ FINANCE_LEASE_LAW_LLM = os.path.join(ROOT, "data", "finance_lease_arabic_legal_l
 MARITIME_COMMERCIAL_LAW_LLM = os.path.join(ROOT, "data", "maritime_commercial_arabic_legal_llm", "maritime_commercial_law_legal_llm_001_391.json")
 GCC_ANTI_DUMPING_LAW_LLM = os.path.join(ROOT, "data", "gcc_anti_dumping_arabic_legal_llm", "gcc_anti_dumping_law_legal_llm_001_017.json")
 ACCOUNTING_AUDITING_LAW_LLM = os.path.join(ROOT, "data", "accounting_auditing_arabic_legal_llm", "accounting_auditing_law_legal_llm_001_022.json")
+NAZAHA_LAW_LLM = os.path.join(ROOT, "data", "nazaha_arabic_legal_llm", "nazaha_law_legal_llm_001_024.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -335,6 +336,7 @@ def main() -> int:
     maritime_commercial_law_llm = _load_json(MARITIME_COMMERCIAL_LAW_LLM)
     gcc_anti_dumping_law_llm = _load_json(GCC_ANTI_DUMPING_LAW_LLM)
     accounting_auditing_law_llm = _load_json(ACCOUNTING_AUDITING_LAW_LLM)
+    nazaha_law_llm = _load_json(NAZAHA_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -355,7 +357,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 133,
+        "total_tracks": 134,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -492,6 +494,7 @@ def main() -> int:
             + maritime_commercial_law_llm["record_count"]  # 391 Maritime Commercial Law (M/33, 1440H) (BOE-via-Wayback archive x nezams.com x BOE official English translation triple-verified, live BOE unreachable, see track notes)
             + gcc_anti_dumping_law_llm["record_count"]  # 17 GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law (M/30, 1427H) (BOE-via-Wayback archive x qistas.com partial cross-check, live BOE unreachable, unresolved M/7 1434H amendment risk, see track notes)
             + accounting_auditing_law_llm["record_count"]  # 22 Law of the Accounting and Auditing Profession (M/59, 1442H) (BOE-via-Wayback archive x SOCPA official PDF x qanoonsa.com cross-verified, live BOE unreachable, replaces M/12 1412H, see track notes)
+            + nazaha_law_llm["record_count"]  # 24 Law (Statute) of the Control and Anti-Corruption Authority (Nazaha) (M/25, 1446H) (BOE-via-Wayback archive, two snapshots + FAOLEX mirror x nezams.com x qanoonsa.com, live BOE unreachable, replaces the National Anti-Corruption Commission's 2011/2019 predecessor instruments, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -619,6 +622,7 @@ def main() -> int:
             + maritime_commercial_law_llm["record_count"]
             + gcc_anti_dumping_law_llm["record_count"]
             + accounting_auditing_law_llm["record_count"]
+            + nazaha_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4553,6 +4557,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law of the Accounting and Auditing Profession «نظام مهنة المحاسبة والمراجعة» — Royal Decree M/59, dated 27/7/1442H (11 March 2021), ratifying Council of Ministers Resolution No. 416 (25/7/1442H). **Confirmed supersession of a predecessor:** this law's own Article 21 states it replaces the Law of Certified Public Accountants (Royal Decree M/12, 13/5/1412H), whose separate BOE page independently shows status 'لاغي' (repealed) — a doubly-confirmed repeal, modeled as a supersession-graph edge; the predecessor itself is not ingested. A medium-priority coverage-gap identified via the coverage_gap_map research pass. **22 records: 17 اصلية, 5 معدلة** (Articles 1, 4, 5, 19, 20) — flat structure, **NO أبواب/فصول**, and BOE's source carries no inline per-article titles (no title_ar field used, following the finance_lease_law precedent). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-SOCPA-OFFICIAL-PDF-X-QANOONSA-CROSS-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot (20251015113239) was cross-verified against SOCPA's own official PDF of the full law (socpa.org.sa, the professional regulator's official source, fetched via Wayback since the live site gave a connection reset) and two independent qanoonsa.com pages, agreeing on all 17 unamended articles. **MAJOR VERIFIED ANOMALY, genuinely confirmed rather than a reachability artifact:** BOE's own archived page flags Articles 1/4/5/19/20 with a 'changed-article' marker and a changelog popup quoting Royal Decree M/169's (10/8/1446H) amended wording — but that SAME page's main displayed body text for those 5 articles remained byte-identical, unamended, pre-M/169 wording across three snapshots spanning 8+ months after the amendment's own gazette publication, confirming genuine staleness of BOE's default rendering (not a proxy artifact), consistent with this corpus's traffic_law/patent_law/income_tax_law/environmental_law precedent for this specific failure mode. This track ingests the amended (changelog-popup) wording, cross-verified against SOCPA's PDF, not the stale main body. **has_per_article_variation flagged for Article 1**: it carries a FURTHER, more recent amendment (Council of Ministers Resolution 283, 22/4/1447H, generalizing the 'الوزير' definition) that postdates this track's only available BOE snapshot entirely and rests on SOCPA's PDF and qanoonsa.com alone, with no Royal Decree number found ratifying it and no BOE confirmation at all — flagged, not silently resolved. Other flagged discrepancies: no inline BOE article titles; a companion Implementing Regulation and SOCPA's own separate organizational statute (تنظيم الهيئة) are both confirmed to exist but are out of scope for / not conflated with this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "nazaha_law",
+                "display_name_ar": "نظام هيئة الرقابة ومكافحة الفساد",
+                "display_name_en": "Law (Statute) of the Control and Anti-Corruption Authority (Nazaha)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/25, 23/1/1446H, ratifying Council of Ministers Resolution No. 68 (17/1/1446H), replacing تنظيم الهيئة الوطنية لمكافحة الفساد (CoM Resolution 165, 28/5/1432H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, two independent snapshots ~15.5 months apart byte-identical, plus a third independent time-point via a FAOLEX-hosted mirror of the same BOE page), cross-verified against nezams.com (partial, Articles 1-14) and qanoonsa.com (full structural cross-check)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": nazaha_law_llm["record_count"],
+                    "data_path": "data/nazaha_arabic_legal_llm/nazaha_law_legal_llm_001_024.json"}},
+                "record_counts": {"arabic_articles": nazaha_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 24, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": nazaha_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/nazaha/law/official_source/nazaha_law_official_source.json",
+                    "sources/nazaha/law/verified/nazaha_law_verified_records.jsonl",
+                    "data/nazaha_arabic_legal_llm/nazaha_law_legal_llm_001_024.json",
+                ],
+                "validator_targets": ["make nazaha-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law (Statute) of the Control and Anti-Corruption Authority «نظام هيئة الرقابة ومكافحة الفساد» (commonly known as Nazaha) — Royal Decree M/25, dated 23/1/1446H (29 July 2024), ratifying Council of Ministers Resolution No. 68 (17/1/1446H), published Umm Al-Qura Gazette Issue 5042 (9 Aug 2024), effective 90 days after publication per Article 24. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose cited 'Royal Order No. 65/A dated 13/4/1432H (2011)' turned out to name a PREDECESSOR body, not this current governing instrument — corrected. **24 records, all اصلية**, across **4 أبواب**: تعريفات (arts 1-2), جهاز الهيئة ومهماته واختصاصاته (arts 3-17), أحكام متصلة بمكافحة جرائم الفساد (arts 18-22), أحكام ختامية (arts 23-24). No inline BOE article titles (no title_ar field used). **Predecessor history documented, not ingested:** the National Anti-Corruption Commission (الهيئة الوطنية لمكافحة الفساد) was established by Royal Order أ/65 (13/4/1432H, 2011), organized via CoM Resolution 165 (28/5/1432H); a separate Control and Investigation Board and Administrative Investigation body existed alongside it; Royal Order أ/277 (15/4/1441H, 2019) merged the latter into the former and renamed the combined entity to its current name. M/25 (2024) is a wholesale replacement statute for this already-renamed Authority, explicitly repealing CoM Resolution 165 and (except for its Article 47, pending a new اللائحة الإدارية) the Civil Service Discipline Law (Royal Decree M/7, 1/2/1391H) — modeled as supersession-graph edges. **VERIFICATION TIER:** BOE-WAYBACK-DUAL-SNAPSHOT-X-FAOLEX-MIRROR-X-NEZAMS-X-QANOONSA-CROSS-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but two independent Wayback Machine snapshots of the exact law page (~15.5 months apart) show byte-identical article text, further corroborated by a third independent time-point (a FAOLEX-hosted PDF mirror of the same BOE page, a distinct fetch date), plus nezams.com (partial, Articles 1-14, confirms no amendments to date) and qanoonsa.com (full structural cross-check of all 24 articles). **CRITICAL CROSS-TRACK FINDING, flagged not resolved here:** M/25's own enacting decree (clause سابعاً) substitutes 'هيئة الرقابة ومكافحة الفساد' for 'رئاسة أمن الدولة' wherever the latter appears in this corpus's already-ingested anti_bribery_law (Anti-Bribery Law, M/36, 1412H) — but anti_bribery_law's own committed text for Articles 17 and 21 still reads 'رئاسة أمن الدولة', meaning that track's text for those two articles is now confirmed stale by this dated legal instrument; flagged for a dedicated follow-up correction pass, not fixed as part of this track's own wiring. Other flagged discrepancies: three companion instruments (a procedural لائحة under Article 6; اللائحة الإدارية and اللائحة المالية under Article 9(1)) are referenced but not confirmed issued as of this pass, and are out of scope; the predecessor founding/merger orders (أ/65, أ/277) are documented via secondary sources plus BOE's own repeal recital, not independently fetched in full. Arabic governs; not legal advice.",
             },
         ],
     }

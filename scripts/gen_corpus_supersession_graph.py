@@ -751,6 +751,39 @@ EDGES = [
                 "this corpus.",
         "source_ref": "sources/accounting_auditing/law/official_source/accounting_auditing_law_official_source.json (article 21)",
     },
+    {
+        "from_track_id": "nazaha_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم الهيئة الوطنية لمكافحة الفساد (السابق)",
+        "target_decree": "Council of Ministers Resolution No. 165, 28/5/1432H",
+        "note": "nazaha_law's own official_source.json preamble_ar, Council of "
+                "Ministers Resolution 68's own operative clause تاسعاً: 'إلغاء "
+                "تنظيم الهيئة الوطنية لمكافحة الفساد، الصادر بقرار مجلس الوزراء "
+                "رقم (165) وتاريخ 28/5/1432هـ، اعتبارًا من تاريخ نفاذ النظام "
+                "المشار إليه في البند (أولًا) من هذا القرار.' Predecessor not "
+                "separately ingested in this corpus.",
+        "source_ref": "sources/nazaha/law/official_source/nazaha_law_official_source.json (preamble_ar, CoM Resolution 68 clause تاسعاً)",
+    },
+    {
+        "from_track_id": "nazaha_law",
+        "relation": "repeals_partial",
+        "target_track_id": None,
+        "target_description_ar": "نظام تأديب الموظفين (السابق)",
+        "target_decree": "Royal Decree M/7, 1/2/1391H",
+        "affected_articles": "All articles repealed except Article 47, which "
+                             "remains in force pending a new اللائحة الإدارية "
+                             "under nazaha_law's own Article 9(1)",
+        "note": "nazaha_law's own official_source.json preamble_ar, Royal "
+                "Decree M/25's own operative clause سادساً: 'إلغاء نظام "
+                "تأديب الموظفين، الصادر بالمرسوم الملكي رقم (م/7) بتاريخ "
+                "1/2/1391هـ، اعتبارًا من تاريخ نفاذ نظام هيئة الرقابة "
+                "ومكافحة الفساد مع استمرار العمل بحكم المادة (47) منه إلى "
+                "حين صدور اللائحة الإدارية.' Modeled as repeals_partial "
+                "since Article 47 is explicitly carved out and remains in "
+                "force. Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/nazaha/law/official_source/nazaha_law_official_source.json (preamble_ar, Royal Decree M/25 clause سادساً)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

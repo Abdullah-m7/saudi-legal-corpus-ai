@@ -3,16 +3,16 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 133,
+  "total_tracks_scanned": 134,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 50,
+  "edge_count": 52,
   "relation_counts": {
-    "repeals_full": 42,
-    "repeals_partial": 7,
+    "repeals_full": 43,
+    "repeals_partial": 8,
     "superseded_by": 1
   },
   "edges": [
@@ -505,6 +505,26 @@
       "affected_articles": null,
       "note": "accounting_auditing_law's own official_source.json article 21: 'يحل النظام محل نظام المحاسبين القانونيين، الصادر بالمرسوم الملكي رقم (م/12) وتاريخ 13/5/1412هـ، ويلغي كل ما يتعارض معه من أحكام.' Doubly confirmed: BOE's own separate page for the predecessor law independently shows status 'لاغي' (repealed). Predecessor not separately ingested in this corpus.",
       "source_ref": "sources/accounting_auditing/law/official_source/accounting_auditing_law_official_source.json (article 21)"
+    },
+    {
+      "from_track_id": "nazaha_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "تنظيم الهيئة الوطنية لمكافحة الفساد (السابق)",
+      "target_decree": "Council of Ministers Resolution No. 165, 28/5/1432H",
+      "affected_articles": null,
+      "note": "nazaha_law's own official_source.json preamble_ar, Council of Ministers Resolution 68's own operative clause تاسعاً: 'إلغاء تنظيم الهيئة الوطنية لمكافحة الفساد، الصادر بقرار مجلس الوزراء رقم (165) وتاريخ 28/5/1432هـ، اعتبارًا من تاريخ نفاذ النظام المشار إليه في البند (أولًا) من هذا القرار.' Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/nazaha/law/official_source/nazaha_law_official_source.json (preamble_ar, CoM Resolution 68 clause تاسعاً)"
+    },
+    {
+      "from_track_id": "nazaha_law",
+      "relation": "repeals_partial",
+      "target_track_id": null,
+      "target_description_ar": "نظام تأديب الموظفين (السابق)",
+      "target_decree": "Royal Decree M/7, 1/2/1391H",
+      "affected_articles": "All articles repealed except Article 47, which remains in force pending a new اللائحة الإدارية under nazaha_law's own Article 9(1)",
+      "note": "nazaha_law's own official_source.json preamble_ar, Royal Decree M/25's own operative clause سادساً: 'إلغاء نظام تأديب الموظفين، الصادر بالمرسوم الملكي رقم (م/7) بتاريخ 1/2/1391هـ، اعتبارًا من تاريخ نفاذ نظام هيئة الرقابة ومكافحة الفساد مع استمرار العمل بحكم المادة (47) منه إلى حين صدور اللائحة الإدارية.' Modeled as repeals_partial since Article 47 is explicitly carved out and remains in force. Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/nazaha/law/official_source/nazaha_law_official_source.json (preamble_ar, Royal Decree M/25 clause سادساً)"
     },
     {
       "from_track_id": "copyright_law",
