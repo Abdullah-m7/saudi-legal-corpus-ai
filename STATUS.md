@@ -2797,13 +2797,34 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   citations) are documented rather than silently accepted. Output:
   `data/corpus_cross_reference_graph/corpus_cross_reference_graph.json`.
   Validate: `make corpus-cross-reference-graph-validate`.
+- **Cross-law glossary of defined terms** — a purely additive, read-only
+  derived index of every law's own definitions article, grouping
+  identical terms across the tracks that define them so a consumer can
+  query one term and see every law's own definition side by side.
+  **696 terms / 1,046 definitions** across **81 of 123 tracks** with a
+  parseable definitions article (42 tracks skipped, each with a logged
+  reason — genuinely definitions-free Sharia/constitutional codes,
+  tabular/form-only content, or a pure cross-reference to another law's
+  own Article 1). Confirms real, practically useful divergence: **«الهيئة»**
+  names a different institution across 18 tracks (SAMA, CMA, GACA, SFDA,
+  CST, ZATCA, etc.), **«الوزير»** points to a different ministry across 32
+  tracks, and **«المشترك»** is defined three genuinely different ways
+  across `social_insurance_law`, `social_insurance_legacy_law`, and
+  `chambers_of_commerce_law`. Every extracted term/definition is
+  byte-exact-verified against its source article. Known limitations
+  (non-standard phrasing can be missed; alef/hamza variants are
+  deliberately not unified for grouping, to avoid conflating different
+  words; a source document's own missing punctuation can swallow one
+  term's definition into the next) are documented in the output rather
+  than silently accepted. Output: `data/corpus_glossary/corpus_glossary.json`.
+  Validate: `make corpus-glossary-validate`.
 
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (200 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (201 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 127 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 128 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any
