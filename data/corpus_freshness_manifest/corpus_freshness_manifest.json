@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 131 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 131 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 132 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 132 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 131,
+  "total_tracks": 132,
   "known_source_staleness_risk_count": 4,
   "known_source_staleness_risk_tracks": [
     "environmental_law",
@@ -1097,6 +1097,30 @@
         "qadha.org.sa",
         "uqn.gov.sa",
         "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "gcc_anti_dumping_law",
+      "display_name_en": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law",
+      "display_name_ar": "النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_PRIMARY_X_QISTAS_PARTIAL_STRUCTURAL_CROSSCHECK_LIVE_BOE_UNREACHABLE_M7_1434H_AMENDED_TEXT_NOT_INCORPORATED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503)، واعتُمدت نسختا أرشيف Wayback Machine لنفس صفحة القانون (بفارق ~20 شهراً بينهما) كمصدر أساسي — متطابقتان تماماً — مع تدقيق هيكلي جزئي فقط من مصدر ثانٍ (qistas.com، المواد 1-3 فقط وليس النص الكامل). هذا مصدر رسمي أساسي واحد + تدقيق ثانوي جزئي، وهو ما يطابق تعريف TIER_2 من حيث آلية الجلب وحدها؛ إلا أن هذا المسار يُصنَّف TIER_4 ('أحادي المصدر لجزء ذي حجم معتبر... أو موثّق صراحة بثقة متفاوتة') بسبب اكتشاف دليل قوي (WIPO Lex + ديباجة قانون سعودي منفصل ونافذ صادر 2022) على أن المرسوم الملكي م/7 (20/3/1434هـ) اعتمد نسخة معدَّلة من هذا القانون الموحد بهيكل مختلف (15 مادة بدل 17 وفق نسخة الأمانة العامة لمجلس التعاون الرسمية)، بينما صفحة BOE الأساسية المعتمدة هنا لا تُشير إطلاقاً إلى م/7 عبر لقطتين بفارق ~20 شهراً. لم يتسنَّ الحصول على نص أم القرى لـم/7 ولا محتوى فعلي من روابط WIPO Lex الكاملة (غلاف JS فارغ لكل الروابط المجرَّبة)، فتم اعتماد نص BOE المُتحقَّق منه الأصلي بدلاً من استبداله بنص التعديل غير المؤكَّد — وهذا بالضبط نمط 'ثقة متفاوتة على مستوى المسار كاملاً' الذي يبرر TIER_4، مماثل من حيث المبدأ (لا الحقيقة) لسابقة نظام المرور (traffic_law) في توثيق شك جدي حول حداثة المصدر دون حسمه ضمناً أو إسقاطه بصمت. راجع known_unresolved_discrepancies في official_source.json لهذا المسار للتفاصيل الكاملة؛ هذا خطر توثيقي حي غير مُسوَّى، وليس نتيجة نهائية.",
+      "registry_source_authority": "Royal Decree M/30, 17/5/1427H, ratifying Council of Ministers Resolution No. 122 (16/5/1427H) and the GCC Supreme Council's unified law from its 24th Session (Kuwait, 27-28 Shawwal 1424H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable), partially structurally cross-checked against qistas.com",
+      "registry_source_url": null,
+      "official_source_file": "sources/gcc_anti_dumping/law/official_source/gcc_anti_dumping_law_official_source.json",
+      "source_urls": [
+        "https://",
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/0da0543b-72bf-4405-98f3-a9a700f1c593/1",
+        "https://www.wipo.int/wipolex/ar/legislation/details/20288"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "wipo.int",
+        "wipolex-res.wipo.int"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,

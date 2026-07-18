@@ -286,6 +286,8 @@ LAYERS = [
      "finance_lease", "law"),
     ("data/maritime_commercial_arabic_legal_llm/maritime_commercial_law_legal_llm_001_391.json",
      "maritime_commercial", "law"),
+    ("data/gcc_anti_dumping_arabic_legal_llm/gcc_anti_dumping_law_legal_llm_001_017.json",
+     "gcc_anti_dumping", "law"),
 ]
 
 

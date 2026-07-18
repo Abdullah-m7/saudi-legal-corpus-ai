@@ -169,6 +169,7 @@ COOPERATIVE_HEALTH_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "cooperative_h
 HEALTHCARE_PROFESSIONS_LAW_LLM = os.path.join(ROOT, "data", "healthcare_professions_arabic_legal_llm", "healthcare_professions_law_legal_llm_001_044.json")
 FINANCE_LEASE_LAW_LLM = os.path.join(ROOT, "data", "finance_lease_arabic_legal_llm", "finance_lease_law_legal_llm_001_028.json")
 MARITIME_COMMERCIAL_LAW_LLM = os.path.join(ROOT, "data", "maritime_commercial_arabic_legal_llm", "maritime_commercial_law_legal_llm_001_391.json")
+GCC_ANTI_DUMPING_LAW_LLM = os.path.join(ROOT, "data", "gcc_anti_dumping_arabic_legal_llm", "gcc_anti_dumping_law_legal_llm_001_017.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -331,6 +332,7 @@ def main() -> int:
     healthcare_professions_law_llm = _load_json(HEALTHCARE_PROFESSIONS_LAW_LLM)
     finance_lease_law_llm = _load_json(FINANCE_LEASE_LAW_LLM)
     maritime_commercial_law_llm = _load_json(MARITIME_COMMERCIAL_LAW_LLM)
+    gcc_anti_dumping_law_llm = _load_json(GCC_ANTI_DUMPING_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -351,7 +353,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 131,
+        "total_tracks": 132,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -486,6 +488,7 @@ def main() -> int:
             + healthcare_professions_law_llm["record_count"]  # 44 Law of Practicing Healthcare Professions (M/59, 1426H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
             + finance_lease_law_llm["record_count"]  # 28 Finance Lease Law (M/48, 1433H) (BOE-via-Wayback archive x SAMA rulebook PDF x nezams.com triple-verified, live BOE unreachable, see track notes)
             + maritime_commercial_law_llm["record_count"]  # 391 Maritime Commercial Law (M/33, 1440H) (BOE-via-Wayback archive x nezams.com x BOE official English translation triple-verified, live BOE unreachable, see track notes)
+            + gcc_anti_dumping_law_llm["record_count"]  # 17 GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law (M/30, 1427H) (BOE-via-Wayback archive x qistas.com partial cross-check, live BOE unreachable, unresolved M/7 1434H amendment risk, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -611,6 +614,7 @@ def main() -> int:
             + healthcare_professions_law_llm["record_count"]
             + finance_lease_law_llm["record_count"]
             + maritime_commercial_law_llm["record_count"]
+            + gcc_anti_dumping_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4489,6 +4493,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Maritime Commercial Law «النظام البحري التجاري» — Royal Decree M/33, dated 5/4/1440H (12 December 2018), approving Council of Ministers Resolution No. 197 (4/4/1440H), published in the Official Gazette 28/4/1440H (4 January 2019). This corpus's largest single-track ingestion to date. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate was confirmed correct (unlike several prior gap-map entries this corpus found wrong). **391 records** across a فصل تمهيدي (تعريفات, Article 1) plus **10 أبواب** — الباب الأول (السفينة, 2-30, 7 فصول: أحكام عامة، جنسية السفينة، تسجيل السفينة، تسجيل السفينة المستأجرة غير المجهزة، قيد الوحدات البحرية المعفاة من التسجيل، المنصات البحرية، هيئات تصنيف السفن)؛ الباب الثاني (الحقوق العينية على السفينة, 31-73, 3 فصول)؛ الباب الثالث (الحجز على السفينة, 74-91, 2 فصلين)؛ الباب الرابع (أشخاص الملاحة البحرية, 92-141, 4 فصول)؛ الباب الخامس (استغلال السفينة, 142-253, 4 فصول — الفصل الرابع عقد النقل البحري, 179-253, further split into 5 أولاً..خامساً subsections)؛ الباب السادس (الحوادث البحرية, 254-292, 4 فصول)؛ الباب السابع (التأمين البحري, 293-357, 5 فصول)؛ الباب الثامن (منع التلوث البحري ومكافحته, 358-362, no فصول)؛ الباب التاسع (سلامة الملاحة بالموانئ والمياه الإقليمية, 363-372, 2 فصلين)؛ الباب العاشر (العقوبات, 373-388, no فصول) — plus أحكام عامة ختامية (389-391) — **all 391 اصلية**, never amended since enactment, confirmed by BOE's own per-article amendment markers, nezams.com's own metadata, and independent web search. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-NEZAMS-X-BOE-OFFICIAL-ENGLISH-TRANSLATION-TRIPLE-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass (connection reset), but Wayback Machine snapshots of both the BOE Arabic law page and BOE's own official English-translation PDF were reachable via https:// (http:// returned 403 for both); cross-verified programmatically against nezams.com — 381 of 391 articles matched exactly after normalizing NBSP/curly-quote/diacritic-order cosmetics, with the remaining 10 (Articles 316-325, marine-insurance provisions) resolved via BOE's own official English translation after nezams.com was found to carry a content-duplication bug in that specific range (independently re-verified this pass: the range now reads as distinct, coherent, sequential provisions). Article 391 confirms this law repeals Book Two of the Commercial Court Regulation (Royal Decree No. 32, 15/1/1350H) and the Ports, Harbours and Lighthouses Law (Royal Decree M/27, 24/6/1394H) — both modeled as repeals_full/repeals_partial edges in the supersession graph. Other flagged discrepancies: Article 1 defines 'الوزير' but 5 operative articles instead use 'الرئيس', verified as genuine primary-source text rather than an extraction artifact; whitespace/quote-glyph/diacritic-order cosmetic normalization was applied to 28 articles, documented rather than silently absorbed; the repeal clause's scope was verified but not exhaustively diffed against the two repealed predecessor instruments' full text, a documented gap; two further secondary sources were attempted for additional cross-verification but were inconclusive (access-gated/JS-rendered), not relied upon. Multiple companion Implementing Regulations exist per Article 390 (vessel registration, maritime transport licensing, and others issued by the Transport General Authority) but are confirmed out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law/healthcare_professions_law/finance_lease_law. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "gcc_anti_dumping_law",
+                "display_name_ar": "النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون",
+                "display_name_en": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_ARCHIVE_PRIMARY_X_QISTAS_PARTIAL_STRUCTURAL_CROSSCHECK_LIVE_BOE_UNREACHABLE_M7_1434H_AMENDED_TEXT_NOT_INCORPORATED",
+                "source_authority": "Royal Decree M/30, 17/5/1427H, ratifying Council of Ministers Resolution No. 122 (16/5/1427H) and the GCC Supreme Council's unified law from its 24th Session (Kuwait, 27-28 Shawwal 1424H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable), partially structurally cross-checked against qistas.com",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": gcc_anti_dumping_law_llm["record_count"],
+                    "data_path": "data/gcc_anti_dumping_arabic_legal_llm/gcc_anti_dumping_law_legal_llm_001_017.json"}},
+                "record_counts": {"arabic_articles": gcc_anti_dumping_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 17, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": gcc_anti_dumping_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/gcc_anti_dumping/law/official_source/gcc_anti_dumping_law_official_source.json",
+                    "sources/gcc_anti_dumping/law/verified/gcc_anti_dumping_law_verified_records.jsonl",
+                    "data/gcc_anti_dumping_arabic_legal_llm/gcc_anti_dumping_law_legal_llm_001_017.json",
+                ],
+                "validator_targets": ["make gcc-anti-dumping-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law «النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون» — Royal Decree M/30, dated 17/5/1427H (13 June 2006), ratifying Council of Ministers Resolution No. 122 (16/5/1427H), which adopts for Saudi Arabia the GCC Supreme Council's unified law approved at its 24th Session (Kuwait, 27-28 Shawwal 1424H / 21-22 December 2003). A medium-priority coverage-gap identified via the coverage_gap_map research pass; **17 records, all اصلية**, correcting the gap-map's own rough estimate of 'approx. 30-40 articles'. **NO أبواب/فصول exist** — a flat, individually-titled 17-article structure (this corrects an assumption carried into the research brief): (1) الهدف والنطاق؛ (2) التعاريف؛ (3) فرض التدابير؛ (4) التدابير المؤقتة؛ (5) التدابير النهائية؛ (6) أشكال التدابير؛ (7) إجراءات الشكوى والتحقيق؛ (8) تشكيل اللجنة الدائمة؛ (9) اختصاصات اللجنة الدائمة؛ (10) اللجنة الوزارية؛ (11) الأمانة الفنية للجنة الدائمة؛ (12) الطعن؛ (13) سرية المعلومات؛ (14) الجزاءات؛ (15) اللائحة التنفيذية؛ (16) (BOE's own heading carries no title text for this article, preserved as a documented gap rather than fabricated); (17) النفاذ. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-PRIMARY-X-QISTAS-PARTIAL-STRUCTURAL-CROSSCHECK — the live laws.boe.gov.sa portal was unreachable this pass (HTTP 503), but two independent Wayback Machine snapshots of the exact law page, roughly 20 months apart, show identical unamended 17-article text with status 'ساري' and list only M/30 + Resolution 122 as issuing instruments; qistas.com independently corroborated Articles 1-3's numbering and content only (not the full text). **MAJOR UNRESOLVED DISCREPANCY, carried forward rather than resolved:** multiply-corroborated secondary evidence — WIPO Lex's record for this law (SA034, marked superseded by SA086) and a wholly separate, currently in-force 2022 Saudi law (نظام المعالجات التجارية في التجارة الدولية, Royal Decree M/60, 29/4/1444H, whose own preamble explicitly cites 'النظام الموحد ... (المعدل)، الموافق عليه بالمرسوم الملكي رقم (م/7) وتاريخ 20/3/1434هـ') — indicates Royal Decree M/7 (20/3/1434H, 1 February 2013) approved an amended ('معدل') version of this law, restructured into 15 articles per the GCC Secretariat General's own official PDF (gcc-sg.org, live-fetched), approved at the GCC Supreme Council's 31st Session (Abu Dhabi, 6-7 December 2010). However, BOE's own primary catalog page for this law — the actual source ingested — shows zero reference to M/7 across two snapshots 20 months apart, and Umm Al-Qura Gazette's own text of M/7 could not be retrieved, nor could WIPO Lex's full-text PDF endpoints be made to serve actual content (JS-shell wrapper only, all URLs tried). Consistent with this corpus's trust policy, this track ingests BOE's directly-verified 17-article original text rather than substitute the unconfirmed amended text, and flags this as a live, unresolved sourcing risk for any downstream use — not a settled finding. Other flagged discrepancies: Article 16's BOE heading carries no title (preserved empty, not fabricated); a companion Implementing Regulation is confirmed to exist (Article 15 references it, bundled in the GCC-SG PDF) but is out of scope for this track, following the precedent set by finance_lease_law/banking_control_law/others. Arabic governs; not legal advice.",
             },
         ],
     }
