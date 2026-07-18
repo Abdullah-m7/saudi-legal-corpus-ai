@@ -159,6 +159,7 @@ INCOME_TAX_LAW_LLM = os.path.join(ROOT, "data", "income_tax_arabic_legal_llm", "
 CIVIL_SERVICE_LAW_LLM = os.path.join(ROOT, "data", "civil_service_arabic_legal_llm", "civil_service_law_legal_llm_001_044.json")
 SOCIAL_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_arabic_legal_llm", "social_insurance_law_legal_llm_001_063.json")
 SOCIAL_INSURANCE_LEGACY_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_legacy_arabic_legal_llm", "social_insurance_legacy_law_legal_llm_001_071.json")
+ZAKAT_LAW_LLM = os.path.join(ROOT, "data", "zakat_arabic_legal_llm", "zakat_law_legal_llm_001_128.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -311,6 +312,7 @@ def main() -> int:
     civil_service_law_llm = _load_json(CIVIL_SERVICE_LAW_LLM)
     social_insurance_law_llm = _load_json(SOCIAL_INSURANCE_LAW_LLM)
     social_insurance_legacy_law_llm = _load_json(SOCIAL_INSURANCE_LEGACY_LAW_LLM)
+    zakat_law_llm = _load_json(ZAKAT_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -331,7 +333,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 121,
+        "total_tracks": 122,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -456,6 +458,7 @@ def main() -> int:
             + civil_service_law_llm["record_count"]  # 44 Civil Service Law (BOE Wayback x nezams.com full cross-verification, see track notes)
             + social_insurance_law_llm["record_count"]  # 63 Social Insurance Law (New System, M/273) (BOE Wayback primary x nezams.com spot-check x qanoonsa.com structure, see track notes)
             + social_insurance_legacy_law_llm["record_count"]  # 71 Social Insurance Law (Old/Legacy System, M/33) (BOE Wayback x nezams.com x Okaz/Al-Riyadh news corroboration, see track notes)
+            + zakat_law_llm["record_count"]  # 128 Zakat Collection Implementing Regulation (M/1007, 1445H) (ZATCA official PDF single-source primary, Umm Al-Qura Gazette spot-verified, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -571,6 +574,7 @@ def main() -> int:
             + civil_service_law_llm["record_count"]
             + social_insurance_law_llm["record_count"]
             + social_insurance_legacy_law_llm["record_count"]
+            + zakat_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4169,6 +4173,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Social Insurance Law (Old/Legacy System) «نظام التأمينات الاجتماعية» — Royal Decree M/33 dated 3/9/1421H, approving Council of Ministers Resolution 199 (17/8/1421H), issued by King Fahd bin Abdulaziz Al Saud, superseding the earlier Royal Decree M/22 (6/9/1389H). Governs everyone enrolled in Saudi social insurance BEFORE 1 July 2025 — it is NOT superseded by the new Social Insurance Law (Royal Decree M/273, tracked separately as social_insurance_law); both instruments remain concurrently in force for different populations while sharing the IDENTICAL Arabic title 'نظام التأمينات الاجتماعية', a genuine naming collision (see that track's notes for the same collision documented from the other side). 71 records (70 numbered articles + Article 58 مكرر, added by Royal Decree M/16 dated 24/3/1431H) across 7 فصول, with الفصل الخامس further divided into 4 nested أقسام: 63 اصلية / 7 معدلة (Articles 2, 10, 41, 43, 62, plus Articles 37 and 38 each carrying genuine historical amendments) / 0 ملغاة / 1 مضافة (58 مكرر). **VERIFICATION TIER:** full text rests on a Wayback Machine snapshot (2026-02-09) of the BOE portal (direct curl with the 'if_' raw-content modifier — no egress-policy circumvention needed or used this pass), cross-verified against nezams.com (20+ articles full-text plus 100% of the nine changed-article amendment-history popups matched verbatim). **Article 10** (board composition): BOE's default rendering is confirmed stale (an old 11-member board); the genuinely current, reconciled text (14 members, chaired by the Minister of Finance) was derived from BOE's own amendment-history popups (Cabinet Resolutions 190/1438H -> 335/1442H -> 419/1442H) and cross-verified verbatim against nezams.com — a further divergence from GOSI's own site (which describes an 8-member board) is documented as unresolved rather than silently adopted. **Article 37** (transport of a deceased subscriber's remains): BOE's default rendering is confirmed stale (a narrow, single-obligation provision); the genuinely current, broader 3-part text (Royal Decree M/49, 22/8/1431H) was independently corroborated via Okaz and Al-Riyadh news coverage quoting the current text verbatim. **Article 38** (retirement pension): no 2024 transitional retirement-age text was merged into this article — only its two genuine, verified historical amendments were applied (Royal Decree M/49 1431H reworded sub-paragraph 1/ج and paragraph 2; Royal Decree M/134 1440H deleted sub-paragraph 1/ج entirely, per nezams.com's explicit citation); the 2024 age-table transitional override actually belongs to the NEW law's own promulgating Royal Decree and lives in that track's `decree_transitional_provisions_ar` field instead, documented here as a discrete non-merge note. Other flagged discrepancies: the dual-law title collision described above; a Cabinet-Resolution sequencing oddity in Article 10's own amendment history (335/1442H then 419/1442H); Article 41 paragraph 3's instrument-type citation mismatch (Royal Decree M/118 per BOE vs. Cabinet Resolution 631 per nezams.com, dated one day apart); a duplicate/glitch amendment-history popup BOE attaches to Article 58 (base) that actually belongs to 58 مكرر; and an unextracted Implementing Regulation (GOSI Board Resolution 735, 25/10/1421H). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "zakat_law",
+                "display_name_ar": "اللائحة التنفيذية لجباية الزكاة",
+                "display_name_en": "Zakat Collection Implementing Regulation",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED",
+                "source_authority": "Minister of Finance Resolution No. 1007, 19/8/1445H — ZATCA's own official PDF as sole full-text primary source, Umm Al-Qura Gazette (uqn.gov.sa) used for targeted spot-verification of Resolution 1007's date and Article 13's title only, not a second full-text diff",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": zakat_law_llm["record_count"],
+                    "data_path": "data/zakat_arabic_legal_llm/zakat_law_legal_llm_001_128.json"}},
+                "record_counts": {"arabic_articles": zakat_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 127, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": zakat_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/zakat/law/official_source/zakat_law_official_source.json",
+                    "sources/zakat/law/verified/zakat_law_verified_records.jsonl",
+                    "data/zakat_arabic_legal_llm/zakat_law_legal_llm_001_128.json",
+                ],
+                "validator_targets": ["make zakat-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Zakat Collection Implementing Regulation «اللائحة التنفيذية لجباية الزكاة» — Minister of Finance Resolution No. 1007, dated 19/8/1445H, administered by ZATCA (Zakat, Tax and Customs Authority). This is the primary fiscal levy on Saudi/GCC-owned entities, parallel to and distinct from the already-covered income_tax_law (which applies to non-Saudi-owned shares/entities). Identified as the corpus's top-priority coverage gap via the coverage_gap_map research pass, whose own decree-number and article-count estimates were subsequently found to be incorrect during dedicated research (the gap map cited Royal Decree 17/2/28/3321 — actually the already-covered income-tax decree's own repealed predecessor number — and estimated 20-30 articles; the true governing text is the 128-article Resolution 1007, a large regulation, not a short foundational decree). 128 records across 5 أبواب (with nested فصول and فروع) — 127 اصلية / 1 معدلة (Article 73, real-estate-under-construction/off-plan zakat treatment, amended by Minister of Finance Resolution No. 1248, 11/10/1446H). The short foundational enabling Royal Decree (17/2/28/8634, 29/6/1370H) is treated as prose-only preamble context, NOT a numbered article of this track, since its own ~2-article text was never independently confirmed via a direct successful fetch (only search-engine-mediated quotes) — this corpus's zero-fabrication policy therefore excludes it from `articles`. **VERIFICATION TIER:** SINGLE-SOURCE — the full 128-article text rests solely on ZATCA's own official PDF (laws.boe.gov.sa returned HTTP 503 on every attempt across two research/build passes, confirmed still unreachable); the Umm Al-Qura Gazette (uqn.gov.sa) was successfully reached and used only for targeted spot-verification (Resolution 1007's exact date, and Article 13's مالك/ملاك title disambiguation), not a second full-text cross-check. The build pass discovered and fixed a severe, previously-undocumented PDF extraction bug: the source PDF's font/ToUnicode-CMap systematically transposes LAM+alef-form character pairs (all four alef forms), corrupting extremely common words (الأصول، الإقرار، اللائحة, etc.); fixed via a general regex plus a curated ~140-entry dictionary plus context-anchored resolution of two genuine homograph ambiguities. A separate PDF line-wrap/justification artifact misordered wrapped lines across roughly 35 articles, hand-reconstructed by reading each full sentence for sense (no wording invented, only reordered); one further instance (Article 128) was caught and corrected during post-build review by checking the raw extraction against the reordering logic — a residual, unquantified risk of similar uncorrected artifacts in other paragraphs cannot be fully excluded without a second full-text source to diff against, and is documented rather than hidden. Other flagged discrepancies: no `original_1445h_text` for Article 73 (pre-amendment text not recoverable from the consolidated PDF); the prior 1440H regulation's repeal clause not found verbatim within the operative articles themselves (only in secondary summaries); a secondary claim of 200,000/400,000 SAR minimum zakat-base figures searched for and confirmed ABSENT from the primary text (the only flat floor found is Article 86's 500 SAR minimum for presumptive taxpayers). Arabic governs; not legal advice.",
             },
         ],
     }

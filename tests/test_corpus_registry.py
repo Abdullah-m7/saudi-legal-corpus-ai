@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 121
+        assert registry["total_tracks"] == 122
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 8400
+        assert registry["total_primary_arabic_governing_records"] == 8528
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 9295
+        assert registry["total_registry_counted_records"] == 9423
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -190,6 +190,7 @@ class TestTracks:
         assert "civil_service_law" in ids
         assert "social_insurance_law" in ids
         assert "social_insurance_legacy_law" in ids
+        assert "zakat_law" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -819,6 +820,12 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 71
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 63, "معدلة": 7, "ملغاة": 0, "مضافة": 1}
         assert t["official_text_status"] == "BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED"
+
+    def test_zakat_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "zakat_law")
+        assert t["record_counts"]["arabic_articles"] == 128
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 127, "معدلة": 1, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

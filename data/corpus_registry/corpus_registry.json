@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8400,
+  "total_primary_arabic_governing_records": 8528,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9295,
-  "total_tracks": 121,
+  "total_registry_counted_records": 9423,
+  "total_tracks": 122,
   "tracks": [
     {
       "boundaries": {
@@ -5692,6 +5692,55 @@
       "validator_targets": [
         "make social-insurance-legacy-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/zakat/law/official_source/zakat_law_official_source.json",
+        "sources/zakat/law/verified/zakat_law_verified_records.jsonl",
+        "data/zakat_arabic_legal_llm/zakat_law_legal_llm_001_128.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لجباية الزكاة",
+      "display_name_en": "Zakat Collection Implementing Regulation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/zakat_arabic_legal_llm/zakat_law_legal_llm_001_128.json",
+          "governing": true,
+          "record_count": 128,
+          "status": "complete"
+        }
+      },
+      "notes": "Zakat Collection Implementing Regulation «اللائحة التنفيذية لجباية الزكاة» — Minister of Finance Resolution No. 1007, dated 19/8/1445H, administered by ZATCA (Zakat, Tax and Customs Authority). This is the primary fiscal levy on Saudi/GCC-owned entities, parallel to and distinct from the already-covered income_tax_law (which applies to non-Saudi-owned shares/entities). Identified as the corpus's top-priority coverage gap via the coverage_gap_map research pass, whose own decree-number and article-count estimates were subsequently found to be incorrect during dedicated research (the gap map cited Royal Decree 17/2/28/3321 — actually the already-covered income-tax decree's own repealed predecessor number — and estimated 20-30 articles; the true governing text is the 128-article Resolution 1007, a large regulation, not a short foundational decree). 128 records across 5 أبواب (with nested فصول and فروع) — 127 اصلية / 1 معدلة (Article 73, real-estate-under-construction/off-plan zakat treatment, amended by Minister of Finance Resolution No. 1248, 11/10/1446H). The short foundational enabling Royal Decree (17/2/28/8634, 29/6/1370H) is treated as prose-only preamble context, NOT a numbered article of this track, since its own ~2-article text was never independently confirmed via a direct successful fetch (only search-engine-mediated quotes) — this corpus's zero-fabrication policy therefore excludes it from `articles`. **VERIFICATION TIER:** SINGLE-SOURCE — the full 128-article text rests solely on ZATCA's own official PDF (laws.boe.gov.sa returned HTTP 503 on every attempt across two research/build passes, confirmed still unreachable); the Umm Al-Qura Gazette (uqn.gov.sa) was successfully reached and used only for targeted spot-verification (Resolution 1007's exact date, and Article 13's مالك/ملاك title disambiguation), not a second full-text cross-check. The build pass discovered and fixed a severe, previously-undocumented PDF extraction bug: the source PDF's font/ToUnicode-CMap systematically transposes LAM+alef-form character pairs (all four alef forms), corrupting extremely common words (الأصول، الإقرار، اللائحة, etc.); fixed via a general regex plus a curated ~140-entry dictionary plus context-anchored resolution of two genuine homograph ambiguities. A separate PDF line-wrap/justification artifact misordered wrapped lines across roughly 35 articles, hand-reconstructed by reading each full sentence for sense (no wording invented, only reordered); one further instance (Article 128) was caught and corrected during post-build review by checking the raw extraction against the reordering logic — a residual, unquantified risk of similar uncorrected artifacts in other paragraphs cannot be fully excluded without a second full-text source to diff against, and is documented rather than hidden. Other flagged discrepancies: no `original_1445h_text` for Article 73 (pre-amendment text not recoverable from the consolidated PDF); the prior 1440H regulation's repeal clause not found verbatim within the operative articles themselves (only in secondary summaries); a secondary claim of 200,000/400,000 SAR minimum zakat-base figures searched for and confirmed ABSENT from the primary text (the only flat floor found is Article 86's 500 SAR minimum for presumptive taxpayers). Arabic governs; not legal advice.",
+      "official_text_status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 128,
+        "legal_status_breakdown": {
+          "اصلية": 127,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 128
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Minister of Finance Resolution No. 1007, 19/8/1445H — ZATCA's own official PDF as sole full-text primary source, Umm Al-Qura Gazette (uqn.gov.sa) used for targeted spot-verification of Resolution 1007's date and Article 13's title only, not a second full-text diff",
+      "status": "complete",
+      "track_id": "zakat_law",
+      "validator_targets": [
+        "make zakat-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5787,10 +5836,11 @@
       "trademark": 52,
       "traffic": 86,
       "vat": 53,
-      "whistleblower": 37
+      "whistleblower": 37,
+      "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 8231,
+    "total_records": 8359,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

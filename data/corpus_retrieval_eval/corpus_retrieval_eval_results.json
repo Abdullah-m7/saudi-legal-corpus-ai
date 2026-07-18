@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 272,
-  "top1_hits": 248,
-  "top3_hits": 265,
-  "top5_hits": 268,
-  "top1_accuracy": 0.9118,
-  "top3_accuracy": 0.9743,
-  "top5_accuracy": 0.9853,
-  "mrr_at_5": 0.9425,
+  "total_queries": 274,
+  "top1_hits": 250,
+  "top3_hits": 267,
+  "top5_hits": 270,
+  "top1_accuracy": 0.9124,
+  "top3_accuracy": 0.9745,
+  "top5_accuracy": 0.9854,
+  "mrr_at_5": 0.9429,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5656,9 +5656,9 @@
      "score": 27
     },
     {
-     "record_id": "civil-service-law-llm-art-023",
-     "article_number": 23,
-     "score": 12
+     "record_id": "zakat-law-llm-art-079",
+     "article_number": 79,
+     "score": 14
     }
    ]
   },
@@ -8224,14 +8224,14 @@
      "score": 32
     },
     {
+     "record_id": "zakat-law-llm-art-006",
+     "article_number": 6,
+     "score": 27
+    },
+    {
      "record_id": "oa-llm-companies-art-273",
      "article_number": 273,
      "score": 20
-    },
-    {
-     "record_id": "income-tax-law-llm-art-064",
-     "article_number": 64,
-     "score": 19
     }
    ]
   },
@@ -8449,6 +8449,68 @@
      "record_id": "pdpl-reg-llm-art-006",
      "article_number": 6,
      "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "zkt-001",
+   "query_ar": "الحد الأدنى للزكاة لمكلف التقديري هو ( )500خمسمئة ريال",
+   "category": "topical",
+   "gold": {
+    "corpus": "zakat",
+    "law_component": "law",
+    "article_number": 86
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "zakat-law-llm-art-086",
+     "article_number": 86,
+     "score": 34
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-019",
+     "article_number": 19,
+     "score": 20
+    },
+    {
+     "record_id": "zakat-law-llm-art-089",
+     "article_number": 89,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "zkt-002",
+   "query_ar": "موافقة المكلف على الربط الزكوي، أو مضي (60) ستين يوما من تاريخه دون اعتراض لدى الهيئة",
+   "category": "topical",
+   "gold": {
+    "corpus": "zakat",
+    "law_component": "law",
+    "article_number": 117
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "zakat-law-llm-art-117",
+     "article_number": 117,
+     "score": 28
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 18
+    },
+    {
+     "record_id": "zakat-law-llm-art-106",
+     "article_number": 106,
+     "score": 15
     }
    ]
   }
