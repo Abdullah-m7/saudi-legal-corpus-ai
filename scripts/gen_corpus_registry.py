@@ -173,6 +173,7 @@ GCC_ANTI_DUMPING_LAW_LLM = os.path.join(ROOT, "data", "gcc_anti_dumping_arabic_l
 ACCOUNTING_AUDITING_LAW_LLM = os.path.join(ROOT, "data", "accounting_auditing_arabic_legal_llm", "accounting_auditing_law_legal_llm_001_022.json")
 NAZAHA_LAW_LLM = os.path.join(ROOT, "data", "nazaha_arabic_legal_llm", "nazaha_law_legal_llm_001_024.json")
 AWQAF_LAW_LLM = os.path.join(ROOT, "data", "awqaf_arabic_legal_llm", "awqaf_law_legal_llm_001_025.json")
+SAUDI_ENGINEERS_LAW_LLM = os.path.join(ROOT, "data", "saudi_engineers_arabic_legal_llm", "saudi_engineers_law_legal_llm_001_009.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -339,6 +340,7 @@ def main() -> int:
     accounting_auditing_law_llm = _load_json(ACCOUNTING_AUDITING_LAW_LLM)
     nazaha_law_llm = _load_json(NAZAHA_LAW_LLM)
     awqaf_law_llm = _load_json(AWQAF_LAW_LLM)
+    saudi_engineers_law_llm = _load_json(SAUDI_ENGINEERS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -359,7 +361,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 135,
+        "total_tracks": 136,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -498,6 +500,7 @@ def main() -> int:
             + accounting_auditing_law_llm["record_count"]  # 22 Law of the Accounting and Auditing Profession (M/59, 1442H) (BOE-via-Wayback archive x SOCPA official PDF x qanoonsa.com cross-verified, live BOE unreachable, replaces M/12 1412H, see track notes)
             + nazaha_law_llm["record_count"]  # 24 Law (Statute) of the Control and Anti-Corruption Authority (Nazaha) (M/25, 1446H) (BOE-via-Wayback archive, two snapshots + FAOLEX mirror x nezams.com x qanoonsa.com, live BOE unreachable, replaces the National Anti-Corruption Commission's 2011/2019 predecessor instruments, see track notes)
             + awqaf_law_llm["record_count"]  # 25 Law of the General Authority for Awqaf (M/11, 1437H) (BOE-via-Wayback archive, six snapshots x web.awqaf.gov.sa scanned original decree x nezams.com, live BOE unreachable, replaces the Supreme Awqaf Council System M/35 1386H, see track notes)
+            + saudi_engineers_law_llm["record_count"]  # 9 Law of the Saudi Council of Engineers (M/36, 1423H) (BOE-via-Wayback archive, three snapshots x saudieng.sa's own official website x press corroboration, live BOE unreachable, no predecessor found, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -627,6 +630,7 @@ def main() -> int:
             + accounting_auditing_law_llm["record_count"]
             + nazaha_law_llm["record_count"]
             + awqaf_law_llm["record_count"]
+            + saudi_engineers_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4617,6 +4621,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law of the General Authority for Awqaf «نظام الهيئة العامة للأوقاف» — Royal Decree M/11, dated 26/2/1437H (8 December 2015), ratifying Council of Ministers Resolution No. 73 (25/2/1437H). A low-to-medium-priority coverage-gap identified via the coverage_gap_map research pass, whose hedge citing 'an earlier search hit suggesting M/25' is resolved as an unrelated mix-up with this corpus's separately-ingested nazaha_law track (a different 1446H statute); no source corroborates M/25 for this law. No distinct substantive Waqf code was found separate from this Authority's own organizing statute — substantive waqf matters remain governed by classical fiqh as applied by the courts, confirming this law is the correct and complete coverage-gap target. **25 records: 23 اصلية, 2 معدلة** (Articles 6 and 21) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **Confirmed supersession of a predecessor:** this law's own Article 25(1) states it replaces نظام مجلس الأوقاف الأعلى (Supreme Awqaf Council System, Royal Decree M/35, 18/7/1386H); Article 25(3) also repeals, conflict-only, provisions of the General Authority for Guardianship over Minors' Funds Law (M/17, 1427H); Article 25(2) carves out Article 223 of the Sharia Procedure Law (M/1, 1435H) for waqf under the Authority's نظارة — all modeled as supersession-graph edges/notes. **VERIFICATION TIER:** BOE-WAYBACK-SIX-SNAPSHOT-X-AWQAF-GOV-SCANNED-DECREE-X-NEZAMS-CROSS-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but six independent Wayback Machine snapshots of the exact law page (21 Nov 2019 through 12 Dec 2025) show 23 of 25 articles textually identical across all time-points, cross-verified against web.awqaf.gov.sa's own scanned original signed decree (visual read, no OCR text layer) and nezams.com. **TWO MAJOR VERIFIED ANOMALIES carried forward, neither hand-merged nor guessed:** (1) Article 6 (board composition) — BOE's own changelog logs four amendments (CoM Resolutions 262/1438H, 618/1442H, 638/1442H, 651/1443H) to the chair-formula and two subparagraphs, but BOE's main body text has been stable and unchanged across all six snapshots spanning 2019-2025, and the changelog's own quoted 'before' text does not even match the historical wording, implying an unlogged intermediate step; this track ingests BOE's stable main body as-is, records all 4 amendments in the article's history, and flags the unresolved inconsistency as the single highest-priority open item. (2) Article 21 (fees) — a single, clean, fully-quoted amendment (Royal Decree M/72, 1/6/1444H, adding a judicial-costs exemption paragraph for charitable waqf) that BOE's main body still doesn't reflect 2+ years later; following the accounting_auditing_law precedent for this exact failure mode, this track ingests the changelog's quoted amended text as current, independently corroborated by press coverage. Other flagged discrepancies: three companion implementing regulations (investment funds instructions, investment portfolios regulation, نظارة work-organization regulation) already issued and findable on web.awqaf.gov.sa, plus general لوائح referenced in-text, are confirmed to exist but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "saudi_engineers_law",
+                "display_name_ar": "نظام الهيئة السعودية للمهندسين",
+                "display_name_en": "Law of the Saudi Council of Engineers",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/36, 26/9/1423H, ratifying Council of Ministers Resolution No. 226 (13/9/1423H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, three independent snapshots spanning 15 Nov 2019 to 15 Sep 2025), cross-verified against the Saudi Council of Engineers' own official website (saudieng.sa, three snapshots 2017-2022) and a press aggregation for one amendment",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": saudi_engineers_law_llm["record_count"],
+                    "data_path": "data/saudi_engineers_arabic_legal_llm/saudi_engineers_law_legal_llm_001_009.json"}},
+                "record_counts": {"arabic_articles": saudi_engineers_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 7, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+                                  "total": saudi_engineers_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/saudi_engineers/law/official_source/saudi_engineers_law_official_source.json",
+                    "sources/saudi_engineers/law/verified/saudi_engineers_law_verified_records.jsonl",
+                    "data/saudi_engineers_arabic_legal_llm/saudi_engineers_law_legal_llm_001_009.json",
+                ],
+                "validator_targets": ["make saudi-engineers-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of the Saudi Council of Engineers «نظام الهيئة السعودية للمهندسين» — Royal Decree M/36, dated 26/9/1423H (1 December 2002), ratifying Council of Ministers Resolution No. 226 (13/9/1423H). A low-to-medium-priority coverage-gap identified via the coverage_gap_map research pass, whose decree estimate this build confirmed exactly. **9 records: 7 اصلية, 2 معدلة** (Articles 1 and 6) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **No predecessor found (confirmed negative finding):** Article 9's closing clause is only a general conflict-only repeal naming no specific instrument; secondary sources trace only informal pre-law symposium discussions, not any earlier codified engineering-council law. **Decree-number collision flagged:** a separate, currently-in-force companion law (نظام مزاولة المهن الهندسية, Law of the Practice of Engineering Professions, Royal Decree M/36 dated 19/4/1438H — governing licensing, professional accreditation, and disciplinary penalties) shares the identical decree number 'م/36' at a completely different hijri date; documented explicitly to prevent cross-track confusion, and flagged as the strongest follow-up candidate since its content more closely matches licensing/discipline framing than this organizing statute. **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-SAUDIENG-SA-OFFICIAL-SITE-X-PRESS-CORROBORATION — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (15 Nov 2019 through 15 Sep 2025) were cross-verified against three of the Council's own official-website snapshots (saudieng.sa, 2017-2022) and a press aggregation (Asharq Al-Awsat) corroborating Article 1's supervising-authority transfer. **TWO GENUINELY VERIFIED ANOMALIES carried forward:** (1) Article 1 (supervising authority) — BOE's own changelog logs a clean phrase-substitution (CoM Resolution 57, 20/1/1442H) transferring supervision away from the Ministry of Commerce, but BOE's main body AND the Council's own official website both remain stale (unchanged Ministry of Commerce wording) across every snapshot checked; this track ingests the changelog-instructed substitution and flags the staleness. (2) Article 6 (board composition) — two layered but individually clean, complete-quote amendments (Royal Decree M/60, 1425H, then Council of Ministers Resolution 388, 1443H); this track ingests the more recent complete quote, independently confirmed verbatim by the Council's own official website, while BOE's own main body remains stuck on the original 2002 text throughout. Other flagged discrepancies: a companion Executive Regulation and 'Engineer's Charter' (reissued 2025) are confirmed to exist on saudieng.sa but are out of scope for this track, following established precedent; a minor BOE changelog typo (a dropped و) is preserved verbatim, not silently corrected. Arabic governs; not legal advice.",
             },
         ],
     }

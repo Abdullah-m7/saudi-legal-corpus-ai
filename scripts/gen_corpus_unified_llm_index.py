@@ -294,6 +294,8 @@ LAYERS = [
      "nazaha", "law"),
     ("data/awqaf_arabic_legal_llm/awqaf_law_legal_llm_001_025.json",
      "awqaf", "law"),
+    ("data/saudi_engineers_arabic_legal_llm/saudi_engineers_law_legal_llm_001_009.json",
+     "saudi_engineers", "law"),
 ]
 
 

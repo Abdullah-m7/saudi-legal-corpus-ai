@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 298,
-  "top1_hits": 272,
-  "top3_hits": 291,
-  "top5_hits": 294,
-  "top1_accuracy": 0.9128,
-  "top3_accuracy": 0.9765,
-  "top5_accuracy": 0.9866,
-  "mrr_at_5": 0.9442,
+  "total_queries": 300,
+  "top1_hits": 274,
+  "top3_hits": 293,
+  "top5_hits": 296,
+  "top1_accuracy": 0.9133,
+  "top3_accuracy": 0.9767,
+  "top5_accuracy": 0.9867,
+  "mrr_at_5": 0.9446,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8503,14 +8503,14 @@
      "score": 28
     },
     {
+     "record_id": "saudi-engineers-law-llm-art-009",
+     "article_number": 9,
+     "score": 19
+    },
+    {
      "record_id": "inv-reg-llm-art-016",
      "article_number": 16,
      "score": 18
-    },
-    {
-     "record_id": "zakat-law-llm-art-106",
-     "article_number": 106,
-     "score": 15
     }
    ]
   },
@@ -9255,6 +9255,68 @@
      "record_id": "capital-market-law-llm-art-013",
      "article_number": 13,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "sen-001",
+   "query_ar": "تتكون عضوية الهيئة من: عضوية أساسية وتشمل جميع السعوديين الحاصلين على شهادة جامعية في التخصصات الهندسية أو ما يعادلها، العاملين في هذه المهن",
+   "category": "topical",
+   "gold": {
+    "corpus": "saudi_engineers",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-engineers-law-llm-art-003",
+     "article_number": 3,
+     "score": 49
+    },
+    {
+     "record_id": "labor-annex3-llm-art-014",
+     "article_number": 14,
+     "score": 28
+    },
+    {
+     "record_id": "labor-annex3-llm-art-001",
+     "article_number": 1,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "sen-002",
+   "query_ar": "تختص الجمعية العمومية بما يأتي: إصدار التنظيم الداخلي للهيئة، وإقرار اللوائح التنفيذية لنظام الهيئة، وإقرار اشتراكات الأعضاء",
+   "category": "topical",
+   "gold": {
+    "corpus": "saudi_engineers",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-engineers-law-llm-art-005",
+     "article_number": 5,
+     "score": 32
+    },
+    {
+     "record_id": "saudi-engineers-law-llm-art-007",
+     "article_number": 7,
+     "score": 21
+    },
+    {
+     "record_id": "oa-llm-companies-art-277",
+     "article_number": 277,
+     "score": 21
     }
    ]
   }
