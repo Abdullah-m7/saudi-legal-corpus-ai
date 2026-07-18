@@ -135,6 +135,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES": TIER_1,
     "BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_2,
+    "BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -461,6 +462,22 @@ RATIONALE_OVERRIDE = {
         "الحرجة إلى نص المرسوم الملكي م/25 الذي يُلزم تحديث مسار anti_bribery_law الحالي "
         "بمتابعة مستقلة."
     ),
+    "awqaf_law": (
+        "official_text_status='BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_"
+        "NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية "
+        "متعذرة الوصول، واعتُمدت ست لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها "
+        "(تمتد من 21 نوفمبر 2019 إلى 12 ديسمبر 2025) كمصدر أساسي، متطابقة حرفياً على 23 "
+        "من 25 مادة عبر كل اللقطات، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (نسخة ممسوحة "
+        "ضوئياً للمرسوم الملكي الأصلي الموقّع من الملك سلمان، مستضافة على الموقع الرسمي "
+        "لنفس الجهة المنظِّمة web.awqaf.gov.sa، قُرئت بصرياً إذ لا تحوي طبقة نص) ومصدر "
+        "ثانوي (nezams.com). مصدران رسميان (BOE وweb.awqaf.gov.sa، نطاق .gov.sa منفصل "
+        "فعلياً وليس نسخة من نفس محتوى BOE كحال FAOLEX في مسار nazaha_law) متقاربان، وهو "
+        "ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط "
+        "finance_companies_law (BOE عبر Wayback × bfc.gov.sa). راجع "
+        "has_per_article_variation للمادتين 6 و21 اللتين تحملان تناقضاً مؤكَّداً (لا "
+        "افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد، مفصَّلاً في "
+        "official_source.json الخاص بالمسار."
+    ),
 }
 
 # Tracks with documented, non-negligible confidence variation ACROSS the articles WITHIN the
@@ -566,6 +583,20 @@ PER_ARTICLE_VARIATION_NOTE = {
         "1447هـ، تعميم تعريف 'الوزير') فمصدره ثانوي حصراً (PDF الهيئة SOCPA × "
         "qanoonsa.com) دون أي رقم مرسوم ملكي معروف يُصدره ودون أي تأكيد من بوابة BOE "
         "على الإطلاق؛ راجع official_source.json الخاص بالمسار."
+    ),
+    "awqaf_law": (
+        "23 مادة غير معدَّلة مصدرها مزدوج رسمي (ست لقطات Wayback لبوابة BOE × نسخة "
+        "الأوقاف الممسوحة ضوئياً)، متطابقة دون فارق جوهري. أما المادة السادسة (تشكيل "
+        "مجلس الإدارة) فتحمل تناقضاً مؤكَّداً غير محلول: سجل BOE يوثّق أربعة تعديلات "
+        "(قرارات مجلس الوزراء 262/1438هـ، 618/1442هـ، 638/1442هـ، 651/1443هـ) بينما "
+        "النص الرئيسي لبوابة BOE ظل ثابتاً دون تغيير عبر جميع اللقطات الست من 2019 إلى "
+        "2025، بل إن نص 'قبل التعديل' الموثّق في سجل BOE نفسه لا يطابق النص التاريخي "
+        "الفعلي أيضاً — اعتُمد النص الرئيسي الراكد كما هو دون دمج افتراضي. أما المادة "
+        "الحادية والعشرون (الرسوم) فتحمل تعديلاً واحداً واضحاً وموثَّقاً بالكامل (المرسوم "
+        "الملكي م/72، 1444هـ) في سجل BOE، لم ينعكس بعد في النص الرئيسي رغم مرور أكثر من "
+        "عامين — اعتُمد نص سجل التعديلات المقتبس كنص حالي، تماشياً مع سابقة "
+        "accounting_auditing_law لهذا النمط تحديداً، وتأكَّد بتغطية صحفية مستقلة؛ راجع "
+        "official_source.json الخاص بالمسار للتفاصيل الكاملة."
     ),
 }
 

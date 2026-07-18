@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 134,
+  "total_tracks_scanned": 135,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 52,
+  "edge_count": 53,
   "relation_counts": {
-    "repeals_full": 43,
+    "repeals_full": 44,
     "repeals_partial": 8,
     "superseded_by": 1
   },
@@ -527,6 +527,16 @@
       "source_ref": "sources/nazaha/law/official_source/nazaha_law_official_source.json (preamble_ar, Royal Decree M/25 clause سادساً)"
     },
     {
+      "from_track_id": "awqaf_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام مجلس الأوقاف الأعلى (السابق)",
+      "target_decree": "Royal Decree M/35, 18/7/1386H",
+      "affected_articles": null,
+      "note": "awqaf_law's own official_source.json article 25(1): 'يحل هذا النظام محل نظام مجلس الأوقاف الأعلى الصادر بالمرسوم الملكي رقم (م/35) وتاريخ 18/7/1386هـ.' Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/awqaf/law/official_source/awqaf_law_official_source.json (article 25(1))"
+    },
+    {
       "from_track_id": "copyright_law",
       "relation": "superseded_by",
       "target_track_id": null,
@@ -601,6 +611,14 @@
       "issue": "general non-specific repeal clause naming no prior statute",
       "note": "finance_companies_law's own Article 38 states only 'يلغي هذا النظام كل ما يتعارض معه من أحكام' (a general boilerplate repeal of any conflicting provision), naming no single prior instrument. NOT modeled as a repeals_full edge, since this corpus only models EXPLICITLY-NAMED repeal relationships, never inferred ones. Separately, the decree's own preamble directs (not repeals) a review of the Installment Sale Law (M/13, 1426H) for consistency — also not modeled as a repeal, since a directive to review is not itself a supersession.",
       "source_ref": "sources/finance_companies/law/official_source/finance_companies_law_official_source.json (article 38)"
+    },
+    {
+      "tracks_involved": [
+        "awqaf_law"
+      ],
+      "issue": "conflict-only repeal clause naming one example instrument",
+      "note": "awqaf_law's own Article 25(3) states 'يلغي هذا النظام كل ما يتعارض معه من أحكام أخرى، بما في ذلك الأحكام الواردة في نظام الهيئة العامة للولاية على أموال القاصرين ومن في حكمهم الصادر بالمرسوم الملكي رقم (م/17) وتاريخ 13/3/1427هـ' — a general conflict-only repeal clause that names the Minors' Funds Guardianship Law only as an ILLUSTRATIVE example ('بما في ذلك', i.e. 'including'), not a definitive full or partial repeal of that law as a whole (unlike Article 25(1)'s clean 'يحل هذا النظام محل...' replacement of the Supreme Awqaf Council System, which IS modeled as a repeals_full edge above). NOT modeled as a repeals_partial edge, since this corpus only models repeals with a determinate scope, not open-ended conflict-only clauses that merely cite one example.",
+      "source_ref": "sources/awqaf/law/official_source/awqaf_law_official_source.json (article 25(3))"
     }
   ],
   "extraction_policy": "Every edge above was read and classified by hand against this corpus's own documented text (registry notes + official_source.json fields/article text), never inferred from a decree being older or from topical similarity alone. Concurrent title/decree-number collisions that are NOT repeal relationships, and genuinely ambiguous or explicitly-excluded cases, are kept in their own sections rather than forced into `edges`. It is expected and correct that most of this corpus's 122 tracks have zero edges."

@@ -784,6 +784,18 @@ EDGES = [
                 "force. Predecessor not separately ingested in this corpus.",
         "source_ref": "sources/nazaha/law/official_source/nazaha_law_official_source.json (preamble_ar, Royal Decree M/25 clause سادساً)",
     },
+    {
+        "from_track_id": "awqaf_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مجلس الأوقاف الأعلى (السابق)",
+        "target_decree": "Royal Decree M/35, 18/7/1386H",
+        "note": "awqaf_law's own official_source.json article 25(1): "
+                "'يحل هذا النظام محل نظام مجلس الأوقاف الأعلى الصادر "
+                "بالمرسوم الملكي رقم (م/35) وتاريخ 18/7/1386هـ.' "
+                "Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/awqaf/law/official_source/awqaf_law_official_source.json (article 25(1))",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------
@@ -945,6 +957,25 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "not modeled as a repeal, since a directive to review is not "
                 "itself a supersession.",
         "source_ref": "sources/finance_companies/law/official_source/finance_companies_law_official_source.json (article 38)",
+    },
+    {
+        "tracks_involved": ["awqaf_law"],
+        "issue": "conflict-only repeal clause naming one example instrument",
+        "note": "awqaf_law's own Article 25(3) states 'يلغي هذا النظام كل "
+                "ما يتعارض معه من أحكام أخرى، بما في ذلك الأحكام الواردة في "
+                "نظام الهيئة العامة للولاية على أموال القاصرين ومن في حكمهم "
+                "الصادر بالمرسوم الملكي رقم (م/17) وتاريخ 13/3/1427هـ' — a "
+                "general conflict-only repeal clause that names the "
+                "Minors' Funds Guardianship Law only as an ILLUSTRATIVE "
+                "example ('بما في ذلك', i.e. 'including'), not a definitive "
+                "full or partial repeal of that law as a whole (unlike "
+                "Article 25(1)'s clean 'يحل هذا النظام محل...' replacement "
+                "of the Supreme Awqaf Council System, which IS modeled as a "
+                "repeals_full edge above). NOT modeled as a repeals_partial "
+                "edge, since this corpus only models repeals with a "
+                "determinate scope, not open-ended conflict-only clauses "
+                "that merely cite one example.",
+        "source_ref": "sources/awqaf/law/official_source/awqaf_law_official_source.json (article 25(3))",
     },
 ]
 

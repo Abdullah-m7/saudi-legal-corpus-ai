@@ -248,6 +248,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         gcc-anti-dumping-law-track-validate \
         accounting-auditing-law-track-validate \
         nazaha-law-track-validate \
+        awqaf-law-track-validate \
         qa-gate
 
 help:
@@ -1416,6 +1417,9 @@ accounting-auditing-law-track-validate:
 
 nazaha-law-track-validate:
 	$(PY) scripts/validate_nazaha_law_track.py
+
+awqaf-law-track-validate:
+	$(PY) scripts/validate_awqaf_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

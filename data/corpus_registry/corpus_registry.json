@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9434,
+  "total_primary_arabic_governing_records": 9459,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10329,
-  "total_tracks": 134,
+  "total_registry_counted_records": 10354,
+  "total_tracks": 135,
   "tracks": [
     {
       "boundaries": {
@@ -6329,6 +6329,55 @@
       "validator_targets": [
         "make nazaha-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/awqaf/law/official_source/awqaf_law_official_source.json",
+        "sources/awqaf/law/verified/awqaf_law_verified_records.jsonl",
+        "data/awqaf_arabic_legal_llm/awqaf_law_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "نظام الهيئة العامة للأوقاف",
+      "display_name_en": "Law of the General Authority for Awqaf",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/awqaf_arabic_legal_llm/awqaf_law_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 25,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of the General Authority for Awqaf «نظام الهيئة العامة للأوقاف» — Royal Decree M/11, dated 26/2/1437H (8 December 2015), ratifying Council of Ministers Resolution No. 73 (25/2/1437H). A low-to-medium-priority coverage-gap identified via the coverage_gap_map research pass, whose hedge citing 'an earlier search hit suggesting M/25' is resolved as an unrelated mix-up with this corpus's separately-ingested nazaha_law track (a different 1446H statute); no source corroborates M/25 for this law. No distinct substantive Waqf code was found separate from this Authority's own organizing statute — substantive waqf matters remain governed by classical fiqh as applied by the courts, confirming this law is the correct and complete coverage-gap target. **25 records: 23 اصلية, 2 معدلة** (Articles 6 and 21) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **Confirmed supersession of a predecessor:** this law's own Article 25(1) states it replaces نظام مجلس الأوقاف الأعلى (Supreme Awqaf Council System, Royal Decree M/35, 18/7/1386H); Article 25(3) also repeals, conflict-only, provisions of the General Authority for Guardianship over Minors' Funds Law (M/17, 1427H); Article 25(2) carves out Article 223 of the Sharia Procedure Law (M/1, 1435H) for waqf under the Authority's نظارة — all modeled as supersession-graph edges/notes. **VERIFICATION TIER:** BOE-WAYBACK-SIX-SNAPSHOT-X-AWQAF-GOV-SCANNED-DECREE-X-NEZAMS-CROSS-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but six independent Wayback Machine snapshots of the exact law page (21 Nov 2019 through 12 Dec 2025) show 23 of 25 articles textually identical across all time-points, cross-verified against web.awqaf.gov.sa's own scanned original signed decree (visual read, no OCR text layer) and nezams.com. **TWO MAJOR VERIFIED ANOMALIES carried forward, neither hand-merged nor guessed:** (1) Article 6 (board composition) — BOE's own changelog logs four amendments (CoM Resolutions 262/1438H, 618/1442H, 638/1442H, 651/1443H) to the chair-formula and two subparagraphs, but BOE's main body text has been stable and unchanged across all six snapshots spanning 2019-2025, and the changelog's own quoted 'before' text does not even match the historical wording, implying an unlogged intermediate step; this track ingests BOE's stable main body as-is, records all 4 amendments in the article's history, and flags the unresolved inconsistency as the single highest-priority open item. (2) Article 21 (fees) — a single, clean, fully-quoted amendment (Royal Decree M/72, 1/6/1444H, adding a judicial-costs exemption paragraph for charitable waqf) that BOE's main body still doesn't reflect 2+ years later; following the accounting_auditing_law precedent for this exact failure mode, this track ingests the changelog's quoted amended text as current, independently corroborated by press coverage. Other flagged discrepancies: three companion implementing regulations (investment funds instructions, investment portfolios regulation, نظارة work-organization regulation) already issued and findable on web.awqaf.gov.sa, plus general لوائح referenced in-text, are confirmed to exist but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 25,
+        "legal_status_breakdown": {
+          "اصلية": 23,
+          "مضافة": 0,
+          "معدلة": 2,
+          "ملغاة": 0
+        },
+        "total": 25
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/11, 26/2/1437H, ratifying Council of Ministers Resolution No. 73 (25/2/1437H), replacing نظام مجلس الأوقاف الأعلى (Royal Decree M/35, 18/7/1386H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, six independent snapshots spanning 21 Nov 2019 to 12 Dec 2025), cross-verified against web.awqaf.gov.sa's own scanned original signed decree and nezams.com, plus a press aggregation for one amendment",
+      "status": "complete",
+      "track_id": "awqaf_law",
+      "validator_targets": [
+        "make awqaf-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6348,6 +6397,7 @@
       "anti_narcotics": 74,
       "anti_trafficking": 17,
       "arbitration": 77,
+      "awqaf": 25,
       "banking_control": 26,
       "bankruptcy": 353,
       "bankruptcy_fees": 20,
@@ -6439,7 +6489,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9265,
+    "total_records": 9290,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

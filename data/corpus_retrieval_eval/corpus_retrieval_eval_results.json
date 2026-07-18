@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 296,
-  "top1_hits": 270,
-  "top3_hits": 289,
-  "top5_hits": 292,
-  "top1_accuracy": 0.9122,
-  "top3_accuracy": 0.9764,
-  "top5_accuracy": 0.9865,
-  "mrr_at_5": 0.9438,
+  "total_queries": 298,
+  "top1_hits": 272,
+  "top3_hits": 291,
+  "top5_hits": 294,
+  "top1_accuracy": 0.9128,
+  "top3_accuracy": 0.9765,
+  "top5_accuracy": 0.9866,
+  "mrr_at_5": 0.9442,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6059,8 +6059,8 @@
      "score": 21
     },
     {
-     "record_id": "bankruptcy-law-llm-art-150",
-     "article_number": 150,
+     "record_id": "awqaf-law-llm-art-012",
+     "article_number": 12,
      "score": 19
     }
    ]
@@ -6803,9 +6803,9 @@
      "score": 28
     },
     {
-     "record_id": "council-of-ministers-law-llm-art-004",
-     "article_number": 4,
-     "score": 21
+     "record_id": "awqaf-law-llm-art-006",
+     "article_number": 6,
+     "score": 23
     }
    ]
   },
@@ -7454,9 +7454,9 @@
      "score": 23
     },
     {
-     "record_id": "shura-council-law-llm-art-016",
-     "article_number": 16,
-     "score": 21
+     "record_id": "awqaf-law-llm-art-008",
+     "article_number": 8,
+     "score": 23
     }
    ]
   },
@@ -8100,14 +8100,14 @@
      "score": 49
     },
     {
-     "record_id": "telecommunications-law-llm-art-041",
-     "article_number": 41,
+     "record_id": "awqaf-law-llm-art-025",
+     "article_number": 25,
      "score": 35
     },
     {
-     "record_id": "arbitration-law-llm-art-057",
-     "article_number": 57,
-     "score": 34
+     "record_id": "telecommunications-law-llm-art-041",
+     "article_number": 41,
+     "score": 35
     }
    ]
   },
@@ -9193,6 +9193,68 @@
      "record_id": "anti-cyber-crime-law-llm-art-015",
      "article_number": 15,
      "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "awq-001",
+   "query_ar": "مع الالتزام بشرط الواقف، وعدم الإضرار بالمستفيدين من الوقف؛ للهيئة القيام بالآتي: استثمار أصول الأوقاف - التي تكون ناظرة عليها - وفوائض إيراداتها",
+   "category": "topical",
+   "gold": {
+    "corpus": "awqaf",
+    "law_component": "law",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "awqaf-law-llm-art-015",
+     "article_number": 15,
+     "score": 36
+    },
+    {
+     "record_id": "awqaf-law-llm-art-007",
+     "article_number": 7,
+     "score": 26
+    },
+    {
+     "record_id": "awqaf-law-llm-art-005",
+     "article_number": 5,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "awq-002",
+   "query_ar": "يكون للهيئة محافظ يُعيّن ويُعفى من منصبه بقرار من المجلس، ويحدد القرار أجره ومزاياه المالية الأخرى، ويعد المسؤول عن إدارة شؤون الهيئة",
+   "category": "topical",
+   "gold": {
+    "corpus": "awqaf",
+    "law_component": "law",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "awqaf-law-llm-art-009",
+     "article_number": 9,
+     "score": 37
+    },
+    {
+     "record_id": "capital-market-law-llm-art-007",
+     "article_number": 7,
+     "score": 27
+    },
+    {
+     "record_id": "capital-market-law-llm-art-013",
+     "article_number": 13,
+     "score": 23
     }
    ]
   }
