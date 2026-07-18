@@ -136,6 +136,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES": TIER_1,
     "BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_2,
     "BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
+    "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -478,6 +479,20 @@ RATIONALE_OVERRIDE = {
         "افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد، مفصَّلاً في "
         "official_source.json الخاص بالمسار."
     ),
+    "saudi_engineers_law": (
+        "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_"
+        "PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية "
+        "متعذرة الوصول، واعتُمدت ثلاث لقطات أرشيف Wayback Machine مستقلة لصفحة BOE "
+        "نفسها (تمتد من 15 نوفمبر 2019 إلى 15 سبتمبر 2025) كمصدر أساسي، وقورنت بمصدر "
+        "رسمي ثانٍ مستقل بذاته (الموقع الرسمي للهيئة السعودية للمهندسين نفسها "
+        "saudieng.sa، ثلاث لقطات 2017-2022، نطاق منفصل فعلياً) ومصدر ثانوي (تغطية "
+        "صحفية من الشرق الأوسط للمادة الأولى). مصدران رسميان (BOE وsaudieng.sa) "
+        "متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل "
+        "لنمط awqaf_law (BOE عبر Wayback × web.awqaf.gov.sa). راجع "
+        "has_per_article_variation للمادتين 1 و6 اللتين تحملان تناقضاً مؤكَّداً (لا "
+        "افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد على كل من BOE وموقع "
+        "الهيئة نفسه، مفصَّلاً في official_source.json الخاص بالمسار."
+    ),
 }
 
 # Tracks with documented, non-negligible confidence variation ACROSS the articles WITHIN the
@@ -597,6 +612,19 @@ PER_ARTICLE_VARIATION_NOTE = {
         "عامين — اعتُمد نص سجل التعديلات المقتبس كنص حالي، تماشياً مع سابقة "
         "accounting_auditing_law لهذا النمط تحديداً، وتأكَّد بتغطية صحفية مستقلة؛ راجع "
         "official_source.json الخاص بالمسار للتفاصيل الكاملة."
+    ),
+    "saudi_engineers_law": (
+        "7 مواد غير معدَّلة مصدرها مزدوج رسمي (ثلاث لقطات Wayback لبوابة BOE × الموقع "
+        "الرسمي للهيئة saudieng.sa)، متطابقة دون فارق جوهري. أما المادة الأولى (الجهة "
+        "المشرفة) فتحمل تناقضاً مؤكَّداً: سجل BOE يوثّق نقل الإشراف بموجب قرار مجلس "
+        "الوزراء 57، 1442هـ، بينما النص الرئيسي على كل من بوابة BOE وموقع الهيئة نفسه "
+        "ظل ثابتاً بصياغة 'وزارة التجارة' القديمة عبر جميع اللقطات — اعتُمد نص سجل "
+        "التعديلات المقتبس، وتأكَّد بتغطية صحفية مستقلة (الشرق الأوسط). أما المادة "
+        "السادسة (تشكيل مجلس الإدارة) فتحمل تعديلين متتاليين موثَّقين بالكامل (المرسوم "
+        "الملكي م/60، 1425هـ، ثم قرار مجلس الوزراء 388، 1443هـ) — اعتُمد النص الأحدث "
+        "الكامل (388)، مؤكَّداً حرفياً من موقع الهيئة الرسمي، بينما ظل النص الرئيسي "
+        "لبوابة BOE عالقاً على صياغة 2002 الأصلية طوال الفترة؛ راجع official_source.json "
+        "الخاص بالمسار للتفاصيل الكاملة."
     ),
 }
 

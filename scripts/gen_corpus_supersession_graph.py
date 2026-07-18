@@ -977,6 +977,20 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "that merely cite one example.",
         "source_ref": "sources/awqaf/law/official_source/awqaf_law_official_source.json (article 25(3))",
     },
+    {
+        "tracks_involved": ["saudi_engineers_law"],
+        "issue": "general non-specific repeal clause naming no prior statute",
+        "note": "saudi_engineers_law's own Article 9 states only 'ويلغى كل "
+                "ما يتعارض معه من أحكام' (a general boilerplate repeal of "
+                "any conflicting provision), naming no single prior "
+                "instrument. NOT modeled as a repeals_full edge, since this "
+                "corpus only models EXPLICITLY-NAMED repeal relationships, "
+                "never inferred ones; this track's own research also "
+                "confirmed, as a documented negative finding, that no "
+                "distinct predecessor engineering-council law exists for "
+                "this generic clause to have targeted.",
+        "source_ref": "sources/saudi_engineers/law/official_source/saudi_engineers_law_official_source.json (article 9)",
+    },
 ]
 
 

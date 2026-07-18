@@ -7,16 +7,17 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 135 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 135 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 136 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 136 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 135,
-  "known_source_staleness_risk_count": 6,
+  "total_tracks": 136,
+  "known_source_staleness_risk_count": 7,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
     "awqaf_law",
     "environmental_law",
     "income_tax_law",
     "patent_law",
+    "saudi_engineers_law",
     "traffic_law"
   ],
   "tracks_without_resolvable_official_source_file": [
@@ -2222,6 +2223,31 @@
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "saudi_engineers_law",
+      "display_name_en": "Law of the Saudi Council of Engineers",
+      "display_name_ar": "نظام الهيئة السعودية للمهندسين",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت ثلاث لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 15 نوفمبر 2019 إلى 15 سبتمبر 2025) كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (الموقع الرسمي للهيئة السعودية للمهندسين نفسها saudieng.sa، ثلاث لقطات 2017-2022، نطاق منفصل فعلياً) ومصدر ثانوي (تغطية صحفية من الشرق الأوسط للمادة الأولى). مصدران رسميان (BOE وsaudieng.sa) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط awqaf_law (BOE عبر Wayback × web.awqaf.gov.sa). راجع has_per_article_variation للمادتين 1 و6 اللتين تحملان تناقضاً مؤكَّداً (لا افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد على كل من BOE وموقع الهيئة نفسه، مفصَّلاً في official_source.json الخاص بالمسار.",
+      "registry_source_authority": "Royal Decree M/36, 26/9/1423H, ratifying Council of Ministers Resolution No. 226 (13/9/1423H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, three independent snapshots spanning 15 Nov 2019 to 15 Sep 2025), cross-verified against the Saudi Council of Engineers' own official website (saudieng.sa, three snapshots 2017-2022) and a press aggregation for one amendment",
+      "registry_source_url": null,
+      "official_source_file": "sources/saudi_engineers/law/official_source/saudi_engineers_law_official_source.json",
+      "source_urls": [
+        "http://web.archive.org",
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/3e1de77d-3cd1-44d8-b174-a9a700f1ab06/1",
+        "https://web.archive.org/web/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2022-05-17; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "saudi_engineers_article1_supervising_authority_boe_stale_vs_amended: Article 1 (the Authority's supervising government entity) carries a single confirmed amendment per BOE's own 'تعديلات المادة' changelog: Council of Ministers Resolution No. (57) dated 20/1/1442هـ, substituting 'تعمل تحت"
     },
     {
       "track_id": "sharia_procedure_implementing_regulation",
