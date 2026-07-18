@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 132,
-  "total_terms": 779,
-  "total_definitions": 1164,
-  "tracks_with_definitions_article_parsed": 87,
+  "total_tracks_in_registry": 133,
+  "total_terms": 780,
+  "total_definitions": 1173,
+  "tracks_with_definitions_article_parsed": 88,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1783,6 +1783,14 @@
       }
     ],
     "الترخيص": [
+      {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدر من الهيئة، تتيح لمن صدرت له مزاولة المهنة وفقاً للشروط والضوابط المحددة بالنظام واللائحة.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "civil_aviation_law",
         "article_number": 1,
@@ -4516,6 +4524,14 @@
     ],
     "اللائحة": [
       {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "alimony_fund_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -4953,6 +4969,14 @@
       }
     ],
     "اللجنة": [
+      {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "اللجنة التي تنظر في المخالفات الإدارية والمسلكية وفقاً لأحكام النظام.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "anti_concealment_law",
         "article_number": 1,
@@ -5396,6 +5420,14 @@
     ],
     "المجلس": [
       {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "alimony_fund_regulation",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -5561,6 +5593,16 @@
         "term_as_written": "المحاجر",
         "definition_text": "أماكن في الجبال أو في الأرض تقتلع منها الصخور أو المعادن أو الخامات.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المحاسب القانوني": [
+      {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "المحاسب القانوني",
+        "definition_text": "شخص ذو صفة طبيعية أو اعتبارية مرخص له بمزاولة المهنة.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7102,6 +7144,14 @@
     ],
     "المهنة": [
       {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "المهنة",
+        "definition_text": "مهنة المحاسبة والمراجعة.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "law_practice_implementing_regulation",
         "article_number": 1,
         "term_as_written": "المهنة",
@@ -7479,6 +7529,14 @@
       }
     ],
     "النظام": [
+      {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام مهنة المحاسبة والمراجعة.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "aml_law",
         "article_number": 1,
@@ -8012,6 +8070,14 @@
     ],
     "الهيئة": [
       {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمراجعين والمحاسبين.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "capital_market_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -8449,6 +8515,14 @@
       }
     ],
     "الوزير": [
+      {
+        "track_id": "accounting_auditing_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير من أعضاء مجلس الوزراء يسمى بأمر من رئيس مجلس الوزراء بناءً على اقتراح من مجلس الشؤون الاقتصادية والتنمية.",
+        "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "anti_concealment_law",
         "article_number": 1,

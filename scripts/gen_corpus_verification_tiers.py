@@ -133,6 +133,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_2,
     "BOE_WAYBACK_ARCHIVE_X_SAMA_RULEBOOK_PDF_X_NEZAMS_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
+    "BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -426,6 +427,23 @@ RATIONALE_OVERRIDE = {
         "official_source.json لهذا المسار للتفاصيل الكاملة؛ هذا خطر توثيقي حي غير "
         "مُسوَّى، وليس نتيجة نهائية."
     ),
+    "accounting_auditing_law": (
+        "official_text_status='BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_"
+        "VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES': بوابة هيئة الخبراء "
+        "(BOE) الحية متعذرة الوصول، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها اعتُمدت "
+        "كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ (نسخة PDF الرسمية من الهيئة السعودية "
+        "للمراجعين والمحاسبين SOCPA نفسها، الجهة المنظِّمة للمهنة) ومصدر ثانوي ثالث "
+        "(qanoonsa.com، صفحتان مستقلتان) — مصدران رسميان (BOE وSOCPA) متقاربان على كامل "
+        "المواد الـ22، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل "
+        "لنمط finance_companies_law (BOE عبر Wayback × bfc.gov.sa). خلل مؤكَّد (وليس افتراضاً) "
+        "على صفحة BOE نفسها: خمس مواد (1، 4، 5، 19، 20) تحمل علامة 'مادة معدَّلة' ونافذة "
+        "تعديلات تقتبس نص المرسوم الملكي م/169 (1446هـ) بدقة، بينما النص الرئيسي المعروض "
+        "لنفس هذه المواد ظل قديماً (ما قبل م/169) بشكل متطابق حرفياً عبر ثلاث لقطات أرشيفية "
+        "بفارق 8+ أشهر — تم اعتماد نص نافذة التعديلات (المؤكَّد عبر PDF الهيئة) لا النص "
+        "الرئيسي الراكد. راجع has_per_article_variation للمادة الأولى تحديداً، التي تحمل "
+        "تعديلاً ثانياً أحدث (قرار مجلس الوزراء 283، 1447هـ) لم يصل بعد إلى أي لقطة BOE "
+        "ويستند فقط إلى PDF الهيئة وqanoonsa.com دون أي تأكيد رسمي مباشر له."
+    ),
 }
 
 # Tracks with documented, non-negligible confidence variation ACROSS the articles WITHIN the
@@ -522,6 +540,15 @@ PER_ARTICLE_VARIATION_NOTE = {
         "تكرار محتوى في نسخة nezams.com لهذا النطاق تحديداً (تأكيد مستقل بعد "
         "البناء وجد أن النطاق يقرأ الآن كأحكام تأمين بحري متتابعة ومتمايزة "
         "وليست مكررة)؛ راجع official_source.json الخاص بالمسار."
+    ),
+    "accounting_auditing_law": (
+        "17 مادة غير معدَّلة + نص التعديل الأول (م/169، 1446هـ) للمواد الخمس المعدَّلة "
+        "(1، 4، 5، 19، 20) مصدرها مزدوج رسمي (أرشيف Wayback لبوابة BOE — نافذة "
+        "التعديلات لا النص الرئيسي الراكد — × نسخة SOCPA الرسمية) متطابقة دون فارق "
+        "جوهري. أما تعديل المادة الأولى الثاني والأحدث (قرار مجلس الوزراء 283، "
+        "1447هـ، تعميم تعريف 'الوزير') فمصدره ثانوي حصراً (PDF الهيئة SOCPA × "
+        "qanoonsa.com) دون أي رقم مرسوم ملكي معروف يُصدره ودون أي تأكيد من بوابة BOE "
+        "على الإطلاق؛ راجع official_source.json الخاص بالمسار."
     ),
 }
 

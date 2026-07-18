@@ -170,6 +170,7 @@ HEALTHCARE_PROFESSIONS_LAW_LLM = os.path.join(ROOT, "data", "healthcare_professi
 FINANCE_LEASE_LAW_LLM = os.path.join(ROOT, "data", "finance_lease_arabic_legal_llm", "finance_lease_law_legal_llm_001_028.json")
 MARITIME_COMMERCIAL_LAW_LLM = os.path.join(ROOT, "data", "maritime_commercial_arabic_legal_llm", "maritime_commercial_law_legal_llm_001_391.json")
 GCC_ANTI_DUMPING_LAW_LLM = os.path.join(ROOT, "data", "gcc_anti_dumping_arabic_legal_llm", "gcc_anti_dumping_law_legal_llm_001_017.json")
+ACCOUNTING_AUDITING_LAW_LLM = os.path.join(ROOT, "data", "accounting_auditing_arabic_legal_llm", "accounting_auditing_law_legal_llm_001_022.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -333,6 +334,7 @@ def main() -> int:
     finance_lease_law_llm = _load_json(FINANCE_LEASE_LAW_LLM)
     maritime_commercial_law_llm = _load_json(MARITIME_COMMERCIAL_LAW_LLM)
     gcc_anti_dumping_law_llm = _load_json(GCC_ANTI_DUMPING_LAW_LLM)
+    accounting_auditing_law_llm = _load_json(ACCOUNTING_AUDITING_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -353,7 +355,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 132,
+        "total_tracks": 133,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -489,6 +491,7 @@ def main() -> int:
             + finance_lease_law_llm["record_count"]  # 28 Finance Lease Law (M/48, 1433H) (BOE-via-Wayback archive x SAMA rulebook PDF x nezams.com triple-verified, live BOE unreachable, see track notes)
             + maritime_commercial_law_llm["record_count"]  # 391 Maritime Commercial Law (M/33, 1440H) (BOE-via-Wayback archive x nezams.com x BOE official English translation triple-verified, live BOE unreachable, see track notes)
             + gcc_anti_dumping_law_llm["record_count"]  # 17 GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law (M/30, 1427H) (BOE-via-Wayback archive x qistas.com partial cross-check, live BOE unreachable, unresolved M/7 1434H amendment risk, see track notes)
+            + accounting_auditing_law_llm["record_count"]  # 22 Law of the Accounting and Auditing Profession (M/59, 1442H) (BOE-via-Wayback archive x SOCPA official PDF x qanoonsa.com cross-verified, live BOE unreachable, replaces M/12 1412H, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -615,6 +618,7 @@ def main() -> int:
             + finance_lease_law_llm["record_count"]
             + maritime_commercial_law_llm["record_count"]
             + gcc_anti_dumping_law_llm["record_count"]
+            + accounting_auditing_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4521,6 +4525,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law «النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون» — Royal Decree M/30, dated 17/5/1427H (13 June 2006), ratifying Council of Ministers Resolution No. 122 (16/5/1427H), which adopts for Saudi Arabia the GCC Supreme Council's unified law approved at its 24th Session (Kuwait, 27-28 Shawwal 1424H / 21-22 December 2003). A medium-priority coverage-gap identified via the coverage_gap_map research pass; **17 records, all اصلية**, correcting the gap-map's own rough estimate of 'approx. 30-40 articles'. **NO أبواب/فصول exist** — a flat, individually-titled 17-article structure (this corrects an assumption carried into the research brief): (1) الهدف والنطاق؛ (2) التعاريف؛ (3) فرض التدابير؛ (4) التدابير المؤقتة؛ (5) التدابير النهائية؛ (6) أشكال التدابير؛ (7) إجراءات الشكوى والتحقيق؛ (8) تشكيل اللجنة الدائمة؛ (9) اختصاصات اللجنة الدائمة؛ (10) اللجنة الوزارية؛ (11) الأمانة الفنية للجنة الدائمة؛ (12) الطعن؛ (13) سرية المعلومات؛ (14) الجزاءات؛ (15) اللائحة التنفيذية؛ (16) (BOE's own heading carries no title text for this article, preserved as a documented gap rather than fabricated); (17) النفاذ. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-PRIMARY-X-QISTAS-PARTIAL-STRUCTURAL-CROSSCHECK — the live laws.boe.gov.sa portal was unreachable this pass (HTTP 503), but two independent Wayback Machine snapshots of the exact law page, roughly 20 months apart, show identical unamended 17-article text with status 'ساري' and list only M/30 + Resolution 122 as issuing instruments; qistas.com independently corroborated Articles 1-3's numbering and content only (not the full text). **MAJOR UNRESOLVED DISCREPANCY, carried forward rather than resolved:** multiply-corroborated secondary evidence — WIPO Lex's record for this law (SA034, marked superseded by SA086) and a wholly separate, currently in-force 2022 Saudi law (نظام المعالجات التجارية في التجارة الدولية, Royal Decree M/60, 29/4/1444H, whose own preamble explicitly cites 'النظام الموحد ... (المعدل)، الموافق عليه بالمرسوم الملكي رقم (م/7) وتاريخ 20/3/1434هـ') — indicates Royal Decree M/7 (20/3/1434H, 1 February 2013) approved an amended ('معدل') version of this law, restructured into 15 articles per the GCC Secretariat General's own official PDF (gcc-sg.org, live-fetched), approved at the GCC Supreme Council's 31st Session (Abu Dhabi, 6-7 December 2010). However, BOE's own primary catalog page for this law — the actual source ingested — shows zero reference to M/7 across two snapshots 20 months apart, and Umm Al-Qura Gazette's own text of M/7 could not be retrieved, nor could WIPO Lex's full-text PDF endpoints be made to serve actual content (JS-shell wrapper only, all URLs tried). Consistent with this corpus's trust policy, this track ingests BOE's directly-verified 17-article original text rather than substitute the unconfirmed amended text, and flags this as a live, unresolved sourcing risk for any downstream use — not a settled finding. Other flagged discrepancies: Article 16's BOE heading carries no title (preserved empty, not fabricated); a companion Implementing Regulation is confirmed to exist (Article 15 references it, bundled in the GCC-SG PDF) but is out of scope for this track, following the precedent set by finance_lease_law/banking_control_law/others. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "accounting_auditing_law",
+                "display_name_ar": "نظام مهنة المحاسبة والمراجعة",
+                "display_name_en": "Law of the Accounting and Auditing Profession",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES",
+                "source_authority": "Royal Decree M/59, 27/7/1442H, ratifying Council of Ministers Resolution No. 416 (25/7/1442H), replacing Royal Decree M/12 13/5/1412H — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable), cross-verified against SOCPA's own official PDF of the law and two independent qanoonsa.com pages",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": accounting_auditing_law_llm["record_count"],
+                    "data_path": "data/accounting_auditing_arabic_legal_llm/accounting_auditing_law_legal_llm_001_022.json"}},
+                "record_counts": {"arabic_articles": accounting_auditing_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 17, "معدلة": 5, "ملغاة": 0, "مضافة": 0},
+                                  "total": accounting_auditing_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/accounting_auditing/law/official_source/accounting_auditing_law_official_source.json",
+                    "sources/accounting_auditing/law/verified/accounting_auditing_law_verified_records.jsonl",
+                    "data/accounting_auditing_arabic_legal_llm/accounting_auditing_law_legal_llm_001_022.json",
+                ],
+                "validator_targets": ["make accounting-auditing-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of the Accounting and Auditing Profession «نظام مهنة المحاسبة والمراجعة» — Royal Decree M/59, dated 27/7/1442H (11 March 2021), ratifying Council of Ministers Resolution No. 416 (25/7/1442H). **Confirmed supersession of a predecessor:** this law's own Article 21 states it replaces the Law of Certified Public Accountants (Royal Decree M/12, 13/5/1412H), whose separate BOE page independently shows status 'لاغي' (repealed) — a doubly-confirmed repeal, modeled as a supersession-graph edge; the predecessor itself is not ingested. A medium-priority coverage-gap identified via the coverage_gap_map research pass. **22 records: 17 اصلية, 5 معدلة** (Articles 1, 4, 5, 19, 20) — flat structure, **NO أبواب/فصول**, and BOE's source carries no inline per-article titles (no title_ar field used, following the finance_lease_law precedent). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-SOCPA-OFFICIAL-PDF-X-QANOONSA-CROSS-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot (20251015113239) was cross-verified against SOCPA's own official PDF of the full law (socpa.org.sa, the professional regulator's official source, fetched via Wayback since the live site gave a connection reset) and two independent qanoonsa.com pages, agreeing on all 17 unamended articles. **MAJOR VERIFIED ANOMALY, genuinely confirmed rather than a reachability artifact:** BOE's own archived page flags Articles 1/4/5/19/20 with a 'changed-article' marker and a changelog popup quoting Royal Decree M/169's (10/8/1446H) amended wording — but that SAME page's main displayed body text for those 5 articles remained byte-identical, unamended, pre-M/169 wording across three snapshots spanning 8+ months after the amendment's own gazette publication, confirming genuine staleness of BOE's default rendering (not a proxy artifact), consistent with this corpus's traffic_law/patent_law/income_tax_law/environmental_law precedent for this specific failure mode. This track ingests the amended (changelog-popup) wording, cross-verified against SOCPA's PDF, not the stale main body. **has_per_article_variation flagged for Article 1**: it carries a FURTHER, more recent amendment (Council of Ministers Resolution 283, 22/4/1447H, generalizing the 'الوزير' definition) that postdates this track's only available BOE snapshot entirely and rests on SOCPA's PDF and qanoonsa.com alone, with no Royal Decree number found ratifying it and no BOE confirmation at all — flagged, not silently resolved. Other flagged discrepancies: no inline BOE article titles; a companion Implementing Regulation and SOCPA's own separate organizational statute (تنظيم الهيئة) are both confirmed to exist but are out of scope for / not conflated with this track. Arabic governs; not legal advice.",
             },
         ],
     }

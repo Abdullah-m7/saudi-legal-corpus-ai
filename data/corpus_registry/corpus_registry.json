@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9388,
+  "total_primary_arabic_governing_records": 9410,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10283,
-  "total_tracks": 132,
+  "total_registry_counted_records": 10305,
+  "total_tracks": 133,
   "tracks": [
     {
       "boundaries": {
@@ -6231,6 +6231,55 @@
       "validator_targets": [
         "make gcc-anti-dumping-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/accounting_auditing/law/official_source/accounting_auditing_law_official_source.json",
+        "sources/accounting_auditing/law/verified/accounting_auditing_law_verified_records.jsonl",
+        "data/accounting_auditing_arabic_legal_llm/accounting_auditing_law_legal_llm_001_022.json"
+      ],
+      "display_name_ar": "نظام مهنة المحاسبة والمراجعة",
+      "display_name_en": "Law of the Accounting and Auditing Profession",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/accounting_auditing_arabic_legal_llm/accounting_auditing_law_legal_llm_001_022.json",
+          "governing": true,
+          "record_count": 22,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of the Accounting and Auditing Profession «نظام مهنة المحاسبة والمراجعة» — Royal Decree M/59, dated 27/7/1442H (11 March 2021), ratifying Council of Ministers Resolution No. 416 (25/7/1442H). **Confirmed supersession of a predecessor:** this law's own Article 21 states it replaces the Law of Certified Public Accountants (Royal Decree M/12, 13/5/1412H), whose separate BOE page independently shows status 'لاغي' (repealed) — a doubly-confirmed repeal, modeled as a supersession-graph edge; the predecessor itself is not ingested. A medium-priority coverage-gap identified via the coverage_gap_map research pass. **22 records: 17 اصلية, 5 معدلة** (Articles 1, 4, 5, 19, 20) — flat structure, **NO أبواب/فصول**, and BOE's source carries no inline per-article titles (no title_ar field used, following the finance_lease_law precedent). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-SOCPA-OFFICIAL-PDF-X-QANOONSA-CROSS-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot (20251015113239) was cross-verified against SOCPA's own official PDF of the full law (socpa.org.sa, the professional regulator's official source, fetched via Wayback since the live site gave a connection reset) and two independent qanoonsa.com pages, agreeing on all 17 unamended articles. **MAJOR VERIFIED ANOMALY, genuinely confirmed rather than a reachability artifact:** BOE's own archived page flags Articles 1/4/5/19/20 with a 'changed-article' marker and a changelog popup quoting Royal Decree M/169's (10/8/1446H) amended wording — but that SAME page's main displayed body text for those 5 articles remained byte-identical, unamended, pre-M/169 wording across three snapshots spanning 8+ months after the amendment's own gazette publication, confirming genuine staleness of BOE's default rendering (not a proxy artifact), consistent with this corpus's traffic_law/patent_law/income_tax_law/environmental_law precedent for this specific failure mode. This track ingests the amended (changelog-popup) wording, cross-verified against SOCPA's PDF, not the stale main body. **has_per_article_variation flagged for Article 1**: it carries a FURTHER, more recent amendment (Council of Ministers Resolution 283, 22/4/1447H, generalizing the 'الوزير' definition) that postdates this track's only available BOE snapshot entirely and rests on SOCPA's PDF and qanoonsa.com alone, with no Royal Decree number found ratifying it and no BOE confirmation at all — flagged, not silently resolved. Other flagged discrepancies: no inline BOE article titles; a companion Implementing Regulation and SOCPA's own separate organizational statute (تنظيم الهيئة) are both confirmed to exist but are out of scope for / not conflated with this track. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES",
+      "record_counts": {
+        "arabic_articles": 22,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 5,
+          "ملغاة": 0
+        },
+        "total": 22
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/59, 27/7/1442H, ratifying Council of Ministers Resolution No. 416 (25/7/1442H), replacing Royal Decree M/12 13/5/1412H — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable), cross-verified against SOCPA's own official PDF of the law and two independent qanoonsa.com pages",
+      "status": "complete",
+      "track_id": "accounting_auditing_law",
+      "validator_targets": [
+        "make accounting-auditing-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6238,6 +6287,7 @@
     "note": "Flat cross-law retrieval index projecting all Arabic LLM-ready layers. A projection of already-counted records; NOT added to registry totals to avoid double-counting.",
     "records_per_corpus": {
       "aawan": 35,
+      "accounting_auditing": 22,
       "alimony_fund": 17,
       "allegiance_commission": 25,
       "aml": 52,
@@ -6339,7 +6389,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9219,
+    "total_records": 9241,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
