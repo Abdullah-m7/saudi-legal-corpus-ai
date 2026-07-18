@@ -19,14 +19,14 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 130,
+  "total_tracks": 131,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 91,
+    "TIER_1_PRIMARY_MULTI_SOURCE": 92,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 12,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 21
   },
-  "tracks_with_per_article_variation": 15,
+  "tracks_with_per_article_variation": 16,
   "tracks": [
     {
       "track_id": "aawan_regulation",
@@ -643,6 +643,13 @@
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
+    },
+    {
+      "track_id": "maritime_commercial_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، لكن نسختي أرشيف Wayback Machine لصفحة BOE العربية وترجمتها الإنجليزية الرسمية كانتا متاحتين عبر https:// — مصدران رسميان (نسخة عربية ونسخة إنجليزية من BOE نفسها) متقاربان، مع تدقيق مقارن ثانوي (nezams.com) — يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، رغم أن أحدهما ترجمة إنجليزية لا نصاً عربياً مستقلاً بالكامل. راجع has_per_article_variation للمواد 316-325 التي اعتُمدت فيها الترجمة الإنجليزية حصراً بدلاً من nezams.com بسبب خلل تكرار محتوى في ذلك الموقع لهذا النطاق تحديداً.",
+      "has_per_article_variation": true,
+      "per_article_variation_note": "381 من 391 مادة مصدرها مزدوج رسمي/ثانوي (أرشيف Wayback لبوابة BOE العربية × nezams.com)، متطابقة حرفياً دون فارق جوهري (بعد تطبيع فروق تجميلية في المسافات وعلامات الاقتباس وترتيب التشكيل). أما المواد 316-325 (أحكام التأمين البحري) فاعتُمد فيها أرشيف الترجمة الإنجليزية الرسمية لبوابة BOE بدلاً من nezams.com، بعد اكتشاف خلل تكرار محتوى في نسخة nezams.com لهذا النطاق تحديداً (تأكيد مستقل بعد البناء وجد أن النطاق يقرأ الآن كأحكام تأمين بحري متتابعة ومتمايزة وليست مكررة)؛ راجع official_source.json الخاص بالمسار."
     },
     {
       "track_id": "marriage_contract_hearing_regulation",

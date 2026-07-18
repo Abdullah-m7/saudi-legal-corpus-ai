@@ -658,6 +658,27 @@ EDGES = [
         "source_ref": "sources/bankruptcy/law/official_source/bankruptcy_law_official_source.json (supersedes_note)",
     },
     {
+        "from_track_id": "maritime_commercial_law",
+        "relation": "repeals_partial",
+        "target_track_id": None,
+        "target_description_ar": "نظام المحكمة التجارية (المرسوم الملكي رقم 32، السابق)",
+        "target_decree": "Royal Decree No. 32, 15/1/1350H",
+        "affected_articles": "الباب الثاني (Book Two) of the former Commercial "
+                             "Court Law repealed by maritime_commercial_law "
+                             "article 391",
+        "note": "maritime_commercial_law's own official_source.json article "
+                "391: 'ويلغي الباب الثاني من نظام المحكمة التجارية، الصادر "
+                "بالمرسوم الملكي رقم (32) وتاريخ 15/1/1350هـ.' This is the "
+                "SAME untracked predecessor instrument already modeled above "
+                "via bankruptcy_law's own repeals_partial edge (which repeals "
+                "arts 103-137 of the same 1350H Commercial Court Law) — the "
+                "two current tracks repeal DIFFERENT parts of the same "
+                "untracked predecessor, modeled as two separate edges rather "
+                "than merged into one. The predecessor is not separately "
+                "ingested in this corpus.",
+        "source_ref": "sources/maritime_commercial/law/official_source/maritime_commercial_law_official_source.json (article 391)",
+    },
+    {
         "from_track_id": "anti_fraud_law",
         "relation": "repeals_full",
         "target_track_id": None,
@@ -698,6 +719,22 @@ EDGES = [
                 "instrument named in the same article. Predecessor not "
                 "separately ingested in this corpus.",
         "source_ref": "sources/healthcare_professions/law/official_source/healthcare_professions_law_official_source.json (article 42)",
+    },
+    {
+        "from_track_id": "maritime_commercial_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الموانئ والمرافئ والمنائر البحرية (السابق)",
+        "target_decree": "Royal Decree M/27, 24/6/1394H",
+        "note": "maritime_commercial_law's own official_source.json article "
+                "391, second repeal clause in the same article: 'ونظام "
+                "الموانئ والمرافئ والمنائر البحرية، الصادر بالمرسوم الملكي "
+                "رقم (م/27) وتاريخ 24/6/1394هـ.' Modeled as a separate edge "
+                "from the Commercial Court Law partial-repeal above since it "
+                "is a distinct predecessor instrument repealed in its "
+                "entirety, named in the same article. Predecessor not "
+                "separately ingested in this corpus.",
+        "source_ref": "sources/maritime_commercial/law/official_source/maritime_commercial_law_official_source.json (article 391)",
     },
 
     # --- superseded_by: this track itself confirmed superseded by a

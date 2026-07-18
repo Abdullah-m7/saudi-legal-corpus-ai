@@ -132,6 +132,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503": TIER_2,
     "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_2,
     "BOE_WAYBACK_ARCHIVE_X_SAMA_RULEBOOK_PDF_X_NEZAMS_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
+    "BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -377,6 +378,18 @@ RATIONALE_OVERRIDE = {
         "ثانوي، يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط "
         "finance_companies_law (BOE عبر Wayback × bfc.gov.sa)."
     ),
+    "maritime_commercial_law": (
+        "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_"
+        "ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة "
+        "الخبراء (BOE) الحية متعذرة الوصول، لكن نسختي أرشيف Wayback Machine "
+        "لصفحة BOE العربية وترجمتها الإنجليزية الرسمية كانتا متاحتين عبر "
+        "https:// — مصدران رسميان (نسخة عربية ونسخة إنجليزية من BOE نفسها) "
+        "متقاربان، مع تدقيق مقارن ثانوي (nezams.com) — يطابق تعريف TIER_1 "
+        "(مصدرين رسميين فأكثر متقاربين)، رغم أن أحدهما ترجمة إنجليزية لا "
+        "نصاً عربياً مستقلاً بالكامل. راجع has_per_article_variation للمواد "
+        "316-325 التي اعتُمدت فيها الترجمة الإنجليزية حصراً بدلاً من "
+        "nezams.com بسبب خلل تكرار محتوى في ذلك الموقع لهذا النطاق تحديداً."
+    ),
     "finance_companies_law": (
         "official_text_status='BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED': "
         "بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503 مباشرة، 422 عبر r.jina.ai)، "
@@ -476,6 +489,16 @@ PER_ARTICLE_VARIATION_NOTE = {
         "فارق. أما نص تعديل المادة الرابعة لعام 1440هـ (القرار 472) فمصدره ثانوي "
         "واحد فقط (nezams.com) — بوابة BOE تذكر القرار نفسه دون إيراد نصه؛ راجع "
         "official_source.json الخاص بالمسار."
+    ),
+    "maritime_commercial_law": (
+        "381 من 391 مادة مصدرها مزدوج رسمي/ثانوي (أرشيف Wayback لبوابة BOE "
+        "العربية × nezams.com)، متطابقة حرفياً دون فارق جوهري (بعد تطبيع "
+        "فروق تجميلية في المسافات وعلامات الاقتباس وترتيب التشكيل). أما "
+        "المواد 316-325 (أحكام التأمين البحري) فاعتُمد فيها أرشيف الترجمة "
+        "الإنجليزية الرسمية لبوابة BOE بدلاً من nezams.com، بعد اكتشاف خلل "
+        "تكرار محتوى في نسخة nezams.com لهذا النطاق تحديداً (تأكيد مستقل بعد "
+        "البناء وجد أن النطاق يقرأ الآن كأحكام تأمين بحري متتابعة ومتمايزة "
+        "وليست مكررة)؛ راجع official_source.json الخاص بالمسار."
     ),
 }
 

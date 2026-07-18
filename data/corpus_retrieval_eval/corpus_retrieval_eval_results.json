@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 288,
-  "top1_hits": 262,
-  "top3_hits": 281,
-  "top5_hits": 284,
-  "top1_accuracy": 0.9097,
-  "top3_accuracy": 0.9757,
-  "top5_accuracy": 0.9861,
-  "mrr_at_5": 0.9422,
+  "total_queries": 290,
+  "top1_hits": 264,
+  "top3_hits": 283,
+  "top5_hits": 286,
+  "top1_accuracy": 0.9103,
+  "top3_accuracy": 0.9759,
+  "top5_accuracy": 0.9862,
+  "mrr_at_5": 0.9426,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -3858,9 +3858,9 @@
      "score": 14
     },
     {
-     "record_id": "evidence-expertise-llm-art-026",
-     "article_number": 26,
-     "score": 10
+     "record_id": "maritime-commercial-law-llm-art-323",
+     "article_number": 323,
+     "score": 14
     }
    ]
   },
@@ -4969,13 +4969,13 @@
      "score": 33
     },
     {
-     "record_id": "labor-reg-llm-art-033",
-     "article_number": 33,
-     "score": 13
+     "record_id": "maritime-commercial-law-llm-art-237",
+     "article_number": 237,
+     "score": 14
     },
     {
-     "record_id": "cooperative-health-insurance-law-llm-art-017",
-     "article_number": 17,
+     "record_id": "labor-reg-llm-art-033",
+     "article_number": 33,
      "score": 13
     }
    ]
@@ -6710,9 +6710,9 @@
      "score": 20
     },
     {
-     "record_id": "labor-reg-llm-art-014",
-     "article_number": 14,
-     "score": 19
+     "record_id": "maritime-commercial-law-llm-art-390",
+     "article_number": 390,
+     "score": 20
     }
    ]
   },
@@ -6736,14 +6736,14 @@
      "score": 41
     },
     {
-     "record_id": "anti-narcotics-law-llm-art-057",
-     "article_number": 57,
-     "score": 22
+     "record_id": "maritime-commercial-law-llm-art-105",
+     "article_number": 105,
+     "score": 24
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
-     "score": 22
+     "record_id": "maritime-commercial-law-llm-art-388",
+     "article_number": 388,
+     "score": 23
     }
    ]
   },
@@ -7640,9 +7640,9 @@
      "score": 18
     },
     {
-     "record_id": "oa-llm-companies-art-213",
-     "article_number": 213,
-     "score": 14
+     "record_id": "maritime-commercial-law-llm-art-317",
+     "article_number": 317,
+     "score": 15
     }
    ]
   },
@@ -8069,14 +8069,14 @@
      "score": 37
     },
     {
+     "record_id": "maritime-commercial-law-llm-art-211",
+     "article_number": 211,
+     "score": 31
+    },
+    {
      "record_id": "terrorism-law-llm-art-051",
      "article_number": 51,
      "score": 30
-    },
-    {
-     "record_id": "anti-concealment-law-llm-art-009",
-     "article_number": 9,
-     "score": 28
     }
    ]
   },
@@ -8410,13 +8410,13 @@
      "score": 33
     },
     {
-     "record_id": "basic-law-of-governance-llm-art-033",
-     "article_number": 33,
-     "score": 21
+     "record_id": "maritime-commercial-law-llm-art-258",
+     "article_number": 258,
+     "score": 22
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
+     "record_id": "basic-law-of-governance-llm-art-033",
+     "article_number": 33,
      "score": 21
     }
    ]
@@ -8658,14 +8658,14 @@
      "score": 55
     },
     {
+     "record_id": "maritime-commercial-law-llm-art-382",
+     "article_number": 382,
+     "score": 45
+    },
+    {
      "record_id": "anti-fraud-law-llm-art-017",
      "article_number": 17,
      "score": 44
-    },
-    {
-     "record_id": "vat-law-llm-art-045",
-     "article_number": 45,
-     "score": 39
     }
    ]
   },
@@ -8689,14 +8689,14 @@
      "score": 67
     },
     {
-     "record_id": "anti-fraud-law-llm-art-001",
-     "article_number": 1,
-     "score": 30
+     "record_id": "maritime-commercial-law-llm-art-265",
+     "article_number": 265,
+     "score": 34
     },
     {
-     "record_id": "oa-llm-companies-art-187",
-     "article_number": 187,
-     "score": 28
+     "record_id": "maritime-commercial-law-llm-art-245",
+     "article_number": 245,
+     "score": 33
     }
    ]
   },
@@ -8945,6 +8945,68 @@
      "record_id": "real-estate-mortgage-law-llm-art-045",
      "article_number": 45,
      "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "mar-001",
+   "query_ar": "يلتزم المستأجر بالمحافظة على السفينة واستعمالها في الغرض المتفق عليه وفقاً لخصائصها الفنية الثابتة في شهاداتها",
+   "category": "topical",
+   "gold": {
+    "corpus": "maritime_commercial",
+    "law_component": "law",
+    "article_number": 150
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "maritime-commercial-law-llm-art-150",
+     "article_number": 150,
+     "score": 39
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-149",
+     "article_number": 149,
+     "score": 16
+    },
+    {
+     "record_id": "civil-law-llm-art-449",
+     "article_number": 449,
+     "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "mar-002",
+   "query_ar": "لا تسمع دعوى استرداد المبالغ المدفوعة بمقتضى عقد التأمين بعد مضي سنتين تبدآن من تاريخ الوفاء بغير المستحق",
+   "category": "topical",
+   "gold": {
+    "corpus": "maritime_commercial",
+    "law_component": "law",
+    "article_number": 325
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "maritime-commercial-law-llm-art-325",
+     "article_number": 325,
+     "score": 30
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-240",
+     "article_number": 240,
+     "score": 29
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-154",
+     "article_number": 154,
+     "score": 28
     }
    ]
   }

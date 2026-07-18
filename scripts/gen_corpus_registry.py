@@ -168,6 +168,7 @@ FINANCE_COMPANIES_LAW_LLM = os.path.join(ROOT, "data", "finance_companies_arabic
 COOPERATIVE_HEALTH_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "cooperative_health_insurance_arabic_legal_llm", "cooperative_health_insurance_law_legal_llm_001_019.json")
 HEALTHCARE_PROFESSIONS_LAW_LLM = os.path.join(ROOT, "data", "healthcare_professions_arabic_legal_llm", "healthcare_professions_law_legal_llm_001_044.json")
 FINANCE_LEASE_LAW_LLM = os.path.join(ROOT, "data", "finance_lease_arabic_legal_llm", "finance_lease_law_legal_llm_001_028.json")
+MARITIME_COMMERCIAL_LAW_LLM = os.path.join(ROOT, "data", "maritime_commercial_arabic_legal_llm", "maritime_commercial_law_legal_llm_001_391.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -329,6 +330,7 @@ def main() -> int:
     cooperative_health_insurance_law_llm = _load_json(COOPERATIVE_HEALTH_INSURANCE_LAW_LLM)
     healthcare_professions_law_llm = _load_json(HEALTHCARE_PROFESSIONS_LAW_LLM)
     finance_lease_law_llm = _load_json(FINANCE_LEASE_LAW_LLM)
+    maritime_commercial_law_llm = _load_json(MARITIME_COMMERCIAL_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -349,7 +351,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 130,
+        "total_tracks": 131,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -483,6 +485,7 @@ def main() -> int:
             + cooperative_health_insurance_law_llm["record_count"]  # 19 Cooperative Health Insurance Law (M/10, 1420H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
             + healthcare_professions_law_llm["record_count"]  # 44 Law of Practicing Healthcare Professions (M/59, 1426H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
             + finance_lease_law_llm["record_count"]  # 28 Finance Lease Law (M/48, 1433H) (BOE-via-Wayback archive x SAMA rulebook PDF x nezams.com triple-verified, live BOE unreachable, see track notes)
+            + maritime_commercial_law_llm["record_count"]  # 391 Maritime Commercial Law (M/33, 1440H) (BOE-via-Wayback archive x nezams.com x BOE official English translation triple-verified, live BOE unreachable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -607,6 +610,7 @@ def main() -> int:
             + cooperative_health_insurance_law_llm["record_count"]
             + healthcare_professions_law_llm["record_count"]
             + finance_lease_law_llm["record_count"]
+            + maritime_commercial_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4457,6 +4461,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Finance Lease Law «نظام الإيجار التمويلي» — Royal Decree M/48, dated 13/8/1433H (3/7/2012), published 13/10/1433H. Governs the finance-lease (leasing) contract itself — registration, rights, enforcement — as a SEPARATE, more specific statute from this corpus's already-ingested `finance_companies_law` (Finance Companies Control Law, M/51, 1433H), which regulates finance companies generally; not conflated. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate was independently re-verified and confirmed correct (unlike several prior gap-map entries this corpus found wrong). 28 records across a فصل تمهيدي (تعريفات, Article 1) plus 4 فصول (عقد الإيجار التمويلي arts 2-17; سجل العقود arts 18-23; المخالفات والمنازعات arts 24-26; أحكام ختامية arts 27-28) — all 28 اصلية, never amended since enactment (only the companion Implementing Regulation has itself been separately amended). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-SAMA-RULEBOOK-PDF-X-NEZAMS-TRIPLE-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot (both http:// and https:// tried, https:// worked, http:// returned 403) was used as primary, cross-verified byte-for-byte against nezams.com's live transcription and against rulebook.sama.gov.sa's official Arabic and English PDFs (the only source carrying inline فصل headings), agreeing on all 28 articles. An initial webpage-summary artifact incorrectly suggested Chapter Two ended at Article 20; corrected to Article 23 after reading SAMA's own primary-source PDFs page-by-page. Other flagged discrepancies: the institutional-name reference to مؤسسة النقد العربي السعودي (SAMA, since renamed to the Saudi Central Bank by a separate Law, M/36) is a naming footnote, not a textual amendment to this Law's own defined terms — preserved verbatim; no explicit predecessor-repeal clause was found naming any prior statute, a documented negative finding rather than an assumption; Articles 20 and 22 carry genuine decorative tatweel characters confirmed present identically in both BOE and nezams.com, preserved verbatim rather than 'cleaned'; a companion Implementing Regulation (Administrative/Governor's Decision 1/م ش ت, 14/4/1434H, itself separately amended at least once) is confirmed to exist but is out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law/healthcare_professions_law. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "maritime_commercial_law",
+                "display_name_ar": "النظام البحري التجاري",
+                "display_name_en": "Maritime Commercial Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/33, 5/4/1440H — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription and, for a flagged 10-article range, against a Wayback Machine archive of BOE's own official English-translation PDF",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": maritime_commercial_law_llm["record_count"],
+                    "data_path": "data/maritime_commercial_arabic_legal_llm/maritime_commercial_law_legal_llm_001_391.json"}},
+                "record_counts": {"arabic_articles": maritime_commercial_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 391, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": maritime_commercial_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/maritime_commercial/law/official_source/maritime_commercial_law_official_source.json",
+                    "sources/maritime_commercial/law/verified/maritime_commercial_law_verified_records.jsonl",
+                    "data/maritime_commercial_arabic_legal_llm/maritime_commercial_law_legal_llm_001_391.json",
+                ],
+                "validator_targets": ["make maritime-commercial-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Maritime Commercial Law «النظام البحري التجاري» — Royal Decree M/33, dated 5/4/1440H (12 December 2018), approving Council of Ministers Resolution No. 197 (4/4/1440H), published in the Official Gazette 28/4/1440H (4 January 2019). This corpus's largest single-track ingestion to date. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate was confirmed correct (unlike several prior gap-map entries this corpus found wrong). **391 records** across a فصل تمهيدي (تعريفات, Article 1) plus **10 أبواب** — الباب الأول (السفينة, 2-30, 7 فصول: أحكام عامة، جنسية السفينة، تسجيل السفينة، تسجيل السفينة المستأجرة غير المجهزة، قيد الوحدات البحرية المعفاة من التسجيل، المنصات البحرية، هيئات تصنيف السفن)؛ الباب الثاني (الحقوق العينية على السفينة, 31-73, 3 فصول)؛ الباب الثالث (الحجز على السفينة, 74-91, 2 فصلين)؛ الباب الرابع (أشخاص الملاحة البحرية, 92-141, 4 فصول)؛ الباب الخامس (استغلال السفينة, 142-253, 4 فصول — الفصل الرابع عقد النقل البحري, 179-253, further split into 5 أولاً..خامساً subsections)؛ الباب السادس (الحوادث البحرية, 254-292, 4 فصول)؛ الباب السابع (التأمين البحري, 293-357, 5 فصول)؛ الباب الثامن (منع التلوث البحري ومكافحته, 358-362, no فصول)؛ الباب التاسع (سلامة الملاحة بالموانئ والمياه الإقليمية, 363-372, 2 فصلين)؛ الباب العاشر (العقوبات, 373-388, no فصول) — plus أحكام عامة ختامية (389-391) — **all 391 اصلية**, never amended since enactment, confirmed by BOE's own per-article amendment markers, nezams.com's own metadata, and independent web search. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-NEZAMS-X-BOE-OFFICIAL-ENGLISH-TRANSLATION-TRIPLE-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass (connection reset), but Wayback Machine snapshots of both the BOE Arabic law page and BOE's own official English-translation PDF were reachable via https:// (http:// returned 403 for both); cross-verified programmatically against nezams.com — 381 of 391 articles matched exactly after normalizing NBSP/curly-quote/diacritic-order cosmetics, with the remaining 10 (Articles 316-325, marine-insurance provisions) resolved via BOE's own official English translation after nezams.com was found to carry a content-duplication bug in that specific range (independently re-verified this pass: the range now reads as distinct, coherent, sequential provisions). Article 391 confirms this law repeals Book Two of the Commercial Court Regulation (Royal Decree No. 32, 15/1/1350H) and the Ports, Harbours and Lighthouses Law (Royal Decree M/27, 24/6/1394H) — both modeled as repeals_full/repeals_partial edges in the supersession graph. Other flagged discrepancies: Article 1 defines 'الوزير' but 5 operative articles instead use 'الرئيس', verified as genuine primary-source text rather than an extraction artifact; whitespace/quote-glyph/diacritic-order cosmetic normalization was applied to 28 articles, documented rather than silently absorbed; the repeal clause's scope was verified but not exhaustively diffed against the two repealed predecessor instruments' full text, a documented gap; two further secondary sources were attempted for additional cross-verification but were inconclusive (access-gated/JS-rendered), not relied upon. Multiple companion Implementing Regulations exist per Article 390 (vessel registration, maritime transport licensing, and others issued by the Transport General Authority) but are confirmed out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law/healthcare_professions_law/finance_lease_law. Arabic governs; not legal advice.",
             },
         ],
     }

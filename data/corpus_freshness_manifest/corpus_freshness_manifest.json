@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 130 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 130 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 131 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 131 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 130,
+  "total_tracks": 131,
   "known_source_staleness_risk_count": 4,
   "known_source_staleness_risk_tracks": [
     "environmental_law",
@@ -1672,6 +1672,27 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "maritime_commercial_law",
+      "display_name_en": "Maritime Commercial Law",
+      "display_name_ar": "النظام البحري التجاري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، لكن نسختي أرشيف Wayback Machine لصفحة BOE العربية وترجمتها الإنجليزية الرسمية كانتا متاحتين عبر https:// — مصدران رسميان (نسخة عربية ونسخة إنجليزية من BOE نفسها) متقاربان، مع تدقيق مقارن ثانوي (nezams.com) — يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، رغم أن أحدهما ترجمة إنجليزية لا نصاً عربياً مستقلاً بالكامل. راجع has_per_article_variation للمواد 316-325 التي اعتُمدت فيها الترجمة الإنجليزية حصراً بدلاً من nezams.com بسبب خلل تكرار محتوى في ذلك الموقع لهذا النطاق تحديداً.",
+      "registry_source_authority": "Royal Decree M/33, 5/4/1440H — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription and, for a flagged 10-article range, against a Wayback Machine archive of BOE's own official English-translation PDF",
+      "registry_source_url": null,
+      "official_source_file": "sources/maritime_commercial/law/official_source/maritime_commercial_law_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/43344715-1e0d-4e7f-9895-aa3d00f670e6/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
