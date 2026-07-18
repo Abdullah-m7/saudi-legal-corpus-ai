@@ -2,11 +2,11 @@
   "layer": "CORPUS_CHUNKING_LAYER",
   "purpose": "Additive, derived text-segmentation layer over the unified retrieval index, sized for feeding a future embedding pipeline. Chunk boundaries are computed in whitespace-delimited WORDS, deliberately NOT tied to any specific embedding model's tokenizer (this corpus does not commit to one embedding provider). No embeddings/vectors are computed anywhere in this layer or this generator -- that is a separate, later step. This is pure text segmentation, one step before an embeddings pipeline would run.",
   "source_index": "data/corpus_unified_index/corpus_unified_llm_index.jsonl",
-  "total_source_records": 9241,
-  "total_chunks": 9381,
-  "source_records_needing_multiple_chunks": 83,
-  "source_records_single_chunk": 9158,
-  "pct_single_chunk_records": 99.102,
+  "total_source_records": 9265,
+  "total_chunks": 9406,
+  "source_records_needing_multiple_chunks": 84,
+  "source_records_single_chunk": 9181,
+  "pct_single_chunk_records": 99.093,
   "parameters": {
     "chunk_target_words": 350,
     "chunk_overlap_words": 70,
@@ -24,29 +24,29 @@
       ":",
       "،"
     ],
-    "justification": "Surveyed word-count distribution across all 9241 unified-index records: median=38, p75=72, p90=126, p95=175, p97=220, p99=340 words (see distribution_stats below). Choosing 350 words as both the split threshold and per-chunk target means only 83 records (0.90%) require splitting -- consistent with Saudi statutory drafting practice where articles are typically short/medium, while keeping split-chunk sizes in the conventional ~200-500 word band used by embedding/RAG pipelines. Overlap of 70 words (20% of target) prevents clauses from being stranded at a chunk boundary. Splitting prefers primary sentence/clause punctuation (. ! ? ؟ ؛ newline), falling back to secondary punctuation (، , :) and finally hard whitespace-boundary splitting only for an indivisible run that would otherwise exceed the 500-word hard ceiling -- a word boundary is never crossed at any splitting level."
+    "justification": "Surveyed word-count distribution across all 9265 unified-index records: median=38, p75=72, p90=126, p95=175, p97=220, p99=342 words (see distribution_stats below). Choosing 350 words as both the split threshold and per-chunk target means only 84 records (0.91%) require splitting -- consistent with Saudi statutory drafting practice where articles are typically short/medium, while keeping split-chunk sizes in the conventional ~200-500 word band used by embedding/RAG pipelines. Overlap of 70 words (20% of target) prevents clauses from being stranded at a chunk boundary. Splitting prefers primary sentence/clause punctuation (. ! ? ؟ ؛ newline), falling back to secondary punctuation (، , :) and finally hard whitespace-boundary splitting only for an indivisible run that would otherwise exceed the 500-word hard ceiling -- a word boundary is never crossed at any splitting level."
   },
   "distribution_stats": {
     "source_record_word_counts": {
-      "n_records": 9241,
+      "n_records": 9265,
       "min": 1,
       "max": 6797,
-      "mean": 60.95,
+      "mean": 60.98,
       "median_p50": 38,
       "p75": 72,
       "p90": 126,
       "p95": 175,
       "p97": 220,
-      "p99": 340,
+      "p99": 342,
       "p999": 793
     },
-    "records_exceeding_chunk_target_words": 83,
-    "pct_records_exceeding_chunk_target_words": 0.898,
+    "records_exceeding_chunk_target_words": 84,
+    "pct_records_exceeding_chunk_target_words": 0.907,
     "resulting_chunk_word_counts": {
-      "n_chunks": 9381,
+      "n_chunks": 9406,
       "min": 1,
       "max": 350,
-      "mean": 61.38
+      "mean": 61.4
     }
   },
   "top_examples_requiring_split": [

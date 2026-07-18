@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 133,
-  "total_terms": 780,
-  "total_definitions": 1173,
-  "tracks_with_definitions_article_parsed": 88,
+  "total_tracks_in_registry": 134,
+  "total_terms": 781,
+  "total_definitions": 1178,
+  "tracks_with_definitions_article_parsed": 89,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -2390,6 +2390,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجهات العامة": [
+      {
+        "track_id": "nazaha_law",
+        "article_number": 1,
+        "term_as_written": "الجهات العامة",
+        "definition_text": "الوزارات والمراكز الحكومية والهيئات والمصالح والمؤسسات العامة والأجهزة ذات الشخصية الاعتبارية العامة المستقلة أو أي كيان عام آخر.",
+        "source_record_id": "nazaha-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجهة الحكومية": [
       {
         "track_id": "real_estate_expropriation_law",
@@ -3209,6 +3219,14 @@
         "term_as_written": "الرئيس",
         "definition_text": "رئيس المجلس الأعلى للقضاء.",
         "source_record_id": "judicial-inspection-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "nazaha_law",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس الهيئة.",
+        "source_record_id": "nazaha-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7834,6 +7852,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "nazaha_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام هيئة الرقابة ومكافحة الفساد.",
+        "source_record_id": "nazaha-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "payment_systems_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -8174,6 +8200,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "nazaha_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة الرقابة ومكافحة الفساد.",
+        "source_record_id": "nazaha-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "patent_law",
         "article_number": 2,
         "term_as_written": "الهيئة",
@@ -8247,6 +8281,14 @@
         "term_as_written": "الوحدة",
         "definition_text": "الوحدة المختصة بشؤون الخبرة.",
         "source_record_id": "evidence-expertise-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "nazaha_law",
+        "article_number": 1,
+        "term_as_written": "الوحدة",
+        "definition_text": "وحدة التحقيق والادعاء الجنائي.",
+        "source_record_id": "nazaha-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

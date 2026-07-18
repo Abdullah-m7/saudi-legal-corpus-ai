@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 294,
-  "top1_hits": 268,
-  "top3_hits": 287,
-  "top5_hits": 290,
-  "top1_accuracy": 0.9116,
-  "top3_accuracy": 0.9762,
-  "top5_accuracy": 0.9864,
-  "mrr_at_5": 0.9434,
+  "total_queries": 296,
+  "top1_hits": 270,
+  "top3_hits": 289,
+  "top5_hits": 292,
+  "top1_accuracy": 0.9122,
+  "top3_accuracy": 0.9764,
+  "top5_accuracy": 0.9865,
+  "mrr_at_5": 0.9438,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -3207,9 +3207,9 @@
      "score": 20
     },
     {
-     "record_id": "finance-companies-law-llm-art-030",
-     "article_number": 30,
-     "score": 17
+     "record_id": "nazaha-law-llm-art-018",
+     "article_number": 18,
+     "score": 19
     }
    ]
   },
@@ -5160,9 +5160,9 @@
      "score": 20
     },
     {
-     "record_id": "judicial-inspection-regulation-llm-art-013",
-     "article_number": 13,
-     "score": 18
+     "record_id": "nazaha-law-llm-art-014",
+     "article_number": 14,
+     "score": 19
     }
    ]
   },
@@ -9131,6 +9131,68 @@
      "record_id": "oa-llm-companies-art-267",
      "article_number": 267,
      "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "naz-001",
+   "query_ar": "تعد الهيئة تقارير يرفعها الرئيس إلى الملك، وفقاً لما يأتي: تقرير سنوي خلال (تسعين) يوماً على الأكثر من تاريخ انتهاء السنة المالية",
+   "category": "topical",
+   "gold": {
+    "corpus": "nazaha",
+    "law_component": "law",
+    "article_number": 17
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nazaha-law-llm-art-017",
+     "article_number": 17,
+     "score": 45
+    },
+    {
+     "record_id": "capital-market-law-llm-art-016",
+     "article_number": 16,
+     "score": 25
+    },
+    {
+     "record_id": "finance-companies-law-llm-art-040",
+     "article_number": 39,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "naz-002",
+   "query_ar": "تُعد -لأغراض تطبيق النظام- الجرائم الآتية جرائم فساد: جرائم الرشوة. جرائم الاعتداء على المال العام. جرائم إساءة استعمال السلطة",
+   "category": "topical",
+   "gold": {
+    "corpus": "nazaha",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nazaha-law-llm-art-002",
+     "article_number": 2,
+     "score": 36
+    },
+    {
+     "record_id": "anti-bribery-law-llm-art-019",
+     "article_number": 19,
+     "score": 18
+    },
+    {
+     "record_id": "anti-cyber-crime-law-llm-art-015",
+     "article_number": 15,
+     "score": 16
     }
    ]
   }

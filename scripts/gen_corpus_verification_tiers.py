@@ -134,6 +134,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_ARCHIVE_X_SAMA_RULEBOOK_PDF_X_NEZAMS_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES": TIER_1,
+    "BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_2,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -443,6 +444,22 @@ RATIONALE_OVERRIDE = {
         "الرئيسي الراكد. راجع has_per_article_variation للمادة الأولى تحديداً، التي تحمل "
         "تعديلاً ثانياً أحدث (قرار مجلس الوزراء 283، 1447هـ) لم يصل بعد إلى أي لقطة BOE "
         "ويستند فقط إلى PDF الهيئة وqanoonsa.com دون أي تأكيد رسمي مباشر له."
+    ),
+    "nazaha_law": (
+        "official_text_status='BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_"
+        "QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية "
+        "متعذرة الوصول، واعتُمدت نسختا أرشيف Wayback Machine لصفحة BOE نفسها (بفارق ~15.5 "
+        "شهراً بينهما) كمصدر أساسي — متطابقتان حرفياً تماماً — مع نقطة زمنية ثالثة مستقلة "
+        "(نسخة PDF مستضافة على FAOLEX تبيّن أنها لقطة متصفح محفوظة لنفس صفحة BOE بتاريخ "
+        "جلب مختلف، وليست مصدراً رسمياً مستقلاً بذاته) ومصدرين ثانويين (nezams.com، جزئي "
+        "للمواد 1-14 فقط، وqanoonsa.com، تدقيق هيكلي كامل لجميع المواد الـ24). هذا مصدر "
+        "رسمي أساسي واحد فعلياً (BOE عبر لقطتين متطابقتين) + تدقيق ثانوي مزدوج، وهو ما "
+        "يطابق تعريف TIER_2 (مصدر رسمي أساسي واحد + تدقيق ثانوي) وليس TIER_1، إذ لا يوجد "
+        "مصدر رسمي ثانٍ مستقل بذاته (نسخة FAOLEX هي نسخة من نفس محتوى BOE لا مصدراً "
+        "مستقلاً). راجع official_source.json الخاص بالمسار لتفاصيل الجهات السابقة "
+        "(الهيئة الوطنية لمكافحة الفساد، أ/65 و1432هـ؛ الدمج بموجب أ/277، 1441هـ) والإحالة "
+        "الحرجة إلى نص المرسوم الملكي م/25 الذي يُلزم تحديث مسار anti_bribery_law الحالي "
+        "بمتابعة مستقلة."
     ),
 }
 

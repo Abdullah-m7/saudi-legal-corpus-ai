@@ -19,10 +19,10 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 133,
+  "total_tracks": 134,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 93,
-    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 12,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 13,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 22
   },
@@ -718,6 +718,13 @@
       "track_id": "muslaha_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "nazaha_law",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت نسختا أرشيف Wayback Machine لصفحة BOE نفسها (بفارق ~15.5 شهراً بينهما) كمصدر أساسي — متطابقتان حرفياً تماماً — مع نقطة زمنية ثالثة مستقلة (نسخة PDF مستضافة على FAOLEX تبيّن أنها لقطة متصفح محفوظة لنفس صفحة BOE بتاريخ جلب مختلف، وليست مصدراً رسمياً مستقلاً بذاته) ومصدرين ثانويين (nezams.com، جزئي للمواد 1-14 فقط، وqanoonsa.com، تدقيق هيكلي كامل لجميع المواد الـ24). هذا مصدر رسمي أساسي واحد فعلياً (BOE عبر لقطتين متطابقتين) + تدقيق ثانوي مزدوج، وهو ما يطابق تعريف TIER_2 (مصدر رسمي أساسي واحد + تدقيق ثانوي) وليس TIER_1، إذ لا يوجد مصدر رسمي ثانٍ مستقل بذاته (نسخة FAOLEX هي نسخة من نفس محتوى BOE لا مصدراً مستقلاً). راجع official_source.json الخاص بالمسار لتفاصيل الجهات السابقة (الهيئة الوطنية لمكافحة الفساد، أ/65 و1432هـ؛ الدمج بموجب أ/277، 1441هـ) والإحالة الحرجة إلى نص المرسوم الملكي م/25 الذي يُلزم تحديث مسار anti_bribery_law الحالي بمتابعة مستقلة.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },

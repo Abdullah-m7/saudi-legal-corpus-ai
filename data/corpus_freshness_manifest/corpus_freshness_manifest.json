@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 133 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 133 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 134 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 134 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 133,
+  "total_tracks": 134,
   "known_source_staleness_risk_count": 5,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -1880,6 +1880,28 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "nazaha_law",
+      "display_name_en": "Law (Statute) of the Control and Anti-Corruption Authority (Nazaha)",
+      "display_name_ar": "نظام هيئة الرقابة ومكافحة الفساد",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت نسختا أرشيف Wayback Machine لصفحة BOE نفسها (بفارق ~15.5 شهراً بينهما) كمصدر أساسي — متطابقتان حرفياً تماماً — مع نقطة زمنية ثالثة مستقلة (نسخة PDF مستضافة على FAOLEX تبيّن أنها لقطة متصفح محفوظة لنفس صفحة BOE بتاريخ جلب مختلف، وليست مصدراً رسمياً مستقلاً بذاته) ومصدرين ثانويين (nezams.com، جزئي للمواد 1-14 فقط، وqanoonsa.com، تدقيق هيكلي كامل لجميع المواد الـ24). هذا مصدر رسمي أساسي واحد فعلياً (BOE عبر لقطتين متطابقتين) + تدقيق ثانوي مزدوج، وهو ما يطابق تعريف TIER_2 (مصدر رسمي أساسي واحد + تدقيق ثانوي) وليس TIER_1، إذ لا يوجد مصدر رسمي ثانٍ مستقل بذاته (نسخة FAOLEX هي نسخة من نفس محتوى BOE لا مصدراً مستقلاً). راجع official_source.json الخاص بالمسار لتفاصيل الجهات السابقة (الهيئة الوطنية لمكافحة الفساد، أ/65 و1432هـ؛ الدمج بموجب أ/277، 1441هـ) والإحالة الحرجة إلى نص المرسوم الملكي م/25 الذي يُلزم تحديث مسار anti_bribery_law الحالي بمتابعة مستقلة.",
+      "registry_source_authority": "Royal Decree M/25, 23/1/1446H, ratifying Council of Ministers Resolution No. 68 (17/1/1446H), replacing تنظيم الهيئة الوطنية لمكافحة الفساد (CoM Resolution 165, 28/5/1432H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, two independent snapshots ~15.5 months apart byte-identical, plus a third independent time-point via a FAOLEX-hosted mirror of the same BOE page), cross-verified against nezams.com (partial, Articles 1-14) and qanoonsa.com (full structural cross-check)",
+      "registry_source_url": null,
+      "official_source_file": "sources/nazaha/law/official_source/nazaha_law_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/a8ebff8e-412c-4f67-ac5f-b1ca008d18d9/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
