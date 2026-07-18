@@ -2719,13 +2719,28 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   estimates for it were subsequently corrected during dedicated research,
   a documented example of why this map is explicitly labeled a starting
   point requiring verification, not a build-ready source.
+- **Supersession/repeal graph** — a purely additive, read-only derived
+  layer extracting every EXPLICITLY-STATED repeal/supersession relationship
+  already documented in each track's own `notes`/`official_source.json`
+  (never inferred from age or topical similarity alone). **44 edges** (37
+  `repeals_full`, 6 `repeals_partial`, 1 `superseded_by`) plus **2 documented
+  concurrent-title-collisions** correctly excluded from repeal edges (the
+  two social-insurance laws; Franchise Law/Anti-Concealment Law's M/22
+  decree-number reuse) and **4 genuinely ambiguous cases** flagged with
+  reasoning rather than forced into a classification (Zakat Law's
+  unverified predecessor-repeal claim; Anti-Trafficking Law's unenacted
+  2022 draft replacement; Trademark Law's unresolved earlier repeal-chain
+  leg; Commercial Courts Implementing Regulation's deliberately-not-modeled
+  topical overlap with the Evidence Law). Output:
+  `data/corpus_supersession_graph/corpus_supersession_graph.json`.
+  Validate: `make corpus-supersession-graph-validate`.
 
 ## Strict QA gate
 
 - **`make qa-gate`** — one command, everything must pass: **[1]** every
-  `scripts/validate_*.py` in the repository (197 today — discovered from the filesystem, so any new
+  `scripts/validate_*.py` in the repository (198 today — discovered from the filesystem, so any new
   validator automatically joins the gate; exclusions require a written reason in the script's
-  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 124 deterministic generators
+  `EXCLUDED` dict, currently empty); **[2]** generator idempotence — 125 deterministic generators
   are re-run and the git tree must show **zero drift** (catches "generator edited but outputs not
   regenerated"); **[3]** the full pytest suite. Wired into CI as a required step
   (`make qa-gate-ci`, tests phase skipped there since CI runs pytest separately). A failure in any
