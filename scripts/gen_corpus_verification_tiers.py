@@ -159,6 +159,7 @@ STATUS_TIER_MAP = {
     "BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE": TIER_4,
     "BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY": TIER_4,
     "BOE_WAYBACK_PRIMARY_X_NEZAMS_SPOTCHECK_X_QANOONSA_STRUCTURE_VERIFIED": TIER_4,
+    "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED": TIER_4,
 }
 
 # Tracks whose `official_text_status` field is absent (None) in the registry — these are the
@@ -295,6 +296,14 @@ RATIONALE_OVERRIDE = {
         "20 من 71 مادة إضافة إلى 100% من سجلات تعديل المواد التسع المعدَّلة/المضافة، وتعزيز "
         "صحفي مستقل (عكاظ/الرياض) لصياغة المادة 37 تحديداً — تغطية أقوى من أغلب مسارات "
         "nezams-فقط، لكنها تبقى دون التأكيد الرسمي المزدوج الكامل."
+    ),
+    "zakat_law": (
+        "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED': بوابة "
+        "هيئة الخبراء (BOE) تعذّر الوصول إليها عبر جولتي بحث وبناء منفصلتين (503 في كل مرة)؛ "
+        "الصياغة الحرفية الكاملة للمواد الـ128 تستند إلى مصدر رسمي واحد فقط (نسخة PDF الرسمية "
+        "من ZATCA)، وبوابة أم القرى (uqn.gov.sa) استُخدمت فقط للتحقق الموجَّه من حقيقتين محددتين "
+        "(تاريخ القرار 1007 وعنوان المادة 13)، وليس كتدقيق حرفي كامل ثانٍ — أدنى من TIER_2 التي "
+        "تتطلب تدقيقاً مقارناً شاملاً، وليس موضعياً فقط."
     ),
 }
 

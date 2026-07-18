@@ -19,12 +19,12 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 121,
+  "total_tracks": 122,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 89,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 10,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 5,
-    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 17
+    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 18
   },
   "tracks_with_per_article_variation": 13,
   "tracks": [
@@ -872,6 +872,13 @@
       "track_id": "whistleblower_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "zakat_law",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED': بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها عبر جولتي بحث وبناء منفصلتين (503 في كل مرة)؛ الصياغة الحرفية الكاملة للمواد الـ128 تستند إلى مصدر رسمي واحد فقط (نسخة PDF الرسمية من ZATCA)، وبوابة أم القرى (uqn.gov.sa) استُخدمت فقط للتحقق الموجَّه من حقيقتين محددتين (تاريخ القرار 1007 وعنوان المادة 13)، وليس كتدقيق حرفي كامل ثانٍ — أدنى من TIER_2 التي تتطلب تدقيقاً مقارناً شاملاً، وليس موضعياً فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     }
