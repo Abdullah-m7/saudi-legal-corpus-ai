@@ -814,6 +814,18 @@ EDGES = [
                 "candidate.",
         "source_ref": "sources/municipal_councils/law/official_source/municipal_councils_law_official_source.json (article 68)",
     },
+    {
+        "from_track_id": "press_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المطبوعات والنشر (السابق، 1402هـ)",
+        "target_decree": "Royal Decree M/17, 13/4/1402H",
+        "note": "press_law's own official_source.json article 48: 'يحل هذا "
+                "النظام محل نظام المطبوعات والنشر الصادر بالمرسوم الملكي ذي "
+                "الرقم (م/17) والتاريخ 13/4/1402هـ، ويلغي ما يتعارض معه من "
+                "أحكام.' Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/press/law/official_source/press_law_official_source.json (article 48)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

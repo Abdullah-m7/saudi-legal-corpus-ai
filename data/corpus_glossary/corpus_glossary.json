@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 137,
-  "total_terms": 796,
-  "total_definitions": 1205,
-  "tracks_with_definitions_article_parsed": 91,
+  "total_tracks_in_registry": 138,
+  "total_terms": 805,
+  "total_definitions": 1217,
+  "tracks_with_definitions_article_parsed": 92,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -3810,6 +3810,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الصحافة": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الصحافة",
+        "definition_text": "مهنة تحرير المطبوعات الصحفية أو إصدارها.",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصحفي": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الصحفي",
+        "definition_text": "كل من اتخذ التحرير الصحفي مهنة له، سواء أكانت أصلية أم إضافية.",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصحيفة": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الصحيفة",
+        "definition_text": "كل مطبوعة ذات عنوان ثابت تصدر بصفة دورية أو في المناسبات في مواعيد منتظمة أو غير منتظمة، كالجرائد والمجلات والنشرات.",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الصخور": [
       {
         "track_id": "mining_investment_law",
@@ -3985,6 +4015,16 @@
         "term_as_written": "الطائرة",
         "definition_text": "أي آلة في استطاعتها أن تستمد بقاءها في الجو من ردود فعل الهواء غير تلك المنعكسة من سطح الأرض.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطابع": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الطابع",
+        "definition_text": "المسئول عن المطبعة، سواء أكان صاحبها أم من يقوم مقامه.",
+        "source_record_id": "press-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5370,6 +5410,14 @@
         "definition_text": "هو الشخص الذي ابتكر المصنَّف.",
         "source_record_id": "copyright-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "المؤلف",
+        "definition_text": "من يقوم بإعداد مادة علمية أو ثقافية أو فنية بهدف تداولها.",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المادة العشرون": [
@@ -6652,6 +6700,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المطبعة": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "المطبعة",
+        "definition_text": "كل منشأة أعدت لطبع الكلمات أو الأصوات أو الرسوم أو الصور بهدف تداولها.",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المطبوعة": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "المطبوعة",
+        "definition_text": "كل وسيلة للتعبير، مما يطبع للتداول، سواء أكان كلمة، أم رسمًا، أم صورة، أم صوتًا.",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المعادن": [
       {
         "track_id": "mining_investment_law",
@@ -6825,6 +6893,16 @@
         "term_as_written": "المكاتب المرسلة",
         "definition_text": "هي كل مكتب أو شركة أو وكالة توظيف خارج المملكة حاصلة على ترخيص في دولتها لتوظيف وإرسال العمالة المساندة والمهنية، ومعتمدة في المنصة الالكترونية لتقديم خدمات توفير وتوظيف العمالة المساندة والمهنية، وفق المواصفات المعتمدة من الوزارة.",
         "source_record_id": "labor-annex4-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المكتبة": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "المكتبة",
+        "definition_text": "المحل المعد لعرض الكتب، أو الصحف، أو ما في حكمها للبيع أو للتأجير.",
+        "source_record_id": "press-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7406,6 +7484,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الموزع": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الموزع",
+        "definition_text": "الوسيط- فردًا أو شركة- بين المؤلف أو الناشر، ونقاط التوزيع، والمستفيد.",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الموظف": [
       {
         "track_id": "social_insurance_law",
@@ -7483,6 +7571,16 @@
         "term_as_written": "الميزانية",
         "definition_text": "ميزانية جمعية الملاك السنوية لإدارة العقار المشترك.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الناشر": [
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الناشر",
+        "definition_text": "من يتولى إصدار أي إنتاج علمي أو ثقافي أو فني بغرض التداول.",
+        "source_record_id": "press-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8660,6 +8758,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الإعلام .",
+        "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_finance_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -8941,6 +9047,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير العدل.",
         "source_record_id": "muslaha-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "press_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الإعلام .",
+        "source_record_id": "press-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {

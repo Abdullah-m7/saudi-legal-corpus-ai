@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9368,
-  "total_references_extracted": 1909,
-  "intra_law_count": 1685,
-  "inter_law_count": 224,
+  "total_records_scanned": 9417,
+  "total_references_extracted": 1920,
+  "intra_law_count": 1694,
+  "inter_law_count": 226,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1623,
-    "medium": 286
+    "high": 1630,
+    "medium": 290
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -14670,11 +14670,11 @@
       "source_record_id": "municipal-councils-law-llm-art-001",
       "source_article_number": 1,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "press_law",
       "target_article_number": null,
       "target_law_name_raw": "البلديات والقرى ولوائحه التنفيذية",
       "raw_citation_text": "بموجب نظام البلديات والقرى ولوائحه التنفيذية",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "municipal_councils_law",
@@ -16182,6 +16182,127 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة والثمانين بعد المائة) من النظام؛ أن يتحقق بها غرض ا",
       "confidence": "high"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثانية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية) من النظام من هذا الشرط. ب - أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-016",
+      "source_article_number": 16,
+      "type": "inter_law",
+      "target_track_id": "juveniles_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الإيداع",
+      "raw_citation_text": "وفق نظام الإيداع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "inter_law",
+      "target_track_id": "juveniles_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الإيداع",
+      "raw_citation_text": "وفق نظام الإيداع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-036",
+      "source_article_number": 36,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من هذا النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-038",
+      "source_article_number": 38,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من هذا النظام - وفق الصيغة ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-039",
+      "source_article_number": 39,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-039",
+      "source_article_number": 39,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة عشرة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-039",
+      "source_article_number": 39,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 37,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السابعة والثلاثين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-040",
+      "source_article_number": 40,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 37,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة والثلاثين) من هذا النظام، وتصدر قراراتها",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "press_law",
+      "source_record_id": "press-law-llm-art-044",
+      "source_article_number": 44,
+      "type": "intra_law",
+      "target_track_id": "press_law",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثانية",
+      "confidence": "medium"
     },
     {
       "source_track_id": "qismah_regulation",

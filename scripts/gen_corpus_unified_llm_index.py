@@ -298,6 +298,8 @@ LAYERS = [
      "saudi_engineers", "law"),
     ("data/municipal_councils_arabic_legal_llm/municipal_councils_law_legal_llm_001_069.json",
      "municipal_councils", "law"),
+    ("data/press_arabic_legal_llm/press_law_legal_llm_001_049.json",
+     "press", "law"),
 ]
 
 

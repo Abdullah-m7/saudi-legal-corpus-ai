@@ -175,6 +175,7 @@ NAZAHA_LAW_LLM = os.path.join(ROOT, "data", "nazaha_arabic_legal_llm", "nazaha_l
 AWQAF_LAW_LLM = os.path.join(ROOT, "data", "awqaf_arabic_legal_llm", "awqaf_law_legal_llm_001_025.json")
 SAUDI_ENGINEERS_LAW_LLM = os.path.join(ROOT, "data", "saudi_engineers_arabic_legal_llm", "saudi_engineers_law_legal_llm_001_009.json")
 MUNICIPAL_COUNCILS_LAW_LLM = os.path.join(ROOT, "data", "municipal_councils_arabic_legal_llm", "municipal_councils_law_legal_llm_001_069.json")
+PRESS_LAW_LLM = os.path.join(ROOT, "data", "press_arabic_legal_llm", "press_law_legal_llm_001_049.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -343,6 +344,7 @@ def main() -> int:
     awqaf_law_llm = _load_json(AWQAF_LAW_LLM)
     saudi_engineers_law_llm = _load_json(SAUDI_ENGINEERS_LAW_LLM)
     municipal_councils_law_llm = _load_json(MUNICIPAL_COUNCILS_LAW_LLM)
+    press_law_llm = _load_json(PRESS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -363,7 +365,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 137,
+        "total_tracks": 138,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -504,6 +506,7 @@ def main() -> int:
             + awqaf_law_llm["record_count"]  # 25 Law of the General Authority for Awqaf (M/11, 1437H) (BOE-via-Wayback archive, six snapshots x web.awqaf.gov.sa scanned original decree x nezams.com, live BOE unreachable, replaces the Supreme Awqaf Council System M/35 1386H, see track notes)
             + saudi_engineers_law_llm["record_count"]  # 9 Law of the Saudi Council of Engineers (M/36, 1423H) (BOE-via-Wayback archive, three snapshots x saudieng.sa's own official website x press corroboration, live BOE unreachable, no predecessor found, see track notes)
             + municipal_councils_law_llm["record_count"]  # 69 Municipal Councils Law (M/61, 1435H) (BOE-via-Wayback archive, six snapshots x momah.gov.sa's own two official PDFs x nezams.com, zero amendments confirmed, partial repeal of predecessor Law of Municipalities and Villages Articles 2(b)/2(c)/7(b)/Chapter Two of Part Two, see track notes)
+            + press_law_llm["record_count"]  # 49 Law on Printed Materials and Publication (M/32, 1421H) (BOE-via-near-live-Wayback x media.gov.sa's own official PDF x WIPO Lex/nezams.com/qanoonsa.com, currency-checked and confirmed still current over a still-unenacted draft Media Law, full repeal of the predecessor 1982 Press Law, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -635,6 +638,7 @@ def main() -> int:
             + awqaf_law_llm["record_count"]
             + saudi_engineers_law_llm["record_count"]
             + municipal_councils_law_llm["record_count"]
+            + press_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4681,6 +4685,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Municipal Councils Law «نظام المجالس البلدية» — Royal Decree M/61, dated 4/10/1435H (31 July 2014), approving Council of Ministers Resolution No. 384 (24/9/1435H). A low-to-medium-priority coverage-gap identified via the coverage_gap_map research pass, distinct from the already-ingested regions_law (provincial/regional administration) and municipal_realestate_law tracks (municipal real-estate zoning) — no overlap confirmed. **69 records: ALL 69 اصلية** (never amended per every source checked) — organized into **12 فصول (chapters)**, **NO أبواب** grouping above them. **VERIFICATION TIER:** BOE-WAYBACK-SIX-SNAPSHOT-X-MOMAH-GOV-SA-OFFICIAL-PDF-X-NEZAMS — the live laws.boe.gov.sa portal returned HTTP 503 this pass, but six independent Wayback Machine snapshots of the exact law page (22 Nov 2019 through 12 Dec 2025) show zero text diffs and zero logged amendments throughout, cross-verified against the Ministry of Municipal, Rural Affairs and Housing's own official website (momah.gov.sa, two independently-dated official PDFs including a scanned original of the signed decree) and nezams.com. **Confirmed partial repeal of a predecessor:** this law's own Article 68 explicitly, but only partially, repeals Articles 2(b), 2(c), 7(b), and Chapter Two of Part Two of the Law of Municipalities and Villages (نظام البلديات والقرى, Royal Decree M/5, 21/2/1397H) — not a full supersession; the predecessor law is not yet ingested in this corpus and is flagged as a follow-up candidate. **Zero-amendment stability confirmed** as a genuine positive finding, the inverse of this corpus's recurring stale-changelog pattern. Other flagged discrepancies: Chapter 10's own heading reads 'مخلفات' (not the substantively-expected 'مخالفات') أعضاء المجالس البلدية identically in both primary sources — preserved verbatim, not silently corrected; four companion implementing regulations (general implementing regulation, election regulation, campaign regulation, financial regulation) are confirmed to exist on momah.gov.sa but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "press_law",
+                "display_name_ar": "نظام المطبوعات والنشر",
+                "display_name_en": "Law on Printed Materials and Publication (Press Law)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_NEAR_LIVE_WAYBACK_X_MEDIA_GOV_SA_OFFICIAL_PDF_X_WIPO_LEX_X_NEZAMS_QANOONSA_CURRENCY_CHECKED_CONFIRMED_CURRENT",
+                "source_authority": "Royal Decree M/32, 3/9/1421H, approved via Council of Ministers Resolution No. 211 (1/9/1421H) — a near-live Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, snapshot dated 26 Feb 2026), structurally cross-verified against the Ministry of Media's own official PDF (media.gov.sa) and WIPO Lex, plus nezams.com/qanoonsa.com",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": press_law_llm["record_count"],
+                    "data_path": "data/press_arabic_legal_llm/press_law_legal_llm_001_049.json"}},
+                "record_counts": {"arabic_articles": press_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 43, "معدلة": 6, "ملغاة": 0, "مضافة": 0},
+                                  "total": press_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/press/law/official_source/press_law_official_source.json",
+                    "sources/press/law/verified/press_law_verified_records.jsonl",
+                    "data/press_arabic_legal_llm/press_law_legal_llm_001_049.json",
+                ],
+                "validator_targets": ["make press-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law on Printed Materials and Publication «نظام المطبوعات والنشر» — Royal Decree M/32, dated 3/9/1421H (29 November 2000), approved via Council of Ministers Resolution No. 211 (1/9/1421H). A low-priority coverage-gap identified via the coverage_gap_map research pass, which itself flagged a currency-check requirement given the media/press regulatory landscape's evolution since 2000. **CURRENCY CHECK CONFIRMED M/32 STILL CURRENT**: a comprehensive draft «نظام الإعلام» (Media Law) has been in public consultation since Nov 2023 but remains UNENACTED — confirmed via BOE's own page (near-live Wayback snapshot, 26 Feb 2026) still reading 'الحالة: ساري', the General Commission for Audiovisual Media's own regulations page listing no new comprehensive law, and independent legal-commentary corroboration; a red-herring «نظام تنظيم الإعلام الرقمي» that surfaced in research was identified and ruled out as a Jordanian law unrelated to Saudi Arabia. **49 records: 43 اصلية, 6 معدلة** (Articles 5, 9, 36, 37, 38, 40) — flat structure with 6 informal content groupings, **NO أبواب/فصول labels** in the source (Articles 1-12 untitled). **VERIFICATION TIER:** BOE-NEAR-LIVE-WAYBACK-X-MEDIA-GOV-SA-OFFICIAL-PDF-X-WIPO-LEX-X-NEZAMS-QANOONSA — the live laws.boe.gov.sa portal was unreachable this pass, but a near-live Wayback Machine snapshot (26 Feb 2026, ~5 months before this build) was structurally cross-verified against the Ministry of Media's own official PDF of this exact law (media.gov.sa, a genuinely separate regulator, not a BOE mirror), further corroborated by WIPO Lex's exact decree/date match and nezams.com/qanoonsa.com. **Confirmed full repeal of a predecessor:** this law's own Article 48 explicitly and fully repeals the prior 1982 Press and Publications Law (Royal Decree M/17, 13/4/1402H); the predecessor law is not ingested in this corpus (historical context only). **GENUINELY CONFIRMED BOE main-body staleness for all 6 amended articles**: BOE's own page simultaneously carries a 'changed-article' CSS class and a fully-quoted amendment changelog for Articles 5, 9, 36, 37, 38, and 40, while its main displayed body still shows the demonstrably older, pre-amendment wording — the same self-contradictory pattern already independently confirmed in this corpus's accounting_auditing_law and awqaf_law tracks; this track ingests the changelog-instructed amended wording as current and preserves BOE's stale wording verbatim in each article's original_2000_text field. Article 5 underwent two sequential amendments (Royal Decree M/18, 1441H, then Council of Ministers Resolution 594, 1442H) both applied sequentially as individually unambiguous phrase-level instructions; Articles 9/36/37/38/40 were each amended once by Royal Decree M/20 (1433H), restructuring the violations-committee and penalty regime. Other flagged discrepancies: the Ministry of Media's own PDF extracts with word-internal character scrambling (used only structurally, not verbatim); Chapter 1 (Articles 1-12) has no source heading, left undocumented rather than fabricated; minor BOE inline-span whitespace artifacts normalized and documented; two companion instruments (اللائحة التنفيذية لنظام المطبوعات والنشر and نظام المؤسسات الصحفية, a DIFFERENT M/20 dated 1422H) confirmed to exist but out of scope for this track, flagged as follow-up candidates. Arabic governs; not legal advice.",
             },
         ],
     }
