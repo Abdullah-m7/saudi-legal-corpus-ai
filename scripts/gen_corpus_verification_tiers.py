@@ -130,6 +130,7 @@ STATUS_TIER_MAP = {
     "ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED": TIER_1,
     "BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED": TIER_1,
     "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503": TIER_2,
+    "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_2,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -354,6 +355,16 @@ RATIONALE_OVERRIDE = {
         "تماماً. نص تعديل المادة الرابعة لعام 1440هـ يستند إلى nezams.com حصراً "
         "(بوابة BOE تذكر القرار 472 دون إيراد نصه)؛ راجع has_per_article_variation "
         "لهذا التمايز."
+    ),
+    "healthcare_professions_law": (
+        "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_"
+        "UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، لكن نسخة أرشيف "
+        "Wayback Machine لصفحة BOE نفسها كانت متاحة عبر https:// (وليس http://، عكس "
+        "النمط الملحوظ في مسار الضمان الصحي التعاوني) واستُخدمت كمصدر رسمي أساسي "
+        "واحد، وقورنت مع مصدر ثانوي واحد (nezams.com، جلب حي) — مصدر رسمي واحد + "
+        "تدقيق مقارن ثانوي، يطابق تعريف TIER_2؛ عُزِّز التطابق الهيكلي (الفصول/"
+        "الفروع) إضافة بمقارنة بنية موقع وزارة الصحة الرسمي (moh.gov.sa) دون "
+        "اعتماده كمصدر نصي مستقل ثانٍ."
     ),
     "finance_companies_law": (
         "official_text_status='BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED': "

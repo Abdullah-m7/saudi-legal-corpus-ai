@@ -670,6 +670,35 @@ EDGES = [
                 "corpus.",
         "source_ref": "sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json (article 29)",
     },
+    {
+        "from_track_id": "healthcare_professions_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مزاولة مهنة الطب البشري وطب الأسنان (السابق)",
+        "target_decree": "Royal Decree M/3, 21/2/1409H",
+        "note": "healthcare_professions_law's own official_source.json "
+                "article 42: 'يلغي هذا النظام نظام مزاولة مهنة الطب البشري "
+                "وطب الأسنان، الصادر بالمرسوم الملكي رقم (م/3) وتاريخ "
+                "21/2/1409هـ.' Predecessor not separately ingested in this "
+                "corpus.",
+        "source_ref": "sources/healthcare_professions/law/official_source/healthcare_professions_law_official_source.json (article 42)",
+    },
+    {
+        "from_track_id": "healthcare_professions_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مزاولة مهنة الصيدلة والاتجار بالأدوية والمستحضرات الطبية (السابق)",
+        "target_decree": "Royal Decree M/18, 18/3/1398H",
+        "note": "healthcare_professions_law's own official_source.json "
+                "article 42, second repeal clause in the same article: "
+                "'كما يلغي نظام مزاولة مهنة الصيدلة والاتجار بالأدوية "
+                "والمستحضرات الطبية الواردة، الصادر بالمرسوم الملكي رقم "
+                "(م/18) وتاريخ 18/3/1398هـ.' Modeled as a separate edge from "
+                "the M/3 repeal above since it is a distinct predecessor "
+                "instrument named in the same article. Predecessor not "
+                "separately ingested in this corpus.",
+        "source_ref": "sources/healthcare_professions/law/official_source/healthcare_professions_law_official_source.json (article 42)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

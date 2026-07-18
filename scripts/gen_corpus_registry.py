@@ -166,6 +166,7 @@ CUSTOMS_REGULATION_LLM = os.path.join(ROOT, "data", "customs_regulation_arabic_l
 ANTI_FRAUD_LAW_LLM = os.path.join(ROOT, "data", "anti_fraud_arabic_legal_llm", "anti_fraud_law_legal_llm_001_030.json")
 FINANCE_COMPANIES_LAW_LLM = os.path.join(ROOT, "data", "finance_companies_arabic_legal_llm", "finance_companies_law_legal_llm_001_041.json")
 COOPERATIVE_HEALTH_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "cooperative_health_insurance_arabic_legal_llm", "cooperative_health_insurance_law_legal_llm_001_019.json")
+HEALTHCARE_PROFESSIONS_LAW_LLM = os.path.join(ROOT, "data", "healthcare_professions_arabic_legal_llm", "healthcare_professions_law_legal_llm_001_044.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -325,6 +326,7 @@ def main() -> int:
     anti_fraud_law_llm = _load_json(ANTI_FRAUD_LAW_LLM)
     finance_companies_law_llm = _load_json(FINANCE_COMPANIES_LAW_LLM)
     cooperative_health_insurance_law_llm = _load_json(COOPERATIVE_HEALTH_INSURANCE_LAW_LLM)
+    healthcare_professions_law_llm = _load_json(HEALTHCARE_PROFESSIONS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -345,7 +347,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 128,
+        "total_tracks": 129,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -477,6 +479,7 @@ def main() -> int:
             + anti_fraud_law_llm["record_count"]  # 30 Anti-Commercial Fraud Law (M/19, 1429H) (secondary multi-source cross-verified, BOE unreachable, see track notes)
             + finance_companies_law_llm["record_count"]  # 41 Finance Companies Control Law (M/51, 1433H) (BOE-via-Wayback primary x bfc.gov.sa OCR x nezams.com cross-verified, see track notes)
             + cooperative_health_insurance_law_llm["record_count"]  # 19 Cooperative Health Insurance Law (M/10, 1420H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
+            + healthcare_professions_law_llm["record_count"]  # 44 Law of Practicing Healthcare Professions (M/59, 1426H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -599,6 +602,7 @@ def main() -> int:
             + anti_fraud_law_llm["record_count"]
             + finance_companies_law_llm["record_count"]
             + cooperative_health_insurance_law_llm["record_count"]
+            + healthcare_professions_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4393,6 +4397,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Cooperative Health Insurance Law «نظام الضمان الصحي التعاوني» — Royal Decree M/10, dated 1/5/1420H, approving Council of Ministers Resolution No. 71 (27/4/1420H). Administered by the Council of Cooperative Health Insurance (مجلس الضمان الصحي التعاوني / CCHI) — a distinct, more specific statute from this corpus's already-ingested `insurance_control_law` (Cooperative Insurance Companies Control Law, M/32, 1424H), which governs insurance companies generally; not conflated. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose decree/date estimate was independently re-verified and confirmed correct. 19 records, flat structure (no أبواب/فصول, confirmed absent from both sources) — 17 اصلية / 2 معدلة (Articles 4 and 14, both amended by Council of Ministers Resolution 246, 4/9/1425H; Article 4 amended a second time by Resolution 472, 18/8/1440H, restructuring full council membership). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE — the live laws.boe.gov.sa portal was unreachable this pass (connection reset), but a Wayback Machine snapshot of the exact BOE law page was reachable (plain http:// was required; https:// was blocked by egress policy) and cross-verified byte-for-byte against nezams.com's HTML transcription, finding zero substantive discrepancies across all 17 unamended articles and both the 1420H and 1425H states of the 2 amended articles. Flagged discrepancies: BOE's own summary metadata panel shows an internally inconsistent issuance/publication date ('1420/01/01H = 17/04/1999'), almost certainly a generic year-placeholder rather than the real decree date, not adopted; Article 4's 1440H amendment replacement text rests on nezams.com alone (BOE's own page cites Resolution 472 but does not reproduce its text), with 5 specific transcription artifacts in nezams.com's raw text individually normalized and disclosed verbatim; a companion Implementing Regulation (CCHI-hosted, amended multiple times) is identified but not ingested this pass, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law; CCHI circulars and Umrah/Hajj-visitor coverage expansions are clarified as living outside this primary Law's own amendment history (only Articles 4 and 14 were ever amended) and are out of scope. No repeal clause found in the decree or its underlying resolution — a freestanding new 1420H law, no supersession-graph edge applicable. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "healthcare_professions_law",
+                "display_name_ar": "نظام مزاولة المهن الصحية",
+                "display_name_en": "Law of Practicing Healthcare Professions",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/59, 4/11/1426H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription, additionally structurally corroborated against moh.gov.sa's official consolidated Arabic/English PDFs for the chapter/فرع structure",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": healthcare_professions_law_llm["record_count"],
+                    "data_path": "data/healthcare_professions_arabic_legal_llm/healthcare_professions_law_legal_llm_001_044.json"}},
+                "record_counts": {"arabic_articles": healthcare_professions_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 44, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": healthcare_professions_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/healthcare_professions/law/official_source/healthcare_professions_law_official_source.json",
+                    "sources/healthcare_professions/law/verified/healthcare_professions_law_verified_records.jsonl",
+                    "data/healthcare_professions_arabic_legal_llm/healthcare_professions_law_legal_llm_001_044.json",
+                ],
+                "validator_targets": ["make healthcare-professions-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of Practicing Healthcare Professions «نظام مزاولة المهن الصحية» — Royal Decree M/59, dated 4/11/1426H, approving Council of Ministers Resolution No. 276 (3/11/1426H), published 28/11/1426H. Governs licensing/practice of physicians, dentists, pharmacists, nurses and other healthcare professionals; administered by the Ministry of Health and the Saudi Commission for Health Specialties. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate (approx. 33) was found wrong — the true count is 44, corrected during dedicated research. 44 records across 5 فصول (الترخيص بمزاولة المهنة arts 1-4; واجبات الممارس الصحي arts 5-25, itself subdivided into 3 فرع subsections; المسؤولية المهنية arts 26-32, also subdivided into 3 فرع subsections; التحقيق والمحاكمة arts 33-41; أحكام ختامية arts 42-44) — all 44 اصلية, never amended since enactment, confirmed by both BOE's own zero per-article amendment markers and nezams.com's explicit 'لم يجرِ عليه تعديل' (no amendment) statement. Article 42 confirms this law repeals the prior Physicians/Dentists Law (Royal Decree M/3, 21/2/1409H) and the prior Pharmacy Law (Royal Decree M/18, 18/3/1398H) — modeled as two repeals_full edges in the supersession graph. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot was fetched successfully via https:// (plain http:// returned 403 for this track, the opposite pattern from cooperative_health_insurance_law, both schemes tried per established practice) and cross-verified against a live fetch of nezams.com, agreeing on 42 of 44 articles with zero differences after normalization; the chapter/فرع structure was additionally corroborated article-boundary-exact against moh.gov.sa's own official consolidated Arabic and English PDFs. Flagged discrepancies: nezams.com carries an isolated single-character typo in Article 36 ('الشريعية' vs the correct 'الشرعية', inconsistent with its own usage elsewhere), BOE's text adopted instead; nezams.com's page appends site-navigation footer text after Article 44, a scraping-boundary artifact excluded rather than treated as a textual discrepancy; a Shura-Council-approved (December 2023) but NOT-yet-enacted proposed new Article 4 bis (licensing independent Saudi health practitioners) is documented but not added as a record, since it has not been issued via Royal Decree as of this build; a companion Implementing Regulation (Ministerial Resolution No. 4080489, 2/1/1439H) is confirmed to exist but is out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law. Arabic governs; not legal advice.",
             },
         ],
     }
