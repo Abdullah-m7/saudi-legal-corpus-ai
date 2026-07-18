@@ -1,0 +1,927 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Generate the corpus supersession/repeal relationship graph.
+
+Scans this corpus's 122 tracks for repeal/supersession relationships that
+are EXPLICITLY STATED in their own data — each track's `notes` field in
+data/corpus_registry/corpus_registry.json, and (where the registry note
+pointed at more precise wording) the track's own
+sources/<track>/<component>/official_source/*_official_source.json file
+(its `supersedes_note`/`supersedes` field, or an article's own verbatim
+repeal clause, e.g. income_tax_law article 80(ج) or enforcement_law
+article 96).
+
+This is a CURATED extraction, not a keyword/regex scrape of prose: every
+edge below was read and classified by hand against the corpus's own
+documented text, cross-checked against the specific source file cited in
+its `note`/`source_ref` field. Nothing is inferred from a decree being
+older or from topical similarity alone — see known_unresolved_discrepancies
+in the cited official_source.json for any residual uncertainty.
+
+Two important NON-repeal cases the corpus's own tracks explicitly flag
+(and which this generator must NOT model as repeal edges):
+  * social_insurance_law (M/273) and social_insurance_legacy_law (M/33)
+    share the identical Arabic title and are CONCURRENTLY IN FORCE for
+    different populations — not a repeal relationship.
+  * franchise_law (M/22, 1441H) and anti_concealment_law's own repealed
+    predecessor (also M/22, 1425H) share only a decree NUMBER, coincidentally
+    reused after Saudi Arabia's periodic royal-decree-number reset — not a
+    repeal relationship between the two current tracks.
+Both are recorded under `concurrent_title_collisions`, never under `edges`.
+
+A handful of genuinely ambiguous or deliberately-excluded cases (an
+unenacted draft replacement law, an unverifiable predecessor-repeal claim,
+an unresolved multi-decree repeal chain, and a topically-adjacent
+regulation the source itself says NOT to treat as superseded) are recorded
+under `ambiguous_or_excluded_cases` instead of being forced into an edge.
+
+Read-only over inputs; deterministic and idempotent over its output.
+
+Usage:
+    python3 scripts/gen_corpus_supersession_graph.py
+"""
+from __future__ import annotations
+
+import json
+import os
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REGISTRY_PATH = os.path.join(ROOT, "data", "corpus_registry", "corpus_registry.json")
+OUT_DIR = os.path.join(ROOT, "data", "corpus_supersession_graph")
+OUT_PATH = os.path.join(OUT_DIR, "corpus_supersession_graph.json")
+
+SCHEMA_VERSION = "1.0.0"
+GENERATED_BY = "scripts/gen_corpus_supersession_graph.py"
+
+# ---------------------------------------------------------------------------
+# Curated edges. Each edge's `note` names the exact track/article the
+# relationship was read from, and `source_ref` gives a repo-relative path
+# for anyone who wants to re-verify it directly.
+#
+# Field conventions:
+#   from_track_id        -- the track whose own notes/official_source
+#                            documents this relationship (always a real
+#                            REQUIRED_TRACK_IDS entry).
+#   relation              -- repeals_full | repeals_partial | superseded_by
+#   target_track_id       -- another corpus track_id, or null if the named
+#                            instrument is not itself ingested as a track.
+#   target_description_ar -- the predecessor/successor instrument's Arabic
+#                            title/description, as free text, when it has
+#                            no track_id.
+#   target_decree         -- the predecessor/successor's decree/decision
+#                            number and date, as documented.
+#   affected_articles     -- for repeals_partial only: which articles on
+#                            which side are affected.
+#   successor_in_corpus   -- for superseded_by only: whether the successor
+#                            instrument is itself already a corpus track.
+# ---------------------------------------------------------------------------
+
+EDGES = [
+    # --- repeals_full: whole predecessor instrument repealed, predecessor
+    # --- is NOT itself a corpus track -------------------------------------
+    {
+        "from_track_id": "civil_service_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الموظفين العام",
+        "target_decree": "Royal Decree M/5, 1/2/1391H",
+        "note": "civil_service_law's own registry notes: 'Repeals the prior "
+                "نظام الموظفين العام (Royal Decree M/5, 1/2/1391H)'. Predecessor "
+                "not separately ingested in this corpus.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (civil_service_law.notes)",
+    },
+    {
+        "from_track_id": "gtpl_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المنافسات والمشتريات الحكومية (الصادر بالمرسوم الملكي م/58)",
+        "target_decree": "Royal Decree M/58, 4/9/1427H (ملغى)",
+        "note": "gtpl_law's own official_source.json `supersedes` field: the "
+                "current GTPL M/128 (13/11/1440H) supersedes the identically "
+                "titled prior Government Tenders and Procurement Law issued "
+                "under Royal Decree M/58, per its own Article 98. Predecessor "
+                "marked ملغى and not separately ingested.",
+        "source_ref": "sources/gtpl/law/official_source/gtpl_m128_official_source.json (supersedes)",
+    },
+    {
+        "from_track_id": "criminal_procedure_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الإجراءات الجزائية (السابق)",
+        "target_decree": "Royal Decree M/39, 28/7/1422H",
+        "note": "criminal_procedure_law's own official_source.json "
+                "`supersedes_note`: 'Replaces the former Law of Criminal "
+                "Procedure (Royal Decree M/39, 28/7/1422H) per its own "
+                "Article 221.' Predecessor not separately ingested.",
+        "source_ref": "sources/criminal_procedure/law/official_source/criminal_procedure_law_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "judiciary_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام القضاء (السابق)",
+        "target_decree": "Royal Decree M/64, 14/7/1395H",
+        "note": "judiciary_law's own official_source.json `supersedes_note`: "
+                "'Per its Article 85, this law replaces the former Law of the "
+                "Judiciary (Royal Decree M/64, 14/7/1395H).' Predecessor not "
+                "separately ingested.",
+        "source_ref": "sources/judiciary/law/official_source/judiciary_law_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "board_of_grievances_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام ديوان المظالم (السابق)",
+        "target_decree": "Royal Decree M/51, 17/7/1402H",
+        "note": "board_of_grievances_law's own official_source.json "
+                "`supersedes_note`: 'Per its Article 26, this law replaces "
+                "the former Board of Grievances Law (Royal Decree M/51, "
+                "17/7/1402H).' Predecessor not separately ingested.",
+        "source_ref": "sources/board_of_grievances/law/official_source/board_of_grievances_law_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "law_practice_implementing_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية لنظام المحاماة (السابقة)",
+        "target_decree": "Minister of Justice Decision 676, 1423H",
+        "note": "law_practice_implementing_regulation's own official_source.json "
+                "`supersedes_note`: the current 1446H regulation 'supersedes "
+                "the former implementing regulation (Minister of Justice "
+                "decision 676, 1423H, legalStatus InActive)'. Predecessor not "
+                "separately ingested.",
+        "source_ref": "sources/law_practice/regulation/official_source/law_practice_regulation_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "commercial_register_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام السجل التجاري (السابق)",
+        "target_decree": "Royal Decree M/1, 21/2/1416H",
+        "note": "commercial_register_law's own official_source.json "
+                "`supersedes_note`: 'Supersedes the former Commercial "
+                "Register Law (Royal Decree M/1, 21/2/1416H).' Predecessor "
+                "not separately ingested.",
+        "source_ref": "sources/commercial_register/law/official_source/commercial_register_law_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "trade_names_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الأسماء التجارية (السابق)",
+        "target_decree": "Royal Decree M/15, 12/8/1420H",
+        "note": "trade_names_law's own official_source.json `supersedes_note`: "
+                "'Supersedes the former Trade Names Law (Royal Decree M/15, "
+                "12/8/1420H).' Predecessor not separately ingested.",
+        "source_ref": "sources/trade_names/law/official_source/trade_names_law_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "real_estate_registration_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام التسجيل العيني للعقار (السابق، ملغي)",
+        "target_decree": "Royal Decree M/6, 11/2/1423H",
+        "note": "real_estate_registration_law's own official_source.json "
+                "`supersedes_note`: it 'supersedes the older repealed law of "
+                "the same name (Royal Decree M/6, 11/2/1423H — legalStatus "
+                "InActive/ملغي on the MOJ portal)'. Predecessor not "
+                "separately ingested.",
+        "source_ref": "sources/real_estate_registration/law/official_source/real_estate_registration_law_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "real_estate_registration_implementing_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية لنظام التسجيل العيني للعقار (السابقة، 1425هـ)",
+        "target_decree": "Minister of Justice Decision 4497, 1425H",
+        "note": "real_estate_registration_implementing_regulation's own "
+                "official_source.json `supersedes_note`: it 'supersedes the "
+                "older repealed regulation of the same name (issued 1425H by "
+                "Minister of Justice Decision 4497 — legalStatus "
+                "InActive/ملغي)'. Predecessor not separately ingested.",
+        "source_ref": "sources/real_estate_registration/regulation/official_source/real_estate_registration_regulation_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "real_estate_units_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام ملكية الوحدات العقارية وفرزها (1423هـ، السابق)",
+        "target_decree": "1423H (decree number not stated in the source)",
+        "note": "real_estate_units_law's registry notes: 'this in-force law "
+                "replaced (حل محل) the older Real Estate Unit Ownership and "
+                "Partition Law of 1423H, which is repealed and NOT ingested.' "
+                "No decree number is given in the source for the predecessor.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (real_estate_units_law.notes)",
+    },
+    {
+        "from_track_id": "foreign_ownership_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام تملك وتوطن غير السعوديين للعقار (السابق)",
+        "target_decree": "Royal Decree M/15, 17/4/1421H",
+        "note": "foreign_ownership_law's registry notes, per its own art 14: "
+                "'this in-force law replaced the older Non-Saudi Real Estate "
+                "Ownership and Investment Law (Royal Decree M/15, 17/4/1421H)'. "
+                "Predecessor not separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (foreign_ownership_law.notes)",
+    },
+    {
+        "from_track_id": "municipal_realestate_implementing_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "لائحة التصرف بالعقارات البلدية (1423هـ، السابقة)",
+        "target_decree": "High Order 3/ب/38313, 24/9/1423H",
+        "note": "municipal_realestate_implementing_regulation's registry "
+                "notes, per its own art 33: it 'replaced the 1423H municipal "
+                "real-estate disposal regulation (High Order 3/ب/38313, "
+                "24/9/1423H)'. Predecessor not separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (municipal_realestate_implementing_regulation.notes)",
+    },
+    {
+        "from_track_id": "gcc_ownership_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "تنظيم تملك مواطني دول المجلس للعقار (نسخة الدورة العشرين للمجلس الأعلى)",
+        "target_decree": "GCC Supreme Council, 20th session, 1422H",
+        "note": "gcc_ownership_law's registry notes: 'this in-force "
+                "instrument replaced the version approved in the Supreme "
+                "Council's 20th session (1422H), which is NOT ingested.'",
+        "source_ref": "data/corpus_registry/corpus_registry.json (gcc_ownership_law.notes)",
+    },
+    {
+        "from_track_id": "terrorism_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مكافحة جرائم الإرهاب وتمويله (السابق)",
+        "target_decree": "Royal Decree M/16, 24/2/1435H",
+        "note": "terrorism_law's registry notes: 'this law replaced the older "
+                "Law of Terrorism Crimes and its Financing (Royal Decree "
+                "M/16, 24/2/1435H), which is superseded.' Predecessor not "
+                "separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (terrorism_law.notes)",
+    },
+    {
+        "from_track_id": "judicial_inspection_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "لائحة التفتيش القضائي (السابقة)",
+        "target_decree": "Supreme Judicial Council Resolution 30/5/364, 2/11/1430H",
+        "note": "judicial_inspection_regulation's registry notes, per its own "
+                "final article (68): it 'replaces the prior Judicial "
+                "Inspection Regulation issued by Supreme Judicial Council "
+                "Resolution 30/5/364 dated 2/11/1430H, which is not "
+                "ingested.'",
+        "source_ref": "data/corpus_registry/corpus_registry.json (judicial_inspection_regulation.notes)",
+    },
+    {
+        "from_track_id": "muslaha_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "قواعد العمل في مكاتب المصالحة (السابقة)",
+        "target_decree": "Minister of Justice Decision 53792, 27/7/1435H",
+        "note": "muslaha_regulation's registry notes, per its own final "
+                "article (26): it 'replaces the prior Ministerial Decision "
+                "53792 dated 27/7/1435H rules, which is not ingested.'",
+        "source_ref": "data/corpus_registry/corpus_registry.json (muslaha_regulation.notes)",
+    },
+    {
+        "from_track_id": "enforcement_providers_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "لائحة مقدمي خدمات التنفيذ (السابقة)",
+        "target_decree": "Ministerial Decision 11326, 14/5/1437H",
+        "note": "enforcement_providers_regulation's registry notes, per its "
+                "own article 18: it 'supersedes the prior regulation issued "
+                "under Ministerial Decision 11326 (14/5/1437H), which is not "
+                "ingested.'",
+        "source_ref": "data/corpus_registry/corpus_registry.json (enforcement_providers_regulation.notes)",
+    },
+    {
+        "from_track_id": "real_estate_expropriation_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام نزع ملكية العقارات للمصلحة العامة (1424هـ، ملغي)",
+        "target_decree": "Royal Decree M/15, 1424H",
+        "note": "real_estate_expropriation_law's registry notes, per its own "
+                "art 37: it 'replaces and repeals the older 1424H "
+                "expropriation law (Royal Decree M/15), independently "
+                "confirmed ملغي (repealed) on the MOJ portal, which is NOT "
+                "separately ingested.'",
+        "source_ref": "data/corpus_registry/corpus_registry.json (real_estate_expropriation_law.notes)",
+    },
+    {
+        "from_track_id": "judgment_objection_methods_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية لإجراءات الاستئناف (السابقة، بلا أثر قانوني)",
+        "target_decree": "Decision 5134, 1440H",
+        "note": "judgment_objection_methods_regulation's registry notes, per "
+                "its own art 61 and promulgating decree: it 'supersedes... "
+                "the now-repealed standalone Executive Regulation for Appeal "
+                "Procedures (decree 5134, 1440H, not ingested as it carries "
+                "no live legal force)'.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (judgment_objection_methods_regulation.notes)",
+    },
+    {
+        "from_track_id": "council_of_ministers_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مجلس الوزراء (السابق وتعديلاته)",
+        "target_decree": "Royal Decree No. 38, 22/10/1377H",
+        "note": "council_of_ministers_law's registry notes: it 'supersedes "
+                "the earlier Council of Ministers Law (Royal Decree No. 38, "
+                "22/10/1377H, and its amendments)'. Predecessor not "
+                "separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (council_of_ministers_law.notes)",
+    },
+    {
+        "from_track_id": "shura_council_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مجلس الشورى (1347هـ، السابق)",
+        "target_decree": "1347H (decree number not stated in the source)",
+        "note": "shura_council_law's registry notes: it 'replaces the "
+                "earlier 1347H Shura Council law.' No decree number is given "
+                "in the source for the predecessor.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (shura_council_law.notes)",
+    },
+    {
+        "from_track_id": "copyright_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام حماية حقوق المؤلف (1410هـ، السابق)",
+        "target_decree": "Royal Decree M/11, 19/5/1410H",
+        "note": "copyright_law's registry notes: the current M/41 (1424H) law "
+                "is 'superseding the earlier 1989 copyright law (Royal "
+                "Decree M/11, 19/5/1410H)'. Predecessor not separately "
+                "ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (copyright_law.notes)",
+    },
+    {
+        "from_track_id": "telecommunications_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الاتصالات (2001، السابق)",
+        "target_decree": "Royal Decree M/12, 12/3/1422H",
+        "note": "telecommunications_law's registry notes, per its own "
+                "Article 41(1): it 'explicitly repeals and replaces the 2001 "
+                "telecom law (نظام الاتصالات, Royal Decree M/12, 12/3/1422H)'. "
+                "Predecessor not separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (telecommunications_law.notes)",
+    },
+    {
+        "from_track_id": "sama_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مؤسسة النقد العربي السعودي (السابق)",
+        "target_decree": "Royal Decree No. 23, 23/5/1377H",
+        "note": "sama_law's registry notes, per its own Article 26: it "
+                "'replaces the earlier Saudi Arabian Monetary Agency (SAMA) "
+                "Law, Royal Decree No. 23 (23/5/1377H)'. Predecessor not "
+                "separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (sama_law.notes)",
+    },
+    {
+        "from_track_id": "competition_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المنافسة (السابق)",
+        "target_decree": "Royal Decree M/25, 4/5/1425H",
+        "note": "competition_law's registry notes, per its own Article 26: it "
+                "'Replaces the earlier Competition Law, Royal Decree M/25 "
+                "(4/5/1425H)'. Predecessor not separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (competition_law.notes)",
+    },
+    {
+        "from_track_id": "mining_investment_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام التعدين (السابق)",
+        "target_decree": "Royal Decree M/47, 20/8/1425H",
+        "note": "mining_investment_law's registry notes: it 'Replaces the "
+                "prior mining law, Royal Decree M/47 (20/8/1425H)'. "
+                "Predecessor not separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (mining_investment_law.notes)",
+    },
+    {
+        "from_track_id": "trademark_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام العلامات التجارية لدول مجلس التعاون (السابق)",
+        "target_decree": "Royal Decree M/94, 23/11/1428H",
+        "note": "trademark_law's registry notes: it 'Replaces the prior GCC "
+                "trademark law, Royal Decree M/94 (23/11/1428H)'. Predecessor "
+                "not separately ingested. NOTE: the source itself flags a "
+                "further, UNRESOLVED 'M/21->M/94->M/51 repeal-chain "
+                "ambiguity' one step further back — see "
+                "`ambiguous_or_excluded_cases` for that residual uncertainty; "
+                "only the confirmed M/94->M/51 leg is modeled here.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (trademark_law.notes)",
+    },
+    {
+        "from_track_id": "anti_concealment_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مكافحة التستر (السابق، ملغى)",
+        "target_decree": "Royal Decree M/22, 4/5/1425H",
+        "note": "anti_concealment_law's registry notes: the current M/4 "
+                "(1442H) law 'Replaces the prior anti-concealment law, Royal "
+                "Decree M/22 (4/5/1425H).' Predecessor not separately "
+                "ingested. IMPORTANT: this predecessor's decree number (M/22) "
+                "is the one that coincidentally collides with franchise_law's "
+                "own M/22 decree — see `concurrent_title_collisions` — do "
+                "not confuse the two.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (anti_concealment_law.notes)",
+    },
+    {
+        "from_track_id": "income_tax_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام ضريبة الدخل (1370هـ، السابق)",
+        "target_decree": "Royal Decree No. 3321, 21/1/1370H",
+        "note": "income_tax_law article 80(ج), its own closing provision: "
+                "'يلغي هذا النظام نظام ضريبة الدخل الصادر بالمرسوم الملكي رقم "
+                "(3321) وتاريخ 21/1/1370هـ، وتعديلاته...'. Predecessor not "
+                "separately ingested.",
+        "source_ref": "sources/income_tax/law/official_source/income_tax_law_official_source.json (articles.income_tax_art_080.text)",
+    },
+    {
+        "from_track_id": "income_tax_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام ضريبة الدخل الإضافية على الشركات المشتغلة بإنتاج الزيت والمواد الهيدروكربونية (السابق)",
+        "target_decree": "Royal Decree No. 7634, 16/3/1370H",
+        "note": "income_tax_law article 80(ج), its own closing provision, "
+                "same clause as above, second item: '...ونظام ضريبة الدخل "
+                "الإضافية على الشركات المشتغلة بإنتاج الزيت والمواد "
+                "الهيدروكربونية الصادر بالمرسوم الملكي رقم (7634) وتاريخ "
+                "16/3/1370هـ وتعديلاته...'. Predecessor not separately "
+                "ingested.",
+        "source_ref": "sources/income_tax/law/official_source/income_tax_law_official_source.json (articles.income_tax_art_080.text)",
+    },
+    {
+        "from_track_id": "income_tax_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام ضريبة استثمار الغاز الطبيعي (الأصلي، السابق)",
+        "target_decree": "Royal Decree M/37, 25/6/1424H",
+        "note": "income_tax_law article 80(ج), its own closing provision, "
+                "same clause as above, third item: '...ونظام ضريبة استثمار "
+                "الغاز الطبيعي الصادر بالمرسوم الملكي رقم (م/37) وتاريخ "
+                "25/6/1424هـ.' This is the ORIGINAL Natural Gas Investment "
+                "Tax Law repealed on income_tax_law's own 1425H enactment; "
+                "distinct from income_tax_law's own later, internal Chapter "
+                "10 replacement (Royal Decree M/70, 1439H), which is an "
+                "amendment WITHIN this same track, not a separate "
+                "cross-track repeal, and is not modeled as an edge here.",
+        "source_ref": "sources/income_tax/law/official_source/income_tax_law_official_source.json (articles.income_tax_art_080.text)",
+    },
+    {
+        "from_track_id": "social_insurance_legacy_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام التأمينات الاجتماعية (الصادر بالمرسوم الملكي م/22)",
+        "target_decree": "Royal Decree M/22, 6/9/1389H",
+        "note": "social_insurance_legacy_law's registry notes: the current "
+                "M/33 (1421H) legacy-system law is 'superseding the earlier "
+                "Royal Decree M/22 (6/9/1389H)'. Predecessor not separately "
+                "ingested. NOT to be confused with social_insurance_law "
+                "(M/273) — see `concurrent_title_collisions` for the "
+                "unrelated identical-title collision between those two "
+                "CURRENTLY tracked, concurrently-in-force laws.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (social_insurance_legacy_law.notes)",
+    },
+    {
+        "from_track_id": "anti_narcotics_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مكافحة الاتجار بالمخدرات (السابق)",
+        "target_decree": "Supreme Order 3318, 9/4/1353H",
+        "note": "anti_narcotics_law's registry notes: it 'Repeals the prior "
+                "narcotics-trafficking law issued by Supreme Order 3318 "
+                "(9/4/1353H).' Predecessor not separately ingested.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (anti_narcotics_law.notes)",
+    },
+    {
+        "from_track_id": "traffic_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المرور (السابق)",
+        "target_decree": "Royal Decree M/49, 6/11/1391H",
+        "note": "traffic_law's registry notes, per its own Article 83: it "
+                "'Replaces the prior نظام المرور issued by Royal Decree M/49 "
+                "dated 6/11/1391H.' Predecessor not separately ingested. "
+                "(Separately, traffic_law's OWN Article 71 was later "
+                "internally repealed by Council of Ministers Decision 474 — "
+                "that is an internal article-level amendment within this "
+                "same track, not a cross-track relationship, and is not "
+                "modeled as an edge here.)",
+        "source_ref": "data/corpus_registry/corpus_registry.json (traffic_law.notes)",
+    },
+    {
+        "from_track_id": "environmental_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "النظام العام للبيئة (السابق)",
+        "target_decree": "Royal Decree M/34, 28/7/1422H",
+        "note": "environmental_law's registry notes: it 'Repeals several "
+                "prior instruments including the older النظام العام للبيئة "
+                "(Royal Decree M/34, 28/7/1422H) — with a narrow carve-over: "
+                "that older law's waste-related provisions remain in force "
+                "until dedicated new waste-specific rules are issued.' "
+                "Predecessor not separately ingested; the carve-over means "
+                "this repeal is not, by the source's own account, 100% "
+                "complete for waste provisions.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (environmental_law.notes)",
+    },
+    {
+        "from_track_id": "bankruptcy_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام التسوية الوقائية من الإفلاس (السابق)",
+        "target_decree": "Royal Decree M/16, 4/9/1416H",
+        "note": "bankruptcy_law's own official_source.json `supersedes_note`: "
+                "'Per its Article 230, this law repeals ... the former "
+                "Protective Settlement from Bankruptcy Law (Royal Decree "
+                "M/16, 4/9/1416H).' Predecessor not separately ingested.",
+        "source_ref": "sources/bankruptcy/law/official_source/bankruptcy_law_official_source.json (supersedes_note)",
+    },
+
+    # --- repeals_partial: only specific articles repealed -----------------
+    {
+        "from_track_id": "commercial_courts_law",
+        "relation": "repeals_partial",
+        "target_track_id": "evidence_law",
+        "target_description_ar": None,
+        "target_decree": None,
+        "affected_articles": "38-57 (commercial_courts_law) repealed by evidence_law",
+        "note": "commercial_courts_law's own official_source.json "
+                "`supersedes_note`: 'Its evidence chapter (arts 38-57) was "
+                "repealed by the Evidence Law (M/43, 1443H) which now "
+                "governs evidence uniformly.' The 20 repealed articles keep "
+                "their full bodies, flagged is_repealed, not deleted. "
+                "(commercial_courts_implementing_regulation's own, separate "
+                "evidence chapter is explicitly NOT treated as superseded by "
+                "the MOJ portal — see `ambiguous_or_excluded_cases`.)",
+        "source_ref": "sources/commercial_courts/law/official_source/commercial_courts_law_official_source.json (supersedes_note)",
+    },
+    {
+        "from_track_id": "sharia_procedure_implementing_regulation",
+        "relation": "repeals_partial",
+        "target_track_id": "evidence_law",
+        "target_description_ar": None,
+        "target_decree": None,
+        "affected_articles": "149 provisions (the evidence chapters "
+                             "الوقائع/الاستجواب/الإقرار/اليمين/الشهادة/القرائن/"
+                             "الخبرة plus the cassation/reconsideration "
+                             "chapters of sharia_procedure_implementing_regulation) "
+                             "marked ملغاة by the MOJ portal, superseded by evidence_law",
+        "note": "sharia_procedure_implementing_regulation's own registry "
+                "notes: the MOJ portal's live legal database marks 149 "
+                "provisions ملغاة 'because the standalone Law of Evidence "
+                "(نظام الإثبات م/43) superseded them'; those provisions carry "
+                "is_superseded=True + superseded_by_ar and keep their full "
+                "text (not deleted). This is a DUAL-STATUS track: the "
+                "official PDF's own status badge (pdf_document_status_ar) "
+                "disagrees with the portal's live status for these "
+                "provisions — both are recorded, neither hidden.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (sharia_procedure_implementing_regulation.notes)",
+    },
+    {
+        "from_track_id": "enforcement_law",
+        "relation": "repeals_partial",
+        "target_track_id": None,
+        "target_description_ar": "نظام المرافعات الشرعية (السابق، م/21)",
+        "target_decree": "Royal Decree M/21, 20/5/1421H",
+        "affected_articles": "arts 196-232 of the former Law of Sharia "
+                             "Procedure (M/21) repealed by enforcement_law art 96",
+        "note": "enforcement_law article 96, its own verbatim text: 'يلغي هذا "
+                "النظام المواد من (السادسة والتسعين بعد المائة إلى الثانية "
+                "والثلاثين بعد المائتين) من نظام المرافعات الشرعية، الصادر "
+                "بالمرسوم الملكي رقم (م/٢١) وتاريخ ٢٠/٥/١٤٢١هـ...'. This "
+                "'former Law of Sharia Procedure (M/21)' is a DIFFERENT, "
+                "untracked predecessor instrument from the currently-tracked "
+                "sharia_procedure_law (Royal Decree M/1, 22/1/1435H) — do "
+                "not conflate the two.",
+        "source_ref": "sources/enforcement/law/official_source/enforcement_law_official_source.json (supersedes_note); "
+                       "sources/enforcement/law/verified/enforcement_law_verified_records.jsonl (article 96 text)",
+    },
+    {
+        "from_track_id": "enforcement_law",
+        "relation": "repeals_partial",
+        "target_track_id": "board_of_grievances_law",
+        "target_description_ar": None,
+        "target_decree": None,
+        "affected_articles": "Article 13, paragraph (ز) of board_of_grievances_law "
+                             "repealed by enforcement_law art 96",
+        "note": "enforcement_law article 96, its own verbatim text: '...والفقرة "
+                "(ز) من المادة (الثالثة عشرة) من نظام ديوان المظالم، الصادر "
+                "بالمرسوم الملكي رقم (م/٧٨) وتاريخ ١٩/٩/١٤٢٨هـ...'. "
+                "board_of_grievances_law is the currently-tracked Royal "
+                "Decree M/78 law in this corpus; only paragraph (ز) of its "
+                "Article 13 is affected, not the whole law.",
+        "source_ref": "sources/enforcement/law/official_source/enforcement_law_official_source.json (supersedes_note); "
+                       "sources/enforcement/law/verified/enforcement_law_verified_records.jsonl (article 96 text)",
+    },
+    {
+        "from_track_id": "judgment_objection_methods_regulation",
+        "relation": "repeals_partial",
+        "target_track_id": "sharia_procedure_implementing_regulation",
+        "target_description_ar": None,
+        "target_decree": None,
+        "affected_articles": "Chapter 11 (الباب الحادي عشر) of "
+                             "sharia_procedure_implementing_regulation, "
+                             "superseded by judgment_objection_methods_regulation",
+        "note": "judgment_objection_methods_regulation's registry notes: "
+                "'per its own art 61 (closing provisions) and its separately "
+                "-fetched promulgating decree, this regulation supersedes "
+                "Chapter 11 (الباب الحادي عشر) of the already-ingested Sharia "
+                "Procedure Law's implementing regulation'.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (judgment_objection_methods_regulation.notes)",
+    },
+    {
+        "from_track_id": "bankruptcy_law",
+        "relation": "repeals_partial",
+        "target_track_id": None,
+        "target_description_ar": "نظام المحاكم التجارية (الأمر الملكي رقم 32، السابق)",
+        "target_decree": "Royal Order 32, 15/1/1350H",
+        "affected_articles": "arts 103-137 of the former Commercial Court Law "
+                             "repealed by bankruptcy_law art 230",
+        "note": "bankruptcy_law's own official_source.json `supersedes_note`: "
+                "'Per its Article 230, this law repeals arts 103-137 of the "
+                "former Commercial Court Law (Royal Order 32, 15/1/1350H) "
+                "and the former Protective Settlement from Bankruptcy Law "
+                "(Royal Decree M/16, 4/9/1416H).' (The second predecessor is "
+                "modeled separately as a repeals_full edge above, since it "
+                "is repealed in its entirety.) The Commercial Court Law "
+                "predecessor is not separately ingested in this corpus.",
+        "source_ref": "sources/bankruptcy/law/official_source/bankruptcy_law_official_source.json (supersedes_note)",
+    },
+
+    # --- superseded_by: this track itself confirmed superseded by a
+    # --- future/newer instrument -------------------------------------------
+    {
+        "from_track_id": "copyright_law",
+        "relation": "superseded_by",
+        "target_track_id": None,
+        "target_description_ar": "نظام حماية حقوق المؤلف والحقوق المجاورة (الجديد)",
+        "target_decree": "Royal Decree M/169, 14/08/1447H (2 February 2026)",
+        "successor_in_corpus": False,
+        "note": "copyright_law's registry notes: 'THIS LAW IS CONFIRMED "
+                "SUPERSEDED EFFECTIVE 2026-08-01 by Royal Decree M/169 "
+                "(14/08/1447H / 2 February 2026), confirmed via multiple "
+                "independent Arabic news outlets and English law-firm client "
+                "alerts — but the new law's full Arabic primary text could "
+                "NOT be verified this research pass ... and is explicitly "
+                "NOT ingested here.' This track ingests the text in force as "
+                "of the corpus build date (2026-07-17); a follow-up "
+                "ingestion pass for M/169 is recommended once its primary "
+                "text becomes verifiable.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (copyright_law.notes)",
+    },
+]
+
+# ---------------------------------------------------------------------------
+# Concurrent title/decree-number collisions that are explicitly documented
+# as NOT repeal relationships.
+# ---------------------------------------------------------------------------
+
+CONCURRENT_TITLE_COLLISIONS = [
+    {
+        "track_ids": ["social_insurance_law", "social_insurance_legacy_law"],
+        "shared_title_ar": "نظام التأمينات الاجتماعية",
+        "shared_decree_number": None,
+        "note": "Saudi Arabia's social-insurance restructuring produced two "
+                "CONCURRENTLY-VALID laws with the identical Arabic title: "
+                "social_insurance_law (Royal Decree M/273, 26/12/1445H) "
+                "governs new labor-market entrants from 1 July 2025 with no "
+                "prior contribution history; social_insurance_legacy_law "
+                "(Royal Decree M/33, 3/9/1421H) continues to govern everyone "
+                "enrolled before the 2024 restructuring. Both tracks' own "
+                "registry notes document this explicitly and state it is 'a "
+                "genuine naming collision', NOT a repeal relationship — "
+                "social_insurance_law does NOT supersede "
+                "social_insurance_legacy_law.",
+        "source_ref": "data/corpus_registry/corpus_registry.json "
+                       "(social_insurance_law.notes, social_insurance_legacy_law.notes)",
+    },
+    {
+        "track_ids": ["franchise_law", "anti_concealment_law"],
+        "shared_title_ar": None,
+        "shared_decree_number": "M/22",
+        "note": "franchise_law's own decree is Royal Decree M/22 dated "
+                "9/2/1441H. This collides only in DECREE NUMBER (not title, "
+                "not subject matter) with anti_concealment_law's own repealed "
+                "PREDECESSOR instrument, also numbered M/22 but dated "
+                "4/5/1425H (see the anti_concealment_law repeals_full edge "
+                "above) — NOT with anti_concealment_law's own current decree "
+                "(M/4, 1/1/1442H). franchise_law's own registry notes state: "
+                "'This decree number (M/22) collides with, but is entirely "
+                "unrelated to, the superseded original Anti-Concealment "
+                "Law's own decree of the same number ... disambiguated by "
+                "content, not by decree number alone, since Saudi royal "
+                "decree numbering resets periodically.' Not a repeal "
+                "relationship between franchise_law and anti_concealment_law.",
+        "source_ref": "data/corpus_registry/corpus_registry.json "
+                       "(franchise_law.notes, anti_concealment_law.notes)",
+    },
+]
+
+# ---------------------------------------------------------------------------
+# Genuinely ambiguous or deliberately-excluded cases: real signal was found
+# in the corpus's own documentation, but it does not meet the bar for a
+# clean repeals_full / repeals_partial / superseded_by edge (an unenacted
+# draft, an unverifiable claim, an unresolved multi-step chain, or a case
+# the source itself says NOT to model as supersession). Recorded here
+# instead of forced into `edges`, per this generator's zero-fabrication
+# policy.
+# ---------------------------------------------------------------------------
+
+AMBIGUOUS_OR_EXCLUDED_CASES = [
+    {
+        "tracks_involved": ["zakat_law"],
+        "issue": "unverifiable predecessor-repeal claim",
+        "note": "zakat_law's registry notes flag: 'the prior 1440H "
+                "regulation's repeal clause not found verbatim within the "
+                "operative articles themselves (only in secondary "
+                "summaries)'. Secondary summaries assert Resolution 1007 "
+                "(1445H) replaced an earlier 1440H zakat-collection "
+                "regulation, but this corpus's own primary-source text does "
+                "not itself contain a verbatim repeal clause confirming it, "
+                "and no decree/decision number for the predecessor was "
+                "recovered. NOT modeled as a repeals_full edge because the "
+                "claim rests on secondary summaries the build process could "
+                "not verbatim-confirm — a genuinely uncertain case, "
+                "documented rather than forced.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (zakat_law.notes)",
+    },
+    {
+        "tracks_involved": ["anti_trafficking_law"],
+        "issue": "unenacted draft replacement law",
+        "note": "anti_trafficking_law's registry notes document: 'a "
+                "comprehensive 33-article, 6-chapter DRAFT REPLACEMENT law "
+                "... cleared public consultation ... in mid-2022 and would "
+                "explicitly repeal and replace this law per its own draft "
+                "Article 31 — but remains UNENACTED as of the most recent "
+                "evidence found: the 2025 US State Department TIP report "
+                "explicitly states the government did not pass the "
+                "amendments for a third consecutive reporting period'. NOT "
+                "modeled as a superseded_by edge because the draft was never "
+                "enacted — unlike copyright_law's confirmed, dated M/169 "
+                "supersession, this is a pending proposal only.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (anti_trafficking_law.notes)",
+    },
+    {
+        "tracks_involved": ["trademark_law"],
+        "issue": "unresolved multi-step repeal chain beyond the confirmed leg",
+        "note": "trademark_law's registry notes flag 'an unresolved "
+                "M/21->M/94->M/51 repeal-chain ambiguity': the current law "
+                "(M/51) is confirmed to replace M/94 (modeled above as a "
+                "repeals_full edge), but whether/how M/94 itself repealed "
+                "the earlier 2002 law (Royal Decree M/21, referenced "
+                "elsewhere in the same track's notes as 'the SUPERSEDED 2002 "
+                "law') is not itself documented in this corpus's sources. "
+                "Only the confirmed M/94->M/51 leg is modeled as an edge; "
+                "the earlier leg is left undocumented rather than assumed.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (trademark_law.notes)",
+    },
+    {
+        "tracks_involved": ["commercial_courts_implementing_regulation", "evidence_law"],
+        "issue": "topically-adjacent but explicitly NOT modeled as supersession",
+        "note": "commercial_courts_implementing_regulation's own "
+                "official_source.json explicitly cautions: 'the regulation "
+                "retains its evidence chapter even though the Commercial "
+                "Courts Law's own evidence articles (38-57) were repealed by "
+                "the Evidence Law (M/43); the MOJ portal keeps the "
+                "regulation's provisions اصلية/Active and they are recorded "
+                "here exactly as the official portal classifies them (no "
+                "interpretive supersession added)'. Despite the obvious "
+                "topical parallel to the commercial_courts_law repeals_partial "
+                "edge above, this generator deliberately does NOT create an "
+                "edge for the implementing regulation, honoring the "
+                "source's own explicit instruction not to add an "
+                "interpretive supersession the official record does not "
+                "itself state.",
+        "source_ref": "sources/commercial_courts/regulation/official_source/commercial_courts_regulation_official_source.json (supersedes_note)",
+    },
+]
+
+
+def _load_registry():
+    with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _track_ids(registry):
+    return {t.get("track_id") for t in registry.get("tracks", [])}
+
+
+def _validate_edges(track_ids):
+    """Fail loudly (rather than silently emit a bad graph) if a curated
+    edge references a track_id that does not actually exist in the
+    registry — this generator must never invent track_ids."""
+    problems = []
+    for i, e in enumerate(EDGES):
+        frm = e.get("from_track_id")
+        if frm not in track_ids:
+            problems.append(f"edge[{i}]: from_track_id {frm!r} not in registry")
+        tgt = e.get("target_track_id")
+        if tgt is not None and tgt not in track_ids:
+            problems.append(f"edge[{i}]: target_track_id {tgt!r} not in registry")
+    for i, c in enumerate(CONCURRENT_TITLE_COLLISIONS):
+        for tid in c.get("track_ids", []):
+            if tid not in track_ids:
+                problems.append(f"collision[{i}]: track_id {tid!r} not in registry")
+    for i, a in enumerate(AMBIGUOUS_OR_EXCLUDED_CASES):
+        for tid in a.get("tracks_involved", []):
+            if tid not in track_ids:
+                problems.append(f"ambiguous[{i}]: track_id {tid!r} not in registry")
+    if problems:
+        raise SystemExit("gen_corpus_supersession_graph: " + "; ".join(problems))
+
+
+def _relation_counts():
+    counts = {}
+    for e in EDGES:
+        counts[e["relation"]] = counts.get(e["relation"], 0) + 1
+    return counts
+
+
+def build_graph(registry):
+    track_ids = _track_ids(registry)
+    _validate_edges(track_ids)
+
+    edges_out = []
+    for e in EDGES:
+        edge = {
+            "from_track_id": e["from_track_id"],
+            "relation": e["relation"],
+            "target_track_id": e.get("target_track_id"),
+            "target_description_ar": e.get("target_description_ar"),
+            "target_decree": e.get("target_decree"),
+            "affected_articles": e.get("affected_articles"),
+            "note": e["note"],
+            "source_ref": e["source_ref"],
+        }
+        if e["relation"] == "superseded_by":
+            edge["successor_in_corpus"] = e.get("successor_in_corpus")
+        edges_out.append(edge)
+
+    graph = {
+        "schema_version": SCHEMA_VERSION,
+        "generated_by": GENERATED_BY,
+        "generated_from": "data/corpus_registry/corpus_registry.json "
+                           "(tracks[].notes) and individual tracks' "
+                           "sources/<track>/<component>/official_source/*.json",
+        "registry_version_at_generation": registry.get("registry_version"),
+        "total_tracks_scanned": len(track_ids),
+        "relation_types": {
+            "repeals_full": "track A's decree explicitly and fully repeals "
+                             "a prior instrument (which may or may not be a "
+                             "corpus track).",
+            "repeals_partial": "track A's decree repeals only specific "
+                                "articles of another CURRENTLY-TRACKED law "
+                                "(or of an untracked predecessor).",
+            "superseded_by": "track A is itself confirmed superseded by a "
+                              "future/newer instrument.",
+        },
+        "edge_count": len(edges_out),
+        "relation_counts": _relation_counts(),
+        "edges": edges_out,
+        "concurrent_title_collisions": CONCURRENT_TITLE_COLLISIONS,
+        "ambiguous_or_excluded_cases": AMBIGUOUS_OR_EXCLUDED_CASES,
+        "extraction_policy": "Every edge above was read and classified by "
+                              "hand against this corpus's own documented "
+                              "text (registry notes + official_source.json "
+                              "fields/article text), never inferred from a "
+                              "decree being older or from topical similarity "
+                              "alone. Concurrent title/decree-number "
+                              "collisions that are NOT repeal relationships, "
+                              "and genuinely ambiguous or explicitly-excluded "
+                              "cases, are kept in their own sections rather "
+                              "than forced into `edges`. It is expected and "
+                              "correct that most of this corpus's 122 tracks "
+                              "have zero edges.",
+    }
+    return graph
+
+
+def main() -> int:
+    registry = _load_registry()
+    graph = build_graph(registry)
+
+    os.makedirs(OUT_DIR, exist_ok=True)
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(graph, f, ensure_ascii=False, indent=2, sort_keys=False)
+        f.write("\n")
+
+    print(f"Wrote {OUT_PATH}")
+    print(f"  tracks scanned: {graph['total_tracks_scanned']}")
+    print(f"  edges: {graph['edge_count']} {graph['relation_counts']}")
+    print(f"  concurrent_title_collisions: {len(graph['concurrent_title_collisions'])}")
+    print(f"  ambiguous_or_excluded_cases: {len(graph['ambiguous_or_excluded_cases'])}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
