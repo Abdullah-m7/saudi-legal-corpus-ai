@@ -268,6 +268,8 @@ LAYERS = [
      "social_insurance_legacy", "law"),
     ("data/zakat_arabic_legal_llm/zakat_law_legal_llm_001_128.json",
      "zakat", "law"),
+    ("data/patent_arabic_legal_llm/patent_law_legal_llm_001_066.json",
+     "patent", "law"),
 ]
 
 

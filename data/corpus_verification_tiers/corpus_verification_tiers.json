@@ -19,12 +19,12 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 122,
+  "total_tracks": 123,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 89,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 10,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 5,
-    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 18
+    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 19
   },
   "tracks_with_per_article_variation": 13,
   "tracks": [
@@ -648,6 +648,13 @@
       "track_id": "muslaha_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "patent_law",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED': الصياغة الحالية الحاكمة لكل المواد الـ66 تستند إلى مصدر واحد (نسخة WIPO Lex الموحَّدة حتى التعديل 2023)، وإن جرى التحقق منها عبر ثلاث طرق استخراج مستقلة لنفس المستند (تمريرتا OCR + استخراج طبقة النص الأصلية). بوابة BOE (مصدر رسمي ثانٍ) مؤكَّدة أنها متجاوَزة زمنياً على محورين: لم تُدرِج تعديل 2023 إطلاقاً، ولثلاث من أربع مواد عُدِّلت 2018 (35، 42، 63) يعرض نصها المعروض صياغة ما قبل 2018 رغم أن سجل تعديلاتها الخاص يصف التعديل بشكل صحيح — فهي تؤكد المعلومات الوصفية وتاريخ التعديل والصياغة الأصلية القابلة للاسترجاع، لا الصياغة الحالية. أقرب لنمط نظام العلامات التجارية (WIPO Lex أساسي x بطاقة حالة BOE) من نمط تحقق مزدوج رسمي كامل.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },

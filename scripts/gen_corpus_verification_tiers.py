@@ -160,6 +160,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY": TIER_4,
     "BOE_WAYBACK_PRIMARY_X_NEZAMS_SPOTCHECK_X_QANOONSA_STRUCTURE_VERIFIED": TIER_4,
     "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED": TIER_4,
+    "WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED": TIER_4,
 }
 
 # Tracks whose `official_text_status` field is absent (None) in the registry — these are the
@@ -304,6 +305,17 @@ RATIONALE_OVERRIDE = {
         "من ZATCA)، وبوابة أم القرى (uqn.gov.sa) استُخدمت فقط للتحقق الموجَّه من حقيقتين محددتين "
         "(تاريخ القرار 1007 وعنوان المادة 13)، وليس كتدقيق حرفي كامل ثانٍ — أدنى من TIER_2 التي "
         "تتطلب تدقيقاً مقارناً شاملاً، وليس موضعياً فقط."
+    ),
+    "patent_law": (
+        "official_text_status='WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_"
+        "CROSS_VERIFIED': الصياغة الحالية الحاكمة لكل المواد الـ66 تستند إلى مصدر واحد (نسخة "
+        "WIPO Lex الموحَّدة حتى التعديل 2023)، وإن جرى التحقق منها عبر ثلاث طرق استخراج مستقلة "
+        "لنفس المستند (تمريرتا OCR + استخراج طبقة النص الأصلية). بوابة BOE (مصدر رسمي ثانٍ) "
+        "مؤكَّدة أنها متجاوَزة زمنياً على محورين: لم تُدرِج تعديل 2023 إطلاقاً، ولثلاث من أربع "
+        "مواد عُدِّلت 2018 (35، 42، 63) يعرض نصها المعروض صياغة ما قبل 2018 رغم أن سجل تعديلاتها "
+        "الخاص يصف التعديل بشكل صحيح — فهي تؤكد المعلومات الوصفية وتاريخ التعديل والصياغة "
+        "الأصلية القابلة للاسترجاع، لا الصياغة الحالية. أقرب لنمط نظام العلامات التجارية "
+        "(WIPO Lex أساسي x بطاقة حالة BOE) من نمط تحقق مزدوج رسمي كامل."
     ),
 }
 

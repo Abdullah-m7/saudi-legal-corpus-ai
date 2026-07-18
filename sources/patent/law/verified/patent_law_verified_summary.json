@@ -1,0 +1,80 @@
+{
+  "law_key": "patent",
+  "layer": "PATENT_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 66,
+  "official_text_status": "WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 59,
+    "معدلة": 6,
+    "ملغاة": 0,
+    "مضافة": 1
+  },
+  "decree": "المرسوم الملكي رقم (م/27)",
+  "decree_date_hijri": "29/5/1425",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "section_ar": "الفصل الأول: أحكام عامة",
+      "first_article": 1,
+      "last_article": 42
+    },
+    {
+      "section_ar": "الفصل الثاني: أحكام خاصة ببراءات الاختراع",
+      "first_article": 43,
+      "last_article": 48
+    },
+    {
+      "section_ar": "الفصل الثالث: أحكام خاصة بالتصميمات التخطيطية للدارات المتكاملة",
+      "first_article": 49,
+      "last_article": 53
+    },
+    {
+      "section_ar": "الفصل الرابع: أحكام خاصة بحماية الأصناف النباتية الجديدة",
+      "first_article": 54,
+      "last_article": 58
+    },
+    {
+      "section_ar": "الفصل الخامس: أحكام خاصة بالنماذج الصناعية",
+      "first_article": 59,
+      "last_article": 60,
+      "note_ar": "يشمل أيضاً المادة الستون (مكرر) المضافة بالمرسوم الملكي رقم (م/45)."
+    },
+    {
+      "section_ar": "الفصل السادس: أحكام ختامية",
+      "first_article": 61,
+      "last_article": 65
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE FOR CURRENT TEXT: laws.boe.gov.sa's own \"نص النظام\" (consolidated text) portal, captured via two independent Wayback Machine snapshots (2024-11-13 and 2025-12-12, mutually consistent) — a clean, non-OCR, HTML-extracted Arabic plain-text rendering of all 65 sequentially-numbered articles. This BOE text is confirmed STALE on two separate axes: (a) it has NOT incorporated the 2023 Hague-accession amendment (Royal Decree M/45, 10/3/1445H) at all — Articles 2, 18 and 19 are displayed in their pre-M/45 wording, with no amendment annotation attached (BOE's UI appears unaware M/45 exists); (b) for the 2018 institutional-terminology amendment (Council of Ministers Resolution 536, 19/10/1439H), BOE's own displayed article BODY still shows pre-2018 wording (\"المدينة\"/\"الإدارة\") even for the four articles (2, 35, 42, 63) where BOE's own amendment-annotation popup correctly names and describes the 2018 change — and, confirmed newly in this pass, that same pre-2018 staleness silently persists, WITHOUT any annotation at all, across at least 22 further articles (3, 8, 10, 11, 12, 14, 16, 21, 22, 24, 25, 26, 27, 28, 29, 30, 31, 34, 38, 40, 41, 58) wherever the operative text names the administering authority.\nTo recover the genuinely CURRENT (post-M/45) governing wording, every BOE-sourced article was cross-verified against WIPO Lex's own hosted \"fully consolidated through M/45\" Arabic PDF (sa115ar_PRIMARY_WIPOLEX_CONSOLIDATED_THROUGH_M45.pdf; pdfinfo identifies it as Microsoft-Word-generated, i.e. a native-text PDF, not a scanned image) via two independent extraction routes: (i) two independent Tesseract OCR passes over rendered page images (ocr_ar_cleaned.txt / ocr_ar_combined.txt / ocr_ar_psm4_combined.txt), which agreed on substantive wording; and (ii) re-running pdftotext with the -layout flag directly over the PDF's own embedded bilingual (English/Arabic) text layer, extracting each line's RTL-isolated Arabic run in top-to-bottom reading order — a route that, for single-clause passages, independently reconstructs the correct Arabic prose (confirmed by cross-comparison) and in two instances recovered content the OCR passes had genuinely lost: the header line of Article 44 (present in OCR only as an unlabeled body continuation of Article 43) and the opening clause of Article 60(مكرر)'s second paragraph, lost across a page boundary in both OCR passes (\"2- يتمتع النموذج الصناعي – المسجل وفقًا لاتفاق لاهاي،...\").\nWhere WIPO-Lex-consolidated current wording differs from BOE's stale display, this track (a) uses BOE's own stale text, verbatim, as original_1425h_text for the six articles that the primary sources' own amendment-history apparatus enumerates as substantively amended (2, 18, 19, 35, 42, 63) — all six confirmed genuinely recoverable, none fabricated; and (b) applies the WIPO-Lex-confirmed current wording as the governing \"text\" field for those six articles PLUS the further ~22 articles whose only divergence from BOE's stale display is the blanket المدينة/الإدارة → الهيئة terminology substitution (itself an explicit, if not individually-enumerated, effect of the 2018 Council of Ministers Resolution 536) — a substitution-scope discrepancy documented transparently in known_unresolved_discrepancies rather than silently expanding this track's own \"معدلة\" classification beyond what the primary sources themselves enumerate.\nSAIP (Saudi Authority for Intellectual Property, the administering body)'s own \"الأنظمة واللوائح\" listing page was navigated into directly and found to link to a document titled \"نسخة محدثة 2024\" (updated 2024 edition) of this exact law — but the link itself returns SAIP's own site 404 page, independently reproduced via curl (with a realistic User-Agent and Referer header) and via WebFetch; this potential fourth cross-check source is therefore confirmed genuinely unreachable (a broken link on SAIP's own site), not used, and not worked around.\nNo legal text is altered, paraphrased, summarized, or machine-translated. Arabic governs; this track produces no English or Chinese text. All joins of BOE's tooltip-fragmented HTML lines back into flowing prose are pure whitespace/line-break reflow (verified against WIPO Lex's independent extraction to ensure no words were dropped, reordered, or added); genuine sub-clause paragraph breaks (أ-, ب-, 1-, 2-, etc.) are preserved exactly as they occur in the source.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "patent_boe_m45_staleness",
+      "description": "BOE's live portal (both the 2024-11-13 and 2025-12-12 Wayback snapshots) has not incorporated the 2023 Hague-accession amendment (Royal Decree M/45, 10/3/1445H) at all: Articles 2, 18 and 19 are displayed by BOE in their pre-M/45 wording, and BOE attaches no amendment annotation to any of the three (unlike its handling of the 2018 amendment, where at least an annotation popup exists even though the body text itself is stale — see patent_boe_body_annotation_mismatch). This track uses WIPO Lex's own hosted PDF, explicitly labelled by its own filename/metadata as consolidated through M/45, as the primary source for these three articles' current wording, cross-verified via two independent extraction routes (OCR and native-text-layer pdftotext -layout) documented in verification_methodology_note."
+    },
+    {
+      "article_key": "patent_boe_body_annotation_mismatch",
+      "description": "For the four articles BOE's own UI explicitly flags as amended by the 2018 Council of Ministers Resolution 536 (Articles 2, 35, 42, 63), BOE's amendment-annotation popup correctly names and describes the terminology change (المدينة/الإدارة → الهيئة), yet BOE's own displayed article BODY for all four still shows the pre-2018 wording (\"المدينة\"/\"رئيس المدينة\"/\"الإدارة\") — i.e. BOE's own annotation and its own body text contradict each other. This track uses the annotation's description (corroborated independently by WIPO Lex's post-2018/post-2023 consolidated PDF) to determine the current wording, and preserves BOE's stale body text as original_1425h_text."
+    },
+    {
+      "article_key": "patent_terminology_substitution_scope",
+      "description": "The 2018 Council of Ministers Resolution 536 recital states it replaces \"المدينة\"/\"الإدارة\" with \"الهيئة\" wherever either term appears in the Law (\"أينما وردتا في النظام المشار إليه\"), and BOE's own body-annotation for Article 2 repeats this blanket wording. In practice this substitution's textual footprint, confirmed against WIPO Lex's consolidated PDF, extends well beyond the four articles (2, 35, 42, 63) that BOE/the amending instrument's own per-article amendment-history enumerates as formally \"معدلة\": at least 22 further articles (3, 8, 10, 11, 12, 14, 16, 21, 22, 24, 25, 26, 27, 28, 29, 30, 31, 34, 38, 40, 41, 58) contain the same pre-2018 \"المدينة\"/\"الإدارة\" wording in BOE's stale display and the same post-2018 \"الهيئة\" wording in the WIPO-Lex-consolidated current text, yet are not separately flagged as amended by either primary source. This track presents the CURRENT (\"الهيئة\") wording as the governing text field for all of these ~22 articles (since that is what the consolidated, in-force law actually says), while retaining legal_status_ar=\"اصلية\" for them (consistent with the primary sources' own enumerated amendment scope) rather than unilaterally reclassifying them as \"معدلة\" absent a primary source that does so — a scope judgment flagged here transparently rather than silently resolved either way. original_1425h_text is populated ONLY for the six articles the primary sources do enumerate as amended (2, 18, 19, 35, 42, 63), consistent with this corpus's established schema convention; it is not separately populated for the ~22 terminology-only-touched articles."
+    },
+    {
+      "article_key": "patent_art35_vs_42_63_wording_inconsistency",
+      "description": "The 2018 amendment's own drafting is internally inconsistent: Article 35(b) was changed to read \"رئيس مجلس إدارة الهيئة\" (RETAINING the \"رئيس\"/Chairman prefix before the institutional reference), while Articles 42 and 63 were changed to read simply \"مجلس إدارة الهيئة\" (WITHOUT the \"رئيس\" prefix), even though all three originally read \"رئيس المدينة\" (with the prefix) before 2018. This is a genuine drafting inconsistency in the amending instrument itself, confirmed against both BOE's original wording and WIPO Lex's current consolidated wording; it is preserved verbatim in this track's text fields for all three articles, not normalized or silently corrected."
+    },
+    {
+      "article_key": "patent_ocr_verification_limitations",
+      "description": "The WIPO Lex consolidated PDF's own two independent OCR passes (ocr_ar_cleaned.txt, ocr_ar_combined.txt/ocr_ar_psm4_combined.txt) each had at least one genuine content gap: both lost the header line of Article 44 (its body survived, unlabeled, appended to Article 43's OCR text) and both lost the opening words of Article 60(مكرر)'s second numbered clause at a page boundary. Both gaps were independently closed not by further OCR but by re-extracting the PDF's own embedded native text layer with pdftotext -layout (the source PDF is Microsoft-Word-generated per its own metadata, not a scanned image, so a real text layer exists) — see verification_methodology_note. This is flagged so that any future consumer relying on the raw OCR .txt files alone in this bundle is aware they are each individually incomplete at these two spots."
+    },
+    {
+      "article_key": "patent_saip_source_link_broken",
+      "description": "SAIP (Saudi Authority for Intellectual Property)'s own \"الأنظمة واللوائح\" (Systems and Regulations) page at saip.gov.sa/ar/resources/lows-and-regulations/systems-and-regulations links to a document titled with a filename indicating \"نسخة محدثة 2024\" (updated 2024 edition) of this exact law, which — being dated after the 2023 M/45 amendment — would have made an excellent fourth independent cross-check of the current consolidated text. The link itself (an /api/proxy-file endpoint) returns SAIP's own Drupal-based 404 \"الصفحة غير موجودة\" error page, reproduced consistently via curl (with a realistic User-Agent and a Referer header matching the listing page) and via WebFetch. This is a genuinely broken link on SAIP's own site, not a network/access-policy block, and not worked around; this track does not use this source and instead relies on the WIPO Lex / BOE cross-verification documented above."
+    },
+    {
+      "article_key": "patent_gcc_unified_patent_law_clarification",
+      "description": "The GCC Unified Patent Law (administered by the GCC Patent Office in Riyadh) is a SEPARATE, PARALLEL, OPTIONAL regional filing route — analogous to the European Patent Office/European Patent Convention model — that a Saudi or foreign applicant may use to obtain a single patent valid across GCC member states. It does NOT replace, repeal, or supersede this domestic Saudi statute (Royal Decree M/27 as amended), which remains the sole basis for national Saudi patent filings and for SAIP's domestic administration of patents, layout designs, plant varieties, and industrial designs. This track ingests and verifies only the domestic Saudi law (M/27); the GCC Unified Patent Law's own text is out of scope and is not ingested here."
+    }
+  ],
+  "source_artifact": "sources/patent/law/official_source/patent_law_official_source.json"
+}
