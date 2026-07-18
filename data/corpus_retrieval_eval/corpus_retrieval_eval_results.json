@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 286,
+  "total_queries": 288,
   "top1_hits": 262,
-  "top3_hits": 279,
-  "top5_hits": 282,
-  "top1_accuracy": 0.9161,
-  "top3_accuracy": 0.9755,
-  "top5_accuracy": 0.986,
-  "mrr_at_5": 0.9453,
+  "top3_hits": 281,
+  "top5_hits": 284,
+  "top1_accuracy": 0.9097,
+  "top3_accuracy": 0.9757,
+  "top5_accuracy": 0.9861,
+  "mrr_at_5": 0.9422,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -60,11 +60,16 @@
     "law_component": "law",
     "article_number": 407
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "finance-lease-law-llm-art-001",
+     "article_number": 1,
+     "score": 11
+    },
     {
      "record_id": "civil-law-llm-art-407",
      "article_number": 407,
@@ -73,11 +78,6 @@
     {
      "record_id": "civil-law-llm-art-414",
      "article_number": 414,
-     "score": 10
-    },
-    {
-     "record_id": "civil-law-llm-art-440",
-     "article_number": 440,
      "score": 10
     }
    ]
@@ -8027,11 +8027,16 @@
     "law_component": "law",
     "article_number": 37
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "finance-lease-law-llm-art-020",
+     "article_number": 20,
+     "score": 31
+    },
     {
      "record_id": "anti-narcotics-law-llm-art-037",
      "article_number": 37,
@@ -8041,11 +8046,6 @@
      "record_id": "customs-law-llm-art-052",
      "article_number": 48,
      "score": 24
-    },
-    {
-     "record_id": "evidence-elec-llm-art-012",
-     "article_number": 12,
-     "score": 23
     }
    ]
   },
@@ -8883,6 +8883,68 @@
      "record_id": "capital-market-law-llm-art-004",
      "article_number": 4,
      "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "fls-001",
+   "query_ar": "يجوز إصدار أوراق مالية مقابل حقوق المؤجر وفقًا للوائح والقواعد التي تصدرها هيئة السوق المالية",
+   "category": "topical",
+   "gold": {
+    "corpus": "finance_lease",
+    "law_component": "law",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "finance-lease-law-llm-art-010",
+     "article_number": 10,
+     "score": 39
+    },
+    {
+     "record_id": "capital-market-law-llm-art-001",
+     "article_number": 1,
+     "score": 30
+    },
+    {
+     "record_id": "capital-market-law-llm-art-002",
+     "article_number": 2,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "fls-002",
+   "query_ar": "تتولى المحكمة المختصة الفصل في المنازعات الناشئة من تطبيق أحكام هذا النظام ولائحته",
+   "category": "topical",
+   "gold": {
+    "corpus": "finance_lease",
+    "law_component": "law",
+    "article_number": 24
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "finance-lease-law-llm-art-024",
+     "article_number": 24,
+     "score": 40
+    },
+    {
+     "record_id": "finance-companies-law-llm-art-031",
+     "article_number": 31,
+     "score": 39
+    },
+    {
+     "record_id": "real-estate-mortgage-law-llm-art-045",
+     "article_number": 45,
+     "score": 36
     }
    ]
   }

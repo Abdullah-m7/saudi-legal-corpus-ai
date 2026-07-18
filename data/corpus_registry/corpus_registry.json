@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8952,
+  "total_primary_arabic_governing_records": 8980,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9847,
-  "total_tracks": 129,
+  "total_registry_counted_records": 9875,
+  "total_tracks": 130,
   "tracks": [
     {
       "boundaries": {
@@ -6084,6 +6084,55 @@
       "validator_targets": [
         "make healthcare-professions-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/finance_lease/law/official_source/finance_lease_law_official_source.json",
+        "sources/finance_lease/law/verified/finance_lease_law_verified_records.jsonl",
+        "data/finance_lease_arabic_legal_llm/finance_lease_law_legal_llm_001_028.json"
+      ],
+      "display_name_ar": "نظام الإيجار التمويلي",
+      "display_name_en": "Finance Lease Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/finance_lease_arabic_legal_llm/finance_lease_law_legal_llm_001_028.json",
+          "governing": true,
+          "record_count": 28,
+          "status": "complete"
+        }
+      },
+      "notes": "Finance Lease Law «نظام الإيجار التمويلي» — Royal Decree M/48, dated 13/8/1433H (3/7/2012), published 13/10/1433H. Governs the finance-lease (leasing) contract itself — registration, rights, enforcement — as a SEPARATE, more specific statute from this corpus's already-ingested `finance_companies_law` (Finance Companies Control Law, M/51, 1433H), which regulates finance companies generally; not conflated. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate was independently re-verified and confirmed correct (unlike several prior gap-map entries this corpus found wrong). 28 records across a فصل تمهيدي (تعريفات, Article 1) plus 4 فصول (عقد الإيجار التمويلي arts 2-17; سجل العقود arts 18-23; المخالفات والمنازعات arts 24-26; أحكام ختامية arts 27-28) — all 28 اصلية, never amended since enactment (only the companion Implementing Regulation has itself been separately amended). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-SAMA-RULEBOOK-PDF-X-NEZAMS-TRIPLE-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot (both http:// and https:// tried, https:// worked, http:// returned 403) was used as primary, cross-verified byte-for-byte against nezams.com's live transcription and against rulebook.sama.gov.sa's official Arabic and English PDFs (the only source carrying inline فصل headings), agreeing on all 28 articles. An initial webpage-summary artifact incorrectly suggested Chapter Two ended at Article 20; corrected to Article 23 after reading SAMA's own primary-source PDFs page-by-page. Other flagged discrepancies: the institutional-name reference to مؤسسة النقد العربي السعودي (SAMA, since renamed to the Saudi Central Bank by a separate Law, M/36) is a naming footnote, not a textual amendment to this Law's own defined terms — preserved verbatim; no explicit predecessor-repeal clause was found naming any prior statute, a documented negative finding rather than an assumption; Articles 20 and 22 carry genuine decorative tatweel characters confirmed present identically in both BOE and nezams.com, preserved verbatim rather than 'cleaned'; a companion Implementing Regulation (Administrative/Governor's Decision 1/م ش ت, 14/4/1434H, itself separately amended at least once) is confirmed to exist but is out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law/healthcare_professions_law. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_ARCHIVE_X_SAMA_RULEBOOK_PDF_X_NEZAMS_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 28,
+        "legal_status_breakdown": {
+          "اصلية": 28,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 28
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/48, 13/8/1433H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription and rulebook.sama.gov.sa's official Arabic and English PDFs (the latter the only source with inline فصل headings)",
+      "status": "complete",
+      "track_id": "finance_lease_law",
+      "validator_targets": [
+        "make finance-lease-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6133,6 +6182,7 @@
       "environmental": 49,
       "evidence": 322,
       "finance_companies": 41,
+      "finance_lease": 28,
       "foreign_ownership": 15,
       "franchise": 27,
       "gcc_ownership": 6,
@@ -6189,7 +6239,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 8783,
+    "total_records": 8811,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

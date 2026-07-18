@@ -170,6 +170,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_finance_companies_law_track.py",
     "scripts/gen_cooperative_health_insurance_law_track.py",
     "scripts/gen_healthcare_professions_law_track.py",
+    "scripts/gen_finance_lease_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",

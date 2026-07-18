@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 129 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 129 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 130 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 130 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 129,
+  "total_tracks": 130,
   "known_source_staleness_risk_count": 4,
   "known_source_staleness_risk_tracks": [
     "environmental_law",
@@ -1038,6 +1038,29 @@
         "sama.gov.sa"
       ],
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-01-14; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "finance_lease_law",
+      "display_name_en": "Finance Lease Law",
+      "display_name_ar": "نظام الإيجار التمويلي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_SAMA_RULEBOOK_PDF_X_NEZAMS_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة عبر https:// واستُخدمت كمصدر رسمي أساسي، وقورنت مع مصدر رسمي ثانٍ (نسخة PDF الرسمية من دليل مؤسسة النقد rulebook.sama.gov.sa) ومصدر ثالث ثانوي (nezams.com، جلب حي) — مصدران رسميان متقاربان + تدقيق ثانوي، يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط finance_companies_law (BOE عبر Wayback × bfc.gov.sa).",
+      "registry_source_authority": "Royal Decree M/48, 13/8/1433H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription and rulebook.sama.gov.sa's official Arabic and English PDFs (the latter the only source with inline فصل headings)",
+      "registry_source_url": null,
+      "official_source_file": "sources/finance_lease/law/official_source/finance_lease_law_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/9b61c9c0-71e2-4096-a3da-a9a700f2d79a/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
