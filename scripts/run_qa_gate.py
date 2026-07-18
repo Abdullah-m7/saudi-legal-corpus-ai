@@ -169,6 +169,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_corpus_verification_tiers.py",
     "scripts/gen_corpus_supersession_graph.py",
     "scripts/gen_corpus_cross_reference_graph.py",
+    "scripts/gen_corpus_glossary.py",
     "scripts/run_corpus_retrieval_eval.py",
 ]
 
