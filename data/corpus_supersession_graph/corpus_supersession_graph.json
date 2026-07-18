@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 137,
+  "total_tracks_scanned": 138,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 54,
+  "edge_count": 55,
   "relation_counts": {
-    "repeals_full": 44,
+    "repeals_full": 45,
     "repeals_partial": 9,
     "superseded_by": 1
   },
@@ -545,6 +545,16 @@
       "affected_articles": "Only Articles 2(b), 2(c), 7(b), and Chapter Two of Part Two",
       "note": "municipal_councils_law's own official_source.json article 68: 'يلغي هذا النظام المواد (2/ب، 2/ج، 7/ب، والفصل الثاني من الباب الثاني) من نظام البلديات والقرى، الصادر بالمرسوم الملكي ذي الرقم (م/5) والتاريخ 21/2/1397هـ.' A determinate, narrowly-scoped partial repeal naming exactly four provisions, not a full supersession. Predecessor not separately ingested in this corpus, flagged as a follow-up candidate.",
       "source_ref": "sources/municipal_councils/law/official_source/municipal_councils_law_official_source.json (article 68)"
+    },
+    {
+      "from_track_id": "press_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام المطبوعات والنشر (السابق، 1402هـ)",
+      "target_decree": "Royal Decree M/17, 13/4/1402H",
+      "affected_articles": null,
+      "note": "press_law's own official_source.json article 48: 'يحل هذا النظام محل نظام المطبوعات والنشر الصادر بالمرسوم الملكي ذي الرقم (م/17) والتاريخ 13/4/1402هـ، ويلغي ما يتعارض معه من أحكام.' Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/press/law/official_source/press_law_official_source.json (article 48)"
     },
     {
       "from_track_id": "copyright_law",

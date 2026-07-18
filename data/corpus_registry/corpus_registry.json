@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9537,
+  "total_primary_arabic_governing_records": 9586,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10432,
-  "total_tracks": 137,
+  "total_registry_counted_records": 10481,
+  "total_tracks": 138,
   "tracks": [
     {
       "boundaries": {
@@ -6476,6 +6476,55 @@
       "validator_targets": [
         "make municipal-councils-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/press/law/official_source/press_law_official_source.json",
+        "sources/press/law/verified/press_law_verified_records.jsonl",
+        "data/press_arabic_legal_llm/press_law_legal_llm_001_049.json"
+      ],
+      "display_name_ar": "نظام المطبوعات والنشر",
+      "display_name_en": "Law on Printed Materials and Publication (Press Law)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/press_arabic_legal_llm/press_law_legal_llm_001_049.json",
+          "governing": true,
+          "record_count": 49,
+          "status": "complete"
+        }
+      },
+      "notes": "Law on Printed Materials and Publication «نظام المطبوعات والنشر» — Royal Decree M/32, dated 3/9/1421H (29 November 2000), approved via Council of Ministers Resolution No. 211 (1/9/1421H). A low-priority coverage-gap identified via the coverage_gap_map research pass, which itself flagged a currency-check requirement given the media/press regulatory landscape's evolution since 2000. **CURRENCY CHECK CONFIRMED M/32 STILL CURRENT**: a comprehensive draft «نظام الإعلام» (Media Law) has been in public consultation since Nov 2023 but remains UNENACTED — confirmed via BOE's own page (near-live Wayback snapshot, 26 Feb 2026) still reading 'الحالة: ساري', the General Commission for Audiovisual Media's own regulations page listing no new comprehensive law, and independent legal-commentary corroboration; a red-herring «نظام تنظيم الإعلام الرقمي» that surfaced in research was identified and ruled out as a Jordanian law unrelated to Saudi Arabia. **49 records: 43 اصلية, 6 معدلة** (Articles 5, 9, 36, 37, 38, 40) — flat structure with 6 informal content groupings, **NO أبواب/فصول labels** in the source (Articles 1-12 untitled). **VERIFICATION TIER:** BOE-NEAR-LIVE-WAYBACK-X-MEDIA-GOV-SA-OFFICIAL-PDF-X-WIPO-LEX-X-NEZAMS-QANOONSA — the live laws.boe.gov.sa portal was unreachable this pass, but a near-live Wayback Machine snapshot (26 Feb 2026, ~5 months before this build) was structurally cross-verified against the Ministry of Media's own official PDF of this exact law (media.gov.sa, a genuinely separate regulator, not a BOE mirror), further corroborated by WIPO Lex's exact decree/date match and nezams.com/qanoonsa.com. **Confirmed full repeal of a predecessor:** this law's own Article 48 explicitly and fully repeals the prior 1982 Press and Publications Law (Royal Decree M/17, 13/4/1402H); the predecessor law is not ingested in this corpus (historical context only). **GENUINELY CONFIRMED BOE main-body staleness for all 6 amended articles**: BOE's own page simultaneously carries a 'changed-article' CSS class and a fully-quoted amendment changelog for Articles 5, 9, 36, 37, 38, and 40, while its main displayed body still shows the demonstrably older, pre-amendment wording — the same self-contradictory pattern already independently confirmed in this corpus's accounting_auditing_law and awqaf_law tracks; this track ingests the changelog-instructed amended wording as current and preserves BOE's stale wording verbatim in each article's original_2000_text field. Article 5 underwent two sequential amendments (Royal Decree M/18, 1441H, then Council of Ministers Resolution 594, 1442H) both applied sequentially as individually unambiguous phrase-level instructions; Articles 9/36/37/38/40 were each amended once by Royal Decree M/20 (1433H), restructuring the violations-committee and penalty regime. Other flagged discrepancies: the Ministry of Media's own PDF extracts with word-internal character scrambling (used only structurally, not verbatim); Chapter 1 (Articles 1-12) has no source heading, left undocumented rather than fabricated; minor BOE inline-span whitespace artifacts normalized and documented; two companion instruments (اللائحة التنفيذية لنظام المطبوعات والنشر and نظام المؤسسات الصحفية, a DIFFERENT M/20 dated 1422H) confirmed to exist but out of scope for this track, flagged as follow-up candidates. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_NEAR_LIVE_WAYBACK_X_MEDIA_GOV_SA_OFFICIAL_PDF_X_WIPO_LEX_X_NEZAMS_QANOONSA_CURRENCY_CHECKED_CONFIRMED_CURRENT",
+      "record_counts": {
+        "arabic_articles": 49,
+        "legal_status_breakdown": {
+          "اصلية": 43,
+          "مضافة": 0,
+          "معدلة": 6,
+          "ملغاة": 0
+        },
+        "total": 49
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/32, 3/9/1421H, approved via Council of Ministers Resolution No. 211 (1/9/1421H) — a near-live Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, snapshot dated 26 Feb 2026), structurally cross-verified against the Ministry of Media's own official PDF (media.gov.sa) and WIPO Lex, plus nezams.com/qanoonsa.com",
+      "status": "complete",
+      "track_id": "press_law",
+      "validator_targets": [
+        "make press-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6563,6 +6612,7 @@
       "payment_systems": 20,
       "pdpl": 81,
       "personal_status": 293,
+      "press": 49,
       "qismah": 48,
       "real_estate_expropriation": 39,
       "real_estate_finance": 15,
@@ -6589,7 +6639,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9368,
+    "total_records": 9417,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

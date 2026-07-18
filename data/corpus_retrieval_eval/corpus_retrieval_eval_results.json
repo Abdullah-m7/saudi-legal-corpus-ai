@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 302,
-  "top1_hits": 276,
-  "top3_hits": 295,
-  "top5_hits": 298,
-  "top1_accuracy": 0.9139,
-  "top3_accuracy": 0.9768,
+  "total_queries": 304,
+  "top1_hits": 278,
+  "top3_hits": 297,
+  "top5_hits": 300,
+  "top1_accuracy": 0.9145,
+  "top3_accuracy": 0.977,
   "top5_accuracy": 0.9868,
-  "mrr_at_5": 0.9449,
+  "mrr_at_5": 0.9453,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4292,9 +4292,9 @@
      "score": 31
     },
     {
-     "record_id": "accounting-auditing-law-llm-art-013",
-     "article_number": 13,
-     "score": 14
+     "record_id": "press-law-llm-art-044",
+     "article_number": 44,
+     "score": 15
     }
    ]
   },
@@ -9378,6 +9378,68 @@
     {
      "record_id": "oa-llm-companies-art-071",
      "article_number": 71,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "prs-001",
+   "query_ar": "على كل مؤلف أو ناشر أو طابع أو موزع يرغب في طباعة أي مطبوعة أو توزيعها أن يقدم نسختين منها إلى الوزارة لإجازتها قبل طبعها",
+   "category": "topical",
+   "gold": {
+    "corpus": "press",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "press-law-llm-art-013",
+     "article_number": 13,
+     "score": 46
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 21
+    },
+    {
+     "record_id": "labor-annex3-llm-art-008",
+     "article_number": 8,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "prs-002",
+   "query_ar": "على كل صحيفة نسبت إلى الغير تصريحاً غير صحيح أو نشرت خبراً خاطئاً أن تصحح ذلك بنشره مجاناً بناء على طلب صاحب الشأن",
+   "category": "topical",
+   "gold": {
+    "corpus": "press",
+    "law_component": "law",
+    "article_number": 35
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "press-law-llm-art-035",
+     "article_number": 35,
+     "score": 42
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 22
+    },
+    {
+     "record_id": "oa-llm-companies-art-102",
+     "article_number": 102,
      "score": 20
     }
    ]

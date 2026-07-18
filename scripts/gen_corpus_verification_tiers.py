@@ -138,6 +138,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
+    "BOE_NEAR_LIVE_WAYBACK_X_MEDIA_GOV_SA_OFFICIAL_PDF_X_WIPO_LEX_X_NEZAMS_QANOONSA_CURRENCY_CHECKED_CONFIRMED_CURRENT": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -508,6 +509,23 @@ RATIONALE_OVERRIDE = {
         "الخاص بها). لا يحمل هذا المسار has_per_article_variation إذ لم يُعثر على أي "
         "تعديل مطلقاً منذ صدور النظام، وهو استقرار مؤكَّد إيجابياً وليس افتراضياً، مفصَّل "
         "في official_source.json الخاص بالمسار."
+    ),
+    "press_law": (
+        "official_text_status='BOE_NEAR_LIVE_WAYBACK_X_MEDIA_GOV_SA_OFFICIAL_PDF_X_"
+        "WIPO_LEX_X_NEZAMS_QANOONSA_CURRENCY_CHECKED_CONFIRMED_CURRENT': بوابة هيئة "
+        "الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت لقطة أرشيف Wayback Machine شبه "
+        "حية (26 فبراير 2026، أي قبل هذا البناء بنحو 5 أشهر فقط) كمصدر أساسي، وقورنت "
+        "هيكلياً بمصدر رسمي ثانٍ مستقل بذاته (ملف PDF الرسمي لوزارة الإعلام media.gov.sa "
+        "لهذا النظام تحديداً، نطاق منفصل فعلياً عن BOE) ومصدرين ثانويين للمطابقة "
+        "(WIPO Lex، ومطابقة الرقم والتاريخ بدقة؛ nezams.com/qanoonsa.com). مصدران "
+        "رسميان (BOE وmedia.gov.sa) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين "
+        "رسميين فأكثر متقاربين)، مماثل لنمط awqaf_law وmunicipal_councils_law (BOE "
+        "عبر Wayback × موقع الجهة الرسمي الخاص بها). يحمل هذا المسار فحص تحقق من "
+        "الحداثة (currency check) أثبت أن النظام لا يزال سارياً رغم وجود مسودة نظام "
+        "إعلام شامل لم تُسنّ بعد. لا يحمل has_per_article_variation إذ عولجت جميع "
+        "المواد الست المعدَّلة (5، 9، 36، 37، 38، 40) بمنهجية واحدة متسقة (اعتماد نص "
+        "سجل التعديلات المقتبس بثقة كاملة)، وليس بثقة متفاوتة لكل مادة، مفصَّل في "
+        "official_source.json الخاص بالمسار."
     ),
 }
 
