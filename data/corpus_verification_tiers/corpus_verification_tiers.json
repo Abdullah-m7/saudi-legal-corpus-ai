@@ -19,14 +19,14 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 127,
+  "total_tracks": 128,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 90,
-    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 10,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 11,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 21
   },
-  "tracks_with_per_article_variation": 14,
+  "tracks_with_per_article_variation": 15,
   "tracks": [
     {
       "track_id": "aawan_regulation",
@@ -258,6 +258,13 @@
       "tier_rationale": "official_text_status='DUAL_PRIMARY_SOURCE_BOE_WAYBACK_X_NEZAMS_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
+    },
+    {
+      "track_id": "cooperative_health_insurance_law",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (إعادة تعيين اتصال)، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة (تطلّب رابط http:// وليس https://) واستُخدمت كمصدر رسمي أساسي واحد، وقورنت حرفياً مع مصدر ثانوي واحد (nezams.com) — مصدر رسمي واحد + تدقيق مقارن ثانوي، يطابق تعريف TIER_2 تماماً. نص تعديل المادة الرابعة لعام 1440هـ يستند إلى nezams.com حصراً (بوابة BOE تذكر القرار 472 دون إيراد نصه)؛ راجع has_per_article_variation لهذا التمايز.",
+      "has_per_article_variation": true,
+      "per_article_variation_note": "17 مادة غير معدَّلة + الصياغتان (1420هـ و1425هـ) للمادتين المعدَّلتين (4، 14) مصدرها مزدوج (أرشيف Wayback لبوابة BOE × nezams.com)، متطابقة حرفياً دون فارق. أما نص تعديل المادة الرابعة لعام 1440هـ (القرار 472) فمصدره ثانوي واحد فقط (nezams.com) — بوابة BOE تذكر القرار نفسه دون إيراد نصه؛ راجع official_source.json الخاص بالمسار."
     },
     {
       "track_id": "copyright_law",

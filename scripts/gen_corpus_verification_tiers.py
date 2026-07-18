@@ -129,6 +129,7 @@ STATUS_TIER_MAP = {
     "GOVERNMENT_AGENCY_OFFICIAL_PDF_PRIMARY_SOURCE_BOE_ARCHIVE_CROSS_VERIFIED": TIER_1,
     "ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED": TIER_1,
     "BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED": TIER_1,
+    "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503": TIER_2,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -344,6 +345,16 @@ RATIONALE_OVERRIDE = {
         "المصادر الثانوية نفسها على نوع الأداة التشريعية ورقمها — موثَّق شفافاً في "
         "known_unresolved_discrepancies الخاص بالمسار، لا مخفياً."
     ),
+    "cooperative_health_insurance_law": (
+        "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503': "
+        "بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (إعادة تعيين اتصال)، لكن نسخة "
+        "أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة (تطلّب رابط http:// وليس "
+        "https://) واستُخدمت كمصدر رسمي أساسي واحد، وقورنت حرفياً مع مصدر ثانوي واحد "
+        "(nezams.com) — مصدر رسمي واحد + تدقيق مقارن ثانوي، يطابق تعريف TIER_2 "
+        "تماماً. نص تعديل المادة الرابعة لعام 1440هـ يستند إلى nezams.com حصراً "
+        "(بوابة BOE تذكر القرار 472 دون إيراد نصه)؛ راجع has_per_article_variation "
+        "لهذا التمايز."
+    ),
     "finance_companies_law": (
         "official_text_status='BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED': "
         "بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503 مباشرة، 422 عبر r.jina.ai)، "
@@ -436,6 +447,13 @@ PER_ARTICLE_VARIATION_NOTE = {
         "16-21، 29 والمادة 36 مكرر المضافة) فمصدره ثانوي حصراً (qanoonsa.com × حواشي "
         "nezams.com) دون أي تأكيد أولي مباشر لنصه تحديداً؛ راجع official_source.json "
         "الخاص بالمسار."
+    ),
+    "cooperative_health_insurance_law": (
+        "17 مادة غير معدَّلة + الصياغتان (1420هـ و1425هـ) للمادتين المعدَّلتين (4، 14) "
+        "مصدرها مزدوج (أرشيف Wayback لبوابة BOE × nezams.com)، متطابقة حرفياً دون "
+        "فارق. أما نص تعديل المادة الرابعة لعام 1440هـ (القرار 472) فمصدره ثانوي "
+        "واحد فقط (nezams.com) — بوابة BOE تذكر القرار نفسه دون إيراد نصه؛ راجع "
+        "official_source.json الخاص بالمسار."
     ),
 }
 

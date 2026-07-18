@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 282,
-  "top1_hits": 258,
-  "top3_hits": 275,
-  "top5_hits": 278,
-  "top1_accuracy": 0.9149,
-  "top3_accuracy": 0.9752,
-  "top5_accuracy": 0.9858,
-  "mrr_at_5": 0.9446,
+  "total_queries": 284,
+  "top1_hits": 260,
+  "top3_hits": 277,
+  "top5_hits": 280,
+  "top1_accuracy": 0.9155,
+  "top3_accuracy": 0.9754,
+  "top5_accuracy": 0.9859,
+  "mrr_at_5": 0.945,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4974,9 +4974,9 @@
      "score": 13
     },
     {
-     "record_id": "juveniles-law-llm-art-015",
-     "article_number": 15,
-     "score": 12
+     "record_id": "cooperative-health-insurance-law-llm-art-017",
+     "article_number": 17,
+     "score": 13
     }
    ]
   },
@@ -8759,6 +8759,68 @@
      "record_id": "insurance-control-law-llm-art-007",
      "article_number": 7,
      "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "chi-001",
+   "query_ar": "تشمل التغطية بالضمان الصحي التعاوني جميع من ينطبق عليهم هذا النظام وأفراد أسرهم",
+   "category": "topical",
+   "gold": {
+    "corpus": "cooperative_health_insurance",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cooperative-health-insurance-law-llm-art-002",
+     "article_number": 2,
+     "score": 50
+    },
+    {
+     "record_id": "cooperative-health-insurance-law-llm-art-014",
+     "article_number": 14,
+     "score": 21
+    },
+    {
+     "record_id": "cooperative-health-insurance-law-llm-art-005",
+     "article_number": 5,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "chi-002",
+   "query_ar": "تتولى وزارة الصحة مراقبة ضمان جودة ما يقدم من خدمات صحية للمستفيدين من الضمان الصحي التعاوني",
+   "category": "topical",
+   "gold": {
+    "corpus": "cooperative_health_insurance",
+    "law_component": "law",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cooperative-health-insurance-law-llm-art-016",
+     "article_number": 16,
+     "score": 53
+    },
+    {
+     "record_id": "cooperative-health-insurance-law-llm-art-004",
+     "article_number": 4,
+     "score": 29
+    },
+    {
+     "record_id": "cooperative-health-insurance-law-llm-art-014",
+     "article_number": 14,
+     "score": 28
     }
    ]
   }

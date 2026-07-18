@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8889,
+  "total_primary_arabic_governing_records": 8908,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9784,
-  "total_tracks": 127,
+  "total_registry_counted_records": 9803,
+  "total_tracks": 128,
   "tracks": [
     {
       "boundaries": {
@@ -5986,6 +5986,55 @@
       "validator_targets": [
         "make finance-companies-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/cooperative_health_insurance/law/official_source/cooperative_health_insurance_law_official_source.json",
+        "sources/cooperative_health_insurance/law/verified/cooperative_health_insurance_law_verified_records.jsonl",
+        "data/cooperative_health_insurance_arabic_legal_llm/cooperative_health_insurance_law_legal_llm_001_019.json"
+      ],
+      "display_name_ar": "نظام الضمان الصحي التعاوني",
+      "display_name_en": "Cooperative Health Insurance Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/cooperative_health_insurance_arabic_legal_llm/cooperative_health_insurance_law_legal_llm_001_019.json",
+          "governing": true,
+          "record_count": 19,
+          "status": "complete"
+        }
+      },
+      "notes": "Cooperative Health Insurance Law «نظام الضمان الصحي التعاوني» — Royal Decree M/10, dated 1/5/1420H, approving Council of Ministers Resolution No. 71 (27/4/1420H). Administered by the Council of Cooperative Health Insurance (مجلس الضمان الصحي التعاوني / CCHI) — a distinct, more specific statute from this corpus's already-ingested `insurance_control_law` (Cooperative Insurance Companies Control Law, M/32, 1424H), which governs insurance companies generally; not conflated. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose decree/date estimate was independently re-verified and confirmed correct. 19 records, flat structure (no أبواب/فصول, confirmed absent from both sources) — 17 اصلية / 2 معدلة (Articles 4 and 14, both amended by Council of Ministers Resolution 246, 4/9/1425H; Article 4 amended a second time by Resolution 472, 18/8/1440H, restructuring full council membership). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE — the live laws.boe.gov.sa portal was unreachable this pass (connection reset), but a Wayback Machine snapshot of the exact BOE law page was reachable (plain http:// was required; https:// was blocked by egress policy) and cross-verified byte-for-byte against nezams.com's HTML transcription, finding zero substantive discrepancies across all 17 unamended articles and both the 1420H and 1425H states of the 2 amended articles. Flagged discrepancies: BOE's own summary metadata panel shows an internally inconsistent issuance/publication date ('1420/01/01H = 17/04/1999'), almost certainly a generic year-placeholder rather than the real decree date, not adopted; Article 4's 1440H amendment replacement text rests on nezams.com alone (BOE's own page cites Resolution 472 but does not reproduce its text), with 5 specific transcription artifacts in nezams.com's raw text individually normalized and disclosed verbatim; a companion Implementing Regulation (CCHI-hosted, amended multiple times) is identified but not ingested this pass, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law; CCHI circulars and Umrah/Hajj-visitor coverage expansions are clarified as living outside this primary Law's own amendment history (only Articles 4 and 14 were ever amended) and are out of scope. No repeal clause found in the decree or its underlying resolution — a freestanding new 1420H law, no supersession-graph edge applicable. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503",
+      "record_counts": {
+        "arabic_articles": 19,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 2,
+          "ملغاة": 0
+        },
+        "total": 19
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/10, 1/5/1420H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable, connection reset), cross-verified byte-for-byte against nezams.com's HTML transcription",
+      "status": "complete",
+      "track_id": "cooperative_health_insurance_law",
+      "validator_targets": [
+        "make cooperative-health-insurance-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6021,6 +6070,7 @@
       "commercial_register": 29,
       "companies_law": 281,
       "competition": 28,
+      "cooperative_health_insurance": 19,
       "copyright": 28,
       "council_of_ministers": 32,
       "criminal_procedure": 403,
@@ -6089,7 +6139,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 8720,
+    "total_records": 8739,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

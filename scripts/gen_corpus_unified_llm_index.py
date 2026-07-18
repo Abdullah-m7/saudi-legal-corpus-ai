@@ -278,6 +278,8 @@ LAYERS = [
      "anti_fraud", "law"),
     ("data/finance_companies_arabic_legal_llm/finance_companies_law_legal_llm_001_041.json",
      "finance_companies", "law"),
+    ("data/cooperative_health_insurance_arabic_legal_llm/cooperative_health_insurance_law_legal_llm_001_019.json",
+     "cooperative_health_insurance", "law"),
 ]
 
 

@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 127 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 127 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 128 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 128 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 127,
+  "total_tracks": 128,
   "known_source_staleness_risk_count": 4,
   "known_source_staleness_risk_tracks": [
     "environmental_law",
@@ -656,6 +656,29 @@
         "boe.gov.sa",
         "laws.boe.gov.sa",
         "nezams.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "cooperative_health_insurance_law",
+      "display_name_en": "Cooperative Health Insurance Law",
+      "display_name_ar": "نظام الضمان الصحي التعاوني",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (إعادة تعيين اتصال)، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة (تطلّب رابط http:// وليس https://) واستُخدمت كمصدر رسمي أساسي واحد، وقورنت حرفياً مع مصدر ثانوي واحد (nezams.com) — مصدر رسمي واحد + تدقيق مقارن ثانوي، يطابق تعريف TIER_2 تماماً. نص تعديل المادة الرابعة لعام 1440هـ يستند إلى nezams.com حصراً (بوابة BOE تذكر القرار 472 دون إيراد نصه)؛ راجع has_per_article_variation لهذا التمايز.",
+      "registry_source_authority": "Royal Decree M/10, 1/5/1420H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable, connection reset), cross-verified byte-for-byte against nezams.com's HTML transcription",
+      "registry_source_url": null,
+      "official_source_file": "sources/cooperative_health_insurance/law/official_source/cooperative_health_insurance_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
