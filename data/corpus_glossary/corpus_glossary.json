@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 134,
-  "total_terms": 781,
-  "total_definitions": 1178,
-  "tracks_with_definitions_article_parsed": 89,
+  "total_tracks_in_registry": 135,
+  "total_terms": 788,
+  "total_definitions": 1190,
+  "tracks_with_definitions_article_parsed": 90,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -965,6 +965,14 @@
       }
     ],
     "الإدارة": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الإدارة",
+        "definition_text": "ما يعهد به الناظر إلى غيره - سواء أكان شخصاً ذا صفة طبيعية أو اعتبارية - في شأن تصريف شؤون الوقف بحفظه وإيجاره وتنميته وإصلاحه.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "customs_law",
         "article_number": 2,
@@ -3173,6 +3181,14 @@
       }
     ],
     "الرئيس": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "capital_market_law",
         "article_number": 1,
@@ -5454,6 +5470,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "capital_market_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -5625,6 +5649,14 @@
       }
     ],
     "المحافظ": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "competition_law",
         "article_number": 1,
@@ -7366,6 +7398,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الموقوف عليه": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الموقوف عليه",
+        "definition_text": "المستفيد من الوقف وفق شرط الواقف.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الميزات العينية": [
       {
         "track_id": "labor_law",
@@ -7383,6 +7425,16 @@
         "term_as_written": "الميزانية",
         "definition_text": "ميزانية جمعية الملاك السنوية لإدارة العقار المشترك.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الناظر": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الناظر",
+        "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية الذي يتولى نظارة الوقف.",
+        "source_record_id": "awqaf-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7544,6 +7596,16 @@
         "definition_text": "ويشمل الأراضي الواقعة ما بين الشواطئ أو الحدود البرية من جهة\nوخط داخلي من جهة أخرى يحدد بقرار من الوزير أو الجهة المختصة.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "النظارة": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "النظارة",
+        "definition_text": "إجراء التصرفات التي تحقق الغبطة والمصلحة لعين الوقف وإيراده، وذلك بحفظه وإيجاره وتنميته وإصلاحه والمخاصمة فيه وصرف غلته، وفقاً لشرط الواقف.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "النظام": [
@@ -8104,6 +8166,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للأوقاف.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "capital_market_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -8261,6 +8331,16 @@
         "term_as_written": "الهيئة",
         "definition_text": "هيئة الزكاة والضريبة والجمارك.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الواقف": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الواقف",
+        "definition_text": "من ينشئ الوقف.",
+        "source_record_id": "awqaf-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8901,6 +8981,26 @@
         "term_as_written": "الوعاء الزكوي",
         "definition_text": "الأموال الخاضعة لجباية الزكاة بموجب اللائحة.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوقف العام": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الوقف العام",
+        "definition_text": "الوقف المشروط على أوجه برّ عامة معينة بالذات أو بالوصف.\nالوقف الخاص (الأهلي) : الوقف المشروط على معين من ذرية وأقارب بالذات أو بالوصف.",
+        "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوقف المشترك": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "الوقف المشترك",
+        "definition_text": "الوقف الذي يشترك في شرطه أكثر من نوع من أنواع الوقف.",
+        "source_record_id": "awqaf-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9679,6 +9779,16 @@
         "term_as_written": "شبكة اتصالات عامة",
         "definition_text": "منظومة (أو منظومات) اتصالات سلكية أو لا سلكية محلية أو دولية؛ لتقديم خدمة الاتصالات وتقنية المعلومات العامة للمستخدم.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شرط الواقف": [
+      {
+        "track_id": "awqaf_law",
+        "article_number": 1,
+        "term_as_written": "شرط الواقف",
+        "definition_text": "الصيغة التي يحددها الواقف بشأن الوقف أو إيراده أو مصرفه أو ناظره، أو الموقوف عليه.",
+        "source_record_id": "awqaf-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

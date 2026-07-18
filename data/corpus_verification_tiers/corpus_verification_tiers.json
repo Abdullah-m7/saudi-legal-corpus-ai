@@ -19,14 +19,14 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 134,
+  "total_tracks": 135,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 93,
+    "TIER_1_PRIMARY_MULTI_SOURCE": 94,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 13,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 22
   },
-  "tracks_with_per_article_variation": 17,
+  "tracks_with_per_article_variation": 18,
   "tracks": [
     {
       "track_id": "aawan_regulation",
@@ -125,6 +125,13 @@
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
+    },
+    {
+      "track_id": "awqaf_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت ست لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 21 نوفمبر 2019 إلى 12 ديسمبر 2025) كمصدر أساسي، متطابقة حرفياً على 23 من 25 مادة عبر كل اللقطات، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (نسخة ممسوحة ضوئياً للمرسوم الملكي الأصلي الموقّع من الملك سلمان، مستضافة على الموقع الرسمي لنفس الجهة المنظِّمة web.awqaf.gov.sa، قُرئت بصرياً إذ لا تحوي طبقة نص) ومصدر ثانوي (nezams.com). مصدران رسميان (BOE وweb.awqaf.gov.sa، نطاق .gov.sa منفصل فعلياً وليس نسخة من نفس محتوى BOE كحال FAOLEX في مسار nazaha_law) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط finance_companies_law (BOE عبر Wayback × bfc.gov.sa). راجع has_per_article_variation للمادتين 6 و21 اللتين تحملان تناقضاً مؤكَّداً (لا افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد، مفصَّلاً في official_source.json الخاص بالمسار.",
+      "has_per_article_variation": true,
+      "per_article_variation_note": "23 مادة غير معدَّلة مصدرها مزدوج رسمي (ست لقطات Wayback لبوابة BOE × نسخة الأوقاف الممسوحة ضوئياً)، متطابقة دون فارق جوهري. أما المادة السادسة (تشكيل مجلس الإدارة) فتحمل تناقضاً مؤكَّداً غير محلول: سجل BOE يوثّق أربعة تعديلات (قرارات مجلس الوزراء 262/1438هـ، 618/1442هـ، 638/1442هـ، 651/1443هـ) بينما النص الرئيسي لبوابة BOE ظل ثابتاً دون تغيير عبر جميع اللقطات الست من 2019 إلى 2025، بل إن نص 'قبل التعديل' الموثّق في سجل BOE نفسه لا يطابق النص التاريخي الفعلي أيضاً — اعتُمد النص الرئيسي الراكد كما هو دون دمج افتراضي. أما المادة الحادية والعشرون (الرسوم) فتحمل تعديلاً واحداً واضحاً وموثَّقاً بالكامل (المرسوم الملكي م/72، 1444هـ) في سجل BOE، لم ينعكس بعد في النص الرئيسي رغم مرور أكثر من عامين — اعتُمد نص سجل التعديلات المقتبس كنص حالي، تماشياً مع سابقة accounting_auditing_law لهذا النمط تحديداً، وتأكَّد بتغطية صحفية مستقلة؛ راجع official_source.json الخاص بالمسار للتفاصيل الكاملة."
     },
     {
       "track_id": "banking_control_law",

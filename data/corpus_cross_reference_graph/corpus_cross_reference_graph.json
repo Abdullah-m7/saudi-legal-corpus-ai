@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9265,
-  "total_references_extracted": 1896,
-  "intra_law_count": 1675,
-  "inter_law_count": 221,
+  "total_records_scanned": 9290,
+  "total_references_extracted": 1900,
+  "intra_law_count": 1677,
+  "inter_law_count": 223,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1610,
-    "medium": 286
+    "high": 1615,
+    "medium": 285
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -968,6 +968,50 @@
       "target_article_number": 55,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة والخمسين) من النظام، هي المحكمة العليا.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "awqaf_law",
+      "source_record_id": "awqaf-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "awqaf_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من هذا النظام. 2 - تشرف الهيئ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "awqaf_law",
+      "source_record_id": "awqaf-law-llm-art-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "awqaf_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من هذا النظام. ج - الإيرادات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "awqaf_law",
+      "source_record_id": "awqaf-law-llm-art-021",
+      "source_article_number": 21,
+      "type": "inter_law",
+      "target_track_id": "judicial_costs_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التكاليف القضائية",
+      "raw_citation_text": "أحكام نظام التكاليف القضائية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "awqaf_law",
+      "source_record_id": "awqaf-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "inter_law",
+      "target_track_id": "sharia_procedure_law",
+      "target_article_number": 223,
+      "target_law_name_raw": "المرافعات الشرعية",
+      "raw_citation_text": "المادة (الثالثة والعشرين بعد المائتين) من نظام المرافعات الشرعية الصادر بالمرسوم",
       "confidence": "high"
     },
     {
@@ -7234,11 +7278,11 @@
       "source_record_id": "criminal-procedure-regulation-llm-art-171",
       "source_article_number": 171,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "awqaf_law",
       "target_article_number": null,
       "target_law_name_raw": "النيابة العامة",
       "raw_citation_text": "وفقاً لنظام النيابة العامة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "criminal_procedure_implementing_regulation",
