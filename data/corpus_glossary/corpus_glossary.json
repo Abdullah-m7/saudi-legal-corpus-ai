@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 131,
-  "total_terms": 768,
-  "total_definitions": 1151,
-  "tracks_with_definitions_article_parsed": 86,
+  "total_tracks_in_registry": 132,
+  "total_terms": 779,
+  "total_definitions": 1164,
+  "tracks_with_definitions_article_parsed": 87,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -802,6 +802,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأمانة الفنية": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "الأمانة الفنية",
+        "definition_text": "الأمانة الفنية للجنة الدائمة.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأموال": [
       {
         "track_id": "aml_law",
@@ -1081,6 +1091,16 @@
         "term_as_written": "الإعلان الإلكتروني",
         "definition_text": "كل دعاية بوسيلة إلكترونية يقوم بها موفر الخدمة، تهدف إلى تشجيع بيع منتج أو تقديم خدمة بأسلوب مباشر أو غير مباشر.",
         "source_record_id": "ecommerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإغراق": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "الإغراق",
+        "definition_text": "تصدير سلعة ما إلى دول المجلس بسعر تصدير أقل من قيمته العادية في مجرى التجارة العادية.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1720,6 +1740,26 @@
         "definition_text": "توثيق البيانات الجمركية للبضائع الواردة والصادرة والعابرة وفقاً للإجراءات\nالجمركية المنصوص عليها في هذا النظام (القانون).",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "التدابير التعويضية": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "التدابير التعويضية",
+        "definition_text": "الإجراءات التي تتخذ لمواجهة الدعم المحظور أو الدعم القابل للتقاضي.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التدابير الوقائية": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "التدابير الوقائية",
+        "definition_text": "التدابير التي يتم اتخاذها في حالة الزيادة غير المبررة في الواردات.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التداول": [
@@ -3034,6 +3074,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الدعم": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "الدعم",
+        "definition_text": "مساهمة مالية مباشرة أو غير مباشرة مقدمة من حكومة دولة المنشأ أو من هيئة عامة بها.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الدعوى": [
       {
         "track_id": "judicial_costs_law",
@@ -3081,6 +3131,16 @@
         "term_as_written": "الدوائر الاستئنافية",
         "definition_text": "دوائر اللجان الاستئنافية للمخالفات والمنازعات الزكوية والضريبية والجمركية.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الدول الأعضاء": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "الدول الأعضاء",
+        "definition_text": "الدول الأعضاء في المجلس .",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3374,6 +3434,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السلعة موضوع التحقيق": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "السلعة موضوع التحقيق",
+        "definition_text": "موضوع التحقيق كما تصفها الشكوى الخاصة بها.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السوق": [
       {
         "track_id": "capital_market_law",
@@ -3420,6 +3490,16 @@
         "definition_text": "البناء أو المكان المرخص له الذي تودع فيه البضائع في وضع معلق للضرائب\n\"الرسوم\" الجمركية لغايات العرض والبيع.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "السوق الخليجية": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "السوق الخليجية",
+        "definition_text": "إجمالي أسواق الدول الأعضاء في المجلس.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السياحة البيئية": [
@@ -4856,6 +4936,14 @@
     ],
     "اللائحة التنفيذية": [
       {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "اللائحة التنفيذية",
+        "definition_text": "اللائحة التنفيذية الصادرة تطبيقًا لأحكام هذا القانون (النظام). وتتولى اللائحة التنفيذية بيان التفاصيل والتوضيحات المطلوبة لبعض العبارات الفنية الواردة في هذه المادة والتي تستوجب إيراد تلك التفاصيل والتوضيحات بشأنها، وأية عبارات أخرى يتطلب النص عليها في اللائحة التنفيذية.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trademark_law",
         "article_number": 1,
         "term_as_written": "اللائحة التنفيذية",
@@ -4938,6 +5026,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اللجنة الدائمة": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "اللجنة الدائمة",
+        "definition_text": "لجنة مكافحة الممارسات الضارة في التجارة الدولية لدول المجلس والموجهة إليها من غير الدول الأعضاء.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اللجنة الداخلية": [
       {
         "track_id": "zakat_law",
@@ -4955,6 +5053,16 @@
         "term_as_written": "اللجنة الطبية المختصة",
         "definition_text": "اللجان الطبية المنصوص عليها في المادة (الخمسين) من النظام.",
         "source_record_id": "social-insurance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللجنة الوزارية": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "اللجنة الوزارية",
+        "definition_text": "لجنة التعاون الصناعي بدول المجلس.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5366,6 +5474,14 @@
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس التعاون لدول الخليج العربية .",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "judicial_inspection_regulation",
@@ -8759,6 +8875,16 @@
         "term_as_written": "تدابير العناية الواجبة",
         "definition_text": "عملية التعرف أو التحقق من معلومات العميل أو المستفيد الحقيقي، التي تمكن المؤسسة المالية والأعمال والمهن غير المالية المحددة من تقويم مدى تعرضها للمخاطر.",
         "source_record_id": "aml-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تدابير مكافحة الإغراق": [
+      {
+        "track_id": "gcc_anti_dumping_law",
+        "article_number": 2,
+        "term_as_written": "تدابير مكافحة الإغراق",
+        "definition_text": "الإجراءات والتدابير التي تتخذ لمواجهة الحالات الناشئة عن الإغراق.",
+        "source_record_id": "gcc-anti-dumping-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],

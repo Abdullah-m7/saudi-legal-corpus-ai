@@ -19,12 +19,12 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 131,
+  "total_tracks": 132,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 92,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 12,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
-    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 21
+    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 22
   },
   "tracks_with_per_article_variation": 16,
   "tracks": [
@@ -419,6 +419,13 @@
       "tier_rationale": "official_text_status='BOE_PORTAL_PROXY_RETRIEVED_QANONIAH_SPOT_CROSS_VERIFIED': بوابة BOE (مصدر رسمي) تم الوصول إليها لكامل النص، لكن التدقيق المقارن مع qanoniah.com اقتصر على 4 من 27 مادة فقط (1، 2، 4، 5)؛ 23 مادة (85%) تبقى أحادية المصدر دون تدقيق مقارن مستقل.",
       "has_per_article_variation": true,
       "per_article_variation_note": "4 من 27 مادة فقط (1، 2، 4، 5) خضعت لتدقيق مقارن مقابل qanoniah.com (وعرض ذلك الموقع نفسه غير مكتمل)؛ 23 مادة أحادية المصدر (BOE) دون تدقيق مقارن؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "gcc_anti_dumping_law",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_PRIMARY_X_QISTAS_PARTIAL_STRUCTURAL_CROSSCHECK_LIVE_BOE_UNREACHABLE_M7_1434H_AMENDED_TEXT_NOT_INCORPORATED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503)، واعتُمدت نسختا أرشيف Wayback Machine لنفس صفحة القانون (بفارق ~20 شهراً بينهما) كمصدر أساسي — متطابقتان تماماً — مع تدقيق هيكلي جزئي فقط من مصدر ثانٍ (qistas.com، المواد 1-3 فقط وليس النص الكامل). هذا مصدر رسمي أساسي واحد + تدقيق ثانوي جزئي، وهو ما يطابق تعريف TIER_2 من حيث آلية الجلب وحدها؛ إلا أن هذا المسار يُصنَّف TIER_4 ('أحادي المصدر لجزء ذي حجم معتبر... أو موثّق صراحة بثقة متفاوتة') بسبب اكتشاف دليل قوي (WIPO Lex + ديباجة قانون سعودي منفصل ونافذ صادر 2022) على أن المرسوم الملكي م/7 (20/3/1434هـ) اعتمد نسخة معدَّلة من هذا القانون الموحد بهيكل مختلف (15 مادة بدل 17 وفق نسخة الأمانة العامة لمجلس التعاون الرسمية)، بينما صفحة BOE الأساسية المعتمدة هنا لا تُشير إطلاقاً إلى م/7 عبر لقطتين بفارق ~20 شهراً. لم يتسنَّ الحصول على نص أم القرى لـم/7 ولا محتوى فعلي من روابط WIPO Lex الكاملة (غلاف JS فارغ لكل الروابط المجرَّبة)، فتم اعتماد نص BOE المُتحقَّق منه الأصلي بدلاً من استبداله بنص التعديل غير المؤكَّد — وهذا بالضبط نمط 'ثقة متفاوتة على مستوى المسار كاملاً' الذي يبرر TIER_4، مماثل من حيث المبدأ (لا الحقيقة) لسابقة نظام المرور (traffic_law) في توثيق شك جدي حول حداثة المصدر دون حسمه ضمناً أو إسقاطه بصمت. راجع known_unresolved_discrepancies في official_source.json لهذا المسار للتفاصيل الكاملة؛ هذا خطر توثيقي حي غير مُسوَّى، وليس نتيجة نهائية.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "gcc_ownership_law",

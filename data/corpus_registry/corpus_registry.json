@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9371,
+  "total_primary_arabic_governing_records": 9388,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10266,
-  "total_tracks": 131,
+  "total_registry_counted_records": 10283,
+  "total_tracks": 132,
   "tracks": [
     {
       "boundaries": {
@@ -6182,6 +6182,55 @@
       "validator_targets": [
         "make maritime-commercial-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/gcc_anti_dumping/law/official_source/gcc_anti_dumping_law_official_source.json",
+        "sources/gcc_anti_dumping/law/verified/gcc_anti_dumping_law_verified_records.jsonl",
+        "data/gcc_anti_dumping_arabic_legal_llm/gcc_anti_dumping_law_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون",
+      "display_name_en": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/gcc_anti_dumping_arabic_legal_llm/gcc_anti_dumping_law_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law «النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون» — Royal Decree M/30, dated 17/5/1427H (13 June 2006), ratifying Council of Ministers Resolution No. 122 (16/5/1427H), which adopts for Saudi Arabia the GCC Supreme Council's unified law approved at its 24th Session (Kuwait, 27-28 Shawwal 1424H / 21-22 December 2003). A medium-priority coverage-gap identified via the coverage_gap_map research pass; **17 records, all اصلية**, correcting the gap-map's own rough estimate of 'approx. 30-40 articles'. **NO أبواب/فصول exist** — a flat, individually-titled 17-article structure (this corrects an assumption carried into the research brief): (1) الهدف والنطاق؛ (2) التعاريف؛ (3) فرض التدابير؛ (4) التدابير المؤقتة؛ (5) التدابير النهائية؛ (6) أشكال التدابير؛ (7) إجراءات الشكوى والتحقيق؛ (8) تشكيل اللجنة الدائمة؛ (9) اختصاصات اللجنة الدائمة؛ (10) اللجنة الوزارية؛ (11) الأمانة الفنية للجنة الدائمة؛ (12) الطعن؛ (13) سرية المعلومات؛ (14) الجزاءات؛ (15) اللائحة التنفيذية؛ (16) (BOE's own heading carries no title text for this article, preserved as a documented gap rather than fabricated); (17) النفاذ. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-PRIMARY-X-QISTAS-PARTIAL-STRUCTURAL-CROSSCHECK — the live laws.boe.gov.sa portal was unreachable this pass (HTTP 503), but two independent Wayback Machine snapshots of the exact law page, roughly 20 months apart, show identical unamended 17-article text with status 'ساري' and list only M/30 + Resolution 122 as issuing instruments; qistas.com independently corroborated Articles 1-3's numbering and content only (not the full text). **MAJOR UNRESOLVED DISCREPANCY, carried forward rather than resolved:** multiply-corroborated secondary evidence — WIPO Lex's record for this law (SA034, marked superseded by SA086) and a wholly separate, currently in-force 2022 Saudi law (نظام المعالجات التجارية في التجارة الدولية, Royal Decree M/60, 29/4/1444H, whose own preamble explicitly cites 'النظام الموحد ... (المعدل)، الموافق عليه بالمرسوم الملكي رقم (م/7) وتاريخ 20/3/1434هـ') — indicates Royal Decree M/7 (20/3/1434H, 1 February 2013) approved an amended ('معدل') version of this law, restructured into 15 articles per the GCC Secretariat General's own official PDF (gcc-sg.org, live-fetched), approved at the GCC Supreme Council's 31st Session (Abu Dhabi, 6-7 December 2010). However, BOE's own primary catalog page for this law — the actual source ingested — shows zero reference to M/7 across two snapshots 20 months apart, and Umm Al-Qura Gazette's own text of M/7 could not be retrieved, nor could WIPO Lex's full-text PDF endpoints be made to serve actual content (JS-shell wrapper only, all URLs tried). Consistent with this corpus's trust policy, this track ingests BOE's directly-verified 17-article original text rather than substitute the unconfirmed amended text, and flags this as a live, unresolved sourcing risk for any downstream use — not a settled finding. Other flagged discrepancies: Article 16's BOE heading carries no title (preserved empty, not fabricated); a companion Implementing Regulation is confirmed to exist (Article 15 references it, bundled in the GCC-SG PDF) but is out of scope for this track, following the precedent set by finance_lease_law/banking_control_law/others. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_ARCHIVE_PRIMARY_X_QISTAS_PARTIAL_STRUCTURAL_CROSSCHECK_LIVE_BOE_UNREACHABLE_M7_1434H_AMENDED_TEXT_NOT_INCORPORATED",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/30, 17/5/1427H, ratifying Council of Ministers Resolution No. 122 (16/5/1427H) and the GCC Supreme Council's unified law from its 24th Session (Kuwait, 27-28 Shawwal 1424H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable), partially structurally cross-checked against qistas.com",
+      "status": "complete",
+      "track_id": "gcc_anti_dumping_law",
+      "validator_targets": [
+        "make gcc-anti-dumping-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6234,6 +6283,7 @@
       "finance_lease": 28,
       "foreign_ownership": 15,
       "franchise": 27,
+      "gcc_anti_dumping": 17,
       "gcc_ownership": 6,
       "gtpl": 256,
       "healthcare_professions": 44,
@@ -6289,7 +6339,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9202,
+    "total_records": 9219,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -168,6 +168,7 @@ STATUS_TIER_MAP = {
     "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED": TIER_4,
     "WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED": TIER_4,
     "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE": TIER_4,
+    "BOE_WAYBACK_ARCHIVE_PRIMARY_X_QISTAS_PARTIAL_STRUCTURAL_CROSSCHECK_LIVE_BOE_UNREACHABLE_M7_1434H_AMENDED_TEXT_NOT_INCORPORATED": TIER_4,
 }
 
 # Tracks whose `official_text_status` field is absent (None) in the registry — these are the
@@ -402,6 +403,28 @@ RATIONALE_OVERRIDE = {
         "واحد (qanoonsa.com) مقارَناً بمصدر ثانوي آخر (حواشي nezams.com) — دون أي "
         "تأكيد رسمي مباشر لنص هذا التعديل تحديداً؛ راجع has_per_article_variation "
         "لهذا التمايز."
+    ),
+    "gcc_anti_dumping_law": (
+        "official_text_status='BOE_WAYBACK_ARCHIVE_PRIMARY_X_QISTAS_PARTIAL_STRUCTURAL_"
+        "CROSSCHECK_LIVE_BOE_UNREACHABLE_M7_1434H_AMENDED_TEXT_NOT_INCORPORATED': بوابة "
+        "هيئة الخبراء (BOE) الحية متعذرة الوصول (503)، واعتُمدت نسختا أرشيف Wayback "
+        "Machine لنفس صفحة القانون (بفارق ~20 شهراً بينهما) كمصدر أساسي — متطابقتان "
+        "تماماً — مع تدقيق هيكلي جزئي فقط من مصدر ثانٍ (qistas.com، المواد 1-3 فقط "
+        "وليس النص الكامل). هذا مصدر رسمي أساسي واحد + تدقيق ثانوي جزئي، وهو ما يطابق "
+        "تعريف TIER_2 من حيث آلية الجلب وحدها؛ إلا أن هذا المسار يُصنَّف TIER_4 "
+        "('أحادي المصدر لجزء ذي حجم معتبر... أو موثّق صراحة بثقة متفاوتة') بسبب اكتشاف "
+        "دليل قوي (WIPO Lex + ديباجة قانون سعودي منفصل ونافذ صادر 2022) على أن المرسوم "
+        "الملكي م/7 (20/3/1434هـ) اعتمد نسخة معدَّلة من هذا القانون الموحد بهيكل مختلف "
+        "(15 مادة بدل 17 وفق نسخة الأمانة العامة لمجلس التعاون الرسمية)، بينما صفحة "
+        "BOE الأساسية المعتمدة هنا لا تُشير إطلاقاً إلى م/7 عبر لقطتين بفارق ~20 شهراً. "
+        "لم يتسنَّ الحصول على نص أم القرى لـم/7 ولا محتوى فعلي من روابط WIPO Lex "
+        "الكاملة (غلاف JS فارغ لكل الروابط المجرَّبة)، فتم اعتماد نص BOE المُتحقَّق منه "
+        "الأصلي بدلاً من استبداله بنص التعديل غير المؤكَّد — وهذا بالضبط نمط 'ثقة "
+        "متفاوتة على مستوى المسار كاملاً' الذي يبرر TIER_4، مماثل من حيث المبدأ (لا "
+        "الحقيقة) لسابقة نظام المرور (traffic_law) في توثيق شك جدي حول حداثة المصدر "
+        "دون حسمه ضمناً أو إسقاطه بصمت. راجع known_unresolved_discrepancies في "
+        "official_source.json لهذا المسار للتفاصيل الكاملة؛ هذا خطر توثيقي حي غير "
+        "مُسوَّى، وليس نتيجة نهائية."
     ),
 }
 
