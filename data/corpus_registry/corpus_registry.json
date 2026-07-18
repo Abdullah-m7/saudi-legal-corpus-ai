@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8818,
+  "total_primary_arabic_governing_records": 8848,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9713,
-  "total_tracks": 125,
+  "total_registry_counted_records": 9743,
+  "total_tracks": 126,
   "tracks": [
     {
       "boundaries": {
@@ -5888,6 +5888,55 @@
       "validator_targets": [
         "make customs-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json",
+        "sources/anti_fraud/law/verified/anti_fraud_law_verified_records.jsonl",
+        "data/anti_fraud_arabic_legal_llm/anti_fraud_law_legal_llm_001_030.json"
+      ],
+      "display_name_ar": "نظام مكافحة الغش التجاري",
+      "display_name_en": "Anti-Commercial Fraud Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/anti_fraud_arabic_legal_llm/anti_fraud_law_legal_llm_001_030.json",
+          "governing": true,
+          "record_count": 30,
+          "status": "complete"
+        }
+      },
+      "notes": "Anti-Commercial Fraud Law «نظام مكافحة الغش التجاري» — Royal Decree M/19, dated 23/4/1429H, approving Council of Ministers Resolution No. 119 (22/4/1429H). Replaces the prior Anti-Commercial Fraud Law (Royal Decree M/11, 29/5/1404H). Administered by the Ministry of Commerce (Anti-Commercial Fraud General Administration, Consumer Protection Agency). Identified as the corpus's #4-priority coverage-gap via the coverage_gap_map research pass. 30 records across 5 فصول (تعريفات art 1; المخالفات arts 2-4; الضبط والتحقيق والمحاكمة arts 5-15; العقوبات arts 16-27; أحكام ختامية arts 28-30) — 25 اصلية / 5 معدلة (Articles 5, 13, 23, 25, 27). Article 5 amended twice (Royal Decree M/101, 3/9/1440H, confirmed; and a second, disputed amendment adding وزارة الصحة — see below); Articles 13 and 27 by the same Royal Decree M/10 (9/1/1440H, judicial-authority transfer from Diwan al-Mazalim to 'المحكمة المختصة'); Article 23 by Royal Decree M/109 (26/12/1442H); Article 25 by Royal Decree M/108 (27/10/1439H). **VERIFICATION TIER:** SECONDARY-MULTI-SOURCE — laws.boe.gov.sa returned HTTP 503 at two distinct URL forms across both the prior research pass and this build pass, confirming it is genuinely unreachable, not bypassed; the full text instead rests on three independently cross-verified secondary sources (nezams.com, mustsharik.com, mohamah.net), with a fresh 5-article spot re-check (Articles 1, 5, 13, 23, 25) performed during this build pass finding no discrepancy beyond what the prior pass had already flagged. **DISPUTED ARTICLE 5 SECOND-AMENDMENT CITATION:** the instrument adding 'وزارة الصحة' is recorded as EITHER Council of Ministers Resolution No. 508 (1/9/1442H, per nezams.com and an indexed-but-dead Umm al-Qura gazette snippet) OR Royal Decree M/76 (3/9/1442H, per mustsharik.com and two independent WebSearch aggregations) — both candidate citations are preserved in the article's history rather than silently picking one, since the one gazette URL specifically about this amendment returned HTTP 404 and BOE itself is unreachable (cf. income_tax_law Article 66's dual-dated M/52 conflict for this corpus's established convention on genuinely disputed citations). Article 5's current 'text' field is consequently a transparently-flagged mechanical splice of the verbatim original sentence with both amendments' verbatim-quoted inserted phrases, since no single source presents the fully consolidated post-both-amendments text as one block. Other flagged discrepancies: mohamah.net's 2017 transcription is missing Article 15 entirely (treated as a scraping error, not a textual variant, since nezams.com and mustsharik.com agree verbatim); Article 1's 'الوزارة'/'الوزير' definitions and Article 4 still name the pre-2008-reorganization combined Ministry of Commerce and Industry, and Article 12 still names 'هيئة التحقيق والادعاء العام' rather than the 'النيابة العامة' renaming already reflected in Article 23's own 2021 amendment — both preserved verbatim as likely-stale-but-not-formally-amended references, not modernized; the Articles 16-20 fine amounts show no confirmed increase since 2008 in any source consulted; a companion Implementing Regulation (Ministerial Resolution No. 155, 6/1/1431H) exists but its text is out of scope for this track. **FORWARD-LOOKING FLAG:** a draft comprehensive 'Consumer Protection Law' (نظام حماية المستهلك) was put out for public consultation in 2022 but remains unenacted as of this build (2026-07-18); this Anti-Commercial Fraud Law is confirmed as the correct, currently-binding build target. **CORRECTED RESEARCH-SUMMARY OFF-BY-ONE:** the prior research pass's own consolidated file narrative twice stated '24 of 30 articles remain اصلية', but a recount of that same file's own per-article status tags found 25 اصلية / 5 معدلة — this track's status_counts reflects the corrected per-article recount, not the research file's narrative summary figure. Arabic governs; not legal advice.",
+      "official_text_status": "SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 30,
+        "legal_status_breakdown": {
+          "اصلية": 25,
+          "مضافة": 0,
+          "معدلة": 5,
+          "ملغاة": 0
+        },
+        "total": 30
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/19, 23/4/1429H — three independently cross-verified secondary sources (nezams.com, mustsharik.com, mohamah.net) as the full-text primary basis; laws.boe.gov.sa confirmed unreachable this pass (HTTP 503 at two distinct URL forms)",
+      "status": "complete",
+      "track_id": "anti_fraud_law",
+      "validator_targets": [
+        "make anti-fraud-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -5901,6 +5950,7 @@
       "anti_bribery": 25,
       "anti_concealment": 20,
       "anti_cyber_crime": 16,
+      "anti_fraud": 30,
       "anti_harassment": 8,
       "anti_narcotics": 74,
       "anti_trafficking": 17,
@@ -5989,7 +6039,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 8649,
+    "total_records": 8679,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

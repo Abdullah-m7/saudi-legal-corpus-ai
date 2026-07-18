@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 278,
-  "top1_hits": 254,
-  "top3_hits": 271,
-  "top5_hits": 274,
-  "top1_accuracy": 0.9137,
-  "top3_accuracy": 0.9748,
-  "top5_accuracy": 0.9856,
-  "mrr_at_5": 0.9438,
+  "total_queries": 280,
+  "top1_hits": 256,
+  "top3_hits": 273,
+  "top5_hits": 276,
+  "top1_accuracy": 0.9143,
+  "top3_accuracy": 0.975,
+  "top5_accuracy": 0.9857,
+  "mrr_at_5": 0.9442,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4044,8 +4044,8 @@
      "score": 12
     },
     {
-     "record_id": "commercial-agencies-law-llm-art-004",
-     "article_number": 4,
+     "record_id": "anti-fraud-law-llm-art-016",
+     "article_number": 16,
      "score": 11
     }
    ]
@@ -6767,14 +6767,14 @@
      "score": 36
     },
     {
+     "record_id": "anti-fraud-law-llm-art-012",
+     "article_number": 12,
+     "score": 33
+    },
+    {
      "record_id": "anti-cyber-crime-law-llm-art-015",
      "article_number": 15,
      "score": 28
-    },
-    {
-     "record_id": "basic-law-of-governance-llm-art-054",
-     "article_number": 54,
-     "score": 26
     }
    ]
   },
@@ -8635,6 +8635,68 @@
      "record_id": "customs-law-llm-art-001",
      "article_number": 1,
      "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "afl-001",
+   "query_ar": "يعاقب بغرامة لا تزيد على خمسمائة ألف ريال، أو السجن مدة لا تزيد على سنتين، أو بهما معًا، كل من ارتكب إحدى المخالفات المنصوص عليها في المادة (الثانية) من هذا النظام",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_fraud",
+    "law_component": "law",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-fraud-law-llm-art-016",
+     "article_number": 16,
+     "score": 55
+    },
+    {
+     "record_id": "anti-fraud-law-llm-art-017",
+     "article_number": 17,
+     "score": 44
+    },
+    {
+     "record_id": "vat-law-llm-art-045",
+     "article_number": 45,
+     "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "afl-002",
+   "query_ar": "تمنح مكافأة تشجيعية بنسبة لا تزيد على (25%) من مقدار الغرامة المستحصلة لمن يساعد من غير الموظفين المشار إليهم في المادة (الخامسة) من هذا النظام في الكشف عن حالات الغش التجاري",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_fraud",
+    "law_component": "law",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-fraud-law-llm-art-011",
+     "article_number": 11,
+     "score": 67
+    },
+    {
+     "record_id": "anti-fraud-law-llm-art-001",
+     "article_number": 1,
+     "score": 30
+    },
+    {
+     "record_id": "oa-llm-companies-art-187",
+     "article_number": 187,
+     "score": 28
     }
    ]
   }

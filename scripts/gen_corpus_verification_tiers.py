@@ -147,6 +147,7 @@ STATUS_TIER_MAP = {
     #     sources agree with each other, with zero primary confirmation. ---
     "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE": TIER_3,
     "TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE": TIER_3,
+    "SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE": TIER_3,
 
     # --- Tier 4: single-sourced for a meaningful part, and/or explicit mixed/per-article
     #     confidence split documented in the track's own official_text_status. ---
@@ -330,6 +331,17 @@ RATIONALE_OVERRIDE = {
         "الخاص يصف التعديل بشكل صحيح — فهي تؤكد المعلومات الوصفية وتاريخ التعديل والصياغة "
         "الأصلية القابلة للاسترجاع، لا الصياغة الحالية. أقرب لنمط نظام العلامات التجارية "
         "(WIPO Lex أساسي x بطاقة حالة BOE) من نمط تحقق مزدوج رسمي كامل."
+    ),
+    "anti_fraud_law": (
+        "official_text_status='SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': "
+        "بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها في جولتي بحث وبناء منفصلتين (503 عند "
+        "رابطين مختلفين)؛ الصياغة الحرفية الكاملة للمواد الـ30 تستند إلى ثلاثة مصادر ثانوية "
+        "مستقلة متقاربة فيما بينها (nezams.com، mustsharik.com، mohamah.net)، دون أي تأكيد "
+        "أولي من مصدر رسمي إطلاقاً — يطابق تعريف TIER_3 تماماً (مصدر رسمي متعذر + مصدرين "
+        "ثانويين فأكثر متقاربين)، مثل نمط triple_arabic_secondary المستخدم لمسارات أخرى. "
+        "التعديل الثاني للمادة الخامسة (إضافة وزارة الصحة) يبقى محل خلاف غير محسوم بين "
+        "المصادر الثانوية نفسها على نوع الأداة التشريعية ورقمها — موثَّق شفافاً في "
+        "known_unresolved_discrepancies الخاص بالمسار، لا مخفياً."
     ),
 }
 

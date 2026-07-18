@@ -657,6 +657,19 @@ EDGES = [
                 "predecessor is not separately ingested in this corpus.",
         "source_ref": "sources/bankruptcy/law/official_source/bankruptcy_law_official_source.json (supersedes_note)",
     },
+    {
+        "from_track_id": "anti_fraud_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مكافحة الغش التجاري (السابق)",
+        "target_decree": "Royal Decree M/11, 29/5/1404H",
+        "note": "anti_fraud_law's own official_source.json article 29 and "
+                "issuing_authority_ar field: 'يحل هذا النظام محل نظام مكافحة "
+                "الغش التجاري، الصادر بالمرسوم الملكي رقم (م/11) وتاريخ "
+                "29/5/1404هـ.' Predecessor not separately ingested in this "
+                "corpus.",
+        "source_ref": "sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json (article 29)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

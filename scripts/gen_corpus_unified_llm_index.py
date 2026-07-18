@@ -274,6 +274,8 @@ LAYERS = [
      "customs", "law"),
     ("data/customs_regulation_arabic_legal_llm/customs_regulation_legal_llm_001_036.json",
      "customs", "implementing_regulation"),
+    ("data/anti_fraud_arabic_legal_llm/anti_fraud_law_legal_llm_001_030.json",
+     "anti_fraud", "law"),
 ]
 
 

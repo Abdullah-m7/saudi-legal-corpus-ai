@@ -163,6 +163,7 @@ ZAKAT_LAW_LLM = os.path.join(ROOT, "data", "zakat_arabic_legal_llm", "zakat_law_
 PATENT_LAW_LLM = os.path.join(ROOT, "data", "patent_arabic_legal_llm", "patent_law_legal_llm_001_066.json")
 CUSTOMS_LAW_LLM = os.path.join(ROOT, "data", "customs_arabic_legal_llm", "customs_law_legal_llm_001_188.json")
 CUSTOMS_REGULATION_LLM = os.path.join(ROOT, "data", "customs_regulation_arabic_legal_llm", "customs_regulation_legal_llm_001_036.json")
+ANTI_FRAUD_LAW_LLM = os.path.join(ROOT, "data", "anti_fraud_arabic_legal_llm", "anti_fraud_law_legal_llm_001_030.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -319,6 +320,7 @@ def main() -> int:
     patent_law_llm = _load_json(PATENT_LAW_LLM)
     customs_law_llm = _load_json(CUSTOMS_LAW_LLM)
     customs_regulation_llm = _load_json(CUSTOMS_REGULATION_LLM)
+    anti_fraud_law_llm = _load_json(ANTI_FRAUD_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -339,7 +341,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 125,
+        "total_tracks": 126,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -468,6 +470,7 @@ def main() -> int:
             + patent_law_llm["record_count"]  # 66 Patent Law (M/27, 1425H) (WIPO Lex M/45-consolidated text x BOE metadata, BOE confirmed stale re: 2023 amendment, see track notes)
             + customs_law_llm["record_count"]  # 188 GCC Unified Customs Law (M/41, 1423H) (ZATCA official PDF single-source primary, BOE unreachable, see track notes)
             + customs_regulation_llm["record_count"]  # 36 Implementing Regulation of the GCC Unified Customs Law (Resolution 2748, 1423H) (ZATCA official PDF single-source primary, see track notes)
+            + anti_fraud_law_llm["record_count"]  # 30 Anti-Commercial Fraud Law (M/19, 1429H) (secondary multi-source cross-verified, BOE unreachable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -587,6 +590,7 @@ def main() -> int:
             + patent_law_llm["record_count"]
             + customs_law_llm["record_count"]
             + customs_regulation_llm["record_count"]
+            + anti_fraud_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4297,6 +4301,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the GCC Unified Customs Law «اللائحة التنفيذية لنظام (قانون) الجمارك الموحد» — Ministerial/Committee Resolution No. 2748, dated 25/11/1423H, a SEPARATE instrument from customs_law (issued by ministerial/committee resolution, not Royal Decree). 36 records (34 base articles + 2 مكرر: 2 مكرر, 25 مكرر) across 7 أبواب, numbered continuously (not restarting per Book) — 34 اصلية / 2 مضافة. Amended 6 times (Resolutions 2997/1440H, 3766/1441H, 939/1443H, 986/1444H, 955/1445H, 1374/1445H) — no specific article individually attributable to any one resolution from the available source, a documented gap; no article is marked معدلة as a result rather than guessing which articles each resolution touched. Article 1 (customs valuation methodology, implementing GATT Art. VII) is a single very long article internally organized by ordinal clause markers (أولاً...ثامناً) rather than separate numbered articles, preserved whole rather than artificially split. **VERIFICATION TIER:** SINGLE-SOURCE, sharing ZATCA's consolidated PDF with customs_law; same three-pass post-build QA process applied (negation-particle fix, glued-list-marker fix, final residual-instance fix — see customs_law's notes for the shared methodology). 3 Book-level chapeau paragraphs (Books 3, 6, 7) were relocated from stray mid-heading placement to their Book's first article (14, 26, 29) rather than discarded as section-title noise. Article 9's 'وكال بقيادتها'/'حاصال على رخصة قيادة' fragments remain entangled with an undocumented line-order-scrambling issue distinct from the lam-drop bug family and are left as a documented residual gap rather than guessed at. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "anti_fraud_law",
+                "display_name_ar": "نظام مكافحة الغش التجاري",
+                "display_name_en": "Anti-Commercial Fraud Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/19, 23/4/1429H — three independently cross-verified secondary sources (nezams.com, mustsharik.com, mohamah.net) as the full-text primary basis; laws.boe.gov.sa confirmed unreachable this pass (HTTP 503 at two distinct URL forms)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": anti_fraud_law_llm["record_count"],
+                    "data_path": "data/anti_fraud_arabic_legal_llm/anti_fraud_law_legal_llm_001_030.json"}},
+                "record_counts": {"arabic_articles": anti_fraud_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 25, "معدلة": 5, "ملغاة": 0, "مضافة": 0},
+                                  "total": anti_fraud_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json",
+                    "sources/anti_fraud/law/verified/anti_fraud_law_verified_records.jsonl",
+                    "data/anti_fraud_arabic_legal_llm/anti_fraud_law_legal_llm_001_030.json",
+                ],
+                "validator_targets": ["make anti-fraud-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Anti-Commercial Fraud Law «نظام مكافحة الغش التجاري» — Royal Decree M/19, dated 23/4/1429H, approving Council of Ministers Resolution No. 119 (22/4/1429H). Replaces the prior Anti-Commercial Fraud Law (Royal Decree M/11, 29/5/1404H). Administered by the Ministry of Commerce (Anti-Commercial Fraud General Administration, Consumer Protection Agency). Identified as the corpus's #4-priority coverage-gap via the coverage_gap_map research pass. 30 records across 5 فصول (تعريفات art 1; المخالفات arts 2-4; الضبط والتحقيق والمحاكمة arts 5-15; العقوبات arts 16-27; أحكام ختامية arts 28-30) — 25 اصلية / 5 معدلة (Articles 5, 13, 23, 25, 27). Article 5 amended twice (Royal Decree M/101, 3/9/1440H, confirmed; and a second, disputed amendment adding وزارة الصحة — see below); Articles 13 and 27 by the same Royal Decree M/10 (9/1/1440H, judicial-authority transfer from Diwan al-Mazalim to 'المحكمة المختصة'); Article 23 by Royal Decree M/109 (26/12/1442H); Article 25 by Royal Decree M/108 (27/10/1439H). **VERIFICATION TIER:** SECONDARY-MULTI-SOURCE — laws.boe.gov.sa returned HTTP 503 at two distinct URL forms across both the prior research pass and this build pass, confirming it is genuinely unreachable, not bypassed; the full text instead rests on three independently cross-verified secondary sources (nezams.com, mustsharik.com, mohamah.net), with a fresh 5-article spot re-check (Articles 1, 5, 13, 23, 25) performed during this build pass finding no discrepancy beyond what the prior pass had already flagged. **DISPUTED ARTICLE 5 SECOND-AMENDMENT CITATION:** the instrument adding 'وزارة الصحة' is recorded as EITHER Council of Ministers Resolution No. 508 (1/9/1442H, per nezams.com and an indexed-but-dead Umm al-Qura gazette snippet) OR Royal Decree M/76 (3/9/1442H, per mustsharik.com and two independent WebSearch aggregations) — both candidate citations are preserved in the article's history rather than silently picking one, since the one gazette URL specifically about this amendment returned HTTP 404 and BOE itself is unreachable (cf. income_tax_law Article 66's dual-dated M/52 conflict for this corpus's established convention on genuinely disputed citations). Article 5's current 'text' field is consequently a transparently-flagged mechanical splice of the verbatim original sentence with both amendments' verbatim-quoted inserted phrases, since no single source presents the fully consolidated post-both-amendments text as one block. Other flagged discrepancies: mohamah.net's 2017 transcription is missing Article 15 entirely (treated as a scraping error, not a textual variant, since nezams.com and mustsharik.com agree verbatim); Article 1's 'الوزارة'/'الوزير' definitions and Article 4 still name the pre-2008-reorganization combined Ministry of Commerce and Industry, and Article 12 still names 'هيئة التحقيق والادعاء العام' rather than the 'النيابة العامة' renaming already reflected in Article 23's own 2021 amendment — both preserved verbatim as likely-stale-but-not-formally-amended references, not modernized; the Articles 16-20 fine amounts show no confirmed increase since 2008 in any source consulted; a companion Implementing Regulation (Ministerial Resolution No. 155, 6/1/1431H) exists but its text is out of scope for this track. **FORWARD-LOOKING FLAG:** a draft comprehensive 'Consumer Protection Law' (نظام حماية المستهلك) was put out for public consultation in 2022 but remains unenacted as of this build (2026-07-18); this Anti-Commercial Fraud Law is confirmed as the correct, currently-binding build target. **CORRECTED RESEARCH-SUMMARY OFF-BY-ONE:** the prior research pass's own consolidated file narrative twice stated '24 of 30 articles remain اصلية', but a recount of that same file's own per-article status tags found 25 اصلية / 5 معدلة — this track's status_counts reflects the corrected per-article recount, not the research file's narrative summary figure. Arabic governs; not legal advice.",
             },
         ],
     }
