@@ -164,6 +164,7 @@ PATENT_LAW_LLM = os.path.join(ROOT, "data", "patent_arabic_legal_llm", "patent_l
 CUSTOMS_LAW_LLM = os.path.join(ROOT, "data", "customs_arabic_legal_llm", "customs_law_legal_llm_001_188.json")
 CUSTOMS_REGULATION_LLM = os.path.join(ROOT, "data", "customs_regulation_arabic_legal_llm", "customs_regulation_legal_llm_001_036.json")
 ANTI_FRAUD_LAW_LLM = os.path.join(ROOT, "data", "anti_fraud_arabic_legal_llm", "anti_fraud_law_legal_llm_001_030.json")
+FINANCE_COMPANIES_LAW_LLM = os.path.join(ROOT, "data", "finance_companies_arabic_legal_llm", "finance_companies_law_legal_llm_001_041.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -321,6 +322,7 @@ def main() -> int:
     customs_law_llm = _load_json(CUSTOMS_LAW_LLM)
     customs_regulation_llm = _load_json(CUSTOMS_REGULATION_LLM)
     anti_fraud_law_llm = _load_json(ANTI_FRAUD_LAW_LLM)
+    finance_companies_law_llm = _load_json(FINANCE_COMPANIES_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -341,7 +343,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 126,
+        "total_tracks": 127,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -471,6 +473,7 @@ def main() -> int:
             + customs_law_llm["record_count"]  # 188 GCC Unified Customs Law (M/41, 1423H) (ZATCA official PDF single-source primary, BOE unreachable, see track notes)
             + customs_regulation_llm["record_count"]  # 36 Implementing Regulation of the GCC Unified Customs Law (Resolution 2748, 1423H) (ZATCA official PDF single-source primary, see track notes)
             + anti_fraud_law_llm["record_count"]  # 30 Anti-Commercial Fraud Law (M/19, 1429H) (secondary multi-source cross-verified, BOE unreachable, see track notes)
+            + finance_companies_law_llm["record_count"]  # 41 Finance Companies Control Law (M/51, 1433H) (BOE-via-Wayback primary x bfc.gov.sa OCR x nezams.com cross-verified, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -591,6 +594,7 @@ def main() -> int:
             + customs_law_llm["record_count"]
             + customs_regulation_llm["record_count"]
             + anti_fraud_law_llm["record_count"]
+            + finance_companies_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4329,6 +4333,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Anti-Commercial Fraud Law «نظام مكافحة الغش التجاري» — Royal Decree M/19, dated 23/4/1429H, approving Council of Ministers Resolution No. 119 (22/4/1429H). Replaces the prior Anti-Commercial Fraud Law (Royal Decree M/11, 29/5/1404H). Administered by the Ministry of Commerce (Anti-Commercial Fraud General Administration, Consumer Protection Agency). Identified as the corpus's #4-priority coverage-gap via the coverage_gap_map research pass. 30 records across 5 فصول (تعريفات art 1; المخالفات arts 2-4; الضبط والتحقيق والمحاكمة arts 5-15; العقوبات arts 16-27; أحكام ختامية arts 28-30) — 25 اصلية / 5 معدلة (Articles 5, 13, 23, 25, 27). Article 5 amended twice (Royal Decree M/101, 3/9/1440H, confirmed; and a second, disputed amendment adding وزارة الصحة — see below); Articles 13 and 27 by the same Royal Decree M/10 (9/1/1440H, judicial-authority transfer from Diwan al-Mazalim to 'المحكمة المختصة'); Article 23 by Royal Decree M/109 (26/12/1442H); Article 25 by Royal Decree M/108 (27/10/1439H). **VERIFICATION TIER:** SECONDARY-MULTI-SOURCE — laws.boe.gov.sa returned HTTP 503 at two distinct URL forms across both the prior research pass and this build pass, confirming it is genuinely unreachable, not bypassed; the full text instead rests on three independently cross-verified secondary sources (nezams.com, mustsharik.com, mohamah.net), with a fresh 5-article spot re-check (Articles 1, 5, 13, 23, 25) performed during this build pass finding no discrepancy beyond what the prior pass had already flagged. **DISPUTED ARTICLE 5 SECOND-AMENDMENT CITATION:** the instrument adding 'وزارة الصحة' is recorded as EITHER Council of Ministers Resolution No. 508 (1/9/1442H, per nezams.com and an indexed-but-dead Umm al-Qura gazette snippet) OR Royal Decree M/76 (3/9/1442H, per mustsharik.com and two independent WebSearch aggregations) — both candidate citations are preserved in the article's history rather than silently picking one, since the one gazette URL specifically about this amendment returned HTTP 404 and BOE itself is unreachable (cf. income_tax_law Article 66's dual-dated M/52 conflict for this corpus's established convention on genuinely disputed citations). Article 5's current 'text' field is consequently a transparently-flagged mechanical splice of the verbatim original sentence with both amendments' verbatim-quoted inserted phrases, since no single source presents the fully consolidated post-both-amendments text as one block. Other flagged discrepancies: mohamah.net's 2017 transcription is missing Article 15 entirely (treated as a scraping error, not a textual variant, since nezams.com and mustsharik.com agree verbatim); Article 1's 'الوزارة'/'الوزير' definitions and Article 4 still name the pre-2008-reorganization combined Ministry of Commerce and Industry, and Article 12 still names 'هيئة التحقيق والادعاء العام' rather than the 'النيابة العامة' renaming already reflected in Article 23's own 2021 amendment — both preserved verbatim as likely-stale-but-not-formally-amended references, not modernized; the Articles 16-20 fine amounts show no confirmed increase since 2008 in any source consulted; a companion Implementing Regulation (Ministerial Resolution No. 155, 6/1/1431H) exists but its text is out of scope for this track. **FORWARD-LOOKING FLAG:** a draft comprehensive 'Consumer Protection Law' (نظام حماية المستهلك) was put out for public consultation in 2022 but remains unenacted as of this build (2026-07-18); this Anti-Commercial Fraud Law is confirmed as the correct, currently-binding build target. **CORRECTED RESEARCH-SUMMARY OFF-BY-ONE:** the prior research pass's own consolidated file narrative twice stated '24 of 30 articles remain اصلية', but a recount of that same file's own per-article status tags found 25 اصلية / 5 معدلة — this track's status_counts reflects the corrected per-article recount, not the research file's narrative summary figure. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "finance_companies_law",
+                "display_name_ar": "نظام مراقبة شركات التمويل",
+                "display_name_en": "Finance Companies Control Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED",
+                "source_authority": "Royal Decree M/51, 13/8/1433H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE confirmed unreachable, HTTP 503 direct / 422 via r.jina.ai), cross-verified against bfc.gov.sa's official PDF (OCR'd) and nezams.com's HTML transcription; the 2024 amendment's replacement text from qanoonsa.com's verbatim decree reproduction cross-checked against nezams.com's footnotes",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": finance_companies_law_llm["record_count"],
+                    "data_path": "data/finance_companies_arabic_legal_llm/finance_companies_law_legal_llm_001_041.json"}},
+                "record_counts": {"arabic_articles": finance_companies_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 28, "معدلة": 12, "ملغاة": 0, "مضافة": 1},
+                                  "total": finance_companies_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/finance_companies/law/official_source/finance_companies_law_official_source.json",
+                    "sources/finance_companies/law/verified/finance_companies_law_verified_records.jsonl",
+                    "data/finance_companies_arabic_legal_llm/finance_companies_law_legal_llm_001_041.json",
+                ],
+                "validator_targets": ["make finance-companies-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Finance Companies Control Law «نظام مراقبة شركات التمويل» — Royal Decree M/51, dated 13/8/1433H (3/7/2012), approving Council of Ministers Resolution No. 259 (12/8/1433H), published Umm al-Qura 13/10/1433H. Administered by SAMA (referred to in-text as 'المؤسسة'/'المحافظ' in unamended articles and 'البنك' in the 2024-amended articles, reflecting the SAMA-to-Saudi-Central-Bank institutional rename — the same divergence phenomenon already documented in this corpus's insurance_control_law track, preserved verbatim per-article rather than normalized). Identified as the corpus's #5-priority coverage-gap via the coverage_gap_map research pass, whose decree/date estimate was independently re-verified and confirmed correct. 41 records (40 numbered articles + Article 36 مكرر, added 2024) across a فصل تمهيدي (تعريفات) plus 8 فصول (أحكام عامة؛ أحكام الترخيص؛ نشاط شركات التمويل؛ إدارة شركات التمويل؛ الإشراف [عُدّل عنوانه من 'الإشراف على شركات التمويل' في تعديل 2024]؛ المخالفات والمنازعات؛ العقوبات؛ أحكام ختامية) — 28 اصلية / 12 معدلة / 1 مضافة. Amended three times: Royal Decree M/21 (6/3/1440H, narrow, Article 5 only); Royal Decree M/24 (15/3/1443H, based on Council of Ministers Resolution 160, Article 35 only); Royal Decree M/272 (4/12/1445H / 2024, based on Council of Ministers Resolution 1016, published Umm al-Qura issue 5036, a substantial 14-item amendment touching Articles 1, 5, 11, 12, 16-21, 29 plus new Article 36 مكرر). **VERIFICATION TIER:** BOE-WAYBACK-PRIMARY — the live laws.boe.gov.sa portal was unreachable this pass (HTTP 503 direct, 422 via r.jina.ai proxy, matching this corpus's established BOE-egress-blocked pattern), but a Wayback Machine archive snapshot of the exact BOE law page was reachable via direct curl and used as the primary full-text source for all 40 original articles, cross-verified via normalized programmatic diff (zero substantive discrepancies) against bfc.gov.sa's own official PDF (OCR'd via tesseract, since the PDF's font/cmap was corrupted) and nezams.com's HTML transcription; the 2024 amendment's exact replacement text rests on qanoonsa.com's verbatim decree reproduction (citing Umm al-Qura issue 5036), cross-checked against nezams.com's per-article footnotes. Other flagged discrepancies: Article 5's pre-1440H deleted بند (خامساً) content is not recoverable from any source consulted, a documented gap not a fabrication; Article 5's 1440H amendment description does not fully account for the article's current 6-بند structure, an arithmetic gap flagged rather than resolved by inference; Article 35's amending instrument carries two compatible-but-distinct citations between sources (BOE: Royal Decree M/24; other sources: Council of Ministers Resolution 160) — both recorded; BOE's own archived Article 35 annotation contains a corrupted penalty figure/spelling, not adopted. Article 38 is a general, non-specific repeal clause ('يلغي هذا النظام كل ما يتعارض معه من أحكام') naming no single prior statute, so no supersession-graph edge is modeled from it; the decree's own preamble separately directs (not repeals) review of the Installment Sale Law (M/13, 1426H) for consistency, also not modeled as a repeal. A companion Implementing Regulation (Governor's Resolution 2/م ش ت, 14/4/1434H, 38 image-scanned pages with its own independent multi-wave amendment history) exists but its text is out of scope for this track, following the precedent set by banking_control_law and insurance_control_law. Arabic governs; not legal advice.",
             },
         ],
     }

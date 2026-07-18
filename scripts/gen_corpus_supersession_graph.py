@@ -817,6 +817,21 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "itself state.",
         "source_ref": "sources/commercial_courts/regulation/official_source/commercial_courts_regulation_official_source.json (supersedes_note)",
     },
+    {
+        "tracks_involved": ["finance_companies_law"],
+        "issue": "general non-specific repeal clause naming no prior statute",
+        "note": "finance_companies_law's own Article 38 states only "
+                "'يلغي هذا النظام كل ما يتعارض معه من أحكام' (a general "
+                "boilerplate repeal of any conflicting provision), naming no "
+                "single prior instrument. NOT modeled as a repeals_full edge, "
+                "since this corpus only models EXPLICITLY-NAMED repeal "
+                "relationships, never inferred ones. Separately, the decree's "
+                "own preamble directs (not repeals) a review of the "
+                "Installment Sale Law (M/13, 1426H) for consistency — also "
+                "not modeled as a repeal, since a directive to review is not "
+                "itself a supersession.",
+        "source_ref": "sources/finance_companies/law/official_source/finance_companies_law_official_source.json (article 38)",
+    },
 ]
 
 

@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 126 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 126 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 127 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 127 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 126,
+  "total_tracks": 127,
   "known_source_staleness_risk_count": 4,
   "known_source_staleness_risk_tracks": [
     "environmental_law",
@@ -994,6 +994,27 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "finance_companies_law",
+      "display_name_en": "Finance Companies Control Law",
+      "display_name_ar": "نظام مراقبة شركات التمويل",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503 مباشرة، 422 عبر r.jina.ai)، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة وتُعامَل كمصدر أساسي، وقورنت برمجياً (فرق نصي مطبَّع) مع نسخة PDF الرسمية من bfc.gov.sa (نطاق حكومي .gov.sa آخر، حُوِّلت عبر OCR بسبب خط/cmap تالف في النسخة الأصلية) — مصدران رسميان (نطاقي .gov.sa) متقاربان دون أي فارق جوهري عبر الأربعين مادة الأصلية، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين متقاربين). لكن نص تعديل 2024 (المرسوم الملكي م/272) نفسه لا يستند إلا إلى مصدر ثانوي واحد (qanoonsa.com) مقارَناً بمصدر ثانوي آخر (حواشي nezams.com) — دون أي تأكيد رسمي مباشر لنص هذا التعديل تحديداً؛ راجع has_per_article_variation لهذا التمايز.",
+      "registry_source_authority": "Royal Decree M/51, 13/8/1433H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE confirmed unreachable, HTTP 503 direct / 422 via r.jina.ai), cross-verified against bfc.gov.sa's official PDF (OCR'd) and nezams.com's HTML transcription; the 2024 amendment's replacement text from qanoonsa.com's verbatim decree reproduction cross-checked against nezams.com's footnotes",
+      "registry_source_url": null,
+      "official_source_file": "sources/finance_companies/law/official_source/finance_companies_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "sama.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-01-14; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },

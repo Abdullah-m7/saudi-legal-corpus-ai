@@ -19,14 +19,14 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 126,
+  "total_tracks": 127,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 89,
+    "TIER_1_PRIMARY_MULTI_SOURCE": 90,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 10,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 21
   },
-  "tracks_with_per_article_variation": 13,
+  "tracks_with_per_article_variation": 14,
   "tracks": [
     {
       "track_id": "aawan_regulation",
@@ -384,6 +384,13 @@
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
+    },
+    {
+      "track_id": "finance_companies_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503 مباشرة، 422 عبر r.jina.ai)، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة وتُعامَل كمصدر أساسي، وقورنت برمجياً (فرق نصي مطبَّع) مع نسخة PDF الرسمية من bfc.gov.sa (نطاق حكومي .gov.sa آخر، حُوِّلت عبر OCR بسبب خط/cmap تالف في النسخة الأصلية) — مصدران رسميان (نطاقي .gov.sa) متقاربان دون أي فارق جوهري عبر الأربعين مادة الأصلية، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين متقاربين). لكن نص تعديل 2024 (المرسوم الملكي م/272) نفسه لا يستند إلا إلى مصدر ثانوي واحد (qanoonsa.com) مقارَناً بمصدر ثانوي آخر (حواشي nezams.com) — دون أي تأكيد رسمي مباشر لنص هذا التعديل تحديداً؛ راجع has_per_article_variation لهذا التمايز.",
+      "has_per_article_variation": true,
+      "per_article_variation_note": "المواد الأصلية الأربعون (قبل تعديل 2024) مصدرها مزدوج رسمي (أرشيف Wayback لبوابة BOE × نسخة bfc.gov.sa الرسمية المحوَّلة عبر OCR)، متطابقة دون فارق جوهري. أما نص تعديل 2024 (المرسوم الملكي م/272، يمس المواد 1، 5، 11، 12، 16-21، 29 والمادة 36 مكرر المضافة) فمصدره ثانوي حصراً (qanoonsa.com × حواشي nezams.com) دون أي تأكيد أولي مباشر لنصه تحديداً؛ راجع official_source.json الخاص بالمسار."
     },
     {
       "track_id": "foreign_ownership_law",

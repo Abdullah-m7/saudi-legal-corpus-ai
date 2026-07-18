@@ -128,6 +128,7 @@ STATUS_TIER_MAP = {
     "BOE_PORTAL_PRIMARY_SOURCE_MCIT_PDF_CROSS_CHECKED": TIER_1,
     "GOVERNMENT_AGENCY_OFFICIAL_PDF_PRIMARY_SOURCE_BOE_ARCHIVE_CROSS_VERIFIED": TIER_1,
     "ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED": TIER_1,
+    "BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -343,6 +344,19 @@ RATIONALE_OVERRIDE = {
         "المصادر الثانوية نفسها على نوع الأداة التشريعية ورقمها — موثَّق شفافاً في "
         "known_unresolved_discrepancies الخاص بالمسار، لا مخفياً."
     ),
+    "finance_companies_law": (
+        "official_text_status='BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED': "
+        "بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503 مباشرة، 422 عبر r.jina.ai)، "
+        "لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة وتُعامَل كمصدر "
+        "أساسي، وقورنت برمجياً (فرق نصي مطبَّع) مع نسخة PDF الرسمية من bfc.gov.sa "
+        "(نطاق حكومي .gov.sa آخر، حُوِّلت عبر OCR بسبب خط/cmap تالف في النسخة "
+        "الأصلية) — مصدران رسميان (نطاقي .gov.sa) متقاربان دون أي فارق جوهري عبر "
+        "الأربعين مادة الأصلية، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين متقاربين). "
+        "لكن نص تعديل 2024 (المرسوم الملكي م/272) نفسه لا يستند إلا إلى مصدر ثانوي "
+        "واحد (qanoonsa.com) مقارَناً بمصدر ثانوي آخر (حواشي nezams.com) — دون أي "
+        "تأكيد رسمي مباشر لنص هذا التعديل تحديداً؛ راجع has_per_article_variation "
+        "لهذا التمايز."
+    ),
 }
 
 # Tracks with documented, non-negligible confidence variation ACROSS the articles WITHIN the
@@ -414,6 +428,14 @@ PER_ARTICLE_VARIATION_NOTE = {
         "مادتان فقط (1 و180) من أصل 180 خضعتا لتدقيق مقارن بين مصدرين ثانويين "
         "(nezams.com وrakadvocate.blogspot.com)؛ بقية المواد أحادية مصدر ثانوي (nezams.com) "
         "دون بوابة BOE أساسية متاحة؛ راجع official_source.json الخاص بالمسار."
+    ),
+    "finance_companies_law": (
+        "المواد الأصلية الأربعون (قبل تعديل 2024) مصدرها مزدوج رسمي (أرشيف Wayback "
+        "لبوابة BOE × نسخة bfc.gov.sa الرسمية المحوَّلة عبر OCR)، متطابقة دون فارق "
+        "جوهري. أما نص تعديل 2024 (المرسوم الملكي م/272، يمس المواد 1، 5، 11، 12، "
+        "16-21، 29 والمادة 36 مكرر المضافة) فمصدره ثانوي حصراً (qanoonsa.com × حواشي "
+        "nezams.com) دون أي تأكيد أولي مباشر لنصه تحديداً؛ راجع official_source.json "
+        "الخاص بالمسار."
     ),
 }
 
