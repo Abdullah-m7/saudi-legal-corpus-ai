@@ -1,0 +1,91 @@
+{
+  "law_key": "finance_companies",
+  "layer": "FINANCE_COMPANIES_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 41,
+  "official_text_status": "BOE_WAYBACK_ARCHIVE_X_BFC_GOV_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503",
+  "status_counts": {
+    "اصلية": 28,
+    "معدلة": 12,
+    "مضافة": 1,
+    "ملغاة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/51)",
+  "decree_date_hijri": "13/8/1433",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "label_ar": "فصل تمهيدي",
+      "title_ar": "تعريفات",
+      "articles": "1"
+    },
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "أحكام عامة",
+      "articles": "2-4"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "أحكام الترخيص",
+      "articles": "5-9"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "نشاط شركات التمويل",
+      "articles": "10-15"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "إدارة شركات التمويل",
+      "articles": "16-20"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "الإشراف",
+      "title_ar_original_pre_2024": "الإشراف على شركات التمويل",
+      "articles": "21-30 (plus 36 مكرر excepting some provisions of chapters 3, 4 and 5)"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "المخالفات والمنازعات",
+      "articles": "31-33"
+    },
+    {
+      "label_ar": "الفصل السابع",
+      "title_ar": "العقوبات",
+      "articles": "34-35"
+    },
+    {
+      "label_ar": "الفصل الثامن",
+      "title_ar": "أحكام ختامية",
+      "articles": "36-40 (plus 36 مكرر)"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: laws.boe.gov.sa (Bureau of Experts) was retried this pass and confirmed unreachable live -- HTTP 503 via direct WebFetch, and curl returned 'Recv failure: Connection reset by peer' on direct connection; r.jina.ai proxy returned HTTP 422. HOWEVER, a Wayback Machine snapshot of this exact BOE law page (dated 2026-01-14) WAS reachable via direct curl (HTTP 200, ~30KB of readable Arabic HTML) -- archive.org/wayback/available confirmed a snapshot exists and it was fetched successfully, unlike the frequent Wayback-unreachable pattern documented in several other tracks in this corpus. This BOE-via-Wayback snapshot is treated as this track's PRIMARY source: it confirms the Royal Decree number (م/51), Hijri date (13/8/1433H, Gregorian 3/7/2012), publication date (13/10/1433H), in-force status, the law's chapter/topic outline, and gives the full verbatim original (pre-2024-amendment) text of all 40 articles, plus a tracked amendment annotation on Article 35 (Royal Decree م/24, 15/3/1443H). SECONDARY CROSS-VERIFICATION: bfc.gov.sa (a Saudi finance-sector body's own site) hosts an official PDF reproduction of the law (10 pages); pdftotext produced a garbled/cipher-like extraction (a custom subset font with non-standard glyph mapping for body text, while headings extracted cleanly), so this PDF was OCR'd via tesseract (Arabic language pack, 300dpi) instead of raw text extraction -- the OCR output was legible and used only as a corroborating cross-check, not as the base transcription (OCR carries its own noise, e.g. occasional home-glyph confusions). nezams.com (a community Saudi-legal-reference site) provided a clean, properly-numbered HTML transcription of all 41 records (40 articles + the 2024-added مكرر article), including per-article amendment footnotes quoting exact 'to read as follows' replacement text for each amended provision. A normalized (whitespace/digit/punctuation/alef-variant-stripped) programmatic diff between the BOE-via-Wayback original text and the nezams.com base-article text found ZERO substantive discrepancies across all 40 original articles -- full agreement. The bfc.gov.sa OCR was spot-checked against both for the definitions article, the licensing article, the activities article, and the penalties articles, and matched substantively (differences were only OCR noise, e.g. isolated homoglyph errors, not wording differences). AMENDMENT-TEXT SOURCING: the substantial 2024 amendment (Royal Decree م/272, 4/12/1445H, approving Council of Ministers Resolution 1016, 27/11/1445H, itself based on Shura Council Resolution 255/24, 16/9/1445H; published Umm al-Qura Gazette issue 5036, 28/6/2024) was retrieved in full VERBATIM decree form from qanoonsa.com (a Saudi legal-reference site that reproduces official decree text item-by-item, citing the Umm al-Qura issue number and date), and independently cross-corroborated word-for-word against nezams.com's per-article footnote quotations of the same replacement text -- both agree on all 14 numbered amendment items. The earlier, narrower 1443H amendment to Article 35 (raising the penalty cap and adding two new paragraphs) is corroborated by THREE sources: BOE's own tracked amendment annotation (citing Royal Decree م/24, 15/3/1443H), and nezams.com/qanoonsa-derived web search results (citing the underlying Council of Ministers Resolution 160, 13/3/1443H) -- both instrument citations are compatible (Resolution then Decree, 2 days apart, mirroring the pattern of the original M/51 decree itself following Council of Ministers Resolution 259 by one day) and are both recorded in this track's history entries. BOE's own archived annotation for this amendment contains an evident internal corruption in the new Article 35 penalty figure/spelling ('(2.0000.000) ميلوني ريال' -- an extra zero-group and a misspelled dual-of-million) which is NOT reproduced in this track; nezams.com's and qanoonsa.com's clean rendering '(2.000.000) مليوني ريال' (2 million SAR) was used instead, cross-confirmed by an independent web search summary describing the same cap. The earliest amendment (Royal Decree م/21, 6/3/1440H) touching Article 5 is documented only via a secondary-source footnote (nezams.com, corroborated by an independent web search) describing a deletion of the original بند (خامساً) and a renumbering of بند (سادساً) to (خامساً) -- see known_unresolved_discrepancies for the specific, unresolved gap in this description. No original text is fabricated for any gap identified below; every amended article's pre-amendment wording is included ONLY where independently confirmed recoverable.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "finance_companies_art_005_original_khamisan_bend_unrecoverable",
+      "description": "Article 5's بند (خامساً) was amended by Royal Decree م/21 (6/3/1440H): the original بند (خامساً) was deleted and the then-existing بند (سادساً) was renumbered to become the new (خامساً). No source consulted this pass (BOE-via-Wayback, bfc.gov.sa OCR, nezams.com, or general web search) recovered the actual CONTENT of the original, now-deleted بند (خامساً) -- only its deletion and the subsequent renumbering are documented. Per this corpus's zero-fabrication policy, no text is supplied for this deleted provision; the gap is flagged here rather than guessed."
+    },
+    {
+      "article_key": "finance_companies_art_005_1440h_amendment_arithmetic_unresolved",
+      "description": "The available secondary-source description of the 1440H amendment (Royal Decree م/21) states only that بند (خامساً) was deleted and بند (سادساً) was renumbered to (خامساً) -- implying the article should have had one FEWER top-level بند after the amendment (5 remaining, not 6). However, the CURRENT text -- confirmed identically across BOE-via-Wayback, bfc.gov.sa's OCR'd PDF, and nezams.com -- contains SIX top-level بنود (أولاً through سادساً), with بند (سادساً) being the licensing-fee clause ('تحدد اللائحة المقابل المالي...'). This corpus could not resolve, from any source reached this pass, whether the M/21 decree also separately introduced this سادساً (fee) بند (undocumented in the footnote summaries found), or whether some other unlogged amendment did so. The text actually in force (as triple-cross-verified) is ingested as `original_1440h_text` / the base for the 2024 amendment; the arithmetic gap in the secondary-source description of M/21 is flagged rather than silently resolved by inference."
+    },
+    {
+      "article_key": "finance_companies_art_035_amending_instrument_dual_citation",
+      "description": "BOE's own tracked amendment annotation for Article 35 cites 'المرسوم الملكي رقم (م/24) وتاريخ 15/3/1443هـ' as the amending instrument. Independent web search results (drawing on nezams.com/qanoonsa.com) instead cite 'قرار مجلس الوزراء رقم (160) وتاريخ 13/3/1443هـ'. Both citations are treated as compatible and non-contradictory -- Royal Decrees amending a law are routinely issued a few days after the underlying Council of Ministers Resolution that approves the amendment (mirroring the one-day gap between Council of Ministers Resolution 259, 12/8/1433H, and Royal Decree م/51 itself, 13/8/1433H) -- and both are recorded in this track's history entry for Article 35. The Council of Ministers Resolution 160 text itself was not independently located and read in full this pass; only BOE's own archived amendment annotation and secondary-source paraphrases were available."
+    },
+    {
+      "article_key": "finance_companies_boe_art035_numeral_corruption_not_adopted",
+      "description": "BOE's own archived (Wayback) amendment annotation for Article 35 renders the 2021/1443H-amended penalty cap as '(2.0000.000) ميلوني ريال' -- an evidently corrupted numeral grouping (five zero-digits rather than a coherent thousands-grouping) and a misspelling of 'مليوني' (dual of million) as 'ميلوني'. This track instead adopts nezams.com's and qanoonsa.com's identically-worded clean rendering, '(2.000.000) مليوني ريال' (2,000,000 SAR / 10% of the financing amount, whichever is greater), which is also consistent with an independent web-search summary describing the same amendment. Flagged as a probable BOE-side scraping/OCR artifact in the archived snapshot, not adopted into this track's ingested text."
+    },
+    {
+      "article_key": "finance_companies_institutional_name_divergence",
+      "description": "Article 1 defines 'المؤسسة' (the regulator) as 'مؤسسة النقد العربي السعودي' (SAMA, the pre-2020 name) and 'المحافظ' as SAMA's Governor -- these definitions were NOT touched by any of the three amendments (only the 'شركة التمويل' definition in the same article was amended in 2024). All articles never amended (and Article 1's own المؤسسة/المحافظ definitions) therefore still use 'المؤسسة' / 'مؤسسة النقد العربي السعودي' throughout. However, the SIX articles amended by the 2024 decree (17, 18, 19 partially, 20, 21, 29) plus Article 5's 2024-added paragraph and Article 35's 1443H-added paragraph 3 all use 'البنك' (i.e., 'البنك المركزي السعودي', the Saudi Central Bank's current name per the SAMA Law, Royal Decree م/36, 1442H) instead of 'المؤسسة'. No amendment found this pass formally updates the Article 1 definitions themselves, or the still-'المؤسسة'-worded unamended articles, to align terminology. This is the same class of institutional-name divergence already documented in this corpus's insurance_control_law track, arising from real, source-verified amendment practice (partial-article amendment leaving old terminology standing elsewhere in the same consolidated law) -- preserved and flagged, not silently normalized."
+    },
+    {
+      "article_key": "finance_companies_implementing_regulation_not_ingested_this_pass",
+      "description": "The law's companion Implementing Regulation (اللائحة التنفيذية لنظام مراقبة شركات التمويل) is confirmed to exist, issued by Governor's Administrative Resolution No. (2/م ش ت) dated 14/4/1434H (per nezams.com's law-metadata panel), and is hosted as an official PDF by both sama.gov.sa and bfc.gov.sa. SAMA's own Rulebook site additionally lists at least two later amendment instruments to this Regulation ('Amendment of Article (8) of the Implementing Regulation...' and 'Amendment of Certain Articles of the Implementing Regulation... and Rules Governing Disposal of Finance Assets...'), indicating an independent, multi-wave amendment history of its own. The regulation PDF obtained this pass (bfc.gov.sa, 38 pages) is a pure image scan with NO extractable text layer (confirmed via both pdftotext and PyMuPDF), requiring full OCR of all 38 pages plus independent cross-verification and reconciliation of its own separate amendment history -- a substantially larger undertaking than the 10-page Law. Consistent with this corpus's established precedent for banking_control_law and insurance_control_law (both of which also identified, but did not ingest, their companion Implementing Regulations in a single pass), this track ingests ONLY the Law this pass. The Implementing Regulation's identity and issuing instrument are documented here as a candidate for a dedicated follow-up ingestion pass, not fabricated or partially guessed at."
+    }
+  ],
+  "source_artifact": "sources/finance_companies/law/official_source/finance_companies_law_official_source.json"
+}

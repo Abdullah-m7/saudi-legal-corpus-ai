@@ -3,7 +3,7 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 126,
+  "total_tracks_scanned": 127,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
@@ -523,6 +523,14 @@
       "issue": "topically-adjacent but explicitly NOT modeled as supersession",
       "note": "commercial_courts_implementing_regulation's own official_source.json explicitly cautions: 'the regulation retains its evidence chapter even though the Commercial Courts Law's own evidence articles (38-57) were repealed by the Evidence Law (M/43); the MOJ portal keeps the regulation's provisions اصلية/Active and they are recorded here exactly as the official portal classifies them (no interpretive supersession added)'. Despite the obvious topical parallel to the commercial_courts_law repeals_partial edge above, this generator deliberately does NOT create an edge for the implementing regulation, honoring the source's own explicit instruction not to add an interpretive supersession the official record does not itself state.",
       "source_ref": "sources/commercial_courts/regulation/official_source/commercial_courts_regulation_official_source.json (supersedes_note)"
+    },
+    {
+      "tracks_involved": [
+        "finance_companies_law"
+      ],
+      "issue": "general non-specific repeal clause naming no prior statute",
+      "note": "finance_companies_law's own Article 38 states only 'يلغي هذا النظام كل ما يتعارض معه من أحكام' (a general boilerplate repeal of any conflicting provision), naming no single prior instrument. NOT modeled as a repeals_full edge, since this corpus only models EXPLICITLY-NAMED repeal relationships, never inferred ones. Separately, the decree's own preamble directs (not repeals) a review of the Installment Sale Law (M/13, 1426H) for consistency — also not modeled as a repeal, since a directive to review is not itself a supersession.",
+      "source_ref": "sources/finance_companies/law/official_source/finance_companies_law_official_source.json (article 38)"
     }
   ],
   "extraction_policy": "Every edge above was read and classified by hand against this corpus's own documented text (registry notes + official_source.json fields/article text), never inferred from a decree being older or from topical similarity alone. Concurrent title/decree-number collisions that are NOT repeal relationships, and genuinely ambiguous or explicitly-excluded cases, are kept in their own sections rather than forced into `edges`. It is expected and correct that most of this corpus's 122 tracks have zero edges."

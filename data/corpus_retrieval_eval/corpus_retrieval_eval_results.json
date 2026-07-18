@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 280,
-  "top1_hits": 256,
-  "top3_hits": 273,
-  "top5_hits": 276,
-  "top1_accuracy": 0.9143,
-  "top3_accuracy": 0.975,
-  "top5_accuracy": 0.9857,
-  "mrr_at_5": 0.9442,
+  "total_queries": 282,
+  "top1_hits": 258,
+  "top3_hits": 275,
+  "top5_hits": 278,
+  "top1_accuracy": 0.9149,
+  "top3_accuracy": 0.9752,
+  "top5_accuracy": 0.9858,
+  "mrr_at_5": 0.9446,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1812,8 +1812,8 @@
      "score": 12
     },
     {
-     "record_id": "oa-llm-companies-art-018",
-     "article_number": 18,
+     "record_id": "finance-companies-law-llm-art-027",
+     "article_number": 27,
      "score": 11
     }
    ]
@@ -3207,8 +3207,8 @@
      "score": 20
     },
     {
-     "record_id": "evidence-expertise-llm-art-028",
-     "article_number": 28,
+     "record_id": "finance-companies-law-llm-art-030",
+     "article_number": 30,
      "score": 17
     }
    ]
@@ -4597,13 +4597,13 @@
      "score": 46
     },
     {
-     "record_id": "real-estate-finance-law-llm-art-001",
-     "article_number": 1,
+     "record_id": "finance-companies-law-llm-art-003",
+     "article_number": 3,
      "score": 22
     },
     {
-     "record_id": "real-estate-finance-law-llm-art-002",
-     "article_number": 2,
+     "record_id": "real-estate-finance-law-llm-art-001",
+     "article_number": 1,
      "score": 22
     }
    ]
@@ -5718,9 +5718,9 @@
      "score": 22
     },
     {
-     "record_id": "sama-law-llm-art-026",
-     "article_number": 26,
-     "score": 21
+     "record_id": "finance-companies-law-llm-art-001",
+     "article_number": 1,
+     "score": 22
     }
    ]
   },
@@ -7697,14 +7697,14 @@
      "score": 39
     },
     {
-     "record_id": "sama-law-llm-art-026",
-     "article_number": 26,
+     "record_id": "finance-companies-law-llm-art-001",
+     "article_number": 1,
      "score": 22
     },
     {
-     "record_id": "judicial-costs-law-llm-art-019",
-     "article_number": 19,
-     "score": 21
+     "record_id": "sama-law-llm-art-026",
+     "article_number": 26,
+     "score": 22
     }
    ]
   },
@@ -8697,6 +8697,68 @@
      "record_id": "oa-llm-companies-art-187",
      "article_number": 187,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "fnc-001",
+   "query_ar": "يحظر على شركة التمويل مزاولة أي نشاط آخر غير التمويل إلا بعد الحصول على موافقة البنك",
+   "category": "topical",
+   "gold": {
+    "corpus": "finance_companies",
+    "law_component": "law",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "finance-companies-law-llm-art-011",
+     "article_number": 11,
+     "score": 35
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 27
+    },
+    {
+     "record_id": "finance-companies-law-llm-art-004",
+     "article_number": 4,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "fnc-002",
+   "query_ar": "يجب على رئيس وأعضاء مجلس إدارة شركة التمويل ومديريها الإفصاح كتابة عن أي علاقة لأي منهم بالعقد",
+   "category": "topical",
+   "gold": {
+    "corpus": "finance_companies",
+    "law_component": "law",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "finance-companies-law-llm-art-020",
+     "article_number": 20,
+     "score": 42
+    },
+    {
+     "record_id": "finance-companies-law-llm-art-017",
+     "article_number": 17,
+     "score": 28
+    },
+    {
+     "record_id": "insurance-control-law-llm-art-007",
+     "article_number": 7,
+     "score": 21
     }
    ]
   }

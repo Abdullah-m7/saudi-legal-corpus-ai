@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 126,
-  "total_terms": 729,
-  "total_definitions": 1090,
-  "tracks_with_definitions_article_parsed": 83,
+  "total_tracks_in_registry": 127,
+  "total_terms": 731,
+  "total_definitions": 1099,
+  "tracks_with_definitions_article_parsed": 84,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1712,6 +1712,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "التصريح الذي تصدره المؤسسة لشركة ما بممارسة نشاط التمويل.",
+        "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -2029,6 +2037,16 @@
         "term_as_written": "التكوينات المعدنية",
         "definition_text": "أشكال أو هيئات جيولوجية طبيعية توجد فيها خامات أو معادن.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التمويل": [
+      {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "التمويل",
+        "definition_text": "منح الائتمان بعقود للأنشطة المنصوص عليها في هذا النظام.",
+        "source_record_id": "finance-companies-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4380,6 +4398,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "foreign_ownership_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -4872,6 +4898,14 @@
         "extraction_method": "parenthesized_term"
       },
       {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسة",
+        "definition_text": "مؤسسة النقد العربي السعودي.",
+        "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "social_insurance_law",
         "article_number": 1,
         "term_as_written": "المؤسسة",
@@ -5206,6 +5240,14 @@
         "definition_text": "محافظ الهيئة.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ مؤسسة النقد العربي السعودي.",
+        "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "real_estate_expropriation_law",
@@ -5704,6 +5746,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "المستفيد",
+        "definition_text": "الشخص الحاصل على التمويل.",
+        "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_finance_law",
         "article_number": 1,
         "term_as_written": "المستفيد",
@@ -5737,6 +5787,14 @@
         "term_as_written": "المستهلك",
         "definition_text": "الشخص الذي يتعامل بالتجارة الإلكترونية رغبةً في الحصول على المنتجات أو الخدمات التي يوفرها موفر الخدمة.",
         "source_record_id": "ecommerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "المستهلك",
+        "definition_text": "من توجه له خدمات شركات التمويل.",
+        "source_record_id": "finance-companies-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7175,6 +7233,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام الإثبات.",
         "source_record_id": "evidence-manuals-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام مراقبة شركات التمويل.",
+        "source_record_id": "finance-companies-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9003,6 +9069,16 @@
         "term_as_written": "شركة الأموال",
         "definition_text": "الشركة المساهمة، أو الشركة ذات المسئولية المحدودة، أو شركة التوصية بالأسهم، وتعد صناديق الاستثمار شركات أموال لأغراض هذا النظام.",
         "source_record_id": "income-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة التمويل": [
+      {
+        "track_id": "finance_companies_law",
+        "article_number": 1,
+        "term_as_written": "شركة التمويل",
+        "definition_text": "الشركة الحاصلة على ترخيص لممارسة نشاط التمويل.",
+        "source_record_id": "finance-companies-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
