@@ -137,6 +137,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_DUAL_SNAPSHOT_X_FAOLEX_MIRROR_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_2,
     "BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE": TIER_1,
+    "BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -492,6 +493,21 @@ RATIONALE_OVERRIDE = {
         "has_per_article_variation للمادتين 1 و6 اللتين تحملان تناقضاً مؤكَّداً (لا "
         "افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد على كل من BOE وموقع "
         "الهيئة نفسه، مفصَّلاً في official_source.json الخاص بالمسار."
+    ),
+    "municipal_councils_law": (
+        "official_text_status='BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_"
+        "NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية "
+        "أعادت خطأ HTTP 503، واعتُمدت ست لقطات أرشيف Wayback Machine مستقلة لصفحة BOE "
+        "نفسها (تمتد من 22 نوفمبر 2019 إلى 12 ديسمبر 2025، دون أي فرق نصي أو تعديل "
+        "مسجَّل طوال هذه الفترة) كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (موقع "
+        "وزارة الشؤون البلدية والقروية والإسكان الرسمي momah.gov.sa، نسختا PDF رسميتان "
+        "بتاريخين مستقلين 2022 و2025، نطاق منفصل فعلياً عن BOE) ومصدر ثانوي للمطابقة "
+        "(nezams.com). مصدران رسميان (BOE وmomah.gov.sa) متقاربان تماماً (69 مادة دون "
+        "أي فارق)، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل "
+        "لنمط awqaf_law وsaudi_engineers_law (BOE عبر Wayback × موقع الجهة الرسمي "
+        "الخاص بها). لا يحمل هذا المسار has_per_article_variation إذ لم يُعثر على أي "
+        "تعديل مطلقاً منذ صدور النظام، وهو استقرار مؤكَّد إيجابياً وليس افتراضياً، مفصَّل "
+        "في official_source.json الخاص بالمسار."
     ),
 }
 

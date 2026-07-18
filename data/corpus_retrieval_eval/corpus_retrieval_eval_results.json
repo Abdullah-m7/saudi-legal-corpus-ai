@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 300,
-  "top1_hits": 274,
-  "top3_hits": 293,
-  "top5_hits": 296,
-  "top1_accuracy": 0.9133,
-  "top3_accuracy": 0.9767,
-  "top5_accuracy": 0.9867,
-  "mrr_at_5": 0.9446,
+  "total_queries": 302,
+  "top1_hits": 276,
+  "top3_hits": 295,
+  "top5_hits": 298,
+  "top1_accuracy": 0.9139,
+  "top3_accuracy": 0.9768,
+  "top5_accuracy": 0.9868,
+  "mrr_at_5": 0.9449,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -2463,9 +2463,9 @@
      "score": 26
     },
     {
-     "record_id": "criminal-procedure-regulation-llm-art-103",
-     "article_number": 103,
-     "score": 22
+     "record_id": "municipal-councils-law-llm-art-057",
+     "article_number": 57,
+     "score": 24
     }
    ]
   },
@@ -4974,9 +4974,9 @@
      "score": 14
     },
     {
-     "record_id": "labor-reg-llm-art-033",
-     "article_number": 33,
-     "score": 13
+     "record_id": "municipal-councils-law-llm-art-057",
+     "article_number": 57,
+     "score": 14
     }
    ]
   },
@@ -5930,13 +5930,13 @@
      "score": 46
     },
     {
-     "record_id": "judicial-inspection-regulation-llm-art-024",
-     "article_number": 24,
-     "score": 15
+     "record_id": "municipal-councils-law-llm-art-026",
+     "article_number": 26,
+     "score": 16
     },
     {
-     "record_id": "labor-annex4-llm-art-062",
-     "article_number": 62,
+     "record_id": "judicial-inspection-regulation-llm-art-024",
+     "article_number": 24,
      "score": 15
     }
    ]
@@ -8570,9 +8570,9 @@
      "score": 17
     },
     {
-     "record_id": "customs-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 12
+     "record_id": "municipal-councils-law-llm-art-018",
+     "article_number": 18,
+     "score": 13
     }
    ]
   },
@@ -9317,6 +9317,68 @@
      "record_id": "oa-llm-companies-art-277",
      "article_number": 277,
      "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "muc-001",
+   "query_ar": "يحدد الوزير الدوائر الانتخابية قبل بداية كل فترة انتخابية وفقاً للضوابط التي تبينها لائحة الانتخاب",
+   "category": "topical",
+   "gold": {
+    "corpus": "municipal_councils",
+    "law_component": "law",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "municipal-councils-law-llm-art-020",
+     "article_number": 20,
+     "score": 39
+    },
+    {
+     "record_id": "municipal-councils-law-llm-art-021",
+     "article_number": 21,
+     "score": 25
+    },
+    {
+     "record_id": "municipal-councils-law-llm-art-026",
+     "article_number": 26,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "muc-002",
+   "query_ar": "يجرى التصويت بطريقة الاقتراع العلني إلا في حالات انتخاب رئيس المجلس أو نائبه أو المصلحة الخاصة برئيس المجلس أو أحد أعضائه",
+   "category": "topical",
+   "gold": {
+    "corpus": "municipal_councils",
+    "law_component": "law",
+    "article_number": 40
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "municipal-councils-law-llm-art-040",
+     "article_number": 40,
+     "score": 27
+    },
+    {
+     "record_id": "oa-llm-companies-art-069",
+     "article_number": 69,
+     "score": 22
+    },
+    {
+     "record_id": "oa-llm-companies-art-071",
+     "article_number": 71,
+     "score": 20
     }
    ]
   }

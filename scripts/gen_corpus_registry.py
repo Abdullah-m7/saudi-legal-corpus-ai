@@ -174,6 +174,7 @@ ACCOUNTING_AUDITING_LAW_LLM = os.path.join(ROOT, "data", "accounting_auditing_ar
 NAZAHA_LAW_LLM = os.path.join(ROOT, "data", "nazaha_arabic_legal_llm", "nazaha_law_legal_llm_001_024.json")
 AWQAF_LAW_LLM = os.path.join(ROOT, "data", "awqaf_arabic_legal_llm", "awqaf_law_legal_llm_001_025.json")
 SAUDI_ENGINEERS_LAW_LLM = os.path.join(ROOT, "data", "saudi_engineers_arabic_legal_llm", "saudi_engineers_law_legal_llm_001_009.json")
+MUNICIPAL_COUNCILS_LAW_LLM = os.path.join(ROOT, "data", "municipal_councils_arabic_legal_llm", "municipal_councils_law_legal_llm_001_069.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -341,6 +342,7 @@ def main() -> int:
     nazaha_law_llm = _load_json(NAZAHA_LAW_LLM)
     awqaf_law_llm = _load_json(AWQAF_LAW_LLM)
     saudi_engineers_law_llm = _load_json(SAUDI_ENGINEERS_LAW_LLM)
+    municipal_councils_law_llm = _load_json(MUNICIPAL_COUNCILS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -361,7 +363,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 136,
+        "total_tracks": 137,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -501,6 +503,7 @@ def main() -> int:
             + nazaha_law_llm["record_count"]  # 24 Law (Statute) of the Control and Anti-Corruption Authority (Nazaha) (M/25, 1446H) (BOE-via-Wayback archive, two snapshots + FAOLEX mirror x nezams.com x qanoonsa.com, live BOE unreachable, replaces the National Anti-Corruption Commission's 2011/2019 predecessor instruments, see track notes)
             + awqaf_law_llm["record_count"]  # 25 Law of the General Authority for Awqaf (M/11, 1437H) (BOE-via-Wayback archive, six snapshots x web.awqaf.gov.sa scanned original decree x nezams.com, live BOE unreachable, replaces the Supreme Awqaf Council System M/35 1386H, see track notes)
             + saudi_engineers_law_llm["record_count"]  # 9 Law of the Saudi Council of Engineers (M/36, 1423H) (BOE-via-Wayback archive, three snapshots x saudieng.sa's own official website x press corroboration, live BOE unreachable, no predecessor found, see track notes)
+            + municipal_councils_law_llm["record_count"]  # 69 Municipal Councils Law (M/61, 1435H) (BOE-via-Wayback archive, six snapshots x momah.gov.sa's own two official PDFs x nezams.com, zero amendments confirmed, partial repeal of predecessor Law of Municipalities and Villages Articles 2(b)/2(c)/7(b)/Chapter Two of Part Two, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -631,6 +634,7 @@ def main() -> int:
             + nazaha_law_llm["record_count"]
             + awqaf_law_llm["record_count"]
             + saudi_engineers_law_llm["record_count"]
+            + municipal_councils_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4649,6 +4653,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law of the Saudi Council of Engineers «نظام الهيئة السعودية للمهندسين» — Royal Decree M/36, dated 26/9/1423H (1 December 2002), ratifying Council of Ministers Resolution No. 226 (13/9/1423H). A low-to-medium-priority coverage-gap identified via the coverage_gap_map research pass, whose decree estimate this build confirmed exactly. **9 records: 7 اصلية, 2 معدلة** (Articles 1 and 6) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **No predecessor found (confirmed negative finding):** Article 9's closing clause is only a general conflict-only repeal naming no specific instrument; secondary sources trace only informal pre-law symposium discussions, not any earlier codified engineering-council law. **Decree-number collision flagged:** a separate, currently-in-force companion law (نظام مزاولة المهن الهندسية, Law of the Practice of Engineering Professions, Royal Decree M/36 dated 19/4/1438H — governing licensing, professional accreditation, and disciplinary penalties) shares the identical decree number 'م/36' at a completely different hijri date; documented explicitly to prevent cross-track confusion, and flagged as the strongest follow-up candidate since its content more closely matches licensing/discipline framing than this organizing statute. **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-SAUDIENG-SA-OFFICIAL-SITE-X-PRESS-CORROBORATION — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (15 Nov 2019 through 15 Sep 2025) were cross-verified against three of the Council's own official-website snapshots (saudieng.sa, 2017-2022) and a press aggregation (Asharq Al-Awsat) corroborating Article 1's supervising-authority transfer. **TWO GENUINELY VERIFIED ANOMALIES carried forward:** (1) Article 1 (supervising authority) — BOE's own changelog logs a clean phrase-substitution (CoM Resolution 57, 20/1/1442H) transferring supervision away from the Ministry of Commerce, but BOE's main body AND the Council's own official website both remain stale (unchanged Ministry of Commerce wording) across every snapshot checked; this track ingests the changelog-instructed substitution and flags the staleness. (2) Article 6 (board composition) — two layered but individually clean, complete-quote amendments (Royal Decree M/60, 1425H, then Council of Ministers Resolution 388, 1443H); this track ingests the more recent complete quote, independently confirmed verbatim by the Council's own official website, while BOE's own main body remains stuck on the original 2002 text throughout. Other flagged discrepancies: a companion Executive Regulation and 'Engineer's Charter' (reissued 2025) are confirmed to exist on saudieng.sa but are out of scope for this track, following established precedent; a minor BOE changelog typo (a dropped و) is preserved verbatim, not silently corrected. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "municipal_councils_law",
+                "display_name_ar": "نظام المجالس البلدية",
+                "display_name_en": "Municipal Councils Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/61, 4/10/1435H, approving Council of Ministers Resolution No. 384 (24/9/1435H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, six independent snapshots spanning 22 Nov 2019 to 12 Dec 2025), cross-verified against the Ministry of Municipal, Rural Affairs and Housing's own official website (momah.gov.sa, two independently-dated official PDFs, Feb 2022 and Oct 2025) and nezams.com",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": municipal_councils_law_llm["record_count"],
+                    "data_path": "data/municipal_councils_arabic_legal_llm/municipal_councils_law_legal_llm_001_069.json"}},
+                "record_counts": {"arabic_articles": municipal_councils_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 69, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": municipal_councils_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/municipal_councils/law/official_source/municipal_councils_law_official_source.json",
+                    "sources/municipal_councils/law/verified/municipal_councils_law_verified_records.jsonl",
+                    "data/municipal_councils_arabic_legal_llm/municipal_councils_law_legal_llm_001_069.json",
+                ],
+                "validator_targets": ["make municipal-councils-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Municipal Councils Law «نظام المجالس البلدية» — Royal Decree M/61, dated 4/10/1435H (31 July 2014), approving Council of Ministers Resolution No. 384 (24/9/1435H). A low-to-medium-priority coverage-gap identified via the coverage_gap_map research pass, distinct from the already-ingested regions_law (provincial/regional administration) and municipal_realestate_law tracks (municipal real-estate zoning) — no overlap confirmed. **69 records: ALL 69 اصلية** (never amended per every source checked) — organized into **12 فصول (chapters)**, **NO أبواب** grouping above them. **VERIFICATION TIER:** BOE-WAYBACK-SIX-SNAPSHOT-X-MOMAH-GOV-SA-OFFICIAL-PDF-X-NEZAMS — the live laws.boe.gov.sa portal returned HTTP 503 this pass, but six independent Wayback Machine snapshots of the exact law page (22 Nov 2019 through 12 Dec 2025) show zero text diffs and zero logged amendments throughout, cross-verified against the Ministry of Municipal, Rural Affairs and Housing's own official website (momah.gov.sa, two independently-dated official PDFs including a scanned original of the signed decree) and nezams.com. **Confirmed partial repeal of a predecessor:** this law's own Article 68 explicitly, but only partially, repeals Articles 2(b), 2(c), 7(b), and Chapter Two of Part Two of the Law of Municipalities and Villages (نظام البلديات والقرى, Royal Decree M/5, 21/2/1397H) — not a full supersession; the predecessor law is not yet ingested in this corpus and is flagged as a follow-up candidate. **Zero-amendment stability confirmed** as a genuine positive finding, the inverse of this corpus's recurring stale-changelog pattern. Other flagged discrepancies: Chapter 10's own heading reads 'مخلفات' (not the substantively-expected 'مخالفات') أعضاء المجالس البلدية identically in both primary sources — preserved verbatim, not silently corrected; four companion implementing regulations (general implementing regulation, election regulation, campaign regulation, financial regulation) are confirmed to exist on momah.gov.sa but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
             },
         ],
     }

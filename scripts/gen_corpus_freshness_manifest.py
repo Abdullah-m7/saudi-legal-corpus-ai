@@ -5,13 +5,13 @@ Corpus Freshness Manifest — Derived, Additive Drift-Monitoring Survey Layer
 
 Reads the canonical corpus registry (data/corpus_registry/corpus_registry.json), the
 verification-tiers layer (data/corpus_verification_tiers/corpus_verification_tiers.json),
-and each of the 136 tracks' own `official_source.json`-equivalent file, and produces a single
+and each of the 137 tracks' own `official_source.json`-equivalent file, and produces a single
 survey manifest that lets a human periodically re-check whether a track's SOURCE has drifted
 since it was last captured — WITHOUT needing another full research/build pass.
 
 This is a READ-ONLY, PURELY ADDITIVE derived layer, exactly like
 scripts/gen_corpus_verification_tiers.py:
-  - It does NOT modify the registry, the verification-tiers file, or any of the 136 tracks'
+  - It does NOT modify the registry, the verification-tiers file, or any of the 137 tracks'
     own files (official_source.json, notes, source_authority, etc.).
   - It does NOT perform any network access. It only reads files already committed to this
     repository. This is what makes it safe to run inside the deterministic QA gate.
@@ -426,14 +426,14 @@ def main() -> int:
         "read_only_derived_layer": True,
         "network_access": False,
         "notes": (
-            "Purely additive, read-only survey layer over this corpus's 136 tracks, built "
+            "Purely additive, read-only survey layer over this corpus's 137 tracks, built "
             "entirely from files already committed to this repository (the corpus registry, "
             "the verification-tiers layer, and each track's own official_source.json-"
             "equivalent file). Makes NO network calls and NEVER calls datetime.now() — every "
             "date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted "
             "verbatim from a track's own already-committed files, which keeps this generator "
             "deterministic and idempotent. Does not modify the registry, the verification-"
-            "tiers file, or any of the 136 tracks' own files. For a LIVE (network-dependent, "
+            "tiers file, or any of the 137 tracks' own files. For a LIVE (network-dependent, "
             "non-deterministic, NOT part of the QA gate) reachability/drift check against the "
             "URLs recorded here, run scripts/check_corpus_freshness.py standalone."
         ),

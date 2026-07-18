@@ -19,9 +19,9 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 136,
+  "total_tracks": 137,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 95,
+    "TIER_1_PRIMARY_MULTI_SOURCE": 96,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 13,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 22
@@ -704,6 +704,13 @@
       "track_id": "mosalaha_center_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "municipal_councils_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية أعادت خطأ HTTP 503، واعتُمدت ست لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 22 نوفمبر 2019 إلى 12 ديسمبر 2025، دون أي فرق نصي أو تعديل مسجَّل طوال هذه الفترة) كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (موقع وزارة الشؤون البلدية والقروية والإسكان الرسمي momah.gov.sa، نسختا PDF رسميتان بتاريخين مستقلين 2022 و2025، نطاق منفصل فعلياً عن BOE) ومصدر ثانوي للمطابقة (nezams.com). مصدران رسميان (BOE وmomah.gov.sa) متقاربان تماماً (69 مادة دون أي فارق)، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط awqaf_law وsaudi_engineers_law (BOE عبر Wayback × موقع الجهة الرسمي الخاص بها). لا يحمل هذا المسار has_per_article_variation إذ لم يُعثر على أي تعديل مطلقاً منذ صدور النظام، وهو استقرار مؤكَّد إيجابياً وليس افتراضياً، مفصَّل في official_source.json الخاص بالمسار.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
