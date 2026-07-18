@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 274,
-  "top1_hits": 250,
-  "top3_hits": 267,
-  "top5_hits": 270,
-  "top1_accuracy": 0.9124,
-  "top3_accuracy": 0.9745,
-  "top5_accuracy": 0.9854,
-  "mrr_at_5": 0.9429,
+  "total_queries": 276,
+  "top1_hits": 252,
+  "top3_hits": 269,
+  "top5_hits": 272,
+  "top1_accuracy": 0.913,
+  "top3_accuracy": 0.9746,
+  "top5_accuracy": 0.9855,
+  "mrr_at_5": 0.9434,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4633,9 +4633,9 @@
      "score": 16
     },
     {
-     "record_id": "medical-reports-regulation-llm-art-006",
-     "article_number": 6,
-     "score": 12
+     "record_id": "patent-law-llm-art-034",
+     "article_number": 34,
+     "score": 14
     }
    ]
   },
@@ -8511,6 +8511,68 @@
      "record_id": "zakat-law-llm-art-106",
      "article_number": 106,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "ptn-001",
+   "query_ar": "مدة حماية براءة الاختراع عشرون سنة من تاريخ إيداع الطلب",
+   "category": "topical",
+   "gold": {
+    "corpus": "patent",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "patent-law-llm-art-019",
+     "article_number": 19,
+     "score": 39
+    },
+    {
+     "record_id": "copyright-law-llm-art-019",
+     "article_number": 19,
+     "score": 23
+    },
+    {
+     "record_id": "patent-law-llm-art-046",
+     "article_number": 46,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "ptn-002",
+   "query_ar": "يكون الاختراع جديدًا إذا لم يكن مسبوقًا من حيث حالة التقنية السابقة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "patent",
+    "law_component": "law",
+    "article_number": 44
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "patent-law-llm-art-044",
+     "article_number": 44,
+     "score": 29
+    },
+    {
+     "record_id": "patent-law-llm-art-024",
+     "article_number": 24,
+     "score": 17
+    },
+    {
+     "record_id": "patent-law-llm-art-048",
+     "article_number": 48,
+     "score": 12
     }
    ]
   }

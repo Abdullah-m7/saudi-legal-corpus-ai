@@ -163,10 +163,12 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_social_insurance_law_track.py",
     "scripts/gen_social_insurance_legacy_law_track.py",
     "scripts/gen_zakat_law_track.py",
+    "scripts/gen_patent_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",
     "scripts/gen_corpus_supersession_graph.py",
+    "scripts/gen_corpus_cross_reference_graph.py",
     "scripts/run_corpus_retrieval_eval.py",
 ]
 

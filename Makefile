@@ -231,6 +231,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-verification-tiers-validate \
         zakat-law-track-validate \
         corpus-supersession-graph-validate \
+        corpus-cross-reference-graph-validate \
+        patent-law-track-validate \
         qa-gate
 
 help:
@@ -1348,6 +1350,12 @@ zakat-law-track-validate:
 
 corpus-supersession-graph-validate:
 	$(PY) scripts/validate_corpus_supersession_graph.py
+
+corpus-cross-reference-graph-validate:
+	$(PY) scripts/validate_corpus_cross_reference_graph.py
+
+patent-law-track-validate:
+	$(PY) scripts/validate_patent_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

@@ -160,6 +160,7 @@ CIVIL_SERVICE_LAW_LLM = os.path.join(ROOT, "data", "civil_service_arabic_legal_l
 SOCIAL_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_arabic_legal_llm", "social_insurance_law_legal_llm_001_063.json")
 SOCIAL_INSURANCE_LEGACY_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_legacy_arabic_legal_llm", "social_insurance_legacy_law_legal_llm_001_071.json")
 ZAKAT_LAW_LLM = os.path.join(ROOT, "data", "zakat_arabic_legal_llm", "zakat_law_legal_llm_001_128.json")
+PATENT_LAW_LLM = os.path.join(ROOT, "data", "patent_arabic_legal_llm", "patent_law_legal_llm_001_066.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -313,6 +314,7 @@ def main() -> int:
     social_insurance_law_llm = _load_json(SOCIAL_INSURANCE_LAW_LLM)
     social_insurance_legacy_law_llm = _load_json(SOCIAL_INSURANCE_LEGACY_LAW_LLM)
     zakat_law_llm = _load_json(ZAKAT_LAW_LLM)
+    patent_law_llm = _load_json(PATENT_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -333,7 +335,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 122,
+        "total_tracks": 123,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -459,6 +461,7 @@ def main() -> int:
             + social_insurance_law_llm["record_count"]  # 63 Social Insurance Law (New System, M/273) (BOE Wayback primary x nezams.com spot-check x qanoonsa.com structure, see track notes)
             + social_insurance_legacy_law_llm["record_count"]  # 71 Social Insurance Law (Old/Legacy System, M/33) (BOE Wayback x nezams.com x Okaz/Al-Riyadh news corroboration, see track notes)
             + zakat_law_llm["record_count"]  # 128 Zakat Collection Implementing Regulation (M/1007, 1445H) (ZATCA official PDF single-source primary, Umm Al-Qura Gazette spot-verified, see track notes)
+            + patent_law_llm["record_count"]  # 66 Patent Law (M/27, 1425H) (WIPO Lex M/45-consolidated text x BOE metadata, BOE confirmed stale re: 2023 amendment, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -575,6 +578,7 @@ def main() -> int:
             + social_insurance_law_llm["record_count"]
             + social_insurance_legacy_law_llm["record_count"]
             + zakat_law_llm["record_count"]
+            + patent_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4201,6 +4205,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Zakat Collection Implementing Regulation «اللائحة التنفيذية لجباية الزكاة» — Minister of Finance Resolution No. 1007, dated 19/8/1445H, administered by ZATCA (Zakat, Tax and Customs Authority). This is the primary fiscal levy on Saudi/GCC-owned entities, parallel to and distinct from the already-covered income_tax_law (which applies to non-Saudi-owned shares/entities). Identified as the corpus's top-priority coverage gap via the coverage_gap_map research pass, whose own decree-number and article-count estimates were subsequently found to be incorrect during dedicated research (the gap map cited Royal Decree 17/2/28/3321 — actually the already-covered income-tax decree's own repealed predecessor number — and estimated 20-30 articles; the true governing text is the 128-article Resolution 1007, a large regulation, not a short foundational decree). 128 records across 5 أبواب (with nested فصول and فروع) — 127 اصلية / 1 معدلة (Article 73, real-estate-under-construction/off-plan zakat treatment, amended by Minister of Finance Resolution No. 1248, 11/10/1446H). The short foundational enabling Royal Decree (17/2/28/8634, 29/6/1370H) is treated as prose-only preamble context, NOT a numbered article of this track, since its own ~2-article text was never independently confirmed via a direct successful fetch (only search-engine-mediated quotes) — this corpus's zero-fabrication policy therefore excludes it from `articles`. **VERIFICATION TIER:** SINGLE-SOURCE — the full 128-article text rests solely on ZATCA's own official PDF (laws.boe.gov.sa returned HTTP 503 on every attempt across two research/build passes, confirmed still unreachable); the Umm Al-Qura Gazette (uqn.gov.sa) was successfully reached and used only for targeted spot-verification (Resolution 1007's exact date, and Article 13's مالك/ملاك title disambiguation), not a second full-text cross-check. The build pass discovered and fixed a severe, previously-undocumented PDF extraction bug: the source PDF's font/ToUnicode-CMap systematically transposes LAM+alef-form character pairs (all four alef forms), corrupting extremely common words (الأصول، الإقرار، اللائحة, etc.); fixed via a general regex plus a curated ~140-entry dictionary plus context-anchored resolution of two genuine homograph ambiguities. A separate PDF line-wrap/justification artifact misordered wrapped lines across roughly 35 articles, hand-reconstructed by reading each full sentence for sense (no wording invented, only reordered); one further instance (Article 128) was caught and corrected during post-build review by checking the raw extraction against the reordering logic — a residual, unquantified risk of similar uncorrected artifacts in other paragraphs cannot be fully excluded without a second full-text source to diff against, and is documented rather than hidden. Other flagged discrepancies: no `original_1445h_text` for Article 73 (pre-amendment text not recoverable from the consolidated PDF); the prior 1440H regulation's repeal clause not found verbatim within the operative articles themselves (only in secondary summaries); a secondary claim of 200,000/400,000 SAR minimum zakat-base figures searched for and confirmed ABSENT from the primary text (the only flat floor found is Article 86's 500 SAR minimum for presumptive taxpayers). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "patent_law",
+                "display_name_ar": "نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية",
+                "display_name_en": "Law of Patents, Layout Designs of Integrated Circuits, Plant Varieties and Industrial Designs",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED",
+                "source_authority": "Royal Decree M/27, 29/5/1425H — WIPO Lex's own consolidated PDF (through Royal Decree M/45, 2023) as primary current-text source, cross-verified via independent OCR plus native-text-layer extraction, against a BOE Wayback-archived portal text confirmed stale on two axes (the 2023 substantive amendment, and the 2018 terminology amendment's own displayed article bodies)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": patent_law_llm["record_count"],
+                    "data_path": "data/patent_arabic_legal_llm/patent_law_legal_llm_001_066.json"}},
+                "record_counts": {"arabic_articles": patent_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 59, "معدلة": 6, "ملغاة": 0, "مضافة": 1},
+                                  "total": patent_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/patent/law/official_source/patent_law_official_source.json",
+                    "sources/patent/law/verified/patent_law_verified_records.jsonl",
+                    "data/patent_arabic_legal_llm/patent_law_legal_llm_001_066.json",
+                ],
+                "validator_targets": ["make patent-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of Patents, Layout Designs of Integrated Circuits, Plant Varieties and Industrial Designs «نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية» — Royal Decree M/27, dated 29/5/1425H (17 July 2004), approving Council of Ministers Resolution No. 159 (17/5/1425H). Repeals the prior Patent Law (Royal Decree M/38, 10/6/1409H). Administered by SAIP (Saudi Authority for Intellectual Property, renamed from KACST by a 2018 amendment). Identified as the corpus's #2-priority IP-family gap via the coverage_gap_map research pass (the corpus already had trademark_law and copyright_law but no patent law). 66 records (65 sequentially-numbered articles + Article 60 مكرر, inserted 2023) across 6 فصول (أحكام عامة arts 1-42; أحكام خاصة ببراءات الاختراع arts 43-48; أحكام خاصة بالتصميمات التخطيطية للدارات المتكاملة arts 49-53; أحكام خاصة بحماية الأصناف النباتية الجديدة arts 54-58; أحكام خاصة بالنماذج الصناعية arts 59-60+60مكرر; أحكام ختامية arts 61-65) — 59 اصلية / 6 معدلة (Articles 2, 18, 19, 35, 42, 63) / 1 مضافة (60 مكرر). Two confirmed amendments: Council of Ministers Resolution 536 (19/10/1439H, 2018) — a pure KACST/'المدينة'/'الإدارة' to SAIP/'الهيئة' institutional-terminology substitution; and Royal Decree M/45 (10/3/1445H, 2023) — Hague Agreement/Geneva Act accession changes (new definitions, a 5-year Hague filing fee cycle, industrial design protection extended 10→15 years, new Article 60 مكرر). **VERIFICATION TIER:** BOE's own displayed consolidated text is confirmed STALE on two axes — it has not incorporated the 2023 M/45 amendment at all, and for 3 of the 4 2018-amended articles (35, 42, 63) BOE's own displayed article body still shows pre-2018 wording even though its own amendment-annotation correctly describes the change. WIPO Lex's M/45-consolidated PDF (cross-verified via two independent OCR passes plus a native-text-layer pdftotext extraction, since the source PDF is a genuine Word-generated PDF, not a scan) is used as the current-text primary source; BOE is used only for metadata/provenance/genuinely-recoverable original wording. **TERMINOLOGY-SUBSTITUTION SCOPE:** the amending resolution's own recital states the KACST→SAIP substitution applies 'أينما وردتا في النظام' (wherever the terms appear in the law) — this build found the substitution's actual textual footprint extends to at least 22 further articles beyond the 4 BOE/the instrument's own per-article amendment-history enumerates; the current ('الهيئة') wording is presented as governing text for all of these, while legal_status_ar is conservatively kept 'اصلية' for them absent a primary source separately flagging each as amended — a scope judgment flagged transparently rather than silently resolved either way. Also preserved verbatim: a genuine 2018 drafting inconsistency (Article 35(b) keeps a 'رئيس'/Chairman prefix the parallel Articles 42 and 63 lack). original_1425h_text is populated for the 6 formally-enumerated amended articles only. Other flagged discrepancies: a broken SAIP-hosted 'updated 2024' PDF link (independently reproduced 404, not a network block); and a clarification that the separate, parallel GCC Unified Patent Law (an optional regional filing route, not a replacement) is deliberately not ingested here. Arabic governs; not legal advice.",
             },
         ],
     }
