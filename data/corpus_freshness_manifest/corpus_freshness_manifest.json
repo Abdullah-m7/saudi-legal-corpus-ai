@@ -7,17 +7,20 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 132 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 132 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 133 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 133 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 132,
-  "known_source_staleness_risk_count": 4,
+  "total_tracks": 133,
+  "known_source_staleness_risk_count": 5,
   "known_source_staleness_risk_tracks": [
+    "accounting_auditing_law",
     "environmental_law",
     "income_tax_law",
     "patent_law",
     "traffic_law"
   ],
-  "tracks_without_resolvable_official_source_file": [],
+  "tracks_without_resolvable_official_source_file": [
+    "companies_law"
+  ],
   "tracks": [
     {
       "track_id": "aawan_regulation",
@@ -35,6 +38,27 @@
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "accounting_auditing_law",
+      "display_name_en": "Law of the Accounting and Auditing Profession",
+      "display_name_ar": "نظام مهنة المحاسبة والمراجعة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها اعتُمدت كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ (نسخة PDF الرسمية من الهيئة السعودية للمراجعين والمحاسبين SOCPA نفسها، الجهة المنظِّمة للمهنة) ومصدر ثانوي ثالث (qanoonsa.com، صفحتان مستقلتان) — مصدران رسميان (BOE وSOCPA) متقاربان على كامل المواد الـ22، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط finance_companies_law (BOE عبر Wayback × bfc.gov.sa). خلل مؤكَّد (وليس افتراضاً) على صفحة BOE نفسها: خمس مواد (1، 4، 5، 19، 20) تحمل علامة 'مادة معدَّلة' ونافذة تعديلات تقتبس نص المرسوم الملكي م/169 (1446هـ) بدقة، بينما النص الرئيسي المعروض لنفس هذه المواد ظل قديماً (ما قبل م/169) بشكل متطابق حرفياً عبر ثلاث لقطات أرشيفية بفارق 8+ أشهر — تم اعتماد نص نافذة التعديلات (المؤكَّد عبر PDF الهيئة) لا النص الرئيسي الراكد. راجع has_per_article_variation للمادة الأولى تحديداً، التي تحمل تعديلاً ثانياً أحدث (قرار مجلس الوزراء 283، 1447هـ) لم يصل بعد إلى أي لقطة BOE ويستند فقط إلى PDF الهيئة وqanoonsa.com دون أي تأكيد رسمي مباشر له.",
+      "registry_source_authority": "Royal Decree M/59, 27/7/1442H, ratifying Council of Ministers Resolution No. 416 (25/7/1442H), replacing Royal Decree M/12 13/5/1412H — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable), cross-verified against SOCPA's own official PDF of the law and two independent qanoonsa.com pages",
+      "registry_source_url": null,
+      "official_source_file": "sources/accounting_auditing/law/official_source/accounting_auditing_law_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/6435e205-a7ae-4a8c-9580-ad0000b6bef2/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "accounting_auditing_boe_main_body_stale_vs_changelog_popup: This track's single most important documented discrepancy. BOE's own archived law-detail page (Wayback snapshot 20251015113239, 15 Oct 2025) marks Articles 1, 4, 5, 19 and 20 with a 'changed-article' CSS class and a nest"
     },
     {
       "track_id": "alimony_fund_regulation",
@@ -635,7 +659,7 @@
       "verification_tier_rationale": "لا يحمل official_text_status قيمة مسجّلة لهذا المسار (من أقدم مسارات المدونة، سابق لاعتماد حقل official_text_status). ملف بيانات القانون الخاص به يسجّل صراحة official_source_status='ingested_unverified' للنص العربي المقدَّم من المالك، ولا يوثّق أي تدقيق مقارن مقابل مصدر مستقل ثانٍ.",
       "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء",
       "registry_source_url": null,
-      "official_source_file": "data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json",
+      "official_source_file": null,
       "source_urls": [],
       "named_source_authorities": [],
       "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",

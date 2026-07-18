@@ -736,6 +736,21 @@ EDGES = [
                 "separately ingested in this corpus.",
         "source_ref": "sources/maritime_commercial/law/official_source/maritime_commercial_law_official_source.json (article 391)",
     },
+    {
+        "from_track_id": "accounting_auditing_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المحاسبين القانونيين (السابق)",
+        "target_decree": "Royal Decree M/12, 13/5/1412H",
+        "note": "accounting_auditing_law's own official_source.json article "
+                "21: 'يحل النظام محل نظام المحاسبين القانونيين، الصادر "
+                "بالمرسوم الملكي رقم (م/12) وتاريخ 13/5/1412هـ، ويلغي كل ما "
+                "يتعارض معه من أحكام.' Doubly confirmed: BOE's own separate "
+                "page for the predecessor law independently shows status "
+                "'لاغي' (repealed). Predecessor not separately ingested in "
+                "this corpus.",
+        "source_ref": "sources/accounting_auditing/law/official_source/accounting_auditing_law_official_source.json (article 21)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------
