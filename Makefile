@@ -241,6 +241,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         customs-regulation-track-validate \
         anti-fraud-law-track-validate \
         finance-companies-law-track-validate \
+        cooperative-health-insurance-law-track-validate \
         qa-gate
 
 help:
@@ -1388,6 +1389,9 @@ anti-fraud-law-track-validate:
 
 finance-companies-law-track-validate:
 	$(PY) scripts/validate_finance_companies_law_track.py
+
+cooperative-health-insurance-law-track-validate:
+	$(PY) scripts/validate_cooperative_health_insurance_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

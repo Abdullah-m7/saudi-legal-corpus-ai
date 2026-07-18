@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 8720,
-  "total_references_extracted": 1837,
-  "intra_law_count": 1624,
+  "total_records_scanned": 8739,
+  "total_references_extracted": 1840,
+  "intra_law_count": 1627,
   "inter_law_count": 213,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1581,
+    "high": 1584,
     "medium": 256
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -5635,6 +5635,39 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "cooperative_health_insurance_law",
+      "source_record_id": "cooperative-health-insurance-law-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "cooperative_health_insurance_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cooperative_health_insurance_law",
+      "source_record_id": "cooperative-health-insurance-law-llm-art-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "cooperative_health_insurance_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cooperative_health_insurance_law",
+      "source_record_id": "cooperative-health-insurance-law-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "cooperative_health_insurance_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "copyright_law",
       "source_record_id": "copyright-law-llm-art-016",
       "source_article_number": 16,
@@ -10633,11 +10666,11 @@
       "source_record_id": "insurance-control-law-llm-art-002",
       "source_article_number": 2,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "cooperative_health_insurance_law",
       "target_article_number": null,
       "target_law_name_raw": "الضمان الصحي التعاوني",
       "raw_citation_text": "أحكام نظام الضمان الصحي التعاوني الصادر بالمرسوم الملكي رقم",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "insurance_control_law",
@@ -12822,11 +12855,11 @@
       "source_record_id": "labor-annex5-llm-058-casual-temporary",
       "source_article_number": 58,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "cooperative_health_insurance_law",
       "target_article_number": null,
       "target_law_name_raw": "الضمان الصحي التعاوني",
       "raw_citation_text": "أحكام نظام الضمان الصحي التعاوني",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "labor_recruitment_services_rules",
@@ -12943,11 +12976,11 @@
       "source_record_id": "labor-annex5-llm-083-seasonal",
       "source_article_number": 83,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "cooperative_health_insurance_law",
       "target_article_number": null,
       "target_law_name_raw": "الضمان الصحي التعاوني",
       "raw_citation_text": "أحكام نظام الضمان الصحي التعاوني",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "labor_model_contract_forms",

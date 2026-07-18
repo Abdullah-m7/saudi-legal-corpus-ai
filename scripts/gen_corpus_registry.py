@@ -165,6 +165,7 @@ CUSTOMS_LAW_LLM = os.path.join(ROOT, "data", "customs_arabic_legal_llm", "custom
 CUSTOMS_REGULATION_LLM = os.path.join(ROOT, "data", "customs_regulation_arabic_legal_llm", "customs_regulation_legal_llm_001_036.json")
 ANTI_FRAUD_LAW_LLM = os.path.join(ROOT, "data", "anti_fraud_arabic_legal_llm", "anti_fraud_law_legal_llm_001_030.json")
 FINANCE_COMPANIES_LAW_LLM = os.path.join(ROOT, "data", "finance_companies_arabic_legal_llm", "finance_companies_law_legal_llm_001_041.json")
+COOPERATIVE_HEALTH_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "cooperative_health_insurance_arabic_legal_llm", "cooperative_health_insurance_law_legal_llm_001_019.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -323,6 +324,7 @@ def main() -> int:
     customs_regulation_llm = _load_json(CUSTOMS_REGULATION_LLM)
     anti_fraud_law_llm = _load_json(ANTI_FRAUD_LAW_LLM)
     finance_companies_law_llm = _load_json(FINANCE_COMPANIES_LAW_LLM)
+    cooperative_health_insurance_law_llm = _load_json(COOPERATIVE_HEALTH_INSURANCE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -343,7 +345,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 127,
+        "total_tracks": 128,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -474,6 +476,7 @@ def main() -> int:
             + customs_regulation_llm["record_count"]  # 36 Implementing Regulation of the GCC Unified Customs Law (Resolution 2748, 1423H) (ZATCA official PDF single-source primary, see track notes)
             + anti_fraud_law_llm["record_count"]  # 30 Anti-Commercial Fraud Law (M/19, 1429H) (secondary multi-source cross-verified, BOE unreachable, see track notes)
             + finance_companies_law_llm["record_count"]  # 41 Finance Companies Control Law (M/51, 1433H) (BOE-via-Wayback primary x bfc.gov.sa OCR x nezams.com cross-verified, see track notes)
+            + cooperative_health_insurance_law_llm["record_count"]  # 19 Cooperative Health Insurance Law (M/10, 1420H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -595,6 +598,7 @@ def main() -> int:
             + customs_regulation_llm["record_count"]
             + anti_fraud_law_llm["record_count"]
             + finance_companies_law_llm["record_count"]
+            + cooperative_health_insurance_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4361,6 +4365,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Finance Companies Control Law «نظام مراقبة شركات التمويل» — Royal Decree M/51, dated 13/8/1433H (3/7/2012), approving Council of Ministers Resolution No. 259 (12/8/1433H), published Umm al-Qura 13/10/1433H. Administered by SAMA (referred to in-text as 'المؤسسة'/'المحافظ' in unamended articles and 'البنك' in the 2024-amended articles, reflecting the SAMA-to-Saudi-Central-Bank institutional rename — the same divergence phenomenon already documented in this corpus's insurance_control_law track, preserved verbatim per-article rather than normalized). Identified as the corpus's #5-priority coverage-gap via the coverage_gap_map research pass, whose decree/date estimate was independently re-verified and confirmed correct. 41 records (40 numbered articles + Article 36 مكرر, added 2024) across a فصل تمهيدي (تعريفات) plus 8 فصول (أحكام عامة؛ أحكام الترخيص؛ نشاط شركات التمويل؛ إدارة شركات التمويل؛ الإشراف [عُدّل عنوانه من 'الإشراف على شركات التمويل' في تعديل 2024]؛ المخالفات والمنازعات؛ العقوبات؛ أحكام ختامية) — 28 اصلية / 12 معدلة / 1 مضافة. Amended three times: Royal Decree M/21 (6/3/1440H, narrow, Article 5 only); Royal Decree M/24 (15/3/1443H, based on Council of Ministers Resolution 160, Article 35 only); Royal Decree M/272 (4/12/1445H / 2024, based on Council of Ministers Resolution 1016, published Umm al-Qura issue 5036, a substantial 14-item amendment touching Articles 1, 5, 11, 12, 16-21, 29 plus new Article 36 مكرر). **VERIFICATION TIER:** BOE-WAYBACK-PRIMARY — the live laws.boe.gov.sa portal was unreachable this pass (HTTP 503 direct, 422 via r.jina.ai proxy, matching this corpus's established BOE-egress-blocked pattern), but a Wayback Machine archive snapshot of the exact BOE law page was reachable via direct curl and used as the primary full-text source for all 40 original articles, cross-verified via normalized programmatic diff (zero substantive discrepancies) against bfc.gov.sa's own official PDF (OCR'd via tesseract, since the PDF's font/cmap was corrupted) and nezams.com's HTML transcription; the 2024 amendment's exact replacement text rests on qanoonsa.com's verbatim decree reproduction (citing Umm al-Qura issue 5036), cross-checked against nezams.com's per-article footnotes. Other flagged discrepancies: Article 5's pre-1440H deleted بند (خامساً) content is not recoverable from any source consulted, a documented gap not a fabrication; Article 5's 1440H amendment description does not fully account for the article's current 6-بند structure, an arithmetic gap flagged rather than resolved by inference; Article 35's amending instrument carries two compatible-but-distinct citations between sources (BOE: Royal Decree M/24; other sources: Council of Ministers Resolution 160) — both recorded; BOE's own archived Article 35 annotation contains a corrupted penalty figure/spelling, not adopted. Article 38 is a general, non-specific repeal clause ('يلغي هذا النظام كل ما يتعارض معه من أحكام') naming no single prior statute, so no supersession-graph edge is modeled from it; the decree's own preamble separately directs (not repeals) review of the Installment Sale Law (M/13, 1426H) for consistency, also not modeled as a repeal. A companion Implementing Regulation (Governor's Resolution 2/م ش ت, 14/4/1434H, 38 image-scanned pages with its own independent multi-wave amendment history) exists but its text is out of scope for this track, following the precedent set by banking_control_law and insurance_control_law. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cooperative_health_insurance_law",
+                "display_name_ar": "نظام الضمان الصحي التعاوني",
+                "display_name_en": "Cooperative Health Insurance Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503",
+                "source_authority": "Royal Decree M/10, 1/5/1420H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable, connection reset), cross-verified byte-for-byte against nezams.com's HTML transcription",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cooperative_health_insurance_law_llm["record_count"],
+                    "data_path": "data/cooperative_health_insurance_arabic_legal_llm/cooperative_health_insurance_law_legal_llm_001_019.json"}},
+                "record_counts": {"arabic_articles": cooperative_health_insurance_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 17, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+                                  "total": cooperative_health_insurance_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/cooperative_health_insurance/law/official_source/cooperative_health_insurance_law_official_source.json",
+                    "sources/cooperative_health_insurance/law/verified/cooperative_health_insurance_law_verified_records.jsonl",
+                    "data/cooperative_health_insurance_arabic_legal_llm/cooperative_health_insurance_law_legal_llm_001_019.json",
+                ],
+                "validator_targets": ["make cooperative-health-insurance-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Cooperative Health Insurance Law «نظام الضمان الصحي التعاوني» — Royal Decree M/10, dated 1/5/1420H, approving Council of Ministers Resolution No. 71 (27/4/1420H). Administered by the Council of Cooperative Health Insurance (مجلس الضمان الصحي التعاوني / CCHI) — a distinct, more specific statute from this corpus's already-ingested `insurance_control_law` (Cooperative Insurance Companies Control Law, M/32, 1424H), which governs insurance companies generally; not conflated. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose decree/date estimate was independently re-verified and confirmed correct. 19 records, flat structure (no أبواب/فصول, confirmed absent from both sources) — 17 اصلية / 2 معدلة (Articles 4 and 14, both amended by Council of Ministers Resolution 246, 4/9/1425H; Article 4 amended a second time by Resolution 472, 18/8/1440H, restructuring full council membership). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE — the live laws.boe.gov.sa portal was unreachable this pass (connection reset), but a Wayback Machine snapshot of the exact BOE law page was reachable (plain http:// was required; https:// was blocked by egress policy) and cross-verified byte-for-byte against nezams.com's HTML transcription, finding zero substantive discrepancies across all 17 unamended articles and both the 1420H and 1425H states of the 2 amended articles. Flagged discrepancies: BOE's own summary metadata panel shows an internally inconsistent issuance/publication date ('1420/01/01H = 17/04/1999'), almost certainly a generic year-placeholder rather than the real decree date, not adopted; Article 4's 1440H amendment replacement text rests on nezams.com alone (BOE's own page cites Resolution 472 but does not reproduce its text), with 5 specific transcription artifacts in nezams.com's raw text individually normalized and disclosed verbatim; a companion Implementing Regulation (CCHI-hosted, amended multiple times) is identified but not ingested this pass, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law; CCHI circulars and Umrah/Hajj-visitor coverage expansions are clarified as living outside this primary Law's own amendment history (only Articles 4 and 14 were ever amended) and are out of scope. No repeal clause found in the decree or its underlying resolution — a freestanding new 1420H law, no supersession-graph edge applicable. Arabic governs; not legal advice.",
             },
         ],
     }
