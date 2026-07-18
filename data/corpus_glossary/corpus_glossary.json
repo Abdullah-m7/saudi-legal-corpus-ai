@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 125,
-  "total_terms": 726,
-  "total_definitions": 1083,
-  "tracks_with_definitions_article_parsed": 82,
+  "total_tracks_in_registry": 126,
+  "total_terms": 729,
+  "total_definitions": 1090,
+  "tracks_with_definitions_article_parsed": 83,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -4260,6 +4260,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "anti_fraud_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لنظام مكافحة الغش التجاري.",
+        "source_record_id": "anti-fraud-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "anti_narcotics_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -6404,6 +6412,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنتج الفاسد": [
+      {
+        "track_id": "anti_fraud_law",
+        "article_number": 1,
+        "term_as_written": "المنتج الفاسد",
+        "definition_text": "كل منتج لم يعد صالحًا للاستغلال أو الاستعمال أو الاستهلاك وفق ما تبينه اللائحة.",
+        "source_record_id": "anti-fraud-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنتج المغشوش": [
+      {
+        "track_id": "anti_fraud_law",
+        "article_number": 1,
+        "term_as_written": "المنتج المغشوش",
+        "definition_text": "أ– كل منتج دخل عليه تغيير أو عبث به بصورة ما مما أفقده شيئًا من قيمته المادية أو المعنوية، سواء كان ذلك بالإضافة أو بالإنقاص أو بالتصنيع أو بغير ذلك، في ذاته أو طبيعته أو جنسه أو نوعه أو شكله أو عناصره أو صفاته أو متطلباته أو خصائصه أو مصدره أو قدره سواء في الوزن، أو الكيل، أو المقاس، أو العدد، أو الطاقة، أو العيار.\nب– كل منتج غير مطابق للمواصفات القياسية المعتمدة.",
+        "source_record_id": "anti-fraud-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنتجات التأمينية": [
       {
         "track_id": "social_insurance_law",
@@ -6716,6 +6744,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المواصفات القياسية المعتمدة": [
+      {
+        "track_id": "anti_fraud_law",
+        "article_number": 1,
+        "term_as_written": "المواصفات القياسية المعتمدة",
+        "definition_text": "المواصفات الصادرة من الهيئة العربية السعودية للمواصفات والمقاييس أو الصادرة من جهات أخرى محلية أو دولية وتعتمدها الهيئة المذكورة.",
+        "source_record_id": "anti-fraud-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المواطن السعودي": [
       {
         "track_id": "income_tax_law",
@@ -6993,6 +7031,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام مكافحة التستر.",
         "source_record_id": "anti-concealment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "anti_fraud_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام مكافحة الغش التجاري.",
+        "source_record_id": "anti-fraud-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7664,6 +7710,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "anti_fraud_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة التجارة والصناعة.",
+        "source_record_id": "anti-fraud-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bankruptcy_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -7897,6 +7951,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير التجارة.",
         "source_record_id": "anti-concealment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "anti_fraud_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير التجارة والصناعة.",
+        "source_record_id": "anti-fraud-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {

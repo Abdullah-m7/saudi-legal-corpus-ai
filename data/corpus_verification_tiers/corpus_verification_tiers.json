@@ -19,11 +19,11 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 125,
+  "total_tracks": 126,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 89,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 10,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 5,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 6,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 21
   },
   "tracks_with_per_article_variation": 13,
@@ -74,6 +74,13 @@
       "track_id": "anti_cyber_crime_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED': تحقق شامل (لا عيّنة) مادة بمادة عبر ثلاثة مصادر رسمية مستقلة (بوابة هيئة الخبراء BOE + ترجمة هيئة الاتصالات الرسمية عبر WIPO Lex + نسخة موثّقة رسمياً من وزارة المالية)، تطابقت جميعها حرفياً على كل المواد الـ16 — أقوى تحقق في هذه المدونة.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "anti_fraud_law",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها في جولتي بحث وبناء منفصلتين (503 عند رابطين مختلفين)؛ الصياغة الحرفية الكاملة للمواد الـ30 تستند إلى ثلاثة مصادر ثانوية مستقلة متقاربة فيما بينها (nezams.com، mustsharik.com، mohamah.net)، دون أي تأكيد أولي من مصدر رسمي إطلاقاً — يطابق تعريف TIER_3 تماماً (مصدر رسمي متعذر + مصدرين ثانويين فأكثر متقاربين)، مثل نمط triple_arabic_secondary المستخدم لمسارات أخرى. التعديل الثاني للمادة الخامسة (إضافة وزارة الصحة) يبقى محل خلاف غير محسوم بين المصادر الثانوية نفسها على نوع الأداة التشريعية ورقمها — موثَّق شفافاً في known_unresolved_discrepancies الخاص بالمسار، لا مخفياً.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },

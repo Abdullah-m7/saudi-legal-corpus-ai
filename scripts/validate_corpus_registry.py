@@ -174,6 +174,7 @@ REQUIRED_TRACK_IDS = [
     "patent_law",
     "customs_law",
     "customs_regulation",
+    "anti_fraud_law",
 ]
 
 CHECKS: list[str] = []
@@ -216,9 +217,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 125 tracks
+    # [3] 126 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 125 tracks present...", len(track_ids) == 125 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 126 tracks present...", len(track_ids) == 126 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -1341,7 +1342,17 @@ def main() -> int:
           cmr_counts.get("legal_status_breakdown") == {"اصلية": 34, "معدلة": 0, "ملغاة": 0, "مضافة": 2},
           f"breakdown={cmr_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 8649 records...", uix.get("total_records") == 8649,
+    afl = tracks_by_id.get("anti_fraud_law", {})
+    afl_counts = afl.get("record_counts", {})
+    check("[7g112] anti_fraud_law: 30 Arabic records, secondary multi-source cross-verified, BOE unreachable...",
+          afl_counts.get("arabic_articles") == 30
+          and afl.get("official_text_status") == "SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE",
+          f"counts={afl_counts}")
+    check("    anti_fraud_law: status breakdown 25/5/0/0...",
+          afl_counts.get("legal_status_breakdown") == {"اصلية": 25, "معدلة": 5, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={afl_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 8679 records...", uix.get("total_records") == 8679,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -1403,8 +1414,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 8818...",
-          registry.get("total_primary_arabic_governing_records") == 8818,
+    check("[19a] total_primary_arabic_governing_records == 8848...",
+          registry.get("total_primary_arabic_governing_records") == 8848,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -1419,8 +1430,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 9713...",
-          registry.get("total_registry_counted_records") == 9713,
+    check("[19e] total_registry_counted_records == 9743...",
+          registry.get("total_registry_counted_records") == 9743,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -1444,7 +1455,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"8818 + 614 + 281 = 9713")
+          f"8848 + 614 + 281 = 9743")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -1462,7 +1473,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 125 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 126 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -1476,7 +1487,7 @@ def print_results() -> None:
               "sharia_procedure_implementing_regulation, criminal_procedure_law, "
               "criminal_procedure_implementing_regulation, enforcement_law, "
               "enforcement_implementing_regulation, judiciary_law, board_of_grievances_law). "
-              "Primary Arabic 8818, reference 614, registry-counted 9713. All counts correct, all referenced paths "
+              "Primary Arabic 8848, reference 614, registry-counted 9743. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
@@ -1505,7 +1516,7 @@ def print_results() -> None:
               "(40 records: 37 اصلية / 3 معدلة, in-force M/91 1443H superseding the repealed M/6 1423H, MOJ portal cross-checked against the official MOJ PDF) and its implementing regulation "
               "(51 records: all اصلية, in-force 27/1/1444H superseding the repealed 1425H regulation; 5 long/table articles adjudicated visually verbatim, art 42 keeping official English spec tokens), and the Registered Real Estate Mortgage Law "
               "(46 records: all اصلية, fresh M/49 1433H; 2 long articles adjudicated visually verbatim). "
-              "Unified retrieval index (8649) projects counted records. Read-only.")
+              "Unified retrieval index (8679) projects counted records. Read-only.")
     else:
         print(f"RESULT: {FAILED} CHECK(S) FAILED ✗")
     print("=" * 60)
