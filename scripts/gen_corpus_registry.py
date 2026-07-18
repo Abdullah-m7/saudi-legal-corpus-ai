@@ -167,6 +167,7 @@ ANTI_FRAUD_LAW_LLM = os.path.join(ROOT, "data", "anti_fraud_arabic_legal_llm", "
 FINANCE_COMPANIES_LAW_LLM = os.path.join(ROOT, "data", "finance_companies_arabic_legal_llm", "finance_companies_law_legal_llm_001_041.json")
 COOPERATIVE_HEALTH_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "cooperative_health_insurance_arabic_legal_llm", "cooperative_health_insurance_law_legal_llm_001_019.json")
 HEALTHCARE_PROFESSIONS_LAW_LLM = os.path.join(ROOT, "data", "healthcare_professions_arabic_legal_llm", "healthcare_professions_law_legal_llm_001_044.json")
+FINANCE_LEASE_LAW_LLM = os.path.join(ROOT, "data", "finance_lease_arabic_legal_llm", "finance_lease_law_legal_llm_001_028.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -327,6 +328,7 @@ def main() -> int:
     finance_companies_law_llm = _load_json(FINANCE_COMPANIES_LAW_LLM)
     cooperative_health_insurance_law_llm = _load_json(COOPERATIVE_HEALTH_INSURANCE_LAW_LLM)
     healthcare_professions_law_llm = _load_json(HEALTHCARE_PROFESSIONS_LAW_LLM)
+    finance_lease_law_llm = _load_json(FINANCE_LEASE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -347,7 +349,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 129,
+        "total_tracks": 130,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -480,6 +482,7 @@ def main() -> int:
             + finance_companies_law_llm["record_count"]  # 41 Finance Companies Control Law (M/51, 1433H) (BOE-via-Wayback primary x bfc.gov.sa OCR x nezams.com cross-verified, see track notes)
             + cooperative_health_insurance_law_llm["record_count"]  # 19 Cooperative Health Insurance Law (M/10, 1420H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
             + healthcare_professions_law_llm["record_count"]  # 44 Law of Practicing Healthcare Professions (M/59, 1426H) (BOE-via-Wayback archive x nezams.com cross-verified, live BOE unreachable, see track notes)
+            + finance_lease_law_llm["record_count"]  # 28 Finance Lease Law (M/48, 1433H) (BOE-via-Wayback archive x SAMA rulebook PDF x nezams.com triple-verified, live BOE unreachable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -603,6 +606,7 @@ def main() -> int:
             + finance_companies_law_llm["record_count"]
             + cooperative_health_insurance_law_llm["record_count"]
             + healthcare_professions_law_llm["record_count"]
+            + finance_lease_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4425,6 +4429,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law of Practicing Healthcare Professions «نظام مزاولة المهن الصحية» — Royal Decree M/59, dated 4/11/1426H, approving Council of Ministers Resolution No. 276 (3/11/1426H), published 28/11/1426H. Governs licensing/practice of physicians, dentists, pharmacists, nurses and other healthcare professionals; administered by the Ministry of Health and the Saudi Commission for Health Specialties. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate (approx. 33) was found wrong — the true count is 44, corrected during dedicated research. 44 records across 5 فصول (الترخيص بمزاولة المهنة arts 1-4; واجبات الممارس الصحي arts 5-25, itself subdivided into 3 فرع subsections; المسؤولية المهنية arts 26-32, also subdivided into 3 فرع subsections; التحقيق والمحاكمة arts 33-41; أحكام ختامية arts 42-44) — all 44 اصلية, never amended since enactment, confirmed by both BOE's own zero per-article amendment markers and nezams.com's explicit 'لم يجرِ عليه تعديل' (no amendment) statement. Article 42 confirms this law repeals the prior Physicians/Dentists Law (Royal Decree M/3, 21/2/1409H) and the prior Pharmacy Law (Royal Decree M/18, 18/3/1398H) — modeled as two repeals_full edges in the supersession graph. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot was fetched successfully via https:// (plain http:// returned 403 for this track, the opposite pattern from cooperative_health_insurance_law, both schemes tried per established practice) and cross-verified against a live fetch of nezams.com, agreeing on 42 of 44 articles with zero differences after normalization; the chapter/فرع structure was additionally corroborated article-boundary-exact against moh.gov.sa's own official consolidated Arabic and English PDFs. Flagged discrepancies: nezams.com carries an isolated single-character typo in Article 36 ('الشريعية' vs the correct 'الشرعية', inconsistent with its own usage elsewhere), BOE's text adopted instead; nezams.com's page appends site-navigation footer text after Article 44, a scraping-boundary artifact excluded rather than treated as a textual discrepancy; a Shura-Council-approved (December 2023) but NOT-yet-enacted proposed new Article 4 bis (licensing independent Saudi health practitioners) is documented but not added as a record, since it has not been issued via Royal Decree as of this build; a companion Implementing Regulation (Ministerial Resolution No. 4080489, 2/1/1439H) is confirmed to exist but is out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "finance_lease_law",
+                "display_name_ar": "نظام الإيجار التمويلي",
+                "display_name_en": "Finance Lease Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_ARCHIVE_X_SAMA_RULEBOOK_PDF_X_NEZAMS_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/48, 13/8/1433H — a Wayback Machine archive of the laws.boe.gov.sa portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription and rulebook.sama.gov.sa's official Arabic and English PDFs (the latter the only source with inline فصل headings)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": finance_lease_law_llm["record_count"],
+                    "data_path": "data/finance_lease_arabic_legal_llm/finance_lease_law_legal_llm_001_028.json"}},
+                "record_counts": {"arabic_articles": finance_lease_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 28, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": finance_lease_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/finance_lease/law/official_source/finance_lease_law_official_source.json",
+                    "sources/finance_lease/law/verified/finance_lease_law_verified_records.jsonl",
+                    "data/finance_lease_arabic_legal_llm/finance_lease_law_legal_llm_001_028.json",
+                ],
+                "validator_targets": ["make finance-lease-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Finance Lease Law «نظام الإيجار التمويلي» — Royal Decree M/48, dated 13/8/1433H (3/7/2012), published 13/10/1433H. Governs the finance-lease (leasing) contract itself — registration, rights, enforcement — as a SEPARATE, more specific statute from this corpus's already-ingested `finance_companies_law` (Finance Companies Control Law, M/51, 1433H), which regulates finance companies generally; not conflated. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate was independently re-verified and confirmed correct (unlike several prior gap-map entries this corpus found wrong). 28 records across a فصل تمهيدي (تعريفات, Article 1) plus 4 فصول (عقد الإيجار التمويلي arts 2-17; سجل العقود arts 18-23; المخالفات والمنازعات arts 24-26; أحكام ختامية arts 27-28) — all 28 اصلية, never amended since enactment (only the companion Implementing Regulation has itself been separately amended). **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-SAMA-RULEBOOK-PDF-X-NEZAMS-TRIPLE-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass, but a Wayback Machine snapshot (both http:// and https:// tried, https:// worked, http:// returned 403) was used as primary, cross-verified byte-for-byte against nezams.com's live transcription and against rulebook.sama.gov.sa's official Arabic and English PDFs (the only source carrying inline فصل headings), agreeing on all 28 articles. An initial webpage-summary artifact incorrectly suggested Chapter Two ended at Article 20; corrected to Article 23 after reading SAMA's own primary-source PDFs page-by-page. Other flagged discrepancies: the institutional-name reference to مؤسسة النقد العربي السعودي (SAMA, since renamed to the Saudi Central Bank by a separate Law, M/36) is a naming footnote, not a textual amendment to this Law's own defined terms — preserved verbatim; no explicit predecessor-repeal clause was found naming any prior statute, a documented negative finding rather than an assumption; Articles 20 and 22 carry genuine decorative tatweel characters confirmed present identically in both BOE and nezams.com, preserved verbatim rather than 'cleaned'; a companion Implementing Regulation (Administrative/Governor's Decision 1/م ش ت, 14/4/1434H, itself separately amended at least once) is confirmed to exist but is out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law/healthcare_professions_law. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 129,
-  "total_terms": 731,
-  "total_definitions": 1099,
-  "tracks_with_definitions_article_parsed": 84,
+  "total_tracks_in_registry": 130,
+  "total_terms": 737,
+  "total_definitions": 1112,
+  "tracks_with_definitions_article_parsed": 85,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -661,6 +661,16 @@
         "term_as_written": "الأشغال الجوية",
         "definition_text": "جميع الأعمال الجوية بخلاف نقل الركاب والبضائع مثل إطفاء الحرائق، الرش الزراعي، التصوير من الجو، الإعلان من الجو.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأصل المؤجر": [
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "الأصل المؤجر",
+        "definition_text": "ما يمكن إيجاره من العقار، والمنقول، والمنافع، والخدمات، والحقوق المعنوية كحقوق الملكية الفكرية.",
+        "source_record_id": "finance-lease-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3608,6 +3618,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الصيانة الأساسية": [
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "الصيانة الأساسية",
+        "definition_text": "الصيانة التي يتوقف عليها بقاء أصل العين بحسب العرف.",
+        "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصيانة التشغيلية": [
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "الصيانة التشغيلية",
+        "definition_text": "الصيانة التي تحتاج إليها العين لاستمرار منفعتها بحسب العرف.",
+        "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الضبط": [
       {
         "track_id": "judicial_documents_regulation",
@@ -3905,6 +3935,14 @@
         "term_as_written": "العقد",
         "definition_text": "الاتفاق الذي يُبرم إلكترونيًّا بين الأطراف الذين يتعاملون بالتجارة الإلكترونية.",
         "source_record_id": "ecommerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "العقد",
+        "definition_text": "عقد الإيجار التمويلي.",
+        "source_record_id": "finance-lease-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -4414,6 +4452,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "foreign_ownership_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -4860,6 +4906,14 @@
     ],
     "المؤجر": [
       {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "المؤجر",
+        "definition_text": "الشركة المساهمة المرخص لها بمزاولة الإيجار التمويلي.",
+        "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "lessor_repossession_regulation",
         "article_number": 2,
         "term_as_written": "المؤجر",
@@ -4911,6 +4965,14 @@
         "term_as_written": "المؤسسة",
         "definition_text": "مؤسسة النقد العربي السعودي.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسة",
+        "definition_text": "مؤسسة النقد العربي السعودي.",
+        "source_record_id": "finance-lease-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5255,6 +5317,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ مؤسسة النقد العربي السعودي.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ مؤسسة النقد العربي السعودي.",
+        "source_record_id": "finance-lease-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5659,6 +5729,14 @@
       }
     ],
     "المستأجر": [
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "المستأجر",
+        "definition_text": "من يملك منفعة الأصل المؤجر بموجب العقد.",
+        "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "lessor_repossession_regulation",
         "article_number": 2,
@@ -6478,6 +6556,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنتج": [
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "من يقوم بإنتاج الأصل المؤجر.",
+        "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنتج الفاسد": [
       {
         "track_id": "anti_fraud_law",
@@ -6857,6 +6945,16 @@
         "term_as_written": "الموجودات",
         "definition_text": "ما يعثر عليه داخل المنقول عند استلامه.",
         "source_record_id": "lessor-repossession-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المورد": [
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "المورد",
+        "definition_text": "من يورد الأصل المؤجر.",
+        "source_record_id": "finance-lease-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7249,6 +7347,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام مراقبة شركات التمويل.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الإيجار التمويلي.",
+        "source_record_id": "finance-lease-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8968,6 +9074,16 @@
         "definition_text": "يحتوي على وقت حضور العامل للعمل، ووقت انصرافه من مقر العمل، وأي بيانات أخرى يضعها صاحب العمل.",
         "source_record_id": "labor-reg-llm-art-005",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "سجل العقود": [
+      {
+        "track_id": "finance_lease_law",
+        "article_number": 1,
+        "term_as_written": "سجل العقود",
+        "definition_text": "السجل الذي تقيد فيه عقود الإيجار التمويلي المبرمة في المملكة أو المنفذة فيها، وتقيد فيه عقود البيع المترتبة على الإيجار التمويلي، وأي تعديل لهذه العقود، وذلك وفقًا لأحكام هذا النظام.",
+        "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "سجل تدريب السعوديين": [
