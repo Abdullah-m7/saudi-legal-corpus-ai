@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9299,
-  "total_references_extracted": 1901,
-  "intra_law_count": 1678,
-  "inter_law_count": 223,
+  "total_records_scanned": 9368,
+  "total_references_extracted": 1909,
+  "intra_law_count": 1685,
+  "inter_law_count": 224,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1616,
-    "medium": 285
+    "high": 1623,
+    "medium": 286
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -14663,6 +14663,94 @@
       "target_article_number": null,
       "target_law_name_raw": "التحكيم",
       "raw_citation_text": "أحكام نظام التحكيم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "البلديات والقرى ولوائحه التنفيذية",
+      "raw_citation_text": "بموجب نظام البلديات والقرى ولوائحه التنفيذية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "municipal_councils_law",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) من هذا النظام، فيما عدا شرط ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "municipal_councils_law",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من هذا النظام، لا يجوز أن يكو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-043",
+      "source_article_number": 43,
+      "type": "intra_law",
+      "target_track_id": "municipal_councils_law",
+      "target_article_number": 42,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والأربعين) من هذا النظام، تكون قرارات ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-057",
+      "source_article_number": 57,
+      "type": "intra_law",
+      "target_track_id": "municipal_councils_law",
+      "target_article_number": 51,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والخمسين) من هذا النظام ورفعها إلى المح",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-059",
+      "source_article_number": 59,
+      "type": "intra_law",
+      "target_track_id": "municipal_councils_law",
+      "target_article_number": 58,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة والخمسين) من هذا النظام، وعلى اللجنة سم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-062",
+      "source_article_number": 62,
+      "type": "intra_law",
+      "target_track_id": "municipal_councils_law",
+      "target_article_number": 37,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة والثلاثين) من هذا النظام وتعذرت تسمية مَ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "municipal_councils_law",
+      "source_record_id": "municipal-councils-law-llm-art-062",
+      "source_article_number": 62,
+      "type": "intra_law",
+      "target_track_id": "municipal_councils_law",
+      "target_article_number": 31,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والثلاثين) من هذا النظام خلال ستين يوماً",
       "confidence": "high"
     },
     {

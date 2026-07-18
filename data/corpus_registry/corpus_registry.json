@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9468,
+  "total_primary_arabic_governing_records": 9537,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10363,
-  "total_tracks": 136,
+  "total_registry_counted_records": 10432,
+  "total_tracks": 137,
   "tracks": [
     {
       "boundaries": {
@@ -6427,6 +6427,55 @@
       "validator_targets": [
         "make saudi-engineers-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/municipal_councils/law/official_source/municipal_councils_law_official_source.json",
+        "sources/municipal_councils/law/verified/municipal_councils_law_verified_records.jsonl",
+        "data/municipal_councils_arabic_legal_llm/municipal_councils_law_legal_llm_001_069.json"
+      ],
+      "display_name_ar": "نظام المجالس البلدية",
+      "display_name_en": "Municipal Councils Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/municipal_councils_arabic_legal_llm/municipal_councils_law_legal_llm_001_069.json",
+          "governing": true,
+          "record_count": 69,
+          "status": "complete"
+        }
+      },
+      "notes": "Municipal Councils Law «نظام المجالس البلدية» — Royal Decree M/61, dated 4/10/1435H (31 July 2014), approving Council of Ministers Resolution No. 384 (24/9/1435H). A low-to-medium-priority coverage-gap identified via the coverage_gap_map research pass, distinct from the already-ingested regions_law (provincial/regional administration) and municipal_realestate_law tracks (municipal real-estate zoning) — no overlap confirmed. **69 records: ALL 69 اصلية** (never amended per every source checked) — organized into **12 فصول (chapters)**, **NO أبواب** grouping above them. **VERIFICATION TIER:** BOE-WAYBACK-SIX-SNAPSHOT-X-MOMAH-GOV-SA-OFFICIAL-PDF-X-NEZAMS — the live laws.boe.gov.sa portal returned HTTP 503 this pass, but six independent Wayback Machine snapshots of the exact law page (22 Nov 2019 through 12 Dec 2025) show zero text diffs and zero logged amendments throughout, cross-verified against the Ministry of Municipal, Rural Affairs and Housing's own official website (momah.gov.sa, two independently-dated official PDFs including a scanned original of the signed decree) and nezams.com. **Confirmed partial repeal of a predecessor:** this law's own Article 68 explicitly, but only partially, repeals Articles 2(b), 2(c), 7(b), and Chapter Two of Part Two of the Law of Municipalities and Villages (نظام البلديات والقرى, Royal Decree M/5, 21/2/1397H) — not a full supersession; the predecessor law is not yet ingested in this corpus and is flagged as a follow-up candidate. **Zero-amendment stability confirmed** as a genuine positive finding, the inverse of this corpus's recurring stale-changelog pattern. Other flagged discrepancies: Chapter 10's own heading reads 'مخلفات' (not the substantively-expected 'مخالفات') أعضاء المجالس البلدية identically in both primary sources — preserved verbatim, not silently corrected; four companion implementing regulations (general implementing regulation, election regulation, campaign regulation, financial regulation) are confirmed to exist on momah.gov.sa but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 69,
+        "legal_status_breakdown": {
+          "اصلية": 69,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 69
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/61, 4/10/1435H, approving Council of Ministers Resolution No. 384 (24/9/1435H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, six independent snapshots spanning 22 Nov 2019 to 12 Dec 2025), cross-verified against the Ministry of Municipal, Rural Affairs and Housing's own official website (momah.gov.sa, two independently-dated official PDFs, Feb 2022 and Oct 2025) and nezams.com",
+      "status": "complete",
+      "track_id": "municipal_councils_law",
+      "validator_targets": [
+        "make municipal-councils-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6506,6 +6555,7 @@
       "medical_reports": 13,
       "mining_investment": 64,
       "mosalaha_center": 10,
+      "municipal_councils": 69,
       "municipal_realestate": 41,
       "muslaha": 29,
       "nazaha": 24,
@@ -6539,7 +6589,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9299,
+    "total_records": 9368,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

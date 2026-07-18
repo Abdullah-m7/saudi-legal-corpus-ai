@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 136,
-  "total_terms": 788,
-  "total_definitions": 1190,
-  "tracks_with_definitions_article_parsed": 90,
+  "total_tracks_in_registry": 137,
+  "total_terms": 796,
+  "total_definitions": 1205,
+  "tracks_with_definitions_article_parsed": 91,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1415,6 +1415,14 @@
       }
     ],
     "البلدية": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "البلدية",
+        "definition_text": "الأمانة أو البلدية - بحسب الأحوال - وهي شخصية اعتبارية ذات استقلال مالي وإداري، تمارس الوظائف الموكولة إليها بموجب نظام البلديات والقرى ولوائحه التنفيذية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "municipal_realestate_implementing_regulation",
         "article_number": 1,
@@ -3026,6 +3034,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الدائرة الانتخابية": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "الدائرة الانتخابية",
+        "definition_text": "نطاق مكاني يخصص له مقعد، أو مقاعد انتخابية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الدائرة الجمركية": [
       {
         "track_id": "customs_law",
@@ -4418,6 +4436,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الفترة الانتخابية": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "الفترة الانتخابية",
+        "definition_text": "المدة التي تبدأ من تاريخ بدء تنفيذ العملية الانتخابية الذي يحدده الوزير وتنتهي بصدور قرار تسمية أعضاء المجلس.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الفحص الفني": [
       {
         "track_id": "traffic_law",
@@ -4850,6 +4878,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "municipal_realestate_implementing_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -5003,6 +5039,16 @@
         "term_as_written": "اللائحة التنفيذية",
         "definition_text": "اللائحة التي تضعها لجنة التعاون التجارية تنفيذا لهذا القانون (النظام).",
         "source_record_id": "trademark-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللجان الانتخابية": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "اللجان الانتخابية",
+        "definition_text": "لجان تتولى إدارة العملية الانتخابية، أو الإشراف عليها، أو تنفيذها.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5567,6 +5613,14 @@
         "term_as_written": "المجلس",
         "definition_text": "المجلس الأعلى للقضاء.",
         "source_record_id": "judicial-inspection-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "المجلس البلدي.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7918,6 +7972,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المجالس البلدية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "nazaha_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -8574,6 +8636,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الشؤون البلدية والقروية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "municipal_realestate_implementing_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -8850,6 +8920,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الشؤون البلدية والقروية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "municipal_realestate_implementing_regulation",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -9056,6 +9134,14 @@
         "definition_text": "اليوم التقويمي، سواء أكان يوم عمل أم لا.",
         "source_record_id": "oa-llm-companies-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "اليوم",
+        "definition_text": "يوم عمل.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "برامج الحاسب الآلي": [
@@ -9205,6 +9291,16 @@
         "term_as_written": "جباية الزكاة",
         "definition_text": "حساب الزكاة وتحصيلها من المكلف -بموجب أحكام اللائحة- لغرض توريدها للجهة المختصة بصرفها.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "جدول قيد الناخبين": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "جدول قيد الناخبين",
+        "definition_text": "قائمة تتضمن أسماء الناخبين في الدائرة الانتخابية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10364,6 +10460,36 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "لائحة الانتخاب": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "لائحة الانتخاب",
+        "definition_text": "لائحة انتخاب أعضاء المجالس البلدية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "لائحة الحملات": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "لائحة الحملات",
+        "definition_text": "لائحة الحملات الانتخابية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "لجان الفصل": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "لجان الفصل",
+        "definition_text": "لجان الفصل في الطعون والمخالفات الانتخابية.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "لجنة الفحص": [
       {
         "track_id": "investment_implementing_regulation",
@@ -10969,6 +11095,16 @@
         "term_as_written": "موظف الضبط",
         "definition_text": "الموظف الذي له صفة الضبط الجنائي، الصادر بتسميته قرار من الوزير لضبط ما يقع من جرائم ومخالفات منصوص عليها في النظام، وجمع المعلومات والأدلة اللازمة للتحقيق وتوجيه الاتهام.",
         "source_record_id": "anti-concealment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "موعد الاقتراع": [
+      {
+        "track_id": "municipal_councils_law",
+        "article_number": 1,
+        "term_as_written": "موعد الاقتراع",
+        "definition_text": "اليوم الذي يدلي فيه الناخبون بأصواتهم لاختيار أعضاء المجلس.",
+        "source_record_id": "municipal-councils-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

@@ -796,6 +796,24 @@ EDGES = [
                 "Predecessor not separately ingested in this corpus.",
         "source_ref": "sources/awqaf/law/official_source/awqaf_law_official_source.json (article 25(1))",
     },
+    {
+        "from_track_id": "municipal_councils_law",
+        "relation": "repeals_partial",
+        "target_track_id": None,
+        "target_description_ar": "نظام البلديات والقرى (السابق)",
+        "target_decree": "Royal Decree M/5, 21/2/1397H",
+        "affected_articles": "Only Articles 2(b), 2(c), 7(b), and Chapter Two "
+                             "of Part Two",
+        "note": "municipal_councils_law's own official_source.json article "
+                "68: 'يلغي هذا النظام المواد (2/ب، 2/ج، 7/ب، والفصل الثاني "
+                "من الباب الثاني) من نظام البلديات والقرى، الصادر بالمرسوم "
+                "الملكي ذي الرقم (م/5) والتاريخ 21/2/1397هـ.' A determinate, "
+                "narrowly-scoped partial repeal naming exactly four "
+                "provisions, not a full supersession. Predecessor not "
+                "separately ingested in this corpus, flagged as a follow-up "
+                "candidate.",
+        "source_ref": "sources/municipal_councils/law/official_source/municipal_councils_law_official_source.json (article 68)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------
