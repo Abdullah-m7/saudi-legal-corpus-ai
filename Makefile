@@ -235,6 +235,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-glossary-validate \
         corpus-schema-manifest-validate \
         patent-law-track-validate \
+        customs-law-track-validate \
+        customs-regulation-track-validate \
         qa-gate
 
 help:
@@ -1364,6 +1366,12 @@ corpus-schema-manifest-validate:
 
 patent-law-track-validate:
 	$(PY) scripts/validate_patent_law_track.py
+
+customs-law-track-validate:
+	$(PY) scripts/validate_customs_law_track.py
+
+customs-regulation-track-validate:
+	$(PY) scripts/validate_customs_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

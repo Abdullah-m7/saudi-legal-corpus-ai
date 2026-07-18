@@ -161,6 +161,8 @@ SOCIAL_INSURANCE_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_arabic_l
 SOCIAL_INSURANCE_LEGACY_LAW_LLM = os.path.join(ROOT, "data", "social_insurance_legacy_arabic_legal_llm", "social_insurance_legacy_law_legal_llm_001_071.json")
 ZAKAT_LAW_LLM = os.path.join(ROOT, "data", "zakat_arabic_legal_llm", "zakat_law_legal_llm_001_128.json")
 PATENT_LAW_LLM = os.path.join(ROOT, "data", "patent_arabic_legal_llm", "patent_law_legal_llm_001_066.json")
+CUSTOMS_LAW_LLM = os.path.join(ROOT, "data", "customs_arabic_legal_llm", "customs_law_legal_llm_001_188.json")
+CUSTOMS_REGULATION_LLM = os.path.join(ROOT, "data", "customs_regulation_arabic_legal_llm", "customs_regulation_legal_llm_001_036.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -315,6 +317,8 @@ def main() -> int:
     social_insurance_legacy_law_llm = _load_json(SOCIAL_INSURANCE_LEGACY_LAW_LLM)
     zakat_law_llm = _load_json(ZAKAT_LAW_LLM)
     patent_law_llm = _load_json(PATENT_LAW_LLM)
+    customs_law_llm = _load_json(CUSTOMS_LAW_LLM)
+    customs_regulation_llm = _load_json(CUSTOMS_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -335,7 +339,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 123,
+        "total_tracks": 125,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -462,6 +466,8 @@ def main() -> int:
             + social_insurance_legacy_law_llm["record_count"]  # 71 Social Insurance Law (Old/Legacy System, M/33) (BOE Wayback x nezams.com x Okaz/Al-Riyadh news corroboration, see track notes)
             + zakat_law_llm["record_count"]  # 128 Zakat Collection Implementing Regulation (M/1007, 1445H) (ZATCA official PDF single-source primary, Umm Al-Qura Gazette spot-verified, see track notes)
             + patent_law_llm["record_count"]  # 66 Patent Law (M/27, 1425H) (WIPO Lex M/45-consolidated text x BOE metadata, BOE confirmed stale re: 2023 amendment, see track notes)
+            + customs_law_llm["record_count"]  # 188 GCC Unified Customs Law (M/41, 1423H) (ZATCA official PDF single-source primary, BOE unreachable, see track notes)
+            + customs_regulation_llm["record_count"]  # 36 Implementing Regulation of the GCC Unified Customs Law (Resolution 2748, 1423H) (ZATCA official PDF single-source primary, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -579,6 +585,8 @@ def main() -> int:
             + social_insurance_legacy_law_llm["record_count"]
             + zakat_law_llm["record_count"]
             + patent_law_llm["record_count"]
+            + customs_law_llm["record_count"]
+            + customs_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4233,6 +4241,62 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law of Patents, Layout Designs of Integrated Circuits, Plant Varieties and Industrial Designs «نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية» — Royal Decree M/27, dated 29/5/1425H (17 July 2004), approving Council of Ministers Resolution No. 159 (17/5/1425H). Repeals the prior Patent Law (Royal Decree M/38, 10/6/1409H). Administered by SAIP (Saudi Authority for Intellectual Property, renamed from KACST by a 2018 amendment). Identified as the corpus's #2-priority IP-family gap via the coverage_gap_map research pass (the corpus already had trademark_law and copyright_law but no patent law). 66 records (65 sequentially-numbered articles + Article 60 مكرر, inserted 2023) across 6 فصول (أحكام عامة arts 1-42; أحكام خاصة ببراءات الاختراع arts 43-48; أحكام خاصة بالتصميمات التخطيطية للدارات المتكاملة arts 49-53; أحكام خاصة بحماية الأصناف النباتية الجديدة arts 54-58; أحكام خاصة بالنماذج الصناعية arts 59-60+60مكرر; أحكام ختامية arts 61-65) — 59 اصلية / 6 معدلة (Articles 2, 18, 19, 35, 42, 63) / 1 مضافة (60 مكرر). Two confirmed amendments: Council of Ministers Resolution 536 (19/10/1439H, 2018) — a pure KACST/'المدينة'/'الإدارة' to SAIP/'الهيئة' institutional-terminology substitution; and Royal Decree M/45 (10/3/1445H, 2023) — Hague Agreement/Geneva Act accession changes (new definitions, a 5-year Hague filing fee cycle, industrial design protection extended 10→15 years, new Article 60 مكرر). **VERIFICATION TIER:** BOE's own displayed consolidated text is confirmed STALE on two axes — it has not incorporated the 2023 M/45 amendment at all, and for 3 of the 4 2018-amended articles (35, 42, 63) BOE's own displayed article body still shows pre-2018 wording even though its own amendment-annotation correctly describes the change. WIPO Lex's M/45-consolidated PDF (cross-verified via two independent OCR passes plus a native-text-layer pdftotext extraction, since the source PDF is a genuine Word-generated PDF, not a scan) is used as the current-text primary source; BOE is used only for metadata/provenance/genuinely-recoverable original wording. **TERMINOLOGY-SUBSTITUTION SCOPE:** the amending resolution's own recital states the KACST→SAIP substitution applies 'أينما وردتا في النظام' (wherever the terms appear in the law) — this build found the substitution's actual textual footprint extends to at least 22 further articles beyond the 4 BOE/the instrument's own per-article amendment-history enumerates; the current ('الهيئة') wording is presented as governing text for all of these, while legal_status_ar is conservatively kept 'اصلية' for them absent a primary source separately flagging each as amended — a scope judgment flagged transparently rather than silently resolved either way. Also preserved verbatim: a genuine 2018 drafting inconsistency (Article 35(b) keeps a 'رئيس'/Chairman prefix the parallel Articles 42 and 63 lack). original_1425h_text is populated for the 6 formally-enumerated amended articles only. Other flagged discrepancies: a broken SAIP-hosted 'updated 2024' PDF link (independently reproduced 404, not a network block); and a clarification that the separate, parallel GCC Unified Patent Law (an optional regional filing route, not a replacement) is deliberately not ingested here. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "customs_law",
+                "display_name_ar": "نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية",
+                "display_name_en": "GCC Unified Customs Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/41, 3/11/1423H — ZATCA's own official consolidated PDF as sole full-text primary source (shared with customs_regulation), laws.boe.gov.sa confirmed unreachable this pass (curl connection reset; WebFetch HTTP 503)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": customs_law_llm["record_count"],
+                    "data_path": "data/customs_arabic_legal_llm/customs_law_legal_llm_001_188.json"}},
+                "record_counts": {"arabic_articles": customs_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 176, "معدلة": 3, "ملغاة": 0, "مضافة": 9},
+                                  "total": customs_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/customs/law/official_source/customs_law_official_source.json",
+                    "sources/customs/law/verified/customs_law_verified_records.jsonl",
+                    "data/customs_arabic_legal_llm/customs_law_legal_llm_001_188.json",
+                ],
+                "validator_targets": ["make customs-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "GCC Unified Customs Law «نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية» — Royal Decree M/41, dated 3/11/1423H, governing all cross-border trade into/out of Saudi Arabia, administered by ZATCA. Identified as the corpus's #3-priority gap via the coverage_gap_map research pass (customs law was completely absent). 188 records (179 base articles + 9 مكرر bis-articles) across 17 أبواب — 176 اصلية / 3 معدلة (Articles 61, 72, 102) / 9 مضافة. Amended 3 times: Royal Decree M/14 (25/1/1443H, specific amended article(s) unconfirmed from a primary source); Royal Decree M/81 (4/6/1444H, confirmed Article 61, Customs Valuation Disputes Committee); Royal Decree M/124 (9/7/1445H, confirmed Articles 72 and 102). Built as a SEPARATE track from its own Implementing Regulation (`customs_regulation`), mirroring this corpus's bankruptcy_law/bankruptcy_implementing_regulation pattern, since the two are issued by different instruments (Royal Decree vs. Ministerial/Committee Resolution) with independent amendment histories. **VERIFICATION TIER:** SINGLE-SOURCE — the full text rests solely on ZATCA's own official consolidated PDF (shared source with customs_regulation); laws.boe.gov.sa was confirmed unreachable across this build's own retry attempts. **⚠ EXTENSIVE POST-BUILD QA:** the initial build pass's ligature-bug fix (reusing the zakat_law precedent) was found, on independent review, to have missed a widespread negation-particle corruption ('لا' -> 'ال', affecting the meaning-critical negation particle) — a dedicated follow-up pass found and fixed 173 additional dropped/transposed-lam instances beyond the original fix. A second follow-up pass then found and fixed 73 further instances where lettered sub-item markers (أ، ب، ج) were glued directly onto the following word with no separator, plus stray/doubled diacritic artifacts. A final review pass caught and fixed 3 remaining word-internal transposition instances the two prior passes missed (Article 18's 'لا يجوز'; two instances of 'ملاحقة' in Articles 54 and 176) — this three-pass post-build QA process is itself documented transparently in known_unresolved_discrepancies as a demonstration of this corpus's review rigor, not hidden. The 9 مكرر bis-articles' individual amending-decree attribution is not confirmed from a primary source, a documented gap. No `original_1423h_text` populated for the 3 معدلة articles (pre-amendment text not recoverable from the consolidated PDF). nezams.com was found unreliable for this specific law (wrong decree date, unconfirmed amendments) and is not relied upon. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "customs_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية",
+                "display_name_en": "Implementing Regulation of the GCC Unified Customs Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+                "source_authority": "Ministerial/Committee Resolution No. 2748, 25/11/1423H — ZATCA's own official consolidated PDF as sole full-text primary source (shared with customs_law), laws.boe.gov.sa confirmed unreachable this pass",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": customs_regulation_llm["record_count"],
+                    "data_path": "data/customs_regulation_arabic_legal_llm/customs_regulation_legal_llm_001_036.json"}},
+                "record_counts": {"arabic_articles": customs_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 34, "معدلة": 0, "ملغاة": 0, "مضافة": 2},
+                                  "total": customs_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/customs/regulation/official_source/customs_regulation_official_source.json",
+                    "sources/customs/regulation/verified/customs_regulation_verified_records.jsonl",
+                    "data/customs_regulation_arabic_legal_llm/customs_regulation_legal_llm_001_036.json",
+                ],
+                "validator_targets": ["make customs-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the GCC Unified Customs Law «اللائحة التنفيذية لنظام (قانون) الجمارك الموحد» — Ministerial/Committee Resolution No. 2748, dated 25/11/1423H, a SEPARATE instrument from customs_law (issued by ministerial/committee resolution, not Royal Decree). 36 records (34 base articles + 2 مكرر: 2 مكرر, 25 مكرر) across 7 أبواب, numbered continuously (not restarting per Book) — 34 اصلية / 2 مضافة. Amended 6 times (Resolutions 2997/1440H, 3766/1441H, 939/1443H, 986/1444H, 955/1445H, 1374/1445H) — no specific article individually attributable to any one resolution from the available source, a documented gap; no article is marked معدلة as a result rather than guessing which articles each resolution touched. Article 1 (customs valuation methodology, implementing GATT Art. VII) is a single very long article internally organized by ordinal clause markers (أولاً...ثامناً) rather than separate numbered articles, preserved whole rather than artificially split. **VERIFICATION TIER:** SINGLE-SOURCE, sharing ZATCA's consolidated PDF with customs_law; same three-pass post-build QA process applied (negation-particle fix, glued-list-marker fix, final residual-instance fix — see customs_law's notes for the shared methodology). 3 Book-level chapeau paragraphs (Books 3, 6, 7) were relocated from stray mid-heading placement to their Book's first article (14, 26, 29) rather than discarded as section-title noise. Article 9's 'وكال بقيادتها'/'حاصال على رخصة قيادة' fragments remain entangled with an undocumented line-order-scrambling issue distinct from the lam-drop bug family and are left as a documented residual gap rather than guessed at. Arabic governs; not legal advice.",
             },
         ],
     }

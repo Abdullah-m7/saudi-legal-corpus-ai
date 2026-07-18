@@ -271,7 +271,7 @@ ENTRY_RE = re.compile(
                                           # real term's own first 1-2 letters are never eaten)
     r"|[-–.)۔]\s*"                       # bare dash/bullet, no leading digit or letter
     r")?"
-    r"([ء-ي][ء-ي ]{0,45}?)"
+    r"([ء-ي][ء-ي\" ]{0,45}?)"
     r"\s*:\s*"
 )
 

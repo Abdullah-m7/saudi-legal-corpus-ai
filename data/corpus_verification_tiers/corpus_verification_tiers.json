@@ -19,12 +19,12 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 123,
+  "total_tracks": 125,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 89,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 10,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 5,
-    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 19
+    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 21
   },
   "tracks_with_per_article_variation": 13,
   "tracks": [
@@ -277,6 +277,20 @@
       "track_id": "criminal_procedure_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "customs_law",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها في جولة البناء هذه (إعادة تعيين اتصال curl، وخطأ 503 عبر WebFetch)؛ الصياغة الحرفية الكاملة لكل المواد تستند إلى مصدر رسمي واحد فقط (نسخة PDF الرسمية الموحَّدة من ZATCA، مشتركة مع مسار اللائحة التنفيذية)، دون أي تدقيق مقارن من مصدر ثانٍ إطلاقاً — لا حتى تحقق موضعي كما في نظام جباية الزكاة، بل غياب كامل للتدقيق المقارن.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "customs_regulation",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE': نفس تصنيف نظام الجمارك الموحد (customs_law) — مصدر واحد فقط (نسخة ZATCA الرسمية المشتركة)، بوابة BOE متعذرة الوصول، دون أي تدقيق مقارن مستقل.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },

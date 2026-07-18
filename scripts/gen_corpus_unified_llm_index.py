@@ -270,6 +270,10 @@ LAYERS = [
      "zakat", "law"),
     ("data/patent_arabic_legal_llm/patent_law_legal_llm_001_066.json",
      "patent", "law"),
+    ("data/customs_arabic_legal_llm/customs_law_legal_llm_001_188.json",
+     "customs", "law"),
+    ("data/customs_regulation_arabic_legal_llm/customs_regulation_legal_llm_001_036.json",
+     "customs", "implementing_regulation"),
 ]
 
 

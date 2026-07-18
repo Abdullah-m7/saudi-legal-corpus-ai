@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 123,
-  "total_terms": 696,
-  "total_definitions": 1046,
-  "tracks_with_definitions_article_parsed": 81,
+  "total_tracks_in_registry": 125,
+  "total_terms": 726,
+  "total_definitions": 1083,
+  "tracks_with_definitions_article_parsed": 82,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -78,6 +78,10 @@
     },
     {
       "track_id": "criminal_procedure_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "customs_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -466,6 +470,16 @@
         "definition_text": "اتفاقية بين مانح الامتياز وصاحب الامتياز, يمنح بموجبها الامتياز.",
         "source_record_id": "franchise-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "اتفاقية القيمة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "اتفاقية القيمة",
+        "definition_text": "تعني اتفاق تطبيق المادة السابعة من الاتفاق العام للتعريفات والتجارة\nلعام 1994م.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "استثمار الغاز الطبيعي": [
@@ -914,6 +928,14 @@
     ],
     "الإدارة": [
       {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الإدارة",
+        "definition_text": "الإدارة العامة للجمارك.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "judicial_inspection_regulation",
         "article_number": 1,
         "term_as_written": "الإدارة",
@@ -1282,6 +1304,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "البضائع المقيدة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "البضائع المقيدة",
+        "definition_text": "البضائع التي يكون استيرادها أو تصديرها مقيداً بموجب أحكام هذا النظام\n\"القانون\" أو أي نظام \"قانون\" آخر.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "البضائع الممنوعة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "البضائع الممنوعة",
+        "definition_text": "البضائع التي تمنع الدولة استيرادها أو تصديرها بالاستناد إلى أحكام هذا\nالنظام \"القانون\" أو نظام \"قانون\" آخر.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "البضاعة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "البضاعة",
+        "definition_text": "كل مادة طبيعية أو منتج حيواني أو زراعي أو صناعي أو فكري.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "البلدية": [
       {
         "track_id": "municipal_realestate_implementing_regulation",
@@ -1388,6 +1440,16 @@
         "definition_text": "المناطق البحرية والمناطق الساحلية والجزر أو أي مكون من مكوناتها الطبيعية، سواء أكانت أشجارًا أم شجيرات أم نباتات أم أعشابًا أم طحالب أم شعبًا مرجانية أم أحياء بحرية أو مجهرية، ونحوها.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "البيان الجمركي": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "البيان الجمركي",
+        "definition_text": "بيان البضاعة أو الإقرار أو التصريح الذي يقدمه صاحب البضاعة أو من يقوم\nمقامه، ويتضمن تحديد العناصر المميزة للبضاعة المصرح عنها وكمياتها بالتفصيل وفق أحكام\nهذا النظام \"القانون\".",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "البيانات": [
@@ -1600,6 +1662,16 @@
         "definition_text": "معاملة مالية تجريها مؤسسة مالية نيابةً عن آمر التحويل يجري من خلالها إيصال مبلغ مالي إلى مستفيد في مؤسسة مالية أخرى بصرف النظر عما إذا كان آمر التحويل والمستفيد هما الشخص نفسه.",
         "source_record_id": "terrorism-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "التخليص الجمركي": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "التخليص الجمركي",
+        "definition_text": "توثيق البيانات الجمركية للبضائع الواردة والصادرة والعابرة وفقاً للإجراءات\nالجمركية المنصوص عليها في هذا النظام (القانون).",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "التداول": [
@@ -1832,6 +1904,16 @@
         "definition_text": "عملية استخراج الخامات أو التكوينات المعدنية ذات الفائدة، من الأرض أو المناطق البحرية، أو المواد الأخرى الناتجة عن التبخير من مياه البحر أو إمدادات المياه الطبيعية، بما في ذلك أي نشاط تعديني مباشر أو غير مباشر يكون ضرورياً لذلك.",
         "source_record_id": "mining-investment-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "التعرفة الجمركية": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "التعرفة الجمركية",
+        "definition_text": "الجدول المتضمن مسميات البضائع وفئات الضريبة \"الرسوم\" الجمركية\nالتي تخضع لها، والقواعد والملاحظات الواردة فيها لأنواع البضائع وأصنافها.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "التعويضات": [
@@ -2240,6 +2322,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "السلطة التي تتبعها الإدارة العامة للجمارك.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
@@ -2642,6 +2732,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخزينة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الخزينة",
+        "definition_text": "الخزينة العامة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "الخط الجمركي": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الخط الجمركي",
+        "definition_text": "الخط المطابق للحدود السياسية الفاصلة بين الدولة وبين الدول المتاخمة\nلها ولشواطئ البحار المحيطة بالدولة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "الخط الجوي الداخلي": [
       {
         "track_id": "civil_aviation_law",
@@ -2728,6 +2838,16 @@
         "definition_text": "الدائرة القضائية التي تنظر دعوى القسمة.",
         "source_record_id": "qismah-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "الدائرة الجمركية": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الدائرة الجمركية",
+        "definition_text": "النطاق الذي يحدده الوزير في كل ميناء بحري أو جوي أو بري أو في أي\nمكان آخر يوجد فيه مركز للإدارة يرخص فيه بإتمام كل الإجراءات الجمركية أو بعضها.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "الدائن": [
@@ -2946,6 +3066,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الرسوم": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الرسوم",
+        "definition_text": "هي المبالغ التي تحصلها الجمارك مقابل أداء خدمة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "الرصيف": [
       {
         "track_id": "traffic_law",
@@ -3126,6 +3256,16 @@
         "definition_text": "تداول حقوق الممول الناشئة من عقود السوق الأولية.",
         "source_record_id": "real-estate-finance-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "السوق الحرة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "السوق الحرة",
+        "definition_text": "البناء أو المكان المرخص له الذي تودع فيه البضائع في وضع معلق للضرائب\n\"الرسوم\" الجمركية لغايات العرض والبيع.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "السياحة البيئية": [
@@ -3472,6 +3612,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الضريبة \"الرسوم\" الجمركية": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الضريبة \"الرسوم\" الجمركية",
+        "definition_text": "هي المبالغ التي تحصل على البضائع وفق أحكام هذا النظام\n\"القانون\".",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "الضمان": [
       {
         "track_id": "payment_systems_law",
@@ -3538,6 +3688,16 @@
         "definition_text": "١- مدير المدين وعضو مجلس إدارته ومن في حكمهما وشريك المدين والمالك، وأقرباء هؤلاء الأشخاص والمدين حتى الدرجة الثالثة.\n٢- من يكون بينه والمدين علاقة عمل.\n٣- الشخص الذي يسيطر عليه وعلى المدين -بشكل مباشر أو غير مباشر- شخص آخر أو أكثر بما يوازي نسبة ملكية تزيد على خمسين في المائة من رأس مال كل منهما.\n٤- الشخص الذي يسيطر على المدين -بشكل مباشر أو غير مباشر- بما يوازي نسبة ملكية تزيد على خمسين في المائة من رأس مال المدين.\n٥- الشخص الذي يسيطر عليه المدين -بشكل مباشر أو غير مباشر- بما يوازي نسبة ملكية تزيد على خمسين في المائة من رأس ماله.",
         "source_record_id": "bankruptcy-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطرق المعينة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الطرق المعينة",
+        "definition_text": "الطرق التي يحددها الوزير أو الجهة المختصة لسير البضائع الواردة إلى الدولة\nأو الصادرة منها أو المارة عبرها بموجب قرار.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "الطريق": [
@@ -4928,6 +5088,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس التعاون لدول الخليج العربية.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "documentation_settlement_regulation",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -5190,6 +5358,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المخزن": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المخزن",
+        "definition_text": "المكان أو البناء المعد لخزن البضائع مؤقتاً بانتظار سحبها وفق أحد الأوضاع الجمركية،\nسواء أكانت الإدارة تديره مباشرة أو المؤسسات الرسمية العامة أو الهيئات المستثمرة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "المخلص الجمركي": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المخلص الجمركي",
+        "definition_text": "كل شخص طبيعي أو اعتباري مرخص له بمزاولة أعمال التخليص الجمركي\nلحساب الغير.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "المخلفات الخطرة": [
       {
         "track_id": "mining_investment_law",
@@ -5202,12 +5390,30 @@
     ],
     "المدير": [
       {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المدير",
+        "definition_text": "مدير الدائرة الجمركية.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "real_estate_units_law",
         "article_number": 1,
         "term_as_written": "المدير",
         "definition_text": "الشخص أو الأشخاص ذوو الصفة الطبيعية أو المعنوية المعينون لإدارة العقار المشترك أو المجمع العقاري.",
         "source_record_id": "real-estate-units-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "المدير العام": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المدير العام",
+        "definition_text": "مدير عام الجمارك أو من يماثله من الجهة المختصة أو في الإدارة وفق التنظيم\nالداخلي لجمارك الدول الأعضاء.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "المدين": [
@@ -5542,6 +5748,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المستودع": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المستودع",
+        "definition_text": "المكان أو البناء الذي تودع فيه البضائع تحت إشراف الإدارة في وضع معلق للضرائب\n\"الرسوم\" الجمركية وفق أحكام هذا النظام \"القانون\".",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "المستورد": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المستورد",
+        "definition_text": "الشخص الطبيعي أو الاعتباري الذي يقوم باستيراد البضاعة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "المسجل": [
       {
         "track_id": "commercial_register_law",
@@ -5688,6 +5914,22 @@
         "definition_text": "الشخص الذي يصدر أوراقًا مالية أو يعتزم إصدارها.",
         "source_record_id": "capital-market-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المصدر",
+        "definition_text": "البلد الذي استوردت منه البضاعة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المصدر",
+        "definition_text": "الشخص الطبيعي أو الاعتباري الذي يقوم بتصدير البضاعة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "المصرح له": [
@@ -6268,6 +6510,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنطقة الحرة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "المنطقة الحرة",
+        "definition_text": "جزء من أراضي الدولة تمارس فيه الأعمال التجارية أو الصناعية بموجب\nالأنظمة الخاصة بها، وتعد أي بضاعة داخلة إليها خارج المنطقة الجمركية. ولا تخضع تلك\nالبضائع للإجراءات الجمركية المعتادة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "المنطقة الخطرة": [
       {
         "track_id": "civil_aviation_law",
@@ -6574,6 +6826,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الناقل": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الناقل",
+        "definition_text": "مالك وسيلة النقل أو من يقوم مقامه (بموجب تفويض رسمي).",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "الناقل الجوي": [
       {
         "track_id": "civil_aviation_law",
@@ -6684,6 +6946,36 @@
         "definition_text": "صحيفة تصدر من الهيئة عن كل ما يتعلق بموضوعات الحماية، طبقًا لأحكام هذا النظام ولائحته التنفيذية.",
         "source_record_id": "patent-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "النطاق الجمركي": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "النطاق الجمركي",
+        "definition_text": "الجزء من الأراضي أو البحار الخاضعة لرقابة وإجراءات جمركية محددة في",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "النطاق الجمركي البحري": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "النطاق الجمركي البحري",
+        "definition_text": "ويشمل منطقة البحر الواقعة بين الشواطئ ونهاية حدود المياه\nالإقليمية.\nب.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "النطاق الجمركي البري": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "النطاق الجمركي البري",
+        "definition_text": "ويشمل الأراضي الواقعة ما بين الشواطئ أو الحدود البرية من جهة\nوخط داخلي من جهة أخرى يحدد بقرار من الوزير أو الجهة المختصة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "النظام": [
@@ -7078,6 +7370,16 @@
         "definition_text": "نظام حماية المبلِّغين والشهود والخبراء والضحايا.",
         "source_record_id": "whistleblower-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "النظام \"القانون\"": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "النظام \"القانون\"",
+        "definition_text": "القواعد والأحكام التي تنظم العمل الجمركي وأية قواعد أو أحكام أخرى\nمكملة أو متممة أو معدلة له.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "النظام الأساسي": [
@@ -7646,6 +7948,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "الوزير",
+        "definition_text": "الوزير الذي تتبعه الإدارة العامة للجمارك.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "documentation_settlement_regulation",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -7962,6 +8272,16 @@
         "definition_text": "أي شخص طبيعي أو اعتباري يزاول في المملكة أي عمل من الأعمال المصرفية بصفة أساسية.",
         "source_record_id": "banking-control-law-llm-art-001",
         "extraction_method": "parenthesized_term"
+      }
+    ],
+    "بيان الحمولة \"المانيفست\"": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "بيان الحمولة \"المانيفست\"",
+        "definition_text": "المستند الذي يتضمن وصفاً شاملاً للبضائع المشحونة على\nوسائل النقل المختلفة.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "تدابير العناية الواجبة": [
@@ -9600,6 +9920,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مندوب المخلص الجمركي": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "مندوب المخلص الجمركي",
+        "definition_text": "كل شخص طبيعي مرخص له بالقيام بمتابعة الإجراءات الجمركية.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "منشأ البضاعة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "منشأ البضاعة",
+        "definition_text": "هو بلد إنتاجها سواء أكانت من الثروات الطبيعية أم المحصولات الزراعية أم\nالحيوانية أم المنتجات الصناعية.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "منطقة المناورات في المطار": [
       {
         "track_id": "civil_aviation_law",
@@ -9808,6 +10148,26 @@
         "definition_text": "(النور المنخفض) نور المركبة الذي يستخدم في إنارة الطريق على مسافة قصيرة في حالة وجود مركبة مقابلة لها.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "نوع البضاعة": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "نوع البضاعة",
+        "definition_text": "التسمية الواردة في جدول التعرفة الجمركية.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "هذا النظام \"القانون\" ويشمل": [
+      {
+        "track_id": "customs_law",
+        "article_number": 2,
+        "term_as_written": "هذا النظام \"القانون\" ويشمل",
+        "definition_text": "أ.",
+        "source_record_id": "customs-law-llm-art-002",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "هيئة التحكيم": [

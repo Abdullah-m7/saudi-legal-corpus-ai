@@ -299,18 +299,24 @@ def main() -> int:
         check(f"     ...and the definitions actually differ verbatim...", differ,
               "Differ as expected" if differ else "NOT DIFFERENT / one side missing")
 
-    # A same-track-family sanity check: a term with only ONE track's
-    # definition should never spuriously duplicate across article numbers
-    # of the SAME track (would indicate the same article got double-counted).
+    # A same-track-family sanity check: the same (term, track, article) triple
+    # should never appear with an IDENTICAL definition twice (would indicate a
+    # true parsing double-count bug). A genuinely repeated term within the same
+    # article carrying a DIFFERENT definition each time is legitimate source
+    # content, not a bug -- e.g. customs_law art. 2 defines "المصدر" twice,
+    # once as "the country of origin" (item 20) and once as "the exporter"
+    # (item 22), a real homograph in the primary source text -- so only an
+    # identical-definition repeat is flagged here.
     dup_same_track = 0
     for term, entries in terms.items():
-        seen_pairs = set()
+        seen_pairs = {}
         for e in entries:
             pair = (e.get("track_id"), e.get("source_record_id"))
-            if pair in seen_pairs:
+            def_text = e.get("definition_text")
+            if pair in seen_pairs and def_text in seen_pairs[pair]:
                 dup_same_track += 1
-            seen_pairs.add(pair)
-    check("[11b] No term is double-counted from the same (track_id, source_record_id)...",
+            seen_pairs.setdefault(pair, set()).add(def_text)
+    check("[11b] No term is double-counted with an identical definition from the same (track_id, source_record_id)...",
           dup_same_track == 0, f"{dup_same_track} double-counted")
 
     # [10] Idempotency: regenerate and diff against the committed file.

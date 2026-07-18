@@ -1,0 +1,637 @@
+{
+ "document": "اللائحة التنفيذية لنظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية",
+ "document_en": "Implementing Regulation of the GCC Unified Customs Law",
+ "parent_law_ar": "نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية",
+ "parent_law_decree": "المرسوم الملكي رقم (م/41) وتاريخ 3/11/1423هـ",
+ "decree": "القرار الوزاري رقم (2748)",
+ "decree_date_hijri": "25/11/1423",
+ "legal_status_ar": "ساري",
+ "consolidated_amended_law": true,
+ "issuing_authority_ar": "قرار وزاري/لجنة التعاون المالي والاقتصادي لدول مجلس التعاون لدول الخليج العربية",
+ "issuing_authority_en": "Ministerial/GCC Financial and Economic Cooperation Committee Resolution",
+ "amendment_history": [
+  {
+   "decree": "القرار الوزاري رقم (2748)",
+   "date_hijri": "25/11/1423",
+   "note": "الإصدار الأصلي."
+  },
+  {
+   "decree": "القرار الوزاري رقم (2997)",
+   "date_hijri": "25/9/1440",
+   "note": "تعديل -- المواد المتأثرة تحديداً غير مؤكدة."
+  },
+  {
+   "decree": "القرار الوزاري رقم (3766)",
+   "date_hijri": "10/9/1441",
+   "note": "تعديل -- المواد المتأثرة تحديداً غير مؤكدة."
+  },
+  {
+   "decree": "القرار الوزاري رقم (939)",
+   "date_hijri": "28/3/1443",
+   "note": "تعديل -- المواد المتأثرة تحديداً غير مؤكدة."
+  },
+  {
+   "decree": "القرار الوزاري رقم (986)",
+   "date_hijri": "16/8/1444",
+   "note": "تعديل -- المواد المتأثرة تحديداً غير مؤكدة."
+  },
+  {
+   "decree": "القرار الوزاري رقم (955)",
+   "date_hijri": "5/8/1445",
+   "note": "تعديل -- المواد المتأثرة تحديداً غير مؤكدة."
+  },
+  {
+   "decree": "القرار الوزاري رقم (1374)",
+   "date_hijri": "12/12/1445",
+   "note": "تعديل -- المواد المتأثرة تحديداً غير مؤكدة."
+  }
+ ],
+ "preamble_ar": "اللائحة التنفيذية لنظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية، الصادرة بموجب القرار الوزاري رقم (2748) وتاريخ 25/11/1423هـ، وهي أداة منفصلة عن النظام (القانون) نفسه (الذي صدر بمرسوم ملكي)، معدلة ست مرات بقرارات وزارية لاحقة (2997، 3766، 939، 986، 955، 1374). يشتمل هذا المسار على النص الموحد الحالي وفق ملف ZATCA الرسمي الموحد الذي يضم أيضاً نظام الجمارك ذاته كمسار منفصل من هذه المجموعة (customs_law).",
+ "verification_methodology_note": "PRIMARY SOURCE: identical ZATCA consolidated PDF as the customs_law track (same 103-page document; the Implementing Regulation is its own titled section beginning after the Law's closing article) -- see customs_law's verification_methodology_note for the full ligature-bug/line-order-scrambling fix methodology, which is shared verbatim between both tracks (both were extracted, cleaned, and split from the same source PDF via the same pipeline). STATUS constant ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE reflects the same single-source tier; laws.boe.gov.sa was retried this pass for the Regulation specifically and again confirmed unreachable (curl: 'Recv failure: Connection reset by peer'; WebFetch: HTTP 503).\n\nSTRUCTURE-SPECIFIC NOTES: (1) Article 1 (Book 1) is a single, very long article covering customs valuation methodology, internally organized by ordinal clause markers (أولاً through ثامناً) plus an appended 'الملحق التفسيري' (Interpretive Annex) with its own 'رقم المادة:' sub-references and numeric worked examples/tables -- preserved as ONE article's full text with its internal ordinal structure intact, per this corpus's convention of not artificially splitting a single numbered article. Given this article's exceptional length and density of numeric tables/examples, a higher residual risk of minor uncorrected line-wrap artifacts applies to it specifically versus the Regulation's other 35 (much shorter) articles -- flagged in known_unresolved_discrepancies. (2) Three of the Regulation's 7 Books (Book 3 before Art. 14, Book 6 before Art. 26, Book 7 before Art. 29) open with a substantive chapeau paragraph -- confirmed genuine operative text establishing that Book's legal basis in the Law (e.g. 'بناءً على ما ورد في أحكام المادة (95) من نظام \"قانون\" الجمارك الموحد...') -- physically sitting between the Book's heading and its first article's marker in the raw extraction. These were NOT discarded as section-title noise; each was prepended verbatim to its Book's first article (Articles 14, 26, 29 respectively), and the chapter_structure's bab label was shortened back to the Book's own short title. (3) Two مكرر (bis) articles: '2 مكرر' (implements Law Article 48 مكرر, electronic-document acceptance -- confirmed via an in-source margin cross-reference note 'العودة إلى المادة 48 مكرر من النظام', itself stripped as non-substantive navigational text) and '25 مكرر' (implements Law Article 105, confirmed via the analogous margin note 'العودة إلى المادة 105 من النظام'). '25 مكرر''s own header is printed in the source PDF missing its leading 'ال' ('مادة (25 مكرر)' instead of 'المادة (25 مكرر)') -- an isolated, obvious label-only OCR/extraction drop (every other of this track's 36 headers uses 'المادة'), corrected to the form used uniformly elsewhere, not a substantive change. (4) Article 13's paragraph opens '2. إذا انتقلت ملكية المؤسسة الفردية...' -- its point '1.' was not independently recoverable as a separately-numbered clause distinct from the preceding sentence in the raw extraction; presented as extracted rather than guessed at, a minor documented gap.\n\nAMENDMENT ATTRIBUTION -- this Regulation's 6 amending Ministerial/Committee Resolutions (2997, 3766, 939, 986, 955, 1374) are confirmed from the PDF's own cover page (with exact dates), but which specific article(s) each resolution touched is NOT determinable from the consolidated PDF alone (it shows only final, already-merged current text with no per-article revision-history markers, unlike this corpus's MOJ-portal-backed tracks such as bankruptcy_law/bankruptcy_regulation). All 36 articles are therefore presented with legal_status_ar='اصلية' at the level of 'an original-numbered article of the currently-consolidated instrument' (as opposed to 'مضافة' for the 2 مكرر bis insertions) -- this is NOT a claim that no base article's text changed across the 6 amendments, merely that no specific article can be honestly singled out as 'معدلة' without a primary source confirming it; see known_unresolved_discrepancies.",
+ "known_unresolved_discrepancies": [
+  {
+   "article_key": "customs_regulation_amendments_articles_unconfirmed",
+   "description": "This Regulation's 6 amending Ministerial/Committee Resolutions (2997, 3766, 939, 986, 955, 1374) are confirmed from the ZATCA PDF's own cover page (with exact dates), but the specific article(s) each resolution touched could not be determined from the consolidated PDF alone (no per-article revision-history markers, unlike this corpus's MOJ-portal-backed tracks). All 36 articles are presented as legal_status_ar='اصلية' (original-numbered, current text) rather than guessing which specific ones are 'معدلة' -- a documented gap, not a claim that nothing changed."
+  },
+  {
+   "article_key": "customs_regulation_boe_unreachable",
+   "description": "laws.boe.gov.sa was retried this pass: curl returned 'Recv failure: Connection reset by peer' and WebFetch returned HTTP 503 Service Unavailable -- confirmed unreachable, matching this corpus's established BOE-egress-blocked pattern. Not bypassed via any hostname trick."
+  },
+  {
+   "article_key": "customs_regulation_shared_ligature_bug_methodology",
+   "description": "This Regulation was extracted from the SAME ZATCA PDF and cleaned with the SAME normalizer as the customs_law track (general boundary regex for both plain-alef and hamza-alef ligature-transposition, at both the 'ال' and 'لـ+ال' morpheme boundaries, plus a curated dictionary and the ثلاث/ثلاثة/ثلاثين homograph disambiguation) -- see customs_law_official_source.json's verification_methodology_note for the full methodology, shared verbatim between both tracks."
+  },
+  {
+   "article_key": "customs_regulation_article1_valuation_length_residual_risk",
+   "description": "Article 1 (Book 1, customs valuation methodology, including its 'الملحق التفسيري' interpretive annex) is exceptionally long and dense with numeric worked examples and small tables (e.g. the unit-price example under سادساً/1). Given this length and table-heavy content, a higher residual risk of minor uncorrected line-wrap or table-cell-ordering artifacts applies to this article specifically, versus the Regulation's other 35 much shorter articles, even after the general line-reordering and ligature fixes were applied and the article was read in full for sense."
+  },
+  {
+   "article_key": "customs_regulation_bab_chapeau_paragraphs_relocated",
+   "description": "Three of the Regulation's 7 Books (3, 6, 7) open with a substantive chapeau paragraph establishing that Book's legal basis in the Law (e.g. citing Law Articles 95, 121, and 141/9/142/143/144 respectively) that was physically interleaved between the Book's heading and its first article's marker in the raw PDF extraction (a column-layout artifact). These chapeaux were confirmed as genuine operative text (not section-title noise) and prepended verbatim to each Book's first article (Articles 14, 26, 29); the chapter_structure's bab label was correspondingly shortened back to the Book's own short title."
+  },
+  {
+   "article_key": "customs_regulation_25mukarrar_header_missing_al_corrected",
+   "description": "Article '25 مكرر''s own header is printed in the source PDF missing its leading 'ال' ('مادة (25 مكرر)' rather than 'المادة (25 مكرر)', the form used uniformly by every other of this track's 36 article headers) -- corrected as an isolated, obvious label-only OCR/extraction drop, not a substantive change to any article's legal text."
+  },
+  {
+   "article_key": "customs_regulation_article13_clause1_not_independently_recovered",
+   "description": "Article 13's second paragraph begins '2. إذا انتقلت ملكية المؤسسة الفردية...'; a distinctly-numbered '1.' opening clause was not independently recoverable as separate from the preceding sentence in the raw extraction. Presented as extracted rather than reconstructed by guesswork -- a minor documented gap."
+  },
+  {
+   "article_key": "customs_regulation_negation_particle_dropped_lam_postbuild_qa_fix",
+   "description": "A subsequent post-build quality-review pass found the same gap already documented for the customs_law track's customs_law_negation_particle_dropped_lam_postbuild_qa_fix entry: the standalone negation particle لا corrupted to ال (bare, or fused with و/ف/ب or a bare Arabic-letter sub-clause marker per this corpus's list-formatting convention), the exception-particle إلا corrupted to إال, the ل + hamza-alef-noun construct (لأحكام, لأغراض, لإدارة, لإعادة, لإشراف, لإضافة, لاعتبار, لإعفاء, لأشخاص, لأن, لإجراء, لإنجاز, لاستخدامه, للاستهلاك, للأحكام) corrupted to the hamza-then-lam order, and a long tail of individual dictionary words with a transposed or dropped lam (الاستهلاك, عملات (6x, e.g. 'ما يعادلها من عملات دول المجلس'), آلاف, العمولات, معادلات, التسهيلات, الاستهلاك, أعاله->أعلاه ['above'], أولا for أولاً ['firstly'], علاقة (عالقة), الاستدلالية/الإستدلالية (the deductive-value customs-valuation method, 7x), إعلانه, الإعلانات/الإعلام, كلاهما, ملابس, وسلامة) -- plus one genuine drop (وخال->وخلال, Art. 14) and one insertion-needed drop (عمات->عملات, Art. 19). In total 231 additional dropped/transposed-lam instances were found and fixed across this track's articles during this review pass, the large majority concentrated in Article 1 (customs valuation methodology) given its length and density. All fixes were restorations of an unambiguous standard legal-Arabic phrase or dictionary word, verified by reading the full surrounding sentence; none were guessed or fabricated. Two residual, deliberately UNFIXED cases were identified in Article 9 ('وكال بقيادتها' and 'حاصال على رخصة قيادة') because they are fragments of a DIFFERENT, still-undocumented line-order-scrambling artifact in that article (the words مُوكَّلاً and حاصلاً appear split across reordered lines with a floating tanwin mark, analogous to the line-order-scrambling residual risk already flagged for customs_law's 11 hand-reconstructed articles) -- fixing only the lam-position within these two words without also correcting the line order would not have produced coherent text, so they are left as a documented gap for a future line-order-focused pass rather than fixed here."
+  },
+  {
+   "article_key": "customs_regulation_glued_list_markers_postbuild_qa_fix",
+   "description": "A SECOND, separate post-build quality-review pass (independent of, and after, the customs_regulation_negation_particle_dropped_lam_postbuild_qa_fix pass above) found the same glued/reversed lettered-sub-item-marker defect documented for the customs_law track's customs_law_glued_list_markers_postbuild_qa_fix entry (marker+period order reversed and fused directly onto the following word, e.g. source '.أيسمح' rather than this corpus's established 'أ. يسمح' convention). 109 such instances were found and fixed across 15 articles (1, 3, 4, 9, 10, 13, 15, 17, 19, 21, 22, 24, 25, 25 مكرر, 27) -- the large majority (around 90) concentrated in Article 1 (the long customs-valuation-methodology article) given its length and density of enumerated sub-clauses. Three variant manifestations of the same defect were also found and corrected: (a) three instances (Articles 19 and 22 x2) where a zero-width non-joiner control character sat between the marker and its word (e.g. '.أ\\u200cأن') instead of a visible separator -- removed and replaced with the standard 'letter. word' form; (b) Article 19's second and third sub-items, where the marker line consisted only of the marker plus a stray floating shadda ('.ب ّ' / '.ج ّ') with the actual word ('ألا يكون...' / 'ألا يزيد...') printed on the following line -- merged and corrected to 'ب. ألا يكون...' / 'ج. ألا يزيد...', stripping the dislocated shadda as extraction noise; (c) Article 17's third sub-item, where a stray floating damma sat between the marker and its word ('.ج ُتضمن') -- corrected to 'ج. تُضمن', reattaching the single damma to its proper letter rather than discarding it, since (unlike the doubled-diacritic cases below) it is a single, plausibly-genuine mark for the passive verb تُضمن. A further nested-enumeration instance in Article 1 ('.7أ.إذا دعت الحاجة...', a numbered item 7 with lettered sub-item أ) was corrected to '7.أ. إذا دعت الحاجة...', matching this track's numbered-item ('N.word', no space) and lettered-item ('letter. word', with space) conventions. Alongside this, 3 stray-diacritic artifacts (doubled combining marks, extraction noise rather than genuine tashkeel) were found and cleaned in Article 1: 'أن ُُيحدد البائع' (doubled damma) corrected to 'أن يحدد البائع'; 'قُ ِّدم' (floating damma plus a detached kasra+shadda) corrected to 'قدم'; and 'من َمصدَّ ر آخر' (floating fatha plus a detached fatha+shadda) corrected to 'من مصدر آخر'. One further doubled-diacritic instance in Article 1 was identified but deliberately left UNFIXED: 'ومباعة\\nالم ِّ\\n1.في حال كون ملكية البضاعة...' -- the word fragment 'الم' immediately preceding the stray kasra+shadda appears to be truncated by, and entangled with, a distinct, already-documented line-order/table-scrambling artifact specific to this exceptionally long and table-dense article (see customs_regulation_article1_valuation_length_residual_risk above), rather than a simple stray-diacritic case; fixing only the diacritic without also resolving the underlying line-order scramble would not have produced coherent text, so it is left as a documented gap for a future line-order-focused pass rather than guessed at here."
+  }
+ ],
+ "chapter_structure": [
+  {
+   "label_ar": "الباب الأول : أسس تحديد القيمة للأغراض الجمركية في النظام \"القانون\" الجمركي الموحد لدول المجلس",
+   "chapters": [],
+   "articles": "1"
+  },
+  {
+   "label_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "chapters": [],
+   "articles": "2-13"
+  },
+  {
+   "label_ar": "الباب الثالث : إعادة تصدير البضائع",
+   "chapters": [],
+   "articles": "14-18"
+  },
+  {
+   "label_ar": "الباب الرابع : الاعفاءات الشخصية",
+   "chapters": [],
+   "articles": "19-21"
+  },
+  {
+   "label_ar": "الباب الخامس : إعفاء مستلزمات الجمعيات الخيرية -- والبضائع المستوردة لذوي الاحتياجات الخاصة و المواد اللازمة للإغاثة",
+   "chapters": [],
+   "articles": "22-25"
+  },
+  {
+   "label_ar": "الباب السادس : البضائع الخاضعة لأحكام النطاق الجمركي وشروط النقل داخله",
+   "chapters": [],
+   "articles": "26-28"
+  },
+  {
+   "label_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+   "chapters": [],
+   "articles": "29-34"
+  }
+ ],
+ "article_count": 36,
+ "status_counts": {
+  "اصلية": 34,
+  "مضافة": 2
+ },
+ "articles": {
+  "customs_regulation_art_001": {
+   "number_label_ar": "المادة (1)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 1,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الأول : أسس تحديد القيمة للأغراض الجمركية في النظام \"القانون\" الجمركي الموحد لدول المجلس",
+   "text": "أولاً /أحكام عامة:\n1.للمستورد الحق في الإفراج عن بضاعته،بعد تقديم ضمانات كافية في شكل تأمين بنكي\nأو نقدي،أو ضمان بنكي،أو في شكل تأمين أو ممتلكات مرهونة بقيمة معادلة،لتغطية\nالضرائب \"الرسوم\" الجمركية المقدرة،إذا أتضح تأخر التحديد النهائي للقيمة الجمركية.\n2.للمستورد أو أي شخص آخر يتحمل تغطية الضرائب \"الرسوم\" الجمركية،الاعتراض والاستئناف\nضد تقدير القيمة الجمركية دون جزاء.وفقاً لما يلي-:\nأ. مستوى الإدارة/\n1.مدير الدائرة الجمركية.\n2.لجنة الفصل في القيمة.\nب. هيئة قضائية مستقلة.\n3.تعامل المعلومات السرية أو التي قدمت على أساس سري لأغراض التثمين الجمركي بإعتبارها\nسرية تماماً ولا يجوز إفشاؤها إلا بقدر ما يتطلب إفشاؤه في سياق إجراءات قضائية،وفقاً\nلأحكام النظام \"القانون\" الجمركي الموحد لدول المجلس.\nد أجنبي،ينبغي تحويلها إلى النقد المحلي على\n4.عندما تكون القيمة المصرح عنها محررة بنق ٍ\nأساس سعر الصرف الذي يتم إعلانه في النشرات التي تصدر عن الجهات المختصة.ويعد تاريخ\nتسجيل البيان الجمركي هو التاريخ المعتمد لسعر الصرف.\n5.لا ينظر عند تحديد القيمة الجمركية إلى أي تخفيض يتم بعد تاريخ الإستيراد في الثمن\nا أو المستحق دفعه للبضاعة قيد التثمين.كما لا ينظر إلى الأرصدة الدائنة التي\nالمدفوع فع ً\nتخص إرساليات سابقة عند تاريخ تسجيل البيان الجمركي للبضاعة قيد التثمين في الدوائر\nالجمركية.\n6.لا يوجد في هذه النظام أي نص يعني تقييداً أو تشكيكاً في حق الجمارك في أن تتخذ ما\nيلزم لإلقتناع بصدق أو دقة أي بيان أو وثيقة أو تصريح أو إقرار يقدم للجمارك لأغراض التقييم.\n7.أ. إذا دعت الحاجة عند تطبيق أحكام الفقرات (رابعاً حتى ثامناً) من هذه المادة،إلى إستخدام\nمعلومات محاسبية لتحديد القيمة الجمركية،فيجب إستخدام هذه المعلومات بشكل ينسجم\nمع مبادئ المحاسبة المقبولة عموماً في دول المجلس عند تطبيق المادة المعينة.\nب. لا يجوز أن ترفض الجمارك المعلومات المقدمة من قبل المستورد،أو المشتري أو المنتج،\nالمتعلقة بتثمين البضاعة،والتي تم إعدادها وفقاً ل \"مبادئ المحاسبة المقبولة عموماً\"،بحجة\nالطريقة الحسابية المستخدمة في ذلك.\n8.مع مراعاة أحكام الفقرة (رابعاً/ب) من هذه المادة،وعند تحديد القيمة الجمركية لوسائط نقل\nالمعلومات،كالأشرطة الممغنطة وما ماثلها،المسجل عليها بيانات أو برامج للحاسب الآلي،\nتحتسب القيمة على أساس قيمة هذه الوسائط فقط دون احتساب قيمة المعلومات المسجلة\nعليها.\n9.من حق المستورد بناء على طلب مكتوب أن يحصل على تفسير مكتوب من ادارة الجمارك عن\nكيفية تحديد الطريقة التي حددت بها القيمة الجمركية للبضائع المستوردة.\nثانياً /تعاريف:\nلأغراض تطبيق هذه المادة في احتساب القيمة لألغراض الجمركية يقصد بالكلمات والعبارات\nالتالية المعاني المبينة لها بجانب كل منها:\nا أو المستحق دفعه:هو أجمالي ما دفعه أو ما سيدفع بمعرفة المشتري،\n1.الثمن المدفوع فع ً\nللبائع أو لمصلحته،مقابل البضائع المستوردة،ولا يشترط بالضرورة أن يتخذ الدفع شكل تحويل\nنقدي،فقد يكون الدفع بواسطة خطابات إعتماد أو مستندات قابلة للتحويل،ويجوز أن يكون\nالدفع مباشراً أو غير مباشر،كتسوية المشتري ديناً مستحق على البائع كلياً أو جزئياً.\n2.البضائع المستوردة قيد التثمين:تعني تلك البضائع التي يجري تحديد قيمتها لألغراض\nالجمركية.\n3.تكاليف التعبئة:تعني تكلفة جميع الأوعية (ما عدا الحاويات) والأغطية مهما كانت نوعيتها\nوالعبوات،سواء كانت عن العمالة أو المواد المستخدمة لوضع البضاعة في العبوات الصالحة\nلشحنها إلى دول المجلس.\n4.مصطلح \"المنتجة\":يشمل المزروعة،والمصنوعة،والمستخرجة من الأرض (المواد الخام)\nوالخدمات ,والمنتجات الفكرية.\n\"5.الأشخاص المرتبطون بعلاقة\" يقصد بهم ما يلي:\nأ. الشركاء بصفة قانونية في العمل.\nب. موظفون أو مديرون أحدهم لدى الآخر.\nج. صاحب العمل وموظفوه.\nد. كل شخص يملك أو يتحكم أو يحتفظ بشكل مباشر أو غير مباشر بخمسة في المائة أو أكثر\nمن الحصص أو الأسهم التي لها حق التصويت أو كليهما.\nه. إذا كان أحدهما يشرف أو يهيمن على الآخر.\nو. أو كان كلاهما خاضعاً بشكل مباشر أو غير مباشر لإشراف شخص ثالث.\nز. أو كانوا معا يشرفون بشكل مباشر أو غير مباشر على شخص ثالث.\nح. أو كانوا من أفراد نفس العائلة.\n6.البضائع المطابقة:هي البضائع التي تتطابق مع البضاعة قيد التثمين في كل النواحي بما\nفي ذلك الخصائص المادية والجودة النوعية والشهرة التجارية،وتم إنتاجها في نفس البلد\nومن قبل نفس الشخص،ولا تؤدي الاختلافات الطفيفة في المظهر التي لا تؤثر على الثمن،\nإلى استبعاد البضائع التي ينطبق عليها هذا التعريف من أن تعتبر بضائع مطابقة.وإذا لم\nيمكن العثور على بضاعة مطابقة منتجة من نفس الشخص،فإن البضائع التي تتطابق في كل\nالنواحي مع البضاعة قيد التثمين،وتم إنتاجها بنفس البلد من قبل شخص آخر،يجوز أن تعامل\nك\"بضاعة مطابقة\".ولا تدخل في البضائع المطابقة البضائع التي تجسد أو تعكس الأعمال\nالهندسية،والتطويرية،والفنية،واعمال التصاميم،والمخططات،والرسومات،المنفذة في\nدول المجلس،التي لا تدخل في تسويات قيمة الصفقة بموجب الفقرة (رابعاً/ب/1/4/د) بهذه\nالمادة.\n7.البضائع المماثلة:هي البضائع المنتجة بنفس بلد إنتاج البضاعة قيد التثمين ومن قبل نفس\nالشخص،وتكون لها خصائص ومكونات مادية مماثلة للبضاعة قيد التثمين وتمكنها من أداء\nالوظائف نفسها والقيام مقامها تجارياً على الرغم من أنها ليست مماثلة من جميع النواحي،\nمع الأخذ في الإعتبار الجودة النوعية والشهرة التجارية ووجود عالمة تجارية عند تحديد ما إذا\nكانت البضاعة مماثلة.وفي حالة عدم العثور على بضاعة مماثلة منتجة من نفس الشخص،\nفإن البضاعة المنتجة بنفس بلد إنتاج البضاعة قيد التثمين،والمنتجة من قبل شخص آخر،\nلكنها تشبهها في الخصائص والمواد المكونة ويمكن التبادل بينهما تجارياً،فإنها تعامل\nك\"بضاعة مماثلة\".ولا تدخل في البضائع المماثلة تلك البضائع التي تجسد أو تعكس الأعمال\nالهندسية،والتطويرية،والفنية،واعمال التصاميم،والمخططات،والرسومات،المنفذة في\nدول المجلس،التي لا تدخل في تسويات قيمة الصفقة بموجب الفقرة (رابعاً/ب/1/4/د) بهذه\nالمادة.\n8.سعر الوحدة بأكبر كمية إجمالية:هو السعر الذي بيع به أكبر عدد ممكن من الوحدات،\nتكون كافيه لتحديد سعر الوحدة،في عمليات بيع لأشخاص غير مرتبطين بالأشخاص الذين\nاشتروا البضائع منهم،على أول مستوى تجاري بعد الاستيراد،عند تطبيق الفقرة (سادساً).\n9.البضائع من نفس الفئة أو النوع:هي البضائع التي تقع ضمن مجموعة من البضائع التي\nتنتجها صناعة معينة أو قطاع صناعي معين،وتشمل البضائع المطابقة والبضائع المماثلة،ولا\nتقتصر عليهما.\n10.مبادئ المحاسبة المقبولة عموماً:الإتفاق المعترف به أو ما أستقر عليه الرأي في وقت\nمعين،بخصوص ما يلي:\n1.الموارد والالتزامات التي ينبغي أن تسجل كأصول وخصوم.\n2.التغيرات التي يجب تسجيلها في الأصول والخصوم.\n3.كيفية قياس الأصول والخصوم،والتغيرات فيهما.\n4.المعلومات التي ينبغي الكشف عنها وكيف ذلك.\n5.البيانات المالية التي ينبغي إعدادها.\n11.البيانات الموضوعية:هي تلك المعلومات التي تساعد على التأكد من صحة مايلي:\nا أو المستحق\n1.مبلغ مضاف بموجب الفقرة (رابعاً/ب) من هذه المادة،إلى الثمن المدفوع فع ً\nدفعه.\n2.أي تعديل بموجب الفقرة (خامساً) من هذه المادة.\n3.مبلغ مستقطع بموجب الفقرة (سادساً) من هذه المادة،باعتباره من الأرباح والمصروفات\nالعامة،أو قيمة ناشئة من تصنيع إضافي.\n4.مبلغ مضاف بموجب الفقرة (سابعاً) من هذه المادة،باعتباره ربحاً أو من المصروفات العامة.\n12.عمولة الشراء:هي المصاريف التي يدفعها المستورد إلى وكيله مقابل خدمات تمثيله في\nالخارج لشراء البضاعة التي يجري تحديد قيمتها ولا تدخل ضمن القيمة الجمركية.\n13.عمولة البيع:هي المصاريف المدفوعة إلى وكيل البائع الذي يرتبط بالمصنع أو البائع،أو يخضع\nله،أو يعمل لصالحه،أو بالنيابة عنه،مقابل خدمات بيع البضاعة.\nثالثاً /أسس التثمين الجمركي:\nأ. يتم تثمين البضائع الواردة حسب الأسس التالية بالترتيب:\n1.قيمة الصفقة للبضاعة قيد التثمين المنصوص عليها في الفقرة (رابعاً).\n2.قيمة الصفقة لبضاعة مطابقة،المنصوص عليها في الفقرة (خامساً/أ)،إذا تعذر تحديد قيمة\nالصفقة بموجب الفقرة (رابعاً).\n3.قيمة الصفقة لبضاعة مماثلة،المنصوص عليها في الفقرة (خامساً/ب)،إذا تعذر تحديد قيمة\nالصفقة لبضاعة مطابقة.\n4.القيمة الاستدلالية المنصوص عليها في الفقرة (سادساً)،إذا تعذر تحديد القيمة بموجب قيمة\nالصفقة لبضاعة مماثلة.\n5.القيمة المحسوبة المنصوص عليها في الفقرة (سابعاً)،إذا تعذر تحديد القيمة بموجب القيمة\nالاستدلالية.\n6.الطريقة المرنة المنصوص عليها في الفقرة (ثامناً)،إذا تعذر تحديد القيمة بموجب القيمة\nالمحسوبة.\nب. يجوز للمستورد أن يطلب تطبيق طريقة القيمة المحسوبة قبل اللجوء إلى طريقة القيمة\nالاستدلالية.ويجب أن يقدم هذا الطلب عند تقديم بيان الإستيراد إلى الجمرك.وإذا قدم\nالمستورد طلبه لكن تعذر تثمين بضاعته المستوردة وفق طريقة القيمة المحسوبة،فإنه يتم\nتثمينها وفق طريقة القيمة الاستدلالية،وإذا تعذر ذلك،يتم التثمين وفقاً للفقرة (ثامناً).\nرابعاً /قيمة الصفقة للبضاعة قيد التثمين:\nأ. تكون القيمة الجمركية للبضائع المستوردة إلى دول المجلس هي قيمة الصفقة،أي الثمن\nا أو المستحق الدفع عند بيع تلك البضائع للتصدير إلى دول المجلس.مع مراعاة\nالمدفوع فع ً\nأحكام الفقرة (ب) من هذا الأساس،ووفقاً للشروط التالية:\n1.أن لا يكون هناك أي قيود على التصرف في البضاعة المستوردة أو استعمالها من قبل\nالمشتري،غير القيود المنصوص عليها في النظام \"القانون\" الجمركي الموحد لدول المجلس\n،أو التي تحدد المناطق الجغرافية التي يمكن أن يعاد بيع البضاعة فيها،أو القيود التي ليس\nلها تأثير كبير على قيمة البضاعة.\n2.أن لا يكون البيع أو الثمن مرتبطاً بشرط معين أو خاضع لاعتبار لا يمكن تحديد قيمته بالنسبة\nللبضائع التي يجري تثمينها.\n3.ألا يستحق البائع أي جزء من حصيلة إعادة بيع البضاعة أو التصرف فيها أو استعمالها في مرحلة\nالحقة من قبل المشتري،بشكل مباشر أو غير مباشر،ما لم يكن من الممكن إجراء التسوية\nالمناسبة على القيمة وفقاً الحكام الفقرة (ب) من هذا الأساس.\n4.ألا يكون البائع والمشتري مرتبطين وفقاً للفقرة (ثانياً )5/من هذه المادة.فإذا كانا مرتبطين\nتكون قيمة الصفقة مقبولة لألغراض الجمركية وفقاً لأحكام الفقرة (أ) من هذا الأساس،إذا\nتحقق أحد الشرطين التاليين:\nأ. إذا أثبتت دراسة ظروف البيع أن العلاقة بين المشتري والبائع لم تؤثر على الثمن المدفوع\nفعا أو المتفق على دفعه.\nب. أو إذا كانت قيمة الصفقة للبضاعة المستوردة قريبة جدا إلى إحدى الأقيام المعيارية\n(الإختبارية) الموضحة في الفقرات التالية:\n1.قيمة الصفقة لبضاعة مطابقة أو مماثلة بيعت للتصدير إلى مشترين غير مرتبطين بدول\nالمجلس.\nح ِددت لبضاعة مطابقة أو مماثلة بموجب الفقرة (سادساً) \"القيمة الإستدلالية\".\n2.قيمة جمركية ُ\nح ِددت لبضاعة مطابقة أو مماثلة بموجب الفقرة (سابعاً) \"القيمة المحسوبة\".\n3.قيمة جمركية ُ\nعند تطبيق الفقرة (رابعاً/أ/4/ب) يراعى تسوية الاختلاف،إذا وجد بين القيمة المصرح عنها والقيمة\nالمعيارية،على أساس بيانات موضوعية مقدمة من قبل المشتري أو متوفرة لدى الجمارك،وفقاً\nللفقرة (ثانياً )11/من هذه المادة،ومع الأخذ في الإعتبار الفقرة (رابعاً/ب) من هذه المادة ,ولا\nيجوز استخدام هذه القيم كقيم بديلة.\nفعلاً أو المستحق دفعه (التسويات):\nً.بالإضافات إلى الثمن المدفوع\n1.عند تحديد القيمة الجمركية وفقاً لهذه الفقرة (رابعاً)،تضاف التكاليف التالية بقدر ما يتحمله\nا أو المستحق الدفع عن\nالمشتري،عندما لا تكون تلك التكاليف مشمولة بالثمن المدفوع فع ً\nالبضائع المستوردة:\n1.العمولات والسمسرة بإستثناء عمولات الشراء.\n2.تكلفة العبوات التي تعتبر لألغراض الجمركية جزءاً من البضاعة.\n3.تكلفة التعبئة من جهد ومواد.\n4.قيمة البضائع والخدمات (الأصناف المساعدة) التي يقدمها المشتري بشكل مباشر أو غير\nمباشر،مجاناً أو بقيمة مخفضة،إلستخدامها في إنتاج البضائع المستوردة وبيعها للتصدير إلى\nدول المجلس،على أن توزع هذه القيمة بنسب مالئمة،وهي كالتالي:\nأ. المواد والمكونات والأجزاء والأصناف المماثلة الداخلة في إنتاج البضائع المستوردة.\nب. الأدوات والعدد والقوالب والأصناف المماثلة المستخدمة في إنتاج البضائع المستوردة.\nج. المواد التي استهلكت في إنتاج البضائع المستوردة.\nد. الأعمال الهندسية،والتطويرية،والفنية،وأعمال التصاميم،والمخططات،والرسومات،التي تم\nتنفيذها خارج دول المجلس واللازمة إلنتاج البضاعة المستوردة.\n5.الرسوم التي يجب على المشتري دفعها،سواء بشكل مباشر أو غير مباشر،مقابل استغلاله\nلحق من حقوق الملكية الفكرية أو تراخيص الاستعمال،كشرطاً للبيع الذي بموجبه إنتقلت\nملكية البضاعة قيد التثمين إلى حوزته،والمتعلقة بالبضاعة المستوردة قيد التثمين،عندما لا\nا أو المستحق دفعه.\nتكون مدرجة في الثمن المدفوع فع ً\n6.قيمة أي جزء يستحق للبائع،بشكل مباشر أو غير مباشر،من حصيلة أي عملية إعادة بيع تالية\nأو تصرف أو إستخدام الحق للبضائع المستوردة.\n7.أجور شحن البضائع المستوردة إلى ميناء أو مكان الاستيراد.\n8.تكاليف التحميل والتفريغ والمناولة،والتأمين المرتبطة بنقل البضائع المستوردة إلى ميناء أو\nمكان الاستيراد.\nا أو المستحق الدفع إلا وفقاً لأحكام الفقرة\n2.لا يجوز القيام بأي إضافة إلى الثمن المدفوع فع ً\n(رابعاً/ب) من هذه المادة،ويشترط في أية إضافة أن تكون على أساس بيانات موضوعية\nوكمية،أي على أساس حقائق بأرقام فعلية دون تفسير شخصي،مع الأخذ في الإعتبار الفقرة\n(ثانياً )11/من هذه المادة.وإلا أعتبر الوصول لقيمة الصفقة غير ممكن بموجب هذا الأساس.\nج. إستثناءات من قيمة الصفقة:\nلا تدخل التكاليف والمبالغ التالية في القيمة لألغراض الجمركية،بشرط أن تكون مفصولة عن\nفعلاً أو المستحق الدفع:\nً الثمن المدفوع\n1.نفقات ما بعد الإستيراد،مثل:\nأ. تكاليف الإنشاء والبناء والتجميع والصيانة أو المساعدة الفنية التي تم التعهد بالقيام بها بعد\nإستيراد البضائع إلى دول المجلس.\nب. أجور النقل والتحميل والتنزيل والمناولة والتأمين للبضائع المستوردة،بعد الإستيراد.\nج. الرسوم الجمركية وأي ضرائب أخرى مفروضة بعد الإستيراد على البضائع المستوردة لدول\nالمجلس.\nد. الأرباح والمدفوعات الأخرى من المشتري للبائع والتي ليس لها علاقة بالبضائع المستوردة.\nه. الفوائد التي تكون قد ترتبت بناءاً على إتفاق مالي أبرمه المشتري لشراء البضاعة المستوردة.\nو. الأنشطة التي يقوم بها المشتري على حسابه.\n2.الأرصدة المالية التي لدى البائع لصالح المستورد.\n3.مبالغ إعانة التصدير التي قد يتم تقديمها من قبل بعض الدول لتصدير بعض البضائع.\n4.أي مبالغ مقابل الإغراق،عندما تباع البضائع بأسعار إغراقيه (بسعر أقل من التكلفة)،إذ يجب\nالتعامل مع الإغراق بموجب إتفاقية مكافحة الإغراق.\nد. إذا تبين أن هناك أسباباً معقولة تؤدي إلى الشك بصحة الوثائق المقدمة أو المعلومات الواردة\nاء على\nفيها رغم إنطباق أحكام هذه المادة،فينبغي تبليغ المستورد خطياً بتلك الأسباب -بن ً\nطلبه -ومنحه مهله كافية للرد،تحددها الدائرة الجمركية،فإذا لم يقدم الإثباتات التي تقبل\nبها الدائرة خلال هذه المهلة،وتعذر تحديد القيمة الجمركية وفق أحكام الفقرة (رابعاً) من\nهذه المادة،فيجب تحديدها وفق الأساليب الواردة بالفقرات (خامساً حتى ثامناً)،على التوالي\nلحين الوصول إلى القيمة الجمركية وفق أول أسلوب ممكن.\nخامساً /قيمة الصفقة لبضاعة مطابقة ومماثلة:\nقيمة الصفقة لبضاعة مطابقة سبق قبولها كقيمة صفقة بموجب الفقرة (رابعاً) من هذه المادة،\nمصدرة إلى دول المجلس في نفس تاريخ تصدير البضاعة قيد التثمين أو قريباً منه،وبنفس\nالمستوى التجاري وبنفس كميات البضاعة المستوردة قيد التثمين.وإذا لم تتوفر مثل هذه\nالقيمة،تستخدم قيمة الصفقة لبضائع مطابقة بيعت على مستوى تجاري مختلف و/أو بكميات\nمختلفة،مع تعديلها لمراعاة الاختلاف في المستوى التجاري و/أو الكميات،على أساس بيانات\nموضوعية وفقاً للفقرة (ثانياً )11/من هذه المادة،وأدلة مؤكدة تثبت معقولية التعديل،سواءاً\nأدى التعديل إلى زيادة القيمة أو نقصانها،مع مراعاة الفرق في التكاليف المشار إليها في الفقرة\n(رابعاً/ب )1/من هذه المادة.وإذا وجد أكثر من قيمة صفقة لبضائع مطابقة،تعتمد أقل تلك\nالأقيام كقيمة جمركية للبضاعة قيد التثمين،وفقاً للفقرة (خامساً/أ) بالملحق التفسيري.\nب. قيمة الصفقة لبضاعة مماثلة تم قبولها كقيمة صفقة بموجب الفقرة (رابعاً) من هذه المادة،\nبيعت للتصدير إلى دول المجلس في نفس تاريخ تصدير البضاعة قيد التثمين أو قريباً منه،\nوبنفس المستوى التجاري وبنفس كميات البضاعة المستوردة قيد التثمين.وإذا لم تتوفر\nمثل هذه القيمة،تستخدم قيمة الصفقة لبضائع مماثلة بيعت على مستوى تجاري مختلف\nو/أو بكميات مختلفة،مع تعديلها لمراعاة الإختاف في المستوى التجاري و/أو الكميات،على\nأساس بيانات موضوعية وفقاً للفقرة (ثانياً )11/وأدلة مؤكدة تثبت معقولية التعديل،سواءاً\nأدى التعديل إلى زيادة القيمة أو نقصانها،مع مراعاة الفرق في التكاليف المشار إليها في\nالفقرة (رابعاً/ب )1/من هذه المادة.وإذا وجد أكثر من قيمة صفقة لبضائع مماثلة،تعتمد\nأقل تلك الأقيام كقيمة جمركية للبضاعة قيد التثمين،وفقاً للفقرة (خامساً/ب) بالملحق\nالتفسيري.\nسادساً /القيمة الاستدلالية:\n1.تستند القيمة الجمركية إلى سعر الوحدة الذي تباع بموجبه البضاعة المستوردة نفسها أو\nالبضاعة المطابقة أو البضاعة المماثلة،على أول مستوى تجاري،في السوق المحلي بدول\nالمجلس،بحالتها عند الإستيراد،بأكبر كمية إجمالية وفقاً للفقرة (ثانياً )8/من هذه المادة،\nفي نفس وقت إستيراد البضاعة قيد التثمين أو قريباً منه،لأشخاص غير مرتبطين بعلاقة\nوفقاً للفقرة (ثانياً )5/من هذه المادة،مع إستبعاد بيع البضاعة التي دخل في إنتاجها أياً من\nالأصناف المساعدة الموضحة في الفقرة (رابعاً/ب )1/4/من هذه المادة،على أن يتم إجراء\nالاستقطاعات التالية:\nأ. إما مقدار العمولات (التي تدفع عادة أو المتفق عليها)،أو المبالغ التي تضاف عادة مقابل\nمعدل الأرباح والمصروفات العامة في دول المجلس للبضائع من نفس الفئة أو النوع.\nب. الأجور المعتادة للنقل والتأمين بعد الإستيراد وما يرتبط بها من تكاليف في دول المجلس.\nعلى ألا تكون تلك التكاليف مضافة كمصروفات عامة بموجب الفقرة (أ) أعاه.\nج. الضرائب \" الرسوم \" الجمركية وغيرها من الضرائب أو الزكاة المستحقة في دول المجلس بسبب\nإستيراد البضائع أو بيعها محلياً.ويجب مراعاة عدم إستقطاع تلك الضرائب أو الزكاة بموجب\nهذه الفقرة في حالة قيام المستورد بتسجيلها ضمن المصروفات العامة في الفقرة (أ) أعاه\nبهذه الأساس.\n2.إذا لم تكن البضاعة قيد التثمين أو البضاعة المطابقة أو البضاعة المماثلة المستوردة قد\nبيعت بحالتها عند الإستيراد في نفس وقت إستيراد البضاعة قيد التثمين أو قريباً من ذلك\nالوقت،فتستند القيمة الجمركية،مع مراعاة أحكام الفقرة (1)من هذا الأساس،إلى سعر\nالوحدة الذي تباع به البضاعة المستوردة أو البضاعة المطابقة أو البضاعة المماثلة المستوردة\nفي السوق المحلي بدول المجلس،بحالتها عند الإستيراد في أقرب وقت بعد إستيراد البضائع\nالتي يجري تثمينها على أن يتم ذلك قبل مرور تسعين يوماً من تاريخ إستيراد البضاعة قيد\nالتثمين،بكميات تكفي لتحديد سعر الوحدة.\n3.إذا لم تكن البضاعة المستوردة أو البضاعة المطابقة أو البضاعة المماثلة المستوردة قد بيعت\nفي السوق المحلي بدول المجلس،بحالتها عند الإستيراد،فتستند القيمة الجمركية،بناءاً على\nطلب المستورد،إلى السعر الذي تباع به الوحدة من البضاعة المستوردة في السوق المحلي\nبدول المجلس،بعد إجراء تصنيع أو تجهيز إضافي عليها ما لم تفقد هويتها،بأكبر كمية\nإجمالية،بين أشخاص غير مرتبطين بعلاقة حسب تعريف بالفقرة (ثانياً )5/من هذه المادة،\nمع مراعاة إستقطاع القيمة التي أضيفت نتيجة التصنيع أو التجهيز الإضافي،والإستقطاعات\nالمنصوص عليها في الفقرة (1)من هذا الأساس.\nسابعاً /القيمة المحسوبة:\n1.إذا لم يمكن تحديد القيمة الجمركية وفق الفقرة (سادساً) من هذه المادة،أو في حالة طلب\nالمستورد تطبيق القيمة المحسوبة قبل القيمة الإستدلالية وفق الفقرة (ثالثاً/ب) من هذه\nالمادة،فإن القيمة الجمركية تستند وفقاً لأحكام هذه الفقرة إلى القيمة المحسوبة،والتي\nتتألف من مجموع ما يلي:\nأ. تكلفة أو قيمة المواد والتصنيع أو غيرها من أعمال التجهيز والمعالجة التي دخلت في إنتاج\nالبضائع المستوردة.\nللمنتج،المعادل للمقدار الذي ينعكس عادة في مبيعات\nب. مقدار الربح والمصروفات العامة ُ\nالبضائع من نفس فئة أو نوع البضائع التي يجري تحديد قيمتها والتي يصنعها منتجون آخرون\nالمص ِ\nدر،لتصديرها إلى دول المجلس. في نفس البلد ُ\nج. الأجور والتكاليف المبينة في الفقرتين (7)و(8)من (رابعاً/ب )1/بهذه المادة.\n2.لا يجوز الطلب من أي شخص مقيم خارج دول المجلس أن يقدم للفحص أي حسابات أو سجلات\nلأغراض تحديد القيمة المحسوبة،أو يطلب منه السماح بالإطاع عليها.غير أنه يمكن لإدارة\nد آخر من المعلومات التي يقدمها منتج البضائع المستوردة،لأغراض\nالجمارك التحقق في بل ٍ\nتحديد القيمة الجمركية وفق أحكام هذه المادة،بموافقة المنتج،وبشرط تقديم إخطار\nمسبق وبفترة كافية إلى حكومة البلد الذي يجري فيه التحقيق،وعدم اعتراضها على ذلك.\nثامناً /الطريقة المرنة:\nأ. إذا تعذر تحديد القيمة الجمركية للبضائع المستوردة بمقتضى الأسس السابقة المشار إليها\nفي الفقرات (رابعاً) حتى (ثامناً) من هذه المادة،يتم مرةً أخرى تطبيق أحكام نفس الأسس\nعلى التوالي،مع توفر قدر معقول من المرونة،لحين الوصول إلى القيمة الجمركية وفق أول\nأساس ممكن.\nب. في حالة عدم التوصل للقيمة الجمركية بإستخدام تلك الأسس حتى في شكلها المرن،يجوز\nإستخدام أساليب معقولة لا تتعارض مع المبادئ والأحكام العامة لاتفاقية القيمة،ومع المادة\nالسابعة من جات 1994م،وعلى أساس البيانات المتوفرة لدى أي جهة في دول المجلس.ولا\nيجوز تحديد القيمة الجمركية بناءاً على ما يلي-:\n1.سعر البيع في دول المجلس لبضائع تم إنتاجها في دول المجلس.\nقيم بديلة.\nٍ 2.القيمة الأعلى من\n3.سعر بيع البضاعة في السوق المحلي ببلد التصدير.\n4.تكلفة إنتاج أخرى غير القيمة المحسوبة التي حددت وفقاً لأحكام الفقرة (سابعاً) بهذه المادة.\n5.سعر البضاعة المباعة للتصدير إلى بلد آخر غير دول المجلس.\n6.قيم عشوائية أو جزافية.\n7.الحدود الدنيا للقيمة الجمركية.\nج. من حق المستورد بناء على طلب خطي أن يحصل على تفسير مكتوب بالأسس التي ُأ ُ\nعتمدت\nفي تحديد القيمة الجمركية بمقتضى أحكام هذه الفقرة.ولا يشمل الإيضاح إلا البضاعة\nالمستوردة قيد التثمين،ولا يخدم كمرجع فيما يتعلق بتثمين الواردات من أي سلعة أخرى\nبنفس جمرك الدخول أو غيره.وليس هذا الإجراء إلا لأغراض المعلومات،ولا يؤثر على أو يحل\nمحل إجراءات الاعتراض والاستئناف الواردة في هذه الفقرة.\nتاسعاً /الملحق التفسيري التالي يعتبر جزءاً لا يتجزأ من هذه المادة.\nالملحق التفسيري\nأولاً: 5/\nً رقم المادة:\nلا ينظر إلى الأرصدة الدائنة التي تخص إرساليات سابقة عند تحديد القيمة الجمركية للبضاعة قيد\nالتثمين.\nمثال:تسلم مستورد إرسالية أجهزة تليفزيون بقيمة 10000ريال وتضمنت الفاتورة مبلغ 9000\nريال كقيمة لألجهزة،ورصيد بمبلغ 1000ريال.وأوضح المستورد أن الرصيد 1000ريال منح له\nكتعويض عن تلف عدد (10)أجهزة تلفزيون من الشحنة السابقة.\nفي هذه الحالة،الرصيد ليس له علاقة بالإرسالية قيد التثمين،وبالتالي تحدد القيمة الجمركية\nلإلرسالية بمبلغ 10000ريال.\nفعلاً أو المستحق دفعه:\nً رقم المادة:رابعاً/أ:الثمن المدفوع\nفعلاً أو المستحق دفعه المعرف في\nً 1.عند تحديد قيمة الصفقة،ينظر في الثمن المدفوع\nالفقرة (ثانياً )1/من هذه المادة،بغض النظر عن طريقة استنباطه فقد يكون نتيجة الحسومات\nأو الإضافات أو المفاوضات،وقد يتم التوصل إليه بتطبيق معادلة معينة.\n2.عبارة \"المستحق دفعه\":تعني أن ثمن البضاعة لم يتم دفعه عند قيام الجمارك بتحديد القيمة\nالجمركية للبضاعة المستوردة،وسيكون هذا الثمن المتفق على دفعه هو الأساس في\nتحديد القيمة الجمركية.ولا يلزم أن يتم الدفع بشكل تحويل المبلغ،فقد يتم الدفع بشكل،\nخطابات الاعتماد أو السندات المالية،بشكل مباشر أو غير مباشر.\n3.الدفع غير المباشر:يتضمن تسوية دين من قبل المشترى للبائع كليا أو جزئيا،أو قد يحصل\nالمشترى على تخفيض في سعر البضاعة قيد التثمين،كوسيلة لتسديد ديناً له على البائع.ولا\nتدخل في الدفع غير المباشر الأنشطة التي يقوم بها المشترى على حسابه مثا الدعاية،ما\nعدا الأنشطة المنصوص عليها في (رابعاً/ب) على رغم أنها تنفع البائع أيضاً.ولا تضاف تكاليف\nفعلاً أو المستحق دفعه،عند تحديد القيمة الجمركية\nً تلك الأنشطة إلى الثمن المدفوع\nللبضاعة المستوردة.\nا أو المستحق دفعه مبلغاً عن تجميع\n4.البضاعة المجمعة:يمكن أن يمثل الثمن المدفوع فع ً\nالبضاعة المستوردة.فيحتسب الثمن المدفوع أو المستحق دفعه بإضافة قيمة المكونات\nوالتجميع.\nمثال:سبق أن زود مستورد لمصنع تجميع أجنبي مكونات جاهزة للتجميع،وتبلغ قيمتها أو\nتكلفتها بمصنع التجميع (1)ريال للوحدة.ويدفع المستورد لمصنع التجميع نصف ريال عن الوحدة\nمقابل التجميع.إذن تكون قيمة الصفقة للوحدة الواحدة المجمعة هي (1).50ريال.\nرقم المادة:رابعاً/أ: 1/القيود التي ليس لها تأثير كبير على قيمة البضاعة:\nلا تمنع من تحديد القيمة الجمركية بإستخدام طريقة قيمة الصفقة،على سبيل المثال:\n1.القيود التي تحدد تاريخ محدد لبيع البضاعة المستوردة.\nمثال(:)1إشترى مستورد بضاعة عبارة عن ملابس،وإتضح من عقد الشراء أن البائع إشترط على\nمثاًل.\nً المشتري (المستورد) أن لا يقوم ببيعها إلا في تاريخ معين،كبداية فصل الشتاء\n2.القيود التي تحدد مكان معين في بلد الإستيراد لإعادة بيع البضاعة المستوردة.\nمثال(:)2مع الأخذ في الإعتبار المثال (،)1لو كان البائع قد إشترط على المشتري (المستورد)\nثاًل.\nعدم بيع البضاعة إلا في مدينة الرياض م ً\n3.القيود التي تحدد طريقة معينة لإعادة البيع في بلد الإستيراد.\nمثال(:)3لو كان البائع في المثال (،)1إشترط على المشتري (المستورد) بيع البضاعة عن طريق\nمندوبي المبيعات فقط،أو من خلال الإعلانات في وسائل الإعلام.\nرقم المادة:رابعاً/أ: 2/الشروط أو الإعتبارات التي لا يمكن تحديد قيمه لها:\nًة أخرى أيضاً بكميات\nكأن يحدد البائع سعر البضاعة المستوردة بشرط أن يشتري المستورد بضاع ً\nمحدده.أو أن يتوقف سعر البضاعة المستوردة على السعر أو الأسعار التي يبيع بموجبها المستورد،\nبضاعة أخرى إلى بائع البضاعة المستوردة.أو أن يحدد البائع سعر البضاعة المستوردة على أساس\nشكل الدفع الذي لا يرتبط جوهريا بالبضاعة،مثال إذا كانت البضاعة مما ستخضع لمزيد من التصنيع\nمن قبل المشتري،وأشترط البائع على المشتري حصوله على كمية معينة من البضاعة بعد\nالتصنيع.\nرقم المادة:رابعاً/أ:4/إذا كان لدى الجمارك معلومات تفصيلية كافية عن\nالمشترى والبائع بما يقنعها أن العلاقة بينهما لم تؤثر على الثمن المدفوع فعلاً أو المستحق\nدفعة،يقبل الثمن بدون طلب معلومات إضافية من المستورد.أما إذا كان لدى الجمارك شكوك\nبأن الإرتباط قد أثر على الثمن فعليها أن تبلغ المستورد بذلك،ويعطى مهلة كافية للرد،ويكون\nالتبليغ خطياً،إذا طلب المستورد ذلك.\nرقم المادة:رابعاً/أ/4/أ:تقبل قيمة الصفقة،بعد دراسة ظروف البيع،إذا تبين\nللجمارك الآتي:\n1.أن المشتري والبائع،على رغم إرتباطهما،يشتريان ويبيعان لبعضهما البعض كشخصين غير\nمرتبطين.\n2.إذا تم تحديد القيمة بطريقة تتوافق مع الممارسات العادية في تحديد الأسعار في مجال\nصناعة معينة،فإن تلك مؤشرات إلى أن الثمن لم يتأثر بالعلاقة.\n3.إذا ثبت أن الثمن كاف لتغطية كافة التكاليف بالإضافة إلى الربح،ويماثل إجمالي أرباح الشركة\nالمتحقق في فترة زمنية معينة،من إجمالي مبيعات من نفس الفئة أو النوع.\nرقم المادة:رابعاً/أ/4/ب:الأقيام المعيارية (الإختبارية):\n1.هي أقيام سبق قبولها كقيم جمركية لبضائع تم تصديرها إلى دول المجلس في وقت\nاستيراد البضاعة المستوردة أو فترة قريبة منه.وتستعمل الأقيام المعيارية للمقارنة فقط\nبقيمة الصفقة للبضاعة المستوردة.\n2.لتحديد ما إذا كانت قيمة الصفقة قريبة من القيمة المعيارية (الإختبارية)،ينظر في العوامل\nالتالية:\nأ. طبيعة البضاعة المستوردة ومجال الصناعة.\nب. فترة استيراد البضاعة.\nج. هل الاختلاف في القيمة ملحوظ تجارياً.\nد. هل يعزى الاختلاف في القيمة إلى تكاليف الشحن الداخلية ببلد التصدير.\nوحيث أن تلك العوامل أعلاه قد تختلف،فلا يمكن تطبيق معيار موحد كنسبة مئوية محددة في\nكل حالة.فقد يكون اختلافاً طفيفاً في قيمة نوعية معينة من البضائع غير معقول،في حين أن\nواًل.\nاختلافاً كبيراً في قيمة نوع آخر من البضائع قد يكون مقب ً\n3.عند تطبيق الأقيام المعيارية،يؤخذ في الاعتبار وجوه الاختلاف بين القيمة المصرح عنها والقيمة\nالمعيارية،ويتم تسوية الاختلاف إذا كانت مبنية على بيانات موضوعية مقدمة من قبل المشتري\nأو متوفرة لدى الجمارك.وقد يكون الاختلاف يتعلق بما يلي:\nأ. المستوى التجاري للمستورد.\nب. الكمية المستوردة أو المتعاقد عليها.\nج. التكاليف الواردة في الفقرتين (7)و(8)من (رابعاً/ب )1/بهذه المادة.\nد. التكاليف التي تحملها البائع في عمليات بيع لا يكون فيها البائع والمشتري غير مرتبطين.ولا\nيتحملها في عمليات بيع يكون البائع والمشتري فيها مرتبطين.\n4.إذا إتضح من نتيجة المقارنة أو الإختبار أن إحدى القيم المعيارية المنصوص عليها في (رابعاً/\nأ/4/ب) من هذه المادة،قريبة من القيمة المصرح عنها،فا يلزم اللجوء إلى دراسة ظروف\nالبيع لتحديد ما إذا أثر الإرتباط بين المشترى والبائع في الثمن أم لا.وإذا كان يتوفر لدى\nالجمارك معلومات كافية مسبقة تقتنع بها دون إجراء مزيد من التحقيق بأن إحدى القيم\nالمعيارية (الإختبارية) قريبة من الثمن المصرح عنه،فإنها لا تلزم المستورد بإثبات صحة القيمة\nالمعيارية.\nرقم المادة:رابعاً/ب: 4/1/\nأ. متطلبات إضافة قيمة الأصناف المساعدة:\nفعلاً أو المستحق دفعه.\nً 1.إذا لم يسبق إدراجها ضمن الثمن المدفوع\n2.إذا قدمت مجانا من قبل المستورد (المشتري) إلى المنتج (الشركة الصانعة) بشكل مباشر أو\nغير مباشر.\n3.إذا كانت مقدمة بتكلفة مخفضة،فلا تتم الإضافة إلا بمقدار المبلغ المخفض.\n4.إذا أستخدمت في إنتاج البضاعة قيد التثمين.\nب. تحديد قيمة الأصناف المساعدة:\nلإضافة قيمة الأصناف المساعدة إلى قيمة الصفقة للبضاعة قيد التثمين،أو إدراجها ضمن مكونات\nالقيمة المحسوبة،فيتعين تحديد قيمة الأصناف المساعدة وتكاليف شحنها إلى مكان إنتاج\nالبضاعة قيد التثمين بما في ذلك الرسوم والضرائب التي لا يتم إستردادها،وتوزيعها بشكل\nنسبي على قيمة البضاعة المستوردة على النحو التالي:\n1.إذا كان الصنف المساعد يتكون من مواد أو مكونات أو قطع أو أجزاء مماثلة داخله في إنتاج\nالبضاعة المستوردة،أو مستهلكة خلال إنتاج البضاعة المستوردة،وحصل عليه المشترى من\nبائع غير مرتبط،فان قيمة الصنف المساعد هي تكلفة شرائه.وإذا كان الصنف المساعد مما\nأنتجه المشتري أو شخص مرتبط به،فإن قيمته هي تكلفه إنتاجه.\n2.إذا كانت الأصناف المساعدة تتكون من أدوات أو مسابك أو قوالب أو أصناف مماثلة أستخدمت\nفي إنتاج البضاعة المستوردة،وقد اشتراها المستورد من بائع غير مرتبط،فان قيمتها هي\nتكلفة إنتاجها.وإذا كانت الأصناف المساعدة قد استخدمت سابقاً،فان التكلفة الأساسية\nلشرائها أو إنتاجها ينبغي تعديلها لتعكس القيمة الحالية بعد الاستخدام قبل تحديد قيمته.\nأما إذا كان المستورد قد استأجر الصنف المساعد من شخص غير مرتبط،فإن قيمة الصنف\nالمساعد هي تكلفه إيجاره.وفى كل الحالتين يتم إضافة تكلفة أي تعديلات أو إصلاحات\nأجريت عليه.\nمثال(:)1قام مستورد خليجي بتزويد منتج أجنبي بتصاميم تفصيلية لازمة لتصنيع البضاعة.وكان\nالمستورد الخليجي قد اشترى تلك التصاميم من شركة هندسية في دول المجلس بغية تزويدها\nللمنتج الأجنبي.\nس:هل تتضمن القيمة الجمركية للبضاعة،قيمة ذلك الصنف المساعد؟\nالإجابة:لا،لأن أعمال التصاميم المنجزة في دول المجلس لا يجوز إضافتها إلى الثمن المدفوع\nفعلاً أو المستحق دفعه.\nالُمنتج الأجنبي (المصدر) بقوالب مجاناً.وهذه القوالب مما\nمثال(:)2قام مستورد خليجي بتزويد ُ\nيلزم لتصنيع بضاعة للمستورد الخليجي.وكان لدى المستورد الخليجي قوالب مصنعة في إحدى\nدول المجلس وقوالب أخرى مصنعة خارج دول المجلس.\nس:هل تتضمن القيمة الجمركية للبضاعة،قيمة القوالب؟\nالإجابة:نعم،يلزم إدخال قيمة القوالب في قيمة الصفقة سواء أنتجت في دول المجلس أو خارج\nدول المجلس.\nج. توزيع قيمة الأصناف المساعدة:\nيتم توزيع قيمة الأصناف المساعدة على البضاعة المستوردة بطريقة معقولة ومناسبة للظروف\nوحسب مبادئ المحاسبة المقبولة عموماً.من واقع المستندات المقدمة من قبل المستورد.\nعلى سبيل المثال:إذا كان إجمالي عدد القطع المتوقع تصنيعها بإستخدام الصنف المساعد سيتم\nتصديره إلى بلد الإستيراد،فيجوز توزيع إجمالي قيمة الأصناف المساعدة بإستخدام أحد الطرق\nالتالية:\n1.على الإرسالية الأولى إذا كان المستورد يرغب في دفع الرسوم على إجمالي قيمة الصنف\nالمساعد مرة واحدة.\n2.على عدد الوحدات المنتجة عند وصول الإرسالية الأولى.\n3.على كامل الإنتاج المتوقع للصنف المساعد،عندما توجد عقود أو تعهدات قاطعة بشأن هذا الإنتاج\n4.أي طريقة يطلبها المستورد للتوزيع تتفق مع مبادئ المحاسبة المقبولة عموما.\n5.إذا كانت البضاعة المستوردة عبارة عن جزء من الإنتاج،أو إذا كان الصنف المساعد يستخدم بعدة\nدول،فتعتمد طريقة التوزيع على المستندات المقدمة من قبل المستورد.\nللُمنتج قالباً لاستخدامه في إنتاج البضاعة المستوردة،وكان المستورد قد\nمثال:أرسل المستورد ُ\nالُمنتج على شراء 10000قطعة.وحين وصول الإرسالية الأولى المحتوية على 1000\nإتفق مع ُ\nالُمنتج قد إنتهى من إنتاج 4000قطعة.\nقطعة،كان ُ\nفي هذه الحالة،يجوز للمستورد أن يطلب من الجمارك توزيع قيمة القالب على 1000أو 4000أو\n10000قطعة،أو أي عدد يتوافق مع مبادئ المحاسبة المقبولة عموماً.\nرقم المادة:رابعاً/ب: 5/1/\n1.يجوز أن تشمل الرسوم (المبالغ) التي يدفعها المشتري مقابل استغلاله لحق من حقوق الملكية\nالفكرية أو تراخيص الاستعمال من بين ما تشمله،التكاليف التي تغطي براءات الاختراع،\nوالعالمات التجارية المسجلة وحقوق النشر.حيث يتم إضافتها إلى القيمة الجمركية.\n2.لا يضاف إلى الثمن المدفوع فعلاً أو المستحق دفعه للبضاعة المستوردة قيد التثمين،رسوم\nحق إعادة الإنتاج،الذي يشمل البضائع مثل:أصول أو نسخ الأعمال الفنية أو العلمية،وأصول\nأو نسخ الموديات أو الرسومات الصناعية،وموديات الأجهزة وعينات منها،و فصائل نباتية أو\nحيوانية.\n3.لا تضاف المبالغ التي يدفعها المشتري مقابل الحق في توزيع أو إعادة بيع البضاعة المستوردة،\nكشرط لبيع\nٍ فعلاً أو المستحق دفعه،إذا لم تكن تلك المبالغ مدفوعة\nً إلى الثمن المدفوع\nالبضاعة لتصديرها إلى دول المجلس.\n4.إذا كان حق الملكية الفكرية مبنياً جزئياً على أساس البضاعة المستوردة وجزئيا على عوامل\nأخرى غير متعلقة بالبضاعة المستوردة،كأن لا يمكن تمييز حق الملكية الفكرية عن ترتيبات\nمالية خاصة بين المشترى والبائع.فإنه يتعذر تحديد القيمة الجمركية وفقاً لطريقة قيمة\nالصفقة بالفقرة (رابعاً) من هذه المادة.\n5.أما إذا كان حق الملكية الفكرية،مبنياً على البضاعة المستوردة فقط ويمكن تحديد مقداره\nا أو المستحق دفعه.\nبسهولة.ففي هذه الحالة،يضاف إلى الثمن المدفوع فع ً\nرقم المادة:رابعاً/ج/1/ج:طريقة إستبعاد الرسوم الجمركية القيمية وأي ضرائب\nأخرى:\nعاًل أو المستحق الدفع يبلغ (56000)ريال ويشمل:قيمة البضاعة\nمثال:إذا كان الثمن المدفوع ف ً\nثاًل في دول\nالواردة،والتأمين،والشحن (سيف)،والرسوم الجمركية القيمية التي تبلغ نسبتها م ً\nالمجلس،20%بالإضافة إلى ضريبة أستحقت بعد الإستيراد مقدارها 500ريال.\nيتم إستقطاع الرسوم الجمركية والضرائب كالتالي:\n55500 = 500 - 56000\n( 46250 = 1.20 ÷ 55500النتيجة تمثل القيمة سيف)\nرقم المادة:رابعاً/ج/1/د:لا تدخل في القيمة الجمركية،الأرباح والمدفوعات الأخرى من المشتري\nإلى البائع،والتي ليس لها علاقة بالبضائع المستوردة.،كأرباح الأسهم التي تدفع للمساهمين التي\nلا تتعلق مباشرة بالبضاعة المستوردة.ويجب التفريق بين أرباح الأسهم وبين العوائد،حيث أن العوائد\nعبارة عن جزء مستحق للبائع بشكل مباشر أو غير مباشر نتيجة عملية إعادة بيع،أو تصرف،أو إستخدام\nللبضاعة المستوردة ويجب إضافتها إلى قيمة البضاعة.\nرقم المادة:رابعاً/ج/1/هـ:فوائد التمويل المالي،لشراء البضاعة المستوردة،المقدم من البائع أو\nمن البنك أو من أي شخص آخر،لا تدخل في القيمة الجمركية بشرط-:\nفعلاً أو المستحق الدفع نظير البضاعة\nً 1.أن تكون هذه الفوائد مفصولة عن الثمن المدفوع\nالمستوردة.\n2.أن يكون الإتفاق المالي محرر خطياً.\nفعال\nً فعال بالسعر المصرح عنه وهو الثمن المدفوع\nً 3.أن يستطيع المشتري إثبات أن البضاعة مباعة\nأو المستحق الدفع.\n4.ألا تزيد نسبة فائدة التمويل عن المستوى السائد في البلد الذي قدم فيه التمويل بخصوص تلك\nالصفقة.\nرقم المادة:رابعاً/ج/1/و:التتضمن القيمة لألغراض الجمركية تكاليف الأنشطة التي يقوم بها\nالمشتري على حسابه،ما عدا الأنشطة التي يجوز تسوية تكلفتها بموجب الفقرة (رابعاً/ب)،حتى ولو\nكانت ذات فائدة للبائع.ومن هذه الأنشطة على سبيل المثال:الدراسات والبحوث التسويقية،الدعاية\nوالإعلان،تحضير غرف العرض،المشاركة في المعارض التجارية.\nرقم المادة:رابعاً/ج:2/الأرصدة المالية التي لدى البائع لصالح المستورد،والمدرجة ضمن الثمن\nفعلاً أو المستحق الدفع للبضاعة قيد التثمين كتعويض عن إرسالية أو معاملة تجارية سابقة.\nً المدفوع\nيتم تسويتها بعيداً عن الإرسالية قيد التثمين حيث أنها أرصدة لشحنات سابقة.يرجع للمثال في فقرة\n(أولاً )5/من هذا الملحق.\nرقم المادة:خامساً/أ:\n1.تعتبر القيمة الجمركية هي قيمة الصفقة لبضائع مطابقة،سبق قبولها كقيمة جمركية وفقاً\nلأحكام الفقرة (رابعاً) من هذه المادة،على أساس أن تلك البضاعة المطابقة بيعت للتصدير لإحدى\nدول المجلس،في نفس التاريخ الذي صدرت فيه البضاعة قيد التثمين أو قريبا منه،ومن نفس\nالشركة الصانعة،وبنفس المستوى التجاري للمستورد،ونفس الكميات للبضائع المستوردة قيد\nالتثمين.\n2.إذا لم تتوفر مثل هذه القيمة تستخدم قيمة الصفقة للبضائع المطابقة حسب الأولوية وفقاً\nلآلتي:\nأ. من نفس الشركة الصانعة،وبكميات و/أو مستوى تجاري مختلف.\nب. من شركة صانعة مختلفة،وبنفس الكميات و/أو بنفس المستوى التجاري.\nج. من شركة صانعة مختلفة،وبكميات مختلفة و/أو بمستوى تجاري مختلف.\n3.يقصد ب \"المستوى التجاري للمستورد\" أي نشاط المستورد في بلد الاستيراد:البيع بالجملة،أو\nبالتجزئة،أومستهلك.\n4.إذا كان هناك اختلاف بين البضاعة قيد التثمين والبضاعة المماثلة من ناحية الكميات والمستوى\nالتجاري والتكاليف المشار إليها في الفقرة (رابعاً/ب )1/من هذه المادة،يتم التعديل في قيمة\nالصفقة المماثلة لمراعاة تلك الاختلافات،سواءاً أدى ذلك إلى الزيادة أو النقصان،وعلى أساس\nأدلة قاطعة تثبت بوضوح معقولية التعديلات ودقتها،كقائمة أسعار معتمدة تتضمن أقياماً تشير\nإلى مستويات مختلفة أو كميات مختلفة.\nمثال:إذا كانت البضاعة المستوردة قيد التثمين تتكون من 10قطع،والبضاعة المماثلة الوحيدة التي\nتتوفر لها قيمة الصفقة تشتمل على 500قطعة،وهناك قائمة أسعار من البائع في الخارج تتضمن\nأسعار مختلفة حسب الكميات.ففي هذه الحالة يمكن التعديل باللجوء إلى قائمة الأسعار تلك،\nوتطبيق السعر المناسب حسب كمية البضاعة المستوردة قيد التثمين.ولا يلزم ان تكون الصفقة\nللبضاعة المطابقة قد تمت بكميات 10قطع،طالما وجدت قائمة لألسعار صالحة من واقع المبيعات\nبكميات أخرى.ولكن في حالة غياب مثل هذا الإجراء الموضوعي فمن غير المناسب تحديد القيمة\nالجمركية بموجب الأحكام الخاصة بقيمة الصفقة لبضاعة مطابقة.\n5.وإذا وجد عند تطبيق هذه الفقرة أكثر من قيمة صفقة لبضائع مطابقة مباعة على نفس\nالمستوى التجاري وبنفس الكميات وبنفس ظروف البيع (من ناحية كيفية الدفع:نقداً أو\nبأجل(،).ومن ناحية حالة البضاعة عند البيع:بضاعة خط إنتاج أول،أو بضاعة \"إستوكات\" كبقايا\nخطوط الإنتاج أو تصفية مصنع أو مبيعات نهاية الموسم..الخ).عندها يتم الأخذ بأدنى هذه\nالأقيام.\nرقم المادة:خامساً/ب:\n1.تعتبر القيمة الجمركية هي قيمة الصفقة لبضائع مماثلة،سبق قبولها كقيمة جمركية وفقاً\nلأحكام الفقرة (رابعاً) من هذه المادة،على أساس أن تلك البضاعة المماثلة بيعت للتصدير\nلإحدى دول المجلس،في نفس التاريخ الذي صدرت فيه البضاعة قيد التثمين أو قريبا منه،\nومن نفس الشركة الصانعة،وبنفس المستوى التجاري للمستورد،ونفس الكميات للبضائع\nالمستوردة قيد التثمين.\n2.إذا لم تتوفر مثل هذه القيمة تستخدم قيمة الصفقة للبضائع المماثلة حسب الأولوية وفقاً\nلآلتي:\nأ. من نفس الشركة الصانعة،وبكميات و/أو مستوى تجاري مختلف.\nب. من شركة صانعة مختلفة،وبنفس الكميات و/أو بنفس المستوى التجاري.\nج. من شركة صانعة مختلفة،وبكميات مختلفة و/أو بمستوى تجاري مختلف.\n3.يقصد ب \"المستوى التجاري للمستورد\" أي نشاط المستورد في بلد الإستيراد:البيع بالجملة،أو\nبالتجزئة،أو مستهلك.\n4.إذا كان هناك إختاف بين البضاعة قيد التثمين والبضاعة المماثلة من ناحية الكميات والمستوى\nالتجاري والتكاليف المشار إليها في الفقرة (رابعاً/ب )1/من هذه المادة،يتم التعديل في\nقيمة الصفقة المماثلة لمراعاة تلك الاختلافات،سواءاً أدى ذلك إلى الزيادة أو النقصان،وعلى\nأساس أدلة قاطعة تثبت بوضوح معقولية التعديات ودقتها،كقائمة أسعار معتمدة تتضمن\nأقياماً تشير إلى مستويات مختلفة أو كميات مختلفة.\nمثال:إذا كانت البضاعة المستوردة قيد التثمين تتكون من 10قطع،والبضاعة المماثلة الوحيدة\nالتي تتوفر لها قيمة الصفقة تشتمل على 500قطعة،وهناك قائمة أسعار من البائع في الخارج\nتتضمن أسعار مختلفة حسب الكميات.ففي هذه الحالة يمكن التعديل باللجوء إلى قائمة\nالأسعار تلك،وتطبيق السعر المناسب حسب كمية البضاعة المستوردة قيد التثمين.ولا يلزم أن\nتكون الصفقة للبضاعة المماثلة قد تمت بكميات 10قطع،طالما وجدت قائمة لألسعار صالحة\nمن واقع المبيعات بكميات أخرى.ولكن في حالة غياب مثل هذا الإجراء الموضوعي فمن غير\nالمناسب تحديد القيمة الجمركية بموجب الأحكام الخاصة بقيمة الصفقة لبضاعة مماثلة 0\n5.إذا وجد عند تطبيق هذه الفقرة أكثر من قيمة صفقة لبضائع مماثلة مباعة على نفس\nالمستوى التجاري وبنفس الكميات وبنفس ظروف البيع (من ناحية كيفية الدفع:نقداً أو\nبأجل.ومن ناحية حالة البضاعة عند البيع:بضاعة خط إنتاج أول،أو بضاعة \"إستوكات\" كبقايا\nخطوط الإنتاج أو تصفية مصنع أو مبيعات نهاية الموسم..الخ).عندها يتم الأخذ بأدنى هذه\nالأقيام.\nرقم المادة:سادساً: 1/\n1.إذا بيع عدد من الوحدات من البضاعة المستوردة نفسها أو من البضاعة المطابقة أو البضاعة\nالمماثلة،بكميات مختلفة فيكون سعر الوحدة هو السعر الذي بموجبه تم بيع أكبر عدد من\nالوحدات.\nمثال (: )1بيعت بضاعة بناءاً على قائمة أسعار تتضمن أسعاراً مخفضة للوحدة عند شراء كميات\nكبيرة.وقد نتج ما يلي:\nإجمالي الكمية سعر الوحده\nعدد عمليات البيع كمية الوحدات المباعة\nالمباعة بسعر واحد (ر.س)\n10عمليات بيع من 5وحدات\n65 5عمليات بيع من 3وحدات 100 10 -1وحدات\n55 5عمليات بيع من 11وحدة 95 25 -11وحدة\nعملية بيع واحدة من 30وحدة\n80 عملية بيع واحدة من 50وحدة 90 أكثر من 25وحدة\nعٍر واحد وهو (90رس)،\nفي هذه الحالة فإن كمية (80)قطعة،هي أكبر كمية إجمالية بيعت بس ٍ\nوبالتالي فإن \"سعر الوحدة ألكبر كمية إجمالية\" هو (90)رس.\nمثال (: )2جرت عمليتا بيع إلى شخصين غير مرتبطين،أولهما عبارة عن (500)وحدة مباعة بسعر\nيااًل للوحدة.\nااًل للوحدة،بينما عملية البيع الثانية عبارة عن (400)وحدة مباعة بسعر (90)ر ً\n(95)ري ً\nفي هذه الحالة فإن أكبر عدد من الوحدات المباعة بسعر معين في هذا المثال هو (، )500لذا\nااًل.\nفأن سعر الوحدة ألكبر كمية إجمالية مباعة هو (95)ري ً\nمثال (: )3بيعت الكميات التالية إلى أشخاص غير مرتبطين بأسعار مختلفة،على النحو المبين\nأدناه -:\nسعر الوحدة (رس) الكميات المباعة المبيعات:\n100 40\n90 30\n100 15\n95 50\n100 25\n90 35\n100 5\nسعر الوحدة (رس) إجمالي الكميات المباعة بسعر واحد المجاميع:\n90 65\n95 50\n100 60\n105 25\nفي هذه الحالة،فأن أكبر كمية إجمالية مباعة بسعر معين بهذا المثال هو (65)وحدة،لذا فإن\nااًل خليجياً.\nسعر الوحدة ألكبر كمية إجمالية هو (90)ري ً\nرقم المادة:سادساً /1/أ:\nصدر خارج دول المجلس،ومباعة\nالم ِّ\n1.في حال كون ملكية البضاعة قيد التثمين تعود إلى البائع أو ُ\nعلى أساس عمولة توكيل أو وكالة،يتم إستقطاع تلك \"العمولة\":وهي تلك،المستحقة أو التي\nتستحق عادةً،من البائع للمستورد نظير التكاليف التي يتحملها مقابل بيعه البضاعة محلياً.\nفعندئذ\nٍ 2.أما إذا كانت البضاعة قيد التثمين مباعة لصالح المستورد،الذي يعمل لحسابه الخاص،\nيتم إستقطاع \"الأرباح والمصروفات العامة\":وهي الأرباح والمصروفات العامة التي يضيفها\nالمستورد إلى ثمن البيع في السوق المحلي،ما لم تكن غير متقاربة ومنسجمة مع مقدار الأرباح\nوالمصروفات العامة المعتاد إضافتها خلال صفقات البيع في دول المجلس للبضائع من نفس فئة\nأو نوع البضاعة قيد التثمين،المستوردة من نفس البلد أو من بلدان أخرى.حيث يتم إستقطاع ذلك\nصد ٍر آخر غير المستورد.\nالمقدار المعتاد على أساس المعلومات المناسبة من َم َ\nكمبلغ واحد بصورة إجمالية.فقد يكون أحد\nٍ 3.ينبغي الأخذ بمبلغ الأرباح ومبلغ المصروفات العامة\nالمقدارين غير منسجم مع مثيله في صناعة معينة،ولكن طالما أن المجموع الكلي لهما،منسجم\nمع مجموع \"الأرباح والمصروفات العامة\" المعتادة،فينبغي إستخدامه.وهذا المقدار المراد\nاستقطاعه،يجب أن يحدد على أساس المعلومات المقدمة من قبل المستورد أو بالنيابة عنة.\nوتتضمن المصروفات العامة،التكاليف المباشرة وغير المباشرة لتسويق البضائع المعنية.\n4.البضائع من نفس الفئة أو النوع:هي البضائع التي تقع ضمن مجموعة أو دائرة من البضائع التي\nتنتجها صناعة أو قطاع صناعي معين بما في ذلك البضائع المطابقة والبضائع المماثلة المستوردة\nدون الإقتصار عليهما،سواء من نفس بلد إنتاج أو تصدير البضاعة قيد التثمين أو من بلد آخر.\nويعتمد تحديد ما إذا كانت بضائع معينة من نفس الفئة أو النوع،على اساس كل حالة على حدة\nوذلك بالرجوع إلى الظروف المحيطة بالبضاعة.\nرقم المادة:سادساً: 3/\n1.قد توجد حالات يمكن فيها،رغم ضياع هوية البضائع المستوردة،تحديد القيمة المضافة\nنتيجة التجهيز أو التصنيع بدقة دون وجود صعوبات غير معقولة.على أن يتم ذلك بناءاً على\nالمعلومات الموضوعية والكمية،المرتبطة بتكلفة هذا العمل.ويستند في ذلك على معادلات\nالتصنيع المقبولة ووصفاته وأساليب الإنشاء وغير ذلك من ممارسات الصناعة.\n2.ومن ناحية أخرى،فقد توجد كذلك حالات تحتفظ فيها البضائع المستوردة بهويتها،لكنها\nتكون عنصرا ثانويا في البضائع التي بيعت في البلد المستورد،بحيث لا يكون هناك ما يبرر\nإستخدام هذا الأسلوب للتقييم.ونظراً لذلك،فينبغي بحث كل حالة على حدة.\nرقم المادة:سابعاً:1/\nكقاعدة عامة،تحدد القيمة الجمركية بمقتضى هذه المادة على أساس المعلومات المتوفرة\nبسهولة في دول المجلس.وقد يكون من الضروري عند إستخدام القيمة المحسوبة بالأساس\n(سابعاً)،بحث تكاليف إنتاج البضائع التي يجري تحديد قيمتها وغيرها من المعلومات التي يجب\nالحصول عليها من خارج دول المجلس.وعموماً،يقتصر استخدام طريقة القيمة المحسوبة على\nالحالات التي يكون فيها المشتري والبائع مرتبطين،ويكون المنتج على استعداد لأن يقدم إلى\nالجمارك المعلومات الضرورية المتعلقة بالتكلفة،ويوفر التسهيلات لإجراء أي تحقق قد يلزم فيما\nبعد.\nرقم المادة:سابعاً /1/أ:\n1.تحدد \"التكلفة أو القيمة\" المشار إليها في هذه الفقرة على أساس المعلومات المتعلقة بإنتاج\nالمنتج أو بالنيابة عنه،وتنسجم مع مبادئ المحاسبة\nالبضاعة قيد التثمين،المقدمة من نفس ُ\nالمقبولة عموماً في البلد المصدر.وفي حالة توفر تلك المعلومات من مصدر آخر على الجمارك\nأن تقوم بإخطار المستورد،بناءاً على طلبه،بالمعلومات التي سيتم إستخدامها ومصدرها،مع\n(أولا )3/من هذه المادة.\nً مراعاة السرية وفقاً للفقرة\n2.تشمل التكلفة أو القيمة المشار لها بهذه الفقرة:\nأ. تكاليف العناصر الواردة بالفقرات (رابعاً/ب)2(/1/و( ))3من هذه المادة.\nب. تكاليف العناصر المحددة في (رابعاً/ب )4/1/من هذه المادة.موزعة توزيعاً نسبياً بمقتضى\nأحكام الفقرة (رابعاً/ب )1/4/من هذا الملحق التفسيري.مع مراعاة أن تكاليف العناصر الواردة\nفي الفقرة (رابعاً/ب/1/4/د)،التي يتم تنفيذها في دول المجلس،لا تدخل في القيمة\nالُمنتج في الحصول على هذه العناصر.\nالجمركية ضمن تكلفة المواد،إلا بالقدر الذي يتحمله ُ\nولا يجوز بأي حال تكرار إحتساب قيمة العناصر المشار إليها في هذه الفقرة.\nرقم المادة:سابعاً /1/ب:\n1.مقدار الربح والمصروفات العامة ينبغي أن يؤخذ بصورة إجمالية،فإذا كانت أرباح منتج ما\nمنخفضة،ومصروفاته العامة مرتفعة،فإن أخذهما معا ككل يمكن أن يكون منسجما مع\nالربح والمصروفات العامة التي تنعكس عادة في مبيعات البضائع من نفس الفئة أو النوع.\n2.عندما لا تتوافق الأرقام التي قدمها المنتج عن الربح والمصروفات العامة مع الأرقام التي\nتنعكس عادة في مبيعات بضائع من نفس فئة أو نوع البضائع التي يجري تقييمها،يقوم\nبإنتاجها منتجون في البلد المصدر لتصديرها إلى دول المجلس،في هذه الحالة،يجوز أن\nيستند تحديد مقدار الربح والمصروفات العامة على بيانات موضوعية،وفقاً للفقرة (ثانياً)11/\nمن هذه المادة،غير التي قدمها منتج البضائع أو التي قدمت بإسمه.\n3.تغطي المصروفات العامة المشار إليها بالفقرة (سابعاً/1/ب) من هذه المادة،جميع التكاليف\nالمباشرة والغير مباشرة إلنتاج وبيع البضائع للتصدير التي لم تدخل ضمن الفقرة (سابعاً/1/أ)\nمن هذه المادة.\n4.عند تحديد الأرباح والمصروفات العامة المعتادة وفقاً لأحكام الفقرة (سابعاً/1/ب) من هذه\nالمادة،يتم البحث في أضيق مجموعة أو دائرة من البضائع من نفس الفئة أو النوع بحيث\nتشمل مبيعات البضائع المطابقة أو المماثلة المنتجة في نفس بلد إنتاج البضاعة التي يجري\nتحديد قيمتها،والمباعة للتصدير إلى دول المجلس بما فيها البضائع التي يجري تحديد\nقيمتها.ويتحدد ما إذا كانت بضائع معينة من نفس فئة أو نوع بضائع أخرى،في كل حالة\nعلى حدة مع الرجوع إلى الظروف المحيطة.\nرقم المادة:ثامناً/أ:\nهذه الفقرة لا تعطي طريقة محددة للتثمين بل تقضي بان يتم تحديد القيمة الجمركية وفقاً\nلآلتي:\n1.باستخدام وسائل أو أساليب معقولة.\n2.تنسجم أو تتفق مع المبادئ والأحكام العامة لاتفاقية القيمة الجمركية،ومع المادة السابعة\nمن جات 1994م.\n3.وعلى أساس البيانات المتاحة في البلد المستورد.\n-1تحديد القيمة باستخدام وسائل معقولة\nيجب أن تبنى القيمة الجمركية بموجب أحكام هذه الفقرة،ألبعد حد ممكن وفقاً ألسس تحديد\nواًل من\nالقيمة الجمركية السابق ذكرها في الفقرات من (رابعاً) حتى (سابعاً) مع توفر قدراً معق ً\nالمرونة في التطبيق،بما يتماشى مع أهداف وأحكام إتفاقية القيمة،وإذا تعذر تحديد القيمة\nالجمركية باستعمال تلك الأسس،يجوز تحديد القيمة الجمركية باستخدام طرق منطقية أخرى\nبشرط:\n1.أن تكون تلك الطرق غير ممنوعة وفقاً للفقرة (ثامناً/ب).\n2.أن تكون تلك الطرق منسجمة ومتفقة مع المبادئ والأحكام العامة لاتفاقية القيمة.\nمثال:\nوردت إرسالية عبارة عن جهاز مستأجر لفترة محددة،على سبيل المثال لمدة ثلاث سنوات (تمثل\nعمر الجهاز الإفتراضي) بإيجار شهري وقدره (2000)ريال.ولم يسبق إستيراد جهاز مطابق أو\nمماثل.وتعذر تحديد القيمة الجمركية لذلك الجهاز وفق الأسس الواردة في الفقرات (رابعاً حتى\nسابعاً).\nولتحديد القيمة الجمركية للجهاز يؤخذ في الإعتبار عدم وجود بيع لتطبيق قيمة الصفقة،ولم\nيسبق إستيراد جهاز مطابق ولا مماثل له.ولم يتم إعادة بيع هذا الجهاز في دول المجلس،\nولا يوجد معلومات عن تكلفة إنتاج ذلك الجهاز.وعليه،فلا يمكن تحديد القيمة الجمركية\nوفقاً للفقرات (رابعاً حتى سابعاً) حتى في شكلها المرن.ولكن هناك وسيلة معقولة ممكن\nإستخدامها بموجب الفقرة (ثامناً)،وهي إستخدام رسوم التأجير الكامل الذي قد يمثل العمر\nالإفتراضي للجهاز ( 36شهر × 72000 = 2000ريال )،كقيمة جمركية.\n-2المبادئ العامة لاتفاقية القيمة الجمركية:\nأ. الاعتماد ألقصى حد ممكن على قيمة الصفقة للبضائع المستوردة.\nب. نظام موحد للقيمة.\nج. معايير بسيطة وعادلة.\nد. واضحة ومحايدة.\nه. تنسجم وتتفق مع الممارسات التجارية.\n-3البيانات المتاحة في البلد المستورد:\nفي حالة توفر بيانات من مصدر أجنبي،فان ذلك لن يمنع في حد ذاته من استخدام تلك البيانات\nلأغراض تحديد القيمة بموجب الفقرة (ثامناً) من هذه المادة.ولكن طالما انه يتوفر في دول\nالمجلس معلومات صحيحة ودقيقة،فينبغي إستخدامها.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_002": {
+   "number_label_ar": "المادة (2)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 2,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "بناءً على ما ورد في أحكام المادة (48 مكرر) من نظام \"قانون\" الجمارك الموحد، يجوز للإدارة\nقبول الوثائق الإلكترونية المطلوبة للتخليص الجمركي وفقاً للشروط والضوابط التالية:\nأ. ترسل الوثائق الإلكترونية من قبل مالك البضاعة أو المفوض عنه.\nب. أن تكون الجهة مرسلة الوثيقة الإلكترونية معتمدة من قبل الجمارك ضمن الشروط التي\nتتخذها الإدارة.\nج. للدائرة الجمركية التحقق من صحة الوثائق الإلكترونية المرسلة من الجهة المعتمدة التي\nأصدرتها.\nد. للدائرة الجمركية الحق في طلب الوثائق الأصلية.\nه. أن تكون الوثائق الإلكترونية مصدقة أو موقعة إلكترونياً.\nو. يجب أن تكون جميع الوثائق الإلكترونية عند إرسالها كاملة غير مجزأة.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_002_mukarrar": {
+   "number_label_ar": "المادة (2 مكرر)",
+   "title_ar": "",
+   "is_mukarrar": true,
+   "article_number": 2,
+   "mukarrar_suffix": "X",
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "بناءً على ما ورد في أحكام المواد من (89) إلى (94) من نظام \"قانون\" الجمارك الموحد لدول\nمجلس التعاون لدول الخليج العربية، يخضع الإدخال المؤقت للشروط والإجراءات التالية:\nأ. يسمح بإدخال البضائع الواردة في المادتين (89، 90) من نظام \"قانون\" الجمارك الموحد لدول\nمجلس التعاون وفقاً لما هو مبين في هذه اللائحة تحت وضع الإدخال المؤقت لمدة ستة\nأشهر قابلة للتمديد، مع تعليق استيفاء الضرائب \"الرسوم\" الجمركية عنها.\nب. يتم ضمان الضرائب \"الرسوم\" الجمركية وغيرها من الضرائب \"الرسوم\" الأخرى -إن وجدت-\nبموجب ضمان مصرفي أو نقدي حسب مقتضى الحال ووفقاً لما يقرره المدير العام.\nج. يتم ضمان مخالفات التأخير والغرامات أو أي رسوم أخرى في حالة كون البضاعة معفاة من\nالضرائب \"الرسوم\" الجمركية، بموجب ضمانات مصرفية أو نقدية أو مستندية على ألا يتجاوز\nهذا الضمان 20 في المائة من قيمة البضاعة.\nد. ينتهي وضع الإدخال المؤقت بإعادة تصدير البضائع المدخلة إلى خارج الدولة أو إيداعها في\nالمناطق الحرة أو المخازن الجمركية أو المستودعات أو وضعها في الاستهلاك المحلي، ودفع\nالضرائب \"الرسوم\" الجمركية المستحقة عليها، وفقاً للشروط والإجراءات التي يقررها المدير\nالعام.",
+   "legal_status_ar": "مضافة",
+   "structure_status_ar": "مضافة",
+   "section_status_ar": "مضافة",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_003": {
+   "number_label_ar": "المادة (3)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 3,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "أ. يسمح بإدخال الآليات والمعدات الثقيلة غير المتوافرة بالأسواق لإنجاز المشاريع أو إجراء\nالتجارب العملية والعلمية العائدة لتلك المشاريع بحد أقصى ثلاث سنوات،ويجوز للمدير العام\nأو من يفوضه عند الحاجة تمديد هذه المدة أكثر من ذلك.\nب. يشترط في المشروع الذي يستفيد من الإدخال المؤقت بمقتضى هذه اللائحة أن يكون من\nالمشاريع التي تنفذ لحساب الدولة أو من المشاريع الاستثمارية التي يتطلب تنفيذها إدخال\nالآليات والمعدات اللازمة لهذه الغاية.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_004": {
+   "number_label_ar": "المادة (4)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 4,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "أ. لا يسمح بالإدخال المؤقت لقطع الغيار والإطارات والبطاريات وغيرها من المواد القابلة\nللاستهلاك في المشاريع.\nب. لا يجوز تغيير نوع وصفة الآليات والمعدات التي تم إدخالها،إلا بعد الحصول على موافقة إدارة\nالجمارك.\nج. لا يجوز استعمال الآليات والمعدات إلا في المشروع التي أدخلت لتنفيذه.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_005": {
+   "number_label_ar": "المادة (5)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 5,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "تلتزم الجهة التي تطلب السماح بالإدخال المؤقت لآلليات والمعدات اللازمة لتنفيذ مشاريعها بما\nيلي:\n1.تقديم نسخة من العقد أو الاتفاقية المبرمة مع الجهه الحكومية التي ينفذ المشروع لحسابها.\n2.تنظيم بيان جمركي وفق النموذج المعتمد لإلدخال المؤقت،والتصريح عن جميع المعلومات،\nوإرفاق الوثائق المطلوبة بموجب النظام \"القانون\"،كما يخضع البيان لجميع الإجراءات الجمركية.\n3.تقديم كفالة مصرفية أو تأمين نقدي بقيمة الضرائب \"الرسوم\" الجمركية المستحقة بتاريخ\nتسجيل البيان الجمركي الخاص بإدخالها وفق وضع الإدخال المؤقت.\nالإدخال المؤقت للبضائع بقصد إكمال الصنع وإعادة التصدير",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_006": {
+   "number_label_ar": "المادة (6)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 6,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "يسمح بإدخال البضائع الأجنبية إلى الدولة مع تعليق استيفاء الضرائب \"الرسوم\" الجمركية عليها\nبقصد إكمال الصنع ألجل التصدير خلال فترة زمنية لا تتجاوز السنة الواحدة.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_007": {
+   "number_label_ar": "المادة (7)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 7,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "يصدر المدير العام تعليمات يحدد فيها الشروط الواجب توافرها لمنح الإدخال المؤقت لبقية أنواع\nالبضائع الواردة في المادة (90)من نظام \"قانون\" الجمارك الموحد،على ّ\nاّلا تتجاوز مدة الإدخال\nستة أشهر.\nالإدخال المؤقت للسيارات الأجنبية",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_008": {
+   "number_label_ar": "المادة (8)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 8,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "ُتمنح السيارات السياحية الأجنبية (من غير السيارات المسجلة لدى دولة عضو في دول المجلس )\nرخصة إدخال مؤقت على النحو التالي:\n1.مدة ستة أشهر للسيارات المضمونة بدفتر مرور دولي.\n2.ثلاثة أشهر للسيارات غير المضمونة بدفتر مرور دولي،تمدد لفترة مماثلة إذا قدم صاحب\nالعلاقة ضمانات مصرفية أو تأميناً نقدياً بقيمة الضرائب \"الرسوم\" الجمركية المستحقة على\nالسيارة.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_009": {
+   "number_label_ar": "المادة (9)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 9,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "أ. يشترط ألجل الاستفادة من أحكام الإدخال المؤقت أن تتوافر في السيارة ما يلي:\n1.أن تكون السيارة مسجلة رسمياً في البلد المرخصة به وبموجب وثيقة تثبت ذلك.\nوألا تحمل السيارة لوحات تصدير. 2.أن يكون ترخيص السيارة ساري المفعول\n3.إبراز تأمين من إحدى الشركات المعتمدة في الدولة يغطي أراضيها طوال مدة الإدخال\nالمؤقت.\n4.إبراز دفتر مرور دولي معترف به لضمان الضرائب \"الرسوم\" الجمركية.\nب. يشترط ألجل الاستفادة من أحكام هذه اللائحة أن يتوافر في الشخص الذي يرغب في\nالحصول على إدخال مؤقت لسيارته ما يلي:\nوكال بقيادتها بموجب وكالة خاصة صادرة من البلد الذي سجلت\nً 1.أن يكون مالكاً للسيارة أو م\nفيه السيارة و مصدقة حسب الأصول.\n2.أن تكون لديه إقامة صالحة في البلد الذي سجلت فيه السيارة إن لم يكن من مواطني تلك\nالدولة.\nحاصال على رخصة قيادة سارية المفعول.\nً 3.أن يكون",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_010": {
+   "number_label_ar": "المادة (10)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 10,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "أ. يشترط في دفتر المرور الدولي ألجل الاستفادة من أحكام هذه اللائحة أن تعترف به إدارة\nالجمارك،وأن تغطي مدة سريان الدفتر مدة الإدخال المؤقت للسيارة.\nب. تتبع الإجراءات التالية عند دخول السيارة بموجب دفتر المرور الدولي:\n1.تسجيل رقم رخصة الإدخال المؤقت وتاريخها والمهلة الممنوحة لها على دفتر المرور.\n2.اقتطاع القسيمة الخاصة من دفتر المرور في حالتي الدخول والخروج.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_011": {
+   "number_label_ar": "المادة (11)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 11,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "يسمح للطلبة والمبتعثين (من غير مواطني دول مجلس التعاون ) الذين يدرسون في إحدى\nالجامعات اوالمعاهد في الدولة بتجديد مدة الإدخال المؤقت لسياراتهم خلال فترة الدراسة أو\nالبعثة،بشرط أن تكون مضمونه بدفتر مرور دولي ساري المفعول.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_012": {
+   "number_label_ar": "المادة (12)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 12,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "تمنح رخص الإدخال المؤقت للسيارات الدائرة الجمركية وفق أحكام هذه اللائحة.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_013": {
+   "number_label_ar": "المادة (13)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 13,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثاني : البيانات الجمركية والإدخال المؤقت -- البيانات الجمركية",
+   "text": "أ. يجب أن تتضمن رخصة الإدخال المؤقت جميع المعلومات المتعلقة بالسيارة والشخص صاحب\nالعلاقة من حيث رقم السيارة والهيكل والمحرك وصنف السيارة واللون وكذلك اسم صاحب\nالعلاقة وجنسيته ورقم جواز سفره.\nب. ينتهي وضع الإدخال المؤقت للسيارة الأجنبية بخروجها من الدولة عن طريق إحدى الدوائر\nالجمركية أو بوضعها في المنطقة الحرة أو بالتخليص عليها محلياً وتأدية ما يستحق عليها من\nضرائب \"رسوم\" جمركية بموافقة الجمارك.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_014": {
+   "number_label_ar": "المادة (14)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 14,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثالث : إعادة تصدير البضائع",
+   "text": "بناءً على ما ورد في أحكام المادة (95) من نظام \"قانون\" الجمارك الموحد لدول المجلس، تكون الإجراءات والشروط والضمانات عند إعادة تصدير البضائع الأجنبية الداخلة إلى الدولة على النحو التالي:\nيجوز إعادة تصدير البضائع الأجنبية الداخلة إلى الدولة،التي لم تستوف عنها الضرائب\"الرسوم\"\nالجمركية.ويشمل ذلك ما يلي:\n1.البضائع المستوردة التي لم تسحب من المخازن الجمركية.\n2.البضائع المستوردة بقصد إعادة التصدير،التي أفرج عنها مؤقتاً لقاء ضمانات نقدية أو مصرفية\nتتضمن الضرائب \"الرسوم\" الجمركية وخلال مدة لا تتجاوز ستة أشهر من تاريخ الإفراج.\n3.البضائع المدخلة إلى الدولة تحت وضع الإدخال المؤقت ويرغب أصحابها في إعادة تصديرها.\n4.البضائع المودعة في المستودعات كأحد الأوضاع المعلقة للضرائب \"الرسوم\" الجمركية.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_015": {
+   "number_label_ar": "المادة (15)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 15,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثالث : إعادة تصدير البضائع",
+   "text": "أ. يعاد تصدير البضائع بموجب بيانات إعادة تصدير تتضمن جميع العناصر المميزة للبضاعة،وتنظم\nوفقاً لما يقرره المدير العام.\nب. يجوز أن يكون الشخص الذي يعيد تصدير البضاعة غير مستوردها،بشرط موافقة الدائرة\nالجمركية على ذلك.\nج. يجب تثبيت رقم البيان الجمركي الذي استوردت بموجبه البضاعة على بيان إعادة التصدير.\nد. تخضع البضاعة للمعاينة الجمركية والإجراءات الجمركية المقررة بموجب النظام \"القانون\"\nالموحد للجمارك.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_016": {
+   "number_label_ar": "المادة (16)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 16,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثالث : إعادة تصدير البضائع",
+   "text": "بناءً على ما ورد في أحكام المادة (97) من نظام \"قانون\" الجمارك الموحد لدول المجلس، ترد\nالضرائب \"الرسوم\" الجمركية كلياً أو جزئياً على البضائع الأجنبية المعاد تصديرها لخارج دول مجلس\nالتعاون وفقاً للضوابط التالية:\n1.أن يكون المصدر (معيد التصدير) هو المستورد الذي وردت باسمه البضاعة الأجنبية، أو أي\nشخص يثبت لإدارة الجمارك ملكيته لها.\n2.أن تكون البضاعة الأجنبية المعاد تصديرها والمطلوب رد رسومها الجمركية من إرسالية واحدة\n،بهدف التعرف عليها ومطابقتها مع مستندات الاستيراد، ويجوز إعادة تصدير الإرسالية على\nعدة أجزاء من نفس الإرسالية إذا توفرت في جزء الإرسالية جميع الشروط الواردة في هذه\nالمادة.\n3.أن لا تقل قيمة البضاعة الأجنبية المراد إعادة تصديرها واسترداد الضرائب \"الرسوم\" الجمركية\nالمستوفاة عليها عن عشرين ألف ريال سعودي أو ما يعادلها من عملات دول المجلس الأخرى.\n4.أن تكون المطالبة برد الضرائب \"الرسوم\" الجمركية على سلع أجنبية لم تستعمل محلياً بعد\nاستيرادها من خارج دول المجلس، وبنفس حالتها عند الاستيراد.\n5.أن تتم إعادة تصدير البضاعة الأجنبية خلال سنة ميلادية من تاريخ سداد الضرائب \"الرسوم\"\nالجمركية عليها عند استيرادها لأول مرة من خارج دول المجلس.\n6.أن تتم المطالبة برد الضرائب \"الرسوم\" الجمركية المستوفاة على البضاعة الأجنبية خلال ستة\nأشهر ميلادية من تاريخ إعادة التصدير.\n7.يقتصر رد الضرائب \"الرسوم\" الجمركية على تلك المدفوعة فعلاً على البضائع الأجنبية عند\nاستيرادها.\n8.يتم رد الضرائب \"الرسوم\" الجمركية بعد إعادة تصدير البضاعة الأجنبية المستوفاة عليها والتأكد\nمن كافة المستندات اللازمة لإعادة التصدير.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_017": {
+   "number_label_ar": "المادة (17)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 17,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثالث : إعادة تصدير البضائع",
+   "text": "أ. تخضع وسائط النقل البرية التي تنقل البضاعة المعاد تصديرها للأحكام المتعلقة بالترصيص\nووضع الأختام وسلامة الأغطية (الشوادر) والحبال،وغير ذلك من الأحكام التي تنطبق على\nوضع العبور (الترانزيت).\nب. يجب أن يعاد تصدير البضائع خلال المدة المقررة لها.\nج. تُضمن الضرائب \"الرسوم\" الجمركية المستحقة على البضاعة المراد إعادة تصديرها بموجب\nضمانات نقدية أو مصرفية.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_018": {
+   "number_label_ar": "المادة (18)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 18,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الثالث : إعادة تصدير البضائع",
+   "text": "يتم إبراء بيانات إعادة التصدير وتسدد قيودها وترد الضمانات المقدمة بعد تقديم أحد الإثباتات\nالتالية:\n1.نسخه من بيان إعادة التصدير مختومة وموقعة من الموظف الجمركي المختص في مركز\nالخروج الجمركي بما يفيد خروج البضاعة من البلاد.\n2.نسخه من بيان إعادة التصدير مختومة وموقعة من الموظف الجمركي المختص بما يفيد\nدخول البضاعة للمنطقة الحرة.\n3.شهادة إبراء مصدقة من السلطات المختصة في بلد المقصد بما يفيد دخول البضاعة المعاد\nتصديرها إليها.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_019": {
+   "number_label_ar": "المادة (19)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 19,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الرابع : الاعفاءات الشخصية",
+   "text": "اًء على ما ورد في أحكام الفقرة (ب) من المادة (103)من نظام \"قانون\" الجمارك الموحد لدول\nبن ً\nالمجلس،تكون الضوابط والشروط الخاصة بالإعفاءات الشخصية على النحو التالي:\n1.تعفى من الضرائب \"الرسوم\" الجمركية الأمتعة الشخصية والهدايا الواردة بصحبة المسافرين\nالتي لا تزيد قيمتها عن (3000)ثلاثة آلاف ريال سعودي أو ما يعادلها من عملات دول المجلس\nالأخرى.\n2.يشترط ألجل الاستفادة من الإعفاء ما يلي:\nأ. أن تكون الأمتعة والهدايا ذات طابع شخصي وبكميات غير تجارية.\nب. ألا يكون المسافر من المترددين على الدائرة الجمركية أو من ممتهني التجارة للمواد التي\nبحوزته.\nج. ألا يزيد عدد السجائر التي يطبق عليها الإعفاء على (200)مئتين سيجارة.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_020": {
+   "number_label_ar": "المادة (20)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 20,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الرابع : الاعفاءات الشخصية",
+   "text": "تخضع الأمتعة والهدايا التي يطبق عليها الإعفاء المشار إليه في المادة (19)من هذه اللائحة لأحكام\nالمنع والتقييد الواردة في نظام قانون الجمارك الموحد لدول المجلس والتشريعات الوطنية لكل دولة\nعضو.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_021": {
+   "number_label_ar": "المادة (21)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 21,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الرابع : الاعفاءات الشخصية",
+   "text": "اًء على ما ورد في أحكام الفقرة (ج) من المادة (103)من نظام \"قانون\" الجمارك الموحد لدول\nبن ً\nالمجلس،تكون الضوابط والشروط الخاصة بإعفاء الطرود والارساليات البريدية الشخصية الواردة\nعلى النحو التالي:\nأ. تكون الإرسالية الواردة ذات طابع شخصي و بكمية غير تجارية،على أن لا تزيد قيمتها عن\n(1000)ألف ريال سعودي أو ما يعادلها بعمات دول المجلس الأخرى.\nب. أن لا يكون المستورد من ممتهني التجارة.\nج. تقديم التصاريح المطلوبة من الجهات المختصة للبضائع المقيدة.\nد. أن لا تكون الارسالية الواردة من السلع الممنوعة دوليا أو محليا أو الخاضعة لالتفاقيات\nوالمعاهدات الدولية النافذة والأنظمة المحلية وكذلك السلع المقلدة والمغشوشة أو المخالفة\nللمواصفات المعتمدة أو حقوق الملكية الفكرية.\nه. لا يشمل الاعفاء التبغ ومشتقاته والسلع ذات الطبيعة الخاصة.\nو. للمدير العام وضع أي ضوابط اضافية أخرى لضمان عدم استغلال هذا الاعفاء.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_022": {
+   "number_label_ar": "المادة (22)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 22,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الخامس : إعفاء مستلزمات الجمعيات الخيرية -- والبضائع المستوردة لذوي الاحتياجات الخاصة و المواد اللازمة للإغاثة",
+   "text": "بناء على ما ورد في احكام الفقرة (أ) من المادة (104)من نظام \"قانون\" الجمارك الموحد لدول\nالمجلس،تكون الشروط والضوابط عند إعفاء مستلزمات الجمعيات الخيرية من الضرائب \"الرسوم\"\nالجمركية على النحو التالي:\n1.يجب أن تكون الجمعية الخيرية المستفيدة من الإعفاء مسجلة لدى الجهة الحكومية المختصة\nفي الدولة،وأن يكون غرض إنشائها تقديم خدمات في المجالات الإنسانية أو الاجتماعية أو\nالثقافية أو العلمية أو الدينية أو أي هدف خيري آخر،دون أن يكون الهدف منه تحقيق ربح\nمادي.\n2.لا تستفيد الجمعيات التي يكون هدفها نشاطا سياسيا من الإعفاء من الضرائب \"الرسوم\"\nالجمركية.\n‌3.لا يجوز للجمعية التصرف في المواد والمستلزمات المعفاة من الضرائب \"الرسوم\" الجمركية\nفي غير الغاية التي أعفيت من أجلها،وتكون إدارة الجمعية مسؤولة عن ذلك تجاه الجمارك.\n4.في حال رغبة الجمعية في بيع المواد والمستلزمات المستهلكة أو المستعملة،التي سبق\nخطي لإدارة الجمارك للحصول\nإعفاؤها من الضرائب \"الرسوم\" الجمركية فعليها أن تتقدم بطلب َ\nعلى الموافقة بالبيع بعد إجراء المعاينة اللازمة لها.\nويشترط في المواد والمستلزمات المستوردة من قبل الجمعية الخيرية لكي تعفى من الضرائب\n\"الرسوم\" الجمركية ما يلي:\nأ. أن تكون ذات طبيعة تتناسب وأغراض الجمعية والنشاط الذي تمارسه طبقاً لنظامها الأساسي.\nب. أن يتناسب حجم وكمية المواد والمستلزمات المطلوب إعفاؤها مع الاحتياجات الفعلية التي\nتمكن الجمعية الخيرية من ممارسة نشاطها الخيري.\nج. أن تستورد هذه المواد والمستلزمات باسم الجمعية الخيرية مباشرة.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_023": {
+   "number_label_ar": "المادة (23)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 23,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الخامس : إعفاء مستلزمات الجمعيات الخيرية -- والبضائع المستوردة لذوي الاحتياجات الخاصة و المواد اللازمة للإغاثة",
+   "text": "تقوم الجهة الحكومية المختصة بمخاطبة إدارة الجمارك لإعفاء المواد والمستلزمات الواردة إلى\nالجمعية الخيرية من الضرائب \"الرسوم\" الجمركية لكل حالة على حدة.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_024": {
+   "number_label_ar": "المادة (24)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 24,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الخامس : إعفاء مستلزمات الجمعيات الخيرية -- والبضائع المستوردة لذوي الاحتياجات الخاصة و المواد اللازمة للإغاثة",
+   "text": "بناء على ما ورد في أحكام الفقرة (ب) من المادة (104)من نظام \"قانون\" الجمارك تعفى\nمستلزمات ذوي الاحتياجات الخاصة،و يقتصر الاعفاء من \" الضرائب\" الرسوم الجمركية للمواد\nوالأدوات الخاصة بذوي الاحتياجات الخاصة المشار إليها في الجدول ادناه والمستوردة من خارج\nدول مجلس التعاون للجهات التالية:\nأ. الجهات الحكومية ذات الصلة برعاية ذوي الاحتياجات الخاصة.\nب. الجمعيات المرخصة برعاية ذوي الاحتياجات الخاصة لأغراض الجمعية فقط.\nج. حاملي بطاقات ذوي الاحتياجات الخاصة،وبغرض الاستخدام الشخصي،وبحسب الإعاقة،\nعلى ان لا يتم التصرف بالسيارات المستوردة لأي من هذه الفئة إلا بعد مرور ثلاث سنوات على\nاستيرادها،وفي حالة التصرف فيها قبل هذا التاريخ يتم استيفاء \"الضرائب\" الرسوم الجمركية\nالمقررة عليها حسب حالتها.\nالتوصيف الرمز المنسق\n...مصعد (كرسي الدرج المتحرك للصعود والنزول) معد خصيصا لذوي الاحتياجات الخاصة 84 28 10 10\n...الآت وأجهزة آخر لرفع ونقل وتحريك ذوي الاحتياجات الخاصة 84 28 90 10\n...سيارات معدة خصيصأ لتقاد من قبل المقعدين أو المصابين بشلل الرجلين معاً 87 03 21 81\n...سيارات معدة أو مجهزة لنقل المقعدين أو المصابين بالشلل 87 03 21 82\n...سيارات معدة خصيصاً لتقاد من قبل المقعدين أو المصابين بشلل الرجلين معاً 87 03 22 81\n...سيارات معدة أو مجهزة لنقل المقعدين أو المصابين بالشلل 87 03 22 82\n...سيارات معدة خصيصاً لتقاد من قبل المقعدين أو المصابين بشلل الرجلين معاً 87 03 23 81\n...سيارات معدة أو مجهزة لنقل المقعدين أو المصابين بالشلل 87 03 23 82\nمًعا\n...سيارات معدة خصيصاً لتقاد من قبل المقعدين أو المصابين بشلل الرجلين ً 87 03 24 71\n...سيارات معدة أو مجهزة لنقل المقعدين أو المصابين بالشلل 87 03 24 72\nمًعا (ديزل أو نصف دزل) سعة\n...سيارات معدة خصيصاً لتقاد من قبل المقعدين أوالمصابين بشلل الرجلين ً 87 03 31 31\nاسطواناتها لا تزيد عن 1500سم3\n...سيارات معدة أو مجهزة لنقل المقعدين أو المصابين بالشلل(ديزل أو نصف ديزل) سعة اسطواناتها لا تزيد عن 87 03 31 32\n1500سم3\n...سيارات معدة خصيصاً لتقاد من قبل المقعدين أو المصابين بشلل الرجلين معاً (ديزل أو نصف ديزل) سعة 87 03 32 31\nاسطواناتها لا تزيد عن 1500سم 3ولا تتجاوز 2500سم3\n...سيارات معدة أو مجهزة لنقل المقعدين أو المصابين بالشلل (ديزل أو نصف ديزل) سعة اسطواناتها لا تزيد 87 03 32 32\nعن 1500سم 3ولا تتجاوز 2500سم3\nمًعا (ديزل أو نصف ديزل) سعة\nخصيًصا لتقاد من قبل المقعدين أو المصابين بشلل الرجلين ً\nً...سيارات معدة 87 03 33 31\nاسطواناتها تزيد عن 2500سم3\n...سيارات معدة أو مجهزة لنقل المقعدين أو المصابين بالشلل (ديزل أو نصف ديزل) سعة اسطواناتها تزيد عن 87 03 33 32\n2500سم3\n...دراجات للمعاقين والعجزة 87 12 00 20\n...عربات لنقل الأطفال من ذوي الاحتياجات الخاصة 87 15 00 20\n...عكاكيز ((، )crutchesعدا العصي البسيطة بالمعاقين الداخلة في البند )66.02 90 21 10 60\n...أجهزة تسهيل السمع للصم،بإستثناء الأجزاء واللوازم 90 21 40 00\n...الأجهزة الإلكترونية للمكفوفين 90 21 90 20\n...أجهزة الكالم لألشخاص الذين فقدوا القدرة على إستخدام حبالهم الصوتية 90 21 90 10",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_025": {
+   "number_label_ar": "المادة (25)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 25,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب الخامس : إعفاء مستلزمات الجمعيات الخيرية -- والبضائع المستوردة لذوي الاحتياجات الخاصة و المواد اللازمة للإغاثة",
+   "text": "بناء على ما ورد في احكام الفقرة (ج) من المادة (104)من نظام \"قانون\" الجمارك تقوم الجهة\nالحكومية المختصة بمخاطبة سلطات الجمارك المعنية لإعفاء المواد والمستلزمات المطلوبة\nلغرض الاغاثة،وفقا لما يلي:\nأ. أن تكون المواد المستوردة ذات طبيعة تناسب أغراض الاغاثة.\nب. أن تتناسب كمية المواد والمستلزمات المطلوبة مع الاحتياج الفعلي للعمل الإغاثي.\nج. لا يجوز بيع هذه المستوردات التي يتم فسحها معفاة إلا بعد مراجعة الجمارك للحصول على\nالموافقة على البيع بعد اجراء المعاينة اللازمة لها،واستكمال اجراءات فسحها واستيفاء\nالضرائب \"الرسوم\" الجمركية عليها.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_025_mukarrar": {
+   "number_label_ar": "المادة (25 مكرر)",
+   "title_ar": "",
+   "is_mukarrar": true,
+   "article_number": 25,
+   "mukarrar_suffix": "X",
+   "section_ar": "الباب الخامس : إعفاء مستلزمات الجمعيات الخيرية -- والبضائع المستوردة لذوي الاحتياجات الخاصة و المواد اللازمة للإغاثة",
+   "text": "بناء على ما ورد في احكام الفقرة (4)من المادة (105)من نظام \"قانون\" الجمارك بإعفاء البضائع\nالتي يتم تصديرها مؤقتاً والتي أعيدت وفق الشروط والضوابط التالية:\n1.يسمح بالتصدير المؤقت للبضائع التالية:\nأ. الآليات و المعدات الثقيلة لإنجاز المشاريع أو لإجراء التجارب العملية و العلمية العائدة لتلك\nالمشاريع.\nب. البضائع الأجنبية الصادرة بقصد اكمال الصنع.\nج. ما يصدر مؤقتا للمالعب والمسارح و المعارض و ما يماثلها.\nد. الآلات و المعدات و الأجهزة التي تصدر إلى خارج البلاد بقصد إصلاحها.\nه. الأوعية والأغلفة الصادرة لملئها.\nو. الحيوانات الخارجة بقصد الرعي.\nز. العينات التجارية بقصد العرض.\nح. الحالات الاخرى التي تستدعي ذلك.\n2.يقدم صاحب طلب التصدير المؤقت صور فوتوغرافية ملونة للسلع التي يصعب تمييزها للدائرة\nالجمركية وذلك لمطابقتها عند إعادة استيرادها\n3.يجوز للدائرة الجمركية اتخاذ الاجراءات و التدابير اللازمة باستخدام الوسائل المناسبة (الصور\nالفوتو غرافية،الباركود الالكتروني،اخذ عينة،ختم العينة.......الخ ) والتي تمكن الدائرة\nالجمركية من مطابقة البضائع عند إعادة استيرادها.\n4.لا يسمح بالتصدير المؤقت للبضائع الداخلة تحت الأوضاع المعلقة \" للضرائب \" الرسوم الجمركية.\n5.يجب أن لا تتجاوز مدة التصدير المؤقت سنة ( 365يوم) للحالات المذكورة في البند ( 1ج،هـ،ز )\n6.لا يسمح بالتصدير المؤقت للبضائع التي يحظر تصديرها.\n7.يجب أن لا تتجاوز مدة التصدير المؤقت سنة ( 365يوم) و يجوز تمديدها لمدد مماثلة بحد\nأقصى خمس سنوات إلا اذا كانت المدة اللازمة تتطلب أكثر من هذه المدة و ذلك بموافقة\nإدارة الجمارك للحالات المذكورة في البند ( 1أ،ب،د).\n8.يجب أن لا تتجاوز مدة التصدير المؤقت ستة أشهر ( 180يوم) للحالات المذكورة في البند 1\n(و،ح).\n9.ينتهي وضع التصدير المؤقت بإعادة استيراد البضائع الى داخل دول المجلس أو تحويلها الى\nتصدير نهائي أو انتهاء مدة التصدير المؤقت.\n10.الحصول على موافقة التصدير المؤقت من الدائرة الجمركية.\n11.لا يسمح بالتصدير المؤقت لقطع الغيار و الإطارات و البطاريات و غيرها من المواد القابلة\nلإلستهالك في المشاريع.",
+   "legal_status_ar": "مضافة",
+   "structure_status_ar": "مضافة",
+   "section_status_ar": "مضافة",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_026": {
+   "number_label_ar": "المادة (26)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 26,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السادس : البضائع الخاضعة لأحكام النطاق الجمركي وشروط النقل داخله",
+   "text": "بناءً على ما ورد في أحكام المادة (121) من نظام \"قانون\" الجمارك الموحد لدول المجلس، تعامل البضائع الخاضعة لأحكام النطاق الجمركي وفقاً لما يلي:\nيشترط في نقل البضائع الخاضعة لأحكام النطاق الجمركي أن تكون مرفقة بتصريح نقل صادر\nعن الدائرة الجمركية مبيناً فيه ما يلي:\n1.اسم صاحب العلاقة.\n2.العناصر المميزة للبضاعة مثل النوع والعدد والوزن والمنشأ والقيمة.\n3.اسم ونوع ورقم واسطة النقل ونوعها ورقمها،واسم قائدها.\n4.المكان المراد نقل البضاعة منه ومقصدها.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_027": {
+   "number_label_ar": "المادة (27)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 27,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السادس : البضائع الخاضعة لأحكام النطاق الجمركي وشروط النقل داخله",
+   "text": "أ. يحظر حيازة البضائع داخل النطاق الجمركي إلا في الأماكن التي تحددها إدارة الجمارك.\nب. تحدد الاحتياجات العادية للبضاعة التي يمكن اقتناؤها داخل النطاق الجمركي لغرض\nالاستهلاك بقرار من إدارة الجمارك.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_028": {
+   "number_label_ar": "المادة (28)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 28,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السادس : البضائع الخاضعة لأحكام النطاق الجمركي وشروط النقل داخله",
+   "text": "يعد نقل البضاعة الخاضعة لأحكام النطاق الجمركي أو حيازتها أو التجول بها داخل النطاق بشكل\nمخالف لأحكام نظام \"قانون\" الجمارك الموحد والئحته التنفيذية في حكم التهريب.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_029": {
+   "number_label_ar": "المادة (29)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 29,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+   "text": "مع عدم الإخلال بأحكام المواد (9، 142، 143، 144)، وبناءً على ما ورد في نص المادة (141) من نظام \"قانون\" الجمارك الموحد، تكون قواعد فرض الغرامات المالية عن المخالفات الجمركية على النحو الآتي:\nغرامة لا تزيد على مثلي الضرائب \"الرسوم\" الجمركية ولا تقل عن مثلها عن المخالفات التالية:\n1.البيان الجمركي (الصادر،إعادة التصدير) الذي من شأنه أن ُيؤدي إلى الاستفادة من استرداد\nضرائب \"رسوم\" جمركية أو تسديد قيود بضائع مدخلة تحت وضع الإدخال المؤقت دون وجه\nحق.\n2.الزيادة أو النقص غير المبرر على ما أدرج في بيان الحمولة \"المانيفست\" أو ما يقوم مقامه.\n3.استعمال المواد المشمولة بالإعفاء أو بتعريفة جمركية مخفضة وفقً ا لأحكام النظام (القانون)\nوالتشريعات ذات العلاقة الصادرة في إطار المجلس في غير الغاية أو الهدف الذي استوردت\nمن أجله أو تبديلها أو بيعها أو التصرف فيها دون موافقة إدارة الجمارك وتأدية ما يتحقق عليها\nمن ضرائب (رسوم) جمركية.\n4.التصرف في البضائع التي هي في وضع معلق للضرائب \"الرسوم\" الجمركية في غير الأغراض\nالتي أدخلت من أجلها،أو إبدالها دون موافقة إدارة الجمارك وتأدية ما يستحق عليها من ضرائب\n\"رسوم\" جمركية.\n5.استرداد الضرائب \"الرسوم\" الجمركية أو الشروع في استردادها.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_030": {
+   "number_label_ar": "المادة (30)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 30,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+   "text": "غرامة لا تقل عن 500خمسمائة ريال سعودي ولا تزيد على 10000عشرة الاف ريال سعودي أو ما\nيعادلها من عملات دول المجلس الأخرى عن المخالفات الجمركية التالية:\n1.البيانات الجمركية المخالفة التي من شأنها أن تؤدي إلى التخلص من أي شرط أو قيد يتعلقان\nبالاستيراد أو التصدير.\n2.البيان الجمركي المخالف في القيمة أو النوع أو العدد أو الوزن أو القياس أو المنشأ الذي من\nشأنه أن يؤدي إلى تعريض الضرائب \"الرسوم\" الجمركية للضياع،وذلك بالتصريح في البيان\nالجمركي بما يخالف الوثائق المرفقة به،التي تكون مطابقة لواقع البضاعة وفقاً لأحكام\nالمادة (47)من النظام \"القانون\".\n3.تغيير الطرق والمسالك المحددة في بيان العبور \"الترانزيت\" دون موافقة الإدارة وفقاً لأحكام\nالمادة (71)من النظام \"القانون\".\n4.عدم وجود بيان حمولة \"مانيفست\" بالبضاعة،او وجود أكثر من بيان حمولة \"مانيفست\" للبضاعة\nالواحدة وفقاً لأحكام المواد (/30أ /36 ,أ )38 ,من النظام \"القانون\".\n5.تقديم الشهادات اللازمة لإبراء وتسديد بيانات العبور \"الترانزيت\" أو الإدخال المؤقت أو إعادة\nالتصدير خلافاً للشروط التي يحددها المدير العام وفقاً لأحكام المادة (68)من النظام\n\"القانون\".\n6.مخالفة القواعد والشروط الخاصة بتنظيم إيداع البضائع في المستودعات التي يصدرها المدير\nالعام وفقاً لأحكام المادتين ( 74و )75من النظام \"القانون\".\n7.رسو السفن أو هبوط الطائرات أو وقوف وسائط النقل الأخرى،في غير الأماكن المحددة لها\nوالتي ترخص بها الإدارة وفقاً لأحكام المواد ( 20و 21و 22و )37من النظام \"القانون\".\n8.مغادرة السفن والطائرات ووسائط النقل الأخرى للموانئ أو النطاق الجمركي دون ترخيص من\nإدارة الجمارك وفقاً لأحكام المادة (41)من النظام \"القانون\".\n9.نقل بضاعة من واسطة نقل إلى أخرى دون موافقة الإدارة وفقاً الأحكام المادتين ( 32و )45\nمن النظام \"القانون\".\n10.تفريغ البضائع من السفن أو وسائط النقل الأخرى أو سحب البضائع دون ترخيص من إدارة\nالجمارك أو بغياب موظفيها أو خارج الأوقات المحددة لذلك وفقاً لأحكام المواد ( 32و 40و )45\nمن النظام \"القانون\".\n11.إعاقة موظفي إدارة الجمارك عن القيام بواجباتهم وممارسة حقهم في التفتيش والتدقيق\nوالمعاينة وفقاً لأحكام الباب الثالث عشر من النظام \"القانون\"،وتفرض هذه الغرامة بحق كل\nمن شارك في هذه المخالفة.\n12.عدم الاحتفاظ بالسجلات والوثائق والمستندات وما في حكمها خلال المدة المحددة في\nالمادتين (127)،115من النظام \"القانون\".\n13.قطع الرصاص أو نزع الأختام أو الأقفال أو الأربطة الجمركية أو الأغطية (الشوادر -الأشرعة) عن\nالبضائع.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_031": {
+   "number_label_ar": "المادة (31)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 31,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+   "text": "غرامة لا تقل عن (500)خمسمائة ريال سعودي ولا تزيد على (1000)ألف ريال سعودي أو ما\nيعادلها بعملات دول المجلس الأخرى عن المخالفات الجمركية التالية:\n1.عدم تقديم بيان الحمولة \"المانيفست\" أو ما يقوم مقامه والمستندات الأخرى لدى الاستيراد\nوالتصدير،وكذلك التأخير في تقديم بيان الحمولة \"المانيفست\" أو ما يقوم مقامه عن المدة\nالمحددة وفقاً لأحكام المواد ( 30و 36و 39و )41من النظام \"القانون\".\n2.عدم تأشير بيان الحمولة من السلطات الجمركية في ميناء الشحن في الأحوال التي يتوجب\nفيها هذا التأشير وفقاً لأحكام المادة (31)من النظام \"القانون\".\n3.ذكر عدة طرود مقفلة ومجمعة بأي طريقة كانت في بيان الحمولة \"المانيفست\" أو ما يقوم\nمقامه على أنها طرد واحد وفقاً لأحكام المادة (44)من النظام \"القانون\"،مع مراعاة التعليمات\nالتي يصدرها المدير العام بشأن المستوعبات والطبليات والمقطورات.\n4.إغفال ما يجب إدراجه من معلومات في بيان الحمولة \"المانيفست\" أو ما يقوم مقامه.\n5.الاستيراد عن طريق البريد لرزم مقفلة أو علب لا تحمل البطاقات المعتدة خلافاً لأحكام\nالاتفاقيات البريدية العربية والدولية وللتشريعات الوطنية وفقاً لأحكام المادة (43)من النظام\n\"القانون\".\n6.أي مخالفة أخرى لأحكام القرارات الوزارية والتعليمات الصادرة بمقتضى النظام \"القانون\".",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_032": {
+   "number_label_ar": "المادة (32)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 32,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+   "text": "غرامة قدرها (200)مائتا ريال سعودي أو ما يعادلها من عملات دول المجلس الأخرى عن كل يوم\nتأخير،على ّ\nأّلا تتجاوز الغرامة نصف قيمة البضاعة،وذلك عن مخالفات التأخير في تقديم البضائع\nالمرسلة بالعبور \"الترانزيت\" أو إعادة التصدير إلى الدائرة الجمركية التي ستخرج منها البضاعة أو\nإلى الدائرة الجمركية المرسلة إليها البضاعة بعد انقضاء المدد المحددة لها في البيانات الجمركية.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_033": {
+   "number_label_ar": "المادة (33)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 33,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+   "text": "غرامة قدرها (200)مائتا ريال سعودي أو ما يعادلها من عملات دول المجلس الأخرى وذلك عن\nكل يوم تأخير على سيارات النقل العامة وسيارات الأجرة القادمة للدولة،على ّ\nأّلا تتجاوز الغرامة\n(10000)عشرة آلاف ريال سعودي أو ما يعادلها من عملات دول المجلس الأخرى.",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  },
+  "customs_regulation_art_034": {
+   "number_label_ar": "المادة (34)",
+   "title_ar": "",
+   "is_mukarrar": false,
+   "article_number": 34,
+   "mukarrar_suffix": null,
+   "section_ar": "الباب السابع : الغرامات المالية المفروضة على المخالفات الجمركية",
+   "text": "غرامه قدرها (1000)ألف ريال سعودي أو ما يعادلها من عملات دول المجلس الأخرى عن كل\nأسبوع تأخير أو جزء منه،على ّ\nأّلا تتجاوز الغرامة(20)٪عشرين في المائة من قيمة البضاعة عن\nمخالفات التأخير في إعادة تصدير البضاعة المدخلة تحت وضع الإدخال المؤقت بعد انقضاء المدة\nالمحددة لها في البيانات الجمركية.أما بالنسبة للسيارات السياحية فيفرض عليها غرامة قدرها\nااًل سعودياً أو ما يعادلها من عملات دول المجلس الأخرى عن كل يوم تأخير،على\n(20)عشرون ري ً\nأّلا تتجاوز الغرامة (10)٪عشرة في المائة من قيمة السيارة السياحية بعد انقضاء المدة المحددة\nلها في رخصة الإدخال المؤقت\nلالطاع على آخر تحديث\nّ امسح هذا الكود\nلهذا المستند وكافة المستندات المنشورة\nأو تفضل بزيارة الموقع الإلكتروني zatca.gov.sa",
+   "legal_status_ar": "اصلية",
+   "structure_status_ar": "اصلية",
+   "section_status_ar": "اصلية",
+   "status": "ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE",
+   "history": []
+  }
+ }
+}
