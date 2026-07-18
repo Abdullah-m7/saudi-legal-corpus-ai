@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 130,
-  "total_terms": 737,
-  "total_definitions": 1112,
-  "tracks_with_definitions_article_parsed": 85,
+  "total_tracks_in_registry": 131,
+  "total_terms": 768,
+  "total_definitions": 1151,
+  "tracks_with_definitions_article_parsed": 86,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -586,6 +586,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأخطار البحرية": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الأخطار البحرية",
+        "definition_text": "هي الحوادث غير المتوقعة التي يحتمل وقوعها؛ المتعلقة برحلة بحرية.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأدلة": [
       {
         "track_id": "evidence_electronic_procedures_rules",
@@ -1124,6 +1134,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الإنقاذ البحري": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الإنقاذ البحري",
+        "definition_text": "المساعدة التي تقدم للسفينة التي تكون في حالة خطر, ومن عليها أو الأشياء التي تنقلها وقت الخطر بناء على طلبها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الإيداع القضائي": [
       {
         "track_id": "bankruptcy_law",
@@ -1309,6 +1329,16 @@
         "term_as_written": "الانبعاثات",
         "definition_text": "انطلاق غازات أو جسيمات عالقة إلى الهواء من مصدر محدد.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "البحار": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "البحَّار",
+        "definition_text": "الشخص الذي يرتبط بعقد عمل بحري، ويعد الربان من البحارة فيما يتعلق بعقد العمل المبرم بينه وبين المجهز.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1863,6 +1893,16 @@
         "term_as_written": "التسويق المباشر",
         "definition_text": "التواصل مع صاحب البيانات الشخصية بأي وسيلة مادية أو إلكترونية مباشرة بهدف توجيه مادة تسويقية، ويشمل ذلك على سبيل المثال لا الحصر الإعلانات أو العروض الترويجية.",
         "source_record_id": "pdpl-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التصادم البحري": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "التصادم البحري",
+        "definition_text": "التصادم الذي يحدث بين سفينتين أو أكثر، أو بين سفينة وأي      منشأة بحرية.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2590,6 +2630,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الحطام البحري": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الحطام البحري",
+        "definition_text": "أي سفينة -أو جزء منها- غارقة أو جانحة، في المناطق البحرية للمملكة، أو أي شيء فقد منها في البحر وجرفه التيار إلى هذه المياه، و أي سفينة على وشك الغرق, أو يمكن بناء على أسباب معقولة توقع غرقها أو جنوحها في هذه المياه؛ وليس هناك إجراءات فاعلة لمساعدتها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الحفر": [
       {
         "track_id": "mining_investment_law",
@@ -2627,6 +2677,16 @@
         "term_as_written": "الحماية",
         "definition_text": "الإجراءات والتدابير والضمانات التي تتخذ عند الاقتضاء، الهادفة إلى حماية المبلِّغ والشاهد والخبير والضحية، وزوجه، أو أقاربه أو غيرهم من الأشخاص الذين يكونون عرضة للخطر أو الضرر بسبب صلتهم الوثيقة بالمبلِّغ أو الشاهد أو الخبير أو الضحية، وفقاً لأنواع الحماية المنصوص عليها في المادة (الرابعة عشرة) من النظام.",
         "source_record_id": "whistleblower-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الحمولة الكلية": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الحمولة الكلية",
+        "definition_text": "أبعاد الحجم الكلي للسفينة مقيسة وفقاً لأحكام الاتفاقية الدولية لقياس حمولة السفن لعام (1969م) وتعديلاتها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2776,6 +2836,26 @@
         "definition_text": "الخزينة العامة.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "الخسائر البحرية المشتركة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الخسائر البحرية المشتركة",
+        "definition_text": "كل تضحية أو مصروفات غير اعتيادية، يقررها الربان، تبذل أو تنفق عن قصد وبكيفية معقولة, من أجل السلامة العامة لتجنب خطر داهم يهدد السفينة أو البضائع الموجودة عليها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخسارة البحرية الخاصة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الخسارة البحرية الخاصة",
+        "definition_text": "كل خسارة لا تنطبق عليها أحكام الخسائر البحرية المشتركة.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الخط الجمركي": [
@@ -3066,11 +3146,29 @@
     ],
     "الراكب": [
       {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الراكب",
+        "definition_text": "الشخص الذي تنقله السفينة من غير الربان وأفراد الطاقم وغيرهم من العاملين على ظهرها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "traffic_law",
         "article_number": 2,
         "term_as_written": "الراكب",
         "definition_text": "كل من يوجد في المركبة أو يكون صاعدا إليها أو نازلا منها بخلاف السائق.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الربان": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الربان",
+        "definition_text": "الشخص المؤهل لقيادة السفينة والمسؤول عن إدارتها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3160,6 +3258,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الزيت": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الزيت",
+        "definition_text": "البترول الخام، وزيت الوقود (المازوت)، وزيت الديزل الثقيل، وزيت التشحيم، والمشتقات البترولية الأخرى.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السائق": [
       {
         "track_id": "traffic_law",
@@ -3233,6 +3341,16 @@
         "term_as_written": "السعودي",
         "definition_text": "الشخص الذي يحمل الجنسية العربية السعودية، ومن يعامل معاملته من مواطني دول مجلس التعاون الخليجي.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السفينة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "السفينة",
+        "definition_text": "كل منشأة عائمة معدة للعمل في الملاحة البحرية على وجه الاعتياد، ولو لم تهدف إلى الربح، وتعد ملحقات السفينة اللازمة لاستغلالها جزءًا منها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3370,6 +3488,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشاحن": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الشاحن",
+        "definition_text": "الشخص الذي بحوزته البضاعة المراد نقلها ويتعاقد -بنفسه أو بوساطة من ينيبه- مع الناقل أو متعهد النقل لنقلها من مكان إلى آخر مقابل أجر.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشاخصات": [
       {
         "track_id": "traffic_law",
@@ -3465,6 +3593,14 @@
         "term_as_written": "الشخص",
         "definition_text": "أي شخص طبيعي أو اعتباري.",
         "source_record_id": "income-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "ذو الصفة الطبيعية أو الاعتبارية.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -4840,6 +4976,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية للنظام.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mining_investment_law",
         "article_number": 1,
         "term_as_written": "اللوائح",
@@ -5281,6 +5425,16 @@
         "term_as_written": "المجمعات التعدينية",
         "definition_text": "الأراضي المحددة لممارسة الأنشطة التعدينية.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المجهز": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "المجهز",
+        "definition_text": "الشخص الذي يشغل السفينة لحسابه بوصفه مالكاً, أو مستأجراً، أو مديراً للشيوع، ويعد المالك مجهزاً ما لم يثبت غير ذلك.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6526,6 +6680,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المناطق البحرية للمملكة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "المناطق البحرية للمملكة",
+        "definition_text": "المياه الداخلية, والبحر الإقليمي, والمنطقة المتاخمة, والمنطقة الاقتصادية الخالصة, والجرف القاري, المحددة نظاماً.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المناطق المحمية": [
       {
         "track_id": "environmental_law",
@@ -6680,6 +6844,16 @@
         "definition_text": "شخص -غير الوسيط- يرسل تعاملاً إلكترونياً.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "المنصة البحرية": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "المنصة البحرية",
+        "definition_text": "منشأة بحرية تستخدم لاستخراج الزيت أو الغاز أو غيرهما من الثروات, وتعد في حكم السفينة.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المنصة المعتمدة": [
@@ -7036,6 +7210,14 @@
         "definition_text": "مالك وسيلة النقل أو من يقوم مقامه (بموجب تفويض رسمي).",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الناقل",
+        "definition_text": "الشخص الذي يقوم بالنقل بالاتفاق -بنفسه أو بوساطة من ينيبه- مع الشاحن بموجب عقد النقل مقابل أجر, سواء أكان الناقل مالكاً للسفينة أم مجهزاً أم مستأجراً لها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الناقل الجوي": [
@@ -7446,6 +7628,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "النظام البحري التجاري.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "marriage_contract_hearing_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -7786,6 +7976,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة النقل العام.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mining_investment_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -7867,6 +8065,16 @@
         "term_as_written": "الوحدة",
         "definition_text": "الوحدة المختصة بشؤون الخبرة.",
         "source_record_id": "evidence-expertise-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوحدة الحسابية": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الوحدة الحسابية",
+        "definition_text": "وحدة السحب الخاص المعرفة بوساطة صندوق النقد الدولي، مقومةً بالريال أو ما يعادله طبقاً لما تحدده وزارة المالية وقت سداد المطالبة.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8302,6 +8510,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير النقل، رئيس مجلس إدارة هيئة النقل العام.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mining_investment_law",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -8483,6 +8699,16 @@
         "term_as_written": "الوكيل",
         "definition_text": "وكيل الوزارة للتنفيذ.",
         "source_record_id": "enforcement-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوكيل الملاحي": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "الوكيل الملاحي",
+        "definition_text": "الشخص الذي يقوم -بصفته وكيلاً عن المجهز- بالأعمال المتعلقة بتوفير ما تحتاجه السفينة.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8894,6 +9120,24 @@
         "definition_text": "الدولة التي سجلت فيها الطائرة.",
         "source_record_id": "civil-aviation-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "دولة التسجيل",
+        "definition_text": "الدولة التي سجلت سفينة ما في سجل السفن لديها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "دولة العلم": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "دولة العلم",
+        "definition_text": "هي الدولة التي يحق للسفينة رفع علمها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "ديون التفليسة": [
@@ -9076,6 +9320,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "سجل السفن": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "سجل السفن",
+        "definition_text": "السجل الرسمي الذي تسجل فيه بيانات السفن وملاكها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "سجل العقود": [
       {
         "track_id": "finance_lease_law",
@@ -9123,6 +9377,16 @@
         "term_as_written": "سلطة تسجيل العلامة العامة",
         "definition_text": "السلطة التي يعهد إليها بالسجل غير الوطني أو أي جزء منه والذي تسجل فيه طائرات تابعة لمؤسسة نقل جوي أجنبية أو مشتركة.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "سند الشحن": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "سند الشحن",
+        "definition_text": "وثيقة يصدرها الناقل بناء على طلب الشاحن عند تسلم البضاعة منه،  توضح فيها بيانات النقل وشروطه.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9408,6 +9672,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "عقد إيجار السفينة المجهزة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "عقد إيجار السفينة المجهزة",
+        "definition_text": "العقد الذي يلتزم بمقتضاه المؤجر بوضع سفينة معينة صالحة للملاحة ومكتملة التجهيز بمؤن, أو بحارة، أو وقود, تحت تصرف المستأجر وذلك لمدة محددة، أو للقيام برحلة أو رحلات معينة.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد إيجار السفينة غير المجهزة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "عقد إيجار السفينة غير المجهزة",
+        "definition_text": "العقد الذي يلتزم بمقتضاه المؤجر بوضع سفينة معينة تحت تصرف المستأجر لمدة محددة دون تجهيزها بمؤن, أو بحارة، أو وقود.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد التأمين البحري": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "عقد التأمين البحري",
+        "definition_text": "العقد الذي يتعهد بمقتضاه شخص يسمى المؤمِّن بتعويض شخص آخر يسمى المؤمَّن له عن الضرر الناشئ من خطر بحري نظير قسط معين.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "عقد التمويل العقاري": [
       {
         "track_id": "real_estate_finance_law",
@@ -9415,6 +9709,36 @@
         "term_as_written": "عقد التمويل العقاري",
         "definition_text": "عقد الدفع الآجل لتملك المستفيد للسكن.",
         "source_record_id": "real-estate-finance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد العمل البحري": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "عقد العمل البحري",
+        "definition_text": "العقد المبرم بين مالك السفينة أو مجهزها أو ممثل عن أي منهما، وأي شخص للعمل على ظهر السفينة مقابل أجر.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد النقل البحري": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "عقد النقل البحري",
+        "definition_text": "العقد الذي يلتزم فيه الناقل بنقل بضائع أو أشخاص عن طريق البحر مقابل أجر.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد النقل المتعدد الوسائط": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "عقد النقل المتعدد الوسائط",
+        "definition_text": "العقد الذي يبرمه الشاحن مع متعهد النقل متعدد الوسائط لنقل البضائع بوسيلتي نقل مختلفتين أو أكثر بين مكانين يقعان في دولة واحدة أو أكثر، يتسلم بموجبه متعهد النقل المتعدد الوسائط البضاعة, وتكون في عهدته إلى المكان المحدد للتسليم, ويتولى التنفيذ بنفسه أو عن طريق غيره مقابل أجر.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9704,6 +10028,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مالك السفينة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "مالك السفينة",
+        "definition_text": "الشخص المدون اسمه في سجل السفن لدى المملكة بصفته مالكاً للسفينة.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مالك الوحدة": [
       {
         "track_id": "zakat_law",
@@ -9741,6 +10075,26 @@
         "term_as_written": "متعهد التغطية",
         "definition_text": "الشخص الذي يشتري أوراقًا مالية من مصدرها، أو من شخص تابع للمصدر بغرض عرض وطرح وتسويق هذه الأوراق المالية للجمهور، أو الشخص الذي يبيع نيابةً عن المصدر أو تابع للمصدر، أوراقًا مالية بغرض عرضها وطرحها على الجمهور.",
         "source_record_id": "capital-market-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "متعهد النقل": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "متعهد النقل",
+        "definition_text": "الشخص الذي يزاول نشاط نقل البضائع بحراً بموجب عقد نقل واحد, وسند نقل واحد, ويتصرف بصفته أصيلاً.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "متعهد النقل المتعدد الوسائط": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "متعهد النقل المتعدد الوسائط",
+        "definition_text": "الشخص الذي يبرم -بنفسه أو بوساطة من ينيبه- عقد نقل متعدد الوسائط، ويتصرف بصفته أصيلاً, عن المرسل أو الناقلين المشتركين في عمليات النقل المتعدد الوسائط.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9887,6 +10241,16 @@
         "term_as_written": "مستنبط النبات",
         "definition_text": "الشخص الذي استنبط، أو اكتشف، أو طور صنفًا نباتيًّا جديدًا.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مستند النقل المتعدد الوسائط": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "مستند النقل المتعدد الوسائط",
+        "definition_text": "وثيقة تثبت عقد النقل المتعدد الوسائط, وتَسلُّم متعهد النقل المتعدد الوسائط للبضاعة، والتزامه بتسليمها وفقاً لشروط محددة.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10539,6 +10903,16 @@
         "term_as_written": "وكيل البيع القضائي",
         "definition_text": "من ترخص له وزارة العدل ببيع أصول المدين للوفاء للدائن.",
         "source_record_id": "enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "وكيل الشحنة": [
+      {
+        "track_id": "maritime_commercial_law",
+        "article_number": 1,
+        "term_as_written": "وكيل الشحنة",
+        "definition_text": "الشخص الذي ينوب عن أصحاب البضاعة في تسلم البضاعة عند الوصول، ودفع أجرة النقل إن كانت مستحقة كلها أو بعضها.",
+        "source_record_id": "maritime-commercial-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

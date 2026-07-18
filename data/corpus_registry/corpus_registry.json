@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 8980,
+  "total_primary_arabic_governing_records": 9371,
   "total_reference_records": 614,
-  "total_registry_counted_records": 9875,
-  "total_tracks": 130,
+  "total_registry_counted_records": 10266,
+  "total_tracks": 131,
   "tracks": [
     {
       "boundaries": {
@@ -6133,6 +6133,55 @@
       "validator_targets": [
         "make finance-lease-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/maritime_commercial/law/official_source/maritime_commercial_law_official_source.json",
+        "sources/maritime_commercial/law/verified/maritime_commercial_law_verified_records.jsonl",
+        "data/maritime_commercial_arabic_legal_llm/maritime_commercial_law_legal_llm_001_391.json"
+      ],
+      "display_name_ar": "النظام البحري التجاري",
+      "display_name_en": "Maritime Commercial Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/maritime_commercial_arabic_legal_llm/maritime_commercial_law_legal_llm_001_391.json",
+          "governing": true,
+          "record_count": 391,
+          "status": "complete"
+        }
+      },
+      "notes": "Maritime Commercial Law «النظام البحري التجاري» — Royal Decree M/33, dated 5/4/1440H (12 December 2018), approving Council of Ministers Resolution No. 197 (4/4/1440H), published in the Official Gazette 28/4/1440H (4 January 2019). This corpus's largest single-track ingestion to date. A medium-priority coverage-gap identified via the coverage_gap_map research pass, whose article-count estimate was confirmed correct (unlike several prior gap-map entries this corpus found wrong). **391 records** across a فصل تمهيدي (تعريفات, Article 1) plus **10 أبواب** — الباب الأول (السفينة, 2-30, 7 فصول: أحكام عامة، جنسية السفينة، تسجيل السفينة، تسجيل السفينة المستأجرة غير المجهزة، قيد الوحدات البحرية المعفاة من التسجيل، المنصات البحرية، هيئات تصنيف السفن)؛ الباب الثاني (الحقوق العينية على السفينة, 31-73, 3 فصول)؛ الباب الثالث (الحجز على السفينة, 74-91, 2 فصلين)؛ الباب الرابع (أشخاص الملاحة البحرية, 92-141, 4 فصول)؛ الباب الخامس (استغلال السفينة, 142-253, 4 فصول — الفصل الرابع عقد النقل البحري, 179-253, further split into 5 أولاً..خامساً subsections)؛ الباب السادس (الحوادث البحرية, 254-292, 4 فصول)؛ الباب السابع (التأمين البحري, 293-357, 5 فصول)؛ الباب الثامن (منع التلوث البحري ومكافحته, 358-362, no فصول)؛ الباب التاسع (سلامة الملاحة بالموانئ والمياه الإقليمية, 363-372, 2 فصلين)؛ الباب العاشر (العقوبات, 373-388, no فصول) — plus أحكام عامة ختامية (389-391) — **all 391 اصلية**, never amended since enactment, confirmed by BOE's own per-article amendment markers, nezams.com's own metadata, and independent web search. **VERIFICATION TIER:** BOE-WAYBACK-ARCHIVE-X-NEZAMS-X-BOE-OFFICIAL-ENGLISH-TRANSLATION-TRIPLE-VERIFIED — the live laws.boe.gov.sa portal was unreachable this pass (connection reset), but Wayback Machine snapshots of both the BOE Arabic law page and BOE's own official English-translation PDF were reachable via https:// (http:// returned 403 for both); cross-verified programmatically against nezams.com — 381 of 391 articles matched exactly after normalizing NBSP/curly-quote/diacritic-order cosmetics, with the remaining 10 (Articles 316-325, marine-insurance provisions) resolved via BOE's own official English translation after nezams.com was found to carry a content-duplication bug in that specific range (independently re-verified this pass: the range now reads as distinct, coherent, sequential provisions). Article 391 confirms this law repeals Book Two of the Commercial Court Regulation (Royal Decree No. 32, 15/1/1350H) and the Ports, Harbours and Lighthouses Law (Royal Decree M/27, 24/6/1394H) — both modeled as repeals_full/repeals_partial edges in the supersession graph. Other flagged discrepancies: Article 1 defines 'الوزير' but 5 operative articles instead use 'الرئيس', verified as genuine primary-source text rather than an extraction artifact; whitespace/quote-glyph/diacritic-order cosmetic normalization was applied to 28 articles, documented rather than silently absorbed; the repeal clause's scope was verified but not exhaustively diffed against the two repealed predecessor instruments' full text, a documented gap; two further secondary sources were attempted for additional cross-verification but were inconclusive (access-gated/JS-rendered), not relied upon. Multiple companion Implementing Regulations exist per Article 390 (vessel registration, maritime transport licensing, and others issued by the Transport General Authority) but are confirmed out of scope for this track, following the precedent set by banking_control_law/insurance_control_law/finance_companies_law/cooperative_health_insurance_law/healthcare_professions_law/finance_lease_law. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_ARCHIVE_X_NEZAMS_X_BOE_OFFICIAL_ENGLISH_TRANSLATION_TRIPLE_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 391,
+        "legal_status_breakdown": {
+          "اصلية": 391,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 391
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/33, 5/4/1440H — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as the primary full-text source (live BOE unreachable), cross-verified against nezams.com's live HTML transcription and, for a flagged 10-article range, against a Wayback Machine archive of BOE's own official English-translation PDF",
+      "status": "complete",
+      "track_id": "maritime_commercial_law",
+      "validator_targets": [
+        "make maritime-commercial-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6203,6 +6252,7 @@
       "labor": 571,
       "law_practice": 146,
       "lessor_repossession": 7,
+      "maritime_commercial": 391,
       "marriage_contract_hearing": 10,
       "marriage_non_saudi": 11,
       "medical_reports": 13,
@@ -6239,7 +6289,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 8811,
+    "total_records": 9202,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

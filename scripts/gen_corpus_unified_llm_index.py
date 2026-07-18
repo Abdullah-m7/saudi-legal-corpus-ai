@@ -284,6 +284,8 @@ LAYERS = [
      "healthcare_professions", "law"),
     ("data/finance_lease_arabic_legal_llm/finance_lease_law_legal_llm_001_028.json",
      "finance_lease", "law"),
+    ("data/maritime_commercial_arabic_legal_llm/maritime_commercial_law_legal_llm_001_391.json",
+     "maritime_commercial", "law"),
 ]
 
 
