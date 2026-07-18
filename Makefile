@@ -234,6 +234,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         corpus-cross-reference-graph-validate \
         corpus-glossary-validate \
         corpus-schema-manifest-validate \
+        corpus-chunking-layer-validate \
+        corpus-freshness-manifest-validate \
         patent-law-track-validate \
         customs-law-track-validate \
         customs-regulation-track-validate \
@@ -1363,6 +1365,12 @@ corpus-glossary-validate:
 
 corpus-schema-manifest-validate:
 	$(PY) scripts/validate_corpus_schema_manifest.py
+
+corpus-chunking-layer-validate:
+	$(PY) scripts/validate_corpus_chunking_layer.py
+
+corpus-freshness-manifest-validate:
+	$(PY) scripts/validate_corpus_freshness_manifest.py
 
 patent-law-track-validate:
 	$(PY) scripts/validate_patent_law_track.py

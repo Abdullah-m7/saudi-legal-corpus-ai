@@ -1,0 +1,2338 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "scripts/gen_corpus_freshness_manifest.py",
+  "generated_date": "2026-07-11",
+  "source_registry": "data/corpus_registry/corpus_registry.json",
+  "source_registry_generated_date": "2026-07-11",
+  "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
+  "read_only_derived_layer": true,
+  "network_access": false,
+  "notes": "Purely additive, read-only survey layer over this corpus's 125 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 125 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
+  "total_tracks": 125,
+  "known_source_staleness_risk_count": 4,
+  "known_source_staleness_risk_tracks": [
+    "environmental_law",
+    "income_tax_law",
+    "patent_law",
+    "traffic_law"
+  ],
+  "tracks_without_resolvable_official_source_file": [],
+  "tracks": [
+    {
+      "track_id": "aawan_regulation",
+      "display_name_en": "Regulation Organizing the Work of Judicial Assistants",
+      "display_name_ar": "اللائحة المنظمة لأعمال أعوان القضاء",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/aawan/regulation/official_source/aawan_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "alimony_fund_regulation",
+      "display_name_en": "Alimony Fund Regulation",
+      "display_name_ar": "تنظيم صندوق النفقة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Council of Ministers / مجلس الوزراء (official legal portal laws.moj.gov.sa: database + published PDF; Fund administratively linked to the Minister of Justice)",
+      "registry_source_url": null,
+      "official_source_file": "sources/alimony_fund/regulation/official_source/alimony_fund_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "allegiance_commission_law",
+      "display_name_en": "Allegiance Commission Law",
+      "display_name_ar": "نظام هيئة البيعة",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Order / أمر ملكي (أ/135) — triple independent Arabic secondary sources, BOE page located but unreachable this pass (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/allegiance_commission/law/official_source/allegiance_commission_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "aml_law",
+      "display_name_en": "Anti-Money Laundering Law",
+      "display_name_ar": "نظام مكافحة غسل الأموال",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/aml/law/official_source/aml_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "anti_bribery_law",
+      "display_name_en": "Anti-Bribery Law",
+      "display_name_ar": "نظام مكافحة الرشوة",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER' — أضعف مستوى تحقق مستخدَم في هذه المدونة على الإطلاق حسب توصيف المسار نفسه: 16 مادة غير معدَّلة تستند إلى مصدر أساسي واحد (نسخة ممسوحة تحمل شعار هيئة الخبراء) مع تعزيز موضوعي (لا حرفي) من مصدر ثانٍ، بينما 9 مواد معدَّلة/مضافة تستند إلى تقارب موقعين ثانويين يُشتبه بأنهما يتشاركان مصدراً واحداً في الأصل — لم يتحقق أي تأكيد أساسي حرفي لأي منها.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/36) — NOT MOJ-issued; sourced via a distinct, lower-confidence secondary-source tier (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/anti_bribery/law/official_source/anti_bribery_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "anti_concealment_law",
+      "display_name_en": "Anti-Concealment Law",
+      "display_name_ar": "نظام مكافحة التستر",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/4) — triple independent Arabic secondary sources (qadha.org.sa compiled edition x nezams.com x alrashidi.law), laws.boe.gov.sa unreachable via all methods this pass (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/anti_concealment/law/official_source/anti_concealment_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qadha.org.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "anti_cyber_crime_law",
+      "display_name_en": "Anti-Cyber Crime Law",
+      "display_name_ar": "نظام مكافحة جرائم المعلوماتية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED': تحقق شامل (لا عيّنة) مادة بمادة عبر ثلاثة مصادر رسمية مستقلة (بوابة هيئة الخبراء BOE + ترجمة هيئة الاتصالات الرسمية عبر WIPO Lex + نسخة موثّقة رسمياً من وزارة المالية)، تطابقت جميعها حرفياً على كل المواد الـ16 — أقوى تحقق في هذه المدونة.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/17) — Bureau of Experts (BOE) portal, exhaustively cross-verified against WIPO Lex/CITC translation PDF and Ministry of Finance certified copy",
+      "registry_source_url": null,
+      "official_source_file": "sources/anti_cyber_crime/law/official_source/anti_cyber_crime_law_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/25df73d6-0f49-4dc5-b010-a9a700f2ec1d/1",
+        "https://r.jina.ai/",
+        "https://wipolex-res.wipo.int/edocs/lexdocs/laws/ar/sa/sa047ar.pdf"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "wipo.int",
+        "wipolex-res.wipo.int"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "anti_harassment_law",
+      "display_name_en": "Anti-Harassment Law",
+      "display_name_ar": "نظام مكافحة جريمة التحرش",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/96) — Bureau of Experts (BOE) portal, cross-checked against secondary sources; art 6 amendment sourced via press convergence (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/anti_harassment/law/official_source/anti_harassment_law_official_source.json",
+      "source_urls": [
+        "https://r.jina.ai/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "anti_narcotics_law",
+      "display_name_en": "Anti-Narcotics and Psychotropic Substances Control Law",
+      "display_name_ar": "نظام مكافحة المخدرات والمؤثرات العقلية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_PROXY_X_NEZAMS_X_QADHA_REFERENCE_TRIPLE_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/39) — BOE portal via r.jina.ai proxy x nezams.com x qadha.org.sa reference book (penalty articles triple-verified, see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/anti_narcotics/law/official_source/anti_narcotics_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qadha.org.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "anti_trafficking_law",
+      "display_name_en": "Anti-Trafficking in Persons Law",
+      "display_name_ar": "نظام مكافحة جرائم الاتجار بالأشخاص",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_SNAPSHOT_UNODC_ENGLISH_SUBSTANCE_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/40) — BOE portal via Wayback snapshot, substance-cross-checked against UNODC's official English translation (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/anti_trafficking/law/official_source/anti_trafficking_law_official_source.json",
+      "source_urls": [
+        "https://r.jina.ai/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-12-12; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "arbitration_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Arbitration Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام التحكيم",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/arbitration/regulation/official_source/arbitration_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "arbitration_law",
+      "display_name_en": "Arbitration Law",
+      "display_name_ar": "نظام التحكيم",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/arbitration/law/official_source/arbitration_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "banking_control_law",
+      "display_name_en": "Banking Control Law",
+      "display_name_ar": "نظام مراقبة البنوك",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/5) — dual independent Arabic secondary sources (alsayrfah.com x bfc.gov.sa), laws.boe.gov.sa unreachable for raw text this pass (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/banking_control/law/official_source/banking_control_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "bankruptcy_case_rules",
+      "display_name_en": "Rules Organizing Bankruptcy Case Procedures before the Commercial Courts",
+      "display_name_ar": "القواعد المنظمة لإجراءات قضايا الإفلاس في المحاكم التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/bankruptcy/case_rules/official_source/bankruptcy_case_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "bankruptcy_fees_regulation",
+      "display_name_en": "Rules for Determining the Fees of Experts and Trustees under the Bankruptcy Law",
+      "display_name_ar": "قواعد تحديد أتعاب الخبراء والأمناء في نظام الإفلاس",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/bankruptcy_fees/regulation/official_source/bankruptcy_fees_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "bankruptcy_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Bankruptcy Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الإفلاس",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/bankruptcy/regulation/official_source/bankruptcy_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "bankruptcy_law",
+      "display_name_en": "Bankruptcy Law",
+      "display_name_ar": "نظام الإفلاس",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/bankruptcy/law/official_source/bankruptcy_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "basic_law_of_governance",
+      "display_name_en": "Basic Law of Governance",
+      "display_name_ar": "النظام الأساسي للحكم",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "Royal Order / أمر ملكي (أ/90) — Bureau of Experts (BOE) portal, primary structured source, cross-checked against WIPO Lex (spot-checked; see notes); art 5 post-merge corrected via secondary sources + primary-source OCR",
+      "registry_source_url": null,
+      "official_source_file": "sources/basic_law_of_governance/law/official_source/basic_law_of_governance_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/16b97fcb-4833-4f66-8531-a9a700f161b6/1",
+        "https://r.jina.ai/",
+        "https://wipolex-res.wipo.int/edocs/lexdocs/laws/ar/sa/sa016ar.pdf"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "wipo.int",
+        "wipolex-res.wipo.int"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "board_of_grievances_law",
+      "display_name_en": "Law of the Board of Grievances",
+      "display_name_ar": "نظام ديوان المظالم",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOARD_OFFICIAL_PDF_VISUALLY_ADJUDICATED_GAZETTE_CONFIRMED': 25 من 26 مادة تحققت عبر قناتين رسميتين لنفس الجهة (ملف DOCX الرسمي لديوان المظالم مقابل نسخة PDF الرسمية المعتمدة، بمطابقة بصرية تامة 1.0)، مع تعزيز من WIPO Lex. المادة الوحيدة المعدَّلة (4) يوثَّق نطاقها وجوهرها رسمياً عبر بيان مجلس الوزراء (SPA)، لكن صياغتها الحرفية مأخوذة من عرض ثانوي للجريدة الرسمية بمستوى ثقة أدنى قليلاً — موثَّق في official_source.json الخاص بالمسار.",
+      "registry_source_authority": "Board of Grievances / ديوان المظالم (certified official PDF, bog.gov.sa; corroborated by WIPO Lex) + Umm Al-Qura gazette (SPA-confirmed amendment)",
+      "registry_source_url": null,
+      "official_source_file": "sources/board_of_grievances/law/official_source/board_of_grievances_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "capital_market_law",
+      "display_name_en": "Capital Market Law",
+      "display_name_ar": "نظام السوق المالية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER' — أعقد حالة في هذه المدونة: 55 من 68 سجلاً تحققت جيداً (نص 2003 الأصلي أو نص محدَّث مُستقى من موقع هيئة السوق المالية)، لكن 12 مادة (المحور الفعلي لإعادة الهيكلة بموجب م/16 لعام 2019) لم يتيسّر استرجاع صياغتها الحالية، فأُدرجت كنص تاريخي (2003) معلَّم صراحة بأنه ليس النص الساري؛ وسجل إضافي (المادة 20 مكرر) أُعيد بناؤه من وصف نصي لا من قراءة مباشرة. التصنيف هنا يعتمد الجزء الأضعف (الـ12 مادة + السجل المُعاد بناؤه).",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/30) — MIXED TIER: CMA current site x BOE 2003 original cross-verified for 55 articles; 12 articles flagged as 2003-only historical text (current wording confirmed amended but unrecovered, see notes); 1 article reconstructed from a documented relocation description",
+      "registry_source_url": null,
+      "official_source_file": "sources/capital_market/law/official_source/capital_market_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa"
+      ],
+      "last_verified_context": "built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "chambers_of_commerce_law",
+      "display_name_en": "Chambers of Commerce Law",
+      "display_name_ar": "نظام الغرف التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء (official legislative portal laws.boe.gov.sa, captured via Wayback archive)",
+      "registry_source_url": null,
+      "official_source_file": "sources/chambers_of_commerce/law/official_source/chambers_of_commerce_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20250513155131id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/fb3e69e4-84a6-45b4-85d6-ac8c00cb3d67/1",
+        "https://web.archive.org/web/20260114002544id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/fb3e69e4-84a6-45b4-85d6-ac8c00cb3d67/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-05-13, 2026-01-14",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "civil_aviation_law",
+      "display_name_en": "Civil Aviation Law",
+      "display_name_ar": "نظام الطيران المدني",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='NEZAMS_PRIMARY_X_RAKADVOCATE_SPOT_CHECKED': تعذّر الوصول إلى BOE بالكامل؛ المصدر الفعلي هو موقع ثانوي واحد (nezams.com) لكل المواد الـ180، مع تحقق مقارن من مصدر ثانٍ (rakadvocate) اقتصر على مادتين فقط (1 و180) — أي أن نحو 99% من المواد أحادية المصدر الثانوي دون أي تحقق مقارن.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/44) — nezams.com primary fetch, rakadvocate.blogspot.com spot-checked (arts 1, 180 only); BOE portal unreachable (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/civil_aviation/law/official_source/civil_aviation_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "civil_service_law",
+      "display_name_en": "Civil Service Law",
+      "display_name_ar": "نظام الخدمة المدنية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_FULL_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/49) — BOE portal via Wayback Machine, 100% cross-verified against nezams.com; M/139 six-article package additionally corroborated via SPA/Okaz news (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/civil_service/law/official_source/civil_service_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20260225030000/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/32f651e6-2976-439c-b418-a9a700f23fb2/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "spa.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-25; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "civil_transactions_law",
+      "display_name_en": "Civil Transactions Law",
+      "display_name_ar": "نظام المعاملات المدنية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='OWNER_PROVIDED_CROSS_CHECKED_MOJ_PORTAL': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء",
+      "registry_source_url": null,
+      "official_source_file": "sources/civil/law/official_source/civil_transactions_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "commercial_agencies_law",
+      "display_name_en": "Commercial Agencies Law",
+      "display_name_ar": "نظام الوكالات التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء (official legislative portal laws.boe.gov.sa, captured via Wayback archive)",
+      "registry_source_url": null,
+      "official_source_file": "sources/commercial_agencies/law/official_source/commercial_agencies_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20230330151521id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/b19a8aa6-7b50-43f0-ab8c-a9a700f1a446/1",
+        "https://web.archive.org/web/20251215150722id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/b19a8aa6-7b50-43f0-ab8c-a9a700f1a446/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2023-03-30, 2025-12-15",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "commercial_books_law",
+      "display_name_en": "Commercial Books Law",
+      "display_name_ar": "نظام الدفاتر التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء (official legislative portal laws.boe.gov.sa, captured via Wayback archive)",
+      "registry_source_url": null,
+      "official_source_file": "sources/commercial_books/law/official_source/commercial_books_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20240523235354id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/05690bd6-2c75-4b65-a148-a9a700f1bccf/1",
+        "https://web.archive.org/web/20250622165553id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/05690bd6-2c75-4b65-a148-a9a700f1bccf/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2024-05-23, 2025-06-22",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "commercial_courts_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Commercial Courts Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام المحاكم التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/commercial_courts/regulation/official_source/commercial_courts_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "commercial_courts_law",
+      "display_name_en": "Commercial Courts Law",
+      "display_name_ar": "نظام المحاكم التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/commercial_courts/law/official_source/commercial_courts_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "commercial_papers_law",
+      "display_name_en": "Commercial Papers Law",
+      "display_name_ar": "نظام الأوراق التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء (official legislative portal laws.boe.gov.sa, captured via Wayback archive)",
+      "registry_source_url": null,
+      "official_source_file": "sources/commercial_papers/law/official_source/commercial_papers_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20211017181757id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/4763eb94-047b-46f1-9697-a9a700f1b7ed/1",
+        "https://web.archive.org/web/20251116115632id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/4763eb94-047b-46f1-9697-a9a700f1b7ed/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2021-10-17, 2025-11-16",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "commercial_register_law",
+      "display_name_en": "Commercial Register Law",
+      "display_name_ar": "نظام السجل التجاري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء (official legislative portal laws.boe.gov.sa, captured via Wayback archive)",
+      "registry_source_url": null,
+      "official_source_file": "sources/commercial_register/law/official_source/commercial_register_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20250119094344id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/d0e0ea69-e88b-471a-9773-b20900a51be6/1",
+        "https://web.archive.org/web/20250403044828id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/d0e0ea69-e88b-471a-9773-b20900a51be6/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-01-19, 2025-04-03",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "companies_law",
+      "display_name_en": "Saudi Companies Law",
+      "display_name_ar": "نظام الشركات",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "لا يحمل official_text_status قيمة مسجّلة لهذا المسار (من أقدم مسارات المدونة، سابق لاعتماد حقل official_text_status). ملف بيانات القانون الخاص به يسجّل صراحة official_source_status='ingested_unverified' للنص العربي المقدَّم من المالك، ولا يوثّق أي تدقيق مقارن مقابل مصدر مستقل ثانٍ.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء",
+      "registry_source_url": null,
+      "official_source_file": "data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json",
+      "source_urls": [],
+      "named_source_authorities": [],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "competition_law",
+      "display_name_en": "Competition Law",
+      "display_name_ar": "نظام المنافسة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='DUAL_PRIMARY_SOURCE_BOE_WAYBACK_X_NEZAMS_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/75) — BOE portal via Wayback Machine snapshot (two independent dates), cross-verified word-for-word against nezams.com (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/competition/law/official_source/competition_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "copyright_law",
+      "display_name_en": "Copyright Law",
+      "display_name_ar": "نظام حماية حقوق المؤلف",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='SECONDARY_SOURCE_STRUCTURAL_WIPO_CROSS_CHECK_BOE_UNREACHABLE': تعذّر الوصول إلى BOE؛ النص الحرفي الكامل يستند إلى مصدر ثانوي واحد فقط (qadha.org.sa)، مع تحقق هيكلي فقط (وليس حرفياً) مقابل WIPO Lex وتحقق جزئي من مدونة مقابل الصياغة القديمة فقط. ملاحظة إضافية: القانون مؤكَّد أنه سيُستبدل اعتباراً من 2026-08-01 بموجب المرسوم الملكي م/169، الذي لم يتيسّر التحقق من نصه الكامل بعد.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/41) — qadha.org.sa compiled text (Saudi judicial-studies association), WIPO Lex structural cross-check, laws.boe.gov.sa unreachable this pass (see notes); SUPERSEDED effective 2026-08-01 by Royal Decree M/169",
+      "registry_source_url": null,
+      "official_source_file": "sources/copyright/law/official_source/copyright_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qadha.org.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "council_of_ministers_law",
+      "display_name_en": "Council of Ministers Law",
+      "display_name_ar": "نظام مجلس الوزراء",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Order / أمر ملكي (أ/13) — dual independent Arabic secondary sources, BOE portal confirmed unreachable (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/council_of_ministers/law/official_source/council_of_ministers_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "criminal_procedure_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Law of Criminal Procedure",
+      "display_name_ar": "اللائحة التنفيذية لنظام الإجراءات الجزائية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (Cabinet decision 142, 21/3/1436H; official legal portal)",
+      "registry_source_url": null,
+      "official_source_file": "sources/criminal_procedure/regulation/official_source/criminal_procedure_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "criminal_procedure_law",
+      "display_name_en": "Law of Criminal Procedure",
+      "display_name_ar": "نظام الإجراءات الجزائية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/criminal_procedure/law/official_source/criminal_procedure_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "customs_law",
+      "display_name_en": "GCC Unified Customs Law",
+      "display_name_ar": "نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها في جولة البناء هذه (إعادة تعيين اتصال curl، وخطأ 503 عبر WebFetch)؛ الصياغة الحرفية الكاملة لكل المواد تستند إلى مصدر رسمي واحد فقط (نسخة PDF الرسمية الموحَّدة من ZATCA، مشتركة مع مسار اللائحة التنفيذية)، دون أي تدقيق مقارن من مصدر ثانٍ إطلاقاً — لا حتى تحقق موضعي كما في نظام جباية الزكاة، بل غياب كامل للتدقيق المقارن.",
+      "registry_source_authority": "Royal Decree M/41, 3/11/1423H — ZATCA's own official consolidated PDF as sole full-text primary source (shared with customs_regulation), laws.boe.gov.sa confirmed unreachable this pass (curl connection reset; WebFetch HTTP 503)",
+      "registry_source_url": null,
+      "official_source_file": "sources/customs/law/official_source/customs_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "zatca.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "customs_regulation",
+      "display_name_en": "Implementing Regulation of the GCC Unified Customs Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE': نفس تصنيف نظام الجمارك الموحد (customs_law) — مصدر واحد فقط (نسخة ZATCA الرسمية المشتركة)، بوابة BOE متعذرة الوصول، دون أي تدقيق مقارن مستقل.",
+      "registry_source_authority": "Ministerial/Committee Resolution No. 2748, 25/11/1423H — ZATCA's own official consolidated PDF as sole full-text primary source (shared with customs_law), laws.boe.gov.sa confirmed unreachable this pass",
+      "registry_source_url": null,
+      "official_source_file": "sources/customs/regulation/official_source/customs_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "documentation_settlement_regulation",
+      "display_name_en": "Regulation of the Center for Assignment (Referral) and Liquidation",
+      "display_name_ar": "تنظيم مركز الاسناد والتصفية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Council of Ministers / مجلس الوزراء (official legal portal laws.moj.gov.sa: database + published PDF; Center organizationally linked to the Minister of Justice)",
+      "registry_source_url": null,
+      "official_source_file": "sources/documentation_settlement/regulation/official_source/documentation_settlement_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "ecommerce_law",
+      "display_name_en": "E-Commerce Law",
+      "display_name_ar": "نظام التجارة الإلكترونية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_PORTAL_WAYBACK_X_NEZAMS_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/126) — BOE portal via a single Wayback Machine snapshot (fetched directly), cross-verified against nezams.com (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/ecommerce/law/official_source/ecommerce_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "electronic_transactions_law",
+      "display_name_en": "Electronic Transactions Law",
+      "display_name_ar": "نظام التعاملات الإلكترونية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status يصف نفسه صراحة بأنه 'SINGLE_PRIMARY_SOURCE' (مصدر رسمي واحد فقط): بوابة BOE تعذّر الوصول إليها، واعتُمد بدلاً منها مستند PDF رسمي بديل (ديوان الترجمة الرسمية)، مع تدقيق هيكلي فقط (وليس حرفياً) مقابل WIPO Lex، وفجوة موثّقة وغير محلولة حول ترقيم المواد بعد إلغاء الفصل السادس.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/18) — official BOE/CoM translation-bureau PDF (primary source), WIPO Lex structural cross-check, laws.boe.gov.sa unreachable this pass (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/electronic_transactions/law/official_source/electronic_transactions_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "elitigation_guide_regulation",
+      "display_name_en": "Procedural Guide for the Electronic Litigation Service",
+      "display_name_ar": "الدليل الإجرائي لخدمة التقاضي الإلكتروني",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Minister of Justice / وزير العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/elitigation_guide/regulation/official_source/elitigation_guide_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "enforcement_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Law of Enforcement",
+      "display_name_ar": "اللائحة التنفيذية لنظام التنفيذ",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (Minister of Justice decision 526, 20/2/1439H; official legal portal)",
+      "registry_source_url": null,
+      "official_source_file": "sources/enforcement/regulation/official_source/enforcement_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "enforcement_law",
+      "display_name_en": "Law of Enforcement",
+      "display_name_ar": "نظام التنفيذ",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/enforcement/law/official_source/enforcement_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "enforcement_providers_regulation",
+      "display_name_en": "Regulation on Enforcement Service Providers",
+      "display_name_ar": "لائحة مقدمي خدمات التنفيذ",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/enforcement_providers/regulation/official_source/enforcement_providers_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "environmental_law",
+      "display_name_en": "Environmental Law",
+      "display_name_ar": "نظام البيئة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status يذكر صراحة 'ART1_BOE_SELF_CONTRADICTION': 48 من 49 مادة تطابقت حرفياً عبر ثلاثة مصادر (BOE عبر أرشيف Wayback + green.org.sa + nezams.com)، لكن تعريف 'الجهة المختصة' في المادة 1 يقوم على تناقض داخلي موثَّق في بيانات BOE نفسها (النص الأساسي مقابل سجل التعديلات الخاص بها)، حُلّ بالاعتماد على تعزيز ثانوي واحد فقط (qanoonsa.com).",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/165) — BOE via Wayback x green.org.sa PDF x nezams.com, triple-verified for 48/49 articles; Article 1 flagged (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/environmental/law/official_source/environmental_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "green.org.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2024-09-24, 2025-10-15; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "environmental_art_001_jihah_mukhtassah_boe_self_contradiction: MOST IMPORTANT FLAG. Article 1's definition of الجهة المختصة (Competent Authority) is the subject of a genuine, persistent self-contradiction within BOE's own official primary-source data, not a routine cross-source disc"
+    },
+    {
+      "track_id": "evidence_electronic_procedures_rules",
+      "display_name_en": "Controls of the Electronic Evidentiary Procedures",
+      "display_name_ar": "ضوابط إجراءات الإثبات إلكترونياً",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (decision 921, 16/03/1444H; official legal portal)",
+      "registry_source_url": null,
+      "official_source_file": "sources/evidence/electronic_rules/official_source/evidence_electronic_rules_official_source.json",
+      "source_urls": [
+        "https://laws.moj.gov.sa"
+      ],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "evidence_expertise_rules",
+      "display_name_en": "Rules Regulating Expert Affairs Before the Courts",
+      "display_name_ar": "القواعد الخاصة بتنظيم شؤون الخبرة أمام المحاكم",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (decision 921, 16/03/1444H; official legal portal)",
+      "registry_source_url": null,
+      "official_source_file": "sources/evidence/expertise_rules/official_source/evidence_expertise_rules_official_source.json",
+      "source_urls": [
+        "https://laws.moj.gov.sa"
+      ],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "evidence_law",
+      "display_name_en": "Saudi Evidence Law",
+      "display_name_ar": "نظام الإثبات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/evidence/law/official_source/evidence_law_official_source.json",
+      "source_urls": [
+        "https://laws.moj.gov.sa/ar/legislation/UbB0wpvasVhoTAgmYKUA7A"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "evidence_procedural_manuals",
+      "display_name_en": "Procedural Manuals for the Evidence Law",
+      "display_name_ar": "الأدلة الإجرائية لنظام الإثبات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (decision 921, 16/03/1444H; official legal portal)",
+      "registry_source_url": null,
+      "official_source_file": "sources/evidence/procedural_manuals/official_source/evidence_procedural_manuals_official_source.json",
+      "source_urls": [
+        "https://laws.moj.gov.sa"
+      ],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "foreign_ownership_law",
+      "display_name_en": "Non-Saudi Real Estate Ownership Law",
+      "display_name_ar": "نظام تملك غير السعوديين للعقار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/foreign_ownership/law/official_source/foreign_ownership_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "franchise_law",
+      "display_name_en": "Franchise Law",
+      "display_name_ar": "نظام الامتياز التجاري",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='BOE_PORTAL_PROXY_RETRIEVED_QANONIAH_SPOT_CROSS_VERIFIED': بوابة BOE (مصدر رسمي) تم الوصول إليها لكامل النص، لكن التدقيق المقارن مع qanoniah.com اقتصر على 4 من 27 مادة فقط (1، 2، 4، 5)؛ 23 مادة (85%) تبقى أحادية المصدر دون تدقيق مقارن مستقل.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/22) — BOE portal (via r.jina.ai proxy) spot-cross-verified against qanoniah.com for Articles 1, 2, 4, 5 only (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/franchise/law/official_source/franchise_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qadha.org.sa",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "gcc_ownership_law",
+      "display_name_en": "GCC Citizens Real Estate Ownership Regulation",
+      "display_name_ar": "تنظيم تملك مواطني دول المجلس للعقار في الدول الأعضاء بمجلس التعاون لغرض السكن والاستثمار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/gcc_ownership/law/official_source/gcc_ownership_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "gtpl_implementing_regulation",
+      "display_name_en": "GTPL Implementing Regulation",
+      "display_name_ar": "اللائحة التنفيذية لنظام المنافسات والمشتريات الحكومية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='REEXTRACTED_FROM_OFFICIAL_MOF_PDF_CROSS_CHECKED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Finance / وزارة المالية",
+      "registry_source_url": null,
+      "official_source_file": "sources/gtpl/regulation/official_source/gtpl_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "gtpl_law",
+      "display_name_en": "Government Tenders and Procurement Law",
+      "display_name_ar": "نظام المنافسات والمشتريات الحكومية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MIRROR_TEXT_CROSS_CHECKED_AGAINST_OFFICIAL_MOF_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Finance / وزارة المالية (official consolidated PDF cross-check); English: Bureau of Experts official translation",
+      "registry_source_url": null,
+      "official_source_file": "sources/gtpl/law/official_source/gtpl_m128_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "iflas_hudud_regulation",
+      "display_name_en": "Rules Organizing Cross-Border Insolvency Procedures",
+      "display_name_ar": "القواعد المنظمة لإجراءات الإفلاس العابرة للحدود",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/iflas_hudud/regulation/official_source/iflas_hudud_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "implementing_regulations_arabic_program_closure",
+      "display_name_en": null,
+      "display_name_ar": "تدقيق إغلاق برنامج اللوائح التنفيذية العربية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "مسار تدقيق إغلاق مشتق (closure/status audit) يراجع اكتمال المسارين العامّ والخاص بشركات المساهمة المدرجة فقط؛ لا يحمل هو نفسه نصاً قانونياً أساسياً، ويرث تصنيف المسارين اللذين يدقّقهما.",
+      "registry_source_authority": null,
+      "registry_source_url": null,
+      "official_source_file": "reports/implementing_regulations/implementing_regulations_arabic_program_closure_audit.json",
+      "source_urls": [
+        "https://www.uqn.gov.sa/decisions-and-regulations/4001295",
+        "https://www.uqn.gov.sa/details?p=21325"
+      ],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "implementing_regulations_general",
+      "display_name_en": null,
+      "display_name_ar": "اللائحة التنفيذية لنظام الشركات",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "لا يحمل official_text_status قيمة مسجّلة. المصدر الوحيد هو نسخة أم القرى الرسمية (uqn.gov.sa)؛ تقرير إغلاق البرنامج (closure audit) يتحقق فقط من تطابق البصمة الرقمية (hash) الداخلية للنص المُستوعَب مع نفسه، وليس من تدقيق مقارن مقابل نسخة مستقلة ثانية.",
+      "registry_source_authority": "Ministry of Commerce / وزارة التجارة",
+      "registry_source_url": "https://www.uqn.gov.sa/details?p=21325",
+      "official_source_file": "data/implementing_regulations/general/source_manifest.json",
+      "source_urls": [
+        "https://www.uqn.gov.sa/details?p=21325"
+      ],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own recorded capture/fetch date: 2026-07-05",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "implementing_regulations_listed_joint_stock",
+      "display_name_en": null,
+      "display_name_ar": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "لا يحمل official_text_status قيمة مسجّلة. المصدر الوحيد هو نسخة أم القرى الرسمية (uqn.gov.sa) الصادرة عن مجلس هيئة السوق المالية؛ تقرير إغلاق البرنامج يتحقق فقط من تطابق البصمة الرقمية الداخلية، وليس من تدقيق مقارن مقابل نسخة مستقلة ثانية.",
+      "registry_source_authority": "مجلس هيئة السوق المالية",
+      "registry_source_url": "https://www.uqn.gov.sa/decisions-and-regulations/4001295",
+      "official_source_file": "data/implementing_regulations/listed_joint_stock/source_manifest.json",
+      "source_urls": [
+        "https://www.uqn.gov.sa/decisions-and-regulations/4001295"
+      ],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own recorded capture/fetch date: 2026-07-05",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "income_tax_law",
+      "display_name_en": "Income Tax Law",
+      "display_name_ar": "نظام ضريبة الدخل",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY' — يذكر اسم الحالة نفسه الفجوة: 69 من 81 مادة تحققت عبر 3-4 مصادر (BOE + زكاة وضريبة وجمارك + gstc.gov.sa + nezams.com)، لكن الفصل العاشر بالكامل (12 مادة، 44-55) يعتمد على مصدرين فقط (BOE + nezams)، إذ اكتفت المصادر الحكومية بإشعار إلغاء مجرَّد دون النص البديل الكامل؛ كما تحمل 7 مواد أخرى تعديلاً موثَّقاً من حاشية زكاة/ضريبة/جمارك وحدها دون تأكيد على مستوى الفقرة. التصنيف هنا يعتمد الجزء الأضعف (الفصل العاشر + المواد السبع).",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/1) — BOE via Wayback x ZATCA's own official PDF x gstc.gov.sa PDF x nezams.com, 3-4-source agreement for 69/81 articles; Chapter 10 BOE+nezams only (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/income_tax/law/official_source/income_tax_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "gstc.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-15; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "income_tax_boe_default_body_staleness: The BOE portal's default per-article body is frequently pre-amendment/stale: confirmed for Articles 2, 56, 66, and 67 (default body shows superseded text; the article's own amendment-history popup shows the current repla"
+    },
+    {
+      "track_id": "insurance_control_law",
+      "display_name_en": "Cooperative Insurance Companies Control Law",
+      "display_name_ar": "نظام مراقبة شركات التأمين التعاوني",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='MISA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/32) — misa.gov.sa official bilingual PDF cross-verified against nezams.com, laws.boe.gov.sa and the Wayback Machine both unreachable this pass (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/insurance_control/law/official_source/insurance_control_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "misa.gov.sa",
+        "mof.gov.sa",
+        "nezams.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "investment_implementing_regulation",
+      "display_name_en": "Investment Law Implementing Regulations",
+      "display_name_ar": "اللائحة التنفيذية لنظام الاستثمار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Investment / وزارة الاستثمار",
+      "registry_source_url": null,
+      "official_source_file": "sources/investment/regulation/official_source/investment_regulation_official_misa_source.json",
+      "source_urls": [],
+      "named_source_authorities": [],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "investment_law",
+      "display_name_en": "Saudi Investment Law",
+      "display_name_ar": "نظام الاستثمار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Investment / وزارة الاستثمار",
+      "registry_source_url": null,
+      "official_source_file": "sources/investment/law/official_source/investment_law_official_misa_source.json",
+      "source_urls": [],
+      "named_source_authorities": [],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judgment_objection_methods_regulation",
+      "display_name_en": "Executive Regulation for Methods of Objecting to Judgments",
+      "display_name_ar": "اللائحة التنفيذية لطرق الاعتراض على الأحكام",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Minister of Justice / وزير العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judgment_objection_methods/regulation/official_source/judgment_objection_methods_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judicial_costs_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Judicial Costs Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام التكاليف القضائية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judicial_costs/regulation/official_source/judicial_costs_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judicial_costs_law",
+      "display_name_en": "Judicial Costs Law",
+      "display_name_ar": "نظام التكاليف القضائية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judicial_costs/law/official_source/judicial_costs_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judicial_documents_regulation",
+      "display_name_en": "Regulation on Judicial Documents",
+      "display_name_ar": "لائحة الوثائق القضائية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judicial_documents/regulation/official_source/judicial_documents_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judicial_inspection_regulation",
+      "display_name_en": "Judicial Inspection Regulation",
+      "display_name_ar": "لائحة التفتيش القضائي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judicial_inspection/regulation/official_source/judicial_inspection_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judicial_training_center_guide",
+      "display_name_en": "Organizational Guide for the Judicial Training Center",
+      "display_name_ar": "الدليل التنظيمي لمركز التدريب العدلي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Council of Ministers / مجلس الوزراء (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judicial_training_center/guide/official_source/judicial_training_center_guide_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judiciary_bog_mechanism",
+      "display_name_en": "Executive Working Mechanism for the Law of the Judiciary and the Law of the Board of Grievances",
+      "display_name_ar": "آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF; promulgated by the same Royal Decree م/78 as the companion Law of the Judiciary and Law of the Board of Grievances)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judiciary_bog/mechanism/official_source/judiciary_bog_mechanism_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "judiciary_law",
+      "display_name_en": "Law of the Judiciary",
+      "display_name_ar": "نظام القضاء",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/judiciary/law/official_source/judiciary_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "juveniles_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Juveniles Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الأحداث",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/juveniles/implementing_regulation/official_source/juveniles_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "juveniles_law",
+      "display_name_en": "Juveniles Law",
+      "display_name_ar": "نظام الأحداث",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/juveniles/law/official_source/juveniles_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "labor_accessibility_arrangements",
+      "display_name_en": "Workplace Accessibility Arrangements Tables (Labor Annex 2)",
+      "display_name_ar": "جدول الترتيبات والخدمات التيسيرية في بيئة العمل للعمال ذوي الإعاقة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='HRSD_OFFICIAL_PDF_ACTUALTEXT_OCR_IMAGE_CROSS_CHECKED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+      "registry_source_url": null,
+      "official_source_file": "sources/labor/annex2/official_source/labor_annex2_official_source.json",
+      "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة"
+      ],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "labor_implementing_regulation",
+      "display_name_en": "Labor Law Implementing Regulation",
+      "display_name_ar": "اللائحة التنفيذية لنظام العمل",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED_LAW_QUOTES': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+      "registry_source_url": null,
+      "official_source_file": "sources/labor/regulation/official_source/labor_regulation_official_source.json",
+      "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة"
+      ],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "labor_law",
+      "display_name_en": "Saudi Labor Law",
+      "display_name_ar": "نظام العمل",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='HRSD_CONSOLIDATED_CROSS_CHECKED_BOE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية (official consolidated PDF); cross-checked vs independent BOE captures",
+      "registry_source_url": null,
+      "official_source_file": "sources/labor/law/official_source/labor_law_official_source.json",
+      "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-05/hrsd.pdf"
+      ],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "labor_model_contract_forms",
+      "display_name_en": "Unified Model Employment Contract Forms (Labor Annex 5)",
+      "display_name_ar": "النماذج الموحدة لعقد العمل بأنواعه",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='HRSD_OFFICIAL_PDF_OCR_IMAGE_CROSS_CHECKED_BILINGUAL_FORM': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+      "registry_source_url": null,
+      "official_source_file": "sources/labor/annex5/official_source/labor_annex5_official_source.json",
+      "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة"
+      ],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "labor_model_work_regulation",
+      "display_name_en": "Unified Model Work Organization Regulation (Labor Annex 1)",
+      "display_name_ar": "النموذج الموحد للائحة تنظيم العمل",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='HRSD_OFFICIAL_PDF_OCR_IMAGE_CROSS_CHECKED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+      "registry_source_url": null,
+      "official_source_file": "sources/labor/annex1/official_source/labor_annex1_official_source.json",
+      "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة"
+      ],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "labor_recruitment_services_rules",
+      "display_name_en": "Recruitment and Labor-Services Rules (Labor Annex 4)",
+      "display_name_ar": "قواعد ممارسة نشاط الاستقدام وتقديم الخدمات العمالية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+      "registry_source_url": null,
+      "official_source_file": "sources/labor/annex4/official_source/labor_annex4_official_source.json",
+      "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة"
+      ],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "labor_saudization_mediation_rules",
+      "display_name_en": "Saudi-Employment Mediation Rules (Labor Annex 3)",
+      "display_name_ar": "ضوابط وقواعد ممارسة نشاط التوسط في توظيف السعوديين",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='HRSD_OFFICIAL_PDF_OCR_CROSS_CHECKED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Human Resources and Social Development / وزارة الموارد البشرية والتنمية الاجتماعية",
+      "registry_source_url": null,
+      "official_source_file": "sources/labor/annex3/official_source/labor_annex3_official_source.json",
+      "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة"
+      ],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "law_practice_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Code of Law Practice",
+      "display_name_ar": "اللائحة التنفيذية لنظام المحاماة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/law_practice/regulation/official_source/law_practice_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "law_practice_law",
+      "display_name_en": "Code of Law Practice",
+      "display_name_ar": "نظام المحاماة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/law_practice/law/official_source/law_practice_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "lessor_repossession_regulation",
+      "display_name_en": "Controls for the Lessor's Repossession of Movable Assets",
+      "display_name_ar": "ضوابط تسلم المؤجر الأصول المنقولة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Minister of Justice / وزير العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/lessor_repossession/regulation/official_source/lessor_repossession_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "marriage_contract_hearing_regulation",
+      "display_name_en": "Arrangements for Hearing Claims to Prove Marriage Contracts Concluded Without Required Official Permission",
+      "display_name_ar": "الترتيبات الخاصة بسماع الدعوى بإثبات عقد الزواج الذي أُبرم دون إذن الجهة المختصة فيما يشترط له الإذن",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Minister of Justice Decision / قرار وزير العدل — official legal portal laws-gateway.moj.gov.sa (database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/marriage_contract_hearing/regulation/official_source/marriage_contract_hearing_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "marriage_non_saudi_regulation",
+      "display_name_en": "Regulation on the Marriage of a Saudi Man to a Non-Saudi Woman and a Saudi Woman to a Non-Saudi Man",
+      "display_name_ar": "لائحة زواج السعودي بغير سعودية والسعودية بغير سعودي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Minister of Interior / وزير الداخلية (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/marriage_non_saudi/regulation/official_source/marriage_non_saudi_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "medical_reports_regulation",
+      "display_name_en": "Medical Reports Regulation",
+      "display_name_ar": "لائحة التقارير الطبية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Minister of Justice / وزير العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/medical_reports/regulation/official_source/medical_reports_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "mining_investment_law",
+      "display_name_en": "Mining Investment Law",
+      "display_name_ar": "نظام الاستثمار التعديني",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_PORTAL_WAYBACK_X_FAOLEX_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/140) — BOE portal via Wayback Machine snapshot (fetched directly), cross-verified structurally against FAOLEX (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/mining_investment/law/official_source/mining_investment_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "mosalaha_center_regulation",
+      "display_name_en": "Regulation of the Conciliation Center",
+      "display_name_ar": "تنظيم مركز المصالحة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Council of Ministers / مجلس الوزراء (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/mosalaha_center/regulation/official_source/mosalaha_center_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "municipal_realestate_implementing_regulation",
+      "display_name_en": "Municipal Real Estate Disposal Regulation",
+      "display_name_ar": "لائحة التصرف بالعقارات البلدية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/municipal_realestate/implementing_regulation/official_source/municipal_realestate_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "municipal_realestate_law",
+      "display_name_en": "Municipal Real Estate Disposal Law",
+      "display_name_ar": "نظام التصرف في العقارات البلدية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/municipal_realestate/law/official_source/municipal_realestate_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "muslaha_regulation",
+      "display_name_en": "Rules for the Work of Conciliation Offices and its Procedures",
+      "display_name_ar": "قواعد العمل في مكاتب المصالحة وإجراءاته",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/muslaha/regulation/official_source/muslaha_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "patent_law",
+      "display_name_en": "Law of Patents, Layout Designs of Integrated Circuits, Plant Varieties and Industrial Designs",
+      "display_name_ar": "نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='WIPOLEX_M45_CONSOLIDATED_X_BOE_PLAINTEXT_STALE_TERMINOLOGY_CROSS_VERIFIED': الصياغة الحالية الحاكمة لكل المواد الـ66 تستند إلى مصدر واحد (نسخة WIPO Lex الموحَّدة حتى التعديل 2023)، وإن جرى التحقق منها عبر ثلاث طرق استخراج مستقلة لنفس المستند (تمريرتا OCR + استخراج طبقة النص الأصلية). بوابة BOE (مصدر رسمي ثانٍ) مؤكَّدة أنها متجاوَزة زمنياً على محورين: لم تُدرِج تعديل 2023 إطلاقاً، ولثلاث من أربع مواد عُدِّلت 2018 (35، 42، 63) يعرض نصها المعروض صياغة ما قبل 2018 رغم أن سجل تعديلاتها الخاص يصف التعديل بشكل صحيح — فهي تؤكد المعلومات الوصفية وتاريخ التعديل والصياغة الأصلية القابلة للاسترجاع، لا الصياغة الحالية. أقرب لنمط نظام العلامات التجارية (WIPO Lex أساسي x بطاقة حالة BOE) من نمط تحقق مزدوج رسمي كامل.",
+      "registry_source_authority": "Royal Decree M/27, 29/5/1425H — WIPO Lex's own consolidated PDF (through Royal Decree M/45, 2023) as primary current-text source, cross-verified via independent OCR plus native-text-layer extraction, against a BOE Wayback-archived portal text confirmed stale on two axes (the 2023 substantive amendment, and the 2018 terminology amendment's own displayed article bodies)",
+      "registry_source_url": null,
+      "official_source_file": "sources/patent/law/official_source/patent_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "saip.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2024-11-13, 2025-12-12; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "patent_boe_m45_staleness: BOE's live portal (both the 2024-11-13 and 2025-12-12 Wayback snapshots) has not incorporated the 2023 Hague-accession amendment (Royal Decree M/45, 10/3/1445H) at all: Articles 2, 18 and 19 are displayed by BOE in their"
+    },
+    {
+      "track_id": "payment_systems_law",
+      "display_name_en": "Payment Systems and Services Law",
+      "display_name_ar": "نظام المدفوعات وخدماتها",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='SAMA_OFFICIAL_PDF_OCR_X_NEZAMS_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/26) — official SAMA PDF (rulebook.sama.gov.sa), dual independent OCR passes (300/400dpi), cross-verified word-for-word against nezams.com (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/payment_systems/law/official_source/payment_systems_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "pdpl_implementing_regulation",
+      "display_name_en": "PDPL Implementing Regulation",
+      "display_name_ar": "اللائحة التنفيذية لنظام حماية البيانات الشخصية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": null,
+      "registry_source_url": null,
+      "official_source_file": "sources/pdpl/regulation/verified/pdpl_implementing_regulation_official_sdaia_source.json",
+      "source_urls": [
+        "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2"
+      ],
+      "named_source_authorities": [
+        "dgp.sdaia.gov.sa",
+        "sdaia.gov.sa"
+      ],
+      "last_verified_context": "track's own recorded capture/fetch date: 2026-07-10",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "pdpl_law",
+      "display_name_en": "Personal Data Protection Law (PDPL)",
+      "display_name_ar": "نظام حماية البيانات الشخصية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": null,
+      "registry_source_url": null,
+      "official_source_file": "sources/pdpl/verified/pdpl_arabic_law_official_sdaia_source.json",
+      "source_urls": [
+        "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL"
+      ],
+      "named_source_authorities": [
+        "dgp.sdaia.gov.sa",
+        "sdaia.gov.sa"
+      ],
+      "last_verified_context": "track's own recorded capture/fetch date: 2026-07-10",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "personal_status_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Personal Status Law",
+      "display_name_ar": "لائحة نظام الأحوال الشخصية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (Supreme Order 59641, 17/8/1446H; official legal portal)",
+      "registry_source_url": null,
+      "official_source_file": "sources/personal_status/regulation/official_source/personal_status_regulation_official_source.json",
+      "source_urls": [
+        "https://laws.moj.gov.sa"
+      ],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "personal_status_law",
+      "display_name_en": "Saudi Personal Status Law",
+      "display_name_ar": "نظام الأحوال الشخصية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/personal_status/law/official_source/personal_status_law_official_source.json",
+      "source_urls": [
+        "https://laws.moj.gov.sa"
+      ],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "qismah_regulation",
+      "display_name_en": "Regulation on the Division of Jointly-Owned Property",
+      "display_name_ar": "لائحة قسمة الأموال المشتركة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/qismah/regulation/official_source/qismah_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_expropriation_law",
+      "display_name_en": "Law on Expropriation of Real Estate for Public Interest and Temporary Seizure of Real Estate",
+      "display_name_ar": "نظام نزع ملكية العقارات للمصلحة العامة ووضع اليد المؤقت على العقارات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي — الهيئة العامة لعقارات الدولة (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_expropriation/law/official_source/real_estate_expropriation_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_finance_law",
+      "display_name_en": "Real Estate Finance Law",
+      "display_name_ar": "نظام التمويل العقاري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_finance/law/official_source/real_estate_finance_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_mortgage_law",
+      "display_name_en": "Registered Real Estate Mortgage Law",
+      "display_name_ar": "نظام الرهن العقاري المسجل",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_mortgage/law/official_source/real_estate_mortgage_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_registration_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Real Estate In-Kind Registration Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام التسجيل العيني للعقار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_registration/regulation/official_source/real_estate_registration_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_registration_law",
+      "display_name_en": "Real Estate In-Kind Registration Law",
+      "display_name_ar": "نظام التسجيل العيني للعقار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_registration/law/official_source/real_estate_registration_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_units_implementing_regulation",
+      "display_name_en": "Real Estate Unit Ownership Law Implementing Regulation",
+      "display_name_ar": "اللائحة التنفيذية لنظام ملكية الوحدات العقارية وفرزها وإدارتها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_units/implementing_regulation/official_source/real_estate_units_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_units_law",
+      "display_name_en": "Real Estate Unit Ownership Law",
+      "display_name_ar": "نظام ملكية الوحدات العقارية وفرزها وإدارتها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_units/law/official_source/real_estate_units_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "regions_law",
+      "display_name_en": "Regions/Provinces Law",
+      "display_name_ar": "نظام المناطق",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Order / أمر ملكي (أ/92) — dual independent Arabic secondary sources, this law's BOE page unreachable this pass (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/regions/law/official_source/regions_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "sama_law",
+      "display_name_en": "Saudi Central Bank Law",
+      "display_name_ar": "نظام البنك المركزي السعودي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='GOVERNMENT_AGENCY_OFFICIAL_PDF_PRIMARY_SOURCE_BOE_ARCHIVE_CROSS_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/36) — SAMA's own official PDF (current text) cross-checked against a Wayback Machine archive of the Bureau of Experts portal (original text); laws.boe.gov.sa's live portal returned HTTP 503 this pass (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/sama/law/official_source/sama_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "sama.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "sharia_procedure_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Law of Sharia Procedure",
+      "display_name_ar": "اللائحة التنفيذية لنظام المرافعات الشرعية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (Minister of Justice decree 39933, 19/5/1435H; official legal portal)",
+      "registry_source_url": null,
+      "official_source_file": "sources/sharia_procedure/regulation/official_source/sharia_procedure_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "sharia_procedure_law",
+      "display_name_en": "Law of Sharia Procedure",
+      "display_name_ar": "نظام المرافعات الشرعية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/sharia_procedure/law/official_source/sharia_procedure_law_official_source.json",
+      "source_urls": [
+        "https://laws.moj.gov.sa"
+      ],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "shura_council_law",
+      "display_name_en": "Shura Council Law",
+      "display_name_ar": "نظام مجلس الشورى",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "Royal Order / أمر ملكي (أ/91) — triple independent Arabic secondary sources, plus a government primary source (Saudi Press Agency) for article 3's current text (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/shura_council/law/official_source/shura_council_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "nezams.com",
+        "spa.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "social_insurance_law",
+      "display_name_en": "Social Insurance Law (New System)",
+      "display_name_ar": "نظام التأمينات الاجتماعية (النظام الجديد)",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_PRIMARY_X_NEZAMS_SPOTCHECK_X_QANOONSA_STRUCTURE_VERIFIED': مصدر رسمي (BOE عبر Wayback) اعتُمد للنص الكامل، لكن التدقيق المقارن الحرفي مقابل nezams.com اقتصر على 5 من 63 مادة فقط؛ الباقي (58 مادة، نحو 92%) أحادي المصدر الرسمي دون تحقق حرفي مقارن (فقط تأكيد هيكلي من qanoonsa.com).",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/273) — BOE via Wayback Machine as primary full-text source, spot-checked (5/63 articles) against nezams.com, structure/metadata additionally corroborated via qanoonsa.com (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/social_insurance/law/official_source/social_insurance_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-12-12",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "social_insurance_legacy_law",
+      "display_name_en": "Social Insurance Law (Old/Legacy System)",
+      "display_name_ar": "نظام التأمينات الاجتماعية (النظام القديم)",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED': مصدر رسمي (BOE عبر Wayback) لكامل النص، مع تدقيق مقارن حرفي عبر nezams.com لأكثر من 20 من 71 مادة إضافة إلى 100% من سجلات تعديل المواد التسع المعدَّلة/المضافة، وتعزيز صحفي مستقل (عكاظ/الرياض) لصياغة المادة 37 تحديداً — تغطية أقوى من أغلب مسارات nezams-فقط، لكنها تبقى دون التأكيد الرسمي المزدوج الكامل.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/33) — BOE via Wayback Machine (2026-02-09 snapshot) as primary full-text source, cross-verified against nezams.com (20+ of 71 articles plus 100% of the nine changed-article amendment-history popups), Article 37's reconciled text additionally corroborated via independent Okaz/Al-Riyadh news coverage",
+      "registry_source_url": null,
+      "official_source_file": "sources/social_insurance_legacy/law/official_source/social_insurance_legacy_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20260209120854if_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/8ff3cd90-e466-4bf9-a071-a9a700f2a70d/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-09; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "state_funded_lawyer_regulation",
+      "display_name_en": "Mechanism for a Defendant in Major/Serious Crimes to Seek Legal Counsel at the State's Expense",
+      "display_name_ar": "آلية الاستعانة بمحام على نفقة الدولة للمتهم في الجرائم الكبيرة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Minister of Justice / وزير العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/state_funded_lawyer/regulation/official_source/state_funded_lawyer_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "sulook_regulation",
+      "display_name_en": "Professional Conduct Rules for Lawyers",
+      "display_name_ar": "قواعد السلوك المهني للمحامين",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/sulook/regulation/official_source/sulook_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "tawtheeq_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Notarization Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام التوثيق",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/tawtheeq/regulation/official_source/tawtheeq_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "tawtheeq_law",
+      "display_name_en": "Notarization Law",
+      "display_name_ar": "نظام التوثيق",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/tawtheeq/law/official_source/tawtheeq_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-11-16",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "telecommunications_law",
+      "display_name_en": "Telecommunications and Information Technology Act",
+      "display_name_ar": "نظام الاتصالات وتقنية المعلومات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_PORTAL_PRIMARY_SOURCE_MCIT_PDF_CROSS_CHECKED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/106) — laws.boe.gov.sa primary source (reached via r.jina.ai reader-proxy this pass), MCIT official PDF cross-check (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/telecommunications/law/official_source/telecommunications_law_official_source.json",
+      "source_urls": [
+        "https://r.jina.ai/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "terrorism_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Law on Combating Crimes of Terrorism and its Financing",
+      "display_name_ar": "اللائحة التنفيذية لنظام مكافحة جرائم الإرهاب وتمويله",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/terrorism/implementing_regulation/official_source/terrorism_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "terrorism_law",
+      "display_name_en": "Law on Combating Crimes of Terrorism and its Financing",
+      "display_name_ar": "نظام مكافحة جرائم الإرهاب وتمويله",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/terrorism/law/official_source/terrorism_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "trade_names_law",
+      "display_name_en": "Trade Names Law",
+      "display_name_ar": "نظام الأسماء التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Bureau of Experts at the Council of Ministers / هيئة الخبراء بمجلس الوزراء (official legislative portal laws.boe.gov.sa, captured via Wayback archive)",
+      "registry_source_url": null,
+      "official_source_file": "sources/trade_names/law/official_source/trade_names_law_official_source.json",
+      "source_urls": [
+        "https://web.archive.org/web/20241108051239id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/d4801a45-7f76-4414-bdca-b20900db6fc4/1",
+        "https://web.archive.org/web/20251212212337id_/https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/d4801a45-7f76-4414-bdca-b20900db6fc4/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2024-11-08, 2025-12-12",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "trademark_law",
+      "display_name_en": "Trademark Law (GCC unified law, as given force in Saudi Arabia)",
+      "display_name_ar": "قانون (نظام) العلامات التجارية لدول مجلس التعاون لدول الخليج العربية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='WIPO_LEX_PRIMARY_PDF_X_BOE_STATUS_CARD_CROSS_VERIFIED': الصياغة الحرفية الكاملة تستند إلى مصدر واحد (نسخة WIPO Lex)، مع تأكيد حالة 'ساري' فقط (وليس الصياغة) عبر بطاقة نظام BOE المضمَّنة. تعارض موثَّق وغير محلول مع مصدرين ثانويين (misa.gov.sa وnezams.com) لا يزالان يعرضان القانون الملغى لعام 2002.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/51) — WIPO Lex primary hosted PDF with embedded BOE/National Archives status card confirming ساري (in force) (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/trademark/law/official_source/trademark_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "misa.gov.sa",
+        "nezams.com",
+        "wipo.int",
+        "wipolex-res.wipo.int"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "traffic_law",
+      "display_name_en": "Traffic Law",
+      "display_name_ar": "نظام المرور",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE' — ثقة متفاوتة موثّقة صراحة على مستوى المادة عبر حقل verification_tier الخاص بالمسار نفسه: 67 من 86 سجلاً بتصنيف PRIMARY_INDEPENDENTLY_CONFIRMED مقابل 19 سجلاً بتصنيف SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE (تعتمد على موثوقية نمط nezams.com وحدها، وبوابة BOE مؤكَّد أنها متجاوَزة زمنياً لهذا النظام). التصنيف هنا يعتمد الجزء الأضعف.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/85) — BOE portal confirmed genuinely stale for this law; nezams.com preferred for amended articles with per-article verification_tier (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/traffic/law/official_source/traffic_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-11-16; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "traffic_boe_nezams_pattern_confidence: BOE's official portal (laws.boe.gov.sa) was re-fetched fresh in the follow-up research pass and confirmed to be genuinely stale for this law (not a proxy/rendering artifact -- the identical r.jina.ai proxy pipeline corre"
+    },
+    {
+      "track_id": "vat_law",
+      "display_name_en": "Value Added Tax Law",
+      "display_name_ar": "نظام ضريبة القيمة المضافة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/113) — ZATCA official consolidated PDF cross-verified against the BOE portal (via r.jina.ai, live page unreachable) (see notes)",
+      "registry_source_url": null,
+      "official_source_file": "sources/vat/law/official_source/vat_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "whistleblower_law",
+      "display_name_en": "Whistleblower, Witness, Expert and Victim Protection Law",
+      "display_name_ar": "نظام حماية المبلغين والشهود والخبراء والضحايا",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministry of Justice / وزارة العدل (official legal portal laws.moj.gov.sa: database + published PDF)",
+      "registry_source_url": null,
+      "official_source_file": "sources/whistleblower/law/official_source/whistleblower_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "moj.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "zakat_law",
+      "display_name_en": "Zakat Collection Implementing Regulation",
+      "display_name_ar": "اللائحة التنفيذية لجباية الزكاة",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED': بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها عبر جولتي بحث وبناء منفصلتين (503 في كل مرة)؛ الصياغة الحرفية الكاملة للمواد الـ128 تستند إلى مصدر رسمي واحد فقط (نسخة PDF الرسمية من ZATCA)، وبوابة أم القرى (uqn.gov.sa) استُخدمت فقط للتحقق الموجَّه من حقيقتين محددتين (تاريخ القرار 1007 وعنوان المادة 13)، وليس كتدقيق حرفي كامل ثانٍ — أدنى من TIER_2 التي تتطلب تدقيقاً مقارناً شاملاً، وليس موضعياً فقط.",
+      "registry_source_authority": "Minister of Finance Resolution No. 1007, 19/8/1445H — ZATCA's own official PDF as sole full-text primary source, Umm Al-Qura Gazette (uqn.gov.sa) used for targeted spot-verification of Resolution 1007's date and Article 13's title only, not a second full-text diff",
+      "registry_source_url": null,
+      "official_source_file": "sources/zakat/law/official_source/zakat_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "zatca.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    }
+  ]
+}

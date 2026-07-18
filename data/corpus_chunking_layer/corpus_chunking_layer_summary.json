@@ -1,0 +1,150 @@
+{
+  "layer": "CORPUS_CHUNKING_LAYER",
+  "purpose": "Additive, derived text-segmentation layer over the unified retrieval index, sized for feeding a future embedding pipeline. Chunk boundaries are computed in whitespace-delimited WORDS, deliberately NOT tied to any specific embedding model's tokenizer (this corpus does not commit to one embedding provider). No embeddings/vectors are computed anywhere in this layer or this generator -- that is a separate, later step. This is pure text segmentation, one step before an embeddings pipeline would run.",
+  "source_index": "data/corpus_unified_index/corpus_unified_llm_index.jsonl",
+  "total_source_records": 8649,
+  "total_chunks": 8786,
+  "source_records_needing_multiple_chunks": 81,
+  "source_records_single_chunk": 8568,
+  "pct_single_chunk_records": 99.063,
+  "parameters": {
+    "chunk_target_words": 350,
+    "chunk_overlap_words": 70,
+    "chunk_hard_max_words": 500,
+    "primary_boundary_chars": [
+      "\n",
+      "!",
+      ".",
+      "?",
+      "؛",
+      "؟"
+    ],
+    "secondary_boundary_chars": [
+      ",",
+      ":",
+      "،"
+    ],
+    "justification": "Surveyed word-count distribution across all 8649 unified-index records: median=38, p75=72, p90=128, p95=177, p97=222, p99=345 words (see distribution_stats below). Choosing 350 words as both the split threshold and per-chunk target means only 81 records (0.94%) require splitting -- consistent with Saudi statutory drafting practice where articles are typically short/medium, while keeping split-chunk sizes in the conventional ~200-500 word band used by embedding/RAG pipelines. Overlap of 70 words (20% of target) prevents clauses from being stranded at a chunk boundary. Splitting prefers primary sentence/clause punctuation (. ! ? ؟ ؛ newline), falling back to secondary punctuation (، , :) and finally hard whitespace-boundary splitting only for an indivisible run that would otherwise exceed the 500-word hard ceiling -- a word boundary is never crossed at any splitting level."
+  },
+  "distribution_stats": {
+    "source_record_word_counts": {
+      "n_records": 8649,
+      "min": 1,
+      "max": 6797,
+      "mean": 61.31,
+      "median_p50": 38,
+      "p75": 72,
+      "p90": 128,
+      "p95": 177,
+      "p97": 222,
+      "p99": 345,
+      "p999": 799
+    },
+    "records_exceeding_chunk_target_words": 81,
+    "pct_records_exceeding_chunk_target_words": 0.937,
+    "resulting_chunk_word_counts": {
+      "n_chunks": 8786,
+      "min": 1,
+      "max": 350,
+      "mean": 61.75
+    }
+  },
+  "top_examples_requiring_split": [
+    {
+      "record_id": "customs-regulation-llm-art-001",
+      "corpus": "customs",
+      "law_component": "regulation",
+      "article_number": 1,
+      "word_count": 6797
+    },
+    {
+      "record_id": "labor-reg-llm-art-014",
+      "corpus": "labor",
+      "law_component": "implementing_regulation",
+      "article_number": 14,
+      "word_count": 2048
+    },
+    {
+      "record_id": "environmental-law-llm-art-001",
+      "corpus": "environmental",
+      "law_component": "law",
+      "article_number": 1,
+      "word_count": 1287
+    },
+    {
+      "record_id": "traffic-law-llm-art-002",
+      "corpus": "traffic",
+      "law_component": "law",
+      "article_number": 2,
+      "word_count": 1036
+    },
+    {
+      "record_id": "civil-aviation-law-llm-art-001",
+      "corpus": "civil_aviation",
+      "law_component": "law",
+      "article_number": 1,
+      "word_count": 1033
+    },
+    {
+      "record_id": "labor-annex1-llm-violation-table-1",
+      "corpus": "labor",
+      "law_component": "model_work_regulation",
+      "article_number": 1,
+      "word_count": 839
+    },
+    {
+      "record_id": "terrorism-law-llm-art-001",
+      "corpus": "terrorism",
+      "law_component": "law",
+      "article_number": 1,
+      "word_count": 812
+    },
+    {
+      "record_id": "zakat-law-llm-art-001",
+      "corpus": "zakat",
+      "law_component": "law",
+      "article_number": 1,
+      "word_count": 809
+    },
+    {
+      "record_id": "mining-investment-law-llm-art-001",
+      "corpus": "mining_investment",
+      "law_component": "law",
+      "article_number": 1,
+      "word_count": 799
+    },
+    {
+      "record_id": "elitigation-guide-regulation-llm-art-004",
+      "corpus": "elitigation_guide",
+      "law_component": "regulation",
+      "article_number": 4,
+      "word_count": 777
+    }
+  ],
+  "embeddings_scope_note": "Out of scope for this layer: no embedding model or vector-database call of any kind is made here. This generator only performs text segmentation (chunking) so that a later, separate embeddings step has appropriately-sized, traceable input units. Each chunk carries source_record_id, article_number, chunk_index and total_chunks_for_this_article so any future vector hit can be traced back to its full source article.",
+  "fields": [
+    "chunk_id",
+    "source_record_id",
+    "corpus",
+    "law_id",
+    "law_component",
+    "law_title_ar",
+    "article_number",
+    "article_path",
+    "llm_title_ar",
+    "retrieval_title_ar",
+    "keywords_ar",
+    "search_queries_ar",
+    "chunk_index",
+    "total_chunks_for_this_article",
+    "char_start",
+    "char_end",
+    "word_count",
+    "overlap_words_with_previous",
+    "is_full_article",
+    "text_ar",
+    "text_status",
+    "source_layer"
+  ],
+  "note": "Derived, additive layer projected from corpus_unified_llm_index.jsonl. No legal text altered, summarized, translated, or re-derived -- char_start/char_end/text_ar exactly slice the source article's text_ar. Read-only over the unified index and all upstream track files. Arabic governs."
+}
