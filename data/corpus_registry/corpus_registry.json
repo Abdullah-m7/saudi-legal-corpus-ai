@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10044,
+  "total_primary_arabic_governing_records": 10129,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10939,
-  "total_tracks": 152,
+  "total_registry_counted_records": 11024,
+  "total_tracks": 153,
   "tracks": [
     {
       "boundaries": {
@@ -7211,6 +7211,55 @@
       "validator_targets": [
         "make health-system-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/food/regulation/official_source/food_regulation_official_source.json",
+        "sources/food/regulation/verified/food_regulation_verified_records.jsonl",
+        "data/food_regulation_arabic_legal_llm/food_regulation_legal_llm_001_085.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الغذاء",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Food Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/food_regulation_arabic_legal_llm/food_regulation_legal_llm_001_085.json",
+          "governing": true,
+          "record_count": 85,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian Food Law «اللائحة التنفيذية لنظام الغذاء» — SFDA Board Resolution No. (3-16-1439), dated 9/4/1439H, issued under the authority of the already-ingested food_law track (Royal Decree M/1, 6/1/1436H). Explicitly flagged, but not ingested, in food_law's own known_unresolved_discrepancies (key 'food_implementing_regulation_penalty_amendments_out_of_scope', '~85 articles ... confirmed to exist but out of scope for this track'); this is a dedicated follow-up. **85 records: 81 اصلية, 1 معدلة (Article 41), 3 مضافة (Articles 42-44, new food-poisoning procedure articles), 0 ملغاة**, per SFDA Board Resolution No. (4/44), 14/6/1446H. 12 chapters, with a genuine duplicate chapter-title anomaly preserved verbatim (chapters 4 and 5 both titled 'تداول الغذاء', mirroring the same disclosed anomaly in the food_law track). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa was checked first per standard methodology but is unreachable live this pass and confirmed to have no dedicated lawId page for this Implementing Regulation at all (only for the base Food Law); a Wayback snapshot of BOE's only related page is confirmed to exist but its content host is blocked at this session's egress-policy level, identical to what the food_law track itself documented for the same subject area. PRIMARY source is sfda.gov.sa (the issuing Authority's own site), a BORN-DIGITAL PDF (2025-06 upload, Creator 'Canon iR-ADV C5540 PDF', a print-to-PDF signature, not an OCR product) with a genuine embedded vector text layer — unlike the OLDER (2021-04) scanned/rasterized PDF the food_law track itself had to rely on. This SFDA file interleaves the base Food Law's own 45 boxed articles (excluded, out of scope, already covered by food_law) with this Regulation's own 85 unboxed articles, extracted via two independent pipelines (poppler pdftotext -layout; PyMuPDF + pdftotext -bbox word-coordinate reconstruction) that geometrically exclude the boxed base-law text and reconstruct correct RTL word order, cross-verified against qanoonsa.com and qistas.com for decree number/date, article count, and amendment history. **THREE SYSTEMATIC FONT LIGATURE-REVERSAL EXTRACTION DEFECTS DISCLOSED AND FIXED**, confirmed via two independent extraction tools plus direct visual page inspection (ruling out a source-content defect): reversed-order 'لم' after alif-lam, reversed-order 'لا' (lam-alef ligature) both mid-root and at the definite-article/alif-initial-word boundary, and reversed-order 'لإ'/'لأ'/'لآ' (lam before hamzated/madda alif) — fixed via a large, individually-verified substitution dictionary, not a blind global regex, since many superficially-similar words do not contain a true ligature. **GENUINE SOURCE ANOMALY PRESERVED**: the final article's own printed header literally reads 'المادة (58) من اللائحة' (a transposed-digit typo for 85), confirmed via direct visual page inspection, preserved verbatim rather than silently renumbered. A separate violation-classification-and-penalty TABLE (amended by Board Resolution 5/44, ~May 2026) is confirmed out of scope — a distinct tabular/numeric annex, not a textual amendment to any of this track's 85 numbered articles. **CONFIRMED NEGATIVE FINDING**: no repeal of a prior implementing regulation was found in any source — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. No legal text is altered beyond the disclosed source-artifact-layer fixes (font ligature reversals, word-split-gap rejoining, page-footer/chapter-heading/leaked-base-law-header removal, two missing-space typos). Diacritics stripped uniformly. Arabic governs; not legal advice.",
+      "official_text_status": "SFDA_GOV_SA_BORN_DIGITAL_PDF_2025_06_UPLOAD_X_QANOONSA_COM_X_QISTAS_COM_CROSSCHECK_BOE_NO_DEDICATED_LAWID_LIVE_UNREACHABLE_WAYBACK_CONTENT_BLOCKED",
+      "record_counts": {
+        "arabic_articles": 85,
+        "legal_status_breakdown": {
+          "اصلية": 81,
+          "مضافة": 3,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 85
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "SFDA Board Resolution No. (3-16-1439), dated 9/4/1439H, as amended by Board Resolution No. (4/44), dated 14/6/1446H, issued pursuant to the Food Law (Royal Decree M/1, 6/1/1436H) — laws.boe.gov.sa was checked first per standard methodology, is unreachable live this pass (connection reset), and confirmed to have no dedicated lawId page for this Implementing Regulation specifically at all; a Wayback Machine snapshot of BOE's only page for this general subject (the base Food Law's own lawId) is confirmed to exist but its content host is blocked at this session's egress-policy level. PRIMARY source is sfda.gov.sa (the issuing Authority's own site), a born-digital PDF (2025-06 upload) with a genuine embedded text layer, cross-verified against qanoonsa.com and qistas.com",
+      "status": "complete",
+      "track_id": "food_regulation",
+      "validator_targets": [
+        "make food-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7267,7 +7316,7 @@
       "evidence": 322,
       "finance_companies": 41,
       "finance_lease": 28,
-      "food": 44,
+      "food": 129,
       "foreign_ownership": 15,
       "franchise": 27,
       "gcc_anti_dumping": 17,
@@ -7335,7 +7384,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9875,
+    "total_records": 9960,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

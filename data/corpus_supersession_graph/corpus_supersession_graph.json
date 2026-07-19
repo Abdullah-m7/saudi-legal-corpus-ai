@@ -3,7 +3,7 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 152,
+  "total_tracks_scanned": 153,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
@@ -771,6 +771,14 @@
       "issue": "confirmed negative repeal finding -- no predecessor named at all",
       "note": "health_system_regulation (Ministerial Decision 30/69181, 1424H) names no repealed predecessor implementing regulation anywhere in its 10 recovered articles -- consistent with this being the first Implementing Regulation issued under the already-ingested health_system_law track's own Article 18 mandate. No edge modeled. (This track's coverage is genuinely PARTIAL -- only parent Law Articles 2-11 recovered, Article 1 and 12-19 excluded, not fabricated -- a source-access limitation, not a supersession-graph relationship.)",
       "source_ref": "sources/health_system/regulation/official_source/health_system_regulation_official_source.json (verification_methodology_note)"
+    },
+    {
+      "tracks_involved": [
+        "food_regulation"
+      ],
+      "issue": "confirmed negative repeal finding -- no predecessor named at all",
+      "note": "food_regulation (SFDA Board Resolution 3-16-1439, 1439H) names no repealed predecessor implementing regulation anywhere in its 85 articles -- consistent with this being the first Implementing Regulation issued under the already-ingested food_law track's own authority. No edge modeled. (A separate violation-classification-and-penalty TABLE, amended by Board Resolution 5/44, ~May 2026, is confirmed out of scope -- a distinct tabular/numeric annex, not a textual amendment to any of this track's 85 numbered articles, and not a supersession-graph relationship.)",
+      "source_ref": "sources/food/regulation/official_source/food_regulation_official_source.json (verification_methodology_note)"
     }
   ],
   "extraction_policy": "Every edge above was read and classified by hand against this corpus's own documented text (registry notes + official_source.json fields/article text), never inferred from a decree being older or from topical similarity alone. Concurrent title/decree-number collisions that are NOT repeal relationships, and genuinely ambiguous or explicitly-excluded cases, are kept in their own sections rather than forced into `edges`. It is expected and correct that most of this corpus's 122 tracks have zero edges."

@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 152,
-  "total_terms": 850,
-  "total_definitions": 1295,
-  "tracks_with_definitions_article_parsed": 100,
+  "total_tracks_in_registry": 153,
+  "total_terms": 882,
+  "total_definitions": 1327,
+  "tracks_with_definitions_article_parsed": 101,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -260,6 +260,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "أغذية ذات استخدامات طبية خاصة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "أغذية ذات استخدامات طبية خاصة",
+        "definition_text": "مجموعة من الأغذية لالستعمالات التغذوية الخاصة، صنعت خصيصا\nلالستعمال الغذائي للمرضى والتي تستعمل تحت الإشراف الطبي فقط.\nوهي معدة للتغذية الكلية أو الجزئية للمرضى الذين يعانون من قدرة\nمحددة أو معدومة على تناول وهضم وامتصاص أو تأييض المواد الغذائية\nالعادية أو عنصر معين من مكوناتها، أو الذين لهم احتياجات لعناصر\nغذائية خاصة مقررة طبيا والتي لا يمكن استيفاؤها بتعديل الغذاء العادي\nأو الأغذية ذات الاستعمالات التغذوية الخاصة أو بكليهما.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أغذية ذات الاستعمالات التغذوية الخاصة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "أغذية ذات الاستعمالات التغذوية الخاصة",
+        "definition_text": "منتجات يتم تجهيزها أو تركيبها لتفي باحتياجات تغذوية معينة ناشئة\nعن ظروف فيزيائية أو فيسيولوجية محددة و/أو أمراض واضطرابات\nخاصة وتختلف في تركيبها بوضوح عن مثيلاتها من المنتجات العادية إن\nوجدت.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "أفراد العائلة هم": [
       {
         "track_id": "social_insurance_legacy_law",
@@ -458,6 +478,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "إعادة التصدير": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "إعادة التصدير",
+        "definition_text": "تصدير الأغذية المستوردة في نفس الحالة التي سبق استيرادها فيها، من\nمنطقة التداول الحر أو أماكن التجهيز الداخلي أو المناطق الصناعية\nالحرة، مباشرة إلى بقية العالم ومن المستودعات الجمركية أو المناطق\nالتجارية الحرة، إلى بقية العالم.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "إعادة الفرز": [
       {
         "track_id": "real_estate_units_implementing_regulation",
@@ -515,6 +545,16 @@
         "term_as_written": "اتفاق لاهاي",
         "definition_text": "وثيقة جنيف لاتفاق لاهاي في شأن التسجيل الدولي للرسوم والنماذج الصناعية لسنة (1999م).",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اتفاقيات اعتراف متبادلة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "اتفاقيات اعتراف متبادلة",
+        "definition_text": "اتفاق بين الهيئة وجهات حكومية خارجية لالعتراف بتكافؤ الإجراءات\nالمتعلقة بمراقبة الغذاء لدى الجانبين والخاصة بإجراءات محددة.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -856,6 +896,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأغذية الحلال": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الأغذية الحلال",
+        "definition_text": "الأغذية المسموح بها طبقا ألحكام الشريعة الإسلامية وتستوفي المتطلبات\nالواردة في اللوائح الفنية والمواصفات القياسية.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأقارب": [
       {
         "track_id": "companies_law",
@@ -1153,6 +1203,26 @@
         "term_as_written": "الإذاعة",
         "definition_text": "بث مصنَّف أو أداء أو تسجيل صوتي أو بصري للجمهور بالطرق السلكية أو اللاسلكية أو أي وسيلة ناقلة لكي يستقبلها الجمهور، بما في ذلك البث بالأقمار الصناعية.",
         "source_record_id": "copyright-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإذن بالفسح": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الإذن بالفسح",
+        "definition_text": "السماح بدخول المواد الغذائية للمملكة بعد الكشف عليها والتأكد من\nاستيفائها لالشتراطات المقررة بهذه اللائحة.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإرسالية": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الإرسالية",
+        "definition_text": "كمية من المنتجات الغذائية المشمولة في شهادات رسمية واحدة.\nالدفعة (التشغيلة): كمية محددة من الأغذية أنتجت أساسا تحت نفس الظروف.\n(رمز تشغيلة الإنتاج): رمز للكمية من المادة الغذائية التي تم إنتاجها أساسا تحت نفس الظروف\nخلال فترة زمنية محددة وتكون عادة من خط أو وحدة إنتاج معينة.\nالمخزن (المستودع): هو مبنى أو جزء منه مخصص لتخزين وحفظ المواد الغذائية مدة محددة\nلحين عرضها.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1814,6 +1884,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التحقق من المطابقة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "التحقق من المطابقة",
+        "definition_text": "إثبات أن المنتج أو الخدمة أو العملية أو النظام أو الجهة أو الشخص\nمستوف للمتطلبات الالزمة لكل منها بموجب التشريعات واللوائح الفنية\nالنافذة.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التحقيق": [
       {
         "track_id": "judicial_inspection_regulation",
@@ -2284,6 +2364,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التلوث الخلطي": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "التلوث الخلطي",
+        "definition_text": "انتقال المواد الضارة أو الأحياء الدقيقة إلى الغذاء الجاهز للتقديم عن\nطريق اليدين والأسطح الملامسة للغذاء والمعدات والأدوات التي تكون\nمتسخة وتلامس الغذاء الخام ثم تلامس الغذاء الجاهز للتقديم، كما\nيشمل ملامسة الغذاء الخام أو السائل الناجم عنه للغذاء الجاهز للتقديم.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التلوث الميكروبيولوجي": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "التلوث الميكروبيولوجي",
+        "definition_text": "التلوث بالأحياء الدقيقة أو السموم التي تنتجها الأحياء الدقيقة على سطح\nالغذاء أو بداخله أثناء إنتاج الغذاء أو تصنيعه أو حفظه أو تحضيره أو\nمعاملته أو تعبئته أو تغليفه أو نقله أو الاحتفاظ به.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التمويل": [
       {
         "track_id": "finance_companies_law",
@@ -2556,6 +2656,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجهات المختصة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات المختصة",
+        "definition_text": "هي الجهات الحكومية ذات العلاقة بسلامة الأغذية بشكل مباشر أو غير\nمباشر والمعنية بتطبيق أحكام النظام ولائحته.\nالبالغ (أو الإخطار): معلومات محددة يتم تبادلها بين نقاط الاتصال في النظام حول الغذاء غير\nالمأمون والذي قد يشكل ضررا مباشرا أو غير مباشر على صحة الإنسان.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجهة الحكومية": [
       {
         "track_id": "real_estate_expropriation_law",
@@ -2771,6 +2881,16 @@
         "term_as_written": "الحالة المدنية",
         "definition_text": "هي كل ما يصف حياة المواطن المدنية بحصول إحدى الواقعات السابقة.",
         "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الحجز": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الحجز",
+        "definition_text": "إجراء تتخذه الهيئة لحجز أي إرسالية ألغذية مستوردة أو أغذية محلية أو\nجزء منها في حالة الشك بأن الغذاء غير مطابق للمتطلبات التي تفرضها\nالجهة المختصة.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4368,6 +4488,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الظروف غير الصحية": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الظروف غير الصحية",
+        "definition_text": "الحالات والوسائل والأوضاع التي يمكن أن تؤدي إلى تعرض أو تلوث الأغذية\nبالملوثات الفيزيائية أو الكيميائية أو الحيوية مما يجعل الأغذية ضارة\nبصحة الإنسان أو خطرة عليها أو غير صالحة لالستهلاك الآدمي.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العاكسات": [
       {
         "track_id": "traffic_law",
@@ -4728,6 +4858,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الغذاء الضار بالصحة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الغذاء الضار بالصحة",
+        "definition_text": "الغذاء الذي يحتوي على مخاطر في أصله أو اختلطت به خلال أي من\nمراحل تداوله بحيث تجعله غير مطابق للتشريعات واللوائح الفنية المعمول\nبها في الدولة، ويؤثر سلبا على صحة المستهلك.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الغذاء المستحدث": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الغذاء المستحدث",
+        "definition_text": "هو الغذاء ومكوناته التي ينطبق عليه أي من الشروط التالية:\n1. أن يحتوي على تركيب جزيئي جديد أو محور.\n2. أن يحتوي على جراثيم أو فطر أو طحالب أو أن يكون مستخرجا من\nأي منها.\n3. أن يحتوي على مواد نباتية أو أن يكون مستخرجا منها، بالإضافة إلى\nالأغذية المستخرجة من الحيوانات باستثناء الغذاء ومكوناته التي يتم\nالحصول عليها بطرق الإنتاج والتربية التقليدية والتي تعد آمنة\nلالستهلاك.\n4. أن يتم الحصول عليها بطرق لم تستخدم من قبل والتي تسبب تغييرات\nكبيرة في المكونات والتركيب مما يؤثر على قيمتها الغذائية أو إمكانية\nاستقلابها أو وجود مستوى غير مناسب من المواد كغذاء لإلنسان.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الغذاء غير الآمن": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الغذاء غير الآمن",
+        "definition_text": "هو الغذاء غير الصالح لالستهلاك الآدمي أو أنه قد يسبب ضررا على صحة\nالمستهلك. ويعتبر الغذاء غير آمن في حالة كونه فاسدا أو يحتوي على مواد\nضارة وغير مناسب لالستهلاك.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الغرفة": [
       {
         "track_id": "chambers_of_commerce_law",
@@ -4735,6 +4895,16 @@
         "term_as_written": "الغرفة",
         "definition_text": "الغرفة التجارية.",
         "source_record_id": "chambers-of-commerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الغش": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الغش",
+        "definition_text": "كل تغيير في السلعة الغذائية ذاتها إما بنزع عنصر منها أو إضافة عنصر إليها\nأو خلطها أو مزجها بغيرها أو بأية طريقة أخرى على نحو يغير من طبيعتها،\nأو يخالف بيانات بطاقتها الغذائية.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5882,6 +6052,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المتطلبات": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "المتطلبات",
+        "definition_text": "المعايير والشروط المطلوبة من قبل الجهات المختصة ذات الصلة بتداول\nالأغذية وتشمل حماية الصحة العامة وحماية المستهلكين.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المتعثر": [
       {
         "track_id": "bankruptcy_law",
@@ -6451,6 +6631,16 @@
         "term_as_written": "المرافق والأملاك العامة والخاصة",
         "definition_text": "العقارات والمنقولات والمنشآت التي تملكها الدولة أو الأشخاص ذوو الصفة المعنوية العامة، أو التي تكون مخصصة لمصلحة عامة، أو النشاطات التي تقدمها لتحقيق غرض من أغراض النفع العام، وتشمل كذلك العقارات والمنقولات والمنشآت العائدة للأفراد أو الأشخاص ذوي الصفة المعنوية الخاصة، أو الهيئات الدبلوماسية، أو الهيئات أو المنظمات الدولية أو الإنسانية، العاملة في الدولة.",
         "source_record_id": "terrorism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المراقبة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "المراقبة",
+        "definition_text": "تنفيذ عمليات تفتيش وقياس بشكل منظم ومخطط بطريقة تمنح نظرة\nشاملة عن درجة تطبيق أنظمة الغذاء في المنشآت الغذائية.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7090,6 +7280,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المطابقة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "المطابقة",
+        "definition_text": "هي تحقيق الامتثال للمتطلبات النظامية واللوائح الفنية والمواصفات\nالإلزامية.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المطار": [
       {
         "track_id": "civil_aviation_law",
@@ -7361,6 +7561,16 @@
         "term_as_written": "الممارس",
         "definition_text": "الشخص غير المقيد بالسجل التجاري الذي يزاول التجارة الإلكترونية.",
         "source_record_id": "ecommerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الممارسات التشغيلية الجيدة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "الممارسات التشغيلية الجيدة",
+        "definition_text": "الإجراءات والاحتياطات الصادرة من الجهات الحكومية أو الدولية الواجب\nاتباعها في تداول الغذاء خلال السلسلة الغذائية لضمان سلامة وجودة\nالغذاء مثل ممارسات التصنيع الجيد وممارسات الزراعة الجيدة وغيرها.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9810,6 +10020,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "برامج التدريب الرسمية": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "برامج التدريب الرسمية",
+        "definition_text": "برامج التدريب والتصريح الخاصة بسلامة الغذاء المعتمدة رسميا لدى\nالجهة المختصة.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "برامج الحاسب الآلي": [
       {
         "track_id": "anti_cyber_crime_law",
@@ -9927,6 +10147,16 @@
         "term_as_written": "تسرب البيانات الشخصية",
         "definition_text": "أي حادثة تؤدي إلى الإفصاح عن البيانات الشخصية أو تلفها أو الوصول غير المشروع إليها، سواء كان ذلك بقصد أو بغير قصد، وبأي وسيلة كانت سواء آلية أو يدوية.",
         "source_record_id": "pdpl-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تشعيع الغذاء": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "تشعيع الغذاء",
+        "definition_text": "تعريض الغذاء لجرعة كافية من الأشعة بغرض القضاء على الملوثات\nالميكروبية فيه وذلك وفقا للمتطلبات التقنية وبطريقة مناسبة.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10678,6 +10908,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "شهادة الحلال": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "شهادة الحلال",
+        "definition_text": "وثيقة تصدرها الجهة المختصة التي تكون معتمدة من قبل المملكة في بلد\nالمنشأ أو بلد التصدير والتي تبين أن اللحوم ومنتجاتها قد تم إعدادها\nوإنتاجها بما يتطابق مع متطلبات الشريعة الإسلامية، أو أن المنتجات أو\nمكوناتها حلال وأنتجت حسب متطلبات الشريعة الإسلامية، وأن جميع\nظروف ومواد وأدوات الإعداد تتوافق مع متطلبات الشريعة الإسلامية\nوالاشتراطات المطلوبة الواردة في اللوائح الفنية والمواصفات القياسية.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "شهادة الصلاحية للطيران": [
       {
         "track_id": "civil_aviation_law",
@@ -10685,6 +10925,16 @@
         "term_as_written": "شهادة الصلاحية للطيران",
         "definition_text": "وثيقة تصدرها الهيئة لدولة تسجيل الطائرة تعتمد فيها صلاحية الطائرة للطيران خلال فترة زمنية معينة بشرط أن يلتزم المشغل باتباع الشروط الواردة فيها.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شهادة صحية للغذاء": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "شهادة صحية للغذاء",
+        "definition_text": "وثيقة (ورقية أو إلكترونية) صادرة عن الجهة المختصة في بلد المنشأ أو بلد\nالتصدير، والتي تبين سلامة وملاءمة الغذاء بحسب متطلبات اللوائح\nالفنية الخليجية الخاصة به، وقد تتضمن رقم تسجيل منشأة الغذاء، أو\nوفقا ألي تدابير بديلة متكافئة معتمدة.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10995,6 +11245,16 @@
         "term_as_written": "علامات الطريق",
         "definition_text": "خطوط أو علامات على الطريق أو على جانبيه لتنظيم استخدام الطريق.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "غذاء غير صالح لالستهلاك الآدمي": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "غذاء غير صالح لالستهلاك الآدمي",
+        "definition_text": "هو الغذاء غير الملائم وغير المقبول لالستهلاك الآدمي طبقا لالستخدام\nالمقصود منه، بسبب التلف أو التلوث بمواد غريبة أو تغييرات غير مقصودة\nطرأت على الغذاء في خصائصه الظاهرية أو الحسية.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11448,6 +11708,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مدخلات الإنتاج الزراعي": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "مدخلات الإنتاج الزراعي",
+        "definition_text": "هي كل ما يلزم الإنتاج الزراعي من أعلاف ومبيدات وأدوية بيطرية ومكملات\nعلفية وبذور وأسمدة وهرمونات وأي مستلزمات أخرى عدا الأبنية والمعدات\nوالتجهيزات الثابتة وملحقاتها.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مدير الصندوق": [
       {
         "track_id": "zakat_law",
@@ -11498,6 +11768,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مسؤول المنشأة الغذائية": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "مسؤول المنشأة الغذائية",
+        "definition_text": "الشخص المرخص له أو المفوض نظاما من المرخص له والمسؤول عن\nالالتزام بتنفيذ أحكام النظام والقرارات الصادرة بموجبه في المنشأة التي تقع\nتحت مسؤوليته.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مستحق الدعم": [
       {
         "track_id": "real_estate_finance_law",
@@ -11545,6 +11825,16 @@
         "term_as_written": "مشتق",
         "definition_text": "كل ما يستخرج من الكائنات الفطرية سواء بشكل طبيعي أو غير طبيعي.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مشروبات الطاقة": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "مشروبات الطاقة",
+        "definition_text": "مشروبات غازية أو غير غازية تحضر أساسا من الماء، مواد كربوهيدراتية\nطبيعية، كافيين، وبعض العناصر الأخرى مثل الفيتامينات والأملاح\nالمعدنية والأحماض الأمينية والمواد المضافة المسموح بها وقد يضاف إليها\nعصائر أو لب فاكهة طبيعية ومستخلصات نباتية.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12030,6 +12320,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نظام الإنذار السريع للغذاء": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "نظام الإنذار السريع للغذاء",
+        "definition_text": "هو نظام لجمع المعلومات ذات العلاقة بسلامة الغذاء، وتحليلها وتبادلها مع\nالجهات المختصة داخل الهيئة وخارجها بغرض اتخاذ الإجراءات المناسبة\nللحفاظ على صحة وسلامة المستهلك.",
+        "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "نظام المدفوعات المهم": [
       {
         "track_id": "payment_systems_law",
@@ -12047,6 +12347,16 @@
         "term_as_written": "نظم المدفوعات",
         "definition_text": "مجموعة الأدوات والإجراءات والقواعد الخاصة بمعالجة وتسوية أوامر المدفوعات وعمليات المقاصة المرتبطة بها داخل المملكة أو خارجها.",
         "source_record_id": "payment-systems-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نقطة الاتصال": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "نقطة الاتصال",
+        "definition_text": "شخص أو من ينوب عنه يمثل الجهة الحكومية أو الخاصة المعنية بسلامة\nالغذاء يتم تحديدهما من قبل تلك الجهة، لتسهيل وتسريع التواصل بين\nالهيئة والجهة.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12217,6 +12527,16 @@
         "term_as_written": "وسائل المكافحة الحيوية",
         "definition_text": "استخدام النظم الحيوية أو الكائنات الحية أو مشتقاتها للحد من الآفات وأمراض النباتات، وضبطها، ومكافحتها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "وسائل النقل": [
+      {
+        "track_id": "food_regulation",
+        "article_number": 1,
+        "term_as_written": "وسائل النقل",
+        "definition_text": "الشاحنات والحاويات والصهاريج والسيارات أيا كان نوعها أو حجمها التي\nتستخدم في نقل المواد الغذائية سواء كانت مبردة أو مجمدة أو عند درجة\nحرارة الغرفة العادية.",
+        "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

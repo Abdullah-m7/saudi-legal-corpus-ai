@@ -1252,6 +1252,21 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "limitation, not a supersession-graph relationship.)",
         "source_ref": "sources/health_system/regulation/official_source/health_system_regulation_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["food_regulation"],
+        "issue": "confirmed negative repeal finding -- no predecessor named at all",
+        "note": "food_regulation (SFDA Board Resolution 3-16-1439, 1439H) "
+                "names no repealed predecessor implementing regulation "
+                "anywhere in its 85 articles -- consistent with this being "
+                "the first Implementing Regulation issued under the "
+                "already-ingested food_law track's own authority. No edge "
+                "modeled. (A separate violation-classification-and-penalty "
+                "TABLE, amended by Board Resolution 5/44, ~May 2026, is "
+                "confirmed out of scope -- a distinct tabular/numeric annex, "
+                "not a textual amendment to any of this track's 85 numbered "
+                "articles, and not a supersession-graph relationship.)",
+        "source_ref": "sources/food/regulation/official_source/food_regulation_official_source.json (verification_methodology_note)",
+    },
 ]
 
 

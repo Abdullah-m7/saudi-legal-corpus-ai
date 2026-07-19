@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9875,
-  "total_references_extracted": 2012,
-  "intra_law_count": 1775,
-  "inter_law_count": 237,
+  "total_records_scanned": 9960,
+  "total_references_extracted": 2018,
+  "intra_law_count": 1779,
+  "inter_law_count": 239,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1693,
-    "medium": 319
+    "high": 1696,
+    "medium": 322
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -9339,6 +9339,72 @@
       "target_article_number": null,
       "target_law_name_raw": "الشركات",
       "raw_citation_text": "أحكام نظام الشركات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "food_regulation",
+      "source_record_id": "food-regulation-llm-art-024",
+      "source_article_number": 24,
+      "type": "intra_law",
+      "target_track_id": "food_regulation",
+      "target_article_number": 22,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (22)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "food_regulation",
+      "source_record_id": "food-regulation-llm-art-032",
+      "source_article_number": 32,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "إصدار شهادات صلاحية التصدير للمنتجات",
+      "raw_citation_text": "وفقا لدليل إصدار شهادات صلاحية التصدير للمنتجات",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "food_regulation",
+      "source_record_id": "food-regulation-llm-art-059",
+      "source_article_number": 59,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "سحب واسترجاع الأغذية والأعلاف",
+      "raw_citation_text": "وفقا لدليل سحب واسترجاع الأغذية والأعلاف",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "food_regulation",
+      "source_record_id": "food-regulation-llm-art-079",
+      "source_article_number": 79,
+      "type": "intra_law",
+      "target_track_id": "food_regulation",
+      "target_article_number": 75,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (75) من هذه اللائحة، أو رأت هيئة ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "food_regulation",
+      "source_record_id": "food-regulation-llm-art-080",
+      "source_article_number": 80,
+      "type": "intra_law",
+      "target_track_id": "food_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (36) من النظام، من أن تتخذ الهيئة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "food_regulation",
+      "source_record_id": "food-regulation-llm-art-081",
+      "source_article_number": 81,
+      "type": "intra_law",
+      "target_track_id": "food_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (36) من النظام وفقا لتصنيف المخالف",
       "confidence": "high"
     },
     {
