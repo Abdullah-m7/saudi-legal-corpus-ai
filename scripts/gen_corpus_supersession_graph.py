@@ -974,6 +974,56 @@ EDGES = [
                 "before the new Law took effect.",
         "source_ref": "sources/electricity/law/official_source/electricity_law_official_source.json (article 23)",
     },
+    {
+        "from_track_id": "water_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مصالح المياه والصرف الصحي (السابق)",
+        "target_decree": "Royal Decree No. M/22, 1391H",
+        "note": "water_law's own Article 75 explicitly names and repeals this "
+                "prior instrument (along with its implementing regulation) by "
+                "decree number as part of a 3-predecessor named repeal-and-"
+                "replace clause -- a MATERIAL distinction from this corpus's "
+                "health_system_law/food_law tracks, whose repeal clauses are "
+                "generic conflict-only ('يلغى كل ما يتعارض مع هذا النظام') "
+                "rather than naming specific prior instruments. Not separately "
+                "ingested in this corpus (one-instrument-per-pass rule; no "
+                "independently reachable primary text for the 1391H instrument "
+                "itself was located during research).",
+        "source_ref": "sources/water/law/official_source/water_law_official_source.json (article 75)",
+    },
+    {
+        "from_track_id": "water_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المحافظة على مصادر المياه (السابق)",
+        "target_decree": "Royal Decree No. M/34, 1400H",
+        "note": "water_law's own Article 75 explicitly names and repeals this "
+                "second prior instrument (along with its implementing "
+                "regulation) by decree number, as part of the same "
+                "3-predecessor named repeal-and-replace clause described in "
+                "the M/22 (1391H) edge above. Not separately ingested in this "
+                "corpus (one-instrument-per-pass rule; no independently "
+                "reachable primary text for the 1400H instrument itself was "
+                "located during research).",
+        "source_ref": "sources/water/law/official_source/water_law_official_source.json (article 75)",
+    },
+    {
+        "from_track_id": "water_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مياه الصرف الصحي المعالجة وإعادة استخدامها (السابق)",
+        "target_decree": "Royal Decree No. M/6, 1421H",
+        "note": "water_law's own Article 75 explicitly names and repeals this "
+                "third prior instrument (along with its implementing "
+                "regulation) by decree number, as part of the same "
+                "3-predecessor named repeal-and-replace clause described in "
+                "the M/22 (1391H) edge above. Not separately ingested in this "
+                "corpus (one-instrument-per-pass rule; no independently "
+                "reachable primary text for the 1421H instrument itself was "
+                "located during research).",
+        "source_ref": "sources/water/law/official_source/water_law_official_source.json (article 75)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

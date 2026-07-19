@@ -332,6 +332,8 @@ LAYERS = [
      "food", "regulation"),
     ("data/electricity_arabic_legal_llm/electricity_law_legal_llm_001_023.json",
      "electricity", "law"),
+    ("data/water_arabic_legal_llm/water_law_legal_llm_001_077.json",
+     "water", "law"),
 ]
 
 

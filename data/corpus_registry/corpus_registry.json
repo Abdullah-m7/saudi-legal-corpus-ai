@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10152,
+  "total_primary_arabic_governing_records": 10229,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11047,
-  "total_tracks": 154,
+  "total_registry_counted_records": 11124,
+  "total_tracks": 155,
   "tracks": [
     {
       "boundaries": {
@@ -7309,6 +7309,55 @@
       "validator_targets": [
         "make electricity-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/water/law/official_source/water_law_official_source.json",
+        "sources/water/law/verified/water_law_verified_records.jsonl",
+        "data/water_arabic_legal_llm/water_law_legal_llm_001_077.json"
+      ],
+      "display_name_ar": "نظام المياه",
+      "display_name_en": "The Saudi Arabian Water Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/water_arabic_legal_llm/water_law_legal_llm_001_077.json",
+          "governing": true,
+          "record_count": 77,
+          "status": "complete"
+        }
+      },
+      "notes": "The Saudi Arabian Water Law «نظام المياه» — Royal Decree No. (M/159), dated 11/11/1441H (~July 2020G), approved via Council of Ministers Resolution 710 (9/11/1441H), administered by the Ministry of Environment, Water and Agriculture and the Electricity & Cogeneration Regulatory Authority (service-provision activities). A fresh coverage-gap candidate identified by this session's re-scan of the corpus's coverage-gap-map. **77 records, ALL 77 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — nezams.com's own metadata states explicitly 'لم يجر عليه تعديل', no amendments), across 17 chapters (فصول), continuous articles 1-77, no inline per-article titles beyond spelled-ordinal 'المادة ...' labels. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa DOES have a dedicated lawId page for this law (57261279-94b7-4ddc-8ad2-abf100d246be), unlike some Board-level executive regulations, but it was unreachable this pass (HTTP 503 live; a confirmed-existing Wayback Machine snapshot, 12 Dec 2025, is blocked at this session's egress-policy level at web.archive.org and was NOT bypassed). Full verbatim text of all 77 articles was extracted from nezams.com (an independent Arabic legal-text aggregator, not a BOE mirror, HTTP 200); independently, WebSearch results indexing laws.boe.gov.sa's own content returned a verbatim match for Article 74's text, the decree identity, the SAR-20-million penalty ceiling, the Saudi Water Code mandate, and the 17-chapter structure — a second, independent confirmation not derived from nezams.com. **CONFIRMED NAMED REPEAL OF THREE PREDECESSOR LAWS** — a MATERIAL distinction from this corpus's health_system_law/food_law tracks, whose repeal clauses are generic conflict-only: this Law's own Article 75 explicitly repeals, by decree number and date, نظام مصالح المياه والصرف الصحي (Royal Decree M/22, 23/6/1391H) and its regulations, نظام المحافظة على مصادر المياه (Royal Decree M/34, 24/8/1400H) and its regulations, and نظام مياه الصرف الصحي المعالجة وإعادة استخدامها (Royal Decree M/6, 13/2/1421H) and its implementing regulation — three genuine, named supersession links, modeled as new supersession-graph edges; none of the three predecessors is separately ingested in this corpus (one-instrument-per-pass rule). **IMPLEMENTING REGULATIONS IDENTIFIED BUT NOT INGESTED**: Article 76 mandates both a Minister's regulation and the Authority's board regulation (a MEWA/FAOLEX PDF, 58 pages, was confirmed to exist), plus the separate Saudi Water Code (الكود السعودي لمصادر المياه) — flagged as companion 'water_regulation' candidates for a future dedicated pass. Disclosed anomalies: Article 3 preserves an explicit Zamzam-water scope exclusion; Article 44 preserves a verbatim source-side typo ('على أت تراعي' for 'أن'), not silently corrected; tashkeel (harakat) stripped uniformly for consistency with this corpus's BOE-family majority, an intentional and disclosed divergence from the health_system_law track's own choice (same nezams.com source) to keep tashkeel. Arabic governs; not legal advice.",
+      "official_text_status": "NEZAMS_COM_INDEPENDENT_AGGREGATOR_BOE_DEDICATED_PAGE_EXISTS_BUT_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_MULTISOURCE_METADATA_CROSSCHECK_VIA_WEBSEARCH",
+      "record_counts": {
+        "arabic_articles": 77,
+        "legal_status_breakdown": {
+          "اصلية": 77,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 77
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/159), dated 11/11/1441H (Council of Ministers Resolution 710, 9/11/1441H) — laws.boe.gov.sa DOES have a dedicated lawId page for this law (57261279-94b7-4ddc-8ad2-abf100d246be) but it was unreachable this pass (HTTP 503 live; a confirmed-existing Wayback snapshot is blocked at this session's egress-policy level, not circumvented). PRIMARY source is nezams.com, an independent Arabic legal-text aggregator (not a BOE mirror), whose own metadata states the law has had no amendments; the decree identity, Article 74's verbatim text, the SAR-20-million penalty ceiling, and the 17-chapter structure were independently confirmed via WebSearch indexing of BOE's own content",
+      "status": "complete",
+      "track_id": "water_law",
+      "validator_targets": [
+        "make water-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7430,11 +7479,12 @@
       "traffic": 86,
       "travel_documents": 69,
       "vat": 53,
+      "water": 77,
       "whistleblower": 37,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9983,
+    "total_records": 10060,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

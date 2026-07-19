@@ -195,6 +195,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_health_system_regulation_track.py",
     "scripts/gen_food_regulation_track.py",
     "scripts/gen_electricity_law_track.py",
+    "scripts/gen_water_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",

@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9983,
-  "total_references_extracted": 2024,
-  "intra_law_count": 1784,
-  "inter_law_count": 240,
+  "total_records_scanned": 10060,
+  "total_references_extracted": 2028,
+  "intra_law_count": 1786,
+  "inter_law_count": 242,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1702,
-    "medium": 322
+    "high": 1705,
+    "medium": 323
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -21208,6 +21208,50 @@
       "target_article_number": 28,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثامنة والعشرون) من النظام، تتولى الهيئة مسؤول",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "water_law",
+      "source_record_id": "water-law-llm-art-054",
+      "source_article_number": 54,
+      "type": "inter_law",
+      "target_track_id": "bankruptcy_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الإفلاس",
+      "raw_citation_text": "وفقا لنظام الإفلاس",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "water_law",
+      "source_record_id": "water-law-llm-art-065",
+      "source_article_number": 65,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "ومعايير تحددهما لوائح الوزارة",
+      "raw_citation_text": "وفق ضوابط ومعايير تحددهما لوائح الوزارة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "water_law",
+      "source_record_id": "water-law-llm-art-068",
+      "source_article_number": 68,
+      "type": "intra_law",
+      "target_track_id": "water_law",
+      "target_article_number": 70,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السبعين) من النظام الآتي: ‌أ- فرض غرا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "water_law",
+      "source_record_id": "water-law-llm-art-070",
+      "source_article_number": 70,
+      "type": "intra_law",
+      "target_track_id": "water_law",
+      "target_article_number": 67,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة والستين) من النظام.",
       "confidence": "high"
     },
     {

@@ -268,6 +268,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         health-system-regulation-track-validate \
         food-regulation-track-validate \
         electricity-law-track-validate \
+        water-law-track-validate \
         qa-gate
 
 help:
@@ -1496,6 +1497,9 @@ food-regulation-track-validate:
 
 electricity-law-track-validate:
 	$(PY) scripts/validate_electricity_law_track.py
+
+water-law-track-validate:
+	$(PY) scripts/validate_water_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

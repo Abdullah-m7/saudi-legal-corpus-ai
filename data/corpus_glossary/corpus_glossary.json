@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 154,
-  "total_terms": 897,
-  "total_definitions": 1354,
-  "tracks_with_definitions_article_parsed": 102,
+  "total_tracks_in_registry": 155,
+  "total_terms": 940,
+  "total_definitions": 1410,
+  "tracks_with_definitions_article_parsed": 103,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -317,6 +317,16 @@
         "term_as_written": "أمين الإفلاس أو الأمين",
         "definition_text": "من تعينه المحكمة أو مقدم الطلب -بحسب الأحوال- لأداء المهمات والواجبات المنوطة به بحسب نوع الإجراء، ويشمل ذلك أمين إعادة التنظيم المالي وأمين التصفية.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أنشطة المشتري الرئيس المشمولة باختصاصات الهيئة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "أنشطة المشتري الرئيس المشمولة باختصاصات الهيئة",
+        "definition_text": "أنشطة المتاجرة بالمياه المحلاة، والمنقاة، والمعالجة، ومياه الصرف الصحي، والصناعي، وطرح مشاريع محطات التحلية، والتنقية، والمعالجة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1264,6 +1274,14 @@
         "definition_text": "وثيقة تصدرها الهيئة لشخص للقيام بنشاط كهربائي دون الحصول على رخصة، أو بالإعفاء من شرط أو أكثر من شروط الرخصة.",
         "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الإعفاء",
+        "definition_text": "وثيقة تصدرها الهيئة للقيام بنشاط تقديم الخدمة، مع الإعفاء من شرط أو أكثر من شروط رخصة تقديم الخدمة، أو إذن عام للقيام بنشاط تقديم الخدمة، وفقا لما تحدده لوائح الهيئة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الإعلان الإلكتروني": [
@@ -1431,6 +1449,16 @@
         "term_as_written": "الاستثمار",
         "definition_text": "توظيف وتشغيل العقارات البلدية بهدف المحافظة عليها وتطويرها والاستفادة من عائداتها المالية في توفير وتطوير الخدمات البلدية.",
         "source_record_id": "municipal-realestate-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الاستخدام الحضري": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الاستخدام الحضري",
+        "definition_text": "استخدام المياه للأغراض المنزلية، والأغراض التجارية ولاستخدام المرافق العامة والتشجير والحدائق العامة ونحوها.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1688,6 +1716,16 @@
         "definition_text": "البنك الذي يكون مركزه الرئيسي في المملكة وما له من فروع فيها.",
         "source_record_id": "banking-control-law-llm-art-001",
         "extraction_method": "parenthesized_term"
+      }
+    ],
+    "البنى الأساسية للمياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "البنى الأساسية للمياه",
+        "definition_text": "منشآت مستخدمة في إنتاج المياه، أو حصادها، أو نقلها، أو توزيعها، أو تخزينها، أو مراقبتها، سواء أكانت مملوكة للقطاع العام أو القطاع الخاص، ولا يشمل ذلك محطات تحلية المياه، ومحطات المعالجة، ومحطات التنقية.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "البنية التحتية": [
@@ -2235,6 +2273,14 @@
         "term_as_written": "التصريح",
         "definition_text": "وثيقة تصدرها الهيئة لشخص -ذي صفة طبيعية أو اعتبارية- خارج المملكة، يقدم خدمات ذات علاقة بخدمات اتصالات أو تقنية معلومات -بما فيها منصات المحتوى الرقمي- داخل المملكة من خلال عرضها بطريقة تمكن المستخدم من الوصول إليها.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة تمنحها الوزارة أو الهيئة فيما يتصل بأعمال الإعداد –بما في ذلك إعداد الخطط والقيام بالدراسات– قبل الشروع في أعمال إنشاء أي نشاط استخدام مصدر أو نشاط تنمية مصدر أو نشاط تقديم الخدمة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3052,6 +3098,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الحقن": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الحقن",
+        "definition_text": "ضخ المياه في الطبقات الجوفية المطابقة للمعايير التي تحددها لوائح الوزارة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الحكومة الرقمية": [
       {
         "track_id": "telecommunications_law",
@@ -3059,6 +3115,16 @@
         "term_as_written": "الحكومة الرقمية",
         "definition_text": "دعم العمليات الإدارية والتنظيمية والتشغيلية داخل القطاعات الحكومية-وفيما بينها- لتحقيق التحول الرقمي، وتطوير وتحسين وتمكين الوصول بسهولة وفاعلية للمعلومات والخدمات الحكومية.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الحمأة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الحمأة",
+        "definition_text": "مواد صلبة مترسبة ناتجة عن محطات معالجة الصرف وتشكل خطرا على الصحة والبيئة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3217,6 +3283,16 @@
         "term_as_written": "الخدمة المستمرة",
         "definition_text": "خدمة العامل غير المنقطعة مع صاحب العمل نفسه أو خلفه النظامي، من تاريخ ابتداء الخدمة.",
         "source_record_id": "labor-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخزن الاستراتيجي للمياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الخزن الاستراتيجي للمياه",
+        "definition_text": "خزن المياه في الخزانات الصناعية، أو في السدود، أو في الطبقات الجوفية المناسبة؛ لضخها، والاستفادة منها في وقت لاحق للمصلحة العامة لضمان استقرار الإمداد.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3741,6 +3817,16 @@
         "term_as_written": "الرواسب",
         "definition_text": "المعادن أو الخامات الموجودة في موضعها بشكل طبيعي والمتوافرة بكيمات ذات مؤشرات اقتصادية.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الري الزراعي المقيد": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الري الزراعي المقيد",
+        "definition_text": "ري المحاصيل التي لا تلامس ثمرتها المياه.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4466,6 +4552,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الطبقات الجوفية": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الطبقات الجوفية",
+        "definition_text": "طبقات صخرية لها مسامية ونفاذية تمكنها من تخزين المياه وإمرارها خلالها.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الطبقة": [
       {
         "track_id": "mining_investment_law",
@@ -4645,6 +4741,16 @@
         "term_as_written": "العضو",
         "definition_text": "أي شخص لديه حساب في نظم مدفوعات ويمكن من خلاله إصدار أوامر مدفوعات أو أن يكون الطرف المستفيد منها.",
         "source_record_id": "payment-systems-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العطاء الآمن للمصدر": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "العطاء الآمن للمصدر",
+        "definition_text": "كميات المياه التي يمكن سحبها من المصدر المائي دون الإخلال باستدامته، أو التغير في جودته.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5800,6 +5906,14 @@
         "definition_text": "لجنة التعاون الصناعي بدول المجلس.",
         "source_record_id": "gcc-anti-dumping-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة الوزارية",
+        "definition_text": "لجنة تكون برئاسة وزير البيئة والمياه والزراعة، وعضوية وزير الطاقة، ووزير الصناعة والثروة المعدنية، ووزير الاقتصاد والتخطيط، ووزير المالية، ووزير الشؤون البلدية والقروية؛ للقيام بالمهمات الموكلة إليها بموجب النظام.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اللوائح": [
@@ -6109,6 +6223,14 @@
         "term_as_written": "المتاجرة",
         "definition_text": "شراء الكهرباء بالجملة من مرخص له لأجل بيعها لمرخص له آخر أو لمستهلك كبير، أو استيرادها من خارج المملكة أو تصديرها منها.",
         "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المتاجرة",
+        "definition_text": "شراء المياه بالجملة من مرخص له؛ لأجل بيعها بالجملة، ولا يشمل ذلك بيعها للمستهلك.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6473,6 +6595,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ المؤسسة.",
         "source_record_id": "social-insurance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7092,6 +7222,14 @@
         "definition_text": "كل شخص توجه له خدمات التمويل العقاري.",
         "source_record_id": "real-estate-finance-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المستهلك",
+        "definition_text": "كل شخص يستخدم المياه لاستهلاكه الخاص.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المستهلك الكبير": [
@@ -7504,6 +7642,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المعالجة الثلاثية": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المعالجة الثلاثية",
+        "definition_text": "مستوى المعالجة التي يمكن التوصل إليها عن طريق المعالجة الثنائية المنتهية بالترشيح والتطهير، أو بأي عملية أخرى.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المعالجة الثنائية": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المعالجة الثنائية",
+        "definition_text": "مستوى المعالجة التي يمكن التوصل إليها عن طريق المعالجة الحيوية المنتهية بالترسيب والتطهير، أو بأي عملية أخرى.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المعالجة الحيوية": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المعالجة الحيوية",
+        "definition_text": "عمليات المعالجة التي تهدف إلى تنشيط البكتيريا في مياه الصرف الصحي لإنقاص تركيز المواد العضوية فيها.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المعاملات بين الأشخاص المرتبطين": [
       {
         "track_id": "zakat_law",
@@ -7614,6 +7782,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المقنن المائي": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المقنن المائي",
+        "definition_text": "كمية المياه المحددة وفق احتياجات المحاصيل المختلفة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المقيم": [
       {
         "track_id": "income_tax_law",
@@ -7697,6 +7875,14 @@
         "term_as_written": "الملوثات",
         "definition_text": "أي مادة صلبة أو سائلة أو غازية أو أدخنة أو أبخرة أو انبعاثات أو ضوضاء أو إضاءة أو أي مؤثر آخر طبيعي أو بشري يؤدي بطريق مباشر أو غير مباشر إلى تلوث البيئة أو تدهورها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الملوثات",
+        "definition_text": "أي مادة تحدث تغيرا فيزيائيا أو كيميائيا أو حيويا أو لها نشاط إشعاعي تؤثر سلبا في نوعية المياه بطريق مباشر أو غير مباشر، مما يجعلها غير صالحة للاستخدامات.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7807,6 +7993,16 @@
         "term_as_written": "المناطق البحرية للمملكة",
         "definition_text": "المياه الداخلية, والبحر الإقليمي, والمنطقة المتاخمة, والمنطقة الاقتصادية الخالصة, والجرف القاري, المحددة نظاماً.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المناطق الخاصة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المناطق الخاصة",
+        "definition_text": "المجمعات السكنية والتجارية، والمدن الصناعية والتقنية والاقتصادية، والمشروعات، والمناطق الحرة والعسكرية، والمحميات الطبيعية، ونحوها.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8337,6 +8533,116 @@
         "term_as_written": "الموقوف عليه",
         "definition_text": "المستفيد من الوقف وفق شرط الواقف.",
         "source_record_id": "awqaf-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه الجوفية المتجددة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه الجوفية المتجددة",
+        "definition_text": "مياه جوفية مخزنة في الطبقات الجوفية الصخرية التي تصلها بشكل طبيعي كمية مناسبة من المياه قياسا بكمية المياه المسحوبة منها خلال العام الواحد.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه الجوفية غير المتجددة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه الجوفية غير المتجددة",
+        "definition_text": "مياه جوفيه مخزنة في الطبقات الجوفية الصخرية لا تصلها تغذية بشكل طبيعي، أو تصلها كمية ضئيلة جدا من المياه قياسا بكمية المياه المخزنة فيها.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه الرمادية": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه الرمادية",
+        "definition_text": "المياه الناتجة من مختلف الاستخدامات –باستثناء المياه الناتجة عن المراحيض– وتشمل المياه الناتجة من الاستحمام، أو أحواض غسيل اليدين، أو المطابخ، أو غسالات الصحون، أو أحواض غسيل الملابس، أو غسيل السيارات، أو غسيل الأرضيات، أو أحواض السباحة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه السطحية": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه السطحية",
+        "definition_text": "المياه المتجمعة أو جارية على الأرض، ومياه البحار.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه العابرة للحدود": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه العابرة للحدود",
+        "definition_text": "مياه سطحية أو جوفية تعبر الحدود الدولية.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه المحلاة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه المحلاة",
+        "definition_text": "مياه مصدرها البحر عولجت بتحلية المياه.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه المعالجة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه المعالجة",
+        "definition_text": "مياه مصدرها الصرف الصحي، أو الصناعي، أو الزراعي تم معالجتها بطرق حيوية، وفيزيائية، وصناعية، أو طبيعية؛ لإزالة ملوثاتها، وتحويلها إلى مياه قابلة للتصيف بيئيا؛ أو لإعادة الاستخدام في الأغراض الحضرية، أو الصناعية، أو الزراعية وفقا لدرجة معالجتها.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه المعبأة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه المعبأة",
+        "definition_text": "المياه الصالحة للشرب التي يتم تعبئتها في عبوات محكمة الغلق.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه المنقاة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه المنقاة",
+        "definition_text": "مياه مصدرها المياه الجوفية أو السدود، أزيلت ملوثاتها، وقللت ملوحتها عبر سلسلة من العمليات الصناعية والكيميائية من خلال محطات التنقية؛ لتحويلها إلى مياه نقية صالحة للاستخدامات الحضرية، والصناعية، والزراعية.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه غير الصالحة للاستخدام": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه غير الصالحة للاستخدام",
+        "definition_text": "مياه تغيرت خصائصها الطبيعية بشكل لا يتناسب مع مواصفات الاستخدامات المخصصة لها.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المياه غير المعبأة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "المياه غير المعبأة",
+        "definition_text": "المياه الصالحة للشرب التي يتم تعبئتها في عبوات غير محكمة الغلق.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9024,6 +9330,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المياه.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "whistleblower_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -9337,6 +9651,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة العامة للزكاة والدخل.",
         "source_record_id": "vat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة تنظيم الكهرباء والإنتاج المزدوج.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9704,6 +10026,14 @@
         "definition_text": "وزارة الداخلية.",
         "source_record_id": "travel-documents-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوزن المحوري": [
@@ -10060,6 +10390,14 @@
         "definition_text": "وزير الداخلية.",
         "source_record_id": "travel-documents-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوسائط": [
@@ -10246,6 +10584,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "بيع المياه بالتجزئة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "بيع المياه بالتجزئة",
+        "definition_text": "شراء المياه بالجملة من مرخص له؛ لأجل بيعها بالتجزئة على المستهلك.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تأشيرة الدخول": [
       {
         "track_id": "travel_documents_regulation",
@@ -10273,6 +10621,16 @@
         "term_as_written": "تبريد المناطق",
         "definition_text": "الإنتاج المركزي للطاقة الحرارية، وتوزيعها باستخدام المياه المبردة أو أي وسيط آخر بوساطة أنابيب معزولة لتبريد الهواء أو تدفئته في المباني والمرافق.",
         "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تحلية المياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "تحلية المياه",
+        "definition_text": "إنتاج المياه عن طريقة معالجة مياه البحر، من خلال إزالة ملوثاتها وكل ملوحتها أو جزء منها عبر سلسلة من العمليات الصناعية، ومن خلال محطات التحلية؛ لتحويلها إلى مياه نقية صالحة للاستخدامات الحضرية، والصناعية، والزراعية.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10356,6 +10714,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "تعريفة المياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "تعريفة المياه",
+        "definition_text": "مقابل مالي معتمد يدفع مقابل خدمة، أو وحدة كمية المياه المستخدمة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تعليق المطالبات": [
       {
         "track_id": "bankruptcy_law",
@@ -10403,6 +10771,16 @@
         "term_as_written": "تلوث البيئة",
         "definition_text": "وجود مادة أو أكثر من المواد أو العوامل بكميات أو صفات معينة لمدة زمنية؛ تؤدي بطريق مباشر أو غير مباشر إلى الإضرار بالبيئة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "توزيع المياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "توزيع المياه",
+        "definition_text": "عملية إيصال المياه من مواقع إنتاجها، أو مواقع تسلمها إلى المستفيدين أو المستهلكين، عن طريق الشبكات أو الصهاريج أو أي وسيلة أخرى مناسبة، ولا يشمل ذلك توزيع المياه للاستخدام الزراعي.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10576,6 +10954,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "حصاد المياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "حصاد المياه",
+        "definition_text": "التنقية الطبيعية أو الصناعية التي تستخدم في حجز وتخزين مياه الأمطار والسيول في فترات سقوطها، بطرق تختلف باختلاف الغاية من تجميعها، ومعدلات هطولها، وإعادة استخدامها عند الحاجة إليها للأغراض المختلفة سواء حضرية، أو زراعية، أو صناعية، أو إعادة حقنها لباطن الأرض؛ لشحن الطبقات المائية لتعزيز المصادر المائية.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "حق الاستخدام الشامل": [
       {
         "track_id": "telecommunications_law",
@@ -10596,6 +10984,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "حقوق الاستخدام": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "حقوق الاستخدام",
+        "definition_text": "صلاحيات مخولة لمالك رخصة استخدام المصدر.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "حماية البيئة": [
       {
         "track_id": "environmental_law",
@@ -10613,6 +11011,16 @@
         "term_as_written": "خدمات المدفوعات",
         "definition_text": "الخدمات ذات العلاقة بتنفيذ عمليات دفع الأموال وأدوات المدفوعات أو تحويلها أو معالجتها، وإدارة عمليات التحويلات ومدفوعات النقد الإلكتروني عبر منصات أو أدوات المدفوعات، ومحافظ المدفوعات المتخذة هيئة حسابات أو سجلات إلكترونية، وتقديم خدمات معلومات وحسابات المدفوعات، وما تحدده اللوائح من خدمات أخرى ذات علاقة.",
         "source_record_id": "payment-systems-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خزان التحليل": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "خزان التحليل",
+        "definition_text": "خزان يحفر في باطن الأرض لاستيعاب مياه الصرف الصحي وفق شروط معينة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10834,6 +11242,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "رخصة استخدام مصدر": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "رخصة استخدام مصدر",
+        "definition_text": "وثيقة تصدرها الوزارة لاستخدام مصادر المياه –باستثناء مياه البحر– بموجب النظام ولوائح الوزارة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "رخصة السير": [
       {
         "track_id": "traffic_law",
@@ -10851,6 +11269,26 @@
         "term_as_written": "رخصة القيادة",
         "definition_text": "وثيقة رسمية صادرة من الإدارة المختصة، أو من جهة أجنبية معترف بما يصدر عنها من وثائق مماثلة، تثبت أن حاملها مؤهل لقيادة نوع أو أنواع من المركبات.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "رخصة تقديم الخدمة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "رخصة تقديم الخدمة",
+        "definition_text": "وثيقة تصدرها الهيئة للقيام بنشاط تقديم الخدمة بموجب النظام ولوائح الهيئة.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "رخصة تنمية مصدر": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "رخصة تنمية مصدر",
+        "definition_text": "وثيقة تصدرها الوزارة للإذن بممارسة نشاط تنمية مصدر المياه بموجب النظام ولوائح الوزارة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11750,6 +12188,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "لوائح الهيئة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "لوائح الهيئة",
+        "definition_text": "اللوائح اللازمة لقيام الهيئة بمهماتها وفقا لأحكام النظام.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "لوائح الوزارة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "لوائح الوزارة",
+        "definition_text": "اللوائح اللازمة لقيام الوزارة بمهماتها وفقا لأحكام النظام.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مأمور التنفيذ": [
       {
         "track_id": "enforcement_law",
@@ -11871,6 +12329,14 @@
         "term_as_written": "مجلس الإدارة",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "vat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12094,6 +12560,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مصايد الدهون أو الزيوت": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "مصايد الدهون أو الزيوت",
+        "definition_text": "وحدات ذات تصميم هندسي خاص متصلة بتمديدات الصرف الصحي الداخلية في المطابخ التجارية، والمطاعم، والمصانع الغذائية، والفنادق، ومحطات غسيل وتشحيم السيارات، وتعمل على فصل الدهون والزيوت والشحوم من المخلفات السائلة قبل صرفها إلى شبكة الصرف الصحي العامة أو إلى خزانات التحلل أو التجميع.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مصورات مصححة عموديا": [
       {
         "track_id": "real_estate_registration_implementing_regulation",
@@ -12101,6 +12577,16 @@
         "term_as_written": "مصورات مصححة عموديا",
         "definition_text": "هي صور يتم فيها تصحيح الإزاحة العامودية للمعالم الطبيعية والصناعية بحيث تكون المسافات فيها مساوية للمسافات على خارطة بالمقياس ذاته.",
         "source_record_id": "real-estate-registration-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "معالجة مياه الصرف": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "معالجة مياه الصرف",
+        "definition_text": "تحويل مياه الصرف الصحي، أو المياه الرمادية، أو الزراعية، أو الصناعية إلى مياه آمنة صحيا وبيئيا.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12494,6 +12980,24 @@
         "definition_text": "مياه أدى استخدامها إلى تغير لونها أو طعمها أو رائحتها أو مستوى أمنها الصحي أو البيئي، وتشمل المياه المستخدمة لأغراض صحية أو صناعية أو زراعية.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "مياه الصرف",
+        "definition_text": "مياه أدى استخدامها إلى تغير لونها، أو طعمها، أو رائحتها، أو مستوى أمنها الصحي أو البيئي.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مياه الصرف الصحي": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "مياه الصرف الصحي",
+        "definition_text": "مياه ناتجة عن الاستخدام الحضري.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مياه الصرف المعالجة": [
@@ -12543,6 +13047,26 @@
         "term_as_written": "نشاط بيئي",
         "definition_text": "أي نشاط تشغيلي أو فني له علاقة بقطاع البيئة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط تقديم الخدمة": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "نشاط تقديم الخدمة",
+        "definition_text": "أنشطة تحلية المياه، وتنقيتها، ومعالجتها، وأنشطة المشتري الرئيس المشمولة باختصاصات الهيئة، ونشاط إنتاج المياه للاستخدام الحضري أو الصناعي، وذلك من خلال ضخ مياه الآبار والسدود مباشرة أو تنقيتها، ونقل هذه المياه والمياه المحلاة إلى نقاط التوزيع، وتوزيعها، وخزنها استراتيجيا، والمتاجرة بها، وبيعها بالتجزئة، وتجميع مياه الصرف الصحي، ونقلها، ومعالجتها، وإعادة استخدامها للأغراض الحضرية أو الصناعية، ولا يشمل ذلك نشاط تعبئة المياه في العبوات.",
+        "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط تنمية مصادر المياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "نشاط تنمية مصادر المياه",
+        "definition_text": "أي عمل فني أو تقني، تقليدي أو غير تقليدي، يهدف إلى استدامة الموارد المائية، وتعظيم الاستفادة منها؛ وذلك من خلال حصاد المياه، أو زيادة المخزون السطحي أو الجوفي، أو الحماية، أو ترشيد الاستخدام.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12613,6 +13137,16 @@
         "term_as_written": "نقل الغاز الطبيعي",
         "definition_text": "عملية نقل الغاز الطبيعي المصاحب وغير المصاحب من معامل التنقية إلى معامل المعالجة وإلى معامل التجزئة، أو نقله من أي من هذه المعامل إلى مرافق المستهلكين، وكذلك نقل مكثفات الغاز وسوائله، ولا يشمل ذلك شبكات التوزيع المحلية وخطوط الأنابيب التي ينشئها غير منتج للغاز بعد نقاط البيع الرسمية.",
         "source_record_id": "income-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نقل المياه": [
+      {
+        "track_id": "water_law",
+        "article_number": 1,
+        "term_as_written": "نقل المياه",
+        "definition_text": "عملية نقل المياه من مواقع الإنتاج إلى نقاط توزيع المياه الرئيسة.",
+        "source_record_id": "water-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
