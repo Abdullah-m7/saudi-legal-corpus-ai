@@ -307,7 +307,8 @@ def main():
     print("    absent across all seven snapshots) -- flagged as AMENDED_UNDATED, not")
     print("    fabricated; decree field records \"غير مذكور في مصدر هيئة الخبراء\"")
     print("  - Companion instrument identified but NOT ingested this pass: اللائحة")
-    print("    التنفيذية لنظام الأحوال المدنية (Ministerial Decision 81, 19/5/1426H)")
+    print("    التنفيذية لنظام الأحوال المدنية (originally Ministerial Decision 95/وز,")
+    print("    4/3/1408H, superseded by Ministerial Decision 27910/39, 5/6/1432H)")
     return 0
 
 
