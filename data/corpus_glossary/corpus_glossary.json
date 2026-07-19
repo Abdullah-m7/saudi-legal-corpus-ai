@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 143,
-  "total_terms": 820,
-  "total_definitions": 1241,
-  "tracks_with_definitions_article_parsed": 94,
+  "total_tracks_in_registry": 144,
+  "total_terms": 825,
+  "total_definitions": 1249,
+  "tracks_with_definitions_article_parsed": 95,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -3414,6 +3414,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الرعاية الصحية": [
+      {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "الرعاية الصحية",
+        "definition_text": "الخدمات الوقائية والعلاجية والتأهيلية التي تعنى بصِحة الفرد والمُجتمع بمُستوياتِها الأولية والثانوية والتخصُّصية.",
+        "source_record_id": "health-system-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الرعاية الصحية الأولية": [
+      {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "الرعاية الصحية الأولية",
+        "definition_text": "يُقصد بِها الآتي :\nأ – نشر التوعية الصحية على مستوى الفرد والأسرة والمجتمع حول المشكلات والأخطار التي تهدد الصحة وسبل الوقاية منها، والعمل على تغيير أنماط السلوك التي قد تؤدي إلى المرض.\nب – العمل مع الجهات ذات العلاقة لمُراقبة إصحاح البيئة وسلامة مياه الشرب والأغذية، والاهتمام بالتغذية الصحية السليمة ونشر التوعية عنها.\nج – الرعاية الصحية المُتكامِلة للأم والطفل.\nد – التحصين ضد الأمراض المُعدية.\nهـ – مُكافحة الأمراض المُستوطِنة الطفيلية والمُعدية، والحد من انتشارِها.\nو – التشخيص والعِلاج المُلائم للأمراض والإصابات الشائعة، وإجراء الوِلادات الطبيعية.\nز- توفير الأدوية الأساسية.",
+        "source_record_id": "health-system-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الرعاية الصحية الثانوية": [
+      {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "الرعاية الصحية الثانوية",
+        "definition_text": "الرعاية الصحية التي تُقدِّمُها مُستشفيات عامة وأطباء مُتخصِّصون.",
+        "source_record_id": "health-system-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الرفع المساحي": [
       {
         "track_id": "real_estate_expropriation_law",
@@ -3897,6 +3927,16 @@
         "term_as_written": "الصحافة",
         "definition_text": "مهنة تحرير المطبوعات الصحفية أو إصدارها.",
         "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصحة العامة": [
+      {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "الصحة العامة",
+        "definition_text": "منظور مُتكامِل وشامِل لصِحة الفرد والأُسرة والمُجتمع، والتأثيرات البيئية والاجتِماعية والاقتِصادية والوراثية عليها.",
+        "source_record_id": "health-system-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5779,6 +5819,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس التعاون لدول الخليج العربية .",
         "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "المجلِس",
+        "definition_text": "مجلِس الخدمات الصحية .",
+        "source_record_id": "health-system-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8856,6 +8904,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الصحة .",
+        "source_record_id": "health-system-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_implementing_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -9145,6 +9201,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير المالية.",
         "source_record_id": "gtpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الصحة .",
+        "source_record_id": "health-system-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9581,6 +9645,16 @@
         "term_as_written": "تلوث البيئة",
         "definition_text": "وجود مادة أو أكثر من المواد أو العوامل بكميات أو صفات معينة لمدة زمنية؛ تؤدي بطريق مباشر أو غير مباشر إلى الإضرار بالبيئة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "توفير الرعاية الصحية": [
+      {
+        "track_id": "health_system_law",
+        "article_number": 1,
+        "term_as_written": "توفير الرعاية الصحية",
+        "definition_text": "ضمان وجود الرعاية الصحية دون أن يعني ذلك بالضرورة تقديمها مُباشرة من الدولة أو تمويلِها، إلا ما نصت عليه مواد هذا النظام.",
+        "source_record_id": "health-system-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

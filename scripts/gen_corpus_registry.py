@@ -181,6 +181,7 @@ NATIONALITY_LAW_LLM = os.path.join(ROOT, "data", "nationality_arabic_legal_llm",
 RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "residency_arabic_legal_llm", "residency_law_legal_llm_001_069.json")
 CIVIL_STATUS_LAW_LLM = os.path.join(ROOT, "data", "civil_status_arabic_legal_llm", "civil_status_law_legal_llm_001_096.json")
 FOOD_LAW_LLM = os.path.join(ROOT, "data", "food_arabic_legal_llm", "food_law_legal_llm_001_044.json")
+HEALTH_SYSTEM_LAW_LLM = os.path.join(ROOT, "data", "health_system_arabic_legal_llm", "health_system_law_legal_llm_001_019.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -355,6 +356,7 @@ def main() -> int:
     residency_law_llm = _load_json(RESIDENCY_LAW_LLM)
     civil_status_law_llm = _load_json(CIVIL_STATUS_LAW_LLM)
     food_law_llm = _load_json(FOOD_LAW_LLM)
+    health_system_law_llm = _load_json(HEALTH_SYSTEM_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -375,7 +377,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 143,
+        "total_tracks": 144,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -522,6 +524,7 @@ def main() -> int:
             + residency_law_llm["record_count"]  # 69 Foreigners' Residency Law (Royal/Supreme Order 17/2/25/1337, 1371H) (TIER_3, cross-verified secondary reproduction, BOE does not index this law at all, 1 ملغاة preserved, 4 مضافة, see track notes)
             + civil_status_law_llm["record_count"]  # 96 Saudi Arabian Civil Status Law (Royal Decree M/7, 1407H) (TIER_2, BOE-via-Wayback seven snapshots x qanoonsa.com x nezams.com secondary cross-checks, confirmed dual repeal of two 1358H/1382H predecessors, 24 of 96 articles cleanly reconstructed from BOE's own changelog, see track notes)
             + food_law_llm["record_count"]  # 44 Saudi Arabian Food Law (Royal Decree M/1, 1436H) (TIER_2 conservative, single SFDA-PDF primary source visually transcribed, BOE and Wayback both completely unreachable, all 44 recovered articles اصلية, Article 1 excluded as unrecoverable, see track notes)
+            + health_system_law_llm["record_count"]  # 19 Saudi Arabian Health System Law (Royal Decree M/11, 1423H) (TIER_3, BOE unreachable both live and Wayback, nezams.com x qanoonsa.com CoM Resolution 151 cross-verified, confirmed negative repeal finding, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -659,6 +662,7 @@ def main() -> int:
             + residency_law_llm["record_count"]
             + civil_status_law_llm["record_count"]
             + food_law_llm["record_count"]
+            + health_system_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4873,6 +4877,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Saudi Arabian Food Law «نظام الغذاء» — Royal Decree No. M/1, dated 6/1/1436H (30 October 2014G). A medium-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing food safety, quality, and the Saudi Food and Drug Authority (SFDA)'s regulatory powers over the food chain, distinct from this corpus's already-ingested cooperative_health_insurance_law and healthcare_professions_law tracks. **44 of 45 total articles recovered and ingested (Articles 2-45), all اصلية** — 0 معدلة, 0 ملغاة, 0 مضافة; 12 فصول (chapters) confirmed. **Article 1 (تعريفات/definitions) deliberately EXCLUDED** — not reproduced in the one full-text source reached this pass, and unverifiable AI-search-summary fragments were not treated as a substitute for verbatim text; not fabricated. **VERIFICATION TIER: TIER_2 (conservative, bordering TIER_3)** — laws.boe.gov.sa was completely unreachable this pass, both the live portal AND the Wayback Machine (web.archive.org itself blocked by this session's egress policy this pass, a more severe failure than this corpus's usual BOE-503-Wayback-succeeds pattern); the base-law text instead rests on ONE official/primary source (an SFDA-published PDF interleaving the base law's own boxed articles with its Implementing Regulation's own unboxed articles, visually transcribed page-by-page after automated OCR silently dropped at least one bordered article box), cross-checked against saudipedia.com (exact Gregorian-date match), FAOLEX (catalogue metadata), and aggregated secondary sources — but NOT against a second independently-sourced full copy of the statute, the track's main limitation, honestly flagged rather than inflated to TIER_1. **No specific named predecessor** — Article 45 gives only a generic conflict-only repeal clause ('ويلغي كل ما يتعارض معه من أحكام', naming no instrument), a confirmed negative finding flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge (mirroring the finance_companies_law Article 38 precedent). Genuine anomaly preserved: Chapters 4 and 5 share an identical title 'تداول الغذاء' in the source itself, not silently renamed. A companion Implementing Regulation (اللائحة التنفيذية لنظام الغذاء, ~85 articles, repeatedly amended at SFDA Board level) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "health_system_law",
+                "display_name_ar": "النظام الصحي",
+                "display_name_en": "Saudi Arabian Health System Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_X_QANOONSA_COM_RESOLUTION_151_CROSS_VERIFIED_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/11, dated 23/3/1423H (4 June 2002G), approved via Council of Ministers Resolution No. 76 (22/3/1423H) — laws.boe.gov.sa was unreachable this pass, both the live portal (HTTP 503) and the Wayback Machine (blocked/403); instead two genuinely independent secondary sources were cross-verified: nezams.com (full verbatim text of all 19 articles) and qanoonsa.com (raw text of Council of Ministers Resolution 151, an Umm Al-Qura Gazette reproduction, not merely a nezams.com mirror) — these agree on the founding decree identity and on 4 of 5 Article 16 amendment resolutions",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": health_system_law_llm["record_count"],
+                    "data_path": "data/health_system_arabic_legal_llm/health_system_law_legal_llm_001_019.json"}},
+                "record_counts": {"arabic_articles": health_system_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 4, "ملغاة": 0, "مضافة": 0},
+                                  "total": health_system_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/health_system/law/official_source/health_system_law_official_source.json",
+                    "sources/health_system/law/verified/health_system_law_verified_records.jsonl",
+                    "data/health_system_arabic_legal_llm/health_system_law_legal_llm_001_019.json",
+                ],
+                "validator_targets": ["make health-system-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Saudi Arabian Health System Law «النظام الصحي» (also known as the Public Health Law) — Royal Decree No. M/11, dated 23/3/1423H (4 June 2002G), approved via Council of Ministers Resolution No. 76 (22/3/1423H). A medium-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing the public health system, health facilities, and epidemic/communicable-disease control, distinct from this corpus's already-ingested cooperative_health_insurance_law (insurance) and healthcare_professions_law (professional licensing/discipline) tracks. **19 records: 15 اصلية, 4 معدلة** (Articles 4, 5, 16, 17) — flat structure, **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa was unreachable this pass, both the live portal (HTTP 503, repeated) and the usual Wayback Machine fallback (blocked/403 this pass); istitlaa.ncc.gov.sa also unreachable (TLS reset). Two genuinely independent secondary sources were instead cross-verified: nezams.com (full verbatim text, programmatically extracted) and qanoonsa.com (raw text of Council of Ministers Resolution 151, an actual Umm Al-Qura Gazette reproduction, not an aggregation of nezams.com) — these agree on the founding decree identity and on 4 of 5 Article 16 amendment resolutions (CoM Resolutions 418/1435H, 283/1440H, 442/1440H, 185/1443H). **No specific named predecessor** — Article 19 gives only a generic conflict-only repeal clause ('يلغي كل ما يتعارض معه من أحكام', naming no instrument), a confirmed negative finding flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. Genuine anomalies preserved: Article 16's latest amendment step (CoM Resolution 151, 1444H) is documented in amendment_history as having occurred but NOT merged into the article's current text, since neither source gives an explicitly-numbered replacement sub-paragraph — merging it would require fabricating an insertion point; Resolution 151 also cites a prior Resolution 475 (1436H) whose substance is undocumented in either source; Article 16 paragraph (ب) contains a stale sub-paragraph cross-reference to pre-185 numbering; a verbatim source typo in nezams.com's reproduction of Resolution 185 ('الهيئة اعامة' instead of 'الهيئة العامة') is preserved, not corrected. A companion Implementing Regulation (اللائحة التنفيذية للنظام الصحي) is confirmed to exist but is out of scope for this track (source unreachable this pass anyway), flagged as a follow-up candidate. Arabic governs; not legal advice.",
             },
         ],
     }
