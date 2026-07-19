@@ -3,7 +3,7 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 142,
+  "total_tracks_scanned": 143,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
@@ -685,6 +685,14 @@
       "issue": "general non-specific repeal clause naming no prior statute",
       "note": "residency_law's own Article 64 states only 'يلغي هذا النظام العمل بجميع الأوامر والتعليمات الصادرة في موضوع الإقامة والأجانب قبل صدوره' (a general repeal of all prior orders and instructions on the subject of residency and foreigners, issued before this law), naming no single, determinate prior instrument. NOT modeled as a repeals_full edge, since this corpus only models EXPLICITLY-NAMED repeal relationships, never inferred ones; this track's own research found no specific predecessor residency law identified by name or decree number for this generic clause to have targeted.",
       "source_ref": "sources/residency/law/official_source/residency_law_official_source.json (article 64)"
+    },
+    {
+      "tracks_involved": [
+        "food_law"
+      ],
+      "issue": "general non-specific repeal clause naming no prior statute",
+      "note": "food_law's own Article 45 states only 'يعمل بهذا النظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية، ويلغي كل ما يتعارض معه من أحكام' (a general boilerplate repeal of any conflicting provision), naming no single prior instrument. NOT modeled as a repeals_full edge, since this corpus only models EXPLICITLY-NAMED repeal relationships, never inferred ones; no distinct predecessor food-safety law was identified this pass for this generic clause to have targeted.",
+      "source_ref": "sources/food/law/official_source/food_law_official_source.json (article 45)"
     }
   ],
   "extraction_policy": "Every edge above was read and classified by hand against this corpus's own documented text (registry notes + official_source.json fields/article text), never inferred from a decree being older or from topical similarity alone. Concurrent title/decree-number collisions that are NOT repeal relationships, and genuinely ambiguous or explicitly-excluded cases, are kept in their own sections rather than forced into `edges`. It is expected and correct that most of this corpus's 122 tracks have zero edges."
