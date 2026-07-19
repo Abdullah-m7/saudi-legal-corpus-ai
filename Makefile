@@ -262,6 +262,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         travel-documents-law-track-validate \
         cybersecurity-authority-law-track-validate \
         cybersecurity-authority-enablers-track-validate \
+        premium-residency-law-track-validate \
         qa-gate
 
 help:
@@ -1472,6 +1473,9 @@ cybersecurity-authority-law-track-validate:
 
 cybersecurity-authority-enablers-track-validate:
 	$(PY) scripts/validate_cybersecurity_authority_enablers_track.py
+
+premium-residency-law-track-validate:
+	$(PY) scripts/validate_premium_residency_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

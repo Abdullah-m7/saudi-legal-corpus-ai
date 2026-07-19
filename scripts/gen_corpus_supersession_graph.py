@@ -1188,6 +1188,22 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "parent covers institutional structure).",
         "source_ref": "sources/cybersecurity_authority/enablers/official_source/cybersecurity_authority_enablers_official_source.json (بند سابعاً)",
     },
+    {
+        "tracks_involved": ["premium_residency_law"],
+        "issue": "confirmed negative repeal finding -- no predecessor named at all",
+        "note": "premium_residency_law's own Article 14 (entry into force) "
+                "names no repealed predecessor law whatsoever -- not even a "
+                "generic conflict-only clause. This is a wholly new "
+                "investor/talent long-term residency category with no prior "
+                "instrument to repeal, genuinely distinct in subject matter "
+                "and target population from this corpus's already-ingested "
+                "residency_law track (نظام الإقامة, the 1371H Iqama/Kafala "
+                "law) -- the two coexist as separate instruments, mirroring "
+                "this corpus's social_insurance_law/social_insurance_legacy_law "
+                "naming-distinction precedent, NOT a supersession relationship. "
+                "No edge modeled.",
+        "source_ref": "sources/premium_residency/law/official_source/premium_residency_law_official_source.json (article 14)",
+    },
 ]
 
 

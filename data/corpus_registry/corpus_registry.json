@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9932,
+  "total_primary_arabic_governing_records": 9946,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10827,
-  "total_tracks": 148,
+  "total_registry_counted_records": 10841,
+  "total_tracks": 149,
   "tracks": [
     {
       "boundaries": {
@@ -7015,6 +7015,55 @@
       "validator_targets": [
         "make cybersecurity-authority-enablers-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/premium_residency/law/official_source/premium_residency_law_official_source.json",
+        "sources/premium_residency/law/verified/premium_residency_law_verified_records.jsonl",
+        "data/premium_residency_arabic_legal_llm/premium_residency_law_legal_llm_001_014.json"
+      ],
+      "display_name_ar": "نظام الإقامة المميزة",
+      "display_name_en": "Premium Residency Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/premium_residency_arabic_legal_llm/premium_residency_law_legal_llm_001_014.json",
+          "governing": true,
+          "record_count": 14,
+          "status": "complete"
+        }
+      },
+      "notes": "Premium Residency Law «نظام الإقامة المميزة» — Royal Decree No. م/106, dated 10/9/1440H (15 May 2019G), a distinct, much newer investor/talent long-term residency instrument, entirely separate from this corpus's already-ingested residency_law track (نظام الإقامة, the 1371H Iqama/Kafala law) — identified as a companion instrument explicitly out of scope during that earlier track's own build. **14 articles, flat structure, no formal أبواب/فصول** (6 informal thematic sections used for indexing only). Per BOE's own per-article tagging: **5 اصلية** (Articles 7, 9, 12, 13, 14 — though Articles 9 and 13's wording nonetheless reflects a downstream global term-substitution, اللجنة->المجلس, from Article 1's own amendment, disclosed not silently normalized), **8 معدلة** (Articles 1, 2, 3, 4, 5, 6, 10, 11), **1 ملغاة** (Article 8, repealed by M/84 dated 11/6/1445H, its pre-repeal text preserved not deleted), **0 مضافة**. Repealed sub-paragraphs within otherwise-still-amended articles are preserved as an explicit '(ألغيت)' placeholder, matching the exact convention used by MISA's own official consolidated text, not silently deleted or renumbered. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — laws.boe.gov.sa's live portal was unreachable this pass (connection reset via direct curl and the r.jina.ai reader-proxy fallback, both timing out), so this track instead rests on SIX independent Wayback Machine snapshots of BOE's own dedicated lawId page (5e9762df-2b15-4e66-8cdc-aa5200f62042) spanning SIX YEARS (22 Nov 2019 through 16 Nov 2025) — internally consistent with the real amendment timeline (the 2019 snapshot shows zero amendments; the Feb 2023 snapshot shows exactly the three amendments enacted by that date; the Nov 2025 snapshot shows all five). Critically, an independent OFFICIAL government source — misa.gov.sa (Ministry of Investment), hosting a PDF titled with '1445H' in its filename — was directly downloaded (200 OK) and its extracted text already presents the CURRENT, CONSOLIDATED, POST-AMENDMENT text, agreeing WORD-FOR-WORD with the text reconstructed here from BOE's own quoted amendment instructions at every point checked but one disclosed one-word discrepancy (Article 2(e)'s 'صك حق انتفاع' vs MISA's 'صك انتفاع' — BOE's fuller, temporally-stable wording treated as canonical). Two independent official government sources agreeing = TIER_1_PRIMARY_MULTI_SOURCE per this corpus's taxonomy. **CONFIRMED NEGATIVE REPEAL FINDING**: Article 14 (entry into force) names no repealed predecessor law at all — a wholly new residency category with no prior instrument to repeal, genuinely distinct in subject matter and target population from this corpus's already-ingested residency_law (1371H Iqama/Kafala law); the two coexist, mirroring this corpus's social_insurance_law/social_insurance_legacy_law naming-distinction precedent, not a supersession relationship — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. **COMPANION INSTRUMENTS IDENTIFIED, NOT INGESTED THIS PASS**: (1) اللائحة التنفيذية لنظام الإقامة المميزة (the Law's own implementing regulation, Center Decision No. 4-1440 dated 20/9/1440H, amended by Board Decision No. 7-5-1444 dated 29/12/1444H) — confirmed to exist via multiple agreeing secondary sources but not separately indexed on BOE under its own lawId, and the only source located with article-level content (aunklaw.com) provides a paraphrased per-article summary, not verbatim text, so not ingested per this corpus's binding constraint against treating paraphrase as verified verbatim text; (2) تنظيم مركز الإقامة المميزة (the Center's own internal organizational bylaws, CoM Resolution 555, 1443H, BOE lawId bc27d6e4-560a-4778-9364-aeac00ca7e3b) — a genuinely distinct administrative instrument, out of scope. Arabic governs; not legal advice.",
+      "official_text_status": "PREMIUM_RESIDENCY_LAW_BOE_LIVE_UNREACHABLE_WAYBACK_MULTI_SNAPSHOT_2019_2025_X_MISA_OFFICIAL_CONSOLIDATED_PDF_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 14,
+        "legal_status_breakdown": {
+          "اصلية": 5,
+          "مضافة": 0,
+          "معدلة": 8,
+          "ملغاة": 1
+        },
+        "total": 14
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. م/106, dated 10/9/1440H (15 May 2019G) — laws.boe.gov.sa's live portal was unreachable this pass, so this track rests on six independent Wayback Machine snapshots of BOE's own dedicated lawId page spanning 22 Nov 2019 through 16 Nov 2025, cross-verified word-for-word against an independent official government source (misa.gov.sa, Ministry of Investment's own hosted consolidated-text PDF)",
+      "status": "complete",
+      "track_id": "premium_residency_law",
+      "validator_targets": [
+        "make premium-residency-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7109,6 +7158,7 @@
       "payment_systems": 20,
       "pdpl": 81,
       "personal_status": 293,
+      "premium_residency": 14,
       "press": 49,
       "qismah": 48,
       "real_estate_expropriation": 39,
@@ -7138,7 +7188,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9763,
+    "total_records": 9777,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

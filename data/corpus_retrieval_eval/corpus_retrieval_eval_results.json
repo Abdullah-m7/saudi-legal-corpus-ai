@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 324,
-  "top1_hits": 298,
-  "top3_hits": 317,
-  "top5_hits": 320,
-  "top1_accuracy": 0.9198,
-  "top3_accuracy": 0.9784,
+  "total_queries": 326,
+  "top1_hits": 300,
+  "top3_hits": 319,
+  "top5_hits": 322,
+  "top1_accuracy": 0.9202,
+  "top3_accuracy": 0.9785,
   "top5_accuracy": 0.9877,
-  "mrr_at_5": 0.9487,
+  "mrr_at_5": 0.949,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1843,9 +1843,9 @@
      "score": 16
     },
     {
-     "record_id": "evidence-expertise-llm-art-015",
-     "article_number": 15,
-     "score": 15
+     "record_id": "premium-residency-law-llm-art-006",
+     "article_number": 6,
+     "score": 16
     }
    ]
   },
@@ -10061,6 +10061,68 @@
      "record_id": "cybersecurity-authority-enablers-llm-art-002",
      "article_number": 2,
      "score": 50
+    }
+   ]
+  },
+  {
+   "query_id": "prm-001",
+   "query_ar": "يعتبر حامل الإقامة المميزة في حكم المقيم لغرض تطبيق الأحكام النظامية الأخرى",
+   "category": "topical",
+   "gold": {
+    "corpus": "premium_residency",
+    "law_component": "law",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "premium-residency-law-llm-art-008",
+     "article_number": 8,
+     "score": 46
+    },
+    {
+     "record_id": "premium-residency-law-llm-art-010",
+     "article_number": 10,
+     "score": 19
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-005",
+     "article_number": 5,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "prm-002",
+   "query_ar": "تكون أنواع الإقامة المميزة وفقاً للآتي دائمة ومحددة المدة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "premium_residency",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "premium-residency-law-llm-art-003",
+     "article_number": 3,
+     "score": 34
+    },
+    {
+     "record_id": "premium-residency-law-llm-art-006",
+     "article_number": 6,
+     "score": 14
+    },
+    {
+     "record_id": "premium-residency-law-llm-art-001",
+     "article_number": 1,
+     "score": 13
     }
    ]
   }
