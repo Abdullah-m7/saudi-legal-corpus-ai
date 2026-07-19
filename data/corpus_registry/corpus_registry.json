@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9999,
+  "total_primary_arabic_governing_records": 10034,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10894,
-  "total_tracks": 150,
+  "total_registry_counted_records": 10929,
+  "total_tracks": 151,
   "tracks": [
     {
       "boundaries": {
@@ -7113,6 +7113,55 @@
       "validator_targets": [
         "make travel-documents-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/nationality/regulation/official_source/nationality_regulation_official_source.json",
+        "sources/nationality/regulation/verified/nationality_regulation_verified_records.jsonl",
+        "data/nationality_regulation_arabic_legal_llm/nationality_regulation_legal_llm_001_035.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الجنسية العربية السعودية",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Nationality Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/nationality_regulation_arabic_legal_llm/nationality_regulation_legal_llm_001_035.json",
+          "governing": true,
+          "record_count": 35,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian Nationality Law «اللائحة التنفيذية لنظام الجنسية العربية السعودية» — Ministerial Decision No. 74/زو, dated 9/3/1426H (22 Apr 2005G), issued by the Minister of Interior under the Nationality Law's own Article 27 (as amended by M/54, 29/10/1425H). The companion regulation flagged, but not ingested, in the already-ingested nationality_law track's own known_unresolved_discrepancies (key 'nationality_implementing_regulation_not_ingested'), which had estimated '~25 articles' from an earlier light-verification pass. **35 records: 34 اصلية, 0 معدلة, 1 ملغاة (Article 28), 0 مضافة** — flat 35-article structure, no formal أبواب/فصول numbering, spelled-ordinal headers. **ARTICLE COUNT CORRECTED (25 -> 35)**: traced to an internal self-contradiction in a single 2005G news source (alriyadh.com) whose own prose stated '25 مادة' even though its own reproduced full text ran to Article 35 — resolved definitively in favor of 35, independently confirmed by the byte-stable government PDF. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa was checked first per this corpus's standard methodology but confirmed (web search plus a Wayback CDX scan of the whole domain) to host NO dedicated lawId page at all for this Implementing Regulation; BOE's live portal was also unreachable this pass. PRIMARY source is moi.gov.sa (the issuing Ministry's own official site), whose live portal was also unreachable this pass, so the PDF was fetched via three independent Wayback Machine snapshots (4 Mar 2011, 29 Sep 2022, 15 Mar 2024) that are byte-identical (sha256-matched) across all 13 years, extracted via two independent tools (poppler pdftotext, PyMuPDF), both agreeing on 35 articles. Cross-verified against nezams.com (confirms the founding decree number/date as an appendix to its own nationality-law page) and alriyadh.com's own contemporaneous news article (published the day after Umm Al-Qura publication), which reproduces the Regulation's full 35-article text verbatim — automated normalized diffing against moi.gov.sa's PDF found word-for-word equivalence across all 35 articles, 18+ years apart, aside from two disclosed source-artifact-layer defects in moi.gov.sa's own PDF (a font ligature-drop bug losing 'مخ' from المختص/المختصة in 5 places, and an RTL line-reordering artifact in 2 short paragraphs) and two single-letter transcription typos in alriyadh's own text (fixed against moi.gov.sa's spelling). alriyadh's text (thus corrected) is used as the base transcription since it is free of the PDF's extraction artifacts while remaining fully cross-verified against the primary source. **CONFIRMED REPEAL**: Article 28 (its own text: 'يصدر وزير الداخلية القرارات اللازمة لمنح الجنسية بموجب المادة (8) من النظام') was deleted by a Minister of Interior decision circa March 2023, following Royal Decree M/88 (11/6/1444H) which transferred the parent Law's Article 8 nationality-grant authority from the Minister of Interior to the Prime Minister — independently confirmed by 5+ Saudi news outlets, all quoting the same deleted article text verbatim. moi.gov.sa's own PDF is confirmed STALE, still showing Article 28's pre-deletion text as of its most recent Wayback snapshot checked (15 Mar 2024, over a year after the deletion) — per this corpus's binding rule, Article 28 is preserved here with its original text, legal_status_ar=ملغاة, never deleted or silently merged away. **CONFIRMED NEGATIVE FINDING**: this Regulation names no repealed predecessor instrument of its own — it is the first and only Implementing Regulation for this Law since 1374H — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. Diacritics stripped uniformly. Arabic governs; not legal advice.",
+      "official_text_status": "MOI_GOV_SA_WAYBACK_TRIPLE_SNAPSHOT_BYTE_IDENTICAL_X_NEZAMS_DECREE_CONFIRM_X_ALRIYADH_2005_CONTEMPORANEOUS_FULLTEXT_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE",
+      "record_counts": {
+        "arabic_articles": 35,
+        "legal_status_breakdown": {
+          "اصلية": 34,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 1
+        },
+        "total": 35
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. 74/زو, dated 9/3/1426H (22 Apr 2005G), issued by the Minister of Interior under the Nationality Law's own Article 27 — laws.boe.gov.sa hosts no dedicated lawId page at all for this Implementing Regulation; PRIMARY source is moi.gov.sa (the issuing Ministry's own site), fetched via three independent Wayback Machine snapshots (4 Mar 2011, 29 Sep 2022, 15 Mar 2024) that are byte-identical across all 13 years, cross-verified against nezams.com (decree number/date) and alriyadh.com's 2005G contemporaneous full-text reproduction (independently resolving this corpus's own prior gap-map estimate of ~25 articles to the confirmed true count of 35)",
+      "status": "complete",
+      "track_id": "nationality_regulation",
+      "validator_targets": [
+        "make nationality-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7201,7 +7250,7 @@
       "municipal_councils": 69,
       "municipal_realestate": 41,
       "muslaha": 29,
-      "nationality": 30,
+      "nationality": 65,
       "nazaha": 24,
       "patent": 66,
       "payment_systems": 20,
@@ -7237,7 +7286,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9830,
+    "total_records": 9865,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

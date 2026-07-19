@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 150,
-  "total_terms": 846,
-  "total_definitions": 1289,
-  "tracks_with_definitions_article_parsed": 99,
+  "total_tracks_in_registry": 151,
+  "total_terms": 850,
+  "total_definitions": 1295,
+  "tracks_with_definitions_article_parsed": 100,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1001,6 +1001,16 @@
         "term_as_written": "الأوزان",
         "definition_text": "أ – وزن السيارة الفارغ: وزن السيارة وهي مجهزة بمحروقاتها وآلات الصيانة والإصلاح وأدواتها الاحتياطية.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأولاد": [
+      {
+        "track_id": "nationality_regulation",
+        "article_number": 1,
+        "term_as_written": "الأولاد",
+        "definition_text": "الذكور والاناث.",
+        "source_record_id": "nationality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2512,6 +2522,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجنسية": [
+      {
+        "track_id": "nationality_regulation",
+        "article_number": 1,
+        "term_as_written": "الجنسية",
+        "definition_text": "الجنسية العربية السعودية.",
+        "source_record_id": "nationality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجهات الحكومية": [
       {
         "track_id": "gtpl_law",
@@ -3688,6 +3708,14 @@
         "definition_text": "اثنا عشر شهرا ميلادية.",
         "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "nationality_regulation",
+        "article_number": 1,
+        "term_as_written": "السنة",
+        "definition_text": "هجرية قمرية.",
+        "source_record_id": "nationality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السوق": [
@@ -4047,6 +4075,16 @@
         "term_as_written": "الصخور",
         "definition_text": "مواد أرضية طبيعية على هيئة صلبة، وتتكون في الغالب من تجمع معدني متحجر يتألف من معدن أو أكثر.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصغير": [
+      {
+        "track_id": "nationality_regulation",
+        "article_number": 1,
+        "term_as_written": "الصغير",
+        "definition_text": "من لم يبلغ سن الرشد.",
+        "source_record_id": "nationality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8474,6 +8512,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "nationality_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الجنسية العربية السعودية الصادر بالإرادة الملكية رقم (8/20/5604) وتاريخ 22/2/1374هـ وما طرأ عليه من تعديلات.",
+        "source_record_id": "nationality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "nazaha_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -10505,6 +10551,16 @@
         "term_as_written": "سلطة تسجيل العلامة العامة",
         "definition_text": "السلطة التي يعهد إليها بالسجل غير الوطني أو أي جزء منه والذي تسجل فيه طائرات تابعة لمؤسسة نقل جوي أجنبية أو مشتركة.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "سن الرشد": [
+      {
+        "track_id": "nationality_regulation",
+        "article_number": 1,
+        "term_as_written": "سن الرشد",
+        "definition_text": "تمام السنة الثامنة عشرة من العمر.",
+        "source_record_id": "nationality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
