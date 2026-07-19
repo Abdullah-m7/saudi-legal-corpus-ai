@@ -1,7 +1,7 @@
 {
-  "generated_note": "Planning document only. This is a prioritized gap map identifying major Saudi statutory instruments not yet among the corpus's 121 tracks. Each gap received a LIGHT verification pass (web search cross-check of existence, approximate Royal Decree number/date, and rough article count) — NOT a full research/verbatim-transcription pass. Decree numbers/dates/article counts below should be re-verified against an official source (laws.boe.gov.sa, the issuing ministry/authority PDF, or Umm Al-Qura Gazette) before any build/transcription work begins. Generated 2026-07-17 by a research-only pass; no existing track files, run_qa_gate.py, or shared wiring were touched. Expansion pass (2026-07-19): 8 new candidate gaps added following a fresh scan cross-checked against the then-current 139 REQUIRED_TRACK_IDS -- nationality, residency/iqama, civil status, food law, public health law, domestic labor regulation, passports law, and the NCA organizational statute -- see the newly-appended entries below for full rationale per candidate.",
-  "already_covered_track_count": 121,
-  "methodology": "Cross-checked the 121 REQUIRED_TRACK_IDS in scripts/validate_corpus_registry.py against the requested focus areas (consumer protection, health/medical regulation, IP beyond trademark/copyright, finance companies/consumer finance, real estate development, zakat, customs, anti-trust/IP enforcement, family/inheritance beyond personal status, government tenders, municipalities, maritime/shipping, insurance, financial leasing, secured lending, anti-dumping, professional services regulation, press/media, elections/municipal councils). For each candidate, ran targeted Arabic web searches against laws.boe.gov.sa (Council of Ministers Bureau of Experts portal), SAMA Rulebook, ministry sites, and legal-reference sites (nezams.com, qanoonsa.com, WIPO Lex) to confirm the law exists, find its Royal Decree number/date, and get an approximate article count.",
+  "generated_note": "Planning document only. This is a prioritized gap map identifying major Saudi statutory instruments not yet among the corpus's 153 tracks. Each gap received a LIGHT verification pass (web search cross-check of existence, approximate Royal Decree/Ministerial-Decision number and date, and rough article count) — NOT a full research/verbatim-transcription pass. Decree numbers/dates/article counts below should be re-verified against an official source (laws.boe.gov.sa, the issuing ministry/authority PDF, or Umm Al-Qura Gazette) before any build/transcription work begins. FULL FRESH PASS (2026-07-19): the prior version of this document (generated 2026-07-17, expanded 2026-07-19 morning) listed 24 candidate gaps benchmarked against a stale 121/139-track baseline. This pass independently re-read data/corpus_registry/corpus_registry.json's full 153-entry track list and confirmed, by name-matching each of those 24 old gaps' law_name_en against the current track_ids, that all 24 have since been built and ingested (zakat_law, patent_law, customs_law, customs_regulation, anti_fraud_law, finance_companies_law, cooperative_health_insurance_law, healthcare_professions_law, finance_lease_law, maritime_commercial_law, gcc_anti_dumping_law, accounting_auditing_law, nazaha_law, awqaf_law, saudi_engineers_law, municipal_councils_law, press_law, nationality_law, nationality_regulation, residency_law, civil_status_law, food_law, food_regulation, health_system_law, health_system_regulation, domestic_labor_regulation, travel_documents_law, travel_documents_regulation, premium_residency_law, cybersecurity_authority_law, cybersecurity_authority_enablers) EXCEPT the 'Comprehensive Consumer Protection Law (draft)' entry, which is carried forward below because fresh searches (including the Ministry of Commerce's own Q3-2025 consumer-protection bulletin, mc.gov.sa/ar/mediacenter/DOC/MCQ3-2025.pdf) still show no enactment -- it remains an unenacted draft as of this pass. This pass then did fresh independent brainstorming across two axes: (1) entirely new topical areas adjacent to the 153 covered tracks (water, electricity, agriculture, and a note on the new Communications/IT law that appears to have replaced the base Telecommunications Act already in the corpus), and (2) the 'implementing regulation of an already-ingested base law that is itself not yet ingested as its own track' pattern that this session's prior work established for health_system/food/travel_documents/nationality -- applied here to traffic_law, vat_law, income_tax_law, aml_law, competition_law, patent_law, trademark_law, ecommerce_law, franchise_law, and insurance_control_law, each confirmed via targeted Arabic-language web search to have a distinct, separately-numbered Implementing Regulation / executive regulation that does not appear in the 153-track list.",
+  "already_covered_track_count": 153,
+  "methodology": "Step 1: read data/corpus_registry/corpus_registry.json in full (153 track_ids) to establish ground truth for what is already ingested -- this superseded the prior document's stale REQUIRED_TRACK_IDS-based baseline (121, then 139). Step 2: cross-checked all 24 gaps from the prior pass against the 153 track_ids by name/topic matching; confirmed 23 are now built, and independently re-verified the 24th (Comprehensive Consumer Protection Law draft) is still unenacted via a fresh web search of the Ministry of Commerce's own most recent (Q3 2025) consumer-protection bulletin and other secondary sources -- no 2025-2026 enactment news was found. Step 3: brainstormed candidate gap categories per the requesting instructions -- data protection/PDPL-adjacent, consumer protection, government tenders/procurement (found to already be covered as gtpl_law/gtpl_implementing_regulation -- explicitly NOT re-flagged), competition/anti-trust implementing rules, e-government, foreign investment, mining/minerals, agriculture, water, electricity/energy, telecom-adjacent, aviation-adjacent, maritime-adjacent, implementing regulations for already-ingested base laws (the health_system/food/travel_documents/nationality pattern applied to traffic, VAT, income tax, AML, competition, patents, trademarks, e-commerce, franchise, insurance, environment, agriculture), and newer 2024-2026 legislative reforms. Step 4: for each surviving candidate, ran targeted Arabic-language WebSearch queries against laws.boe.gov.sa (Bureau of Experts), ZATCA, SAMA Rulebook, MEWA, SERA, CST, SAIP, the Ministry of Commerce, Umm Al-Qura Gazette (uqn.gov.sa), and legal-reference aggregators (qanoniah.com, nezams.com, qanoonsa.com, WIPO Lex, Lexis Middle East) to confirm existence, find an approximate decree/decision number and date, and flag confidence level. No existing track files, run_qa_gate.py, gen_corpus_registry.py, or shared wiring were touched -- this is a research-only planning-document refresh.",
   "notable_non_gaps_checked_and_excluded": [
     {
       "topic": "Movable/secured lending (الحقوق العينية التبعية / رهن المنقول)",
@@ -36,230 +36,148 @@
   ],
   "gaps": [
     {
-      "law_name_ar": "نظام جباية الزكاة ولائحته التنفيذية",
-      "law_name_en": "Zakat Collection Law and its Implementing Regulation",
-      "estimated_decree": "Original system dates to Royal Decree No. (17/2/28/3321) of 21 Muharram 1370H (establishing zakat/income-tax collection); current implementing regulation issued via ministerial decisions (No. 2082 of 1438H, No. 2216 of 1440H) under ZATCA (formerly GAZT). Administering authority: Zakat, Tax and Customs Authority (ZATCA).",
-      "estimated_article_count": "Base law is short (foundational decree); implementing regulation is the operative document, roughly 20-30 articles — needs confirmation",
+      "law_name_ar": "نظام المياه ولائحته التنفيذية",
+      "law_name_en": "Water Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/159 dated 11/11/1441H (approving Council of Ministers Resolution No. 710 dated 9/11/1441H), approx. July 2020. Administered by the Ministry of Environment, Water and Agriculture (MEWA) / Saudi Water Authority (SWA); implementing regulation(s) published on mewa.gov.sa (at least one specifically covering the water/environment/agriculture ministry's own duties has been located).",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "high",
-      "priority_rationale": "Zakat is the primary fiscal levy on Saudi/GCC-owned entities (as opposed to income tax, which is already covered and applies to non-Saudi-owned entities/shares). Virtually every Saudi company must compute zakat; this is one of the highest-frequency compliance regimes in daily legal/accounting practice, and it is conspicuously absent given income_tax_law is already in the corpus.",
+      "priority_rationale": "Foundational statute for water-source ownership, licensing of well-drilling/desalination/water-source development, and use-priority ordering (human needs > agriculture/urban/industrial > environmental balance). Entirely absent from the corpus despite environmental_law, food_law, and the agriculture-sector nexus all being covered or proposed. Water security is a top-tier Saudi national-priority issue (Vision 2030, NEOM, desalination expansion) with direct licensing/compliance relevance for agriculture, real estate development, and industrial permitting practice.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية",
-      "law_name_en": "Law of Patents, Layout Designs of Integrated Circuits, Plant Varieties and Industrial Designs",
-      "estimated_decree": "Royal Decree, approx. 1425H (2004), Council of Ministers Resolution",
-      "estimated_article_count": "Approx. 60-70 articles across its several parts (patents, IC layout designs, plant varieties, industrial designs) — needs confirmation",
+      "law_name_ar": "نظام الكهرباء",
+      "law_name_en": "Electricity Law",
+      "estimated_decree": "Current version: Royal Decree No. M/44 dated 16/5/1442H (approx. 31/12/2020), published 24/5/1442H, superseding the earlier Royal Decree No. M/56 dated 20/10/1426H (2005) version. Administered by the Saudi Electricity Regulatory Authority (SERA, formerly the Water and Electricity Regulatory Authority — renamed by Cabinet decision in May 2024 when water-sector oversight was split off).",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "high",
-      "priority_rationale": "The corpus already has trademark_law and copyright_law but no patent law — this is the single biggest hole in the IP family. Administered by SAIP (Saudi Authority for Intellectual Property); heavily used in tech, pharma, and industrial-design practice.",
+      "priority_rationale": "Substantive sector law governing electricity generation, transmission, distribution licensing, tariffs, and consumer protection in the power sector — an entirely uncovered utilities/energy-regulation gap despite Saudi Arabia's large-scale renewable-energy and grid-privatization program (NEOM, solar/wind IPPs, SEC unbundling). High relevance to project-finance, PPP, and energy-sector regulatory practice.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية ولائحته التنفيذية",
-      "law_name_en": "GCC Unified Customs Law and its Implementing Regulation",
-      "estimated_decree": "Royal Decree No. M/41 dated 3 Dhul-Qi'dah 1423H (2002); in force since 1 January 2003",
-      "estimated_article_count": "Approx. 190+ articles across several chapters (tariff principles, prohibitions/restrictions, import/export, exemptions) — needs confirmation",
+      "law_name_ar": "نظام الاتصالات وتقنية المعلومات",
+      "law_name_en": "Communications, Space and Information Technology Law (successor to the base Telecommunications Act)",
+      "estimated_decree": "Council of Ministers Resolution No. 592 dated 1/11/1443H (approx. June 2022); explicitly stated by official sources to repeal and replace the older Telecommunications Act issued by Royal Decree No. M/12 dated 12/3/1422H (2001) — which is the decree underlying this corpus's own already-ingested telecommunications_law track.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification. Covers licensing, spectrum management, interconnection/access, competition, user-data protection, penalties, and calls for its own implementing regulation (itself still apparently at consultation/draft stage per istitlaa.ncc.gov.sa listings found this pass).",
       "priority": "high",
-      "priority_rationale": "Customs law governs all cross-border trade into/out of Saudi Arabia and the GCC customs union; extremely high practical frequency for any import/export, logistics, or trade-remedies practice. Administered by ZATCA.",
-      "confidence_exists": "confirmed"
+      "priority_rationale": "IMPORTANT CURRENCY FLAG, not just a new-track candidate: if this successor law is confirmed in force, the corpus's existing telecommunications_law track (sourced from the 1422H Telecommunications Act) may itself be citing a superseded instrument — this needs a dedicated verification pass (is M/12 1422H still the operative law, or has it been repealed and only partially survives via savings clauses?) before any new build. Telecom regulation is extremely high-frequency in ICT/technology and licensing practice, so getting the current operative text right matters more here than for most other gaps.",
+      "confidence_exists": "confirmed to exist and to have been approved by Council of Ministers resolution — but the exact current enactment/effective status relative to the 1422H law, and whether it is now fully in force pending only its own implementing regulation, needs dedicated confirmation before treating telecommunications_law as stale"
     },
     {
-      "law_name_ar": "نظام مكافحة الغش التجاري",
-      "law_name_en": "Anti-Commercial Fraud Law",
-      "estimated_decree": "Royal Decree No. M/19 dated 23/4/1429H (2008), replacing the 1404H system",
-      "estimated_article_count": "30 articles",
+      "law_name_ar": "اللائحة التنفيذية لنظام ضريبة القيمة المضافة",
+      "law_name_en": "Implementing Regulations of the VAT Law",
+      "estimated_decree": "Originally issued 1438H (2017) alongside the VAT Law itself; most recently amended via ZATCA/Board of Directors and Council of Ministers-level decisions (amendments reported by Umm Al-Qura Gazette and argaam.com through at least 2024). Administered by ZATCA.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification; the operative document runs to several dozen articles across registration, invoicing, zero-rating, exemptions, input-tax recovery, and refund-mechanism chapters.",
       "priority": "high",
-      "priority_rationale": "This is the currently operative statutory basis for consumer/market protection in Saudi Arabia (product quality, mislabeling, deceptive trade practices) administered by the Ministry of Commerce's Consumer Protection Agency. A separate all-encompassing 'Consumer Protection Law' was drafted and put to public consultation (منصة استطلاع) around 2022 but could not be confirmed as enacted — see the unconfirmed entry below. Until/unless that broader law is confirmed in force, this Anti-Commercial Fraud Law is the real, currently binding consumer-facing statute and is a clear gap.",
+      "priority_rationale": "This is the actual operative compliance document for the single highest-frequency indirect tax in Saudi Arabia — vat_law itself is already in the corpus, but the base law is a relatively short framework statute; nearly all real VAT compliance questions (zero-rating conditions, group registration, real-estate transitional rules, refund procedures) are answered by this Implementing Regulation, not the base law. Its absence is a significant practical gap given how central VAT compliance is to every commercial transaction.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام مراقبة شركات التمويل ولائحته التنفيذية",
-      "law_name_en": "Finance Companies Control Law and its Implementing Regulation",
-      "estimated_decree": "Royal Decree No. M/51 dated 13/8/1433H (2012)",
-      "estimated_article_count": "40 articles (preamble + 8 chapters)",
+      "law_name_ar": "اللائحة التنفيذية لنظام ضريبة الدخل",
+      "law_name_en": "Implementing Regulations of the Income Tax Law",
+      "estimated_decree": "Issued by Ministerial Decision No. 1535, under Article 79 of the Income Tax Law (Royal Decree M/1, 1425H, already covered as income_tax_law). Subject to frequent amendment — SPA news releases found this pass reference at least a 25th, 30th, and 32nd amendment/addition round.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "high",
-      "priority_rationale": "Governs SAMA-licensed finance companies across real estate finance, productive-asset finance, SME finance, finance lease, credit cards, consumer finance, and microfinance — i.e., the umbrella law for the entire non-bank consumer/commercial lending sector, which has grown rapidly (BNPL, fintech lenders, auto/equipment finance). Distinct from real_estate_finance_law and real_estate_mortgage_law already in the corpus.",
+      "priority_rationale": "Parallel gap to the VAT Implementing Regulation above: income_tax_law is covered, but its own Implementing Regulation — which defines permanent-establishment tests, withholding-tax categories/rates, depreciation schedules, and the mechanics that non-Saudi-owned businesses actually operate under day to day — is not. Extremely high frequency in corporate tax and cross-border-investment practice, and the subject of frequent regulatory amendment, making it an active, not merely historical, compliance text.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام الضمان الصحي التعاوني",
-      "law_name_en": "Cooperative Health Insurance Law",
-      "estimated_decree": "Royal Decree No. M/10 dated 1/5/1420H (1999)",
-      "estimated_article_count": "Approx. 19-20 articles — needs confirmation",
+      "law_name_ar": "اللائحة التنفيذية لنظام المرور",
+      "law_name_en": "Implementing Regulations of the Traffic Law",
+      "estimated_decree": "Approx. 1429H, issued under the authority of the Traffic Law (Royal Decree No. M/85, 26/10/1428H / Cabinet Resolution No. 315, 24/10/1428H, already covered as traffic_law). Administered by the Ministry of Interior (General Directorate of Traffic); amendments continue to be routed through public consultation (istitlaa.ncc.gov.sa).",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
+      "priority": "medium-high",
+      "priority_rationale": "traffic_law is already in the corpus, but the operative detail — vehicle registration/plate categories, licensing classes, violation schedules/point systems, accident-liability apportionment mechanics — lives in this Implementing Regulation, not the base law. Given the sheer volume of traffic-violation and motor-liability matters in daily Saudi legal/insurance practice, this is a high-frequency companion document that is currently missing.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "اللائحة التنفيذية لنظام مكافحة غسل الأموال",
+      "law_name_en": "Implementing Regulations of the Anti-Money Laundering Law",
+      "estimated_decree": "Council of Ministers Decision No. 228 dated 2/5/1440H, issued under the AML Law (Royal Decree No. M/20, 5/2/1439H, already covered as aml_law). Jointly administered/enforced by SAMA, the national AML/CFT committee, and sector regulators; also indexed in the SAMA Rulebook.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
+      "priority": "medium-high",
+      "priority_rationale": "aml_law is already in the corpus (the criminal/framework statute), but its Implementing Regulation — customer due diligence, beneficial-ownership identification, suspicious-transaction-reporting mechanics, record-keeping duties — is the document banks, DNFBPs, and compliance officers actually operate under. High relevance to banking/fintech compliance and white-collar practice.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "اللائحة التنفيذية لنظام المنافسة",
+      "law_name_en": "Implementing Regulations of the Competition Law",
+      "estimated_decree": "Issued by the General Authority for Competition (GAC/جهاز حماية المنافسة، سابقاً الهيئة العامة للمنافسة) board decision; most recently substantially revised alongside the amended Competition Law (argaam.com reports a 'new Implementing Regulation' entering into force). Administered by GAC.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "medium",
-      "priority_rationale": "Mandates health insurance coverage for expatriate workers and dependents; directly intersects with labor law and iqama/residency compliance, both high-frequency HR/immigration practice areas. Distinct from insurance_control_law already covered (which regulates insurers generally, not the health-coverage mandate itself).",
+      "priority_rationale": "competition_law is already covered, but merger-control thresholds/notification procedures, dominance-abuse tests, and exemption criteria are set out at the Implementing Regulation level. Relevant to M&A and antitrust-clearance practice, an increasingly active area as GAC enforcement has intensified in recent years.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام مزاولة المهن الصحية ولائحته التنفيذية",
-      "law_name_en": "Law of Practicing Healthcare Professions",
-      "estimated_decree": "Royal Decree No. M/59 dated 4/11/1426H (2005), repealing the 1409H physicians/dentists law and the 1398H pharmacy law",
-      "estimated_article_count": "Approx. 33 articles — needs confirmation",
+      "law_name_ar": "اللائحة التنفيذية لنظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية",
+      "law_name_en": "Implementing Regulations of the Patents/IC Layout Designs/Plant Varieties/Industrial Designs Law",
+      "estimated_decree": "Originally issued by King Abdulaziz City for Science and Technology (KACST) President's Decision No. (٣٦٠٧٣٢٩-٢-١٦١) dated 30/12/1436H; subsequently amended by the Saudi Authority for Intellectual Property (SAIP) Board Decision No. (5/8/2019) dated 4/9/1440H, and most recently by SAIP Board Decision No. (02/32/2024) dated 10/4/1446H (2024/2025).",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "medium",
-      "priority_rationale": "Governs licensing and liability of physicians, dentists, pharmacists, and other health practitioners; central to medical-malpractice and healthcare-regulatory practice, an increasingly active litigation area.",
+      "priority_rationale": "patent_law is already covered; this Implementing Regulation contains the operative filing/examination/opposition/fee procedures administered by SAIP and is actively and recently amended (as recently as 1446H), making it a live rather than historical compliance document for patent-prosecution practice.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام الإيجار التمويلي ولائحته التنفيذية",
-      "law_name_en": "Finance Lease Law and its Implementing Regulation",
-      "estimated_decree": "Royal Decree No. M/48 dated 13/8/1433H (2012)",
-      "estimated_article_count": "Approx. 25-30 articles — needs confirmation",
+      "law_name_ar": "اللائحة التنفيذية لنظام العلامات التجارية",
+      "law_name_en": "Implementing Regulations of the Trademark Law",
+      "estimated_decree": "Ministerial Decision No. 1723 dated 1423H, issued under the Trademark Law (already covered as trademark_law). Note: there is a parallel/separate GCC Unified Trademark Law and its own Implementing Regulation indexed in WIPO Lex — the corpus's existing trademark_law track's precise relationship to the national vs. GCC-unified instrument should be checked before selecting which Implementing Regulation to build.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "medium",
-      "priority_rationale": "Governs finance-lease contracts (equipment, vehicles, aircraft, real property) including title transfer mechanics; widely used in asset-finance transactions and closely related to real_estate_finance_law and the Finance Companies Control Law gap above.",
-      "confidence_exists": "confirmed"
+      "priority_rationale": "Parallel gap to the patent Implementing Regulation above — trademark_law is covered, but registration procedure, opposition/cancellation mechanics, and classification rules sit in this companion Regulation, which is relevant to nearly all brand-protection and licensing practice.",
+      "confidence_exists": "confirmed, though the exact currently-operative version (national vs. GCC-unified) needs to be disambiguated before a build"
     },
     {
-      "law_name_ar": "النظام البحري التجاري",
-      "law_name_en": "Maritime Commercial Law",
-      "estimated_decree": "Royal Decree No. M/33 dated 5/4/1440H (2019), replacing the older maritime commerce system",
-      "estimated_article_count": "Sizeable consolidated code (multiple hundreds of articles across vessel registration, carriage of goods, maritime liens, collision, salvage) — needs confirmation",
+      "law_name_ar": "اللائحة التنفيذية لنظام التجارة الإلكترونية",
+      "law_name_en": "Implementing Regulations of the E-Commerce Law",
+      "estimated_decree": "Ministerial Decision No. 200 of 1441H, issued under the E-Commerce Law (Royal Decree, 1440H, already covered as ecommerce_law). Administered by the Ministry of Commerce.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "medium",
-      "priority_rationale": "Governs shipping, vessel registration, carriage of goods by sea, and maritime liability — relevant given Saudi Arabia's port/logistics expansion (Jeddah, King Abdullah Port, Red Sea projects) but a comparatively narrower practice area than the top-tier gaps above.",
+      "priority_rationale": "ecommerce_law is covered, but the operative consumer-facing rules (mandatory e-store disclosures, right of return/cancellation windows, e-contract formation mechanics) are set at the Implementing Regulation level — directly relevant given Saudi Arabia's large and fast-growing e-commerce/retail sector.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "القانون (النظام) الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون لدول الخليج العربية",
-      "law_name_en": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law",
-      "estimated_decree": "GCC Supreme Council resolution 2003; adopted in Saudi Arabia by Royal Decree No. M/30 dated 17/5/1427H (2006), amended by Royal Decree No. M/7 dated 20/3/1434H (2013)",
-      "estimated_article_count": "Approx. 30-40 articles — needs confirmation",
+      "law_name_ar": "اللائحة التنفيذية لنظام الامتياز التجاري",
+      "law_name_en": "Implementing Regulations of the Franchise Law",
+      "estimated_decree": "Issued 1441H (2020) under the Franchise Law (already covered as franchise_law), administered by the Ministry of Commerce's Franchise/Monshaat program.",
+      "estimated_article_count": "16 articles",
       "priority": "medium",
-      "priority_rationale": "Trade-remedies law administered by the General Authority of Foreign Trade (GAFT); relevant to import-competing industries and increasingly invoked as Saudi Arabia diversifies its industrial base, but a narrower practice area than customs or IP.",
+      "priority_rationale": "franchise_law is covered, but the operative disclosure-document requirements, agreement registration deadlines (90 days), and registration fee (SAR 500) are set entirely at the Implementing Regulation level — directly relevant to the fast-growing Saudi franchise/retail-expansion sector.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام مهنة المحاسبة والمراجعة",
-      "law_name_en": "Law of the Accounting and Auditing Profession",
-      "estimated_decree": "Royal Decree, replacing the 1412H Certified Public Accountants Law; exact current decree number/date not confirmed in this pass",
-      "estimated_article_count": "Not confirmed — needs verification",
+      "law_name_ar": "نظام الزراعة ولائحته التنفيذية",
+      "law_name_en": "Agriculture Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/64 dated 10/8/1442H (approx. 23/3/2021), approving Council of Ministers Resolution No. 431 dated 3/8/1442H; the Implementing Regulation (approx. 86 pages per the MEWA-published PDF found this pass) was issued citing the same base decree's authority — its own separate issuing-decision number/date needs confirmation.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
       "priority": "medium",
-      "priority_rationale": "Governs licensing, discipline, and practice standards for auditors/accountants (via SOCPA); relevant to every audited company and to professional-liability practice, but institutional/regulatory rather than transactional in nature.",
+      "priority_rationale": "Governs agricultural licensing, land-use/reclamation, good-agricultural-practice standards, organic farming, plant-health/pest-control obligations, and natural-resource management in the farming sector — administered by MEWA. Distinct from the already-covered food_law/food_regulation (which govern the food chain from a food-safety/consumption standpoint) and from the water-law gap above; relevant to agribusiness, land-use, and rural-investment practice, particularly given Vision 2030's food-security and agricultural-modernization push.",
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "نظام هيئة الرقابة ومكافحة الفساد (نزاهة)",
-      "law_name_en": "Law of the Control and Anti-Corruption Authority (Nazaha)",
-      "estimated_decree": "Established by Royal Order No. 65/A dated 13/4/1432H (2011); the Authority's organizational system/statute governs its investigative and disciplinary powers",
-      "estimated_article_count": "Not confirmed — needs verification",
-      "priority": "medium",
-      "priority_rationale": "Distinct from anti_bribery_law already in the corpus (which criminalizes bribery itself) — this is the separate statute establishing Nazaha's investigative jurisdiction, administrative-violation powers, and settlement (تسوية) mechanism over corruption offenses. Relevant to white-collar/regulatory-enforcement practice.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "نظام الهيئة العامة للأوقاف",
-      "law_name_en": "Law of the General Authority for Awqaf",
-      "estimated_decree": "Royal Decree No. M/11 dated 26/2/1437H (2016) — note: an earlier search hit suggested M/25, but M/11 is the better-attested number and should be the one verified before use",
-      "estimated_article_count": "Not confirmed — needs verification",
+      "law_name_ar": "اللوائح التنفيذية للنظام العام للبيئة (التفتيش والتدقيق البيئي، ضبط المخالفات وإيقاع العقوبات، المقابل المالي للتراخيص والخدمات البيئية)",
+      "law_name_en": "Implementing Regulations of the General Environmental Law (a family of separate executive regulations: environmental inspection/audit, violations and penalties, and licensing/service fees)",
+      "estimated_decree": "Multiple separate instruments issued under environmental_law's base authority (already covered in the corpus) — a base consolidated Implementing Regulation exists (indexed via FAO's FAOLEX, sau138931.pdf) alongside at least three further subject-specific executive regulations found via Umm Al-Qura Gazette listings (inspection/audit; violations/penalties; licensing fees) and a separate one for environmental-service providers. Exact decree/decision numbers and dates for each were not confirmed in this pass.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification for each instrument",
       "priority": "low-medium",
-      "priority_rationale": "Governs waqf (Islamic charitable/family endowment) administration, a distinct and growing area adjacent to inheritance/personal-status practice and family wealth planning, but narrower in day-to-day frequency than the top gaps.",
-      "confidence_exists": "confirmed"
+      "priority_rationale": "environmental_law is already covered, but unlike most of the other Implementing-Regulation gaps above, the environmental executive-regulation landscape here is fragmented across several distinct instruments rather than a single companion Regulation — this needs a dedicated scoping pass (which single instrument, or which subset, would most sensibly constitute one track) before being treated as a standard one-law build, hence the lower priority relative to the cleaner single-document gaps above.",
+      "confidence_exists": "confirmed to exist in some fragmented multi-instrument form; the correct scope/boundary for a single track is unconfirmed"
     },
     {
-      "law_name_ar": "نظام الهيئة السعودية للمهندسين",
-      "law_name_en": "Law of the Saudi Council of Engineers",
-      "estimated_decree": "Royal Decree No. M/36 dated 26/9/1423H (2002)",
-      "estimated_article_count": "Not confirmed — needs verification",
-      "priority": "low-medium",
-      "priority_rationale": "Professional-licensing statute for engineers, parallel to the accountants/health-professions gaps above; relevant to construction/infrastructure practice and professional-liability disputes, but a narrower institutional statute.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "نظام المجالس البلدية",
-      "law_name_en": "Municipal Councils Law",
-      "estimated_decree": "Royal Decree No. M/61 dated 4/10/1435H (2014)",
-      "estimated_article_count": "Not confirmed — needs verification; covers council formation, member elections, election appeals, membership rules, sessions, dissolution",
-      "priority": "low-medium",
-      "priority_rationale": "Distinct from regions_law already covered (provincial/regional administration) — this governs municipal council elections and local governance. Practically relevant mainly to administrative/local-governance practice rather than commercial or civil practice.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "نظام المطبوعات والنشر",
-      "law_name_en": "Law on Printed Materials and Publication (Press Law)",
-      "estimated_decree": "Royal Decree No. M/32 dated 3/9/1421H (2000)",
-      "estimated_article_count": "Not confirmed — needs verification",
-      "priority": "low",
-      "priority_rationale": "Governs press, publishing, and media licensing under the Ministry of Media; lower day-to-day practice frequency than the other gaps, and the media/press regulatory landscape has evolved substantially since 2000 (newer media-sector rules may have superseded parts of it) — flag for a currency check before building.",
-      "confidence_exists": "confirmed"
+      "law_name_ar": "اللائحة التنفيذية لنظام مراقبة شركات التأمين التعاوني",
+      "law_name_en": "Implementing Regulations of the Cooperative Insurance Companies Control Law",
+      "estimated_decree": "Sources found this pass cite Royal Decree No. M/32 dated 2/6/1424H as the issuing instrument for the Implementing Regulation itself, but that is the same decree number/date already used in this corpus for the base insurance_control_law track (per the corpus's own registry) — this is very likely a citation conflation in the secondary source found (SAMA news page) between the base law and its Implementing Regulation, since Implementing Regulations are typically issued by Council of Ministers or ministerial/regulator decision rather than a Royal Decree bearing the identical number as the base law. The correct separate issuing citation needs dedicated verification before any build.",
+      "estimated_article_count": "Not confirmed in this pass — needs verification",
+      "priority": "medium",
+      "priority_rationale": "insurance_control_law is already covered, but the Implementing Regulation contains the operative capital-adequacy (SAR 300 million minimum paid-in capital), solvency-margin, and supervisory-intervention (independent observer appointment, license suspension) provisions administered by SAMA/the Insurance Authority — relevant to insurance-sector regulatory and corporate practice, though flagged medium rather than high given the citation uncertainty above.",
+      "confidence_exists": "confirmed to exist (SAMA Rulebook and Insurance Authority both host a document under this title) but its precise, distinct issuing decree/decision citation is unconfirmed and appears to be conflated with the base law's citation in at least one secondary source"
     },
     {
       "law_name_ar": "نظام حماية المستهلك (الشامل)",
       "law_name_en": "Comprehensive Consumer Protection Law (draft)",
-      "estimated_decree": "Not issued as a Royal Decree as of the last data found in this pass — a draft was published by the Ministry of Commerce for public consultation on the 'Istitlaa' platform around March-May 2022; no confirmation was found that it has since been enacted",
+      "estimated_decree": "Not issued as a Royal Decree as of this pass. A draft was published by the Ministry of Commerce for public consultation on the 'Istitlaa' platform around March 2022; Commerce Minister Al-Qasabi stated in September 2024 it was 'in its final stages' (still not enacted then). This pass re-checked the Ministry of Commerce's own most recent published consumer-protection bulletin (نشرة حماية المستهلك الربع الثالث 2025, mc.gov.sa/ar/mediacenter/DOC/MCQ3-2025.pdf) and found no reference to a newly enacted comprehensive consumer-protection statute — the bulletin still discusses enforcement under the existing framework (anti_fraud_law and the Consumer Protection Society regulation). No 2025-2026 enactment news was found in this pass either.",
       "estimated_article_count": "Unknown — still in draft form",
       "priority": "low (pending confirmation)",
-      "priority_rationale": "If/when enacted, this would likely be a high-priority track (it was designed to consolidate and modernize consumer-rights protections beyond the existing Anti-Commercial Fraud Law). But because enactment could not be confirmed, building it now risks building a draft/superseded text. Recommend periodically re-checking laws.boe.gov.sa for enactment before starting work; the Anti-Commercial Fraud Law gap above is the safer, confirmed target for now.",
-      "confidence_exists": "unconfirmed — appears to still be a draft/proposal, not a confirmed enacted law",
-      "re_check_note": "Re-checked in a dedicated follow-up pass: laws.boe.gov.sa's own indexed content shows no comprehensive consumer-protection statute (only the narrow تنظيم جمعية حماية المستهلك, a Consumer Protection Society/NGO regulation, CoM Resolution 3, 12/1/1429H — not this instrument); the Ministry of Commerce's own Istitlaa public-consultation portal still labels this instrument 'مشروع نظام حماية المستهلك' (draft/project); Commerce Minister Al-Qasabi stated in Sept 2024 it was 'in its final stages' (still not enacted then); no 2025-2026 enactment news found despite targeted searches. A related-but-distinct Product Safety Law (M/36, 29/1/1446H) was found already enacted but does not supersede or incorporate this draft. The anti_fraud_law track's own known_unresolved_discrepancies already independently documents this same unenacted-draft finding. CONFIRMED STILL UNENACTED as of this pass; anti_fraud_law remains the corpus's confirmed consumer-protection-adjacent build target."
-    },
-    {
-      "law_name_ar": "نظام الجنسية العربية السعودية ولائحته التنفيذية",
-      "law_name_en": "Saudi Arabian Nationality Law and its Implementing Regulation",
-      "estimated_decree": "Royal Decree No. (8/20/5604) dated 22/2/1374H (1954); implementing regulation contains 25 articles",
-      "estimated_article_count": "Base law article count not confirmed in this pass; implementing regulation is 25 articles",
-      "priority": "high",
-      "priority_rationale": "The foundational statute governing acquisition, transfer, and loss of Saudi citizenship -- entirely absent from the corpus despite personal_status_law, civil_service_law, and foreign_ownership_law all being covered. Central to naturalization, statelessness, and mixed-nationality-family practice, and frequently amended (most recently on citizenship transmission via mothers).",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "نظام الإقامة",
-      "law_name_en": "Foreigners' Residency Law (Iqama/Kafala Law)",
-      "estimated_decree": "Royal Order/Decree No. 17-2-25-1337 dated 11/9/1371H (approx. 1951-1952), with numerous later amendments",
-      "estimated_article_count": "Unknown, needs verification",
-      "priority": "high",
-      "priority_rationale": "The base law establishing the kafala/sponsorship system, entry/exit and residency-permit rules, and penalties for iqama violations for Saudi Arabia's very large expatriate population. Distinct from anti_trafficking_law (criminalizes exploitation) and labor_law (employment terms) already covered -- this is the separate administrative/immigration-status statute underlying nearly all foreign-national compliance. Extremely high real-world frequency in HR/immigration practice.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "نظام الأحوال المدنية ولائحته التنفيذية",
-      "law_name_en": "Civil Status Law and its Implementing Regulation",
-      "estimated_decree": "Royal Decree No. M/7 dated 20/4/1407H (1987); amended by Royal Decree No. M/198 dated 22 Ramadan 1445H",
-      "estimated_article_count": "Unknown, needs verification",
-      "priority": "medium",
-      "priority_rationale": "Governs civil registration of births, deaths, family registers, and national ID issuance -- distinct from personal_status_law (already covered, which governs substantive marriage/divorce/inheritance rules, not civil registration mechanics). Underlies virtually every legal transaction requiring ID/civil-registry documents, but is more administrative/documentary than litigation-heavy, hence a notch below the top-tier gaps.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "نظام الغذاء ولائحته التنفيذية",
-      "law_name_en": "Food Law and its Implementing Regulation",
-      "estimated_decree": "Royal Decree No. M/1 dated 6/1/1436H (2014); implementing regulation most recently amended in 1446H",
-      "estimated_article_count": "Unknown, needs verification",
-      "priority": "medium",
-      "priority_rationale": "Substantive food-safety/food-chain regulation (licensees, food establishments, obligations across the food chain) administered by SFDA -- distinct from the SFDA's own organizational statute (نظام الهيئة العامة للغذاء والدواء, M/6, 1428H, which merely establishes the authority and is not itself flagged here as a separate gap). High compliance relevance for F&B, retail, and food-import practice.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "النظام الصحي",
-      "law_name_en": "Health System Law (Public Health Law)",
-      "estimated_decree": "Royal Decree No. M/11 dated 23/3/1423H (2002)",
-      "estimated_article_count": "19 articles",
-      "priority": "medium",
-      "priority_rationale": "Establishes the state's public-healthcare framework -- MOH responsibilities, health directorates, financing of health services, Health Services Council -- distinct from cooperative_health_insurance_law (insurance mandate) and healthcare_professions_law (practitioner licensing), both already covered. More institutional/administrative than transactional.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "لائحة العمالة المنزلية ومن في حكمهم",
-      "law_name_en": "Domestic Labor Regulation",
-      "estimated_decree": "Ministerial Decision No. 40676 dated 17/3/1445H, issued under Article 7 of the Labor Law; replaced the earlier Council of Ministers Decision No. 310 dated 7/9/1434H",
-      "estimated_article_count": "23 articles",
-      "priority": "medium",
-      "priority_rationale": "Governs the employer/domestic-worker relationship (housemaids, private drivers, nannies, cooks, gardeners, guards) -- a category with an extremely large real-world population in Saudi households but not addressed by any of labor_law's existing annex tracks (labor_model_work_regulation, labor_recruitment_services_rules, etc.), none of which specifically cover domestic labor. Like those annexes, this is a ministerial-decision-level regulation rather than a standalone Royal Decree نظام, so it sits in the same category as several labor annexes already in the corpus.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "نظام وثائق السفر ولائحته التنفيذية",
-      "law_name_en": "Travel Documents Law (Passports Law) and its Implementing Regulation",
-      "estimated_decree": "Royal Decree No. M/24 dated 28/5/1421H (2000)",
-      "estimated_article_count": "Unknown, needs verification",
-      "priority": "low-medium",
-      "priority_rationale": "Governs issuance of passports, laissez-passer documents, and diplomatic/special passports; supersedes the older 1380H/1392H passport systems. Operationally relevant (passport loss/seizure orders, exit-reentry disputes) but a narrower, more procedural practice area than nationality or residency law.",
-      "confidence_exists": "confirmed"
-    },
-    {
-      "law_name_ar": "تنظيم الهيئة الوطنية للأمن السيبراني",
-      "law_name_en": "Statute (Organizational Regulation) of the National Cybersecurity Authority",
-      "estimated_decree": "Royal Order No. 6801 dated 11/2/1439H (2017); amended by Royal Order No. 7053 dated 2/2/1443H",
-      "estimated_article_count": "Unknown, needs verification -- likely a short organizational statute (mandate, board, chairmanship), not a lengthy compliance code",
-      "priority": "low-medium",
-      "priority_rationale": "This is only the institutional/establishment statute for NCA -- parallel in genre to nazaha_law and awqaf_law (both established via Royal Order and already absorbed into the corpus) -- NOT a substantive cybersecurity-compliance law. NCA's actual technical requirements (Essential Cybersecurity Controls/ECC, etc.) are sub-legal regulatory frameworks issued directly by the authority, not Royal-Decree/Royal-Order-level legislation, so they do not themselves qualify as a corpus gap. Flagging only the narrow organizational statute, with low-medium priority given its institutional (not transactional) nature.",
-      "confidence_exists": "confirmed as having existed (issued via Royal Order), but unconfirmed whether its scope is substantial enough (article count, operative content) to warrant a full track versus being a short organizational instrument similar to the already-covered authority-establishment statutes"
+      "priority_rationale": "Carried forward from the prior version of this gap map, where it was the sole entry not yet resolved by ingestion. If/when enacted, this would likely be a high-priority track (designed to consolidate and modernize consumer-rights protections beyond the existing Anti-Commercial Fraud Law, already covered as anti_fraud_law). Because enactment still cannot be confirmed as of 2026-07-19, building it now risks building a draft/superseded text. Recommend periodically re-checking laws.boe.gov.sa and the Ministry of Commerce's Istitlaa consultation portal for enactment.",
+      "confidence_exists": "unconfirmed — appears to still be a draft/proposal, not a confirmed enacted law, based on the most recent (Q3 2025) Ministry of Commerce bulletin available at the time of this pass"
     }
   ]
 }
