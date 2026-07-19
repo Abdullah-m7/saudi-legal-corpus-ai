@@ -186,6 +186,7 @@ DOMESTIC_LABOR_REGULATION_LLM = os.path.join(ROOT, "data", "domestic_labor_arabi
 TRAVEL_DOCUMENTS_LAW_LLM = os.path.join(ROOT, "data", "travel_documents_arabic_legal_llm", "travel_documents_law_legal_llm_001_016.json")
 CYBERSECURITY_AUTHORITY_LAW_LLM = os.path.join(ROOT, "data", "cybersecurity_authority_arabic_legal_llm", "cybersecurity_authority_law_legal_llm_001_015.json")
 CYBERSECURITY_AUTHORITY_ENABLERS_LLM = os.path.join(ROOT, "data", "cybersecurity_authority_enablers_arabic_legal_llm", "cybersecurity_authority_enablers_legal_llm_001_007.json")
+PREMIUM_RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "premium_residency_arabic_legal_llm", "premium_residency_law_legal_llm_001_014.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -365,6 +366,7 @@ def main() -> int:
     travel_documents_law_llm = _load_json(TRAVEL_DOCUMENTS_LAW_LLM)
     cybersecurity_authority_law_llm = _load_json(CYBERSECURITY_AUTHORITY_LAW_LLM)
     cybersecurity_authority_enablers_llm = _load_json(CYBERSECURITY_AUTHORITY_ENABLERS_LLM)
+    premium_residency_law_llm = _load_json(PREMIUM_RESIDENCY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -385,7 +387,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 148,
+        "total_tracks": 149,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -537,6 +539,7 @@ def main() -> int:
             + travel_documents_law_llm["record_count"]  # 16 Saudi Arabian Travel Documents Law (Royal Decree M/24, 1421H) (TIER_2, BOE-via-Wayback three snapshots x nezams.com/qistas.com secondary, plus an official Umm Al-Qura Gazette cross-check for the M/11 1443H amendment specifically, confirmed scoped/partial repeal of the 1358H Passports System via Article 13, see track notes)
             + cybersecurity_authority_law_llm["record_count"]  # 15 Statute (Organizational Regulation) of the National Cybersecurity Authority (Royal Order 6801, 1439H) (TIER_2, PRIMARY nca.gov.sa official PDF OCR-transcribed x qistas.com/saudipedia.com secondary cross-checks, confirmed negative repeal finding at Article 15, document-level amendment by Royal Order 7053 not attributed to any specific article, see track notes)
             + cybersecurity_authority_enablers_llm["record_count"]  # 7 Regulatory (Legal) Enablers of the National Cybersecurity Authority (Royal Decree M/117, 1446H) (TIER_2, PRIMARY nca.gov.sa official PDF OCR-transcribed x qanoonsa.com/uqn.gov.sa secondary cross-checks, no مادة numbering -- seven بند divisions instead, confirmed negative repeal finding at clause 7, confirmed no amendment/repeal relationship to parent cybersecurity_authority_law, see track notes)
+            + premium_residency_law_llm["record_count"]  # 14 Premium Residency Law (Royal Decree M/106, 1440H) (TIER_1_PRIMARY_MULTI_SOURCE, BOE live unreachable x six Wayback snapshots 2019-2025 x misa.gov.sa official consolidated PDF word-for-word cross-check, 5 اصلية/8 معدلة/1 ملغاة, confirmed no named predecessor, distinct from already-ingested residency_law per social_insurance_law/social_insurance_legacy_law naming precedent, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -679,6 +682,7 @@ def main() -> int:
             + travel_documents_law_llm["record_count"]
             + cybersecurity_authority_law_llm["record_count"]
             + cybersecurity_authority_enablers_llm["record_count"]
+            + premium_residency_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5033,6 +5037,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Regulatory (Legal) Enablers of the National Cybersecurity Authority «الممكنات النظامية للهيئة الوطنية للأمن السيبراني» — Royal Decree No. م/117, dated 21/6/1446H (22 Dec 2024G), based on Council of Ministers Resolution No. 409 (16/6/1446H) and Shura Council Resolution No. 16/3 (28/3/1446H), published in Umm Al-Qura Gazette No. 5065 (17 Jan 2025G). A companion enforcement/licensing-penalty instrument to the already-ingested cybersecurity_authority_law track, identified as a follow-up candidate during that track's own build. **7 records, ALL 7 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة; single founding version, no later amendment documented). **GENUINE STRUCTURAL ANOMALY**: unlike every other track in this corpus, this instrument is NOT divided into numbered مادة articles — it is a flat sequence of seven ordinal بند (clause) divisions (أولاً-سابعاً: violation definitions; inspector/investigative powers; emergency suspension powers; a violations-review committee; penalties and appeal procedures; a mandate for the NCA board to issue security/military-reporting rules; effective date and general repeal), confirmed both from the source PDF's own layout and from the instrument's own internal cross-references, which repeatedly call these divisions «البند». **NO أبواب/فصول**, no inline sub-titles beyond the بند labels. **VERIFICATION TIER: TIER_2** — no laws.boe.gov.sa page for this exact instrument could be located this pass (direct curl attempts returned 'Connection reset by peer', the same failure mode already documented for the parent statute), precluding TIER_1. PRIMARY source is NCA's own official site, a PDF sharing the parent track's own confirmed systematic letter-transposition text-layer artifact — worked around identically (300dpi page renders OCR'd with Tesseract 5, cross-read word-by-word against the flawed-but-complete pdftotext -layout extraction), cross-verified against qanoonsa.com's three independent pages and uqn.gov.sa's topical gazette indexing (confirms existence/subject matter only, not full text, so does not itself elevate the tier). **CONFIRMED NO RELATIONSHIP TO THE PARENT STATUTE** — independently re-verified this pass: no source found states this instrument amends or repeals any مادة of the parent organizational تنظيم (Royal Order 6801/7053); it remains a textually and substantively separate companion instrument on a different subject (enforcement/licensing-penalties vs. institutional structure). **CONFIRMED NEGATIVE REPEAL FINDING** at its own final بند (سابعاً): a generic conflict-only repeal clause ('تلغي كل ما يتعارض معها من أحكام'), naming no specific predecessor instrument — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge, directly analogous to the parent statute's own Article 15 finding. Genuine anomalies preserved, not normalized: mixed numeral conventions in the source itself (Arabic-Indic digits, spelled-out Arabic words, and Western digits with period thousand-separators for the 25,000,000 SAR maximum fine, each preserved exactly as it appears at each specific point); a repeating page-footer classification banner ('التصنيف: عام') excluded as page furniture, not legal text. No pre-existing coverage-gap-map entry existed for this instrument — a wholly new addition identified from the parent track's own follow-up flag. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "premium_residency_law",
+                "display_name_ar": "نظام الإقامة المميزة",
+                "display_name_en": "Premium Residency Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "PREMIUM_RESIDENCY_LAW_BOE_LIVE_UNREACHABLE_WAYBACK_MULTI_SNAPSHOT_2019_2025_X_MISA_OFFICIAL_CONSOLIDATED_PDF_CROSS_VERIFIED",
+                "source_authority": "Royal Decree No. م/106, dated 10/9/1440H (15 May 2019G) — laws.boe.gov.sa's live portal was unreachable this pass, so this track rests on six independent Wayback Machine snapshots of BOE's own dedicated lawId page spanning 22 Nov 2019 through 16 Nov 2025, cross-verified word-for-word against an independent official government source (misa.gov.sa, Ministry of Investment's own hosted consolidated-text PDF)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": premium_residency_law_llm["record_count"],
+                    "data_path": "data/premium_residency_arabic_legal_llm/premium_residency_law_legal_llm_001_014.json"}},
+                "record_counts": {"arabic_articles": premium_residency_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 5, "معدلة": 8, "ملغاة": 1, "مضافة": 0},
+                                  "total": premium_residency_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/premium_residency/law/official_source/premium_residency_law_official_source.json",
+                    "sources/premium_residency/law/verified/premium_residency_law_verified_records.jsonl",
+                    "data/premium_residency_arabic_legal_llm/premium_residency_law_legal_llm_001_014.json",
+                ],
+                "validator_targets": ["make premium-residency-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Premium Residency Law «نظام الإقامة المميزة» — Royal Decree No. م/106, dated 10/9/1440H (15 May 2019G), a distinct, much newer investor/talent long-term residency instrument, entirely separate from this corpus's already-ingested residency_law track (نظام الإقامة, the 1371H Iqama/Kafala law) — identified as a companion instrument explicitly out of scope during that earlier track's own build. **14 articles, flat structure, no formal أبواب/فصول** (6 informal thematic sections used for indexing only). Per BOE's own per-article tagging: **5 اصلية** (Articles 7, 9, 12, 13, 14 — though Articles 9 and 13's wording nonetheless reflects a downstream global term-substitution, اللجنة->المجلس, from Article 1's own amendment, disclosed not silently normalized), **8 معدلة** (Articles 1, 2, 3, 4, 5, 6, 10, 11), **1 ملغاة** (Article 8, repealed by M/84 dated 11/6/1445H, its pre-repeal text preserved not deleted), **0 مضافة**. Repealed sub-paragraphs within otherwise-still-amended articles are preserved as an explicit '(ألغيت)' placeholder, matching the exact convention used by MISA's own official consolidated text, not silently deleted or renumbered. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — laws.boe.gov.sa's live portal was unreachable this pass (connection reset via direct curl and the r.jina.ai reader-proxy fallback, both timing out), so this track instead rests on SIX independent Wayback Machine snapshots of BOE's own dedicated lawId page (5e9762df-2b15-4e66-8cdc-aa5200f62042) spanning SIX YEARS (22 Nov 2019 through 16 Nov 2025) — internally consistent with the real amendment timeline (the 2019 snapshot shows zero amendments; the Feb 2023 snapshot shows exactly the three amendments enacted by that date; the Nov 2025 snapshot shows all five). Critically, an independent OFFICIAL government source — misa.gov.sa (Ministry of Investment), hosting a PDF titled with '1445H' in its filename — was directly downloaded (200 OK) and its extracted text already presents the CURRENT, CONSOLIDATED, POST-AMENDMENT text, agreeing WORD-FOR-WORD with the text reconstructed here from BOE's own quoted amendment instructions at every point checked but one disclosed one-word discrepancy (Article 2(e)'s 'صك حق انتفاع' vs MISA's 'صك انتفاع' — BOE's fuller, temporally-stable wording treated as canonical). Two independent official government sources agreeing = TIER_1_PRIMARY_MULTI_SOURCE per this corpus's taxonomy. **CONFIRMED NEGATIVE REPEAL FINDING**: Article 14 (entry into force) names no repealed predecessor law at all — a wholly new residency category with no prior instrument to repeal, genuinely distinct in subject matter and target population from this corpus's already-ingested residency_law (1371H Iqama/Kafala law); the two coexist, mirroring this corpus's social_insurance_law/social_insurance_legacy_law naming-distinction precedent, not a supersession relationship — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. **COMPANION INSTRUMENTS IDENTIFIED, NOT INGESTED THIS PASS**: (1) اللائحة التنفيذية لنظام الإقامة المميزة (the Law's own implementing regulation, Center Decision No. 4-1440 dated 20/9/1440H, amended by Board Decision No. 7-5-1444 dated 29/12/1444H) — confirmed to exist via multiple agreeing secondary sources but not separately indexed on BOE under its own lawId, and the only source located with article-level content (aunklaw.com) provides a paraphrased per-article summary, not verbatim text, so not ingested per this corpus's binding constraint against treating paraphrase as verified verbatim text; (2) تنظيم مركز الإقامة المميزة (the Center's own internal organizational bylaws, CoM Resolution 555, 1443H, BOE lawId bc27d6e4-560a-4778-9364-aeac00ca7e3b) — a genuinely distinct administrative instrument, out of scope. Arabic governs; not legal advice.",
             },
         ],
     }

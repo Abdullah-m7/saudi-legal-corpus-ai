@@ -320,6 +320,8 @@ LAYERS = [
      "cybersecurity_authority", "law"),
     ("data/cybersecurity_authority_enablers_arabic_legal_llm/cybersecurity_authority_enablers_legal_llm_001_007.json",
      "cybersecurity_authority", "enablers"),
+    ("data/premium_residency_arabic_legal_llm/premium_residency_law_legal_llm_001_014.json",
+     "premium_residency", "law"),
 ]
 
 

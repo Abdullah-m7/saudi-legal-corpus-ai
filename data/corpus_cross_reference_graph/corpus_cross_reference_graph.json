@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9763,
-  "total_references_extracted": 1970,
-  "intra_law_count": 1739,
-  "inter_law_count": 231,
+  "total_records_scanned": 9777,
+  "total_references_extracted": 1978,
+  "intra_law_count": 1745,
+  "inter_law_count": 233,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1656,
-    "medium": 314
+    "high": 1663,
+    "medium": 315
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -7421,11 +7421,11 @@
       "source_record_id": "criminal-procedure-regulation-llm-art-171",
       "source_article_number": 171,
       "type": "inter_law",
-      "target_track_id": "awqaf_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "النيابة العامة",
       "raw_citation_text": "وفقاً لنظام النيابة العامة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "criminal_procedure_implementing_regulation",
@@ -9390,7 +9390,7 @@
       "source_record_id": "foreign-ownership-law-llm-art-005",
       "source_article_number": 5,
       "type": "inter_law",
-      "target_track_id": "residency_law",
+      "target_track_id": "premium_residency_law",
       "target_article_number": null,
       "target_law_name_raw": "الإقامة المميزة",
       "raw_citation_text": "أحكام نظام الإقامة المميزة أو تنظيم تملك مواطني دول المجلس للعقار في الد",
@@ -16522,6 +16522,94 @@
       "target_article_number": 185,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة والثمانين بعد المائة) من النظام؛ أن يتحقق بها غرض ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "investment_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الاستثمار الأجنبي",
+      "raw_citation_text": "وفقاً لنظام الاستثمار الأجنبي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "premium_residency_law",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من النظام؛ للنظر في الموافقة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "premium_residency_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من النظام- القيام بالآتي: أ-",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "cooperative_health_insurance_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الضمان الصحي التعاوني",
+      "raw_citation_text": "وفقاً لنظام الضمان الصحي التعاوني",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "premium_residency_law",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من النظام. هـ- تنازل حامل الإ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "premium_residency_law",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية) من النظام. 3- فيما عدا ما نصّ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "premium_residency_law",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من النظام، وذلك في حال إلغاء",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "premium_residency_law",
+      "source_record_id": "premium-residency-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "premium_residency_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من النظام، على ألا يتجاوز هذا",
       "confidence": "high"
     },
     {
