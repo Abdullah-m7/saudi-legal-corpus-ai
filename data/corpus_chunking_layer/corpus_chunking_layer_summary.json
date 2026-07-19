@@ -2,11 +2,11 @@
   "layer": "CORPUS_CHUNKING_LAYER",
   "purpose": "Additive, derived text-segmentation layer over the unified retrieval index, sized for feeding a future embedding pipeline. Chunk boundaries are computed in whitespace-delimited WORDS, deliberately NOT tied to any specific embedding model's tokenizer (this corpus does not commit to one embedding provider). No embeddings/vectors are computed anywhere in this layer or this generator -- that is a separate, later step. This is pure text segmentation, one step before an embeddings pipeline would run.",
   "source_index": "data/corpus_unified_index/corpus_unified_llm_index.jsonl",
-  "total_source_records": 9875,
-  "total_chunks": 10028,
-  "source_records_needing_multiple_chunks": 95,
-  "source_records_single_chunk": 9780,
-  "pct_single_chunk_records": 99.038,
+  "total_source_records": 9960,
+  "total_chunks": 10116,
+  "source_records_needing_multiple_chunks": 96,
+  "source_records_single_chunk": 9864,
+  "pct_single_chunk_records": 99.036,
   "parameters": {
     "chunk_target_words": 350,
     "chunk_overlap_words": 70,
@@ -24,29 +24,29 @@
       ":",
       "،"
     ],
-    "justification": "Surveyed word-count distribution across all 9875 unified-index records: median=38, p75=72, p90=127, p95=177, p97=221, p99=346 words (see distribution_stats below). Choosing 350 words as both the split threshold and per-chunk target means only 95 records (0.96%) require splitting -- consistent with Saudi statutory drafting practice where articles are typically short/medium, while keeping split-chunk sizes in the conventional ~200-500 word band used by embedding/RAG pipelines. Overlap of 70 words (20% of target) prevents clauses from being stranded at a chunk boundary. Splitting prefers primary sentence/clause punctuation (. ! ? ؟ ؛ newline), falling back to secondary punctuation (، , :) and finally hard whitespace-boundary splitting only for an indivisible run that would otherwise exceed the 500-word hard ceiling -- a word boundary is never crossed at any splitting level."
+    "justification": "Surveyed word-count distribution across all 9960 unified-index records: median=38, p75=72, p90=127, p95=177, p97=222, p99=346 words (see distribution_stats below). Choosing 350 words as both the split threshold and per-chunk target means only 96 records (0.96%) require splitting -- consistent with Saudi statutory drafting practice where articles are typically short/medium, while keeping split-chunk sizes in the conventional ~200-500 word band used by embedding/RAG pipelines. Overlap of 70 words (20% of target) prevents clauses from being stranded at a chunk boundary. Splitting prefers primary sentence/clause punctuation (. ! ? ؟ ؛ newline), falling back to secondary punctuation (، , :) and finally hard whitespace-boundary splitting only for an indivisible run that would otherwise exceed the 500-word hard ceiling -- a word boundary is never crossed at any splitting level."
   },
   "distribution_stats": {
     "source_record_word_counts": {
-      "n_records": 9875,
+      "n_records": 9960,
       "min": 1,
       "max": 6797,
-      "mean": 61.24,
+      "mean": 61.33,
       "median_p50": 38,
       "p75": 72,
       "p90": 127,
       "p95": 177,
-      "p97": 221,
+      "p97": 222,
       "p99": 346,
-      "p999": 793
+      "p999": 799
     },
-    "records_exceeding_chunk_target_words": 95,
-    "pct_records_exceeding_chunk_target_words": 0.962,
+    "records_exceeding_chunk_target_words": 96,
+    "pct_records_exceeding_chunk_target_words": 0.964,
     "resulting_chunk_word_counts": {
-      "n_chunks": 10028,
+      "n_chunks": 10116,
       "min": 1,
       "max": 350,
-      "mean": 61.66
+      "mean": 61.75
     }
   },
   "top_examples_requiring_split": [
@@ -70,6 +70,13 @@
       "law_component": "law",
       "article_number": 1,
       "word_count": 1287
+    },
+    {
+      "record_id": "food-regulation-llm-art-001",
+      "corpus": "food",
+      "law_component": "regulation",
+      "article_number": 1,
+      "word_count": 1135
     },
     {
       "record_id": "traffic-law-llm-art-002",
@@ -112,13 +119,6 @@
       "law_component": "law",
       "article_number": 1,
       "word_count": 799
-    },
-    {
-      "record_id": "maritime-commercial-law-llm-art-001",
-      "corpus": "maritime_commercial",
-      "law_component": "law",
-      "article_number": 1,
-      "word_count": 793
     }
   ],
   "embeddings_scope_note": "Out of scope for this layer: no embedding model or vector-database call of any kind is made here. This generator only performs text segmentation (chunking) so that a later, separate embeddings step has appropriately-sized, traceable input units. Each chunk carries source_record_id, article_number, chunk_index and total_chunks_for_this_article so any future vector hit can be traced back to its full source article.",

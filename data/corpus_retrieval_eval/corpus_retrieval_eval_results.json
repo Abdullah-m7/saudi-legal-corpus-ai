@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 332,
-  "top1_hits": 306,
-  "top3_hits": 325,
-  "top5_hits": 328,
-  "top1_accuracy": 0.9217,
-  "top3_accuracy": 0.9789,
+  "total_queries": 334,
+  "top1_hits": 308,
+  "top3_hits": 327,
+  "top5_hits": 330,
+  "top1_accuracy": 0.9222,
+  "top3_accuracy": 0.979,
   "top5_accuracy": 0.988,
-  "mrr_at_5": 0.9499,
+  "mrr_at_5": 0.9497,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5279,14 +5279,14 @@
      "score": 39
     },
     {
+     "record_id": "food-regulation-llm-art-021",
+     "article_number": 21,
+     "score": 20
+    },
+    {
      "record_id": "oa-llm-companies-art-256",
      "article_number": 256,
      "score": 19
-    },
-    {
-     "record_id": "oa-llm-companies-art-071",
-     "article_number": 71,
-     "score": 18
     }
    ]
   },
@@ -7852,14 +7852,14 @@
      "score": 19
     },
     {
-     "record_id": "vat-law-llm-art-015",
-     "article_number": 15,
+     "record_id": "food-regulation-llm-art-041",
+     "article_number": 41,
      "score": 13
     },
     {
-     "record_id": "customs-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 12
+     "record_id": "vat-law-llm-art-015",
+     "article_number": 15,
+     "score": 13
     }
    ]
   },
@@ -8027,7 +8027,7 @@
     "law_component": "law",
     "article_number": 37
    },
-   "gold_rank": 2,
+   "gold_rank": 3,
    "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
@@ -8038,13 +8038,13 @@
      "score": 31
     },
     {
-     "record_id": "anti-narcotics-law-llm-art-037",
-     "article_number": 37,
-     "score": 24
+     "record_id": "food-regulation-llm-art-081",
+     "article_number": 81,
+     "score": 27
     },
     {
-     "record_id": "customs-law-llm-art-052",
-     "article_number": 48,
+     "record_id": "anti-narcotics-law-llm-art-037",
+     "article_number": 37,
      "score": 24
     }
    ]
@@ -9314,8 +9314,8 @@
      "score": 21
     },
     {
-     "record_id": "oa-llm-companies-art-277",
-     "article_number": 277,
+     "record_id": "food-regulation-llm-art-076",
+     "article_number": 76,
      "score": 21
     }
    ]
@@ -9743,14 +9743,14 @@
      "score": 24
     },
     {
-     "record_id": "food-law-llm-art-016",
-     "article_number": 17,
-     "score": 10
+     "record_id": "food-regulation-llm-art-050",
+     "article_number": 50,
+     "score": 13
     },
     {
-     "record_id": "oa-llm-companies-art-034",
-     "article_number": 34,
-     "score": 7
+     "record_id": "food-regulation-llm-art-070",
+     "article_number": 70,
+     "score": 11
     }
    ]
   },
@@ -10213,9 +10213,9 @@
      "score": 28
     },
     {
-     "record_id": "domestic-labor-regulation-llm-art-021",
-     "article_number": 21,
-     "score": 22
+     "record_id": "food-regulation-llm-art-079",
+     "article_number": 79,
+     "score": 23
     }
    ]
   },
@@ -10309,6 +10309,68 @@
      "record_id": "oa-llm-companies-art-109",
      "article_number": 109,
      "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "fdr-001",
+   "query_ar": "تلتزم المنشأة الغذائية بتعيين مسؤول للمنشأة الغذائية ويكون مسؤولا عن ضمان سلامة الغذاء وصالحيته",
+   "category": "topical",
+   "gold": {
+    "corpus": "food",
+    "law_component": "regulation",
+    "article_number": 50
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "food-regulation-llm-art-050",
+     "article_number": 50,
+     "score": 26
+    },
+    {
+     "record_id": "food-law-llm-art-016",
+     "article_number": 17,
+     "score": 17
+    },
+    {
+     "record_id": "food-law-llm-art-001",
+     "article_number": 2,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "fdr-002",
+   "query_ar": "يتولى مركز الإنذار السريع للغذاء في الهيئة تشغيل وإدارة نظام الإنذار السريع للغذاء وفقا لإلجراءات التالية",
+   "category": "topical",
+   "gold": {
+    "corpus": "food",
+    "law_component": "regulation",
+    "article_number": 60
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "food-regulation-llm-art-060",
+     "article_number": 60,
+     "score": 29
+    },
+    {
+     "record_id": "awqaf-law-llm-art-025",
+     "article_number": 25,
+     "score": 17
+    },
+    {
+     "record_id": "allegiance-commission-law-llm-art-017",
+     "article_number": 17,
+     "score": 16
     }
    ]
   }

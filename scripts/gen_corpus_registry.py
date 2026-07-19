@@ -190,6 +190,7 @@ PREMIUM_RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "premium_residency_arabic
 TRAVEL_DOCUMENTS_REGULATION_LLM = os.path.join(ROOT, "data", "travel_documents_regulation_arabic_legal_llm", "travel_documents_regulation_legal_llm_001_053.json")
 NATIONALITY_REGULATION_LLM = os.path.join(ROOT, "data", "nationality_regulation_arabic_legal_llm", "nationality_regulation_legal_llm_001_035.json")
 HEALTH_SYSTEM_REGULATION_LLM = os.path.join(ROOT, "data", "health_system_regulation_arabic_legal_llm", "health_system_regulation_legal_llm_001_010.json")
+FOOD_REGULATION_LLM = os.path.join(ROOT, "data", "food_regulation_arabic_legal_llm", "food_regulation_legal_llm_001_085.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -373,6 +374,7 @@ def main() -> int:
     travel_documents_regulation_llm = _load_json(TRAVEL_DOCUMENTS_REGULATION_LLM)
     nationality_regulation_llm = _load_json(NATIONALITY_REGULATION_LLM)
     health_system_regulation_llm = _load_json(HEALTH_SYSTEM_REGULATION_LLM)
+    food_regulation_llm = _load_json(FOOD_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -393,7 +395,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 152,
+        "total_tracks": 153,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -549,6 +551,7 @@ def main() -> int:
             + travel_documents_regulation_llm["record_count"]  # 53 Travel Documents Implementing Regulation (Ministerial Resolution 4203, 1447H) (TIER_3 honest, no BOE lawId page at all, PRIMARY qanoonsa.com raw-HTML fetch x ncar.gov.sa metadata-level x qanoniah.com indexing-level, all 53 اصلية, confirmed full repeal of the 1422H predecessor Decision 7/waw-zay via Article 52, see track notes)
             + nationality_regulation_llm["record_count"]  # 35 Implementing Regulation of the Nationality Law (Ministerial Decision 74/زو, 1426H) (TIER_2, BOE hosts no dedicated page, PRIMARY moi.gov.sa Wayback triple-snapshot byte-identical x nezams.com x alriyadh.com 2005G contemporaneous full-text, article count corrected 25->35, Article 28 confirmed repealed and preserved, confirmed no named predecessor, see track notes)
             + health_system_regulation_llm["record_count"]  # 10 Implementing Regulation of the Health System Law (Ministerial Decision 30/69181, 1424H) (TIER_4, laws.boe.gov.sa/istitlaa.ncc.gov.sa both confirmed unreachable, PRIMARY qanoniah.com public API with a confirmed 10-item preview cap, explicit PARTIAL coverage of parent Law Articles 2-11 only, Article 1 and 12-19 excluded not fabricated, confirmed no named predecessor, see track notes)
+            + food_regulation_llm["record_count"]  # 85 Implementing Regulation of the Food Law (SFDA Board Resolution 3-16-1439, 1439H, as amended by Resolution 4/44, 1446H) (TIER_2, BOE unreachable and confirmed to have no dedicated lawId page for this Implementing Regulation at all, PRIMARY sfda.gov.sa born-digital PDF x qanoonsa.com/qistas.com cross-checks, 81 اصلية/1 معدلة/3 مضافة, extensive font ligature-reversal extraction defects fixed, final article mislabeled '58' preserved verbatim, penalty table confirmed out of scope, confirmed no named predecessor, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -695,6 +698,7 @@ def main() -> int:
             + travel_documents_regulation_llm["record_count"]
             + nationality_regulation_llm["record_count"]
             + health_system_regulation_llm["record_count"]
+            + food_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5161,6 +5165,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian Health System Law «اللائحة التنفيذية للنظام الصحي» — Ministerial Decision No. 30/69181, dated 15/6/1424H, issued pursuant to Article 18 of the already-ingested health_system_law track (Royal Decree M/11, 23/3/1423H). That parent track's own registry entry had explicitly flagged this Regulation as 'confirmed to exist ... but content could not be reached' in a prior pass; this is a dedicated follow-up. **10 records, ALL 10 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — this pass found no per-article amendment history for any of them; whether the unrecovered Articles 12-19 carry later amendments is simply unknown). **NON-CONTIGUOUS NUMBERING**: this track's articles are keyed by the PARENT LAW's own article numbers that each implements (2 through 11), NOT an independently-resequenced 1..N sequence — e.g. its implementing text for the parent Law's Article 4 is internally keyed '4-ل-...' and cross-references 'المادة الرابعة من النظام' throughout. **VERIFICATION TIER: TIER_4** — laws.boe.gov.sa was checked first per this corpus's standard methodology, confirmed to have no dedicated lawId page for this specific Regulation, and its own live portal failed repeatedly this pass (connection reset, matching the parent law track's own documented BOE outage for this period); the Wayback Machine is blocked at this session's egress-policy level (WebFetch explicitly refuses web.archive.org; a direct curl for a confirmed snapshot timestamp returned HTTP 403 via the configured proxy). istitlaa.ncc.gov.sa (the officially-designated primary host, linked directly from MOH's own official e-participation page for this Regulation) was confirmed genuinely unreachable via THREE independent channels this pass: direct curl (TLS connection reset, 3 separate attempts), WebFetch (HTTP 503), and r.jina.ai (an independent third-party headless-browser fetch service, itself timing out after 15s) — this three-way, cross-infrastructure agreement indicates a genuine outage at the source, not a fetch-tool artifact. The ONLY source through which real article text could be retrieved this pass was qanoniah.com: its rendered page is a client-side (Nuxt/Vue) application, and this pass located its underlying public JSON API (api.qanoniah.com/v1/files/{hash}, unauthenticated) by inspecting the server-rendered Nuxt config. That API returns a CONFIRMED, SERVER-ENFORCED cap of exactly 10 items regardless of pagination parameters tried (?page=, ?offset=, ?limit=) — verified by comparing byte-identical response digests across attempts — i.e. a free-preview limit on qanoniah.com's own end, not a limitation of the fetch method used here. **PARTIAL COVERAGE, EXPLICITLY DISCLOSED, NOT FABRICATED**: those 10 confirmed items cover only the parent Law's Articles 2 through 11; no entry for the parent Law's Article 1 (definitions) exists in qanoniah.com's own index at all (the index itself starts at order:1 = 'المادة الثانية'), so its absence is a genuine source gap, not an artifact of the preview cap; Articles 12 through 19 (including Article 16, the heavily-amended Health Services Council article) could NOT be recovered this pass from any source tried and are excluded, not fabricated. **CONFIRMED NEGATIVE FINDING**: no repeal of a prior implementing regulation was found in any source (consistent with this being the first Implementing Regulation issued under the parent Law's Article 18 mandate) — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. No legal text is altered beyond plain HTML-tag stripping and HTML-entity decoding of qanoniah.com's own markup. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "food_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام الغذاء",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian Food Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SFDA_GOV_SA_BORN_DIGITAL_PDF_2025_06_UPLOAD_X_QANOONSA_COM_X_QISTAS_COM_CROSSCHECK_BOE_NO_DEDICATED_LAWID_LIVE_UNREACHABLE_WAYBACK_CONTENT_BLOCKED",
+                "source_authority": "SFDA Board Resolution No. (3-16-1439), dated 9/4/1439H, as amended by Board Resolution No. (4/44), dated 14/6/1446H, issued pursuant to the Food Law (Royal Decree M/1, 6/1/1436H) — laws.boe.gov.sa was checked first per standard methodology, is unreachable live this pass (connection reset), and confirmed to have no dedicated lawId page for this Implementing Regulation specifically at all; a Wayback Machine snapshot of BOE's only page for this general subject (the base Food Law's own lawId) is confirmed to exist but its content host is blocked at this session's egress-policy level. PRIMARY source is sfda.gov.sa (the issuing Authority's own site), a born-digital PDF (2025-06 upload) with a genuine embedded text layer, cross-verified against qanoonsa.com and qistas.com",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": food_regulation_llm["record_count"],
+                    "data_path": "data/food_regulation_arabic_legal_llm/food_regulation_legal_llm_001_085.json"}},
+                "record_counts": {"arabic_articles": food_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 81, "معدلة": 1, "ملغاة": 0, "مضافة": 3},
+                                  "total": food_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/food/regulation/official_source/food_regulation_official_source.json",
+                    "sources/food/regulation/verified/food_regulation_verified_records.jsonl",
+                    "data/food_regulation_arabic_legal_llm/food_regulation_legal_llm_001_085.json",
+                ],
+                "validator_targets": ["make food-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian Food Law «اللائحة التنفيذية لنظام الغذاء» — SFDA Board Resolution No. (3-16-1439), dated 9/4/1439H, issued under the authority of the already-ingested food_law track (Royal Decree M/1, 6/1/1436H). Explicitly flagged, but not ingested, in food_law's own known_unresolved_discrepancies (key 'food_implementing_regulation_penalty_amendments_out_of_scope', '~85 articles ... confirmed to exist but out of scope for this track'); this is a dedicated follow-up. **85 records: 81 اصلية, 1 معدلة (Article 41), 3 مضافة (Articles 42-44, new food-poisoning procedure articles), 0 ملغاة**, per SFDA Board Resolution No. (4/44), 14/6/1446H. 12 chapters, with a genuine duplicate chapter-title anomaly preserved verbatim (chapters 4 and 5 both titled 'تداول الغذاء', mirroring the same disclosed anomaly in the food_law track). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa was checked first per standard methodology but is unreachable live this pass and confirmed to have no dedicated lawId page for this Implementing Regulation at all (only for the base Food Law); a Wayback snapshot of BOE's only related page is confirmed to exist but its content host is blocked at this session's egress-policy level, identical to what the food_law track itself documented for the same subject area. PRIMARY source is sfda.gov.sa (the issuing Authority's own site), a BORN-DIGITAL PDF (2025-06 upload, Creator 'Canon iR-ADV C5540 PDF', a print-to-PDF signature, not an OCR product) with a genuine embedded vector text layer — unlike the OLDER (2021-04) scanned/rasterized PDF the food_law track itself had to rely on. This SFDA file interleaves the base Food Law's own 45 boxed articles (excluded, out of scope, already covered by food_law) with this Regulation's own 85 unboxed articles, extracted via two independent pipelines (poppler pdftotext -layout; PyMuPDF + pdftotext -bbox word-coordinate reconstruction) that geometrically exclude the boxed base-law text and reconstruct correct RTL word order, cross-verified against qanoonsa.com and qistas.com for decree number/date, article count, and amendment history. **THREE SYSTEMATIC FONT LIGATURE-REVERSAL EXTRACTION DEFECTS DISCLOSED AND FIXED**, confirmed via two independent extraction tools plus direct visual page inspection (ruling out a source-content defect): reversed-order 'لم' after alif-lam, reversed-order 'لا' (lam-alef ligature) both mid-root and at the definite-article/alif-initial-word boundary, and reversed-order 'لإ'/'لأ'/'لآ' (lam before hamzated/madda alif) — fixed via a large, individually-verified substitution dictionary, not a blind global regex, since many superficially-similar words do not contain a true ligature. **GENUINE SOURCE ANOMALY PRESERVED**: the final article's own printed header literally reads 'المادة (58) من اللائحة' (a transposed-digit typo for 85), confirmed via direct visual page inspection, preserved verbatim rather than silently renumbered. A separate violation-classification-and-penalty TABLE (amended by Board Resolution 5/44, ~May 2026) is confirmed out of scope — a distinct tabular/numeric annex, not a textual amendment to any of this track's 85 numbered articles. **CONFIRMED NEGATIVE FINDING**: no repeal of a prior implementing regulation was found in any source — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. No legal text is altered beyond the disclosed source-artifact-layer fixes (font ligature reversals, word-split-gap rejoining, page-footer/chapter-heading/leaked-base-law-header removal, two missing-space typos). Diacritics stripped uniformly. Arabic governs; not legal advice.",
             },
         ],
     }

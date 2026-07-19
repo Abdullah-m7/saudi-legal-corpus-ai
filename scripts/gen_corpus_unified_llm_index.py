@@ -328,6 +328,8 @@ LAYERS = [
      "nationality", "regulation"),
     ("data/health_system_regulation_arabic_legal_llm/health_system_regulation_legal_llm_001_010.json",
      "health_system", "regulation"),
+    ("data/food_regulation_arabic_legal_llm/food_regulation_legal_llm_001_085.json",
+     "food", "regulation"),
 ]
 
 
