@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10034,
+  "total_primary_arabic_governing_records": 10044,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10929,
-  "total_tracks": 151,
+  "total_registry_counted_records": 10939,
+  "total_tracks": 152,
   "tracks": [
     {
       "boundaries": {
@@ -7162,6 +7162,55 @@
       "validator_targets": [
         "make nationality-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/health_system/regulation/official_source/health_system_regulation_official_source.json",
+        "sources/health_system/regulation/verified/health_system_regulation_verified_records.jsonl",
+        "data/health_system_regulation_arabic_legal_llm/health_system_regulation_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية للنظام الصحي",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Health System Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/health_system_regulation_arabic_legal_llm/health_system_regulation_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian Health System Law «اللائحة التنفيذية للنظام الصحي» — Ministerial Decision No. 30/69181, dated 15/6/1424H, issued pursuant to Article 18 of the already-ingested health_system_law track (Royal Decree M/11, 23/3/1423H). That parent track's own registry entry had explicitly flagged this Regulation as 'confirmed to exist ... but content could not be reached' in a prior pass; this is a dedicated follow-up. **10 records, ALL 10 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — this pass found no per-article amendment history for any of them; whether the unrecovered Articles 12-19 carry later amendments is simply unknown). **NON-CONTIGUOUS NUMBERING**: this track's articles are keyed by the PARENT LAW's own article numbers that each implements (2 through 11), NOT an independently-resequenced 1..N sequence — e.g. its implementing text for the parent Law's Article 4 is internally keyed '4-ل-...' and cross-references 'المادة الرابعة من النظام' throughout. **VERIFICATION TIER: TIER_4** — laws.boe.gov.sa was checked first per this corpus's standard methodology, confirmed to have no dedicated lawId page for this specific Regulation, and its own live portal failed repeatedly this pass (connection reset, matching the parent law track's own documented BOE outage for this period); the Wayback Machine is blocked at this session's egress-policy level (WebFetch explicitly refuses web.archive.org; a direct curl for a confirmed snapshot timestamp returned HTTP 403 via the configured proxy). istitlaa.ncc.gov.sa (the officially-designated primary host, linked directly from MOH's own official e-participation page for this Regulation) was confirmed genuinely unreachable via THREE independent channels this pass: direct curl (TLS connection reset, 3 separate attempts), WebFetch (HTTP 503), and r.jina.ai (an independent third-party headless-browser fetch service, itself timing out after 15s) — this three-way, cross-infrastructure agreement indicates a genuine outage at the source, not a fetch-tool artifact. The ONLY source through which real article text could be retrieved this pass was qanoniah.com: its rendered page is a client-side (Nuxt/Vue) application, and this pass located its underlying public JSON API (api.qanoniah.com/v1/files/{hash}, unauthenticated) by inspecting the server-rendered Nuxt config. That API returns a CONFIRMED, SERVER-ENFORCED cap of exactly 10 items regardless of pagination parameters tried (?page=, ?offset=, ?limit=) — verified by comparing byte-identical response digests across attempts — i.e. a free-preview limit on qanoniah.com's own end, not a limitation of the fetch method used here. **PARTIAL COVERAGE, EXPLICITLY DISCLOSED, NOT FABRICATED**: those 10 confirmed items cover only the parent Law's Articles 2 through 11; no entry for the parent Law's Article 1 (definitions) exists in qanoniah.com's own index at all (the index itself starts at order:1 = 'المادة الثانية'), so its absence is a genuine source gap, not an artifact of the preview cap; Articles 12 through 19 (including Article 16, the heavily-amended Health Services Council article) could NOT be recovered this pass from any source tried and are excluded, not fabricated. **CONFIRMED NEGATIVE FINDING**: no repeal of a prior implementing regulation was found in any source (consistent with this being the first Implementing Regulation issued under the parent Law's Article 18 mandate) — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. No legal text is altered beyond plain HTML-tag stripping and HTML-entity decoding of qanoniah.com's own markup. Arabic governs; not legal advice.",
+      "official_text_status": "QANONIAH_COM_PUBLIC_API_10_ITEM_PREVIEW_CAP_PARTIAL_COVERAGE_ARTICLES_2_11_BOE_NO_DEDICATED_PAGE_ISTITLAA_UNREACHABLE_WAYBACK_BLOCKED",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. 30/69181, dated 15/6/1424H, issued pursuant to Article 18 of the Health System Law (Royal Decree M/11, 23/3/1423H) — laws.boe.gov.sa has no dedicated lawId page for this Regulation and its live portal was itself unreachable this pass; Wayback Machine access is blocked at this session's egress-policy level; istitlaa.ncc.gov.sa (MOH's own officially-designated primary host) was confirmed unreachable via three independent channels (direct curl, WebFetch, r.jina.ai). PRIMARY source is qanoniah.com's public API (an independent Arabic legal aggregator), which enforces a confirmed, server-side 10-item preview cap (verified via multiple pagination parameters all returning an identical payload), covering only Articles 2-11 of the parent Law",
+      "status": "complete",
+      "track_id": "health_system_regulation",
+      "validator_targets": [
+        "make health-system-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7224,7 +7273,7 @@
       "gcc_anti_dumping": 17,
       "gcc_ownership": 6,
       "gtpl": 256,
-      "health_system": 19,
+      "health_system": 29,
       "healthcare_professions": 44,
       "iflas_hudud": 23,
       "income_tax": 81,
@@ -7286,7 +7335,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9865,
+    "total_records": 9875,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -3,7 +3,7 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 151,
+  "total_tracks_scanned": 152,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
@@ -763,6 +763,14 @@
       "issue": "confirmed negative repeal finding -- no predecessor named at all",
       "note": "nationality_regulation names no repealed predecessor instrument of its own anywhere in its 35 articles -- it is the first and only Implementing Regulation issued for the already-ingested nationality_law track (Royal Will 8/20/5604, 1374H) since that Law's own enactment, first issued as Ministerial Decision No. 74/زو (9/3/1426H). No edge modeled. (Separately, this track's own Article 28 was deleted by a 2023 Minister of Interior decision following Royal Decree M/88's transfer of the parent Law's Article 8 grant authority -- an article-level legal_status_ar=ملغاة change, not a supersession-graph relationship.)",
       "source_ref": "sources/nationality/regulation/official_source/nationality_regulation_official_source.json (verification_methodology_note)"
+    },
+    {
+      "tracks_involved": [
+        "health_system_regulation"
+      ],
+      "issue": "confirmed negative repeal finding -- no predecessor named at all",
+      "note": "health_system_regulation (Ministerial Decision 30/69181, 1424H) names no repealed predecessor implementing regulation anywhere in its 10 recovered articles -- consistent with this being the first Implementing Regulation issued under the already-ingested health_system_law track's own Article 18 mandate. No edge modeled. (This track's coverage is genuinely PARTIAL -- only parent Law Articles 2-11 recovered, Article 1 and 12-19 excluded, not fabricated -- a source-access limitation, not a supersession-graph relationship.)",
+      "source_ref": "sources/health_system/regulation/official_source/health_system_regulation_official_source.json (verification_methodology_note)"
     }
   ],
   "extraction_policy": "Every edge above was read and classified by hand against this corpus's own documented text (registry notes + official_source.json fields/article text), never inferred from a decree being older or from topical similarity alone. Concurrent title/decree-number collisions that are NOT repeal relationships, and genuinely ambiguous or explicitly-excluded cases, are kept in their own sections rather than forced into `edges`. It is expected and correct that most of this corpus's 122 tracks have zero edges."

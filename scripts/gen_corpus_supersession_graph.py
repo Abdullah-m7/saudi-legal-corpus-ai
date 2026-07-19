@@ -1237,6 +1237,21 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "change, not a supersession-graph relationship.)",
         "source_ref": "sources/nationality/regulation/official_source/nationality_regulation_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["health_system_regulation"],
+        "issue": "confirmed negative repeal finding -- no predecessor named at all",
+        "note": "health_system_regulation (Ministerial Decision 30/69181, "
+                "1424H) names no repealed predecessor implementing "
+                "regulation anywhere in its 10 recovered articles -- "
+                "consistent with this being the first Implementing "
+                "Regulation issued under the already-ingested "
+                "health_system_law track's own Article 18 mandate. No edge "
+                "modeled. (This track's coverage is genuinely PARTIAL -- "
+                "only parent Law Articles 2-11 recovered, Article 1 and "
+                "12-19 excluded, not fabricated -- a source-access "
+                "limitation, not a supersession-graph relationship.)",
+        "source_ref": "sources/health_system/regulation/official_source/health_system_regulation_official_source.json (verification_methodology_note)",
+    },
 ]
 
 

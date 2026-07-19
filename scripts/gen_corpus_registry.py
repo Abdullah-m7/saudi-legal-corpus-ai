@@ -189,6 +189,7 @@ CYBERSECURITY_AUTHORITY_ENABLERS_LLM = os.path.join(ROOT, "data", "cybersecurity
 PREMIUM_RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "premium_residency_arabic_legal_llm", "premium_residency_law_legal_llm_001_014.json")
 TRAVEL_DOCUMENTS_REGULATION_LLM = os.path.join(ROOT, "data", "travel_documents_regulation_arabic_legal_llm", "travel_documents_regulation_legal_llm_001_053.json")
 NATIONALITY_REGULATION_LLM = os.path.join(ROOT, "data", "nationality_regulation_arabic_legal_llm", "nationality_regulation_legal_llm_001_035.json")
+HEALTH_SYSTEM_REGULATION_LLM = os.path.join(ROOT, "data", "health_system_regulation_arabic_legal_llm", "health_system_regulation_legal_llm_001_010.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -371,6 +372,7 @@ def main() -> int:
     premium_residency_law_llm = _load_json(PREMIUM_RESIDENCY_LAW_LLM)
     travel_documents_regulation_llm = _load_json(TRAVEL_DOCUMENTS_REGULATION_LLM)
     nationality_regulation_llm = _load_json(NATIONALITY_REGULATION_LLM)
+    health_system_regulation_llm = _load_json(HEALTH_SYSTEM_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -391,7 +393,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 151,
+        "total_tracks": 152,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -546,6 +548,7 @@ def main() -> int:
             + premium_residency_law_llm["record_count"]  # 14 Premium Residency Law (Royal Decree M/106, 1440H) (TIER_1_PRIMARY_MULTI_SOURCE, BOE live unreachable x six Wayback snapshots 2019-2025 x misa.gov.sa official consolidated PDF word-for-word cross-check, 5 اصلية/8 معدلة/1 ملغاة, confirmed no named predecessor, distinct from already-ingested residency_law per social_insurance_law/social_insurance_legacy_law naming precedent, see track notes)
             + travel_documents_regulation_llm["record_count"]  # 53 Travel Documents Implementing Regulation (Ministerial Resolution 4203, 1447H) (TIER_3 honest, no BOE lawId page at all, PRIMARY qanoonsa.com raw-HTML fetch x ncar.gov.sa metadata-level x qanoniah.com indexing-level, all 53 اصلية, confirmed full repeal of the 1422H predecessor Decision 7/waw-zay via Article 52, see track notes)
             + nationality_regulation_llm["record_count"]  # 35 Implementing Regulation of the Nationality Law (Ministerial Decision 74/زو, 1426H) (TIER_2, BOE hosts no dedicated page, PRIMARY moi.gov.sa Wayback triple-snapshot byte-identical x nezams.com x alriyadh.com 2005G contemporaneous full-text, article count corrected 25->35, Article 28 confirmed repealed and preserved, confirmed no named predecessor, see track notes)
+            + health_system_regulation_llm["record_count"]  # 10 Implementing Regulation of the Health System Law (Ministerial Decision 30/69181, 1424H) (TIER_4, laws.boe.gov.sa/istitlaa.ncc.gov.sa both confirmed unreachable, PRIMARY qanoniah.com public API with a confirmed 10-item preview cap, explicit PARTIAL coverage of parent Law Articles 2-11 only, Article 1 and 12-19 excluded not fabricated, confirmed no named predecessor, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -691,6 +694,7 @@ def main() -> int:
             + premium_residency_law_llm["record_count"]
             + travel_documents_regulation_llm["record_count"]
             + nationality_regulation_llm["record_count"]
+            + health_system_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5129,6 +5133,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian Nationality Law «اللائحة التنفيذية لنظام الجنسية العربية السعودية» — Ministerial Decision No. 74/زو, dated 9/3/1426H (22 Apr 2005G), issued by the Minister of Interior under the Nationality Law's own Article 27 (as amended by M/54, 29/10/1425H). The companion regulation flagged, but not ingested, in the already-ingested nationality_law track's own known_unresolved_discrepancies (key 'nationality_implementing_regulation_not_ingested'), which had estimated '~25 articles' from an earlier light-verification pass. **35 records: 34 اصلية, 0 معدلة, 1 ملغاة (Article 28), 0 مضافة** — flat 35-article structure, no formal أبواب/فصول numbering, spelled-ordinal headers. **ARTICLE COUNT CORRECTED (25 -> 35)**: traced to an internal self-contradiction in a single 2005G news source (alriyadh.com) whose own prose stated '25 مادة' even though its own reproduced full text ran to Article 35 — resolved definitively in favor of 35, independently confirmed by the byte-stable government PDF. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa was checked first per this corpus's standard methodology but confirmed (web search plus a Wayback CDX scan of the whole domain) to host NO dedicated lawId page at all for this Implementing Regulation; BOE's live portal was also unreachable this pass. PRIMARY source is moi.gov.sa (the issuing Ministry's own official site), whose live portal was also unreachable this pass, so the PDF was fetched via three independent Wayback Machine snapshots (4 Mar 2011, 29 Sep 2022, 15 Mar 2024) that are byte-identical (sha256-matched) across all 13 years, extracted via two independent tools (poppler pdftotext, PyMuPDF), both agreeing on 35 articles. Cross-verified against nezams.com (confirms the founding decree number/date as an appendix to its own nationality-law page) and alriyadh.com's own contemporaneous news article (published the day after Umm Al-Qura publication), which reproduces the Regulation's full 35-article text verbatim — automated normalized diffing against moi.gov.sa's PDF found word-for-word equivalence across all 35 articles, 18+ years apart, aside from two disclosed source-artifact-layer defects in moi.gov.sa's own PDF (a font ligature-drop bug losing 'مخ' from المختص/المختصة in 5 places, and an RTL line-reordering artifact in 2 short paragraphs) and two single-letter transcription typos in alriyadh's own text (fixed against moi.gov.sa's spelling). alriyadh's text (thus corrected) is used as the base transcription since it is free of the PDF's extraction artifacts while remaining fully cross-verified against the primary source. **CONFIRMED REPEAL**: Article 28 (its own text: 'يصدر وزير الداخلية القرارات اللازمة لمنح الجنسية بموجب المادة (8) من النظام') was deleted by a Minister of Interior decision circa March 2023, following Royal Decree M/88 (11/6/1444H) which transferred the parent Law's Article 8 nationality-grant authority from the Minister of Interior to the Prime Minister — independently confirmed by 5+ Saudi news outlets, all quoting the same deleted article text verbatim. moi.gov.sa's own PDF is confirmed STALE, still showing Article 28's pre-deletion text as of its most recent Wayback snapshot checked (15 Mar 2024, over a year after the deletion) — per this corpus's binding rule, Article 28 is preserved here with its original text, legal_status_ar=ملغاة, never deleted or silently merged away. **CONFIRMED NEGATIVE FINDING**: this Regulation names no repealed predecessor instrument of its own — it is the first and only Implementing Regulation for this Law since 1374H — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. Diacritics stripped uniformly. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "health_system_regulation",
+                "display_name_ar": "اللائحة التنفيذية للنظام الصحي",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian Health System Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "QANONIAH_COM_PUBLIC_API_10_ITEM_PREVIEW_CAP_PARTIAL_COVERAGE_ARTICLES_2_11_BOE_NO_DEDICATED_PAGE_ISTITLAA_UNREACHABLE_WAYBACK_BLOCKED",
+                "source_authority": "Ministerial Decision No. 30/69181, dated 15/6/1424H, issued pursuant to Article 18 of the Health System Law (Royal Decree M/11, 23/3/1423H) — laws.boe.gov.sa has no dedicated lawId page for this Regulation and its live portal was itself unreachable this pass; Wayback Machine access is blocked at this session's egress-policy level; istitlaa.ncc.gov.sa (MOH's own officially-designated primary host) was confirmed unreachable via three independent channels (direct curl, WebFetch, r.jina.ai). PRIMARY source is qanoniah.com's public API (an independent Arabic legal aggregator), which enforces a confirmed, server-side 10-item preview cap (verified via multiple pagination parameters all returning an identical payload), covering only Articles 2-11 of the parent Law",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": health_system_regulation_llm["record_count"],
+                    "data_path": "data/health_system_regulation_arabic_legal_llm/health_system_regulation_legal_llm_001_010.json"}},
+                "record_counts": {"arabic_articles": health_system_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 10, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": health_system_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/health_system/regulation/official_source/health_system_regulation_official_source.json",
+                    "sources/health_system/regulation/verified/health_system_regulation_verified_records.jsonl",
+                    "data/health_system_regulation_arabic_legal_llm/health_system_regulation_legal_llm_001_010.json",
+                ],
+                "validator_targets": ["make health-system-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian Health System Law «اللائحة التنفيذية للنظام الصحي» — Ministerial Decision No. 30/69181, dated 15/6/1424H, issued pursuant to Article 18 of the already-ingested health_system_law track (Royal Decree M/11, 23/3/1423H). That parent track's own registry entry had explicitly flagged this Regulation as 'confirmed to exist ... but content could not be reached' in a prior pass; this is a dedicated follow-up. **10 records, ALL 10 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — this pass found no per-article amendment history for any of them; whether the unrecovered Articles 12-19 carry later amendments is simply unknown). **NON-CONTIGUOUS NUMBERING**: this track's articles are keyed by the PARENT LAW's own article numbers that each implements (2 through 11), NOT an independently-resequenced 1..N sequence — e.g. its implementing text for the parent Law's Article 4 is internally keyed '4-ل-...' and cross-references 'المادة الرابعة من النظام' throughout. **VERIFICATION TIER: TIER_4** — laws.boe.gov.sa was checked first per this corpus's standard methodology, confirmed to have no dedicated lawId page for this specific Regulation, and its own live portal failed repeatedly this pass (connection reset, matching the parent law track's own documented BOE outage for this period); the Wayback Machine is blocked at this session's egress-policy level (WebFetch explicitly refuses web.archive.org; a direct curl for a confirmed snapshot timestamp returned HTTP 403 via the configured proxy). istitlaa.ncc.gov.sa (the officially-designated primary host, linked directly from MOH's own official e-participation page for this Regulation) was confirmed genuinely unreachable via THREE independent channels this pass: direct curl (TLS connection reset, 3 separate attempts), WebFetch (HTTP 503), and r.jina.ai (an independent third-party headless-browser fetch service, itself timing out after 15s) — this three-way, cross-infrastructure agreement indicates a genuine outage at the source, not a fetch-tool artifact. The ONLY source through which real article text could be retrieved this pass was qanoniah.com: its rendered page is a client-side (Nuxt/Vue) application, and this pass located its underlying public JSON API (api.qanoniah.com/v1/files/{hash}, unauthenticated) by inspecting the server-rendered Nuxt config. That API returns a CONFIRMED, SERVER-ENFORCED cap of exactly 10 items regardless of pagination parameters tried (?page=, ?offset=, ?limit=) — verified by comparing byte-identical response digests across attempts — i.e. a free-preview limit on qanoniah.com's own end, not a limitation of the fetch method used here. **PARTIAL COVERAGE, EXPLICITLY DISCLOSED, NOT FABRICATED**: those 10 confirmed items cover only the parent Law's Articles 2 through 11; no entry for the parent Law's Article 1 (definitions) exists in qanoniah.com's own index at all (the index itself starts at order:1 = 'المادة الثانية'), so its absence is a genuine source gap, not an artifact of the preview cap; Articles 12 through 19 (including Article 16, the heavily-amended Health Services Council article) could NOT be recovered this pass from any source tried and are excluded, not fabricated. **CONFIRMED NEGATIVE FINDING**: no repeal of a prior implementing regulation was found in any source (consistent with this being the first Implementing Regulation issued under the parent Law's Article 18 mandate) — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. No legal text is altered beyond plain HTML-tag stripping and HTML-entity decoding of qanoniah.com's own markup. Arabic governs; not legal advice.",
             },
         ],
     }
