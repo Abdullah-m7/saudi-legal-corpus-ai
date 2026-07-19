@@ -1171,6 +1171,23 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "predecessor statute being repealed and replaced).",
         "source_ref": "sources/cybersecurity_authority/law/official_source/cybersecurity_authority_law_official_source.json (article 15)",
     },
+    {
+        "tracks_involved": ["cybersecurity_authority_enablers"],
+        "issue": "general non-specific repeal clause naming no prior statute",
+        "note": "cybersecurity_authority_enablers's own final بند (سابعاً) "
+                "states only 'تلغي كل ما يتعارض معها من أحكام' (a general "
+                "boilerplate repeal of any conflicting provision), naming no "
+                "single prior instrument. NOT modeled as a repeals_full edge, "
+                "since this corpus only models EXPLICITLY-NAMED repeal "
+                "relationships, never inferred ones; independently "
+                "re-verified this pass that this instrument also does NOT "
+                "amend or repeal any مادة of the parent cybersecurity_authority_law "
+                "statute (Royal Order 6801/7053) -- both remain separate "
+                "companion instruments on different subject matter (this "
+                "instrument covers enforcement/licensing-penalties; the "
+                "parent covers institutional structure).",
+        "source_ref": "sources/cybersecurity_authority/enablers/official_source/cybersecurity_authority_enablers_official_source.json (بند سابعاً)",
+    },
 ]
 
 

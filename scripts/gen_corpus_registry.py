@@ -185,6 +185,7 @@ HEALTH_SYSTEM_LAW_LLM = os.path.join(ROOT, "data", "health_system_arabic_legal_l
 DOMESTIC_LABOR_REGULATION_LLM = os.path.join(ROOT, "data", "domestic_labor_arabic_legal_llm", "domestic_labor_regulation_legal_llm_001_033.json")
 TRAVEL_DOCUMENTS_LAW_LLM = os.path.join(ROOT, "data", "travel_documents_arabic_legal_llm", "travel_documents_law_legal_llm_001_016.json")
 CYBERSECURITY_AUTHORITY_LAW_LLM = os.path.join(ROOT, "data", "cybersecurity_authority_arabic_legal_llm", "cybersecurity_authority_law_legal_llm_001_015.json")
+CYBERSECURITY_AUTHORITY_ENABLERS_LLM = os.path.join(ROOT, "data", "cybersecurity_authority_enablers_arabic_legal_llm", "cybersecurity_authority_enablers_legal_llm_001_007.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -363,6 +364,7 @@ def main() -> int:
     domestic_labor_regulation_llm = _load_json(DOMESTIC_LABOR_REGULATION_LLM)
     travel_documents_law_llm = _load_json(TRAVEL_DOCUMENTS_LAW_LLM)
     cybersecurity_authority_law_llm = _load_json(CYBERSECURITY_AUTHORITY_LAW_LLM)
+    cybersecurity_authority_enablers_llm = _load_json(CYBERSECURITY_AUTHORITY_ENABLERS_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -383,7 +385,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 147,
+        "total_tracks": 148,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -534,6 +536,7 @@ def main() -> int:
             + domestic_labor_regulation_llm["record_count"]  # 33 Domestic Labor Regulation (Ministerial Decision 40676, 1445H) (TIER_2, BOE confirmed stale for this topic, PRIMARY hrsd.gov.sa x qanoonsa.com/lexismiddleeast.com secondary cross-checks, confirmed named repeal of the 1434H CoM Decision 310 predecessor, Article 33 text_complete=False genuine source truncation, see track notes)
             + travel_documents_law_llm["record_count"]  # 16 Saudi Arabian Travel Documents Law (Royal Decree M/24, 1421H) (TIER_2, BOE-via-Wayback three snapshots x nezams.com/qistas.com secondary, plus an official Umm Al-Qura Gazette cross-check for the M/11 1443H amendment specifically, confirmed scoped/partial repeal of the 1358H Passports System via Article 13, see track notes)
             + cybersecurity_authority_law_llm["record_count"]  # 15 Statute (Organizational Regulation) of the National Cybersecurity Authority (Royal Order 6801, 1439H) (TIER_2, PRIMARY nca.gov.sa official PDF OCR-transcribed x qistas.com/saudipedia.com secondary cross-checks, confirmed negative repeal finding at Article 15, document-level amendment by Royal Order 7053 not attributed to any specific article, see track notes)
+            + cybersecurity_authority_enablers_llm["record_count"]  # 7 Regulatory (Legal) Enablers of the National Cybersecurity Authority (Royal Decree M/117, 1446H) (TIER_2, PRIMARY nca.gov.sa official PDF OCR-transcribed x qanoonsa.com/uqn.gov.sa secondary cross-checks, no مادة numbering -- seven بند divisions instead, confirmed negative repeal finding at clause 7, confirmed no amendment/repeal relationship to parent cybersecurity_authority_law, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -675,6 +678,7 @@ def main() -> int:
             + domestic_labor_regulation_llm["record_count"]
             + travel_documents_law_llm["record_count"]
             + cybersecurity_authority_law_llm["record_count"]
+            + cybersecurity_authority_enablers_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5001,6 +5005,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Statute (Organizational Regulation) of the National Cybersecurity Authority «تنظيم الهيئة الوطنية للأمن السيبراني» — Royal Order No. 6801, dated 11/2/1439H (~31 Oct/1 Nov 2017G), approving the Authority's detailed organizational statute roughly two months after its staged establishment via Royal Order No. 55775 (1/12/1438H). A low-medium-priority coverage-gap identified via a fresh gap-scan pass, governing NCA's legal personality, mandate, board composition, budget, and staff status, distinct from this corpus's already-ingested anti_cyber_crime_law (a criminal-offenses statute) and electronic_transactions_law tracks. **15 records, ALL 15 اصلية at the per-article level** (0 معدلة, 0 ملغاة, 0 مضافة) — flat single-range structure (1-15), **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_2** — no laws.boe.gov.sa page for this exact statute could be located this pass despite multiple targeted searches (only other, unrelated BOE-catalogued laws that merely cite this statute in passing were found; a direct curl to BOE returned 'Connection reset by peer'), precluding a TIER_1 rating. The PRIMARY source actually used is instead NCA's own official site (nca.gov.sa), a PDF hosted on its own CDN subdomain, whose embedded text layer has a confirmed, systematic character-transposition artifact (verified identical across two independent extraction libraries, pdftotext and PyMuPDF) — worked around by rendering each page to a 300dpi image and OCR'ing with Tesseract 5, cross-read word-by-word against the flawed-but-complete alternate extraction. Cross-verified against qistas.com (a partial, structural cross-check for Articles 1-3 only) and saudipedia.com (independent corroboration of the establishment date). **DOCUMENT-LEVEL AMENDMENT, ARTICLE UNATTRIBUTED — HONEST GAP, NOT GUESSED**: the source PDF's own title page confirms amendment by Royal Order No. 7053 (2/2/1443H), and consolidated_amended_law is set to true accordingly, but no source found this pass identifies which specific article(s) of the 15 were altered, nor was a pre-amendment copy located for a direct diff — so no individual article is marked معدلة absent specific evidence, an honestly-reported gap. **CONFIRMED NEGATIVE REPEAL FINDING**: Article 15 (the final article) contains only a generic conflict-only repeal clause ('يلغي كل ما يتعارض معه من أحكام'), naming no specific predecessor organizational statute — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge, mirroring the awqaf_law/saudi_engineers_law precedent for organizational statutes. A genuine internal-consistency clue, not resolved: Article 12(2)-(3) still refer to 'مؤسسة النقد العربي السعودي' (SAMA's pre-2020 name) rather than its post-2020 name, circumstantially suggesting (not confirming) Article 12 was not among whatever article(s) the 2021 amendment touched. A separate, newer, Royal-Decree-level instrument (م/117, 21/6/1446H, «الممكنات النظامية», an enforcement/licensing-penalty regime textually distinct from this organizing statute) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cybersecurity_authority_enablers",
+                "display_name_ar": "الممكنات النظامية للهيئة الوطنية للأمن السيبراني",
+                "display_name_en": "Regulatory (Legal) Enablers of the National Cybersecurity Authority",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QANOONSA_STRUCTURAL_FULL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+                "source_authority": "Royal Decree No. م/117, dated 21/6/1446H (22 Dec 2024G), based on Council of Ministers Resolution No. 409 (16/6/1446H) and Shura Council Resolution No. 16/3 (28/3/1446H), published in Umm Al-Qura Gazette No. 5065 (17 Jan 2025G) — no laws.boe.gov.sa page for this exact instrument could be located this pass; PRIMARY source is instead the National Cybersecurity Authority's own official site (nca.gov.sa, the same CDN subdomain as the parent statute), a PDF OCR-transcribed to work around the same confirmed systematic letter-transposition text-layer artifact documented in the parent cybersecurity_authority_law track, cross-verified against qanoonsa.com (three separate pages: the decree text, the CoM Resolution 409 text, and a full structural summary) and uqn.gov.sa (topical gazette indexing only, not full-text extraction)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cybersecurity_authority_enablers_llm["record_count"],
+                    "data_path": "data/cybersecurity_authority_enablers_arabic_legal_llm/cybersecurity_authority_enablers_legal_llm_001_007.json"}},
+                "record_counts": {"arabic_articles": cybersecurity_authority_enablers_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 7, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": cybersecurity_authority_enablers_llm["record_count"]},
+                "data_paths": [
+                    "sources/cybersecurity_authority/enablers/official_source/cybersecurity_authority_enablers_official_source.json",
+                    "sources/cybersecurity_authority/enablers/verified/cybersecurity_authority_enablers_verified_records.jsonl",
+                    "data/cybersecurity_authority_enablers_arabic_legal_llm/cybersecurity_authority_enablers_legal_llm_001_007.json",
+                ],
+                "validator_targets": ["make cybersecurity-authority-enablers-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Regulatory (Legal) Enablers of the National Cybersecurity Authority «الممكنات النظامية للهيئة الوطنية للأمن السيبراني» — Royal Decree No. م/117, dated 21/6/1446H (22 Dec 2024G), based on Council of Ministers Resolution No. 409 (16/6/1446H) and Shura Council Resolution No. 16/3 (28/3/1446H), published in Umm Al-Qura Gazette No. 5065 (17 Jan 2025G). A companion enforcement/licensing-penalty instrument to the already-ingested cybersecurity_authority_law track, identified as a follow-up candidate during that track's own build. **7 records, ALL 7 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة; single founding version, no later amendment documented). **GENUINE STRUCTURAL ANOMALY**: unlike every other track in this corpus, this instrument is NOT divided into numbered مادة articles — it is a flat sequence of seven ordinal بند (clause) divisions (أولاً-سابعاً: violation definitions; inspector/investigative powers; emergency suspension powers; a violations-review committee; penalties and appeal procedures; a mandate for the NCA board to issue security/military-reporting rules; effective date and general repeal), confirmed both from the source PDF's own layout and from the instrument's own internal cross-references, which repeatedly call these divisions «البند». **NO أبواب/فصول**, no inline sub-titles beyond the بند labels. **VERIFICATION TIER: TIER_2** — no laws.boe.gov.sa page for this exact instrument could be located this pass (direct curl attempts returned 'Connection reset by peer', the same failure mode already documented for the parent statute), precluding TIER_1. PRIMARY source is NCA's own official site, a PDF sharing the parent track's own confirmed systematic letter-transposition text-layer artifact — worked around identically (300dpi page renders OCR'd with Tesseract 5, cross-read word-by-word against the flawed-but-complete pdftotext -layout extraction), cross-verified against qanoonsa.com's three independent pages and uqn.gov.sa's topical gazette indexing (confirms existence/subject matter only, not full text, so does not itself elevate the tier). **CONFIRMED NO RELATIONSHIP TO THE PARENT STATUTE** — independently re-verified this pass: no source found states this instrument amends or repeals any مادة of the parent organizational تنظيم (Royal Order 6801/7053); it remains a textually and substantively separate companion instrument on a different subject (enforcement/licensing-penalties vs. institutional structure). **CONFIRMED NEGATIVE REPEAL FINDING** at its own final بند (سابعاً): a generic conflict-only repeal clause ('تلغي كل ما يتعارض معها من أحكام'), naming no specific predecessor instrument — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge, directly analogous to the parent statute's own Article 15 finding. Genuine anomalies preserved, not normalized: mixed numeral conventions in the source itself (Arabic-Indic digits, spelled-out Arabic words, and Western digits with period thousand-separators for the 25,000,000 SAR maximum fine, each preserved exactly as it appears at each specific point); a repeating page-footer classification banner ('التصنيف: عام') excluded as page furniture, not legal text. No pre-existing coverage-gap-map entry existed for this instrument — a wholly new addition identified from the parent track's own follow-up flag. Arabic governs; not legal advice.",
             },
         ],
     }

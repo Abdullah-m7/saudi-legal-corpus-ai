@@ -318,6 +318,8 @@ LAYERS = [
      "travel_documents", "law"),
     ("data/cybersecurity_authority_arabic_legal_llm/cybersecurity_authority_law_legal_llm_001_015.json",
      "cybersecurity_authority", "law"),
+    ("data/cybersecurity_authority_enablers_arabic_legal_llm/cybersecurity_authority_enablers_legal_llm_001_007.json",
+     "cybersecurity_authority", "enablers"),
 ]
 
 
