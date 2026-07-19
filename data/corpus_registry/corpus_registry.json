@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9946,
+  "total_primary_arabic_governing_records": 9999,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10841,
-  "total_tracks": 149,
+  "total_registry_counted_records": 10894,
+  "total_tracks": 150,
   "tracks": [
     {
       "boundaries": {
@@ -7064,6 +7064,55 @@
       "validator_targets": [
         "make premium-residency-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/travel_documents/regulation/official_source/travel_documents_regulation_official_source.json",
+        "sources/travel_documents/regulation/verified/travel_documents_regulation_verified_records.jsonl",
+        "data/travel_documents_regulation_arabic_legal_llm/travel_documents_regulation_legal_llm_001_053.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام وثائق السفر",
+      "display_name_en": "Travel Documents Implementing Regulation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/travel_documents_regulation_arabic_legal_llm/travel_documents_regulation_legal_llm_001_053.json",
+          "governing": true,
+          "record_count": 53,
+          "status": "complete"
+        }
+      },
+      "notes": "Travel Documents Implementing Regulation «اللائحة التنفيذية لنظام وثائق السفر» — Ministerial Resolution No. 4203, dated 1447H, published Umm Al-Qura Gazette No. 5151 (30 March 2026G). The companion Implementing Regulation to the already-ingested travel_documents_law track's own Article 14 requirement, flagged by that track's own official_source.json as 'NOT ingested this pass' pending this dedicated pass. **53 records, ALL 53 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — this is the founding/only version, issued ~4 months before this pass, no per-article amendment documented since). **10 formally-numbered فصول (chapters)** — a genuine numbered chapter structure, unlike the flat travel_documents_law (no أبواب/فصول at all) or the informally-sectioned domestic_labor_regulation (14 unnumbered thematic sections). **VERIFICATION TIER: TIER_3 (honest, NOT inflated)** — full access to a primary/official source was not achieved this pass despite genuinely attempting, in this corpus's required order: (1) laws.boe.gov.sa — no dedicated lawId page exists at all for this instrument, current or superseded, and a direct curl failed with a TLS connection error, the same recurring pattern documented elsewhere in this corpus for this portal; (2) moi.gov.sa/legacy.moi.gov.sa (the issuing Ministry) — both unreachable (TLS failure), independently reconfirming the parent travel_documents_law track's own finding for the same domain; gdp.gov.sa (General Directorate of Passports, this Regulation's own named issuing directorate) returned HTTP 503 twice; (3) uqn.gov.sa (Umm Al-Qura Official Gazette, the publication explicitly named in this Regulation's own Article 53) — the domain itself is reachable, but a JavaScript-heavy single-page application whose specific gazette-issue-5151 page could not be located this pass, a genuine unresolved access gap, not a domain-level failure. PRIMARY text actually used is qanoonsa.com (private aggregator, fetched via direct raw-HTML curl, NOT WebFetch's own LLM-summarization layer, to avoid any paraphrase risk); a single available Wayback Machine snapshot (16 Apr 2026) was diffed against the live fetch (19 Jul 2026) and found byte-identical for all 53 articles' substantive text. Cross-checked at the decree-metadata level against ncar.gov.sa (a genuine government archival body, confirming decree number, gazette issue, publication date, and the exact repeal citation, but only via WebFetch's own AI-summarization since direct curl got a TLS reset — corroborating metadata, not a sentence-level verbatim cross-check) and qanoniah.com (private, confirms a current version distinct from its own separately-dated 1422H predecessor page at the indexing level only). **CONFIRMED FULL REPEAL (not scoped/partial)**: Article 52 explicitly and specifically states this Regulation replaces IN FULL the prior Implementing Regulation issued by Ministerial Decision No. 7/waw-zay, dated 23/9/1422H, and its amendments — a genuine positive finding, modeled as a NEW repeals_full edge in the supersession graph; the 1422H predecessor itself (~69 articles across ~12 chapters per secondary sources only) is not ingested in this corpus (historical context only, one-instrument-per-pass rule). One confirmed source-side textual anomaly preserved verbatim, not silently fixed: Article 37(3)'s 'يمنع' appears split with an internal space as 'مي نع' in the sole available source, stable across both the live fetch and the single Wayback snapshot — flagged, not corrected, absent a second independent extraction of the same original document. RLM (U+200F) directional-control characters preceding list-item dashes (111 occurrences) were stripped as pure typographic normalization, consistent with this corpus's existing NBSP/curly-quote precedent. Arabic governs; not legal advice.",
+      "official_text_status": "QANOONSA_COM_RAW_HTML_DIRECT_FETCH_MAR2026_PUBLISH_APR2026_WAYBACK_JUL2026_LIVE_STABLE_X_NCAR_GOV_SA_OFFICIAL_ARCHIVE_METADATA_CROSSCHECK_X_QANONIAH_COM_INDEX_CONFIRM_BOE_NO_DEDICATED_LAWID_MOI_GDP_UNREACHABLE_UQN_GOV_SA_REACHABLE_BUT_SPECIFIC_GAZETTE_PAGE_NOT_LOCATED_THIS_PASS",
+      "record_counts": {
+        "arabic_articles": 53,
+        "legal_status_breakdown": {
+          "اصلية": 53,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 53
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. 4203, dated 1447H, published Umm Al-Qura Gazette No. 5151 (30 March 2026G) — laws.boe.gov.sa has NO dedicated lawId page at all for this Implementing Regulation (current or superseded); moi.gov.sa/gdp.gov.sa (the issuing Ministry and its General Directorate of Passports) were unreachable this pass; uqn.gov.sa (the gazette this Regulation's own Article 53 names) was domain-reachable but its specific gazette-issue page could not be located. PRIMARY source is instead qanoonsa.com (a private Arabic legal aggregator, direct raw-HTML fetch, Wayback-stable since 16 Apr 2026), cross-verified at the decree-metadata level against ncar.gov.sa (National Center for Archives and Records, a genuine government archival body) and qanoniah.com (private, indexing-level only)",
+      "status": "complete",
+      "track_id": "travel_documents_regulation",
+      "validator_targets": [
+        "make travel-documents-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7182,13 +7231,13 @@
       "trade_names": 23,
       "trademark": 52,
       "traffic": 86,
-      "travel_documents": 16,
+      "travel_documents": 69,
       "vat": 53,
       "whistleblower": 37,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9777,
+    "total_records": 9830,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

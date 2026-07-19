@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9777,
-  "total_references_extracted": 1978,
-  "intra_law_count": 1745,
+  "total_records_scanned": 9830,
+  "total_references_extracted": 1984,
+  "intra_law_count": 1751,
   "inter_law_count": 233,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1663,
-    "medium": 315
+    "high": 1667,
+    "medium": 317
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -20692,6 +20692,72 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة العاشرة",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "travel_documents_regulation",
+      "source_record_id": "travel-documents-regulation-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "travel_documents_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "travel_documents_regulation",
+      "source_record_id": "travel-documents-regulation-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "travel_documents_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "travel_documents_regulation",
+      "source_record_id": "travel-documents-regulation-llm-art-027",
+      "source_article_number": 27,
+      "type": "intra_law",
+      "target_track_id": "travel_documents_regulation",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة عشرة) من هذه اللائحة، على الممثليات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "travel_documents_regulation",
+      "source_record_id": "travel-documents-regulation-llm-art-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "travel_documents_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من النظام، ولها الحق في استدع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "travel_documents_regulation",
+      "source_record_id": "travel-documents-regulation-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "travel_documents_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من النظام الواقعة داخل المملك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "travel_documents_regulation",
+      "source_record_id": "travel-documents-regulation-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "travel_documents_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من النظام الواقعة خارج المملك",
+      "confidence": "high"
     },
     {
       "source_track_id": "vat_law",
