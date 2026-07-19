@@ -843,6 +843,40 @@ EDGES = [
                 "Predecessor not separately ingested in this corpus.",
         "source_ref": "sources/nationality/law/official_source/nationality_law_official_source.json (article 28)",
     },
+    {
+        "from_track_id": "civil_status_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام دائرة النفوس (السابق)",
+        "target_decree": "Supreme (Royal) Order No. 8172, 15/7/1358H",
+        "note": "civil_status_law's own official_source.json article 95: "
+                "'يلغي هذا النظام نظام دائرة النفوس الصادر بالأمر السامي رقم "
+                "8172 وتاريخ 15/7/1358هـ ... كما يلغي كل ما يتعارض معه.' "
+                "Modeled as a separate edge from the نظام المواليد والوفيات "
+                "repeal below since it is a distinct predecessor instrument "
+                "named in the same article. Predecessor not separately "
+                "ingested in this corpus.",
+        "source_ref": "sources/civil_status/law/official_source/civil_status_law_official_source.json (article 95)",
+    },
+    {
+        "from_track_id": "civil_status_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المواليد والوفيات (السابق)",
+        "target_decree": "Royal Decree No. 2, 11/1/1382H",
+        "note": "civil_status_law's own official_source.json article 95, "
+                "second repeal clause in the same article: 'ونظام المواليد "
+                "والوفيات الصادر بالمرسوم الملكي رقم 2 وتاريخ 11/1/1382هـ.' "
+                "Modeled as a separate edge from the نظام دائرة النفوس "
+                "repeal above since it is a distinct predecessor instrument "
+                "named in the same article; the same article also carves "
+                "out a single temporary exception (Royal Decree M/52, "
+                "3/9/1405H) that remains in force pending a general Council "
+                "of Ministers rule -- not modeled as a repeal, since it is "
+                "the OPPOSITE of a repeal (a preserved carve-out). "
+                "Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/civil_status/law/official_source/civil_status_law_official_source.json (article 95)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

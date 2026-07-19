@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 310,
-  "top1_hits": 284,
-  "top3_hits": 303,
-  "top5_hits": 306,
-  "top1_accuracy": 0.9161,
-  "top3_accuracy": 0.9774,
-  "top5_accuracy": 0.9871,
-  "mrr_at_5": 0.9463,
+  "total_queries": 312,
+  "top1_hits": 286,
+  "top3_hits": 305,
+  "top5_hits": 308,
+  "top1_accuracy": 0.9167,
+  "top3_accuracy": 0.9776,
+  "top5_accuracy": 0.9872,
+  "mrr_at_5": 0.9467,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9627,6 +9627,68 @@
      "record_id": "residency-law-llm-art-025",
      "article_number": 24,
      "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "csl-001",
+   "query_ar": "يلغي هذا النظام نظام دائرة النفوس الصادر بالأمر السامي رقم 8172 وتاريخ 15 / 7 / 1358 هـ، ونظام المواليد والوفيات الصادر بالمرسوم الملكي رقم 2 وتاريخ 11 / 1 / 1382 هـ",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_status",
+    "law_component": "law",
+    "article_number": 95
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-status-law-llm-art-095",
+     "article_number": 95,
+     "score": 50
+    },
+    {
+     "record_id": "awqaf-law-llm-art-025",
+     "article_number": 25,
+     "score": 38
+    },
+    {
+     "record_id": "enforcement-law-llm-art-096",
+     "article_number": 96,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "csl-002",
+   "query_ar": "هي المديرية العامة للأحوال المدنية المسئولة عن أعمال الأحوال المدنية",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_status",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-status-law-llm-art-002",
+     "article_number": 2,
+     "score": 23
+    },
+    {
+     "record_id": "oa-llm-companies-art-096",
+     "article_number": 96,
+     "score": 21
+    },
+    {
+     "record_id": "oa-llm-companies-art-168",
+     "article_number": 168,
+     "score": 21
     }
    ]
   }

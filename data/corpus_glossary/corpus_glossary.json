@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 141,
-  "total_terms": 810,
-  "total_definitions": 1230,
-  "tracks_with_definitions_article_parsed": 93,
+  "total_tracks_in_registry": 142,
+  "total_terms": 820,
+  "total_definitions": 1241,
+  "tracks_with_definitions_article_parsed": 94,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -391,6 +391,16 @@
         "term_as_written": "إخفاء الهوية",
         "definition_text": "إزالة المعرفات المباشرة وغير المباشرة التي تدل على هوية صاحب البيانات الشخصية بشكل نهائي يتعذر معه تحديد هوية صاحب البيانات الشخصية.",
         "source_record_id": "pdpl-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إدارة الأحوال المدنية": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "إدارة الأحوال المدنية",
+        "definition_text": "هي فرع المديرية في المنطقة المكلف ضمن دائرة اختصاصه بتسجيل الحالات المدنية لسكان المنطقة.",
+        "source_record_id": "civil-status-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1430,6 +1440,16 @@
         "definition_text": "كل مادة طبيعية أو منتج حيواني أو زراعي أو صناعي أو فكري.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "البطاقة الشخصية": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "البطاقة الشخصية",
+        "definition_text": "هي وثيقة الهوية الوطنية التي تصدرها الأحوال المدنية للسعودي وفقاً لأحكام هذا النظام، وذلك بشكليها الملموس أو الرقمي.",
+        "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "البلدية": [
@@ -2654,6 +2674,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الحالة المدنية": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "الحالة المدنية",
+        "definition_text": "هي كل ما يصف حياة المواطن المدنية بحصول إحدى الواقعات السابقة.",
+        "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الحجز التحفظي": [
       {
         "track_id": "aml_law",
@@ -3491,6 +3521,16 @@
         "term_as_written": "السجل العقاري",
         "definition_text": "مجموعة وثائق تبين أوصاف العقار وموقعه وحالته المادية والنظامية، وما يتبعه من حقوق والتزامات، والتعديلات التي تطرأ على ذلك، في ضوء الوثائق المعتبرة نظاماً.",
         "source_record_id": "real-estate-registration-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السجل المدني المركزي": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "السجل المدني المركزي",
+        "definition_text": "هو السجل العام الذي تدون فيه الحالات المدنية لجميع السعوديين.",
+        "source_record_id": "civil-status-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5266,6 +5306,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اللجنة الفرعية": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "اللجنة الفرعية",
+        "definition_text": "هي لجنة الأحوال المدنية المشكلة في كل منطقة، وفقا لنص الفقرة (ب) من المادة (82) من هذا النظام.",
+        "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللجنة المحلية": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "اللجنة المحلية",
+        "definition_text": "هي لجنة الأحوال المدنية المشكلة في كل إدارة أو مكتب للأحوال المدنية، وفقا لنص الفقرة (أ) من المادة (82) من هذا النظام.",
+        "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اللجنة الوزارية": [
       {
         "track_id": "gcc_anti_dumping_law",
@@ -6072,6 +6132,16 @@
         "definition_text": "مدير عام الجمارك أو من يماثله من الجهة المختصة أو في الإدارة وفق التنظيم\nالداخلي لجمارك الدول الأعضاء.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "المديرية": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "المديرية",
+        "definition_text": "هي المديرية العامة للأحوال المدنية المسئولة عن أعمال الأحوال المدنية.",
+        "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المدين": [
@@ -8424,6 +8494,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "الهيئة",
+        "definition_text": "هي هيئة الأحوال المدنية المركزية المشكلة وفقا لنص المادة (86) من هذا النظام.",
+        "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "companies_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -8573,6 +8651,16 @@
         "term_as_written": "الهيئة",
         "definition_text": "هيئة الزكاة والضريبة والجمارك.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الواقعة": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "الواقعة",
+        "definition_text": "هي حصول الميلاد أو الزواج أو الطلاق أو فقد الجنسية أو استردادها أو الوفاة، وكل حادثة يوجب هذا النظام أو لائحته التنفيذية تسجيلها، وكذلك جميع ما يتفرع عما سبق من: طوارئ وحوادث وما يستلزم تعديلا في تسجيلاتها.",
+        "source_record_id": "civil-status-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9990,6 +10078,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "سجل الواقعات": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "سجل الواقعات",
+        "definition_text": "هو السجل الذي تدون فيه واقعات الأحوال المدنية.",
+        "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "سجل تدريب السعوديين": [
       {
         "track_id": "labor_implementing_regulation",
@@ -11121,6 +11219,16 @@
         "term_as_written": "مكاتب المصالحة",
         "definition_text": "المكاتب التابعة للمركز.",
         "source_record_id": "muslaha-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مكتب الأحوال المدنية": [
+      {
+        "track_id": "civil_status_law",
+        "article_number": 2,
+        "term_as_written": "مكتب الأحوال المدنية",
+        "definition_text": "هو الجهة المكلفة بتسجيل واقعات الأحوال المدنية في سجل الواقعات ، ويكون تابعا لإحدى إدارات الأحوال المدنية.",
+        "source_record_id": "civil-status-law-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],

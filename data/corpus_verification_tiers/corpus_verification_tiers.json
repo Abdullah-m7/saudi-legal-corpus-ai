@@ -19,10 +19,10 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 141,
+  "total_tracks": 142,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 98,
-    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 14,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 15,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 7,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 22
   },
@@ -207,6 +207,13 @@
       "track_id": "civil_service_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_FULL_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "civil_status_law",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_SEVEN_SNAPSHOT_X_QANOONSA_COM_RESOLUTION_805_X_NEZAMS_CROSS_VERIFIED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت سبع لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 13 نوفمبر 2019 إلى 15 فبراير 2026، نص متطابق حرفياً في كل لقطة) كمصدر رسمي وحيد، وقورنت بـqanoonsa.com (عرض نص قرار مجلس الوزراء 805 المتعلق بتعديل 2024) وnezams.com (تأكيد هوية المرسوم التأسيسي والتعديلات السابقة). بخلاف تصنيف الوكيل الباحث الأولي (الذي اقترح TIER_1)، هذا مصدر رسمي/أساسي **واحد فقط** (BOE عبر Wayback) — قرار مجلس الوزراء 805 لم يُطّلع عليه من بوابة حكومية رسمية مباشرة، وإنما عبر قراءة qanoonsa.com له، وهو موقع تجميع قانوني خاص وليس بوابة حكومية (نفس الدور الذي يلعبه qanoonsa.com عبر هذه المدونة بأكملها كمصدر تدقيق هيكلي ثانوي دوماً، لا كمصدر رسمي مستقل مطلقاً — انظر press_law وnazaha_law وaccounting_auditing_law)، وnezams.com مجمِّع ثانوي معروف أيضاً. هذا يطابق تعريف TIER_2 (مصدر رسمي واحد + تدقيق ثانوي)، مماثل لسابقتي nationality_law وnazaha_law. راجع notes الخاصة بالمسار لإعادة البناء النظيف من سجل تعديلات BOE نفسه لـ24 مادة معدَّلة بمنهجية موحدة (لا يوجد has_per_article_variation هنا).",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },

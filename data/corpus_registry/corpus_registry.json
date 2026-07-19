@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9702,
+  "total_primary_arabic_governing_records": 9798,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10597,
-  "total_tracks": 141,
+  "total_registry_counted_records": 10693,
+  "total_tracks": 142,
   "tracks": [
     {
       "boundaries": {
@@ -6672,6 +6672,55 @@
       "validator_targets": [
         "make residency-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/civil_status/law/official_source/civil_status_law_official_source.json",
+        "sources/civil_status/law/verified/civil_status_law_verified_records.jsonl",
+        "data/civil_status_arabic_legal_llm/civil_status_law_legal_llm_001_096.json"
+      ],
+      "display_name_ar": "نظام الأحوال المدنية",
+      "display_name_en": "Saudi Arabian Civil Status Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/civil_status_arabic_legal_llm/civil_status_law_legal_llm_001_096.json",
+          "governing": true,
+          "record_count": 96,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabian Civil Status Law «نظام الأحوال المدنية» — Royal Decree No. M/7, dated 20/4/1407H (21 December 1986G), approved via Council of Ministers Resolution No. 1 (11/1/1407H). A medium-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing civil registration (births, deaths, marriages, national ID cards, family registers). **96 records: 72 اصلية, 24 معدلة** (Articles 2, 15, 16, 19, 20, 22, 25, 26, 30, 33, 34, 38, 40, 47, 50, 53, 67, 74, 76, 82, 83, 85, 87, 91) — flat structure, **NO أبواب/فصول**, no inline BOE article titles (spelled-ordinal labels only). **Confirmed dual repeal of predecessors:** this law's own Article 95 explicitly repeals TWO named predecessor laws — نظام دائرة النفوس (Supreme Order 8172, 15/7/1358H) and نظام المواليد والوفيات (Royal Decree 2, 11/1/1382H) — with a single temporary carve-out for Royal Decree M/52 (3/9/1405H) pending a general Council of Ministers rule; neither predecessor is ingested in this corpus (historical context only). **VERIFICATION TIER:** BOE-WAYBACK-SEVEN-SNAPSHOT-X-QANOONSA-COM-RESOLUTION-805-X-NEZAMS — the live laws.boe.gov.sa portal was unreachable this pass, but seven independent Wayback Machine snapshots of the exact law page (13 Nov 2019 through 15 Feb 2026, byte-identical main-body text throughout) were cross-verified against Council of Ministers Resolution 805 (via qanoonsa.com, confirming the most recent 2024G amendment to Articles 2/16/67) and nezams.com (confirming the founding decree identity and earlier amendments). **GENUINELY CONFIRMED BOE main-body staleness for 24 of 96 articles**, resolved via clean changelog incorporation: BOE's own main body still displays pre-amendment wording for these articles, but every one of the corresponding changelog popups supplies either a complete, self-contained replacement text or (for Article 2's second amendment) an explicit paragraph-addition instruction — the same clean-incorporation pattern already confirmed in this corpus's press_law, accounting_auditing_law, and nationality_law tracks. Other flagged discrepancies: 5 of the 24 amended articles (30, 33, 47, 50, 53) have a BOE changelog entry with NO decree number or date cited anywhere in the source (confirmed absent across all seven snapshots, an honest gap in BOE's own data, not fabricated); Article 74's changelog states it was amended 'more than once' but BOE documents only the final step; a purely typographic Eastern-Arabic-numeral/Western-numeral inconsistency between the preamble and Article 95's own body when citing the same repealed predecessors, preserved verbatim in both places. A companion Implementing Regulation (اللائحة التنفيذية لنظام الأحوال المدنية, Ministerial Decision 81, 19/5/1426H) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_SEVEN_SNAPSHOT_X_QANOONSA_COM_RESOLUTION_805_X_NEZAMS_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 96,
+        "legal_status_breakdown": {
+          "اصلية": 72,
+          "مضافة": 0,
+          "معدلة": 24,
+          "ملغاة": 0
+        },
+        "total": 96
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. M/7, dated 20/4/1407H (21 December 1986G), approved via Council of Ministers Resolution No. 1 (11/1/1407H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, seven independent snapshots spanning 13 Nov 2019 to 15 Feb 2026, byte-identical main-body text throughout), cross-verified against Council of Ministers Resolution 805 (via qanoonsa.com, confirming the most recent 2024G amendment) and nezams.com (confirming the founding decree identity, preamble, article count, and earlier amendments)",
+      "status": "complete",
+      "track_id": "civil_status_law",
+      "validator_targets": [
+        "make civil-status-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6702,6 +6751,7 @@
       "civil": 721,
       "civil_aviation": 180,
       "civil_service": 44,
+      "civil_status": 96,
       "commercial_agencies": 6,
       "commercial_books": 16,
       "commercial_courts": 377,
@@ -6789,7 +6839,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9533,
+    "total_records": 9629,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
