@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 322,
-  "top1_hits": 296,
-  "top3_hits": 315,
-  "top5_hits": 318,
-  "top1_accuracy": 0.9193,
-  "top3_accuracy": 0.9783,
-  "top5_accuracy": 0.9876,
-  "mrr_at_5": 0.9483,
+  "total_queries": 324,
+  "top1_hits": 298,
+  "top3_hits": 317,
+  "top5_hits": 320,
+  "top1_accuracy": 0.9198,
+  "top3_accuracy": 0.9784,
+  "top5_accuracy": 0.9877,
+  "mrr_at_5": 0.9487,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8167,8 +8167,8 @@
      "score": 16
     },
     {
-     "record_id": "oa-llm-companies-art-151",
-     "article_number": 151,
+     "record_id": "cybersecurity-authority-enablers-llm-art-005",
+     "article_number": 5,
      "score": 13
     }
    ]
@@ -9991,14 +9991,76 @@
      "score": 29
     },
     {
+     "record_id": "cybersecurity-authority-enablers-llm-art-001",
+     "article_number": 1,
+     "score": 27
+    },
+    {
+     "record_id": "cybersecurity-authority-enablers-llm-art-002",
+     "article_number": 2,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "nce-001",
+   "query_ar": "تكوّن بقرار من مجلس إدارة الهيئة الوطنية للأمن السيبراني لجنة أو أكثر لا يقل عدد أعضائها عن ثلاثة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "cybersecurity_authority",
+    "law_component": "enablers",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cybersecurity-authority-enablers-llm-art-004",
+     "article_number": 4,
+     "score": 60
+    },
+    {
      "record_id": "cybersecurity-authority-law-llm-art-007",
      "article_number": 7,
-     "score": 26
+     "score": 37
     },
     {
      "record_id": "cybersecurity-authority-law-llm-art-001",
      "article_number": 1,
-     "score": 22
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "nce-002",
+   "query_ar": "إذا ارتكب شخص أيًّا من المخالفات المشار إليها في البند أولاً من هذه الممكنات، فللهيئة الوطنية للأمن السيبراني في الحالات العاجلة والضرورية",
+   "category": "topical",
+   "gold": {
+    "corpus": "cybersecurity_authority",
+    "law_component": "enablers",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cybersecurity-authority-enablers-llm-art-003",
+     "article_number": 3,
+     "score": 56
+    },
+    {
+     "record_id": "cybersecurity-authority-enablers-llm-art-006",
+     "article_number": 6,
+     "score": 52
+    },
+    {
+     "record_id": "cybersecurity-authority-enablers-llm-art-002",
+     "article_number": 2,
+     "score": 50
     }
    ]
   }
