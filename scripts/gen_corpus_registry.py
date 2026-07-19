@@ -176,6 +176,7 @@ AWQAF_LAW_LLM = os.path.join(ROOT, "data", "awqaf_arabic_legal_llm", "awqaf_law_
 SAUDI_ENGINEERS_LAW_LLM = os.path.join(ROOT, "data", "saudi_engineers_arabic_legal_llm", "saudi_engineers_law_legal_llm_001_009.json")
 MUNICIPAL_COUNCILS_LAW_LLM = os.path.join(ROOT, "data", "municipal_councils_arabic_legal_llm", "municipal_councils_law_legal_llm_001_069.json")
 PRESS_LAW_LLM = os.path.join(ROOT, "data", "press_arabic_legal_llm", "press_law_legal_llm_001_049.json")
+ENGINEERING_PRACTICE_LAW_LLM = os.path.join(ROOT, "data", "engineering_practice_arabic_legal_llm", "engineering_practice_law_legal_llm_001_017.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -345,6 +346,7 @@ def main() -> int:
     saudi_engineers_law_llm = _load_json(SAUDI_ENGINEERS_LAW_LLM)
     municipal_councils_law_llm = _load_json(MUNICIPAL_COUNCILS_LAW_LLM)
     press_law_llm = _load_json(PRESS_LAW_LLM)
+    engineering_practice_law_llm = _load_json(ENGINEERING_PRACTICE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -365,7 +367,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 138,
+        "total_tracks": 139,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -507,6 +509,7 @@ def main() -> int:
             + saudi_engineers_law_llm["record_count"]  # 9 Law of the Saudi Council of Engineers (M/36, 1423H) (BOE-via-Wayback archive, three snapshots x saudieng.sa's own official website x press corroboration, live BOE unreachable, no predecessor found, see track notes)
             + municipal_councils_law_llm["record_count"]  # 69 Municipal Councils Law (M/61, 1435H) (BOE-via-Wayback archive, six snapshots x momah.gov.sa's own two official PDFs x nezams.com, zero amendments confirmed, partial repeal of predecessor Law of Municipalities and Villages Articles 2(b)/2(c)/7(b)/Chapter Two of Part Two, see track notes)
             + press_law_llm["record_count"]  # 49 Law on Printed Materials and Publication (M/32, 1421H) (BOE-via-near-live-Wayback x media.gov.sa's own official PDF x WIPO Lex/nezams.com/qanoonsa.com, currency-checked and confirmed still current over a still-unenacted draft Media Law, full repeal of the predecessor 1982 Press Law, see track notes)
+            + engineering_practice_law_llm["record_count"]  # 17 Law of the Practice of Engineering Professions (M/36, 1438H) (BOE-via-Wayback three snapshots x saudieng.sa's own official PDF x qanoonsa.com/qanoniah.com, decree-number collision with saudi_engineers_law re-confirmed, no predecessor found, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -639,6 +642,7 @@ def main() -> int:
             + saudi_engineers_law_llm["record_count"]
             + municipal_councils_law_llm["record_count"]
             + press_law_llm["record_count"]
+            + engineering_practice_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4713,6 +4717,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law on Printed Materials and Publication «نظام المطبوعات والنشر» — Royal Decree M/32, dated 3/9/1421H (29 November 2000), approved via Council of Ministers Resolution No. 211 (1/9/1421H). A low-priority coverage-gap identified via the coverage_gap_map research pass, which itself flagged a currency-check requirement given the media/press regulatory landscape's evolution since 2000. **CURRENCY CHECK CONFIRMED M/32 STILL CURRENT**: a comprehensive draft «نظام الإعلام» (Media Law) has been in public consultation since Nov 2023 but remains UNENACTED — confirmed via BOE's own page (near-live Wayback snapshot, 26 Feb 2026) still reading 'الحالة: ساري', the General Commission for Audiovisual Media's own regulations page listing no new comprehensive law, and independent legal-commentary corroboration; a red-herring «نظام تنظيم الإعلام الرقمي» that surfaced in research was identified and ruled out as a Jordanian law unrelated to Saudi Arabia. **49 records: 43 اصلية, 6 معدلة** (Articles 5, 9, 36, 37, 38, 40) — flat structure with 6 informal content groupings, **NO أبواب/فصول labels** in the source (Articles 1-12 untitled). **VERIFICATION TIER:** BOE-NEAR-LIVE-WAYBACK-X-MEDIA-GOV-SA-OFFICIAL-PDF-X-WIPO-LEX-X-NEZAMS-QANOONSA — the live laws.boe.gov.sa portal was unreachable this pass, but a near-live Wayback Machine snapshot (26 Feb 2026, ~5 months before this build) was structurally cross-verified against the Ministry of Media's own official PDF of this exact law (media.gov.sa, a genuinely separate regulator, not a BOE mirror), further corroborated by WIPO Lex's exact decree/date match and nezams.com/qanoonsa.com. **Confirmed full repeal of a predecessor:** this law's own Article 48 explicitly and fully repeals the prior 1982 Press and Publications Law (Royal Decree M/17, 13/4/1402H); the predecessor law is not ingested in this corpus (historical context only). **GENUINELY CONFIRMED BOE main-body staleness for all 6 amended articles**: BOE's own page simultaneously carries a 'changed-article' CSS class and a fully-quoted amendment changelog for Articles 5, 9, 36, 37, 38, and 40, while its main displayed body still shows the demonstrably older, pre-amendment wording — the same self-contradictory pattern already independently confirmed in this corpus's accounting_auditing_law and awqaf_law tracks; this track ingests the changelog-instructed amended wording as current and preserves BOE's stale wording verbatim in each article's original_2000_text field. Article 5 underwent two sequential amendments (Royal Decree M/18, 1441H, then Council of Ministers Resolution 594, 1442H) both applied sequentially as individually unambiguous phrase-level instructions; Articles 9/36/37/38/40 were each amended once by Royal Decree M/20 (1433H), restructuring the violations-committee and penalty regime. Other flagged discrepancies: the Ministry of Media's own PDF extracts with word-internal character scrambling (used only structurally, not verbatim); Chapter 1 (Articles 1-12) has no source heading, left undocumented rather than fabricated; minor BOE inline-span whitespace artifacts normalized and documented; two companion instruments (اللائحة التنفيذية لنظام المطبوعات والنشر and نظام المؤسسات الصحفية, a DIFFERENT M/20 dated 1422H) confirmed to exist but out of scope for this track, flagged as follow-up candidates. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "engineering_practice_law",
+                "display_name_ar": "نظام مزاولة المهن الهندسية",
+                "display_name_en": "Law of the Practice of Engineering Professions",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_PDF_X_QANOONSA_QANONIAH_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree M/36, 19/4/1438H, ratifying Council of Ministers Resolution No. 223 (18/4/1438H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, three independent snapshots spanning 14 Nov 2019 to 25 Feb 2026), cross-verified against the Saudi Council of Engineers' own official website (saudieng.sa, its own hosted PDF, Jun 2025) and qanoonsa.com/qanoniah.com structural cross-check",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": engineering_practice_law_llm["record_count"],
+                    "data_path": "data/engineering_practice_arabic_legal_llm/engineering_practice_law_legal_llm_001_017.json"}},
+                "record_counts": {"arabic_articles": engineering_practice_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 16, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": engineering_practice_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/engineering_practice/law/official_source/engineering_practice_law_official_source.json",
+                    "sources/engineering_practice/law/verified/engineering_practice_law_verified_records.jsonl",
+                    "data/engineering_practice_arabic_legal_llm/engineering_practice_law_legal_llm_001_017.json",
+                ],
+                "validator_targets": ["make engineering-practice-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of the Practice of Engineering Professions «نظام مزاولة المهن الهندسية» — Royal Decree M/36, dated 19/4/1438H (17 January 2017), ratifying Council of Ministers Resolution No. 223 (18/4/1438H). The strongest follow-up candidate flagged by the saudi_engineers_law track's own build pass, since this licensing/professional-conduct/discipline statute more closely matches the coverage-gap-map's original framing than that 9-article organizing statute. **17 records: 16 اصلية, 1 معدلة** (Article 1) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **DECREE-NUMBER COLLISION RE-CONFIRMED**: shares the identical bare decree number 'م/36' with the already-ingested saudi_engineers_law track (Royal Decree M/36, dated 26/9/1423H, 'Law of the Saudi Council of Engineers') at a completely different hijri date (~15 hijri years apart) — two genuinely distinct instruments; this law's own Article 1 presupposes that Authority's existence rather than repealing or replacing it. **No predecessor found (confirmed negative finding)**: a full-text search of this law's own text found zero repeal-language matches anywhere in the preamble or 17 articles. **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-SAUDIENG-SA-OFFICIAL-PDF-X-QANOONSA-QANONIAH — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (14 Nov 2019 through 25 Feb 2026, byte-identical main-body text throughout) were cross-verified against the Saudi Council of Engineers' own official website (saudieng.sa, its own hosted PDF, Jun 2025 snapshot, matching word-for-word for Articles 2-17), further structurally corroborated by qanoonsa.com/qanoniah.com. **GENUINE THREE-WAY ANOMALY carried forward (Article 1, supervising ministry)**: BOE's own changelog quotes Council of Ministers Resolution 250 (7/4/1444H) substituting a new ministry name, but BOE's own main body has read a THIRD, different wording at every checked snapshot since 2019 (predating Resolution 250 itself by ~3 years), and saudieng.sa's own current PDF shows a FOURTH, again-different wording reflecting a later administrative renaming not itself logged in BOE's changelog — following the awqaf_law Article 6 precedent for this exact failure mode (a changelog 'before'-phrase that does not match the article's own observed history blocks safe mechanical substitution), this track does NOT fabricate or guess a merged text; it ingests BOE's own stable main-body wording as Article 1's current text, marks it معدلة (BOE's own metadata flags it as changed), and documents the full three-way divergence, since corroborating evidence (Resolution 250 itself, saudieng.sa's differing wording, and a qanoonsa.com-indexed reissued Implementing Regulation from the Ministry of Municipal, Rural Affairs and Housing) confirms a real supervising-ministry transfer occurred even though no single primary source could confirm the exact current wording. Other flagged discrepancies: three companion instruments (اللائحة التنفيذية لنظام مزاولة المهن الهندسية, ميثاق المهندس, and لائحة الوظائف الهندسية) are confirmed to exist but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
             },
         ],
     }

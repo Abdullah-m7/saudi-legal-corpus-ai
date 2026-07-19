@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9586,
+  "total_primary_arabic_governing_records": 9603,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10481,
-  "total_tracks": 138,
+  "total_registry_counted_records": 10498,
+  "total_tracks": 139,
   "tracks": [
     {
       "boundaries": {
@@ -6525,6 +6525,55 @@
       "validator_targets": [
         "make press-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/engineering_practice/law/official_source/engineering_practice_law_official_source.json",
+        "sources/engineering_practice/law/verified/engineering_practice_law_verified_records.jsonl",
+        "data/engineering_practice_arabic_legal_llm/engineering_practice_law_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "نظام مزاولة المهن الهندسية",
+      "display_name_en": "Law of the Practice of Engineering Professions",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/engineering_practice_arabic_legal_llm/engineering_practice_law_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of the Practice of Engineering Professions «نظام مزاولة المهن الهندسية» — Royal Decree M/36, dated 19/4/1438H (17 January 2017), ratifying Council of Ministers Resolution No. 223 (18/4/1438H). The strongest follow-up candidate flagged by the saudi_engineers_law track's own build pass, since this licensing/professional-conduct/discipline statute more closely matches the coverage-gap-map's original framing than that 9-article organizing statute. **17 records: 16 اصلية, 1 معدلة** (Article 1) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **DECREE-NUMBER COLLISION RE-CONFIRMED**: shares the identical bare decree number 'م/36' with the already-ingested saudi_engineers_law track (Royal Decree M/36, dated 26/9/1423H, 'Law of the Saudi Council of Engineers') at a completely different hijri date (~15 hijri years apart) — two genuinely distinct instruments; this law's own Article 1 presupposes that Authority's existence rather than repealing or replacing it. **No predecessor found (confirmed negative finding)**: a full-text search of this law's own text found zero repeal-language matches anywhere in the preamble or 17 articles. **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-SAUDIENG-SA-OFFICIAL-PDF-X-QANOONSA-QANONIAH — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (14 Nov 2019 through 25 Feb 2026, byte-identical main-body text throughout) were cross-verified against the Saudi Council of Engineers' own official website (saudieng.sa, its own hosted PDF, Jun 2025 snapshot, matching word-for-word for Articles 2-17), further structurally corroborated by qanoonsa.com/qanoniah.com. **GENUINE THREE-WAY ANOMALY carried forward (Article 1, supervising ministry)**: BOE's own changelog quotes Council of Ministers Resolution 250 (7/4/1444H) substituting a new ministry name, but BOE's own main body has read a THIRD, different wording at every checked snapshot since 2019 (predating Resolution 250 itself by ~3 years), and saudieng.sa's own current PDF shows a FOURTH, again-different wording reflecting a later administrative renaming not itself logged in BOE's changelog — following the awqaf_law Article 6 precedent for this exact failure mode (a changelog 'before'-phrase that does not match the article's own observed history blocks safe mechanical substitution), this track does NOT fabricate or guess a merged text; it ingests BOE's own stable main-body wording as Article 1's current text, marks it معدلة (BOE's own metadata flags it as changed), and documents the full three-way divergence, since corroborating evidence (Resolution 250 itself, saudieng.sa's differing wording, and a qanoonsa.com-indexed reissued Implementing Regulation from the Ministry of Municipal, Rural Affairs and Housing) confirms a real supervising-ministry transfer occurred even though no single primary source could confirm the exact current wording. Other flagged discrepancies: three companion instruments (اللائحة التنفيذية لنظام مزاولة المهن الهندسية, ميثاق المهندس, and لائحة الوظائف الهندسية) are confirmed to exist but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_PDF_X_QANOONSA_QANONIAH_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 16,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree M/36, 19/4/1438H, ratifying Council of Ministers Resolution No. 223 (18/4/1438H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, three independent snapshots spanning 14 Nov 2019 to 25 Feb 2026), cross-verified against the Saudi Council of Engineers' own official website (saudieng.sa, its own hosted PDF, Jun 2025) and qanoonsa.com/qanoniah.com structural cross-check",
+      "status": "complete",
+      "track_id": "engineering_practice_law",
+      "validator_targets": [
+        "make engineering-practice-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6573,6 +6622,7 @@
       "elitigation_guide": 5,
       "enforcement": 371,
       "enforcement_providers": 18,
+      "engineering_practice": 17,
       "environmental": 49,
       "evidence": 322,
       "finance_companies": 41,
@@ -6639,7 +6689,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9417,
+    "total_records": 9434,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

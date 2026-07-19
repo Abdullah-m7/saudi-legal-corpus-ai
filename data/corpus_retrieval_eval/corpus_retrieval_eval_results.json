@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 304,
-  "top1_hits": 278,
-  "top3_hits": 297,
-  "top5_hits": 300,
-  "top1_accuracy": 0.9145,
-  "top3_accuracy": 0.977,
-  "top5_accuracy": 0.9868,
-  "mrr_at_5": 0.9453,
+  "total_queries": 306,
+  "top1_hits": 280,
+  "top3_hits": 299,
+  "top5_hits": 302,
+  "top1_accuracy": 0.915,
+  "top3_accuracy": 0.9771,
+  "top5_accuracy": 0.9869,
+  "mrr_at_5": 0.9456,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9278,14 +9278,14 @@
      "score": 49
     },
     {
-     "record_id": "labor-annex3-llm-art-014",
-     "article_number": 14,
-     "score": 28
+     "record_id": "engineering-practice-law-llm-art-001",
+     "article_number": 1,
+     "score": 29
     },
     {
-     "record_id": "labor-annex3-llm-art-001",
-     "article_number": 1,
-     "score": 24
+     "record_id": "engineering-practice-law-llm-art-011",
+     "article_number": 11,
+     "score": 28
     }
    ]
   },
@@ -9441,6 +9441,68 @@
      "record_id": "oa-llm-companies-art-102",
      "article_number": 102,
      "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "epl-001",
+   "query_ar": "مع مراعاة ما تقضي به الأنظمة ذات الصلة وما ورد في الفقرة 1 من المادة الثانية من النظام لا يجوز للمكاتب والشركات الهندسية مزاولة أي من المهن الهندسية إلا بعد الحصول على الترخيص اللازم من الوزارة",
+   "category": "topical",
+   "gold": {
+    "corpus": "engineering_practice",
+    "law_component": "law",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "engineering-practice-law-llm-art-010",
+     "article_number": 10,
+     "score": 78
+    },
+    {
+     "record_id": "engineering-practice-law-llm-art-011",
+     "article_number": 11,
+     "score": 54
+    },
+    {
+     "record_id": "engineering-practice-law-llm-art-004",
+     "article_number": 4,
+     "score": 49
+    }
+   ]
+  },
+  {
+   "query_id": "epl-002",
+   "query_ar": "يجوز تضمين الحكم أو القرار المكتسب القطعية الصادر بالعقوبة النص على نشره على نفقة المخالف في ثلاث صحف محلية تصدر إحداها على الأقل في مقر إقامته",
+   "category": "topical",
+   "gold": {
+    "corpus": "engineering_practice",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "engineering-practice-law-llm-art-013",
+     "article_number": 13,
+     "score": 43
+    },
+    {
+     "record_id": "aml-law-llm-art-032",
+     "article_number": 32,
+     "score": 31
+    },
+    {
+     "record_id": "ecommerce-law-llm-art-021",
+     "article_number": 21,
+     "score": 30
     }
    ]
   }

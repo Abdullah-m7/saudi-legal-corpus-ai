@@ -300,6 +300,8 @@ LAYERS = [
      "municipal_councils", "law"),
     ("data/press_arabic_legal_llm/press_law_legal_llm_001_049.json",
      "press", "law"),
+    ("data/engineering_practice_arabic_legal_llm/engineering_practice_law_legal_llm_001_017.json",
+     "engineering_practice", "law"),
 ]
 
 
