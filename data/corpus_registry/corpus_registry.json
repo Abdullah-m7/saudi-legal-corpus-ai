@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9861,
+  "total_primary_arabic_governing_records": 9894,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10756,
-  "total_tracks": 144,
+  "total_registry_counted_records": 10789,
+  "total_tracks": 145,
   "tracks": [
     {
       "boundaries": {
@@ -6819,6 +6819,55 @@
       "validator_targets": [
         "make health-system-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/domestic_labor/regulation/official_source/domestic_labor_regulation_official_source.json",
+        "sources/domestic_labor/regulation/verified/domestic_labor_regulation_verified_records.jsonl",
+        "data/domestic_labor_arabic_legal_llm/domestic_labor_regulation_legal_llm_001_033.json"
+      ],
+      "display_name_ar": "لائحة العمالة المنزلية ومن في حكمهم",
+      "display_name_en": "Domestic Labor Regulation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/domestic_labor_arabic_legal_llm/domestic_labor_regulation_legal_llm_001_033.json",
+          "governing": true,
+          "record_count": 33,
+          "status": "complete"
+        }
+      },
+      "notes": "Domestic Labor Regulation «لائحة العمالة المنزلية ومن في حكمهم» — Ministerial Decision No. 40676, dated 17/3/1445H (2 October 2023G), issued by the Minister of Human Resources and Social Development under Labor Law Article 7 (M/51, 23/8/1426H). A medium-priority coverage-gap identified via a fresh gap-scan pass, governing the contractual relationship between domestic employers and domestic workers (hours, wages, leave, end-of-service, penalties), distinct from this corpus's general labor_law track. **33 records, all 33 اصلية** — flat 14-section thematic structure (not formally numbered as أبواب/فصول). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa's own dedicated lawId page for this topic is confirmed stale (still shows only the superseded 310/1434H predecessor across 18+ months of Wayback snapshots, a genuine BOE coverage gap for this specific topic, not merely this pass's access failure); the PRIMARY source is instead hrsd.gov.sa (the issuing Ministry's own official site), which counts as ONE genuinely official/primary source — cross-checked against qanoonsa.com and lexismiddleeast.com, both private-aggregator secondary sources that do NOT count as a second independent official source, so TIER_1 is not warranted. **CONFIRMED NAMED REPEAL**: Clause (ثانياً) of the Ministerial Decision itself explicitly states this regulation replaces لائحة عمال الخدمة المنزلية ومن في حكمهم (Council of Ministers Decision No. 310, dated 7/9/1434H, 23 articles) — a genuine positive finding, modeled as a repeals_full edge in the supersession graph; the 1434H predecessor itself is not ingested in this corpus (historical context only). Genuine anomalies preserved, not fabricated or silently fixed: **Article 33 is genuinely truncated in the source PDF itself** (confirmed stable across 3 independent Wayback snapshots and 2 independent extraction tools, poppler pdftotext and PyMuPDF, both stopping at the identical character) — flagged text_complete=False, no completion or guessing of the missing tail; the source PDF's own cover page and preamble retain an unfilled draft template (blank decree number/date parentheses, a 'مسودة' header) despite being hosted as the current governing text, preserved verbatim; a likely genuine source typo (missing space in Article 29(a)'s 'أوبهما' vs. Article 30(1)'s correctly-spaced 'أو بهما') is preserved, not silently corrected. Two source-artifact-layer (not content) extraction defects were corrected: a font ligature bug ('تر' misread as 'بخ', fixed via a 10-word verified dictionary) and mirrored/reversed parentheses (fixed via a global paren swap) — no wording, number, or substantive provision was altered. A companion instrument (ضوابط تحسين العلاقة التعاقدية للعمالة المنزلية ومن في حكمهم, announced ~28 March 2024) is confirmed to be a separate administrative/procedural initiative, not a textual amendment to this regulation's numbered articles, and is out of scope for this track. Arabic governs; not legal advice.",
+      "official_text_status": "HRSD_GOV_SA_PRIMARY_X_QANOONSA_LEXISMIDDLEEAST_CROSS_VERIFIED_BOE_CONFIRMED_STALE_FOR_THIS_TOPIC",
+      "record_counts": {
+        "arabic_articles": 33,
+        "legal_status_breakdown": {
+          "اصلية": 33,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 33
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. 40676, dated 17/3/1445H (2 October 2023G), issued by the Minister of Human Resources and Social Development under authority of Labor Law Article 7 (M/51, 23/8/1426H) — laws.boe.gov.sa was checked first per this corpus's standard methodology, but its dedicated lawId page for this topic is confirmed STALE across 18+ months of Wayback snapshots (most recent: 6 Sep 2025), still showing only the superseded 2013/1434H predecessor; the PRIMARY source is instead hrsd.gov.sa (the issuing Ministry's own official site, a PDF fetched directly with 200 OK and confirmed stable via 3 independent Wayback snapshots sharing an identical digest), cross-verified against qanoonsa.com (decree number/date/repeal clause) and lexismiddleeast.com (independent confirmation of the 33-article structure)",
+      "status": "complete",
+      "track_id": "domestic_labor_regulation",
+      "validator_targets": [
+        "make domestic-labor-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6863,6 +6912,7 @@
       "criminal_procedure": 403,
       "customs": 224,
       "documentation_settlement": 15,
+      "domestic_labor": 33,
       "ecommerce": 26,
       "electronic_transactions": 31,
       "elitigation_guide": 5,
@@ -6939,7 +6989,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9692,
+    "total_records": 9725,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

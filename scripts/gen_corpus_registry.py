@@ -182,6 +182,7 @@ RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "residency_arabic_legal_llm", "re
 CIVIL_STATUS_LAW_LLM = os.path.join(ROOT, "data", "civil_status_arabic_legal_llm", "civil_status_law_legal_llm_001_096.json")
 FOOD_LAW_LLM = os.path.join(ROOT, "data", "food_arabic_legal_llm", "food_law_legal_llm_001_044.json")
 HEALTH_SYSTEM_LAW_LLM = os.path.join(ROOT, "data", "health_system_arabic_legal_llm", "health_system_law_legal_llm_001_019.json")
+DOMESTIC_LABOR_REGULATION_LLM = os.path.join(ROOT, "data", "domestic_labor_arabic_legal_llm", "domestic_labor_regulation_legal_llm_001_033.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -357,6 +358,7 @@ def main() -> int:
     civil_status_law_llm = _load_json(CIVIL_STATUS_LAW_LLM)
     food_law_llm = _load_json(FOOD_LAW_LLM)
     health_system_law_llm = _load_json(HEALTH_SYSTEM_LAW_LLM)
+    domestic_labor_regulation_llm = _load_json(DOMESTIC_LABOR_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -377,7 +379,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 144,
+        "total_tracks": 145,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -525,6 +527,7 @@ def main() -> int:
             + civil_status_law_llm["record_count"]  # 96 Saudi Arabian Civil Status Law (Royal Decree M/7, 1407H) (TIER_2, BOE-via-Wayback seven snapshots x qanoonsa.com x nezams.com secondary cross-checks, confirmed dual repeal of two 1358H/1382H predecessors, 24 of 96 articles cleanly reconstructed from BOE's own changelog, see track notes)
             + food_law_llm["record_count"]  # 44 Saudi Arabian Food Law (Royal Decree M/1, 1436H) (TIER_2 conservative, single SFDA-PDF primary source visually transcribed, BOE and Wayback both completely unreachable, all 44 recovered articles اصلية, Article 1 excluded as unrecoverable, see track notes)
             + health_system_law_llm["record_count"]  # 19 Saudi Arabian Health System Law (Royal Decree M/11, 1423H) (TIER_3, BOE unreachable both live and Wayback, nezams.com x qanoonsa.com CoM Resolution 151 cross-verified, confirmed negative repeal finding, see track notes)
+            + domestic_labor_regulation_llm["record_count"]  # 33 Domestic Labor Regulation (Ministerial Decision 40676, 1445H) (TIER_2, BOE confirmed stale for this topic, PRIMARY hrsd.gov.sa x qanoonsa.com/lexismiddleeast.com secondary cross-checks, confirmed named repeal of the 1434H CoM Decision 310 predecessor, Article 33 text_complete=False genuine source truncation, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -663,6 +666,7 @@ def main() -> int:
             + civil_status_law_llm["record_count"]
             + food_law_llm["record_count"]
             + health_system_law_llm["record_count"]
+            + domestic_labor_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4905,6 +4909,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Saudi Arabian Health System Law «النظام الصحي» (also known as the Public Health Law) — Royal Decree No. M/11, dated 23/3/1423H (4 June 2002G), approved via Council of Ministers Resolution No. 76 (22/3/1423H). A medium-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing the public health system, health facilities, and epidemic/communicable-disease control, distinct from this corpus's already-ingested cooperative_health_insurance_law (insurance) and healthcare_professions_law (professional licensing/discipline) tracks. **19 records: 15 اصلية, 4 معدلة** (Articles 4, 5, 16, 17) — flat structure, **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa was unreachable this pass, both the live portal (HTTP 503, repeated) and the usual Wayback Machine fallback (blocked/403 this pass); istitlaa.ncc.gov.sa also unreachable (TLS reset). Two genuinely independent secondary sources were instead cross-verified: nezams.com (full verbatim text, programmatically extracted) and qanoonsa.com (raw text of Council of Ministers Resolution 151, an actual Umm Al-Qura Gazette reproduction, not an aggregation of nezams.com) — these agree on the founding decree identity and on 4 of 5 Article 16 amendment resolutions (CoM Resolutions 418/1435H, 283/1440H, 442/1440H, 185/1443H). **No specific named predecessor** — Article 19 gives only a generic conflict-only repeal clause ('يلغي كل ما يتعارض معه من أحكام', naming no instrument), a confirmed negative finding flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. Genuine anomalies preserved: Article 16's latest amendment step (CoM Resolution 151, 1444H) is documented in amendment_history as having occurred but NOT merged into the article's current text, since neither source gives an explicitly-numbered replacement sub-paragraph — merging it would require fabricating an insertion point; Resolution 151 also cites a prior Resolution 475 (1436H) whose substance is undocumented in either source; Article 16 paragraph (ب) contains a stale sub-paragraph cross-reference to pre-185 numbering; a verbatim source typo in nezams.com's reproduction of Resolution 185 ('الهيئة اعامة' instead of 'الهيئة العامة') is preserved, not corrected. A companion Implementing Regulation (اللائحة التنفيذية للنظام الصحي) is confirmed to exist but is out of scope for this track (source unreachable this pass anyway), flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "domestic_labor_regulation",
+                "display_name_ar": "لائحة العمالة المنزلية ومن في حكمهم",
+                "display_name_en": "Domestic Labor Regulation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "HRSD_GOV_SA_PRIMARY_X_QANOONSA_LEXISMIDDLEEAST_CROSS_VERIFIED_BOE_CONFIRMED_STALE_FOR_THIS_TOPIC",
+                "source_authority": "Ministerial Decision No. 40676, dated 17/3/1445H (2 October 2023G), issued by the Minister of Human Resources and Social Development under authority of Labor Law Article 7 (M/51, 23/8/1426H) — laws.boe.gov.sa was checked first per this corpus's standard methodology, but its dedicated lawId page for this topic is confirmed STALE across 18+ months of Wayback snapshots (most recent: 6 Sep 2025), still showing only the superseded 2013/1434H predecessor; the PRIMARY source is instead hrsd.gov.sa (the issuing Ministry's own official site, a PDF fetched directly with 200 OK and confirmed stable via 3 independent Wayback snapshots sharing an identical digest), cross-verified against qanoonsa.com (decree number/date/repeal clause) and lexismiddleeast.com (independent confirmation of the 33-article structure)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": domestic_labor_regulation_llm["record_count"],
+                    "data_path": "data/domestic_labor_arabic_legal_llm/domestic_labor_regulation_legal_llm_001_033.json"}},
+                "record_counts": {"arabic_articles": domestic_labor_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 33, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": domestic_labor_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/domestic_labor/regulation/official_source/domestic_labor_regulation_official_source.json",
+                    "sources/domestic_labor/regulation/verified/domestic_labor_regulation_verified_records.jsonl",
+                    "data/domestic_labor_arabic_legal_llm/domestic_labor_regulation_legal_llm_001_033.json",
+                ],
+                "validator_targets": ["make domestic-labor-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Domestic Labor Regulation «لائحة العمالة المنزلية ومن في حكمهم» — Ministerial Decision No. 40676, dated 17/3/1445H (2 October 2023G), issued by the Minister of Human Resources and Social Development under Labor Law Article 7 (M/51, 23/8/1426H). A medium-priority coverage-gap identified via a fresh gap-scan pass, governing the contractual relationship between domestic employers and domestic workers (hours, wages, leave, end-of-service, penalties), distinct from this corpus's general labor_law track. **33 records, all 33 اصلية** — flat 14-section thematic structure (not formally numbered as أبواب/فصول). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa's own dedicated lawId page for this topic is confirmed stale (still shows only the superseded 310/1434H predecessor across 18+ months of Wayback snapshots, a genuine BOE coverage gap for this specific topic, not merely this pass's access failure); the PRIMARY source is instead hrsd.gov.sa (the issuing Ministry's own official site), which counts as ONE genuinely official/primary source — cross-checked against qanoonsa.com and lexismiddleeast.com, both private-aggregator secondary sources that do NOT count as a second independent official source, so TIER_1 is not warranted. **CONFIRMED NAMED REPEAL**: Clause (ثانياً) of the Ministerial Decision itself explicitly states this regulation replaces لائحة عمال الخدمة المنزلية ومن في حكمهم (Council of Ministers Decision No. 310, dated 7/9/1434H, 23 articles) — a genuine positive finding, modeled as a repeals_full edge in the supersession graph; the 1434H predecessor itself is not ingested in this corpus (historical context only). Genuine anomalies preserved, not fabricated or silently fixed: **Article 33 is genuinely truncated in the source PDF itself** (confirmed stable across 3 independent Wayback snapshots and 2 independent extraction tools, poppler pdftotext and PyMuPDF, both stopping at the identical character) — flagged text_complete=False, no completion or guessing of the missing tail; the source PDF's own cover page and preamble retain an unfilled draft template (blank decree number/date parentheses, a 'مسودة' header) despite being hosted as the current governing text, preserved verbatim; a likely genuine source typo (missing space in Article 29(a)'s 'أوبهما' vs. Article 30(1)'s correctly-spaced 'أو بهما') is preserved, not silently corrected. Two source-artifact-layer (not content) extraction defects were corrected: a font ligature bug ('تر' misread as 'بخ', fixed via a 10-word verified dictionary) and mirrored/reversed parentheses (fixed via a global paren swap) — no wording, number, or substantive provision was altered. A companion instrument (ضوابط تحسين العلاقة التعاقدية للعمالة المنزلية ومن في حكمهم, announced ~28 March 2024) is confirmed to be a separate administrative/procedural initiative, not a textual amendment to this regulation's numbered articles, and is out of scope for this track. Arabic governs; not legal advice.",
             },
         ],
     }

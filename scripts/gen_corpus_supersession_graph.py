@@ -877,6 +877,23 @@ EDGES = [
                 "Predecessor not separately ingested in this corpus.",
         "source_ref": "sources/civil_status/law/official_source/civil_status_law_official_source.json (article 95)",
     },
+    {
+        "from_track_id": "domestic_labor_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "لائحة عمال الخدمة المنزلية ومن في حكمهم (السابقة)",
+        "target_decree": "Council of Ministers Decision No. 310, 7/9/1434H",
+        "note": "domestic_labor_regulation's own verified_summary.json amendment_history: "
+                "clause (ثانياً) of Ministerial Decision No. 40676 (17/3/1445H) states this "
+                "regulation 'تحل محل' (replaces) لائحة عمال الخدمة المنزلية ومن في حكمهم, issued "
+                "by Council of Ministers Decision No. 310 dated 7/9/1434H (23 articles), with an "
+                "additional general conflict-only clause (ثالثاً) for anything else inconsistent. "
+                "A confirmed named repeal of a specific predecessor instrument by decree number "
+                "and date. Predecessor not separately ingested in this corpus (still shown, "
+                "unrevised, on both nezams.com and the Bureau of Experts portal's own dedicated "
+                "lawId page for this topic — a documented BOE-portal staleness gap, see track notes).",
+        "source_ref": "sources/domestic_labor/regulation/verified/domestic_labor_regulation_verified_summary.json (amendment_history)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

@@ -7,14 +7,15 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 144 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 144 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 145 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 145 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 144,
-  "known_source_staleness_risk_count": 11,
+  "total_tracks": 145,
+  "known_source_staleness_risk_count": 12,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
     "awqaf_law",
     "civil_status_law",
+    "domestic_labor_regulation",
     "engineering_practice_law",
     "environmental_law",
     "income_tax_law",
@@ -886,6 +887,28 @@
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "domestic_labor_regulation",
+      "display_name_en": "Domestic Labor Regulation",
+      "display_name_ar": "لائحة العمالة المنزلية ومن في حكمهم",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='HRSD_GOV_SA_PRIMARY_X_QANOONSA_LEXISMIDDLEEAST_CROSS_VERIFIED_BOE_CONFIRMED_STALE_FOR_THIS_TOPIC': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Ministerial Decision No. 40676, dated 17/3/1445H (2 October 2023G), issued by the Minister of Human Resources and Social Development under authority of Labor Law Article 7 (M/51, 23/8/1426H) — laws.boe.gov.sa was checked first per this corpus's standard methodology, but its dedicated lawId page for this topic is confirmed STALE across 18+ months of Wayback snapshots (most recent: 6 Sep 2025), still showing only the superseded 2013/1434H predecessor; the PRIMARY source is instead hrsd.gov.sa (the issuing Ministry's own official site, a PDF fetched directly with 200 OK and confirmed stable via 3 independent Wayback snapshots sharing an identical digest), cross-verified against qanoonsa.com (decree number/date/repeal clause) and lexismiddleeast.com (independent confirmation of the 33-article structure)",
+      "registry_source_url": null,
+      "official_source_file": "sources/domestic_labor/regulation/official_source/domestic_labor_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "hrsd.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "domestic_labor_boe_portal_stale: بوابة هيئة الخبراء (laws.boe.gov.sa) لا تزال، حتى أحدث لقطة أرشيفية مفحوصة (6 سبتمبر 2025)، تعرض حصراً اللائحة السابقة الملغاة (لائحة عمال الخدمة المنزلية ومن في حكمهم، قرار مجلس الوزراء رقم 310، 7/9/1434هـ، 23 مادة) على"
     },
     {
       "track_id": "ecommerce_law",

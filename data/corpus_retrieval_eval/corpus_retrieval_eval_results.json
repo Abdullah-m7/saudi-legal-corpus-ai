@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 316,
-  "top1_hits": 290,
-  "top3_hits": 309,
-  "top5_hits": 312,
-  "top1_accuracy": 0.9177,
-  "top3_accuracy": 0.9778,
-  "top5_accuracy": 0.9873,
-  "mrr_at_5": 0.9474,
+  "total_queries": 318,
+  "top1_hits": 292,
+  "top3_hits": 311,
+  "top5_hits": 314,
+  "top1_accuracy": 0.9182,
+  "top3_accuracy": 0.978,
+  "top5_accuracy": 0.9874,
+  "mrr_at_5": 0.9477,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1497,14 +1497,14 @@
      "score": 19
     },
     {
+     "record_id": "domestic-labor-regulation-llm-art-022",
+     "article_number": 22,
+     "score": 14
+    },
+    {
      "record_id": "oa-llm-companies-art-076",
      "article_number": 76,
      "score": 12
-    },
-    {
-     "record_id": "civil-service-law-llm-art-007",
-     "article_number": 7,
-     "score": 11
     }
    ]
   },
@@ -3207,8 +3207,8 @@
      "score": 20
     },
     {
-     "record_id": "nazaha-law-llm-art-018",
-     "article_number": 18,
+     "record_id": "domestic-labor-regulation-llm-art-005",
+     "article_number": 5,
      "score": 19
     }
    ]
@@ -5248,14 +5248,14 @@
      "score": 37
     },
     {
+     "record_id": "domestic-labor-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 32
+    },
+    {
      "record_id": "labor-reg-llm-art-004",
      "article_number": 4,
      "score": 27
-    },
-    {
-     "record_id": "labor-reg-llm-art-014",
-     "article_number": 14,
-     "score": 26
     }
    ]
   },
@@ -5315,9 +5315,9 @@
      "score": 18
     },
     {
-     "record_id": "judiciary-bog-mechanism-llm-art-009",
-     "article_number": 9,
-     "score": 15
+     "record_id": "domestic-labor-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 16
     }
    ]
   },
@@ -8446,8 +8446,8 @@
      "score": 15
     },
     {
-     "record_id": "pdpl-reg-llm-art-006",
-     "article_number": 6,
+     "record_id": "domestic-labor-regulation-llm-art-001",
+     "article_number": 1,
      "score": 14
     }
    ]
@@ -8973,9 +8973,9 @@
      "score": 16
     },
     {
-     "record_id": "civil-law-llm-art-449",
-     "article_number": 449,
-     "score": 14
+     "record_id": "domestic-labor-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 15
     }
    ]
   },
@@ -9813,6 +9813,68 @@
      "record_id": "awqaf-law-llm-art-006",
      "article_number": 6,
      "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "dlr-001",
+   "query_ar": "اللائحة: لائحة العمالة المنزلية ومن في حكمهم",
+   "category": "definitional",
+   "gold": {
+    "corpus": "domestic_labor",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "domestic-labor-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 41
+    },
+    {
+     "record_id": "domestic-labor-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 32
+    },
+    {
+     "record_id": "domestic-labor-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "dlr-002",
+   "query_ar": "تؤول الغرامات التي يتم ايقاعها وفق جدول المخالفات والعقوبات إلى حساب بنكي للمساه",
+   "category": "topical",
+   "gold": {
+    "corpus": "domestic_labor",
+    "law_component": "regulation",
+    "article_number": 33
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "domestic-labor-regulation-llm-art-033",
+     "article_number": 33,
+     "score": 36
+    },
+    {
+     "record_id": "oa-llm-companies-art-262",
+     "article_number": 262,
+     "score": 13
+    },
+    {
+     "record_id": "inv-reg-llm-art-027",
+     "article_number": 27,
+     "score": 13
     }
    ]
   }
