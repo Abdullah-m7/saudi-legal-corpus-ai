@@ -1337,6 +1337,19 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "articles, and not a supersession-graph relationship.)",
         "source_ref": "sources/food/regulation/official_source/food_regulation_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["vat_regulation"],
+        "issue": "confirmed negative repeal finding -- no separate named predecessor beyond the parent Law",
+        "note": "vat_regulation (ZATCA Board of Directors Resolution No. "
+                "(3839), 14 Dhul-Hijjah 1438H) names no repealed predecessor "
+                "Implementing Regulation anywhere in its 82 articles -- it is "
+                "the first and only Implementing Regulation issued under the "
+                "already-ingested vat_law track's own authority (Royal Decree "
+                "M/113, 2/11/1438H), and consolidates 11 subsequent amending "
+                "Board resolutions rather than repealing/replacing a prior "
+                "regulation. No edge modeled.",
+        "source_ref": "sources/vat/regulation/official_source/vat_regulation_official_source.json (verification_methodology_note)",
+    },
 ]
 
 

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 338,
-  "top1_hits": 312,
-  "top3_hits": 331,
-  "top5_hits": 334,
-  "top1_accuracy": 0.9231,
-  "top3_accuracy": 0.9793,
+  "total_queries": 340,
+  "top1_hits": 314,
+  "top3_hits": 333,
+  "top5_hits": 336,
+  "top1_accuracy": 0.9235,
+  "top3_accuracy": 0.9794,
   "top5_accuracy": 0.9882,
-  "mrr_at_5": 0.9503,
+  "mrr_at_5": 0.9506,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1249,13 +1249,13 @@
      "score": 29
     },
     {
-     "record_id": "competition-law-llm-art-002",
-     "article_number": 2,
-     "score": 5
+     "record_id": "vat-regulation-llm-art-041",
+     "article_number": 38,
+     "score": 6
     },
     {
-     "record_id": "customs-law-llm-art-104",
-     "article_number": 99,
+     "record_id": "competition-law-llm-art-002",
+     "article_number": 2,
      "score": 5
     }
    ]
@@ -8596,14 +8596,14 @@
      "score": 41
     },
     {
-     "record_id": "oa-llm-companies-art-081",
-     "article_number": 81,
-     "score": 19
+     "record_id": "vat-regulation-llm-art-073",
+     "article_number": 70,
+     "score": 25
     },
     {
-     "record_id": "oa-llm-companies-art-069",
-     "article_number": 69,
-     "score": 18
+     "record_id": "vat-regulation-llm-art-014",
+     "article_number": 14,
+     "score": 22
     }
    ]
   },
@@ -10495,6 +10495,68 @@
      "record_id": "water-law-llm-art-001",
      "article_number": 1,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "vtr-001",
+   "query_ar": "إذا توقف الشخص الخاضع للضريبة عن مزاولة النشاط الاقتصادي بما في ذلك زوال صفة الشخص الاعتبارية",
+   "category": "topical",
+   "gold": {
+    "corpus": "vat",
+    "law_component": "regulation",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vat-regulation-llm-art-013",
+     "article_number": 13,
+     "score": 23
+    },
+    {
+     "record_id": "vat-regulation-llm-art-015",
+     "article_number": 15,
+     "score": 22
+    },
+    {
+     "record_id": "vat-regulation-llm-art-078",
+     "article_number": 75,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "vtr-002",
+   "query_ar": "مع مراعاة أية ضوابط إضافية تقرها لجنة وزراء الصحة لدول المجلس، تسري نسبة الصفر على توريدات أي أدوية مؤهلة أو سلع طبية مؤهلة",
+   "category": "topical",
+   "gold": {
+    "corpus": "vat",
+    "law_component": "regulation",
+    "article_number": 35
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vat-regulation-llm-art-036",
+     "article_number": 35,
+     "score": 34
+    },
+    {
+     "record_id": "customs-law-llm-art-074",
+     "article_number": 69,
+     "score": 17
+    },
+    {
+     "record_id": "customs-law-llm-art-187",
+     "article_number": 178,
+     "score": 16
     }
    ]
   }
