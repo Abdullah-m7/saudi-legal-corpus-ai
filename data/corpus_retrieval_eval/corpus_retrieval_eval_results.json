@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 312,
-  "top1_hits": 286,
-  "top3_hits": 305,
-  "top5_hits": 308,
-  "top1_accuracy": 0.9167,
-  "top3_accuracy": 0.9776,
-  "top5_accuracy": 0.9872,
-  "mrr_at_5": 0.9467,
+  "total_queries": 314,
+  "top1_hits": 288,
+  "top3_hits": 307,
+  "top5_hits": 310,
+  "top1_accuracy": 0.9172,
+  "top3_accuracy": 0.9777,
+  "top5_accuracy": 0.9873,
+  "mrr_at_5": 0.947,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6736,14 +6736,14 @@
      "score": 41
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-105",
-     "article_number": 105,
+     "record_id": "food-law-llm-art-035",
+     "article_number": 36,
      "score": 24
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-388",
-     "article_number": 388,
-     "score": 23
+     "record_id": "maritime-commercial-law-llm-art-105",
+     "article_number": 105,
+     "score": 24
     }
    ]
   },
@@ -8689,14 +8689,14 @@
      "score": 67
     },
     {
+     "record_id": "food-law-llm-art-040",
+     "article_number": 41,
+     "score": 46
+    },
+    {
      "record_id": "maritime-commercial-law-llm-art-265",
      "article_number": 265,
      "score": 34
-    },
-    {
-     "record_id": "maritime-commercial-law-llm-art-245",
-     "article_number": 245,
-     "score": 33
     }
    ]
   },
@@ -9689,6 +9689,68 @@
      "record_id": "oa-llm-companies-art-168",
      "article_number": 168,
      "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "fod-001",
+   "query_ar": "يعمل بهذا النظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية، ويلغي كل ما يتعارض معه من أحكام",
+   "category": "topical",
+   "gold": {
+    "corpus": "food",
+    "law_component": "law",
+    "article_number": 45
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "food-law-llm-art-044",
+     "article_number": 45,
+     "score": 46
+    },
+    {
+     "record_id": "evidence-law-llm-art-129",
+     "article_number": 129,
+     "score": 41
+    },
+    {
+     "record_id": "tawtheeq-law-llm-art-057",
+     "article_number": 57,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "fod-002",
+   "query_ar": "ضمان سلامة الغذاء، والعمل على تحسين جودته",
+   "category": "topical",
+   "gold": {
+    "corpus": "food",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "food-law-llm-art-001",
+     "article_number": 2,
+     "score": 24
+    },
+    {
+     "record_id": "food-law-llm-art-016",
+     "article_number": 17,
+     "score": 10
+    },
+    {
+     "record_id": "oa-llm-companies-art-034",
+     "article_number": 34,
+     "score": 7
     }
    ]
   }

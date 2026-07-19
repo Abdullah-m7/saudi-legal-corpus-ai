@@ -180,6 +180,7 @@ ENGINEERING_PRACTICE_LAW_LLM = os.path.join(ROOT, "data", "engineering_practice_
 NATIONALITY_LAW_LLM = os.path.join(ROOT, "data", "nationality_arabic_legal_llm", "nationality_law_legal_llm_001_030.json")
 RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "residency_arabic_legal_llm", "residency_law_legal_llm_001_069.json")
 CIVIL_STATUS_LAW_LLM = os.path.join(ROOT, "data", "civil_status_arabic_legal_llm", "civil_status_law_legal_llm_001_096.json")
+FOOD_LAW_LLM = os.path.join(ROOT, "data", "food_arabic_legal_llm", "food_law_legal_llm_001_044.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -353,6 +354,7 @@ def main() -> int:
     nationality_law_llm = _load_json(NATIONALITY_LAW_LLM)
     residency_law_llm = _load_json(RESIDENCY_LAW_LLM)
     civil_status_law_llm = _load_json(CIVIL_STATUS_LAW_LLM)
+    food_law_llm = _load_json(FOOD_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -373,7 +375,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 142,
+        "total_tracks": 143,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -519,6 +521,7 @@ def main() -> int:
             + nationality_law_llm["record_count"]  # 30 Saudi Arabian Nationality Law (Royal Will 8/20/5604, 1374H) (BOE-via-Wayback three snapshots x nezams.com x independent news corroboration, 11 of 30 articles cleanly reconstructed from BOE's own changelog, confirmed repeal of the 1357H predecessor, see track notes)
             + residency_law_llm["record_count"]  # 69 Foreigners' Residency Law (Royal/Supreme Order 17/2/25/1337, 1371H) (TIER_3, cross-verified secondary reproduction, BOE does not index this law at all, 1 ملغاة preserved, 4 مضافة, see track notes)
             + civil_status_law_llm["record_count"]  # 96 Saudi Arabian Civil Status Law (Royal Decree M/7, 1407H) (TIER_2, BOE-via-Wayback seven snapshots x qanoonsa.com x nezams.com secondary cross-checks, confirmed dual repeal of two 1358H/1382H predecessors, 24 of 96 articles cleanly reconstructed from BOE's own changelog, see track notes)
+            + food_law_llm["record_count"]  # 44 Saudi Arabian Food Law (Royal Decree M/1, 1436H) (TIER_2 conservative, single SFDA-PDF primary source visually transcribed, BOE and Wayback both completely unreachable, all 44 recovered articles اصلية, Article 1 excluded as unrecoverable, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -655,6 +658,7 @@ def main() -> int:
             + nationality_law_llm["record_count"]
             + residency_law_llm["record_count"]
             + civil_status_law_llm["record_count"]
+            + food_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4841,6 +4845,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Saudi Arabian Civil Status Law «نظام الأحوال المدنية» — Royal Decree No. M/7, dated 20/4/1407H (21 December 1986G), approved via Council of Ministers Resolution No. 1 (11/1/1407H). A medium-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing civil registration (births, deaths, marriages, national ID cards, family registers). **96 records: 72 اصلية, 24 معدلة** (Articles 2, 15, 16, 19, 20, 22, 25, 26, 30, 33, 34, 38, 40, 47, 50, 53, 67, 74, 76, 82, 83, 85, 87, 91) — flat structure, **NO أبواب/فصول**, no inline BOE article titles (spelled-ordinal labels only). **Confirmed dual repeal of predecessors:** this law's own Article 95 explicitly repeals TWO named predecessor laws — نظام دائرة النفوس (Supreme Order 8172, 15/7/1358H) and نظام المواليد والوفيات (Royal Decree 2, 11/1/1382H) — with a single temporary carve-out for Royal Decree M/52 (3/9/1405H) pending a general Council of Ministers rule; neither predecessor is ingested in this corpus (historical context only). **VERIFICATION TIER:** BOE-WAYBACK-SEVEN-SNAPSHOT-X-QANOONSA-COM-RESOLUTION-805-X-NEZAMS — the live laws.boe.gov.sa portal was unreachable this pass, but seven independent Wayback Machine snapshots of the exact law page (13 Nov 2019 through 15 Feb 2026, byte-identical main-body text throughout) were cross-verified against Council of Ministers Resolution 805 (via qanoonsa.com, confirming the most recent 2024G amendment to Articles 2/16/67) and nezams.com (confirming the founding decree identity and earlier amendments). **GENUINELY CONFIRMED BOE main-body staleness for 24 of 96 articles**, resolved via clean changelog incorporation: BOE's own main body still displays pre-amendment wording for these articles, but every one of the corresponding changelog popups supplies either a complete, self-contained replacement text or (for Article 2's second amendment) an explicit paragraph-addition instruction — the same clean-incorporation pattern already confirmed in this corpus's press_law, accounting_auditing_law, and nationality_law tracks. Other flagged discrepancies: 5 of the 24 amended articles (30, 33, 47, 50, 53) have a BOE changelog entry with NO decree number or date cited anywhere in the source (confirmed absent across all seven snapshots, an honest gap in BOE's own data, not fabricated); Article 74's changelog states it was amended 'more than once' but BOE documents only the final step; a purely typographic Eastern-Arabic-numeral/Western-numeral inconsistency between the preamble and Article 95's own body when citing the same repealed predecessors, preserved verbatim in both places. A companion Implementing Regulation (اللائحة التنفيذية لنظام الأحوال المدنية, Ministerial Decision 81, 19/5/1426H) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "food_law",
+                "display_name_ar": "نظام الغذاء",
+                "display_name_en": "Saudi Arabian Food Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/1, dated 6/1/1436H (30 October 2014G) — laws.boe.gov.sa was completely unreachable this pass, both the live portal AND the Wayback Machine (a more severe access failure than this corpus's usual BOE-503-Wayback-succeeds pattern); the full text instead comes from an SFDA (Saudi Food and Drug Authority)-published PDF, visually transcribed page-by-page after automated OCR was found to silently drop at least one bordered article box, cross-checked against saudipedia.com's exact-matching Gregorian date, FAOLEX's catalogue metadata, and aggregated secondary sources corroborating the BOE English-translation title/structure",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": food_law_llm["record_count"],
+                    "data_path": "data/food_arabic_legal_llm/food_law_legal_llm_001_044.json"}},
+                "record_counts": {"arabic_articles": food_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 44, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": food_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/food/law/official_source/food_law_official_source.json",
+                    "sources/food/law/verified/food_law_verified_records.jsonl",
+                    "data/food_arabic_legal_llm/food_law_legal_llm_001_044.json",
+                ],
+                "validator_targets": ["make food-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Saudi Arabian Food Law «نظام الغذاء» — Royal Decree No. M/1, dated 6/1/1436H (30 October 2014G). A medium-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing food safety, quality, and the Saudi Food and Drug Authority (SFDA)'s regulatory powers over the food chain, distinct from this corpus's already-ingested cooperative_health_insurance_law and healthcare_professions_law tracks. **44 of 45 total articles recovered and ingested (Articles 2-45), all اصلية** — 0 معدلة, 0 ملغاة, 0 مضافة; 12 فصول (chapters) confirmed. **Article 1 (تعريفات/definitions) deliberately EXCLUDED** — not reproduced in the one full-text source reached this pass, and unverifiable AI-search-summary fragments were not treated as a substitute for verbatim text; not fabricated. **VERIFICATION TIER: TIER_2 (conservative, bordering TIER_3)** — laws.boe.gov.sa was completely unreachable this pass, both the live portal AND the Wayback Machine (web.archive.org itself blocked by this session's egress policy this pass, a more severe failure than this corpus's usual BOE-503-Wayback-succeeds pattern); the base-law text instead rests on ONE official/primary source (an SFDA-published PDF interleaving the base law's own boxed articles with its Implementing Regulation's own unboxed articles, visually transcribed page-by-page after automated OCR silently dropped at least one bordered article box), cross-checked against saudipedia.com (exact Gregorian-date match), FAOLEX (catalogue metadata), and aggregated secondary sources — but NOT against a second independently-sourced full copy of the statute, the track's main limitation, honestly flagged rather than inflated to TIER_1. **No specific named predecessor** — Article 45 gives only a generic conflict-only repeal clause ('ويلغي كل ما يتعارض معه من أحكام', naming no instrument), a confirmed negative finding flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge (mirroring the finance_companies_law Article 38 precedent). Genuine anomaly preserved: Chapters 4 and 5 share an identical title 'تداول الغذاء' in the source itself, not silently renamed. A companion Implementing Regulation (اللائحة التنفيذية لنظام الغذاء, ~85 articles, repeatedly amended at SFDA Board level) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
             },
         ],
     }

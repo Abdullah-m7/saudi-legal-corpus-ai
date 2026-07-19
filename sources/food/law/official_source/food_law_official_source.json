@@ -1,0 +1,622 @@
+{
+  "document": "نظام الغذاء",
+  "document_en": "Saudi Arabian Food Law",
+  "decree": "المرسوم الملكي رقم (م/1)",
+  "decree_date_hijri": "6/1/1436",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "صدر نظام الغذاء بالمرسوم الملكي رقم (م/1) وتاريخ 6/1/1436هـ (الموافق 30/10/2014م)، ويقضي هذا المرسوم -بحسب البيانات الوصفية المستقلة لقاعدة FAOLEX التابعة لمنظمة الأغذية والزراعة (الفاو)- بإصدار قرار (وصفته FAOLEX بـ\"Ministerial Resolution No.475\"، أي ما يُرجَّح أن يكون قرار مجلس الوزراء رقم 475 الذي وافق على مشروع النظام قبل صدور المرسوم الملكي المصادق عليه بيوم واحد أو أيام قليلة -تعاقب اعتيادي بين قرار مجلس الوزراء والمرسوم الملكي المصادق عليه موثّق سابقاً في هذا المسار لمسارات أخرى مثل nationality_law وengineering_practice_law) يقر نظام الغذاء. تاريخ ونص وجهة إصدار هذا القرار رقم 475 نفسه (تاريخه، وهل هو قرار مجلس وزراء أم قرار جهة أخرى بالتحديد) لم يتيسر تأكيدها بشكل مستقل هذه الجولة؛ انظر known_unresolved_discrepancies. تتولى الهيئة العامة للغذاء والدواء (SFDA) تطبيق هذا النظام وإصدار لوائحه الفنية والتنفيذية.",
+  "issuing_authority_en": "Issued by Royal Decree No. M/1 dated 6/1/1436H (30 Oct 2014G). Per FAOLEX's own independent metadata for this instrument, this Royal Decree promulgates a resolution FAOLEX itself labels 'Ministerial Resolution No. 475' approving the Food Law -- most likely the Council of Ministers Resolution that approved the draft law shortly before the Royal Decree's own ratification date, the ordinary Council-of-Ministers-then-Royal-Decree sequence already documented elsewhere in this corpus (e.g. nationality_law, engineering_practice_law). This Resolution No. 475's own exact date and issuing body could not be independently confirmed this pass -- see known_unresolved_discrepancies. The Saudi Food and Drug Authority (SFDA) administers this Law and issues its technical and implementing regulations.",
+  "verification_methodology_note": "Saudi Arabian Food Law «نظام الغذاء» -- Royal Decree No. (M/1) dated 6/1/1436H (30 Oct 2014G). Independently confirmed via saudipedia.com (an SPA-affiliated Arabic/English encyclopedia), which states this law was issued '30 October 2014' -- an EXACT Gregorian-date match for 6 Muharram 1436H (1 Muharram 1436H = 25 Oct 2014G), and via FAOLEX's own catalogue metadata (record LEX-FAOC185594: 'Royal Decree No. M/1 of 2014 issuing Ministerial Resolution No.475 approving the Food Law'), and via aggregated WebSearch results referencing laws.boe.gov.sa's own hosted English translation title ('Food Law Royal Decree No. M/1 October 30, 2014 Translation of Saudi Laws') and its own stated structure ('consisting of 45 articles divided in XII Chapters'). This law is administered by the Saudi Food and Drug Authority (SFDA, الهيئة العامة للغذاء والدواء) and is DISTINCT from the SFDA's own organizational statute (نظام الهيئة العامة للغذاء والدواء, Royal Decree M/6, 1428H) -- confirmed via BOE's own separate lawId for each (food law lawId 9167ec51-a011-4a22-b6c3-a9a700f290f8; SFDA organizational law lawId dd7a7d7d-a92d-431b-9ec3-a9a700f28a46) surfaced independently through WebSearch.\n\nPRIMARY SOURCE ACCESS -- A GENUINELY MORE SEVERE ACCESS FAILURE THAN THIS CORPUS'S USUAL PATTERN: laws.boe.gov.sa's live portal was unreachable this pass (HTTP 503 / connection reset, both via direct curl and via the WebFetch tool, both attempted repeatedly against both the LawDetails page and the BOE-hosted English-translation PDF download endpoint). UNLIKE this corpus's usual fallback, the Wayback Machine was ALSO unreachable this pass: archive.org's own '/wayback/available' lookup API succeeded (confirming a snapshot exists, timestamp 20251212211808), but the actual snapshot-content host, web.archive.org, was blocked outright by this session's egress policy (HTTP 403 'Blocked by egress policy' on direct curl to both the CDX search endpoint and the snapshot URL itself; the WebFetch tool likewise refused the web.archive.org domain entirely). An r.jina.ai readability-proxy fetch of the live BOE page was also attempted and timed out (BOE's own page failed to render even via headless-browser proxy, consistent with BOE being the actual bottleneck, not the proxy). This track could NOT be built from BOE by any access method attempted this pass -- a stronger negative finding than this corpus's more common 'BOE 503, Wayback succeeded' pattern.\n\nACTUAL FULL-TEXT SOURCE USED: an official PDF published by the Saudi Food and Drug Authority itself, titled 'اللائحة التنفيذية لنظام الغذاء' (Implementing Regulation of the Food Law), hosted at https://www.sfda.gov.sa/sites/default/files/2021-04/اللائحة التنفيذية لنظام الغذاء.pdf (fetched directly via curl this pass, HTTP 200, 41-page scanned/rasterized PDF with no embedded text layer). This SFDA-published document's own internal layout INTERLEAVES this base Food Law's own articles (rendered in bordered boxes, with bare spelled-ordinal headers, e.g. 'المادة الثانية:', no 'من اللائحة' suffix) with the Implementing Regulation's OWN articles (rendered as plain unboxed paragraphs, numeric parenthetical headers explicitly suffixed 'من اللائحة', e.g. 'المادة (2) من اللائحة') that elaborate on each base-law article in turn. This track extracts ONLY the boxed base-law articles' text (44 of this law's 45 articles, Articles 2-45; Article 1 could not be recovered -- see below), NOT the Implementing Regulation's own (unboxed) text, which is out of scope for this pass.\n\nMETHODOLOGY FOR THIS PASS: each of the 41 pages was rendered to a high-resolution PNG (400 DPI) and read directly (visual transcription of the actual glyphs in each bordered box), NOT relied upon from raw OCR alone -- an initial Tesseract OCR pass (Arabic-language model, both psm6/300dpi and psm4/400dpi configurations) was run first for page-by-page triage and to locate every article boundary, but Tesseract's automatic layout segmentation was found to intermittently DROP an entire bordered box's text where the OCR engine's region-detection failed on the box border itself (confirmed directly: Article 4's box was silently skipped by BOTH Tesseract configurations, recovered only by visually reading the source image directly) -- for this reason, every one of the 44 recovered articles' final text in this track was independently visually read from the rendered page image, not taken from Tesseract's raw output. This is real, disclosed transcription risk (a human-equivalent visual reading, not a mechanical extraction, and not cross-verified against a second full-text copy of the law) -- see known_unresolved_discrepancies.\n\nSTRUCTURE CONFIRMED: 45 articles across XII (12) chapters (فصول) -- Chapter 1 'تعاريف' (Arts 1-3), Chapter 2 'لوائح ومواصفات الغذاء' (Arts 4-7), Chapter 3 'التسجيل والتراخيص' (Arts 8-13), Chapter 4 'تداول الغذاء' (Arts 14-15), Chapter 5 'تداول الغذاء' (Arts 16-17, NOTE: identical title to Chapter 4 -- a genuine anomaly in the source itself, see known_unresolved_discrepancies), Chapter 6 'مسؤوليات المنشأة الغذائية' (Arts 18-20), Chapter 7 'الرقابة على الغذاء' (Arts 21-26), Chapter 8 'سحب وتحليل العينات' (Arts 27-28), Chapter 9 'الإجراءات الوقائية والتدابير الاحترازية' (Arts 29-32), Chapter 10 'سحب وتتبع المنتج الغذائي' (Arts 33-35), Chapter 11 'العقوبات' (Arts 36-37), Chapter 12 'أحكام ختامية' (Arts 38-45). This 45-article/XII-chapter count independently matches the aggregated WebSearch-surfaced description of BOE's own hosted English translation ('consisting of 45 articles divided in XII Chapters'). No article carries an inline topic title beyond its bare 'المادة [ordinal]:' label, consistent with this corpus's established precedent for BOE-family sources.\n\nARTICLE 1 EXCLUDED -- NOT RECOVERED TO VERBATIM STANDARD: the SFDA source PDF used for full-text extraction does NOT itself reproduce this base law's own Article 1 (تعريفات/definitions) -- the document's Chapter 1 heading is followed directly by the Implementing Regulation's OWN Article 1 ('المادة (1) من اللائحة: إضافة للتعاريف الواردة في نظام الغذاء...', i.e. IR-level definitions ADDING TO the base law's own Article 1, not reproducing it), then directly by the base law's Article 2 ('المادة الثانية:'). No boxed base-law Article 1 appears anywhere in the 41-page document (confirmed by direct visual inspection of every page). WebSearch turned up plausible-reading fragments purportedly from this Article 1 (e.g. definitions of 'الغذاء', 'المنشأة الغذائية', 'المرخص له', 'السلسلة الغذائية') via aggregated AI-generated search-summary text, but NONE of these fragments could be traced to a specific, independently fetchable page actually containing this law's verbatim Article 1 text -- the phrasing pattern involved ('يقصد بالألفاظ والعبارات الآتية...') is generic boilerplate common to nearly all Saudi legal definitions articles, and is not, by itself, verifiable as THIS law's actual enacted wording rather than a search-engine paraphrase/reconstruction. Per this corpus's explicit standing instruction to exclude rather than fabricate, Article 1 is NOT included in this track's articles{} object. article_count below (44) reflects 44 of this law's 45 total articles; see known_unresolved_discrepancies for the full account.\n\nNO AMENDMENTS FOUND (NEGATIVE-EVIDENCE FINDING, WEAKER THAN THIS CORPUS'S STRONGEST TRACKS): the SFDA source document carries no per-article 'تعديلات المادة' changelog feature (unlike BOE's own law pages) and shows no amendment annotation on any of the 44 recovered base-law articles. No independent secondary source (WebSearch, news coverage, qanoonsa.com, nezams.com) surfaced any Royal-Decree-level amendment to this base law's own article text. All 44 recovered articles are accordingly recorded as اصلية (original/unamended). This is an absence-of-evidence conclusion, NOT a positive multi-snapshot confirmation of the kind this corpus's nationality_law track achieved via three independently-diffed Wayback Machine snapshots of BOE's own changelog-bearing page -- BOE's own amendment changelog (this corpus's definitive amendment-detection source) was completely inaccessible this pass. A follow-up pass with working BOE/Wayback access is recommended before treating this 'no amendments' conclusion as fully settled.\n\nIMPLEMENTING REGULATION AMENDMENTS OUT OF SCOPE, DO NOT AFFECT BASE LAW TEXT: the Implementing Regulation itself (اللائحة التنفيذية لنظام الغذاء, ~85 articles across 12 chapters per an AI-generated WebFetch summary of qanoonsa.com's own page for it) has been amended multiple times at SFDA Board level (e.g. Board Decision 4/44 amending the Implementing Regulation; Board Decision 5/44, reported by okaz.com.sa in a news article dated around 8 May 2026G, overhauling the violation-classification-and-penalty schedule toward a 'warning before fine' enforcement philosophy). These are Board-level decisions amending the IMPLEMENTING REGULATION's own violation/penalty schedule -- a instrument the base law's own Article 39/44 confirm is issued and amended at Board level, sitting BELOW the base law's own Article 36 statutory penalty ceiling (max SAR 1,000,000 administrative fine per violation; up to 10 years' imprisonment and/or up to SAR 10,000,000 fine specifically for intentional trafficking in food that is harmful to health, adulterated, or prohibited). Nothing found this pass indicates Article 36 itself (or any other base-law article) has been amended by Royal Decree since 2014 -- only the IR's own subordinate penalty-classification table has seen repeated administrative revision. The Implementing Regulation itself is NOT ingested this pass (one-law-per-pass rule; also its own materially higher amendment churn and article count make it a substantially larger, separate research effort).\n\nCROSS-CHECKS PERFORMED: (1) decree date -- saudipedia.com's stated Gregorian issuance date (30 Oct 2014) exactly matches 6 Muharram 1436H; (2) article/chapter count -- aggregated WebSearch results describing BOE's own hosted English-translation title independently state '45 articles divided in XII Chapters', matching this track's own count derived independently from the SFDA source; (3) Article 45's 180-day commencement clause ('يعمل بهذا النظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية') verbatim-matches FAOLEX's own English-language abstract for this law ('The Law enters into force 180 days after its publication in the Official Gazette'); (4) Article 36's penalty ceiling (SAR 1,000,000 general fine; up to 10 years' imprisonment and/or SAR 10,000,000 fine for intentional adulteration/harmful-food trafficking) matches contemporary Arabic-language press descriptions of this law's penalty regime surfaced via WebSearch. None of these cross-checks independently re-verify the FULL text of all 44 articles word-for-word against a second complete copy of the law -- this track's full-text confidence rests on ONE official/primary source (the SFDA PDF), not two independently-sourced full copies. See the verification-tier discussion in this track's generator/validator scripts.\n\nREPEAL/PREDECESSOR FINDING (CONFIRMED NEGATIVE): Article 45 (the law's final article) contains ONLY a generic, non-specific repeal clause -- 'يعمل بهذا النظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية، ويلغي كل ما يتعارض معه من أحكام' ('...and repeals whatever provisions conflict with it') -- with NO named predecessor food-safety statute identified anywhere in the 44 recovered articles. This is recorded as a confirmed negative finding for this pass's supersession-graph research question: no specific prior food-safety system is repealed by name in the text recovered this pass. A fully authoritative confirmation would additionally require checking BOE's own metadata panel and/or the historical Umm Al-Qura Gazette record (which occasionally name a superseded instrument even where the operative repeal clause itself is generic) -- neither could be checked this pass due to BOE's total unreachability; see known_unresolved_discrepancies.\n\nNo legal text is altered beyond whitespace/typography normalisation needed to render the source's line-wrapped Arabic as continuous paragraph text; no translation/paraphrase/interpretation performed on the Arabic text (English descriptions in this note and in document_en/issuing_authority_en are for indexing only). Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "food_gap_map_estimate_confirmed_and_revised",
+      "description": "The coverage_gap_map.json entry for this law estimated 'Royal Decree No. M/1 dated 6/1/1436H (2014)' and left the article count as 'Unknown, needs verification'. This pass independently confirms the decree number and date (cross-checked against saudipedia.com's exact-matching Gregorian date and FAOLEX's own catalogue metadata) and establishes the article count as 45 total articles across XII (12) chapters (per aggregated WebSearch results describing BOE's own hosted English-translation title), of which 44 (Articles 2-45) are recovered to verbatim standard this pass and 1 (Article 1) is excluded -- see food_article1_not_recovered below."
+    },
+    {
+      "article_key": "food_boe_and_wayback_both_unreachable",
+      "description": "laws.boe.gov.sa's live portal was unreachable this pass by every method attempted: direct curl (connection reset / HTTP 503 on both the LawDetails page and the BOE-hosted English-translation PDF download endpoint), the WebFetch tool (HTTP 503), and an r.jina.ai headless-browser readability proxy (page-load timeout, BOE itself failing to render even via a JS-capable proxy). UNLIKE this corpus's more common fallback pattern (BOE unreachable, Wayback Machine snapshot succeeds), the Wayback Machine was ALSO unreachable this pass: archive.org's own '/wayback/available' lookup API succeeded and confirmed a snapshot exists (timestamp 20251212211808), but the actual snapshot-content host, web.archive.org, returned 'Blocked by egress policy' (HTTP 403) on direct curl for both its CDX search endpoint and the snapshot URL itself, and the WebFetch tool refused the web.archive.org domain entirely ('Claude Code is unable to fetch from web.archive.org'). This is a genuinely more severe primary-source access failure than this corpus's typical pattern, and is the central reason this track's verification tier is more conservative than tracks built from Wayback-archived BOE snapshots."
+    },
+    {
+      "article_key": "food_article1_not_recovered",
+      "description": "This law's own Article 1 (تعريفات/definitions) could not be recovered to verbatim standard this pass and is EXCLUDED from this track's articles{} object (article_count = 44 of 45 total articles). The SFDA source PDF used for full-text extraction does not itself reproduce this base law's Article 1 -- its Chapter 1 heading is followed directly by the Implementing Regulation's OWN Article 1 (a supplementary-definitions article that explicitly says it ADDS to 'the definitions in the Food Law', i.e. it presupposes but does not quote the base law's own Article 1), then directly by the base law's Article 2. Confirmed absent by direct visual inspection of all 41 pages of the source document. Aggregated WebSearch results returned plausible-sounding fragments purportedly from this Article 1 (definitions of الغذاء / المنشأة الغذائية / المرخص له / السلسلة الغذائية), but these could not be traced to any specific, independently fetchable page actually hosting this law's own verbatim Article 1 text -- the introductory phrasing pattern used ('يقصد بالألفاظ والعبارات الآتية...') is standard boilerplate common to nearly all Saudi definitions articles and is not, on its own, sufficient evidence that the quoted term-by-term definitions are this law's actual enacted wording rather than a search-engine-generated paraphrase or reconstruction. Per this corpus's explicit standing instruction, this article is excluded rather than reconstructed from unverifiable fragments; a follow-up pass with working BOE access should prioritize recovering this article specifically."
+    },
+    {
+      "article_key": "food_primary_source_is_sfda_pdf_ocr_boxes_dropped",
+      "description": "This track's full base-law text (Articles 2-45) rests on ONE official/primary source: an SFDA-published PDF (https://www.sfda.gov.sa/sites/default/files/2021-04/اللائحة التنفيذية لنظام الغذاء.pdf, HTTP 200, a 41-page scanned/rasterized document with no embedded text layer) that interleaves this base law's own articles (rendered in bordered boxes, bare spelled-ordinal headers) with its Implementing Regulation's own articles (unboxed, numeric headers suffixed 'من اللائحة'). An initial Tesseract OCR pass (Arabic model, tried at 300dpi/psm6 and 400dpi/psm4) was used only for page-by-page triage; it was found to intermittently DROP an entire bordered box's text where its layout-segmentation failed on the box border (directly confirmed for Article 4, whose box was silently skipped by both OCR configurations and recovered only by visually reading the rendered page image). For this reason every one of the 44 recovered articles' final ingested text in this track comes from direct visual transcription of each 400dpi page render, not from raw OCR output. This is disclosed, real transcription risk: a careful human-equivalent visual reading, not a second independently-sourced full-text copy of the law, and not cross-verified character-for-character against BOE (unreachable this pass) or any other complete copy of the statute. This is this track's single largest limitation and the primary reason its verification tier is not higher."
+    },
+    {
+      "article_key": "food_no_amendments_found_negative_evidence_only",
+      "description": "No Royal-Decree-level amendment to any of this law's 44 recovered articles was found this pass: the SFDA source document carries no 'تعديلات المادة'-style per-article changelog (unlike BOE's own law pages), and no independent secondary source (WebSearch, qanoonsa.com, nezams.com, contemporary news coverage) surfaced any amendment to this base law's own article text since its 2014 enactment. All 44 recovered articles are accordingly recorded as اصلية. This is an absence-of-evidence conclusion, not a positive multi-source confirmation of the kind this corpus's nationality_law track achieved via three independently-diffed Wayback Machine snapshots of BOE's own changelog-bearing page (spanning 2019-2026) -- that definitive amendment-detection method was unavailable this pass because BOE itself (live and via Wayback) was completely unreachable. A follow-up pass with working BOE/Wayback access is recommended before this 'no amendments' conclusion is treated as fully settled, particularly given this law's high real-world regulatory activity (frequent Implementing Regulation revisions) suggests the base law itself is a plausible amendment candidate even though none was found this pass."
+    },
+    {
+      "article_key": "food_implementing_regulation_penalty_amendments_out_of_scope",
+      "description": "This law's Implementing Regulation (اللائحة التنفيذية لنظام الغذاء, approximately 85 articles across 12 chapters per an AI-generated WebFetch summary of qanoonsa.com's page for it) has been amended multiple times at SFDA Board level -- including, per an okaz.com.sa news article (dated on or around 8 May 2026G, found via WebSearch), Board Decision No. (5/44) overhauling the violation-classification-and-penalty schedule toward a 'warning before fine' enforcement approach for food establishments. This is a Board-level amendment to the IMPLEMENTING REGULATION's own subordinate penalty-classification table (an instrument this base law's own Articles 39 and 44 confirm the Board itself issues and may revise), sitting entirely below this base law's own Article 36 statutory penalty ceiling (SAR 1,000,000 general administrative fine; up to 10 years' imprisonment and/or SAR 10,000,000 fine specifically for intentional trafficking in food that is harmful, adulterated, or prohibited). Nothing found this pass indicates Article 36 itself, or any other base-law article, has been amended by Royal Decree since 2014 -- only the Implementing Regulation's own subordinate penalty table has seen repeated Board-level revision (Board Decisions referenced in secondary sources include 4/44, 4/48, and 5/44). The Implementing Regulation itself is NOT ingested this pass (one-law-per-pass rule; its materially higher amendment churn, larger article count, and distinct verification challenges make it a substantially separate research effort from this base-law pass)."
+    },
+    {
+      "article_key": "food_underlying_resolution_475_not_independently_dated",
+      "description": "FAOLEX's own catalogue metadata for this instrument (record LEX-FAOC185594) describes it as 'Royal Decree No. M/1 of 2014 issuing Ministerial Resolution No.475 approving the Food Law' -- consistent with this corpus's established Council-of-Ministers-Resolution-then-Royal-Decree-ratification pattern (e.g. nationality_law, engineering_practice_law), where a Council of Ministers Resolution first approves a draft law's text and a Royal Decree then ratifies/promulgates it, typically within days to about a month. This specific underlying Resolution No. 475's own precise date and issuing body (Council of Ministers specifically, vs. another ministerial-level body, as FAOLEX's English phrasing 'Ministerial Resolution' does not itself disambiguate) could not be independently confirmed this pass -- BOE itself (which would ordinarily display this instrument's own preamble) was unreachable, and no second source was found quoting Resolution 475's own date. This top-level record's decree/decree_date_hijri fields record the Royal Decree (M/1, 6/1/1436H) as the promulgating instrument, per this corpus's convention, while flagging that the underlying Resolution's own metadata remains independently unconfirmed."
+    },
+    {
+      "article_key": "food_no_preamble_recovered",
+      "description": "This law's enacting-decree preamble/ديباجة text (as BOE's own law page would ordinarily display, per this corpus's established pattern for other tracks, e.g. nationality_law's preamble_ar field) could not be recovered this pass: BOE itself was completely unreachable (live and via Wayback), and the SFDA source document used for this track's article text does not itself reproduce any preamble -- its own first page is a title/issuance-decision cover page for the Implementing Regulation specifically, not this base law's own enacting preamble. No preamble_ar field is included in this track's top-level record, rather than fabricating placeholder preamble text; a follow-up pass with working BOE access should recover this preamble."
+    },
+    {
+      "article_key": "food_duplicate_chapter_titles_anomaly",
+      "description": "This law's Chapter 4 and Chapter 5 are BOTH titled, verbatim, 'تداول الغذاء' ('Circulation/Trading of Food') in the source document -- Chapter 4 spans Articles 14-15 (export licensing, individual work-permit licensing) and Chapter 5 spans Articles 16-17 (prohibited-circulation conditions, food establishment responsibility) -- confirmed by direct visual inspection of both chapter-heading banners in the source (pages showing Article 14's and Article 16's headers respectively). This is preserved verbatim as a genuine anomaly in the source itself (chapter_structure below records both titles exactly as printed, unmodified) rather than silently renamed or merged, per this corpus's standing instruction to flag rather than resolve genuine source anomalies."
+    },
+    {
+      "article_key": "food_repeal_generic_clause_only_no_named_predecessor",
+      "description": "Article 45 (this law's final article) contains only a generic, non-specific repeal clause: 'يعمل بهذا النظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية، ويلغي كل ما يتعارض معه من أحكام' ('...and repeals whatever provisions conflict with it'). No named predecessor food-safety statute is identified anywhere in the 44 articles recovered this pass. This is recorded as a CONFIRMED NEGATIVE FINDING for this pass's supersession-graph research question -- no specific prior food-safety system is repealed by name in the text recovered this pass, so no supersession-graph edge is proposed. A fully authoritative confirmation would additionally require checking BOE's own metadata panel (which occasionally separately names a superseded instrument even where the law's own repeal clause is generic, per this corpus's own established pattern for other tracks) and/or the historical Umm Al-Qura Gazette record for the 2014 enactment -- neither could be checked this pass due to BOE's total unreachability."
+    },
+    {
+      "article_key": "food_no_inline_article_titles",
+      "description": "Consistent with this corpus's established precedent for BOE-family Saudi legal sources, no article in this law carries an inline topic title -- every article heading observed in the source is a bare spelled-ordinal 'المادة [ordinal]:' label (e.g. 'المادة الثانية:', 'المادة الخامسة والعشرون:'). No title_ar key is used for any article; section_ar instead carries each article's chapter title for structural context."
+    }
+  ],
+  "amendment_history": [
+    {
+      "decree": "المرسوم الملكي رقم (م/1)",
+      "date_hijri": "6/1/1436",
+      "note": "الإصدار الأصلي (45 مادة موزعة على 12 فصلاً) -- صدر بالمرسوم الملكي رقم (م/1) وتاريخ 6/1/1436هـ (الموافق 30/10/2014م)، مُصدِراً بحسب البيانات الوصفية لقاعدة FAOLEX قراراً حمل الرقم (475) أقر مشروع النظام. لم يُعثر هذه الجولة على أي تعديل لاحق موثق لأي مادة من مواد هذا النظام ذاته (بخلاف تعديلات لائحته التنفيذية على مستوى مجلس إدارة الهيئة، وهي خارج نطاق هذا المسار) -- انظر known_unresolved_discrepancies، المفتاح food_no_amendments_found_negative_evidence_only."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "تعاريف -- يتضمن المادة الأولى (تعريفات، غير مستردة هذه الجولة، مستبعدة -- انظر known_unresolved_discrepancies) إلى جانب أهداف النظام (م2) ونطاق سريانه على جميع مراحل السلسلة الغذائية (م3). المادة الأولى غير مدرجة ضمن articles أدناه.",
+      "articles": "1-3",
+      "articles_recovered": "2-3"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "لوائح ومواصفات الغذاء -- إصدار الهيئة اللوائح الفنية والمواصفات القياسية للغذاء ومرافقه والعاملين فيها (م4) -- مراعاة المواصفات القياسية الدولية عند الإصدار والتحديث (م5) -- تبني مبدأ تحليل المخاطر (م6) -- حظر فسح الغذاء المستورد إلا بموافقة الهيئة (م7)",
+      "articles": "4-7"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "التسجيل والتراخيص -- تسجيل المنشآت الغذائية لدى الهيئة (م8) -- تسجيل المنتجات الغذائية (م9) -- تسجيل المختبرات المتعاملة مع الغذاء (م10) -- حظر الإعلان عن الغذاء دون موافقة الهيئة (م11) -- حظر عمل المختبر قبل الترخيص (م12) -- حظر تداول الغذاء قبل الترخيص الفني (م13)",
+      "articles": "8-13"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "تداول الغذاء -- حظر تصدير الغذاء إلا من منشأة مرخصة (م14) -- حظر عمل الفرد في تداول الغذاء دون رخصة ممارسة عمل (م15) [ملحوظة: عنوان هذا الفصل مطابق حرفياً لعنوان الفصل الخامس التالي في المصدر ذاته -- انظر known_unresolved_discrepancies، المفتاح food_duplicate_chapter_titles_anomaly]",
+      "articles": "14-15"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "تداول الغذاء -- حالات حظر تداول الغذاء السبع (مخالفة الشريعة، الضرر بالصحة، مخالفة اللوائح الفنية، الغش، عدم التعبئة النظامية، عدم إرفاق البطاقة الغذائية، عدم التسجيل) (م16) -- مسؤولية المنشأة الغذائية عن تطبيق أحكام النظام ولوائحه (م17) [ملحوظة: عنوان هذا الفصل مطابق حرفياً لعنوان الفصل الرابع السابق -- انظر نفس الملحوظة أعلاه]",
+      "articles": "16-17"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "مسؤوليات المنشأة الغذائية -- التعرف على مصدر الغذاء وتحديد المنشآت المورِّدة (م18) -- تقويم الهيئة للغذاء قبل وأثناء وبعد التسويق (م19) -- إلزام المنشأة بإبلاغ الهيئة عند الشك بعدم المطابقة (م20)",
+      "articles": "18-20"
+    },
+    {
+      "label_ar": "الفصل السابع",
+      "title_ar": "الرقابة على الغذاء -- إنشاء نظام الإنذار السريع للغذاء (م21) -- الهيئة جهة التفتيش المخولة نظاماً (م22) -- المفتشون وصلاحيات الضبط الجنائي (م23) -- صلاحيات المفتش في الدخول والاطلاع وسحب العينات (م24) -- حجز الغذاء المخالف (م25) -- التزامات المفتش (م26)",
+      "articles": "21-26"
+    },
+    {
+      "label_ar": "الفصل الثامن",
+      "title_ar": "سحب وتحليل العينات -- حق الهيئة في سحب عينات دون مقابل (م27) -- تقرير الهيئة عند ظهور مخالفة في نتائج التحليل (م28)",
+      "articles": "27-28"
+    },
+    {
+      "label_ar": "الفصل التاسع",
+      "title_ar": "الإجراءات الوقائية والتدابير الاحترازية -- اعتماد المنهج الوقائي (م29) -- التدابير الاحترازية عند غياب دليل علمي قاطع (مبدأ الاحتراز) (م30) -- إغلاق المنشأة عند خطر محتمل (م31) -- سحب الغذاء عند تعذر تفادي الخطر (م32)",
+      "articles": "29-32"
+    },
+    {
+      "label_ar": "الفصل العاشر",
+      "title_ar": "سحب وتتبع المنتج الغذائي -- سحب أو استرجاع المنتج المضر (م33) -- الإتلاف الإداري للمنتج المخالف (م34) -- حظر تداول المنتج المسحوب أو المحظور (م35)",
+      "articles": "33-35"
+    },
+    {
+      "label_ar": "الفصل الحادي عشر",
+      "title_ar": "العقوبات -- العقوبات الأساسية (غرامة حتى مليون ريال، منع من العمل حتى 180 يوماً، تعليق الترخيص حتى عام، إلغاء الترخيص) ومضاعفتها عند التكرار، وعقوبة السجن حتى عشر سنوات أو الغرامة حتى عشرة ملايين ريال أو كليهما لحالات تعمد تداول غذاء ضار أو مغشوش أو ممنوع، واختصاص الهيئة ولجنة التظلمات والمحكمة الإدارية (م36) -- حق المتضرر في التعويض أمام المحكمة المختصة (م37)",
+      "articles": "36-37"
+    },
+    {
+      "label_ar": "الفصل الثاني عشر",
+      "title_ar": "أحكام ختامية -- اتفاقيات الاعتراف المتبادل (م38) -- المقابل المالي للخدمات (م39) -- مكافآت مفتشي الهيئة (م40) -- المكافأة التشجيعية للمبلغين من غير المفتشين (م41) -- عرض مشاريع اللوائح الفنية على الجمهور (م42) -- استعانة الهيئة بجهات أخرى (م43) -- مهلة إصدار اللائحة التنفيذية 180 يوماً (م44) -- نفاذ النظام بعد 180 يوماً من نشره وإلغاء ما يتعارض معه (م45)",
+      "articles": "38-45"
+    }
+  ],
+  "article_count": 44,
+  "total_articles_in_law": 45,
+  "excluded_article_numbers": [1],
+  "status_counts": {
+    "اصلية": 44,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "food_art_002": {
+      "number_label_ar": "المادة الثانية:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الأول: تعاريف",
+      "text": "يهدف هذا النظام إلى الآتي:\n١. ضمان سلامة الغذاء، والعمل على تحسين جودته.\n٢. حماية الصحة العامة للمستهلك من خلال تقليل المخاطر المرتبطة بالغذاء، ونشر التوعية الغذائية السليمة.\n٣. حماية المستهلك من الغذاء الضار أو المغشوش أو المضلل أو غير الصالح للاستهلاك.\n٤. عدم إعاقة حركة تجارة الغذاء.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_003": {
+      "number_label_ar": "المادة الثالثة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الأول: تعاريف",
+      "text": "تسري أحكام هذا النظام على جميع مراحل السلسلة الغذائية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_004": {
+      "number_label_ar": "المادة الرابعة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: لوائح ومواصفات الغذاء",
+      "text": "تصدر الهيئة اللوائح الفنية والمواصفات القياسية للغذاء ومرافقه، والعاملين فيها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_005": {
+      "number_label_ar": "المادة الخامسة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: لوائح ومواصفات الغذاء",
+      "text": "تراعي الهيئة - عند إصدار اللوائح الفنية والمواصفات القياسية للغذاء وتحديثها - المواصفات القياسية الدولية للغذاء.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_006": {
+      "number_label_ar": "المادة السادسة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: لوائح ومواصفات الغذاء",
+      "text": "تتبنى الهيئة - في سبيل اعتماد اللوائح الفنية والمواصفات القياسية للغذاء وتحديثها - مبدأ تحليل المخاطر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_007": {
+      "number_label_ar": "المادة السابعة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: لوائح ومواصفات الغذاء",
+      "text": "لا يجوز فسح الغذاء المستورد إلا بعد موافقة الهيئة وفقاً للشروط والمتطلبات والإجراءات التي تحددها اللائحة، وتصدر الهيئة اللوائح المنظمة لإجراءات الإذن بفسح الغذاء المستورد إلى المملكة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_008": {
+      "number_label_ar": "المادة الثامنة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: التسجيل والتراخيص",
+      "text": "على المنشآت الغذائية التسجيل لدى الهيئة، بما في ذلك مرافق الإنتاج الأولية، وتحدد اللائحة شروط التسجيل وإجراءاته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_009": {
+      "number_label_ar": "المادة التاسعة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: التسجيل والتراخيص",
+      "text": "على المنشأة الغذائية تسجيل منتجاتها الغذائية لدى الهيئة، وتحدد اللائحة شروط التسجيل، وإجراءاته، والمواد التي تستثنى من التسجيل.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_010": {
+      "number_label_ar": "المادة العاشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: التسجيل والتراخيص",
+      "text": "على المختبرات التي تتعامل مع الغذاء التسجيل لدى الهيئة، وتحدد اللائحة شروط التسجيل وإجراءاته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_011": {
+      "number_label_ar": "المادة الحادية عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: التسجيل والتراخيص",
+      "text": "لا يجوز الإعلان عن الغذاء إلا بموافقة من الهيئة وفق الشروط والمتطلبات التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_012": {
+      "number_label_ar": "المادة الثانية عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: التسجيل والتراخيص",
+      "text": "لا يجوز لأي مختبر التعامل مع الغذاء قبل الحصول على الترخيص من الهيئة وفق الشروط والمتطلبات التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: التسجيل والتراخيص",
+      "text": "لا يجوز لأي منشأة غذائية تداول الغذاء قبل الحصول على ترخيص فني من الهيئة، وفقاً للمتطلبات والشروط والإجراءات التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الرابع: تداول الغذاء",
+      "text": "لا يجوز تصدير الغذاء إلا من منشأة ترخص لها الهيئة بذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الرابع: تداول الغذاء",
+      "text": "لا يجوز لأي فرد العمل في تداول الغذاء إلا بعد الحصول على رخصة ممارسة العمل في الأنشطة المتعلقة بالغذاء، وتحدد اللائحة متطلبات وشروط الحصول على تلك الرخصة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_016": {
+      "number_label_ar": "المادة السادسة عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الخامس: تداول الغذاء",
+      "text": "لا يجوز تداول الغذاء في الحالات الآتية:\n١. إذا كان مخالفاً لأحكام الشريعة الإسلامية.\n٢. إذا كان ضاراً بالصحة أو غير صالح للاستهلاك.\n٣. إذا كان مخالفاً للوائح الفنية أو المواصفات القياسية للغذاء.\n٤. إذا كان مغشوشاً، أو يحتوي على طرق أو وسائل مخادعة أو ممارسة تضلل المستهلك.\n٥. إذا لم يكن معبأ بالطريقة التي تحددها اللوائح الفنية، عدا ما يتم استثناؤه في اللائحة.\n٦. إذا لم ترفق به البطاقة الغذائية والبيانات الإيضاحية، عدا ما يتم استثناءه في اللائحة.\n٧. إذا لم يكن مسجلاً لدى الهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_017": {
+      "number_label_ar": "المادة السابعة عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الخامس: تداول الغذاء",
+      "text": "تكون المنشأة الغذائية مسؤولة عن ضمان تطبيق أحكام هذا النظام ولوائحه ضمن النشاط الغذائي الواقع تحت مسؤوليتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_018": {
+      "number_label_ar": "المادة الثامنة عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السادس: مسؤوليات المنشأة الغذائية",
+      "text": "يجب على المنشأة الغذائية أن تكون قادرة على التعرف على مصدر الغذاء الذي تحت إشرافها، وتحديد المنشآت الغذائية التي تمدها به، وتزويد الهيئة بالمعلومات المطلوبة إذا تطلب الأمر ذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_019": {
+      "number_label_ar": "المادة التاسعة عشرة:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السادس: مسؤوليات المنشأة الغذائية",
+      "text": "للهيئة أن تقوّم الغذاء قبل تسويقه وفي أثناء تسويقه وبعد التسويق إذا تطلب الأمر ذلك، ولها - في ضوء نتيجة التقويم - اتخاذ الإجراءات التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_020": {
+      "number_label_ar": "المادة العشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السادس: مسؤوليات المنشأة الغذائية",
+      "text": "إذا علمت أو شكّت المنشأة الغذائية أن الغذاء غير مطابق للاشتراطات والمتطلبات التي تفرضها الهيئة؛ وجب عليها إبلاغ الهيئة بذلك، واتخاذ الإجراءات اللازمة لسحب الغذاء وفقا لما تحدده اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_021": {
+      "number_label_ar": "المادة الحادية والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السابع: الرقابة على الغذاء",
+      "text": "تنشئ الهيئة وتدير نظام إنذار سريع للتبليغ عن أي خطر مباشر أو غير مباشر على صحة الإنسان يكون مصدره الغذاء، وتوعية المستهلك بالوسائل التي تراها مناسبة، وذلك وفقاً للإجراءات التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_022": {
+      "number_label_ar": "المادة الثانية والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السابع: الرقابة على الغذاء",
+      "text": "الهيئة هي الجهة المخولة نظاماً بتفتيش المنشآت والمرافق الغذائية فيما يخص تطبيق أحكام هذا النظام ولوائحه، ولها الاستعانة بالجهات الأمنية عند الحاجة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_023": {
+      "number_label_ar": "المادة الثالثة والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السابع: الرقابة على الغذاء",
+      "text": "يتولى مفتشون - يصدر بتسميتهم قرار من الرئيس - أعمال الرقابة والتفتيش وضبط المخالفات، وتكون لهم صلاحيات وسلطات مأموري الضبط الجنائي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_024": {
+      "number_label_ar": "المادة الرابعة والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السابع: الرقابة على الغذاء",
+      "text": "للمفتش عند إبراز بطاقة هويته الوظيفية دخول المنشآت والمرافق الغذائية لغرض التفتيش، وله الاطلاع على المستندات والسجلات والاحتفاظ بنسخه منها إذا لزم الأمر، كما يمكنه سحب عينات من الأغذية لتحليلها. وعلى المنشأة أو المرفق الغذائي تمكينه من ذلك، وعدم إعاقته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_025": {
+      "number_label_ar": "المادة الخامسة والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السابع: الرقابة على الغذاء",
+      "text": "إذا ظهر للمفتش وجود غذاء مخالف لأحكام هذا النظام أو لوائحه؛ فله حجزه واتخاذ التدابير اللازمة وفقاً للإجراءات التي تحددها اللائحة، على أن يكون الحجز وجوبياً إذا كان الغذاء غير مأمون.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_026": {
+      "number_label_ar": "المادة السادسة والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السابع: الرقابة على الغذاء",
+      "text": "يلتزم المفتش بالآتي:\n١. عدم الكشف عن أي معلومة حصل عليها بسبب عمله، مالم تطلب منه ذلك الهيئة أو المحكمة المختصة.\n٢. التقيد بالأحكام والإجراءات المنصوص عليها في هذا النظام ولوائحه.\n٣. تحرير محضر ضبط إذا كانت هناك مخالفة لأحكام هذا النظام ولوائحه، تسلم نسخة منه للمخالف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_027": {
+      "number_label_ar": "المادة السابعة والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثامن: سحب وتحليل العينات",
+      "text": "للهيئة حق سحب عينات من الغذاء دون مقابل؛ للتحقق من مدى مطابقتها لأحكام هذا النظام ولوائحه، وتحليلها إذا لزم الأمر في مختبراتها، أو في المختبرات المسجلة لديها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_028": {
+      "number_label_ar": "المادة الثامنة والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثامن: سحب وتحليل العينات",
+      "text": "إذا أظهرت نتائج تحليل العينة وجود مخالفة لأحكام هذا النظام ولوائحه؛ فتصدر الهيئة تقريراً بذلك، وللهيئة اتخاذ الإجراءات اللازمة في ضوء نتائج التقرير، بما في ذلك إبلاغ المنشأة الغذائية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_029": {
+      "number_label_ar": "المادة التاسعة والعشرون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل التاسع: الإجراءات الوقائية والتدابير الاحترازية",
+      "text": "للهيئة اعتماد المنهج الوقائي المناسب لضمان سلامة الغذاء خلال مراحل السلسلة الغذائية، ولها في سبيل ذلك فرض النظم الفنية الكفيلة بتحقيقه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_030": {
+      "number_label_ar": "المادة الثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل التاسع: الإجراءات الوقائية والتدابير الاحترازية",
+      "text": "إذا توافر للهيئة ما يدعوها للاعتقاد بأن الغذاء قد يسبب أضراراً على صحة المستهلك أو الصحة العامة، ولم يتوافر دليل علمي قاطع يؤكد ذلك؛ فيجوز لها أن تتخذ التدابير الاحترازية اللازمة للتحكم في المخاطر، مع مراعاة حجم الضرر المحتمل، وتفادي فرض قيود غير ضرورية، ومراجعة تلك التدابير خلال مدة معقولة في ضوء نتائج تقويم المخاطر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_031": {
+      "number_label_ar": "المادة الحادية والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل التاسع: الإجراءات الوقائية والتدابير الاحترازية",
+      "text": "للهيئة إذا كان هناك خطر محتمل يهدد صحة المستهلك أو الصحة العامة في منشأة غذائية أو مرافقها، أو أي محتوياتها، أو منتجاتها؛ أن تصدر أمراً بإغلاق هذه المنشأة أو أي من مرافقها وفقاً للإجراءات التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_032": {
+      "number_label_ar": "المادة الثانية والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل التاسع: الإجراءات الوقائية والتدابير الاحترازية",
+      "text": "إذا ظهر للهيئة أن الغذاء يشكل خطراً على صحة المستهلك أو الصحة العامة، ولا يمكن تفاديه بالتدابير والإجراءات المتاحة؛ فلها الأمر بسحب الغذاء، أو اتخاذ الإجراءات المناسبة وفقاً لما تقتضيه طبيعة الحالة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_033": {
+      "number_label_ar": "المادة الثالثة والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل العاشر: سحب وتتبع المنتج الغذائي",
+      "text": "إذا توافر للهيئة دليل على أن هناك منتجاً غذائياً قد يسبب ضرراً على صحة المستهلك، أو الصحة العامة؛ فلها الأمر بسحب المنتج، أو استرجاعه ومنع تداوله وفقاً للإجراءات التي تحددها اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_034": {
+      "number_label_ar": "المادة الرابعة والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل العاشر: سحب وتتبع المنتج الغذائي",
+      "text": "للهيئة أن تأمر إدارياً بإتلاف أي منتج غذائي مخالف لأحكام هذا النظام ولوائحه متى كان تداوله يسبب ضرراً على صحة المستهلك أو الصحة العامة، وتحدد اللائحة إجراءات الإتلاف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_035": {
+      "number_label_ar": "المادة الخامسة والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل العاشر: سحب وتتبع المنتج الغذائي",
+      "text": "لا يجوز تداول أي منتج غذائي قررت الهيئة سحبه أو استرجاعه من السوق، أو حظر تداوله.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_036": {
+      "number_label_ar": "المادة السادسة والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الحادي عشر: العقوبات",
+      "text": "أولاً: أ. مع عدم الإخلال بأي عقوبة ينص عليها أي نظام آخر، يعاقب مرتكب أي مخالفة لأحكام هذا النظام أو لوائحه بواحدة أو أكثر من العقوبات الآتية:\n١. غرامة لا تزيد على مليون ريال.\n٢. منع المخالف من ممارسة أي عمل غذائي، وذلك لمدة لا تتجاوز مائة وثمانين يوماً.\n٣. تعليق الترخيص لمدة لا تتجاوز عاماً.\n٤. إلغاء الترخيص.\nب. تجوز مضاعفة العقوبة في حال تكرار ارتكاب المخالفة.\nج. إذا كانت المخالفة تتمثل في التسبب عمداً بتداول مادة غذائية ضارة بالصحة أو مغشوشة أو ممنوعة؛ فتكون العقوبة بالسجن مدة لا تزيد على عشر سنوات، أو بغرامة لا تزيد على عشرة ملايين ريال، أو بهما معاً، بالإضافة إلى تطبيق أي من العقوبات المنصوص عليها في الفقرات (٢) و(٣) و(٤) من البند (أولاً/أ) من هذه المادة.\nثانياً: تتولى الهيئة توقيع العقوبات المنصوص عليها في الفقرات (١) و(٢) و(٣) و(٤) من البند (أولاً/أ) من هذه المادة، وفقاً لتصنيف المخالفات وتحديد العقوبات يعتمده المجلس، ولا تكون العقوبات نافذة إلا بعد اعتمادها من الرئيس أو من يفوضه، ولا يخل ذلك بقيام الهيئة باتخاذ ما تراه من تدابير احترازية إذا رأت ذلك ضرورة.\nثالثاً: إذا كانت المخالفة تستوجب عقوبة السجن، فتحال إلى هيئة التحقيق والادعاء العام؛ للتحقيق فيها، وإحالتها إلى المحكمة المختصة إذا رأت ذلك.\nرابعاً: نشر الحكم أو القرار المكتسب القطعية على نفقة المخالف في ثلاث صحف محلية، يراعى في تحديدها مقر المنشأة الغذائية، ومكان وقوع المخالفة.\nخامساً: يجوز لمن أصدرت الهيئة في حقه قرار بالعقوبة؛ التظلم منه أمام اللجنة المنصوص عليها في البند (سادساً) من هذه المادة خلال (ثلاثين) يوماً من تاريخ تبليغه بالقرار.\nسادساً: يكوّن المجلس لجنة - لا يقل عدد أعضائها عن ثلاثة، يكون من بينهم مستشار نظامي - وتختص اللجنة بالنظر فيما يأتي:\n١. المخالفات وتوقيع أي من العقوبات المنصوص عليها في الفقرة (ج) من البند (أولاً) من هذه المادة عدا عقوبة السجن، وإصدار القرار المناسب لذلك، ويجوز التظلم منه أمام المحكمة الإدارية خلال (ستين) يوماً من تاريخ إبلاغه به.\n٢. تظلم ذي الشأن من العقوبة الذي تصدره الهيئة في حقه، وعلى اللجنة البت في التظلم خلال مدة لا تتجاوز (ستين) يوماً. وفي حال انتهاء هذه المدة دون البت في التظلم، أو عدم قبول المخالف لقرار اللجنة؛ يجوز له التظلم من قرار العقوبة أمام المحكمة الإدارية.\nوفي حال إلغاء المحكمة الإدارية لقرار العقوبة الصادر من اللجنة أو الهيئة؛ تتولى المحكمة النظر في المخالفة وإيقاع العقوبة المناسبة المنصوص عليها في هذه المادة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_037": {
+      "number_label_ar": "المادة السابعة والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الحادي عشر: العقوبات",
+      "text": "للمتضرر من أي مخالفة لأحكام هذا النظام، الحق في المطالبة بالتعويض عن الأضرار التي تسببت بها تلك المخالفة، وذلك أمام المحكمة المختصة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_038": {
+      "number_label_ar": "المادة الثامنة والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "للهيئة إجراء اتفاقيات اعتراف متبادلة أو مذكرات تفاهم أو طرق وآليات أخرى للتعاون الثنائي أو متعدد الأطراف فيما يخص مجال الغذاء، وهي الجهة المخولة نظاماً بتنفيذ هذه الاتفاقيات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_039": {
+      "number_label_ar": "المادة التاسعة والثلاثون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "يحدد المجلس المقابل المالي نظير الخدمات التي تقدمها الهيئة، والتراخيص وشهادات التسجيل والموافقات التي تصدرها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_040": {
+      "number_label_ar": "المادة الأربعون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "يجوز منح مفتشي الهيئة مكافآت مالية بقرار من المجلس نظير ما يقدمونه من أعمال تؤدي إلى تفادي وقوع ضرر على المستهلك، أو على الصحة العامة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_041": {
+      "number_label_ar": "المادة الحادية والأربعون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "يجوز منح مكافأة تشجيعية بنسبة لا تزيد على (25%) من مقدار الغرامة المستحقة بقرار من المجلس؛ لمن يساعد - من غير مفتشي الهيئة أو الجهات التي تستعين بها - في الكشف عن مخالفة لأحكام هذا النظام ولوائحه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_042": {
+      "number_label_ar": "المادة الثانية والأربعون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "تعرض الهيئة مشاريع اللوائح الفنية والمواصفات القياسية للغذاء على الجمهور بالأسلوب الذي تراه مناسباً قبل اعتمادها أو إصدارها؛ وذلك لتلقي الملحوظات والمقترحات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_043": {
+      "number_label_ar": "المادة الثالثة والأربعون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "للهيئة الاستعانة بأي جهة حكومية أخرى أو بالقطاع الخاص؛ للقيام بأي مهمة مسندة إليها بموجب هذا النظام ولائحته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_044": {
+      "number_label_ar": "المادة الرابعة والأربعون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "يصدر المجلس اللائحة خلال (مائة وثمانين) يوماً من تاريخ نشر هذا النظام في الجريدة الرسمية، ويعمل بها ابتداءً من تاريخ العمل به.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    },
+    "food_art_045": {
+      "number_label_ar": "المادة الخامسة والأربعون:",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني عشر: أحكام ختامية",
+      "text": "يعمل بهذا النظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية، ويلغي كل ما يتعارض معه من أحكام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "history": []
+    }
+  }
+}

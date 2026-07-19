@@ -308,6 +308,8 @@ LAYERS = [
      "residency", "law"),
     ("data/civil_status_arabic_legal_llm/civil_status_law_legal_llm_001_096.json",
      "civil_status", "law"),
+    ("data/food_arabic_legal_llm/food_law_legal_llm_001_044.json",
+     "food", "law"),
 ]
 
 

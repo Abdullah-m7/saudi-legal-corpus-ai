@@ -1088,6 +1088,20 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "number for this generic clause to have targeted.",
         "source_ref": "sources/residency/law/official_source/residency_law_official_source.json (article 64)",
     },
+    {
+        "tracks_involved": ["food_law"],
+        "issue": "general non-specific repeal clause naming no prior statute",
+        "note": "food_law's own Article 45 states only 'يعمل بهذا النظام "
+                "بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية، "
+                "ويلغي كل ما يتعارض معه من أحكام' (a general boilerplate "
+                "repeal of any conflicting provision), naming no single "
+                "prior instrument. NOT modeled as a repeals_full edge, "
+                "since this corpus only models EXPLICITLY-NAMED repeal "
+                "relationships, never inferred ones; no distinct "
+                "predecessor food-safety law was identified this pass for "
+                "this generic clause to have targeted.",
+        "source_ref": "sources/food/law/official_source/food_law_official_source.json (article 45)",
+    },
 ]
 
 
