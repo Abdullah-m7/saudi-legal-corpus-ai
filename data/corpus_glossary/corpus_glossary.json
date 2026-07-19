@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 138,
-  "total_terms": 805,
-  "total_definitions": 1217,
-  "tracks_with_definitions_article_parsed": 92,
+  "total_tracks_in_registry": 139,
+  "total_terms": 810,
+  "total_definitions": 1230,
+  "tracks_with_definitions_article_parsed": 93,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1324,6 +1324,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الاعتماد المهني": [
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "الاعتماد المهني",
+        "definition_text": "القيد لدى الهيئة والحصول على الدرجة المهنية.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الافتراض الزكوي": [
       {
         "track_id": "zakat_law",
@@ -1817,6 +1827,14 @@
         "term_as_written": "الترخيص",
         "definition_text": "موافقة تصدرها الهيئة لشخص طبيعي أو معنوي لمزاولة نشاط معين يدخل في نطاق اختصاصاتها.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "الترخيص الذي تمنحه الوزارة للمكاتب والشركات الهندسية عند مزاولتها أيًّا من المهن الهندسية.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3122,6 +3140,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الدرجة المهنية": [
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "الدرجة المهنية",
+        "definition_text": "الدرجة المهنية التي يحصل عليها المهندس من الهيئة عند اعتماده مهنيًّا.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الدعم": [
       {
         "track_id": "gcc_anti_dumping_law",
@@ -4372,6 +4400,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العمل الهندسي": [
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "العمل الهندسي",
+        "definition_text": "الدراسات والتصاميم والرسومات والإشراف والتنفيذ والتشغيل والصيانة في شعب التخصصات الهندسية وفروعها.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العمل لبعض الوقت": [
       {
         "track_id": "labor_law",
@@ -4782,6 +4820,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "finance_companies_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -5139,6 +5185,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "اللجنة المشكلة بموجب المادة الرابعة من اللائحة.",
         "source_record_id": "enforcement-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة الاعتماد المهني بالهيئة.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7902,6 +7956,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام مزاولة المهن الهندسية.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -8386,6 +8448,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمهندسين.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "foreign_ownership_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -8643,6 +8713,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة العدل.",
         "source_record_id": "enforcement-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة التجارة والاستثمار.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8927,6 +9005,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير العدل.",
         "source_record_id": "enforcement-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير التجارة والاستثمار.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10714,6 +10800,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "social_insurance_law",
         "article_number": 1,
         "term_as_written": "مجلس الإدارة",
@@ -10807,6 +10901,16 @@
         "term_as_written": "مركز الخدمة الشاملة",
         "definition_text": "مركز يشمل مكاتب اتصال تضم ممثلين من الجهات الحكومية ذات العلاقة بالاستثمار، ويقدم خدماته للمستثمرين.",
         "source_record_id": "inv-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مزاولة المهن الهندسية": [
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "مزاولة المهن الهندسية",
+        "definition_text": "القيام بأي عمل هندسي يمارس في شعب التخصصات الهندسية وفروعها.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11259,6 +11363,16 @@
         "term_as_written": "مياه الصرف المعالجة",
         "definition_text": "مياه خارجة من محطة معالجة مياه الصرف بعد معالجتها طبقاً لمقاييس ومعايير محددة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "ميثاق المهندس": [
+      {
+        "track_id": "engineering_practice_law",
+        "article_number": 1,
+        "term_as_written": "ميثاق المهندس",
+        "definition_text": "مجموعة القواعد التي تنظم أخلاقيات مزاولة المهن الهندسية، وسلوكياتها التي تقرها الهيئة.",
+        "source_record_id": "engineering-practice-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

@@ -139,6 +139,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_NEAR_LIVE_WAYBACK_X_MEDIA_GOV_SA_OFFICIAL_PDF_X_WIPO_LEX_X_NEZAMS_QANOONSA_CURRENCY_CHECKED_CONFIRMED_CURRENT": TIER_1,
+    "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_PDF_X_QANOONSA_QANONIAH_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -527,6 +528,23 @@ RATIONALE_OVERRIDE = {
         "سجل التعديلات المقتبس بثقة كاملة)، وليس بثقة متفاوتة لكل مادة، مفصَّل في "
         "official_source.json الخاص بالمسار."
     ),
+    "engineering_practice_law": (
+        "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_PDF_X_"
+        "QANOONSA_QANONIAH_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء "
+        "(BOE) الحية متعذرة الوصول، واعتُمدت ثلاث لقطات أرشيف Wayback Machine مستقلة "
+        "لصفحة BOE نفسها (تمتد من 14 نوفمبر 2019 إلى 25 فبراير 2026، نص رئيسي متطابق "
+        "حرفياً طوال هذه الفترة) كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (موقع "
+        "الهيئة السعودية للمهندسين الرسمي saudieng.sa، ملف PDF مستضاف ذاتياً، لقطة "
+        "يونيو 2025، مطابق حرفياً للمواد 2-17) ومصدر ثانوي للمطابقة الهيكلية "
+        "(qanoonsa.com/qanoniah.com). مصدران رسميان (BOE وsaudieng.sa) متقاربان، وهو "
+        "ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط "
+        "saudi_engineers_law وawqaf_law (BOE عبر Wayback × موقع الجهة الرسمي الخاص "
+        "بها). راجع has_per_article_variation للمادة الأولى التي تحمل تناقضاً "
+        "ثلاثياً مؤكَّداً (لا افتراضياً) بين نص BOE الرئيسي الراكد، ونص سجل تعديلات "
+        "BOE نفسه (الذي لا تتطابق عبارته 'قبل' مع نص BOE الرئيسي عند أي لقطة)، ونص "
+        "saudieng.sa الحالي المختلف بدوره — تناقض من نفس فئة سابقة awqaf_law المادة "
+        "6، مفصَّل في official_source.json الخاص بالمسار."
+    ),
 }
 
 # Tracks with documented, non-negligible confidence variation ACROSS the articles WITHIN the
@@ -659,6 +677,19 @@ PER_ARTICLE_VARIATION_NOTE = {
         "الكامل (388)، مؤكَّداً حرفياً من موقع الهيئة الرسمي، بينما ظل النص الرئيسي "
         "لبوابة BOE عالقاً على صياغة 2002 الأصلية طوال الفترة؛ راجع official_source.json "
         "الخاص بالمسار للتفاصيل الكاملة."
+    ),
+    "engineering_practice_law": (
+        "16 مادة غير معدَّلة مصدرها مزدوج رسمي (ثلاث لقطات Wayback لبوابة BOE × ملف "
+        "PDF الرسمي لموقع الهيئة saudieng.sa)، متطابقة حرفياً دون فارق جوهري. أما "
+        "المادة الأولى (التعريفات، الجهة المشرفة) فتحمل تناقضاً ثلاثياً غير محلول: "
+        "سجل BOE يوثّق نقل الإشراف بموجب قرار مجلس الوزراء 250، 1444هـ، لكن عبارته "
+        "'قبل' لا تطابق نص BOE الرئيسي الثابت عند أي من اللقطات الثلاث (والذي يسبق "
+        "القرار نفسه بنحو 3 سنوات)، بينما يعرض ملف saudieng.sa الحالي صياغة رابعة "
+        "مختلفة بدورها تعكس إعادة تسمية إدارية لاحقة غير مسجَّلة في سجل BOE — لم "
+        "يُدمج نص مركَّب افتراضياً؛ اعتُمد نص BOE الرئيسي الثابت كما هو، وصُنِّفت "
+        "المادة معدَّلة (بناءً على تصنيف BOE نفسه)، ووُثِّق التناقض الثلاثي كاملاً، "
+        "تماشياً مع سابقة awqaf_law المادة 6؛ راجع official_source.json الخاص "
+        "بالمسار للتفاصيل الكاملة."
     ),
 }
 
