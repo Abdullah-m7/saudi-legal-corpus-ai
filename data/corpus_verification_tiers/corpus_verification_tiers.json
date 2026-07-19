@@ -19,14 +19,14 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 145,
+  "total_tracks": 146,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 98,
-    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 17,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 18,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 8,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 22
   },
-  "tracks_with_per_article_variation": 20,
+  "tracks_with_per_article_variation": 21,
   "tracks": [
     {
       "track_id": "aawan_regulation",
@@ -1021,6 +1021,13 @@
       "tier_rationale": "official_text_status='BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE' — ثقة متفاوتة موثّقة صراحة على مستوى المادة عبر حقل verification_tier الخاص بالمسار نفسه: 67 من 86 سجلاً بتصنيف PRIMARY_INDEPENDENTLY_CONFIRMED مقابل 19 سجلاً بتصنيف SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE (تعتمد على موثوقية نمط nezams.com وحدها، وبوابة BOE مؤكَّد أنها متجاوَزة زمنياً لهذا النظام). التصنيف هنا يعتمد الجزء الأضعف.",
       "has_per_article_variation": true,
       "per_article_variation_note": "67 من 86 سجلاً بتصنيف PRIMARY_INDEPENDENTLY_CONFIRMED مقابل 19 سجلاً (18 مادة معدَّلة + المادة 50 مكرر) بتصنيف SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE؛ راجع official_source.json الخاص بالمسار (حقل verification_tier لكل سجل)."
+    },
+    {
+      "track_id": "travel_documents_law",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_QISTAS_X_UMM_AL_QURA_GAZETTE_M11_AMENDMENT_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": true,
+      "per_article_variation_note": "المواد المعدَّلة بالمرسوم الملكي م/11 (1443هـ) تحديداً (10، 10 مكرر، الفقرة 3 من المادة 11) مؤكَّدة عبر جريدة أم القرى الرسمية نفسها إضافة إلى BOE وnezams.com/qistas.com، بمستوى ثقة يوازي TIER_1 لهذه الفئة الفرعية وحدها؛ بقية مواد المسار (بما فيها المواد المعدَّلة الأخرى 2، 4، 6، 12) تستند إلى BOE عبر Wayback زائد مصادر ثانوية خاصة فقط، دون تأكيد من جريدة أم القرى أو مصدر رسمي ثانٍ؛ راجع official_source.json الخاص بالمسار."
     },
     {
       "track_id": "vat_law",

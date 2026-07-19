@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9894,
+  "total_primary_arabic_governing_records": 9910,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10789,
-  "total_tracks": 145,
+  "total_registry_counted_records": 10805,
+  "total_tracks": 146,
   "tracks": [
     {
       "boundaries": {
@@ -6868,6 +6868,55 @@
       "validator_targets": [
         "make domestic-labor-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/travel_documents/law/official_source/travel_documents_law_official_source.json",
+        "sources/travel_documents/law/verified/travel_documents_law_verified_records.jsonl",
+        "data/travel_documents_arabic_legal_llm/travel_documents_law_legal_llm_001_016.json"
+      ],
+      "display_name_ar": "نظام وثائق السفر",
+      "display_name_en": "Saudi Arabian Travel Documents Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/travel_documents_arabic_legal_llm/travel_documents_law_legal_llm_001_016.json",
+          "governing": true,
+          "record_count": 16,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabian Travel Documents Law «نظام وثائق السفر» — Royal Decree No. M/24, dated 28/5/1421H (2000G), approved via Council of Ministers Resolution No. 122 (21/5/1421H). A low-medium-priority coverage-gap identified via a fresh gap-scan pass, governing the four categories of Saudi travel documents (passport, laissez-passer, diplomatic passport, special passport) and the conditions for issuing, renewing, and restricting them, distinct from this corpus's already-ingested residency_law and nationality_law tracks. **16 records: 8 اصلية, 6 معدلة** (Articles 2, 4, 6, 10, 11, 12), **1 ملغاة** (Article 3, repealed en bloc alongside the Article 2/4 amendments by Royal Decree M/134, 1440H), **1 مضافة** (Article 10 مكرر, added by Royal Decree M/11, 1443H) — flat single-range structure (1-15 plus the added مكرر article), **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_2 (honest, not inflated)** — BOE-via-Wayback-Machine, three independent snapshots spanning 13 Nov 2019 to 12 Dec 2025, cross-verified against nezams.com/qistas.com's independent reproduction; additionally, for the Royal Decree M/11 (1443H) amendment specifically (Articles 10, 10 مكرر, 11(3)), cross-verified against the official Umm Al-Qura Gazette itself — that subset alone reaches TIER_1-caliber confidence, but the remainder of the law rests on BOE plus private-aggregator secondary sources only, so the track-level tier reflects this weaker, meaningfully-sized majority rather than the strongest-verified amendment. moi.gov.sa (a potential third independent official source) was unreachable this pass (503 / DNS failure) on both its current and legacy domains. **CONFIRMED SCOPED/PARTIAL REPEAL**: Article 13 explicitly states this law and its Implementing Regulation replace only the travel-document-related provisions ('الأحكام المتعلقة بوثائق السفر') of the prior نظام الجوازات السفرية (Supreme Order No. 17/3/2, dated 19/1/1358H) — NOT a blanket repeal of that entire predecessor system — a genuine positive finding, modeled as a repeals_partial edge in the supersession graph, mirroring the municipal_councils_law precedent for a narrowly-scoped partial repeal; the 1358H predecessor itself is not ingested in this corpus (historical context only). Genuine anomalies preserved, not fabricated or silently fixed: Article 6's own BOE amendment-changelog omits any decree/resolution citation for its 1439H amendment (the citation, Council of Ministers Decision 217, is sourced only from nezams.com, though the amendment's substance is independently confirmed identical); Article 10's own BOE changelog quotes a 'before' phrase that does not character-for-character match BOE's own main article text (preserved as-is, unlike the engineering_practice_law precedent where a similar mismatch blocked merging entirely, since here the replacement location is unambiguous from context). Two companion instruments identified but NOT ingested this pass: اللائحة التنفيذية لنظام وثائق السفر (the Implementing Regulation), and the wholly separate نظام جوازات السفر السياسية والخاصة (a distinct law governing diplomatic/special passports, its own separate BOE lawId, no repeal/supersession relationship to this track). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_QISTAS_X_UMM_AL_QURA_GAZETTE_M11_AMENDMENT_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 16,
+        "legal_status_breakdown": {
+          "اصلية": 8,
+          "مضافة": 1,
+          "معدلة": 6,
+          "ملغاة": 1
+        },
+        "total": 16
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. M/24, dated 28/5/1421H (2000G), approved via Council of Ministers Resolution No. 122 (21/5/1421H) — laws.boe.gov.sa reached via three independent Wayback Machine snapshots spanning 13 Nov 2019 to 12 Dec 2025, cross-verified against nezams.com/qistas.com's independent reproduction and, specifically for the Royal Decree M/11 (1443H) amendment, against the official Umm Al-Qura Gazette itself — that subset alone reaches TIER_1-caliber confidence, while the rest of the law rests on BOE plus private-aggregator secondary sources only, so the track-level tier reflects the weaker, meaningfully-sized majority of articles rather than the strongest-verified subset",
+      "status": "complete",
+      "track_id": "travel_documents_law",
+      "validator_targets": [
+        "make travel-documents-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6984,12 +7033,13 @@
       "trade_names": 23,
       "trademark": 52,
       "traffic": 86,
+      "travel_documents": 16,
       "vat": 53,
       "whistleblower": 37,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9725,
+    "total_records": 9741,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

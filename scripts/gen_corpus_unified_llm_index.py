@@ -314,6 +314,8 @@ LAYERS = [
      "health_system", "law"),
     ("data/domestic_labor_arabic_legal_llm/domestic_labor_regulation_legal_llm_001_033.json",
      "domestic_labor", "regulation"),
+    ("data/travel_documents_arabic_legal_llm/travel_documents_law_legal_llm_001_016.json",
+     "travel_documents", "law"),
 ]
 
 
