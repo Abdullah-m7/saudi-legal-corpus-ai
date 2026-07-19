@@ -178,6 +178,7 @@ MUNICIPAL_COUNCILS_LAW_LLM = os.path.join(ROOT, "data", "municipal_councils_arab
 PRESS_LAW_LLM = os.path.join(ROOT, "data", "press_arabic_legal_llm", "press_law_legal_llm_001_049.json")
 ENGINEERING_PRACTICE_LAW_LLM = os.path.join(ROOT, "data", "engineering_practice_arabic_legal_llm", "engineering_practice_law_legal_llm_001_017.json")
 NATIONALITY_LAW_LLM = os.path.join(ROOT, "data", "nationality_arabic_legal_llm", "nationality_law_legal_llm_001_030.json")
+RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "residency_arabic_legal_llm", "residency_law_legal_llm_001_069.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -349,6 +350,7 @@ def main() -> int:
     press_law_llm = _load_json(PRESS_LAW_LLM)
     engineering_practice_law_llm = _load_json(ENGINEERING_PRACTICE_LAW_LLM)
     nationality_law_llm = _load_json(NATIONALITY_LAW_LLM)
+    residency_law_llm = _load_json(RESIDENCY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -369,7 +371,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 140,
+        "total_tracks": 141,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -513,6 +515,7 @@ def main() -> int:
             + press_law_llm["record_count"]  # 49 Law on Printed Materials and Publication (M/32, 1421H) (BOE-via-near-live-Wayback x media.gov.sa's own official PDF x WIPO Lex/nezams.com/qanoonsa.com, currency-checked and confirmed still current over a still-unenacted draft Media Law, full repeal of the predecessor 1982 Press Law, see track notes)
             + engineering_practice_law_llm["record_count"]  # 17 Law of the Practice of Engineering Professions (M/36, 1438H) (BOE-via-Wayback three snapshots x saudieng.sa's own official PDF x qanoonsa.com/qanoniah.com, decree-number collision with saudi_engineers_law re-confirmed, no predecessor found, see track notes)
             + nationality_law_llm["record_count"]  # 30 Saudi Arabian Nationality Law (Royal Will 8/20/5604, 1374H) (BOE-via-Wayback three snapshots x nezams.com x independent news corroboration, 11 of 30 articles cleanly reconstructed from BOE's own changelog, confirmed repeal of the 1357H predecessor, see track notes)
+            + residency_law_llm["record_count"]  # 69 Foreigners' Residency Law (Royal/Supreme Order 17/2/25/1337, 1371H) (TIER_3, cross-verified secondary reproduction, BOE does not index this law at all, 1 ملغاة preserved, 4 مضافة, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -647,6 +650,7 @@ def main() -> int:
             + press_law_llm["record_count"]
             + engineering_practice_law_llm["record_count"]
             + nationality_law_llm["record_count"]
+            + residency_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4777,6 +4781,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Saudi Arabian Nationality Law «نظام الجنسية العربية السعودية» — Royal Will No. 8/20/5604, dated 22/2/1374H (22 September 1954), approved via Council of Ministers Resolution No. 4 (25/1/1374H). A high-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing acquisition, transfer, and loss of Saudi citizenship. **30 records: 19 اصلية, 11 معدلة** (Articles 7, 8, 9, 12, 14, 16, 17, 21, 22, 26, 27) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **Confirmed full repeal of a predecessor:** this law's own Article 28 explicitly repeals the prior Saudi Arabian Nationality System (Royal Will No. 7/1/47, dated 13 Shawwal 1357H) and the separate Hejazi/Hejazi-Najdi nationality regulations; the predecessor is not ingested in this corpus (historical context only). **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-NEZAMS-X-INDEPENDENT-NEWS-CORROBORATION — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (19 Nov 2019 through 14 Jan 2026) were cross-verified against nezams.com's independent reproduction of the decree identity and per-article amendment notations, further corroborated for the most recent amendment by multiple independent English-language news outlets (Arab News, Amwaj Media, Middle East Monitor, Investment Migration Council). **GENUINELY CONFIRMED BOE main-body staleness for 11 of 30 articles**, resolved via clean changelog incorporation: BOE's own main body still displays the original 1954 wording for these 11 articles, but every one of the corresponding changelog popups supplies either a complete, self-contained replacement text or (for Article 8's second amendment) an unambiguous single-occurrence phrase substitution independently verified by direct string search — the same clean-incorporation pattern already confirmed in this corpus's press_law and accounting_auditing_law tracks; this track ingests the fully-reconstructed current text for all 11 articles, with the complete amendment chain preserved in each article's history. Article 8's most recent amendment (Royal Decree M/88, 11/6/1444H) transfers approval authority for children of Saudi mothers and foreign fathers from the Minister of Interior to the Prime Minister, independently confirmed by international press coverage. Other flagged discrepancies: BOE's own metadata surfaces only the Council of Ministers Resolution number, not the separate Royal Will number, as its displayed 'issuance tool' (documented, not treated as a conflict); Article 16's earlier amendment steps are not recoverable from BOE beyond its final quoted text (an honest gap, not fabricated); a trivial clerical typo in Article 30's earliest snapshot was corrected as an OCR/typo fix, not treated as a legal amendment. A companion Implementing Regulation (اللائحة التنفيذية لنظام الجنسية العربية السعودية, ~25 articles, hosted on moi.gov.sa) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "residency_law",
+                "display_name_ar": "نظام الإقامة",
+                "display_name_en": "Foreigners' Residency Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY_BOE_DOES_NOT_INDEX_THIS_LAW_MOI_PDF_UNREACHABLE",
+                "source_authority": "Royal (Supreme) Order No. 17/2/25/1337, dated 11/9/1371H (~1951-1952G) — laws.boe.gov.sa does not index this law at all (only its unrelated 1440H namesake, نظام الإقامة المميزة/Premium Residency Law, M/106); the Ministry of Interior's own hosted PDF was unreachable both live and via Wayback; sourced from a cross-verified secondary reproduction of the officially-circulated compiled text agreeing word-for-word across mohamah.net, rakadvocate.blogspot.com, and islamport.com, with the National Society for Human Rights' own PDF used for a structural cross-check only (CID-font-corrupted, not used for text)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": residency_law_llm["record_count"],
+                    "data_path": "data/residency_arabic_legal_llm/residency_law_legal_llm_001_069.json"}},
+                "record_counts": {"arabic_articles": residency_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 48, "معدلة": 16, "ملغاة": 1, "مضافة": 4},
+                                  "total": residency_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/residency/law/official_source/residency_law_official_source.json",
+                    "sources/residency/law/verified/residency_law_verified_records.jsonl",
+                    "data/residency_arabic_legal_llm/residency_law_legal_llm_001_069.json",
+                ],
+                "validator_targets": ["make residency-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Foreigners' Residency Law «نظام الإقامة» (also known as the Iqama/Kafala Law) — Royal (Supreme) Order No. 17/2/25/1337, dated 11/9/1371H (~1951-1952G), still in force and heavily amended over its history. A high-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing foreigners' residency permits and sponsorship in the Kingdom, distinct from the corpus's already-ingested anti_trafficking_law and labor_law tracks. **69 records: 48 اصلية, 16 معدلة** (Articles 14, 16, 25, 31, 35, 38, 43, 44, 45, 46, 47, 52, 53, 56, 60, 61), **1 ملغاة** (Article 37, repealed by Royal Decree M/48, 10/10/1391H — text preserved, not deleted), **4 مضافة** (Articles 5 مكرر, 44 مكرر, 49 مكررة, 62 مكرر) — 4 فصول (chapters, spanning Articles 1-31 / 32-42 / 43-49 / 50-65), no أبواب. A 5th مكرر article (61 مكرر, confirmed added by Royal Decree M/56, 4/9/1427H, per the source's own amendment log) was deliberately **EXCLUDED** from ingestion since its substantive text could not be recovered from any source checked — not fabricated. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa does not index this 1371H law at all (only its unrelated 1440H namesake, Premium Residency Law M/106); the Ministry of Interior's own hosted PDF was unreachable both live and via Wayback; this track instead rests on a cross-verified secondary reproduction of the officially-circulated compiled text, agreeing word-for-word across three independent sources (mohamah.net, rakadvocate.blogspot.com, islamport.com), with the National Society for Human Rights' own PDF used only for a structural cross-check (its own text is CID-font-corrupted and unusable directly). **No specific named predecessor** — Article 64 gives only a general repeal of prior orders/instructions with no determinate predecessor instrument identified, a confirmed negative finding mirroring the finance_lease_law/engineering_practice_law precedent (no supersession-graph edge modeled). Genuine anomalies carried forward: a three-way inconsistent citation of Article 5 مكرر's own adding decree/resolution number and date within the same compiled source (م/4 vs م/40; 1393H vs 1394H); a likely typo in Article 52's second-amendment note (cites 'المادة (5)', almost certainly meant to read (52) given context). Companion instruments identified but explicitly out of scope for this one-law-per-pass build: نظام الإقامة المميزة (Premium Residency Law, M/106, 1440H) and its لائحة تنفيذية; نظام جوازات السفر (Passports Law, already a separate coverage-gap-map candidate); the Muqeem system's exit-re-entry visa rules. Arabic governs; not legal advice.",
             },
         ],
     }

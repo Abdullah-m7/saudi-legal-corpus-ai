@@ -161,6 +161,7 @@ STATUS_TIER_MAP = {
     "DUAL_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE": TIER_3,
     "TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE": TIER_3,
     "SECONDARY_MULTI_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE": TIER_3,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY_BOE_DOES_NOT_INDEX_THIS_LAW_MOI_PDF_UNREACHABLE": TIER_3,
 
     # --- Tier 4: single-sourced for a meaningful part, and/or explicit mixed/per-article
     #     confidence split documented in the track's own official_text_status. ---
@@ -564,6 +565,25 @@ RATIONALE_OVERRIDE = {
         "البناء النظيف لـ11 مادة من سجل تعديلات BOE نفسه، تماشياً مع سابقة "
         "press_law/accounting_auditing_law، مفصَّل في official_source.json الخاص "
         "بالمسار."
+    ),
+    "residency_law": (
+        "official_text_status='TIER_3_SECONDARY_MULTI_SOURCE_ONLY_BOE_DOES_NOT_INDEX_THIS_"
+        "LAW_MOI_PDF_UNREACHABLE': بوابة هيئة الخبراء (laws.boe.gov.sa) لا تُفهرس هذا "
+        "النظام (1371هـ) إطلاقاً — تُفهرس فقط نظام الإقامة المميزة (م/106، 1440هـ) "
+        "المختلف تماماً وغير ذي الصلة. الصفحة الرسمية الخاصة بوزارة الداخلية "
+        "(moi.gov.sa) لم تكن قابلة للوصول لا مباشرة ولا عبر أرشيف Wayback. لذلك لا "
+        "يوجد أي مصدر رسمي/أساسي واحد قابل للتحقق لهذا المسار، وهو ما يطابق تماماً "
+        "تعريف TIER_3 (لا مصدر رسمي متاح، مصدرين ثانويين مستقلين فأكثر متطابقين). "
+        "اعتمد المسار على نسخة ثانوية موثقة رسمياً ومتداولة، تطابقت حرفياً عبر ثلاثة "
+        "مصادر مستقلة (mohamah.net × rakadvocate.blogspot.com × islamport.com)، مع "
+        "استخدام نسخة الهيئة الوطنية لحقوق الإنسان (NSHR) للتدقيق الهيكلي فقط (نصها "
+        "تالف بسبب مشكلة ترميز خط CID، غير صالح للاستخدام المباشر). هذا مماثل لنمط "
+        "gcc_anti_dumping_law وغيره من مسارات TIER_3 (مصدر رسمي متعذر الوصول كلياً، "
+        "الاعتماد الكامل على تطابق مصادر ثانوية مستقلة). راجع الملاحظات الخاصة "
+        "بالمسار لثلاثة تناقضات حقيقية موثقة: تضارب في رقم/تاريخ قرار إضافة المادة "
+        "5 مكرر عبر ثلاثة استشهادات في المصدر المجمَّع نفسه، وخطأ مطبعي محتمل في "
+        "ملاحظة التعديل الثاني للمادة 52، ونص المادة 61 مكرر المستبعد عمداً لعدم "
+        "القدرة على استرجاعه من أي مصدر."
     ),
 }
 

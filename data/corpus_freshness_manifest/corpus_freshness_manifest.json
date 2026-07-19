@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 140 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 140 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 141 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 141 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 140,
+  "total_tracks": 141,
   "known_source_staleness_risk_count": 10,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -2287,6 +2287,24 @@
         "nezams.com"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "residency_law",
+      "display_name_en": "Foreigners' Residency Law",
+      "display_name_ar": "نظام الإقامة",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='TIER_3_SECONDARY_MULTI_SOURCE_ONLY_BOE_DOES_NOT_INDEX_THIS_LAW_MOI_PDF_UNREACHABLE': بوابة هيئة الخبراء (laws.boe.gov.sa) لا تُفهرس هذا النظام (1371هـ) إطلاقاً — تُفهرس فقط نظام الإقامة المميزة (م/106، 1440هـ) المختلف تماماً وغير ذي الصلة. الصفحة الرسمية الخاصة بوزارة الداخلية (moi.gov.sa) لم تكن قابلة للوصول لا مباشرة ولا عبر أرشيف Wayback. لذلك لا يوجد أي مصدر رسمي/أساسي واحد قابل للتحقق لهذا المسار، وهو ما يطابق تماماً تعريف TIER_3 (لا مصدر رسمي متاح، مصدرين ثانويين مستقلين فأكثر متطابقين). اعتمد المسار على نسخة ثانوية موثقة رسمياً ومتداولة، تطابقت حرفياً عبر ثلاثة مصادر مستقلة (mohamah.net × rakadvocate.blogspot.com × islamport.com)، مع استخدام نسخة الهيئة الوطنية لحقوق الإنسان (NSHR) للتدقيق الهيكلي فقط (نصها تالف بسبب مشكلة ترميز خط CID، غير صالح للاستخدام المباشر). هذا مماثل لنمط gcc_anti_dumping_law وغيره من مسارات TIER_3 (مصدر رسمي متعذر الوصول كلياً، الاعتماد الكامل على تطابق مصادر ثانوية مستقلة). راجع الملاحظات الخاصة بالمسار لثلاثة تناقضات حقيقية موثقة: تضارب في رقم/تاريخ قرار إضافة المادة 5 مكرر عبر ثلاثة استشهادات في المصدر المجمَّع نفسه، وخطأ مطبعي محتمل في ملاحظة التعديل الثاني للمادة 52، ونص المادة 61 مكرر المستبعد عمداً لعدم القدرة على استرجاعه من أي مصدر.",
+      "registry_source_authority": "Royal (Supreme) Order No. 17/2/25/1337, dated 11/9/1371H (~1951-1952G) — laws.boe.gov.sa does not index this law at all (only its unrelated 1440H namesake, نظام الإقامة المميزة/Premium Residency Law, M/106); the Ministry of Interior's own hosted PDF was unreachable both live and via Wayback; sourced from a cross-verified secondary reproduction of the officially-circulated compiled text agreeing word-for-word across mohamah.net, rakadvocate.blogspot.com, and islamport.com, with the National Society for Human Rights' own PDF used for a structural cross-check only (CID-font-corrupted, not used for text)",
+      "registry_source_url": null,
+      "official_source_file": "sources/residency/law/official_source/residency_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
