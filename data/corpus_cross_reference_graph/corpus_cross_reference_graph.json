@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9434,
-  "total_references_extracted": 1922,
-  "intra_law_count": 1696,
-  "inter_law_count": 226,
+  "total_records_scanned": 9464,
+  "total_references_extracted": 1932,
+  "intra_law_count": 1704,
+  "inter_law_count": 228,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1632,
-    "medium": 290
+    "high": 1636,
+    "medium": 296
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -15029,6 +15029,105 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الرابعة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (13)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (11) من هذا النظام. ب- إذا عمل في",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تملك العقار كما يجوز حرمانه",
+      "raw_citation_text": "وفقا لنظام تملك العقار كما يجوز حرمانه من الإقامة في أراضي المملكة العرب",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (13)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (11)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-029",
+      "source_article_number": 29,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (9) وكذلك إسقاط الجنسية عن أي سعو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nationality_law",
+      "source_record_id": "nationality-law-llm-art-029",
+      "source_article_number": 29,
+      "type": "intra_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (13) من هذا النظام.",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "nazaha_law",
       "source_record_id": "nazaha-law-llm-art-015",
       "source_article_number": 15,
@@ -17281,6 +17380,17 @@
       "target_article_number": 16,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة السادسة عشرة من هذا النظام برئاسة أمير الم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "sama_law",
+      "source_record_id": "sama-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": null,
+      "target_law_name_raw": "النقد العربي السعودي",
+      "raw_citation_text": "أحكام نظام النقد العربي السعودي",
       "confidence": "high"
     },
     {
