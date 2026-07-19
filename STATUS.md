@@ -3530,13 +3530,26 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   Output: `data/corpus_verification_tiers/corpus_verification_tiers.json`.
   Validate: `make corpus-verification-tiers-validate`.
 - **Coverage gap map** — a research-only planning document
-  (`reports/coverage_gap_map/`) identifying 18 significant Saudi laws not
-  yet in the corpus, ranked by priority with existence-confidence flags, to
-  keep future research work systematic rather than ad hoc. Top priority
-  (Zakat Collection Law) has already been built — see above; the map's own
-  estimates for it were subsequently corrected during dedicated research,
-  a documented example of why this map is explicitly labeled a starting
-  point requiring verification, not a build-ready source.
+  (`reports/coverage_gap_map/`) identifying significant Saudi laws not yet
+  in the corpus, ranked by priority with existence-confidence flags, to
+  keep future research work systematic rather than ad hoc. The original
+  24-candidate scan has since been fully built out (Zakat Collection Law,
+  its top priority, first -- see above; the map's own estimates for it were
+  subsequently corrected during dedicated research, a documented example of
+  why this map is explicitly labeled a starting point requiring
+  verification, not a build-ready source). A fresh scan run this session
+  against all 153 ingested tracks found **16 new candidate gaps**, mostly
+  Implementing Regulations of already-ingested base laws following the same
+  pattern this session filled for health_system/food/travel_documents/
+  nationality (VAT, Income Tax, Traffic, Anti-Money Laundering, Competition,
+  Patent, Trademark, E-Commerce, Franchise, Cooperative Insurance Companies
+  Control, and a fragmented Environmental-Law regulation family), plus
+  wholly new subject areas (Water Law, Electricity Law, Agriculture Law) and
+  one currency-risk flag: the Communications, Space and Information
+  Technology Law (Council of Ministers Resolution 592, 1/11/1443H) appears
+  to supersede the base Telecommunications Act underlying this corpus's own
+  `telecommunications_law` track, needing dedicated confirmation before that
+  track can be treated as current.
 - **Supersession/repeal graph** — a purely additive, read-only derived
   layer extracting every EXPLICITLY-STATED repeal/supersession relationship
   already documented in each track's own `notes`/`official_source.json`
