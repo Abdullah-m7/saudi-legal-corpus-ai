@@ -302,6 +302,8 @@ LAYERS = [
      "press", "law"),
     ("data/engineering_practice_arabic_legal_llm/engineering_practice_law_legal_llm_001_017.json",
      "engineering_practice", "law"),
+    ("data/nationality_arabic_legal_llm/nationality_law_legal_llm_001_030.json",
+     "nationality", "law"),
 ]
 
 

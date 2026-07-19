@@ -15,7 +15,7 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 139,
+  "total_tracks_in_registry": 140,
   "total_terms": 810,
   "total_definitions": 1230,
   "tracks_with_definitions_article_parsed": 93,
@@ -162,6 +162,10 @@
     },
     {
       "track_id": "municipal_realestate_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "nationality_law",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {

@@ -826,6 +826,23 @@ EDGES = [
                 "أحكام.' Predecessor not separately ingested in this corpus.",
         "source_ref": "sources/press/law/official_source/press_law_official_source.json (article 48)",
     },
+    {
+        "from_track_id": "nationality_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الجنسية العربية السعودية (السابق، 1357هـ) وأنظمة الجنسية الحجازية/الحجازية النجدية الخاصة",
+        "target_decree": "Royal Will No. 7/1/47, 13 Shawwal 1357H",
+        "note": "nationality_law's own official_source.json article 28: "
+                "'يلغي هذا النظام نظام الجنسية العربية السعودية الذي صدرت "
+                "الإرادة الملكية السنية رقم 7/1/47 في تاريخ 13 شوال 1357هـ "
+                "بالموافقة عليه، كما يلغي كل ما كان معمولا به من أنظمة "
+                "خاصة بالجنسية الحجازية أو الحجازية النجدية.' A confirmed "
+                "full repeal of both the 1357H predecessor nationality "
+                "system and the separate earlier Hejazi/Hejazi-Najdi "
+                "nationality regulations, named in the same article. "
+                "Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/nationality/law/official_source/nationality_law_official_source.json (article 28)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

@@ -177,6 +177,7 @@ SAUDI_ENGINEERS_LAW_LLM = os.path.join(ROOT, "data", "saudi_engineers_arabic_leg
 MUNICIPAL_COUNCILS_LAW_LLM = os.path.join(ROOT, "data", "municipal_councils_arabic_legal_llm", "municipal_councils_law_legal_llm_001_069.json")
 PRESS_LAW_LLM = os.path.join(ROOT, "data", "press_arabic_legal_llm", "press_law_legal_llm_001_049.json")
 ENGINEERING_PRACTICE_LAW_LLM = os.path.join(ROOT, "data", "engineering_practice_arabic_legal_llm", "engineering_practice_law_legal_llm_001_017.json")
+NATIONALITY_LAW_LLM = os.path.join(ROOT, "data", "nationality_arabic_legal_llm", "nationality_law_legal_llm_001_030.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -347,6 +348,7 @@ def main() -> int:
     municipal_councils_law_llm = _load_json(MUNICIPAL_COUNCILS_LAW_LLM)
     press_law_llm = _load_json(PRESS_LAW_LLM)
     engineering_practice_law_llm = _load_json(ENGINEERING_PRACTICE_LAW_LLM)
+    nationality_law_llm = _load_json(NATIONALITY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -367,7 +369,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 139,
+        "total_tracks": 140,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -510,6 +512,7 @@ def main() -> int:
             + municipal_councils_law_llm["record_count"]  # 69 Municipal Councils Law (M/61, 1435H) (BOE-via-Wayback archive, six snapshots x momah.gov.sa's own two official PDFs x nezams.com, zero amendments confirmed, partial repeal of predecessor Law of Municipalities and Villages Articles 2(b)/2(c)/7(b)/Chapter Two of Part Two, see track notes)
             + press_law_llm["record_count"]  # 49 Law on Printed Materials and Publication (M/32, 1421H) (BOE-via-near-live-Wayback x media.gov.sa's own official PDF x WIPO Lex/nezams.com/qanoonsa.com, currency-checked and confirmed still current over a still-unenacted draft Media Law, full repeal of the predecessor 1982 Press Law, see track notes)
             + engineering_practice_law_llm["record_count"]  # 17 Law of the Practice of Engineering Professions (M/36, 1438H) (BOE-via-Wayback three snapshots x saudieng.sa's own official PDF x qanoonsa.com/qanoniah.com, decree-number collision with saudi_engineers_law re-confirmed, no predecessor found, see track notes)
+            + nationality_law_llm["record_count"]  # 30 Saudi Arabian Nationality Law (Royal Will 8/20/5604, 1374H) (BOE-via-Wayback three snapshots x nezams.com x independent news corroboration, 11 of 30 articles cleanly reconstructed from BOE's own changelog, confirmed repeal of the 1357H predecessor, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -643,6 +646,7 @@ def main() -> int:
             + municipal_councils_law_llm["record_count"]
             + press_law_llm["record_count"]
             + engineering_practice_law_llm["record_count"]
+            + nationality_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4745,6 +4749,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law of the Practice of Engineering Professions «نظام مزاولة المهن الهندسية» — Royal Decree M/36, dated 19/4/1438H (17 January 2017), ratifying Council of Ministers Resolution No. 223 (18/4/1438H). The strongest follow-up candidate flagged by the saudi_engineers_law track's own build pass, since this licensing/professional-conduct/discipline statute more closely matches the coverage-gap-map's original framing than that 9-article organizing statute. **17 records: 16 اصلية, 1 معدلة** (Article 1) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **DECREE-NUMBER COLLISION RE-CONFIRMED**: shares the identical bare decree number 'م/36' with the already-ingested saudi_engineers_law track (Royal Decree M/36, dated 26/9/1423H, 'Law of the Saudi Council of Engineers') at a completely different hijri date (~15 hijri years apart) — two genuinely distinct instruments; this law's own Article 1 presupposes that Authority's existence rather than repealing or replacing it. **No predecessor found (confirmed negative finding)**: a full-text search of this law's own text found zero repeal-language matches anywhere in the preamble or 17 articles. **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-SAUDIENG-SA-OFFICIAL-PDF-X-QANOONSA-QANONIAH — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (14 Nov 2019 through 25 Feb 2026, byte-identical main-body text throughout) were cross-verified against the Saudi Council of Engineers' own official website (saudieng.sa, its own hosted PDF, Jun 2025 snapshot, matching word-for-word for Articles 2-17), further structurally corroborated by qanoonsa.com/qanoniah.com. **GENUINE THREE-WAY ANOMALY carried forward (Article 1, supervising ministry)**: BOE's own changelog quotes Council of Ministers Resolution 250 (7/4/1444H) substituting a new ministry name, but BOE's own main body has read a THIRD, different wording at every checked snapshot since 2019 (predating Resolution 250 itself by ~3 years), and saudieng.sa's own current PDF shows a FOURTH, again-different wording reflecting a later administrative renaming not itself logged in BOE's changelog — following the awqaf_law Article 6 precedent for this exact failure mode (a changelog 'before'-phrase that does not match the article's own observed history blocks safe mechanical substitution), this track does NOT fabricate or guess a merged text; it ingests BOE's own stable main-body wording as Article 1's current text, marks it معدلة (BOE's own metadata flags it as changed), and documents the full three-way divergence, since corroborating evidence (Resolution 250 itself, saudieng.sa's differing wording, and a qanoonsa.com-indexed reissued Implementing Regulation from the Ministry of Municipal, Rural Affairs and Housing) confirms a real supervising-ministry transfer occurred even though no single primary source could confirm the exact current wording. Other flagged discrepancies: three companion instruments (اللائحة التنفيذية لنظام مزاولة المهن الهندسية, ميثاق المهندس, and لائحة الوظائف الهندسية) are confirmed to exist but are out of scope for this track, following established precedent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "nationality_law",
+                "display_name_ar": "نظام الجنسية العربية السعودية",
+                "display_name_en": "Saudi Arabian Nationality Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_X_INDEPENDENT_NEWS_CORROBORATION_LIVE_BOE_UNREACHABLE",
+                "source_authority": "Royal Will No. 8/20/5604, 22/2/1374H, approved via Council of Ministers Resolution No. 4 (25/1/1374H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, three independent snapshots spanning 19 Nov 2019 to 14 Jan 2026), cross-verified against nezams.com's independent reproduction of the decree identity and amendment notations, plus multiple independent English-language news outlets corroborating the most recent (2023G) amendment",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": nationality_law_llm["record_count"],
+                    "data_path": "data/nationality_arabic_legal_llm/nationality_law_legal_llm_001_030.json"}},
+                "record_counts": {"arabic_articles": nationality_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 19, "معدلة": 11, "ملغاة": 0, "مضافة": 0},
+                                  "total": nationality_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/nationality/law/official_source/nationality_law_official_source.json",
+                    "sources/nationality/law/verified/nationality_law_verified_records.jsonl",
+                    "data/nationality_arabic_legal_llm/nationality_law_legal_llm_001_030.json",
+                ],
+                "validator_targets": ["make nationality-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Saudi Arabian Nationality Law «نظام الجنسية العربية السعودية» — Royal Will No. 8/20/5604, dated 22/2/1374H (22 September 1954), approved via Council of Ministers Resolution No. 4 (25/1/1374H). A high-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing acquisition, transfer, and loss of Saudi citizenship. **30 records: 19 اصلية, 11 معدلة** (Articles 7, 8, 9, 12, 14, 16, 17, 21, 22, 26, 27) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **Confirmed full repeal of a predecessor:** this law's own Article 28 explicitly repeals the prior Saudi Arabian Nationality System (Royal Will No. 7/1/47, dated 13 Shawwal 1357H) and the separate Hejazi/Hejazi-Najdi nationality regulations; the predecessor is not ingested in this corpus (historical context only). **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-NEZAMS-X-INDEPENDENT-NEWS-CORROBORATION — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (19 Nov 2019 through 14 Jan 2026) were cross-verified against nezams.com's independent reproduction of the decree identity and per-article amendment notations, further corroborated for the most recent amendment by multiple independent English-language news outlets (Arab News, Amwaj Media, Middle East Monitor, Investment Migration Council). **GENUINELY CONFIRMED BOE main-body staleness for 11 of 30 articles**, resolved via clean changelog incorporation: BOE's own main body still displays the original 1954 wording for these 11 articles, but every one of the corresponding changelog popups supplies either a complete, self-contained replacement text or (for Article 8's second amendment) an unambiguous single-occurrence phrase substitution independently verified by direct string search — the same clean-incorporation pattern already confirmed in this corpus's press_law and accounting_auditing_law tracks; this track ingests the fully-reconstructed current text for all 11 articles, with the complete amendment chain preserved in each article's history. Article 8's most recent amendment (Royal Decree M/88, 11/6/1444H) transfers approval authority for children of Saudi mothers and foreign fathers from the Minister of Interior to the Prime Minister, independently confirmed by international press coverage. Other flagged discrepancies: BOE's own metadata surfaces only the Council of Ministers Resolution number, not the separate Royal Will number, as its displayed 'issuance tool' (documented, not treated as a conflict); Article 16's earlier amendment steps are not recoverable from BOE beyond its final quoted text (an honest gap, not fabricated); a trivial clerical typo in Article 30's earliest snapshot was corrected as an OCR/typo fix, not treated as a legal amendment. A companion Implementing Regulation (اللائحة التنفيذية لنظام الجنسية العربية السعودية, ~25 articles, hosted on moi.gov.sa) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
             },
         ],
     }

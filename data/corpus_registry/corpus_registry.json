@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9603,
+  "total_primary_arabic_governing_records": 9633,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10498,
-  "total_tracks": 139,
+  "total_registry_counted_records": 10528,
+  "total_tracks": 140,
   "tracks": [
     {
       "boundaries": {
@@ -6574,6 +6574,55 @@
       "validator_targets": [
         "make engineering-practice-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/nationality/law/official_source/nationality_law_official_source.json",
+        "sources/nationality/law/verified/nationality_law_verified_records.jsonl",
+        "data/nationality_arabic_legal_llm/nationality_law_legal_llm_001_030.json"
+      ],
+      "display_name_ar": "نظام الجنسية العربية السعودية",
+      "display_name_en": "Saudi Arabian Nationality Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/nationality_arabic_legal_llm/nationality_law_legal_llm_001_030.json",
+          "governing": true,
+          "record_count": 30,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabian Nationality Law «نظام الجنسية العربية السعودية» — Royal Will No. 8/20/5604, dated 22/2/1374H (22 September 1954), approved via Council of Ministers Resolution No. 4 (25/1/1374H). A high-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing acquisition, transfer, and loss of Saudi citizenship. **30 records: 19 اصلية, 11 معدلة** (Articles 7, 8, 9, 12, 14, 16, 17, 21, 22, 26, 27) — flat structure, **NO أبواب/فصول**, no inline BOE article titles. **Confirmed full repeal of a predecessor:** this law's own Article 28 explicitly repeals the prior Saudi Arabian Nationality System (Royal Will No. 7/1/47, dated 13 Shawwal 1357H) and the separate Hejazi/Hejazi-Najdi nationality regulations; the predecessor is not ingested in this corpus (historical context only). **VERIFICATION TIER:** BOE-WAYBACK-THREE-SNAPSHOT-X-NEZAMS-X-INDEPENDENT-NEWS-CORROBORATION — the live laws.boe.gov.sa portal was unreachable this pass, but three independent Wayback Machine snapshots of the exact law page (19 Nov 2019 through 14 Jan 2026) were cross-verified against nezams.com's independent reproduction of the decree identity and per-article amendment notations, further corroborated for the most recent amendment by multiple independent English-language news outlets (Arab News, Amwaj Media, Middle East Monitor, Investment Migration Council). **GENUINELY CONFIRMED BOE main-body staleness for 11 of 30 articles**, resolved via clean changelog incorporation: BOE's own main body still displays the original 1954 wording for these 11 articles, but every one of the corresponding changelog popups supplies either a complete, self-contained replacement text or (for Article 8's second amendment) an unambiguous single-occurrence phrase substitution independently verified by direct string search — the same clean-incorporation pattern already confirmed in this corpus's press_law and accounting_auditing_law tracks; this track ingests the fully-reconstructed current text for all 11 articles, with the complete amendment chain preserved in each article's history. Article 8's most recent amendment (Royal Decree M/88, 11/6/1444H) transfers approval authority for children of Saudi mothers and foreign fathers from the Minister of Interior to the Prime Minister, independently confirmed by international press coverage. Other flagged discrepancies: BOE's own metadata surfaces only the Council of Ministers Resolution number, not the separate Royal Will number, as its displayed 'issuance tool' (documented, not treated as a conflict); Article 16's earlier amendment steps are not recoverable from BOE beyond its final quoted text (an honest gap, not fabricated); a trivial clerical typo in Article 30's earliest snapshot was corrected as an OCR/typo fix, not treated as a legal amendment. A companion Implementing Regulation (اللائحة التنفيذية لنظام الجنسية العربية السعودية, ~25 articles, hosted on moi.gov.sa) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_X_INDEPENDENT_NEWS_CORROBORATION_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 30,
+        "legal_status_breakdown": {
+          "اصلية": 19,
+          "مضافة": 0,
+          "معدلة": 11,
+          "ملغاة": 0
+        },
+        "total": 30
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Will No. 8/20/5604, 22/2/1374H, approved via Council of Ministers Resolution No. 4 (25/1/1374H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, three independent snapshots spanning 19 Nov 2019 to 14 Jan 2026), cross-verified against nezams.com's independent reproduction of the decree identity and amendment notations, plus multiple independent English-language news outlets corroborating the most recent (2023G) amendment",
+      "status": "complete",
+      "track_id": "nationality_law",
+      "validator_targets": [
+        "make nationality-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6657,6 +6706,7 @@
       "municipal_councils": 69,
       "municipal_realestate": 41,
       "muslaha": 29,
+      "nationality": 30,
       "nazaha": 24,
       "patent": 66,
       "payment_systems": 20,
@@ -6689,7 +6739,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9434,
+    "total_records": 9464,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

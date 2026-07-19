@@ -140,6 +140,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_SIX_SNAPSHOT_X_MOMAH_GOV_SA_OFFICIAL_PDF_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
     "BOE_NEAR_LIVE_WAYBACK_X_MEDIA_GOV_SA_OFFICIAL_PDF_X_WIPO_LEX_X_NEZAMS_QANOONSA_CURRENCY_CHECKED_CONFIRMED_CURRENT": TIER_1,
     "BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_PDF_X_QANOONSA_QANONIAH_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE": TIER_1,
+    "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_X_INDEPENDENT_NEWS_CORROBORATION_LIVE_BOE_UNREACHABLE": TIER_2,
 
     # --- Tier 2: one official/primary source reached, cross-checked against secondary /
     #     private-aggregator sources only (nezams.com, qadha.org.sa, FAOLEX structural-only,
@@ -544,6 +545,25 @@ RATIONALE_OVERRIDE = {
         "BOE نفسه (الذي لا تتطابق عبارته 'قبل' مع نص BOE الرئيسي عند أي لقطة)، ونص "
         "saudieng.sa الحالي المختلف بدوره — تناقض من نفس فئة سابقة awqaf_law المادة "
         "6، مفصَّل في official_source.json الخاص بالمسار."
+    ),
+    "nationality_law": (
+        "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_X_INDEPENDENT_NEWS_"
+        "CORROBORATION_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة "
+        "الوصول، واعتُمدت ثلاث لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها "
+        "(تمتد من 19 نوفمبر 2019 إلى 14 يناير 2026) كمصدر رسمي وحيد، وقورنت بمصدر "
+        "ثانوي (nezams.com، إعادة إنتاج مستقلة لهوية المرسوم وملاحظات التعديل) "
+        "ومصادر ثانوية/صحفية إضافية (Arab News، Amwaj Media، Middle East Monitor، "
+        "Investment Migration Council) لتأكيد التعديل الأخير فقط. بخلاف تصنيف "
+        "الوكيل الباحث الأولي (الذي اقترح TIER_1)، هذا مصدر رسمي/أساسي **واحد فقط** "
+        "(BOE عبر Wayback)، وليس مصدرين رسميين متقاربين — nezams.com والمصادر "
+        "الصحفية كلها مجمِّعات/تغطية ثانوية، وليست مصدراً رسمياً مستقلاً بذاته "
+        "(بخلاف saudieng.sa أو web.awqaf.gov.sa في مسارات أخرى، وهي مواقع الجهة "
+        "التنظيمية نفسها). هذا يطابق تعريف TIER_2 (مصدر رسمي واحد + تدقيق ثانوي)، "
+        "مماثل لسابقة nazaha_law (BOE عبر Wayback × مرآة FAOLEX لنفس صفحة BOE، "
+        "وليست مصدراً منفصلاً فعلياً). راجع has_per_article_variation لإعادة "
+        "البناء النظيف لـ11 مادة من سجل تعديلات BOE نفسه، تماشياً مع سابقة "
+        "press_law/accounting_auditing_law، مفصَّل في official_source.json الخاص "
+        "بالمسار."
     ),
 }
 
