@@ -54,9 +54,13 @@ and نظام المواليد والوفيات (Births and Deaths System, Royal 
 historical context only, not ingested (one-law-per-pass rule).
 
 COMPANION INSTRUMENT NOT INGESTED: اللائحة التنفيذية لنظام الأحوال المدنية
-(Ministerial Decision No. 81, 19/5/1426H per aggregated web search, itself
-later amended) was identified but NOT ingested this pass (one-law-per-pass
-precedent, as with nationality_law) -- see known_unresolved_discrepancies.
+(originally Ministerial Decision No. 95/وز, 4/3/1408H, superseded by a new
+Implementing Regulation approved via Ministerial Decision No. 27910/39,
+5/6/1432H, per multiple converging secondary sources -- corrected from an
+earlier, unconfirmed "Decision 81, 19/5/1426H" citation that no source
+could substantiate on re-verification) was identified but NOT ingested this
+pass (one-law-per-pass precedent, as with nationality_law) -- see
+known_unresolved_discrepancies.
 
 No legal text is altered beyond whitespace normalization, stripping BOE's own
 "عدلت هذه المادة بموجب المرسوم ... لتكون بالنص الآتي/التالي:" changelog
