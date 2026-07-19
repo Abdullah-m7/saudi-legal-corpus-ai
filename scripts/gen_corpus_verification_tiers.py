@@ -155,6 +155,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_X_GREEN_ORG_PDF_X_NEZAMS_TRIPLE_VERIFIED_ART1_BOE_SELF_CONTRADICTION": TIER_2,
     "BOE_WAYBACK_X_NEZAMS_FULL_CROSS_VERIFIED": TIER_2,
     "BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED": TIER_2,
+    "BOE_WAYBACK_SEVEN_SNAPSHOT_X_QANOONSA_COM_RESOLUTION_805_X_NEZAMS_CROSS_VERIFIED": TIER_2,
 
     # --- Tier 3: primary official portal confirmed unreachable; 2+ independent secondary
     #     sources agree with each other, with zero primary confirmation. ---
@@ -584,6 +585,22 @@ RATIONALE_OVERRIDE = {
         "5 مكرر عبر ثلاثة استشهادات في المصدر المجمَّع نفسه، وخطأ مطبعي محتمل في "
         "ملاحظة التعديل الثاني للمادة 52، ونص المادة 61 مكرر المستبعد عمداً لعدم "
         "القدرة على استرجاعه من أي مصدر."
+    ),
+    "civil_status_law": (
+        "official_text_status='BOE_WAYBACK_SEVEN_SNAPSHOT_X_QANOONSA_COM_RESOLUTION_805_X_"
+        "NEZAMS_CROSS_VERIFIED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت سبع "
+        "لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 13 نوفمبر 2019 إلى 15 "
+        "فبراير 2026، نص متطابق حرفياً في كل لقطة) كمصدر رسمي وحيد، وقورنت بـqanoonsa.com "
+        "(عرض نص قرار مجلس الوزراء 805 المتعلق بتعديل 2024) وnezams.com (تأكيد هوية المرسوم "
+        "التأسيسي والتعديلات السابقة). بخلاف تصنيف الوكيل الباحث الأولي (الذي اقترح TIER_1)، "
+        "هذا مصدر رسمي/أساسي **واحد فقط** (BOE عبر Wayback) — قرار مجلس الوزراء 805 لم يُطّلع "
+        "عليه من بوابة حكومية رسمية مباشرة، وإنما عبر قراءة qanoonsa.com له، وهو موقع تجميع "
+        "قانوني خاص وليس بوابة حكومية (نفس الدور الذي يلعبه qanoonsa.com عبر هذه المدونة بأكملها "
+        "كمصدر تدقيق هيكلي ثانوي دوماً، لا كمصدر رسمي مستقل مطلقاً — انظر press_law وnazaha_law "
+        "وaccounting_auditing_law)، وnezams.com مجمِّع ثانوي معروف أيضاً. هذا يطابق تعريف TIER_2 "
+        "(مصدر رسمي واحد + تدقيق ثانوي)، مماثل لسابقتي nationality_law وnazaha_law. راجع "
+        "notes الخاصة بالمسار لإعادة البناء النظيف من سجل تعديلات BOE نفسه لـ24 مادة معدَّلة "
+        "بمنهجية موحدة (لا يوجد has_per_article_variation هنا)."
     ),
 }
 

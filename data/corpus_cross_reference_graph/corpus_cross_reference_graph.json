@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9533,
-  "total_references_extracted": 1948,
-  "intra_law_count": 1718,
+  "total_records_scanned": 9629,
+  "total_references_extracted": 1961,
+  "intra_law_count": 1731,
   "inter_law_count": 230,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1641,
-    "medium": 307
+    "high": 1649,
+    "medium": 312
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -3905,6 +3905,149 @@
       "target_article_number": null,
       "target_law_name_raw": "التقاعد",
       "raw_citation_text": "حسب نظام التقاعد",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 86,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (86) من هذا النظام. هـ - اللجنة ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 82,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (82) من هذا النظام. و - اللجنة الف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 82,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (82) من هذا النظام. ز - السجل المد",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 24,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (24)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-044",
+      "source_article_number": 44,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 33,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (33)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-061",
+      "source_article_number": 61,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 57,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (57)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-068",
+      "source_article_number": 68,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 67,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (67)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-072",
+      "source_article_number": 72,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 50,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (50) من هذا النظام يجب على كل رب أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-076",
+      "source_article_number": 76,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 83,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (83) من هذا النظام، لتقرير ما يجب",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-076",
+      "source_article_number": 76,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 83,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (83) من هذا النظام. وفي جميع الحال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-079",
+      "source_article_number": 79,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 73,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (73) من هذا النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-085",
+      "source_article_number": 85,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 84,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (84)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "civil_status_law",
+      "source_record_id": "civil-status-law-llm-art-095",
+      "source_article_number": 95,
+      "type": "intra_law",
+      "target_track_id": "civil_status_law",
+      "target_article_number": 83,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (83)",
       "confidence": "medium"
     },
     {
@@ -14373,11 +14516,11 @@
       "source_record_id": "marriage-non-saudi-regulation-llm-art-005",
       "source_article_number": 5,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "civil_status_law",
       "target_article_number": null,
       "target_law_name_raw": "الأحوال المدنية وأن تحمل إقامة سارية المفعول",
       "raw_citation_text": "طبقا لنظام الأحوال المدنية وأن تحمل إقامة سارية المفعول أو تحمل تصريحا",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "marriage_non_saudi_regulation",

@@ -7,13 +7,14 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 141 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 141 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 142 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 142 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 141,
-  "known_source_staleness_risk_count": 10,
+  "total_tracks": 142,
+  "known_source_staleness_risk_count": 11,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
     "awqaf_law",
+    "civil_status_law",
     "engineering_practice_law",
     "environmental_law",
     "income_tax_law",
@@ -540,6 +541,26 @@
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-25; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "civil_status_law",
+      "display_name_en": "Saudi Arabian Civil Status Law",
+      "display_name_ar": "نظام الأحوال المدنية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_SEVEN_SNAPSHOT_X_QANOONSA_COM_RESOLUTION_805_X_NEZAMS_CROSS_VERIFIED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت سبع لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 13 نوفمبر 2019 إلى 15 فبراير 2026، نص متطابق حرفياً في كل لقطة) كمصدر رسمي وحيد، وقورنت بـqanoonsa.com (عرض نص قرار مجلس الوزراء 805 المتعلق بتعديل 2024) وnezams.com (تأكيد هوية المرسوم التأسيسي والتعديلات السابقة). بخلاف تصنيف الوكيل الباحث الأولي (الذي اقترح TIER_1)، هذا مصدر رسمي/أساسي **واحد فقط** (BOE عبر Wayback) — قرار مجلس الوزراء 805 لم يُطّلع عليه من بوابة حكومية رسمية مباشرة، وإنما عبر قراءة qanoonsa.com له، وهو موقع تجميع قانوني خاص وليس بوابة حكومية (نفس الدور الذي يلعبه qanoonsa.com عبر هذه المدونة بأكملها كمصدر تدقيق هيكلي ثانوي دوماً، لا كمصدر رسمي مستقل مطلقاً — انظر press_law وnazaha_law وaccounting_auditing_law)، وnezams.com مجمِّع ثانوي معروف أيضاً. هذا يطابق تعريف TIER_2 (مصدر رسمي واحد + تدقيق ثانوي)، مماثل لسابقتي nationality_law وnazaha_law. راجع notes الخاصة بالمسار لإعادة البناء النظيف من سجل تعديلات BOE نفسه لـ24 مادة معدَّلة بمنهجية موحدة (لا يوجد has_per_article_variation هنا).",
+      "registry_source_authority": "Royal Decree No. M/7, dated 20/4/1407H (21 December 1986G), approved via Council of Ministers Resolution No. 1 (11/1/1407H) — a Wayback Machine archive of the laws.boe.gov.sa Arabic portal page as primary (live BOE unreachable, seven independent snapshots spanning 13 Nov 2019 to 15 Feb 2026, byte-identical main-body text throughout), cross-verified against Council of Ministers Resolution 805 (via qanoonsa.com, confirming the most recent 2024G amendment) and nezams.com (confirming the founding decree identity, preamble, article count, and earlier amendments)",
+      "registry_source_url": null,
+      "official_source_file": "sources/civil_status/law/official_source/civil_status_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "civil_status_boe_main_body_stale_for_24_articles: BOE's own main-body article text for the 24 amended articles (2, 15, 16, 19, 20, 22, 25, 26, 30, 33, 34, 38, 40, 47, 50, 53, 67, 74, 76, 82, 83, 85, 87, 91) is confirmed genuinely stale relative to the current, amended l"
     },
     {
       "track_id": "civil_transactions_law",

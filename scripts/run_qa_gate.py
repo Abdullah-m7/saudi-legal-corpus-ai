@@ -182,6 +182,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_engineering_practice_law_track.py",
     "scripts/gen_nationality_law_track.py",
     "scripts/gen_residency_law_track.py",
+    "scripts/gen_civil_status_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",

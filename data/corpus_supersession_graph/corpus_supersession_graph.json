@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 141,
+  "total_tracks_scanned": 142,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 56,
+  "edge_count": 58,
   "relation_counts": {
-    "repeals_full": 46,
+    "repeals_full": 48,
     "repeals_partial": 9,
     "superseded_by": 1
   },
@@ -565,6 +565,26 @@
       "affected_articles": null,
       "note": "nationality_law's own official_source.json article 28: 'يلغي هذا النظام نظام الجنسية العربية السعودية الذي صدرت الإرادة الملكية السنية رقم 7/1/47 في تاريخ 13 شوال 1357هـ بالموافقة عليه، كما يلغي كل ما كان معمولا به من أنظمة خاصة بالجنسية الحجازية أو الحجازية النجدية.' A confirmed full repeal of both the 1357H predecessor nationality system and the separate earlier Hejazi/Hejazi-Najdi nationality regulations, named in the same article. Predecessor not separately ingested in this corpus.",
       "source_ref": "sources/nationality/law/official_source/nationality_law_official_source.json (article 28)"
+    },
+    {
+      "from_track_id": "civil_status_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام دائرة النفوس (السابق)",
+      "target_decree": "Supreme (Royal) Order No. 8172, 15/7/1358H",
+      "affected_articles": null,
+      "note": "civil_status_law's own official_source.json article 95: 'يلغي هذا النظام نظام دائرة النفوس الصادر بالأمر السامي رقم 8172 وتاريخ 15/7/1358هـ ... كما يلغي كل ما يتعارض معه.' Modeled as a separate edge from the نظام المواليد والوفيات repeal below since it is a distinct predecessor instrument named in the same article. Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/civil_status/law/official_source/civil_status_law_official_source.json (article 95)"
+    },
+    {
+      "from_track_id": "civil_status_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام المواليد والوفيات (السابق)",
+      "target_decree": "Royal Decree No. 2, 11/1/1382H",
+      "affected_articles": null,
+      "note": "civil_status_law's own official_source.json article 95, second repeal clause in the same article: 'ونظام المواليد والوفيات الصادر بالمرسوم الملكي رقم 2 وتاريخ 11/1/1382هـ.' Modeled as a separate edge from the نظام دائرة النفوس repeal above since it is a distinct predecessor instrument named in the same article; the same article also carves out a single temporary exception (Royal Decree M/52, 3/9/1405H) that remains in force pending a general Council of Ministers rule -- not modeled as a repeal, since it is the OPPOSITE of a repeal (a preserved carve-out). Predecessor not separately ingested in this corpus.",
+      "source_ref": "sources/civil_status/law/official_source/civil_status_law_official_source.json (article 95)"
     },
     {
       "from_track_id": "copyright_law",
