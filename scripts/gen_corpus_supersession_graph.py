@@ -546,6 +546,23 @@ EDGES = [
                 "M/16, 4/9/1416H).' Predecessor not separately ingested.",
         "source_ref": "sources/bankruptcy/law/official_source/bankruptcy_law_official_source.json (supersedes_note)",
     },
+    {
+        "from_track_id": "travel_documents_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية لنظام وثائق السفر (السابقة)",
+        "target_decree": "Ministerial Decision No. 7/waw-zay (٧ / وز), 23/9/1422H",
+        "note": "travel_documents_regulation's own Article 52 explicitly and "
+                "specifically states this Regulation replaces IN FULL (not "
+                "scoped/partial) the prior Implementing Regulation issued by "
+                "Ministerial Decision No. 7/waw-zay (23/9/1422H) and its "
+                "amendments -- a genuine positive finding, unlike the parent "
+                "travel_documents_law track's own generic-repeal precedent. "
+                "Predecessor (~69 articles across ~12 chapters per secondary "
+                "sources only) not separately ingested in this corpus "
+                "(one-instrument-per-pass rule).",
+        "source_ref": "sources/travel_documents/regulation/official_source/travel_documents_regulation_official_source.json (article 52)",
+    },
 
     # --- repeals_partial: only specific articles repealed -----------------
     {

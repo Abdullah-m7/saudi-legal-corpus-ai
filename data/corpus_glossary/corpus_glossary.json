@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 149,
-  "total_terms": 838,
-  "total_definitions": 1275,
-  "tracks_with_definitions_article_parsed": 98,
+  "total_tracks_in_registry": 150,
+  "total_terms": 846,
+  "total_definitions": 1289,
+  "tracks_with_definitions_article_parsed": 99,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -403,6 +403,16 @@
         "term_as_written": "إخفاء الهوية",
         "definition_text": "إزالة المعرفات المباشرة وغير المباشرة التي تدل على هوية صاحب البيانات الشخصية بشكل نهائي يتعذر معه تحديد هوية صاحب البيانات الشخصية.",
         "source_record_id": "pdpl-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إدارات الجوازات": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "إدارات الجوازات",
+        "definition_text": "الإدارات التابعة للمديرية التي يتم فيها إصدار وتجديد وثائق السفر السعودية.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5284,6 +5294,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -6316,6 +6334,14 @@
         "definition_text": "مدير عام الجمارك أو من يماثله من الجهة المختصة أو في الإدارة وفق التنظيم\nالداخلي لجمارك الدول الأعضاء.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "المدير العام",
+        "definition_text": "مدير عام الجوازات.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المديرية": [
@@ -6325,6 +6351,14 @@
         "term_as_written": "المديرية",
         "definition_text": "هي المديرية العامة للأحوال المدنية المسئولة عن أعمال الأحوال المدنية.",
         "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "المديرية",
+        "definition_text": "المديرية العامة للجوازات.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7288,6 +7322,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الممثليات": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "الممثليات",
+        "definition_text": "الأجهزة التي تعتبر ممثلة لحكومة خادم الحرمين الشريفين بالخارج لرعاية مصالح المواطنين السعوديين والمرتبطة بوزارة الخارجية وتشمل السفارات والقنصليات والمفوضيات.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المملكة": [
       {
         "track_id": "capital_market_law",
@@ -7375,6 +7419,16 @@
         "term_as_written": "المناطق المحمية",
         "definition_text": "مواقع برية أو بحرية أو ساحلية تحددها الجهة المختصة، ومخصصة لحماية الكائنات الفطرية وتنميتها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنافذ": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "المنافذ",
+        "definition_text": "الأماكن الرسمية المخصصة للخروج من المملكة والدخول إليها.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8540,6 +8594,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام وثائق السفر.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -9204,6 +9266,14 @@
         "definition_text": "وزارة التجارة.",
         "source_record_id": "trade-names-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الداخلية.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوزن المحوري": [
@@ -9544,6 +9614,14 @@
         "definition_text": "الوزير أو رئيس الجهة المختصة عن تنفيذ هذا القانون (النظام) في الدولة.",
         "source_record_id": "trademark-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الداخلية.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوسائط": [
@@ -9712,6 +9790,26 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "تأشيرة الدخول": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "تأشيرة الدخول",
+        "definition_text": "تعني مشاهدة أو الختم على مصادقة دخول المواطن من المنفذ الذي دخل منه، وفي كل الأحوال يجب تسجيل دخوله بالحاسب الآلي.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تأشيرة المغادرة": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "تأشيرة المغادرة",
+        "definition_text": "تعني مشاهدة أو الختم على مصادقة مغادرة المواطن من المنفذ الذي غادر منه، وفي كل الأحوال يجب تسجيل خروجه بالحاسب الآلي.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تدابير العناية الواجبة": [
       {
         "track_id": "aml_law",
@@ -9729,6 +9827,16 @@
         "term_as_written": "تدابير مكافحة الإغراق",
         "definition_text": "الإجراءات والتدابير التي تتخذ لمواجهة الحالات الناشئة عن الإغراق.",
         "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تذكرة المرور": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "تذكرة المرور",
+        "definition_text": "وثيقة سفر أمنية مؤقتة تمنح للفئات المنصوص عليها في اللائحة.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9909,6 +10017,16 @@
         "term_as_written": "جهة المعالجة",
         "definition_text": "أي جهة عامة، وأي شخصية ذات صفة طبيعية أو اعتبارية خاصة؛ تعالج البيانات الشخصية لمصلحة جهة التحكم ونيابةً عنها.",
         "source_record_id": "pdpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "جواز السفر": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "جواز السفر",
+        "definition_text": "وثيقة سفر أمنية تمنح للمواطن السعودي اختياريا بموجب الهوية الوطنية أو سجل الأسرة.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11690,6 +11808,16 @@
         "definition_text": "هو بلد إنتاجها سواء أكانت من الثروات الطبيعية أم المحصولات الزراعية أم\nالحيوانية أم المنتجات الصناعية.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "منصة أبشر": [
+      {
+        "track_id": "travel_documents_regulation",
+        "article_number": 1,
+        "term_as_written": "منصة أبشر",
+        "definition_text": "هو نظام إلكتروني لتنفيذ الخدمات المقدمة من الوزارة ومن ضمنها خدمات إدارات الجوازات.",
+        "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "منطقة المناورات في المطار": [

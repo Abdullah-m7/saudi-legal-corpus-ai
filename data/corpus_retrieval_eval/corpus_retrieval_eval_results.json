@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 326,
-  "top1_hits": 300,
-  "top3_hits": 319,
-  "top5_hits": 322,
-  "top1_accuracy": 0.9202,
-  "top3_accuracy": 0.9785,
-  "top5_accuracy": 0.9877,
-  "mrr_at_5": 0.949,
+  "total_queries": 328,
+  "top1_hits": 302,
+  "top3_hits": 321,
+  "top5_hits": 324,
+  "top1_accuracy": 0.9207,
+  "top3_accuracy": 0.9787,
+  "top5_accuracy": 0.9878,
+  "mrr_at_5": 0.9493,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9898,14 +9898,14 @@
      "score": 49
     },
     {
+     "record_id": "travel-documents-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 28
+    },
+    {
      "record_id": "criminal-procedure-law-llm-art-218",
      "article_number": 218,
      "score": 24
-    },
-    {
-     "record_id": "aml-law-llm-art-051",
-     "article_number": 51,
-     "score": 23
     }
    ]
   },
@@ -10123,6 +10123,68 @@
      "record_id": "premium-residency-law-llm-art-001",
      "article_number": 1,
      "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "tdr-001",
+   "query_ar": "تحل هذه اللائحة محل اللائحة التنفيذية لنظام وثائق السفر الصادرة بالقرار الوزاري رقم (٧ / وز)",
+   "category": "topical",
+   "gold": {
+    "corpus": "travel_documents",
+    "law_component": "regulation",
+    "article_number": 52
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "travel-documents-regulation-llm-art-052",
+     "article_number": 52,
+     "score": 62
+    },
+    {
+     "record_id": "travel-documents-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 38
+    },
+    {
+     "record_id": "travel-documents-regulation-llm-art-047",
+     "article_number": 47,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "tdr-002",
+   "query_ar": "مي نع المخالف من السفر مدة لا تزيد على ستة أشهر إذا كان الإهمال المؤدي إلى فقدان وثيقة السفر",
+   "category": "topical",
+   "gold": {
+    "corpus": "travel_documents",
+    "law_component": "regulation",
+    "article_number": 37
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "travel-documents-regulation-llm-art-037",
+     "article_number": 37,
+     "score": 42
+    },
+    {
+     "record_id": "travel-documents-regulation-llm-art-038",
+     "article_number": 38,
+     "score": 29
+    },
+    {
+     "record_id": "travel-documents-regulation-llm-art-039",
+     "article_number": 39,
+     "score": 25
     }
    ]
   }
