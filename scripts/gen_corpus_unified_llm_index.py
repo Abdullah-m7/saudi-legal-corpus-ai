@@ -336,6 +336,8 @@ LAYERS = [
      "water", "law"),
     ("data/vat_regulation_arabic_legal_llm/vat_regulation_legal_llm_001_082.json",
      "vat", "regulation"),
+    ("data/income_tax_regulation_arabic_legal_llm/income_tax_regulation_legal_llm_001_074.json",
+     "income_tax", "regulation"),
 ]
 
 
