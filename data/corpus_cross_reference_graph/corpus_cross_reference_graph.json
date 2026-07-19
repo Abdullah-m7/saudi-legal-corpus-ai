@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9741,
-  "total_references_extracted": 1966,
-  "intra_law_count": 1736,
-  "inter_law_count": 230,
+  "total_records_scanned": 9756,
+  "total_references_extracted": 1970,
+  "intra_law_count": 1739,
+  "inter_law_count": 231,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1652,
+    "high": 1656,
     "medium": 314
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -7898,6 +7898,50 @@
       "target_article_number": 43,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (43) من النظام \"القانون\". 6.أي مخال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cybersecurity_authority_law",
+      "source_record_id": "cybersecurity-authority-law-llm-art-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "cybersecurity_authority_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من هذا التنظيم.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cybersecurity_authority_law",
+      "source_record_id": "cybersecurity-authority-law-llm-art-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "cybersecurity_authority_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من هذا التنظيم، وإقرار علاقات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cybersecurity_authority_law",
+      "source_record_id": "cybersecurity-authority-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "cybersecurity_authority_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من هذا التنظيم- فتكون له ميزا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cybersecurity_authority_law",
+      "source_record_id": "cybersecurity-authority-law-llm-art-014",
+      "source_article_number": 14,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {

@@ -184,6 +184,7 @@ FOOD_LAW_LLM = os.path.join(ROOT, "data", "food_arabic_legal_llm", "food_law_leg
 HEALTH_SYSTEM_LAW_LLM = os.path.join(ROOT, "data", "health_system_arabic_legal_llm", "health_system_law_legal_llm_001_019.json")
 DOMESTIC_LABOR_REGULATION_LLM = os.path.join(ROOT, "data", "domestic_labor_arabic_legal_llm", "domestic_labor_regulation_legal_llm_001_033.json")
 TRAVEL_DOCUMENTS_LAW_LLM = os.path.join(ROOT, "data", "travel_documents_arabic_legal_llm", "travel_documents_law_legal_llm_001_016.json")
+CYBERSECURITY_AUTHORITY_LAW_LLM = os.path.join(ROOT, "data", "cybersecurity_authority_arabic_legal_llm", "cybersecurity_authority_law_legal_llm_001_015.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -361,6 +362,7 @@ def main() -> int:
     health_system_law_llm = _load_json(HEALTH_SYSTEM_LAW_LLM)
     domestic_labor_regulation_llm = _load_json(DOMESTIC_LABOR_REGULATION_LLM)
     travel_documents_law_llm = _load_json(TRAVEL_DOCUMENTS_LAW_LLM)
+    cybersecurity_authority_law_llm = _load_json(CYBERSECURITY_AUTHORITY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -381,7 +383,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 146,
+        "total_tracks": 147,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -531,6 +533,7 @@ def main() -> int:
             + health_system_law_llm["record_count"]  # 19 Saudi Arabian Health System Law (Royal Decree M/11, 1423H) (TIER_3, BOE unreachable both live and Wayback, nezams.com x qanoonsa.com CoM Resolution 151 cross-verified, confirmed negative repeal finding, see track notes)
             + domestic_labor_regulation_llm["record_count"]  # 33 Domestic Labor Regulation (Ministerial Decision 40676, 1445H) (TIER_2, BOE confirmed stale for this topic, PRIMARY hrsd.gov.sa x qanoonsa.com/lexismiddleeast.com secondary cross-checks, confirmed named repeal of the 1434H CoM Decision 310 predecessor, Article 33 text_complete=False genuine source truncation, see track notes)
             + travel_documents_law_llm["record_count"]  # 16 Saudi Arabian Travel Documents Law (Royal Decree M/24, 1421H) (TIER_2, BOE-via-Wayback three snapshots x nezams.com/qistas.com secondary, plus an official Umm Al-Qura Gazette cross-check for the M/11 1443H amendment specifically, confirmed scoped/partial repeal of the 1358H Passports System via Article 13, see track notes)
+            + cybersecurity_authority_law_llm["record_count"]  # 15 Statute (Organizational Regulation) of the National Cybersecurity Authority (Royal Order 6801, 1439H) (TIER_2, PRIMARY nca.gov.sa official PDF OCR-transcribed x qistas.com/saudipedia.com secondary cross-checks, confirmed negative repeal finding at Article 15, document-level amendment by Royal Order 7053 not attributed to any specific article, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -671,6 +674,7 @@ def main() -> int:
             + health_system_law_llm["record_count"]
             + domestic_labor_regulation_llm["record_count"]
             + travel_documents_law_llm["record_count"]
+            + cybersecurity_authority_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4969,6 +4973,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Saudi Arabian Travel Documents Law «نظام وثائق السفر» — Royal Decree No. M/24, dated 28/5/1421H (2000G), approved via Council of Ministers Resolution No. 122 (21/5/1421H). A low-medium-priority coverage-gap identified via a fresh gap-scan pass, governing the four categories of Saudi travel documents (passport, laissez-passer, diplomatic passport, special passport) and the conditions for issuing, renewing, and restricting them, distinct from this corpus's already-ingested residency_law and nationality_law tracks. **16 records: 8 اصلية, 6 معدلة** (Articles 2, 4, 6, 10, 11, 12), **1 ملغاة** (Article 3, repealed en bloc alongside the Article 2/4 amendments by Royal Decree M/134, 1440H), **1 مضافة** (Article 10 مكرر, added by Royal Decree M/11, 1443H) — flat single-range structure (1-15 plus the added مكرر article), **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_2 (honest, not inflated)** — BOE-via-Wayback-Machine, three independent snapshots spanning 13 Nov 2019 to 12 Dec 2025, cross-verified against nezams.com/qistas.com's independent reproduction; additionally, for the Royal Decree M/11 (1443H) amendment specifically (Articles 10, 10 مكرر, 11(3)), cross-verified against the official Umm Al-Qura Gazette itself — that subset alone reaches TIER_1-caliber confidence, but the remainder of the law rests on BOE plus private-aggregator secondary sources only, so the track-level tier reflects this weaker, meaningfully-sized majority rather than the strongest-verified amendment. moi.gov.sa (a potential third independent official source) was unreachable this pass (503 / DNS failure) on both its current and legacy domains. **CONFIRMED SCOPED/PARTIAL REPEAL**: Article 13 explicitly states this law and its Implementing Regulation replace only the travel-document-related provisions ('الأحكام المتعلقة بوثائق السفر') of the prior نظام الجوازات السفرية (Supreme Order No. 17/3/2, dated 19/1/1358H) — NOT a blanket repeal of that entire predecessor system — a genuine positive finding, modeled as a repeals_partial edge in the supersession graph, mirroring the municipal_councils_law precedent for a narrowly-scoped partial repeal; the 1358H predecessor itself is not ingested in this corpus (historical context only). Genuine anomalies preserved, not fabricated or silently fixed: Article 6's own BOE amendment-changelog omits any decree/resolution citation for its 1439H amendment (the citation, Council of Ministers Decision 217, is sourced only from nezams.com, though the amendment's substance is independently confirmed identical); Article 10's own BOE changelog quotes a 'before' phrase that does not character-for-character match BOE's own main article text (preserved as-is, unlike the engineering_practice_law precedent where a similar mismatch blocked merging entirely, since here the replacement location is unambiguous from context). Two companion instruments identified but NOT ingested this pass: اللائحة التنفيذية لنظام وثائق السفر (the Implementing Regulation), and the wholly separate نظام جوازات السفر السياسية والخاصة (a distinct law governing diplomatic/special passports, its own separate BOE lawId, no repeal/supersession relationship to this track). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cybersecurity_authority_law",
+                "display_name_ar": "تنظيم الهيئة الوطنية للأمن السيبراني",
+                "display_name_en": "Statute (Organizational Regulation) of the National Cybersecurity Authority",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+                "source_authority": "Royal Order No. 6801, dated 11/2/1439H (~31 Oct/1 Nov 2017G), approving the Authority's organizational statute following its staged establishment via Royal Order No. 55775 (1/12/1438H); amended (consolidated, article unattributed) by Royal Order No. 7053 (2/2/1443H) — no laws.boe.gov.sa page for this exact statute could be located this pass despite targeted searches; PRIMARY source is instead the National Cybersecurity Authority's own official site (nca.gov.sa), a PDF OCR-transcribed to work around a confirmed systematic letter-transposition artifact in its text layer, cross-verified against qistas.com (partial, Articles 1-3) and saudipedia.com (establishment-date corroboration)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cybersecurity_authority_law_llm["record_count"],
+                    "data_path": "data/cybersecurity_authority_arabic_legal_llm/cybersecurity_authority_law_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": cybersecurity_authority_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": cybersecurity_authority_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/cybersecurity_authority/law/official_source/cybersecurity_authority_law_official_source.json",
+                    "sources/cybersecurity_authority/law/verified/cybersecurity_authority_law_verified_records.jsonl",
+                    "data/cybersecurity_authority_arabic_legal_llm/cybersecurity_authority_law_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make cybersecurity-authority-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Statute (Organizational Regulation) of the National Cybersecurity Authority «تنظيم الهيئة الوطنية للأمن السيبراني» — Royal Order No. 6801, dated 11/2/1439H (~31 Oct/1 Nov 2017G), approving the Authority's detailed organizational statute roughly two months after its staged establishment via Royal Order No. 55775 (1/12/1438H). A low-medium-priority coverage-gap identified via a fresh gap-scan pass, governing NCA's legal personality, mandate, board composition, budget, and staff status, distinct from this corpus's already-ingested anti_cyber_crime_law (a criminal-offenses statute) and electronic_transactions_law tracks. **15 records, ALL 15 اصلية at the per-article level** (0 معدلة, 0 ملغاة, 0 مضافة) — flat single-range structure (1-15), **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_2** — no laws.boe.gov.sa page for this exact statute could be located this pass despite multiple targeted searches (only other, unrelated BOE-catalogued laws that merely cite this statute in passing were found; a direct curl to BOE returned 'Connection reset by peer'), precluding a TIER_1 rating. The PRIMARY source actually used is instead NCA's own official site (nca.gov.sa), a PDF hosted on its own CDN subdomain, whose embedded text layer has a confirmed, systematic character-transposition artifact (verified identical across two independent extraction libraries, pdftotext and PyMuPDF) — worked around by rendering each page to a 300dpi image and OCR'ing with Tesseract 5, cross-read word-by-word against the flawed-but-complete alternate extraction. Cross-verified against qistas.com (a partial, structural cross-check for Articles 1-3 only) and saudipedia.com (independent corroboration of the establishment date). **DOCUMENT-LEVEL AMENDMENT, ARTICLE UNATTRIBUTED — HONEST GAP, NOT GUESSED**: the source PDF's own title page confirms amendment by Royal Order No. 7053 (2/2/1443H), and consolidated_amended_law is set to true accordingly, but no source found this pass identifies which specific article(s) of the 15 were altered, nor was a pre-amendment copy located for a direct diff — so no individual article is marked معدلة absent specific evidence, an honestly-reported gap. **CONFIRMED NEGATIVE REPEAL FINDING**: Article 15 (the final article) contains only a generic conflict-only repeal clause ('يلغي كل ما يتعارض معه من أحكام'), naming no specific predecessor organizational statute — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge, mirroring the awqaf_law/saudi_engineers_law precedent for organizational statutes. A genuine internal-consistency clue, not resolved: Article 12(2)-(3) still refer to 'مؤسسة النقد العربي السعودي' (SAMA's pre-2020 name) rather than its post-2020 name, circumstantially suggesting (not confirming) Article 12 was not among whatever article(s) the 2021 amendment touched. A separate, newer, Royal-Decree-level instrument (م/117, 21/6/1446H, «الممكنات النظامية», an enforcement/licensing-penalty regime textually distinct from this organizing statute) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
             },
         ],
     }

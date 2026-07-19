@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9910,
+  "total_primary_arabic_governing_records": 9925,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10805,
-  "total_tracks": 146,
+  "total_registry_counted_records": 10820,
+  "total_tracks": 147,
   "tracks": [
     {
       "boundaries": {
@@ -6917,6 +6917,55 @@
       "validator_targets": [
         "make travel-documents-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/cybersecurity_authority/law/official_source/cybersecurity_authority_law_official_source.json",
+        "sources/cybersecurity_authority/law/verified/cybersecurity_authority_law_verified_records.jsonl",
+        "data/cybersecurity_authority_arabic_legal_llm/cybersecurity_authority_law_legal_llm_001_015.json"
+      ],
+      "display_name_ar": "تنظيم الهيئة الوطنية للأمن السيبراني",
+      "display_name_en": "Statute (Organizational Regulation) of the National Cybersecurity Authority",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/cybersecurity_authority_arabic_legal_llm/cybersecurity_authority_law_legal_llm_001_015.json",
+          "governing": true,
+          "record_count": 15,
+          "status": "complete"
+        }
+      },
+      "notes": "Statute (Organizational Regulation) of the National Cybersecurity Authority «تنظيم الهيئة الوطنية للأمن السيبراني» — Royal Order No. 6801, dated 11/2/1439H (~31 Oct/1 Nov 2017G), approving the Authority's detailed organizational statute roughly two months after its staged establishment via Royal Order No. 55775 (1/12/1438H). A low-medium-priority coverage-gap identified via a fresh gap-scan pass, governing NCA's legal personality, mandate, board composition, budget, and staff status, distinct from this corpus's already-ingested anti_cyber_crime_law (a criminal-offenses statute) and electronic_transactions_law tracks. **15 records, ALL 15 اصلية at the per-article level** (0 معدلة, 0 ملغاة, 0 مضافة) — flat single-range structure (1-15), **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_2** — no laws.boe.gov.sa page for this exact statute could be located this pass despite multiple targeted searches (only other, unrelated BOE-catalogued laws that merely cite this statute in passing were found; a direct curl to BOE returned 'Connection reset by peer'), precluding a TIER_1 rating. The PRIMARY source actually used is instead NCA's own official site (nca.gov.sa), a PDF hosted on its own CDN subdomain, whose embedded text layer has a confirmed, systematic character-transposition artifact (verified identical across two independent extraction libraries, pdftotext and PyMuPDF) — worked around by rendering each page to a 300dpi image and OCR'ing with Tesseract 5, cross-read word-by-word against the flawed-but-complete alternate extraction. Cross-verified against qistas.com (a partial, structural cross-check for Articles 1-3 only) and saudipedia.com (independent corroboration of the establishment date). **DOCUMENT-LEVEL AMENDMENT, ARTICLE UNATTRIBUTED — HONEST GAP, NOT GUESSED**: the source PDF's own title page confirms amendment by Royal Order No. 7053 (2/2/1443H), and consolidated_amended_law is set to true accordingly, but no source found this pass identifies which specific article(s) of the 15 were altered, nor was a pre-amendment copy located for a direct diff — so no individual article is marked معدلة absent specific evidence, an honestly-reported gap. **CONFIRMED NEGATIVE REPEAL FINDING**: Article 15 (the final article) contains only a generic conflict-only repeal clause ('يلغي كل ما يتعارض معه من أحكام'), naming no specific predecessor organizational statute — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge, mirroring the awqaf_law/saudi_engineers_law precedent for organizational statutes. A genuine internal-consistency clue, not resolved: Article 12(2)-(3) still refer to 'مؤسسة النقد العربي السعودي' (SAMA's pre-2020 name) rather than its post-2020 name, circumstantially suggesting (not confirming) Article 12 was not among whatever article(s) the 2021 amendment touched. A separate, newer, Royal-Decree-level instrument (م/117, 21/6/1446H, «الممكنات النظامية», an enforcement/licensing-penalty regime textually distinct from this organizing statute) is confirmed to exist but is out of scope for this track, flagged as a follow-up candidate. Arabic governs; not legal advice.",
+      "official_text_status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "record_counts": {
+        "arabic_articles": 15,
+        "legal_status_breakdown": {
+          "اصلية": 15,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 15
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Order No. 6801, dated 11/2/1439H (~31 Oct/1 Nov 2017G), approving the Authority's organizational statute following its staged establishment via Royal Order No. 55775 (1/12/1438H); amended (consolidated, article unattributed) by Royal Order No. 7053 (2/2/1443H) — no laws.boe.gov.sa page for this exact statute could be located this pass despite targeted searches; PRIMARY source is instead the National Cybersecurity Authority's own official site (nca.gov.sa), a PDF OCR-transcribed to work around a confirmed systematic letter-transposition artifact in its text layer, cross-verified against qistas.com (partial, Articles 1-3) and saudipedia.com (establishment-date corroboration)",
+      "status": "complete",
+      "track_id": "cybersecurity_authority_law",
+      "validator_targets": [
+        "make cybersecurity-authority-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6960,6 +7009,7 @@
       "council_of_ministers": 32,
       "criminal_procedure": 403,
       "customs": 224,
+      "cybersecurity_authority": 15,
       "documentation_settlement": 15,
       "domestic_labor": 33,
       "ecommerce": 26,
@@ -7039,7 +7089,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9741,
+    "total_records": 9756,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
