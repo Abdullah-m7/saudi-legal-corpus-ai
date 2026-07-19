@@ -1102,6 +1102,20 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "this generic clause to have targeted.",
         "source_ref": "sources/food/law/official_source/food_law_official_source.json (article 45)",
     },
+    {
+        "tracks_involved": ["health_system_law"],
+        "issue": "general non-specific repeal clause naming no prior statute",
+        "note": "health_system_law's own Article 19 states only 'ينشر هذا "
+                "النظام في الجريدة الرسمية، ويعمل به بعد تسعين يومًا من "
+                "تاريخ نشره، ويلغي كل ما يتعارض معه من أحكام' (a general "
+                "boilerplate repeal of any conflicting provision), naming "
+                "no single prior instrument. NOT modeled as a repeals_full "
+                "edge, since this corpus only models EXPLICITLY-NAMED "
+                "repeal relationships, never inferred ones; no distinct "
+                "predecessor public-health law was identified this pass "
+                "for this generic clause to have targeted.",
+        "source_ref": "sources/health_system/law/official_source/health_system_law_official_source.json (article 19)",
+    },
 ]
 
 

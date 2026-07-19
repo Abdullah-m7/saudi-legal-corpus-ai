@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 314,
-  "top1_hits": 288,
-  "top3_hits": 307,
-  "top5_hits": 310,
-  "top1_accuracy": 0.9172,
-  "top3_accuracy": 0.9777,
+  "total_queries": 316,
+  "top1_hits": 290,
+  "top3_hits": 309,
+  "top5_hits": 312,
+  "top1_accuracy": 0.9177,
+  "top3_accuracy": 0.9778,
   "top5_accuracy": 0.9873,
-  "mrr_at_5": 0.947,
+  "mrr_at_5": 0.9474,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8782,14 +8782,14 @@
      "score": 50
     },
     {
+     "record_id": "health-system-law-llm-art-016",
+     "article_number": 16,
+     "score": 22
+    },
+    {
      "record_id": "cooperative-health-insurance-law-llm-art-014",
      "article_number": 14,
      "score": 21
-    },
-    {
-     "record_id": "cooperative-health-insurance-law-llm-art-005",
-     "article_number": 5,
-     "score": 19
     }
    ]
   },
@@ -8844,14 +8844,14 @@
      "score": 39
     },
     {
-     "record_id": "oa-llm-companies-art-206",
-     "article_number": 206,
-     "score": 11
+     "record_id": "health-system-law-llm-art-001",
+     "article_number": 1,
+     "score": 12
     },
     {
-     "record_id": "pdpl-reg-llm-art-014",
-     "article_number": 14,
-     "score": 10
+     "record_id": "health-system-law-llm-art-016",
+     "article_number": 16,
+     "score": 12
     }
    ]
   },
@@ -9751,6 +9751,68 @@
      "record_id": "oa-llm-companies-art-034",
      "article_number": 34,
      "score": 7
+    }
+   ]
+  },
+  {
+   "query_id": "hsy-001",
+   "query_ar": "ينشر هذا النظام في الجريدة الرسمية، ويعمل به بعد تسعين يومًا من تاريخ نشره، ويلغي كل ما يتعارض معه من أحكام",
+   "category": "topical",
+   "gold": {
+    "corpus": "health_system",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-system-law-llm-art-019",
+     "article_number": 19,
+     "score": 48
+    },
+    {
+     "record_id": "law-practice-law-llm-art-043",
+     "article_number": 43,
+     "score": 44
+    },
+    {
+     "record_id": "saudi-engineers-law-llm-art-009",
+     "article_number": 9,
+     "score": 42
+    }
+   ]
+  },
+  {
+   "query_id": "hsy-002",
+   "query_ar": "الصحة العامة : منظور مُتكامِل وشامِل لصِحة الفرد والأُسرة والمُجتمع، والتأثيرات البيئية والاجتِماعية والاقتِصادية",
+   "category": "topical",
+   "gold": {
+    "corpus": "health_system",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-system-law-llm-art-001",
+     "article_number": 1,
+     "score": 17
+    },
+    {
+     "record_id": "awqaf-law-llm-art-011",
+     "article_number": 11,
+     "score": 11
+    },
+    {
+     "record_id": "awqaf-law-llm-art-006",
+     "article_number": 6,
+     "score": 11
     }
    ]
   }

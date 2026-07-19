@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9842,
+  "total_primary_arabic_governing_records": 9861,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10737,
-  "total_tracks": 143,
+  "total_registry_counted_records": 10756,
+  "total_tracks": 144,
   "tracks": [
     {
       "boundaries": {
@@ -6770,6 +6770,55 @@
       "validator_targets": [
         "make food-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/health_system/law/official_source/health_system_law_official_source.json",
+        "sources/health_system/law/verified/health_system_law_verified_records.jsonl",
+        "data/health_system_arabic_legal_llm/health_system_law_legal_llm_001_019.json"
+      ],
+      "display_name_ar": "النظام الصحي",
+      "display_name_en": "Saudi Arabian Health System Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/health_system_arabic_legal_llm/health_system_law_legal_llm_001_019.json",
+          "governing": true,
+          "record_count": 19,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Arabian Health System Law «النظام الصحي» (also known as the Public Health Law) — Royal Decree No. M/11, dated 23/3/1423H (4 June 2002G), approved via Council of Ministers Resolution No. 76 (22/3/1423H). A medium-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing the public health system, health facilities, and epidemic/communicable-disease control, distinct from this corpus's already-ingested cooperative_health_insurance_law (insurance) and healthcare_professions_law (professional licensing/discipline) tracks. **19 records: 15 اصلية, 4 معدلة** (Articles 4, 5, 16, 17) — flat structure, **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa was unreachable this pass, both the live portal (HTTP 503, repeated) and the usual Wayback Machine fallback (blocked/403 this pass); istitlaa.ncc.gov.sa also unreachable (TLS reset). Two genuinely independent secondary sources were instead cross-verified: nezams.com (full verbatim text, programmatically extracted) and qanoonsa.com (raw text of Council of Ministers Resolution 151, an actual Umm Al-Qura Gazette reproduction, not an aggregation of nezams.com) — these agree on the founding decree identity and on 4 of 5 Article 16 amendment resolutions (CoM Resolutions 418/1435H, 283/1440H, 442/1440H, 185/1443H). **No specific named predecessor** — Article 19 gives only a generic conflict-only repeal clause ('يلغي كل ما يتعارض معه من أحكام', naming no instrument), a confirmed negative finding flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. Genuine anomalies preserved: Article 16's latest amendment step (CoM Resolution 151, 1444H) is documented in amendment_history as having occurred but NOT merged into the article's current text, since neither source gives an explicitly-numbered replacement sub-paragraph — merging it would require fabricating an insertion point; Resolution 151 also cites a prior Resolution 475 (1436H) whose substance is undocumented in either source; Article 16 paragraph (ب) contains a stale sub-paragraph cross-reference to pre-185 numbering; a verbatim source typo in nezams.com's reproduction of Resolution 185 ('الهيئة اعامة' instead of 'الهيئة العامة') is preserved, not corrected. A companion Implementing Regulation (اللائحة التنفيذية للنظام الصحي) is confirmed to exist but is out of scope for this track (source unreachable this pass anyway), flagged as a follow-up candidate. Arabic governs; not legal advice.",
+      "official_text_status": "NEZAMS_X_QANOONSA_COM_RESOLUTION_151_CROSS_VERIFIED_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 19,
+        "legal_status_breakdown": {
+          "اصلية": 15,
+          "مضافة": 0,
+          "معدلة": 4,
+          "ملغاة": 0
+        },
+        "total": 19
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. M/11, dated 23/3/1423H (4 June 2002G), approved via Council of Ministers Resolution No. 76 (22/3/1423H) — laws.boe.gov.sa was unreachable this pass, both the live portal (HTTP 503) and the Wayback Machine (blocked/403); instead two genuinely independent secondary sources were cross-verified: nezams.com (full verbatim text of all 19 articles) and qanoonsa.com (raw text of Council of Ministers Resolution 151, an Umm Al-Qura Gazette reproduction, not merely a nezams.com mirror) — these agree on the founding decree identity and on 4 of 5 Article 16 amendment resolutions",
+      "status": "complete",
+      "track_id": "health_system_law",
+      "validator_targets": [
+        "make health-system-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6830,6 +6879,7 @@
       "gcc_anti_dumping": 17,
       "gcc_ownership": 6,
       "gtpl": 256,
+      "health_system": 19,
       "healthcare_professions": 44,
       "iflas_hudud": 23,
       "income_tax": 81,
@@ -6889,7 +6939,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9673,
+    "total_records": 9692,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
