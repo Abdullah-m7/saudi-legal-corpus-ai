@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 330,
-  "top1_hits": 304,
-  "top3_hits": 323,
-  "top5_hits": 326,
-  "top1_accuracy": 0.9212,
-  "top3_accuracy": 0.9788,
-  "top5_accuracy": 0.9879,
-  "mrr_at_5": 0.9496,
+  "total_queries": 332,
+  "top1_hits": 306,
+  "top3_hits": 325,
+  "top5_hits": 328,
+  "top1_accuracy": 0.9217,
+  "top3_accuracy": 0.9789,
+  "top5_accuracy": 0.988,
+  "mrr_at_5": 0.9499,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -10247,6 +10247,68 @@
      "record_id": "nationality-law-llm-art-001",
      "article_number": 1,
      "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "hsr-001",
+   "query_ar": "تعمل الوزارة من خلال التنسيق والتعاون مع الجهات الرسمية والأهلية على أن تتوافر بصفة مستمرة وفي كل الأحوال الخدمات الصحية",
+   "category": "topical",
+   "gold": {
+    "corpus": "health_system",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-system-regulation-llm-art-003",
+     "article_number": 4,
+     "score": 31
+    },
+    {
+     "record_id": "labor-annex4-llm-art-001",
+     "article_number": 1,
+     "score": 24
+    },
+    {
+     "record_id": "health-system-regulation-llm-art-005",
+     "article_number": 6,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "hsr-002",
+   "query_ar": "يقترح تحويل ملكيتها إلى القطاع الخاص. ويجوز أن يكون ذلك عن طريق البيع أو التأجير إلى مستثمر خاص",
+   "category": "topical",
+   "gold": {
+    "corpus": "health_system",
+    "law_component": "regulation",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-system-regulation-llm-art-010",
+     "article_number": 11,
+     "score": 25
+    },
+    {
+     "record_id": "oa-llm-companies-art-213",
+     "article_number": 213,
+     "score": 18
+    },
+    {
+     "record_id": "oa-llm-companies-art-109",
+     "article_number": 109,
+     "score": 14
     }
    ]
   }
