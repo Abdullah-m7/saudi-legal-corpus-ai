@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 146,
-  "total_terms": 835,
-  "total_definitions": 1264,
-  "tracks_with_definitions_article_parsed": 96,
+  "total_tracks_in_registry": 147,
+  "total_terms": 837,
+  "total_definitions": 1269,
+  "tracks_with_definitions_article_parsed": 97,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -857,6 +857,16 @@
         "term_as_written": "الأمانة الفنية",
         "definition_text": "الأمانة الفنية للجنة الدائمة.",
         "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأمن السيبراني": [
+      {
+        "track_id": "cybersecurity_authority_law",
+        "article_number": 1,
+        "term_as_written": "الأمن السيبراني",
+        "definition_text": "حماية الشبكات وأنظمة تقنية المعلومات وأنظمة التقنيات التشغيلية، ومكوناتها من أجهزة وبرمجيات، وما تقدمه من خدمات، وما تحويه من بيانات، من أي اختراق أو تعطيل أو تعديل أو دخول أو استخدام أو استغلال غير مشروع. ويشمل مفهوم الأمن السيبراني أمن المعلومات والأمن الإلكتروني والأمن الرقمي ونحو ذلك.",
+        "source_record_id": "cybersecurity-authority-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2255,6 +2265,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم صندوق النفقة.",
         "source_record_id": "alimony-fund-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cybersecurity_authority_law",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم الهيئة.",
+        "source_record_id": "cybersecurity-authority-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5876,6 +5894,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "cybersecurity_authority_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "cybersecurity-authority-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "documentation_settlement_regulation",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -6321,6 +6347,16 @@
         "term_as_written": "المرافق والأملاك العامة والخاصة",
         "definition_text": "العقارات والمنقولات والمنشآت التي تملكها الدولة أو الأشخاص ذوو الصفة المعنوية العامة، أو التي تكون مخصصة لمصلحة عامة، أو النشاطات التي تقدمها لتحقيق غرض من أغراض النفع العام، وتشمل كذلك العقارات والمنقولات والمنشآت العائدة للأفراد أو الأشخاص ذوي الصفة المعنوية الخاصة، أو الهيئات الدبلوماسية، أو الهيئات أو المنظمات الدولية أو الإنسانية، العاملة في الدولة.",
         "source_record_id": "terrorism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المراكز": [
+      {
+        "track_id": "cybersecurity_authority_law",
+        "article_number": 1,
+        "term_as_written": "المراكز",
+        "definition_text": "المراكز المشار إليها في الفقرة (1) من المادة (الخامسة) من هذا التنظيم.",
+        "source_record_id": "cybersecurity-authority-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8653,6 +8689,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة السعودية للملكية الفكرية.",
         "source_record_id": "copyright-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cybersecurity_authority_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة الوطنية للأمن السيبراني.",
+        "source_record_id": "cybersecurity-authority-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {

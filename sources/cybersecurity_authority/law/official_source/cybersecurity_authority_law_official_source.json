@@ -1,0 +1,251 @@
+{
+  "document": "تنظيم الهيئة الوطنية للأمن السيبراني",
+  "document_en": "Statute (Organizational Regulation) of the National Cybersecurity Authority",
+  "decree": "الأمر الملكي رقم (6801)",
+  "decree_date_hijri": "11/2/1439",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": true,
+  "issuing_authority_ar": "أمر ملكي -- الأمر الملكي رقم (6801) وتاريخ 11/2/1439هـ (الموافق تقريباً 31 أكتوبر/1 نوفمبر 2017م)، بالموافقة على تنظيم الهيئة الوطنية للأمن السيبراني، المعدَّل بالأمر الملكي رقم (7053) وتاريخ 2/2/1443هـ (دون تحديد مادة بعينها طالها التعديل في أي مصدر عُثر عليه هذا التمرير). تأسست الهيئة الوطنية للأمن السيبراني ذاتها في مرحلة سابقة بموجب الأمر الملكي رقم (55775) وتاريخ 1/12/1438هـ (خطوة تأسيسية أولية، بحسب صفحة الهيئة الرسمية nca.gov.sa، لم يُطّلع على نصها في هذا التمرير ولم تُدرج ضمن هذا المسار). لا يتضمن هذا التنظيم أي إحلال محل أو إلغاء صريح لتنظيم مؤسسي سابق مُسمى بعينه؛ مادته الخامسة عشرة (الأخيرة) تتضمن فقط عبارة إلغاء عامة غير محددة ('يلغي كل ما يتعارض معه من أحكام'). ينفصل هذا التنظيم عن مرسوم ملكي رقم (م/117) وتاريخ 21/6/1446هـ (الموافقة على 'الممكنات النظامية للهيئة الوطنية للأمن السيبراني') وهو صك أحدث ومختلف الموضوع (تراخيص ومخالفات وعقوبات) لم يُدرج في هذا المسار.",
+  "issuing_authority_en": "Royal Order -- Royal Order No. 6801 dated 11/2/1439H (approx. 31 October/1 November 2017G), approving the Statute (Organizational Regulation) of the National Cybersecurity Authority, as amended by Royal Order No. 7053 dated 2/2/1443H (no source found this pass identifies which specific article that amendment touched). The Authority itself was established at an earlier stage by Royal Order No. 55775 dated 1/12/1438H (a preliminary founding step, per the Authority's own official site nca.gov.sa; its own text was not read this pass and is not ingested here). This Statute contains no explicit repeal of, or replacement for, any specifically-named prior organizational statute -- its own final Article 15 contains only a generic, non-specific repeal clause ('repeals whatever conflicts with it'). It is distinct from Royal Decree No. (M/117) dated 21/6/1446H (approving the Authority's 'legal/regulatory enablers'), a newer, separately-scoped instrument (licensing, violations, penalties) not ingested in this track.",
+  "preamble_ar": "بسم الله الرحمن الرحيم\nتنظيم الهيئة الوطنية للأمن السيبراني\nالصادر بالأمر الملكي رقم ٦٨٠١ بتاريخ ١٤٣٩/٠٢/١١هـ\nالمعدَّل بالأمر الملكي رقم 7053 بتاريخ 1443/02/02هـ",
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: this organizational statute is NOT catalogued (or at least not discoverable via direct URL guessing, WebSearch, or the live portal) on laws.boe.gov.sa under any URL found this pass -- repeated targeted WebSearch queries for 'site:laws.boe.gov.sa' + 'الهيئة الوطنية للأمن السيبراني' surfaced only OTHER, unrelated BOE-catalogued laws that merely reference or cite this statute in passing (نظام حماية البيانات الشخصية, نظام الاتصالات وتقنية المعلومات, ضوابط استخدام تقنيات المعلومات في الجهات الحكومية), never this statute's own BOE law-detail page. A direct curl to laws.boe.gov.sa (bypassing the WebFetch tool) returned 'Connection reset by peer' -- consistent with this corpus's documented pattern of this portal being frequently unreachable, though here compounded by the page apparently not being independently discoverable at all. Given this, the PRIMARY source actually used is different from this corpus's usual BOE-first pattern: the National Cybersecurity Authority's OWN official website (nca.gov.sa), specifically a PDF hosted on its own content-delivery subdomain (cdn.nca.gov.sa/api/public/cms/files/b8032cb5-70c4-40ad-884e-b962001b6704_...pdf, 247,709 bytes, 14 pages, fetched live this pass with HTTP 200 via direct curl over the pre-configured proxy after the WebFetch tool itself returned HTTP 503 for the same URL). This PDF's own title page states, in the regulator's own words: 'تنظيم الهيئة الوطنية للأمن السيبراني -- الصادر بالأمر الملكي رقم 6801 بتاريخ 1439/02/11هـ -- المعدّل بالأمر الملكي رقم 7053 بتاريخ 1443/02/02هـ' -- i.e. NCA's own site identifies this as the current, consolidated (post-1443H-amendment) text. This matches this corpus's own coverage_gap_map estimate for the original/amending decree numbers and dates EXACTLY.\n\nA GENUINE TEXT-EXTRACTION ANOMALY, DISCLOSED AND WORKED AROUND: this PDF's embedded text layer has a confirmed, systematic character-transposition artifact -- extracting it with BOTH pdftotext -layout AND PyMuPDF (fitz) independently produced the SAME local letter-pair swaps throughout the document (e.g. 'السيبراني' consistently rendered as 'السيرباين' -- ب and ر transposed -- and 'الترخيص'/'بمزاولة' rendered as 'الرتخيص'/'مبزاولة', among other adjacent-pair swaps), almost certainly an artifact of how this specific PDF's underlying content stream orders glyphs under kashida/justification stretching for fully-justified Arabic paragraphs, NOT a tool-specific bug (since two independent extraction libraries agree on the same corrupted order). Rather than ingest this corrupted text OR silently 'fix' it by guesswork, this pass rendered each PDF page to a 300dpi PNG (pdftoppm) and OCR'd it with Tesseract 5's Arabic-language model (--psm 6), which reads the correctly-rendered visual glyph order and is immune to this specific content-stream artifact. Every article's final text in this track was reconstructed by cross-reading the OCR output against the flawed-but-complete pdftotext/fitz extraction (used only to confirm article boundaries, item counts, and numbering, since OCR introduces its own noise -- stray symbols, dropped diacritics -- around page-footer classification-banner text and at a few line-wrap points), word-by-word, article by article, resolving every discrepancy by direct visual inspection rather than trusting either single source blindly. This is disclosed prominently here as a genuine, source-side technical anomaly per this corpus's anomaly-flagging requirement -- see known_unresolved_discrepancies, key cybersecurity_authority_pdf_text_layer_letter_transposition_artifact.\n\nSECONDARY CROSS-VERIFICATION: (1) qistas.com (a Saudi legal-aggregator site, fetched live this pass) independently hosts 'تنظيم الهيئة الوطنية للأمن السيبراني لعام 1439هـ' and its visible excerpt for Articles 1-3 matches this track's OCR-reconstructed text verbatim in substance (Article 1's definitions, Article 2's legal-personality/HQ clauses, Article 3's competent-authority mandate) -- a partial, structural cross-check only (the page's full text was not fully retrievable via the fetch tool used, consistent with this corpus's 1-2-verification-attempts-per-fact policy). (2) NCA's own separate 'الأنظمة واللوائح' listing page (nca.gov.sa/ar/laws-and-regulations/, fetched live this pass) independently corroborates the SAME decree chain (Royal Order 55775 dated 1/12/1438H establishing the Authority; Royal Order 6801 dated 11/2/1439H approving its تنظيم; Royal Order 7053 dated 2/2/1443H amending that تنظيم) -- though as a second page on the SAME regulator's own domain, this does NOT count as a second INDEPENDENT primary source under this corpus's own tier taxonomy, only as reinforcing confirmation from the same authority. (3) saudipedia.com (an independent Arabic/English encyclopedia, fetched live this pass) independently corroborates the establishment date '31 October 2017G' -- which converts to 11 Safar 1439H, an exact match for Royal Order 6801's own hijri date -- via a wholly separate, non-legal, non-NCA source. (4) Multiple independent WebSearch aggregations (drawing on Saudi press coverage including alarabiya.net, al-jazirah.com, alriyadh.com, and argaam.com, all dated around 1 November 2017) consistently corroborate the same Royal Order 6801 number/date for NCA's establishment/تنظيم approval. laws.boe.gov.sa's own indexed page for this exact statute could NOT be located this pass (see above) -- this precludes a true TIER_1 (2+ independent official/primary sources) rating under this corpus's own taxonomy; this track is honestly assessed at TIER_2 (one official/primary source -- NCA's own site -- plus independent secondary cross-checks), not TIER_1.\n\nARTICLE-LEVEL AMENDMENT ATTRIBUTION -- HONEST GAP, NOT GUESSED: the source PDF's own title page confirms this text has been amended at least once since original issuance (explicitly labelled 'المعدّل بالأمر الملكي رقم 7053 بتاريخ 1443/02/02هـ'), and this track's top-level consolidated_amended_law field is set to true to reflect that. However, despite multiple targeted WebSearch queries this pass, NO source consulted -- NCA's own site, qistas.com, WebSearch press aggregations, or any other -- identifies WHICH specific article(s) of the 15 were altered by Royal Order 7053, nor was any pre-1443H (pre-~Sept 2021) full copy of the original 6801 text located for a direct diff (the only Wayback Machine snapshot found for NCA's own laws-and-regulations listing page postdates this amendment by years). Per this corpus's anti-fabrication policy, this track therefore does NOT mark any individual article معدلة absent specific evidence of which one changed -- all 15 are marked اصلية at the per-article level, while the document-level consolidated_amended_law=true flag and this note make the overall amendment-without-attribution status transparent. This is a confirmed, honestly-reported gap, not a silent omission -- see known_unresolved_discrepancies, key cybersecurity_authority_7053_amendment_article_unattributed.\n\nA NOTABLE INTERNAL-CONSISTENCY CLUE (not resolved, flagged only): Article 12(2)-(3) refer to 'مؤسسة النقد العربي السعودي' (the Saudi Arabian Monetary Agency's pre-2020 name), NOT 'البنك المركزي السعودي' (Saudi Central Bank -- SAMA's own name since Royal Decree M/36, 11/4/1442H, roughly November 2020, i.e. BEFORE Royal Order 7053's 2/2/1443H amendment date). This suggests Article 12 specifically was likely NOT among whatever article(s) 7053 touched (since a live 2021+ amendment would plausibly have picked up the already-renamed institution), but this is circumstantial, not confirmed -- many Saudi statutes retain the old SAMA name in their own text even after the 2020 rename, since the rename did not trigger an automatic global find-and-replace across all legislation (as seen elsewhere in this corpus, e.g. nazaha_law's own explicit clause-by-clause terminology-substitution mechanism for a comparable renaming). Flagged as a clue, not a finding.\n\nPREDECESSOR / STAGED ESTABLISHMENT (NOT a repeal-of-rival-statute scenario): per NCA's own 'laws-and-regulations' page and multiple independent secondary sources, this Authority was established in two stages: Royal Order No. 55775 dated 1/12/1438H (~23 Aug 2017G) is described by NCA's own site as the order 'establishing' the Authority, while Royal Order No. 6801 dated 11/2/1439H (~31 Oct/1 Nov 2017G, matching the Saudi press's widely-reported public announcement date) is the one that approved this detailed 15-article تنظيم. This is a STAGED creation of the SAME body (an initial creation/naming order followed ~2 months later by its detailed organizational statute), not a case of one distinct body's own separate organizational statute being repealed and replaced by a different body's statute (contrast nazaha_law's repeal of a distinct predecessor commission's own تنظيم). Royal Order 55775's own text was not independently fetched or read this pass (out of scope, background context only, consistent with this corpus's practice for such founding orders) -- see known_unresolved_discrepancies, key cybersecurity_authority_founding_order_55775_secondary_only. This track's own Article 15 (the final article) contains only a GENERIC repeal clause ('يلغي كل ما يتعارض معه من أحكام') -- no specific predecessor instrument is named as being repealed anywhere in the 15 articles ingested. Per this track's task brief requirement to report a confirmed negative finding as valid: NO named predecessor ORGANIZATIONAL STATUTE was found to have been repealed by this instrument -- only this generic, non-specific repeal clause exists.\n\nDISTINCTION FROM A SEPARATE, NEWER, ROYAL-DECREE-LEVEL INSTRUMENT (الممكنات النظامية): this pass also found Royal Decree No. (م/117) dated 21/6/1446H (22 Dec 2024G), based on Council of Ministers Resolution No. 409 dated 16/6/1446H and Shura Council Resolution No. 16/3 dated 28/3/1446H, approving 'الممكنات النظامية للهيئة الوطنية للأمن السيبراني' (the Authority's 'regulatory/legal enablers') -- published in Umm Al-Qura Gazette No. 5065, 17 Jan 2025G, and hosted as an official PDF on NCA's own site (cdn.nca.gov.sa/.../الممكنات-النظامية-للهيئة-.pdf, fetched live this pass). This is a SEPARATE, substantially different instrument dealing with licensing violations, inspector powers, emergency suspension powers, a violations-review committee, and financial penalties of up to 25,000,000 SAR -- i.e. an ENFORCEMENT/licensing-penalty regime, textually and substantively distinct from this track's own subject (the Authority's organizing/institutional statute: mandate, board, budget, structure). Neither this pass's fetch of that PDF nor of qanoonsa.com's page for it found any explicit statement that م/117 amends or repeals any part of the organizational تنظيم (6801/7053) ingested in this track. Per this corpus's established one-Law-per-pass precedent (see nazaha_law's own distinction from anti_bribery_law), م/117 is NOT ingested in this track -- flagged here for awareness and as a candidate for a possible dedicated future track, but out of scope for this pass -- see known_unresolved_discrepancies, key cybersecurity_authority_enablers_m117_distinct_not_ingested.\n\nSTRUCTURE: this تنظيم has NO أبواب (parts) or فصول (chapters) -- a flat sequence of 15 individually-numbered articles, confirmed both from the PDF's own layout (no part/chapter heading anywhere) and from qistas.com's structural presentation. No article carries an inline topic title distinct from its bare ordinal ('المادة الأولى', 'المادة الثانية', etc.) -- consistent with this corpus's accounting_auditing_law and awqaf_law precedent for sources lacking inline per-article titles; no title_ar key is used, and section_ar carries the constant 'بدون تقسيم إلى أبواب أو فصول' for every article, following awqaf_law's precedent for a flat, chapterless organizing statute.\n\nNUMBERED/LETTERED SUB-ITEM FORMATTING: several articles (4, 5, 7, 8, 9, 10, 11, 13) contain enumerated clauses that appear in the source PDF with leading Arabic-Indic numeral markers (1، 2، 3...). Following this corpus's established nazaha_law/awqaf_law precedent for BOE-sourced ordered-list content (where such numerals are list-rendering artifacts, not separately meaningful text), this track renders each numbered clause as its own newline-separated sentence WITHOUT a leading digit, for consistency with the rest of this corpus. Article 12(1)'s four lettered sub-items (أ/ب/ج/د), by contrast, are genuinely meaningful inline letter-labels (paralleling awqaf_law's Article 6 lettered board-seat list) and are preserved with their أ-/ب-/ج-/د- prefixes.\n\nNo legal text is altered beyond: (a) OCR-based recovery of the correct letter order where the PDF's own text layer is corrupted (see above -- this is a read-only transcription correction of a source-side extraction artifact, not a substantive edit, and was verified word-by-word against the flawed-but-complete alternate extraction and against qistas.com's independent excerpt); (b) omission of list-rendering numeral markers per corpus convention (see above); (c) whitespace/line-break normalization. Arabic governs; no translation/paraphrase/interpretation performed on the Arabic text (English descriptions in this note and in document_en/issuing_authority_en are for indexing only). Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "cybersecurity_authority_pdf_text_layer_letter_transposition_artifact",
+      "description": "The official NCA-hosted PDF used as this track's primary source has a confirmed, systematic character-transposition artifact in its embedded text layer -- both pdftotext -layout and PyMuPDF (fitz), two independent extraction libraries, produce the SAME corrupted local letter-pair order throughout (e.g. 'السيبراني' extracts as 'السيرباين', 'الترخيص'/'بمزاولة' extract as 'الرتخيص'/'مبزاولة'), almost certainly a kashida/justification-related artifact in the PDF's own content stream rather than a tool bug. This pass worked around it by rendering each page to a 300dpi PNG and OCR'ing with Tesseract 5's Arabic model, then cross-reading the OCR output word-by-word against the flawed-but-complete pdftotext/fitz extraction (used to confirm article/item boundaries and counts) and against qistas.com's independent excerpt for Articles 1-3. This is disclosed as a genuine source-side technical anomaly, not a silent correction -- any future re-verification pass should independently re-derive the text (ideally from a located laws.boe.gov.sa page, if one is ever found, or a second independent PDF) rather than assuming this pass's OCR-based reconstruction is infallible."
+    },
+    {
+      "article_key": "cybersecurity_authority_7053_amendment_article_unattributed",
+      "description": "The source PDF's own title page confirms this text is amended and consolidated ('المعدّل بالأمر الملكي رقم 7053 بتاريخ 1443/02/02هـ'), and this track's consolidated_amended_law field is set to true accordingly. However, despite multiple targeted WebSearch queries this pass, no source consulted (NCA's own site, qistas.com, or WebSearch press aggregations) identifies which specific article(s) of the 15 were altered by Royal Order 7053 (dated 2/2/1443H, roughly September 2021G), nor was a pre-amendment (pre-1443H) full copy of the original 6801 text located for a direct diff. Per this corpus's anti-fabrication policy, no individual article is marked معدلة absent specific evidence of which one changed -- all 15 articles are marked اصلية at the per-article level. This is an honestly-reported, confirmed gap (we know an amendment happened; we do not know, and did not guess, which article it touched), flagged here for a dedicated future follow-up (ideally locating the Umm Al-Qura Gazette issue publishing Royal Order 7053 directly, or a laws.boe.gov.sa page for this statute if one is ever indexed/discoverable)."
+    },
+    {
+      "article_key": "cybersecurity_authority_founding_order_55775_secondary_only",
+      "description": "This Authority's own official 'laws-and-regulations' page (nca.gov.sa) describes Royal Order No. 55775 dated 1/12/1438H (~23 Aug 2017G) as the order 'establishing' the Authority, roughly two months before Royal Order No. 6801 dated 11/2/1439H (~31 Oct/1 Nov 2017G, matching the Saudi press's widely-reported public-announcement date) approved this present, detailed 15-article تنظيم. This is treated as a STAGED creation of the SAME body (an initial creation/naming order followed ~2 months later by its detailed organizational statute), not a repeal-of-a-distinct-predecessor-body's-own-statute scenario (contrast nazaha_law's repeal of a distinct predecessor commission's own تنظيم). Royal Order 55775's own text was not independently fetched or read this pass (out of scope, background/context only, consistent with this corpus's standard practice for such founding orders) -- its number/date is corroborated only by NCA's own site, and not independently cross-checked against a second source this pass."
+    },
+    {
+      "article_key": "cybersecurity_authority_no_named_predecessor_repeal_confirmed_negative",
+      "description": "Per this track's task brief, a confirmed-negative finding: this instrument's own Article 15 (final article) contains only a GENERIC repeal clause ('يلغي كل ما يتعارض معه من أحكام') -- no specific predecessor organizational statute is named anywhere in the 15 ingested articles as being repealed or superseded. Unlike nazaha_law (which explicitly repeals a distinct predecessor commission's own تنظيم by number/date) or awqaf_law (which explicitly repeals the Supreme Awqaf Council System by number/date), no equivalent named-predecessor-statute repeal clause was found for this Authority. This is treated as a valid, deliberately-reported negative finding, not an oversight."
+    },
+    {
+      "article_key": "cybersecurity_authority_enablers_m117_distinct_not_ingested",
+      "description": "A separate, newer, Royal-Decree-level instrument -- Royal Decree No. (م/117) dated 21/6/1446H (22 Dec 2024G), based on Council of Ministers Resolution No. 409 dated 16/6/1446H, approving 'الممكنات النظامية للهيئة الوطنية للأمن السيبراني' (published Umm Al-Qura Gazette No. 5065, 17 Jan 2025G) -- was found this pass, hosted as an official PDF on NCA's own site. This instrument defines cybersecurity-licensing violations, inspector/investigative powers, emergency suspension powers, a violations-review committee, and financial penalties up to 25,000,000 SAR -- an enforcement/licensing-penalty regime textually and substantively DISTINCT from this track's own subject (the Authority's organizing/institutional statute: mandate, board, budget, structure). No source consulted this pass states that م/117 amends or repeals any part of the organizational تنظيم (6801/7053) ingested here. Per this corpus's established one-Law-per-pass precedent, م/117 is NOT ingested in this track -- flagged as a candidate for a possible dedicated future track, out of scope for this pass."
+    },
+    {
+      "article_key": "cybersecurity_authority_boe_page_not_located",
+      "description": "Unlike this corpus's usual BOE-first verification pattern, no laws.boe.gov.sa law-detail page for this exact statute (تنظيم الهيئة الوطنية للأمن السيبراني) was located this pass despite multiple targeted WebSearch queries -- only OTHER, unrelated BOE-catalogued laws that merely cite or reference this statute in passing were found. A direct curl to laws.boe.gov.sa (bypassing the WebFetch tool, which itself returned HTTP 503) returned 'Connection reset by peer'. This precludes a TIER_1 rating (2+ independent official/primary sources) under this corpus's own taxonomy; this track is honestly assessed at TIER_2 (NCA's own official site as the sole primary/official source, plus independent secondary cross-checks from qistas.com, saudipedia.com, and WebSearch press aggregations)."
+    },
+    {
+      "article_key": "cybersecurity_authority_sama_old_name_clue",
+      "description": "Article 12(2)-(3) refer to 'مؤسسة النقد العربي السعودي' (SAMA's pre-2020 name) rather than 'البنك المركزي السعودي' (Saudi Central Bank, SAMA's own name since Royal Decree M/36, 11/4/1442H, ~November 2020 -- itself BEFORE Royal Order 7053's 2/2/1443H amendment date). This is noted as a circumstantial clue (suggesting, but not confirming, that Article 12 was likely not among whatever article(s) 7053 amended) rather than a resolved finding -- see cybersecurity_authority_7053_amendment_article_unattributed above for why no article is marked معدلة. Many Saudi statutes retain the pre-2020 SAMA name in their own text even post-rename, since the rename did not trigger an automatic global find-and-replace across all legislation."
+    },
+    {
+      "article_key": "cybersecurity_authority_no_baab_fasl_structure",
+      "description": "This تنظيم has NO أبواب (parts) or فصول (chapters) -- a flat sequence of 15 individually-numbered articles, confirmed from the source PDF's own layout (no part/chapter heading anywhere) and from qistas.com's structural presentation. This track's chapter_structure field reflects this verified flat structure (a single leaf range 1-15), consistent with this corpus's awqaf_law and accounting_auditing_law precedent for chapterless organizing statutes."
+    },
+    {
+      "article_key": "cybersecurity_authority_no_inline_article_titles",
+      "description": "No article carries an inline topic title distinct from its bare ordinal ('المادة الأولى', 'المادة الثانية', etc.) in the source PDF. Consistent with this corpus's accounting_auditing_law, nazaha_law, and awqaf_law precedent for sources lacking inline per-article titles, no title_ar key is used; section_ar instead carries the constant 'بدون تقسيم إلى أبواب أو فصول' for every article."
+    },
+    {
+      "article_key": "cybersecurity_authority_list_numerals_omitted_per_corpus_convention",
+      "description": "Several articles (4, 5, 7, 8, 9, 10, 11, 13) contain enumerated clauses that appear in the source PDF with leading Arabic-Indic numeral markers (1، 2، 3...). Following this corpus's nazaha_law/awqaf_law precedent for ordered-list content, this track renders each numbered clause as its own newline-separated sentence without a leading digit. Article 12(1)'s four lettered sub-items (أ/ب/ج/د) are preserved with their letter prefixes, as they parallel awqaf_law's Article 6 lettered board-seat list rather than a simple numbered-list rendering artifact."
+    },
+    {
+      "article_key": "cybersecurity_authority_gap_map_estimate_confirmed",
+      "description": "This corpus's own reports/coverage_gap_map/coverage_gap_map.json entry for this law estimated 'Royal Order No. 6801 dated 11/2/1439H (2017); amended by Royal Order No. 7053 dated 2/2/1443H' with an unconfirmed article count. This pass CONFIRMS the decree numbers and dates exactly via NCA's own official PDF and independent secondary sources, and confirms the article count at exactly 15 articles, with no أبواب/فصول subdivision."
+    }
+  ],
+  "amendment_history": [
+    {
+      "decree": "الأمر الملكي رقم (6801)",
+      "date_hijri": "11/2/1439",
+      "note": "الإصدار الأصلي لتنظيم الهيئة الوطنية للأمن السيبراني (15 مادة، بلا تقسيم إلى أبواب أو فصول) -- صدر بعد تأسيس الهيئة بموجب الأمر الملكي رقم (55775) وتاريخ 1/12/1438هـ. مصدره الأساسي المعتمد في هذا المسار نسخة رسمية بصيغة PDF منشورة على الموقع الرسمي للهيئة (nca.gov.sa)، وهي تمثل النص الموحّد (المدمج مع تعديل الأمر الملكي رقم 7053) حسب صفحة عنوانها؛ راجع verification_methodology_note للتفاصيل الكاملة."
+    },
+    {
+      "decree": "الأمر الملكي رقم (7053)",
+      "date_hijri": "2/2/1443",
+      "note": "عدّل تنظيم الهيئة الوطنية للأمن السيبراني الصادر بالأمر الملكي رقم (6801) وتاريخ 11/2/1439هـ، بحسب صفحة عنوان النسخة الرسمية المنشورة على موقع الهيئة ذاتها، لكن لم يُعثر -رغم البحث المستهدف- على أي مصدر يحدد أي مادة (أو مواد) من المواد الخمس عشرة طالها هذا التعديل تحديداً، ولم يُعثر على نسخة سابقة لعام 1439هـ لإجراء مقارنة مباشرة. لذلك لا تحمل أي مادة في هذا المسار حالة 'معدلة' على مستوى المادة دون دليل محدد؛ انظر known_unresolved_discrepancies، المفتاح cybersecurity_authority_7053_amendment_article_unattributed."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "label_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "title_ar": "مواد متسلسلة غير مجمعة تحت أبواب أو فصول رسمية، لا يحمل أي منها عنواناً فرعياً في المصدر: تعريفات (م1) -- الشخصية الاعتبارية ومقر الهيئة (م2) -- اختصاص الهيئة ومرجعيتها الوطنية (م3) -- اختصاصات ومهمات الهيئة (م4) -- وسائل الهيئة لتحقيق أهدافها (م5) -- تشكيل المجلس (م6) -- المجلس سلطته واختصاصاته (م7) -- اجتماعات المجلس (م8) -- المحافظ والمديرون التنفيذيون للمراكز (م9) -- التزامات الجهات ذات العلاقة (م10) -- الميزانية والسنة المالية (م11) -- موارد الهيئة والمراكز وحساباتها المصرفية (م12) -- مراجعة الحسابات (م13) -- خضوع المنسوبين لنظامي العمل والتأمينات الاجتماعية (م14) -- النفاذ والإلغاء (م15).",
+      "articles": "1-15"
+    }
+  ],
+  "article_count": 15,
+  "status_counts": {
+    "اصلية": 15,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "cybersecurity_authority_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "لأغراض تطبيق هذا التنظيم، يكون للكلمات والمصطلحات الآتية المعاني الموضحة أمام كل منها، ما لم يقتض السياق خلاف ذلك:\nالهيئة: الهيئة الوطنية للأمن السيبراني.\nالتنظيم: تنظيم الهيئة.\nالأمن السيبراني: حماية الشبكات وأنظمة تقنية المعلومات وأنظمة التقنيات التشغيلية، ومكوناتها من أجهزة وبرمجيات، وما تقدمه من خدمات، وما تحويه من بيانات، من أي اختراق أو تعطيل أو تعديل أو دخول أو استخدام أو استغلال غير مشروع. ويشمل مفهوم الأمن السيبراني أمن المعلومات والأمن الإلكتروني والأمن الرقمي ونحو ذلك.\nالمجلس: مجلس إدارة الهيئة.\nالمراكز: المراكز المشار إليها في الفقرة (1) من المادة (الخامسة) من هذا التنظيم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "تتمتع الهيئة بالشخصية الاعتبارية العامة والاستقلال المالي والإداري، وترتبط بالملك.\nيكون مقر الهيئة الرئيس مدينة الرياض، ولها أن تنشئ فروعاً ومكاتب لها داخل المملكة أو خارجها، وذلك بقرار من المجلس.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "الهيئة هي الجهة المختصة في المملكة بالأمن السيبراني، والمرجع الوطني في شؤونه، وتهدف إلى تعزيزه حمايةً للمصالح الحيوية للدولة وأمنها الوطني والبنى التحتية الحساسة والقطاعات ذات الأولوية والخدمات والأنشطة الحكومية. ولا يخلي ذلك أي جهة عامة أو خاصة أو غيرها من مسؤوليتها تجاه أمنها السيبراني بما لا يتعارض مع اختصاصات ومهمات الهيئة الواردة في هذا التنظيم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "تشمل اختصاصات ومهمات الهيئة الآتي:\nإعداد الاستراتيجية الوطنية للأمن السيبراني، والإشراف على تنفيذها، واقتراح تحديثها.\nوضع السياسات وآليات الحوكمة والأطر والمعايير والضوابط والإرشادات المتعلقة بالأمن السيبراني، وتعميمها على الجهات ذات العلاقة، ومتابعة الالتزام بها، وتحديثها.\nتصنيف وتحديد البنى التحتية الحساسة والجهات المرتبطة بها، وتحديد القطاعات والجهات ذات الأولوية بالأمن السيبراني.\nوضع أطر إدارة المخاطر المتعلقة بالأمن السيبراني، ومتابعة الالتزام بها، وتحديثها.\nإشعار الجهات المعنية بالمخاطر والتهديدات ذات العلاقة بالأمن السيبراني.\nوضع أطر الاستجابة للحوادث المتعلقة بالأمن السيبراني، ومتابعة الالتزام بها، وتحديثها.\nبناء مراكز العمليات الوطنية الخاصة بالأمن السيبراني -وما في حكمها- بكافة أنواعها، بما في ذلك مراكز التحكم والسيطرة والاستطلاع والرصد وتبادل وتحليل المعلومات، وكذلك بناء مراكز العمليات القطاعية الخاصة بالأمن السيبراني -عند الحاجة-، وبناء المنصات ذات العلاقة، والإشراف عليها، وتشغيلها.\nالقيام -بنفسها أو من خلال غيرها- بالأنشطة والعمليات المتعلقة بالأمن السيبراني.\nتنظيم آلية مشاركة المعلومات والبيانات المرتبطة بالأمن السيبراني بين الجهات والقطاعات المختلفة في المملكة، والإشراف على ذلك.\nتقديم المساندة للجهات المختصة -في حال طلبها وفقاً للإمكانات المتاحة لدى الهيئة- خلال الاستدلال والتحقيق في الجرائم المتعلقة بالأمن السيبراني.\nوضع السياسات والمعايير الوطنية للتشفير، ومتابعة الالتزام بها، وتحديثها.\nوضع ما يلزم من معايير أو ضوابط للفسح والترخيص باستيراد وتصدير واستخدام الأجهزة والبرمجيات ذات الحساسية العالية للأمن السيبراني التي تحددها الهيئة، ومتابعة الالتزام بها، وتحديثها، وذلك دون إخلال بأي معايير أو ضوابط معتمدة لدى الجهات الأخرى ذات العلاقة.\nبناء القدرات الوطنية المتخصصة في مجالات الأمن السيبراني، والمشاركة في إعداد البرامج التعليمية والتدريبية الخاصة بها، وإعداد المعايير المهنية والأطر وبناء وتنفيذ المقاييس والاختبارات القياسية المهنية ذات العلاقة.\nالترخيص بمزاولة الأفراد والجهات غير الحكومية للأنشطة والعمليات المتعلقة بالأمن السيبراني التي تحددها الهيئة.\nالتواصل مع الجهات المماثلة خارج المملكة والجهات الخاصة لتبادل الخبرات، وتأسيس آليات للتعاون والشراكة معها، وفقاً للإجراءات المتبعة.\nتبادل الإنتاج التقني والمعرفي وتبادل البيانات والمعلومات مع الجهات المماثلة خارج المملكة.\nتمثيل المملكة في المنظمات والهيئات واللجان والمجموعات الثنائية والإقليمية والدولية ذات الصلة، ومتابعة تنفيذ التزامات المملكة الدولية الخاصة بالأمن السيبراني.\nرفع مستوى الوعي بالأمن السيبراني.\nتحفيز نمو قطاع الأمن السيبراني في المملكة، وتشجيع الابتكار والاستثمار فيه.\nإجراء الدراسات والبحوث والتطوير وعمليات التصنيع، ونقل التقنية وتطويرها، في الأمن السيبراني وما يرتبط به من مجالات.\nاقتراح آليات رفع كفاءة الإنفاق في مجالات الأمن السيبراني.\nتطوير مؤشرات قياس الأداء الخاصة بالأمن السيبراني، وإعداد التقارير الدورية حول حالة الأمن السيبراني في المملكة على المستويين الوطني والقطاعي.\nاقتراح إصدار وتعديل الأنظمة واللوائح والقرارات ذات الصلة بالأمن السيبراني.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "للهيئة -في سبيل تحقيق أهدافها التي أنشئت من أجلها والقيام باختصاصاتها ومهماتها- اتخاذ جميع الوسائل لتحقيق ذلك، ومنها ما يأتي:\nإنشاء مراكز تابعة لها للقيام ببعض اختصاصاتها ومهماتها، وتحديد علاقاتها وارتباطاتها التنظيمية في الهيئة، وترتيب أوضاعها المالية والإدارية بما في ذلك منح تلك المراكز -أو بعضها- الاستقلال الإداري عن باقي تشكيلات الهيئة الإدارية والاستقلال المالي، وتحديد وسائل وآليات تنفيذ اختصاصاتها ومهماتها.\nالاستعانة بمن تراه للمشاركة في القيام بأعمال الأمن السيبراني التي تختص بها أو أجزاء منها أو أجزاء متممة لها.\nالاستعانة بمن تراه من منسوبي الجهات العامة والخاصة ومنحهم ما تراه من مكافآت، والاستعانة بالجهات الاستشارية من داخل المملكة وخارجها.\nتشكيل فرق من الجهات العامة والخاصة للقيام بالمهمات ذات الصلة بأعمال الهيئة.\nتقديم الاستشارات والخدمات في مجالات الأمن السيبراني.\nتنظيم وعقد ورش العمل والندوات والمؤتمرات والمعارض داخل المملكة وخارجها، والمشاركة فيها، وفقاً للإجراءات المتبعة.\nتنظيم وتقديم البرامج والدورات التدريبية في مجالات اختصاصاتها.\nتنظيم الحملات والبرامج التوعوية والمسابقات، وإصدار المجلات والدوريات والكتب والكتيبات والأدلة الإرشادية والنشرات، في مجالات اختصاصاتها.\nاستثمار وتنمية أصولها وأموالها.\nتأسيس الشركات أو المشاركة في تأسيسها أو الدخول فيها شريكةً أو مساهمةً، داخل المملكة وخارجها، وفقاً للإجراءات النظامية المتبعة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "يشكل المجلس من رئيس يعين بأمر ملكي، وعضوية كل من رئيس أمن الدولة، ورئيس الاستخبارات العامة، ونائب وزير الداخلية، ومساعد وزير الدفاع، ومحافظ الهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "المجلس هو السلطة العليا في الهيئة والمراكز، ويختص بتصريف أمورها، والإشراف عليها وعلى ممارستها لأنشطتها، ومباشرة اختصاصاتها وتنفيذ مهماتها المنصوص عليها في هذا التنظيم، وله اتخاذ ما يلزم من قرارات وإجراءات وتدابير لتحقيق الغايات التي أنشئت من أجلها، وللمجلس -على وجه الخصوص- ما يأتي:\nالموافقة على مشروع الاستراتيجية الوطنية للأمن السيبراني، ومقترحات تحديثها، تمهيداً للرفع عنها.\nإقرار السياسات والآليات والأطر والمعايير والضوابط والإرشادات ومؤشرات قياس الأداء التي تختص بها الهيئة.\nاعتماد تصنيف البنى التحتية الحساسة والجهات المرتبطة بها، وتحديد القطاعات والجهات ذات الأولوية بالأمن السيبراني.\nالموافقة على إنشاء المراكز المشار إليها في الفقرة (1) من المادة (الخامسة) من هذا التنظيم، وإقرار علاقاتها وارتباطاتها التنظيمية في الهيئة وترتيباتها الإدارية والمالية ووسائل تنفيذ اختصاصاتها ومهماتها.\nالموافقة على بناء مراكز العمليات الوطنية الخاصة بالأمن السيبراني -وما في حكمها-، والموافقة على بناء مراكز العمليات القطاعية الخاصة بالأمن السيبراني، وبناء المنصات ذات العلاقة.\nاعتماد التقارير الدورية حول حالة الأمن السيبراني في المملكة على المستويين الوطني والقطاعي، والرفع عما يلزم في شأنها.\nالموافقة على تشكيل الفرق التي تختص الهيئة بتشكيلها من الجهات العامة والخاصة، وتحديد مهماتها ومكافآت أعضائها، والإشراف على أعمالها.\nاعتماد سياسات وقواعد استثمار وتنمية أصول الهيئة وأموالها.\nاعتماد الهياكل التنظيمية للهيئة والمراكز، والأدلة الخاصة بها.\nإصدار اللوائح الداخلية للهيئة والمراكز، بما فيها اللوائح الوظيفية والإدارية والمالية.\nاعتماد سلالم أجور منسوبي الهيئة والمراكز، وسلالم أجور المختصين والخبراء، ومكافآت من تستعين بهم الهيئة والمراكز.\nتحديد المقابل المالي الذي تتقاضاه الهيئة والمراكز عن الأعمال والأنشطة والاستشارات والخدمات التي تقدمها.\nتعيين مراجع حسابات خارجي للهيئة والمراكز من مراجعي الحسابات المعتمدين في المملكة، وتحديد أتعابه.\nتعيين المراقب المالي الداخلي للهيئة والمراكز.\nالموافقة على مشروع ميزانية الهيئة السنوية وحسابها الختامي وتقرير مراجع الحسابات والتقرير السنوي، تمهيداً لرفعها إلى الملك.\nالموافقة على ميزانيات المراكز ذات الميزانيات المستقلة وحساباتها الختامية وتقارير مراجعي حساباتها، والنظر في تقاريرها السنوية، والرفع عما يلزم في شأنها.\nالنظر في التقارير الدورية التي تقدم له عن سير أعمال الهيئة والمراكز وأوضاعها المالية.\nقبول ما يقدم للهيئة والمراكز من منح وهبات وإعانات وتبرعات ووصايا وأوقاف، وفقاً للأحكام المنظمة لذلك.\nتشكيل لجان -دائمة أو مؤقتة- في الهيئة أو المراكز من أعضاء المجلس أو من غيرهم، يعهد إليها بما يراه من مهمات، ويحدد في قرار التشكيل الرئيس والأعضاء والاختصاصات، ولتلك اللجان الاستعانة بمن تراه للإسهام في تأدية المهمات الموكولة إليها ما لم يقرر المجلس خلاف ذلك.\nوللمجلس -بقرار منه- تفويض رئيسه أو أحد أعضائه أو من يراه من منسوبي الهيئة أو المراكز ببعض صلاحياته. وله تفويض صلاحياته الخاصة بالمراكز إلى مجالس إدارة خاصة بها يشكلها بقرار منه أو تفويض بعض تلك الصلاحيات إلى رؤساء مجالس إدارة المراكز -إن وجدت- أو من يراه من منسوبيها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "يعقد المجلس اجتماعين -على الأقل- في السنة المالية الواحدة بدعوة من رئيسه.\nيكون اجتماع المجلس صحيحاً بحضور أغلبية أعضائه بمن فيهم رئيس المجلس أو من ينيبه من الأعضاء في رئاسة الاجتماع. وتصدر قراراته بأغلبية أصوات أعضائه الحاضرين، وفي حال تساوت الأصوات يرجح الجانب الذي صوت معه رئيس الاجتماع.\nللمجلس دعوة من يراه لحضور اجتماعاته، ولا يكون له حق التصويت.\nتثبت مداولات وقرارات المجلس في محاضر.\nيكون للمجلس أمين يسميه رئيس المجلس ويحدد مهماته ومكافأته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "يكون للهيئة محافظ يعين بأمر ملكي بمرتبة وزير بناءً على اقتراح من رئيس المجلس، ويحدد المجلس اختصاصاته وصلاحياته.\nيكون لكل مركز من المراكز مدير تنفيذي يعين ويعفى بقرار من المجلس، ويحدد المجلس صلاحيات المديرين التنفيذيين للمراكز وأجورهم ومزاياهم المالية والوظيفية الأخرى.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "تلتزم كافة الجهات ذات العلاقة بما يأتي:\nتمكين الهيئة من مباشرة اختصاصاتها وتنفيذ مهماتها بشكل كامل.\nإبلاغ الهيئة -بشكل فوري- بأي خطر أو تهديد أو اختراق لأمنها السيبراني واقع أو محتمل.\nتنفيذ السياسات وآليات الحوكمة والأطر وتطبيق المعايير والضوابط التي تقرها الهيئة.\nالتعاون التام مع الهيئة عند قيامها بأي أعمال تحرٍّ أو تدقيق أو تقييم للأمن السيبراني.\nتزويد الهيئة بالوثائق والمعلومات والبيانات والتقارير اللازمة للقيام باختصاصاتها ومهماتها، وتمكينها من فحص الأجهزة والشبكات والنظم والبرمجيات الخاصة بتلك الجهات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "تكون للهيئة ميزانية سنوية مستقلة.\nتكون للهيئة إعانة سنوية لمواجهة حوادث الأمن السيبراني الطارئة، يصرف منها وفق ما يحدده المجلس.\nتكون للمراكز ميزانيات فرعية ضمن ميزانية الهيئة السنوية، وللمجلس أن يختار لأي منها نوعاً آخر من الميزانيات، على أنه في حال تمتع أي من تلك المراكز بالاستقلال المالي -وفقاً لما ورد في الفقرة (1) من المادة (الخامسة) من هذا التنظيم- فتكون له ميزانية مستقلة عن ميزانية الهيئة.\nالسنة المالية للهيئة والمراكز هي السنة المالية للدولة، واستثناءً من ذلك تبدأ السنة المالية الأولى من تاريخ نفاذ هذا التنظيم وتنتهي بنهاية السنة المالية التالية للدولة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "تتألف موارد الهيئة والمراكز مما يأتي:\nأ- ما يخصص لها من الدولة.\nب- المقابل المالي الذي تتقاضاه عن الأعمال والأنشطة والخدمات التي تقدمها.\nج- ما يقبله المجلس من منح وهبات وإعانات وتبرعات ووصايا وأوقاف.\nد- أي مورد آخر يقره المجلس بما لا يخالف الأنظمة والتعليمات.\nتودع أموال الهيئة وأموال المراكز ذات الميزانيات غير المستقلة عن ميزانية الهيئة في حساب مفتوح لدى مؤسسة النقد العربي السعودي، ولها فتح حسابات أخرى لهذا الغرض في البنوك المرخص لها بالعمل في المملكة، ويصرف منها وفق اللوائح المالية المعتمدة من المجلس أو بقرارات منه.\nتودع أموال المراكز ذات الميزانيات المستقلة عن ميزانية الهيئة في حسابات خاصة بكل منها لدى مؤسسة النقد العربي السعودي، ولها فتح حسابات أخرى لهذا الغرض في البنوك المرخص لها بالعمل في المملكة، ويصرف منها وفق اللوائح المالية المعتمدة من المجلس أو بقرارات منه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "يعين المجلس مراجع حسابات خارجياً -أو أكثر- من المرخص لهم بالعمل في المملكة لتدقيق حسابات الهيئة والمراكز ومعاملاتها وبياناتها المالية وميزانياتها السنوية وحساباتها الختامية.\nترفع تقارير مراجع حسابات الهيئة والمراكز إلى المجلس، لاتخاذ ما يلزم في شأنها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "يخضع منسوبو الهيئة والمراكز لأحكام نظام العمل ونظام التأمينات الاجتماعية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    },
+    "cybersecurity_authority_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول",
+      "text": "يعمل بهذا التنظيم من تاريخ الموافقة عليه، ويلغي كل ما يتعارض معه من أحكام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_SITE_PDF_PRIMARY_TESSERACT_OCR_TRANSCRIBED_X_QISTAS_STRUCTURAL_PARTIAL_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "history": []
+    }
+  }
+}

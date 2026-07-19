@@ -1154,6 +1154,23 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "for this generic clause to have targeted.",
         "source_ref": "sources/health_system/law/official_source/health_system_law_official_source.json (article 19)",
     },
+    {
+        "tracks_involved": ["cybersecurity_authority_law"],
+        "issue": "general non-specific repeal clause naming no prior statute",
+        "note": "cybersecurity_authority_law's own Article 15 (the final "
+                "article) states only 'يلغي كل ما يتعارض معه من أحكام' (a "
+                "general boilerplate repeal of any conflicting provision), "
+                "naming no single prior organizational statute. NOT modeled "
+                "as a repeals_full edge, since this corpus only models "
+                "EXPLICITLY-NAMED repeal relationships, never inferred "
+                "ones; no distinct predecessor cybersecurity-authority "
+                "organizational statute was identified this pass for this "
+                "generic clause to have targeted (this Authority's own "
+                "Royal Order 55775, 1/12/1438H, is treated as a staged "
+                "founding order for the SAME body, not a distinct "
+                "predecessor statute being repealed and replaced).",
+        "source_ref": "sources/cybersecurity_authority/law/official_source/cybersecurity_authority_law_official_source.json (article 15)",
+    },
 ]
 
 

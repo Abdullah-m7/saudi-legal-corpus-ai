@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 320,
-  "top1_hits": 294,
-  "top3_hits": 313,
-  "top5_hits": 316,
-  "top1_accuracy": 0.9187,
-  "top3_accuracy": 0.9781,
-  "top5_accuracy": 0.9875,
-  "mrr_at_5": 0.948,
+  "total_queries": 322,
+  "top1_hits": 296,
+  "top3_hits": 315,
+  "top5_hits": 318,
+  "top1_accuracy": 0.9193,
+  "top3_accuracy": 0.9783,
+  "top5_accuracy": 0.9876,
+  "mrr_at_5": 0.9483,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5713,13 +5713,13 @@
      "score": 44
     },
     {
-     "record_id": "documentation-settlement-regulation-llm-art-009",
-     "article_number": 9,
-     "score": 22
+     "record_id": "cybersecurity-authority-law-llm-art-012",
+     "article_number": 12,
+     "score": 26
     },
     {
-     "record_id": "finance-companies-law-llm-art-001",
-     "article_number": 1,
+     "record_id": "documentation-settlement-regulation-llm-art-009",
+     "article_number": 9,
      "score": 22
     }
    ]
@@ -9159,8 +9159,8 @@
      "score": 25
     },
     {
-     "record_id": "finance-companies-law-llm-art-040",
-     "article_number": 39,
+     "record_id": "cybersecurity-authority-law-llm-art-011",
+     "article_number": 11,
      "score": 24
     }
    ]
@@ -9247,14 +9247,14 @@
      "score": 37
     },
     {
+     "record_id": "cybersecurity-authority-law-llm-art-009",
+     "article_number": 9,
+     "score": 35
+    },
+    {
      "record_id": "capital-market-law-llm-art-007",
      "article_number": 7,
      "score": 27
-    },
-    {
-     "record_id": "capital-market-law-llm-art-013",
-     "article_number": 13,
-     "score": 23
     }
    ]
   },
@@ -9937,6 +9937,68 @@
      "record_id": "oa-llm-companies-art-157",
      "article_number": 157,
      "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "nca-001",
+   "query_ar": "الهيئة هي الجهة المختصة في المملكة بالأمن السيبراني، والمرجع الوطني في شؤونه",
+   "category": "definitional",
+   "gold": {
+    "corpus": "cybersecurity_authority",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cybersecurity-authority-law-llm-art-003",
+     "article_number": 3,
+     "score": 45
+    },
+    {
+     "record_id": "cybersecurity-authority-law-llm-art-004",
+     "article_number": 4,
+     "score": 29
+    },
+    {
+     "record_id": "oa-llm-companies-art-274",
+     "article_number": 274,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "nca-002",
+   "query_ar": "إعداد الاستراتيجية الوطنية للأمن السيبراني، والإشراف على تنفيذها، واقتراح تحديثها",
+   "category": "topical",
+   "gold": {
+    "corpus": "cybersecurity_authority",
+    "law_component": "law",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cybersecurity-authority-law-llm-art-004",
+     "article_number": 4,
+     "score": 29
+    },
+    {
+     "record_id": "cybersecurity-authority-law-llm-art-007",
+     "article_number": 7,
+     "score": 26
+    },
+    {
+     "record_id": "cybersecurity-authority-law-llm-art-001",
+     "article_number": 1,
+     "score": 22
     }
    ]
   }

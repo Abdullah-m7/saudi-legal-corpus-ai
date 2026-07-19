@@ -316,6 +316,8 @@ LAYERS = [
      "domestic_labor", "regulation"),
     ("data/travel_documents_arabic_legal_llm/travel_documents_law_legal_llm_001_016.json",
      "travel_documents", "law"),
+    ("data/cybersecurity_authority_arabic_legal_llm/cybersecurity_authority_law_legal_llm_001_015.json",
+     "cybersecurity_authority", "law"),
 ]
 
 
