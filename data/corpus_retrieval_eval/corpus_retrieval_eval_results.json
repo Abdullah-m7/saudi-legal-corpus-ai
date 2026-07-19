@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 318,
-  "top1_hits": 292,
-  "top3_hits": 311,
-  "top5_hits": 314,
-  "top1_accuracy": 0.9182,
-  "top3_accuracy": 0.978,
-  "top5_accuracy": 0.9874,
-  "mrr_at_5": 0.9477,
+  "total_queries": 320,
+  "top1_hits": 294,
+  "top3_hits": 313,
+  "top5_hits": 316,
+  "top1_accuracy": 0.9187,
+  "top3_accuracy": 0.9781,
+  "top5_accuracy": 0.9875,
+  "mrr_at_5": 0.948,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9875,6 +9875,68 @@
      "record_id": "inv-reg-llm-art-027",
      "article_number": 27,
      "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "tdl-001",
+   "query_ar": "يحل هذا النظام ولائحته التنفيذية محل الأحكام المتعلقة بوثائق السفر الواردة في نظام الجوازات السفرية",
+   "category": "topical",
+   "gold": {
+    "corpus": "travel_documents",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "travel-documents-law-llm-art-014",
+     "article_number": 13,
+     "score": 49
+    },
+    {
+     "record_id": "criminal-procedure-law-llm-art-218",
+     "article_number": 218,
+     "score": 24
+    },
+    {
+     "record_id": "aml-law-llm-art-051",
+     "article_number": 51,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "tdl-002",
+   "query_ar": "لا يجوز لأي شخص الاحتفاظ بأكثر من جواز سفر ساري المفعول صادر وفقا لهذا النظام",
+   "category": "definitional",
+   "gold": {
+    "corpus": "travel_documents",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "travel-documents-law-llm-art-005",
+     "article_number": 5,
+     "score": 42
+    },
+    {
+     "record_id": "oa-llm-companies-art-098",
+     "article_number": 98,
+     "score": 18
+    },
+    {
+     "record_id": "oa-llm-companies-art-157",
+     "article_number": 157,
+     "score": 18
     }
    ]
   }

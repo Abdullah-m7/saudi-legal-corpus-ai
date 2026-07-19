@@ -183,6 +183,7 @@ CIVIL_STATUS_LAW_LLM = os.path.join(ROOT, "data", "civil_status_arabic_legal_llm
 FOOD_LAW_LLM = os.path.join(ROOT, "data", "food_arabic_legal_llm", "food_law_legal_llm_001_044.json")
 HEALTH_SYSTEM_LAW_LLM = os.path.join(ROOT, "data", "health_system_arabic_legal_llm", "health_system_law_legal_llm_001_019.json")
 DOMESTIC_LABOR_REGULATION_LLM = os.path.join(ROOT, "data", "domestic_labor_arabic_legal_llm", "domestic_labor_regulation_legal_llm_001_033.json")
+TRAVEL_DOCUMENTS_LAW_LLM = os.path.join(ROOT, "data", "travel_documents_arabic_legal_llm", "travel_documents_law_legal_llm_001_016.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -359,6 +360,7 @@ def main() -> int:
     food_law_llm = _load_json(FOOD_LAW_LLM)
     health_system_law_llm = _load_json(HEALTH_SYSTEM_LAW_LLM)
     domestic_labor_regulation_llm = _load_json(DOMESTIC_LABOR_REGULATION_LLM)
+    travel_documents_law_llm = _load_json(TRAVEL_DOCUMENTS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -379,7 +381,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 145,
+        "total_tracks": 146,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -528,6 +530,7 @@ def main() -> int:
             + food_law_llm["record_count"]  # 44 Saudi Arabian Food Law (Royal Decree M/1, 1436H) (TIER_2 conservative, single SFDA-PDF primary source visually transcribed, BOE and Wayback both completely unreachable, all 44 recovered articles اصلية, Article 1 excluded as unrecoverable, see track notes)
             + health_system_law_llm["record_count"]  # 19 Saudi Arabian Health System Law (Royal Decree M/11, 1423H) (TIER_3, BOE unreachable both live and Wayback, nezams.com x qanoonsa.com CoM Resolution 151 cross-verified, confirmed negative repeal finding, see track notes)
             + domestic_labor_regulation_llm["record_count"]  # 33 Domestic Labor Regulation (Ministerial Decision 40676, 1445H) (TIER_2, BOE confirmed stale for this topic, PRIMARY hrsd.gov.sa x qanoonsa.com/lexismiddleeast.com secondary cross-checks, confirmed named repeal of the 1434H CoM Decision 310 predecessor, Article 33 text_complete=False genuine source truncation, see track notes)
+            + travel_documents_law_llm["record_count"]  # 16 Saudi Arabian Travel Documents Law (Royal Decree M/24, 1421H) (TIER_2, BOE-via-Wayback three snapshots x nezams.com/qistas.com secondary, plus an official Umm Al-Qura Gazette cross-check for the M/11 1443H amendment specifically, confirmed scoped/partial repeal of the 1358H Passports System via Article 13, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -667,6 +670,7 @@ def main() -> int:
             + food_law_llm["record_count"]
             + health_system_law_llm["record_count"]
             + domestic_labor_regulation_llm["record_count"]
+            + travel_documents_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -4937,6 +4941,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Domestic Labor Regulation «لائحة العمالة المنزلية ومن في حكمهم» — Ministerial Decision No. 40676, dated 17/3/1445H (2 October 2023G), issued by the Minister of Human Resources and Social Development under Labor Law Article 7 (M/51, 23/8/1426H). A medium-priority coverage-gap identified via a fresh gap-scan pass, governing the contractual relationship between domestic employers and domestic workers (hours, wages, leave, end-of-service, penalties), distinct from this corpus's general labor_law track. **33 records, all 33 اصلية** — flat 14-section thematic structure (not formally numbered as أبواب/فصول). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa's own dedicated lawId page for this topic is confirmed stale (still shows only the superseded 310/1434H predecessor across 18+ months of Wayback snapshots, a genuine BOE coverage gap for this specific topic, not merely this pass's access failure); the PRIMARY source is instead hrsd.gov.sa (the issuing Ministry's own official site), which counts as ONE genuinely official/primary source — cross-checked against qanoonsa.com and lexismiddleeast.com, both private-aggregator secondary sources that do NOT count as a second independent official source, so TIER_1 is not warranted. **CONFIRMED NAMED REPEAL**: Clause (ثانياً) of the Ministerial Decision itself explicitly states this regulation replaces لائحة عمال الخدمة المنزلية ومن في حكمهم (Council of Ministers Decision No. 310, dated 7/9/1434H, 23 articles) — a genuine positive finding, modeled as a repeals_full edge in the supersession graph; the 1434H predecessor itself is not ingested in this corpus (historical context only). Genuine anomalies preserved, not fabricated or silently fixed: **Article 33 is genuinely truncated in the source PDF itself** (confirmed stable across 3 independent Wayback snapshots and 2 independent extraction tools, poppler pdftotext and PyMuPDF, both stopping at the identical character) — flagged text_complete=False, no completion or guessing of the missing tail; the source PDF's own cover page and preamble retain an unfilled draft template (blank decree number/date parentheses, a 'مسودة' header) despite being hosted as the current governing text, preserved verbatim; a likely genuine source typo (missing space in Article 29(a)'s 'أوبهما' vs. Article 30(1)'s correctly-spaced 'أو بهما') is preserved, not silently corrected. Two source-artifact-layer (not content) extraction defects were corrected: a font ligature bug ('تر' misread as 'بخ', fixed via a 10-word verified dictionary) and mirrored/reversed parentheses (fixed via a global paren swap) — no wording, number, or substantive provision was altered. A companion instrument (ضوابط تحسين العلاقة التعاقدية للعمالة المنزلية ومن في حكمهم, announced ~28 March 2024) is confirmed to be a separate administrative/procedural initiative, not a textual amendment to this regulation's numbered articles, and is out of scope for this track. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "travel_documents_law",
+                "display_name_ar": "نظام وثائق السفر",
+                "display_name_en": "Saudi Arabian Travel Documents Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_QISTAS_X_UMM_AL_QURA_GAZETTE_M11_AMENDMENT_CROSS_VERIFIED",
+                "source_authority": "Royal Decree No. M/24, dated 28/5/1421H (2000G), approved via Council of Ministers Resolution No. 122 (21/5/1421H) — laws.boe.gov.sa reached via three independent Wayback Machine snapshots spanning 13 Nov 2019 to 12 Dec 2025, cross-verified against nezams.com/qistas.com's independent reproduction and, specifically for the Royal Decree M/11 (1443H) amendment, against the official Umm Al-Qura Gazette itself — that subset alone reaches TIER_1-caliber confidence, while the rest of the law rests on BOE plus private-aggregator secondary sources only, so the track-level tier reflects the weaker, meaningfully-sized majority of articles rather than the strongest-verified subset",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": travel_documents_law_llm["record_count"],
+                    "data_path": "data/travel_documents_arabic_legal_llm/travel_documents_law_legal_llm_001_016.json"}},
+                "record_counts": {"arabic_articles": travel_documents_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 8, "معدلة": 6, "ملغاة": 1, "مضافة": 1},
+                                  "total": travel_documents_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/travel_documents/law/official_source/travel_documents_law_official_source.json",
+                    "sources/travel_documents/law/verified/travel_documents_law_verified_records.jsonl",
+                    "data/travel_documents_arabic_legal_llm/travel_documents_law_legal_llm_001_016.json",
+                ],
+                "validator_targets": ["make travel-documents-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Saudi Arabian Travel Documents Law «نظام وثائق السفر» — Royal Decree No. M/24, dated 28/5/1421H (2000G), approved via Council of Ministers Resolution No. 122 (21/5/1421H). A low-medium-priority coverage-gap identified via a fresh gap-scan pass, governing the four categories of Saudi travel documents (passport, laissez-passer, diplomatic passport, special passport) and the conditions for issuing, renewing, and restricting them, distinct from this corpus's already-ingested residency_law and nationality_law tracks. **16 records: 8 اصلية, 6 معدلة** (Articles 2, 4, 6, 10, 11, 12), **1 ملغاة** (Article 3, repealed en bloc alongside the Article 2/4 amendments by Royal Decree M/134, 1440H), **1 مضافة** (Article 10 مكرر, added by Royal Decree M/11, 1443H) — flat single-range structure (1-15 plus the added مكرر article), **NO أبواب/فصول**, no inline article titles. **VERIFICATION TIER: TIER_2 (honest, not inflated)** — BOE-via-Wayback-Machine, three independent snapshots spanning 13 Nov 2019 to 12 Dec 2025, cross-verified against nezams.com/qistas.com's independent reproduction; additionally, for the Royal Decree M/11 (1443H) amendment specifically (Articles 10, 10 مكرر, 11(3)), cross-verified against the official Umm Al-Qura Gazette itself — that subset alone reaches TIER_1-caliber confidence, but the remainder of the law rests on BOE plus private-aggregator secondary sources only, so the track-level tier reflects this weaker, meaningfully-sized majority rather than the strongest-verified amendment. moi.gov.sa (a potential third independent official source) was unreachable this pass (503 / DNS failure) on both its current and legacy domains. **CONFIRMED SCOPED/PARTIAL REPEAL**: Article 13 explicitly states this law and its Implementing Regulation replace only the travel-document-related provisions ('الأحكام المتعلقة بوثائق السفر') of the prior نظام الجوازات السفرية (Supreme Order No. 17/3/2, dated 19/1/1358H) — NOT a blanket repeal of that entire predecessor system — a genuine positive finding, modeled as a repeals_partial edge in the supersession graph, mirroring the municipal_councils_law precedent for a narrowly-scoped partial repeal; the 1358H predecessor itself is not ingested in this corpus (historical context only). Genuine anomalies preserved, not fabricated or silently fixed: Article 6's own BOE amendment-changelog omits any decree/resolution citation for its 1439H amendment (the citation, Council of Ministers Decision 217, is sourced only from nezams.com, though the amendment's substance is independently confirmed identical); Article 10's own BOE changelog quotes a 'before' phrase that does not character-for-character match BOE's own main article text (preserved as-is, unlike the engineering_practice_law precedent where a similar mismatch blocked merging entirely, since here the replacement location is unambiguous from context). Two companion instruments identified but NOT ingested this pass: اللائحة التنفيذية لنظام وثائق السفر (the Implementing Regulation), and the wholly separate نظام جوازات السفر السياسية والخاصة (a distinct law governing diplomatic/special passports, its own separate BOE lawId, no repeal/supersession relationship to this track). Arabic governs; not legal advice.",
             },
         ],
     }

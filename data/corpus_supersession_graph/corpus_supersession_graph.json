@@ -3,16 +3,16 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 145,
+  "total_tracks_scanned": 146,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 59,
+  "edge_count": 60,
   "relation_counts": {
     "repeals_full": 49,
-    "repeals_partial": 9,
+    "repeals_partial": 10,
     "superseded_by": 1
   },
   "edges": [
@@ -595,6 +595,16 @@
       "affected_articles": null,
       "note": "domestic_labor_regulation's own verified_summary.json amendment_history: clause (ثانياً) of Ministerial Decision No. 40676 (17/3/1445H) states this regulation 'تحل محل' (replaces) لائحة عمال الخدمة المنزلية ومن في حكمهم, issued by Council of Ministers Decision No. 310 dated 7/9/1434H (23 articles), with an additional general conflict-only clause (ثالثاً) for anything else inconsistent. A confirmed named repeal of a specific predecessor instrument by decree number and date. Predecessor not separately ingested in this corpus (still shown, unrevised, on both nezams.com and the Bureau of Experts portal's own dedicated lawId page for this topic — a documented BOE-portal staleness gap, see track notes).",
       "source_ref": "sources/domestic_labor/regulation/verified/domestic_labor_regulation_verified_summary.json (amendment_history)"
+    },
+    {
+      "from_track_id": "travel_documents_law",
+      "relation": "repeals_partial",
+      "target_track_id": null,
+      "target_description_ar": "نظام الجوازات السفرية (السابق)",
+      "target_decree": "Supreme Order No. 17/3/2, 19/1/1358H",
+      "affected_articles": "Only the travel-document-related provisions ('الأحكام المتعلقة بوثائق السفر') of the predecessor, not the whole 1358H system",
+      "note": "travel_documents_law's own official_source.json article 13: 'يحل هذا النظام ولائحته التنفيذية محل الأحكام المتعلقة بوثائق السفر الواردة في نظام الجوازات السفرية الصادر بالأمر السامي رقم (17/3/2) وتاريخ 19/1/1358هـ وفي التعليمات والقرارات المتعلقة به.' A determinate, subject-matter-scoped partial repeal naming exactly the travel-document provisions, not a blanket repeal of the entire predecessor system, mirroring the municipal_councils_law precedent for a narrowly-scoped partial repeal. Predecessor not separately ingested in this corpus, flagged as a follow-up candidate.",
+      "source_ref": "sources/travel_documents/law/official_source/travel_documents_law_official_source.json (article 13)"
     },
     {
       "from_track_id": "copyright_law",

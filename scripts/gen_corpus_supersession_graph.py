@@ -894,6 +894,27 @@ EDGES = [
                 "lawId page for this topic — a documented BOE-portal staleness gap, see track notes).",
         "source_ref": "sources/domestic_labor/regulation/verified/domestic_labor_regulation_verified_summary.json (amendment_history)",
     },
+    {
+        "from_track_id": "travel_documents_law",
+        "relation": "repeals_partial",
+        "target_track_id": None,
+        "target_description_ar": "نظام الجوازات السفرية (السابق)",
+        "target_decree": "Supreme Order No. 17/3/2, 19/1/1358H",
+        "affected_articles": "Only the travel-document-related provisions "
+                             "('الأحكام المتعلقة بوثائق السفر') of the "
+                             "predecessor, not the whole 1358H system",
+        "note": "travel_documents_law's own official_source.json article 13: "
+                "'يحل هذا النظام ولائحته التنفيذية محل الأحكام المتعلقة بوثائق "
+                "السفر الواردة في نظام الجوازات السفرية الصادر بالأمر السامي "
+                "رقم (17/3/2) وتاريخ 19/1/1358هـ وفي التعليمات والقرارات "
+                "المتعلقة به.' A determinate, subject-matter-scoped partial "
+                "repeal naming exactly the travel-document provisions, not "
+                "a blanket repeal of the entire predecessor system, "
+                "mirroring the municipal_councils_law precedent for a "
+                "narrowly-scoped partial repeal. Predecessor not separately "
+                "ingested in this corpus, flagged as a follow-up candidate.",
+        "source_ref": "sources/travel_documents/law/official_source/travel_documents_law_official_source.json (article 13)",
+    },
 
     # --- superseded_by: this track itself confirmed superseded by a
     # --- future/newer instrument -------------------------------------------

@@ -158,6 +158,7 @@ STATUS_TIER_MAP = {
     "BOE_WAYBACK_SEVEN_SNAPSHOT_X_QANOONSA_COM_RESOLUTION_805_X_NEZAMS_CROSS_VERIFIED": TIER_2,
     "SFDA_PDF_VISUAL_TRANSCRIPTION_SINGLE_SOURCE_LIVE_BOE_AND_WAYBACK_BOTH_UNREACHABLE": TIER_2,
     "HRSD_GOV_SA_PRIMARY_X_QANOONSA_LEXISMIDDLEEAST_CROSS_VERIFIED_BOE_CONFIRMED_STALE_FOR_THIS_TOPIC": TIER_2,
+    "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_QISTAS_X_UMM_AL_QURA_GAZETTE_M11_AMENDMENT_CROSS_VERIFIED": TIER_2,
 
     # --- Tier 3: primary official portal confirmed unreachable; 2+ independent secondary
     #     sources agree with each other, with zero primary confirmation. ---
@@ -612,6 +613,14 @@ RATIONALE_OVERRIDE = {
 # these; the note points back at the track's own official_source.json rather than
 # recomputing anything.
 PER_ARTICLE_VARIATION_NOTE = {
+    "travel_documents_law": (
+        "المواد المعدَّلة بالمرسوم الملكي م/11 (1443هـ) تحديداً (10، 10 مكرر، الفقرة 3 من "
+        "المادة 11) مؤكَّدة عبر جريدة أم القرى الرسمية نفسها إضافة إلى BOE وnezams.com/"
+        "qistas.com، بمستوى ثقة يوازي TIER_1 لهذه الفئة الفرعية وحدها؛ بقية مواد المسار "
+        "(بما فيها المواد المعدَّلة الأخرى 2، 4، 6، 12) تستند إلى BOE عبر Wayback زائد "
+        "مصادر ثانوية خاصة فقط، دون تأكيد من جريدة أم القرى أو مصدر رسمي ثانٍ؛ راجع "
+        "official_source.json الخاص بالمسار."
+    ),
     "board_of_grievances_law": (
         "المادة 4 (المعدَّلة الوحيدة) موثَّقة بمستوى ثقة أدنى قليلاً من بقية الـ25 مادة "
         "(verified_against_wipo_lex + مطابقة بصرية 1.0)؛ راجع official_source.json الخاص "
