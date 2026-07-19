@@ -192,6 +192,7 @@ NATIONALITY_REGULATION_LLM = os.path.join(ROOT, "data", "nationality_regulation_
 HEALTH_SYSTEM_REGULATION_LLM = os.path.join(ROOT, "data", "health_system_regulation_arabic_legal_llm", "health_system_regulation_legal_llm_001_010.json")
 FOOD_REGULATION_LLM = os.path.join(ROOT, "data", "food_regulation_arabic_legal_llm", "food_regulation_legal_llm_001_085.json")
 ELECTRICITY_LAW_LLM = os.path.join(ROOT, "data", "electricity_arabic_legal_llm", "electricity_law_legal_llm_001_023.json")
+WATER_LAW_LLM = os.path.join(ROOT, "data", "water_arabic_legal_llm", "water_law_legal_llm_001_077.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -377,6 +378,7 @@ def main() -> int:
     health_system_regulation_llm = _load_json(HEALTH_SYSTEM_REGULATION_LLM)
     food_regulation_llm = _load_json(FOOD_REGULATION_LLM)
     electricity_law_llm = _load_json(ELECTRICITY_LAW_LLM)
+    water_law_llm = _load_json(WATER_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -397,7 +399,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 154,
+        "total_tracks": 155,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -555,6 +557,7 @@ def main() -> int:
             + health_system_regulation_llm["record_count"]  # 10 Implementing Regulation of the Health System Law (Ministerial Decision 30/69181, 1424H) (TIER_4, laws.boe.gov.sa/istitlaa.ncc.gov.sa both confirmed unreachable, PRIMARY qanoniah.com public API with a confirmed 10-item preview cap, explicit PARTIAL coverage of parent Law Articles 2-11 only, Article 1 and 12-19 excluded not fabricated, confirmed no named predecessor, see track notes)
             + food_regulation_llm["record_count"]  # 85 Implementing Regulation of the Food Law (SFDA Board Resolution 3-16-1439, 1439H, as amended by Resolution 4/44, 1446H) (TIER_2, BOE unreachable and confirmed to have no dedicated lawId page for this Implementing Regulation at all, PRIMARY sfda.gov.sa born-digital PDF x qanoonsa.com/qistas.com cross-checks, 81 اصلية/1 معدلة/3 مضافة, extensive font ligature-reversal extraction defects fixed, final article mislabeled '58' preserved verbatim, penalty table confirmed out of scope, confirmed no named predecessor, see track notes)
             + electricity_law_llm["record_count"]  # 23 Saudi Arabian Electricity Law (Royal Decree M/44, 1442H) (TIER_3, BOE unreachable this pass, PRIMARY nezams.com single clean born-digital aggregator page x multi-source metadata cross-check (BOE/Umm Al-Qura via WebSearch, Lexis Middle East, SERA), 23 اصلية all unamended, confirmed named repeal-and-replace of the older M/56 1426H law via Article 23, see track notes)
+            + water_law_llm["record_count"]  # 77 Saudi Arabian Water Law (Royal Decree M/159, 1441H) (TIER_3, BOE has a dedicated lawId page but unreachable this pass, Wayback egress-blocked, PRIMARY nezams.com single clean aggregator x multi-source metadata cross-check via WebSearch indexing of BOE's own content, 77 اصلية no amendments, confirmed NAMED repeal of three predecessor laws (M/22 1391H, M/34 1400H, M/6 1421H) via Article 75, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -703,6 +706,7 @@ def main() -> int:
             + health_system_regulation_llm["record_count"]
             + food_regulation_llm["record_count"]
             + electricity_law_llm["record_count"]
+            + water_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5225,6 +5229,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "The Saudi Arabian Electricity Law «نظام الكهرباء» — Royal Decree No. (M/44), dated 16/5/1442H, a fresh coverage-gap candidate identified by this session's re-scan of the corpus's coverage-gap-map. **THERE ARE TWO ELECTRICITY LAWS IN CIRCULATION**: the older Royal Decree M/56 (20/10/1426H) and this newer M/44 (16/5/1442H). This track ingests the CURRENTLY IN-FORCE M/44 law, confirmed via four independent cross-checked signals: (1) this Law's own Article 23 explicitly repeals/replaces the M/56 law BY NAME ('يحل النظام محل نظام الكهرباء الصادر بالمرسوم الملكي رقم (م/56) وتاريخ 20/10/1426هـ، وتعديلاته، ويلغي ما يتعارض معه من أحكام') — a named repeal-and-replace clause, not a generic conflict-only clause; (2) laws.boe.gov.sa's current listing carries M/44 under a distinct lawId while the older M/56 has a separate historical lawId; (3) the regulator (Saudi Electricity Regulatory Authority, SERA) and its 2025 decisions still cite M/44; (4) nezams.com lists the law's status as 'ساري' with 'لم يجرى عليه تعديل' (no amendments). **23 records, ALL 23 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — the Law has had no amendments since enactment), across 9 chapters. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa was checked first per standard methodology but is unreachable this pass (connection reset / HTTP 503) and the Wayback Machine is blocked at this session's egress-policy level; the full verbatim text of all 23 articles was extracted from nezams.com, a single clean born-digital HTML aggregator page (HTTP 200, not a scanned/OCR PDF, so no systematic extraction/ligature defects of the kind the food_regulation track had to correct). Every governing metadata fact (decree number/date, Council of Ministers Resolution 262, Shura Council Resolution 9/47, Umm Al-Qura publication 24/5/1442H, in-force status, 23-article/9-chapter structure, and the named M/56 repeal clause) is cross-verified against multiple independent sources; a follow-up re-verification of the verbatim text against laws.boe.gov.sa is recommended once that portal is reachable. **OLDER M/56 LAW STATUS**: superseded/replaced by M/44 via the named Article-23 clause, but retains a separate historical BOE lawId page; its own Article-13 dispute committee continues transitionally (per Decree M/44's own clause سادساً) solely for cases filed before the new Law took effect, a limited procedural carryover disclosed rather than silently ignored. **IMPLEMENTING REGULATIONS IDENTIFIED BUT NOT INGESTED**: Article 22 mandates both a Minister's regulation and a Council's regulation, plus a separate violation-enforcement regulation amended in 2025 by SERA — flagged as companion 'electricity_regulation' candidates for a future dedicated pass (one-instrument-per-pass rule). Two disclosed source-rendering quirks (concatenated lettered sub-items in Articles 4 and 18, as rendered by nezams.com) are preserved verbatim, not silently re-spaced. Diacritics (tashkeel) and decorative kashida stripped uniformly. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "water_law",
+                "display_name_ar": "نظام المياه",
+                "display_name_en": "The Saudi Arabian Water Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_COM_INDEPENDENT_AGGREGATOR_BOE_DEDICATED_PAGE_EXISTS_BUT_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_MULTISOURCE_METADATA_CROSSCHECK_VIA_WEBSEARCH",
+                "source_authority": "Royal Decree No. (M/159), dated 11/11/1441H (Council of Ministers Resolution 710, 9/11/1441H) — laws.boe.gov.sa DOES have a dedicated lawId page for this law (57261279-94b7-4ddc-8ad2-abf100d246be) but it was unreachable this pass (HTTP 503 live; a confirmed-existing Wayback snapshot is blocked at this session's egress-policy level, not circumvented). PRIMARY source is nezams.com, an independent Arabic legal-text aggregator (not a BOE mirror), whose own metadata states the law has had no amendments; the decree identity, Article 74's verbatim text, the SAR-20-million penalty ceiling, and the 17-chapter structure were independently confirmed via WebSearch indexing of BOE's own content",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": water_law_llm["record_count"],
+                    "data_path": "data/water_arabic_legal_llm/water_law_legal_llm_001_077.json"}},
+                "record_counts": {"arabic_articles": water_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 77, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": water_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/water/law/official_source/water_law_official_source.json",
+                    "sources/water/law/verified/water_law_verified_records.jsonl",
+                    "data/water_arabic_legal_llm/water_law_legal_llm_001_077.json",
+                ],
+                "validator_targets": ["make water-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "The Saudi Arabian Water Law «نظام المياه» — Royal Decree No. (M/159), dated 11/11/1441H (~July 2020G), approved via Council of Ministers Resolution 710 (9/11/1441H), administered by the Ministry of Environment, Water and Agriculture and the Electricity & Cogeneration Regulatory Authority (service-provision activities). A fresh coverage-gap candidate identified by this session's re-scan of the corpus's coverage-gap-map. **77 records, ALL 77 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — nezams.com's own metadata states explicitly 'لم يجر عليه تعديل', no amendments), across 17 chapters (فصول), continuous articles 1-77, no inline per-article titles beyond spelled-ordinal 'المادة ...' labels. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa DOES have a dedicated lawId page for this law (57261279-94b7-4ddc-8ad2-abf100d246be), unlike some Board-level executive regulations, but it was unreachable this pass (HTTP 503 live; a confirmed-existing Wayback Machine snapshot, 12 Dec 2025, is blocked at this session's egress-policy level at web.archive.org and was NOT bypassed). Full verbatim text of all 77 articles was extracted from nezams.com (an independent Arabic legal-text aggregator, not a BOE mirror, HTTP 200); independently, WebSearch results indexing laws.boe.gov.sa's own content returned a verbatim match for Article 74's text, the decree identity, the SAR-20-million penalty ceiling, the Saudi Water Code mandate, and the 17-chapter structure — a second, independent confirmation not derived from nezams.com. **CONFIRMED NAMED REPEAL OF THREE PREDECESSOR LAWS** — a MATERIAL distinction from this corpus's health_system_law/food_law tracks, whose repeal clauses are generic conflict-only: this Law's own Article 75 explicitly repeals, by decree number and date, نظام مصالح المياه والصرف الصحي (Royal Decree M/22, 23/6/1391H) and its regulations, نظام المحافظة على مصادر المياه (Royal Decree M/34, 24/8/1400H) and its regulations, and نظام مياه الصرف الصحي المعالجة وإعادة استخدامها (Royal Decree M/6, 13/2/1421H) and its implementing regulation — three genuine, named supersession links, modeled as new supersession-graph edges; none of the three predecessors is separately ingested in this corpus (one-instrument-per-pass rule). **IMPLEMENTING REGULATIONS IDENTIFIED BUT NOT INGESTED**: Article 76 mandates both a Minister's regulation and the Authority's board regulation (a MEWA/FAOLEX PDF, 58 pages, was confirmed to exist), plus the separate Saudi Water Code (الكود السعودي لمصادر المياه) — flagged as companion 'water_regulation' candidates for a future dedicated pass. Disclosed anomalies: Article 3 preserves an explicit Zamzam-water scope exclusion; Article 44 preserves a verbatim source-side typo ('على أت تراعي' for 'أن'), not silently corrected; tashkeel (harakat) stripped uniformly for consistency with this corpus's BOE-family majority, an intentional and disclosed divergence from the health_system_law track's own choice (same nezams.com source) to keep tashkeel. Arabic governs; not legal advice.",
             },
         ],
     }
