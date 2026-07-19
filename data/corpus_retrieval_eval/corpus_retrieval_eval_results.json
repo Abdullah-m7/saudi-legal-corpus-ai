@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 308,
-  "top1_hits": 282,
-  "top3_hits": 301,
-  "top5_hits": 304,
-  "top1_accuracy": 0.9156,
-  "top3_accuracy": 0.9773,
-  "top5_accuracy": 0.987,
-  "mrr_at_5": 0.946,
+  "total_queries": 310,
+  "top1_hits": 284,
+  "top3_hits": 303,
+  "top5_hits": 306,
+  "top1_accuracy": 0.9161,
+  "top3_accuracy": 0.9774,
+  "top5_accuracy": 0.9871,
+  "mrr_at_5": 0.9463,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9565,6 +9565,68 @@
      "record_id": "nationality-law-llm-art-022",
      "article_number": 22,
      "score": 44
+    }
+   ]
+  },
+  {
+   "query_id": "res-001",
+   "query_ar": "لا يجوز للأجنبي أن يغير المبدأ الذي منح على أساسه الإقامة إلا بعد الإذن له بذلك من قبل وزارة الداخلية وإذا خالف يعاقب بغرامه مالية لا تقل عن ثلاثمائة ريال ولا تزيد على خمسمائة ريال",
+   "category": "topical",
+   "gold": {
+    "corpus": "residency",
+    "law_component": "law",
+    "article_number": 44
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "residency-law-llm-art-046",
+     "article_number": 44,
+     "score": 60
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-382",
+     "article_number": 382,
+     "score": 39
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-387",
+     "article_number": 387,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "res-002",
+   "query_ar": "على كل أجنبي يفقد جواز سفره أو تصريح إقامته أو استمارة دخوله أو أية ورقة منحت له من مكتب مراقبة الأجانب أن يبلغ هذا المكتب أو من يقوم مقامه من سلطات الأمن العام خلال مدة لا تزيد عن أربع وعشرين ساعة",
+   "category": "topical",
+   "gold": {
+    "corpus": "residency",
+    "law_component": "law",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "residency-law-llm-art-026",
+     "article_number": 25,
+     "score": 47
+    },
+    {
+     "record_id": "residency-law-llm-art-015",
+     "article_number": 14,
+     "score": 38
+    },
+    {
+     "record_id": "residency-law-llm-art-025",
+     "article_number": 24,
+     "score": 38
     }
    ]
   }

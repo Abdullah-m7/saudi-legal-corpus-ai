@@ -1038,6 +1038,22 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "this generic clause to have targeted.",
         "source_ref": "sources/saudi_engineers/law/official_source/saudi_engineers_law_official_source.json (article 9)",
     },
+    {
+        "tracks_involved": ["residency_law"],
+        "issue": "general non-specific repeal clause naming no prior statute",
+        "note": "residency_law's own Article 64 states only 'يلغي هذا النظام "
+                "العمل بجميع الأوامر والتعليمات الصادرة في موضوع الإقامة "
+                "والأجانب قبل صدوره' (a general repeal of all prior orders "
+                "and instructions on the subject of residency and "
+                "foreigners, issued before this law), naming no single, "
+                "determinate prior instrument. NOT modeled as a "
+                "repeals_full edge, since this corpus only models "
+                "EXPLICITLY-NAMED repeal relationships, never inferred "
+                "ones; this track's own research found no specific "
+                "predecessor residency law identified by name or decree "
+                "number for this generic clause to have targeted.",
+        "source_ref": "sources/residency/law/official_source/residency_law_official_source.json (article 64)",
+    },
 ]
 
 

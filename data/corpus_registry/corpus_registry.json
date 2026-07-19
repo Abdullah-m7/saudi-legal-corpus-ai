@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 9633,
+  "total_primary_arabic_governing_records": 9702,
   "total_reference_records": 614,
-  "total_registry_counted_records": 10528,
-  "total_tracks": 140,
+  "total_registry_counted_records": 10597,
+  "total_tracks": 141,
   "tracks": [
     {
       "boundaries": {
@@ -6623,6 +6623,55 @@
       "validator_targets": [
         "make nationality-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/residency/law/official_source/residency_law_official_source.json",
+        "sources/residency/law/verified/residency_law_verified_records.jsonl",
+        "data/residency_arabic_legal_llm/residency_law_legal_llm_001_069.json"
+      ],
+      "display_name_ar": "نظام الإقامة",
+      "display_name_en": "Foreigners' Residency Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/residency_arabic_legal_llm/residency_law_legal_llm_001_069.json",
+          "governing": true,
+          "record_count": 69,
+          "status": "complete"
+        }
+      },
+      "notes": "Foreigners' Residency Law «نظام الإقامة» (also known as the Iqama/Kafala Law) — Royal (Supreme) Order No. 17/2/25/1337, dated 11/9/1371H (~1951-1952G), still in force and heavily amended over its history. A high-priority coverage-gap identified via a fresh gap-scan pass, being the foundational statute governing foreigners' residency permits and sponsorship in the Kingdom, distinct from the corpus's already-ingested anti_trafficking_law and labor_law tracks. **69 records: 48 اصلية, 16 معدلة** (Articles 14, 16, 25, 31, 35, 38, 43, 44, 45, 46, 47, 52, 53, 56, 60, 61), **1 ملغاة** (Article 37, repealed by Royal Decree M/48, 10/10/1391H — text preserved, not deleted), **4 مضافة** (Articles 5 مكرر, 44 مكرر, 49 مكررة, 62 مكرر) — 4 فصول (chapters, spanning Articles 1-31 / 32-42 / 43-49 / 50-65), no أبواب. A 5th مكرر article (61 مكرر, confirmed added by Royal Decree M/56, 4/9/1427H, per the source's own amendment log) was deliberately **EXCLUDED** from ingestion since its substantive text could not be recovered from any source checked — not fabricated. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa does not index this 1371H law at all (only its unrelated 1440H namesake, Premium Residency Law M/106); the Ministry of Interior's own hosted PDF was unreachable both live and via Wayback; this track instead rests on a cross-verified secondary reproduction of the officially-circulated compiled text, agreeing word-for-word across three independent sources (mohamah.net, rakadvocate.blogspot.com, islamport.com), with the National Society for Human Rights' own PDF used only for a structural cross-check (its own text is CID-font-corrupted and unusable directly). **No specific named predecessor** — Article 64 gives only a general repeal of prior orders/instructions with no determinate predecessor instrument identified, a confirmed negative finding mirroring the finance_lease_law/engineering_practice_law precedent (no supersession-graph edge modeled). Genuine anomalies carried forward: a three-way inconsistent citation of Article 5 مكرر's own adding decree/resolution number and date within the same compiled source (م/4 vs م/40; 1393H vs 1394H); a likely typo in Article 52's second-amendment note (cites 'المادة (5)', almost certainly meant to read (52) given context). Companion instruments identified but explicitly out of scope for this one-law-per-pass build: نظام الإقامة المميزة (Premium Residency Law, M/106, 1440H) and its لائحة تنفيذية; نظام جوازات السفر (Passports Law, already a separate coverage-gap-map candidate); the Muqeem system's exit-re-entry visa rules. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY_BOE_DOES_NOT_INDEX_THIS_LAW_MOI_PDF_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 69,
+        "legal_status_breakdown": {
+          "اصلية": 48,
+          "مضافة": 4,
+          "معدلة": 16,
+          "ملغاة": 1
+        },
+        "total": 69
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal (Supreme) Order No. 17/2/25/1337, dated 11/9/1371H (~1951-1952G) — laws.boe.gov.sa does not index this law at all (only its unrelated 1440H namesake, نظام الإقامة المميزة/Premium Residency Law, M/106); the Ministry of Interior's own hosted PDF was unreachable both live and via Wayback; sourced from a cross-verified secondary reproduction of the officially-circulated compiled text agreeing word-for-word across mohamah.net, rakadvocate.blogspot.com, and islamport.com, with the National Society for Human Rights' own PDF used for a structural cross-check only (CID-font-corrupted, not used for text)",
+      "status": "complete",
+      "track_id": "residency_law",
+      "validator_targets": [
+        "make residency-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -6720,6 +6769,7 @@
       "real_estate_registration": 91,
       "real_estate_units": 74,
       "regions": 41,
+      "residency": 69,
       "sama": 27,
       "saudi_engineers": 9,
       "sharia_procedure": 880,
@@ -6739,7 +6789,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9464,
+    "total_records": 9533,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
