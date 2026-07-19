@@ -193,6 +193,7 @@ HEALTH_SYSTEM_REGULATION_LLM = os.path.join(ROOT, "data", "health_system_regulat
 FOOD_REGULATION_LLM = os.path.join(ROOT, "data", "food_regulation_arabic_legal_llm", "food_regulation_legal_llm_001_085.json")
 ELECTRICITY_LAW_LLM = os.path.join(ROOT, "data", "electricity_arabic_legal_llm", "electricity_law_legal_llm_001_023.json")
 WATER_LAW_LLM = os.path.join(ROOT, "data", "water_arabic_legal_llm", "water_law_legal_llm_001_077.json")
+VAT_REGULATION_LLM = os.path.join(ROOT, "data", "vat_regulation_arabic_legal_llm", "vat_regulation_legal_llm_001_082.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -379,6 +380,7 @@ def main() -> int:
     food_regulation_llm = _load_json(FOOD_REGULATION_LLM)
     electricity_law_llm = _load_json(ELECTRICITY_LAW_LLM)
     water_law_llm = _load_json(WATER_LAW_LLM)
+    vat_regulation_llm = _load_json(VAT_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -399,7 +401,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 155,
+        "total_tracks": 156,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -558,6 +560,7 @@ def main() -> int:
             + food_regulation_llm["record_count"]  # 85 Implementing Regulation of the Food Law (SFDA Board Resolution 3-16-1439, 1439H, as amended by Resolution 4/44, 1446H) (TIER_2, BOE unreachable and confirmed to have no dedicated lawId page for this Implementing Regulation at all, PRIMARY sfda.gov.sa born-digital PDF x qanoonsa.com/qistas.com cross-checks, 81 اصلية/1 معدلة/3 مضافة, extensive font ligature-reversal extraction defects fixed, final article mislabeled '58' preserved verbatim, penalty table confirmed out of scope, confirmed no named predecessor, see track notes)
             + electricity_law_llm["record_count"]  # 23 Saudi Arabian Electricity Law (Royal Decree M/44, 1442H) (TIER_3, BOE unreachable this pass, PRIMARY nezams.com single clean born-digital aggregator page x multi-source metadata cross-check (BOE/Umm Al-Qura via WebSearch, Lexis Middle East, SERA), 23 اصلية all unamended, confirmed named repeal-and-replace of the older M/56 1426H law via Article 23, see track notes)
             + water_law_llm["record_count"]  # 77 Saudi Arabian Water Law (Royal Decree M/159, 1441H) (TIER_3, BOE has a dedicated lawId page but unreachable this pass, Wayback egress-blocked, PRIMARY nezams.com single clean aggregator x multi-source metadata cross-check via WebSearch indexing of BOE's own content, 77 اصلية no amendments, confirmed NAMED repeal of three predecessor laws (M/22 1391H, M/34 1400H, M/6 1421H) via Article 75, see track notes)
+            + vat_regulation_llm["record_count"]  # 82 Implementing Regulation of the VAT Law (ZATCA Board Resolution 3839, 14 Dhul-Hijjah 1438H, Tenth Edition consolidating 11 amendments through Nov 2024) (TIER_3, BOE has no dedicated lawId page for this Board-level regulation, PRIMARY zatca.gov.sa official consolidated PDF, dual PyMuPDF-geometric x Tesseract-OCR extraction reconciled to work around a systematic bidi word-order defect, 37 اصلية/42 معدلة/3 مضافة (mukarrar articles), printed Gregorian cover date independently corrected 14 Nov 2016 -> 5 Sep 2017 matching the true Hijri date, confirmed no separate named predecessor beyond the parent Law, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -707,6 +710,7 @@ def main() -> int:
             + food_regulation_llm["record_count"]
             + electricity_law_llm["record_count"]
             + water_law_llm["record_count"]
+            + vat_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5257,6 +5261,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "The Saudi Arabian Water Law «نظام المياه» — Royal Decree No. (M/159), dated 11/11/1441H (~July 2020G), approved via Council of Ministers Resolution 710 (9/11/1441H), administered by the Ministry of Environment, Water and Agriculture and the Electricity & Cogeneration Regulatory Authority (service-provision activities). A fresh coverage-gap candidate identified by this session's re-scan of the corpus's coverage-gap-map. **77 records, ALL 77 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — nezams.com's own metadata states explicitly 'لم يجر عليه تعديل', no amendments), across 17 chapters (فصول), continuous articles 1-77, no inline per-article titles beyond spelled-ordinal 'المادة ...' labels. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa DOES have a dedicated lawId page for this law (57261279-94b7-4ddc-8ad2-abf100d246be), unlike some Board-level executive regulations, but it was unreachable this pass (HTTP 503 live; a confirmed-existing Wayback Machine snapshot, 12 Dec 2025, is blocked at this session's egress-policy level at web.archive.org and was NOT bypassed). Full verbatim text of all 77 articles was extracted from nezams.com (an independent Arabic legal-text aggregator, not a BOE mirror, HTTP 200); independently, WebSearch results indexing laws.boe.gov.sa's own content returned a verbatim match for Article 74's text, the decree identity, the SAR-20-million penalty ceiling, the Saudi Water Code mandate, and the 17-chapter structure — a second, independent confirmation not derived from nezams.com. **CONFIRMED NAMED REPEAL OF THREE PREDECESSOR LAWS** — a MATERIAL distinction from this corpus's health_system_law/food_law tracks, whose repeal clauses are generic conflict-only: this Law's own Article 75 explicitly repeals, by decree number and date, نظام مصالح المياه والصرف الصحي (Royal Decree M/22, 23/6/1391H) and its regulations, نظام المحافظة على مصادر المياه (Royal Decree M/34, 24/8/1400H) and its regulations, and نظام مياه الصرف الصحي المعالجة وإعادة استخدامها (Royal Decree M/6, 13/2/1421H) and its implementing regulation — three genuine, named supersession links, modeled as new supersession-graph edges; none of the three predecessors is separately ingested in this corpus (one-instrument-per-pass rule). **IMPLEMENTING REGULATIONS IDENTIFIED BUT NOT INGESTED**: Article 76 mandates both a Minister's regulation and the Authority's board regulation (a MEWA/FAOLEX PDF, 58 pages, was confirmed to exist), plus the separate Saudi Water Code (الكود السعودي لمصادر المياه) — flagged as companion 'water_regulation' candidates for a future dedicated pass. Disclosed anomalies: Article 3 preserves an explicit Zamzam-water scope exclusion; Article 44 preserves a verbatim source-side typo ('على أت تراعي' for 'أن'), not silently corrected; tashkeel (harakat) stripped uniformly for consistency with this corpus's BOE-family majority, an intentional and disclosed divergence from the health_system_law track's own choice (same nezams.com source) to keep tashkeel. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "vat_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام ضريبة القيمة المضافة",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian VAT Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "ZATCA_GOV_SA_OFFICIAL_CONSOLIDATED_PDF_TENTH_EDITION_2025_04_DUAL_PYMUPDF_GEOMETRIC_X_TESSERACT_OCR_RECONCILED_BOE_NO_DEDICATED_LAWID_PAGE",
+                "source_authority": "ZATCA (Zakat, Tax and Customs Authority) Board of Directors Resolution No. (3839), dated 14 Dhul-Hijjah 1438H, issued under the authority of the VAT Law (Royal Decree M/113, 2/11/1438H) and the GCC Unified VAT Agreement — laws.boe.gov.sa was checked first per this corpus's standard methodology but has NO dedicated lawId page for this Board-level Implementing Regulation, so ZATCA's own official site is the authoritative source. PRIMARY source is ZATCA's own consolidated Arabic PDF, the 'Tenth Edition' (النسخة العاشرة, Shawwal 1446H / April 2025), consolidating the founding Resolution with 11 subsequent amending Board resolutions",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": vat_regulation_llm["record_count"],
+                    "data_path": "data/vat_regulation_arabic_legal_llm/vat_regulation_legal_llm_001_082.json"}},
+                "record_counts": {"arabic_articles": vat_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 37, "معدلة": 42, "ملغاة": 0, "مضافة": 3},
+                                  "total": vat_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/vat/regulation/official_source/vat_regulation_official_source.json",
+                    "sources/vat/regulation/verified/vat_regulation_verified_records.jsonl",
+                    "data/vat_regulation_arabic_legal_llm/vat_regulation_legal_llm_001_082.json",
+                ],
+                "validator_targets": ["make vat-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian VAT Law «اللائحة التنفيذية لنظام ضريبة القيمة المضافة» — ZATCA Board of Directors Resolution No. (3839), dated 14 Dhul-Hijjah 1438H, the companion-regulation follow-up candidate this corpus's own vat_law track had explicitly flagged as confirmed to exist but not extracted. **82 records** (79 numbered articles + 3 مكرر: 32-mukarrar, 36-mukarrar, 36-mukarrar-2), **37 اصلية / 42 معدلة / 3 مضافة / 0 ملغاة**, across 12 chapters. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has NO dedicated lawId page for this Board-level regulation (matching this corpus's food_regulation precedent); PRIMARY source is ZATCA's own official consolidated PDF, the 'Tenth Edition' (Shawwal 1446H / April 2025, 160 pages, born-digital, internal CreationDate 16 April 2025), which itself consolidates the founding Resolution with 11 subsequent amending Board resolutions, all independently sourced with their own decree numbers and dual Hijri/Gregorian dates from the PDF's own cover. **DATE ANOMALY INDEPENDENTLY RE-RESOLVED (not merely copied from the parent track)**: ZATCA's own cover prints '14 ذو الحجة 1438هـ الموافق 14 نوفمبر 2016م' — the printed Gregorian is WRONG; 14 Dhul-Hijjah 1438H converts independently (confirmed via the hijri_converter library and the Eid al-Adha anchor date) to 5 September 2017G, not November 2016G, and 14 Nov 2016 would in any case predate the parent VAT Law itself (M/113, 2 Dhul-Qadah 1438H = 25 July 2017G) — a logical impossibility for its own Implementing Regulation. The Hijri date governs; the printed Gregorian error is disclosed, not silently corrected. **EXTRACTION METHODOLOGY**: this PDF stores Arabic with a systematic bidi word-order defect; two fully independent extraction pipelines (PyMuPDF geometric glyph-coordinate reconstruction; Tesseract Arabic OCR of 300dpi renders) were reconciled via alignment, with disclosed residual artifacts (~30 misplaced punctuation marks, occasional word merges/splits, leaked page numbers). Per-article amendment attribution for the 42 معدلة set is article-level only (specific amending Board resolution numbers per article are not pinned, since they extract reversed). No separate preamble extracted; no BOE dedicated lawId page (matches food_regulation pattern). Confirmed no separate named predecessor beyond the parent Law itself. Arabic governs; not legal advice.",
             },
         ],
     }

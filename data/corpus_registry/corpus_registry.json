@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10229,
+  "total_primary_arabic_governing_records": 10311,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11124,
-  "total_tracks": 155,
+  "total_registry_counted_records": 11206,
+  "total_tracks": 156,
   "tracks": [
     {
       "boundaries": {
@@ -7358,6 +7358,55 @@
       "validator_targets": [
         "make water-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/vat/regulation/official_source/vat_regulation_official_source.json",
+        "sources/vat/regulation/verified/vat_regulation_verified_records.jsonl",
+        "data/vat_regulation_arabic_legal_llm/vat_regulation_legal_llm_001_082.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام ضريبة القيمة المضافة",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian VAT Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/vat_regulation_arabic_legal_llm/vat_regulation_legal_llm_001_082.json",
+          "governing": true,
+          "record_count": 82,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian VAT Law «اللائحة التنفيذية لنظام ضريبة القيمة المضافة» — ZATCA Board of Directors Resolution No. (3839), dated 14 Dhul-Hijjah 1438H, the companion-regulation follow-up candidate this corpus's own vat_law track had explicitly flagged as confirmed to exist but not extracted. **82 records** (79 numbered articles + 3 مكرر: 32-mukarrar, 36-mukarrar, 36-mukarrar-2), **37 اصلية / 42 معدلة / 3 مضافة / 0 ملغاة**, across 12 chapters. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has NO dedicated lawId page for this Board-level regulation (matching this corpus's food_regulation precedent); PRIMARY source is ZATCA's own official consolidated PDF, the 'Tenth Edition' (Shawwal 1446H / April 2025, 160 pages, born-digital, internal CreationDate 16 April 2025), which itself consolidates the founding Resolution with 11 subsequent amending Board resolutions, all independently sourced with their own decree numbers and dual Hijri/Gregorian dates from the PDF's own cover. **DATE ANOMALY INDEPENDENTLY RE-RESOLVED (not merely copied from the parent track)**: ZATCA's own cover prints '14 ذو الحجة 1438هـ الموافق 14 نوفمبر 2016م' — the printed Gregorian is WRONG; 14 Dhul-Hijjah 1438H converts independently (confirmed via the hijri_converter library and the Eid al-Adha anchor date) to 5 September 2017G, not November 2016G, and 14 Nov 2016 would in any case predate the parent VAT Law itself (M/113, 2 Dhul-Qadah 1438H = 25 July 2017G) — a logical impossibility for its own Implementing Regulation. The Hijri date governs; the printed Gregorian error is disclosed, not silently corrected. **EXTRACTION METHODOLOGY**: this PDF stores Arabic with a systematic bidi word-order defect; two fully independent extraction pipelines (PyMuPDF geometric glyph-coordinate reconstruction; Tesseract Arabic OCR of 300dpi renders) were reconciled via alignment, with disclosed residual artifacts (~30 misplaced punctuation marks, occasional word merges/splits, leaked page numbers). Per-article amendment attribution for the 42 معدلة set is article-level only (specific amending Board resolution numbers per article are not pinned, since they extract reversed). No separate preamble extracted; no BOE dedicated lawId page (matches food_regulation pattern). Confirmed no separate named predecessor beyond the parent Law itself. Arabic governs; not legal advice.",
+      "official_text_status": "ZATCA_GOV_SA_OFFICIAL_CONSOLIDATED_PDF_TENTH_EDITION_2025_04_DUAL_PYMUPDF_GEOMETRIC_X_TESSERACT_OCR_RECONCILED_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 82,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 3,
+          "معدلة": 42,
+          "ملغاة": 0
+        },
+        "total": 82
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "ZATCA (Zakat, Tax and Customs Authority) Board of Directors Resolution No. (3839), dated 14 Dhul-Hijjah 1438H, issued under the authority of the VAT Law (Royal Decree M/113, 2/11/1438H) and the GCC Unified VAT Agreement — laws.boe.gov.sa was checked first per this corpus's standard methodology but has NO dedicated lawId page for this Board-level Implementing Regulation, so ZATCA's own official site is the authoritative source. PRIMARY source is ZATCA's own consolidated Arabic PDF, the 'Tenth Edition' (النسخة العاشرة, Shawwal 1446H / April 2025), consolidating the founding Resolution with 11 subsequent amending Board resolutions",
+      "status": "complete",
+      "track_id": "vat_regulation",
+      "validator_targets": [
+        "make vat-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7478,13 +7527,13 @@
       "trademark": 52,
       "traffic": 86,
       "travel_documents": 69,
-      "vat": 53,
+      "vat": 135,
       "water": 77,
       "whistleblower": 37,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10060,
+    "total_records": 10142,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
