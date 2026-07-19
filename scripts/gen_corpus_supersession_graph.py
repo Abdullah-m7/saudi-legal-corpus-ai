@@ -1221,6 +1221,22 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "No edge modeled.",
         "source_ref": "sources/premium_residency/law/official_source/premium_residency_law_official_source.json (article 14)",
     },
+    {
+        "tracks_involved": ["nationality_regulation"],
+        "issue": "confirmed negative repeal finding -- no predecessor named at all",
+        "note": "nationality_regulation names no repealed predecessor "
+                "instrument of its own anywhere in its 35 articles -- it is "
+                "the first and only Implementing Regulation issued for the "
+                "already-ingested nationality_law track (Royal Will "
+                "8/20/5604, 1374H) since that Law's own enactment, first "
+                "issued as Ministerial Decision No. 74/زو (9/3/1426H). No "
+                "edge modeled. (Separately, this track's own Article 28 was "
+                "deleted by a 2023 Minister of Interior decision following "
+                "Royal Decree M/88's transfer of the parent Law's Article 8 "
+                "grant authority -- an article-level legal_status_ar=ملغاة "
+                "change, not a supersession-graph relationship.)",
+        "source_ref": "sources/nationality/regulation/official_source/nationality_regulation_official_source.json (verification_methodology_note)",
+    },
 ]
 
 

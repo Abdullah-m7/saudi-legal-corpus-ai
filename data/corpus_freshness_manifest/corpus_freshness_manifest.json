@@ -7,10 +7,10 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 150 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 150 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 151 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 151 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 150,
-  "known_source_staleness_risk_count": 12,
+  "total_tracks": 151,
+  "known_source_staleness_risk_count": 13,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
     "awqaf_law",
@@ -20,6 +20,7 @@
     "environmental_law",
     "income_tax_law",
     "nationality_law",
+    "nationality_regulation",
     "patent_law",
     "press_law",
     "saudi_engineers_law",
@@ -2101,6 +2102,27 @@
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "nationality_boe_main_body_stale_for_11_articles: BOE's own main-body ('div.HTMLContainer'/bare text node) display for 11 of this law's 30 articles (7, 8, 9, 12, 14, 16, 17, 21, 22, 26, 27) reflects the ORIGINAL 1954 wording, NOT the amended text logged in each article'"
+    },
+    {
+      "track_id": "nationality_regulation",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Nationality Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الجنسية العربية السعودية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='MOI_GOV_SA_WAYBACK_TRIPLE_SNAPSHOT_BYTE_IDENTICAL_X_NEZAMS_DECREE_CONFIRM_X_ALRIYADH_2005_CONTEMPORANEOUS_FULLTEXT_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Ministerial Decision No. 74/زو, dated 9/3/1426H (22 Apr 2005G), issued by the Minister of Interior under the Nationality Law's own Article 27 — laws.boe.gov.sa hosts no dedicated lawId page at all for this Implementing Regulation; PRIMARY source is moi.gov.sa (the issuing Ministry's own site), fetched via three independent Wayback Machine snapshots (4 Mar 2011, 29 Sep 2022, 15 Mar 2024) that are byte-identical across all 13 years, cross-verified against nezams.com (decree number/date) and alriyadh.com's 2005G contemporaneous full-text reproduction (independently resolving this corpus's own prior gap-map estimate of ~25 articles to the confirmed true count of 35)",
+      "registry_source_url": null,
+      "official_source_file": "sources/nationality/regulation/official_source/nationality_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "hrsd.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2014-04-11, 2023-03-17, 2024-03-15; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "nationality_regulation_article28_repealed: المادة الثامنة والعشرون من هذه اللائحة (نصها الأصلي: \"يصدر وزير الداخلية القرارات اللازمة لمنح الجنسية بموجب المادة (8) من النظام\") أُلغيت بالكامل بقرار من وزير الداخلية (الأمير عبدالعزيز بن سعود بن نايف)، بحسب خبر رسمي"
     },
     {
       "track_id": "nazaha_law",

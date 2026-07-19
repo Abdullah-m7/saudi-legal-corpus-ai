@@ -191,6 +191,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_cybersecurity_authority_enablers_track.py",
     "scripts/gen_premium_residency_law_track.py",
     "scripts/gen_travel_documents_regulation_track.py",
+    "scripts/gen_nationality_regulation_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",

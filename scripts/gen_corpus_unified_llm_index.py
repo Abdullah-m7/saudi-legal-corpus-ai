@@ -324,6 +324,8 @@ LAYERS = [
      "premium_residency", "law"),
     ("data/travel_documents_regulation_arabic_legal_llm/travel_documents_regulation_legal_llm_001_053.json",
      "travel_documents", "regulation"),
+    ("data/nationality_regulation_arabic_legal_llm/nationality_regulation_legal_llm_001_035.json",
+     "nationality", "regulation"),
 ]
 
 

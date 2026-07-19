@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 328,
-  "top1_hits": 302,
-  "top3_hits": 321,
-  "top5_hits": 324,
-  "top1_accuracy": 0.9207,
-  "top3_accuracy": 0.9787,
-  "top5_accuracy": 0.9878,
-  "mrr_at_5": 0.9493,
+  "total_queries": 330,
+  "top1_hits": 304,
+  "top3_hits": 323,
+  "top5_hits": 326,
+  "top1_accuracy": 0.9212,
+  "top3_accuracy": 0.9788,
+  "top5_accuracy": 0.9879,
+  "mrr_at_5": 0.9496,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6586,8 +6586,8 @@
      "score": 22
     },
     {
-     "record_id": "nationality-law-llm-art-008",
-     "article_number": 8,
+     "record_id": "nationality-regulation-llm-art-021",
+     "article_number": 21,
      "score": 20
     }
    ]
@@ -9531,9 +9531,9 @@
      "score": 38
     },
     {
-     "record_id": "nationality-law-llm-art-014",
-     "article_number": 14,
-     "score": 30
+     "record_id": "nationality-regulation-llm-art-020",
+     "article_number": 20,
+     "score": 35
     }
    ]
   },
@@ -10185,6 +10185,68 @@
      "record_id": "travel-documents-regulation-llm-art-039",
      "article_number": 39,
      "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "nrg-001",
+   "query_ar": "يثبت شرط سلامة العقل والجسم المنصوص عليه في المادة (9) من النظام بموجب تقرير طبي صادر من مستشفى حكومي",
+   "category": "topical",
+   "gold": {
+    "corpus": "nationality",
+    "law_component": "regulation",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nationality-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 49
+    },
+    {
+     "record_id": "nationality-regulation-llm-art-013",
+     "article_number": 13,
+     "score": 28
+    },
+    {
+     "record_id": "domestic-labor-regulation-llm-art-021",
+     "article_number": 21,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "nrg-002",
+   "query_ar": "النظام: نظام الجنسية العربية السعودية الصادر بالإرادة الملكية رقم (8/20/5604) وتاريخ 22/2/1374هـ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "nationality",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nationality-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 37
+    },
+    {
+     "record_id": "nationality-law-llm-art-028",
+     "article_number": 28,
+     "score": 36
+    },
+    {
+     "record_id": "nationality-law-llm-art-001",
+     "article_number": 1,
+     "score": 34
     }
    ]
   }

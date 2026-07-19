@@ -188,6 +188,7 @@ CYBERSECURITY_AUTHORITY_LAW_LLM = os.path.join(ROOT, "data", "cybersecurity_auth
 CYBERSECURITY_AUTHORITY_ENABLERS_LLM = os.path.join(ROOT, "data", "cybersecurity_authority_enablers_arabic_legal_llm", "cybersecurity_authority_enablers_legal_llm_001_007.json")
 PREMIUM_RESIDENCY_LAW_LLM = os.path.join(ROOT, "data", "premium_residency_arabic_legal_llm", "premium_residency_law_legal_llm_001_014.json")
 TRAVEL_DOCUMENTS_REGULATION_LLM = os.path.join(ROOT, "data", "travel_documents_regulation_arabic_legal_llm", "travel_documents_regulation_legal_llm_001_053.json")
+NATIONALITY_REGULATION_LLM = os.path.join(ROOT, "data", "nationality_regulation_arabic_legal_llm", "nationality_regulation_legal_llm_001_035.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -369,6 +370,7 @@ def main() -> int:
     cybersecurity_authority_enablers_llm = _load_json(CYBERSECURITY_AUTHORITY_ENABLERS_LLM)
     premium_residency_law_llm = _load_json(PREMIUM_RESIDENCY_LAW_LLM)
     travel_documents_regulation_llm = _load_json(TRAVEL_DOCUMENTS_REGULATION_LLM)
+    nationality_regulation_llm = _load_json(NATIONALITY_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -389,7 +391,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 150,
+        "total_tracks": 151,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -543,6 +545,7 @@ def main() -> int:
             + cybersecurity_authority_enablers_llm["record_count"]  # 7 Regulatory (Legal) Enablers of the National Cybersecurity Authority (Royal Decree M/117, 1446H) (TIER_2, PRIMARY nca.gov.sa official PDF OCR-transcribed x qanoonsa.com/uqn.gov.sa secondary cross-checks, no مادة numbering -- seven بند divisions instead, confirmed negative repeal finding at clause 7, confirmed no amendment/repeal relationship to parent cybersecurity_authority_law, see track notes)
             + premium_residency_law_llm["record_count"]  # 14 Premium Residency Law (Royal Decree M/106, 1440H) (TIER_1_PRIMARY_MULTI_SOURCE, BOE live unreachable x six Wayback snapshots 2019-2025 x misa.gov.sa official consolidated PDF word-for-word cross-check, 5 اصلية/8 معدلة/1 ملغاة, confirmed no named predecessor, distinct from already-ingested residency_law per social_insurance_law/social_insurance_legacy_law naming precedent, see track notes)
             + travel_documents_regulation_llm["record_count"]  # 53 Travel Documents Implementing Regulation (Ministerial Resolution 4203, 1447H) (TIER_3 honest, no BOE lawId page at all, PRIMARY qanoonsa.com raw-HTML fetch x ncar.gov.sa metadata-level x qanoniah.com indexing-level, all 53 اصلية, confirmed full repeal of the 1422H predecessor Decision 7/waw-zay via Article 52, see track notes)
+            + nationality_regulation_llm["record_count"]  # 35 Implementing Regulation of the Nationality Law (Ministerial Decision 74/زو, 1426H) (TIER_2, BOE hosts no dedicated page, PRIMARY moi.gov.sa Wayback triple-snapshot byte-identical x nezams.com x alriyadh.com 2005G contemporaneous full-text, article count corrected 25->35, Article 28 confirmed repealed and preserved, confirmed no named predecessor, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -687,6 +690,7 @@ def main() -> int:
             + cybersecurity_authority_enablers_llm["record_count"]
             + premium_residency_law_llm["record_count"]
             + travel_documents_regulation_llm["record_count"]
+            + nationality_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5097,6 +5101,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Travel Documents Implementing Regulation «اللائحة التنفيذية لنظام وثائق السفر» — Ministerial Resolution No. 4203, dated 1447H, published Umm Al-Qura Gazette No. 5151 (30 March 2026G). The companion Implementing Regulation to the already-ingested travel_documents_law track's own Article 14 requirement, flagged by that track's own official_source.json as 'NOT ingested this pass' pending this dedicated pass. **53 records, ALL 53 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — this is the founding/only version, issued ~4 months before this pass, no per-article amendment documented since). **10 formally-numbered فصول (chapters)** — a genuine numbered chapter structure, unlike the flat travel_documents_law (no أبواب/فصول at all) or the informally-sectioned domestic_labor_regulation (14 unnumbered thematic sections). **VERIFICATION TIER: TIER_3 (honest, NOT inflated)** — full access to a primary/official source was not achieved this pass despite genuinely attempting, in this corpus's required order: (1) laws.boe.gov.sa — no dedicated lawId page exists at all for this instrument, current or superseded, and a direct curl failed with a TLS connection error, the same recurring pattern documented elsewhere in this corpus for this portal; (2) moi.gov.sa/legacy.moi.gov.sa (the issuing Ministry) — both unreachable (TLS failure), independently reconfirming the parent travel_documents_law track's own finding for the same domain; gdp.gov.sa (General Directorate of Passports, this Regulation's own named issuing directorate) returned HTTP 503 twice; (3) uqn.gov.sa (Umm Al-Qura Official Gazette, the publication explicitly named in this Regulation's own Article 53) — the domain itself is reachable, but a JavaScript-heavy single-page application whose specific gazette-issue-5151 page could not be located this pass, a genuine unresolved access gap, not a domain-level failure. PRIMARY text actually used is qanoonsa.com (private aggregator, fetched via direct raw-HTML curl, NOT WebFetch's own LLM-summarization layer, to avoid any paraphrase risk); a single available Wayback Machine snapshot (16 Apr 2026) was diffed against the live fetch (19 Jul 2026) and found byte-identical for all 53 articles' substantive text. Cross-checked at the decree-metadata level against ncar.gov.sa (a genuine government archival body, confirming decree number, gazette issue, publication date, and the exact repeal citation, but only via WebFetch's own AI-summarization since direct curl got a TLS reset — corroborating metadata, not a sentence-level verbatim cross-check) and qanoniah.com (private, confirms a current version distinct from its own separately-dated 1422H predecessor page at the indexing level only). **CONFIRMED FULL REPEAL (not scoped/partial)**: Article 52 explicitly and specifically states this Regulation replaces IN FULL the prior Implementing Regulation issued by Ministerial Decision No. 7/waw-zay, dated 23/9/1422H, and its amendments — a genuine positive finding, modeled as a NEW repeals_full edge in the supersession graph; the 1422H predecessor itself (~69 articles across ~12 chapters per secondary sources only) is not ingested in this corpus (historical context only, one-instrument-per-pass rule). One confirmed source-side textual anomaly preserved verbatim, not silently fixed: Article 37(3)'s 'يمنع' appears split with an internal space as 'مي نع' in the sole available source, stable across both the live fetch and the single Wayback snapshot — flagged, not corrected, absent a second independent extraction of the same original document. RLM (U+200F) directional-control characters preceding list-item dashes (111 occurrences) were stripped as pure typographic normalization, consistent with this corpus's existing NBSP/curly-quote precedent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "nationality_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام الجنسية العربية السعودية",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian Nationality Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOI_GOV_SA_WAYBACK_TRIPLE_SNAPSHOT_BYTE_IDENTICAL_X_NEZAMS_DECREE_CONFIRM_X_ALRIYADH_2005_CONTEMPORANEOUS_FULLTEXT_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE",
+                "source_authority": "Ministerial Decision No. 74/زو, dated 9/3/1426H (22 Apr 2005G), issued by the Minister of Interior under the Nationality Law's own Article 27 — laws.boe.gov.sa hosts no dedicated lawId page at all for this Implementing Regulation; PRIMARY source is moi.gov.sa (the issuing Ministry's own site), fetched via three independent Wayback Machine snapshots (4 Mar 2011, 29 Sep 2022, 15 Mar 2024) that are byte-identical across all 13 years, cross-verified against nezams.com (decree number/date) and alriyadh.com's 2005G contemporaneous full-text reproduction (independently resolving this corpus's own prior gap-map estimate of ~25 articles to the confirmed true count of 35)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": nationality_regulation_llm["record_count"],
+                    "data_path": "data/nationality_regulation_arabic_legal_llm/nationality_regulation_legal_llm_001_035.json"}},
+                "record_counts": {"arabic_articles": nationality_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 34, "معدلة": 0, "ملغاة": 1, "مضافة": 0},
+                                  "total": nationality_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/nationality/regulation/official_source/nationality_regulation_official_source.json",
+                    "sources/nationality/regulation/verified/nationality_regulation_verified_records.jsonl",
+                    "data/nationality_regulation_arabic_legal_llm/nationality_regulation_legal_llm_001_035.json",
+                ],
+                "validator_targets": ["make nationality-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian Nationality Law «اللائحة التنفيذية لنظام الجنسية العربية السعودية» — Ministerial Decision No. 74/زو, dated 9/3/1426H (22 Apr 2005G), issued by the Minister of Interior under the Nationality Law's own Article 27 (as amended by M/54, 29/10/1425H). The companion regulation flagged, but not ingested, in the already-ingested nationality_law track's own known_unresolved_discrepancies (key 'nationality_implementing_regulation_not_ingested'), which had estimated '~25 articles' from an earlier light-verification pass. **35 records: 34 اصلية, 0 معدلة, 1 ملغاة (Article 28), 0 مضافة** — flat 35-article structure, no formal أبواب/فصول numbering, spelled-ordinal headers. **ARTICLE COUNT CORRECTED (25 -> 35)**: traced to an internal self-contradiction in a single 2005G news source (alriyadh.com) whose own prose stated '25 مادة' even though its own reproduced full text ran to Article 35 — resolved definitively in favor of 35, independently confirmed by the byte-stable government PDF. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa was checked first per this corpus's standard methodology but confirmed (web search plus a Wayback CDX scan of the whole domain) to host NO dedicated lawId page at all for this Implementing Regulation; BOE's live portal was also unreachable this pass. PRIMARY source is moi.gov.sa (the issuing Ministry's own official site), whose live portal was also unreachable this pass, so the PDF was fetched via three independent Wayback Machine snapshots (4 Mar 2011, 29 Sep 2022, 15 Mar 2024) that are byte-identical (sha256-matched) across all 13 years, extracted via two independent tools (poppler pdftotext, PyMuPDF), both agreeing on 35 articles. Cross-verified against nezams.com (confirms the founding decree number/date as an appendix to its own nationality-law page) and alriyadh.com's own contemporaneous news article (published the day after Umm Al-Qura publication), which reproduces the Regulation's full 35-article text verbatim — automated normalized diffing against moi.gov.sa's PDF found word-for-word equivalence across all 35 articles, 18+ years apart, aside from two disclosed source-artifact-layer defects in moi.gov.sa's own PDF (a font ligature-drop bug losing 'مخ' from المختص/المختصة in 5 places, and an RTL line-reordering artifact in 2 short paragraphs) and two single-letter transcription typos in alriyadh's own text (fixed against moi.gov.sa's spelling). alriyadh's text (thus corrected) is used as the base transcription since it is free of the PDF's extraction artifacts while remaining fully cross-verified against the primary source. **CONFIRMED REPEAL**: Article 28 (its own text: 'يصدر وزير الداخلية القرارات اللازمة لمنح الجنسية بموجب المادة (8) من النظام') was deleted by a Minister of Interior decision circa March 2023, following Royal Decree M/88 (11/6/1444H) which transferred the parent Law's Article 8 nationality-grant authority from the Minister of Interior to the Prime Minister — independently confirmed by 5+ Saudi news outlets, all quoting the same deleted article text verbatim. moi.gov.sa's own PDF is confirmed STALE, still showing Article 28's pre-deletion text as of its most recent Wayback snapshot checked (15 Mar 2024, over a year after the deletion) — per this corpus's binding rule, Article 28 is preserved here with its original text, legal_status_ar=ملغاة, never deleted or silently merged away. **CONFIRMED NEGATIVE FINDING**: this Regulation names no repealed predecessor instrument of its own — it is the first and only Implementing Regulation for this Law since 1374H — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. Diacritics stripped uniformly. Arabic governs; not legal advice.",
             },
         ],
     }
