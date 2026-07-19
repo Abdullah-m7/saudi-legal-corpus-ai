@@ -1,5 +1,5 @@
 {
-  "generated_note": "Planning document only. This is a prioritized gap map identifying major Saudi statutory instruments not yet among the corpus's 121 tracks. Each gap received a LIGHT verification pass (web search cross-check of existence, approximate Royal Decree number/date, and rough article count) — NOT a full research/verbatim-transcription pass. Decree numbers/dates/article counts below should be re-verified against an official source (laws.boe.gov.sa, the issuing ministry/authority PDF, or Umm Al-Qura Gazette) before any build/transcription work begins. Generated 2026-07-17 by a research-only pass; no existing track files, run_qa_gate.py, or shared wiring were touched.",
+  "generated_note": "Planning document only. This is a prioritized gap map identifying major Saudi statutory instruments not yet among the corpus's 121 tracks. Each gap received a LIGHT verification pass (web search cross-check of existence, approximate Royal Decree number/date, and rough article count) — NOT a full research/verbatim-transcription pass. Decree numbers/dates/article counts below should be re-verified against an official source (laws.boe.gov.sa, the issuing ministry/authority PDF, or Umm Al-Qura Gazette) before any build/transcription work begins. Generated 2026-07-17 by a research-only pass; no existing track files, run_qa_gate.py, or shared wiring were touched. Expansion pass (2026-07-19): 8 new candidate gaps added following a fresh scan cross-checked against the then-current 139 REQUIRED_TRACK_IDS -- nationality, residency/iqama, civil status, food law, public health law, domestic labor regulation, passports law, and the NCA organizational statute -- see the newly-appended entries below for full rationale per candidate.",
   "already_covered_track_count": 121,
   "methodology": "Cross-checked the 121 REQUIRED_TRACK_IDS in scripts/validate_corpus_registry.py against the requested focus areas (consumer protection, health/medical regulation, IP beyond trademark/copyright, finance companies/consumer finance, real estate development, zakat, customs, anti-trust/IP enforcement, family/inheritance beyond personal status, government tenders, municipalities, maritime/shipping, insurance, financial leasing, secured lending, anti-dumping, professional services regulation, press/media, elections/municipal councils). For each candidate, ran targeted Arabic web searches against laws.boe.gov.sa (Council of Ministers Bureau of Experts portal), SAMA Rulebook, ministry sites, and legal-reference sites (nezams.com, qanoonsa.com, WIPO Lex) to confirm the law exists, find its Royal Decree number/date, and get an approximate article count.",
   "notable_non_gaps_checked_and_excluded": [
@@ -176,6 +176,78 @@
       "priority_rationale": "If/when enacted, this would likely be a high-priority track (it was designed to consolidate and modernize consumer-rights protections beyond the existing Anti-Commercial Fraud Law). But because enactment could not be confirmed, building it now risks building a draft/superseded text. Recommend periodically re-checking laws.boe.gov.sa for enactment before starting work; the Anti-Commercial Fraud Law gap above is the safer, confirmed target for now.",
       "confidence_exists": "unconfirmed — appears to still be a draft/proposal, not a confirmed enacted law",
       "re_check_note": "Re-checked in a dedicated follow-up pass: laws.boe.gov.sa's own indexed content shows no comprehensive consumer-protection statute (only the narrow تنظيم جمعية حماية المستهلك, a Consumer Protection Society/NGO regulation, CoM Resolution 3, 12/1/1429H — not this instrument); the Ministry of Commerce's own Istitlaa public-consultation portal still labels this instrument 'مشروع نظام حماية المستهلك' (draft/project); Commerce Minister Al-Qasabi stated in Sept 2024 it was 'in its final stages' (still not enacted then); no 2025-2026 enactment news found despite targeted searches. A related-but-distinct Product Safety Law (M/36, 29/1/1446H) was found already enacted but does not supersede or incorporate this draft. The anti_fraud_law track's own known_unresolved_discrepancies already independently documents this same unenacted-draft finding. CONFIRMED STILL UNENACTED as of this pass; anti_fraud_law remains the corpus's confirmed consumer-protection-adjacent build target."
+    },
+    {
+      "law_name_ar": "نظام الجنسية العربية السعودية ولائحته التنفيذية",
+      "law_name_en": "Saudi Arabian Nationality Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. (8/20/5604) dated 22/2/1374H (1954); implementing regulation contains 25 articles",
+      "estimated_article_count": "Base law article count not confirmed in this pass; implementing regulation is 25 articles",
+      "priority": "high",
+      "priority_rationale": "The foundational statute governing acquisition, transfer, and loss of Saudi citizenship -- entirely absent from the corpus despite personal_status_law, civil_service_law, and foreign_ownership_law all being covered. Central to naturalization, statelessness, and mixed-nationality-family practice, and frequently amended (most recently on citizenship transmission via mothers).",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام الإقامة",
+      "law_name_en": "Foreigners' Residency Law (Iqama/Kafala Law)",
+      "estimated_decree": "Royal Order/Decree No. 17-2-25-1337 dated 11/9/1371H (approx. 1951-1952), with numerous later amendments",
+      "estimated_article_count": "Unknown, needs verification",
+      "priority": "high",
+      "priority_rationale": "The base law establishing the kafala/sponsorship system, entry/exit and residency-permit rules, and penalties for iqama violations for Saudi Arabia's very large expatriate population. Distinct from anti_trafficking_law (criminalizes exploitation) and labor_law (employment terms) already covered -- this is the separate administrative/immigration-status statute underlying nearly all foreign-national compliance. Extremely high real-world frequency in HR/immigration practice.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام الأحوال المدنية ولائحته التنفيذية",
+      "law_name_en": "Civil Status Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/7 dated 20/4/1407H (1987); amended by Royal Decree No. M/198 dated 22 Ramadan 1445H",
+      "estimated_article_count": "Unknown, needs verification",
+      "priority": "medium",
+      "priority_rationale": "Governs civil registration of births, deaths, family registers, and national ID issuance -- distinct from personal_status_law (already covered, which governs substantive marriage/divorce/inheritance rules, not civil registration mechanics). Underlies virtually every legal transaction requiring ID/civil-registry documents, but is more administrative/documentary than litigation-heavy, hence a notch below the top-tier gaps.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام الغذاء ولائحته التنفيذية",
+      "law_name_en": "Food Law and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/1 dated 6/1/1436H (2014); implementing regulation most recently amended in 1446H",
+      "estimated_article_count": "Unknown, needs verification",
+      "priority": "medium",
+      "priority_rationale": "Substantive food-safety/food-chain regulation (licensees, food establishments, obligations across the food chain) administered by SFDA -- distinct from the SFDA's own organizational statute (نظام الهيئة العامة للغذاء والدواء, M/6, 1428H, which merely establishes the authority and is not itself flagged here as a separate gap). High compliance relevance for F&B, retail, and food-import practice.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "النظام الصحي",
+      "law_name_en": "Health System Law (Public Health Law)",
+      "estimated_decree": "Royal Decree No. M/11 dated 23/3/1423H (2002)",
+      "estimated_article_count": "19 articles",
+      "priority": "medium",
+      "priority_rationale": "Establishes the state's public-healthcare framework -- MOH responsibilities, health directorates, financing of health services, Health Services Council -- distinct from cooperative_health_insurance_law (insurance mandate) and healthcare_professions_law (practitioner licensing), both already covered. More institutional/administrative than transactional.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "لائحة العمالة المنزلية ومن في حكمهم",
+      "law_name_en": "Domestic Labor Regulation",
+      "estimated_decree": "Ministerial Decision No. 40676 dated 17/3/1445H, issued under Article 7 of the Labor Law; replaced the earlier Council of Ministers Decision No. 310 dated 7/9/1434H",
+      "estimated_article_count": "23 articles",
+      "priority": "medium",
+      "priority_rationale": "Governs the employer/domestic-worker relationship (housemaids, private drivers, nannies, cooks, gardeners, guards) -- a category with an extremely large real-world population in Saudi households but not addressed by any of labor_law's existing annex tracks (labor_model_work_regulation, labor_recruitment_services_rules, etc.), none of which specifically cover domestic labor. Like those annexes, this is a ministerial-decision-level regulation rather than a standalone Royal Decree نظام, so it sits in the same category as several labor annexes already in the corpus.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "نظام وثائق السفر ولائحته التنفيذية",
+      "law_name_en": "Travel Documents Law (Passports Law) and its Implementing Regulation",
+      "estimated_decree": "Royal Decree No. M/24 dated 28/5/1421H (2000)",
+      "estimated_article_count": "Unknown, needs verification",
+      "priority": "low-medium",
+      "priority_rationale": "Governs issuance of passports, laissez-passer documents, and diplomatic/special passports; supersedes the older 1380H/1392H passport systems. Operationally relevant (passport loss/seizure orders, exit-reentry disputes) but a narrower, more procedural practice area than nationality or residency law.",
+      "confidence_exists": "confirmed"
+    },
+    {
+      "law_name_ar": "تنظيم الهيئة الوطنية للأمن السيبراني",
+      "law_name_en": "Statute (Organizational Regulation) of the National Cybersecurity Authority",
+      "estimated_decree": "Royal Order No. 6801 dated 11/2/1439H (2017); amended by Royal Order No. 7053 dated 2/2/1443H",
+      "estimated_article_count": "Unknown, needs verification -- likely a short organizational statute (mandate, board, chairmanship), not a lengthy compliance code",
+      "priority": "low-medium",
+      "priority_rationale": "This is only the institutional/establishment statute for NCA -- parallel in genre to nazaha_law and awqaf_law (both established via Royal Order and already absorbed into the corpus) -- NOT a substantive cybersecurity-compliance law. NCA's actual technical requirements (Essential Cybersecurity Controls/ECC, etc.) are sub-legal regulatory frameworks issued directly by the authority, not Royal-Decree/Royal-Order-level legislation, so they do not themselves qualify as a corpus gap. Flagging only the narrow organizational statute, with low-medium priority given its institutional (not transactional) nature.",
+      "confidence_exists": "confirmed as having existed (issued via Royal Order), but unconfirmed whether its scope is substantial enough (article count, operative content) to warrant a full track versus being a short organizational instrument similar to the already-covered authority-establishment statutes"
     }
   ]
 }
