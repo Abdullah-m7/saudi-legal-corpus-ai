@@ -19,11 +19,11 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 156,
+  "total_tracks": 157,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 99,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 22,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 12,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 13,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
   "tracks_with_per_article_variation": 21,
@@ -573,6 +573,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_X_ZATCA_PDF_X_GSTC_PDF_X_NEZAMS_CROSS_VERIFIED_CH10_BOE_ONLY' — يذكر اسم الحالة نفسه الفجوة: 69 من 81 مادة تحققت عبر 3-4 مصادر (BOE + زكاة وضريبة وجمارك + gstc.gov.sa + nezams.com)، لكن الفصل العاشر بالكامل (12 مادة، 44-55) يعتمد على مصدرين فقط (BOE + nezams)، إذ اكتفت المصادر الحكومية بإشعار إلغاء مجرَّد دون النص البديل الكامل؛ كما تحمل 7 مواد أخرى تعديلاً موثَّقاً من حاشية زكاة/ضريبة/جمارك وحدها دون تأكيد على مستوى الفقرة. التصنيف هنا يعتمد الجزء الأضعف (الفصل العاشر + المواد السبع).",
       "has_per_article_variation": true,
       "per_article_variation_note": "الفصل العاشر (المواد 44-55، 12 مادة) يعتمد على مصدرين فقط (BOE+nezams) بدل نمط 3-4 مصادر المعتاد في بقية المسار؛ 7 مواد أخرى (9، 12، 13، 17، 43، 63، 65) معلَّمة معدَّلة استناداً إلى حاشية زكاة/ضريبة/جمارك وحدها؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "income_tax_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='ZATCA_GOV_SA_X_GSTC_GOV_SA_DUAL_GOVERNMENT_COPY_CROSSCHECK_PYMUPDF_COORDINATE_RECONSTRUCTION_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "insurance_control_law",

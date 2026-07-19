@@ -194,6 +194,7 @@ FOOD_REGULATION_LLM = os.path.join(ROOT, "data", "food_regulation_arabic_legal_l
 ELECTRICITY_LAW_LLM = os.path.join(ROOT, "data", "electricity_arabic_legal_llm", "electricity_law_legal_llm_001_023.json")
 WATER_LAW_LLM = os.path.join(ROOT, "data", "water_arabic_legal_llm", "water_law_legal_llm_001_077.json")
 VAT_REGULATION_LLM = os.path.join(ROOT, "data", "vat_regulation_arabic_legal_llm", "vat_regulation_legal_llm_001_082.json")
+INCOME_TAX_REGULATION_LLM = os.path.join(ROOT, "data", "income_tax_regulation_arabic_legal_llm", "income_tax_regulation_legal_llm_001_074.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -381,6 +382,7 @@ def main() -> int:
     electricity_law_llm = _load_json(ELECTRICITY_LAW_LLM)
     water_law_llm = _load_json(WATER_LAW_LLM)
     vat_regulation_llm = _load_json(VAT_REGULATION_LLM)
+    income_tax_regulation_llm = _load_json(INCOME_TAX_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -401,7 +403,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 156,
+        "total_tracks": 157,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -561,6 +563,7 @@ def main() -> int:
             + electricity_law_llm["record_count"]  # 23 Saudi Arabian Electricity Law (Royal Decree M/44, 1442H) (TIER_3, BOE unreachable this pass, PRIMARY nezams.com single clean born-digital aggregator page x multi-source metadata cross-check (BOE/Umm Al-Qura via WebSearch, Lexis Middle East, SERA), 23 اصلية all unamended, confirmed named repeal-and-replace of the older M/56 1426H law via Article 23, see track notes)
             + water_law_llm["record_count"]  # 77 Saudi Arabian Water Law (Royal Decree M/159, 1441H) (TIER_3, BOE has a dedicated lawId page but unreachable this pass, Wayback egress-blocked, PRIMARY nezams.com single clean aggregator x multi-source metadata cross-check via WebSearch indexing of BOE's own content, 77 اصلية no amendments, confirmed NAMED repeal of three predecessor laws (M/22 1391H, M/34 1400H, M/6 1421H) via Article 75, see track notes)
             + vat_regulation_llm["record_count"]  # 82 Implementing Regulation of the VAT Law (ZATCA Board Resolution 3839, 14 Dhul-Hijjah 1438H, Tenth Edition consolidating 11 amendments through Nov 2024) (TIER_3, BOE has no dedicated lawId page for this Board-level regulation, PRIMARY zatca.gov.sa official consolidated PDF, dual PyMuPDF-geometric x Tesseract-OCR extraction reconciled to work around a systematic bidi word-order defect, 37 اصلية/42 معدلة/3 مضافة (mukarrar articles), printed Gregorian cover date independently corrected 14 Nov 2016 -> 5 Sep 2017 matching the true Hijri date, confirmed no separate named predecessor beyond the parent Law, see track notes)
+            + income_tax_regulation_llm["record_count"]  # 74 Implementing Regulation of the Income Tax Law (Ministerial Resolution 1535, 11/6/1425H, consolidated through 13 amendments to Resolution 25, 8/1/1445H) (TIER_3, BOE has no dedicated lawId page for this Ministerial-Resolution-level regulation, PRIMARY two cross-verified government copies -- ZATCA official PDF x gstc.gov.sa INCOM2.pdf -- both headers confirm the exact date the parent income_tax_law track could not pin down, 30 اصلية/19 معدلة/25 ملغاة, 25 natural-gas IRR-regime articles preserved in full text despite formal repeal via Resolution 2568, confirmed no separate named predecessor beyond the parent Law, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -711,6 +714,7 @@ def main() -> int:
             + electricity_law_llm["record_count"]
             + water_law_llm["record_count"]
             + vat_regulation_llm["record_count"]
+            + income_tax_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5289,6 +5293,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian VAT Law «اللائحة التنفيذية لنظام ضريبة القيمة المضافة» — ZATCA Board of Directors Resolution No. (3839), dated 14 Dhul-Hijjah 1438H, the companion-regulation follow-up candidate this corpus's own vat_law track had explicitly flagged as confirmed to exist but not extracted. **82 records** (79 numbered articles + 3 مكرر: 32-mukarrar, 36-mukarrar, 36-mukarrar-2), **37 اصلية / 42 معدلة / 3 مضافة / 0 ملغاة**, across 12 chapters. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has NO dedicated lawId page for this Board-level regulation (matching this corpus's food_regulation precedent); PRIMARY source is ZATCA's own official consolidated PDF, the 'Tenth Edition' (Shawwal 1446H / April 2025, 160 pages, born-digital, internal CreationDate 16 April 2025), which itself consolidates the founding Resolution with 11 subsequent amending Board resolutions, all independently sourced with their own decree numbers and dual Hijri/Gregorian dates from the PDF's own cover. **DATE ANOMALY INDEPENDENTLY RE-RESOLVED (not merely copied from the parent track)**: ZATCA's own cover prints '14 ذو الحجة 1438هـ الموافق 14 نوفمبر 2016م' — the printed Gregorian is WRONG; 14 Dhul-Hijjah 1438H converts independently (confirmed via the hijri_converter library and the Eid al-Adha anchor date) to 5 September 2017G, not November 2016G, and 14 Nov 2016 would in any case predate the parent VAT Law itself (M/113, 2 Dhul-Qadah 1438H = 25 July 2017G) — a logical impossibility for its own Implementing Regulation. The Hijri date governs; the printed Gregorian error is disclosed, not silently corrected. **EXTRACTION METHODOLOGY**: this PDF stores Arabic with a systematic bidi word-order defect; two fully independent extraction pipelines (PyMuPDF geometric glyph-coordinate reconstruction; Tesseract Arabic OCR of 300dpi renders) were reconciled via alignment, with disclosed residual artifacts (~30 misplaced punctuation marks, occasional word merges/splits, leaked page numbers). Per-article amendment attribution for the 42 معدلة set is article-level only (specific amending Board resolution numbers per article are not pinned, since they extract reversed). No separate preamble extracted; no BOE dedicated lawId page (matches food_regulation pattern). Confirmed no separate named predecessor beyond the parent Law itself. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "income_tax_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام ضريبة الدخل",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian Income Tax Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "ZATCA_GOV_SA_X_GSTC_GOV_SA_DUAL_GOVERNMENT_COPY_CROSSCHECK_PYMUPDF_COORDINATE_RECONSTRUCTION_BOE_NO_DEDICATED_LAWID_PAGE",
+                "source_authority": "Ministerial Resolution No. (1535), dated 11/6/1425H, issued by the Minister of Finance under Article 79 of the Income Tax Law (Royal Decree M/1, 15/1/1425H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but has NO dedicated lawId page for this Implementing Regulation (only for the base Law), so two cross-verified government-hosted copies are the authoritative sources: ZATCA's own official consolidated PDF (newest, amended through Resolution 25, 8/1/1445H) and gstc.gov.sa's older INCOM2.pdf (amended through Resolution 2568, 12/8/1440H) — both headers independently confirm the same founding resolution number and date",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": income_tax_regulation_llm["record_count"],
+                    "data_path": "data/income_tax_regulation_arabic_legal_llm/income_tax_regulation_legal_llm_001_074.json"}},
+                "record_counts": {"arabic_articles": income_tax_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 30, "معدلة": 19, "ملغاة": 25, "مضافة": 0},
+                                  "total": income_tax_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/income_tax/regulation/official_source/income_tax_regulation_official_source.json",
+                    "sources/income_tax/regulation/verified/income_tax_regulation_verified_records.jsonl",
+                    "data/income_tax_regulation_arabic_legal_llm/income_tax_regulation_legal_llm_001_074.json",
+                ],
+                "validator_targets": ["make income-tax-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian Income Tax Law «اللائحة التنفيذية لنظام ضريبة الدخل» — Ministerial Resolution No. (1535), dated 11/6/1425H, the companion-regulation follow-up candidate this corpus's own income_tax_law track had explicitly flagged as confirmed to exist (via two hosted copies) but whose exact Hijri date could not be verified. **This track pins the date**: 11/6/1425H, cross-verified across BOTH government copies' own headers. **74 articles across 30 topical section headings**, contiguous 1-74, **30 اصلية / 19 معدلة / 25 ملغاة / 0 مضافة**. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has NO dedicated lawId page for this Implementing Regulation (only for the base Law, lawId 23576008-1ce4-4685-ac3e-a9a700f2cb02); PRIMARY sources are TWO cross-verified government-hosted copies — ZATCA's own official consolidated PDF (newest, amended through Resolution 25, 8/1/1445H) and gstc.gov.sa's older INCOM2.pdf (amended through Resolution 2568, 12/8/1440H) — the same dual-government-copy cross-check this corpus's income_tax_law track itself established for this family of documents. Consolidated through 13 ministerial amendments total. **NATURAL-GAS RISK, INVERSE OF THE PARENT LAW TRACK**: the ضريبة استثمار الغاز الطبيعي section implements the OLD Internal-Rate-of-Return natural-gas regime; Resolution 2568 (12/8/1440H, accompanying the M/70 reform) REPEALED 25 of its articles — but unlike the parent income_tax_law track (where both government PDFs printed only a bare repeal notice for its Chapter 10), ZATCA's copy of THIS Regulation preserves the FULL TEXT of the repealed articles with a (تم حذف المادة) footnote, so those 25 articles are marked ملغاة with their preserved text and text_complete=true — the completeness risk is inverted (text present in full but formally repealed, rather than text missing). **EXTRACTION METHODOLOGY**: ZATCA's copy stores Arabic in presentation forms (NFKC-normalized); a coordinate-based PyMuPDF reconstruction was used instead of pdftotext -layout, since the latter scrambles justified-line word order (calibrated against Resolution 2194 extracting as 12/7/1432H, matching the parent track's own independently-pinned date for that same resolution). Disclosed extraction-layer fixes: 952 lam-alef ligature split-sites rejoined (33 residual via a hand-verified dictionary), single-letter split prefixes rejoined, dates reformatted, editorial footnote-reference markers removed at clause boundaries while legal numbers preserved, tashkeel/tatweel stripped uniformly. Confirmed no separate named predecessor beyond the parent Law itself. Arabic governs; not legal advice.",
             },
         ],
     }

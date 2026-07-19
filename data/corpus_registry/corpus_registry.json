@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10311,
+  "total_primary_arabic_governing_records": 10385,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11206,
-  "total_tracks": 156,
+  "total_registry_counted_records": 11280,
+  "total_tracks": 157,
   "tracks": [
     {
       "boundaries": {
@@ -7407,6 +7407,55 @@
       "validator_targets": [
         "make vat-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/income_tax/regulation/official_source/income_tax_regulation_official_source.json",
+        "sources/income_tax/regulation/verified/income_tax_regulation_verified_records.jsonl",
+        "data/income_tax_regulation_arabic_legal_llm/income_tax_regulation_legal_llm_001_074.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام ضريبة الدخل",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Income Tax Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/income_tax_regulation_arabic_legal_llm/income_tax_regulation_legal_llm_001_074.json",
+          "governing": true,
+          "record_count": 74,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian Income Tax Law «اللائحة التنفيذية لنظام ضريبة الدخل» — Ministerial Resolution No. (1535), dated 11/6/1425H, the companion-regulation follow-up candidate this corpus's own income_tax_law track had explicitly flagged as confirmed to exist (via two hosted copies) but whose exact Hijri date could not be verified. **This track pins the date**: 11/6/1425H, cross-verified across BOTH government copies' own headers. **74 articles across 30 topical section headings**, contiguous 1-74, **30 اصلية / 19 معدلة / 25 ملغاة / 0 مضافة**. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has NO dedicated lawId page for this Implementing Regulation (only for the base Law, lawId 23576008-1ce4-4685-ac3e-a9a700f2cb02); PRIMARY sources are TWO cross-verified government-hosted copies — ZATCA's own official consolidated PDF (newest, amended through Resolution 25, 8/1/1445H) and gstc.gov.sa's older INCOM2.pdf (amended through Resolution 2568, 12/8/1440H) — the same dual-government-copy cross-check this corpus's income_tax_law track itself established for this family of documents. Consolidated through 13 ministerial amendments total. **NATURAL-GAS RISK, INVERSE OF THE PARENT LAW TRACK**: the ضريبة استثمار الغاز الطبيعي section implements the OLD Internal-Rate-of-Return natural-gas regime; Resolution 2568 (12/8/1440H, accompanying the M/70 reform) REPEALED 25 of its articles — but unlike the parent income_tax_law track (where both government PDFs printed only a bare repeal notice for its Chapter 10), ZATCA's copy of THIS Regulation preserves the FULL TEXT of the repealed articles with a (تم حذف المادة) footnote, so those 25 articles are marked ملغاة with their preserved text and text_complete=true — the completeness risk is inverted (text present in full but formally repealed, rather than text missing). **EXTRACTION METHODOLOGY**: ZATCA's copy stores Arabic in presentation forms (NFKC-normalized); a coordinate-based PyMuPDF reconstruction was used instead of pdftotext -layout, since the latter scrambles justified-line word order (calibrated against Resolution 2194 extracting as 12/7/1432H, matching the parent track's own independently-pinned date for that same resolution). Disclosed extraction-layer fixes: 952 lam-alef ligature split-sites rejoined (33 residual via a hand-verified dictionary), single-letter split prefixes rejoined, dates reformatted, editorial footnote-reference markers removed at clause boundaries while legal numbers preserved, tashkeel/tatweel stripped uniformly. Confirmed no separate named predecessor beyond the parent Law itself. Arabic governs; not legal advice.",
+      "official_text_status": "ZATCA_GOV_SA_X_GSTC_GOV_SA_DUAL_GOVERNMENT_COPY_CROSSCHECK_PYMUPDF_COORDINATE_RECONSTRUCTION_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 74,
+        "legal_status_breakdown": {
+          "اصلية": 30,
+          "مضافة": 0,
+          "معدلة": 19,
+          "ملغاة": 25
+        },
+        "total": 74
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. (1535), dated 11/6/1425H, issued by the Minister of Finance under Article 79 of the Income Tax Law (Royal Decree M/1, 15/1/1425H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but has NO dedicated lawId page for this Implementing Regulation (only for the base Law), so two cross-verified government-hosted copies are the authoritative sources: ZATCA's own official consolidated PDF (newest, amended through Resolution 25, 8/1/1445H) and gstc.gov.sa's older INCOM2.pdf (amended through Resolution 2568, 12/8/1440H) — both headers independently confirm the same founding resolution number and date",
+      "status": "complete",
+      "track_id": "income_tax_regulation",
+      "validator_targets": [
+        "make income-tax-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7473,7 +7522,7 @@
       "health_system": 29,
       "healthcare_professions": 44,
       "iflas_hudud": 23,
-      "income_tax": 81,
+      "income_tax": 155,
       "insurance_control": 25,
       "investment": 53,
       "judgment_objection_methods": 62,
@@ -7533,7 +7582,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10142,
+    "total_records": 10216,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

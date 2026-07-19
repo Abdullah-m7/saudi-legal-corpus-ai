@@ -1350,6 +1350,24 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "regulation. No edge modeled.",
         "source_ref": "sources/vat/regulation/official_source/vat_regulation_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["income_tax_regulation"],
+        "issue": "confirmed negative repeal finding -- no separate named predecessor beyond the parent Law",
+        "note": "income_tax_regulation (Ministerial Resolution No. (1535), "
+                "11/6/1425H) names no repealed predecessor Implementing "
+                "Regulation anywhere in its 74 articles -- it is the first "
+                "and only Implementing Regulation issued under the "
+                "already-ingested income_tax_law track's own authority "
+                "(Royal Decree M/1, 15/1/1425H, Article 79), consolidating "
+                "13 ministerial amendments rather than repealing/replacing "
+                "a prior regulation. (Resolution 2568, 12/8/1440H, formally "
+                "repealed 25 natural-gas articles WITHIN this same "
+                "Regulation via its own internal amendment mechanism -- an "
+                "intra-track legal_status_ar=ملغاة classification already "
+                "captured per-article, not a supersession-graph "
+                "relationship between two distinct tracks.)",
+        "source_ref": "sources/income_tax/regulation/official_source/income_tax_regulation_official_source.json (verification_methodology_note)",
+    },
 ]
 
 

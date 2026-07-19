@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 340,
-  "top1_hits": 314,
-  "top3_hits": 333,
-  "top5_hits": 336,
-  "top1_accuracy": 0.9235,
-  "top3_accuracy": 0.9794,
-  "top5_accuracy": 0.9882,
-  "mrr_at_5": 0.9506,
+  "total_queries": 342,
+  "top1_hits": 316,
+  "top3_hits": 335,
+  "top5_hits": 338,
+  "top1_accuracy": 0.924,
+  "top3_accuracy": 0.9795,
+  "top5_accuracy": 0.9883,
+  "mrr_at_5": 0.9509,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8136,8 +8136,8 @@
      "score": 16
     },
     {
-     "record_id": "anti-narcotics-law-llm-art-031",
-     "article_number": 31,
+     "record_id": "income-tax-regulation-llm-art-002",
+     "article_number": 2,
      "score": 12
     }
    ]
@@ -8224,14 +8224,14 @@
      "score": 32
     },
     {
-     "record_id": "zakat-law-llm-art-006",
-     "article_number": 6,
+     "record_id": "income-tax-regulation-llm-art-001",
+     "article_number": 1,
      "score": 27
     },
     {
-     "record_id": "oa-llm-companies-art-273",
-     "article_number": 273,
-     "score": 20
+     "record_id": "zakat-law-llm-art-006",
+     "article_number": 6,
+     "score": 27
     }
    ]
   },
@@ -10557,6 +10557,68 @@
      "record_id": "customs-law-llm-art-187",
      "article_number": 178,
      "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "itr-001",
+   "query_ar": "الشخص الطبيعي مقيما في المملكة خلال السنة يعد، الضريبية إذا كان له مسكن دائم في المملكة، وأن يتواجد بالمملكة لمدة لا تقل في مجموعها عن ثلاثين يوما متصلة أو متفرقة خلال السنة الضريبية",
+   "category": "topical",
+   "gold": {
+    "corpus": "income_tax",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "income-tax-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 51
+    },
+    {
+     "record_id": "zakat-law-llm-art-004",
+     "article_number": 4,
+     "score": 36
+    },
+    {
+     "record_id": "income-tax-law-llm-art-003",
+     "article_number": 3,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "itr-002",
+   "query_ar": "تعفى من الضريبة المكاسب الرأسمالية المتحققة من التخلص من الأوراق المالية المتداولة في السوق المالية في المملكة سواء من خلال البيع أو التداول أو نحوه",
+   "category": "topical",
+   "gold": {
+    "corpus": "income_tax",
+    "law_component": "regulation",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "income-tax-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 46
+    },
+    {
+     "record_id": "capital-market-law-llm-art-020",
+     "article_number": 20,
+     "score": 36
+    },
+    {
+     "record_id": "capital-market-law-llm-art-020_mukarrar_1",
+     "article_number": 20,
+     "score": 34
     }
    ]
   }
