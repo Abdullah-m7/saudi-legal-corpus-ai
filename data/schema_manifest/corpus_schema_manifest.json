@@ -1978,17 +1978,17 @@
     "skipped": false,
     "method": "For each schema, every real file of that kind anywhere in the corpus (not just the curated sample) is loaded and validated with the installed `jsonschema` library (Draft202012Validator semantics). unified_index_record_schema, corpus_registry_track_schema, verification_tier_entry_schema, supersession_edge_schema, cross_reference_edge_schema, and glossary_term_schema are NOT swept here because they are each produced by a single generator script this task's author read in full — their coverage is 100% by construction, unlike the three per-track layers below which are authored by 100+ separate per-track generator scripts.",
     "official_source_schema": {
-      "matching": 145,
-      "total": 147,
+      "matching": 146,
+      "total": 148,
       "note": "A permissive MINIMAL fallback branch (article_count + articles only) is why this number is high despite official_source.json being the least standardized layer in the corpus — see this schema's own `description` for named examples of further conventions accepted by MINIMAL but not deeply modeled. The 1-2 files (if any) that still fail even MINIMAL are non-article annex/table documents (e.g. labor_annex2/labor_annex5) that are not article-based laws at all and are out of scope for this schema."
     },
     "verified_record_schema": {
-      "matching": 127,
-      "total": 148
+      "matching": 128,
+      "total": 149
     },
     "llm_ready_layer_schema": {
-      "matching": 125,
-      "total": 151
+      "matching": 126,
+      "total": 152
     }
   }
 }

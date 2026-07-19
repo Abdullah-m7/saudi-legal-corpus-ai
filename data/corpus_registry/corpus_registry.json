@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10129,
+  "total_primary_arabic_governing_records": 10152,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11024,
-  "total_tracks": 153,
+  "total_registry_counted_records": 11047,
+  "total_tracks": 154,
   "tracks": [
     {
       "boundaries": {
@@ -7260,6 +7260,55 @@
       "validator_targets": [
         "make food-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/electricity/law/official_source/electricity_law_official_source.json",
+        "sources/electricity/law/verified/electricity_law_verified_records.jsonl",
+        "data/electricity_arabic_legal_llm/electricity_law_legal_llm_001_023.json"
+      ],
+      "display_name_ar": "نظام الكهرباء",
+      "display_name_en": "The Saudi Arabian Electricity Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/electricity_arabic_legal_llm/electricity_law_legal_llm_001_023.json",
+          "governing": true,
+          "record_count": 23,
+          "status": "complete"
+        }
+      },
+      "notes": "The Saudi Arabian Electricity Law «نظام الكهرباء» — Royal Decree No. (M/44), dated 16/5/1442H, a fresh coverage-gap candidate identified by this session's re-scan of the corpus's coverage-gap-map. **THERE ARE TWO ELECTRICITY LAWS IN CIRCULATION**: the older Royal Decree M/56 (20/10/1426H) and this newer M/44 (16/5/1442H). This track ingests the CURRENTLY IN-FORCE M/44 law, confirmed via four independent cross-checked signals: (1) this Law's own Article 23 explicitly repeals/replaces the M/56 law BY NAME ('يحل النظام محل نظام الكهرباء الصادر بالمرسوم الملكي رقم (م/56) وتاريخ 20/10/1426هـ، وتعديلاته، ويلغي ما يتعارض معه من أحكام') — a named repeal-and-replace clause, not a generic conflict-only clause; (2) laws.boe.gov.sa's current listing carries M/44 under a distinct lawId while the older M/56 has a separate historical lawId; (3) the regulator (Saudi Electricity Regulatory Authority, SERA) and its 2025 decisions still cite M/44; (4) nezams.com lists the law's status as 'ساري' with 'لم يجرى عليه تعديل' (no amendments). **23 records, ALL 23 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — the Law has had no amendments since enactment), across 9 chapters. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa was checked first per standard methodology but is unreachable this pass (connection reset / HTTP 503) and the Wayback Machine is blocked at this session's egress-policy level; the full verbatim text of all 23 articles was extracted from nezams.com, a single clean born-digital HTML aggregator page (HTTP 200, not a scanned/OCR PDF, so no systematic extraction/ligature defects of the kind the food_regulation track had to correct). Every governing metadata fact (decree number/date, Council of Ministers Resolution 262, Shura Council Resolution 9/47, Umm Al-Qura publication 24/5/1442H, in-force status, 23-article/9-chapter structure, and the named M/56 repeal clause) is cross-verified against multiple independent sources; a follow-up re-verification of the verbatim text against laws.boe.gov.sa is recommended once that portal is reachable. **OLDER M/56 LAW STATUS**: superseded/replaced by M/44 via the named Article-23 clause, but retains a separate historical BOE lawId page; its own Article-13 dispute committee continues transitionally (per Decree M/44's own clause سادساً) solely for cases filed before the new Law took effect, a limited procedural carryover disclosed rather than silently ignored. **IMPLEMENTING REGULATIONS IDENTIFIED BUT NOT INGESTED**: Article 22 mandates both a Minister's regulation and a Council's regulation, plus a separate violation-enforcement regulation amended in 2025 by SERA — flagged as companion 'electricity_regulation' candidates for a future dedicated pass (one-instrument-per-pass rule). Two disclosed source-rendering quirks (concatenated lettered sub-items in Articles 4 and 18, as rendered by nezams.com) are preserved verbatim, not silently re-spaced. Diacritics (tashkeel) and decorative kashida stripped uniformly. Arabic governs; not legal advice.",
+      "official_text_status": "NEZAMS_COM_SINGLE_FULLTEXT_AGGREGATOR_BOE_UNREACHABLE_MULTISOURCE_METADATA_CROSSCHECK_CONFIRMED_M44_SUPERSEDES_M56",
+      "record_counts": {
+        "arabic_articles": 23,
+        "legal_status_breakdown": {
+          "اصلية": 23,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 23
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/44), dated 16/5/1442H (Council of Ministers Resolution 262, 14/5/1442H; Shura Council Resolution 9/47, 1/5/1442H; Umm Al-Qura publication 24/5/1442H) — laws.boe.gov.sa was checked first per standard methodology but is unreachable this pass (connection reset / HTTP 503) and the Wayback Machine is blocked at this session's egress-policy level (not circumvented). PRIMARY source is nezams.com, a single clean born-digital HTML full-text aggregator page (not a scan/OCR product, so no systematic ligature-extraction defects), with every governing metadata fact cross-verified against multiple independent sources (BOE/Umm Al-Qura via WebSearch, Lexis Middle East, the Saudi Electricity Regulatory Authority SERA's own site, qanoonsa.com)",
+      "status": "complete",
+      "track_id": "electricity_law",
+      "validator_targets": [
+        "make electricity-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7307,6 +7356,7 @@
       "documentation_settlement": 15,
       "domestic_labor": 33,
       "ecommerce": 26,
+      "electricity": 23,
       "electronic_transactions": 31,
       "elitigation_guide": 5,
       "enforcement": 371,
@@ -7384,7 +7434,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 9960,
+    "total_records": 9983,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

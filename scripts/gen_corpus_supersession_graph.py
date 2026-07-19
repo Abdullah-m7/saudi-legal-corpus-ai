@@ -954,6 +954,26 @@ EDGES = [
                 "text becomes verifiable.",
         "source_ref": "data/corpus_registry/corpus_registry.json (copyright_law.notes)",
     },
+    {
+        "from_track_id": "electricity_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الكهرباء (السابق)",
+        "target_decree": "Royal Decree No. M/56, 20/10/1426H",
+        "note": "electricity_law's own Article 23 explicitly and specifically "
+                "states this Law replaces/repeals IN FULL the prior Electricity "
+                "Law issued by Royal Decree M/56 (20/10/1426H) and its "
+                "amendments ('يحل النظام محل نظام الكهرباء الصادر بالمرسوم الملكي "
+                "رقم (م/56) وتاريخ 20/10/1426هـ، وتعديلاته، ويلغي ما يتعارض معه "
+                "من أحكام') -- a named repeal-and-replace clause, not a generic "
+                "conflict-only clause. The predecessor M/56 law is not "
+                "separately ingested in this corpus (one-instrument-per-pass "
+                "rule); it retains a separate historical BOE lawId page, and "
+                "its own Article-13 dispute committee continues transitionally "
+                "(per Decree M/44's own clause سادساً) solely for cases filed "
+                "before the new Law took effect.",
+        "source_ref": "sources/electricity/law/official_source/electricity_law_official_source.json (article 23)",
+    },
 ]
 
 # ---------------------------------------------------------------------------
