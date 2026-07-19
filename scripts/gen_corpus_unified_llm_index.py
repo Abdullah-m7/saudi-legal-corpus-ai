@@ -312,6 +312,8 @@ LAYERS = [
      "food", "law"),
     ("data/health_system_arabic_legal_llm/health_system_law_legal_llm_001_019.json",
      "health_system", "law"),
+    ("data/domestic_labor_arabic_legal_llm/domestic_labor_regulation_legal_llm_001_033.json",
+     "domestic_labor", "regulation"),
 ]
 
 

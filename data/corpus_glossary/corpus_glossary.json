@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 144,
-  "total_terms": 825,
-  "total_definitions": 1249,
-  "tracks_with_definitions_article_parsed": 95,
+  "total_tracks_in_registry": 145,
+  "total_terms": 835,
+  "total_definitions": 1264,
+  "tracks_with_definitions_article_parsed": 96,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -538,6 +538,14 @@
     ],
     "الأجر": [
       {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "الأجر",
+        "definition_text": "كل ما يعطى للعامل المنزلي ومن في حكمه مقابل عمله بشكل شهري تنفيذا لما هو متفق عليه في عقد العمل المنزلي.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "labor_law",
         "article_number": 2,
         "term_as_written": "الأجر",
@@ -667,6 +675,16 @@
         "term_as_written": "الأرض",
         "definition_text": "العقار المخصص لتشيد بناء أو أكثر عليه بمرافقه وخدماته، ومستكملة فيه الإجراءات النظامية المعتمدة.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأسرة": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "الأسرة",
+        "definition_text": "صاحب العمل المنزلي والأشخاص الذين يسكنون معه في منزله، ويرتبط بهم بعلاقة قربى، أو مصاهرة، أو يتولى رعايتهم لأي سبب نظامي او أخلاقي.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3618,6 +3636,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السنة": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "السنة",
+        "definition_text": "اثنا عشر شهرا ميلادية.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السوق": [
       {
         "track_id": "capital_market_law",
@@ -3911,6 +3939,14 @@
       }
     ],
     "الشهر": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "الشهر",
+        "definition_text": "ثلاثون يوما.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "labor_law",
         "article_number": 2,
@@ -4292,6 +4328,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العامل المنزلي ومن في حكمه": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "العامل المنزلي ومن في حكمه",
+        "definition_text": "كل شخص ذي صفة طبيعية - ذكر أو أنثى - يؤدي عملا منزليا أو ما في حكمه مباشرا أو غير مباشر إلى صاحب العمل المنزلي وأي فرد من أفراد أسرته وتحت إشراف وتوجيه صاحب العمل المنزلي أو من يقوم مقامه وعند استخدام عبارة العامل المنزلي في هذه اللائحة فإنه يقصد بها العامل المنزلي ومن في حكمه.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العضو": [
       {
         "track_id": "chambers_of_commerce_law",
@@ -4482,6 +4528,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العمل المنزلي": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "العمل المنزلي",
+        "definition_text": "مهنة الخدمة الشخصية المباشرة، أو غير المباشرة التي يؤديها العامل المنزلي ومن في حكمه إلى صاحب العمل المنزلي، أو أي فرد من أفراد اسرته مقابل أجر وتصدر قائمة بمسميات المهن المنزلية وما في حكمها بما يتوافق مع متطلبات سوق العمل بقرار من الوزير أو من يفوضه.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العمل الموسمي": [
       {
         "track_id": "labor_law",
@@ -4499,6 +4555,16 @@
         "term_as_written": "العمل الهندسي",
         "definition_text": "الدراسات والتصاميم والرسومات والإشراف والتنفيذ والتشغيل والصيانة في شعب التخصصات الهندسية وفروعها.",
         "source_record_id": "engineering-practice-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العمل سخرة": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "العمل سخرة",
+        "definition_text": "جميع الأعمال أو الخدمات التي تفرض عنوة على العامل المنزلي ومن في حكمه تحت التهديد بأي عقاب والتي لا يكون قد تطوع العامل المنزلي بأدائها بمحض اختياره.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4877,6 +4943,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "criminal-procedure-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة العمالة المنزلية ومن في حكمهم.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8848,6 +8922,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الموارد البشرية والتنمية الاجتماعية.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "ecommerce_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -9137,6 +9219,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير العدل.",
         "source_record_id": "documentation-settlement-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الموارد البشرية والتنمية الاجتماعية.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10388,6 +10478,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "صاحب العمل المنزلي": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "صاحب العمل المنزلي",
+        "definition_text": "كل شخص ذي صفة طبيعية استقدم عامل منزلي ومن في حكمه عن طريق مكتب استقدام مرخص له، أو تعاقد معه – بطريق مباشر أو غير مباشر – لأداء العمل المنزلي.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "صحيفة العقار": [
       {
         "track_id": "real_estate_registration_implementing_regulation",
@@ -10465,6 +10565,16 @@
         "term_as_written": "طرح أو عرض الأوراق المالية",
         "definition_text": "إصدار أوراق مالية، أو دعوة الجمهور للاكتتاب فيها، أو الترويج لها بشكل مباشر أو غير مباشر، أو أي تصريح أو بيان أو اتصال يعتبر من حيث الأثر المترتب عليه بيعًا أو إصدارًا أو عرضًا للأوراق المالية، ولا يشمل ذلك المفاوضات الأولية أو العقود المبرمة مع متعهدي التغطية أو بينهم.",
         "source_record_id": "capital-market-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "طرفي العلاقة": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "طرفي العلاقة",
+        "definition_text": "صاحب العمل المنزلي والعامل المنزلي أو من في حكمه.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10555,6 +10665,16 @@
         "term_as_written": "عقد العمل البحري",
         "definition_text": "العقد المبرم بين مالك السفينة أو مجهزها أو ممثل عن أي منهما، وأي شخص للعمل على ظهر السفينة مقابل أجر.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد العمل المنزلي": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "عقد العمل المنزلي",
+        "definition_text": "هو عقد يرتبط به طرفي العلاقة بعلاقة عمل شخصية، يتعهد بموجبه العامل المنزلي ومن في حكمه بالعمل لدى صاحب العمل المنزلي وأسرته بشكل مباشر أو غير مباشر، مقابل أجر معلوم، ولمدة محددة.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11300,6 +11420,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مكان العمل": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "مكان العمل",
+        "definition_text": "المكان المخصص للإقامة الدائمة أو الإقامة المؤقتة لصاحب العمل المنزلي.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مكتب الأحوال المدنية": [
       {
         "track_id": "civil_status_law",
@@ -11757,6 +11887,16 @@
         "term_as_written": "وثيقة الإفصاح",
         "definition_text": "وثيقة تتضمن الإفصاح عن أبرز الحقوق والواجبات والمخاطر الجوهرية المتعلقة بفرص الامتياز.",
         "source_record_id": "franchise-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "وثيقة التأمين": [
+      {
+        "track_id": "domestic_labor_regulation",
+        "article_number": 1,
+        "term_as_written": "وثيقة التأمين",
+        "definition_text": "التعليمات بشأن التأمين على العمالة المنزلية الصادر بقرار مجلس الوزراء رقم 591 وتاريخ 13/10/1442هـ.",
+        "source_record_id": "domestic-labor-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
