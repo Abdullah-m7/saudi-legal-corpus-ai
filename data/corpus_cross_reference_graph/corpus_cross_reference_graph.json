@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 9960,
-  "total_references_extracted": 2018,
-  "intra_law_count": 1779,
-  "inter_law_count": 239,
+  "total_records_scanned": 9983,
+  "total_references_extracted": 2024,
+  "intra_law_count": 1784,
+  "inter_law_count": 240,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1696,
+    "high": 1702,
     "medium": 322
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -8041,6 +8041,72 @@
       "target_article_number": null,
       "target_law_name_raw": "التعاملات الإلكترونية والأنظمة الأخرى ذات الصلة",
       "raw_citation_text": "أحكام نظام التعاملات الإلكترونية والأنظمة الأخرى ذات الصلة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_law",
+      "source_record_id": "electricity-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "electricity_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_law",
+      "source_record_id": "electricity-law-llm-art-007",
+      "source_article_number": 7,
+      "type": "inter_law",
+      "target_track_id": "real_estate_expropriation_law",
+      "target_article_number": null,
+      "target_law_name_raw": "نزع ملكية العقارات للمنفعة العامة ووضع اليد المؤقت على العقار",
+      "raw_citation_text": "وفقا لنظام نزع ملكية العقارات للمنفعة العامة ووضع اليد المؤقت على العقار",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_law",
+      "source_record_id": "electricity-law-llm-art-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "electricity_law",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام، كل حادث يخرج عن نط",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_law",
+      "source_record_id": "electricity-law-llm-art-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "electricity_law",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام، الالتزام بما يأتي:",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_law",
+      "source_record_id": "electricity-law-llm-art-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "electricity_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام ما يأتي: أ- فرض غرا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "electricity_law",
+      "source_record_id": "electricity-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "electricity_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام- للنظر فيها، وعلى ا",
       "confidence": "high"
     },
     {

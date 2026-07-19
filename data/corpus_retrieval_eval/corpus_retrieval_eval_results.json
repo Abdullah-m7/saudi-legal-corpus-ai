@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 334,
-  "top1_hits": 308,
-  "top3_hits": 327,
-  "top5_hits": 330,
-  "top1_accuracy": 0.9222,
-  "top3_accuracy": 0.979,
-  "top5_accuracy": 0.988,
-  "mrr_at_5": 0.9497,
+  "total_queries": 336,
+  "top1_hits": 310,
+  "top3_hits": 329,
+  "top5_hits": 332,
+  "top1_accuracy": 0.9226,
+  "top3_accuracy": 0.9792,
+  "top5_accuracy": 0.9881,
+  "mrr_at_5": 0.95,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9717,9 +9717,9 @@
      "score": 41
     },
     {
-     "record_id": "tawtheeq-law-llm-art-057",
-     "article_number": 57,
-     "score": 37
+     "record_id": "electricity-law-llm-art-023",
+     "article_number": 23,
+     "score": 38
     }
    ]
   },
@@ -10371,6 +10371,68 @@
      "record_id": "allegiance-commission-law-llm-art-017",
      "article_number": 17,
      "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "ele-001",
+   "query_ar": "نشاط الكهرباء: نشاط يقوم به شخص أو يعتزم القيام به في مجال الكهرباء، ويشمل: توليد الكهرباء والإنتاج المزدوج من أي مصدر من مصادر الطاقة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "electricity",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "electricity-law-llm-art-001",
+     "article_number": 1,
+     "score": 35
+    },
+    {
+     "record_id": "electricity-law-llm-art-005",
+     "article_number": 5,
+     "score": 24
+    },
+    {
+     "record_id": "labor-annex3-llm-art-001",
+     "article_number": 1,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "ele-002",
+   "query_ar": "يجب على المنشآت الآتية تأمين مصدر احتياطي للطاقة الكهربائية على نفقتها",
+   "category": "topical",
+   "gold": {
+    "corpus": "electricity",
+    "law_component": "law",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "electricity-law-llm-art-008",
+     "article_number": 8,
+     "score": 14
+    },
+    {
+     "record_id": "electricity-law-llm-art-010",
+     "article_number": 10,
+     "score": 12
+    },
+    {
+     "record_id": "food-law-llm-art-017",
+     "article_number": 18,
+     "score": 8
     }
    ]
   }

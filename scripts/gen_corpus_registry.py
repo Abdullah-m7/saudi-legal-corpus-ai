@@ -191,6 +191,7 @@ TRAVEL_DOCUMENTS_REGULATION_LLM = os.path.join(ROOT, "data", "travel_documents_r
 NATIONALITY_REGULATION_LLM = os.path.join(ROOT, "data", "nationality_regulation_arabic_legal_llm", "nationality_regulation_legal_llm_001_035.json")
 HEALTH_SYSTEM_REGULATION_LLM = os.path.join(ROOT, "data", "health_system_regulation_arabic_legal_llm", "health_system_regulation_legal_llm_001_010.json")
 FOOD_REGULATION_LLM = os.path.join(ROOT, "data", "food_regulation_arabic_legal_llm", "food_regulation_legal_llm_001_085.json")
+ELECTRICITY_LAW_LLM = os.path.join(ROOT, "data", "electricity_arabic_legal_llm", "electricity_law_legal_llm_001_023.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -375,6 +376,7 @@ def main() -> int:
     nationality_regulation_llm = _load_json(NATIONALITY_REGULATION_LLM)
     health_system_regulation_llm = _load_json(HEALTH_SYSTEM_REGULATION_LLM)
     food_regulation_llm = _load_json(FOOD_REGULATION_LLM)
+    electricity_law_llm = _load_json(ELECTRICITY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -395,7 +397,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 153,
+        "total_tracks": 154,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -552,6 +554,7 @@ def main() -> int:
             + nationality_regulation_llm["record_count"]  # 35 Implementing Regulation of the Nationality Law (Ministerial Decision 74/زو, 1426H) (TIER_2, BOE hosts no dedicated page, PRIMARY moi.gov.sa Wayback triple-snapshot byte-identical x nezams.com x alriyadh.com 2005G contemporaneous full-text, article count corrected 25->35, Article 28 confirmed repealed and preserved, confirmed no named predecessor, see track notes)
             + health_system_regulation_llm["record_count"]  # 10 Implementing Regulation of the Health System Law (Ministerial Decision 30/69181, 1424H) (TIER_4, laws.boe.gov.sa/istitlaa.ncc.gov.sa both confirmed unreachable, PRIMARY qanoniah.com public API with a confirmed 10-item preview cap, explicit PARTIAL coverage of parent Law Articles 2-11 only, Article 1 and 12-19 excluded not fabricated, confirmed no named predecessor, see track notes)
             + food_regulation_llm["record_count"]  # 85 Implementing Regulation of the Food Law (SFDA Board Resolution 3-16-1439, 1439H, as amended by Resolution 4/44, 1446H) (TIER_2, BOE unreachable and confirmed to have no dedicated lawId page for this Implementing Regulation at all, PRIMARY sfda.gov.sa born-digital PDF x qanoonsa.com/qistas.com cross-checks, 81 اصلية/1 معدلة/3 مضافة, extensive font ligature-reversal extraction defects fixed, final article mislabeled '58' preserved verbatim, penalty table confirmed out of scope, confirmed no named predecessor, see track notes)
+            + electricity_law_llm["record_count"]  # 23 Saudi Arabian Electricity Law (Royal Decree M/44, 1442H) (TIER_3, BOE unreachable this pass, PRIMARY nezams.com single clean born-digital aggregator page x multi-source metadata cross-check (BOE/Umm Al-Qura via WebSearch, Lexis Middle East, SERA), 23 اصلية all unamended, confirmed named repeal-and-replace of the older M/56 1426H law via Article 23, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -699,6 +702,7 @@ def main() -> int:
             + nationality_regulation_llm["record_count"]
             + health_system_regulation_llm["record_count"]
             + food_regulation_llm["record_count"]
+            + electricity_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5193,6 +5197,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian Food Law «اللائحة التنفيذية لنظام الغذاء» — SFDA Board Resolution No. (3-16-1439), dated 9/4/1439H, issued under the authority of the already-ingested food_law track (Royal Decree M/1, 6/1/1436H). Explicitly flagged, but not ingested, in food_law's own known_unresolved_discrepancies (key 'food_implementing_regulation_penalty_amendments_out_of_scope', '~85 articles ... confirmed to exist but out of scope for this track'); this is a dedicated follow-up. **85 records: 81 اصلية, 1 معدلة (Article 41), 3 مضافة (Articles 42-44, new food-poisoning procedure articles), 0 ملغاة**, per SFDA Board Resolution No. (4/44), 14/6/1446H. 12 chapters, with a genuine duplicate chapter-title anomaly preserved verbatim (chapters 4 and 5 both titled 'تداول الغذاء', mirroring the same disclosed anomaly in the food_law track). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa was checked first per standard methodology but is unreachable live this pass and confirmed to have no dedicated lawId page for this Implementing Regulation at all (only for the base Food Law); a Wayback snapshot of BOE's only related page is confirmed to exist but its content host is blocked at this session's egress-policy level, identical to what the food_law track itself documented for the same subject area. PRIMARY source is sfda.gov.sa (the issuing Authority's own site), a BORN-DIGITAL PDF (2025-06 upload, Creator 'Canon iR-ADV C5540 PDF', a print-to-PDF signature, not an OCR product) with a genuine embedded vector text layer — unlike the OLDER (2021-04) scanned/rasterized PDF the food_law track itself had to rely on. This SFDA file interleaves the base Food Law's own 45 boxed articles (excluded, out of scope, already covered by food_law) with this Regulation's own 85 unboxed articles, extracted via two independent pipelines (poppler pdftotext -layout; PyMuPDF + pdftotext -bbox word-coordinate reconstruction) that geometrically exclude the boxed base-law text and reconstruct correct RTL word order, cross-verified against qanoonsa.com and qistas.com for decree number/date, article count, and amendment history. **THREE SYSTEMATIC FONT LIGATURE-REVERSAL EXTRACTION DEFECTS DISCLOSED AND FIXED**, confirmed via two independent extraction tools plus direct visual page inspection (ruling out a source-content defect): reversed-order 'لم' after alif-lam, reversed-order 'لا' (lam-alef ligature) both mid-root and at the definite-article/alif-initial-word boundary, and reversed-order 'لإ'/'لأ'/'لآ' (lam before hamzated/madda alif) — fixed via a large, individually-verified substitution dictionary, not a blind global regex, since many superficially-similar words do not contain a true ligature. **GENUINE SOURCE ANOMALY PRESERVED**: the final article's own printed header literally reads 'المادة (58) من اللائحة' (a transposed-digit typo for 85), confirmed via direct visual page inspection, preserved verbatim rather than silently renumbered. A separate violation-classification-and-penalty TABLE (amended by Board Resolution 5/44, ~May 2026) is confirmed out of scope — a distinct tabular/numeric annex, not a textual amendment to any of this track's 85 numbered articles. **CONFIRMED NEGATIVE FINDING**: no repeal of a prior implementing regulation was found in any source — flagged in the supersession graph's ambiguous_or_excluded_cases rather than modeled as an edge. No legal text is altered beyond the disclosed source-artifact-layer fixes (font ligature reversals, word-split-gap rejoining, page-footer/chapter-heading/leaked-base-law-header removal, two missing-space typos). Diacritics stripped uniformly. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "electricity_law",
+                "display_name_ar": "نظام الكهرباء",
+                "display_name_en": "The Saudi Arabian Electricity Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_COM_SINGLE_FULLTEXT_AGGREGATOR_BOE_UNREACHABLE_MULTISOURCE_METADATA_CROSSCHECK_CONFIRMED_M44_SUPERSEDES_M56",
+                "source_authority": "Royal Decree No. (M/44), dated 16/5/1442H (Council of Ministers Resolution 262, 14/5/1442H; Shura Council Resolution 9/47, 1/5/1442H; Umm Al-Qura publication 24/5/1442H) — laws.boe.gov.sa was checked first per standard methodology but is unreachable this pass (connection reset / HTTP 503) and the Wayback Machine is blocked at this session's egress-policy level (not circumvented). PRIMARY source is nezams.com, a single clean born-digital HTML full-text aggregator page (not a scan/OCR product, so no systematic ligature-extraction defects), with every governing metadata fact cross-verified against multiple independent sources (BOE/Umm Al-Qura via WebSearch, Lexis Middle East, the Saudi Electricity Regulatory Authority SERA's own site, qanoonsa.com)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": electricity_law_llm["record_count"],
+                    "data_path": "data/electricity_arabic_legal_llm/electricity_law_legal_llm_001_023.json"}},
+                "record_counts": {"arabic_articles": electricity_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": electricity_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/electricity/law/official_source/electricity_law_official_source.json",
+                    "sources/electricity/law/verified/electricity_law_verified_records.jsonl",
+                    "data/electricity_arabic_legal_llm/electricity_law_legal_llm_001_023.json",
+                ],
+                "validator_targets": ["make electricity-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "The Saudi Arabian Electricity Law «نظام الكهرباء» — Royal Decree No. (M/44), dated 16/5/1442H, a fresh coverage-gap candidate identified by this session's re-scan of the corpus's coverage-gap-map. **THERE ARE TWO ELECTRICITY LAWS IN CIRCULATION**: the older Royal Decree M/56 (20/10/1426H) and this newer M/44 (16/5/1442H). This track ingests the CURRENTLY IN-FORCE M/44 law, confirmed via four independent cross-checked signals: (1) this Law's own Article 23 explicitly repeals/replaces the M/56 law BY NAME ('يحل النظام محل نظام الكهرباء الصادر بالمرسوم الملكي رقم (م/56) وتاريخ 20/10/1426هـ، وتعديلاته، ويلغي ما يتعارض معه من أحكام') — a named repeal-and-replace clause, not a generic conflict-only clause; (2) laws.boe.gov.sa's current listing carries M/44 under a distinct lawId while the older M/56 has a separate historical lawId; (3) the regulator (Saudi Electricity Regulatory Authority, SERA) and its 2025 decisions still cite M/44; (4) nezams.com lists the law's status as 'ساري' with 'لم يجرى عليه تعديل' (no amendments). **23 records, ALL 23 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — the Law has had no amendments since enactment), across 9 chapters. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa was checked first per standard methodology but is unreachable this pass (connection reset / HTTP 503) and the Wayback Machine is blocked at this session's egress-policy level; the full verbatim text of all 23 articles was extracted from nezams.com, a single clean born-digital HTML aggregator page (HTTP 200, not a scanned/OCR PDF, so no systematic extraction/ligature defects of the kind the food_regulation track had to correct). Every governing metadata fact (decree number/date, Council of Ministers Resolution 262, Shura Council Resolution 9/47, Umm Al-Qura publication 24/5/1442H, in-force status, 23-article/9-chapter structure, and the named M/56 repeal clause) is cross-verified against multiple independent sources; a follow-up re-verification of the verbatim text against laws.boe.gov.sa is recommended once that portal is reachable. **OLDER M/56 LAW STATUS**: superseded/replaced by M/44 via the named Article-23 clause, but retains a separate historical BOE lawId page; its own Article-13 dispute committee continues transitionally (per Decree M/44's own clause سادساً) solely for cases filed before the new Law took effect, a limited procedural carryover disclosed rather than silently ignored. **IMPLEMENTING REGULATIONS IDENTIFIED BUT NOT INGESTED**: Article 22 mandates both a Minister's regulation and a Council's regulation, plus a separate violation-enforcement regulation amended in 2025 by SERA — flagged as companion 'electricity_regulation' candidates for a future dedicated pass (one-instrument-per-pass rule). Two disclosed source-rendering quirks (concatenated lettered sub-items in Articles 4 and 18, as rendered by nezams.com) are preserved verbatim, not silently re-spaced. Diacritics (tashkeel) and decorative kashida stripped uniformly. Arabic governs; not legal advice.",
             },
         ],
     }

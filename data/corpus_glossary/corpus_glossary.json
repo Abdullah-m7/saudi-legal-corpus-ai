@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 153,
-  "total_terms": 882,
-  "total_definitions": 1327,
-  "tracks_with_definitions_article_parsed": 101,
+  "total_tracks_in_registry": 154,
+  "total_terms": 897,
+  "total_definitions": 1354,
+  "tracks_with_definitions_article_parsed": 102,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1256,6 +1256,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الإعفاء": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الإعفاء",
+        "definition_text": "وثيقة تصدرها الهيئة لشخص للقيام بنشاط كهربائي دون الحصول على رخصة، أو بالإعفاء من شرط أو أكثر من شروط الرخصة.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الإعلان الإلكتروني": [
       {
         "track_id": "ecommerce_law",
@@ -1323,6 +1333,16 @@
         "term_as_written": "الإنتاج",
         "definition_text": "فصل المواد المخدرة أو المؤثرات العقلية عن أصلها النباتي.",
         "source_record_id": "anti-narcotics-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإنتاج المزدوج": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الإنتاج المزدوج",
+        "definition_text": "الإنتاج المتزامن للكهرباء والمياه المحلاة أو البخار أو كليهما.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1808,6 +1828,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "البيع بالتجزئة": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "البيع بالتجزئة",
+        "definition_text": "بيع الكهرباء بالتجزئة للمستهلكين.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التأمينات": [
       {
         "track_id": "social_insurance_legacy_law",
@@ -2248,6 +2278,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "التعريفة": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "التعريفة",
+        "definition_text": "مقابل مالي معتمد لتقديم خدمة أو بيع سلعة ضمن نشاط الكهرباء.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التعويضات": [
       {
         "track_id": "environmental_law",
@@ -2409,6 +2449,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم الهيئة.",
         "source_record_id": "cybersecurity-authority-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم الهيئة.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3584,6 +3632,14 @@
     ],
     "الرخصة": [
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الرخصة",
+        "definition_text": "وثيقة تصدرها الهيئة لشخص للقيام بنشاط كهربائي.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mining_investment_law",
         "article_number": 1,
         "term_as_written": "الرخصة",
@@ -3771,6 +3827,16 @@
         "term_as_written": "السجل المدني المركزي",
         "definition_text": "هو السجل العام الذي تدون فيه الحالات المدنية لجميع السعوديين.",
         "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السعر": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "السعر",
+        "definition_text": "مقابل مالي أو عيني متفق عليه بين مرخص لهما أو أكثر أو مرخص له ومستهلك كبير لتقديم خدمة أو بيع سلعة ضمن نشاط الكهرباء.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4387,6 +4453,16 @@
         "term_as_written": "الطابع",
         "definition_text": "المسئول عن المطبعة، سواء أكان صاحبها أم من يقوم مقامه.",
         "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطاقة": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الطاقة",
+        "definition_text": "جميع أنواع الطاقة الهيدروكربونية والطاقة الكهربائية المنتجة من المصادر التقليدية والمتجددة والذرية.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5736,6 +5812,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التي تصدرها الهيئة اللازمة لقيامها بمهماتها التنظيمية وفقا لأحكام النظام.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "اللوائح",
@@ -6018,6 +6102,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المتاجرة": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "المتاجرة",
+        "definition_text": "شراء الكهرباء بالجملة من مرخص له لأجل بيعها لمرخص له آخر أو لمستهلك كبير، أو استيرادها من خارج المملكة أو تصديرها منها.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المتحصلات": [
       {
         "track_id": "aml_law",
@@ -6170,6 +6264,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "electronic_transactions_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -6315,6 +6417,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ الهيئة.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6666,6 +6776,14 @@
     ],
     "المرخص له": [
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "من يحمل رخصة أو إعفاء ساري المفعول.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "enforcement_providers_regulation",
         "article_number": 1,
         "term_as_written": "المرخَّص له",
@@ -6944,6 +7062,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "المستهلك",
+        "definition_text": "كل شخص يزود بالخدمة الكهربائية لاستهلاكه الخاص.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "finance_companies_law",
         "article_number": 1,
         "term_as_written": "المستهلك",
@@ -6965,6 +7091,16 @@
         "term_as_written": "المستهلك",
         "definition_text": "كل شخص توجه له خدمات التمويل العقاري.",
         "source_record_id": "real-estate-finance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المستهلك الكبير": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "المستهلك الكبير",
+        "definition_text": "المستهلك الذي يكون استهلاكه من الكهرباء أعلى من الحد الذي تقرره الهيئة من وقت لآخر ووفقا للضوابط التي تصدرها.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7059,6 +7195,16 @@
         "term_as_written": "المشترك",
         "definition_text": "كل من يخضع للتأمينات رجلاً كان أو امرأة ، وعلى ذلك فإن استخدام تعبير المذكر في أي نص يشمل أيضاً المرأة مادام أن المعنى يستقيم بذلك. ويوصف هذا المشترك بأنه المشترك إلزامياً إذا كان من العمال المذكورين في الفقرة الثالثة من المادة الرابعة ، ويوصف بأنه المشترك اختيارياً إذا كان من الفئات المذكورة في الفقرة الرابعة من المادة الرابعة ، والفقرة الأولى من المادة الثامنة.",
         "source_record_id": "social-insurance-legacy-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المشتري الرئيس": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "المشتري الرئيس",
+        "definition_text": "المرخص له لشراء الطاقة، أو أي خلف له تحدده الهيئة، يقوم بنشاط المتاجرة وطرح مشاريع التوليد وفقا لما تحدده الهيئة في الرخصة.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8526,6 +8672,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الكهرباء.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "enforcement_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -9058,6 +9212,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة تنظيم المياه والكهرباء.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "electronic_transactions_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -9341,6 +9503,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة التجارة والاستثمار.",
         "source_record_id": "ecommerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الطاقة.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9652,6 +9822,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الطاقة.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "enforcement_law",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -9930,6 +10108,14 @@
         "definition_text": "وضع تكون من خلاله المنشأة - أو مجموعة منشآت - مسيطرة على نسبة معينة من السوق التي تمارس نشاطها فيها أو قادرة على التأثير فيها، أو بهما معاً، وتحدد اللائحة تلك النسبة وفقاً لمعايير يقرها المجلس.",
         "source_record_id": "competition-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "الوضع المهيمن",
+        "definition_text": "امتلاك القدرة على التأثير في عدالة اتخاذ القرارات أو التنافس المشروع.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوعاء الزكوي": [
@@ -10077,6 +10263,16 @@
         "term_as_written": "تأشيرة المغادرة",
         "definition_text": "تعني مشاهدة أو الختم على مصادقة مغادرة المواطن من المنفذ الذي غادر منه، وفي كل الأحوال يجب تسجيل خروجه بالحاسب الآلي.",
         "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تبريد المناطق": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "تبريد المناطق",
+        "definition_text": "الإنتاج المركزي للطاقة الحرارية، وتوزيعها باستخدام المياه المبردة أو أي وسيط آخر بوساطة أنابيب معزولة لتبريد الهواء أو تدفئته في المباني والمرافق.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10805,6 +11001,16 @@
         "term_as_written": "سند الشحن",
         "definition_text": "وثيقة يصدرها الناقل بناء على طلب الشاحن عند تسلم البضاعة منه،  توضح فيها بيانات النقل وشروطه.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "سوق الكهرباء": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "سوق الكهرباء",
+        "definition_text": "حالة يكون فيها بيع الكهرباء وشراؤها بالاحتكام إلى عوامل السوق الحرة الذي يخضع السعر فيه لقانون العرض والطلب.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11698,6 +11904,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "محطة التوزيع الرئيسة": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "محطة التوزيع الرئيسة",
+        "definition_text": "المحطة التي تقوم بتحويل الجهد المتوسط إلى جهد متوسط آخر.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "محطة التوزيع الفرعية": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "محطة التوزيع الفرعية",
+        "definition_text": "المحطة التي تقوم بتحويل الجهد المتوسط إلى الجهد المنخفض.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "محطة النقل": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "محطة النقل",
+        "definition_text": "المحطة التي تقوم بتحويل جهد النقل إلى جهد نقل آخر أو إلى الجهد المتوسط.",
+        "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مخطط المشروع": [
       {
         "track_id": "real_estate_expropriation_law",
@@ -12287,6 +12523,16 @@
         "term_as_written": "نائب الوزير",
         "definition_text": "نائب وزير الموارد البشرية والتنمية الاجتماعية للعمل النظام: نظام العمل.",
         "source_record_id": "labor-annex4-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط الكهرباء": [
+      {
+        "track_id": "electricity_law",
+        "article_number": 1,
+        "term_as_written": "نشاط الكهرباء",
+        "definition_text": "نشاط يقوم به شخص أو يعتزم القيام به في مجال الكهرباء، ويشمل: توليد الكهرباء والإنتاج المزدوج من أي مصدر من مصادر الطاقة، ونقل الكهرباء، وتوزيعها، والمتاجرة بها، وبيعها بالتجزئة، ونشاط المشتري الرئيس، وتبريد المناطق.",
+        "source_record_id": "electricity-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
