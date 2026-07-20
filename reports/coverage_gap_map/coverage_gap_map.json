@@ -150,13 +150,137 @@
       "confidence_exists": "confirmed"
     },
     {
-      "law_name_ar": "اللوائح التنفيذية للنظام العام للبيئة (التفتيش والتدقيق البيئي، ضبط المخالفات وإيقاع العقوبات، المقابل المالي للتراخيص والخدمات البيئية)",
-      "law_name_en": "Implementing Regulations of the General Environmental Law (a family of separate executive regulations: environmental inspection/audit, violations and penalties, and licensing/service fees)",
-      "estimated_decree": "Multiple separate instruments issued under environmental_law's base authority (already covered in the corpus) — a base consolidated Implementing Regulation exists (indexed via FAO's FAOLEX, sau138931.pdf) alongside at least three further subject-specific executive regulations found via Umm Al-Qura Gazette listings (inspection/audit; violations/penalties; licensing fees) and a separate one for environmental-service providers. Exact decree/decision numbers and dates for each were not confirmed in this pass.",
-      "estimated_article_count": "Not confirmed in this pass — needs verification for each instrument",
+      "law_name_ar": "عائلة اللوائح التنفيذية للنظام العام للبيئة (بحث موسّع، صححه من 3 إلى ~15 لائحة)",
+      "law_name_en": "Implementing Regulations of the General Environmental Law -- CORRECTED SCOPE: a family of ~15 separate Ministerial-level executive regulations, not 3",
+      "estimated_decree": "Corrected by a dedicated scoping research pass (see below): this is NOT a 3-instrument family as this map previously estimated. It is a family of approximately 15 independently-numbered Ministerial Decisions issued by MEWA under environmental_law's own Article 47/48 authority (Royal Decree M/165, 19/11/1441H). Each instrument has its own decision number, effective date, and amendment history -- they are NOT chapters of one consolidated regulation and must NOT be built as a single track.",
+      "estimated_article_count": "Varies per instrument; confirmed article counts only for a subset (see sub_candidates below)",
       "priority": "low-medium",
-      "priority_rationale": "environmental_law is already covered, but unlike most of the other Implementing-Regulation gaps above, the environmental executive-regulation landscape here is fragmented across several distinct instruments rather than a single companion Regulation — this needs a dedicated scoping pass (which single instrument, or which subset, would most sensibly constitute one track) before being treated as a standard one-law build, hence the lower priority relative to the cleaner single-document gaps above.",
-      "confidence_exists": "confirmed to exist in some fragmented multi-instrument form; the correct scope/boundary for a single track is unconfirmed"
+      "priority_rationale": "environmental_law itself is already covered. This sub-family is large and must be phased across multiple future build passes, prioritized by citation confidence -- not treated as one gap-map line item to close in a single pass.",
+      "confidence_exists": "confirmed to exist as a large, genuinely fragmented multi-instrument family -- see sub_candidates for per-instrument confidence",
+      "research_note": "A dedicated scoping research pass (2026-07-20) found laws.boe.gov.sa unreachable (HTTP 503, consistent with environmental_law's own documented experience); no dedicated BOE lawId page surfaced for any of the ~15 instruments via site: search either. Wayback Machine was correctly NOT attempted as a bypass per this corpus's standing egress-policy rule. PRIMARY sources used: qanoonsa.com (exact citations for the top 4), uqn.gov.sa (Umm Al-Qura Gazette, existence/date corroboration), mewa.gov.sa's own RulesLibrary page (confirmed the full ~15-title list and is the issuing Ministry's own authoritative index). A genuine citation disagreement was found for the environmental-service-providers regulation (582979/1/1442H vs. 1515009 in circulation) -- likely an original-vs-amendment relationship, unreconciled, flagged for the build pass to resolve directly against a gazette PDF, not silently picked. Recommendation: build SEPARATE tracks per instrument (this corpus's own precedent: GCC Unified Customs Law + its separate Implementing Regulation; the multiple separate Judiciary-family regulation tracks), phased by confidence tier below -- never one consolidated track, since an amendment to one instrument has no bearing on another's version history.",
+      "sub_candidates": [
+        {
+          "suggested_track_id": "environmental_inspection_audit_reg",
+          "name_ar": "اللائحة التنفيذية للتفتيش والتدقيق البيئي لنظام البيئة",
+          "citation": "Ministerial Decision No. (393691/1/1442H), 13/7/1442H; amended by Ministerial Decision No. (1511619), Umm Al-Qura Gazette issue 5057 (~22 Nov 2024 / ~20 Jumada al-Ula 1446H)",
+          "estimated_article_count": "8 articles + 1 appendix",
+          "build_readiness": "build-ready now",
+          "confidence": "high on existence/title/basis; medium on exact amendment-decision citation formatting"
+        },
+        {
+          "suggested_track_id": "environmental_violations_penalties_reg",
+          "name_ar": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+          "citation": "Ministerial Decision No. (312186/1/1442H), 4/6/1442H; amended by Ministerial Decision No. (1510161[9]) (exact date unconfirmed)",
+          "estimated_article_count": "8 articles + 2 appendices",
+          "build_readiness": "build-ready now",
+          "confidence": "high on existence/original citation; medium on amendment date"
+        },
+        {
+          "suggested_track_id": "environmental_permits_reg",
+          "name_ar": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة",
+          "citation": "Ministerial Decision No. (43615/3/1/1442H), 09/08/1442H; applied from 13 Sha'ban 1442H (26 March 2021)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "build-ready now",
+          "confidence": "high -- corroborated across uqn.gov.sa, MEWA news, SPA news agency, qistas.com"
+        },
+        {
+          "suggested_track_id": "environmental_air_quality_reg",
+          "name_ar": "اللائحة التنفيذية لجودة الهواء لنظام البيئة",
+          "citation": "Applied from 13 Shawwal 1442H (25 May 2021); Article 48 basis; exact decision number not captured this pass",
+          "estimated_article_count": "not confirmed; has 2 appendices of pollutant standards + a violations table",
+          "build_readiness": "build-ready now",
+          "confidence": "medium-high -- application date solid, exact decision number still needed"
+        },
+        {
+          "suggested_track_id": "environmental_service_providers_reg",
+          "name_ar": "اللائحة التنفيذية لمقدمي الخدمات البيئية لنظام البيئة",
+          "citation": "Original Decision No. 582979/1/1442H, 14/11/1442H -- UNRECONCILED against a later-circulating Decision No. 1515009 (likely a 2024/1446H amendment, needs gazette-PDF confirmation before build)",
+          "estimated_article_count": "12 articles + violations table (Table 1)",
+          "build_readiness": "needs one more citation-confirmation pass",
+          "confidence": "medium-high"
+        },
+        {
+          "suggested_track_id": "environmental_fees_reg",
+          "name_ar": "اللائحة التنفيذية للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية",
+          "citation": "Decision No. 618660/1/1442H, 05/12/1442H; approved/applied late July 2021",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs one more citation-confirmation pass",
+          "confidence": "medium-high"
+        },
+        {
+          "suggested_track_id": "environmental_water_pollution_reg",
+          "name_ar": "اللائحة التنفيذية لحماية الأوساط المائية من التلوث",
+          "citation": "Decision No. 603639/1/1442H; applied nationwide per MEWA news July 2021",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs one more citation-confirmation pass",
+          "confidence": "medium-high"
+        },
+        {
+          "suggested_track_id": "environmental_marine_coastal_reg",
+          "name_ar": "اللائحة التنفيذية لنظام البيئة للإدارة المستدامة للبيئة البحرية والساحلية",
+          "citation": "Approved ~September 2021 (1442/1443H); exact decision number/date not pinned down; defines responsibilities of 3 National Centers (NCEC, wildlife, vegetation-cover)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs a dedicated research pass before building",
+          "confidence": "medium -- title/existence solid"
+        },
+        {
+          "suggested_track_id": "environmental_emergency_response_reg",
+          "name_ar": "اللائحة التنفيذية لضوابط إعداد وتنفيذ خطط التأهب والاستجابة لحالات الطوارئ والكوارث البيئية",
+          "citation": "decision number not found this pass",
+          "estimated_article_count": "11 articles",
+          "build_readiness": "needs a dedicated research pass before building",
+          "confidence": "medium -- title/article-count solid"
+        },
+        {
+          "suggested_track_id": "environmental_protected_areas_reg",
+          "name_ar": "اللائحة التنفيذية للمناطق المحمية",
+          "citation": "not found this pass (MEWA RulesLibrary + gazette only)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs full discovery + citation research from scratch",
+          "confidence": "medium"
+        },
+        {
+          "suggested_track_id": "environmental_noise_reg",
+          "name_ar": "اللائحة التنفيذية للضوضاء",
+          "citation": "not found this pass (MEWA RulesLibrary only)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs full discovery + citation research from scratch",
+          "confidence": "medium"
+        },
+        {
+          "suggested_track_id": "environmental_ozone_hfc_reg",
+          "name_ar": "اللائحة التنفيذية للمواد المستنفدة لطبقة الأوزون ومركبات الكربون الهيدروفلورية",
+          "citation": "not found this pass (MEWA RulesLibrary only)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs full discovery + citation research from scratch",
+          "confidence": "medium"
+        },
+        {
+          "suggested_track_id": "environmental_woodcutting_reg",
+          "name_ar": "اللائحة التنفيذية للاحتطاب",
+          "citation": "not found this pass (MEWA RulesLibrary only)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs full discovery + citation research from scratch",
+          "confidence": "medium"
+        },
+        {
+          "suggested_track_id": "environmental_wildlife_hunting_reg",
+          "name_ar": "اللائحة التنفيذية لصيد الكائنات الفطرية البرية",
+          "citation": "not found this pass (MEWA RulesLibrary + search)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs full discovery + citation research from scratch",
+          "confidence": "medium"
+        },
+        {
+          "suggested_track_id": "environmental_wildlife_protection_reg",
+          "name_ar": "اللائحة التنفيذية لحماية الكائنات الفطرية ومنتجاتها ومشتقاتها",
+          "citation": "not found this pass (single source, qanoniah.com)",
+          "estimated_article_count": "not confirmed",
+          "build_readiness": "needs full discovery + citation research from scratch",
+          "confidence": "low-medium"
+        }
+      ],
+      "out_of_scope_finding": "نظام إدارة النفايات (Waste Management LAW, not a regulation) has its own dedicated BOE lawId page -- distinct from this environmental-regulation family and out of scope here, but worth a separate coverage-gap-map entry of its own since it is a full base law, likely the instrument the parent environmental_law's own transitional clause (البند ثانياً/2) anticipated as eventually superseding the old M/34 law's preserved waste provisions."
     },
     {
       "law_name_ar": "اللائحة التنفيذية لنظام مراقبة شركات التأمين التعاوني",
@@ -170,11 +294,11 @@
     {
       "law_name_ar": "نظام حماية المستهلك (الشامل)",
       "law_name_en": "Comprehensive Consumer Protection Law (draft)",
-      "estimated_decree": "Not issued as a Royal Decree as of this pass. A draft was published by the Ministry of Commerce for public consultation on the 'Istitlaa' platform around March 2022; Commerce Minister Al-Qasabi stated in September 2024 it was 'in its final stages' (still not enacted then). This pass re-checked the Ministry of Commerce's own most recent published consumer-protection bulletin (نشرة حماية المستهلك الربع الثالث 2025, mc.gov.sa/ar/mediacenter/DOC/MCQ3-2025.pdf) and found no reference to a newly enacted comprehensive consumer-protection statute — the bulletin still discusses enforcement under the existing framework (anti_fraud_law and the Consumer Protection Society regulation). No 2025-2026 enactment news was found in this pass either.",
+      "estimated_decree": "Not issued as a Royal Decree as of this pass. A draft was published by the Ministry of Commerce for public consultation on the 'Istitlaa' platform around March 2022; Commerce Minister Al-Qasabi stated in September 2024 it was 'in its final stages' (still not enacted then). RE-CONFIRMED 2026-07-20 via a dedicated re-check: the official Istitlaa/e-participation consultation listing still carries the 'مشروع' (draft/project) qualifier in its title, not dropped as it would be upon promulgation; Shura Council coverage (Al-Bilad, 22 Apr 2026) shows only incremental recommendations layered on the EXISTING framework, not passage of the comprehensive law; MC's quarterly consumer-protection newsletters through Q2 2026 continue to describe enforcement under anti_fraud_law/e-commerce law only. Two adjacent, narrower, ALREADY-ENACTED laws should not be confused with this one: the Product Safety Law (Royal Decree M/36, 2024, in force since 16 Nov 2024) and the Standards and Quality Law (same batch) -- both confirmed present on laws.boe.gov.sa and distinct in scope. The old, narrow Consumer Protection Society Regulation (Cabinet Resolution 120/1436) appears to have since been cancelled/repealed per an Umm Al-Qura search hit, but that too is not the comprehensive law. Residual gap: direct fetch of mc.gov.sa's own PDF newsletters returned HTTP 503 in both the original and re-check passes; only search-result snippets were available, not full-text verification.",
       "estimated_article_count": "Unknown — still in draft form",
       "priority": "low (pending confirmation)",
-      "priority_rationale": "Carried forward from the prior version of this gap map, where it was the sole entry not yet resolved by ingestion. If/when enacted, this would likely be a high-priority track (designed to consolidate and modernize consumer-rights protections beyond the existing Anti-Commercial Fraud Law, already covered as anti_fraud_law). Because enactment still cannot be confirmed as of 2026-07-19, building it now risks building a draft/superseded text. Recommend periodically re-checking laws.boe.gov.sa and the Ministry of Commerce's Istitlaa consultation portal for enactment.",
-      "confidence_exists": "unconfirmed — appears to still be a draft/proposal, not a confirmed enacted law, based on the most recent (Q3 2025) Ministry of Commerce bulletin available at the time of this pass"
+      "priority_rationale": "Carried forward from the prior version of this gap map, where it was the sole entry not yet resolved by ingestion. If/when enacted, this would likely be a high-priority track (designed to consolidate and modernize consumer-rights protections beyond the existing Anti-Commercial Fraud Law, already covered as anti_fraud_law). Because enactment still cannot be confirmed as of 2026-07-20, building it now risks building a draft/superseded text. Nearly two years have now passed since the Minister's 'final stages' statement (Sept 2024) with still no decree, suggesting this is genuinely slow-moving rather than imminent. Recommend periodically re-checking laws.boe.gov.sa and the Ministry of Commerce's Istitlaa consultation portal for enactment; next-check trigger: the Istitlaa listing drops 'مشروع' from its title, OR a Royal Decree titled نظام حماية المستهلك appears on laws.boe.gov.sa, OR Umm Al-Qura publishes such a decree.",
+      "confidence_exists": "unconfirmed -- re-confirmed as of 2026-07-20 to still be a draft/proposal, not a confirmed enacted law"
     }
   ]
 }
