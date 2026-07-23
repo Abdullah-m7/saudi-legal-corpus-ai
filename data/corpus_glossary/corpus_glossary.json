@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 157,
-  "total_terms": 940,
-  "total_definitions": 1410,
-  "tracks_with_definitions_article_parsed": 103,
+  "total_tracks_in_registry": 158,
+  "total_terms": 964,
+  "total_definitions": 1442,
+  "tracks_with_definitions_article_parsed": 104,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -255,6 +255,16 @@
         "term_as_written": "أراضي الغطاء النباتي",
         "definition_text": "جميع الأراضي المملوكة للدولة التي تحتوي على نباتات برية وما في حكمها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أسواق النفع العام": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "أسواق النفع العام",
+        "definition_text": "مواقع يسمح فيها للممارسين الزراعيين بممارسة البيع بالجملة لمنتجات القطاع الزراعي بالمزاد أو البيع المباشر، ولا يشمل ذلك البيع بالتجزئة.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -954,6 +964,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأمن الحيوي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الأمن الحيوي",
+        "definition_text": "مجموعة من الإجراءات الوقائية الواجب اتخاذها في المنشآت الزراعية للحد من انتقال المسببات المرضية من تلك المنشآت أو إليها.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأمن السيبراني": [
       {
         "track_id": "cybersecurity_authority_law",
@@ -1023,6 +1043,16 @@
         "term_as_written": "الأمين العام",
         "definition_text": "الأمين العام للمركز.",
         "source_record_id": "muslaha-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأندية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الأندية",
+        "definition_text": "كيانات تعنى بأي من ثروات القطاع الزراعي، وتشمل: الأندية الخاصة بالحيوانات أو الطيور، وما تحدده اللائحة من كيانات أخرى تعنى بأي من ثروات القطاع الزراعي.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2078,6 +2108,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "إذن مكتوب تصدره الوزارة لمزاولة نشاط زراعي أو تقديم خدمة زراعية أو توثيق زراعي.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "civil_aviation_law",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -2562,6 +2600,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التوثيق الزراعي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "التوثيق الزراعي",
+        "definition_text": "نشاط تقوم به الوزارة أو جهة التوثيق الزراعي، يؤكد مطابقة منتجات القطاع الزراعي والممارسات الزراعية للشروط والمعايير التي تحددها الوزارة.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التوسط في التوظيف": [
       {
         "track_id": "labor_saudization_mediation_rules",
@@ -2590,6 +2638,36 @@
         "definition_text": "بيانات إلكترونية، مدرجة في تعامل إلكتروني، أو مضافة إليه، أو مرتبطة به منطقياً، تستخدم لإثبات هوية الموقع وموافقته على التعامل الإلكتروني، واكتشاف أي تعديل يطرأ على هذا التعامل بعد التوقيع عليه.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "الثروة الحيوانية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الثروة الحيوانية",
+        "definition_text": "كل أنواع الحيوانات المدجنة والأليفة والمستأنسة، كالإبل، والخيل، والبقر، والغنم، والطيور، والنحل، وما في حكمها، ما عدا الكائنات الفطرية.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الثروة المائية الحية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الثروة المائية الحية",
+        "definition_text": "كل أنواع الكائنات الحيوانية والنباتية الحية التي تعيش في الماء، ما عدا الكائنات الفطرية.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الثروة النباتية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الثروة النباتية",
+        "definition_text": "كل أنواع النباتات والثمار والمحاصيل والمنتجات الزراعية، وما في حكمها، ما عدا الكائنات الفطرية.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجدول": [
@@ -3254,6 +3332,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخدمات الزراعية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات الزراعية",
+        "definition_text": "خدمات مرتبطة بأعمال القطاع الزراعي، وتشمل: خدمات التوعية والإرشاد، والتسويق، وإقامة المعارض والمسابقات والفعاليات الزراعية، وتوثيق سلامة الإنتاج والممارسات الزراعية، والحجر، والوقاية والعلاج، والعناية والإيواء، والنقل، وما تحدده اللائحة من خدمات أخرى مرتبطة بأعمال القطاع الزراعي.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخدمات الصحية": [
       {
         "track_id": "pdpl_law",
@@ -3838,6 +3926,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الزراعة العضوية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الزراعة العضوية",
+        "definition_text": "أسلوب للإنتاج الزراعي يعتمد على استخدام مواد طبيعية لإنتاج الغذاء.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الزيت": [
       {
         "track_id": "maritime_commercial_law",
@@ -3901,6 +3999,16 @@
         "term_as_written": "السجل التجاري",
         "definition_text": "سجل يحتوي على بيانات التجار من خلال قاعدة بيانات إلكترونية مركزية.",
         "source_record_id": "trade-names-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السجل الزراعي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "السجل الزراعي",
+        "definition_text": "مستند تصدره الوزارة، يتضمن بيانات ومعلومات عن الممارس الزراعي، والنشاط أو الخدمة التي يزاولها، وموقع النشاط ومساحته، وغير ذلك من البيانات والمعلومات.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4291,6 +4399,16 @@
         "term_as_written": "الشركة المرخصة بتسجيل العقود",
         "definition_text": "الشركة المساهمة المختصة بتسجيل عقود الإيجار التمويلي.\n   ٢.",
         "source_record_id": "lessor-repossession-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشهادة": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الشهادة",
+        "definition_text": "وثيقة تمنحها الوزارة (أو مقدم الخدمة أو جهة التوثيق الزراعي) توضح مدى مطابقة الممارسات الزراعية الجيدة والأنشطة والخدمات الزراعية ومنتجات القطاع الزراعي للضوابط والشروط والمعايير التي تحددها الوزارة.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5178,6 +5296,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "القطاع الزراعي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "القطاع الزراعي",
+        "definition_text": "القطاع الذي يعنى بالثروة النباتية، والثروة الحيوانية، والثروة المائية الحية.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "القواعد": [
       {
         "track_id": "evidence_expertise_rules",
@@ -5221,6 +5349,14 @@
       }
     ],
     "الكائنات الفطرية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الكائنات الفطرية",
+        "definition_text": "أي كائن حي أو ميت، وينتمي علميا إلى المجموعات الحيوانية أو النباتية، ولا يدخل في ذلك الإنسان والكائنات المدجنة والأليفة والمستأنسة.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "environmental_law",
         "article_number": 1,
@@ -5277,6 +5413,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7126,6 +7270,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المستحضرات البيطرية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "المستحضرات البيطرية",
+        "definition_text": "اللقاحات أو الأمصال أو الأدوية أو الفيروسات أو الميكروبات الحية أو المضعفة أو المقتولة التي تستعمل في علاج ووقاية الحيوانات.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المستخدم": [
       {
         "track_id": "telecommunications_law",
@@ -7904,6 +8058,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الممارس الزراعي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الممارس الزراعي",
+        "definition_text": "من يزاول أيا من الأنشطة أو الخدمات الزراعية، سواء كان شخصا ذا صفة طبيعية أو اعتبارية.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الممارسات التشغيلية الجيدة": [
       {
         "track_id": "food_regulation",
@@ -7911,6 +8075,16 @@
         "term_as_written": "الممارسات التشغيلية الجيدة",
         "definition_text": "الإجراءات والاحتياطات الصادرة من الجهات الحكومية أو الدولية الواجب\nاتباعها في تداول الغذاء خلال السلسلة الغذائية لضمان سلامة وجودة\nالغذاء مثل ممارسات التصنيع الجيد وممارسات الزراعة الجيدة وغيرها.",
         "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الممارسات الزراعية الجيدة": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الممارسات الزراعية الجيدة",
+        "definition_text": "معايير لضمان جودة المنتجات، تشمل: العمليات ما قبل زراعة البذور حتى تسليم المنتج خارج المزرعة.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8064,6 +8238,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنتج العضوي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "المنتج العضوي",
+        "definition_text": "منتج نباتي أو حيواني عضوي طازج أو مصنع.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنتج الفاسد": [
       {
         "track_id": "anti_fraud_law",
@@ -8157,6 +8341,26 @@
         "term_as_written": "المنشأة",
         "definition_text": "........................................... .",
         "source_record_id": "labor-annex1-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنشأة البيطرية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "المنشأة البيطرية",
+        "definition_text": "منشأة مرتبطة بشأن من الشؤون البيطرية، وتشمل: المستشفى، والعيادة، والصيدلية، والمختبر، ومركز التلقيح الاصطناعي، ومستودع المستلزمات الحيوانية، وما تحدده اللائحة من منشآت أخرى مرتبطة بشأن من الشؤون البيطرية.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنشأة الزراعية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "المنشأة الزراعية",
+        "definition_text": "منشأة مرتبطة بالقطاع الزراعي، وتشمل: المزارع، والمشاتل، والمناحل، وجهات توثيق سلامة المنتجات، والمحلات، والمستودعات، ومشاريع الإنتاج، ومرافئ الصيد، وأسواق النفع العام، والمسالخ، والمحاجر، وما تحدده اللائحة من منشآت أخرى مرتبطة بالقطاع الزراعي.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8786,6 +8990,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "النشاط الزراعي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "النشاط الزراعي",
+        "definition_text": "أعمال متعلقة بالقطاع الزراعي من زراعة أو تربية أو إنتاج أو صيد أسماك.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "النشاطات الممكنة": [
       {
         "track_id": "labor_recruitment_services_rules",
@@ -8871,6 +9085,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام مهنة المحاسبة والمراجعة.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الزراعة.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9470,6 +9692,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للغذاء والدواء.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "awqaf_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -9747,6 +9977,14 @@
       }
     ],
     "الوزارة": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "anti_concealment_law",
         "article_number": 1,
@@ -10061,6 +10299,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير من أعضاء مجلس الوزراء يسمى بأمر من رئيس مجلس الوزراء بناءً على اقتراح من مجلس الشؤون الاقتصادية والتنمية.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10572,6 +10818,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "بطاقة المنتج": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "بطاقة المنتج",
+        "definition_text": "بطاقة تعريفية تحتوي على بيانات ومعلومات عن مصدر المنتج الزراعي\nورقم السجل أو الترخيص الزراعي، ونحوها.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "بنك": [
       {
         "track_id": "banking_control_law",
@@ -10869,6 +11125,16 @@
         "term_as_written": "جهة التحكم",
         "definition_text": "أي جهة عامة، وأي شخصية ذات صفة طبيعية أو اعتبارية خاصة؛ تحدد الغرض من معالجة البيانات الشخصية وكيفية ذلك؛ سواء أباشرت معالجة البيانات بوساطتها أم بوساطة جهة المعالجة.",
         "source_record_id": "pdpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "جهة التوثيق الزراعي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "جهة التوثيق الزراعي",
+        "definition_text": "جهة متخصصة في مجال التوثيق الزراعي مرخصة من الوزارة.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12418,6 +12684,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مدخلات الإنتاج": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "مدخلات الإنتاج",
+        "definition_text": "الأسمدة ومحسنات التربة الزراعية، ومواد مكافحة الآفات وما في حكمها.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مدخلات الإنتاج الزراعي": [
       {
         "track_id": "food_regulation",
@@ -12629,6 +12905,14 @@
       }
     ],
     "مقدم الخدمة": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة",
+        "definition_text": "الشركات، أو المؤسسات، أو الجمعيات، أو الأفراد، المرخص لهم من الوزارة للقيام بتقديم خدمة زراعية بمقتضى أحكام النظام واللائحة.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "lessor_repossession_regulation",
         "article_number": 2,
@@ -12870,6 +13154,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "منتجات القطاع الزراعي": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "منتجات القطاع الزراعي",
+        "definition_text": "منتجات خام من الثروة النباتية -ما عدا الأعلاف الجاهزة للاستهلاك- أو من الثروة الحيوانية أو الثروة المائية الحية، وتشمل الكائنات الفطرية.",
+        "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مندوب المخلص الجمركي": [
       {
         "track_id": "customs_law",
@@ -13035,6 +13329,16 @@
         "term_as_written": "نائب الوزير",
         "definition_text": "نائب وزير الموارد البشرية والتنمية الاجتماعية للعمل النظام: نظام العمل.",
         "source_record_id": "labor-annex4-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط الزراعة العضوية": [
+      {
+        "track_id": "agriculture_law",
+        "article_number": 1,
+        "term_as_written": "نشاط الزراعة العضوية",
+        "definition_text": "عمليات إنتاج المدخلات أو المنتجات العضوية أو تصنيعها أو تسويقها أو استيرادها أو تصديرها.",
+        "source_record_id": "agriculture-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 342,
-  "top1_hits": 316,
-  "top3_hits": 335,
-  "top5_hits": 338,
-  "top1_accuracy": 0.924,
-  "top3_accuracy": 0.9795,
-  "top5_accuracy": 0.9883,
-  "mrr_at_5": 0.9509,
+  "total_queries": 344,
+  "top1_hits": 318,
+  "top3_hits": 337,
+  "top5_hits": 340,
+  "top1_accuracy": 0.9244,
+  "top3_accuracy": 0.9797,
+  "top5_accuracy": 0.9884,
+  "mrr_at_5": 0.9512,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8193,14 +8193,14 @@
      "score": 42
     },
     {
+     "record_id": "agriculture-law-llm-art-008",
+     "article_number": 8,
+     "score": 23
+    },
+    {
      "record_id": "evidence-elec-llm-art-010",
      "article_number": 10,
      "score": 20
-    },
-    {
-     "record_id": "evidence-elec-llm-art-004",
-     "article_number": 4,
-     "score": 19
     }
    ]
   },
@@ -9495,14 +9495,14 @@
      "score": 43
     },
     {
-     "record_id": "aml-law-llm-art-032",
-     "article_number": 32,
-     "score": 31
+     "record_id": "agriculture-law-llm-art-031",
+     "article_number": 31,
+     "score": 34
     },
     {
-     "record_id": "ecommerce-law-llm-art-021",
-     "article_number": 21,
-     "score": 30
+     "record_id": "agriculture-law-llm-art-027",
+     "article_number": 27,
+     "score": 31
     }
    ]
   },
@@ -10619,6 +10619,68 @@
      "record_id": "capital-market-law-llm-art-020_mukarrar_1",
      "article_number": 20,
      "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "agr-001",
+   "query_ar": "يهدف النظام إلى تنظيم شؤون القطاع الزراعي، وإدارته، وحمايته، وتنميته، واستدامته، والمساهمة في تحقيق الأمن الغذائي والتنمية الريفية والاجتماعية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "agriculture",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "agriculture-law-llm-art-002",
+     "article_number": 2,
+     "score": 43
+    },
+    {
+     "record_id": "basic-law-of-governance-llm-art-022",
+     "article_number": 22,
+     "score": 15
+    },
+    {
+     "record_id": "regions-law-llm-art-001",
+     "article_number": 1,
+     "score": 14
+    }
+   ]
+  },
+  {
+   "query_id": "agr-002",
+   "query_ar": "يحظر تداول أي من منتجات القطاع الزراعي في الأسواق أو عرضه للبيع دون الحصول على بطاقة منتج صادرة من الوزارة",
+   "category": "topical",
+   "gold": {
+    "corpus": "agriculture",
+    "law_component": "law",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "agriculture-law-llm-art-004",
+     "article_number": 4,
+     "score": 42
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 29
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 24
     }
    ]
   }

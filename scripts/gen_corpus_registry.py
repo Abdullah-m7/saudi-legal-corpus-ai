@@ -195,6 +195,7 @@ ELECTRICITY_LAW_LLM = os.path.join(ROOT, "data", "electricity_arabic_legal_llm",
 WATER_LAW_LLM = os.path.join(ROOT, "data", "water_arabic_legal_llm", "water_law_legal_llm_001_077.json")
 VAT_REGULATION_LLM = os.path.join(ROOT, "data", "vat_regulation_arabic_legal_llm", "vat_regulation_legal_llm_001_082.json")
 INCOME_TAX_REGULATION_LLM = os.path.join(ROOT, "data", "income_tax_regulation_arabic_legal_llm", "income_tax_regulation_legal_llm_001_074.json")
+AGRICULTURE_LAW_LLM = os.path.join(ROOT, "data", "agriculture_arabic_legal_llm", "agriculture_law_legal_llm_001_037.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -383,6 +384,7 @@ def main() -> int:
     water_law_llm = _load_json(WATER_LAW_LLM)
     vat_regulation_llm = _load_json(VAT_REGULATION_LLM)
     income_tax_regulation_llm = _load_json(INCOME_TAX_REGULATION_LLM)
+    agriculture_law_llm = _load_json(AGRICULTURE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -403,7 +405,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 157,
+        "total_tracks": 158,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -564,6 +566,7 @@ def main() -> int:
             + water_law_llm["record_count"]  # 77 Saudi Arabian Water Law (Royal Decree M/159, 1441H) (TIER_3, BOE has a dedicated lawId page but unreachable this pass, Wayback egress-blocked, PRIMARY nezams.com single clean aggregator x multi-source metadata cross-check via WebSearch indexing of BOE's own content, 77 اصلية no amendments, confirmed NAMED repeal of three predecessor laws (M/22 1391H, M/34 1400H, M/6 1421H) via Article 75, see track notes)
             + vat_regulation_llm["record_count"]  # 82 Implementing Regulation of the VAT Law (ZATCA Board Resolution 3839, 14 Dhul-Hijjah 1438H, Tenth Edition consolidating 11 amendments through Nov 2024) (TIER_3, BOE has no dedicated lawId page for this Board-level regulation, PRIMARY zatca.gov.sa official consolidated PDF, dual PyMuPDF-geometric x Tesseract-OCR extraction reconciled to work around a systematic bidi word-order defect, 37 اصلية/42 معدلة/3 مضافة (mukarrar articles), printed Gregorian cover date independently corrected 14 Nov 2016 -> 5 Sep 2017 matching the true Hijri date, confirmed no separate named predecessor beyond the parent Law, see track notes)
             + income_tax_regulation_llm["record_count"]  # 74 Implementing Regulation of the Income Tax Law (Ministerial Resolution 1535, 11/6/1425H, consolidated through 13 amendments to Resolution 25, 8/1/1445H) (TIER_3, BOE has no dedicated lawId page for this Ministerial-Resolution-level regulation, PRIMARY two cross-verified government copies -- ZATCA official PDF x gstc.gov.sa INCOM2.pdf -- both headers confirm the exact date the parent income_tax_law track could not pin down, 30 اصلية/19 معدلة/25 ملغاة, 25 natural-gas IRR-regime articles preserved in full text despite formal repeal via Resolution 2568, confirmed no separate named predecessor beyond the parent Law, see track notes)
+            + agriculture_law_llm["record_count"]  # 37 The Saudi Arabian Agriculture Law (Royal Decree M/64, 10/8/1442H) (TIER_3, BOE unreachable this pass, PRIMARY nezams.com single clean aggregator x MISA English PDF confirming 37 articles/no chapters, 37 اصلية no amendments, confirmed named repeal of FIVE predecessor laws via the issuing decree's own clause ثانياً (not inside any article), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -715,6 +718,7 @@ def main() -> int:
             + water_law_llm["record_count"]
             + vat_regulation_llm["record_count"]
             + income_tax_regulation_llm["record_count"]
+            + agriculture_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5321,6 +5325,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian Income Tax Law «اللائحة التنفيذية لنظام ضريبة الدخل» — Ministerial Resolution No. (1535), dated 11/6/1425H, the companion-regulation follow-up candidate this corpus's own income_tax_law track had explicitly flagged as confirmed to exist (via two hosted copies) but whose exact Hijri date could not be verified. **This track pins the date**: 11/6/1425H, cross-verified across BOTH government copies' own headers. **74 articles across 30 topical section headings**, contiguous 1-74, **30 اصلية / 19 معدلة / 25 ملغاة / 0 مضافة**. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has NO dedicated lawId page for this Implementing Regulation (only for the base Law, lawId 23576008-1ce4-4685-ac3e-a9a700f2cb02); PRIMARY sources are TWO cross-verified government-hosted copies — ZATCA's own official consolidated PDF (newest, amended through Resolution 25, 8/1/1445H) and gstc.gov.sa's older INCOM2.pdf (amended through Resolution 2568, 12/8/1440H) — the same dual-government-copy cross-check this corpus's income_tax_law track itself established for this family of documents. Consolidated through 13 ministerial amendments total. **NATURAL-GAS RISK, INVERSE OF THE PARENT LAW TRACK**: the ضريبة استثمار الغاز الطبيعي section implements the OLD Internal-Rate-of-Return natural-gas regime; Resolution 2568 (12/8/1440H, accompanying the M/70 reform) REPEALED 25 of its articles — but unlike the parent income_tax_law track (where both government PDFs printed only a bare repeal notice for its Chapter 10), ZATCA's copy of THIS Regulation preserves the FULL TEXT of the repealed articles with a (تم حذف المادة) footnote, so those 25 articles are marked ملغاة with their preserved text and text_complete=true — the completeness risk is inverted (text present in full but formally repealed, rather than text missing). **EXTRACTION METHODOLOGY**: ZATCA's copy stores Arabic in presentation forms (NFKC-normalized); a coordinate-based PyMuPDF reconstruction was used instead of pdftotext -layout, since the latter scrambles justified-line word order (calibrated against Resolution 2194 extracting as 12/7/1432H, matching the parent track's own independently-pinned date for that same resolution). Disclosed extraction-layer fixes: 952 lam-alef ligature split-sites rejoined (33 residual via a hand-verified dictionary), single-letter split prefixes rejoined, dates reformatted, editorial footnote-reference markers removed at clause boundaries while legal numbers preserved, tashkeel/tatweel stripped uniformly. Confirmed no separate named predecessor beyond the parent Law itself. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "agriculture_law",
+                "display_name_ar": "نظام الزراعة",
+                "display_name_en": "The Saudi Arabian Agriculture Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_COM_SINGLE_FULLTEXT_AGGREGATOR_BOE_UNREACHABLE_MULTISOURCE_METADATA_CROSSCHECK_MISA_ENGLISH_PDF_CONFIRMS_STRUCTURE",
+                "source_authority": "Royal Decree No. (M/64), dated 10/8/1442H, based on Council of Ministers Resolution No. (431), 3/8/1442H, and two Shura Council resolutions (219/40, 17/9/1441H; 362/61, 25/2/1442H); published Umm Al-Qura Gazette 20/8/1442H — laws.boe.gov.sa has a dedicated lawId page (d113fa79-5ad8-42b1-9955-acfb00a2c7ed) but was unreachable this pass (HTTP 503), Wayback egress-blocked and not circumvented. PRIMARY source is nezams.com (a clean born-digital HTML full-text aggregator, no scan/OCR/ligature defects); governing metadata and the flat 37-article/no-chapter structure independently cross-verified against the official MISA English-language PDF and further corroborated via WebSearch (BOE, MEWA, Umm Al-Qura, Lexis)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": agriculture_law_llm["record_count"],
+                    "data_path": "data/agriculture_arabic_legal_llm/agriculture_law_legal_llm_001_037.json"}},
+                "record_counts": {"arabic_articles": agriculture_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 37, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": agriculture_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/agriculture/law/official_source/agriculture_law_official_source.json",
+                    "sources/agriculture/law/verified/agriculture_law_verified_records.jsonl",
+                    "data/agriculture_arabic_legal_llm/agriculture_law_legal_llm_001_037.json",
+                ],
+                "validator_targets": ["make agriculture-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "The Saudi Arabian Agriculture Law «نظام الزراعة» — Royal Decree No. (M/64), dated 10/8/1442H (~24 March 2021G), based on Council of Ministers Resolution No. (431), 3/8/1442H, and two Shura Council resolutions (219/40, 17/9/1441H; 362/61, 25/2/1442H); published Umm Al-Qura Gazette 20/8/1442H; administered by the Ministry of Environment, Water and Agriculture (MEWA), with the Saudi Food and Drug Authority referenced as a regulator for specific matters. A brand-new base-law track — NOT previously in this corpus (unlike the other gap-map candidates built alongside it, this is not a companion regulation to an already-ingested law). **37 records, ALL 37 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — the Law has had no amendments), flat structure with **NO chapter/part divisions** (chapter_structure=[], confirmed independently by both nezams.com and the official MISA English-language PDF). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has its own dedicated lawId page for this law (d113fa79-5ad8-42b1-9955-acfb00a2c7ed, seen via WebSearch) but the live portal was unreachable this pass (HTTP 503); Wayback egress-blocked and NOT circumvented. Full verbatim text of all 37 articles extracted from nezams.com (a clean born-digital HTML aggregator, no scan/OCR/ligature defects); governing metadata and the flat 37-article/no-chapter structure independently cross-verified via the official MISA English PDF (confirms 'Royal Decree No. M/64', 37 articles, no chapters) plus further WebSearch corroboration (BOE, MEWA, Umm Al-Qura, Lexis) — no source disagreed on decree number, count, or status. **CONFIRMED NAMED REPEAL OF FIVE PREDECESSOR INSTRUMENTS** — a genuine positive finding, and unlike electricity_law/water_law (whose repeal clauses sit inside a numbered article), this Law's repeal sits in its own ISSUING DECREE (clause ثانياً of Royal Decree M/64 and of Council of Ministers Resolution 431), not inside any of the 37 articles: it repeals the Living Aquatic Resources Law (M/9, 1408H), the Animal Resources Law (M/13, 1424H), the Beekeeping Law (M/15, 1431H), the Organic Agriculture Law (M/55, 1435H), and the Council of Ministers Rules for Trading in Agricultural Machinery (No. 96, 1405H), plus any conflicting provisions; none of the five predecessors is separately ingested in this corpus (one-instrument-per-pass rule). **IMPLEMENTING REGULATION IDENTIFIED BUT NOT INGESTED**: Article 36 mandates one within 90 days; it exists and is published (MEWA rules library; Umm Al-Qura; qanoonsa, with a later amendment) — flagged as an 'agriculture_regulation' companion candidate for a future dedicated pass. Disclosed anomalies: two Farsi-yeh characters (Articles 23 and 35) normalized to Arabic yeh; mixed Arabic-Indic/Western digit rendering preserved verbatim; the Article-19 label is missing its taa marbuta ('التاسعة عشر') in the source, preserved verbatim not silently corrected; a glued 'محققا للمصلحة العامة' phrase in the decree preamble preserved verbatim; Gregorian dates are secondary-only conversions. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 157,
+  "total_tracks_scanned": 158,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 65,
+  "edge_count": 70,
   "relation_counts": {
-    "repeals_full": 54,
+    "repeals_full": 59,
     "repeals_partial": 10,
     "superseded_by": 1
   },
@@ -666,6 +666,56 @@
       "affected_articles": null,
       "note": "water_law's own Article 75 explicitly names and repeals this third prior instrument (along with its implementing regulation) by decree number, as part of the same 3-predecessor named repeal-and-replace clause described in the M/22 (1391H) edge above. Not separately ingested in this corpus (one-instrument-per-pass rule; no independently reachable primary text for the 1421H instrument itself was located during research).",
       "source_ref": "sources/water/law/official_source/water_law_official_source.json (article 75)"
+    },
+    {
+      "from_track_id": "agriculture_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام الثروات المائية الحية (السابق)",
+      "target_decree": "Royal Decree No. M/9, 1408H",
+      "affected_articles": null,
+      "note": "agriculture_law's own ISSUING DECREE (clause ثانياً of Royal Decree M/64 and of Council of Ministers Resolution 431, 3/8/1442H) -- not any numbered article -- explicitly repeals this prior Living Aquatic Resources Law by decree number, as part of a 5-predecessor named repeal-and-replace clause. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)"
+    },
+    {
+      "from_track_id": "agriculture_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام الثروة الحيوانية (السابق)",
+      "target_decree": "Royal Decree No. M/13, 1424H",
+      "affected_articles": null,
+      "note": "agriculture_law's own ISSUING DECREE explicitly repeals this second prior instrument, the Animal Resources Law, by decree number, as part of the same 5-predecessor named repeal-and-replace clause described in the M/9 (1408H) edge above. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)"
+    },
+    {
+      "from_track_id": "agriculture_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام تربية النحل (السابق)",
+      "target_decree": "Royal Decree No. M/15, 1431H",
+      "affected_articles": null,
+      "note": "agriculture_law's own ISSUING DECREE explicitly repeals this third prior instrument, the Beekeeping Law, by decree number, as part of the same 5-predecessor named repeal-and-replace clause described in the M/9 (1408H) edge above. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)"
+    },
+    {
+      "from_track_id": "agriculture_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام الزراعة العضوية (السابق)",
+      "target_decree": "Royal Decree No. M/55, 1435H",
+      "affected_articles": null,
+      "note": "agriculture_law's own ISSUING DECREE explicitly repeals this fourth prior instrument, the Organic Agriculture Law, by decree number, as part of the same 5-predecessor named repeal-and-replace clause described in the M/9 (1408H) edge above. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)"
+    },
+    {
+      "from_track_id": "agriculture_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "قواعد تنظيم الاتجار بالآلات الزراعية (السابقة)",
+      "target_decree": "Council of Ministers Resolution No. 96, 1405H",
+      "affected_articles": null,
+      "note": "agriculture_law's own ISSUING DECREE explicitly repeals this fifth prior instrument, the Council of Ministers Rules for Trading in Agricultural Machinery, by resolution number, as part of the same 5-predecessor named repeal-and-replace clause described in the M/9 (1408H) edge above -- the only one of the five that is itself a Council of Ministers Resolution rather than a Royal Decree. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)"
     }
   ],
   "concurrent_title_collisions": [

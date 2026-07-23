@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 157 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 157 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 158 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 158 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 157,
+  "total_tracks": 158,
   "known_source_staleness_risk_count": 13,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -67,6 +67,29 @@
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "accounting_auditing_boe_main_body_stale_vs_changelog_popup: This track's single most important documented discrepancy. BOE's own archived law-detail page (Wayback snapshot 20251015113239, 15 Oct 2025) marks Articles 1, 4, 5, 19 and 20 with a 'changed-article' CSS class and a nest"
+    },
+    {
+      "track_id": "agriculture_law",
+      "display_name_en": "The Saudi Arabian Agriculture Law",
+      "display_name_ar": "نظام الزراعة",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='NEZAMS_COM_SINGLE_FULLTEXT_AGGREGATOR_BOE_UNREACHABLE_MULTISOURCE_METADATA_CROSSCHECK_MISA_ENGLISH_PDF_CONFIRMS_STRUCTURE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. (M/64), dated 10/8/1442H, based on Council of Ministers Resolution No. (431), 3/8/1442H, and two Shura Council resolutions (219/40, 17/9/1441H; 362/61, 25/2/1442H); published Umm Al-Qura Gazette 20/8/1442H — laws.boe.gov.sa has a dedicated lawId page (d113fa79-5ad8-42b1-9955-acfb00a2c7ed) but was unreachable this pass (HTTP 503), Wayback egress-blocked and not circumvented. PRIMARY source is nezams.com (a clean born-digital HTML full-text aggregator, no scan/OCR/ligature defects); governing metadata and the flat 37-article/no-chapter structure independently cross-verified against the official MISA English-language PDF and further corroborated via WebSearch (BOE, MEWA, Umm Al-Qura, Lexis)",
+      "registry_source_url": null,
+      "official_source_file": "sources/agriculture/law/official_source/agriculture_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "misa.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
     },
     {
       "track_id": "alimony_fund_regulation",
