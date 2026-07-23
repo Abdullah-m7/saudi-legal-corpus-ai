@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 168 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 168 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 170 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 170 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 168,
+  "total_tracks": 170,
   "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -1207,6 +1207,27 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "environmental_fees",
+      "display_name_en": "Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses, Permits and Services",
+      "display_name_ar": "اللائحة التنفيذية للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='QANONIAH_COM_PRIMARY_TEXT_MULTISOURCE_CITATION_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Minister of Environment, Water and Agriculture Decision No. (618660/1/1442), dated 05/12/1442H, applied late July 2021, issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) — laws.boe.gov.sa was checked first per methodology: no dedicated lawId page for this Regulation. The Umm Al-Qura gazette portal (uqn.gov.sa) is a JS-rendered SPA whose article text/issue-PDF could not be extracted this pass (legacy permalinks do not map to the portal's current internal cms-id). PRIMARY text source is qanoniah.com's full article-by-article text (via its backend API), citation cross-verified across many independent sources (ajel.sa, qanoonsa metadata, multiple news outlets), and the text itself partially cross-verified (ajel.sa on Article 3; maaal.com/aleqt.com/mewa search-summary excerpts on Articles 1 and 4)",
+      "registry_source_url": null,
+      "official_source_file": "sources/environmental_fees/official_source/environmental_fees_reg_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "environmental_inspection_audit",
       "display_name_en": "Implementing Regulation for Environmental Inspection and Audit",
       "display_name_ar": "اللائحة التنفيذية للتفتيش والتدقيق البيئي لنظام البيئة",
@@ -1267,6 +1288,27 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "environmental_service_providers",
+      "display_name_en": "Implementing Regulation for Environmental Service Providers",
+      "display_name_ar": "اللائحة التنفيذية لمقدمي الخدمات البيئية لنظام البيئة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='MEWA_OFFICIAL_SCANNED_DECISION_PDF_VISUALLY_READ_X_QANONIAH_COM_CLEAN_HTML_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Minister of Environment, Water and Agriculture Decision No. (1515009/1), dated 3/7/1446H, published Umm Al-Qura Gazette issue 5063 (5 Jan 2025), wholly replacing the founding Decision No. (582979/1/1442), 14/11/1442H; issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) and Royal Order 32043/1444H / Council of Ministers Decision 406/1445H — laws.boe.gov.sa was checked first per methodology: no dedicated lawId page for this Regulation, only the base Environmental Law. PRIMARY source is the issuing Ministry's own official scanned decision PDF (MEWA RulesLibrary, 15pp, no text layer, read page-by-page visually confirming the decision image, ministry stamp, replacement clause, and Minister's signature), the article text sourced from qanoniah.com's clean linear HTML (cross-verified against the official scan's structure, per-article item counts, titles, and all 13 table rows)",
+      "registry_source_url": null,
+      "official_source_file": "sources/environmental_service_providers/official_source/environmental_service_providers_reg_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
