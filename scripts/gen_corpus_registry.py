@@ -196,6 +196,7 @@ WATER_LAW_LLM = os.path.join(ROOT, "data", "water_arabic_legal_llm", "water_law_
 VAT_REGULATION_LLM = os.path.join(ROOT, "data", "vat_regulation_arabic_legal_llm", "vat_regulation_legal_llm_001_082.json")
 INCOME_TAX_REGULATION_LLM = os.path.join(ROOT, "data", "income_tax_regulation_arabic_legal_llm", "income_tax_regulation_legal_llm_001_074.json")
 AGRICULTURE_LAW_LLM = os.path.join(ROOT, "data", "agriculture_arabic_legal_llm", "agriculture_law_legal_llm_001_037.json")
+COMPETITION_REGULATION_LLM = os.path.join(ROOT, "data", "competition_regulation_arabic_legal_llm", "competition_regulation_legal_llm_001_005.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -385,6 +386,7 @@ def main() -> int:
     vat_regulation_llm = _load_json(VAT_REGULATION_LLM)
     income_tax_regulation_llm = _load_json(INCOME_TAX_REGULATION_LLM)
     agriculture_law_llm = _load_json(AGRICULTURE_LAW_LLM)
+    competition_regulation_llm = _load_json(COMPETITION_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -405,7 +407,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 158,
+        "total_tracks": 159,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -567,6 +569,7 @@ def main() -> int:
             + vat_regulation_llm["record_count"]  # 82 Implementing Regulation of the VAT Law (ZATCA Board Resolution 3839, 14 Dhul-Hijjah 1438H, Tenth Edition consolidating 11 amendments through Nov 2024) (TIER_3, BOE has no dedicated lawId page for this Board-level regulation, PRIMARY zatca.gov.sa official consolidated PDF, dual PyMuPDF-geometric x Tesseract-OCR extraction reconciled to work around a systematic bidi word-order defect, 37 اصلية/42 معدلة/3 مضافة (mukarrar articles), printed Gregorian cover date independently corrected 14 Nov 2016 -> 5 Sep 2017 matching the true Hijri date, confirmed no separate named predecessor beyond the parent Law, see track notes)
             + income_tax_regulation_llm["record_count"]  # 74 Implementing Regulation of the Income Tax Law (Ministerial Resolution 1535, 11/6/1425H, consolidated through 13 amendments to Resolution 25, 8/1/1445H) (TIER_3, BOE has no dedicated lawId page for this Ministerial-Resolution-level regulation, PRIMARY two cross-verified government copies -- ZATCA official PDF x gstc.gov.sa INCOM2.pdf -- both headers confirm the exact date the parent income_tax_law track could not pin down, 30 اصلية/19 معدلة/25 ملغاة, 25 natural-gas IRR-regime articles preserved in full text despite formal repeal via Resolution 2568, confirmed no separate named predecessor beyond the parent Law, see track notes)
             + agriculture_law_llm["record_count"]  # 37 The Saudi Arabian Agriculture Law (Royal Decree M/64, 10/8/1442H) (TIER_3, BOE unreachable this pass, PRIMARY nezams.com single clean aggregator x MISA English PDF confirming 37 articles/no chapters, 37 اصلية no amendments, confirmed named repeal of FIVE predecessor laws via the issuing decree's own clause ثانياً (not inside any article), see track notes)
+            + competition_regulation_llm["record_count"]  # 5 Implementing Regulation of the Competition Law (GAC Board Decision 337, 25/1/1441H) -- PARTIAL SCOPE, Articles 1-5 of 90 only (TIER_2, PRIMARY qanoniah.com clean API x WIPO Lex official Arabic PDF dual independent source for the captured articles, remaining 85 articles disclosed pending not fabricated, confirmed supersession of the 2014 Implementing Regulation (Competition Council Decision 126, 4/9/1435H), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -719,6 +722,7 @@ def main() -> int:
             + vat_regulation_llm["record_count"]
             + income_tax_regulation_llm["record_count"]
             + agriculture_law_llm["record_count"]
+            + competition_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5353,6 +5357,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "The Saudi Arabian Agriculture Law «نظام الزراعة» — Royal Decree No. (M/64), dated 10/8/1442H (~24 March 2021G), based on Council of Ministers Resolution No. (431), 3/8/1442H, and two Shura Council resolutions (219/40, 17/9/1441H; 362/61, 25/2/1442H); published Umm Al-Qura Gazette 20/8/1442H; administered by the Ministry of Environment, Water and Agriculture (MEWA), with the Saudi Food and Drug Authority referenced as a regulator for specific matters. A brand-new base-law track — NOT previously in this corpus (unlike the other gap-map candidates built alongside it, this is not a companion regulation to an already-ingested law). **37 records, ALL 37 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — the Law has had no amendments), flat structure with **NO chapter/part divisions** (chapter_structure=[], confirmed independently by both nezams.com and the official MISA English-language PDF). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has its own dedicated lawId page for this law (d113fa79-5ad8-42b1-9955-acfb00a2c7ed, seen via WebSearch) but the live portal was unreachable this pass (HTTP 503); Wayback egress-blocked and NOT circumvented. Full verbatim text of all 37 articles extracted from nezams.com (a clean born-digital HTML aggregator, no scan/OCR/ligature defects); governing metadata and the flat 37-article/no-chapter structure independently cross-verified via the official MISA English PDF (confirms 'Royal Decree No. M/64', 37 articles, no chapters) plus further WebSearch corroboration (BOE, MEWA, Umm Al-Qura, Lexis) — no source disagreed on decree number, count, or status. **CONFIRMED NAMED REPEAL OF FIVE PREDECESSOR INSTRUMENTS** — a genuine positive finding, and unlike electricity_law/water_law (whose repeal clauses sit inside a numbered article), this Law's repeal sits in its own ISSUING DECREE (clause ثانياً of Royal Decree M/64 and of Council of Ministers Resolution 431), not inside any of the 37 articles: it repeals the Living Aquatic Resources Law (M/9, 1408H), the Animal Resources Law (M/13, 1424H), the Beekeeping Law (M/15, 1431H), the Organic Agriculture Law (M/55, 1435H), and the Council of Ministers Rules for Trading in Agricultural Machinery (No. 96, 1405H), plus any conflicting provisions; none of the five predecessors is separately ingested in this corpus (one-instrument-per-pass rule). **IMPLEMENTING REGULATION IDENTIFIED BUT NOT INGESTED**: Article 36 mandates one within 90 days; it exists and is published (MEWA rules library; Umm Al-Qura; qanoonsa, with a later amendment) — flagged as an 'agriculture_regulation' companion candidate for a future dedicated pass. Disclosed anomalies: two Farsi-yeh characters (Articles 23 and 35) normalized to Arabic yeh; mixed Arabic-Indic/Western digit rendering preserved verbatim; the Article-19 label is missing its taa marbuta ('التاسعة عشر') in the source, preserved verbatim not silently corrected; a glued 'محققا للمصلحة العامة' phrase in the decree preamble preserved verbatim; Gregorian dates are secondary-only conversions. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "competition_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام المنافسة",
+                "display_name_en": "Implementing Regulation of the Saudi Competition Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "partial",
+                "official_text_status": "QANONIAH_COM_PRIMARY_X_WIPO_LEX_OFFICIAL_ARABIC_PDF_DUAL_INDEPENDENT_SOURCE_PARTIAL_SCOPE_ARTS_1_5_OF_90_BOE_NO_DEDICATED_LAWID_PAGE_GAC_ISSUER_UNREACHABLE",
+                "source_authority": "General Authority for Competition (GAC) Board of Directors Decision No. (337), dated 25/1/1441H (24 Sep 2019), issued under Article 27 of the Competition Law (Royal Decree M/75, 29/6/1440H); published Umm al-Qura Gazette issue No. 4806 (22 Nov 2019) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this Board-level Implementing Regulation at all; gac.gov.sa (the issuer) was also unreachable. PRIMARY text is qanoniah.com's clean-Unicode API (Articles 1-5, correct digits), independently corroborated letter-for-letter by WIPO Lex's own official Arabic PDF (record 19749/SA071) for the same captured articles",
+                "language_layers": {"arabic": {"status": "partial", "governing": True,
+                    "record_count": competition_regulation_llm["record_count"],
+                    "data_path": "data/competition_regulation_arabic_legal_llm/competition_regulation_legal_llm_001_005.json"}},
+                "record_counts": {"arabic_articles": competition_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 5, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": competition_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/competition/regulation/official_source/competition_regulation_official_source.json",
+                    "sources/competition/regulation/verified/competition_regulation_verified_records.jsonl",
+                    "data/competition_regulation_arabic_legal_llm/competition_regulation_legal_llm_001_005.json",
+                ],
+                "validator_targets": ["make competition-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Competition Law «اللائحة التنفيذية لنظام المنافسة» — GAC Board of Directors Decision No. (337), dated 25/1/1441H (24 Sep 2019), issued under Article 27 of the Competition Law (Royal Decree M/75, 29/6/1440H); published Umm al-Qura Gazette issue No. 4806 (22 Nov 2019). **DELIBERATE PARTIAL SCOPE, DISCLOSED NOT FABRICATED**: the full Regulation is 90 articles across 11 chapters (recorded in full_regulation_chapter_structure / full_regulation_article_count / full_regulation_chapter_count), but **only Articles 1-5 (Chapters 1-2: التعريفات والأهداف, الاختصاص ونطاق التطبيق) are ingested this pass, ALL 5 اصلية**. Articles 6-90 were NOT ingested because the only complete fetchable Arabic source (WIPO Lex's sa071ar.pdf) has an unrecoverable lossy digit-CMap extraction defect (real digits 2,3,5,6,7,8,9 collapse many-to-one -- e.g. decision '337' extracts as '663' -- proven by cross-checking against the clean source), and the clean qanoniah.com source auth-gates articles 6+ (HTTP 401 on further pages). Rather than ingest 85 articles with corrupt digits or fabricate numerals, ingestion stopped at what could be independently cross-verified; a follow-up pass is an explicit candidate once gac.gov.sa becomes reachable. **VERIFICATION TIER: TIER_2 (dual independent source, for the captured scope only)** — laws.boe.gov.sa checked first per methodology: unreachable this pass (HTTP 503) AND has no dedicated lawId page for this Board-level regulation at all (BOE only hosts the base Competition Law and the GAC's own organizational statute as separate documents). PRIMARY text = qanoniah.com's clean-Unicode backend API (correct digits, unauthenticated, Articles 1-5 in full). Independent corroboration = WIPO Lex's official Arabic PDF, whose letter content matches Articles 1-5 exactly (these five articles only contain the 'safe' digits 1-4, which do match across both sources -- the lossy-digit defect only affects articles 6+). English (WIPO) used only for non-governing structural metadata (full article count, chapter map), never to correct Arabic text. **CONFIRMED SUPERSESSION OF A NAMED PREDECESSOR**: this Regulation supersedes the 2014 Implementing Regulation of the (old, repealed) Competition Law -- Competition Council Decision No. (126), 4/9/1435H, 78 articles, issued under the now-repealed Competition Law M/25 -- confirmed via WIPO Lex, which marks the 2014 record (19750/SA072) as superseded by the current record (19749/SA071); recorded as a supersession-graph edge, the 2014 predecessor is not separately ingested. Disclosed anomalies: **Article 12(1) was amended in 2023** (GAC Board 80th session, 7 Ramadan 1444H / 29 Mar 2023 per SPA) -- this sits in Chapter 4, OUTSIDE the captured scope, disclosed and not applied to the ingested articles; the old predecessor's decision number appears as '126' in WIPO/qistas vs '621' in an NSHR copy (a likely digit reversal; 126 is favored, both preserved in known_unresolved_discrepancies); a preserved source spelling 'قرارتها' (likely 'قراراتها', identical in both independent sources so not silently corrected); diacritics/ZWNJ normalization. Arabic governs; not legal advice.",
             },
         ],
     }

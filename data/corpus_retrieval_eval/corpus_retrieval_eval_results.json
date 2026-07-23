@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 344,
-  "top1_hits": 318,
-  "top3_hits": 337,
-  "top5_hits": 340,
-  "top1_accuracy": 0.9244,
-  "top3_accuracy": 0.9797,
+  "total_queries": 346,
+  "top1_hits": 320,
+  "top3_hits": 339,
+  "top5_hits": 342,
+  "top1_accuracy": 0.9249,
+  "top3_accuracy": 0.9798,
   "top5_accuracy": 0.9884,
-  "mrr_at_5": 0.9512,
+  "mrr_at_5": 0.9514,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4695,8 +4695,8 @@
      "score": 20
     },
     {
-     "record_id": "qismah-regulation-llm-art-028",
-     "article_number": 28,
+     "record_id": "competition-regulation-llm-art-003",
+     "article_number": 3,
      "score": 18
     }
    ]
@@ -7392,8 +7392,8 @@
      "score": 11
     },
     {
-     "record_id": "labor-reg-llm-art-014",
-     "article_number": 14,
+     "record_id": "competition-regulation-llm-art-003",
+     "article_number": 3,
      "score": 11
     }
    ]
@@ -10681,6 +10681,68 @@
      "record_id": "pdpl-reg-llm-art-006",
      "article_number": 6,
      "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "cmr-001",
+   "query_ar": "تهدف اللائحة إلى تحسين كفاءة الأسواق وخلق بيئة أعمال تنافسية ضمن إطار من العدالة والشفافية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "competition",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "competition-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 47
+    },
+    {
+     "record_id": "food-regulation-llm-art-023",
+     "article_number": 23,
+     "score": 15
+    },
+    {
+     "record_id": "food-regulation-llm-art-029",
+     "article_number": 29,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "cmr-002",
+   "query_ar": "يستثنى من تطبيق أحكام النظام واللائحة المؤسسة العامة أو الشركة المملوكة بالكامل للدولة",
+   "category": "topical",
+   "gold": {
+    "corpus": "competition",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "competition-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 32
+    },
+    {
+     "record_id": "oa-llm-companies-art-272",
+     "article_number": 272,
+     "score": 29
+    },
+    {
+     "record_id": "oa-llm-companies-art-187",
+     "article_number": 187,
+     "score": 23
     }
    ]
   }
