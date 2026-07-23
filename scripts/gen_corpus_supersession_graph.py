@@ -1460,6 +1460,22 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "relationship between two distinct tracks.)",
         "source_ref": "sources/income_tax/regulation/official_source/income_tax_regulation_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["aml_regulation"],
+        "issue": "confirmed negative repeal finding -- no in-Regulation clause names a predecessor Regulation",
+        "note": "aml_regulation (current consolidation via Administrative "
+                "Decision 266507, 9/12/1447H) names no repealed predecessor "
+                "Implementing Regulation anywhere in its 25 ingested "
+                "articles. The supersession of the prior legal regime is "
+                "derivative, via the already-ingested aml_law track's own "
+                "Article 51 (which replaced the old AML Law M/31, "
+                "11/5/1433H) -- not a Regulation-to-Regulation relationship. "
+                "A separate, genuinely distinct OLDER 1430H regulation (Adl "
+                "Magazine issue 43) was confirmed to exist during research "
+                "but was deliberately NOT ingested or mixed in. No edge "
+                "modeled.",
+        "source_ref": "sources/aml/regulation/official_source/aml_regulation_official_source.json (verification_methodology_note)",
+    },
 ]
 
 

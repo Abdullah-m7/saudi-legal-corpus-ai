@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10427,
+  "total_primary_arabic_governing_records": 10452,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11322,
-  "total_tracks": 159,
+  "total_registry_counted_records": 11347,
+  "total_tracks": 160,
   "tracks": [
     {
       "boundaries": {
@@ -7554,6 +7554,55 @@
       "validator_targets": [
         "make competition-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/aml/regulation/official_source/aml_regulation_official_source.json",
+        "sources/aml/regulation/verified/aml_regulation_verified_records.jsonl",
+        "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام مكافحة غسل الأموال",
+      "display_name_en": "Implementing Regulation of the Anti-Money Laundering Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 25,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Anti-Money Laundering Law «اللائحة التنفيذية لنظام مكافحة غسل الأموال» — current consolidation via Administrative Decision No. 266507, dated 9/12/1447H (President of State Security), which updates the Regulation per the base Law's own M/223 (27/10/1447H) amendments; consolidates the founding approval (cable No. 14525, 19/2/1439H -- SAMA's own canonical reference number/date for this Regulation) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17). Issued under Article 50 of the base AML Law (M/20, 5/2/1439H). **25 articles ingested** (present numbers: 1,2,5,7,8,9,10,14,15,16,17,20,22,23,24,36,37,38,39,40,41,42,43,48,49), across the Law's own 9 numbered chapters (I-VI, VIII-X; Chapter VII العقوبات has no Regulation-level counterpart, so numbering jumps VI to VIII) -- the Regulation only elaborates Law articles needing implementing detail, numbering provisions at paragraph level ('س/ع' = paragraph س of article ع). **24 اصلية / 1 معدلة** (Article 17, per Administrative Decision 98752 -- the pre-amendment sub-paragraph text could not be recovered and was not fabricated) **/ 0 ملغاة / 0 مضافة**. **VERIFICATION TIER: TIER_3** (mixed scan-OCR + partial born-digital) — laws.boe.gov.sa checked first per methodology: unreachable this pass (connection reset) AND has no dedicated lawId page (BOE does not catalogue State-Security/administrative executive regulations). PRIMARY source is aml.gov.sa's official scanned PDF (34pp, sha256-identified, 300dpi scan, no text layer). Text reconciled from TWO independent channels: (a) 10 articles (1,2,5,7,8,9,10,14,15,16) from qanoniah.com's born-digital API, independently confirmed to be the SAME current consolidated version (last-modified metadata matches Decision 266507; Article 1 defines the newer terms المحفظة الإلكترونية/تسليم مراقب); (b) the other 15 articles OCR-extracted (tesseract-ara) from the scan and visually adjudicated article-by-article against the rendered page images -- qanoniah's overlapping articles (2, 5, 10, 16) matched the scan verbatim, cross-confirming both channels carry the same in-force text. **NO IN-REGULATION REPEAL CLAUSE NAMING A PREDECESSOR** -- a confirmed negative finding; the supersession of the prior legal regime is derivative, via the base Law's own Article 51 (which replaced the old AML Law M/31, 11/5/1433H). A separate, genuinely distinct OLDER 1430H regulation (Adl Magazine issue 43) was confirmed to exist and was deliberately NOT mixed in. Disclosed anomalies: the SAMA rulebook (rulebook.sama.gov.sa) serves an OLDER/founding version of this same Regulation (fewer definitions, no المحفظة الإلكترونية) -- used only for metadata cross-check (reference number 14525, date 19/2/1439H), never for article text, to avoid version contamination; the scanned-PDF/OCR tier for the 15 scan-sourced articles carries a residual fine-OCR-error risk; the 'س/ع' paragraph numbering has no explicit article headers in the source (number_label_ar constructed); Law article numbers not elaborated by this Regulation are deliberately skipped, not missing data; Article 17's pre-amendment text could not be recovered. Arabic governs; not legal advice.",
+      "official_text_status": "AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 25,
+        "legal_status_breakdown": {
+          "اصلية": 24,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 25
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Administrative Decision No. 266507, dated 9/12/1447H, issued by the President of State Security, consolidating the founding approval (cable No. 14525, 19/2/1439H) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17), under Article 50 of the Anti-Money Laundering Law (Royal Decree/Law M/20, 5/2/1439H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this State-Security-level Regulation. PRIMARY source is aml.gov.sa's official scanned PDF (34pp, no text layer); text reconciled from two independent channels — 10 articles (1,2,5,7,8,9,10,14,15,16) from qanoniah.com's born-digital API (independently confirmed to be the same current consolidated version), the other 15 articles OCR-extracted (tesseract-ara) and visually adjudicated article-by-article against the rendered scan page images",
+      "status": "complete",
+      "track_id": "aml_regulation",
+      "validator_targets": [
+        "make aml-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7565,7 +7614,7 @@
       "agriculture": 37,
       "alimony_fund": 17,
       "allegiance_commission": 25,
-      "aml": 52,
+      "aml": 77,
       "anti_bribery": 25,
       "anti_concealment": 20,
       "anti_cyber_crime": 16,
@@ -7681,7 +7730,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10258,
+    "total_records": 10283,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

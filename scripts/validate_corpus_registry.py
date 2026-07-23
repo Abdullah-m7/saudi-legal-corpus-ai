@@ -208,6 +208,7 @@ REQUIRED_TRACK_IDS = [
     "income_tax_regulation",
     "agriculture_law",
     "competition_regulation",
+    "aml_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -250,9 +251,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 159 tracks
+    # [3] 160 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 159 tracks present...", len(track_ids) == 159 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 160 tracks present...", len(track_ids) == 160 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -1715,7 +1716,17 @@ def main() -> int:
           cmpr_counts.get("legal_status_breakdown") == {"اصلية": 5, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={cmpr_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 10258 records...", uix.get("total_records") == 10258,
+    amlr = tracks_by_id.get("aml_regulation", {})
+    amlr_counts = amlr.get("record_counts", {})
+    check("[7g147] aml_regulation: 25 Arabic records, aml.gov.sa scanned PDF x qanoniah.com born-digital API reconciliation (10 of 25) + OCR-adjudicated (15 of 25)...",
+          amlr_counts.get("arabic_articles") == 25
+          and amlr.get("official_text_status") == "AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE",
+          f"counts={amlr_counts}")
+    check("    aml_regulation: status breakdown 24/1/0/0...",
+          amlr_counts.get("legal_status_breakdown") == {"اصلية": 24, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={amlr_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 10283 records...", uix.get("total_records") == 10283,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -1777,8 +1788,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 10427...",
-          registry.get("total_primary_arabic_governing_records") == 10427,
+    check("[19a] total_primary_arabic_governing_records == 10452...",
+          registry.get("total_primary_arabic_governing_records") == 10452,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -1793,8 +1804,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 11322...",
-          registry.get("total_registry_counted_records") == 11322,
+    check("[19e] total_registry_counted_records == 11347...",
+          registry.get("total_registry_counted_records") == 11347,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -1818,7 +1829,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"10427 + 614 + 281 = 11322")
+          f"10452 + 614 + 281 = 11347")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -1836,7 +1847,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 159 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 160 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
@@ -1850,7 +1861,7 @@ def print_results() -> None:
               "sharia_procedure_implementing_regulation, criminal_procedure_law, "
               "criminal_procedure_implementing_regulation, enforcement_law, "
               "enforcement_implementing_regulation, judiciary_law, board_of_grievances_law). "
-              "Primary Arabic 10427, reference 614, registry-counted 11322. All counts correct, all referenced paths "
+              "Primary Arabic 10452, reference 614, registry-counted 11347. All counts correct, all referenced paths "
               "exist, all boundaries enforced. Arabic governs; no official translation; no legal "
               "advice; no trilingual; no public release. English reference only; Chinese internal "
               "only. PDPL and Investment Arabic tracks are verified against official published "
