@@ -7,10 +7,10 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 160 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 160 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 161 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 161 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 160,
-  "known_source_staleness_risk_count": 13,
+  "total_tracks": 161,
+  "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
     "awqaf_law",
@@ -22,6 +22,7 @@
     "nationality_law",
     "nationality_regulation",
     "patent_law",
+    "patent_regulation",
     "press_law",
     "saudi_engineers_law",
     "traffic_law"
@@ -2313,6 +2314,28 @@
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2024-11-13, 2025-12-12; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "patent_boe_m45_staleness: BOE's live portal (both the 2024-11-13 and 2025-12-12 Wayback snapshots) has not incorporated the 2023 Hague-accession amendment (Royal Decree M/45, 10/3/1445H) at all: Articles 2, 18 and 19 are displayed by BOE in their"
+    },
+    {
+      "track_id": "patent_regulation",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Patents Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام براءات الاختراع",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='WIPO_LEX_OFFICIAL_SAIP_LETTERHEAD_PDF_DUAL_INDEPENDENT_EXTRACTION_PIPELINE_RECONCILED_X_QANOONSA_STRUCTURAL_CROSSCHECK_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "President of King Abdulaziz City for Science and Technology (KACST) Resolution No. (161-2-3607329), dated 30/12/1436H, issued under Article 63 of the Patents Law (Royal Decree M/27, 1425H), consolidated as amended by Saudi Authority for Intellectual Property (SAIP) Board of Directors Resolution No. (5/8/2019), dated 04/09/1440H — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this agency-level Regulation. PRIMARY source is the official SAIP-letterhead Arabic PDF hosted on WIPO Lex (record SA065), extracted via two fully independent pipelines (pdftotext-layout bidi and a custom PyMuPDF coordinate-gap reconstruction) whose Arabic-letter sequences matched per-page across the whole document except 14 individually-fixed bidi-reversed lines; structure and article count independently cross-verified via WIPO Lex's own metadata and qanoonsa.com",
+      "registry_source_url": null,
+      "official_source_file": "sources/patent/regulation/official_source/patent_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "web.archive.org",
+        "wipo.int",
+        "wipolex-res.wipo.int"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "patent_regulation_2024_amendment_not_incorporated_boe_style_staleness: النص المُدرَج (67 مادة) هو الصيغة الموحّدة المعدَّلة بقرار مجلس إدارة الهيئة رقم (5/8/2019) وتاريخ 04/09/1440هـ، كما يستضيفها WIPO Lex. صدر لاحقاً تعديل ثانٍ بقرار مجلس إدارة الهيئة رقم (02/32/2024) وتاريخ 10/04/1446هـ ("
     },
     {
       "track_id": "payment_systems_law",

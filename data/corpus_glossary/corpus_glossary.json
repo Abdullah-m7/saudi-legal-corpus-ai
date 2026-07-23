@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 160,
-  "total_terms": 981,
-  "total_definitions": 1476,
-  "tracks_with_definitions_article_parsed": 106,
+  "total_tracks_in_registry": 161,
+  "total_terms": 985,
+  "total_definitions": 1485,
+  "tracks_with_definitions_article_parsed": 107,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -563,6 +563,16 @@
         "term_as_written": "اتحاد الغرف",
         "definition_text": "اتحاد الغرف التجارية السعودية.",
         "source_record_id": "chambers-of-commerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اتحاد باريس": [
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "اتحاد باريس",
+        "definition_text": "هو الاتحاد المشكل بموجب المادة الأولى من اتفاقية باريس لحماية الملكية الصناعية والذي يتكون من الدول الأعضاء في الاتفاقية.",
+        "source_record_id": "patent-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4884,6 +4894,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الطلب الدولي": [
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "الطلب الدولي",
+        "definition_text": "هو طلب براءة الاختراع الذي تم تسليمه (إيداعه) بموجب أحكام معاهدة التعاون بشأن البراءات والذي تطبق عليه أحكام الباب الحادي عشر من هذه اللائحة.",
+        "source_record_id": "patent-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الطلبات": [
       {
         "track_id": "judicial_costs_law",
@@ -5900,6 +5920,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لنظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية.",
+        "source_record_id": "patent-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "pdpl_implementing_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -6153,6 +6181,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "اللجنة المنصوص عليها في المادة الخامسة والثلاثين من هذا النظام.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "هي اللجنة المنصوص عليها في المادة الخامسة والثلاثين من النظام.",
+        "source_record_id": "patent-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7256,6 +7292,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المرحلة الوطنية": [
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "المرحلة الوطنية",
+        "definition_text": "هي تحول الطلب الدولي إلى طلب وطني بعد تعيين المملكة العربية السعودية بالحماية واستلامها للطلب وفقا لأحكام معاهدة التعاون بشأن البراءات.",
+        "source_record_id": "patent-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المرخص له": [
       {
         "track_id": "electricity_law",
@@ -8059,6 +8105,16 @@
         "term_as_written": "المعاهدات الدولية",
         "definition_text": "المعاهدات والاتفاقيات الدولية المنضمة إليها المملكة وتعديلاتها.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المعاهدة": [
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "المعاهدة",
+        "definition_text": "هي معاهدة التعاون بشأن البراءات (PCT) المعقودة في واشنطن بتاريخ ١٩٧٠/٠٦/١٩م، التي صدر بشأنها المرسوم الملكي رقم م/٦٣ وتاريخ ٢٨/١٢/١٤٣٠ بالموافقة على انضمام المملكة العربية السعودية والتعديلات اللاحقة عليها.",
+        "source_record_id": "patent-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9689,6 +9745,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام هيئة الرقابة ومكافحة الفساد.",
         "source_record_id": "nazaha-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية.",
+        "source_record_id": "patent-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13528,6 +13592,14 @@
         "definition_text": "وهو إما أن يكون اختراعًا، أو تصميمًا تخطيطيًا لدارة متكاملة، أو صنفًا نباتيًّا، أو نموذجًا صناعيًّا.",
         "source_record_id": "patent-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "موضوع الحماية",
+        "definition_text": "وهو إما أن يكون اختراعا أو تصميما تخطيطيا لدارة متكاملة أو صنفا نباتيا أو نموذجا صناعيا.",
+        "source_record_id": "patent-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "موظف الضبط": [
@@ -13895,6 +13967,14 @@
         "term_as_written": "وثيقة الحماية",
         "definition_text": "الوثيقة التي تمنحها الهيئة لموضوع من موضوعات الحماية، وهي إما أن تكون براءة اختراع، أو شهادة تصميم، أو براءة نباتية، أو شهادة نموذج صناعي.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "patent_regulation",
+        "article_number": 1,
+        "term_as_written": "وثيقة الحماية",
+        "definition_text": "وهي إما أن تكون براءة اختراع أو شهادة تصميم أو براءة نباتية أو شهادة نموذج صناعي.",
+        "source_record_id": "patent-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
