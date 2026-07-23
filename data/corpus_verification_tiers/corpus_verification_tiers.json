@@ -19,11 +19,11 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 157,
+  "total_tracks": 158,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 99,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 22,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 13,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 14,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
   "tracks_with_per_article_variation": 21,
@@ -41,6 +41,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_SOCPA_OFFICIAL_PDF_X_QANOONSA_CROSS_VERIFIED_BOE_MAIN_BODY_CONFIRMED_STALE_FOR_AMENDED_ARTICLES': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها اعتُمدت كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ (نسخة PDF الرسمية من الهيئة السعودية للمراجعين والمحاسبين SOCPA نفسها، الجهة المنظِّمة للمهنة) ومصدر ثانوي ثالث (qanoonsa.com، صفحتان مستقلتان) — مصدران رسميان (BOE وSOCPA) متقاربان على كامل المواد الـ22، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط finance_companies_law (BOE عبر Wayback × bfc.gov.sa). خلل مؤكَّد (وليس افتراضاً) على صفحة BOE نفسها: خمس مواد (1، 4، 5، 19، 20) تحمل علامة 'مادة معدَّلة' ونافذة تعديلات تقتبس نص المرسوم الملكي م/169 (1446هـ) بدقة، بينما النص الرئيسي المعروض لنفس هذه المواد ظل قديماً (ما قبل م/169) بشكل متطابق حرفياً عبر ثلاث لقطات أرشيفية بفارق 8+ أشهر — تم اعتماد نص نافذة التعديلات (المؤكَّد عبر PDF الهيئة) لا النص الرئيسي الراكد. راجع has_per_article_variation للمادة الأولى تحديداً، التي تحمل تعديلاً ثانياً أحدث (قرار مجلس الوزراء 283، 1447هـ) لم يصل بعد إلى أي لقطة BOE ويستند فقط إلى PDF الهيئة وqanoonsa.com دون أي تأكيد رسمي مباشر له.",
       "has_per_article_variation": true,
       "per_article_variation_note": "17 مادة غير معدَّلة + نص التعديل الأول (م/169، 1446هـ) للمواد الخمس المعدَّلة (1، 4، 5، 19، 20) مصدرها مزدوج رسمي (أرشيف Wayback لبوابة BOE — نافذة التعديلات لا النص الرئيسي الراكد — × نسخة SOCPA الرسمية) متطابقة دون فارق جوهري. أما تعديل المادة الأولى الثاني والأحدث (قرار مجلس الوزراء 283، 1447هـ، تعميم تعريف 'الوزير') فمصدره ثانوي حصراً (PDF الهيئة SOCPA × qanoonsa.com) دون أي رقم مرسوم ملكي معروف يُصدره ودون أي تأكيد من بوابة BOE على الإطلاق؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "agriculture_law",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='NEZAMS_COM_SINGLE_FULLTEXT_AGGREGATOR_BOE_UNREACHABLE_MULTISOURCE_METADATA_CROSSCHECK_MISA_ENGLISH_PDF_CONFIRMS_STRUCTURE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "alimony_fund_regulation",

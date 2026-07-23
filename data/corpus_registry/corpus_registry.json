@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10385,
+  "total_primary_arabic_governing_records": 10422,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11280,
-  "total_tracks": 157,
+  "total_registry_counted_records": 11317,
+  "total_tracks": 158,
   "tracks": [
     {
       "boundaries": {
@@ -7456,6 +7456,55 @@
       "validator_targets": [
         "make income-tax-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/agriculture/law/official_source/agriculture_law_official_source.json",
+        "sources/agriculture/law/verified/agriculture_law_verified_records.jsonl",
+        "data/agriculture_arabic_legal_llm/agriculture_law_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "نظام الزراعة",
+      "display_name_en": "The Saudi Arabian Agriculture Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/agriculture_arabic_legal_llm/agriculture_law_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "The Saudi Arabian Agriculture Law «نظام الزراعة» — Royal Decree No. (M/64), dated 10/8/1442H (~24 March 2021G), based on Council of Ministers Resolution No. (431), 3/8/1442H, and two Shura Council resolutions (219/40, 17/9/1441H; 362/61, 25/2/1442H); published Umm Al-Qura Gazette 20/8/1442H; administered by the Ministry of Environment, Water and Agriculture (MEWA), with the Saudi Food and Drug Authority referenced as a regulator for specific matters. A brand-new base-law track — NOT previously in this corpus (unlike the other gap-map candidates built alongside it, this is not a companion regulation to an already-ingested law). **37 records, ALL 37 اصلية** (0 معدلة, 0 ملغاة, 0 مضافة — the Law has had no amendments), flat structure with **NO chapter/part divisions** (chapter_structure=[], confirmed independently by both nezams.com and the official MISA English-language PDF). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has its own dedicated lawId page for this law (d113fa79-5ad8-42b1-9955-acfb00a2c7ed, seen via WebSearch) but the live portal was unreachable this pass (HTTP 503); Wayback egress-blocked and NOT circumvented. Full verbatim text of all 37 articles extracted from nezams.com (a clean born-digital HTML aggregator, no scan/OCR/ligature defects); governing metadata and the flat 37-article/no-chapter structure independently cross-verified via the official MISA English PDF (confirms 'Royal Decree No. M/64', 37 articles, no chapters) plus further WebSearch corroboration (BOE, MEWA, Umm Al-Qura, Lexis) — no source disagreed on decree number, count, or status. **CONFIRMED NAMED REPEAL OF FIVE PREDECESSOR INSTRUMENTS** — a genuine positive finding, and unlike electricity_law/water_law (whose repeal clauses sit inside a numbered article), this Law's repeal sits in its own ISSUING DECREE (clause ثانياً of Royal Decree M/64 and of Council of Ministers Resolution 431), not inside any of the 37 articles: it repeals the Living Aquatic Resources Law (M/9, 1408H), the Animal Resources Law (M/13, 1424H), the Beekeeping Law (M/15, 1431H), the Organic Agriculture Law (M/55, 1435H), and the Council of Ministers Rules for Trading in Agricultural Machinery (No. 96, 1405H), plus any conflicting provisions; none of the five predecessors is separately ingested in this corpus (one-instrument-per-pass rule). **IMPLEMENTING REGULATION IDENTIFIED BUT NOT INGESTED**: Article 36 mandates one within 90 days; it exists and is published (MEWA rules library; Umm Al-Qura; qanoonsa, with a later amendment) — flagged as an 'agriculture_regulation' companion candidate for a future dedicated pass. Disclosed anomalies: two Farsi-yeh characters (Articles 23 and 35) normalized to Arabic yeh; mixed Arabic-Indic/Western digit rendering preserved verbatim; the Article-19 label is missing its taa marbuta ('التاسعة عشر') in the source, preserved verbatim not silently corrected; a glued 'محققا للمصلحة العامة' phrase in the decree preamble preserved verbatim; Gregorian dates are secondary-only conversions. Arabic governs; not legal advice.",
+      "official_text_status": "NEZAMS_COM_SINGLE_FULLTEXT_AGGREGATOR_BOE_UNREACHABLE_MULTISOURCE_METADATA_CROSSCHECK_MISA_ENGLISH_PDF_CONFIRMS_STRUCTURE",
+      "record_counts": {
+        "arabic_articles": 37,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 37
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/64), dated 10/8/1442H, based on Council of Ministers Resolution No. (431), 3/8/1442H, and two Shura Council resolutions (219/40, 17/9/1441H; 362/61, 25/2/1442H); published Umm Al-Qura Gazette 20/8/1442H — laws.boe.gov.sa has a dedicated lawId page (d113fa79-5ad8-42b1-9955-acfb00a2c7ed) but was unreachable this pass (HTTP 503), Wayback egress-blocked and not circumvented. PRIMARY source is nezams.com (a clean born-digital HTML full-text aggregator, no scan/OCR/ligature defects); governing metadata and the flat 37-article/no-chapter structure independently cross-verified against the official MISA English-language PDF and further corroborated via WebSearch (BOE, MEWA, Umm Al-Qura, Lexis)",
+      "status": "complete",
+      "track_id": "agriculture_law",
+      "validator_targets": [
+        "make agriculture-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7464,6 +7513,7 @@
     "records_per_corpus": {
       "aawan": 35,
       "accounting_auditing": 22,
+      "agriculture": 37,
       "alimony_fund": 17,
       "allegiance_commission": 25,
       "aml": 52,
@@ -7582,7 +7632,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10216,
+    "total_records": 10253,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

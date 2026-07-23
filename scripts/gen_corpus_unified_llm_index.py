@@ -338,6 +338,8 @@ LAYERS = [
      "vat", "regulation"),
     ("data/income_tax_regulation_arabic_legal_llm/income_tax_regulation_legal_llm_001_074.json",
      "income_tax", "regulation"),
+    ("data/agriculture_arabic_legal_llm/agriculture_law_legal_llm_001_037.json",
+     "agriculture", "law"),
 ]
 
 

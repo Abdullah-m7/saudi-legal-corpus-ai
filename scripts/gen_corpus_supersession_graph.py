@@ -1024,6 +1024,79 @@ EDGES = [
                 "located during research).",
         "source_ref": "sources/water/law/official_source/water_law_official_source.json (article 75)",
     },
+    {
+        "from_track_id": "agriculture_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الثروات المائية الحية (السابق)",
+        "target_decree": "Royal Decree No. M/9, 1408H",
+        "note": "agriculture_law's own ISSUING DECREE (clause ثانياً of Royal "
+                "Decree M/64 and of Council of Ministers Resolution 431, "
+                "3/8/1442H) -- not any numbered article -- explicitly repeals "
+                "this prior Living Aquatic Resources Law by decree number, as "
+                "part of a 5-predecessor named repeal-and-replace clause. Not "
+                "separately ingested in this corpus (one-instrument-per-pass "
+                "rule).",
+        "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)",
+    },
+    {
+        "from_track_id": "agriculture_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الثروة الحيوانية (السابق)",
+        "target_decree": "Royal Decree No. M/13, 1424H",
+        "note": "agriculture_law's own ISSUING DECREE explicitly repeals this "
+                "second prior instrument, the Animal Resources Law, by decree "
+                "number, as part of the same 5-predecessor named "
+                "repeal-and-replace clause described in the M/9 (1408H) edge "
+                "above. Not separately ingested in this corpus "
+                "(one-instrument-per-pass rule).",
+        "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)",
+    },
+    {
+        "from_track_id": "agriculture_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام تربية النحل (السابق)",
+        "target_decree": "Royal Decree No. M/15, 1431H",
+        "note": "agriculture_law's own ISSUING DECREE explicitly repeals this "
+                "third prior instrument, the Beekeeping Law, by decree number, "
+                "as part of the same 5-predecessor named repeal-and-replace "
+                "clause described in the M/9 (1408H) edge above. Not "
+                "separately ingested in this corpus (one-instrument-per-pass "
+                "rule).",
+        "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)",
+    },
+    {
+        "from_track_id": "agriculture_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الزراعة العضوية (السابق)",
+        "target_decree": "Royal Decree No. M/55, 1435H",
+        "note": "agriculture_law's own ISSUING DECREE explicitly repeals this "
+                "fourth prior instrument, the Organic Agriculture Law, by "
+                "decree number, as part of the same 5-predecessor named "
+                "repeal-and-replace clause described in the M/9 (1408H) edge "
+                "above. Not separately ingested in this corpus "
+                "(one-instrument-per-pass rule).",
+        "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)",
+    },
+    {
+        "from_track_id": "agriculture_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "قواعد تنظيم الاتجار بالآلات الزراعية (السابقة)",
+        "target_decree": "Council of Ministers Resolution No. 96, 1405H",
+        "note": "agriculture_law's own ISSUING DECREE explicitly repeals this "
+                "fifth prior instrument, the Council of Ministers Rules for "
+                "Trading in Agricultural Machinery, by resolution number, as "
+                "part of the same 5-predecessor named repeal-and-replace "
+                "clause described in the M/9 (1408H) edge above -- the only "
+                "one of the five that is itself a Council of Ministers "
+                "Resolution rather than a Royal Decree. Not separately "
+                "ingested in this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)",
+    },
 ]
 
 # ---------------------------------------------------------------------------
