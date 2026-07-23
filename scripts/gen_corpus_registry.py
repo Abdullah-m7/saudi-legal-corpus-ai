@@ -199,6 +199,7 @@ AGRICULTURE_LAW_LLM = os.path.join(ROOT, "data", "agriculture_arabic_legal_llm",
 COMPETITION_REGULATION_LLM = os.path.join(ROOT, "data", "competition_regulation_arabic_legal_llm", "competition_regulation_legal_llm_001_005.json")
 AML_REGULATION_LLM = os.path.join(ROOT, "data", "aml_regulation_arabic_legal_llm", "aml_regulation_legal_llm_001_025.json")
 PATENT_REGULATION_LLM = os.path.join(ROOT, "data", "patent_regulation_arabic_legal_llm", "patent_regulation_legal_llm_001_067.json")
+ECOMMERCE_REGULATION_LLM = os.path.join(ROOT, "data", "ecommerce_regulation_arabic_legal_llm", "ecommerce_regulation_legal_llm_001_020.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -391,6 +392,7 @@ def main() -> int:
     competition_regulation_llm = _load_json(COMPETITION_REGULATION_LLM)
     aml_regulation_llm = _load_json(AML_REGULATION_LLM)
     patent_regulation_llm = _load_json(PATENT_REGULATION_LLM)
+    ecommerce_regulation_llm = _load_json(ECOMMERCE_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -411,7 +413,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 161,
+        "total_tracks": 162,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -576,6 +578,7 @@ def main() -> int:
             + competition_regulation_llm["record_count"]  # 5 Implementing Regulation of the Competition Law (GAC Board Decision 337, 25/1/1441H) -- PARTIAL SCOPE, Articles 1-5 of 90 only (TIER_2, PRIMARY qanoniah.com clean API x WIPO Lex official Arabic PDF dual independent source for the captured articles, remaining 85 articles disclosed pending not fabricated, confirmed supersession of the 2014 Implementing Regulation (Competition Council Decision 126, 4/9/1435H), see track notes)
             + aml_regulation_llm["record_count"]  # 25 Implementing Regulation of the Anti-Money Laundering Law (Administrative Decision 266507, 9/12/1447H, consolidating cable 14525 19/2/1439H and amendment 98752) (TIER_3, BOE unreachable and no dedicated lawId page, PRIMARY aml.gov.sa scanned PDF reconciled with qanoniah.com born-digital API for 10 of 25 articles, remaining 15 OCR-extracted and visually adjudicated, 24 اصلية/1 معدلة (Article 17), see track notes)
             + patent_regulation_llm["record_count"]  # 67 Implementing Regulation of the Patents Law (KACST President Resolution 161-2-3607329, 30/12/1436H, consolidated as amended by SAIP Board Resolution 5/8/2019, 04/09/1440H) (TIER_3, BOE unreachable and no dedicated lawId page, PRIMARY official SAIP-letterhead Arabic PDF on WIPO Lex, dual independent extraction pipelines reconciled, structurally cross-verified against WIPO Lex metadata and qanoonsa.com, 67 اصلية across 12 أبواب, disclosed staleness -- a later 2024 amendment not reflected in this 2019-consolidated text, mirroring the base patent_law track -- see track notes)
+            + ecommerce_regulation_llm["record_count"]  # 20 Implementing Regulation of the E-Commerce Law (Ministerial Resolution 200, 19/5/1441H) (TIER_1, BOE unreachable and no dedicated lawId page, PRIMARY issuing Ministry's own official born-digital page (mc.gov.sa) cross-verified word-for-word against the Ministry's own official scanned PDF plus qanoniah.com/lexismiddleeast.com/argaam.com/mithaq.com.sa, 20 اصلية flat structure no chapters, confirmed no named predecessor since the base Law itself only dates to 1440H, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -731,6 +734,7 @@ def main() -> int:
             + competition_regulation_llm["record_count"]
             + aml_regulation_llm["record_count"]
             + patent_regulation_llm["record_count"]
+            + ecommerce_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5449,6 +5453,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian Patents Law «اللائحة التنفيذية لنظام براءات الاختراع» — founding instrument KACST President Resolution No. (161-2-3607329), dated 30/12/1436H (13 Oct 2015), issued under Article 63 of the Patents Law (Royal Decree M/27, 1425H); consolidated as amended by SAIP Board of Directors Resolution No. (5/8/2019), dated 04/09/1440H (9 May 2019). **67 articles across 12 أبواب** (chapter 2 subdivided into 4 فصول by filing type: patent, integrated-circuit layout-design, plant, industrial-design applications), **ALL 67 اصلية** — the primary source (WIPO Lex's consolidated file) does not enumerate which specific articles the 2019 amendment touched at article level, so no article is classified معدلة beyond what the source explicitly states, consistent with this corpus's rule against extrapolating amendment scope; disclosed that the ingested text is the 2019-consolidated version, not the 1436H founding text. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology: unreachable this pass (connection reset) AND confirmed to have no dedicated lawId page for this agency/board-level Regulation (only for the base Patents Law itself). PRIMARY source is the official SAIP-letterhead Arabic PDF on WIPO Lex (record SA065) — visually confirmed via rendered pages to carry SAIP's own branding. Extracted via two fully independent pipelines (pdftotext-layout bidi and a custom PyMuPDF coordinate-gap reconstruction) whose Arabic-letter sequences matched per-page across the whole document except 14 bidi-reversed lines (fixed using the bidi-correct pipeline); a letter-multiset integrity gate proved every fix was letter-preserving except one deliberately-restored accusative alif (اسباباً, Article 25, confirmed against the independent pipeline). Structure and article count independently cross-verified via WIPO Lex's own metadata and qanoonsa.com. **DISCLOSED STALENESS, MIRRORING THE BASE patent_law TRACK**: a later SAIP Board Resolution No. (02/32/2024), dated 10/04/1446H (Umm al-Qura, 13 Dec 2024, confirmed via qanoonsa.com), is NOT reflected in the WIPO Lex 2019-consolidated text ingested here; no trustworthy consolidated 2024 text was obtainable this pass (Istitlaa returned 503; no unified Umm al-Qura or SAIP text available) — disclosed as an explicit follow-up candidate, no 2024 text fabricated. **NO NAMED-PREDECESSOR REPEAL/SUPERSESSION CLAUSE** — a confirmed negative finding; this is the first Implementing Regulation issued under the current Patents Law (M/27, 1425H), which itself replaced the older Patents Law (M/38, 1409H); its own closing articles (66-67) only authorize the Board to issue future amendments and publish them in the Official Gazette. Disclosed anomalies: presentation-form dual-pipeline extraction with the 14 line-level fixes noted above; a mis-encoded shadda ('تسل1م'→'تسلم', Articles 61/64, visually confirmed against the rendered page as 'تسلُّم'); an inline English gloss 'treatment' (Article 40) preserved verbatim (agreed by both independent extraction pipelines, not an extraction artifact); Latin acronyms PCT/IUPAC/IUPAP/SUNAMCO preserved verbatim (Articles 1, 11, 12, and Chapter 11); a trailing fee-schedule annex (جدول بالنفقات) stored in a separate schedule_ar field, not counted among the 67 numbered articles; Gregorian date equivalences sourced from WIPO Lex's own metadata, not invented. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "ecommerce_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام التجارة الإلكترونية",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian E-Commerce Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MC_GOV_SA_OFFICIAL_BORN_DIGITAL_PAGE_X_MINISTRY_OWN_SCANNED_PDF_WORD_FOR_WORD_CROSSCHECK_X_QANONIAH_LEXISMIDDLEEAST_ARGAAM_MITHAQ_BOE_NO_DEDICATED_LAWID_PAGE",
+                "source_authority": "Ministerial Resolution No. (200), dated 19/5/1441H, issued by Minister of Commerce Dr. Majid Al-Qassabi under Article 25 of the E-Commerce Law (Royal Decree M/126, 7/11/1440H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but returned HTTP 503 this pass AND has no dedicated lawId page for this Ministerial-Resolution-level Regulation. PRIMARY source is the issuing Ministry's own official born-digital regulations page (mc.gov.sa), cross-verified word-for-word against the Ministry's own official scanned PDF (direct visual reading of Articles 1-4 and 18) and further corroborated via qanoniah.com, lexismiddleeast.com, argaam.com, and mithaq.com.sa",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": ecommerce_regulation_llm["record_count"],
+                    "data_path": "data/ecommerce_regulation_arabic_legal_llm/ecommerce_regulation_legal_llm_001_020.json"}},
+                "record_counts": {"arabic_articles": ecommerce_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": ecommerce_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/ecommerce/regulation/official_source/ecommerce_regulation_official_source.json",
+                    "sources/ecommerce/regulation/verified/ecommerce_regulation_verified_records.jsonl",
+                    "data/ecommerce_regulation_arabic_legal_llm/ecommerce_regulation_legal_llm_001_020.json",
+                ],
+                "validator_targets": ["make ecommerce-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian E-Commerce Law «اللائحة التنفيذية لنظام التجارة الإلكترونية» — Ministerial Resolution No. (200), dated 19/5/1441H, issued by Minister of Commerce Dr. Majid Al-Qassabi, under Article 25 of the E-Commerce Law (Royal Decree M/126, 7/11/1440H); published Umm al-Qura Gazette issue 4816, 31 Jan 2020. **20 articles, ALL 20 اصلية**, flat structure with NO chapter/part divisions (chapter_structure=[]). Article count of 20 (vs the base Law's own 26 articles — an unrelated figure) independently confirmed four ways (Ministry's own official metadata, Argaam, Mithaq, and direct article-by-article count). **VERIFICATION TIER: TIER_1** — laws.boe.gov.sa checked first per methodology: returned HTTP 503 this pass AND has no dedicated lawId page for this Ministerial-Resolution-level Regulation. PRIMARY source is the issuing Ministry's own official born-digital regulations page (mc.gov.sa) — the same Ministry that issued the Resolution — cross-verified WORD-FOR-WORD against the Ministry's own official scanned PDF via direct visual reading (Articles 1-4 and 18 confirmed character-identical), matching this corpus's TIER_1 pattern of two independent official renderings of the same governing text from the same authority; further corroborated (structure/metadata only) via qanoniah.com, lexismiddleeast.com, argaam.com, and mithaq.com.sa. **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; the base E-Commerce Law itself only dates to 1440H (2019G), so no prior Implementing Regulation could have existed for this one to replace. Disclosed: an amendment public-consultation (refund-mechanism on consumer cancellation) was identified but no enacting amending resolution number/date was confirmable this pass, so all 20 articles remain اصلية rather than being spot-reclassified on unconfirmed grounds. Disclosed display-layer normalization: Arabic-Indic digits converted to Western digits, tashkeel stripped, the hijri 'هـ' suffix preserved, hidden bidi-control marks removed — none of these affect governing wording. Arabic governs; not legal advice.",
             },
         ],
     }
