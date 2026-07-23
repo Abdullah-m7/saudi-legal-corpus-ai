@@ -19,11 +19,11 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 159,
+  "total_tracks": 160,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 99,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 23,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 14,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 15,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
   "tracks_with_per_article_variation": 21,
@@ -67,6 +67,13 @@
       "track_id": "aml_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "aml_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
