@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 164
+        assert registry["total_tracks"] == 168
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 10641
+        assert registry["total_primary_arabic_governing_records"] == 10680
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 11536
+        assert registry["total_registry_counted_records"] == 11575
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -233,6 +233,10 @@ class TestTracks:
         assert "ecommerce_regulation" in ids
         assert "franchise_regulation" in ids
         assert "traffic_regulation" in ids
+        assert "environmental_inspection_audit" in ids
+        assert "environmental_violations_penalties" in ids
+        assert "environmental_permits" in ids
+        assert "environmental_air_quality" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -1120,6 +1124,30 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 86
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 82, "معدلة": 3, "ملغاة": 1, "مضافة": 0}
         assert t["official_text_status"] == "MOI_OFFICIAL_SCANNED_DOCUMENT_DUAL_VISION_OCR_PIPELINE_X_QANONIAH_COM_BORN_DIGITAL_PARTIAL_CROSSCHECK_ARTS_1_8_OF_86_BOE_NO_DEDICATED_LAWID_PAGE"
+
+    def test_environmental_inspection_audit_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "environmental_inspection_audit")
+        assert t["record_counts"]["arabic_articles"] == 10
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 10, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "QANOONSA_COM_PRIMARY_UMM_AL_QURA_5057_REPRODUCTION_X_QISTAS_COM_PARTIAL_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE"
+
+    def test_environmental_violations_penalties_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "environmental_violations_penalties")
+        assert t["record_counts"]["arabic_articles"] == 10
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 10, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "QANOONSA_COM_CONSOLIDATED_TEXT_X_QISTAS_COM_APPENDIX_CROSSCHECK_BOE_NO_DEDICATED_LAWID_PAGE"
+
+    def test_environmental_permits_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "environmental_permits")
+        assert t["record_counts"]["arabic_articles"] == 11
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "UMM_AL_QURA_GAZETTE_4888_OFFICIAL_HTML_X_OFFICIAL_BORN_DIGITAL_PDF_DUAL_RENDERING_SAME_ISSUE_996_PERCENT_WORDLEVEL_BOE_NO_DEDICATED_LAWID_PAGE"
+
+    def test_environmental_air_quality_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "environmental_air_quality")
+        assert t["record_counts"]["arabic_articles"] == 8
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MEWA_GOV_SA_OFFICIAL_BORN_DIGITAL_PDF_X_QANONIAH_COM_WORDLEVEL_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

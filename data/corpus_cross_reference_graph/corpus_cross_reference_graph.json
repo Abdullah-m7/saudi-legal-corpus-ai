@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 10472,
-  "total_references_extracted": 2233,
-  "intra_law_count": 1940,
-  "inter_law_count": 293,
+  "total_records_scanned": 10511,
+  "total_references_extracted": 2253,
+  "intra_law_count": 1950,
+  "inter_law_count": 303,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1882,
-    "medium": 351
+    "high": 1897,
+    "medium": 356
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -9174,6 +9174,226 @@
       "target_article_number": 39,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (التاسعة والثلاثين) من النظام- (بحسب الأحوال) خلا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_air_quality",
+      "source_record_id": "environmental-air-quality-reg-llm-art-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة مع مراع",
+      "raw_citation_text": "وفقا للائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة مع مراع",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "environmental_inspection_audit",
+      "source_record_id": "environmental-inspection-audit-reg-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+      "raw_citation_text": "وفقا للائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "environmental_permits",
+      "source_record_id": "environmental-permits-reg-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "environmental_permits",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (٥) من اللائحة. (٤) يقوم المركز ب",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_permits",
+      "source_record_id": "environmental-permits-reg-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "environmental_permits",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (٧) من اللائحة الفئة ٣ موافقة الم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_permits",
+      "source_record_id": "environmental-permits-reg-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "environmental_permits",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (٨) من اللائحة ثالثا: التصريح الب",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_permits",
+      "source_record_id": "environmental-permits-reg-llm-art-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لإعادة التأهيل البيئي",
+      "raw_citation_text": "وفقا للائحة التنفيذية لإعادة التأهيل البيئي",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "environmental_permits",
+      "source_record_id": "environmental-permits-reg-llm-art-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية للتفتيش والتدقيق البيئي كل ثلاث سنوات",
+      "raw_citation_text": "وفقا للائحة التنفيذية للتفتيش والتدقيق البيئي كل ثلاث سنوات",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "environmental_permits",
+      "source_record_id": "environmental-permits-reg-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "environmental_permits",
+      "target_article_number": 35,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة والثلاثين من النظام. ب- الأفعال التي تؤ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_permits",
+      "source_record_id": "environmental-permits-reg-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة مع مراع",
+      "raw_citation_text": "وفقا للائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة مع مراع",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "environmental_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "البيئة ولوائحه التنفيذية",
+      "raw_citation_text": "المادة الأولى من نظام البيئة ولوائحه التنفيذية. ويقصد بالألفاظ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-009",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "environmental_law",
+      "target_article_number": null,
+      "target_law_name_raw": "البيئة",
+      "raw_citation_text": "أحكام نظام البيئة الصادر بالمرسوم الملكي الكريم رقم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-009",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "environmental_law",
+      "target_article_number": null,
+      "target_law_name_raw": "البيئة ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام البيئة ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "environmental_violations_penalties",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (٣٦) من النظام: أ- يتم ضبط مخالفات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "environmental_violations_penalties",
+      "target_article_number": 37,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (٣٧) من النظام: مع عدم الإخلال بما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "environmental_violations_penalties",
+      "target_article_number": 38,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة والثلاثين من النظام، تراعى فيه طبيعة كل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "environmental_violations_penalties",
+      "target_article_number": 38,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة والثلاثين) من النظام. ٤- للجنة تطبيق الإ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "environmental_violations_penalties",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة من هذه اللائحة. ٥- يعتمد الوز",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "environmental_violations_penalties",
+      "target_article_number": 43,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (٤٣) من النظام: ١- يجب على المخالف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "environmental_law",
+      "target_article_number": null,
+      "target_law_name_raw": "البيئة ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام البيئة ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_violations_penalties",
+      "source_record_id": "environmental-violations-penalties-reg-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "environmental_law",
+      "target_article_number": null,
+      "target_law_name_raw": "البيئة",
+      "raw_citation_text": "أحكام نظام البيئة",
       "confidence": "high"
     },
     {
