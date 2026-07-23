@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 10253,
-  "total_references_extracted": 2147,
-  "intra_law_count": 1876,
-  "inter_law_count": 271,
+  "total_records_scanned": 10258,
+  "total_references_extracted": 2149,
+  "intra_law_count": 1877,
+  "inter_law_count": 272,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1806,
-    "medium": 341
+    "high": 1807,
+    "medium": 342
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -5944,6 +5944,17 @@
     },
     {
       "source_track_id": "competition_law",
+      "source_record_id": "competition-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "السوق ومبادئ المنافسة الحرة",
+      "raw_citation_text": "وفقاً لقواعد السوق ومبادئ المنافسة الحرة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "competition_law",
       "source_record_id": "competition-law-llm-art-011",
       "source_article_number": 11,
       "type": "intra_law",
@@ -6017,6 +6028,17 @@
       "target_article_number": 19,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (التاسعة عشرة) من النظام، يجوز للمجلس اتخاذ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "competition_regulation",
+      "source_record_id": "competition-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "competition_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة ) من النظام. 3. لا تسري أحكام",
       "confidence": "high"
     },
     {

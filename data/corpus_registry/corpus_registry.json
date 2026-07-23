@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10422,
+  "total_primary_arabic_governing_records": 10427,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11317,
-  "total_tracks": 158,
+  "total_registry_counted_records": 11322,
+  "total_tracks": 159,
   "tracks": [
     {
       "boundaries": {
@@ -7505,6 +7505,55 @@
       "validator_targets": [
         "make agriculture-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/competition/regulation/official_source/competition_regulation_official_source.json",
+        "sources/competition/regulation/verified/competition_regulation_verified_records.jsonl",
+        "data/competition_regulation_arabic_legal_llm/competition_regulation_legal_llm_001_005.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام المنافسة",
+      "display_name_en": "Implementing Regulation of the Saudi Competition Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/competition_regulation_arabic_legal_llm/competition_regulation_legal_llm_001_005.json",
+          "governing": true,
+          "record_count": 5,
+          "status": "partial"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Competition Law «اللائحة التنفيذية لنظام المنافسة» — GAC Board of Directors Decision No. (337), dated 25/1/1441H (24 Sep 2019), issued under Article 27 of the Competition Law (Royal Decree M/75, 29/6/1440H); published Umm al-Qura Gazette issue No. 4806 (22 Nov 2019). **DELIBERATE PARTIAL SCOPE, DISCLOSED NOT FABRICATED**: the full Regulation is 90 articles across 11 chapters (recorded in full_regulation_chapter_structure / full_regulation_article_count / full_regulation_chapter_count), but **only Articles 1-5 (Chapters 1-2: التعريفات والأهداف, الاختصاص ونطاق التطبيق) are ingested this pass, ALL 5 اصلية**. Articles 6-90 were NOT ingested because the only complete fetchable Arabic source (WIPO Lex's sa071ar.pdf) has an unrecoverable lossy digit-CMap extraction defect (real digits 2,3,5,6,7,8,9 collapse many-to-one -- e.g. decision '337' extracts as '663' -- proven by cross-checking against the clean source), and the clean qanoniah.com source auth-gates articles 6+ (HTTP 401 on further pages). Rather than ingest 85 articles with corrupt digits or fabricate numerals, ingestion stopped at what could be independently cross-verified; a follow-up pass is an explicit candidate once gac.gov.sa becomes reachable. **VERIFICATION TIER: TIER_2 (dual independent source, for the captured scope only)** — laws.boe.gov.sa checked first per methodology: unreachable this pass (HTTP 503) AND has no dedicated lawId page for this Board-level regulation at all (BOE only hosts the base Competition Law and the GAC's own organizational statute as separate documents). PRIMARY text = qanoniah.com's clean-Unicode backend API (correct digits, unauthenticated, Articles 1-5 in full). Independent corroboration = WIPO Lex's official Arabic PDF, whose letter content matches Articles 1-5 exactly (these five articles only contain the 'safe' digits 1-4, which do match across both sources -- the lossy-digit defect only affects articles 6+). English (WIPO) used only for non-governing structural metadata (full article count, chapter map), never to correct Arabic text. **CONFIRMED SUPERSESSION OF A NAMED PREDECESSOR**: this Regulation supersedes the 2014 Implementing Regulation of the (old, repealed) Competition Law -- Competition Council Decision No. (126), 4/9/1435H, 78 articles, issued under the now-repealed Competition Law M/25 -- confirmed via WIPO Lex, which marks the 2014 record (19750/SA072) as superseded by the current record (19749/SA071); recorded as a supersession-graph edge, the 2014 predecessor is not separately ingested. Disclosed anomalies: **Article 12(1) was amended in 2023** (GAC Board 80th session, 7 Ramadan 1444H / 29 Mar 2023 per SPA) -- this sits in Chapter 4, OUTSIDE the captured scope, disclosed and not applied to the ingested articles; the old predecessor's decision number appears as '126' in WIPO/qistas vs '621' in an NSHR copy (a likely digit reversal; 126 is favored, both preserved in known_unresolved_discrepancies); a preserved source spelling 'قرارتها' (likely 'قراراتها', identical in both independent sources so not silently corrected); diacritics/ZWNJ normalization. Arabic governs; not legal advice.",
+      "official_text_status": "QANONIAH_COM_PRIMARY_X_WIPO_LEX_OFFICIAL_ARABIC_PDF_DUAL_INDEPENDENT_SOURCE_PARTIAL_SCOPE_ARTS_1_5_OF_90_BOE_NO_DEDICATED_LAWID_PAGE_GAC_ISSUER_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 5,
+        "legal_status_breakdown": {
+          "اصلية": 5,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 5
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "General Authority for Competition (GAC) Board of Directors Decision No. (337), dated 25/1/1441H (24 Sep 2019), issued under Article 27 of the Competition Law (Royal Decree M/75, 29/6/1440H); published Umm al-Qura Gazette issue No. 4806 (22 Nov 2019) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this Board-level Implementing Regulation at all; gac.gov.sa (the issuer) was also unreachable. PRIMARY text is qanoniah.com's clean-Unicode API (Articles 1-5, correct digits), independently corroborated letter-for-letter by WIPO Lex's own official Arabic PDF (record 19749/SA071) for the same captured articles",
+      "status": "partial",
+      "track_id": "competition_regulation",
+      "validator_targets": [
+        "make competition-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7543,7 +7592,7 @@
       "commercial_papers": 121,
       "commercial_register": 29,
       "companies_law": 281,
-      "competition": 28,
+      "competition": 33,
       "cooperative_health_insurance": 19,
       "copyright": 28,
       "council_of_ministers": 32,
@@ -7632,7 +7681,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10253,
+    "total_records": 10258,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

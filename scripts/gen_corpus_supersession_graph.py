@@ -1097,6 +1097,25 @@ EDGES = [
                 "ingested in this corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)",
     },
+    {
+        "from_track_id": "competition_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية لنظام المنافسة (السابقة)",
+        "target_decree": "Competition Council Decision No. (126), 4/9/1435H",
+        "note": "competition_regulation (GAC Board Decision 337, 25/1/1441H) "
+                "supersedes the 2014 Implementing Regulation of the prior, "
+                "now-repealed Competition Law (M/25) -- Competition Council "
+                "Decision No. (126), 4/9/1435H, 78 articles. Confirmed via "
+                "WIPO Lex, which marks the 2014 record (19750/SA072) as "
+                "superseded by the current record (19749/SA071). The old "
+                "decision number appears as '126' in WIPO/qistas vs '621' in "
+                "an NSHR copy -- likely a digit reversal; 126 is favored, "
+                "both preserved in known_unresolved_discrepancies. Not "
+                "separately ingested in this corpus (one-instrument-per-pass "
+                "rule).",
+        "source_ref": "sources/competition/regulation/official_source/competition_regulation_official_source.json (supersedes)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

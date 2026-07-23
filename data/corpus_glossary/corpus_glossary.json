@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 158,
-  "total_terms": 964,
-  "total_definitions": 1442,
-  "tracks_with_definitions_article_parsed": 104,
+  "total_tracks_in_registry": 159,
+  "total_terms": 971,
+  "total_definitions": 1465,
+  "tracks_with_definitions_article_parsed": 105,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -275,6 +275,16 @@
         "term_as_written": "أصول التفليسة",
         "definition_text": "أصول المدين في تاريخ افتتاح أي من إجراءات الإفلاس المنصوص عليها في النظام أو خلال سريان أي منها.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أطراف التركز الاقتصادي": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "أطراف التركز الاقتصادي",
+        "definition_text": "المنشآت المشاركة -أو الراغبة في المشاركة- في عملية التركز الاقتصادي، سواء تقدمت بطلب الموافقة على إتمام التركز الاقتصادي أو لم تتقدم.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -846,6 +856,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأطراف ذات العلاقة بالتركز الاقتصادي": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "الأطراف ذات العلاقة بالتركز الاقتصادي",
+        "definition_text": "الأطراف المتأثرة بالتركز الاقتصادي، ومنهم المنافسون والعملاء والموردون والموزعون وأصحاب المصالح.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأطراف وأطراف المصالحة": [
       {
         "track_id": "muslaha_regulation",
@@ -1305,6 +1325,14 @@
       }
     ],
     "الإعفاء": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "الإعفاء",
+        "definition_text": "صلاحية المجلس في عدم تطبيق أي حكم من أحكام المواد (الخامسة) و(السادسة) و(السابعة) من النظام على المنشأة، وفقا لما تبينه اللائحة ويقره المجلس من إجراءات.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "electricity_law",
         "article_number": 1,
@@ -2194,6 +2222,14 @@
         "definition_text": "كل عمل ينشأ منه نقل كلي أو جزئي لملكية أصول أو حقوق أو أسهم أو حصص أو التزامات منشأة إلى منشأة أخرى، أو الجمع بين إدارتين أو أكثر في إدارة مشتركة، وذلك وفقاً لما تحدده اللائحة من ضوابط ومعايير.",
         "source_record_id": "competition-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "التركز الاقتصادي",
+        "definition_text": "كل عمل ينشأ منه نقل كلي أو جزئي لملكية أصول أو حقوق أو أسهم أو حصص أو التزامات منشأة إلى منشأة أخرى عن طريق الاندماج أو الاستحواذ أو التملك، أو الجمع بين إدارتين أو أكثر في إدارة مشتركة، أو أي صورة أخرى تؤدي إلى التحكم في منشأة -أو أكثر- بما في ذلك التأثير في قرارتها أو تشكيل جهازها الإداري أو آلية التصويت فيها.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التركيز": [
@@ -2263,6 +2299,16 @@
         "term_as_written": "التسجيل الوطني",
         "definition_text": "تسجيل الطائرات في السجل السعودي الوطني للطائرات الذي تعده وتشرف عليه الهيئة.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التسوية": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "التسوية",
+        "definition_text": "طلب يترتب على قبوله من المجلس عدم تحريك الدعوى الجزائية -في حالة محددة- ضد المنشأة المخالفة أمام اللجنة، نظير مبلغ تتحمل تلك المنشأة سداده، مع تنفيذ ما قد تكلف به من تدابير أو اشتراطات أو تعهدات، أو تعويضات للمتضررين، وفقا لما تبينه اللائحة ويقره المجلس.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2533,6 +2579,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم صندوق النفقة.",
         "source_record_id": "alimony-fund-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم الهيئة.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3732,6 +3786,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "documentation_settlement_regulation",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -4082,6 +4144,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السلعة": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "السلعة",
+        "definition_text": "أي منتج أو خدمة أو مجموعهما أو مزيج بينهما.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السلعة موضوع التحقيق": [
       {
         "track_id": "gcc_anti_dumping_law",
@@ -4125,6 +4197,14 @@
         "term_as_written": "السوق",
         "definition_text": "مكان أو وسيلة يلتقي فيه مجموعة من المشترين والبائعين الحاليين والمرتقبين خلال مدة زمنية محددة.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "السوق",
+        "definition_text": "مكان أو وسيلة يلتقي فيه مجموعة من المشترين والبائعين الحاليين والمرتقبين خلال مدة زمنية محددة.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5386,6 +5466,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الكيان": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "الكيان",
+        "definition_text": "الشخص ذو الصفة الاعتبارية سواء كان مكونا من منشأة، أو من عدد من المنشآت المرتبطة فيما بينها بملكية أو إدارة واحدة.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الكيان الإرهابي": [
       {
         "track_id": "terrorism_law",
@@ -5525,6 +5615,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5941,6 +6039,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "لجنة الفصل في مخالفات النظام.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة الفصل في مخالفات النظام.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6498,6 +6604,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "copyright_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -6691,6 +6805,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ الهيئة.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7556,6 +7678,14 @@
     ],
     "المصالحة": [
       {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "المصالحة",
+        "definition_text": "طلب يترتب على قبوله من المجلس عدم تحريك الدعوى الجزائية -في حالة محددة- ضد المنشأة المخالفة أمام اللجنة، إذا بادرت تلك المنشأة بتقديم أدلة تكشف -أو تكون قابلة للكشف- عن شركائها في المخالفة، وفقا لما تبينه اللائحة ويقره المجلس.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mosalaha_center_regulation",
         "article_number": 1,
         "term_as_written": "المصالحة",
@@ -8088,6 +8218,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الممارسة": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "الممارسة",
+        "definition_text": "أي سلوك صادر عن منشأة أو أكثر، من شأنه أن يرتب واحدة أو أكثر من العقوبات والتدابير المقررة في المواد (التاسعة عشرة) و(العشرين) و(الحادية والعشرين) من النظام.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الممثليات": [
       {
         "track_id": "travel_documents_regulation",
@@ -8121,6 +8261,14 @@
         "term_as_written": "المملكة",
         "definition_text": "المملكة العربية السعودية.",
         "source_record_id": "oa-llm-companies-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "المملكة",
+        "definition_text": "المملكة العربية السعودية.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8325,6 +8473,14 @@
         "term_as_written": "المنشأة",
         "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية يمارس نشاطاً اقتصادياً.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "المنشأة",
+        "definition_text": "أي شخص ذي صفة طبيعية أو اعتبارية يمارس نشاطا اقتصاديا.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8978,6 +9134,14 @@
         "definition_text": "كل نشاط يستهدف تحقيق الربح ويشترط لممارسته الحصول على موافقات أو تراخيص من الجهات المختصة، سواء أكان تجاريًا أم استثماريًا أم خدميًا أم مهنيًا أم صناعيًا أم زراعيًا أم غير ذلك.",
         "source_record_id": "anti-concealment-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "النشاط الاقتصادي",
+        "definition_text": "النشاط الذي يتضمن إنتاج أو توزيع أو شراء أو بيع السلع، ويشمل ذلك كل عمل تجاري أو زراعي أو صناعي أو خدمي أو مهني.",
+        "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "النشاط التعديني": [
@@ -9189,6 +9353,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام المنافسة.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المنافسة.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9745,6 +9917,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة العامة للمنافسة.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للمنافسة.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10699,6 +10879,14 @@
         "term_as_written": "الوضع المهيمن",
         "definition_text": "وضع تكون من خلاله المنشأة - أو مجموعة منشآت - مسيطرة على نسبة معينة من السوق التي تمارس نشاطها فيها أو قادرة على التأثير فيها، أو بهما معاً، وتحدد اللائحة تلك النسبة وفقاً لمعايير يقرها المجلس.",
         "source_record_id": "competition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "الوضع المهيمن",
+        "definition_text": "وضع تكون من خلاله المنشأة -أو مجموعة منشآت- مسيطرة على نسبة معينة من السوق المعنية التي تمارس نشاطها فيها أو قادرة على التأثير فيها، أو بهما معا.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12489,6 +12677,16 @@
         "term_as_written": "مأمور التنفيذ",
         "definition_text": "الشخص المكلف بمباشرة إجراءات التنفيذ وفقًا لأحكام النظام.",
         "source_record_id": "enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مأمورو الضبط": [
+      {
+        "track_id": "competition_regulation",
+        "article_number": 1,
+        "term_as_written": "مأمورو الضبط",
+        "definition_text": "الموظفون الحاصلون على صفة الضبطية القضائية، المخولون -مجتمعين أو منفردين- بإجراءات التقصي والبحث وجمع الاستدلالات والضبط وما يتصل بذلك للكشف عن المخالفات، وفقا لأحكام النظام واللائحة.",
+        "source_record_id": "competition-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
