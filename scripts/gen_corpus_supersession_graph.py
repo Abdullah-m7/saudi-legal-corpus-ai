@@ -1116,6 +1116,25 @@ EDGES = [
                 "rule).",
         "source_ref": "sources/competition/regulation/official_source/competition_regulation_official_source.json (supersedes)",
     },
+    {
+        "from_track_id": "traffic_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية لنظام المرور (السابقة)",
+        "target_decree": "Ministerial Resolution (Minister of Interior) No. (7019), 3/7/1429H",
+        "note": "traffic_regulation (Ministerial Resolution 2249, 10/3/1441H) "
+                "explicitly supersedes the prior Implementing Regulation of "
+                "the Traffic Law, Ministerial Resolution No. (7019), dated "
+                "3/7/1429H -- confirmed via the Resolution's own verbatim "
+                "preamble clause (ثانياً): \"تحل هذه اللائحة محل اللائحة "
+                "التنفيذية لنظام المرور، المعتمدة بالقرار الوزاري، المشار "
+                "إليه أعلاه\" (the referenced-above decision being 7019/1429H "
+                "named earlier in the same preamble). This is a real "
+                "confirmed named-predecessor repeal-and-replace, not an "
+                "ambiguous/excluded case. Not separately ingested in this "
+                "corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/traffic/regulation/official_source/traffic_regulation_official_source.json (preamble_ar / issuing decree clause ثانياً)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

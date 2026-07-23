@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10555,
+  "total_primary_arabic_governing_records": 10641,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11450,
-  "total_tracks": 163,
+  "total_registry_counted_records": 11536,
+  "total_tracks": 164,
   "tracks": [
     {
       "boundaries": {
@@ -7750,6 +7750,55 @@
       "validator_targets": [
         "make franchise-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/traffic/regulation/official_source/traffic_regulation_official_source.json",
+        "sources/traffic/regulation/verified/traffic_regulation_verified_records.jsonl",
+        "data/traffic_regulation_arabic_legal_llm/traffic_regulation_legal_llm_001_086.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام المرور",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Traffic Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/traffic_regulation_arabic_legal_llm/traffic_regulation_legal_llm_001_086.json",
+          "governing": true,
+          "record_count": 86,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian Traffic Law «اللائحة التنفيذية لنظام المرور» — Ministerial Resolution (Minister of Interior) No. (2249), dated 10/3/1441H, signed by HRH Prince Abdulaziz bin Saud bin Naif, issued under the Traffic Law (Royal Decree M/85, 26/10/1428H, as amended by M/70 6/11/1437H, M/73 18/7/1439H, M/115 5/12/1439H); published Umm Al-Qura Gazette issue 4812, 3 Jan 2020G. **86 records = 85 numbered articles + المادة الخمسون مكرر** (commercial-centre traffic licensing, classified original since it already existed in the founding 2249/1441H text, not a later addition), across 8 أبواب (باب 1 نطاق/تعاريف arts 1-2؛ باب 2 تسجيل المركبات ورخص السير arts 3-21؛ باب 3 أوزان المركبات وأبعادها arts 22-31؛ باب 4 رخص القيادة arts 32-49؛ باب 5 تنظيمات السير arts 50-58 incl. 50 مكرر؛ باب 6 الحوادث arts 59-65؛ باب 7 ضبط المخالفات arts 66-79؛ باب 8 أحكام عامة arts 80-85). **Status: 82 اصلية / 3 معدلة (Articles 7, 23, 47) / 1 ملغاة (Article 80) / 0 مضافة.** **CONFIRMED NAMED-PREDECESSOR REPEAL**: the Resolution's own preamble clause (ثانياً) verbatim states «تحل هذه اللائحة محل اللائحة التنفيذية لنظام المرور، المعتمدة بالقرار الوزاري، المشار إليه أعلاه» — explicitly replacing the prior Implementing Regulation issued by Ministerial Resolution No. (7019), dated 3/7/1429H; recorded as a real repeals_full edge in the supersession graph, a genuine positive finding rather than this window's more common confirmed-negative pattern. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology: has a dedicated lawId page for the base Traffic Law but none for this Ministerial Regulation (live portal + Archive.org fallback both connection-reset this pass, block recorded not circumvented). PRIMARY source is the official MOI scanned document (93pp, page 1 = the stamped/signed Resolution itself), extracted via two independent pipelines (direct vision reading as primary, tesseract-ara OCR as cross-check) that agreed throughout; Articles 1-8 additionally cross-verified VERBATIM against qanoniah.com's born-digital text (100% match on Articles 1,3,4,5,6,8; 99.0% on Article 2, cosmetic-only differences; 51.5% divergence on Article 7 — correctly interpreted as CONFIRMING the Article 7 amendment rather than an extraction defect, since qanoniah's current text is demonstrably longer/newer). Articles 9-85+مكرر carry the lower per-article verification_tier PRIMARY_OFFICIAL_SCAN_VISION_OCR (single official scan, dual-pipeline reconciled, no second born-digital source since qanoniah gates content past Article 8 behind login) — mirroring the same structural pattern already used for aml_regulation and patent_regulation. **Internal repeal**: Article 80 (Supreme Traffic Council) marked ملغاة per an explicit footnote in the primary scan itself citing Council of Ministers Resolution 636 (23/10/1438H); text preserved verbatim, not deleted. **Amended articles (7, 23, 47) carry their ORIGINAL 1441H founding text**, not the current amended wording (not retrievable this pass since qanoniah gates the current version past Article 8) — Article 7's amendment independently confirmed via a structural length divergence (4126 vs 4845 chars) against qanoniah's current text; Articles 23 and 47 rest on secondary-source evidence only (an Umm Al-Qura gazette page titled specifically for Article 23's amendment; Article 47's amendment is the least-confirmed of the three). Disclosed: no dedicated BOE lawId page; base-law article text deliberately not re-ingested (only the لائحة's own «ن/م» sub-clauses are extracted, matching qanoniah's own representation of this Regulation); annexed violation-fee tables/point schedules/sign illustrations not modeled as records; **Article 76's 90-points/3-years system is this Regulation's own 2249/1441H text and must not be confused with a separate later نقاط regulation (24 points/Hijri year)** — explicit disambiguation flag for future passes; OCR could not reliably read the deep slash-numbered sub-clause identifiers (e.g. «٢/٣/١/١/٧»), so these were transcribed via direct vision reading article-by-article. Arabic governs; not legal advice.",
+      "official_text_status": "MOI_OFFICIAL_SCANNED_DOCUMENT_DUAL_VISION_OCR_PIPELINE_X_QANONIAH_COM_BORN_DIGITAL_PARTIAL_CROSSCHECK_ARTS_1_8_OF_86_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 86,
+        "legal_status_breakdown": {
+          "اصلية": 82,
+          "مضافة": 0,
+          "معدلة": 3,
+          "ملغاة": 1
+        },
+        "total": 86
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution (Minister of Interior) No. (2249), dated 10/3/1441H, signed by HRH Prince Abdulaziz bin Saud bin Naif, issued under the Traffic Law (Royal Decree M/85, 26/10/1428H, as amended by M/70, M/73, M/115); published Umm Al-Qura Gazette issue 4812, 3 Jan 2020G — laws.boe.gov.sa was checked first per methodology: it has a dedicated lawId page for the base Traffic Law itself but none for this Ministerial-Resolution-level Regulation (live portal and an Archive.org fallback both returned connection-reset this pass; the block was recorded, not circumvented). PRIMARY text source is an official scanned (no text layer) 93-page MOI document reconstructed via two independent extraction passes (direct vision reading of page images, plus tesseract-ara OCR as a cross-check layer), cross-verified VERBATIM against qanoniah.com's born-digital text for Articles 1-8 only (100% match on Articles 1,3,4,5,6,8; 99.0% on Article 2, cosmetic-only; 51.5% divergence on Article 7, confirming rather than undermining the finding since Article 7 is independently known to be one of the amended articles)",
+      "status": "complete",
+      "track_id": "traffic_regulation",
+      "validator_targets": [
+        "make traffic-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7869,7 +7918,7 @@
       "terrorism": 127,
       "trade_names": 23,
       "trademark": 52,
-      "traffic": 86,
+      "traffic": 172,
       "travel_documents": 69,
       "vat": 135,
       "water": 77,
@@ -7877,7 +7926,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10386,
+    "total_records": 10472,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

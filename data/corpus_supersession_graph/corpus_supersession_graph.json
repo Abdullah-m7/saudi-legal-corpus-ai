@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 163,
+  "total_tracks_scanned": 164,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 71,
+  "edge_count": 72,
   "relation_counts": {
-    "repeals_full": 60,
+    "repeals_full": 61,
     "repeals_partial": 10,
     "superseded_by": 1
   },
@@ -726,6 +726,16 @@
       "affected_articles": null,
       "note": "competition_regulation (GAC Board Decision 337, 25/1/1441H) supersedes the 2014 Implementing Regulation of the prior, now-repealed Competition Law (M/25) -- Competition Council Decision No. (126), 4/9/1435H, 78 articles. Confirmed via WIPO Lex, which marks the 2014 record (19750/SA072) as superseded by the current record (19749/SA071). The old decision number appears as '126' in WIPO/qistas vs '621' in an NSHR copy -- likely a digit reversal; 126 is favored, both preserved in known_unresolved_discrepancies. Not separately ingested in this corpus (one-instrument-per-pass rule).",
       "source_ref": "sources/competition/regulation/official_source/competition_regulation_official_source.json (supersedes)"
+    },
+    {
+      "from_track_id": "traffic_regulation",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "اللائحة التنفيذية لنظام المرور (السابقة)",
+      "target_decree": "Ministerial Resolution (Minister of Interior) No. (7019), 3/7/1429H",
+      "affected_articles": null,
+      "note": "traffic_regulation (Ministerial Resolution 2249, 10/3/1441H) explicitly supersedes the prior Implementing Regulation of the Traffic Law, Ministerial Resolution No. (7019), dated 3/7/1429H -- confirmed via the Resolution's own verbatim preamble clause (ثانياً): \"تحل هذه اللائحة محل اللائحة التنفيذية لنظام المرور، المعتمدة بالقرار الوزاري، المشار إليه أعلاه\" (the referenced-above decision being 7019/1429H named earlier in the same preamble). This is a real confirmed named-predecessor repeal-and-replace, not an ambiguous/excluded case. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/traffic/regulation/official_source/traffic_regulation_official_source.json (preamble_ar / issuing decree clause ثانياً)"
     }
   ],
   "concurrent_title_collisions": [

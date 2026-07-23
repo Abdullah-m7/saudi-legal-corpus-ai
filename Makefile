@@ -277,6 +277,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         patent-regulation-track-validate \
         ecommerce-regulation-track-validate \
         franchise-regulation-track-validate \
+        traffic-regulation-track-validate \
         qa-gate
 
 help:
@@ -1532,6 +1533,9 @@ ecommerce-regulation-track-validate:
 
 franchise-regulation-track-validate:
 	$(PY) scripts/validate_franchise_regulation_track.py
+
+traffic-regulation-track-validate:
+	$(PY) scripts/validate_traffic_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

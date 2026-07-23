@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 163 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 163 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 164 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 164 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 163,
+  "total_tracks": 164,
   "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -3021,6 +3021,25 @@
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-11-16; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "traffic_boe_nezams_pattern_confidence: BOE's official portal (laws.boe.gov.sa) was re-fetched fresh in the follow-up research pass and confirmed to be genuinely stale for this law (not a proxy/rendering artifact -- the identical r.jina.ai proxy pipeline corre"
+    },
+    {
+      "track_id": "traffic_regulation",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Traffic Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام المرور",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='MOI_OFFICIAL_SCANNED_DOCUMENT_DUAL_VISION_OCR_PIPELINE_X_QANONIAH_COM_BORN_DIGITAL_PARTIAL_CROSSCHECK_ARTS_1_8_OF_86_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Ministerial Resolution (Minister of Interior) No. (2249), dated 10/3/1441H, signed by HRH Prince Abdulaziz bin Saud bin Naif, issued under the Traffic Law (Royal Decree M/85, 26/10/1428H, as amended by M/70, M/73, M/115); published Umm Al-Qura Gazette issue 4812, 3 Jan 2020G — laws.boe.gov.sa was checked first per methodology: it has a dedicated lawId page for the base Traffic Law itself but none for this Ministerial-Resolution-level Regulation (live portal and an Archive.org fallback both returned connection-reset this pass; the block was recorded, not circumvented). PRIMARY text source is an official scanned (no text layer) 93-page MOI document reconstructed via two independent extraction passes (direct vision reading of page images, plus tesseract-ara OCR as a cross-check layer), cross-verified VERBATIM against qanoniah.com's born-digital text for Articles 1-8 only (100% match on Articles 1,3,4,5,6,8; 99.0% on Article 2, cosmetic-only; 51.5% divergence on Article 7, confirming rather than undermining the finding since Article 7 is independently known to be one of the amended articles)",
+      "registry_source_url": null,
+      "official_source_file": "sources/traffic/regulation/official_source/traffic_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
     },
     {
       "track_id": "travel_documents_law",

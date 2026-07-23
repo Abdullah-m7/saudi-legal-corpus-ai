@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 163,
-  "total_terms": 985,
-  "total_definitions": 1485,
-  "tracks_with_definitions_article_parsed": 107,
+  "total_tracks_in_registry": 164,
+  "total_terms": 989,
+  "total_definitions": 1538,
+  "tracks_with_definitions_article_parsed": 108,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -373,6 +373,14 @@
         "term_as_written": "أنوار الموضع",
         "definition_text": "(الصغير) الأنوار الأمامية والخلفية والجانبية للمركبة، التي تشير إلى وجودها في السير وتحدد موضعها، وتبين عرضها من الأمام والخلف.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "أنوار الموضع",
+        "definition_text": "(الصغير) الأنوار الأمامية والخلفية والجانبية للمركبة، التي تشير إلى وجودها في السير وتحدد موضعها، وتبين عرضها من الأمام والخلف.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1142,6 +1150,14 @@
         "definition_text": "أ – وزن السيارة الفارغ: وزن السيارة وهي مجهزة بمحروقاتها وآلات الصيانة والإصلاح وأدواتها الاحتياطية.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الأوزان",
+        "definition_text": "أ- وزن السيارة الفارغ: وزن السيارة وهي مجهزة بمحروقاتها وآلات الصيانة والإصلاح وأدواتها الاحتياطية.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الأولاد": [
@@ -1279,6 +1295,14 @@
         "term_as_written": "الإدارة المختصة",
         "definition_text": "أي جهة تخول صلاحية تطبيق هذا النظام واللائحة، وفقا لما يرد فيهما من أحكام.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الإدارة المختصة",
+        "definition_text": "أي جهة تخول صلاحية تطبيق هذا النظام واللائحة، وفقاً لما يرد فيهما من أحكام.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2508,6 +2532,14 @@
         "definition_text": "قيادة المركبة بتهور في الطريق أو الأماكن العامة بشكل غير منتظم عمداً ودون سبب مشروع، بحيث تحدث الإطارات غالباً صوتاً عالياً مع جعل المركبة تقوم بالزحف يميناً أو يساراً أو الالتفاف حول نفسها أثناء السير للأمام أو الخلف باستخدام قوة محركها أو مكابحها أو ناقل الحركة فيها لأجل الاستعراض. ويُعد في حكم التفحيط إمالة المركبة وجعلها تسير على الإطارين الأيمنين أو الأيسرين، أو جعل الدراجة الآلية ذات الإطارين تسير على إطار واحد، أو خروج السائق أو الراكب من المركبة أثناء سيرها، أو القيام بفك بعض أجزائها أثناء سيرها، لأجل الاستعراض.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "التفحيط",
+        "definition_text": "قيادة المركبة بتهور في الطرق أو الأماكن العامة بشكل غير منتظم عمداً ودون سبب مشروع؛ بحيث تحدث الإطارات غالباً صوتاً عالياً مع جعل المركبة تقوم بالزحف يميناً أو يساراً أو الالتفاف حول نفسها أثناء السير للأمام أو الخلف باستخدام قوة محركها أو مكابحها أو ناقل الحركة فيها لأجل الاستعراض. ويُعد في حكم التفحيط إمالة المركبة وجعلها تسير على الإطارين الأيمنين أو الأيسرين، أو جعل الدراجة الآلية ذات الإطارين تسير على إطار واحد، أو خروج السائق أو الراكب من المركبة أثناء سيرها، أو القيام بفك بعض أجزائها أثناء سيرها؛ لأجل الاستعراض.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التقاطع": [
@@ -2517,6 +2549,14 @@
         "term_as_written": "التقاطع",
         "definition_text": "كل تلاق أو تقابل أو تفرع للطرق على مستوى واحد أو عدة مستويات، ويشمل المساحة التي تتكون نتيجة لذلك كاملة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "التقاطع",
+        "definition_text": "كل تلاق أو تقابل أو تفرع للطرق على مستوى واحد أو عدة مستويات، ويشمل المساحة التي تتكون نتيجة لذلك كاملة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2720,6 +2760,14 @@
         "definition_text": "وقوف المركبة لفترة زمنية تستلزمها ضرورة السير، أو نزول الأشخاص، أو ركوبهم، أو تحميل البضائع، أو تفريغها.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "التوقف",
+        "definition_text": "وقوف المركبة لفترة زمنية تستلزمها ضرورة السير، أو نزول الأشخاص، أو ركوبهم، أو تحميل البضائع، أو تفريغها.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التوقيع الإلكتروني": [
@@ -2847,6 +2895,14 @@
         "term_as_written": "الجزيرة",
         "definition_text": "الحيز الفاصل بين نهري الطريق.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الجزيرة",
+        "definition_text": "الحيز الفاصل بين نهري الطريق.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3096,6 +3152,14 @@
         "definition_text": "كل واقعة يكون أحد أطرافها مركبة متحركة واحدة – على الأقل- أو حمولتها، وينتج منها أضرار بشرية أو مادية أو كليهما دون قصد، وينقسم إلى قسمين: أ – حادث مروري بسيط: ما ينتج منه تلفيات في الممتلكات – خاصة أو عامة – ولا تنتج منه إصابة تتطلب علاجاً إسعافياً.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الحادث المروري",
+        "definition_text": "كل واقعة يكون أحد أطرافها مركبة متحركة واحدة - على الأقل - أو حمولتها، وينتج منها أضرار بشرية أو مادية أو كليهما دون قصد، وينقسم إلى قسمين:",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الحاسب الآلي": [
@@ -3123,6 +3187,14 @@
         "term_as_written": "الحافلة",
         "definition_text": "سيارة معدة لنقل عدد من الركاب ومستلزماتهم يزيد عددهم على ثمانية، وتنقسم إلى نوعين: أ – حافلة عامة: لنقل الركاب ومستلزماتهم بأجر.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الحافلة",
+        "definition_text": "سيارة معدة لنقل عدد من الركاب ومستلزماتهم يزيد عددهم على ثمانية، وتنقسم إلى نوعين:",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3688,6 +3760,14 @@
         "definition_text": "كل مركبة ذات عجلتين أو أكثر مجهزة بمحرك آلي، ومعدة لنقل الأشخاص أو الأشياء، وقد يلحق بها عربة، وليست مصممة على شكل سيارة.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الدراجة الآلية",
+        "definition_text": "كل مركبة ذات عجلتين أو أكثر مجهزة بمحرك آلي، ومعدة لنقل الأشخاص أو الأشياء، وقد يلحق بها عربة، وليست مصممة على شكل سيارة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الدراجة العادية": [
@@ -3697,6 +3777,14 @@
         "term_as_written": "الدراجة العادية",
         "definition_text": "كل وسيلة نقل ذات عجلتين أو أكثر غير مجهزة بمحرك آلي، وتسير بقوة راكبها.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الدراجة العادية",
+        "definition_text": "كل وسيلة نقل ذات عجلتين أو أكثر غير مجهزة بمحرك آلي، وتسير بقوة راكبها.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3880,6 +3968,14 @@
         "definition_text": "كل من يوجد في المركبة أو يكون صاعدا إليها أو نازلا منها بخلاف السائق.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الراكب",
+        "definition_text": "كل من يوجد في المركبة أو يكون صاعداً إليها أو نازلاً منها بخلاف السائق.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الربان": [
@@ -3945,6 +4041,14 @@
         "term_as_written": "الرصيف",
         "definition_text": "جزء من الطريق معد لسير المشاة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الرصيف",
+        "definition_text": "جزء من الطريق معد لسير المشاة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4053,6 +4157,14 @@
         "term_as_written": "السائق",
         "definition_text": "كل شخص يقود مركبة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "السائق",
+        "definition_text": "كل شخص يقود مركبة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4304,6 +4416,14 @@
         "definition_text": "كل مركبة آلية تستخدم في نقل الأشخاص أو الأشياء أو كليهما، أو جر المركبات المعدة لنقل الأشخاص أو الأشياء أو كليهما.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "السيارة",
+        "definition_text": "كل مركبة آلية تستخدم في نقل الأشخاص أو الأشياء أو كليهما، أو جر المركبات المعدة لنقل الأشخاص أو الأشياء أو كليهما.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السيارة الخاصة": [
@@ -4314,6 +4434,14 @@
         "definition_text": "السيارة المعدة للاستعمال الخاص بنقل الركاب ومستلزماتهم دون أجر، ويجوز استخدام السيارة الخاصة المصرح لقائدها من هيئة النقل العام بمزاولة النقل بأجر برخصة القيادة الخاصة.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "السيارة الخاصة",
+        "definition_text": "السيارة المعدة للاستعمال الخاص بنقل الركاب ومستلزماتهم دون أجر، ويجوز استخدام السيارة الخاصة المصرح لقائدها من هيئة النقل العام بمزاولة النقل بأجر برخصة القيادة الخاصة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السيارة القاطرة": [
@@ -4323,6 +4451,14 @@
         "term_as_written": "السيارة القاطرة",
         "definition_text": "سيارة موصول بها مقطورة، ويكونان معا وحدة واحدة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "السيارة القاطرة",
+        "definition_text": "سيارة موصول بها مقطورة، ويكونان معاً وحدة واحدة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4369,6 +4505,14 @@
         "term_as_written": "الشاخصات",
         "definition_text": "كل ما يقام على الطريق من لوحات وإشارات وغيرها.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الشاخصات",
+        "definition_text": "كل ما يقام على الطريق من لوحات وإشارات وغيرها.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4880,6 +5024,14 @@
         "definition_text": "كل سبيل مفتوح للسير العام.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الطريق",
+        "definition_text": "كل سبيل مفتوح للسير.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الطفل": [
@@ -4949,6 +5101,14 @@
         "term_as_written": "العاكسات",
         "definition_text": "أي مادة عاكسة توضع على الطريق كإحدى علاماته أو توضع في أطراف المركبة أو جانبيها بحيث يمكن رؤيتها من مسافة مناسبة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "العاكسات",
+        "definition_text": "أي مادة عاكسة توضع على الطريق كإحدى علاماته أو توضع في أطراف المركبة أو جانبيها بحيث يمكن رؤيتها من مسافة مناسبة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5419,6 +5579,14 @@
         "term_as_written": "الفحص الفني",
         "definition_text": "الكشف على المركبة في أحد مراكز الفحص الدوري المعتمدة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الفحص الفني",
+        "definition_text": "الكشف على المركبة في أحد مراكز الفحص الدوري المعتمدة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6029,6 +6197,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية لهذا النظام.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7124,6 +7300,14 @@
         "definition_text": "المحكمة المخولة صلاحية النظر والبت في القضايا والحوادث المرورية.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "المحكمة المختصة",
+        "definition_text": "المحكمة المخولة صلاحية النظر والبت في القضايا والحوادث المرورية.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المحل الإلكتروني": [
@@ -7386,6 +7570,14 @@
         "definition_text": "كل معدة أو وسيلة من وسائل النقل البري أعدت للسير على عجلات أو جنزير، وتسير أو تجر بقوة آلية أو جسدية، ولا تشمل وسائل النقل المعدة للسير على خطوط السكك الحديدية.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "المركبة",
+        "definition_text": "كل معدة أو وسيلة من وسائل النقل البري أعدت للسير على عجلات أو جنزير، وتسير أو تسحب بقوة آلية أو جسدية ولا تشمل وسائل النقل المعدة للسير على خطوط السكك الحديدية.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المركز": [
@@ -7447,6 +7639,16 @@
         "term_as_written": "المسؤول الأول",
         "definition_text": "المسؤول الأول، أو مجلس الإدارة، في الجهة المختصة؛ بحسب الأحوال.",
         "source_record_id": "real-estate-registration-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المسار": [
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "المسار",
+        "definition_text": "أي جزء من الأجزاء الطولية التي يقسم إليها نهر الطريق ويسمح عرضه لمرور صف واحد من المركبات المتتابعة، سواء حددته علامات طولية على سطح الطريق أم لم تحدده.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7723,6 +7925,14 @@
         "term_as_written": "المشاة",
         "definition_text": "الأشخاص الذين يسيرون على أقدامهم، ومن في حكمهم، مثل الأشخاص الذين يدفعون أو يجرون عربة أطفال، أو عربة مريض، أو ذوي الاحتياجات الخاصة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "المشاة",
+        "definition_text": "الأشخاص الذين يسيرون على أقدامهم، ومن في حكمهم، مثل الأشخاص الذين يدفعون أو يجرون عربة أطفال، أو عربة مريض، أو ذوي الاحتياجات الخاصة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8213,6 +8423,14 @@
         "term_as_written": "المقطورة",
         "definition_text": "كل مركبة ليس لها محرك تجرها مركبة آلية أخرى.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "المقطورة",
+        "definition_text": "كل مركبة ليس لها محرك تجرها مركبة آلية أخرى.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8788,6 +9006,14 @@
         "definition_text": "المنحنى الذي يتغير به اتجاه الطريق.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "المنعطف",
+        "definition_text": "المنحنى الذي يتغير به اتجاه الطريق.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المنقول": [
@@ -9043,6 +9269,14 @@
         "term_as_written": "الموقف",
         "definition_text": "المكان المخصص لوقوف المركبات.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الموقف",
+        "definition_text": "المكان المخصص لوقوف المركبات.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10630,6 +10864,14 @@
         "definition_text": "الوزن الجزئي من الحمولة على المحور الواحد.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الوزن المحوري",
+        "definition_text": "الوزن الجزئي من الحمولة على المحور الواحد.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوزير": [
@@ -11096,6 +11338,14 @@
         "definition_text": "وجود المركبة في مكان ما لفترة محددة أو غير محددة في غير حالات التوقف.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "الوقوف أو الانتظار",
+        "definition_text": "وجود المركبة في مكان ما لفترة محددة أو غير محددة في غير حالات التوقف.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوكالة": [
@@ -11546,6 +11796,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "حادث مروري بسيط": [
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "حادث مروري بسيط",
+        "definition_text": "ما ينتج منه تلفيات في الممتلكات - خاصة أو عامة - ولا تنتج منه إصابة تتطلب علاجاً إسعافياً.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "حادث مروري جسيم": [
       {
         "track_id": "traffic_law",
@@ -11553,6 +11813,14 @@
         "term_as_written": "حادث مروري جسيم",
         "definition_text": "ما ينتج منه إزهاق للأرواح، أو إصابات تتطلب علاجاً إسعافياً، أو كلاهما، أو تلفيات جسيمة.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "حادث مروري جسيم",
+        "definition_text": "ما ينتج منه إزهاق للأرواح، أو إصابات تتطلب علاجاً إسعافياً، أو كلاهما، أو تلفيات جسيمة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11563,6 +11831,24 @@
         "term_as_written": "حافلة خاصة",
         "definition_text": "لنقل الركاب ومستلزماتهم دون أجر.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "حافلة خاصة",
+        "definition_text": "لنقل الركاب ومستلزماتهم دون أجر.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "حافلة عامة": [
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "حافلة عامة",
+        "definition_text": "لنقل الركاب ومستلزماتهم بأجر.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11583,6 +11869,14 @@
         "term_as_written": "حرم الطريق",
         "definition_text": "الحيز المخصص للطريق.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "حرم الطريق",
+        "definition_text": "الحيز المخصص للطريق.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11892,6 +12186,14 @@
         "definition_text": "وثيقة رسمية صادرة من الإدارة المختصة، أو من جهة أجنبية معترف بما يصدر عنها من وثائق مماثلة، تجيز للمركبة السير على الطرق.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "رخصة السير",
+        "definition_text": "وثيقة رسمية صادرة من الإدارة المختصة، أو من جهة أجنبية معترف بما يصدر عنها من وثائق مماثلة، تجيز للمركبة السير على الطرق.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "رخصة القيادة": [
@@ -11901,6 +12203,14 @@
         "term_as_written": "رخصة القيادة",
         "definition_text": "وثيقة رسمية صادرة من الإدارة المختصة، أو من جهة أجنبية معترف بما يصدر عنها من وثائق مماثلة، تثبت أن حاملها مؤهل لقيادة نوع أو أنواع من المركبات.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "رخصة القيادة",
+        "definition_text": "وثيقة رسمية صادرة من الإدارة المختصة، أو من جهة أجنبية معترف بما يصدر عنها من وثائق مماثلة، تثبت أن حاملها مؤهل لقيادة نوع أو أنواع من المركبات.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12092,6 +12402,14 @@
         "definition_text": "السيارة المعدة لنقل الركاب ومستلزماتهم بأجر ولا تزيد سعتها على ثمانية أشخاص.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "سيارة أجرة",
+        "definition_text": "السيارة المعدة لنقل الركاب ومستلزماتهم بأجر ولا تزيد سعتها على ثمانية أشخاص.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "سيارة النقل": [
@@ -12101,6 +12419,14 @@
         "term_as_written": "سيارة النقل",
         "definition_text": "سيارة معدة لنقل الحيوانات والأشياء، وتنقسم إلى نوعين: أ – نقل عام: لنقل الحيوانات والأشياء والبضائع بأجر.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "سيارة النقل",
+        "definition_text": "سيارة معدة لنقل الحيوانات والأشياء، وتنقسم إلى نوعين:",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12384,6 +12710,14 @@
         "definition_text": "نهر الطريق المحاذي للطريق (حر الحركة) ويخدم الملكيات المجاورة مباشرة.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "طريق الخدمة",
+        "definition_text": "نهر الطريق المحاذي للطريق (حر الحركة) ويخدم الملكيات المجاورة مباشرة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "طريق حر الحركة": [
@@ -12393,6 +12727,14 @@
         "term_as_written": "طريق حر الحركة",
         "definition_text": "نهر الطريق الذي يتم الدخول إليه أو الخروج منه عبر مداخل ومخارج محكمة مخصصة لذلك، ولا يخدم مباشرة الملكيات المجاورة للطريق.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "طريق حر الحركة",
+        "definition_text": "نهر الطريق الذي يتم الدخول إليه أو الخروج منه عبر مداخل ومخارج محكمة مخصصة لذلك، ولا يخدم مباشرة الملكيات المجاورة للطريق.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12521,6 +12863,14 @@
         "term_as_written": "علامات الطريق",
         "definition_text": "خطوط أو علامات على الطريق أو على جانبيه لتنظيم استخدام الطريق.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "علامات الطريق",
+        "definition_text": "خطوط أو علامات على الطريق أو على جانبيه لتنظيم استخدام الطريق.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12757,6 +13107,14 @@
         "term_as_written": "كتف الطريق",
         "definition_text": "جزء من الطريق محاذ وملاصق لنهره من جانب أو جانبين معد للتوقف الاضطراري للمركبات.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "كتف الطريق",
+        "definition_text": "جزء من الطريق محاذ وملاصق لنهره من جانب أو جانبين معد للتوقف الاضطراري للمركبات.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13090,6 +13448,14 @@
         "definition_text": "المعدات والآلات التي تسير بالدفع الذاتي بما فيها المعدات الزراعية.\n31 – أ – نور القيادة: (النور العالي) نور المركبة الذي يستخدم في إنارة الطريق على مسافة طويلة في حالة عدم وجود مركبة مقابلة لها.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "مركبات الأشغال العامة",
+        "definition_text": "المعدات والآلات التي تسير بالدفع الذاتي بما فيها المعدات الزراعية.\n31- أ- نور القيادة: (النور العالي) نور المركبة الذي يستخدم في إنارة الطريق على مسافة طويلة في حالة عدم وجود مركبة مقابلة لها.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مركبات الطوارئ": [
@@ -13099,6 +13465,14 @@
         "term_as_written": "مركبات الطوارئ",
         "definition_text": "سيارات الخدمات الأمنية العامة، والإسعافية المجهزة بإشارات ضوئية ومنبهات خاصة، التي يتطلب عملها عند الضرورة تجاوز السرعة النظامية المحددة وعدم التوقف عند إشارات المرور.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "مركبات الطوارئ",
+        "definition_text": "سيارات الخدمات الأمنية العامة، والإسعافية المجهزة بإشارات ضوئية ومنبهات خاصة، التي يتطلب عملها عند الضرورة تجاوز السرعة النظامية المحددة وعدم التوقف عند إشارات المرور.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13766,6 +14140,14 @@
         "definition_text": "مقطورة يستند جزء كبير من وزنها على السيارة القاطرة.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "نصف المقطورة",
+        "definition_text": "مقطورة يستند جزء كبير من وزنها على السيارة القاطرة.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "نظام إسقاط مركاتور المستعرض العالمي": [
@@ -13846,6 +14228,24 @@
         "definition_text": "لنقل الحيوانات والأشياء والبضائع دون أجر.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "نقل خاص",
+        "definition_text": "لنقل الحيوانات والأشياء والبضائع دون أجر.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نقل عام": [
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "نقل عام",
+        "definition_text": "لنقل الحيوانات والأشياء والبضائع بأجر.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "نموذج عمل الامتياز": [
@@ -13876,6 +14276,14 @@
         "definition_text": "جزء من الطريق يسمح فيه بسير المركبات.\n3 – المسار (المسرب – الجادة – الخط): أي جزء من الأجزاء العرضية التي يقسم إليها نهر الطريق ويسمح عرضه لمرور صف واحد من المركبات المتتابعة سواء حددته علامات طولية على سطح الطريق أم لم تحدده.",
         "source_record_id": "traffic-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "نهر الطريق",
+        "definition_text": "جزء من الطريق يسمح فيه بسير المركبات.",
+        "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
       }
     ],
     "نور التلاقي": [
@@ -13885,6 +14293,14 @@
         "term_as_written": "نور التلاقي",
         "definition_text": "(النور المنخفض) نور المركبة الذي يستخدم في إنارة الطريق على مسافة قصيرة في حالة وجود مركبة مقابلة لها.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "نور التلاقي",
+        "definition_text": "(النور المنخفض) نور المركبة الذي يستخدم في إنارة الطريق على مسافة قصيرة في حالة وجود مركبة مقابلة لها.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13925,6 +14341,14 @@
         "term_as_written": "هيكل المركبة",
         "definition_text": "جسم المركبة، باستثناء المحرك والمحاور وقاعدة المركبة (الشاصي).",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "هيكل المركبة",
+        "definition_text": "جسم المركبة، باستثناء المحرك والمحاور وقاعدة المركبة (الشاصي).",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13993,6 +14417,14 @@
         "term_as_written": "وزن السيارة الإجمالي",
         "definition_text": "وزن السيارة الفارغ مضافا إليه الحمولة والسائق والركاب. ج – الوزن الصافي (الحمولة): الفرق بين الوزنين الإجمالي والفارغ.",
         "source_record_id": "traffic-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "traffic_regulation",
+        "article_number": 2,
+        "term_as_written": "وزن السيارة الإجمالي",
+        "definition_text": "وزن السيارة الفارغ مضافاً إليه الحمولة والسائق والركاب.\nج- الوزن الصافي (الحمولة): الفرق بين الوزنين الإجمالي والفارغ.",
+        "source_record_id": "traffic-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
       }
     ],
