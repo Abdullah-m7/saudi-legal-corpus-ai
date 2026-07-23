@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 352,
-  "top1_hits": 326,
-  "top3_hits": 345,
-  "top5_hits": 348,
-  "top1_accuracy": 0.9261,
-  "top3_accuracy": 0.9801,
-  "top5_accuracy": 0.9886,
-  "mrr_at_5": 0.9523,
+  "total_queries": 354,
+  "top1_hits": 328,
+  "top3_hits": 347,
+  "top5_hits": 350,
+  "top1_accuracy": 0.9266,
+  "top3_accuracy": 0.9802,
+  "top5_accuracy": 0.9887,
+  "mrr_at_5": 0.9525,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -10704,13 +10704,13 @@
      "score": 47
     },
     {
-     "record_id": "aml-regulation-llm-art-008",
-     "article_number": 14,
-     "score": 15
+     "record_id": "franchise-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 16
     },
     {
-     "record_id": "food-regulation-llm-art-023",
-     "article_number": 23,
+     "record_id": "aml-regulation-llm-art-008",
+     "article_number": 14,
      "score": 15
     }
    ]
@@ -10929,6 +10929,68 @@
      "record_id": "electronic-transactions-law-llm-art-001",
      "article_number": 1,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "fcr-001",
+   "query_ar": "على مانح الامتياز قيد كل اتفاقية امتياز موقعة ووثيقة الإفصاح ذات الصلة لدى الوزارة خلال (تسعين) يومًا من تاريخ توقيع الاتفاقية",
+   "category": "topical",
+   "gold": {
+    "corpus": "franchise",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "franchise-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 49
+    },
+    {
+     "record_id": "franchise-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 38
+    },
+    {
+     "record_id": "franchise-law-llm-art-015",
+     "article_number": 15,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "fcr-002",
+   "query_ar": "تحديد مالك العلامة التجارية أو الاسم التجاري أو غير ذلك من حقوق الملكية الفكرية المستخدمة في أعمال الامتياز، وعلاقة مانح الامتياز بالمالك إذا لم يكن هو مالكها",
+   "category": "topical",
+   "gold": {
+    "corpus": "franchise",
+    "law_component": "regulation",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "franchise-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 46
+    },
+    {
+     "record_id": "franchise-law-llm-art-001",
+     "article_number": 1,
+     "score": 33
+    },
+    {
+     "record_id": "franchise-law-llm-art-018",
+     "article_number": 18,
+     "score": 33
     }
    ]
   }

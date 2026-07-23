@@ -1504,6 +1504,20 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "Law's own Article 25. No edge modeled.",
         "source_ref": "sources/ecommerce/regulation/official_source/ecommerce_regulation_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["franchise_regulation"],
+        "issue": "confirmed negative repeal finding -- no repeal/supersession clause naming a prior instrument found",
+        "note": "franchise_regulation (Minister of Commerce Resolution "
+                "591, 18/9/1441H) names no repealed predecessor "
+                "Implementing Regulation anywhere in its 16 articles. A "
+                "genuine ANNEX-ONLY amendment was separately found and "
+                "disclosed (disclosure-document element 13 later deleted "
+                "per a secondary-sourced Ministerial Resolution 339, "
+                "14/8/1444H) but this affects the annex, not any numbered "
+                "article, and does not amount to a repeal of a prior "
+                "Regulation. No edge modeled.",
+        "source_ref": "sources/franchise/regulation/official_source/franchise_regulation_official_source.json (known_unresolved_discrepancies: franchise_regulation_no_named_predecessor_repealed)",
+    },
 ]
 
 

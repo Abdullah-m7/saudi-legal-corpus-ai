@@ -256,6 +256,8 @@ LAYERS = [
      "vat", "law"),
     ("data/franchise_arabic_legal_llm/franchise_law_legal_llm_001_027.json",
      "franchise", "law"),
+    ("data/franchise_regulation_arabic_legal_llm/franchise_regulation_legal_llm_001_016.json",
+     "franchise", "regulation"),
     ("data/civil_aviation_arabic_legal_llm/civil_aviation_law_legal_llm_001_180.json",
      "civil_aviation", "law"),
     ("data/anti_narcotics_arabic_legal_llm/anti_narcotics_law_legal_llm_001_074.json",

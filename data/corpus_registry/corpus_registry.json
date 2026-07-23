@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10539,
+  "total_primary_arabic_governing_records": 10555,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11434,
-  "total_tracks": 162,
+  "total_registry_counted_records": 11450,
+  "total_tracks": 163,
   "tracks": [
     {
       "boundaries": {
@@ -7701,6 +7701,55 @@
       "validator_targets": [
         "make ecommerce-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/franchise/regulation/official_source/franchise_regulation_official_source.json",
+        "sources/franchise/regulation/verified/franchise_regulation_verified_records.jsonl",
+        "data/franchise_regulation_arabic_legal_llm/franchise_regulation_legal_llm_001_016.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الامتياز التجاري",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Franchise Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/franchise_regulation_arabic_legal_llm/franchise_regulation_legal_llm_001_016.json",
+          "governing": true,
+          "record_count": 16,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian Franchise Law «اللائحة التنفيذية لنظام الامتياز التجاري» — Minister of Commerce Resolution No. (591), dated 18/9/1441H, issued under Article 26 of the Franchise Law (Royal Decree M/22, 9/2/1441H); published Umm Al-Qura Gazette issue 4832, 22 May 2020, p.12. **16 articles across 6 فصول, ALL 16 اصلية** (chapter map: الفصل الأول أحكام عامة arts 1-2؛ الفصل الثاني القيد والإفصاح arts 3-7؛ الفصل الثالث اتفاقية الامتياز arts 8-9؛ الفصل الرابع التنازل عن اتفاقية الامتياز arts 10-11؛ الفصل الخامس التعويض art 12؛ الفصل السادس أحكام ختامية arts 13-16), plus a disclosure-document-requirements annex (17 elements) kept in a separate annex_ar field, not split into numbered article records. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: it hosts a dedicated lawId page for the base Franchise Law but NONE for this Ministerial-level Regulation. PRIMARY source is franchising.sa's clean reproduction of the Umm Al-Qura gazette publication (linking the official uqn.gov.sa PDF, not itself directly re-fetched this pass), cross-verified programmatically VERBATIM (consonant-for-consonant identical, only trivial diacritic/digit-glyph/whitespace differences) against aunklaw.com's independent copy of all 16 articles; metadata and the six-chapter structure additionally cross-verified against lexismiddleeast.com (Sader/LexisNexis). **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; no repeal/supersession clause naming a prior instrument was found in this Regulation's text. **GENUINE ANNEX-ONLY AMENDMENT DISCLOSED, NOT SILENTLY APPLIED**: Annex disclosure-document element (13) «معلومات الوضع المالي لمانح الامتياز» was later deleted per a secondary-sourced Ministerial Resolution (339, 14/8/1444H) — corroborated by a 2020-vs-2024 annex-content divergence found during research — but the annex is preserved here VERBATIM in its ORIGINAL 17-element 2020 form (element 13 retained, not deleted), consistent with this corpus's flag-don't-silently-apply rule for unconfirmed downstream amendments; this touches the annex only, not any numbered article, so no article's legal_status_ar was changed. Disclosed anomalies: the Resolution number appears as both '591' and '00591' across sources (591 favored, both preserved); the official uqn.gov.sa PDF itself was not directly re-fetched this pass (relied on franchising.sa's verified reproduction instead); article headers carry a trailing colon in the source style, preserved; the preamble text has secondary-sourced variants, disclosed; a minor issuance-date-vs-gazette-publication-date distinction preserved as recorded in each source. Arabic governs; not legal advice.",
+      "official_text_status": "FRANCHISING_SA_UMM_AL_QURA_GAZETTE_REPRODUCTION_X_AUNKLAW_VERBATIM_CROSSCHECK_X_LEXISMIDDLEEAST_STRUCTURAL_BOE_LAWID_PAGE_ONLY_FOR_BASE_LAW",
+      "record_counts": {
+        "arabic_articles": 16,
+        "legal_status_breakdown": {
+          "اصلية": 16,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 16
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Minister of Commerce Resolution No. (591) (also rendered (00591) in one secondary copy), dated 18/9/1441H, issued under Article 26 of the Franchise Law (Royal Decree M/22, 9/2/1441H); published Umm Al-Qura Gazette issue 4832, 22 May 2020, p.12 — laws.boe.gov.sa was checked first per this corpus's standard methodology: it has a dedicated lawId page for the base Franchise Law itself but none for this Ministerial-Resolution-level Regulation. PRIMARY text source is franchising.sa (a clean reproduction of the Umm Al-Qura gazette publication, linking the official uqn.gov.sa PDF), cross-verified VERBATIM against aunklaw.com for all 16 articles, and against lexismiddleeast.com (Sader/LexisNexis) for instrument metadata and the six-chapter structure",
+      "status": "complete",
+      "track_id": "franchise_regulation",
+      "validator_targets": [
+        "make franchise-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7761,7 +7810,7 @@
       "finance_lease": 28,
       "food": 129,
       "foreign_ownership": 15,
-      "franchise": 27,
+      "franchise": 43,
       "gcc_anti_dumping": 17,
       "gcc_ownership": 6,
       "gtpl": 256,
@@ -7828,7 +7877,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10370,
+    "total_records": 10386,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
