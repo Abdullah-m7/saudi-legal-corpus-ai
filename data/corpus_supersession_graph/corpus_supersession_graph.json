@@ -3,7 +3,7 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 161,
+  "total_tracks_scanned": 162,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
@@ -911,6 +911,14 @@
       "issue": "confirmed negative repeal finding -- no in-Regulation clause names a predecessor Regulation",
       "note": "patent_regulation (KACST President Resolution 161-2-3607329, 30/12/1436H, consolidated as amended by SAIP Board Resolution 5/8/2019) names no repealed predecessor Implementing Regulation anywhere in its 67 articles -- it is the first Implementing Regulation issued under the current Patents Law (M/27, 1425H), which itself replaced the older Patents Law (M/38, 1409H). Its closing articles (66-67) only authorize the Board to issue future amendments and publish them in the Official Gazette. No edge modeled.",
       "source_ref": "sources/patent/regulation/official_source/patent_regulation_official_source.json (known_unresolved_discrepancies: patent_regulation_no_named_predecessor_repeal)"
+    },
+    {
+      "tracks_involved": [
+        "ecommerce_regulation"
+      ],
+      "issue": "confirmed negative repeal finding -- the base Law itself is too new for any predecessor Regulation to have existed",
+      "note": "ecommerce_regulation (Ministerial Resolution 200, 19/5/1441H) names no repealed predecessor Implementing Regulation anywhere in its 20 articles. The base E-Commerce Law (Royal Decree M/126) itself only dates to 7/11/1440H (2019G), so no prior Implementing Regulation could have existed for this one to replace -- this is the first and only Implementing Regulation issued under the Law's own Article 25. No edge modeled.",
+      "source_ref": "sources/ecommerce/regulation/official_source/ecommerce_regulation_official_source.json (verification_methodology_note)"
     }
   ],
   "extraction_policy": "Every edge above was read and classified by hand against this corpus's own documented text (registry notes + official_source.json fields/article text), never inferred from a decree being older or from topical similarity alone. Concurrent title/decree-number collisions that are NOT repeal relationships, and genuinely ambiguous or explicitly-excluded cases, are kept in their own sections rather than forced into `edges`. It is expected and correct that most of this corpus's 122 tracks have zero edges."

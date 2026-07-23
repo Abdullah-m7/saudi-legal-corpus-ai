@@ -1491,6 +1491,19 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "edge modeled.",
         "source_ref": "sources/patent/regulation/official_source/patent_regulation_official_source.json (known_unresolved_discrepancies: patent_regulation_no_named_predecessor_repeal)",
     },
+    {
+        "tracks_involved": ["ecommerce_regulation"],
+        "issue": "confirmed negative repeal finding -- the base Law itself is too new for any predecessor Regulation to have existed",
+        "note": "ecommerce_regulation (Ministerial Resolution 200, "
+                "19/5/1441H) names no repealed predecessor Implementing "
+                "Regulation anywhere in its 20 articles. The base "
+                "E-Commerce Law (Royal Decree M/126) itself only dates to "
+                "7/11/1440H (2019G), so no prior Implementing Regulation "
+                "could have existed for this one to replace -- this is the "
+                "first and only Implementing Regulation issued under the "
+                "Law's own Article 25. No edge modeled.",
+        "source_ref": "sources/ecommerce/regulation/official_source/ecommerce_regulation_official_source.json (verification_methodology_note)",
+    },
 ]
 
 

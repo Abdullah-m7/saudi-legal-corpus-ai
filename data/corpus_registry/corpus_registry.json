@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10519,
+  "total_primary_arabic_governing_records": 10539,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11414,
-  "total_tracks": 161,
+  "total_registry_counted_records": 11434,
+  "total_tracks": 162,
   "tracks": [
     {
       "boundaries": {
@@ -7652,6 +7652,55 @@
       "validator_targets": [
         "make patent-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/ecommerce/regulation/official_source/ecommerce_regulation_official_source.json",
+        "sources/ecommerce/regulation/verified/ecommerce_regulation_verified_records.jsonl",
+        "data/ecommerce_regulation_arabic_legal_llm/ecommerce_regulation_legal_llm_001_020.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام التجارة الإلكترونية",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian E-Commerce Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/ecommerce_regulation_arabic_legal_llm/ecommerce_regulation_legal_llm_001_020.json",
+          "governing": true,
+          "record_count": 20,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian E-Commerce Law «اللائحة التنفيذية لنظام التجارة الإلكترونية» — Ministerial Resolution No. (200), dated 19/5/1441H, issued by Minister of Commerce Dr. Majid Al-Qassabi, under Article 25 of the E-Commerce Law (Royal Decree M/126, 7/11/1440H); published Umm al-Qura Gazette issue 4816, 31 Jan 2020. **20 articles, ALL 20 اصلية**, flat structure with NO chapter/part divisions (chapter_structure=[]). Article count of 20 (vs the base Law's own 26 articles — an unrelated figure) independently confirmed four ways (Ministry's own official metadata, Argaam, Mithaq, and direct article-by-article count). **VERIFICATION TIER: TIER_1** — laws.boe.gov.sa checked first per methodology: returned HTTP 503 this pass AND has no dedicated lawId page for this Ministerial-Resolution-level Regulation. PRIMARY source is the issuing Ministry's own official born-digital regulations page (mc.gov.sa) — the same Ministry that issued the Resolution — cross-verified WORD-FOR-WORD against the Ministry's own official scanned PDF via direct visual reading (Articles 1-4 and 18 confirmed character-identical), matching this corpus's TIER_1 pattern of two independent official renderings of the same governing text from the same authority; further corroborated (structure/metadata only) via qanoniah.com, lexismiddleeast.com, argaam.com, and mithaq.com.sa. **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; the base E-Commerce Law itself only dates to 1440H (2019G), so no prior Implementing Regulation could have existed for this one to replace. Disclosed: an amendment public-consultation (refund-mechanism on consumer cancellation) was identified but no enacting amending resolution number/date was confirmable this pass, so all 20 articles remain اصلية rather than being spot-reclassified on unconfirmed grounds. Disclosed display-layer normalization: Arabic-Indic digits converted to Western digits, tashkeel stripped, the hijri 'هـ' suffix preserved, hidden bidi-control marks removed — none of these affect governing wording. Arabic governs; not legal advice.",
+      "official_text_status": "MC_GOV_SA_OFFICIAL_BORN_DIGITAL_PAGE_X_MINISTRY_OWN_SCANNED_PDF_WORD_FOR_WORD_CROSSCHECK_X_QANONIAH_LEXISMIDDLEEAST_ARGAAM_MITHAQ_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 20,
+        "legal_status_breakdown": {
+          "اصلية": 20,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 20
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. (200), dated 19/5/1441H, issued by Minister of Commerce Dr. Majid Al-Qassabi under Article 25 of the E-Commerce Law (Royal Decree M/126, 7/11/1440H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but returned HTTP 503 this pass AND has no dedicated lawId page for this Ministerial-Resolution-level Regulation. PRIMARY source is the issuing Ministry's own official born-digital regulations page (mc.gov.sa), cross-verified word-for-word against the Ministry's own official scanned PDF (direct visual reading of Articles 1-4 and 18) and further corroborated via qanoniah.com, lexismiddleeast.com, argaam.com, and mithaq.com.sa",
+      "status": "complete",
+      "track_id": "ecommerce_regulation",
+      "validator_targets": [
+        "make ecommerce-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7699,7 +7748,7 @@
       "cybersecurity_authority": 22,
       "documentation_settlement": 15,
       "domestic_labor": 33,
-      "ecommerce": 26,
+      "ecommerce": 46,
       "electricity": 23,
       "electronic_transactions": 31,
       "elitigation_guide": 5,
@@ -7779,7 +7828,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10350,
+    "total_records": 10370,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
