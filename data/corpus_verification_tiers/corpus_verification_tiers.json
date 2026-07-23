@@ -19,10 +19,10 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 162,
+  "total_tracks": 163,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 100,
-    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 23,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 24,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 16,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
@@ -517,6 +517,13 @@
       "tier_rationale": "official_text_status='BOE_PORTAL_PROXY_RETRIEVED_QANONIAH_SPOT_CROSS_VERIFIED': بوابة BOE (مصدر رسمي) تم الوصول إليها لكامل النص، لكن التدقيق المقارن مع qanoniah.com اقتصر على 4 من 27 مادة فقط (1، 2، 4، 5)؛ 23 مادة (85%) تبقى أحادية المصدر دون تدقيق مقارن مستقل.",
       "has_per_article_variation": true,
       "per_article_variation_note": "4 من 27 مادة فقط (1، 2، 4، 5) خضعت لتدقيق مقارن مقابل qanoniah.com (وعرض ذلك الموقع نفسه غير مكتمل)؛ 23 مادة أحادية المصدر (BOE) دون تدقيق مقارن؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "franchise_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='FRANCHISING_SA_UMM_AL_QURA_GAZETTE_REPRODUCTION_X_AUNKLAW_VERBATIM_CROSSCHECK_X_LEXISMIDDLEEAST_STRUCTURAL_BOE_LAWID_PAGE_ONLY_FOR_BASE_LAW': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "gcc_anti_dumping_law",

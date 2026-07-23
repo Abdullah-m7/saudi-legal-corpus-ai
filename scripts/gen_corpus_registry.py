@@ -200,6 +200,7 @@ COMPETITION_REGULATION_LLM = os.path.join(ROOT, "data", "competition_regulation_
 AML_REGULATION_LLM = os.path.join(ROOT, "data", "aml_regulation_arabic_legal_llm", "aml_regulation_legal_llm_001_025.json")
 PATENT_REGULATION_LLM = os.path.join(ROOT, "data", "patent_regulation_arabic_legal_llm", "patent_regulation_legal_llm_001_067.json")
 ECOMMERCE_REGULATION_LLM = os.path.join(ROOT, "data", "ecommerce_regulation_arabic_legal_llm", "ecommerce_regulation_legal_llm_001_020.json")
+FRANCHISE_REGULATION_LLM = os.path.join(ROOT, "data", "franchise_regulation_arabic_legal_llm", "franchise_regulation_legal_llm_001_016.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -393,6 +394,7 @@ def main() -> int:
     aml_regulation_llm = _load_json(AML_REGULATION_LLM)
     patent_regulation_llm = _load_json(PATENT_REGULATION_LLM)
     ecommerce_regulation_llm = _load_json(ECOMMERCE_REGULATION_LLM)
+    franchise_regulation_llm = _load_json(FRANCHISE_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -413,7 +415,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 162,
+        "total_tracks": 163,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -579,6 +581,7 @@ def main() -> int:
             + aml_regulation_llm["record_count"]  # 25 Implementing Regulation of the Anti-Money Laundering Law (Administrative Decision 266507, 9/12/1447H, consolidating cable 14525 19/2/1439H and amendment 98752) (TIER_3, BOE unreachable and no dedicated lawId page, PRIMARY aml.gov.sa scanned PDF reconciled with qanoniah.com born-digital API for 10 of 25 articles, remaining 15 OCR-extracted and visually adjudicated, 24 اصلية/1 معدلة (Article 17), see track notes)
             + patent_regulation_llm["record_count"]  # 67 Implementing Regulation of the Patents Law (KACST President Resolution 161-2-3607329, 30/12/1436H, consolidated as amended by SAIP Board Resolution 5/8/2019, 04/09/1440H) (TIER_3, BOE unreachable and no dedicated lawId page, PRIMARY official SAIP-letterhead Arabic PDF on WIPO Lex, dual independent extraction pipelines reconciled, structurally cross-verified against WIPO Lex metadata and qanoonsa.com, 67 اصلية across 12 أبواب, disclosed staleness -- a later 2024 amendment not reflected in this 2019-consolidated text, mirroring the base patent_law track -- see track notes)
             + ecommerce_regulation_llm["record_count"]  # 20 Implementing Regulation of the E-Commerce Law (Ministerial Resolution 200, 19/5/1441H) (TIER_1, BOE unreachable and no dedicated lawId page, PRIMARY issuing Ministry's own official born-digital page (mc.gov.sa) cross-verified word-for-word against the Ministry's own official scanned PDF plus qanoniah.com/lexismiddleeast.com/argaam.com/mithaq.com.sa, 20 اصلية flat structure no chapters, confirmed no named predecessor since the base Law itself only dates to 1440H, see track notes)
+            + franchise_regulation_llm["record_count"]  # 16 Implementing Regulation of the Franchise Law (Minister of Commerce Resolution 591, 18/9/1441H) (TIER_2, BOE has a lawId page for the base Law but none for this Regulation, PRIMARY franchising.sa Umm Al-Qura gazette reproduction cross-verified VERBATIM against aunklaw.com (non-government secondary) for all 16 articles plus lexismiddleeast.com for structure, 16 اصلية across 6 فصول, confirmed no named-predecessor repeal, annex-only amendment (element 13 deleted by a later resolution) disclosed and preserved verbatim not silently altered, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -735,6 +738,7 @@ def main() -> int:
             + aml_regulation_llm["record_count"]
             + patent_regulation_llm["record_count"]
             + ecommerce_regulation_llm["record_count"]
+            + franchise_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5481,6 +5485,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian E-Commerce Law «اللائحة التنفيذية لنظام التجارة الإلكترونية» — Ministerial Resolution No. (200), dated 19/5/1441H, issued by Minister of Commerce Dr. Majid Al-Qassabi, under Article 25 of the E-Commerce Law (Royal Decree M/126, 7/11/1440H); published Umm al-Qura Gazette issue 4816, 31 Jan 2020. **20 articles, ALL 20 اصلية**, flat structure with NO chapter/part divisions (chapter_structure=[]). Article count of 20 (vs the base Law's own 26 articles — an unrelated figure) independently confirmed four ways (Ministry's own official metadata, Argaam, Mithaq, and direct article-by-article count). **VERIFICATION TIER: TIER_1** — laws.boe.gov.sa checked first per methodology: returned HTTP 503 this pass AND has no dedicated lawId page for this Ministerial-Resolution-level Regulation. PRIMARY source is the issuing Ministry's own official born-digital regulations page (mc.gov.sa) — the same Ministry that issued the Resolution — cross-verified WORD-FOR-WORD against the Ministry's own official scanned PDF via direct visual reading (Articles 1-4 and 18 confirmed character-identical), matching this corpus's TIER_1 pattern of two independent official renderings of the same governing text from the same authority; further corroborated (structure/metadata only) via qanoniah.com, lexismiddleeast.com, argaam.com, and mithaq.com.sa. **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; the base E-Commerce Law itself only dates to 1440H (2019G), so no prior Implementing Regulation could have existed for this one to replace. Disclosed: an amendment public-consultation (refund-mechanism on consumer cancellation) was identified but no enacting amending resolution number/date was confirmable this pass, so all 20 articles remain اصلية rather than being spot-reclassified on unconfirmed grounds. Disclosed display-layer normalization: Arabic-Indic digits converted to Western digits, tashkeel stripped, the hijri 'هـ' suffix preserved, hidden bidi-control marks removed — none of these affect governing wording. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "franchise_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام الامتياز التجاري",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian Franchise Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "FRANCHISING_SA_UMM_AL_QURA_GAZETTE_REPRODUCTION_X_AUNKLAW_VERBATIM_CROSSCHECK_X_LEXISMIDDLEEAST_STRUCTURAL_BOE_LAWID_PAGE_ONLY_FOR_BASE_LAW",
+                "source_authority": "Minister of Commerce Resolution No. (591) (also rendered (00591) in one secondary copy), dated 18/9/1441H, issued under Article 26 of the Franchise Law (Royal Decree M/22, 9/2/1441H); published Umm Al-Qura Gazette issue 4832, 22 May 2020, p.12 — laws.boe.gov.sa was checked first per this corpus's standard methodology: it has a dedicated lawId page for the base Franchise Law itself but none for this Ministerial-Resolution-level Regulation. PRIMARY text source is franchising.sa (a clean reproduction of the Umm Al-Qura gazette publication, linking the official uqn.gov.sa PDF), cross-verified VERBATIM against aunklaw.com for all 16 articles, and against lexismiddleeast.com (Sader/LexisNexis) for instrument metadata and the six-chapter structure",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": franchise_regulation_llm["record_count"],
+                    "data_path": "data/franchise_regulation_arabic_legal_llm/franchise_regulation_legal_llm_001_016.json"}},
+                "record_counts": {"arabic_articles": franchise_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 16, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": franchise_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/franchise/regulation/official_source/franchise_regulation_official_source.json",
+                    "sources/franchise/regulation/verified/franchise_regulation_verified_records.jsonl",
+                    "data/franchise_regulation_arabic_legal_llm/franchise_regulation_legal_llm_001_016.json",
+                ],
+                "validator_targets": ["make franchise-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian Franchise Law «اللائحة التنفيذية لنظام الامتياز التجاري» — Minister of Commerce Resolution No. (591), dated 18/9/1441H, issued under Article 26 of the Franchise Law (Royal Decree M/22, 9/2/1441H); published Umm Al-Qura Gazette issue 4832, 22 May 2020, p.12. **16 articles across 6 فصول, ALL 16 اصلية** (chapter map: الفصل الأول أحكام عامة arts 1-2؛ الفصل الثاني القيد والإفصاح arts 3-7؛ الفصل الثالث اتفاقية الامتياز arts 8-9؛ الفصل الرابع التنازل عن اتفاقية الامتياز arts 10-11؛ الفصل الخامس التعويض art 12؛ الفصل السادس أحكام ختامية arts 13-16), plus a disclosure-document-requirements annex (17 elements) kept in a separate annex_ar field, not split into numbered article records. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: it hosts a dedicated lawId page for the base Franchise Law but NONE for this Ministerial-level Regulation. PRIMARY source is franchising.sa's clean reproduction of the Umm Al-Qura gazette publication (linking the official uqn.gov.sa PDF, not itself directly re-fetched this pass), cross-verified programmatically VERBATIM (consonant-for-consonant identical, only trivial diacritic/digit-glyph/whitespace differences) against aunklaw.com's independent copy of all 16 articles; metadata and the six-chapter structure additionally cross-verified against lexismiddleeast.com (Sader/LexisNexis). **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; no repeal/supersession clause naming a prior instrument was found in this Regulation's text. **GENUINE ANNEX-ONLY AMENDMENT DISCLOSED, NOT SILENTLY APPLIED**: Annex disclosure-document element (13) «معلومات الوضع المالي لمانح الامتياز» was later deleted per a secondary-sourced Ministerial Resolution (339, 14/8/1444H) — corroborated by a 2020-vs-2024 annex-content divergence found during research — but the annex is preserved here VERBATIM in its ORIGINAL 17-element 2020 form (element 13 retained, not deleted), consistent with this corpus's flag-don't-silently-apply rule for unconfirmed downstream amendments; this touches the annex only, not any numbered article, so no article's legal_status_ar was changed. Disclosed anomalies: the Resolution number appears as both '591' and '00591' across sources (591 favored, both preserved); the official uqn.gov.sa PDF itself was not directly re-fetched this pass (relied on franchising.sa's verified reproduction instead); article headers carry a trailing colon in the source style, preserved; the preamble text has secondary-sourced variants, disclosed; a minor issuance-date-vs-gazette-publication-date distinction preserved as recorded in each source. Arabic governs; not legal advice.",
             },
         ],
     }

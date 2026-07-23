@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 10370,
-  "total_references_extracted": 2204,
-  "intra_law_count": 1928,
-  "inter_law_count": 276,
+  "total_records_scanned": 10386,
+  "total_references_extracted": 2212,
+  "intra_law_count": 1934,
+  "inter_law_count": 278,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1856,
+    "high": 1864,
     "medium": 348
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -10065,6 +10065,94 @@
       "target_article_number": 18,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثامنة عشرة) من النظام بعد انقضاء ثلاث سنو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "franchise_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "الامتياز التجاري",
+      "raw_citation_text": "المادة (الأولى) من نظام الامتياز التجاري، الصادر بالمرسو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "franchise_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من النظام، لا تعد اتفاقية امت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "franchise_regulation",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة) من النظام، يجب أن تتضمن اتفاق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "competition_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المنافسة",
+      "raw_citation_text": "أحكام نظام المنافسة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "franchise_regulation",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من النظام، لا يجوز لمانح الام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "franchise_regulation",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام، على مانح الامتياز",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "franchise_regulation",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العشرين) من النظام- في أن يقوم مانح ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "franchise_regulation",
+      "source_record_id": "franchise-regulation-llm-art-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "franchise_regulation",
+      "target_article_number": 22,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والعشرين) من النظام، إذا انقضت اتفاقية",
       "confidence": "high"
     },
     {
