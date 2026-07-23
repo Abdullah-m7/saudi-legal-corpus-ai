@@ -209,6 +209,8 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_environmental_violations_penalties_reg_track.py",
     "scripts/gen_environmental_permits_reg_track.py",
     "scripts/gen_environmental_air_quality_reg_track.py",
+    "scripts/gen_environmental_service_providers_reg_track.py",
+    "scripts/gen_environmental_fees_reg_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",

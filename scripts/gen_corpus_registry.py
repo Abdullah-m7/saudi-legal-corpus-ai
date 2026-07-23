@@ -206,6 +206,8 @@ ENVIRONMENTAL_INSPECTION_AUDIT_LLM = os.path.join(ROOT, "data", "environmental_i
 ENVIRONMENTAL_VIOLATIONS_PENALTIES_LLM = os.path.join(ROOT, "data", "environmental_violations_penalties_arabic_legal_llm", "environmental_violations_penalties_reg_legal_llm_001_010.json")
 ENVIRONMENTAL_PERMITS_LLM = os.path.join(ROOT, "data", "environmental_permits_reg_arabic_legal_llm", "environmental_permits_reg_legal_llm_001_011.json")
 ENVIRONMENTAL_AIR_QUALITY_LLM = os.path.join(ROOT, "data", "environmental_air_quality_arabic_legal_llm", "environmental_air_quality_reg_legal_llm_001_008.json")
+ENVIRONMENTAL_SERVICE_PROVIDERS_LLM = os.path.join(ROOT, "data", "environmental_service_providers_reg_arabic_legal_llm", "environmental_service_providers_reg_legal_llm_001_012.json")
+ENVIRONMENTAL_FEES_LLM = os.path.join(ROOT, "data", "environmental_fees_reg_arabic_legal_llm", "environmental_fees_reg_legal_llm_001_004.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -405,6 +407,8 @@ def main() -> int:
     environmental_violations_penalties_llm = _load_json(ENVIRONMENTAL_VIOLATIONS_PENALTIES_LLM)
     environmental_permits_llm = _load_json(ENVIRONMENTAL_PERMITS_LLM)
     environmental_air_quality_llm = _load_json(ENVIRONMENTAL_AIR_QUALITY_LLM)
+    environmental_service_providers_llm = _load_json(ENVIRONMENTAL_SERVICE_PROVIDERS_LLM)
+    environmental_fees_llm = _load_json(ENVIRONMENTAL_FEES_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -425,7 +429,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 168,
+        "total_tracks": 170,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -597,6 +601,8 @@ def main() -> int:
             + environmental_violations_penalties_llm["record_count"]  # 10 Implementing Regulation for Recording Environmental Violations and Imposing Penalties (Ministerial Decision 15101619, 26/4/1446H, wholly replacing Decision 312186/1/1442) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY qanoonsa.com consolidated in-force text cross-verified against qistas.com appendix, 10 اصلية (8 articles + 2 appendix templates), self-supersession of the 1442H original, see track notes)
             + environmental_permits_llm["record_count"]  # 11 Implementing Regulation for Environmental Permits for Establishing and Operating Activities (Minister of Environment Decision 43615/3/1/1442, 09/08/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY Umm Al-Qura Gazette issue 4888 clean HTML cross-verified 99.66% word-level against the official born-digital gazette PDF, 11 اصلية, confirmed no named-predecessor repeal, see track notes)
             + environmental_air_quality_llm["record_count"]  # 8 Implementing Regulation for Air Quality under the Environmental Law (Ministerial Decision 512258/1/1442, 24/9/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY mewa.gov.sa born-digital PDF cross-verified ~100% word-level against qanoniah.com, 8 اصلية, confirmed no named-predecessor repeal, see track notes)
+            + environmental_service_providers_llm["record_count"]  # 13 Implementing Regulation for Environmental Service Providers (Ministerial Decision 1515009/1, 3/7/1446H, wholly replacing Decision 582979/1/1442) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY official MEWA scanned decision PDF (visually read) x qanoniah.com clean HTML, 13 اصلية (12 articles + Table 1), CONFIRMED self-supersession of the decision's own prior 582979/1/1442 original, recorded as a repeals_full edge, see track notes)
+            + environmental_fees_llm["record_count"]  # 4 Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses/Permits/Services (Minister Decision 618660/1/1442, 05/12/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY qanoniah.com cross-verified via multi-source citation corroboration, 4 اصلية, confirmed no named-predecessor repeal, Annex-1 fee-ceiling table documented as excluded, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -759,6 +765,8 @@ def main() -> int:
             + environmental_violations_penalties_llm["record_count"]
             + environmental_permits_llm["record_count"]
             + environmental_air_quality_llm["record_count"]
+            + environmental_service_providers_llm["record_count"]
+            + environmental_fees_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5673,6 +5681,62 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation for Air Quality under the Environmental Law «اللائحة التنفيذية لجودة الهواء لنظام البيئة» — Minister of Environment, Water and Agriculture Decision No. (512258/1/1442), dated 24/9/1442H, issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H); applied from 13 Shawwal 1442H (25 May 2021), published Umm Al-Qura Gazette 18 June 2021. A separate topical Regulation under the Environmental Law's family of ~15 distinct implementing instruments. **8 records (the regulation's 8 numbered articles), ALL 8 اصلية.** Scope limitation, disclosed not silently narrowed: only the 8 numbered articles (the prose body) are ingested; a 37-row penalties Table (3) and 8 technical appendices (measurement standards for ambient air quality and stationary-source emissions, pp.33-102 of the source PDF) are documented as excluded tabular/technical annexes, following the food_regulation precedent, not fabricated. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: connection failure this pass, no dedicated lawId page for this Regulation. PRIMARY source is the issuing Ministry's own official born-digital PDF (mewa.gov.sa), cross-verified word-for-word (~100% match) against qanoniah.com's independent rendering, used as the ingestion source since the MEWA PDF's own text layer carries a Farsi-letterform extraction defect. **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; no repeal/supersession clause of any kind was found in either source's text of this Regulation (this is the first air-quality Regulation under the 2020 Environmental Law); Table (3) alone was later amended by Ministerial Decision 15029057 (04/02/1446H), which does not touch any of the 8 ingested articles. Disclosed: Articles 5-6 retain genuine Latin technical terms (CEMS, RATA, USEPA Method, Volatile Organic Compound, etc.) preserved verbatim as part of the original source text, not extraction contamination. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "environmental_service_providers",
+                "display_name_ar": "اللائحة التنفيذية لمقدمي الخدمات البيئية لنظام البيئة",
+                "display_name_en": "Implementing Regulation for Environmental Service Providers",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MEWA_OFFICIAL_SCANNED_DECISION_PDF_VISUALLY_READ_X_QANONIAH_COM_CLEAN_HTML_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+                "source_authority": "Minister of Environment, Water and Agriculture Decision No. (1515009/1), dated 3/7/1446H, published Umm Al-Qura Gazette issue 5063 (5 Jan 2025), wholly replacing the founding Decision No. (582979/1/1442), 14/11/1442H; issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) and Royal Order 32043/1444H / Council of Ministers Decision 406/1445H — laws.boe.gov.sa was checked first per methodology: no dedicated lawId page for this Regulation, only the base Environmental Law. PRIMARY source is the issuing Ministry's own official scanned decision PDF (MEWA RulesLibrary, 15pp, no text layer, read page-by-page visually confirming the decision image, ministry stamp, replacement clause, and Minister's signature), the article text sourced from qanoniah.com's clean linear HTML (cross-verified against the official scan's structure, per-article item counts, titles, and all 13 table rows)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": environmental_service_providers_llm["record_count"],
+                    "data_path": "data/environmental_service_providers_reg_arabic_legal_llm/environmental_service_providers_reg_legal_llm_001_012.json"}},
+                "record_counts": {"arabic_articles": environmental_service_providers_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 13, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": environmental_service_providers_llm["record_count"]},
+                "data_paths": [
+                    "sources/environmental_service_providers/official_source/environmental_service_providers_reg_official_source.json",
+                    "sources/environmental_service_providers/verified/environmental_service_providers_reg_verified_records.jsonl",
+                    "data/environmental_service_providers_reg_arabic_legal_llm/environmental_service_providers_reg_legal_llm_001_012.json",
+                ],
+                "validator_targets": ["make environmental-service-providers-reg-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation for Environmental Service Providers under the Environmental Law «اللائحة التنفيذية لمقدمي الخدمات البيئية لنظام البيئة» — Minister of Environment, Water and Agriculture Decision No. (1515009/1), dated 3/7/1446H, published Umm Al-Qura Gazette issue 5063 (5 Jan 2025); issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H). A separate topical Regulation under the Environmental Law's family of ~15 distinct implementing instruments. **13 records = 12 numbered articles + Table (1) المخالفات والعقوبات (13 rows, referenced by Articles 11-12), ALL 13 اصلية** within the in-force version, no chapter/باب division. **CONFIRMED named-predecessor repeal (self-supersession)**: Decision 1515009/1's own clause (ثانياً) verbatim states «تحل هذه اللائحة محل اللائحة التنفيذية لمقدمي الخدمات البيئية لنظام البيئة، الصادرة بالقرار الوزاري رقم (582979/1/1442) بتاريخ 14/11/1442هـ» — wholly replacing the founding Decision No. (582979/1/1442), 14/11/1442H, issued under the same 2024/1446H reform mandate (Royal Order 32043/1444H + CoM Decision 406/1445H) that produced the sibling environmental_inspection_audit and environmental_violations_penalties re-issuances; recorded as a real repeals_full edge in the supersession graph. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: no dedicated lawId page for this Regulation. PRIMARY source is the issuing Ministry's own official scanned decision PDF (MEWA RulesLibrary, read page-by-page visually since it has no text layer, confirming the decision image, ministry stamp, replacement clause, and the Minister's signature), with the article text itself sourced from qanoniah.com's clean linear HTML rendering, cross-verified against the official scan's structure (per-article item counts, titles, and all 13 table rows match). Automated word-level anagram cross-checking (used by several sibling tracks) was not possible here since the MEWA copy is a scan, not a text-layer PDF; verification instead relied on structural cross-check plus full manual visual reading of the official scan. Disclosed: a minor date-cluster ambiguity (uqn.gov.sa lists 3 Rajab vs the gazette issue's own 3 Jan / a faint stamp day) preserved not silently resolved; a source spacing artifact on qanoonsa (\"الش عب\"→\"الشعب\") normalized per the official MEWA scan, disclosed not silently changed. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "environmental_fees",
+                "display_name_ar": "اللائحة التنفيذية للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية",
+                "display_name_en": "Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses, Permits and Services",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "QANONIAH_COM_PRIMARY_TEXT_MULTISOURCE_CITATION_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+                "source_authority": "Minister of Environment, Water and Agriculture Decision No. (618660/1/1442), dated 05/12/1442H, applied late July 2021, issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) — laws.boe.gov.sa was checked first per methodology: no dedicated lawId page for this Regulation. The Umm Al-Qura gazette portal (uqn.gov.sa) is a JS-rendered SPA whose article text/issue-PDF could not be extracted this pass (legacy permalinks do not map to the portal's current internal cms-id). PRIMARY text source is qanoniah.com's full article-by-article text (via its backend API), citation cross-verified across many independent sources (ajel.sa, qanoonsa metadata, multiple news outlets), and the text itself partially cross-verified (ajel.sa on Article 3; maaal.com/aleqt.com/mewa search-summary excerpts on Articles 1 and 4)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": environmental_fees_llm["record_count"],
+                    "data_path": "data/environmental_fees_reg_arabic_legal_llm/environmental_fees_reg_legal_llm_001_004.json"}},
+                "record_counts": {"arabic_articles": environmental_fees_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 4, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": environmental_fees_llm["record_count"]},
+                "data_paths": [
+                    "sources/environmental_fees/official_source/environmental_fees_reg_official_source.json",
+                    "sources/environmental_fees/verified/environmental_fees_reg_verified_records.jsonl",
+                    "data/environmental_fees_reg_arabic_legal_llm/environmental_fees_reg_legal_llm_001_004.json",
+                ],
+                "validator_targets": ["make environmental-fees-reg-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses, Permits and Services «اللائحة التنفيذية للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية» — Minister of Environment, Water and Agriculture Decision No. (618660/1/1442), dated 05/12/1442H, applied late July 2021 (~21 Dhu al-Hijjah 1442H); issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H). A separate topical Regulation under the Environmental Law's family of ~15 distinct implementing instruments — the shortest track in this family. **4 numbered articles, ALL 4 اصلية**, no chapter/باب division (Art 1 definitions; Art 2 the competent center's tasks re fees; Art 3 fee-setting/triennial-update mechanism; Art 4 the annual environmental-operating-permit fee formula and its component factors). **VERIFICATION TIER: TIER_2 (lower end)** — laws.boe.gov.sa checked first per methodology: no dedicated lawId page for this Regulation; the Umm Al-Qura gazette portal is now a JS-rendered SPA whose article text/issue-PDF could not be extracted this pass (legacy `?p=` permalinks do not resolve to the portal's current internal cms-id, disclosed as a limitation, not fabricated). PRIMARY source is qanoniah.com's full article-by-article text (a non-government aggregator republishing the official text, the same source-class used by several sibling tracks), with the citation (decision number/date, base-law link, application date) cross-verified across many independent sources and the article text itself partially cross-verified against ajel.sa (Article 3) and maaal.com/aleqt.com/MEWA search-summary excerpts (Articles 1 and 4). **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; only a generic conflict-repeal clause was found, and no later replacing/amending decision was found either (qanoniah shows the regulation ساري with no version history, unlike three of its siblings which were wholesale re-issued in 2024/2025). Disclosed: **Annex (1) «الحدود القصوى للمقابل المالي...»** (the fee-ceiling tariff table) is documented but NOT ingested — its tabular content was not recoverable as text this pass, following the food_regulation/sibling convention of disclosing rather than fabricating excluded annexes; the issuing decision's verbatim preamble was not recovered and is deliberately omitted rather than reconstructed; Western-style source digit glyphs and punctuation in Article 4's fee-factor formula (e.g. \"(0,8)\", \"(1.2)\") preserved verbatim. Arabic governs; not legal advice.",
             },
         ],
     }

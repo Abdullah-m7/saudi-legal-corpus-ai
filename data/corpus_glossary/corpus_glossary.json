@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 168,
-  "total_terms": 1015,
-  "total_definitions": 1627,
-  "tracks_with_definitions_article_parsed": 112,
+  "total_tracks_in_registry": 170,
+  "total_terms": 1022,
+  "total_definitions": 1652,
+  "tracks_with_definitions_article_parsed": 114,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -2290,6 +2290,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة يمنحها المركز المختص للشخص لممارسة نشاط بيئي.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -2506,6 +2514,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة يمنحها المركز المختص للشخص قبل البدء بممارسة النشاط.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "التصريح",
@@ -2557,6 +2573,14 @@
       }
     ],
     "التصريح البيئي للتشغيل": [
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "التصريح البيئي للتشغيل",
+        "definition_text": "وثيقة يمنحها المركز الوطني للرقابة على الالتزام البيئي للشخص قبل البدء بتشغيل أو ممارسة نشاط جديد، أو لاستئناف أو استمرار ممارسة أو تشغيل نشاط جاري.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "environmental_inspection_audit",
         "article_number": 1,
@@ -2853,6 +2877,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم الهيئة.",
         "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم المركز المختص.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3272,6 +3304,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الوزارة، أو أي من المراكز الوطنية لقطاع البيئة، أو المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر، كل بحسب اختصاصه، ووفقا لما تحدده اللوائح.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_violations_penalties",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
@@ -3353,6 +3393,14 @@
         "term_as_written": "الجهة المشرفة",
         "definition_text": "أية جهة حكومية مخولة نظاما بالإشراف على النشاط، وتختص بإصدار تراخيص لممارسة الأنشطة التي تخضع لإشرافها.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "الجهة المشرفة",
+        "definition_text": "أية جهة حكومية مخولة نظاما بالإشراف على قطاع تنموي، وتختص بإصدار تراخيص لممارسة الأنشطة التي تخضع لإشرافها.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3723,6 +3771,16 @@
         "term_as_written": "الخدمات الاستشارية",
         "definition_text": "خدمات ذات طبيعة مهنية أو استشارية، وتشمل -دون حصر- إعداد الدراسات والأبحاث، ووضع المواصفات والمخططات والتصميمات والإشراف على تنفيذها، كخدمات المحاسبين والمحامين.",
         "source_record_id": "gtpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخدمات البيئية": [
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "الخدمات البيئية",
+        "definition_text": "الخدمات التي يقدمها المركز المختص للأشخاص كمراجعة الدراسات المقدمة للمركز وغيرها.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4844,6 +4902,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص ذو صفة طبيعية أو اعتبارية عامة أو خاصة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الشخص",
@@ -5071,6 +5137,14 @@
         "term_as_written": "الصندوق",
         "definition_text": "صندوق النفقة.",
         "source_record_id": "alimony-fund-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "الصندوق",
+        "definition_text": "صندوق البيئة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6236,6 +6310,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_inspection_audit",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -6249,6 +6331,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لمقدمي الخدمات البيئية.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6823,6 +6913,14 @@
         "term_as_written": "اللوائح",
         "definition_text": "اللوائح التنفيذية لهذا النظام.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية للنظام.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8028,6 +8126,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المركز المختص": [
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "المركز المختص",
+        "definition_text": "المركز الوطني للرقابة على الالتزام البيئي أو المركز الوطني لتنمية الغطاء النباتي ومكافحة التصحر أو المركز الوطني لتنمية الحياة الفطرية.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المزايدة العكسية الإلكترونية": [
       {
         "track_id": "gtpl_law",
@@ -8339,6 +8447,16 @@
         "term_as_written": "المسطحات المائية",
         "definition_text": "تراكم للماء على سطح الأرض أو في جوفها، وتشمل المحيطات والبحار والبحيرات والبرك والأراضي الرطبة والمكونات الجغرافية الأخرى التي تنتقل فيها المياه من مكان إلى آخر.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المسوح الميدانية البيئية": [
+      {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "المسوح الميدانية البيئية",
+        "definition_text": "الدراسات والأبحاث الميدانية والمختبرية، والمشتملة على الإحصائيات الوصفية والمتباينة لمجمل المقاييس والمعايير والمؤشرات البيئية وأي معايير اقتصادية واجتماعية أخرى.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8863,6 +8981,14 @@
       }
     ],
     "المقابل المالي": [
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "المقابل المالي",
+        "definition_text": "مبلغ مالي يستوفيه المركز المختص من الشخص أو النشاط مقابل إصدار أو تجديد التراخيص أو التصاريح أو تقديم الخدمات البيئية.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "real_estate_registration_law",
         "article_number": 1,
@@ -10000,6 +10126,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون لها تأثيرات بيئية.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_inspection_audit",
         "article_number": 1,
         "term_as_written": "النشاط",
@@ -10013,6 +10147,14 @@
         "term_as_written": "النشاط",
         "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون لها تأثيرات بيئية.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون لها تأثيرات بيئية.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10331,6 +10473,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام البيئة.",
         "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام البيئة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11242,6 +11392,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -11255,6 +11413,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة البيئة والمياه والزراعة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11611,6 +11777,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير البيئة والمياه والزراعة.",
         "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14326,6 +14500,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "معامل الالتزام البيئي للنشاط": [
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "معامل الالتزام البيئي للنشاط",
+        "definition_text": "معامل يحدد من قبل المركز الوطني للرقابة على الالتزام البيئي لكل نشاط بحسب مستوى التزامه البيئي، ويستخدم المعامل في احتساب مقدار المقابل المالي للتصريح البيئي للتشغيل، وفقا لأحكام اللائحة، ويهدف إلى تحفيز الممارسات الصديقة للبيئة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "معامل التأثير البيئي": [
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "معامل التأثير البيئي",
+        "definition_text": "معامل يحدد من قبل المركز الوطني للرقابة على الالتزام البيئي بناء على الأثر البيئي لأنواع الأنشطة كالتعدين والطاقة والصناعة وغيرها من الأنشطة المختلفة، ويستخدم المعامل في احتساب مقدار المقابل المالي للتصريح البيئي للتشغيل، وفقا لأحكام اللائحة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "معاهدة شيكاغو": [
       {
         "track_id": "civil_aviation_law",
@@ -14462,6 +14656,16 @@
         "definition_text": "شخص مرخص له بإصدار شهادات التصديق الرقمي، أو أي خدمة أو مهمة متعلقة بها وبالتوقيعات الإلكترونية وفقاً لهذا النظام.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "مقدمو الخدمات": [
+      {
+        "track_id": "environmental_service_providers",
+        "article_number": 1,
+        "term_as_written": "مقدمو الخدمات",
+        "definition_text": "الشخص المرخص له من الجهة المختصة لتقديم خدمات بيئية.",
+        "source_record_id": "environmental-service-providers-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مكاتب المصالحة": [
@@ -15171,6 +15375,16 @@
         "term_as_written": "وثيقة الحماية",
         "definition_text": "وهي إما أن تكون براءة اختراع أو شهادة تصميم أو براءة نباتية أو شهادة نموذج صناعي.",
         "source_record_id": "patent-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "وثيقة المقابل المالي": [
+      {
+        "track_id": "environmental_fees",
+        "article_number": 1,
+        "term_as_written": "وثيقة المقابل المالي",
+        "definition_text": "مستند يصدر من المركز المختص يحدد فيه كيفية حساب مقدار المقابل المالي لكل فئة من فئات الأنشطة ومقداره وآلية تحصيله وأي اشتراطات ذات الصلة، وفقا لأحكام اللائحة.",
+        "source_record_id": "environmental-fees-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

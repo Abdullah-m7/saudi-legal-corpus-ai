@@ -217,6 +217,8 @@ REQUIRED_TRACK_IDS = [
     "environmental_violations_penalties",
     "environmental_permits",
     "environmental_air_quality",
+    "environmental_service_providers",
+    "environmental_fees",
 ]
 
 CHECKS: list[str] = []
@@ -259,9 +261,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 168 tracks
+    # [3] 170 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 168 tracks present...", len(track_ids) == 168 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 170 tracks present...", len(track_ids) == 170 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -1814,7 +1816,27 @@ def main() -> int:
           eaq_counts.get("legal_status_breakdown") == {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={eaq_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 10511 records...", uix.get("total_records") == 10511,
+    esp = tracks_by_id.get("environmental_service_providers", {})
+    esp_counts = esp.get("record_counts", {})
+    check("[7g156] environmental_service_providers: 13 Arabic records, MEWA scanned decision PDF x qanoniah.com clean HTML...",
+          esp_counts.get("arabic_articles") == 13
+          and esp.get("official_text_status") == "MEWA_OFFICIAL_SCANNED_DECISION_PDF_VISUALLY_READ_X_QANONIAH_COM_CLEAN_HTML_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+          f"counts={esp_counts}")
+    check("    environmental_service_providers: status breakdown 13/0/0/0...",
+          esp_counts.get("legal_status_breakdown") == {"اصلية": 13, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={esp_counts.get('legal_status_breakdown')}")
+
+    efe = tracks_by_id.get("environmental_fees", {})
+    efe_counts = efe.get("record_counts", {})
+    check("[7g157] environmental_fees: 4 Arabic records, qanoniah.com primary text, multi-source citation cross-check...",
+          efe_counts.get("arabic_articles") == 4
+          and efe.get("official_text_status") == "QANONIAH_COM_PRIMARY_TEXT_MULTISOURCE_CITATION_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+          f"counts={efe_counts}")
+    check("    environmental_fees: status breakdown 4/0/0/0...",
+          efe_counts.get("legal_status_breakdown") == {"اصلية": 4, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={efe_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 10528 records...", uix.get("total_records") == 10528,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -1876,8 +1898,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 10680...",
-          registry.get("total_primary_arabic_governing_records") == 10680,
+    check("[19a] total_primary_arabic_governing_records == 10697...",
+          registry.get("total_primary_arabic_governing_records") == 10697,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -1892,8 +1914,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 11575...",
-          registry.get("total_registry_counted_records") == 11575,
+    check("[19e] total_registry_counted_records == 11592...",
+          registry.get("total_registry_counted_records") == 11592,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -1917,7 +1939,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"10680 + 614 + 281 = 11575")
+          f"10697 + 614 + 281 = 11592")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -1935,7 +1957,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 168 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 170 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

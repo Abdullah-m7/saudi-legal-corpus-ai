@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 364,
-  "top1_hits": 338,
-  "top3_hits": 357,
-  "top5_hits": 360,
-  "top1_accuracy": 0.9286,
-  "top3_accuracy": 0.9808,
-  "top5_accuracy": 0.989,
-  "mrr_at_5": 0.9538,
+  "total_queries": 368,
+  "top1_hits": 342,
+  "top3_hits": 361,
+  "top5_hits": 364,
+  "top1_accuracy": 0.9293,
+  "top3_accuracy": 0.981,
+  "top5_accuracy": 0.9891,
+  "mrr_at_5": 0.9543,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1719,8 +1719,8 @@
      "score": 14
     },
     {
-     "record_id": "environmental-permits-reg-llm-art-010",
-     "article_number": 10,
+     "record_id": "environmental-fees-reg-llm-art-002",
+     "article_number": 2,
      "score": 12
     }
    ]
@@ -2086,13 +2086,13 @@
      "score": 17
     },
     {
-     "record_id": "labor-annex5-llm-020-part-time",
-     "article_number": 20,
-     "score": 10
+     "record_id": "environmental-service-providers-reg-llm-art-005",
+     "article_number": 5,
+     "score": 11
     },
     {
-     "record_id": "labor-annex5-llm-050-casual-temporary",
-     "article_number": 50,
+     "record_id": "labor-annex5-llm-020-part-time",
+     "article_number": 20,
      "score": 10
     }
    ]
@@ -5062,14 +5062,14 @@
      "score": 46
     },
     {
+     "record_id": "environmental-service-providers-reg-llm-art-010",
+     "article_number": 10,
+     "score": 27
+    },
+    {
      "record_id": "state-funded-lawyer-regulation-llm-art-003",
      "article_number": 3,
      "score": 22
-    },
-    {
-     "record_id": "state-funded-lawyer-regulation-llm-art-008",
-     "article_number": 8,
-     "score": 21
     }
    ]
   },
@@ -9872,9 +9872,9 @@
      "score": 14
     },
     {
-     "record_id": "oa-llm-companies-art-262",
-     "article_number": 262,
-     "score": 13
+     "record_id": "environmental-service-providers-reg-llm-table-013",
+     "article_number": 13,
+     "score": 14
     }
    ]
   },
@@ -11301,6 +11301,130 @@
      "record_id": "oa-llm-companies-art-275",
      "article_number": 275,
      "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "esp-001",
+   "query_ar": "خدمة إعداد الخطط البيئية كخطط الإدارة البيئية وخطط المعالجة وإعادة التأهيل. خدمة التدريب البيئي وبناء القدرات. خدمة التفتيش والتدقيق البيئي",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_service_providers",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-service-providers-reg-llm-art-004",
+     "article_number": 4,
+     "score": 33
+    },
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-003",
+     "article_number": 3,
+     "score": 24
+    },
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-004",
+     "article_number": 4,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "esp-002",
+   "query_ar": "تقديم الخدمات بجودة عالية وصورة متقنة وفقا لأفضل الطرق والأساليب العلمية الصحيحة والحديثة",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_service_providers",
+    "law_component": "regulation",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-service-providers-reg-llm-art-009",
+     "article_number": 9,
+     "score": 30
+    },
+    {
+     "record_id": "environmental-service-providers-reg-llm-table-013",
+     "article_number": 13,
+     "score": 17
+    },
+    {
+     "record_id": "labor-annex4-llm-art-045",
+     "article_number": 45,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "efe-001",
+   "query_ar": "يتولى المركز المختص, كل حسب اختصاصه، القيام بالمهام الآتية المتعلقة بالمقابل المالي: 1- تحديد معامل التأثير البيئي لجميع فئات أو أنواع الأنشطة",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_fees",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-fees-reg-llm-art-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "environmental-fees-reg-llm-art-001",
+     "article_number": 1,
+     "score": 36
+    },
+    {
+     "record_id": "environmental-fees-reg-llm-art-004",
+     "article_number": 4,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "efe-002",
+   "query_ar": "تعد وكالة الوزارة للبيئة قوائم محدثة بالحدود القصوى المحددة في الملحق (1) من اللائحة وإضافة أنشطة جديدة عليها كل ثلاث (3) سنوات",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_fees",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-fees-reg-llm-art-003",
+     "article_number": 3,
+     "score": 40
+    },
+    {
+     "record_id": "environmental-air-quality-reg-llm-art-005",
+     "article_number": 5,
+     "score": 25
+    },
+    {
+     "record_id": "aml-regulation-llm-art-004",
+     "article_number": 7,
+     "score": 22
     }
    ]
   }
