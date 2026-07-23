@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 348,
-  "top1_hits": 322,
-  "top3_hits": 341,
-  "top5_hits": 344,
-  "top1_accuracy": 0.9253,
-  "top3_accuracy": 0.9799,
-  "top5_accuracy": 0.9885,
-  "mrr_at_5": 0.9517,
+  "total_queries": 350,
+  "top1_hits": 324,
+  "top3_hits": 343,
+  "top5_hits": 346,
+  "top1_accuracy": 0.9257,
+  "top3_accuracy": 0.98,
+  "top5_accuracy": 0.9886,
+  "mrr_at_5": 0.952,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8565,14 +8565,14 @@
      "score": 29
     },
     {
-     "record_id": "patent-law-llm-art-024",
-     "article_number": 24,
-     "score": 17
+     "record_id": "patent-regulation-llm-art-014",
+     "article_number": 14,
+     "score": 26
     },
     {
-     "record_id": "municipal-councils-law-llm-art-018",
-     "article_number": 18,
-     "score": 13
+     "record_id": "patent-regulation-llm-art-031",
+     "article_number": 31,
+     "score": 21
     }
    ]
   },
@@ -9965,8 +9965,8 @@
      "score": 29
     },
     {
-     "record_id": "oa-llm-companies-art-274",
-     "article_number": 274,
+     "record_id": "patent-regulation-llm-art-053",
+     "article_number": 53,
      "score": 22
     }
    ]
@@ -10805,6 +10805,68 @@
      "record_id": "aml-regulation-llm-art-001",
      "article_number": 1,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "ptr-001",
+   "query_ar": "يعد منشئا لحق الأسبقية كل إيداع سابق في مكتب وطني أو إقليمي لأي من دول اتحاد باريس",
+   "category": "definitional",
+   "gold": {
+    "corpus": "patent",
+    "law_component": "regulation",
+    "article_number": 30
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "patent-regulation-llm-art-030",
+     "article_number": 30,
+     "score": 28
+    },
+    {
+     "record_id": "gcc-ownership-llm-art-001",
+     "article_number": 1,
+     "score": 18
+    },
+    {
+     "record_id": "labor-annex3-llm-art-006",
+     "article_number": 6,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "ptr-002",
+   "query_ar": "يجوز لمقدم الطلب في حالة عدم مقدرته على استيفاء ما طلب منه خلال المهلة النظامية تقديم التماس لتمديد المهل",
+   "category": "topical",
+   "gold": {
+    "corpus": "patent",
+    "law_component": "regulation",
+    "article_number": 50
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "patent-regulation-llm-art-050",
+     "article_number": 50,
+     "score": 35
+    },
+    {
+     "record_id": "patent-regulation-llm-art-049",
+     "article_number": 49,
+     "score": 24
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 24
     }
    ]
   }

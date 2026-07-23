@@ -1476,6 +1476,21 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "modeled.",
         "source_ref": "sources/aml/regulation/official_source/aml_regulation_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["patent_regulation"],
+        "issue": "confirmed negative repeal finding -- no in-Regulation clause names a predecessor Regulation",
+        "note": "patent_regulation (KACST President Resolution 161-2-3607329, "
+                "30/12/1436H, consolidated as amended by SAIP Board "
+                "Resolution 5/8/2019) names no repealed predecessor "
+                "Implementing Regulation anywhere in its 67 articles -- it "
+                "is the first Implementing Regulation issued under the "
+                "current Patents Law (M/27, 1425H), which itself replaced "
+                "the older Patents Law (M/38, 1409H). Its closing articles "
+                "(66-67) only authorize the Board to issue future "
+                "amendments and publish them in the Official Gazette. No "
+                "edge modeled.",
+        "source_ref": "sources/patent/regulation/official_source/patent_regulation_official_source.json (known_unresolved_discrepancies: patent_regulation_no_named_predecessor_repeal)",
+    },
 ]
 
 

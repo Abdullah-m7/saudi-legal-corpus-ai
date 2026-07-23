@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10452,
+  "total_primary_arabic_governing_records": 10519,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11347,
-  "total_tracks": 160,
+  "total_registry_counted_records": 11414,
+  "total_tracks": 161,
   "tracks": [
     {
       "boundaries": {
@@ -7603,6 +7603,55 @@
       "validator_targets": [
         "make aml-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/patent/regulation/official_source/patent_regulation_official_source.json",
+        "sources/patent/regulation/verified/patent_regulation_verified_records.jsonl",
+        "data/patent_regulation_arabic_legal_llm/patent_regulation_legal_llm_001_067.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام براءات الاختراع",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Patents Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/patent_regulation_arabic_legal_llm/patent_regulation_legal_llm_001_067.json",
+          "governing": true,
+          "record_count": 67,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Saudi Arabian Patents Law «اللائحة التنفيذية لنظام براءات الاختراع» — founding instrument KACST President Resolution No. (161-2-3607329), dated 30/12/1436H (13 Oct 2015), issued under Article 63 of the Patents Law (Royal Decree M/27, 1425H); consolidated as amended by SAIP Board of Directors Resolution No. (5/8/2019), dated 04/09/1440H (9 May 2019). **67 articles across 12 أبواب** (chapter 2 subdivided into 4 فصول by filing type: patent, integrated-circuit layout-design, plant, industrial-design applications), **ALL 67 اصلية** — the primary source (WIPO Lex's consolidated file) does not enumerate which specific articles the 2019 amendment touched at article level, so no article is classified معدلة beyond what the source explicitly states, consistent with this corpus's rule against extrapolating amendment scope; disclosed that the ingested text is the 2019-consolidated version, not the 1436H founding text. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology: unreachable this pass (connection reset) AND confirmed to have no dedicated lawId page for this agency/board-level Regulation (only for the base Patents Law itself). PRIMARY source is the official SAIP-letterhead Arabic PDF on WIPO Lex (record SA065) — visually confirmed via rendered pages to carry SAIP's own branding. Extracted via two fully independent pipelines (pdftotext-layout bidi and a custom PyMuPDF coordinate-gap reconstruction) whose Arabic-letter sequences matched per-page across the whole document except 14 bidi-reversed lines (fixed using the bidi-correct pipeline); a letter-multiset integrity gate proved every fix was letter-preserving except one deliberately-restored accusative alif (اسباباً, Article 25, confirmed against the independent pipeline). Structure and article count independently cross-verified via WIPO Lex's own metadata and qanoonsa.com. **DISCLOSED STALENESS, MIRRORING THE BASE patent_law TRACK**: a later SAIP Board Resolution No. (02/32/2024), dated 10/04/1446H (Umm al-Qura, 13 Dec 2024, confirmed via qanoonsa.com), is NOT reflected in the WIPO Lex 2019-consolidated text ingested here; no trustworthy consolidated 2024 text was obtainable this pass (Istitlaa returned 503; no unified Umm al-Qura or SAIP text available) — disclosed as an explicit follow-up candidate, no 2024 text fabricated. **NO NAMED-PREDECESSOR REPEAL/SUPERSESSION CLAUSE** — a confirmed negative finding; this is the first Implementing Regulation issued under the current Patents Law (M/27, 1425H), which itself replaced the older Patents Law (M/38, 1409H); its own closing articles (66-67) only authorize the Board to issue future amendments and publish them in the Official Gazette. Disclosed anomalies: presentation-form dual-pipeline extraction with the 14 line-level fixes noted above; a mis-encoded shadda ('تسل1م'→'تسلم', Articles 61/64, visually confirmed against the rendered page as 'تسلُّم'); an inline English gloss 'treatment' (Article 40) preserved verbatim (agreed by both independent extraction pipelines, not an extraction artifact); Latin acronyms PCT/IUPAC/IUPAP/SUNAMCO preserved verbatim (Articles 1, 11, 12, and Chapter 11); a trailing fee-schedule annex (جدول بالنفقات) stored in a separate schedule_ar field, not counted among the 67 numbered articles; Gregorian date equivalences sourced from WIPO Lex's own metadata, not invented. Arabic governs; not legal advice.",
+      "official_text_status": "WIPO_LEX_OFFICIAL_SAIP_LETTERHEAD_PDF_DUAL_INDEPENDENT_EXTRACTION_PIPELINE_RECONCILED_X_QANOONSA_STRUCTURAL_CROSSCHECK_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 67,
+        "legal_status_breakdown": {
+          "اصلية": 67,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 67
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "President of King Abdulaziz City for Science and Technology (KACST) Resolution No. (161-2-3607329), dated 30/12/1436H, issued under Article 63 of the Patents Law (Royal Decree M/27, 1425H), consolidated as amended by Saudi Authority for Intellectual Property (SAIP) Board of Directors Resolution No. (5/8/2019), dated 04/09/1440H — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this agency-level Regulation. PRIMARY source is the official SAIP-letterhead Arabic PDF hosted on WIPO Lex (record SA065), extracted via two fully independent pipelines (pdftotext-layout bidi and a custom PyMuPDF coordinate-gap reconstruction) whose Arabic-letter sequences matched per-page across the whole document except 14 individually-fixed bidi-reversed lines; structure and article count independently cross-verified via WIPO Lex's own metadata and qanoonsa.com",
+      "status": "complete",
+      "track_id": "patent_regulation",
+      "validator_targets": [
+        "make patent-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7695,7 +7744,7 @@
       "muslaha": 29,
       "nationality": 65,
       "nazaha": 24,
-      "patent": 66,
+      "patent": 133,
       "payment_systems": 20,
       "pdpl": 81,
       "personal_status": 293,
@@ -7730,7 +7779,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10283,
+    "total_records": 10350,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
