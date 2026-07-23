@@ -1191,6 +1191,29 @@ EDGES = [
                 "ingested in this corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/environmental_service_providers/official_source/environmental_service_providers_reg_official_source.json (verification_methodology_note)",
     },
+    {
+        "from_track_id": "universities_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام مجلس التعليم العالي والجامعات (السابق)",
+        "target_decree": "Royal Decree No. (M/8), 4/6/1414H",
+        "note": "universities_law (Royal Decree M/27, 2/3/1441H) Article 57 "
+                "explicitly replaces and repeals conflicting provisions of "
+                "the predecessor نظام مجلس التعليم العالي والجامعات, Royal "
+                "Decree No. (M/8), dated 4/6/1414H -- confirmed via Article "
+                "57's own verbatim text: \"يحل هذا النظام محل نظام مجلس "
+                "التعليم العالي والجامعات، الصادر بالمرسوم الملكي رقم (م/8) "
+                "وتاريخ 4/6/1414هـ ويلغي جميع ما يتعارض معه من أحكام\", "
+                "identically confirmed in both this track's bibliotdroit.com "
+                "source and the administering authority's own cua.gov.sa PDF. "
+                "This is a real confirmed named-predecessor repeal-and-replace, "
+                "not an ambiguous/excluded case -- but disclosed as PHASED, not "
+                "instantaneous: the Royal Decree's own clauses 3-4 keep the "
+                "predecessor law transitionally in force for universities not "
+                "yet brought under the new Law. Not separately ingested in "
+                "this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/universities/law/official_source/universities_law_official_source.json (issuing_authority_ar / Article 57)",
+    },
 ]
 
 # ---------------------------------------------------------------------------
