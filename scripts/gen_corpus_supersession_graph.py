@@ -1634,6 +1634,24 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "(M/165). No edge modeled.",
         "source_ref": "sources/environmental_fees/official_source/environmental_fees_reg_official_source.json (verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["rett_law"],
+        "issue": "generic repeal clause only -- no named predecessor asserted in the Law's own text",
+        "note": "rett_law (Royal Decree M/84, 19/3/1446H) Article 20(2) carries "
+                "only a generic conflict-repeal clause (\"ويلغي كل ما يتعارض معه "
+                "من أحكام\"), naming no specific prior instrument as repealed. "
+                "The substantive predecessor context -- الأمر الملكي رقم (أ/84) "
+                "وتاريخ 14/2/1442هـ (Royal Order A/84, 14/2/1442H), which first "
+                "imposed the 5% Real Estate Transaction Tax at royal-order level "
+                "and whose effective date is referenced in this Law's own "
+                "transitional clauses -- is disclosed in known_unresolved_"
+                "discrepancies (rett_predecessor_royal_order) as historical "
+                "context only, not as a Law-text-asserted repeal; nezams.com "
+                "independently characterises this 2024 Law as a comprehensive "
+                "codification rather than a replacement of a named predecessor. "
+                "No edge modeled.",
+        "source_ref": "sources/rett/law/official_source/rett_law_official_source.json (known_unresolved_discrepancies, verification_methodology_note)",
+    },
 ]
 
 
