@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10641,
+  "total_primary_arabic_governing_records": 10680,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11536,
-  "total_tracks": 164,
+  "total_registry_counted_records": 11575,
+  "total_tracks": 168,
   "tracks": [
     {
       "boundaries": {
@@ -7799,6 +7799,202 @@
       "validator_targets": [
         "make traffic-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/environmental_inspection_audit/official_source/environmental_inspection_audit_reg_official_source.json",
+        "sources/environmental_inspection_audit/verified/environmental_inspection_audit_reg_verified_records.jsonl",
+        "data/environmental_inspection_audit_arabic_legal_llm/environmental_inspection_audit_reg_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية للتفتيش والتدقيق البيئي لنظام البيئة",
+      "display_name_en": "Implementing Regulation for Environmental Inspection and Audit",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/environmental_inspection_audit_arabic_legal_llm/environmental_inspection_audit_reg_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation for Environmental Inspection and Audit under the Environmental Law «اللائحة التنفيذية للتفتيش والتدقيق البيئي لنظام البيئة» — one of ~15 distinct topical Implementing Regulations under the Environmental Law (Royal Decree M/165, 19/11/1441H), a separate instrument from environmental_violations_penalties/environmental_permits/environmental_air_quality (each its own corpus key, not variants of one regulation). Current in-force text issued by Ministerial Decision No. (15116190), 12 Jumada al-Ula 1446H (14 Nov 2024), which WHOLLY REPLACED the original founding Decision No. (393691/1/1442), 13/7/1442H — a confirmed self-supersession, recorded in the supersession graph. **10 records = 8 numbered articles + Table (1) penalty schedule + Appendix (1) audit-study template, ALL 10 اصلية** (the 2024 wholesale replacement was not itemised per-article, so no article-level امدلة/مضافة/ملغاة distinction is asserted; consolidated_amended_law=true at track level). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: unreachable this pass (no dedicated lawId page for this Regulation exists at all, only the base Environmental Law's own page). PRIMARY source is qanoonsa.com's reproduction of the current in-force text (Umm Al-Qura Gazette issue 5057), cross-verified against qistas.com's independent copy of Articles 2-3 (which shows the pre-2024 original wording, directly confirming the 2024 definitional rewrite rather than an extraction discrepancy) and citation-corroborated via the replacing decision's own gazette recital plus the MEWA/SPA public announcement. **CONFIRMED SELF-SUPERSESSION, NO EXTERNAL NAMED-PREDECESSOR** — the 2024 decision replaces only this Regulation's own 2021 original, not a differently-titled prior instrument. Disclosed: only one reachable full-text source (government primaries returned 404/unreachable this pass); a precise per-article diff between the 2021 original and 2024 replacement could not be performed; the penalty-table column alignment carries some ambiguity, values preserved verbatim not reconstructed; the appendix title's own typo (التحقيق vs the substantively-expected التدقيق) preserved verbatim. Arabic governs; not legal advice.",
+      "official_text_status": "QANOONSA_COM_PRIMARY_UMM_AL_QURA_5057_REPRODUCTION_X_QISTAS_COM_PARTIAL_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. (15116190), dated 12 Jumada al-Ula 1446H (14 Nov 2024), Minister of Environment, Water and Agriculture, wholly replacing the original Decision No. (393691/1/1442), 13/7/1442H; issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) — laws.boe.gov.sa was checked first per methodology: unreachable this pass and confirmed to have no dedicated lawId page for this Regulation, only the base Environmental Law. PRIMARY reachable full-text source is qanoonsa.com (reproducing Umm Al-Qura Gazette issue 5057), cross-verified against qistas.com for Articles 2-3 (which independently corroborates the pre-2024 original, confirming the 2024 rewrite) and against the replacing decision's own gazette recital and the MEWA/SPA announcement for citation-level corroboration",
+      "status": "complete",
+      "track_id": "environmental_inspection_audit",
+      "validator_targets": [
+        "make environmental-inspection-audit-reg-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/environmental_violations_penalties/official_source/environmental_violations_penalties_reg_official_source.json",
+        "sources/environmental_violations_penalties/verified/environmental_violations_penalties_reg_verified_records.jsonl",
+        "data/environmental_violations_penalties_arabic_legal_llm/environmental_violations_penalties_reg_legal_llm_001_010.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+      "display_name_en": "Implementing Regulation for Recording Environmental Violations and Imposing Penalties",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/environmental_violations_penalties_arabic_legal_llm/environmental_violations_penalties_reg_legal_llm_001_010.json",
+          "governing": true,
+          "record_count": 10,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation for Recording Environmental Violations and Imposing Penalties under the Environmental Law «اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة» — a separate topical Regulation under the Environmental Law (M/165), distinct from environmental_inspection_audit/environmental_permits/environmental_air_quality (each its own corpus key). Current in-force text issued by Ministerial Decision No. (15101619), 26/4/1446H (30 Oct 2024, Umm Al-Qura Gazette issue 5055), whose own clause (ثانيا) explicitly states the re-issued regulation «تحل محل» (replaces) the original Decision No. (312186/1/1442), 4/6/1442H — a confirmed self-supersession, recorded in the supersession graph. **10 records = 8 numbered articles + 2 appendix form-templates (محضر ضبط، محضر تحقيق), ALL 10 اصلية** (the 2024 amendment re-issued the Regulation WHOLESALE without itemising per-article changes; consolidated_amended_law=true at track level; positive evidence that Article 1's definitions changed — now referencing المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف, created by CoM Decision 406, 14/5/1445H, post-dating the 1442H original — but a precise per-article diff could not be performed and is disclosed as a limitation, not silently resolved). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: no dedicated lawId page exists for this Implementing Regulation. PRIMARY source is qanoonsa.com's server-rendered consolidated in-force text, with the appendix independently corroborated against qistas.com and the amending decision's own text corroborated against a second qanoonsa.com page; citation (decision numbers/dates) further cross-verified against mewa.gov.sa, uqn.gov.sa, and istitlaa.ncc.gov.sa, though the government primaries were not directly fetched for full text this pass. **CONFIRMED SELF-SUPERSESSION, NO EXTERNAL NAMED-PREDECESSOR** of a differently-titled instrument — this is the first Regulation of its kind under the 1441H Environmental Law. Disclosed: government-primary full text not directly fetchable this pass (citation-level corroboration only); the 1442H original text could not be diffed against the 2024 re-issuance; a minor source-text spacing artifact (\"الش عب\"→\"الشعب\") corrected. Arabic governs; not legal advice.",
+      "official_text_status": "QANOONSA_COM_CONSOLIDATED_TEXT_X_QISTAS_COM_APPENDIX_CROSSCHECK_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 10,
+        "legal_status_breakdown": {
+          "اصلية": 10,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 10
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. (15101619), dated 26/4/1446H (30 Oct 2024, Umm Al-Qura Gazette issue 5055), Minister of Environment, Water and Agriculture, wholly re-issuing the original Decision No. (312186/1/1442), 4/6/1442H; issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) — laws.boe.gov.sa was checked first per methodology: has no dedicated lawId page for this Implementing Regulation (only the base Environmental Law and the separate Waste Management Law). PRIMARY full text qanoonsa.com/p/505504 (server-rendered consolidated in-force text), appendix independently corroborated on qistas.com (references the base law M/165, 19/11/1441H, confirming consistency), amending-decision text corroborated on qanoonsa.com/p/505503; citation cross-verified across mewa.gov.sa, uqn.gov.sa (Umm Al-Qura issue 5055) and istitlaa.ncc.gov.sa",
+      "status": "complete",
+      "track_id": "environmental_violations_penalties",
+      "validator_targets": [
+        "make environmental-violations-penalties-reg-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/environmental_permits/official_source/environmental_permits_reg_official_source.json",
+        "sources/environmental_permits/verified/environmental_permits_reg_verified_records.jsonl",
+        "data/environmental_permits_reg_arabic_legal_llm/environmental_permits_reg_legal_llm_001_011.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة",
+      "display_name_en": "Implementing Regulation for Environmental Permits for Establishing and Operating Activities",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/environmental_permits_reg_arabic_legal_llm/environmental_permits_reg_legal_llm_001_011.json",
+          "governing": true,
+          "record_count": 11,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation for Environmental Permits for Establishing and Operating Activities «اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة» — Minister of Environment, Water and Agriculture Decision No. (43615/3/1/1442), dated 09/08/1442H, issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H); published Umm Al-Qura Gazette issue 4888, 15 Dhu al-Qi'dah 1442H (25 June 2021). A separate topical Regulation under the Environmental Law's family of ~15 distinct implementing instruments (this Regulation's own text cross-references several siblings — environmental_inspection_audit and environmental_violations_penalties — in Articles 6 and 11, confirming the family scope independently). **11 records, ALL 11 اصلية**, no chapter/باب division, each article directly numbered and titled (article count confirmed three ways: direct header count in both HTML and PDF, the gazette portal's own page summary, and the PDF's page-map). **VERIFICATION TIER: TIER_1** (upgraded from the building agent's own initial TIER_2 self-assessment after independent review: the two renderings used — the gazette's own HTML page and the gazette's own born-digital PDF of the SAME official issue 4888 — are two independent extractions of ONE OFFICIAL government document, matching this corpus's TIER_1 test exactly, the same pattern already applied to ecommerce_regulation's Ministry-page-x-Ministry-PDF verification, not the weaker TIER_2 pattern of one primary plus non-government secondaries only) — laws.boe.gov.sa checked first per methodology: HTTP 503 this pass, no dedicated lawId page for this Regulation. **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; the issuing decision carries only a generic conflict-repeal clause naming no prior instrument, consistent with this being the first environmental-permits Regulation under the 2020 Environmental Law. Disclosed: a source-side typo in Article 1 (\"هذ اللائحة\" for \"هذه اللائحة\") preserved verbatim, confirmed identical in both the HTML and PDF renderings; 4 form/table annexes (ملاحق 1-4) plus a penalty Table (2) exist in the gazette but are tabular/form templates, documented as excluded rather than ingested. Arabic governs; not legal advice.",
+      "official_text_status": "UMM_AL_QURA_GAZETTE_4888_OFFICIAL_HTML_X_OFFICIAL_BORN_DIGITAL_PDF_DUAL_RENDERING_SAME_ISSUE_996_PERCENT_WORDLEVEL_BOE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 11,
+        "legal_status_breakdown": {
+          "اصلية": 11,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 11
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Minister of Environment, Water and Agriculture Decision No. (43615/3/1/1442), dated 09/08/1442H, issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) and Council of Ministers Decision 729 (16/11/1441H); published Umm Al-Qura Gazette issue 4888, 15 Dhu al-Qi'dah 1442H (25 June 2021) — laws.boe.gov.sa was checked first per methodology: HTTP 503 this pass and confirmed to have no dedicated lawId page for this Regulation (only the base Environmental Law). PRIMARY text source is the Official Gazette itself (Umm Al-Qura, uqn.gov.sa), used in TWO INDEPENDENT RENDERINGS of the SAME official gazette issue: (1) the gazette's own clean HTML page (correct linear reading order, used as the ingested text) and (2) the gazette's own official born-digital PDF (Adobe InDesign, fetched directly, HTTP 200) — word-level cross-verification via an anagram-signature comparison (invariant to the Arabic-PDF ligature-reversal defect) measured 99.66% (2366/2374 words) agreement, with all 8 non-matches explained as trivial tanween-normalization/footer artifacts, not content differences",
+      "status": "complete",
+      "track_id": "environmental_permits",
+      "validator_targets": [
+        "make environmental-permits-reg-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/environmental_air_quality/official_source/environmental_air_quality_reg_official_source.json",
+        "sources/environmental_air_quality/verified/environmental_air_quality_reg_verified_records.jsonl",
+        "data/environmental_air_quality_arabic_legal_llm/environmental_air_quality_reg_legal_llm_001_008.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لجودة الهواء لنظام البيئة",
+      "display_name_en": "Implementing Regulation for Air Quality under the Environmental Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/environmental_air_quality_arabic_legal_llm/environmental_air_quality_reg_legal_llm_001_008.json",
+          "governing": true,
+          "record_count": 8,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation for Air Quality under the Environmental Law «اللائحة التنفيذية لجودة الهواء لنظام البيئة» — Minister of Environment, Water and Agriculture Decision No. (512258/1/1442), dated 24/9/1442H, issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H); applied from 13 Shawwal 1442H (25 May 2021), published Umm Al-Qura Gazette 18 June 2021. A separate topical Regulation under the Environmental Law's family of ~15 distinct implementing instruments. **8 records (the regulation's 8 numbered articles), ALL 8 اصلية.** Scope limitation, disclosed not silently narrowed: only the 8 numbered articles (the prose body) are ingested; a 37-row penalties Table (3) and 8 technical appendices (measurement standards for ambient air quality and stationary-source emissions, pp.33-102 of the source PDF) are documented as excluded tabular/technical annexes, following the food_regulation precedent, not fabricated. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: connection failure this pass, no dedicated lawId page for this Regulation. PRIMARY source is the issuing Ministry's own official born-digital PDF (mewa.gov.sa), cross-verified word-for-word (~100% match) against qanoniah.com's independent rendering, used as the ingestion source since the MEWA PDF's own text layer carries a Farsi-letterform extraction defect. **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; no repeal/supersession clause of any kind was found in either source's text of this Regulation (this is the first air-quality Regulation under the 2020 Environmental Law); Table (3) alone was later amended by Ministerial Decision 15029057 (04/02/1446H), which does not touch any of the 8 ingested articles. Disclosed: Articles 5-6 retain genuine Latin technical terms (CEMS, RATA, USEPA Method, Volatile Organic Compound, etc.) preserved verbatim as part of the original source text, not extraction contamination. Arabic governs; not legal advice.",
+      "official_text_status": "MEWA_GOV_SA_OFFICIAL_BORN_DIGITAL_PDF_X_QANONIAH_COM_WORDLEVEL_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+      "record_counts": {
+        "arabic_articles": 8,
+        "legal_status_breakdown": {
+          "اصلية": 8,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 8
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Minister of Environment, Water and Agriculture Decision No. (512258/1/1442), dated 24/9/1442H (24 Ramadan 1442H = 6 May 2021G), issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H) and Council of Ministers Decision 729 (16/11/1441H); applied from 13 Shawwal 1442H (25 May 2021), published Umm Al-Qura Gazette 9 Dhu al-Qi'dah 1442H (18 June 2021) — laws.boe.gov.sa was checked first per methodology: connection failure (HTTP 000) this pass, matching sibling tracks (food_regulation, environmental_law), and confirmed to have no dedicated lawId page for this Regulation. PRIMARY source is the issuing Ministry's own official born-digital PDF (mewa.gov.sa, fetched directly HTTP 200, 102pp, vector text layer, internal Creator=Word), the article text sourced instead from qanoniah.com's clean rendering (to avoid the MEWA PDF's own Farsi-letterform/RTL-glyph extraction defect) then cross-verified word-for-word (~100% match, one trivial ملايين/مليون grammatical variant in Article 6) against the MEWA PDF after letter-form normalization — the decision number/date independently confirmed via the later Table-3-amendment decision's own Umm Al-Qura gazette recital",
+      "status": "complete",
+      "track_id": "environmental_air_quality",
+      "validator_targets": [
+        "make environmental-air-quality-reg-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -7854,6 +8050,10 @@
       "enforcement_providers": 18,
       "engineering_practice": 17,
       "environmental": 49,
+      "environmental_air_quality": 8,
+      "environmental_inspection_audit": 10,
+      "environmental_permits": 11,
+      "environmental_violations_penalties": 10,
       "evidence": 322,
       "finance_companies": 41,
       "finance_lease": 28,
@@ -7926,7 +8126,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10472,
+    "total_records": 10511,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

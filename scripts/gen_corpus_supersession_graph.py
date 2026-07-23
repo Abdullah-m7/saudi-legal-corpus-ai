@@ -1135,6 +1135,41 @@ EDGES = [
                 "corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/traffic/regulation/official_source/traffic_regulation_official_source.json (preamble_ar / issuing decree clause ثانياً)",
     },
+    {
+        "from_track_id": "environmental_inspection_audit",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية للتفتيش والتدقيق البيئي (النسخة السابقة)",
+        "target_decree": "Ministerial Decision No. (393691/1/1442), 13/7/1442H",
+        "note": "environmental_inspection_audit (Ministerial Decision 15116190, "
+                "12 Jumada al-Ula 1446H, 14 Nov 2024) wholly replaces its own "
+                "prior founding Decision No. (393691/1/1442), 13/7/1442H -- a "
+                "confirmed self-supersession of a genuinely distinct prior "
+                "decision number, mirroring the law_practice_reg precedent "
+                "already modeled as a real edge in this graph. Not a "
+                "differently-titled predecessor, but a real confirmed "
+                "repeal-and-replace of a specifically identified prior "
+                "instrument. Not separately ingested in this corpus "
+                "(one-instrument-per-pass rule).",
+        "source_ref": "sources/environmental_inspection_audit/official_source/environmental_inspection_audit_reg_official_source.json (verification_methodology_note)",
+    },
+    {
+        "from_track_id": "environmental_violations_penalties",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة (النسخة السابقة)",
+        "target_decree": "Ministerial Decision No. (312186/1/1442), 4/6/1442H",
+        "note": "environmental_violations_penalties (Ministerial Decision "
+                "15101619, 26/4/1446H, 30 Oct 2024) wholly re-issues and "
+                "explicitly replaces (\"تحل محل\", clause ثانيا) its own prior "
+                "founding Decision No. (312186/1/1442), 4/6/1442H -- a "
+                "confirmed self-supersession of a genuinely distinct prior "
+                "decision number, mirroring the law_practice_reg and "
+                "environmental_inspection_audit precedents already modeled "
+                "as real edges in this graph. Not separately ingested in "
+                "this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/environmental_violations_penalties/official_source/environmental_violations_penalties_reg_official_source.json (verification_methodology_note)",
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -1536,6 +1571,32 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "article, and does not amount to a repeal of a prior "
                 "Regulation. No edge modeled.",
         "source_ref": "sources/franchise/regulation/official_source/franchise_regulation_official_source.json (known_unresolved_discrepancies: franchise_regulation_no_named_predecessor_repealed)",
+    },
+    {
+        "tracks_involved": ["environmental_permits"],
+        "issue": "confirmed negative repeal finding -- only a generic conflict-repeal clause, no named predecessor",
+        "note": "environmental_permits (Minister of Environment Decision "
+                "43615/3/1/1442, 09/08/1442H) carries only a generic "
+                "conflict-repeal clause (\"ويلغي كل ما يتعارض معه من قرارات "
+                "سابقة\") naming no specific prior instrument -- consistent "
+                "with this being the first Implementing Regulation for "
+                "environmental permits under the 2020 Environmental Law "
+                "(M/165). No edge modeled.",
+        "source_ref": "sources/environmental_permits/official_source/environmental_permits_reg_official_source.json (verification_methodology_note)",
+    },
+    {
+        "tracks_involved": ["environmental_air_quality"],
+        "issue": "confirmed negative repeal finding -- no repeal/supersession clause of any kind found in either source",
+        "note": "environmental_air_quality (Minister of Environment Decision "
+                "512258/1/1442, 24/9/1442H) contains no repeal/supersession "
+                "clause naming a prior instrument in either of the two "
+                "cross-verified sources (mewa.gov.sa PDF and qanoniah.com) "
+                "-- consistent with this being the first air-quality "
+                "Implementing Regulation under the 2020 Environmental Law "
+                "(M/165). Some press coverage referenced \"إلغاء قرارات "
+                "سابقة\" but no textual counterpart was found in the "
+                "Regulation itself. No edge modeled.",
+        "source_ref": "sources/environmental_air_quality/official_source/environmental_air_quality_reg_official_source.json (verification_methodology_note)",
     },
 ]
 

@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 164,
-  "total_terms": 989,
-  "total_definitions": 1538,
-  "tracks_with_definitions_article_parsed": 108,
+  "total_tracks_in_registry": 168,
+  "total_terms": 1015,
+  "total_definitions": 1627,
+  "tracks_with_definitions_article_parsed": 112,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -524,11 +524,29 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "إعادة التأهيل",
+        "definition_text": "كل إجراء على موقع متدهور بيئيا أو ألحق به ضرر بيئي أو تلوث؛ لإعادته إلى حالته الطبيعية من التوازن البيئي، وفقا للمعايير التي تحددها الجهة المختصة.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mining_investment_law",
         "article_number": 1,
         "term_as_written": "إعادة التأهيل",
         "definition_text": "أعمال يجب على المرخص له القيام بها لإعادة موقع الرخصة إلى حالة طبيعية ملائمة عند الانتهاء من أي نشاط داخل الموقع وفق الأنظمة.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إعادة التأهيل البيئي": [
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "إعادة التأهيل البيئي",
+        "definition_text": "كل إجراء يتم على موقع متدهور بيئيا، أو ألحق به ضرر بيئي؛ لإعادته إلى حالته الطبيعية من التوازن البيئي، وفقا للمعايير التي تحددها الجهة المختصة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -652,6 +670,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "استمارة التصنيف البيئي": [
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "استمارة التصنيف البيئي",
+        "definition_text": "استمارة تقدم إلى المركز لتحديد فئة النشاط المقترح من ناحية التأثيرات البيئية.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأثر البيئي": [
       {
         "track_id": "environmental_law",
@@ -659,6 +687,14 @@
         "term_as_written": "الأثر البيئي",
         "definition_text": "كل تغيير سلبي أو إيجابي يؤثر في البيئة نتيجة ممارسة أي نشاط.\nالبيئة / الأوساط البيئية: كل ما يحيط بالإنسان أو الحيوان أو النبات أو أي كائن حي؛ من ماء وهواء ويابسة وتربة وأحياء وتنوع أحيائي وغازات في الغلاف الجوي ومسطحات مائية، وما تحتويه هذه الأوساط من جماد وأشكال مختلفة من طاقة وموائل بيئية وعمليات طبيعية وتفاعلها فيما بينها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الأثر البيئي",
+        "definition_text": "كل تغيير سلبي أو إيجابي يؤثر في البيئة نتيجة ممارسة أي نشاط.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1692,6 +1728,14 @@
     ],
     "الانبعاثات": [
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الانبعاثات",
+        "definition_text": "انطلاق ملوثات الهواء إلى الهواء المحيط من مصدر محدد.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الانبعاثات",
@@ -2170,11 +2214,27 @@
     ],
     "التدهور البيئي": [
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "التدهور البيئي",
+        "definition_text": "إضرار شديد بالأوساط البيئية بسبب استنزاف الموارد الطبيعية، أو تدمير الموائل البيئية، أو انقراض الحياة الفطرية، أو تلوث الأوساط البيئية، وتدني مستوى جودة الهواء والمياه والتربة.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "التدهور البيئي",
         "definition_text": "إضرار شديد بالأوساط البيئية بسبب استنزاف الموارد الطبيعية، أو تدمير الموائل البيئية، أو انقراض الحياة الفطرية، أو تلوث الأوساط البيئية وتدني مستوى جودة الهواء والمياه والتربة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "التدهور البيئي",
+        "definition_text": "إضرار شديد بالأوساط البيئية بسبب استنزاف الموارد الطبيعية، أو تدمير الموائل البيئية، أو انقراض الحياة الفطرية، أو تلوث الأوساط البيئية وتدني مستوى جودة الهواء والمياه والتربة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2222,11 +2282,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة يمنحها المركز للشخص للإذن له بممارسة نشاط بيئي.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الترخيص",
         "definition_text": "وثيقة تمنحها الجهة المختصة للشخص للإذن له بممارسة نشاط بيئي.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة يمنحها المركز للشخص للإذن له بممارسة نشاط بيئي.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تمنحها الجهة المختصة للشخص للإذن له بممارسة نشاط بيئي.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -2414,11 +2498,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة يمنحها المركز قبل البدء بممارسة النشاط.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "التصريح",
         "definition_text": "وثيقة تمنحها الجهة المختصة للشخص قبل البدء بممارسته أي نشاط له أثر بيئي.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة يمنحها المركز قبل البدء بممارسة النشاط.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة تمنحها الجهة المختصة للشخص قبل البدء بممارسة أي نشاط له أثر بيئي.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -2435,6 +2543,34 @@
         "term_as_written": "التصريح",
         "definition_text": "وثيقة تمنحها الوزارة أو الهيئة فيما يتصل بأعمال الإعداد –بما في ذلك إعداد الخطط والقيام بالدراسات– قبل الشروع في أعمال إنشاء أي نشاط استخدام مصدر أو نشاط تنمية مصدر أو نشاط تقديم الخدمة.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التصريح البيئي للإنشاء": [
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "التصريح البيئي للإنشاء",
+        "definition_text": "وثيقة يمنحها المركز للشخص للسماح بالبدء في أعمال الإنشاء بعد استكمال تصنيف وتقييم النشاط والتأثيرات البيئية المتوقعة وتحديد الاشتراطات والمتطلبات البيئية المطلوب الالتزام بها أثناء أعمال الإنشاء.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التصريح البيئي للتشغيل": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "التصريح البيئي للتشغيل",
+        "definition_text": "وثيقة يمنحها المركز للبدء في التشغيل عند الانتهاء من عمليات الإنشاء والتأكد من تقيد طالب التصريح بجميع اشتراطات ومتطلبات التصريح البيئي للإنشاء.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "التصريح البيئي للتشغيل",
+        "definition_text": "وثيقة يمنحها المركز للشخص لتشغيل النشاط.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2490,11 +2626,27 @@
     ],
     "التعويضات": [
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "التعويضات",
+        "definition_text": "ما يدفعه المتسبب بالإضرار، أو التلوث، أو التدهور البيئي؛ لجبر الضرر المترتب جراء ذلك الإضرار، أو التلوث، أو التدهور البيئي، أو إزالته، وتشمل تكاليف إعادة التأهيل البيئي التي يدفعها حال تعذر قيامه بإعادة التأهيل البيئي.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "التعويضات",
         "definition_text": "ما يدفعه المتسبب بالإضرار أو التلوث أو التدهور البيئي؛ لجبر الضرر المترتب جراء ذلك الإضرار أو التلوث أو التدهور البيئي أو إزالته. وتشمل تكاليف إعادة التأهيل التي يدفعها حال تعذر قيامه بإعادة التأهيل.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "التعويضات",
+        "definition_text": "قيمة جبر أو إزالة الضرر أو التلوث أو التدهور البيئي المترتب على المخالفة، وتشمل تكاليف إعادة التأهيل التي يدفعها المخالف حال تعذر قيامه بإعادة التأهيل.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -2514,6 +2666,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التغيير الرئيسي": [
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "التغيير الرئيسي",
+        "definition_text": "أي توسعة أو تغيير في تصميم أو تشغيل أو طبيعة أي نشاط قائم يحتمل معه حدوث تأثير سلبي على البيئة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التفتيش": [
       {
         "track_id": "judicial_inspection_regulation",
@@ -2521,6 +2683,16 @@
         "term_as_written": "التفتيش",
         "definition_text": "الاطلاع على أعمال المفتَّش عليه، وفحصها، والوقوف على أدائه؛ لجمع البيانات، والمعلومات، التي تؤدي إلى معرفة كفايته، ومدى حرصه على  أداء واجبات وظيفته.",
         "source_record_id": "judicial-inspection-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التفتيش الذاتي": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "التفتيش الذاتي",
+        "definition_text": "عملية تفتيش داخلية بالنشاط لضمان الالتزام بأحكام النظام واللوائح والاشتراطات البيئية.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2964,6 +3136,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجهات الأمنية": [
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "الجهات الأمنية",
+        "definition_text": "أية جهة أمنية بوزارة الداخلية حسب الاختصاص.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجهات الحكومية": [
       {
         "track_id": "gtpl_law",
@@ -3058,11 +3240,43 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الوزارة أو أي من المراكز الوطنية للبيئة، كل بحسب اختصاصه.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الوزارة، أو أي من المراكز الوطنية لقطاع البيئة، أو المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر، كل بحسب اختصاصه، ووفقا لما تحدده اللوائح.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
         "definition_text": "الوزارة، أو أي من المراكز الوطنية لقطاع البيئة، أو المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر، كل بحسب اختصاصه، ووفقاً لما تحدده اللوائح.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الوزارة أو أي من المراكز الوطنية لقطاع البيئة كل بحسب اختصاصه.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الوزارة، أو أي من المراكز الوطنية لقطاع البيئة، أو المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر، كل بحسب اختصاصه، ووفقا لما تحدده اللوائح.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3118,11 +3332,27 @@
     ],
     "الجهة المشرفة": [
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الجهة المشرفة",
+        "definition_text": "أية جهة حكومية مخولة نظاما بالإشراف على النشاط، وتختص بإصدار تراخيص لممارسة الأنشطة التي تخضع لإشرافها.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الجهة المشرفة",
         "definition_text": "أي جهة حكومية مُخوَّلة نظاماً بالإشراف على قطاع تنموي، وتختص بإصدار تراخيص لممارسة الأنشطة التي تخضع لإشرافها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الجهة المشرفة",
+        "definition_text": "أية جهة حكومية مخولة نظاما بالإشراف على النشاط، وتختص بإصدار تراخيص لممارسة الأنشطة التي تخضع لإشرافها.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3952,6 +4182,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الرئيس التنفيذي": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للمركز.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الراكب": [
       {
         "track_id": "maritime_commercial_law",
@@ -4596,11 +4836,35 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص ذو صفة طبيعية أو اعتبارية عامة أو خاصة.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الشخص",
         "definition_text": "أي شخص ذي صفة طبيعية أو اعتبارية عامة أو خاصة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص ذو صفة طبيعية أو اعتبارية عامة أو خاصة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص له صفة طبيعية أو اعتبارية عامة أو خاصة.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -4679,6 +4943,16 @@
         "term_as_written": "الشركة المرخصة بتسجيل العقود",
         "definition_text": "الشركة المساهمة المختصة بتسجيل عقود الإيجار التمويلي.\n   ٢.",
         "source_record_id": "lessor-repossession-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشعب المرجانية": [
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "الشعب المرجانية",
+        "definition_text": "بيئات بحرية ترتكز على المرجان الباني لتشكيلات الشعاب الصلبة على قيعان البحار والتي تعيش وترتبط بها -في توازن دقيق- العديد من أنواع الأسماك والأحياء الفقارية واللافقارية والنباتات المتنوعة.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5071,6 +5345,24 @@
         "term_as_written": "الطلبات",
         "definition_text": "كل ما يقدمه الخصوم وغيرهم من طلبات أمام المحاكم مما لا يدخل في الدعوى.",
         "source_record_id": "judicial-costs-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطوارئ البيئية": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "الطوارئ البيئية",
+        "definition_text": "أي حادث تشغيلي ضمن أي نشاط أو منشأة يترتب عليه تهديد الموائل البيئية أو الإضرار بالبيئة.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الطوارئ البيئية",
+        "definition_text": "أي حادث تشغيلي ضمن أي نشاط أو منشأة يترتب عليه تهديد الموائل البيئية أو الإضرار بالبيئة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5936,6 +6228,38 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لجودة الهواء.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للتفتيش والتدقيق البيئي.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "finance_companies_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -6344,6 +6668,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة النظر في المخالفات.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_implementing_regulation",
         "article_number": 1,
         "term_as_written": "اللجنة",
@@ -6470,11 +6802,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية للنظام.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "اللوائح",
         "definition_text": "اللوائح التنفيذية للنظام.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية لهذا النظام.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية للنظام.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7320,6 +7676,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المخالفة": [
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "المخالفة",
+        "definition_text": "أي مخالفة لأحكام النظام أو اللوائح.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المخزن": [
       {
         "track_id": "customs_law",
@@ -7512,11 +7878,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "شخص حاصل على الترخيص.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "المرخص له",
         "definition_text": "شخص حاصل على الترخيص.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "شخص حاصل على الترخيص.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7595,6 +7977,30 @@
         "term_as_written": "المركز",
         "definition_text": "مركز الإسناد والتصفية.",
         "source_record_id": "documentation-settlement-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني للرقابة على الالتزام البيئي.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني للرقابة على الالتزام البيئي.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني للرقابة على الالتزام البيئي.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7800,6 +8206,24 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المستقبلات الحساسة": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "المستقبلات الحساسة",
+        "definition_text": "المستقبلات المحتمل تأثرها بشكل ملحوظ من النشاط أو المشروع بحكم موقعها الجغرافي القريب منه أو طبيعتها الحساسة وتشمل: المكونات البيئية، والكائنات الحية، والمواقع الأثرية والثقافية والدينية، والفئات المجتمعية؛ (على سبيل المثال الكائنات المهددة بالانقراض، والمستشفيات، ودور العجزة، والمدارس، والمجمعات السكنية وغيرها).",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "المستقبلات الحساسة",
+        "definition_text": "المستقبلات المحتمل تأثرها بشكل ملحوظ من النشاط أو المشروع بحكم موقعها الجغرافي القريب منه أو طبيعتها الحساسة وتشمل: المكونات البيئية، والكائنات الحية، والمواقع الأثرية والثقافية والدينية، والفئات المجتمعية؛ (على سبيل المثال الكائنات المهددة بالانقراض، والمستشفيات، ودور العجزة، والمدارس، والمجمعات السكنية وغيرها).",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المستهلك": [
       {
         "track_id": "ecommerce_law",
@@ -7992,6 +8416,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المصادر الثابتة": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "المصادر الثابتة",
+        "definition_text": "الأنشطة الدائمة أو شبه الدائمة التي تتسبب في انبعاث ملوثات الهواء، كمداخن الأنشطة الصناعية ومحطات انتاج الطاقة، والغبار الناتج من الأنشطة التعدينية وأعمال البناء وغيرها.\nالانبعاثات المتسربة (الهاربة): الغاز أو السائل أو البخار أو الدخان أو الرذاذ أو الغبار الذي يتسرب من المعدات أو الأجهزة المستخدمة في أي نشاط.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المصادرة": [
       {
         "track_id": "aml_law",
@@ -8072,11 +8506,27 @@
     ],
     "المصرح له": [
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "المصرح له",
+        "definition_text": "شخص حاصل على التصريح.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "المصرح له",
         "definition_text": "شخص حاصل على التصريح.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "المصرح له",
+        "definition_text": "شخص حاصل على التصريح.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8376,6 +8826,32 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المفتشون": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "المفتشون",
+        "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة الجهة المختصة للتفتيش والرقابة البيئية وضبط مخالفات أحكام النظام واللوائح، والتحقيق فيها وإثباتها.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "المفتشون",
+        "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة المركز للتفتيش والرقابة البيئية وضبط مخالفات أحكام النظام واللوائح والتحقيق فيها وإثباتها.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "المفتشون",
+        "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة الجهة المختصة -بحسب الأحوال- لضبط مخالفات أحكام النظام أو اللوائح والتحقيق فيها وإثباتها.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المفلس": [
       {
         "track_id": "bankruptcy_law",
@@ -8393,6 +8869,16 @@
         "term_as_written": "المقابل المالي",
         "definition_text": "مبلغ مستحق مقابل خدمات التسجيل العيني وفقاً للنظام واللائحة.",
         "source_record_id": "real-estate-registration-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المقاييس": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "المقاييس",
+        "definition_text": "حدود أو نسب تركيز الملوثات أو الانبعاثات التي لا يسمح بتجاوزها؛ لضمان مستوى جودة الأوساط البيئية.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8683,6 +9169,24 @@
         "term_as_written": "المناطق البحرية للمملكة",
         "definition_text": "المياه الداخلية, والبحر الإقليمي, والمنطقة المتاخمة, والمنطقة الاقتصادية الخالصة, والجرف القاري, المحددة نظاماً.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المناطق الحساسة بيئيا": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "المناطق الحساسة بيئيا",
+        "definition_text": "مناطق ذات أهمية بيئية تؤدي في حال تدهورها إلى انعكاسات بيئية سلبية وتشمل: المناطق المحمية، والمنتزهات، والغابات، والأراضي الرطبة، والمناطق ذات الأهمية للطيور، والمانجروف، والمواقع ذات المناظر الطبيعية، ومناطق مساقط وتجمعات المياه وجريانها، وشواطئ البحر، والممرات المائية، وطبقات المياه الجوفية، أو أي منطقة/ مناطق يتم تحديدها أو إعلانها من قبل الدولة أو الوزارة أو المراكز الوطنية للبيئة بأنها مناطق حساسة بيئيا.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "المناطق الحساسة بيئيا",
+        "definition_text": "مناطق ذات أهمية بيئية تؤدي في حال تدهورها إلى انعكاسات بيئية سلبية وتشمل: المناطق المحمية، والمنتزهات، والغابات، والأراضي الرطبة، والمناطق ذات الأهمية للطيور، والمانجروف، والمواقع ذات المناظر الطبيعية، ومناطق مساقط وتجمعات المياه وجريانها، وشواطئ البحر، والممرات المائية، وطبقات المياه الجوفية، أو أي منطقة/ مناطق يتم تحديدها أو إعلانها من قبل الدولة أو الوزارة أو المراكز الوطنية للبيئة بأنها مناطق حساسة بيئيا.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9488,6 +9992,30 @@
     ],
     "النشاط": [
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون له تأثيرات بيئية.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون لها تأثيرات بيئية.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون لها تأثيرات بيئية.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "income_tax_law",
         "article_number": 1,
         "term_as_written": "النشاط",
@@ -9798,11 +10326,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام البيئة.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "النظام",
         "definition_text": "نظام البيئة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام البيئة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام البيئة.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10248,6 +10800,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الهواء المحيط": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الهواء المحيط",
+        "definition_text": "طبقة الهواء على سطح الأرض التي تحدث فيها جميع أنشطة الحياة، ولا يشمل ذلك الهواء داخل المباني.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الهيئة": [
       {
         "track_id": "accounting_auditing_law",
@@ -10672,11 +11234,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
         "definition_text": "وزارة البيئة والمياه والزراعة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11020,11 +11606,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "الوزير",
         "definition_text": "وزير البيئة والمياه والزراعة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11616,6 +12226,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "تقرير نطاق تقييم الأثر البيئي": [
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "تقرير نطاق تقييم الأثر البيئي",
+        "definition_text": "التقرير الذي يحدد نطاق عمل دراسة تقييم الأثر البيئي لأنشطة الفئة الثالثة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تقنية المعلومات": [
       {
         "track_id": "telecommunications_law",
@@ -11767,6 +12387,14 @@
       }
     ],
     "جودة الهواء": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "جودة الهواء",
+        "definition_text": "الخصائص التي تتميز بها حالة الهواء والتي تقوم استنادا إلى المقاييس والمعايير التي تضعها الجهة المختصة لحماية البيئة وصحة الإنسان.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "environmental_law",
         "article_number": 1,
@@ -11922,6 +12550,14 @@
     ],
     "حماية البيئة": [
       {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "حماية البيئة",
+        "definition_text": "المحافظة على البيئة، وتشمل: منع التلوث، والتخفيف من حدته، والحد من تدهور البيئة، وضمان تحقيق التنمية المستدامة؛ وذلك من خلال الالتزام بالمقاييس والمعايير والإجراءات الوقائية أو العلاجية المتعلقة بالبيئة وفقا لأحكام النظام واللوائح.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_law",
         "article_number": 1,
         "term_as_written": "حماية البيئة",
@@ -11950,6 +12586,24 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "خطة الإدارة البيئية": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "خطة الإدارة البيئية",
+        "definition_text": "هي الإجراءات التي يلتزم بها الشخص لضمان واستدامة الالتزام البيئي، يتم تقديمها ضمن إجراءات الحصول على التصريح البيئي.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "خطة الإدارة البيئية",
+        "definition_text": "هي الإجراءات التي يلتزم بها الشخص لضمان استدامة الالتزام البيئي، يتم تقديمها ضمن متطلبات إجراءات الحصول على التصريح البيئي.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "دراسة التدقيق البيئي": [
       {
         "track_id": "environmental_law",
@@ -11968,6 +12622,14 @@
         "definition_text": "دراسة لتحديد وتقدير وتقييم التأثيرات البيئية التي قد تنتج من السياسات والاستراتيجيات والخطط والبرامج على مستوى القطاعات والمناطق التي تقترح الجهات الحكومية تخصيصها لقطاع تنموي أو بشري؛ لتضمين جميع الاعتبارات البيئية وإدراجها بالتوازي مع الاعتبارات الاقتصادية والاجتماعية.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "دراسة التقييم البيئي الاستراتيجي",
+        "definition_text": "دراسة لتحديد وتقدير وتقييم التأثيرات البيئية التي قد تنتج من السياسات والاستراتيجيات والخطط والبرامج على مستوى القطاعات والمناطق التي تقترح الجهات الحكومية تخصيصها لقطاع تنموي أو بشري؛ لتضمين جميع الاعتبارات البيئية، وإدراجها بالتوازي مع الاعتبارات الاقتصادية والاجتماعية.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "دراسة تقييم الأثر البيئي": [
@@ -11977,6 +12639,14 @@
         "term_as_written": "دراسة تقييم الأثر البيئي",
         "definition_text": "دراسة لتحديد وتقدير وتقييم التأثيرات البيئية التي قد تنتج من إنشاء أي مشروع أو نشاط، أو تشغيله، أو تعديله، أو إزالته؛ لتضمين جميع الاعتبارات البيئية وإدراجها بالتوازي مع الاعتبارات الاقتصادية والاجتماعية والأمنية، وتحديد البدائل والإجراءات اللازمة لحماية البيئة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "دراسة تقييم الأثر البيئي",
+        "definition_text": "دراسة لتحديد وتقدير وتقييم التأثيرات البيئية التي قد تنتج من أي نشاط مصنف من المركز ضمن الفئة الثانية أو الثالثة بعد مراجعة استمارة التصنيف البيئي لتضمين الاعتبارات البيئية وإدراجها ضمن التصميم النهائي للنشاط بالتوازي مع الاعتبارات الاقتصادية والاجتماعية والأمنية، وتحديد البدائل والإجراءات اللازمة لحماية البيئة.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12155,6 +12825,16 @@
         "term_as_written": "رئيس المجلس",
         "definition_text": "رئيس مجلس إدارة الهيئة العامة للطيران المدني",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "رئيس المركز": [
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "رئيس المركز",
+        "definition_text": "الرئيس التنفيذي للمركز.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12500,6 +13180,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "شهادة الالتزام البيئي": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "شهادة الالتزام البيئي",
+        "definition_text": "وثيقة يمنحها المركز إثباتا لالتزام المصرح له بتطبيق النظام واللوائح واشتراطات التصاريح البيئية.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "شهادة التصديق الرقمي": [
       {
         "track_id": "electronic_transactions_law",
@@ -12669,6 +13359,16 @@
         "term_as_written": "طالب الترخيص",
         "definition_text": "هو الحاصل على الموافقة المبدئية لاستخراج ترخيص مزاولة نشاط التوسط في توظيف السعوديين، سواء أكان ترخيص مكتب، أو شركة.",
         "source_record_id": "labor-annex3-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "طالب التصريح": [
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "طالب التصريح",
+        "definition_text": "مالك النشاط أو من يفوضه.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13370,6 +14070,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "محضر الضبط": [
+      {
+        "track_id": "environmental_violations_penalties",
+        "article_number": 1,
+        "term_as_written": "محضر الضبط",
+        "definition_text": "المحضر الذي يعده المفتش، ويكون مشتملا على رقم وتاريخ المحضر، والبيانات اللازمة عن المخالف، والمخالفة محل الضبط، والجواب عليها، والمناقشات، والمعاينات، والوقائع، والأدلة، وكافة الإجراءات ذات الصلة.",
+        "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "محطة التوزيع الرئيسة": [
       {
         "track_id": "electricity_law",
@@ -13646,6 +14356,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مقدم الخدمات": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمات",
+        "definition_text": "الشخص المرخص له من قبل المركز لتقديم خدمات بيئية.\nالبيئة/ الأوساط البيئية: كل ما يحيط بالإنسان أو الحيوان أو النبات أو أي كائن حي؛ من ماء وهواء ويابسة وتربة وأحياء وتنوع أحيائي وغازات في الغلاف الجوي ومسطحات مائية، وما تحتويه هذه الأوساط من جماد وأشكال مختلفة من طاقة وموائل بيئية وعمليات طبيعية وتفاعلها فيما بينها.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مقدم الخدمة": [
       {
         "track_id": "agriculture_law",
@@ -13653,6 +14373,22 @@
         "term_as_written": "مقدم الخدمة",
         "definition_text": "الشركات، أو المؤسسات، أو الجمعيات، أو الأفراد، المرخص لهم من الوزارة للقيام بتقديم خدمة زراعية بمقتضى أحكام النظام واللائحة.",
         "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة",
+        "definition_text": "الشخص المرخص له من قبل المركز لتقديم خدمات بيئية.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة",
+        "definition_text": "الشخص المرخص له من المركز لتقديم خدمات بيئية.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13854,6 +14590,16 @@
         "definition_text": "يحتوي على بياناته، وعنوانه، ونسخة من عقد العمل، وأي شهادات أو وثائق يقدمها لصاحب العمل.",
         "source_record_id": "labor-reg-llm-art-005",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "ملوثات الهواء": [
+      {
+        "track_id": "environmental_air_quality",
+        "article_number": 1,
+        "term_as_written": "ملوثات الهواء",
+        "definition_text": "وجود مادة أو أكثر بكميات أو صفات معينة لمدة زمنية؛ تؤدي بطريق مباشر أو غير مباشر إلى الإضرار بجودة الهواء.",
+        "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "منازعات التنفيذ": [
@@ -14059,6 +14805,24 @@
         "term_as_written": "مياه الصرف المعالجة",
         "definition_text": "مياه خارجة من محطة معالجة مياه الصرف بعد معالجتها طبقاً لمقاييس ومعايير محددة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "ميثاق السرية": [
+      {
+        "track_id": "environmental_inspection_audit",
+        "article_number": 1,
+        "term_as_written": "ميثاق السرية",
+        "definition_text": "وثيقة يقدمها المركز للنشاط -بناء على طلب النشاط- تحدد فيها المعلومات أو البيانات أو التقنيات محل السرية وحفظ حقوق الملكية.",
+        "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_permits",
+        "article_number": 1,
+        "term_as_written": "ميثاق السرية",
+        "definition_text": "وثيقة يقدمها المركز للنشاط –بناء على طلب النشاط– تحدد فيها المعلومات أو البيانات أو التقنيات محل السرية وحفظ حقوق الملكية.",
+        "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

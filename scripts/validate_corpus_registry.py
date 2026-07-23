@@ -213,6 +213,10 @@ REQUIRED_TRACK_IDS = [
     "ecommerce_regulation",
     "franchise_regulation",
     "traffic_regulation",
+    "environmental_inspection_audit",
+    "environmental_violations_penalties",
+    "environmental_permits",
+    "environmental_air_quality",
 ]
 
 CHECKS: list[str] = []
@@ -255,9 +259,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 164 tracks
+    # [3] 168 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 164 tracks present...", len(track_ids) == 164 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 168 tracks present...", len(track_ids) == 168 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -1770,7 +1774,47 @@ def main() -> int:
           tfr_counts.get("legal_status_breakdown") == {"اصلية": 82, "معدلة": 3, "ملغاة": 1, "مضافة": 0},
           f"breakdown={tfr_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 10472 records...", uix.get("total_records") == 10472,
+    eia = tracks_by_id.get("environmental_inspection_audit", {})
+    eia_counts = eia.get("record_counts", {})
+    check("[7g152] environmental_inspection_audit: 10 Arabic records, qanoonsa.com primary, qistas partial cross-check...",
+          eia_counts.get("arabic_articles") == 10
+          and eia.get("official_text_status") == "QANOONSA_COM_PRIMARY_UMM_AL_QURA_5057_REPRODUCTION_X_QISTAS_COM_PARTIAL_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+          f"counts={eia_counts}")
+    check("    environmental_inspection_audit: status breakdown 10/0/0/0...",
+          eia_counts.get("legal_status_breakdown") == {"اصلية": 10, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={eia_counts.get('legal_status_breakdown')}")
+
+    evp = tracks_by_id.get("environmental_violations_penalties", {})
+    evp_counts = evp.get("record_counts", {})
+    check("[7g153] environmental_violations_penalties: 10 Arabic records, qanoonsa.com consolidated text, qistas appendix cross-check...",
+          evp_counts.get("arabic_articles") == 10
+          and evp.get("official_text_status") == "QANOONSA_COM_CONSOLIDATED_TEXT_X_QISTAS_COM_APPENDIX_CROSSCHECK_BOE_NO_DEDICATED_LAWID_PAGE",
+          f"counts={evp_counts}")
+    check("    environmental_violations_penalties: status breakdown 10/0/0/0...",
+          evp_counts.get("legal_status_breakdown") == {"اصلية": 10, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={evp_counts.get('legal_status_breakdown')}")
+
+    epr = tracks_by_id.get("environmental_permits", {})
+    epr_counts = epr.get("record_counts", {})
+    check("[7g154] environmental_permits: 11 Arabic records, Umm Al-Qura gazette dual official rendering 99.66% wordlevel...",
+          epr_counts.get("arabic_articles") == 11
+          and epr.get("official_text_status") == "UMM_AL_QURA_GAZETTE_4888_OFFICIAL_HTML_X_OFFICIAL_BORN_DIGITAL_PDF_DUAL_RENDERING_SAME_ISSUE_996_PERCENT_WORDLEVEL_BOE_NO_DEDICATED_LAWID_PAGE",
+          f"counts={epr_counts}")
+    check("    environmental_permits: status breakdown 11/0/0/0...",
+          epr_counts.get("legal_status_breakdown") == {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={epr_counts.get('legal_status_breakdown')}")
+
+    eaq = tracks_by_id.get("environmental_air_quality", {})
+    eaq_counts = eaq.get("record_counts", {})
+    check("[7g155] environmental_air_quality: 8 Arabic records, MEWA official PDF x qanoniah.com wordlevel cross-check...",
+          eaq_counts.get("arabic_articles") == 8
+          and eaq.get("official_text_status") == "MEWA_GOV_SA_OFFICIAL_BORN_DIGITAL_PDF_X_QANONIAH_COM_WORDLEVEL_CROSSCHECK_BOE_UNREACHABLE_NO_DEDICATED_LAWID_PAGE",
+          f"counts={eaq_counts}")
+    check("    environmental_air_quality: status breakdown 8/0/0/0...",
+          eaq_counts.get("legal_status_breakdown") == {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={eaq_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 10511 records...", uix.get("total_records") == 10511,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -1832,8 +1876,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 10641...",
-          registry.get("total_primary_arabic_governing_records") == 10641,
+    check("[19a] total_primary_arabic_governing_records == 10680...",
+          registry.get("total_primary_arabic_governing_records") == 10680,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -1848,8 +1892,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 11536...",
-          registry.get("total_registry_counted_records") == 11536,
+    check("[19e] total_registry_counted_records == 11575...",
+          registry.get("total_registry_counted_records") == 11575,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -1873,7 +1917,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"10641 + 614 + 281 = 11536")
+          f"10680 + 614 + 281 = 11575")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -1891,7 +1935,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 164 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 168 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

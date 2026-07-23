@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 356,
-  "top1_hits": 330,
-  "top3_hits": 349,
-  "top5_hits": 352,
-  "top1_accuracy": 0.927,
-  "top3_accuracy": 0.9803,
-  "top5_accuracy": 0.9888,
-  "mrr_at_5": 0.9528,
+  "total_queries": 364,
+  "top1_hits": 338,
+  "top3_hits": 357,
+  "top5_hits": 360,
+  "top1_accuracy": 0.9286,
+  "top3_accuracy": 0.9808,
+  "top5_accuracy": 0.989,
+  "mrr_at_5": 0.9538,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1719,9 +1719,9 @@
      "score": 14
     },
     {
-     "record_id": "bankruptcy-fees-regulation-llm-art-008",
-     "article_number": 8,
-     "score": 11
+     "record_id": "environmental-permits-reg-llm-art-010",
+     "article_number": 10,
+     "score": 12
     }
    ]
   },
@@ -5842,8 +5842,8 @@
      "score": 18
     },
     {
-     "record_id": "customs-law-llm-art-085",
-     "article_number": 80,
+     "record_id": "environmental-air-quality-reg-llm-art-003",
+     "article_number": 3,
      "score": 15
     }
    ]
@@ -8167,9 +8167,9 @@
      "score": 16
     },
     {
-     "record_id": "cybersecurity-authority-enablers-llm-art-005",
-     "article_number": 5,
-     "score": 13
+     "record_id": "environmental-violations-penalties-reg-llm-007",
+     "article_number": 7,
+     "score": 14
     }
    ]
   },
@@ -9867,13 +9867,13 @@
      "score": 36
     },
     {
-     "record_id": "oa-llm-companies-art-262",
-     "article_number": 262,
-     "score": 13
+     "record_id": "environmental-violations-penalties-reg-llm-004",
+     "article_number": 4,
+     "score": 14
     },
     {
-     "record_id": "inv-reg-llm-art-027",
-     "article_number": 27,
+     "record_id": "oa-llm-companies-art-262",
+     "article_number": 262,
      "score": 13
     }
    ]
@@ -11053,6 +11053,254 @@
      "record_id": "pdpl-reg-llm-art-015",
      "article_number": 15,
      "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "eia-001",
+   "query_ar": "إعداد منهجية التفتيش البيئي الملائم للفئات المتنوعة للأنشطة المراد تفتيشها كالدواجن والطاقة والتعدين والصناعة وغيرها",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_inspection_audit",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-003",
+     "article_number": 3,
+     "score": 28
+    },
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-004",
+     "article_number": 4,
+     "score": 11
+    },
+    {
+     "record_id": "environmental-permits-reg-llm-art-005",
+     "article_number": 5,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "eia-002",
+   "query_ar": "يصدر المركز (عند الطلب) شهادة الالتزام البيئي للأشخاص في حال بينت سجلات التفتيش على الالتزام البيئي للمركز",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_inspection_audit",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-006",
+     "article_number": 6,
+     "score": 44
+    },
+    {
+     "record_id": "oa-llm-companies-art-102",
+     "article_number": 102,
+     "score": 20
+    },
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-001",
+     "article_number": 1,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "evp-001",
+   "query_ar": "يتم ضبط المخالفات من خلال تحرير محضر ضبط يتضمن معلومات عن موقع المخالفة، وتاريخها، وتفاصيلها، ووقت ضبطها، وأسماء المخالفين",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_violations_penalties",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-violations-penalties-reg-llm-003",
+     "article_number": 3,
+     "score": 40
+    },
+    {
+     "record_id": "environmental-permits-reg-llm-art-011",
+     "article_number": 11,
+     "score": 27
+    },
+    {
+     "record_id": "environmental-violations-penalties-reg-llm-009",
+     "article_number": 1,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "evp-002",
+   "query_ar": "على المخالف دفع التعويضات التي تحددها الجهة المختصة، وذلك خلال فترة (٩٠) يوما من تاريخ إبلاغه بها",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_violations_penalties",
+    "law_component": "regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-violations-penalties-reg-llm-005",
+     "article_number": 5,
+     "score": 29
+    },
+    {
+     "record_id": "trademark-law-llm-art-014",
+     "article_number": 14,
+     "score": 26
+    },
+    {
+     "record_id": "oa-llm-companies-art-274",
+     "article_number": 274,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "epm-001",
+   "query_ar": "أ- نوع وحجم النشاط. ب- الطاقة المستخدمة. ج- استنزاف النشاط للموارد الطبيعية. د- استخدامات الأراضي. ه- المستقبلات الحساسة في المناطق المحيطة بالنشاط",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_permits",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-permits-reg-llm-art-004",
+     "article_number": 4,
+     "score": 16
+    },
+    {
+     "record_id": "ecommerce-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 12
+    },
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-010",
+     "article_number": 10,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "epm-002",
+   "query_ar": "يجب تقديم التقارير والوثائق والدراسات المتعلقة بالنشاط باللغة العربية وللمركز قبول تقديمها أو جزء منها باللغة الإنجليزية",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_permits",
+    "law_component": "regulation",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-permits-reg-llm-art-009",
+     "article_number": 9,
+     "score": 16
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-037",
+     "article_number": 37,
+     "score": 14
+    },
+    {
+     "record_id": "oa-llm-companies-art-193",
+     "article_number": 193,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "eaq-001",
+   "query_ar": "المقاييس العامة لانبعاثات الملوثات من المصادر الثابتة المدرجة في الملحق (3) من اللائحة ما لم تكن هذه الملوثات مدرجة ضمن المقاييس الخاصة",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_air_quality",
+    "law_component": "regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-air-quality-reg-llm-art-005",
+     "article_number": 5,
+     "score": 46
+    },
+    {
+     "record_id": "aml-regulation-llm-art-014",
+     "article_number": 23,
+     "score": 22
+    },
+    {
+     "record_id": "aml-regulation-llm-art-009",
+     "article_number": 15,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "eaq-002",
+   "query_ar": "العمليات الخاصة بالغاز الطبيعي، كالفصل أو التجهيز أو المعالجة لأكثر من (700,000) متر مكعب من الغاز الطبيعي يوميا",
+   "category": "topical",
+   "gold": {
+    "corpus": "environmental_air_quality",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-air-quality-reg-llm-art-006",
+     "article_number": 6,
+     "score": 19
+    },
+    {
+     "record_id": "income-tax-regulation-llm-art-028",
+     "article_number": 28,
+     "score": 16
+    },
+    {
+     "record_id": "oa-llm-companies-art-275",
+     "article_number": 275,
+     "score": 16
     }
    ]
   }
