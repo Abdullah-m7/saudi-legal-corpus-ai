@@ -1,0 +1,46 @@
+{
+  "law_key": "rett",
+  "layer": "RETT_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 20,
+  "official_text_status": "BOE_PORTAL_PRIMARY_X_SECONDARY_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 20,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/84)",
+  "decree_date_hijri": "19/3/1446",
+  "publication_date_hijri": "8/4/1446",
+  "administering_authority_en": "Zakat, Tax and Customs Authority (ZATCA)",
+  "consolidated_amended_law": false,
+  "chapter_structure": [],
+  "verification_methodology_note": "PRIMARY SOURCE: this track's full verbatim Arabic text of all 20 articles, the Royal Decree, and Council of Ministers Resolution 239 was taken directly from laws.boe.gov.sa (Bureau of Experts / BOE portal), lawId eef585a5-c63a-4906-a951-b208009b3eff. The live BOE page returned HTTP 503 in this environment (a documented, recurring condition for this corpus), so the page was reached via the r.jina.ai read-proxy, which returned the complete authoritative Arabic legal text (41 KB) -- the same primary-source channel this corpus's VAT and income-tax tracks used. CROSS-VERIFICATION: the decree number/date (Royal Decree M/84, 19/3/1446H), the total article count (20), the flat structure (no chapter/فصل/باب subdivisions), and the final article number (المادة العشرون) were independently corroborated against two non-government secondaries -- nezams.com (which explicitly confirms '20 articles organized in a flat list without chapter headings') and qanoonsa.com (which confirms decree M/84, 19/3/1446H, and Umm Al-Qura Gazette issue 5051 dated 11/10/2024). ZATCA's own English-language RETT pages and the EY / King & Spalding tax alerts independently confirm the 5% rate, the 22/9/2024 approval, and the 180-day (≈9 April 2025) effective date. This is a BRAND-NEW 2024 statute with NO amendments to date -- all 20 articles are اصلية (original); there are no معدلة/ملغاة/مضافة articles and therefore no pre-amendment original-text gaps of the kind flagged in the VAT track. The Wayback Machine is blocked at the network layer in this environment and was NOT part of this track's verification chain. The RETT has its own separate ZATCA Implementing Regulation (zatca.gov.sa .../RETTrgulations.pdf); it is a distinct companion instrument and is deliberately NOT extracted in this base-Law track.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "rett_generic_repeal_not_named",
+      "description": "Article 20(2) contains only a GENERIC repeal clause -- 'يُعمل بالنظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية، ويلغي كل ما يتعارض معه من أحكام' (the Law applies 180 days after Official-Gazette publication and repeals all provisions conflicting with it). The Law text does NOT name any predecessor instrument as repealed. Per this corpus's policy no named-supersession claim is asserted beyond what the primary text states; the substantive predecessor is recorded separately (see rett_predecessor_royal_order) as context, not as a Law-text repeal."
+    },
+    {
+      "article_key": "rett_predecessor_royal_order",
+      "description": "The 5% Real Estate Transaction Tax was FIRST imposed at the royal-order/regulation level by الأمر الملكي رقم (أ/84) وتاريخ 14/2/1442هـ (Royal Order A/84, 14/2/1442H), which set the RETT effective date of 14/2/1442H referenced repeatedly in this Law's own decree (transitional clauses رابعاً/خامساً) and in Council of Ministers Resolution 239's preamble ('وبعد الاطلاع على الأمر الملكي رقم (أ/84) وتاريخ 14/2/1442هـ'). This 2024 Law (Royal Decree M/84, 19/3/1446H) ELEVATES that royal-order-level scheme into primary legislation. NOTE the coincidental reuse of the number '84': the predecessor is the ROYAL ORDER (أمر ملكي) A/84 of 1442H; this Law is the ROYAL DECREE (مرسوم ملكي) M/84 of 1446H -- distinct instruments of different types and years. nezams.com independently characterises the 2024 Law as 'a comprehensive codification rather than a replacement of a named predecessor', consistent with the generic (not named) repeal in Article 20(2). The full verbatim text of Royal Order A/84 (1442H) was NOT retrieved this pass and is not part of this track."
+    },
+    {
+      "article_key": "rett_no_chapter_structure",
+      "description": "This Law has NO chapter (فصل) or part (باب) subdivisions -- it is a flat sequence of 20 articles. The BOE portal's 'نبذة عن النظام' (about-the-law abstract) lists the topics the Law covers in prose (تعريفات، نسبة واحتساب الضريبة، التصرفات المعفاة، ...) but that abstract is descriptive metadata, NOT a chapter structure, and is not reproduced as sections here. chapter_structure is therefore an empty list and every article's section_ar is empty by design (documented, not an omission). Independently corroborated by nezams.com ('organized in a flat list without chapter headings')."
+    },
+    {
+      "article_key": "rett_boe_live_page_503",
+      "description": "The live laws.boe.gov.sa page returned HTTP 503 Service Unavailable on direct fetch in this environment (both WebFetch and the pattern seen across this corpus's ZATCA tracks). The authoritative Arabic text was instead obtained through the r.jina.ai read-proxy of the same BOE lawId URL, which returned the full legal text. This is the same primary-source channel and caveat documented for the VAT and income-tax tracks in this corpus."
+    },
+    {
+      "article_key": "rett_wayback_unreachable",
+      "description": "web.archive.org / Wayback Machine egress is blocked at the network layer in this environment, per this corpus's standing note. No Wayback snapshot was used in this track's verification chain; cross-verification rests on the BOE primary text plus the nezams.com and qanoonsa.com secondaries."
+    },
+    {
+      "article_key": "rett_publication_and_effective_date",
+      "description": "Publication date recorded by BOE as 8/4/1446H (11/10/2024G); qanoonsa.com cites Umm Al-Qura Gazette issue 5051 of 11/10/2024G -- consistent. Article 20(2) sets entry into force 180 days after Gazette publication (≈9 April 2025G, as corroborated by the EY and King & Spalding tax alerts). These dates are consistent across sources and are recorded here for transparency, not as an unresolved conflict."
+    }
+  ],
+  "source_artifact": "sources/rett/law/official_source/rett_law_official_source.json"
+}

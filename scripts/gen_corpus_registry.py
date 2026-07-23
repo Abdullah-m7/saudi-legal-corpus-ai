@@ -208,6 +208,7 @@ ENVIRONMENTAL_PERMITS_LLM = os.path.join(ROOT, "data", "environmental_permits_re
 ENVIRONMENTAL_AIR_QUALITY_LLM = os.path.join(ROOT, "data", "environmental_air_quality_arabic_legal_llm", "environmental_air_quality_reg_legal_llm_001_008.json")
 ENVIRONMENTAL_SERVICE_PROVIDERS_LLM = os.path.join(ROOT, "data", "environmental_service_providers_reg_arabic_legal_llm", "environmental_service_providers_reg_legal_llm_001_012.json")
 ENVIRONMENTAL_FEES_LLM = os.path.join(ROOT, "data", "environmental_fees_reg_arabic_legal_llm", "environmental_fees_reg_legal_llm_001_004.json")
+RETT_LAW_LLM = os.path.join(ROOT, "data", "rett_arabic_legal_llm", "rett_law_legal_llm_001_020.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -409,6 +410,7 @@ def main() -> int:
     environmental_air_quality_llm = _load_json(ENVIRONMENTAL_AIR_QUALITY_LLM)
     environmental_service_providers_llm = _load_json(ENVIRONMENTAL_SERVICE_PROVIDERS_LLM)
     environmental_fees_llm = _load_json(ENVIRONMENTAL_FEES_LLM)
+    rett_law_llm = _load_json(RETT_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -429,7 +431,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 170,
+        "total_tracks": 171,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -603,6 +605,7 @@ def main() -> int:
             + environmental_air_quality_llm["record_count"]  # 8 Implementing Regulation for Air Quality under the Environmental Law (Ministerial Decision 512258/1/1442, 24/9/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY mewa.gov.sa born-digital PDF cross-verified ~100% word-level against qanoniah.com, 8 اصلية, confirmed no named-predecessor repeal, see track notes)
             + environmental_service_providers_llm["record_count"]  # 13 Implementing Regulation for Environmental Service Providers (Ministerial Decision 1515009/1, 3/7/1446H, wholly replacing Decision 582979/1/1442) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY official MEWA scanned decision PDF (visually read) x qanoniah.com clean HTML, 13 اصلية (12 articles + Table 1), CONFIRMED self-supersession of the decision's own prior 582979/1/1442 original, recorded as a repeals_full edge, see track notes)
             + environmental_fees_llm["record_count"]  # 4 Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses/Permits/Services (Minister Decision 618660/1/1442, 05/12/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY qanoniah.com cross-verified via multi-source citation corroboration, 4 اصلية, confirmed no named-predecessor repeal, Annex-1 fee-ceiling table documented as excluded, see track notes)
+            + rett_law_llm["record_count"]  # 20 Real Estate Transaction Tax Law (Royal Decree M/84, 19/3/1446H) (TIER_2, PRIMARY BOE lawId page retrieved via r.jina.ai read-proxy (live page returned HTTP 503) cross-verified against nezams.com and qanoonsa.com non-government secondaries, 20 اصلية, flat structure/no chapters, Article 20(2) repeal clause is GENERIC (no named predecessor asserted in the Law's own text; Royal Order A/84 14/2/1442H noted as historical context only), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -767,6 +770,7 @@ def main() -> int:
             + environmental_air_quality_llm["record_count"]
             + environmental_service_providers_llm["record_count"]
             + environmental_fees_llm["record_count"]
+            + rett_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5737,6 +5741,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses, Permits and Services «اللائحة التنفيذية للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية» — Minister of Environment, Water and Agriculture Decision No. (618660/1/1442), dated 05/12/1442H, applied late July 2021 (~21 Dhu al-Hijjah 1442H); issued under Article 48 of the Environmental Law (Royal Decree M/165, 19/11/1441H). A separate topical Regulation under the Environmental Law's family of ~15 distinct implementing instruments — the shortest track in this family. **4 numbered articles, ALL 4 اصلية**, no chapter/باب division (Art 1 definitions; Art 2 the competent center's tasks re fees; Art 3 fee-setting/triennial-update mechanism; Art 4 the annual environmental-operating-permit fee formula and its component factors). **VERIFICATION TIER: TIER_2 (lower end)** — laws.boe.gov.sa checked first per methodology: no dedicated lawId page for this Regulation; the Umm Al-Qura gazette portal is now a JS-rendered SPA whose article text/issue-PDF could not be extracted this pass (legacy `?p=` permalinks do not resolve to the portal's current internal cms-id, disclosed as a limitation, not fabricated). PRIMARY source is qanoniah.com's full article-by-article text (a non-government aggregator republishing the official text, the same source-class used by several sibling tracks), with the citation (decision number/date, base-law link, application date) cross-verified across many independent sources and the article text itself partially cross-verified against ajel.sa (Article 3) and maaal.com/aleqt.com/MEWA search-summary excerpts (Articles 1 and 4). **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; only a generic conflict-repeal clause was found, and no later replacing/amending decision was found either (qanoniah shows the regulation ساري with no version history, unlike three of its siblings which were wholesale re-issued in 2024/2025). Disclosed: **Annex (1) «الحدود القصوى للمقابل المالي...»** (the fee-ceiling tariff table) is documented but NOT ingested — its tabular content was not recoverable as text this pass, following the food_regulation/sibling convention of disclosing rather than fabricating excluded annexes; the issuing decision's verbatim preamble was not recovered and is deliberately omitted rather than reconstructed; Western-style source digit glyphs and punctuation in Article 4's fee-factor formula (e.g. \"(0,8)\", \"(1.2)\") preserved verbatim. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "rett_law",
+                "display_name_ar": "نظام ضريبة التصرفات العقارية",
+                "display_name_en": "Real Estate Transaction Tax (RETT) Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_LAWID_PAGE_VIA_JINA_READ_PROXY_LIVE_PAGE_HTTP_503_X_NEZAMS_COM_AND_QANOONSA_COM_NON_GOVERNMENT_SECONDARIES",
+                "source_authority": "Royal Decree No. (M/84), dated 19/3/1446H, approving Council of Ministers Resolution No. (239), dated 14/3/1446H, following Shura Council Resolution No. (460/43), dated 3/1/1446H; published Umm Al-Qura Gazette issue 5051, 8/4/1446H (11/10/2024G); administered by the Zakat, Tax and Customs Authority (ZATCA) — laws.boe.gov.sa lawId eef585a5-c63a-4906-a951-b208009b3eff checked first per methodology: the live page returned HTTP 503 (a documented, recurring condition for this corpus), so the full 41KB verbatim Arabic text was retrieved via the r.jina.ai read-proxy of the same lawId URL, the same primary-source channel used by this corpus's VAT and income-tax tracks",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": rett_law_llm["record_count"],
+                    "data_path": "data/rett_arabic_legal_llm/rett_law_legal_llm_001_020.json"}},
+                "record_counts": {"arabic_articles": rett_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": rett_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/rett/law/official_source/rett_law_official_source.json",
+                    "sources/rett/law/verified/rett_law_verified_records.jsonl",
+                    "data/rett_arabic_legal_llm/rett_law_legal_llm_001_020.json",
+                ],
+                "validator_targets": ["make rett-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Real Estate Transaction Tax Law «نظام ضريبة التصرفات العقارية» — Royal Decree No. (M/84), dated 19/3/1446H (≈22/9/2024G), approving Council of Ministers Resolution No. (239), 14/3/1446H, following Shura Council Resolution No. (460/43), 3/1/1446H; published Umm Al-Qura Gazette issue 5051, 8/4/1446H (11/10/2024G); administered by ZATCA. A brand-new standalone Law (not a companion regulation of any existing track). **20 articles, ALL 20 اصلية**, flat structure with NO chapter/فصل/باب subdivisions (chapter_structure is an empty list by design, independently corroborated by nezams.com's own description 'organized in a flat list without chapter headings', not an omission). Imposes a 5% tax on real-estate dispositions with named exemptions; entry into force 180 days after Gazette publication (≈9 April 2025G, corroborated by ZATCA's English pages and EY/King & Spalding tax alerts). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology and does have a dedicated lawId page for this Law, but the live page returned HTTP 503 in this environment; PRIMARY text was instead retrieved via the r.jina.ai read-proxy of the same official BOE lawId URL (the same primary-source channel this corpus's VAT and income-tax tracks used), with the decree number/date, article count (20), flat structure, and final-article number independently cross-verified against two non-government secondaries, nezams.com and qanoonsa.com (the latter also confirming the Umm Al-Qura Gazette issue/date). Wayback Machine egress is blocked at the network layer in this environment and was not part of this track's verification chain. **Article 20(2)'s repeal clause is GENERIC** («ويلغي كل ما يتعارض معه من أحكام») — the Law names no predecessor instrument as repealed, so per this corpus's policy no supersession-graph edge is asserted for this track; recorded instead as an ambiguous/excluded negative finding (see supersession graph notes). The substantive predecessor context — Royal Order A/84 (14/2/1442H), which first imposed the 5% RETT at royal-order level and whose 14/2/1442H effective date is referenced in this Law's own transitional clauses — is disclosed in `known_unresolved_discrepancies` as historical context only, not as a Law-text-asserted repeal; nezams.com independently characterises this 2024 Law as a comprehensive codification rather than a replacement of a named predecessor, consistent with the generic clause. This is a brand-new 2024 statute with no amendments to date. A companion ZATCA RETT Implementing Regulation exists but was deliberately NOT built this pass (flagged as a future candidate in coverage-gap-map follow-ups). Arabic governs; not legal advice.",
             },
         ],
     }

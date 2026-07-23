@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 368,
-  "top1_hits": 342,
-  "top3_hits": 361,
-  "top5_hits": 364,
-  "top1_accuracy": 0.9293,
-  "top3_accuracy": 0.981,
-  "top5_accuracy": 0.9891,
-  "mrr_at_5": 0.9543,
+  "total_queries": 370,
+  "top1_hits": 344,
+  "top3_hits": 363,
+  "top5_hits": 366,
+  "top1_accuracy": 0.9297,
+  "top3_accuracy": 0.9811,
+  "top5_accuracy": 0.9892,
+  "mrr_at_5": 0.9546,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7852,13 +7852,13 @@
      "score": 19
     },
     {
-     "record_id": "food-regulation-llm-art-041",
-     "article_number": 41,
-     "score": 13
+     "record_id": "rett-law-llm-art-015",
+     "article_number": 15,
+     "score": 15
     },
     {
-     "record_id": "vat-law-llm-art-015",
-     "article_number": 15,
+     "record_id": "food-regulation-llm-art-041",
+     "article_number": 41,
      "score": 13
     }
    ]
@@ -7883,14 +7883,14 @@
      "score": 35
     },
     {
-     "record_id": "vat-law-llm-art-042",
-     "article_number": 42,
+     "record_id": "rett-law-llm-art-015",
+     "article_number": 15,
      "score": 26
     },
     {
-     "record_id": "labor-law-llm-art-229-mukarrar",
-     "article_number": 229,
-     "score": 18
+     "record_id": "vat-law-llm-art-042",
+     "article_number": 42,
+     "score": 26
     }
    ]
   },
@@ -9092,14 +9092,14 @@
      "score": 55
     },
     {
-     "record_id": "evidence-expertise-llm-art-015",
-     "article_number": 15,
+     "record_id": "rett-law-llm-art-017",
+     "article_number": 17,
      "score": 25
     },
     {
-     "record_id": "accounting-auditing-law-llm-art-015",
+     "record_id": "evidence-expertise-llm-art-015",
      "article_number": 15,
-     "score": 24
+     "score": 25
     }
    ]
   },
@@ -11425,6 +11425,68 @@
      "record_id": "aml-regulation-llm-art-004",
      "article_number": 7,
      "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "rtt-001",
+   "query_ar": "تفرض الضريبة بنسبة قدرها (5%) خمسة بالمائة على التصرف العقاري؛ أياً كانت حالة العقار المتصرف فيه أو شكله أو استخدامه في وقت التصرف",
+   "category": "topical",
+   "gold": {
+    "corpus": "rett",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "rett-law-llm-art-002",
+     "article_number": 2,
+     "score": 40
+    },
+    {
+     "record_id": "municipal-realestate-law-llm-art-006",
+     "article_number": 6,
+     "score": 24
+    },
+    {
+     "record_id": "gcc-ownership-llm-art-003",
+     "article_number": 3,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "rtt-002",
+   "query_ar": "يعد ما يأتي تهرباً ضريبياً: 1. تقديم مستندات أو معلومات أو إفادات أو سجلات مزورة، أو مصطنعة، أو غير صحيحة، أو ما في حكمها؛ تتعلق بالتصرف العقاري",
+   "category": "topical",
+   "gold": {
+    "corpus": "rett",
+    "law_component": "law",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "rett-law-llm-art-014",
+     "article_number": 14,
+     "score": 24
+    },
+    {
+     "record_id": "vat-law-llm-art-039",
+     "article_number": 39,
+     "score": 19
+    },
+    {
+     "record_id": "oa-llm-companies-art-015",
+     "article_number": 15,
+     "score": 19
     }
    ]
   }

@@ -280,6 +280,8 @@ LAYERS = [
      "environmental_service_providers", "regulation"),
     ("data/environmental_fees_reg_arabic_legal_llm/environmental_fees_reg_legal_llm_001_004.json",
      "environmental_fees", "regulation"),
+    ("data/rett_arabic_legal_llm/rett_law_legal_llm_001_020.json",
+     "rett", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",

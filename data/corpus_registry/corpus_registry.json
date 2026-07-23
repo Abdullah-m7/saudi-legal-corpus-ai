@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10697,
+  "total_primary_arabic_governing_records": 10717,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11592,
-  "total_tracks": 170,
+  "total_registry_counted_records": 11612,
+  "total_tracks": 171,
   "tracks": [
     {
       "boundaries": {
@@ -8093,6 +8093,55 @@
       "validator_targets": [
         "make environmental-fees-reg-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/rett/law/official_source/rett_law_official_source.json",
+        "sources/rett/law/verified/rett_law_verified_records.jsonl",
+        "data/rett_arabic_legal_llm/rett_law_legal_llm_001_020.json"
+      ],
+      "display_name_ar": "نظام ضريبة التصرفات العقارية",
+      "display_name_en": "Real Estate Transaction Tax (RETT) Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/rett_arabic_legal_llm/rett_law_legal_llm_001_020.json",
+          "governing": true,
+          "record_count": 20,
+          "status": "complete"
+        }
+      },
+      "notes": "Real Estate Transaction Tax Law «نظام ضريبة التصرفات العقارية» — Royal Decree No. (M/84), dated 19/3/1446H (≈22/9/2024G), approving Council of Ministers Resolution No. (239), 14/3/1446H, following Shura Council Resolution No. (460/43), 3/1/1446H; published Umm Al-Qura Gazette issue 5051, 8/4/1446H (11/10/2024G); administered by ZATCA. A brand-new standalone Law (not a companion regulation of any existing track). **20 articles, ALL 20 اصلية**, flat structure with NO chapter/فصل/باب subdivisions (chapter_structure is an empty list by design, independently corroborated by nezams.com's own description 'organized in a flat list without chapter headings', not an omission). Imposes a 5% tax on real-estate dispositions with named exemptions; entry into force 180 days after Gazette publication (≈9 April 2025G, corroborated by ZATCA's English pages and EY/King & Spalding tax alerts). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology and does have a dedicated lawId page for this Law, but the live page returned HTTP 503 in this environment; PRIMARY text was instead retrieved via the r.jina.ai read-proxy of the same official BOE lawId URL (the same primary-source channel this corpus's VAT and income-tax tracks used), with the decree number/date, article count (20), flat structure, and final-article number independently cross-verified against two non-government secondaries, nezams.com and qanoonsa.com (the latter also confirming the Umm Al-Qura Gazette issue/date). Wayback Machine egress is blocked at the network layer in this environment and was not part of this track's verification chain. **Article 20(2)'s repeal clause is GENERIC** («ويلغي كل ما يتعارض معه من أحكام») — the Law names no predecessor instrument as repealed, so per this corpus's policy no supersession-graph edge is asserted for this track; recorded instead as an ambiguous/excluded negative finding (see supersession graph notes). The substantive predecessor context — Royal Order A/84 (14/2/1442H), which first imposed the 5% RETT at royal-order level and whose 14/2/1442H effective date is referenced in this Law's own transitional clauses — is disclosed in `known_unresolved_discrepancies` as historical context only, not as a Law-text-asserted repeal; nezams.com independently characterises this 2024 Law as a comprehensive codification rather than a replacement of a named predecessor, consistent with the generic clause. This is a brand-new 2024 statute with no amendments to date. A companion ZATCA RETT Implementing Regulation exists but was deliberately NOT built this pass (flagged as a future candidate in coverage-gap-map follow-ups). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_LAWID_PAGE_VIA_JINA_READ_PROXY_LIVE_PAGE_HTTP_503_X_NEZAMS_COM_AND_QANOONSA_COM_NON_GOVERNMENT_SECONDARIES",
+      "record_counts": {
+        "arabic_articles": 20,
+        "legal_status_breakdown": {
+          "اصلية": 20,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 20
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/84), dated 19/3/1446H, approving Council of Ministers Resolution No. (239), dated 14/3/1446H, following Shura Council Resolution No. (460/43), dated 3/1/1446H; published Umm Al-Qura Gazette issue 5051, 8/4/1446H (11/10/2024G); administered by the Zakat, Tax and Customs Authority (ZATCA) — laws.boe.gov.sa lawId eef585a5-c63a-4906-a951-b208009b3eff checked first per methodology: the live page returned HTTP 503 (a documented, recurring condition for this corpus), so the full 41KB verbatim Arabic text was retrieved via the r.jina.ai read-proxy of the same lawId URL, the same primary-source channel used by this corpus's VAT and income-tax tracks",
+      "status": "complete",
+      "track_id": "rett_law",
+      "validator_targets": [
+        "make rett-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8205,6 +8254,7 @@
       "real_estate_units": 74,
       "regions": 41,
       "residency": 69,
+      "rett": 20,
       "sama": 27,
       "saudi_engineers": 9,
       "sharia_procedure": 880,
@@ -8226,7 +8276,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10528,
+    "total_records": 10548,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

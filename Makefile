@@ -284,6 +284,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         environmental-air-quality-reg-track-validate \
         environmental-service-providers-reg-track-validate \
         environmental-fees-reg-track-validate \
+        rett-law-track-validate \
         qa-gate
 
 help:
@@ -1560,6 +1561,9 @@ environmental-service-providers-reg-track-validate:
 
 environmental-fees-reg-track-validate:
 	$(PY) scripts/validate_environmental_fees_reg_track.py
+
+rett-law-track-validate:
+	$(PY) scripts/validate_rett_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

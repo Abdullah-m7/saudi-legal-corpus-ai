@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 170,
-  "total_terms": 1022,
-  "total_definitions": 1652,
-  "tracks_with_definitions_article_parsed": 114,
+  "total_tracks_in_registry": 171,
+  "total_terms": 1027,
+  "total_definitions": 1667,
+  "tracks_with_definitions_article_parsed": 115,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -2496,6 +2496,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التصرف العقاري": [
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "التصرف العقاري",
+        "definition_text": "أي تصرف ناقل لملكية العقار أو ناقل لمنفعته بشكل دائم - بطريق مباشر أو غير مباشر - أو ناقل لمنفعته لمدة تزيد على (50) عاماً.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التصريح": [
       {
         "track_id": "civil_aviation_law",
@@ -2927,6 +2937,14 @@
       }
     ],
     "التوثيق": [
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "التوثيق",
+        "definition_text": "الإجراءات التي تكفل إثبات التصرف العقاري، وفقاً للأحكام النظامية ذات الصلة.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "tawtheeq_law",
         "article_number": 1,
@@ -4974,6 +4992,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص طبيعي، أو اعتباري عام أو خاص، أو أي كيان آخر؛ تكسبه النصوص النظامية حق إبرام التصرفات العقارية.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "zakat_law",
         "article_number": 1,
         "term_as_written": "الشخص",
@@ -4999,6 +5025,16 @@
         "term_as_written": "الشخص المؤهل",
         "definition_text": "شخص انطبقت عليه شروط الحصول على الرخصة وفقاً لأحكام النظام واللوائح.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشركة العقارية": [
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "الشركة العقارية",
+        "definition_text": "أي شركة أو صندوق أو كيان - بصرف النظر عن غرض التأسيس - يمتلك بشكل مباشر أو غير مباشر عقارات داخل المملكة بهدف توليد إيرادات منها ببيعها أو تأجيرها، على أن تزيد القيمة السوقية العادلة لتلك العقارات على نسبة معينة من إجمالي القيمة السوقية العادلة لأصولها، وفقًا لما تحدده اللائحة وبما لا يقل عن نسبة (50%) من قيمة تلك الأصول.",
+        "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5243,6 +5279,14 @@
         "term_as_written": "الضريبة",
         "definition_text": "ضريبة الدخل المفروضة بمقتضى هذا النظام.",
         "source_record_id": "income-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "الضريبة",
+        "definition_text": "المبلغ المفروض على التصرف العقاري بموجب أحكام النظام.",
+        "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5567,6 +5611,14 @@
         "term_as_written": "العقار",
         "definition_text": "قطعة من الأرض وما تحتها وما فوقها -ويستثنى من ذلك الثروات الطبيعية، والعلو غير المأذون بعمارته واستغلاله- وما عليها من بناء أو ملحقات ثابتة أو مزروعات أو مصانع أومنشآت أخرى كالموانئ والمطارات وخطوط الكهرباء والأنابيب وغيرها.",
         "source_record_id": "real-estate-registration-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "العقار",
+        "definition_text": "الممتلكات غير المنقولة داخل المملكة.",
+        "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6045,6 +6097,16 @@
         "term_as_written": "القواعد",
         "definition_text": "قواعد السلوك المهني للمحامين.",
         "source_record_id": "sulook-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "القيمة السوقية العادلة": [
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "القيمة السوقية العادلة",
+        "definition_text": "المقابل الذي يمكن تداول العقار لقاءه في سوق مفتوحة بين طرفين مستقلين لتصرف عقاري مماثل أو مقارب للمؤشرات العقارية المعتمدة؛ وفقاً لما تحدده اللائحة.",
+        "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6563,6 +6625,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة اللازمة لتنفيذ النظام.",
+        "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7258,6 +7328,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المتصرف": [
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "المُتصرِف",
+        "definition_text": "أي شخص يقوم بتصرف عقاري، سواء لمصلحته أو نيابة عن غيره.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المتصرف له": [
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "المُتصرَّف له",
+        "definition_text": "أي شخص تنتقل إليه الحقوق المتصلة بالعقار محل التصرف العقاري، أو بعضها.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المتطلبات": [
       {
         "track_id": "food_regulation",
@@ -7456,6 +7546,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sama_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -7595,6 +7693,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ الهيئة.",
         "source_record_id": "real-estate-expropriation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9252,6 +9358,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "المملكة",
+        "definition_text": "إقليم المملكة العربية السعودية، ويشمل ذلك المناطق الواقعة خارج المياه الإقليمية؛ التي تمارس المملكة العربية السعودية على مياهها وقاع بحرها والطبقات الواقعة تحت التربة والموارد الطبيعية حقوق السيادة والولاية بمقتضى نظامها والقانون الدولي.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "المملكة",
@@ -10756,6 +10870,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام ضريبة التصرفات العقارية.",
+        "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sama_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -11159,6 +11281,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة العامة للعقار.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rett_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة الزكاة والضريبة والجمارك.",
+        "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {

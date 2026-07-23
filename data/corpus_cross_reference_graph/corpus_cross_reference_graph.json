@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 10528,
-  "total_references_extracted": 2261,
-  "intra_law_count": 1955,
-  "inter_law_count": 306,
+  "total_records_scanned": 10548,
+  "total_references_extracted": 2267,
+  "intra_law_count": 1958,
+  "inter_law_count": 309,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1900,
+    "high": 1906,
     "medium": 361
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -19933,6 +19933,72 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة ( 56 )",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "rett_law",
+      "source_record_id": "rett-law-llm-art-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "capital_market_law",
+      "target_article_number": null,
+      "target_law_name_raw": "السوق المالية واللوائح والتعليمات",
+      "raw_citation_text": "أحكام نظام السوق المالية واللوائح والتعليمات الصادرة بناء",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "rett_law",
+      "source_record_id": "rett-law-llm-art-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "capital_market_law",
+      "target_article_number": null,
+      "target_law_name_raw": "السوق المالية واللوائح والتعليمات",
+      "raw_citation_text": "أحكام نظام السوق المالية واللوائح والتعليمات الصادرة بناء",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "rett_law",
+      "source_record_id": "rett-law-llm-art-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "rett_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من النظام. 2. يكون المتصرَّف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "rett_law",
+      "source_record_id": "rett-law-llm-art-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "rett_law",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام. وتحدد اللائحة الإج",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "rett_law",
+      "source_record_id": "rett-law-llm-art-015",
+      "source_article_number": 15,
+      "type": "inter_law",
+      "target_track_id": "tawtheeq_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التوثيق",
+      "raw_citation_text": "أحكام نظام التوثيق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "rett_law",
+      "source_record_id": "rett-law-llm-art-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "rett_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من النظام، يجب على كل شخص يتم",
+      "confidence": "high"
     },
     {
       "source_track_id": "sama_law",
