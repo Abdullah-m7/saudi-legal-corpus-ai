@@ -201,6 +201,7 @@ AML_REGULATION_LLM = os.path.join(ROOT, "data", "aml_regulation_arabic_legal_llm
 PATENT_REGULATION_LLM = os.path.join(ROOT, "data", "patent_regulation_arabic_legal_llm", "patent_regulation_legal_llm_001_067.json")
 ECOMMERCE_REGULATION_LLM = os.path.join(ROOT, "data", "ecommerce_regulation_arabic_legal_llm", "ecommerce_regulation_legal_llm_001_020.json")
 FRANCHISE_REGULATION_LLM = os.path.join(ROOT, "data", "franchise_regulation_arabic_legal_llm", "franchise_regulation_legal_llm_001_016.json")
+TRAFFIC_REGULATION_LLM = os.path.join(ROOT, "data", "traffic_regulation_arabic_legal_llm", "traffic_regulation_legal_llm_001_086.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -395,6 +396,7 @@ def main() -> int:
     patent_regulation_llm = _load_json(PATENT_REGULATION_LLM)
     ecommerce_regulation_llm = _load_json(ECOMMERCE_REGULATION_LLM)
     franchise_regulation_llm = _load_json(FRANCHISE_REGULATION_LLM)
+    traffic_regulation_llm = _load_json(TRAFFIC_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -415,7 +417,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 163,
+        "total_tracks": 164,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -582,6 +584,7 @@ def main() -> int:
             + patent_regulation_llm["record_count"]  # 67 Implementing Regulation of the Patents Law (KACST President Resolution 161-2-3607329, 30/12/1436H, consolidated as amended by SAIP Board Resolution 5/8/2019, 04/09/1440H) (TIER_3, BOE unreachable and no dedicated lawId page, PRIMARY official SAIP-letterhead Arabic PDF on WIPO Lex, dual independent extraction pipelines reconciled, structurally cross-verified against WIPO Lex metadata and qanoonsa.com, 67 اصلية across 12 أبواب, disclosed staleness -- a later 2024 amendment not reflected in this 2019-consolidated text, mirroring the base patent_law track -- see track notes)
             + ecommerce_regulation_llm["record_count"]  # 20 Implementing Regulation of the E-Commerce Law (Ministerial Resolution 200, 19/5/1441H) (TIER_1, BOE unreachable and no dedicated lawId page, PRIMARY issuing Ministry's own official born-digital page (mc.gov.sa) cross-verified word-for-word against the Ministry's own official scanned PDF plus qanoniah.com/lexismiddleeast.com/argaam.com/mithaq.com.sa, 20 اصلية flat structure no chapters, confirmed no named predecessor since the base Law itself only dates to 1440H, see track notes)
             + franchise_regulation_llm["record_count"]  # 16 Implementing Regulation of the Franchise Law (Minister of Commerce Resolution 591, 18/9/1441H) (TIER_2, BOE has a lawId page for the base Law but none for this Regulation, PRIMARY franchising.sa Umm Al-Qura gazette reproduction cross-verified VERBATIM against aunklaw.com (non-government secondary) for all 16 articles plus lexismiddleeast.com for structure, 16 اصلية across 6 فصول, confirmed no named-predecessor repeal, annex-only amendment (element 13 deleted by a later resolution) disclosed and preserved verbatim not silently altered, see track notes)
+            + traffic_regulation_llm["record_count"]  # 86 Implementing Regulation of the Traffic Law (Minister of Interior Resolution 2249, 10/3/1441H) (TIER_3, BOE unreachable and no dedicated lawId page, PRIMARY official MOI scanned document dual vision+OCR pipeline reconciled, cross-verified against qanoniah.com born-digital text for Articles 1-8 only, 82 اصلية/3 معدلة (Articles 7,23,47)/1 ملغاة (Article 80), CONFIRMED named-predecessor repeal of Ministerial Resolution 7019 (3/7/1429H) via the Resolution's own verbatim clause, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -739,6 +742,7 @@ def main() -> int:
             + patent_regulation_llm["record_count"]
             + ecommerce_regulation_llm["record_count"]
             + franchise_regulation_llm["record_count"]
+            + traffic_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5513,6 +5517,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Saudi Arabian Franchise Law «اللائحة التنفيذية لنظام الامتياز التجاري» — Minister of Commerce Resolution No. (591), dated 18/9/1441H, issued under Article 26 of the Franchise Law (Royal Decree M/22, 9/2/1441H); published Umm Al-Qura Gazette issue 4832, 22 May 2020, p.12. **16 articles across 6 فصول, ALL 16 اصلية** (chapter map: الفصل الأول أحكام عامة arts 1-2؛ الفصل الثاني القيد والإفصاح arts 3-7؛ الفصل الثالث اتفاقية الامتياز arts 8-9؛ الفصل الرابع التنازل عن اتفاقية الامتياز arts 10-11؛ الفصل الخامس التعويض art 12؛ الفصل السادس أحكام ختامية arts 13-16), plus a disclosure-document-requirements annex (17 elements) kept in a separate annex_ar field, not split into numbered article records. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: it hosts a dedicated lawId page for the base Franchise Law but NONE for this Ministerial-level Regulation. PRIMARY source is franchising.sa's clean reproduction of the Umm Al-Qura gazette publication (linking the official uqn.gov.sa PDF, not itself directly re-fetched this pass), cross-verified programmatically VERBATIM (consonant-for-consonant identical, only trivial diacritic/digit-glyph/whitespace differences) against aunklaw.com's independent copy of all 16 articles; metadata and the six-chapter structure additionally cross-verified against lexismiddleeast.com (Sader/LexisNexis). **CONFIRMED NO NAMED-PREDECESSOR REPEAL** — a confirmed negative finding; no repeal/supersession clause naming a prior instrument was found in this Regulation's text. **GENUINE ANNEX-ONLY AMENDMENT DISCLOSED, NOT SILENTLY APPLIED**: Annex disclosure-document element (13) «معلومات الوضع المالي لمانح الامتياز» was later deleted per a secondary-sourced Ministerial Resolution (339, 14/8/1444H) — corroborated by a 2020-vs-2024 annex-content divergence found during research — but the annex is preserved here VERBATIM in its ORIGINAL 17-element 2020 form (element 13 retained, not deleted), consistent with this corpus's flag-don't-silently-apply rule for unconfirmed downstream amendments; this touches the annex only, not any numbered article, so no article's legal_status_ar was changed. Disclosed anomalies: the Resolution number appears as both '591' and '00591' across sources (591 favored, both preserved); the official uqn.gov.sa PDF itself was not directly re-fetched this pass (relied on franchising.sa's verified reproduction instead); article headers carry a trailing colon in the source style, preserved; the preamble text has secondary-sourced variants, disclosed; a minor issuance-date-vs-gazette-publication-date distinction preserved as recorded in each source. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "traffic_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام المرور",
+                "display_name_en": "Implementing Regulation of the Saudi Arabian Traffic Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOI_OFFICIAL_SCANNED_DOCUMENT_DUAL_VISION_OCR_PIPELINE_X_QANONIAH_COM_BORN_DIGITAL_PARTIAL_CROSSCHECK_ARTS_1_8_OF_86_BOE_NO_DEDICATED_LAWID_PAGE",
+                "source_authority": "Ministerial Resolution (Minister of Interior) No. (2249), dated 10/3/1441H, signed by HRH Prince Abdulaziz bin Saud bin Naif, issued under the Traffic Law (Royal Decree M/85, 26/10/1428H, as amended by M/70, M/73, M/115); published Umm Al-Qura Gazette issue 4812, 3 Jan 2020G — laws.boe.gov.sa was checked first per methodology: it has a dedicated lawId page for the base Traffic Law itself but none for this Ministerial-Resolution-level Regulation (live portal and an Archive.org fallback both returned connection-reset this pass; the block was recorded, not circumvented). PRIMARY text source is an official scanned (no text layer) 93-page MOI document reconstructed via two independent extraction passes (direct vision reading of page images, plus tesseract-ara OCR as a cross-check layer), cross-verified VERBATIM against qanoniah.com's born-digital text for Articles 1-8 only (100% match on Articles 1,3,4,5,6,8; 99.0% on Article 2, cosmetic-only; 51.5% divergence on Article 7, confirming rather than undermining the finding since Article 7 is independently known to be one of the amended articles)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": traffic_regulation_llm["record_count"],
+                    "data_path": "data/traffic_regulation_arabic_legal_llm/traffic_regulation_legal_llm_001_086.json"}},
+                "record_counts": {"arabic_articles": traffic_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 82, "معدلة": 3, "ملغاة": 1, "مضافة": 0},
+                                  "total": traffic_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/traffic/regulation/official_source/traffic_regulation_official_source.json",
+                    "sources/traffic/regulation/verified/traffic_regulation_verified_records.jsonl",
+                    "data/traffic_regulation_arabic_legal_llm/traffic_regulation_legal_llm_001_086.json",
+                ],
+                "validator_targets": ["make traffic-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Saudi Arabian Traffic Law «اللائحة التنفيذية لنظام المرور» — Ministerial Resolution (Minister of Interior) No. (2249), dated 10/3/1441H, signed by HRH Prince Abdulaziz bin Saud bin Naif, issued under the Traffic Law (Royal Decree M/85, 26/10/1428H, as amended by M/70 6/11/1437H, M/73 18/7/1439H, M/115 5/12/1439H); published Umm Al-Qura Gazette issue 4812, 3 Jan 2020G. **86 records = 85 numbered articles + المادة الخمسون مكرر** (commercial-centre traffic licensing, classified original since it already existed in the founding 2249/1441H text, not a later addition), across 8 أبواب (باب 1 نطاق/تعاريف arts 1-2؛ باب 2 تسجيل المركبات ورخص السير arts 3-21؛ باب 3 أوزان المركبات وأبعادها arts 22-31؛ باب 4 رخص القيادة arts 32-49؛ باب 5 تنظيمات السير arts 50-58 incl. 50 مكرر؛ باب 6 الحوادث arts 59-65؛ باب 7 ضبط المخالفات arts 66-79؛ باب 8 أحكام عامة arts 80-85). **Status: 82 اصلية / 3 معدلة (Articles 7, 23, 47) / 1 ملغاة (Article 80) / 0 مضافة.** **CONFIRMED NAMED-PREDECESSOR REPEAL**: the Resolution's own preamble clause (ثانياً) verbatim states «تحل هذه اللائحة محل اللائحة التنفيذية لنظام المرور، المعتمدة بالقرار الوزاري، المشار إليه أعلاه» — explicitly replacing the prior Implementing Regulation issued by Ministerial Resolution No. (7019), dated 3/7/1429H; recorded as a real repeals_full edge in the supersession graph, a genuine positive finding rather than this window's more common confirmed-negative pattern. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology: has a dedicated lawId page for the base Traffic Law but none for this Ministerial Regulation (live portal + Archive.org fallback both connection-reset this pass, block recorded not circumvented). PRIMARY source is the official MOI scanned document (93pp, page 1 = the stamped/signed Resolution itself), extracted via two independent pipelines (direct vision reading as primary, tesseract-ara OCR as cross-check) that agreed throughout; Articles 1-8 additionally cross-verified VERBATIM against qanoniah.com's born-digital text (100% match on Articles 1,3,4,5,6,8; 99.0% on Article 2, cosmetic-only differences; 51.5% divergence on Article 7 — correctly interpreted as CONFIRMING the Article 7 amendment rather than an extraction defect, since qanoniah's current text is demonstrably longer/newer). Articles 9-85+مكرر carry the lower per-article verification_tier PRIMARY_OFFICIAL_SCAN_VISION_OCR (single official scan, dual-pipeline reconciled, no second born-digital source since qanoniah gates content past Article 8 behind login) — mirroring the same structural pattern already used for aml_regulation and patent_regulation. **Internal repeal**: Article 80 (Supreme Traffic Council) marked ملغاة per an explicit footnote in the primary scan itself citing Council of Ministers Resolution 636 (23/10/1438H); text preserved verbatim, not deleted. **Amended articles (7, 23, 47) carry their ORIGINAL 1441H founding text**, not the current amended wording (not retrievable this pass since qanoniah gates the current version past Article 8) — Article 7's amendment independently confirmed via a structural length divergence (4126 vs 4845 chars) against qanoniah's current text; Articles 23 and 47 rest on secondary-source evidence only (an Umm Al-Qura gazette page titled specifically for Article 23's amendment; Article 47's amendment is the least-confirmed of the three). Disclosed: no dedicated BOE lawId page; base-law article text deliberately not re-ingested (only the لائحة's own «ن/م» sub-clauses are extracted, matching qanoniah's own representation of this Regulation); annexed violation-fee tables/point schedules/sign illustrations not modeled as records; **Article 76's 90-points/3-years system is this Regulation's own 2249/1441H text and must not be confused with a separate later نقاط regulation (24 points/Hijri year)** — explicit disambiguation flag for future passes; OCR could not reliably read the deep slash-numbered sub-clause identifiers (e.g. «٢/٣/١/١/٧»), so these were transcribed via direct vision reading article-by-article. Arabic governs; not legal advice.",
             },
         ],
     }

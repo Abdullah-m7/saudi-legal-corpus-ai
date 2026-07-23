@@ -19,11 +19,11 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 163,
+  "total_tracks": 164,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 100,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 24,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 16,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 17,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
   "tracks_with_per_article_variation": 21,
@@ -1119,6 +1119,13 @@
       "tier_rationale": "official_text_status='BOE_PROXY_X_NEZAMS_PATTERN_VERIFIED_MIXED_CONFIDENCE' — ثقة متفاوتة موثّقة صراحة على مستوى المادة عبر حقل verification_tier الخاص بالمسار نفسه: 67 من 86 سجلاً بتصنيف PRIMARY_INDEPENDENTLY_CONFIRMED مقابل 19 سجلاً بتصنيف SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE (تعتمد على موثوقية نمط nezams.com وحدها، وبوابة BOE مؤكَّد أنها متجاوَزة زمنياً لهذا النظام). التصنيف هنا يعتمد الجزء الأضعف.",
       "has_per_article_variation": true,
       "per_article_variation_note": "67 من 86 سجلاً بتصنيف PRIMARY_INDEPENDENTLY_CONFIRMED مقابل 19 سجلاً (18 مادة معدَّلة + المادة 50 مكرر) بتصنيف SECONDARY_SOURCE_ONLY_BOE_KNOWN_STALE؛ راجع official_source.json الخاص بالمسار (حقل verification_tier لكل سجل)."
+    },
+    {
+      "track_id": "traffic_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='MOI_OFFICIAL_SCANNED_DOCUMENT_DUAL_VISION_OCR_PIPELINE_X_QANONIAH_COM_BORN_DIGITAL_PARTIAL_CROSSCHECK_ARTS_1_8_OF_86_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "travel_documents_law",

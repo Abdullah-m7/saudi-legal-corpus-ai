@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 354,
-  "top1_hits": 328,
-  "top3_hits": 347,
-  "top5_hits": 350,
-  "top1_accuracy": 0.9266,
-  "top3_accuracy": 0.9802,
-  "top5_accuracy": 0.9887,
-  "mrr_at_5": 0.9525,
+  "total_queries": 356,
+  "top1_hits": 330,
+  "top3_hits": 349,
+  "top5_hits": 352,
+  "top1_accuracy": 0.927,
+  "top3_accuracy": 0.9803,
+  "top5_accuracy": 0.9888,
+  "mrr_at_5": 0.9528,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8100,13 +8100,13 @@
      "score": 49
     },
     {
-     "record_id": "awqaf-law-llm-art-025",
-     "article_number": 25,
-     "score": 35
+     "record_id": "traffic-regulation-llm-art-084",
+     "article_number": 83,
+     "score": 44
     },
     {
-     "record_id": "telecommunications-law-llm-art-041",
-     "article_number": 41,
+     "record_id": "awqaf-law-llm-art-025",
+     "article_number": 25,
      "score": 35
     }
    ]
@@ -10991,6 +10991,68 @@
      "record_id": "franchise-law-llm-art-018",
      "article_number": 18,
      "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "tfr-001",
+   "query_ar": "الرقم الخاص هو رقم اللوحة المصروفة للمركبة بحسب نوع تسجيلها من قبل إدارة المرور المعنية وفق ما جاء في المادة السابعة من هذه اللائحة",
+   "category": "topical",
+   "gold": {
+    "corpus": "traffic",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "traffic-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 65
+    },
+    {
+     "record_id": "traffic-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 35
+    },
+    {
+     "record_id": "traffic-regulation-llm-art-074",
+     "article_number": 73,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "tfr-002",
+   "query_ar": "تقع المسؤولية في الحادث المروري عند وجود علاقة سببية بين الفعل والنتيجة بصورة مباشرة أو غير مباشرة",
+   "category": "topical",
+   "gold": {
+    "corpus": "traffic",
+    "law_component": "regulation",
+    "article_number": 60
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "traffic-regulation-llm-art-061",
+     "article_number": 60,
+     "score": 32
+    },
+    {
+     "record_id": "oa-llm-companies-art-256",
+     "article_number": 256,
+     "score": 18
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-015",
+     "article_number": 15,
+     "score": 18
     }
    ]
   }

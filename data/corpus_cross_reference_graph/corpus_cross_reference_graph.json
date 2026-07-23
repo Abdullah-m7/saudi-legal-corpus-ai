@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 10386,
-  "total_references_extracted": 2212,
-  "intra_law_count": 1934,
-  "inter_law_count": 278,
+  "total_records_scanned": 10472,
+  "total_references_extracted": 2233,
+  "intra_law_count": 1940,
+  "inter_law_count": 293,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1864,
-    "medium": 348
+    "high": 1882,
+    "medium": 351
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -22429,6 +22429,237 @@
       "target_article_number": 73,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثالثة والسبعين) من هذا النظام، وما تضمنته الف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "traffic_regulation",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السابعة من هذه اللائحة. 3/2- تحتوي رخ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": 25,
+      "target_law_name_raw": "المرور ولائحته التنفيذية",
+      "raw_citation_text": "المادة (الخامسة والعشرون) من نظام المرور ولائحته التنفيذية. 10/1/5- ألا يك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-021",
+      "source_article_number": 21,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرور ولائحته التنفيذية",
+      "raw_citation_text": "وفق نظام المرور ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-021",
+      "source_article_number": 21,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرور ولائحته",
+      "raw_citation_text": "أحكام نظام المرور ولائحته",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-028",
+      "source_article_number": 28,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "المتفجرات والمفرقعات",
+      "raw_citation_text": "وفقاً لنظام المتفجرات والمفرقعات الصادر بالمرسوم الملكي رقم",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-037",
+      "source_article_number": 37,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": 36,
+      "target_law_name_raw": "المرور",
+      "raw_citation_text": "المادة (السادسة والثلاثين) من نظام المرور. 37/2- على من ي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-037",
+      "source_article_number": 37,
+      "type": "intra_law",
+      "target_track_id": "traffic_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (36/16) من هذه اللائحة. 37/3- أن تتلا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-040",
+      "source_article_number": 40,
+      "type": "intra_law",
+      "target_track_id": "traffic_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة والثلاثين) من هذا النظام ولائحته التنفيذ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-047",
+      "source_article_number": 47,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": 47,
+      "target_law_name_raw": "المرور وتصدر بقرار",
+      "raw_citation_text": "المادة (السابعة والأربعون) من نظام المرور وتصدر بقرار من وزير الداخلي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-050",
+      "source_article_number": 50,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "المرور استمرار السير",
+      "raw_citation_text": "طبقاً لقواعد المرور استمرار السير",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-052",
+      "source_article_number": 51,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرور وهم بزيهم الرسمي",
+      "raw_citation_text": "أحكام نظام المرور وهم بزيهم الرسمي أو بالشارات الدالة عليهم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-052",
+      "source_article_number": 51,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرور ولائحته ولا قواعد المرور ولا العلامات الإرشادية سائقي",
+      "raw_citation_text": "أحكام نظام المرور ولائحته ولا قواعد المرور ولا العلامات الإرشادية سائقي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-062",
+      "source_article_number": 61,
+      "type": "inter_law",
+      "target_track_id": "criminal_procedure_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الإجراءات الجزائية ولائحته التنفيذية",
+      "raw_citation_text": "وفقاً لنظام الإجراءات الجزائية ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-062",
+      "source_article_number": 61,
+      "type": "inter_law",
+      "target_track_id": "sharia_procedure_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرافعات الشرعية ولائحته التنفيذية",
+      "raw_citation_text": "وفقاً لنظام المرافعات الشرعية ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-067",
+      "source_article_number": 66,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "المرور ولائحته التنفيذية لكل",
+      "raw_citation_text": "أحكام نظام المرور ولائحته التنفيذية لكل من",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-067",
+      "source_article_number": 66,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرور ولائحته التنفيذية",
+      "raw_citation_text": "أحكام نظام المرور ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-073",
+      "source_article_number": 72,
+      "type": "intra_law",
+      "target_track_id": "traffic_regulation",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (21/4) من هذه اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-074",
+      "source_article_number": 73,
+      "type": "intra_law",
+      "target_track_id": "traffic_regulation",
+      "target_article_number": 74,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (74/1) من هذه اللائحة، يجوز تسجيل ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-074",
+      "source_article_number": 73,
+      "type": "intra_law",
+      "target_track_id": "traffic_regulation",
+      "target_article_number": 62,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (62/1) من هذه اللائحة عند تسبب السائ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-079",
+      "source_article_number": 78,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": 78,
+      "target_law_name_raw": "المرور",
+      "raw_citation_text": "المادة (78) من نظام المرور.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-080",
+      "source_article_number": 79,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرور",
+      "raw_citation_text": "أحكام نظام المرور أو إذا دعت الحاجة في الحوادث المرورية مع عدم ربط تسليم",
       "confidence": "high"
     },
     {
