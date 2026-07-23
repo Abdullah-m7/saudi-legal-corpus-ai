@@ -209,6 +209,7 @@ ENVIRONMENTAL_AIR_QUALITY_LLM = os.path.join(ROOT, "data", "environmental_air_qu
 ENVIRONMENTAL_SERVICE_PROVIDERS_LLM = os.path.join(ROOT, "data", "environmental_service_providers_reg_arabic_legal_llm", "environmental_service_providers_reg_legal_llm_001_012.json")
 ENVIRONMENTAL_FEES_LLM = os.path.join(ROOT, "data", "environmental_fees_reg_arabic_legal_llm", "environmental_fees_reg_legal_llm_001_004.json")
 RETT_LAW_LLM = os.path.join(ROOT, "data", "rett_arabic_legal_llm", "rett_law_legal_llm_001_020.json")
+UNIVERSITIES_LAW_LLM = os.path.join(ROOT, "data", "universities_arabic_legal_llm", "universities_law_legal_llm_001_058.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -411,6 +412,7 @@ def main() -> int:
     environmental_service_providers_llm = _load_json(ENVIRONMENTAL_SERVICE_PROVIDERS_LLM)
     environmental_fees_llm = _load_json(ENVIRONMENTAL_FEES_LLM)
     rett_law_llm = _load_json(RETT_LAW_LLM)
+    universities_law_llm = _load_json(UNIVERSITIES_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -431,7 +433,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 171,
+        "total_tracks": 172,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -606,6 +608,7 @@ def main() -> int:
             + environmental_service_providers_llm["record_count"]  # 13 Implementing Regulation for Environmental Service Providers (Ministerial Decision 1515009/1, 3/7/1446H, wholly replacing Decision 582979/1/1442) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY official MEWA scanned decision PDF (visually read) x qanoniah.com clean HTML, 13 اصلية (12 articles + Table 1), CONFIRMED self-supersession of the decision's own prior 582979/1/1442 original, recorded as a repeals_full edge, see track notes)
             + environmental_fees_llm["record_count"]  # 4 Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses/Permits/Services (Minister Decision 618660/1/1442, 05/12/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY qanoniah.com cross-verified via multi-source citation corroboration, 4 اصلية, confirmed no named-predecessor repeal, Annex-1 fee-ceiling table documented as excluded, see track notes)
             + rett_law_llm["record_count"]  # 20 Real Estate Transaction Tax Law (Royal Decree M/84, 19/3/1446H) (TIER_2, PRIMARY BOE lawId page retrieved via r.jina.ai read-proxy (live page returned HTTP 503) cross-verified against nezams.com and qanoonsa.com non-government secondaries, 20 اصلية, flat structure/no chapters, Article 20(2) repeal clause is GENERIC (no named predecessor asserted in the Law's own text; Royal Order A/84 14/2/1442H noted as historical context only), see track notes)
+            + universities_law_llm["record_count"]  # 58 Universities Law (Royal Decree M/27, 2/3/1441H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY bibliotdroit.com born-digital text cross-verified article-by-article against the administering authority's own official cua.gov.sa PDF (all 58 articles, not a spot-check), structure re-confirmed by moe.gov.sa, 58 اصلية across 14 فصول, CONFIRMED named-predecessor repeal of نظام مجلس التعليم العالي والجامعات (M/8, 4/6/1414H) via Article 57, phased/transitional per the Royal Decree's own clauses 3-4, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -771,6 +774,7 @@ def main() -> int:
             + environmental_service_providers_llm["record_count"]
             + environmental_fees_llm["record_count"]
             + rett_law_llm["record_count"]
+            + universities_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5769,6 +5773,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Real Estate Transaction Tax Law «نظام ضريبة التصرفات العقارية» — Royal Decree No. (M/84), dated 19/3/1446H (≈22/9/2024G), approving Council of Ministers Resolution No. (239), 14/3/1446H, following Shura Council Resolution No. (460/43), 3/1/1446H; published Umm Al-Qura Gazette issue 5051, 8/4/1446H (11/10/2024G); administered by ZATCA. A brand-new standalone Law (not a companion regulation of any existing track). **20 articles, ALL 20 اصلية**, flat structure with NO chapter/فصل/باب subdivisions (chapter_structure is an empty list by design, independently corroborated by nezams.com's own description 'organized in a flat list without chapter headings', not an omission). Imposes a 5% tax on real-estate dispositions with named exemptions; entry into force 180 days after Gazette publication (≈9 April 2025G, corroborated by ZATCA's English pages and EY/King & Spalding tax alerts). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology and does have a dedicated lawId page for this Law, but the live page returned HTTP 503 in this environment; PRIMARY text was instead retrieved via the r.jina.ai read-proxy of the same official BOE lawId URL (the same primary-source channel this corpus's VAT and income-tax tracks used), with the decree number/date, article count (20), flat structure, and final-article number independently cross-verified against two non-government secondaries, nezams.com and qanoonsa.com (the latter also confirming the Umm Al-Qura Gazette issue/date). Wayback Machine egress is blocked at the network layer in this environment and was not part of this track's verification chain. **Article 20(2)'s repeal clause is GENERIC** («ويلغي كل ما يتعارض معه من أحكام») — the Law names no predecessor instrument as repealed, so per this corpus's policy no supersession-graph edge is asserted for this track; recorded instead as an ambiguous/excluded negative finding (see supersession graph notes). The substantive predecessor context — Royal Order A/84 (14/2/1442H), which first imposed the 5% RETT at royal-order level and whose 14/2/1442H effective date is referenced in this Law's own transitional clauses — is disclosed in `known_unresolved_discrepancies` as historical context only, not as a Law-text-asserted repeal; nezams.com independently characterises this 2024 Law as a comprehensive codification rather than a replacement of a named predecessor, consistent with the generic clause. This is a brand-new 2024 statute with no amendments to date. A companion ZATCA RETT Implementing Regulation exists but was deliberately NOT built this pass (flagged as a future candidate in coverage-gap-map follow-ups). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "universities_law",
+                "display_name_ar": "نظام الجامعات",
+                "display_name_en": "Universities Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_BIBLIOTDROIT_COM_BORN_DIGITAL_X_CUA_GOV_SA_ADMINISTERING_AUTHORITY_OWN_PDF",
+                "source_authority": "Royal Decree No. (M/27), dated 2/3/1441H, approving Council of Ministers Resolution No. (183), dated 1/3/1441H (Shura Council Resolution No. 61/239, 28/2/1440H); published Umm Al-Qura Gazette 11/3/1441H, in force 180 days after publication (Article 58); administered by the Council of Universities' Affairs (cua.gov.sa) and the Ministry of Education (moe.gov.sa) — laws.boe.gov.sa lawId 8ee74282-7f0d-49ff-b6ee-aafc00a3d801 checked first per methodology: unreachable this pass (HTTP 503/connection reset), Wayback egress-blocked and not circumvented. PRIMARY full verbatim text from bibliotdroit.com (clean born-digital HTML), cross-verified article-by-article against the administering authority's own official cua.gov.sa PDF, with the 58-article/14-chapter structure independently re-confirmed by moe.gov.sa",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": universities_law_llm["record_count"],
+                    "data_path": "data/universities_arabic_legal_llm/universities_law_legal_llm_001_058.json"}},
+                "record_counts": {"arabic_articles": universities_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 58, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": universities_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/universities/law/official_source/universities_law_official_source.json",
+                    "sources/universities/law/verified/universities_law_verified_records.jsonl",
+                    "data/universities_arabic_legal_llm/universities_law_legal_llm_001_058.json",
+                ],
+                "validator_targets": ["make universities-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Universities Law «نظام الجامعات» — Royal Decree No. (M/27), dated 2/3/1441H, approving Council of Ministers Resolution No. (183), 1/3/1441H (Shura Council Resolution No. 61/239, 28/2/1440H); published Umm Al-Qura Gazette 11/3/1441H, in force 180 days after publication; administered by the Council of Universities' Affairs and the Ministry of Education. A brand-new standalone Law (not a companion regulation of any existing track). **58 articles across 14 فصول (chapters), ALL 58 اصلية**: definitions/objectives (1-5); Council of Universities' Affairs (6-10); boards of trustees (11-15); university council (16-19); scientific council (20-23); college/institute councils (24-26); department councils (27-29); university president and deputies (30-34); deans and vice-deans (35-37); department heads (38-39); academic accreditation (40-41); advisory councils (42-44); the university's financial system (45-50); general/final provisions (51-58). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full verbatim text from bibliotdroit.com (clean born-digital HTML), cross-verified ARTICLE-BY-ARTICLE (all 58, not a spot-check) against the administering authority's own official cua.gov.sa PDF (no scan/OCR defects) — an official government document independently confirming every article, matching this corpus's environmental_service_providers precedent (the official document serving as the cross-verification anchor even where the ingested text itself is drawn from a non-government rendering for extraction convenience), not merely a TIER_3 two-secondaries-only case. The 58-article/14-chapter structure and governing division term (الفصل, not الباب) independently re-confirmed by a THIRD source, moe.gov.sa's own statement ('58 مادة موزعة على 14 فصلاً'). **CONFIRMED named-predecessor repeal**: Article 57 verbatim states «يحل هذا النظام محل نظام مجلس التعليم العالي والجامعات، الصادر بالمرسوم الملكي رقم (م/8) وتاريخ 4/6/1414هـ ويلغي جميع ما يتعارض معه من أحكام» — identical wording confirmed in both the bibliotdroit.com source and the cua.gov.sa PDF — recorded as a real repeals_full edge in the supersession graph (target_track_id=None, an untracked predecessor). Disclosed as a PHASED, not instantaneous, replacement: the Royal Decree's own clauses 3-4 keep the predecessor law transitionally in force for universities not yet brought under the new Law, preserved verbatim in the notes rather than silently treated as a clean-break repeal. A second Shura Council resolution referenced in the preamble could not be pinned to a specific number this pass, disclosed not fabricated. Companion Implementing Regulations issued by the Council of Universities' Affairs exist but were deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
             },
         ],
     }

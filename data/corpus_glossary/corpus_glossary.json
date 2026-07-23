@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 171,
-  "total_terms": 1027,
-  "total_definitions": 1667,
-  "tracks_with_definitions_article_parsed": 115,
+  "total_tracks_in_registry": 172,
+  "total_terms": 1036,
+  "total_definitions": 1677,
+  "tracks_with_definitions_article_parsed": 116,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -293,6 +293,16 @@
         "term_as_written": "أطراف التركز الاقتصادي",
         "definition_text": "المنشآت المشاركة -أو الراغبة في المشاركة- في عملية التركز الاقتصادي، سواء تقدمت بطلب الموافقة على إتمام التركز الاقتصادي أو لم تتقدم.",
         "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أعضاء هيئة التدريس": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "أعضاء هيئة التدريس",
+        "definition_text": "الأساتذة والأساتذة المشاركون والأساتذة المساعدون، ويعد في حكم أعضاء هيئة التدريس المحاضرون والمعيدون.",
+        "source_record_id": "universities-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6048,6 +6058,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "القسم العلمي": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "القسم العلمي",
+        "definition_text": "وحدة أكاديمية تمثل تخصصا علميا عاما.",
+        "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "القطاع الزراعي": [
       {
         "track_id": "agriculture_law",
@@ -6145,6 +6165,16 @@
         "term_as_written": "الكشف",
         "definition_text": "نشاط تفصيلي يؤدي إلى استكشاف الرواسب بالطرق الجيولوجية أو الجيوفيزيائية أو الجيوكيميائية أو الحفر بأنواعه أو أي طريقة أخرى مناسبة، في أي موقع؛ بغرض تحديد وجود تلك الرواسب، وامتداداتها، وكمياتها، ونوعياتها، وجدوى تعدينها.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الكلية": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "الكلية",
+        "definition_text": "منشأة علمية مكونة من مجموعة من الأقسام العلمية تنتمي إلى مجال علمي عام.",
+        "source_record_id": "universities-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7567,6 +7597,16 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المجلس العلمي": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "المجلس العلمي",
+        "definition_text": "السلطة المختصة بالشؤون العلمية والبحثية والدراسات والنشر في الجامعة، وفق أحكام النظام.",
+        "source_record_id": "universities-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10942,6 +10982,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الجامعات.",
+        "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -14302,6 +14350,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مجلس الأمناء": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "مجلس الأمناء",
+        "definition_text": "السلطة المختصة بحوكمة الجامعة، والرقابة على أدائها أكاديميا وإداريا وماليا، وفق أحكام النظام.",
+        "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مجلس الإدارة": [
       {
         "track_id": "civil_aviation_law",
@@ -14341,6 +14399,46 @@
         "term_as_written": "مجلس الإدارة",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مجلس الجامعة": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "مجلس الجامعة",
+        "definition_text": "السلطة المختصة بتصريف الشؤون العلمية والتعليمية والإدارية والمالية في الجامعة، وتنفيذ السياسة العامة لها، وفق أحكام النظام.",
+        "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مجلس القسم": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "مجلس القسم",
+        "definition_text": "السلطة المختصة بالشؤون الأكاديمية في القسم العلمي.",
+        "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مجلس الكلية": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "مجلس الكلية",
+        "definition_text": "السلطة المختصة بتصريف الشؤون الأكاديمية في الكلية، وفقا لأحكام النظام.",
+        "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مجلس شؤون الجامعات": [
+      {
+        "track_id": "universities_law",
+        "article_number": 1,
+        "term_as_written": "مجلس شؤون الجامعات",
+        "definition_text": "السلطة المختصة بتنظيم شؤون الجامعات ورسم سياساتها ووضع اللوائح المنظمة لها، وفق أحكام النظام.",
+        "source_record_id": "universities-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

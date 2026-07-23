@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10717,
+  "total_primary_arabic_governing_records": 10775,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11612,
-  "total_tracks": 171,
+  "total_registry_counted_records": 11670,
+  "total_tracks": 172,
   "tracks": [
     {
       "boundaries": {
@@ -8142,6 +8142,55 @@
       "validator_targets": [
         "make rett-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/universities/law/official_source/universities_law_official_source.json",
+        "sources/universities/law/verified/universities_law_verified_records.jsonl",
+        "data/universities_arabic_legal_llm/universities_law_legal_llm_001_058.json"
+      ],
+      "display_name_ar": "نظام الجامعات",
+      "display_name_en": "Universities Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/universities_arabic_legal_llm/universities_law_legal_llm_001_058.json",
+          "governing": true,
+          "record_count": 58,
+          "status": "complete"
+        }
+      },
+      "notes": "Universities Law «نظام الجامعات» — Royal Decree No. (M/27), dated 2/3/1441H, approving Council of Ministers Resolution No. (183), 1/3/1441H (Shura Council Resolution No. 61/239, 28/2/1440H); published Umm Al-Qura Gazette 11/3/1441H, in force 180 days after publication; administered by the Council of Universities' Affairs and the Ministry of Education. A brand-new standalone Law (not a companion regulation of any existing track). **58 articles across 14 فصول (chapters), ALL 58 اصلية**: definitions/objectives (1-5); Council of Universities' Affairs (6-10); boards of trustees (11-15); university council (16-19); scientific council (20-23); college/institute councils (24-26); department councils (27-29); university president and deputies (30-34); deans and vice-deans (35-37); department heads (38-39); academic accreditation (40-41); advisory councils (42-44); the university's financial system (45-50); general/final provisions (51-58). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full verbatim text from bibliotdroit.com (clean born-digital HTML), cross-verified ARTICLE-BY-ARTICLE (all 58, not a spot-check) against the administering authority's own official cua.gov.sa PDF (no scan/OCR defects) — an official government document independently confirming every article, matching this corpus's environmental_service_providers precedent (the official document serving as the cross-verification anchor even where the ingested text itself is drawn from a non-government rendering for extraction convenience), not merely a TIER_3 two-secondaries-only case. The 58-article/14-chapter structure and governing division term (الفصل, not الباب) independently re-confirmed by a THIRD source, moe.gov.sa's own statement ('58 مادة موزعة على 14 فصلاً'). **CONFIRMED named-predecessor repeal**: Article 57 verbatim states «يحل هذا النظام محل نظام مجلس التعليم العالي والجامعات، الصادر بالمرسوم الملكي رقم (م/8) وتاريخ 4/6/1414هـ ويلغي جميع ما يتعارض معه من أحكام» — identical wording confirmed in both the bibliotdroit.com source and the cua.gov.sa PDF — recorded as a real repeals_full edge in the supersession graph (target_track_id=None, an untracked predecessor). Disclosed as a PHASED, not instantaneous, replacement: the Royal Decree's own clauses 3-4 keep the predecessor law transitionally in force for universities not yet brought under the new Law, preserved verbatim in the notes rather than silently treated as a clean-break repeal. A second Shura Council resolution referenced in the preamble could not be pinned to a specific number this pass, disclosed not fabricated. Companion Implementing Regulations issued by the Council of Universities' Affairs exist but were deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_BIBLIOTDROIT_COM_BORN_DIGITAL_X_CUA_GOV_SA_ADMINISTERING_AUTHORITY_OWN_PDF",
+      "record_counts": {
+        "arabic_articles": 58,
+        "legal_status_breakdown": {
+          "اصلية": 58,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 58
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/27), dated 2/3/1441H, approving Council of Ministers Resolution No. (183), dated 1/3/1441H (Shura Council Resolution No. 61/239, 28/2/1440H); published Umm Al-Qura Gazette 11/3/1441H, in force 180 days after publication (Article 58); administered by the Council of Universities' Affairs (cua.gov.sa) and the Ministry of Education (moe.gov.sa) — laws.boe.gov.sa lawId 8ee74282-7f0d-49ff-b6ee-aafc00a3d801 checked first per methodology: unreachable this pass (HTTP 503/connection reset), Wayback egress-blocked and not circumvented. PRIMARY full verbatim text from bibliotdroit.com (clean born-digital HTML), cross-verified article-by-article against the administering authority's own official cua.gov.sa PDF, with the 58-article/14-chapter structure independently re-confirmed by moe.gov.sa",
+      "status": "complete",
+      "track_id": "universities_law",
+      "validator_targets": [
+        "make universities-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8270,13 +8319,14 @@
       "trademark": 52,
       "traffic": 172,
       "travel_documents": 69,
+      "universities": 58,
       "vat": 135,
       "water": 77,
       "whistleblower": 37,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10548,
+    "total_records": 10606,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

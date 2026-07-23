@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 370,
-  "top1_hits": 344,
-  "top3_hits": 363,
-  "top5_hits": 366,
-  "top1_accuracy": 0.9297,
-  "top3_accuracy": 0.9811,
+  "total_queries": 372,
+  "top1_hits": 346,
+  "top3_hits": 365,
+  "top5_hits": 368,
+  "top1_accuracy": 0.9301,
+  "top3_accuracy": 0.9812,
   "top5_accuracy": 0.9892,
-  "mrr_at_5": 0.9546,
+  "mrr_at_5": 0.9548,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -10642,14 +10642,14 @@
      "score": 43
     },
     {
+     "record_id": "universities-law-llm-art-002",
+     "article_number": 2,
+     "score": 17
+    },
+    {
      "record_id": "basic-law-of-governance-llm-art-022",
      "article_number": 22,
      "score": 15
-    },
-    {
-     "record_id": "regions-law-llm-art-001",
-     "article_number": 1,
-     "score": 14
     }
    ]
   },
@@ -11487,6 +11487,68 @@
      "record_id": "oa-llm-companies-art-015",
      "article_number": 15,
      "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "unv-001",
+   "query_ar": "ينشأ في كل جامعة مجلس علمي برئاسة نائب رئيس الجامعة المختص بالبحث العلمي وعضوية ممثل من كل كلية أو معهد بدرجة أستاذ مشارك على الأقل",
+   "category": "topical",
+   "gold": {
+    "corpus": "universities",
+    "law_component": "law",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "universities-law-llm-art-020",
+     "article_number": 20,
+     "score": 35
+    },
+    {
+     "record_id": "nazaha-law-llm-art-014",
+     "article_number": 14,
+     "score": 25
+    },
+    {
+     "record_id": "universities-law-llm-art-022",
+     "article_number": 22,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "unv-002",
+   "query_ar": "يحل هذا النظام محل نظام مجلس التعليم العالي والجامعات، الصادر بالمرسوم الملكي رقم (م / 8) وتاريخ 4 / 6 / 1414هـ ويلغي جميع ما يتعارض معه من أحكام",
+   "category": "topical",
+   "gold": {
+    "corpus": "universities",
+    "law_component": "law",
+    "article_number": 57
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "universities-law-llm-art-057",
+     "article_number": 57,
+     "score": 54
+    },
+    {
+     "record_id": "awqaf-law-llm-art-025",
+     "article_number": 25,
+     "score": 48
+    },
+    {
+     "record_id": "evidence-law-llm-art-128",
+     "article_number": 128,
+     "score": 45
     }
    ]
   }
