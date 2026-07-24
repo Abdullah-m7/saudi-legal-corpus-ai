@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 181 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 181 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 182 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 182 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 181,
+  "total_tracks": 182,
   "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -2747,6 +2747,27 @@
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "press_art_005_009_036_037_038_040_boe_main_body_stale_vs_changelog: BOE's own archived law-detail page (Wayback snapshot, 26 Feb 2026) marks Articles 5, 9, 36, 37, 38 and 40 with a 'changed-article' CSS class and a nested 'تعديلات المادة' (article amendments) changelog popup quoting the"
+    },
+    {
+      "track_id": "prison_detention_law",
+      "display_name_en": "Prison and Detention Law",
+      "display_name_ar": "نظام السجن والتوقيف",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='BOE_AND_MOI_PDF_UNREACHABLE_WAYBACK_NOT_ATTEMPTED_X_NEZAMS_COM_X_ISLAMPORT_CROSSCHECK': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. (M/31), dated 21/6/1398H (~1978G), approving Council of Ministers Resolution No. (441), dated 8/6/1398H; administered by the Ministry of Interior — laws.boe.gov.sa has a dedicated lawId page (19945fe2-e690-4b24-9ab0-a9a700f17d03) and an official MOI PDF also exists, but BOTH were unreachable this pass (live HTTP 503 / connection-reset); web.archive.org was not attempted this pass because the fetch tool itself reported it cannot reach that host, not a bypass attempt. ORIGINAL full text cross-verified verbatim between nezams.com and islamport.com (al-Mawsuea al-Shamela, an independent Islamic-texts aggregator)",
+      "registry_source_url": null,
+      "official_source_file": "sources/prison_detention/law/official_source/prison_detention_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
     },
     {
       "track_id": "privatization_law",
