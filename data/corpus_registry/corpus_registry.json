@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10775,
+  "total_primary_arabic_governing_records": 10820,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11670,
-  "total_tracks": 172,
+  "total_registry_counted_records": 11715,
+  "total_tracks": 173,
   "tracks": [
     {
       "boundaries": {
@@ -8191,6 +8191,55 @@
       "validator_targets": [
         "make universities-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/privatization/law/official_source/privatization_law_official_source.json",
+        "sources/privatization/law/verified/privatization_law_verified_records.jsonl",
+        "data/privatization_arabic_legal_llm/privatization_law_legal_llm_001_045.json"
+      ],
+      "display_name_ar": "نظام التخصيص",
+      "display_name_en": "Privatization Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/privatization_arabic_legal_llm/privatization_law_legal_llm_001_045.json",
+          "governing": true,
+          "record_count": 45,
+          "status": "complete"
+        }
+      },
+      "notes": "Privatization Law «نظام التخصيص» — Royal Decree No. (M/63), dated 5/8/1442H, approving Council of Ministers Resolution No. (436), 3/8/1442H; published Umm Al-Qura Gazette 13/8/1442H (~26 Mar 2021G); administered by the National Center for Privatization (under MISA), the Ministry of Finance, and the Council of Economic and Development Affairs. A brand-new standalone Law (not a companion regulation of any existing track). **45 articles, ALL 45 اصلية**, FLAT structure with NO أبواب/فصول divisions (confirmed two ways: the official misa.gov.sa/NCP PDF shows no chapter headers, and nezams.com's own metadata agrees) — a single structural entry covers Articles 1-45, `section_ar` is the uniform value 'نظام التخصيص', no thematic chapter titles were invented. **VERIFICATION TIER: TIER_2 (lower end)** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (live HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full governing text from nezams.com (a non-government aggregator, the same source-class used by several sibling tracks), cross-verified against an official government PDF (misa.gov.sa/National Center for Privatization, HTTP 200) which independently confirmed the 45-article count, the flat structure, and VERBATIM Articles 44-45 specifically — a genuine but PARTIAL (not full article-by-article) official cross-check, disclosed honestly rather than inflated to a stronger tier, mirroring this corpus's environmental_fees 'TIER_2 (lower end)' precedent. **Article 45's repeal clause is GENERIC** («يلغي النظام كل ما يتعارض معه من أحكام») — the Law's own text names no predecessor instrument as repealed, so per this corpus's policy no supersession-graph edge is asserted for this track; recorded instead as an ambiguous/excluded negative finding (see supersession graph notes). The NAMED repeals of prior instruments (Council of Ministers decisions 60/1418H, 257/1421H, 219/1423H, and the Supreme Economic Council's decision 1/23/1423H approving the privatization strategy) sit instead in the accompanying Council of Ministers Resolution 436 — a different instrument from the Law itself — preserved verbatim in `preamble_ar` and disclosed as historical context only, not as a Law-text-asserted repeal. A companion Implementing Regulation (Article 44 mandate, NCP board, SPA-confirmed adoption) and a separate set of Organizing Rules (القواعد المنظمة للتخصيص, Article 2) exist but were deliberately NOT built this pass (flagged as future candidates, proposed track_id `privatization_regulation`). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_FULL_TEXT_X_MISA_GOV_SA_NCP_OFFICIAL_PDF_PARTIAL_VERBATIM_CONFIRMATION",
+      "record_counts": {
+        "arabic_articles": 45,
+        "legal_status_breakdown": {
+          "اصلية": 45,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 45
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/63), dated 5/8/1442H, approving Council of Ministers Resolution No. (436), dated 3/8/1442H (Shura Council Resolutions 374/63, 27/2/1442H, and 76/15, 12/6/1442H); published Umm Al-Qura Gazette 13/8/1442H (~26 Mar 2021G); administered by the National Center for Privatization (ncp.gov.sa, under the Ministry of Investment/MISA), the Ministry of Finance, and the Council of Economic and Development Affairs — laws.boe.gov.sa lawId 8af67ec1-6776-4f67-abb4-ad0900eadf2f checked first per methodology: unreachable this pass (live HTTP 503/connection reset), Wayback egress-blocked and not circumvented. PRIMARY full governing text from nezams.com (independent aggregator), cross-verified against an official government PDF (misa.gov.sa/National Center for Privatization) which independently confirmed the 45-article count, the flat no-chapter structure, and verbatim Articles 44-45",
+      "status": "complete",
+      "track_id": "privatization_law",
+      "validator_targets": [
+        "make privatization-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8295,6 +8344,7 @@
       "personal_status": 293,
       "premium_residency": 14,
       "press": 49,
+      "privatization": 45,
       "qismah": 48,
       "real_estate_expropriation": 39,
       "real_estate_finance": 15,
@@ -8326,7 +8376,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10606,
+    "total_records": 10651,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -3,7 +3,7 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 172,
+  "total_tracks_scanned": 173,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
@@ -1009,6 +1009,14 @@
       "issue": "generic repeal clause only -- no named predecessor asserted in the Law's own text",
       "note": "rett_law (Royal Decree M/84, 19/3/1446H) Article 20(2) carries only a generic conflict-repeal clause (\"ويلغي كل ما يتعارض معه من أحكام\"), naming no specific prior instrument as repealed. The substantive predecessor context -- الأمر الملكي رقم (أ/84) وتاريخ 14/2/1442هـ (Royal Order A/84, 14/2/1442H), which first imposed the 5% Real Estate Transaction Tax at royal-order level and whose effective date is referenced in this Law's own transitional clauses -- is disclosed in known_unresolved_discrepancies (rett_predecessor_royal_order) as historical context only, not as a Law-text-asserted repeal; nezams.com independently characterises this 2024 Law as a comprehensive codification rather than a replacement of a named predecessor. No edge modeled.",
       "source_ref": "sources/rett/law/official_source/rett_law_official_source.json (known_unresolved_discrepancies, verification_methodology_note)"
+    },
+    {
+      "tracks_involved": [
+        "privatization_law"
+      ],
+      "issue": "generic repeal clause only -- named repeals sit in a companion instrument (CoM Resolution 436), not the Law's own text",
+      "note": "privatization_law (Royal Decree M/63, 5/8/1442H) Article 45 carries only a generic conflict-repeal clause (\"يلغي النظام كل ما يتعارض معه من أحكام\"), naming no specific prior instrument as repealed. The NAMED repeals -- Council of Ministers decisions 60/1418H, 257/1421H, 219/1423H, and the Supreme Economic Council's decision 1/23/1423H approving the privatization strategy -- sit instead in the accompanying Council of Ministers Resolution 436 (3/8/1442H), a DIFFERENT instrument from the Law itself, preserved verbatim in this track's preamble_ar as historical context, not as a Law-text-asserted repeal. No edge modeled.",
+      "source_ref": "sources/privatization/law/official_source/privatization_law_official_source.json (issuing_authority_ar)"
     }
   ],
   "extraction_policy": "Every edge above was read and classified by hand against this corpus's own documented text (registry notes + official_source.json fields/article text), never inferred from a decree being older or from topical similarity alone. Concurrent title/decree-number collisions that are NOT repeal relationships, and genuinely ambiguous or explicitly-excluded cases, are kept in their own sections rather than forced into `edges`. It is expected and correct that most of this corpus's 122 tracks have zero edges."

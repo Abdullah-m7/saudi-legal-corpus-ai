@@ -1675,6 +1675,22 @@ AMBIGUOUS_OR_EXCLUDED_CASES = [
                 "No edge modeled.",
         "source_ref": "sources/rett/law/official_source/rett_law_official_source.json (known_unresolved_discrepancies, verification_methodology_note)",
     },
+    {
+        "tracks_involved": ["privatization_law"],
+        "issue": "generic repeal clause only -- named repeals sit in a companion instrument (CoM Resolution 436), not the Law's own text",
+        "note": "privatization_law (Royal Decree M/63, 5/8/1442H) Article 45 "
+                "carries only a generic conflict-repeal clause (\"يلغي النظام "
+                "كل ما يتعارض معه من أحكام\"), naming no specific prior "
+                "instrument as repealed. The NAMED repeals -- Council of "
+                "Ministers decisions 60/1418H, 257/1421H, 219/1423H, and the "
+                "Supreme Economic Council's decision 1/23/1423H approving the "
+                "privatization strategy -- sit instead in the accompanying "
+                "Council of Ministers Resolution 436 (3/8/1442H), a DIFFERENT "
+                "instrument from the Law itself, preserved verbatim in this "
+                "track's preamble_ar as historical context, not as a "
+                "Law-text-asserted repeal. No edge modeled.",
+        "source_ref": "sources/privatization/law/official_source/privatization_law_official_source.json (issuing_authority_ar)",
+    },
 ]
 
 

@@ -284,6 +284,8 @@ LAYERS = [
      "rett", "law"),
     ("data/universities_arabic_legal_llm/universities_law_legal_llm_001_058.json",
      "universities", "law"),
+    ("data/privatization_arabic_legal_llm/privatization_law_legal_llm_001_045.json",
+     "privatization", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",
