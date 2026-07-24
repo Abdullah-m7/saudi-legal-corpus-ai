@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 180,
-  "total_terms": 1087,
-  "total_definitions": 1770,
-  "tracks_with_definitions_article_parsed": 123,
+  "total_tracks_in_registry": 181,
+  "total_terms": 1094,
+  "total_definitions": 1780,
+  "tracks_with_definitions_article_parsed": 124,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -267,6 +267,26 @@
         "term_as_written": "أراضي الغطاء النباتي",
         "definition_text": "جميع الأراضي المملوكة للدولة التي تحتوي على نباتات برية وما في حكمها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أسلحة التمرين والبنادق الهوائية": [
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "أسلحة التمرين والبنادق الهوائية",
+        "definition_text": "أسلحة رماية دون بارود وينطلق مقذوفها بوساطة ضغط الهواء أو دفع نابض.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أسلحة الصيد": [
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "أسلحة الصيد",
+        "definition_text": "الأسلحة النارية ذات السبطانة الملساء، التي صممت أصلا لأغراض الصيد.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -899,6 +919,36 @@
         "term_as_written": "الأسرة",
         "definition_text": "من يعولهم حامل الإقامة المميزة، من الأزواج، والأولاد، والوالدين، وفق ما تحدده اللائحة.",
         "source_record_id": "premium-residency-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأسلحة الأثرية": [
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "الأسلحة الأثرية",
+        "definition_text": "الأسلحة القديمة ذات القيمة التاريخية التي يثبت بعد فحصها ومعاينتها عدم إمكانية استخدامها.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأسلحة الحربية": [
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "الأسلحة الحربية",
+        "definition_text": "الأسلحة النارية والذخائر والتجهيزات التي صممت بشكل خاص للاستعمال في العمليات الحربية، كالرشاشات والمدافع والصواريخ وغيرها. ويدخل في حكم الأسلحة الحربية الأسلحة التي تستخدم الأشعة، والغازات، والسموم، وأي سلاح عدا الأسلحة النارية الفردية والأسلحة المشار إليها في بقية فقرات هذه المادة.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأسلحة النارية الفردية": [
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "الأسلحة النارية الفردية",
+        "definition_text": "الأسلحة النارية المعدة لاستعمال شخص واحد، كالمسدسات، والبنادق، وفقا لما تحدده اللائحة التنفيذية.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3612,6 +3662,14 @@
         "definition_text": "الوزارة أو الجهة المسؤولة عن تنفيذ هذا القانون (النظام) في الدولة.",
         "source_record_id": "trademark-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "وزارة الداخلية .",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجهة المختصة بالشراء الموحد": [
@@ -4438,6 +4496,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الذخيرة": [
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "الذخيرة",
+        "definition_text": "المقذوفات التي تنطلق من الأسلحة نتيجة الدفع الانفجاري أو الهوائي أو الدفع بالنابضات.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الرئيس": [
       {
         "track_id": "antiquities_heritage_law",
@@ -4895,6 +4963,16 @@
         "term_as_written": "السلائف الكيميائية",
         "definition_text": "المواد التي تستخدم في الصنع غير المشروع للمخدرات أو المؤثرات العقلية المدرجة في الجدول رقم (3 ) المرافق لهذا النظام.",
         "source_record_id": "anti-narcotics-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السلاح الأبيض": [
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "السلاح الأبيض",
+        "definition_text": "كل أداة قاطعة أو ثاقبة أو مهشمة أو راضة، كالسيوف والخناجر والمدى والنبال والحراب والعصي ذات الحربة والقبضات وما في حكمها.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7139,6 +7217,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "أي لائحة تنفيذية للنظام.",
         "source_record_id": "vat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12955,6 +13041,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير البيئة والمياه والزراعة.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "weapons_ammunition_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الداخلية .",
+        "source_record_id": "weapons-ammunition-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

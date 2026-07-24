@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 388,
-  "top1_hits": 362,
-  "top3_hits": 381,
-  "top5_hits": 384,
-  "top1_accuracy": 0.933,
-  "top3_accuracy": 0.982,
+  "total_queries": 390,
+  "top1_hits": 364,
+  "top3_hits": 383,
+  "top5_hits": 386,
+  "top1_accuracy": 0.9333,
+  "top3_accuracy": 0.9821,
   "top5_accuracy": 0.9897,
-  "mrr_at_5": 0.9567,
+  "mrr_at_5": 0.9569,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4889,7 +4889,7 @@
   },
   {
    "query_id": "irh-002",
-   "query_ar": "كل من هرب أو صنعها أو طورها أو جمعها أو حضرها أو جهزها أو استوردها أو حازها أو أحرزها من الأسلحة والذخائر والمتفجرات بقصد استخدامها في ارتكاب الجرائم",
+   "query_ar": "المتفجرات، أو المواد النووية أو الكيميائية أو البيولوجية أو الإشعاعية، أو السموم",
    "category": "topical",
    "gold": {
     "corpus": "terrorism",
@@ -4904,17 +4904,17 @@
     {
      "record_id": "terrorism-law-llm-art-039",
      "article_number": 39,
-     "score": 18
+     "score": 12
     },
     {
-     "record_id": "oa-llm-companies-art-260",
-     "article_number": 260,
-     "score": 14
+     "record_id": "environmental-air-quality-reg-llm-art-007",
+     "article_number": 7,
+     "score": 11
     },
     {
-     "record_id": "oa-llm-companies-art-261",
-     "article_number": 261,
-     "score": 14
+     "record_id": "terrorism-law-llm-art-036",
+     "article_number": 36,
+     "score": 8
     }
    ]
   },
@@ -5093,13 +5093,13 @@
      "score": 43
     },
     {
-     "record_id": "whistleblower-law-llm-art-025",
-     "article_number": 25,
-     "score": 31
+     "record_id": "weapons-ammunition-law-llm-art-039",
+     "article_number": 39,
+     "score": 38
     },
     {
-     "record_id": "antiquities-heritage-law-llm-art-073",
-     "article_number": 73,
+     "record_id": "whistleblower-law-llm-art-025",
+     "article_number": 25,
      "score": 31
     }
    ]
@@ -9717,9 +9717,9 @@
      "score": 41
     },
     {
-     "record_id": "electricity-law-llm-art-023",
-     "article_number": 23,
-     "score": 38
+     "record_id": "weapons-ammunition-law-llm-art-063",
+     "article_number": 63,
+     "score": 40
     }
    ]
   },
@@ -12045,6 +12045,68 @@
      "record_id": "gtpl-law-llm-art-001",
      "article_number": 1,
      "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "wpn-001",
+   "query_ar": "يحظر إجراء أي تعديل على آلية الأسلحة أو طرق تذخيرها بما يجعلها أشد خطورة",
+   "category": "topical",
+   "gold": {
+    "corpus": "weapons_ammunition",
+    "law_component": "law",
+    "article_number": 30
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "weapons-ammunition-law-llm-art-030",
+     "article_number": 30,
+     "score": 43
+    },
+    {
+     "record_id": "oa-llm-companies-art-214",
+     "article_number": 214,
+     "score": 22
+    },
+    {
+     "record_id": "oa-llm-companies-art-110",
+     "article_number": 110,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "wpn-002",
+   "query_ar": "يعاقب بالسجن مدة لا تتجاوز ثمانية عشر شهرا وبغرامة لا تزيد على ستة آلاف ريال، أو بإحدى هاتين العقوبتين كل من تثبت حيازته لسلاح ناري فردي أو ذخيرة دون ترخيص",
+   "category": "topical",
+   "gold": {
+    "corpus": "weapons_ammunition",
+    "law_component": "law",
+    "article_number": 40
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "weapons-ammunition-law-llm-art-040",
+     "article_number": 40,
+     "score": 55
+    },
+    {
+     "record_id": "weapons-ammunition-law-llm-art-042",
+     "article_number": 42,
+     "score": 42
+    },
+    {
+     "record_id": "weapons-ammunition-law-llm-art-039",
+     "article_number": 39,
+     "score": 40
     }
    ]
   }
