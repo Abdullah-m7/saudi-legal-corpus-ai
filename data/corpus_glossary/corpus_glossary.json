@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 189,
-  "total_terms": 1161,
-  "total_definitions": 1896,
-  "tracks_with_definitions_article_parsed": 130,
+  "total_tracks_in_registry": 192,
+  "total_terms": 1164,
+  "total_definitions": 1910,
+  "tracks_with_definitions_article_parsed": 131,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -38,6 +38,10 @@
     },
     {
       "track_id": "anti_smoking_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "anti_smoking_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -98,6 +102,10 @@
     },
     {
       "track_id": "cybersecurity_authority_enablers",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "disability_rights_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -2706,6 +2714,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "شهادة مطابقة تصدرها الهيئة للمنشأة، بحيث يحق لها -بموجب هذه الشهادة- استعمال علامة الجودة على المنتجات والسلع المرخص لها، وذلك للدلالة على استيفاء المنشأة لمتطلبات هذه اللائحة وإجراء المنح المحدد، وأن المنتجات والسلع المرخص لها مطابقة للمواصفات القياسية و/أو اللوائح الفنية ذات العلاقة، استنادا إلى تقارير الاختبار التي أجريت عليها، وأن المنشأة لديها نظام إدارة فعال يضمن استمرار إنتاج المنتجات والسلع بالجودة المطلوبة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -3719,6 +3735,14 @@
         "term_as_written": "الجهات ذات العلاقة",
         "definition_text": "الأجهزة الحكومية، والقطاع الخاص؛ التي تعنى بالمواصفة والوثيقة ذات الصلة.",
         "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات ذات العلاقة",
+        "definition_text": "الأجهزة الحكومية والقطاع الخاص والقطاع الأكاديمي والبحثي والقطاع الغير ربحي التي تعنى بالمواصفة والوثيقة ذات الصلة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6800,6 +6824,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الفريق الفني": [
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "الفريق الفني",
+        "definition_text": "فريق يشكل من الجهات ذات العلاقة ويعنى بإعداد المواصفات السعودية وما يتعلق بها.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الفعالية الرياضية": [
       {
         "track_id": "sports_law",
@@ -7524,6 +7558,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "tawtheeq_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -7663,6 +7705,16 @@
         "term_as_written": "اللائحة التنفيذية",
         "definition_text": "اللائحة التي تضعها لجنة التعاون التجارية تنفيذا لهذا القانون (النظام).",
         "source_record_id": "trademark-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللائحة العامة لعلامة الجودة السعودية": [
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة العامة لعلامة الجودة السعودية",
+        "definition_text": "اللائحة التي تحدد الشروط والقواعد العامة لإجراءات منح ترخيص استخدام علامة الجودة السعودية.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8638,6 +8690,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -8811,6 +8871,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ المؤسسة.",
         "source_record_id": "social-insurance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10828,6 +10896,14 @@
         "definition_text": "أي منتج يوضع أو يعرض في الأسواق.",
         "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "أي منتج يوضع أو يعرض في الأسواق.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المنتج العضوي": [
@@ -11281,6 +11357,14 @@
         "term_as_written": "المواصفة",
         "definition_text": "وثيقة معتمدة تضع القواعد والتعليمات أو الخصائص للمنتجات أو العمليات وطرق الإنتاج ذات العلاقة، ولا يكون التقيد بها إلزاميا.",
         "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "المواصفة",
+        "definition_text": "وثيقة معتمدة تضع القواعد والتعليمات أو الخصائص للمنتجات أو العمليات وطرق الإنتاج ذات العلاقة، ولا يكون التقيد بها إلزاميا.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12444,6 +12528,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المواصفات والجودة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sulook_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12898,6 +12990,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -12967,6 +13067,14 @@
         "term_as_written": "الوثيقة ذات الصلة",
         "definition_text": "وثيقة تعنى بالخصائص الفنية والتقارير الفنية والأدلة والوثائق الأخرى التي اعتمدت من جهاز تقييس، ولا تعتبر مواصفة وفقا لأحكام النظام.",
         "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "الوثيقة ذات الصلة",
+        "definition_text": "وثيقة تعنى بالخصائص الفنية والتقارير الفنية والأدلة والوثائق الأخرى التي اعتمدت من جهاز تقييس ولا تعتبر مواصفة وفقا لأحكام النظام.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -15462,6 +15570,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "صاحب الصلاحية": [
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "صاحب الصلاحية",
+        "definition_text": "من لديه صلاحية إصدار قرار اعتماد أو تبني أو تحديث أو تعليق أو سحب المواصفة والوثيقة ذات الصلة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "صاحب العمل": [
       {
         "track_id": "labor_law",
@@ -15793,6 +15911,14 @@
         "term_as_written": "علامة الجودة",
         "definition_text": "علامة تدل على أن خصائص المنتج تحقق متطلبات أعلى فنيا من متطلبات المواصفات أو تحقق متطلبات أخرى تضعها الهيئة.",
         "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_regulation",
+        "article_number": 1,
+        "term_as_written": "علامة الجودة",
+        "definition_text": "علامة تدل على أن خصائص المنتج تحقق متطلبات أعلى فنيا من متطلبات المواصفات، أو تحقق متطلبات أخرى تضعها الهيئة.",
+        "source_record_id": "standards-quality-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

@@ -238,6 +238,9 @@ REQUIRED_TRACK_IDS = [
     "standards_quality_law",
     "disability_rights_law",
     "tourism_law",
+    "standards_quality_regulation",
+    "disability_rights_regulation",
+    "anti_smoking_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -282,7 +285,7 @@ def main() -> int:
 
     # [3] 189 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 189 tracks present...", len(track_ids) == 189 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 192 tracks present...", len(track_ids) == 192 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -2045,7 +2048,37 @@ def main() -> int:
           trl_counts.get("legal_status_breakdown") == {"اصلية": 19, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={trl_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 11277 records...", uix.get("total_records") == 11277,
+    sqr = tracks_by_id.get("standards_quality_regulation", {})
+    sqr_counts = sqr.get("record_counts", {})
+    check("[7g177] standards_quality_regulation: 23 Arabic records, SASO official site x UQ gazette API dual-primary x qanoonsa cross-verified x BOE no dedicated page...",
+          sqr_counts.get("arabic_articles") == 23
+          and sqr.get("official_text_status") == "SASO_OFFICIAL_SITE_X_UQN_API_DUAL_PRIMARY_X_QANOONSA_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE",
+          f"counts={sqr_counts}")
+    check("    standards_quality_regulation: status breakdown 23/0/0/0...",
+          sqr_counts.get("legal_status_breakdown") == {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={sqr_counts.get('legal_status_breakdown')}")
+
+    drr = tracks_by_id.get("disability_rights_regulation", {})
+    drr_counts = drr.get("record_counts", {})
+    check("[7g178] disability_rights_regulation: 45 Arabic records, UQN primary HTML x qanoonsa article-by-article cross-verified x BOE shared page unreachable...",
+          drr_counts.get("arabic_articles") == 45
+          and drr.get("official_text_status") == "UQN_GOV_SA_PRIMARY_HTML_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSVERIFIED_BOE_SHARED_PAGE_UNREACHABLE",
+          f"counts={drr_counts}")
+    check("    disability_rights_regulation: status breakdown 45/0/0/0...",
+          drr_counts.get("legal_status_breakdown") == {"اصلية": 45, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={drr_counts.get('legal_status_breakdown')}")
+
+    asr = tracks_by_id.get("anti_smoking_regulation", {})
+    asr_counts = asr.get("record_counts", {})
+    check("[7g179] anti_smoking_regulation: 17 Arabic records, MOH 2019 PDF primary x WHO/EMRO 2017 diff cross-check x BOE no dedicated page x founding resolution unconfirmed...",
+          asr_counts.get("arabic_articles") == 17
+          and asr.get("official_text_status") == "MOH_PDF_PRIMARY_2019_3RD_EDITION_X_WHO_EMRO_2017_DIFF_CROSSCHECK_BOE_NO_DEDICATED_PAGE_FOUNDING_RESOLUTION_UNCONFIRMED",
+          f"counts={asr_counts}")
+    check("    anti_smoking_regulation: status breakdown 11/6/0/0...",
+          asr_counts.get("legal_status_breakdown") == {"اصلية": 11, "معدلة": 6, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={asr_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 11362 records...", uix.get("total_records") == 11362,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -2107,8 +2140,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 11446...",
-          registry.get("total_primary_arabic_governing_records") == 11446,
+    check("[19a] total_primary_arabic_governing_records == 11531...",
+          registry.get("total_primary_arabic_governing_records") == 11531,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -2123,8 +2156,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 12341...",
-          registry.get("total_registry_counted_records") == 12341,
+    check("[19e] total_registry_counted_records == 12426...",
+          registry.get("total_registry_counted_records") == 12426,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -2148,7 +2181,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"11446 + 614 + 281 = 12341")
+          f"11531 + 614 + 281 = 12426")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -2166,7 +2199,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 189 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 192 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

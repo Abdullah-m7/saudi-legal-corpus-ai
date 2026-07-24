@@ -227,6 +227,9 @@ PRODUCT_SAFETY_LAW_LLM = os.path.join(ROOT, "data", "product_safety_arabic_legal
 STANDARDS_QUALITY_LAW_LLM = os.path.join(ROOT, "data", "standards_quality_arabic_legal_llm", "standards_quality_law_legal_llm_001_024.json")
 DISABILITY_RIGHTS_LAW_LLM = os.path.join(ROOT, "data", "disability_rights_arabic_legal_llm", "disability_rights_law_legal_llm_001_033.json")
 TOURISM_LAW_LLM = os.path.join(ROOT, "data", "tourism_arabic_legal_llm", "tourism_law_legal_llm_001_019.json")
+STANDARDS_QUALITY_REGULATION_LLM = os.path.join(ROOT, "data", "standards_quality_regulation_arabic_legal_llm", "standards_quality_regulation_legal_llm_001_023.json")
+DISABILITY_RIGHTS_REGULATION_LLM = os.path.join(ROOT, "data", "disability_rights_regulation_arabic_legal_llm", "disability_rights_regulation_legal_llm_001_045.json")
+ANTI_SMOKING_REGULATION_LLM = os.path.join(ROOT, "data", "anti_smoking_regulation_arabic_legal_llm", "anti_smoking_regulation_legal_llm_001_020.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -447,6 +450,9 @@ def main() -> int:
     standards_quality_law_llm = _load_json(STANDARDS_QUALITY_LAW_LLM)
     disability_rights_law_llm = _load_json(DISABILITY_RIGHTS_LAW_LLM)
     tourism_law_llm = _load_json(TOURISM_LAW_LLM)
+    standards_quality_regulation_llm = _load_json(STANDARDS_QUALITY_REGULATION_LLM)
+    disability_rights_regulation_llm = _load_json(DISABILITY_RIGHTS_REGULATION_LLM)
+    anti_smoking_regulation_llm = _load_json(ANTI_SMOKING_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -467,7 +473,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 189,
+        "total_tracks": 192,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -660,6 +666,9 @@ def main() -> int:
             + standards_quality_law_llm["record_count"]  # 24 Standards and Quality Law (Royal Decree M/36, 29/1/1446H, Clause Two) (TIER_2, decree number CORRECTED from the coverage-gap-map's unconfirmable M/148; official Umm al-Qura Gazette notice confirms the decree and quotes Article 23 verbatim; full text from qanoonsa.com cross-checked against nezams.com (2 words corrected in Article 1); laws.boe.gov.sa index entry confirmed by name but unreachable live this pass, 24 اصلية across 7 أبواب, no confirmed amendment, NO named-predecessor repeal (generic conflict clause only) -- distinct from the sibling Product Safety Law (track_id: product_safety) approved by the same joint decree's Clause One, and distinct from SASO's own founding statute (Royal Decree M/10, 3/3/1392H), see track notes)
             + disability_rights_law_llm["record_count"]  # 33 Rights of Persons with Disabilities Law (Royal Decree M/27, 11/2/1445H) (TIER_3, laws.boe.gov.sa has a dedicated lawId page but was unreachable this pass, web.archive.org confirmed egress-blocked and not bypassed, PRIMARY nezams.com cross-verified verbatim article-by-article against qanoonsa.com, all 33 اصلية across 5 أبواب, no amendment since enactment, CONFIRMED named-predecessor repeal of the old نظام رعاية المعوقين (M/37, 23/9/1421H) via Article 32, triple-corroborated including from CoM Resolution 110's own recitals, see track notes)
             + tourism_law_llm["record_count"]  # 19 Tourism Law (Royal Decree M/18, 26/1/1444H) (TIER_2, laws.boe.gov.sa has a dedicated lawId page but was unreachable this pass, web.archive.org refused/403 not bypassed, ORIGINAL full text from an official Ministry of Tourism PDF cross-checked verbatim against nezams.com and structurally cross-checked against the official BOE English translation, all 19 اصلية, flat structure/no chapters, CONFIRMED named-predecessor repeal of the old Tourism Law (M/2, 9/1/1436H) via Article 18, double-confirmed from both directions, see track notes)
+            + standards_quality_regulation_llm["record_count"]  # 23 Implementing Regulation of the Standards and Quality Law (Minister of Commerce Decision No. 098, 18/5/1446H) (TIER_1, PRIMARY x2 independent -- SASO's own official site (issuing/administering authority) + Umm al-Qura Gazette's own API, both fetched directly and agreeing on decision number/date; cross-verified against qanoonsa.com SECONDARY for full text, cosmetic numeral-style difference only, all 23 اصلية across 7 أبواب, NO predecessor regulation (first Implementing Regulation under this law), see track notes)
+            + disability_rights_regulation_llm["record_count"]  # 45 Implementing Regulation of the Rights of Persons with Disabilities Law (Authority Board Resolution No. 26, 29 Shawwal 1445H) (TIER_2, PRIMARY uqn.gov.sa (Umm al-Qura Gazette portal itself) fetched directly as full HTML text; SECONDARY qanoonsa.com cross-verified article-by-article (15/45 byte-identical, remainder cosmetic differences only); laws.boe.gov.sa unreachable this pass, all 45 اصلية across 12 فصول (a genuine 12-vs-11 chapter-count discrepancy vs a third source is disclosed, not silently resolved), NO amendment found, see track notes)
+            + anti_smoking_regulation_llm["record_count"]  # 17 Implementing Regulation of the Anti-Smoking Law (11 اصلية, 6 معدلة -- Articles 2,3,5,6,7,8) (TIER_2, FOUNDING RESOLUTION NUMBER/DATE NOT CONFIRMED this pass -- a prior pass's assumption that Ministerial Resolution 797557 (1/5/1441H) was the founding issuance is CORRECTED here: independently re-verified as a real, well-corroborated AMENDMENT resolution instead, whose reported content matches the Article 7 change found by diffing; PRIMARY official MOH PDF (3rd edition, 2019, vision-read) cross-checked against a 2017 WHO/EMRO-hosted edition to detect the 6 amended articles; laws.boe.gov.sa has no dedicated lawId page at all; Articles 14/15/17 intentionally absent (no regulation content in either edition), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -843,6 +852,9 @@ def main() -> int:
             + standards_quality_law_llm["record_count"]
             + disability_rights_law_llm["record_count"]
             + tourism_law_llm["record_count"]
+            + standards_quality_regulation_llm["record_count"]
+            + disability_rights_regulation_llm["record_count"]
+            + anti_smoking_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6345,6 +6357,90 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Tourism Law «نظام السياحة» — Royal Decree No. (M/18), dated 26/1/1444H (~2022G), approving Council of Ministers Resolution No. (79), 25/1/1444H, published Umm al-Qura 7/2/1444H; administered by the Ministry of Tourism. **19 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-19 sequence). **ALL 19 اصلية** — no known amendments as of this pass. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a confirmed dedicated lawId page but was unreachable this pass (live HTTP 503; the Umm al-Qura gazette page also 503/un-rendered SPA); web.archive.org was refused (403) and not bypassed. Original full text from an official Ministry of Tourism PDF (cdn.mt.gov.sa) cross-checked verbatim against nezams.com, and structurally cross-checked (English, reference-only) against the official BOE translation (misa.gov.sa). **CONFIRMED named-predecessor repeal**: Article 18 explicitly states this Law replaces the prior Tourism Law (Royal Decree M/2, 9/1/1436H) and repeals all conflicting provisions — confirmed from BOTH directions (this law's own Article 18 text AND the predecessor law's own nezams.com status record, which independently states it was repealed by this exact decree) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1436H instrument is not itself ingested as a separate track. Implementing Regulations (ten-plus issued under this law, cdn.mt.gov.sa) are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "standards_quality_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام المواصفات والجودة",
+                "display_name_en": "Implementing Regulation of the Standards and Quality Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SASO_OFFICIAL_SITE_X_UQN_API_DUAL_PRIMARY_X_QANOONSA_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE",
+                "source_authority": "Decision of the Minister of Commerce (Chairman of SASO's Board) No. (098), dated 18/5/1446H (20 Nov 2024G), adopted via SASO Board Resolution No. (02/203/2024), 203rd meeting, 15/11/2024G, published Umm al-Qura Gazette Issue (5058), 29/11/2024G, issued under Article 23 of the base Standards and Quality Law (Royal Decree M/36, track_id: standards_quality). PRIMARY x2 independent: SASO's own official site (the issuing/administering authority itself) fetched directly, and Umm al-Qura Gazette's own API (uqn.gov.sa/api/article/.../json, not just search-indexed) fetched directly — both agree on decision number/date; laws.boe.gov.sa has no dedicated lawId page for this Implementing Regulation.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": standards_quality_regulation_llm["record_count"],
+                    "data_path": "data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json"}},
+                "record_counts": {"arabic_articles": standards_quality_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": standards_quality_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/standards_quality_regulation/law/official_source/standards_quality_regulation_official_source.json",
+                    "sources/standards_quality_regulation/law/verified/standards_quality_regulation_verified_records.jsonl",
+                    "data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json",
+                ],
+                "validator_targets": ["make standards-quality-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Standards and Quality Law «اللائحة التنفيذية لنظام المواصفات والجودة» — Decision of the Minister of Commerce (Chairman of SASO's Board) No. (098), dated 18/5/1446H (20 Nov 2024G), adopted via SASO Board Resolution No. (02/203/2024) at its 203rd meeting (15/11/2024G), published Umm al-Qura Gazette Issue (5058), 29/11/2024G, issued under Article 23 of the base Standards and Quality Law (Royal Decree M/36, 29/1/1446H, track_id: standards_quality, already ingested separately). This track's own coverage-gap-map scan flagged this Implementing Regulation as a confirmed-exists candidate (citation initially only Umm al-Qura notice-level); this pass independently re-confirms and fully ingests it. **23 records, ALL اصلية (0 معدلة, 0 ملغاة, 0 مضافة), 7 أبواب**, continuous numbering 1-23. **VERIFICATION TIER: TIER_1 (two independent PRIMARY sources agree)** — (1) SASO's own official site (www.saso.gov.sa, the issuing/administering authority itself) hosts the full 23-article text plus a linked PDF explicitly labeled 'أصل الوثيقة' (the original document), fetched directly (HTTP 200); (2) Umm al-Qura Gazette's own API (uqn.gov.sa/api/article/.../json, not mere search-indexing) fetched directly across two separate gazette notices, one of which quotes the ministerial decision's preamble verbatim including the exact decision number and date. Cross-verified against qanoonsa.com (SECONDARY) article-by-article: full text identical except one disclosed cosmetic difference (enumerated sub-clauses use Western digits+period in the official PDF vs. Eastern Arabic-Indic digits+dash in qanoonsa.com — adopted here for consistency with this corpus's own established numbering convention; content/count/order identical across all three sources). Supplementary corroboration from argaam.com (financial news) and independent search-engine indexing. laws.boe.gov.sa has NO dedicated lawId page for this Implementing Regulation — search results surface only the base law's shared Id (c487b0ff-8e52-442d-bf62-b1cd009fdc57); live access was connection-reset and not circumvented (no proxy, no Wayback). **NO predecessor regulation superseded** — this is the first Implementing Regulation issued under this Law, which itself only dates to August 2024 (M/36, 29/1/1446H); no repeal edge is modeled. One disclosed, unresolved (not assumed either way) footer metadata point: SASO's page carries a 'last modified 10 Feb 2025' timestamp with no corresponding amendment decision found by title or number, and no textual difference from the November 2024 qanoonsa.com text — most likely a purely technical/administrative page update, flagged as an open follow-up point rather than classified as an amendment. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "disability_rights_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام حقوق الأشخاص ذوي الإعاقة",
+                "display_name_en": "Implementing Regulation of the Rights of Persons with Disabilities Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GOV_SA_PRIMARY_HTML_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSVERIFIED_BOE_SHARED_PAGE_UNREACHABLE",
+                "source_authority": "Resolution No. (26) of the Board of Directors of the Authority for the Care of Persons with Disabilities, approved at the Board's 26th meeting, 29 Shawwal 1445H (~8 May 2024G), issued under Article 31 of the base Law (Royal Decree M/27, 11/2/1445H, track_id: disability_rights_law), published Umm al-Qura Gazette Issue (5033), per the secondary source qanoonsa.com (24 May 2024G — not shown explicitly on uqn.gov.sa's own page). PRIMARY uqn.gov.sa (the official Umm al-Qura Gazette portal itself) serves the complete 45-article text as direct HTML (not a scanned image); laws.boe.gov.sa shares the base law's lawId page and was unreachable live this pass.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": disability_rights_regulation_llm["record_count"],
+                    "data_path": "data/disability_rights_regulation_arabic_legal_llm/disability_rights_regulation_legal_llm_001_045.json"}},
+                "record_counts": {"arabic_articles": disability_rights_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 45, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": disability_rights_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/disability_rights_regulation/law/official_source/disability_rights_regulation_official_source.json",
+                    "sources/disability_rights_regulation/law/verified/disability_rights_regulation_verified_records.jsonl",
+                    "data/disability_rights_regulation_arabic_legal_llm/disability_rights_regulation_legal_llm_001_045.json",
+                ],
+                "validator_targets": ["make disability-rights-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Rights of Persons with Disabilities Law «اللائحة التنفيذية لنظام حقوق الأشخاص ذوي الإعاقة» — Resolution No. (26) of the Board of Directors of the Authority for the Care of Persons with Disabilities, approved at the Board's 26th meeting, 29 Shawwal 1445H (~8 May 2024G), issued under Article 31 of the base Law (Royal Decree M/27, 11/2/1445H, track_id: disability_rights_law, already ingested separately). This track's own coverage-gap-map scan flagged this Implementing Regulation as a confirmed-exists candidate (secondary-source-estimated at ~45 articles/11 chapters); this pass independently re-confirms and fully ingests it. **45 records, ALL اصلية (0 معدلة, 0 ملغاة, 0 مضافة) across 12 فصول** (not 11 as the prior scan's secondary snippets suggested). **VERIFICATION TIER: TIER_2** — PRIMARY is uqn.gov.sa (the official Umm al-Qura Gazette portal itself), whose dedicated page for this regulation serves the complete text as direct HTML (not a scanned image), fetched directly (HTTP 200). SECONDARY qanoonsa.com cross-checked verbatim article-by-article: 15/45 articles byte-for-byte identical, the remaining 30/45 differing only in cosmetic ways (numbering-punctuation style, isolated typos on qanoonsa.com's side) — no substantive difference found. laws.boe.gov.sa shares the base law's lawId page rather than hosting a dedicated one for this Implementing Regulation, and was unreachable live this pass (TLS connection reset, not circumvented), matching the base law track's own finding. **CHAPTER-COUNT DISCREPANCY DISCLOSED, NOT SILENTLY RESOLVED**: the primary uqn.gov.sa text explicitly shows 12 chapters, while a third independent source (argaam.com, a Saudi financial news outlet) states 11 — traced to qanoonsa.com's own copy omitting the heading for the 12th chapter ('الأحكام الختامية') even though it fully contains Articles 43-45; this track adopts 12 (the primary source) and preserves the conflict here rather than assuming either count. The resolution number (26) and gazette issue number (5033) are confirmed only via the secondary source qanoonsa.com, not the primary page's own operative text — flagged, not treated as fully primary-confirmed. An annex table (assistive devices) exists in the source but is not modeled as an article, matching this corpus's existing convention for such annexes. **NO amendment found** since issuance; Article 43 cross-references الباب الرابع من النظام (the base law's own Violations & Penalties chapter, Articles 21-28), consistent with the already-ingested base law's structure. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "anti_smoking_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام مكافحة التدخين",
+                "display_name_en": "Implementing Regulation of the Anti-Smoking Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOH_PDF_PRIMARY_2019_3RD_EDITION_X_WHO_EMRO_2017_DIFF_CROSSCHECK_BOE_NO_DEDICATED_PAGE_FOUNDING_RESOLUTION_UNCONFIRMED",
+                "source_authority": "Ministry of Health, Implementing Regulation of the Anti-Smoking Law, 3rd edition (2019) as currently in force — the founding ministerial resolution's own number/date could NOT be confirmed this pass (flagged honestly, not fabricated); the most recently confirmed AMENDING resolution is Ministerial Resolution No. (797557), dated 1/5/1441H (a prior pass's assumption that this was the FOUNDING resolution is corrected here — independently re-verified as an amendment, per multiple corroborating web sources). laws.boe.gov.sa has NO dedicated lawId page at all for this Implementing Regulation. PRIMARY is the official MOH PDF (moh.gov.sa, vision-read in full, the same file the base anti_smoking_law track already cites), cross-checked against a 2017 WHO/EMRO-hosted edition of the same regulation to detect amendments by clause-by-clause diff.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": anti_smoking_regulation_llm["record_count"],
+                    "data_path": "data/anti_smoking_regulation_arabic_legal_llm/anti_smoking_regulation_legal_llm_001_020.json"}},
+                "record_counts": {"arabic_articles": anti_smoking_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 11, "معدلة": 6, "ملغاة": 0, "مضافة": 0},
+                                  "total": anti_smoking_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/anti_smoking_regulation/law/official_source/anti_smoking_regulation_official_source.json",
+                    "sources/anti_smoking_regulation/law/verified/anti_smoking_regulation_verified_records.jsonl",
+                    "data/anti_smoking_regulation_arabic_legal_llm/anti_smoking_regulation_legal_llm_001_020.json",
+                ],
+                "validator_targets": ["make anti-smoking-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Anti-Smoking Law «اللائحة التنفيذية لنظام مكافحة التدخين» — issued under Article 19 of the base Anti-Smoking Law (already ingested separately, track_id: anti_smoking). This track's own coverage-gap-map scan flagged Ministerial Resolution No. (797557), dated 1/5/1441H, as a candidate citation, explicitly noting it as the weakest/most-uncertain of a trio of newly-found Implementing Regulation candidates and instructing extra scrutiny — that scrutiny changed the finding: **797557/1441H is real and well-corroborated (argaam.com news article dated 25 Jan 2020, mohamoon-ksa.com citation, general web search) but every source describing it calls it an AMENDMENT resolution ('الموافقة على تعديل عدد من مواد اللائحة'), never the founding/original issuance**. The founding resolution's own number and date could NOT be found this pass despite genuine attempts (Article 19 of the base law implies one should exist from ~early 1437H) — honestly flagged as UNCONFIRMED rather than guessed or fabricated. **17 records (of 20 possible base-law article numbers — Articles 14, 15, 17 intentionally absent, confirmed to have no regulation content in either edition examined, not silently dropped): 11 اصلية, 6 معدلة (Articles 2,3,5,6,7,8), 0 ملغاة, 0 مضافة.** FLAT structure relative to the base law's own numbering (chapter_structure empty by design). **VERIFICATION TIER: TIER_2** — PRIMARY is the official MOH PDF ('3rd edition, 2019', the same file the base anti_smoking_law track cites), vision-read in full since pdftotext fails on its embedded font; CROSS-CHECKED against a 2017-dated WHO/EMRO-hosted PDF edition of the same regulation, diffed clause-by-clause across all 17 regulation-bearing articles: 11 verbatim-identical (1,4,9,10,11,12,13,16,18,19,20), 6 with confirmed real textual differences (2,3,5,6,7,8) — of these six, only Article 7's change (mosques added to the 13-place smoking-ban list; buffer distance 8m->10m) is independently attributable by name to Resolution 797557 via the argaam.com article; the other five confirmed changes are real (found by direct diff) but not attributed to any specific numbered resolution by any source located this pass — flagged as an open provenance gap rather than assumed. laws.boe.gov.sa has NO dedicated lawId page for this Implementing Regulation at all (only the base law has one); uqn.gov.sa (404), nctc.gov.sa (DNS failure), and qanoniah.com (JS/login-gated) were each attempted and found inaccessible. One verbatim editing artifact preserved from the primary source itself (a leftover trailing duplicated phrase in Article 8) was kept as-is per this corpus's no-silent-fix rule, and flagged rather than corrected. No named-predecessor-regulation repeal is confirmed or modeled — this is treated as the current consolidated text of a regulation whose founding instrument remains unconfirmed. Arabic governs; not legal advice.",
             },
         ],
     }

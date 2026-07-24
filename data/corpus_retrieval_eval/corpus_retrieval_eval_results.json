@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 406,
-  "top1_hits": 380,
-  "top3_hits": 399,
-  "top5_hits": 402,
-  "top1_accuracy": 0.936,
-  "top3_accuracy": 0.9828,
-  "top5_accuracy": 0.9901,
-  "mrr_at_5": 0.9586,
+  "total_queries": 412,
+  "top1_hits": 386,
+  "top3_hits": 405,
+  "top5_hits": 408,
+  "top1_accuracy": 0.9369,
+  "top3_accuracy": 0.983,
+  "top5_accuracy": 0.9903,
+  "mrr_at_5": 0.9592,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -4943,9 +4943,9 @@
      "score": 33
     },
     {
-     "record_id": "anti-concealment-law-llm-art-008",
-     "article_number": 8,
-     "score": 31
+     "record_id": "disability-rights-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 33
     }
    ]
   },
@@ -10275,9 +10275,9 @@
      "score": 24
     },
     {
-     "record_id": "health-system-regulation-llm-art-005",
-     "article_number": 6,
-     "score": 21
+     "record_id": "disability-rights-regulation-llm-art-022",
+     "article_number": 22,
+     "score": 22
     }
    ]
   },
@@ -12006,14 +12006,14 @@
      "score": 50
     },
     {
+     "record_id": "anti-smoking-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 26
+    },
+    {
      "record_id": "anti-smoking-law-llm-art-018",
      "article_number": 18,
      "score": 21
-    },
-    {
-     "record_id": "anti-harassment-law-llm-art-002",
-     "article_number": 2,
-     "score": 19
     }
    ]
   },
@@ -12603,6 +12603,192 @@
      "record_id": "engineering-practice-law-llm-art-012",
      "article_number": 12,
      "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "sqr-001",
+   "query_ar": "للهيئة بعد مراجعة المواصفة السعودية والوثيقة ذات الصلة تعليق العمل بالمواصفة أو الوثيقة",
+   "category": "topical",
+   "gold": {
+    "corpus": "standards_quality",
+    "law_component": "regulation",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "standards-quality-regulation-llm-art-012",
+     "article_number": 12,
+     "score": 33
+    },
+    {
+     "record_id": "standards-quality-regulation-llm-art-013",
+     "article_number": 13,
+     "score": 25
+    },
+    {
+     "record_id": "standards-quality-law-llm-art-006",
+     "article_number": 6,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "sqr-002",
+   "query_ar": "يجب على المرخص له التوقف عن استخدام علامة الجودة على المنتجات أو الإعلان عن استخدامها في أي وسيلة من وسائل الإعلام بعد انتهاء الترخيص",
+   "category": "topical",
+   "gold": {
+    "corpus": "standards_quality",
+    "law_component": "regulation",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "standards-quality-regulation-llm-art-020",
+     "article_number": 20,
+     "score": 49
+    },
+    {
+     "record_id": "labor-annex3-llm-art-008",
+     "article_number": 8,
+     "score": 27
+    },
+    {
+     "record_id": "standards-quality-law-llm-art-017",
+     "article_number": 17,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "drr-001",
+   "query_ar": "يجب تهيئة وسائل النقل البرية والبحرية والجوية ومحطات انطلاقها، بالأدوات والتقنيات والمعلومات والخدمات الإلكترونية اللازمة لتيسير خدمة الأشخاص ذوي الإعاقة",
+   "category": "topical",
+   "gold": {
+    "corpus": "disability_rights",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-rights-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 59
+    },
+    {
+     "record_id": "disability-rights-regulation-llm-art-012",
+     "article_number": 12,
+     "score": 38
+    },
+    {
+     "record_id": "disability-rights-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "drr-002",
+   "query_ar": "على شركات التأمين الطبي عند توفيرها للخدمات التأمينية الصحية للأشخاص ذوي الإعاقة مراعاة الآتي",
+   "category": "topical",
+   "gold": {
+    "corpus": "disability_rights",
+    "law_component": "regulation",
+    "article_number": 28
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-rights-regulation-llm-art-028",
+     "article_number": 28,
+     "score": 44
+    },
+    {
+     "record_id": "insurance-control-law-llm-art-002",
+     "article_number": 2,
+     "score": 27
+    },
+    {
+     "record_id": "disability-rights-law-llm-art-009",
+     "article_number": 9,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "asr-001",
+   "query_ar": "يمنع الإعلان والدعاية والترويج بما في ذلك الرعاية للتبغ ومشتقاته وذلك بشكل مباشر وغير مباشر عن طريق قنوات وسائل الإعلان والإعلام السعودي",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_smoking",
+    "law_component": "regulation",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-smoking-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 32
+    },
+    {
+     "record_id": "anti-smoking-law-llm-art-010",
+     "article_number": 10,
+     "score": 27
+    },
+    {
+     "record_id": "food-regulation-llm-art-021",
+     "article_number": 21,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "asr-002",
+   "query_ar": "لا تباع منتجات التبغ أو أحد من مشتقاته إلا داخل عبوات مغلقة، ويكون بيع السجائر في عبوة مغلقة على الا تقل عن عدد",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_smoking",
+    "law_component": "regulation",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-smoking-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 36
+    },
+    {
+     "record_id": "anti-smoking-law-llm-art-008",
+     "article_number": 8,
+     "score": 28
+    },
+    {
+     "record_id": "anti-smoking-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 27
     }
    ]
   }

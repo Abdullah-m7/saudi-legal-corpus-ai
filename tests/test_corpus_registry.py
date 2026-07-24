@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 189
+        assert registry["total_tracks"] == 192
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 11446
+        assert registry["total_primary_arabic_governing_records"] == 11531
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 12341
+        assert registry["total_registry_counted_records"] == 12426
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -258,6 +258,9 @@ class TestTracks:
         assert "standards_quality_law" in ids
         assert "disability_rights_law" in ids
         assert "tourism_law" in ids
+        assert "standards_quality_regulation" in ids
+        assert "disability_rights_regulation" in ids
+        assert "anti_smoking_regulation" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -1295,6 +1298,24 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 19
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 19, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "BOE_LAWID_UNREACHABLE_WAYBACK_REFUSED_X_MT_PDF_PRIMARY_X_NEZAMS_CROSS_VERIFIED_X_MISA_EN_STRUCTURAL"
+
+    def test_standards_quality_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "standards_quality_regulation")
+        assert t["record_counts"]["arabic_articles"] == 23
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "SASO_OFFICIAL_SITE_X_UQN_API_DUAL_PRIMARY_X_QANOONSA_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE"
+
+    def test_disability_rights_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "disability_rights_regulation")
+        assert t["record_counts"]["arabic_articles"] == 45
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 45, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "UQN_GOV_SA_PRIMARY_HTML_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSVERIFIED_BOE_SHARED_PAGE_UNREACHABLE"
+
+    def test_anti_smoking_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "anti_smoking_regulation")
+        assert t["record_counts"]["arabic_articles"] == 17
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 11, "معدلة": 6, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOH_PDF_PRIMARY_2019_3RD_EDITION_X_WHO_EMRO_2017_DIFF_CROSSCHECK_BOE_NO_DEDICATED_PAGE_FOUNDING_RESOLUTION_UNCONFIRMED"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),
