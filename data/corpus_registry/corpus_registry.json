@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10957,
+  "total_primary_arabic_governing_records": 11001,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11852,
-  "total_tracks": 176,
+  "total_registry_counted_records": 11896,
+  "total_tracks": 177,
   "tracks": [
     {
       "boundaries": {
@@ -8387,6 +8387,55 @@
       "validator_targets": [
         "make protection-from-abuse-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/associations_ngo/law/official_source/associations_ngo_law_official_source.json",
+        "sources/associations_ngo/law/verified/associations_ngo_law_verified_records.jsonl",
+        "data/associations_ngo_arabic_legal_llm/associations_ngo_law_legal_llm_001_044.json"
+      ],
+      "display_name_ar": "نظام الجمعيات والمؤسسات الأهلية",
+      "display_name_en": "Law of Associations and Civil Institutions",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/associations_ngo_arabic_legal_llm/associations_ngo_law_legal_llm_001_044.json",
+          "governing": true,
+          "record_count": 44,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of Associations and Civil Institutions «نظام الجمعيات والمؤسسات الأهلية» — Royal Decree No. (M/8), dated 19/2/1437H, approving Council of Ministers Resolution No. (61), 18/2/1437H; published Umm Al-Qura Gazette 7/3/1437H (~2015G); administered originally by the Ministry of Social Affairs, later by the National Center for the Non-Profit Sector under the Ministry of Human Resources and Social Development. A brand-new standalone Law (not a companion regulation of any existing track). **44 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-44 sequence); 19 of the 44 articles carry their own internal subject heading (stored in section_ar), the other 25 have none. **43 اصلية / 1 معدلة (Article 1 only)**. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa's own indexing shows TWO different lawId values for this law's name and the live portal was unreachable this pass (HTTP 503 / connection reset across several attempts); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full text from nezams.com, independently cross-checked against a menarights.org PDF (KSA_Law on NGOs 2015) confirming the article count and the verbatim text of the closing articles (42, 43, 44), the preamble, and mid-document spot-checks — honestly kept at TIER_3 (not upgraded to TIER_2) since the canonical BOE portal page itself could not be retrieved or archived this pass. **CONFIRMED amendment**: Council of Ministers Resolution 618 (20/10/1442H) inserted two NEW definitions into Article 1 ('المركز': the National Center for the Non-Profit Sector; 'المجلس': the Center's board) — the only article classified معدلة, with both notes preserved verbatim in `history`. Resolution 618 ALSO horizontally substitutes 'the Center'/'the Board' for 'the Ministry'/'the Minister' throughout the statute EXCEPT in Articles 7, 25 and 38 (explicitly exempted, each carrying a source note to that effect) — this repo-wide substitution is recorded in known_unresolved_discrepancies rather than rewritten into each affected article's stored text, so no other article is marked معدلة for it; all article bodies remain exactly as published (الوزارة/الوزير), per this corpus's no-silent-rewrite rule. Council of Ministers Resolution 367 (29/6/1443H) separately amended the competent-authority designation in the enacting resolution's annex (Ministry of Interior + State Security Presidency) — not a numbered-article change, preserved verbatim in preamble_ar. **CONFIRMED named-predecessor repeal**: Article 43 EXPLICITLY repeals the Charitable Associations and Institutions Regulation «لائحة الجمعيات والمؤسسات الخيرية» (Council of Ministers Resolution No. 107, 25/6/1410H), plus a general residual conflict clause — a genuine repeal link (unlike child_protection_law/protection_from_abuse_law, both founding statutes with no repeal clause), flagged for the corpus-wide supersession/repeal graph; the repealed 1410H regulation is not itself ingested as a separate track. A companion Implementing Regulation (Ministerial Resolution 73739, 11/6/1437H) exists but was deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_TWO_CONFLICTING_LAWID_UNREACHABLE_X_NEZAMS_COM_PRIMARY_X_MENARIGHTS_ORG_PDF_CROSSCHECK",
+      "record_counts": {
+        "arabic_articles": 44,
+        "legal_status_breakdown": {
+          "اصلية": 43,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 44
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/8), dated 19/2/1437H, approving Council of Ministers Resolution No. (61), dated 18/2/1437H; published Umm Al-Qura Gazette 7/3/1437H (~2015G); administered originally by the Ministry of Social Affairs, later by the National Center for the Non-Profit Sector under the Ministry of Human Resources and Social Development — laws.boe.gov.sa checked first per methodology: its own indexing shows TWO different lawId values for this law's name (37e0768f-8e3c-493a-b951-a9a700f2bbb1 and b97fcccb-3c26-4fe2-9c61-a9a700f2bc4e), and the live portal was unreachable this pass (HTTP 503 / connection reset across several attempts), Wayback egress-blocked and not circumvented. PRIMARY full text from nezams.com, independently cross-checked against a menarights.org PDF (KSA_Law on NGOs 2015) for article count and the closing articles' verbatim text, plus BOE portal search-index snippets for decree identity and substantive provisions",
+      "status": "complete",
+      "track_id": "associations_ngo_law",
+      "validator_targets": [
+        "make associations-ngo-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8408,6 +8457,7 @@
       "anti_trafficking": 17,
       "antiquities_heritage": 94,
       "arbitration": 77,
+      "associations_ngo": 44,
       "awqaf": 25,
       "banking_control": 26,
       "bankruptcy": 353,
@@ -8526,7 +8576,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10788,
+    "total_records": 10832,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -1233,6 +1233,27 @@ EDGES = [
                 "(one-instrument-per-pass rule).",
         "source_ref": "sources/antiquities_heritage/law/official_source/antiquities_heritage_law_official_source.json (Article 92)",
     },
+    {
+        "from_track_id": "associations_ngo_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "لائحة الجمعيات والمؤسسات الخيرية (السابقة)",
+        "target_decree": "Council of Ministers Resolution No. (107), 25/6/1410H",
+        "note": "associations_ngo_law (Royal Decree M/8, 19/2/1437H) Article 43 "
+                "explicitly repeals the predecessor Charitable Associations "
+                "and Institutions Regulation (لائحة الجمعيات والمؤسسات "
+                "الخيرية), Council of Ministers Resolution No. (107), dated "
+                "25/6/1410H -- confirmed via Article 43's own verbatim text: "
+                "\"يلغي هذا النظام لائحة الجمعيات والمؤسسات الخيرية، الصادرة "
+                "بقرار مجلس الوزراء رقم (107) وتاريخ 25/6/1410هـ، وكل ما "
+                "يتعارض معه من أحكام\", identically confirmed in both this "
+                "track's nezams.com source and the independent menarights.org "
+                "PDF cross-check. This is a real confirmed named-predecessor "
+                "repeal (plus a general residual conflict clause), not an "
+                "ambiguous/excluded case. Not separately ingested in this "
+                "corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/associations_ngo/law/official_source/associations_ngo_law_official_source.json (Article 43)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

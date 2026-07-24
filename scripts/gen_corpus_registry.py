@@ -214,6 +214,7 @@ PRIVATIZATION_LAW_LLM = os.path.join(ROOT, "data", "privatization_arabic_legal_l
 ANTIQUITIES_HERITAGE_LAW_LLM = os.path.join(ROOT, "data", "antiquities_heritage_arabic_legal_llm", "antiquities_heritage_law_legal_llm_001_094.json")
 CHILD_PROTECTION_LAW_LLM = os.path.join(ROOT, "data", "child_protection_arabic_legal_llm", "child_protection_law_legal_llm_001_025.json")
 PROTECTION_FROM_ABUSE_LAW_LLM = os.path.join(ROOT, "data", "protection_from_abuse_arabic_legal_llm", "protection_from_abuse_law_legal_llm_001_017.json")
+ASSOCIATIONS_NGO_LAW_LLM = os.path.join(ROOT, "data", "associations_ngo_arabic_legal_llm", "associations_ngo_law_legal_llm_001_044.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -421,6 +422,7 @@ def main() -> int:
     antiquities_heritage_law_llm = _load_json(ANTIQUITIES_HERITAGE_LAW_LLM)
     child_protection_law_llm = _load_json(CHILD_PROTECTION_LAW_LLM)
     protection_from_abuse_law_llm = _load_json(PROTECTION_FROM_ABUSE_LAW_LLM)
+    associations_ngo_law_llm = _load_json(ASSOCIATIONS_NGO_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -441,7 +443,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 176,
+        "total_tracks": 177,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -621,6 +623,7 @@ def main() -> int:
             + antiquities_heritage_law_llm["record_count"]  # 94 Antiquities, Museums and Urban Heritage Law (Royal Decree M/3, 9/1/1436H) (TIER_3, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com born-digital text corroborated by a BOE-content print PDF (media.unesco.org, non-government hosting) plus the Umm Al-Qura Gazette for the M/67 amendment scope specifically, 78 اصلية/16 معدلة across 6 amendment instruments (never silently merged, pre-amendment text preserved in history), genuinely flat/no chapters, CONFIRMED named-predecessor repeal of نظام الآثار (M/26, 23/6/1392H) via Article 92, see track notes)
             + child_protection_law_llm["record_count"]  # 26 Child Protection Law (Royal Decree M/14, 3/2/1436H) (TIER_3, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text, decree identity/5-chapter structure/original 25-article text independently confirmed by the official MOJ Adl-journal PDF (used for identity/structure only due to a bidi-reordering PDF-extraction defect, not letter-for-letter matching), 25 numbered articles + 1 مكرر across 5 فصول, 21 اصلية/4 معدلة/1 مضافة, CONFIRMED amendment via CoM Resolution 427/Royal Decree M/72 1443H (Articles 12,15,19,23 amended + Article 23-mukarrar added), distinct from juveniles_law and the separate protection_from_abuse_law candidate, see track notes)
             + protection_from_abuse_law_llm["record_count"]  # 17 Protection from Abuse Law (Royal Decree M/52, 15/11/1434H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY official Ministry of Finance regulations-library PDF (Diwan Malaki circular 41930) used as the governing text, cross-checked verbatim against nezams.com, 14 اصلية/3 معدلة (Articles 7,12,13), flat structure/no chapters, CONFIRMED amendment via CoM Resolution 427/Royal Decree M/72 1443H (same decree that amended child_protection_law), no repeal clause of any kind (founding statute), distinct from child_protection_law, see track notes)
+            + associations_ngo_law_llm["record_count"]  # 44 Law of Associations and Civil Institutions (Royal Decree M/8, 19/2/1437H) (TIER_3, BOE indexing shows two conflicting lawId values for this law's name and the live portal was unreachable this pass, PRIMARY nezams.com full text independently cross-checked against a menarights.org PDF for article count/closing-articles verbatim text, 43 اصلية/1 معدلة (Article 1 only, CoM Resolution 618's new definitions), flat structure/no chapters, CONFIRMED named-predecessor repeal of لائحة الجمعيات والمؤسسات الخيرية (CoM Resolution 107, 25/6/1410H) via Article 43, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -791,6 +794,7 @@ def main() -> int:
             + antiquities_heritage_law_llm["record_count"]
             + child_protection_law_llm["record_count"]
             + protection_from_abuse_law_llm["record_count"]
+            + associations_ngo_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5929,6 +5933,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Protection from Abuse Law «نظام الحماية من الإيذاء» — Royal Decree No. (M/52), dated 15/11/1434H, approving Council of Ministers Resolution No. (332), 19/10/1434H; published Umm Al-Qura Gazette 24/12/1434H (~2013G); administered by the Ministry of Human Resources and Social Development. A brand-new standalone Law (not a companion regulation of any existing track). **17 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-17 sequence). **14 اصلية / 3 معدلة (Articles 7, 12, 13)**. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (live HTTP 503); Wayback egress-blocked at the network layer, not circumvented. PRIMARY original full text from an official Ministry of Finance regulations-library PDF (mof.gov.sa, Diwan Malaki circular No. 41930) — a genuine Saudi government document used directly as the governing text, cross-checked verbatim against nezams.com. **CONFIRMED amendment**: the same Council of Ministers Resolution 427 (5/8/1443H)/Royal Decree M/72 (6/8/1443H) that amended `child_protection_law` — 'تعديل نظامي الحماية من الإيذاء وحماية الطفل' — amended this Law's Article 7 (adding paragraph 6) and fully replaced Articles 12 and 13, independently confirmed via the Umm Al-Qura official gazette cross-checked against nezams.com. Amended articles keep their original verbatim text with the amendment preserved in `history`, never silently merged. **No repeal clause of any kind found** — a founding statute; Article 17 is only the standard 90-day entry-into-force clause; no supersession-graph edge applies (mirrors the finance_lease_law/child_protection_law precedent). **Distinct from `child_protection_law`** (نظام حماية الطفل, Royal Decree M/14, 3/2/1436H — child-specific care/rights/protection): this track is a general abuse-protection statute (all victims), sharing only a co-amendment link via the same M/72 decree, with no textual overlap. A companion Implementing Regulation (Ministerial Resolution 43047, 8/5/1435H) exists but was deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "associations_ngo_law",
+                "display_name_ar": "نظام الجمعيات والمؤسسات الأهلية",
+                "display_name_en": "Law of Associations and Civil Institutions",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_TWO_CONFLICTING_LAWID_UNREACHABLE_X_NEZAMS_COM_PRIMARY_X_MENARIGHTS_ORG_PDF_CROSSCHECK",
+                "source_authority": "Royal Decree No. (M/8), dated 19/2/1437H, approving Council of Ministers Resolution No. (61), dated 18/2/1437H; published Umm Al-Qura Gazette 7/3/1437H (~2015G); administered originally by the Ministry of Social Affairs, later by the National Center for the Non-Profit Sector under the Ministry of Human Resources and Social Development — laws.boe.gov.sa checked first per methodology: its own indexing shows TWO different lawId values for this law's name (37e0768f-8e3c-493a-b951-a9a700f2bbb1 and b97fcccb-3c26-4fe2-9c61-a9a700f2bc4e), and the live portal was unreachable this pass (HTTP 503 / connection reset across several attempts), Wayback egress-blocked and not circumvented. PRIMARY full text from nezams.com, independently cross-checked against a menarights.org PDF (KSA_Law on NGOs 2015) for article count and the closing articles' verbatim text, plus BOE portal search-index snippets for decree identity and substantive provisions",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": associations_ngo_law_llm["record_count"],
+                    "data_path": "data/associations_ngo_arabic_legal_llm/associations_ngo_law_legal_llm_001_044.json"}},
+                "record_counts": {"arabic_articles": associations_ngo_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 43, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": associations_ngo_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/associations_ngo/law/official_source/associations_ngo_law_official_source.json",
+                    "sources/associations_ngo/law/verified/associations_ngo_law_verified_records.jsonl",
+                    "data/associations_ngo_arabic_legal_llm/associations_ngo_law_legal_llm_001_044.json",
+                ],
+                "validator_targets": ["make associations-ngo-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of Associations and Civil Institutions «نظام الجمعيات والمؤسسات الأهلية» — Royal Decree No. (M/8), dated 19/2/1437H, approving Council of Ministers Resolution No. (61), 18/2/1437H; published Umm Al-Qura Gazette 7/3/1437H (~2015G); administered originally by the Ministry of Social Affairs, later by the National Center for the Non-Profit Sector under the Ministry of Human Resources and Social Development. A brand-new standalone Law (not a companion regulation of any existing track). **44 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-44 sequence); 19 of the 44 articles carry their own internal subject heading (stored in section_ar), the other 25 have none. **43 اصلية / 1 معدلة (Article 1 only)**. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa's own indexing shows TWO different lawId values for this law's name and the live portal was unreachable this pass (HTTP 503 / connection reset across several attempts); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full text from nezams.com, independently cross-checked against a menarights.org PDF (KSA_Law on NGOs 2015) confirming the article count and the verbatim text of the closing articles (42, 43, 44), the preamble, and mid-document spot-checks — honestly kept at TIER_3 (not upgraded to TIER_2) since the canonical BOE portal page itself could not be retrieved or archived this pass. **CONFIRMED amendment**: Council of Ministers Resolution 618 (20/10/1442H) inserted two NEW definitions into Article 1 ('المركز': the National Center for the Non-Profit Sector; 'المجلس': the Center's board) — the only article classified معدلة, with both notes preserved verbatim in `history`. Resolution 618 ALSO horizontally substitutes 'the Center'/'the Board' for 'the Ministry'/'the Minister' throughout the statute EXCEPT in Articles 7, 25 and 38 (explicitly exempted, each carrying a source note to that effect) — this repo-wide substitution is recorded in known_unresolved_discrepancies rather than rewritten into each affected article's stored text, so no other article is marked معدلة for it; all article bodies remain exactly as published (الوزارة/الوزير), per this corpus's no-silent-rewrite rule. Council of Ministers Resolution 367 (29/6/1443H) separately amended the competent-authority designation in the enacting resolution's annex (Ministry of Interior + State Security Presidency) — not a numbered-article change, preserved verbatim in preamble_ar. **CONFIRMED named-predecessor repeal**: Article 43 EXPLICITLY repeals the Charitable Associations and Institutions Regulation «لائحة الجمعيات والمؤسسات الخيرية» (Council of Ministers Resolution No. 107, 25/6/1410H), plus a general residual conflict clause — a genuine repeal link (unlike child_protection_law/protection_from_abuse_law, both founding statutes with no repeal clause), flagged for the corpus-wide supersession/repeal graph; the repealed 1410H regulation is not itself ingested as a separate track. A companion Implementing Regulation (Ministerial Resolution 73739, 11/6/1437H) exists but was deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
             },
         ],
     }
