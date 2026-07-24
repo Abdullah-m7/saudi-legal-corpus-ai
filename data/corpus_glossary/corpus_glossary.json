@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 192,
-  "total_terms": 1164,
-  "total_definitions": 1910,
-  "tracks_with_definitions_article_parsed": 131,
+  "total_tracks_in_registry": 193,
+  "total_terms": 1183,
+  "total_definitions": 1935,
+  "tracks_with_definitions_article_parsed": 132,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -2092,6 +2092,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "البرنامج التعليمي": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "البرنامج التعليمي",
+        "definition_text": "النشاط الذي ينظم في إطار المنهج التعليمي لتحقيق أهداف محددة في مجال محدد.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "البضائع المقيدة": [
       {
         "track_id": "customs_law",
@@ -3065,6 +3075,36 @@
         "term_as_written": "التعريفة",
         "definition_text": "مقابل مالي معتمد لتقديم خدمة أو بيع سلعة ضمن نشاط الكهرباء.",
         "source_record_id": "electricity-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التعليم الإلكتروني": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "التعليم الإلكتروني",
+        "definition_text": "توظيف تقنيات التعليم والمعلومات والاتصالات لرفع كفاية العملية التعليمية بجميع أنماطها، وضبط جودتها.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التعليم العام": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "التعليم العام",
+        "definition_text": "التعليم حتى نهاية الصف الثاني عشر.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التعليم المستمر": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "التعليم المستمر",
+        "definition_text": "الخدمات وبرامج التعليم العام، التي تقدمها الوزارة للتعليم مدى الحياة للذين تجاوزوا سنوات التعليم الإلزامية أو خلالها.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4880,6 +4920,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "judicial_inspection_regulation",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -6084,6 +6132,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الطالب": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "الطالب",
+        "definition_text": "من يتلقى التعليم العام.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الطبقات الجوفية": [
       {
         "track_id": "water_law",
@@ -6185,6 +6243,16 @@
         "term_as_written": "الطفل",
         "definition_text": "كل إنسان لم يتجاوز الثامنة عشرة من عمره.",
         "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطفولة المبكرة": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "الطفولة المبكرة",
+        "definition_text": "تشمل التعليم والرعاية المقدمين من بداية الحضانة حتى نهاية الصف الثالث.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8020,6 +8088,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "الأحكام التنفيذية والتنظيمية التي تصدر بناء على النظام.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "maritime_commercial_law",
         "article_number": 1,
         "term_as_written": "اللوائح",
@@ -8154,6 +8230,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المؤسسات التعليمية الافتراضية": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسات التعليمية الافتراضية",
+        "definition_text": "المؤسسة أو المنصة الإلكترونية -الحكومية أو الخاصة- التي تحمل ترخيصا لتقديم خدمات تعليمية بنمط التعليم الإلكتروني لأي مرحلة من مراحل التعليم العام.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المؤسسات المالية": [
       {
         "track_id": "aml_law",
@@ -8219,6 +8305,26 @@
         "term_as_written": "المؤسسة",
         "definition_text": "المؤسسة العامة للتأمينات الاجتماعية .",
         "source_record_id": "social-insurance-legacy-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المؤسسة التعليمية": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسة التعليمية",
+        "definition_text": "المنشأة -الحكومية أو الخاصة- التي تقدم خدمات التعليم لمن هم في أي مرحلة من مراحل التعليم العام.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المؤسسة التعليمية الخاصة": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسة التعليمية الخاصة",
+        "definition_text": "المنشأة التي يملكها القطاع الخاص، أو القطاع غير الربحي، الحاصلة على ترخيص من الوزارة لتقديم خدمات التعليم لمرحلة أو أكثر من مراحل التعليم العام، أو لتقديم الخدمات التعليمية، أو التربوية لفئات محددة، كالموهوبين وذوي الإعاقة ونحوهم.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8599,6 +8705,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس التعاون لدول الخليج العربية .",
         "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس شؤون التعليم العام.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9130,6 +9244,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المدرسة": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المدرسة",
+        "definition_text": "المنشأة المخصصة والمجهزة لتقديم خدمات التعليم من الصف الأول إلى الصف الثاني عشر.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المدرسة الحكومية": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المدرسة الحكومية",
+        "definition_text": "المدرسة التي تديرها الوزارة، وتقدم فيها خدمات التعليم من خلال البرامج التعليمية التي تعتمدها الوزارة.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المدرسة الرياضية": [
       {
         "track_id": "sports_law",
@@ -9509,6 +9643,16 @@
         "term_as_written": "المركز الرياضي",
         "definition_text": "كيان يقوم بتهيئة مرافق؛ لتمكين الأفراد من ممارسة نشاط رياضي أو التدرب عليه.",
         "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المركز المتخصص": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المركز المتخصص",
+        "definition_text": "المنشأة التي رخصت لها الوزارة، ذات المجال التخصصي المحدد، التي تخدم فئات خاصة مثل: ذوي الإعاقة، والموهوبين وغيرها من الفئات الخاصة.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10366,6 +10510,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المعلم": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المعلم",
+        "definition_text": "من يرخص له بالعمل في مهنة التعليم العام.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المعلومات والوثائق": [
       {
         "track_id": "bankruptcy_implementing_regulation",
@@ -10493,6 +10647,16 @@
         "term_as_written": "المقترح",
         "definition_text": "عرض إجراء التسوية الوقائية أو إجراء التسوية الوقائية لصغار المدينين أو إجراء إعادة التنظيم المالي أو إجراء إعادة التنظيم المالي لصغار المدينين الذي يُصوت عليه.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المقرر الدراسي": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المقرر الدراسي",
+        "definition_text": "المحتوى الذي تتضمنه الخطة الدراسية، ويدرسه الطلاب.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11203,6 +11367,16 @@
         "term_as_written": "المنقول",
         "definition_text": "ما أمكن نقله كالسيارات والمعدات ونحوها.\n   ٧.",
         "source_record_id": "lessor-repossession-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنهج التعليمي": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "المنهج التعليمي",
+        "definition_text": "الأهداف المخطط لها أن تحقق نواتج تعليمية مقصودة يكتسبها الطالب من خلال العملية التعليمية، ويتأكد من تحققها بالتقويم.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12272,6 +12446,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام التعليم العام.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gtpl_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -13030,6 +13212,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الهيئة الإدارية": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة الإدارية",
+        "definition_text": "من يمارس الأعمال الإدارية ذات الصلة بالعملية التعليمية داخل المؤسسة التعليمية.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الواقعة": [
       {
         "track_id": "civil_status_law",
@@ -13333,6 +13525,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة التجارة والاستثمار.",
         "source_record_id": "franchise-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة التعليم.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13769,6 +13969,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير التجارة والاستثمار.",
         "source_record_id": "franchise-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير التعليم.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14834,6 +15042,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "دار الحضانة": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "دار الحضانة",
+        "definition_text": "المنشأة -الحكومية أو الخاصة- المخصصة والمجهزة لتقديم خدمات الرعاية والتعليم لمن هم في مرحلة الحضانة.",
+        "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "دراسة التدقيق البيئي": [
       {
         "track_id": "environmental_law",
@@ -15191,6 +15409,16 @@
         "term_as_written": "رقم العقار",
         "definition_text": "رقم صحيفته في السجل العقاري.",
         "source_record_id": "real-estate-registration-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "روضة الأطفال": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "روضة الأطفال",
+        "definition_text": "المنشأة -الحكومية أو الخاصة- المخصصة والمجهزة لتقديم خدمات التعليم لمن هم في مرحلة رياض الأطفال.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16601,6 +16829,16 @@
         "term_as_written": "مدير الصندوق",
         "definition_text": "مؤسسة السوق المالية التي تتولى إدارة أصول صندوق الاستثمار أو صندوق الاستثمار العقاري وإدارة أعماله وطرح وحداته، وفقا لأحكام الأنظمة واللوائح ذات العلاقة الصلة في المملكة.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مراحل التعليم العام": [
+      {
+        "track_id": "general_education_law",
+        "article_number": 1,
+        "term_as_written": "مراحل التعليم العام",
+        "definition_text": "الحضانة، ورياض الأطفال، والصفوف من الأول إلى الثاني عشر.",
+        "source_record_id": "general-education-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

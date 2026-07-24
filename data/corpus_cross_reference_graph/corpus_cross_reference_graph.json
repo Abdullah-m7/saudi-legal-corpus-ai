@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 11362,
-  "total_references_extracted": 2372,
-  "intra_law_count": 2038,
-  "inter_law_count": 334,
+  "total_records_scanned": 11430,
+  "total_references_extracted": 2376,
+  "intra_law_count": 2041,
+  "inter_law_count": 335,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1997,
-    "medium": 375
+    "high": 2000,
+    "medium": 376
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -8191,11 +8191,11 @@
       "source_record_id": "criminal-procedure-regulation-llm-art-171",
       "source_article_number": 171,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "general_education_law",
       "target_article_number": null,
       "target_law_name_raw": "النيابة العامة",
       "raw_citation_text": "وفقاً لنظام النيابة العامة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "criminal_procedure_implementing_regulation",
@@ -11111,6 +11111,50 @@
       "target_law_name_raw": "الرئاسة في مجلس التعاون",
       "raw_citation_text": "حسب نظام الرئاسة في مجلس التعاون",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "general_education_law",
+      "source_record_id": "general-education-law-llm-art-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "general_education_law",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من النظام على مؤسسات التعليم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "general_education_law",
+      "source_record_id": "general-education-law-llm-art-024",
+      "source_article_number": 24,
+      "type": "inter_law",
+      "target_track_id": "elitigation_guide_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "استخدام التعليم الإلكتروني المعتمدة",
+      "raw_citation_text": "وفق ضوابط استخدام التعليم الإلكتروني المعتمدة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "general_education_law",
+      "source_record_id": "general-education-law-llm-art-046",
+      "source_article_number": 46,
+      "type": "intra_law",
+      "target_track_id": "general_education_law",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "general_education_law",
+      "source_record_id": "general-education-law-llm-art-057",
+      "source_article_number": 57,
+      "type": "intra_law",
+      "target_track_id": "general_education_law",
+      "target_article_number": 62,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والستين) من النظام على أعضاء الهيئة ال",
+      "confidence": "high"
     },
     {
       "source_track_id": "gtpl_law",
@@ -20643,22 +20687,22 @@
       "source_record_id": "residency-law-llm-art-059",
       "source_article_number": 56,
       "type": "inter_law",
-      "target_track_id": "real_estate_finance_law",
+      "target_track_id": null,
       "target_article_number": 31,
       "target_law_name_raw": "الموظفين العام",
       "raw_citation_text": "المادة ( 31 ) المعدلة يحاكم عليها بموجب نظام الموظفي",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "residency_law",
       "source_record_id": "residency-law-llm-art-059",
       "source_article_number": 56,
       "type": "inter_law",
-      "target_track_id": "real_estate_finance_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الموظفين العام",
       "raw_citation_text": "بموجب نظام الموظفين العام",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "residency_law",

@@ -230,6 +230,7 @@ TOURISM_LAW_LLM = os.path.join(ROOT, "data", "tourism_arabic_legal_llm", "touris
 STANDARDS_QUALITY_REGULATION_LLM = os.path.join(ROOT, "data", "standards_quality_regulation_arabic_legal_llm", "standards_quality_regulation_legal_llm_001_023.json")
 DISABILITY_RIGHTS_REGULATION_LLM = os.path.join(ROOT, "data", "disability_rights_regulation_arabic_legal_llm", "disability_rights_regulation_legal_llm_001_045.json")
 ANTI_SMOKING_REGULATION_LLM = os.path.join(ROOT, "data", "anti_smoking_regulation_arabic_legal_llm", "anti_smoking_regulation_legal_llm_001_020.json")
+GENERAL_EDUCATION_LAW_LLM = os.path.join(ROOT, "data", "general_education_arabic_legal_llm", "general_education_law_legal_llm_001_068.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -453,6 +454,7 @@ def main() -> int:
     standards_quality_regulation_llm = _load_json(STANDARDS_QUALITY_REGULATION_LLM)
     disability_rights_regulation_llm = _load_json(DISABILITY_RIGHTS_REGULATION_LLM)
     anti_smoking_regulation_llm = _load_json(ANTI_SMOKING_REGULATION_LLM)
+    general_education_law_llm = _load_json(GENERAL_EDUCATION_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -473,7 +475,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 192,
+        "total_tracks": 193,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -669,6 +671,7 @@ def main() -> int:
             + standards_quality_regulation_llm["record_count"]  # 23 Implementing Regulation of the Standards and Quality Law (Minister of Commerce Decision No. 098, 18/5/1446H) (TIER_1, PRIMARY x2 independent -- SASO's own official site (issuing/administering authority) + Umm al-Qura Gazette's own API, both fetched directly and agreeing on decision number/date; cross-verified against qanoonsa.com SECONDARY for full text, cosmetic numeral-style difference only, all 23 اصلية across 7 أبواب, NO predecessor regulation (first Implementing Regulation under this law), see track notes)
             + disability_rights_regulation_llm["record_count"]  # 45 Implementing Regulation of the Rights of Persons with Disabilities Law (Authority Board Resolution No. 26, 29 Shawwal 1445H) (TIER_2, PRIMARY uqn.gov.sa (Umm al-Qura Gazette portal itself) fetched directly as full HTML text; SECONDARY qanoonsa.com cross-verified article-by-article (15/45 byte-identical, remainder cosmetic differences only); laws.boe.gov.sa unreachable this pass, all 45 اصلية across 12 فصول (a genuine 12-vs-11 chapter-count discrepancy vs a third source is disclosed, not silently resolved), NO amendment found, see track notes)
             + anti_smoking_regulation_llm["record_count"]  # 17 Implementing Regulation of the Anti-Smoking Law (11 اصلية, 6 معدلة -- Articles 2,3,5,6,7,8) (TIER_2, FOUNDING RESOLUTION NUMBER/DATE NOT CONFIRMED this pass -- a prior pass's assumption that Ministerial Resolution 797557 (1/5/1441H) was the founding issuance is CORRECTED here: independently re-verified as a real, well-corroborated AMENDMENT resolution instead, whose reported content matches the Article 7 change found by diffing; PRIMARY official MOH PDF (3rd edition, 2019, vision-read) cross-checked against a 2017 WHO/EMRO-hosted edition to detect the 6 amended articles; laws.boe.gov.sa has no dedicated lawId page at all; Articles 14/15/17 intentionally absent (no regulation content in either edition), see track notes)
+            + general_education_law_llm["record_count"]  # 68 General Education Law (Royal Decree M/36, 27/1/1448H, approving CoM Resolution 103, 22/1/1448H) (TIER_2, PRIMARY full text fetched directly from the Umm al-Qura Official Gazette itself, HTTP 200, not summarized; officially corroborated by SPA; structurally cross-checked by independent press (sabq.org confirms 68 articles/9 chapters); laws.boe.gov.sa has no lawId page yet (expected given one-day freshness); all 68 اصلية across 9 فصول; NOT YET IN FORCE (Article 68: effective 180 days after gazette publication, ~mid-Jan 2027), disclosed explicitly not silently assumed; REPEALS immediately (phased 1-year transition) the Adult Education and Literacy Law (M/22, 1392H) and 7 CoM-level school regulations, none of which are tracked instruments in this corpus so no supersession-graph edge is needed, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -855,6 +858,7 @@ def main() -> int:
             + standards_quality_regulation_llm["record_count"]
             + disability_rights_regulation_llm["record_count"]
             + anti_smoking_regulation_llm["record_count"]
+            + general_education_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6441,6 +6445,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation of the Anti-Smoking Law «اللائحة التنفيذية لنظام مكافحة التدخين» — issued under Article 19 of the base Anti-Smoking Law (already ingested separately, track_id: anti_smoking). This track's own coverage-gap-map scan flagged Ministerial Resolution No. (797557), dated 1/5/1441H, as a candidate citation, explicitly noting it as the weakest/most-uncertain of a trio of newly-found Implementing Regulation candidates and instructing extra scrutiny — that scrutiny changed the finding: **797557/1441H is real and well-corroborated (argaam.com news article dated 25 Jan 2020, mohamoon-ksa.com citation, general web search) but every source describing it calls it an AMENDMENT resolution ('الموافقة على تعديل عدد من مواد اللائحة'), never the founding/original issuance**. The founding resolution's own number and date could NOT be found this pass despite genuine attempts (Article 19 of the base law implies one should exist from ~early 1437H) — honestly flagged as UNCONFIRMED rather than guessed or fabricated. **17 records (of 20 possible base-law article numbers — Articles 14, 15, 17 intentionally absent, confirmed to have no regulation content in either edition examined, not silently dropped): 11 اصلية, 6 معدلة (Articles 2,3,5,6,7,8), 0 ملغاة, 0 مضافة.** FLAT structure relative to the base law's own numbering (chapter_structure empty by design). **VERIFICATION TIER: TIER_2** — PRIMARY is the official MOH PDF ('3rd edition, 2019', the same file the base anti_smoking_law track cites), vision-read in full since pdftotext fails on its embedded font; CROSS-CHECKED against a 2017-dated WHO/EMRO-hosted PDF edition of the same regulation, diffed clause-by-clause across all 17 regulation-bearing articles: 11 verbatim-identical (1,4,9,10,11,12,13,16,18,19,20), 6 with confirmed real textual differences (2,3,5,6,7,8) — of these six, only Article 7's change (mosques added to the 13-place smoking-ban list; buffer distance 8m->10m) is independently attributable by name to Resolution 797557 via the argaam.com article; the other five confirmed changes are real (found by direct diff) but not attributed to any specific numbered resolution by any source located this pass — flagged as an open provenance gap rather than assumed. laws.boe.gov.sa has NO dedicated lawId page for this Implementing Regulation at all (only the base law has one); uqn.gov.sa (404), nctc.gov.sa (DNS failure), and qanoniah.com (JS/login-gated) were each attempted and found inaccessible. One verbatim editing artifact preserved from the primary source itself (a leftover trailing duplicated phrase in Article 8) was kept as-is per this corpus's no-silent-fix rule, and flagged rather than corrected. No named-predecessor-regulation repeal is confirmed or modeled — this is treated as the current consolidated text of a regulation whose founding instrument remains unconfirmed. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "general_education_law",
+                "display_name_ar": "نظام التعليم العام",
+                "display_name_en": "General Education Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GOV_SA_PRIMARY_FULLTEXT_X_SPA_OFFICIAL_CORROBORATION_X_SABQ_STRUCTURAL_CROSSCHECK_BOE_NO_PAGE_YET_NOT_YET_IN_FORCE",
+                "source_authority": "Royal Decree No. (M/36), dated 27/1/1448H, approving Council of Ministers Resolution No. (103), dated 22/1/1448H. PRIMARY full text (68 articles, 9 chapters) fetched directly (HTTP 200) from the Umm al-Qura Official Gazette (uqn.gov.sa) itself, not summarized by a fetch tool; officially corroborated (facts, not full wording) by the Saudi Press Agency (spa.gov.sa); structurally cross-checked by independent press (sabq.org independently confirms 68 articles/9 chapters). laws.boe.gov.sa has no dedicated lawId page yet, expected given this Law's one-day freshness at ingestion time. NOT YET IN FORCE: Article 68 sets the effective date at 180 days after gazette publication (~mid-January 2027).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": general_education_law_llm["record_count"],
+                    "data_path": "data/general_education_arabic_legal_llm/general_education_law_legal_llm_001_068.json"}},
+                "record_counts": {"arabic_articles": general_education_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 68, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": general_education_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/general_education/law/official_source/general_education_law_official_source.json",
+                    "sources/general_education/law/verified/general_education_law_verified_records.jsonl",
+                    "data/general_education_arabic_legal_llm/general_education_law_legal_llm_001_068.json",
+                ],
+                "validator_targets": ["make general-education-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "General Education Law «نظام التعليم العام» — Royal Decree No. (M/36), dated 27/1/1448H, approving Council of Ministers Resolution No. (103), dated 22/1/1448H, itself acting on a Royal Court referral No. 5057 dated 16/1/1448H. Discovered via two independently-dispatched coverage-gap-map scan agents this pass (one tasked with checking moe.gov.sa, one tasked with checking laws.boe.gov.sa), which converged on an identical finding — a strong corroboration signal in itself. **68 records, ALL اصلية (0 معدلة, 0 ملغاة, 0 مضافة) across 9 فصول** (Definitions & Objectives; Council & Ministry; Stages/Tracks/Types of Education; Programs & Curricula; Private Educational Institutions; Students/Teachers/Guardians; Educational Institutions & Services; Violations & Penalties; Final Provisions). **VERIFICATION TIER: TIER_2** — PRIMARY full text of all 68 articles fetched directly (HTTP 200) from the Umm al-Qura Official Gazette itself (uqn.gov.sa), parsed programmatically with zero mismatches against the expected ordinal sequence; officially corroborated at the fact level (decree existence, number, minister's statement, the Adult Education Law repeal) by the Saudi Press Agency (spa.gov.sa, fetched directly via curl with a browser user-agent after WebFetch itself was blocked); structurally cross-checked by independent press (sabq.org independently confirms the 68-article/9-chapter count and Article 4/6 substance; argaam.com, alriyadh.com, albiladdaily.com corroborate the decree number and repeal). Not TIER_1 because no second official source reproduces the full verbatim wording of all 68 articles. laws.boe.gov.sa confirmed via direct search to have no dedicated lawId page yet — expected given the Law's one-day-old freshness at the time of this pass, not a search failure. **NOT YET IN FORCE**: Article 68 states the Law takes effect 180 days after gazette publication (~mid-January 2027) — this is recorded explicitly (not silently assumed as already-effective) via a dedicated `not_yet_in_force: true` field propagated through every record layer, with `legal_status_ar` reading 'صادر - غير ساري بعد' rather than 'ساري'. **TWO DISCLOSED DISCREPANCIES, NOT SILENTLY RESOLVED**: (1) all three uqn.gov.sa pages show a visible header date of 11 Safar 1448H / 25 July 2026G, while the same pages' own embedded schema.org metadata timestamps, and independently SPA's own dateline, read 10 Safar 1448H / 24 July 2026G — the decree's own signing date (27/1/1448H) is unaffected and unambiguous; (2) the prior scan lead's characterization of the Adult Education and Literacy Law repeal (M/22, 9/6/1392H) as a 'future, separately-triggered' repeal was corrected upon reading the verbatim text: Clause Third of the Council of Ministers Resolution repeals it IMMEDIATELY, with a phased one-year transitional continuation, not a deferred future action. **CONFIRMED REPEAL of 8 instruments, NONE of which are tracked in this corpus** (the Adult Education and Literacy Law, M/22 1392H, plus 7 Council-of-Ministers-level school regulations dated 1395H-1439H) — all confirmed absent from the registry, so no supersession-graph edge is required for any of them. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 412,
-  "top1_hits": 386,
-  "top3_hits": 405,
-  "top5_hits": 408,
-  "top1_accuracy": 0.9369,
-  "top3_accuracy": 0.983,
+  "total_queries": 414,
+  "top1_hits": 388,
+  "top3_hits": 407,
+  "top5_hits": 410,
+  "top1_accuracy": 0.9372,
+  "top3_accuracy": 0.9831,
   "top5_accuracy": 0.9903,
-  "mrr_at_5": 0.9592,
+  "mrr_at_5": 0.9594,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1280,14 +1280,14 @@
      "score": 16
     },
     {
-     "record_id": "oa-llm-companies-art-049",
-     "article_number": 49,
-     "score": 10
+     "record_id": "general-education-law-llm-art-008",
+     "article_number": 8,
+     "score": 11
     },
     {
-     "record_id": "oa-llm-companies-art-064",
-     "article_number": 64,
-     "score": 10
+     "record_id": "general-education-law-llm-art-013",
+     "article_number": 13,
+     "score": 11
     }
    ]
   },
@@ -5899,14 +5899,14 @@
      "score": 28
     },
     {
+     "record_id": "general-education-law-llm-art-010",
+     "article_number": 10,
+     "score": 20
+    },
+    {
      "record_id": "law-practice-regulation-llm-art-073",
      "article_number": 73,
      "score": 16
-    },
-    {
-     "record_id": "accounting-auditing-law-llm-art-013",
-     "article_number": 13,
-     "score": 15
     }
    ]
   },
@@ -5930,13 +5930,13 @@
      "score": 46
     },
     {
-     "record_id": "standards-quality-law-llm-art-021",
-     "article_number": 21,
+     "record_id": "general-education-law-llm-art-062",
+     "article_number": 62,
      "score": 17
     },
     {
-     "record_id": "associations-ngo-law-llm-art-003",
-     "article_number": 3,
+     "record_id": "standards-quality-law-llm-art-021",
+     "article_number": 21,
      "score": 17
     }
    ]
@@ -12414,8 +12414,8 @@
      "score": 16
     },
     {
-     "record_id": "mining-investment-law-llm-art-003",
-     "article_number": 3,
+     "record_id": "general-education-law-llm-art-013",
+     "article_number": 13,
      "score": 15
     }
    ]
@@ -12789,6 +12789,68 @@
      "record_id": "anti-smoking-regulation-llm-art-005",
      "article_number": 5,
      "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gel-001",
+   "query_ar": "اللغة العربية هي اللغة الأساس للتعليم العام، ويجوز التعليم بلغة إضافية وفق ضوابط يقرها المجلس",
+   "category": "topical",
+   "gold": {
+    "corpus": "general_education",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "general-education-law-llm-art-005",
+     "article_number": 5,
+     "score": 48
+    },
+    {
+     "record_id": "general-education-law-llm-art-017",
+     "article_number": 17,
+     "score": 26
+    },
+    {
+     "record_id": "general-education-law-llm-art-013",
+     "article_number": 13,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gel-002",
+   "query_ar": "التعليم العام حق للجميع. يوفر التعليم العام مجانا في المؤسسات التعليمية الحكومية",
+   "category": "topical",
+   "gold": {
+    "corpus": "general_education",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "general-education-law-llm-art-003",
+     "article_number": 3,
+     "score": 44
+    },
+    {
+     "record_id": "general-education-law-llm-art-052",
+     "article_number": 52,
+     "score": 35
+    },
+    {
+     "record_id": "general-education-law-llm-art-053",
+     "article_number": 53,
+     "score": 32
     }
    ]
   }
