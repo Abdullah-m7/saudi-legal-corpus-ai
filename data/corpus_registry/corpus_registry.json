@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11237,
+  "total_primary_arabic_governing_records": 11273,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12132,
-  "total_tracks": 182,
+  "total_registry_counted_records": 12168,
+  "total_tracks": 183,
   "tracks": [
     {
       "boundaries": {
@@ -8681,6 +8681,55 @@
       "validator_targets": [
         "make prison-detention-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/civil_defense/law/official_source/civil_defense_law_official_source.json",
+        "sources/civil_defense/law/verified/civil_defense_law_verified_records.jsonl",
+        "data/civil_defense_arabic_legal_llm/civil_defense_law_legal_llm_001_036.json"
+      ],
+      "display_name_ar": "نظام الدفاع المدني",
+      "display_name_en": "Civil Defense Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/civil_defense_arabic_legal_llm/civil_defense_law_legal_llm_001_036.json",
+          "governing": true,
+          "record_count": 36,
+          "status": "complete"
+        }
+      },
+      "notes": "Civil Defense Law «نظام الدفاع المدني» — Royal Decree No. (M/10), dated 10/5/1406H (~1986G), approving Council of Ministers Resolution No. (25), 23/1/1406H; administered by the Ministry of Interior. **36 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-36 sequence, no مكرر articles). **34 اصلية / 2 معدلة (Articles 5, 28)** — the ORIGINAL 1406H wording of both articles is preserved, but their CURRENT post-amendment text could NOT be confirmed this pass and is honestly disclosed as UNCONFIRMED rather than fabricated. **VERIFICATION TIER: TIER_3** for the base text — laws.boe.gov.sa and istitlaa.ncc.gov.sa (National Committee for Civil Defense) both have dedicated pages for this law but were unreachable this pass (live HTTP 503); web.archive.org was environment-blocked this pass, not bypassed. PRIMARY original full text cross-verified verbatim between mohamah.net and islamport.com (independent, non-derivative sources). Two named amendment instruments are confirmed to EXIST — Royal Decree M/66 (2/10/1424H) and Royal Decree M/63 (13/9/1436H), per saudipedia.com citing the Bureau of Experts — but their verbatim current text could not be confirmed this pass, NOT fabricated. saudipedia.com further states that 'the majority of the law's articles were amended on various dates', meaning the true amendment scope across four decades likely EXCEEDS what could be confirmed here; flagged as a completeness caveat rather than concealed, has_per_article_variation. **NO named-predecessor-law repeal** — Article 35 is a generic conflict clause naming no prior instrument, a confirmed negative finding; no supersession-graph edge is added. Implementing regulations (rights/duties of persons called upon in civil defense work; fire/rescue operations regulation) are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_AND_NCC_UNREACHABLE_WAYBACK_ENVIRONMENT_BLOCKED_X_MOHAMAH_NET_X_ISLAMPORT_CROSSCHECK",
+      "record_counts": {
+        "arabic_articles": 36,
+        "legal_status_breakdown": {
+          "اصلية": 34,
+          "مضافة": 0,
+          "معدلة": 2,
+          "ملغاة": 0
+        },
+        "total": 36
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/10), dated 10/5/1406H (~1986G), approving Council of Ministers Resolution No. (25), dated 23/1/1406H; administered by the Ministry of Interior — laws.boe.gov.sa and istitlaa.ncc.gov.sa (National Committee for Civil Defense) both have dedicated pages for this law but were unreachable this pass (live HTTP 503); web.archive.org was environment-blocked this pass, not bypassed. ORIGINAL full text cross-verified verbatim between mohamah.net and islamport.com (independent, non-derivative sources)",
+      "status": "complete",
+      "track_id": "civil_defense_law",
+      "validator_targets": [
+        "make civil-defense-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8716,6 +8765,7 @@
       "child_protection": 26,
       "civil": 721,
       "civil_aviation": 180,
+      "civil_defense": 36,
       "civil_service": 44,
       "civil_status": 96,
       "commercial_agencies": 6,
@@ -8826,7 +8876,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11068,
+    "total_records": 11104,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
