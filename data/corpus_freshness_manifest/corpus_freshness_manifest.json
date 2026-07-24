@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 189,
+  "total_tracks": 192,
   "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -319,6 +319,28 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "anti_smoking_regulation",
+      "display_name_en": "Implementing Regulation of the Anti-Smoking Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام مكافحة التدخين",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='MOH_PDF_PRIMARY_2019_3RD_EDITION_X_WHO_EMRO_2017_DIFF_CROSSCHECK_BOE_NO_DEDICATED_PAGE_FOUNDING_RESOLUTION_UNCONFIRMED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Ministry of Health, Implementing Regulation of the Anti-Smoking Law, 3rd edition (2019) as currently in force — the founding ministerial resolution's own number/date could NOT be confirmed this pass (flagged honestly, not fabricated); the most recently confirmed AMENDING resolution is Ministerial Resolution No. (797557), dated 1/5/1441H (a prior pass's assumption that this was the FOUNDING resolution is corrected here — independently re-verified as an amendment, per multiple corroborating web sources). laws.boe.gov.sa has NO dedicated lawId page at all for this Implementing Regulation. PRIMARY is the official MOH PDF (moh.gov.sa, vision-read in full, the same file the base anti_smoking_law track already cites), cross-checked against a 2017 WHO/EMRO-hosted edition of the same regulation to detect amendments by clause-by-clause diff.",
+      "registry_source_url": null,
+      "official_source_file": "sources/anti_smoking_regulation/law/official_source/anti_smoking_regulation_official_source.json",
+      "source_urls": [
+        "http://nctc.gov.sa/Section_66/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -1167,6 +1189,28 @@
         "web.archive.org"
       ],
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-09-06; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "disability_rights_regulation",
+      "display_name_en": "Implementing Regulation of the Rights of Persons with Disabilities Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام حقوق الأشخاص ذوي الإعاقة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='UQN_GOV_SA_PRIMARY_HTML_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSVERIFIED_BOE_SHARED_PAGE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Resolution No. (26) of the Board of Directors of the Authority for the Care of Persons with Disabilities, approved at the Board's 26th meeting, 29 Shawwal 1445H (~8 May 2024G), issued under Article 31 of the base Law (Royal Decree M/27, 11/2/1445H, track_id: disability_rights_law), published Umm al-Qura Gazette Issue (5033), per the secondary source qanoonsa.com (24 May 2024G — not shown explicitly on uqn.gov.sa's own page). PRIMARY uqn.gov.sa (the official Umm al-Qura Gazette portal itself) serves the complete 45-article text as direct HTML (not a scanned image); laws.boe.gov.sa shares the base law's lawId page and was unreachable live this pass.",
+      "registry_source_url": null,
+      "official_source_file": "sources/disability_rights_regulation/law/official_source/disability_rights_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3299,6 +3343,26 @@
         "qanoonsa.com",
         "uqn.gov.sa",
         "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "standards_quality_regulation",
+      "display_name_en": "Implementing Regulation of the Standards and Quality Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام المواصفات والجودة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='SASO_OFFICIAL_SITE_X_UQN_API_DUAL_PRIMARY_X_QANOONSA_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Decision of the Minister of Commerce (Chairman of SASO's Board) No. (098), dated 18/5/1446H (20 Nov 2024G), adopted via SASO Board Resolution No. (02/203/2024), 203rd meeting, 15/11/2024G, published Umm al-Qura Gazette Issue (5058), 29/11/2024G, issued under Article 23 of the base Standards and Quality Law (Royal Decree M/36, track_id: standards_quality). PRIMARY x2 independent: SASO's own official site (the issuing/administering authority itself) fetched directly, and Umm al-Qura Gazette's own API (uqn.gov.sa/api/article/.../json, not just search-indexed) fetched directly — both agree on decision number/date; laws.boe.gov.sa has no dedicated lawId page for this Implementing Regulation.",
+      "registry_source_url": null,
+      "official_source_file": "sources/standards_quality_regulation/law/official_source/standards_quality_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
