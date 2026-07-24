@@ -310,6 +310,8 @@ LAYERS = [
      "cooperative_societies", "law"),
     ("data/building_code_arabic_legal_llm/building_code_law_legal_llm_001_016.json",
      "building_code", "law"),
+    ("data/product_safety_arabic_legal_llm/product_safety_law_legal_llm_001_037.json",
+     "product_safety", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",

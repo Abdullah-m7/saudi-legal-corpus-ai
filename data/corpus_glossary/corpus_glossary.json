@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 185,
-  "total_terms": 1103,
-  "total_definitions": 1800,
-  "tracks_with_definitions_article_parsed": 126,
+  "total_tracks_in_registry": 186,
+  "total_terms": 1130,
+  "total_definitions": 1840,
+  "tracks_with_definitions_article_parsed": 127,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -506,6 +506,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "إجراءات تقويم المطابقة": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "إجراءات تقويم المطابقة",
+        "definition_text": "الإجراءات المستخدمة لتقويم المطابقة، والتي تشمل أنشطة المعايرة والاختبار ومنح الشهادات والتفتيش.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "إجراءات ضبط المخالفات": [
       {
         "track_id": "investment_implementing_regulation",
@@ -622,6 +632,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "إقرار المطابقة": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "إقرار المطابقة",
+        "definition_text": "وثيقة تصدر من المسؤول عن وضع المنتج في السوق قبل وضعه، يشهد فيها تحت مسؤوليته أن المنتج مستوف للمتطلبات.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "إقرار المعلومات": [
       {
         "track_id": "zakat_law",
@@ -719,6 +739,16 @@
         "term_as_written": "استثمار الغاز الطبيعي",
         "definition_text": "نشاط أعمال التنقيب عن الغاز الطبيعي غير المصاحب وإنتاجه بما في ذلك مكثفات الغاز، وكذلك نشاط أعمال تجميع وتنقية ومعالجة وتجزئة ونقل الغاز الطبيعي المصاحب وغير المصاحب وسوائلهما ومكثفات الغاز والعناصر المصاحبة الأخرى.",
         "source_record_id": "income-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "استدعاء المنتج": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "استدعاء المنتج",
+        "definition_text": "إجراء يهدف إلى استرجاع المنتجات التي سبق وضعها أو عرضها للمستخدم النهائي.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1355,6 +1385,16 @@
         "term_as_written": "الإجازة",
         "definition_text": "شهادة أو رخصة تمنحها أو تعتمدها الهيئة للعاملين في قطاع الطيران المدني كأطقم الطائرة والصيانة والمراقبين الجويين وغيرهم ممن تتطلب طبيعة عملهم حيازة شهادات أو رخص وفقا لمستويات مقررة دوليا.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإجراءات التصحيحية": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الإجراءات التصحيحية",
+        "definition_text": "الإجراءات المتخذة لمنع أو تقليل أو إزالة الخطر المؤثر في السلامة.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3518,6 +3558,24 @@
         "definition_text": "هي الجهات الحكومية ذات العلاقة بسلامة الأغذية بشكل مباشر أو غير\nمباشر والمعنية بتطبيق أحكام النظام ولائحته.\nالبالغ (أو الإخطار): معلومات محددة يتم تبادلها بين نقاط الاتصال في النظام حول الغذاء غير\nالمأمون والذي قد يشكل ضررا مباشرا أو غير مباشر على صحة الإنسان.",
         "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الجهات المختصة",
+        "definition_text": "الجهات المسؤولة عن مراقبة الأسواق وفقا لأحكام النظام واللوائح.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجهات المقبولة": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الجهات المقبولة",
+        "definition_text": "هي جهات تقويم المطابقة التي تم قبولها من الهيئة وفقا لأحكام النظام واللوائح.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجهات ذات العلاقة": [
@@ -4325,6 +4383,16 @@
         "term_as_written": "الخطة الوطنية للطيف الترددي",
         "definition_text": "وثيقة تنظم النطاقات الترددية من حيث تحديد نوعها ونطاقها وتوزيعها على الجهات المعنية.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخطر": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الخطر",
+        "definition_text": "أي خاصية أو عمل أو إغفال يشكل أو يحتمل أن يشكل خطرا على سلامة المستهلك في الأسواق أو على الممتلكات أو على البيئة.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5516,6 +5584,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الصانع": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الصانع",
+        "definition_text": "شخص طبيعي أو اعتباري يقوم بتصنيع منتج، أو يوكل تصنيعه إلى شخص طبيعي أو اعتباري آخر ثم يقوم بتسويقه تحت اسمه أو تحت علامته التجارية.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الصحافة": [
       {
         "track_id": "press_law",
@@ -6031,6 +6109,16 @@
         "term_as_written": "العرض التلقائي",
         "definition_text": "عرض يتعلق بمشروع تخصيص لم يقدم في سياق طلب تقديم عروض.",
         "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العرض في الأسواق": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "العرض في الأسواق",
+        "definition_text": "أي إمداد أو إعلان لمنتج بهدف التوزيع أو الاستهلاك في إطار نشاط تجاري سواء كان ذلك بمقابل مادي أو بدون مقابل.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7476,6 +7564,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة النظر في مخالفات أحكام النظام واللوائح.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sports_law",
         "article_number": 1,
         "term_as_written": "اللجنة",
@@ -7686,6 +7782,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللائحة التنفيذية للنظام، وغيرها من اللوائح التي تصدر بموجب أحكامه.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sports_law",
         "article_number": 1,
         "term_as_written": "اللوائح",
@@ -7711,6 +7815,16 @@
         "term_as_written": "اللوائح الداخلية",
         "definition_text": "اللوائح التي تصدرها الهيئة بشأن الشئون الإدارية والمالية للهيئة وشئون الموظفين والعاملين بها.",
         "source_record_id": "capital-market-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللوائح الفنية": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح الفنية",
+        "definition_text": "اللوائح المعتمدة من المجلس، التي تضع المتطلبات والمتطلبات الأساسية التي تطبق على منتج محدد أو فئة منتج بصفة إلزامية وفقا لأحكام النظام.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8034,6 +8148,24 @@
         "definition_text": "المعايير والشروط المطلوبة من قبل الجهات المختصة ذات الصلة بتداول\nالأغذية وتشمل حماية الصحة العامة وحماية المستهلكين.",
         "source_record_id": "food-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المتطلبات",
+        "definition_text": "جميع القواعد والوسائل والإجراءات التي يجب الالتزام بها وفقا لأحكام النظام، وتشمل المتطلبات الأساسية.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المتطلبات الأساسية": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المتطلبات الأساسية",
+        "definition_text": "المتطلبات والنتائج ذات الصلة بالسلامة والصحة والبيئة التي يجب تحقيقها، أو ذات الصلة بالخطر والمخاطر التي يجب التعامل معها.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المتعثر": [
@@ -8240,6 +8372,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -8397,6 +8537,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ مؤسسة النقد العربي السعودي.",
         "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8602,6 +8750,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المخاطر": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المخاطر",
+        "definition_text": "الجمع بين احتمال حدوث الخطر وشدته، بما في ذلك الحالات التي قد لا تكون فيها الآثار ظاهرة أو فورية.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المخالفة": [
       {
         "track_id": "building_code_law",
@@ -8617,6 +8775,16 @@
         "term_as_written": "المخالفة",
         "definition_text": "أي مخالفة لأحكام النظام أو اللوائح.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المخالفة الجسيمة": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المخالفة الجسيمة",
+        "definition_text": "المخالفة التي من شأنها أن تؤدي إلى وقوع ضرر جسيم على صحة المستهلك أو سلامته أو الممتلكات أو البيئة.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9264,6 +9432,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المستهلك",
+        "definition_text": "شخص طبيعي أو اعتباري يستخدم منتجا.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_finance_law",
         "article_number": 1,
         "term_as_written": "المستهلك",
@@ -9308,6 +9484,14 @@
         "definition_text": "الشخص الطبيعي أو الاعتباري الذي يقوم باستيراد البضاعة.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المستورد",
+        "definition_text": "شخص طبيعي أو اعتباري يستورد منتجا من خارج المملكة العربية السعودية إلى أحد أسواقها.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المسجل": [
@@ -9439,6 +9623,16 @@
         "term_as_written": "المشغل",
         "definition_text": "الشخص الطبيعي أو المعنوي الذي يقوم بتشغيل طائرة أو أكثر لحسابه وتخضع هيئة قيادتها لأوامره.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المشغل الاقتصادي": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المشغل الاقتصادي",
+        "definition_text": "الصانع، والممثل المعتمد، والمستورد، والموزع.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9880,6 +10074,14 @@
         "definition_text": "القاضي الذي يختاره المجلس الأعلى للقضاء؛ لعمل التفتيش، أو التحقيق.",
         "source_record_id": "judicial-inspection-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المفتش",
+        "definition_text": "من يعين بقرار من المجلس لضبط أي مخالفات لأحكام النظام واللوائح.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المفتشون": [
@@ -10138,6 +10340,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الممثل المعتمد": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الممثل المعتمد",
+        "definition_text": "شخص طبيعي، أو شخص اعتباري تم تأسيسه في المملكة؛ حصل على تفويض من الصانع خارج المملكة للتصرف نيابة عنه وفق الإجراءات النظامية.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الممثليات": [
       {
         "track_id": "travel_documents_regulation",
@@ -10329,6 +10541,14 @@
         "term_as_written": "المنتج",
         "definition_text": "من يقوم بإنتاج الأصل المؤجر.",
         "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "أي منتج يوضع أو يعرض في الأسواق.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10768,6 +10988,56 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المواصفة": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة",
+        "definition_text": "وثيقة معتمدة تضع القواعد والتعليمات أو الخصائص للمنتجات أو العمليات وطرق الإنتاج ذات العلاقة، ولا يكون التقيد بها إلزاميا.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المواصفة الإقليمية": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة الإقليمية",
+        "definition_text": "المواصفة التي تبناها جهاز تقييس إقليمي.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المواصفة الدولية": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة الدولية",
+        "definition_text": "المواصفة التي تبناها جهاز تقييس دولي.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المواصفة السعودية": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة السعودية",
+        "definition_text": "المواصفة المعتمدة من المجلس، والتي تعتبر المواصفة الوطنية للمملكة.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المواصفة الوطنية": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة الوطنية",
+        "definition_text": "المواصفة التي تبناها جهاز تقييس في إحدى الدول.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المواطن السعودي": [
       {
         "track_id": "income_tax_law",
@@ -10835,6 +11105,14 @@
         "term_as_written": "الموزع",
         "definition_text": "الوسيط- فردًا أو شركة- بين المؤلف أو الناشر، ونقاط التوزيع، والمستفيد.",
         "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الموزع",
+        "definition_text": "شخص طبيعي أو اعتباري في سلسلة الإمداد -غير الصانع والمستورد- يعرض المنتج في الأسواق، أو يقدم في مجال النشاط التجاري ما لا يقل عن خدمتين من الخدمات الآتية: (التخزين في المستودع، والتغليف، وتحديد العنوان، وتجهيز الإرسالية) دون أن يكون مالكا للمنتج.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11744,6 +12022,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام سلامة المنتجات.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "protection_from_abuse_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12211,6 +12497,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة السعودية للملكية الفكرية.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13264,6 +13558,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الوضع في الأسواق": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "الوضع في الأسواق",
+        "definition_text": "وضع المنتج في الأسواق.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الوعاء الزكوي": [
       {
         "track_id": "zakat_law",
@@ -13597,6 +13901,26 @@
         "term_as_written": "تقنية المعلومات",
         "definition_text": "تقنيات، وبرمجيات، ونظم وشبكات، وما يتعلق بها من عمليات لإنشاء البيانات، أو المعلومات، أو جمعها، أو الحصول عليها، أو معالجتها، أو تخزينها، أو تحليلها، بما في ذلك تطبيقات الاتصالات وتقنية المعلومات، ولا يشمل البيانات أو المعلومات بذاتها.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تقويم المطابقة": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "تقويم المطابقة",
+        "definition_text": "التأكد من أن المنتج أو الخدمة أو العملية أو الإجراء متوافق مع المتطلبات والمتطلبات الأساسية.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تقييم المخاطر": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "تقييم المخاطر",
+        "definition_text": "عملية تحديد أي خطر يمثله منتج ما والخطوات التي يجب اتخاذها لمنع هذا الخطر أو إزالته أو الحد منه أو التحكم فيه.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14428,6 +14752,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "سلسلة الإمداد": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "سلسلة الإمداد",
+        "definition_text": "جميع المراحل التي يمر بها المنتج؛ وصولا للاستخدام النهائي.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "سلطة الطيران المدني": [
       {
         "track_id": "civil_aviation_law",
@@ -15064,6 +15398,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "فئة المنتج": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "فئة المنتج",
+        "definition_text": "مجموعة من المنتجات التي تشترك معا في صفات وخصائص محددة.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "فترة التوقف": [
       {
         "track_id": "gtpl_law",
@@ -15372,6 +15716,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مؤشر المطابقة": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "مؤشر المطابقة",
+        "definition_text": "إجراء يحدد نسبة المنتجات المطابقة في الأسواق مع جميع الالتزامات المعمول بها والمتطلبات الأساسية.",
+        "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مالك السفينة": [
       {
         "track_id": "maritime_commercial_law",
@@ -15659,6 +16013,16 @@
         "term_as_written": "مدير الصندوق",
         "definition_text": "مؤسسة السوق المالية التي تتولى إدارة أصول صندوق الاستثمار أو صندوق الاستثمار العقاري وإدارة أعماله وطرح وحداته، وفقا لأحكام الأنظمة واللوائح ذات العلاقة الصلة في المملكة.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مراقبة الأسواق": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "مراقبة الأسواق",
+        "definition_text": "أي مهمة تباشرها الجهات المختصة؛ للتحقق من توافق المنتجات مع أحكام النظام واللوائح.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16483,6 +16847,16 @@
         "term_as_written": "نظام الإنذار السريع للغذاء",
         "definition_text": "هو نظام لجمع المعلومات ذات العلاقة بسلامة الغذاء، وتحليلها وتبادلها مع\nالجهات المختصة داخل الهيئة وخارجها بغرض اتخاذ الإجراءات المناسبة\nللحفاظ على صحة وسلامة المستهلك.",
         "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نظام التتبع": [
+      {
+        "track_id": "product_safety_law",
+        "article_number": 1,
+        "term_as_written": "نظام التتبع",
+        "definition_text": "نظام يتيح تحديد وتتبع المنتج، والمشغل الاقتصادي المشارك في سلسلة الإمداد الخاصة به.\nويشمل ذلك تطوير حلول إلكترونية ووضع ملصق على المنتج أو عبوته أو مستندات مصاحبة في حال تعذر وضعه على المنتج.",
+        "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
