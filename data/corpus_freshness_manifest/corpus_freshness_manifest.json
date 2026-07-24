@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 173 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 173 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 174 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 174 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 173,
+  "total_tracks": 174,
   "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -319,6 +319,27 @@
         "laws.boe.gov.sa"
       ],
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-12-12; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "antiquities_heritage_law",
+      "display_name_en": "Antiquities, Museums and Urban Heritage Law",
+      "display_name_ar": "نظام الآثار والمتاحف والتراث العمراني",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_BORN_DIGITAL_X_UNESCO_HOSTED_BOE_CONTENT_PRINT_PDF_NON_GOVERNMENT_X_UMM_AL_QURA_GAZETTE_FOR_M67_SCOPE_ONLY': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. (M/3), dated 9/1/1436H, approving Council of Ministers Resolution No. (348), dated 25/8/1435H (Shura Council Resolutions 194/78, 18/2/1434H, and 67/38, 14/7/1435H); administered by the Ministry of Culture / Heritage Commission / Museums Commission — laws.boe.gov.sa lawId a7d4493b-7c03-4c2d-b3c6-a9a700f275cd checked first per methodology: unreachable this pass (HTTP 503/connection reset), Wayback egress-blocked and not circumvented. PRIMARY full verbatim text from nezams.com (independent born-digital HTML aggregator), corroborated by a BOE-content print PDF hosted on media.unesco.org (a non-government international body's hosting, not itself a Saudi government domain) for decree identity/preamble/named-repeal/original text, and independently by the Umm Al-Qura Gazette for the M/67 (1442H) amendment's scope specifically",
+      "registry_source_url": null,
+      "official_source_file": "sources/antiquities_heritage/law/official_source/antiquities_heritage_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
