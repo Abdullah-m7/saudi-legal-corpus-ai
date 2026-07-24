@@ -220,6 +220,7 @@ SPORTS_LAW_LLM = os.path.join(ROOT, "data", "sports_arabic_legal_llm", "sports_l
 ANTI_SMOKING_LAW_LLM = os.path.join(ROOT, "data", "anti_smoking_arabic_legal_llm", "anti_smoking_law_legal_llm_001_020.json")
 WEAPONS_AMMUNITION_LAW_LLM = os.path.join(ROOT, "data", "weapons_ammunition_arabic_legal_llm", "weapons_ammunition_law_legal_llm_001_063.json")
 PRISON_DETENTION_LAW_LLM = os.path.join(ROOT, "data", "prison_detention_arabic_legal_llm", "prison_detention_law_legal_llm_001_031.json")
+CIVIL_DEFENSE_LAW_LLM = os.path.join(ROOT, "data", "civil_defense_arabic_legal_llm", "civil_defense_law_legal_llm_001_036.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -433,6 +434,7 @@ def main() -> int:
     anti_smoking_law_llm = _load_json(ANTI_SMOKING_LAW_LLM)
     weapons_ammunition_law_llm = _load_json(WEAPONS_AMMUNITION_LAW_LLM)
     prison_detention_law_llm = _load_json(PRISON_DETENTION_LAW_LLM)
+    civil_defense_law_llm = _load_json(CIVIL_DEFENSE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -453,7 +455,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 182,
+        "total_tracks": 183,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -639,6 +641,7 @@ def main() -> int:
             + anti_smoking_law_llm["record_count"]  # 20 Anti-Smoking Law (Royal Decree M/56, 28/7/1436H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY official Ministry of Health PDF cross-checked verbatim against nezams.com and a bilingual cloudfront.net legislation PDF, 20 اصلية, flat structure/no chapters, no amendment to the Law itself, no confirmed named-predecessor repeal (only a transitional continuation clause for unnamed prior agency rules), see track notes)
             + weapons_ammunition_law_llm["record_count"]  # 63 Weapons and Ammunition Law (Royal Decree M/45, 25/7/1426H) (TIER_2, BOE live portal unreachable this pass, 3 Wayback snapshots of the same official portal (2019-2026) cross-checked verbatim against nezams.com for all 63 articles, 56 اصلية/7 معدلة (Articles 2,12,25,31,43,50,53), 7 topical sections (no formal باب/فصل label in the source), CONFIRMED named-predecessor repeal of the prior Weapons and Ammunition Law (M/8, 19/2/1402H) via Article 62, see track notes)
             + prison_detention_law_llm["record_count"]  # 31 Prison and Detention Law (Royal Decree M/31, 21/6/1398H) (TIER_3, BOE and MOI PDF both unreachable this pass, web.archive.org not attempted (fetch tool itself reported it cannot reach that host), PRIMARY nezams.com cross-verified verbatim against islamport.com, 28 اصلية/3 معدلة (Articles 4,20,25; Article 4 uniquely amended TWICE), flat structure/no chapters, NO predecessor-repeal assertion made (unconfirmed either way given the statute's age, not a settled founding-statute claim), see track notes)
+            + civil_defense_law_llm["record_count"]  # 36 Civil Defense Law (Royal Decree M/10, 10/5/1406H) (TIER_3, BOE and NCC unreachable this pass, web.archive.org environment-blocked not bypassed, PRIMARY mohamah.net cross-verified verbatim against islamport.com, 34 اصلية/2 معدلة (Articles 5,28 -- original 1406H text preserved, current post-amendment text honestly UNCONFIRMED, not fabricated), flat structure/no chapters, NO named-predecessor-law repeal (Article 35 generic conflict clause only), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -815,6 +818,7 @@ def main() -> int:
             + anti_smoking_law_llm["record_count"]
             + weapons_ammunition_law_llm["record_count"]
             + prison_detention_law_llm["record_count"]
+            + civil_defense_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6121,6 +6125,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Prison and Detention Law «نظام السجن والتوقيف» — Royal Decree No. (M/31), dated 21/6/1398H (~1978G), approving Council of Ministers Resolution No. (441), 8/6/1398H; administered by the Ministry of Interior. **31 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-31 sequence, no مكرر articles). **28 اصلية / 3 معدلة (Articles 4, 20, 25)**. Article 4 is UNIQUELY amended TWICE — first by Royal Decree M/28 (1/5/1435H), then superseded by Council of Ministers Resolution 217 (29/4/1439H) — with all three versions (original/intermediate/current) preserved in history, never silently merged. Article 20 amended by Royal Decree M/75 (14/9/1428H, deleting the flogging penalty). Article 25 amended by Royal Decree M/45 (11/9/1430H, adding paragraph ب on extra conditional-release time). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has a dedicated lawId page (19945fe2-e690-4b24-9ab0-a9a700f17d03) and an official Ministry of Interior PDF also exists, but BOTH were unreachable this pass (live HTTP 503 / connection-reset); web.archive.org was not attempted this pass because the fetch tool itself reported it cannot reach that host — not a bypass attempt, an honest access-tooling limitation. PRIMARY original full text cross-verified verbatim between nezams.com (independent aggregator) and islamport.com (al-Mawsuea al-Shamela, an independent Islamic-texts aggregator), zero substantive differences found. **NO predecessor-repeal assertion made** — no named prior instrument's repeal was found anywhere in the text, but given the statute's age (1398H/1978G) and the corpus's honest-disclosure standard, this is recorded as UNCONFIRMED either way rather than asserted as a settled 'no repeal' founding-statute finding; no supersession-graph edge is added either way. Implementing Regulation(s) referenced in Article 30 are NOT ingested, flagged as a future candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "civil_defense_law",
+                "display_name_ar": "نظام الدفاع المدني",
+                "display_name_en": "Civil Defense Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_AND_NCC_UNREACHABLE_WAYBACK_ENVIRONMENT_BLOCKED_X_MOHAMAH_NET_X_ISLAMPORT_CROSSCHECK",
+                "source_authority": "Royal Decree No. (M/10), dated 10/5/1406H (~1986G), approving Council of Ministers Resolution No. (25), dated 23/1/1406H; administered by the Ministry of Interior — laws.boe.gov.sa and istitlaa.ncc.gov.sa (National Committee for Civil Defense) both have dedicated pages for this law but were unreachable this pass (live HTTP 503); web.archive.org was environment-blocked this pass, not bypassed. ORIGINAL full text cross-verified verbatim between mohamah.net and islamport.com (independent, non-derivative sources)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": civil_defense_law_llm["record_count"],
+                    "data_path": "data/civil_defense_arabic_legal_llm/civil_defense_law_legal_llm_001_036.json"}},
+                "record_counts": {"arabic_articles": civil_defense_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 34, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+                                  "total": civil_defense_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/civil_defense/law/official_source/civil_defense_law_official_source.json",
+                    "sources/civil_defense/law/verified/civil_defense_law_verified_records.jsonl",
+                    "data/civil_defense_arabic_legal_llm/civil_defense_law_legal_llm_001_036.json",
+                ],
+                "validator_targets": ["make civil-defense-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Civil Defense Law «نظام الدفاع المدني» — Royal Decree No. (M/10), dated 10/5/1406H (~1986G), approving Council of Ministers Resolution No. (25), 23/1/1406H; administered by the Ministry of Interior. **36 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-36 sequence, no مكرر articles). **34 اصلية / 2 معدلة (Articles 5, 28)** — the ORIGINAL 1406H wording of both articles is preserved, but their CURRENT post-amendment text could NOT be confirmed this pass and is honestly disclosed as UNCONFIRMED rather than fabricated. **VERIFICATION TIER: TIER_3** for the base text — laws.boe.gov.sa and istitlaa.ncc.gov.sa (National Committee for Civil Defense) both have dedicated pages for this law but were unreachable this pass (live HTTP 503); web.archive.org was environment-blocked this pass, not bypassed. PRIMARY original full text cross-verified verbatim between mohamah.net and islamport.com (independent, non-derivative sources). Two named amendment instruments are confirmed to EXIST — Royal Decree M/66 (2/10/1424H) and Royal Decree M/63 (13/9/1436H), per saudipedia.com citing the Bureau of Experts — but their verbatim current text could not be confirmed this pass, NOT fabricated. saudipedia.com further states that 'the majority of the law's articles were amended on various dates', meaning the true amendment scope across four decades likely EXCEEDS what could be confirmed here; flagged as a completeness caveat rather than concealed, has_per_article_variation. **NO named-predecessor-law repeal** — Article 35 is a generic conflict clause naming no prior instrument, a confirmed negative finding; no supersession-graph edge is added. Implementing regulations (rights/duties of persons called upon in civil defense work; fire/rescue operations regulation) are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
             },
         ],
     }

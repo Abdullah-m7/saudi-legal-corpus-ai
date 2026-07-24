@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 392,
-  "top1_hits": 366,
-  "top3_hits": 385,
-  "top5_hits": 388,
-  "top1_accuracy": 0.9337,
-  "top3_accuracy": 0.9821,
+  "total_queries": 394,
+  "top1_hits": 368,
+  "top3_hits": 387,
+  "top5_hits": 390,
+  "top1_accuracy": 0.934,
+  "top3_accuracy": 0.9822,
   "top5_accuracy": 0.9898,
-  "mrr_at_5": 0.9571,
+  "mrr_at_5": 0.9574,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5997,9 +5997,9 @@
      "score": 21
     },
     {
-     "record_id": "labor-annex2-llm-table-8",
-     "article_number": 8,
-     "score": 13
+     "record_id": "civil-defense-law-llm-art-012",
+     "article_number": 12,
+     "score": 15
     }
    ]
   },
@@ -12169,6 +12169,68 @@
      "record_id": "prison-detention-law-llm-art-014",
      "article_number": 14,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "cvd-001",
+   "query_ar": "تنشأ المخابئ اللازمة في الحدائق والساحات العامة والميادين وغير ذلك من الأماكن المزدحمة والمناسبة لإنشاء المخابئ العامة",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_defense",
+    "law_component": "law",
+    "article_number": 21
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-defense-law-llm-art-021",
+     "article_number": 21,
+     "score": 42
+    },
+    {
+     "record_id": "civil-defense-law-llm-art-009",
+     "article_number": 9,
+     "score": 18
+    },
+    {
+     "record_id": "civil-defense-law-llm-art-001",
+     "article_number": 1,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "cvd-002",
+   "query_ar": "يشكل مجلس الدفاع المدني من",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_defense",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-defense-law-llm-art-005",
+     "article_number": 5,
+     "score": 22
+    },
+    {
+     "record_id": "civil-defense-law-llm-art-003",
+     "article_number": 3,
+     "score": 17
+    },
+    {
+     "record_id": "civil-defense-law-llm-art-007",
+     "article_number": 7,
+     "score": 17
     }
    ]
   }
