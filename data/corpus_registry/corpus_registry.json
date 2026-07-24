@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11206,
+  "total_primary_arabic_governing_records": 11237,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12101,
-  "total_tracks": 181,
+  "total_registry_counted_records": 12132,
+  "total_tracks": 182,
   "tracks": [
     {
       "boundaries": {
@@ -8632,6 +8632,55 @@
       "validator_targets": [
         "make weapons-ammunition-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/prison_detention/law/official_source/prison_detention_law_official_source.json",
+        "sources/prison_detention/law/verified/prison_detention_law_verified_records.jsonl",
+        "data/prison_detention_arabic_legal_llm/prison_detention_law_legal_llm_001_031.json"
+      ],
+      "display_name_ar": "نظام السجن والتوقيف",
+      "display_name_en": "Prison and Detention Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/prison_detention_arabic_legal_llm/prison_detention_law_legal_llm_001_031.json",
+          "governing": true,
+          "record_count": 31,
+          "status": "complete"
+        }
+      },
+      "notes": "Prison and Detention Law «نظام السجن والتوقيف» — Royal Decree No. (M/31), dated 21/6/1398H (~1978G), approving Council of Ministers Resolution No. (441), 8/6/1398H; administered by the Ministry of Interior. **31 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-31 sequence, no مكرر articles). **28 اصلية / 3 معدلة (Articles 4, 20, 25)**. Article 4 is UNIQUELY amended TWICE — first by Royal Decree M/28 (1/5/1435H), then superseded by Council of Ministers Resolution 217 (29/4/1439H) — with all three versions (original/intermediate/current) preserved in history, never silently merged. Article 20 amended by Royal Decree M/75 (14/9/1428H, deleting the flogging penalty). Article 25 amended by Royal Decree M/45 (11/9/1430H, adding paragraph ب on extra conditional-release time). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has a dedicated lawId page (19945fe2-e690-4b24-9ab0-a9a700f17d03) and an official Ministry of Interior PDF also exists, but BOTH were unreachable this pass (live HTTP 503 / connection-reset); web.archive.org was not attempted this pass because the fetch tool itself reported it cannot reach that host — not a bypass attempt, an honest access-tooling limitation. PRIMARY original full text cross-verified verbatim between nezams.com (independent aggregator) and islamport.com (al-Mawsuea al-Shamela, an independent Islamic-texts aggregator), zero substantive differences found. **NO predecessor-repeal assertion made** — no named prior instrument's repeal was found anywhere in the text, but given the statute's age (1398H/1978G) and the corpus's honest-disclosure standard, this is recorded as UNCONFIRMED either way rather than asserted as a settled 'no repeal' founding-statute finding; no supersession-graph edge is added either way. Implementing Regulation(s) referenced in Article 30 are NOT ingested, flagged as a future candidate. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_AND_MOI_PDF_UNREACHABLE_WAYBACK_NOT_ATTEMPTED_X_NEZAMS_COM_X_ISLAMPORT_CROSSCHECK",
+      "record_counts": {
+        "arabic_articles": 31,
+        "legal_status_breakdown": {
+          "اصلية": 28,
+          "مضافة": 0,
+          "معدلة": 3,
+          "ملغاة": 0
+        },
+        "total": 31
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/31), dated 21/6/1398H (~1978G), approving Council of Ministers Resolution No. (441), dated 8/6/1398H; administered by the Ministry of Interior — laws.boe.gov.sa has a dedicated lawId page (19945fe2-e690-4b24-9ab0-a9a700f17d03) and an official MOI PDF also exists, but BOTH were unreachable this pass (live HTTP 503 / connection-reset); web.archive.org was not attempted this pass because the fetch tool itself reported it cannot reach that host, not a bypass attempt. ORIGINAL full text cross-verified verbatim between nezams.com and islamport.com (al-Mawsuea al-Shamela, an independent Islamic-texts aggregator)",
+      "status": "complete",
+      "track_id": "prison_detention_law",
+      "validator_targets": [
+        "make prison-detention-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8741,6 +8790,7 @@
       "personal_status": 293,
       "premium_residency": 14,
       "press": 49,
+      "prison_detention": 31,
       "privatization": 45,
       "protection_from_abuse": 17,
       "qismah": 48,
@@ -8776,7 +8826,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11037,
+    "total_records": 11068,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 390,
-  "top1_hits": 364,
-  "top3_hits": 383,
-  "top5_hits": 386,
-  "top1_accuracy": 0.9333,
+  "total_queries": 392,
+  "top1_hits": 366,
+  "top3_hits": 385,
+  "top5_hits": 388,
+  "top1_accuracy": 0.9337,
   "top3_accuracy": 0.9821,
-  "top5_accuracy": 0.9897,
-  "mrr_at_5": 0.9569,
+  "top5_accuracy": 0.9898,
+  "mrr_at_5": 0.9571,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -12107,6 +12107,68 @@
      "record_id": "weapons-ammunition-law-llm-art-039",
      "article_number": 39,
      "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "pdt-001",
+   "query_ar": "لا يجوز إيداع أي إنسان في سجن أو في دار للتوقيف أو نقله أو إخلاء سبيله إلا بأمر كتابي صادر من السلطة المختصة",
+   "category": "topical",
+   "gold": {
+    "corpus": "prison_detention",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "prison-detention-law-llm-art-007",
+     "article_number": 7,
+     "score": 47
+    },
+    {
+     "record_id": "aml-regulation-llm-art-019",
+     "article_number": 39,
+     "score": 19
+    },
+    {
+     "record_id": "domestic-labor-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "pdt-002",
+   "query_ar": "يبقى مع المسجونة أو الموقوفة طفلها حتى يبلغ من العمر سنتين",
+   "category": "topical",
+   "gold": {
+    "corpus": "prison_detention",
+    "law_component": "law",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "prison-detention-law-llm-art-015",
+     "article_number": 15,
+     "score": 30
+    },
+    {
+     "record_id": "prison-detention-law-llm-art-013",
+     "article_number": 13,
+     "score": 16
+    },
+    {
+     "record_id": "prison-detention-law-llm-art-014",
+     "article_number": 14,
+     "score": 15
     }
    ]
   }

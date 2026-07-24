@@ -219,6 +219,7 @@ AUDIOVISUAL_MEDIA_LAW_LLM = os.path.join(ROOT, "data", "audiovisual_media_arabic
 SPORTS_LAW_LLM = os.path.join(ROOT, "data", "sports_arabic_legal_llm", "sports_law_legal_llm_001_097.json")
 ANTI_SMOKING_LAW_LLM = os.path.join(ROOT, "data", "anti_smoking_arabic_legal_llm", "anti_smoking_law_legal_llm_001_020.json")
 WEAPONS_AMMUNITION_LAW_LLM = os.path.join(ROOT, "data", "weapons_ammunition_arabic_legal_llm", "weapons_ammunition_law_legal_llm_001_063.json")
+PRISON_DETENTION_LAW_LLM = os.path.join(ROOT, "data", "prison_detention_arabic_legal_llm", "prison_detention_law_legal_llm_001_031.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -431,6 +432,7 @@ def main() -> int:
     sports_law_llm = _load_json(SPORTS_LAW_LLM)
     anti_smoking_law_llm = _load_json(ANTI_SMOKING_LAW_LLM)
     weapons_ammunition_law_llm = _load_json(WEAPONS_AMMUNITION_LAW_LLM)
+    prison_detention_law_llm = _load_json(PRISON_DETENTION_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -451,7 +453,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 181,
+        "total_tracks": 182,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -636,6 +638,7 @@ def main() -> int:
             + sports_law_llm["record_count"]  # 97 Sports Law (Royal Decree M/121, 10/6/1447H) (TIER_3, BOE and mos.gov.sa both unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text cross-checked verbatim against qanoonsa.com, decree identity/date/preamble officially confirmed via the Umm al-Qura gazette's own JSON API, 97 اصلية across 11 أبواب (brand-new founding statute, in force since ~June 2026), CONFIRMED named-predecessor repeal of the Basic Law of Sports Federations and the Saudi Arabian Olympic Committee (M/55, 19/10/1407H) via Article 96, see track notes)
             + anti_smoking_law_llm["record_count"]  # 20 Anti-Smoking Law (Royal Decree M/56, 28/7/1436H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY official Ministry of Health PDF cross-checked verbatim against nezams.com and a bilingual cloudfront.net legislation PDF, 20 اصلية, flat structure/no chapters, no amendment to the Law itself, no confirmed named-predecessor repeal (only a transitional continuation clause for unnamed prior agency rules), see track notes)
             + weapons_ammunition_law_llm["record_count"]  # 63 Weapons and Ammunition Law (Royal Decree M/45, 25/7/1426H) (TIER_2, BOE live portal unreachable this pass, 3 Wayback snapshots of the same official portal (2019-2026) cross-checked verbatim against nezams.com for all 63 articles, 56 اصلية/7 معدلة (Articles 2,12,25,31,43,50,53), 7 topical sections (no formal باب/فصل label in the source), CONFIRMED named-predecessor repeal of the prior Weapons and Ammunition Law (M/8, 19/2/1402H) via Article 62, see track notes)
+            + prison_detention_law_llm["record_count"]  # 31 Prison and Detention Law (Royal Decree M/31, 21/6/1398H) (TIER_3, BOE and MOI PDF both unreachable this pass, web.archive.org not attempted (fetch tool itself reported it cannot reach that host), PRIMARY nezams.com cross-verified verbatim against islamport.com, 28 اصلية/3 معدلة (Articles 4,20,25; Article 4 uniquely amended TWICE), flat structure/no chapters, NO predecessor-repeal assertion made (unconfirmed either way given the statute's age, not a settled founding-statute claim), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -811,6 +814,7 @@ def main() -> int:
             + sports_law_llm["record_count"]
             + anti_smoking_law_llm["record_count"]
             + weapons_ammunition_law_llm["record_count"]
+            + prison_detention_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6089,6 +6093,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Weapons and Ammunition Law «نظام الأسلحة والذخائر» — Royal Decree No. (M/45), dated 25/7/1426H (~2005G), approving Council of Ministers Resolution No. (193), 24/7/1426H; published Umm Al-Qura Gazette 18/9/1426H; administered by the Ministry of Interior. **63 articles across SEVEN topical sections** (no formal باب/فصل label in the source, but the text is internally organized by subject — definitions, permitted carriers, licensing, prohibited weapons, penalties, etc. — covering articles 1-63 cleanly, no مكرر articles). **56 اصلية / 7 معدلة (Articles 2, 12, 25, 31, 43, 50, 53)** across four separate, independently-dated amendment events: Council of Ministers Resolution 217, 1439H (Article 2); Royal Decree M/17, 1437H (Articles 43, 50, 53); Royal Decree M/71, 1444H (Articles 12, 25); Council of Ministers Resolution 967, 1445H (Article 31) — each amendment's original/intermediate/current text preserved in history, never silently merged. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a dedicated lawId page (a445af93-671f-496b-818a-a9a700f19150) but the LIVE portal was unreachable this pass (HTTP 503 / connection-reset across multiple attempts); three independent Wayback Machine snapshots of that SAME official BOE portal page (spanning 2019, 2025, 2026) were used instead as PRIMARY, cross-checked verbatim against nezams.com for all 63 articles after normalization. Five articles (12, 25, 43, 50, 53) show an internal BOE conflict between the main displayed text and a 'changed-article' version-history popup citing a specific Royal Decree; the popup/decree text was adopted as current via a documented interpretive judgment, disclosed in known_unresolved_discrepancies rather than silently resolved. Article 31's paragraph (d), added by CoM Resolution 967 (1445H), is confirmed to exist via the Umm al-Qura gazette API but its full added text could not be independently cross-verified against a second source, flagged has_per_article_variation. **CONFIRMED named-predecessor repeal**: Article 62 explicitly states this Law replaces the prior Weapons and Ammunition Law «نظام الأسلحة والذخائر» (Royal Decree No. M/8, 19/2/1402H) and repeals anything conflicting with it — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1402H instrument is not itself ingested as a separate track. Implementing Regulation and the fee-schedule annex table are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "prison_detention_law",
+                "display_name_ar": "نظام السجن والتوقيف",
+                "display_name_en": "Prison and Detention Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_AND_MOI_PDF_UNREACHABLE_WAYBACK_NOT_ATTEMPTED_X_NEZAMS_COM_X_ISLAMPORT_CROSSCHECK",
+                "source_authority": "Royal Decree No. (M/31), dated 21/6/1398H (~1978G), approving Council of Ministers Resolution No. (441), dated 8/6/1398H; administered by the Ministry of Interior — laws.boe.gov.sa has a dedicated lawId page (19945fe2-e690-4b24-9ab0-a9a700f17d03) and an official MOI PDF also exists, but BOTH were unreachable this pass (live HTTP 503 / connection-reset); web.archive.org was not attempted this pass because the fetch tool itself reported it cannot reach that host, not a bypass attempt. ORIGINAL full text cross-verified verbatim between nezams.com and islamport.com (al-Mawsuea al-Shamela, an independent Islamic-texts aggregator)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": prison_detention_law_llm["record_count"],
+                    "data_path": "data/prison_detention_arabic_legal_llm/prison_detention_law_legal_llm_001_031.json"}},
+                "record_counts": {"arabic_articles": prison_detention_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 28, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
+                                  "total": prison_detention_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/prison_detention/law/official_source/prison_detention_law_official_source.json",
+                    "sources/prison_detention/law/verified/prison_detention_law_verified_records.jsonl",
+                    "data/prison_detention_arabic_legal_llm/prison_detention_law_legal_llm_001_031.json",
+                ],
+                "validator_targets": ["make prison-detention-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Prison and Detention Law «نظام السجن والتوقيف» — Royal Decree No. (M/31), dated 21/6/1398H (~1978G), approving Council of Ministers Resolution No. (441), 8/6/1398H; administered by the Ministry of Interior. **31 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-31 sequence, no مكرر articles). **28 اصلية / 3 معدلة (Articles 4, 20, 25)**. Article 4 is UNIQUELY amended TWICE — first by Royal Decree M/28 (1/5/1435H), then superseded by Council of Ministers Resolution 217 (29/4/1439H) — with all three versions (original/intermediate/current) preserved in history, never silently merged. Article 20 amended by Royal Decree M/75 (14/9/1428H, deleting the flogging penalty). Article 25 amended by Royal Decree M/45 (11/9/1430H, adding paragraph ب on extra conditional-release time). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has a dedicated lawId page (19945fe2-e690-4b24-9ab0-a9a700f17d03) and an official Ministry of Interior PDF also exists, but BOTH were unreachable this pass (live HTTP 503 / connection-reset); web.archive.org was not attempted this pass because the fetch tool itself reported it cannot reach that host — not a bypass attempt, an honest access-tooling limitation. PRIMARY original full text cross-verified verbatim between nezams.com (independent aggregator) and islamport.com (al-Mawsuea al-Shamela, an independent Islamic-texts aggregator), zero substantive differences found. **NO predecessor-repeal assertion made** — no named prior instrument's repeal was found anywhere in the text, but given the statute's age (1398H/1978G) and the corpus's honest-disclosure standard, this is recorded as UNCONFIRMED either way rather than asserted as a settled 'no repeal' founding-statute finding; no supersession-graph edge is added either way. Implementing Regulation(s) referenced in Article 30 are NOT ingested, flagged as a future candidate. Arabic governs; not legal advice.",
             },
         ],
     }
