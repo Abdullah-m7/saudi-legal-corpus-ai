@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 376,
-  "top1_hits": 350,
-  "top3_hits": 369,
-  "top5_hits": 372,
-  "top1_accuracy": 0.9309,
-  "top3_accuracy": 0.9814,
+  "total_queries": 378,
+  "top1_hits": 352,
+  "top3_hits": 371,
+  "top5_hits": 374,
+  "top1_accuracy": 0.9312,
+  "top3_accuracy": 0.9815,
   "top5_accuracy": 0.9894,
-  "mrr_at_5": 0.9553,
+  "mrr_at_5": 0.9556,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -10833,8 +10833,8 @@
      "score": 18
     },
     {
-     "record_id": "labor-annex3-llm-art-006",
-     "article_number": 6,
+     "record_id": "child-protection-law-llm-art-003",
+     "article_number": 3,
      "score": 17
     }
    ]
@@ -11673,6 +11673,68 @@
      "record_id": "evidence-law-llm-art-128",
      "article_number": 128,
      "score": 45
+    }
+   ]
+  },
+  {
+   "query_id": "cpl-001",
+   "query_ar": "على الجهات ذات العلاقة وضع برامج صحية وتربوية وتعليمية ونفسية واجتماعية لإعادة تأهيل الطفل الذي تعرض لإحدى حالات الإيذاء أو الإهمال",
+   "category": "topical",
+   "gold": {
+    "corpus": "child_protection",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "child-protection-law-llm-art-019",
+     "article_number": 19,
+     "score": 50
+    },
+    {
+     "record_id": "child-protection-law-llm-art-001",
+     "article_number": 1,
+     "score": 19
+    },
+    {
+     "record_id": "child-protection-law-llm-art-022",
+     "article_number": 22,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "cpl-002",
+   "query_ar": "مع مراعاة ما تقضي به الفقرة (2) من هذه المادة، ودون إخلال بأي عقوبة أشد مقررة شرعا أو نظاما، يعاقب بالسجن مدة لا تزيد على (سنتين) وبغرامة لا تزيد على (مائة) ألف ريال",
+   "category": "topical",
+   "gold": {
+    "corpus": "child_protection",
+    "law_component": "law",
+    "article_number": 23
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "child-protection-law-llm-art-024",
+     "article_number": 23,
+     "score": 53
+    },
+    {
+     "record_id": "anti-harassment-law-llm-art-006",
+     "article_number": 6,
+     "score": 43
+    },
+    {
+     "record_id": "whistleblower-law-llm-art-026",
+     "article_number": 26,
+     "score": 39
     }
    ]
   }
