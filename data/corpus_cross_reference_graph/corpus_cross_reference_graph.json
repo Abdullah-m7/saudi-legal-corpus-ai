@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 11258,
-  "total_references_extracted": 2355,
-  "intra_law_count": 2024,
-  "inter_law_count": 331,
+  "total_records_scanned": 11277,
+  "total_references_extracted": 2362,
+  "intra_law_count": 2029,
+  "inter_law_count": 333,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1983,
-    "medium": 372
+    "high": 1989,
+    "medium": 373
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -23496,6 +23496,83 @@
       "target_article_number": 85,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة والثمانين) من النظام، من خلال واحدة أو أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_law",
+      "source_record_id": "tourism-law-llm-art-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "tourism_law",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من النظام. المرفق السياحي: ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_law",
+      "source_record_id": "tourism-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "tourism_law",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية) من النظام، والتي تمثل الحد ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_law",
+      "source_record_id": "tourism-law-llm-art-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "environmental_law",
+      "target_article_number": null,
+      "target_law_name_raw": "البيئة",
+      "raw_citation_text": "أحكام نظام البيئة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_law",
+      "source_record_id": "tourism-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "متفق عليها بينها وبين وزارتي الداخلية والخارجية",
+      "raw_citation_text": "وفق ضوابط متفق عليها بينها وبين وزارتي الداخلية والخارجية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "tourism_law",
+      "source_record_id": "tourism-law-llm-art-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "tourism_law",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من النظام. 2- يحظر منع المفت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_law",
+      "source_record_id": "tourism-law-llm-art-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "tourism_law",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام باستثناء الغرامات ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_law",
+      "source_record_id": "tourism-law-llm-art-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "tourism_law",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من النظام- الآتي: أ- فرض غرا",
       "confidence": "high"
     },
     {

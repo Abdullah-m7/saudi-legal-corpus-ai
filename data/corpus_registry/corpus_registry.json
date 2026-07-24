@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11427,
+  "total_primary_arabic_governing_records": 11446,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12322,
-  "total_tracks": 188,
+  "total_registry_counted_records": 12341,
+  "total_tracks": 189,
   "tracks": [
     {
       "boundaries": {
@@ -8975,6 +8975,55 @@
       "validator_targets": [
         "make disability-rights-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/tourism/law/official_source/tourism_law_official_source.json",
+        "sources/tourism/law/verified/tourism_law_verified_records.jsonl",
+        "data/tourism_arabic_legal_llm/tourism_law_legal_llm_001_019.json"
+      ],
+      "display_name_ar": "نظام السياحة",
+      "display_name_en": "Tourism Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/tourism_arabic_legal_llm/tourism_law_legal_llm_001_019.json",
+          "governing": true,
+          "record_count": 19,
+          "status": "complete"
+        }
+      },
+      "notes": "Tourism Law «نظام السياحة» — Royal Decree No. (M/18), dated 26/1/1444H (~2022G), approving Council of Ministers Resolution No. (79), 25/1/1444H, published Umm al-Qura 7/2/1444H; administered by the Ministry of Tourism. **19 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-19 sequence). **ALL 19 اصلية** — no known amendments as of this pass. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a confirmed dedicated lawId page but was unreachable this pass (live HTTP 503; the Umm al-Qura gazette page also 503/un-rendered SPA); web.archive.org was refused (403) and not bypassed. Original full text from an official Ministry of Tourism PDF (cdn.mt.gov.sa) cross-checked verbatim against nezams.com, and structurally cross-checked (English, reference-only) against the official BOE translation (misa.gov.sa). **CONFIRMED named-predecessor repeal**: Article 18 explicitly states this Law replaces the prior Tourism Law (Royal Decree M/2, 9/1/1436H) and repeals all conflicting provisions — confirmed from BOTH directions (this law's own Article 18 text AND the predecessor law's own nezams.com status record, which independently states it was repealed by this exact decree) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1436H instrument is not itself ingested as a separate track. Implementing Regulations (ten-plus issued under this law, cdn.mt.gov.sa) are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_LAWID_UNREACHABLE_WAYBACK_REFUSED_X_MT_PDF_PRIMARY_X_NEZAMS_CROSS_VERIFIED_X_MISA_EN_STRUCTURAL",
+      "record_counts": {
+        "arabic_articles": 19,
+        "legal_status_breakdown": {
+          "اصلية": 19,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 19
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/18), dated 26/1/1444H (~2022G), approving Council of Ministers Resolution No. (79), dated 25/1/1444H, published Umm al-Qura 7/2/1444H; administered by the Ministry of Tourism. laws.boe.gov.sa has a dedicated lawId page but was unreachable live this pass (HTTP 503; the Umm al-Qura gazette page also returned 503/an un-rendered SPA); web.archive.org was refused (403) and not bypassed. Original full text from an official Ministry of Tourism PDF (cdn.mt.gov.sa) cross-checked verbatim against nezams.com, and structurally cross-checked (English, reference-only) against the official BOE translation hosted on misa.gov.sa.",
+      "status": "complete",
+      "track_id": "tourism_law",
+      "validator_targets": [
+        "make tourism-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -9114,6 +9163,7 @@
       "tawtheeq": 88,
       "telecommunications": 41,
       "terrorism": 127,
+      "tourism": 19,
       "trade_names": 23,
       "trademark": 52,
       "traffic": 172,
@@ -9126,7 +9176,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11258,
+    "total_records": 11277,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

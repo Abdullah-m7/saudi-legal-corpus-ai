@@ -316,6 +316,8 @@ LAYERS = [
      "standards_quality", "law"),
     ("data/disability_rights_arabic_legal_llm/disability_rights_law_legal_llm_001_033.json",
      "disability_rights", "law"),
+    ("data/tourism_arabic_legal_llm/tourism_law_legal_llm_001_019.json",
+     "tourism", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",
