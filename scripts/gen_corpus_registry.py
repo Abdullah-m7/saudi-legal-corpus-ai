@@ -217,6 +217,7 @@ PROTECTION_FROM_ABUSE_LAW_LLM = os.path.join(ROOT, "data", "protection_from_abus
 ASSOCIATIONS_NGO_LAW_LLM = os.path.join(ROOT, "data", "associations_ngo_arabic_legal_llm", "associations_ngo_law_legal_llm_001_044.json")
 AUDIOVISUAL_MEDIA_LAW_LLM = os.path.join(ROOT, "data", "audiovisual_media_arabic_legal_llm", "audiovisual_media_law_legal_llm_001_025.json")
 SPORTS_LAW_LLM = os.path.join(ROOT, "data", "sports_arabic_legal_llm", "sports_law_legal_llm_001_097.json")
+ANTI_SMOKING_LAW_LLM = os.path.join(ROOT, "data", "anti_smoking_arabic_legal_llm", "anti_smoking_law_legal_llm_001_020.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -427,6 +428,7 @@ def main() -> int:
     associations_ngo_law_llm = _load_json(ASSOCIATIONS_NGO_LAW_LLM)
     audiovisual_media_law_llm = _load_json(AUDIOVISUAL_MEDIA_LAW_LLM)
     sports_law_llm = _load_json(SPORTS_LAW_LLM)
+    anti_smoking_law_llm = _load_json(ANTI_SMOKING_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -447,7 +449,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 179,
+        "total_tracks": 180,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -630,6 +632,7 @@ def main() -> int:
             + associations_ngo_law_llm["record_count"]  # 44 Law of Associations and Civil Institutions (Royal Decree M/8, 19/2/1437H) (TIER_3, BOE indexing shows two conflicting lawId values for this law's name and the live portal was unreachable this pass, PRIMARY nezams.com full text independently cross-checked against a menarights.org PDF for article count/closing-articles verbatim text, 43 اصلية/1 معدلة (Article 1 only, CoM Resolution 618's new definitions), flat structure/no chapters, CONFIRMED named-predecessor repeal of لائحة الجمعيات والمؤسسات الخيرية (CoM Resolution 107, 25/6/1410H) via Article 43, see track notes)
             + audiovisual_media_law_llm["record_count"]  # 25 Law of Audiovisual Media (Royal Decree M/33, 25/3/1439H) (TIER_2, BOE unreachable this pass and Wayback refused by the fetch tool itself, PRIMARY nezams.com full text strongly cross-checked against an archived BOE portal scan (cyrilla.org) and the official BOE English translation (misa.gov.sa), 24 اصلية/1 معدلة (Article 1 only, CoM Resolution 374's terminology substitution), flat structure/no chapters, no repeal of any predecessor (generic conflict clause only), see track notes)
             + sports_law_llm["record_count"]  # 97 Sports Law (Royal Decree M/121, 10/6/1447H) (TIER_3, BOE and mos.gov.sa both unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text cross-checked verbatim against qanoonsa.com, decree identity/date/preamble officially confirmed via the Umm al-Qura gazette's own JSON API, 97 اصلية across 11 أبواب (brand-new founding statute, in force since ~June 2026), CONFIRMED named-predecessor repeal of the Basic Law of Sports Federations and the Saudi Arabian Olympic Committee (M/55, 19/10/1407H) via Article 96, see track notes)
+            + anti_smoking_law_llm["record_count"]  # 20 Anti-Smoking Law (Royal Decree M/56, 28/7/1436H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY official Ministry of Health PDF cross-checked verbatim against nezams.com and a bilingual cloudfront.net legislation PDF, 20 اصلية, flat structure/no chapters, no amendment to the Law itself, no confirmed named-predecessor repeal (only a transitional continuation clause for unnamed prior agency rules), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -803,6 +806,7 @@ def main() -> int:
             + associations_ngo_law_llm["record_count"]
             + audiovisual_media_law_llm["record_count"]
             + sports_law_llm["record_count"]
+            + anti_smoking_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6025,6 +6029,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Sports Law «نظام الرياضة» — Royal Decree No. (M/121), dated 10/6/1447H (~1 December 2025G), approving Council of Ministers Resolution No. (414), 4/6/1447H; published Umm Al-Qura Gazette issue 5129, 21/6/1447H (~12 December 2025G); administered by the Ministry of Sport. A brand-new standalone Law (not a companion regulation of any existing track) — this is a VERY RECENT law, in force only since ~June 2026 (180 days after Gazette publication; the entry-into-force date is deliberately kept separate from the decree issuance date used as `decree_date_hijri`). **97 articles across 11 أبواب** (7 flat, 4 subdivided into فصول: الثاني[7 فصول], الثالث[7 فصول], التاسع[2 فصول], العاشر[3 فصول]), covering the Saudi Olympic & Paralympic Committee, federations, clubs, athletes, coaches, the sports arbitration center, and the anti-doping committee. **ALL 97 اصلية** — no amendments yet, consistent with the law's brand-new status. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa and the Ministry of Sport's own official PDF (mos.gov.sa) were BOTH unreachable this pass (live HTTP 503 / TLS connection-reset across multiple attempts on each host); web.archive.org egress-blocked at the network layer, not circumvented. PRIMARY full text from nezams.com, cross-checked verbatim article-by-article against qanoonsa.com (independent secondary, no shared derivation); the decree's identity, date, and preamble were independently and officially confirmed via the Umm Al-Qura gazette's own JSON API (uqn.gov.sa), though that API response did not cover the substantive articles themselves — honestly kept at TIER_3 rather than inflated to TIER_2, since no official government document served as the governing text for the articles. **CONFIRMED named-predecessor repeal**: Article 96 EXPLICITLY supersedes the Basic Law of Sports Federations and the Saudi Arabian Olympic Committee «النظام الأساسي للاتحادات الرياضية واللجنة الأولمبية العربية السعودية» (Royal Decree No. M/55, 19/10/1407H, following Council of Ministers Resolution 226, 13/9/1407H) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1407H instrument is not itself ingested as a separate track. Implementing Regulations (Article 95 mandate) had not yet been issued as of this track's preparation and are flagged as a future candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "anti_smoking_law",
+                "display_name_ar": "نظام مكافحة التدخين",
+                "display_name_en": "Anti-Smoking Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_MOH_OFFICIAL_PDF_GOVERNING_TEXT_X_NEZAMS_COM_AND_CLOUDFRONT_BILINGUAL_PDF_CROSSCHECK",
+                "source_authority": "Royal Decree No. (M/56), dated 28/7/1436H, approving Council of Ministers Resolution No. (90), dated 23/3/1434H; published Umm Al-Qura Gazette 2/9/1436H; administered by the Ministry of Health — laws.boe.gov.sa has a dedicated lawId page (93b6f7f3-1083-46e7-b30e-a9a700f291b0) checked first per methodology: unreachable this pass (live HTTP 503 / connection-reset); a confirmed Wayback snapshot's content could not be fetched (web.archive.org egress-blocked, not bypassed). ORIGINAL full text from an official Ministry of Health PDF (moh.gov.sa), cross-checked verbatim against nezams.com (independent aggregator, raw HTML) and a bilingual cloudfront.net legislation PDF",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": anti_smoking_law_llm["record_count"],
+                    "data_path": "data/anti_smoking_arabic_legal_llm/anti_smoking_law_legal_llm_001_020.json"}},
+                "record_counts": {"arabic_articles": anti_smoking_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": anti_smoking_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/anti_smoking/law/official_source/anti_smoking_law_official_source.json",
+                    "sources/anti_smoking/law/verified/anti_smoking_law_verified_records.jsonl",
+                    "data/anti_smoking_arabic_legal_llm/anti_smoking_law_legal_llm_001_020.json",
+                ],
+                "validator_targets": ["make anti-smoking-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Anti-Smoking Law «نظام مكافحة التدخين» — Royal Decree No. (M/56), dated 28/7/1436H, approving Council of Ministers Resolution No. (90), 23/3/1434H (following Shura Council Resolutions 54/50 3/11/1421H and 55/50 20/10/1432H); published Umm Al-Qura Gazette 2/9/1436H; administered by the Ministry of Health. A brand-new standalone Law (not a companion regulation of any existing track). **20 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-20 sequence, no مكرر articles). **ALL 20 اصلية** — no amendment to the Law itself has been found (only its Implementing Regulation has since been amended, e.g. Ministerial Resolution 797557, 1/5/1441H — out of scope, flagged as a future candidate). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a dedicated lawId page (93b6f7f3-1083-46e7-b30e-a9a700f291b0) but was unreachable this pass (live HTTP 503 / connection-reset); a confirmed Wayback snapshot exists (timestamp 20251015113738) but its content could not be fetched because web.archive.org itself is egress-blocked at the network layer, not circumvented. PRIMARY original full text from an official Ministry of Health PDF (moh.gov.sa, joint MOH/National Committee for Tobacco Control publication) — a genuine Saudi government document used directly as the governing text, cross-checked verbatim against nezams.com (independent aggregator, raw HTML parsed for byte-level confirmation) and independently again against a bilingual legislation-tracking PDF hosted on cloudfront.net. **No confirmed named-predecessor repeal** — the Royal Decree's own enacting clause and CoM Resolution 90's clause 2 instead carry a TRANSITIONAL continuation clause, allowing unnamed pre-existing agency-level anti-smoking regulations to keep operating until this Law's own Implementing Regulation was issued; this proves a patchwork of prior agency rules existed but is a transitional clause, not a repeal, so it is NOT recorded as a confirmed named-predecessor repeal and no supersession-graph edge applies, per this corpus's strict verbatim-repeal-text standard. Arabic governs; not legal advice.",
             },
         ],
     }

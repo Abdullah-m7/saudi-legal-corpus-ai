@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 386,
-  "top1_hits": 360,
-  "top3_hits": 379,
-  "top5_hits": 382,
-  "top1_accuracy": 0.9326,
-  "top3_accuracy": 0.9819,
-  "top5_accuracy": 0.9896,
-  "mrr_at_5": 0.9565,
+  "total_queries": 388,
+  "top1_hits": 362,
+  "top3_hits": 381,
+  "top5_hits": 384,
+  "top1_accuracy": 0.933,
+  "top3_accuracy": 0.982,
+  "top5_accuracy": 0.9897,
+  "mrr_at_5": 0.9567,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -11983,6 +11983,68 @@
      "record_id": "domestic-labor-regulation-llm-art-002",
      "article_number": 2,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "smk-001",
+   "query_ar": "يهدف هذا النظام إلى مكافحة التدخين، باتخاذ جميع الإجراءات والخطوات اللازمة على مستوى الدولة والمجتمع والأفراد",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_smoking",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-smoking-law-llm-art-001",
+     "article_number": 1,
+     "score": 50
+    },
+    {
+     "record_id": "anti-smoking-law-llm-art-018",
+     "article_number": 18,
+     "score": 21
+    },
+    {
+     "record_id": "anti-harassment-law-llm-art-002",
+     "article_number": 2,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "smk-002",
+   "query_ar": "تتولى الوزارات والمصالح الحكومية والمؤسسات والهيئات العامة وفروعها، والجهات العامة الأخرى في الدولة",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_smoking",
+    "law_component": "law",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-smoking-law-llm-art-012",
+     "article_number": 12,
+     "score": 36
+    },
+    {
+     "record_id": "anti-smoking-law-llm-art-007",
+     "article_number": 7,
+     "score": 23
+    },
+    {
+     "record_id": "gtpl-law-llm-art-001",
+     "article_number": 1,
+     "score": 20
     }
    ]
   }

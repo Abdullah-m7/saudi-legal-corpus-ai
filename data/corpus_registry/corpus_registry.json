@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11123,
+  "total_primary_arabic_governing_records": 11143,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12018,
-  "total_tracks": 179,
+  "total_registry_counted_records": 12038,
+  "total_tracks": 180,
   "tracks": [
     {
       "boundaries": {
@@ -8534,6 +8534,55 @@
       "validator_targets": [
         "make sports-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/anti_smoking/law/official_source/anti_smoking_law_official_source.json",
+        "sources/anti_smoking/law/verified/anti_smoking_law_verified_records.jsonl",
+        "data/anti_smoking_arabic_legal_llm/anti_smoking_law_legal_llm_001_020.json"
+      ],
+      "display_name_ar": "نظام مكافحة التدخين",
+      "display_name_en": "Anti-Smoking Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/anti_smoking_arabic_legal_llm/anti_smoking_law_legal_llm_001_020.json",
+          "governing": true,
+          "record_count": 20,
+          "status": "complete"
+        }
+      },
+      "notes": "Anti-Smoking Law «نظام مكافحة التدخين» — Royal Decree No. (M/56), dated 28/7/1436H, approving Council of Ministers Resolution No. (90), 23/3/1434H (following Shura Council Resolutions 54/50 3/11/1421H and 55/50 20/10/1432H); published Umm Al-Qura Gazette 2/9/1436H; administered by the Ministry of Health. A brand-new standalone Law (not a companion regulation of any existing track). **20 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-20 sequence, no مكرر articles). **ALL 20 اصلية** — no amendment to the Law itself has been found (only its Implementing Regulation has since been amended, e.g. Ministerial Resolution 797557, 1/5/1441H — out of scope, flagged as a future candidate). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a dedicated lawId page (93b6f7f3-1083-46e7-b30e-a9a700f291b0) but was unreachable this pass (live HTTP 503 / connection-reset); a confirmed Wayback snapshot exists (timestamp 20251015113738) but its content could not be fetched because web.archive.org itself is egress-blocked at the network layer, not circumvented. PRIMARY original full text from an official Ministry of Health PDF (moh.gov.sa, joint MOH/National Committee for Tobacco Control publication) — a genuine Saudi government document used directly as the governing text, cross-checked verbatim against nezams.com (independent aggregator, raw HTML parsed for byte-level confirmation) and independently again against a bilingual legislation-tracking PDF hosted on cloudfront.net. **No confirmed named-predecessor repeal** — the Royal Decree's own enacting clause and CoM Resolution 90's clause 2 instead carry a TRANSITIONAL continuation clause, allowing unnamed pre-existing agency-level anti-smoking regulations to keep operating until this Law's own Implementing Regulation was issued; this proves a patchwork of prior agency rules existed but is a transitional clause, not a repeal, so it is NOT recorded as a confirmed named-predecessor repeal and no supersession-graph edge applies, per this corpus's strict verbatim-repeal-text standard. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_MOH_OFFICIAL_PDF_GOVERNING_TEXT_X_NEZAMS_COM_AND_CLOUDFRONT_BILINGUAL_PDF_CROSSCHECK",
+      "record_counts": {
+        "arabic_articles": 20,
+        "legal_status_breakdown": {
+          "اصلية": 20,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 20
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/56), dated 28/7/1436H, approving Council of Ministers Resolution No. (90), dated 23/3/1434H; published Umm Al-Qura Gazette 2/9/1436H; administered by the Ministry of Health — laws.boe.gov.sa has a dedicated lawId page (93b6f7f3-1083-46e7-b30e-a9a700f291b0) checked first per methodology: unreachable this pass (live HTTP 503 / connection-reset); a confirmed Wayback snapshot's content could not be fetched (web.archive.org egress-blocked, not bypassed). ORIGINAL full text from an official Ministry of Health PDF (moh.gov.sa), cross-checked verbatim against nezams.com (independent aggregator, raw HTML) and a bilingual cloudfront.net legislation PDF",
+      "status": "complete",
+      "track_id": "anti_smoking_law",
+      "validator_targets": [
+        "make anti-smoking-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8552,6 +8601,7 @@
       "anti_fraud": 30,
       "anti_harassment": 8,
       "anti_narcotics": 74,
+      "anti_smoking": 20,
       "anti_trafficking": 17,
       "antiquities_heritage": 94,
       "arbitration": 77,
@@ -8676,7 +8726,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10954,
+    "total_records": 10974,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

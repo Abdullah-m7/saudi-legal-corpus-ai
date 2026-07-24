@@ -298,6 +298,8 @@ LAYERS = [
      "audiovisual_media", "law"),
     ("data/sports_arabic_legal_llm/sports_law_legal_llm_001_097.json",
      "sports", "law"),
+    ("data/anti_smoking_arabic_legal_llm/anti_smoking_law_legal_llm_001_020.json",
+     "anti_smoking", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",

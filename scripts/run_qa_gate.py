@@ -220,6 +220,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_associations_ngo_law_track.py",
     "scripts/gen_audiovisual_media_law_track.py",
     "scripts/gen_sports_law_track.py",
+    "scripts/gen_anti_smoking_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",
