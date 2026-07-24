@@ -312,6 +312,8 @@ LAYERS = [
      "building_code", "law"),
     ("data/product_safety_arabic_legal_llm/product_safety_law_legal_llm_001_037.json",
      "product_safety", "law"),
+    ("data/standards_quality_arabic_legal_llm/standards_quality_law_legal_llm_001_024.json",
+     "standards_quality", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",

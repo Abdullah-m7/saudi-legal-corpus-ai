@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 400,
-  "top1_hits": 374,
-  "top3_hits": 393,
-  "top5_hits": 396,
-  "top1_accuracy": 0.935,
-  "top3_accuracy": 0.9825,
+  "total_queries": 402,
+  "top1_hits": 376,
+  "top3_hits": 395,
+  "top5_hits": 398,
+  "top1_accuracy": 0.9353,
+  "top3_accuracy": 0.9826,
   "top5_accuracy": 0.99,
-  "mrr_at_5": 0.958,
+  "mrr_at_5": 0.9582,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5930,14 +5930,14 @@
      "score": 46
     },
     {
-     "record_id": "associations-ngo-law-llm-art-003",
-     "article_number": 3,
+     "record_id": "standards-quality-law-llm-art-021",
+     "article_number": 21,
      "score": 17
     },
     {
-     "record_id": "associations-ngo-law-llm-art-031",
-     "article_number": 31,
-     "score": 16
+     "record_id": "associations-ngo-law-llm-art-003",
+     "article_number": 3,
+     "score": 17
     }
    ]
   },
@@ -11236,8 +11236,8 @@
      "score": 14
     },
     {
-     "record_id": "oa-llm-companies-art-193",
-     "article_number": 193,
+     "record_id": "standards-quality-law-llm-art-010",
+     "article_number": 10,
      "score": 12
     }
    ]
@@ -12417,6 +12417,68 @@
      "record_id": "mining-investment-law-llm-art-003",
      "article_number": 3,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "sql-001",
+   "query_ar": "يهدف النظام إلى وضع وتحديد إطار عام للتقييس والجودة",
+   "category": "topical",
+   "gold": {
+    "corpus": "standards_quality",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "standards-quality-law-llm-art-002",
+     "article_number": 2,
+     "score": 38
+    },
+    {
+     "record_id": "health-system-law-llm-art-017",
+     "article_number": 17,
+     "score": 13
+    },
+    {
+     "record_id": "health-system-law-llm-art-016",
+     "article_number": 16,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "sql-002",
+   "query_ar": "يتولى مفتشون -يعينهم المجلس- مجتمعين أو منفردين ضبط مخالفات أحكام النظام واللوائح، والتحقيق فيها وإثباتها، وتحدد اللوائح آليات وإجراءات عملهم",
+   "category": "topical",
+   "gold": {
+    "corpus": "standards_quality",
+    "law_component": "law",
+    "article_number": 18
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "standards-quality-law-llm-art-018",
+     "article_number": 18,
+     "score": 44
+    },
+    {
+     "record_id": "electricity-law-llm-art-019",
+     "article_number": 19,
+     "score": 27
+    },
+    {
+     "record_id": "agriculture-law-llm-art-024",
+     "article_number": 24,
+     "score": 23
     }
    ]
   }
