@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11531,
+  "total_primary_arabic_governing_records": 11599,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12426,
-  "total_tracks": 192,
+  "total_registry_counted_records": 12494,
+  "total_tracks": 193,
   "tracks": [
     {
       "boundaries": {
@@ -9171,6 +9171,55 @@
       "validator_targets": [
         "make anti-smoking-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/general_education/law/official_source/general_education_law_official_source.json",
+        "sources/general_education/law/verified/general_education_law_verified_records.jsonl",
+        "data/general_education_arabic_legal_llm/general_education_law_legal_llm_001_068.json"
+      ],
+      "display_name_ar": "نظام التعليم العام",
+      "display_name_en": "General Education Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/general_education_arabic_legal_llm/general_education_law_legal_llm_001_068.json",
+          "governing": true,
+          "record_count": 68,
+          "status": "complete"
+        }
+      },
+      "notes": "General Education Law «نظام التعليم العام» — Royal Decree No. (M/36), dated 27/1/1448H, approving Council of Ministers Resolution No. (103), dated 22/1/1448H, itself acting on a Royal Court referral No. 5057 dated 16/1/1448H. Discovered via two independently-dispatched coverage-gap-map scan agents this pass (one tasked with checking moe.gov.sa, one tasked with checking laws.boe.gov.sa), which converged on an identical finding — a strong corroboration signal in itself. **68 records, ALL اصلية (0 معدلة, 0 ملغاة, 0 مضافة) across 9 فصول** (Definitions & Objectives; Council & Ministry; Stages/Tracks/Types of Education; Programs & Curricula; Private Educational Institutions; Students/Teachers/Guardians; Educational Institutions & Services; Violations & Penalties; Final Provisions). **VERIFICATION TIER: TIER_2** — PRIMARY full text of all 68 articles fetched directly (HTTP 200) from the Umm al-Qura Official Gazette itself (uqn.gov.sa), parsed programmatically with zero mismatches against the expected ordinal sequence; officially corroborated at the fact level (decree existence, number, minister's statement, the Adult Education Law repeal) by the Saudi Press Agency (spa.gov.sa, fetched directly via curl with a browser user-agent after WebFetch itself was blocked); structurally cross-checked by independent press (sabq.org independently confirms the 68-article/9-chapter count and Article 4/6 substance; argaam.com, alriyadh.com, albiladdaily.com corroborate the decree number and repeal). Not TIER_1 because no second official source reproduces the full verbatim wording of all 68 articles. laws.boe.gov.sa confirmed via direct search to have no dedicated lawId page yet — expected given the Law's one-day-old freshness at the time of this pass, not a search failure. **NOT YET IN FORCE**: Article 68 states the Law takes effect 180 days after gazette publication (~mid-January 2027) — this is recorded explicitly (not silently assumed as already-effective) via a dedicated `not_yet_in_force: true` field propagated through every record layer, with `legal_status_ar` reading 'صادر - غير ساري بعد' rather than 'ساري'. **TWO DISCLOSED DISCREPANCIES, NOT SILENTLY RESOLVED**: (1) all three uqn.gov.sa pages show a visible header date of 11 Safar 1448H / 25 July 2026G, while the same pages' own embedded schema.org metadata timestamps, and independently SPA's own dateline, read 10 Safar 1448H / 24 July 2026G — the decree's own signing date (27/1/1448H) is unaffected and unambiguous; (2) the prior scan lead's characterization of the Adult Education and Literacy Law repeal (M/22, 9/6/1392H) as a 'future, separately-triggered' repeal was corrected upon reading the verbatim text: Clause Third of the Council of Ministers Resolution repeals it IMMEDIATELY, with a phased one-year transitional continuation, not a deferred future action. **CONFIRMED REPEAL of 8 instruments, NONE of which are tracked in this corpus** (the Adult Education and Literacy Law, M/22 1392H, plus 7 Council-of-Ministers-level school regulations dated 1395H-1439H) — all confirmed absent from the registry, so no supersession-graph edge is required for any of them. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GOV_SA_PRIMARY_FULLTEXT_X_SPA_OFFICIAL_CORROBORATION_X_SABQ_STRUCTURAL_CROSSCHECK_BOE_NO_PAGE_YET_NOT_YET_IN_FORCE",
+      "record_counts": {
+        "arabic_articles": 68,
+        "legal_status_breakdown": {
+          "اصلية": 68,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 68
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/36), dated 27/1/1448H, approving Council of Ministers Resolution No. (103), dated 22/1/1448H. PRIMARY full text (68 articles, 9 chapters) fetched directly (HTTP 200) from the Umm al-Qura Official Gazette (uqn.gov.sa) itself, not summarized by a fetch tool; officially corroborated (facts, not full wording) by the Saudi Press Agency (spa.gov.sa); structurally cross-checked by independent press (sabq.org independently confirms 68 articles/9 chapters). laws.boe.gov.sa has no dedicated lawId page yet, expected given this Law's one-day freshness at ingestion time. NOT YET IN FORCE: Article 68 sets the effective date at 180 days after gazette publication (~mid-January 2027).",
+      "status": "complete",
+      "track_id": "general_education_law",
+      "validator_targets": [
+        "make general-education-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -9249,6 +9298,7 @@
       "franchise": 43,
       "gcc_anti_dumping": 17,
       "gcc_ownership": 6,
+      "general_education": 68,
       "gtpl": 256,
       "health_system": 29,
       "healthcare_professions": 44,
@@ -9323,7 +9373,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11362,
+    "total_records": 11430,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

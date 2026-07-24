@@ -324,6 +324,8 @@ LAYERS = [
      "disability_rights", "regulation"),
     ("data/anti_smoking_regulation_arabic_legal_llm/anti_smoking_regulation_legal_llm_001_020.json",
      "anti_smoking", "regulation"),
+    ("data/general_education_arabic_legal_llm/general_education_law_legal_llm_001_068.json",
+     "general_education", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",
