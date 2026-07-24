@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11001,
+  "total_primary_arabic_governing_records": 11026,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11896,
-  "total_tracks": 177,
+  "total_registry_counted_records": 11921,
+  "total_tracks": 178,
   "tracks": [
     {
       "boundaries": {
@@ -8436,6 +8436,55 @@
       "validator_targets": [
         "make associations-ngo-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/audiovisual_media/law/official_source/audiovisual_media_law_official_source.json",
+        "sources/audiovisual_media/law/verified/audiovisual_media_law_verified_records.jsonl",
+        "data/audiovisual_media_arabic_legal_llm/audiovisual_media_law_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "نظام الإعلام المرئي والمسموع",
+      "display_name_en": "Law of Audiovisual Media",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/audiovisual_media_arabic_legal_llm/audiovisual_media_law_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 25,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of Audiovisual Media «نظام الإعلام المرئي والمسموع» — Royal Decree No. (M/33), dated 25/3/1439H, approving Council of Ministers Resolution No. (170), 24/3/1439H (following Shura Council Resolution 24/15, 28/4/1436H); administered by the Ministry of Media. A brand-new standalone Law (not a companion regulation of any existing track). **25 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-25 sequence). **24 اصلية / 1 معدلة (Article 1 only)**. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a dedicated lawId page (ed5fdbc0-c183-4a8a-a8b7-a9ed004b5900) but was unreachable this pass (live HTTP 503 / connection reset); web.archive.org was refused outright by the fetch tool itself, not circumvented. PRIMARY full text from nezams.com, strongly cross-checked against an archived scan of the actual BOE portal Viewer page (cyrilla.org, showing the real government letterhead/decree/CoM resolution and verbatim article text matching character-for-character on every sampled portion) and the official Bureau of Experts English translation (misa.gov.sa), whose amendment appendix independently confirms both the date and wording of the 1440H amendment. **CONFIRMED amendment**: Council of Ministers Resolution 374 (28/6/1440H) is a pure horizontal terminology substitution — 'Minister/Ministry of Culture and Information' replaced by 'Minister/Ministry of Media' wherever mentioned; only Article 1 (which literally defines those terms) is marked معدلة, all other articles keep their originally-enacted wording verbatim. **No repeal of any predecessor found** — Article 25 is only a generic conflict clause ('يُلغي النظام جميع ما يتعارض معه من أحكام'), naming no specific prior instrument; no supersession-graph edge applies. **Distinct from `press`** (نظام المطبوعات والنشر, Royal Decree M/32, 1421H): Article 1 only cross-references two committees formed under that separate law, no textual merge or overlap. Companion Implementing Regulation (Article 23 mandate) and the GCAM establishment regulation (CoM Resolution 332, 16/10/1433H) exist but were deliberately NOT built this pass (flagged as future candidates). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_UNREACHABLE_WAYBACK_REFUSED_BY_FETCH_TOOL_X_NEZAMS_COM_PRIMARY_X_ARCHIVED_BOE_SCAN_CYRILLA_X_OFFICIAL_BOE_ENGLISH_TRANSLATION_MISA",
+      "record_counts": {
+        "arabic_articles": 25,
+        "legal_status_breakdown": {
+          "اصلية": 24,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 25
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/33), dated 25/3/1439H, approving Council of Ministers Resolution No. (170), dated 24/3/1439H (following Shura Council Resolution 24/15, 28/4/1436H); administered by the Ministry of Media (formerly the Ministry of Culture and Information) — laws.boe.gov.sa has a dedicated lawId page (ed5fdbc0-c183-4a8a-a8b7-a9ed004b5900) checked first per methodology: unreachable this pass (live HTTP 503 / connection reset), and web.archive.org was refused outright by the fetch tool itself (not circumvented). PRIMARY full text from nezams.com, strongly cross-checked against an archived scan of the actual BOE portal Viewer page (via cyrilla.org, showing the real government letterhead/decree/CoM resolution and verbatim article text) and the official Bureau of Experts English translation (hosted at misa.gov.sa), whose amendment appendix independently confirms the 1440H amendment",
+      "status": "complete",
+      "track_id": "audiovisual_media_law",
+      "validator_targets": [
+        "make audiovisual-media-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8458,6 +8507,7 @@
       "antiquities_heritage": 94,
       "arbitration": 77,
       "associations_ngo": 44,
+      "audiovisual_media": 25,
       "awqaf": 25,
       "banking_control": 26,
       "bankruptcy": 353,
@@ -8576,7 +8626,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10832,
+    "total_records": 10857,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

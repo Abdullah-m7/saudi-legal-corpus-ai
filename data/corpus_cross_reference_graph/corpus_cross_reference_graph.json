@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 10832,
-  "total_references_extracted": 2287,
-  "intra_law_count": 1970,
-  "inter_law_count": 317,
+  "total_records_scanned": 10857,
+  "total_references_extracted": 2299,
+  "intra_law_count": 1978,
+  "inter_law_count": 321,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1919,
+    "high": 1931,
     "medium": 368
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -1365,6 +1365,138 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثالثة والعشرين)",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "press_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المطبوعات والنشر",
+      "raw_citation_text": "بموجب نظام المطبوعات والنشر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "press_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المطبوعات والنشر",
+      "raw_citation_text": "بموجب نظام المطبوعات والنشر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من النظام، تختص الهيئة بمنح ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "telecommunications_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الاتصالات",
+      "raw_citation_text": "وفقا لنظام الاتصالات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "telecommunications_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الاتصالات",
+      "raw_citation_text": "وفقا لنظام الاتصالات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام، تختص الهيئة بما يأ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة عشرة) من النظام -على مخالفات أحكام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام خلال ستين يوما من ت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة عشرة) منه. ب – النظر في التظلمات ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) من النظام. ٣- يجوز للجنة الا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام. ٢- ما تصدره الهيئ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "audiovisual_media_law",
+      "source_record_id": "audiovisual-media-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "audiovisual_media_law",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) من النظام. وتصدر قراراتها با",
+      "confidence": "high"
     },
     {
       "source_track_id": "awqaf_law",
