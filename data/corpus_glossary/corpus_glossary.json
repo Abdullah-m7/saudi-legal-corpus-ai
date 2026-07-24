@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 172,
-  "total_terms": 1036,
-  "total_definitions": 1677,
-  "tracks_with_definitions_article_parsed": 116,
+  "total_tracks_in_registry": 173,
+  "total_terms": 1045,
+  "total_definitions": 1694,
+  "tracks_with_definitions_article_parsed": 117,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -895,6 +895,16 @@
         "term_as_written": "الأشغال الجوية",
         "definition_text": "جميع الأعمال الجوية بخلاف نقل الركاب والبضائع مثل إطفاء الحرائق، الرش الزراعي، التصوير من الجو، الإعلان من الجو.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأصل": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "الأصل",
+        "definition_text": "كل أصل سواء أكان دائما أم مؤقتا، ثابتا أم منقولا، ملموسا أم غير ملموس، بما في ذلك الحقوق.",
+        "source_record_id": "privatization-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1902,6 +1912,14 @@
     ],
     "البنية التحتية": [
       {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "البنية التحتية",
+        "definition_text": "المرافق العامة، أو الأصول التي تقدم بشكل مباشر أو غير مباشر خدمات عامة.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "البنية التحتية",
@@ -2076,6 +2094,14 @@
         "definition_text": "تحقق الجهة الحكومية من توافر المؤهلات والقدرات اللازمة لتنفيذ الأعمال وتأمين المشتريات لدى المتنافسين قبل تقديمهم العروض.",
         "source_record_id": "gtpl-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "التأهيل المسبق",
+        "definition_text": "تحقق الجهة التنفيذية من توافر المؤهلات والقدرات اللازمة لتنفيذ الأعمال المرتبطة بمشروع التخصيص لدى المتنافسين قبل تقديمهم العروض.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التابع": [
@@ -2179,6 +2205,16 @@
         "term_as_written": "التحويل البرقي",
         "definition_text": "معاملة مالية تجريها مؤسسة مالية نيابةً عن آمر التحويل يجري من خلالها إيصال مبلغ مالي إلى مستفيد في مؤسسة مالية أخرى بصرف النظر عما إذا كان آمر التحويل والمستفيد هما الشخص نفسه.",
         "source_record_id": "terrorism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التخصيص": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "التخصيص",
+        "definition_text": "الشراكة بين القطاعين العام والخاص أو نقل ملكية الأصول.",
+        "source_record_id": "privatization-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3852,6 +3888,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخدمة العامة": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "الخدمة العامة",
+        "definition_text": "كل خدمة تقدمها جهة حكومية بشكل مباشر أو غير مباشر، سواء أكانت هذه الخدمة أساسية بغرض توفير السلع، أو الخدمات للجمهور، أم غير أساسية بغرض دعم الأنشطة والمهمات الحكومية.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخدمة المستمرة": [
       {
         "track_id": "labor_law",
@@ -5038,6 +5084,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشراكة بين القطاعين العام والخاص": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "الشراكة بين القطاعين العام والخاص",
+        "definition_text": "ترتيب تعاقدي مرتبط بالبنية التحتية أو الخدمة العامة، ينتج عنه علاقة بين الحكومة والطرف الخاص، وتتوافر فيه العناصر الآتية:",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشركة العقارية": [
       {
         "track_id": "rett_law",
@@ -5398,6 +5454,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الطرف الخاص": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "الطرف الخاص",
+        "definition_text": "شخص يتمتع بالشخصية الاعتبارية الخاصة، يكون طرفا في عقد تخصيص مع الحكومة.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الطرف ذو العلاقة": [
       {
         "track_id": "bankruptcy_law",
@@ -5578,6 +5644,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العرض التلقائي": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "العرض التلقائي",
+        "definition_text": "عرض يتعلق بمشروع تخصيص لم يقدم في سياق طلب تقديم عروض.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العضو": [
       {
         "track_id": "chambers_of_commerce_law",
@@ -5695,6 +5771,24 @@
         "term_as_written": "العقد",
         "definition_text": "عقد الإيجار التمويلي.\n   ٥.",
         "source_record_id": "lessor-repossession-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "العقد",
+        "definition_text": "عقد التخصيص.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العقد التابع": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "العقد التابع",
+        "definition_text": "عقد مرتبط بعقد التخصيص، ولازم لتنفيذ مشروع التخصيص، يتم إبرامه نيابة عن الحكومة مع الطرف الخاص، أو أي طرف ثالث.",
+        "source_record_id": "privatization-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6774,6 +6868,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة التنفيذية",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trademark_law",
         "article_number": 1,
         "term_as_written": "اللائحة التنفيذية",
@@ -7568,6 +7670,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس الشؤون الاقتصادية والتنمية.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -8269,6 +8379,14 @@
         "term_as_written": "المركز",
         "definition_text": "مركز الإقامة المميزة.",
         "source_record_id": "premium-residency-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني للتخصيص.",
+        "source_record_id": "privatization-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10870,6 +10988,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام التخصيص.",
+        "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "qismah_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -11727,6 +11853,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة الإعلام .",
         "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة المالية.",
+        "source_record_id": "privatization-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12615,6 +12749,16 @@
         "term_as_written": "تلوث البيئة",
         "definition_text": "وجود مادة أو أكثر من المواد أو العوامل بكميات أو صفات معينة لمدة زمنية؛ تؤدي بطريق مباشر أو غير مباشر إلى الإضرار بالبيئة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تنظيم المركز": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "تنظيم المركز",
+        "definition_text": "تنظيم المركز الوطني للتخصيص.",
+        "source_record_id": "privatization-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -15441,6 +15585,16 @@
         "term_as_written": "نقل عام",
         "definition_text": "لنقل الحيوانات والأشياء والبضائع بأجر.",
         "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نقل ملكية الأصول": [
+      {
+        "track_id": "privatization_law",
+        "article_number": 1,
+        "term_as_written": "نقل ملكية الأصول",
+        "definition_text": "ترتيب تعاقدي مرتبط بالبنية التحتية، أو الخدمات العامة، ينتج عنه نقل ملكية أي من الأصول من أي جهة حكومية إلى الطرف الخاص.",
+        "source_record_id": "privatization-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

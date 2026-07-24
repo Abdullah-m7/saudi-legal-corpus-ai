@@ -213,6 +213,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_environmental_fees_reg_track.py",
     "scripts/gen_rett_law_track.py",
     "scripts/gen_universities_law_track.py",
+    "scripts/gen_privatization_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",

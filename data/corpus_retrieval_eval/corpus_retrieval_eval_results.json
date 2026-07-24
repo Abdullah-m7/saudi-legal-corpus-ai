@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 372,
-  "top1_hits": 346,
-  "top3_hits": 365,
-  "top5_hits": 368,
-  "top1_accuracy": 0.9301,
-  "top3_accuracy": 0.9812,
-  "top5_accuracy": 0.9892,
-  "mrr_at_5": 0.9548,
+  "total_queries": 374,
+  "top1_hits": 348,
+  "top3_hits": 367,
+  "top5_hits": 370,
+  "top1_accuracy": 0.9305,
+  "top3_accuracy": 0.9813,
+  "top5_accuracy": 0.9893,
+  "mrr_at_5": 0.9551,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -1373,13 +1373,13 @@
      "score": 12
     },
     {
-     "record_id": "gtpl-reg-llm-art-124",
-     "article_number": 124,
-     "score": 11
+     "record_id": "privatization-law-llm-art-027",
+     "article_number": 27,
+     "score": 12
     },
     {
-     "record_id": "gtpl-law-llm-art-092",
-     "article_number": 92,
+     "record_id": "gtpl-reg-llm-art-124",
+     "article_number": 124,
      "score": 11
     }
    ]
@@ -11549,6 +11549,68 @@
      "record_id": "evidence-law-llm-art-128",
      "article_number": 128,
      "score": 45
+    }
+   ]
+  },
+  {
+   "query_id": "prv-001",
+   "query_ar": "إذا بلغت خسائر شركة مشروع التخصيص الحد الذي تقرره الأنظمة في أي وقت خلال مدة العقد، فلا يترتب على ذلك وجوب زيادة رأس مالها",
+   "category": "topical",
+   "gold": {
+    "corpus": "privatization",
+    "law_component": "law",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "privatization-law-llm-art-015",
+     "article_number": 15,
+     "score": 49
+    },
+    {
+     "record_id": "privatization-law-llm-art-014",
+     "article_number": 14,
+     "score": 27
+    },
+    {
+     "record_id": "privatization-law-llm-art-037",
+     "article_number": 37,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "prv-002",
+   "query_ar": "على ألا تتجاوز مدته -الأصلية، أو بعد تجديده، أو تمديده- (ثلاثين) سنة من تاريخ توقيعه أو تاريخ نفاذه المتفق عليه في حال كان لاحقا لتاريخ توقيع العقد",
+   "category": "topical",
+   "gold": {
+    "corpus": "privatization",
+    "law_component": "law",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "privatization-law-llm-art-020",
+     "article_number": 20,
+     "score": 27
+    },
+    {
+     "record_id": "privatization-law-llm-art-007",
+     "article_number": 7,
+     "score": 27
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-325",
+     "article_number": 325,
+     "score": 21
     }
    ]
   }

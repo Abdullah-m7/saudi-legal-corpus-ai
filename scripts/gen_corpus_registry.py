@@ -210,6 +210,7 @@ ENVIRONMENTAL_SERVICE_PROVIDERS_LLM = os.path.join(ROOT, "data", "environmental_
 ENVIRONMENTAL_FEES_LLM = os.path.join(ROOT, "data", "environmental_fees_reg_arabic_legal_llm", "environmental_fees_reg_legal_llm_001_004.json")
 RETT_LAW_LLM = os.path.join(ROOT, "data", "rett_arabic_legal_llm", "rett_law_legal_llm_001_020.json")
 UNIVERSITIES_LAW_LLM = os.path.join(ROOT, "data", "universities_arabic_legal_llm", "universities_law_legal_llm_001_058.json")
+PRIVATIZATION_LAW_LLM = os.path.join(ROOT, "data", "privatization_arabic_legal_llm", "privatization_law_legal_llm_001_045.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -413,6 +414,7 @@ def main() -> int:
     environmental_fees_llm = _load_json(ENVIRONMENTAL_FEES_LLM)
     rett_law_llm = _load_json(RETT_LAW_LLM)
     universities_law_llm = _load_json(UNIVERSITIES_LAW_LLM)
+    privatization_law_llm = _load_json(PRIVATIZATION_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -433,7 +435,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 172,
+        "total_tracks": 173,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -609,6 +611,7 @@ def main() -> int:
             + environmental_fees_llm["record_count"]  # 4 Implementing Regulation for the Financial Consideration (Fees) for Environmental Licenses/Permits/Services (Minister Decision 618660/1/1442, 05/12/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY qanoniah.com cross-verified via multi-source citation corroboration, 4 اصلية, confirmed no named-predecessor repeal, Annex-1 fee-ceiling table documented as excluded, see track notes)
             + rett_law_llm["record_count"]  # 20 Real Estate Transaction Tax Law (Royal Decree M/84, 19/3/1446H) (TIER_2, PRIMARY BOE lawId page retrieved via r.jina.ai read-proxy (live page returned HTTP 503) cross-verified against nezams.com and qanoonsa.com non-government secondaries, 20 اصلية, flat structure/no chapters, Article 20(2) repeal clause is GENERIC (no named predecessor asserted in the Law's own text; Royal Order A/84 14/2/1442H noted as historical context only), see track notes)
             + universities_law_llm["record_count"]  # 58 Universities Law (Royal Decree M/27, 2/3/1441H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY bibliotdroit.com born-digital text cross-verified article-by-article against the administering authority's own official cua.gov.sa PDF (all 58 articles, not a spot-check), structure re-confirmed by moe.gov.sa, 58 اصلية across 14 فصول, CONFIRMED named-predecessor repeal of نظام مجلس التعليم العالي والجامعات (M/8, 4/6/1414H) via Article 57, phased/transitional per the Royal Decree's own clauses 3-4, see track notes)
+            + privatization_law_llm["record_count"]  # 45 Privatization Law (Royal Decree M/63, 5/8/1442H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text with an official misa.gov.sa/NCP PDF confirming article count/flat structure/verbatim Articles 44-45, 45 اصلية, flat structure/no chapters, Article 45 repeal clause is GENERIC (no named predecessor in the Law's own text; named repeals of prior CoM/SEC instruments sit instead in the accompanying CoM Resolution 436, disclosed as context only), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -775,6 +778,7 @@ def main() -> int:
             + environmental_fees_llm["record_count"]
             + rett_law_llm["record_count"]
             + universities_law_llm["record_count"]
+            + privatization_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5801,6 +5805,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Universities Law «نظام الجامعات» — Royal Decree No. (M/27), dated 2/3/1441H, approving Council of Ministers Resolution No. (183), 1/3/1441H (Shura Council Resolution No. 61/239, 28/2/1440H); published Umm Al-Qura Gazette 11/3/1441H, in force 180 days after publication; administered by the Council of Universities' Affairs and the Ministry of Education. A brand-new standalone Law (not a companion regulation of any existing track). **58 articles across 14 فصول (chapters), ALL 58 اصلية**: definitions/objectives (1-5); Council of Universities' Affairs (6-10); boards of trustees (11-15); university council (16-19); scientific council (20-23); college/institute councils (24-26); department councils (27-29); university president and deputies (30-34); deans and vice-deans (35-37); department heads (38-39); academic accreditation (40-41); advisory councils (42-44); the university's financial system (45-50); general/final provisions (51-58). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full verbatim text from bibliotdroit.com (clean born-digital HTML), cross-verified ARTICLE-BY-ARTICLE (all 58, not a spot-check) against the administering authority's own official cua.gov.sa PDF (no scan/OCR defects) — an official government document independently confirming every article, matching this corpus's environmental_service_providers precedent (the official document serving as the cross-verification anchor even where the ingested text itself is drawn from a non-government rendering for extraction convenience), not merely a TIER_3 two-secondaries-only case. The 58-article/14-chapter structure and governing division term (الفصل, not الباب) independently re-confirmed by a THIRD source, moe.gov.sa's own statement ('58 مادة موزعة على 14 فصلاً'). **CONFIRMED named-predecessor repeal**: Article 57 verbatim states «يحل هذا النظام محل نظام مجلس التعليم العالي والجامعات، الصادر بالمرسوم الملكي رقم (م/8) وتاريخ 4/6/1414هـ ويلغي جميع ما يتعارض معه من أحكام» — identical wording confirmed in both the bibliotdroit.com source and the cua.gov.sa PDF — recorded as a real repeals_full edge in the supersession graph (target_track_id=None, an untracked predecessor). Disclosed as a PHASED, not instantaneous, replacement: the Royal Decree's own clauses 3-4 keep the predecessor law transitionally in force for universities not yet brought under the new Law, preserved verbatim in the notes rather than silently treated as a clean-break repeal. A second Shura Council resolution referenced in the preamble could not be pinned to a specific number this pass, disclosed not fabricated. Companion Implementing Regulations issued by the Council of Universities' Affairs exist but were deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "privatization_law",
+                "display_name_ar": "نظام التخصيص",
+                "display_name_en": "Privatization Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_FULL_TEXT_X_MISA_GOV_SA_NCP_OFFICIAL_PDF_PARTIAL_VERBATIM_CONFIRMATION",
+                "source_authority": "Royal Decree No. (M/63), dated 5/8/1442H, approving Council of Ministers Resolution No. (436), dated 3/8/1442H (Shura Council Resolutions 374/63, 27/2/1442H, and 76/15, 12/6/1442H); published Umm Al-Qura Gazette 13/8/1442H (~26 Mar 2021G); administered by the National Center for Privatization (ncp.gov.sa, under the Ministry of Investment/MISA), the Ministry of Finance, and the Council of Economic and Development Affairs — laws.boe.gov.sa lawId 8af67ec1-6776-4f67-abb4-ad0900eadf2f checked first per methodology: unreachable this pass (live HTTP 503/connection reset), Wayback egress-blocked and not circumvented. PRIMARY full governing text from nezams.com (independent aggregator), cross-verified against an official government PDF (misa.gov.sa/National Center for Privatization) which independently confirmed the 45-article count, the flat no-chapter structure, and verbatim Articles 44-45",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": privatization_law_llm["record_count"],
+                    "data_path": "data/privatization_arabic_legal_llm/privatization_law_legal_llm_001_045.json"}},
+                "record_counts": {"arabic_articles": privatization_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 45, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": privatization_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/privatization/law/official_source/privatization_law_official_source.json",
+                    "sources/privatization/law/verified/privatization_law_verified_records.jsonl",
+                    "data/privatization_arabic_legal_llm/privatization_law_legal_llm_001_045.json",
+                ],
+                "validator_targets": ["make privatization-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Privatization Law «نظام التخصيص» — Royal Decree No. (M/63), dated 5/8/1442H, approving Council of Ministers Resolution No. (436), 3/8/1442H; published Umm Al-Qura Gazette 13/8/1442H (~26 Mar 2021G); administered by the National Center for Privatization (under MISA), the Ministry of Finance, and the Council of Economic and Development Affairs. A brand-new standalone Law (not a companion regulation of any existing track). **45 articles, ALL 45 اصلية**, FLAT structure with NO أبواب/فصول divisions (confirmed two ways: the official misa.gov.sa/NCP PDF shows no chapter headers, and nezams.com's own metadata agrees) — a single structural entry covers Articles 1-45, `section_ar` is the uniform value 'نظام التخصيص', no thematic chapter titles were invented. **VERIFICATION TIER: TIER_2 (lower end)** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (live HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full governing text from nezams.com (a non-government aggregator, the same source-class used by several sibling tracks), cross-verified against an official government PDF (misa.gov.sa/National Center for Privatization, HTTP 200) which independently confirmed the 45-article count, the flat structure, and VERBATIM Articles 44-45 specifically — a genuine but PARTIAL (not full article-by-article) official cross-check, disclosed honestly rather than inflated to a stronger tier, mirroring this corpus's environmental_fees 'TIER_2 (lower end)' precedent. **Article 45's repeal clause is GENERIC** («يلغي النظام كل ما يتعارض معه من أحكام») — the Law's own text names no predecessor instrument as repealed, so per this corpus's policy no supersession-graph edge is asserted for this track; recorded instead as an ambiguous/excluded negative finding (see supersession graph notes). The NAMED repeals of prior instruments (Council of Ministers decisions 60/1418H, 257/1421H, 219/1423H, and the Supreme Economic Council's decision 1/23/1423H approving the privatization strategy) sit instead in the accompanying Council of Ministers Resolution 436 — a different instrument from the Law itself — preserved verbatim in `preamble_ar` and disclosed as historical context only, not as a Law-text-asserted repeal. A companion Implementing Regulation (Article 44 mandate, NCP board, SPA-confirmed adoption) and a separate set of Organizing Rules (القواعد المنظمة للتخصيص, Article 2) exist but were deliberately NOT built this pass (flagged as future candidates, proposed track_id `privatization_regulation`). Arabic governs; not legal advice.",
             },
         ],
     }
