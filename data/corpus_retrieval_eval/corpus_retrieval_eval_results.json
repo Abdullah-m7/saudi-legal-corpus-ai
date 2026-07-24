@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 374,
-  "top1_hits": 348,
-  "top3_hits": 367,
-  "top5_hits": 370,
-  "top1_accuracy": 0.9305,
-  "top3_accuracy": 0.9813,
-  "top5_accuracy": 0.9893,
-  "mrr_at_5": 0.9551,
+  "total_queries": 376,
+  "top1_hits": 350,
+  "top3_hits": 369,
+  "top5_hits": 372,
+  "top1_accuracy": 0.9309,
+  "top3_accuracy": 0.9814,
+  "top5_accuracy": 0.9894,
+  "mrr_at_5": 0.9553,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5098,9 +5098,9 @@
      "score": 31
     },
     {
-     "record_id": "anti-narcotics-law-llm-art-039",
-     "article_number": 39,
-     "score": 29
+     "record_id": "antiquities-heritage-law-llm-art-073",
+     "article_number": 73,
+     "score": 31
     }
    ]
   },
@@ -7108,13 +7108,13 @@
      "score": 10
     },
     {
-     "record_id": "enforcement-regulation-llm-prov-270",
-     "article_number": 270,
+     "record_id": "antiquities-heritage-law-llm-art-035",
+     "article_number": 35,
      "score": 10
     },
     {
-     "record_id": "telecommunications-law-llm-art-011",
-     "article_number": 11,
+     "record_id": "enforcement-regulation-llm-prov-270",
+     "article_number": 270,
      "score": 10
     }
    ]
@@ -7201,14 +7201,14 @@
      "score": 56
     },
     {
+     "record_id": "antiquities-heritage-law-llm-art-092",
+     "article_number": 92,
+     "score": 37
+    },
+    {
      "record_id": "evidence-law-llm-art-128",
      "article_number": 128,
      "score": 33
-    },
-    {
-     "record_id": "arbitration-law-llm-art-057",
-     "article_number": 57,
-     "score": 32
     }
    ]
   },
@@ -8105,9 +8105,9 @@
      "score": 44
     },
     {
-     "record_id": "awqaf-law-llm-art-025",
-     "article_number": 25,
-     "score": 35
+     "record_id": "antiquities-heritage-law-llm-art-092",
+     "article_number": 92,
+     "score": 38
     }
    ]
   },
@@ -11541,14 +11541,14 @@
      "score": 54
     },
     {
+     "record_id": "antiquities-heritage-law-llm-art-092",
+     "article_number": 92,
+     "score": 49
+    },
+    {
      "record_id": "awqaf-law-llm-art-025",
      "article_number": 25,
      "score": 48
-    },
-    {
-     "record_id": "evidence-law-llm-art-128",
-     "article_number": 128,
-     "score": 45
     }
    ]
   },
@@ -11611,6 +11611,68 @@
      "record_id": "maritime-commercial-law-llm-art-325",
      "article_number": 325,
      "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "anh-001",
+   "query_ar": "للهيئة عند ثبوت تدهور حالة أي موقع أثري، أو موقع تراث عمراني، أو شعبي، أو مبنی تاریخي، أو المباني أو الأراضي المجاورة للآثار الثابتة المسجلة، نتيجة لاستمرار مالكه في مخالفة أحكام النظام",
+   "category": "topical",
+   "gold": {
+    "corpus": "antiquities_heritage",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "antiquities-heritage-law-llm-art-003",
+     "article_number": 3,
+     "score": 36
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 22
+    },
+    {
+     "record_id": "oa-llm-companies-art-272",
+     "article_number": 272,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "anh-002",
+   "query_ar": "يحل هذا النظام محل نظام الآثار، الصادر بالمرسوم الملكي رقم (م/26) وتاريخ 23/ 6 / 1392هـ، ويلغي جميع ما يتعارض معه من أحكام",
+   "category": "topical",
+   "gold": {
+    "corpus": "antiquities_heritage",
+    "law_component": "law",
+    "article_number": 92
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "antiquities-heritage-law-llm-art-092",
+     "article_number": 92,
+     "score": 58
+    },
+    {
+     "record_id": "awqaf-law-llm-art-025",
+     "article_number": 25,
+     "score": 47
+    },
+    {
+     "record_id": "evidence-law-llm-art-128",
+     "article_number": 128,
+     "score": 45
     }
    ]
   }

@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10820,
+  "total_primary_arabic_governing_records": 10914,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11715,
-  "total_tracks": 173,
+  "total_registry_counted_records": 11809,
+  "total_tracks": 174,
   "tracks": [
     {
       "boundaries": {
@@ -8240,6 +8240,55 @@
       "validator_targets": [
         "make privatization-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/antiquities_heritage/law/official_source/antiquities_heritage_law_official_source.json",
+        "sources/antiquities_heritage/law/verified/antiquities_heritage_law_verified_records.jsonl",
+        "data/antiquities_heritage_arabic_legal_llm/antiquities_heritage_law_legal_llm_001_094.json"
+      ],
+      "display_name_ar": "نظام الآثار والمتاحف والتراث العمراني",
+      "display_name_en": "Antiquities, Museums and Urban Heritage Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/antiquities_heritage_arabic_legal_llm/antiquities_heritage_law_legal_llm_001_094.json",
+          "governing": true,
+          "record_count": 94,
+          "status": "complete"
+        }
+      },
+      "notes": "Antiquities, Museums and Urban Heritage Law «نظام الآثار والمتاحف والتراث العمراني» — Royal Decree No. (M/3), dated 9/1/1436H, approving Council of Ministers Resolution No. (348), 25/8/1435H (Shura Council Resolutions 194/78, 18/2/1434H, and 67/38, 14/7/1435H); administered by the Ministry of Culture / Heritage Commission / Museums Commission. A brand-new standalone Law (not a companion regulation of any existing track). **94 articles, GENUINELY FLAT** (chapter_structure is an empty list, section_ar empty for every article, confirmed two ways: nezams.com shows 94 sequential articles with no chapter headers, and the BOE-content print PDF likewise shows none). **78 اصلية / 16 معدلة**, consolidated through SIX separate amendment instruments, none silently merged (current enacted text on top, pre-amendment text preserved in `history`): (1) Royal Decree M/16 (21/1/1439H) added paragraph (ب) to Article 85; (2) Council of Ministers Resolution 693 (2/11/1441H) substituted the ministry name in Articles 12(2), 29, and 54; (3) Royal Decree M/67 (12/8/1442H, with CoM Resolution 453, 10/8/1442H) toughened the penalties of Articles 71-77 and amended Article 90(1), scope independently corroborated by the Umm Al-Qura Gazette; (4) Royal Decree M/103 (21/11/1442H) restructured Article 3 (expropriation/temporary seizure) into two numbered paragraphs and added a new paragraph (2) on deterioration-prevention/damage-repair procedures; (5) Council of Ministers Resolution 1012 (27/11/1445H) amended Article 1's definitions (substituting 'الجهة المختصة: وزارة الثقافة/هيئة التراث/هيئة المتاحف' for 'الوزارة/الهيئة' and adding a definition of 'الوزير') and correspondingly restructured Articles 65 and 93, reflecting the transfer of competence to the Ministry of Culture ecosystem. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full verbatim text from nezams.com (independent born-digital HTML aggregator, no scan/OCR/ligature defects), corroborated by a BOE-content print PDF hosted on media.unesco.org — an international body's hosting, NOT itself a Saudi government domain, so this does not qualify as a second genuinely official/primary source under this corpus's TIER_1/TIER_2 tests, honestly kept at TIER_3 rather than inflated; the M/67 amendment's specific scope is independently corroborated by the Umm Al-Qura Gazette (a genuine official source, but only for that one amendment, not the full text). **CONFIRMED named-predecessor repeal**: Article 92 verbatim states «يحل هذا النظام محل نظام الآثار، الصادر بالمرسوم الملكي رقم (م/26) وتاريخ 23/6/1392هـ، ويلغي جميع ما يتعارض معه من أحكام» — recorded as a real repeals_full edge in the supersession graph (target_track_id=None, an untracked predecessor). A source-text quirk (a Farsi yeh ی in Article 3's M/103 amendment text) is preserved verbatim, not silently corrected. The Umm Al-Qura issue/date of the original 1436H publication could not be confirmed this pass, disclosed not fabricated. Companion Implementing Regulations (اللوائح, per Article 93) exist but were deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_BORN_DIGITAL_X_UNESCO_HOSTED_BOE_CONTENT_PRINT_PDF_NON_GOVERNMENT_X_UMM_AL_QURA_GAZETTE_FOR_M67_SCOPE_ONLY",
+      "record_counts": {
+        "arabic_articles": 94,
+        "legal_status_breakdown": {
+          "اصلية": 78,
+          "مضافة": 0,
+          "معدلة": 16,
+          "ملغاة": 0
+        },
+        "total": 94
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/3), dated 9/1/1436H, approving Council of Ministers Resolution No. (348), dated 25/8/1435H (Shura Council Resolutions 194/78, 18/2/1434H, and 67/38, 14/7/1435H); administered by the Ministry of Culture / Heritage Commission / Museums Commission — laws.boe.gov.sa lawId a7d4493b-7c03-4c2d-b3c6-a9a700f275cd checked first per methodology: unreachable this pass (HTTP 503/connection reset), Wayback egress-blocked and not circumvented. PRIMARY full verbatim text from nezams.com (independent born-digital HTML aggregator), corroborated by a BOE-content print PDF hosted on media.unesco.org (a non-government international body's hosting, not itself a Saudi government domain) for decree identity/preamble/named-repeal/original text, and independently by the Umm Al-Qura Gazette for the M/67 (1442H) amendment's scope specifically",
+      "status": "complete",
+      "track_id": "antiquities_heritage_law",
+      "validator_targets": [
+        "make antiquities-heritage-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8259,6 +8308,7 @@
       "anti_harassment": 8,
       "anti_narcotics": 74,
       "anti_trafficking": 17,
+      "antiquities_heritage": 94,
       "arbitration": 77,
       "awqaf": 25,
       "banking_control": 26,
@@ -8376,7 +8426,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10651,
+    "total_records": 10745,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 173,
-  "total_terms": 1045,
-  "total_definitions": 1694,
-  "tracks_with_definitions_article_parsed": 117,
+  "total_tracks_in_registry": 174,
+  "total_terms": 1056,
+  "total_definitions": 1709,
+  "tracks_with_definitions_article_parsed": 118,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -687,6 +687,26 @@
         "term_as_written": "استمارة التصنيف البيئي",
         "definition_text": "استمارة تقدم إلى المركز لتحديد فئة النشاط المقترح من ناحية التأثيرات البيئية.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الآثار الثابتة": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "الآثار الثابتة",
+        "definition_text": "الآثار المتصلة بالأرض، مثل: الكهوف الطبيعية، أو المحفورة التي استخدمها الإنسان، والصخور التي رسم أو حفر عليها صورا أو نقوشا كتابية، والرجوم، والدوائر الحجرية، وأطلال المدن والقرى، والمنشآت الظاهرة أو المطمورة تحت الأرض، والمنشآت المائية، وطرق التجارة والحج القديمة، والمدن والقرى والأحياء التقليدية، والأبنية المنشأة لغايات مختلفة، وأطلال تلك المباني، وما يتصل بها من عناصر معمارية.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الآثار المنقولة": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "الآثار المنقولة",
+        "definition_text": "القطع الأثرية التي صنعت في الأصل لتكون بطبيعتها منفصلة عن الأرض أو عن الآثار الثابتة، والتي يمكن تغيير مكانها، كالمنحوتات، والمسكوكات، والكتابات، والحلي، وأدوات الزينة، والقطع التراثية التي تشكل قيمة وطنية من حيث طابعها التاريخي، أو العلمي، أو الجمالي، أو الفني، أو التقليدي، أو قدم الاستخدام.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2284,6 +2304,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التراث العمراني": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "التراث العمراني",
+        "definition_text": "كل ما شيده الإنسان من مدن، وقرى، وأحياء، ومبان، مع ما تتضمنه من فراغات، ومنشآت، وقطع لها قيمة عمرانية، أو تاريخية، أو علمية، أو ثقافية، أو وطنية.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الترتيبات القانونية": [
       {
         "track_id": "aml_regulation",
@@ -2664,6 +2694,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التصنيف": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "التصنيف",
+        "definition_text": "تحديد درجة أهمية الأثر، وذلك وفقا لقيمته التاريخية، أو الثقافية، أو الفنية، أو العلمية، أو الوطنية.\nالشخص/ الأشخاص : الشخص الطبيعي، أو الاعتباري العام، أو الخاص.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التعاملات الإلكترونية": [
       {
         "track_id": "electronic_transactions_law",
@@ -2949,6 +2989,16 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم مركز المصالحة الصادر بقرار مجلس الوزراء رقم (١٠٣) وتاريخ١٤٣٤/٤/٨هــ.",
         "source_record_id": "muslaha-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التنقيب عن الآثار": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "التنقيب عن الآثار",
+        "definition_text": "جميع أعمال الحفر والسبر والتحري والغوص التي تتم وفق أسس علمية، وتستهدف العثور على آثار في باطن الأرض، أو على سطحها، أو في مجاري المياه، أو البحيرات، أو في المناطق البحرية الخاضعة لسيادة المملكة، أو ولايتها القانونية.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4241,6 +4291,14 @@
       }
     ],
     "الرئيس": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس الهيئة.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "awqaf_law",
         "article_number": 1,
@@ -7078,6 +7136,14 @@
     ],
     "اللوائح": [
       {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية لهذا النظام.\nالآثار/ مواقع الآثار : الأعيان الثابتة والمنقولة والمطمورة والغارقة داخل حدود المملكة وفي المناطق البحرية الخاضعة لسيادتها أو ولايتها القانونية، التي بناها الإنسان، أو صنعها، أو أنتجها، أو كيفها، أو رسمها، وتكونت لها خصائص أثرية بفعل تدخل الإنسان عبر العصور، وإن امتد تاريخها إلى فترة متأخرة، على ألا تقل عن (مائة) سنة. وللهيئة أن تعد ما يرجع إلى عهد أحدث آثارا، وتدخل تحت اسم الآثار المواقع التاريخية ومواقع التراث الشعبي وقطعه.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "companies_law",
         "article_number": 1,
         "term_as_written": "اللوائح",
@@ -7460,6 +7526,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المتحف": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "المتحف",
+        "definition_text": "المكان الذي تعرض فيه مواد أثرية أو فنية أو ثقافية أو تاريخية أو علمية بشكل دائم، ويحقق عرضها أهدافا ثقافية أو تربوية أو ترفيهية، ويفتح أبوابه للجمهور في مواعيد ثابتة. ويطلق اسم (مجموعة خاصة) على ما عدا ذلك.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المتصرف": [
       {
         "track_id": "rett_law",
@@ -7515,6 +7591,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الصندوق.",
         "source_record_id": "alimony-fund-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8701,6 +8785,16 @@
         "term_as_written": "المسجّل العقاري",
         "definition_text": "من يقوم بتوثيق التسجيل العيني الأول، وما يرد على العقار من تصرفات أو تغييرات في وصفه، وفقاً لأحكام النظام واللائحة.",
         "source_record_id": "real-estate-registration-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المسح الأثري": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "المسح الأثري",
+        "definition_text": "جميع أعمال استكشاف مواقع الآثار وتوثيقها بالوسائل العلمية المختلفة، سواء على سطح الأرض أو في باطنها أو تحت الماء.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9918,6 +10012,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنقب عن الآثار": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "المنقب عن الآثار",
+        "definition_text": "كل شخص طبيعي أو اعتباري مؤهل علميا ومهنيا في مجال التنقيب عن الآثار.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنقول": [
       {
         "track_id": "lessor_repossession_regulation",
@@ -10081,6 +10185,16 @@
         "term_as_written": "الموافقة الصريحة",
         "definition_text": "موافقة تمنح بشكل مباشر وصريح من صاحب البيانات الشخصية بأي شكل من الأشكال وتدل على قبوله بمعالجة بياناته الشخصية بحيث لا يمكن تفسيرها بخلاف ذلك، وتكون قابلة للإثبات.",
         "source_record_id": "pdpl-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المواقع التاريخية": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "المواقع التاريخية",
+        "definition_text": "الأماكن التي شهدت أحداثا تاريخية مهمة أو وطنية، أو وردت في التراث الأدبي ولا تحوي بالضرورة آثارا ظاهرة أو مطمورة.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11271,6 +11385,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة العامة للغذاء والدواء.",
         "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للسياحة والآثار.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14266,6 +14388,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "قطع التراث الشعبي": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "قطع التراث الشعبي",
+        "definition_text": "الأدوات والقطع التي صنعها الإنسان، أو استخدمها في العصور المتأخرة في أي منطقة من مناطق المملكة لتسيير أموره المعيشية، من مطعم، وملبس، ومسكن، وتعليم، ودفاع عن النفس، ومحافظة على صحة البدن، وأدوات ترويحية.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "قواعد إدارة الاجتماعات": [
       {
         "track_id": "bankruptcy_implementing_regulation",
@@ -15286,6 +15418,16 @@
         "definition_text": "جهاز أو برنامج إلكتروني أو أكثر يستخدم لإنشاء البيانات الإلكترونية، أو استخراجها، أو إرسالها، أو بثها، أو تسلمها، أو تخزينها، أو عرضها، أو معالجتها.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "مواقع التراث الشعبي": [
+      {
+        "track_id": "antiquities_heritage_law",
+        "article_number": 1,
+        "term_as_written": "مواقع التراث الشعبي",
+        "definition_text": "الأماكن التي تقام أو تنظم فيها نشاطات اجتماعية، أو ثقافية، أو حرفية، أو اقتصادية مرتبطة بالتراث الشعبي.",
+        "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "موضوع الحماية": [

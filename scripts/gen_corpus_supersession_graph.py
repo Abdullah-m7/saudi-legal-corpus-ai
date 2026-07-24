@@ -1214,6 +1214,25 @@ EDGES = [
                 "this corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/universities/law/official_source/universities_law_official_source.json (issuing_authority_ar / Article 57)",
     },
+    {
+        "from_track_id": "antiquities_heritage_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الآثار (السابق)",
+        "target_decree": "Royal Decree No. (M/26), 23/6/1392H",
+        "note": "antiquities_heritage_law (Royal Decree M/3, 9/1/1436H) Article "
+                "92 explicitly replaces and repeals conflicting provisions of "
+                "the predecessor نظام الآثار, Royal Decree No. (M/26), dated "
+                "23/6/1392H -- confirmed via Article 92's own verbatim text: "
+                "\"يحل هذا النظام محل نظام الآثار، الصادر بالمرسوم الملكي رقم "
+                "(م/26) وتاريخ 23/6/1392هـ، ويلغي جميع ما يتعارض معه من "
+                "أحكام\", corroborated by both this track's nezams.com source "
+                "and the BOE-content print PDF. This is a real confirmed "
+                "named-predecessor repeal-and-replace, not an ambiguous/"
+                "excluded case. Not separately ingested in this corpus "
+                "(one-instrument-per-pass rule).",
+        "source_ref": "sources/antiquities_heritage/law/official_source/antiquities_heritage_law_official_source.json (Article 92)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

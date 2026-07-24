@@ -211,6 +211,7 @@ ENVIRONMENTAL_FEES_LLM = os.path.join(ROOT, "data", "environmental_fees_reg_arab
 RETT_LAW_LLM = os.path.join(ROOT, "data", "rett_arabic_legal_llm", "rett_law_legal_llm_001_020.json")
 UNIVERSITIES_LAW_LLM = os.path.join(ROOT, "data", "universities_arabic_legal_llm", "universities_law_legal_llm_001_058.json")
 PRIVATIZATION_LAW_LLM = os.path.join(ROOT, "data", "privatization_arabic_legal_llm", "privatization_law_legal_llm_001_045.json")
+ANTIQUITIES_HERITAGE_LAW_LLM = os.path.join(ROOT, "data", "antiquities_heritage_arabic_legal_llm", "antiquities_heritage_law_legal_llm_001_094.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -415,6 +416,7 @@ def main() -> int:
     rett_law_llm = _load_json(RETT_LAW_LLM)
     universities_law_llm = _load_json(UNIVERSITIES_LAW_LLM)
     privatization_law_llm = _load_json(PRIVATIZATION_LAW_LLM)
+    antiquities_heritage_law_llm = _load_json(ANTIQUITIES_HERITAGE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -435,7 +437,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 173,
+        "total_tracks": 174,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -612,6 +614,7 @@ def main() -> int:
             + rett_law_llm["record_count"]  # 20 Real Estate Transaction Tax Law (Royal Decree M/84, 19/3/1446H) (TIER_2, PRIMARY BOE lawId page retrieved via r.jina.ai read-proxy (live page returned HTTP 503) cross-verified against nezams.com and qanoonsa.com non-government secondaries, 20 اصلية, flat structure/no chapters, Article 20(2) repeal clause is GENERIC (no named predecessor asserted in the Law's own text; Royal Order A/84 14/2/1442H noted as historical context only), see track notes)
             + universities_law_llm["record_count"]  # 58 Universities Law (Royal Decree M/27, 2/3/1441H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY bibliotdroit.com born-digital text cross-verified article-by-article against the administering authority's own official cua.gov.sa PDF (all 58 articles, not a spot-check), structure re-confirmed by moe.gov.sa, 58 اصلية across 14 فصول, CONFIRMED named-predecessor repeal of نظام مجلس التعليم العالي والجامعات (M/8, 4/6/1414H) via Article 57, phased/transitional per the Royal Decree's own clauses 3-4, see track notes)
             + privatization_law_llm["record_count"]  # 45 Privatization Law (Royal Decree M/63, 5/8/1442H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text with an official misa.gov.sa/NCP PDF confirming article count/flat structure/verbatim Articles 44-45, 45 اصلية, flat structure/no chapters, Article 45 repeal clause is GENERIC (no named predecessor in the Law's own text; named repeals of prior CoM/SEC instruments sit instead in the accompanying CoM Resolution 436, disclosed as context only), see track notes)
+            + antiquities_heritage_law_llm["record_count"]  # 94 Antiquities, Museums and Urban Heritage Law (Royal Decree M/3, 9/1/1436H) (TIER_3, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com born-digital text corroborated by a BOE-content print PDF (media.unesco.org, non-government hosting) plus the Umm Al-Qura Gazette for the M/67 amendment scope specifically, 78 اصلية/16 معدلة across 6 amendment instruments (never silently merged, pre-amendment text preserved in history), genuinely flat/no chapters, CONFIRMED named-predecessor repeal of نظام الآثار (M/26, 23/6/1392H) via Article 92, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -779,6 +782,7 @@ def main() -> int:
             + rett_law_llm["record_count"]
             + universities_law_llm["record_count"]
             + privatization_law_llm["record_count"]
+            + antiquities_heritage_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5833,6 +5837,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Privatization Law «نظام التخصيص» — Royal Decree No. (M/63), dated 5/8/1442H, approving Council of Ministers Resolution No. (436), 3/8/1442H; published Umm Al-Qura Gazette 13/8/1442H (~26 Mar 2021G); administered by the National Center for Privatization (under MISA), the Ministry of Finance, and the Council of Economic and Development Affairs. A brand-new standalone Law (not a companion regulation of any existing track). **45 articles, ALL 45 اصلية**, FLAT structure with NO أبواب/فصول divisions (confirmed two ways: the official misa.gov.sa/NCP PDF shows no chapter headers, and nezams.com's own metadata agrees) — a single structural entry covers Articles 1-45, `section_ar` is the uniform value 'نظام التخصيص', no thematic chapter titles were invented. **VERIFICATION TIER: TIER_2 (lower end)** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (live HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full governing text from nezams.com (a non-government aggregator, the same source-class used by several sibling tracks), cross-verified against an official government PDF (misa.gov.sa/National Center for Privatization, HTTP 200) which independently confirmed the 45-article count, the flat structure, and VERBATIM Articles 44-45 specifically — a genuine but PARTIAL (not full article-by-article) official cross-check, disclosed honestly rather than inflated to a stronger tier, mirroring this corpus's environmental_fees 'TIER_2 (lower end)' precedent. **Article 45's repeal clause is GENERIC** («يلغي النظام كل ما يتعارض معه من أحكام») — the Law's own text names no predecessor instrument as repealed, so per this corpus's policy no supersession-graph edge is asserted for this track; recorded instead as an ambiguous/excluded negative finding (see supersession graph notes). The NAMED repeals of prior instruments (Council of Ministers decisions 60/1418H, 257/1421H, 219/1423H, and the Supreme Economic Council's decision 1/23/1423H approving the privatization strategy) sit instead in the accompanying Council of Ministers Resolution 436 — a different instrument from the Law itself — preserved verbatim in `preamble_ar` and disclosed as historical context only, not as a Law-text-asserted repeal. A companion Implementing Regulation (Article 44 mandate, NCP board, SPA-confirmed adoption) and a separate set of Organizing Rules (القواعد المنظمة للتخصيص, Article 2) exist but were deliberately NOT built this pass (flagged as future candidates, proposed track_id `privatization_regulation`). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "antiquities_heritage_law",
+                "display_name_ar": "نظام الآثار والمتاحف والتراث العمراني",
+                "display_name_en": "Antiquities, Museums and Urban Heritage Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_BORN_DIGITAL_X_UNESCO_HOSTED_BOE_CONTENT_PRINT_PDF_NON_GOVERNMENT_X_UMM_AL_QURA_GAZETTE_FOR_M67_SCOPE_ONLY",
+                "source_authority": "Royal Decree No. (M/3), dated 9/1/1436H, approving Council of Ministers Resolution No. (348), dated 25/8/1435H (Shura Council Resolutions 194/78, 18/2/1434H, and 67/38, 14/7/1435H); administered by the Ministry of Culture / Heritage Commission / Museums Commission — laws.boe.gov.sa lawId a7d4493b-7c03-4c2d-b3c6-a9a700f275cd checked first per methodology: unreachable this pass (HTTP 503/connection reset), Wayback egress-blocked and not circumvented. PRIMARY full verbatim text from nezams.com (independent born-digital HTML aggregator), corroborated by a BOE-content print PDF hosted on media.unesco.org (a non-government international body's hosting, not itself a Saudi government domain) for decree identity/preamble/named-repeal/original text, and independently by the Umm Al-Qura Gazette for the M/67 (1442H) amendment's scope specifically",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": antiquities_heritage_law_llm["record_count"],
+                    "data_path": "data/antiquities_heritage_arabic_legal_llm/antiquities_heritage_law_legal_llm_001_094.json"}},
+                "record_counts": {"arabic_articles": antiquities_heritage_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 78, "معدلة": 16, "ملغاة": 0, "مضافة": 0},
+                                  "total": antiquities_heritage_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/antiquities_heritage/law/official_source/antiquities_heritage_law_official_source.json",
+                    "sources/antiquities_heritage/law/verified/antiquities_heritage_law_verified_records.jsonl",
+                    "data/antiquities_heritage_arabic_legal_llm/antiquities_heritage_law_legal_llm_001_094.json",
+                ],
+                "validator_targets": ["make antiquities-heritage-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Antiquities, Museums and Urban Heritage Law «نظام الآثار والمتاحف والتراث العمراني» — Royal Decree No. (M/3), dated 9/1/1436H, approving Council of Ministers Resolution No. (348), 25/8/1435H (Shura Council Resolutions 194/78, 18/2/1434H, and 67/38, 14/7/1435H); administered by the Ministry of Culture / Heritage Commission / Museums Commission. A brand-new standalone Law (not a companion regulation of any existing track). **94 articles, GENUINELY FLAT** (chapter_structure is an empty list, section_ar empty for every article, confirmed two ways: nezams.com shows 94 sequential articles with no chapter headers, and the BOE-content print PDF likewise shows none). **78 اصلية / 16 معدلة**, consolidated through SIX separate amendment instruments, none silently merged (current enacted text on top, pre-amendment text preserved in `history`): (1) Royal Decree M/16 (21/1/1439H) added paragraph (ب) to Article 85; (2) Council of Ministers Resolution 693 (2/11/1441H) substituted the ministry name in Articles 12(2), 29, and 54; (3) Royal Decree M/67 (12/8/1442H, with CoM Resolution 453, 10/8/1442H) toughened the penalties of Articles 71-77 and amended Article 90(1), scope independently corroborated by the Umm Al-Qura Gazette; (4) Royal Decree M/103 (21/11/1442H) restructured Article 3 (expropriation/temporary seizure) into two numbered paragraphs and added a new paragraph (2) on deterioration-prevention/damage-repair procedures; (5) Council of Ministers Resolution 1012 (27/11/1445H) amended Article 1's definitions (substituting 'الجهة المختصة: وزارة الثقافة/هيئة التراث/هيئة المتاحف' for 'الوزارة/الهيئة' and adding a definition of 'الوزير') and correspondingly restructured Articles 65 and 93, reflecting the transfer of competence to the Ministry of Culture ecosystem. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full verbatim text from nezams.com (independent born-digital HTML aggregator, no scan/OCR/ligature defects), corroborated by a BOE-content print PDF hosted on media.unesco.org — an international body's hosting, NOT itself a Saudi government domain, so this does not qualify as a second genuinely official/primary source under this corpus's TIER_1/TIER_2 tests, honestly kept at TIER_3 rather than inflated; the M/67 amendment's specific scope is independently corroborated by the Umm Al-Qura Gazette (a genuine official source, but only for that one amendment, not the full text). **CONFIRMED named-predecessor repeal**: Article 92 verbatim states «يحل هذا النظام محل نظام الآثار، الصادر بالمرسوم الملكي رقم (م/26) وتاريخ 23/6/1392هـ، ويلغي جميع ما يتعارض معه من أحكام» — recorded as a real repeals_full edge in the supersession graph (target_track_id=None, an untracked predecessor). A source-text quirk (a Farsi yeh ی in Article 3's M/103 amendment text) is preserved verbatim, not silently corrected. The Umm Al-Qura issue/date of the original 1436H publication could not be confirmed this pass, disclosed not fabricated. Companion Implementing Regulations (اللوائح, per Article 93) exist but were deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
             },
         ],
     }
