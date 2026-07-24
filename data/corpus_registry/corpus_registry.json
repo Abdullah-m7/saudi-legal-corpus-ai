@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 10940,
+  "total_primary_arabic_governing_records": 10957,
   "total_reference_records": 614,
-  "total_registry_counted_records": 11835,
-  "total_tracks": 175,
+  "total_registry_counted_records": 11852,
+  "total_tracks": 176,
   "tracks": [
     {
       "boundaries": {
@@ -8338,6 +8338,55 @@
       "validator_targets": [
         "make child-protection-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/protection_from_abuse/law/official_source/protection_from_abuse_law_official_source.json",
+        "sources/protection_from_abuse/law/verified/protection_from_abuse_law_verified_records.jsonl",
+        "data/protection_from_abuse_arabic_legal_llm/protection_from_abuse_law_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "نظام الحماية من الإيذاء",
+      "display_name_en": "Protection from Abuse Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/protection_from_abuse_arabic_legal_llm/protection_from_abuse_law_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Protection from Abuse Law «نظام الحماية من الإيذاء» — Royal Decree No. (M/52), dated 15/11/1434H, approving Council of Ministers Resolution No. (332), 19/10/1434H; published Umm Al-Qura Gazette 24/12/1434H (~2013G); administered by the Ministry of Human Resources and Social Development. A brand-new standalone Law (not a companion regulation of any existing track). **17 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-17 sequence). **14 اصلية / 3 معدلة (Articles 7, 12, 13)**. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (live HTTP 503); Wayback egress-blocked at the network layer, not circumvented. PRIMARY original full text from an official Ministry of Finance regulations-library PDF (mof.gov.sa, Diwan Malaki circular No. 41930) — a genuine Saudi government document used directly as the governing text, cross-checked verbatim against nezams.com. **CONFIRMED amendment**: the same Council of Ministers Resolution 427 (5/8/1443H)/Royal Decree M/72 (6/8/1443H) that amended `child_protection_law` — 'تعديل نظامي الحماية من الإيذاء وحماية الطفل' — amended this Law's Article 7 (adding paragraph 6) and fully replaced Articles 12 and 13, independently confirmed via the Umm Al-Qura official gazette cross-checked against nezams.com. Amended articles keep their original verbatim text with the amendment preserved in `history`, never silently merged. **No repeal clause of any kind found** — a founding statute; Article 17 is only the standard 90-day entry-into-force clause; no supersession-graph edge applies (mirrors the finance_lease_law/child_protection_law precedent). **Distinct from `child_protection_law`** (نظام حماية الطفل, Royal Decree M/14, 3/2/1436H — child-specific care/rights/protection): this track is a general abuse-protection statute (all victims), sharing only a co-amendment link via the same M/72 decree, with no textual overlap. A companion Implementing Regulation (Ministerial Resolution 43047, 8/5/1435H) exists but was deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_MOF_OFFICIAL_REGULATIONS_LIBRARY_PDF_GOVERNING_TEXT_X_NEZAMS_COM_CROSSCHECK_X_UMM_AL_QURA_FOR_1443H_AMENDMENT",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 3,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/52), dated 15/11/1434H, approving Council of Ministers Resolution No. (332), dated 19/10/1434H; published Umm Al-Qura Gazette 24/12/1434H (~2013G); administered by the Ministry of Human Resources and Social Development — laws.boe.gov.sa lawId 83f450eb-7985-461f-b053-a9a700f2ba08 checked first per methodology: unreachable this pass (live HTTP 503), Wayback egress-blocked and not circumvented. PRIMARY original full text from an official Ministry of Finance regulations-library PDF (mof.gov.sa, Diwan Malaki circular No. 41930) used as the governing text, cross-checked verbatim against nezams.com; the 1443H amendment (Articles 7, 12, 13) independently confirmed via the Umm Al-Qura official gazette (uqn.gov.sa) cross-checked against nezams.com",
+      "status": "complete",
+      "track_id": "protection_from_abuse_law",
+      "validator_targets": [
+        "make protection-from-abuse-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8445,6 +8494,7 @@
       "premium_residency": 14,
       "press": 49,
       "privatization": 45,
+      "protection_from_abuse": 17,
       "qismah": 48,
       "real_estate_expropriation": 39,
       "real_estate_finance": 15,
@@ -8476,7 +8526,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10771,
+    "total_records": 10788,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

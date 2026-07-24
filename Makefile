@@ -289,6 +289,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         privatization-law-track-validate \
         antiquities-heritage-law-track-validate \
         child-protection-law-track-validate \
+        protection-from-abuse-law-track-validate \
         qa-gate
 
 help:
@@ -1580,6 +1581,9 @@ antiquities-heritage-law-track-validate:
 
 child-protection-law-track-validate:
 	$(PY) scripts/validate_child_protection_law_track.py
+
+protection-from-abuse-law-track-validate:
+	$(PY) scripts/validate_protection_from_abuse_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

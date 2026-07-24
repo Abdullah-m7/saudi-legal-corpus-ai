@@ -290,6 +290,8 @@ LAYERS = [
      "antiquities_heritage", "law"),
     ("data/child_protection_arabic_legal_llm/child_protection_law_legal_llm_001_025.json",
      "child_protection", "law"),
+    ("data/protection_from_abuse_arabic_legal_llm/protection_from_abuse_law_legal_llm_001_017.json",
+     "protection_from_abuse", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",

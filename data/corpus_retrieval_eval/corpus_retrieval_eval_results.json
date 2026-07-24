@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 378,
-  "top1_hits": 352,
-  "top3_hits": 371,
-  "top5_hits": 374,
-  "top1_accuracy": 0.9312,
-  "top3_accuracy": 0.9815,
-  "top5_accuracy": 0.9894,
-  "mrr_at_5": 0.9556,
+  "total_queries": 380,
+  "top1_hits": 354,
+  "top3_hits": 373,
+  "top5_hits": 376,
+  "top1_accuracy": 0.9316,
+  "top3_accuracy": 0.9816,
+  "top5_accuracy": 0.9895,
+  "mrr_at_5": 0.9558,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -11696,13 +11696,13 @@
      "score": 50
     },
     {
-     "record_id": "child-protection-law-llm-art-001",
-     "article_number": 1,
-     "score": 19
+     "record_id": "protection-from-abuse-law-llm-art-015",
+     "article_number": 15,
+     "score": 25
     },
     {
-     "record_id": "child-protection-law-llm-art-022",
-     "article_number": 22,
+     "record_id": "child-protection-law-llm-art-001",
+     "article_number": 1,
      "score": 19
     }
    ]
@@ -11727,14 +11727,76 @@
      "score": 53
     },
     {
+     "record_id": "protection-from-abuse-law-llm-art-013",
+     "article_number": 13,
+     "score": 48
+    },
+    {
      "record_id": "anti-harassment-law-llm-art-006",
      "article_number": 6,
      "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "pfa-001",
+   "query_ar": "تباشر الوزارة فور تلقيها بلاغا عن حالة إيذاء – بعد توثيق البلاغ وإجراء تقويم للحالة – باتخاذ أي من الإجراءات التالية",
+   "category": "topical",
+   "gold": {
+    "corpus": "protection_from_abuse",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "protection-from-abuse-law-llm-art-007",
+     "article_number": 7,
+     "score": 32
     },
     {
-     "record_id": "whistleblower-law-llm-art-026",
-     "article_number": 26,
-     "score": 39
+     "record_id": "labor-annex3-llm-art-008",
+     "article_number": 8,
+     "score": 17
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-157",
+     "article_number": 157,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "pfa-002",
+   "query_ar": "تكون عقوبة الجريمة المشار إليها في الفقرة (1) من هذه المادة السجن مدة لا تقل عن (سنة) ولا تزيد على (خمس) سنوات، وغرامة لا تقل عن (خمسين) ألف ريال ولا تزيد على (ثلاثمائة) ألف ريال، في حالة اقترانها بأي مما يأتي: أ – إن كان من تعرض للإيذاء من الأشخاص ذوي الإعاقة، أو أحد الوالدين، أو ممن تجاوز (الستين) عاما، أو الحامل إذا نتج عن ذلك سقوط جنينها",
+   "category": "topical",
+   "gold": {
+    "corpus": "protection_from_abuse",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "protection-from-abuse-law-llm-art-013",
+     "article_number": 13,
+     "score": 81
+    },
+    {
+     "record_id": "child-protection-law-llm-art-024",
+     "article_number": 23,
+     "score": 59
+    },
+    {
+     "record_id": "anti-narcotics-law-llm-art-038",
+     "article_number": 38,
+     "score": 48
     }
    ]
   }

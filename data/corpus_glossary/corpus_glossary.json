@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 175,
+  "total_tracks_in_registry": 176,
   "total_terms": 1062,
-  "total_definitions": 1717,
-  "tracks_with_definitions_article_parsed": 119,
+  "total_definitions": 1722,
+  "tracks_with_definitions_article_parsed": 120,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1625,6 +1625,14 @@
         "term_as_written": "الإيذاء",
         "definition_text": "كل شكل من أشكال الإساءة للطفل أو استغلاله أو التهديد بذلك، ومنها:",
         "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "protection_from_abuse_law",
+        "article_number": 1,
+        "term_as_written": "الإيذاء",
+        "definition_text": "هو كل شكل من أشكال الاستغلال، أو إساءة المعاملة الجسدية أو النفسية أو الجنسية، أو التهديد به، يرتكبه شخص تجاه شخص آخر، متجاوزا بذلك حدود ما له من ولاية عليه أو سلطة أو مسؤولية أو بسبب ما يربطهما من علاقة أسرية أو علاقة إعالة أو كفالة أو وصاية أو تبعية معيشية. ويدخل في إساءة المعاملة امتناع شخص أو تقصيره في الوفاء بواجباته أو التزاماته في توفير الحاجات الأساسية لشخص آخر من أفراد أسرته أو ممن يترتب عليه شرعا أو نظاما توفير تلك الحاجات لهم.",
+        "source_record_id": "protection-from-abuse-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6854,6 +6862,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "protection_from_abuse_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "protection-from-abuse-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -11186,6 +11202,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "protection_from_abuse_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الحماية من الإيذاء.",
+        "source_record_id": "protection-from-abuse-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "qismah_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12062,6 +12086,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "protection_from_abuse_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الشؤون الاجتماعية.",
+        "source_record_id": "protection-from-abuse-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_finance_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -12447,6 +12479,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الإعلام .",
         "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "protection_from_abuse_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الشؤون الاجتماعية.",
+        "source_record_id": "protection-from-abuse-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
