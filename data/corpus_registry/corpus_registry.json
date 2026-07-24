@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11333,
+  "total_primary_arabic_governing_records": 11370,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12228,
-  "total_tracks": 185,
+  "total_registry_counted_records": 12265,
+  "total_tracks": 186,
   "tracks": [
     {
       "boundaries": {
@@ -8828,6 +8828,55 @@
       "validator_targets": [
         "make building-code-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/product_safety/law/official_source/product_safety_law_official_source.json",
+        "sources/product_safety/law/verified/product_safety_law_verified_records.jsonl",
+        "data/product_safety_arabic_legal_llm/product_safety_law_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "نظام سلامة المنتجات",
+      "display_name_en": "Product Safety Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/product_safety_arabic_legal_llm/product_safety_law_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "Product Safety Law «نظام سلامة المنتجات» — Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), 24/1/1446H, Clause One (البند أولا); administered by SASO. **37 articles across 9 أبواب**, contiguous numbering 1-37: التعريفات (م1) — أحكام عامة (م2-4) — التزامات السلامة العامة (م5-15) — التزامات السلامة الخاصة (م16-18) — جهات تقويم المطابقة (م19-23) — مراقبة الأسواق (م24-30) — المسؤولية عن الخلل في المنتج (م31-32) — إيقاع العقوبات (م33-35) — أحكام ختامية (م36-37). **ALL 37 اصلية** — no confirmed amendment as of this pass. **CRITICAL DECREE-NUMBER CORRECTION**: the coverage-gap-map that flagged this law cited Royal Decree 'M/148, 2024' for both this law and its sibling. That number could not be confirmed anywhere (direct web search, laws.boe.gov.sa, nezams.com, qanoonsa.com, decreesa.com, or secondary legal commentary); every independent source instead converges on Royal Decree M/36, dated 29/1/1446H, approving CoM Resolution 93 (24/1/1446H) — 'M/148' is NOT used in this track. **RELATIONSHIP TO THE STANDARDS AND QUALITY LAW**: the SAME Royal Decree M/36 contains TWO separate clauses issued jointly — Clause One (البند أولا) approves THIS law; Clause Two (البند ثانيا) approves the Standards and Quality Law (نظام المواصفات والجودة, 24 articles / 7 أبواب, track_id: standards_quality_law) — a wholly distinct statute on a different subject, not a decree-number collision and not one law under two names; it is two genuinely separate laws sharing one joint enacting decree (a normal, documented Saudi legislative practice). **VERIFICATION TIER: TIER_2** — an official Umm al-Qura Gazette notice (uqn.gov.sa/details?p=26780) independently confirms the decree/resolution identity and quotes Article 36's text verbatim (matching this track exactly); the full 37-article text is primarily from qanoonsa.com, cross-checked word-for-word against nezams.com (independent, non-derivative) with two disclosed structural gaps resolved (Article 5's text taken from nezams.com due to a qanoonsa markup gap; the الباب الرابع chapter heading taken from qanoonsa.com due to a nezams markup gap — no wording disputes, only source-side HTML structure gaps). laws.boe.gov.sa returned connection resets / HTTP 503 on every attempt this pass; web.archive.org was not attempted (org egress-policy block, not bypassed). **NO named-predecessor repeal** — Article 37 (closing article) carries only a generic conflict clause ('ويلغي ما يتعارض معه أحكام'), naming no specific prior law/regulation; this is a new, substantively founding statute (SASO itself was separately established by a much older decree, M/10, 3/3/1392H, which this law does not touch — no supersession-graph edge is added). Implementing Regulation (Minister of Commerce Decision No. 097, 18/5/1446H, per SASO Board adoption) is NOT ingested, flagged as a future candidate (one-instrument-per-pass rule). Arabic governs; not legal advice.",
+      "official_text_status": "UQN_OFFICIAL_GAZETTE_DECREE_M36_CITATION_CONFIRMED_X_QANOONSA_PRIMARY_TEXT_X_NEZAMS_CROSS_VERIFIED_BOE_LAWID_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 37,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 37
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), dated 24/1/1446H, Clause One (البند أولا); administered by the Saudi Standards, Metrology and Quality Organization (SASO). Decree number CORRECTED from the coverage-gap-map's unconfirmable 'M/148' — every independent source, including an official Umm al-Qura Gazette notice (uqn.gov.sa/details?p=26780) that quotes Article 36 verbatim, converges on M/36 instead. laws.boe.gov.sa returned connection resets / HTTP 503 on every attempt this pass; web.archive.org was not attempted (org egress-policy block, not bypassed).",
+      "status": "complete",
+      "track_id": "product_safety_law",
+      "validator_targets": [
+        "make product-safety-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8942,6 +8991,7 @@
       "press": 49,
       "prison_detention": 31,
       "privatization": 45,
+      "product_safety": 37,
       "protection_from_abuse": 17,
       "qismah": 48,
       "real_estate_expropriation": 39,
@@ -8976,7 +9026,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11164,
+    "total_records": 11201,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

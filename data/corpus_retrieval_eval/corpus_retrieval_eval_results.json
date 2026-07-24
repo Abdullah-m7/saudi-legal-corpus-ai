@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 398,
-  "top1_hits": 372,
-  "top3_hits": 391,
-  "top5_hits": 394,
-  "top1_accuracy": 0.9347,
-  "top3_accuracy": 0.9824,
-  "top5_accuracy": 0.9899,
-  "mrr_at_5": 0.9578,
+  "total_queries": 400,
+  "top1_hits": 374,
+  "top3_hits": 393,
+  "top5_hits": 396,
+  "top1_accuracy": 0.935,
+  "top3_accuracy": 0.9825,
+  "top5_accuracy": 0.99,
+  "mrr_at_5": 0.958,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7237,8 +7237,8 @@
      "score": 35
     },
     {
-     "record_id": "oa-llm-companies-art-071",
-     "article_number": 71,
+     "record_id": "product-safety-law-llm-art-001",
+     "article_number": 1,
      "score": 24
     }
    ]
@@ -10213,8 +10213,8 @@
      "score": 28
     },
     {
-     "record_id": "food-regulation-llm-art-079",
-     "article_number": 79,
+     "record_id": "product-safety-law-llm-art-034",
+     "article_number": 34,
      "score": 23
     }
    ]
@@ -12355,6 +12355,68 @@
      "record_id": "maritime-commercial-law-llm-art-217",
      "article_number": 217,
      "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "psl-001",
+   "query_ar": "تحظر صناعة المنتجات غير الآمنة أو استيرادها أو تسويقها أو تداولها أو الإعلان عنها",
+   "category": "topical",
+   "gold": {
+    "corpus": "product_safety",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "product-safety-law-llm-art-005",
+     "article_number": 5,
+     "score": 40
+    },
+    {
+     "record_id": "gtpl-law-llm-art-083",
+     "article_number": 83,
+     "score": 12
+    },
+    {
+     "record_id": "oa-llm-companies-art-041",
+     "article_number": 41,
+     "score": 11
+    }
+   ]
+  },
+  {
+   "query_id": "psl-002",
+   "query_ar": "تقوم الجهات المختصة بالمراقبة على الأسواق وفقا للقواعد والإجراءات والمهمات التي تحددها اللوائح",
+   "category": "topical",
+   "gold": {
+    "corpus": "product_safety",
+    "law_component": "law",
+    "article_number": 24
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "product-safety-law-llm-art-024",
+     "article_number": 24,
+     "score": 37
+    },
+    {
+     "record_id": "telecommunications-law-llm-art-024",
+     "article_number": 24,
+     "score": 16
+    },
+    {
+     "record_id": "mining-investment-law-llm-art-003",
+     "article_number": 3,
+     "score": 15
     }
    ]
   }
