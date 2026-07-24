@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 183,
-  "total_terms": 1094,
-  "total_definitions": 1780,
-  "tracks_with_definitions_article_parsed": 124,
+  "total_tracks_in_registry": 184,
+  "total_terms": 1095,
+  "total_definitions": 1786,
+  "tracks_with_definitions_article_parsed": 125,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -3432,6 +3432,14 @@
         "definition_text": "الجمعية الأهلية.",
         "source_record_id": "associations-ngo-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_law",
+        "article_number": 1,
+        "term_as_written": "الجمعية",
+        "definition_text": "أي جمعية تعاونية مسجلة بموجب أحكام هذا النظام .",
+        "source_record_id": "cooperative-societies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجمعية العامة": [
@@ -3449,6 +3457,16 @@
         "term_as_written": "الجمعية العامة",
         "definition_text": "الجمعية العامة لجمعية الملاك.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجمعية العمومية": [
+      {
+        "track_id": "cooperative_societies_law",
+        "article_number": 1,
+        "term_as_written": "الجمعية العمومية",
+        "definition_text": "جميع الأعضاء المساهمين في رأس مال الجمعية التعاونية.",
+        "source_record_id": "cooperative-societies-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6008,6 +6026,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_law",
+        "article_number": 1,
+        "term_as_written": "العضو",
+        "definition_text": "العضو المؤسس للجمعية، أو المنضم إليها بعد تأسيسها.",
+        "source_record_id": "cooperative-societies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "payment_systems_law",
         "article_number": 1,
         "term_as_written": "العضو",
@@ -6817,6 +6843,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "cooperative-societies-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12724,6 +12758,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الشئون الاجتماعية .",
+        "source_record_id": "cooperative-societies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "customs_law",
         "article_number": 2,
         "term_as_written": "الوزير",
@@ -15299,6 +15341,14 @@
         "term_as_written": "مجلس الإدارة",
         "definition_text": "مجلس إدارة الهيئة العامة للطيران المدني",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_law",
+        "article_number": 1,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة الجمعية التعاونية.",
+        "source_record_id": "cooperative-societies-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {

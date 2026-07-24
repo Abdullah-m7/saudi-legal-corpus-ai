@@ -19,11 +19,11 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 183,
+  "total_tracks": 184,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 101,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 36,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 23,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 24,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
   "tracks_with_per_article_variation": 21,
@@ -349,6 +349,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_503': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (إعادة تعيين اتصال)، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة (تطلّب رابط http:// وليس https://) واستُخدمت كمصدر رسمي أساسي واحد، وقورنت حرفياً مع مصدر ثانوي واحد (nezams.com) — مصدر رسمي واحد + تدقيق مقارن ثانوي، يطابق تعريف TIER_2 تماماً. نص تعديل المادة الرابعة لعام 1440هـ يستند إلى nezams.com حصراً (بوابة BOE تذكر القرار 472 دون إيراد نصه)؛ راجع has_per_article_variation لهذا التمايز.",
       "has_per_article_variation": true,
       "per_article_variation_note": "17 مادة غير معدَّلة + الصياغتان (1420هـ و1425هـ) للمادتين المعدَّلتين (4، 14) مصدرها مزدوج (أرشيف Wayback لبوابة BOE × nezams.com)، متطابقة حرفياً دون فارق. أما نص تعديل المادة الرابعة لعام 1440هـ (القرار 472) فمصدره ثانوي واحد فقط (nezams.com) — بوابة BOE تذكر القرار نفسه دون إيراد نصه؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "cooperative_societies_law",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='BOE_UNREACHABLE_WAYBACK_REFUSED_X_FOUR_SOURCE_CROSS_VERIFIED_X_MOHAMAH_STRUCTURAL': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "copyright_law",
