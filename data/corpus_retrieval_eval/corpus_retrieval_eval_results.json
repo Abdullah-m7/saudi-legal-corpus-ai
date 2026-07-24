@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 380,
-  "top1_hits": 354,
-  "top3_hits": 373,
-  "top5_hits": 376,
-  "top1_accuracy": 0.9316,
-  "top3_accuracy": 0.9816,
+  "total_queries": 382,
+  "top1_hits": 356,
+  "top3_hits": 375,
+  "top5_hits": 378,
+  "top1_accuracy": 0.9319,
+  "top3_accuracy": 0.9817,
   "top5_accuracy": 0.9895,
-  "mrr_at_5": 0.9558,
+  "mrr_at_5": 0.956,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5930,14 +5930,14 @@
      "score": 46
     },
     {
-     "record_id": "municipal-councils-law-llm-art-026",
-     "article_number": 26,
-     "score": 16
+     "record_id": "associations-ngo-law-llm-art-003",
+     "article_number": 3,
+     "score": 17
     },
     {
-     "record_id": "judicial-inspection-regulation-llm-art-024",
-     "article_number": 24,
-     "score": 15
+     "record_id": "associations-ngo-law-llm-art-031",
+     "article_number": 31,
+     "score": 16
     }
    ]
   },
@@ -10647,8 +10647,8 @@
      "score": 17
     },
     {
-     "record_id": "basic-law-of-governance-llm-art-022",
-     "article_number": 22,
+     "record_id": "associations-ngo-law-llm-art-002",
+     "article_number": 2,
      "score": 15
     }
    ]
@@ -11797,6 +11797,68 @@
      "record_id": "anti-narcotics-law-llm-art-038",
      "article_number": 38,
      "score": 48
+    }
+   ]
+  },
+  {
+   "query_id": "ngo-001",
+   "query_ar": "الجهة المشرفة : الجهة الحكومية التي يدخل نشاط الجمعية أو المؤسسة ضمن اختصاصاتها",
+   "category": "topical",
+   "gold": {
+    "corpus": "associations_ngo",
+    "law_component": "law",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "associations-ngo-law-llm-art-001",
+     "article_number": 1,
+     "score": 23
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-039",
+     "article_number": 39,
+     "score": 19
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-005",
+     "article_number": 5,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "ngo-002",
+   "query_ar": "تعد الجمعية ذات نفع عام إذا كان غرضها تحقيق مصلحة عامة",
+   "category": "topical",
+   "gold": {
+    "corpus": "associations_ngo",
+    "law_component": "law",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "associations-ngo-law-llm-art-025",
+     "article_number": 25,
+     "score": 35
+    },
+    {
+     "record_id": "civil-status-law-llm-art-070",
+     "article_number": 70,
+     "score": 12
+    },
+    {
+     "record_id": "oa-llm-companies-art-091",
+     "article_number": 91,
+     "score": 12
     }
    ]
   }

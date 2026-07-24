@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 176,
-  "total_terms": 1062,
-  "total_definitions": 1722,
-  "tracks_with_definitions_article_parsed": 120,
+  "total_tracks_in_registry": 177,
+  "total_terms": 1064,
+  "total_definitions": 1732,
+  "tracks_with_definitions_article_parsed": 121,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -3312,6 +3312,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجمعية": [
+      {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "الجمعية",
+        "definition_text": "الجمعية الأهلية.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجمعية العامة": [
       {
         "track_id": "real_estate_units_implementing_regulation",
@@ -3429,6 +3439,14 @@
       }
     ],
     "الجهة المختصة": [
+      {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الجهة التي يحددها مجلس الوزراء.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "bankruptcy_law",
         "article_number": 1,
@@ -3553,6 +3571,14 @@
       }
     ],
     "الجهة المشرفة": [
+      {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "الجهة المشرفة",
+        "definition_text": "الجهة الحكومية التي يدخل نشاط الجمعية أو المؤسسة ضمن اختصاصاتها.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "environmental_air_quality",
         "article_number": 1,
@@ -5368,6 +5394,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "الصندوق",
+        "definition_text": "صندوق دعم الجمعيات.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_fees",
         "article_number": 1,
         "term_as_written": "الصندوق",
@@ -6502,6 +6536,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bankruptcy_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -7008,6 +7050,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اللائحة الأساسية": [
+      {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة الأساسية",
+        "definition_text": "اللائحة الأساسية للجمعية ، أو للمؤسسة.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اللائحة التنفيذية": [
       {
         "track_id": "gcc_anti_dumping_law",
@@ -7411,6 +7463,14 @@
       }
     ],
     "المؤسسة": [
+      {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسة",
+        "definition_text": "المؤسسة الأهلية.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "banking_control_law",
         "article_number": 1,
@@ -10826,6 +10886,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الجمعيات والمؤسسات الأهلية.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bankruptcy_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -11814,6 +11882,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الشؤون الاجتماعية.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bankruptcy_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -12199,6 +12275,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير التجارة والصناعة.",
         "source_record_id": "anti-fraud-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "associations_ngo_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الشؤون الاجتماعية.",
+        "source_record_id": "associations-ngo-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {

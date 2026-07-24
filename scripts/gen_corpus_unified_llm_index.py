@@ -292,6 +292,8 @@ LAYERS = [
      "child_protection", "law"),
     ("data/protection_from_abuse_arabic_legal_llm/protection_from_abuse_law_legal_llm_001_017.json",
      "protection_from_abuse", "law"),
+    ("data/associations_ngo_arabic_legal_llm/associations_ngo_law_legal_llm_001_044.json",
+     "associations_ngo", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",

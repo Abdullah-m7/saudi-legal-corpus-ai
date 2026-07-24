@@ -217,6 +217,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_antiquities_heritage_law_track.py",
     "scripts/gen_child_protection_law_track.py",
     "scripts/gen_protection_from_abuse_law_track.py",
+    "scripts/gen_associations_ngo_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",
