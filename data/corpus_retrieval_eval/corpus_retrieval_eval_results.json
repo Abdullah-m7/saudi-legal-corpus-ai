@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 384,
-  "top1_hits": 358,
-  "top3_hits": 377,
-  "top5_hits": 380,
-  "top1_accuracy": 0.9323,
-  "top3_accuracy": 0.9818,
+  "total_queries": 386,
+  "top1_hits": 360,
+  "top3_hits": 379,
+  "top5_hits": 382,
+  "top1_accuracy": 0.9326,
+  "top3_accuracy": 0.9819,
   "top5_accuracy": 0.9896,
-  "mrr_at_5": 0.9563,
+  "mrr_at_5": 0.9565,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -11921,6 +11921,68 @@
      "record_id": "alimony-fund-regulation-llm-art-016",
      "article_number": 16,
      "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "spt-001",
+   "query_ar": "تعمل اللجنة على دعم ورعاية الرياضة والحركة الأولمبية والبارالمبية في المملكة",
+   "category": "topical",
+   "gold": {
+    "corpus": "sports",
+    "law_component": "law",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sports-law-llm-art-010",
+     "article_number": 10,
+     "score": 36
+    },
+    {
+     "record_id": "sports-law-llm-art-001",
+     "article_number": 1,
+     "score": 20
+    },
+    {
+     "record_id": "sports-law-llm-art-058",
+     "article_number": 58,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "spt-002",
+   "query_ar": "على جميع الأفراد في القطاع الرياضي من لاعبين ومدربين ومجموعات رياضية وإداريين وحكام ووكلاء رياضيين",
+   "category": "topical",
+   "gold": {
+    "corpus": "sports",
+    "law_component": "law",
+    "article_number": 50
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sports-law-llm-art-050",
+     "article_number": 50,
+     "score": 38
+    },
+    {
+     "record_id": "labor-annex3-llm-art-014",
+     "article_number": 14,
+     "score": 16
+    },
+    {
+     "record_id": "domestic-labor-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 15
     }
    ]
   }

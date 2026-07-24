@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 178 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 178 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 179 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 179 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 178,
+  "total_tracks": 179,
   "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -3107,6 +3107,30 @@
         "web.archive.org"
       ],
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-09; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "sports_law",
+      "display_name_en": "Sports Law",
+      "display_name_ar": "نظام الرياضة",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='BOE_AND_MOS_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_PRIMARY_X_QANOONSA_COM_CROSSCHECK_X_UQN_GAZETTE_API_FOR_DECREE_IDENTITY': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. (M/121), dated 10/6/1447H (~1 December 2025G), approving Council of Ministers Resolution No. (414), dated 4/6/1447H; published Umm Al-Qura Gazette issue 5129, 21/6/1447H (~12 December 2025G); entry into force 180 days after publication (~June 2026G, kept separate from the decree issuance date); administered by the Ministry of Sport — laws.boe.gov.sa and mos.gov.sa (Ministry of Sport's official PDF) both unreachable this pass (HTTP 503 / connection reset, multiple attempts each), Wayback egress-blocked and not circumvented. PRIMARY full text from nezams.com, cross-checked verbatim article-by-article against qanoonsa.com (independent secondary); decree identity/date/preamble officially confirmed via the Umm Al-Qura gazette's own JSON API (uqn.gov.sa)",
+      "registry_source_url": null,
+      "official_source_file": "sources/sports/law/official_source/sports_law_official_source.json",
+      "source_urls": [
+        "https://www.uqn.gov.sa/api/article/21263/json"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },

@@ -296,6 +296,8 @@ LAYERS = [
      "associations_ngo", "law"),
     ("data/audiovisual_media_arabic_legal_llm/audiovisual_media_law_legal_llm_001_025.json",
      "audiovisual_media", "law"),
+    ("data/sports_arabic_legal_llm/sports_law_legal_llm_001_097.json",
+     "sports", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",
