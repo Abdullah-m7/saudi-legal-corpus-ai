@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11317,
+  "total_primary_arabic_governing_records": 11333,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12212,
-  "total_tracks": 184,
+  "total_registry_counted_records": 12228,
+  "total_tracks": 185,
   "tracks": [
     {
       "boundaries": {
@@ -8779,6 +8779,55 @@
       "validator_targets": [
         "make cooperative-societies-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/building_code/law/official_source/building_code_law_official_source.json",
+        "sources/building_code/law/verified/building_code_law_verified_records.jsonl",
+        "data/building_code_arabic_legal_llm/building_code_law_legal_llm_001_016.json"
+      ],
+      "display_name_ar": "نظام تطبيق كود البناء السعودي",
+      "display_name_en": "Saudi Building Code Application Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/building_code_arabic_legal_llm/building_code_law_legal_llm_001_016.json",
+          "governing": true,
+          "record_count": 16,
+          "status": "complete"
+        }
+      },
+      "notes": "Saudi Building Code Application Law «نظام تطبيق كود البناء السعودي» — Royal Decree No. (M/43), dated 26/4/1438H (~2017G), approving Council of Ministers Resolution No. (241), 25/4/1438H; administered by the Ministry of Municipal, Rural Affairs and Housing. **16 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-16 sequence, no مكرر articles). **12 اصلية / 4 معدلة (Articles 1, 8, 9, 15)** across three separate amendment instruments: Royal Decree M/15 (19/1/1441H: Articles 1, 8, 9), Royal Decree M/88 (10/4/1446H, CoM Resolution 286: Article 9), and Royal Decree M/204 (12/9/1446H, CoM Resolution 656: Articles 1, 15). **VERIFICATION TIER: TIER_1 — the only TIER_1 track in this second wave.** laws.boe.gov.sa live direct access returned HTTP 503, but a very recent (2026-01-14) web.archive.org snapshot of the live BOE page was retrieved directly this pass (Wayback reachable, not blocked), containing the full original text and all per-article amendment-history popups. Cross-verified per amendment: the original text plus M/15 against an independent Saudi Council of Engineers PDF; M/88 against the Umm al-Qura official gazette itself; M/204 against qanoonsa.com. **NO named-predecessor repeal** — this is a founding statute; Article 16 carries only a generic conflict clause plus a one-year effective-date rule, a confirmed negative finding; no supersession-graph edge is added. Two disclosed-not-silently-fixed discrepancies: Articles 4 and 5 still literally read pre-M/204 institutional titles (اللجنة الوطنية / وزير التجارة والاستثمار) that were functionally replaced elsewhere by M/204, because BOE records no textual amendment to Articles 4/5 themselves — this is BOE's own display lagging its own cited amendments, disclosed rather than silently corrected. Implementing Regulation (a separate ministerial-resolution track) is NOT ingested, flagged as a future candidate. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_LIVE_503_WAYBACK_RECENT_SNAPSHOT_X_ENGINEERS_PDF_X_UQ_GAZETTE_X_QANOONSA",
+      "record_counts": {
+        "arabic_articles": 16,
+        "legal_status_breakdown": {
+          "اصلية": 12,
+          "مضافة": 0,
+          "معدلة": 4,
+          "ملغاة": 0
+        },
+        "total": 16
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/43), dated 26/4/1438H (~2017G), approving Council of Ministers Resolution No. (241), dated 25/4/1438H; administered by the Ministry of Municipal, Rural Affairs and Housing — laws.boe.gov.sa live direct access returned HTTP 503, but a very recent (2026-01-14) web.archive.org snapshot of the live BOE page was retrieved directly (Wayback NOT blocked this session), containing the full original text and all amendment-history popups. Cross-verified per amendment: original+M/15 via an independent Saudi Council of Engineers PDF; M/88 via the Umm al-Qura official gazette itself; M/204 via qanoonsa.com",
+      "status": "complete",
+      "track_id": "building_code_law",
+      "validator_targets": [
+        "make building-code-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8809,6 +8858,7 @@
       "bankruptcy_fees": 20,
       "basic_law_of_governance": 83,
       "board_of_grievances": 26,
+      "building_code": 16,
       "capital_market": 68,
       "chambers_of_commerce": 66,
       "child_protection": 26,
@@ -8926,7 +8976,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11148,
+    "total_records": 11164,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

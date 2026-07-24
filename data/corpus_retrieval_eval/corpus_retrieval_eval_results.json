@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 396,
-  "top1_hits": 370,
-  "top3_hits": 389,
-  "top5_hits": 392,
-  "top1_accuracy": 0.9343,
-  "top3_accuracy": 0.9823,
+  "total_queries": 398,
+  "top1_hits": 372,
+  "top3_hits": 391,
+  "top5_hits": 394,
+  "top1_accuracy": 0.9347,
+  "top3_accuracy": 0.9824,
   "top5_accuracy": 0.9899,
-  "mrr_at_5": 0.9576,
+  "mrr_at_5": 0.9578,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -12293,6 +12293,68 @@
      "record_id": "muslaha-regulation-llm-art-006",
      "article_number": 6,
      "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "bcd-001",
+   "query_ar": "يعد الالتزام بالكود - بعد العمل بالنظام وفقا للتطبيق التدريجي المشار إليه في الفقرة (2) من المادة (الثانية) من النظام - أحد متطلبات الحصول على رخص البناء",
+   "category": "topical",
+   "gold": {
+    "corpus": "building_code",
+    "law_component": "law",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "building-code-law-llm-art-006",
+     "article_number": 6,
+     "score": 60
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-193",
+     "article_number": 193,
+     "score": 43
+    },
+    {
+     "record_id": "building-code-law-llm-art-002",
+     "article_number": 2,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "bcd-002",
+   "query_ar": "مع مراعاة ما ورد في المادتين (العاشرة) و(الحادية عشرة) من النظام، يعاقب كل من يخالف الكود",
+   "category": "topical",
+   "gold": {
+    "corpus": "building_code",
+    "law_component": "law",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "building-code-law-llm-art-012",
+     "article_number": 12,
+     "score": 47
+    },
+    {
+     "record_id": "traffic-regulation-llm-art-071",
+     "article_number": 70,
+     "score": 26
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-217",
+     "article_number": 217,
+     "score": 26
     }
    ]
   }

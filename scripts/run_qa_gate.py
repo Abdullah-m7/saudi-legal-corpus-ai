@@ -225,6 +225,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_prison_detention_law_track.py",
     "scripts/gen_civil_defense_law_track.py",
     "scripts/gen_cooperative_societies_law_track.py",
+    "scripts/gen_building_code_law_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",

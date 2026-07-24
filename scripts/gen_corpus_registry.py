@@ -222,6 +222,7 @@ WEAPONS_AMMUNITION_LAW_LLM = os.path.join(ROOT, "data", "weapons_ammunition_arab
 PRISON_DETENTION_LAW_LLM = os.path.join(ROOT, "data", "prison_detention_arabic_legal_llm", "prison_detention_law_legal_llm_001_031.json")
 CIVIL_DEFENSE_LAW_LLM = os.path.join(ROOT, "data", "civil_defense_arabic_legal_llm", "civil_defense_law_legal_llm_001_036.json")
 COOPERATIVE_SOCIETIES_LAW_LLM = os.path.join(ROOT, "data", "cooperative_societies_arabic_legal_llm", "cooperative_societies_law_legal_llm_001_044.json")
+BUILDING_CODE_LAW_LLM = os.path.join(ROOT, "data", "building_code_arabic_legal_llm", "building_code_law_legal_llm_001_016.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -437,6 +438,7 @@ def main() -> int:
     prison_detention_law_llm = _load_json(PRISON_DETENTION_LAW_LLM)
     civil_defense_law_llm = _load_json(CIVIL_DEFENSE_LAW_LLM)
     cooperative_societies_law_llm = _load_json(COOPERATIVE_SOCIETIES_LAW_LLM)
+    building_code_law_llm = _load_json(BUILDING_CODE_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -457,7 +459,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 184,
+        "total_tracks": 185,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -645,6 +647,7 @@ def main() -> int:
             + prison_detention_law_llm["record_count"]  # 31 Prison and Detention Law (Royal Decree M/31, 21/6/1398H) (TIER_3, BOE and MOI PDF both unreachable this pass, web.archive.org not attempted (fetch tool itself reported it cannot reach that host), PRIMARY nezams.com cross-verified verbatim against islamport.com, 28 اصلية/3 معدلة (Articles 4,20,25; Article 4 uniquely amended TWICE), flat structure/no chapters, NO predecessor-repeal assertion made (unconfirmed either way given the statute's age, not a settled founding-statute claim), see track notes)
             + civil_defense_law_llm["record_count"]  # 36 Civil Defense Law (Royal Decree M/10, 10/5/1406H) (TIER_3, BOE and NCC unreachable this pass, web.archive.org environment-blocked not bypassed, PRIMARY mohamah.net cross-verified verbatim against islamport.com, 34 اصلية/2 معدلة (Articles 5,28 -- original 1406H text preserved, current post-amendment text honestly UNCONFIRMED, not fabricated), flat structure/no chapters, NO named-predecessor-law repeal (Article 35 generic conflict clause only), see track notes)
             + cooperative_societies_law_llm["record_count"]  # 44 Cooperative Societies Law (Royal Decree M/14, 10/3/1429H) (TIER_3, BOE unreachable this pass and Wayback refused by the fetch tool itself, PRIMARY cross-verified across FOUR independent sources (livestockhafr.org, bibliotdroit.com, home.cbq.org.sa, cscs.org.sa-hosted scan) plus a structural confirmation from mohamah.net, 44 اصلية across 9 أبواب, no enacted amendment found (a draft amendment is under public consultation but NOT yet enacted), CONFIRMED named-predecessor repeal of the old Cooperative Societies System (Royal Decree 26, 25/6/1382H) and its Subsidy Bylaw (CoM Resolution 419) via Article 43, see track notes)
+            + building_code_law_llm["record_count"]  # 16 Saudi Building Code Application Law (Royal Decree M/43, 26/4/1438H) (TIER_1, laws.boe.gov.sa live returned HTTP 503 but a very recent web.archive.org snapshot of the live BOE page was retrieved directly (Wayback reachable this pass), cross-verified per amendment against a Saudi Council of Engineers PDF/the Umm al-Qura official gazette/qanoonsa.com, 12 اصلية/4 معدلة (Articles 1,8,9,15) across 3 amendment instruments (M/15, M/88, M/204), flat structure/no chapters, NO named-predecessor repeal (founding statute, generic conflict clause only), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -823,6 +826,7 @@ def main() -> int:
             + prison_detention_law_llm["record_count"]
             + civil_defense_law_llm["record_count"]
             + cooperative_societies_law_llm["record_count"]
+            + building_code_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6185,6 +6189,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Cooperative Societies Law «نظام الجمعيات التعاونية» — Royal Decree No. (M/14), dated 10/3/1429H (~2008G), approving Council of Ministers Resolution No. (73), 9/3/1429H; administered by the Ministry of Human Resources and Social Development (formerly the Ministry of Social Affairs). **44 articles across 9 أبواب**, contiguously covering articles 1-44 with no gaps. **ALL 44 اصلية** — no enacted amendment found; a draft amendment is under public consultation on istitlaa.ncc.gov.sa / eparticipation.my.gov.sa but is confirmed NOT yet enacted, honestly distinguished from an actual amendment. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has a confirmed dedicated lawId page but was unreachable this pass (live HTTP 503); web.archive.org was refused by the fetch tool itself, not bypassed. PRIMARY full text cross-verified across FOUR independent sources (livestockhafr.org, bibliotdroit.com, home.cbq.org.sa, and a cscs.org.sa-hosted scan) plus a structural confirmation from mohamah.net — upgraded from an initial single-source flag via this multi-source corroboration. Two unresolved discrepancies are disclosed rather than silently fixed: an internal 3-way date inconsistency for the repealed Subsidy Bylaw (CoM Resolution 419), and a single-source rendering artifact ('تعديلات المادة' label appearing after Articles 30-34 in one PDF export only, not corroborated elsewhere). **CONFIRMED named-predecessor repeal**: Article 43 explicitly states this Law replaces the prior Cooperative Societies System (Royal Decree No. 26, 25/6/1382H) and its Subsidy Bylaw (Council of Ministers Resolution No. 419) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1382H instrument is not itself ingested as a separate track. Implementing Regulation (hosted by cscs.org.sa alongside the base law) is NOT ingested, flagged as a future candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "building_code_law",
+                "display_name_ar": "نظام تطبيق كود البناء السعودي",
+                "display_name_en": "Saudi Building Code Application Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_LIVE_503_WAYBACK_RECENT_SNAPSHOT_X_ENGINEERS_PDF_X_UQ_GAZETTE_X_QANOONSA",
+                "source_authority": "Royal Decree No. (M/43), dated 26/4/1438H (~2017G), approving Council of Ministers Resolution No. (241), dated 25/4/1438H; administered by the Ministry of Municipal, Rural Affairs and Housing — laws.boe.gov.sa live direct access returned HTTP 503, but a very recent (2026-01-14) web.archive.org snapshot of the live BOE page was retrieved directly (Wayback NOT blocked this session), containing the full original text and all amendment-history popups. Cross-verified per amendment: original+M/15 via an independent Saudi Council of Engineers PDF; M/88 via the Umm al-Qura official gazette itself; M/204 via qanoonsa.com",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": building_code_law_llm["record_count"],
+                    "data_path": "data/building_code_arabic_legal_llm/building_code_law_legal_llm_001_016.json"}},
+                "record_counts": {"arabic_articles": building_code_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 12, "معدلة": 4, "ملغاة": 0, "مضافة": 0},
+                                  "total": building_code_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/building_code/law/official_source/building_code_law_official_source.json",
+                    "sources/building_code/law/verified/building_code_law_verified_records.jsonl",
+                    "data/building_code_arabic_legal_llm/building_code_law_legal_llm_001_016.json",
+                ],
+                "validator_targets": ["make building-code-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Saudi Building Code Application Law «نظام تطبيق كود البناء السعودي» — Royal Decree No. (M/43), dated 26/4/1438H (~2017G), approving Council of Ministers Resolution No. (241), 25/4/1438H; administered by the Ministry of Municipal, Rural Affairs and Housing. **16 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-16 sequence, no مكرر articles). **12 اصلية / 4 معدلة (Articles 1, 8, 9, 15)** across three separate amendment instruments: Royal Decree M/15 (19/1/1441H: Articles 1, 8, 9), Royal Decree M/88 (10/4/1446H, CoM Resolution 286: Article 9), and Royal Decree M/204 (12/9/1446H, CoM Resolution 656: Articles 1, 15). **VERIFICATION TIER: TIER_1 — the only TIER_1 track in this second wave.** laws.boe.gov.sa live direct access returned HTTP 503, but a very recent (2026-01-14) web.archive.org snapshot of the live BOE page was retrieved directly this pass (Wayback reachable, not blocked), containing the full original text and all per-article amendment-history popups. Cross-verified per amendment: the original text plus M/15 against an independent Saudi Council of Engineers PDF; M/88 against the Umm al-Qura official gazette itself; M/204 against qanoonsa.com. **NO named-predecessor repeal** — this is a founding statute; Article 16 carries only a generic conflict clause plus a one-year effective-date rule, a confirmed negative finding; no supersession-graph edge is added. Two disclosed-not-silently-fixed discrepancies: Articles 4 and 5 still literally read pre-M/204 institutional titles (اللجنة الوطنية / وزير التجارة والاستثمار) that were functionally replaced elsewhere by M/204, because BOE records no textual amendment to Articles 4/5 themselves — this is BOE's own display lagging its own cited amendments, disclosed rather than silently corrected. Implementing Regulation (a separate ministerial-resolution track) is NOT ingested, flagged as a future candidate. Arabic governs; not legal advice.",
             },
         ],
     }
