@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 187,
+  "total_tracks_scanned": 188,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 81,
+  "edge_count": 82,
   "relation_counts": {
-    "repeals_full": 70,
+    "repeals_full": 71,
     "repeals_partial": 10,
     "superseded_by": 1
   },
@@ -826,6 +826,16 @@
       "affected_articles": null,
       "note": "cooperative_societies_law (Royal Decree M/14, 10/3/1429H) Article 43 explicitly replaces the prior Cooperative Societies System (نظام الجمعيات التعاونية), Royal Decree No. (26), dated 25/6/1382H, and its Subsidy Bylaw (لائحة إعانة الجمعيات التعاونية), Council of Ministers Resolution No. (419) -- confirmed via Article 43's own verbatim text: \"يحل هذا النظام محل نظام الجمعيات التعاونية، الصادر بالمرسوم ذي الرقم 26 والتاريخ 25 / 6 / 1382 هـ، وكذا لائحة إعانة الجمعيات التعاونية، الصادرة بقرار مجلس الوزراء ذي الرقم 419 والتاريخ 10 / 5 / 1398 هـ\", corroborated across this track's four independently cross-verified sources. This is a real confirmed named-predecessor repeal (of two prior instruments), not an ambiguous/excluded case. Not separately ingested in this corpus (one-instrument-per-pass rule).",
       "source_ref": "sources/cooperative_societies/law/official_source/cooperative_societies_law_official_source.json (Article 43)"
+    },
+    {
+      "from_track_id": "disability_rights_law",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "نظام رعاية المعوقين (السابق)",
+      "target_decree": "Royal Decree No. (M/37), 23/9/1421H",
+      "affected_articles": null,
+      "note": "disability_rights_law (Royal Decree M/27, 11/2/1445H) Article 32 explicitly replaces the prior Law of Care for the Disabled (نظام رعاية المعوقين), Royal Decree No. (M/37), dated 23/9/1421H -- confirmed via Article 32's own verbatim text: \"يحل النظام محل نظام رعاية المعوقين الصادر بالمرسوم الملكي رقم (م/37) وتاريخ 23 /9/ 1421هـ، ويلغي كل ما يتعارض معه من أحكام\", corroborated three independent ways (nezams.com text, qanoonsa.com text, and Council of Ministers Resolution 110's own recitals). This is a real confirmed named-predecessor repeal, not an ambiguous/excluded case. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/disability_rights/law/official_source/disability_rights_law_official_source.json (Article 32)"
     }
   ],
   "concurrent_title_collisions": [

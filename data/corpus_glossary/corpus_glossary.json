@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 187,
-  "total_terms": 1141,
-  "total_definitions": 1866,
-  "tracks_with_definitions_article_parsed": 128,
+  "total_tracks_in_registry": 188,
+  "total_terms": 1149,
+  "total_definitions": 1877,
+  "tracks_with_definitions_article_parsed": 129,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -660,6 +660,16 @@
         "definition_text": "تقنية استعمال وسائل كهربائية، أو كهرومغناطيسية، أو بصرية، أو أي شكل آخر من وسائل التقنية المشابهة.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "إمكانية الوصول": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "إمكانية الوصول",
+        "definition_text": "مجموعة التدابير المناسبة التي تكفل إمكانية وصول الأشخاص ذوي الإعاقة إلى الخدمات المقدمة، على قدم المساواة مع غيرهم، ووصولهم أيضا إلى البيئة المادية المحيطة بهم ووسائل النقل والمعلومات والاتصالات، بما في ذلك وسائل التقنية ونظم المعلومات والاتصال، والمرافق والخدمات الأخرى المتاحة للعامة.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اتحاد الغرف": [
@@ -2316,6 +2326,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التأهيل": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "التأهيل",
+        "definition_text": "عملية توظيف خدمات طبية واجتماعية ونفسية وتعليمية ومهنية وبيئية لمساعدة الشخص ذي الإعاقة على تحقيق أقصى درجة ممكنة من الفاعلية؛ لتمكينه من التوافق مع متطلبات بيئته الطبيعية والاجتماعية، ولتنمية قدراته للاعتماد على نفسه وجعله عضوا فاعلا في المجتمع ما أمكن ذلك.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التأهيل اللاحق": [
       {
         "track_id": "gtpl_law",
@@ -2531,6 +2551,16 @@
         "term_as_written": "التراث العمراني",
         "definition_text": "كل ما شيده الإنسان من مدن، وقرى، وأحياء، ومبان، مع ما تتضمنه من فراغات، ومنشآت، وقطع لها قيمة عمرانية، أو تاريخية، أو علمية، أو ثقافية، أو وطنية.",
         "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الترتيبات التيسيرية": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الترتيبات التيسيرية",
+        "definition_text": "مجموعة الإجراءات الضرورية لتلبية متطلبات خاصة لشخص أو مجموعة من الأشخاص من ذوي الإعاقة، تكفل تمتعهم، على قدم المساواة مع غيرهم، بجميع الحقوق والخدمات الأساسية، وممارستهم لها، ولا تشكل عبئا غير متناسب على الجهات التي تقدمها.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3169,6 +3199,16 @@
         "term_as_written": "التمويل",
         "definition_text": "منح الائتمان بعقود للأنشطة المنصوص عليها في هذا النظام.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التمييز على أساس الإعاقة": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "التمييز على أساس الإعاقة",
+        "definition_text": "أي تمييز أو استبعاد أو تقييد ضد الأشخاص ذوي الإعاقة على أساس الإعاقة، يكون غرضه أو أثره إضعاف أو عدم الاعتراف بكل أو بعض حقوق الإنسان أو التمتع بها أو ممارستها من الأشخاص ذوي الإعاقة على قدم المساواة مع الآخرين.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4224,6 +4264,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخدمات": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات",
+        "definition_text": "مجموعة الخدمات المتكاملة التي تقدم لكل شخص ذي إعاقة بحكم حالته الصحية ودرجة إعاقته، أو بحكم وضعه الاجتماعي.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخدمات الاستشارية": [
       {
         "track_id": "gtpl_law",
@@ -4241,6 +4291,16 @@
         "term_as_written": "الخدمات البيئية",
         "definition_text": "الخدمات التي يقدمها المركز المختص للأشخاص كمراجعة الدراسات المقدمة للمركز وغيرها.",
         "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخدمات التعليمية والتدريبية المساندة": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات التعليمية والتدريبية المساندة",
+        "definition_text": "الخدمات الإضافية التي تتطلبها طبيعة الإعاقة في البيئات التعليمية والتدريبية.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5559,6 +5619,16 @@
         "term_as_written": "الشخص المؤهل",
         "definition_text": "شخص انطبقت عليه شروط الحصول على الرخصة وفقاً لأحكام النظام واللوائح.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشخص ذو الإعاقة": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الشخص ذو الإعاقة",
+        "definition_text": "كل شخص لديه اضطراب أو قصور طويل الأمد في الوظائف الجسدية، أو العقلية، أو الذهنية، أو الحسية، أو النفسية، قد يمنعه -عند تعامله مع مختلف التحديات- من المشاركة بصورة كاملة وفاعلة في المجتمع على قدم المساواة مع الآخرين.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7029,6 +7099,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "criminal-procedure-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11852,6 +11930,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام حقوق الأشخاص ذوي الإعاقة.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "ecommerce_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12543,6 +12629,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة الوطنية للأمن السيبراني.",
         "source_record_id": "cybersecurity-authority-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة رعاية الأشخاص ذوي الإعاقة.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17299,6 +17393,16 @@
         "term_as_written": "وتشمل",
         "definition_text": "المراعي، والغابات، والمنتزهات الوطنية والبرية والجيولوجية، والمناطق الرطبة، والمناطق السهلية، والمناطق الرملية (الكثبان)، والمناطق الجبلية، والوديان، والمناطق الساحلية، والجزر.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "وتشمل الخدمات": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "وتشمل الخدمات",
+        "definition_text": "الصحية، والتعليمية، والتدريبية، والتأهيلية، والثقافية، والاجتماعية، والإعلامية، والرياضية، والتوظيف، وغيرها من الخدمات الأخرى.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

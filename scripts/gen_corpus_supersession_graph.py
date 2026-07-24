@@ -1319,6 +1319,26 @@ EDGES = [
                 "pass rule).",
         "source_ref": "sources/cooperative_societies/law/official_source/cooperative_societies_law_official_source.json (Article 43)",
     },
+    {
+        "from_track_id": "disability_rights_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام رعاية المعوقين (السابق)",
+        "target_decree": "Royal Decree No. (M/37), 23/9/1421H",
+        "note": "disability_rights_law (Royal Decree M/27, 11/2/1445H) Article "
+                "32 explicitly replaces the prior Law of Care for the "
+                "Disabled (نظام رعاية المعوقين), Royal Decree No. (M/37), "
+                "dated 23/9/1421H -- confirmed via Article 32's own "
+                "verbatim text: \"يحل النظام محل نظام رعاية المعوقين "
+                "الصادر بالمرسوم الملكي رقم (م/37) وتاريخ 23 /9/ 1421هـ، "
+                "ويلغي كل ما يتعارض معه من أحكام\", corroborated three "
+                "independent ways (nezams.com text, qanoonsa.com text, and "
+                "Council of Ministers Resolution 110's own recitals). This "
+                "is a real confirmed named-predecessor repeal, not an "
+                "ambiguous/excluded case. Not separately ingested in this "
+                "corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/disability_rights/law/official_source/disability_rights_law_official_source.json (Article 32)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

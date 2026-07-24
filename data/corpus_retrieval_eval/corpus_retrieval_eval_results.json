@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 402,
-  "top1_hits": 376,
-  "top3_hits": 395,
-  "top5_hits": 398,
-  "top1_accuracy": 0.9353,
-  "top3_accuracy": 0.9826,
-  "top5_accuracy": 0.99,
-  "mrr_at_5": 0.9582,
+  "total_queries": 404,
+  "top1_hits": 378,
+  "top3_hits": 397,
+  "top5_hits": 400,
+  "top1_accuracy": 0.9356,
+  "top3_accuracy": 0.9827,
+  "top5_accuracy": 0.9901,
+  "mrr_at_5": 0.9584,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -8658,14 +8658,14 @@
      "score": 55
     },
     {
+     "record_id": "disability-rights-law-llm-art-022",
+     "article_number": 22,
+     "score": 51
+    },
+    {
      "record_id": "maritime-commercial-law-llm-art-382",
      "article_number": 382,
      "score": 45
-    },
-    {
-     "record_id": "anti-fraud-law-llm-art-017",
-     "article_number": 17,
-     "score": 44
     }
    ]
   },
@@ -11794,9 +11794,9 @@
      "score": 59
     },
     {
-     "record_id": "anti-narcotics-law-llm-art-038",
-     "article_number": 38,
-     "score": 48
+     "record_id": "disability-rights-law-llm-art-022",
+     "article_number": 22,
+     "score": 54
     }
    ]
   },
@@ -12479,6 +12479,68 @@
      "record_id": "agriculture-law-llm-art-024",
      "article_number": 24,
      "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "drl-001",
+   "query_ar": "للأشخاص ذوي الإعاقة وأسرهم، الحق في الحصول على خدمات الدعم الاجتماعي التي تساعدهم على التكيف مع الإعاقة وتحقق لهم الاندماج المجتمعي",
+   "category": "topical",
+   "gold": {
+    "corpus": "disability_rights",
+    "law_component": "law",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-rights-law-llm-art-015",
+     "article_number": 15,
+     "score": 53
+    },
+    {
+     "record_id": "disability-rights-law-llm-art-019",
+     "article_number": 19,
+     "score": 36
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "drl-002",
+   "query_ar": "يعد مخالفا لأحكام النظام كل شخص قام بفعل يعرض الأشخاص ذوي الإعاقة لأي مما يأتي: الاعتداء عليهم جسديا أو معنويا أو ماديا",
+   "category": "topical",
+   "gold": {
+    "corpus": "disability_rights",
+    "law_component": "law",
+    "article_number": 21
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-rights-law-llm-art-021",
+     "article_number": 21,
+     "score": 56
+    },
+    {
+     "record_id": "disability-rights-law-llm-art-001",
+     "article_number": 1,
+     "score": 22
+    },
+    {
+     "record_id": "disability-rights-law-llm-art-022",
+     "article_number": 22,
+     "score": 20
     }
    ]
   }

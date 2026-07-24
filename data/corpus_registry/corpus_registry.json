@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11394,
+  "total_primary_arabic_governing_records": 11427,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12289,
-  "total_tracks": 187,
+  "total_registry_counted_records": 12322,
+  "total_tracks": 188,
   "tracks": [
     {
       "boundaries": {
@@ -8926,6 +8926,55 @@
       "validator_targets": [
         "make standards-quality-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/disability_rights/law/official_source/disability_rights_law_official_source.json",
+        "sources/disability_rights/law/verified/disability_rights_law_verified_records.jsonl",
+        "data/disability_rights_arabic_legal_llm/disability_rights_law_legal_llm_001_033.json"
+      ],
+      "display_name_ar": "نظام حقوق الأشخاص ذوي الإعاقة",
+      "display_name_en": "Law of Rights of Persons with Disabilities",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/disability_rights_arabic_legal_llm/disability_rights_law_legal_llm_001_033.json",
+          "governing": true,
+          "record_count": 33,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of Rights of Persons with Disabilities «نظام حقوق الأشخاص ذوي الإعاقة» — Royal Decree No. (M/27), dated 11/2/1445H (~27 August 2023G), approving Council of Ministers Resolution No. (110), 6/2/1445H, published Umm al-Qura Gazette issue 4997 (8 September 2023G); administered by the Authority for the Care of Persons with Disabilities. **33 articles across 5 أبواب**, contiguous numbering 1-33: تعريفات ومبادئ عامة (م1-2) — الحقوق والخدمات (م3-14) — الدعم الاجتماعي والاقتصادي (م15-20) — المخالفات والعقوبات (م21-28) — أحكام ختامية (م29-33). **ALL 33 اصلية** — no amendment since enactment (nezams.com's own metadata explicitly states 'لم يجرِ عليه تعديل'). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has a confirmed dedicated lawId page but was unreachable this pass (live HTTP 503, connection reset); web.archive.org confirmed egress-blocked for this session (explicit block message + explicit WebFetch refusal) and NOT bypassed. Full text from nezams.com cross-checked verbatim article-by-article against qanoonsa.com (a second, independent aggregator) — exact match for all 33 articles. **CONFIRMED named-predecessor repeal**: Article 32 explicitly states this Law replaces the prior نظام رعاية المعوقين (Royal Decree M/37, 23/9/1421H) and repeals all conflicting provisions — confirmed three independent ways (nezams.com text, qanoonsa.com text, and Council of Ministers Resolution 110's own recitals) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1421H instrument is not itself ingested as a separate track. Implementing Regulation (Article 31 mandate, published Umm al-Qura) and the Violations-Committee procedural rules (Resolution 27, 22/1/1446H) are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_LAWID_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_PRIMARY_X_QANOONSA_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 33,
+        "legal_status_breakdown": {
+          "اصلية": 33,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 33
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/27), dated 11/2/1445H (~27 August 2023G), approving Council of Ministers Resolution No. (110), dated 6/2/1445H; administered by the Authority for the Care of Persons with Disabilities. laws.boe.gov.sa has a dedicated lawId page but was unreachable live this pass (HTTP 503); web.archive.org confirmed egress-blocked for this session and not bypassed. Full text from nezams.com cross-checked verbatim article-by-article against qanoonsa.com — exact match for all 33 articles.",
+      "status": "complete",
+      "track_id": "disability_rights_law",
+      "validator_targets": [
+        "make disability-rights-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8979,6 +9028,7 @@
       "criminal_procedure": 403,
       "customs": 224,
       "cybersecurity_authority": 22,
+      "disability_rights": 33,
       "documentation_settlement": 15,
       "domestic_labor": 33,
       "ecommerce": 46,
@@ -9076,7 +9126,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11225,
+    "total_records": 11258,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

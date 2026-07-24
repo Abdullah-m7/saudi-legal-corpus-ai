@@ -225,6 +225,7 @@ COOPERATIVE_SOCIETIES_LAW_LLM = os.path.join(ROOT, "data", "cooperative_societie
 BUILDING_CODE_LAW_LLM = os.path.join(ROOT, "data", "building_code_arabic_legal_llm", "building_code_law_legal_llm_001_016.json")
 PRODUCT_SAFETY_LAW_LLM = os.path.join(ROOT, "data", "product_safety_arabic_legal_llm", "product_safety_law_legal_llm_001_037.json")
 STANDARDS_QUALITY_LAW_LLM = os.path.join(ROOT, "data", "standards_quality_arabic_legal_llm", "standards_quality_law_legal_llm_001_024.json")
+DISABILITY_RIGHTS_LAW_LLM = os.path.join(ROOT, "data", "disability_rights_arabic_legal_llm", "disability_rights_law_legal_llm_001_033.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -443,6 +444,7 @@ def main() -> int:
     building_code_law_llm = _load_json(BUILDING_CODE_LAW_LLM)
     product_safety_law_llm = _load_json(PRODUCT_SAFETY_LAW_LLM)
     standards_quality_law_llm = _load_json(STANDARDS_QUALITY_LAW_LLM)
+    disability_rights_law_llm = _load_json(DISABILITY_RIGHTS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -463,7 +465,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 187,
+        "total_tracks": 188,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -654,6 +656,7 @@ def main() -> int:
             + building_code_law_llm["record_count"]  # 16 Saudi Building Code Application Law (Royal Decree M/43, 26/4/1438H) (TIER_1, laws.boe.gov.sa live returned HTTP 503 but a very recent web.archive.org snapshot of the live BOE page was retrieved directly (Wayback reachable this pass), cross-verified per amendment against a Saudi Council of Engineers PDF/the Umm al-Qura official gazette/qanoonsa.com, 12 اصلية/4 معدلة (Articles 1,8,9,15) across 3 amendment instruments (M/15, M/88, M/204), flat structure/no chapters, NO named-predecessor repeal (founding statute, generic conflict clause only), see track notes)
             + product_safety_law_llm["record_count"]  # 37 Product Safety Law (Royal Decree M/36, 29/1/1446H, Clause One) (TIER_2, decree number CORRECTED from the coverage-gap-map's unconfirmable M/148; official Umm al-Qura Gazette notice confirms the decree and quotes Article 36 verbatim; full text from qanoonsa.com cross-checked against nezams.com; laws.boe.gov.sa unreachable this pass, 37 اصلية across 9 أبواب, no confirmed amendment, NO named-predecessor repeal (generic conflict clause only) -- distinct from the sibling Standards and Quality Law (track_id: standards_quality) approved by the same joint decree's Clause Two, see track notes)
             + standards_quality_law_llm["record_count"]  # 24 Standards and Quality Law (Royal Decree M/36, 29/1/1446H, Clause Two) (TIER_2, decree number CORRECTED from the coverage-gap-map's unconfirmable M/148; official Umm al-Qura Gazette notice confirms the decree and quotes Article 23 verbatim; full text from qanoonsa.com cross-checked against nezams.com (2 words corrected in Article 1); laws.boe.gov.sa index entry confirmed by name but unreachable live this pass, 24 اصلية across 7 أبواب, no confirmed amendment, NO named-predecessor repeal (generic conflict clause only) -- distinct from the sibling Product Safety Law (track_id: product_safety) approved by the same joint decree's Clause One, and distinct from SASO's own founding statute (Royal Decree M/10, 3/3/1392H), see track notes)
+            + disability_rights_law_llm["record_count"]  # 33 Rights of Persons with Disabilities Law (Royal Decree M/27, 11/2/1445H) (TIER_3, laws.boe.gov.sa has a dedicated lawId page but was unreachable this pass, web.archive.org confirmed egress-blocked and not bypassed, PRIMARY nezams.com cross-verified verbatim article-by-article against qanoonsa.com, all 33 اصلية across 5 أبواب, no amendment since enactment, CONFIRMED named-predecessor repeal of the old نظام رعاية المعوقين (M/37, 23/9/1421H) via Article 32, triple-corroborated including from CoM Resolution 110's own recitals, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -835,6 +838,7 @@ def main() -> int:
             + building_code_law_llm["record_count"]
             + product_safety_law_llm["record_count"]
             + standards_quality_law_llm["record_count"]
+            + disability_rights_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6281,6 +6285,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Standards and Quality Law «نظام المواصفات والجودة» — Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), 24/1/1446H, Clause Two (البند ثانيا); administered by SASO. **24 articles across 7 أبواب**, contiguous numbering 1-24: التعريفات (م1) — أحكام عامة (م2-6) — إعداد واعتماد وتبني المواصفة والوثيقة ذات الصلة (م7-11) — مراجعة وتطبيق المواصفة السعودية والوثيقة ذات الصلة (م12-13) — الجودة (م14-17) — ضبط مخالفات النظام وإيقاع العقوبات (م18-22) — أحكام ختامية (م23-24). **ALL 24 اصلية** — no confirmed amendment as of this pass. **SAME DECREE-NUMBER CORRECTION as the sibling Product Safety Law**: the coverage-gap-map cited an unconfirmable 'M/148, 2024' for both laws; every independent source instead converges on Royal Decree M/36, 29/1/1446H, approving CoM Resolution 93 (24/1/1446H) — 'M/148' is NOT used in this track. **RELATIONSHIP TO THE PRODUCT SAFETY LAW**: the SAME Royal Decree M/36 jointly approves TWO separate statutes — Clause One (البند أولا) approves the Product Safety Law (track_id: product_safety_law); Clause Two (البند ثانيا) approves THIS law — two genuinely distinct statutes on different subjects sharing one joint enacting decree, not a decree-number collision. **VERIFICATION TIER: TIER_2** — an official Umm al-Qura Gazette notice independently confirms the decree/resolution identity and quotes Article 23's text verbatim; the full 24-article text is primarily from qanoonsa.com, cross-checked word-for-word against nezams.com with 2 words corrected in Article 1 (disclosed, not silently harmonized). laws.boe.gov.sa has a confirmed dedicated index entry by name but was unreachable live this pass; web.archive.org was not attempted (org egress-policy block, not bypassed). Article 10 legitimately contains the Latin acronym 'SASO' verbatim (a documented exception, not a scraping artifact). **NO named-predecessor repeal** — Article 24 (closing article) carries only a generic conflict clause, naming no specific prior law/regulation; this is also DISTINCT from SASO's own much older founding statute (Royal Decree M/10, 3/3/1392H, which established SASO as a government body — a different subject entirely from this objective standardization/quality statute) — no supersession-graph edge is added for either relationship. Implementing Regulation (Minister of Commerce Decision No. 098, 18/5/1446H, per SASO Board adoption) is NOT ingested, flagged as a future candidate (one-instrument-per-pass rule). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "disability_rights_law",
+                "display_name_ar": "نظام حقوق الأشخاص ذوي الإعاقة",
+                "display_name_en": "Law of Rights of Persons with Disabilities",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_LAWID_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_PRIMARY_X_QANOONSA_CROSS_VERIFIED",
+                "source_authority": "Royal Decree No. (M/27), dated 11/2/1445H (~27 August 2023G), approving Council of Ministers Resolution No. (110), dated 6/2/1445H; administered by the Authority for the Care of Persons with Disabilities. laws.boe.gov.sa has a dedicated lawId page but was unreachable live this pass (HTTP 503); web.archive.org confirmed egress-blocked for this session and not bypassed. Full text from nezams.com cross-checked verbatim article-by-article against qanoonsa.com — exact match for all 33 articles.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": disability_rights_law_llm["record_count"],
+                    "data_path": "data/disability_rights_arabic_legal_llm/disability_rights_law_legal_llm_001_033.json"}},
+                "record_counts": {"arabic_articles": disability_rights_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 33, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": disability_rights_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/disability_rights/law/official_source/disability_rights_law_official_source.json",
+                    "sources/disability_rights/law/verified/disability_rights_law_verified_records.jsonl",
+                    "data/disability_rights_arabic_legal_llm/disability_rights_law_legal_llm_001_033.json",
+                ],
+                "validator_targets": ["make disability-rights-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Law of Rights of Persons with Disabilities «نظام حقوق الأشخاص ذوي الإعاقة» — Royal Decree No. (M/27), dated 11/2/1445H (~27 August 2023G), approving Council of Ministers Resolution No. (110), 6/2/1445H, published Umm al-Qura Gazette issue 4997 (8 September 2023G); administered by the Authority for the Care of Persons with Disabilities. **33 articles across 5 أبواب**, contiguous numbering 1-33: تعريفات ومبادئ عامة (م1-2) — الحقوق والخدمات (م3-14) — الدعم الاجتماعي والاقتصادي (م15-20) — المخالفات والعقوبات (م21-28) — أحكام ختامية (م29-33). **ALL 33 اصلية** — no amendment since enactment (nezams.com's own metadata explicitly states 'لم يجرِ عليه تعديل'). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has a confirmed dedicated lawId page but was unreachable this pass (live HTTP 503, connection reset); web.archive.org confirmed egress-blocked for this session (explicit block message + explicit WebFetch refusal) and NOT bypassed. Full text from nezams.com cross-checked verbatim article-by-article against qanoonsa.com (a second, independent aggregator) — exact match for all 33 articles. **CONFIRMED named-predecessor repeal**: Article 32 explicitly states this Law replaces the prior نظام رعاية المعوقين (Royal Decree M/37, 23/9/1421H) and repeals all conflicting provisions — confirmed three independent ways (nezams.com text, qanoonsa.com text, and Council of Ministers Resolution 110's own recitals) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1421H instrument is not itself ingested as a separate track. Implementing Regulation (Article 31 mandate, published Umm al-Qura) and the Violations-Committee procedural rules (Resolution 27, 22/1/1446H) are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
             },
         ],
     }

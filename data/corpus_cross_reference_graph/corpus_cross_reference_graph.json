@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 11225,
-  "total_references_extracted": 2345,
-  "intra_law_count": 2014,
+  "total_records_scanned": 11258,
+  "total_references_extracted": 2355,
+  "intra_law_count": 2024,
   "inter_law_count": 331,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1973,
+    "high": 1983,
     "medium": 372
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -8690,6 +8690,116 @@
       "target_article_number": null,
       "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
       "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-022",
+      "source_article_number": 22,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام. وتضاعف العقوبة في",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-022",
+      "source_article_number": 22,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام. وتضاعف العقوبة في",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-022",
+      "source_article_number": 22,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام- النص على نشر ملخصه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-024",
+      "source_article_number": 24,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام، وإقامة الدعوى أمام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية) من النظام. 2- حرمان الأشخاص",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-026",
+      "source_article_number": 26,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 25,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة والعشرين) من النظام؛ بغرامة لا تزيد عن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-027",
+      "source_article_number": 27,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 25,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة والعشرين) من النظام، ويجوز لها إسناد هذ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 25,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة والعشرين) من النظام، وفي توقيع العقوبات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "disability_rights_law",
+      "source_record_id": "disability-rights-law-llm-art-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "disability_rights_law",
+      "target_article_number": 26,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة والعشرين) من النظام. ولمن صدر ضده قرار",
       "confidence": "high"
     },
     {
