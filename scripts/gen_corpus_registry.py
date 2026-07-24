@@ -224,6 +224,7 @@ CIVIL_DEFENSE_LAW_LLM = os.path.join(ROOT, "data", "civil_defense_arabic_legal_l
 COOPERATIVE_SOCIETIES_LAW_LLM = os.path.join(ROOT, "data", "cooperative_societies_arabic_legal_llm", "cooperative_societies_law_legal_llm_001_044.json")
 BUILDING_CODE_LAW_LLM = os.path.join(ROOT, "data", "building_code_arabic_legal_llm", "building_code_law_legal_llm_001_016.json")
 PRODUCT_SAFETY_LAW_LLM = os.path.join(ROOT, "data", "product_safety_arabic_legal_llm", "product_safety_law_legal_llm_001_037.json")
+STANDARDS_QUALITY_LAW_LLM = os.path.join(ROOT, "data", "standards_quality_arabic_legal_llm", "standards_quality_law_legal_llm_001_024.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -441,6 +442,7 @@ def main() -> int:
     cooperative_societies_law_llm = _load_json(COOPERATIVE_SOCIETIES_LAW_LLM)
     building_code_law_llm = _load_json(BUILDING_CODE_LAW_LLM)
     product_safety_law_llm = _load_json(PRODUCT_SAFETY_LAW_LLM)
+    standards_quality_law_llm = _load_json(STANDARDS_QUALITY_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -461,7 +463,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 186,
+        "total_tracks": 187,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -651,6 +653,7 @@ def main() -> int:
             + cooperative_societies_law_llm["record_count"]  # 44 Cooperative Societies Law (Royal Decree M/14, 10/3/1429H) (TIER_3, BOE unreachable this pass and Wayback refused by the fetch tool itself, PRIMARY cross-verified across FOUR independent sources (livestockhafr.org, bibliotdroit.com, home.cbq.org.sa, cscs.org.sa-hosted scan) plus a structural confirmation from mohamah.net, 44 اصلية across 9 أبواب, no enacted amendment found (a draft amendment is under public consultation but NOT yet enacted), CONFIRMED named-predecessor repeal of the old Cooperative Societies System (Royal Decree 26, 25/6/1382H) and its Subsidy Bylaw (CoM Resolution 419) via Article 43, see track notes)
             + building_code_law_llm["record_count"]  # 16 Saudi Building Code Application Law (Royal Decree M/43, 26/4/1438H) (TIER_1, laws.boe.gov.sa live returned HTTP 503 but a very recent web.archive.org snapshot of the live BOE page was retrieved directly (Wayback reachable this pass), cross-verified per amendment against a Saudi Council of Engineers PDF/the Umm al-Qura official gazette/qanoonsa.com, 12 اصلية/4 معدلة (Articles 1,8,9,15) across 3 amendment instruments (M/15, M/88, M/204), flat structure/no chapters, NO named-predecessor repeal (founding statute, generic conflict clause only), see track notes)
             + product_safety_law_llm["record_count"]  # 37 Product Safety Law (Royal Decree M/36, 29/1/1446H, Clause One) (TIER_2, decree number CORRECTED from the coverage-gap-map's unconfirmable M/148; official Umm al-Qura Gazette notice confirms the decree and quotes Article 36 verbatim; full text from qanoonsa.com cross-checked against nezams.com; laws.boe.gov.sa unreachable this pass, 37 اصلية across 9 أبواب, no confirmed amendment, NO named-predecessor repeal (generic conflict clause only) -- distinct from the sibling Standards and Quality Law (track_id: standards_quality) approved by the same joint decree's Clause Two, see track notes)
+            + standards_quality_law_llm["record_count"]  # 24 Standards and Quality Law (Royal Decree M/36, 29/1/1446H, Clause Two) (TIER_2, decree number CORRECTED from the coverage-gap-map's unconfirmable M/148; official Umm al-Qura Gazette notice confirms the decree and quotes Article 23 verbatim; full text from qanoonsa.com cross-checked against nezams.com (2 words corrected in Article 1); laws.boe.gov.sa index entry confirmed by name but unreachable live this pass, 24 اصلية across 7 أبواب, no confirmed amendment, NO named-predecessor repeal (generic conflict clause only) -- distinct from the sibling Product Safety Law (track_id: product_safety) approved by the same joint decree's Clause One, and distinct from SASO's own founding statute (Royal Decree M/10, 3/3/1392H), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -831,6 +834,7 @@ def main() -> int:
             + cooperative_societies_law_llm["record_count"]
             + building_code_law_llm["record_count"]
             + product_safety_law_llm["record_count"]
+            + standards_quality_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6249,6 +6253,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Product Safety Law «نظام سلامة المنتجات» — Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), 24/1/1446H, Clause One (البند أولا); administered by SASO. **37 articles across 9 أبواب**, contiguous numbering 1-37: التعريفات (م1) — أحكام عامة (م2-4) — التزامات السلامة العامة (م5-15) — التزامات السلامة الخاصة (م16-18) — جهات تقويم المطابقة (م19-23) — مراقبة الأسواق (م24-30) — المسؤولية عن الخلل في المنتج (م31-32) — إيقاع العقوبات (م33-35) — أحكام ختامية (م36-37). **ALL 37 اصلية** — no confirmed amendment as of this pass. **CRITICAL DECREE-NUMBER CORRECTION**: the coverage-gap-map that flagged this law cited Royal Decree 'M/148, 2024' for both this law and its sibling. That number could not be confirmed anywhere (direct web search, laws.boe.gov.sa, nezams.com, qanoonsa.com, decreesa.com, or secondary legal commentary); every independent source instead converges on Royal Decree M/36, dated 29/1/1446H, approving CoM Resolution 93 (24/1/1446H) — 'M/148' is NOT used in this track. **RELATIONSHIP TO THE STANDARDS AND QUALITY LAW**: the SAME Royal Decree M/36 contains TWO separate clauses issued jointly — Clause One (البند أولا) approves THIS law; Clause Two (البند ثانيا) approves the Standards and Quality Law (نظام المواصفات والجودة, 24 articles / 7 أبواب, track_id: standards_quality_law) — a wholly distinct statute on a different subject, not a decree-number collision and not one law under two names; it is two genuinely separate laws sharing one joint enacting decree (a normal, documented Saudi legislative practice). **VERIFICATION TIER: TIER_2** — an official Umm al-Qura Gazette notice (uqn.gov.sa/details?p=26780) independently confirms the decree/resolution identity and quotes Article 36's text verbatim (matching this track exactly); the full 37-article text is primarily from qanoonsa.com, cross-checked word-for-word against nezams.com (independent, non-derivative) with two disclosed structural gaps resolved (Article 5's text taken from nezams.com due to a qanoonsa markup gap; the الباب الرابع chapter heading taken from qanoonsa.com due to a nezams markup gap — no wording disputes, only source-side HTML structure gaps). laws.boe.gov.sa returned connection resets / HTTP 503 on every attempt this pass; web.archive.org was not attempted (org egress-policy block, not bypassed). **NO named-predecessor repeal** — Article 37 (closing article) carries only a generic conflict clause ('ويلغي ما يتعارض معه أحكام'), naming no specific prior law/regulation; this is a new, substantively founding statute (SASO itself was separately established by a much older decree, M/10, 3/3/1392H, which this law does not touch — no supersession-graph edge is added). Implementing Regulation (Minister of Commerce Decision No. 097, 18/5/1446H, per SASO Board adoption) is NOT ingested, flagged as a future candidate (one-instrument-per-pass rule). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "standards_quality_law",
+                "display_name_ar": "نظام المواصفات والجودة",
+                "display_name_en": "Standards and Quality Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_OFFICIAL_GAZETTE_DECREE_M36_CITATION_CONFIRMED_X_QANOONSA_PRIMARY_TEXT_X_NEZAMS_CROSS_VERIFIED_2WORDS_BOE_INDEX_ONLY",
+                "source_authority": "Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), dated 24/1/1446H, Clause Two (البند ثانيا); administered by SASO. Decree number CORRECTED from the coverage-gap-map's unconfirmable 'M/148' — every independent source, including an official Umm al-Qura Gazette notice that quotes Article 23 verbatim, converges on M/36 instead. laws.boe.gov.sa has a confirmed dedicated index entry by name but was unreachable live this pass; web.archive.org was not attempted (org egress-policy block, not bypassed).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": standards_quality_law_llm["record_count"],
+                    "data_path": "data/standards_quality_arabic_legal_llm/standards_quality_law_legal_llm_001_024.json"}},
+                "record_counts": {"arabic_articles": standards_quality_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 24, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": standards_quality_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/standards_quality/law/official_source/standards_quality_law_official_source.json",
+                    "sources/standards_quality/law/verified/standards_quality_law_verified_records.jsonl",
+                    "data/standards_quality_arabic_legal_llm/standards_quality_law_legal_llm_001_024.json",
+                ],
+                "validator_targets": ["make standards-quality-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Standards and Quality Law «نظام المواصفات والجودة» — Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), 24/1/1446H, Clause Two (البند ثانيا); administered by SASO. **24 articles across 7 أبواب**, contiguous numbering 1-24: التعريفات (م1) — أحكام عامة (م2-6) — إعداد واعتماد وتبني المواصفة والوثيقة ذات الصلة (م7-11) — مراجعة وتطبيق المواصفة السعودية والوثيقة ذات الصلة (م12-13) — الجودة (م14-17) — ضبط مخالفات النظام وإيقاع العقوبات (م18-22) — أحكام ختامية (م23-24). **ALL 24 اصلية** — no confirmed amendment as of this pass. **SAME DECREE-NUMBER CORRECTION as the sibling Product Safety Law**: the coverage-gap-map cited an unconfirmable 'M/148, 2024' for both laws; every independent source instead converges on Royal Decree M/36, 29/1/1446H, approving CoM Resolution 93 (24/1/1446H) — 'M/148' is NOT used in this track. **RELATIONSHIP TO THE PRODUCT SAFETY LAW**: the SAME Royal Decree M/36 jointly approves TWO separate statutes — Clause One (البند أولا) approves the Product Safety Law (track_id: product_safety_law); Clause Two (البند ثانيا) approves THIS law — two genuinely distinct statutes on different subjects sharing one joint enacting decree, not a decree-number collision. **VERIFICATION TIER: TIER_2** — an official Umm al-Qura Gazette notice independently confirms the decree/resolution identity and quotes Article 23's text verbatim; the full 24-article text is primarily from qanoonsa.com, cross-checked word-for-word against nezams.com with 2 words corrected in Article 1 (disclosed, not silently harmonized). laws.boe.gov.sa has a confirmed dedicated index entry by name but was unreachable live this pass; web.archive.org was not attempted (org egress-policy block, not bypassed). Article 10 legitimately contains the Latin acronym 'SASO' verbatim (a documented exception, not a scraping artifact). **NO named-predecessor repeal** — Article 24 (closing article) carries only a generic conflict clause, naming no specific prior law/regulation; this is also DISTINCT from SASO's own much older founding statute (Royal Decree M/10, 3/3/1392H, which established SASO as a government body — a different subject entirely from this objective standardization/quality statute) — no supersession-graph edge is added for either relationship. Implementing Regulation (Minister of Commerce Decision No. 098, 18/5/1446H, per SASO Board adoption) is NOT ingested, flagged as a future candidate (one-instrument-per-pass rule). Arabic governs; not legal advice.",
             },
         ],
     }

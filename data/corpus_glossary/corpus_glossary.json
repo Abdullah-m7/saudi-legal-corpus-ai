@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 186,
-  "total_terms": 1130,
-  "total_definitions": 1840,
-  "tracks_with_definitions_article_parsed": 127,
+  "total_tracks_in_registry": 187,
+  "total_terms": 1141,
+  "total_definitions": 1866,
+  "tracks_with_definitions_article_parsed": 128,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -759,6 +759,16 @@
         "term_as_written": "استمارة التصنيف البيئي",
         "definition_text": "استمارة تقدم إلى المركز لتحديد فئة النشاط المقترح من ناحية التأثيرات البيئية.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اعتماد المواصفة أو الوثيقة ذات الصلة": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "اعتماد المواصفة أو الوثيقة ذات الصلة",
+        "definition_text": "مجموعة من الأنشطة المتسقة التي تبدأ بإعداد أو تبني مواصفة أو وثيقة ذات صلة، وتنتهي باعتمادها ونشرها مواصفة سعودية أو وثيقة ذات صلة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3092,6 +3102,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التقييس": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "التقييس",
+        "definition_text": "مجموعة من الأنشطة المتسقة التي تهدف إلى تبني أو اعتماد المواصفة والوثيقة ذات الصلة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التكاليف القضائية": [
       {
         "track_id": "judicial_costs_law",
@@ -3594,6 +3614,14 @@
         "definition_text": "الجهات التي لها علاقة بحماية الطفل، وفقا لما تحدده اللائحة.",
         "source_record_id": "child-protection-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "الجهات ذات العلاقة",
+        "definition_text": "الأجهزة الحكومية، والقطاع الخاص؛ التي تعنى بالمواصفة والوثيقة ذات الصلة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجهاز البلدي": [
@@ -3841,6 +3869,16 @@
         "term_as_written": "الجهة صاحبة المشروع",
         "definition_text": "أي جهة حكومية، أو شركة، أو جمعية أهلية ذات نفع عام (الجمعية)؛ تتولى تنفيذ عمل يهدف إلى تحقيق مصلحة عامة وفقاً للنظام.",
         "source_record_id": "real-estate-expropriation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجودة": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "الجودة",
+        "definition_text": "الدرجة التي تحققها مجموعة من الخصائص المبنية على متطلبات أو توقعات أو أهداف.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4233,6 +4271,14 @@
         "term_as_written": "الخدمة",
         "definition_text": "خدمة التنفيذ التي يقدمها المرخَّص له وفق أحكام النظام ولائحته التنفيذية وهذه اللائحة.",
         "source_record_id": "enforcement-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "الخدمة",
+        "definition_text": "أي مخرج محسوس ناتج عن نشاط مقدم بمقابل مالي أو بدون مقابل.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6434,6 +6480,14 @@
         "definition_text": "تتضمن كل تصرف في الأموال أو المتحصلات النقدية أو العينية.",
         "source_record_id": "aml-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "العملية",
+        "definition_text": "مجموعة من الأنشطة المترابطة أو المتفاعلة التي تحول المدخلات إلى مخرجات.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "العميل": [
@@ -7796,6 +7850,14 @@
         "definition_text": "اللوائح التنفيذية للنظام.",
         "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللائحة التنفيذية للنظام، وغيرها من اللوائح التي تصدر بموجب أحكامه.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اللوائح التنفيذية": [
@@ -8401,6 +8463,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة البنك.",
         "source_record_id": "sama-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10082,6 +10152,14 @@
         "definition_text": "من يعين بقرار من المجلس لضبط أي مخالفات لأحكام النظام واللوائح.",
         "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المفتش",
+        "definition_text": "من يعين بقرار من المجلس لضبط أي مخالفات لأحكام النظام واللوائح.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المفتشون": [
@@ -10550,6 +10628,14 @@
         "definition_text": "أي منتج يوضع أو يعرض في الأسواق.",
         "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "أي منتج يوضع أو يعرض في الأسواق.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المنتج العضوي": [
@@ -10996,6 +11082,14 @@
         "definition_text": "وثيقة معتمدة تضع القواعد والتعليمات أو الخصائص للمنتجات أو العمليات وطرق الإنتاج ذات العلاقة، ولا يكون التقيد بها إلزاميا.",
         "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة",
+        "definition_text": "وثيقة معتمدة تضع القواعد والتعليمات أو الخصائص للمنتجات أو العمليات وطرق الإنتاج ذات العلاقة، ولا يكون التقيد بها إلزاميا.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المواصفة الإقليمية": [
@@ -11005,6 +11099,14 @@
         "term_as_written": "المواصفة الإقليمية",
         "definition_text": "المواصفة التي تبناها جهاز تقييس إقليمي.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة الإقليمية",
+        "definition_text": "المواصفة التي يتبناها جهاز تقييس إقليمي.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11016,6 +11118,14 @@
         "definition_text": "المواصفة التي تبناها جهاز تقييس دولي.",
         "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة الدولية",
+        "definition_text": "المواصفة التي يتبناها جهاز تقييس دولي.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المواصفة السعودية": [
@@ -11026,6 +11136,14 @@
         "definition_text": "المواصفة المعتمدة من المجلس، والتي تعتبر المواصفة الوطنية للمملكة.",
         "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة السعودية",
+        "definition_text": "المواصفة المعتمدة من المجلس، وتعتبر المواصفة الوطنية للمملكة العربية السعودية.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المواصفة الوطنية": [
@@ -11035,6 +11153,14 @@
         "term_as_written": "المواصفة الوطنية",
         "definition_text": "المواصفة التي تبناها جهاز تقييس في إحدى الدول.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "المواصفة الوطنية",
+        "definition_text": "المواصفة التي يتبناها جهاز تقييس في إحدى الدول.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12110,6 +12236,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المواصفات والجودة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sulook_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12540,6 +12674,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -12599,6 +12741,16 @@
         "term_as_written": "الوثائق القضائية",
         "definition_text": "الضبط والصك.",
         "source_record_id": "judicial-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوثيقة ذات الصلة": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "الوثيقة ذات الصلة",
+        "definition_text": "وثيقة تعنى بالخصائص الفنية والتقارير الفنية والأدلة والوثائق الأخرى التي اعتمدت من جهاز تقييس، ولا تعتبر مواصفة وفقا لأحكام النظام.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13754,6 +13906,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "تبني المواصفة أو الوثيقة ذات الصلة": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "تبني المواصفة أو الوثيقة ذات الصلة",
+        "definition_text": "مجموعة من الأنشطة المتسقة التي تبدأ بطلب لتبني مواصفة دولية أو إقليمية أو وطنية أو وثيقة ذات صلة، وتنتهي بتبني ونشر تلك المواصفة أو الوثيقة ذات الصلة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تحلية المياه": [
       {
         "track_id": "water_law",
@@ -14284,6 +14446,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "خصائص الجودة": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "خصائص الجودة",
+        "definition_text": "ميزات منتج أو خدمة متعلقة بواحد أو أكثر مما يأتي:\n١- شروط الاستخدام أو إعادة الاستخدام أو إعادة التدوير أو التخلص.\n٢- شروط التركيب أو الصيانة أو الإصلاح.\n٣- الكفاية.\n٤- الأداء أو المتانة أو الاستدامة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "خطة الإدارة البيئية": [
       {
         "track_id": "environmental_inspection_audit",
@@ -14385,6 +14557,16 @@
         "term_as_written": "دليل المستثمر",
         "definition_text": "دليل تصدره الوزارة متضمنًا القواعد والإجراءات والتعليمات المتعلقة بتطبيق أحكام النظام واللائحة، والخدمات التي تقدمها الوزارة.",
         "source_record_id": "inv-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "دليل المواصفات": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "دليل المواصفات",
+        "definition_text": "دليل تعده الهيئة للأغراض المرجعية، يحتوي على جميع المواصفات والوثائق ذات الصلة المعتمدة والمتبناة أو المسحوبة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14750,6 +14932,16 @@
         "definition_text": "يحتوي على بيان باسم العامل، ومقدار أجره، ومقدار الغرامة الموقعة عليه، وسبب وتاريخ إيقاعها.",
         "source_record_id": "labor-reg-llm-art-005",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "سحب المواصفة أو الوثيقة ذات الصلة": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "سحب المواصفة أو الوثيقة ذات الصلة",
+        "definition_text": "إلغاء تبني أو اعتماد المواصفة أو الوثيقة ذات الصلة وما يترتب عليه من آثار.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "سلسلة الإمداد": [
@@ -15342,6 +15534,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "علامة الجودة": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "علامة الجودة",
+        "definition_text": "علامة تدل على أن خصائص المنتج تحقق متطلبات أعلى فنيا من متطلبات المواصفات أو تحقق متطلبات أخرى تضعها الهيئة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "غذاء غير صالح لالستهلاك الآدمي": [
       {
         "track_id": "food_regulation",
@@ -15405,6 +15607,14 @@
         "term_as_written": "فئة المنتج",
         "definition_text": "مجموعة من المنتجات التي تشترك معا في صفات وخصائص محددة.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "فئة المنتج",
+        "definition_text": "مجموعة من المنتجات التي تشترك معا في صفات وخصائص محددة.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16595,6 +16805,26 @@
         "term_as_written": "منطقة المناورات في المطار",
         "definition_text": "ذلك الجزء من المطار المستخدم لإقلاع الطائرات وهبوطها وتحركاتها الأخرى المتعلقة بالإقلاع والهبوط وذلك باستثناء ساحة وقوف الطائرات.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "منظمات التقييس الإقليمية": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "منظمات التقييس الإقليمية",
+        "definition_text": "منظمات التقييس الإقليمية التي تكون العضوية فيها متاحة لأجهزة التقييس الوطنية في نطاق إقليمي محدد.",
+        "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "منظمات التقييس الدولية": [
+      {
+        "track_id": "standards_quality_law",
+        "article_number": 1,
+        "term_as_written": "منظمات التقييس الدولية",
+        "definition_text": "منظمات التقييس الدولية التي تكون العضوية فيها متاحة لأجهزة التقييس الوطنية على مستوى العالم.",
+        "source_record_id": "standards-quality-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

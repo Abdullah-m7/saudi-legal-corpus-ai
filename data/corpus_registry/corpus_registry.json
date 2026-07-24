@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11370,
+  "total_primary_arabic_governing_records": 11394,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12265,
-  "total_tracks": 186,
+  "total_registry_counted_records": 12289,
+  "total_tracks": 187,
   "tracks": [
     {
       "boundaries": {
@@ -8877,6 +8877,55 @@
       "validator_targets": [
         "make product-safety-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/standards_quality/law/official_source/standards_quality_law_official_source.json",
+        "sources/standards_quality/law/verified/standards_quality_law_verified_records.jsonl",
+        "data/standards_quality_arabic_legal_llm/standards_quality_law_legal_llm_001_024.json"
+      ],
+      "display_name_ar": "نظام المواصفات والجودة",
+      "display_name_en": "Standards and Quality Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/standards_quality_arabic_legal_llm/standards_quality_law_legal_llm_001_024.json",
+          "governing": true,
+          "record_count": 24,
+          "status": "complete"
+        }
+      },
+      "notes": "Standards and Quality Law «نظام المواصفات والجودة» — Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), 24/1/1446H, Clause Two (البند ثانيا); administered by SASO. **24 articles across 7 أبواب**, contiguous numbering 1-24: التعريفات (م1) — أحكام عامة (م2-6) — إعداد واعتماد وتبني المواصفة والوثيقة ذات الصلة (م7-11) — مراجعة وتطبيق المواصفة السعودية والوثيقة ذات الصلة (م12-13) — الجودة (م14-17) — ضبط مخالفات النظام وإيقاع العقوبات (م18-22) — أحكام ختامية (م23-24). **ALL 24 اصلية** — no confirmed amendment as of this pass. **SAME DECREE-NUMBER CORRECTION as the sibling Product Safety Law**: the coverage-gap-map cited an unconfirmable 'M/148, 2024' for both laws; every independent source instead converges on Royal Decree M/36, 29/1/1446H, approving CoM Resolution 93 (24/1/1446H) — 'M/148' is NOT used in this track. **RELATIONSHIP TO THE PRODUCT SAFETY LAW**: the SAME Royal Decree M/36 jointly approves TWO separate statutes — Clause One (البند أولا) approves the Product Safety Law (track_id: product_safety_law); Clause Two (البند ثانيا) approves THIS law — two genuinely distinct statutes on different subjects sharing one joint enacting decree, not a decree-number collision. **VERIFICATION TIER: TIER_2** — an official Umm al-Qura Gazette notice independently confirms the decree/resolution identity and quotes Article 23's text verbatim; the full 24-article text is primarily from qanoonsa.com, cross-checked word-for-word against nezams.com with 2 words corrected in Article 1 (disclosed, not silently harmonized). laws.boe.gov.sa has a confirmed dedicated index entry by name but was unreachable live this pass; web.archive.org was not attempted (org egress-policy block, not bypassed). Article 10 legitimately contains the Latin acronym 'SASO' verbatim (a documented exception, not a scraping artifact). **NO named-predecessor repeal** — Article 24 (closing article) carries only a generic conflict clause, naming no specific prior law/regulation; this is also DISTINCT from SASO's own much older founding statute (Royal Decree M/10, 3/3/1392H, which established SASO as a government body — a different subject entirely from this objective standardization/quality statute) — no supersession-graph edge is added for either relationship. Implementing Regulation (Minister of Commerce Decision No. 098, 18/5/1446H, per SASO Board adoption) is NOT ingested, flagged as a future candidate (one-instrument-per-pass rule). Arabic governs; not legal advice.",
+      "official_text_status": "UQN_OFFICIAL_GAZETTE_DECREE_M36_CITATION_CONFIRMED_X_QANOONSA_PRIMARY_TEXT_X_NEZAMS_CROSS_VERIFIED_2WORDS_BOE_INDEX_ONLY",
+      "record_counts": {
+        "arabic_articles": 24,
+        "legal_status_breakdown": {
+          "اصلية": 24,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 24
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/36), dated 29/1/1446H (~5 August 2024G), approving Council of Ministers Resolution No. (93), dated 24/1/1446H, Clause Two (البند ثانيا); administered by SASO. Decree number CORRECTED from the coverage-gap-map's unconfirmable 'M/148' — every independent source, including an official Umm al-Qura Gazette notice that quotes Article 23 verbatim, converges on M/36 instead. laws.boe.gov.sa has a confirmed dedicated index entry by name but was unreachable live this pass; web.archive.org was not attempted (org egress-policy block, not bypassed).",
+      "status": "complete",
+      "track_id": "standards_quality_law",
+      "validator_targets": [
+        "make standards-quality-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -9009,6 +9058,7 @@
       "social_insurance": 63,
       "social_insurance_legacy": 71,
       "sports": 97,
+      "standards_quality": 24,
       "state_funded_lawyer": 11,
       "sulook": 47,
       "tawtheeq": 88,
@@ -9026,7 +9076,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11201,
+    "total_records": 11225,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
