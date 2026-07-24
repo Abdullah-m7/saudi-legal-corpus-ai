@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 187,
-  "total_terms": 1141,
-  "total_definitions": 1866,
-  "tracks_with_definitions_article_parsed": 128,
+  "total_tracks_in_registry": 189,
+  "total_terms": 1161,
+  "total_definitions": 1896,
+  "tracks_with_definitions_article_parsed": 130,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -660,6 +660,16 @@
         "definition_text": "تقنية استعمال وسائل كهربائية، أو كهرومغناطيسية، أو بصرية، أو أي شكل آخر من وسائل التقنية المشابهة.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "إمكانية الوصول": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "إمكانية الوصول",
+        "definition_text": "مجموعة التدابير المناسبة التي تكفل إمكانية وصول الأشخاص ذوي الإعاقة إلى الخدمات المقدمة، على قدم المساواة مع غيرهم، ووصولهم أيضا إلى البيئة المادية المحيطة بهم ووسائل النقل والمعلومات والاتصالات، بما في ذلك وسائل التقنية ونظم المعلومات والاتصال، والمرافق والخدمات الأخرى المتاحة للعامة.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اتحاد الغرف": [
@@ -1310,6 +1320,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأنشطة السياحية": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الأنشطة السياحية",
+        "definition_text": "ما يخضع لاختصاص الوزارة، ويشمل الإرشاد السياحي وخدمات السفر والسياحة وإدارة مرافق الضيافة أو تشغيلها وتقديم الاستشارات السياحية، والأنشطة التجريبية ونحوها، التي تحددها اللائحة، وما يحدد -بقرار من مجلس الوزراء- إخضاعه للترخيص من قبل الوزارة، بناء على اقتراح من الوزير.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأنشطة السياحية التكميلية": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الأنشطة السياحية التكميلية",
+        "definition_text": "ما يمارسه الشخص الطبيعي أو الاعتباري وينتج عنها تقديم خدمة أو منتج للسائح مقابل أجر وتؤثر في تجربته تأثيرا مباشرا.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأنشطة السياحية المتخصصة": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الأنشطة السياحية المتخصصة",
+        "definition_text": "الأنشطة التي تستهدف فئة محددة من السياح، وتخضع لاختصاص جهة أو جهات حكومية أخرى غير الوزارة، كالسياحة العلاجية والسياحة الرياضية وسياحة المعارض وسياحة المهرجانات وغيرها.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأنشطة المحظورة": [
       {
         "track_id": "investment_implementing_regulation",
@@ -1541,6 +1581,16 @@
         "term_as_written": "الإرسالية",
         "definition_text": "كمية من المنتجات الغذائية المشمولة في شهادات رسمية واحدة.\nالدفعة (التشغيلة): كمية محددة من الأغذية أنتجت أساسا تحت نفس الظروف.\n(رمز تشغيلة الإنتاج): رمز للكمية من المادة الغذائية التي تم إنتاجها أساسا تحت نفس الظروف\nخلال فترة زمنية محددة وتكون عادة من خط أو وحدة إنتاج معينة.\nالمخزن (المستودع): هو مبنى أو جزء منه مخصص لتخزين وحفظ المواد الغذائية مدة محددة\nلحين عرضها.",
         "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإرشاد السياحي": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الإرشاد السياحي",
+        "definition_text": "ممارسة أعمال إرشاد السياح في الوجهة السياحية وغيرها.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1873,6 +1923,16 @@
         "term_as_written": "الاستخلاص",
         "definition_text": "تحليل مادة مخدرة أو مؤثر عقلي وفصل عناصرهما المكونة لهما للحصول على المادة المخدرة أو المؤثر العقلي.",
         "source_record_id": "anti-narcotics-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الاستراتيجية": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الاستراتيجية",
+        "definition_text": "الاستراتيجية العامة لتنمية السياحة الوطنية المعتمدة.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2316,6 +2376,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التأهيل": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "التأهيل",
+        "definition_text": "عملية توظيف خدمات طبية واجتماعية ونفسية وتعليمية ومهنية وبيئية لمساعدة الشخص ذي الإعاقة على تحقيق أقصى درجة ممكنة من الفاعلية؛ لتمكينه من التوافق مع متطلبات بيئته الطبيعية والاجتماعية، ولتنمية قدراته للاعتماد على نفسه وجعله عضوا فاعلا في المجتمع ما أمكن ذلك.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التأهيل اللاحق": [
       {
         "track_id": "gtpl_law",
@@ -2534,6 +2604,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الترتيبات التيسيرية": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الترتيبات التيسيرية",
+        "definition_text": "مجموعة الإجراءات الضرورية لتلبية متطلبات خاصة لشخص أو مجموعة من الأشخاص من ذوي الإعاقة، تكفل تمتعهم، على قدم المساواة مع غيرهم، بجميع الحقوق والخدمات الأساسية، وممارستهم لها، ولا تشكل عبئا غير متناسب على الجهات التي تقدمها.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الترتيبات القانونية": [
       {
         "track_id": "aml_regulation",
@@ -2631,6 +2711,14 @@
         "term_as_written": "الترخيص",
         "definition_text": "وثيقة تصدرها الهيئة لشخص -ذي صفة طبيعية أو اعتبارية- لاستخدام أو تقديم خدمات الاتصالات أو تقنية المعلومات أو أجهزة وفقاً للنظام واللائحة، وتتضمن الوثيقة: نوع الخدمة أو الجهاز، والمدة الزمنية، والأحكام العامة.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدرها الوزارة لممارسة نشاط أو تقديم خدمة في مجال السياحة بموجب النظام.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3169,6 +3257,16 @@
         "term_as_written": "التمويل",
         "definition_text": "منح الائتمان بعقود للأنشطة المنصوص عليها في هذا النظام.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التمييز على أساس الإعاقة": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "التمييز على أساس الإعاقة",
+        "definition_text": "أي تمييز أو استبعاد أو تقييد ضد الأشخاص ذوي الإعاقة على أساس الإعاقة، يكون غرضه أو أثره إضعاف أو عدم الاعتراف بكل أو بعض حقوق الإنسان أو التمتع بها أو ممارستها من الأشخاص ذوي الإعاقة على قدم المساواة مع الآخرين.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4224,6 +4322,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخدمات": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات",
+        "definition_text": "مجموعة الخدمات المتكاملة التي تقدم لكل شخص ذي إعاقة بحكم حالته الصحية ودرجة إعاقته، أو بحكم وضعه الاجتماعي.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخدمات الاستشارية": [
       {
         "track_id": "gtpl_law",
@@ -4241,6 +4349,16 @@
         "term_as_written": "الخدمات البيئية",
         "definition_text": "الخدمات التي يقدمها المركز المختص للأشخاص كمراجعة الدراسات المقدمة للمركز وغيرها.",
         "source_record_id": "environmental-fees-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخدمات التعليمية والتدريبية المساندة": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات التعليمية والتدريبية المساندة",
+        "definition_text": "الخدمات الإضافية التي تتطلبها طبيعة الإعاقة في البيئات التعليمية والتدريبية.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4982,6 +5100,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السائح": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "السائح",
+        "definition_text": "الشخص الطبيعي الذي يبيت لغرض السياحة مدة لا تقل عن ليلة خارج مكان إقامته المعتاد بصورة نظامية من أجل السياحة، أو يستفيد من واحدة -أو أكثر- من خدمات الأنشطة السياحية والتكميلية والمتخصصة.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السائق": [
       {
         "track_id": "traffic_law",
@@ -5245,6 +5373,16 @@
         "term_as_written": "السوق الخليجية",
         "definition_text": "إجمالي أسواق الدول الأعضاء في المجلس.",
         "source_record_id": "gcc-anti-dumping-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السياحة": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "السياحة",
+        "definition_text": "سفر أو انتقال فرد أو مجموعة من خارج المملكة إلى داخلها، أو من المملكة إلى خارجها، أو داخل المملكة، لمدة مؤقتة، لأي غرض سياحي. أو الاستفادة من واحدة -أو أكثر- من خدمات الأنشطة السياحية والتكميلية والمتخصصة.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5559,6 +5697,16 @@
         "term_as_written": "الشخص المؤهل",
         "definition_text": "شخص انطبقت عليه شروط الحصول على الرخصة وفقاً لأحكام النظام واللوائح.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشخص ذو الإعاقة": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الشخص ذو الإعاقة",
+        "definition_text": "كل شخص لديه اضطراب أو قصور طويل الأمد في الوظائف الجسدية، أو العقلية، أو الذهنية، أو الحسية، أو النفسية، قد يمنعه -عند تعامله مع مختلف التحديات- من المشاركة بصورة كاملة وفاعلة في المجتمع على قدم المساواة مع الآخرين.",
+        "source_record_id": "disability-rights-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7032,6 +7180,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "domestic_labor_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -7389,6 +7545,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "terrorism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "هي لائحة -أو أكثر- لتنفيذ أحكام النظام.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9132,6 +9296,14 @@
         "definition_text": "الموثق أو المأذون.",
         "source_record_id": "tawtheeq-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "كل شخص طبيعي أو اعتباري حاصل على ترخيص من الوزارة بموجب النظام.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المرسل إليه": [
@@ -9142,6 +9314,16 @@
         "definition_text": "شخص -غير الوسيط- وجّه المنشئ تعامله إليه.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "المرفق السياحي": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "المرفق السياحي",
+        "definition_text": "العقار أو المبنى أو المكان الذي يزاول من خلاله النشاط السياحي أو ما في حكمه، التي ترخصه الوزارة.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المركبة": [
@@ -10271,6 +10453,16 @@
         "term_as_written": "المقنن المائي",
         "definition_text": "كمية المياه المحددة وفق احتياجات المحاصيل المختلفة.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المقومات السياحية": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "المقومات السياحية",
+        "definition_text": "أي موارد طبيعية أو مادية ذات قيمة جاذبة للسياحة، وتشمل المعالم والوجهات الطبيعية والمواقع والمباني ذات الأهمية التاريخية أو الأثرية ونحوها.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11852,6 +12044,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام حقوق الأشخاص ذوي الإعاقة.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "ecommerce_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12276,6 +12476,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام السياحة.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trade_names_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12546,6 +12754,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة رعاية الأشخاص ذوي الإعاقة.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "electricity_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -12751,6 +12967,16 @@
         "term_as_written": "الوثيقة ذات الصلة",
         "definition_text": "وثيقة تعنى بالخصائص الفنية والتقارير الفنية والأدلة والوثائق الأخرى التي اعتمدت من جهاز تقييس، ولا تعتبر مواصفة وفقا لأحكام النظام.",
         "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوجهة السياحية": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الوجهة السياحية",
+        "definition_text": "أي مساحة جغرافية أو موقع تمارس أو تستهدف فيه الأنشطة السياحية أو يحتوي على مقومات سياحية، وتحدد بموجب المادة (السادسة) من النظام.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13159,6 +13385,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة الاتصالات وتقنية المعلومات.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة السياحة.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13603,6 +13837,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الاتصالات وتقنية المعلومات.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير السياحة.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14423,6 +14665,16 @@
         "term_as_written": "حماية البيئة",
         "definition_text": "المحافظة على البيئة، وتشمل: منع التلوث، والتخفيف من حدته، والحد من تدهور البيئة، وضمان تحقيق التنمية المستدامة؛ وذلك من خلال الالتزام بالمقاييس والمعايير والإجراءات الوقائية أو العلاجية المتعلقة بالبيئة وفقاً لأحكام النظام واللوائح.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خدمات السفر والسياحة": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "خدمات السفر والسياحة",
+        "definition_text": "ترتيب وتنظيم وتقديم الخدمات في مجال السياحة، وتشمل الرحلات والبرامج السياحية وبيع وتسويق تذاكر السفر من الشركات المرخصة وخدمات إصدار التأشيرات أو غيرها المتصلة بالسفر، وخدمات الأنشطة السياحية أو مرافق الضيافة وحجزها، ونحو ذلك.",
+        "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16236,6 +16488,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مرفق الضيافة السياحي": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "مرفق الضيافة السياحي",
+        "definition_text": "كل مكان يوفر خدمة المبيت للسائح مقابل أجر، يعمل بشكل دائم أو مؤقت.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مركبات الأشغال العامة": [
       {
         "track_id": "traffic_law",
@@ -17302,6 +17564,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "وتشمل الخدمات": [
+      {
+        "track_id": "disability_rights_law",
+        "article_number": 1,
+        "term_as_written": "وتشمل الخدمات",
+        "definition_text": "الصحية، والتعليمية، والتدريبية، والتأهيلية، والثقافية، والاجتماعية، والإعلامية، والرياضية، والتوظيف، وغيرها من الخدمات الأخرى.",
+        "source_record_id": "disability-rights-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "وثيقة الإفصاح": [
       {
         "track_id": "franchise_law",
@@ -17449,6 +17721,14 @@
       }
     ],
     "ويشمل ذلك": [
+      {
+        "track_id": "tourism_law",
+        "article_number": 1,
+        "term_as_written": "ويشمل ذلك",
+        "definition_text": "الأنشطة المرتبطة بالقطاع السياحي مثل المطاعم والمتنزهات والمدن الترفيهية ودور العرض، والصناعات التقليدية والشعبية، وخدمات النقل وتأجير السيارات.",
+        "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "zakat_law",
         "article_number": 1,

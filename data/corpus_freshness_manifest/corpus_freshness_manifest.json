@@ -7,9 +7,9 @@
   "source_verification_tiers": "data/corpus_verification_tiers/corpus_verification_tiers.json",
   "read_only_derived_layer": true,
   "network_access": false,
-  "notes": "Purely additive, read-only survey layer over this corpus's 187 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 187 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
+  "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 187,
+  "total_tracks": 189,
   "known_source_staleness_risk_count": 14,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -1144,6 +1144,29 @@
         "qanoonsa.com"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "disability_rights_law",
+      "display_name_en": "Law of Rights of Persons with Disabilities",
+      "display_name_ar": "نظام حقوق الأشخاص ذوي الإعاقة",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='BOE_LAWID_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_PRIMARY_X_QANOONSA_CROSS_VERIFIED': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. (M/27), dated 11/2/1445H (~27 August 2023G), approving Council of Ministers Resolution No. (110), dated 6/2/1445H; administered by the Authority for the Care of Persons with Disabilities. laws.boe.gov.sa has a dedicated lawId page but was unreachable live this pass (HTTP 503); web.archive.org confirmed egress-blocked for this session and not bypassed. Full text from nezams.com cross-checked verbatim article-by-article against qanoonsa.com — exact match for all 33 articles.",
+      "registry_source_url": null,
+      "official_source_file": "sources/disability_rights/law/official_source/disability_rights_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "hrsd.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-09-06; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3404,6 +3427,28 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "tourism_law",
+      "display_name_en": "Tourism Law",
+      "display_name_ar": "نظام السياحة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_LAWID_UNREACHABLE_WAYBACK_REFUSED_X_MT_PDF_PRIMARY_X_NEZAMS_CROSS_VERIFIED_X_MISA_EN_STRUCTURAL': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree No. (M/18), dated 26/1/1444H (~2022G), approving Council of Ministers Resolution No. (79), dated 25/1/1444H, published Umm al-Qura 7/2/1444H; administered by the Ministry of Tourism. laws.boe.gov.sa has a dedicated lawId page but was unreachable live this pass (HTTP 503; the Umm al-Qura gazette page also returned 503/an un-rendered SPA); web.archive.org was refused (403) and not bypassed. Original full text from an official Ministry of Tourism PDF (cdn.mt.gov.sa) cross-checked verbatim against nezams.com, and structurally cross-checked (English, reference-only) against the official BOE translation hosted on misa.gov.sa.",
+      "registry_source_url": null,
+      "official_source_file": "sources/tourism/law/official_source/tourism_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "misa.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
