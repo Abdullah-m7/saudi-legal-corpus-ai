@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 394,
-  "top1_hits": 368,
-  "top3_hits": 387,
-  "top5_hits": 390,
-  "top1_accuracy": 0.934,
-  "top3_accuracy": 0.9822,
-  "top5_accuracy": 0.9898,
-  "mrr_at_5": 0.9574,
+  "total_queries": 396,
+  "top1_hits": 370,
+  "top3_hits": 389,
+  "top5_hits": 392,
+  "top1_accuracy": 0.9343,
+  "top3_accuracy": 0.9823,
+  "top5_accuracy": 0.9899,
+  "mrr_at_5": 0.9576,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -12231,6 +12231,68 @@
      "record_id": "civil-defense-law-llm-art-007",
      "article_number": 7,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "cop-001",
+   "query_ar": "ولكل عضو أن يمتلك عددا من الأسهم، بشرط ألا يزيد ما يمتلكه العضو الواحد عن (10%) من رأس مال الجمعية طوال مدة اشتراكه في الجمعية",
+   "category": "topical",
+   "gold": {
+    "corpus": "cooperative_societies",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cooperative-societies-law-llm-art-003",
+     "article_number": 3,
+     "score": 50
+    },
+    {
+     "record_id": "associations-ngo-law-llm-art-021",
+     "article_number": 21,
+     "score": 24
+    },
+    {
+     "record_id": "cooperative-societies-law-llm-art-030",
+     "article_number": 30,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "cop-002",
+   "query_ar": "تقدم الوزارة الإعانات الآتية: إعانة تأسيسية لمرة واحدة للجمعية بعد تسجيلها لمساعدتها في نفقات التأسيس",
+   "category": "topical",
+   "gold": {
+    "corpus": "cooperative_societies",
+    "law_component": "law",
+    "article_number": 30
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cooperative-societies-law-llm-art-030",
+     "article_number": 30,
+     "score": 23
+    },
+    {
+     "record_id": "oa-llm-companies-art-158",
+     "article_number": 158,
+     "score": 12
+    },
+    {
+     "record_id": "muslaha-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 12
     }
    ]
   }

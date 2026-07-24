@@ -1296,6 +1296,29 @@ EDGES = [
                 "corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/weapons_ammunition/law/official_source/weapons_ammunition_law_official_source.json (Article 62)",
     },
+    {
+        "from_track_id": "cooperative_societies_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الجمعيات التعاونية (السابق) ولائحة إعانة الجمعيات التعاونية",
+        "target_decree": "Royal Decree No. (26), 25/6/1382H; Council of Ministers Resolution No. (419)",
+        "note": "cooperative_societies_law (Royal Decree M/14, 10/3/1429H) Article "
+                "43 explicitly replaces the prior Cooperative Societies System "
+                "(نظام الجمعيات التعاونية), Royal Decree No. (26), dated "
+                "25/6/1382H, and its Subsidy Bylaw (لائحة إعانة الجمعيات "
+                "التعاونية), Council of Ministers Resolution No. (419) -- "
+                "confirmed via Article 43's own verbatim text: \"يحل هذا "
+                "النظام محل نظام الجمعيات التعاونية، الصادر بالمرسوم ذي "
+                "الرقم 26 والتاريخ 25 / 6 / 1382 هـ، وكذا لائحة إعانة "
+                "الجمعيات التعاونية، الصادرة بقرار مجلس الوزراء ذي الرقم "
+                "419 والتاريخ 10 / 5 / 1398 هـ\", corroborated across this "
+                "track's four independently cross-verified sources. This is "
+                "a real confirmed named-predecessor repeal (of two prior "
+                "instruments), not an ambiguous/excluded case. Not "
+                "separately ingested in this corpus (one-instrument-per-"
+                "pass rule).",
+        "source_ref": "sources/cooperative_societies/law/official_source/cooperative_societies_law_official_source.json (Article 43)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

@@ -306,6 +306,8 @@ LAYERS = [
      "prison_detention", "law"),
     ("data/civil_defense_arabic_legal_llm/civil_defense_law_legal_llm_001_036.json",
      "civil_defense", "law"),
+    ("data/cooperative_societies_arabic_legal_llm/cooperative_societies_law_legal_llm_001_044.json",
+     "cooperative_societies", "law"),
     ("data/income_tax_arabic_legal_llm/income_tax_law_legal_llm_001_081.json",
      "income_tax", "law"),
     ("data/civil_service_arabic_legal_llm/civil_service_law_legal_llm_001_044.json",

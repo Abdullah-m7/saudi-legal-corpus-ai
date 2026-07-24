@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11273,
+  "total_primary_arabic_governing_records": 11317,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12168,
-  "total_tracks": 183,
+  "total_registry_counted_records": 12212,
+  "total_tracks": 184,
   "tracks": [
     {
       "boundaries": {
@@ -8730,6 +8730,55 @@
       "validator_targets": [
         "make civil-defense-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/cooperative_societies/law/official_source/cooperative_societies_law_official_source.json",
+        "sources/cooperative_societies/law/verified/cooperative_societies_law_verified_records.jsonl",
+        "data/cooperative_societies_arabic_legal_llm/cooperative_societies_law_legal_llm_001_044.json"
+      ],
+      "display_name_ar": "نظام الجمعيات التعاونية",
+      "display_name_en": "Cooperative Societies Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/cooperative_societies_arabic_legal_llm/cooperative_societies_law_legal_llm_001_044.json",
+          "governing": true,
+          "record_count": 44,
+          "status": "complete"
+        }
+      },
+      "notes": "Cooperative Societies Law «نظام الجمعيات التعاونية» — Royal Decree No. (M/14), dated 10/3/1429H (~2008G), approving Council of Ministers Resolution No. (73), 9/3/1429H; administered by the Ministry of Human Resources and Social Development (formerly the Ministry of Social Affairs). **44 articles across 9 أبواب**, contiguously covering articles 1-44 with no gaps. **ALL 44 اصلية** — no enacted amendment found; a draft amendment is under public consultation on istitlaa.ncc.gov.sa / eparticipation.my.gov.sa but is confirmed NOT yet enacted, honestly distinguished from an actual amendment. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa has a confirmed dedicated lawId page but was unreachable this pass (live HTTP 503); web.archive.org was refused by the fetch tool itself, not bypassed. PRIMARY full text cross-verified across FOUR independent sources (livestockhafr.org, bibliotdroit.com, home.cbq.org.sa, and a cscs.org.sa-hosted scan) plus a structural confirmation from mohamah.net — upgraded from an initial single-source flag via this multi-source corroboration. Two unresolved discrepancies are disclosed rather than silently fixed: an internal 3-way date inconsistency for the repealed Subsidy Bylaw (CoM Resolution 419), and a single-source rendering artifact ('تعديلات المادة' label appearing after Articles 30-34 in one PDF export only, not corroborated elsewhere). **CONFIRMED named-predecessor repeal**: Article 43 explicitly states this Law replaces the prior Cooperative Societies System (Royal Decree No. 26, 25/6/1382H) and its Subsidy Bylaw (Council of Ministers Resolution No. 419) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1382H instrument is not itself ingested as a separate track. Implementing Regulation (hosted by cscs.org.sa alongside the base law) is NOT ingested, flagged as a future candidate. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_UNREACHABLE_WAYBACK_REFUSED_X_FOUR_SOURCE_CROSS_VERIFIED_X_MOHAMAH_STRUCTURAL",
+      "record_counts": {
+        "arabic_articles": 44,
+        "legal_status_breakdown": {
+          "اصلية": 44,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 44
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/14), dated 10/3/1429H (~2008G), approving Council of Ministers Resolution No. (73), dated 9/3/1429H — laws.boe.gov.sa has a confirmed dedicated lawId page but was unreachable this pass (live HTTP 503); web.archive.org was refused by the fetch tool itself, not bypassed. Full text cross-verified across FOUR independent sources (livestockhafr.org, bibliotdroit.com, home.cbq.org.sa, cscs.org.sa-hosted scan) plus a structural confirmation from mohamah.net",
+      "status": "complete",
+      "track_id": "cooperative_societies_law",
+      "validator_targets": [
+        "make cooperative-societies-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8776,6 +8825,7 @@
       "companies_law": 281,
       "competition": 33,
       "cooperative_health_insurance": 19,
+      "cooperative_societies": 44,
       "copyright": 28,
       "council_of_ministers": 32,
       "criminal_procedure": 403,
@@ -8876,7 +8926,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11104,
+    "total_records": 11148,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

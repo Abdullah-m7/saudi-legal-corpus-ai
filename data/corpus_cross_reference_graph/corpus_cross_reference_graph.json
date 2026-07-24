@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 11104,
-  "total_references_extracted": 2328,
-  "intra_law_count": 1997,
+  "total_records_scanned": 11148,
+  "total_references_extracted": 2334,
+  "intra_law_count": 2003,
   "inter_law_count": 331,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 1957,
+    "high": 1963,
     "medium": 371
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -6568,6 +6568,72 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الخامسة",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "cooperative_societies_law",
+      "source_record_id": "cooperative-societies-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "cooperative_societies_law",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من هذا النظام ، يكون سعر السه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cooperative_societies_law",
+      "source_record_id": "cooperative-societies-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "cooperative_societies_law",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة) من هذا النظام ، فإذا كانت مست",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cooperative_societies_law",
+      "source_record_id": "cooperative-societies-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "cooperative_societies_law",
+      "target_article_number": 37,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة والثلاثين) من هذا النظام في حالة حل الجم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cooperative_societies_law",
+      "source_record_id": "cooperative-societies-law-llm-art-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "cooperative_societies_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الرابعة عشرة) من هذا النظام ، تخصص باقي الأ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cooperative_societies_law",
+      "source_record_id": "cooperative-societies-law-llm-art-037",
+      "source_article_number": 37,
+      "type": "intra_law",
+      "target_track_id": "cooperative_societies_law",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من هذا النظام . 4 – إذا خرجت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cooperative_societies_law",
+      "source_record_id": "cooperative-societies-law-llm-art-038",
+      "source_article_number": 38,
+      "type": "intra_law",
+      "target_track_id": "cooperative_societies_law",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العشرين) من هذا النظام.",
+      "confidence": "high"
     },
     {
       "source_track_id": "copyright_law",
