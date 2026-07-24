@@ -19,11 +19,11 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 178,
+  "total_tracks": 179,
   "summary_by_tier": {
     "TIER_1_PRIMARY_MULTI_SOURCE": 101,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 34,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 20,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 21,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
   "tracks_with_per_article_variation": 21,
@@ -1140,6 +1140,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED': مصدر رسمي (BOE عبر Wayback) لكامل النص، مع تدقيق مقارن حرفي عبر nezams.com لأكثر من 20 من 71 مادة إضافة إلى 100% من سجلات تعديل المواد التسع المعدَّلة/المضافة، وتعزيز صحفي مستقل (عكاظ/الرياض) لصياغة المادة 37 تحديداً — تغطية أقوى من أغلب مسارات nezams-فقط، لكنها تبقى دون التأكيد الرسمي المزدوج الكامل.",
       "has_per_article_variation": true,
       "per_article_variation_note": "أكثر من 20 من 71 مادة خضعت لتدقيق مقارن حرفي مقابل nezams.com، إضافة إلى 100% من سجلات تعديل المواد التسع المعدَّلة/المضافة؛ بقية المواد غير المعدَّلة أحادية مصدر (BOE) دون تدقيق حرفي مباشر؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "sports_law",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='BOE_AND_MOS_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_PRIMARY_X_QANOONSA_COM_CROSSCHECK_X_UQN_GAZETTE_API_FOR_DECREE_IDENTITY': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "state_funded_lawyer_regulation",

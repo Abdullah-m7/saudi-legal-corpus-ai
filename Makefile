@@ -292,6 +292,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         protection-from-abuse-law-track-validate \
         associations-ngo-law-track-validate \
         audiovisual-media-law-track-validate \
+        sports-law-track-validate \
         qa-gate
 
 help:
@@ -1592,6 +1593,9 @@ associations-ngo-law-track-validate:
 
 audiovisual-media-law-track-validate:
 	$(PY) scripts/validate_audiovisual_media_law_track.py
+
+sports-law-track-validate:
+	$(PY) scripts/validate_sports_law_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

@@ -1254,6 +1254,28 @@ EDGES = [
                 "corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/associations_ngo/law/official_source/associations_ngo_law_official_source.json (Article 43)",
     },
+    {
+        "from_track_id": "sports_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "النظام الأساسي للاتحادات الرياضية واللجنة الأولمبية العربية السعودية (السابق)",
+        "target_decree": "Royal Decree No. (M/55), 19/10/1407H",
+        "note": "sports_law (Royal Decree M/121, 10/6/1447H) Article 96 "
+                "explicitly supersedes the predecessor Basic Law of Sports "
+                "Federations and the Saudi Arabian Olympic Committee (النظام "
+                "الأساسي للاتحادات الرياضية واللجنة الأولمبية العربية "
+                "السعودية), Royal Decree No. (M/55), dated 19/10/1407H -- "
+                "confirmed via Article 96's own verbatim text: \"يحل النظام "
+                "محل النظام الأساسي للاتحادات الرياضية واللجنة الأولمبية "
+                "العربية السعودية، الصادر بالمرسوم الملكي رقم (م/55) وتاريخ "
+                "1407/10/19هـ، ويلغي كل ما يتعارض معه من أحكام\", corroborated "
+                "by both this track's nezams.com source and the independent "
+                "qanoonsa.com cross-check. This is a real confirmed "
+                "named-predecessor repeal, not an ambiguous/excluded case. "
+                "Not separately ingested in this corpus (one-instrument-"
+                "per-pass rule).",
+        "source_ref": "sources/sports/law/official_source/sports_law_official_source.json (Article 96)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

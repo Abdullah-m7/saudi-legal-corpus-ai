@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 178,
-  "total_terms": 1072,
-  "total_definitions": 1748,
-  "tracks_with_definitions_article_parsed": 122,
+  "total_tracks_in_registry": 179,
+  "total_terms": 1087,
+  "total_definitions": 1770,
+  "tracks_with_definitions_article_parsed": 123,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1086,6 +1086,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأكاديمية الرياضية": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الأكاديمية الرياضية",
+        "definition_text": "كيان يقوم باكتشاف المواهب، وتدريبها، وصقلها؛ لتحقيق الإنجازات الرياضية.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأمانة الفنية": [
       {
         "track_id": "gcc_anti_dumping_law",
@@ -1663,6 +1673,16 @@
         "term_as_written": "الاتجار بالأشخاص",
         "definition_text": "استخدام شخص، أو إلحاقه، أو نقله، أو إيواؤه، أو استقباله من أجل إساءة الاستغلال.",
         "source_record_id": "anti-trafficking-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الاتحاد": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الاتحاد",
+        "definition_text": "الاتحاد الرياضي المؤسس وفق أحكام النظام.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4514,6 +4534,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الرابطة": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الرابطة",
+        "definition_text": "الرابطة الرياضية المؤسسة أو المرخص لها وفق أحكام النظام.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الراكب": [
       {
         "track_id": "maritime_commercial_law",
@@ -4692,6 +4722,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الرياضة": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الرياضة",
+        "definition_text": "نشاط يعتمد في ممارسته على الأداء البدني أو المهارة الذهنية -أو كليهما- ويهدف إلى تعزيز اللياقة البدنية، أو القدرات العقلية، أو تحقيق نتائج في إطار منافسة رياضية -أو جميعها-، وتكون له قواعد أو أنماط تحكم ممارسته، أو التدريب عليه أو تحكيمه، ويعترف به -أو يتعارف عليه- على أنه نشاط رياضي؛ سواء أكانت ممارسته بشكل فردي أم جماعي، تنافسي أم غير تنافسي وعلى سبيل الاحتراف أم الهواية.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الزراعة العضوية": [
       {
         "track_id": "agriculture_law",
@@ -4737,6 +4777,14 @@
         "term_as_written": "السجل",
         "definition_text": "السجل السعودي الوطني لتسجيل الطائرات تعده الهيئة لتسجيل الطائرات المدنية الوطنية .",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "السجل",
+        "definition_text": "السجل الوطني للرياضة.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6328,6 +6376,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الفعالية الرياضية": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الفعالية الرياضية",
+        "definition_text": "منافسة رياضية إقليمية أو قارية أو دولية تستضيفها المملكة، أو حدث رياضي -غير المنافسة الرياضية- يقام داخل المملكة.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "القائمة": [
       {
         "track_id": "evidence_expertise_rules",
@@ -6495,6 +6553,16 @@
         "term_as_written": "الكيان الإرهابي",
         "definition_text": "أي مجموعة مؤلفة من شخصين أو أكثر -داخل المملكة أو خارجها- تهدف إلى ارتكاب جريمة من الجرائم المنصوص عليها في النظام.",
         "source_record_id": "terrorism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الكيان الرياضي": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الكيان الرياضي",
+        "definition_text": "اللجنة أو الاتحاد أو النادي أو الرابطة.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7248,6 +7316,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "اللجنة الأولمبية والبارالمبية السعودية.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "اللجنة",
@@ -7439,6 +7515,14 @@
         "term_as_written": "اللوائح",
         "definition_text": "اللوائح التنفيذية للنظام.",
         "source_record_id": "pdpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية للنظام.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8390,6 +8474,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المدرسة الرياضية": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "المدرسة الرياضية",
+        "definition_text": "مؤسسة تعليمية رياضية تقدم التعليم والتدريب المتخصص -أو أحدهما- في نشاط رياضي من خلال مناهج تعليمية وتدريبية؛ بالتوازي مع التعليم العام.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المدير": [
       {
         "track_id": "customs_law",
@@ -8715,6 +8809,24 @@
         "term_as_written": "المركز",
         "definition_text": "المركز الوطني للتخصيص.",
         "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "مركز التحكيم الرياضي السعودي.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المركز الرياضي": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "المركز الرياضي",
+        "definition_text": "كيان يقوم بتهيئة مرافق؛ لتمكين الأفراد من ممارسة نشاط رياضي أو التدرب عليه.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9536,6 +9648,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المعهد الرياضي": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "المعهد الرياضي",
+        "definition_text": "كيان يقدم برامج ودورات -أو أحدها- سواء أكانت نظرية أم تطبيقية؛ تهدف إلى تطوير العاملين في قطاع الرياضة في الجوانب التخصصية ذات الصلة بالرياضة.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المفتش": [
       {
         "track_id": "judicial_inspection_regulation",
@@ -9956,6 +10078,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنافسة الرياضية": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "المنافسة الرياضية",
+        "definition_text": "حدث رياضي تنظمه اللجنة أو الاتحاد المعني مدرج في برامجه، ويسفر عن تتويج فائز أو أكثر؛",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنافسة العامة": [
       {
         "track_id": "municipal_realestate_implementing_regulation",
@@ -10107,6 +10239,16 @@
         "term_as_written": "المنشأة البيطرية",
         "definition_text": "منشأة مرتبطة بشأن من الشؤون البيطرية، وتشمل: المستشفى، والعيادة، والصيدلية، والمختبر، ومركز التلقيح الاصطناعي، ومستودع المستلزمات الحيوانية، وما تحدده اللائحة من منشآت أخرى مرتبطة بشأن من الشؤون البيطرية.",
         "source_record_id": "agriculture-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنشأة الرياضية": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "المنشأة الرياضية",
+        "definition_text": "الموقع المجهز لممارسة الرياضة من أراض ومبان ومرافق؛ سواء أكانت مملوكة للدولة أم للقطاع الخاص أم للقطاع غير الربحي.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10677,6 +10819,16 @@
         "term_as_written": "الميزانية",
         "definition_text": "ميزانية جمعية الملاك السنوية لإدارة العقار المشترك.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "النادي": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "النادي",
+        "definition_text": "النادي الرياضي المؤسس أو المرخص له وفق أحكام النظام.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11439,6 +11591,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام التأمينات الاجتماعية.",
         "source_record_id": "social-insurance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الرياضة.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12294,6 +12454,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الرياضة.",
+        "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sulook_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -12719,6 +12887,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير المالية .",
         "source_record_id": "social-insurance-legacy-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الرياضة.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13235,6 +13411,16 @@
         "term_as_written": "جباية الزكاة",
         "definition_text": "حساب الزكاة وتحصيلها من المكلف -بموجب أحكام اللائحة- لغرض توريدها للجهة المختصة بصرفها.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "جدول تصنيف المخالفات": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "جدول تصنيف المخالفات",
+        "definition_text": "الجدول الذي يصدره الوزير متضمنا تصنيفا للمخالفات والعقوبات المترتبة عليها.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14013,6 +14199,16 @@
         "term_as_written": "سند الشحن",
         "definition_text": "وثيقة يصدرها الناقل بناء على طلب الشاحن عند تسلم البضاعة منه،  توضح فيها بيانات النقل وشروطه.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "سواء أطلق عليه اسم": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "سواء أطلق عليه اسم",
+        "definition_text": "دوري، أو كأس، أو دورة، أو غير ذلك.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14847,6 +15043,16 @@
         "term_as_written": "لجنة الفحص",
         "definition_text": "اللجنة الوزارية الدائمة لفحص الاستثمارات الأجنبية المشكلة بموجب قرار مجلس الوزراء رقم (83) وتاريخ 1443/01/30هـ.",
         "source_record_id": "inv-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "لجنة النظر": [
+      {
+        "track_id": "sports_law",
+        "article_number": 1,
+        "term_as_written": "لجنة النظر",
+        "definition_text": "لجنة النظر في مخالفات النظام.",
+        "source_record_id": "sports-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

@@ -216,6 +216,7 @@ CHILD_PROTECTION_LAW_LLM = os.path.join(ROOT, "data", "child_protection_arabic_l
 PROTECTION_FROM_ABUSE_LAW_LLM = os.path.join(ROOT, "data", "protection_from_abuse_arabic_legal_llm", "protection_from_abuse_law_legal_llm_001_017.json")
 ASSOCIATIONS_NGO_LAW_LLM = os.path.join(ROOT, "data", "associations_ngo_arabic_legal_llm", "associations_ngo_law_legal_llm_001_044.json")
 AUDIOVISUAL_MEDIA_LAW_LLM = os.path.join(ROOT, "data", "audiovisual_media_arabic_legal_llm", "audiovisual_media_law_legal_llm_001_025.json")
+SPORTS_LAW_LLM = os.path.join(ROOT, "data", "sports_arabic_legal_llm", "sports_law_legal_llm_001_097.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -425,6 +426,7 @@ def main() -> int:
     protection_from_abuse_law_llm = _load_json(PROTECTION_FROM_ABUSE_LAW_LLM)
     associations_ngo_law_llm = _load_json(ASSOCIATIONS_NGO_LAW_LLM)
     audiovisual_media_law_llm = _load_json(AUDIOVISUAL_MEDIA_LAW_LLM)
+    sports_law_llm = _load_json(SPORTS_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -445,7 +447,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 178,
+        "total_tracks": 179,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -627,6 +629,7 @@ def main() -> int:
             + protection_from_abuse_law_llm["record_count"]  # 17 Protection from Abuse Law (Royal Decree M/52, 15/11/1434H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY official Ministry of Finance regulations-library PDF (Diwan Malaki circular 41930) used as the governing text, cross-checked verbatim against nezams.com, 14 اصلية/3 معدلة (Articles 7,12,13), flat structure/no chapters, CONFIRMED amendment via CoM Resolution 427/Royal Decree M/72 1443H (same decree that amended child_protection_law), no repeal clause of any kind (founding statute), distinct from child_protection_law, see track notes)
             + associations_ngo_law_llm["record_count"]  # 44 Law of Associations and Civil Institutions (Royal Decree M/8, 19/2/1437H) (TIER_3, BOE indexing shows two conflicting lawId values for this law's name and the live portal was unreachable this pass, PRIMARY nezams.com full text independently cross-checked against a menarights.org PDF for article count/closing-articles verbatim text, 43 اصلية/1 معدلة (Article 1 only, CoM Resolution 618's new definitions), flat structure/no chapters, CONFIRMED named-predecessor repeal of لائحة الجمعيات والمؤسسات الخيرية (CoM Resolution 107, 25/6/1410H) via Article 43, see track notes)
             + audiovisual_media_law_llm["record_count"]  # 25 Law of Audiovisual Media (Royal Decree M/33, 25/3/1439H) (TIER_2, BOE unreachable this pass and Wayback refused by the fetch tool itself, PRIMARY nezams.com full text strongly cross-checked against an archived BOE portal scan (cyrilla.org) and the official BOE English translation (misa.gov.sa), 24 اصلية/1 معدلة (Article 1 only, CoM Resolution 374's terminology substitution), flat structure/no chapters, no repeal of any predecessor (generic conflict clause only), see track notes)
+            + sports_law_llm["record_count"]  # 97 Sports Law (Royal Decree M/121, 10/6/1447H) (TIER_3, BOE and mos.gov.sa both unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text cross-checked verbatim against qanoonsa.com, decree identity/date/preamble officially confirmed via the Umm al-Qura gazette's own JSON API, 97 اصلية across 11 أبواب (brand-new founding statute, in force since ~June 2026), CONFIRMED named-predecessor repeal of the Basic Law of Sports Federations and the Saudi Arabian Olympic Committee (M/55, 19/10/1407H) via Article 96, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -799,6 +802,7 @@ def main() -> int:
             + protection_from_abuse_law_llm["record_count"]
             + associations_ngo_law_llm["record_count"]
             + audiovisual_media_law_llm["record_count"]
+            + sports_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5993,6 +5997,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Law of Audiovisual Media «نظام الإعلام المرئي والمسموع» — Royal Decree No. (M/33), dated 25/3/1439H, approving Council of Ministers Resolution No. (170), 24/3/1439H (following Shura Council Resolution 24/15, 28/4/1436H); administered by the Ministry of Media. A brand-new standalone Law (not a companion regulation of any existing track). **25 articles, FLAT structure with NO أبواب/فصول divisions** (chapter_structure is an empty list by design, a continuous 1-25 sequence). **24 اصلية / 1 معدلة (Article 1 only)**. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a dedicated lawId page (ed5fdbc0-c183-4a8a-a8b7-a9ed004b5900) but was unreachable this pass (live HTTP 503 / connection reset); web.archive.org was refused outright by the fetch tool itself, not circumvented. PRIMARY full text from nezams.com, strongly cross-checked against an archived scan of the actual BOE portal Viewer page (cyrilla.org, showing the real government letterhead/decree/CoM resolution and verbatim article text matching character-for-character on every sampled portion) and the official Bureau of Experts English translation (misa.gov.sa), whose amendment appendix independently confirms both the date and wording of the 1440H amendment. **CONFIRMED amendment**: Council of Ministers Resolution 374 (28/6/1440H) is a pure horizontal terminology substitution — 'Minister/Ministry of Culture and Information' replaced by 'Minister/Ministry of Media' wherever mentioned; only Article 1 (which literally defines those terms) is marked معدلة, all other articles keep their originally-enacted wording verbatim. **No repeal of any predecessor found** — Article 25 is only a generic conflict clause ('يُلغي النظام جميع ما يتعارض معه من أحكام'), naming no specific prior instrument; no supersession-graph edge applies. **Distinct from `press`** (نظام المطبوعات والنشر, Royal Decree M/32, 1421H): Article 1 only cross-references two committees formed under that separate law, no textual merge or overlap. Companion Implementing Regulation (Article 23 mandate) and the GCAM establishment regulation (CoM Resolution 332, 16/10/1433H) exist but were deliberately NOT built this pass (flagged as future candidates). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "sports_law",
+                "display_name_ar": "نظام الرياضة",
+                "display_name_en": "Sports Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_AND_MOS_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_PRIMARY_X_QANOONSA_COM_CROSSCHECK_X_UQN_GAZETTE_API_FOR_DECREE_IDENTITY",
+                "source_authority": "Royal Decree No. (M/121), dated 10/6/1447H (~1 December 2025G), approving Council of Ministers Resolution No. (414), dated 4/6/1447H; published Umm Al-Qura Gazette issue 5129, 21/6/1447H (~12 December 2025G); entry into force 180 days after publication (~June 2026G, kept separate from the decree issuance date); administered by the Ministry of Sport — laws.boe.gov.sa and mos.gov.sa (Ministry of Sport's official PDF) both unreachable this pass (HTTP 503 / connection reset, multiple attempts each), Wayback egress-blocked and not circumvented. PRIMARY full text from nezams.com, cross-checked verbatim article-by-article against qanoonsa.com (independent secondary); decree identity/date/preamble officially confirmed via the Umm Al-Qura gazette's own JSON API (uqn.gov.sa)",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": sports_law_llm["record_count"],
+                    "data_path": "data/sports_arabic_legal_llm/sports_law_legal_llm_001_097.json"}},
+                "record_counts": {"arabic_articles": sports_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 97, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": sports_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/sports/law/official_source/sports_law_official_source.json",
+                    "sources/sports/law/verified/sports_law_verified_records.jsonl",
+                    "data/sports_arabic_legal_llm/sports_law_legal_llm_001_097.json",
+                ],
+                "validator_targets": ["make sports-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Sports Law «نظام الرياضة» — Royal Decree No. (M/121), dated 10/6/1447H (~1 December 2025G), approving Council of Ministers Resolution No. (414), 4/6/1447H; published Umm Al-Qura Gazette issue 5129, 21/6/1447H (~12 December 2025G); administered by the Ministry of Sport. A brand-new standalone Law (not a companion regulation of any existing track) — this is a VERY RECENT law, in force only since ~June 2026 (180 days after Gazette publication; the entry-into-force date is deliberately kept separate from the decree issuance date used as `decree_date_hijri`). **97 articles across 11 أبواب** (7 flat, 4 subdivided into فصول: الثاني[7 فصول], الثالث[7 فصول], التاسع[2 فصول], العاشر[3 فصول]), covering the Saudi Olympic & Paralympic Committee, federations, clubs, athletes, coaches, the sports arbitration center, and the anti-doping committee. **ALL 97 اصلية** — no amendments yet, consistent with the law's brand-new status. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa and the Ministry of Sport's own official PDF (mos.gov.sa) were BOTH unreachable this pass (live HTTP 503 / TLS connection-reset across multiple attempts on each host); web.archive.org egress-blocked at the network layer, not circumvented. PRIMARY full text from nezams.com, cross-checked verbatim article-by-article against qanoonsa.com (independent secondary, no shared derivation); the decree's identity, date, and preamble were independently and officially confirmed via the Umm Al-Qura gazette's own JSON API (uqn.gov.sa), though that API response did not cover the substantive articles themselves — honestly kept at TIER_3 rather than inflated to TIER_2, since no official government document served as the governing text for the articles. **CONFIRMED named-predecessor repeal**: Article 96 EXPLICITLY supersedes the Basic Law of Sports Federations and the Saudi Arabian Olympic Committee «النظام الأساسي للاتحادات الرياضية واللجنة الأولمبية العربية السعودية» (Royal Decree No. M/55, 19/10/1407H, following Council of Ministers Resolution 226, 13/9/1407H) — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1407H instrument is not itself ingested as a separate track. Implementing Regulations (Article 95 mandate) had not yet been issued as of this track's preparation and are flagged as a future candidate. Arabic governs; not legal advice.",
             },
         ],
     }
