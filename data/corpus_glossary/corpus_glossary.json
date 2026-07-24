@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 184,
-  "total_terms": 1095,
-  "total_definitions": 1786,
-  "tracks_with_definitions_article_parsed": 125,
+  "total_tracks_in_registry": 185,
+  "total_terms": 1103,
+  "total_definitions": 1800,
+  "tracks_with_definitions_article_parsed": 126,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -3522,11 +3522,29 @@
     ],
     "الجهات ذات العلاقة": [
       {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "الجهات ذات العلاقة",
+        "definition_text": "الجهات الحكومية المعنية وفقا لاختصاصها بمراقبة تطبيق الكود، وهي: وزارة الشؤون البلدية والقروية، ووزارة الداخلية (المديرية العامة للدفاع المدني)، ووزارة الطاقة والصناعة والثروة المعدنية، والهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "child_protection_law",
         "article_number": 1,
         "term_as_written": "الجهات ذات العلاقة",
         "definition_text": "الجهات التي لها علاقة بحماية الطفل، وفقا لما تحدده اللائحة.",
         "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجهاز البلدي": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "الجهاز البلدي",
+        "definition_text": "الأمانة أو البلدية.",
+        "source_record_id": "building-code-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6652,6 +6670,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الكود": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "الكود",
+        "definition_text": "كود البناء السعودي، وهو مجموعة الاشتراطات والمتطلبات وما يتبعها من لوائح تنفيذية وملاحق متعلقة بالبناء والتشييد؛ لضمان السلامة والصحة العامة.",
+        "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الكيان": [
       {
         "track_id": "competition_regulation",
@@ -7559,6 +7587,14 @@
         "term_as_written": "اللوائح",
         "definition_text": "اللوائح التنفيذية لهذا النظام.\nالآثار/ مواقع الآثار : الأعيان الثابتة والمنقولة والمطمورة والغارقة داخل حدود المملكة وفي المناطق البحرية الخاضعة لسيادتها أو ولايتها القانونية، التي بناها الإنسان، أو صنعها، أو أنتجها، أو كيفها، أو رسمها، وتكونت لها خصائص أثرية بفعل تدخل الإنسان عبر العصور، وإن امتد تاريخها إلى فترة متأخرة، على ألا تقل عن (مائة) سنة. وللهيئة أن تعد ما يرجع إلى عهد أحدث آثارا، وتدخل تحت اسم الآثار المواقع التاريخية ومواقع التراث الشعبي وقطعه.",
         "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية للنظام.",
+        "source_record_id": "building-code-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8568,11 +8604,29 @@
     ],
     "المخالفة": [
       {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "المخالفة",
+        "definition_text": "كل تجاوز للكود، متعمد أو غير متعمد.",
+        "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_violations_penalties",
         "article_number": 1,
         "term_as_written": "المخالفة",
         "definition_text": "أي مخالفة لأحكام النظام أو اللوائح.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المخالفة الخطرة": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "المخالفة الخطرة",
+        "definition_text": "كل مخالفة للكود يترتب عليها تعريض الأرواح أو الممتلكات للخطر.",
+        "source_record_id": "building-code-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8871,6 +8925,14 @@
       }
     ],
     "المركز": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز السعودي لكود البناء.",
+        "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "capital_market_law",
         "article_number": 1,
@@ -9360,6 +9422,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المشرف": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "المشرف",
+        "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية المرخص له الذي يكلفه المالك بالقيام بأعمال الإشراف.",
+        "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المشغل": [
       {
         "track_id": "civil_aviation_law",
@@ -9549,6 +9621,16 @@
         "term_as_written": "المصلحون المسَجَّلون",
         "definition_text": "المصلحون والجهات الذين يستعين بهم المكتب من غير منسوبي الوزارة المقيدون في السجل المعد لذلك وفق أحكام التنظيم والقواعد والقرارات الصادرة تنفيذًا لهما.",
         "source_record_id": "muslaha-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المصمم": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "المصمم",
+        "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية المرخص له، الذي يكلفه المالك بعمل الدراسات والتصاميم بما يلبي احتياجاته وطلباته وفق الكود.",
+        "source_record_id": "building-code-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11286,6 +11368,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام تطبيق كود البناء السعودي.",
+        "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "chambers_of_commerce_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12303,6 +12393,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة التجارة والاستثمار.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الشؤون البلدية والقروية.",
+        "source_record_id": "building-code-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14144,6 +14242,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "رخصة البناء": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "رخصة البناء",
+        "definition_text": "إذن بالبناء يصدره الجهاز البلدي.",
+        "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "رخصة السير": [
       {
         "track_id": "traffic_law",
@@ -14177,6 +14285,16 @@
         "term_as_written": "رخصة القيادة",
         "definition_text": "وثيقة رسمية صادرة من الإدارة المختصة، أو من جهة أجنبية معترف بما يصدر عنها من وثائق مماثلة، تثبت أن حاملها مؤهل لقيادة نوع أو أنواع من المركبات.",
         "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "رخصة الممارسة": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "رخصة الممارسة",
+        "definition_text": "تصريح تصدره الجهة المختصة للأفراد، والهيئات، والمؤسسات، والشركات؛ لممارسة أعمال الدراسات والتصاميم، أو التنفيذ أو الإشراف، وفق الكود.",
+        "source_record_id": "building-code-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14483,6 +14601,16 @@
         "term_as_written": "شركة التمويل",
         "definition_text": "الشركة الحاصلة على ترخيص لممارسة نشاط التمويل.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شهادة الإشغال": [
+      {
+        "track_id": "building_code_law",
+        "article_number": 1,
+        "term_as_written": "شهادة الإشغال",
+        "definition_text": "إذن بإشغال المبنى يصدره الجهاز البلدي بعد التأكد من مطابقته للكود.",
+        "source_record_id": "building-code-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
