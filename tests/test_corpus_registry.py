@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 180
+        assert registry["total_tracks"] == 181
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 11143
+        assert registry["total_primary_arabic_governing_records"] == 11206
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 12038
+        assert registry["total_registry_counted_records"] == 12101
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -249,6 +249,7 @@ class TestTracks:
         assert "audiovisual_media_law" in ids
         assert "sports_law" in ids
         assert "anti_smoking_law" in ids
+        assert "weapons_ammunition_law" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -1232,6 +1233,12 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 20
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_MOH_OFFICIAL_PDF_GOVERNING_TEXT_X_NEZAMS_COM_AND_CLOUDFRONT_BILINGUAL_PDF_CROSSCHECK"
+
+    def test_weapons_ammunition_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "weapons_ammunition_law")
+        assert t["record_counts"]["arabic_articles"] == 63
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 56, "معدلة": 7, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

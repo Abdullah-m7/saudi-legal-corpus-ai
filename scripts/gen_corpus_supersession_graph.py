@@ -1276,6 +1276,26 @@ EDGES = [
                 "per-pass rule).",
         "source_ref": "sources/sports/law/official_source/sports_law_official_source.json (Article 96)",
     },
+    {
+        "from_track_id": "weapons_ammunition_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام الأسلحة والذخائر (السابق)",
+        "target_decree": "Royal Decree No. (M/8), 19/2/1402H",
+        "note": "weapons_ammunition_law (Royal Decree M/45, 25/7/1426H) Article 62 "
+                "explicitly replaces the prior Weapons and Ammunition Law "
+                "(نظام الأسلحة والذخائر), Royal Decree No. (M/8), dated "
+                "19/2/1402H -- confirmed via Article 62's own verbatim text: "
+                "\"يحل هذا النظام محل نظام الأسلحة والذخائر ، الصادر "
+                "بالمرسوم الملكي ذي الرقم (م/8) وتاريخ 19/ 2/ 1402هـ، ويلغي "
+                "كل ما يتعارض معه من أحكام\", corroborated by both this "
+                "track's Wayback-archived BOE portal source and the "
+                "independent nezams.com cross-check. This is a real "
+                "confirmed named-predecessor repeal, not an "
+                "ambiguous/excluded case. Not separately ingested in this "
+                "corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/weapons_ammunition/law/official_source/weapons_ammunition_law_official_source.json (Article 62)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

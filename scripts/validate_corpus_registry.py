@@ -229,6 +229,7 @@ REQUIRED_TRACK_IDS = [
     "audiovisual_media_law",
     "sports_law",
     "anti_smoking_law",
+    "weapons_ammunition_law",
 ]
 
 CHECKS: list[str] = []
@@ -271,9 +272,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 180 tracks
+    # [3] 181 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 180 tracks present...", len(track_ids) == 180 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 181 tracks present...", len(track_ids) == 181 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -1946,7 +1947,17 @@ def main() -> int:
           asml_counts.get("legal_status_breakdown") == {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={asml_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 10974 records...", uix.get("total_records") == 10974,
+    waml = tracks_by_id.get("weapons_ammunition_law", {})
+    waml_counts = waml.get("record_counts", {})
+    check("[7g168] weapons_ammunition_law: 63 Arabic records, BOE live unreachable x 3 Wayback snapshots x nezams.com cross-verified...",
+          waml_counts.get("arabic_articles") == 63
+          and waml.get("official_text_status") == "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+          f"counts={waml_counts}")
+    check("    weapons_ammunition_law: status breakdown 56/7/0/0...",
+          waml_counts.get("legal_status_breakdown") == {"اصلية": 56, "معدلة": 7, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={waml_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 11037 records...", uix.get("total_records") == 11037,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -2008,8 +2019,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 11143...",
-          registry.get("total_primary_arabic_governing_records") == 11143,
+    check("[19a] total_primary_arabic_governing_records == 11206...",
+          registry.get("total_primary_arabic_governing_records") == 11206,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -2024,8 +2035,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 12038...",
-          registry.get("total_registry_counted_records") == 12038,
+    check("[19e] total_registry_counted_records == 12101...",
+          registry.get("total_registry_counted_records") == 12101,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -2049,7 +2060,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"11143 + 614 + 281 = 12038")
+          f"11206 + 614 + 281 = 12101")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -2067,7 +2078,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 180 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 181 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

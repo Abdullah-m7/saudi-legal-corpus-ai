@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11143,
+  "total_primary_arabic_governing_records": 11206,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12038,
-  "total_tracks": 180,
+  "total_registry_counted_records": 12101,
+  "total_tracks": 181,
   "tracks": [
     {
       "boundaries": {
@@ -8583,6 +8583,55 @@
       "validator_targets": [
         "make anti-smoking-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/weapons_ammunition/law/official_source/weapons_ammunition_law_official_source.json",
+        "sources/weapons_ammunition/law/verified/weapons_ammunition_law_verified_records.jsonl",
+        "data/weapons_ammunition_arabic_legal_llm/weapons_ammunition_law_legal_llm_001_063.json"
+      ],
+      "display_name_ar": "نظام الأسلحة والذخائر",
+      "display_name_en": "Weapons and Ammunition Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/weapons_ammunition_arabic_legal_llm/weapons_ammunition_law_legal_llm_001_063.json",
+          "governing": true,
+          "record_count": 63,
+          "status": "complete"
+        }
+      },
+      "notes": "Weapons and Ammunition Law «نظام الأسلحة والذخائر» — Royal Decree No. (M/45), dated 25/7/1426H (~2005G), approving Council of Ministers Resolution No. (193), 24/7/1426H; published Umm Al-Qura Gazette 18/9/1426H; administered by the Ministry of Interior. **63 articles across SEVEN topical sections** (no formal باب/فصل label in the source, but the text is internally organized by subject — definitions, permitted carriers, licensing, prohibited weapons, penalties, etc. — covering articles 1-63 cleanly, no مكرر articles). **56 اصلية / 7 معدلة (Articles 2, 12, 25, 31, 43, 50, 53)** across four separate, independently-dated amendment events: Council of Ministers Resolution 217, 1439H (Article 2); Royal Decree M/17, 1437H (Articles 43, 50, 53); Royal Decree M/71, 1444H (Articles 12, 25); Council of Ministers Resolution 967, 1445H (Article 31) — each amendment's original/intermediate/current text preserved in history, never silently merged. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a dedicated lawId page (a445af93-671f-496b-818a-a9a700f19150) but the LIVE portal was unreachable this pass (HTTP 503 / connection-reset across multiple attempts); three independent Wayback Machine snapshots of that SAME official BOE portal page (spanning 2019, 2025, 2026) were used instead as PRIMARY, cross-checked verbatim against nezams.com for all 63 articles after normalization. Five articles (12, 25, 43, 50, 53) show an internal BOE conflict between the main displayed text and a 'changed-article' version-history popup citing a specific Royal Decree; the popup/decree text was adopted as current via a documented interpretive judgment, disclosed in known_unresolved_discrepancies rather than silently resolved. Article 31's paragraph (d), added by CoM Resolution 967 (1445H), is confirmed to exist via the Umm al-Qura gazette API but its full added text could not be independently cross-verified against a second source, flagged has_per_article_variation. **CONFIRMED named-predecessor repeal**: Article 62 explicitly states this Law replaces the prior Weapons and Ammunition Law «نظام الأسلحة والذخائر» (Royal Decree No. M/8, 19/2/1402H) and repeals anything conflicting with it — a genuine repeal link, flagged for the corpus-wide supersession/repeal graph; the repealed 1402H instrument is not itself ingested as a separate track. Implementing Regulation and the fee-schedule annex table are NOT ingested, flagged as future candidates. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 63,
+        "legal_status_breakdown": {
+          "اصلية": 56,
+          "مضافة": 0,
+          "معدلة": 7,
+          "ملغاة": 0
+        },
+        "total": 63
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/45), dated 25/7/1426H, approving Council of Ministers Resolution No. (193), dated 24/7/1426H; published Umm Al-Qura Gazette 18/9/1426H — laws.boe.gov.sa has a dedicated lawId page (a445af93-671f-496b-818a-a9a700f19150) but the LIVE portal was unreachable this pass (HTTP 503 / connection-reset). Three Wayback Machine snapshots of that SAME official portal page (2019, 2025, 2026) were used instead and cross-checked against nezams.com for all 63 articles",
+      "status": "complete",
+      "track_id": "weapons_ammunition_law",
+      "validator_targets": [
+        "make weapons-ammunition-law-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -8722,11 +8771,12 @@
       "universities": 58,
       "vat": 135,
       "water": 77,
+      "weapons_ammunition": 63,
       "whistleblower": 37,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 10974,
+    "total_records": 11037,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
