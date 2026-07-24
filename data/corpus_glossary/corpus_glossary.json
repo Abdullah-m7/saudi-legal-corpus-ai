@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 177,
-  "total_terms": 1064,
-  "total_definitions": 1732,
-  "tracks_with_definitions_article_parsed": 121,
+  "total_tracks_in_registry": 178,
+  "total_terms": 1072,
+  "total_definitions": 1748,
+  "tracks_with_definitions_article_parsed": 122,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -521,6 +521,16 @@
         "term_as_written": "إصابة أو إصابات العمل",
         "definition_text": "الحوادث التي تقع أثناء العمل أو بسببه والأمراض المهنية المبينة في المادة السابعة والعشرين.",
         "source_record_id": "social-insurance-legacy-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إعادة البث": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "إعادة البث",
+        "definition_text": "إعادة بث محتوى إعلامي بلا تغيير.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1498,6 +1508,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الإعلام المرئي والمسموع": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "الإعلام المرئي والمسموع",
+        "definition_text": "عملية بث محتوى إعلامي، أو إعادة بثه، أو إنتاجه للبث، أو توزيعه، أو بيعه ليصل إلى الجمهور، ولا يشمل ما يتصف بطابع المراسلات الخاصة.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الإعلان الإلكتروني": [
       {
         "track_id": "ecommerce_law",
@@ -1839,6 +1859,16 @@
         "term_as_written": "الانبعاثات",
         "definition_text": "انطلاق غازات أو جسيمات عالقة إلى الهواء من مصدر محدد.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "البث": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "البث",
+        "definition_text": "إرسال محتوى إعلامي محملا على إشارات سلكية، أو لا سلكية؛ يمكن استقباله.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4394,6 +4424,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس الهيئة.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "awqaf_law",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -6544,6 +6582,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bankruptcy_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -7210,6 +7256,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اللجنة الابتدائية": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة الابتدائية",
+        "definition_text": "اللجنة الابتدائية المشكلة بموجب نظام المطبوعات والنشر.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللجنة الاستئنافية": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة الاستئنافية",
+        "definition_text": "اللجنة الاستئنافية المشكلة بموجب نظام المطبوعات والنشر .",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اللجنة الدائمة": [
       {
         "track_id": "gcc_anti_dumping_law",
@@ -7754,6 +7820,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "awqaf_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -8124,6 +8198,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المحتوى الإعلامي": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "المحتوى الإعلامي",
+        "definition_text": "مادة مرئية، ومسموعة، أو أي منهما.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المحفزات الاستثمارية": [
       {
         "track_id": "investment_law",
@@ -8451,6 +8535,14 @@
       }
     ],
     "المرخص له": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "الحاصل على رخصة من الهيئة لممارسة نشاط إعلامي مرئي أو مسموع، وفقا لأحكام النظام واللائحة.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "electricity_law",
         "article_number": 1,
@@ -10894,6 +10986,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الإعلام المرئي والمسموع.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bankruptcy_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -11564,6 +11664,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للإعلام المرئي والمسموع.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "awqaf_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -11887,6 +11995,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة الشؤون الاجتماعية.",
         "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الثقافة والإعلام.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12283,6 +12399,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الشؤون الاجتماعية.",
         "source_record_id": "associations-ngo-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الثقافة والإعلام.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13676,6 +13800,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "رخصة البث": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "رخصة البث",
+        "definition_text": "إنشاء محطة للبث، وتشغيلها؛ بمقتضى عقد أو اتفاقية تنظم العلاقة بين الهيئة والمرخص له.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "رخصة السير": [
       {
         "track_id": "traffic_law",
@@ -13955,6 +14089,16 @@
         "term_as_written": "شبكة اتصالات عامة",
         "definition_text": "منظومة (أو منظومات) اتصالات سلكية أو لا سلكية محلية أو دولية؛ لتقديم خدمة الاتصالات وتقنية المعلومات العامة للمستخدم.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شبكة البث": [
+      {
+        "track_id": "audiovisual_media_law",
+        "article_number": 1,
+        "term_as_written": "شبكة البث",
+        "definition_text": "البنية التحتية الخاصة بالبث الإذاعي أو التلفزيوني، وتتكون من منظومة متكاملة من أبراج، وأجهزة إرسال، ومحطات إعادة، ووصلات ربط، وهوائيات، ومكملاتها.",
+        "source_record_id": "audiovisual-media-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

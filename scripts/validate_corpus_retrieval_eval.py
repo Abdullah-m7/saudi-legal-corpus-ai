@@ -30,7 +30,7 @@ sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from search_corpus_unified import load_index  # noqa: E402
 from run_corpus_retrieval_eval import run_eval  # noqa: E402
 
-EXPECTED_QUERIES = 382
+EXPECTED_QUERIES = 384
 FLOOR_TOP1 = 0.75
 FLOOR_TOP3 = 0.85
 FLOOR_MRR = 0.80
