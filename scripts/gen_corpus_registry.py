@@ -212,6 +212,7 @@ RETT_LAW_LLM = os.path.join(ROOT, "data", "rett_arabic_legal_llm", "rett_law_leg
 UNIVERSITIES_LAW_LLM = os.path.join(ROOT, "data", "universities_arabic_legal_llm", "universities_law_legal_llm_001_058.json")
 PRIVATIZATION_LAW_LLM = os.path.join(ROOT, "data", "privatization_arabic_legal_llm", "privatization_law_legal_llm_001_045.json")
 ANTIQUITIES_HERITAGE_LAW_LLM = os.path.join(ROOT, "data", "antiquities_heritage_arabic_legal_llm", "antiquities_heritage_law_legal_llm_001_094.json")
+CHILD_PROTECTION_LAW_LLM = os.path.join(ROOT, "data", "child_protection_arabic_legal_llm", "child_protection_law_legal_llm_001_025.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -417,6 +418,7 @@ def main() -> int:
     universities_law_llm = _load_json(UNIVERSITIES_LAW_LLM)
     privatization_law_llm = _load_json(PRIVATIZATION_LAW_LLM)
     antiquities_heritage_law_llm = _load_json(ANTIQUITIES_HERITAGE_LAW_LLM)
+    child_protection_law_llm = _load_json(CHILD_PROTECTION_LAW_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -437,7 +439,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 174,
+        "total_tracks": 175,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -615,6 +617,7 @@ def main() -> int:
             + universities_law_llm["record_count"]  # 58 Universities Law (Royal Decree M/27, 2/3/1441H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY bibliotdroit.com born-digital text cross-verified article-by-article against the administering authority's own official cua.gov.sa PDF (all 58 articles, not a spot-check), structure re-confirmed by moe.gov.sa, 58 اصلية across 14 فصول, CONFIRMED named-predecessor repeal of نظام مجلس التعليم العالي والجامعات (M/8, 4/6/1414H) via Article 57, phased/transitional per the Royal Decree's own clauses 3-4, see track notes)
             + privatization_law_llm["record_count"]  # 45 Privatization Law (Royal Decree M/63, 5/8/1442H) (TIER_2, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text with an official misa.gov.sa/NCP PDF confirming article count/flat structure/verbatim Articles 44-45, 45 اصلية, flat structure/no chapters, Article 45 repeal clause is GENERIC (no named predecessor in the Law's own text; named repeals of prior CoM/SEC instruments sit instead in the accompanying CoM Resolution 436, disclosed as context only), see track notes)
             + antiquities_heritage_law_llm["record_count"]  # 94 Antiquities, Museums and Urban Heritage Law (Royal Decree M/3, 9/1/1436H) (TIER_3, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com born-digital text corroborated by a BOE-content print PDF (media.unesco.org, non-government hosting) plus the Umm Al-Qura Gazette for the M/67 amendment scope specifically, 78 اصلية/16 معدلة across 6 amendment instruments (never silently merged, pre-amendment text preserved in history), genuinely flat/no chapters, CONFIRMED named-predecessor repeal of نظام الآثار (M/26, 23/6/1392H) via Article 92, see track notes)
+            + child_protection_law_llm["record_count"]  # 26 Child Protection Law (Royal Decree M/14, 3/2/1436H) (TIER_3, BOE unreachable this pass and Wayback egress-blocked, PRIMARY nezams.com full text, decree identity/5-chapter structure/original 25-article text independently confirmed by the official MOJ Adl-journal PDF (used for identity/structure only due to a bidi-reordering PDF-extraction defect, not letter-for-letter matching), 25 numbered articles + 1 مكرر across 5 فصول, 21 اصلية/4 معدلة/1 مضافة, CONFIRMED amendment via CoM Resolution 427/Royal Decree M/72 1443H (Articles 12,15,19,23 amended + Article 23-mukarrar added), distinct from juveniles_law and the separate protection_from_abuse_law candidate, see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -783,6 +786,7 @@ def main() -> int:
             + universities_law_llm["record_count"]
             + privatization_law_llm["record_count"]
             + antiquities_heritage_law_llm["record_count"]
+            + child_protection_law_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -5865,6 +5869,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Antiquities, Museums and Urban Heritage Law «نظام الآثار والمتاحف والتراث العمراني» — Royal Decree No. (M/3), dated 9/1/1436H, approving Council of Ministers Resolution No. (348), 25/8/1435H (Shura Council Resolutions 194/78, 18/2/1434H, and 67/38, 14/7/1435H); administered by the Ministry of Culture / Heritage Commission / Museums Commission. A brand-new standalone Law (not a companion regulation of any existing track). **94 articles, GENUINELY FLAT** (chapter_structure is an empty list, section_ar empty for every article, confirmed two ways: nezams.com shows 94 sequential articles with no chapter headers, and the BOE-content print PDF likewise shows none). **78 اصلية / 16 معدلة**, consolidated through SIX separate amendment instruments, none silently merged (current enacted text on top, pre-amendment text preserved in `history`): (1) Royal Decree M/16 (21/1/1439H) added paragraph (ب) to Article 85; (2) Council of Ministers Resolution 693 (2/11/1441H) substituted the ministry name in Articles 12(2), 29, and 54; (3) Royal Decree M/67 (12/8/1442H, with CoM Resolution 453, 10/8/1442H) toughened the penalties of Articles 71-77 and amended Article 90(1), scope independently corroborated by the Umm Al-Qura Gazette; (4) Royal Decree M/103 (21/11/1442H) restructured Article 3 (expropriation/temporary seizure) into two numbered paragraphs and added a new paragraph (2) on deterioration-prevention/damage-repair procedures; (5) Council of Ministers Resolution 1012 (27/11/1445H) amended Article 1's definitions (substituting 'الجهة المختصة: وزارة الثقافة/هيئة التراث/هيئة المتاحف' for 'الوزارة/الهيئة' and adding a definition of 'الوزير') and correspondingly restructured Articles 65 and 93, reflecting the transfer of competence to the Ministry of Culture ecosystem. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass (HTTP 503/connection reset); Wayback egress-blocked at the network layer, not circumvented. PRIMARY full verbatim text from nezams.com (independent born-digital HTML aggregator, no scan/OCR/ligature defects), corroborated by a BOE-content print PDF hosted on media.unesco.org — an international body's hosting, NOT itself a Saudi government domain, so this does not qualify as a second genuinely official/primary source under this corpus's TIER_1/TIER_2 tests, honestly kept at TIER_3 rather than inflated; the M/67 amendment's specific scope is independently corroborated by the Umm Al-Qura Gazette (a genuine official source, but only for that one amendment, not the full text). **CONFIRMED named-predecessor repeal**: Article 92 verbatim states «يحل هذا النظام محل نظام الآثار، الصادر بالمرسوم الملكي رقم (م/26) وتاريخ 23/6/1392هـ، ويلغي جميع ما يتعارض معه من أحكام» — recorded as a real repeals_full edge in the supersession graph (target_track_id=None, an untracked predecessor). A source-text quirk (a Farsi yeh ی in Article 3's M/103 amendment text) is preserved verbatim, not silently corrected. The Umm Al-Qura issue/date of the original 1436H publication could not be confirmed this pass, disclosed not fabricated. Companion Implementing Regulations (اللوائح, per Article 93) exist but were deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "child_protection_law",
+                "display_name_ar": "نظام حماية الطفل",
+                "display_name_en": "Child Protection Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_UNREACHABLE_WAYBACK_NOT_ATTEMPTED_EGRESS_BLOCKED_X_NEZAMS_COM_FULL_TEXT_X_MOJ_ADL_JOURNAL_PDF_IDENTITY_STRUCTURE_ONLY_BIDI_DEFECT_X_UMM_AL_QURA_FOR_1443H_AMENDMENT",
+                "source_authority": "Royal Decree No. (M/14), dated 3/2/1436H, approving Council of Ministers Resolution No. (50), dated 24/1/1436H; published 4/3/1436H (~late 2014G); administered by the Ministry of Human Resources and Social Development — laws.boe.gov.sa lawId 2d3cb83a-0379-4cde-8e0b-a9a700f272bd checked first per methodology: unreachable this pass (HTTP 503 via WebFetch, HTTP 000 connection reset via direct curl), Wayback not attempted (egress-policy-blocked, not circumvented). PRIMARY full text from nezams.com; decree identity, 5-chapter structure, and the original 25-article (pre-amendment) text independently confirmed by an official Ministry of Justice Adl-journal PDF (adlm.moj.gov.sa/attach/1462.pdf) — used only for identity/structure/article-count confirmation, NOT letter-for-letter matching, due to a bidi (right-to-left) character-reordering PDF-extraction defect disclosed rather than silently worked around; the 1443H amendment independently confirmed via the Umm Al-Qura Gazette and indexed press coverage",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": child_protection_law_llm["record_count"],
+                    "data_path": "data/child_protection_arabic_legal_llm/child_protection_law_legal_llm_001_025.json"}},
+                "record_counts": {"arabic_articles": child_protection_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 21, "معدلة": 4, "ملغاة": 0, "مضافة": 1},
+                                  "total": child_protection_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/child_protection/law/official_source/child_protection_law_official_source.json",
+                    "sources/child_protection/law/verified/child_protection_law_verified_records.jsonl",
+                    "data/child_protection_arabic_legal_llm/child_protection_law_legal_llm_001_025.json",
+                ],
+                "validator_targets": ["make child-protection-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Child Protection Law «نظام حماية الطفل» — Royal Decree No. (M/14), dated 3/2/1436H, approving Council of Ministers Resolution No. (50), 24/1/1436H; published 4/3/1436H (~late 2014G); administered by the Ministry of Human Resources and Social Development. A brand-new standalone Law (not a companion regulation of any existing track). **26 records = 25 numbered articles (المادة الأولى..الخامسة والعشرين) + 1 مكرر (المادة الثالثة والعشرون مكرر), across 5 فصول**: definitions/objectives/abuse-neglect cases (1-4); child's right to protection (5-7); prohibitions related to child protection (8-14); child's right to care and responsibility toward the child (15-21); reporting/adjudication/entry into force (22-25). **21 اصلية / 4 معدلة (Articles 12, 15, 19, 23) / 1 مضافة (Article 23-mukarrar)**. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa checked first per methodology, has a dedicated lawId page, but was unreachable this pass; Wayback not attempted (egress-policy-blocked). PRIMARY full verbatim text from nezams.com; decree identity, the 5-chapter structure (with literal matching chapter titles), and the original 25-article pre-amendment text independently corroborated by an official Ministry of Justice Adl-journal PDF — disclosed as used for identity/structure/article-count confirmation only, NOT a letter-for-letter cross-check, because the PDF's own text extraction suffers a bidi (right-to-left) character-reordering defect common to some Arabic PDFs; honestly kept at TIER_3 rather than inflated to TIER_2, since the governing verbatim text itself still rests on nezams.com alone. **CONFIRMED amendment**: Council of Ministers Resolution 427 (5/8/1443H), enacted by Royal Decree M/72 (6/8/1443H) — 'تعديل نظامي الحماية من الإيذاء وحماية الطفل' — amended Articles 12, 15, 19, and 23, and ADDED Article 23-mukarrar (criminal penalties for child-abuse offenses: imprisonment up to 2 years and/or a fine up to SAR 100,000, escalating to 2-5 years and SAR 100,000-500,000 for aggravated cases), independently confirmed via the Umm Al-Qura Gazette and indexed press coverage. Amended articles keep their ORIGINAL verbatim text in `text` (double-confirmed via both sources), with the verbatim CoM-427 amendment text preserved in `history` — never silently merged into a reconstructed consolidated body, per this corpus's trust rule. **Distinct from `juveniles_law`** (نظام الأحداث, Royal Decree M/113, 19/11/1439H, 24 articles — criminal-justice treatment of minors) and from the separately-researched `protection_from_abuse_law` candidate (نظام الحماية من الإيذاء, a general abuse-protection statute co-amended by the same M/72 decree but with no textual overlap). A companion Implementing Regulation (Ministerial Decision 56386, 16/6/1436H) exists but was deliberately NOT built this pass (flagged as a future candidate). Arabic governs; not legal advice.",
             },
         ],
     }

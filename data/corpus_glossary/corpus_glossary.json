@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 174,
-  "total_terms": 1056,
-  "total_definitions": 1709,
-  "tracks_with_definitions_article_parsed": 118,
+  "total_tracks_in_registry": 175,
+  "total_terms": 1062,
+  "total_definitions": 1717,
+  "tracks_with_definitions_article_parsed": 119,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1422,6 +1422,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الإساءة الجسدية": [
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "الإساءة الجسدية",
+        "definition_text": "تعرض الطفل لضرر أو إيذاء جسدي.",
+        "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإساءة الجنسية": [
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "الإساءة الجنسية",
+        "definition_text": "تعرض الطفل لأي نوع من الاعتداء أو الأذى أو الاستغلال الجنسي.",
+        "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإساءة النفسية": [
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "الإساءة النفسية",
+        "definition_text": "تعرض الطفل لسوء التعامل الذي قد يسبب له أضرارا نفسية أو صحية.",
+        "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الإسناد": [
       {
         "track_id": "labor_law",
@@ -1568,6 +1598,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الإهمال": [
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "الإهمال",
+        "definition_text": "عدم توفير حاجات الطفل الأساسية أو التقصير في ذلك، وتشمل: الحاجات الجسدية، والصحية، والعاطفية، والنفسية، والتربوية، والتعليمية، والفكرية، والاجتماعية، والثقافية، والأمنية.",
+        "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الإيداع القضائي": [
       {
         "track_id": "bankruptcy_law",
@@ -1575,6 +1615,16 @@
         "term_as_written": "الإيداع القضائي",
         "definition_text": "قيام الأمين -المتفق معه من قبل المدين الصغير أو الجهة المختصة- بتسليم المحكمة قراراً صادراً ممن اتفق معه بافتتاح إجراء إعادة التنظيم المالي لصغار المدينين أو إجراء التصفية لصغار المدينين -مستوفياً للمتطلبات النظامية- وقبول المحكمة إيداعه لديها.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإيذاء": [
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "الإيذاء",
+        "definition_text": "كل شكل من أشكال الإساءة للطفل أو استغلاله أو التهديد بذلك، ومنها:",
+        "source_record_id": "child-protection-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3319,6 +3369,16 @@
         "term_as_written": "الجهات المختصة",
         "definition_text": "هي الجهات الحكومية ذات العلاقة بسلامة الأغذية بشكل مباشر أو غير\nمباشر والمعنية بتطبيق أحكام النظام ولائحته.\nالبالغ (أو الإخطار): معلومات محددة يتم تبادلها بين نقاط الاتصال في النظام حول الغذاء غير\nالمأمون والذي قد يشكل ضررا مباشرا أو غير مباشر على صحة الإنسان.",
         "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجهات ذات العلاقة": [
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "الجهات ذات العلاقة",
+        "definition_text": "الجهات التي لها علاقة بحماية الطفل، وفقا لما تحدده اللائحة.",
+        "source_record_id": "child-protection-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5568,6 +5628,14 @@
         "definition_text": "من لم يجاوز (الثامنة عشرة) من عمره.",
         "source_record_id": "anti-trafficking-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "الطفل",
+        "definition_text": "كل إنسان لم يتجاوز الثامنة عشرة من عمره.",
+        "source_record_id": "child-protection-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الطلب": [
@@ -6439,6 +6507,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "chambers-of-commerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "child_protection_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "child-protection-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
