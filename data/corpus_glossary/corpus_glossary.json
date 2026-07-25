@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 198,
-  "total_terms": 1206,
-  "total_definitions": 1979,
-  "tracks_with_definitions_article_parsed": 137,
+  "total_tracks_in_registry": 200,
+  "total_terms": 1212,
+  "total_definitions": 1989,
+  "tracks_with_definitions_article_parsed": 139,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -266,6 +266,16 @@
     }
   ],
   "terms": {
+    "أجهزة الهيئة": [
+      {
+        "track_id": "sdaia_organizational_arrangements",
+        "article_number": 1,
+        "term_as_written": "أجهزة الهيئة",
+        "definition_text": "مركز المعلومات الوطني، والمركز الوطني للذكاء الاصطناعي، ومكتب إدارة البيانات الوطنية.",
+        "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "أدوات الدين": [
       {
         "track_id": "zakat_law",
@@ -2256,6 +2266,16 @@
         "extraction_method": "parenthesized_term"
       }
     ],
+    "البنود التعاقدية القياسية": [
+      {
+        "track_id": "pdpl_cross_border_transfer_regulation",
+        "article_number": 1,
+        "term_as_written": "البنود التعاقدية القياسية",
+        "definition_text": "بنود إلزامية تستخدم عند نقل البيانات الشخصية خارج المملكة تكفل مستوى مناسبا لحماية البيانات الشخصية عند نقلها خارج المملكة بما لا يقل عن مستوى الحماية المقرر في النظام واللوائح، وذلك وفق نموذج قياسي تصدره الجهة المختصة.",
+        "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "البنى الأساسية للمياه": [
       {
         "track_id": "water_law",
@@ -2657,6 +2677,16 @@
         "term_as_written": "التراث العمراني",
         "definition_text": "كل ما شيده الإنسان من مدن، وقرى، وأحياء، ومبان، مع ما تتضمنه من فراغات، ومنشآت، وقطع لها قيمة عمرانية، أو تاريخية، أو علمية، أو ثقافية، أو وطنية.",
         "source_record_id": "antiquities-heritage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الترتيبات": [
+      {
+        "track_id": "sdaia_organizational_arrangements",
+        "article_number": 1,
+        "term_as_written": "الترتيبات",
+        "definition_text": "الترتيبات التنظيمية للهيئة السعودية للبيانات والذكاء الاصطناعي.",
+        "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5048,6 +5078,14 @@
         "definition_text": "رئيس الهيئة.",
         "source_record_id": "nazaha-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sdaia_organizational_arrangements",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الرئيس التنفيذي": [
@@ -6264,6 +6302,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الضمانات المناسبة": [
+      {
+        "track_id": "pdpl_cross_border_transfer_regulation",
+        "article_number": 1,
+        "term_as_written": "الضمانات المناسبة",
+        "definition_text": "متطلبات تفرضها الجهة المختصة على جهات التحكم تتضمن الإلزام بأحكام النظام واللوائح، عند نقل البيانات الشخصية أو الإفصاح عنها لجهات خارج المملكة، وذلك في أي من حالات الإعفاء من شروط توافر مستوى مناسب لحماية البيانات الشخصية أو الحد الأدنى من البيانات الشخصية، بحسب الأحوال؛ بهدف ضمان مستوى مناسب لحماية البيانات الشخصية خارج المملكة بما لا يقل عن مستوى الحماية المقرر في النظام واللوائح.",
+        "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الضوابط": [
       {
         "track_id": "evidence_electronic_procedures_rules",
@@ -6892,6 +6940,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العمليات التشغيلية": [
+      {
+        "track_id": "pdpl_cross_border_transfer_regulation",
+        "article_number": 1,
+        "term_as_written": "العمليات التشغيلية",
+        "definition_text": "مجموعة من الإجراءات المتعلقة بالعمليات التشغيلية الضرورية لنشاط جهة التحكم، مثل عمليات الموارد البشرية، والفواتير والحسابات وغيرها من الإجراءات المتعلقة بسير العمل.",
+        "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العملية": [
       {
         "track_id": "aml_regulation",
@@ -7201,6 +7259,16 @@
         "term_as_written": "القواعد",
         "definition_text": "قواعد السلوك المهني للمحامين.",
         "source_record_id": "sulook-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "القواعد المشتركة الملزمة": [
+      {
+        "track_id": "pdpl_cross_border_transfer_regulation",
+        "article_number": 1,
+        "term_as_written": "القواعد المشتركة الملزمة",
+        "definition_text": "قواعد تعد من قبل جهة التحكم، تطبق على كل جهة تحكم ومعالجة طرف في مجموعة كيانات متعددة الجنسيات تكفل مستوى مناسبا لحماية البيانات الشخصية عند نقلها خارج المملكة بما لا يقل عن مستوى الحماية المقرر في النظام واللوائح.",
+        "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7759,6 +7827,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية لنظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية.",
         "source_record_id": "patent-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "pdpl_cross_border_transfer_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة نقل البيانات الشخصية إلى خارج المملكة.",
+        "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9041,6 +9117,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة البنك.",
         "source_record_id": "sama-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sdaia_organizational_arrangements",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13493,6 +13577,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "هيئة الزكاة والضريبة والجمارك.",
         "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "sdaia_organizational_arrangements",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للبيانات والذكاء الاصطناعي.",
+        "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {

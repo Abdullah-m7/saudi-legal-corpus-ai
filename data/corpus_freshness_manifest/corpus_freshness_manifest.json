@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 198,
+  "total_tracks": 200,
   "known_source_staleness_risk_count": 15,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -2849,6 +2849,32 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "pdpl_cross_border_transfer_regulation",
+      "display_name_en": "Regulation on Transfer of Personal Data Outside the Kingdom",
+      "display_name_ar": "لائحة نقل البيانات الشخصية إلى خارج المملكة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_PRIMARY_MULTI_SOURCE_SDAIA_PORTAL_X_UQN_GAZETTE_BOE_UNREACHABLE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Decision of the President of the Saudi Data and AI Authority (SDAIA) No. (1840), dated 27/2/1446H, issued pursuant to Article (29) of the Personal Data Protection Law (Royal Decree M/19, 9/2/1443H). Published in Umm al-Qura Official Gazette, 28/2/1446H (1 September 2024G). laws.boe.gov.sa unreachable this pass (TCP connection reset). PRIMARY x2 independent official government sources — SDAIA's own live portal (dgp.sdaia.gov.sa) and the Umm al-Qura Official Gazette (uqn.gov.sa) — both fetched directly (HTTP 200) and matching verbatim; SECONDARY aunklaw.com (full verbatim match) and LexisMiddleEast (confirms 'Version 2.0' labeling).",
+      "registry_source_url": null,
+      "official_source_file": "sources/pdpl_cross_border_transfer_regulation/law/official_source/pdpl_cross_border_transfer_regulation_official_source.json",
+      "source_urls": [
+        "https://sdaia.gov.sa/Documents/RegulationonPersonalDataAR.pdf",
+        "https://uqn.gov.sa/details?p=23597",
+        "https://uqn.gov.sa/details?p=25412",
+        "https://www.uqn.gov.sa/api/article/19307/json"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "dgp.sdaia.gov.sa",
+        "laws.boe.gov.sa",
+        "sdaia.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "pdpl_implementing_regulation",
       "display_name_en": "PDPL Implementing Regulation",
       "display_name_ar": "اللائحة التنفيذية لنظام حماية البيانات الشخصية",
@@ -3316,6 +3342,28 @@
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2022-05-17; track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "saudi_engineers_article1_supervising_authority_boe_stale_vs_amended: Article 1 (the Authority's supervising government entity) carries a single confirmed amendment per BOE's own 'تعديلات المادة' changelog: Council of Ministers Resolution No. (57) dated 20/1/1442هـ, substituting 'تعمل تحت"
+    },
+    {
+      "track_id": "sdaia_organizational_arrangements",
+      "display_name_en": "Organizational Arrangements of the Saudi Data and AI Authority (SDAIA)",
+      "display_name_ar": "الترتيبات التنظيمية للهيئة السعودية للبيانات والذكاء الاصطناعي",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='SDAIA_OFFICIAL_SITE_PDF_PRIMARY_JINA_READER_PROXY_LIGATURE_ARTIFACT_RECONSTRUCTED_X_QISTAS_LEXISMIDDLEEAST_SPA_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Council of Ministers Resolution No. (292), dated 27/4/1441H, issued pursuant to Royal Order No. (A/471), dated 29/12/1440H (SDAIA's founding instrument). Amended by Council of Ministers Resolution No. (195), dated 15/3/1444H. laws.boe.gov.sa: no dedicated lawId page located this pass despite a targeted search. PRIMARY SDAIA's own official site PDF, reached via the r.jina.ai reader-proxy (direct fetch fails domain-wide in this sandbox); SECONDARY qistas.com, lexismiddleeast.com, almirkaz.com, qanoniah.com; PLUS a wholly separate primary source (Saudi Press Agency) independently confirming the founding Royal Order A/471.",
+      "registry_source_url": null,
+      "official_source_file": "sources/sdaia_organizational_arrangements/law/official_source/sdaia_organizational_arrangements_official_source.json",
+      "source_urls": [
+        "https://r.jina.ai/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "sdaia.gov.sa",
+        "spa.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
     },
     {
       "track_id": "sharia_procedure_implementing_regulation",

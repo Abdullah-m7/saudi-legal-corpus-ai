@@ -19,10 +19,10 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 198,
+  "total_tracks": 200,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 105,
-    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 45,
+    "TIER_1_PRIMARY_MULTI_SOURCE": 106,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 46,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 25,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
   },
@@ -1037,6 +1037,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "pdpl_cross_border_transfer_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='TIER_1_PRIMARY_MULTI_SOURCE_SDAIA_PORTAL_X_UQN_GAZETTE_BOE_UNREACHABLE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "pdpl_implementing_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1203,6 +1210,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت ثلاث لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 15 نوفمبر 2019 إلى 15 سبتمبر 2025) كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (الموقع الرسمي للهيئة السعودية للمهندسين نفسها saudieng.sa، ثلاث لقطات 2017-2022، نطاق منفصل فعلياً) ومصدر ثانوي (تغطية صحفية من الشرق الأوسط للمادة الأولى). مصدران رسميان (BOE وsaudieng.sa) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط awqaf_law (BOE عبر Wayback × web.awqaf.gov.sa). راجع has_per_article_variation للمادتين 1 و6 اللتين تحملان تناقضاً مؤكَّداً (لا افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد على كل من BOE وموقع الهيئة نفسه، مفصَّلاً في official_source.json الخاص بالمسار.",
       "has_per_article_variation": true,
       "per_article_variation_note": "7 مواد غير معدَّلة مصدرها مزدوج رسمي (ثلاث لقطات Wayback لبوابة BOE × الموقع الرسمي للهيئة saudieng.sa)، متطابقة دون فارق جوهري. أما المادة الأولى (الجهة المشرفة) فتحمل تناقضاً مؤكَّداً: سجل BOE يوثّق نقل الإشراف بموجب قرار مجلس الوزراء 57، 1442هـ، بينما النص الرئيسي على كل من بوابة BOE وموقع الهيئة نفسه ظل ثابتاً بصياغة 'وزارة التجارة' القديمة عبر جميع اللقطات — اعتُمد نص سجل التعديلات المقتبس، وتأكَّد بتغطية صحفية مستقلة (الشرق الأوسط). أما المادة السادسة (تشكيل مجلس الإدارة) فتحمل تعديلين متتاليين موثَّقين بالكامل (المرسوم الملكي م/60، 1425هـ، ثم قرار مجلس الوزراء 388، 1443هـ) — اعتُمد النص الأحدث الكامل (388)، مؤكَّداً حرفياً من موقع الهيئة الرسمي، بينما ظل النص الرئيسي لبوابة BOE عالقاً على صياغة 2002 الأصلية طوال الفترة؛ راجع official_source.json الخاص بالمسار للتفاصيل الكاملة."
+    },
+    {
+      "track_id": "sdaia_organizational_arrangements",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='SDAIA_OFFICIAL_SITE_PDF_PRIMARY_JINA_READER_PROXY_LIGATURE_ARTIFACT_RECONSTRUCTED_X_QISTAS_LEXISMIDDLEEAST_SPA_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "sharia_procedure_implementing_regulation",

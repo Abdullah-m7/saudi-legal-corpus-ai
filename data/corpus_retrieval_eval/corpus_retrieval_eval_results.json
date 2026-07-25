@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 424,
-  "top1_hits": 397,
-  "top3_hits": 417,
-  "top5_hits": 420,
-  "top1_accuracy": 0.9363,
-  "top3_accuracy": 0.9835,
-  "top5_accuracy": 0.9906,
-  "mrr_at_5": 0.9592,
+  "total_queries": 428,
+  "top1_hits": 401,
+  "top3_hits": 421,
+  "top5_hits": 424,
+  "top1_accuracy": 0.9369,
+  "top3_accuracy": 0.9836,
+  "top5_accuracy": 0.9907,
+  "mrr_at_5": 0.9596,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -5713,14 +5713,14 @@
      "score": 44
     },
     {
+     "record_id": "sdaia-organizational-arrangements-llm-art-012",
+     "article_number": 12,
+     "score": 27
+    },
+    {
      "record_id": "cybersecurity-authority-law-llm-art-012",
      "article_number": 12,
      "score": 26
-    },
-    {
-     "record_id": "documentation-settlement-regulation-llm-art-009",
-     "article_number": 9,
-     "score": 22
     }
    ]
   },
@@ -5806,14 +5806,14 @@
      "score": 62
     },
     {
+     "record_id": "sdaia-organizational-arrangements-llm-art-002",
+     "article_number": 2,
+     "score": 31
+    },
+    {
      "record_id": "mosalaha-center-regulation-llm-art-002",
      "article_number": 2,
      "score": 28
-    },
-    {
-     "record_id": "documentation-settlement-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 26
     }
    ]
   },
@@ -6865,9 +6865,9 @@
      "score": 25
     },
     {
-     "record_id": "labor-reg-llm-art-038",
-     "article_number": 38,
-     "score": 18
+     "record_id": "pdpl-cross-border-transfer-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 24
     }
    ]
   },
@@ -7702,9 +7702,9 @@
      "score": 34
     },
     {
-     "record_id": "finance-companies-law-llm-art-001",
-     "article_number": 1,
-     "score": 22
+     "record_id": "sdaia-organizational-arrangements-llm-art-012",
+     "article_number": 12,
+     "score": 30
     }
    ]
   },
@@ -9252,8 +9252,8 @@
      "score": 35
     },
     {
-     "record_id": "etec-law-llm-art-010",
-     "article_number": 10,
+     "record_id": "sdaia-organizational-arrangements-llm-art-008",
+     "article_number": 8,
      "score": 29
     }
    ]
@@ -12383,8 +12383,8 @@
      "score": 12
     },
     {
-     "record_id": "oa-llm-companies-art-041",
-     "article_number": 41,
+     "record_id": "pdpl-cross-border-transfer-regulation-llm-art-007",
+     "article_number": 7,
      "score": 11
     }
    ]
@@ -13161,6 +13161,130 @@
      "record_id": "judgment-objection-methods-regulation-llm-art-062",
      "article_number": 62,
      "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "pcb-001",
+   "query_ar": "تنشر الجهة المختصة في موقعها الرسمي قائمة الدول أو المنظمات الدولية التي توفر مستوى مناسبا لحماية البيانات الشخصية وتقوم الجهة المختصة بمراجعة هذه القائمة كل أربع سنوات",
+   "category": "topical",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-cross-border-transfer-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 57
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-004",
+     "article_number": 4,
+     "score": 31
+    },
+    {
+     "record_id": "pdpl-law-llm-art-034",
+     "article_number": 34,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "pcb-002",
+   "query_ar": "لا تسري أي من الإعفاءات الممنوحة وفقا للحالات المنصوص عليها في المادة الرابعة من اللائحة إذا تحقق أي مما يأتي إخلال جهة التحكم بتطبيق الضمانات المناسبة",
+   "category": "topical",
+   "gold": {
+    "corpus": "pdpl",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "pdpl-cross-border-transfer-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 56
+    },
+    {
+     "record_id": "pdpl-cross-border-transfer-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 42
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-004",
+     "article_number": 4,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "sda-001",
+   "query_ar": "تكون الهيئة الجهة المختصة في المملكة بالبيانات بما في ذلك البيانات الضخمة والذكاء الاصطناعي والمرجع الوطني في كل ما يتعلق بهما من تنظيم وتطوير وتعامل",
+   "category": "definitional",
+   "gold": {
+    "corpus": "sdaia",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sdaia-organizational-arrangements-llm-art-003",
+     "article_number": 3,
+     "score": 52
+    },
+    {
+     "record_id": "sdaia-organizational-arrangements-llm-art-004",
+     "article_number": 4,
+     "score": 39
+    },
+    {
+     "record_id": "cybersecurity-authority-law-llm-art-003",
+     "article_number": 3,
+     "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "sda-002",
+   "query_ar": "يكون مركز المعلومات الوطني المالك والمطور والمشغل للشبكة الحكومية الآمنة GSN والمستضيف لقناة التكامل الحكومية GSB",
+   "category": "topical",
+   "gold": {
+    "corpus": "sdaia",
+    "law_component": "law",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sdaia-organizational-arrangements-llm-art-009",
+     "article_number": 9,
+     "score": 29
+    },
+    {
+     "record_id": "credit-information-law-llm-art-001",
+     "article_number": 1,
+     "score": 15
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-007",
+     "article_number": 7,
+     "score": 15
     }
    ]
   }

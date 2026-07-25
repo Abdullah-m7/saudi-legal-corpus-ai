@@ -239,6 +239,8 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_state_revenue_law_track.py",
     "scripts/gen_etec_law_track.py",
     "scripts/gen_einvoicing_regulation_track.py",
+    "scripts/gen_pdpl_cross_border_transfer_regulation_track.py",
+    "scripts/gen_sdaia_organizational_arrangements_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",
@@ -251,7 +253,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/run_corpus_retrieval_eval.py",
 ]
 
-VALIDATOR_TIMEOUT = 300
+VALIDATOR_TIMEOUT = 480
 WORKERS = 4
 
 

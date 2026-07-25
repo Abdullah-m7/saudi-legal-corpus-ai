@@ -247,6 +247,8 @@ REQUIRED_TRACK_IDS = [
     "state_revenue_law",
     "etec_law",
     "einvoicing_regulation",
+    "pdpl_cross_border_transfer_regulation",
+    "sdaia_organizational_arrangements",
 ]
 
 CHECKS: list[str] = []
@@ -291,7 +293,7 @@ def main() -> int:
 
     # [3] 189 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 198 tracks present...", len(track_ids) == 198 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 200 tracks present...", len(track_ids) == 200 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -2144,7 +2146,27 @@ def main() -> int:
           eir_counts.get("legal_status_breakdown") == {"اصلية": 7, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={eir_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 11528 records...", uix.get("total_records") == 11528,
+    pcbtr = tracks_by_id.get("pdpl_cross_border_transfer_regulation", {})
+    pcbtr_counts = pcbtr.get("record_counts", {})
+    check("[7g186] pdpl_cross_border_transfer_regulation: 9 Arabic records, SDAIA portal x Umm al-Qura gazette primary, BOE unreachable...",
+          pcbtr_counts.get("arabic_articles") == 9
+          and pcbtr.get("official_text_status") == "TIER_1_PRIMARY_MULTI_SOURCE_SDAIA_PORTAL_X_UQN_GAZETTE_BOE_UNREACHABLE",
+          f"counts={pcbtr_counts}")
+    check("    pdpl_cross_border_transfer_regulation: status breakdown 9/0/0/0...",
+          pcbtr_counts.get("legal_status_breakdown") == {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={pcbtr_counts.get('legal_status_breakdown')}")
+
+    soa = tracks_by_id.get("sdaia_organizational_arrangements", {})
+    soa_counts = soa.get("record_counts", {})
+    check("[7g187] sdaia_organizational_arrangements: 16 Arabic records, SDAIA site PDF via jina reader-proxy ligature-artifact reconstructed, BOE page not located...",
+          soa_counts.get("arabic_articles") == 16
+          and soa.get("official_text_status") == "SDAIA_OFFICIAL_SITE_PDF_PRIMARY_JINA_READER_PROXY_LIGATURE_ARTIFACT_RECONSTRUCTED_X_QISTAS_LEXISMIDDLEEAST_SPA_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+          f"counts={soa_counts}")
+    check("    sdaia_organizational_arrangements: status breakdown 15/1/0/0...",
+          soa_counts.get("legal_status_breakdown") == {"اصلية": 15, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={soa_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 11553 records...", uix.get("total_records") == 11553,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -2206,8 +2228,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 11697...",
-          registry.get("total_primary_arabic_governing_records") == 11697,
+    check("[19a] total_primary_arabic_governing_records == 11722...",
+          registry.get("total_primary_arabic_governing_records") == 11722,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -2222,8 +2244,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 12592...",
-          registry.get("total_registry_counted_records") == 12592,
+    check("[19e] total_registry_counted_records == 12617...",
+          registry.get("total_registry_counted_records") == 12617,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -2247,7 +2269,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"11697 + 614 + 281 = 12592")
+          f"11722 + 614 + 281 = 12617")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -2265,7 +2287,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 198 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 200 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

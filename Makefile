@@ -312,6 +312,8 @@ export PYTHONPATH := src:$(PYTHONPATH)
         state-revenue-law-track-validate \
         etec-law-track-validate \
         einvoicing-regulation-track-validate \
+        pdpl-cross-border-transfer-regulation-track-validate \
+        sdaia-organizational-arrangements-track-validate \
         qa-gate
 
 help:
@@ -1672,6 +1674,12 @@ etec-law-track-validate:
 
 einvoicing-regulation-track-validate:
 	$(PY) scripts/validate_einvoicing_regulation_track.py
+
+pdpl-cross-border-transfer-regulation-track-validate:
+	$(PY) scripts/validate_pdpl_cross_border_transfer_regulation_track.py
+
+sdaia-organizational-arrangements-track-validate:
+	$(PY) scripts/validate_sdaia_organizational_arrangements_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

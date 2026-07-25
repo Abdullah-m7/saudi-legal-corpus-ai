@@ -13,13 +13,13 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 11528,
-  "total_references_extracted": 2390,
-  "intra_law_count": 2048,
-  "inter_law_count": 342,
+  "total_records_scanned": 11553,
+  "total_references_extracted": 2397,
+  "intra_law_count": 2053,
+  "inter_law_count": 344,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 2011,
+    "high": 2018,
     "medium": 379
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
@@ -18813,6 +18813,72 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "pdpl_cross_border_transfer_regulation",
+      "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "حماية البيانات الشخصية",
+      "raw_citation_text": "المادة (الأولى) من نظام حماية البيانات الشخصية الصادر بالمرسوم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_cross_border_transfer_regulation",
+      "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "pdpl_cross_border_transfer_regulation",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام، على النحو الآتي: 1",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_cross_border_transfer_regulation",
+      "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "pdpl_cross_border_transfer_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة. 2- للجهة المختصة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_cross_border_transfer_regulation",
+      "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "pdpl_cross_border_transfer_regulation",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام، أو أي منهما، ويكون",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_cross_border_transfer_regulation",
+      "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "pdpl_cross_border_transfer_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من اللائحة، إذا تحقق أي مما ي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "pdpl_cross_border_transfer_regulation",
+      "source_record_id": "pdpl-cross-border-transfer-regulation-llm-art-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "pdpl_cross_border_transfer_regulation",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام. هـ- الآثار المادية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "personal_status_law",
       "source_record_id": "personal-status-law-llm-art-010",
       "source_article_number": 10,
@@ -20999,6 +21065,17 @@
       "target_article_number": 2,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثانية) من النظام. وله على الأخص ما ي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "sdaia_organizational_arrangements",
+      "source_record_id": "sdaia-organizational-arrangements-llm-art-015",
+      "source_article_number": 15,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {

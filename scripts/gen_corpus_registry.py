@@ -236,6 +236,8 @@ REAL_ESTATE_BROKERAGE_LAW_LLM = os.path.join(ROOT, "data", "real_estate_brokerag
 STATE_REVENUE_LAW_LLM = os.path.join(ROOT, "data", "state_revenue_arabic_legal_llm", "state_revenue_law_legal_llm_001_032.json")
 ETEC_LAW_LLM = os.path.join(ROOT, "data", "etec_arabic_legal_llm", "etec_law_legal_llm_001_018.json")
 EINVOICING_REGULATION_LLM = os.path.join(ROOT, "data", "einvoicing_regulation_arabic_legal_llm", "einvoicing_regulation_legal_llm_001_007.json")
+PDPL_CROSS_BORDER_TRANSFER_REGULATION_LLM = os.path.join(ROOT, "data", "pdpl_cross_border_transfer_regulation_arabic_legal_llm", "pdpl_cross_border_transfer_regulation_legal_llm_001_009.json")
+SDAIA_ORGANIZATIONAL_ARRANGEMENTS_LLM = os.path.join(ROOT, "data", "sdaia_organizational_arrangements_arabic_legal_llm", "sdaia_organizational_arrangements_legal_llm_001_016.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -465,6 +467,8 @@ def main() -> int:
     state_revenue_law_llm = _load_json(STATE_REVENUE_LAW_LLM)
     etec_law_llm = _load_json(ETEC_LAW_LLM)
     einvoicing_regulation_llm = _load_json(EINVOICING_REGULATION_LLM)
+    pdpl_cross_border_transfer_regulation_llm = _load_json(PDPL_CROSS_BORDER_TRANSFER_REGULATION_LLM)
+    sdaia_organizational_arrangements_llm = _load_json(SDAIA_ORGANIZATIONAL_ARRANGEMENTS_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -485,7 +489,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 198,
+        "total_tracks": 200,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -687,6 +691,8 @@ def main() -> int:
             + state_revenue_law_llm["record_count"]  # 32 State Revenue Law (Royal Decree M/68, 18/11/1431H, as amended by M/5 1440H and M/93 1443H) (DISTINCT TIER, live BOE unreachable, PRIMARY reached via Wayback x nezams.com x qanoonsa.com triple cross-verification, 30 اصلية/1 معدلة/1 مضافة, no formal فصل structure, CONFIRMED named repeal of the predecessor نظام جباية أموال الدولة (Royal Will 41/3/2, 1359H) via Article 30, that predecessor not itself tracked so no supersession edge needed; explicitly EXCLUDES an unconfirmed July-2026 Council-of-Ministers-approved "update" whose promulgating instrument number remains unfound, see track notes)
             + etec_law_llm["record_count"]  # 18 ETEC organizing statute (Council of Ministers Resolution 108, 14/2/1440H, amended by Resolutions 693 1441H and 631 1445H) (TIER_1, live BOE unreachable, PRIMARY two independent Wayback Machine snapshots of the same BOE page 18 months apart in full literal agreement across all 18 articles, supplementary nezams.com cross-check, 16 اصلية/2 معدلة (Articles 4 and 7), flat structure no أبواب/فصول, NO predecessor repeal confirmed (Article 18 has no repeal language), see track notes)
             + einvoicing_regulation_llm["record_count"]  # 7 E-Invoicing Regulation (ZATCA Board of Directors Decision No. 2-6-20, 4 Rabi al-Thani 1442H) (TIER_2, laws.boe.gov.sa has no dedicated lawId page for this Board-level decision, PRIMARY zatca.gov.sa's own official Arabic+English PDFs fetched directly, cross-verified word-for-word against an independent mirror (aflaksolutions.com), all 7 اصلية flat structure, the ~24 subsequent "phase" decisions confirmed to be rollout-schedule instruments not textual amendments, NO predecessor repeal (operates as part of vat_regulation per its own Article 2(B)), see track notes)
+            + pdpl_cross_border_transfer_regulation_llm["record_count"]  # 9 Regulation on Transfer of Personal Data Outside the Kingdom (SDAIA President Decision No. 1840, 27/2/1446H) (TIER_1_PRIMARY_MULTI_SOURCE, laws.boe.gov.sa unreachable this pass (TCP reset), PRIMARY x2 independent official government sources -- SDAIA's own live portal (dgp.sdaia.gov.sa) and the Umm al-Qura Official Gazette (uqn.gov.sa) -- fetched directly and matching verbatim, SECONDARY aunklaw.com and LexisMiddleEast cross-verified, all 9 اصلية flat structure, a materially different 2023 predecessor regulation (10 articles/4 chapters) independently confirmed to exist via its own Umm al-Qura gazette record, but its own promulgating decree number/date could not be confirmed this pass and no explicit repeal clause was found in either version -- supersession disclosed as a STRONG INFERENCE from subject/issuer identity, irreconcilable structural conflict, and multiple independent press/legal-aggregator descriptions of the new regulation as an "update", NOT asserted as a confirmed fact, that predecessor is not itself a tracked instrument so no supersession-graph edge is added regardless, see track notes)
+            + sdaia_organizational_arrangements_llm["record_count"]  # 16 Organizational Arrangements of the Saudi Data and AI Authority (SDAIA) (Council of Ministers Resolution No. 292, 27/4/1441H, amended by Resolution No. 195, 15/3/1444H) (TIER_2, laws.boe.gov.sa has no dedicated lawId page located this pass, PRIMARY SDAIA's own official site PDF reached via the r.jina.ai reader-proxy (direct fetch fails domain-wide in this sandbox), reconstructed via disclosed, cross-validated correction of a confirmed lam-alif-ligature-reversal extraction artifact (NOT pixel-level OCR, whose raw-byte prerequisites were unreachable this pass), independently cross-checked against qistas.com, lexismiddleeast.com, almirkaz.com, and qanoniah.com, PLUS a wholly separate primary source (the Saudi Press Agency) independently confirming the founding Royal Order A/471 (29/12/1440H), 15 اصلية/1 معدلة (بند خامساً, board formation, attribution based solely on a secondary aggregator's own indexing metadata -- disclosed as a limited-confidence attribution), flat 16-بند structure (no أبواب/فصول/مواد), NO repeal clause and NO violations/penalties clause anywhere in the instrument, CONFIRMED NEGATIVE predecessor-repeal finding (the pre-existing National Information Center was organizationally absorbed under SDAIA without an explicit repeal of its own founding Royal Order/Resolution), see track notes)
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -879,6 +885,8 @@ def main() -> int:
             + state_revenue_law_llm["record_count"]
             + etec_law_llm["record_count"]
             + einvoicing_regulation_llm["record_count"]
+            + pdpl_cross_border_transfer_regulation_llm["record_count"]
+            + sdaia_organizational_arrangements_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -6633,6 +6641,62 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "E-Invoicing Regulation «لائحة الفوترة الإلكترونية» — ZATCA (at issuance, GAZT) Board of Directors Decision No. (2-6-20), dated 4 Rabi' al-Thani 1442H. Discovered via a fresh multi-modal coverage-gap-map sweep at the 193-track baseline, explicitly flagged as needing one more confirmation pass against a primary source before building — that confirmation succeeded this pass. **7 records, ALL اصلية** (Definitions; Purpose/Scope; Persons Subject; Provisions on Invoices/Notes; Technical Specifications; General Provisions; Enforcement/Obligation), flat structure. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa confirmed to have NO dedicated lawId page for this Board-level decision (live fetch HTTP 503, plus a targeted site-restricted search), consistent with this corpus's established pattern for board/ministerial-level regulations. PRIMARY zatca.gov.sa's own official site (both Arabic and English-translation PDFs, HTTP 200), cross-verified word-for-word against an independent third-party mirror (aflaksolutions.com) — identical content article-by-article; decision number/date further corroborated across qanoonsa.com, lexismiddleeast.com, afiflaw.com. This regulation is Article 2(B)-declared to be 'an integral part of the VAT Implementing Regulation and complementary to it' (already ingested as vat_regulation) rather than a repeal of anything. **CONFIRMED**: the ~24 subsequent rolling 'phase' decisions and a separate Governor Controls Resolution are rollout-schedule/technical-detail instruments issued under this Regulation's own Article 6(B) delegation — NOT textual amendments to the 7 founding articles, so the track's status_counts remain all اصلية. **NO repeal of any predecessor instrument** found or expected (a genuinely new requirement). A minor disclosed, unresolved Gregorian-date question (ZATCA's own English cover states 'December 4th 2020' vs. an independently Hijri-converted 19 November 2020, matching the mirror) is resolved with high confidence but not pinned to a primary Umm al-Qura Gazette record (an inaccessible Vue.js SPA this pass) — disclosed, not silently asserted. Five minor spelling inconsistencies (missing hamza), identical across both independently-fetched files, preserved verbatim not corrected. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "pdpl_cross_border_transfer_regulation",
+                "display_name_ar": "لائحة نقل البيانات الشخصية إلى خارج المملكة",
+                "display_name_en": "Regulation on Transfer of Personal Data Outside the Kingdom",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_1_PRIMARY_MULTI_SOURCE_SDAIA_PORTAL_X_UQN_GAZETTE_BOE_UNREACHABLE",
+                "source_authority": "Decision of the President of the Saudi Data and AI Authority (SDAIA) No. (1840), dated 27/2/1446H, issued pursuant to Article (29) of the Personal Data Protection Law (Royal Decree M/19, 9/2/1443H). Published in Umm al-Qura Official Gazette, 28/2/1446H (1 September 2024G). laws.boe.gov.sa unreachable this pass (TCP connection reset). PRIMARY x2 independent official government sources — SDAIA's own live portal (dgp.sdaia.gov.sa) and the Umm al-Qura Official Gazette (uqn.gov.sa) — both fetched directly (HTTP 200) and matching verbatim; SECONDARY aunklaw.com (full verbatim match) and LexisMiddleEast (confirms 'Version 2.0' labeling).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": pdpl_cross_border_transfer_regulation_llm["record_count"],
+                    "data_path": "data/pdpl_cross_border_transfer_regulation_arabic_legal_llm/pdpl_cross_border_transfer_regulation_legal_llm_001_009.json"}},
+                "record_counts": {"arabic_articles": pdpl_cross_border_transfer_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": pdpl_cross_border_transfer_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/pdpl_cross_border_transfer_regulation/law/official_source/pdpl_cross_border_transfer_regulation_official_source.json",
+                    "sources/pdpl_cross_border_transfer_regulation/law/verified/pdpl_cross_border_transfer_regulation_verified_records.jsonl",
+                    "data/pdpl_cross_border_transfer_regulation_arabic_legal_llm/pdpl_cross_border_transfer_regulation_legal_llm_001_009.json",
+                ],
+                "validator_targets": ["make pdpl-cross-border-transfer-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Regulation on Transfer of Personal Data Outside the Kingdom «لائحة نقل البيانات الشخصية إلى خارج المملكة» — SDAIA President Decision No. (1840), dated 27/2/1446H, issued pursuant to Article (29) of the Personal Data Protection Law (M/19). Discovered via a targeted, precision-requested deep-dive scan for NCA/SDAIA binding instruments not yet in this corpus. **9 records, ALL اصلية**, flat structure (no أبواب/فصول). Its legislative basis (PDPL Article 29, sub-paragraph (د) of paragraph (1), paragraphs (ب)/(ج) of paragraph (2), and paragraph (4)) was independently re-verified by reading the article's own already-ingested text in this corpus (sources/pdpl/verified) rather than trusting the initial research lead. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — laws.boe.gov.sa unreachable this pass (TCP reset); PRIMARY reached via TWO INDEPENDENT official government sources in full agreement: SDAIA's own live portal (dgp.sdaia.gov.sa) and the Umm al-Qura Official Gazette (uqn.gov.sa), the latter additionally supplying the decree number/date the SDAIA portal itself omits. A structurally distinct predecessor regulation (same general subject, different title without the word 'إلى', 10 articles across 4 chapters) was independently confirmed to exist via its own Umm al-Qura gazette record (published 1445-2-22H/07-09-2023G) — but neither published text (old or new) contains an explicit repeal/supersession clause, and the predecessor's own promulgating decree number could not be independently confirmed this pass (a single unconfirmed WebSearch-surfaced candidate is disclosed but NOT relied upon). Supersession of the 2023 predecessor by this 2024 regulation is therefore reported as a **STRONG INFERENCE** (same subject/issuer, irreconcilable structural conflict between the two regimes, and multiple independent press/legal-aggregator sources describing the new regulation as an 'update' to prior regulations) — NOT an asserted fact. That predecessor is not itself a tracked instrument in this corpus, so no supersession-graph edge is added regardless of the confidence level. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "sdaia_organizational_arrangements",
+                "display_name_ar": "الترتيبات التنظيمية للهيئة السعودية للبيانات والذكاء الاصطناعي",
+                "display_name_en": "Organizational Arrangements of the Saudi Data and AI Authority (SDAIA)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SDAIA_OFFICIAL_SITE_PDF_PRIMARY_JINA_READER_PROXY_LIGATURE_ARTIFACT_RECONSTRUCTED_X_QISTAS_LEXISMIDDLEEAST_SPA_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+                "source_authority": "Council of Ministers Resolution No. (292), dated 27/4/1441H, issued pursuant to Royal Order No. (A/471), dated 29/12/1440H (SDAIA's founding instrument). Amended by Council of Ministers Resolution No. (195), dated 15/3/1444H. laws.boe.gov.sa: no dedicated lawId page located this pass despite a targeted search. PRIMARY SDAIA's own official site PDF, reached via the r.jina.ai reader-proxy (direct fetch fails domain-wide in this sandbox); SECONDARY qistas.com, lexismiddleeast.com, almirkaz.com, qanoniah.com; PLUS a wholly separate primary source (Saudi Press Agency) independently confirming the founding Royal Order A/471.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": sdaia_organizational_arrangements_llm["record_count"],
+                    "data_path": "data/sdaia_organizational_arrangements_arabic_legal_llm/sdaia_organizational_arrangements_legal_llm_001_016.json"}},
+                "record_counts": {"arabic_articles": sdaia_organizational_arrangements_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": sdaia_organizational_arrangements_llm["record_count"]},
+                "data_paths": [
+                    "sources/sdaia_organizational_arrangements/law/official_source/sdaia_organizational_arrangements_official_source.json",
+                    "sources/sdaia_organizational_arrangements/law/verified/sdaia_organizational_arrangements_verified_records.jsonl",
+                    "data/sdaia_organizational_arrangements_arabic_legal_llm/sdaia_organizational_arrangements_legal_llm_001_016.json",
+                ],
+                "validator_targets": ["make sdaia-organizational-arrangements-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Organizational Arrangements of the Saudi Data and AI Authority «الترتيبات التنظيمية للهيئة السعودية للبيانات والذكاء الاصطناعي» — Council of Ministers Resolution No. (292), dated 27/4/1441H, amended by Resolution No. (195), 15/3/1444H. Discovered via the same targeted NCA/SDAIA deep-dive scan as pdpl_cross_border_transfer_regulation. **16 records: 15 اصلية / 1 معدلة (بند خامساً, board formation)**, flat structure of sixteen ordinal بند divisions (أولاً-سادس عشر) — like cybersecurity_authority_enablers, NOT divided into numbered مواد. **VERIFICATION TIER: TIER_2** — no laws.boe.gov.sa lawId page located this pass (targeted site-restricted search surfaced only unrelated BOE-catalogued laws referencing SDAIA in passing). PRIMARY SDAIA's own official site PDF, whose direct fetch fails domain-wide in this sandbox (connection reset) — retrieved instead via the r.jina.ai reader-proxy. The proxy's extraction has a CONFIRMED, disclosed systematic character-order artifact (lam+alif-form bigrams render reversed, e.g. 'الاعتبارية' as 'االعتبارية') — independently confirmed against qistas.com's own clean preview of the first three بنود and corrected via disclosed, cross-validated word-level reconstruction, NOT pixel-level OCR (the PDF's raw bytes could not be obtained this pass: direct fetch, a Wayback replay, and a CORS proxy all failed). SECONDARY cross-verification from qistas.com, lexismiddleeast.com (confirms the Resolution 195 amendment targets specifically بند خامساً), almirkaz.com, and qanoniah.com (existence/citation only, both paywalled beyond preview). **CONFIRMED, INDEPENDENTLY VERIFIED (via the Saudi Press Agency's own text of founding Royal Order A/471)**: the pre-existing National Information Center (Royal Order A/293/1438H, CoM Resolution 495/1439H) was organizationally absorbed under SDAIA without an explicit repeal of its own founding instrument — a genuine NEGATIVE finding, disclosed rather than silently omitted. This instrument's final بند (سادس عشر) contains only a publication/effective-date clause with NO repeal language of any kind, and carries no violations/penalties clause anywhere. The amendment attribution for بند خامساً rests solely on a secondary aggregator's (LexisMiddleEast) own indexing metadata, not an independently-obtained pre/post-amendment textual diff — disclosed as a limited-confidence attribution. Arabic governs; not legal advice.",
             },
         ],
     }
