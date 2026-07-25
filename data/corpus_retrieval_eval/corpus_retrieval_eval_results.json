@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 414,
-  "top1_hits": 388,
-  "top3_hits": 407,
-  "top5_hits": 410,
-  "top1_accuracy": 0.9372,
-  "top3_accuracy": 0.9831,
-  "top5_accuracy": 0.9903,
-  "mrr_at_5": 0.9594,
+  "total_queries": 424,
+  "top1_hits": 397,
+  "top3_hits": 417,
+  "top5_hits": 420,
+  "top1_accuracy": 0.9363,
+  "top3_accuracy": 0.9835,
+  "top5_accuracy": 0.9906,
+  "mrr_at_5": 0.9592,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7097,11 +7097,16 @@
     "law_component": "law",
     "article_number": 10
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "state-revenue-law-llm-art-001",
+     "article_number": 1,
+     "score": 11
+    },
     {
      "record_id": "telecommunications-law-llm-art-010",
      "article_number": 10,
@@ -7110,11 +7115,6 @@
     {
      "record_id": "antiquities-heritage-law-llm-art-035",
      "article_number": 35,
-     "score": 10
-    },
-    {
-     "record_id": "enforcement-regulation-llm-prov-270",
-     "article_number": 270,
      "score": 10
     }
    ]
@@ -7697,13 +7697,13 @@
      "score": 39
     },
     {
-     "record_id": "finance-companies-law-llm-art-001",
-     "article_number": 1,
-     "score": 22
+     "record_id": "etec-law-llm-art-014",
+     "article_number": 14,
+     "score": 34
     },
     {
-     "record_id": "sama-law-llm-art-026",
-     "article_number": 26,
+     "record_id": "finance-companies-law-llm-art-001",
+     "article_number": 1,
      "score": 22
     }
    ]
@@ -9252,9 +9252,9 @@
      "score": 35
     },
     {
-     "record_id": "capital-market-law-llm-art-007",
-     "article_number": 7,
-     "score": 27
+     "record_id": "etec-law-llm-art-010",
+     "article_number": 10,
+     "score": 29
     }
    ]
   },
@@ -11515,8 +11515,8 @@
      "score": 25
     },
     {
-     "record_id": "universities-law-llm-art-022",
-     "article_number": 22,
+     "record_id": "etec-law-llm-art-007",
+     "article_number": 7,
      "score": 24
     }
    ]
@@ -11851,13 +11851,13 @@
      "score": 35
     },
     {
-     "record_id": "civil-status-law-llm-art-070",
-     "article_number": 70,
-     "score": 12
+     "record_id": "state-revenue-law-llm-art-001",
+     "article_number": 1,
+     "score": 14
     },
     {
-     "record_id": "oa-llm-companies-art-091",
-     "article_number": 91,
+     "record_id": "civil-status-law-llm-art-070",
+     "article_number": 70,
      "score": 12
     }
    ]
@@ -12851,6 +12851,316 @@
      "record_id": "general-education-law-llm-art-053",
      "article_number": 53,
      "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "cil-001",
+   "query_ar": "يجوز استخدام المعلومات الائتمانية على شكل أرقام إحصائية، بشرط ألا تحتوي على معلومات تدل على شخصية المستهلك",
+   "category": "topical",
+   "gold": {
+    "corpus": "credit_information",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "credit-information-law-llm-art-007",
+     "article_number": 7,
+     "score": 49
+    },
+    {
+     "record_id": "credit-information-law-llm-art-001",
+     "article_number": 1,
+     "score": 26
+    },
+    {
+     "record_id": "credit-information-law-llm-art-012",
+     "article_number": 12,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "cil-002",
+   "query_ar": "يلتزم الأعضاء والشركات والعاملون لديهم بالمحافظة على سرية المعلومات الائتمانية للمستهلكين، ولا يجوز نشرها أو استخدامها لأي غرض آخر",
+   "category": "topical",
+   "gold": {
+    "corpus": "credit_information",
+    "law_component": "law",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "credit-information-law-llm-art-006",
+     "article_number": 6,
+     "score": 53
+    },
+    {
+     "record_id": "credit-information-law-llm-art-008",
+     "article_number": 8,
+     "score": 36
+    },
+    {
+     "record_id": "credit-information-law-llm-art-005",
+     "article_number": 5,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "reb-001",
+   "query_ar": "يحدد مبلغ عربون الصفقة العقارية التي تتم عن طريق الوسيط العقاري، بالاتفاق بين أطرافها؛ بما لا يتجاوز (٥%) من قيمتها",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_brokerage",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-brokerage-law-llm-art-013",
+     "article_number": 13,
+     "score": 32
+    },
+    {
+     "record_id": "real-estate-brokerage-law-llm-art-015",
+     "article_number": 15,
+     "score": 24
+    },
+    {
+     "record_id": "real-estate-brokerage-law-llm-art-001",
+     "article_number": 1,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "reb-002",
+   "query_ar": "تتحدد عمولة الوساطة العقارية بنسبة (٢,٥%) من قيمة الصفقة إن كانت بيعاً، ومن قيمة إيجار السنة الأولى فقط إن كانت إيجاراً",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_brokerage",
+    "law_component": "law",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-brokerage-law-llm-art-014",
+     "article_number": 14,
+     "score": 47
+    },
+    {
+     "record_id": "real-estate-brokerage-law-llm-art-001",
+     "article_number": 1,
+     "score": 26
+    },
+    {
+     "record_id": "real-estate-brokerage-law-llm-art-015",
+     "article_number": 15,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "srl-001",
+   "query_ar": "يخصص للجهة التي تحقق زيادة في إيراداتها ـ ضمن اعتمادات ميزانيتها ـ ما يقابل (20%) من الزيادة المتحققة في إيراداتها للسنة المالية",
+   "category": "topical",
+   "gold": {
+    "corpus": "state_revenue",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-revenue-law-llm-art-005",
+     "article_number": 5,
+     "score": 45
+    },
+    {
+     "record_id": "capital-market-law-llm-art-020",
+     "article_number": 20,
+     "score": 16
+    },
+    {
+     "record_id": "capital-market-law-llm-art-020_mukarrar_1",
+     "article_number": 20,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "srl-002",
+   "query_ar": "دين الدولة المستحق دين ممتاز ولا يسقط بالتقادم",
+   "category": "topical",
+   "gold": {
+    "corpus": "state_revenue",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-revenue-law-llm-art-019",
+     "article_number": 19,
+     "score": 36
+    },
+    {
+     "record_id": "state-funded-lawyer-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 10
+    },
+    {
+     "record_id": "state-revenue-law-llm-art-013",
+     "article_number": 13,
+     "score": 10
+    }
+   ]
+  },
+  {
+   "query_id": "etc-001",
+   "query_ar": "يكون من بين المراكز المركز الوطني للقياس, ويتمتع بالاستقلال المالي",
+   "category": "topical",
+   "gold": {
+    "corpus": "etec",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "etec-law-llm-art-005",
+     "article_number": 5,
+     "score": 37
+    },
+    {
+     "record_id": "etec-law-llm-art-006",
+     "article_number": 6,
+     "score": 19
+    },
+    {
+     "record_id": "oa-llm-companies-art-242",
+     "article_number": 242,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "etc-002",
+   "query_ar": "يجتمع المجلس (ثلاثة) اجتماعات في السنة المالية الواحدة على الأقل, أو كلما دعت الحاجة إلى ذلك بحسب ما يقدره رئيس المجلس",
+   "category": "topical",
+   "gold": {
+    "corpus": "etec",
+    "law_component": "law",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "etec-law-llm-art-009",
+     "article_number": 9,
+     "score": 36
+    },
+    {
+     "record_id": "sama-law-llm-art-011",
+     "article_number": 11,
+     "score": 28
+    },
+    {
+     "record_id": "alimony-fund-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "eiv-001",
+   "query_ar": "الفاتورة الإلكترونية: فاتورة ضريبية تصدر بصيغة إلكترونية منظمة من خلال وسيلة إلكترونية. ولا تعد الفاتورة الورقية التي يتم تحويلها إلى صيغة إلكترونية من خلال نسخها أو مسحها ضوئيا",
+   "category": "definitional",
+   "gold": {
+    "corpus": "einvoicing",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "einvoicing-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 43
+    },
+    {
+     "record_id": "einvoicing-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 20
+    },
+    {
+     "record_id": "ecommerce-law-llm-art-001",
+     "article_number": 1,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "eiv-002",
+   "query_ar": "يمنح الأشخاص الخاضعين لهذه اللائحة مهلة قدرها اثني عشر (12) شهرا تقويميا من تاريخ نشر اللائحة في الجريدة الرسمية لتطبيق الأحكام الواردة",
+   "category": "topical",
+   "gold": {
+    "corpus": "einvoicing",
+    "law_component": "regulation",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "einvoicing-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 36
+    },
+    {
+     "record_id": "disability-rights-regulation-llm-art-045",
+     "article_number": 45,
+     "score": 31
+    },
+    {
+     "record_id": "judgment-objection-methods-regulation-llm-art-062",
+     "article_number": 62,
+     "score": 28
     }
    ]
   }

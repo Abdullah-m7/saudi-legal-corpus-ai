@@ -307,6 +307,11 @@ export PYTHONPATH := src:$(PYTHONPATH)
         disability-rights-regulation-track-validate \
         anti-smoking-regulation-track-validate \
         general-education-law-track-validate \
+        credit-information-law-track-validate \
+        real-estate-brokerage-law-track-validate \
+        state-revenue-law-track-validate \
+        etec-law-track-validate \
+        einvoicing-regulation-track-validate \
         qa-gate
 
 help:
@@ -1652,6 +1657,21 @@ anti-smoking-regulation-track-validate:
 
 general-education-law-track-validate:
 	$(PY) scripts/validate_general_education_law_track.py
+
+credit-information-law-track-validate:
+	$(PY) scripts/validate_credit_information_law_track.py
+
+real-estate-brokerage-law-track-validate:
+	$(PY) scripts/validate_real_estate_brokerage_law_track.py
+
+state-revenue-law-track-validate:
+	$(PY) scripts/validate_state_revenue_law_track.py
+
+etec-law-track-validate:
+	$(PY) scripts/validate_etec_law_track.py
+
+einvoicing-regulation-track-validate:
+	$(PY) scripts/validate_einvoicing_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

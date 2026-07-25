@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 11430,
-  "total_references_extracted": 2376,
-  "intra_law_count": 2041,
-  "inter_law_count": 335,
+  "total_records_scanned": 11528,
+  "total_references_extracted": 2390,
+  "intra_law_count": 2048,
+  "inter_law_count": 342,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 2000,
-    "medium": 376
+    "high": 2011,
+    "medium": 379
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -4209,7 +4209,7 @@
       "source_record_id": "civil-aviation-law-llm-art-061",
       "source_article_number": 61,
       "type": "inter_law",
-      "target_track_id": "state_funded_lawyer_regulation",
+      "target_track_id": "state_revenue_law",
       "target_article_number": null,
       "target_law_name_raw": "الدولة",
       "raw_citation_text": "وفقا لقانون الدولة التي تم في إقليمها أعمال الإنقاذ أو المحافظة",
@@ -8191,11 +8191,11 @@
       "source_record_id": "criminal-procedure-regulation-llm-art-171",
       "source_article_number": 171,
       "type": "inter_law",
-      "target_track_id": "general_education_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "النيابة العامة",
       "raw_citation_text": "وفقاً لنظام النيابة العامة",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "criminal_procedure_implementing_regulation",
@@ -9097,6 +9097,94 @@
       "target_article_number": 5,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة) من هذه اللائحة وما لم ينص نظا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "ضريبة القيمة المضافة ولائحته التنفيذية والتي تصدر بصيغة إلكتر",
+      "raw_citation_text": "وفقا لنظام ضريبة القيمة المضافة ولائحته التنفيذية والتي تصدر بصيغة إلكتر",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 53,
+      "target_law_name_raw": "ضريبة القيمة المضافة ومكملة لها",
+      "raw_citation_text": "المادة الثالثة والخمسين من اللائحة التنفيذية لضريبة القيمة المضافة. ب. تعد هذه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لنظام ضريبة القيمة المضافة",
+      "raw_citation_text": "وفقا للائحة التنفيذية لنظام ضريبة القيمة المضافة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 53,
+      "target_law_name_raw": "ضريبة القيمة المضافة",
+      "raw_citation_text": "المادة الثالثة والخمسون من اللائحة التنفيذية لنظام ضريبة القيمة المض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 54,
+      "target_law_name_raw": "ضريبة القيمة المضافة",
+      "raw_citation_text": "المادة الرابعة والخمسون من اللائحة التنفيذية لنظام ضريبة القيمة المض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "vat_regulation",
+      "target_article_number": 66,
+      "target_law_name_raw": "ضريبة القيمة المضافة",
+      "raw_citation_text": "المادة السادسة والستين من اللائحة التنفيذية لنظام ضريبة القيمة المض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "einvoicing_regulation",
+      "source_record_id": "einvoicing-regulation-llm-art-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "einvoicing_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة من هذه اللائحة والخاصة بإصدار",
       "confidence": "high"
     },
     {
@@ -10120,6 +10208,17 @@
       "target_article_number": null,
       "target_law_name_raw": "البيئة",
       "raw_citation_text": "أحكام نظام البيئة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "etec_law",
+      "source_record_id": "etec-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -18663,7 +18762,7 @@
       "source_record_id": "pdpl-reg-llm-art-027",
       "source_article_number": 27,
       "type": "inter_law",
-      "target_track_id": "civil_transactions_law",
+      "target_track_id": "credit_information_law",
       "target_article_number": null,
       "target_law_name_raw": "المعلومات الائتمانية",
       "raw_citation_text": "أحكام نظام المعلومات الائتمانية",
@@ -19625,6 +19724,50 @@
       "target_law_name_raw": "تحدد أحكام الترخيص لهم",
       "raw_citation_text": "وفق قواعد تحدد أحكام الترخيص لهم",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "real_estate_brokerage_law",
+      "source_record_id": "real-estate-brokerage-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "real_estate_brokerage_law",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من النظام، وذلك بعد الحصول عل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_brokerage_law",
+      "source_record_id": "real-estate-brokerage-law-llm-art-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "real_estate_brokerage_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من النظام. ٦- الإفصاح -عند عر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_brokerage_law",
+      "source_record_id": "real-estate-brokerage-law-llm-art-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "real_estate_brokerage_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من النظام، وعدم تقديم أي معلو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_brokerage_law",
+      "source_record_id": "real-estate-brokerage-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "real_estate_brokerage_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام، وتصدر قراراتها بال",
+      "confidence": "high"
     },
     {
       "source_track_id": "real_estate_expropriation_law",
@@ -23092,6 +23235,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "state_revenue_law",
+      "source_record_id": "state-revenue-law-llm-art-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "state_revenue_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة عشرة",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "sulook_regulation",
       "source_record_id": "sulook-regulation-llm-art-009-mukarrar",
       "source_article_number": 9,
@@ -24746,22 +24900,22 @@
       "source_record_id": "vat-regulation-llm-art-056",
       "source_article_number": 53,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "einvoicing_regulation",
       "target_article_number": null,
       "target_law_name_raw": "الفوترة الإلكترونية أحكام",
       "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية أحكام",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "vat_regulation",
       "source_record_id": "vat-regulation-llm-art-056",
       "source_article_number": 53,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "einvoicing_regulation",
       "target_article_number": null,
       "target_law_name_raw": "الفوترة الإلكترونية",
       "raw_citation_text": "أحكام لائحة الفوترة الإلكترونية",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "vat_regulation",
