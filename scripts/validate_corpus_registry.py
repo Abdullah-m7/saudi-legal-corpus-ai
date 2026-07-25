@@ -285,6 +285,12 @@ REQUIRED_TRACK_IDS = [
     "press_regulation",
     "building_code_regulation",
     "telecommunications_regulation",
+    "credit_information_regulation",
+    "payment_systems_regulation",
+    "banking_control_regulation",
+    "finance_companies_regulation",
+    "finance_lease_regulation",
+    "cooperative_societies_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -327,9 +333,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 189 tracks
+    # [3] 242 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 236 tracks present...", len(track_ids) == 236 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 242 tracks present...", len(track_ids) == 242 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -2562,7 +2568,67 @@ def main() -> int:
           telecommunications_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 108, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={telecommunications_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 13821 records...", uix.get("total_records") == 13821,
+    credit_information_regulation_var = tracks_by_id.get("credit_information_regulation", {})
+    credit_information_regulation_var_counts = credit_information_regulation_var.get("record_counts", {})
+    check("[7g224] credit_information_regulation: 55 Arabic records...",
+          credit_information_regulation_var_counts.get("arabic_articles") == 55
+          and credit_information_regulation_var.get("official_text_status") == "TIER_1_SAMA_WAYBACK_ARCHIVED_PDF_DUAL_OCR_PYMUPDF_RECONCILED_X_RULEBOOK_SAMA_STRUCTURAL_NUMERIC_CROSSVERIFIED",
+          f"counts={credit_information_regulation_var_counts}")
+    check("    credit_information_regulation: status breakdown 55/0/0/0...",
+          credit_information_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 55, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={credit_information_regulation_var_counts.get('legal_status_breakdown')}")
+
+    payment_systems_regulation_var = tracks_by_id.get("payment_systems_regulation", {})
+    payment_systems_regulation_var_counts = payment_systems_regulation_var.get("record_counts", {})
+    check("[7g225] payment_systems_regulation: 133 Arabic records...",
+          payment_systems_regulation_var_counts.get("arabic_articles") == 133
+          and payment_systems_regulation_var.get("official_text_status") == "TIER_4_SAMA_RULEBOOK_SINGLE_OFFICIAL_PDF_DUAL_EXTRACTION_TOOL_RECONCILED_NO_INDEPENDENT_SECOND_SOURCE",
+          f"counts={payment_systems_regulation_var_counts}")
+    check("    payment_systems_regulation: status breakdown 133/0/0/0...",
+          payment_systems_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 133, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={payment_systems_regulation_var_counts.get('legal_status_breakdown')}")
+
+    banking_control_regulation_var = tracks_by_id.get("banking_control_regulation", {})
+    banking_control_regulation_var_counts = banking_control_regulation_var.get("record_counts", {})
+    check("[7g226] banking_control_regulation: 31 Arabic records...",
+          banking_control_regulation_var_counts.get("arabic_articles") == 31
+          and banking_control_regulation_var.get("official_text_status") == "TIER_1_SAMA_RULEBOOK_LIVE_PAGE_X_ARCHIVAL_1429H_PDF_DUAL_OFFICIAL_CROSSVERIFIED_TWO_DOCUMENTED_VARIANCES",
+          f"counts={banking_control_regulation_var_counts}")
+    check("    banking_control_regulation: status breakdown 31/0/0/0...",
+          banking_control_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 31, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={banking_control_regulation_var_counts.get('legal_status_breakdown')}")
+
+    finance_companies_regulation_var = tracks_by_id.get("finance_companies_regulation", {})
+    finance_companies_regulation_var_counts = finance_companies_regulation_var.get("record_counts", {})
+    check("[7g227] finance_companies_regulation: 106 Arabic records...",
+          finance_companies_regulation_var_counts.get("arabic_articles") == 106
+          and finance_companies_regulation_var.get("official_text_status") == "TIER_4_BFC_GOV_SA_SINGLE_OFFICIAL_IMAGE_SCAN_DEC2025_CONSOLIDATED_TEXT_MULTI_SOURCE_AMENDMENT_EVENT_CORROBORATED",
+          f"counts={finance_companies_regulation_var_counts}")
+    check("    finance_companies_regulation: status breakdown 106/0/0/0...",
+          finance_companies_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 106, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={finance_companies_regulation_var_counts.get('legal_status_breakdown')}")
+
+    finance_lease_regulation_var = tracks_by_id.get("finance_lease_regulation", {})
+    finance_lease_regulation_var_counts = finance_lease_regulation_var.get("record_counts", {})
+    check("[7g228] finance_lease_regulation: 32 Arabic records...",
+          finance_lease_regulation_var_counts.get("arabic_articles") == 32
+          and finance_lease_regulation_var.get("official_text_status") == "TIER_2_SAMA_RULEBOOK_BORN_DIGITAL_HTML_X_DEDICATED_AMENDMENT_DECISION_NODE_X_ENGLISH_STRUCTURAL_CROSSCHECK",
+          f"counts={finance_lease_regulation_var_counts}")
+    check("    finance_lease_regulation: status breakdown 29/3/0/0...",
+          finance_lease_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 29, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={finance_lease_regulation_var_counts.get('legal_status_breakdown')}")
+
+    cooperative_societies_regulation_var = tracks_by_id.get("cooperative_societies_regulation", {})
+    cooperative_societies_regulation_var_counts = cooperative_societies_regulation_var.get("record_counts", {})
+    check("[7g229] cooperative_societies_regulation: 55 Arabic records...",
+          cooperative_societies_regulation_var_counts.get("arabic_articles") == 55
+          and cooperative_societies_regulation_var.get("official_text_status") == "TIER_1_NCNP_GOV_SA_X_CSCS_ORG_SA_DUAL_INDEPENDENT_OFFICIAL_IMAGE_SCAN_CROSSVERIFIED",
+          f"counts={cooperative_societies_regulation_var_counts}")
+    check("    cooperative_societies_regulation: status breakdown 55/0/0/0...",
+          cooperative_societies_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 55, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={cooperative_societies_regulation_var_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 14233 records...", uix.get("total_records") == 14233,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -2624,8 +2690,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 13990...",
-          registry.get("total_primary_arabic_governing_records") == 13990,
+    check("[19a] total_primary_arabic_governing_records == 14402...",
+          registry.get("total_primary_arabic_governing_records") == 14402,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -2640,8 +2706,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 14885...",
-          registry.get("total_registry_counted_records") == 14885,
+    check("[19e] total_registry_counted_records == 15297...",
+          registry.get("total_registry_counted_records") == 15297,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -2665,7 +2731,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"13990 + 614 + 281 = 14885")
+          f"14402 + 614 + 281 = 15297")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -2683,7 +2749,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 236 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 242 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

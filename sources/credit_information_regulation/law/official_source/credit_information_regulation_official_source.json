@@ -1,0 +1,716 @@
+{
+  "document": "اللائحة التنفيذية لنظام المعلومات الائتمانية",
+  "document_en": "Implementing Regulation of the Credit Information Law",
+  "decree": "قرار محافظ مؤسسة النقد العربي السعودي رقم أق/13709",
+  "decree_date_hijri": "22/9/1432",
+  "decree_date_gregorian": "2011-08-21",
+  "publication_source": null,
+  "publication_date_hijri": null,
+  "publication_date_gregorian_approx": null,
+  "effective_date_note": "تسري اللائحة بعد شهر من تاريخ نشرها في الجريدة الرسمية، وفي موقع المؤسسة الإلكتروني (المادة الخامسة والخمسون). rulebook.sama.gov.sa's Article 40 metadata shows a 'Status: Nov 05 2011' field plausibly consistent with an entry-into-force roughly one month after decision date, but this is NOT independently confirmed as the exact Gazette-publication-plus-one-month date -- see known_unresolved_discrepancies.",
+  "legal_status_ar": "سارية",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "محافظ مؤسسة النقد العربي السعودي (ساما)، بموجب المادة السادسة عشرة من نظام المعلومات الائتمانية الصادر بالمرسوم الملكي رقم (م/37) وتاريخ 5/7/1429هـ، التي تخوله إصدار اللائحة التنفيذية للنظام خلال مائة وثمانين يوماً من تاريخ صدوره",
+  "issuing_authority_en": "Governor of the Saudi Arabian Monetary Agency (SAMA), acting under Article 16 of the Credit Information Law (Royal Decree M/37, 5/7/1429H), which delegates issuance of the Law's Implementing Regulation to the Governor within 180 days of the Law's promulgation",
+  "administering_authority_en": "Saudi Central Bank (SAMA)",
+  "parent_law": {
+    "law_key": "credit_information",
+    "law_ar": "نظام المعلومات الائتمانية",
+    "source_artifact": "sources/credit_information/law/official_source/credit_information_law_official_source.json"
+  },
+  "verification_methodology_note": "اللائحة التنفيذية لنظام المعلومات الائتمانية -- Implementing Regulation of the Credit Information Law. Promulgating instrument: Decision of the Governor of the Saudi Arabian Monetary Agency (SAMA) No. أق/13709, dated 22/9/1432H (21/8/2011G), issued under Article 16 of the base Credit Information Law (Royal Decree M/37, 5/7/1429H), which delegates: المحافظ اللائحة التنفيذية لهذا النظام خلال (مائة وثمانين) يوماً من تاريخ صدوره. 55 articles, flat with 12 informal (unlabeled, i.e. no فصل/باب numbering) topical headings reproduced verbatim from the source document's own table of contents and matching inline section banners: التعريفات (1); الترخيص (2-11); نطاق خدمات المعلومات الائتمانية (12); الحوكمة (13-15); السجل الائتماني (16-18); المتطلبات الإشرافية والرقابية (19-34); سرية المعلومات الائتمانية (35-39); التزامات الأعضاء (40-42); حقوق المستهلك (43-45); الاعتراضات والشكاوى (46-52); لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية (53-54); النفاذ والنشر (55). This is genuinely different from this corpus's rett_regulation track (which is flat with NO subdivisions of any kind): here the source PDF itself prints a table of contents on its first page reproducing these exact 12 headings in this exact order, and each heading recurs inline immediately before its first article -- so chapter_structure and each article's section_ar are populated with this real, source-grounded (if informally/unnumbered) topical structure rather than left empty.\n\nPRIMARY SOURCE AND FETCH CHALLENGES: the live URL cited by the prior research pass (bayancb.com/media/ytonosj3/...) returned HTTP 404 on this pass via both curl and WebFetch -- this credit bureau's CMS (Umbraco) appears to rotate the opaque media-GUID segment of its PDF URLs over time, so the exact URL a prior pass observed is not guaranteed to remain live. A CDX (web.archive.org/cdx) query of bayancb.com's media library located the SAME filename under a DIFFERENT, earlier media GUID (clqn5kao instead of ytonosj3), archived by the Wayback Machine on 2023-09-27 (HTTP 200, application/pdf, 426561 bytes) -- that historical GUID is ALSO now 404 on the live site (reconfirmed this pass), so the Wayback Machine snapshot, fetched directly (web.archive.org/web/20230927190645if_/...), is this track's PRIMARY text source. This is the SAME 24-page, 426KB PDF the prior research pass already identified and hashed (confirmed: 24 pages, ~426KB), so this is independent re-confirmation of that exact document, not a different edition. www.sama.gov.sa's own listed PDF URL (also found via web search, at LawsRegulations/BankingRules/) returned a SAMA error page (\"حدث خطأ ما في طلبك\") on every attempt (direct curl, r.jina.ai proxy, and WebFetch) -- sama.gov.sa's document server appears to reject this environment's requests; this is disclosed rather than silently worked around by, e.g., assuming the bayancb copy is accurate without independent structural corroboration (which is instead supplied by rulebook.sama.gov.sa, see below).\n\nEXTRACTION METHODOLOGY (two independent pipelines, reconciled, same method as this corpus's rett_regulation/vat_regulation tracks): the source PDF is born-digital (Word-to-PDF, Microsoft Word 2010 producer per its own embedded metadata) but exhibits the same systematic Arabic bidi/justification character-and-word-order defect documented for those tracks. Two independent extractions were reconciled: (1) Tesseract Arabic OCR (--psm 6) of 300dpi PyMuPDF page renders -- correct reading order, but with a recurring, document-specific misread of the hamza in ائتمان (credit) as ث/ت/ن (yielding اثتمان/اتتمان/انتمان throughout -- corrected uniformly to ائتمان per the base law's own spelling), plus the confusable-list-marker defect already documented in rett_regulation (a leading digit dropped, e.g. '10-' misread as '0-': confirmed at Art. 4 item 10, Art. 40 items 10-11) and, in three places, entire missing list items or clauses (Art. 19's closing clause on staff cooperation during inspections; Art. 28's items 2-3, naming a competent local official body and SAMA itself as additional grounds for issuing a credit record; and a stray inserted digit '3' before 'مستهلكين' in Art. 25); (2) PyMuPDF character-exact line-level geometric extraction (RTL-reversed word order but exact source glyphs), used to verify every digit (SR 50,000,000 minimum capital and SR 50,000 licensing fee in Art. 3-4; 1%/0.5% licensing/renewal fee in Art. 7; 5-year/10-year negative-information retention in Art. 17; the 30/10/7/5-day procedural windows across Arts. 10-11, 40-41, 45-50) and to recover the OCR's dropped digits and the handful of dropped clauses/items identified above (all independently located in the PyMuPDF pass, at the exact page boundary where the OCR pass truncated or skipped a line). Diacritics (tashkeel) and tatweel are stripped uniformly; the OCR pass's non-standard comma substitutions ('»' for '،') are normalized to standard Arabic punctuation. No article or numbered item was dropped: all 55 article headers (المادة الأولى through المادة الخامسة والخمسون) were located as structural anchors and every numbered sub-item run within an article was checked for an unbroken 1..N sequence after correction. Arabic governs; no translation, paraphrase, or interpretation performed.\n\nSECONDARY / STRUCTURAL CROSS-VERIFICATION: rulebook.sama.gov.sa -- SAMA's own regulator portal, fetched directly via WebFetch (HTTP 200) -- independently confirms: the promulgating instrument number (أق/13709) and both its Hijri (22/9/1432) and Gregorian (21/8/2011) dates (read directly off the per-article metadata fields on rulebook.sama.gov.sa/en/article-40-0, which display 'Regulation Number: أق/13709' / 'Date (Gregorian): 21/8/2011' / 'Date (Hijri): 22/9/1432' for this exact instrument); the 55-article count and the 12 topical groupings in the same order as this track's own chapter_structure; the In-Force status; and, article-by-article, numerous specific facts independently matching this track's extracted text verbatim in substance: Art. 3's SR 50 million minimum paid-up capital, Art. 7's 5-year license term, Art. 17's 5-year/10-year negative-information retention, Art. 40's exactly eleven member obligations, Art. 45's 7-working-day negative-decision notice, Art. 46's 30-working-day investigation cap, Art. 47's 5-working-day/10-working-day member-notice/response windows, and Art. 55's one-month-after-Gazette-publication entry-into-force rule. This is an official regulator-portal source distinct from the bayancb.com PDF itself, giving genuine dual-channel (primary text + independent official structural/numeric corroboration) verification, consistent with this corpus's TIER_2 methodology where a live second full-text primary channel could not be reached.\n\nAMENDMENT CHECK (dedicated search pass, not assumed): a targeted search for any SAMA circular or Board/Governor decision amending this specific Implementing Regulation (تعديل اللائحة التنفيذية لنظام المعلومات الائتمانية) since its 21/8/2011G issuance found none: rulebook.sama.gov.sa's per-article page for Article 40 shows the SAME instrument number/date as the regulation's own issuance (no distinct later amendment date), and a broader search of rulebook.sama.gov.sa's finance-sector circular index (entiresection/9439) surfaced only an unrelated cross-reference from a 2025 Debt Collection circular, not an amendment of this Regulation itself. This is an honest negative finding (no amendment located), not an assumption of silence; all 55 articles are recorded as اصلية (original, unamended).",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "credit_information_regulation_bayancb_url_rotated",
+      "description": "The exact bayancb.com URL cited by the prior research pass (media/ytonosj3/...) returned HTTP 404 on this pass (both curl and WebFetch). A web.archive.org CDX query located the same filename under a different, earlier media GUID (media/clqn5kao/...), archived 2023-09-27 (HTTP 200, 426561 bytes, 24 pages) -- matching the prior pass's own reported size/page-count. That earlier GUID is now ALSO 404 live, confirming bayancb.com's CMS rotates opaque media identifiers over time. This track's primary text was fetched from the Wayback Machine snapshot of the clqn5kao URL, not from a currently-live bayancb.com URL."
+    },
+    {
+      "article_key": "credit_information_regulation_sama_gov_sa_unreachable",
+      "description": "www.sama.gov.sa's own listed PDF URL for this Regulation (LawsRegulations/BankingRules/اللائحة التنفيذية... .pdf) returned a SAMA-branded generic error page ('حدث خطأ ما في طلبك') on every attempt this pass: direct curl (TLS connection reset), the r.jina.ai read-proxy, and the WebFetch tool. sama.gov.sa's document server could not be reached as a primary source in this environment; rulebook.sama.gov.sa (a different, reachable SAMA subdomain) was used instead for secondary/structural cross-verification."
+    },
+    {
+      "article_key": "credit_information_regulation_gazette_publication_details_unconfirmed",
+      "description": "This track confirms the promulgating instrument (SAMA Governor's Decision No. أق/13709, 22/9/1432H = 21/8/2011G) via both the bayancb.com/Wayback PDF's own cross-references and rulebook.sama.gov.sa's per-article metadata. It does NOT independently confirm the specific Official Gazette (الجريدة الرسمية) issue number or exact publication date referred to by this Regulation's own Article 55 ('تسري اللائحة بعد شهر من تاريخ نشرها في الجريدة الرسمية'); rulebook.sama.gov.sa's Article 40 metadata shows a distinct 'Status: Nov 05 2011' field that is plausibly (one month after a publication in roughly early October 2011) the entry-into-force date, but this track does not assert that inference as a confirmed fact -- it is recorded here as an open, unconfirmed detail rather than guessed at. publication_date_gregorian_approx below is left unset for the same reason; only the decision date itself (21/8/2011G) is asserted as confirmed."
+    },
+    {
+      "article_key": "credit_information_regulation_ocr_hamza_and_gap_corrections",
+      "description": "The source PDF's Tesseract OCR pass systematically misread the hamza in ائتمان (credit/ائتمان) as ث/ت/ن throughout (e.g. اثتمانية for ائتمانية); this was corrected uniformly against the base law's own spelling and cross-checked letter-by-letter against the PyMuPDF geometric pass, which read the hamza correctly (subject to its own RTL word-order reversal). In addition, three content gaps in the OCR pass were identified and filled from the PyMuPDF pass at the exact page-break location where they occurred: (1) Article 19's closing clause on the duty of company staff to cooperate with inspectors; (2) Article 28's items 2 and 3 (issuance of a credit record at the request of a competent local official body, or at SAMA's own request) -- the OCR pass skipped directly from item 1 to item 4 (mislabelled '4-') at a page boundary; (3) a stray OCR-inserted digit '3' immediately before مستهلكين in Article 25's closing paragraph, confirmed spurious against PyMuPDF's 'ومستهلكين'. Confusable leading-digit-dropped list markers (Art. 4 item 10 misread '0-'; Art. 40 items 10-11 misread '0-'/'1-') were corrected the same way as this corpus's rett_regulation track. All corrections were verified against the PyMuPDF geometric pass before being applied; none is asserted from OCR alone where the two pipelines disagreed."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "label_ar": "",
+      "title_ar": "التعريفات",
+      "articles": "1-1"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "الترخيص",
+      "articles": "2-11"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "نطاق خدمات المعلومات الائتمانية",
+      "articles": "12-12"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "الحوكمة",
+      "articles": "13-15"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "السجل الائتماني",
+      "articles": "16-18"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "المتطلبات الإشرافية والرقابية",
+      "articles": "19-34"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "سرية المعلومات الائتمانية",
+      "articles": "35-39"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "التزامات الأعضاء",
+      "articles": "40-42"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "حقوق المستهلك",
+      "articles": "43-45"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "الاعتراضات والشكاوى",
+      "articles": "46-52"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية",
+      "articles": "53-54"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "النفاذ والنشر",
+      "articles": "55-55"
+    }
+  ],
+  "article_count": 55,
+  "status_counts": {
+    "اصلية": 55,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "credit_information_regulation_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "التعريفات",
+      "text": "يقصد بالألفاظ والعبارات الآتية - أينما وردت في هذه اللائحة - المعاني المبينة أمامها، ما لم يقتض السياق خلاف ذلك:\nالنظام: نظام المعلومات الائتمانية الصادر بالمرسوم الملكي رقم (م/37) وتاريخ 5/7/1429هـ.\nاللائحة: اللائحة التنفيذية لنظام المعلومات الائتمانية.\nالمؤسسة: مؤسسة النقد العربي السعودي.\nالمحافظ: محافظ مؤسسة النقد العربي السعودي.\nالمعلومات الائتمانية: أي معلومات أو بيانات عن المستهلك تتعلق بتعاملاته الائتمانية.\nالشركات: أي شركة معلومات ائتمانية مرخص لها جمع المعلومات الائتمانية عن المستهلكين وحفظها، وتزويد الأعضاء بها عند طلبها.\nالعضو: جهة حكومية أو خاصة يربطها عقد تبادل معلومات ائتمانية مع شركة على الأقل من شركات المعلومات الائتمانية.\nالمستهلك: أي شخص من ذوي الصفة الطبيعية أو الاعتبارية له تعاملات ائتمانية.\nالسجل الائتماني: تقرير تصدره الشركة يحتوي على معلومات ائتمانية عن المستهلك.\nالسجلات العامة: سجلات المعلومات الائتمانية لدى الجهات الحكومية، مثل سجلات الصناديق المتخصصة والبنوك التي تقدم قروضاً حكومية، والجهات القضائية، واللجان الحكومية، وملفات الإفلاس والإعسار وما في حكمها.\nالقرار السلبي: أي قرار يتخذه العضو بناءً على سجل المستهلك الائتماني ضد مصلحته.\nالمعلومات السلبية: أي معلومات يقدمها العضو بناءً على سجل المستهلك الائتماني ضد مصلحته.\nاللجنة: لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "يحظر على أي شخص طبيعي أو اعتباري تقديم نشاط المعلومات الائتمانية قبل الحصول على ترخيص من المؤسسة وفقاً لأحكام النظام ولائحته التنفيذية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "يشترط في الشركة التي يرخص لها تقديم خدمة المعلومات الائتمانية الآتي:\n1- أن تكون شركة مساهمة مقرها الرئيس داخل المملكة.\n2- أن لا يقل رأس مالها المدفوع عن خمسين مليون ريال سعودي.\n3- موافقة المؤسسة على عقد التأسيس والنظام الأساسي للشركة.\n4- اعتماد المؤسسة نظامها الآلي الخاص بالمعلومات الائتمانية.\n5- توافر موارد بشرية مؤهلة وموارد مالية وتشغيلية لممارسة العمل بكفاءة وفاعلية وفق أحكام النظام ولائحته التنفيذية.\n6- التعهد بالالتزام بأي تعليمات أو قواعد عمل تصدرها المؤسسة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "على مؤسسي الشركة الراغبين في تقديم خدمات المعلومات الائتمانية تعبئة النموذج الخاص بطلب الترخيص مصحوباً بالآتي:\n1- بيان بأسماء المؤسسين وعناوينهم وحصة كلٍ منهم في رأس مال الشركة.\n2- عقد تأسيس الشركة ونظامها الأساسي.\n3- شهادة من بنك مرخص في المملكة تفيد إيداع رأسمالها المدفوع.\n4- صورة من بطاقة الهوية الوطنية أو السجل التجاري للمؤسسين.\n5- وصف للنظام الآلي المستخدم لجمع وحفظ المعلومات الائتمانية للمستهلكين بما في ذلك خصائص النظام.\n6- دراسة جدوى اقتصادية.\n7- خطة عمل الشركة للسنوات الثلاث الأولى من تأسيسها تشمل طبيعة الأعمال التي تنوي تقديمها وخطة عملها المستقبلية، والقوائم المالية التقديرية، ومعدلات نموها المتوقعة، وتكاليف نشاطها السنوي بناءً على معدلات نموها المتوقعة، والعدد المتوقع لموظفيها، ومبادئ الإدارة الفاعلة (حوكمة الشركات) والرقابة الداخلية لها، وأي بيانات ومعلومات تطلبها المؤسسة.\n8- الهيكل التنظيمي للشركة.\n9- مقابل مالي لدراسة طلب الترخيص قدره خمسون ألف ريال سعودي.\n10- إقرار بعدم ممارسة أي نشاط آخر خلاف الأغراض الواردة في النظام الأساسي للشركة إلا بعد موافقة المؤسسة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "على مقدم الطلب استكمال أي بيانات تطلبها المؤسسة خلال ثلاثين يوم عمل من إشعار المؤسسة له بذلك، وإلا تعرض طلبه للإلغاء، ولن تبت المؤسسة في طلب الترخيص بالموافقة أو الرفض إلا بعد استيفاء البيانات والمستندات المطلوبة جميعها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "في حالة الموافقة يصدر قرار من المحافظ بالموافقة على الترخيص بعد استكمال إجراءات التأسيس وفقاً لنظام الشركات، وحصول الشركة على سجل تجاري، ويمنع منعاً باتاً في كل الأحوال تقديم الشركة خدماتها قبل صدور قرار المحافظ وإلا عدت إجراءات الترخيص لاغية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "مدة الترخيص خمس سنوات. ويجدد الترخيص وفقاً للشروط والإجراءات المقررة، وتستوفي المؤسسة مقابلاً مالياً يدفع مرة واحدة عند صدور الترخيص بنسبة واحد في المائة من رأس مال الشركة المدفوع، ومقابلاً مالياً نسبته نصف في المائة من رأس مال الشركة المدفوع عند تجديد الترخيص، ويقدم طلب التجديد قبل ستة أشهر على الأقل من تاريخ انتهائه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "ينتهي العمل بالترخيص في إحدى الحالات الآتية:\n1- انتهاء مدته دون تجديد.\n2- انقضاء الشركة لأي سبب من الأسباب المنصوص عليها في نظام الشركات.\n3- صدور قرار بإلغاء الترخيص.\n4- عدم قدرة الشركة على ممارسة النشاط خلال اثني عشر شهراً من تاريخ صدور الترخيص دون مبررات مقنعة للمؤسسة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "يشترط حصول الشركة على موافقة خطية مسبقة من المؤسسة قبل مباشرة أي عمل ومن ذلك ما يلي:\n1- فتح فروع أو مكاتب أو تأسيس شركات تابعة داخل وخارج المملكة.\n2- اندماج الشركة مع غيرها أو استحواذها على شركات أخرى.\n3- أي تعديل على عقد تأسيس الشركة ونظامها الأساسي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "للمؤسسة عند ضبط أي مخالفة للنظام أو لائحته التنفيذية وإجراء التحقيق فيها القيام بالآتي:\n1- إشعار الشركة خطياً بأي قصور أو إهمال، والطلب منها تزويد المؤسسة بخطة توافق عليها لمعالجة الوضع خلال ثلاثين يوم عمل من تاريخ الإشعار.\n2- في حال عدم التزام الشركة بما ورد في الفقرة السابقة أعلاه، للمؤسسة أن تطلب من اللجنة وقف الترخيص مؤقتاً أو إلغاءه، وإشعار الشركة خطياً بذلك.\n3- تكليف الشركة الصادر بحقها قرار الوقف المؤقت أو الإلغاء إبلاغ جميع الأطراف ذوي العلاقة بقرار اللجنة حال إشعارها بذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الترخيص",
+      "text": "مع مراعاة ما ورد في اللائحة يجب على الشركة إشعار المؤسسة خطياً بأي تعديل أو تغيير على أي بيانات زودت المؤسسة بها قبل الترخيص أو بعده، خلال ثلاثة أيام عمل من تاريخ حصول التعديل أو التغيير.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "نطاق خدمات المعلومات الائتمانية",
+      "text": "يمكن للشركة بعد موافقة المؤسسة خطياً، تقديم كل أو بعض الخدمات الآتية:\n1- استلام معلومات المستهلكين الائتمانية من الأعضاء وجمعها وحفظها وتبادلها مع الأعضاء والشركات.\n2- الاستعلام عن السجلات الائتمانية للأفراد والأعمال.\n3- التقييم الائتماني للمستهلكين.\n4- الخدمات الاستشارية لدعم المعلومات الائتمانية.\n5- التقارير والمعلومات الإحصائية بشأن المعلومات الائتمانية.\n6- أبحاث السوق والأبحاث الإحصائية المتعلقة بالمعلومات الائتمانية.\nويجب حصول الشركة على موافقة المؤسسة المسبقة خطياً على تقديم أي خدمات أخرى خلاف المحددة في هذه المادة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الحوكمة",
+      "text": "يجب أن تتوافر في أعضاء مجلس إدارة الشركة والإدارة العليا الخبرات والمؤهلات المناسبة للقيام بأعمالهم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الحوكمة",
+      "text": "تطبق معايير الملاءمة الصادرة عن المؤسسة على مؤسسي الشركة ورئيس وأعضاء مجلس إدارتها والوظائف القيادية فيها، وعليهم تعبئة استبيان الملاءمة الصادر عن المؤسسة واستيفاء النماذج والمتطلبات اللازمة للحصول على عدم ممانعة المؤسسة إزاء تعيينهم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الحوكمة",
+      "text": "يجب توافر الآتي في الشخص المرشح لعضوية مجلس إدارة الشركة:\n1- ألا يكون عضواً في مجلس إدارة شركة معلومات ائتمانية أخرى داخل المملكة أو خارجها.\n2- ألا يكون محكوماً عليه بعقوبة لإدانته بجريمة مخلة بالشرف والأمانة ما لم يكن رد إليه اعتباره.\n3- ألا يكون سبق إشهار إفلاسه أو إعساره.\n4- ألا يكون عاملاً في إحدى شركات المعلومات الائتمانية الأخرى أو أن يكون مراجعاً لحساباتها.\n5- ألا يكون فصل تأديبياً من وظيفته.\n6- ألا يكون هنالك تعارض في المصالح ناتج من عضويته في مجلس إدارة الشركة، أو في شركات أخرى تمارس نشاطاً مختلفاً.\n7- خلو سجله الائتماني من أي معلومات سلبية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_016": {
+      "number_label_ar": "المادة السادسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "السجل الائتماني",
+      "text": "يشمل السجل الائتماني معلومات لها علاقة بالملاءة الائتمانية للمستهلك، ومنها:\n1- اسم المستهلك ذي الصفة الطبيعية، ورقم هويته، ومحل إقامته، ومقر عمله الحالي والسابق، وحالته الاجتماعية، ومؤهلاته العلمية، وبياناته الشخصية.\n2- اسم المستهلك ذي الصفة الاعتبارية والترخيص بمزاولة النشاط أو رقم سجله التجاري وعنوانه، وأي معلومات أخرى عنه.\n3- معلومات عن أي ائتمان قائم أو سابق مقر به أو متنازع عليه، بغض النظر عما إذا كان الائتمان حالاً أو مؤجلاً، أو كان هناك تعثر أو تأخر في السداد، أو جرى شطب الدين أو تسويته، وأي ضمانات ممنوحة للمستهلك.\n4- أي دعوى ذات صفة ائتمانية أقيمت عليه والأحكام الصادرة فيها.\n5- أي دعوى إعسار أو إفلاس أو تصفية، أقيمت على المستهلك، والأحكام الصادرة فيها، واسم المصفي أو أمين التفليسة، وقيمة الموجودات والدين وتواريخ السداد ونفقات التصفية.\n6- أي شيكات دون مقابل وفاء صادرة عن المستهلك، وقيمتها وتاريخها وأي إجراءات اتخذت حيالها.\n7- أي مطالبة صادرة عن جهة رسمية، لم تسدد.\n8- عدد وأسماء الأعضاء الذين تقدموا بطلبات للحصول على السجل الائتماني للمستهلك خلال السنتين السابقتين من تاريخ طلب إصدار السجل، وعدد السجلات الائتمانية التي صدرت والنتائج التي انتهت إليها.\n9- أي معلومات أخرى ذات طبيعة ائتمانية تؤثر على الملاءة الائتمانية للمستهلك.\nوللمؤسسة تغيير المعلومات المطلوب أن يشملها السجل الائتماني حسب ما تراه مناسباً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_017": {
+      "number_label_ar": "المادة السابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "السجل الائتماني",
+      "text": "يحق للشركة الاحتفاظ بالمعلومات السلبية في السجل الائتماني للمستهلك مدة أقصاها خمس سنوات من تاريخ تسوية المديونية أو حل النزاع. ويستثنى من ذلك حالات الإفلاس والإعسار والتزامات الزكاة والضريبة المتأخرة حيث تبقى في السجل لمدة عشر سنوات. وتحفظ الدعاوى القضائية القائمة في السجل الائتماني حتى تسويتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_018": {
+      "number_label_ar": "المادة الثامنة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "السجل الائتماني",
+      "text": "للشركة بناءً على طلب العضو أن تضمن في السجل الائتماني لأي شريك في شركة تضامن معلومات ائتمانية عن شركائه الآخرين شرط موافقتهم خطياً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_019": {
+      "number_label_ar": "المادة التاسعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "للمؤسسة القيام بالتفتيش المفاجئ أو الاعتيادي بواسطة مفتشيها أو بواسطة مراجعين خارجيين على حسابات وسجلات الشركة، ويجب على موظفي الشركة - محل التفتيش - التعاون وتقديم ما يطلب منهم من بيانات ومعلومات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_020": {
+      "number_label_ar": "المادة العشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "1- على الشركة تزويد المؤسسة بالآتي:\n(أ) القوائم المالية ربع السنوية، خلال شهر من تاريخ انتهاء الربع، والحسابات الختامية المدققة خلال شهرين من انتهاء السنة المالية.\n(ب) تقرير يقيم كفاءة وفعالية أنظمة الحاسب الآلي المستخدمة في الشركة، ومنها نظام الحاسب الآلي المستخدم في جمع البيانات وحفظها ويكون التقرير سنوياً على الأقل ومن مكتب استشاري معتمد.\n2- للمؤسسة طلب أي بيانات أو معلومات أخرى بالشكل الذي تحدده.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_021": {
+      "number_label_ar": "المادة الحادية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "تلتزم الشركات توقيع اتفاقيات عضوية تعتمدها المؤسسة مع أي جهة ترغب في تبادل معلومات ائتمانية تتعلق بالسجل الائتماني للمستهلك، وتوضح الاتفاقية حقوق والتزامات الطرفين وتسمى الجهة بعد توقيع الاتفاقية عضواً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_022": {
+      "number_label_ar": "المادة الثانية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "يتم تبادل المعلومات الائتمانية بين الشركات الخاضعة للنظام بموجب اتفاقيات أو عقود جماعية أو ثنائية تبرم بينهم يبين فيها الحقوق والالتزامات المتبادلة، وما يتعين تقديمه بشأنها من مستندات، فضلاً عن مدة سريان تلك الاتفاقيات أو العقود وكيفية تمديدها أو تجديدها، والمقابل المالي الواجب سداده، وتقدم هذه الاتفاقيات أو العقود الجماعية والثنائية إلى المؤسسة لطلب عدم الممانعة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_023": {
+      "number_label_ar": "المادة الثالثة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "تلتزم الشركات إعداد سجلات منتظمة بأسماء المستهلكين سواء أكانوا أشخاصاً طبيعيين أم اعتباريين وصفاتهم وعناوينهم ومقار أعمالهم، وطبيعة النشاط الذي يمارسونه ومعلوماتهم الائتمانية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_024": {
+      "number_label_ar": "المادة الرابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "تلتزم الشركات إعداد سجلات منتظمة تشمل أسماء الأعضاء والشركات المتعاملة معها، سواء أكانت مصادر للمعلومات الائتمانية أم شركات أخرى خاضعة لأحكام النظام ولائحته التنفيذية، وكذلك العقود والاتفاقيات مع كل منها ومدتها وشروطها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_025": {
+      "number_label_ar": "المادة الخامسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "على الشركات اتخاذ التدابير والاحتياطات اللازمة لضمان سلامة وصحة ودقة واكتمال المعلومات الائتمانية التي تحصل عليها وفقاً لأحكام النظام ولائحته التنفيذية، وعليها الالتزام بالآتي:\n1- عدم الحصول على أي معلومات ائتمانية من أي جهة أو مصدر إلا بعد توقيع اتفاقية عضوية مع تلك الجهة أو المصدر.\n2- الحصول على معلومات ائتمانية من الأعضاء وفق معايير معتمدة من الشركة تشمل متطلبات إدارية وفنية ونظامية، وفق قواعد العمل المعتمدة من المؤسسة.\n3- اتخاذ الإجراءات اللازمة للتأكد من سبب طلب العضو للمعلومات الائتمانية.\n4- إبلاغ العضو بالالتزامات المترتبة عليه وفقاً لأحكام النظام ولائحته التنفيذية.\nوتكون الشركات مسئولة تجاه المتعاملين معها من جهات حكومية وخاصة وشركات ومستهلكين عما تقدمه من معلومات ائتمانية، وبيانات غير صحيحة أو غير دقيقة ولا يحول ذلك دون حقها في الرجوع على العضو بما التزمت به من تعويضات وما لحق بها من أضرار متى ما ثبت تضليلها والتدليس عليها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_026": {
+      "number_label_ar": "المادة السادسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "تلتزم الشركات وضع ضوابط لحماية أمن المعلومات الائتمانية والبيانات التي لديها أو التي حصلت عليها، على النحو الآتي:\n1- تسجيل المعلومات الائتمانية وحفظها ومطابقتها وجمعها ومعالجتها وتصنيفها بشكل صحيح ومناسب يسهل الرجوع إليه.\n2- حمايتها من الفقدان بما في ذلك اعتماد أنظمة حفظ نسخ احتياطية ووضع خطة لاسترجاع المعلومات الائتمانية في حالات الطوارئ، وخطة استمرارية العمل.\n3- حماية المعلومات الائتمانية من الدخول إليها أو استخدامها أو تعديلها أو الإفصاح عنها بشكل مخالف للوارد في النظام ولائحته التنفيذية.\n4- وضع ضوابط وإجراءات تطبق عند طلب عضو الاطلاع على السجلات الائتمانية.\n5- القيام بشكل منتظم بمراجعة ضوابط السرية الخاصة بموظفي الشركة.\n6- القيام بشكل منتظم بمراجعة أنماط استخدام نظم المعلومات بهدف الكشف والتحري عن أي أنماط استخدام غير اعتيادية.\n7- حفظ سجلات حالات الدخول والتعديل والتدقيق لقاعدة البيانات الخاصة بالمعلومات الائتمانية كافة بما في ذلك سجلات الاستعلام السابقة وسجلات الوقائع التي تنطوي على مخالفات مؤكدة أو مشكوك فيها.\n8- توفير المعرفة الكافية لممثلي الأعضاء المفوضين بشأن أفضل الممارسات الأمنية والدولية المتعلقة بقواعد العمل.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_027": {
+      "number_label_ar": "المادة السابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "يجب على الشركة قبل تزويد أي عضو بسجل المستهلك الائتماني القيام بالآتي:\n1- التحقق من هوية طالب السجل الائتماني والغرض من طلبه.\n2- تعهد العضو بعدم استعمال هذه المعلومات إلا للأسباب المحددة بالطلب.\n3- التأكد من دقة المعلومات الائتمانية المقدمة وحداثتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_028": {
+      "number_label_ar": "المادة الثامنة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "مع مراعاة ما ورد في هذه اللائحة لا يجوز للشركة إصدار سجل ائتماني عن المستهلك إلا في أي من الحالات الآتية:\n1- طلب العضو وموافقة المستهلك محل الاستعلام.\n2- طلب من جهة رسمية محلية مختصة للفصل في المنازعات.\n3- طلب من المؤسسة.\n4- طلب المستهلك نفسه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_029": {
+      "number_label_ar": "المادة التاسعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "على الشركة الحصول على تغطية تأمينية كافية من مقدم خدمة تأمين مرخص له بالعمل في المملكة لتغطية أي مسئولية تنشأ عن تقصير أو إهمال أو خطأ عند تقديمها خدمات المعلومات الائتمانية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_030": {
+      "number_label_ar": "المادة الثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "لا يجوز للشركة بيع أو تأجير أو التنازل عن قواعد بياناتها الموجودة لديها إلا لشركة معلومات ائتمانية أخرى مرخصة، وبعد الحصول على موافقة خطية مسبقة من المؤسسة، وإذا انقضت الشركة لأي سبب تؤول قواعد البيانات التي لديها إلى المؤسسة أو أي جهة أخرى تحددها المؤسسة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_031": {
+      "number_label_ar": "المادة الحادية والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "على الشركة الحصول على موافقة المؤسسة المسبقة خطياً على السياسة التسعيرية للخدمات التي تقدمها الخاضعة للنظام ولائحته التنفيذية، ويستثنى من ذلك ما ورد في المادة الثالثة والأربعين من هذه اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_032": {
+      "number_label_ar": "المادة الثانية والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "مع مراعاة ما ورد في المادة الثانية عشرة من اللائحة، تجمع الشركة المعلومات الائتمانية عن المستهلكين من المصادر المتاحة مثل السجلات العامة، ومؤسسات التمويل التي تقتضي طبيعة عملها منح الائتمان، ومقار عمل المستهلكين الحالية والسابقة، والغرف الصناعية والتجارية، وغيرها من الجهات والمصادر ذات العلاقة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_033": {
+      "number_label_ar": "المادة الثالثة والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "على الشركات تكوين إدارة خاصة لمعالجة الشكاوى، ووضع دليل إجرائي لمعالجة شكاوى المستهلكين ونشره بعد عرضه على المؤسسة للحصول على موافقتها، وأن يتضمن الدليل إجراءات تسوية الشكاوى بما يحقق الآتي:\n1- الفهم الكامل لهذه الإجراءات من الموظف المعني بالاتصال بالمستهلكين.\n2- التحقيق الكامل والفوري في أي شكوى.\n3- حفظ سجل بالشكاوى المكتوبة وتوثيق الإجراءات المتخذة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_034": {
+      "number_label_ar": "المادة الرابعة والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "المتطلبات الإشرافية والرقابية",
+      "text": "تلتزم الشركات بإعداد دليل إجرائي لتوعية المستهلك بشأن المعلومات الائتمانية، وعرضه على المؤسسة للحصول على موافقتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_035": {
+      "number_label_ar": "المادة الخامسة والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "سرية المعلومات الائتمانية",
+      "text": "مع مراعاة الأنظمة المتعلقة بسرية المعلومات الائتمانية، والقواعد المصرفية المعمول بها في المملكة؛ لا يجوز لأي من الجهات السابقة المشار إليها في المادة الثانية والثلاثين من اللائحة الامتناع عن تزويد الشركات بما تطلبه من بيانات ومعلومات ائتمانية عن المستهلكين لأغراض النظام ولائحته التنفيذية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_036": {
+      "number_label_ar": "المادة السادسة والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "سرية المعلومات الائتمانية",
+      "text": "يلتزم الأعضاء والشركات المحافظة على سرية المعلومات الائتمانية والبيانات التي في حوزتهم، وقصر استخدامها وتبادلها بين الأعضاء والشركات، والأشخاص والأطراف ذوي العلاقة دون غيرهم وفق ما ورد في النظام ولائحته التنفيذية. ومع عدم الإخلال بمسئولية الموظفين والعاملين لدى الأعضاء والشركات عن أي تجاوز في هذا الشأن، يكون على الأعضاء والشركات المسئولية الكاملة تجاه ما يقع من موظفيها من مخالفات أحكام النظام أو لائحته التنفيذية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_037": {
+      "number_label_ar": "المادة السابعة والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "سرية المعلومات الائتمانية",
+      "text": "يحظر على الموظفين والعاملين في الجهات والشركات الخاضعة لأحكام هذا النظام ولائحته التنفيذية، إفشاء أي معلومات ائتمانية تصل إليهم بحكم وظائفهم أو الاحتفاظ بها حتى بعد تركهم الخدمة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_038": {
+      "number_label_ar": "المادة الثامنة والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "سرية المعلومات الائتمانية",
+      "text": "لا تسري الأحكام المشار إليها في المواد المتعلقة بسرية المعلومات الائتمانية على الآتي:\n1- المعلومات العامة، وتكتسب المعلومات صفة العمومية عند الإعلان عنها ونشرها في وسائل الإعلام المختلفة.\n2- أي حالات أو معلومات أخرى تحددها المؤسسة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_039": {
+      "number_label_ar": "المادة التاسعة والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "سرية المعلومات الائتمانية",
+      "text": "لا يجوز للشركات إنشاء سجل ائتماني لمستهلك أو تبادله مع أي عضو أو شركة إلا بعد موافقة المستهلك خطياً على ذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_040": {
+      "number_label_ar": "المادة الأربعون",
+      "is_mukarrar": false,
+      "section_ar": "التزامات الأعضاء",
+      "text": "يلتزم العضو بالآتي:\n1- الحصول على موافقة المستهلك الخطية عند الاستعلام عنه وموافقته على تزويد الشركات المرخص لها بمعلومات ائتمانية عنه.\n2- عدم تزويد الشركات بأي معلومات ائتمانية عن المستهلك إذا كان يعلم أنها تحتوي على أخطاء أو لديه اعتقاد أن هذه المعلومات الائتمانية قد تحتوي على بيانات غير صحيحة.\n3- عدم تزويد الشركات بمعلومات ائتمانية غير صحيحة عن المستهلك بعد تلقيه إبلاغاً من المستهلك بذلك.\n4- تحديث معلومات المستهلك الائتمانية بشكل دوري بحد أدنى مرة واحدة في الأسبوع.\n5- تزويد الشركات بمعلومات ائتمانية صحيحة وكاملة عن المستهلك.\n6- استخدام المعلومات الائتمانية الواردة من الشركات عن المستهلك وفقاً للأغراض المسموح بها.\n7- إبلاغ الشركات فوراً عن أي حسابات ائتمانية أغلقت بناء على طلب المستهلك.\n8- عدم إفشاء أية معلومات ائتمانية عن المستهلك تلقاها من الشركات.\n9- إعداد سجلات تشتمل على أسماء وعناوين الشركات المتعامل معها والبيانات التي زودت بها.\n10- لا يحق للعضو تزويد الشركات بمعلومات سلبية عن المستهلك تتضمن نزاعاً أو شكوى دون إشعارها أن تلك المعلومات السلبية محل نزاع أو شكوى.\n11- التحقق من معلومات المستهلك الائتمانية وتصحيح أو حذف ما احتوت عليه من أخطاء.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_041": {
+      "number_label_ar": "المادة الحادية والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "التزامات الأعضاء",
+      "text": "يلتزم العضو الذي يوجد لديه تعامل ائتماني قائم مع المستهلك بإشعاره خطياً عن أي معلومات سلبية سوف ترسل للشركات خلال ثلاثين يوم عمل من تاريخ قيدها في سجلات العضو، ويكون إشعار المستهلك بما يرسل بصيغة صريحة وواضحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_042": {
+      "number_label_ar": "المادة الثانية والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "التزامات الأعضاء",
+      "text": "لا يجوز للأعضاء الملتزمين باتفاقية عضوية مع الشركات الامتناع عن تقديم المعلومات الائتمانية المطلوبة منهم، أو التأخر في تزويد الشركات بها حسب جدول المدد والمواعيد المتفق عليها في اتفاقية العضوية بين الشركات والأعضاء.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_043": {
+      "number_label_ar": "المادة الثالثة والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "حقوق المستهلك",
+      "text": "مع مراعاة الحالات الواردة في النظام، يحق للمستهلك معرفة المعلومات الائتمانية التي يحتوي عليها سجله الائتماني، ويمكن له طلب سجله الائتماني من إحدى شركات المعلومات الائتمانية دون مقابل مالي في الحالات الآتية:\n1- للمرة الأولى.\n2- اتخاذ قرار سلبي بحقه وفق ما ورد باللائحة.\n3- إذا كان المستهلك ضحية احتيال، ومثال ذلك استخدام معلوماته الشخصية وغيرها بعد ثبوت ذلك نظاماً.\n4- إذا شمل سجل المستهلك الائتماني معلومات خاطئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_044": {
+      "number_label_ar": "المادة الرابعة والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "حقوق المستهلك",
+      "text": "يحق للمستهلك الآتي:\n1- معرفة اسم وعنوان من قام بالاستعلام عن سجله الائتماني خلال السنتين الأخيرتين.\n2- تقديم شكوى إذا حوى سجله الائتماني معلومات خاطئة أو كان التقرير غير مكتمل.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_045": {
+      "number_label_ar": "المادة الخامسة والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "حقوق المستهلك",
+      "text": "في حال قيام العضو باتخاذ قرار سلبي بحق مستهلك بسبب يعود كلياً أو جزئياً إلى المعلومات الواردة في سجله الائتماني؛ فعليه إشعار المستهلك خطياً عند طلبه خلال سبعة أيام عمل من تاريخ القرار السلبي وأن يتضمن الإشعار المعلومات الآتية:\n1- أسباب اتخاذ القرار السلبي.\n2- اسم وعنوان ورقم هاتف الشركة التي حصل منها على سجله الائتماني وصورة منه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_046": {
+      "number_label_ar": "المادة السادسة والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "الاعتراضات والشكاوى",
+      "text": "للمستهلك حق الاعتراض في أي وقت على القرار السلبي وأي من المعلومات الائتمانية الواردة في سجله الائتماني بسبب عدم صحتها، أو عدم تحديثها، أو عدم اكتمالها، أو قدمها وانتهاء المدة النظامية لحفظها في السجل الائتماني بناءً على الوارد في المادة السابعة عشرة من هذه اللائحة، وعلى الشركة التحقيق في موضوع الاعتراض دون مقابل مالي خلال ثلاثين يوم عمل من تاريخ تقديم الاعتراض.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_047": {
+      "number_label_ar": "المادة السابعة والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "الاعتراضات والشكاوى",
+      "text": "يكون التحقيق في الاعتراضات والشكاوى وفحصها طبقاً للإجراءات والمواعيد الآتية:\n1- على الشركة خلال خمسة أيام عمل من تاريخ إبلاغها بالاعتراض؛ إشعار العضو الذي أصدر المعلومات السلبية محل الاعتراض خطياً، مع ذكر جميع المعلومات السلبية المتعلقة بالاعتراض بما في ذلك ما قدمه المعترض من معلومات ومستندات. وتحدد للعضو مدة لا تزيد على عشرة أيام عمل للرد، وفي حال عدم الرد خلال المدة المحددة يعد ذلك قرينة على صحة ما قدمه المعترض من معلومات.\n2- تقوم الشركة باتخاذ قرار خلال فترة لا تزيد على سبعة أيام عمل من استلامها رد العضو أو انتهاء الفترة المشار إليها في الفقرة أعلاه.\n3- إذا ثبت من التحقيق صحة الاعتراض كلياً أو جزئياً، أو تبين أن المعلومة لا يمكن التأكد منها؛ فعلى الشركة أن تقوم خلال يومي عمل من تاريخ اتخاذ القرار بحذف المعلومات السلبية محل الاعتراض من السجل أو تعديلها حسب الأحوال.\n4- لا يحق للشركة حذف أو تعديل أي معلومات سلبية في السجل الائتماني للمستهلك ما لم يثبت عدم صحتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_048": {
+      "number_label_ar": "المادة الثامنة والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "الاعتراضات والشكاوى",
+      "text": "1- على الشركة إبلاغ المعترض بالإجراءات المتخذة للتحقيق في اعتراضه خلال مدة لا تتجاوز عشرة أيام عمل من تاريخ تقديم الاعتراض.\n2- على الشركة إبلاغ المعترض خطياً بنتائج التحقيق خلال مدة لا تتجاوز خمسة أيام عمل من تاريخ اتخاذ القرار، وأن يتضمن الإبلاغ الآتي:\n(أ) نسخة من السجل الائتماني للمستهلك بعد تعديلها عند ثبوت صحة الاعتراض.\n(ب) ملخص عن حقوق المعترض طبقاً للنظام ولائحته التنفيذية في حالة ثبوت عدم صحة الاعتراض.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_049": {
+      "number_label_ar": "المادة التاسعة والأربعون",
+      "is_mukarrar": false,
+      "section_ar": "الاعتراضات والشكاوى",
+      "text": "على الشركة أن تشير في كل سجل ائتماني تصدره أثناء التحقيق؛ إلى الاعتراض المقدم على أي معلومة يتضمنها السجل. وإذا لم يؤدِ التحقيق إلى تسوية الاعتراض فعلى الشركة - بناءً على طلب المعترض - القيام بالآتي:\n1- الإشارة إلى الاعتراض في أي سجل ائتماني لاحق يتعلق بالمعترض ويتضمن المعلومات السلبية المعترض عليها.\n2- تضمين السجل ملخصاً واضحاً عن حقيقة المعلومات السلبية المعترض عليها كما يراها المعترض.\n3- إشعار خطي لأي جهة يحددها المعترض حصلت على سجله الائتماني خلال السنة السابقة على تقديم الاعتراض، بوجود الاعتراض إذا شمل السجل أياً من المعلومات السلبية محل الاعتراض.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_050": {
+      "number_label_ar": "المادة الخمسون",
+      "is_mukarrar": false,
+      "section_ar": "الاعتراضات والشكاوى",
+      "text": "عند إلغاء أي معلومة واردة في سجل المعترض أو تعديلها، يتعين على الشركة أن تشعر خطياً أي جهة يحددها المعترض حصلت على سجله الائتماني خلال السنة السابقة على تقديم الاعتراض بالإلغاء أو التعديل، إضافة إلى جميع شركات المعلومات الائتمانية المرخصة المرتبطة معها باتفاقية أو عقد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_051": {
+      "number_label_ar": "المادة الحادية والخمسون",
+      "is_mukarrar": false,
+      "section_ar": "الاعتراضات والشكاوى",
+      "text": "لا يحق للعضو إعادة أي معلومة سلبية حذفت أو عدلت من سجل المستهلك الائتماني إلا بقرار من اللجنة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_052": {
+      "number_label_ar": "المادة الثانية والخمسون",
+      "is_mukarrar": false,
+      "section_ar": "الاعتراضات والشكاوى",
+      "text": "للمستهلك - في حال رفض اعتراضه - التقدم إلى اللجنة المنصوص عليها في المادة الرابعة عشرة من النظام بشكوى للنظر والفصل فيها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_053": {
+      "number_label_ar": "المادة الثالثة والخمسون",
+      "is_mukarrar": false,
+      "section_ar": "لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية",
+      "text": "تشكل لجنة أو أكثر وفقاً لما نصت عليه المادة الرابعة عشرة من النظام من ثلاثة أعضاء على الأقل ويصدر قرار بتعيينهم وتسميتهم وتحديد مدة خدمتهم من وزير المالية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_054": {
+      "number_label_ar": "المادة الرابعة والخمسون",
+      "is_mukarrar": false,
+      "section_ar": "لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية",
+      "text": "تتولى اللجنة بعد تكوينها إعداد لائحة تحدد إجراءات عملها وإجراءات التقاضي أمامها، ويصادق عليها المحافظ ويحدد مكافأة أعضاء اللجنة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    },
+    "credit_information_regulation_art_055": {
+      "number_label_ar": "المادة الخامسة والخمسون",
+      "is_mukarrar": false,
+      "section_ar": "النفاذ والنشر",
+      "text": "تسري اللائحة بعد شهر من تاريخ نشرها في الجريدة الرسمية، وفي موقع المؤسسة الإلكتروني، وتقوم المؤسسة بمراجعتها وتعديلها إذا لزم الأمر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+      "history": []
+    }
+  }
+}

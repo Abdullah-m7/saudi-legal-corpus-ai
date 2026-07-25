@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 236,
-  "total_terms": 1547,
-  "total_definitions": 2604,
-  "tracks_with_definitions_article_parsed": 167,
+  "total_tracks_in_registry": 242,
+  "total_terms": 1618,
+  "total_definitions": 2718,
+  "tracks_with_definitions_article_parsed": 172,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -54,6 +54,10 @@
     },
     {
       "track_id": "anti_smoking_regulation",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "banking_control_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -318,6 +322,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "أداة المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "أداة المدفوعات",
+        "definition_text": "أي أدوات أو إجراءات متاحة من قبل مقدم خدمات المدفوعات لمستخدم خدمات المدفوعات، لغرض إنشاء أوامر خدمات المدفوعات، سواء من خالل القنوات الإلكترونية أو غير ذلك.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "أدوات الدين": [
       {
         "track_id": "zakat_law",
@@ -506,6 +520,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "أمر خدمات المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "أمر خدمات المدفوعات",
+        "definition_text": "أي تعليمات صادرة عن مستخدم خدما ت المدفوعات بصفته الدافع أو المدفوع له إلى مقدم خدمات المدفوعات لطلب تنفيذ عملية المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "أمين الإفلاس أو الأمين": [
       {
         "track_id": "bankruptcy_law",
@@ -533,6 +557,16 @@
         "term_as_written": "أنشطة المشتري الرئيس المشمولة باختصاصات الهيئة",
         "definition_text": "أنشطة المتاجرة بالمياه المحلاة، والمنقاة، والمعالجة، ومياه الصرف الصحي، والصناعي، وطرح مشاريع محطات التحلية، والتنقية، والمعالجة.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أنظمة التمويل": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "أنظمة التمويل",
+        "definition_text": "نظام التمويل العقاري ونظام الإيجار التمويلي ونظام مراقبة شركات التمويل.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -681,6 +715,46 @@
         "term_as_written": "إجراءات ضبط المخالفات",
         "definition_text": "الإجراءات المنظمة لعمل مسؤولي ضبط المخالفات.",
         "source_record_id": "inv-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إجمالي المبلغ المستحق سداده من المستفيد": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "إجمالي المبلغ المستحق سداده من المستفيد",
+        "definition_text": "مبلغ التمويل مضافا إليه إجمالي كلفة التمويل.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إجمالي النقود الإلكترونية القائمة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "إجمالي النقود الإلكترونية القائمة",
+        "definition_text": "القيمة الإجمالية لأل الإلكترونية الصادرة عن شركة النقود الإلكترونية،موال و يتم حسابها في أول يوم من كل شهر تقويمي وتطبق على ذلك الشهر التقويمي.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إجمالي كلفة التمويل": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "إجمالي كلفة التمويل",
+        "definition_text": "ما يلتزم المستفيد بأدائه من تكاليف خلاف مبلغ التمويل وفق أحكام عقد التمويل، وتشمل كلفة الأجل، والرسوم والعمولات وتكاليف الخدمات الإدارية، والتأمين، وأي نفقات لازمة للحصول على التمويل، مع استبعاد أي نفقات يمكن للمستفيد تجنبها أو الرسوم التي تستحق على المستفيد نتيجة إخلاله بأي من التزاماته الواردة في عقد التمويل.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إجمالي متوسط النقود الإلكترونية القائمة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "إجمالي متوسط النقود الإلكترونية القائمة",
+        "definition_text": "حساب متوسط المبلغ الإجمالي للالتزامات المالية المتعلقة ب النقود الإلكترونية الصادرة عن شركة النقود الإلكترونية خالل آخر اثني عشر،شهرا على أن يتم احتسابها في نهاية كل يوم تقويمي.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1380,6 +1454,14 @@
         "definition_text": "ما يمكن إيجاره من العقار، والمنقول، والمنافع، والخدمات، والحقوق المعنوية كحقوق الملكية الفكرية.",
         "source_record_id": "finance-lease-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "الأصل المؤجر",
+        "definition_text": "ما يمكن إيجاره من العقار، والمنقول، والمنافع، والخدمات، والحقوق المعنوية كحقوق الملكية الفكرية.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الأصول": [
@@ -1708,6 +1790,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأموال المحمية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الأموال المحمية",
+        "definition_text": "تعني الأموال الم حمية وفق الحاالت التالية: (أ) بالنسبة لشركات المدفوعات، الأموال المستلمة من مستخدم خدمات المدفوعات أو لصالحه كنتيجة لتنفيذ عملية مدفوعات، أو الأموال المستلمة من مقدم خدمات مدفوعات آخر لتنفيذ عملية مدفوعات بالنيابة عن مستخدم خدمات المدفوعات. (ب) بالنسبة لشركات ال نقود الإلكترونية وموزعي النقود الإلكترونية، الأموال المستلمة مقابل النقود الإلكترونية التي تم أو سيتم إصدارها، وال يشمل ذلك الودائع المحفوظة لدى البنوك.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأمين الأجنبي": [
       {
         "track_id": "iflas_hudud_regulation",
@@ -1967,6 +2059,14 @@
       }
     ],
     "الإدارة العليا": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "الإدارة العليا",
+        "definition_text": "العضو المنتدب والرئيس التنفيذي والمدير العام ونوابهم، والمدير المالي، ومديرو الإدارات الرئيسة، والمسؤولون عن وظائف إدارة المخاطر والمراجعة الداخلية والالتزام في شركة التمويل.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "labor_recruitment_services_rules",
         "article_number": 1,
@@ -2986,6 +3086,14 @@
     ],
     "البنك": [
       {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "البنك",
+        "definition_text": "البنك المركزي السعودي.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_finance_law",
         "article_number": 1,
         "term_as_written": "البنك",
@@ -3022,7 +3130,25 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "البنك المرخص": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "البنك المرخص",
+        "definition_text": "البنك المرخص له لممارسة الأعمال المصرفية في المملكة وفق أحكام نظام مراقبة البنوك، الصادر بالمرسوم الملكي رقم م /(5) وتاريخ 22/2/1386 هـ..",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "البنك المركزي": [
+      {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "البنك المركزي",
+        "definition_text": "البنك المركزي السعودي.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "payment_systems_law",
         "article_number": 1,
@@ -3696,6 +3822,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "الترخيص الذي يمنحه البنك المركزي للشخص لتشغيل نظام المدفوعات أو تقديم خدمات المدفوعات، وفق أحكام النظام واللائحة؛ بما يشمل الأنشطة التي تم تحديدها في الترخيص.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_brokerage_regulation",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -3863,6 +3997,16 @@
         "term_as_written": "التسجيل الوطني",
         "definition_text": "تسجيل الطائرات في السجل السعودي الوطني للطائرات الذي تعده وتشرف عليه الهيئة.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التسنيد": [
+      {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "التسنيد",
+        "definition_text": "إصدار أوراق مالية مقابل حقوق المؤجر.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4172,6 +4316,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التعرض": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "التعرض",
+        "definition_text": "قيمة الأصل المعرض لأي مخاطر ائتمانية، مثل مخاطر عدم السداد أو انخفاض التصنيف الائتماني.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التعرض الكبير": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "التعرض الكبير",
+        "definition_text": "التعرض لمستفيد واحد بنسبة (٥٪) أو أكثر من رأس مال شركة التمويل المدفوع واحتياطياتها.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التعرفة التفضيلية": [
       {
         "track_id": "telecommunications_regulation",
@@ -4353,6 +4517,16 @@
         "term_as_written": "التفحيط",
         "definition_text": "قيادة المركبة بتهور في الطرق أو الأماكن العامة بشكل غير منتظم عمداً ودون سبب مشروع؛ بحيث تحدث الإطارات غالباً صوتاً عالياً مع جعل المركبة تقوم بالزحف يميناً أو يساراً أو الالتفاف حول نفسها أثناء السير للأمام أو الخلف باستخدام قوة محركها أو مكابحها أو ناقل الحركة فيها لأجل الاستعراض. ويُعد في حكم التفحيط إمالة المركبة وجعلها تسير على الإطارين الأيمنين أو الأيسرين، أو جعل الدراجة الآلية ذات الإطارين تسير على إطار واحد، أو خروج السائق أو الراكب من المركبة أثناء سيرها، أو القيام بفك بعض أجزائها أثناء سيرها؛ لأجل الاستعراض.",
         "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التفويض": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "التفويض",
+        "definition_text": "موافقة من ق بل الدافع المصادق على عملية المدفوعات، والمسجلة وفقا المادة الثامنة والثالثون من اللائحة.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4928,6 +5102,22 @@
         "definition_text": "أي جمعية تعاونية مسجلة بموجب أحكام هذا النظام .",
         "source_record_id": "cooperative-societies-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "الجمعية",
+        "definition_text": "أي جمعية تعاونية مسجلة بموجب أحكام نظام الجمعيات التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 54,
+        "term_as_written": "الجمعية",
+        "definition_text": "أي جمعية تعاونية مسجلة بموجب أحكام نظام الجمعيات التعاونية مشتركة في عضوية مجلس الجمعيات التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجمعية العامة": [
@@ -4971,6 +5161,22 @@
         "term_as_written": "الجمعية العمومية",
         "definition_text": "جميع الأعضاء المساهمين في رأس مال الجمعية التعاونية.",
         "source_record_id": "cooperative-societies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "الجمعية العمومية",
+        "definition_text": "جميع الأعضاء المساهمين في رأس مال الجمعية التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 54,
+        "term_as_written": "الجمعية العمومية",
+        "definition_text": "جميع الجمعيات التعاونية المشتركة في عضوية مجلس الجمعيات التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-054",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5782,6 +5988,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الحسم المباشر": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الحسم المباشر",
+        "definition_text": "عملية الحسم من حساب المدفوعات الخاص ب الدافع لدى مق دم خدمات المدفوعات الخاص ب المدفوع له أو لدى مقدم خدمات المدفوعات الخاص ب الدافع، وذلك إثر عملية مدفوعات تم إنشاؤها بواسطة المدفوع له بموجب التفويض.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الحصاد الاستراتيجي": [
       {
         "track_id": "water_regulation",
@@ -6387,6 +6603,16 @@
         "term_as_written": "الدارة المتكاملة",
         "definition_text": "منتج يكون الغرض منه أداء وظيفة إلكترونية، تشكل فيه العناصر – يكون أحدها على الأقل نشطًا – وجميع الوصلات، أو بعضها شكلًا متكاملًا في قطعة من المادة أو عليها، سواء في شكله النهائي أو الوسيط.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الدافع": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الدافع",
+        "definition_text": "الشخص الذي لديه حساب مدفوعات ويسمح بأمر خدمات مدفوعات من هذا الحساب، أو في حالة عدم وجود حساب مدفوعات، يكون الشخص الذي يقدم أمر خدمات المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7044,6 +7270,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الريال": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الريال",
+        "definition_text": "الريال السعودي.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الزراعة العضوية": [
       {
         "track_id": "agriculture_law",
@@ -7100,6 +7336,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السجالت المحاسبية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "السجالت المحاسبية",
+        "definition_text": "المستندات والمعلومات الأساسية المستخدمة في إعداد القوائم المالية ومصادقتها ومراجعتها والمخزنة إلكترونيا أو بأي شكل آخر.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السجل": [
       {
         "track_id": "civil_aviation_law",
@@ -7151,6 +7397,14 @@
         "term_as_written": "السجل الائتماني",
         "definition_text": "تقرير تصدره الشركات يحتوي على المعلومات الائتمانية عن المستهلك.",
         "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "السجل الائتماني",
+        "definition_text": "تقرير تصدره الشركة يحتوي على معلومات ائتمانية عن المستهلك.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7247,6 +7501,24 @@
         "term_as_written": "السجلات العامة",
         "definition_text": "سجلات المعلومات الائتمانية التي لدى الجهات الحكومية، مثل سجلات الصناديق والبنوك التي تقدم قروضا حكومية، والجهات القضائية، واللجان الحكومية، وملفات الإفلاس والإعسار، وما في حكمها.",
         "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "السجلات العامة",
+        "definition_text": "سجلات المعلومات الائتمانية لدى الجهات الحكومية، مثل سجلات الصناديق المتخصصة والبنوك التي تقدم قروضاً حكومية، والجهات القضائية، واللجان الحكومية، وملفات الإفلاس والإعسار وما في حكمها.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السحب النقدي": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "السحب النقدي",
+        "definition_text": "أي عملية سحب أو استرداد للنقود الإلكترونية بقيمتها اال سمية.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7870,6 +8142,14 @@
         "definition_text": "شركات المعلومات الائتمانية المرخص لها بجمع المعلومات الائتمانية عن المستهلكين وحفظها، وتزويد الأعضاء بتلك المعلومات عند طلبها.",
         "source_record_id": "credit-information-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "الشركات",
+        "definition_text": "أي شركة معلومات ائتمانية مرخص لها جمع المعلومات الائتمانية عن المستهلكين وحفظها، وتزويد الأعضاء بها عند طلبها.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الشركة العقارية": [
@@ -7879,6 +8159,16 @@
         "term_as_written": "الشركة العقارية",
         "definition_text": "أي شركة أو صندوق أو كيان - بصرف النظر عن غرض التأسيس - يمتلك بشكل مباشر أو غير مباشر عقارات داخل المملكة بهدف توليد إيرادات منها ببيعها أو تأجيرها، على أن تزيد القيمة السوقية العادلة لتلك العقارات على نسبة معينة من إجمالي القيمة السوقية العادلة لأصولها، وفقًا لما تحدده اللائحة وبما لا يقل عن نسبة (50%) من قيمة تلك الأصول.",
         "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشركة القابضة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الشركة القابضة",
+        "definition_text": "الشركة المساهمة أو الشركة المساهمة المبسطة أو الشركة ذات المسؤولية المحدودة المسيطرة على شركة مساهمة أو شركة مساهمة مبسطة أو شركة ذات مسؤولية محدودة أ خرى (يشار إليها كشركة تابعة) من خالل امتالك أكثر من نصف رأس مال الشركات ذات الصلة أو عن طريق السيطرة على تشكيل مجالس إدارتها، دون الإخالل بالأحكام ذات العالقة من نظام الشركات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7919,6 +8209,16 @@
         "term_as_written": "الشعبة الهندسية",
         "definition_text": "وحدة مكونة من مجموعة من الأعضاء في الهيئة، من المتخصصين في أحد التخصصات الهندسية يسهمون من خلالها بتطوير تخصصهم المهني وفق أسس وقواعد محددة.",
         "source_record_id": "saudi-engineers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشكوى": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الشكوى",
+        "definition_text": "ال تعبير الم قدم إلى المرخص له من العميل أو المستهلك، الم عبر عن عدم رضا ه أو اعتراضه من خالل الوسائل المتاحة لذلك.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8313,6 +8613,14 @@
       }
     ],
     "الضوابط": [
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 54,
+        "term_as_written": "الضوابط",
+        "definition_text": "ضوابط تكوين مجلس الجمعيات التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "evidence_electronic_procedures_rules",
         "article_number": 1,
@@ -8756,11 +9064,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "العضو",
+        "definition_text": "العضو المؤسس أو المنضم للجمعية بعد تأسيسها.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "credit_information_law",
         "article_number": 1,
         "term_as_written": "العضو",
         "definition_text": "الجهة الحكومية أو الخاصة التي يربطها عقد لتبادل المعلومات الائتمانية مع شركة واحدة على الأقل من شركات المعلومات الائتمانية .",
         "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "العضو",
+        "definition_text": "جهة حكومية أو خاصة يربطها عقد تبادل معلومات ائتمانية مع شركة على الأقل من شركات المعلومات الائتمانية.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8884,6 +9208,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "العقد",
+        "definition_text": "عقد الإيجار التمويلي.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "lessor_repossession_regulation",
         "article_number": 2,
         "term_as_written": "العقد",
@@ -8905,6 +9237,16 @@
         "term_as_written": "العقد",
         "definition_text": "عقد التخصيص، بما في ذلك أي عقد تابع له.",
         "source_record_id": "privatization-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العقد الإطاري": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "العقد الإطاري",
+        "definition_text": "العقد المبرم بين أطراف خدمات المدفوعات ذات الصلة، ويهدف إلى إدارة تنفيذ عمليات المدفوعات الفردية والمتتابعة.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9414,6 +9756,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "القرار السلبي": [
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "القرار السلبي",
+        "definition_text": "أي قرار يتخذه العضو بناءً على سجل المستهلك الائتماني ضد مصلحته.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "القرارات": [
       {
         "track_id": "enforcement_law",
@@ -9421,6 +9773,16 @@
         "term_as_written": "القرارات",
         "definition_text": "إجراءات قاضي التنفيذ، وأوامره عدا حكمه في المنازعات.",
         "source_record_id": "enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "القسط": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "القسط",
+        "definition_text": "إجمالي المبلغ المستحق سداده من المستفيد موزعا على مدة عقد التمويل بعد خصم النفقات والمصاريف والتكاليف غير المتكررة، مثل الرسوم والعمولات وتكاليف الخدمات الإدارية.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9946,6 +10308,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لنظام الجمعيات التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لنظام المعلومات الائتمانية.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "criminal_procedure_implementing_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -10095,6 +10473,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية لهذا النظام.",
         "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لنظام الإيجار التمويلي.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10255,6 +10641,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية لنظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية.",
         "source_record_id": "patent-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية ل ل نظام.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10532,6 +10926,14 @@
         "definition_text": "اللائحة الأساسية للجمعية أو المؤسسة.",
         "source_record_id": "associations-ngo-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة الأساسية",
+        "definition_text": "اللائحة الأساسية للجمعية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اللائحة الأساسية للجنة": [
@@ -10663,6 +11065,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "اللجنة المختصة للنظر في المخالفات الناشئة عن تطبيق أحكام هذا النظام.",
         "source_record_id": "copyright-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11128,6 +11538,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "المؤجر",
+        "definition_text": "الشركة المساهمة المرخص لها بمزاولة الإيجار التمويلي، ويشمل ذلك البنوك التجارية.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "lessor_repossession_regulation",
         "article_number": 2,
         "term_as_written": "المؤجر",
@@ -11223,6 +11641,14 @@
         "term_as_written": "المؤسسة",
         "definition_text": "مؤسسة النقد العربي السعودي .",
         "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "المؤسسة",
+        "definition_text": "مؤسسة النقد العربي السعودي.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11670,6 +12096,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 54,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس الجمعيات التعاونية ويضم كافة الجمعيات التعاونية المصرح لها والتي سيتم التصريح لها لاحقا.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "copyright_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -12008,6 +12442,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ مؤسسة النقد العربي السعودي.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "einvoicing_regulation",
         "article_number": 1,
         "term_as_written": "المحافظ",
@@ -12053,6 +12495,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ مؤسسة النقد العربي السعودي.",
         "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ البنك المركزي.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12490,6 +12940,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المدفوع له": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "المدفوع له",
+        "definition_text": "الشخص المعني بتلقي الأموال محل عملية المدفوعات. حساب المدفوعات حساب باسم مستخدم أو أكثر من مستخدمي خدمات المدفوعات، يتم استخدامه لتنفيذ عمليات المدفوعات.: الحواالت: عملية استالم الأموال من الدافع - دون إنشاء أي حساب مدفوعات باسم الدافع أو المدفوع له - لغرض تحويل مبلغ مماثل إلى المدفوع له، أ و إلى أحد مقدمي خدمات المدفوعات، أو إلى شخص مرخص له بموجب القواعد المنظمة ألعمال الصرافة، نيابة عن المدفوع له أو إلى أي كيان آخر يحمل ترخيصا مماثال لغرض استالم الأموال نيابة عن المدفوع له وإتاحتها له.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المدفوعات القائمة على البطاقة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "المدفوعات القائمة على البطاقة",
+        "definition_text": "أداة المدفوعات المقدمة من قبل مقدم خدمات المدفوعات كبطاقة يمكن استخدامها إلنشاء عملية مدفوعات من حساب مدفوعات لدى مقدم خدمات مدفوعات آخر.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المدير": [
       {
         "track_id": "customs_law",
@@ -12775,6 +13245,14 @@
         "term_as_written": "المرخص له",
         "definition_text": "شخص منح رخصة وفقاً لأحكام النظام واللوائح.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "مشغل نظم المدفوعات أو مقدم خدمات المدفوعات المرخص له بموجب أحكام النظام واللائحة ومن في حكمهم.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13156,6 +13634,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "المستأجر",
+        "definition_text": "من يملك منفعة الأصل المؤجر بموجب العقد.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "lessor_repossession_regulation",
         "article_number": 2,
         "term_as_written": "المستأجر",
@@ -13356,6 +13842,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "المستهلك",
+        "definition_text": "أي شخص من ذوي الصفة الطبيعية أو الاعتبارية له تعاملات ائتمانية.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "ecommerce_law",
         "article_number": 1,
         "term_as_written": "المستهلك",
@@ -13550,6 +14044,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المسيطر": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "المسيطر",
+        "definition_text": "الشخص الذي يمتلك - منفردا أو مشتركا مع الغير - قدرة التأثير على أفعال أو قرارات المرخص له أو الشركة القابضة التي تمتلك المرخص له وفق أي من الأحوال التالية: (أ) امتالكه 10% أو أكثر من أسهم المرخص له أو الشركة القابضة التي تمتلك المرخص له. (ب) امتالكه حق ممارسة 10% أو أكثر من حقوق التصويت أو السيطرة عليها لدى المرخص له أو الشركة القابضة التي تمتلك المرخص له. (ج) القدرة على ممارسة نفوذ يؤثر على إدارة المرخص له نتيجة امتالكه أسهم ا في المرخص له أو الشركة القابضة التي تمتلك المرخص له، أو لديه القدرة على ممارسة حقوق التصويت المتعلقة بتلك الأسهم، أو لديه حق يمكنه استخدامه للاستحواذ على تلك الأسهم أو حقوق التصويت المتعلقة بها.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المشاة": [
       {
         "track_id": "traffic_law",
@@ -13693,6 +14197,16 @@
         "term_as_written": "المصادرة",
         "definition_text": "التجريد والحرمان الدائمان من الأموال أو متحصلات الجريمة أو الوسائط؛ بناءً على حكم قضائي صادر من محكمة مختصة.",
         "source_record_id": "terrorism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المصادقة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "المصادقة",
+        "definition_text": "الإجراء الذي من خالله يقوم مقدم خدمات المدفوعات بالتحقق من هوية مستخدم خدمات المدفوعات أو صالحية استخدام أداة مدفوعات معينة؛ وفقا للائحة وما قد يصدر عن البنك المركزي من لوائح أو قواعد أو تعاميم أو ضوابط أو تعليمات بهذا الخصوص بما في ذلك متطلبات الأمن الس يبراني، ويفسر لفظ \" المصادق \" وفقا لذلك.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14117,6 +14631,24 @@
         "term_as_written": "المعلومات الائتمانية",
         "definition_text": "المعلومات والبيانات عن المستهلك فيما يتعلق بتعاملاته الائتمانية، مثل: القروض ، والشراء بالتقسيط ، والإيجار، والبيع الآجل، وبطاقات الائتمان ، ومدى التزامه بالسداد من عدمه.",
         "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "المعلومات الائتمانية",
+        "definition_text": "أي معلومات أو بيانات عن المستهلك تتعلق بتعاملاته الائتمانية.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المعلومات السلبية": [
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "المعلومات السلبية",
+        "definition_text": "أي معلومات يقدمها العضو بناءً على سجل المستهلك الائتماني ضد مصلحته.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14615,6 +15147,16 @@
         "term_as_written": "الممول العقاري",
         "definition_text": "البنوك التجارية، وشركات التمويل المرخص لها بمزاولة نشاط التمويل العقاري.",
         "source_record_id": "real-estate-finance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المناصب القيادية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "المناصب القيادية",
+        "definition_text": "الوظائف والأدوار والمسؤوليات الموكلة إلى شاغلي الم ناصب القيادية المعنيين باتخاذ القرارات االستراتيجية وأ يديرون العمليات التجارية للمرخص له، بما في ذلك مجلس الإدارة و الإدارة العليا؛ وفقا للوظائف المحددة في متطلبات التعيين في المناصب القيادية.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -15888,6 +16430,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "النسبة المؤثرة": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "النسبة المؤثرة",
+        "definition_text": "(٥٪) أو أكثر من أسهم أو حصص شركة التمويل أو حقوق التصويت فيها، سواء أكانت مملوكة بشكل مباشر أو غير مباشر من شخص واحد أو عدة أشخاص يتصرفون باتفاق.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "النسخ": [
       {
         "track_id": "copyright_law",
@@ -15961,6 +16513,16 @@
         "term_as_written": "النشاط",
         "definition_text": "كل عمل يقصد منه تحقيق الدخل بصورة مستمرة ومنتظمة بموجب ترخيص صادر من الجهات المعنية، أو يلزم قبل مزاولته الحصول على ترخيص من قبل الجهات المعنية، وفقا للأنظمة واللوائح ذات الصلة السارية في المملكة، سواء أكان عملا تجاريا، أم مهنيا، أم خدميا، أم صناعيا، أم غير ذلك.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "النشاط أو الأنشطة التمويلية": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "النشاط أو الأنشطة التمويلية",
+        "definition_text": "نوع أو أكثر من أنواع التمويل المنصوص عليها في المادة العاشرة من النظام أو أي نشاط تمويلي آخر يوافق عليه البنك وفقا للمادة نفسها.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16298,6 +16860,30 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الجمعيات التعاونية الصادر بقرار مجلس الوزراء رقم (73) في 3/9/1429هـ.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 54,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الجمعيات التعاونية الصادر بقرار مجلس الوزراء رقم (73) في 9/3/1429هـ.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "credit_information_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المعلومات الائتمانية الصادر بالمرسوم الملكي رقم (م/37) وتاريخ 5/7/1429هـ.",
+        "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "criminal_procedure_implementing_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -16455,6 +17041,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام مراقبة شركات التمويل.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام مراقبة شركات التمويل.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16989,6 +17583,16 @@
         "term_as_written": "النقل",
         "definition_text": "نقل البيانات الشخصية من مكان إلى آخر لمعالجتها.",
         "source_record_id": "pdpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "النقود الإلكترونية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "النقود الإلكترونية",
+        "definition_text": "القيمة النقدية المخزنة إلكترونيا – ويشمل ذلك التخزين المغناطيس ي – والتي تتمثل كمطالبة على المصدر؛ شريطة أن يتم إصدارها عند استالم الأموال بغرض إجراء عمليات المدفوعات، وأن يقب لها شخص آخر غير المصدر كوسيلة مدفوعات، باستثناء الأصول االفتراضية.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -18240,6 +18844,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الشؤون الاجتماعية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 54,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الشؤون الاجتماعية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "customs_law",
         "article_number": 2,
         "term_as_written": "الوزير",
@@ -18876,6 +19496,14 @@
         "definition_text": "وكيل الوزارة للتنفيذ.",
         "source_record_id": "enforcement-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "الوكيل",
+        "definition_text": "الشخص الذي يتصرف بالنيابة عن مقدم خدمات المدفوعات في تقديم خدمات المدفوعات ذات الصلة.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوكيل الملاحي": [
@@ -19093,6 +19721,16 @@
         "term_as_written": "تحلية المياه",
         "definition_text": "إنتاج المياه عن طريقة معالجة مياه البحر، من خلال إزالة ملوثاتها وكل ملوحتها أو جزء منها عبر سلسلة من العمليات الصناعية، ومن خلال محطات التحلية؛ لتحويلها إلى مياه نقية صالحة للاستخدامات الحضرية، والصناعية، والزراعية.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تحويل الأموال": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "تحويل الأموال",
+        "definition_text": "العملية التي ينتج عنها إيداع الرصيد الدائن لصالح حساب المدفوعات الخاص ب المدفوع له تبعا لعملية مدفوعات أو سلسلة من عمليات المدفوعات، يتم تنفيذها بناء على تعليمات الدافع من خالل حساب المدفوعات الخاص به لدى مقدم خدمات المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -19446,6 +20084,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "جهة الإشراف": [
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "جهة الإشراف",
+        "definition_text": "هو فرع الوزارة المناط به الإشراف على الجمعيات التعاونية في كل منطقة.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "جهة التحكم": [
       {
         "track_id": "pdpl_law",
@@ -19644,6 +20292,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "حساب الخدمة المحدودة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "حساب الخدمة المحدودة",
+        "definition_text": "القيمة النقدية المخزنة على أدوات المدفوعات والصادرة عن مصدر لمرة واحدة، وال يمكن استردادها نقدا أو ألي حساب آخر، على أن يكون استخدامها فقط للحصول على سلع أو خدمات ضمن شبكة محدودة من مقدمي الخدمة لديهم اتفاقيات تجارية مباشرة مع المصدر،الذين ويكونون ضمن ذات مجموعة الشركات أو ينتمون إلى االسم التجاري أو العالمة التجارية.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "حساب الخدمة المقيدة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "حساب الخدمة المقيدة",
+        "definition_text": "القيمة النقدية المخزنة في أداة المدفوعات، والتي ال يمكن استردادها نقدا أو تحويلها ألي حساب آخر، على أن تستخدم حصرا للحصول على أي سلع أو خدمات ضمن منطقة م حددة، أو سلع أو خدمات ضمن شبكة محدودة من مقدمي الخدمات الذين لديهم اتفاقيات تجارية مباشرة مع المصدر.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "حصاد المياه": [
       {
         "track_id": "water_law",
@@ -19749,6 +20417,56 @@
         "term_as_written": "خدمات المدفوعات",
         "definition_text": "الخدمات ذات العلاقة بتنفيذ عمليات دفع الأموال وأدوات المدفوعات أو تحويلها أو معالجتها، وإدارة عمليات التحويلات ومدفوعات النقد الإلكتروني عبر منصات أو أدوات المدفوعات، ومحافظ المدفوعات المتخذة هيئة حسابات أو سجلات إلكترونية، وتقديم خدمات معلومات وحسابات المدفوعات، وما تحدده اللوائح من خدمات أخرى ذات علاقة.",
         "source_record_id": "payment-systems-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خدمات المدفوعات ذات الصلة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "خدمات المدفوعات ذات الصلة",
+        "definition_text": "أي من خدمات المدفوعات التي تمثل الأنشطة المحددة في المادة (السادسة) من هذه اللائحة.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خدمة إنشاء المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "خدمة إنشاء المدفوعات",
+        "definition_text": "خدمة إنشاء أمر خدمات المدفوعات (سواء من خالل القنوات الإلكترونية أو غيرها) بناء على طلب مستخدم خدمات المدفوعات والمرتبط بحساب المدفوعات الخاص به لدى مقدم خدمات حساب المدفوعات وبحس ب التفويض الصادر عنه.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خدمة الشبكة المحدودة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "خدمة الشبكة المحدودة",
+        "definition_text": "عمليات المدفوعات التي تتم باستخدام حساب الخدمة المقيدة أو حساب الخدمة المحدودة.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خدمة المدفوعات التجميعية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "خدمة المدفوعات التجميعية",
+        "definition_text": "العمليات التي تقدم من مقدم خدمات المدفوعات من خالل الوساطة لتنفيذ العمليات على أساس تجميع الأموال، وال يلزم في هذه الخدمة إنشاء عالقة مع مقدم خدمات المدفوعات الذي يقدم خدمة استضافة عمليات المدفوعات. عملية المدفوعات عملية إيداع الأموال أو تحويلها أو سحبها والمنشأة من قبل الدافع أو نيابة عنه أو من قبل المدفوع له.: استضافة عمليات المدف وعات: خدمة المدفوعات التي يقدمها مقدم خدمات المدفوعات للمدفوع له لقبول عملية المدفوعات ومعالجتها وينتج عنها تحويل الأموال إلى المدفوع له.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خدمة معلومات حساب المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "خدمة معلومات حساب المدفوعات",
+        "definition_text": "خدمة تقديم معلومات مجمعة – بشكلها الأصلي أو بعد معالجتها - عن حساب أو أكثر من حسابات المدفوعات الخاصة بمستخدم خدمات المدفوعات لدى مقدم أو أكثر من مقدمي خدمات حساب المدفوعات، مع تمكين مستخدم خدمات المدفوعات من تعديل المعلومات المجمعة وتقديمها بطرق بديلة، على أن ت تم مشاركتها من خالل القنوات الإلكترونية أو غيرها مع مستخدم خدمات المدفوعات أو إلى أي شخص آخر وفقا لتعليماته والتفويض الصادر عنه.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20254,6 +20972,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "رقم مرجعي مميز": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "رقم مرجعي مميز",
+        "definition_text": "رقم الحساب الخاص بمستخدم خدمات المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "روضة الأطفال": [
       {
         "track_id": "general_education_law",
@@ -20341,6 +21069,14 @@
         "term_as_written": "سجل العقود",
         "definition_text": "السجل الذي تقيد فيه عقود الإيجار التمويلي المبرمة في المملكة أو المنفذة فيها، وتقيد فيه عقود البيع المترتبة على الإيجار التمويلي، وأي تعديل لهذه العقود، وذلك وفقًا لأحكام هذا النظام.",
         "source_record_id": "finance-lease-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "سجل العقود",
+        "definition_text": "السجل الذي تقيد فيه عقود الإيجار التمويلي المبرمة في المملكة أو المنفذة فيها، وتقيد فيه عقود البيع المترتبة على الإيجار التمويلي، وأي تعديل لهذه العقود، وذلك وفقاً لأحكام النظام.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20461,6 +21197,16 @@
         "term_as_written": "سلطة تسجيل العلامة العامة",
         "definition_text": "السلطة التي يعهد إليها بالسجل غير الوطني أو أي جزء منه والذي تسجل فيه طائرات تابعة لمؤسسة نقل جوي أجنبية أو مشتركة.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "سمات الأمان الشخصية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "سمات الأمان الشخصية",
+        "definition_text": "البيانات المخصصة التي يوفرها مقدم خدمات المدفوعات لمستخدم خدمات المدفوعات والتي تستخدم ألغراض المصادقة.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20693,6 +21439,76 @@
         "term_as_written": "شركة التمويل",
         "definition_text": "الشركة الحاصلة على ترخيص لممارسة نشاط التمويل.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة التمويل الاستهلاكي المصغر": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "شركة التمويل الاستهلاكي المصغر",
+        "definition_text": "الشركة الحاصلة على ترخيص لممارسة نشاط التمويل الاستهلاكي المصغر دون غيره من الأنشطة التمويلية.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة التمويل الجماعي بالدين": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "شركة التمويل الجماعي بالدين",
+        "definition_text": "الشركة الحاصلة على ترخيص لممارسة نشاط التمويل الجماعي بالدين دون غيره من الأنشطة التمويلية.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة التمويل متناهي الصغر": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "شركة التمويل متناهي الصغر",
+        "definition_text": "الشركة الحاصلة على ترخيص لممارسة نشاط التمويل متناهي الصغر دون غيره من الأنشطة التمويلية.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة الدفع الآجل": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "شركة الدفع الآجل",
+        "definition_text": "الشركة الحاصلة على ترخيص لممارسة نشاط الدفع الآجل دون غيره من الأنشطة التمويلية.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "شركة المدفوعات",
+        "definition_text": "الشركة المرخص لها بتقديم خدمة واحدة أو أكثر من خدمات المدفوعات ذات الصلة، باستثناء خدمات إصدار النقود الإلكترونية.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة النقود الإلكترونية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "شركة النقود الإلكترونية",
+        "definition_text": "الشركة المرخص لها بتقديم خدمات إصدار النقود الإلكترونية موزع النقود الإلكترونية: الشخص الذي يقوم بتوزيع النقود الإلكترونية أو بيعها، أو يقوم باستردادها نيابة عن شركة النقود الإلكترونية، دون تقديم أي من خدمات مدفوعات (بما في ذلك إصدار النقود الإلكترونية)، ودون التصرف كوكيل عن شركة النقود الإلكترونية.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شركة تسجيل العقود": [
+      {
+        "track_id": "finance_lease_regulation",
+        "article_number": 1,
+        "term_as_written": "شركة تسجيل العقود",
+        "definition_text": "الشركة المساهمة المختصة بتسجيل عقود الإيجار التمويلي.",
+        "source_record_id": "finance-lease-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -21236,6 +22052,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "عقد التمويل": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "عقد التمويل",
+        "definition_text": "عقد يمنح بمقتضاه الائتمان للأنشطة المنصوص عليها في النظام واللائحة.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "عقد التمويل العقاري": [
       {
         "track_id": "real_estate_finance_law",
@@ -21273,6 +22099,16 @@
         "term_as_written": "عقد العمل المنزلي",
         "definition_text": "هو عقد يرتبط به طرفي العلاقة بعلاقة عمل شخصية، يتعهد بموجبه العامل المنزلي ومن في حكمه بالعمل لدى صاحب العمل المنزلي وأسرته بشكل مباشر أو غير مباشر، مقابل أجر معلوم، ولمدة محددة.",
         "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد المدفوعات لمرة واحدة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "عقد المدفوعات لمرة واحدة",
+        "definition_text": "عقد ل عملية المدفوعات المنفذة لمرة واحدة التي ال تتم بموجب العقد الإطاري.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -21378,6 +22214,16 @@
         "definition_text": "هم العمال المستقلون الذين يعملون لحساب أنفسهم ، ولا يستخدمون أي عمال ، ومقر عملهم هو مقر سكنهم . ح- أفراد أسرة صاحب العمل الذين يعملون في المنشآت العائلية التي لا يعمل بها سواهم من العمال : هم أفراد العائلة المنصوص عليهم في الفقرة (8) من المادة (2) من النظام . ويحق للفئات المستثناة في الفقرتين ( ز ) ، ( ح ) طلب الاشتراك الاختياري المنصوص عليه في الباب الخامس من هذه اللائحة . ولا يخل الاستثناء الخاص بالفئات المنصوص عليها بالفقرات (ج - د - هـ) بإمكان إخضاعهم للنظام مستقبلا وفق أحكام الفقرة (2) من المادة (5) من النظام .",
         "source_record_id": "social-insurance-legacy-regulation-llm-art-registration_002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "عمليات المدفوعات غير المصرحة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "عمليات المدفوعات غير المصرحة",
+        "definition_text": "هي عمليات المدفوعات التي يتم انشاءها من غير مستخدم خدمات المدفوعات دون صالحية بإنشائها.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "غذاء غير صالح لالستهلاك الآدمي": [
@@ -21788,6 +22634,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "كلفة الأجل": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "كلفة الأجل",
+        "definition_text": "قيمة الأجل المقررة على المستفيد بموجب عقد التمويل، ويمكن التعبير عنها بنسبة مئوية سنوية ثابتة أو متغيرة من مبلغ التمويل المقدم للمستفيد.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "كود التوزيع": [
       {
         "track_id": "electricity_regulation",
@@ -22080,6 +22936,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مبادئ البنى التحتية لألسواق المالية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "مبادئ البنى التحتية لألسواق المالية",
+        "definition_text": "المبادئ الصادرة عن لجنة المدفوعات والبنى التحتية لألسواق المالية و المنظمة الدولية لهيئات الأوراق المالية في أبريل لعام 2012 م، وكافة التعديالت والإصدارات اللاحقة لها.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مبلغ الأوراق القضائية": [
       {
         "track_id": "enforcement_law",
@@ -22090,6 +22956,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مبلغ التمويل": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "مبلغ التمويل",
+        "definition_text": "الحد الأقصى أو إجمالي المبالغ المتاحة للمستفيد بموجب عقد التمويل.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "متبقيات المستحضرات البيطرية": [
       {
         "track_id": "agriculture_regulation",
@@ -22097,6 +22973,16 @@
         "term_as_written": "متبقيات المستحضرات البيطرية",
         "definition_text": "المواد التي تتواجد في المنتجات الغذائية من أصل حيواني كنتيجة لاستخدام المستحضرات البيطرية. وهذه تعتمد على المركبات الأصلية و / أو نواتج أيضها داخل الجسم وكذلك بقايا المستحضرات البيطرية غير النقية.\nالحدود القصوى لمتبقيات المستحضرات البيطرية والمتبقيات الأخرى: الحد الأقصى المسموح لمتبقي مستحضر بيطري ناتج من رعاية حيوانية وبيطرية وفق المواصفات القياسية المعتمدة في المملكة العربية السعودية.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "متطلبات التعيين في المناصب القيادية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "متطلبات التعيين في المناصب القيادية",
+        "definition_text": "القواعد والضوابط والتعليمات الصادرة عن البنك المركزي - وكافة التعديالت اللاحقة لها - والمشتملة على معايير الكفاية والصالحية لشاغلي المناصب القيادية لدى مشغلي نظم المدفوعات ومقدمي خدمات المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -22127,6 +23013,16 @@
         "term_as_written": "متعهد النقل المتعدد الوسائط",
         "definition_text": "الشخص الذي يبرم -بنفسه أو بوساطة من ينيبه- عقد نقل متعدد الوسائط، ويتصرف بصفته أصيلاً, عن المرسل أو الناقلين المشتركين في عمليات النقل المتعدد الوسائط.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "متوسط قيمة عمليات المدفوعات الشهرية": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "متوسط قيمة عمليات المدفوعات الشهرية",
+        "definition_text": "المتوسط الشهري المتجدد خالل فترة اثني عشر شهرا تقويميا التي تسبق تاريخ حساب الإجمالي لعمليات المدفوعات التي ينفذها مقدم خدمات المدفوعات، ويشمل ذلك عمليات المدفوعات المنفذة من قبل وكالئه،المبلغ وال يشمل ذلك إصدار أو استرداد النقود الإلكترونية.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -22236,6 +23132,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 1,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة الجمعية التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cooperative_societies_regulation",
+        "article_number": 54,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة مجلس الجمعيات التعاونية.",
+        "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "engineering_practice_law",
         "article_number": 1,
         "term_as_written": "مجلس الإدارة",
@@ -22250,6 +23162,14 @@
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "engineering-practice-regulation-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة شركة التمويل.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "privatization_regulation",
@@ -22726,6 +23646,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مستخدم خدمات المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "مستخدم خدمات المدفوعات",
+        "definition_text": "أي شخص يستخدم أو يتلقى خدمة أو أكثر من خدمات المدفوعات ذات الصلة بصفته الدافع أو المدفوع له أو كل ي هما، أو أي شخص يستخدم خدمات المدفوعات ذات الصلة بخدمات مقدم خدمات معلومات حساب المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مستشار الاستثمار": [
       {
         "track_id": "capital_market_law",
@@ -22803,6 +23733,16 @@
         "term_as_written": "مشغل المطار",
         "definition_text": "أي شخص طبيعي أو معنوي يقوم بتشغيل المطار أو جزء منه.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مشغل نظم المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "مشغل نظم المدفوعات",
+        "definition_text": "الشخص االعتباري المرخص من البنك المركزي باعتباره مشغال لواحد أو أكثر من نظم المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -22926,6 +23866,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "معدل النسبة السنوي": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "معدل النسبة السنوي",
+        "definition_text": "معدل الخصم محسوبا وفق أحكام المادة الخامسة والثمانون من هذه اللائحة.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مقدم الخدمات": [
       {
         "track_id": "environmental_air_quality",
@@ -22986,6 +23936,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مقدم الخدمة المرتبط بنظام المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة المرتبط بنظام المدفوعات",
+        "definition_text": "يقصد به مقدم الخدمات التي تشكل جزءا من ترتيبات تشغيل نظام المدفوعات.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مقدم الخدمة المسيطر": [
       {
         "track_id": "telecommunications_law",
@@ -23030,6 +23990,14 @@
         "definition_text": "المقيد في سجلات الهيئة على أنه الشخص الذي يطلب وثيقة الحماية.",
         "source_record_id": "patent-law-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "مقدم الطلب",
+        "definition_text": "الشخص ذو الصفة االعتبارية - أو من ينوب عنه - الذي يقدم طلب ال ترخيص.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مقدم خدمات التصديق": [
@@ -23040,6 +24008,26 @@
         "definition_text": "شخص مرخص له بإصدار شهادات التصديق الرقمي، أو أي خدمة أو مهمة متعلقة بها وبالتوقيعات الإلكترونية وفقاً لهذا النظام.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "مقدم خدمات المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "مقدم خدمات المدفوعات",
+        "definition_text": "أي من الكيانات الآتية: (أ) منشأة لديها ترخيص شركة مدفوعات كبيرة أو شركة نقود إلكترونية كبيرة أو شركة نقود إلكترونية صغيرة. (ب) منشأة لديها ترخيص شركة مدفوعات صغيرة.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مقدم خدمات حساب المدفوعات": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "مقدم خدمات حساب المدفوعات",
+        "definition_text": "مقدم خدمات المدفوعات الذي يقدم ويحتفظ بحساب مدفوعات لصالح مستخدم خدمات المدفوعات، ويشمل ذلك البنك المرخص.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مقدمو الخدمات": [
@@ -23578,6 +24566,46 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نشاط التمويل الاستهلاكي المصغر": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "نشاط التمويل الاستهلاكي المصغر",
+        "definition_text": "منح الائتمان لغرض الاستهلاك وفق الضوابط المنصوص عليها في المادة (التاسعة) من اللائحة.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط التمويل الجماعي بالدين": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "نشاط التمويل الجماعي بالدين",
+        "definition_text": "جمع الأموال من المشاركين من خلال منصة التمويل الجماعي بالدين، لمنح الائتمان بعقود للمنشآت المستفيدة.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط التمويل متناهي الصغر": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "نشاط التمويل متناهي الصغر",
+        "definition_text": "منح الائتمان وفق الضوابط المنصوص عليها في المادة (التاسعة) من اللائحة.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط الدفع الآجل": [
+      {
+        "track_id": "finance_companies_regulation",
+        "article_number": 1,
+        "term_as_written": "نشاط الدفع الآجل",
+        "definition_text": "تمويل المستفيد لشراء السلع أو الخدمات من المتاجر أو الخدمات بلا كلفة أجل مستحقة على المستفيد.",
+        "source_record_id": "finance-companies-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "نشاط الزراعة العضوية": [
       {
         "track_id": "agriculture_law",
@@ -23670,6 +24698,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نظا م المدفوعات غير المصنف": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "نظا م المدفوعات غير المصنف",
+        "definition_text": "نظام المدفوعات غير المصنف من ق بل البنك المركزي كنظام مدفوعات مهم.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "نظام إسقاط مركاتور المستعرض العالمي": [
       {
         "track_id": "real_estate_registration_implementing_regulation",
@@ -23707,6 +24745,16 @@
         "term_as_written": "نظام المدفوعات المهم",
         "definition_text": "نظام المدفوعات الذي يصنفه البنك المركزي بأنه مهم، وفق المعايير التي يحددها، وذلك بالنظر لحجم وقيمة وطبيعة العمليات التي تتم من خلاله، وارتباطه بنظم التسوية والمقاصة داخل المملكة وخارجها.",
         "source_record_id": "payment-systems-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نظام المدفوعات الوطني": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "نظام المدفوعات الوطني",
+        "definition_text": "نظام المدفوعات الذي يملكه أو يشغله البنك المركزي بشكل مباشر أو غير مباشر.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23785,6 +24833,16 @@
         "term_as_written": "نقل ملكية الأصول",
         "definition_text": "ترتيب تعاقدي مرتبط بالبنية التحتية، أو الخدمات العامة، ينتج عنه نقل ملكية أي من الأصول من أي جهة حكومية إلى الطرف الخاص.",
         "source_record_id": "privatization-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نموذج المالءمة": [
+      {
+        "track_id": "payment_systems_regulation",
+        "article_number": 1,
+        "term_as_written": "نموذج المالءمة",
+        "definition_text": "النموذج الصادر عن البنك المركزي وفقا لمتطلبات التعيين في المناصب القيادية. قواعد التشغيل القواعد التشغيلية الخاصة بنظام المدفوعات المسجل.: قواعد إسناد المهام: اللوائح والقواعد والتعاميم والضوابط والتعليمات الصادرة عن البنك المركزي، والمتعلقة بإسناد المهام لطرف ثالث؛ بهدف تنظيم أحكام إسناد الم هام لطرف ثالث.",
+        "source_record_id": "payment-systems-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

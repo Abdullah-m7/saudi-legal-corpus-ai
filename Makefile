@@ -350,6 +350,12 @@ export PYTHONPATH := src:$(PYTHONPATH)
         press-regulation-track-validate \
         building-code-regulation-track-validate \
         telecommunications-regulation-track-validate \
+        credit-information-regulation-track-validate \
+        payment-systems-regulation-track-validate \
+        banking-control-regulation-track-validate \
+        finance-companies-regulation-track-validate \
+        finance-lease-regulation-track-validate \
+        cooperative-societies-regulation-track-validate \
         qa-gate
 
 help:
@@ -1824,6 +1830,24 @@ building-code-regulation-track-validate:
 
 telecommunications-regulation-track-validate:
 	$(PY) scripts/validate_telecommunications_regulation_track.py
+
+credit-information-regulation-track-validate:
+	$(PY) scripts/validate_credit_information_regulation_track.py
+
+payment-systems-regulation-track-validate:
+	$(PY) scripts/validate_payment_systems_regulation_track.py
+
+banking-control-regulation-track-validate:
+	$(PY) scripts/validate_banking_control_regulation_track.py
+
+finance-companies-regulation-track-validate:
+	$(PY) scripts/validate_finance_companies_regulation_track.py
+
+finance-lease-regulation-track-validate:
+	$(PY) scripts/validate_finance_lease_regulation_track.py
+
+cooperative-societies-regulation-track-validate:
+	$(PY) scripts/validate_cooperative_societies_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

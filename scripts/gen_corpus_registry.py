@@ -274,6 +274,12 @@ WATER_REGULATION_LLM = os.path.join(ROOT, "data", "water_regulation_arabic_legal
 PRESS_REGULATION_LLM = os.path.join(ROOT, "data", "press_regulation_arabic_legal_llm", "press_regulation_legal_llm_001_099.json")
 BUILDING_CODE_REGULATION_LLM = os.path.join(ROOT, "data", "building_code_regulation_arabic_legal_llm", "building_code_regulation_legal_llm_001_030.json")
 TELECOMMUNICATIONS_REGULATION_LLM = os.path.join(ROOT, "data", "telecommunications_regulation_arabic_legal_llm", "telecommunications_regulation_legal_llm_001_108.json")
+CREDIT_INFORMATION_REGULATION_LLM = os.path.join(ROOT, "data", "credit_information_regulation_arabic_legal_llm", "credit_information_regulation_legal_llm_001_055.json")
+PAYMENT_SYSTEMS_REGULATION_LLM = os.path.join(ROOT, "data", "payment_systems_regulation_arabic_legal_llm", "payment_systems_regulation_legal_llm_001_133.json")
+BANKING_CONTROL_REGULATION_LLM = os.path.join(ROOT, "data", "banking_control_regulation_arabic_legal_llm", "banking_control_regulation_legal_llm_001_031.json")
+FINANCE_COMPANIES_REGULATION_LLM = os.path.join(ROOT, "data", "finance_companies_regulation_arabic_legal_llm", "finance_companies_regulation_legal_llm_001_106.json")
+FINANCE_LEASE_REGULATION_LLM = os.path.join(ROOT, "data", "finance_lease_regulation_arabic_legal_llm", "finance_lease_regulation_legal_llm_001_032.json")
+COOPERATIVE_SOCIETIES_REGULATION_LLM = os.path.join(ROOT, "data", "cooperative_societies_regulation_arabic_legal_llm", "cooperative_societies_regulation_legal_llm_001_055.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -541,6 +547,12 @@ def main() -> int:
     press_regulation_llm = _load_json(PRESS_REGULATION_LLM)
     building_code_regulation_llm = _load_json(BUILDING_CODE_REGULATION_LLM)
     telecommunications_regulation_llm = _load_json(TELECOMMUNICATIONS_REGULATION_LLM)
+    credit_information_regulation_llm = _load_json(CREDIT_INFORMATION_REGULATION_LLM)
+    payment_systems_regulation_llm = _load_json(PAYMENT_SYSTEMS_REGULATION_LLM)
+    banking_control_regulation_llm = _load_json(BANKING_CONTROL_REGULATION_LLM)
+    finance_companies_regulation_llm = _load_json(FINANCE_COMPANIES_REGULATION_LLM)
+    finance_lease_regulation_llm = _load_json(FINANCE_LEASE_REGULATION_LLM)
+    cooperative_societies_regulation_llm = _load_json(COOPERATIVE_SOCIETIES_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -561,7 +573,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 236,
+        "total_tracks": 242,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -801,6 +813,12 @@ def main() -> int:
             + press_regulation_llm["record_count"]  # 99 Implementing Regulation of the Press and Publications Law (قرار وزير الإعلام رقم, 16/6/1422) -- see track notes for full verification tier/citation detail
             + building_code_regulation_llm["record_count"]  # 30 Implementing Regulation of the Law on Application of the Saudi Building Code (القرار الوزاري رقم, 14/10/1439) -- see track notes for full verification tier/citation detail
             + telecommunications_regulation_llm["record_count"]  # 108 Implementing Regulation of the Telecommunications and Information Technology Law (قرار وزير الاتصالات وتقنية المعلومات رقم, 14/5/1444) -- see track notes for full verification tier/citation detail
+            + credit_information_regulation_llm["record_count"]  # 55 Implementing Regulation of the Credit Information Law (قرار محافظ مؤسسة النقد العربي السعودي رقم أق/13709, 22/9/1432) -- see track notes for full verification tier/citation detail
+            + payment_systems_regulation_llm["record_count"]  # 133 Implementing Regulation of the Payment Systems and Services Law (تعميم البنك المركزي السعودي رقم 44093096, 24/11/1444) -- see track notes for full verification tier/citation detail
+            + banking_control_regulation_llm["record_count"]  # 31 Rules for the Application of the Banking Control Law (القرار الوزاري رقم 2149/3, 14/10/1406) -- see track notes for full verification tier/citation detail
+            + finance_companies_regulation_llm["record_count"]  # 106 Implementing Regulation of the Finance Companies Control Law (القرار الإداري رقم 2/م ش ت, بصيغته المعدلة بالقرار 179/م ش ت, 2/7/1447) -- see track notes for full verification tier/citation detail
+            + finance_lease_regulation_llm["record_count"]  # 32 Implementing Regulation of the Finance Lease Law (القرار الإداري رقم 1/م ش ت, 14/4/1434) -- see track notes for full verification tier/citation detail
+            + cooperative_societies_regulation_llm["record_count"]  # 55 Implementing Regulation of the Cooperative Societies Law (القرار الوزاري رقم 52068, 1429) -- see track notes for full verification tier/citation detail
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -1031,6 +1049,12 @@ def main() -> int:
             + press_regulation_llm["record_count"]
             + building_code_regulation_llm["record_count"]
             + telecommunications_regulation_llm["record_count"]
+            + credit_information_regulation_llm["record_count"]
+            + payment_systems_regulation_llm["record_count"]
+            + banking_control_regulation_llm["record_count"]
+            + finance_companies_regulation_llm["record_count"]
+            + finance_lease_regulation_llm["record_count"]
+            + cooperative_societies_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -7849,6 +7873,174 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "«اللائحة التنفيذية لنظام الاتصالات وتقنية المعلومات» — Implementing Regulation of the Telecommunications and Information Technology Law. **108 records, ALL اصلية**. **VERIFICATION TIER: TIER_2_DUAL_OFFICIAL_PRIMARY_BORN_DIGITAL_CROSS_VERIFIED** — two independent official government PDF sources (CST and MCIT), both born-digital, agreeing verbatim after correcting well-documented systematic extraction artifacts, none altering wording or substance: a lam-alif ligature reversal defect, a single reversed cross-reference (corrected from '(41)' to the true 'Article (14)' by comparing both sources against all bracketed references), reversed numbered-paragraph markers, and five articles whose clause order was restored to match the source page image — all extraction-artifact corrections, not edits to legal content. laws.boe.gov.sa has no dedicated lawId page for this bylaw. The two Umm al-Qura Gazette links named in the research brief redirected to the Gazette's current homepage rather than the archived 2022 publication notice, so gazette text itself was not independently re-confirmed this pass. No confirmed amendment to this Implementing Regulation was found since its 14/5/1444H approval: a 2017 CST news item on amending 'the Implementing Regulation of the Telecommunications Law' was checked and found to concern the PRIOR, now-repealed 2001 law's regulation, not this one; a same-titled e-participation consultation page could not be fetched and its lower ID relative to the base law's own 2024 amendment-consultation ID suggests, without full confirmation, that it is the original 2022 pre-approval draft rather than a later amendment round. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "credit_information_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام المعلومات الائتمانية",
+                "display_name_en": "Implementing Regulation of the Credit Information Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_1_SAMA_WAYBACK_ARCHIVED_PDF_DUAL_OCR_PYMUPDF_RECONCILED_X_RULEBOOK_SAMA_STRUCTURAL_NUMERIC_CROSSVERIFIED",
+                "source_authority": "Decision of the Governor of the Saudi Arabian Monetary Agency (SAMA) No. أق/13709, dated 22/9/1432H (21/8/2011G), issued under Article 16 of the Credit Information Law (Royal Decree M/37, 5/7/1429H). Primary text: the bayancb.com-hosted 24-page born-digital PDF (24/9/1432H circular transmittal), fetched via its Wayback Machine snapshot (2023-09-27) after the live URL's opaque media-GUID had rotated and returned HTTP 404 on both the originally-cited and a CDX-located earlier GUID. Reconciled via two independent extraction pipelines (Tesseract Arabic OCR of 300dpi page renders vs. PyMuPDF geometric character-exact extraction), correcting a systematic hamza misread in ائتمان and three OCR-dropped clauses/items located and filled from the geometric pass. Independently cross-verified for the decision number/dates, 55-article count, 12 topical groupings, and numerous specific figures (capital, fees, retention periods, procedural windows) against rulebook.sama.gov.sa, SAMA's own regulator portal, fetched live (HTTP 200).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": credit_information_regulation_llm["record_count"],
+                    "data_path": "data/credit_information_regulation_arabic_legal_llm/credit_information_regulation_legal_llm_001_055.json"}},
+                "record_counts": {"arabic_articles": credit_information_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 55, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": credit_information_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/credit_information_regulation/law/official_source/credit_information_regulation_official_source.json",
+                    "sources/credit_information_regulation/law/verified/credit_information_regulation_verified_summary.json",
+                    "data/credit_information_regulation_arabic_legal_llm/credit_information_regulation_legal_llm_001_055.json",
+                ],
+                "validator_targets": ["make credit-information-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«اللائحة التنفيذية لنظام المعلومات الائتمانية» — Implementing Regulation of the Credit Information Law. **55 records, ALL اصلية**, flat with 12 informal topical headings reproduced from the source's own table of contents. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — the governing text (a born-digital PDF fetched via Wayback Machine snapshot after the live bayancb.com URL's media-GUID rotated to a 404) was independently reconciled across two extraction pipelines (Tesseract OCR vs. PyMuPDF geometric extraction) of the SAME official document, correcting a systematic ائتمان hamza-misread defect and three OCR-dropped clauses/items (Art. 19's inspection-cooperation clause, Art. 28 items 2-3, a stray digit in Art. 25), each recovered and verified against the geometric pass. Independently corroborated for the decision number/dates, 55-article count, 12 topical groupings, and numerous specific figures (Art. 3's SR 50M minimum capital, Art. 7's 5-year license term, Art. 17's 5/10-year retention windows, Art. 40's eleven member obligations, Arts. 45-47's procedural-day windows) against rulebook.sama.gov.sa, SAMA's own regulator portal (a distinct official source from the bayancb.com PDF itself), fetched live (HTTP 200). sama.gov.sa's own listed PDF URL was unreachable this pass (SAMA-branded error page on every attempt); rulebook.sama.gov.sa was used instead. A dedicated amendment search found no evidence of any subsequent amendment since the 21/8/2011G issuance. The Official Gazette publication issue number/date referenced by the Regulation's own closing Article 55 could not be independently confirmed and is left unset rather than guessed. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "payment_systems_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام المدفوعات وخدماتها",
+                "display_name_en": "Implementing Regulation of the Payment Systems and Services Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_4_SAMA_RULEBOOK_SINGLE_OFFICIAL_PDF_DUAL_EXTRACTION_TOOL_RECONCILED_NO_INDEPENDENT_SECOND_SOURCE",
+                "source_authority": "Saudi Central Bank (formerly SAMA) Circular No. (44093096), dated 24/11/1444H (13/6/2023G), promulgating the Implementing Regulation of the Payment Systems and Services Law. Full text fetched directly (HTTP 200) as a 74-page born-digital PDF hosted on rulebook.sama.gov.sa (SAMA's own official Rulebook portal). 133 articles across 12 أبواب (corrects a prior estimate of '150+ articles' based on partial page-browsing rather than the full extracted PDF text). This is a single official primary source this pass: sama.gov.sa's own document-library path was unreachable, and no independent second official or secondary source was cross-checked for full-text verbatim agreement.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": payment_systems_regulation_llm["record_count"],
+                    "data_path": "data/payment_systems_regulation_arabic_legal_llm/payment_systems_regulation_legal_llm_001_133.json"}},
+                "record_counts": {"arabic_articles": payment_systems_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 133, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": payment_systems_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/payment_systems_regulation/law/official_source/payment_systems_regulation_official_source.json",
+                    "sources/payment_systems_regulation/law/verified/payment_systems_regulation_verified_summary.json",
+                    "data/payment_systems_regulation_arabic_legal_llm/payment_systems_regulation_legal_llm_001_133.json",
+                ],
+                "validator_targets": ["make payment-systems-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«اللائحة التنفيذية لنظام المدفوعات وخدماتها» — Implementing Regulation of the Payment Systems and Services Law. **133 records, ALL اصلية** across 12 أبواب (الباب الرابع، الخامس، السادس، التاسع further subdivided into فصول). **VERIFICATION TIER: TIER_4_SINGLE_SOURCE** — full text fetched directly from rulebook.sama.gov.sa (SAMA's own official Rulebook portal), a genuine primary official source, but only ONE such source was reached this pass (sama.gov.sa's own document path was unreachable; no secondary aggregator was checked for full-text cross-verification either, for lack of time). Article count corrected from a prior estimate ('150+') to the true 133, confirmed via two independent extraction tools (pdftotext, PyMuPDF) agreeing on 133 sequential article headers with no gap, plus the closing Article 133's standard 'يسري من تاريخ إصدارها' terminal formula. A confirmed, zero-exception systematic bidi-reversal defect (ا+{آأإم}+ل transposition, 3500+ occurrences across 90+ word roots) was corrected via an exhaustive pattern substitution, justified by a 100%-exception-free verification rather than probabilistic inference; narrower defects (لل+ا ligature, لـ+م-initial-word prefix confusions) were corrected via explicit, context-checked word dictionaries rather than general patterns, to avoid altering genuinely correct words of similar surface form. The Regulation's own Article 131 confirms it repeals and replaces SAMA's prior 5/6/1441H (30/1/2020G) payment-service-provider rules; Article 132 sets transitional terms. No amendment to this 2023 text itself was found. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "banking_control_regulation",
+                "display_name_ar": "قواعد تطبيق أحكام نظام مراقبة البنوك",
+                "display_name_en": "Rules for the Application of the Banking Control Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_1_SAMA_RULEBOOK_LIVE_PAGE_X_ARCHIVAL_1429H_PDF_DUAL_OFFICIAL_CROSSVERIFIED_TWO_DOCUMENTED_VARIANCES",
+                "source_authority": "Ministerial Resolution No. 2149/3, dated 14/10/1406H (21/6/1986G), issued by the Minister of Finance and National Economy under Article 26 of the Banking Control Law (Royal Decree M/5, 22/2/1386H), transmitted by a SAMA Governor circular. An administrative circular embedding a ministerial resolution, not a modern-form 'implementing regulation,' consistent with mid-1980s promulgation practice. Verified via two independent official SAMA sources agreeing on all 31 substantive provisions across 5 sections: the current live Arabic page on rulebook.sama.gov.sa (SAMA's own Rulebook portal, status marked 'نافذ'/in force) and its linked original born-digital archival PDF (SAMA_AR_1429_VER1.pdf). Two documented variances between the two sources (an institution-name update footnoted by SAMA itself, and one non-duplicate vs. duplicate item-numbering difference) are resolved in favor of the live page and preserved in full below rather than silently dropped.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": banking_control_regulation_llm["record_count"],
+                    "data_path": "data/banking_control_regulation_arabic_legal_llm/banking_control_regulation_legal_llm_001_031.json"}},
+                "record_counts": {"arabic_articles": banking_control_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 31, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": banking_control_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/banking_control_regulation/law/official_source/banking_control_regulation_official_source.json",
+                    "sources/banking_control_regulation/law/verified/banking_control_regulation_verified_summary.json",
+                    "data/banking_control_regulation_arabic_legal_llm/banking_control_regulation_legal_llm_001_031.json",
+                ],
+                "validator_targets": ["make banking-control-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«قواعد تطبيق أحكام نظام مراقبة البنوك» — Rules for the Application of the Banking Control Law. **31 provisions (5 sections), ALL اصلية** — an administrative circular embedding a 14/10/1406H ministerial resolution, not a modern-form named 'implementing regulation.' **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — two independent official SAMA documents (the current live Arabic Rulebook page, and its own linked original 1429H-hosted archival PDF, both fetched HTTP 200 via the reachable rulebook.sama.gov.sa subdomain after www.sama.gov.sa itself returned a generic error page) agree verbatim on all 31 provisions across the 5 sections, with two documented variances: (1) the live page uses 'البنك المركزي' with SAMA's own explanatory footnote citing the Saudi Central Bank Law (M/36, 11/4/1442H) that renamed the institution, while the archival PDF retains the original 1406H 'مؤسسة النقد العربي السعودي' — the live page's terminology was adopted as this track's text, with the original preserved as a documented historical variant; (2) Section I's final item is numbered '10' (non-duplicate) on the live page vs. '8' (a duplicate of the prior item) in the archival PDF — the live page's non-duplicate numbering was adopted. A single unexplained revision-history gap (8 Nov 2017) could not be examined (access denied) and is recorded as an open, unconfirmed point rather than assumed to be substantive. No Gazette publication reference exists for this circular-form instrument, consistent with its administrative (not royal-decree) nature. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "finance_companies_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام مراقبة شركات التمويل",
+                "display_name_en": "Implementing Regulation of the Finance Companies Control Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_4_BFC_GOV_SA_SINGLE_OFFICIAL_IMAGE_SCAN_DEC2025_CONSOLIDATED_TEXT_MULTI_SOURCE_AMENDMENT_EVENT_CORROBORATED",
+                "source_authority": "Administrative Decision No. (2/م ش ت), dated 14/4/1434H, issued by the Governor of SAMA under the Finance Companies Control Law (Royal Decree M/51, 13/8/1433H), as substantively amended by Decision No. (179/م ش ت) transmitted via SAMA Circular No. (472038006), dated 2/7/1447H (22/12/2025G). Full text fetched directly (HTTP 200) as a 38-page image-scanned PDF from bfc.gov.sa (confirmed via PDF metadata to be the December 2025 consolidated edition). The December 2025 amendment event, its decision number, and its scope are independently corroborated by qanoonsa.com and four independent Saudi news outlets (spa.gov.sa, aawsat.com, argaam.com, cnbcarabia.com), though the pre-amendment article text itself was not obtained for article-level comparison this pass.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": finance_companies_regulation_llm["record_count"],
+                    "data_path": "data/finance_companies_regulation_arabic_legal_llm/finance_companies_regulation_legal_llm_001_106.json"}},
+                "record_counts": {"arabic_articles": finance_companies_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 106, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": finance_companies_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/finance_companies_regulation/law/official_source/finance_companies_regulation_official_source.json",
+                    "sources/finance_companies_regulation/law/verified/finance_companies_regulation_verified_summary.json",
+                    "data/finance_companies_regulation_arabic_legal_llm/finance_companies_regulation_legal_llm_001_106.json",
+                ],
+                "validator_targets": ["make finance-companies-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«اللائحة التنفيذية لنظام مراقبة شركات التمويل» — Implementing Regulation of the Finance Companies Control Law, the sibling implementing regulation this corpus's own finance_companies_law track had already flagged as an out-of-scope follow-up candidate (image-scanned, no text layer). **106 records, ALL اصلية, consolidated_amended_law=true** across 22 أبواب. **VERIFICATION TIER: TIER_4_SINGLE_SOURCE** — the governing text is a single official primary source (bfc.gov.sa's own 38-page image-scanned PDF, transcribed by direct visual reading of 200dpi page renders, following this corpus's water_regulation/cooperative_societies_regulation methodology), confirmed via file metadata (creation timestamp 22 Dec 2025 UTC) and its own cover circular to be the DECEMBER 2025 consolidated re-issuance (Governor's Decision 179/م ش ت, SAMA Circular 472038006, 2/7/1447H), which also repealed two now-merged companion rule-sets (micro-finance rules 80/م ش ت and micro-consumer-finance rules 82/م ش ت, both folded into this Regulation's own Articles 1 and 9). sama.gov.sa's own equivalent PDF path and rulebook.sama.gov.sa's dynamic JS-rendered page were both unreachable/unusable as text sources this pass; the December 2025 amendment event itself (not the article-level text) is independently corroborated by qanoonsa.com and four independent news outlets, all describing the same date and substantive scope (bank-guarantee amounts, related-party provisions, license-termination grounds) matching this track's own extracted articles. Because no pre-amendment version of this Regulation was obtained for article-level comparison, no individual article is classified معدلة/مضافة; consolidated_amended_law=true discloses that this is a post-amendment consolidated text, not an original unamended one. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "finance_lease_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام الإيجار التمويلي",
+                "display_name_en": "Implementing Regulation of the Finance Lease Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_2_SAMA_RULEBOOK_BORN_DIGITAL_HTML_X_DEDICATED_AMENDMENT_DECISION_NODE_X_ENGLISH_STRUCTURAL_CROSSCHECK",
+                "source_authority": "Administrative/Governor's Decision No. (1/م ش ت), dated 14/4/1434H (24/2/2013G), issued under Article 27 of the Finance Lease Law (Royal Decree M/48, 13/8/1433H). Full text fetched directly (HTTP 200) as clean, structured, born-digital HTML from rulebook.sama.gov.sa's Arabic 'entiresection' full-text view (SAMA's own official Rulebook portal, status 'نافذ'), independently structurally cross-checked against the equivalent English entiresection view (32 articles, 3 Parts, identical boundaries in both languages). Three provisions (Article 10(3), Article 17, and Article 25(2)) are marked معدلة, each carrying an inline footnote citing Governor's Decision No. (93/م ش ت), 18/10/1441H, independently corroborated by SAMA's own dedicated amendment-decision page (node 3243, transmitted by SAMA Circular No. 41061552, 29/10/1441H) — a THIRD amendment locus (Article 25(2)) beyond the two named in this track's commissioning brief, added after independent re-verification.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": finance_lease_regulation_llm["record_count"],
+                    "data_path": "data/finance_lease_regulation_arabic_legal_llm/finance_lease_regulation_legal_llm_001_032.json"}},
+                "record_counts": {"arabic_articles": finance_lease_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 29, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
+                                  "total": finance_lease_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/finance_lease_regulation/law/official_source/finance_lease_regulation_official_source.json",
+                    "sources/finance_lease_regulation/law/verified/finance_lease_regulation_verified_summary.json",
+                    "data/finance_lease_regulation_arabic_legal_llm/finance_lease_regulation_legal_llm_001_032.json",
+                ],
+                "validator_targets": ["make finance-lease-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«اللائحة التنفيذية لنظام الإيجار التمويلي» — Implementing Regulation of the Finance Lease Law, the sibling regulation this corpus's own finance_lease (base law) track had already flagged as an existing, separately-amended follow-up candidate. **32 records: 29 اصلية / 3 معدلة** (Articles 10§3, 17, 25§2) across 3 أبواب. **VERIFICATION TIER: TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED** — full text fetched directly from rulebook.sama.gov.sa's clean, structured, born-digital Arabic HTML 'entiresection' view (SAMA's own official Rulebook portal), parsed via BeautifulSoup with zero missing article headers across 32 sequential المادة anchors and 3 Part boundaries, independently structurally cross-checked (article count, Part boundaries, amendment-footnote placement) against the equivalent English-language view on the same portal. All three amendment loci (Article 10§3, Article 17 in full, and Article 25§2 — the third corrected and added beyond this track's original two-article commissioning brief after independent re-verification) are corroborated by SAMA's own dedicated amendment-decision page (node 3243, Governor's Decision 93/م ش ت, 18/10/1441H, transmitted by Circular 41061552). None of these documents reproduces the pre-amendment wording, so only the current (post-1441H) text is recorded for the three amended provisions — a documented gap, not a fabricated reconstruction. A separate institutional-rename footnote ('البنك المركزي' replacing 'مؤسسة النقد العربي السعودي' per Saudi Central Bank Law M/36, 11/4/1442H) is disclosed as a rename, not counted as a textual amendment. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cooperative_societies_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام الجمعيات التعاونية",
+                "display_name_en": "Implementing Regulation of the Cooperative Societies Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TIER_1_NCNP_GOV_SA_X_CSCS_ORG_SA_DUAL_INDEPENDENT_OFFICIAL_IMAGE_SCAN_CROSSVERIFIED",
+                "source_authority": "Ministerial Decision No. (52068) of the Minister of Social Affairs, issued under Article 42 of the Cooperative Societies Law (Royal Decree M/14, 10/3/1429H; Council of Ministers Resolution 73, 9/3/1429H). Full text fetched directly (HTTP 200) as a 32-page image-scanned PDF from two independent official bodies agreeing verbatim: the National Center for the Development of the Non-Profit Sector (ncnp.gov.sa, the current publisher of the base law's own text) and the Cooperative Societies Council (cscs.org.sa, the body established by this Regulation's own Article 54). The decree's exact day/month is obscured by a cover-page ink stamp (year 1429H legible) and is not fabricated.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cooperative_societies_regulation_llm["record_count"],
+                    "data_path": "data/cooperative_societies_regulation_arabic_legal_llm/cooperative_societies_regulation_legal_llm_001_055.json"}},
+                "record_counts": {"arabic_articles": cooperative_societies_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 55, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": cooperative_societies_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/cooperative_societies_regulation/law/official_source/cooperative_societies_regulation_official_source.json",
+                    "sources/cooperative_societies_regulation/law/verified/cooperative_societies_regulation_verified_summary.json",
+                    "data/cooperative_societies_regulation_arabic_legal_llm/cooperative_societies_regulation_legal_llm_001_055.json",
+                ],
+                "validator_targets": ["make cooperative-societies-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«اللائحة التنفيذية لنظام الجمعيات التعاونية» — Implementing Regulation of the Cooperative Societies Law, the sibling regulation this corpus's own cooperative_societies (base law) track had already flagged as a follow-up candidate. **55 records, ALL اصلية** across 9 أبواب (13 chapter_structure sub-ranges once باب 1's 4 فصول and باب 2's أولاً/ثانياً split are counted). **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — the full text was fetched directly (HTTP 200) as a 32-page image-scanned PDF from TWO independent official bodies agreeing verbatim: the National Center for the Development of the Non-Profit Sector (ncnp.gov.sa, which also publishes the base law's own text) and the Cooperative Societies Council (cscs.org.sa, the very body this Regulation's own Article 54 establishes) — a genuine cross-corroboration between two independent primary sources, not a mirror of the same file. The PDF has no extractable text layer; every article was transcribed by direct visual reading of 200dpi page renders, including zoomed crops to resolve the handwritten ministerial-decision number/date on the cover (the exact day/month remains obscured by a cover-page ink stamp; only the year, 1429H, is legible, and this is disclosed rather than guessed). No amendment to this Regulation was found this pass, disclosed as an absence-of-evidence finding rather than proof none exists. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -1361,6 +1361,50 @@ EDGES = [
                 "(one-instrument-per-pass rule).",
         "source_ref": "sources/tourism/law/official_source/tourism_law_official_source.json (Article 18)",
     },
+    {
+        "from_track_id": "payment_systems_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "القواعد التنظيمية لمقدمي خدمات المدفوعات",
+        "target_decree": "SAMA rules dated 5/6/1441H (30/1/2020G)",
+        "note": "payment_systems_regulation's own Article 131 states verbatim: "
+                "\"تلغي اللائحة القواعد التنظيمية لمقدمي خدمات المدفوعات "
+                "الصادرة عن البنك المركزي بتاريخ 5/6/1441هـ الموافق "
+                "30/1/2020م، وتحل محلها\". Article 132 sets transitional "
+                "terms for previously-licensed providers. Not separately "
+                "ingested in this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/payment_systems_regulation/law/verified/payment_systems_regulation_verified_summary.json (Article 131)",
+    },
+    {
+        "from_track_id": "finance_companies_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "قواعد ممارسة نشاط التمويل متناهي الصغر",
+        "target_decree": "Decision No. 80/م ش ت, 16/1/1441H",
+        "note": "finance_companies_regulation's own cover circular (No. "
+                "472038006, 2/7/1447H) states it repeals 'قواعد ممارسة نشاط "
+                "التمويل متناهي الصغر' (Decision 80/م ش ت, 16/1/1441H), with "
+                "its substantive provisions folded directly into this "
+                "Regulation's own Articles 1 and 9 (micro-finance "
+                "definitions/rules). Not separately ingested in this corpus "
+                "(one-instrument-per-pass rule).",
+        "source_ref": "sources/finance_companies_regulation/law/verified/finance_companies_regulation_verified_summary.json",
+    },
+    {
+        "from_track_id": "finance_companies_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "قواعد تنظيم شركات التمويل الاستهلاكي المصغر",
+        "target_decree": "Decision No. 82/م ش ت, 13/4/1441H",
+        "note": "finance_companies_regulation's own cover circular (No. "
+                "472038006, 2/7/1447H) states it also repeals 'قواعد تنظيم "
+                "شركات التمويل الاستهلاكي المصغر' (Decision 82/م ش ت, "
+                "13/4/1441H), with its substantive provisions folded "
+                "directly into this Regulation's own Articles 1 and 9 "
+                "(micro-consumer-finance definitions/rules). Not separately "
+                "ingested in this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/finance_companies_regulation/law/verified/finance_companies_regulation_verified_summary.json",
+    },
 ]
 
 # ---------------------------------------------------------------------------
