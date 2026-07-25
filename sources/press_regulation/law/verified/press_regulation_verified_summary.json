@@ -1,0 +1,107 @@
+{
+  "law_key": "press_regulation",
+  "layer": "PRESS_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 99,
+  "status_counts": {
+    "اصلية": 99,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "قرار وزير الإعلام رقم (م/و/2759/1/م)",
+  "decree_date_hijri": "16/6/1422",
+  "amendment_decree_ar": "قرار وزير الإعلام رقم (91513)",
+  "amendment_decree_date_hijri": "9/11/1439",
+  "base_law_decree": "المرسوم الملكي رقم (م/32)",
+  "base_law_decree_date_hijri": "3/9/1421",
+  "base_law_key": "press",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "section_ar": null,
+      "section_note_ar": "المادة الأولى (تعريفات) لا تحمل أي عنوان باب فوقها في المصدر؛ عنوان «الباب الأول» يظهر فعلياً بعد نص المادة الأولى وقبل نص المادة الثانية مباشرة، فتُركت المادة الأولى بلا تصنيف باب تبعاً لبنية المصدر ذاتها.",
+      "first_article": 1,
+      "last_article": 1
+    },
+    {
+      "section_ar": "شروط وضوابط التراخيص الإعلامية",
+      "first_article": 2,
+      "last_article": 16
+    },
+    {
+      "section_ar": "ضوابط ممارسة الأنشطة الإعلامية",
+      "first_article": 17,
+      "last_article": 62,
+      "section_note_ar": "يحتوي هذا الباب فصولاً فرعية مرقمة من 1 إلى 18 تحمل عيوب ترقيم أصلية في المصدر نفسه (لا الفصل الثالث ولا الرابع ولا الخامس ظهرت كعناوين مستقلة؛ ورقم «الفصل السادس» تكرر لعنوانين مختلفين -- استيراد الأفلام [مادة 27] والتصوير الفوتوغرافي [مادة 35]؛ كما ظهرت الفصول 17 ثم 15 ثم 16 بترتيب غير تصاعدي حول المواد 55-60) -- انظر known_unresolved_discrepancies. لم تُصحَّح هذه الأرقام ولم يُعَد ترتيبها؛ أُثبتت كما وردت حرفياً."
+    },
+    {
+      "section_ar": "أحكام المطبوعات وتداولها",
+      "first_article": 63,
+      "last_article": 77
+    },
+    {
+      "section_ar": "شئون الصحافة",
+      "first_article": 78,
+      "last_article": 89
+    },
+    {
+      "section_ar": "إنشاء الجمعيات الإعلامية",
+      "first_article": 90,
+      "last_article": 92
+    },
+    {
+      "section_ar": "الأحكام المتعلقة بضبط المخالفات وعرضها على اللجنة",
+      "first_article": 93,
+      "last_article": 96
+    },
+    {
+      "section_ar": "الأحكام العامة",
+      "first_article": 97,
+      "last_article": 99
+    }
+  ],
+  "verification_methodology_note": "اللائحة التنفيذية لنظام المطبوعات والنشر -- صادرة بقرار وزير الإعلام رقم (م/و/2759/1/م) وتاريخ 16/6/1422هـ، وعُدّلت بقرار وزير الإعلام رقم (91513) وتاريخ 9/11/1439هـ. هذا المسار هو مسار المتابعة الذي أشار إليه صراحة مسار press (القانون الأم، نظام المطبوعات والنشر) كمرشح خارج نطاقه.\n\nالمصدر الأساسي: ملف PDF رسمي صادر عن وزارة الإعلام (media.gov.sa، مستضاف على s3.media.gov.sa/new-mom-portal-prod)، بعنوان الملف 'اللائحة التنفيذيه لنظام المطبوعات والنشر الاخير' (98 صفحة). تعذر الوصول المباشر لكل من media.gov.sa و s3.media.gov.sa هذه الجولة (connection reset/timeout)، متسقاً مع ما وثقه مسار press نفسه لذات النطاق. جُلب الملف بنجاح عبر لقطة أرشيفية من Wayback Machine بتاريخ 23 نوفمبر 2024 (عبر مسار 'if_' المباشر لخدمة المحتوى وليس فقط واجهة CDX البرمجية للبيانات الوصفية، وكلاهما كان قابلاً للوصول هذه الجولة). فشل كل من pdftotext وPyMuPDF في استخلاص نص عربي سليم من هذا الملف (تبعثر حرفي داخل الكلمات، بنفس نمط العيب الموثق في خط مضمّن لدى ملفات حكومية أخرى مشابهة في هذه المدونة)؛ جُرِّب Tesseract OCR على عينة صفحات فأعطى نصاً مقروءاً لكن غير موثوق به كلياً، إلى جانب أن هذه البيئة السحابية مشتركة فعلياً مع جلسات أخرى متزامنة (تأكد ذلك عبر ps aux التي أظهرت عمليات tesseract أخرى غير تابعة لهذا المسار تتنافس على ذات الأنوية) مما جعل OCR الدفعي لكل الصفحات غير عملي هذه الجولة. اعتُمدت بدلاً من ذلك القراءة البصرية المباشرة (Vision) لكل صفحات الملف الـ98 (مُصيَّرة لصور بدقة 250 نقطة/بوصة)، وهي الطريقة التي فضّلها مسار anti_smoking_regulation صراحة على OCR لكونها 'أكثر موثوقية للعربية'. أُعيدت قراءة المواد 1-16 بالكامل مرة ثانية، وأُعيد فحص الحد الفاصل بين المواد 85-89 تحديداً بعد اكتشاف فجوة ظاهرية في الترقيم (انظر press_reg_art085_089_page_reread_note) تبيّن أنها خطأ في تسلسل قراءة الصفحات لا نقصاً في المصدر، وصُححت.\n\nالتحقق التقاطعي المستقل: WIPO Lex لا يستضيف سوى النظام الأم (M/32) لا هذه اللائحة. قانونية (qanoniah.com) تملك صفحة مخصصة لكن متنها محمَّل بجافاسكريبت يبدو محجوباً خلف عارض/جلسة (لا نص خام قابل للقراءة). بوابة هيئة الخبراء (laws.boe.gov.sa) لا تملك صفحة lawId مخصصة لهذه اللائحة (متسق مع نمط traffic_regulation وanti_smoking_regulation في هذه المدونة). islamport.com (الموسوعة الشاملة) فُحص مباشرة (HTML خام عبر curl، لا ملخص أداة الجلب فقط) وتبيّن أنه يستضيف نص النظام الأم فقط لا هذه اللائحة -- ملخص أولي من أداة WebFetch زعم خطأً أنه اللائحة نفسها بـ73 مادة؛ هذا الزعم غير الدقيق مسجل هنا صراحة كتحذير من الاعتماد على ملخصات الأدوات دون التحقق من النص الخام. التحقق الإيجابي الوحيد المستقل الذي عُثر عليه: مقال من جريدة أم القرى الرسمية (uqn.gov.sa) بعنوان 'فسح المؤلفات المذكورة في الفقرة (ج) من المادة التاسعة والستين من اللائحة التنفيذية لنظام المطبوعات والنشر بشكل فوري' يؤكد استقلالياً وجود هذه اللائحة ورقم/موضوع مادتها 69 فقرة (ج) تحديداً، ويطابق تماماً نص هذا المسار لتلك الفقرة.\n\nالتصنيف الصادق لمستوى التحقق: TIER_2 (مصدر أساسي حكومي مباشر واحد، مقروء بصرياً بالكامل، مع تحقق تقاطعي جزئي مستقل من جريدة أم القرى لمادة واحدة فقط، لا مصدر ثانٍ كامل النص).\n\n99 مادة، موزعة على 7 أبواب (المادة الأولى بلا باب، ثم الأبواب: الأول 2-16، الثاني 17-62 [يحوي فصولاً بعيوب ترقيم أصلية -- انظر التناقضات أدناه]، الثالث 63-77، الرابع 78-89، الخامس 90-92، السادس 93-96، السابع 97-99). عُدّلت اللائحة بقرار 91513/1439هـ لكن تعذر تحديد أي مادة بعينها شملها هذا التعديل من هذا المصدر وحده (لا سجل تغييرات ولا نسخة سابقة متاحة للمقارنة)؛ كل المواد الـ99 مصنفة legal_status_ar='اصلية' مع consolidated_amended_law=true، لا بمعنى أنها لم تُعدَّل قط، بل بمعنى أن هذا النص هو النسخة الموحدة الحالية ولا يوجد دليل يخصص التعديل لمادة دون أخرى. المادتان 7 و16 تحملان عبارة حمراء بديلة '{ تم تعديل الاجراء تقنياً }' مكان بند إجرائي محدد، أُبقيت حرفياً. العربية هي اللغة الحاكمة؛ لم تجر أي ترجمة أو تفسير أو صياغة على النص العربي. قراءة فقط على المدخلات؛ حتمي في المخرجات.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "press_reg_all_source_access_and_ocr_scrambling",
+      "description": "PRIMARY SOURCE ACCESS: media.gov.sa's live portal (and its s3.media.gov.sa document bucket) returned connection-reset/timeout on every direct-fetch attempt this pass -- consistent with this corpus's own press_law track, which documented the exact same domain as unreachable. The regulation's official PDF ('اللائحة التنفيذية لنظام المطبوعات والنشر', hosted at s3.media.gov.sa/new-mom-portal-prod/.../%D8%A7%D9%84%D9%84%D8%A7%D9%8A%D9%94%D8%AD%D8%A9...-0.pdf) was instead retrieved via a Wayback Machine snapshot dated 23 Nov 2024 (timestamp 20241123233338), fetched through the content-serving 'if_' path (web.archive.org's CDX metadata API and its content path were BOTH reachable this pass, unlike some prior sessions' experience) -- 98 pages, ~815KB. Both pdftotext and PyMuPDF extraction of this PDF produce WORD-INTERNAL CHARACTER-LEVEL SCRAMBLING (e.g. 'اللائحة' extracts as 'الالئحة', 'المطبوعات' as 'املطبوعات') -- the same class of embedded-font/ToUnicode defect this corpus has already documented for other government PDFs (cf. press_law's own media.gov.sa PDF cross-check, copyright_law's WIPO Lex PDF). This defect makes automated text extraction UNUSABLE for verbatim ingestion. Tesseract OCR (ara traineddata) was tested on sample pages and produced legible but imperfect text; given this sandbox's shared, multi-tenant CPU (confirmed via `ps aux` showing multiple concurrent unrelated tesseract jobs from other sessions competing for the same 4 cores), batch OCR of all 98 pages was abandoned as impractical within this pass. Instead, EVERY one of the 98 content pages (plus the cover page) was read directly via this track's own vision capability (rendered to PNG at 250 dpi and read as images), consistent with this corpus's anti_smoking_regulation precedent, which explicitly preferred direct vision reading over OCR as 'more reliable than OCR for Arabic'. All 99 articles were transcribed this way in a single full sequential pass, with an additional full second read-through of Articles 1-16 (the definitions/licensing-conditions section) and a targeted re-check of the Articles 85-89 boundary (see press_reg_art_085_089_page_reread_note) to catch page-skip errors."
+    },
+    {
+      "article_key": "press_reg_verification_tier_and_crosscheck",
+      "description": "VERIFICATION TIER: TIER_2. The full text rests on a single primary source (the Ministry of Media's own official PDF of this exact regulation, retrieved via a near-contemporaneous November 2024 Wayback Machine snapshot; this is the regulation's own issuing/administering ministry, not a third-party mirror), read in full via direct vision rather than unreliable OCR/text-extraction. A genuinely independent SECOND FULL-TEXT source was searched for but NOT found this pass: WIPO Lex hosts only the base Press and Publications Law (M/32), not this Implementing Regulation; qanoniah.com's dedicated page for this regulation loads its body via a JavaScript-driven, apparently login/session-gated viewer ('جار عرض الملف') that did not yield readable text via direct fetch; laws.boe.gov.sa has no dedicated lawId page for this Implementing Regulation (consistent with this corpus's traffic_regulation and anti_smoking_regulation precedents -- BOE does not catalogue ministerial-level executive regulations as standalone lawId records); islamport.com's 'الموسوعة الشاملة' entry for 'نظام المطبوعات والنشر' was checked directly (raw HTML fetch, not just a summarizing tool) and confirmed to contain only the BASE LAW text, not this regulation (a WebFetch-tool summary that claimed otherwise, including a fabricated 'Article 1'/'73 articles' claim, was independently checked against the raw HTML and found to be wrong -- this is recorded here explicitly as a caution against trusting AI-summarized fetches over raw source text). PARTIAL independent corroboration WAS found and used: an Umm al-Qura Gazette (uqn.gov.sa) article, found via web search and read via the fetch tool, titled 'فسح المؤلفات المذكورة في الفقرة (ج) من المادة التاسعة والستين من اللائحة التنفيذية لنظام المطبوعات والنشر بشكل فوري', independently confirms both this regulation's continued existence AND the specific existence/subject-matter of Article 69 paragraph (ج) (import clearance for written works) -- this matches this track's own transcribed Article 69(ج) exactly ('لا يجوز استيراد المؤلفات المكتوبة من الخارج إلا بعد الحصول على فسح خطي لكل مؤلف يراد استيراده'). This is a genuine, independent government-gazette corroboration of one article's numbering and subject matter, but it is NOT a second full-text source for the other 98 articles, so the overall tier is TIER_2 rather than TIER_1."
+    },
+    {
+      "article_key": "press_reg_amendment_decree_91513_not_attributable_to_articles",
+      "description": "This regulation's own cover page states it was issued by Ministerial Decision No. (م/و/2759/1/م) dated 16/6/1422H, 'والمعدلة بقرار وزير الاعلام رقم (91513) وتاريخ 9/11/1439هـ' (and amended by Ministerial Decision No. 91513 dated 9/11/1439H, i.e. ~23 Jul 2018G). This confirms independently (matching the task brief's prior research) that the regulation has been amended at least once since its 1422H issuance. HOWEVER, unlike this corpus's press_law track (where BOE's HTML carries explicit per-article 'changed-article' CSS markers and quoted changelog popups) or its anti_smoking_regulation track (where an independently-dated 2017 edition was diffed clause-by-clause against the 2019 edition), THIS regulation's PDF is a single flat consolidated document with NO in-text changelog, no redline/strikethrough markup, and no earlier dated edition of this exact document was located this pass to diff against. It is therefore NOT POSSIBLE to determine, from this source alone, WHICH of the 99 articles reflect the 1439H amendment versus the original 1422H text. Rather than fabricate an amendment attribution, every article's legal_status_ar in this track is set to 'اصلية' (i.e. 'as currently in force in this consolidated document', not a claim that no article has ever changed since 1422H) with consolidated_amended_law=true recording that the ingested text IS a post-amendment consolidated edition. This is an honest 'could not confirm which articles changed' rather than an invented per-article history."
+    },
+    {
+      "article_key": "press_reg_article1_untitled_predates_baab1",
+      "description": "Article 1 (تعريفات -- definitions) is NOT preceded by any باب heading in the source; the heading 'الباب الأول: شروط وضوابط التراخيص الإعلامية' appears physically AFTER Article 1's full text and immediately BEFORE Article 2. This track's chapter_structure therefore lists Article 1 alone as an untitled leaf range (section_ar=null with a documentary section_note_ar), with Baab 1 proper beginning at Article 2 -- a structural pattern directly analogous to (though not identical in scope to) this corpus's press_law track, where Articles 1-12 as a whole carry no chapter heading at all."
+    },
+    {
+      "article_key": "press_reg_baab2_fusul_numbering_irregularities",
+      "description": "Baab 2 (ضوابط ممارسة الأنشطة الإعلامية, Articles 17-62) is internally divided into فصول (chapters) that are numbered inconsistently in the source itself: الفصل الأول (المطابع, Art. 17-20), الفصل الثاني (الإنتاج الفني والصوتي والمرئي, Art. 21-26), then الفصل السادس (استيراد الأفلام وأشرطة الفيديو, Art. 27-30) -- i.e. الفصل الثالث/الرابع/الخامس never appear at all between فصل 2 and this 'فصل 6'. The sequence then continues الفصل الرابع (التسجيلات الصوتية, Art. 31-32), الفصل الخامس (الأستوديو التلفزيوني والإذاعي, Art. 33-34), and الفصل السادس AGAIN (التصوير الفوتوغرافي, Art. 35-38) -- a genuine DUPLICATE فصل-6 label for a different topic. Later in the same Baab, the sequence shows الفصل السابع (مكاتب وسائل الإعلام الأجنبية, Art. 39-41), الفصل الثامن (مكاتب الخدمات الصحفية, Art. 42), الفصل التاسع (الدعاية والإعلان, Art. 44), الفصل العاشر (برامج الحاسب الآلي, Art. 45-47), الفصل الحادي عشر through الفصل الثالث عشر running in order (Art. 48-54), then الفصل السابع عشر (17th -- النشر, Art. 55-56) appears BEFORE الفصل الخامس عشر (15th -- التوزيع, Art. 57-59) and الفصل السادس عشر (16th -- المكتبات, Art. 60-62) -- i.e. 17 precedes 15 and 16, another non-monotonic jump, with فصول 14 never appearing as a labelled heading at all. These are read directly and repeatedly from the source's own printed فصل headings (re-verified via a second look at the relevant page images), not a transcription slip on this track's part -- they are treated as a genuine numbering defect in the Ministry's own consolidated PDF (plausibly accumulated across the piecemeal 1422H original drafting plus the 1439H amendment, which may have inserted/renumbered sub-chapters without a full renumbering pass). This track does NOT renumber, reorder, or silently 'fix' any فصل label; the article TEXT and sequence themselves are complete and unambiguous (Articles 17 through 62 run in unbroken numeric order with no missing or duplicate MATERIAL numbers), only the فصل sub-headings carry the labelling defect, which is why this track's chapter_structure models Baab 2 as a single flat leaf range rather than attempting to nest or validate its internal فصول."
+    },
+    {
+      "article_key": "press_reg_art007_016_procedural_redaction_placeholder",
+      "description": "Articles 7 (paragraphs و and ز) and 16 (paragraphs أ and ج) each contain, in place of what was presumably a specific procedural clause (about the licence applicant/manager attending in person to fill in and sign forms, and about presenting documents to the Directorate or one of its branches), a bracketed placeholder printed in red in the source PDF reading '{ تم تعديل الاجراء تقنياً }' ('this procedure has been technically amended/updated'). This reads as an administrative annotation -- most likely reflecting the Ministry's later move of some licensing steps to an electronic/online service, superseding the original paper-form procedure described in these specific clauses -- rather than a null value or a full sentence. It is preserved VERBATIM in this track's ingested text (including the curly braces) rather than silently deleted, paraphrased, or filled in with an invented substitute procedure, consistent with this corpus's practice of preserving anomalous source artifacts (cf. anti_smoking_regulation's Article 8 trailing-fragment precedent). No claim is made about what the pre-redaction wording said."
+    },
+    {
+      "article_key": "press_reg_art072_073_survey_vs_tourism_authority_inconsistency",
+      "description": "Article 72 (استيراد الخرائط) explicitly names 'الهيئة العامة للمساحة' (General Authority for Survey) as the body whose approved map of the Kingdom's borders governs importable maps. Article 73 paragraph (د), covering the same subject matter (publishing/printing/distributing any map showing the Kingdom's borders) within the same document, instead names 'الهيئة العامة للسياحة' (the General Authority for Tourism -- Saudi Tourism Authority) as the reference body. Both readings were confirmed by directly re-examining the relevant page images a second time; this is recorded as an apparent internal inconsistency in the Ministry's own source text (plausibly an editing artifact from whichever amendment/reissue cycle produced the current consolidated PDF) rather than a transcription error on this track's part. Both articles' text is ingested exactly as printed, with NO attempt to harmonise the two authority names."
+    },
+    {
+      "article_key": "press_reg_art085_089_page_reread_note",
+      "description": "During the first sequential read-through, this track's own working notes initially misattributed page 85's three trailing lettered clauses (ج, د, هـ) to Article 85 and, in doing so, appeared to skip straight from Article 85 to Article 88 with no page containing Articles 86-87. A dedicated re-read of the intervening page (printed page 84, pg083.png) -- prompted by this apparent gap failing an internal article-count sanity check -- located Articles 86 (ترخيص الإصدار) and 87 (ضوابط طباعة صحف أجنبية داخل المملكة) in full on that page, which this track's first pass had skipped over when moving between image batches. This is recorded here explicitly as a caught-and-corrected transcription-workflow error, not a defect in the source: after the correction, all 99 article numbers (1-99) are present with no gaps and no duplicates, independently re-counted programmatically against the assembled article dictionary."
+    },
+    {
+      "article_key": "press_reg_companion_base_law_already_tracked_separately",
+      "description": "This regulation's own base law (نظام المطبوعات والنشر, Royal Decree M/32, 3/9/1421H) is already ingested separately in this corpus at sources/press/ (law_key 'press'), consistent with this corpus's one-instrument-per-track convention. This regulation was itself explicitly flagged as a follow-up candidate in that track's own known_unresolved_discrepancies (press_art_companion_regulations_not_ingested) -- this track is that follow-up. No base-law article text is repeated or re-ingested here; this track's records reference the base law only descriptively."
+    },
+    {
+      "article_key": "press_reg_currency_check_98_articles_content_still_hosted_2024",
+      "description": "CURRENCY CHECK: the exact PDF ingested here (title 'اللائحة التنفيذيه لنظام المطبوعات والنشر الاخير' -- 'الاخير' meaning 'the latest/final' in the filename itself) was still being served from media.gov.sa's own document library as of the Wayback Machine's most recent capture used this pass (23 Nov 2024), roughly 8 months before this build (25 Jul 2026); no later superseding edition or repeal notice for this specific Implementing Regulation was found this pass. The base law (M/32) was independently reconfirmed by this corpus's own press_law track (built in a separate, prior pass on 18 Jul 2026) to still be in force with no comprehensive 'نظام الإعلام' replacement enacted; this track did not independently re-run that base-law currency check but relies on and cites it."
+    }
+  ],
+  "source_artifact": "sources/press_regulation/law/official_source/press_regulation_official_source.json"
+}

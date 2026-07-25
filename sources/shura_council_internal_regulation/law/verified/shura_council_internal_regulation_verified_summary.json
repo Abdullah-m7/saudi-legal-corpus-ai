@@ -1,0 +1,120 @@
+{
+  "law_key": "shura_council_internal_regulation",
+  "layer": "SHURA_COUNCIL_INTERNAL_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 34,
+  "official_text_status": "GOVERNMENT_PRIMARY_OFFICIAL_COUNCIL_PUBLICATION_VIA_WAYBACK_VISUAL_VERIFICATION",
+  "status_counts": {
+    "اصلية": 29,
+    "معدلة": 5,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "الأمر الملكي رقم (أ/15)",
+  "decree_date_hijri": "3/3/1414",
+  "gazette_name_ar": "جريدة أم القرى",
+  "gazette_issue_no": "3468",
+  "gazette_issue_date_hijri": "10/3/1414",
+  "companion_instrument_of": "sa-shura-council-law-a91-1412",
+  "consolidated_amended_law": true,
+  "chapter_structure": [
+    {
+      "chapter_key": "bab_1",
+      "chapter_label_ar": "الباب الأول",
+      "chapter_title_ar": "اختصاصات رئيس المجلس ونائبه ومساعده والأمين العام",
+      "article_range": [
+        1,
+        7
+      ],
+      "chapter_title_amended": true,
+      "chapter_title_amendment_history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "الأمر الملكي رقم (أ/181)",
+          "decreeDate": "1428-12-14",
+          "gregorianDecreeDate": null,
+          "text": "اختصاصات رئيس المجلس ونائبه ومساعده والأمين العام",
+          "original_1414h_title": "اختصاصات رئيس المجلس ونائبه والأمين العام"
+        }
+      ]
+    },
+    {
+      "chapter_key": "bab_2",
+      "chapter_label_ar": "الباب الثاني",
+      "chapter_title_ar": "الهيئة العامة للمجلس",
+      "article_range": [
+        8,
+        11
+      ],
+      "chapter_title_amended": false,
+      "chapter_title_amendment_history": []
+    },
+    {
+      "chapter_key": "bab_3",
+      "chapter_label_ar": "الباب الثالث",
+      "chapter_title_ar": "الجلسات",
+      "article_range": [
+        12,
+        20
+      ],
+      "chapter_title_amended": false,
+      "chapter_title_amendment_history": []
+    },
+    {
+      "chapter_key": "bab_4",
+      "chapter_label_ar": "الباب الرابع",
+      "chapter_title_ar": "اللجان",
+      "article_range": [
+        21,
+        30
+      ],
+      "chapter_title_amended": false,
+      "chapter_title_amendment_history": []
+    },
+    {
+      "chapter_key": "bab_5",
+      "chapter_label_ar": "الباب الخامس",
+      "chapter_title_ar": "التصويت وإصدار القرارات",
+      "article_range": [
+        31,
+        32
+      ],
+      "chapter_title_amended": false,
+      "chapter_title_amendment_history": []
+    },
+    {
+      "chapter_key": "bab_6",
+      "chapter_label_ar": "الباب السادس",
+      "chapter_title_ar": "أحكام عامة",
+      "article_range": [
+        33,
+        34
+      ],
+      "chapter_title_amended": false,
+      "chapter_title_amendment_history": []
+    }
+  ],
+  "verification_methodology_note": "اللائحة الداخلية لمجلس الشورى — Internal Regulation of the Shura Council. Founding instrument: Royal Order أ/15 dated 3/3/1414H (King Fahd bin Abdulaziz Al Saud), which issued FOUR companion instruments together under one royal order (per the decree's own text): (1) اللائحة الداخلية لمجلس الشورى (this track, 34 articles, 6 أبواب/chapters) — mandated by the base Shura Council Law's own Article 29; (2) لائحة حقوق أعضاء مجلس الشورى وواجباتهم; (3) قواعد تنظيم الشؤون المالية والوظيفية لمجلس الشورى; (4) قواعد التحقيق والمحاكمة لعضو مجلس الشورى وإجراءاتها. Only instrument (1) is in scope for this track. Published in Umm Al-Qura official gazette issue No. 3468 dated 10/3/1414H. PRIMARY SOURCE LOCATED AND VERIFIED: an official Shura Council publication titled \"نظام مجلس الشورى\" (6th edition, 1437H), a compiled booklet containing the base Law plus all four أ/15 instruments, hosted directly by the Council at https://www.shura.gov.sa/img/ar/books/nezamNew.pdf. Direct live fetch of shura.gov.sa was blocked in this sandbox (TLS connection reset on every attempt, matching the base law track's own documented experience with laws.boe.gov.sa). The document was retrieved via the Wayback Machine's archived copy (snapshot timestamp 20201007052534, https://web.archive.org/web/20201007052534/https://www.shura.gov.sa/img/ar/books/nezamNew.pdf); the Wayback CDX metadata API and this specific snapshot's content-serving path both worked, whereas a second candidate snapshot for a different shura.gov.sa PDF (CouncilSystem.pdf, timestamp 20250915235520) returned 'not archived that URL' on every retrieval attempt despite a positive CDX record — an inconsistent/broken Wayback capture, not used. laws.boe.gov.sa was searched extensively (multiple GUID candidates tried) but no LawDetails page could be confirmed to correspond to this specific instrument; one promising GUID (793145a2-...) resolved instead to an unrelated regulation (temporary/seasonal work visas) once its Wayback snapshot was inspected, and was discarded. TECHNICAL CAVEAT ON VERIFICATION METHOD: this specific PDF's internal font encoding produces a broken ToUnicode CMap under naive programmatic text extraction (both pypdf and poppler's pdftotext) — extracted character arrays contain transposed letters and stray replacement characters within certain letter combinations (confirmed by direct hex/codepoint inspection). This is a known class of PDF font-encoding defect and is NOT a content problem with the source document itself: when the same PDF pages are rendered to images and read visually (as a human reader would see them), the text is completely clean, unambiguous, and grammatically correct Arabic. Accordingly, every one of the 34 articles, all 6 chapter (باب) headers, all 6 amendment footnotes, and the founding-decree preamble text in this track were transcribed by DIRECT VISUAL INSPECTION of high-resolution page renders of the primary source (not by trusting raw programmatic text extraction), then cross-checked against the cleaned pdftotext output as a secondary confirmation pass. This is disclosed as the verification_tier GOVERNMENT_PRIMARY_OFFICIAL_COUNCIL_PUBLICATION_VIA_WAYBACK_VISUAL_VERIFICATION for all 34 articles. As an internal cross-check, this same compiled PDF's Law section (Articles 29-30 of the base نظام مجلس الشورى) was confirmed to match word-for-word the already-independently-audited text in sources/shura_council/law/official_source/shura_council_law_official_source.json, lending confidence to this document's overall fidelity to the governing text. INDEPENDENT SECONDARY CORROBORATION (metadata-level, not full-text): nezams.com's page for the base Shura Council Law independently cites the same founding instrument — 'اللائحة الداخلية لنظام مجلس الشورى بالأمر الملكي رقم (أ/١٥) تاريخ ٣ / ٣ / ١٤١٤ هـ' — confirming decree number and date without reproducing full text. Web search summaries of the Council's own published description of the Internal Regulation's contents ('the authorities of the general assembly, the council president and vice president, the assistant, the general secretary, sessions, committees, voting, and decision issuance') independently match this track's 6-chapter structure. No SECOND independent FULL-TEXT source was found for this specific instrument (unlike the base law's triple-source cross-check) — this is disclosed as a corroboration limitation, not concealed. AMENDMENT CHAIN — INDEPENDENTLY RE-VERIFIED, CORRECTING THE PRIOR RESEARCH PREMISE: the prior research handed into this task assumed the Internal Regulation was amended by أ/198 (2/10/1424H) and أ/181 (14/12/1428H). A full text search of this entire 34-page primary source (covering the Law, this Internal Regulation, and the other two أ/15 instruments) for '198' and '1424' found exactly TWO occurrences, and both belong to the BASE LAW's own Articles 17 and 23 (already documented in shura_council_law_official_source.json) — NOT to the Internal Regulation. No amendment by أ/198 to the Internal Regulation was found anywhere in this primary source. Instead, the Internal Regulation's actual amendment chain, confirmed by this source's own footnotes, is: أ/181 dated 14/12/1428H (touching the الباب الأول chapter title, and Articles 6, 8, 17, and 27) and أ/44 dated 29/2/1434H (11 Jan 2013 — the SAME royal order that added the female-representation quota to the base Law's Article 3, touching Article 22 here to add 'ومشاركة المرأة في اللجان'/women's committee participation). This is flagged prominently as a correction to the task's prior-research premise, independently re-verified from primary-source text rather than assumed.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "shura_council_internal_regulation_art_all",
+      "description": "PRIOR-RESEARCH CORRECTION: the amendment chain handed into this task (أ/198 2/10/1424H and أ/181 14/12/1428H) does not match this instrument's actual amendment chain as found in its own primary-source footnotes. أ/198 (1424H) amends the BASE LAW's Articles 17 and 23, not this Internal Regulation. This Internal Regulation was instead amended by أ/181 (14/12/1428H, touching the الباب الأول chapter title plus Articles 6, 8, 17, 27) and أ/44 (29/2/1434H = 11 Jan 2013, touching Article 22). This was independently re-verified via an exhaustive text search of the primary source (zero matches for أ/198 or 1424H anywhere within the Internal Regulation's text or footnotes) and is disclosed here rather than silently reconciled."
+    },
+    {
+      "article_key": "shura_council_internal_regulation_art_017",
+      "description": "Article 17's amendment footnote in the primary source states only 'هذا هو النص بعد تعديله بالأمر الملكي ذي الرقم (أ/181) والتاريخ 14 ذي الحجة 1428هـ' (this is the text after its amendment by أ/181) WITHOUT quoting the pre-1428H original wording, unlike every other amended article's footnote in this document. The original_1414h_text field for article 17 is therefore null — the pre-amendment wording could not be independently confirmed from this or any other source located during this research pass, and is flagged as a genuine provenance gap rather than silently presented as confirmed or reconstructed."
+    },
+    {
+      "article_key": "shura_council_internal_regulation_art_027",
+      "description": "Article 27's amendment footnote gives only a TRUNCATED pre-1428H original text with the source's own ellipsis ('...') in the middle: 'تقوم اللجان بدراسة ما يحال إليها من المجلس ...وتجتمع هذه اللجنة برئاسة رئيس المجلس أو نائبه'. This is reproduced in original_1414h_text exactly as the primary source presents it (with the ellipsis preserved and a bracketed note), not reconstructed or completed by inference — the missing middle portion of the pre-amendment text is a genuine gap in the primary source itself."
+    },
+    {
+      "article_key": "shura_council_internal_regulation_art_all",
+      "description": "This PDF's internal font/ToUnicode encoding is broken for naive programmatic text extraction (pypdf and poppler pdftotext both produce transposed-letter artifacts within certain letter combinations, confirmed by direct codepoint inspection). All 34 articles were therefore transcribed by direct visual inspection of high-resolution page renders rather than by trusting raw extracted text, and cross-checked against the cleaned pdftotext output as a secondary pass. No OCR engine output was used in the final text (an initial tesseract OCR attempt was abandoned as unnecessary once direct visual reading confirmed the cleaned pdftotext text was already accurate)."
+    },
+    {
+      "article_key": "shura_council_internal_regulation_art_all",
+      "description": "laws.boe.gov.sa's LawDetails page for this specific instrument could not be located or confirmed in this research pass (unlike the base law, whose BOE GUID is known even though unreachable). Direct fetch of shura.gov.sa was blocked (TLS connection reset) in this sandbox; the primary source used here was retrieved via a single Wayback Machine snapshot. Only metadata-level (decree number/date, article count, thematic structure), not full-text, independent secondary corroboration was found (nezams.com and web search summaries) — unlike the base law's triple independent full-text source cross-check. A fresh BOE/shura.gov.sa retry from a different network path, and a search for a second independent full-text source, are recommended before this track is treated as fully multi-source cross-verified."
+    }
+  ],
+  "source_artifact": "sources/shura_council_internal_regulation/law/official_source/shura_council_internal_regulation_official_source.json"
+}

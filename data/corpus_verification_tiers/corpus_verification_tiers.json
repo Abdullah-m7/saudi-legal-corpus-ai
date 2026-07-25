@@ -19,12 +19,12 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 200,
+  "total_tracks": 236,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 106,
-    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 46,
-    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 25,
-    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 23
+    "TIER_1_PRIMARY_MULTI_SOURCE": 113,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 65,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 32,
+    "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 26
   },
   "tracks_with_per_article_variation": 21,
   "tracks": [
@@ -43,9 +43,23 @@
       "per_article_variation_note": "17 مادة غير معدَّلة + نص التعديل الأول (م/169، 1446هـ) للمواد الخمس المعدَّلة (1، 4، 5، 19، 20) مصدرها مزدوج رسمي (أرشيف Wayback لبوابة BOE — نافذة التعديلات لا النص الرئيسي الراكد — × نسخة SOCPA الرسمية) متطابقة دون فارق جوهري. أما تعديل المادة الأولى الثاني والأحدث (قرار مجلس الوزراء 283، 1447هـ، تعميم تعريف 'الوزير') فمصدره ثانوي حصراً (PDF الهيئة SOCPA × qanoonsa.com) دون أي رقم مرسوم ملكي معروف يُصدره ودون أي تأكيد من بوابة BOE على الإطلاق؛ راجع official_source.json الخاص بالمسار."
     },
     {
+      "track_id": "accounting_auditing_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='SOCPA_OFFICIAL_PDF_VIA_WAYBACK_TESSERACT_OCR_PRIMARY_X_PDFTOTEXT_DIGIT_CROSSCHECK_X_ARGAAM_DARKHABR_SECONDARY_X_UQN_WAYBACK_FOUNDING_DECREE_CONFIRMED_TIER2_SOCPA_LIVE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "agriculture_law",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='NEZAMS_COM_SINGLE_FULLTEXT_AGGREGATOR_BOE_UNREACHABLE_MULTISOURCE_METADATA_CROSSCHECK_MISA_ENGLISH_PDF_CONFIRMS_STRUCTURE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "agriculture_regulation",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_OFFICIAL_PRIMARY_X_MEWA_PDF_STRUCTURAL_CROSSCHECK_TIER4_MIXED_CONFIDENCE_4_ARTICLES_AMENDED_TEXT_UNCONFIRMED_BOE_UNREACHABLE': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -60,6 +74,13 @@
       "track_id": "allegiance_commission_law",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='TRIPLE_ARABIC_SECONDARY_SOURCE_CROSS_VERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "allegiance_commission_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -92,6 +113,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "anti_concealment_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='PRIMARY_MC_GOVSA_PDF_X_SPA_OFFICIAL_CORROBORATION_TIER2': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "anti_cyber_crime_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='BOE_PORTAL_TRIPLE_SOURCE_EXHAUSTIVE_VERIFIED': تحقق شامل (لا عيّنة) مادة بمادة عبر ثلاثة مصادر رسمية مستقلة (بوابة هيئة الخبراء BOE + ترجمة هيئة الاتصالات الرسمية عبر WIPO Lex + نسخة موثّقة رسمياً من وزارة المالية)، تطابقت جميعها حرفياً على كل المواد الـ16 — أقوى تحقق في هذه المدونة.",
@@ -106,6 +134,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "anti_fraud_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='SECONDARY_SINGLE_SOURCE_VERBATIM_PARTIAL_CROSS_CHECK_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "anti_harassment_law",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
@@ -116,6 +151,13 @@
       "track_id": "anti_narcotics_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_PROXY_X_NEZAMS_X_QADHA_REFERENCE_TRIPLE_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "anti_narcotics_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='NEZAMS_HTML_SINGLE_FULLTEXT_X_QISTAS_PREAMBLE_PARTIAL_MATCH': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -165,6 +207,13 @@
       "track_id": "associations_ngo_law",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='BOE_TWO_CONFLICTING_LAWID_UNREACHABLE_X_NEZAMS_COM_PRIMARY_X_MENARIGHTS_ORG_PDF_CROSSCHECK': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "associations_ngo_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='NCNP_OFFICIAL_PDF_DIRECT_PRIMARY_MULTIAGENT_VISUAL_VERIFICATION_TIER1_X_QANOONSA_CROSSCHECK_NCAR_ISTITLAA_WEBARCHIVE_BLOCKED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -239,6 +288,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "building_code_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='TIER_1_PRIMARY_MULTI_SOURCE_MOMAH_4X_HOSTED_PDF_EDITIONS_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSCHECK_UQN_GAZETTE_AND_WAYBACK_CONTENT_PATH_UNREACHABLE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "capital_market_law",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER' — أعقد حالة في هذه المدونة: 55 من 68 سجلاً تحققت جيداً (نص 2003 الأصلي أو نص محدَّث مُستقى من موقع هيئة السوق المالية)، لكن 12 مادة (المحور الفعلي لإعادة الهيكلة بموجب م/16 لعام 2019) لم يتيسّر استرجاع صياغتها الحالية، فأُدرجت كنص تاريخي (2003) معلَّم صراحة بأنه ليس النص الساري؛ وسجل إضافي (المادة 20 مكرر) أُعيد بناؤه من وصف نصي لا من قراءة مباشرة. التصنيف هنا يعتمد الجزء الأضعف (الـ12 مادة + السجل المُعاد بناؤه).",
@@ -253,9 +309,23 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "chambers_of_commerce_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='MATCHES_UQN_GAZETTE_X_FSC_INDEPENDENT_CROSS_CHECK': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "child_protection_law",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='BOE_UNREACHABLE_WAYBACK_NOT_ATTEMPTED_EGRESS_BLOCKED_X_NEZAMS_COM_FULL_TEXT_X_MOJ_ADL_JOURNAL_PDF_IDENTITY_STRUCTURE_ONLY_BIDI_DEFECT_X_UMM_AL_QURA_FOR_1443H_AMENDMENT': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "child_protection_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='NEZAMS_COM_FULLTEXT_PRIMARY_X_MOJ_ADALAH_MAGAZINE_PDF_STRUCTURAL_CROSSCHECK_TIER_3_BOE_NO_DEDICATED_LAWID_FOUND': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -274,9 +344,23 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "civil_defense_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='TWO_COMPONENT_TRACK_BOE_PORTAL_WAYBACK_5X_SNAPSHOTS_RIGHTS_DUTIES_X_UQN_GAZETTE_WAYBACK_2022_FIREFIGHTING_RESCUE_TIER_2_BOTH_LIVE_PORTALS_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "civil_service_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_FULL_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "civil_service_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='KSU_1440H_INDESIGN_PDF_CLEAN_PRIMARY_X_HRSD_MOE_STRUCTURAL_CROSSCHECK_TIER2_AMENDED_ARTICLES_HRSD_SINGLE_SOURCE_LOWER_CONFIDENCE_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -298,6 +382,13 @@
       "track_id": "commercial_agencies_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "commercial_agencies_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='MC_GOV_SA_LIVE_PORTAL_PRIMARY_JINA_READER_PROXY_X_NEZAMS_QISTAS_THELAWSA_CORPORATE_LAWYER_SECONDARY_X_ALMURABA_1435H_AMENDMENT_CROSSCHECK_TIER2_BOE_NO_DEDICATED_PAGE_SINGLE_FETCH_CAPTCHA_BLOCKED_DIRECT_AND_WAYBACK': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -333,6 +424,13 @@
       "track_id": "commercial_register_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "commercial_register_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='QANOONSA_TEXT_PRIMARY_X_ALEQT_INDEPENDENT_SECONDARY_PHRASE_LEVEL_CROSSCHECK_TIER2_BOE_SHARES_BASE_LAW_PAGE_MC_UQN_DIRECT_FETCH_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -491,9 +589,23 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "electricity_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='QANOONSA_SINGLE_AGGREGATOR_PRIMARY_TIER3_COMBINED_TWO_INSTRUMENT_TRACK_SERA_BOE_UQN_LIVE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "electronic_transactions_law",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status يصف نفسه صراحة بأنه 'SINGLE_PRIMARY_SOURCE' (مصدر رسمي واحد فقط): بوابة BOE تعذّر الوصول إليها، واعتُمد بدلاً منها مستند PDF رسمي بديل (ديوان الترجمة الرسمية)، مع تدقيق هيكلي فقط (وليس حرفياً) مقابل WIPO Lex، وفجوة موثّقة وغير محلولة حول ترقيم المواد بعد إلغاء الفصل السادس.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "electronic_transactions_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_OFFICIAL_PRIMARY_X_ARGAAM_PRESS_CROSSCHECK_DGA_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -531,6 +643,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_PDF_X_QANOONSA_QANONIAH_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت ثلاث لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 14 نوفمبر 2019 إلى 25 فبراير 2026، نص رئيسي متطابق حرفياً طوال هذه الفترة) كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (موقع الهيئة السعودية للمهندسين الرسمي saudieng.sa، ملف PDF مستضاف ذاتياً، لقطة يونيو 2025، مطابق حرفياً للمواد 2-17) ومصدر ثانوي للمطابقة الهيكلية (qanoonsa.com/qanoniah.com). مصدران رسميان (BOE وsaudieng.sa) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط saudi_engineers_law وawqaf_law (BOE عبر Wayback × موقع الجهة الرسمي الخاص بها). راجع has_per_article_variation للمادة الأولى التي تحمل تناقضاً ثلاثياً مؤكَّداً (لا افتراضياً) بين نص BOE الرئيسي الراكد، ونص سجل تعديلات BOE نفسه (الذي لا تتطابق عبارته 'قبل' مع نص BOE الرئيسي عند أي لقطة)، ونص saudieng.sa الحالي المختلف بدوره — تناقض من نفس فئة سابقة awqaf_law المادة 6، مفصَّل في official_source.json الخاص بالمسار.",
       "has_per_article_variation": true,
       "per_article_variation_note": "16 مادة غير معدَّلة مصدرها مزدوج رسمي (ثلاث لقطات Wayback لبوابة BOE × ملف PDF الرسمي لموقع الهيئة saudieng.sa)، متطابقة حرفياً دون فارق جوهري. أما المادة الأولى (التعريفات، الجهة المشرفة) فتحمل تناقضاً ثلاثياً غير محلول: سجل BOE يوثّق نقل الإشراف بموجب قرار مجلس الوزراء 250، 1444هـ، لكن عبارته 'قبل' لا تطابق نص BOE الرئيسي الثابت عند أي من اللقطات الثلاث (والذي يسبق القرار نفسه بنحو 3 سنوات)، بينما يعرض ملف saudieng.sa الحالي صياغة رابعة مختلفة بدورها تعكس إعادة تسمية إدارية لاحقة غير مسجَّلة في سجل BOE — لم يُدمج نص مركَّب افتراضياً؛ اعتُمد نص BOE الرئيسي الثابت كما هو، وصُنِّفت المادة معدَّلة (بناءً على تصنيف BOE نفسه)، ووُثِّق التناقض الثلاثي كاملاً، تماشياً مع سابقة awqaf_law المادة 6؛ راجع official_source.json الخاص بالمسار للتفاصيل الكاملة."
+    },
+    {
+      "track_id": "engineering_practice_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='UQN_GOV_SA_OFFICIAL_GAZETTE_HTML_DIRECT_PRIMARY_X_QANOONSA_FULL_18_OF_18_CROSSCHECK_TIER_2_BOE_AND_SAUDIENG_SA_LIVE_UNREACHABLE_WAYBACK_CONTENT_BLOCKED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "environmental_air_quality",
@@ -652,6 +771,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "foreign_ownership_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_PRIMARY_X_REGA_PORTAL_PRIMARY_CROSS_VERIFIED_TIER1_NCAR_BOE_UNREACHABLE_DECREE_NUMBER_UNCONFIRMED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "franchise_law",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status='BOE_PORTAL_PROXY_RETRIEVED_QANONIAH_SPOT_CROSS_VERIFIED': بوابة BOE (مصدر رسمي) تم الوصول إليها لكامل النص، لكن التدقيق المقارن مع qanoniah.com اقتصر على 4 من 27 مادة فقط (1، 2، 4، 5)؛ 23 مادة (85%) تبقى أحادية المصدر دون تدقيق مقارن مستقل.",
@@ -718,6 +844,13 @@
       "track_id": "healthcare_professions_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_WAYBACK_ARCHIVE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة عبر https:// (وليس http://، عكس النمط الملحوظ في مسار الضمان الصحي التعاوني) واستُخدمت كمصدر رسمي أساسي واحد، وقورنت مع مصدر ثانوي واحد (nezams.com، جلب حي) — مصدر رسمي واحد + تدقيق مقارن ثانوي، يطابق تعريف TIER_2؛ عُزِّز التطابق الهيكلي (الفصول/الفروع) إضافة بمقارنة بنية موقع وزارة الصحة الرسمي (moh.gov.sa) دون اعتماده كمصدر نصي مستقل ثانٍ.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "healthcare_professions_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='MOH_PDF_PRIMARY_X_SECOND_MOH_EXPORT_VERIFIED_WAYBACK_IDENTICAL_TIER_2_BOE_NCAR_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -932,6 +1065,13 @@
       "per_article_variation_note": "381 من 391 مادة مصدرها مزدوج رسمي/ثانوي (أرشيف Wayback لبوابة BOE العربية × nezams.com)، متطابقة حرفياً دون فارق جوهري (بعد تطبيع فروق تجميلية في المسافات وعلامات الاقتباس وترتيب التشكيل). أما المواد 316-325 (أحكام التأمين البحري) فاعتُمد فيها أرشيف الترجمة الإنجليزية الرسمية لبوابة BOE بدلاً من nezams.com، بعد اكتشاف خلل تكرار محتوى في نسخة nezams.com لهذا النطاق تحديداً (تأكيد مستقل بعد البناء وجد أن النطاق يقرأ الآن كأحكام تأمين بحري متتابعة ومتمايزة وليست مكررة)؛ راجع official_source.json الخاص بالمسار."
     },
     {
+      "track_id": "maritime_commercial_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='TIER_2_TGA_WAYBACK_DOUBLE_SNAPSHOT_X_QISTAS_PARTIAL_CROSSCHECK_LIVE_TGA_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "marriage_contract_hearing_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1079,9 +1219,23 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "premium_residency_regulation",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE_QANONIAH_PAYWALL_ARTICLES_1_5_X_AUNKLAW_FULL_13_ARTICLES_NCAR_BOE_PRGOV_ALL_UNREACHABLE': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "press_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='BOE_NEAR_LIVE_WAYBACK_X_MEDIA_GOV_SA_OFFICIAL_PDF_X_WIPO_LEX_X_NEZAMS_QANOONSA_CURRENCY_CHECKED_CONFIRMED_CURRENT': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت لقطة أرشيف Wayback Machine شبه حية (26 فبراير 2026، أي قبل هذا البناء بنحو 5 أشهر فقط) كمصدر أساسي، وقورنت هيكلياً بمصدر رسمي ثانٍ مستقل بذاته (ملف PDF الرسمي لوزارة الإعلام media.gov.sa لهذا النظام تحديداً، نطاق منفصل فعلياً عن BOE) ومصدرين ثانويين للمطابقة (WIPO Lex، ومطابقة الرقم والتاريخ بدقة؛ nezams.com/qanoonsa.com). مصدران رسميان (BOE وmedia.gov.sa) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط awqaf_law وmunicipal_councils_law (BOE عبر Wayback × موقع الجهة الرسمي الخاص بها). يحمل هذا المسار فحص تحقق من الحداثة (currency check) أثبت أن النظام لا يزال سارياً رغم وجود مسودة نظام إعلام شامل لم تُسنّ بعد. لا يحمل has_per_article_variation إذ عولجت جميع المواد الست المعدَّلة (5، 9، 36، 37، 38، 40) بمنهجية واحدة متسقة (اعتماد نص سجل التعديلات المقتبس بثقة كاملة)، وليس بثقة متفاوتة لكل مادة، مفصَّل في official_source.json الخاص بالمسار.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "press_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='TIER_2_MEDIA_MINISTRY_OFFICIAL_PDF_WAYBACK_2024_VISION_READ_UQN_GAZETTE_PARTIAL_SINGLE_ARTICLE_CROSSCHECK_BOE_NOT_INDEXED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1100,6 +1254,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "privatization_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_ARGAAM_PDF_AMENDMENT_DIFF_PARTIAL': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "product_safety_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='UQN_OFFICIAL_GAZETTE_DECREE_M36_CITATION_CONFIRMED_X_QANOONSA_PRIMARY_TEXT_X_NEZAMS_CROSS_VERIFIED_BOE_LAWID_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1114,6 +1275,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "protection_from_abuse_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='HRSD_OFFICIAL_PDF_DIRECT_FETCH_PRIMARY_X_HRSD_ENGLISH_TRANSLATION_CROSS_CONFIRMED_TIER_2_BOE_NO_DEDICATED_PAGE_WAYBACK_AND_JINA_BLOCKED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "qismah_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1124,6 +1292,13 @@
       "track_id": "real_estate_brokerage_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MATCHES_OFFICIAL_SCAN_VISUALLY_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "real_estate_brokerage_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='REGA_OFFICIAL_PDF_VISUALLY_VERIFIED_X_UQN_GAZETTE_FULLTEXT_CROSSCHECK_TIER1_BOE_UNREACHABLE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1198,6 +1373,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "rett_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='ZATCA_PORTAL_PRIMARY_TWO_PIPELINE_OCR_X_SECONDARY_CROSS_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "sama_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='GOVERNMENT_AGENCY_OFFICIAL_PDF_PRIMARY_SOURCE_BOE_ARCHIVE_CROSS_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1210,6 +1392,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_SAUDIENG_SA_OFFICIAL_SITE_X_PRESS_CORROBORATION_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت ثلاث لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 15 نوفمبر 2019 إلى 15 سبتمبر 2025) كمصدر أساسي، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (الموقع الرسمي للهيئة السعودية للمهندسين نفسها saudieng.sa، ثلاث لقطات 2017-2022، نطاق منفصل فعلياً) ومصدر ثانوي (تغطية صحفية من الشرق الأوسط للمادة الأولى). مصدران رسميان (BOE وsaudieng.sa) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط awqaf_law (BOE عبر Wayback × web.awqaf.gov.sa). راجع has_per_article_variation للمادتين 1 و6 اللتين تحملان تناقضاً مؤكَّداً (لا افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد على كل من BOE وموقع الهيئة نفسه، مفصَّلاً في official_source.json الخاص بالمسار.",
       "has_per_article_variation": true,
       "per_article_variation_note": "7 مواد غير معدَّلة مصدرها مزدوج رسمي (ثلاث لقطات Wayback لبوابة BOE × الموقع الرسمي للهيئة saudieng.sa)، متطابقة دون فارق جوهري. أما المادة الأولى (الجهة المشرفة) فتحمل تناقضاً مؤكَّداً: سجل BOE يوثّق نقل الإشراف بموجب قرار مجلس الوزراء 57، 1442هـ، بينما النص الرئيسي على كل من بوابة BOE وموقع الهيئة نفسه ظل ثابتاً بصياغة 'وزارة التجارة' القديمة عبر جميع اللقطات — اعتُمد نص سجل التعديلات المقتبس، وتأكَّد بتغطية صحفية مستقلة (الشرق الأوسط). أما المادة السادسة (تشكيل مجلس الإدارة) فتحمل تعديلين متتاليين موثَّقين بالكامل (المرسوم الملكي م/60، 1425هـ، ثم قرار مجلس الوزراء 388، 1443هـ) — اعتُمد النص الأحدث الكامل (388)، مؤكَّداً حرفياً من موقع الهيئة الرسمي، بينما ظل النص الرئيسي لبوابة BOE عالقاً على صياغة 2002 الأصلية طوال الفترة؛ راجع official_source.json الخاص بالمسار للتفاصيل الكاملة."
+    },
+    {
+      "track_id": "saudi_engineers_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "sdaia_organizational_arrangements",
@@ -1233,6 +1422,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "shura_council_internal_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='GOVERNMENT_PRIMARY_OFFICIAL_COUNCIL_PUBLICATION_VIA_WAYBACK_VISUAL_VERIFICATION_TIER_2_BOE_LAWID_NOT_LOCATED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "shura_council_law",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
@@ -1252,6 +1448,20 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_SPOTCHECK_X_OKAZ_ALRIYADH_CORROBORATED': مصدر رسمي (BOE عبر Wayback) لكامل النص، مع تدقيق مقارن حرفي عبر nezams.com لأكثر من 20 من 71 مادة إضافة إلى 100% من سجلات تعديل المواد التسع المعدَّلة/المضافة، وتعزيز صحفي مستقل (عكاظ/الرياض) لصياغة المادة 37 تحديداً — تغطية أقوى من أغلب مسارات nezams-فقط، لكنها تبقى دون التأكيد الرسمي المزدوج الكامل.",
       "has_per_article_variation": true,
       "per_article_variation_note": "أكثر من 20 من 71 مادة خضعت لتدقيق مقارن حرفي مقابل nezams.com، إضافة إلى 100% من سجلات تعديل المواد التسع المعدَّلة/المضافة؛ بقية المواد غير المعدَّلة أحادية مصدر (BOE) دون تدقيق حرفي مباشر؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "social_insurance_legacy_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='KSU_MIRROR_X_QISTAS_PARTIAL_VERBATIM_X_MULTISOURCE_STRUCTURAL_CORROBORATION_TIER_3': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "social_insurance_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='UQN_GOV_SA_OFFICIAL_GAZETTE_HTML_DIRECT_PRIMARY_X_QANOONSA_NEAR_FULL_107_CROSSCHECK_X_ARGAAM_TERTIARY_TIER_2_BOE_UNREACHABLE_NOT_CIRCUMVENTED_PARAGRAPH_ENUMERATION_GAP_63_OF_107': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "sports_law",
@@ -1289,6 +1499,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "state_revenue_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='MOF_OFFICIAL_PDF_DIRECT_FETCH_VISUALLY_PAGE_IMAGE_TRANSCRIBED_X_QANONIAH_API_PARTIAL_CROSSCHECK_ARTS_1_8_ONLY_TIER_2_BOE_NO_DEDICATED_PAGE_NCAR_GOV_SA_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "sulook_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1317,6 +1534,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "telecommunications_regulation",
+      "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "tier_rationale": "official_text_status='TIER_2_DUAL_OFFICIAL_PRIMARY_BORN_DIGITAL_CST_X_MCIT_CROSSVERIFIED_TEXT_LAYER_REMEDIATED_UQN_GAZETTE_LINKS_STALE_BOE_NOT_INDEXED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "terrorism_implementing_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1341,6 +1565,13 @@
       "track_id": "trade_names_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "trade_names_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='QANOONSA_TEXT_PRIMARY_X_WAYBACK_SNAPSHOT_CROSSCHECK_X_NDMLAW_INDEPENDENT_SECONDARY_VERBATIM_MATCH_X_MC_GOV_SA_METADATA_CONFIRMED_TIER3_BOE_NO_DEDICATED_PAGE_UQN_SPA_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1408,6 +1639,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "water_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='TIER_1_PRIMARY_MEWA_OFFICIAL_PDF_DIRECT_FETCH_VISION_READ_MINISTERIAL_DECISION_NUMBER_AND_DAY_MONTH_UNCONFIRMED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "weapons_ammunition_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_WAYBACK_THREE_SNAPSHOT_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1415,9 +1653,23 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "weapons_ammunition_regulation",
+      "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "tier_rationale": "official_text_status='QADHA_ORG_SA_PRIMARY_PDF_TESSERACT_OCR_RECONSTRUCTED_CORRUPTED_TOUNICODE_TEXT_LAYER_X_QANOONSA_PARTIAL_2_OF_19_ARTICLES_X_UQN_GOV_SA_DIRECT_5TH_AMENDMENT_DISCOVERY_TIER_3_BOE_NO_DEDICATED_PAGE_FOUNDING_DECREE_23_VS_33_INTERNAL_CONFLICT': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "whistleblower_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "whistleblower_regulation",
+      "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_PDF_CROSS_VERIFIED_HTML_MIRROR_X_QANOONSA_HTML_MIRROR_TIER_4_SINGLE_CHANNEL_DECISION_NUMBER_CORRECTED': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },

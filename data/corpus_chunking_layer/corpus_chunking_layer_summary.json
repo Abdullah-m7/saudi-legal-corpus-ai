@@ -2,11 +2,11 @@
   "layer": "CORPUS_CHUNKING_LAYER",
   "purpose": "Additive, derived text-segmentation layer over the unified retrieval index, sized for feeding a future embedding pipeline. Chunk boundaries are computed in whitespace-delimited WORDS, deliberately NOT tied to any specific embedding model's tokenizer (this corpus does not commit to one embedding provider). No embeddings/vectors are computed anywhere in this layer or this generator -- that is a separate, later step. This is pure text segmentation, one step before an embeddings pipeline would run.",
   "source_index": "data/corpus_unified_index/corpus_unified_llm_index.jsonl",
-  "total_source_records": 11553,
-  "total_chunks": 11900,
-  "source_records_needing_multiple_chunks": 188,
-  "source_records_single_chunk": 11365,
-  "pct_single_chunk_records": 98.373,
+  "total_source_records": 13821,
+  "total_chunks": 14335,
+  "source_records_needing_multiple_chunks": 279,
+  "source_records_single_chunk": 13542,
+  "pct_single_chunk_records": 97.981,
   "parameters": {
     "chunk_target_words": 350,
     "chunk_overlap_words": 70,
@@ -24,29 +24,29 @@
       ":",
       "،"
     ],
-    "justification": "Surveyed word-count distribution across all 11553 unified-index records: median=40, p75=77, p90=140, p95=200, p97=259, p99=439 words (see distribution_stats below). Choosing 350 words as both the split threshold and per-chunk target means only 188 records (1.63%) require splitting -- consistent with Saudi statutory drafting practice where articles are typically short/medium, while keeping split-chunk sizes in the conventional ~200-500 word band used by embedding/RAG pipelines. Overlap of 70 words (20% of target) prevents clauses from being stranded at a chunk boundary. Splitting prefers primary sentence/clause punctuation (. ! ? ؟ ؛ newline), falling back to secondary punctuation (، , :) and finally hard whitespace-boundary splitting only for an indivisible run that would otherwise exceed the 500-word hard ceiling -- a word boundary is never crossed at any splitting level."
+    "justification": "Surveyed word-count distribution across all 13821 unified-index records: median=43, p75=83, p90=154, p95=228, p97=292, p99=489 words (see distribution_stats below). Choosing 350 words as both the split threshold and per-chunk target means only 279 records (2.02%) require splitting -- consistent with Saudi statutory drafting practice where articles are typically short/medium, while keeping split-chunk sizes in the conventional ~200-500 word band used by embedding/RAG pipelines. Overlap of 70 words (20% of target) prevents clauses from being stranded at a chunk boundary. Splitting prefers primary sentence/clause punctuation (. ! ? ؟ ؛ newline), falling back to secondary punctuation (، , :) and finally hard whitespace-boundary splitting only for an indivisible run that would otherwise exceed the 500-word hard ceiling -- a word boundary is never crossed at any splitting level."
   },
   "distribution_stats": {
     "source_record_word_counts": {
-      "n_records": 11553,
+      "n_records": 13821,
       "min": 1,
       "max": 6797,
-      "mean": 68.03,
-      "median_p50": 40,
-      "p75": 77,
-      "p90": 140,
-      "p95": 200,
-      "p97": 259,
-      "p99": 439,
-      "p999": 1061
+      "mean": 74.35,
+      "median_p50": 43,
+      "p75": 83,
+      "p90": 154,
+      "p95": 228,
+      "p97": 292,
+      "p99": 489,
+      "p999": 1361
     },
-    "records_exceeding_chunk_target_words": 188,
-    "pct_records_exceeding_chunk_target_words": 1.627,
+    "records_exceeding_chunk_target_words": 279,
+    "pct_records_exceeding_chunk_target_words": 2.019,
     "resulting_chunk_word_counts": {
-      "n_chunks": 11900,
+      "n_chunks": 14335,
       "min": 1,
       "max": 421,
-      "mean": 68.81
+      "mean": 75.02
     }
   },
   "top_examples_requiring_split": [
@@ -56,6 +56,13 @@
       "law_component": "regulation",
       "article_number": 1,
       "word_count": 6797
+    },
+    {
+      "record_id": "agriculture-regulation-llm-art-001",
+      "corpus": "agriculture",
+      "law_component": "regulation",
+      "article_number": 1,
+      "word_count": 3743
     },
     {
       "record_id": "traffic-regulation-llm-art-050",
@@ -70,6 +77,20 @@
       "law_component": "regulation",
       "article_number": 5,
       "word_count": 2900
+    },
+    {
+      "record_id": "child-protection-regulation-llm-art-022",
+      "corpus": "child_protection",
+      "law_component": "regulation",
+      "article_number": 22,
+      "word_count": 2233
+    },
+    {
+      "record_id": "weapons-ammunition-regulation-llm-art-006",
+      "corpus": "weapons_ammunition",
+      "law_component": "regulation",
+      "article_number": 6,
+      "word_count": 2201
     },
     {
       "record_id": "labor-reg-llm-art-014",
@@ -93,32 +114,11 @@
       "word_count": 1779
     },
     {
-      "record_id": "aml-regulation-llm-art-004",
-      "corpus": "aml",
+      "record_id": "weapons-ammunition-regulation-llm-art-004",
+      "corpus": "weapons_ammunition",
       "law_component": "regulation",
-      "article_number": 7,
-      "word_count": 1425
-    },
-    {
-      "record_id": "environmental-law-llm-art-001",
-      "corpus": "environmental",
-      "law_component": "law",
-      "article_number": 1,
-      "word_count": 1287
-    },
-    {
-      "record_id": "vat-regulation-llm-art-056",
-      "corpus": "vat",
-      "law_component": "regulation",
-      "article_number": 53,
-      "word_count": 1183
-    },
-    {
-      "record_id": "water-law-llm-art-001",
-      "corpus": "water",
-      "law_component": "law",
-      "article_number": 1,
-      "word_count": 1147
+      "article_number": 4,
+      "word_count": 1765
     }
   ],
   "embeddings_scope_note": "Out of scope for this layer: no embedding model or vector-database call of any kind is made here. This generator only performs text segmentation (chunking) so that a later, separate embeddings step has appropriately-sized, traceable input units. Each chunk carries source_record_id, article_number, chunk_index and total_chunks_for_this_article so any future vector hit can be traced back to its full source article.",

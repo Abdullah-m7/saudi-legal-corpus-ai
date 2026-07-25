@@ -1,0 +1,469 @@
+{
+  "document": "اللائحة التنفيذية لنظام الهيئة السعودية للمهندسين",
+  "document_en": "Implementing Regulation of the Law of the Saudi Council of Engineers",
+  "decree": "قرار الجمعية العمومية للهيئة السعودية للمهندسين (إقرار اللائحة التنفيذية)",
+  "decree_date_hijri": "1445",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "الجمعية العمومية للهيئة السعودية للمهندسين، بموجب اختصاصها المقرر في المادة الخامسة (الفقرة 2) من نظام الهيئة السعودية للمهندسين (المرسوم الملكي رقم م/36 وتاريخ 26/9/1423هـ) بشأن 'إقرار اللوائح التنفيذية لنظام الهيئة'، بناءً على اقتراح مجلس الإدارة المقرر في المادة السابعة (الفقرة 3) من النظام ذاته. النسخة المتداولة هذه صادرة عن الهيئة نفسها ومؤرخة على غلافها '1445هـ / 2024م'؛ لا يرد داخل نص اللائحة (32 مادة) أي رقم اجتماع أو تاريخ إقرار محدد غير هذا التأريخ بالسنة على الغلاف؛ اقتصر التحقق هذه الجولة على تأكيد هذا التأريخ فقط دون التمكن من تأكيد ادعاء بحثي سابق بأن الإقرار تم في 'الجمعية العمومية العادية العشرين لعام 2024' (انظر known_unresolved_discrepancies، المفتاح sce_reg_general_assembly_meeting_number_unconfirmed).",
+  "issuing_authority_en": "The General Assembly of the Saudi Council of Engineers, acting under Article 5(2) of the Law of the Saudi Council of Engineers (Royal Decree M/36, 26/9/1423H), which empowers the General Assembly to 'approve the Authority's implementing regulations,' on the proposal of the Board of Directors under Article 7(3) of that same Law. This circulated edition is published by the Council itself and dated on its own cover '1445H / 2024G'; the 32-article regulation text itself names no specific meeting number or exact approval date beyond that cover-page year. This pass could confirm only that year attribution, not a prior-research claim that approval occurred at the '20th Ordinary General Assembly meeting of 2024' -- see known_unresolved_discrepancies.",
+  "preamble_ar": "",
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: a direct curl fetch of https://www.saudieng.sa/Admin/NPSCERules/sce-executive-regulations.pdf this pass failed with a TLS connection reset (consistent with this corpus's established pattern for saudieng.sa direct scraping). The Wayback Machine CDX metadata API (https://web.archive.org/cdx/search/cdx) was queried first and confirmed exactly ONE archived capture of this exact URL: timestamp 20250625074825 (25 Jun 2025), status 200, mimetype application/pdf, length 1,016,913 bytes -- matching the prior research's own cited '2025-06-25' snapshot. The content-serving Wayback path (https://web.archive.org/web/20250625074825/https://www.saudieng.sa/Admin/NPSCERules/sce-executive-regulations.pdf) was then fetched via direct curl over the pre-configured proxy and SUCCEEDED this pass (returning the full 16-page, ~1MB PDF byte-identical to the CDX-recorded digest/length), so no Scribd-mirror or r.jina.ai fallback was strictly needed for text acquisition -- though both were still attempted for independent cross-verification and both proved unavailable this pass (see known_unresolved_discrepancies, key sce_reg_scribd_and_jina_fallbacks_unavailable).\n\nDUAL-PIPELINE TEXT EXTRACTION: this PDF's embedded Arabic text stream is stored in raw visual (right-to-left glyph-position) character order without correct Unicode logical ordering or bidi markup -- a known class of Arabic-PDF authoring artifact distinct from, and more severe than, ordinary justified-text kashida spacing. A naive 'pdftotext -layout' or 'pdfplumber .extract_text()' pass on this file therefore initially yields visually mirrored / reversed-word-order text. This track's generator resolves this via a from-scratch word-level reconstruction (see the reusable extraction logic documented in this track's own build tooling): for each PDF page, words are extracted via pdfplumber with their x/y bounding boxes, grouped into lines by y-coordinate, each line's words are sorted by DESCENDING x-coordinate (rightmost-first, matching RTL reading order), and each individual word's own character stream is reversed BEFORE Unicode NFKC normalization (reversing after normalization was tried first and found to corrupt multi-codepoint decompositions such as the lam-alef ligature, silently swapping 'لا' into 'ال' -- reversing before normalization avoids this). Embedded digit runs (ASCII and Arabic-Indic) and bracket/parenthesis characters are then corrected back to their proper left-to-right reading order and orientation (both had been incorrectly flipped by the whole-word reversal). This reconstruction was cross-checked against an entirely independent poppler 'pdftotext -layout' extraction of the SAME archived PDF (a different underlying parsing engine, PDF-object-stream reader, and text-layout heuristic) -- the two extractions agree, word-for-word, on the full 32-article text after normalization, which this track treats as strong internal corroboration against a tool-specific transcription error (though both necessarily read the SAME single archived copy of the file, so this is a parsing cross-check, not an independent-source cross-check in the sense of two different hosts serving the text).\n\nSTRUCTURE: 32 articles across 6 named فصول (chapters; this regulation has no أبواب) -- الفصل الأول: التعريفات (م1); الفصل الثاني: أجهزة الهيئة (م2-م9, itself subdivided into 5 lettered subsections أ-هـ for the General Assembly, Board of Directors, Secretariat-General, engineering divisions, and Council branches); الفصل الثالث: انتخابات مجلس إدارة الهيئة (م10-م25, by far the longest chapter, covering the election-supervision committee, candidacy procedures, campaign conduct rules, the appeals committee, and vacancy filling); الفصل الرابع: التسجيل والعضوية (م26-م27); الفصل الخامس: الأحكام المالية (م28-م29); الفصل السادس: أحكام ختامية (م30-م32). No article carries an inline topic title distinct from its chapter/subsection heading; section_ar carries the chapter/subsection context instead, consistent with this corpus's established convention for sources lacking inline per-article titles (see this corpus's saudi_engineers, awqaf_law, nazaha_law, and accounting_auditing_law precedent).\n\nLEGAL STATUS / AMENDMENT HISTORY: this regulation is a Council-internal instrument issued under the base law's own General-Assembly rule-making delegation -- it is NOT BOE-catalogued and carries no per-article 'تعديلات المادة' changelog mechanism analogous to the one this corpus's own saudi_engineers (base law) track relied on for its Articles 1 and 6. Only ONE archived capture of this exact file was found (see above); no earlier edition of this same instrument was located to diff against. All 32 articles are therefore recorded as 'اصلية' (original/current), meaning verified-current text of the single consolidated 1445H/2024G edition as hosted by the regulator -- NOT an affirmative claim that every article's wording is identical to whatever earlier internal edition(s) preceded this reissuance (see known_unresolved_discrepancies, key sce_reg_no_prior_edition_found_for_diff, and key sce_reg_general_assembly_meeting_number_unconfirmed for the specific '20th General Assembly, 2024' attribution this pass could not independently confirm).\n\nDISAMBIGUATION FROM THE SIBLING engineering_practice_regulation TRACK: this pass specifically fetched and read (via its own Wayback snapshot) a second, textually and structurally distinct 'اللائحة التنفيذية' PDF hosted in the SAME saudieng.sa directory (Admin/NPSCERules/67.pdf) to confirm it is NOT this track's subject matter -- it is instead اللائحة التنفيذية لنظام مزاولة المهن الهندسية (Implementing Regulation of the Law of the Practice of Engineering Professions), issued by Ministerial Resolution No. (4400942200/4) dated 26/5/1445هـ and published in Umm Al-Qura Gazette No. 5013 (16/6/1445هـ) -- a government ministerial regulation implementing individual-engineer licensing/accreditation/discipline under the SEPARATE base law نظام مزاولة المهن الهندسية (Royal Decree م/36, 19/4/1438هـ). See known_unresolved_discrepancies, key sce_reg_disambiguation_from_engineering_practice_regulation, for the full comparison. This track ingests ONLY the Council's own organizational implementing regulation (sce-executive-regulations.pdf).\n\nNo legal text is altered beyond whitespace normalization and stripping decorative/justification tatweel (كشيدة) characters not forming part of the 'هـ' Hijri-era-marker idiom (consistent with this corpus's established tatweel-stripping convention). Several confirmed source-level spelling/typesetting artifacts (an inconsistent hamza-under-alef orthographic style throughout, three isolated one-off misspellings, and one stray duplicate-numeral artifact in Article 29) are preserved VERBATIM rather than silently corrected -- see known_unresolved_discrepancies for the full account of each. Arabic governs; no translation/paraphrase/interpretation performed on the Arabic text (English descriptions in this note and in document_en/issuing_authority_en are for indexing only). Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "sce_reg_disambiguation_from_engineering_practice_regulation",
+      "description": "This track is the Saudi Council of Engineers' OWN internal implementing regulation for its organizing statute (نظام الهيئة السعودية للمهندسين, Royal Decree م/36, 26/9/1423هـ -- already tracked in this corpus at sources/saudi_engineers/), issued by the Council's own General Assembly under that law's Article 5(2) ('إقرار اللوائح التنفيذية لنظام الهيئة') and Article 7(3) (Board's proposal power), hosted directly by the Council at saudieng.sa/Admin/NPSCERules/sce-executive-regulations.pdf and dated on its own cover '1445هـ / 2024م'. It governs the HEIGHT'S internal organs (اجهزة الهيئة): the General Assembly, Board of Directors composition and elections, the Secretariat-General, engineering divisions (الشعب الهندسية), branches, registration/membership, and the Council's own finances -- 32 articles, 6 chapters, no per-article ministerial/BOE amendment mechanism. THIS IS DISTINCT from a separate, currently-in-force instrument independently confirmed this pass via its own archived copy (Wayback snapshot of saudieng.sa/Admin/NPSCERules/67.pdf, captured 27 May 2025): اللائحة التنفيذية لنظام مزاولة المهن الهندسية (Implementing Regulation of the Law of the Practice of Engineering Professions), which is issued by MINISTERIAL RESOLUTION No. (4400942200/4) dated 26/5/1445هـ and published in the Umm Al-Qura official gazette No. 5013 dated 16/6/1445هـ -- i.e. a government ministerial regulation implementing the SEPARATE practice/licensing/discipline law (نظام مزاولة المهن الهندسية, Royal Decree م/36 dated 19/4/1438هـ, a distinct decree despite the identical number -- see the base law track's own known_unresolved_discrepancies key saudi_engineers_decree_number_collision_m36), governing professional accreditation, the accreditation committee, and disciplinary penalties for individual engineers and firms. The two implementing-regulation instruments differ in EVERY structural respect confirmed this pass: issuing mechanism (Council General Assembly resolution vs. Ministerial Resolution), publication channel (Council's own website only vs. Umm Al-Qura official gazette), subject matter (the Council's own internal governance organs vs. individual-engineer licensing/discipline), and file identity (sce-executive-regulations.pdf vs. 67.pdf). This track ingests ONLY the former (the Council's own organizational implementing regulation); the latter is the separate engineering_practice_regulation track being built in parallel and is explicitly NOT ingested here."
+    },
+    {
+      "article_key": "sce_reg_general_assembly_meeting_number_unconfirmed",
+      "description": "Prior research for this task asserted the current (1445H/2024G) edition of this regulation was 'approved at the 20th Ordinary General Assembly meeting, 2024.' This pass could NOT independently confirm that specific meeting-number attribution from a primary source: the regulation's own cover page states only 'اللائحة التنفيذية لنظام الهيئة السعودية للمهندسين -- 1445هـ / 2024م' (no meeting number or exact approval date appears anywhere in the 16-page PDF), and Article 32 itself states only that the regulation takes effect 'من تاريخ إقرارها من الجمعية العمومية' (from the date of its approval by the General Assembly) without naming that date or meeting number inline. A WebSearch this pass found saudieng.sa's own news pages referring to a '21st Ordinary General Assembly' meeting whose agenda covered approving the FY2024 annual report and final accounts (consistent with Article 2(2) of this very regulation, which places the ordinary General Assembly within the three months following the Council's fiscal year end) and an older '14th Ordinary General Assembly' from a prior year -- both circumstantially consistent with, but not proof of, a '20th' meeting occurring around 2024 under the same annual numbering sequence. This track does NOT assert '20th Ordinary General Assembly, 2024' as an independently-confirmed fact; it is carried here only as an unverified prior-research claim, honestly flagged as unconfirmed by this pass's own primary-source reading."
+    },
+    {
+      "article_key": "sce_reg_no_prior_edition_found_for_diff",
+      "description": "This regulation is the Council's own consolidated CURRENT text (cover-dated 1445H/2024G); the base law's own known_unresolved_discrepancies (key saudi_engineers_implementing_regs_charter_not_ingested) had already flagged its existence without fetching it. A Wayback CDX query this pass for the exact URL saudieng.sa/Admin/NPSCERules/sce-executive-regulations.pdf returned exactly ONE archived capture (20250625074825, 25 Jun 2025) -- no earlier-dated snapshot of this file, and no earlier-dated alternate URL for a predecessor edition of this SAME instrument, was located. Because no prior edition's text could be independently fetched and diffed article-by-article, this track cannot respons‌ibly mark any individual article as 'معدلة' (amended) relative to an unverified earlier edition -- doing so would require guessing at what the prior text said. All 32 articles are therefore recorded as 'اصلية', meaning: verified as the CURRENT, single, in-force consolidated text as hosted by the regulator, NOT a claim that this text is identical, word-for-word, to whatever internal edition(s) preceded the 1445H/2024G reissuance referenced in this document's own cover date. This differs from the base law's own BOE-changelog-driven per-article amendment tracking (Articles 1 and 6 there), which was possible only because BOE's own page separately exposed a 'تعديلات المادة' popup quoting prior/superseding text -- no equivalent mechanism exists for this Council-internal, non-BOE-catalogued regulation."
+    },
+    {
+      "article_key": "sce_reg_scribd_and_jina_fallbacks_unavailable",
+      "description": "Per the task brief's suggested fallback chain (direct fetch, then Wayback Machine, then a Scribd mirror, then r.jina.ai as a reader-proxy fallback), this pass attempted: (1) a direct curl fetch of https://www.saudieng.sa/Admin/NPSCERules/sce-executive-regulations.pdf, which failed with a TLS connection reset (consistent with this corpus's established pattern of saudieng.sa blocking direct scraping); (2) the Wayback Machine, which succeeded on the FIRST and ONLY archived snapshot (20250625074825, confirmed via the CDX metadata API before fetching the content-serving path, per this environment's documented CDX-works/content-path-sometimes-blocked asymmetry -- in this instance the content-serving path DID succeed via direct curl over the pre-configured proxy); (3) a WebSearch for a Scribd mirror of this specific regulation, which surfaced only Scribd/qanoonsa/lexis mirrors of the DISTINCT engineering_practice_regulation instrument (see sce_reg_disambiguation_from_engineering_practice_regulation above), not of this track's own instrument -- no Scribd mirror of THIS regulation was located; (4) r.jina.ai, which returned HTTP 401 ('blocked from performing anonymous queries due to bad IP reputation') for this URL. Because the Wayback fetch (step 2) succeeded and was independently cross-extracted by two separate PDF-parsing pipelines (poppler's pdftotext and pdfminer-based pdfplumber, the latter requiring a from-scratch bidi/glyph-order reconstruction documented in this track's generator script) that agreed on the full 32-article text byte-for-byte after normalization, this track treats the text as adequately verified despite the Scribd/r.jina.ai fallbacks being unavailable this pass, consistent with the corpus's 1-2-verification-attempts-per-fact policy."
+    },
+    {
+      "article_key": "sce_reg_hamza_style_and_minor_spelling_artifacts",
+      "description": "This PDF consistently uses an informal hamza-under-alef orthographic style for a class of common words that formal MSA legal drafting would normally spell with a plain alef or alef-wasl (e.g. 'إجتماع/الإجتماعات' for 'اجتماع', 'إنتخابات/الإنتخابية' for 'انتخابات/الانتخابية', 'إعتراض' for 'اعتراض', 'إستثنائية' for 'استثنائية', 'إستيفاء' for 'استيفاء', 'إفتتاح' for 'افتتاح') -- but does so INCONSISTENTLY even within the same document (e.g. Article 9's 'مبني' clause and the Chapter-3 sub-heading 'ج. أسلوب الانتخاب' both use the plain, hamza-free spelling 'الانتخاب/الانتخابية' in the same breath as hamza-bearing 'الإنتخابات' elsewhere). This track preserves EVERY instance exactly as it appears in the two independently cross-checked extractions, article by article, rather than silently normalizing spelling to a single consistent house style -- per this corpus's no-silent-correction policy. Separately, THREE genuine, narrower one-off spelling artifacts were confirmed identically by both independent extraction pipelines and are preserved verbatim rather than corrected: (a) Article 2, item 5: 'الأعضاء الأساسين' (missing an internal 'ي'; standard spelling would be 'الأساسيين'); (b) Article 6, item 3: 'رئيس مجلس الادارة' (missing the hamza used everywhere else in this document for 'الإدارة'); (c) Article 22: 'يتم إجراء القرعه بينهم' ('القرعه' spelled with a plain 'ه' rather than tied 'ة', standard spelling 'القرعة')."
+    },
+    {
+      "article_key": "sce_reg_article29_stray_duplicate_numeral_artifact",
+      "description": "Article 29, within item 2's sentence, both independently-run extraction pipelines (pdftotext -layout via poppler, and a from-scratch bidi-corrected pdfplumber/pdfminer word-level reconstruction, verified down to individual PDF glyph tokens and their x/y coordinates) agree EXACTLY on an anomalous embedded token reading '-3٣' (an ASCII '3' immediately followed by an Arabic-Indic '٣', both attached to a dash) sitting in the middle of item 2's own sentence, between '...والخطابات.' and 'تقديم المشورة الفنية في المجالات الهندسية.' -- i.e. what should read as one sentence for item 2 ('الاعتماد والتصديق للوثائق والمستندات والتوقيعات والخطابات، وتقديم المشورة الفنية في المجالات الهندسية.') instead carries a stray, duplicated numeral marker mid-sentence, while the NEXT item is separately (and normally) labeled '3- تدريب وتأهيل المهندسين والفنيين.' -- meaning the numeral '3' effectively appears twice in immediate succession for two different pieces of text. Because this artifact is confirmed identically by two structurally-independent parsing pipelines operating on the same archived primary PDF (ruling out a tool-specific OCR/extraction error), it is treated as a genuine typesetting anomaly in the Council's own source document and is preserved VERBATIM in this track's ingested text for Article 29 (rather than silently deleted, renumbered, or 'corrected' into a clean item 3), per this corpus's binding no-fabrication/no-silent-correction rule. It cannot be determined from this pass whether the Council's own drafters intended the 'تقديم المشورة الفنية...' clause to be a separate item (in which case every subsequent item from 3 onward would arguably be off-by-one relative to the Council's own original numbering intent) or whether it is simply a leftover, meaningless duplicate-digit typesetting artifact; this track does not guess and instead preserves the anomaly with this explicit flag."
+    },
+    {
+      "article_key": "sce_reg_related_uningested_instruments",
+      "description": "Two further Council-issued instruments were identified this pass via the same Wayback CDX directory listing (saudieng.sa/Admin/NPSCERules/) but are NOT ingested in this track, consistent with this corpus's one-instrument-per-pass precedent: (1) sce-board-of-directors-work-rules.pdf ('قواعد عمل مجلس الإدارة' -- Board of Directors' own internal work rules/procedures, a Board-level instrument distinct from this General-Assembly-approved executive regulation, archived 15 Jun 2025); (2) SCESystem.pdf, which appears to be the Council's own PDF hosting of the BASE LAW text itself (already tracked separately in this corpus at sources/saudi_engineers/) rather than a distinct instrument. An English-language translation of this exact regulation (sce-executive-regulations-en.pdf, archived 13 Feb 2026) was also located but not used for anything beyond confirming the Arabic file's own English-language sibling exists; per this corpus's binding rule that Arabic is the sole governing source, the English PDF was not fetched, read, or used to inform or correct any Arabic wording in this track."
+    }
+  ],
+  "amendment_history": [
+    {
+      "decree": "قرار الجمعية العمومية للهيئة السعودية للمهندسين",
+      "date_hijri": "1445",
+      "note": "الإصدار المتداول حالياً (32 مادة، 6 فصول بلا أبواب) -- إقرار اللائحة التنفيذية لنظام الهيئة السعودية للمهندسين، مؤرخ على غلافه '1445هـ / 2024م' فقط، دون رقم اجتماع أو تاريخ إقرار محدد داخل نص اللائحة ذاته. لم يُعثر على نسخة أرشيفية سابقة لهذا الملف بعينه لمقارنتها (لقطة أرشيفية واحدة فقط بتاريخ 25/6/2025م عبر Wayback Machine CDX)؛ لذلك لا يمكن تحديد أي مادة بعينها بأنها 'معدلة' عن إصدار سابق دون تخمين، فجرى اعتبار كل المواد الاثنتين والثلاثين 'أصلية' بوصفها النص الساري الحالي الموثّق، لا بوصف مطابقتها الحرفية لأي إصدار داخلي سابق (انظر known_unresolved_discrepancies)."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول: التعريفات",
+      "title_ar": "تعريف الألفاظ والعبارات الواردة في النظام واللائحة (م1).",
+      "articles": "1-1"
+    },
+    {
+      "label_ar": "الفصل الثاني: أجهزة الهيئة",
+      "title_ar": "أجهزة الهيئة الخمسة: الجمعية العمومية، مجلس الإدارة، الأمانة العامة، الشعب الهندسية، فروع الهيئة.",
+      "articles": "2-9",
+      "sections": [
+        {
+          "label_ar": "أ. الجمعية العمومية",
+          "title_ar": "انعقاد الجمعية العمومية العادية وإجراءاتها (م2)؛ حالات انعقادها الاستثنائي (م3).",
+          "articles": "2-3"
+        },
+        {
+          "label_ar": "ب. مجلس الإدارة",
+          "title_ar": "تشكيل مجلس الإدارة من عشرة أعضاء، تحديد الجهات الحكومية الممثلة، اختيار الرئيس ونائبه، ومدة العضوية (م4).",
+          "articles": "4-4"
+        },
+        {
+          "label_ar": "ج. الأمانة العامة",
+          "title_ar": "إنشاء الأمانة العامة (م5) واختصاصاتها التفصيلية (م6).",
+          "articles": "5-6"
+        },
+        {
+          "label_ar": "د. الشعب الهندسية",
+          "title_ar": "إنشاء الشعب الهندسية بقرار من مجلس الإدارة (م7).",
+          "articles": "7-7"
+        },
+        {
+          "label_ar": "هـ. فروع الهيئة",
+          "title_ar": "فتح فروع أو مكاتب للهيئة داخل المملكة (م8)؛ تشكيل لجان تنسيقية في المناطق التي لا فروع لها (م9).",
+          "articles": "8-9"
+        }
+      ]
+    },
+    {
+      "label_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "title_ar": "لجنة الإشراف على الانتخابات وتشكيلها واختصاصاتها (م10)؛ إجراءات وآليات الترشح وأسلوب التعريف بالمترشح وضوابط الحملة الانتخابية وأسلوب الانتخاب (م11)؛ النظر في الشكاوى والاعتراضات والتظلمات (م12-م14)؛ موعد الانتخابات وإبلاغ الأعضاء (م15-م16)؛ شروط الترشح لعضوية مجلس الإدارة (م17)؛ لجنة الطعون واختصاصاتها (م18-م20)؛ إعادة الانتخابات (م21)؛ فوز المترشحين وإقرار النتائج (م22-م23)؛ إفصاح عضو مجلس الإدارة عن تعارض المصالح (م24)؛ خلو مقعد عضو منتخب (م25).",
+      "articles": "10-25"
+    },
+    {
+      "label_ar": "الفصل الرابع: التسجيل والعضوية",
+      "title_ar": "اعتبار العضوية بعد إتمام إجراءات التسجيل (م26)؛ منح العضوية الفخرية (م27).",
+      "articles": "26-27"
+    },
+    {
+      "label_ar": "الفصل الخامس: الأحكام المالية",
+      "title_ar": "إدارة أموال الهيئة وإيداعها (م28)؛ المقابل المالي عن خدمات الهيئة (م29).",
+      "articles": "28-29"
+    },
+    {
+      "label_ar": "الفصل السادس: أحكام ختامية",
+      "title_ar": "قبول التبرعات والهبات واستثمار الأموال (م30)؛ حظر التصرف في الأموال خارج أهداف الهيئة (م31)؛ نفاذ اللائحة من تاريخ إقرارها من الجمعية العمومية (م32).",
+      "articles": "30-32"
+    }
+  ],
+  "article_count": 32,
+  "status_counts": {
+    "اصلية": 32,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "saudi_engineers_regulation_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الأول: التعريفات",
+      "text": "يكون للألفاظ والعبارات الآتية المعنى المبين أمام كل منها، ما لم يقتض السياق خلاف ذلك:\nالنظام: نظام الهيئة السعودية للمهندسين الصادر بالمرسوم الملكي رقم (م/36) وتاريخ 26/9/1423هـ، وتعديلاته.\nاللائحة: اللائحة التنفيذية للنظام.\nالجهة المشرفة: وزارة البلديات والإسكان.\nالوزير المشرف: وزير البلديات والإسكان.\nالهيئة: الهيئة السعودية للمهندسين.\nالجمعية العمومية: جمعية عمومية تتكون من الأعضاء الأساسيين الذين سددوا اشتراكاتهم السنوية.\nمجلس الإدارة: مجلس إدارة الهيئة.\nرئيس المجلس: رئيس مجلس إدارة الهيئة.\nعضو مجلس الإدارة: عضو مجلس إدارة الهيئة.\nالأمين العام: أمين عام الهيئة.\nلجنة الإشراف: لجنة الإشراف على انتخابات أعضاء مجلس إدارة الهيئة.\nلجنة الطعون: لجنة النظر في الطعون على نتائج انتخابات أعضاء مجلس إدارة الهيئة.\nالشعبة الهندسية: وحدة مكونة من مجموعة من الأعضاء في الهيئة، من المتخصصين في أحد التخصصات الهندسية يسهمون من خلالها بتطوير تخصصهم المهني وفق أسس وقواعد محددة.\nاللجنة الفنية: مجموعة من الأعضاء متخصصة في أحد الجوانب الفنية من أعمال الأمانة العامة.\nالإعتماد المهني: القيد لدى الهيئة والحصول على الدرجة المهنية.\nالعضوية: الوثيقة التي تصدرها الهيئة للأعضاء الأساسيين، والمنتسبين، والفخريين، حسب ضوابط وشروط العضوية.\nالتخصصات الهندسية: التخصصات الهندسية الأكاديمية الرئيسة أو المتفرعة منها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- أ. الجمعية العمومية",
+      "text": "تعقد الجمعية العمومية اجتماعاتها، وفقاً لما يلي:\n1- يحدد مجلس الإدارة مكان الاجتماع.\n2- يكون موعد انعقاد الجمعية العمومية العادية خلال الأشهر الثلاثة التالية لإنتهاء السنة المالية للهيئة.\n3- تعقد اجتماعات الجمعية العمومية برئاسة رئيس مجلس الإدارة أو نائبه أو من يفوضه مجلس الإدارة من أعضائه في حال تعذر ذلك.\n4- توجه الدعوة لجميع الأعضاء الأساسيين للحضور.\n5- يعد بيان يوضح أسماء الأعضاء الأساسين الذين حضروا الجمعية العمومية.\n6- يدون في محاضر الاجتماعات ما يتم تداوله في الاجتماع، ويودع المحضر في سجل خاص يحفظ لدى سكرتارية مجلس الإدارة.\n7- تناقش الجمعية العمومية الموضوعات المدرجة في جدول أعمالها، بالإضافة إلى ما يتقدم به الأعضاء من مقترحات ومطالبات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- أ. الجمعية العمومية",
+      "text": "تعقد الجمعية العمومية إجتماعاتها الإستثنائية في إحدى الحالات الآتية:\n1- إذا رأى مجلس الإدارة ضرورة دعوة الجمعية العمومية للإنعقاد.\n2- إذا طلب مائة عضو أساسي عقدها على أن يرفق بالطلب مذكرة توضيحية لأسباب طلب الإنعقاد والمواضيع المقترح مناقشتها، على ألا تزيد عن إجتماعين في السنة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- ب. مجلس الإدارة",
+      "text": "1- يتكون مجلس إدارة الهيئة من عشرة أعضاء على النحو الآتي:\nأ. الأعضاء الأساسيون الذين تنتخبهم الجمعية العمومية، ويكون عددهم نصف عدد أعضاء المجلس.\nب. ممثلون من جهات حكومية ومن ذوي خبرة واختصاص في مجال عمل الهيئة، أو من أي منهما، يشكلون النصف الآخر.\n2- يكون تحديد الجهات الحكومية وتعيين ذوي الخبرة والاختصاص، الواردة في الفقرة الفرعية (ب) من الفقرة (1) من هذه المادة، بأمر من رئيس مجلس الوزراء بناءً على ترشيح من رئيس الجهة المشرفة على الهيئة.\n3- يختار رئيس الجهة المشرفة على الهيئة رئيساً لمجلس الإدارة ونائباً له من الأعضاء، ويصدر بتعيينهما أمر من رئيس مجلس الوزراء.\n4- تكون مدة العضوية (ثلاث) سنوات قابلة للتجديد مرة واحدة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- ج. الأمانة العامة",
+      "text": "يكون للهيئة أمانة عامة تتولى إدارة شؤونها التنفيذية وفق خطة العمل المقترحة من مجلس الإدارة والمعتمدة من الجمعية العمومية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- ج. الأمانة العامة",
+      "text": "تتولى الأمانة العامة الاختصاصات الآتية:\n1- إدارة شؤون الأمانة العامة، وضمان حسن سير أعمالها.\n2- إقتراح القواعد الفنية والإدارية والمالية والمهنية.\n3- تمثيل الهيئة أمام الجهات الرسمية والخاصة بالتنسيق مع رئيس مجلس الادارة.\n4- اقتراح الخطط التنفيذية ووضع البرامج المناسبة لها.\n5- إعداد الميزانية السنوية للهيئة وعرضها على مجلس الإدارة لإقرارها.\n6- إقتراح جدول أعمال اجتماع مجلس الإدارة وتحضير المذكرات والدراسات والمعلومات اللازمة للمواضيع المعروضة.\n7- تنفيذ القرارات والخطط العامة والتنفيذية التي يقرها مجلس الإدارة.\n8- تعيين موظفين للقيام بأعمال الأمانة العامة حسب حاجة العمل ووفق القواعد الإدارية والمالية.\n9- يكون للأمين العام، صلاحية تمثيل الهيئة أمام المحاكم واللجان القضائية وشبه القضائية المختلفة وصلاحية توكيل الغير في هذا الأمر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- د. الشعب الهندسية",
+      "text": "تنشأ في الهيئة بقرار من مجلس الإدارة شعب هندسية تمارس أعمالها ومهامها المهنية وفقاً لقواعد العمل التي يقررها مجلس الإدارة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- هـ. فروع الهيئة",
+      "text": "يجوز للهيئة إفتتاح فروع أو مكاتب لها في داخل المملكة بقرار من مجلس الإدارة بناءً على قواعد يصدرها مجلس الإدارة تحدد العلاقة المالية والإدارية بين الفروع والأمانة العامة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثاني: أجهزة الهيئة -- هـ. فروع الهيئة",
+      "text": "يجوز بقرار من مجلس الإدارة مبني على توصية من الأمانة العامة تشكيل لجان تنسيقية في المناطق أو المحافظات أو المدن التي لم يفتتح فيها فروع للهيئة، من متطوعين من أعضاء الهيئة، وذلك لتسهيل عمل الهيئة والتنسيق لنشاطاتها في تلك المدن والمحافظات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "يُشكل الوزير لجنة للإشراف على إنتخابات أعضاء مجلس الإدارة، مكونة من ثلاثة أعضاء وفقاً للآتي:\n1- عضوين من الوزارة، على أن يكون أحدهما رئيساً للجنة.\n2- عضو من الأمانة العامة للهيئة.\nويكون لهذه اللجنة المهام والاختصاصات الآتية:\n1- وضع الإجراءات التنظيمية والجدول الزمني لتنفيذ العملية الإنتخابية وفق هذه اللائحة.\n2- تشكيل اللجان الفرعية وتحديد مهامها.\n3- إعداد محاضر سير العملية الإنتخابية حتى إعلان النتائج النهائية، ورفعها للوزير لإقرارها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_011": {
+      "number_label_ar": "المادة الحادية عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "تجرى إنتخابات عضوية مجلس الإدارة تحت إشراف الوزارة، وفقاً لإجراءات وآليات الترشح الآتية:\nأ. أسلوب الترشح:\nيكون الترشح فردياً ولا يجوز الإتفاق بين المترشحين على قوائم إنتخابية لعضوية المجلس.\nب. ضوابط التعريف بالمترشح:\nيتم التعريف بالمترشحين عن طريق الهيئة وتحت إشراف اللجنة، بإتباع الوسائل المهنية المناسبة التي تكون عادلة للمترشحين للوصول بشكل موحد للناخبين خلال الفترة المحددة في الجدول الزمني للإنتخابات، وفقاً لما يلي:\nأولاً:\nإصدار دليل مطبوع يحتوي على صفحة معلومات عن كل مترشح يوضح بها مؤهلاته وخبراته وسيرته الذاتية مشتملة على إنجازاته العلمية والمهنية ورؤيته وأهدافه وخططه التي يرمي إلى تحقيقها مع مراعاة الدور المطلوب نظاماً من عضو مجلس الإدارة بحيث لا تتضمن وعوداً أو برامج إنتخابية تخرج عن مهام وصلاحيات عضو مجلس الإدارة، ويتم توفير هذا الدليل في مقر الهيئة وفروعها لإطلاع الناخبين عليها، كما يُرسل لجميع الأعضاء ويعرض في موقع الهيئة الإلكتروني.\nثانياً:\nيجوز للمترشحين استخدام الصحف المحلية والمجلات المهنية المتخصصة في كتابة مقالات مهنية لطرح وجهات نظرهم وآرائهم المهنية، كما يمكنهم الإستفادة من مواقعهم الإلكترونية الخاصة بهم للتعريف بأنفسهم.\nثالثاً:\nيلتزم المترشح في تنفيذ أسلوب التعريف بمراعاة الآداب العامة السائدة، وقيم المجتمع وما يحقق المنافسة العادلة، والالتزام بالضوابط الآتية:\n1- التقيد بالأنظمة واللوائح وقواعد وأخلاقيات المهنة واحترام النظام العام وقيم المجتمع وثوابته.\n2- المنافسة الشريفة ومراعاة حقوق غيره من المترشحين وعدم التعرض لهم بما قد يؤثر عليهم سلباً.\n3- عدم التعرض سلباً للأفراد المهندسين أو الكيانات الهندسية المهنية بأي وسيلة من الوسائل.\n4- يكون المرشح مسؤولاً عن أي مخالفة يرتكبها هو أو أحد مساعديه دون أن يخل ذلك بمسؤولية مرتكب المخالفة.\n5- وقف التعريف وإزالة الآثار الناتجة عنها بنهاية المدة المحددة.\n6- يحظر على المرشح القيام بالآتي:\nأ. الإخلال بالنظام العام، أو إثارة الفتنة أو أي نزاع طائفي أو قبلي أو إقليمي أو الإساءة إلى أي من الناخبين أو المرشحين بصورة مباشرة أو غير مباشرة.\nب. استخدام المساجد، أو المرافق العامة، أو المنشآت الحكومية، أو دور العلم، أو الجمعيات الخيرية، أو الأندية الرياضية والثقافية، أو الهيئات العامة، أو جمعيات النفع العام، وغيرها من الهيئات والمصالح والمؤسسات العامة وما في حكمها، لأغراض الحملة الانتخابية.\nج. استخدام القنوات التلفزيونية الحكومية أو الخاصة داخل المملكة أو خارجها.\nد. القيام بأي نشاط دعائي لأغراض الحملة الانتخابية بدعم من أي جهة أجنبية.\nهـ. استخدام شعار الدولة الرسمي، أو علمها، أو أي شعار حكومي، أو شعار الهيئة، أو الإشارات والرموز الدينية أو التاريخية، أو القبلية، أو أسماء أو صور الشخصيات العامة في الحملة الانتخابية.\nو. التضامن مع أي مرشح آخر، أو الاشتراك معه في مادة إعلانية أو دعائية.\nرابعاً:\nتتولى لجنة الإشراف التأكد من مدى التزام المترشحين بتعليمات وضوابط التعريف بالمترشحين، وضبط المخالفات التي قد يرتكبها المترشحون، وتصحيحها دون التأثير على حقوق بقية المترشحين، ويتحمل المترشح المخالف تكاليف التصحيح ويتم استبعاده من قائمة المترشحين النهائية بناء على قرار منها.\nج. أسلوب الانتخاب:\n1- يتم التصويت من خلال صناديق الإقتراع، ويجوز إستخدام وسائل التقنية الحديثة في عملية الإنتخابات كوسيلة مساعدة، وفق ما تقرره لجنة الاشراف.\n2- يكون للناخب صوتاً واحداً وعليه إختيار مترشح واحد فقط عند التصويت.\n3- في حال إختيار أكثر من مترشح واحد يتم إلغاء تصويت الناخب وعدم إحتسابه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_012": {
+      "number_label_ar": "المادة الثانية عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "تتولى لجنة الإشراف، النظر في الشكاوى والاعتراضات والتظلمات الواردة، وفقاً لما يلي:\n1- الإعتراض على قائمة المترشحين الأولية، خلال أسبوع من تاريخ نشرها والإعلان عنها، ويكون الإعتراض متاحاً لجميع المترشحين والناخبين.\n2- الإعتراض على قائمة الناخبين الأولية، ممن يحق لهم الإدلاء بأصواتهم، خلال أسبوع من تاريخ نشر قوائم الناخبين والإعلان عنها، ويكون الإعتراض من المترشحين والناخبين.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_013": {
+      "number_label_ar": "المادة الثالثة عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "يكون الإعتراض في الأمور الآتية:\n1- عدم إنطباق شروط الترشح على أحد من المترشحين.\n2- عدم إنطباق شروط العضوية الأساسية على الناخبين وسريان عضويتهم.\n3- المخالفات والتجاوزات التي يرتكبها المترشحون أو الناخبون لتعليمات وإجراءات الإنتخابات.\n4- الإعتراضات التي ترى اللجنة أهمية الأخذ بها.\n5- القرارات التي تصدرها اللجان الفرعية المساندة للجنة الإشراف والتي قد تؤثر على سير العملية الانتخابية أو نتائجها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_014": {
+      "number_label_ar": "المادة الرابعة عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "تتولى لجنة الإشراف دراسة الشكاوى والإعتراضات والتظلمات الواردة، وإصدار القرارات اللازمة، ويعتبر قرارها في هذا الشأن نهائياً، وذلك على النحو التالي:\n1- استبعاد أي مترشح من قائمة المترشحين.\n2- استبعاد أي ناخب من قائمة الناخبين.\n3- إيقاف أي نشاط انتخابي.\n4- إيقاف أي قرار يصدر عن اللجان الفرعية للانتخابات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_015": {
+      "number_label_ar": "المادة الخامسة عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "تحدد لجنة الإشراف موعد إجراء الإنتخابات، على أن يكون تاريخها قبل مدة كافية من تاريخ نهاية دورة المجلس الحالي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_016": {
+      "number_label_ar": "المادة السادسة عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "يبلغ جميع الأعضاء الأساسيين بموعد وإجراءات وتعليمات التصويت والإنتخاب، وينشر في مقر الهيئة وفروعها وموقعها الإلكتروني وفي عدد من وسائل الإعلام وفق ما تراه لجنة الإشراف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_017": {
+      "number_label_ar": "المادة السابعة عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "على المترشح لعضوية مجلس الإدارة إستيفاء الشروط الآتية:\n1- إيداع طلب الترشح لدى لجنة الإشراف خلال المدة المحددة لتلقي طلبات الترشح حسب شروط وضوابط الإنتخابات.\n2- أن يكون المترشح عضواً أساسياً في الهيئة وأن تكون عضويته سارية المفعول قبل تاريخ الإعلان عن قبول طلبات الترشيح، وألا يكون من العاملين في الهيئة.\n3- أن يكون حاصلاً على درجة مهندس محترف من الهيئة، على الأقل. .\n4- أن يقدم التزاماً ببذل جزء من وقته للوفاء بمتطلبات ومسؤوليات عضويته في مجلس الإدارة.\n5- ألا يكون قد أمضى في عضوية مجلس الإدارة فترتين متتاليتين أو جزء منها دون انقطاع لفترة كاملة.\n6- أن يكون حسن السيرة والسلوك ولم يسبق أن حكم عليه بحكم قضائي مخل بالشرف والأمانة ما لم يرد إليه اعتباره.\n7- إرفاق السيرة الذاتية للمترشح.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_018": {
+      "number_label_ar": "المادة الثامنة عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "يُشكل الوزير لجنة مكونة من ثلاثة أعضاء للنظر في الطعون الواردة على نتائج الإنتخابات النهائية وفقاً للآتي:\n1- عضوين من الوزارة، على أن يكون أحدهما رئيساً للجنة.\n2- عضو من الأمانة العامة للهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_019": {
+      "number_label_ar": "المادة التاسعة عشر",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "يجوز لكل مترشح الطعن في نتائج الإنتخابات النهائية أمام لجنة الطعون، بتقديم إعتراض مكتوب خلال مدة أقصاها خمسة أيام عمل من تاريخ إعلان النتائج.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_020": {
+      "number_label_ar": "المادة العشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "تقوم لجنة الطعون، بالنظر في الطعون والبت فيها خلال خمسة عشر يوماً، ويكون قرارها نهائياً في هذا الشأن.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_021": {
+      "number_label_ar": "المادة الحادية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "لا يجوز إعادة الإنتخابات، إلا بموافقة الوزير وبناءً على توفر الأسباب الموجبة لذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_022": {
+      "number_label_ar": "المادة الثانية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "يفوز بالعضوية المترشحون الذين حصلوا على أكثر الأصوات، وإذا تساوت أصوات أكثر من مترشح، يُعتبر الفائز هو المترشح الأقدم عضوية في الهيئة وفي حال التساوي في الأقدمية يتم إجراء القرعه بينهم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_023": {
+      "number_label_ar": "المادة الثالثة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "تقوم لجنة الإشراف بعد إنتهاء الفترة اللازمة للطعون، برفع نتائج الإنتخابات النهائية للوزير لإقرارها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_024": {
+      "number_label_ar": "المادة الرابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "يلتزم عضو مجلس الإدارة بالإفصاح عن أي مصلحة أو علاقة ناشئة أو قد تنشأ، ولها صلة بعضويته في مجلس الإدارة أو قراراته بصورة مباشرة أو غير مباشرة وذلك بما يحقق مبدأ الشفافية في عمله.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_025": {
+      "number_label_ar": "المادة الخامسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الثالث: انتخابات مجلس إدارة الهيئة",
+      "text": "إذا خلا مقعد عضو من أعضاء المجلس المنتخبين، لأي سبب من الأسباب، فيحل محله المترشح الذي حاز على أكثر عدد من الأصوات، وإذا تعذر ذلك فالمترشح الذي يليه ثم الذي يليه في عدد الأصوات، وتكون مدة عضويته حتى نهاية مدة السلف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_026": {
+      "number_label_ar": "المادة السادسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الرابع: التسجيل والعضوية",
+      "text": "يعتبر كل من أنهى إجراءات التسجيل عضواً في الهيئة وفقاً لنوع العضوية المحدد لكل فئة وإنطباق شروطها عليه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_027": {
+      "number_label_ar": "المادة السابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الرابع: التسجيل والعضوية",
+      "text": "تمنح العضوية الفخرية بموافقة مجلس الإدارة وفقاً لما يلي:\n1- أن يتم ترشيحه من قبل ثلاثة أعضاء من مجلس الإدارة أو عشرة أعضاء أساسيين أو من قبل الأمانة العامة.\n2- أن تعد الأمانة العامة تقريراً حول إسهاماته في خدمة المهنة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_028": {
+      "number_label_ar": "المادة الثامنة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الخامس: الأحكام المالية",
+      "text": "لمجلس الإدارة حق إدارة أموال الهيئة وفقاً لأحكام نظام الهيئة، وتودع الأموال النقدية في بنك أو أكثر، وفق القواعد والسياسات والإجراءات المالية الخاصة بالهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_029": {
+      "number_label_ar": "المادة التاسعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل الخامس: الأحكام المالية",
+      "text": "تتقاضى الهيئة مقابلاً مالياً يحدد بموجب قواعد يقررها مجلس الإدارة عن الخدمات الآتية:\n1- الاختبارات المهنية.\n2- الاعتماد والتصديق للوثائق والمستندات والتوقيعات والخطابات. 3٣- تقديم المشورة الفنية في المجالات الهندسية.\n3- تدريب وتأهيل المهندسين والفنيين.\n4- التحكيم الفني في المنازعات وفقاً للأنظمة والتعليمات.\n5- النشر العلمي للكتب والبحوث والدوريات والترجمة والمعلومات.\n6- الندوات والمؤتمرات وورش العمل التي تقيمها الهيئة بنفسها أو بالمشاركة مع الغير.\n7- أي خدمات أخرى يقرها مجلس الإدارة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_030": {
+      "number_label_ar": "المادة الثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السادس: أحكام ختامية",
+      "text": "يجوز للهيئة تلقي التبرعات والهبات واستثمار أموالها وفق قواعد يصدرها مجلس الإدارة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_031": {
+      "number_label_ar": "المادة الحادية والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السادس: أحكام ختامية",
+      "text": "لا يجوز التصرف في أموال الهيئة خارج إطار الأهداف التي قامت من أجلها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    },
+    "saudi_engineers_regulation_art_032": {
+      "number_label_ar": "المادة الثانية والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "الفصل السادس: أحكام ختامية",
+      "text": "يعمل بهذه اللائحة اعتباراً من تاريخ إقرارها من الجمعية العمومية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "history": []
+    }
+  }
+}
