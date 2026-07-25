@@ -3,15 +3,15 @@
   "generated_by": "scripts/gen_corpus_supersession_graph.py",
   "generated_from": "data/corpus_registry/corpus_registry.json (tracks[].notes) and individual tracks' sources/<track>/<component>/official_source/*.json",
   "registry_version_at_generation": "3.0",
-  "total_tracks_scanned": 236,
+  "total_tracks_scanned": 242,
   "relation_types": {
     "repeals_full": "track A's decree explicitly and fully repeals a prior instrument (which may or may not be a corpus track).",
     "repeals_partial": "track A's decree repeals only specific articles of another CURRENTLY-TRACKED law (or of an untracked predecessor).",
     "superseded_by": "track A is itself confirmed superseded by a future/newer instrument."
   },
-  "edge_count": 83,
+  "edge_count": 86,
   "relation_counts": {
-    "repeals_full": 72,
+    "repeals_full": 75,
     "repeals_partial": 10,
     "superseded_by": 1
   },
@@ -846,6 +846,36 @@
       "affected_articles": null,
       "note": "tourism_law (Royal Decree M/18, 26/1/1444H) Article 18 explicitly replaces the prior Tourism Law (نظام السياحة), Royal Decree No. (M/2), dated 9/1/1436H -- confirmed via Article 18's own verbatim text: \"يحل النظام محل نظام السياحة -الصادر بالمرسوم الملكي رقم (م/2) وتاريخ 9 /1/ 1436هـ- ويلغي ما يتعارض معه من أحكام\", corroborated from BOTH directions: this law's own Article 18 text AND the predecessor law's own nezams.com status record, which independently states it was repealed by this exact decree (\"غير ساري، ألغي بصدور نظام السياحة الصادر بالمرسوم الملكي رقم (م/18) وتاريخ 1444/1/26هـ\"). This is a real confirmed named-predecessor repeal, not an ambiguous/excluded case. Not separately ingested in this corpus (one-instrument-per-pass rule).",
       "source_ref": "sources/tourism/law/official_source/tourism_law_official_source.json (Article 18)"
+    },
+    {
+      "from_track_id": "payment_systems_regulation",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "القواعد التنظيمية لمقدمي خدمات المدفوعات",
+      "target_decree": "SAMA rules dated 5/6/1441H (30/1/2020G)",
+      "affected_articles": null,
+      "note": "payment_systems_regulation's own Article 131 states verbatim: \"تلغي اللائحة القواعد التنظيمية لمقدمي خدمات المدفوعات الصادرة عن البنك المركزي بتاريخ 5/6/1441هـ الموافق 30/1/2020م، وتحل محلها\". Article 132 sets transitional terms for previously-licensed providers. Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/payment_systems_regulation/law/verified/payment_systems_regulation_verified_summary.json (Article 131)"
+    },
+    {
+      "from_track_id": "finance_companies_regulation",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "قواعد ممارسة نشاط التمويل متناهي الصغر",
+      "target_decree": "Decision No. 80/م ش ت, 16/1/1441H",
+      "affected_articles": null,
+      "note": "finance_companies_regulation's own cover circular (No. 472038006, 2/7/1447H) states it repeals 'قواعد ممارسة نشاط التمويل متناهي الصغر' (Decision 80/م ش ت, 16/1/1441H), with its substantive provisions folded directly into this Regulation's own Articles 1 and 9 (micro-finance definitions/rules). Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/finance_companies_regulation/law/verified/finance_companies_regulation_verified_summary.json"
+    },
+    {
+      "from_track_id": "finance_companies_regulation",
+      "relation": "repeals_full",
+      "target_track_id": null,
+      "target_description_ar": "قواعد تنظيم شركات التمويل الاستهلاكي المصغر",
+      "target_decree": "Decision No. 82/م ش ت, 13/4/1441H",
+      "affected_articles": null,
+      "note": "finance_companies_regulation's own cover circular (No. 472038006, 2/7/1447H) states it also repeals 'قواعد تنظيم شركات التمويل الاستهلاكي المصغر' (Decision 82/م ش ت, 13/4/1441H), with its substantive provisions folded directly into this Regulation's own Articles 1 and 9 (micro-consumer-finance definitions/rules). Not separately ingested in this corpus (one-instrument-per-pass rule).",
+      "source_ref": "sources/finance_companies_regulation/law/verified/finance_companies_regulation_verified_summary.json"
     }
   ],
   "concurrent_title_collisions": [

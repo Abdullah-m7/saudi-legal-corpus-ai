@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 464,
-  "top1_hits": 431,
-  "top3_hits": 454,
-  "top5_hits": 459,
-  "top1_accuracy": 0.9289,
-  "top3_accuracy": 0.9784,
-  "top5_accuracy": 0.9892,
-  "mrr_at_5": 0.9547,
+  "total_queries": 470,
+  "top1_hits": 436,
+  "top3_hits": 459,
+  "top5_hits": 465,
+  "top1_accuracy": 0.9277,
+  "top3_accuracy": 0.9766,
+  "top5_accuracy": 0.9894,
+  "mrr_at_5": 0.9536,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -61,25 +61,25 @@
     "law_component": "law",
     "article_number": 407
    },
-   "gold_rank": 2,
+   "gold_rank": 5,
    "hit_top1": false,
-   "hit_top3": true,
+   "hit_top3": false,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "finance-lease-regulation-llm-art-031",
+     "article_number": 31,
+     "score": 15
+    },
     {
      "record_id": "finance-lease-law-llm-art-001",
      "article_number": 1,
      "score": 11
     },
     {
-     "record_id": "civil-law-llm-art-407",
-     "article_number": 407,
-     "score": 10
-    },
-    {
-     "record_id": "civil-law-llm-art-414",
-     "article_number": 414,
-     "score": 10
+     "record_id": "finance-lease-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 11
     }
    ]
   },
@@ -1797,11 +1797,16 @@
     "law_component": "recruitment_services_rules",
     "article_number": 30
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "finance-companies-regulation-llm-art-074",
+     "article_number": 74,
+     "score": 21
+    },
     {
      "record_id": "labor-annex4-llm-art-030",
      "article_number": 30,
@@ -1811,11 +1816,6 @@
      "record_id": "accounting-auditing-law-llm-art-008",
      "article_number": 8,
      "score": 15
-    },
-    {
-     "record_id": "insurance-control-law-llm-art-002",
-     "article_number": 2,
-     "score": 12
     }
    ]
   },
@@ -2650,8 +2650,8 @@
      "score": 19
     },
     {
-     "record_id": "enforcement-regulation-llm-prov-262",
-     "article_number": 262,
+     "record_id": "cooperative-societies-regulation-llm-art-052",
+     "article_number": 52,
      "score": 17
     }
    ]
@@ -3084,8 +3084,8 @@
      "score": 13
     },
     {
-     "record_id": "sulook-regulation-llm-art-008",
-     "article_number": 8,
+     "record_id": "payment-systems-regulation-llm-art-060",
+     "article_number": 60,
      "score": 12
     }
    ]
@@ -4567,13 +4567,13 @@
      "score": 30
     },
     {
-     "record_id": "real-estate-finance-law-llm-art-002",
-     "article_number": 2,
-     "score": 20
+     "record_id": "finance-companies-regulation-llm-art-088",
+     "article_number": 88,
+     "score": 21
     },
     {
-     "record_id": "real-estate-finance-law-llm-art-003",
-     "article_number": 3,
+     "record_id": "real-estate-finance-law-llm-art-002",
+     "article_number": 2,
      "score": 20
     }
    ]
@@ -5342,14 +5342,14 @@
      "score": 33
     },
     {
-     "record_id": "associations-ngo-regulation-llm-art-051",
-     "article_number": 51,
+     "record_id": "credit-information-regulation-llm-art-016",
+     "article_number": 16,
      "score": 20
     },
     {
-     "record_id": "commercial-papers-law-llm-art-054",
-     "article_number": 54,
-     "score": 19
+     "record_id": "associations-ngo-regulation-llm-art-051",
+     "article_number": 51,
+     "score": 20
     }
    ]
   },
@@ -7238,9 +7238,9 @@
      "score": 35
     },
     {
-     "record_id": "product-safety-law-llm-art-001",
-     "article_number": 1,
-     "score": 24
+     "record_id": "credit-information-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 27
     }
    ]
   },
@@ -7264,14 +7264,14 @@
      "score": 25
     },
     {
+     "record_id": "banking-control-regulation-llm-art-030",
+     "article_number": 30,
+     "score": 25
+    },
+    {
      "record_id": "oa-llm-companies-art-272",
      "article_number": 272,
      "score": 23
-    },
-    {
-     "record_id": "oa-llm-companies-art-069",
-     "article_number": 69,
-     "score": 22
     }
    ]
   },
@@ -7450,13 +7450,13 @@
      "score": 38
     },
     {
-     "record_id": "judiciary-law-llm-art-013",
-     "article_number": 13,
-     "score": 23
+     "record_id": "cooperative-societies-regulation-llm-art-042",
+     "article_number": 42,
+     "score": 24
     },
     {
-     "record_id": "awqaf-law-llm-art-008",
-     "article_number": 8,
+     "record_id": "judiciary-law-llm-art-013",
+     "article_number": 13,
      "score": 23
     }
    ]
@@ -7481,14 +7481,14 @@
      "score": 47
     },
     {
+     "record_id": "payment-systems-regulation-llm-art-106",
+     "article_number": 106,
+     "score": 28
+    },
+    {
      "record_id": "payment-systems-law-llm-art-005",
      "article_number": 5,
      "score": 27
-    },
-    {
-     "record_id": "payment-systems-law-llm-art-001",
-     "article_number": 1,
-     "score": 26
     }
    ]
   },
@@ -7579,8 +7579,8 @@
      "score": 11
     },
     {
-     "record_id": "sharia-procedure-regulation-llm-prov-633",
-     "article_number": 633,
+     "record_id": "finance-companies-regulation-llm-art-057",
+     "article_number": 57,
      "score": 10
     }
    ]
@@ -8907,14 +8907,14 @@
      "score": 39
     },
     {
+     "record_id": "finance-lease-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 34
+    },
+    {
      "record_id": "capital-market-law-llm-art-001",
      "article_number": 1,
      "score": 30
-    },
-    {
-     "record_id": "capital-market-law-llm-art-002",
-     "article_number": 2,
-     "score": 28
     }
    ]
   },
@@ -12255,14 +12255,14 @@
      "score": 50
     },
     {
+     "record_id": "cooperative-societies-regulation-llm-art-019",
+     "article_number": 19,
+     "score": 48
+    },
+    {
      "record_id": "associations-ngo-law-llm-art-021",
      "article_number": 21,
      "score": 24
-    },
-    {
-     "record_id": "cooperative-societies-law-llm-art-030",
-     "article_number": 30,
-     "score": 23
     }
    ]
   },
@@ -12348,14 +12348,14 @@
      "score": 47
     },
     {
-     "record_id": "traffic-regulation-llm-art-071",
-     "article_number": 70,
-     "score": 26
+     "record_id": "finance-companies-regulation-llm-art-030",
+     "article_number": 30,
+     "score": 28
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-217",
-     "article_number": 217,
-     "score": 26
+     "record_id": "finance-companies-regulation-llm-art-071",
+     "article_number": 71,
+     "score": 28
     }
    ]
   },
@@ -12658,13 +12658,13 @@
      "score": 49
     },
     {
-     "record_id": "labor-annex3-llm-art-008",
-     "article_number": 8,
-     "score": 27
+     "record_id": "payment-systems-regulation-llm-art-127",
+     "article_number": 127,
+     "score": 31
     },
     {
-     "record_id": "press-regulation-llm-art-016",
-     "article_number": 16,
+     "record_id": "labor-annex3-llm-art-008",
+     "article_number": 8,
      "score": 27
     }
    ]
@@ -12875,14 +12875,14 @@
      "score": 49
     },
     {
+     "record_id": "credit-information-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 27
+    },
+    {
      "record_id": "credit-information-law-llm-art-001",
      "article_number": 1,
      "score": 26
-    },
-    {
-     "record_id": "credit-information-law-llm-art-012",
-     "article_number": 12,
-     "score": 23
     }
    ]
   },
@@ -12906,14 +12906,14 @@
      "score": 53
     },
     {
+     "record_id": "credit-information-regulation-llm-art-036",
+     "article_number": 36,
+     "score": 37
+    },
+    {
      "record_id": "credit-information-law-llm-art-008",
      "article_number": 8,
      "score": 36
-    },
-    {
-     "record_id": "credit-information-law-llm-art-005",
-     "article_number": 5,
-     "score": 26
     }
    ]
   },
@@ -14115,14 +14115,14 @@
      "score": 34
     },
     {
+     "record_id": "payment-systems-regulation-llm-art-035",
+     "article_number": 35,
+     "score": 22
+    },
+    {
      "record_id": "electricity-regulation-llm-art-017",
      "article_number": 17,
      "score": 21
-    },
-    {
-     "record_id": "health-system-regulation-llm-art-004",
-     "article_number": 5,
-     "score": 20
     }
    ]
   },
@@ -14402,6 +14402,192 @@
      "record_id": "aml-regulation-llm-art-001",
      "article_number": 1,
      "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "cir-r1",
+   "query_ar": "يحظر على أي شخص طبيعي أو اعتباري تقديم نشاط المعلومات الائتمانية قبل الحصول على ترخيص من المؤسسة وفقاً لأحكام النظام ولائحته التنفيذية",
+   "category": "provision",
+   "gold": {
+    "corpus": "credit_information",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "credit-information-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 63
+    },
+    {
+     "record_id": "credit-information-law-llm-art-012",
+     "article_number": 12,
+     "score": 40
+    },
+    {
+     "record_id": "credit-information-regulation-llm-art-025",
+     "article_number": 25,
+     "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "pmsr-r1",
+   "query_ar": "تعد نظم المدفوعات الوطنية ومشغلوها مرخصة وفقا لقرار المحافظ الصادر في هذا الشأن",
+   "category": "provision",
+   "gold": {
+    "corpus": "payment_systems",
+    "law_component": "regulation",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "payment-systems-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 37
+    },
+    {
+     "record_id": "payment-systems-law-llm-art-001",
+     "article_number": 1,
+     "score": 18
+    },
+    {
+     "record_id": "payment-systems-law-llm-art-007",
+     "article_number": 7,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "bkcr-r1",
+   "query_ar": "عدم مخالفة القواعد التي يضعها البنك المركزي لمنح أنواع معينة من القروض والمعاملات الأخرى",
+   "category": "provision",
+   "gold": {
+    "corpus": "banking_control",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "banking-control-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 41
+    },
+    {
+     "record_id": "banking-control-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 31
+    },
+    {
+     "record_id": "banking-control-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "fcr-r1",
+   "query_ar": "يخضع لأحكام هذه اللائحة كل شخص اعتباري يرخص له بممارسة نشاط تمويلي أو أكثر من الأنشطة المنصوص عليها في المادة العاشرة من النظام",
+   "category": "provision",
+   "gold": {
+    "corpus": "finance_companies",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "finance-companies-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 59
+    },
+    {
+     "record_id": "press-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 43
+    },
+    {
+     "record_id": "finance-companies-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "flr-r1",
+   "query_ar": "مراعاة لما ورد في المادة الثانية من النظام، ونظام مراقبة شركات التمويل، والأنظمة المرعية الأخرى، يكون نشاط الإيجار التمويلي نشاطاً احترافياً",
+   "category": "provision",
+   "gold": {
+    "corpus": "finance_lease",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "finance-lease-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 67
+    },
+    {
+     "record_id": "finance-companies-regulation-llm-art-030",
+     "article_number": 30,
+     "score": 40
+    },
+    {
+     "record_id": "finance-companies-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "csr-r1",
+   "query_ar": "يقصد بالجمعية التعاونية كل جمعية يكونها مجموعة من الأفراد بما فيهم الأشخاص الاعتباريين طبقا لأحكام النظام",
+   "category": "definitional",
+   "gold": {
+    "corpus": "cooperative_societies",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cooperative-societies-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 48
+    },
+    {
+     "record_id": "cooperative-societies-law-llm-art-002",
+     "article_number": 2,
+     "score": 27
+    },
+    {
+     "record_id": "cooperative-societies-law-llm-art-001",
+     "article_number": 1,
+     "score": 21
     }
    ]
   }

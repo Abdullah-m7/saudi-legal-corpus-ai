@@ -1,0 +1,105 @@
+{
+  "law_key": "credit_information_regulation",
+  "layer": "CREDIT_INFORMATION_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 55,
+  "official_text_status": "BAYANCB_WAYBACK_PRIMARY_TWO_PIPELINE_OCR_X_SAMA_RULEBOOK_SECONDARY_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 55,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "قرار محافظ مؤسسة النقد العربي السعودي رقم أق/13709",
+  "decree_date_hijri": "22/9/1432",
+  "publication_source": null,
+  "publication_date_hijri": null,
+  "administering_authority_en": "Saudi Central Bank (SAMA)",
+  "consolidated_amended_law": false,
+  "chapter_structure": [
+    {
+      "label_ar": "",
+      "title_ar": "التعريفات",
+      "articles": "1-1"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "الترخيص",
+      "articles": "2-11"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "نطاق خدمات المعلومات الائتمانية",
+      "articles": "12-12"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "الحوكمة",
+      "articles": "13-15"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "السجل الائتماني",
+      "articles": "16-18"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "المتطلبات الإشرافية والرقابية",
+      "articles": "19-34"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "سرية المعلومات الائتمانية",
+      "articles": "35-39"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "التزامات الأعضاء",
+      "articles": "40-42"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "حقوق المستهلك",
+      "articles": "43-45"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "الاعتراضات والشكاوى",
+      "articles": "46-52"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية",
+      "articles": "53-54"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "النفاذ والنشر",
+      "articles": "55-55"
+    }
+  ],
+  "parent_law": {
+    "law_key": "credit_information",
+    "law_ar": "نظام المعلومات الائتمانية",
+    "source_artifact": "sources/credit_information/law/official_source/credit_information_law_official_source.json"
+  },
+  "verification_methodology_note": "اللائحة التنفيذية لنظام المعلومات الائتمانية -- Implementing Regulation of the Credit Information Law. Promulgating instrument: Decision of the Governor of the Saudi Arabian Monetary Agency (SAMA) No. أق/13709, dated 22/9/1432H (21/8/2011G), issued under Article 16 of the base Credit Information Law (Royal Decree M/37, 5/7/1429H), which delegates: المحافظ اللائحة التنفيذية لهذا النظام خلال (مائة وثمانين) يوماً من تاريخ صدوره. 55 articles, flat with 12 informal (unlabeled, i.e. no فصل/باب numbering) topical headings reproduced verbatim from the source document's own table of contents and matching inline section banners: التعريفات (1); الترخيص (2-11); نطاق خدمات المعلومات الائتمانية (12); الحوكمة (13-15); السجل الائتماني (16-18); المتطلبات الإشرافية والرقابية (19-34); سرية المعلومات الائتمانية (35-39); التزامات الأعضاء (40-42); حقوق المستهلك (43-45); الاعتراضات والشكاوى (46-52); لجنة النظر في المخالفات والفصل في نزاعات المعلومات الائتمانية (53-54); النفاذ والنشر (55). This is genuinely different from this corpus's rett_regulation track (which is flat with NO subdivisions of any kind): here the source PDF itself prints a table of contents on its first page reproducing these exact 12 headings in this exact order, and each heading recurs inline immediately before its first article -- so chapter_structure and each article's section_ar are populated with this real, source-grounded (if informally/unnumbered) topical structure rather than left empty.\n\nPRIMARY SOURCE AND FETCH CHALLENGES: the live URL cited by the prior research pass (bayancb.com/media/ytonosj3/...) returned HTTP 404 on this pass via both curl and WebFetch -- this credit bureau's CMS (Umbraco) appears to rotate the opaque media-GUID segment of its PDF URLs over time, so the exact URL a prior pass observed is not guaranteed to remain live. A CDX (web.archive.org/cdx) query of bayancb.com's media library located the SAME filename under a DIFFERENT, earlier media GUID (clqn5kao instead of ytonosj3), archived by the Wayback Machine on 2023-09-27 (HTTP 200, application/pdf, 426561 bytes) -- that historical GUID is ALSO now 404 on the live site (reconfirmed this pass), so the Wayback Machine snapshot, fetched directly (web.archive.org/web/20230927190645if_/...), is this track's PRIMARY text source. This is the SAME 24-page, 426KB PDF the prior research pass already identified and hashed (confirmed: 24 pages, ~426KB), so this is independent re-confirmation of that exact document, not a different edition. www.sama.gov.sa's own listed PDF URL (also found via web search, at LawsRegulations/BankingRules/) returned a SAMA error page (\"حدث خطأ ما في طلبك\") on every attempt (direct curl, r.jina.ai proxy, and WebFetch) -- sama.gov.sa's document server appears to reject this environment's requests; this is disclosed rather than silently worked around by, e.g., assuming the bayancb copy is accurate without independent structural corroboration (which is instead supplied by rulebook.sama.gov.sa, see below).\n\nEXTRACTION METHODOLOGY (two independent pipelines, reconciled, same method as this corpus's rett_regulation/vat_regulation tracks): the source PDF is born-digital (Word-to-PDF, Microsoft Word 2010 producer per its own embedded metadata) but exhibits the same systematic Arabic bidi/justification character-and-word-order defect documented for those tracks. Two independent extractions were reconciled: (1) Tesseract Arabic OCR (--psm 6) of 300dpi PyMuPDF page renders -- correct reading order, but with a recurring, document-specific misread of the hamza in ائتمان (credit) as ث/ت/ن (yielding اثتمان/اتتمان/انتمان throughout -- corrected uniformly to ائتمان per the base law's own spelling), plus the confusable-list-marker defect already documented in rett_regulation (a leading digit dropped, e.g. '10-' misread as '0-': confirmed at Art. 4 item 10, Art. 40 items 10-11) and, in three places, entire missing list items or clauses (Art. 19's closing clause on staff cooperation during inspections; Art. 28's items 2-3, naming a competent local official body and SAMA itself as additional grounds for issuing a credit record; and a stray inserted digit '3' before 'مستهلكين' in Art. 25); (2) PyMuPDF character-exact line-level geometric extraction (RTL-reversed word order but exact source glyphs), used to verify every digit (SR 50,000,000 minimum capital and SR 50,000 licensing fee in Art. 3-4; 1%/0.5% licensing/renewal fee in Art. 7; 5-year/10-year negative-information retention in Art. 17; the 30/10/7/5-day procedural windows across Arts. 10-11, 40-41, 45-50) and to recover the OCR's dropped digits and the handful of dropped clauses/items identified above (all independently located in the PyMuPDF pass, at the exact page boundary where the OCR pass truncated or skipped a line). Diacritics (tashkeel) and tatweel are stripped uniformly; the OCR pass's non-standard comma substitutions ('»' for '،') are normalized to standard Arabic punctuation. No article or numbered item was dropped: all 55 article headers (المادة الأولى through المادة الخامسة والخمسون) were located as structural anchors and every numbered sub-item run within an article was checked for an unbroken 1..N sequence after correction. Arabic governs; no translation, paraphrase, or interpretation performed.\n\nSECONDARY / STRUCTURAL CROSS-VERIFICATION: rulebook.sama.gov.sa -- SAMA's own regulator portal, fetched directly via WebFetch (HTTP 200) -- independently confirms: the promulgating instrument number (أق/13709) and both its Hijri (22/9/1432) and Gregorian (21/8/2011) dates (read directly off the per-article metadata fields on rulebook.sama.gov.sa/en/article-40-0, which display 'Regulation Number: أق/13709' / 'Date (Gregorian): 21/8/2011' / 'Date (Hijri): 22/9/1432' for this exact instrument); the 55-article count and the 12 topical groupings in the same order as this track's own chapter_structure; the In-Force status; and, article-by-article, numerous specific facts independently matching this track's extracted text verbatim in substance: Art. 3's SR 50 million minimum paid-up capital, Art. 7's 5-year license term, Art. 17's 5-year/10-year negative-information retention, Art. 40's exactly eleven member obligations, Art. 45's 7-working-day negative-decision notice, Art. 46's 30-working-day investigation cap, Art. 47's 5-working-day/10-working-day member-notice/response windows, and Art. 55's one-month-after-Gazette-publication entry-into-force rule. This is an official regulator-portal source distinct from the bayancb.com PDF itself, giving genuine dual-channel (primary text + independent official structural/numeric corroboration) verification, consistent with this corpus's TIER_2 methodology where a live second full-text primary channel could not be reached.\n\nAMENDMENT CHECK (dedicated search pass, not assumed): a targeted search for any SAMA circular or Board/Governor decision amending this specific Implementing Regulation (تعديل اللائحة التنفيذية لنظام المعلومات الائتمانية) since its 21/8/2011G issuance found none: rulebook.sama.gov.sa's per-article page for Article 40 shows the SAME instrument number/date as the regulation's own issuance (no distinct later amendment date), and a broader search of rulebook.sama.gov.sa's finance-sector circular index (entiresection/9439) surfaced only an unrelated cross-reference from a 2025 Debt Collection circular, not an amendment of this Regulation itself. This is an honest negative finding (no amendment located), not an assumption of silence; all 55 articles are recorded as اصلية (original, unamended).",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "credit_information_regulation_bayancb_url_rotated",
+      "description": "The exact bayancb.com URL cited by the prior research pass (media/ytonosj3/...) returned HTTP 404 on this pass (both curl and WebFetch). A web.archive.org CDX query located the same filename under a different, earlier media GUID (media/clqn5kao/...), archived 2023-09-27 (HTTP 200, 426561 bytes, 24 pages) -- matching the prior pass's own reported size/page-count. That earlier GUID is now ALSO 404 live, confirming bayancb.com's CMS rotates opaque media identifiers over time. This track's primary text was fetched from the Wayback Machine snapshot of the clqn5kao URL, not from a currently-live bayancb.com URL."
+    },
+    {
+      "article_key": "credit_information_regulation_sama_gov_sa_unreachable",
+      "description": "www.sama.gov.sa's own listed PDF URL for this Regulation (LawsRegulations/BankingRules/اللائحة التنفيذية... .pdf) returned a SAMA-branded generic error page ('حدث خطأ ما في طلبك') on every attempt this pass: direct curl (TLS connection reset), the r.jina.ai read-proxy, and the WebFetch tool. sama.gov.sa's document server could not be reached as a primary source in this environment; rulebook.sama.gov.sa (a different, reachable SAMA subdomain) was used instead for secondary/structural cross-verification."
+    },
+    {
+      "article_key": "credit_information_regulation_gazette_publication_details_unconfirmed",
+      "description": "This track confirms the promulgating instrument (SAMA Governor's Decision No. أق/13709, 22/9/1432H = 21/8/2011G) via both the bayancb.com/Wayback PDF's own cross-references and rulebook.sama.gov.sa's per-article metadata. It does NOT independently confirm the specific Official Gazette (الجريدة الرسمية) issue number or exact publication date referred to by this Regulation's own Article 55 ('تسري اللائحة بعد شهر من تاريخ نشرها في الجريدة الرسمية'); rulebook.sama.gov.sa's Article 40 metadata shows a distinct 'Status: Nov 05 2011' field that is plausibly (one month after a publication in roughly early October 2011) the entry-into-force date, but this track does not assert that inference as a confirmed fact -- it is recorded here as an open, unconfirmed detail rather than guessed at. publication_date_gregorian_approx below is left unset for the same reason; only the decision date itself (21/8/2011G) is asserted as confirmed."
+    },
+    {
+      "article_key": "credit_information_regulation_ocr_hamza_and_gap_corrections",
+      "description": "The source PDF's Tesseract OCR pass systematically misread the hamza in ائتمان (credit/ائتمان) as ث/ت/ن throughout (e.g. اثتمانية for ائتمانية); this was corrected uniformly against the base law's own spelling and cross-checked letter-by-letter against the PyMuPDF geometric pass, which read the hamza correctly (subject to its own RTL word-order reversal). In addition, three content gaps in the OCR pass were identified and filled from the PyMuPDF pass at the exact page-break location where they occurred: (1) Article 19's closing clause on the duty of company staff to cooperate with inspectors; (2) Article 28's items 2 and 3 (issuance of a credit record at the request of a competent local official body, or at SAMA's own request) -- the OCR pass skipped directly from item 1 to item 4 (mislabelled '4-') at a page boundary; (3) a stray OCR-inserted digit '3' immediately before مستهلكين in Article 25's closing paragraph, confirmed spurious against PyMuPDF's 'ومستهلكين'. Confusable leading-digit-dropped list markers (Art. 4 item 10 misread '0-'; Art. 40 items 10-11 misread '0-'/'1-') were corrected the same way as this corpus's rett_regulation track. All corrections were verified against the PyMuPDF geometric pass before being applied; none is asserted from OCR alone where the two pipelines disagreed."
+    }
+  ],
+  "source_artifact": "sources/credit_information_regulation/law/official_source/credit_information_regulation_official_source.json"
+}

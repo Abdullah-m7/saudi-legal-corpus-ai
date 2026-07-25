@@ -1,0 +1,448 @@
+{
+  "document": "اللائحة التنفيذية لنظام الإيجار التمويلي",
+  "document_en": "Implementing Regulation of the Finance Lease Law",
+  "decree": "قرار إداري رقم 1/م ش ت",
+  "decree_date_hijri": "14/4/1434",
+  "decree_date_gregorian": "2013-02-24",
+  "legal_status_ar": "نافذ",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "قرار إداري صادر عن محافظ مؤسسة النقد العربي السعودي (البنك المركزي السعودي حالياً)، استناداً إلى المادة السابعة والعشرين من نظام الإيجار التمويلي الصادر بالمرسوم الملكي رقم (م/48) وتاريخ 13/8/1433هـ، والتي تلزم المحافظ بإصدار اللائحة التنفيذية لهذا النظام بالاتفاق مع وزير العدل خلال تسعين يوماً من تاريخ صدور النظام.",
+  "issuing_authority_en": "Administrative Decision issued by the Governor of the Saudi Arabian Monetary Agency (now the Saudi Central Bank), pursuant to Article 27 of the Finance Lease Law (Royal Decree M/48, 13/8/1433H), which requires the Governor to issue this Law's Implementing Regulation, in agreement with the Minister of Justice, within ninety days of the Law's own issuance.",
+  "administering_authority_en": "Saudi Central Bank (SAMA)",
+  "parent_law": {
+    "law_key": "finance_lease",
+    "law_ar": "نظام الإيجار التمويلي",
+    "source_artifact": "sources/finance_lease/law/official_source/finance_lease_law_official_source.json"
+  },
+  "verification_methodology_note": "PRIMARY SOURCE: rulebook.sama.gov.sa (Saudi Central Bank's own official Rulebook portal, the administering/issuing authority's own site), Arabic full-text 'entiresection' view at https://rulebook.sama.gov.sa/ar/entiresection/123 (HTTP 200, live fetch this pass, Drupal 10 site, node 123 = this Regulation, confirmed by the page's own metadata table: 'الرقم: 1/م ش ت' | 'التاريخ (هـ): 1434/4/14' | 'التاريخ (م): 2013/2/24' | 'الحالة: نافذ'). This single URL renders ALL 32 articles across all 3 أبواب (Parts) on one page (Drupal's 'view entire section' feature), located via a link discovered on the regulation's own per-part landing page (https://rulebook.sama.gov.sa/ar/اللائحة-التنفيذية-لنظام-الإيجار-التمويلي, HTTP 200). The Arabic-toggle URL was located via the page's own <link rel='alternate' hreflang='ar'> tag and cross-navigation links on the English page given as the task's starting point (https://rulebook.sama.gov.sa/en/implementing-regulation-finance-lease-law) -- the /ar/ direct slug guess (rulebook.sama.gov.sa/ar/implementing-regulation-finance-lease-law) returned HTTP 404 and was abandoned in favour of the real Arabic-slug URL found via the page's own hreflang metadata. Arabic governs; the English 'entiresection' view (https://rulebook.sama.gov.sa/en/entiresection/123) was fetched and used ONLY for structural cross-verification (article count, Part/Chapter boundaries, and confirming the location and scope of the three amendment footnotes), never as a source of Arabic wording, consistent with this corpus's standing methodology.\n\nEXTRACTION METHODOLOGY: the entiresection page is clean, structured, born-digital HTML (no OCR needed) -- each 'المادة ...' is an <h2 class=page-title> immediately followed by a <div class='field--name-body'> containing <p>/<table>/<ul> markup. This was parsed with BeautifulSoup (not naive regex/tag-stripping), locating every h2.page-title in document order (36 total: 1 document-title header, 3 'الباب' Part headers, and 32 'المادة' article headers) and each article's immediately-following field--name-body div. Numbered sub-items rendered as HTML <table> rows (a recurring SAMA Rulebook formatting convention for enumerated paragraphs, e.g. Articles 2, 4, 9-12, 15, 22, 24) were converted to one line per row, preserving the row's own leading enumerator exactly as published (some articles use '1-' with a following dash, others '1.' with a following dot, and Article 15 additionally uses lettered sub-items أ)/ب)/ت)/ث) -- all of these are genuine source-formatting differences across articles, not extraction artifacts, and are preserved verbatim per article). Every one of the 32 expected Arabic ordinal headers (المادة الأولى .. المادة الثانية والثلاثون) was located with no gaps, and the 3 Part boundaries (الباب الأول: 1-2 | الباب الثاني: 3-11 | الباب الثالث: 12-32) were read directly from the h2 Part-header placement in the same document-order traversal -- matching exactly the 3-part, 32-article structure given in this track's commissioning brief. This was independently cross-checked article-for-article against the English entiresection view (same 36-heading structure: 'Part One Definitions and General Provisions' (Articles One-Two), 'Part Two The Contract' (Articles Three-Eleven), 'Part Three Contracts Register' (Articles Twelve-Thirty-Two)), with zero structural discrepancies. Diacritics/tashkeel are not present in the source (plain modern Arabic typesetting); minor HTML-artifact double-spacing around inline <a> tag boundaries (e.g. around 'من النظام' cross-reference links) was normalized (collapsed to single spaces, and spurious spaces immediately before Arabic punctuation ،/؛/: were removed) without altering any word, digit, or punctuation mark itself. No translation, paraphrase, or legal interpretation was performed on the Arabic text.\n\nAMENDMENT VERIFICATION -- ARTICLES 10(3), 17, AND 25(2): the entiresection page renders each amended provision's CURRENT (post-amendment) text with an inline asterisked footnote citing 'قرار معالي المحافظ رقم 93/م ش ت وتاريخ 1441/10/18هـ' (Governor's Decision No. 93/م ش ت, dated 18/10/1441H) -- observed at (1) Article 10's paragraph (3) ('* تم تعديل هذه الفقرة بموجب ...'), (2) Article 17 in its entirety ('تم تعديل هذه المادة بموجب ...'), and (3) Article 25's paragraph (2) ('* تم تعديل هذه الفقرة بموجب ...'). This THIRD amendment locus (Article 25(2)) was NOT part of this track's commissioning brief, which named only Article 10(3) and Article 17 -- see known_unresolved_discrepancies for this correction. All three footnote citations were independently corroborated via SAMA Rulebook's own DEDICATED amendment-decision page, node 3243 (canonical URL: https://rulebook.sama.gov.sa/ar/تعديل-بعض-المواد-في-اللائحة-التنفيذية-لنظام-الإيجار-التمويلي, HTTP 200 after a 301 redirect from the /ar/node/3243 shortlink), titled 'تعديل بعض المواد في اللائحة التنفيذية لنظام الإيجار التمويلي', transmitted by SAMA circular No. (41061552) dated 29/10/1441H (2020/6/20G), which states verbatim: 'نفيدكم بصدور قرار معالي المحافظ رقم 93/م ش ت وتاريخ 1441/10/18هـ والمتضمن تعديل بعض المواد في اللائحة التنفيذية لنظام الإيجار التمويلي وذلك على النحو الآتي: أولاً: تعديل الفقرة (3) من المادة العاشرة ... ثانياً: تعديل المادة السابعة عشرة ... ثالثاً: تعديل الفقرة (2) من المادة الخامسة والعشرون ...' -- i.e. this dedicated decision page independently confirms all THREE amendment loci and gives, for each, the exact NEW ('لتكون بالنص') wording, which matches verbatim (word-for-word) the current text rendered in the entiresection view for all three provisions. This decision page does NOT reproduce the prior/pre-amendment wording of any of the three provisions (see known_unresolved_discrepancies). The English entiresection view independently corroborates the same three amendment loci with the same decision number/date cited in English ('His Excellency the Governor's Decision No. 93/M SH T dated 18/10/1441H'), providing a third independent confirmation of the amendment's existence and exact scope (though not of the Arabic wording itself, per this corpus's standing rule that English is used only for structural/existence cross-checks, never as a source of Arabic text).\n\nWAYBACK MACHINE CHECK: the Internet Archive's availability API (archive.org/wayback/available) was queried for the exact Arabic regulation-page URL; it returned exactly one snapshot, dated 2026-01-18 -- long after the 1441H/2020G amendment and therefore not useful for recovering pre-amendment text. No earlier snapshot of this specific URL was found; this is recorded as a documented negative finding, not an assumption that no earlier snapshot could possibly exist anywhere.\n\nCOMPANION-LAW CROSS-REFERENCE: this Regulation's own Article 1 opens 'مع مراعاة ما ورد في المادة الأولى من النظام' and repeatedly cross-references the base Law by article number throughout (e.g. Articles 2, 8, 9); this track's parent_law field points to sources/finance_lease/law/official_source/finance_lease_law_official_source.json, which itself already documents (in its own known_unresolved_discrepancies) that this companion Regulation exists, is issued under its Article 27, and has been separately amended -- this track is the follow-up ingestion of that already-flagged companion Regulation. No legal text is altered anywhere in this track. Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "finance_lease_regulation_amendment_scope_correction_article_25",
+      "description": "The prior-research brief that commissioned this track stated the Governor's Decision No. 93/م ش ت (18/10/1441H) amended only Article 10, paragraph (3), and Article 17. Independent re-verification this pass -- via rulebook.sama.gov.sa's own dedicated amendment-decision page (node 3243, titled 'تعديل بعض المواد في اللائحة التنفيذية لنظام الإيجار التمويلي', transmitted by SAMA circular No. 41061552 dated 29/10/1441H = 2020/6/20G) AND independently corroborated by both the Arabic and English entiresection views of the Regulation itself (each carrying an inline amendment footnote on the relevant article/paragraph) -- found that this SAME decision amended a THIRD provision: Article 25, paragraph (2). All three source views (the dedicated amendment-decision node, the Arabic full-text view, and the English full-text view) agree verbatim on citing 'قرار معالي المحافظ رقم 93/م ش ت وتاريخ 1441/10/18هـ' against all three provisions. Accordingly this track classifies Article 25 as معدلة in addition to Articles 10 and 17, correcting the commissioning brief's scope, consistent with this corpus's rule of independently re-verifying rather than propagating an unverified prior claim."
+    },
+    {
+      "article_key": "finance_lease_regulation_pre_amendment_text_not_recovered",
+      "description": "For all three amended provisions (Article 10 paragraph 3, Article 17 in full, Article 25 paragraph 2), rulebook.sama.gov.sa's dedicated amendment-decision page (node 3243) states only the NEW text each provision was amended 'to read as' (لتكون بالنص) -- it does not reproduce the prior, pre-amendment wording. A Wayback Machine availability check for the Arabic regulation page's exact URL (rulebook.sama.gov.sa/ar/اللائحة-التنفيذية-لنظام-الإيجار-التمويلي) returned only a single snapshot dated 2026-01-18 -- long after the 2020 (1441H) amendment, and therefore useless for recovering the pre-amendment text; no earlier snapshot of this specific URL was found available. The pre-amendment wording of all three provisions is therefore NOT recoverable from any source consulted this pass and is not fabricated or guessed at; this is recorded as a documented gap, consistent with this corpus's preference for an honest 'could not confirm' over invented text. The text recorded in this track for Articles 10(3), 17 and 25(2) is the CURRENT (post-1441H-amendment) text only."
+    },
+    {
+      "article_key": "finance_lease_regulation_central_bank_rename_footnote_not_a_textual_amendment",
+      "description": "Article 1's definitions list defines 'البنك المركزي' (the Central Bank) directly -- i.e. the Regulation's own live text on rulebook.sama.gov.sa already uses the renamed institution's name -- and carries an inline footnote: 'حل اسم \"البنك المركزي السعودي\" محل اسم \"مؤسسة النقد العربي السعودي\" بموجب نظام البنك المركزي السعودي رقم (م/36) بتاريخ 1442/4/11هـ.' This is an external renaming effected by a SEPARATE law (the Saudi Central Bank Law, M/36, 11/4/1442H) upon the institution itself, not a textual amendment TO THIS Regulation by a numbered SAMA/Governor amendment decision -- it is therefore NOT counted among this track's معدلة articles and is not part of the confirmed 93/م ش ت amendment. This mirrors the identical, already-documented finding in this corpus's own finance_lease (base Law) track's known_unresolved_discrepancies, with one difference worth flagging: the base Law's own Article 1 text (per BOE and nezams.com) still reads the OLD name 'مؤسسة النقد العربي السعودي' verbatim with no inline footnote, whereas this companion Regulation's text on rulebook.sama.gov.sa has been updated in place to the NEW name 'البنك المركزي' with an explanatory footnote -- i.e. the Law and its Regulation are NOT textually synchronized on this defined term as published, though both denote the same institution post-rename. The footnote sentence itself is not included in this track's article_001 'text' field (consistent with this corpus's convention of keeping amendment/rename citations out of the operative article text and recording them here instead)."
+    },
+    {
+      "article_key": "finance_lease_regulation_promulgating_instrument_type",
+      "description": "This Regulation was issued as an Administrative/Governor's Decision No. 1/م ش ت, dated 14/4/1434H (24/2/2013G per rulebook.sama.gov.sa's own page metadata: 'التاريخ (هـ): 1434/4/14' | 'التاريخ (م): 2013/2/24'), pursuant to Article 27 of the base Finance Lease Law (نظام الإيجار التمويلي, Royal Decree M/48, 13/8/1433H): 'يصدر المحافظ بالاتفاق مع وزير العدل اللائحة التنفيذية لهذا النظام خلال تسعين يوماً من تاريخ صدوره.' rulebook.sama.gov.sa's own page marks this Regulation's status as 'نافذ' (in force). No separate Umm al-Qura Gazette publication citation for this specific Regulation was located this pass (unlike the base Law, which is a Royal Decree with its own Gazette publication and 90-day post-publication commencement clause in its own Article 28); this Regulation's own closing Article 32 states only 'يُعمل بهذه اللائحة من تاريخ نشرها في الجريدة الرسمية' (effective from its own Gazette publication date) without this track independently pinning down that Gazette issue number/date this pass -- recorded here as a documented gap rather than a guessed date."
+    },
+    {
+      "article_key": "finance_lease_regulation_no_boe_lawid_regulation_level",
+      "description": "Consistent with this corpus's established precedent for other SAMA/regulator-level Implementing Regulations (e.g. rett_regulation, vat_regulation, income_tax_regulation), laws.boe.gov.sa is not relied on as the primary source for this companion Regulation; the base Finance Lease Law's own official_source.json (sources/finance_lease/law/official_source/finance_lease_law_official_source.json) already documents that laws.boe.gov.sa was the primary source for the 28 -article base Law (via Wayback Machine, live BOE being unreachable that pass) and separately flagged this companion Regulation as a not-yet-ingested follow-up candidate. This track fulfills that follow-up using rulebook.sama.gov.sa -- SAMA's own official Rulebook portal -- as PRIMARY source directly (HTTP 200, live, bilingual Arabic/English, structured per-article HTML with inline amendment footnotes), which this pass judged the strongest available primary source for this specific instrument; no separate laws.boe.gov.sa lookup for this Regulation was performed given SAMA's own portal is the issuing/administering authority's own primary publication channel and already served this exact role for the base Law's own structural (chapter-heading) cross-check."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "label_ar": "الباب الأول",
+      "title_ar": "التعريفات والأحكام العامة",
+      "articles": "1-2"
+    },
+    {
+      "label_ar": "الباب الثاني",
+      "title_ar": "العقد",
+      "articles": "3-11"
+    },
+    {
+      "label_ar": "الباب الثالث",
+      "title_ar": "سجل العقود",
+      "articles": "12-32"
+    }
+  ],
+  "article_count": 32,
+  "status_counts": {
+    "اصلية": 29,
+    "معدلة": 3,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "finance_lease_regulation_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "الباب الأول: التعريفات والأحكام العامة",
+      "text": "مع مراعاة ما ورد في المادة الأولى من النظام، يقصد بالألفاظ والعبارات الآتية – أينما وردت في هذه اللائحة – المعاني المبينة أمام كل منها، ما لم يقتض السياق خلاف ذلك.\nالنظام: نظام الإيجار التمويلي.\nاللائحة: اللائحة التنفيذية لنظام الإيجار التمويلي.\nالبنك المركزي: البنك المركزي السعودي.\nالعقد: عقد الإيجار التمويلي.\nالمؤجر: الشركة المساهمة المرخص لها بمزاولة الإيجار التمويلي، ويشمل ذلك البنوك التجارية.\nالمستأجر: من يملك منفعة الأصل المؤجر بموجب العقد.\nالأصل المؤجر: ما يمكن إيجاره من العقار، والمنقول، والمنافع، والخدمات، والحقوق المعنوية كحقوق الملكية الفكرية.\nسجل العقود: السجل الذي تقيد فيه عقود الإيجار التمويلي المبرمة في المملكة أو المنفذة فيها، وتقيد فيه عقود البيع المترتبة على الإيجار التمويلي، وأي تعديل لهذه العقود، وذلك وفقاً لأحكام النظام.\nشركة تسجيل العقود: الشركة المساهمة المختصة بتسجيل عقود الإيجار التمويلي.\nالتسنيد: إصدار أوراق مالية مقابل حقوق المؤجر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "الباب الأول: التعريفات والأحكام العامة",
+      "text": "مراعاة لما ورد في المادة الثانية من النظام، و نظام مراقبة شركات التمويل، والأنظمة المرعية الأخرى، يكون نشاط الإيجار التمويلي نشاطاً احترافياً بعد توافر الآتي:\n1- أن يكون حصول المؤجر على الأصل المؤجر لأجل تأجيره للغير إيجاراً تمويلياً.\n2- أن يزيد حجم نشاط الإيجار التمويلي على الحد الذي يقرره البنك المركزي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "للمستأجر التنازل عن العقد لمستأجر آخر بموافقة مكتوبة من المؤجر، ويتولى المؤجر توثيق موافقته في سجل العقود خلال عشرة أيام عمل على الأكثر من تاريخ التنازل. وفي حال عدم موافقة المؤجر يجب أن يكون قراره مسبباً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "للمؤجر التنازل عن حقوقه المترتبة على العقد دون موافقة المستأجر إلا إذا نص العقد على خلاف ذلك، وفي جميع الأحوال يجب أن يراعى في التنازل الآتي:\n1- ألا يترتب عليه ضرر بالمستأجر.\n2- أن يسري من تاريخ قيده في سجل العقود.\n3- ألا يعفي المؤجر من التزاماته المترتبة على العقد.\n4- إذا نشأ عن التنازل تغيير في جهة تسلم الأجرة فيسري هذا التغيير في حق المستأجر من تاريخ إبلاغه به.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "إذا كان الأصل المؤجر مما يحتاج إلى كشف من المؤجر وجب أن ينص في العقد أو أحد ملحقاته على وسيلة هذا الكشف وموعده ومدته على ألا يلحق هذا الإجراء ضرراً بالمستأجر أو تقييداً لانتفاعه بالأصل المؤجر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "1. على المستأجر أن يشعر المؤجر فوراً برسالة ورقية أو إلكترونية بما يطرأ على الأصل المؤجر من عوارض تحول دون الانتفاع به كلياً أو جزئياً، وذلك عن طريق بيانات الاتصال الواردة في العقد، ووفقاً لقواعد الإشعار المعمول بها نظاماً.\n2. إذا لم يقم المؤجر بإزالة ما يمنع الانتفاع بالأصل المؤجر كلياً أو جزئياً خلال المدة المحددة في العقد، جاز للمستأجر اتخاذ الإجراءات اللازمة لحماية الأصل المؤجر والانتفاع الكامل به على نفقة المؤجر خصماً من دفعات الأجرة اللاحقة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "1- في حال إصدار أوراق مالية مقابل حقوق المؤجر، وفقاً للوائح والقواعد التي تصدرها هيئة السوق المالية، يستمر المؤجر ملتزماً بالإفصاح الفوري للبنك المركزي بكل المخاطر الفنية أو التجارية أو القانونية أو غيرها المرتبطة بالعقد أو بالأصل المؤجر أو بعملية إصدار الأوراق المالية مقابل حقوق المؤجر على وجه العموم.\n2- يستمر التزام المؤجر في حال إصداره أوراقاً مالية بجميع المتطلبات الإشرافية ذات الصلة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "يجوز للمؤجر أو من ينيبه استخراج الرخصة المشار إليها في المادة الثالثة عشرة من النظام إذا كان الحصول عليها شرطاً لإبرام العقد، ويجب في هذه الحالة أن تكون الرخصة متضمنة اسم المستأجر حائز الأصل المؤجر.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "1- إذا كان للمستأجر حق التملك أو الوعد به، يجب أن يتضمن العقد جدولاً للسداد يحدد قيمة أجرة الأصل وقيمة حق التملك منفصلين، على ألا يقل القسط لأية مدة من مدد العقد عن أجرة الأصل لتلك المدة.\n2- دون الإخلال بحكم الفقرة (1) من المادة التاسعة من النظام، إذا فسخ العقد أو انفسخ في أثناء مدة الإجارة برضا الطرفين أو بأحكام العقد أو بالنظام، فللمستأجر استرداد قيمة حق التملك للفترة التي دفعها.\n3- للمؤجر التعويض التأميني إن وجد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "1- للبنك المركزي وضع معايير لعقود الإيجار التمويلي بما يحقق سلامة النظام المالي وعدالة التعاملات وأهداف النظام واللائحة.\n2- للبنك المركزي إقرار صيغ نموذجية لعقود الإيجار التمويلي تراعي حقوق الأطراف ذات العلاقة.\n3- على المؤجر الحصول على خطاب من البنك المركزي يتضمن عدم ممانعته على منتجات الإيجار التمويلي الموجهة للأفراد أو المستفيدين من التمويل المتناهي الصغر قبل طرحها، لضمان عدالة شروطها.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": [
+        {
+          "instrument": "قرار معالي المحافظ رقم 93/م ش ت",
+          "date_hijri": "18/10/1441",
+          "date_gregorian_note": "التاريخ الميلادي المؤكد أساسياً هو 2020/6/20 لتعميم ساما رقم 41061552 وتاريخ 29/10/1441هـ الناقل لهذا القرار (وليس تاريخ القرار ذاته 18/10/1441هـ الذي لم يرد له مكافئ ميلادي صريح في المصدر الأساسي هذه الجولة).",
+          "transmittal_circular": "تعميم ساما رقم (41061552) وتاريخ 29/10/1441هـ (الموافق 2020/6/20م)",
+          "scope_ar": "الفقرة (3) من هذه المادة",
+          "effect_ar": "عدّل الفقرة (3) من هذه المادة لتصبح بالنص المثبت أعلاه (النص الحالي/بعد التعديل). النص الحالي أعلاه هو نص الفقرة (3) بعد التعديل، كما هو منشور على بوابة SAMA Rulebook (نسخة عربية وإنجليزية متطابقتان في الإشارة إلى التعديل). نص الفقرة أو المادة قبل هذا التعديل (كما كان قبل 1441/10/18هـ) لم يُسترجع في هذا البحث من أي مصدر أساسي أو أرشيفي متاح (فجوة موثقة، لا نص مختلق) -- انظر known_unresolved_discrepancies.",
+          "pre_amendment_text_recovered": false
+        }
+      ]
+    },
+    "finance_lease_regulation_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثاني: العقد",
+      "text": "إذا اختار المستأجر امتلاك الأصل المؤجر بموجب العقد في أي وقت، فيحق له التملك المبكر لذلك الأصل بملحق منفصل يبرم به البيع أو الهبة، وذلك بتعجيل سداد الأقساط المتبقية دون تحمل كلفة الأجل عن المدة المتبقية من العقد، وللمؤجر التعويض عن الآتي:\n1. كلفة إعادة الاستثمار، بما لا يتجاوز كلفة الأجل للأشهر الثلاثة التالية للتملك المبكر.\n2. ما يدفعه المؤجر لطرف ثالث بسبب العقد من نفقات نص عليها العقد، إذا كانت تلك النفقات لا يمكن استردادها، وذلك عن المدة المتبقية من العقد.\nواستثناء من ذلك، يجوز أن ينص في العقد على فترة يحظر فيها التملك المبكر، إذا كان محل العقد عقاراً وترتب على هذا الشرط خصم من كلفة الأجل، وبشرط ألا تتجاوز مدة الحظر سنتين من تاريخ إبرام العقد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "1- يؤسس المؤجرون شركة مساهمة أو أكثر، بعد موافقة البنك المركزي، بغرض تسجيل عقود الإيجار التمويلي، وذلك بإتباع أحدث الوسائل وأفضل الممارسات، مع تنظيم النفاذ الأمن لبيانات سجل العقود وفقاً لأحكام النظام وهذه اللائحة.\n2- مع مراعاة ما ورد في نظام الشركات، يحدد رأس مال شركة تسجيل العقود حسب تقدير البنك المركزي. للبنك المركزي أن يلزم المؤسسين بتقديم دراسة تحدد متطلبات رأس مال الشركة.\n3- مع مراعاة أحكام نظامي الشركات و السوق المالية ولوائحهما، توزع ملكية أسهم شركة تسجيل العقود بين المؤجرين وفق ما يقرره البنك المركزي، وتقسم أسهم المؤجرين الذين يفقدون رخصة عملهم على المؤجرين القائمين بحسب نسبة ملكيتهم في الشركة، وذلك على أساس القيمة العادلة للسهم في وقت كل تعديل، ويجوز زيادة رأس مال شركة تسجيل العقود وتخفيضه بعد الحصول على موافقة مكتوبة من البنك المركزي.\n4- يشترك لدخول الشركاء أو خروجهم الحصول على خطاب من البنك المركزي يتضمن عدم ممانعته.\n5- يكون تعيين رئيس وأعضاء مجلس إدارة شركة تسجيل العقود وشغل المناصب التنفيذية ورئيس وكتاب سجل العقود بعد الحصول على خطاب من البنك المركزي يتضمن عدم ممانعته، للبنك المركزي إعفاؤهم من مناصبهم بقرار مسبب في حال الإخلال بواجباتهم النظامية أو المهنية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "توزع شركة تسجيل العقود أرباحها وفقاً لنظام الشركات، وذلك بعد الحصول على خطاب من البنك المركزي يتضمن عدم ممانعته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يحدد المقابل المالي لخدمات شركة تسجيل العقود بقرار من البنك المركزي بناء على اقتراح من الشركة يستند إلى دراسة فنية تفصيلية تتضمن الأسس الاقتصادية والتجارية لتحديد هذا المقابل.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "1- تعد شركة تسجيل العقود سجلاً للعقود وفقاً لما ورد في النظام وهذه اللائحة.\n2- يلتزم المؤجر بتسجيل العقود وما يطرأ عليه من تعديلات في سجل العقود خلال عشرة أيام عمل من تاريخ إبرام العقد أو تعديله، كما تقيد في السجل كافة التصرفات المؤثرة على حقوق كل من المؤجر والمستأجر التعاقدية.\n3- تختص شركة تسجيل العقود بما يأتي:\nأ) تسجيل العقود وما يطرأ عليها من تعديلات.\nب) تسجيل انتقال حقوق عقود الإيجار التمويلي بموجب صفقات التسنيد.\nت) الإفصاح للجهات المرخص لها بمزاولة أنشطة التمويل عن بيانات سجل العقود بعد موافقة محررة من المؤجر.\nث) تسجيل عقود الملكية المترتبة على عقود الإيجار التمويلي، بعد توثيق نقل الملكية – إذا كان الأصل المؤجر عقاراً - لدى الجهات المنوط بها تسجيل الملكية العقارية (المحاكم وكتابات العدل).\n4- يصدر البنك المركزي قراراً بتحديد اختصاصات رئيس وكتاب سجل العقود.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_016": {
+      "number_label_ar": "المادة السادسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يشترط أن يتوافر في رئيس وكاتب سجل العقود الآتي:\n1- أن يكون سعودي الجنسية.\n2- ألا يكون قد سبق الحكم عليه بعقوبة في جريمة مخلة بالشرف والأمانة.\n3- ألا يكون قد سبق فصله من الخدمة بحكم أو قرار تأديبي نهائي إلا إذا رُد إليه اعتباره وفقاً للأنظمة والقواعد ذات العلاقة السارية في هذا الشأن.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_017": {
+      "number_label_ar": "المادة السابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يجب على كاتب سجل العقود أن يؤدي الأعمال المنوطة به في مقر عمله، ويجوز بعد موافقة رئيس سجل العقود أن يؤديها في مقر المؤجر الذي يتحمل النفقات المترتبة على ذلك.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": [
+        {
+          "instrument": "قرار معالي المحافظ رقم 93/م ش ت",
+          "date_hijri": "18/10/1441",
+          "date_gregorian_note": "التاريخ الميلادي المؤكد أساسياً هو 2020/6/20 لتعميم ساما رقم 41061552 وتاريخ 29/10/1441هـ الناقل لهذا القرار (وليس تاريخ القرار ذاته 18/10/1441هـ الذي لم يرد له مكافئ ميلادي صريح في المصدر الأساسي هذه الجولة).",
+          "transmittal_circular": "تعميم ساما رقم (41061552) وتاريخ 29/10/1441هـ (الموافق 2020/6/20م)",
+          "scope_ar": "هذه المادة بكاملها",
+          "effect_ar": "عدّل هذه المادة بكاملها لتصبح بالنص المثبت أعلاه (النص الحالي/بعد التعديل). النص الحالي أعلاه هو نص المادة كاملة بعد التعديل، كما هو منشور على بوابة SAMA Rulebook. نص الفقرة أو المادة قبل هذا التعديل (كما كان قبل 1441/10/18هـ) لم يُسترجع في هذا البحث من أي مصدر أساسي أو أرشيفي متاح (فجوة موثقة، لا نص مختلق) -- انظر known_unresolved_discrepancies.",
+          "pre_amendment_text_recovered": false
+        }
+      ]
+    },
+    "finance_lease_regulation_art_018": {
+      "number_label_ar": "المادة الثامنة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "تكتب المحررات والإقرارات التي تصدر عن كاتب سجل العقود باللغة العربية، ويجوز التصديق على محرر بغير اللغة العربية بعد ترجمته إلى العربية بواسطة مترجم معتمد، ويكون التصديق في هذه الحالة على المحرر الأصلي وترجمته معاً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_019": {
+      "number_label_ar": "المادة التاسعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "على شركة تسجيل العقود مسك كافة سجلات العقود اللازمة لتسجيل المعاملات وتصنيفها وفقاً لما يحدده البنك المركزي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_020": {
+      "number_label_ar": "المادة العشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يجوز استخدام الوسائل الإلكترونية في تسجيل العقود والاعتماد عليها، للبنك المركزي اعتماد أي إجراءات أو وسائل أخرى للتسجيل.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_021": {
+      "number_label_ar": "المادة الحادية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يكون رئيس سجل العقود مسؤولاً عن أعمال التسجيل في السجل، ويقدم إليه طلب القيد وما يطرأ عليه من تعديلات، ويحيله إلى أحد كتاب سجل العقود، ويجري التسجيل طبقاً للنظام وهذه اللائحة. وفي حال رفض كاتب سجل العقود تحرير أي محرر أو توثيقه أو التصديق عليه، فلذوي الشأن التظلم من ذلك أمام شركة تسجيل العقود ثم أمام البنك المركزي، وفي حال رفض التظلم يحق لهم اللجوء إلى المحكمة المختصة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_022": {
+      "number_label_ar": "المادة الثانية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "1- لأغراض هذه اللائحة، تعد المستندات الآتية وثائق إثبات ملكية للأصل المؤجر:\nأ) صك الملكية العقارية.\nب) وثيقة ملكية الأصل.\nج) البطاقة الجمركية.\nد) شهادة تسجيل الملكية الفكرية.\nهـ) سند الشراء.\n2- للبنك المركزي اعتماد مستندات أخرى وثائق لإثبات الملكية، وتقرير متطلبات إضافية لإثباتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_023": {
+      "number_label_ar": "المادة الثالثة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "لغرض إثبات تسجيل مستند الملكية، على كاتب سجل العقود الختم على مستند ملكية الأصل والعقد مع بيان رقم القيد، أو أن يتخذ ما يلزم حيال المستندات التي لا تقبل الختم عليها مثل صكوك الملكية العقارية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_024": {
+      "number_label_ar": "المادة الرابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يُقيد في سجل العقود الآتي:\n1- بيانات المتعاقدين وممثليهم، وعناوينهم الرسمية، وتشمل اسم المستأجر، وبياناته الخاصة، واسم المؤجر، وبيانات الاتصال، والترخيص.\n2- وصف تفصيلي للأصل المؤجر، متضمناً الاسم، والرقم المسلسل، وتاريخ الإنتاج، وبلد المنشأ بحسب الحال، وبيانات سند ملكية الأصل.\n3- بيانات التأمين – إن وجد – على الأصل المؤجر.\n4- مدة العقد.\n5- مقدار الأجرة، وطريقة احتسابها، وآلية سدادها.\n6- موافقة المتعاقدين المحررة على الإفصاح عن معلومات سجل العقود.\n7- أحكام ملكية الأصل المؤجر وحيازته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_025": {
+      "number_label_ar": "المادة الخامسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "1- يصدر رئيس سجل العقود وثيقة رسمية تسمى عقد الإيجار التمويلي المسجل، تتضمن البيانات الواردة في سجل العقود.\n2- يعد مستخرج السند التنفيذي لعقد الإيجار التمويلي المسجل سنداً تنفيذياً، وفقاً للفقرة الثامنة من المادة التاسعة من نظام التنفيذ. ويفيد الالتزام.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": [
+        {
+          "instrument": "قرار معالي المحافظ رقم 93/م ش ت",
+          "date_hijri": "18/10/1441",
+          "date_gregorian_note": "التاريخ الميلادي المؤكد أساسياً هو 2020/6/20 لتعميم ساما رقم 41061552 وتاريخ 29/10/1441هـ الناقل لهذا القرار (وليس تاريخ القرار ذاته 18/10/1441هـ الذي لم يرد له مكافئ ميلادي صريح في المصدر الأساسي هذه الجولة).",
+          "transmittal_circular": "تعميم ساما رقم (41061552) وتاريخ 29/10/1441هـ (الموافق 2020/6/20م)",
+          "scope_ar": "الفقرة (2) من هذه المادة",
+          "effect_ar": "عدّل الفقرة (2) من هذه المادة لتصبح بالنص المثبت أعلاه (النص الحالي/بعد التعديل). النص الحالي أعلاه هو نص الفقرة (2) بعد التعديل، كما هو منشور على بوابة SAMA Rulebook. ملاحظة مهمة: بحث هذا المسار السابق الذي كلّف بهذا المسار ذكر فقط تعديل المادة (العاشرة/الفقرة 3) والمادة (السابعة عشرة)؛ التحقق المستقل هذا الدور عثر على أن قرار المحافظ نفسه (93/م ش ت) عدّل أيضاً الفقرة (2) من هذه المادة (الخامسة والعشرون) - وهو ما لم يرد في موجز البحث السابق. انظر known_unresolved_discrepancies. نص الفقرة أو المادة قبل هذا التعديل (كما كان قبل 1441/10/18هـ) لم يُسترجع في هذا البحث من أي مصدر أساسي أو أرشيفي متاح (فجوة موثقة، لا نص مختلق) -- انظر known_unresolved_discrepancies.",
+          "pre_amendment_text_recovered": false
+        }
+      ]
+    },
+    "finance_lease_regulation_art_026": {
+      "number_label_ar": "المادة السادسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يجب على المؤجر، في حال تسنيد الحقوق المترتبة على العقد، قيد رقم قرار هيئة السوق المالية بالموافقة على صفقة التسنيد في سجل العقود، وتحفظ شركة تسجيل العقود نسخة من قرار الهيئة لتكون أساساً لتأشير كاتب سجل العقود بمقتضاها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_027": {
+      "number_label_ar": "المادة السابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يملك البنك المركزي سجل العقود بجميع بياناته وما يشمله من معلومات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_028": {
+      "number_label_ar": "المادة الثامنة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "في حال ترخيص البنك المركزي لأكثر من شركة لتسجيل العقود، على هذه الشركات – تحت إشراف البنك المركزي– اتخاذ الإجراءات اللازمة التي تكفل وحدة بيانات سجل العقود، وتبادل البيانات بينها، وحماية بيانات سجل العقود، والمحافظة عليها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_029": {
+      "number_label_ar": "المادة التاسعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "تحفظ القيود في سجل العقود عشر سنوات على الأقل من تاريخ انقضاء مدة الالتزامات المترتبة على العقد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_030": {
+      "number_label_ar": "المادة الثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "مع مراعاة ما ورد في النظام وهذه اللائحة، يصدر قرار من المحافظ بالاتفاق مع وزير العدل يتضمن إجراءات القيد في سجل العقود، والبيانات التي يتطلبها القيد، وأحكام وإجراءات إطلاع الغير على سجل العقود.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_031": {
+      "number_label_ar": "المادة الحادية والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يخضع عقد الإيجار التمويلي لأحكام النظام و نظام التمويل العقاري ولائحتيهما إذا كان الغرض منه تملك شخص طبيعي للسكن.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    },
+    "finance_lease_regulation_art_032": {
+      "number_label_ar": "المادة الثانية والثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "الباب الثالث: سجل العقود",
+      "text": "يُعمل بهذه اللائحة من تاريخ نشرها في الجريدة الرسمية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_X_AMENDMENT_DECISION_NODE_CROSS_VERIFIED",
+      "history": []
+    }
+  }
+}

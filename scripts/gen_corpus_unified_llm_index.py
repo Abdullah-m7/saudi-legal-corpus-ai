@@ -497,6 +497,18 @@ LAYERS = [
      "building_code", "regulation"),
     ("data/telecommunications_regulation_arabic_legal_llm/telecommunications_regulation_legal_llm_001_108.json",
      "telecommunications", "regulation"),
+    ("data/credit_information_regulation_arabic_legal_llm/credit_information_regulation_legal_llm_001_055.json",
+     "credit_information", "regulation"),
+    ("data/payment_systems_regulation_arabic_legal_llm/payment_systems_regulation_legal_llm_001_133.json",
+     "payment_systems", "regulation"),
+    ("data/banking_control_regulation_arabic_legal_llm/banking_control_regulation_legal_llm_001_031.json",
+     "banking_control", "regulation"),
+    ("data/finance_companies_regulation_arabic_legal_llm/finance_companies_regulation_legal_llm_001_106.json",
+     "finance_companies", "regulation"),
+    ("data/finance_lease_regulation_arabic_legal_llm/finance_lease_regulation_legal_llm_001_032.json",
+     "finance_lease", "regulation"),
+    ("data/cooperative_societies_regulation_arabic_legal_llm/cooperative_societies_regulation_legal_llm_001_055.json",
+     "cooperative_societies", "regulation"),
 ]
 
 

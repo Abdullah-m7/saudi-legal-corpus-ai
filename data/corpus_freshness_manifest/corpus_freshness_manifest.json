@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 236,
+  "total_tracks": 242,
   "known_source_staleness_risk_count": 15,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -649,6 +649,28 @@
       "named_source_authorities": [
         "boe.gov.sa",
         "laws.boe.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "banking_control_regulation",
+      "display_name_en": "Rules for the Application of the Banking Control Law",
+      "display_name_ar": "قواعد تطبيق أحكام نظام مراقبة البنوك",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_SAMA_RULEBOOK_LIVE_PAGE_X_ARCHIVAL_1429H_PDF_DUAL_OFFICIAL_CROSSVERIFIED_TWO_DOCUMENTED_VARIANCES': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministerial Resolution No. 2149/3, dated 14/10/1406H (21/6/1986G), issued by the Minister of Finance and National Economy under Article 26 of the Banking Control Law (Royal Decree M/5, 22/2/1386H), transmitted by a SAMA Governor circular. An administrative circular embedding a ministerial resolution, not a modern-form 'implementing regulation,' consistent with mid-1980s promulgation practice. Verified via two independent official SAMA sources agreeing on all 31 substantive provisions across 5 sections: the current live Arabic page on rulebook.sama.gov.sa (SAMA's own Rulebook portal, status marked 'نافذ'/in force) and its linked original born-digital archival PDF (SAMA_AR_1429_VER1.pdf). Two documented variances between the two sources (an institution-name update footnoted by SAMA itself, and one non-duplicate vs. duplicate item-numbering difference) are resolved in favor of the live page and preserved in full below rather than silently dropped.",
+      "registry_source_url": null,
+      "official_source_file": "sources/banking_control_regulation/law/official_source/banking_control_regulation_official_source.json",
+      "source_urls": [
+        "https://rulebook.sama.gov.sa/ar/%D9%82%D9%88%D8%A7%D8%B9%D8%AF-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%A3%D8%AD%D9%83%D8%A7%D9%85-%D9%86%D8%B8%D8%A7%D9%85-%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9-%D8%A7%D9%84%D8%A8%D9%86%D9%88%D9%83-0",
+        "https://rulebook.sama.gov.sa/en/implementation-rules-banking-control-law-0",
+        "https://rulebook.sama.gov.sa/sites/default/files/ar_net_file_store/SAMA_AR_1429_VER1.pdf"
+      ],
+      "named_source_authorities": [
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
@@ -1325,6 +1347,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "cooperative_societies_regulation",
+      "display_name_en": "Implementing Regulation of the Cooperative Societies Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الجمعيات التعاونية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_NCNP_GOV_SA_X_CSCS_ORG_SA_DUAL_INDEPENDENT_OFFICIAL_IMAGE_SCAN_CROSSVERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministerial Decision No. (52068) of the Minister of Social Affairs, issued under Article 42 of the Cooperative Societies Law (Royal Decree M/14, 10/3/1429H; Council of Ministers Resolution 73, 9/3/1429H). Full text fetched directly (HTTP 200) as a 32-page image-scanned PDF from two independent official bodies agreeing verbatim: the National Center for the Development of the Non-Profit Sector (ncnp.gov.sa, the current publisher of the base law's own text) and the Cooperative Societies Council (cscs.org.sa, the body established by this Regulation's own Article 54). The decree's exact day/month is obscured by a cover-page ink stamp (year 1429H legible) and is not fabricated.",
+      "registry_source_url": null,
+      "official_source_file": "sources/cooperative_societies_regulation/law/official_source/cooperative_societies_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "hrsd.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "copyright_law",
       "display_name_en": "Copyright Law",
       "display_name_ar": "نظام حماية حقوق المؤلف",
@@ -1382,6 +1421,25 @@
         "web.archive.org"
       ],
       "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-15; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "credit_information_regulation",
+      "display_name_en": "Implementing Regulation of the Credit Information Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام المعلومات الائتمانية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_SAMA_WAYBACK_ARCHIVED_PDF_DUAL_OCR_PYMUPDF_RECONCILED_X_RULEBOOK_SAMA_STRUCTURAL_NUMERIC_CROSSVERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Decision of the Governor of the Saudi Arabian Monetary Agency (SAMA) No. أق/13709, dated 22/9/1432H (21/8/2011G), issued under Article 16 of the Credit Information Law (Royal Decree M/37, 5/7/1429H). Primary text: the bayancb.com-hosted 24-page born-digital PDF (24/9/1432H circular transmittal), fetched via its Wayback Machine snapshot (2023-09-27) after the live URL's opaque media-GUID had rotated and returned HTTP 404 on both the originally-cited and a CDX-located earlier GUID. Reconciled via two independent extraction pipelines (Tesseract Arabic OCR of 300dpi page renders vs. PyMuPDF geometric character-exact extraction), correcting a systematic hamza misread in ائتمان and three OCR-dropped clauses/items located and filled from the geometric pass. Independently cross-verified for the decision number/dates, 55-article count, 12 topical groupings, and numerous specific figures (capital, fees, retention periods, procedural windows) against rulebook.sama.gov.sa, SAMA's own regulator portal, fetched live (HTTP 200).",
+      "registry_source_url": null,
+      "official_source_file": "sources/credit_information_regulation/law/official_source/credit_information_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2023-09-27; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -2110,6 +2168,30 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "finance_companies_regulation",
+      "display_name_en": "Implementing Regulation of the Finance Companies Control Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام مراقبة شركات التمويل",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='TIER_4_BFC_GOV_SA_SINGLE_OFFICIAL_IMAGE_SCAN_DEC2025_CONSOLIDATED_TEXT_MULTI_SOURCE_AMENDMENT_EVENT_CORROBORATED': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "Administrative Decision No. (2/م ش ت), dated 14/4/1434H, issued by the Governor of SAMA under the Finance Companies Control Law (Royal Decree M/51, 13/8/1433H), as substantively amended by Decision No. (179/م ش ت) transmitted via SAMA Circular No. (472038006), dated 2/7/1447H (22/12/2025G). Full text fetched directly (HTTP 200) as a 38-page image-scanned PDF from bfc.gov.sa (confirmed via PDF metadata to be the December 2025 consolidated edition). The December 2025 amendment event, its decision number, and its scope are independently corroborated by qanoonsa.com and four independent Saudi news outlets (spa.gov.sa, aawsat.com, argaam.com, cnbcarabia.com), though the pre-amendment article text itself was not obtained for article-level comparison this pass.",
+      "registry_source_url": null,
+      "official_source_file": "sources/finance_companies_regulation/law/official_source/finance_companies_regulation_official_source.json",
+      "source_urls": [
+        "https://www.bfc.gov.sa/ar-sa/RulesandRegulations1/اللائحة"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa",
+        "spa.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "finance_lease_law",
       "display_name_en": "Finance Lease Law",
       "display_name_ar": "نظام الإيجار التمويلي",
@@ -2129,6 +2211,33 @@
         "sama.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "finance_lease_regulation",
+      "display_name_en": "Implementing Regulation of the Finance Lease Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الإيجار التمويلي",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_SAMA_RULEBOOK_BORN_DIGITAL_HTML_X_DEDICATED_AMENDMENT_DECISION_NODE_X_ENGLISH_STRUCTURAL_CROSSCHECK': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Administrative/Governor's Decision No. (1/م ش ت), dated 14/4/1434H (24/2/2013G), issued under Article 27 of the Finance Lease Law (Royal Decree M/48, 13/8/1433H). Full text fetched directly (HTTP 200) as clean, structured, born-digital HTML from rulebook.sama.gov.sa's Arabic 'entiresection' full-text view (SAMA's own official Rulebook portal, status 'نافذ'), independently structurally cross-checked against the equivalent English entiresection view (32 articles, 3 Parts, identical boundaries in both languages). Three provisions (Article 10(3), Article 17, and Article 25(2)) are marked معدلة, each carrying an inline footnote citing Governor's Decision No. (93/م ش ت), 18/10/1441H, independently corroborated by SAMA's own dedicated amendment-decision page (node 3243, transmitted by SAMA Circular No. 41061552, 29/10/1441H) — a THIRD amendment locus (Article 25(2)) beyond the two named in this track's commissioning brief, added after independent re-verification.",
+      "registry_source_url": null,
+      "official_source_file": "sources/finance_lease_regulation/law/official_source/finance_lease_regulation_official_source.json",
+      "source_urls": [
+        "https://rulebook.sama.gov.sa/ar/entiresection/123",
+        "https://rulebook.sama.gov.sa/ar/اللائحة-التنفيذية-لنظام-الإيجار-التمويلي",
+        "https://rulebook.sama.gov.sa/ar/تعديل-بعض-المواد-في-اللائحة-التنفيذية-لنظام-الإيجار-التمويلي",
+        "https://rulebook.sama.gov.sa/en/entiresection/123",
+        "https://rulebook.sama.gov.sa/en/implementing-regulation-finance-lease-law"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-01-18; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3293,6 +3402,28 @@
         "nezams.com",
         "rulebook.sama.gov.sa",
         "sama.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "payment_systems_regulation",
+      "display_name_en": "Implementing Regulation of the Payment Systems and Services Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام المدفوعات وخدماتها",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='TIER_4_SAMA_RULEBOOK_SINGLE_OFFICIAL_PDF_DUAL_EXTRACTION_TOOL_RECONCILED_NO_INDEPENDENT_SECOND_SOURCE': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "Saudi Central Bank (formerly SAMA) Circular No. (44093096), dated 24/11/1444H (13/6/2023G), promulgating the Implementing Regulation of the Payment Systems and Services Law. Full text fetched directly (HTTP 200) as a 74-page born-digital PDF hosted on rulebook.sama.gov.sa (SAMA's own official Rulebook portal). 133 articles across 12 أبواب (corrects a prior estimate of '150+ articles' based on partial page-browsing rather than the full extracted PDF text). This is a single official primary source this pass: sama.gov.sa's own document-library path was unreachable, and no independent second official or secondary source was cross-checked for full-text verbatim agreement.",
+      "registry_source_url": null,
+      "official_source_file": "sources/payment_systems_regulation/law/official_source/payment_systems_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "hrsd.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa",
+        "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,

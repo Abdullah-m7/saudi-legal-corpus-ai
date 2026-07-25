@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 236
+        assert registry["total_tracks"] == 242
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 13990
+        assert registry["total_primary_arabic_governing_records"] == 14402
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 14885
+        assert registry["total_registry_counted_records"] == 15297
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -305,6 +305,12 @@ class TestTracks:
         assert "press_regulation" in ids
         assert "building_code_regulation" in ids
         assert "telecommunications_regulation" in ids
+        assert "credit_information_regulation" in ids
+        assert "payment_systems_regulation" in ids
+        assert "banking_control_regulation" in ids
+        assert "finance_companies_regulation" in ids
+        assert "finance_lease_regulation" in ids
+        assert "cooperative_societies_regulation" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -1624,6 +1630,42 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 108
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 108, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "TIER_2_DUAL_OFFICIAL_PRIMARY_BORN_DIGITAL_CST_X_MCIT_CROSSVERIFIED_TEXT_LAYER_REMEDIATED_UQN_GAZETTE_LINKS_STALE_BOE_NOT_INDEXED"
+
+    def test_credit_information_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "credit_information_regulation")
+        assert t["record_counts"]["arabic_articles"] == 55
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 55, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_SAMA_WAYBACK_ARCHIVED_PDF_DUAL_OCR_PYMUPDF_RECONCILED_X_RULEBOOK_SAMA_STRUCTURAL_NUMERIC_CROSSVERIFIED"
+
+    def test_payment_systems_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "payment_systems_regulation")
+        assert t["record_counts"]["arabic_articles"] == 133
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 133, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_4_SAMA_RULEBOOK_SINGLE_OFFICIAL_PDF_DUAL_EXTRACTION_TOOL_RECONCILED_NO_INDEPENDENT_SECOND_SOURCE"
+
+    def test_banking_control_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "banking_control_regulation")
+        assert t["record_counts"]["arabic_articles"] == 31
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 31, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_SAMA_RULEBOOK_LIVE_PAGE_X_ARCHIVAL_1429H_PDF_DUAL_OFFICIAL_CROSSVERIFIED_TWO_DOCUMENTED_VARIANCES"
+
+    def test_finance_companies_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "finance_companies_regulation")
+        assert t["record_counts"]["arabic_articles"] == 106
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 106, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_4_BFC_GOV_SA_SINGLE_OFFICIAL_IMAGE_SCAN_DEC2025_CONSOLIDATED_TEXT_MULTI_SOURCE_AMENDMENT_EVENT_CORROBORATED"
+
+    def test_finance_lease_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "finance_lease_regulation")
+        assert t["record_counts"]["arabic_articles"] == 32
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 29, "معدلة": 3, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_SAMA_RULEBOOK_BORN_DIGITAL_HTML_X_DEDICATED_AMENDMENT_DECISION_NODE_X_ENGLISH_STRUCTURAL_CROSSCHECK"
+
+    def test_cooperative_societies_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "cooperative_societies_regulation")
+        assert t["record_counts"]["arabic_articles"] == 55
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 55, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_NCNP_GOV_SA_X_CSCS_ORG_SA_DUAL_INDEPENDENT_OFFICIAL_IMAGE_SCAN_CROSSVERIFIED"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

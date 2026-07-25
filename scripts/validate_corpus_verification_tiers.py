@@ -10,7 +10,7 @@ scripts/gen_corpus_verification_tiers.py from data/corpus_registry/corpus_regist
 Checks:
   1.  Output JSON exists and parses.
   2.  Required top-level fields present.
-  3.  Exactly 236 track entries, one per REQUIRED_TRACK_IDS (imported from
+  3.  Exactly 242 track entries, one per REQUIRED_TRACK_IDS (imported from
       scripts/validate_corpus_registry.py — the same canonical 181-track-id list the
       corpus registry validator itself uses), no missing / no unexpected extra ids.
   4.  Every entry's `tier` is one of the 4 fixed taxonomy values.
@@ -22,7 +22,7 @@ Checks:
   8.  Generator idempotency: re-running scripts/gen_corpus_verification_tiers.py into a
       scratch file reproduces the committed output byte-for-byte (diff is clean).
   9.  Read-only: this validator does not modify data/corpus_registry/corpus_registry.json,
-      any of the 236 tracks' own files, or the committed output file itself.
+      any of the 242 tracks' own files, or the committed output file itself.
 
 Usage:
     python3 scripts/validate_corpus_verification_tiers.py
@@ -93,7 +93,7 @@ def main() -> int:
 
     required_track_ids = _load_required_track_ids()
     check("[0] REQUIRED_TRACK_IDS imported from validate_corpus_registry.py...",
-          len(required_track_ids) == 236,
+          len(required_track_ids) == 242,
           f"count={len(required_track_ids)}")
 
     # [1] Output exists and parses
@@ -114,12 +114,12 @@ def main() -> int:
     tracks = out.get("tracks", [])
     by_id = {t.get("track_id"): t for t in tracks}
 
-    # [3] Exactly 236 tracks, matching REQUIRED_TRACK_IDS exactly (no missing, no extras)
+    # [3] Exactly 242 tracks, matching REQUIRED_TRACK_IDS exactly (no missing, no extras)
     ids_present = set(by_id.keys())
     ids_required = set(required_track_ids)
     missing_ids = sorted(ids_required - ids_present)
     extra_ids = sorted(ids_present - ids_required)
-    check("[3a] Track count == 236...", len(tracks) == 236, f"count={len(tracks)}")
+    check("[3a] Track count == 242...", len(tracks) == 242, f"count={len(tracks)}")
     check("[3b] No missing track ids...", len(missing_ids) == 0,
           "None missing" if not missing_ids else f"Missing: {missing_ids}")
     check("[3c] No unexpected extra track ids...", len(extra_ids) == 0,
@@ -161,7 +161,7 @@ def main() -> int:
           len(inconsistent_false) == 0,
           "Consistent" if not inconsistent_false else f"Non-empty note despite false on: {inconsistent_false}")
 
-    # [7] summary_by_tier matches a fresh recount; counts sum to total_tracks == 236
+    # [7] summary_by_tier matches a fresh recount; counts sum to total_tracks == 242
     recount = {tier: 0 for tier in FIXED_TIERS}
     for t in tracks:
         tier = t.get("tier")
@@ -171,7 +171,7 @@ def main() -> int:
     check("[7a] summary_by_tier matches a fresh recount of tracks[]...",
           declared_summary == recount,
           f"declared={declared_summary} recount={recount}")
-    check("[7b] total_tracks == 236...", out.get("total_tracks") == 236,
+    check("[7b] total_tracks == 242...", out.get("total_tracks") == 242,
           f"total_tracks={out.get('total_tracks')}")
     check("[7c] The 4 tier counts sum to total_tracks...",
           sum(recount.values()) == out.get("total_tracks"),
