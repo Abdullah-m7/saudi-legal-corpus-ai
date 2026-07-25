@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11697,
+  "total_primary_arabic_governing_records": 11722,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12592,
-  "total_tracks": 198,
+  "total_registry_counted_records": 12617,
+  "total_tracks": 200,
   "tracks": [
     {
       "boundaries": {
@@ -9465,6 +9465,104 @@
       "validator_targets": [
         "make einvoicing-regulation-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/pdpl_cross_border_transfer_regulation/law/official_source/pdpl_cross_border_transfer_regulation_official_source.json",
+        "sources/pdpl_cross_border_transfer_regulation/law/verified/pdpl_cross_border_transfer_regulation_verified_records.jsonl",
+        "data/pdpl_cross_border_transfer_regulation_arabic_legal_llm/pdpl_cross_border_transfer_regulation_legal_llm_001_009.json"
+      ],
+      "display_name_ar": "لائحة نقل البيانات الشخصية إلى خارج المملكة",
+      "display_name_en": "Regulation on Transfer of Personal Data Outside the Kingdom",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/pdpl_cross_border_transfer_regulation_arabic_legal_llm/pdpl_cross_border_transfer_regulation_legal_llm_001_009.json",
+          "governing": true,
+          "record_count": 9,
+          "status": "complete"
+        }
+      },
+      "notes": "Regulation on Transfer of Personal Data Outside the Kingdom «لائحة نقل البيانات الشخصية إلى خارج المملكة» — SDAIA President Decision No. (1840), dated 27/2/1446H, issued pursuant to Article (29) of the Personal Data Protection Law (M/19). Discovered via a targeted, precision-requested deep-dive scan for NCA/SDAIA binding instruments not yet in this corpus. **9 records, ALL اصلية**, flat structure (no أبواب/فصول). Its legislative basis (PDPL Article 29, sub-paragraph (د) of paragraph (1), paragraphs (ب)/(ج) of paragraph (2), and paragraph (4)) was independently re-verified by reading the article's own already-ingested text in this corpus (sources/pdpl/verified) rather than trusting the initial research lead. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — laws.boe.gov.sa unreachable this pass (TCP reset); PRIMARY reached via TWO INDEPENDENT official government sources in full agreement: SDAIA's own live portal (dgp.sdaia.gov.sa) and the Umm al-Qura Official Gazette (uqn.gov.sa), the latter additionally supplying the decree number/date the SDAIA portal itself omits. A structurally distinct predecessor regulation (same general subject, different title without the word 'إلى', 10 articles across 4 chapters) was independently confirmed to exist via its own Umm al-Qura gazette record (published 1445-2-22H/07-09-2023G) — but neither published text (old or new) contains an explicit repeal/supersession clause, and the predecessor's own promulgating decree number could not be independently confirmed this pass (a single unconfirmed WebSearch-surfaced candidate is disclosed but NOT relied upon). Supersession of the 2023 predecessor by this 2024 regulation is therefore reported as a **STRONG INFERENCE** (same subject/issuer, irreconcilable structural conflict between the two regimes, and multiple independent press/legal-aggregator sources describing the new regulation as an 'update' to prior regulations) — NOT an asserted fact. That predecessor is not itself a tracked instrument in this corpus, so no supersession-graph edge is added regardless of the confidence level. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_1_PRIMARY_MULTI_SOURCE_SDAIA_PORTAL_X_UQN_GAZETTE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 9,
+        "legal_status_breakdown": {
+          "اصلية": 9,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 9
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Decision of the President of the Saudi Data and AI Authority (SDAIA) No. (1840), dated 27/2/1446H, issued pursuant to Article (29) of the Personal Data Protection Law (Royal Decree M/19, 9/2/1443H). Published in Umm al-Qura Official Gazette, 28/2/1446H (1 September 2024G). laws.boe.gov.sa unreachable this pass (TCP connection reset). PRIMARY x2 independent official government sources — SDAIA's own live portal (dgp.sdaia.gov.sa) and the Umm al-Qura Official Gazette (uqn.gov.sa) — both fetched directly (HTTP 200) and matching verbatim; SECONDARY aunklaw.com (full verbatim match) and LexisMiddleEast (confirms 'Version 2.0' labeling).",
+      "status": "complete",
+      "track_id": "pdpl_cross_border_transfer_regulation",
+      "validator_targets": [
+        "make pdpl-cross-border-transfer-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/sdaia_organizational_arrangements/law/official_source/sdaia_organizational_arrangements_official_source.json",
+        "sources/sdaia_organizational_arrangements/law/verified/sdaia_organizational_arrangements_verified_records.jsonl",
+        "data/sdaia_organizational_arrangements_arabic_legal_llm/sdaia_organizational_arrangements_legal_llm_001_016.json"
+      ],
+      "display_name_ar": "الترتيبات التنظيمية للهيئة السعودية للبيانات والذكاء الاصطناعي",
+      "display_name_en": "Organizational Arrangements of the Saudi Data and AI Authority (SDAIA)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/sdaia_organizational_arrangements_arabic_legal_llm/sdaia_organizational_arrangements_legal_llm_001_016.json",
+          "governing": true,
+          "record_count": 16,
+          "status": "complete"
+        }
+      },
+      "notes": "Organizational Arrangements of the Saudi Data and AI Authority «الترتيبات التنظيمية للهيئة السعودية للبيانات والذكاء الاصطناعي» — Council of Ministers Resolution No. (292), dated 27/4/1441H, amended by Resolution No. (195), 15/3/1444H. Discovered via the same targeted NCA/SDAIA deep-dive scan as pdpl_cross_border_transfer_regulation. **16 records: 15 اصلية / 1 معدلة (بند خامساً, board formation)**, flat structure of sixteen ordinal بند divisions (أولاً-سادس عشر) — like cybersecurity_authority_enablers, NOT divided into numbered مواد. **VERIFICATION TIER: TIER_2** — no laws.boe.gov.sa lawId page located this pass (targeted site-restricted search surfaced only unrelated BOE-catalogued laws referencing SDAIA in passing). PRIMARY SDAIA's own official site PDF, whose direct fetch fails domain-wide in this sandbox (connection reset) — retrieved instead via the r.jina.ai reader-proxy. The proxy's extraction has a CONFIRMED, disclosed systematic character-order artifact (lam+alif-form bigrams render reversed, e.g. 'الاعتبارية' as 'االعتبارية') — independently confirmed against qistas.com's own clean preview of the first three بنود and corrected via disclosed, cross-validated word-level reconstruction, NOT pixel-level OCR (the PDF's raw bytes could not be obtained this pass: direct fetch, a Wayback replay, and a CORS proxy all failed). SECONDARY cross-verification from qistas.com, lexismiddleeast.com (confirms the Resolution 195 amendment targets specifically بند خامساً), almirkaz.com, and qanoniah.com (existence/citation only, both paywalled beyond preview). **CONFIRMED, INDEPENDENTLY VERIFIED (via the Saudi Press Agency's own text of founding Royal Order A/471)**: the pre-existing National Information Center (Royal Order A/293/1438H, CoM Resolution 495/1439H) was organizationally absorbed under SDAIA without an explicit repeal of its own founding instrument — a genuine NEGATIVE finding, disclosed rather than silently omitted. This instrument's final بند (سادس عشر) contains only a publication/effective-date clause with NO repeal language of any kind, and carries no violations/penalties clause anywhere. The amendment attribution for بند خامساً rests solely on a secondary aggregator's (LexisMiddleEast) own indexing metadata, not an independently-obtained pre/post-amendment textual diff — disclosed as a limited-confidence attribution. Arabic governs; not legal advice.",
+      "official_text_status": "SDAIA_OFFICIAL_SITE_PDF_PRIMARY_JINA_READER_PROXY_LIGATURE_ARTIFACT_RECONSTRUCTED_X_QISTAS_LEXISMIDDLEEAST_SPA_CROSSCHECK_TIER2_BOE_PAGE_NOT_LOCATED",
+      "record_counts": {
+        "arabic_articles": 16,
+        "legal_status_breakdown": {
+          "اصلية": 15,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 16
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Council of Ministers Resolution No. (292), dated 27/4/1441H, issued pursuant to Royal Order No. (A/471), dated 29/12/1440H (SDAIA's founding instrument). Amended by Council of Ministers Resolution No. (195), dated 15/3/1444H. laws.boe.gov.sa: no dedicated lawId page located this pass despite a targeted search. PRIMARY SDAIA's own official site PDF, reached via the r.jina.ai reader-proxy (direct fetch fails domain-wide in this sandbox); SECONDARY qistas.com, lexismiddleeast.com, almirkaz.com, qanoniah.com; PLUS a wholly separate primary source (Saudi Press Agency) independently confirming the founding Royal Order A/471.",
+      "status": "complete",
+      "track_id": "sdaia_organizational_arrangements",
+      "validator_targets": [
+        "make sdaia-organizational-arrangements-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -9578,7 +9676,7 @@
       "nazaha": 24,
       "patent": 133,
       "payment_systems": 20,
-      "pdpl": 81,
+      "pdpl": 90,
       "personal_status": 293,
       "premium_residency": 14,
       "press": 49,
@@ -9598,6 +9696,7 @@
       "rett": 20,
       "sama": 27,
       "saudi_engineers": 9,
+      "sdaia": 16,
       "sharia_procedure": 880,
       "shura_council": 30,
       "social_insurance": 63,
@@ -9623,7 +9722,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11528,
+    "total_records": 11553,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
