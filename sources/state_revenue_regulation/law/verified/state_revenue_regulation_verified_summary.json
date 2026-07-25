@@ -1,0 +1,88 @@
+{
+  "law_key": "state_revenue_regulation",
+  "layer": "STATE_REVENUE_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 65,
+  "status_counts": {
+    "اصلية": 60,
+    "معدلة": 4,
+    "ملغاة": 0,
+    "مضافة": 1
+  },
+  "decree": "القرار الوزاري رقم (860)",
+  "decree_date_hijri": "13/3/1432",
+  "amending_decree": "القرار الوزاري رقم (901)",
+  "amending_decree_date_hijri": "24/2/1439",
+  "effective_date_hijri": "20/3/1432",
+  "consolidated_amended_law": true,
+  "numbered_articles_max": 65,
+  "original_issuance_article_count_1432h": 64,
+  "mukarrar_article_keys": [],
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "تقدير الإيرادات",
+      "articles": "1-3"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "تنمية الإيرادات",
+      "articles": "4-9"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "تحصيل الإيرادات",
+      "articles": "10-45"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "الحجز والتنفيذ",
+      "articles": "46-56"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "إعفاء الدين وتقسيطه",
+      "articles": "57-61"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "أحكام ختامية",
+      "articles": "62-65"
+    }
+  ],
+  "repealed_predecessor": {
+    "confirmed": false,
+    "note_ar": "المادة الرابعة والستون لائحة عامة تلغي (كل ما يتعارض معها من قواعد وتعليمات) دون تسمية لائحة أو أداة محددة سابقة. لم يتم العثور هذه الجولة على لائحة تنفيذية سابقة صدرت تحت نظام جباية أموال الدولة (النظام السابق الذي حلّ محله نظام إيرادات الدولة نفسه) لتكون هي المقصودة بالإلغاء."
+  },
+  "verification_methodology_note": "PRIMARY SOURCE: the Ministry of Finance's OWN official document-library PDF, hosted at mof.gov.sa (docslibrary/RegulationsInstructions/Documents/الانظمة/اللائحة التنفيذية لنظام ايرادات الدولة.pdf), fetched directly over HTTPS via the environment's proxy (HTTP 200). This is the CURRENT, CONSOLIDATED text: its own cover page and the printed Ministerial Resolution both state 'صدرت بالقرار الوزاري رقم (860) وتاريخ 1432/3/13هـ، المعدلة بالقرار الوزاري رقم (901) وتاريخ 1439/2/24هـ' -- i.e. founding Ministerial Resolution No. 860 (13/3/1432H), as amended by Ministerial Resolution No. 901 (24/2/1439H), signed by Minister of Finance Mohammed bin Abdullah Al-Jadaan. laws.boe.gov.sa was checked FIRST per this corpus's standard methodology: its LawDetails page for the base law (lawId 8b100aee-54a5-48c1-9866-a9a700f2d539, reached via the Wayback Machine snapshot the parent state_revenue_law track already used) contains NO link, section, or reference to this Implementing Regulation at all -- consistent with this corpus's repeatedly-documented pattern that BOE does not catalogue Ministerial-Resolution-level executive regulations as their own lawId records. ncar.gov.sa (the National Center for Archives and Records) hosts this document too (confirmed via web search locating its document-details page and a direct resource/PDF link) but every direct fetch attempt against ncar.gov.sa this pass -- the PDF resource link itself, and the SPA document-details page via both a live fetch and its Wayback Machine snapshot -- was refused at the TCP/TLS layer ('Recv failure: Connection reset by peer') or returned only the generic client-rendered app shell with no document content; ncar.gov.sa could NOT be used as a source this pass (see known_unresolved_discrepancies). adf.gov.sa's news archive page and the official Umm Al-Qura Gazette site (uqn.gov.sa, issue 4705) were likewise unreachable or returned soft-404s this pass, despite being named in the prior research lead as candidate primary sources; both remain unconfirmed first-hand this pass. TEXT EXTRACTION AND VERIFICATION: rather than rely on automated text extraction (pdftotext and coordinate-based PyMuPDF/pdfplumber reconstruction were both tried and both exhibited the same reversed-word-order artifact on short justified trailing lines that this corpus's other BOE/ZATCA-family tracks have documented), EVERY one of the PDF's 34 pages was rendered to a PNG image (pdfplumber, 200dpi) and READ DIRECTLY by the assistant as an image, article by article, chapter by chapter -- eliminating the OCR/text- extraction layer entirely for the governing text. All 65 articles across 6 chapters were transcribed this way and are reproduced verbatim (diacritics and tatweel stripped for corpus consistency, consistent with other tracks; no numerals, words, or clauses altered, omitted, or paraphrased). CROSS-VERIFICATION: qanoniah.com (an independent third-party Saudi legal database) exposes a backend API (api.qanoniah.com/v1/files/{hash}) that served, without authentication, the CURRENT consolidated file's first 8 articles (order items 1-10 including two chapter headers) as clean Unicode text before an access gate was reached; all 8 (Articles 1-8) match the MOF PDF's visually-transcribed text WORD FOR WORD. Articles 9-65 rest on the MOF PDF alone (single-source, visually verified) -- qanoniah's paywall prevented extending this cross-check further this pass; this is disclosed, not silently generalized (see known_unresolved_discrepancies, key state_revenue_regulation_partial_cross_verification_arts_9_65). qanoniah's OWN metadata for this file (fetched via the same API, hash QNzgY5ZPxKo1x0rndyG3q6wpX) independently corroborates: founding instrument 'قرار وزاري' No. 860 dated 1432-03-13; current version's amending instrument No. 901; النفاذ (validity) = 'ساري' (in force); and an Umm Al-Qura Gazette citation (issue 4705, dated 2018-01-05G) for the publication of Resolution 901 -- consistent with Resolution 901's own printed signing date of 24/2/1439H (13 Nov 2017G; qanoniah's own separate 'version_date' field for this same resolution independently gives '2017-11-13', an exact Gregorian match), the ~7-week signing-to-gazette-publication gap being unremarkable. AMENDMENT SCOPE (Ministerial Resolution 901, 24/2/1439H): a SEPARATE mof.gov.sa page -- a 2017 public-consultation announcement of the DRAFT amendments (mediacenter/news/Pages/news_02082017.aspx, published 10/11/1438H) -- independently enumerates the articles proposed for change: Article 46 (new subsection 46-5, judicial-order exception for final enforceable judgments); a wholly NEW Article 47 (defining 'المحكمة المختصة' / the competent court referenced by Article 14 of the BASE LAW); Article 49 (revised opening text plus new subsection 49-9, Ministry of Interior service suspension); Article 52 (debtor-asset tracking from the violation/debt-origin date); and Article 56 (new subsection 56-10, referral to notary offices for property-transfer completion). Independently checking the CURRENT MOF PDF's own Articles 46, 47, 49, 52, and 56 against this 2017 draft description confirms an exact substantive match for all five -- this is the basis for this track's legal_status_ar classification (4 معدلة + 1 مضافة) rather than a bare assumption from the article-count arithmetic alone. The addition of Article 47 is the DIRECT, confirmed cause of this track's total rising from 64 articles (the count given in the ORIGINAL 1432H issuance, per the spa.gov.sa news announcement of 27 March 2011 fetched directly this pass, HTTP 200 -- 'اللائحة التنفيذية لنظام إيرادات الدولة المتضمن 64 مادة') to 65 articles in the current, Resolution-901-consolidated text -- a full, clean renumbering was used for the insertion (old article N+1 became new article N+1 with no 'مكرر' suffix), UNLIKE this corpus's usual 'مكرر' (bis) convention for inserted articles in amended laws; this is a genuine, source-confirmed structural difference, not an inconsistency introduced by this track. spa.gov.sa's 2011 announcement further independently confirms the 20/3/1432H effective date and the Article-29-of-the-base-law authority citation. STRUCTURE: 6 numbered فصول (chapters) confirmed directly from the PDF's own printed chapter-title pages: الفصل الأول 'تقدير الإيرادات' (Arts 1-3); الفصل الثاني 'تنمية الإيرادات' (Arts 4-9); الفصل الثالث 'تحصيل الإيرادات' (Arts 10-45); الفصل الرابع 'الحجز والتنفيذ' (Arts 46-56); الفصل الخامس 'إعفاء الدين وتقسيطه' (Arts 57-61); الفصل السادس 'أحكام ختامية' (Arts 62-65). REPEAL: Article 64 is a GENERIC repeal clause ('تُلغي هذه اللائحة كل ما يتعارض معها من قواعد وتعليمات') that does not name any specific predecessor regulation or instrument; no prior implementing regulation for the predecessor law (نظام جباية أموال الدولة, Royal Will 41/3/2, 1359H) was identified this pass to be named as repealed. No article within this regulation is itself ملغاة (repealed) -- Article 64 repeals OTHER, unnamed instruments, not any of this regulation's own articles. GAP: the ORIGINAL pre-901 wording of Articles 46, 49, 52, and 56 could NOT be verified this pass. The only located copy of the original 1432H issuance (qanoniah.com file hash BYEvkO95zn9AJZynK2rj3Dd6p, 'اللائحة التنفيذية لنظام إيرادات الدولة - 1432') is marked isText=false (a scanned image PDF) whose own embedded OCR layer is empty or near-empty for the large majority of words (very low x_wconf confidence scores, many blank 'text' fields) -- genuinely unusable, not silently discarded. original_1432h_text is therefore null for every article in this track, an honest gap rather than a fabricated reconstruction. No legal text is altered beyond diacritic/tatweel stripping for corpus consistency. Arabic governs; no translation/paraphrase/interpretation. Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "state_revenue_regulation_ncar_gov_sa_unreachable",
+      "description": "ncar.gov.sa (National Center for Archives and Records) hosts both the 1432H original and the current consolidated PDF of this regulation, and its document-details page for the 1439H-amended version was located via web search. However, EVERY direct-fetch attempt against ncar.gov.sa this pass failed: the PDF resource endpoint itself (api/index.php/resource/.../Documents/OriginalAttachPath) was refused with 'Recv failure: Connection reset by peer' on repeated attempts (direct HTTPS, forced HTTP/1.1, with/without a Referer header) via both curl (through the environment's proxy with its CA bundle) and the WebFetch tool (HTTP 503); the SPA document-details page itself returned a generic, content-free client-rendered app shell on a direct fetch and, via its Wayback Machine snapshot (timestamp 20250507130458), also rendered only the generic portal shell with no document-specific content (the page's real content loads via a client-side JavaScript API call that was not captured by the Wayback crawler). ncar.gov.sa could NOT be used as a source for this track this pass, despite being one of the three primary sources named in the prior research lead."
+    },
+    {
+      "article_key": "state_revenue_regulation_adf_uqn_unreachable",
+      "description": "adf.gov.sa's news-archive page (a candidate primary source named in the prior research lead, 'إقرار اللائحة التنفيذية لنظام إيرادات الدولة') timed out on every direct-fetch attempt this pass and was not reached. The official Umm Al-Qura Gazette site (uqn.gov.sa) was independently identified via web search as hosting issue No. 4705 (dated ~17/4/1439H per a search-engine snippet, corroborating Resolution 901's substance including Article 1's exact wording) -- but the specific article URL found by search (uqn.gov.sa/articles/1515095958221203000/) returned HTTP 404 on a direct fetch attempt (both via the WebFetch tool and via curl), and no working alternative URL for that gazette issue was located this pass. This track's Umm Al-Qura Gazette corroboration therefore rests on an indexed search-engine snippet only, not a directly-fetched primary page -- the same caveat this corpus's state_revenue_law track already documents for its own qanoonsa.com corroboration."
+    },
+    {
+      "article_key": "state_revenue_regulation_partial_cross_verification_arts_9_65",
+      "description": "Only Articles 1-8 of this track are cross-verified against a SECOND independently-fetched source (qanoniah.com's backend API served these 8 articles' clean-Unicode text without authentication, before an access gate was reached for Article 9 onward). Articles 9-65 rest on the single MOF PDF, verified by direct visual reading of the rendered page images by the assistant (eliminating the automated OCR/text-extraction layer, which is this track's main safeguard against transcription error for these 57 articles) but WITHOUT a second independent source's full text to cross-check against. This is a genuine single-source-for-most-of-the-document limitation, disclosed rather than masked behind a uniform 'cross-verified' status label -- see the two distinct 'status' values used in this track's articles (MOF_OFFICIAL_PDF_DIRECT_X_QANONIAH_API_CROSS_VERIFIED for Arts 1-8 vs. MOF_OFFICIAL_PDF_DIRECT_SINGLE_SOURCE_VISUALLY_VERIFIED for Arts 9-65)."
+    },
+    {
+      "article_key": "state_revenue_regulation_original_1432h_text_gap",
+      "description": "The pre-901 (original 1432H) wording of the five touched articles (46, 47 did not exist yet, 49, 52, 56) could not be recovered this pass. The only located copy of the 1432H issuance (qanoniah.com file hash BYEvkO95zn9AJZynK2rj3Dd6p) is a low-quality scanned image PDF whose own OCR text layer is empty or near-empty for the overwhelming majority of words (spot-checked x_wconf confidence scores of 0-79 on a 0-100 scale, with most 'text' fields blank) -- genuinely unusable as a transcription source, not silently discarded. original_1432h_text is null for every article in this track; this is an honest, disclosed gap consistent with this corpus's binding rule against fabricating unverifiable text, not an editorial omission."
+    },
+    {
+      "article_key": "state_revenue_regulation_901_date_qanoniah_tag_discrepancy",
+      "description": "qanoniah.com's own structured metadata tag for Resolution 901's issuance date reads '1439-03-24' (i.e., if read as YYYY-MM-DD, 24 Rabi al-Awwal 1439H). This conflicts with the MOF PDF's own printed date, which appears identically TWICE in the same document (the cover page and the Ministerial Resolution's own header/body text) as '1439/2/24' (24 Safar 1439H) -- and with qanoniah's OWN separate 'version_date' field for the same resolution, which independently gives '2017-11-13' Gregorian, the correct conversion of 24 Safar 1439H (NOT of 24 Rabi al-Awwal 1439H). This track treats '24/2/1439H' (Safar) as the correct date -- consistent twice within the primary MOF document itself and consistent with qanoniah's own internal version_date field -- and treats qanoniah's separate 'تاريخ الإصدار' display tag ('1439-03-24') as a likely data-entry typo in a secondary database's metadata, not a genuine competing primary-source date. Recorded here rather than silently corrected without disclosure."
+    },
+    {
+      "article_key": "state_revenue_regulation_no_specific_repealed_predecessor",
+      "description": "Article 64 is a generic, non-specific repeal clause ('تُلغي هذه اللائحة كل ما يتعارض معها من قواعد وتعليمات') naming no specific predecessor regulation or instrument. Unlike the parent state_revenue_law track (whose Article 30 explicitly names and repeals نظام جباية أموال الدولة), no implementing regulation issued under the predecessor law was identified this pass as the target of Article 64's repeal. repealed_predecessor.confirmed is therefore false in this track's source artifact -- an honest 'could not confirm a specific predecessor', not an assertion that none ever existed."
+    },
+    {
+      "article_key": "state_revenue_regulation_amendment_scope_completeness_assumption",
+      "description": "This track's classification of exactly five touched articles (46 معدلة, 47 مضافة, 49 معدلة, 52 معدلة, 56 معدلة) rests on matching the CURRENT MOF PDF's text against a mof.gov.sa page describing the 2017 DRAFT of Resolution 901's amendments -- a different document from a ~3-5 month EARLIER stage of the same amendment process, not a direct diff against the final adopted text or against the (unusable) original 1432H PDF. It is possible, though not evidenced this pass, that minor wording changes were made to OTHER articles between the 2017 draft-consultation stage and the final Resolution 901 text that this track's methodology would not detect. This track's amendment attribution should be read as 'the five articles independently confirmed changed', not as an exhaustive guarantee that no other article's wording shifted at all between 860 and 901."
+    }
+  ],
+  "source_artifact": "sources/state_revenue_regulation/law/official_source/state_revenue_regulation_official_source.json"
+}

@@ -1,0 +1,58 @@
+{
+  "law_key": "whistleblower_regulation",
+  "layer": "WHISTLEBLOWER_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 12,
+  "official_text_status": "UQN_GAZETTE_PDF_CROSS_VERIFIED_HTML_MIRROR",
+  "status_counts": {
+    "اصلية": 12
+  },
+  "council_of_ministers_decision": {
+    "number": "892",
+    "date_hijri": "02/12/1447",
+    "date_gregorian": "2026-05-19",
+    "session_note_secondary_sourced": "Multiple secondary Saudi news outlets (maaal.com, aldeereh.com, Riyadh Emirate social account; okaz.com.sa corroborates the date/session but does not itself state a decision number) report this Council of Ministers session was held in Jeddah and chaired by King Salman bin Abdulaziz Al Saud. The gazette-published decision text itself confirms the chairing by King Salman but does not state the session's city; the Jeddah location is therefore secondary-sourced only, not independently primary-confirmed in this track.",
+    "PRIOR_RESEARCH_DISCREPANCY": "Prior research (re-verified here) had identified the decision number as (893). Independent verification against TWO directly-downloaded primary-source Umm Al-Qura gazette PDFs (issue 5162 and issue 5163, both fetched directly from uqn.gov.sa, hashes recorded below) shows the correct decision number is (892). Decision (893), published in the same gazette issue 5162 immediately adjacent to decision 892 in the paper's column layout, is an UNRELATED Council of Ministers decision amending the organizational arrangement of water factories (تعديل الترتيب التنظيمي لمصانع المياه) — a routine and easy misread of a multi-column gazette page that appears to have propagated across several secondary sources (qanoonsa.com and outlets echoing it) citing '893' for the whistleblower regulation. This track uses 892, confirmed independently from the primary gazette PDF text twice (issue 5162 and issue 5163 both cite decision 892 for this regulation)."
+  },
+  "gazette_publications": {
+    "original_draft_labeled_publication_SUPERSEDED": {
+      "gazette": "جريدة أم القرى",
+      "issue_number": "5162",
+      "issue_date_hijri": "19/12/1447",
+      "issue_date_gregorian": "2026-06-05",
+      "pages": "6-7",
+      "heading_as_printed_ar": "مشروع اللائحة التنفيذية لنظام حماية المبلغين والشهود والخبراء والضحايا",
+      "article_count_in_this_printing": 11,
+      "status": "SUPERSEDED_BY_OFFICIAL_ERRATA_ONE_WEEK_LATER",
+      "note": "This is the text originally attached to Council of Ministers decision (892) as printed in issue 5162. Notably, the gazette's own printed heading labels it 'مشروع اللائحة التنفيذية' (DRAFT/project of the executive regulation), not simply 'اللائحة التنفيذية'. This printing is NOT used as the governing text of this track; it is retained here only for provenance and discrepancy documentation. This is a DIFFERENT document from the pre-approval 2024 public-consultation draft covered by argaam.com — that 2024 draft is excluded from this track entirely, per task instructions, and is unrelated to this gazette-printed 'مشروع' labeling.",
+      "pdf_source_committed": "inputs/whistleblower_regulation_official_pdfs/uqn_gazette_5162_20260605_draft.pdf",
+      "pdf_sha256": "696e9f51079a9cf4f625696d30d42a8c6efdbc5c3d270fe5ca46e4dad292eed3",
+      "pdf_pages": 16
+    },
+    "corrected_final_publication_GOVERNING": {
+      "gazette": "جريدة أم القرى",
+      "issue_number": "5163",
+      "issue_date_hijri": "26/12/1447",
+      "issue_date_gregorian": "2026-06-12",
+      "page": "2-3",
+      "heading_as_printed_ar": "اللائحة التنفيذية لنظام حماية المبلغين والشهود والخبراء والضحايا",
+      "errata_notice_ar": "إشارة إلى قرار مجلس الوزراء رقم (892) بتاريخ 1447/12/02هـ والمنشور في العدد رقم (5162) بتاريخ 1447/12/19هـ، في الصفحتين (6 و7)، تحت عنوان (مشروع اللائحة التنفيذية لنظام حماية المبلغين والشهود والخبراء والضحايا)، وردنا تعديل على اللائحة، وفيما يلي نص اللائحة المحدثة:",
+      "article_count_in_this_printing": 12,
+      "status": "GOVERNING_TEXT_USED_IN_THIS_TRACK",
+      "note": "The Umm Al-Qura gazette itself published this as an official correction ('تنويه') to issue 5162, explicitly stating a correction/amendment was received and providing the 'updated regulation text' (نص اللائحة المحدثة). Comparing the two printings article-by-article shows exactly one substantive change: a wholly new article (numbered 2 in this printing) was inserted, requiring oversight/investigation/control bodies to ensure investigating authorities retain internal access to whistleblower/witness/expert/victim identities that Article 2 of the base law requires those bodies to keep hidden in their own records and correspondence. All other articles are otherwise the same substantive text, shifted down by one article number (draft article N -> corrected article N+1 for N=2..11); article 1 is unchanged in position and (with one immaterial punctuation difference) in wording. This track therefore treats the corrected 12-article text as the sole current, governing Arabic text; the draft is not independently machine-encoded as a parallel articles set (only summarized here for provenance) since it never took effect on its own before being corrected.",
+      "pdf_source_committed": "inputs/whistleblower_regulation_official_pdfs/uqn_gazette_5163_20260612_corrected.pdf",
+      "pdf_sha256": "509b83192f2e973a900df283e829fe8b5f554db744457e4ec017412c6197d037",
+      "pdf_pages": 8
+    }
+  },
+  "consolidated_amended_regulation": false,
+  "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+  "tier_rationale": "Extremely recent instrument (finalized ~7 weeks, corrected ~6 weeks, before this corpus's current date) verified directly against two independently hash-recorded primary-source gazette PDFs (issue 5162 draft + issue 5163 correction), which is a strong primary basis; however no secondary legal commentary on the FINAL 12-article/decision-892 text was located, and several secondary sources actively conflict with the primary-source-confirmed facts (article count 11 vs. 12, decision number 893 vs. 892) because they reflect the superseded draft. Given single-channel-of-record verification plus a documented conflict with existing secondary coverage, TIER_4 is the honest classification, not TIER_2.",
+  "known_unresolved_discrepancies": [
+    "Effective-date ambiguity: Article 12 reads 'تنشر اللائحة في الجريدة الرسمية، ويعمل بها من تاريخ نشرها' (published in the Official Gazette; effective from the date of its publication). Because this regulation was printed TWICE — issue 5162 (2026-06-05, printed under the label 'مشروع اللائحة التنفيذية') and, one week later, issue 5163 (2026-06-12, the corrected/final printing) — it is not textually certain from the regulation alone whether 'تاريخ نشرها' refers to the original 2026-06-05 gazette date or the corrected 2026-06-12 gazette date. This track does not assert an effective date and instead reports both candidate dates.",
+    "Decision-number correction vs. secondary sources: this track's independently-verified decision number (892) contradicts the number reported by the task's prior research and by several secondary sources (qanoonsa.com and outlets apparently echoing it, which say 893). See council_of_ministers_decision.PRIOR_RESEARCH_DISCREPANCY above for the primary-source basis of this correction. No secondary source found during this verification independently corroborates 892; okaz.com.sa's contemporaneous report does not cite a decision number at all.",
+    "Article-count correction vs. secondary sources / prior research: prior research (echoing qanoonsa.com's draft-mirror page and contemporaneous news coverage from May 19-20, 2026) states 11 articles. This track's governing text (the issue-5163 corrected printing) has 12 articles, the base 11 plus one newly-inserted article (see gazette_publications above). No secondary news source found during this verification reports on, or reflects, the June 12, 2026 correction; all secondary corroboration located describes the superseded 11-article draft printing only.",
+    "Extreme recency / thin secondary corroboration: this instrument was finalized (per the errata) only about seven weeks before the corpus's current date, and the corrective printing only about six weeks before. Ordinary secondary legal commentary/analysis of the FINAL 12-article text was not found; all secondary coverage located predates and reflects the superseded draft. Confidence in this track rests on direct, hash-recorded primary-source gazette PDFs (two independent issues) rather than on independent secondary corroboration of the final text.",
+    "Jeddah session location for the May 19, 2026 Council of Ministers meeting is secondary-sourced only (news outlets); the gazette-published decision text itself does not state a city."
+  ],
+  "source_artifact": "sources/whistleblower_regulation/law/official_source/whistleblower_regulation_official_source.json"
+}

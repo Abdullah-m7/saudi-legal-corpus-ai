@@ -4,17 +4,18 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 428,
-  "top1_hits": 401,
-  "top3_hits": 421,
-  "top5_hits": 424,
-  "top1_accuracy": 0.9369,
-  "top3_accuracy": 0.9836,
-  "top5_accuracy": 0.9907,
-  "mrr_at_5": 0.9596,
+  "total_queries": 464,
+  "top1_hits": 431,
+  "top3_hits": 454,
+  "top5_hits": 459,
+  "top1_accuracy": 0.9289,
+  "top3_accuracy": 0.9784,
+  "top5_accuracy": 0.9892,
+  "mrr_at_5": 0.9547,
   "misses_top5": [
    "civ-004",
    "pdp-010",
+   "mtn-002",
    "dmz-001",
    "dmz-003"
   ]
@@ -107,8 +108,8 @@
      "score": 10
     },
     {
-     "record_id": "oa-llm-companies-art-036",
-     "article_number": 36,
+     "record_id": "commercial-agencies-regulation-llm-art-010",
+     "article_number": 10,
      "score": 10
     }
    ]
@@ -913,9 +914,9 @@
      "score": 16
     },
     {
-     "record_id": "personal-status-law-llm-art-158",
-     "article_number": 158,
-     "score": 12
+     "record_id": "press-regulation-llm-art-085",
+     "article_number": 85,
+     "score": 13
     }
    ]
   },
@@ -970,13 +971,13 @@
      "score": 5
     },
     {
-     "record_id": "labor-law-llm-art-042",
-     "article_number": 42,
+     "record_id": "electronic-transactions-regulation-llm-art-022",
+     "article_number": 22,
      "score": 5
     },
     {
-     "record_id": "labor-annex4-llm-art-019",
-     "article_number": 19,
+     "record_id": "labor-law-llm-art-042",
+     "article_number": 42,
      "score": 5
     }
    ]
@@ -1223,8 +1224,8 @@
      "score": 21
     },
     {
-     "record_id": "bankruptcy-regulation-llm-art-002",
-     "article_number": 2,
+     "record_id": "agriculture-regulation-llm-art-255",
+     "article_number": 255,
      "score": 5
     }
    ]
@@ -1254,8 +1255,8 @@
      "score": 6
     },
     {
-     "record_id": "competition-law-llm-art-002",
-     "article_number": 2,
+     "record_id": "child-protection-regulation-llm-art-019",
+     "article_number": 19,
      "score": 5
     }
    ]
@@ -1486,25 +1487,25 @@
     "law_component": "law",
     "article_number": 84
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "civil-service-regulation-llm-art-253",
+     "article_number": 253,
+     "score": 20
+    },
     {
      "record_id": "labor-law-llm-art-084",
      "article_number": 84,
      "score": 19
     },
     {
-     "record_id": "domestic-labor-regulation-llm-art-022",
-     "article_number": 22,
-     "score": 14
-    },
-    {
-     "record_id": "oa-llm-companies-art-076",
-     "article_number": 76,
-     "score": 12
+     "record_id": "civil-service-regulation-llm-art-028",
+     "article_number": 28,
+     "score": 15
     }
    ]
   },
@@ -2365,14 +2366,14 @@
      "score": 18
     },
     {
+     "record_id": "rett-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 16
+    },
+    {
      "record_id": "bankruptcy-fees-regulation-llm-art-001",
      "article_number": 1,
      "score": 13
-    },
-    {
-     "record_id": "sharia-procedure-regulation-llm-prov-269",
-     "article_number": 269,
-     "score": 12
     }
    ]
   },
@@ -2416,11 +2417,16 @@
     "law_component": "law",
     "article_number": 114
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "press-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 15
+    },
     {
      "record_id": "criminal-procedure-law-llm-art-114",
      "article_number": 114,
@@ -2429,11 +2435,6 @@
     {
      "record_id": "juveniles-law-llm-art-009",
      "article_number": 9,
-     "score": 13
-    },
-    {
-     "record_id": "terrorism-reg-llm-art-012",
-     "article_number": 12,
      "score": 13
     }
    ]
@@ -2633,25 +2634,25 @@
     "law_component": "law",
     "article_number": 45
    },
-   "gold_rank": 3,
+   "gold_rank": null,
    "hit_top1": false,
-   "hit_top3": true,
-   "hit_top5": true,
+   "hit_top3": false,
+   "hit_top5": false,
    "top_hits": [
+    {
+     "record_id": "press-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 20
+    },
+    {
+     "record_id": "agriculture-regulation-llm-art-021",
+     "article_number": 21,
+     "score": 19
+    },
     {
      "record_id": "enforcement-regulation-llm-prov-262",
      "article_number": 262,
      "score": 17
-    },
-    {
-     "record_id": "enforcement-regulation-llm-prov-108",
-     "article_number": 108,
-     "score": 16
-    },
-    {
-     "record_id": "enforcement-law-llm-art-045",
-     "article_number": 45,
-     "score": 16
     }
    ]
   },
@@ -2742,9 +2743,9 @@
      "score": 17
     },
     {
-     "record_id": "qismah-regulation-llm-art-014",
-     "article_number": 14,
-     "score": 13
+     "record_id": "press-regulation-llm-art-019",
+     "article_number": 19,
+     "score": 16
     }
    ]
   },
@@ -3238,9 +3239,9 @@
      "score": 22
     },
     {
-     "record_id": "sharia-procedure-law-llm-art-179",
-     "article_number": 179,
-     "score": 19
+     "record_id": "associations-ngo-regulation-llm-art-026",
+     "article_number": 26,
+     "score": 20
     }
    ]
   },
@@ -3920,8 +3921,8 @@
      "score": 27
     },
     {
-     "record_id": "commercial-register-law-llm-art-017",
-     "article_number": 17,
+     "record_id": "commercial-register-regulation-llm-art-002",
+     "article_number": 2,
      "score": 25
     }
    ]
@@ -4039,14 +4040,14 @@
      "score": 33
     },
     {
-     "record_id": "commercial-agencies-law-llm-art-003",
-     "article_number": 3,
-     "score": 12
+     "record_id": "commercial-agencies-regulation-llm-art-015",
+     "article_number": 15,
+     "score": 25
     },
     {
-     "record_id": "anti-fraud-law-llm-art-016",
-     "article_number": 16,
-     "score": 11
+     "record_id": "commercial-agencies-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 13
     }
    ]
   },
@@ -4101,14 +4102,14 @@
      "score": 37
     },
     {
+     "record_id": "chambers-of-commerce-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 25
+    },
+    {
      "record_id": "chambers-of-commerce-law-llm-art-010",
      "article_number": 10,
      "score": 22
-    },
-    {
-     "record_id": "chambers-of-commerce-law-llm-art-007",
-     "article_number": 7,
-     "score": 21
     }
    ]
   },
@@ -4137,9 +4138,9 @@
      "score": 18
     },
     {
-     "record_id": "commercial-courts-regulation-llm-art-155",
-     "article_number": 155,
-     "score": 15
+     "record_id": "chambers-of-commerce-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 17
     }
    ]
   },
@@ -4168,8 +4169,8 @@
      "score": 18
     },
     {
-     "record_id": "commercial-books-law-llm-art-005",
-     "article_number": 5,
+     "record_id": "civil-service-regulation-llm-art-176",
+     "article_number": 176,
      "score": 17
     }
    ]
@@ -4535,14 +4536,14 @@
      "score": 26
     },
     {
-     "record_id": "foreign-ownership-law-llm-art-001",
+     "record_id": "foreign-ownership-regulation-llm-art-001",
      "article_number": 1,
-     "score": 17
+     "score": 20
     },
     {
-     "record_id": "foreign-ownership-law-llm-art-006",
-     "article_number": 6,
-     "score": 17
+     "record_id": "foreign-ownership-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 19
     }
    ]
   },
@@ -4695,9 +4696,9 @@
      "score": 20
     },
     {
-     "record_id": "competition-regulation-llm-art-003",
-     "article_number": 3,
-     "score": 18
+     "record_id": "press-regulation-llm-art-087",
+     "article_number": 87,
+     "score": 19
     }
    ]
   },
@@ -4726,9 +4727,9 @@
      "score": 39
     },
     {
-     "record_id": "foreign-ownership-law-llm-art-006",
+     "record_id": "foreign-ownership-regulation-llm-art-006",
      "article_number": 6,
-     "score": 32
+     "score": 36
     }
    ]
   },
@@ -4907,14 +4908,14 @@
      "score": 12
     },
     {
-     "record_id": "environmental-air-quality-reg-llm-art-007",
-     "article_number": 7,
+     "record_id": "anti-narcotics-regulation-llm-art-027",
+     "article_number": 27,
      "score": 11
     },
     {
-     "record_id": "terrorism-law-llm-art-036",
-     "article_number": 36,
-     "score": 8
+     "record_id": "environmental-air-quality-reg-llm-art-007",
+     "article_number": 7,
+     "score": 11
     }
    ]
   },
@@ -4969,13 +4970,13 @@
      "score": 33
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-237",
-     "article_number": 237,
-     "score": 14
+     "record_id": "state-revenue-regulation-llm-art-037",
+     "article_number": 37,
+     "score": 15
     },
     {
-     "record_id": "municipal-councils-law-llm-art-057",
-     "article_number": 57,
+     "record_id": "protection-from-abuse-regulation-llm-art-008",
+     "article_number": 8,
      "score": 14
     }
    ]
@@ -5067,9 +5068,9 @@
      "score": 27
     },
     {
-     "record_id": "state-funded-lawyer-regulation-llm-art-003",
-     "article_number": 3,
-     "score": 22
+     "record_id": "whistleblower-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 23
     }
    ]
   },
@@ -5284,9 +5285,9 @@
      "score": 20
     },
     {
-     "record_id": "oa-llm-companies-art-256",
-     "article_number": 256,
-     "score": 19
+     "record_id": "press-regulation-llm-art-076",
+     "article_number": 76,
+     "score": 20
     }
    ]
   },
@@ -5341,14 +5342,14 @@
      "score": 33
     },
     {
+     "record_id": "associations-ngo-regulation-llm-art-051",
+     "article_number": 51,
+     "score": 20
+    },
+    {
      "record_id": "commercial-papers-law-llm-art-054",
      "article_number": 54,
      "score": 19
-    },
-    {
-     "record_id": "nationality-law-llm-art-024",
-     "article_number": 24,
-     "score": 18
     }
    ]
   },
@@ -5656,9 +5657,9 @@
      "score": 27
     },
     {
-     "record_id": "customs-law-llm-art-126",
-     "article_number": 120,
-     "score": 14
+     "record_id": "civil-service-regulation-llm-art-014",
+     "article_number": 14,
+     "score": 24
     }
    ]
   },
@@ -5837,14 +5838,14 @@
      "score": 37
     },
     {
+     "record_id": "protection-from-abuse-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 19
+    },
+    {
      "record_id": "judiciary-bog-mechanism-llm-art-009",
      "article_number": 9,
      "score": 18
-    },
-    {
-     "record_id": "environmental-air-quality-reg-llm-art-003",
-     "article_number": 3,
-     "score": 15
     }
    ]
   },
@@ -5930,14 +5931,14 @@
      "score": 46
     },
     {
-     "record_id": "general-education-law-llm-art-062",
-     "article_number": 62,
-     "score": 17
+     "record_id": "press-regulation-llm-art-085",
+     "article_number": 85,
+     "score": 23
     },
     {
-     "record_id": "standards-quality-law-llm-art-021",
-     "article_number": 21,
-     "score": 17
+     "record_id": "press-regulation-llm-art-066",
+     "article_number": 66,
+     "score": 22
     }
    ]
   },
@@ -6023,14 +6024,14 @@
      "score": 23
     },
     {
+     "record_id": "press-regulation-llm-art-087",
+     "article_number": 87,
+     "score": 23
+    },
+    {
      "record_id": "oa-llm-companies-art-236",
      "article_number": 236,
      "score": 22
-    },
-    {
-     "record_id": "competition-law-llm-art-003",
-     "article_number": 3,
-     "score": 16
     }
    ]
   },
@@ -6705,13 +6706,13 @@
      "score": 48
     },
     {
-     "record_id": "labor-annex2-llm-table-6",
-     "article_number": 6,
-     "score": 20
+     "record_id": "civil-defense-regulation-llm-rights-duties-art-005",
+     "article_number": 5,
+     "score": 22
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-390",
-     "article_number": 390,
+     "record_id": "labor-annex2-llm-table-6",
+     "article_number": 6,
      "score": 20
     }
    ]
@@ -7051,9 +7052,9 @@
      "score": 18
     },
     {
-     "record_id": "oa-llm-companies-art-142",
-     "article_number": 142,
-     "score": 14
+     "record_id": "press-regulation-llm-art-022",
+     "article_number": 22,
+     "score": 15
     }
    ]
   },
@@ -7144,9 +7145,9 @@
      "score": 33
     },
     {
-     "record_id": "pdpl-reg-llm-art-006",
-     "article_number": 6,
-     "score": 25
+     "record_id": "telecommunications-regulation-llm-art-048",
+     "article_number": 48,
+     "score": 27
     }
    ]
   },
@@ -7387,14 +7388,14 @@
      "score": 21
     },
     {
-     "record_id": "aml-law-llm-art-033",
-     "article_number": 33,
-     "score": 11
+     "record_id": "press-regulation-llm-art-066",
+     "article_number": 66,
+     "score": 14
     },
     {
-     "record_id": "competition-regulation-llm-art-003",
-     "article_number": 3,
-     "score": 11
+     "record_id": "electricity-regulation-llm-art-032",
+     "article_number": 32,
+     "score": 13
     }
    ]
   },
@@ -7418,14 +7419,14 @@
      "score": 52
     },
     {
+     "record_id": "allegiance-commission-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 34
+    },
+    {
      "record_id": "allegiance-commission-law-llm-art-025",
      "article_number": 25,
      "score": 26
-    },
-    {
-     "record_id": "basic-law-of-governance-llm-art-005",
-     "article_number": 5,
-     "score": 25
     }
    ]
   },
@@ -7531,25 +7532,25 @@
     "law_component": "law",
     "article_number": 11
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "electricity-regulation-llm-art-085",
+     "article_number": 85,
+     "score": 21
+    },
     {
      "record_id": "mining-investment-law-llm-art-011",
      "article_number": 11,
      "score": 17
     },
     {
-     "record_id": "inv-reg-llm-art-025",
-     "article_number": 25,
-     "score": 15
-    },
-    {
-     "record_id": "mining-investment-law-llm-art-060",
-     "article_number": 60,
-     "score": 13
+     "record_id": "electricity-regulation-llm-art-077",
+     "article_number": 77,
+     "score": 17
     }
    ]
   },
@@ -7609,8 +7610,8 @@
      "score": 21
     },
     {
-     "record_id": "trademark-law-llm-art-002",
-     "article_number": 2,
+     "record_id": "press-regulation-llm-art-022",
+     "article_number": 22,
      "score": 17
     }
    ]
@@ -7666,13 +7667,13 @@
      "score": 33
     },
     {
-     "record_id": "foreign-ownership-law-llm-art-013",
-     "article_number": 13,
-     "score": 19
+     "record_id": "foreign-ownership-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 20
     },
     {
-     "record_id": "oa-llm-companies-art-150",
-     "article_number": 150,
+     "record_id": "protection-from-abuse-regulation-llm-art-001",
+     "article_number": 1,
      "score": 19
     }
    ]
@@ -7790,14 +7791,14 @@
      "score": 27
     },
     {
-     "record_id": "personal-status-reg-llm-art-017",
-     "article_number": 17,
-     "score": 13
+     "record_id": "electronic-transactions-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 14
     },
     {
-     "record_id": "elitigation-guide-regulation-llm-art-002",
-     "article_number": 2,
-     "score": 12
+     "record_id": "press-regulation-llm-art-074",
+     "article_number": 74,
+     "score": 14
     }
    ]
   },
@@ -7821,14 +7822,14 @@
      "score": 35
     },
     {
-     "record_id": "ecommerce-regulation-llm-art-012",
-     "article_number": 12,
-     "score": 28
+     "record_id": "commercial-register-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 32
     },
     {
-     "record_id": "commercial-register-law-llm-art-001",
-     "article_number": 1,
-     "score": 28
+     "record_id": "commercial-register-regulation-llm-art-015",
+     "article_number": 15,
+     "score": 30
     }
    ]
   },
@@ -7857,9 +7858,9 @@
      "score": 15
     },
     {
-     "record_id": "food-regulation-llm-art-041",
-     "article_number": 41,
-     "score": 13
+     "record_id": "rett-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 15
     }
    ]
   },
@@ -8007,14 +8008,14 @@
      "score": 26
     },
     {
-     "record_id": "muslaha-regulation-llm-art-010",
-     "article_number": 10,
-     "score": 16
+     "record_id": "civil-service-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 17
     },
     {
-     "record_id": "muslaha-regulation-llm-art-011",
-     "article_number": 11,
-     "score": 13
+     "record_id": "civil-service-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 17
     }
    ]
   },
@@ -8027,9 +8028,9 @@
     "law_component": "law",
     "article_number": 37
    },
-   "gold_rank": 3,
+   "gold_rank": 5,
    "hit_top1": false,
-   "hit_top3": true,
+   "hit_top3": false,
    "hit_top5": true,
    "top_hits": [
     {
@@ -8043,9 +8044,9 @@
      "score": 27
     },
     {
-     "record_id": "anti-narcotics-law-llm-art-037",
-     "article_number": 37,
-     "score": 24
+     "record_id": "protection-from-abuse-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 27
     }
    ]
   },
@@ -8167,9 +8168,9 @@
      "score": 16
     },
     {
-     "record_id": "environmental-violations-penalties-reg-llm-007",
-     "article_number": 7,
-     "score": 14
+     "record_id": "foreign-ownership-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 16
     }
    ]
   },
@@ -8286,14 +8287,14 @@
      "score": 52
     },
     {
-     "record_id": "civil-service-law-llm-art-007",
-     "article_number": 7,
-     "score": 32
+     "record_id": "civil-service-regulation-llm-art-016",
+     "article_number": 16,
+     "score": 36
     },
     {
-     "record_id": "civil-service-law-llm-art-010",
-     "article_number": 10,
-     "score": 19
+     "record_id": "civil-service-regulation-llm-art-031",
+     "article_number": 31,
+     "score": 33
     }
    ]
   },
@@ -8317,14 +8318,14 @@
      "score": 33
     },
     {
+     "record_id": "civil-service-regulation-llm-art-210",
+     "article_number": 210,
+     "score": 24
+    },
+    {
      "record_id": "civil-service-law-llm-art-021",
      "article_number": 21,
      "score": 18
-    },
-    {
-     "record_id": "civil-service-law-llm-art-012",
-     "article_number": 12,
-     "score": 17
     }
    ]
   },
@@ -8348,14 +8349,14 @@
      "score": 40
     },
     {
+     "record_id": "social-insurance-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 39
+    },
+    {
      "record_id": "social-insurance-law-llm-art-013",
      "article_number": 13,
      "score": 34
-    },
-    {
-     "record_id": "social-insurance-law-llm-art-003",
-     "article_number": 3,
-     "score": 31
     }
    ]
   },
@@ -8384,8 +8385,8 @@
      "score": 30
     },
     {
-     "record_id": "social-insurance-law-llm-art-043",
-     "article_number": 43,
+     "record_id": "social-insurance-regulation-llm-art-019",
+     "article_number": 19,
      "score": 23
     }
    ]
@@ -8410,14 +8411,14 @@
      "score": 33
     },
     {
+     "record_id": "social-insurance-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 26
+    },
+    {
      "record_id": "maritime-commercial-law-llm-art-258",
      "article_number": 258,
      "score": 22
-    },
-    {
-     "record_id": "basic-law-of-governance-llm-art-033",
-     "article_number": 33,
-     "score": 21
     }
    ]
   },
@@ -8441,14 +8442,14 @@
      "score": 22
     },
     {
+     "record_id": "social-insurance-legacy-regulation-llm-art-annuities_016",
+     "article_number": 16,
+     "score": 20
+    },
+    {
      "record_id": "labor-annex2-llm-table-8",
      "article_number": 8,
      "score": 15
-    },
-    {
-     "record_id": "domestic-labor-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 14
     }
    ]
   },
@@ -8601,9 +8602,9 @@
      "score": 25
     },
     {
-     "record_id": "vat-regulation-llm-art-014",
-     "article_number": 14,
-     "score": 22
+     "record_id": "civil-defense-regulation-llm-rights-duties-art-004",
+     "article_number": 4,
+     "score": 23
     }
    ]
   },
@@ -8694,9 +8695,9 @@
      "score": 46
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-265",
-     "article_number": 265,
-     "score": 34
+     "record_id": "anti-fraud-regulation-llm-art-017",
+     "article_number": 17,
+     "score": 36
     }
    ]
   },
@@ -8880,9 +8881,9 @@
      "score": 20
     },
     {
-     "record_id": "capital-market-law-llm-art-004",
-     "article_number": 4,
-     "score": 16
+     "record_id": "healthcare-professions-regulation-llm-art-028",
+     "article_number": 40,
+     "score": 19
     }
    ]
   },
@@ -9092,13 +9093,13 @@
      "score": 55
     },
     {
-     "record_id": "rett-law-llm-art-017",
-     "article_number": 17,
-     "score": 25
+     "record_id": "accounting-auditing-regulation-llm-art-012",
+     "article_number": 12,
+     "score": 46
     },
     {
-     "record_id": "evidence-expertise-llm-art-015",
-     "article_number": 15,
+     "record_id": "rett-law-llm-art-017",
+     "article_number": 17,
      "score": 25
     }
    ]
@@ -9278,14 +9279,14 @@
      "score": 49
     },
     {
+     "record_id": "engineering-practice-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 30
+    },
+    {
      "record_id": "engineering-practice-law-llm-art-001",
      "article_number": 1,
      "score": 29
-    },
-    {
-     "record_id": "engineering-practice-law-llm-art-011",
-     "article_number": 11,
-     "score": 28
     }
    ]
   },
@@ -9309,14 +9310,14 @@
      "score": 32
     },
     {
-     "record_id": "saudi-engineers-law-llm-art-007",
-     "article_number": 7,
-     "score": 21
+     "record_id": "saudi-engineers-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 27
     },
     {
-     "record_id": "food-regulation-llm-art-076",
-     "article_number": 76,
-     "score": 21
+     "record_id": "saudi-engineers-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 25
     }
    ]
   },
@@ -9469,8 +9470,8 @@
      "score": 54
     },
     {
-     "record_id": "engineering-practice-law-llm-art-004",
-     "article_number": 4,
+     "record_id": "engineering-practice-regulation-llm-art-001",
+     "article_number": 1,
      "score": 49
     }
    ]
@@ -9681,13 +9682,13 @@
      "score": 23
     },
     {
-     "record_id": "oa-llm-companies-art-096",
-     "article_number": 96,
-     "score": 21
+     "record_id": "civil-defense-regulation-llm-firefighting-rescue-art-006",
+     "article_number": 6,
+     "score": 22
     },
     {
-     "record_id": "oa-llm-companies-art-168",
-     "article_number": 168,
+     "record_id": "civil-defense-regulation-llm-firefighting-rescue-art-002",
+     "article_number": 2,
      "score": 21
     }
    ]
@@ -10115,14 +10116,14 @@
      "score": 34
     },
     {
-     "record_id": "premium-residency-law-llm-art-006",
-     "article_number": 6,
-     "score": 14
+     "record_id": "premium-residency-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 19
     },
     {
-     "record_id": "premium-residency-law-llm-art-001",
-     "article_number": 1,
-     "score": 13
+     "record_id": "premium-residency-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 17
     }
    ]
   },
@@ -10146,14 +10147,14 @@
      "score": 62
     },
     {
+     "record_id": "protection-from-abuse-regulation-llm-art-013",
+     "article_number": 13,
+     "score": 45
+    },
+    {
      "record_id": "travel-documents-regulation-llm-art-001",
      "article_number": 1,
      "score": 38
-    },
-    {
-     "record_id": "travel-documents-regulation-llm-art-047",
-     "article_number": 47,
-     "score": 35
     }
    ]
   },
@@ -10306,9 +10307,9 @@
      "score": 18
     },
     {
-     "record_id": "oa-llm-companies-art-109",
-     "article_number": 109,
-     "score": 14
+     "record_id": "privatization-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 15
     }
    ]
   },
@@ -10383,25 +10384,25 @@
     "law_component": "law",
     "article_number": 1
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "electricity-regulation-llm-art-057",
+     "article_number": 57,
+     "score": 39
+    },
     {
      "record_id": "electricity-law-llm-art-001",
      "article_number": 1,
      "score": 35
     },
     {
-     "record_id": "electricity-law-llm-art-005",
-     "article_number": 5,
-     "score": 24
-    },
-    {
-     "record_id": "labor-annex3-llm-art-001",
+     "record_id": "electricity-regulation-llm-art-001",
      "article_number": 1,
-     "score": 23
+     "score": 27
     }
    ]
   },
@@ -10430,9 +10431,9 @@
      "score": 12
     },
     {
-     "record_id": "food-law-llm-art-017",
-     "article_number": 18,
-     "score": 8
+     "record_id": "electricity-regulation-llm-art-024",
+     "article_number": 24,
+     "score": 10
     }
    ]
   },
@@ -10487,14 +10488,14 @@
      "score": 45
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
-     "score": 13
+     "record_id": "water-regulation-llm-art-024",
+     "article_number": 24,
+     "score": 33
     },
     {
-     "record_id": "water-law-llm-art-001",
-     "article_number": 1,
-     "score": 12
+     "record_id": "water-regulation-llm-art-032",
+     "article_number": 32,
+     "score": 19
     }
    ]
   },
@@ -10704,14 +10705,14 @@
      "score": 47
     },
     {
-     "record_id": "franchise-regulation-llm-art-006",
-     "article_number": 6,
-     "score": 16
+     "record_id": "civil-defense-regulation-llm-firefighting-rescue-art-002",
+     "article_number": 2,
+     "score": 20
     },
     {
-     "record_id": "aml-regulation-llm-art-008",
-     "article_number": 14,
-     "score": 15
+     "record_id": "water-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 17
     }
    ]
   },
@@ -11138,14 +11139,14 @@
      "score": 40
     },
     {
+     "record_id": "press-regulation-llm-art-093",
+     "article_number": 93,
+     "score": 31
+    },
+    {
      "record_id": "environmental-permits-reg-llm-art-011",
      "article_number": 11,
      "score": 27
-    },
-    {
-     "record_id": "environmental-violations-penalties-reg-llm-009",
-     "article_number": 1,
-     "score": 25
     }
    ]
   },
@@ -11200,14 +11201,14 @@
      "score": 16
     },
     {
-     "record_id": "ecommerce-regulation-llm-art-003",
-     "article_number": 3,
-     "score": 12
+     "record_id": "civil-service-regulation-llm-art-099",
+     "article_number": 99,
+     "score": 16
     },
     {
-     "record_id": "environmental-inspection-audit-reg-llm-010",
-     "article_number": 10,
-     "score": 11
+     "record_id": "civil-service-regulation-llm-art-100",
+     "article_number": 100,
+     "score": 16
     }
    ]
   },
@@ -11236,9 +11237,9 @@
      "score": 14
     },
     {
-     "record_id": "standards-quality-law-llm-art-010",
-     "article_number": 10,
-     "score": 12
+     "record_id": "privatization-regulation-llm-art-085",
+     "article_number": 85,
+     "score": 13
     }
    ]
   },
@@ -11262,14 +11263,14 @@
      "score": 46
     },
     {
-     "record_id": "aml-regulation-llm-art-014",
-     "article_number": 23,
-     "score": 22
+     "record_id": "water-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 23
     },
     {
-     "record_id": "aml-regulation-llm-art-009",
-     "article_number": 15,
-     "score": 21
+     "record_id": "water-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 23
     }
    ]
   },
@@ -11448,14 +11449,14 @@
      "score": 40
     },
     {
+     "record_id": "rett-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 34
+    },
+    {
      "record_id": "municipal-realestate-law-llm-art-006",
      "article_number": 6,
      "score": 24
-    },
-    {
-     "record_id": "gcc-ownership-llm-art-003",
-     "article_number": 3,
-     "score": 23
     }
    ]
   },
@@ -11608,8 +11609,8 @@
      "score": 27
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-325",
-     "article_number": 325,
+     "record_id": "agriculture-regulation-llm-art-011",
+     "article_number": 11,
      "score": 21
     }
    ]
@@ -11696,14 +11697,14 @@
      "score": 50
     },
     {
-     "record_id": "protection-from-abuse-law-llm-art-015",
-     "article_number": 15,
-     "score": 25
+     "record_id": "child-protection-regulation-llm-art-019",
+     "article_number": 19,
+     "score": 38
     },
     {
-     "record_id": "child-protection-law-llm-art-001",
-     "article_number": 1,
-     "score": 19
+     "record_id": "child-protection-regulation-llm-art-022",
+     "article_number": 22,
+     "score": 26
     }
    ]
   },
@@ -11758,14 +11759,14 @@
      "score": 32
     },
     {
-     "record_id": "labor-annex3-llm-art-008",
-     "article_number": 8,
-     "score": 17
+     "record_id": "protection-from-abuse-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 20
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-157",
-     "article_number": 157,
-     "score": 16
+     "record_id": "child-protection-regulation-llm-art-022",
+     "article_number": 22,
+     "score": 19
     }
    ]
   },
@@ -11975,14 +11976,14 @@
      "score": 38
     },
     {
-     "record_id": "labor-annex3-llm-art-014",
-     "article_number": 14,
+     "record_id": "civil-service-regulation-llm-art-004",
+     "article_number": 4,
      "score": 16
     },
     {
-     "record_id": "domestic-labor-regulation-llm-art-002",
-     "article_number": 2,
-     "score": 15
+     "record_id": "civil-service-regulation-llm-art-162",
+     "article_number": 162,
+     "score": 16
     }
    ]
   },
@@ -12073,9 +12074,9 @@
      "score": 22
     },
     {
-     "record_id": "oa-llm-companies-art-110",
-     "article_number": 110,
-     "score": 18
+     "record_id": "weapons-ammunition-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 19
     }
    ]
   },
@@ -12130,14 +12131,14 @@
      "score": 47
     },
     {
+     "record_id": "press-regulation-llm-art-073",
+     "article_number": 73,
+     "score": 20
+    },
+    {
      "record_id": "aml-regulation-llm-art-019",
      "article_number": 39,
      "score": 19
-    },
-    {
-     "record_id": "domestic-labor-regulation-llm-art-005",
-     "article_number": 5,
-     "score": 18
     }
    ]
   },
@@ -12192,14 +12193,14 @@
      "score": 42
     },
     {
+     "record_id": "press-regulation-llm-art-030",
+     "article_number": 30,
+     "score": 20
+    },
+    {
      "record_id": "civil-defense-law-llm-art-009",
      "article_number": 9,
      "score": 18
-    },
-    {
-     "record_id": "civil-defense-law-llm-art-001",
-     "article_number": 1,
-     "score": 17
     }
    ]
   },
@@ -12223,14 +12224,14 @@
      "score": 22
     },
     {
-     "record_id": "civil-defense-law-llm-art-003",
-     "article_number": 3,
-     "score": 17
+     "record_id": "civil-defense-regulation-llm-rights-duties-art-001",
+     "article_number": 1,
+     "score": 18
     },
     {
-     "record_id": "civil-defense-law-llm-art-007",
-     "article_number": 7,
-     "score": 17
+     "record_id": "civil-defense-regulation-llm-rights-duties-art-002",
+     "article_number": 2,
+     "score": 18
     }
    ]
   },
@@ -12285,13 +12286,13 @@
      "score": 23
     },
     {
-     "record_id": "oa-llm-companies-art-158",
-     "article_number": 158,
-     "score": 12
+     "record_id": "associations-ngo-regulation-llm-art-117",
+     "article_number": 117,
+     "score": 15
     },
     {
-     "record_id": "muslaha-regulation-llm-art-006",
-     "article_number": 6,
+     "record_id": "associations-ngo-regulation-llm-art-104",
+     "article_number": 104,
      "score": 12
     }
    ]
@@ -12383,9 +12384,9 @@
      "score": 12
     },
     {
-     "record_id": "pdpl-cross-border-transfer-regulation-llm-art-007",
-     "article_number": 7,
-     "score": 11
+     "record_id": "press-regulation-llm-art-052",
+     "article_number": 52,
+     "score": 12
     }
    ]
   },
@@ -12409,14 +12410,14 @@
      "score": 37
     },
     {
+     "record_id": "protection-from-abuse-regulation-llm-art-011",
+     "article_number": 11,
+     "score": 17
+    },
+    {
      "record_id": "telecommunications-law-llm-art-024",
      "article_number": 24,
      "score": 16
-    },
-    {
-     "record_id": "general-education-law-llm-art-013",
-     "article_number": 13,
-     "score": 15
     }
    ]
   },
@@ -12662,9 +12663,9 @@
      "score": 27
     },
     {
-     "record_id": "standards-quality-law-llm-art-017",
-     "article_number": 17,
-     "score": 26
+     "record_id": "press-regulation-llm-art-016",
+     "article_number": 16,
+     "score": 27
     }
    ]
   },
@@ -12936,14 +12937,14 @@
      "score": 32
     },
     {
+     "record_id": "rett-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 25
+    },
+    {
      "record_id": "real-estate-brokerage-law-llm-art-015",
      "article_number": 15,
      "score": 24
-    },
-    {
-     "record_id": "real-estate-brokerage-law-llm-art-001",
-     "article_number": 1,
-     "score": 22
     }
    ]
   },
@@ -12967,14 +12968,14 @@
      "score": 47
     },
     {
+     "record_id": "real-estate-brokerage-regulation-llm-art-021",
+     "article_number": 21,
+     "score": 29
+    },
+    {
      "record_id": "real-estate-brokerage-law-llm-art-001",
      "article_number": 1,
      "score": 26
-    },
-    {
-     "record_id": "real-estate-brokerage-law-llm-art-015",
-     "article_number": 15,
-     "score": 23
     }
    ]
   },
@@ -12998,14 +12999,14 @@
      "score": 45
     },
     {
-     "record_id": "capital-market-law-llm-art-020",
-     "article_number": 20,
-     "score": 16
+     "record_id": "state-revenue-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 25
     },
     {
-     "record_id": "capital-market-law-llm-art-020_mukarrar_1",
-     "article_number": 20,
-     "score": 16
+     "record_id": "civil-service-regulation-llm-art-186",
+     "article_number": 186,
+     "score": 17
     }
    ]
   },
@@ -13153,14 +13154,14 @@
      "score": 36
     },
     {
+     "record_id": "press-regulation-llm-art-099",
+     "article_number": 99,
+     "score": 35
+    },
+    {
      "record_id": "disability-rights-regulation-llm-art-045",
      "article_number": 45,
      "score": 31
-    },
-    {
-     "record_id": "judgment-objection-methods-regulation-llm-art-062",
-     "article_number": 62,
-     "score": 28
     }
    ]
   },
@@ -13284,6 +13285,1122 @@
     {
      "record_id": "gtpl-reg-llm-art-007",
      "article_number": 7,
+     "score": 15
+    }
+   ]
+  },
+  {
+   "query_id": "tnr-r1",
+   "query_ar": "أو قيد اسم (السعودية) أو أسماء (المدن أو المناطق أو الأماكن العامة) في المملكة وفق الضوابط الآتية: أ- ألا يكون الاسم مطابقا أو مشابها",
+   "category": "topical",
+   "gold": {
+    "corpus": "trade_names",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trade-names-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 39
+    },
+    {
+     "record_id": "trade-names-law-llm-art-007",
+     "article_number": 7,
+     "score": 20
+    },
+    {
+     "record_id": "patent-regulation-llm-art-010",
+     "article_number": 10,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "car-r1",
+   "query_ar": "الآتية المعاني المبينة أمامها، ما لم يقتض السياق خلاف ذلك: النظام: نظام الوكالات التجارية. الأحكام: أحكام تقديم الصيانة وتوفير قطع الغيار وضمان جودة الصنع.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "commercial_agencies",
+    "law_component": "regulation",
+    "article_number": 23
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-agencies-regulation-llm-art-001-annex",
+     "article_number": 23,
+     "score": 46
+    },
+    {
+     "record_id": "commercial-agencies-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 45
+    },
+    {
+     "record_id": "commercial-agencies-regulation-llm-art-005-annex",
+     "article_number": 27,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "aar-r1",
+   "query_ar": "توقف المحاسب القانوني أو إيقافه - سواء أكان يزاول المهنة من خلال مكتب خاص أم من خلال شركة مهنية - عن العمل لأي سبب",
+   "category": "topical",
+   "gold": {
+    "corpus": "accounting_auditing",
+    "law_component": "regulation",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "accounting-auditing-regulation-llm-art-012",
+     "article_number": 12,
+     "score": 31
+    },
+    {
+     "record_id": "accounting-auditing-law-llm-art-009",
+     "article_number": 9,
+     "score": 30
+    },
+    {
+     "record_id": "labor-reg-llm-art-014",
+     "article_number": 14,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "crr-r1",
+   "query_ar": "الحصول على ترخيص ممارسة النشاط المقيد في السجل التجاري للأنشطة التي تتطلب ترخيصا، وذلك خلال (تسعين) يوما من تاريخ قيد النشاط في السجل التجاري،",
+   "category": "topical",
+   "gold": {
+    "corpus": "commercial_register",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "commercial-register-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 49
+    },
+    {
+     "record_id": "labor-annex3-llm-art-002",
+     "article_number": 2,
+     "score": 33
+    },
+    {
+     "record_id": "commercial-register-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "reb-r1",
+   "query_ar": "في مخالفات أحكام النظام واللائحة وإيقاع العقوبات- العمل وفق الإجراءات التالية: 1- تقييد المخالفة في سجل خاص لدى اللجنة برقم وتاريخ، وتُدرج في جدول",
+   "category": "topical",
+   "gold": {
+    "corpus": "real_estate_brokerage",
+    "law_component": "regulation",
+    "article_number": 26
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-brokerage-regulation-llm-art-026",
+     "article_number": 26,
+     "score": 33
+    },
+    {
+     "record_id": "labor-annex1-llm-violation-table-1",
+     "article_number": 1,
+     "score": 27
+    },
+    {
+     "record_id": "press-regulation-llm-art-094",
+     "article_number": 94,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "fow-r1",
+   "query_ar": "غير السعودي متعمدا معلومات غير صحيحة أو مضللة تؤدي إلى تملكه للعقار أو اكتسابه أيا من الحقوق العينية الأخرى عليه. العقوبة: أ- غرامة (5%)",
+   "category": "topical",
+   "gold": {
+    "corpus": "foreign_ownership",
+    "law_component": "regulation",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "foreign-ownership-regulation-llm-penalties-table",
+     "article_number": 15,
+     "score": 34
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-012",
+     "article_number": 12,
+     "score": 33
+    },
+    {
+     "record_id": "foreign-ownership-law-llm-art-002",
+     "article_number": 2,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "afr-r1",
+   "query_ar": "التجاريّة إجراء تخفيضات شاملّة أو جزئيّة لأسعار المُنتَجات المعروضة للبيع بها أو الإعلان عنها إلا بعد الحصول على ترخيص بذلك من الوزارة أو فرعها",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_fraud",
+    "law_component": "regulation",
+    "article_number": 18
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-fraud-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 30
+    },
+    {
+     "record_id": "press-regulation-llm-art-052",
+     "article_number": 52,
+     "score": 22
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "ret-r1",
+   "query_ar": "عشرة) والمادة (الثامنة عشرة) من النظام: تكون الضوابط والإجراءات والنماذج والمستندات الآتية لازمة لتنفيذ أحكام النظام: أ. ضوابط وإجراءات تسجيل التصرف العقاري لدى الهيئة:",
+   "category": "topical",
+   "gold": {
+    "corpus": "rett",
+    "law_component": "regulation",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "rett-regulation-llm-art-011",
+     "article_number": 11,
+     "score": 53
+    },
+    {
+     "record_id": "rett-law-llm-art-012",
+     "article_number": 12,
+     "score": 37
+    },
+    {
+     "record_id": "rett-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "ana-r1",
+   "query_ar": "هي: أ – السفن . ب – الطائرات. جـ – القطارات. ٢ – ضوابط حمل الأدوية الطبية التي تحتوي على مواد مخدرة أو مؤثرات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "anti_narcotics",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-narcotics-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 35
+    },
+    {
+     "record_id": "anti-narcotics-regulation-llm-art-024",
+     "article_number": 24,
+     "score": 24
+    },
+    {
+     "record_id": "anti-narcotics-law-llm-art-037",
+     "article_number": 37,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "acc-r1",
+   "query_ar": "الاستثمار الأجنبي والأنظمة ذات العلاقة، يعد من الأدوات التي تؤدي إلى التصرف على نحو مطلق في المنشأة والتي لا يجوز للمنشأة منحها لغير السعودي",
+   "category": "topical",
+   "gold": {
+    "corpus": "anti_concealment",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-concealment-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 36
+    },
+    {
+     "record_id": "anti-concealment-law-llm-art-004",
+     "article_number": 4,
+     "score": 28
+    },
+    {
+     "record_id": "domestic-labor-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "prv-r1",
+   "query_ar": "تقديم العروض -بحد أدنى- ما يأتي: 1- وصفا لوثيقة طلب تقديم العروض ودورها في العملية التنافسية، مع تفصيل لكيفية تقييم العروض، والجدول الزمني للتنفيذ،",
+   "category": "topical",
+   "gold": {
+    "corpus": "privatization",
+    "law_component": "regulation",
+    "article_number": 85
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "privatization-regulation-llm-art-085",
+     "article_number": 85,
+     "score": 36
+    },
+    {
+     "record_id": "privatization-regulation-llm-art-076",
+     "article_number": 76,
+     "score": 21
+    },
+    {
+     "record_id": "privatization-regulation-llm-art-087",
+     "article_number": 87,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "coc-r1",
+   "query_ar": "اجتماعات الجمعية العمومية للغرفة ومجلس إدارتها والتصويت على القرارات بالوسائل الإلكترونية وفقا للضوابط الآتية: أ- أن يتاح للمشترك المشاركة بفعالية عن طريق نقل مرئي",
+   "category": "topical",
+   "gold": {
+    "corpus": "chambers_of_commerce",
+    "law_component": "regulation",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "chambers-of-commerce-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 39
+    },
+    {
+     "record_id": "chambers-of-commerce-regulation-llm-art-051",
+     "article_number": 51,
+     "score": 26
+    },
+    {
+     "record_id": "chambers-of-commerce-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "srv-r1",
+   "query_ar": "تنفيذ الحجز على عقارات المدين اتخاذ الإجراءات الآتية: 56 - 1 تقدير قيمة العقار عن طريق لجنة متخصصة لا يقل عدد أعضائها عن ثلاثة",
+   "category": "topical",
+   "gold": {
+    "corpus": "state_revenue",
+    "law_component": "regulation",
+    "article_number": 56
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-revenue-regulation-llm-art-056",
+     "article_number": 56,
+     "score": 33
+    },
+    {
+     "record_id": "oa-llm-companies-art-049",
+     "article_number": 49,
+     "score": 20
+    },
+    {
+     "record_id": "tourism-law-llm-art-015",
+     "article_number": 15,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "wam-r1",
+   "query_ar": "شروط الترخيص للمؤسسات والشركات السعودية بحيازة الأسلحة النارية الفردية وذخائرها ولوازمها: 1- أن تكون الجهة المستفيدة من الشركات أو المؤسسات الأمنية المصرح لها بالعمل",
+   "category": "topical",
+   "gold": {
+    "corpus": "weapons_ammunition",
+    "law_component": "regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "weapons-ammunition-regulation-llm-art-005",
+     "article_number": 5,
+     "score": 47
+    },
+    {
+     "record_id": "weapons-ammunition-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 33
+    },
+    {
+     "record_id": "weapons-ammunition-regulation-llm-art-016",
+     "article_number": 16,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "epr-r1",
+   "query_ar": "يصرح له بمزاولة العمل الهندسي في المملكة العمل في المجالات الآتية: 1- الدراسات والتصاميم والرسومات: الدراسات والأبحاث الهندسية، والتخطيط، والتصميم، وإعداد المخططات والرسومات الهندسية",
+   "category": "topical",
+   "gold": {
+    "corpus": "engineering_practice",
+    "law_component": "regulation",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "engineering-practice-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 31
+    },
+    {
+     "record_id": "engineering-practice-law-llm-art-001",
+     "article_number": 1,
+     "score": 17
+    },
+    {
+     "record_id": "engineering-practice-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "alc-r1",
+   "query_ar": "أبناء كل متوفى ، أو معتذر ، أو عاجز بموجب تقرير طبي من أبناء الملك المؤسس عبدالعزيز بن عبدالرحمن الفيصل آل سعود في هيئة",
+   "category": "topical",
+   "gold": {
+    "corpus": "allegiance_commission",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "allegiance-commission-law-llm-art-001",
+     "article_number": 1,
+     "score": 45
+    },
+    {
+     "record_id": "allegiance-commission-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 37
+    },
+    {
+     "record_id": "basic-law-of-governance-llm-art-005",
+     "article_number": 5,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "soi-r1",
+   "query_ar": "المادة (الخامسة والأربعين) من النظام، يراعى الآتي: يعتد في إثبات شرط الجنسية العربية السعودية بالمستند الصادر من الجهة المختصة. يشترط أن تتوافر في كل",
+   "category": "topical",
+   "gold": {
+    "corpus": "social_insurance",
+    "law_component": "regulation",
+    "article_number": 75
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-insurance-regulation-llm-art-075",
+     "article_number": 75,
+     "score": 42
+    },
+    {
+     "record_id": "nationality-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 37
+    },
+    {
+     "record_id": "nationality-regulation-llm-art-013",
+     "article_number": 13,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "sen-r1",
+   "query_ar": "الاختصاصات الآتية: 1- إدارة شؤون الأمانة العامة، وضمان حسن سير أعمالها. 2- إقتراح القواعد الفنية والإدارية والمالية والمهنية. 3- تمثيل الهيئة أمام الجهات الرسمية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "saudi_engineers",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-engineers-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 42
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-001",
+     "article_number": 1,
+     "score": 23
+    },
+    {
+     "record_id": "evidence-expertise-llm-art-002",
+     "article_number": 2,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "chp-r1",
+   "query_ar": "يطلع على حالة إيذاء أو إهمال، تبليغ الجهات المختصة فورا. 2-على الجهات المختصة أن تسهل إجراءات التبليغ عن حالات الإيذاء والإهمال، وبخاصة التبليغ الوارد",
+   "category": "topical",
+   "gold": {
+    "corpus": "child_protection",
+    "law_component": "regulation",
+    "article_number": 22
+   },
+   "gold_rank": 4,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "child-protection-law-llm-art-022",
+     "article_number": 22,
+     "score": 44
+    },
+    {
+     "record_id": "protection-from-abuse-law-llm-art-003",
+     "article_number": 3,
+     "score": 26
+    },
+    {
+     "record_id": "protection-from-abuse-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "whi-r1",
+   "query_ar": "حماية المبلغين والشهود والخبراء والضحايا -المنشأ وفقا لحكم المادة (الرابعة) من النظام- إلى تحقيق أمن وسلامة المشمولين بالحماية، وإدارة وتشغيل البرنامج، وفق أحكام النظام.",
+   "category": "topical",
+   "gold": {
+    "corpus": "whistleblower",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "whistleblower-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 63
+    },
+    {
+     "record_id": "whistleblower-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 47
+    },
+    {
+     "record_id": "whistleblower-law-llm-art-001",
+     "article_number": 1,
+     "score": 46
+    }
+   ]
+  },
+  {
+   "query_id": "sil-r1",
+   "query_ar": "أحكام الفقرة (3/ب) من المادة (38) من النظام يراعى مايأتي :- أ- متوسط الأجر الشهري الذي يقدر على أساسه المعاش هو جزء من اربعة",
+   "category": "topical",
+   "gold": {
+    "corpus": "social_insurance_legacy",
+    "law_component": "regulation",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-insurance-legacy-regulation-llm-art-annuities_008",
+     "article_number": 8,
+     "score": 40
+    },
+    {
+     "record_id": "oa-llm-companies-art-272",
+     "article_number": 272,
+     "score": 32
+    },
+    {
+     "record_id": "social-insurance-regulation-llm-art-038",
+     "article_number": 38,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "pfa-r1",
+   "query_ar": "الإيذاء حرجة إذا نتج عنها ضرر جسدي يستوجب التدخل الفوري لإيقافه، أو إذا كان فعل الإيذاء الحرج مثبتا بتقرير طبي، كما تعتبر حالة الإيذاء",
+   "category": "topical",
+   "gold": {
+    "corpus": "protection_from_abuse",
+    "law_component": "regulation",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "protection-from-abuse-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 30
+    },
+    {
+     "record_id": "child-protection-regulation-llm-art-022",
+     "article_number": 22,
+     "score": 22
+    },
+    {
+     "record_id": "protection-from-abuse-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "hcp-r1",
+   "query_ar": "المناط بها توقيع العقوبة التدرج في تحديد العقوبة المناسبة وفق لدرجة خطورة المخالفة ومدى تكرارها. 2-40 يجوز لكل من أصابه ضرر من الخطأ المهني",
+   "category": "topical",
+   "gold": {
+    "corpus": "healthcare_professions",
+    "law_component": "regulation",
+    "article_number": 40
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "healthcare-professions-regulation-llm-art-028",
+     "article_number": 40,
+     "score": 25
+    },
+    {
+     "record_id": "oa-llm-companies-art-263",
+     "article_number": 263,
+     "score": 23
+    },
+    {
+     "record_id": "inv-reg-llm-art-034",
+     "article_number": 34,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "shc-r1",
+   "query_ar": "بما يلي: أ- وضع الخطة العامة للمجلس ولجانه، بما يمكنه من إنجاز أعماله وتحقيق أهدافه. ب- وضع جدول أعمال جلسات المجلس. ج- الفصل فيما",
+   "category": "definitional",
+   "gold": {
+    "corpus": "shura_council",
+    "law_component": "regulation",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "shura-council-internal-regulation-llm-art-011",
+     "article_number": 11,
+     "score": 39
+    },
+    {
+     "record_id": "oa-llm-companies-art-096",
+     "article_number": 96,
+     "score": 32
+    },
+    {
+     "record_id": "oa-llm-companies-art-168",
+     "article_number": 168,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "civ-r1",
+   "query_ar": "المختص بشؤون وزارته، أو رئيس المصلحة المستقلة، بحسب الأحوال. الجهة الحكومية: أي وزارة أو مصلحة مستقلة يخضع موظفوها لأحكام نظام الخدمة المدنية ولوائحه التنفيذية.",
+   "category": "topical",
+   "gold": {
+    "corpus": "civil_service",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-service-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 42
+    },
+    {
+     "record_id": "civil-service-regulation-llm-art-114",
+     "article_number": 114,
+     "score": 33
+    },
+    {
+     "record_id": "civil-service-law-llm-art-007",
+     "article_number": 7,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "ang-r1",
+   "query_ar": "اختصاصات مجلس الأمناء ومنها الآتي: 1. اعتماد لوائح وسياسات إلزامية لتحقيق أهداف المؤسسة ونجاحها. 2. اعتماد خطط عمل المؤسسة ومنها الخطة الاستراتيجية والخطة التنفيذية",
+   "category": "topical",
+   "gold": {
+    "corpus": "associations_ngo",
+    "law_component": "regulation",
+    "article_number": 58
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "associations-ngo-regulation-llm-art-058",
+     "article_number": 58,
+     "score": 36
+    },
+    {
+     "record_id": "associations-ngo-regulation-llm-art-029",
+     "article_number": 29,
+     "score": 30
+    },
+    {
+     "record_id": "associations-ngo-regulation-llm-art-080",
+     "article_number": 80,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "etr-r1",
+   "query_ar": "17 /1 يلتزم المرخص له بما يلي: 1- الامتثال للنظام وهذه اللائحة وما يصدر عن الهيئة والجهات التنظيمية ذات العلاقة بشأن المسائل المحددة في",
+   "category": "definitional",
+   "gold": {
+    "corpus": "electronic_transactions",
+    "law_component": "regulation",
+    "article_number": 17
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "electronic-transactions-regulation-llm-art-017",
+     "article_number": 17,
+     "score": 34
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-017",
+     "article_number": 17,
+     "score": 21
+    },
+    {
+     "record_id": "health-system-regulation-llm-art-004",
+     "article_number": 5,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "ele-r1",
+   "query_ar": "منها، ما لم يقتض السياق خلاف ذلك: الوزارة: وزارة الطاقة. الوزير: وزير الطاقة. الهيئة: هيئة تنظيم المياه والكهرباء. المجلس: مجلس إدارة الهيئة.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "electricity",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "electricity-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 40
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-057",
+     "article_number": 57,
+     "score": 32
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-055",
+     "article_number": 55,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "mar-r1",
+   "query_ar": "بناء على طلب يُقدم من مالكها أو من يفوضه الى السلطة البحرية وفق النموذج المعتمد، ويُرفق معه الآتي: نسخة من السجل التجاري ساري المفعول",
+   "category": "topical",
+   "gold": {
+    "corpus": "maritime_commercial",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "maritime-commercial-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 42
+    },
+    {
+     "record_id": "maritime-commercial-regulation-llm-art-030",
+     "article_number": 30,
+     "score": 38
+    },
+    {
+     "record_id": "commercial-register-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "agr-r1",
+   "query_ar": "استيراد النحل الحي، ومنح أذونات الاستيراد – وفق الشروط الآتية: 1- أن يكون الراغب في الاستيراد (جمعية أو شركة أو مؤسسة) لها سجل تجاري",
+   "category": "topical",
+   "gold": {
+    "corpus": "agriculture",
+    "law_component": "regulation",
+    "article_number": 154
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "agriculture-regulation-llm-art-154",
+     "article_number": 154,
+     "score": 32
+    },
+    {
+     "record_id": "oa-llm-companies-art-226",
+     "article_number": 226,
+     "score": 27
+    },
+    {
+     "record_id": "agriculture-regulation-llm-art-155",
+     "article_number": 155,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "cdf-r1",
+   "query_ar": "هذه اللائحة، يكون للكلمات والمصطلحات الآتية المعاني الموضحة أمام كل منها: اللائحة: لائحة حقوق وواجبات من يستعان بهم في أعمال الدفاع المدني وعلاقتهم بجهاتهم.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "civil_defense",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "civil-defense-regulation-llm-rights-duties-art-001",
+     "article_number": 1,
+     "score": 87
+    },
+    {
+     "record_id": "civil-defense-regulation-llm-rights-duties-art-002",
+     "article_number": 2,
+     "score": 74
+    },
+    {
+     "record_id": "civil-defense-regulation-llm-rights-duties-art-003",
+     "article_number": 3,
+     "score": 65
+    }
+   ]
+  },
+  {
+   "query_id": "prr-r1",
+   "query_ar": "جوازات سفر المتقدم وأسرته سارية المفعول -ولا تشتمل على أي قيد أو شرط يحتمل أن يحول دون السماح لهم بالعودة في أي وقت- وقت",
+   "category": "topical",
+   "gold": {
+    "corpus": "premium_residency",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "premium-residency-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 22
+    },
+    {
+     "record_id": "civil-service-regulation-llm-art-208",
+     "article_number": 208,
+     "score": 17
+    },
+    {
+     "record_id": "travel-documents-regulation-llm-art-028",
+     "article_number": 28,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "wtr-r1",
+   "query_ar": "بيان الأحكام التنفيذية للنظام فيما يتعلق بمهام الوزارة، وتعمل الوزارة - فيما يقع ضمن اختصاصها- على تحقيق أهداف النظام في ضوء ما يلي: أ.",
+   "category": "topical",
+   "gold": {
+    "corpus": "water",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "water-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 38
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 26
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "prs-r1",
+   "query_ar": "من النظام النشاطات التي تمنح الوزارة الترخيص اللازم لممارسة كل منها وتفصيلها على النحو التالي : 1 - المطبوعات : كل نتاج فكري في",
+   "category": "topical",
+   "gold": {
+    "corpus": "press",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "press-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 36
+    },
+    {
+     "record_id": "press-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 31
+    },
+    {
+     "record_id": "press-regulation-llm-art-092",
+     "article_number": 92,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "bcr-r1",
+   "query_ar": "التالية أينما وردت في هذه اللائحة المعاني المبينة أمامها ما لم يقتض السياق خلاف ذلك: الوزارة: وزارة الشؤون البلدية والقروية والإسكان. الوزير: وزير الشؤون",
+   "category": "definitional",
+   "gold": {
+    "corpus": "building_code",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "building-code-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 36
+    },
+    {
+     "record_id": "municipal-councils-law-llm-art-001",
+     "article_number": 1,
+     "score": 32
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-057",
+     "article_number": 57,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "tel-r1",
+   "query_ar": "الآتية استغلالا لوضع السيطرة: 1. فرض أسعار بيع أو شراء غير عادلة، أو فرض أي شروط تجارية أخرى غير عادلة سواء كان ذلك بشكل",
+   "category": "definitional",
+   "gold": {
+    "corpus": "telecommunications",
+    "law_component": "regulation",
+    "article_number": 52
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "telecommunications-regulation-llm-art-052",
+     "article_number": 52,
+     "score": 23
+    },
+    {
+     "record_id": "oa-llm-companies-art-130",
+     "article_number": 130,
+     "score": 16
+    },
+    {
+     "record_id": "aml-regulation-llm-art-001",
+     "article_number": 1,
      "score": 15
     }
    ]

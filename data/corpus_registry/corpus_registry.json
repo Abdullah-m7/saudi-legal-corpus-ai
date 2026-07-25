@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11722,
+  "total_primary_arabic_governing_records": 13990,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12617,
-  "total_tracks": 200,
+  "total_registry_counted_records": 14885,
+  "total_tracks": 236,
   "tracks": [
     {
       "boundaries": {
@@ -9563,6 +9563,1763 @@
       "validator_targets": [
         "make sdaia-organizational-arrangements-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/trade_names_regulation/law/official_source/trade_names_regulation_official_source.json",
+        "sources/trade_names_regulation/law/verified/trade_names_regulation_verified_summary.json",
+        "data/trade_names_regulation_arabic_legal_llm/trade_names_regulation_legal_llm_001_019.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الأسماء التجارية",
+      "display_name_en": "Implementing Regulation of the Trade Names Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/trade_names_regulation_arabic_legal_llm/trade_names_regulation_legal_llm_001_019.json",
+          "governing": true,
+          "record_count": 19,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Trade Names Law «اللائحة التنفيذية لنظام الأسماء التجارية» — issued under clause 'Second' (ثانيا) of Ministry of Commerce Decision No. (288), dated 20 Ramadan 1446H (20 March 2025G), pursuant to Article 22 of the Trade Names Law (Royal Decree M/83, 19/3/1446H). **19 records, ALL اصلية** (18 articles + Annex (1), fee schedule), flat structure with no أبواب/فصول. **VERIFICATION TIER: TIER_3** — no laws.boe.gov.sa lawId page located for this 2025 ministerial regulation; uqn.gov.sa is an unreadable Vue.js SPA; mc.gov.sa's own Regulations-listing page failed to connect. PRIMARY qanoonsa.com (a private legal database that itself explicitly disclaims official-source status in its footer, relied upon only because every direct government channel was unreachable this pass), cross-verified via a byte-identical independent Wayback Machine snapshot and against ndmlaw.sa's verbatim law-firm quotations of Articles 6, 8, and 10; mc.gov.sa's own news bulletin independently confirms the decision number/date and joint effective date (metadata only, not full text). **Omnibus decision disambiguated**: Decision 288 approves FOUR distinct instruments in one signature — (i) the Commercial Register Law's own implementing regulation (a separate sibling track, commercial_register_regulation, built independently and not overlapping this track's text), (ii) THIS Regulation (clause 'Second', 18 articles + Annex 1), (iii) a transitional mechanism for correcting subsidiary commercial-register status (out of scope, not ingested), and (iv) controls for trade names registered before the new Law's effective date (out of scope, title only, not fetched or verified). An initial-research Hijri date of '30 Rabi al-Thani 1446H' was found to be incorrect and independently corrected via Hijri/Gregorian conversion to 20 Ramadan 1446H (signature) / 1 Shawwal 1446H (gazette publication). This Regulation's own Article 18 contains no explicit repeal clause naming its 1420H/2015 predecessor (Ministry of Commerce and Industry Decision No. 2015, 29 articles per WIPO Lex, not independently verified in full); supersession is inferred only from the repeal of the old base Trade Names Law itself. The Annex (1) fee table and the Article 15 violations table are preserved as flattened line-by-line strings per the source, including a disclosed inconsistent numeral format (one fine shown as '(10,000)' with a Latin thousands comma vs. others as '(5000)') and invisible RLM marks stripped as non-content formatting artifacts. A pre-enactment draft version was circulated for public consultation in January 2025 but was not compared against the final enacted text. Arabic governs; not legal advice.",
+      "official_text_status": "QANOONSA_TEXT_PRIMARY_X_WAYBACK_SNAPSHOT_CROSSCHECK_X_NDMLAW_INDEPENDENT_SECONDARY_VERBATIM_MATCH_X_MC_GOV_SA_METADATA_CONFIRMED_TIER3_BOE_NO_DEDICATED_PAGE_UQN_SPA_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 19,
+        "legal_status_breakdown": {
+          "اصلية": 19,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 19
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministry of Commerce Decision No. (288), dated 20 Ramadan 1446H (20 March 2025G), clause 'Second' (ثانيا) thereof, issued pursuant to Article 22 of the Trade Names Law (Royal Decree M/83, 19/3/1446H). Published in Umm al-Qura Official Gazette, Issue (5079), 30 March 2025G; effective 5 Shawwal 1446H (3 April 2025G). Decision 288 is a single omnibus instrument whose OTHER three clauses approve three separate instruments (the Commercial Register Law's own implementing regulation — a sibling track, commercial_register_regulation; a transitional subsidiary-register correction mechanism; and controls for trade names registered before the new Law's effective date) — none within this track's scope. laws.boe.gov.sa: no dedicated lawId page located for this 2025 ministerial regulation. uqn.gov.sa (Umm al-Qura's live portal): a Vue.js SPA whose direct fetch returns only unrendered template markup. PRIMARY qanoonsa.com (fetched directly, HTTP 200; explicitly disclaims official-source status in its own footer), cross-checked via an independent, byte-identical Wayback Machine snapshot of the same page and against ndmlaw.sa (law-firm commentary quoting Articles 6, 8, and 10 verbatim); mc.gov.sa's own news bulletin independently confirms Decision 288, Royal Decree M/83, and the joint effective date, though it supplies metadata only, not the full text.",
+      "status": "complete",
+      "track_id": "trade_names_regulation",
+      "validator_targets": [
+        "make trade-names-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/commercial_agencies_regulation/law/official_source/commercial_agencies_regulation_official_source.json",
+        "sources/commercial_agencies_regulation/law/verified/commercial_agencies_regulation_verified_summary.json",
+        "data/commercial_agencies_regulation_arabic_legal_llm/commercial_agencies_regulation_legal_llm_001_049.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الوكالات التجارية",
+      "display_name_en": "Implementing Regulation of the Commercial Agencies Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/commercial_agencies_regulation_arabic_legal_llm/commercial_agencies_regulation_legal_llm_001_049.json",
+          "governing": true,
+          "record_count": 49,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Commercial Agencies Law «اللائحة التنفيذية لنظام الوكالات التجارية» — Ministry of Commerce Resolution No. (1897), dated 24/5/1401H (30 March 1981G), issued under Article 3 of the Commercial Agencies Law (Royal Decree No. 11, 20/02/1382H). A new track, independent of this corpus's already-verified base-law track (commercial_agencies). **49 records: 21 اصلية / 1 معدلة / 27 مضافة** — 22 articles in the main body across five sections (General Provisions 1-5; Registration 6-15; De-registration 16-18; Violations/Penalties 19-21; Transitional 22), plus an independently-numbered 27-article Annex on maintenance/spare-parts/warranty obligations, matching the portal's own counters ('49 articles', '6 sections'). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has no dedicated lawId page for this ministerial-level Regulation (only for the base Law); PRIMARY is mc.gov.sa's own LIVE Regulations portal page, reached via the r.jina.ai reader-proxy after direct curl/WebFetch AND a Wayback Machine snapshot of the same URL both hit a BotDetect CAPTCHA challenge page. Not raised to TIER_1 because: only a SINGLE successful live fetch was obtained (a follow-up r.jina.ai attempt to re-fetch the same page, or to reach a third source, spa.gov.sa, was blocked mid-session with HTTP 401 'bad IP reputation'); the two decree PDFs themselves (1897 and its 817/1435H amendment) could not be fetched directly (SSL failure / empty proxied content); and the Annex's 27 مضافة classification is an inference from comparing Article 3's pre/post-amendment wording plus a matching contemporary news account (almuraba.net, 2014), not a portal-native per-article 'added' marking. Cross-verified in fine-grained numeric detail against almuraba.net (independently confirms the 1435H amendment's 14-day rare-parts turnaround, 2-year minimum warranty, and 27-article annex count). **Disclosed, unresolved 9-Hijri-year date conflict**: this Regulation's own preamble cites the base Law's amending Royal Decree No. 5 as dated 11/06/1398H, while the corpus's own base-law track (verified via two independently-dated BOE archives) records 11/6/1389H for the same decree — neither source is preferred; both are recorded as-is. A mixed Arabic-Indic/Eastern-Arabic numeral inconsistency in the Article-3 amendment note is preserved verbatim as a source artifact, not corrected. Arabic governs; not legal advice.",
+      "official_text_status": "MC_GOV_SA_LIVE_PORTAL_PRIMARY_JINA_READER_PROXY_X_NEZAMS_QISTAS_THELAWSA_CORPORATE_LAWYER_SECONDARY_X_ALMURABA_1435H_AMENDMENT_CROSSCHECK_TIER2_BOE_NO_DEDICATED_PAGE_SINGLE_FETCH_CAPTCHA_BLOCKED_DIRECT_AND_WAYBACK",
+      "record_counts": {
+        "arabic_articles": 49,
+        "legal_status_breakdown": {
+          "اصلية": 21,
+          "مضافة": 27,
+          "معدلة": 1
+        },
+        "total": 49
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministry of Commerce Resolution No. (1897), dated 24/5/1401H (30 March 1981G), issued pursuant to Article 3 of the Commercial Agencies Law (Royal Decree No. 11, 20/02/1382H — itself amended by Royal Decree No. 5, dated 11/06/1398H per this Regulation's own preamble, though this corpus's own already-verified commercial_agencies base-law track records 11/6/1389H for the same decree, a 9-Hijri-year discrepancy disclosed and left unresolved; and Royal Decree No. 32, 10/08/1400H). Amended by Ministry of Commerce Resolution No. (817), dated 24/8/1435H (Article 3 of the main body; the entire 27-article Annex on maintenance/spare-parts/warranty obligations is attributed to this same 1435H resolution by inference, not an explicit per-article portal marking). laws.boe.gov.sa: no dedicated lawId page for this Regulation (only for the base Law). PRIMARY mc.gov.sa's own live Regulations portal, reached via the r.jina.ai reader-proxy after direct curl/WebFetch and a Wayback Machine snapshot of the same URL both hit BotDetect CAPTCHA bot-detection; SECONDARY nezams.com, qistas.com, thelawsa.com, corporate-lawyer.org (decree number/date) and almuraba.net (a contemporary 2014 news report independently matching multiple specific figures in the 1435H amendment).",
+      "status": "complete",
+      "track_id": "commercial_agencies_regulation",
+      "validator_targets": [
+        "make commercial-agencies-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/accounting_auditing_regulation/law/official_source/accounting_auditing_regulation_official_source.json",
+        "sources/accounting_auditing_regulation/law/verified/accounting_auditing_regulation_verified_summary.json",
+        "data/accounting_auditing_regulation_arabic_legal_llm/accounting_auditing_regulation_legal_llm_001_015.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام مهنة المحاسبة والمراجعة",
+      "display_name_en": "Implementing Regulation of the Law of the Accounting and Auditing Profession",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/accounting_auditing_regulation_arabic_legal_llm/accounting_auditing_regulation_legal_llm_001_015.json",
+          "governing": true,
+          "record_count": 15,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law of the Accounting and Auditing Profession «اللائحة التنفيذية لنظام مهنة المحاسبة والمراجعة» — Ministry of Commerce Resolution No. (00658), dated 14/11/1442H, issued under Article 22 of the base Law (Royal Decree M/59, 27/7/1442H); a companion instrument to this corpus's already-ingested accounting_auditing_law track (the base Law's own 22 articles are NOT re-ingested here). **15 records: 14 اصلية / 1 معدلة** (Article 6, paragraphs 4-5), flat structure with no أبواب/فصول. **VERIFICATION TIER: TIER_2** — PRIMARY is SOCPA's own official PDF, whose direct fetch fails domain-wide (connection reset) and was instead recovered via a single Wayback Machine snapshot. **Critical extraction finding, fully disclosed**: the PDF's own embedded font/ToUnicode mapping systematically transposes Arabic letters on both pdftotext and PyMuPDF extraction (e.g. 'في'→'يف', 'المادة'→'املادة') — resolved by using Tesseract OCR of 300dpi page-image renders as the primary text source (not subject to this defect), cross-checking every digit/percentage against the (digit-accurate) text-layer extraction, and hand-reconciling residual OCR noise via cross-article boilerplate consistency; this is a disclosed reconstruction methodology, not a claim of clean born-digital text. SECONDARY argaam.com (verbatim match on the Article 9 Saudi-staffing percentage table and Article 5's 6%/1000-hour figures) and a 2021 darkhabr.com Wayback snapshot (verbatim match on Article 3/4/5 thresholds); the founding decree citation independently confirmed via a 9 Aug 2022 Wayback snapshot of the Umm al-Qura Gazette's own approval notice (its companion issuance-notice page could not be reached by any method this pass). **2025 amendment confirmed but pre-amendment text NOT recovered**: Ministry of Commerce Resolution No. (28), 3/2/1447H, transferred Article 6's licensing decision authority from the Ministry to SOCPA (the Authority) within fifteen business days, per qanoonsa.com (quoting the resolution number/date/new wording and Umm al-Qura Gazette Issue 5099, 1 Aug 2025G) — this track's only available PDF snapshot already postdates the amendment, so the pre-2025 wording of Article 6(4)-(5) could not be independently diffed; disclosed as an honest gap. Article 9's Saudi-staffing percentage table is linearized into colon-separated sentences without altering any value. Arabic governs; not legal advice.",
+      "official_text_status": "SOCPA_OFFICIAL_PDF_VIA_WAYBACK_TESSERACT_OCR_PRIMARY_X_PDFTOTEXT_DIGIT_CROSSCHECK_X_ARGAAM_DARKHABR_SECONDARY_X_UQN_WAYBACK_FOUNDING_DECREE_CONFIRMED_TIER2_SOCPA_LIVE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 15,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 15
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministry of Commerce Resolution No. (00658), dated 14/11/1442H (2 July 2021G), issued under Article 22 of the Law of the Accounting and Auditing Profession (Royal Decree M/59, 27/7/1442H); administered by the Saudi Authority for Auditors and Accountants (SOCPA). Article 6, paragraphs (4) and (5), amended by Ministry of Commerce Resolution No. (28), dated 3/2/1447H (28 July 2025G), pursuant to Council of Ministers Resolution No. (571), 5/8/1446H, transferring licensing-application authority from the Ministry to the Authority. PRIMARY SOCPA's own official PDF, whose direct fetch fails domain-wide (connection reset) and was instead recovered via a single Wayback Machine snapshot (13 Dec 2025) fetched with the archive's raw/id_ modifier; the PDF's own text layer carries a systematic letter-transposition defect, so Tesseract OCR of 300dpi page-image renders was used as the primary text source, with the (digit-accurate) text-layer extraction cross-checked for every numeral/percentage and every clause hand-reconciled; SECONDARY argaam.com and a 2021 darkhabr.com Wayback snapshot (matching figures verbatim); the founding decree's own citation additionally confirmed via a 9 Aug 2022 Wayback snapshot of the Umm al-Qura Gazette's approval notice; the 2025 Article 6 amendment confirmed via qanoonsa.com, which quotes the resolution number/date/new wording and the gazette citation (Issue 5099, 1 Aug 2025G).",
+      "status": "complete",
+      "track_id": "accounting_auditing_regulation",
+      "validator_targets": [
+        "make accounting-auditing-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/commercial_register_regulation/law/official_source/commercial_register_regulation_official_source.json",
+        "sources/commercial_register_regulation/law/verified/commercial_register_regulation_verified_summary.json",
+        "data/commercial_register_regulation_arabic_legal_llm/commercial_register_regulation_legal_llm_001_021.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام السجل التجاري",
+      "display_name_en": "Implementing Regulation of the Commercial Register Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/commercial_register_regulation_arabic_legal_llm/commercial_register_regulation_legal_llm_001_021.json",
+          "governing": true,
+          "record_count": 21,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Commercial Register Law «اللائحة التنفيذية لنظام السجل التجاري» — Ministry of Commerce Decision No. (288), dated 20 Ramadan 1446H (20 March 2025G), clause 'First' (أولا) thereof, issued under Article 28 of the Commercial Register Law (Royal Decree M/83, 19/3/1446H). **21 records, ALL اصلية** (founding text, no predecessor amendments), flat 21-article structure with no فصول, plus an unnumbered Annex (1) fee schedule referenced by Article 18. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa's only apparently-relevant lawId page was directly verified (via two independently-dated Wayback snapshots) to actually be the BASE Law's own page (29 articles), not a dedicated page for this Regulation; direct fetch of both mc.gov.sa and uqn.gov.sa failed completely (connection-level) this pass. PRIMARY qanoonsa.com (fetched directly, HTTP 200, clean static HTML), cross-checked phrase-by-phrase across nearly every article against Al-Eqtisadiah (aleqt.com, an independent, recognized Saudi financial newspaper) and against the Decision's own preamble/signature text. **Omnibus decision cleanly disambiguated, not a blend**: direct reading of the decision's own text confirms it approves FOUR wholly separate, independently-numbered instruments in one signature — (i) THIS Regulation (clause 'First', 21 articles + Annex 1), (ii) the Trade Names Law's own implementing regulation (sibling track trade_names_regulation, built independently, zero text overlap confirmed by direct comparison), (iii) a transitional subsidiary-register correction mechanism (7 separately-numbered points, a 5-year correction window from 3/4/2025 to 2/4/2030, full text reviewed but NOT ingested here as out of this track's literal title scope), and (iv) controls for trade names registered before the new Law's effective date (out of scope). **Disclosed, uncorrected source anomaly**: Article 19's violation-classification table shows mismatched/reversed parentheses in three of six rows, confirmed present in the source's own raw HTML table structure (not an extraction artifact of this track) and preserved verbatim; the numeral values themselves (500, 1000 riyals) remain unambiguous. Annex (1) preserves a minor source typo (missing definite article 'ال' before 'تجاري'). No أبواب/فصول — flat structure, consistent with this corpus's precedent for comparably short implementing regulations. Arabic governs; not legal advice.",
+      "official_text_status": "QANOONSA_TEXT_PRIMARY_X_ALEQT_INDEPENDENT_SECONDARY_PHRASE_LEVEL_CROSSCHECK_TIER2_BOE_SHARES_BASE_LAW_PAGE_MC_UQN_DIRECT_FETCH_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 21,
+        "legal_status_breakdown": {
+          "اصلية": 21,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 21
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministry of Commerce Decision No. (288), dated 20 Ramadan 1446H (20 March 2025G), clause 'First' (أولا) thereof, issued pursuant to Article 28 of the Commercial Register Law (Royal Decree M/83, 19/3/1446H). Published in Umm al-Qura Official Gazette, Issue (5079), 30 March 2025G; effective 3 April 2025G. Decision 288 is a single omnibus instrument whose OTHER three clauses approve three separate instruments — the Trade Names Law's own implementing regulation (a sibling track, trade_names_regulation, built independently and containing no overlapping text), a transitional subsidiary-register correction mechanism (5-year window, 7 separately-numbered points, out of scope for this track), and controls for trade names registered before the new Law's effective date (out of scope) — none of which are within this track's scope. laws.boe.gov.sa's only related lawId page was found, via two independently-dated Wayback snapshots, to actually host the BASE Commercial Register Law itself (29 articles), not this Regulation; no dedicated BOE page exists for this Regulation. Direct fetch of mc.gov.sa and uqn.gov.sa both failed completely (connection-level, HTTP 000) this pass; a Wayback snapshot of mc.gov.sa's news bulletin confirmed the joint effective date only (not full text). PRIMARY qanoonsa.com (fetched directly, HTTP 200), cross-checked phrase-by-phrase across nearly every article against an entirely independent secondary source, Al-Eqtisadiah (aleqt.com), and against the decision's own preamble/signature text.",
+      "status": "complete",
+      "track_id": "commercial_register_regulation",
+      "validator_targets": [
+        "make commercial-register-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/real_estate_brokerage_regulation/law/official_source/real_estate_brokerage_regulation_official_source.json",
+        "sources/real_estate_brokerage_regulation/law/verified/real_estate_brokerage_regulation_verified_summary.json",
+        "data/real_estate_brokerage_regulation_arabic_legal_llm/real_estate_brokerage_regulation_legal_llm_001_027.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الوساطة العقارية",
+      "display_name_en": "Implementing Regulation of the Real Estate Brokerage Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/real_estate_brokerage_regulation_arabic_legal_llm/real_estate_brokerage_regulation_legal_llm_001_027.json",
+          "governing": true,
+          "record_count": 27,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Real Estate Brokerage Law «اللائحة التنفيذية لنظام الوساطة العقارية» — General Real Estate Authority (REGA) Board of Directors Resolution No. (132/ق), dated 24/06/1444H, issued under Article 23 of the Real Estate Brokerage Law (Royal Decree M/130, 30/11/1443H). **27 records, ALL اصلية**, 8 chapters (فصول): Licensing (2-6), Term/Renewal/Expiry (7-11), Broker Registry (12-13), Practice Controls (14-15), Brokerage Contracts (16-19), Guarantee/Deposit (20-22), Inspection/Enforcement (23-25), Violations Committee (26-27). **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — laws.boe.gov.sa unreachable (connection reset), consistent with a REGA board-level (not royal-decree-level) instrument. PRIMARY x2 independent official government sources in agreement: REGA's own official PDF (SHA-256 verified; a Word-exported PDF whose text layer suffers a documented lam-alif ligature-reordering defect on automated extraction, so this track's governing text was instead visually transcribed page-by-page at 300dpi rather than machine-extracted) and the Umm al-Qura Gazette's own live portal page (direct HTML text extraction) — programmatically compared article-by-article after normalizing diacritics/spacing, matching verbatim in 26 of 27 articles, with a single immaterial one-word preposition variance in Article 14(10) (REGA's text adopted as governing). **An unconfirmed amendment claim explicitly rejected**: an automated fetch-and-summarize tool surfaced a purported amending 'Administrative Decision No. 5-23-م-23' (1/12/1444H) via lexismiddleeast.com; a direct, non-summarized re-fetch of the identical URL returned HTTP 404, and two other independent sources describing Resolution 132/ق make no mention of any such amendment — this claim is disclosed as likely a fabrication/hallucination of the summarization tool and was NOT applied to any article (all 27 records remain اصلية). Two annex tables (a violations/penalties classification table implementing the base Law's Articles 19-21 penalty framework, and a city/governorate geographic-tier classification table) exist in the source and were content-verified across both primary sources but are NOT ingested as separate structured records this pass — disclosed as a follow-up candidate. A minor 2-3 day gazette-date variance between the directly-observed portal date and two secondary sources is disclosed, not resolved. Arabic governs; not legal advice.",
+      "official_text_status": "REGA_OFFICIAL_PDF_VISUALLY_VERIFIED_X_UQN_GAZETTE_FULLTEXT_CROSSCHECK_TIER1_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 27,
+        "legal_status_breakdown": {
+          "اصلية": 27,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 27
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "General Real Estate Authority (REGA) Board of Directors Resolution No. (132/ق), dated 24/06/1444H, issued pursuant to Article 23 of the Real Estate Brokerage Law (Royal Decree M/130, 30/11/1443H). Published in the Umm al-Qura Official Gazette (portal-observed date: 25/06/1444H / 18 January 2023G; two secondary sources cite a 2-3 day later gazette-issue date, 27/06/1444H / 20 January 2023G — a minor, immaterial variance disclosed rather than resolved). laws.boe.gov.sa unreachable (connection reset), consistent with this being a REGA board-level regulatory decision rather than a Royal Decree or Council of Ministers resolution. PRIMARY x2 independent official government sources — REGA's own official-site PDF (fetched directly, HTTP 200, SHA-256 verified) and the Umm al-Qura Gazette's own live portal (fetched directly, HTTP 200) — cross-checked programmatically article-by-article, agreeing verbatim in 26 of 27 articles (one immaterial one-word preposition variance in Article 14(10)); decision number/date further corroborated by lexismiddleeast.com (search-indexed) and snadlaw.sa (fetched directly).",
+      "status": "complete",
+      "track_id": "real_estate_brokerage_regulation",
+      "validator_targets": [
+        "make real-estate-brokerage-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/foreign_ownership_regulation/law/official_source/foreign_ownership_regulation_official_source.json",
+        "sources/foreign_ownership_regulation/law/verified/foreign_ownership_regulation_verified_summary.json",
+        "data/foreign_ownership_regulation_arabic_legal_llm/foreign_ownership_regulation_legal_llm_001_015.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام تملك غير السعوديين للعقار",
+      "display_name_en": "Implementing Regulation of the Non-Saudi Real Estate Ownership Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/foreign_ownership_regulation_arabic_legal_llm/foreign_ownership_regulation_legal_llm_001_015.json",
+          "governing": true,
+          "record_count": 15,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law on Non-Saudi Real Estate Ownership «اللائحة التنفيذية لنظام تملك غير السعوديين للعقار» — a Council of Ministers Resolution, dated 18 Muharram 1448H (3 July 2026G), issued under Article 13 of the base Law (Royal Decree M/14, 19/1/1447H), a document only days old at the time of this verification pass (2026-07-25). **15 records total: 14 articles (ALL اصلية) plus a binding penalty-table annex** (expressly incorporated by the Regulation's own Article 12), flat structure with no فصول/أبواب and no confirmable preamble. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — two INDEPENDENT Saudi government sources, not aggregators, both fetched live and directly (HTTP 200): the Umm al-Qura Official Gazette's own portal and REGA's own legislation portal (the implementing authority itself), agreeing byte-for-byte, after normalization, in 8 of 14 articles, with the remaining 6 differing only cosmetically — 99.63% overall match. NCAR (the historical laws.boe.gov.sa/Board-of-Experts successor portal), linked from REGA's own page as a third primary reference, could not be reached (TLS reset / HTTP 503); the TIER_1 call rests on the two sources that WERE reached, not three. **Disclosed, NOT resolved**: neither primary source, nor Al-Eqtisadiah's contemporaneous news report, states an explicit Council of Ministers resolution NUMBER or Umm al-Qura gazette ISSUE number; an AI-search synthesis and a single secondary aggregator assert 'Resolution No. 43' / 'gazette Issue 5169', but were NOT adopted here because that same aggregator independently misstates the base Law's own decree date — an honest 'could not confirm' is recorded instead of an unverified number. REGA's page dates the decision itself to ~23 June 2026 while the Gazette dates PUBLICATION to 3 July 2026 — an ordinary ~10-day decision-to-publication gap, disclosed explicitly; the gazette date is adopted as the date of record. This task's own prior-research briefing cited a gazette date of 11 Safar 1448H that could NOT be reproduced this pass; the directly re-observed date (18 Muharram 1448H) is adopted instead. Three penalty-table rows show minor wording variance between the two primary sources (Gazette wording adopted as governing). A source-native inconsistency between Arabic and Latin percent glyphs within the same penalty table is preserved verbatim. Article 9's fee schedule currently lists exactly four geographic zones at a flat 2% fee; this track does not speculate on future additions. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_PRIMARY_X_REGA_PORTAL_PRIMARY_CROSS_VERIFIED_TIER1_NCAR_BOE_UNREACHABLE_DECREE_NUMBER_UNCONFIRMED",
+      "record_counts": {
+        "arabic_articles": 15,
+        "legal_status_breakdown": {
+          "اصلية": 14
+        },
+        "total": 15
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Council of Ministers Resolution (resolution number NOT confirmed by any primary source — see notes), dated 18 Muharram 1448H (3 July 2026G, the Umm al-Qura Gazette publication date; REGA's own portal separately lists 8 Muharram 1448H / ~23 June 2026G as the decision/issuance date, an ordinary decision-vs-publication gap), issued pursuant to Article 13 of the Law on Non-Saudi Real Estate Ownership (Royal Decree M/14, 19/1/1447H), which required the Council of Ministers to issue this Regulation within 180 days of the base Law's publication. NCAR/laws.boe.gov.sa unreachable (TLS connection reset / HTTP 503) via the link REGA's own page provides to it. PRIMARY x2 independent official government sources in full agreement: the Umm al-Qura Official Gazette's own live portal (fetched directly, HTTP 200) and the General Real Estate Authority's (REGA) own legislation portal (fetched directly, HTTP 200) — 8 of 14 articles byte-identical after normalization, the remaining 6 differing only cosmetically (spacing, comma glyph, one grammatical-gender letter, ZWNJ marks), 99.63% overall match. Al-Eqtisadiah (aleqt.com) independently corroborates the Council of Ministers' approval and dateline but names no resolution number.",
+      "status": "complete",
+      "track_id": "foreign_ownership_regulation",
+      "validator_targets": [
+        "make foreign-ownership-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/anti_fraud_regulation/law/official_source/anti_fraud_regulation_official_source.json",
+        "sources/anti_fraud_regulation/law/verified/anti_fraud_regulation_verified_summary.json",
+        "data/anti_fraud_regulation_arabic_legal_llm/anti_fraud_regulation_legal_llm_001_019.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام مكافحة الغش التجاري",
+      "display_name_en": "",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/anti_fraud_regulation_arabic_legal_llm/anti_fraud_regulation_legal_llm_001_019.json",
+          "governing": true,
+          "record_count": 19,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Anti-Commercial Fraud Law «اللائحة التنفيذية لنظام مكافحة الغش التجاري» — issued to implement the Anti-Commercial Fraud Law (Royal Decree M/19, 23/4/1429H) by the Ministry of Commerce and Industry; the exact ministerial resolution number/date is itself disputed (see source_authority) and recorded transparently rather than silently resolved. **19 records, ALL اصلية** — no formal amendment to this regulation has been located by any source consulted this pass (nezams.com's own metadata states 'لم يجرِ عليه تعديل'), distinct from the base law's own five-times-amended history. Structure: 11 chapter/topical headings (الفصل الأول-الفصل الثامن plus three unlabeled topical sections) spanning Articles 1-19. **VERIFICATION TIER: TIER_3** — a single verbatim-reliable secondary source (nezams.com) with zero primary-tier (BOE/mc.gov.sa/ncar.gov.sa/Wayback) access; laws.boe.gov.sa returned HTTP 503/timeout on the base law's own LawDetails page (no distinct page for this Regulation was ever located), mc.gov.sa returned HTTP 503 (r.jina.ai proxy: HTTP 401 'bad IP reputation'), ncar.gov.sa returned HTTP 503/connection-reset, and Wayback Machine's availability-check API confirmed a snapshot exists but content-fetch returned HTTP 403. mrksa.net was fetched and used ONLY for structural corroboration (article count, chapter sequence, Article 19's missing number-label) — NOT for verbatim text — after its HTML showed DeepSeek-AI markdown-rendering fingerprints (133 occurrences, absent from nezams.com) and two concrete substantive divergences: Article 10's trader-notification/foreign-lab detail is summarized away, and Article 17's informant-reward cap reads 50% versus nezams.com's 25% (the figure consistent with the base law's own Article 11). qanoniah.com was JS-rendered and unreadable; almoaqeb.com was unreachable; neither could re-confirm the prior pass's claimed four-source citation agreement. Disclosed discrepancies: the issuing instrument's number/date is genuinely disputed between nezams.com (155, 6/1/1431H) and mrksa.net (55, 20/10/1431H); ncar.gov.sa indexes a third candidate year (1430H). This regulation's Article 1/Article 5 definition of «الجهات المختصة» still matches the base law's ORIGINAL 1429H wording, i.e. it has not been updated to reflect the base law's own later Article 5 amendments — preserved verbatim as likely-stale-but-not-formally-amended. Two purely mechanical nezams.com HTML-transcription artifacts were corrected using mrksa.net's rendering only to confirm word segmentation, not wording. Arabic governs; not legal advice.",
+      "official_text_status": "SECONDARY_SINGLE_SOURCE_VERBATIM_PARTIAL_CROSS_CHECK_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 19,
+        "legal_status_breakdown": {
+          "اصلية": 19,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 19
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution disputed between two directly-fetched secondary sources: nezams.com's metadata table cites 'القرار الوزاري رقم 155 وتاريخ 6/1/1431هـ' (published 29/1/1431هـ), while mrksa.net's own preamble instead reads 'قرار وزاري رقم (55) وتاريخ 20/10/1431هـ'; both candidates issued pursuant to the Anti-Commercial Fraud Law (Royal Decree M/19, 23/4/1429H) by the Minister of Commerce and Industry. Applying/administering authority: Ministry of Commerce (General Administration for Combating Commercial Fraud). laws.boe.gov.sa: no distinct lawId page for this Implementing Regulation was located (only the base law's own page surfaced), and that page itself was unreachable this pass (HTTP 503 / 15000ms timeout); mc.gov.sa (HTTP 503 / r.jina.ai HTTP 401), ncar.gov.sa (HTTP 503/connection reset), and Wayback Machine content-fetch (HTTP 403) were all also unreachable. PRIMARY nezams.com (governing verbatim source for all 19 articles); SECONDARY mrksa.net (structural corroboration only — article count and chapter sequence — after two concrete substantive divergences, including a 25%-vs-50% informant-reward-cap discrepancy, revealed AI-regeneration fingerprints in its article-body text); qanoniah.com (JS-rendered, unreadable) and almoaqeb.com (unreachable) could not independently corroborate the prior pass's four-source claim.",
+      "status": "complete",
+      "track_id": "anti_fraud_regulation",
+      "validator_targets": [
+        "make anti-fraud-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/rett_regulation/law/official_source/rett_regulation_official_source.json",
+        "sources/rett_regulation/law/verified/rett_regulation_verified_summary.json",
+        "data/rett_regulation_arabic_legal_llm/rett_regulation_legal_llm_001_015.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام رسوم التصرفات العقارية",
+      "display_name_en": "Implementing Regulation of the Real Estate Transaction Tax Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/rett_regulation_arabic_legal_llm/rett_regulation_legal_llm_001_015.json",
+          "governing": true,
+          "record_count": 15,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Real Estate Transaction Tax Law «اللائحة التنفيذية لنظام رسوم/ضريبة التصرفات العقارية» — ZATCA Board Decision No. (01-03-25), 24/09/1446H, published Umm al-Qura Issue (5080), 11/10/1446H, entering into force on the same date as the base RETT Law (~9-10 April 2025G). **15 records, ALL اصلية** — no amendment found since issuance through the current date. **VERIFICATION TIER: TIER_1** — the full verbatim Arabic text of all 15 articles was extracted directly from the born-digital PDF published on the issuing Authority's own site (zatca.gov.sa, HTTP 200, no proxy needed), reconciled from two independent extraction pipelines (Tesseract Arabic OCR of 300dpi page renders, cross-checked against PyMuPDF character-exact geometric extraction) to correct a systematic Arabic bidi/justification ordering defect and confusable list-marker digit/letter OCR misreads. Corroborated by snadlaw.sa (article-by-article topic match) and qanoonsa.com (Gazette issue confirmation). Important correction disclosed rather than silently accepted: the commissioning brief's claim that this Regulation 'was later amended per SPA (N2095607) and argaam.com' does not hold — those items predate this Regulation's own issuance by eleven months and in fact describe amendments to the PRE-EXISTING predecessor Regulation (Ministerial Resolution No. 712, 15/2/1442H), which this Regulation's own Article 14 names twice (for transitional/grandfathering purposes) without expressly repealing it by name. uqn.gov.sa (Gazette portal, HTTP 503) and the Wayback Machine (network-layer blocked) could not be directly fetched, so the Gazette issue/date rest on secondary-source corroboration rather than a direct primary fetch, while the Regulation's operative TEXT itself was fetched directly and primarily from zatca.gov.sa. A small residual risk of unflagged character-level OCR error in long prose passages is disclosed rather than assumed away. Arabic governs; not legal advice.",
+      "official_text_status": "ZATCA_PORTAL_PRIMARY_TWO_PIPELINE_OCR_X_SECONDARY_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 15,
+        "legal_status_breakdown": {
+          "اصلية": 15,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 15
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Board of Directors of the Zakat, Tax and Customs Authority (ZATCA) Decision No. (01-03-25), dated 24/09/1446H (24 March 2025G), issued under Article 20 of the Real Estate Transaction Tax Law (Royal Decree M/84, 19/3/1446H), published in the Umm al-Qura Gazette, Issue (5080), dated 11/10/1446H (~9 April 2025G). laws.boe.gov.sa: no dedicated lawId page for this Board-level Implementing Regulation (consistent with this corpus's vat_regulation and income_tax_regulation tracks) — only the base RETT Law's own lawId page surfaces. PRIMARY zatca.gov.sa's own official-site PDF (fetched directly, no proxy needed); SECONDARY snadlaw.sa and qanoonsa.com (article-by-article topic/Gazette-issue corroboration); uqn.gov.sa (Gazette portal) and the Wayback Machine returned unreachable this pass (HTTP 503/401; egress-blocked respectively).",
+      "status": "complete",
+      "track_id": "rett_regulation",
+      "validator_targets": [
+        "make rett-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/anti_narcotics_regulation/law/official_source/anti_narcotics_regulation_official_source.json",
+        "sources/anti_narcotics_regulation/law/verified/anti_narcotics_regulation_verified_summary.json",
+        "data/anti_narcotics_regulation_arabic_legal_llm/anti_narcotics_regulation_legal_llm_001_040.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام مكافحة المخدرات والمؤثرات العقلية",
+      "display_name_en": "Implementing Regulation of the Anti-Narcotics and Psychotropic Substances Control Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/anti_narcotics_regulation_arabic_legal_llm/anti_narcotics_regulation_legal_llm_001_040.json",
+          "governing": true,
+          "record_count": 40,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation ('Executive List') of the Anti-Narcotics and Psychotropic Substances Control Law «اللائحة التنفيذية لنظام مكافحة المخدرات والمؤثرات العقلية» — Council of Ministers Resolution No. 201, 10/6/1431H, published 6/7/1431H, effective ~mid-July 2010. The SAME enacting resolution also carries a second, textually separate operative clause amending a DIFFERENT prior resolution (No. 203, 14/7/1425H) on narcotics-destruction-committee reward payments — reproduced in the preamble field for transparency only, and excluded from the 40 ingested articles. **40 records, ALL اصلية** — nezams.com's own page metadata states no amendment to date, and no Royal Decree/Council of Ministers Resolution amending these 40 articles was found via web search. Structure: a flat sequence of 40 مواد with NO باب/فصل division and no topical section headers at all, honestly left absent rather than invented; Articles 2 and 34 embed substance/dosage HTML tables, linearized to plain text preserving every cell. **VERIFICATION TIER: TIER_3 (single full-text primary source)** — all 40 مواد rest on ONE full-text source (nezams.com), materially weaker than the base law's own multi-source standard. The official BOE portal (HTTP 503/connection reset), the MOI PDF (connection reset), and Wayback Machine content ('Blocked by egress policy') were all attempted and failed. qistas.com independently matched only the enacting-resolution PREAMBLE word-for-word — not any of the 40 articles; almehleky.sa gave topical, non-verbatim corroboration for only 3 of 40 articles. A fourth source (zarah.com.sa PDF) was fetched but rejected: systematic Arabic ligature/digit-reversal corruption and its content terminates before ever reaching this Regulation's text. Other disclosed items: decorative in-word tatweel characters were cleaned per this corpus's standard normalization rule (no semantic change); a nezams.com site-navigation sentence was stripped from Article 34; an en-dash-vs-tatweel sub-item-marker styling inconsistency between the articles and the preamble was preserved verbatim as a low-stakes formatting uncertainty rather than normalized. Arabic governs; not legal advice.",
+      "official_text_status": "NEZAMS_HTML_SINGLE_FULLTEXT_X_QISTAS_PREAMBLE_PARTIAL_MATCH",
+      "record_counts": {
+        "arabic_articles": 40,
+        "legal_status_breakdown": {
+          "اصلية": 40,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 40
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Council of Ministers Resolution No. 201, dated 10/6/1431H (24 May 2010), issued pursuant to Article 69 of the Anti-Narcotics and Psychotropic Substances Control Law (Royal Decree M/39, 8/7/1426H), which directed the Ministries of Interior, Justice and Health to prepare this Implementing Regulation; published in the Official Gazette 6/7/1431H (18 June 2010), effective 30 days thereafter per the Regulation's own Article 40. laws.boe.gov.sa (lawId be479758-9a84-4e94-b1d3-a9a700f19454), the MOI-hosted PDF, and Wayback Machine content-fetch were all confirmed unreachable this pass (HTTP 503/connection-reset; 'Blocked by egress policy'). PRIMARY nezams.com's dedicated regulation page (fetched directly via curl with a browser User-Agent; HTTP 406 without one, HTTP 200 with); SECONDARY qistas.com (word-for-word match of the enacting-resolution preamble only, not any of the 40 substantive مواد) and almehleky.sa (topical, non-verbatim corroboration of 3 of 40 articles); a fourth source (zarah.com.sa PDF) was fetched but rejected for systematic Arabic ligature/digit-reversal corruption and for not actually containing the Regulation's text.",
+      "status": "complete",
+      "track_id": "anti_narcotics_regulation",
+      "validator_targets": [
+        "make anti-narcotics-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/anti_concealment_regulation/law/official_source/anti_concealment_regulation_official_source.json",
+        "sources/anti_concealment_regulation/law/verified/anti_concealment_regulation_verified_summary.json",
+        "data/anti_concealment_regulation_arabic_legal_llm/anti_concealment_regulation_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام مكافحة التستر",
+      "display_name_en": "Implementing Regulation of the Anti-Concealment Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/anti_concealment_regulation_arabic_legal_llm/anti_concealment_regulation_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Anti-Concealment Law «اللائحة التنفيذية لنظام مكافحة التستر» — issued pursuant to Article 19 of the Anti-Concealment Law (Royal Decree M/4, 1/1/1442H); a follow-up track to this corpus's existing anti_concealment (base law) track. **18 records, ALL اصلية** — no amendment to this Regulation has been located this pass; this reflects 'no amendment found', not 'confirmed no amendment exists'. Structure: 9 unnumbered topical section headings (no الفصل/الباب labels, unlike the base law) spanning Articles 1-18, matching the source PDF's own table of contents. **VERIFICATION TIER: TIER_2** — the full text (18 articles, 9 pages) was read visually in full from mc.gov.sa's own official PDF (pdftotext produced systematic Arabic character-substitution corruption, so direct visual reading of 200dpi page renders was used instead), corroborated by an independent second official source (a Saudi Press Agency article matching the PDF's content, structure and timing exactly) — but NOT raised to TIER_1 because no second independent full-text copy exists for article-by-article literal comparison, and because the founding ministerial resolution's own signed text (No. 00479, 20/7/1442H) was never directly read — its number/date rest on convergent indirect evidence only, explicitly disclosed as such. uqn.gov.sa, the Wayback Machine, r.jina.ai, laws.boe.gov.sa, and qanoniah.com were all attempted and failed — mirroring the identical three-way failure pattern already documented in the base law's own track. mc.gov.sa itself required resolving an incomplete server-side TLS certificate chain (missing intermediate) — a routine client-side fix, not a bypass of any access control. Arabic governs; not legal advice.",
+      "official_text_status": "PRIMARY_MC_GOVSA_PDF_X_SPA_OFFICIAL_CORROBORATION_TIER2",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. (00479), dated 20/7/1442H — confirmed only via convergent indirect evidence (an indexed Umm al-Qura gazette page title, aggregated web-search citations, and the source PDF's own embedded creation-date metadata, coinciding exactly), NOT via direct reading of the signed resolution text itself. Issued pursuant to Article 19 of the Anti-Concealment Law (Royal Decree M/4, 1/1/1442H), which requires the Minister of Commerce, in agreement with the Minister of Interior, to issue this Regulation within 180 days of the Law's publication. Administering authority: Ministry of Commerce, coordinating with the Ministries of Municipal & Rural Affairs/Housing, Human Resources & Social Development, Environment/Water/Agriculture, and the General Authority of Zakat and Tax. PRIMARY mc.gov.sa's own PDF (fetched directly after resolving an incomplete server-side TLS chain); SECONDARY a Saudi Press Agency (SPA) news article and the Ministry's own news page independently corroborating content, timing and coordinating ministries. laws.boe.gov.sa (HTTP 503), uqn.gov.sa (returns only the site's cover page), Wayback Machine content-fetch ('Blocked by egress policy') and r.jina.ai (HTTP 401) were all unreachable this pass.",
+      "status": "complete",
+      "track_id": "anti_concealment_regulation",
+      "validator_targets": [
+        "make anti-concealment-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/privatization_regulation/law/official_source/privatization_regulation_official_source.json",
+        "sources/privatization_regulation/law/verified/privatization_regulation_verified_summary.json",
+        "data/privatization_regulation_arabic_legal_llm/privatization_regulation_legal_llm_001_169.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام التخصيص",
+      "display_name_en": "Implementing Regulation of the Privatization Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/privatization_regulation_arabic_legal_llm/privatization_regulation_legal_llm_001_169.json",
+          "governing": true,
+          "record_count": 169,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Privatization Law «اللائحة التنفيذية لنظام التخصيص» — originally issued by National Center for Privatization Board Decision No. (ق-9/2021), 23/4/1443H (159 articles, 8 أبواب), amended by Board Decision No. (1/4/2023), 18/6/1445H, published Umm al-Qura Gazette 21/7/1445H, currently in force as a 169-article consolidated text (8 أبواب unchanged). **169 records: 140 اصلية / 19 معدلة / 10 مضافة (0 ملغاة)** — the 10 wholly new articles and 19 substantively-amended articles were each confirmed by direct content comparison against the original 159-article text, not inferred from the count difference alone. **VERIFICATION TIER: TIER_1** for the governing text itself — the current 169-article text was fetched live and directly from the Umm al-Qura Gazette portal (HTTP 200, no proxy or secondary aggregator), with the article count and 8-باب structure verified programmatically and independently corroborated by a third news source (ajel.sa, explicitly citing '169 مادة'). A caveat applies to the per-article اصلية/معدلة/مضافة classification: the original 2021 PDF used for comparison suffers systematic pdftotext letter-order corruption, so it could not be used as governing text — only for structural counts and a targeted (not exhaustive) comparison; a representative sample surfaced amendments not confined to the count-changed أبواب. The 140 articles classified اصلية reflect 'no change detected in the comparisons performed', not an exhaustive literal audit of all 140 — disclosed honestly as a residual gap. Other disclosed items: laws.boe.gov.sa (connection reset), Wayback Machine (policy block) and r.jina.ai (HTTP 401) were all unreachable; the original decision's precise Gregorian/Gazette-publication dates were only approximated via a 2022 news citation; a journalistic attribution of the original decision to 'مجلس الوزراء' conflicts with the decision's own title attributing it to the NCP Board — the official decision title was preferred, with the conflicting press wording disclosed. This track is explicitly disambiguated from two companion NCP instruments, neither built here. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_ARGAAM_PDF_AMENDMENT_DIFF_PARTIAL",
+      "record_counts": {
+        "arabic_articles": 169,
+        "legal_status_breakdown": {
+          "اصلية": 140,
+          "مضافة": 10,
+          "معدلة": 19,
+          "ملغاة": 0
+        },
+        "total": 169
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "National Center for Privatization (NCP) Board Decision No. (1/4/2023), dated 18/6/1445H (31 December 2023G), amending the original NCP Board Decision No. (ق-9/2021), dated 23/4/1443H, both issued under Article 44 of the Privatization Law (Royal Decree M/63, 5/8/1442H). Amended text published in the Umm al-Qura Official Gazette, dated 21/7/1445H (2 February 2024G). laws.boe.gov.sa: unreachable this pass (connection reset), and no dedicated lawId page is known to exist for NCP Board decisions. PRIMARY uqn.gov.sa (Umm al-Qura Gazette portal), fetched directly and live (HTTP 200) — the actual governing text of all 169 currently-effective articles; SECONDARY a 2021 argaamplus.s3.amazonaws.com PDF of the original 159-article decision (used only to confirm original article/chapter counts and identify amendment locations, owing to systematic letter-order corruption in its pdftotext extraction), further corroborated by argaam.com, ajel.sa, alarabiya.net, snadlaw.sa, qanoonsa.com and aunklaw.com. Wayback Machine and r.jina.ai were both unreachable/blocked this pass.",
+      "status": "complete",
+      "track_id": "privatization_regulation",
+      "validator_targets": [
+        "make privatization-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/chambers_of_commerce_regulation/law/official_source/chambers_of_commerce_regulation_official_source.json",
+        "sources/chambers_of_commerce_regulation/law/verified/chambers_of_commerce_regulation_verified_summary.json",
+        "data/chambers_of_commerce_regulation_arabic_legal_llm/chambers_of_commerce_regulation_legal_llm_001_063.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الغرف التجارية",
+      "display_name_en": "Implementing Regulation of the Chambers of Commerce Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/chambers_of_commerce_regulation_arabic_legal_llm/chambers_of_commerce_regulation_legal_llm_001_063.json",
+          "governing": true,
+          "record_count": 63,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Chambers of Commerce Law «اللائحة التنفيذية لنظام الغرف التجارية» — Ministerial Decision No. (10), 11/1/1443H, published Umm al-Qura Gazette 20 August 2021; amended once, by Ministerial Decision No. 87, 12/5/1447H (3 November 2025), which lowered Article 10's chamber-board-size tiers from four bands to three. **63 records: 62 اصلية / 1 معدلة (Article 10) / 0 مضافة / 0 ملغاة.** Structure: an unnumbered أحكام تمهيدية section, two أبواب (الغرفة; اتحاد الغرف) each split into numbered فصول, and a closing أحكام ختامية section, spanning Articles 1-63. A pending draft amendment to Article 44 (public consultation Jan 2025, restructuring the performance-evaluation advisory-body requirement) was explicitly checked and found NOT adopted as of this pass — Article 44 is recorded here in its original, still-current form, with the draft text disclosed separately rather than silently substituted. **VERIFICATION TIER: TIER_2** — the live Umm al-Qura site redirects to a JavaScript-rendered Vue SPA with no article text in raw HTML, so a 2022-08-18 Wayback Machine snapshot (an older WordPress-era version of the same page, raw HTML) was used as the primary source, cross-checked paragraph-by-paragraph and table-by-table against an independent semi-official PDF from the Federation of Saudi Chambers with zero content divergence except one formatting-only difference in Article 15. The Article 10 amendment was sourced from qanoonsa.com (a non-governmental legislative-tracking site) rather than a raw/scanned copy of the Gazette itself (a direct link returned 404), independently corroborated by akhbaar24.com. Not raised to TIER_1 because no dedicated laws.boe.gov.sa lawId page exists, the founding Decision No. 10's own signed/sealed text was never directly read, and no raw/scanned Gazette copy was obtained for the Article 10 amendment. Other disclosed items: Article 40's fee table was linearized from a three-column table to numbered prose with every figure cross-verified identical between sources; the source Gazette archive is internally inconsistent in sub-item punctuation between structurally-parallel Articles 34 and 53, preserved as published rather than harmonized. Arabic governs; not legal advice.",
+      "official_text_status": "MATCHES_UQN_GAZETTE_X_FSC_INDEPENDENT_CROSS_CHECK",
+      "record_counts": {
+        "arabic_articles": 63,
+        "legal_status_breakdown": {
+          "اصلية": 62,
+          "مضافة": 0,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 63
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. (10), dated 11/1/1443H — confirmed only indirectly, via an explicit recital in a later amendment decision (Ministerial Decision No. 87, 12/5/1447H), not via direct access to Decision No. 10's own signed text — issued under Article 64 of the Chambers of Commerce Law (Royal Decree M/37, 22/4/1442H), published in the Umm al-Qura Gazette 20 August 2021. Latest confirmed amendment: Ministerial Decision No. 87, dated 12/5/1447H (3 November 2025), amending Article 10 only. laws.boe.gov.sa: no dedicated lawId page for this Implementing Regulation (only the base law's own page exists). PRIMARY the Umm al-Qura Gazette, via a 2022-08-18 Wayback Machine snapshot (the live uqn.gov.sa site is a JavaScript-rendered SPA with no raw-HTML article content); SECONDARY the Federation of Saudi Chambers' own official PDF (fsc.org.sa) — paragraph-by-paragraph and table-by-table cross-check with zero content differences aside from one formatting-only sub-clause-numbering divergence; the Article 10 amendment corroborated via qanoonsa.com and akhbaar24.com.",
+      "status": "complete",
+      "track_id": "chambers_of_commerce_regulation",
+      "validator_targets": [
+        "make chambers-of-commerce-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/state_revenue_regulation/law/official_source/state_revenue_regulation_official_source.json",
+        "sources/state_revenue_regulation/law/verified/state_revenue_regulation_verified_summary.json",
+        "data/state_revenue_regulation_arabic_legal_llm/state_revenue_regulation_legal_llm_001_065.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام إيرادات الدولة",
+      "display_name_en": "Implementing Regulation of the State Revenue Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/state_revenue_regulation_arabic_legal_llm/state_revenue_regulation_legal_llm_001_065.json",
+          "governing": true,
+          "record_count": 65,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the State Revenue Law «اللائحة التنفيذية لنظام إيرادات الدولة» — Ministerial Resolution No. (860), dated 13/3/1432H, issued by the Minister of Finance, amended by Ministerial Resolution No. (901), dated 24/2/1439H. **65 records: 60 اصلية / 4 معدلة / 1 مضافة**, organized into 6 numbered فصول, confirmed directly from the source PDF's own printed chapter-title pages. **VERIFICATION TIER: TIER_2** — the Ministry of Finance's own official PDF was fetched directly and every page was rendered as an image and read visually (eliminating an automated OCR artifact this corpus's own tooling documented as reversing word order on this file family), but only Articles 1-8 could be cross-verified word-for-word against a second independent source (qanoniah.com's backend API, before its paywall gate was reached) — Articles 9-65 rest on the single MOF PDF, visually verified but without a second source's full text. Disclosed discrepancies: ncar.gov.sa hosts this document but every direct-fetch attempt (live and via Wayback) failed at the TCP/TLS layer or returned a content-free SPA shell; adf.gov.sa and the direct Umm al-Qura gazette article URL were likewise unreachable, leaving that gazette corroboration resting on a search-engine snippet only; the pre-901 (original 1432H) wording of the five touched articles could not be recovered (the only located 1432H copy is a scanned image PDF with an unusable OCR layer), so original_1432h_text is honestly null for every article rather than fabricated; qanoniah.com's own metadata carries a conflicting issuance-date tag for Resolution 901 versus the MOF PDF's own printed date — '24/2/1439H' (Safar) is treated as correct and the discrepancy is disclosed rather than silently resolved; Article 64 is a generic, non-specific repeal clause naming no predecessor regulation, so repealed_predecessor.confirmed is false — an honest could-not-confirm; the five-article amendment scope rests on matching the current text against a 2017 draft-stage mof.gov.sa announcement rather than a direct diff against the final adopted text or the (unusable) original PDF, so it should be read as 'five articles independently confirmed changed', not an exhaustive guarantee against other undetected wording shifts. Arabic governs; not legal advice.",
+      "official_text_status": "MOF_OFFICIAL_PDF_DIRECT_FETCH_VISUALLY_PAGE_IMAGE_TRANSCRIBED_X_QANONIAH_API_PARTIAL_CROSSCHECK_ARTS_1_8_ONLY_TIER_2_BOE_NO_DEDICATED_PAGE_NCAR_GOV_SA_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 65,
+        "legal_status_breakdown": {
+          "اصلية": 60,
+          "مضافة": 1,
+          "معدلة": 4,
+          "ملغاة": 0
+        },
+        "total": 65
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. (860), dated 13/3/1432H, issued by the Minister of Finance pursuant to Article 29 of the State Revenue Law (Royal Decree M/68, 18/11/1431H); amended by Ministerial Resolution No. (901), dated 24/2/1439H, signed by Minister of Finance Mohammed bin Abdullah Al-Jadaan. Effective from 20/3/1432H (independently corroborated by a Saudi Press Agency news item dated 22 Rabi al-Thani 1432H / 27 March 2011, which also confirms the original 64-article count and the Article-29 authority citation). laws.boe.gov.sa: the base law's own LawDetails page (reached via Wayback) contains no link, section, or reference to this Implementing Regulation at all, consistent with this corpus's documented pattern that BOE does not catalogue Ministerial-Resolution-level executive regulations as their own lawId records. PRIMARY the Ministry of Finance's own document-library PDF (mof.gov.sa), fetched directly (HTTP 200) and transcribed by direct visual reading of every rendered page image (bypassing a documented reversed-word-order text-extraction artifact); SECONDARY qanoniah.com's backend API, which independently corroborates Articles 1-8 word-for-word plus the founding/amending decree numbers, gazette citation (Umm al-Qura issue 4705), and in-force status. ncar.gov.sa and adf.gov.sa/uqn.gov.sa were unreachable this pass (connection resets, soft-404s, or content-free SPA shells).",
+      "status": "complete",
+      "track_id": "state_revenue_regulation",
+      "validator_targets": [
+        "make state-revenue-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/weapons_ammunition_regulation/law/official_source/weapons_ammunition_regulation_official_source.json",
+        "sources/weapons_ammunition_regulation/law/verified/weapons_ammunition_regulation_verified_summary.json",
+        "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_019.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الأسلحة والذخائر",
+      "display_name_en": "Implementing Regulation of the Weapons and Ammunition Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_019.json",
+          "governing": true,
+          "record_count": 19,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Weapons and Ammunition Law «اللائحة التنفيذية لنظام الأسلحة والذخائر» — Ministerial Resolution No. (23), dated 19/1/1428H, issued by the Minister of Interior, published in Umm al-Qura gazette issue (4159), 13/7/1428H. **19 records: 7 اصلية / 12 معدلة** — this Regulation carries NO independent article numbering of its own; every record is keyed to, and cross-referenced against, the base law's own article numbers (only 19 of the base law's 63 articles carry attached implementing text in this source). **VERIFICATION TIER: TIER_3** — the primary source (qadha.org.sa's consolidated PDF) has a digital text layer corrupted by a systemic font-encoding defect requiring Tesseract OCR reconstruction, and full cross-verification is available for only 2 of the 19 articles (qanoonsa.com, Articles 3 and 5). Disclosed discrepancies: the source itself gives conflicting founding-decree numbers — '23' (preamble/index) vs '33' (amendment-history table) — with '23' adopted as correct; Ministerial Resolution 549 (4/2/1446H) adds a new paragraph to Article 23's regulation that the source states explicitly 'لم تسر بعد' (has not yet taken effect), recorded with pending status disclosed; a FIFTH amendment (Minister of Interior Resolution 1938, 10/4/1446H), independently discovered via uqn.gov.sa, adds a medical/toxicology screening requirement to Article 9's regulation and postdates the qadha.org.sa consolidated source, resting on a single direct gazette source without a second independent confirmation; pre-amendment original wording is not preserved for most amended articles; Article 13/3(b)'s text could not be confirmed with confidence due to page-layout ambiguity and is flagged rather than fabricated; Article 3's own implementing regulation was relocated in full into Article 9's regulation by Resolution 5656; fee-schedule annexes referenced by Articles 12 and 25 are out of scope. Arabic governs; not legal advice.",
+      "official_text_status": "QADHA_ORG_SA_PRIMARY_PDF_TESSERACT_OCR_RECONSTRUCTED_CORRUPTED_TOUNICODE_TEXT_LAYER_X_QANOONSA_PARTIAL_2_OF_19_ARTICLES_X_UQN_GOV_SA_DIRECT_5TH_AMENDMENT_DISCOVERY_TIER_3_BOE_NO_DEDICATED_PAGE_FOUNDING_DECREE_23_VS_33_INTERNAL_CONFLICT",
+      "record_counts": {
+        "arabic_articles": 19,
+        "legal_status_breakdown": {
+          "اصلية": 7,
+          "مضافة": 0,
+          "معدلة": 12,
+          "ملغاة": 0
+        },
+        "total": 19
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. (23), dated 19/1/1428H, issued by the Minister of Interior (Prince Naif bin Abdulaziz) pursuant to Article 63 of the Weapons and Ammunition Law (Royal Decree M/45, 25/7/1426H); published in the official Umm al-Qura gazette, issue (4159), dated 13/7/1428H. Amended four times as previously known (Ministerial Resolutions 3499, 14/4/1434H; 274833, 1/11/1437H; 5656, 6/5/1442H; 549, 4/2/1446H) plus a FIFTH amendment independently discovered this pass (Minister of Interior Resolution No. 1938, dated 10/4/1446H, published 29/4/1446H), confirmed directly via the official Umm al-Qura gazette site (uqn.gov.sa). laws.boe.gov.sa: no dedicated lawId page located for this Regulation — the only related hit was a scanned-image reproduction of the base law's own royal decree. PRIMARY qadha.org.sa (the Saudi Judicial Scientific Society)'s own consolidated PDF, whose digital text layer is corrupted by a systemic ToUnicode/font-encoding defect and was therefore reconstructed via Tesseract OCR on rendered page images; SECONDARY qanoonsa.com, corroborating only 2 of the 19 articles carrying Regulation text (Articles 3 and 5) verbatim; uqn.gov.sa, fetched directly to confirm the fifth, previously-unknown amendment. The source carries an unresolved internal conflict over its own founding decree number (23 in two places vs. 33 in the amendment-history table).",
+      "status": "complete",
+      "track_id": "weapons_ammunition_regulation",
+      "validator_targets": [
+        "make weapons-ammunition-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/engineering_practice_regulation/law/official_source/engineering_practice_regulation_official_source.json",
+        "sources/engineering_practice_regulation/law/verified/engineering_practice_regulation_verified_summary.json",
+        "data/engineering_practice_regulation_arabic_legal_llm/engineering_practice_regulation_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام مزاولة المهن الهندسية",
+      "display_name_en": "Implementing Regulation of the Law of Practicing Engineering Professions",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/engineering_practice_regulation_arabic_legal_llm/engineering_practice_regulation_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law of Practicing Engineering Professions «اللائحة التنفيذية لنظام مزاولة المهن الهندسية» — Ministerial Decision No. (4/4400942200), dated 26/5/1445H, published Umm al-Qura gazette issue (5013), 16/6/1445H. **18 records, ALL اصلية**, flat structure of 18 sequentially numbered مواد with no أبواب/فصول grouping and no inline per-article titles. **VERIFICATION TIER: TIER_2** — a single official government primary source (uqn.gov.sa, live HTML text) was reached and cross-checked article-by-article against an independent secondary source (qanoonsa.com) with a full 18/18 verbatim match; TIER_1 was not reached because both laws.boe.gov.sa and saudieng.sa were unreachable live this pass, and the Wayback Machine's CDX metadata API confirmed the saudieng.sa file's existence and stability but its content-serving path returned 'Blocked by egress policy'. Disclosed discrepancies: this Regulation explicitly supersedes a 2018 original (Ministerial Resolution 38315) via a general, not-specifically-named repeal clause — that original's full text could not be independently confirmed this pass and is honestly NOT reconstructed or guessed at; two source-level structural anomalies are preserved verbatim rather than silently corrected — Article 4 skips the alphabetic label 'ج-' for its third accreditation category, and Article 7's numbering jumps from item '2-' directly to item '4-' with no '3-' at all, both confirmed present character-for-character in both sources; the gazette issue number (5013) appears only in the qanoonsa.com secondary source, not in uqn.gov.sa's own Article 18 text, though the Gregorian publication date is independently confirmed via both uqn.gov.sa pages' own metadata. This track is entirely separate from, and does not modify, this corpus's existing engineering_practice (base law) track. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GOV_SA_OFFICIAL_GAZETTE_HTML_DIRECT_PRIMARY_X_QANOONSA_FULL_18_OF_18_CROSSCHECK_TIER_2_BOE_AND_SAUDIENG_SA_LIVE_UNREACHABLE_WAYBACK_CONTENT_BLOCKED",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Decision No. (4/4400942200) of the Minister of Municipal, Rural, and Housing Affairs, dated 26/5/1445H, issued under Article 16 of the Law of Practicing Engineering Professions (Royal Decree M/36, 19/4/1438H) and Supreme Royal Order No. (17103), dated 26/3/1442H (transferring supervision of the Saudi Council of Engineers from the Ministry of Commerce to this Ministry). This Decision explicitly identifies itself as an update to, and its clause 3 generally repeals, a prior Implementing Regulation issued by Ministerial Resolution No. (38315), dated 12/7/1439H (under the then Ministry of Commerce and Investment) — that 2018 original was not independently accessible this pass (saudieng.sa and laws.boe.gov.sa both unreachable live; the Wayback Machine confirmed the file's existence via CDX digest only, with content-serving blocked) and is therefore not ingested. The current 18-article Regulation was published in Umm al-Qura gazette issue (5013), dated 16/6/1445H (29 December 2023G). laws.boe.gov.sa was checked but unreachable (TLS connection reset). PRIMARY the Umm al-Qura official gazette's own portal (uqn.gov.sa), fetched directly as live HTML text for both the ministerial decision and the Regulation itself; SECONDARY qanoonsa.com, cross-checked article-by-article with a full 18/18 verbatim match, including two source-level numbering anomalies independently confirmed present in both sources.",
+      "status": "complete",
+      "track_id": "engineering_practice_regulation",
+      "validator_targets": [
+        "make engineering-practice-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/allegiance_commission_regulation/law/official_source/allegiance_commission_regulation_official_source.json",
+        "sources/allegiance_commission_regulation/law/verified/allegiance_commission_regulation_verified_summary.json",
+        "data/allegiance_commission_regulation_arabic_legal_llm/allegiance_commission_regulation_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام هيئة البيعة",
+      "display_name_en": "Implementing Regulation of the Allegiance Commission Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/allegiance_commission_regulation_arabic_legal_llm/allegiance_commission_regulation_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Allegiance Commission Law «اللائحة التنفيذية لنظام هيئة البيعة» — Royal Order No. (A/164), dated 26/9/1428H (8 October 2007G), issued by King Abdullah bin Abdulaziz Al Saud. **18 records, ALL اصلية**, flat structure with no أبواب/فصول; Article 1 retains its own internal أولاً/ثانياً enumeration as a single article record. No amendment to this Regulation's own text has been found in any source consulted (Article 18 only supplies the amendment MECHANISM, not evidence it has ever been invoked). **VERIFICATION TIER: TIER_2** — exactly one official/primary source (SPA, the Kingdom's state news wire) was reached and its text adopted, cross-verified against one private secondary source (islamport.com) with full agreement; the canonical legal-codification portal (BOE) that would supply a second independent official leg was confirmed to exist but was unreachable by every method tried, and the Official Gazette issue that would otherwise supply a second official leg was found only by citation, not independently fetched. This track is nonetheless one tier stronger than the parent allegiance_commission (base law) track, which reached no official source at all. Disclosed discrepancies: the BOE LawDetails page for this Regulation exists but was unreachable by every method; Umm al-Qura gazette issue (4828), cited by a third party as the publication vehicle, could not be independently confirmed and is reported as plausible but unverified; a prior research pass's Gregorian date ('7 October 2007') is corrected here to 8 October 2007, based on both an algorithmic Hijri-Gregorian conversion and SPA's own second wire transmission's dispatch dateline. Arabic governs; not legal advice.",
+      "official_text_status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Order No. (A/164), dated 26/9/1428H (8 October 2007G), issued by King Abdullah bin Abdulaziz Al Saud pursuant to the Basic Law of Governance (Royal Order A/90, 27/8/1412H) and the Allegiance Commission Law itself (Royal Order A/135, 26/9/1427H). laws.boe.gov.sa: a dedicated LawDetails page for this Regulation was located but was unreachable by every method attempted this pass (direct connection reset, WebFetch HTTP 503, r.jina.ai HTTP 401 for bad IP reputation, and a Wayback Machine snapshot confirmed to exist via CDX but whose content-serving path was blocked). PRIMARY the Saudi Press Agency (spa.gov.sa), the Kingdom's official state news wire, fetched live and parsed directly from its own embedded page JSON across two independent same-day wire transmissions, which agree word-for-word and are terminated by the wire service's own explicit end-of-transmission marker; SECONDARY islamport.com, an independent private Arabic legal/Islamic reference digitization project, in full substantive agreement across all 18 articles apart from three trivial, non-substantive typographic variants. A third-party citation to Umm al-Qura gazette issue (4828) as the publication vehicle could not be independently confirmed this pass and is disclosed as unverified.",
+      "status": "complete",
+      "track_id": "allegiance_commission_regulation",
+      "validator_targets": [
+        "make allegiance-commission-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/social_insurance_regulation/law/official_source/social_insurance_regulation_official_source.json",
+        "sources/social_insurance_regulation/law/verified/social_insurance_regulation_verified_summary.json",
+        "data/social_insurance_regulation_arabic_legal_llm/social_insurance_regulation_legal_llm_001_107.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام التأمينات الاجتماعية",
+      "display_name_en": "Implementing Regulation of the (New) Social Insurance Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/social_insurance_regulation_arabic_legal_llm/social_insurance_regulation_legal_llm_001_107.json",
+          "governing": true,
+          "record_count": 107,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the (new) Social Insurance Law «اللائحة التنفيذية لنظام التأمينات الاجتماعية» — Ministerial Resolution No. (230/تأمينات), dated 26/12/1445H, effective 3/7/2024G. **107 records, ALL اصلية** (no amendments recorded since enactment), organized into 7 أبواب and 11 nested فصول. **VERIFICATION TIER: TIER_2** — a single official government primary source (uqn.gov.sa, live HTML text) was reached and cross-checked article-by-article across all 107 articles against an independent secondary source (qanoonsa.com), plus a tertiary confirmation (argaam.com); TIER_1 was not reached because laws.boe.gov.sa was unreachable this pass and not circumvented. Disclosed discrepancies: approximately 63 of the 107 articles are missing their main-paragraph and/or lettered sub-paragraph numbering in uqn.gov.sa's own raw text (confirmed a genuine source gap, not a rendering artifact) — qanoonsa.com preserves full numbering with identical substantive wording, but this track deliberately preserves uqn.gov.sa's text exactly as retrieved rather than silently importing numbering from the secondary source; 'الفصل الأول' under Chapter/Baab Three (Articles 36-39) carries no title text in the raw source, preserved as an empty title; the gazette issue number (5038) is confirmed only via qanoonsa.com, not shown on the uqn.gov.sa pages themselves; this track is entirely distinct from a separate, parallel social_insurance_legacy track covering the OLD Social Insurance Law (M/33, 1421H) — the two base laws share a near-identical Arabic title and must not be confused. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GOV_SA_OFFICIAL_GAZETTE_HTML_DIRECT_PRIMARY_X_QANOONSA_NEAR_FULL_107_CROSSCHECK_X_ARGAAM_TERTIARY_TIER_2_BOE_UNREACHABLE_NOT_CIRCUMVENTED_PARAGRAPH_ENUMERATION_GAP_63_OF_107",
+      "record_counts": {
+        "arabic_articles": 107,
+        "legal_status_breakdown": {
+          "اصلية": 107,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 107
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. (230/تأمينات) of the Minister of Finance, dated 26/12/1445H, adopted by Mohammed bin Abdullah Al-Jadaan in his capacity as Chairman of the Board of Directors of the General Organization for Social Insurance (GOSI), issued pursuant to the (new) Social Insurance Law (Royal Decree M/273, 26/12/1445H) and GOSI Board Resolution No. (1490) of the same date. This corrects a prior research assumption that Royal Decree M/273 itself was the approving instrument for this Regulation — M/273 is the promulgating decree for the base LAW only; the Regulation was separately adopted by the Minister's own Resolution, confirmed directly by fetching the adoption-decision page on uqn.gov.sa. Effective from 3/7/2024G; published in Umm al-Qura gazette issue (5038), 13 July 2024G (per qanoonsa.com; not shown explicitly on the uqn.gov.sa pages themselves). No amendment recorded as of 25/7/2026. laws.boe.gov.sa was checked but unreachable (TLS connection reset); not circumvented, as it was not needed given the strength of the sources reached. PRIMARY the Umm al-Qura official gazette's own portal (uqn.gov.sa), fetched directly as live HTML for both the Regulation's full text and its adoption decision; SECONDARY qanoonsa.com, cross-checked article-by-article across all 107 articles with zero substantive discrepancies; TERTIARY argaam.com, corroborating the adoption and quoting matching text from one article.",
+      "status": "complete",
+      "track_id": "social_insurance_regulation",
+      "validator_targets": [
+        "make social-insurance-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/saudi_engineers_regulation/law/official_source/saudi_engineers_regulation_official_source.json",
+        "sources/saudi_engineers_regulation/law/verified/saudi_engineers_regulation_verified_summary.json",
+        "data/saudi_engineers_regulation_arabic_legal_llm/saudi_engineers_regulation_legal_llm_001_032.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الهيئة السعودية للمهندسين",
+      "display_name_en": "Implementing Regulation of the Law of the Saudi Council of Engineers",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/saudi_engineers_regulation_arabic_legal_llm/saudi_engineers_regulation_legal_llm_001_032.json",
+          "governing": true,
+          "record_count": 32,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law of the Saudi Council of Engineers «اللائحة التنفيذية لنظام الهيئة السعودية للمهندسين» — approved by the Council's General Assembly, cover-dated 1445H/2024G. **32 records, ALL اصلية**, organized into 6 named فصول with no أبواب. This track governs the Council's OWN internal organs (General Assembly, Board elections, Secretariat-General, engineering divisions, branches, membership, and Council finances) and is explicitly disambiguated from a textually and structurally distinct government ministerial regulation hosted in the same saudieng.sa directory that implements individual-engineer licensing/discipline under a separate base law — that instrument is tracked independently as engineering_practice_regulation. **VERIFICATION TIER:** substantively TIER_2-equivalent at best — a single archived copy of the Council's own PDF (one Wayback snapshot, no second independent host reached; a Scribd mirror and r.jina.ai were both attempted and both unavailable) was cross-extracted by two independent parsing pipelines that agree word-for-word, which is a parsing cross-check on ONE source, not a second independent-source confirmation. Disclosed discrepancies: only one archived capture of this exact file was found, so all 32 articles are recorded as 'اصلية' meaning verified-current text, NOT an affirmative claim of identity with whatever internal edition(s) preceded this 1445H/2024G reissuance; the '20th Ordinary General Assembly, 2024' meeting-number attribution could not be independently confirmed and is flagged as unverified; an inconsistent hamza-under-alef spelling style, three isolated misspellings, and a stray duplicate-numeral artifact in Article 29 are preserved verbatim rather than silently corrected, confirmed identically by both extraction pipelines. Arabic governs; not legal advice.",
+      "official_text_status": "SAUDIENG_SA_WAYBACK_20250625_PRIMARY_X_PDFTOTEXT_POPPLER_AND_PDFPLUMBER_PDFMINER_DUAL_INDEPENDENT_EXTRACTION_CROSSCHECK_LIVE_FETCH_TLS_RESET",
+      "record_counts": {
+        "arabic_articles": 32,
+        "legal_status_breakdown": {
+          "اصلية": 32,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 32
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Implementing Regulation of the Law of the Saudi Council of Engineers, approved by the Council's own General Assembly resolution under Article 5(2) and Article 7(3) of the Law of the Saudi Council of Engineers (Royal Decree M/36, 26/9/1423H), cover-dated '1445H / 2024G' with no meeting number or exact approval date stated inline in the 16-page instrument itself (a prior research pass's '20th Ordinary General Assembly, 2024' attribution could not be independently confirmed and is carried only as an unverified prior claim). This is a Council-internal instrument, not BOE-catalogued. laws.boe.gov.sa: not applicable. PRIMARY the Saudi Council of Engineers' own official site (saudieng.sa), whose direct live fetch failed with a TLS connection reset but whose sole archived Wayback Machine snapshot (20250625074825) was successfully fetched and byte-verified against its own CDX-recorded digest; extracted via two structurally independent PDF-parsing pipelines (poppler's pdftotext and a from-scratch bidi/glyph-order-corrected pdfplumber/pdfminer reconstruction, required because the PDF's embedded Arabic text stream is stored in raw visual rather than logical character order) that agree word-for-word on the full 32-article text after normalization — a parsing cross-check on a single archived copy, not an independent-host cross-check.",
+      "status": "complete",
+      "track_id": "saudi_engineers_regulation",
+      "validator_targets": [
+        "make saudi-engineers-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/child_protection_regulation/law/official_source/child_protection_regulation_official_source.json",
+        "sources/child_protection_regulation/law/verified/child_protection_regulation_verified_summary.json",
+        "data/child_protection_regulation_arabic_legal_llm/child_protection_regulation_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام حماية الطفل",
+      "display_name_en": "Implementing Regulation of the Saudi Arabian Child Protection Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/child_protection_regulation_arabic_legal_llm/child_protection_regulation_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 25,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Child Protection Law «اللائحة التنفيذية لنظام حماية الطفل» — Ministerial Resolution No. (56386), dated 16/6/1436H, issued by the Ministry of Social Affairs (today the Ministry of Human Resources and Social Development) pursuant to Article 24 of the Child Protection Law (Royal Decree M/14, 3/2/1436H). **25 records, ALL اصلية**, organized into five chapters. **VERIFICATION TIER: TIER_3** — no laws.boe.gov.sa lawId page located for this regulation this pass, and the portal itself was unreachable (HTTP 000/503); PRIMARY nezams.com (full text, direct fetch, HTTP 200), corroborated structurally (not verbatim) by an official Ministry of Justice «مجلة العدل» PDF (issue 75) confirming the decree identity, five-chapter structure, and 25-article count — that PDF's own text extraction carries bidi/ligature artifacts limiting it to structural corroboration only. Arabic governs; not legal advice.",
+      "official_text_status": "NEZAMS_COM_FULLTEXT_PRIMARY_X_MOJ_ADALAH_MAGAZINE_PDF_STRUCTURAL_CROSSCHECK_TIER_3_BOE_NO_DEDICATED_LAWID_FOUND",
+      "record_counts": {
+        "arabic_articles": 25,
+        "legal_status_breakdown": {
+          "اصلية": 25,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 25
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. (56386), dated 16/6/1436H, issued by the Ministry of Social Affairs (today the Ministry of Human Resources and Social Development) pursuant to Article 24 of the Child Protection Law (Royal Decree M/14, 3/2/1436H), which required the Minister to issue this regulation within ninety days of the law's publication. Published (per nezams.com) 29/10/1436H. laws.boe.gov.sa: no dedicated lawId page located for this regulation this pass (unlike the base law's own confirmed BOE lawId), and the portal itself was unreachable this pass (HTTP 000/503). PRIMARY nezams.com (full text, direct fetch, HTTP 200); SECONDARY an official Ministry of Justice «مجلة العدل» (Adalah magazine) PDF (adlm.moj.gov.sa, issue 75) independently confirming the decree identity, five-chapter structure, and 25-article count, though its own text extraction carries bidi/ligature artifacts limiting it to structural (not verbatim) corroboration.",
+      "status": "complete",
+      "track_id": "child_protection_regulation",
+      "validator_targets": [
+        "make child-protection-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/whistleblower_regulation/law/official_source/whistleblower_regulation_official_source.json",
+        "sources/whistleblower_regulation/law/verified/whistleblower_regulation_verified_summary.json",
+        "data/whistleblower_regulation_arabic_legal_llm/whistleblower_regulation_legal_llm_001_012.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام حماية المبلغين والشهود والخبراء والضحايا",
+      "display_name_en": "Implementing Regulation of the Law on Protection of Whistleblowers, Witnesses, Experts and Victims",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/whistleblower_regulation_arabic_legal_llm/whistleblower_regulation_legal_llm_001_012.json",
+          "governing": true,
+          "record_count": 12,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law on Protection of Whistleblowers, Witnesses, Experts and Victims «اللائحة التنفيذية لنظام حماية المبلغين والشهود والخبراء والضحايا» — Council of Ministers Decision No. (892), dated 02/12/1447H (2026-05-19), executing Royal Decree M/148, 08/08/1445H. **12 records, ALL اصلية**. **VERIFICATION TIER: TIER_4** — published as a draft printing (11 articles) in Umm al-Qura gazette issue 5162 (19/12/1447H), superseded one week later by an official errata («تنويه») in issue 5163 (26/12/1447H, corrected/final printing, 12 articles), which is the governing text used here; PRIMARY the two Umm al-Qura gazette PDFs, both fetched directly and hash-recorded, SECONDARY qanoonsa.com HTML mirrors of both printings. This track independently corrects prior research and several secondary sources, which cite Decision No. (893) — an unrelated, gazette-adjacent Council of Ministers decision on water-factory organizational arrangements; two independent primary gazette PDFs confirm the correct decision number is 892. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_PDF_CROSS_VERIFIED_HTML_MIRROR_X_QANOONSA_HTML_MIRROR_TIER_4_SINGLE_CHANNEL_DECISION_NUMBER_CORRECTED",
+      "record_counts": {
+        "arabic_articles": 12,
+        "legal_status_breakdown": {
+          "اصلية": 12
+        },
+        "total": 12
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Council of Ministers Decision No. (892), dated 02/12/1447H (2026-05-19), executing the Law on Protection of Whistleblowers, Witnesses, Experts and Victims (Royal Decree M/148, 08/08/1445H). Published in Umm Al-Qura gazette issue 5162 (19/12/1447H, draft printing, 11 articles, printed under the label «مشروع اللائحة التنفيذية») superseded one week later by an official errata («تنويه») in issue 5163 (26/12/1447H, corrected/final printing, 12 articles), which is the governing text used in this track. PRIMARY the two Umm Al-Qura gazette PDFs, both fetched directly from uqn.gov.sa and hash-recorded; SECONDARY qanoonsa.com HTML mirrors of both printings. Independently corrects prior research and several secondary sources (qanoonsa.com and echoing outlets), which cite Decision No. (893) — an unrelated, gazette-adjacent Council of Ministers decision on water-factory organizational arrangements; two independent primary gazette PDFs confirm the correct number is 892.",
+      "status": "complete",
+      "track_id": "whistleblower_regulation",
+      "validator_targets": [
+        "make whistleblower-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/social_insurance_legacy_regulation/law/official_source/social_insurance_legacy_regulation_official_source.json",
+        "sources/social_insurance_legacy_regulation/law/verified/social_insurance_legacy_regulation_verified_summary.json",
+        "data/social_insurance_legacy_regulation_arabic_legal_llm/social_insurance_legacy_regulation_legal_llm_001_170.json"
+      ],
+      "display_name_ar": "اللوائح التنفيذية لنظام التأمينات الاجتماعية (القديم) — م/33، 1421هـ",
+      "display_name_en": "Implementing Regulations of the Old/Legacy Social Insurance Law (M/33, 1421H)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/social_insurance_legacy_regulation_arabic_legal_llm/social_insurance_legacy_regulation_legal_llm_001_170.json",
+          "governing": true,
+          "record_count": 170,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulations of the (legacy) Social Insurance Law «اللوائح التنفيذية لنظام التأمينات الاجتماعية القديم» — Ministerial Resolution No. (128/تأمينات) of the Minister of Labor and Social Affairs, dated 25/10/1421H, issued pursuant to the legacy Social Insurance Law (Royal Decree M/33, 3/9/1421H) and GOSI Board Resolution No. (735), same date, which jointly promulgated FOUR separate implementing regulations as one family — لائحة التسجيل والاشتراكات (65 arts/9 أبواب), لائحة تعويضات فرع المعاشات (42 arts/7 فصول), لائحة تعويضات فرع الأخطار المهنية (40 arts/7 فصول), and لائحة اللجان الطبية (17 arts/5 فصول) — plus the umbrella ministerial decision itself (6 arts). **170 records: 165 اصلية / 5 معدلة**. This is the LEGACY family, distinct from the implementing regulation of the NEW Social Insurance Law (M/273, 1445H), tracked separately as social_insurance_regulation — the two base laws share a near-identical Arabic title and must not be confused. **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa, gosi.gov.sa (JS-rendered SPA), qanoniah.com (paywalled), and Umm al-Qura (uqn.gov.sa) were all unreachable this pass; PRIMARY full text: a single non-government academic mirror (a .doc file hosted at faculty.ksu.edu.sa) reproducing, per its own internal colophon, the official «الطبعة السادسة» (6th edition, 1429H/2008) with Umm al-Qura gazette issue/date citations for the founding decision and six subsequent amendments; SECONDARY qistas.com's free preview independently verbatim-matches only the first two articles of the umbrella decision (2 of 170 records); PLUS wide but structural-only (title/number/date) corroboration from GOSI's own site, Saudi Press Agency, Argaam, Al-Madina, and Maaal. Arabic governs; not legal advice.",
+      "official_text_status": "KSU_MIRROR_X_QISTAS_PARTIAL_VERBATIM_X_MULTISOURCE_STRUCTURAL_CORROBORATION_TIER_3",
+      "record_counts": {
+        "arabic_articles": 170,
+        "legal_status_breakdown": {
+          "اصلية": 165,
+          "مضافة": 0,
+          "معدلة": 5,
+          "ملغاة": 0
+        },
+        "total": 170
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Resolution No. (128/تأمينات) of the Minister of Labor and Social Affairs, dated 25/10/1421H, issued pursuant to the legacy Social Insurance Law (Royal Decree M/33, 3/9/1421H) and GOSI Board Resolution No. (735), same date, which jointly promulgated FOUR separate implementing regulations as one family: لائحة التسجيل والاشتراكات (65 arts/9 أبواب), لائحة تعويضات فرع المعاشات (42 arts/7 فصول), لائحة تعويضات فرع الأخطار المهنية (40 arts/7 فصول), and لائحة اللجان الطبية (17 arts/5 فصول) — plus the umbrella ministerial decision itself (6 arts) — 170 article-records total, superseding the pre-1421H regulations (1392H-1411H). This is the LEGACY family, distinct from the implementing regulation of the NEW Social Insurance Law (M/273, 1445H), tracked separately. laws.boe.gov.sa, gosi.gov.sa (JS-rendered SPA), qanoniah.com (paywalled), and Umm Al-Qura (uqn.gov.sa) were all unreachable this pass. PRIMARY full text: a single non-government academic mirror (.doc file hosted at faculty.ksu.edu.sa) reproducing, per its own internal colophon, the official «الطبعة السادسة» (6th edition, 1429H/2008) with Umm Al-Qura gazette issue/date citations for the founding decision and six subsequent amendments; SECONDARY qistas.com's free preview independently verbatim-matches the first two articles of the umbrella decision only (2 of 170 records); PLUS wide but structural-only (title/number/date) corroboration from GOSI's own site, Saudi Press Agency, Argaam, Al-Madina, and Maaal.",
+      "status": "complete",
+      "track_id": "social_insurance_legacy_regulation",
+      "validator_targets": [
+        "make social-insurance-legacy-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/protection_from_abuse_regulation/law/official_source/protection_from_abuse_regulation_official_source.json",
+        "sources/protection_from_abuse_regulation/law/verified/protection_from_abuse_regulation_verified_summary.json",
+        "data/protection_from_abuse_regulation_arabic_legal_llm/protection_from_abuse_regulation_legal_llm_001_014.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الحماية من الإيذاء",
+      "display_name_en": "Implementing Regulation of the Law of Protection from Abuse",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/protection_from_abuse_regulation_arabic_legal_llm/protection_from_abuse_regulation_legal_llm_001_014.json",
+          "governing": true,
+          "record_count": 14,
+          "status": "complete"
+        }
+      },
+      "notes": "Current (2024) Implementing Regulation of the Law of Protection from Abuse «اللائحة التنفيذية لنظام الحماية من الإيذاء» — published directly by the Ministry of Human Resources and Social Development (hrsd.gov.sa) in both Arabic and English PDF versions. **14 records, ALL اصلية**. **VERIFICATION TIER: TIER_2** — neither the Arabic nor English version states its own ministerial resolution number or issuance date anywhere in the document itself, a genuine disclosure gap in the Ministry's own published text, not an extraction failure; laws.boe.gov.sa returned only the base law's lawId page (no dedicated regulation page found), and the Wayback Machine's content-serving path and r.jina.ai were both blocked this pass. Article 13 of the current text confirms it replaces the prior Implementing Regulation issued by Ministerial Resolution No. (76048), dated 20/4/1440H, which itself replaced the original Implementing Regulation, Ministerial Resolution No. 43047, dated 8/5/1435H (issued under the base law's prior implementing mandate, Article 16 of the Law of Protection from Abuse, Royal Decree M/52, 15/11/1434H, amended by Royal Decree M/72, 6/8/1443H). PRIMARY the Ministry's own official Arabic and English PDFs (direct fetch, HTTP 200); cross-confirmed internally between the two same-issuer language versions (not independent sources, but consistent on every material fact) and against the Ministry of Justice's Adalah-magazine copy of the superseded 1435H original. Arabic governs; not legal advice.",
+      "official_text_status": "HRSD_OFFICIAL_PDF_DIRECT_FETCH_PRIMARY_X_HRSD_ENGLISH_TRANSLATION_CROSS_CONFIRMED_TIER_2_BOE_NO_DEDICATED_PAGE_WAYBACK_AND_JINA_BLOCKED",
+      "record_counts": {
+        "arabic_articles": 14,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 14
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Current (2024) Implementing Regulation of the Law of Protection from Abuse, published directly by the Ministry of Human Resources and Social Development (hrsd.gov.sa) in both Arabic and English PDF versions (file-creation timestamps 24/9/2024 and 3/10/2024 respectively) — neither version states its own ministerial resolution number or issuance date anywhere in the document itself, a genuine disclosure gap in the Ministry's own published text, not an extraction failure. Article 13 of the current text confirms it replaces the prior Implementing Regulation issued by Ministerial Resolution No. (76048), dated 20/4/1440H (27/12/2018G), which itself replaced the original Implementing Regulation, Ministerial Resolution No. 43047, dated 8/5/1435H (issued under the base law's prior implementing mandate, Article 16 of the Law of Protection from Abuse, Royal Decree M/52, 15/11/1434H, amended by Royal Decree M/72, 6/8/1443H). laws.boe.gov.sa returned only the base law's lawId page (no dedicated regulation page found); the Wayback Machine's content-serving path and r.jina.ai were both blocked this pass. PRIMARY the Ministry's own official Arabic and English PDFs (direct fetch, HTTP 200); cross-confirmed internally between the two same-issuer language versions (not independent sources, but consistent on every material fact) and against the Ministry of Justice's Adalah-magazine copy of the superseded 1435H original.",
+      "status": "complete",
+      "track_id": "protection_from_abuse_regulation",
+      "validator_targets": [
+        "make protection-from-abuse-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/healthcare_professions_regulation/law/official_source/healthcare_professions_regulation_official_source.json",
+        "sources/healthcare_professions_regulation/law/verified/healthcare_professions_regulation_verified_summary.json",
+        "data/healthcare_professions_regulation_arabic_legal_llm/healthcare_professions_regulation_legal_llm_001_030.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام مزاولة المهن الصحية",
+      "display_name_en": "Implementing Regulation of the Law of Practicing Healthcare Professions",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/healthcare_professions_regulation_arabic_legal_llm/healthcare_professions_regulation_legal_llm_001_030.json",
+          "governing": true,
+          "record_count": 30,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law of Practicing Healthcare Professions «اللائحة التنفيذية لنظام مزاولة المهن الصحية» — issued pursuant to Article 43 of the base Law (Royal Decree M/59, 4/11/1426H), which obligates the Minister of Health to issue and gazette this regulation. **30 records, ALL اصلية**. **VERIFICATION TIER: TIER_2** — Ministerial Resolution No. (4080489), dated 2/1/1439H, is the number/date printed on the cover of the adopted Ministry of Health «الإصدار الثالث» (3rd edition, 1440H/2019) booklet, with an explicit, disclosed caveat that this is very likely a RE-ISSUANCE/consolidation of an already-existing regulation (a genuinely earlier edition, dated 1432H/2011 and hosted independently by the National Society for Human Rights, already contains a full regulation under a different paragraph-numbering convention), not the absolute founding resolution, whose true number/date were not located. laws.boe.gov.sa and ncar.gov.sa were both unreachable (connection reset/HTTP 503) this pass. PRIMARY the Ministry of Health's own official PDF (moh.gov.sa, direct fetch HTTP 200, byte-identical to a Wayback Machine snapshot and a third-party docdroid.net mirror); SECONDARY a second, independently-produced MOH export of the same regulation, explicitly labeled «الإصدار الثالث 1440هـ - 2019م» on its own cover, cross-compared paragraph-by-paragraph against the primary file; PLUS the 2011-dated NSHR-hosted earlier edition, used for historical/structural comparison only. Arabic governs; not legal advice.",
+      "official_text_status": "MOH_PDF_PRIMARY_X_SECOND_MOH_EXPORT_VERIFIED_WAYBACK_IDENTICAL_TIER_2_BOE_NCAR_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 30,
+        "legal_status_breakdown": {
+          "اصلية": 30,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 30
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Implementing Regulation of the Law of Practicing Healthcare Professions, issued pursuant to Article 43 of the base Law (Royal Decree M/59, 4/11/1426H), which obligates the Minister of Health to issue and gazette this regulation. Ministerial Resolution No. (4080489), dated 2/1/1439H, is the number/date printed on the cover of the adopted Ministry of Health «الإصدار الثالث» (3rd edition, 1440H/2019) booklet — with an explicit, disclosed caveat that this is very likely a RE-ISSUANCE/consolidation of an already-existing regulation (a genuinely earlier edition, dated 1432H/2011 and hosted independently by the National Society for Human Rights, already contains a full regulation under a different paragraph-numbering convention), not the absolute founding resolution, whose true number/date were not located. laws.boe.gov.sa and ncar.gov.sa were both unreachable (connection reset/HTTP 503) this pass. PRIMARY the Ministry of Health's own official PDF (moh.gov.sa, direct fetch HTTP 200, byte-identical to a Wayback Machine snapshot and a third-party docdroid.net mirror); SECONDARY a second, independently-produced MOH export of the same regulation (different producer software, different pagination) explicitly labeled «الإصدار الثالث 1440هـ - 2019م» on its own cover, cross-compared paragraph-by-paragraph against the primary file; PLUS the 2011-dated NSHR-hosted earlier edition, used for historical/structural comparison only.",
+      "status": "complete",
+      "track_id": "healthcare_professions_regulation",
+      "validator_targets": [
+        "make healthcare-professions-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/shura_council_internal_regulation/law/official_source/shura_council_internal_regulation_official_source.json",
+        "sources/shura_council_internal_regulation/law/verified/shura_council_internal_regulation_verified_summary.json",
+        "data/shura_council_internal_regulation_arabic_legal_llm/shura_council_internal_regulation_legal_llm_001_034.json"
+      ],
+      "display_name_ar": "اللائحة الداخلية لمجلس الشورى",
+      "display_name_en": "Internal Regulation of the Shura Council",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/shura_council_internal_regulation_arabic_legal_llm/shura_council_internal_regulation_legal_llm_001_034.json",
+          "governing": true,
+          "record_count": 34,
+          "status": "complete"
+        }
+      },
+      "notes": "Internal Regulation of the Shura Council «اللائحة الداخلية لمجلس الشورى» — Royal Order No. (A/15), dated 3/3/1414H (King Fahd bin Abdulaziz Al Saud), issued pursuant to Article 29 of the Shura Council Law (Royal Order A/91, 27/8/1412H), which jointly promulgated FOUR companion instruments under one royal order — this track covers only instrument (1), the اللائحة الداخلية لمجلس الشورى itself (34 arts, 6 أبواب); the other three (member rights/duties regulation, financial/functional-affairs rules, member investigation/trial rules) are out of scope. **34 records: 29 اصلية / 5 معدلة**. **VERIFICATION TIER: TIER_2** — shura.gov.sa was unreachable via direct fetch (TLS connection reset); no dedicated laws.boe.gov.sa lawId page was located for this specific instrument. Published in Umm al-Qura gazette issue No. 3468, dated 10/3/1414H. Amended twice: Royal Order A/181 (14/12/1428H, touching الباب الأول's chapter title and Articles 6, 8, 17, 27) and Royal Order A/44 (29/2/1434H / 11 Jan 2013, adding «ومشاركة المرأة في اللجان» to Article 22, the same order that added the female-representation quota to the base law's Article 3). PRIMARY an official Shura Council-published compiled booklet («نظام مجلس الشورى», 6th edition, 1437H, hosted at shura.gov.sa), retrieved via a single Wayback Machine snapshot and transcribed by direct visual inspection of page renders (the PDF's own font/CMap encoding corrupts naive programmatic text extraction); SECONDARY metadata-level (not full-text) corroboration via nezams.com and web-search summaries of the Council's own description of the regulation's contents. Arabic governs; not legal advice.",
+      "official_text_status": "GOVERNMENT_PRIMARY_OFFICIAL_COUNCIL_PUBLICATION_VIA_WAYBACK_VISUAL_VERIFICATION_TIER_2_BOE_LAWID_NOT_LOCATED",
+      "record_counts": {
+        "arabic_articles": 34,
+        "legal_status_breakdown": {
+          "اصلية": 29,
+          "مضافة": 0,
+          "معدلة": 5,
+          "ملغاة": 0
+        },
+        "total": 34
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Order No. (A/15), dated 3/3/1414H (King Fahd bin Abdulaziz Al Saud), issued pursuant to Article 29 of the Shura Council Law (Royal Order A/91, 27/8/1412H), which jointly promulgated FOUR companion instruments under one royal order — this track covers only instrument (1), the اللائحة الداخلية لمجلس الشورى itself (34 arts, 6 أبواب); the other three (member rights/duties regulation, financial/functional-affairs rules, member investigation/trial rules) are out of scope. Published in Umm Al-Qura gazette issue No. 3468, dated 10/3/1414H. Amended twice: Royal Order A/181 (14/12/1428H, touching the الباب الأول chapter title and Articles 6, 8, 17, 27) and Royal Order A/44 (29/2/1434H / 11 Jan 2013 — the same order that added the female-representation quota to the base law's Article 3, here adding «ومشاركة المرأة في اللجان» to Article 22). shura.gov.sa was unreachable via direct fetch (TLS connection reset); no dedicated laws.boe.gov.sa lawId page was located for this specific instrument. PRIMARY an official Shura Council-published compiled booklet («نظام مجلس الشورى», 6th edition, 1437H, hosted at shura.gov.sa), retrieved via a single Wayback Machine snapshot (20201007052534) and transcribed by direct visual inspection of page renders (the PDF's own font/CMap encoding corrupts naive programmatic text extraction); SECONDARY metadata-level (not full-text) corroboration via nezams.com and web-search summaries of the Council's own description of the regulation's contents.",
+      "status": "complete",
+      "track_id": "shura_council_internal_regulation",
+      "validator_targets": [
+        "make shura-council-internal-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/civil_service_regulation/law/official_source/civil_service_regulation_official_source.json",
+        "sources/civil_service_regulation/law/verified/civil_service_regulation_verified_summary.json",
+        "data/civil_service_regulation_arabic_legal_llm/civil_service_regulation_legal_llm_001_261.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية للموارد البشرية في الخدمة المدنية",
+      "display_name_en": "Implementing Regulation for Human Resources in the Civil Service",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/civil_service_regulation_arabic_legal_llm/civil_service_regulation_legal_llm_001_261.json",
+          "governing": true,
+          "record_count": 261,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation for Human Resources in the Civil Service «اللائحة التنفيذية للموارد البشرية في الخدمة المدنية» — Ministry of Human Resources and Social Development, first edition 1440H/2019G, 11 أبواب. **261 records: 245 اصلية / 16 معدلة** (0 ملغاة, 0 مضافة). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa unreachable this pass; PRIMARY text for the 245 unamended articles drawn from a clean, InDesign-produced first-edition PDF (projects.ksu.edu.sa), structurally cross-checked against HRSD's own current portal text and an independent MOE copy; the 16 amended articles rest on a SINGLE source (HRSD's current PDF) alone, manually corrected for a confirmed, disclosed text-layer character-order defect that made automated extraction unsafe — no independent second source was reachable for these 16 articles this pass. **NO SINGLE PROMULGATING DECISION NUMBER**: unlike the older 1397H predecessor regulation (Civil Service Council Resolution No. 1), this regulation's own text carries no single self-contained issuing decision number — its basis is Article 39 of the Civil Service Law plus the reform committee formed by Council of Ministers Resolution No. (75), 29/1/1440H, without one dedicated final-approval decision number/date located this pass. **CURRENCY DETERMINATION**: this track independently investigated whether the older 1397H regulation remains governing, or whether this 1440H regulation has effectively superseded it — concluded the 1440H regulation IS the currently governing text (the 1397H document is itself only a historical index pointing to ten scattered, dormant sub-regulations that this 1440H regulation consolidates and replaces in substance; a dedicated reform committee explicitly produced this 1440H text; it remains actively amended through 1444H while the 1397H document has been frozen since 1438H) — but NO single explicit repeal clause naming the 1397H instrument was found, so this conclusion rests on convergent circumstantial/structural evidence, not a direct repeal citation, disclosed as such. Other disclosed items: a cover-page-vs-portal publication date discrepancy (1440H cover vs. 1441H HRSD portal metadata); footnote-to-article misattribution errors caught and corrected during manual review; Article 39 carries an amendment decree but shows no textual change from 1440H (possibly non-substantive); Article 105's single cited amendment does not fully account for additional wording differences observed; a genuine source typo on the Chapter 11 divider page; stale «وزارة الخدمة المدنية» institutional naming persists in several unamended articles pending piecemeal updates. Arabic governs; not legal advice.",
+      "official_text_status": "KSU_1440H_INDESIGN_PDF_CLEAN_PRIMARY_X_HRSD_MOE_STRUCTURAL_CROSSCHECK_TIER2_AMENDED_ARTICLES_HRSD_SINGLE_SOURCE_LOWER_CONFIDENCE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 261,
+        "legal_status_breakdown": {
+          "اصلية": 245,
+          "مضافة": 0,
+          "معدلة": 16,
+          "ملغاة": 0
+        },
+        "total": 261
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministry of Human Resources and Social Development (HRSD) — Implementing Regulation for Human Resources in the Civil Service «اللائحة التنفيذية للموارد البشرية في الخدمة المدنية», first edition, 1440H/2019G. The regulation's own published text carries no single self-contained promulgating decision number (issued as a ministry 'first edition' pursuant to Article 39 of the Civil Service Law and the reform committee formed by Council of Ministers Resolution No. (75), dated 29/1/1440H, rather than under one dedicated council/ministerial decision number of its own) — disclosed rather than invented. Subsequently amended by seven separate Ministerial Decisions: No. (2337), 7/9/1440H; No. (414), 25/2/1441H; No. (1066), 4/6/1441H; No. (111624), 3/6/1443H; No. (372225), 14/11/1443H; No. (88154), 27/5/1444H; No. (109878), 9/7/1444H. laws.boe.gov.sa unreachable this pass (connection reset). PRIMARY the King Saud University-hosted first-edition PDF (projects.ksu.edu.sa, Adobe InDesign production, clean digital text layer); CROSS-CHECKED structurally against the current HRSD portal text (hrsd.gov.sa) and an independent MOE-hosted copy (moe.gov.sa, dated Dhu al-Qi'dah 1442H) for the 245 unamended articles. The 16 amended articles rest on HRSD's own current PDF alone (a file with a confirmed, disclosed text-layer character-order defect elsewhere in the document), read and corrected manually, without an independent second-source cross-check.",
+      "status": "complete",
+      "track_id": "civil_service_regulation",
+      "validator_targets": [
+        "make civil-service-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/associations_ngo_regulation/law/official_source/associations_ngo_regulation_official_source.json",
+        "sources/associations_ngo_regulation/law/verified/associations_ngo_regulation_verified_summary.json",
+        "data/associations_ngo_regulation_arabic_legal_llm/associations_ngo_regulation_legal_llm_001_129.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية",
+      "display_name_en": "Implementing Regulation of the Law of Associations and Civil Institutions",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/associations_ngo_regulation_arabic_legal_llm/associations_ngo_regulation_legal_llm_001_129.json",
+          "governing": true,
+          "record_count": 129,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Law of Associations and Civil Institutions «اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية» — 'updated 2025' consolidated text, NCNP Board Resolution No. (ق/2/1/2022), 22/3/1444H, five أبواب (with a genuine duplicate 'الباب الثاني' numbering in the source itself, disclosed not silently renumbered). **129 records, ALL اصلية** (the current consolidated text carries no per-article change-tracking markers tying any specific amendment to any specific article, so no article could be honestly labeled معدلة without an unsupported assumption; all five governing instruments are instead recorded document-level in amendment_history). **VERIFICATION TIER: TIER_1** — the issuing authority's own PDF (ncnp.gov.sa) was fetched directly; its underlying digital text layer carries a confirmed, disclosed font/CMap defect that scrambles some Arabic letter sequences on extraction, so this track relies on direct visual reading of the source PDF's own page images — by five separate reviewing passes over adjoining page ranges, with boundary reconciliation and a spot-check that caught and corrected one transcription slip. SECONDARY qanoonsa.com independently confirms the founding decision's number/date/gazette citation, and Article 127 of this regulation itself names its repealed predecessor with a number and date matching this corpus's separate associations_ngo (parent law) track. Disclosed limitations: a genuine duplicate 'الباب الثاني' numbering in the source itself, preserved verbatim; Article 73 as printed skips numbered items (1)-(3) and starts at (4) — a genuine source omission, confirmed by comparison to its near-identical counterpart Article 90; Article 114(1) skips lettered item (أ) and jumps to (ب) — another genuine source omission; the four post-2022 amending resolutions are NOT attributable to specific articles from the consolidated source; ncar.gov.sa, istitlaa.ncc.gov.sa, and web.archive.org were all attempted and found blocked/unreachable this pass. Arabic governs; not legal advice.",
+      "official_text_status": "NCNP_OFFICIAL_PDF_DIRECT_PRIMARY_MULTIAGENT_VISUAL_VERIFICATION_TIER1_X_QANOONSA_CROSSCHECK_NCAR_ISTITLAA_WEBARCHIVE_BLOCKED",
+      "record_counts": {
+        "arabic_articles": 129,
+        "legal_status_breakdown": {
+          "اصلية": 129,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 129
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Resolution of the Board of Directors of the National Center for the Development of the Non-Profit Sector (NCNP) No. (ق/2/1/2022), dated 22/3/1444H (18/10/2022G), published Umm al-Qura Gazette Issue No. (4968), 3 February 2023G. Repeals and replaces in full the prior implementing regulation (Ministerial Resolution No. 73739, dated 11/6/1437H) — Article 127 of this regulation names that predecessor by number and date explicitly. Subsequently amended by four further Board resolutions: No. 1/ت/23/2, 10/6/1444H; No. ق/2023/8/5, 19/3/1445H; No. ق/4/16/25, 19/6/1447H; No. ت/1/27/26, 26/7/1447H (the current 'updated 2025' consolidated text in force). ncar.gov.sa and istitlaa.ncc.gov.sa both unreachable (connection reset / HTTP 503/401); web.archive.org blocked at this session's egress-policy level. PRIMARY the issuing authority's own official-site PDF (ncnp.gov.sa), fetched directly (HTTP 200); independently verified via direct visual reading of the source PDF's own page images by five separate reviewing passes over adjoining page ranges; SECONDARY qanoonsa.com independently confirms the founding decision's number, date, and gazette citation.",
+      "status": "complete",
+      "track_id": "associations_ngo_regulation",
+      "validator_targets": [
+        "make associations-ngo-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/electronic_transactions_regulation/law/official_source/electronic_transactions_regulation_official_source.json",
+        "sources/electronic_transactions_regulation/law/verified/electronic_transactions_regulation_verified_summary.json",
+        "data/electronic_transactions_regulation_arabic_legal_llm/electronic_transactions_regulation_legal_llm_001_025.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام التعاملات الإلكترونية",
+      "display_name_en": "Implementing Regulation of the Electronic Transactions Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/electronic_transactions_regulation_arabic_legal_llm/electronic_transactions_regulation_legal_llm_001_025.json",
+          "governing": true,
+          "record_count": 25,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Electronic Transactions Law «اللائحة التنفيذية لنظام التعاملات الإلكترونية» — DGA Board Decision No. (م-8-6), 3 Ramadan 1445H, 8 فصول. **25 records, ALL اصلية** (no subsequent article-level amendment found since issuance). **VERIFICATION TIER: TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED** — a single reachable official primary source (Umm al-Qura Gazette), with no independent SECOND government source reachable this pass (dga.gov.sa Cloudflare-blocked; laws.boe.gov.sa unreachable), but cross-verified verbatim against an independent press outlet (argaam.com) for two full articles, plus multiple secondary legal-database corroborations of the decision number/date. This regulation is the DGA's own implementing instrument issued after Council of Ministers Resolution 293 substituted DGA for CITC in the base law's administration — distinct from, but downstream of, that base-law amendment. Disclosed discrepancies: the Board decision's Hijri date is transposed in several secondary sources (the Ramadan reading is the only one temporally consistent with this regulation being issued pursuant to Resolution 293); the regulation's decision date differs from its Gazette-publication/effective date, both recorded explicitly; a predecessor 1429H implementing regulation is known to have existed but this regulation's own text contains no explicit repeal/supersession clause naming it, disclosed as unconfirmed rather than assumed; the Gazette page's identifier field is not explicitly labeled as an issue number; irregular sub-clause numbering spacing in the source preserved verbatim. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_OFFICIAL_PRIMARY_X_ARGAAM_PRESS_CROSSCHECK_DGA_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 25,
+        "legal_status_breakdown": {
+          "اصلية": 25,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 25
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Board of Directors Decision of the Digital Government Authority (DGA) No. (م-8-6), dated 3 Ramadan 1445H (13 March 2024G) — issued following Council of Ministers Resolution No. (293), dated 9 Rabi' al-Thani 1445H (24 October 2023G), which substituted DGA for the Communications and Information Technology Commission (CITC) in administering the base Electronic Transactions Law and its implementing regulation (Royal Decree M/18, 8/3/1428H). Published Umm al-Qura Official Gazette, 1 Dhu al-Hijjah 1445H (7 June 2024G), effective from publication per the regulation's own Article 25. dga.gov.sa blocked by Cloudflare (HTTP 403) via direct fetch, WebFetch, and the r.jina.ai reader-proxy (which additionally banned this session's IP, HTTP 401); laws.boe.gov.sa unreachable (connection reset). PRIMARY the Umm al-Qura Official Gazette itself (uqn.gov.sa), fetched directly (HTTP 200), server-rendered with no text-layer defects; SECONDARY argaam.com, whose verbatim quotation of two full articles matches the gazette text exactly, including the Board decision's date written out in words, which resolved a date-transposition discrepancy against several secondary sources.",
+      "status": "complete",
+      "track_id": "electronic_transactions_regulation",
+      "validator_targets": [
+        "make electronic-transactions-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/electricity_regulation/law/official_source/electricity_regulation_official_source.json",
+        "sources/electricity_regulation/law/verified/electricity_regulation_verified_summary.json",
+        "data/electricity_regulation_arabic_legal_llm/electricity_regulation_legal_llm_001_092.json"
+      ],
+      "display_name_ar": "اللائحتان التنفيذيتان لنظام الكهرباء (مهمات الهيئة ومهمات الوزارة)",
+      "display_name_en": "Electricity Law Implementing Regulations -- the Authority's part and the Ministry's part (Royal Decree M/44, 16/5/1442H, Article 22)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/electricity_regulation_arabic_legal_llm/electricity_regulation_legal_llm_001_092.json",
+          "governing": true,
+          "record_count": 92,
+          "status": "complete"
+        }
+      },
+      "notes": "Electricity Law Implementing Regulations «اللائحة التنفيذية لنظام الكهرباء» — issued as TWO SEPARATE INSTRUMENTS under Article 22 of the Electricity Law (M/44, 16/5/1442H), which splits the implementing-regulation mandate in two: paragraph (1) tasks the Minister of Energy with the Ministry's-duties regulation, paragraph (2) tasks the Authority's Board with the Authority's-duties regulation. This track COMBINES both instruments into one track (electricity_regulation) with a clear internal split (an instrument_part field of 'authority' or 'ministry' plus the original per-instrument article numbering preserved on every record) rather than splitting them into two tracks, because both instruments issue from the same enabling article, were adopted roughly a week apart, were published in consecutive Umm al-Qura Gazette issues (4911/4912) a week apart, and govern the same overarching Law — while preserving that they are legally two independent instruments (different issuing authorities, decision numbers/dates, independent article numbering starting at Article 1 in each, different Gazette issue numbers). **Authority's part**: Board Decision No. (43/02), 13/4/1443H, 56 articles/10 chapters. **Ministry's part**: Minister's Decision No. (1443/1728/01), 8/3/1443H, 36 articles/14 chapters. Combined: **92 records, ALL اصلية** (56 + 36 = 92). **VERIFICATION TIER: TIER_3** for both instruments — sera.gov.sa, laws.boe.gov.sa, and uqn.gov.sa's live portal were all unreachable this pass and web.archive.org is egress-blocked, so the full verbatim text of both instruments rests on a single non-government aggregator (qanoonsa.com) rather than a directly-fetched or Wayback-mediated government source; a follow-up re-verification against laws.boe.gov.sa or sera.gov.sa is explicitly recommended once reachable. Disclosed items: the Ministry's decision was actually signed five weeks before the Authority's decision but published in the Gazette in the reverse order — a documented administrative sequencing quirk; the Authority-part source switches article-numbering digit style from Arabic-Indic to Western partway through, preserved verbatim; an unconfirmed WebSearch-only claim of two further 2023G amending Board decisions could not be confirmed and is NOT adopted; the regulator's pre-rename name is preserved verbatim in the article text itself, with the SERA rename noted for reference only. Arabic governs; not legal advice.",
+      "official_text_status": "QANOONSA_SINGLE_AGGREGATOR_PRIMARY_TIER3_COMBINED_TWO_INSTRUMENT_TRACK_SERA_BOE_UQN_LIVE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 92,
+        "legal_status_breakdown": {
+          "اصلية": 92,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 92
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "TWO SEPARATE INSTRUMENTS, issued under Article 22 of the Electricity Law (Royal Decree M/44, 16/5/1442H), combined into one track: (1) Water & Electricity Regulatory Authority Board Decision No. (43/02), dated 13/4/1443H (19 November 2021G), 56 articles/10 chapters, published Umm al-Qura Gazette Issue No. (4911), 3 December 2021G; (2) Ministry of Energy Minister's Decision No. (1443/1728/01), dated 8/3/1443H (15 October 2021G), 36 articles/14 chapters, published Umm al-Qura Gazette Issue No. (4912), 10 December 2021G. The regulator was subsequently renamed to the Saudi Electricity Regulatory Authority (SERA) by Council of Ministers Resolution No. (918), dated 28 Shawwal 1445H (7 May 2024G) — confirmed via a direct primary fetch of that Resolution's own text. sera.gov.sa, laws.boe.gov.sa, and uqn.gov.sa's live portal were all unreachable this pass; web.archive.org blocked at this session's egress-policy level. PRIMARY full verbatim text of both instruments, plus the full text of both approval decisions themselves, retrieved directly from qanoonsa.com, with article/chapter counts self-confirmed programmatically against each page's own heading structure.",
+      "status": "complete",
+      "track_id": "electricity_regulation",
+      "validator_targets": [
+        "make electricity-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/maritime_commercial_regulation/law/official_source/maritime_commercial_regulation_official_source.json",
+        "sources/maritime_commercial_regulation/law/verified/maritime_commercial_regulation_verified_summary.json",
+        "data/maritime_commercial_regulation_arabic_legal_llm/maritime_commercial_regulation_legal_llm_001_049.json"
+      ],
+      "display_name_ar": "لائحة تسجيل السفن وقيد الوحدات البحرية",
+      "display_name_en": "Regulation on Ship Registration and Maritime Unit Registration",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/maritime_commercial_regulation_arabic_legal_llm/maritime_commercial_regulation_legal_llm_001_049.json",
+          "governing": true,
+          "record_count": 49,
+          "status": "complete"
+        }
+      },
+      "notes": "Regulation on Ship Registration and Maritime Unit Registration «لائحة تسجيل السفن وقيد الوحدات البحرية», issued by the Transport General Authority (TGA), year of issuance 1441H (specific decision number/date not independently confirmed this pass). Implements Article 7 of the Maritime Commercial Law (M/33, 5/4/1440H). **49 records, ALL اصلية**, 4 فصول, PLUS a separate 22-row penalty table stored as its own field rather than as a 50th numbered article. **VERIFICATION TIER: TIER_2** — TGA's own live portal was unreachable this pass and old.tga.gov.sa no longer resolves, so this track relies on TWO INDEPENDENT historical Wayback Machine crawls of TGA's own regulation page (2.5+ years apart), found byte-for-byte identical after parsing — strong evidence of page stability but not equivalent to an independently-hosted second source. Independent cross-verification via qistas.com's gated preview covers ONLY Articles 1-3; Articles 4-49 and the full penalty table rest on the single TGA-via-Wayback source alone. Disclosed limitations: the regulation's own decision number/Hijri date could not be confirmed from any primary document; a secondary-source claim that a later amendment added an Article 46 مكرر could NOT be confirmed — the string 'مكرر' is absent from both parsed Wayback snapshots, so no Article 46 مكرر is included; this is only ONE of roughly 40 TGA-issued maritime/transport regulations identified via a Wayback CDX enumeration, of which roughly a dozen further maritime-specific instruments remain un-ingested candidates for future, separately-scoped tracks. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_2_TGA_WAYBACK_DOUBLE_SNAPSHOT_X_QISTAS_PARTIAL_CROSSCHECK_LIVE_TGA_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 49,
+        "legal_status_breakdown": {
+          "اصلية": 49,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 49
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Transport General Authority (TGA) Board Decision — decision number and exact Hijri date NOT independently confirmed this pass (TGA's own regulation page displays no decision-number/date field in either historical snapshot examined; two mutually inconsistent AI-summarized candidate decision numbers/dates surfaced by general web search could not be verified against any primary document read directly and are therefore NOT recorded as confirmed). Implements Article 7 (تسجيل السفينة) of the Maritime Commercial Law (Royal Decree M/33, 5/4/1440H), per that Law's Article 390 mandate for the TGA president to issue necessary regulations within 180 days. Live tga.gov.sa unreachable this pass (connection reset); old.tga.gov.sa no longer resolves; r.jina.ai refused anonymous queries (HTTP 401, bad IP reputation). PRIMARY TWO INDEPENDENT historical Wayback Machine crawls of TGA's own regulation page (2022-06-21 and 2025-01-17, 2 years 7 months apart), both HTTP 200 with full page bodies, found byte-for-byte identical after parsing; SECONDARY qistas.com's gated preview independently confirms Articles 1-3 verbatim.",
+      "status": "complete",
+      "track_id": "maritime_commercial_regulation",
+      "validator_targets": [
+        "make maritime-commercial-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/agriculture_regulation/law/official_source/agriculture_regulation_official_source.json",
+        "sources/agriculture_regulation/law/verified/agriculture_regulation_verified_summary.json",
+        "data/agriculture_regulation_arabic_legal_llm/agriculture_regulation_legal_llm_001_271.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الزراعة",
+      "display_name_en": "Implementing Regulation of the Agriculture Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/agriculture_regulation_arabic_legal_llm/agriculture_regulation_legal_llm_001_271.json",
+          "governing": true,
+          "record_count": 271,
+          "status": "complete"
+        }
+      },
+      "notes": "Implementing Regulation of the Agriculture Law «اللائحة التنفيذية لنظام الزراعة» — Ministerial Decision No. (14967/1/1444), 15/1/1444H, تسعة أبواب. **271 records: 266 اصلية / 5 معدلة** — of the 5 معدلة: Article 1 is amended AND its new text is confirmed and incorporated (2024 addition of a 'serious violation' definition); Articles 45, 98, 208, and 248 are amended-in-law but their new wording is NOT confirmed from any source reachable this pass (a 2026-effective Ministerial Decision approved changes to these four but its attachment text was never published anywhere this pass could reach — MEWA's own current site PDF was positively confirmed to still show the unamended 2022 wording for Article 45) — these four therefore retain their original 2022 text with an explicit status='AMENDED_TEXT_UNCONFIRMED'/text_complete=false flag rather than a fabricated replacement. **VERIFICATION TIER: TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE** — under this corpus's weakest-link policy, 267 of 271 articles would otherwise sit at roughly TIER_2 (a single official primary source, the Umm al-Qura Gazette, with structural/content cross-checks against MEWA's own PDF and qanoonsa.com), but the 4 amended-text-unconfirmed articles pull the whole track's disclosed tier down rather than being averaged away. laws.boe.gov.sa returned HTTP 503 for the base law and appears not to separately index this regulation at all. Other disclosed items: no text of the founding decision's own preamble/signature block was located, so it is unconfirmed whether this decision explicitly repeals prior sectoral regulations that predate the unified 2021 Agriculture Law; a separate public-consultation draft amendment to Article 245 was found referenced but its consultation page was unreachable this pass, so it is NOT incorporated, pending confirmation of whether it was ever adopted; a Farsi yeh character in Article 1 normalized to Arabic yeh; mixed Arabic-Indic/Western digit rendering in the beekeeping chapter preserved verbatim. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_OFFICIAL_PRIMARY_X_MEWA_PDF_STRUCTURAL_CROSSCHECK_TIER4_MIXED_CONFIDENCE_4_ARTICLES_AMENDED_TEXT_UNCONFIRMED_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 271,
+        "legal_status_breakdown": {
+          "اصلية": 266,
+          "مضافة": 0,
+          "معدلة": 5,
+          "ملغاة": 0
+        },
+        "total": 271
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. (14967/1/1444), dated 15/1/1444H, issued by the Minister of Environment, Water and Agriculture (MEWA) pursuant to Article 36 of the Agriculture Law (Royal Decree M/64, 10/8/1442H). Published Umm al-Qura Official Gazette, 6/2/1444H (2 September 2022G). Subsequently amended by: Ministerial Decision No. (15065837), dated 15/3/1446H — added a 'serious violation' definition to Article 1, text confirmed and incorporated; and Ministerial Decision No. (15227269), dated 15/12/1447H (effective 26 June 2026G) — approved amendments to Articles 45, 98, 208, and paragraph (5) of Article 248, but the amended wording itself was not available from any source checked this pass. laws.boe.gov.sa returned HTTP 503 for the base law's own page and does not appear to separately index this implementing regulation at all. PRIMARY the Umm al-Qura Official Gazette itself (uqn.gov.sa), fetched directly (HTTP 200), clean digital text; CROSS-CHECKED structurally and for content sampling against MEWA's own official-site PDF (a known font-justification character-corruption defect limits it to structural/content use only) and qanoonsa.com (verbatim text of both amending decisions).",
+      "status": "complete",
+      "track_id": "agriculture_regulation",
+      "validator_targets": [
+        "make agriculture-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/civil_defense_regulation/law/official_source/civil_defense_regulation_official_source.json",
+        "sources/civil_defense_regulation/law/verified/civil_defense_regulation_verified_summary.json",
+        "data/civil_defense_regulation_arabic_legal_llm/civil_defense_regulation_legal_llm_001_021.json"
+      ],
+      "display_name_ar": "لوائح نظام الدفاع المدني الفرعية (لائحتان مؤكدتا النص الكامل هذه الجولة)",
+      "display_name_en": "Civil Defense Law -- Subordinate Implementing Regulations (two instruments with fully confirmed text this pass)",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/civil_defense_regulation_arabic_legal_llm/civil_defense_regulation_legal_llm_001_021.json",
+          "governing": true,
+          "record_count": 21,
+          "status": "complete"
+        }
+      },
+      "notes": "This track covers BOTH subordinate regulations of the Civil Defense Law that could be independently confirmed with full verbatim text this pass — deliberately NOT a single instrument: (1) «لائحة حقوق وواجبات من يستعان بهم في أعمال الدفاع المدني وعلاقتهم بجهاتهم» (Rights and Duties of Persons Recalled for Civil Defense Work), 12 articles, flat, no chapters; (2) «لائحة تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني» (Firefighting and Rescue Regulation), 9 articles plus an unnumbered introductory مقدمة, flat, no chapters. **21 records, ALL اصلية** (12 + 9, 0 معدلة/ملغاة/مضافة). **VERIFICATION TIER: TIER_2** for both components (archived official-portal/gazette captures via Wayback, not live fetches). A third candidate instrument, «لائحة النظر في مخالفات نظام ولوائح الدفاع المدني» (Ministerial Decision 12/1/و/5/دف, 18/4/1428H), is confirmed to EXIST via multiple independent secondary sources and is directly cross-referenced by Article 7 of firefighting_rescue, but its only located copy is a 20-page scanned, image-only 2012 PDF with no reliable OCR — its text is deliberately NOT included. A further ~30 sector-specific safety-conditions PDFs (agriculture, laboratories, high-rise buildings, firefighting teams, etc.) are disclosed as an out-of-scope broader universe of Civil Defense implementing instruments, not ingested. A 2020 news report claiming rights_duties has 11 articles conflicts with BOE's own confirmed 12-article text (five independent archival snapshots); the BOE primary count is adopted. firefighting_rescue's precise Gregorian decree date and actual gazette publication date could NOT be confirmed from a live primary source this pass, so no derived 90-day effective date is asserted. A governance-body succession from «مجلس الدفاع المدني» (named in the 1406H base law) to «لجنة الدفاع المدني المكلفة»/«مجلس المخاطر الوطنية» is flagged as a plausible but UNCONFIRMED inference, recorded as a research note only, not adopted as fact. Arabic governs; not legal advice.",
+      "official_text_status": "TWO_COMPONENT_TRACK_BOE_PORTAL_WAYBACK_5X_SNAPSHOTS_RIGHTS_DUTIES_X_UQN_GAZETTE_WAYBACK_2022_FIREFIGHTING_RESCUE_TIER_2_BOTH_LIVE_PORTALS_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 21,
+        "legal_status_breakdown": {
+          "اصلية": 21,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 21
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "TWO subordinate implementing regulations of the Civil Defense Law «نظام الدفاع المدني» (Royal Decree M/10, 10/5/1406H), stored as one track with two internally labeled components. Component (1) rights_duties: Council of Ministers Resolution No. (10), dated 6/1/1442H (25/8/2020G), published 16/1/1442H (4/9/2020G); reached via Bureau of Experts portal (laws.boe.gov.sa) — five sequential Wayback Machine snapshots (2020-10-22 to 2025-06-22), byte-identical text throughout; the live BOE portal itself returns a connection reset in this environment. Component (2) firefighting_rescue: Resolution No. (1) of the Mandated Civil Defense Committee «لجنة الدفاع المدني المكلفة», dated 6/3/1443H, signed by the Minister of Interior as its Chairman; published via the General Secretariat of the National Risks Council in the Umm al-Qura Official Gazette, reached only via 2022 Wayback Machine snapshots of uqn.gov.sa (the live site was redesigned into a client-rendered SPA; its old numeric ?p=NNNN routes no longer resolve).",
+      "status": "complete",
+      "track_id": "civil_defense_regulation",
+      "validator_targets": [
+        "make civil-defense-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/premium_residency_regulation/law/official_source/premium_residency_regulation_official_source.json",
+        "sources/premium_residency_regulation/law/verified/premium_residency_regulation_verified_summary.json",
+        "data/premium_residency_regulation_arabic_legal_llm/premium_residency_regulation_legal_llm_001_013.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الإقامة المميزة",
+      "display_name_en": "Implementing Regulation of the Premium (Privileged) Residency Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/premium_residency_regulation_arabic_legal_llm/premium_residency_regulation_legal_llm_001_013.json",
+          "governing": true,
+          "record_count": 13,
+          "status": "complete"
+        }
+      },
+      "notes": "«اللائحة التنفيذية لنظام الإقامة المميزة» — Implementing Regulation of the Premium (Privileged) Residency Law. **13 records: 1 اصلية / 12 معدلة** (Article 7 is the only article confirmed byte-identical to the 1440H original by direct comparison). **VERIFICATION TIER: TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE** (graded by the weakest article, not the strongest) — Articles 1-5 carry genuine dual-source verbatim cross-verification (qanoniah.com x aunklaw.com); Articles 6-13 (62% of the document) rest on aunklaw.com alone, with no official/government source reached for any article this pass. preamble_ar is deliberately left empty — no signed/sealed decree preamble text was located on either secondary source. Disclosed discrepancies: a genuine cross-source naming conflict for one residency product in Article 3 §2 (qanoniah's «دائمة» was adopted over aunklaw's stale «غير محددة المدة») that also produces a stale-naming echo in Article 6's fee table, single-sourced to aunklaw and not resolved there; Articles 10-13's «معدلة» classification is an INFERENCE from renumbering patterns confirmed only in Articles 8-9, not a direct textual diff against the 1440H original (whose Articles 11-14 were never accessed, blocked by qanoniah's paywall); and a cross-reference anomaly in Article 8, which cites 'Article (8) of the Law' for content that in fact matches Article 9 of the base law, reproduced verbatim from source, uncorrected. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE_QANONIAH_PAYWALL_ARTICLES_1_5_X_AUNKLAW_FULL_13_ARTICLES_NCAR_BOE_PRGOV_ALL_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 13,
+        "legal_status_breakdown": {
+          "اصلية": 1,
+          "مضافة": 0,
+          "معدلة": 12,
+          "ملغاة": 0
+        },
+        "total": 13
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Premium Residency Center Decision No. (4-1440), dated 20/9/1440H (original issuance, per Article 13 of the Premium Residency Law, Royal Decree M/106, 10/9/1440H), comprehensively amended by the Center's Board of Directors Decision No. (7-5-1444), dated 29/12/1444H. No official government source was reachable this pass: ncar.gov.sa timed out/reset across three independent access attempts; laws.boe.gov.sa does not index this regulation with its own lawId and was itself unreachable; pr.gov.sa (the Center's own portal, the issuing authority itself) redirects both relevant links permanently to a ServiceNow logout page. Relied entirely on two private SECONDARY sources: qanoniah.com (paywalled beyond the first 5 articles of each of the two tracked versions) and aunklaw.com (private law-firm blog, full 13-article current text).",
+      "status": "complete",
+      "track_id": "premium_residency_regulation",
+      "validator_targets": [
+        "make premium-residency-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/water_regulation/law/official_source/water_regulation_official_source.json",
+        "sources/water_regulation/law/verified/water_regulation_verified_summary.json",
+        "data/water_regulation_arabic_legal_llm/water_regulation_legal_llm_001_0156.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام المياه الخاصة بمهام وزارة البيئة والمياه والزراعة",
+      "display_name_en": "Implementing Regulation of the Water Law for the Ministry of Environment, Water and Agriculture's (MEWA) mandate",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/water_regulation_arabic_legal_llm/water_regulation_legal_llm_001_0156.json",
+          "governing": true,
+          "record_count": 156,
+          "status": "complete"
+        }
+      },
+      "notes": "«اللائحة التنفيذية لنظام المياه الخاصة بمهام وزارة البيئة والمياه والزراعة» — the Water Law implementing regulation covering MEWA's OWN mandate specifically (Article 76(1)), distinct from its sibling regulation covering the Authority's service-delivery mandate (Article 76(2)), which is out of scope for this track; a FAOLEX PDF previously misidentified as this track's candidate was confirmed this pass to actually be that sibling regulation and was NOT used. **156 records, ALL اصلية**, across 16 chapters, confirmed by an automatic 1-156 sequence check with no gaps or duplicates. **VERIFICATION TIER: TIER_1** — direct successful fetch from the issuing ministry's own site, with no reliance on any mirror or Wayback capture. Two honest limitations are disclosed: the Ministerial Decision's own number and exact day/month could NOT be confirmed — MEWA's own official cover page leaves both fields blank, and a candidate number/date surfaced in prior research was determined this pass to belong to the SIBLING (76/2) regulation instead, not this one; only the confirmed legal basis (Article 76(1), M/159) is recorded. The PDF's embedded text layer is corrupted (a ToUnicode/font-encoding defect scrambling certain letters, confirmed by comparing extraction against OCR and against direct visual inspection) — every one of the 156 articles was therefore transcribed by direct visual reading of each of the 60 body pages at 300dpi rather than from the defective extracted text layer. Three technical annexes (treated-water-quality standards) are documented but excluded from the numbered-article layer as non-مادة tables. No independent source documents any amendment since the October 2020 first edition, but this was not independently re-searched this pass and is disclosed as an open currency question rather than asserted as confirmed non-amendment. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_1_PRIMARY_MEWA_OFFICIAL_PDF_DIRECT_FETCH_VISION_READ_MINISTERIAL_DECISION_NUMBER_AND_DAY_MONTH_UNCONFIRMED",
+      "record_counts": {
+        "arabic_articles": 156,
+        "legal_status_breakdown": {
+          "اصلية": 156,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 156
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision of the Minister of Environment, Water and Agriculture, issued under the explicit authority of Article 76(1) of the Water Law (Royal Decree M/159, dated 11/11/1441H), following Council of Ministers Resolution No. (710), dated 9/11/1441H. The decision's own NUMBER and its DAY/MONTH are not stated — both fields are printed blank on MEWA's own official cover page; only the Hijri year (1442) and legal basis are confirmed. The internal cover marks it 'Version (1) - October 2020'. Fetched directly (HTTP 200) from mewa.gov.sa's own RulesLibrary — the Ministry's own official site, not a mirror or secondary aggregator. Administered by the Ministry of Environment, Water and Agriculture (MEWA).",
+      "status": "complete",
+      "track_id": "water_regulation",
+      "validator_targets": [
+        "make water-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/press_regulation/law/official_source/press_regulation_official_source.json",
+        "sources/press_regulation/law/verified/press_regulation_verified_summary.json",
+        "data/press_regulation_arabic_legal_llm/press_regulation_legal_llm_001_099.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام المطبوعات والنشر",
+      "display_name_en": "Implementing Regulation of the Press and Publications Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/press_regulation_arabic_legal_llm/press_regulation_legal_llm_001_099.json",
+          "governing": true,
+          "record_count": 99,
+          "status": "complete"
+        }
+      },
+      "notes": "«اللائحة التنفيذية لنظام المطبوعات والنشر» — Implementing Regulation of the Press and Publications Law. **99 records, ALL اصلية** (this is the current post-1439H-amendment consolidated edition; which article(s) the amendment affected could not be attributed from the source alone, an honest gap disclosed rather than an invented per-article history). **VERIFICATION TIER: TIER_2** — a single primary source (the Ministry's own PDF, via a November 2024 Wayback snapshot), read in full by direct vision (98 pages) because automated extraction produced word-internal character scrambling. A genuinely independent second full-text source was searched for but not found (WIPO Lex hosts only the base law; qanoniah.com's copy is session-gated; islamport.com was checked directly and found to host only the base law, contradicting an earlier tool-summary that falsely claimed otherwise — recorded as an explicit caution against trusting AI-summarized fetches). One genuine independent corroboration was found: an Umm al-Qura Gazette article confirming Article 69(ج)'s exact subject matter. Disclosed source-level defects preserved verbatim rather than silently fixed: irregular فصل sub-numbering in Baab 2 (a duplicated «الفصل السادس» label, missing فصول 3-5 and 14, and «الفصل السابع عشر» appearing before «السادس عشر») — not renumbered or corrected here; Articles 7 and 16 each substitute a placeholder for a specific procedural clause, kept verbatim; and Article 72 names «الهيئة العامة للمساحة» while Article 73(د), covering the same subject, names «الهيئة العامة للسياحة» — an internal inconsistency in the Ministry's own source, both readings re-verified and neither harmonised. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_2_MEDIA_MINISTRY_OFFICIAL_PDF_WAYBACK_2024_VISION_READ_UQN_GAZETTE_PARTIAL_SINGLE_ARTICLE_CROSSCHECK_BOE_NOT_INDEXED",
+      "record_counts": {
+        "arabic_articles": 99,
+        "legal_status_breakdown": {
+          "اصلية": 99,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 99
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision (Minister of Media) No. (م/و/2759/1/م), dated 16/6/1422H, issued under Article 46 of the Press and Publications Law (Royal Decree M/32, 3/9/1421H); amended by Ministerial Decision No. (91513), dated 9/11/1439H (~23 Jul 2018G) — which specific article(s) that amendment touched could not be determined this pass, as the source is a single flat consolidated document with no in-text changelog and no earlier dated edition to diff against. media.gov.sa returned connection-reset/timeout on every direct-fetch attempt; PRIMARY text instead retrieved via a 23 November 2024 Wayback Machine snapshot of the Ministry's own official PDF. laws.boe.gov.sa has no dedicated lawId page for this ministerial-level regulation.",
+      "status": "complete",
+      "track_id": "press_regulation",
+      "validator_targets": [
+        "make press-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/building_code_regulation/law/official_source/building_code_regulation_official_source.json",
+        "sources/building_code_regulation/law/verified/building_code_regulation_verified_summary.json",
+        "data/building_code_regulation_arabic_legal_llm/building_code_regulation_legal_llm_001_030.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
+      "display_name_en": "Implementing Regulation of the Law on Application of the Saudi Building Code",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/building_code_regulation_arabic_legal_llm/building_code_regulation_legal_llm_001_030.json",
+          "governing": true,
+          "record_count": 30,
+          "status": "complete"
+        }
+      },
+      "notes": "«اللائحة التنفيذية لنظام تطبيق كود البناء السعودي» — Implementing Regulation of the Law on Application of the Saudi Building Code. **30 records: 15 اصلية / 13 معدلة / 2 مضافة**. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** for the substantive text — four independently-hosted official PDF editions from the administering ministry itself, plus an independent secondary numbering cross-check (qanoonsa.com) and period news coverage confirming '30 articles/7 chapters' immediately after Resolution 56. Two articles from the 1439H founding text were fully REPEALED by the issuing authority's own later decisions with no dedicated slot preserved in the current government-renumbered 1-30 sequence — both articles' full repealed text is preserved verbatim in this track's discrepancy log rather than silently dropped. A LIKELY fifth amendment (replacing «اللجنة الوطنية»/«وزير التجارة» with «المركز السعودي لكود البناء»/«وزير البلديات والإسكان» in Articles 24-25) is indicated by 2026 secondary news coverage and an aggregator-cited decision number, but could NOT be confirmed from any primary gazette source this pass (uqn.gov.sa's server-rendered JS routes and the Wayback Machine's content-serving path were both blocked in this environment) — it is NOT incorporated into the stored text of Articles 24/25, which retain the last independently-confirmed government-primary wording. The exact Umm al-Qura Gazette issue numbers for the founding decree and its three confirmed amendments could not be pinpointed for the same access reason. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_1_PRIMARY_MULTI_SOURCE_MOMAH_4X_HOSTED_PDF_EDITIONS_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSCHECK_UQN_GAZETTE_AND_WAYBACK_CONTENT_PATH_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 30,
+        "legal_status_breakdown": {
+          "اصلية": 15,
+          "مضافة": 2,
+          "معدلة": 13,
+          "ملغاة": 0
+        },
+        "total": 30
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. (1213/ق/أع/39), dated 14/10/1439H, issued by the Minister of Commerce and Investment as Chairman of the Board of the Saudi Standards, Metrology and Quality Organization, under Article 15 of the parent Law on Application of the Saudi Building Code (Royal Decree M/43, 26/4/1438H). Amended three times on confirmed primary-source evidence: Ministerial Decision No. (56), dated 3/3/1441H; Ministerial Decision No. (00004), dated 8/1/1443H (a comprehensive renumbering of Chapters 3-5, repealing two articles and inserting a new one); Ministerial Decision No. (304), dated 8/7/1444H. PRIMARY four PDF editions (2021-06 through 2025-10) all hosted directly on momah.gov.sa (the code's administering ministry), all in verbatim agreement; SECONDARY qanoonsa.com independently cross-verifies the final 1-30 article numbering.",
+      "status": "complete",
+      "track_id": "building_code_regulation",
+      "validator_targets": [
+        "make building-code-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/telecommunications_regulation/law/official_source/telecommunications_regulation_official_source.json",
+        "sources/telecommunications_regulation/law/verified/telecommunications_regulation_verified_summary.json",
+        "data/telecommunications_regulation_arabic_legal_llm/telecommunications_regulation_legal_llm_001_108.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الاتصالات وتقنية المعلومات",
+      "display_name_en": "Implementing Regulation of the Telecommunications and Information Technology Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/telecommunications_regulation_arabic_legal_llm/telecommunications_regulation_legal_llm_001_108.json",
+          "governing": true,
+          "record_count": 108,
+          "status": "complete"
+        }
+      },
+      "notes": "«اللائحة التنفيذية لنظام الاتصالات وتقنية المعلومات» — Implementing Regulation of the Telecommunications and Information Technology Law. **108 records, ALL اصلية**. **VERIFICATION TIER: TIER_2_DUAL_OFFICIAL_PRIMARY_BORN_DIGITAL_CROSS_VERIFIED** — two independent official government PDF sources (CST and MCIT), both born-digital, agreeing verbatim after correcting well-documented systematic extraction artifacts, none altering wording or substance: a lam-alif ligature reversal defect, a single reversed cross-reference (corrected from '(41)' to the true 'Article (14)' by comparing both sources against all bracketed references), reversed numbered-paragraph markers, and five articles whose clause order was restored to match the source page image — all extraction-artifact corrections, not edits to legal content. laws.boe.gov.sa has no dedicated lawId page for this bylaw. The two Umm al-Qura Gazette links named in the research brief redirected to the Gazette's current homepage rather than the archived 2022 publication notice, so gazette text itself was not independently re-confirmed this pass. No confirmed amendment to this Implementing Regulation was found since its 14/5/1444H approval: a 2017 CST news item on amending 'the Implementing Regulation of the Telecommunications Law' was checked and found to concern the PRIOR, now-repealed 2001 law's regulation, not this one; a same-titled e-participation consultation page could not be fetched and its lower ID relative to the base law's own 2024 amendment-consultation ID suggests, without full confirmation, that it is the original 2022 pre-approval draft rather than a later amendment round. Arabic governs; not legal advice.",
+      "official_text_status": "TIER_2_DUAL_OFFICIAL_PRIMARY_BORN_DIGITAL_CST_X_MCIT_CROSSVERIFIED_TEXT_LAYER_REMEDIATED_UQN_GAZETTE_LINKS_STALE_BOE_NOT_INDEXED",
+      "record_counts": {
+        "arabic_articles": 108,
+        "legal_status_breakdown": {
+          "اصلية": 108,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 108
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Minister of Communications and Information Technology Decision No. (13), dated 14/5/1444H (7/12/2022G), issued pursuant to Article 40 of the Telecommunications and Information Technology Act (Royal Decree M/106, 2/11/1443H), based on the Communications, Space and Technology Commission (CST) Board Resolution No. (1-176-2022), dated 13/5/1444H. laws.boe.gov.sa carries no dedicated lawId page for this ministerial-level bylaw. PRIMARY x2 independent official government sources, both born-digital PDFs (not scans): CST's own official site (cst.gov.sa) and the Ministry of Communications and IT's own official site (mcit.gov.sa), agreeing verbatim on all 108 articles and 16 chapters. The two Umm al-Qura Gazette links named in this track's research brief redirected to the Gazette's current homepage rather than the archived 2022 notice and were NOT independently re-confirmed this pass.",
+      "status": "complete",
+      "track_id": "telecommunications_regulation",
+      "validator_targets": [
+        "make telecommunications-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -9570,22 +11327,22 @@
     "note": "Flat cross-law retrieval index projecting all Arabic LLM-ready layers. A projection of already-counted records; NOT added to registry totals to avoid double-counting.",
     "records_per_corpus": {
       "aawan": 35,
-      "accounting_auditing": 22,
-      "agriculture": 37,
+      "accounting_auditing": 37,
+      "agriculture": 308,
       "alimony_fund": 17,
-      "allegiance_commission": 25,
+      "allegiance_commission": 43,
       "aml": 77,
       "anti_bribery": 25,
-      "anti_concealment": 20,
+      "anti_concealment": 38,
       "anti_cyber_crime": 16,
-      "anti_fraud": 30,
+      "anti_fraud": 49,
       "anti_harassment": 8,
-      "anti_narcotics": 74,
+      "anti_narcotics": 114,
       "anti_smoking": 37,
       "anti_trafficking": 17,
       "antiquities_heritage": 94,
       "arbitration": 77,
-      "associations_ngo": 44,
+      "associations_ngo": 173,
       "audiovisual_media": 25,
       "awqaf": 25,
       "banking_control": 26,
@@ -9593,20 +11350,20 @@
       "bankruptcy_fees": 20,
       "basic_law_of_governance": 83,
       "board_of_grievances": 26,
-      "building_code": 16,
+      "building_code": 46,
       "capital_market": 68,
-      "chambers_of_commerce": 66,
-      "child_protection": 26,
+      "chambers_of_commerce": 129,
+      "child_protection": 51,
       "civil": 721,
       "civil_aviation": 180,
-      "civil_defense": 36,
-      "civil_service": 44,
+      "civil_defense": 57,
+      "civil_service": 305,
       "civil_status": 96,
-      "commercial_agencies": 6,
+      "commercial_agencies": 55,
       "commercial_books": 16,
       "commercial_courts": 377,
       "commercial_papers": 121,
-      "commercial_register": 29,
+      "commercial_register": 50,
       "companies_law": 281,
       "competition": 33,
       "cooperative_health_insurance": 19,
@@ -9622,12 +11379,12 @@
       "domestic_labor": 33,
       "ecommerce": 46,
       "einvoicing": 7,
-      "electricity": 23,
-      "electronic_transactions": 31,
+      "electricity": 115,
+      "electronic_transactions": 56,
       "elitigation_guide": 5,
       "enforcement": 371,
       "enforcement_providers": 18,
-      "engineering_practice": 17,
+      "engineering_practice": 35,
       "environmental": 49,
       "environmental_air_quality": 8,
       "environmental_fees": 4,
@@ -9640,14 +11397,14 @@
       "finance_companies": 41,
       "finance_lease": 28,
       "food": 129,
-      "foreign_ownership": 15,
+      "foreign_ownership": 30,
       "franchise": 43,
       "gcc_anti_dumping": 17,
       "gcc_ownership": 6,
       "general_education": 68,
       "gtpl": 256,
       "health_system": 29,
-      "healthcare_professions": 44,
+      "healthcare_professions": 74,
       "iflas_hudud": 23,
       "income_tax": 155,
       "insurance_control": 25,
@@ -9663,7 +11420,7 @@
       "labor": 571,
       "law_practice": 146,
       "lessor_repossession": 7,
-      "maritime_commercial": 391,
+      "maritime_commercial": 440,
       "marriage_contract_hearing": 10,
       "marriage_non_saudi": 11,
       "medical_reports": 13,
@@ -9678,14 +11435,14 @@
       "payment_systems": 20,
       "pdpl": 90,
       "personal_status": 293,
-      "premium_residency": 14,
-      "press": 49,
+      "premium_residency": 27,
+      "press": 148,
       "prison_detention": 31,
-      "privatization": 45,
+      "privatization": 214,
       "product_safety": 37,
-      "protection_from_abuse": 17,
+      "protection_from_abuse": 31,
       "qismah": 48,
-      "real_estate_brokerage": 24,
+      "real_estate_brokerage": 51,
       "real_estate_expropriation": 39,
       "real_estate_finance": 15,
       "real_estate_mortgage": 46,
@@ -9693,36 +11450,36 @@
       "real_estate_units": 74,
       "regions": 41,
       "residency": 69,
-      "rett": 20,
+      "rett": 35,
       "sama": 27,
-      "saudi_engineers": 9,
+      "saudi_engineers": 41,
       "sdaia": 16,
       "sharia_procedure": 880,
-      "shura_council": 30,
-      "social_insurance": 63,
-      "social_insurance_legacy": 71,
+      "shura_council": 64,
+      "social_insurance": 170,
+      "social_insurance_legacy": 241,
       "sports": 97,
       "standards_quality": 47,
       "state_funded_lawyer": 11,
-      "state_revenue": 32,
+      "state_revenue": 97,
       "sulook": 47,
       "tawtheeq": 88,
-      "telecommunications": 41,
+      "telecommunications": 149,
       "terrorism": 127,
       "tourism": 19,
-      "trade_names": 23,
+      "trade_names": 42,
       "trademark": 52,
       "traffic": 172,
       "travel_documents": 69,
       "universities": 58,
       "vat": 135,
-      "water": 77,
-      "weapons_ammunition": 63,
-      "whistleblower": 37,
+      "water": 233,
+      "weapons_ammunition": 82,
+      "whistleblower": 49,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11553,
+    "total_records": 13821,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

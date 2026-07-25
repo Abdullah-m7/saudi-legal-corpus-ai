@@ -314,6 +314,42 @@ export PYTHONPATH := src:$(PYTHONPATH)
         einvoicing-regulation-track-validate \
         pdpl-cross-border-transfer-regulation-track-validate \
         sdaia-organizational-arrangements-track-validate \
+        trade-names-regulation-track-validate \
+        commercial-agencies-regulation-track-validate \
+        accounting-auditing-regulation-track-validate \
+        commercial-register-regulation-track-validate \
+        real-estate-brokerage-regulation-track-validate \
+        foreign-ownership-regulation-track-validate \
+        anti-fraud-regulation-track-validate \
+        rett-regulation-track-validate \
+        anti-narcotics-regulation-track-validate \
+        anti-concealment-regulation-track-validate \
+        privatization-regulation-track-validate \
+        chambers-of-commerce-regulation-track-validate \
+        state-revenue-regulation-track-validate \
+        weapons-ammunition-regulation-track-validate \
+        engineering-practice-regulation-track-validate \
+        allegiance-commission-regulation-track-validate \
+        social-insurance-regulation-track-validate \
+        saudi-engineers-regulation-track-validate \
+        child-protection-regulation-track-validate \
+        whistleblower-regulation-track-validate \
+        social-insurance-legacy-regulation-track-validate \
+        protection-from-abuse-regulation-track-validate \
+        healthcare-professions-regulation-track-validate \
+        shura-council-internal-regulation-track-validate \
+        civil-service-regulation-track-validate \
+        associations-ngo-regulation-track-validate \
+        electronic-transactions-regulation-track-validate \
+        electricity-regulation-track-validate \
+        maritime-commercial-regulation-track-validate \
+        agriculture-regulation-track-validate \
+        civil-defense-regulation-track-validate \
+        premium-residency-regulation-track-validate \
+        water-regulation-track-validate \
+        press-regulation-track-validate \
+        building-code-regulation-track-validate \
+        telecommunications-regulation-track-validate \
         qa-gate
 
 help:
@@ -1680,6 +1716,114 @@ pdpl-cross-border-transfer-regulation-track-validate:
 
 sdaia-organizational-arrangements-track-validate:
 	$(PY) scripts/validate_sdaia_organizational_arrangements_track.py
+
+trade-names-regulation-track-validate:
+	$(PY) scripts/validate_trade_names_regulation_track.py
+
+commercial-agencies-regulation-track-validate:
+	$(PY) scripts/validate_commercial_agencies_regulation_track.py
+
+accounting-auditing-regulation-track-validate:
+	$(PY) scripts/validate_accounting_auditing_regulation_track.py
+
+commercial-register-regulation-track-validate:
+	$(PY) scripts/validate_commercial_register_regulation_track.py
+
+real-estate-brokerage-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_brokerage_regulation_track.py
+
+foreign-ownership-regulation-track-validate:
+	$(PY) scripts/validate_foreign_ownership_regulation_track.py
+
+anti-fraud-regulation-track-validate:
+	$(PY) scripts/validate_anti_fraud_regulation_track.py
+
+rett-regulation-track-validate:
+	$(PY) scripts/validate_rett_regulation_track.py
+
+anti-narcotics-regulation-track-validate:
+	$(PY) scripts/validate_anti_narcotics_regulation_track.py
+
+anti-concealment-regulation-track-validate:
+	$(PY) scripts/validate_anti_concealment_regulation_track.py
+
+privatization-regulation-track-validate:
+	$(PY) scripts/validate_privatization_regulation_track.py
+
+chambers-of-commerce-regulation-track-validate:
+	$(PY) scripts/validate_chambers_of_commerce_regulation_track.py
+
+state-revenue-regulation-track-validate:
+	$(PY) scripts/validate_state_revenue_regulation_track.py
+
+weapons-ammunition-regulation-track-validate:
+	$(PY) scripts/validate_weapons_ammunition_regulation_track.py
+
+engineering-practice-regulation-track-validate:
+	$(PY) scripts/validate_engineering_practice_regulation_track.py
+
+allegiance-commission-regulation-track-validate:
+	$(PY) scripts/validate_allegiance_commission_regulation_track.py
+
+social-insurance-regulation-track-validate:
+	$(PY) scripts/validate_social_insurance_regulation_track.py
+
+saudi-engineers-regulation-track-validate:
+	$(PY) scripts/validate_saudi_engineers_regulation_track.py
+
+child-protection-regulation-track-validate:
+	$(PY) scripts/validate_child_protection_regulation_track.py
+
+whistleblower-regulation-track-validate:
+	$(PY) scripts/validate_whistleblower_regulation_track.py
+
+social-insurance-legacy-regulation-track-validate:
+	$(PY) scripts/validate_social_insurance_legacy_regulation_track.py
+
+protection-from-abuse-regulation-track-validate:
+	$(PY) scripts/validate_protection_from_abuse_regulation_track.py
+
+healthcare-professions-regulation-track-validate:
+	$(PY) scripts/validate_healthcare_professions_regulation_track.py
+
+shura-council-internal-regulation-track-validate:
+	$(PY) scripts/validate_shura_council_internal_regulation_track.py
+
+civil-service-regulation-track-validate:
+	$(PY) scripts/validate_civil_service_regulation_track.py
+
+associations-ngo-regulation-track-validate:
+	$(PY) scripts/validate_associations_ngo_regulation_track.py
+
+electronic-transactions-regulation-track-validate:
+	$(PY) scripts/validate_electronic_transactions_regulation_track.py
+
+electricity-regulation-track-validate:
+	$(PY) scripts/validate_electricity_regulation_track.py
+
+maritime-commercial-regulation-track-validate:
+	$(PY) scripts/validate_maritime_commercial_regulation_track.py
+
+agriculture-regulation-track-validate:
+	$(PY) scripts/validate_agriculture_regulation_track.py
+
+civil-defense-regulation-track-validate:
+	$(PY) scripts/validate_civil_defense_regulation_track.py
+
+premium-residency-regulation-track-validate:
+	$(PY) scripts/validate_premium_residency_regulation_track.py
+
+water-regulation-track-validate:
+	$(PY) scripts/validate_water_regulation_track.py
+
+press-regulation-track-validate:
+	$(PY) scripts/validate_press_regulation_track.py
+
+building-code-regulation-track-validate:
+	$(PY) scripts/validate_building_code_regulation_track.py
+
+telecommunications-regulation-track-validate:
+	$(PY) scripts/validate_telecommunications_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

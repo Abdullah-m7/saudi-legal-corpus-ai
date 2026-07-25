@@ -1,0 +1,234 @@
+{
+  "document": "اللائحة التنفيذية لنظام هيئة البيعة",
+  "document_en": "Implementing Regulation of the Allegiance Commission Law",
+  "decree": "الأمر الملكي رقم (أ/164)",
+  "decree_date_hijri": "26/9/1428",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "الأمر الملكي رقم (أ/164) — الملك عبدالله بن عبدالعزيز آل سعود؛ صادر بعد الاطلاع على النظام الأساسي للحكم (الأمر الملكي أ/90، 27/8/1412هـ) وعلى نظام هيئة البيعة ذاته (الأمر الملكي أ/135، 26/9/1427هـ)، ثم على مشروع اللائحة التنفيذية، وبناء على ما تقتضيه المصلحة العامة. يقتصر منطوق الأمر على بندين فقط (أولا: الإصدار بالصيغة المرفقة؛ ثانيا: التبليغ للجهات المختصة لاعتماده وتنفيذه) — خلافا للأمر الملكي الأم (أ/135) الذي تضمن بندا ثالثا يقصر سريان أحكام النظام على الحالات المستقبلية؛ لا يوجد بند مماثل في أمر إصدار هذه اللائحة.",
+  "issuing_authority_en": "Royal Order No. A/164 — King Abdullah bin Abdulaziz Al Saud; issued after review of the Basic Law of Governance (Royal Order A/90, 27/8/1412H) and of the Allegiance Commission Law itself (Royal Order A/135, 26/9/1427H), then of the draft Implementing Regulation, and pursuant to the public interest. The promulgation order has only two clauses (first: issuance in the attached form; second: notification to competent authorities for adoption and implementation) — unlike the parent Royal Order A/135, which had a third clause limiting the parent law's application to future cases only; no equivalent clause appears in this Regulation's promulgation order.",
+  "preamble_ar": "بسم الله الرحمن الرحيم\nالرقم أ / 164\nالتاريخ 26 / 9 / 1428هـ\nبعون الله تعالى\nنحن عبدالله بن عبدالعزيز آل سعود\nملك المملكة العربية السعودية\nبعد الاطلاع على النظام الأساسي للحكم الصادر بالأمر الملكي رقم أ / 90 وتاريخ 27 / 8 / 1412هـ .\nوبعد الاطلاع على نظام هيئة البيعة الصادر بالأمر الملكي رقم أ / 135 وتاريخ 26 / 9 / 1427هـ .\nوبعد الاطلاع على مشروع اللائحة التنفيذية لنظام هيئة البيعة .\nوبناء على ما تقتضيه المصلحة العامة .\nأمرنا بما هو آت :\nأولا : إصدار اللائحة التنفيذية لنظام هيئة البيعة بالصيغة المرفقة بهذا .\nثانيا : يبلغ أمرنا هذا للجهات المختصة لاعتماده وتنفيذه .\nعبدالله بن عبدالعزيز",
+  "verification_methodology_note": "اللائحة التنفيذية لنظام هيئة البيعة — Implementing Regulation of the Allegiance Commission Law — issued by Royal Order No. A/164, dated 26/9/1428H, by King Abdullah bin Abdulaziz Al Saud. 18 articles, flat structure, no chapters/sections.\n\nDATE CORRECTION relative to prior research pass: the Hijri date 26/9/1428H is confirmed correct (it appears identically, character-for-character, in the order's own internal preamble field \"التاريخ\" in both independent SPA wire transmissions fetched this pass — see below). However, the parenthetical Gregorian equivalent carried over from an earlier research pass (\"7 Oct 2007\") is an off-by-one conversion error. Independent verification this pass, by TWO separate methods, places the correct Gregorian equivalent of 26/9/1428H at 8 OCTOBER 2007, not 7 October: (1) the Python `hijri-converter` library (tabular Islamic calendar algorithm) converts Hijri(1428,9,26) to Gregorian 2007-10-08 exactly; (2) SPA's own second wire transmission of this exact story (article ID 488863) carries the dateline \"مكة المكرمة 26 رمضان 1428هـ الموافق 08 اكتوبر 2007م\" (Makkah, 26 Ramadan 1428H corresponding to 8 October 2007) -- i.e. SPA's own newsroom dateline for the day it matches the order's internal date field (26 Ramadan) independently confirms 8 October, not 7 October. (SPA's FIRST wire transmission of the same story, article ID 488847, was dispatched a Hijri day earlier under the dateline \"25 رمضان 1428هـ الموافق 7 أكتوبر 2007م\" -- 25 Ramadan / 7 October -- i.e. filed the day before the order's own internal date; this is presumably why the earlier research pass anchored on \"7 Oct 2007\", conflating the wire's dispatch-day dateline with the order's own dated-day field one Hijri day later.) This is disclosed as a corrected detail, not an unresolved discrepancy -- two independent methods agree on 8 October 2007, and the Hijri date 26/9/1428H itself is unaffected and fully confirmed.\n\nPRIMARY SOURCE ACCESS -- SPA (Saudi Press Agency, spa.gov.sa), the Kingdom's official state news wire: fetched directly this pass (HTTP 200, live) at https://www.spa.gov.sa/488847, titled \"صدور أمر ملكي بإصدار اللائحة التنفيذية لنظام هيئة البيعة / نص اللائحة التنفيذية\" (dated 25 Ramadan 1428H / 7 Oct 2007 dispatch, date_hijri field in the page's own embedded JSON: \"1428-09-26\", i.e. the STORY's associated Hijri date matches the order's date even though the wire's own dispatch dateline text says 25 Ramadan -- a one-Hijri-day dispatch lag, not a discrepancy in the order's own date). The page is a Next.js application; its full server-rendered `__NEXT_DATA__` JSON payload was parsed directly (not AI-summarized) to extract `props.pageProps.newsDetails.content`, which contains the ROYAL ORDER'S PREAMBLE TEXT VERBATIM (bism-Allah, order number أ/164, date 26/9/1428هـ, the two-clause promulgation text, and King Abdullah's signature line) -- but this first wire item truncates at \"// يتبع //\" (wire-service continuation marker), meaning the attached Regulation text itself (18 articles) was NOT in this specific article ID; it was carried in a SEPARATE, SEQUENTIALLY-NUMBERED SPA wire-continuation series filed the same news day. This pass located and fetched that continuation series directly: SPA article IDs 488848 (preamble repeat), 488849 (\"إضافة أولى\" -- first addition, containing Articles 1-1 continuing into structure, actually Article 1 in full), 488850 (\"إضافة ثانية\", Articles 2-5), 488851 (\"إضافة ثالثة\", Articles 6-10), 488852 (\"إضافة رابعة\", Articles 11-16), and 488853 (\"إضافة خامسة وأخيرة\" -- fifth and FINAL addition, Articles 17-18, ending with the wire-service closing marker \"// انتهى //\", i.e. explicit end-of-transmission). All fetched live (HTTP 200) and parsed the same way (raw `__NEXT_DATA__` JSON, not AI summarization). This confirms the article count is exactly 18, terminated by the wire service's own \"انتهى\" (ended) marker, not by an arbitrary cutoff. A SECOND, independent SPA re-transmission of the identical story was also located and fetched the same way (article IDs 488863-488869, timestamped one day later in the wire's own dispatch dateline: \"26 رمضان 1428هـ الموافق 08 اكتوبر 2007م\"); this second transmission was compared programmatically against the first, article by article, after normalizing whitespace: fully identical for all 18 articles except for trivial extra single-space characters after some newlines in the second transmission (a re-transmission wire-formatting artifact, not a textual difference) -- this is an internal SPA self-consistency check, not a second independent source, but it rules out single-fetch transcription error within SPA's own wire.\n\nSECOND, GENUINELY INDEPENDENT SOURCE -- islamport.com (الموسوعة الشاملة, a long-standing independent Arabic Islamic/legal-reference digitization project, privately operated, not a government entity): fetched directly this pass (HTTP 200) at http://islamport.com/l/sas/7083/1.htm. The page is served in legacy windows-1256 encoding (detected via its own declared `charset=windows-1256` meta tag and confirmed by successful decoding); decoded and parsed directly (raw HTML `#page_content` div), yielding the full text of all 18 articles with no page-break truncation. Compared programmatically, article-by-article, against the SPA text after normalizing diacritics, hamza-carrier variants (أ/إ/آ/ا), ta-marbuta/ha, tatweel, and whitespace: FULL AGREEMENT on all 18 articles. The only raw (non-normalized) differences found were three purely typographic, non-substantive variants: (1) Article 1 uses an en-dash \"1 –\" in the SPA wire text versus a plain hyphen \"1 -\" in islamport's transcription for the same enumerator; (2) Article 10 has a missing space in islamport's text (\"المشاراليهم\" instead of \"المشار إليهم\") -- an evident islamport transcription/OCR spacing slip, not a wording difference; (3) Article 18 has a trailing space before the final full stop in islamport's version that SPA's wire lacks. None of these affect meaning or legal substance in any way; the SPA wire text (the official primary source) is used verbatim in this track's `text` field in all three cases, with islamport's minor variants noted here rather than silently discarded.\n\nBOE PORTAL (laws.boe.gov.sa) -- THIRD source attempted, UNREACHABLE: a dedicated BOE LawDetails page for this Regulation was located via web search (GUID 3e368087-7b31-46e7-8005-ada100b8f703, distinct from the parent law's own GUID 3213c2f6-eaf8-45dc-8f8c-a9a700f167ee), but was unreachable by every method attempted this pass: (a) direct curl through the sandbox's own egress proxy returned \"Recv failure: Connection reset by peer\"; (b) the WebFetch tool returned HTTP 503 Service Unavailable for the same URL; (c) the r.jina.ai reader-proxy returned HTTP 401 \"AuthenticationRequiredError: blocked from performing anonymous queries due to bad IP reputation\" (not even reaching the target page); (d) the Wayback Machine's own CDX/availability API confirms a valid archived snapshot exists (timestamp 20251017140627, HTTP 200 at capture time), but the content-serving path itself was blocked in this sandbox by two independent methods -- a direct curl to web.archive.org returned \"Blocked by egress policy\" (HTTP 403), and the WebFetch tool explicitly refused with \"Claude Code is unable to fetch from web.archive.org\". This matches this corpus's own previously documented sandbox limitation (see the parent allegiance_commission law track's methodology note) and is disclosed here rather than silently worked around.\n\nFOURTH, PARTIALLY-CONFIRMED but NOT independently fetched: the Official Gazette (جريدة أم القرى), issue No. 4828, is cited by a third-party source (an Umm al-Qura newspaper social-media post referencing \"في عدد 4828: اللائحة التنفيذية لنظام...\") as the issue that carried this Regulation's official gazette publication. This pass attempted to reach the gazette's own site (uqn.gov.sa) directly to independently confirm and extract issue 4828's content, but the site's public issue-archive/API endpoints tried this pass (e.g. /issue/4828, /api/issue/4828/json) returned only the site's generic single-page-application shell (HTTP 404 or a non-issue-specific Vue bundle), not a substantive extract of issue 4828 itself, and no working direct article-ID endpoint for this specific Regulation's gazette entry was found via web search this pass (unlike, e.g., this corpus's weapons_ammunition track, which found and used a working uqn.gov.sa/api/article/<id>/json endpoint for a different, more recent gazette item). The existence of gazette issue 4828 as the publication vehicle is therefore treated as PLAUSIBLE BUT NOT INDEPENDENTLY VERIFIED in this track, and is NOT counted as one of the two sources underlying this track's verification tier.\n\nHONEST TIER ASSESSMENT: per this corpus's own four-tier methodology (reports/verification_tiers/VERIFICATION_TIERS_METHODOLOGY_AR.md), TIER_1_PRIMARY_MULTI_SOURCE requires TWO independent OFFICIAL/government sources in full agreement, with no unresolved access gap; a private reference site (nezams.com, islamport.com, wikisource, etc.) never counts as one of the two required legs, however completely it agrees. Here, exactly ONE official/primary source was successfully reached and its text adopted (SPA, the Kingdom's state news wire, reached live and directly parsed -- not AI-summarized -- from its own embedded page JSON), cross-verified against a private secondary source (islamport.com) with full agreement, while the canonical legal-codification portal (BOE) that would supply a second official leg was confirmed to exist but was unreachable by every method tried, and the Official Gazette issue that would otherwise supply a second official leg was found by citation only, not independently fetched. This is the textbook definition of TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED in this corpus's own methodology, not TIER_1 -- consciously choosing the more conservative, honest classification rather than inflating it merely because SPA happens to be a genuine government source. This is a meaningfully STRONGER position than the parent law's own track (allegiance_commission), which reached NO official source at all and rests entirely on triple private-secondary-source convergence (TIER_3-equivalent) -- this Regulation's track is one tier better because SPA, unlike wikisource/islamport/wikipedia for the parent law, is a bona fide organ of the Saudi state reproducing the Royal Order's own text.\n\nSTRUCTURE: 18 articles, flat (no chapters/أبواب/فصول). Article 1 contains internal enumerated sub-paragraphs (أولا/ثانيا, with sub-points 1/2/3 under أولا) but is presented, and stored here, as a single article record, matching the source's own formatting (no artificial sub-splitting). No amendment to this Regulation's own text was found in any source consulted this pass (web search for \"تعديل اللائحة التنفيذية لنظام هيئة البيعة\" / \"أمر ملكي\" returned only restatements of Article 18 itself, which provides the amendment MECHANISM -- amendment by Royal Order after Allegiance Commission approval -- not evidence that mechanism has ever been invoked). All 18 articles are therefore classified اصلية (original, unamended); none ملغاة (repealed) or مضافة (added). This track does not itself resolve, and does not need to resolve, the parent law track's own documented unresolved cross-track conflict regarding Basic Law of Governance Article 5(c) (see sources/allegiance_commission/law/official_source/allegiance_commission_law_official_source.json); that conflict concerns the PARENT LAW's own promulgation order, not this Regulation, and is not re-litigated here.\n\nNORMALIZATION: only whitespace was normalized (collapsing runs of spaces/tabs introduced by the wire service's own fixed-width formatting, and converting literal \"<BR>\" HTML line-break tags in the SPA JSON payload to newlines). No word, letter, number, or clause was altered, translated, paraphrased, or interpreted. Arabic governs; this is a read-only extraction over the fetched primary and secondary sources; regeneration from the same official_source.json is deterministic and idempotent.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "allegiance_commission_regulation_art_boe_unreachable",
+      "description": "The BOE legal portal's dedicated LawDetails page for this Regulation (GUID 3e368087-7b31-46e7-8005-ada100b8f703) was located but was UNREACHABLE by every method tried this pass: direct connection reset, WebFetch HTTP 503, r.jina.ai HTTP 401 (anonymous IP blocked for bad reputation), and the Wayback Machine content-serving path blocked both via direct curl (HTTP 403, egress policy) and via the WebFetch tool's explicit refusal to fetch web.archive.org -- despite the Wayback CDX/availability API confirming a valid archived snapshot exists (timestamp 20251017140627). This track therefore rests on one reached official source (SPA) cross-verified against one private secondary source (islamport.com), classified TIER_2, not the higher TIER_1 that a second independent official source (BOE, or an independently-fetched Official Gazette issue 4828) would support if reachable in a future pass."
+    },
+    {
+      "article_key": "allegiance_commission_regulation_gazette_issue_4828_unconfirmed",
+      "description": "A third-party citation (an Umm al-Qura Official Gazette social-media post) identifies Gazette issue No. 4828 as the publication vehicle for this Regulation. This pass could not independently reach uqn.gov.sa's issue archive or a working article-level API endpoint for this specific item to confirm issue 4828's content directly (the endpoints tried returned only the site's generic single-page-application shell, not issue-specific data). The issue number is therefore reported as a plausible, citation-only detail, NOT independently verified, and is not relied upon for this track's verification tier or article texts."
+    },
+    {
+      "article_key": "allegiance_commission_regulation_gregorian_date_correction",
+      "description": "A prior research pass's parenthetical Gregorian date for this Royal Order (\"7 Oct 2007\") is corrected here to 8 OCTOBER 2007, based on two independent confirmations this pass: the `hijri-converter` library's algorithmic conversion of 26/9/1428H, and SPA's own second wire transmission (article ID 488863), whose dispatch dateline reads \"26 رمضان 1428هـ الموافق 08 اكتوبر 2007م\". The Hijri date 26/9/1428H itself is unaffected and independently confirmed by both SPA wire transmissions' embedded order-preamble text. This is flagged as a resolved correction, not an open discrepancy, in the interest of full transparency about what changed from the prior research pass."
+    }
+  ],
+  "chapter_structure": [],
+  "article_count": 18,
+  "status_counts": {
+    "اصلية": 18,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "allegiance_commission_regulation_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يتم تعيين أحد أبناء كل متوفى ، أو معتذر ، أو عاجز بموجب تقرير طبي من أبناء الملك المؤسس عبدالعزيز بن عبدالرحمن الفيصل آل سعود في هيئة البيعة وفقا للآتي :\nأولا : 1 – يطلب الملك من أبناء المتوفى ، أو العاجز ، ممن أكملوا السابعة عشرة من العمر ترشيح اثنين أو ثلاثة منهم لعضوية الهيئة ويقوم أبناء كل متوفى أو عاجز من أبناء الأبناء بترشيح أحدهم للمشاركة في تسمية المرشحين لعضوية الهيئة ، وعليهم تسمية المرشحين خلال خمسة عشر يوما من تاريخ تلقي طلب الترشيح .\nوفي حالة انتهاء المدة دون الوصول إلى تسمية المرشحين لعضوية الهيئة يعين الملك من يراه منهم لعضوية الهيئة .\nويحرر الأمين العام للهيئة محضرا بما تم التوصل إليه .\nوتسري على الاجتماعات التي تعقد والمحاضر التي تعد وفقا لهذا الفقرة الضوابط والقواعد المنظمة لاجتماعات الهيئة .\n2 - يكلف الملك من يراه من أبناء الملك المؤسس عبدالعزيز بن عبدالرحمن الفيصل آل سعود أو أبناء الأبناء لترشيح ثلاثة من أبناء المتوفى أو العاجز بموجب تقرير طبي ليسمى الملك أحدهم لعضوية الهيئة ، وله أن يحيل الترشيح إلى أبناء الملك المؤسس لترشيح واحد من المرشحين الثلاثة لعضوية الهيئة .\n3 - يختار الملك في الأحوال كلها من يراه من أبناء المتوفى ، أو المعتذر ، أو العاجز ، لعضوية الهيئة .\nثانيا : على من يعتذر من أبناء الملك المؤسس عبدالعزيز بن عبدالرحمن الفيصل آل سعود عن عضوية هيئة البيعة أن يخطر الملك كتابة بذلك مع ترشيح أحد أبنائه لعضوية الهيئة ، وإذا لم يتضمن الإخطار ترشيح أي من أبنائه لعضوية الهيئة أو لم يوافق الملك على من تم ترشيحه ، يتم التعيين وفقا لما ورد في الفقرة / أولا / من هذه المادة .\nوتسري أحكام هذه المادة على أبناء الأبناء وإن نزلوا .",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجب أن يتوافر في عضو الهيئة ، المعين وفقاً للفقرتين (2) ، (3) من المادة الأولى من نظام هيئة البيعة ، الآتي:\n1- ألا يقل عمره عن اثنين وعشرين عاماً.\n2- أن يكون مشهوداً له بالصلاح والكفاية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع عدم الإخلال بما ورد في المادة الأولى من نظام هيئة البيعة تُحدد مدة العضوية في الهيئة بأربع سنوات غير قابلة للتجديد تبدأ من التاريخ المحدد في الأمر الملكي الصادر بتعيين العضو.\nواستثناء من ذلك يجوز التجديد لعضو الهيئة في حالة اتفاق إخوته على ذلك بعد موافقة الملك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا أخل عضو الهيئة بواجبات العضوية ، ومسؤولياتها يتم التحقيق في ذلك من قبل لجنة مكونة من ثلاثة من أعضاء الهيئة يختارهم رئيسها. وترفع اللجنة نتائج التحقيق للهيئة.\nوإذا رأت الهيئة بموافقة ثلثي أعضائها إسقاط عضوية العضو المخل ترفع الأمر للملك لاتخاذ ما يراه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إذا خلا محل أحد أعضاء هيئة البيعة يعين الملك بديلاً عنه ، وفق المادتين الأولى والثانية من هذه اللائحة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "عند وفاة الملك تعقد هيئة البيعة اجتماعاً بصفة فورية للدعوة إلى مبايعة ولي العهد ملكاً على البلاد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "إنفاذاً للمادة السابعة من نظام هيئة البيعة ، يبعث الملك خلال الأيام العشرة التالية لمبايعته ملكاً على البلاد ، كتاباً إلى رئيس هيئة البيعة يتضمن من اختاره لولاية العهد لعرضه على هيئة البيعة ، أو الطلب من الهيئة ترشيح من تراه لولاية العهد ، وعلى الهيئة تسمية مرشحها خلال عشرة أيام من تاريخ تسلمها كتاب الملك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "اجتماعات اللجنة الطبية سرية ، ويحضرها الأمين العام للهيئة ، وتُعد تقاريرها الطبية في مقر الهيئة ، وتُعد سرية ، ويوقع عليها جميع أعضاء اللجنة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تسلم التقارير الطبية التي تعدها اللجنة الطبية إلى رئيس هيئة البيعة في ظرف مختوم ، ولا يتم الاطلاع عليها إلا في اجتماع الهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "عند غياب عضوي اللجنة الطبية المنصوص عليهما في الفقرتين ( 1) ، (2) من المادة الرابعة عشرة من نظام هيئة البيعة أو خلو منصب أي منهما يحل محله المكلف بعمله.\nأما في حالة غياب أحد عمداء كليات الطب المشار إليهم في الفقرة (3) فعلى الهيئة اختيار بديل عنه من بين عمداء كليات الطب الآخرين.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقوم الأمين العام تحت إشراف الهيئة بفرز الأصوات ، وإعلان نتيجة التصويت.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يرتبط الأمين العام للهيئة بالملك ، وهو مسؤول أمامه عن كافة الشؤون المالية والإدارية للهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ينشأ في الهيئة مركز للوثائق ، يرتبط بالأمين العام ، يتولى حفظ محاضر الهيئة ، وجميع وثائقها ، والتقارير ذات العلاقة بالهيئة وأعمالها. وتعد هذه الوثائق سرية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون للهيئة ميزانية سنوية ، ويتم الصرف منها حسب القواعد والتعليمات المعتمدة من الملك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يُعين الأمين العام لهيئة البيعة بمرتبة وزير ، ويُعين نائبه بالمرتبة الممتازة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_016": {
+      "number_label_ar": "المادة السادسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يتم شغل وظائف الأمانة العامة لهيئة البيعة وفقاً للقواعد والإجراءات المتبعة في الديوان الملكي.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_017": {
+      "number_label_ar": "المادة السابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يلتزم موظفو الهيئة ومن يستعين بهم الأمين العام للهيئة بالمحافظة على سرية المعلومات ، والمداولات التي يطلعون عليها خلال عملهم بالهيئة.\nوفي حالة الإخلال بهذا الالتزام تطبق على المخالف العقوبات المناسبة وفقاً لما تقضي به الأنظمة واللوائح.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    },
+    "allegiance_commission_regulation_art_018": {
+      "number_label_ar": "المادة الثامنة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يتم تعديل أحكام هذه اللائحة بأمر ملكي بعد موافقة هيئة البيعة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "SPA_OFFICIAL_WIRE_X_ISLAMPORT_SECONDARY_CROSS_VERIFIED_BOE_UNREACHABLE",
+      "history": []
+    }
+  }
+}

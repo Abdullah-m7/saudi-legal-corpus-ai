@@ -1,0 +1,124 @@
+{
+  "law_key": "anti_fraud_regulation",
+  "layer": "ANTI_FRAUD_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 19,
+  "official_text_status": "SECONDARY_SINGLE_SOURCE_VERBATIM_PARTIAL_CROSS_CHECK_BOE_UNREACHABLE",
+  "status_counts": {
+    "اصلية": 19,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "القرار الوزاري رقم 155",
+  "decree_date_hijri": "6/1/1431",
+  "consolidated_amended_law": false,
+  "chapter_structure": [
+    {
+      "section_ar": "الفصل الأول : أحكام عامة",
+      "first_article": 1,
+      "last_article": 4
+    },
+    {
+      "section_ar": "الفصل الثاني : ضبط المخالفات",
+      "first_article": 5,
+      "last_article": 9
+    },
+    {
+      "section_ar": "الفصل الثالث : فحص وتحليل المنتجات والمدة اللازمة لذلك",
+      "first_article": 10,
+      "last_article": 10
+    },
+    {
+      "section_ar": "الفصل الرابع : إجراءات سحب المنتج المغشوش",
+      "first_article": 11,
+      "last_article": 11
+    },
+    {
+      "section_ar": "المطالبة بالتعويض وشروط إعادة القيمة",
+      "first_article": 12,
+      "last_article": 12
+    },
+    {
+      "section_ar": "الفصل الخامس : الحجز التحفظي على المنتج المشتبه به",
+      "first_article": 13,
+      "last_article": 13
+    },
+    {
+      "section_ar": "الفصل السادس : إحالة المخالفات والتحقيق ورفع الدعوى",
+      "first_article": 14,
+      "last_article": 14
+    },
+    {
+      "section_ar": "الفصل السابع : التصرف في المنتج المغشوش",
+      "first_article": 15,
+      "last_article": 16
+    },
+    {
+      "section_ar": "مكافأة التبليغ عن المخالفات",
+      "first_article": 17,
+      "last_article": 17
+    },
+    {
+      "section_ar": "الفصل الثامن : التخفيضات التجارية",
+      "first_article": 18,
+      "last_article": 18
+    },
+    {
+      "section_ar": "المسابقات التجارية",
+      "first_article": 19,
+      "last_article": 19
+    }
+  ],
+  "verification_methodology_note": "PRIMARY-TIER GAP (all attempted, all confirmed unreachable this pass): laws.boe.gov.sa was retried at the base law's own LawDetails URL (https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85eb2897-bec6-4c0c-b1d7-ac7c008ec09c/1) -- no distinct BOE LawDetails page for this Implementing Regulation itself was ever located via web search, only the base law's own page -- and both a direct WebFetch and an r.jina.ai reader-proxy fetch of it timed out/failed (WebFetch: HTTP 503; r.jina.ai: 15000ms navigation timeout), matching this corpus's established BOE-egress-blocked pattern. mc.gov.sa (Ministry of Commerce, the issuing authority) returned HTTP 503 on direct WebFetch of its Regulations index page, and the r.jina.ai proxy itself returned HTTP 401 'blocked from performing anonymous queries due to bad IP reputation' when retried against the same URL. ncar.gov.sa (National Center for Documents and Archives, a genuine first-party archival body that independently indexes a copy titled 'لعام 1430هـ') returned HTTP 503 via WebFetch and a raw connection reset via direct curl. The Wayback Machine's availability API (archive.org/wayback/available) DID resolve and reported a live snapshot of the base law's BOE page (timestamp 20260114005335), but fetching that snapshot's actual content returned HTTP 403 -- consistent with this corpus's established finding that Wayback Machine content retrieval, as opposed to its availability-check API, is blocked from this environment. almoaqeb.com (one of the four sources the prior research pass cited as independently reproducing this regulation) was completely unreachable this pass via direct curl (HTTP 000, 'CONNECT tunnel failed, response 502') -- could not be independently re-verified at all.\n\nSECONDARY-TIER SOURCES ACTUALLY REACHED THIS PASS: nezams.com (https://nezams.com/اللائحة-التنفيذية-لنظام-مكافحة-الغش-ا/) was fetched directly via curl (HTTP 200, raw HTML, not summarized) and is the GOVERNING VERBATIM SOURCE for all 19 articles in this track: its HTML shows a manually-curated legal-database structure (per-article anchor IDs, share-links, a metadata table) with no AI-generation fingerprints. mrksa.net (https://mrksa.net/اللائحة-التنفيذية-لنظام-مكافحة-الغش-ا/) was ALSO fetched directly via curl (HTTP 200) and used ONLY for structural cross-check (confirmed the same 19-article count and the same overall chapter/heading sequence, and supplied the number-label/heading for Article 19 which nezams.com's own page left blank) -- NOT for verbatim text confirmation, because mrksa.net's article-body HTML is wrapped in <p class=\"ds-markdown-paragraph\"> tags (133 occurrences), a signature of DeepSeek-AI markdown rendering, and NOT present anywhere in nezams.com's page (0 occurrences) -- indicating mrksa.net's article text passed through an AI regeneration/paraphrase step rather than being a direct manual transcription. This suspicion was CONFIRMED by finding two concrete substantive divergences from nezams.com: (1) Article 10 -- nezams.com gives four detailed sub-clauses (أ-د) including a specific 7-day trader-notification requirement citing Article 11 and a foreign-laboratory-testing allowance; mrksa.net gives only two heavily summarized sub-clauses (أ-ب), omitting the notification procedure and foreign-lab detail entirely. (2) Article 17 -- nezams.com states the informant reward cap as 'لا تزيد عن (25%) من مقدار الغرامة' (25%), which is internally consistent with this corpus's own already-verified base Anti-Commercial Fraud Law Article 11 (also 25%, per sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json) that this regulation article explicitly implements ('في تطبيق أحكام المادة الحادية عشرة من النظام'); mrksa.net instead states '(50%)' -- a numeric alteration inconsistent with the law it purports to implement, strongly corroborating that mrksa.net's text is AI-drifted rather than verbatim. Given this, mrksa.net is treated as STRUCTURAL corroboration only (article count, chapter sequence, Article 19's missing label) and is explicitly NOT relied upon for word-for-word text. This yields a materially weaker sourcing tier than the base law's three-independently-transcribed-source cross-verification: TIER 3 (single verbatim-reliable secondary source; zero primary-tier access; one additional source providing only partial/structural, not textual, corroboration).\n\nISSUING INSTRUMENT -- GENUINELY DISPUTED, NOT SILENTLY RESOLVED: nezams.com's own metadata table states the issuing instrument as 'القرار الوزاري رقم 155 وتاريخ 6/1/1431هـ' (published 29/1/1431هـ), matching the prior research pass and multiple WebSearch aggregation snippets (including one attributed to qanoniah.com, though qanoniah.com's own page is a client-rendered Vue SPA that could not be directly fetched this pass -- its content is JS-loaded and neither raw curl nor WebFetch could retrieve the rendered article text, only navigation chrome). CRITICALLY, however, nezams.com's OWN embedded decree-preamble text on the SAME page (quoted verbatim in this file's preamble_ar field below) is NOT about this regulation at all: it quotes 'قرار وزير التجارة رقم 1327/3/1 وتاريخ 1/6/1405هـ', an OLDER ministerial resolution referencing the SUPERSEDED 1404H law (المرسوم الملكي رقم م/11) -- i.e. nezams.com's page conflates two historically distinct regulations (an old one under the old law, and the current one under M/19) and its own preamble text is a leftover/mismatched artifact, internally inconsistent with its own metadata table. Independently, mrksa.net's page (despite its AI-regeneration concerns for article BODY text) shows a DIFFERENT, internally-coherent decree preamble reading: 'قرار وزاري رقم (55) وتاريخ 20/10/1431هـ' -- issued by 'وزير التجارة والصناعة' citing a memo dated 29/12/1430هـ, and signed 'عبدالله بن أحمد زينل علي رضا'. This minister's tenure (27/8/1412هـ-18/1/1433هـ per Wikipedia and mc.gov.sa's own news archive, independently checked this pass) genuinely covers 1431هـ, lending some plausibility to this citation, though it cannot be independently confirmed either (it is embedded in the same page whose article-body text shows AI-regeneration fingerprints, so a fabricated-looking-plausible citation cannot be ruled out). ncar.gov.sa's own indexed page title for this regulation reads '...لعام 1430هـ' (year 1430H) -- a THIRD candidate year, though ncar.gov.sa itself could not be fetched to see its actual cited resolution number/date, and 1430H is plausibly just the memo-drafting year rather than the resolution's signing year. NET EFFECT: the prior research pass's claim that Resolution 155/6-1-1431H was 'independently reproduced across four secondary sources (nezams.com, qanoniah.com, mrksa.net, almoaqeb.com)' does NOT hold up under this pass's direct re-verification -- mrksa.net's own page actually states a DIFFERENT resolution (55/20-10-1431H), qanoniah.com could not be directly read at all (JS-rendered), and almoaqeb.com was completely unreachable. This track records BOTH candidate citations rather than silently picking one, per this corpus's established convention for genuinely disputed citations. The regulation's ARTICLE TEXT itself (19 articles, chapter structure, definitions) is consistently the same across nezams.com and mrksa.net notwithstanding this citation dispute -- there is no doubt this is the correct, currently-governing Implementing Regulation of the Anti-Commercial Fraud Law; only its exact issuing-instrument number/date is unresolved.\n\nSTALENESS RELATIVE TO THE BASE LAW'S OWN AMENDMENTS: this regulation's Article 1 definition of 'الجهات المختصة' (وزارة الشئون البلدية والقروية والهيئة العامة للغذاء والدواء) and its Article 5's operative references to those same two enforcement bodies still match the base law's ORIGINAL 1429H Article 5 wording verbatim (per sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json's original_1429h_text field for anti_fraud_art_005) -- i.e. this regulation has NOT been updated to reflect the base law's own later Article 5 amendments (Royal Decree M/101, 3/9/1440H, adding وزارة الطاقة والصناعة والثروة المعدنية; and the disputed second amendment, 1442H, adding وزارة الصحة). No source found reports a formal amendment to this regulation's Article 1 or Article 5 reflecting either addition. Preserved verbatim as likely-stale-but-not-formally-amended, matching this corpus's convention (cf. anti_fraud law's own ministry-name-staleness and prosecution-authority-staleness discrepancies).\n\nNo legal text is altered, paraphrased, summarized, or machine-translated in this track. Arabic governs; no English or Chinese text is produced. Two purely mechanical HTML-transcription artifacts on nezams.com's page were corrected using mrksa.net's independently-rendered same content as cross-confirmation of the correct word segmentation (NOT a wording change): Article 1's three term-definitions were run together without periods/line-breaks ('...والصناعةالوزارة...'), and Article 12's clauses (ب) and (ج) were run together without a period/line-break. Article 18's page also had Article 19's own section heading '(المسابقات التجارية)' erroneously trailing inside Article 18's own paragraph in parentheses; this heading fragment was moved to its correct place as Article 19's own section_ar (matching mrksa.net's TOC, which places this heading before Article 19, not inside Article 18).",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "afr_issuing_instrument_number_date_disputed",
+      "description": "The exact ministerial resolution number and Hijri date that issued this regulation is disputed between the two directly-fetched secondary sources: nezams.com's metadata table states 'القرار الوزاري رقم 155 وتاريخ 6/1/1431هـ' (published 29/1/1431هـ) -- but nezams.com's OWN embedded decree-preamble text on the same page is a mismatched leftover quoting a DIFFERENT, OLDER 1405H resolution issued under the superseded 1404H law, revealing an internal inconsistency on nezams.com's own page. mrksa.net's page instead shows an internally-coherent preamble reading 'قرار وزاري رقم (55) وتاريخ 20/10/1431هـ', citing a memo dated 29/12/1430هـ and signed by Minister عبدالله بن أحمد زينل علي رضا (whose real tenure, 27/8/1412هـ-18/1/1433هـ, does cover 1431هـ, a fact independently checked this pass). ncar.gov.sa (a first-party archival body) indexes this regulation under year '1430هـ' -- a third candidate, unconfirmed since ncar.gov.sa returned HTTP 503/connection-reset on both WebFetch and direct curl this pass. qanoniah.com and almoaqeb.com -- two of the four sources the PRIOR research pass claimed independently reproduced 'Resolution 155, 6/1/1431H' -- could NOT be independently re-verified this pass: qanoniah.com is a client-rendered Vue single-page app whose actual article content never loaded via either raw curl or WebFetch (only navigation chrome was retrievable), and almoaqeb.com was completely unreachable (curl: 'CONNECT tunnel failed, response 502'). laws.boe.gov.sa, mc.gov.sa, and the Wayback Machine's actual content-fetch were all also confirmed unreachable this pass (see verification_methodology_note). NET: this pass's independent re-verification does NOT corroborate the prior pass's claim of four-source agreement on '155, 6/1/1431H' -- at least one of those four (mrksa.net) directly contradicts it. Both candidate citations (155/6-1-1431H and 55/20-10-1431H) are recorded transparently rather than silently picking one; the ARTICLE TEXT itself is not in doubt regardless of which citation is correct."
+    },
+    {
+      "article_key": "afr_mrksa_ai_regeneration_risk_two_divergences_found",
+      "description": "mrksa.net's article-body HTML is wrapped throughout in <p class=\"ds-markdown-paragraph\"> tags (133 occurrences) -- a signature of DeepSeek-AI markdown rendering -- and this marker is completely absent (0 occurrences) from nezams.com's page, suggesting mrksa.net's article text passed through an AI regeneration/paraphrase step rather than being a direct manual transcription. This was CONFIRMED by two concrete substantive divergences from nezams.com's text: Article 10, where mrksa.net gives a heavily summarized two-clause version omitting nezams.com's detailed 7-day trader-notification procedure and foreign-laboratory-testing allowance; and Article 17, where mrksa.net states the informant reward cap as 50% versus nezams.com's 25% -- and nezams.com's 25% is the figure that is internally consistent with this corpus's own already-verified base Anti-Commercial Fraud Law Article 11 (also 25%), which this regulation article explicitly implements. Given this, mrksa.net was used ONLY for structural corroboration (19-article count, chapter/heading sequence, and Article 19's own number-label which nezams.com's page left blank) and NOT relied upon for verbatim text confirmation. This regulation's overall sourcing tier is consequently weaker than the base law's (three independently-transcribed, fully cross-verified secondary sources with zero divergence) -- classified here as TIER 3: single verbatim-reliable secondary source, zero primary-tier access."
+    },
+    {
+      "article_key": "afr_boe_page_not_located_separately",
+      "description": "No distinct laws.boe.gov.sa LawDetails page specifically for this Implementing Regulation was ever located via web search this pass -- only the base law's own LawDetails page (85eb2897-bec6-4c0c-b1d7-ac7c008ec09c) surfaced repeatedly. It is possible BOE does not maintain a separate page for this instrument, or that it exists but is not indexed/discoverable via the search tooling available this pass. The base law's own LawDetails page was retried directly and via r.jina.ai and confirmed unreachable (HTTP 503 / 15000ms navigation timeout) regardless."
+    },
+    {
+      "article_key": "afr_mc_gov_sa_and_ncar_gov_sa_unreachable",
+      "description": "mc.gov.sa (the Ministry of Commerce, this regulation's own issuing authority) returned HTTP 503 on direct WebFetch of its Regulations index page (mc.gov.sa/ar/Regulations/pages/default.aspx); a retry via the r.jina.ai reader-proxy against the same URL returned HTTP 401 'blocked from performing anonymous queries due to bad IP reputation'. ncar.gov.sa (National Center for Documents and Archives), which independently indexes a copy of this regulation titled 'اللائحة التنفيذية لنظام مكافحة الغش التجاري لعام 1430هـ', returned HTTP 503 via WebFetch and a raw TCP connection reset via direct curl. Neither could be reached by any fallback attempted this pass (direct fetch, r.jina.ai proxy)."
+    },
+    {
+      "article_key": "afr_wayback_availability_yes_content_fetch_no",
+      "description": "Unlike the base law's build pass (which reported web.archive.org itself as unreachable, 403 AbuseAlleviationError), this pass found the Wayback Machine's availability-check API (archive.org/wayback/available) DOES resolve successfully and reports a live, genuine snapshot of the base law's BOE LawDetails page (timestamp 20260114005335). However, actually fetching that snapshot's content (both via plain curl and via the web.archive.org/web/<timestamp>/<url> URL form) returned HTTP 403 -- so the distinction is: the AVAILABILITY-CHECK endpoint is reachable from this environment, but actual ARCHIVED-PAGE CONTENT retrieval is blocked, which still prevented using Wayback as a primary-tier source this pass. The CDX search API (web.archive.org/cdx/search/cdx) was also attempted to hunt for a dedicated BOE page for this regulation and returned 'Blocked by egress policy' (HTTP 403) -- a distinct, explicit environment-egress-policy block rather than an archive.org-side error."
+    },
+    {
+      "article_key": "afr_almoaqeb_com_unreachable",
+      "description": "almoaqeb.com -- one of the four sources the prior research pass cited as independently reproducing this regulation's citation -- was completely unreachable this pass via direct curl at two different URL forms (curl error 56/'CONNECT tunnel failed, response 502' both times). Its claimed corroboration of 'Resolution 155, 6/1/1431H' could NOT be independently re-verified this pass and is not relied upon; see afr_issuing_instrument_number_date_disputed."
+    },
+    {
+      "article_key": "afr_qanoniah_com_js_rendered_unreadable",
+      "description": "qanoniah.com -- another of the four sources the prior research pass cited -- is a client-rendered Vue.js single-page application. Direct curl returns only the empty app shell (~36KB of script/style tags, no article content). WebFetch (which uses a headless browser) also returned only navigation chrome ('الرئيسية', 'التحديدات والملاحظات', 'المجلدات') and the literal loading-state text 'جار عرض الملف' ('file is being displayed/loading'), for two different qanoniah.com URLs found via web search. Its claimed corroboration of this regulation's text/citation could NOT be independently re-verified this pass."
+    },
+    {
+      "article_key": "afr_manielaw_pdf_missing_regulation_text",
+      "description": "A PDF found via web search titled 'نظام مكافحة الغش التجاري ولائحته التنفيذية.pdf' (manielaw-sa.com) was downloaded and its text extracted with pdftotext -- it contains ONLY the base law's 30 articles and its own table of contents (which lists only the law's Articles 1-30); despite its filename claiming to include 'ولائحته التنفيذية' (and its Implementing Regulation), the regulation's text is absent from this document. Not used as a source for this track."
+    },
+    {
+      "article_key": "afr_bttat3_blogspot_different_older_regulation",
+      "description": "A 2014 blog post (bttat3.blogspot.com) titled identically to this regulation ('اللائحة التنفيذية لنظام مكافحة الغش التجاري') was fetched and found to contain a COMPLETELY DIFFERENT, OLDER regulation text: it uses 'السلعة' (goods) terminology throughout rather than 'المنتج' (product) used by the current M/19-era regulation and law, cross-references law-article numbers that do not match M/19's own structure (e.g. citing 'المادة الثالثة من نظام مكافحة الغش التجاري' for a definitions provision, and 'المادة (14) من النظام' for enforcement officers -- neither matches M/19's actual Article 3 or Article 14), and has at least 17 visible articles of its own numbered independently. This is almost certainly the OLDER regulation issued under the SUPERSEDED 1404H law (Royal Decree M/11), not the current regulation under M/19 (1429H) that is this track's build target -- consistent with nezams.com's own embedded preamble also mistakenly quoting that same older 1405H instrument (see afr_issuing_instrument_number_date_disputed). Not used as a source for this track's governing text."
+    },
+    {
+      "article_key": "afr_stale_relative_to_law_article5_amendments",
+      "description": "This regulation's Article 1 definition of 'الجهات المختصة' (وزارة الشئون البلدية والقروية والهيئة العامة للغذاء والدواء) and Article 5's operative references to those same two bodies still match the base Anti-Commercial Fraud Law's ORIGINAL 1429H Article 5 wording verbatim -- i.e. this regulation has not been updated to reflect the base law's own later Article 5 amendments (Royal Decree M/101, 3/9/1440H, adding وزارة الطاقة والصناعة والثروة المعدنية; and the law's own disputed second amendment, 1442H, adding وزارة الصحة -- see sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json's anti_fraud_art5_second_amendment_citation_disputed entry). No source found reports a formal amendment to this regulation reflecting either addition. Preserved verbatim as likely-stale-but-not-formally-amended, per this corpus's convention (cf. the base law's own ministry-name-staleness and prosecution-authority-staleness discrepancies)."
+    },
+    {
+      "article_key": "afr_html_transcription_artifacts_corrected",
+      "description": "Two purely mechanical HTML-transcription artifacts on nezams.com's page (missing separators, not wording differences) were corrected using mrksa.net's independently-rendered same content as cross-confirmation of the intended word segmentation: Article 1's three term-definitions ran together without periods or line-breaks in nezams.com's raw HTML ('...والصناعةالوزارة: ...والصناعةالجهات...'); and Article 12's clauses (ب) and (ج) ran together without a period/line-break. Article 18's page also had Article 19's own section heading '(المسابقات التجارية)' trailing erroneously inside Article 18's own paragraph in parentheses; it was moved to Article 19's own section_ar field, matching mrksa.net's TOC (which places this heading before Article 19, not inside Article 18). No words were added, removed, reordered, or reworded -- only whitespace/punctuation restored at points independently confirmed by the second source and by internal textual continuity."
+    },
+    {
+      "article_key": "afr_no_formal_amendments_recorded",
+      "description": "nezams.com's own metadata table states this regulation carries 'التعديلات: لم يجرى عليه تعديل.' (no amendments have been made to it). All 19 articles are therefore recorded with legal_status_ar='اصلية' and an empty history[] -- this is a single-instrument, never-formally-amended regulation as far as any source located this pass reports, distinct from the base law's own 5-times-amended history."
+    }
+  ],
+  "source_artifact": "sources/anti_fraud_regulation/law/official_source/anti_fraud_regulation_official_source.json"
+}

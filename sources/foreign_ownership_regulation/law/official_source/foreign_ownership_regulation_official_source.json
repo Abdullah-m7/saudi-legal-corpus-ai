@@ -1,0 +1,392 @@
+{
+  "document": "اللائحة التنفيذية لنظام تملك غير السعوديين للعقار",
+  "document_en": "Implementing Regulation of the Non-Saudi Real Estate Ownership Law",
+  "law_component": "regulation",
+  "base_law_key": "foreign_ownership",
+  "base_law_decree": "المرسوم الملكي رقم م/14",
+  "base_law_decree_date_hijri": "19/01/1447",
+  "decree": "قرار مجلس الوزراء (رقم القرار غير مؤكَّد من أي مصدر أساسي -- انظر known_unresolved_discrepancies)",
+  "decree_date_hijri": "18/01/1448",
+  "decree_date_hijri_note": "18 Muharram 1448H (3 July 2026) is the Official Gazette (uqn.gov.sa) publication date, independently re-observed this pass via direct fetch. rega.gov.sa's own metadata separately lists 8 Muharram 1448H (~23 June 2026) as the Council of Ministers' decision/issuance date (corroborated by aleqt.com's cabinet-approval report dated 23 June 2026). See known_unresolved_discrepancies for the full account and for why the previously-briefed '11 Safar 1448H' gazette date could not be reproduced this pass.",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "مجلس الوزراء (بقرار)؛ الجهة المطبِّقة والمصدِرة على موقعها: الهيئة العامة للعقار",
+  "issuing_authority_en": "Council of Ministers (by resolution); administered/published by the Real Estate General Authority (REGA) on its own legislation portal",
+  "preamble_ar": "",
+  "article_count": 14,
+  "status_counts": {
+    "اصلية": 14
+  },
+  "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+  "verification_tier_note": "Two independent PRIMARY Saudi government sources (uqn.gov.sa, the Official Umm al-Qura Gazette portal; and rega.gov.sa, the Real Estate General Authority's own legislation portal) were both reached live this pass (HTTP 200) and both host the complete regulation text directly as HTML. Article-by-article normalized comparison: 8/14 articles byte-identical; the other 6 differ only in single-character/punctuation-level formatting (space, comma glyph, ZWNJ, one grammatical gender-agreement letter, one comma) with zero legal-substance difference; the penalties annex differs in 3 one-word violation-description labels only (see known_unresolved_discrepancies), not in any penalty amount/tier. This satisfies this corpus's own documented TIER_1 criterion (two independent official entities agreeing, no unresolved ACCESS gap). Caveats requiring caution despite the TIER_1 call: this Regulation is extremely fresh (days old at research time); a potential third primary source (NCAR/BOE) was unreachable (connection reset, not circumvented); no explicit resolution/gazette-issue NUMBER could be confirmed from any primary source; and this task's own prior-research briefing's gazette date could not be reproduced this pass. All disclosed in known_unresolved_discrepancies -- read them before relying on this track for any precise legal/administrative citation.",
+  "provenance": {
+    "primary_source_1": "uqn.gov.sa (Official Umm al-Qura Gazette portal)",
+    "primary_source_1_url": "https://uqn.gov.sa/decisions-and-regulations/4001281",
+    "primary_source_1_fetch_method": "direct curl, HTTP 200, ~803 KB, this pass",
+    "primary_source_1_displayed_date_hijri": "1448-1-18",
+    "primary_source_1_displayed_date_gregorian": "2026-07-03",
+    "primary_source_2": "rega.gov.sa (Real Estate General Authority, the administering/issuing authority's own legislation portal)",
+    "primary_source_2_url": "https://rega.gov.sa/الأنظمة-والقرارات/الأنظمة-واللوائح-والأدلة/اللوائح/اللائحة-التنفيذية-لنظام-تملك-غير-السعوديين-للعقار/",
+    "primary_source_2_fetch_method": "direct curl, HTTP 200, ~287 KB, this pass",
+    "primary_source_2_metadata": {
+      "تاريخ النشر": "1448/01/08",
+      "تاريخ الإصدار": "1448/01/08",
+      "حالة التشريع": "ساري",
+      "نوع التشريع": "لوائح",
+      "أداة إصدار التشريع": "قرار مجلس الوزراء"
+    },
+    "cross_check_method": "Article-by-article programmatic diff of both sources' full text after normalizing diacritics/comma-style/whitespace; overall similarity ratio 0.9963 across the complete 14-article + penalties-annex text.",
+    "cross_check_identical_articles": [
+      1,
+      2,
+      6,
+      7,
+      8,
+      10,
+      11,
+      13
+    ],
+    "cross_check_trivial_variance_articles": [
+      3,
+      4,
+      5,
+      12
+    ],
+    "cross_check_wording_variance_annex_rows": [
+      5,
+      6,
+      7
+    ],
+    "third_source_attempted_unreachable": "ncar.gov.sa (successor to laws.boe.gov.sa), connection reset / HTTP 503, not circumvented",
+    "corroborating_press_aleqt": "https://www.aleqt.com (Al-Eqtisadiah), cabinet-approval report dated 23 June 2026, no resolution number given",
+    "corroborating_press_akhbaar24_meta_only": "https://www.akhbaar24.com, body JS-rendered, meta-description only",
+    "unreachable_press_alweeam": "https://www.alweeam.com.sa, HTTP 403 to curl and WebFetch this pass",
+    "unconfirmed_secondary_claim_not_adopted": "alriyadhnews.net ('الرياض 24') states Council of Ministers Resolution No. 43 (8 Muharram 1448H) and Umm al-Qura issue No. 5169 (3 July 2026) -- NOT adopted; see known_unresolved_discrepancies for why."
+  },
+  "verification_methodology_note": "اللائحة التنفيذية لنظام تملك غير السعوديين للعقار -- وثيقة حديثة جدا جدا (أياما قليلة فقط قبل تاريخ هذا البحث 2026-07-25)، صدرت بقرار من مجلس الوزراء استنادا إلى المادة (الثالثة عشرة) من نظام تملك غير السعوديين للعقار (المرسوم الملكي رقم م/14، 19/1/1447هـ -- التي تلزم مجلس الوزراء بإصدار اللائحة خلال (مائة وثمانين) يوما من تاريخ نشر النظام). تتألف اللائحة من (14) مادة (لا فصول ولا أبواب) بالإضافة إلى ملحق جدول تصنيف المخالفات والعقوبات المشار إليه صراحة في المادة (الثانية عشرة) من اللائحة نفسها ('العقوبات الواردة في الجدول الملحق باللائحة') -- وهو بذلك جزء ملزم من النص، وليس مرفقا استرشاديا فحسب؛ نُمذج هنا كسجل ملحق مستقل (السجل 15).\n\nالمصدر الأساسي الأول (PRIMARY #1): جريدة أم القرى الرسمية (uqn.gov.sa) -- الصفحة المخصصة لنص اللائحة الكاملة (uqn.gov.sa/decisions-and-regulations/4001281) جُلبت مباشرة عبر curl هذه الجولة (HTTP 200 نهائي، ~803 كيلوبايت). النص محمول كعنصر HTML مباشر (مُصدَّر أصلا من مستند LibreOffice بحسب البيانات الوصفية المضمنة: created 2026-06-29T15:02:00، changed 2026-06-29T17:34:00) -- وليس صورة ممسوحة ضوئيا أو PDF، فهو نص مصدر أساسي حكومي مباشر. البيانات الوصفية الظاهرة على الصفحة نفسها (meta datePublished/dateModified) تشير إلى '2026-07-03T15:00:00+03:00'، والتاريخ الهجري المعروض صراحة أعلى المقالة هو '1448-1-18 الموافق 03-07-2026' (18 محرم 1448هـ). التصنيف (breadcrumb) على الصفحة: 'قرارات وأنظمة / لوائح وأنظمة'.\n\nالمصدر الأساسي الثاني (PRIMARY #2 -- جهة حكومية مختلفة): الهيئة العامة للعقار (rega.gov.sa)، وهي نفسها الجهة المطبِّقة/المصدرة للائحة -- صفحة تشريعات مخصصة لهذه اللائحة على موقعها الرسمي (rega.gov.sa/الأنظمة-والقرارات/الأنظمة-واللوائح-والأدلة/اللوائح/اللائحة-التنفيذية-لنظام-تملك-غير-السعوديين-للعقار/) جُلبت مباشرة عبر curl هذه الجولة (HTTP 200، ~287 كيلوبايت)، وتحمل بطاقة تشريع رسمية بحقول: 'تاريخ النشر'='1448/01/08'، 'تاريخ الإصدار'='1448/01/08'، 'حالة التشريع'='ساري'، 'نوع التشريع'='لوائح'، 'أداة إصدار التشريع'='قرار مجلس الوزراء'، بالإضافة إلى رابط تنزيل PDF ('اللائحة التنفيذية لنظام تملك غير السعوديين للعقار PDF') ورابط إحالة إلى 'النظام في موقع هيئة الخبراء بمجلس الوزراء' (انظر أدناه لماذا تعذر الوصول إليه). النص الكامل لجميع المواد الـ14 وملحق العقوبات مُضمَّن مباشرة كـ HTML في نفس الصفحة (وليس فقط رابط PDF).\n\nالمقاطعة الحرفية البرمجية (article-by-article) بين المصدرين: قورن نص كل مادة من المواد الأربع عشرة على uqn.gov.sa مقابل نص rega.gov.sa المقابل، بعد تطبيع الحركات وأنماط الفواصل والمسافات. (8) مواد من (14) تطابقت حرفيا تماما (المواد 1، 2، 6، 7، 8، 10، 11، 13). الفوارق في المواد الباقية كانت جميعها تجميلية بحتة: المادة (3) مسافة زائدة فقط؛ المادة (4) اختلاف رمز الفاصلة العربية + محرف عرض غير مرئي (ZWNJ)؛ المادة (5) حرف تاء مربوطة واحد في اتفاق الجندر النحوي لعدد 'خمسة عشر/خمسة عشرة' يوما (المعنى واحد: 15 يوما)؛ المادة (12) فاصلة واحدة موجودة في uqn.gov.sa وغائبة في rega.gov.sa بلا أي أثر على المعنى. نسبة التطابق الإجمالية للنص الكامل (14 مادة + ملحق العقوبات) بعد التطبيع: 99.63%. الفارق الجوهري الوحيد الموثق هو في وصف ثلاثة بنود من جدول العقوبات الملحق (البنود 5، 6، 7 -- انظر known_unresolved_discrepancies).\n\nلماذا TIER_1 (مصدران رسميان مستقلان) لا TIER_2: كلا المصدرين جهة حكومية سعودية مباشرة (بوابة الجريدة الرسمية من جهة، والجهة التنظيمية المختصة نفسها من جهة أخرى) -- وليس أحدهما موقعا مرجعيا خاصا (كـ nezams.com أو qanoonsa.com). كلاهما يحمل النص الكامل الفعلي (وليس مجرد إشارة أو بطاقة حالة)، وتطابقا حرفيا بنسبة تفوق 99.6% عبر المواد الأربع عشرة وملحق العقوبات كاملا، بلا أي فجوة وصول (كلاهما جرى الوصول إليه حيا بنجاح هذه الجولة). هذا يطابق المعيار المعتمد صراحة في منهجية هذه المدونة (reports/verification_tiers/VERIFICATION_TIERS_METHODOLOGY_AR.md) لتصنيف TIER_1 حين تتطابق جهتان حكوميتان مختلفتان. مع ذلك، وبسبب حداثة هذه الوثيقة الشديدة (أيام قليلة فقط) وعدم توفر أي مصدر أساسي ثالث يمكن الوصول إليه (انظر فقرة NCAR/هيئة الخبراء أدناه)، وعدم القدرة على تأكيد رقم القرار ورقم عدد الجريدة الرسمية من أي مصدر أساسي، فإن هذا التصنيف مصحوب بتحفظات صريحة موثقة في known_unresolved_discrepancies يُنصح بمراجعتها قبل أي استخدام دقيق.\n\nمحاولة الوصول إلى مصدر أساسي ثالث (NCAR/هيئة الخبراء): رابط 'النظام في موقع هيئة الخبراء بمجلس الوزراء' الظاهر على صفحة rega.gov.sa يشير إلى ncar.gov.sa/document-details/... (البوابة الوطنية للمركز الوطني للوثائق والمحفوظات، خلف بوابة هيئة الخبراء التاريخية laws.boe.gov.sa). محاولة الوصول المباشر (curl) أعادت 'Recv failure: Connection reset by peer' أثناء مصافحة TLS؛ محاولة WebFetch أعادت HTTP 503. نفس عائق الوصول الموثق سابقا في مسار النظام الأم (foreign_ownership) ومسار disability_rights_regulation. لم يُحاوَل الالتفاف على هذا العائق.\n\nمصادر صحفية للتأكيد الظرفي (لا تُعتمَد كمصدر للنص الحرفي): صحيفة الاقتصادية (aleqt.com) -- مقال بتاريخ 'الثلاثاء 23 يونيو 2026' يذكر موافقة مجلس الوزراء على اللائحة والنطاقات الجغرافية برئاسة خادم الحرمين الشريفين، وتصريحا لوزير البلديات والإسكان رئيس مجلس إدارة الهيئة العامة للعقار ماجد الحقيل -- هذا يتوافق زمنيا مع حقل 'تاريخ الإصدار'='1448/01/08' على rega.gov.sa (أي: تاريخ قرار مجلس الوزراء نفسه -- 23 يونيو 2026 يوافق تقريبا 8 محرم 1448هـ -- يسبق تاريخ نشر اللائحة في الجريدة الرسمية 18 محرم 1448هـ/3 يوليو 2026 بنحو 10 أيام، وهو نمط عادي بين تاريخ القرار وتاريخ النشر، وليس تناقضا). لم يذكر مقال aleqt.com أي رقم قرار محدد. أخبار24 (akhbaar24.com) جُلبت (HTTP 200) لكن نص المقال الأساسي مُحمَّل عبر جافاسكريبت وغير ظاهر في HTML الساكن المسترجَع؛ فقط وصف meta موجز متوافق مع مضمون النص المتحقق منه (الهوية الرقمية، الحساب البنكي، البوابة الإلكترونية، جدول الرسوم). صحيفة الوئام (alweeam.com.sa) أعادت HTTP 403 لكل من curl وWebFetch هذه الجولة، فتعذر تأكيدها مباشرة رغم ذكرها في البحث التمهيدي.\n\nرقم القرار وعدد الجريدة الرسمية: لم يظهر أي منهما صراحة على uqn.gov.sa ولا rega.gov.sa ولا في مقال aleqt.com الموثوق. نتيجة بحث ويب مُصنَّعة (AI-search synthesis) ومصدر تجميعي واحد (alriyadhnews.net، 'الرياض 24') يذكران 'قرار مجلس الوزراء رقم 43 الصادر في 8 محرم 1448هـ' و'الجريدة الرسمية أم القرى عدد 5169 بتاريخ 3 يوليو 2026' -- لم يُعتمَد أي من هذين الرقمين هنا: (أ) لم يُؤكَّدا من أي مصدر أساسي، (ب) نفس مقال alriyadhnews.net يخطئ بشكل قابل للتحقق في تاريخ صدور النظام الأم نفسه (يذكره '19 رجب 1447هـ' بينما مسار foreign_ownership المُتحقَّق منه مسبقا في هذه المدونة -- عبر بوابة وزارة العدل + PDF الرسمي -- يثبت أنه 19 محرم 1447هـ لا رجب)، مما يضعف الثقة في أرقامه الأخرى. الالتزام بمبدأ هذه المهمة: 'الاعتراف الصادق بعدم التأكد أفضل من نقل حقيقة غير موثقة'.\n\nتناقض مع البحث التمهيدي لهذه المهمة: أشار البحث التمهيدي إلى 'عدد الجريدة الرسمية بتاريخ 11 صفر 1448هـ (25 يوليو 2026)' -- هذا لم يتأكد في هذه الجولة؛ الجلب المباشر لصفحة uqn.gov.sa هذه الجولة (HTTP 200) يُظهر تاريخ المقالة نفسه '1448-1-18 الموافق 03-07-2026' (18 محرم 1448هـ)، لا 11 صفر. اعتُمد التاريخ المُلاحَظ مباشرة (18 محرم 1448هـ/3 يوليو 2026) في هذا المسار، مع تسجيل هذا التعارض صراحة أدناه بدل إسقاط أي من الروايتين بصمت.\n\nلا فصول ولا أبواب في هذه اللائحة: بنية تسلسلية بسيطة من (14) مادة مرقمة بالترتيب اللفظي الرسمي (المادة الأولى..الرابعة عشرة)، بلا مكرر. لا يوجد نص تمهيدي/ديباجة منفصل (preamble) يمكن تأكيده من أي مصدر تم الوصول إليه هذه الجولة -- كل من uqn.gov.sa وrega.gov.sa يعرضان النص التنظيمي (14 مادة + ملحق) مباشرة دون صفحة قرار اعتماد منفصلة بصيغة 'إن مجلس الوزراء... يقرر ما يلي' كما وُجد في مسارات أخرى من هذه المدونة (مثل disability_rights_regulation)؛ لم يُخترَع نص تمهيدي، وهذا مُسجَّل صراحة كنقص توثيقي معروف.\n\nتطبيع النص: أُزيلت علامات RLM/LRM غير المرئية (\\u200f/\\u200e) الظاهرة بعد بعض الأرقام في مصدر uqn.gov.sa (أثر شائع لتصدير مستندات LibreOffice/Word ثنائية الاتجاه)، ولم يبق أي أثر تطويل زخرفي أو أرقام هندية شرقية أو علامات اقتباس منحنية أو مسافات غير فاصلة في النص المصدر أصلا (تحقق آلي: صفر لكل منها). لم تُبدَّل أي كلمة أو حرف أو رقم في متن الأحكام نفسها. العربية هي اللغة الحاكمة؛ لا ترجمة ولا تفسير ولا صياغة. قراءة فقط على المدخلات؛ حتمي في المخرجات.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "foreign_ownership_regulation_penalty_table_rows_5_6_7_wording_variance",
+      "description": "Penalty-table rows 5 and 6's violation description reads 'عن الحالات وفقا للفقرة (3)' on uqn.gov.sa (Official Gazette, PRIMARY #1, adopted here) vs 'عن التحديثات وفقا للفقرة (3)' on rega.gov.sa (PRIMARY #2); row 7 reads 'عن التغيرات وفقا للفقرة (3)' on uqn.gov.sa vs 'عن التحديثات وفقا للفقرة (3)' on rega.gov.sa. One-word variances in the violation's descriptive label only (case/change/update, all referring to the same Article 3(3)/4(3)/5(3) reporting duty); the penalty amounts/tiers are identical across both sources. This track adopts the Official Gazette wording as the text of record and discloses rather than silently resolves the variance."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_decree_and_gazette_issue_number_unconfirmed",
+      "description": "No accessed primary source (uqn.gov.sa, rega.gov.sa) nor the reputable aleqt.com/Al-Eqtisadiah report displays an explicit Council of Ministers resolution number or Umm al-Qura gazette issue number for this Regulation. An AI-generated web-search synthesis and one secondary content aggregator (alriyadhnews.net, 'الرياض 24') assert 'Council of Ministers Resolution No. 43' and 'Umm al-Qura issue No. 5169' -- NOT adopted here because (a) neither figure could be corroborated from any primary source, and (b) the same alriyadhnews.net article independently misstates the BASE LAW's own decree date as '19 Rajab 1447H', whereas this corpus's own already-verified foreign_ownership (base law) track -- cross-checked via the MOJ portal API plus the official MOJ PDF -- establishes it as 19 Muharram 1447H, undermining confidence in that source's other specific figures. Per this corpus's binding trust rule, an honest 'could not confirm' is recorded instead of adopting an unverified number. decree/decree_date_hijri below record only the confirmed issuing instrument type (Council of Ministers Resolution) and the two independently-observed dates (see next entry), not an invented resolution number."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_decision_date_vs_publication_date",
+      "description": "rega.gov.sa's own legislation-portal metadata lists both 'تاريخ النشر' (publication date) and 'تاريخ الإصدار' (issuance date) as '1448/01/08' (~23 June 2026), which coincides with aleqt.com/Al-Eqtisadiah's dateline ('الثلاثاء 23 يونيو 2026') reporting the Council of Ministers' cabinet-session approval of this very Regulation and the geographic scope decision. uqn.gov.sa's own article page displays a later date, '1448-1-18 الموافق 03-07-2026' (18 Muharram 1448H / 3 July 2026) -- the Official Gazette PUBLICATION date, about 10 days after the cabinet decision. This reads as an ordinary decision-date vs gazette-publication-date gap (not a true conflict), but is disclosed explicitly because REGA's page does not itself distinguish the two, and because this track's decree_date_hijir field below records the GAZETTE date (18 Muharram 1448H) as the operative/adopted date of record."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_prior_research_gazette_date_conflict",
+      "description": "This task's own prior-research briefing stated the gazette issue was 'dated 11 Safar 1448H (25 July 2026)'. This could NOT be reproduced this pass: the live uqn.gov.sa fetch (HTTP 200) shows the article's own displayed date as 18 Muharram 1448H (3 July 2026), not 11 Safar. This track adopts the directly re-observed date (18 Muharram 1448H / 3 July 2026) since it was independently verified this pass via a direct primary-source fetch, while flagging this conflict with the prior briefing explicitly rather than silently dropping either figure. No explicit Umm al-Qura issue NUMBER could be confirmed either way (see the decree/gazette-issue-number entry above)."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_ncar_boe_unreachable",
+      "description": "rega.gov.sa links to 'النظام في موقع هيئة الخبراء بمجلس الوزراء' (ncar.gov.sa/document-details/..., the successor portal to the historical laws.boe.gov.sa Board-of-Experts database) as a further primary reference. Direct curl returned 'Recv failure: Connection reset by peer' during the TLS handshake; WebFetch returned HTTP 503. This mirrors the identical access failure already documented in this corpus's foreign_ownership (base law) and disability_rights_regulation tracks. Not circumvented. A potential third PRIMARY source therefore remains unverified, though this track's TIER_1 call already rests on two independently-reached PRIMARY government sources (uqn.gov.sa and rega.gov.sa), not three."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_alweeam_akhbaar24_secondary_access_gaps",
+      "description": "alweeam.com.sa (cited in this task's prior research as a cross-check source) returned HTTP 403 to both direct curl and WebFetch this pass and could not be independently re-fetched. akhbaar24.com was fetched successfully (HTTP 200) but its article body is JavaScript-rendered and absent from the static HTML; only its meta-description snippet could be checked, and it is consistent in substance with the verified text (digital ID, bank-account requirement, e-portal, disclosure duties, penalties) without corroborating literal wording article-by-article."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_no_confirmed_preamble",
+      "description": "Neither uqn.gov.sa nor rega.gov.sa, as fetched this pass, exposes a separate Council-of-Ministers approval-resolution preamble text (the 'إن مجلس الوزراء ... يقرر ما يلي' style operative-decision language found for some other regulations in this corpus, e.g. disability_rights_regulation). Both accessed pages present the Regulation's own 14 articles plus the penalties annex directly. No preamble_ar is fabricated; this gap is disclosed rather than filled."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_source_percent_glyph_inconsistency",
+      "description": "The uqn.gov.sa (PRIMARY, adopted) penalty-table text itself mixes the Arabic percent sign '٪' and the Latin '%' across different rows/cells (e.g. row 2's first penalty cell uses '٪' while its second and third cells use '%'). Preserved verbatim per this corpus's no-alteration-of-governing-text principle; not silently normalized to a single glyph."
+    },
+    {
+      "article_key": "foreign_ownership_regulation_article9_fee_schedule_currently_four_zones",
+      "description": "Article 9's fee schedule currently lists exactly four geographic entries (Riyadh city, Makkah city, Madinah city, Jeddah governorate), all at a flat 2% fee on the same row (rowspan in the source HTML table). This reflects the geographic scope as published at the time of this fetch; this track does not interpret whether additional zones or fee tiers may be added by future Council of Ministers decisions under base-law Article 2(2)."
+    }
+  ],
+  "articles": {
+    "foreign_ownership_regulation_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يقصد بالمصطلحات والعبارات الآتية -أينما وردت في هذه اللائحة- المعاني المبينة أمام كل منها:\nالنظام: نظام تملك غير السعوديين للعقار.\nاللائحة: اللائحة التنفيذية للنظام.\nالهيئة: الهيئة العامة للعقار.\nالهوية الرقمية: أي بيانات بصيغة رقمية مصدرة ومعتمدة من وزارة الداخلية، وتحدد هوية الشخص في التعامل الرقمي لتملك غير السعوديين غير المقيمين للعقار في المملكة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجب على غير السعودي ذي الصفة الطبيعية غير المقيم في المملكة قبل تملك العقار أو اكتساب الحقوق العينية الأخرى عليه، أن:\n1- يحصل على الهوية الرقمية.\n2- يفتح حساب بنكي داخل المملكة باسمه.\n3- يصدر رقم اتصال سعودي باسمه المرتبط بالهوية الرقمية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1- على الشركة غير السعودية قبل تملك العقار أو اكتساب الحقوق العينية الأخرى عليه، أن:\nأ- تسجل لدى وزارة الاستثمار وفق الدليل الإجرائي -المشار إليه في المادة (الرابعة عشرة) من اللائحة- وبعد استيفاء المتطلبات النظامية، على أن تفصح عند التسجيل عن الملاك المباشرين وغير المباشرين للشركة.\nب- يكون ممثلها النظامي حاصلا على هوية مصدرة وفقا لأنظمة المملكة.\nج- تفتح حسابا بنكيا داخل المملكة باسمها.\n2- تصدر وزارة الاستثمار رقم تسجيل الشركة غير السعودية، بعد استيفاء المتطلبات النظامية.\n3- تلتزم الشركة غير السعودية المسجلة، بإبلاغ وزارة الاستثمار خلال (خمسة عشر) يوما، من تاريخ تحقق أي من الحالات الآتية:\nأ- انتقال ملكية ما نسبته (5%) أو أكثر من الشركة، سواء تم ذلك بعملية واحدة أو أكثر.\nب- وجود ترتيبات داخلية أو تنظيمات صادرة في بلد التأسيس، تؤدي إلى تقييد استقلال الشركة أو تمكين طرف آخر -داخل الشركة أو خارجها- من ممارسة صلاحيات مؤثرة على قراراتها أو تصرفاتها، سواء اقترن ذلك بتغير في الملكية أم لا.\nج- أي حالات أخرى تحددها الهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY_TRIVIAL_FORMATTING_VARIANCE",
+      "history": [],
+      "cross_source_variance_note": "extra space only"
+    },
+    "foreign_ownership_regulation_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1- على الكيان غير السعودي غير الربحي قبل تملك العقار أو اكتساب الحقوق العينية الأخرى عليه، أن:\nأ- يسجل لدى المركز الوطني لتنمية القطاع غير الربحي وفق الدليل الإجرائي -المشار إليه في المادة (الرابعة عشرة) من اللائحة- وبعد استيفاء المتطلبات النظامية، على أن يفصح عند التسجيل عن المسيطرين المباشرين وغير المباشرين على الكيان.\nب- يكون ممثله النظامي حاصلا على هوية مصدرة وفقا لأنظمة المملكة.\nج- يفتح حسابا بنكيا داخل المملكة باسمه.\n2- يصدر المركز الوطني لتنمية القطاع غير الربحي رقم تسجيل الكيان، بعد استيفاء المتطلبات النظامية.\n3- يلتزم الكيان غير السعودي غير الربحي المسجل بإبلاغ المركز الوطني لتنمية القطاع غير الربحي خلال (خمسة عشر) يوما من تاريخ تحقق أي من الحالات الآتية:\nأ- حدوث تغير جوهري في الكيان أو في الأشخاص ذوي التأثير على قراراته.\nب- وجود ترتيبات داخلية أو تنظيمات صادرة في بلد التأسيس، تؤدي إلى تقييد استقلال الكيان، أو تمكين طرف آخر -داخل الكيان أو خارجه- من ممارسة صلاحيات مؤثرة على قراراته أو تصرفاته.\nج- أي حالات أخرى تحددها الهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY_TRIVIAL_FORMATTING_VARIANCE",
+      "history": [],
+      "cross_source_variance_note": "Arabic-comma glyph + ZWNJ formatting only"
+    },
+    "foreign_ownership_regulation_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1- على أي شخص ذي صفة اعتبارية غير سعودي آخر يحدد بقرار من مجلس الوزراء، قبل تملك العقار أو اكتساب الحقوق العينية الأخرى عليه، أن:\nأ- يسجل الكيان لدى الجهة التي يحددها قرار مجلس الوزراء المشار إليه في الفقرة (4) من تعريف (غير السعودي) في المادة (الأولى) من النظام، على أن يفصح عند التسجيل عن الملاك أو المسيطرين المباشرين وغير المباشرين له.\nب- يكون ممثله النظامي حاصلا على هوية مصدرة وفقا لأنظمة المملكة.\nج- يفتح حسابا بنكيا داخل المملكة باسمه.\n2- تصدر الجهة التي يحددها قرار مجلس الوزراء المشار إليه في الفقرة (4) من تعريف (غير السعودي) في المادة (الأولى) من النظام، رقم تسجيل الكيان، بعد استيفاء المتطلبات النظامية.\n3- يلتزم الكيان المسجل بإبلاغ الجهة التي يحددها قرار مجلس الوزراء المشار إليه في الفقرة (4) من تعريف (غير السعودي) في المادة (الأولى) من النظام، خلال (خمسة عشر) يوما من تاريخ تحقق أي تغيرات جوهرية تطرأ عليه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY_TRIVIAL_FORMATTING_VARIANCE",
+      "history": [],
+      "cross_source_variance_note": "gender-agreement letter on the digit word for fifteen (khamsata ashar vs khamsata ashrah) -- same meaning, 15 days"
+    },
+    "foreign_ownership_regulation_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1- تنشئ الهيئة بوابة إلكترونية لتملك العقار لغير السعودي والشركة السعودية التي يشترك في ملكية رأس مالها غير سعودي، أو اكتساب الحقوق العينية الأخرى عليه أو التصرف فيها، ترتبط بالسجل العقاري.\n2- يقدم طالب تملك العقار أو اكتساب الحقوق العينية الأخرى عليه، أو التصرف فيها؛ طلبه عبر البوابة الإلكترونية.\n3- يجب على غير السعودي أن يجري جميع التعاملات المالية المتصلة بتملك العقار أو اكتساب الحقوق العينية الأخرى عليه، والتصرف فيها، عبر وسائل الدفع الإلكترونية، وفق نظام المدفوعات وخدماتها لدى البنك المركزي السعودي.\n4- تستكمل في السجل العقاري إجراءات تملك العقار، واكتساب الحقوق العينية الأخرى عليه، وإصدار الصكوك، وفقا للأحكام المنظمة لذلك.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعد زوج غير السعودي وفروعه -غير السعوديين- تابعين له لأغراض تملك العقار المخصص لسكنه وفقا للفقرة (3) من المادة (الثانية) من النظام، ولا يجوز لأي منهم أن ينفرد بتملك عقار مخصص للسكن إلا إذا انتفت الزوجية أو بلغ الفرع سن (الخامسة والعشرين).",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1- يجوز للشركة السعودية غير المدرجة في السوق المالية السعودية، والتي يشترك في ملكية رأس مالها شخص أو أكثر من ذوي الصفة الطبيعية أو الاعتبارية الذين لا يتمتعون بالجنسية السعودية؛ تملك العقار أو اكتساب الحقوق العينية الأخرى عليه -وفق الفقرة (2) من المادة (الثالثة) من النظام- وذلك خارج النطاق الجغرافي باستثناء مدينتي مكة المكرمة والمدينة المنورة، للغرضين الآتيين:\nأ- مزاولة أنشطتها.\nب- سكن العاملين فيها.\n2- يجب على الشركة -المشار إليها في الفقرة (1) من هذه المادة- أن تحصل على موافقة وزارة الاستثمار قبل تملك العقار أو اكتساب الحقوق العينية الأخرى عليه وفقا لتلك الفقرة.\n3- يجوز للشركة -المشار إليها في الفقرة (1) من هذه المادة- تملك العقار أو اكتساب الحقوق العينية الأخرى عليه -وفق الفقرة (2) من المادة (الثالثة) من النظام- وذلك داخل النطاق الجغرافي بما في ذلك مدينتا مكة المكرمة والمدينة المنورة؛ دون الحصول على موافقة وزارة الاستثمار.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون مقدار الرسم -المشار إليه في المادة (التاسعة) من النظام- الذي تستوفيه الهيئة على قيمة تصرف غير السعودي بالحقوق العينية على العقار في المملكة؛ وفقا للآتي:\nالنطاق الجغرافي: مدينة الرياض | نوع الحق العيني: جميع أنواع الحقوق العينية | الغرض من الحق العيني (الاستعمالات): جميع أنواع الاستعمالات | قيمة الرسم: 2%\nالنطاق الجغرافي: مدينة مكة المكرمة | نوع الحق العيني: جميع أنواع الحقوق العينية | الغرض من الحق العيني (الاستعمالات): جميع أنواع الاستعمالات | قيمة الرسم: 2%\nالنطاق الجغرافي: مدينة المدينة المنورة | نوع الحق العيني: جميع أنواع الحقوق العينية | الغرض من الحق العيني (الاستعمالات): جميع أنواع الاستعمالات | قيمة الرسم: 2%\nالنطاق الجغرافي: محافظة جدة | نوع الحق العيني: جميع أنواع الحقوق العينية | الغرض من الحق العيني (الاستعمالات): جميع أنواع الاستعمالات | قيمة الرسم: 2%",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعد تصرف غير السعودي بالحقوق العينية على العقار في المملكة خاضعا للرسم بنسبة (الصفر)، وذلك في أي من الحالات الآتية:\n1- التصرف بالحقوق العينية على العقار في المملكة، عدا ما ورد في المادة (التاسعة) من اللائحة.\n2- التصرف الذي يتم في قسمة التركة.\n3- التصرف الذي ينفذ بموجب حكم قضائي نهائي أو أمر صادر من جهة قضائية مختصة.\n4- التصرف الذي ينتج عن نزع ملكية للمصلحة العامة، وفقا للأنظمة والتعليمات.\n5- التصرف الذي يكون دون مقابل إلى وقف أو إلى شخص ذي صفة اعتبارية عامة.\n6- التصرف الذي يتم فيه رد العقار إلى المالك غير السعودي الذي سبق له التصرف فيه، بشرط أن يتم الرد خلال (مائة وثمانين) يوما من تاريخ توثيق التصرف الأول، وألا يطرأ تغيير في وصف العقار أو في المقابل المالي المتفق عليه في التصرف محل الرد.\n7- التصرف الذي يتم في قسمة العقار الشائع بين الشركاء، بشرط ألا يترتب على القسمة زيادة في نصيب أي منهم.\n8- التصرف الذي يجري إذا كان المالك إحدى الممثليات الدبلوماسية المعتمدة في المملكة أو إحدى الهيئات الدولية والإقليمية، بشرط المعاملة بالمثل.\n9- التصرف الذي يتم من شخص طبيعي إلى شركة أو صندوق استثماري مؤسسين في المملكة، ويملك هذا الشخص -بشكل مباشر أو غير مباشر- جميع حصص الشركة أو أسهمها أو وحدات الصندوق.\n10- التصرف الناتج عن بيع الوحدات العقارية إذا كان غير السعودي قد تملك أرضا وقام بتطوير هذه الوحدات على أن يستكمل التطوير خلال المدة المحددة في الرخصة الصادرة بالتطوير، والبيع بما لا يتجاوز (سنة) من تاريخ انتهاء الرخصة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يتولى مفتشون -يصدر بتحديدهم وتحديد آلية عملهم قرار من الرئيس التنفيذي للهيئة- مجتمعين أو منفردين، ضبط مخالفات أحكام النظام واللائحة وإثباتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تراعي اللجنة -المشار إليها في المادة (الحادية عشرة) من النظام- عند تطبيق العقوبات الواردة في الجدول الملحق باللائحة، ما يأتي:\n1- تقدير العقوبة بالنظر إلى طبيعة المخالفة والأثر المترتب على ارتكابها.\n2- تضمين قرار العقوبة الصادر على المخالف، تحديد مدة تصحيح المخالفة، على ألا تقل عن (عشرة) أيام ولا تزيد على (مائة وثمانين) يوما، ويراعى في تقدير تحديد مدة تصحيح المخالفة؛ نوع المخالفة وطبيعة معالجتها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY_TRIVIAL_FORMATTING_VARIANCE",
+      "history": [],
+      "cross_source_variance_note": "one comma present (uqn.gov.sa) vs absent (rega.gov.sa)"
+    },
+    "foreign_ownership_regulation_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعد التبليغ منتجا لآثاره النظامية إذا تم بإحدى الوسيلتين الآتيتين:\n1- وسائل التواصل المقدمة في البوابة الإلكترونية المشار إليها في المادة (السادسة) من اللائحة.\n2- الرسائل النصية المرسلة عبر الهاتف المحمول الموثق في النظم الآلية الحكومية المعتمدة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    },
+    "foreign_ownership_regulation_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "دون إخلال بأحكام النظام، تعد الهيئة دليلا إجرائيا -فيما يلزم- لما ورد في النظام واللائحة، ويعتمده مجلس إدارة الهيئة بقرار منه.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "MATCHES_REGA_PRIMARY",
+      "history": []
+    }
+  },
+  "penalties_table": {
+    "title_ar": "ملحق: جدول تصنيف مخالفات نظام تملك غير السعوديين للعقار ولائحته التنفيذية والعقوبات المقررة لها",
+    "row_count": 7,
+    "rows": [
+      {
+        "band_no": 1,
+        "violation_ar": "تقديم غير السعودي متعمدا معلومات غير صحيحة أو مضللة تؤدي إلى تملكه للعقار أو اكتسابه أيا من الحقوق العينية الأخرى عليه.",
+        "penalty_cells": [
+          {
+            "label_ar": "العقوبة",
+            "value_ar": "أ- غرامة (5%) من قيمة الحق العيني محل المخالفة بما لا يزيد على (10,000,000) عشرة ملايين ريال. مع: ب- بيع الحق العيني على العقار."
+          }
+        ]
+      },
+      {
+        "band_no": 2,
+        "violation_ar": "تقديم شركة سعودية يشترك في ملكية رأس مالها شخص أو أكثر من ذوي الصفة الطبيعية أو الاعتبارية الذين لا يتمتعون بالجنسية السعودية، معلومات غير صحيحة في شأن احتياجها الفعلي لتملك عقار بغرض ممارسة نشاطها أو سكن العاملين، للحصول على موافقة وزارة الاستثمار.",
+        "penalty_cells": [
+          {
+            "label_ar": "المرة الأولى",
+            "value_ar": "غرامة لا تقل عن (0,5٪) ولا تزيد على (1%) من قيمة الحق العيني، وبما لا يزيد على (1,000,000) مليون ريال."
+          },
+          {
+            "label_ar": "المرة الثانية",
+            "value_ar": "غرامة لا تقل عن (1%) ولا تزيد على (2%) من قيمة الحق العيني، وبما لا يزيد على (2,000,000) مليوني ريال."
+          },
+          {
+            "label_ar": "المرة الثالثة",
+            "value_ar": "غرامة لا تقل عن (2%) ولا تزيد على (3%) من قيمة الحق العيني، وبما لا يزيد على (4,000,000) أربعة ملايين ريال."
+          }
+        ]
+      },
+      {
+        "band_no": 3,
+        "violation_ar": "إعاقة المفتشين أو عدم تمكينهم من أداء مهماتهم التفتيشية وفقا لما تقضي به الأنظمة والتعليمات.",
+        "penalty_cells": [
+          {
+            "label_ar": "المرة الأولى",
+            "value_ar": "غرامة لا تقل عن (0,1%) ولا تزيد على (0,5%) من قيمة الحق العيني، وبما لا يزيد على (500,000) خمسمائة ألف ريال"
+          },
+          {
+            "label_ar": "المرة الثانية",
+            "value_ar": "غرامة لا تقل عن (1%) ولا تزيد على (2%) من قيمة الحق العيني، وبما لا يزيد على (2,000,000) مليوني ريال."
+          },
+          {
+            "label_ar": "المرة الثالثة",
+            "value_ar": "غرامة لا تقل عن (2%) ولا تزيد على (3%) من قيمة الحق العيني، وبما لا يزيد على (4,000,000) أربعة ملايين ريال."
+          }
+        ]
+      },
+      {
+        "band_no": 4,
+        "violation_ar": "عدم معالجة المخالفة أو تصحيحها خلال المهلة الزمنية التي تحددها لجنة النظر في المخالفات وإيقاع العقوبات المقررة لها.",
+        "penalty_cells": [
+          {
+            "label_ar": "المرة الأولى",
+            "value_ar": "غرامة لا تقل عن (0,1%) ولا تزيد على (0,5%) من قيمة الحق العيني، وبما لا يزيد على (500,000) خمسمائة ألف ريال."
+          },
+          {
+            "label_ar": "المرة الثانية",
+            "value_ar": "غرامة لا تقل عن (1%) ولا تزيد على (2%) من قيمة الحق العيني، وبما لا يزيد على (2,000,000) مليوني ريال."
+          },
+          {
+            "label_ar": "المرة الثالثة",
+            "value_ar": "غرامة لا تقل عن (2%) ولا تزيد على (3%) من قيمة الحق العيني، وبما لا يزيد على (4,000,000) أربعة ملاين ريال."
+          }
+        ]
+      },
+      {
+        "band_no": 5,
+        "violation_ar": "عدم قيام الشركة غير السعودية المسجلة بإبلاغ وزارة الاستثمار عن الحالات وفقا للفقرة (3) من المادة (الثالثة) من اللائحة.",
+        "penalty_cells": [
+          {
+            "label_ar": "المرة الأولى",
+            "value_ar": "الإنذار"
+          },
+          {
+            "label_ar": "المرة الثانية",
+            "value_ar": "غرامة لا تقل عن (0,5%) ولا تزيد على (1%) من قيمة الحق العيني، وبما لا يزيد على (1,000,000) مليون ريال."
+          },
+          {
+            "label_ar": "المرة الثالثة",
+            "value_ar": "غرامة لا تقل عن (1%) ولا تزيد على (2%) من قيمة الحق العيني، وبما لا يزيد على (2,000,000) مليوني ريال."
+          }
+        ]
+      },
+      {
+        "band_no": 6,
+        "violation_ar": "عدم قيام الكيان غير السعودي غير الربحي المسجل بإبلاغ المركز الوطني لتنمية القطاع غير الربحي عن الحالات وفقا للفقرة (3) من المادة (الرابعة) من اللائحة.",
+        "penalty_cells": [
+          {
+            "label_ar": "المرة الأولى",
+            "value_ar": "الإنذار"
+          },
+          {
+            "label_ar": "المرة الثانية",
+            "value_ar": "غرامة لا تقل عن (0,5٪) ولا تزيد على (1%) من قيمة الحق العيني، وبما لا يزيد على (1,000,000) مليون ريال."
+          },
+          {
+            "label_ar": "المرة الثالثة",
+            "value_ar": "غرامة لا تقل عن (1%) ولا تزيد على (2%) من قيمة الحق العيني، وبما لا يزيد على (2,000,000) مليوني ريال."
+          }
+        ]
+      },
+      {
+        "band_no": 7,
+        "violation_ar": "عدم قيام الشخص ذي الصفة الاعتبارية غير السعودي المسجل بإبلاغ الجهة المحددة في قرار مجلس الوزراء، عن التغيرات وفقا للفقرة (3) من المادة (الخامسة) من اللائحة.",
+        "penalty_cells": [
+          {
+            "label_ar": "المرة الأولى",
+            "value_ar": "الإنذار"
+          },
+          {
+            "label_ar": "المرة الثانية",
+            "value_ar": "غرامة لا تقل عن (0,5%) ولا تزيد على (1%) من قيمة الحق العيني، وبما لا يزيد على (1,000,000) مليون ريال."
+          },
+          {
+            "label_ar": "المرة الثالثة",
+            "value_ar": "غرامة لا تقل عن (1%) ولا تزيد على (2%) من قيمة الحق العيني، وبما لا يزيد على (2,000,000) مليوني ريال."
+          }
+        ]
+      }
+    ],
+    "legal_status_ar": "اصلية",
+    "status": "MATCHES_REGA_PRIMARY_MINOR_WORDING_VARIANCE",
+    "cross_source_variance_note": "Rows 5 and 6's violation-description text reads 'عن الحالات وفقا للفقرة (3)' on uqn.gov.sa (Official Gazette, this track's adopted wording) vs 'عن التحديثات وفقا للفقرة (3)' on rega.gov.sa; row 7 reads 'عن التغيرات وفقا للفقرة (3)' on uqn.gov.sa vs 'عن التحديثات وفقا للفقرة (3)' on rega.gov.sa. All three are one-word variances in the violation's descriptive label (case/change/update) referring to the same underlying reporting duty in regulation Articles 3(3)/4(3)/5(3); none alter the penalty amounts or tiers themselves. This track adopts the Official Gazette (uqn.gov.sa) wording as the text of record."
+  }
+}
