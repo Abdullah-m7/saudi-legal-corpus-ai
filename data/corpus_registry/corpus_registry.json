@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 11599,
+  "total_primary_arabic_governing_records": 11697,
   "total_reference_records": 614,
-  "total_registry_counted_records": 12494,
-  "total_tracks": 193,
+  "total_registry_counted_records": 12592,
+  "total_tracks": 198,
   "tracks": [
     {
       "boundaries": {
@@ -9220,6 +9220,251 @@
       "validator_targets": [
         "make general-education-law-track-validate"
       ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/credit_information/law/official_source/credit_information_law_official_source.json",
+        "sources/credit_information/law/verified/credit_information_law_verified_records.jsonl",
+        "data/credit_information_arabic_legal_llm/credit_information_law_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "نظام المعلومات الائتمانية",
+      "display_name_en": "Credit Information Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/credit_information_arabic_legal_llm/credit_information_law_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Credit Information Law «نظام المعلومات الائتمانية» — Royal Decree No. (M/37), dated 5/7/1429H (8 July 2008G), approving Council of Ministers Resolution No. 188 (4/7/1429H), based on Shura Council Resolution No. (59/42, 9/10/1428H). Discovered via a fresh multi-modal coverage-gap-map sweep at the 193-track baseline. **17 records, ALL اصلية**, flat structure, no chapters. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa live portal unreachable this pass (HTTP 503 via WebFetch, connection reset via curl, HTTP 422/timeout via r.jina.ai); PRIMARY reached via a Wayback Machine snapshot of the exact BOE lawId page (63dc01a6-fc5c-4600-9171-a9a700f2d222, dated 2026-02-15), the sole official channel reached, yielding the complete verbatim text of all 17 articles. Cross-verified against nezams.com (topic-by-topic match) and saudipedia.com (decree/date/count/penalty-structure match). A disclosed discrepancy: WebFetch's own AI-summary of nezams.com stated the Gregorian date as 28 June 2008, conflicting with BOE's own '08/07/2008' field and saudipedia.com's '8 يوليو 2008م' — resolved in favor of 8 July 2008, documented not silently dropped. A dedicated search for amendments found none since 2008 — an honest negative finding. **NO predecessor repeal** — Article 17 carries only a general non-specific conflict clause. Administers licensed credit-bureau companies (e.g. SIMAH); distinct subject matter from the already-ingested sama_law, banking_control_law, and finance_companies_law tracks (confirmed by reading their registry entries). Has its own SAMA-hosted Implementing Regulation, not ingested this pass (future candidate). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_SOLE_OFFICIAL_CHANNEL_X_NEZAMS_X_SAUDIPEDIA_CROSSVERIFIED_LIVE_BOE_UNREACHABLE",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/37), dated 5/7/1429H (8 July 2008G), approving Council of Ministers Resolution No. 188 (4/7/1429H). Administered by SAMA; governs licensed credit-bureau companies (e.g. SIMAH). Live laws.boe.gov.sa unreachable this pass (HTTP 503 / connection reset); PRIMARY reached via a Wayback Machine snapshot of the BOE lawId page (63dc01a6-fc5c-4600-9171-a9a700f2d222), cross-verified against nezams.com and saudipedia.com.",
+      "status": "complete",
+      "track_id": "credit_information_law",
+      "validator_targets": [
+        "make credit-information-law-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/real_estate_brokerage/law/official_source/real_estate_brokerage_law_official_source.json",
+        "sources/real_estate_brokerage/law/verified/real_estate_brokerage_law_verified_records.jsonl",
+        "data/real_estate_brokerage_arabic_legal_llm/real_estate_brokerage_law_legal_llm_001_024.json"
+      ],
+      "display_name_ar": "نظام الوساطة العقارية",
+      "display_name_en": "Real Estate Brokerage Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/real_estate_brokerage_arabic_legal_llm/real_estate_brokerage_law_legal_llm_001_024.json",
+          "governing": true,
+          "record_count": 24,
+          "status": "complete"
+        }
+      },
+      "notes": "Real Estate Brokerage Law «نظام الوساطة العقارية» — Royal Decree No. (M/130), dated 30/11/1443H, approving Council of Ministers Resolution No. (679), dated 29/11/1443H, based on Shura Council Resolution No. (13/70), dated 2/5/1443H. Published Umm al-Qura Gazette issue (4940), 22 July 2022G. Discovered via a fresh multi-modal coverage-gap-map sweep at the 193-track baseline. **24 records, ALL اصلية**, flat structure, NO chapter (الفصل) divisions — this corrects the initial scan lead's 'reported chapter outline', which does not hold against the primary text. **VERIFICATION TIER: TIER_1-pattern** — live laws.boe.gov.sa unreachable (persistent HTTP 503/connection-reset; Wayback blocked; r.jina.ai returned 401). PRIMARY is REGA's own hosted PDF (a 12-page scan bearing the Royal Diwan decree cover page, the CoM Resolution cover page, and the full 24-article text on Bureau of Experts letterhead with the Kingdom's official seal on every page) — rendered at 300dpi and read directly page-by-page, with a tesseract-ara OCR pass as a corroborating digital channel. Cross-verified word-for-word against qanoonsa.com and nezams.com (raw HTML, not AI-summarized) — all 24 articles matched across all three independently-obtained texts, differing only in diacritics/digit-script normalization. Numeral style normalized to Eastern Arabic-Indic digits to match the official scan, per the real_estate_units_law track's precedent. Administered by REGA (the 'Fal' brokerage-license regime); entry into force 180 days after the 22 July 2022 gazette publication (~January 2023) — settled current law. **CONFIRMED named repeal** of the old Real Estate Offices Regulation (Council of Ministers Resolution 334, 7/3/1398H) via Article 22, independently corroborated by the Council of Ministers Resolution's own recitals in the same PDF — that 1398H instrument is not itself tracked in this corpus, so no supersession-graph edge is required. Distinct subject matter (brokerage/agency licensing) from the already-ingested real_estate_registration_law, real_estate_mortgage_law, real_estate_finance_law, real_estate_units_law, and municipal_realestate_law tracks (confirmed by reading their registry entries). Has its own 1444H Implementing Regulation, not ingested this pass (future candidate). The committed official PDF is preserved at inputs/real_estate_brokerage_official_pdfs/real_estate_brokerage_law_rega_official_ar.pdf. Arabic governs; not legal advice.",
+      "official_text_status": "MATCHES_OFFICIAL_SCAN_VISUALLY_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 24,
+        "legal_status_breakdown": {
+          "اصلية": 24,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 24
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/130), dated 30/11/1443H, approving Council of Ministers Resolution No. (679), dated 29/11/1443H, based on Shura Council Resolution No. (13/70), dated 2/5/1443H. Published Umm al-Qura Gazette issue (4940), 22 July 2022G. Administered by REGA (the 'Fal' brokerage-license regime). Live laws.boe.gov.sa unreachable this pass; PRIMARY REGA's own hosted BOE-sealed scanned PDF, visually adjudicated across all 12 pages plus tesseract-ara OCR corroboration, cross-verified word-for-word against qanoonsa.com and nezams.com.",
+      "status": "complete",
+      "track_id": "real_estate_brokerage_law",
+      "validator_targets": [
+        "make real-estate-brokerage-law-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/state_revenue/law/official_source/state_revenue_law_official_source.json",
+        "sources/state_revenue/law/verified/state_revenue_law_verified_records.jsonl",
+        "data/state_revenue_arabic_legal_llm/state_revenue_law_legal_llm_001_032.json"
+      ],
+      "display_name_ar": "نظام إيرادات الدولة",
+      "display_name_en": "State Revenue Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/state_revenue_arabic_legal_llm/state_revenue_law_legal_llm_001_032.json",
+          "governing": true,
+          "record_count": 32,
+          "status": "complete"
+        }
+      },
+      "notes": "State Revenue Law «نظام إيرادات الدولة» — Royal Decree No. (M/68), dated 18/11/1431H, approving Council of Ministers Resolution No. 359, dated 17/11/1431H. Discovered via a fresh multi-modal coverage-gap-map sweep at the 193-track baseline, distinct from a separate July-2026 Council-of-Ministers-approved 'update' to this same law (see the coverage-gap-map report and task history) whose promulgating decree/resolution number remains UNCONFIRMED — this track represents only the pre-2026-update, currently-in-force consolidated text. **32 records: 30 اصلية / 1 معدلة / 1 مضافة, 0 ملغاة**, NO formal فصل (chapter) structure (unlike this corpus's other fiscal-law tracks). **DISTINCT TIER** — live BOE unreachable (HTTP 503); PRIMARY reached via a Wayback Machine snapshot of the BOE lawId page, cross-verified against nezams.com and qanoonsa.com, full agreement across all 32 records. **CORRECTED LEAD**: the decree (18/11/1431H) and approving Council of Ministers Resolution (17/11/1431H) dates are one day apart, not identical as an earlier unverified lead claimed. **Article 25 (معدلة)**: BOE's own per-article changelog carries the CURRENT post-amendment text (Royal Decree M/5, 2/1/1440H, deleting 'أو تقسيط'), while BOE's default main-body rendering of the same article is STALE pre-amendment text — a confirmed instance of this corpus's known BOE staleness pattern; both wordings recovered to primary-source confidence, so original_1431h_text IS populated for Article 25 (a rare case where the pre-amendment text is not a documented gap). **Article 28-bis (مضافة)**: genuinely exists, identical text across BOE and nezams.com, but the two sources DISAGREE on the adding instrument — BOE cites Royal Decree M/93 (1/10/1443H); nezams.com cites Council of Ministers Resolution 198 (4/4/1443H) — both recorded in amendment_history, unresolved rather than guessed. **CONFIRMED named repeal** of the predecessor نظام جباية أموال الدولة (Royal Will 41/3/2, 12/4/1359H) via Article 30 — that predecessor is not itself tracked in this corpus, so no supersession-graph edge is required. **CURRENCY-RISK DISCLOSURE**: the Council of Ministers approved an 'updated' version of this Law on ~14-16 July 2026 (per mof.gov.sa, SPA N2634157/N2640731, aawsat.com, sabq.org) but no Royal Decree or Resolution number for that update was found in any source searched across two independent research passes — this track deliberately represents only the pre-2026-update, currently-operative text, disclosed explicitly as an open follow-up item (see task tracking 'Watch for confirmable citation of Updated State Revenue Law'). Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED",
+      "record_counts": {
+        "arabic_articles": 32,
+        "legal_status_breakdown": {
+          "اصلية": 30,
+          "مضافة": 1,
+          "معدلة": 1,
+          "ملغاة": 0
+        },
+        "total": 32
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Royal Decree No. (M/68), dated 18/11/1431H, approving Council of Ministers Resolution No. 359, dated 17/11/1431H (one day earlier than the decree — corrects a prior unverified lead's claim that the dates were identical). Amended by Royal Decree M/5 (2/1/1440H, Article 25) and Royal Decree M/93 (1/10/1443H, Article 28-bis, disputed against nezams.com's citation of Council of Ministers Resolution 198, 4/4/1443H). Live laws.boe.gov.sa unreachable this pass; PRIMARY reached via a Wayback Machine snapshot, cross-verified against nezams.com and qanoonsa.com. Explicitly EXCLUDES an unconfirmed July-2026 Council-of-Ministers-approved 'update' whose promulgating instrument number remains unfound.",
+      "status": "complete",
+      "track_id": "state_revenue_law",
+      "validator_targets": [
+        "make state-revenue-law-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/etec/law/official_source/etec_law_official_source.json",
+        "sources/etec/law/verified/etec_law_verified_records.jsonl",
+        "data/etec_arabic_legal_llm/etec_law_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "تنظيم هيئة تقويم التعليم والتدريب",
+      "display_name_en": "Statute (Organizational Regulation) of the Education and Training Evaluation Commission",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/etec_arabic_legal_llm/etec_law_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Statute (Organizational Regulation) of the Education and Training Evaluation Commission «تنظيم هيئة تقويم التعليم والتدريب» — Council of Ministers Resolution No. 108, dated 14/2/1440H (23/10/2018G). Discovered via a fresh multi-modal coverage-gap-map sweep at the 193-track baseline; the initial lead's structural caveat (paragraph/فقرة-based, similar to cybersecurity_authority_law) was independently checked and found FALSE — this is a standard flat sequence of 18 numbered مواد (articles), no أبواب/فصول, no inline titles. **18 records: 16 اصلية / 2 معدلة (Articles 4 and 7), 0 ملغاة, 0 مضافة.** **VERIFICATION TIER: TIER_1** — live BOE unreachable (connection reset/503); PRIMARY reached via TWO INDEPENDENT Wayback Machine snapshots of the exact official BOE page (19 June 2024 and 12 December 2025, ~18 months apart) in full literal agreement across all 18 articles and both embedded amendment-note popups — this exact double-independent-snapshot pattern for the official BOE portal is classified TIER_1 per this corpus's own methodology. Supplementary partial cross-check from nezams.com (Article 1 and the Article 4 amendment), not relied upon for the primary text. **Amendment 1 (confirmed, matches the original lead)**: Article 4 paragraph 5, amended by CoM Resolution 631 (3/8/1445H) — 'تقويم مناهج التعليم العام بشكل دوري وفق معايير يعتمدها المجلس'. **Amendment 2 (newly discovered this pass, not in the original lead)**: Article 7 paragraph 1, amended by CoM Resolution 693 (2/11/1441H) — split a merged Ministry-of-Energy board seat into two. **Genuine anomaly disclosed, not silently reconstructed**: the primary source's own main-body display still shows pre-amendment wording for both amended articles even in the newest snapshot; the track's text field preserves exactly what the source displays, with each amendment's declared wording preserved verbatim in the article's own history field. **CONFIRMED NEGATIVE FINDING**: no explicit repeal of any predecessor instrument — Article 18 contains no repeal language at all, and the preamble's background reference to CoM Resolution 94 (7/2/1438H) is not an operative repeal clause. A wholly separate, older, NOT-ingested instrument (CoM Resolution 120, 22/4/1434H, 'تنظيم هيئة تقويم التعليم العام', a different BOE lawId) was found via independent search and was still marked 'ساري' on BOE's own portal as of a June 2025 Wayback snapshot — an unresolved status ambiguity for that OTHER instrument, flagged but not resolved here. Arabic governs; not legal advice.",
+      "official_text_status": "BOE_WAYBACK_DUAL_INDEPENDENT_SNAPSHOT_FULL_LITERAL_MATCH_X_NEZAMS_SUPPLEMENTARY",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 16,
+          "مضافة": 0,
+          "معدلة": 2,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Council of Ministers Resolution No. 108, dated 14/2/1440H (23/10/2018G). Amended by Council of Ministers Resolution No. 693 (2/11/1441H, Article 7) and Council of Ministers Resolution No. 631 (3/8/1445H, Article 4 paragraph 5). Live laws.boe.gov.sa unreachable this pass (connection reset/503); PRIMARY reached via TWO independent Wayback Machine snapshots of the same BOE lawId page (19 June 2024 and 12 December 2025, ~18 months apart) in full literal agreement, supplementary cross-check from nezams.com.",
+      "status": "complete",
+      "track_id": "etec_law",
+      "validator_targets": [
+        "make etec-law-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/einvoicing_regulation/law/official_source/einvoicing_regulation_official_source.json",
+        "sources/einvoicing_regulation/law/verified/einvoicing_regulation_verified_records.jsonl",
+        "data/einvoicing_regulation_arabic_legal_llm/einvoicing_regulation_legal_llm_001_007.json"
+      ],
+      "display_name_ar": "لائحة الفوترة الإلكترونية",
+      "display_name_en": "E-Invoicing Regulation",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/einvoicing_regulation_arabic_legal_llm/einvoicing_regulation_legal_llm_001_007.json",
+          "governing": true,
+          "record_count": 7,
+          "status": "complete"
+        }
+      },
+      "notes": "E-Invoicing Regulation «لائحة الفوترة الإلكترونية» — ZATCA (at issuance, GAZT) Board of Directors Decision No. (2-6-20), dated 4 Rabi' al-Thani 1442H. Discovered via a fresh multi-modal coverage-gap-map sweep at the 193-track baseline, explicitly flagged as needing one more confirmation pass against a primary source before building — that confirmation succeeded this pass. **7 records, ALL اصلية** (Definitions; Purpose/Scope; Persons Subject; Provisions on Invoices/Notes; Technical Specifications; General Provisions; Enforcement/Obligation), flat structure. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa confirmed to have NO dedicated lawId page for this Board-level decision (live fetch HTTP 503, plus a targeted site-restricted search), consistent with this corpus's established pattern for board/ministerial-level regulations. PRIMARY zatca.gov.sa's own official site (both Arabic and English-translation PDFs, HTTP 200), cross-verified word-for-word against an independent third-party mirror (aflaksolutions.com) — identical content article-by-article; decision number/date further corroborated across qanoonsa.com, lexismiddleeast.com, afiflaw.com. This regulation is Article 2(B)-declared to be 'an integral part of the VAT Implementing Regulation and complementary to it' (already ingested as vat_regulation) rather than a repeal of anything. **CONFIRMED**: the ~24 subsequent rolling 'phase' decisions and a separate Governor Controls Resolution are rollout-schedule/technical-detail instruments issued under this Regulation's own Article 6(B) delegation — NOT textual amendments to the 7 founding articles, so the track's status_counts remain all اصلية. **NO repeal of any predecessor instrument** found or expected (a genuinely new requirement). A minor disclosed, unresolved Gregorian-date question (ZATCA's own English cover states 'December 4th 2020' vs. an independently Hijri-converted 19 November 2020, matching the mirror) is resolved with high confidence but not pinned to a primary Umm al-Qura Gazette record (an inaccessible Vue.js SPA this pass) — disclosed, not silently asserted. Five minor spelling inconsistencies (missing hamza), identical across both independently-fetched files, preserved verbatim not corrected. Arabic governs; not legal advice.",
+      "official_text_status": "ZATCA_OFFICIAL_PDF_PRIMARY_X_AFLAKSOLUTIONS_MIRROR_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE",
+      "record_counts": {
+        "arabic_articles": 7,
+        "legal_status_breakdown": {
+          "اصلية": 7,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 7
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "ZATCA (at issuance, GAZT) Board of Directors Decision No. (2-6-20), dated 4 Rabi' al-Thani 1442H. laws.boe.gov.sa has no dedicated lawId page for this Board-level decision (confirmed via live fetch HTTP 503 plus a targeted site-restricted search). PRIMARY zatca.gov.sa's own official Arabic and English-translation PDFs, fetched directly (HTTP 200), cross-verified word-for-word against an independent mirror (aflaksolutions.com).",
+      "status": "complete",
+      "track_id": "einvoicing_regulation",
+      "validator_targets": [
+        "make einvoicing-regulation-track-validate"
+      ]
     }
   ],
   "unified_retrieval_index": {
@@ -9270,6 +9515,7 @@
       "cooperative_societies": 44,
       "copyright": 28,
       "council_of_ministers": 32,
+      "credit_information": 17,
       "criminal_procedure": 403,
       "customs": 224,
       "cybersecurity_authority": 22,
@@ -9277,6 +9523,7 @@
       "documentation_settlement": 15,
       "domestic_labor": 33,
       "ecommerce": 46,
+      "einvoicing": 7,
       "electricity": 23,
       "electronic_transactions": 31,
       "elitigation_guide": 5,
@@ -9290,6 +9537,7 @@
       "environmental_permits": 11,
       "environmental_service_providers": 13,
       "environmental_violations_penalties": 10,
+      "etec": 18,
       "evidence": 322,
       "finance_companies": 41,
       "finance_lease": 28,
@@ -9339,6 +9587,7 @@
       "product_safety": 37,
       "protection_from_abuse": 17,
       "qismah": 48,
+      "real_estate_brokerage": 24,
       "real_estate_expropriation": 39,
       "real_estate_finance": 15,
       "real_estate_mortgage": 46,
@@ -9356,6 +9605,7 @@
       "sports": 97,
       "standards_quality": 47,
       "state_funded_lawyer": 11,
+      "state_revenue": 32,
       "sulook": 47,
       "tawtheeq": 88,
       "telecommunications": 41,
@@ -9373,7 +9623,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 11430,
+    "total_records": 11528,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

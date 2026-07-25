@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 193,
-  "total_terms": 1183,
-  "total_definitions": 1935,
-  "tracks_with_definitions_article_parsed": 132,
+  "total_tracks_in_registry": 198,
+  "total_terms": 1206,
+  "total_definitions": 1979,
+  "tracks_with_definitions_article_parsed": 137,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -564,6 +564,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "إدارة الأملاك": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "إدارة الأملاك",
+        "definition_text": "تولي الشؤون المالية والإدارية للعقار نيابة عن مالكه أو مالك منفعته.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إدارة المرافق": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "إدارة المرافق",
+        "definition_text": "تولي الشؤون الفنية للعقار نيابة عن مالكه أو مالك منفعته، مثل إدارة الشبكات الداخلية كالمياه والغاز والكهرباء وتكييف الهواء والهاتف وشبكات الكمبيوتر والتلفاز والصرف الصحي وتصريف مياه الأمطار والتخلص من النفايات والمخلفات وتسليم البريد أو الطرود أو البضائع ونحوها.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "إصابة أو إصابات العمل": [
       {
         "track_id": "social_insurance_legacy_law",
@@ -851,6 +871,14 @@
         "term_as_written": "الأجر",
         "definition_text": "هو الأجر الفعلي : والذي يشمل الأجر الأساسي مضافاً إليه سائر الزيادات المستحقة الأخرى التي تتقرر للعامل مقابل جهد بذله في العمل ، أو مخاطر يتعرض لها في أداء عمله ، أو التي تتقرر للعامل لقاء العمل بموجب عقد العمل أو هذه اللائحة .",
         "source_record_id": "labor-annex1-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الأجر",
+        "definition_text": "مبلغ من النقود يدفع مقابل نفع خاص للاستفادة من الخدمة المقدمة.",
+        "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1649,6 +1677,16 @@
         "term_as_written": "الإسناد",
         "definition_text": "خدمة توفير عامل للعمل لدى غير صاحب العمل وذلك من خلال منشأة مرخص لها لهذا الغرض.",
         "source_record_id": "labor-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإشعارات الإلكترونية": [
+      {
+        "track_id": "einvoicing_regulation",
+        "article_number": 1,
+        "term_as_written": "الإشعارات الإلكترونية",
+        "definition_text": "الإشعارات المدينة والدائنة التي يجب إصدارها وفقا لنظام ضريبة القيمة المضافة ولائحته التنفيذية والتي تصدر بصيغة إلكترونية منظمة من خلال وسيلة إلكترونية. ولا تعد الإشعارات الورقية التي يتم تحويلها إلى صيغة إلكترونية من خلال نسخها أو مسحها ضوئيا أو أي طريقة أخرى بأنها إشعارات إلكترونية لأغراض هذه اللائحة.",
+        "source_record_id": "einvoicing-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2876,6 +2914,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التسويق العقاري": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "التسويق العقاري",
+        "definition_text": "ترويج منتج عقاري باستخدام الوسائل الدعائية والإعلانية.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التسويق المباشر": [
       {
         "track_id": "pdpl_implementing_regulation",
@@ -3590,6 +3638,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجزاءات والغرامات": [
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الجزاءات والغرامات",
+        "definition_text": "مبالغ نقدية تفرض على مخالفي الأنظمة.",
+        "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجزيرة": [
       {
         "track_id": "traffic_law",
@@ -3793,6 +3851,16 @@
         "term_as_written": "الجهاز البلدي",
         "definition_text": "الأمانة أو البلدية.",
         "source_record_id": "building-code-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجهة": [
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الجهة",
+        "definition_text": "كل وزارة أو مصلحة أو مؤسسة عامة أو هيئة عامة.",
+        "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4446,6 +4514,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخدمات العقارية": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات العقارية",
+        "definition_text": "الأنشطة المتعلقة بالعقار والتسويق له وإدارته وبيعه وبيع منفعته وتأجيره، ومن ذلك: التسويق العقاري، وإدارة الأملاك، وإدارة المرافق، والمزادات العقارية، والإعلانات العقارية، والاستشارات والتحليلات العقارية.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخدمات العقارية المكملة": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات العقارية المكملة",
+        "definition_text": "أنشطة يرخص لها وفق أنظمة خاصة.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخدمة": [
       {
         "track_id": "enforcement_providers_regulation",
@@ -4826,6 +4914,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الدولة": [
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الدولة",
+        "definition_text": "المملكة العربية السعودية.",
+        "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الدين": [
       {
         "track_id": "bankruptcy_law",
@@ -4833,6 +4931,14 @@
         "term_as_written": "الدين",
         "definition_text": "الالتزام المالي الثابت في ذمة المدين.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الدين",
+        "definition_text": "كل مال مستحق للدولة.",
+        "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5036,6 +5142,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الرسم": [
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الرسم",
+        "definition_text": "مبلغ من النقود يسدده المستفيد للدولة إلزاما، مقابل خدمة عامة ذات نفع خاص تقدم له.",
+        "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الرسوم": [
       {
         "track_id": "customs_law",
@@ -5236,6 +5352,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "السجل الائتماني": [
+      {
+        "track_id": "credit_information_law",
+        "article_number": 1,
+        "term_as_written": "السجل الائتماني",
+        "definition_text": "تقرير تصدره الشركات يحتوي على المعلومات الائتمانية عن المستهلك.",
+        "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السجل التجاري": [
       {
         "track_id": "commercial_register_law",
@@ -5281,6 +5407,16 @@
         "term_as_written": "السجل المدني المركزي",
         "definition_text": "هو السجل العام الذي تدون فيه الحالات المدنية لجميع السعوديين.",
         "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السجلات العامة": [
+      {
+        "track_id": "credit_information_law",
+        "article_number": 1,
+        "term_as_written": "السجلات العامة",
+        "definition_text": "سجلات المعلومات الائتمانية التي لدى الجهات الحكومية، مثل سجلات الصناديق والبنوك التي تقدم قروضا حكومية، والجهات القضائية، واللجان الحكومية، وملفات الإفلاس والإعسار، وما في حكمها.",
+        "source_record_id": "credit-information-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5792,6 +5928,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشركات": [
+      {
+        "track_id": "credit_information_law",
+        "article_number": 1,
+        "term_as_written": "الشركات",
+        "definition_text": "شركات المعلومات الائتمانية المرخص لها بجمع المعلومات الائتمانية عن المستهلكين وحفظها، وتزويد الأعضاء بتلك المعلومات عند طلبها.",
+        "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشركة العقارية": [
       {
         "track_id": "rett_law",
@@ -5917,6 +6063,16 @@
         "term_as_written": "الصغير",
         "definition_text": "من لم يبلغ سن الرشد.",
         "source_record_id": "nationality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصفقة العقارية": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "الصفقة العقارية",
+        "definition_text": "بيع أو شراء أو تأجير العقار أو منفعته.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6070,6 +6226,14 @@
         "definition_text": "المبلغ المفروض على التصرف العقاري بموجب أحكام النظام.",
         "source_record_id": "rett-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الضريبة",
+        "definition_text": "اقتطاع مالي إلزامي من دخل وثروة شخص ذي صفة طبيعية أو اعتبارية يدفع للدولة دون مقابل من أجل تحقيق نفع عام.",
+        "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الضريبة \"الرسوم\" الجمركية": [
@@ -6089,6 +6253,14 @@
         "term_as_written": "الضمان",
         "definition_text": "النقود، أو أي أصول قابلة للتحويل إلى نقد؛ التي تقدم بناءً على رهن أو أي اتفاقية أخرى مماثلة لغرض ضمان الحقوق والالتزامات التي قد تنشأ بناءً على نظم المدفوعات المهمة لمصلحة الأعضاء.",
         "source_record_id": "payment-systems-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "الضمان",
+        "definition_text": "مبلغ يدفعه المستأجر على سبيل الأمانة، لتعويض مالك العقار أو المنفعة عن أي ضرر داخل في ضمانة المستأجر وواقع بسببه.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6426,6 +6598,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "credit_information_law",
+        "article_number": 1,
+        "term_as_written": "العضو",
+        "definition_text": "الجهة الحكومية أو الخاصة التي يربطها عقد لتبادل المعلومات الائتمانية مع شركة واحدة على الأقل من شركات المعلومات الائتمانية .",
+        "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "payment_systems_law",
         "article_number": 1,
         "term_as_written": "العضو",
@@ -6730,6 +6910,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العمولة": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "العمولة",
+        "definition_text": "مبلغ يستحقه الوسيط العقاري مقابل الوساطة العقارية.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العميل": [
       {
         "track_id": "aml_law",
@@ -6841,6 +7031,16 @@
         "term_as_written": "الغطاء النباتي",
         "definition_text": "النباتات الطبيعية سواء أكانت أعشابًا أم شجيرات أم أشجارًا.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الفاتورة الإلكترونية": [
+      {
+        "track_id": "einvoicing_regulation",
+        "article_number": 1,
+        "term_as_written": "الفاتورة الإلكترونية",
+        "definition_text": "فاتورة ضريبية تصدر بصيغة إلكترونية منظمة من خلال وسيلة إلكترونية. ولا تعد الفاتورة الورقية التي يتم تحويلها إلى صيغة إلكترونية من خلال نسخها أو مسحها ضوئيا أو أي طريقة أخرى بأنها فاتورة إلكترونية لأغراض هذه اللائحة.",
+        "source_record_id": "einvoicing-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7306,6 +7506,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "einvoicing_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة الفوترة الإلكترونية الصادرة بقرار مجلس إدارة الهيئة بشأن إصدار الفواتير والإشعارات الضريبية إلكترونيا.",
+        "source_record_id": "einvoicing-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "electronic_transactions_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -7578,6 +7786,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -7631,6 +7847,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8276,6 +8500,14 @@
         "extraction_method": "parenthesized_term"
       },
       {
+        "track_id": "credit_information_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسة",
+        "definition_text": "مؤسسة النقد العربي السعودي .",
+        "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "finance_companies_law",
         "article_number": 1,
         "term_as_written": "المؤسسة",
@@ -8700,6 +8932,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "etec_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "etec-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gcc_anti_dumping_law",
         "article_number": 2,
         "term_as_written": "المجلس",
@@ -8769,6 +9009,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8913,6 +9161,14 @@
         "term_as_written": "المحافظ",
         "definition_text": "محافظ الهيئة.",
         "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "einvoicing_regulation",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة العامة للزكاة والدخل.",
+        "source_record_id": "einvoicing-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9336,6 +9592,14 @@
         "definition_text": "شخص ثبت في ذمته دين.",
         "source_record_id": "bankruptcy-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "المدين",
+        "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية في ذمته مال للدولة.",
+        "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المدين الصغير": [
@@ -9395,6 +9659,14 @@
         "term_as_written": "المراكز",
         "definition_text": "المراكز المشار إليها في الفقرة (1) من المادة (الخامسة) من هذا التنظيم.",
         "source_record_id": "cybersecurity-authority-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "etec_law",
+        "article_number": 1,
+        "term_as_written": "المراكز",
+        "definition_text": "مراكز تابعة للهيئة للقيام ببعض اختصاصاتها.",
+        "source_record_id": "etec-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9666,6 +9938,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المزادات العقارية": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "المزادات العقارية",
+        "definition_text": "نشاط المزايدة العلنية على عقار من أجل بيعه أو بيع منفعته أو تأجيره، للوصول بثمنه إلى أعلى قدر. ويشمل ذلك المزادات الإلكترونية.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المزايدة العكسية الإلكترونية": [
       {
         "track_id": "gtpl_law",
@@ -9863,6 +10145,14 @@
       }
     ],
     "المستهلك": [
+      {
+        "track_id": "credit_information_law",
+        "article_number": 1,
+        "term_as_written": "المستهلك",
+        "definition_text": "الشخص من ذوي الصفة الطبيعية أو الاعتبارية الذي له تعاملات ائتمانية.",
+        "source_record_id": "credit-information-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "ecommerce_law",
         "article_number": 1,
@@ -10517,6 +10807,16 @@
         "term_as_written": "المعلم",
         "definition_text": "من يرخص له بالعمل في مهنة التعليم العام.",
         "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المعلومات الائتمانية": [
+      {
+        "track_id": "credit_information_law",
+        "article_number": 1,
+        "term_as_written": "المعلومات الائتمانية",
+        "definition_text": "المعلومات والبيانات عن المستهلك فيما يتعلق بتعاملاته الائتمانية، مثل: القروض ، والشراء بالتقسيط ، والإيجار، والبيع الآجل، وبطاقات الائتمان ، ومدى التزامه بالسداد من عدمه.",
+        "source_record_id": "credit-information-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12638,6 +12938,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الوساطة العقارية.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -12715,6 +13023,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام المواصفات والجودة.",
         "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام إيرادات الدولة.",
+        "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13060,6 +13376,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "etec_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة تقويم التعليم والتدريب.",
+        "source_record_id": "etec-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "foreign_ownership_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -13129,6 +13453,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للعقار.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13672,6 +14004,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة المالية.",
+        "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sulook_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -14132,6 +14472,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير المالية.",
+        "source_record_id": "state-revenue-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sulook_regulation",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -14232,6 +14580,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الوساطة العقارية": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "الوساطة العقارية",
+        "definition_text": "ممارسة نشاط التوسط في إتمام صفقة عقارية بين أطرافها، وذلك مقابل الحصول على عمولة. ويشمل ذلك الوساطة الإلكترونية من خلال وسائل التقنية، كالمواقع الإلكترونية ومنصات التواصل الاجتماعي ونحوها.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الوسيط": [
       {
         "track_id": "electronic_transactions_law",
@@ -14240,6 +14598,16 @@
         "definition_text": "شخص يستلم تعاملاً إلكترونياً من المنشئ ويسلمه إلى شخص آخر، أو يقوم بغير ذلك من الخدمات المتعلقة بذلك التعامل.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "الوسيط العقاري": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "الوسيط العقاري",
+        "definition_text": "شخص طبيعي أو اعتباري، مرخص له بممارسة الوساطة العقارية أو تقديم الخدمات العقارية وفقاً لأحكام النظام.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوضع المهيمن": [
@@ -15296,6 +15664,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "ربط أنظمة الفوترة الإلكترونية": [
+      {
+        "track_id": "einvoicing_regulation",
+        "article_number": 1,
+        "term_as_written": "ربط أنظمة الفوترة الإلكترونية",
+        "definition_text": "ربط أنظمة إصدار الفواتير الإلكترونية والإشعارات الإلكترونية بأنظمة الهيئة بهدف مشاركة البيانات والمعلومات وفقا لما يتم تحديده من ضوابط ومتطلبات فنية وقواعد إجرائية يتم اعتمادها واصدارها بقرار من المحافظ استنادا لأحكام هذه اللائحة.",
+        "source_record_id": "einvoicing-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "ربط الاتصال البيني": [
       {
         "track_id": "telecommunications_law",
@@ -16093,6 +16471,16 @@
         "term_as_written": "عقد النقل المتعدد الوسائط",
         "definition_text": "العقد الذي يبرمه الشاحن مع متعهد النقل متعدد الوسائط لنقل البضائع بوسيلتي نقل مختلفتين أو أكثر بين مكانين يقعان في دولة واحدة أو أكثر، يتسلم بموجبه متعهد النقل المتعدد الوسائط البضاعة, وتكون في عهدته إلى المكان المحدد للتسليم, ويتولى التنفيذ بنفسه أو عن طريق غيره مقابل أجر.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد الوساطة": [
+      {
+        "track_id": "real_estate_brokerage_law",
+        "article_number": 1,
+        "term_as_written": "عقد الوساطة",
+        "definition_text": "اتفاق بين الوسيط العقاري والطرف المستفيد من الوساطة العقارية، لإتمام صفقة عقارية أو تقديم خدمة عقارية.",
+        "source_record_id": "real-estate-brokerage-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -18109,6 +18497,16 @@
         "term_as_written": "ويشمل على سبيل المثال لا الحصر",
         "definition_text": "الإيداع، السحب، التحويل، البيع، الشراء، الإقراض، المبادلة أو قرضًا أو تمديدًا لقرض أو رهنًا عقاريًّا أو هبة أو تمويلًا أو تحويلًا للأموال بأي عملة، نقدًا أو بشيكات، أو أوامر دفع أو أسهمًا أو سندات أو أي أدوات مالية أخرى أو استخدام للخزائن وغيرها من أشكال الإيداع الآمن، أو كل تصرف آخر في الأموال.",
         "source_record_id": "aml-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "يوم عمل": [
+      {
+        "track_id": "state_revenue_law",
+        "article_number": 1,
+        "term_as_written": "يوم عمل",
+        "definition_text": "أيام العمل طبقا لأيام العمل الرسمية في الدولة.",
+        "source_record_id": "state-revenue-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ]

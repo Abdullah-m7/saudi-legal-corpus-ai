@@ -9,8 +9,8 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 193,
-  "known_source_staleness_risk_count": 14,
+  "total_tracks": 198,
+  "known_source_staleness_risk_count": 15,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
     "awqaf_law",
@@ -25,6 +25,7 @@
     "patent_regulation",
     "press_law",
     "saudi_engineers_law",
+    "state_revenue_law",
     "traffic_law"
   ],
   "tracks_without_resolvable_official_source_file": [
@@ -1059,6 +1060,27 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "credit_information_law",
+      "display_name_en": "Credit Information Law",
+      "display_name_ar": "نظام المعلومات الائتمانية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_SOLE_OFFICIAL_CHANNEL_X_NEZAMS_X_SAUDIPEDIA_CROSSVERIFIED_LIVE_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree No. (M/37), dated 5/7/1429H (8 July 2008G), approving Council of Ministers Resolution No. 188 (4/7/1429H). Administered by SAMA; governs licensed credit-bureau companies (e.g. SIMAH). Live laws.boe.gov.sa unreachable this pass (HTTP 503 / connection reset); PRIMARY reached via a Wayback Machine snapshot of the BOE lawId page (63dc01a6-fc5c-4600-9171-a9a700f2d222), cross-verified against nezams.com and saudipedia.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/credit_information/law/official_source/credit_information_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "sama.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-15; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "criminal_procedure_implementing_regulation",
       "display_name_en": "Implementing Regulation of the Law of Criminal Procedure",
       "display_name_ar": "اللائحة التنفيذية لنظام الإجراءات الجزائية",
@@ -1287,6 +1309,30 @@
         "laws.boe.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "einvoicing_regulation",
+      "display_name_en": "E-Invoicing Regulation",
+      "display_name_ar": "لائحة الفوترة الإلكترونية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='ZATCA_OFFICIAL_PDF_PRIMARY_X_AFLAKSOLUTIONS_MIRROR_CROSSVERIFIED_BOE_NO_DEDICATED_PAGE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "ZATCA (at issuance, GAZT) Board of Directors Decision No. (2-6-20), dated 4 Rabi' al-Thani 1442H. laws.boe.gov.sa has no dedicated lawId page for this Board-level decision (confirmed via live fetch HTTP 503 plus a targeted site-restricted search). PRIMARY zatca.gov.sa's own official Arabic and English-translation PDFs, fetched directly (HTTP 200), cross-verified word-for-word against an independent mirror (aflaksolutions.com).",
+      "registry_source_url": null,
+      "official_source_file": "sources/einvoicing_regulation/law/official_source/einvoicing_regulation_official_source.json",
+      "source_urls": [
+        "https://zatca.gov.sa/ar/E-Invoicing/Introduction/LawsAndRegulations/Documents/E-invoicing-Regulations.pdf",
+        "https://zatca.gov.sa/en/E-Invoicing/Introduction/LawsAndRegulations/Documents/E-invoicing-Regulations.pdf"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "zatca.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -1566,6 +1612,29 @@
         "web.archive.org"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "etec_law",
+      "display_name_en": "Statute (Organizational Regulation) of the Education and Training Evaluation Commission",
+      "display_name_ar": "تنظيم هيئة تقويم التعليم والتدريب",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_DUAL_INDEPENDENT_SNAPSHOT_FULL_LITERAL_MATCH_X_NEZAMS_SUPPLEMENTARY': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Council of Ministers Resolution No. 108, dated 14/2/1440H (23/10/2018G). Amended by Council of Ministers Resolution No. 693 (2/11/1441H, Article 7) and Council of Ministers Resolution No. 631 (3/8/1445H, Article 4 paragraph 5). Live laws.boe.gov.sa unreachable this pass (connection reset/503); PRIMARY reached via TWO independent Wayback Machine snapshots of the same BOE lawId page (19 June 2024 and 12 December 2025, ~18 months apart) in full literal agreement, supplementary cross-check from nezams.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/etec/law/official_source/etec_law_official_source.json",
+      "source_urls": [
+        "https://",
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/c7a054a8-6dbc-4323-9405-aa3f00bd5985/1"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2024-06-19, 2025-12-12; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3002,6 +3071,30 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "real_estate_brokerage_law",
+      "display_name_en": "Real Estate Brokerage Law",
+      "display_name_ar": "نظام الوساطة العقارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MATCHES_OFFICIAL_SCAN_VISUALLY_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Royal Decree No. (M/130), dated 30/11/1443H, approving Council of Ministers Resolution No. (679), dated 29/11/1443H, based on Shura Council Resolution No. (13/70), dated 2/5/1443H. Published Umm al-Qura Gazette issue (4940), 22 July 2022G. Administered by REGA (the 'Fal' brokerage-license regime). Live laws.boe.gov.sa unreachable this pass; PRIMARY REGA's own hosted BOE-sealed scanned PDF, visually adjudicated across all 12 pages plus tesseract-ara OCR corroboration, cross-verified word-for-word against qanoonsa.com and nezams.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_brokerage/law/official_source/real_estate_brokerage_law_official_source.json",
+      "source_urls": [
+        "https://nezams.com/%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D9%88%D8%B3%D8%A7%D8%B7%D8%A9-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%D8%A9/",
+        "https://qanoonsa.com/p/494011/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "moj.gov.sa",
+        "nezams.com",
+        "qanoonsa.com"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "real_estate_expropriation_law",
       "display_name_en": "Law on Expropriation of Real Estate for Public Interest and Temporary Seizure of Real Estate",
       "display_name_ar": "نظام نزع ملكية العقارات للمصلحة العامة ووضع اليد المؤقت على العقارات",
@@ -3404,6 +3497,30 @@
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "state_revenue_law",
+      "display_name_en": "State Revenue Law",
+      "display_name_ar": "نظام إيرادات الدولة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree No. (M/68), dated 18/11/1431H, approving Council of Ministers Resolution No. 359, dated 17/11/1431H (one day earlier than the decree — corrects a prior unverified lead's claim that the dates were identical). Amended by Royal Decree M/5 (2/1/1440H, Article 25) and Royal Decree M/93 (1/10/1443H, Article 28-bis, disputed against nezams.com's citation of Council of Ministers Resolution 198, 4/4/1443H). Live laws.boe.gov.sa unreachable this pass; PRIMARY reached via a Wayback Machine snapshot, cross-verified against nezams.com and qanoonsa.com. Explicitly EXCLUDES an unconfirmed July-2026 Council-of-Ministers-approved 'update' whose promulgating instrument number remains unfound.",
+      "registry_source_url": null,
+      "official_source_file": "sources/state_revenue/law/official_source/state_revenue_law_official_source.json",
+      "source_urls": [
+        "https://uqn.gov.sa/?p=13146"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "mof.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "state_revenue_art_025_boe_stale_main_body_vs_changelog: Confirmed instance of this corpus's well-documented BOE pattern: the portal's default/main-body text for Article 25 is STALE (pre-amendment), retaining the phrase 'أو تقسيط' ('or installment'), while BOE's own per-articl"
     },
     {
       "track_id": "sulook_regulation",
