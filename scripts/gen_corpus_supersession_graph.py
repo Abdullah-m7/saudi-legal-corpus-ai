@@ -1027,16 +1027,19 @@ EDGES = [
     {
         "from_track_id": "agriculture_law",
         "relation": "repeals_full",
-        "target_track_id": None,
-        "target_description_ar": "نظام الثروات المائية الحية (السابق)",
-        "target_decree": "Royal Decree No. M/9, 1408H",
+        "target_track_id": "fisheries_law",
+        "target_description_ar": "نظام صيد واستثمار وحماية الثروات المائية الحية في المياه الإقليمية للمملكة العربية السعودية",
+        "target_decree": "Royal Decree No. M/9, 27/3/1408H",
         "note": "agriculture_law's own ISSUING DECREE (clause ثانياً of Royal "
                 "Decree M/64 and of Council of Ministers Resolution 431, "
                 "3/8/1442H) -- not any numbered article -- explicitly repeals "
                 "this prior Living Aquatic Resources Law by decree number, as "
-                "part of a 5-predecessor named repeal-and-replace clause. Not "
-                "separately ingested in this corpus (one-instrument-per-pass "
-                "rule).",
+                "part of a 5-predecessor named repeal-and-replace clause. "
+                "Now separately ingested in this corpus as fisheries_law "
+                "(wave-4 batch) -- target_track_id updated from null to "
+                "'fisheries_law' accordingly; fisheries_law's own registry "
+                "notes independently confirm the same repeal from the "
+                "opposite direction (repealed_by_ar field).",
         "source_ref": "sources/agriculture/law/official_source/agriculture_law_official_source.json (preamble_ar / issuing decree clause ثانياً)",
     },
     {
@@ -1404,6 +1407,80 @@ EDGES = [
                 "(micro-consumer-finance definitions/rules). Not separately "
                 "ingested in this corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/finance_companies_regulation/law/verified/finance_companies_regulation_verified_summary.json",
+    },
+
+    # --- wave-4 batch (waste_management_law .. cma_corporate_governance_regulation) ---
+    {
+        "from_track_id": "waste_management_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام إدارة النفايات البلدية الصلبة (السابق)",
+        "target_decree": "Royal Decree No. M/48, 17/9/1434H",
+        "note": "waste_management_law's own Article 37 states verbatim: "
+                "'يحل هذا النظام محل نظام إدارة النفايات البلدية الصلبة، "
+                "الصادر بالمرسوم الملكي رقم (م/48) وتاريخ 17/9/1434هـ' -- a "
+                "repeal stated in the article text itself (unlike "
+                "agriculture_law's predecessors, named only in the issuing "
+                "decree). Not separately ingested in this corpus "
+                "(one-instrument-per-pass rule); the predecessor still has "
+                "its own confirmed, archived BOE lawId as a historical "
+                "record.",
+        "source_ref": "sources/waste_management_law/law/official_source/waste_management_law_official_source.json (article 37 / supersedes_ar)",
+    },
+    {
+        "from_track_id": "postal_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام البريد (السابق)",
+        "target_decree": "Royal Decree No. M/4, 21/2/1406H",
+        "note": "postal_law's own official_source.json documents the repeal "
+                "via multiple independent secondary sources (a "
+                "search-engine-indexed excerpt attributed to the BOE law "
+                "page itself, and nezams.com's summary), both stating 'يحل "
+                "هذا النظام محل نظام البريد الصادر بالمرسوم الملكي (م/4) "
+                "بتاريخ 1406/2/21هـ'; the exact article number carrying this "
+                "clause was not independently confirmed this pass (see "
+                "postal_law's own known_unresolved_discrepancies, key "
+                "postal_repeal_clause_article_number_unconfirmed). Not "
+                "separately ingested in this corpus (one-instrument-per-pass "
+                "rule).",
+        "source_ref": "sources/postal_law/law/official_source/postal_law_official_source.json (verification_methodology_note)",
+    },
+    {
+        "from_track_id": "tvtc_organizational_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المؤسسة العامة للتعليم الفني والتدريب المهني (السابق)",
+        "target_decree": "Royal Decree No. M/30, 10/8/1400H",
+        "note": "tvtc_organizational_statute's own Article 12 states "
+                "verbatim: 'يحل هذا التنظيم محل نظام المؤسسة العامة للتعليم "
+                "الفني والتدريب المهني، الصادر بالمرسوم الملكي رقم (م/30) "
+                "وتاريخ 10/8/1400هـ، ويلغي كل ما يتعارض معه من أحكام' -- a "
+                "named predecessor with a confirmed article number, unlike "
+                "several other regulation tracks in this corpus where no "
+                "named predecessor was found. Not separately ingested in "
+                "this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/tvtc_organizational_statute/law/official_source/tvtc_organizational_statute_official_source.json (article 12)",
+    },
+    {
+        "from_track_id": "cma_corporate_governance_regulation",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "لائحة حوكمة الشركات (الصادرة بقرار مجلس هيئة السوق المالية رقم 1-212-2006، السابقة)",
+        "target_decree": "CMA Board Resolution No. 1-212-2006, 21/10/1427H",
+        "note": "cma_corporate_governance_regulation's own amendment_history "
+                "entry for its original issuance (Resolution 2017-16-8, "
+                "16/5/1438H) states verbatim: 'حلّ محل لائحة حوكمة الشركات "
+                "السابقة الصادرة بقرار مجلس هيئة السوق المالية رقم 1-212-2006 "
+                "وتاريخ 21/10/1427هـ (إحلال كامل بلائحة جديدة، لا مجرد "
+                "تعديل)'. This corrects the track's own original "
+                "commissioning brief, which had mistakenly described "
+                "Resolution 1-212-2006 as merely amended (not replaced) -- "
+                "see this track's known_unresolved_discrepancies, key "
+                "cma_corp_gov_2006_regulation_fully_superseded_not_amended. "
+                "Not separately ingested in this corpus "
+                "(one-instrument-per-pass rule).",
+        "source_ref": "sources/cma_corporate_governance_regulation/law/official_source/cma_corporate_governance_regulation_official_source.json (amendment_history)",
     },
 ]
 

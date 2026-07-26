@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 242,
-  "total_terms": 1618,
-  "total_definitions": 2718,
-  "tracks_with_definitions_article_parsed": 172,
+  "total_tracks_in_registry": 254,
+  "total_terms": 1675,
+  "total_definitions": 2826,
+  "tracks_with_definitions_article_parsed": 178,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -121,11 +121,19 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "debt_collection_regulation",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
       "track_id": "disability_rights_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "ecommerce_regulation",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "elderly_care_regulation",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
     {
@@ -141,7 +149,15 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "fisheries_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "food_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "foreign_schools_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -241,6 +257,14 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "private_schools_regulation",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "public_prosecution_law",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "real_estate_mortgage_law",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
@@ -302,6 +326,16 @@
     }
   ],
   "terms": {
+    "آلات التخليص البريدي": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "آلات التخليص البريدي",
+        "definition_text": "آلات تستخدم لاستيفاء الأجور المستحقة أو المقررة على المواد البريدية.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "أجر الاشتراك": [
       {
         "track_id": "social_insurance_legacy_regulation",
@@ -407,6 +441,16 @@
         "term_as_written": "أسواق النفع العام",
         "definition_text": "مواقع يسمح فيها للممارسين الزراعيين بممارسة البيع بالجملة لمنتجات القطاع الزراعي بالمزاد أو البيع المباشر، ولا يشمل ذلك البيع بالتجزئة.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أصحاب المصاحل": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "أصحاب المصاحل",
+        "definition_text": "كل من له مصلحة مع الشركة ،كالعاملين ،والدائنين ،والعمالء ،والمورّدين،\nوالمجتمع.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -818,6 +862,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "إدارة النفايات": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "إدارة النفايات",
+        "definition_text": "تنظيم أي نشاط أو ممارسة تتعلق بالنفايات من جمع النفايات ونقلها وفرزها وتخزينها ومعالجتها وتدويرها واستيرادها وتصديرها والتخلص الآمن منها، بما في ذلك العناية اللاحقة بمواقع التخلص من النفايات.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "إصابة أو إصابات العمل": [
       {
         "track_id": "social_insurance_legacy_law",
@@ -836,6 +890,16 @@
         "definition_text": "مجموعة من القواعد والإجراءات التفصيلية لأحكام معينة وردت في اللائحة تصدرها وزارة الموارد البشرية والتنمية الاجتماعية.",
         "source_record_id": "civil-service-regulation-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "إعادة استخدام المنتجات": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "إعادة استخدام المنتجات",
+        "definition_text": "إعادة استخدام المواد والموارد قدر المستطاع قبل تحويلها إلى نفاية.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "إعادة البث": [
@@ -1034,6 +1098,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "استرداد الموارد": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "استرداد الموارد",
+        "definition_text": "عملية استخراج الطاقة أو المواد الأولية أو أي منتج آخر من النفايات واستخدامها مرة أخرى.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "استمارة التصنيف البيئي": [
       {
         "track_id": "environmental_permits",
@@ -1163,6 +1237,14 @@
         "term_as_written": "الأجر",
         "definition_text": "هو الأجر الفعلي : والذي يشمل الأجر الأساسي مضافاً إليه سائر الزيادات المستحقة الأخرى التي تتقرر للعامل مقابل جهد بذله في العمل ، أو مخاطر يتعرض لها في أداء عمله ، أو التي تتقرر للعامل لقاء العمل بموجب عقد العمل أو هذه اللائحة .",
         "source_record_id": "labor-annex1-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الأجر",
+        "definition_text": "ما تعتمده الهيئة لتقديم الخدمات البريدية من قبل مقدمي الخدمة.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -1330,6 +1412,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "الأسرة",
+        "definition_text": "تشمل الأب والزوج أو الزوجة والذكور من الأولاد والأحفاد والإخوة.",
+        "source_record_id": "elderly-care-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "premium_residency_law",
         "article_number": 1,
         "term_as_written": "الأسرة",
@@ -1494,6 +1584,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأطراف ذوو العلاقة": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "الأطراف ذوو العلاقة",
+        "definition_text": ")1\nتابعي الشركة فيما عدا الشركات المملوكة بالكامل للشركة.\n)2\nالمساهمين الكبار في الشركة.\n)3\nأعضاء مجلس الإدارة وكبار التنفيذيين للشركة.\n)4\nأعضاء جمالس الإدارة لتابعي الشركة.\n)5\nأعضاء جمالس الإدارة وكبار التنفيذيين لدى المساهمين الكبار في الشركة.\n)6\nأي أقرباء لألشخاص المشار إليهم في ( 3 ،2 ،1أو  )5أعاله.\n)7\nأي شركة أو منشأة أخرى يسيطر عليها أي شخص مشار إليه في ( 5 ،3 ،2 ،1أو )6\nأعاله.\nوألغراض الفقرة ( )6من هذا التعريف ،فإنه يقصد بالأقرباء الأب والأم والزوج والزوجة والأوالد.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأطراف وأطراف المصالحة": [
       {
         "track_id": "muslaha_regulation",
@@ -1617,6 +1717,16 @@
         "term_as_written": "الأقارب",
         "definition_text": "- أ- الآباء، والأمهات، والأجداد والجدات وإن علوا.\n  - ب- الأولاد، وأولادهم وإن نزلوا.\n  - ج- الأزواج والزوجات.",
         "source_record_id": "oa-llm-companies-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأقارب أو صلة القرابة": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "الأقارب أو صلة القرابة",
+        "definition_text": "الآباء ،والأمهات ،والأجداد ،والجدات وإن علوا. -الأوالد ،وأوالدهم وإن نزلوا.\nالإخوة والأخوات الأشقاء ،أو ألب ،أو ألم. الأزواج والزوجات.الشركة القابضة :شركة مساهمة أو شركة مساهمة مبسطة أو شركة ذات مسؤولية حمدودة\nتؤسس شركات أو متتلك حصصًا أو أسهمًا في شركات قائمة تصبح تابعة هلا وفق أحكام نظام\nالشركات ولوائحه التنفيذية.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2058,6 +2168,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الإدارة التنفيذية أو كبار التنفيذيين": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "الإدارة التنفيذية أو كبار التنفيذيين",
+        "definition_text": "الأشخاص المنوط بهم إدارة عمليات الشركة اليومية ،واقتراح\nالقرارات الاستراتيجية وتنفيذها ،كالرئيس التنفيذي ونوابه والمدير المالي.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الإدارة العليا": [
       {
         "track_id": "finance_companies_regulation",
@@ -2369,6 +2489,14 @@
         "term_as_written": "الإعفاء",
         "definition_text": "وثيقة تصدرها الهيئة لشخص للقيام بنشاط كهربائي دون الحصول على رخصة، أو بالإعفاء من شرط أو أكثر من شروط الرخصة.",
         "source_record_id": "electricity-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الإعفاء",
+        "definition_text": "وثيقة تصدرها الهيئة لمقدم الخدمة؛ لتقديم بعض الخدمات البريدية دون الحصول على ترخيص، أو بالإعفاء من شرط أو أكثر من شروط الترخيص.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -3016,6 +3144,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "البريد الدعائي": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "البريد الدعائي",
+        "definition_text": "تقديم خدمة الدعاية والإعلان عن طريق البريد.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "البريد الرسمي": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "البريد الرسمي",
+        "definition_text": "نقل المواد البريدية المرسلة من أي جهة حكومية.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "البصمة المائية": [
       {
         "track_id": "water_regulation",
@@ -3056,6 +3204,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "البطاقات البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "البطاقات البريدية",
+        "definition_text": "قطع من الورق المقوى، مخصص الجزء الأيمن أو الأعلى منها لكتابة عنوان المرسل إليه، وإجراءات التخليص البريدية واللصائق، والجزء الأيسر أو الأسفل منها مخصص للعبارات التي يريد أن يكتبها المرسل.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "البطاقة الشخصية": [
       {
         "track_id": "civil_status_law",
@@ -3063,6 +3221,16 @@
         "term_as_written": "البطاقة الشخصية",
         "definition_text": "هي وثيقة الهوية الوطنية التي تصدرها الأحوال المدنية للسعودي وفقاً لأحكام هذا النظام، وذلك بشكليها الملموس أو الرقمي.",
         "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "البعائث البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "البعائث البريدية",
+        "definition_text": "تشمل الرسائل، والبطاقات البريدية، والمطبوعات، ومطبوعات ومكتوبات المكفوفين، والرزم البريدية المرسلة عن طريق البريد.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3544,6 +3712,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التخزين": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "التخزين",
+        "definition_text": "حفظ مكونات النفايات أو بعضها مؤقتا؛ لنقلها أو للاستفادة منها لاحقا.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التخصصات الهندسية": [
       {
         "track_id": "saudi_engineers_regulation",
@@ -3564,6 +3742,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التخلص الآمن": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "التخلص الآمن",
+        "definition_text": "التخزين أو التفكيك الآمن لأي نوع من أنواع النفايات بطريقة هندسية تمنع التسبب بأي تلوث أو أثر سلبي على البيئة من تربة وهواء ومياه وتنوع بيولوجي. وتتضمن هذه الطرق المدافن الهندسية والمحارق المجهزة وغيرها من التقنيات والمنشآت المرخصة، والتي تحتوي على التقنيات الفنية اللازمة لحماية الصحة والسلامة العامة والبيئة.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التخلص الأمن الرحيم": [
       {
         "track_id": "agriculture_regulation",
@@ -3571,6 +3759,16 @@
         "term_as_written": "التخلص الأمن الرحيم",
         "definition_text": "عملية إنهاء حياة الحيوان بطريقة سريعة وبأقل ألم أو معاناة ممكنة.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التخليص": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "التخليص",
+        "definition_text": "استيفاء الأجور المستحقة أو المقررة على المواد البريدية.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3640,6 +3838,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التدريب": [
+      {
+        "track_id": "tvtc_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "التدريب",
+        "definition_text": "برامج غير أكاديمية– مختلفة الأشكال والمستويات والمدد– تهدف إلى إكساب الفرد مهارات ومعارف تطبيقية تقنية أو مهنية.",
+        "source_record_id": "tvtc-organizational-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التدهور البيئي": [
       {
         "track_id": "environmental_air_quality",
@@ -3663,6 +3871,16 @@
         "term_as_written": "التدهور البيئي",
         "definition_text": "إضرار شديد بالأوساط البيئية بسبب استنزاف الموارد الطبيعية، أو تدمير الموائل البيئية، أو انقراض الحياة الفطرية، أو تلوث الأوساط البيئية وتدني مستوى جودة الهواء والمياه والتربة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التدوير": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "التدوير",
+        "definition_text": "عملية تحويل مكونات معينة من النفايات إلى مواد قابلة للاستخدام من أجل استرجاعها، أو استخدامها كمواد أولية في عمليات التصنيع.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3830,6 +4048,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدرها الهيئة لشخص؛ لتقديم الخدمات البريدية وفقاً للنظام واللائحة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_brokerage_regulation",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -3951,6 +4177,14 @@
       }
     ],
     "التسجيل": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "التسجيل",
+        "definition_text": "تقييد معلومات مقدم الخدمة، ونوع الخدمة التي يقدمها لدى الهيئة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "telecommunications_law",
         "article_number": 1,
@@ -4189,6 +4423,14 @@
         "term_as_written": "التصريح",
         "definition_text": "وثيقة تصدرها الهيئة لشخص -ذي صفة طبيعية أو اعتبارية- خارج المملكة، يقدم خدمات ذات علاقة بخدمات اتصالات أو تقنية معلومات -بما فيها منصات المحتوى الرقمي- داخل المملكة من خلال عرضها بطريقة تمكن المستخدم من الوصول إليها.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة يمنحها المركز لمنشآت تدوير النفايات تفيد بتحقيقها ضوابط المركز واشتراطاته، قبل حصولها على التراخيص التي تصدرها الجهات المختصة وفق أنظمتها.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -4714,6 +4956,22 @@
         "definition_text": "تنظيم مركز المصالحة الصادر بقرار مجلس الوزراء رقم (١٠٣) وتاريخ١٤٣٤/٤/٨هــ.",
         "source_record_id": "muslaha-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم هيئة الاتصالات وتقنية المعلومات.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tvtc_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم المؤسسة العامة للتدريب التقني والمهني.",
+        "source_record_id": "tvtc-organizational-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التنقيب عن الآثار": [
@@ -5048,6 +5306,14 @@
         "definition_text": "حصول جهة التحكم على البيانات الشخصية وفقاً لأحكام النظام، سواء من صاحبها مُباشرةً أو ممن يُمثله أو ممن له الولاية الشرعية عليه أو من طرف آخر.",
         "source_record_id": "pdpl-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "الجمع",
+        "definition_text": "جمع النفايات من الحاويات المخصصة للتخزين بمختلف أحجامها وأنواعها؛ بوساطة الشاحنات والآليات المخصصة لذلك.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجمعيات الأهلية الزراعية": [
@@ -5316,6 +5582,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "الجهات ذات العلاقة",
+        "definition_text": "كل جهة حكومية أو خاصة أو أهلية تقدم خدمات لكبير السن سواء كانت بطريقة مباشرة أو غير مباشرة.",
+        "source_record_id": "elderly-care-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "protection_from_abuse_regulation",
         "article_number": 1,
         "term_as_written": "الجهات ذات العلاقة",
@@ -5337,6 +5611,16 @@
         "term_as_written": "الجهات ذات العلاقة",
         "definition_text": "الأجهزة الحكومية والقطاع الخاص والقطاع الأكاديمي والبحثي والقطاع الغير ربحي التي تعنى بالمواصفة والوثيقة ذات الصلة.",
         "source_record_id": "standards-quality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجهاز الإداري": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهاز الإداري",
+        "definition_text": "مجموعة الأفراد الذين يتخذون القرارات الاستراتيجية للشخص .ويُعدّ مجلس إدارة\nالشركة الجهاز الإداري هلا.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5559,6 +5843,14 @@
         "term_as_written": "الجهة المختصة",
         "definition_text": "الوزارة أو الجهة المسؤولة عن تنفيذ هذا القانون (النظام) في الدولة.",
         "source_record_id": "trademark-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الجهة الحكومية المسؤولة عن إدارة النفايات تشغيليا وفق نص نظامي خاص.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5968,6 +6260,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الحرق": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "الحرق",
+        "definition_text": "إشعال مكونات النفايات للتخلص منها، وذلك بطريقة الإشعال بالحرق المكشوف، أو بطريقة الحرق المتحكم به في محارق خاصة سواء باسترجاع الطاقة، أو بدونها.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الحركة الجوية": [
       {
         "track_id": "civil_aviation_law",
@@ -6113,6 +6415,16 @@
         "term_as_written": "الحمولة الكلية",
         "definition_text": "أبعاد الحجم الكلي للسفينة مُقاسة وفقا لأحكام الاتفاقية الدولية لقياس حمولة السفن لعام (1969م) وتعديلاتها واللوائح المعمول بها بالمملكة.",
         "source_record_id": "maritime-commercial-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الحوالات البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الحوالات البريدية",
+        "definition_text": "تحويل النقود عن طريق البريد بقيمة محددة إلى شخص معين.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6274,6 +6586,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخدمات البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات البريدية",
+        "definition_text": "جميع الخدمات والأنشطة المتعلقة بالبريد، وتشمل ما يأتي:\n1- تسلّم المواد البريدية، ونقلها، وتوزيعها، وتسليمها، بما فيها البريد السريع.\n2- الخدمات المالية البريدية.\n3- خدمة الصناديق البريدية.\n4- خدمة البريد الدعائي.\n5- خدمة تقديم بطاقات، أو كروت، أو قسائم مسبقة الدفع.\n6- محطات الطرود.\n7- خدمة البريد الرسمي.\n8- أي خدمة أو نشاط ترى الهيئة دخولها في نطاق الخدمات البريدية، وذلك بالاتفاق مع الهيئة العامة للنقل فيما يتصل باختصاصاتها المقررة نظاماً، وبما لا يخالف أحكام النظام.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخدمات البيئية": [
       {
         "track_id": "environmental_fees",
@@ -6330,6 +6652,14 @@
         "definition_text": "الكهرباء والهاتف والماء والصرف الصحي.",
         "source_record_id": "building-code-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات العامة",
+        "definition_text": "كل خدمة تقدمها الجهة الحكومية سواء بنفسها أو عن طريق غيرها.",
+        "source_record_id": "elderly-care-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الخدمات العقارية": [
@@ -6352,6 +6682,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الخدمات المالية البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الخدمات المالية البريدية",
+        "definition_text": "أي حوالة بريدية، أو إذن بريدي، أو شيك بريدي أو غيرها من الخدمات المالية.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الخدمة": [
       {
         "track_id": "enforcement_providers_regulation",
@@ -6371,6 +6711,14 @@
       }
     ],
     "الخدمة الشاملة": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الخدمة الشاملة",
+        "definition_text": "توفير الحد الأدنى من الخدمات البريدية بنوعية وأجر مناسبين لجميع المستفيدين.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "telecommunications_law",
         "article_number": 1,
@@ -6988,6 +7336,14 @@
         "definition_text": "رئيس المجلس.",
         "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tvtc_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "tvtc-organizational-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الرئيس التنفيذي": [
@@ -7121,6 +7477,34 @@
         "term_as_written": "الرخصة",
         "definition_text": "رخصة الموثق أو المأذون.",
         "source_record_id": "tawtheeq-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "الرخصة",
+        "definition_text": "إذن مكتوب يصدره المركز للقيام بأي نشاط يتعلق بإدارة النفايات، وذلك وفقا لما يحدده النظام واللائحة.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الرزم البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الرزم البريدية",
+        "definition_text": "ملفات صغيرة قد تشتمل على أشياء أو أوراق أو مستندات لها صفة التراسل الشخصي، وتغلف بطريقة تمكن من الاطلاع على محتوياتها.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الرسائل": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الرسائل",
+        "definition_text": "أي شكل من أشكال المعلومات المكتوبة التي لها صفة التراسل، وترسل عن طريق الخدمات البريدية.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7680,6 +8064,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السند": [
+      {
+        "track_id": "bog_enforcement_law",
+        "article_number": 1,
+        "term_as_written": "السند",
+        "definition_text": "سند التنفيذ المشمول بأحكام النظام.",
+        "source_record_id": "bog-enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السوق": [
       {
         "track_id": "capital_market_law",
@@ -8083,6 +8477,14 @@
         "term_as_written": "الشخص",
         "definition_text": "أي شخص طبيعي، أو اعتباري عام أو خاص، أو أي كيان آخر؛ تكسبه النصوص النظامية حق إبرام التصرفات العقارية.",
         "source_record_id": "rett-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8782,6 +9184,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "الطرود": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الطرود",
+        "definition_text": "كل رزمة بريدية، أو علبة، أو كيس، أو صندوق، أو مادة مغلفة أو غيرها؛ تحتوي على سلع أو أشياء ليس لها صفة الرسائل، وتكون وفقاً للشروط والأوصاف التي تضعها الهيئة بالاتفاق مع الهيئة العامة للنقل.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الطريق": [
       {
         "track_id": "traffic_law",
@@ -8941,6 +9353,16 @@
         "term_as_written": "الظروف غير الصحية",
         "definition_text": "الحالات والوسائل والأوضاع التي يمكن أن تؤدي إلى تعرض أو تلوث الأغذية\nبالملوثات الفيزيائية أو الكيميائية أو الحيوية مما يجعل الأغذية ضارة\nبصحة الإنسان أو خطرة عليها أو غير صالحة لالستهلاك الآدمي.",
         "source_record_id": "food-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العائل": [
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "العائل",
+        "definition_text": "من يقوم برعاية كبير السن المحتاج وحفظ حقوقه.",
+        "source_record_id": "elderly-care-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9704,6 +10126,14 @@
         "definition_text": "إجراء بموجبه يتم تقسيم العقار المقام عليه بناء إلى وحدات مستقلة لغرض التصرف في كل وحدة على حدة.",
         "source_record_id": "real-estate-units-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "الفرز",
+        "definition_text": "فصل مكونات النفايات عن بعضها يدويا أو آليا، مثل: الورق، والزجاج، والمعادن، وغيرها من المكونات في المحطات الانتقالية، أو منشآت الفرز والمعالجة؛ وذلك بقصد تدويرها، أو معالجتها.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الفريق الفني": [
@@ -9793,6 +10223,16 @@
         "term_as_written": "القسم العلمي",
         "definition_text": "وحدة أكاديمية تمثل تخصصا علميا عاما.",
         "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "القطاع": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "القطاع",
+        "definition_text": "قطاع البريد.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10188,6 +10628,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "bog_enforcement_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "bog-enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "building_code_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -10361,6 +10809,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "لائحة الفوترة الإلكترونية الصادرة بقرار مجلس إدارة الهيئة بشأن إصدار الفواتير والإشعارات الضريبية إلكترونيا.",
         "source_record_id": "einvoicing-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "elderly-care-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10668,6 +11124,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "premium_residency_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -10865,6 +11329,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "أي لائحة تنفيذية للنظام.",
         "source_record_id": "vat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11690,6 +12162,14 @@
         "definition_text": "المؤسسة العامة للتأمينات الاجتماعية.",
         "source_record_id": "social-insurance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tvtc_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "المؤسسة",
+        "definition_text": "المؤسسة العامة للتدريب التقني والمهني.",
+        "source_record_id": "tvtc-organizational-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المؤسسة التعليمية": [
@@ -12056,6 +12536,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "bog_enforcement_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس القضاء الإداري.",
+        "source_record_id": "bog-enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "capital_market_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -12232,6 +12720,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "premium_residency_law",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -12326,6 +12822,14 @@
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "telecommunications-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tvtc_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة المؤسسة.",
+        "source_record_id": "tvtc-organizational-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المجلس العلمي": [
@@ -12375,6 +12879,14 @@
         "term_as_written": "المجموعة",
         "definition_text": "هي مجموعة تتألف من شركة أو أي نوع آخر من الأشخاص الاعتباريين أو الطبيعيين الذين يمارسون سيطرة على باقي المجموعة. ويقومون بتنسيق الوظائف مع باقي المجموعة لتطبيق أو تنفيذ الرقابة على المجموعة، جنبًا إلى جنب مع الفروع أو الشركات التابعة الخاضعة لسياسات وإجراءات مكافحة غسل الأموال على مستوى المجموعة.",
         "source_record_id": "aml-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "المجموعة",
+        "definition_text": "فيما يتعلق بشخص ،تعين ذلك الشخص وكل تابع له.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12506,6 +13018,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ الهيئة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "product_safety_law",
         "article_number": 1,
         "term_as_written": "المحافظ",
@@ -12570,6 +13090,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tvtc_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "المحافظ",
+        "definition_text": "محافظ المؤسسة.",
+        "source_record_id": "tvtc-organizational-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "water_law",
         "article_number": 1,
         "term_as_written": "المحافظ",
@@ -12595,6 +13123,16 @@
         "term_as_written": "المحتوى الإعلامي",
         "definition_text": "مادة مرئية، ومسموعة، أو أي منهما.",
         "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المحطات الانتقالية": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "المحطات الانتقالية",
+        "definition_text": "المنشآت التي تستخدم في مرحلة من مراحل عملية نقل النفايات إلى مواقع ومنشآت معالجة أو فرز النفايات أو إلى مواقع التخلص الآمن؛ من أجل تقليل تكلفة النقل.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12635,6 +13173,14 @@
         "term_as_written": "المحكمة",
         "definition_text": "المحكمة التجارية.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "bog_enforcement_law",
+        "article_number": 1,
+        "term_as_written": "المحكمة",
+        "definition_text": "محكمة التنفيذ الإدارية.",
+        "source_record_id": "bog-enforcement-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13270,6 +13816,14 @@
         "definition_text": "كل شخص طبيعي أو اعتباري حاصل على ترخيص من الوزارة بموجب النظام.",
         "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "الشخص الحاصل على الرخصة من المركز.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المرخص له بالإنتاج المزدوج": [
@@ -13342,6 +13896,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المرسل": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المرسل",
+        "definition_text": "من يرسل مادة بريدية عن طريق مقدم الخدمة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المرسل إليه": [
       {
         "track_id": "electronic_transactions_law",
@@ -13350,6 +13914,14 @@
         "definition_text": "شخص -غير الوسيط- وجّه المنشئ تعامله إليه.",
         "source_record_id": "electronic-transactions-law-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المرسل إليه",
+        "definition_text": "من ترسل إليه المادة البريدية.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المرفأ": [
@@ -13525,6 +14097,14 @@
         "term_as_written": "المركز",
         "definition_text": "مركز التحكيم الرياضي السعودي.",
         "source_record_id": "sports-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني لإدارة النفايات.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13775,6 +14355,14 @@
         "term_as_written": "المستفيد",
         "definition_text": "الشخص الحاصل على التمويل.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المستفيد",
+        "definition_text": "من يستفيد من أي من الخدمات البريدية.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14154,6 +14742,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المشغل الوطني": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المشغل الوطني",
+        "definition_text": "مقدم الخدمة المنوط به تقديم الخدمة الشاملة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المشمول بالحماية": [
       {
         "track_id": "whistleblower_law",
@@ -14285,6 +14883,14 @@
         "term_as_written": "المصرح له",
         "definition_text": "شخص حاصل على التصريح.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "المصرح له",
+        "definition_text": "الشخص الحاصل على التصريح من المركز.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14486,6 +15092,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المطبوعات": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المطبوعات",
+        "definition_text": "الصحف، والمجلات، والكتب، والنشرات، والإعلانات التجارية، والصور الفوتوغرافية، وأوراق أو بطاقات التهنئة أو التعزية وما في حكمها.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المطبوعة": [
       {
         "track_id": "press_law",
@@ -14521,6 +15137,14 @@
         "term_as_written": "المُعالجة",
         "definition_text": "أي عملية تُجرى على البيانات الشخصية بأي وسيلة كانت يدوية أو آلية، ومن ذلك: عمليات الجمع، والتسجيل، والحفظ، والفهرسة، والترتيب، والتنسيق، والتخزين، والتعديل، والتحديث، والدمج، والاسترجاع، والاستعمال، والإفصاح، والنقل، والنشر، والمشاركة في البيانات أو الربط البيني، والحجب، والمسح، والإتلاف.",
         "source_record_id": "pdpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "المعالجة",
+        "definition_text": "استخدام الوسائل الفيزيائية، أو البيولوجية أو الكيميائية، أو مزيج من هذه الوسائل، أو غيرها؛ لإحداث تغيير في خصائص النفايات، من أجل تقليل حجمها، أو تسهيل عمليات التعامل معها عند إعادة استخدامها أو تدويرها، أو استخلاص بعض المنتجات منها أو لإزالة الملوثات العضوية وغيرها؛ من أجل التخفيض أو الاستفادة من بعض مكونات النفايات أو القضاء على احتمال تسببها بالأذى للبشر أو البيئة.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14752,6 +15376,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المقابل المالي",
+        "definition_text": "ما تتقاضاه الهيئة مقابل ما تقدمه من خدمات أو إصدار للتراخيص أو تجديدها.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_registration_law",
         "article_number": 1,
         "term_as_written": "المقابل المالي",
@@ -14873,6 +15505,16 @@
         "term_as_written": "المكاتب المرسلة",
         "definition_text": "هي كل مكتب أو شركة أو وكالة توظيف خارج المملكة حاصلة على ترخيص في دولتها لتوظيف وإرسال العمالة المساندة والمهنية، ومعتمدة في المنصة الالكترونية لتقديم خدمات توفير وتوظيف العمالة المساندة والمهنية، وفق المواصفات المعتمدة من الوزارة.",
         "source_record_id": "labor-annex4-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المكافآت": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "المكافآت",
+        "definition_text": "المبالغ والبدالت والأرباح وما في حكمها ،والمكافآت الدورية أو السنوية المرتبطة\nبالأداء ،والخطط التحفيزية قصرية أو طويلة الأجل ،وأي مزايا عينية أخرى ،باستثناء النفقات\nوالمصاريف الفعلية المعقولة التي تتحملها الشركة عن عضو مجلس الإدارة لغرض تأدية عمله.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -15338,6 +15980,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنتجات": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "المنتجات",
+        "definition_text": "مواد أو سلع مصنعة أو مشتقة من مواد أخرى للبيع والاستهلاك.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنتجات التأمينية": [
       {
         "track_id": "social_insurance_law",
@@ -15795,6 +16447,16 @@
         "term_as_written": "الموائل",
         "definition_text": "مواقع تعيش أو تنمو أو تتكاثر فيها الكائنات الفطرية بشكل طبيعي ومترابط ومتكامل مع الظروف المحيطة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المواد البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "المواد البريدية",
+        "definition_text": "الطرود، والبعائث البريدية، وما في حكمهما.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16756,6 +17418,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "bog_enforcement_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام التنفيذ أمام ديوان المظالم.",
+        "source_record_id": "bog-enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "building_code_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -16905,6 +17575,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام التجارة الإلكترونية.",
         "source_record_id": "ecommerce-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام حقوق كبير السن ورعايته.",
+        "source_record_id": "elderly-care-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17252,6 +17930,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام البريد.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "privatization_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -17484,6 +18170,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام إدارة النفايات.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "water_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -17556,6 +18250,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "النفايات": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "النفايات",
+        "definition_text": "جميع المواد التي ترمى أو يتخلص منها، وتؤثر -بطريقة مباشرة أو غير مباشرة- في الصحة العامة أو البيئة.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "النفايات الخطرة": [
       {
         "track_id": "environmental_law",
@@ -17563,6 +18267,14 @@
         "term_as_written": "النفايات الخطرة",
         "definition_text": "مُخلفات تشكل ضرراً على البيئة ومكوناتها وصحة الإنسان، وتحتفظ بخواص خطرة أو معدية، مثل: السُمية العالية أو القابلة للانفجار أو التفاعل، والتي ليس لها استخدام ما لم تعالج وفقاً لاشتراطات خاصة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "النفايات الخطرة",
+        "definition_text": "النفايات المصنفة على أنها نفايات خطرة بناء على أحكام النظام واللائحة، الناتجة من الأنشطة الصناعية أو غير الصناعية التي تحتوي على مواد سامة أو مواد قابلة للاشتعال أو للتفاعل، أو مواد مسببة للتآكل، أو مواد مذيبة، أو مواد مزيلة للشحوم، أو الزيوت، أو مواد ملونة، أو رواسب عجينية، أو أحماض وقلويات.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -17583,6 +18295,14 @@
         "term_as_written": "النقل",
         "definition_text": "نقل البيانات الشخصية من مكان إلى آخر لمعالجتها.",
         "source_record_id": "pdpl-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "النقل",
+        "definition_text": "نقل النفايات بوسائط النقل المعتمدة إلى المحطات الانتقالية، أو منشآت المعالجة أو الفرز، أو المرادم المعتمدة.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -17907,6 +18627,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة السعودية للملكية الفكرية.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة الاتصالات وتقنية المعلومات.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18336,6 +19064,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الموارد البشرية والتنمية الاجتماعية.",
+        "source_record_id": "elderly-care-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "electricity_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -18549,6 +19285,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة العدل.",
         "source_record_id": "muslaha-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الاتصالات وتقنية المعلومات.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18892,6 +19636,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الموارد البشرية والتنمية الاجتماعية.",
+        "source_record_id": "elderly-care-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "electricity_law",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -19116,6 +19868,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الاتصالات وتقنية المعلومات.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "press_law",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -19233,6 +19993,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الداخلية.",
         "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة رئيس مجلس إدارة المركز.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19686,6 +20454,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "تابع": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "تابع",
+        "definition_text": "الشخص الذي يسيطر على شخص آخر ،أو يسيطر عليه ذلك الشخص الآخر ،أو يشترك\nمعه في كونه مسيطراً عليه من قبل شخص ثالث .وفي أي مما سبق تكون السيطرة بشكل مباشر\nأو غري مباشر.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تبريد المناطق": [
       {
         "track_id": "electricity_law",
@@ -19911,6 +20689,16 @@
         "term_as_written": "تقرير نطاق تقييم الأثر البيئي",
         "definition_text": "التقرير الذي يحدد نطاق عمل دراسة تقييم الأثر البيئي لأنشطة الفئة الثالثة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تقليل النفايات": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "تقليل النفايات",
+        "definition_text": "الحد من إنتاج النفايات إلى أدنى مستوى ممكن.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20322,6 +21110,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "حصة السيطرة": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "حصة السيطرة",
+        "definition_text": "القدرة على التأثري في أفعال أو قرارات شخص آخر ،بشكل مباشر أو غري مباشر،\nمنفرداً أو جمتمعاً مع قريب أو تابع ،من خالل( :أ) امتالك نسبة ( )%30أو أكثر من حقوق\nالتصويت في شركة( .ب) حق تعيين ( )%30أو أكثر من أعضاء الجهاز الإداري.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "حصة المشترك": [
       {
         "track_id": "social_insurance_legacy_regulation",
@@ -20343,6 +21141,14 @@
       }
     ],
     "حق الاستخدام الشامل": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "حق الاستخدام الشامل",
+        "definition_text": "إتاحة الفرصة لجميع المستفيدين في المملكة للاستفادة من الخدمة الشاملة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "telecommunications_law",
         "article_number": 1,
@@ -20369,6 +21175,16 @@
         "term_as_written": "حقوق الاستخدام",
         "definition_text": "صلاحيات مخولة لمالك رخصة استخدام المصدر.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "حقوق كبير السن": [
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "حقوق كبير السن",
+        "definition_text": "كل ما لكبير السن من حقوق شرعية كانت أو نظامية بما في ذلك حقوقه المالية والجسدية والاجتماعية والمعنوية.",
+        "source_record_id": "elderly-care-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20535,6 +21351,16 @@
         "term_as_written": "دار الحضانة",
         "definition_text": "المنشأة -الحكومية أو الخاصة- المخصصة والمجهزة لتقديم خدمات الرعاية والتعليم لمن هم في مرحلة الحضانة.",
         "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "دار الرعاية الاجتماعية لكبير السن": [
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "دار الرعاية الاجتماعية لكبير السن",
+        "definition_text": "أي جهة حكومية، أو أي جهة خاصة أو أهلية رخصت لها الوزارة؛ تقوم بإيواء كبير السن ورعايته وتقديم الخدمات اللازمة له.",
+        "source_record_id": "elderly-care-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20939,6 +21765,16 @@
         "term_as_written": "رخصة تنمية مصدر",
         "definition_text": "وثيقة تصدرها الوزارة للإذن بممارسة نشاط تنمية مصدر المياه بموجب النظام ولوائح الوزارة.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "رعاية كبير السن المحتاج": [
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "رعاية كبير السن المحتاج",
+        "definition_text": "توفير الحاجات الضرورية اللازمة لكبير السن من سكن ومأكل وملبس وعناية صحية وجسدية ونفسية واجتماعية وترويحية.",
+        "source_record_id": "elderly-care-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -21402,6 +22238,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "شخص": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "شخص",
+        "definition_text": "أي شخص طبيعي ،أو اعتباري تقر له أنظمة المملكة بهذه الصفة.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "شرط الواقف": [
       {
         "track_id": "awqaf_law",
@@ -21775,6 +22621,26 @@
         "term_as_written": "صك تسجيل الملكية",
         "definition_text": "وثيقة صادرة عن السجل العقاري لإثبات بيانات عقار مطابقة للسجل، وفقاً للنموذج الذي تحدده اللائحة، تتضمن: موقع العقار، وحدوده، ووصفه، واستعماله، وما يتبعه من حقوق والتزامات، وبيانات مالكه، وأي بيانات أخرى تحددها اللائحة.",
         "source_record_id": "real-estate-registration-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "صندوق إيداع البعائث البريدية": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "صندوق إيداع البعائث البريدية",
+        "definition_text": "صندوق مخصص لإيداع البعائث البريدية، وما في حكمها، المطلوب إرسالها إلى المستفيدين سواءً داخل مكاتب البريد أو خارجها.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "صندوق البريد الخاص": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "صندوق البريد الخاص",
+        "definition_text": "صندوق مخصص لإيداع البعائث البريدية، وما في حكمها، الواردة إلى المستفيد سواءً داخل مكتب البريد أو خارجه.",
+        "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -22573,6 +23439,26 @@
         "term_as_written": "كاتب العدل",
         "definition_text": "موظف حكومي مؤهل تأهيلاً شرعياً، معين على وظيفة كاتب عدل، أو رئيس كتابة عدل، يختص بتوثيق العقود والإقرارات.",
         "source_record_id": "tawtheeq-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "كبار المساهمين": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "كبار المساهمين",
+        "definition_text": "كل من ميلك ما نسبته ( )%5أو أكثر من أسهم الشركة أو حقوق التصويت\nفيها.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "كبير السن": [
+      {
+        "track_id": "elderly_care_law",
+        "article_number": 1,
+        "term_as_written": "كبير السن",
+        "definition_text": "كل مواطن بلغت سنه (ستين) سنة فأكثر.",
+        "source_record_id": "elderly-care-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23636,6 +24522,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مسؤولية المنتج الممتدة": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "مسؤولية المنتج الممتدة",
+        "definition_text": "تحمل المنتج والمستورد للمنتجات المستوردة أو المصنعة محليا أو المشتقة من مادة أخرى، المعدة للبيع أو الاستهلاك، المسؤولية القانونية والمالية لإدارة البقايا والنفايات ومعالجتها والتخلص الآمن منها، خلال دورتها الحياتية.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مستحق الدعم": [
       {
         "track_id": "real_estate_finance_law",
@@ -23806,6 +24702,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مطبوعات أو مكتوبات المكفوفين": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "مطبوعات أو مكتوبات المكفوفين",
+        "definition_text": "أي أوراق مطبوعة، أو مكتوبة بالأحرف البارزة، أو تسجيلات صوتية، أو أوراق حساسة مخصصة لاستعمال المكفوفين، وترسل مكشوفة.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "معالجة مياه الصرف": [
       {
         "track_id": "water_law",
@@ -23928,11 +24834,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة",
+        "definition_text": "من يقدم الخدمات البريدية بناءً على ترخيص، أو تسجيل، أو إعفاء.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "مقدم الخدمة",
         "definition_text": "مقدم خدمات الاتصالات أو تقنية المعلومات أو خدمات ذات علاقة بها -بما فيها منصات المحتوى الرقمي- للعموم المرخص له أو المسجل أو المصرح له.",
         "source_record_id": "telecommunications-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة",
+        "definition_text": "الشخص المرخص له أو المصرح له بمزاولة نشاط من أنشطة إدارة النفايات.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -24078,6 +25000,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مكتب البريد": [
+      {
+        "track_id": "postal_law",
+        "article_number": 1,
+        "term_as_written": "مكتب البريد",
+        "definition_text": "المكان الذي يعده مقدم الخدمة؛ لغرض تقديم الخدمات البريدية.",
+        "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مكتب التسجيل": [
       {
         "track_id": "maritime_commercial_regulation",
@@ -24218,6 +25150,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "منازعة التنفيذ": [
+      {
+        "track_id": "bog_enforcement_law",
+        "article_number": 1,
+        "term_as_written": "منازعة التنفيذ",
+        "definition_text": "دعوى تتعلق بشروط صحة التنفيذ وسلامة إجراءاته.",
+        "source_record_id": "bog-enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مناطق الاحتياطي التعديني": [
       {
         "track_id": "mining_investment_law",
@@ -24235,6 +25177,16 @@
         "term_as_written": "منتج",
         "definition_text": "أي جزء من أي كائن فطري، سواء أكان مصنّعًا جزئيًّا أم كليًّا أو غير مصنّع.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "منتج النفاية": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "منتج النفاية",
+        "definition_text": "كل شخص ينتج نفايات مصنفة بناء على أحكام النظام.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -24738,6 +25690,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نظام الشركات": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "نظام الشركات",
+        "definition_text": "نظام الشركات الصادر بالمرسوم الملكي رقم (م )132/وتاريخ",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "نظام المدفوعات المهم": [
       {
         "track_id": "payment_systems_law",
@@ -24765,6 +25727,16 @@
         "term_as_written": "نظم المدفوعات",
         "definition_text": "مجموعة الأدوات والإجراءات والقواعد الخاصة بمعالجة وتسوية أوامر المدفوعات وعمليات المقاصة المرتبطة بها داخل المملكة أو خارجها.",
         "source_record_id": "payment-systems-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نفايات الوسائط البحرية": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "نفايات الوسائط البحرية",
+        "definition_text": "النفايات التي تنتج من جميع وسائط ووسائل النقل والوحدات العائمة التي تستخدم لمزاولة الأنشطة البحرية، وتشمل السفن وقوارب الصيد والنزهة البحرية، أو وسائط الرياضات البحرية.",
+        "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -25088,6 +26060,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "وثيقة النقل": [
+      {
+        "track_id": "waste_management_law",
+        "article_number": 1,
+        "term_as_written": "وثيقة النقل",
+        "definition_text": "النموذج الذي تحدده الجهة المختصة لمتابعة النفايات من نقطة الإنتاج إلى نقطة التخزين أو المعالجة أو التخلص الآمن.",
+        "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "وحدات التدريب": [
+      {
+        "track_id": "tvtc_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "وحدات التدريب",
+        "definition_text": "الأماكن أو المنشآت التي تدرب فيها المؤسسة بمختلف أنماطها التنظيمية وأسمائها وأماكنها .",
+        "source_record_id": "tvtc-organizational-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "وحدة الصيد": [
       {
         "track_id": "maritime_commercial_regulation",
@@ -25262,6 +26254,16 @@
         "definition_text": "العمولة والنسبة المئوية من المبيعات ، والنسبة المئوية من الأرباح ، سواء اقتصر الأجر عليها ، أو كانت مضافة إلى أجر ثابت .",
         "source_record_id": "social-insurance-legacy-regulation-llm-art-registration_001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "يوم": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "يوم",
+        "definition_text": "يوم تقوميي ،سواء أكان يوم عمل أم ال.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "يوم عمل": [

@@ -291,6 +291,18 @@ REQUIRED_TRACK_IDS = [
     "finance_companies_regulation",
     "finance_lease_regulation",
     "cooperative_societies_regulation",
+    "bog_enforcement_law",
+    "public_prosecution_law",
+    "elderly_care_law",
+    "elderly_care_regulation",
+    "private_schools_regulation",
+    "foreign_schools_regulation",
+    "postal_law",
+    "cma_corporate_governance_regulation",
+    "tvtc_organizational_statute",
+    "waste_management_law",
+    "fisheries_law",
+    "debt_collection_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -333,9 +345,9 @@ def main() -> int:
     check("[2] Required top-level fields...", len(missing) == 0,
           "All present" if not missing else f"Missing: {missing}")
 
-    # [3] 242 tracks
+    # [3] 254 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 242 tracks present...", len(track_ids) == 242 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 254 tracks present...", len(track_ids) == 254 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -2628,7 +2640,127 @@ def main() -> int:
           cooperative_societies_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 55, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={cooperative_societies_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 14233 records...", uix.get("total_records") == 14233,
+    bog_enforcement_law_var = tracks_by_id.get("bog_enforcement_law", {})
+    bog_enforcement_law_var_counts = bog_enforcement_law_var.get("record_counts", {})
+    check("[7g230] bog_enforcement_law: 37 Arabic records...",
+          bog_enforcement_law_var_counts.get("arabic_articles") == 37
+          and bog_enforcement_law_var.get("official_text_status") == "BOE_SINGLE_WAYBACK_SNAPSHOT_EGRESS_BLOCKED_X_NEZAMS_PARTIAL_SPOTCHECK_X_UMM_AL_QURA_METADATA",
+          f"counts={bog_enforcement_law_var_counts}")
+    check("    bog_enforcement_law: status breakdown 37/0/0/0...",
+          bog_enforcement_law_var_counts.get("legal_status_breakdown") == {"اصلية": 37, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={bog_enforcement_law_var_counts.get('legal_status_breakdown')}")
+
+    public_prosecution_law_var = tracks_by_id.get("public_prosecution_law", {})
+    public_prosecution_law_var_counts = public_prosecution_law_var.get("record_counts", {})
+    check("[7g231] public_prosecution_law: 30 Arabic records...",
+          public_prosecution_law_var_counts.get("arabic_articles") == 30
+          and public_prosecution_law_var.get("official_text_status") == "BOE_SINGLE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_QANOONSA_M180_DIRECT_TEXT_CROSSVERIFIED",
+          f"counts={public_prosecution_law_var_counts}")
+    check("    public_prosecution_law: status breakdown 12/16/2/0...",
+          public_prosecution_law_var_counts.get("legal_status_breakdown") == {"اصلية": 12, "معدلة": 16, "ملغاة": 2, "مضافة": 0},
+          f"breakdown={public_prosecution_law_var_counts.get('legal_status_breakdown')}")
+
+    elderly_care_law_var = tracks_by_id.get("elderly_care_law", {})
+    elderly_care_law_var_counts = elderly_care_law_var.get("record_counts", {})
+    check("[7g232] elderly_care_law: 23 Arabic records...",
+          elderly_care_law_var_counts.get("arabic_articles") == 23
+          and elderly_care_law_var.get("official_text_status") == "BOE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_NSHR_PAMPHLET_TRIPLE_VERIFIED",
+          f"counts={elderly_care_law_var_counts}")
+    check("    elderly_care_law: status breakdown 23/0/0/0...",
+          elderly_care_law_var_counts.get("legal_status_breakdown") == {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={elderly_care_law_var_counts.get('legal_status_breakdown')}")
+
+    elderly_care_regulation_var = tracks_by_id.get("elderly_care_regulation", {})
+    elderly_care_regulation_var_counts = elderly_care_regulation_var.get("record_counts", {})
+    check("[7g233] elderly_care_regulation: 8 Arabic records...",
+          elderly_care_regulation_var_counts.get("arabic_articles") == 8
+          and elderly_care_regulation_var.get("official_text_status") == "QANONIAH_API_PARTIAL_8_OF_UNKNOWN_TOTAL_10_ITEM_PREVIEW_CAP_DISCLOSED",
+          f"counts={elderly_care_regulation_var_counts}")
+    check("    elderly_care_regulation: status breakdown 8/0/0/0...",
+          elderly_care_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={elderly_care_regulation_var_counts.get('legal_status_breakdown')}")
+
+    private_schools_regulation_var = tracks_by_id.get("private_schools_regulation", {})
+    private_schools_regulation_var_counts = private_schools_regulation_var.get("record_counts", {})
+    check("[7g234] private_schools_regulation: 24 Arabic records...",
+          private_schools_regulation_var_counts.get("arabic_articles") == 24
+          and private_schools_regulation_var.get("official_text_status") == "MOE_OFFICIAL_PDF_DIRECT_FETCH_VISION_VERIFIED_PAGE_BY_PAGE",
+          f"counts={private_schools_regulation_var_counts}")
+    check("    private_schools_regulation: status breakdown 22/2/0/0...",
+          private_schools_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 22, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={private_schools_regulation_var_counts.get('legal_status_breakdown')}")
+
+    foreign_schools_regulation_var = tracks_by_id.get("foreign_schools_regulation", {})
+    foreign_schools_regulation_var_counts = foreign_schools_regulation_var.get("record_counts", {})
+    check("[7g235] foreign_schools_regulation: 21 Arabic records...",
+          foreign_schools_regulation_var_counts.get("arabic_articles") == 21
+          and foreign_schools_regulation_var.get("official_text_status") == "NEZAMS_X_BIBLIOTDROIT_DUAL_SECONDARY_WORDFORWORD_CROSSVERIFIED_BOE_UNREACHABLE",
+          f"counts={foreign_schools_regulation_var_counts}")
+    check("    foreign_schools_regulation: status breakdown 19/2/0/0...",
+          foreign_schools_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 19, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={foreign_schools_regulation_var_counts.get('legal_status_breakdown')}")
+
+    postal_law_var = tracks_by_id.get("postal_law", {})
+    postal_law_var_counts = postal_law_var.get("record_counts", {})
+    check("[7g236] postal_law: 20 Arabic records...",
+          postal_law_var_counts.get("arabic_articles") == 20
+          and postal_law_var.get("official_text_status") == "NEZAMS_SINGLE_AGGREGATOR_PARTIAL_20_OF_37_ARTICLES_ARTICLE21PLUS_CONTENT_CORRUPTED_DISCLOSED",
+          f"counts={postal_law_var_counts}")
+    check("    postal_law: status breakdown 20/0/0/0...",
+          postal_law_var_counts.get("legal_status_breakdown") == {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={postal_law_var_counts.get('legal_status_breakdown')}")
+
+    cma_corporate_governance_regulation_var = tracks_by_id.get("cma_corporate_governance_regulation", {})
+    cma_corporate_governance_regulation_var_counts = cma_corporate_governance_regulation_var.get("record_counts", {})
+    check("[7g237] cma_corporate_governance_regulation: 95 Arabic records...",
+          cma_corporate_governance_regulation_var_counts.get("arabic_articles") == 95
+          and cma_corporate_governance_regulation_var.get("official_text_status") == "CMA_OFFICIAL_PDF_DIRECT_FETCH_FONT_DEFECT_CORRECTED_2017_SUPERSESSION_CORRECTED",
+          f"counts={cma_corporate_governance_regulation_var_counts}")
+    check("    cma_corporate_governance_regulation: status breakdown 84/11/0/0...",
+          cma_corporate_governance_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 84, "معدلة": 11, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={cma_corporate_governance_regulation_var_counts.get('legal_status_breakdown')}")
+
+    tvtc_organizational_statute_var = tracks_by_id.get("tvtc_organizational_statute", {})
+    tvtc_organizational_statute_var_counts = tvtc_organizational_statute_var.get("record_counts", {})
+    check("[7g238] tvtc_organizational_statute: 13 Arabic records...",
+          tvtc_organizational_statute_var_counts.get("arabic_articles") == 13
+          and tvtc_organizational_statute_var.get("official_text_status") == "BOE_TRIPLE_WAYBACK_SNAPSHOT_X_NEZAMS_X_QANOONSA_RESOLUTION632_DIRECT_TEXT_CROSSVERIFIED",
+          f"counts={tvtc_organizational_statute_var_counts}")
+    check("    tvtc_organizational_statute: status breakdown 11/2/0/0...",
+          tvtc_organizational_statute_var_counts.get("legal_status_breakdown") == {"اصلية": 11, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={tvtc_organizational_statute_var_counts.get('legal_status_breakdown')}")
+
+    waste_management_law_var = tracks_by_id.get("waste_management_law", {})
+    waste_management_law_var_counts = waste_management_law_var.get("record_counts", {})
+    check("[7g239] waste_management_law: 38 Arabic records...",
+          waste_management_law_var_counts.get("arabic_articles") == 38
+          and waste_management_law_var.get("official_text_status") == "NEZAMS_SINGLE_AGGREGATOR_BOE_AND_WAYBACK_BOTH_UNREACHABLE_STRUCTURAL_CROSSCHECK_ONLY",
+          f"counts={waste_management_law_var_counts}")
+    check("    waste_management_law: status breakdown 38/0/0/0...",
+          waste_management_law_var_counts.get("legal_status_breakdown") == {"اصلية": 38, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={waste_management_law_var_counts.get('legal_status_breakdown')}")
+
+    fisheries_law_var = tracks_by_id.get("fisheries_law", {})
+    fisheries_law_var_counts = fisheries_law_var.get("record_counts", {})
+    check("[7g240] fisheries_law: 13 Arabic records...",
+          fisheries_law_var_counts.get("arabic_articles") == 13
+          and fisheries_law_var.get("official_text_status") == "BOE_WAYBACK_DUAL_SNAPSHOT_2019_2025_SELF_CONSISTENT_TIER_1",
+          f"counts={fisheries_law_var_counts}")
+    check("    fisheries_law: status breakdown 12/1/0/0...",
+          fisheries_law_var_counts.get("legal_status_breakdown") == {"اصلية": 12, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={fisheries_law_var_counts.get('legal_status_breakdown')}")
+
+    debt_collection_regulation_var = tracks_by_id.get("debt_collection_regulation", {})
+    debt_collection_regulation_var_counts = debt_collection_regulation_var.get("record_counts", {})
+    check("[7g241] debt_collection_regulation: 11 Arabic records...",
+          debt_collection_regulation_var_counts.get("arabic_articles") == 11
+          and debt_collection_regulation_var.get("official_text_status") == "SAMA_RULEBOOK_BORN_DIGITAL_BILINGUAL_ENTIRESECTION_PRIMARY",
+          f"counts={debt_collection_regulation_var_counts}")
+    check("    debt_collection_regulation: status breakdown 11/0/0/0...",
+          debt_collection_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={debt_collection_regulation_var_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 14566 records...", uix.get("total_records") == 14566,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -2690,8 +2822,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 14402...",
-          registry.get("total_primary_arabic_governing_records") == 14402,
+    check("[19a] total_primary_arabic_governing_records == 14735...",
+          registry.get("total_primary_arabic_governing_records") == 14735,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -2706,8 +2838,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 15297...",
-          registry.get("total_registry_counted_records") == 15297,
+    check("[19e] total_registry_counted_records == 15630...",
+          registry.get("total_registry_counted_records") == 15630,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -2731,7 +2863,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"14402 + 614 + 281 = 15297")
+          f"14735 + 614 + 281 = 15630")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -2749,7 +2881,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 242 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 254 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

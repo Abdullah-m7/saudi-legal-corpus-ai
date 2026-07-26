@@ -356,6 +356,18 @@ export PYTHONPATH := src:$(PYTHONPATH)
         finance-companies-regulation-track-validate \
         finance-lease-regulation-track-validate \
         cooperative-societies-regulation-track-validate \
+        bog-enforcement-law-track-validate \
+        public-prosecution-law-track-validate \
+        elderly-care-law-track-validate \
+        elderly-care-regulation-track-validate \
+        private-schools-regulation-track-validate \
+        foreign-schools-regulation-track-validate \
+        postal-law-track-validate \
+        cma-corporate-governance-regulation-track-validate \
+        tvtc-organizational-statute-track-validate \
+        waste-management-law-track-validate \
+        fisheries-law-track-validate \
+        debt-collection-regulation-track-validate \
         qa-gate
 
 help:
@@ -1848,6 +1860,42 @@ finance-lease-regulation-track-validate:
 
 cooperative-societies-regulation-track-validate:
 	$(PY) scripts/validate_cooperative_societies_regulation_track.py
+
+bog-enforcement-law-track-validate:
+	$(PY) scripts/validate_bog_enforcement_law_track.py
+
+public-prosecution-law-track-validate:
+	$(PY) scripts/validate_public_prosecution_law_track.py
+
+elderly-care-law-track-validate:
+	$(PY) scripts/validate_elderly_care_law_track.py
+
+elderly-care-regulation-track-validate:
+	$(PY) scripts/validate_elderly_care_regulation_track.py
+
+private-schools-regulation-track-validate:
+	$(PY) scripts/validate_private_schools_regulation_track.py
+
+foreign-schools-regulation-track-validate:
+	$(PY) scripts/validate_foreign_schools_regulation_track.py
+
+postal-law-track-validate:
+	$(PY) scripts/validate_postal_law_track.py
+
+cma-corporate-governance-regulation-track-validate:
+	$(PY) scripts/validate_cma_corporate_governance_regulation_track.py
+
+tvtc-organizational-statute-track-validate:
+	$(PY) scripts/validate_tvtc_organizational_statute_track.py
+
+waste-management-law-track-validate:
+	$(PY) scripts/validate_waste_management_law_track.py
+
+fisheries-law-track-validate:
+	$(PY) scripts/validate_fisheries_law_track.py
+
+debt-collection-regulation-track-validate:
+	$(PY) scripts/validate_debt_collection_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

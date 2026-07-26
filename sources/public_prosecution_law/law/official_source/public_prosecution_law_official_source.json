@@ -1,0 +1,664 @@
+{
+  "document": "نظام هيئة التحقيق والادعاء العام ( نظام النيابة العامة )",
+  "document_en": "Public Prosecution Law (formerly: Law of the Bureau of Investigation and Public Prosecution)",
+  "decree": "المرسوم الملكي رقم (م/56)",
+  "decree_date_hijri": "24/10/1409",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": true,
+  "issuing_authority_ar": "مرسوم ملكي -- تصديقاً على نظام هيئة التحقيق والادعاء العام (نظام النيابة العامة) بموجب قرار مجلس الوزراء رقم (140) وتاريخ 13/8/1409هـ. صدر النظام بتاريخ 24/10/1409هـ (29/05/1989م) ونُشر بتاريخ 20/11/1409هـ (23/06/1989م). عُدّل بالمرسوم الملكي رقم (م/4) وتاريخ 5/1/1433هـ، ثم بالمرسوم الملكي رقم (م/31) وتاريخ 13/4/1436هـ، ثم غُيّر مسمى الجهاز إلى (النيابة العامة) بموجب الأمر الملكي رقم (أ/240) وتاريخ 22/9/1438هـ، ثم عُدّل بالمرسوم الملكي رقم (م/125) وتاريخ 14/9/1441هـ (موجة تعديل واسعة تشمل إلغاء مادتين)، ثم عُدّلت الفقرة (1) من المادة الرابعة فقط بالمرسوم الملكي رقم (م/180) وتاريخ 17/8/1446هـ.",
+  "issuing_authority_en": "Royal Decree -- approving the Law of the Bureau of Investigation and Public Prosecution (now: Public Prosecution Law) per Council of Ministers Resolution No. 140 dated 13/8/1409H. Issued 24/10/1409H (29 May 1989G), published 20/11/1409H (23 Jun 1989G). Amended by Royal Decree M/4 (5/1/1433H), Royal Decree M/31 (13/4/1436H), renamed via Royal Order A/240 (22/9/1438H), amended again by Royal Decree M/125 (14/9/1441H, a wide amendment wave including two repeals), and Article 4 paragraph (1) further amended by Royal Decree M/180 (17/8/1446H).",
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: laws.boe.gov.sa's LIVE portal was unreachable this pass for this law (direct HTTPS request to the exact law-detail URL [https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/ac892eff-4aa4-4b26-b312-a9a700f2663d/1] returned HTTP 503 via one tool path and a connection reset via a second, independent curl attempt), consistent with this corpus's established pattern for this BOE portal. archive.org/wayback/available confirmed a Wayback Machine snapshot of this exact BOE law-detail page -- timestamp 20260215023949 (15 Feb 2026, HTTP 200) -- which was fetched (via curl through the session's egress proxy, since the WebFetch tool itself declines to fetch web.archive.org URLs directly) and parsed with BeautifulSoup (not naive regex/tag-stripping): 30 'article_item' divs, each with an 'h3.center' heading (a bare ordinal, e.g. 'المادة الأولى:') and a 'div.HTMLContainer' body, plus -- critically -- for 16 of the 30 articles, an 'ancArticlePrevVersions' popup ('تعديلات المادة') logging that article's amendment history in chronological order, each entry citing a decree number/date and, in most (13 of 16) but not all cases, quoting the resulting text verbatim. No باب/فصل (chapter/part) h3 headings were found interleaved with the articles anywhere on the page -- this law has a FLAT structure, confirmed by an independent secondary source's identical article count and ordering (see below); the page's only structural aid is an informal, non-per-article 'نبذة عن النظام' (law summary) topic list: 'إنشاء الهيئة وتشكيلها واختصاصها - أعضاء الهيئة والعاملون بها - تأديب أعضاء الهيئة - الأحكام العامة الخاصة بالهيئة - سلم وظائف ورواتب أعضاء الهيئة - لائحة أعضاء الهيئة والعاملين فيها - موظفو الهيئة من غير الأعضاء' -- this is NOT a per-article باب/فصل tag structure and is not asserted as chapter_structure here (see known_unresolved_discrepancies, key public_prosecution_no_formal_chapter_structure); section_ar is left empty for every article, consistent with this corpus's anti_bribery_law precedent for BOE sources with a flat (non-subdivided) article sequence.\n\nCRITICAL STRUCTURAL FINDING -- BOE's own per-article history log, read in full this pass, shows the MAIN 'HTMLContainer' body displayed for each article is the law's ORIGINAL 1409H (1989G) wording, NOT the current text -- confirmed unambiguously because, e.g., Article 1's main body still reads 'تنشأ بموجب هذا النظام هيئة تسمى (هيئة التحقيق والادعاء العام) ترتبط بوزير الداخلية...', matching exactly the wording its own popup says was later amended away by Royal Decree M/4 (5/1/1433H) and then wholesale-replaced by Royal Decree M/125 (14/9/1441H) to read 'النيابة العامة جزء من السلطة القضائية...'. This track therefore does NOT use the main HTMLContainer text as 'text' for any amended article; instead, for each article, 'text' is set to the LAST popup entry that both (a) is a whole-article restatement (not a single-paragraph-scoped amendment) and (b) quotes its resulting text verbatim -- with 'original_1409h_text' separately preserving the 1409H baseline and a full 'history' array preserving every intermediate decree/date/quoted-text this pass could confirm, per this corpus's never-delete/never-silently-merge policy for amended and repealed articles.\n\nFOUR (not three) DISTINCT AMENDING INSTRUMENTS CONFIRMED IN BOE'S OWN HISTORY LOG -- a correction/refinement of this task's initial working assumption: Royal Decree M/4 (5/1/1433H, Article 1 budget clause only), Royal Decree M/31 (13/4/1436H, restructured Articles 2, 3, 4, 5, 9, 10, 12, 15, 24, 25, 26 -- a wider set than 'Arts. 2-5/9/10' alone), Royal Decree M/125 (14/9/1441H / c. 2020G -- NOT previously flagged in this task's working summary, discovered this pass directly from BOE's own per-article history log -- a large second wave touching Articles 1, 2, 3, 4, 10, 11, 13, 16, 17, 26, 27, 28, evidently the instrument that formally carried the 1438H rename (see below) into the statute's own article text, e.g. replacing 'هيئة'/'رئيس الهيئة'/'لجنة إدارة الهيئة' with 'النيابة العامة'/'النائب العام'/'مجلس النيابة العامة', and REPEALING Articles 11 and 28 outright), and Royal Decree M/180 (17/8/1446H / 16 Feb 2025G, Article 4 paragraph (1) only -- council composition). Royal Order A/240 (22 Ramadan 1438H / 17 Jun 2017G) itself renamed the body (هيئة التحقيق والادعاء العام -> النيابة العامة) and is well-attested by secondary sources and by internal consistency with BOE's own later M/125 terminology-carrying amendments, but does NOT itself appear as a per-article amendment entry in BOE's history log (as a Royal Order effecting an institutional rename rather than a Royal Decree amending specific numbered articles, this is expected) -- it is documented here as confirmed background context only, consistent with this corpus's nazaha_law precedent for predecessor/rename orders (see known_unresolved_discrepancies).\n\nTWO ARTICLES CONFIRMED REPEALED (not merely amended) -- Article 11 (civil-service-style terms-of-employment delegation to the Council of Ministers) and Article 28 (Council-of-Ministers-issued لائحة تنظيمية) were both explicitly marked 'أُلغيت هذه المادة' (this article is repealed) by Royal Decree M/125 (14/9/1441H) in BOE's own history log -- flagged as ملغاة (repealed) per this corpus's policy, never deleted or silently merged; their pre-repeal 1409H text is preserved in both 'text' and 'original_1409h_text' for historical reference only.\n\nTHREE ARTICLES WITH A CONFIRMED-BUT-UNQUOTED M/125 AMENDMENT (current_wording_fully_confirmed=false) -- Article 3, Article 4 (paragraphs 2-3 only; paragraph 1 was separately and fully confirmed via M/180, see below), and Article 16: BOE's own history log states unambiguously that each was amended by Royal Decree M/125 (14/9/1441H), but -- unlike its treatment of most other M/125 entries -- does NOT quote the resulting text on the page. The independent secondary source checked this pass (nezams.com) turned out to be ENTIRELY SILENT on Royal Decree M/125 for every single article of this law (not just these three) -- its most recent amendment reference anywhere in the document is Royal Decree M/180 (2025G) for Article 4 alone, meaning nezams.com's copy is stale by roughly five years for the M/125 wave and could not be used to fill this specific gap. Per this task's explicit instruction that an honest 'could not confirm X' is preferred over a fabricated fact, this track does NOT reconstruct, infer, or merge a guessed current wording for these three articles' gaps: 'text' is set to the last FULL-ARTICLE text this pass could verbatim-confirm (the M/31, 1436H wording, for Articles 3 and 4; the original 1409H wording for Article 16, which has no other confirmed amendment quote at all), each flagged current_wording_fully_confirmed=false with a per-history-entry note explaining the gap. See known_unresolved_discrepancies for the consolidated disclosure.\n\nSECONDARY CROSS-VERIFICATION: nezams.com (fetched live this pass via direct curl with a browser User-Agent, 435,930 bytes) independently mirrors this law's article sequence and count (30 articles, 1-30, confirmed via its own per-article 'subject-N' HTML list IDs) and, for every article and amendment layer it DOES cover (the 1409H baseline for all 30 articles, plus the M/4 and M/31 amendment quotes, plus the M/180 Article-4-paragraph-1 quote), its text is a byte-for-byte match (aside from straight-vs-curly quotation mark rendering) with BOE's own text -- strong corroboration for those specific layers. qanoonsa.com (fetched live this pass via direct curl) independently hosts what appears to be the OFFICIAL Royal Decree M/180 text itself (published Umm Al-Qura Gazette issue 5072, 21 Feb 2025G), including the exact same Article 4 paragraph (1) replacement wording BOE's own history log quotes -- an independent confirmation of that specific amendment's current wording, elevating that one amendment layer to this corpus's stronger cross-checked tier. Overall article count (30) and decree/date (المرسوم الملكي رقم (م/56)، 24/10/1409هـ) are independently confirmed by BOE's own page metadata AND by every secondary source consulted (qistas.com, nezams.com, faculty.ksu.edu.sa, ar.wikipedia.org, qanoonsa.com).\n\nIMPLEMENTING/ANNEX MATERIAL NOT INGESTED: Article 9's own text references 'سلم رواتب أعضاء الهيئة المرفق بهذا النظام' (a pay-scale table annexed to this law) and Royal Decree M/31's own amending text additionally quotes a job-title equivalence table ('جدول معادلة وظائف الهيئة بوظائف القضاة') as a clause OUTSIDE Article 9's own quoted article text (introduced by 'ثانياً:' in the amending decree, not part of the quoted 'المادة التاسعة' restatement) -- neither annex/table is ingested as article text in this track, consistent with this corpus's established practice of not ingesting un-numbered annexed schedules.\n\nNo legal text is altered beyond whitespace/line-break normalization (collapsing runs of spaces/tabs to one space, collapsing 3+ blank lines to one, trimming line-edge whitespace) needed to render BOE's HTML as plain text. Arabic governs; no translation/paraphrase/interpretation performed on the Arabic text. Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "public_prosecution_law_m125_new_amendment_wave_not_in_task_brief",
+      "description": "This task's initial working summary listed only M/4, M/31, Royal Order A/240 (rename), and M/180 as this law's amending instruments. Direct primary-source research this pass (BOE via Wayback Machine, read in full) confirms a FIFTH-numbered-but-actually-second-chronologically instrument not in that summary: Royal Decree M/125 (14/9/1441H, c. 2020G), which amended Articles 1, 2, 3, 4, 10, 13, 16, 17, 26, 27 and REPEALED Articles 11 and 28 -- evidently the decree that formally carried Royal Order A/240's 2017 institutional rename (هيئة التحقيق والادعاء العام -> النيابة العامة, and direct-to-King reporting) into this statute's own numbered-article text. This is disclosed prominently here as a correction to the task brief, not silently absorbed."
+    },
+    {
+      "article_key": "public_prosecution_law_art_003_m125_wording_unconfirmed",
+      "description": "BOE's own per-article amendment-history log confirms Article 3 was amended by Royal Decree M/125 (14/9/1441H) but does not quote the resulting text on the page. nezams.com (the only independent secondary source reached this pass) does not mention Royal Decree M/125 anywhere in this law at all. This track therefore ingests the last FULLY verbatim-confirmed whole-article text for Article 3 -- the Royal Decree M/31 (13/4/1436H) restatement -- as 'text', flags current_wording_fully_confirmed=false, and explicitly discloses that the true post-1441H (and, by extension, current 2026) wording of Article 3 could not be confirmed this pass from any source reached, rather than reconstructing or guessing at it."
+    },
+    {
+      "article_key": "public_prosecution_law_art_004_m125_paras_2_3_wording_unconfirmed",
+      "description": "Article 4 was amended three times per BOE's own history log: Royal Decree M/31 (13/4/1436H, full restatement, quoted in full and used as 'text'), Royal Decree M/125 (14/9/1441H, confirmed to have amended this article but with NO quoted resulting text -- same gap pattern as Article 3), and Royal Decree M/180 (17/8/1446H / 16 Feb 2025G, which BOE's own text and an independent official-decree mirror on qanoonsa.com both confirm replaced ONLY paragraph (1) -- the council's composition -- with fully quoted, cross-verified text). This track's 'text' field for Article 4 is the M/31 (1436H) whole-article snapshot; the M/180 paragraph-1 replacement is preserved verbatim, confirmed, and flagged 'scope: PARAGRAPH_ONLY_NOT_WHOLE_ARTICLE' in its own history entry, but is deliberately NOT spliced into 'text' in place of the old paragraph 1, because doing so would require also guessing at paragraphs (2) and (3)'s own possibly-M/125-amended wording to produce a coherent whole-article text -- which this track declines to fabricate. Downstream users needing paragraph (1)'s current, confirmed wording should read the M/180 history entry directly rather than the top-level 'text' field for this article."
+    },
+    {
+      "article_key": "public_prosecution_law_art_016_m125_wording_wholly_unconfirmed",
+      "description": "Article 16 has exactly one recorded amendment in BOE's own history log -- Royal Decree M/125 (14/9/1441H) -- with NO quoted resulting text at all (the page states only 'عُدلت هذه المادة وذلك بموجب المرسوم الملكي رقم (م/125)...' with nothing further). nezams.com does not mention this amendment either. This means this track's ingested 'text' for Article 16 is the ORIGINAL 1409H wording only (identical to original_1409h_text), even though the article is legally known, with certainty, to have been amended since. legal_status_ar is set to معدلة (not اصلية) to reflect this known fact, current_wording_fully_confirmed=false, and this note is repeated here at the top level because this is the single largest confirmed content gap in this track: the actual current, governing wording of Article 16 could not be established this pass from any source reached, and the text stored under this key should NOT be relied upon as current law."
+    },
+    {
+      "article_key": "public_prosecution_law_a240_rename_order_not_a_boe_article_amendment",
+      "description": "Royal Order No. (أ/240) dated 22 Ramadan 1438H (17 June 2017G) renamed the body governed by this law from هيئة التحقيق والادعاء العام to النيابة العامة, per this task's own brief and corroborated by multiple secondary sources reached this pass (via WebSearch synthesis citing Saudi press coverage). This Royal Order's own full primary gazette text was NOT independently fetched/read this pass (only its number/date/effect, via secondary sources and internal consistency with BOE's later M/125 terminology-carrying amendments) -- it does not appear as a distinct per-article amendment entry in BOE's own history log for this law (expected, since a renaming Royal Order does not itself amend specific numbered articles; Royal Decree M/125, ~three years later, appears to be the instrument that carried the rename into this statute's own text). Documented here as confirmed historical/background context only, consistent with this corpus's nazaha_law precedent for predecessor/rename orders; not ingested as an article."
+    },
+    {
+      "article_key": "public_prosecution_law_no_formal_chapter_structure",
+      "description": "This law's BOE page supplies NO per-article باب/فصل (chapter/part) h3 headings interleaved with its 30 articles -- confirmed by inspecting every h3/h2/h4 element on the fetched page, which yields only the law's own title, decree metadata, and an informal 'نبذة عن النظام' (law summary) topic list ('إنشاء الهيئة وتشكيلها واختصاصها - أعضاء الهيئة والعاملون بها - تأديب أعضاء الهيئة - الأحكام العامة الخاصة بالهيئة - سلم وظائف ورواتب أعضاء الهيئة - لائحة أعضاء الهيئة والعاملين فيها - موظفو الهيئة من غير الأعضاء'), which is NOT tagged to specific article ranges anywhere on the page. Consistent with this corpus's anti_bribery_law precedent for a flat (non-subdivided) BOE article sequence, no chapter_structure field is asserted and section_ar is left empty ('') for every article in this track, rather than guessing at article-range boundaries for the seven informal topics listed above."
+    },
+    {
+      "article_key": "public_prosecution_law_annex_payscale_and_equivalence_table_not_ingested",
+      "description": "Article 9 references a pay-scale table ('سلم رواتب أعضاء الهيئة المرفق بهذا النظام') annexed to this law, and Royal Decree M/31's own amending text separately quotes a job-title/judiciary equivalence table (introduced by a 'ثانياً:' clause OUTSIDE Article 9's own quoted restatement) mapping هيئة job titles to judiciary ranks. Neither annexed table is ingested as article text in this track, consistent with this corpus's established practice of not ingesting un-numbered annexed schedules; their existence is disclosed here rather than silently dropped."
+    },
+    {
+      "article_key": "public_prosecution_law_boe_live_unreachable_wayback_single_snapshot",
+      "description": "laws.boe.gov.sa's live portal returned HTTP 503 (via the WebFetch tool) and a TLS/connection reset (via a direct curl attempt) for this exact law's URL this pass, so this track rests on a SINGLE Wayback Machine snapshot (20260215023949, 15 Feb 2026) rather than this corpus's stronger multi-snapshot byte-identical cross-check pattern (as used for, e.g., nazaha_law's triple-timepoint verification). No second, earlier Wayback snapshot of this exact law-detail URL was located this pass to independently confirm this snapshot's stability over time. This is disclosed as a real, if modest, gap relative to this corpus's strongest-tier tracks, partially offset by the strong independent nezams.com/qanoonsa.com secondary corroboration documented in verification_methodology_note."
+    }
+  ],
+  "amendment_history": [
+    {
+      "decree": "المرسوم الملكي رقم (م/56)",
+      "date_hijri": "24/10/1409",
+      "note": "الإصدار الأصلي (30 مادة) -- نظام هيئة التحقيق والادعاء العام، تصديقاً على قرار مجلس الوزراء رقم (140) وتاريخ 13/8/1409هـ. نُشر بتاريخ 20/11/1409هـ (23/06/1989م)."
+    },
+    {
+      "decree": "المرسوم الملكي رقم (م/4)",
+      "date_hijri": "5/1/1433",
+      "note": "عدّل المادة الأولى (استقلال ميزانية الهيئة عن ميزانية الوزارة، بآلية يتفق عليها ولي العهد ووزير المالية)."
+    },
+    {
+      "decree": "المرسوم الملكي رقم (م/31)",
+      "date_hijri": "13/4/1436",
+      "note": "أعاد صياغة المواد 2، 3، 4، 5، 9، 10، 12، 15، 24، 25، 26 (تشكيل الهيئة، اختصاصاتها، مجلس الهيئة، استقلال الأعضاء، المسميات الوظيفية وجدول المعادلة القضائية، التعيين، إنهاء الخدمة، مجلس/دائرة التأديب، العقوبات التأديبية، وتبليغ قرارات التأديب)."
+    },
+    {
+      "decree": "الأمر الملكي رقم (أ/240)",
+      "date_hijri": "22/9/1438",
+      "note": "غيّر مسمى الجهاز من (هيئة التحقيق والادعاء العام) إلى (النيابة العامة)، وجعله يرتبط تنظيمياً بالملك مباشرة -- أمر ملكي بإعادة التسمية والارتباط، لا يظهر كمدخل تعديل مستقل على مادة بعينها في سجل بوابة هيئة الخبراء لهذا النظام (خلفية موثقة، غير مُدرج كمادة)."
+    },
+    {
+      "decree": "المرسوم الملكي رقم (م/125)",
+      "date_hijri": "14/9/1441",
+      "note": "موجة تعديل ثانية واسعة -- لم تكن مدرجة في الملخص الأولي لهذه المهمة، واكتُشفت هذه الجولة مباشرة من سجل تعديلات المواد في بوابة هيئة الخبراء (BOE): عدّلت المواد 1، 2، 3، 4، 10، 13، 16، 17، 26، 27 (يبدو أنها المرسوم الذي نقل التسمية الجديدة للجهاز وارتباطه المباشر بالملك -بموجب الأمر الملكي أ/240- إلى نص النظام نفسه)، وألغت المادتين 11 و28 بالكامل. لا يتوفر نص مقتبس من BOE لنتيجة التعديل في المواد 3، 4 (الفقرتان 2 و3)، و16 -- انظر known_unresolved_discrepancies."
+    },
+    {
+      "decree": "المرسوم الملكي رقم (م/180)",
+      "date_hijri": "17/8/1446",
+      "note": "عدّل الفقرة (1) من المادة الرابعة فقط (إنشاء مجلس النيابة العامة وتشكيله)، بناءً على قرار مجلس الوزراء رقم (594) وتاريخ 12/8/1446هـ؛ نُشر في جريدة أم القرى العدد (5072) بتاريخ 21/2/2025م. نص التعديل مؤكَّد بشكل مستقل عبر مطابقته مع نسخة قانونسا الرسمية لنص المرسوم."
+    }
+  ],
+  "article_count": 30,
+  "status_counts": {
+    "اصلية": 12,
+    "معدلة": 16,
+    "ملغاة": 2,
+    "مضافة": 0
+  },
+  "articles": {
+    "public_prosecution_law_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "النيابة العامة جزء من السلطة القضائية، وتتمتع بالاستقلال التام، وترتبط تنظيمياً بالملك، وليس لأحد التدخل في أعمالها.\n\nويكون مقرها الرئيس في مدينة الرياض، وتنشئ الفروع اللازمة لها داخل مدينة المقر الرئيس أو خارجها",
+      "original_1409h_text": "تنشأ بموجب هذا النظام هيئة تسمى ( هيئة التحقيق والادعاء العام ) ترتبط بوزير الداخلية ويكون لها ميزانية ضمن ميزانية الوزارة .\n\nوتكون مدينة الرياض مقرها الرئيسي، وتنشأ الفروع اللازمة لها داخل المقر الرئيسي أو خارجه.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/4)",
+          "decreeDate": "1433-01-05",
+          "gregorianDecreeDate": null,
+          "text": "ويكون لها ميزانية ضمن ميزانية الوزارة"
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": "النيابة العامة جزء من السلطة القضائية، وتتمتع بالاستقلال التام، وترتبط تنظيمياً بالملك، وليس لأحد التدخل في أعمالها.\n\nويكون مقرها الرئيس في مدينة الرياض، وتنشئ الفروع اللازمة لها داخل مدينة المقر الرئيس أو خارجها"
+        }
+      ]
+    },
+    "public_prosecution_law_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تشكل النيابة العامة من: النائب العام، ووكيل النيابة العامة، وعدد كافٍ من الأعضاء",
+      "original_1409h_text": "تشكل الهيئة من رئيس ونائب أو أكثر، ومن عدد كاف من رؤساء الدوائر ووكلائهم ومن المحققين ومساعديهم.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "تشكل الهيئة من رئيس، ونائب رئيس – أو أكثر – ومن عدد كافٍ من الأعضاء"
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": "تشكل النيابة العامة من: النائب العام، ووكيل النيابة العامة، وعدد كافٍ من الأعضاء"
+        }
+      ]
+    },
+    "public_prosecution_law_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1 - تختص الهيئة - وفقاً للأنظمة وما تحدده اللائحة التنظيمية - بما يأتي :\n\nأ - التحقيق في الجرائم.\n\nب - التصرف في التحقق برفع الدعوى أو حفظها.\n\nج - الادعاء العام أمام الجهات القضائية.\n\nد - طلب استئناف الأحكام أو نقضها.\n\nهـ - الإشراف على تنفيذ الأحكام الجزائية.\n\nو - الرقابة والتفتيش على السجون ودور التوقيف وأي مكان تنفذ فيه أحكام جزائية، وتلقي شكاوى المسجونين والموقوفين، والتحقق من مشروعية سجنهم أو توقيفهم ومشروعية بقائهم في السجن أو دور التوقيف بعد انتهاء المدة، واتخاذ الإجراءات اللازمة لإطلاق سراح من سجن أو أوقف منهم دون سبب مشروع، وتطبيق ما تقضي به الأنظمة في حق المتسببين في ذلك.\n\nويجب إحاطة المشرف بما يبدو من ملحوظات في هذا الشأن، ويرفع تقرير له كل ستة أشهر عن حالة السجناء والموقوفين.\n\nز - أي اختصاص آخر يسند إليها بموجب الأنظمة، أو اللوائح الصادرة طبقاً لهذا النظام، أو قرارات مجلس الوزراء أو الأوامر السامية.\n2 - تحدد اللائحة التنظيمية كيفية ممارسة الهيئة لاختصاصاتها.\n\n3 - تحدد اللائحة التنظيمية الأحكام الانتقالية اللازمة لممارس الهيئة لاختصاصاتها.\n\n4 - يجوز بقرار من مجلس الوزراء إسناد التحقيق والادعاء العام إلى الهيئة في الجرائم التي تنص على إسنادها إلى جهات حكومية أخرى",
+      "original_1409h_text": "أولاً - تختص الهيئة وفقا للأنظمة وما تحدده اللائحة التنظيمية ، بما يلي:\nأ - التحقيق في الجرائم.\nب - التصرف في التحقيق برفع الدعوى أو حفظها طبقا لما تحدده اللوائح.\nج - الادعاء أمام الجهات القضائية وفقا للائحة التنظيمية .\nد - طلب تمييز الأحكام.\nهـ - الإشراف على تنفيذ الأحكام الجزائية.\nو - الرقابة والتفتيش على السجون ودور التوقيف وأي أماكن تنفذ فيها أحكام جزائية والقيام بالاستماع إلى شكاوى المسجونين والموقوفين والتحقق من مشروعية سجنهم أو توقيفهم ومشروعية بقائهم في السجن أو دور التوقيف بعد انتهاء المدة، واتخاذ الإجراءات اللازمة لإطلاق سراح من سجن أو أوقف منهم بدون سبب مشروع، وتطبيق ما تقضي به الأنظمة في حق المتسببين في ذلك، ويجب إحاطة وزير الداخلية بما يبدو من ملاحظات في هذا الشأن، ورفع تقرير له كل ستة أشهر عن حالة السجناء والموقوفين.\n\nز - أي اختصاصات أخرى تسند إليها بموجب الأنظمة أو اللوائح الصادرة طبقا لهذا النظام أو قرارات مجلس الوزراء أو الأوامر السامية.\nثانياً - تحدد اللائحة التنظيمية التي تصدر طبقا لهذا النظام، كيفية ممارسة الهيئة لاختصاصاتها كإجراء التحقيق، والادعاء وعلاقة المحققين بدوائر الأمن والإمارات، وترتيب العمل بين المحققين وهذه الجهات.\n\nثالثاً - تحدد اللائحة التنظيمية الأحكام الانتقالية اللازمة لممارسة الهيئة لاختصاصاتها.\n\nرابعاً - استثناء من حكم المادتين التاسعة عشرة والعشرين من نظام مجلس الوزراء ، يجوز بقرار من مجلس الوزراء إسناد التحقيق والادعاء إلى الهيئة في الجرائم التي تنص الأنظمة على إسناد التحقيق والادعاء فيها إلى جهات حكومية أخرى.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": false,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "1 - تختص الهيئة - وفقاً للأنظمة وما تحدده اللائحة التنظيمية - بما يأتي :\n\nأ - التحقيق في الجرائم.\n\nب - التصرف في التحقق برفع الدعوى أو حفظها.\n\nج - الادعاء العام أمام الجهات القضائية.\n\nد - طلب استئناف الأحكام أو نقضها.\n\nهـ - الإشراف على تنفيذ الأحكام الجزائية.\n\nو - الرقابة والتفتيش على السجون ودور التوقيف وأي مكان تنفذ فيه أحكام جزائية، وتلقي شكاوى المسجونين والموقوفين، والتحقق من مشروعية سجنهم أو توقيفهم ومشروعية بقائهم في السجن أو دور التوقيف بعد انتهاء المدة، واتخاذ الإجراءات اللازمة لإطلاق سراح من سجن أو أوقف منهم دون سبب مشروع، وتطبيق ما تقضي به الأنظمة في حق المتسببين في ذلك.\n\nويجب إحاطة المشرف بما يبدو من ملحوظات في هذا الشأن، ويرفع تقرير له كل ستة أشهر عن حالة السجناء والموقوفين.\n\nز - أي اختصاص آخر يسند إليها بموجب الأنظمة، أو اللوائح الصادرة طبقاً لهذا النظام، أو قرارات مجلس الوزراء أو الأوامر السامية.\n2 - تحدد اللائحة التنظيمية كيفية ممارسة الهيئة لاختصاصاتها.\n\n3 - تحدد اللائحة التنظيمية الأحكام الانتقالية اللازمة لممارس الهيئة لاختصاصاتها.\n\n4 - يجوز بقرار من مجلس الوزراء إسناد التحقيق والادعاء العام إلى الهيئة في الجرائم التي تنص على إسنادها إلى جهات حكومية أخرى"
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": null,
+          "note": "سجل تعديلات المادة في بوابة هيئة الخبراء (BOE) يفيد بأن هذه المادة عُدلت بموجب المرسوم الملكي رقم (م/125) وتاريخ 1441-09-14هـ، لكن الصفحة لا تتضمن اقتباساً للنص الناتج عن هذا التعديل (خلافاً لمعظم مدخلات التعديل الأخرى في هذا النظام)، ولم يتضمن nezams.com أي إشارة إلى هذا التعديل (م/125) على الإطلاق في أي مادة من مواد هذا النظام. تعذّر تأكيد النص الحالي الدقيق الناتج عن هذا التعديل من أي مصدر تم الاطلاع عليه في هذه الجولة."
+        }
+      ]
+    },
+    "public_prosecution_law_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1 - يؤلف مجلس يسمى (مجلس الهيئة) مكون من:\n\nأ - رئيس الهيئة (رئيساً).\n\nب - نائب رئيس الهيئة (نائباً للرئيس).\n\nج - خمسة من أعضاء الهيئة من مرتبة رئيس دائرة تحقيق وادعاء (ب) فما فوق.\nويعتمد المشرف تسمية نائب الرئيس والأعضاء الخمسة بناءً على اقتراح رئيس الهيئة.\n2 - ينعقد مجلس الهيئة برئاسة رئيسه أو نائبه، ولا يكون انعقاده صحيحاً إلا بحضور ستة أعضاء بمن فيهم رئيس الجلسة، وفي حالة غياب أحدهم بسبب نظر المجلس مسألة تتعلق به، أو له فيها مصلحة مباشرة، أو لغير ذلك من الأسباب، يحل محله من يرشحه المشرف بناءً على اقتراح رئيس الهيئة ممن تتوافر فيهم شروط عضوية مجلس الهيئة، وتصدر قرارات المجلس بالأغلبية المطلقة لأعضائه، وفي حالة التساوي يرجح الجانب الذي صوت معه رئيس الجلسة.\n\n3 - يختص مجلس الهيئة بالإضافة إلى الاختصاصات المبينة في هذا النظام ولوائحه بما يأتي:\n\nأ - تشكيل دائرة أو أكثر لمراجعة قرارات الاتهام في القضايا التي يُطلب فيها الحكم بعقوبة القتل، أو القطع، أو الرجم، أو القصاص في النفس أو فيما دونها، وأي قرار يحيله رئيس الهيئة إليها.\n\nوتشكل كل دائرة من ثلاثة أعضاء.\n\nب - دراسة الأمور المتعلقة بالتحقيق والادعاء بناءً على أمر المشرف، وما يحيله إليه رئيس الهيئة.\n\nج - إعداد التقرير السنوي للهيئة متضمناً ملحوظاته، ومقترحاته حول سير عملها، وما يراه بالنسبة إلى الأنظمة والإجراءات التي تطبقها، ويرفع ذلك إلى المشرف لرفعه إلى الملك متضمناً ما يراه في شأنه.",
+      "original_1409h_text": "أ - تؤلف لجنة تسمى: ( لجنة إدارة الهيئة ) مكونة من :\n\nرئيس الهيئة رئيساً\nنائب رئيس الهيئة ، وخمسة من أعضاء الهيئة من مرتبة وكيل رئيس دائرة تحقيق وادعاء (أ ) فما فوق يختارهم وزير الداخلية بناء على اقتراح رئيس الهيئة.\nب - تنعقد لجنة إدارة الهيئة برئاسة رئيس الهيئة أو نائبه، ولا يكون انعقادها صحيحا إلا بحضور ستة أعضاء بمن فيهم رئيس الجلسة. وفي حالة غياب أحدهم بسبب نظر اللجنة مسألة تتعلق به أو له فيها مصلحة مباشرة، أو لغير ذلك من الأسباب - يحل محله من يرشحه وزير الداخلية بناء على اقتراح رئيس الهيئة، ممن تتوفر فيه شروط عضوية لجنة إدارة الهيئة. وتصدر قرارات اللجنة بالأغلبية المطلقة لأعضائها.\n\nج - تختص لجنة إدارة الهيئة بالإضافة إلى الاختصاصات المبينة في هذا النظام ولوائحه، بما يلي:\n\n1 - مراجعة قرارات الاتهام في القضايا التي يطلب فيها توقيع عقوبة القتل، أو القطع، أو الرجم.\n2 - دراسة الأمور المتعلقة بالتحقيق والادعاء بناء على أمر وزير الداخلية .\n3 - إعداد التقرير السنوي للهيئة، متضمنا ملاحظاتها ومقترحاتها حول سير عملها، وما تراه بالنسبة للأنظمة والإجراءات التي تطبقها. وترفع ذلك إلى وزير الداخلية لرفعه إلى خادم الحرمين الشريفين متضمنا ما يراه بشأنه.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": false,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "1 - يؤلف مجلس يسمى (مجلس الهيئة) مكون من:\n\nأ - رئيس الهيئة (رئيساً).\n\nب - نائب رئيس الهيئة (نائباً للرئيس).\n\nج - خمسة من أعضاء الهيئة من مرتبة رئيس دائرة تحقيق وادعاء (ب) فما فوق.\nويعتمد المشرف تسمية نائب الرئيس والأعضاء الخمسة بناءً على اقتراح رئيس الهيئة.\n2 - ينعقد مجلس الهيئة برئاسة رئيسه أو نائبه، ولا يكون انعقاده صحيحاً إلا بحضور ستة أعضاء بمن فيهم رئيس الجلسة، وفي حالة غياب أحدهم بسبب نظر المجلس مسألة تتعلق به، أو له فيها مصلحة مباشرة، أو لغير ذلك من الأسباب، يحل محله من يرشحه المشرف بناءً على اقتراح رئيس الهيئة ممن تتوافر فيهم شروط عضوية مجلس الهيئة، وتصدر قرارات المجلس بالأغلبية المطلقة لأعضائه، وفي حالة التساوي يرجح الجانب الذي صوت معه رئيس الجلسة.\n\n3 - يختص مجلس الهيئة بالإضافة إلى الاختصاصات المبينة في هذا النظام ولوائحه بما يأتي:\n\nأ - تشكيل دائرة أو أكثر لمراجعة قرارات الاتهام في القضايا التي يُطلب فيها الحكم بعقوبة القتل، أو القطع، أو الرجم، أو القصاص في النفس أو فيما دونها، وأي قرار يحيله رئيس الهيئة إليها.\n\nوتشكل كل دائرة من ثلاثة أعضاء.\n\nب - دراسة الأمور المتعلقة بالتحقيق والادعاء بناءً على أمر المشرف، وما يحيله إليه رئيس الهيئة.\n\nج - إعداد التقرير السنوي للهيئة متضمناً ملحوظاته، ومقترحاته حول سير عملها، وما يراه بالنسبة إلى الأنظمة والإجراءات التي تطبقها، ويرفع ذلك إلى المشرف لرفعه إلى الملك متضمناً ما يراه في شأنه."
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": null,
+          "note": "سجل تعديلات المادة في بوابة هيئة الخبراء (BOE) يفيد بأن هذه المادة عُدلت بموجب المرسوم الملكي رقم (م/125) وتاريخ 1441-09-14هـ، لكن الصفحة لا تتضمن اقتباساً للنص الناتج عن هذا التعديل (خلافاً لمعظم مدخلات التعديل الأخرى في هذا النظام)، ولم يتضمن nezams.com أي إشارة إلى هذا التعديل (م/125) على الإطلاق في أي مادة من مواد هذا النظام. تعذّر تأكيد النص الحالي الدقيق الناتج عن هذا التعديل من أي مصدر تم الاطلاع عليه في هذه الجولة."
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/180)",
+          "decreeDate": "1446-08-17",
+          "gregorianDecreeDate": "2025-02-16",
+          "text": "1- يُنشأ مجلس يُسمى (مجلس النيابة العامة) ويكوَّن مما يأتي:\n\nأ- النائب العام\nرئيساً\n\nب- وكيل النيابة العامة.\nعضواً ونائباً للرئيس\n\nج- سبعة من أعضاء النيابة العامة لاتقل مرتبة\n\nأي منهم عن رئيس دائرة تحقيق وإدعاء (أ)\nأعضاءً\n\nد- اثنين من ذوي الخبرة والاختصاص\nعضوين\n\nويرشح النائب العام الأعضاء المنصوص عليهم في الفقرة الفرعية (ج)، وتكون تسمية الأعضاء المنصوص عليهم في الفقرتين الفرعيتين (ج) و(د) بأمر ملكي لمدة (أربع) سنوات قابلة للتجديد، وتحدد مكافآت أعضاء مجلس النيابة العامة ومزاياهم بأمر ملكي",
+          "scope": "PARAGRAPH_ONLY_NOT_WHOLE_ARTICLE",
+          "note": "هذا التعديل يقتصر على الفقرة المذكورة فقط من هذه المادة (بحسب نص المرسوم المذكور نفسه، والذي تم تأكيده بشكل مستقل عبر نسخة قانونسا الرسمية لنص المرسوم)، وليس استبدالاً كاملاً لنص المادة بأكملها؛ لذلك لم يُدرج هذا النص الجزئي في حقل 'text' الخاص بآخر لقطة كاملة موثقة للمادة، تفادياً لتركيب نص مُجمَّع لم يرد بهذه الصيغة في أي مصدر تم الاطلاع عليه."
+        }
+      ]
+    },
+    "public_prosecution_law_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون لعمل أعضاء الهيئة الصفة القضائية، ويتمتعون بالاستقلال التام، ولا يخضعون في عملهم إلا لأحكام الشريعة الإسلامية، والأنظمة المرعية، وليس لأحد التدخل في مجال عملهم.",
+      "original_1409h_text": "يتمتع أعضاء الهيئة بالاستقلال التام، ولا يخضعون في عملهم إلا لأحكام الشريعة الإسلامية والأنظمة المرعية، وليس لأحد التدخل في مجال عملهم.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "يكون لعمل أعضاء الهيئة الصفة القضائية، ويتمتعون بالاستقلال التام، ولا يخضعون في عملهم إلا لأحكام الشريعة الإسلامية، والأنظمة المرعية، وليس لأحد التدخل في مجال عملهم."
+        }
+      ]
+    },
+    "public_prosecution_law_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع عدم الإخلال بما يقتضيه هذا النظام من أحكام، يتمتع أعضاء الهيئة بالحقوق والضمانات المقررة في نظام الخدمة المدنية، ونظام التقاعد. ويلتزمون بما نص عليه نظام الخدمة المدنية من واجبات.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا يجوز لعضو الهيئة الجمع بين وظيفته ومزاولة التجارة أو أي مهنة أو عمل لا يتفق مع استقلال عمل الهيئة وكرامته. ويجوز للجنة إدارة الهيئة، أن تقرر منع عضو الهيئة من مباشرة أي عمل ترى أن القيام به يتعارض مع واجبات الوظيفة وحسن أدائها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا يجوز لأعضاء الهيئة إفشاء الأسرار التي يطلعون عليها بحكم عملهم، ولو بعد تركهم الخدمة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "1 - تكون أسماء وظائف أعضاء الهيئة كما يأتي :\n\n- ملازم تحقيق.\n\n- محقق (ج).\n\n- محقق (ب).\n\n- محقق (أ).\n\n- وكيل رئيس دائرة تحقيق وادعاء (ب).\n\n- وكيل رئيس دائرة تحقيق وادعاء (أ).\n\n- رئيس دائرة تحقيق وادعاء (ب).\n\n- رئيس دائرة تحقيق وادعاء (أ).\n\n- مدعي استئناف.\n\n- رئيس دوائر تحقيق وادعاء.\n2 - يعامل أعضاء الهيئة من حيث الرواتب والبدلات والمكافآت والمزايا معاملة نظرائهم في نظام القضاء، وذلك وفق جدول معادلة وظائف الهيئة بوظائف القضاة المعتمد نظاماً.",
+      "original_1409h_text": "تكون مسميات وظائف أعضاء الهيئة، كما يلي :\n\n- ملازم تحقيق .\n- مساعد محقق .\n- محقق ثان .\n- محقق أول .\n- وكيل رئيس دائرة تحقيق وادعاء ( ب ).\n- وكيل رئيس دائرة تحقيق وادعاء ( أ ).\n- رئيس دائرة تحقيق وادعاء ( ب ).\n- رئيس دائرة تحقيق وادعاء ( أ ).\n- نائب الرئيس.\nوتكون مرتبات أعضاء الهيئة وفقا لسلم رواتب أعضاء الهيئة المرفق بهذا النظام.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "1 - تكون أسماء وظائف أعضاء الهيئة كما يأتي :\n\n- ملازم تحقيق.\n\n- محقق (ج).\n\n- محقق (ب).\n\n- محقق (أ).\n\n- وكيل رئيس دائرة تحقيق وادعاء (ب).\n\n- وكيل رئيس دائرة تحقيق وادعاء (أ).\n\n- رئيس دائرة تحقيق وادعاء (ب).\n\n- رئيس دائرة تحقيق وادعاء (أ).\n\n- مدعي استئناف.\n\n- رئيس دوائر تحقيق وادعاء.\n2 - يعامل أعضاء الهيئة من حيث الرواتب والبدلات والمكافآت والمزايا معاملة نظرائهم في نظام القضاء، وذلك وفق جدول معادلة وظائف الهيئة بوظائف القضاة المعتمد نظاماً."
+        }
+      ]
+    },
+    "public_prosecution_law_art_010": {
+      "number_label_ar": "المادة العاشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يعين النائب العام بمرتبة وزير بأمر ملكي، ممن تتوافر فيه الشروط المطلوبة لشغل وظيفة رئيس دوائر تحقيق وادعاء على الأقل.\n\nوكون شغل وظائف أعضاء النيابة الأخرى ونقلهم إلى جهات أخرى بأمر ملكي، بناءً على قرار من مجلس النيابة العامة",
+      "original_1409h_text": "يعين رئيس الهيئة بالمرتبة الممتازة بأمر ملكي بناء على ترشيح من وزير الداخلية ، ممن تتوفر فيه الشروط المطلوبة لشغل وظيفة نائب رئيس على الأقل. ويتم شغل وظائف أعضاء الهيئة الأخرى، ونقلهم إلى جهات أخرى بأمر ملكي بناء على قرار من لجنة إدارة الهيئة وتوصية وزير الداخلية.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "يعين رئيس الهيئة بمرتبة وزير بأمر ملكي بناءً على ترشيح المشرف من تتوافر فيه الشروط المطلوبة لشغل وظيفة رئيس دوائر تحقيق وادعاء على الأقل.\n\nويكون شغل وظائف أعضاء الهيئة الأخرى ونقلهم إلى جهات أخرى بأمر ملكي، بناءً على قرار من مجلس الهيئة، وتوصية المشرف."
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": "يعين النائب العام بمرتبة وزير بأمر ملكي، ممن تتوافر فيه الشروط المطلوبة لشغل وظيفة رئيس دوائر تحقيق وادعاء على الأقل.\n\nوكون شغل وظائف أعضاء النيابة الأخرى ونقلهم إلى جهات أخرى بأمر ملكي، بناءً على قرار من مجلس النيابة العامة"
+        }
+      ]
+    },
+    "public_prosecution_law_art_011": {
+      "number_label_ar": "المادة الحادية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "مع مراعاة ما ورد في هذا النظام، يحدد مجلس الوزراء شروط شغل وظائف الهيئة، كما يحدد كيفية معاملة أعضائها، وغيرهم من العاملين فيها من حيث التعيين والترقية والنقل والندب والإعارة وتقويم الأداء الوظيفي والتفتيش، وجميع ما يتعلق بوضعهم الوظيفي.",
+      "original_1409h_text": "مع مراعاة ما ورد في هذا النظام، يحدد مجلس الوزراء شروط شغل وظائف الهيئة، كما يحدد كيفية معاملة أعضائها، وغيرهم من العاملين فيها من حيث التعيين والترقية والنقل والندب والإعارة وتقويم الأداء الوظيفي والتفتيش، وجميع ما يتعلق بوضعهم الوظيفي.",
+      "legal_status_ar": "ملغاة",
+      "structure_status_ar": "ملغاة",
+      "section_status_ar": "ملغاة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "ملغاة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": null,
+          "note": "أُلغيت هذه المادة بالكامل بموجب المرسوم الملكي رقم (م/125) وتاريخ 1441-09-14هـ (بحسب سجل تعديلات المادة في بوابة هيئة الخبراء BOE)؛ يُحتفظ هنا بالنص الأصلي (1409هـ) للمرجعية التاريخية فقط ولا يمثل نصاً سارياً."
+        }
+      ]
+    },
+    "public_prosecution_law_art_012": {
+      "number_label_ar": "المادة الثانية عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تنتهي خدمة عضو الهيئة بأحد الأسباب الآتية :\n\nأ - بلوغه سن الخامسة والستين، ولمجلس الهيئة تمديد خدمة العضو عند بلوغه هذه السن لمدة سنة واحدة قابلة للتجديد لمدد أخرى مماثلة على ألا تتجاوز في مجموعها خمس سنوات.\n\nب - وفاته.\n\nج - قبول استقالته.\n\nد - قبول طلبه الإحالة على التقاعد طبقاً لنظام التقاعد المدني.\n\nهـ - عدم صلاحيته أثناء فترة التجربة.\n\nو - عجزه عن مباشرة عمله بعد انقضاء الإجازة المرضية، أو أن يظهر في أي وقت أنه لا يستطيع لمرضه القيام بوظيفته على الوجه اللائق.\n\nز - حصوله على تقدير أقل من المتوسط في تقرير الكفاية ثلاث مرات متتالية.\n\nح - إنهاء خدمته لأسباب تأديبية",
+      "original_1409h_text": "تنتهي خدمة عضو الهيئة، بأحد الأسباب الآتية :\n\nأ - قبول الاستقالة.\nب - بلوغ سن الخامسة والستين.\nج - قبول طلب الإحالة على التقاعد، طبقا لنظام التقاعد.\nد - الإحالة على التقاعد، طبقا للمادة الخامسة والعشرين من هذا النظام.\nهـ - الحصول على تقدير أقل من المتوسط في تقرير الكفاية ثلاث مرات متوالية.\nو - فقد الثقة والاعتبار، اللذين تتطلبهما الوظيفة.\nز- العجز الصحي.\nح- عدم ثبوت صلاحية العضو خلال فترة التجربة.\nط - الوفاة.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "تنتهي خدمة عضو الهيئة بأحد الأسباب الآتية :\n\nأ - بلوغه سن الخامسة والستين، ولمجلس الهيئة تمديد خدمة العضو عند بلوغه هذه السن لمدة سنة واحدة قابلة للتجديد لمدد أخرى مماثلة على ألا تتجاوز في مجموعها خمس سنوات.\n\nب - وفاته.\n\nج - قبول استقالته.\n\nد - قبول طلبه الإحالة على التقاعد طبقاً لنظام التقاعد المدني.\n\nهـ - عدم صلاحيته أثناء فترة التجربة.\n\nو - عجزه عن مباشرة عمله بعد انقضاء الإجازة المرضية، أو أن يظهر في أي وقت أنه لا يستطيع لمرضه القيام بوظيفته على الوجه اللائق.\n\nز - حصوله على تقدير أقل من المتوسط في تقرير الكفاية ثلاث مرات متتالية.\n\nح - إنهاء خدمته لأسباب تأديبية"
+        }
+      ]
+    },
+    "public_prosecution_law_art_013": {
+      "number_label_ar": "المادة الثالثة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "في غير حالات الوفاة، وبلوغ السن النظامية، وعدم ثبوت صلاحية العضو خلال فترة التجربة؛ تنتهي خدمة عضو النيابة بأمر ملكي بناء على قرار من مجلس النيابة",
+      "original_1409h_text": "في غير حالات الوفاة وبلوغ السن النظامية وعدم ثبوت صلاحية العضو خلال فترة التجربة، تنتهي خدمة عضو الهيئة بأمر ملكي بناء على قرار من لجنة إدارة الهيئة وطلب وزير الداخلية.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": "في غير حالات الوفاة، وبلوغ السن النظامية، وعدم ثبوت صلاحية العضو خلال فترة التجربة؛ تنتهي خدمة عضو النيابة بأمر ملكي بناء على قرار من مجلس النيابة"
+        }
+      ]
+    },
+    "public_prosecution_law_art_014": {
+      "number_label_ar": "المادة الرابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لا تجوز محاكمة أعضاء الهيئة، إلا وفق الشروط والقواعد الخاصة بتأديبهم.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_015": {
+      "number_label_ar": "المادة الخامسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يكون تأديب أعضاء الهيئة من اختصاص دائرة (مجلس التأديب) تشكل في مجلس الهيئة من ثلاثة أعضاء يصدر بتسميتهم قرار من رئيس الهيئة، وتصدر قراراتها بالأغلبية، ولا تكون نهائية إلا بعد موافقة مجلس الهيئة عليها",
+      "original_1409h_text": "تأديب أعضاء الهيئة يكون من اختصاص لجنة إدارة الهيئة، بوصفها مجلس تأديب. وإذا كان العضو المقدم إلى المحاكمة عضوا فيها، فيندب رئيس الهيئة من يراه - من مرتبة رئيس دائرة تحقيق وادعاء ( أ ) - ليحل محله، ولا يمنع من الجلوس في مجلس التأديب سبق الاشتراك في طلب إحالة المتهم إلى التقاعد أو طلب رفع الدعوى التأديبية ضده.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "يكون تأديب أعضاء الهيئة من اختصاص دائرة (مجلس التأديب) تشكل في مجلس الهيئة من ثلاثة أعضاء يصدر بتسميتهم قرار من رئيس الهيئة، وتصدر قراراتها بالأغلبية، ولا تكون نهائية إلا بعد موافقة مجلس الهيئة عليها"
+        }
+      ]
+    },
+    "public_prosecution_law_art_016": {
+      "number_label_ar": "المادة السادسة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "لرئيس دائرة أو دوائر التحقيق والادعاء حق تنبيه المحققين التابعين لها إلى ما يقع منهم مخالفا لواجباتهم أو مقتضيات وظائفهم، بعد سماع أقوالهم. ويكون التنبيه مشافهة أو كتابة، وفي الحالة الأخيرة تبلغ صورة منه إلى وزير الداخلية من رئيس الهيئة. وللمحقق حق الاعتراض على ذلك خلال خمسة عشر يوما من تاريخ إعلانه به بطلب إجراء تحقيق عن الواقعة التي كانت سببا للتنبيه، وتؤلف لهذا الغرض لجنة من: رئيس الهيئة ووكيل رئيس دائرة تحقيق وادعاء ( أ )، أو من: نائب رئيس الهيئة ووكيل رئيس دائرة تحقيق وادعاء ( ب )، ولهذه اللجنة - بعد سماع أقوال المحقق المعترض - أن تعهد إلى أحد أعضائها بإجراء التحقيق إن وجدت وجها لذلك، ولها أن تؤيد التنبيه أو أن تعتبره كأن لم يكن، وتبلغ قرارها إلى وزير الداخلية . وإذا تكررت المخالفة أو استمرت - بعد تأييد التنبيه من قبل اللجنة - رفعت الدعوى التأديبية.",
+      "original_1409h_text": "لرئيس دائرة أو دوائر التحقيق والادعاء حق تنبيه المحققين التابعين لها إلى ما يقع منهم مخالفا لواجباتهم أو مقتضيات وظائفهم، بعد سماع أقوالهم. ويكون التنبيه مشافهة أو كتابة، وفي الحالة الأخيرة تبلغ صورة منه إلى وزير الداخلية من رئيس الهيئة. وللمحقق حق الاعتراض على ذلك خلال خمسة عشر يوما من تاريخ إعلانه به بطلب إجراء تحقيق عن الواقعة التي كانت سببا للتنبيه، وتؤلف لهذا الغرض لجنة من: رئيس الهيئة ووكيل رئيس دائرة تحقيق وادعاء ( أ )، أو من: نائب رئيس الهيئة ووكيل رئيس دائرة تحقيق وادعاء ( ب )، ولهذه اللجنة - بعد سماع أقوال المحقق المعترض - أن تعهد إلى أحد أعضائها بإجراء التحقيق إن وجدت وجها لذلك، ولها أن تؤيد التنبيه أو أن تعتبره كأن لم يكن، وتبلغ قرارها إلى وزير الداخلية . وإذا تكررت المخالفة أو استمرت - بعد تأييد التنبيه من قبل اللجنة - رفعت الدعوى التأديبية.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": false,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": null,
+          "note": "سجل تعديلات المادة في بوابة هيئة الخبراء (BOE) يفيد بأن هذه المادة عُدلت بموجب المرسوم الملكي رقم (م/125) وتاريخ 1441-09-14هـ، لكن الصفحة لا تتضمن اقتباساً للنص الناتج عن هذا التعديل (خلافاً لمعظم مدخلات التعديل الأخرى في هذا النظام)، ولم يتضمن nezams.com أي إشارة إلى هذا التعديل (م/125) على الإطلاق في أي مادة من مواد هذا النظام. تعذّر تأكيد النص الحالي الدقيق الناتج عن هذا التعديل من أي مصدر تم الاطلاع عليه في هذه الجولة."
+        }
+      ]
+    },
+    "public_prosecution_law_art_017": {
+      "number_label_ar": "المادة السابعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يرفع رئيس دائرة التفتيش – أو من ينبيه – الدعوى التأديبية بناء على طلب من النائب العام، ولا تقام هذه الدعوى إلا بناء على تحقيق يتولاه أحد أعضاء النيابة العامة الذي يندبه مجلس النيابة العامة. ويشترط في عضو النيابة العامة الذي يندب للتحقيق أن يكون في مرتبة أعلى من مرتبة العضو المحقق معه أو سابقاً له في الأقدمية إن كانا في مرتبة واحدة",
+      "original_1409h_text": "ترفع الدعوى التأديبية بأمر من وزير الداخلية بناء على اقتراح رئيس الهيئة، ولا تقام هذه الدعوى إلا بناء على تحقيق يتولاه أحد أعضاء الهيئة الذي يندبه وزير الداخلية بناء على اقتراح رئيس الهيئة، ويشترط في عضو الهيئة الذي يندب للتحقيق أن يكون في مرتبة أعلى من مرتبة العضو المحقق معه أو سابقا له في الأقدمية إن كانا في مرتبة واحدة.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": "يرفع رئيس دائرة التفتيش – أو من ينبيه – الدعوى التأديبية بناء على طلب من النائب العام، ولا تقام هذه الدعوى إلا بناء على تحقيق يتولاه أحد أعضاء النيابة العامة الذي يندبه مجلس النيابة العامة. ويشترط في عضو النيابة العامة الذي يندب للتحقيق أن يكون في مرتبة أعلى من مرتبة العضو المحقق معه أو سابقاً له في الأقدمية إن كانا في مرتبة واحدة"
+        }
+      ]
+    },
+    "public_prosecution_law_art_018": {
+      "number_label_ar": "المادة الثامنة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ترفع الدعوى التأديبية بمذكرة تشتمل على التهمة الموجهة والأدلة المؤيدة لها، وتقدم إلى مجلس التأديب ليصدر قراره، بدعوة المتهم بالحضور أمام المجلس.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_019": {
+      "number_label_ar": "المادة التاسعة عشرة",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "في حالات التلبس بالجريمة يجب عند القبض على عضو الهيئة وحبسه أن يرفع الأمر إلى لجنة إدارة الهيئة في مدة الأربع والعشرين ساعة التالية، وللجنة أن تقرر استمرار الحبس أو الإفراج بكفالة أو بغير كفالة، ولعضو الهيئة أن يطلب سماع أقواله أمام اللجنة عند عرض الأمر عليها. وتحدد اللجنة مدة الحبس في القرار الذي يصدر بالحبس أو باستمراره، وتراعى الإجراءات السالفة الذكر كلما رئي استمرار الحبس الاحتياطي بعد انقضاء المدة التي قررها المجلس. وفيما عدا ما ذكر لا يجوز القبض على عضو الهيئة أو اتخاذ أي إجراء من إجراءات التحقيق معه أو رفع الدعوى الجزائية عليه، إلا بإذن من اللجنة المذكورة. ويتم حبس أعضاء الهيئة وتنفيذ العقوبات المقيدة للحرية عليهم في أماكن مستقلة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_020": {
+      "number_label_ar": "المادة العشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجوز لمجلس التأديب أن يجري ما يراه لازما من التحقيقات، وله أن يندب أحد أعضائه للقيام بذلك، فإذا رأى مجلس التأديب وجها للسير في إجراءات المحاكمة عن جميع التهم المنسوبة أو بعضها كلف المتهم بالحضور في وقت كاف، ويجب أن يشتمل التكليف بالحضور على بيان كاف لموضوع الدعوى وأدلة الاتهام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_021": {
+      "number_label_ar": "المادة الحادية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجوز لمجلس التأديب عند تقرير السير في إجراءات المحاكمة أن يأمر بوقف المتهم عن مباشرة أعمال وظيفته، وللمجلس في كل وقت أن يعيد النظر في أمر الوقف.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_022": {
+      "number_label_ar": "المادة الثانية والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تنقضي الدعوى التأديبية باستقالة عضو الهيئة، ولا تأثير للدعوى التأديبية على الدعوى الجزائية أو المدنية الناشئة عن الواقعة نفسها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_023": {
+      "number_label_ar": "المادة الثالثة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "تكون جلسات مجلس التأديب سرية، ويحكم مجلس التأديب بعد سماع دفاع عضو الهيئة المرفوعة عليه الدعوى الذي له أن يقدم دفاعه كتابة، وأن ينيب في الدفاع عنه أحد أعضاء الهيئة، وللمجلس دائما الحق في طلب حضوره بشخصه، وإذا لم يحضر ولم ينب أحدا، جاز الحكم في غيبته بعد التحقق من صحة دعوته.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_024": {
+      "number_label_ar": "المادة الرابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يجب أن يشتمل الحكم في الدعوى التأديبية على الأسباب التي بُني عليها، وأن تتلى أسبابه عند النطق به في جلسة سرية.",
+      "original_1409h_text": "يجب أن يشتمل الحكم في الدعوى التأديبية على الأسباب التي بني عليها، وأن تتلى أسبابه عند النطق به في جلسة سرية، وتكون أحكام مجلس التأديب نهائية غير قابلة للطعن.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "يجب أن يشتمل الحكم في الدعوى التأديبية على الأسباب التي بُني عليها، وأن تتلى أسبابه عند النطق به في جلسة سرية."
+        }
+      ]
+    },
+    "public_prosecution_law_art_025": {
+      "number_label_ar": "المادة الخامسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "العقوبات التأديبية التي يجوز توقيعها على عضو الهيئة هي : اللوم، وإنهاء الخدمة.",
+      "original_1409h_text": "العقوبات التأديبية التي يجوز توقيعها على عضو الهيئة، هي : اللوم، والإحالة على التقاعد.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "العقوبات التأديبية التي يجوز توقيعها على عضو الهيئة هي : اللوم، وإنهاء الخدمة."
+        }
+      ]
+    },
+    "public_prosecution_law_art_026": {
+      "number_label_ar": "المادة السادسة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ترفع قرارات مجلس التأديب إلى مجلس النيابة العامة؛ للنظر فيها ، ويصدر أمر ملكي بتنفيذ عقوبة إنهاء الخدمة، وقرار من النائب العام بتنفيذ عقوبة اللوم",
+      "original_1409h_text": "تبلغ قرارات مجلس التأديب إلى وزير الداخلية ، ويصدر أمر ملكي بتنفيذ عقوبة الإحالة على التقاعد، وقرار من وزير الداخلية بناء على توصية رئيس الهيئة بتنفيذ عقوبة اللوم.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/31)",
+          "decreeDate": "1436-04-13",
+          "gregorianDecreeDate": null,
+          "text": "تبلغ قرارات مجلس التأديب إلى المشرف، ويصدر أمر ملكي بتنفيذ عقوبة إنهاء الخدمة، وقرار من المشرف بتنفيذ عقوبة اللوم بناءً على توصية رئيس الهيئة."
+        },
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": "ترفع قرارات مجلس التأديب إلى مجلس النيابة العامة؛ للنظر فيها ، ويصدر أمر ملكي بتنفيذ عقوبة إنهاء الخدمة، وقرار من النائب العام بتنفيذ عقوبة اللوم"
+        }
+      ]
+    },
+    "public_prosecution_law_art_027": {
+      "number_label_ar": "المادة السابعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "دون إخلال بالأحكام المنصوص عليها في هذا النظام، يتولى النائب العام الإشراف الإداري والمالي على النيابة العامة، وله صلاحيات الوزير بالنسبة إلى موظفي النيابة ومستخدميها، وهو المرجع فيما يصدر من النيابة في هذا الشأن إلى جميع الوزارات والجهات الأخرى",
+      "original_1409h_text": "مع عدم الإخلال بالأحكام المنصوص عليها في هذا النظام ولوائحه، يتولى وزير الداخلية الإشراف على الهيئة، ويتخذ الإجراءات والتدابير، أو يتقدم إلى الجهات المختصة بما يراه من المقترحات أو المشروعات التي من شأنها ضمان المستوى اللائق بالتحقيق والادعاء. كما يتولى رئيس الهيئة الإشراف على جميع إدارات الهيئة ودوائر التحقيق والادعاء فيها، وجميع المحققين والعاملين بها.",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
+      "section_status_ar": "معدلة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "معدلة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": "دون إخلال بالأحكام المنصوص عليها في هذا النظام، يتولى النائب العام الإشراف الإداري والمالي على النيابة العامة، وله صلاحيات الوزير بالنسبة إلى موظفي النيابة ومستخدميها، وهو المرجع فيما يصدر من النيابة في هذا الشأن إلى جميع الوزارات والجهات الأخرى"
+        }
+      ]
+    },
+    "public_prosecution_law_art_028": {
+      "number_label_ar": "المادة الثامنة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يصدر مجلس الوزراء اللائحة التنظيمية اللازمة لهذا النظام بناء على اقتراح وزير الداخلية ، وتحدد هذه اللائحة الحالات التي لا يجوز لعضو الهيئة مباشرتها أو تحقيقها وتحضيرها أو إصدار قرار فيها، كما تحدد مجالات الأخذ بالخبرة في نطاق عمل الهيئة وحقوق الخبراء وواجباتهم وطريقة تأديبهم.",
+      "original_1409h_text": "يصدر مجلس الوزراء اللائحة التنظيمية اللازمة لهذا النظام بناء على اقتراح وزير الداخلية ، وتحدد هذه اللائحة الحالات التي لا يجوز لعضو الهيئة مباشرتها أو تحقيقها وتحضيرها أو إصدار قرار فيها، كما تحدد مجالات الأخذ بالخبرة في نطاق عمل الهيئة وحقوق الخبراء وواجباتهم وطريقة تأديبهم.",
+      "legal_status_ar": "ملغاة",
+      "structure_status_ar": "ملغاة",
+      "section_status_ar": "ملغاة",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": [
+        {
+          "legalStatusName": "ملغاة",
+          "decree": "المرسوم الملكي رقم (م/125)",
+          "decreeDate": "1441-09-14",
+          "gregorianDecreeDate": null,
+          "text": null,
+          "note": "أُلغيت هذه المادة بالكامل بموجب المرسوم الملكي رقم (م/125) وتاريخ 1441-09-14هـ (بحسب سجل تعديلات المادة في بوابة هيئة الخبراء BOE)؛ يُحتفظ هنا بالنص الأصلي (1409هـ) للمرجعية التاريخية فقط ولا يمثل نصاً سارياً."
+        }
+      ]
+    },
+    "public_prosecution_law_art_029": {
+      "number_label_ar": "المادة التاسعة والعشرون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "يلغي هذا النظام ما يتعارض معه من أحكام.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    },
+    "public_prosecution_law_art_030": {
+      "number_label_ar": "المادة الثلاثون",
+      "is_mukarrar": false,
+      "section_ar": "",
+      "text": "ينشر هذا النظام في الجريدة الرسمية، ويعمل به من تاريخ نشره .",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "BOE_WAYBACK_PRIMARY_ARCHIVE_SINGLE_SNAPSHOT_X_NEZAMS_HTML_BYTE_CROSSCHECK_X_QANOONSA_OFFICIAL_DECREE_MIRROR_LIVE_BOE_UNREACHABLE",
+      "current_wording_fully_confirmed": true,
+      "history": []
+    }
+  }
+}

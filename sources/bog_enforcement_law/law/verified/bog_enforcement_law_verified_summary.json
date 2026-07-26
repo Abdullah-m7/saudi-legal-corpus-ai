@@ -1,0 +1,95 @@
+{
+  "law_key": "bog_enforcement_law",
+  "layer": "BOG_ENFORCEMENT_LAW_ARABIC_VERIFIED_TEXT",
+  "record_count": 37,
+  "official_text_status": "NEZAMS_FULLTEXT_SINGLE_AGGREGATOR_X_UQN_GAZETTE_DECREE_METADATA_X_WEBSEARCH_PARTIAL_VERBATIM_CROSSCHECK_X_MUHAMAPP_STRUCTURAL_PARTIAL_LIVE_BOE_UNREACHABLE_WAYBACK_CONTENT_BLOCKED_BY_SANDBOX_EGRESS",
+  "status_counts": {
+    "اصلية": 37,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "المرسوم الملكي رقم (م/15)",
+  "decree_date_hijri": "27/1/1443",
+  "consolidated_amended_law": false,
+  "amendment_history": [
+    {
+      "decree": "المرسوم الملكي رقم (م/15)",
+      "date_hijri": "27/1/1443",
+      "note": "الإصدار الأصلي والوحيد المُثبت نصه في هذا المسار (37 مادة، خمسة أبواب) -- تصديقاً على نظام التنفيذ أمام ديوان المظالم بموجب قرار مجلس الوزراء رقم (73) وتاريخ 23/1/1443هـ، ونشر في جريدة أم القرى بتاريخ 3/2/1443هـ. حدد مجلس القضاء الإداري تاريخ العمل بالنظام اعتباراً من 4/2/1445هـ بموجب قراره رقم (16/1444/12) وتاريخ 16/12/1444هـ. بحسب nezams.com (المصدر الثانوي الوحيد المتاح هذه الجولة؛ بوابة هيئة الخبراء (BOE) غير متاحة، وأرشيف Wayback محجوب على مستوى المحتوى في هذه البيئة)، لم يطرأ أي تعديل على مستوى المادة حتى الآن (37 مادة، جميعها بحالة 'اصلية'، دون أي علامة 'معدلة' أو 'ملغاة'). لائحته التنفيذية عُدِّلت مرة واحدة على الأقل (مادة 5/17) لكنها غير مضمنة في هذا المسار."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "label_ar": "الباب الأول",
+      "title_ar": "أحكام عامة",
+      "articles": "1-5"
+    },
+    {
+      "label_ar": "الباب الثاني",
+      "title_ar": "إجراءات التنفيذ",
+      "articles": null,
+      "sections": [
+        {
+          "label_ar": "الفصل الأول",
+          "title_ar": "رفع طلب التنفيذ وقيده",
+          "articles": "6-9"
+        },
+        {
+          "label_ar": "الفصل الثاني",
+          "title_ar": "التنفيذ ضد الجهات الإدارية",
+          "articles": "10-15"
+        },
+        {
+          "label_ar": "الفصل الثالث",
+          "title_ar": "التنفيذ لصالح الجهات الإدارية",
+          "articles": "16-19"
+        },
+        {
+          "label_ar": "الفصل الرابع",
+          "title_ar": "إجراءات التنفيذ ضد الجهات الإدارية ولصالحها",
+          "articles": "20-24"
+        }
+      ]
+    },
+    {
+      "label_ar": "الباب الثالث",
+      "title_ar": "منازعات التنفيذ والدعاوى الناشئة عنه",
+      "articles": "25-29"
+    },
+    {
+      "label_ar": "الباب الرابع",
+      "title_ar": "الجرائم والعقوبات",
+      "articles": "30-33"
+    },
+    {
+      "label_ar": "الباب الخامس",
+      "title_ar": "أحكام ختامية",
+      "articles": "34-37"
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE ACCESS: laws.boe.gov.sa's LIVE portal was unreachable this pass\n(direct WebFetch requests to https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/ae1d79bf-3716-4bc5-a85e-ada100c8a870/1\nand to the /Viewer/ and /SearchDetails/ variants of the same law ID all returned\nHTTP 503 Service Unavailable on two separate attempts; direct curl to the same\nhost also failed at the TLS/connection layer). archive.org/wayback/available\nconfirmed exactly ONE Wayback Machine snapshot of the exact BOE LawDetails page\n(timestamp 20260215011202, ~15 Feb 2026 -- roughly 5 months before this pass),\nbut this sandbox's egress policy blocks fetching actual web.archive.org page\nCONTENT (both the WebFetch tool and direct curl to web.archive.org/web/... were\nrefused with \"Blocked by egress policy\" / an explicit tool-level domain block;\nonly the lightweight archive.org/wayback/available lookup API -- which returns\nJSON metadata, not page content -- was reachable). No CDX wildcard queries were\nreachable either. As a result this track could NOT obtain BOE-direct or\nWayback-mirrored full text this pass -- a materially lower verification tier\nthan this corpus's BOE-Wayback-based tracks (e.g. nazaha).\n\nPRIMARY FULL-TEXT SOURCE USED: nezams.com, a Saudi legal-database aggregator,\nfetched by direct curl (200 OK, 411602 bytes). Its \"تفاصيل النظام\" metadata\ntable gives: تاريخ النظام 1443/01/27هـ; الاعتماد -- المرسوم الملكي رقم (م/15)\nبتاريخ 27/1/1443هـ + قرار مجلس الوزراء رقم (73) بتاريخ 23/1/1443هـ; تاريخ النشر\n1443/02/03هـ; النفاذ ساري; التعديلات \"لم يجرى عليه تعديل\" (no amendment made,\nas of the page's own last-modified timestamp 2021-09-17). The page's HTML\nstructure exposes 37 <li class=\"subject\" id=\"subject-N\"> blocks (N=1..37), each\nwith an <h4> canonical article-number heading and a .content div holding the\nverbatim article body -- parsed programmatically (regex extraction over the raw\nHTML), not summarized by a model. The page ALSO reproduces the full enacting\nRoyal Decree preamble (بعون الله تعالى ... رسمنا بما هو آت: ...) and the\nunderlying Council of Ministers Resolution No. (73) preamble verbatim, both\ncaptured in this record's preamble_ar / issuing_authority_ar fields.\n\nCROSS-VERIFICATION (secondary, partial -- single full-text aggregator only,\nno independent second full-text mirror this pass):\n1. Umm Al-Qura official gazette detail page (uqn.gov.sa/details?p=18245)\n   independently confirms decree number/date (م/15, 27/1/1443هـ), CoM\n   Resolution number/date (73, 23/1/1443هـ), and gazette publication date\n   (3/2/1443هـ) -- official primary metadata, though that summary page does\n   not reproduce article-level text.\n2. A WebSearch query independently returned a verbatim quote of Article 37's\n   full text (\"يصدر المجلس اللائحة خلال (ثلاثين) يوماً من تاريخ العمل بالنظام،\n   على أن تنشر في الجريدة الرسمية، ويعمل بها بعد نشرها.\") matching this\n   record's Article 37 text exactly, character for character -- one full\n   article independently corroborated outside the nezams.com fetch.\n3. muhamapp.com (a Saudi legal-explainer blog, fetched independently) discusses\n   and paraphrases Articles 2, 4-8, 11-14, 16-17, 20-22, 24-29, 31, and 33;\n   spot-checking found no contradiction with this record's text for any of\n   those articles.\n4. An initial WebSearch AI-generated summary -- drawing on laws.boe.gov.sa's\n   own SearchDetails listing page for this exact law ID -- independently\n   reproduced the same topic/chapter breakdown as nezams.com's own باب/فصل\n   headings (تعريفات؛ إنشاء محكمة أو أكثر؛ التنفيذ الجبري؛ الاعتراض؛ رفع طلب\n   التنفيذ وقيده؛ التنفيذ ضد الجهات الإدارية؛ التنفيذ لصالح الجهات الإدارية؛\n   إجراءات التنفيذ؛ منازعات التنفيذ؛ الجرائم والعقوبات؛ أحكام ختامية) --\n   structural cross-check against BOE's own page, not merely nezams.com.\n5. The implementation/effective-date decision (Administrative Judiciary\n   Council Decision No. 16/1444/12, dated 16/12/1444هـ, setting the law's\n   effective date at 4/2/1445هـ) was independently corroborated by two\n   separate fetches (a WebSearch snippet and a direct WebFetch of\n   qanoonsa.com/p/499110/), both agreeing verbatim on the decision number,\n   date, and effective date -- supporting confidence in this track's\n   surrounding decree metadata generally.\n\nVERIFICATION TIER (honest characterization): this track rests on ONE full-text\nsecondary aggregator (nezams.com) -- not BOE-direct and not a Wayback mirror --\ncorroborated only partially: one article confirmed fully verbatim independently\n(Art. 37), the overall chapter/topic structure confirmed independently via BOE's\nown SearchDetails summary, official decree/gazette metadata confirmed via the\nUmm Al-Qura gazette page, and ~20 of 37 articles' substance spot-checked without\ncontradiction via a legal-explainer blog. This is NOT a dual-independent-mirror,\nbyte-identical tier (contrast the nazaha track's BOE-Wayback-x-FAOLEX tier).\nFlagged in known_unresolved_discrepancies as bog_enforcement_single_aggregator_tier\nfor a follow-up pass once laws.boe.gov.sa or a Wayback snapshot becomes fetchable.\n\nAMENDMENT STATUS: no search result surfaced any repeal/amendment decree\ntargeting this LAW's own 37 articles; nezams.com's own metadata states\n\"لم يجرى عليه تعديل\" (unamended). By contrast, this law's OWN implementing\nregulation (اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم) has been\namended at least once: Administrative Judiciary Council Decision No.\n(19/1446/عاشراً) dated 29/12/1446هـ amended Regulation Article (5/17) --\na regulation-level amendment, out of scope for this base-law track (the\nregulation itself is not ingested this pass; see known_unresolved_discrepancies).\n\nSOURCE-TYPO CORRECTION (disclosed, not silent): nezams.com's own <h4> heading\nfor Article 35 read \"المادة الخامسة الثلاثون\" (missing the conjunction و),\ninconsistent with the grammatical pattern of every other similarly-formed\nordinal in this law (Arts. 31-34, 36-37 all read \"... والثلاثون\") and\ncontradicted by an independent WebSearch snippet quoting \"المادة الخامسة\nوالثلاثون\" verbatim for the same article body. This track's number_label_ar\nfor bog_tnf_art_035 is corrected to \"المادة الخامسة والثلاثون\" -- a\nheading-typo fix only, NOT a legal-text change (the article body text itself\nwas identical and uncontested across sources). Flagged as\nbog_enforcement_art035_label_typo_corrected.\n\nCRITICAL CROSS-TRACK / DISTINCTNESS FINDING: this law (نظام التنفيذ أمام ديوان\nالمظالم, M/15, 27/1/1443هـ, 37 articles, Board of Grievances / administrative\njudiciary enforcement) is CONFIRMED DISTINCT from this corpus's already-ingested\nenforcement_law track (نظام التنفيذ, M/53, 13/8/1433هـ, 98 articles, ordinary\njudiciary / قاضي التنفيذ في المحاكم العامة). The distinction is not merely\ninferred -- it is legislated explicitly: Royal Decree M/15's own clause ثالثاً\ncarves out an express exception from clause ثانياً of M/53's enacting decree,\ndirecting that execution circuits newly formed under M/15 (not M/53) shall\nhandle enforcement of quasi-judicial committees' decisions/orders to which an\nadministrative entity is a party. M/15 Art. 18 and Art. 36 separately\ncross-reference \"نظام التنفيذ\" (i.e. M/53) as a residual-procedure fallback\nfor matters M/15 does not address -- treating it throughout as a distinct,\nseparate statute. These are two genuinely different, complementary enforcement\nstatutes, not duplicate citations of one law.\n\nUNRELATED BUT MATERIAL SIDE-FINDING (out of scope, flagged for awareness only):\nduring this research a Council of Ministers Resolution No. (746), approving an\nentirely NEW ordinary \"نظام التنفيذ\" (65 articles, replacing M/53) was found --\npublished in Umm Al-Qura on 1 May 2026, with a stated effective date ~180 days\nlater (~28 Oct 2026, i.e. NOT YET in force as of this pass, 26 Jul 2026). This\nwould eventually make this corpus's existing enforcement_law track (M/53)\nobsolete once the new law takes effect. This is entirely OUT OF SCOPE for the\npresent bog_enforcement_law track and was NOT further investigated or acted on;\nflagged only so a dedicated future pass can address the enforcement_law track's\nlooming supersession. See bog_enforcement_crossref_new_ordinary_enforcement_law_2026.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "bog_enforcement_single_aggregator_tier",
+      "description": "This track's full text rests on a single secondary aggregator (nezams.com), not BOE-direct and not a Wayback mirror -- laws.boe.gov.sa's live portal returned HTTP 503 on two separate attempts this pass, and this sandbox's egress policy blocks fetching actual web.archive.org page content (only the lightweight availability-lookup API was reachable, confirming one snapshot exists at timestamp 20260215011202 but its content could not be retrieved this pass). Partial cross-verification was obtained: Article 37 confirmed fully verbatim via an independent WebSearch snippet; the overall chapter/topic structure confirmed via BOE's own SearchDetails summary; official decree/gazette metadata confirmed via the Umm Al-Qura gazette detail page; ~20 of 37 articles' substance spot-checked without contradiction via muhamapp.com. Recommend a follow-up pass once laws.boe.gov.sa or a Wayback snapshot of this exact law becomes fetchable, to attempt to raise this to a dual-independent-mirror tier."
+    },
+    {
+      "article_key": "bog_enforcement_art035_label_typo_corrected",
+      "description": "nezams.com's own <h4> heading for Article 35 read \"المادة الخامسة الثلاثون\" (missing the conjunction و), inconsistent with the grammatical pattern of every other similarly-formed ordinal in this law (Arts. 31-34, 36-37 all read \"... والثلاثون\") and contradicted by an independent WebSearch snippet quoting \"المادة الخامسة والثلاثون\" verbatim for the identical article body. This track's number_label_ar for bog_tnf_art_035 is corrected to \"المادة الخامسة والثلاثون\" -- a heading-typo fix only; the article's substantive legal text was identical and uncontested across all sources consulted."
+    },
+    {
+      "article_key": "bog_enforcement_regulation_amended_not_ingested",
+      "description": "This law's own Implementing Regulation (اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم, published Umm Al-Qura) is NOT ingested in this pass -- the task scope was the base law only. The Regulation itself has been amended at least once: Administrative Judiciary Council Decision No. (19/1446/عاشراً) dated 29/12/1446هـ amended Regulation Article (5/17), concerning the duration of travel-ban/dealing-ban orders. Flagged as a follow-up candidate; the Regulation reportedly runs to 37 articles per secondary press coverage (alyaum.com), but this was NOT independently verified this pass and must not be assumed correct without its own dedicated verification pass."
+    },
+    {
+      "article_key": "bog_enforcement_crossref_new_ordinary_enforcement_law_2026",
+      "description": "UNRELATED SIDE-FINDING, out of scope for this track, flagged only for cross-track awareness. During this research, Council of Ministers Resolution No. (746) dated 26/10/1447هـ was found, approving an entirely NEW ordinary نظام التنفيذ (65 articles) that REPLACES M/53 (the law underlying this corpus's already-ingested enforcement_law track, 98 articles). Published in Umm Al-Qura on 1 May 2026 with a stated effective date approximately 180 days later (~28 Oct 2026 -- i.e. NOT yet in force as of this pass, 26 Jul 2026). This will eventually make the existing enforcement_law track obsolete once the new law takes effect, but was NOT further investigated, verified, or acted on here -- recommend a dedicated future pass to track this transition. This finding does NOT affect bog_enforcement_law's own validity: M/15 (this track) cross-references 'نظام التنفيذ' only in general terms (Arts. 18, 36), not by specific article number, so it is not structurally broken by the ordinary law's pending replacement."
+    },
+    {
+      "article_key": "bog_enforcement_distinctness_confirmed_not_duplicate",
+      "description": "VERIFICATION FINDING (positive, not a problem): this track (نظام التنفيذ أمام ديوان المظالم, M/15, 27/1/1443هـ, 37 articles, Board of Grievances / administrative judiciary) was confirmed DISTINCT from this corpus's already-ingested enforcement_law track (نظام التنفيذ, M/53, 13/8/1433هـ, 98 articles, ordinary judiciary). The distinction is legislated explicitly: M/15's own enacting decree clause ثالثاً carves out an express exception from clause ثانياً of M/53's enacting decree; M/15 Arts. 18 and 36 separately cross-reference M/53 as a residual-procedure fallback. These are two genuinely different, complementary statutes -- not a duplicate citation of one law under two names. No action needed; documented here per the task's explicit verification requirement."
+    }
+  ],
+  "source_artifact": "sources/bog_enforcement_law/law/official_source/bog_enforcement_law_official_source.json"
+}

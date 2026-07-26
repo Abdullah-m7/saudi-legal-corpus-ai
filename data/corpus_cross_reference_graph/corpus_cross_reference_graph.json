@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 14233,
-  "total_references_extracted": 3230,
-  "intra_law_count": 2733,
-  "inter_law_count": 497,
+  "total_records_scanned": 14566,
+  "total_references_extracted": 3299,
+  "intra_law_count": 2781,
+  "inter_law_count": 518,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 2750,
-    "medium": 480
+    "high": 2793,
+    "medium": 506
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -4011,11 +4011,11 @@
       "source_record_id": "bankruptcy-regulation-llm-art-082",
       "source_article_number": 82,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "waste_management_law",
       "target_article_number": null,
       "target_law_name_raw": "إدارة الاجتماعات",
       "raw_citation_text": "وفق قواعد إدارة الاجتماعات",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "bankruptcy_implementing_regulation",
@@ -4341,11 +4341,11 @@
       "source_record_id": "basic-law-of-governance-llm-art-067",
       "source_article_number": 67,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "public_prosecution_law",
       "target_article_number": null,
       "target_law_name_raw": "الشريعة الإسلامية",
       "raw_citation_text": "وفقا لقواعد الشريعة الإسلامية",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "basic_law_of_governance",
@@ -4378,6 +4378,127 @@
       "target_article_number": 6,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (السادسة) من هذا النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام- انقضاء الالتزام، أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من النظام- أن تطلب من دائرة ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-030",
+      "source_article_number": 30,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من النظام، أو وصول إجراءات ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 30,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثلاثين) من النظام بالعقوبة المقررة لت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_law",
+      "target_article_number": 30,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثلاثين) من النظام من جرائم الفساد، وم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "inter_law",
+      "target_track_id": "enforcement_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذ",
+      "raw_citation_text": "أحكام نظام التنفيذ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_law",
+      "source_record_id": "bog-enforcement-law-llm-art-036",
+      "source_article_number": 36,
+      "type": "inter_law",
+      "target_track_id": "board_of_grievances_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرافعات أمام ديوان المظالم",
+      "raw_citation_text": "أحكام نظام المرافعات أمام ديوان المظالم",
       "confidence": "high"
     },
     {
@@ -4429,11 +4550,11 @@
       "source_record_id": "building-code-regulation-llm-art-001",
       "source_article_number": 1,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "debt_collection_regulation",
       "target_article_number": null,
       "target_law_name_raw": "إجراءات التراخيص البلدية ولائحته التنفيذية",
       "raw_citation_text": "أحكام نظام إجراءات التراخيص البلدية ولائحته التنفيذية",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "building_code_regulation",
@@ -6182,6 +6303,336 @@
       "target_article_number": 83,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (83)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام\nالشركات ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة عشرة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 50,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخمسين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 52,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثانية والخمسين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 56,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة والخمسين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 88,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة والثمانين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "raw_citation_text": "أحكام نظام الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-009",
+      "source_article_number": 9,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركة الأساس",
+      "raw_citation_text": "وفقاً لنظام الشركة الأساس",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات",
+      "raw_citation_text": "أحكام نظام الشركات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": 123,
+      "target_law_name_raw": "الشركات",
+      "raw_citation_text": "المادة الثالثة والعشرين بعد المائة من نظام الشركات. )13الموافقة عل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية والأنظمة",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه التنفيذية والأنظمة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية",
+      "raw_citation_text": "وفقاً لنظام الشركات ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السابعة عشرة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 28,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة والعشرين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-023",
+      "source_article_number": 23,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركة الأساس",
+      "raw_citation_text": "أحكام نظام الشركة الأساس",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-025",
+      "source_article_number": 25,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-028",
+      "source_article_number": 28,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام السوق المالية ولوائحهما التنفيذية والأنظمة ذات",
+      "raw_citation_text": "أحكام نظام الشركات ونظام السوق المالية ولوائحهما التنفيذية والأنظمة ذات",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-028",
+      "source_article_number": 28,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "raw_citation_text": "أحكام نظام الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-029",
+      "source_article_number": 29,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 28,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة والعشرين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة العشرين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-040",
+      "source_article_number": 40,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-044",
+      "source_article_number": 44,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": 27,
+      "target_law_name_raw": "الشركات والأحكام ذات العلاقة في هذه",
+      "raw_citation_text": "المادة السابعة والعشرين من نظام الشركات والأحكام ذات العلاقة في هذه الالئحة ،إذا رغ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-047",
+      "source_article_number": 47,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 51,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الحادية والخمسون",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-049",
+      "source_article_number": 49,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة العشرين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-051",
+      "source_article_number": 51,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة عشرة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-059",
+      "source_article_number": 59,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "raw_citation_text": "أحكام نظام الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-087",
+      "source_article_number": 87,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 90,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التسعين",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-092",
+      "source_article_number": 92,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 91,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الحادية والتسعين",
       "confidence": "medium"
     },
     {
@@ -10083,11 +10534,11 @@
       "source_record_id": "criminal-procedure-regulation-llm-art-171",
       "source_article_number": 171,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "public_prosecution_law",
       "target_article_number": null,
       "target_law_name_raw": "النيابة العامة",
       "raw_citation_text": "وفقاً لنظام النيابة العامة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "criminal_procedure_implementing_regulation",
@@ -10607,6 +11058,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "debt_collection_regulation",
+      "source_record_id": "debt-collection-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "debt_collection_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من الضوابط . العجز الكلي العا",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "disability_rights_law",
       "source_record_id": "disability-rights-law-llm-art-022",
       "source_article_number": 22,
@@ -11077,6 +11539,105 @@
       "target_article_number": 3,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثالثة من هذه اللائحة والخاصة بإصدار",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "elderly_care_law",
+      "source_record_id": "elderly-care-law-llm-art-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "elderly_care_law",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "elderly_care_law",
+      "source_record_id": "elderly-care-law-llm-art-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "elderly_care_law",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من النظام؛ جريمة بموجب أنظمة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "elderly_care_law",
+      "source_record_id": "elderly-care-law-llm-art-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "elderly_care_law",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام على أن تكون في خدمة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "elderly_care_law",
+      "source_record_id": "elderly-care-law-llm-art-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "elderly_care_law",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من النظام، ومن يقدم خدمة عامة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "elderly_care_regulation",
+      "source_record_id": "elderly-care-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "دور الرعاية الاجتماعية وقواعدها التنفيذية",
+      "raw_citation_text": "وفق لائحة دور الرعاية الاجتماعية وقواعدها التنفيذية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "elderly_care_regulation",
+      "source_record_id": "elderly-care-regulation-llm-art-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "elderly_care_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة ) من النظام يجب على أسرة كبير",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "elderly_care_regulation",
+      "source_record_id": "elderly-care-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "elderly_care_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة من النظام مع تحديد أسباب ومدة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "elderly_care_regulation",
+      "source_record_id": "elderly-care-regulation-llm-art-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "دور الرعاية الاجتماعية وقواعدها التنفيذية",
+      "raw_citation_text": "وفق لائحة دور الرعاية الاجتماعية وقواعدها التنفيذية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "elderly_care_regulation",
+      "source_record_id": "elderly-care-regulation-llm-art-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "elderly_care_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة ) من النظام. - 2. توقيع وإقرار",
       "confidence": "high"
     },
     {
@@ -13317,11 +13878,11 @@
       "source_record_id": "finance-companies-regulation-llm-art-097",
       "source_article_number": 97,
       "type": "inter_law",
-      "target_track_id": "criminal_procedure_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الإجراءات الجزائية ونظام النيابة العامة والقواعد العامة المعم",
       "raw_citation_text": "أحكام نظام الإجراءات الجزائية ونظام النيابة العامة والقواعد العامة المعم",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "finance_companies_regulation",
@@ -13717,6 +14278,28 @@
       "target_article_number": 5,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة) من اللائحة. المرة الأولى: الإ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "foreign_schools_regulation",
+      "source_record_id": "foreign-schools-regulation-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "foreign_schools_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة من هذه اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "foreign_schools_regulation",
+      "source_record_id": "foreign-schools-regulation-llm-art-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "foreign_schools_regulation",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السابعة عشرة من هذه اللائحة، ويجوز التظلم",
       "confidence": "high"
     },
     {
@@ -22773,6 +23356,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "postal_law",
+      "source_record_id": "postal-law-llm-art-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "postal_law",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من النظام. 3- اقتراح القواعد،",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "premium_residency_law",
       "source_record_id": "premium-residency-law-llm-art-002",
       "source_article_number": 2,
@@ -23268,6 +23862,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "private_schools_regulation",
+      "source_record_id": "private-schools-regulation-llm-art-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "private_schools_regulation",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (7) من هذه اللائحة.",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "privatization_law",
       "source_record_id": "privatization-law-llm-art-014",
       "source_article_number": 14,
@@ -23661,6 +24266,17 @@
       "target_article_number": 8,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثامنة من النظام بحيث يتعين تقديم ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_prosecution_law",
+      "source_record_id": "public-prosecution-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "civil_defense_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التقاعد المدني",
+      "raw_citation_text": "طبقاً لنظام التقاعد المدني",
       "confidence": "high"
     },
     {
@@ -33891,6 +34507,149 @@
       "target_article_number": 2,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثانية من النظام، يتم تطبيق نسبة الض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة) من النظام، على المجمعات السكن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 30,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثلاثين) من النظام، يتولى مفتشون –يصدر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-030",
+      "source_article_number": 30,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام؛ أمام المحكمة المخت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام، ولها القيام بالآتي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام. 2- الحكم بمصادرة ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-032",
+      "source_article_number": 32,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-032",
+      "source_article_number": 32,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) من النظام– وتحديدا للعقوبات ض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة والعشرين) – وإيقاع العقوبات المنصوص عليه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 32,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والثلاثين) من النظام؛ لجنة (أو أكثر) تشك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 32,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والثلاثين) ، للجنة المشار إليها في المادة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 33,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من النظام، القيام بالآتي: 1-",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waste_management_law",
+      "source_record_id": "waste-management-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "waste_management_law",
+      "target_article_number": 32,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والثلاثين) من النظام، على أن يبدأ احتساب",
       "confidence": "high"
     },
     {
