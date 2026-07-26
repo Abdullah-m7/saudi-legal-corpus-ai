@@ -280,6 +280,18 @@ BANKING_CONTROL_REGULATION_LLM = os.path.join(ROOT, "data", "banking_control_reg
 FINANCE_COMPANIES_REGULATION_LLM = os.path.join(ROOT, "data", "finance_companies_regulation_arabic_legal_llm", "finance_companies_regulation_legal_llm_001_106.json")
 FINANCE_LEASE_REGULATION_LLM = os.path.join(ROOT, "data", "finance_lease_regulation_arabic_legal_llm", "finance_lease_regulation_legal_llm_001_032.json")
 COOPERATIVE_SOCIETIES_REGULATION_LLM = os.path.join(ROOT, "data", "cooperative_societies_regulation_arabic_legal_llm", "cooperative_societies_regulation_legal_llm_001_055.json")
+BOG_ENFORCEMENT_LAW_LLM = os.path.join(ROOT, "data", "bog_enforcement_law_arabic_legal_llm", "bog_enforcement_law_legal_llm_001_037.json")
+PUBLIC_PROSECUTION_LAW_LLM = os.path.join(ROOT, "data", "public_prosecution_law_arabic_legal_llm", "public_prosecution_law_legal_llm_001_030.json")
+ELDERLY_CARE_LAW_LLM = os.path.join(ROOT, "data", "elderly_care_law_arabic_legal_llm", "elderly_care_law_legal_llm_001_023.json")
+ELDERLY_CARE_REGULATION_LLM = os.path.join(ROOT, "data", "elderly_care_regulation_arabic_legal_llm", "elderly_care_regulation_legal_llm_001_008.json")
+PRIVATE_SCHOOLS_REGULATION_LLM = os.path.join(ROOT, "data", "private_schools_regulation_arabic_legal_llm", "private_schools_regulation_legal_llm_001_024.json")
+FOREIGN_SCHOOLS_REGULATION_LLM = os.path.join(ROOT, "data", "foreign_schools_regulation_arabic_legal_llm", "foreign_schools_regulation_legal_llm_001_021.json")
+POSTAL_LAW_LLM = os.path.join(ROOT, "data", "postal_law_arabic_legal_llm", "postal_law_legal_llm_001_020.json")
+CMA_CORPORATE_GOVERNANCE_REGULATION_LLM = os.path.join(ROOT, "data", "cma_corporate_governance_regulation_arabic_legal_llm", "cma_corporate_governance_regulation_legal_llm_001_095.json")
+TVTC_ORGANIZATIONAL_STATUTE_LLM = os.path.join(ROOT, "data", "tvtc_organizational_statute_arabic_legal_llm", "tvtc_organizational_statute_legal_llm_001_013.json")
+WASTE_MANAGEMENT_LAW_LLM = os.path.join(ROOT, "data", "waste_management_law_arabic_legal_llm", "waste_management_law_legal_llm_001_038.json")
+FISHERIES_LAW_LLM = os.path.join(ROOT, "data", "fisheries_law_arabic_legal_llm", "fisheries_law_legal_llm_001_013.json")
+DEBT_COLLECTION_REGULATION_LLM = os.path.join(ROOT, "data", "debt_collection_regulation_arabic_legal_llm", "debt_collection_regulation_legal_llm_001_011.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -553,6 +565,18 @@ def main() -> int:
     finance_companies_regulation_llm = _load_json(FINANCE_COMPANIES_REGULATION_LLM)
     finance_lease_regulation_llm = _load_json(FINANCE_LEASE_REGULATION_LLM)
     cooperative_societies_regulation_llm = _load_json(COOPERATIVE_SOCIETIES_REGULATION_LLM)
+    bog_enforcement_law_llm = _load_json(BOG_ENFORCEMENT_LAW_LLM)
+    public_prosecution_law_llm = _load_json(PUBLIC_PROSECUTION_LAW_LLM)
+    elderly_care_law_llm = _load_json(ELDERLY_CARE_LAW_LLM)
+    elderly_care_regulation_llm = _load_json(ELDERLY_CARE_REGULATION_LLM)
+    private_schools_regulation_llm = _load_json(PRIVATE_SCHOOLS_REGULATION_LLM)
+    foreign_schools_regulation_llm = _load_json(FOREIGN_SCHOOLS_REGULATION_LLM)
+    postal_law_llm = _load_json(POSTAL_LAW_LLM)
+    cma_corporate_governance_regulation_llm = _load_json(CMA_CORPORATE_GOVERNANCE_REGULATION_LLM)
+    tvtc_organizational_statute_llm = _load_json(TVTC_ORGANIZATIONAL_STATUTE_LLM)
+    waste_management_law_llm = _load_json(WASTE_MANAGEMENT_LAW_LLM)
+    fisheries_law_llm = _load_json(FISHERIES_LAW_LLM)
+    debt_collection_regulation_llm = _load_json(DEBT_COLLECTION_REGULATION_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -573,7 +597,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 242,
+        "total_tracks": 254,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -819,6 +843,18 @@ def main() -> int:
             + finance_companies_regulation_llm["record_count"]  # 106 Implementing Regulation of the Finance Companies Control Law (القرار الإداري رقم 2/م ش ت, بصيغته المعدلة بالقرار 179/م ش ت, 2/7/1447) -- see track notes for full verification tier/citation detail
             + finance_lease_regulation_llm["record_count"]  # 32 Implementing Regulation of the Finance Lease Law (القرار الإداري رقم 1/م ش ت, 14/4/1434) -- see track notes for full verification tier/citation detail
             + cooperative_societies_regulation_llm["record_count"]  # 55 Implementing Regulation of the Cooperative Societies Law (القرار الوزاري رقم 52068, 1429) -- see track notes for full verification tier/citation detail
+            + bog_enforcement_law_llm["record_count"]  # 37 Law of Enforcement before the Board of Grievances (المرسوم الملكي رقم م/15, 27/1/1443) -- see track notes for full verification tier/citation detail
+            + public_prosecution_law_llm["record_count"]  # 30 Public Prosecution Law (المرسوم الملكي رقم م/56, 24/10/1409) -- see track notes for full verification tier/citation detail
+            + elderly_care_law_llm["record_count"]  # 23 Elderly Rights and Care Law (المرسوم الملكي رقم م/47, 3/6/1443) -- see track notes for full verification tier/citation detail
+            + elderly_care_regulation_llm["record_count"]  # 8 Implementing Regulation of the Elderly Rights and Care Law (partial coverage, disclosed) -- see track notes for full verification tier/citation detail
+            + private_schools_regulation_llm["record_count"]  # 24 Private (National) Schools Regulation (قرار مجلس الوزراء رقم 1006, 13/8/1395) -- see track notes for full verification tier/citation detail
+            + foreign_schools_regulation_llm["record_count"]  # 21 Foreign Schools Regulation (قرار مجلس الوزراء رقم 26, 4/2/1418) -- see track notes for full verification tier/citation detail
+            + postal_law_llm["record_count"]  # 20 Postal Law (partial coverage, 20 of 37 articles, disclosed) (المرسوم الملكي رقم م/22, 8/3/1443) -- see track notes for full verification tier/citation detail
+            + cma_corporate_governance_regulation_llm["record_count"]  # 95 CMA Corporate Governance Regulations (قرار مجلس هيئة السوق المالية رقم 2017-16-8, 16/5/1438) -- see track notes for full verification tier/citation detail
+            + tvtc_organizational_statute_llm["record_count"]  # 13 Statute of the Technical and Vocational Training Corporation (قرار مجلس الوزراء رقم 268, 14/8/1428) -- see track notes for full verification tier/citation detail
+            + waste_management_law_llm["record_count"]  # 38 Waste Management Law (المرسوم الملكي رقم م/3, 5/1/1443) -- see track notes for full verification tier/citation detail
+            + fisheries_law_llm["record_count"]  # 13 Fisheries/Marine Resources Law (المرسوم الملكي رقم م/9, 27/3/1408) -- see track notes for full verification tier/citation detail
+            + debt_collection_regulation_llm["record_count"]  # 11 SAMA Debt Collection Regulations and Procedures (تعميم البنك المركزي السعودي رقم 106889333, 6/9/1446) -- see track notes for full verification tier/citation detail
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -1055,6 +1091,18 @@ def main() -> int:
             + finance_companies_regulation_llm["record_count"]
             + finance_lease_regulation_llm["record_count"]
             + cooperative_societies_regulation_llm["record_count"]
+            + bog_enforcement_law_llm["record_count"]
+            + public_prosecution_law_llm["record_count"]
+            + elderly_care_law_llm["record_count"]
+            + elderly_care_regulation_llm["record_count"]
+            + private_schools_regulation_llm["record_count"]
+            + foreign_schools_regulation_llm["record_count"]
+            + postal_law_llm["record_count"]
+            + cma_corporate_governance_regulation_llm["record_count"]
+            + tvtc_organizational_statute_llm["record_count"]
+            + waste_management_law_llm["record_count"]
+            + fisheries_law_llm["record_count"]
+            + debt_collection_regulation_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -8041,6 +8089,342 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "«اللائحة التنفيذية لنظام الجمعيات التعاونية» — Implementing Regulation of the Cooperative Societies Law, the sibling regulation this corpus's own cooperative_societies (base law) track had already flagged as a follow-up candidate. **55 records, ALL اصلية** across 9 أبواب (13 chapter_structure sub-ranges once باب 1's 4 فصول and باب 2's أولاً/ثانياً split are counted). **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — the full text was fetched directly (HTTP 200) as a 32-page image-scanned PDF from TWO independent official bodies agreeing verbatim: the National Center for the Development of the Non-Profit Sector (ncnp.gov.sa, which also publishes the base law's own text) and the Cooperative Societies Council (cscs.org.sa, the very body this Regulation's own Article 54 establishes) — a genuine cross-corroboration between two independent primary sources, not a mirror of the same file. The PDF has no extractable text layer; every article was transcribed by direct visual reading of 200dpi page renders, including zoomed crops to resolve the handwritten ministerial-decision number/date on the cover (the exact day/month remains obscured by a cover-page ink stamp; only the year, 1429H, is legible, and this is disclosed rather than guessed). No amendment to this Regulation was found this pass, disclosed as an absence-of-evidence finding rather than proof none exists. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "bog_enforcement_law",
+                "display_name_ar": "نظام التنفيذ أمام ديوان المظالم",
+                "display_name_en": "Law of Enforcement before the Board of Grievances",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_SINGLE_WAYBACK_SNAPSHOT_EGRESS_BLOCKED_X_NEZAMS_PARTIAL_SPOTCHECK_X_UMM_AL_QURA_METADATA",
+                "source_authority": "Royal Decree M/15, dated 27/1/1443H (~4 September 2021G). Distinct from this corpus's own enforcement_law (M/53, ordinary-judiciary enforcement) — M/15's own enacting decree clause ثالثاً expressly carves out an exception from M/53's clause ثانياً, and M/15 Arts. 18/36 cross-reference M/53 as a residual fallback. laws.boe.gov.sa returned HTTP 503 on direct fetch; a Wayback snapshot exists but this session's egress policy blocked retrieving its content. Full text rests on nezams.com (single aggregator), with Article 37 independently confirmed via a separate WebSearch snippet, chapter/topic structure cross-checked against BOE's own SearchDetails summary, and decree/gazette metadata confirmed via the Umm Al-Qura gazette page.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": bog_enforcement_law_llm["record_count"],
+                    "data_path": "data/bog_enforcement_law_arabic_legal_llm/bog_enforcement_law_legal_llm_001_037.json"}},
+                "record_counts": {"arabic_articles": bog_enforcement_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 37, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": bog_enforcement_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/bog_enforcement_law/law/official_source/bog_enforcement_law_official_source.json",
+                    "sources/bog_enforcement_law/law/verified/bog_enforcement_law_verified_summary.json",
+                    "data/bog_enforcement_law_arabic_legal_llm/bog_enforcement_law_legal_llm_001_037.json",
+                ],
+                "validator_targets": ["make bog-enforcement-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام التنفيذ أمام ديوان المظالم» — Law of Enforcement before the Board of Grievances. **37 records, ALL اصلية**, five أبواب (أحكام عامة 1-5؛ إجراءات التنفيذ 6-24 بأربعة فصول؛ منازعات التنفيذ 25-29؛ الجرائم والعقوبات 30-33؛ أحكام ختامية 34-37). **VERIFICATION TIER: TIER_4-adjacent (single-aggregator, honestly disclosed)** — genuinely distinct from this corpus's own enforcement_law (M/53), which governs enforcement before the ordinary judiciary: M/15's own enacting decree explicitly carves out an exception from M/53's own enacting clause, and M/15 Arts. 18/36 cross-reference M/53 as a residual-procedure fallback — confirmed via direct reading of both laws' own text, not assumed from similar titles. laws.boe.gov.sa returned HTTP 503 twice; a Wayback Machine snapshot of the BOE page exists but this session's egress policy blocked fetching its actual content, so only the availability-lookup API could be used. Full text rests on a single secondary aggregator (nezams.com), partially cross-checked: Article 37 confirmed verbatim via an independent WebSearch snippet, the chapter/topic structure confirmed against BOE's own SearchDetails summary, decree/gazette metadata confirmed via the Umm Al-Qura gazette page, and ~20/37 articles spot-checked without contradiction via muhamapp.com. A disclosed source typo (nezams.com's Article 35 heading omitting a conjunctive و) was corrected, body text unaffected. This Regulation's own Implementing Regulation is not ingested this pass and has itself been amended (a follow-up candidate). Side-finding, out of scope: a brand-new ordinary نظام التنفيذ (65 articles, CoM Resolution 746, published 1 May 2026, not yet in force ~28 Oct 2026) will eventually replace this corpus's own enforcement_law (M/53) — noted for future monitoring, does not affect this track's validity. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "public_prosecution_law",
+                "display_name_ar": "نظام النيابة العامة",
+                "display_name_en": "Public Prosecution Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_SINGLE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_QANOONSA_M180_DIRECT_TEXT_CROSSVERIFIED",
+                "source_authority": "Royal Decree M/56, dated 24/10/1409H, originally establishing نظام هيئة التحقيق والادعاء العام, renamed النيابة العامة by Royal Order A/240 (22/9/1438H). Amended by M/4 (1433H), M/31 (1436H), M/125 (1441H — a substantial wave, arts. 1,2,3,4,10,13,16,17,26,27 amended and Arts. 11/28 repealed, independently discovered this pass in BOE's own per-article history log and not present in the commissioning brief), and M/180 (1446H, Art. 4 §1). laws.boe.gov.sa live portal unreachable (HTTP 503/connection reset); full text confirmed via a Wayback Machine snapshot, cross-verified against nezams.com (byte-level match for the 1409H/M4/M31/M180 text layers) and qanoonsa.com (independently mirrors Royal Decree M/180's own text).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": public_prosecution_law_llm["record_count"],
+                    "data_path": "data/public_prosecution_law_arabic_legal_llm/public_prosecution_law_legal_llm_001_030.json"}},
+                "record_counts": {"arabic_articles": public_prosecution_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 12, "معدلة": 16, "ملغاة": 2, "مضافة": 0},
+                                  "total": public_prosecution_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/public_prosecution_law/law/official_source/public_prosecution_law_official_source.json",
+                    "sources/public_prosecution_law/law/verified/public_prosecution_law_verified_summary.json",
+                    "data/public_prosecution_law_arabic_legal_llm/public_prosecution_law_legal_llm_001_030.json",
+                ],
+                "validator_targets": ["make public-prosecution-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام النيابة العامة» — Public Prosecution Law, the foundational statute of Saudi Arabia's public-prosecution function, a genuinely major gap closed this pass. **30 records: 12 اصلية / 16 معدلة / 2 ملغاة (Articles 11, 28) / 0 مضافة**, flat structure (no أبواب/فصول on the BOE page). **VERIFICATION TIER: TIER_2** — one primary source (BOE via a single Wayback Machine snapshot, live portal HTTP 503/connection-reset) cross-verified against two independent secondaries: nezams.com (byte-level match) and qanoonsa.com (which independently mirrors the official Royal Decree M/180 text itself, a stronger corroboration for that specific amendment). Amendments: M/4 (1433H, Art. 1 budget clause), M/31 (1436H, Arts. 2,3,4,5,9,10,12,15,24,25,26), Royal Order A/240 (1438H, renamed the body, no direct per-article BOE entry), M/125 (1441H — independently discovered this pass in BOE's own per-article history, not in the commissioning brief: amended Arts. 1,2,3,4,10,13,16,17,26,27 and repealed Arts. 11/28 outright), and M/180 (1446H, Art. 4 §1). BOE's main displayed text for each article is actually the 1409H original; the generator sources 'current text' from each article's own history entries, preserving the original separately as original_1409h_text. Articles 3, 4 (¶2-3 only), and 16 are flagged current_wording_fully_confirmed=false: BOE confirms M/125 amended them but does not quote the resulting text, and nezams.com is silent on M/125 for this law entirely — the last fully verbatim-confirmed snapshot is kept, gap disclosed rather than guessed at. A pay-scale/equivalence annex is not ingested. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "elderly_care_law",
+                "display_name_ar": "نظام حقوق كبير السن ورعايته",
+                "display_name_en": "Elderly Rights and Care Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_NSHR_PAMPHLET_TRIPLE_VERIFIED",
+                "source_authority": "Royal Decree M/47, dated 3/6/1443H (~14 January 2022G), approving Council of Ministers Resolution 292 (1/6/1443H); published Umm al-Qura Gazette Issue 4917, 11 Jumada al-Akhirah 1443H. laws.boe.gov.sa live portal unreachable this pass; a Wayback-archived snapshot of the law's own official BOE page (dated 2025-02-11) was reachable and yielded the portal's own verbatim text of all 23 articles, cross-checked byte-for-byte against nezams.com, with identity/count/date triple-confirmed via a National Society for Human Rights pamphlet PDF.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": elderly_care_law_llm["record_count"],
+                    "data_path": "data/elderly_care_law_arabic_legal_llm/elderly_care_law_legal_llm_001_023.json"}},
+                "record_counts": {"arabic_articles": elderly_care_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": elderly_care_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/elderly_care_law/law/official_source/elderly_care_law_official_source.json",
+                    "sources/elderly_care_law/law/verified/elderly_care_law_verified_summary.json",
+                    "data/elderly_care_law_arabic_legal_llm/elderly_care_law_legal_llm_001_023.json",
+                ],
+                "validator_targets": ["make elderly-care-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام حقوق كبير السن ورعايته» — Elderly Rights and Care Law. **23 records, ALL اصلية**, flat structure, no amendment found. **VERIFICATION TIER: TIER_1** — laws.boe.gov.sa's live portal was unreachable, but a Wayback-archived snapshot of the law's own official BOE page (2025-02-11) was reachable and yielded the portal's own verbatim text of all 23 articles (none flagged modified/canceled), cross-checked byte-for-byte against nezams.com, with identity/count/date triple-confirmed via a National Society for Human Rights pamphlet PDF. Implementing Regulation tracked separately as elderly_care_regulation (shared internal law_key: elderly_care) — includes an important correction that Council of Ministers Resolution 292 approved this Law, not the Regulation (Article 22 of this Law instead mandates the Minister issue the Regulation). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "elderly_care_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام حقوق كبير السن ورعايته",
+                "display_name_en": "Implementing Regulation of the Elderly Rights and Care Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "QANONIAH_API_PARTIAL_8_OF_UNKNOWN_TOTAL_10_ITEM_PREVIEW_CAP_DISCLOSED",
+                "source_authority": "Implementing Regulation of the Elderly Rights and Care Law, mandated by the Law's own Article 22 (Minister-issued, not Council-of-Ministers-issued as an earlier pass mistakenly assumed via Resolution 292, which in fact approved the base Law itself). Exact ministerial decision number/date could not be confirmed this pass; an official hrsd.gov.sa PDF exists but has severe font/glyph corruption confirmed via two independent extraction tools. Only qanoniah.com's public API yielded clean verbatim text, capped at 8 articles by a confirmed 10-item free-preview limit before the API restricts further access.",
+                "language_layers": {"arabic": {"status": "partial", "governing": True,
+                    "record_count": elderly_care_regulation_llm["record_count"],
+                    "data_path": "data/elderly_care_regulation_arabic_legal_llm/elderly_care_regulation_legal_llm_001_008.json"}},
+                "record_counts": {"arabic_articles": elderly_care_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": elderly_care_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/elderly_care_regulation/law/official_source/elderly_care_regulation_official_source.json",
+                    "sources/elderly_care_regulation/law/verified/elderly_care_regulation_verified_summary.json",
+                    "data/elderly_care_regulation_arabic_legal_llm/elderly_care_regulation_legal_llm_001_008.json",
+                ],
+                "validator_targets": ["make elderly-care-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«اللائحة التنفيذية لنظام حقوق كبير السن ورعايته» — Implementing Regulation of the Elderly Rights and Care Law. **8 records ingested, ALL اصلية — DISCLOSED PARTIAL COVERAGE, TOTAL ARTICLE COUNT NOT CONFIRMED**. **VERIFICATION TIER: TIER_4** — only qanoniah.com's public API yielded clean verbatim text (implementing parent-Law Articles 1, 2, 3&6, 4, 5, 6, 7, 8&6 per its own numbering), capped at a confirmed 10-item free-preview limit; an official hrsd.gov.sa PDF exists but has severe font/glyph corruption confirmed unreadable via two independent extraction tools. Corrupted PDF fragments suggest the Regulation continues to roughly parent-Law Article 20 plus closing articles, but this is explicitly excluded, not guessed at, per this corpus's standing rule against fabricating unconfirmed content. Shares internal law_key 'elderly_care' with the base elderly_care_law track. A follow-up pass with access to the full hrsd.gov.sa PDF (or an OCR pipeline able to handle its font corruption) is recommended. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "private_schools_regulation",
+                "display_name_ar": "لائحة تنظيم المدارس الأهلية",
+                "display_name_en": "Private (National) Schools Regulation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOE_OFFICIAL_PDF_DIRECT_FETCH_VISION_VERIFIED_PAGE_BY_PAGE",
+                "source_authority": "Council of Ministers Resolution No. 1006, dated 13/8/1395H, amended by Resolutions 89 (7/2/1440H, Article 7) and 269 (3/5/1443H, Article 5(e)). Still fully in force: this corpus's general_education_law (Royal Decree M/36, 27/1/1448H, not yet in force) names this Regulation for eventual repeal, but its own Council of Ministers Resolution 103, Clause Fifth, makes that repeal phased — provisions stay in force transitionally for up to one year after the new Law's effective date (~mid-2028).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": private_schools_regulation_llm["record_count"],
+                    "data_path": "data/private_schools_regulation_arabic_legal_llm/private_schools_regulation_legal_llm_001_024.json"}},
+                "record_counts": {"arabic_articles": private_schools_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 22, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+                                  "total": private_schools_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/private_schools_regulation/law/official_source/private_schools_regulation_official_source.json",
+                    "sources/private_schools_regulation/law/verified/private_schools_regulation_verified_summary.json",
+                    "data/private_schools_regulation_arabic_legal_llm/private_schools_regulation_legal_llm_001_024.json",
+                ],
+                "validator_targets": ["make private-schools-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«لائحة تنظيم المدارس الأهلية» — Private (National) Schools Regulation. **24 records: 22 اصلية / 2 معدلة (Article 7 by CoM Res. 89, 1440H; Article 5(e) by CoM Res. 269, 1443H)**, flat structure. **VERIFICATION TIER: TIER_1-candidate** — the Ministry of Education's own official PDF was direct-fetched and vision-verified page-by-page, all 8 pages matching pdftotext exactly. Flagged discrepancy: the MOE PDF is internally inconsistent at Article 5 — its main body still prints the pre-amendment wording while its own footnote gives the amended text; the amended (legally current) text was adopted, with the pre-amendment wording preserved in history[], and the inconsistency disclosed explicitly rather than silently resolved. Confirmed still fully in force notwithstanding general_education_law's not-yet-effective, phased repeal (Council of Ministers Resolution 103, Clause Fifth: up to a one-year transitional overlap). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "foreign_schools_regulation",
+                "display_name_ar": "لائحة المدارس الأجنبية",
+                "display_name_en": "Foreign Schools Regulation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_X_BIBLIOTDROIT_DUAL_SECONDARY_WORDFORWORD_CROSSVERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Council of Ministers Resolution No. 26, dated 4/2/1418H — corrected this pass from the commissioning brief's cited '36': every source checked (nezams.com, bibliotdroit.com, WebSearch, and this corpus's own general_education_law source, which names this Regulation) confirms the correct number is 26. Amended by Resolutions 220 (10/8/1424H, Article 5) and 141 (10/3/1439H, Article 9). laws.boe.gov.sa (confirmed lawId) and moe.gov.sa both unreachable (503/404) this pass; verified instead via two independent non-government legal portals (nezams.com, bibliotdroit.com), word-for-word cross-checked.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": foreign_schools_regulation_llm["record_count"],
+                    "data_path": "data/foreign_schools_regulation_arabic_legal_llm/foreign_schools_regulation_legal_llm_001_021.json"}},
+                "record_counts": {"arabic_articles": foreign_schools_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 19, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+                                  "total": foreign_schools_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/foreign_schools_regulation/law/official_source/foreign_schools_regulation_official_source.json",
+                    "sources/foreign_schools_regulation/law/verified/foreign_schools_regulation_verified_summary.json",
+                    "data/foreign_schools_regulation_arabic_legal_llm/foreign_schools_regulation_legal_llm_001_021.json",
+                ],
+                "validator_targets": ["make foreign-schools-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«لائحة المدارس الأجنبية» — Foreign Schools Regulation. **21 records: 19 اصلية / 2 معدلة (Article 5 by CoM Res. 220, 1424H; Article 9 by CoM Res. 141, 1439H)**, flat structure. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa has a confirmed lawId but was unreachable (503) this pass, as was moe.gov.sa; full text instead verified via two independent non-governmental legal portals (nezams.com, bibliotdroit.com), word-for-word cross-checked. Important correction: the commissioning brief's cited Resolution number '36' was found incorrect against every source checked — the true number is 26, disclosed explicitly rather than silently followed. Confirmed still fully in force notwithstanding general_education_law's not-yet-effective, phased repeal (same Clause Fifth transitional overlap as private_schools_regulation). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "postal_law",
+                "display_name_ar": "نظام البريد",
+                "display_name_en": "Postal Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "partial",
+                "official_text_status": "NEZAMS_SINGLE_AGGREGATOR_PARTIAL_20_OF_37_ARTICLES_ARTICLE21PLUS_CONTENT_CORRUPTED_DISCLOSED",
+                "source_authority": "Royal Decree M/22, dated 08/03/1443H, approving Council of Ministers Resolution 149 (06/03/1443H), replacing the prior Postal Law (M/4, 21/2/1406H). Regulatory oversight reportedly transferred from CITC/Ministry of Communications to the General Authority for Transport (CoM Resolution 705, 27/12/1443H) — treated as an administrative reassignment, not a confirmed textual amendment (nezams.com's own tracking field states no amendment was made to the Law). laws.boe.gov.sa (live and Wayback), tga.gov.sa, mot.gov.sa, uqn.gov.sa, qanoonsa.com/qanoniah.com, and site.eastlaws.com were all unreachable this pass; only nezams.com's server-rendered HTML yielded usable text.",
+                "language_layers": {"arabic": {"status": "partial", "governing": True,
+                    "record_count": postal_law_llm["record_count"],
+                    "data_path": "data/postal_law_arabic_legal_llm/postal_law_legal_llm_001_020.json"}},
+                "record_counts": {"arabic_articles": postal_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": postal_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/postal_law/law/official_source/postal_law_official_source.json",
+                    "sources/postal_law/law/verified/postal_law_verified_summary.json",
+                    "data/postal_law_arabic_legal_llm/postal_law_legal_llm_001_020.json",
+                ],
+                "validator_targets": ["make postal-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام البريد» — Postal Law. **20 of a reported 37 articles ingested — DISCLOSED PARTIAL COVERAGE**, all 20 اصلية. **VERIFICATION TIER: single-aggregator (honestly disclosed, below TIER_2)** — 37 is corroborated by two independent sources (lexismiddleeast.com's structural scrape, Arab News quoting the Communications Minister by name); a conflicting '38' figure from nezams.com's own article-navigation sidebar is explicitly rejected as unreliable. Critical finding: nezams.com's own content from Article 21 onward is verbatim text from an unrelated law (the Solid Municipal Waste Management Law, M/48, 17/9/1434H), reproducibly confirmed across two independent fetches — so Articles 21-37 could not be verified and were NOT ingested. The predecessor repeal (Postal Law M/4, 21/2/1406H) is confirmed in substance via the enacting Council of Ministers Resolution's own recitals plus an indexed BOE snippet, but the exact repealing article number sits in the unverified 21-37 range and is not asserted. The CoM Resolution 705 regulatory-authority transfer is corroborated only circumstantially (TGA's own hosting of this Law's Executive Regulation, a 2023 TGA administrative decision on postal penalties) and is treated as an administrative reassignment, not a confirmed textual amendment. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cma_corporate_governance_regulation",
+                "display_name_ar": "لائحة حوكمة الشركات",
+                "display_name_en": "CMA Corporate Governance Regulations",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "CMA_OFFICIAL_PDF_DIRECT_FETCH_FONT_DEFECT_CORRECTED_2017_SUPERSESSION_CORRECTED",
+                "source_authority": "Capital Market Authority Board Resolution 2017-16-8, dated 16/5/1438H (13/2/2017G), issued under Capital Market Law Articles 5-6, fully superseding CMA Board Resolution 1-212-2006 (21/10/1427H) — an important correction of the commissioning brief, which cited the superseded 2006 instrument's ~19-article count. Since amended by Resolutions 2018-35-1, 2018-52-4, 2022-94-1, and 2023-5-8 (25/6/1444H = 18/1/2023G, the largest, renumbering the regulation and amending 8 articles). Fetched directly from cma.gov.sa's own official PDF (cma.org.sa 301-redirects there).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cma_corporate_governance_regulation_llm["record_count"],
+                    "data_path": "data/cma_corporate_governance_regulation_arabic_legal_llm/cma_corporate_governance_regulation_legal_llm_001_095.json"}},
+                "record_counts": {"arabic_articles": cma_corporate_governance_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 84, "معدلة": 11, "ملغاة": 0, "مضافة": 0},
+                                  "total": cma_corporate_governance_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/cma_corporate_governance_regulation/law/official_source/cma_corporate_governance_regulation_official_source.json",
+                    "sources/cma_corporate_governance_regulation/law/verified/cma_corporate_governance_regulation_verified_summary.json",
+                    "data/cma_corporate_governance_regulation_arabic_legal_llm/cma_corporate_governance_regulation_legal_llm_001_095.json",
+                ],
+                "validator_targets": ["make cma-corporate-governance-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«لائحة حوكمة الشركات» — CMA Corporate Governance Regulations. **95 records: 84 اصلية / 11 معدلة (Articles 20, 24, 27, 37, 52, 54, 73, 74, 75, 87, 90) / 0 ملغاة / 0 مضافة**, 12 أبواب (5 further split into فصول), plus a remuneration-table Annex not ingested as an article. **VERIFICATION TIER: TIER_1-candidate** — primary source fetched directly from cma.gov.sa's own domain; cross-checked article count/structure via table of contents, body headers, and visual page-image inspection. Major correction of the commissioning brief: Resolution 1-212-2006 was not merely amended but fully superseded by Resolution 2017-16-8 (2017G); the current text is 95 articles, not the ~19 a prior light pass cited (which almost certainly described the superseded 2006 text). A pervasive font-encoding defect in the source PDF (20+ distinct Arabic letter-pair sequences systematically reversed, e.g. 'في'→'يف', 'مجلس'→'جملس') was individually verified per pattern via codepoint comparison, OCR cross-check, and context review before correcting — never applied as a blind rule, after one pattern caused a false positive on a genuinely correct word. The 15/9/1440H (2019) amendment is confirmed real via a CMA press release but not matched to a specific footnote in the current (2023-renumbered) text — disclosed as an open mapping gap, not guessed at. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "tvtc_organizational_statute",
+                "display_name_ar": "تنظيم المؤسسة العامة للتدريب التقني والمهني",
+                "display_name_en": "Statute of the Technical and Vocational Training Corporation",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_TRIPLE_WAYBACK_SNAPSHOT_X_NEZAMS_X_QANOONSA_RESOLUTION632_DIRECT_TEXT_CROSSVERIFIED",
+                "source_authority": "Council of Ministers Resolution No. 268, dated 14/8/1428H, amended by Resolution 632 (26/8/1446H = 25 Feb 2025G, published Umm al-Qura Issue 5074) and multiple board-composition resolutions (469/1438H, 693/1441H, 745/1442H). Confirmed via three independent Wayback Machine snapshots of laws.boe.gov.sa (16 Jan 2020, 1 Dec 2022, 7 May 2025 — live BOE returned 503 all pass), byte-identical (SHA-256 verified) for 12/13 articles across all three, cross-checked against nezams.com and TVTC's own official site (tvtc.gov.sa, citation-only).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": tvtc_organizational_statute_llm["record_count"],
+                    "data_path": "data/tvtc_organizational_statute_arabic_legal_llm/tvtc_organizational_statute_legal_llm_001_013.json"}},
+                "record_counts": {"arabic_articles": tvtc_organizational_statute_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 11, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+                                  "total": tvtc_organizational_statute_llm["record_count"]},
+                "data_paths": [
+                    "sources/tvtc_organizational_statute/law/official_source/tvtc_organizational_statute_official_source.json",
+                    "sources/tvtc_organizational_statute/law/verified/tvtc_organizational_statute_verified_summary.json",
+                    "data/tvtc_organizational_statute_arabic_legal_llm/tvtc_organizational_statute_legal_llm_001_013.json",
+                ],
+                "validator_targets": ["make tvtc-organizational-statute-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«تنظيم المؤسسة العامة للتدريب التقني والمهني» — Statute of the Technical and Vocational Training Corporation (TVTC). **13 records: 11 اصلية / 2 معدلة (Articles 4 and 7)**, flat structure. **VERIFICATION TIER: MIXED (TIER_2-adjacent)** — 11 unamended articles plus Article 4's stale main body confirmed via three independent Wayback snapshots of laws.boe.gov.sa (2020/2022/2025, live BOE 503 throughout), byte-identical across all three; Article 7's Resolution 632 amendment confirmed via qanoonsa.com's direct republication of the resolution's operative text (citing Umm al-Qura Gazette Issue 5074) but not yet reflected in any BOE snapshot through May 2025 — a thinner tier, honestly flagged. Resolution 632 amends ONLY the صدر (opening clause) of Article 7 (the Governor's appointment/dismissal mechanism), not its 11 enumerated duties. Article 4 (board composition) carries three layered amendments (469/1438H fully quoted; 693/1441H and 745/1442H are bare 'add a seat' instructions with no stated lettered position) — rather than inventing letter assignments, the track ingests BOE's own stale original text and records all three amendments unmerged. Confirmed positive predecessor-repeal finding: Article 12 names and repeals the prior Royal Decree M/30 (10/8/1400H). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "waste_management_law",
+                "display_name_ar": "نظام إدارة النفايات",
+                "display_name_en": "Waste Management Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_SINGLE_AGGREGATOR_BOE_AND_WAYBACK_BOTH_UNREACHABLE_STRUCTURAL_CROSSCHECK_ONLY",
+                "source_authority": "Royal Decree M/3, dated 5/1/1443H, replacing the Solid Municipal Waste Management Law (Royal Decree M/48, 17/9/1434H). laws.boe.gov.sa (dedicated lawId confirmed) returned 'Connection reset by peer' on repeated attempts, and web.archive.org was independently attempted (not just skipped) and hit the identical connection reset. Full verbatim text obtained from nezams.com (single clean born-digital HTML aggregator), with metadata/structure cross-checked for identity against the BOE lawIds (current + repealed law), qanoonsa.com, and an mwan.gov.sa link.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": waste_management_law_llm["record_count"],
+                    "data_path": "data/waste_management_law_arabic_legal_llm/waste_management_law_legal_llm_001_038.json"}},
+                "record_counts": {"arabic_articles": waste_management_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 38, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": waste_management_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/waste_management_law/law/official_source/waste_management_law_official_source.json",
+                    "sources/waste_management_law/law/verified/waste_management_law_verified_summary.json",
+                    "data/waste_management_law_arabic_legal_llm/waste_management_law_legal_llm_001_038.json",
+                ],
+                "validator_targets": ["make waste-management-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام إدارة النفايات» — Waste Management Law. **38 records, ALL اصلية** across 11 فصول ('لم يجرى عليه تعديل' per the source itself). **VERIFICATION TIER: TIER_3** — laws.boe.gov.sa (dedicated lawId confirmed) returned 'Connection reset by peer' on repeated direct-curl attempts; web.archive.org was independently attempted (not merely skipped) and hit the identical connection reset. Full verbatim text of all 38 articles came from nezams.com (single clean aggregator), with metadata/structure cross-checked for identity against the BOE lawIds for both this law and its repealed predecessor, qanoonsa.com, and an mwan.gov.sa link. Repeal confirmed via Article 37's own text verbatim: 'يحل هذا النظام محل نظام إدارة النفايات البلدية الصلبة، الصادر بالمرسوم الملكي رقم (م/48) وتاريخ 17/9/1434هـ' — a stronger anchor than several sibling tracks where repeal appears only in the issuing decree. A disclosed date discrepancy: Council of Ministers Resolution 11's date appears in three conflicting forms across the same source page (2/1/1443H, 3/1/1443H, and a likely decade-off typo 2/1/1433H), preserved not silently resolved. The Implementing Regulation (Article 36 mandate, ~138 pages per mwan.gov.sa) exists but is not ingested this pass (mwan.gov.sa unreachable) — flagged as a follow-up candidate (waste_management_regulation). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "fisheries_law",
+                "display_name_ar": "نظام صيد واستثمار وحماية الثروات المائية الحية في المياه الإقليمية للمملكة العربية السعودية",
+                "display_name_en": "Fisheries / Marine Resources Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "BOE_WAYBACK_DUAL_SNAPSHOT_2019_2025_SELF_CONSISTENT_TIER_1",
+                "source_authority": "Royal Decree M/9, dated 27/3/1408H. Full verbatim text obtained directly from laws.boe.gov.sa via a Wayback Machine snapshot, self-consistent across two independent snapshots six years apart (2019, 2025) — this corpus's designated primary source.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": fisheries_law_llm["record_count"],
+                    "data_path": "data/fisheries_law_arabic_legal_llm/fisheries_law_legal_llm_001_013.json"}},
+                "record_counts": {"arabic_articles": fisheries_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 12, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": fisheries_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/fisheries_law/law/official_source/fisheries_law_official_source.json",
+                    "sources/fisheries_law/law/verified/fisheries_law_verified_summary.json",
+                    "data/fisheries_law_arabic_legal_llm/fisheries_law_legal_llm_001_013.json",
+                ],
+                "validator_targets": ["make fisheries-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام صيد واستثمار وحماية الثروات المائية الحية في المياه الإقليمية للمملكة العربية السعودية» — Fisheries/Marine Resources Law. **13 records: 12 اصلية / 1 معدلة**, flat structure. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — full verbatim text obtained directly from laws.boe.gov.sa via a Wayback Machine snapshot, self-consistent across two independent snapshots six years apart (2019, 2025). One provision is confirmed repealed by clause Second/1 of the Agriculture Law's own issuing Royal Decree (M/64, 10/8/1442H), NOT by any provision inside this law's own 13 articles — confirmed independently by BOE's own الحالة status field (ساري in the Nov-2019 snapshot, لاغي from Aug-2021 onward), this corpus's own agriculture track (supersedes_ar), and ECOLEX/InforMEA. Unresolved flag, not hidden: ECOLEX/InforMEA (citing FAOLEX) describe 17 articles/4 headings, conflicting with BOE's confirmed 13-article flat structure; FAOLEX's own Arabic PDF is unreadable (corrupted font encoding) so this could not be independently adjudicated — BOE is trusted as the designated primary source. An Implementing Regulation (Ministerial Decision 21911, 27/3/1409H) is known to exist per Lexis Middle East but is unverified and not ingested this pass (follow-up candidate: fisheries_law_regulation). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "debt_collection_regulation",
+                "display_name_ar": "ضوابط وإجراءات التحصيل",
+                "display_name_en": "Debt Collection Regulations and Procedures",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SAMA_RULEBOOK_BORN_DIGITAL_BILINGUAL_ENTIRESECTION_PRIMARY",
+                "source_authority": "Saudi Central Bank Circular No. 106889333, dated 6/9/1446H (6/3/2025G), superseding a distinct 'First Edition' (Circular 391000083340, 26/7/1439H = 11/4/2018G). Fetched directly from rulebook.sama.gov.sa's Arabic/English bilingual entiresection view (node 10400), this corpus's established go-to source for SAMA-family instruments.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": debt_collection_regulation_llm["record_count"],
+                    "data_path": "data/debt_collection_regulation_arabic_legal_llm/debt_collection_regulation_legal_llm_001_011.json"}},
+                "record_counts": {"arabic_articles": debt_collection_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": debt_collection_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/debt_collection_regulation/law/official_source/debt_collection_regulation_official_source.json",
+                    "sources/debt_collection_regulation/law/verified/debt_collection_regulation_verified_summary.json",
+                    "data/debt_collection_regulation_arabic_legal_llm/debt_collection_regulation_legal_llm_001_011.json",
+                ],
+                "validator_targets": ["make debt-collection-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«ضوابط وإجراءات التحصيل» — Debt Collection Regulations and Procedures. **11 records, ALL اصلية**, 5 فصول (Chapter Five 'أحكام ختامية' carries no numbered article, preserved verbatim in closing_provisions_ar, not fabricated as a 12th article). **VERIFICATION TIER: TIER_1-candidate** — full text fetched directly from rulebook.sama.gov.sa's Arabic/English bilingual entiresection view (SAMA's own official Rulebook portal), this corpus's established primary source for SAMA-family instruments. Confirmed distinct predecessor 'First Edition' (Circular 391000083340, 26/7/1439H = 11/4/2018G) superseded — not ingested here (out of scope). Confirmed distinct from this corpus's own finance_companies_regulation: this Regulation's own Article 96 (of finance_companies_regulation) cross-references this instrument by name, not a duplicate. Arabic governs; not legal advice.",
             },
         ],
     }

@@ -281,6 +281,20 @@ STATUS_TIER_MAP = {
     "TIER_4_BFC_GOV_SA_SINGLE_OFFICIAL_IMAGE_SCAN_DEC2025_CONSOLIDATED_TEXT_MULTI_SOURCE_AMENDMENT_EVENT_CORROBORATED": TIER_4,
     "TIER_2_SAMA_RULEBOOK_BORN_DIGITAL_HTML_X_DEDICATED_AMENDMENT_DECISION_NODE_X_ENGLISH_STRUCTURAL_CROSSCHECK": TIER_2,
     "TIER_1_NCNP_GOV_SA_X_CSCS_ORG_SA_DUAL_INDEPENDENT_OFFICIAL_IMAGE_SCAN_CROSSVERIFIED": TIER_1,
+
+    # --- wave-4 batch (bog_enforcement_law .. debt_collection_regulation) ---
+    "BOE_SINGLE_WAYBACK_SNAPSHOT_EGRESS_BLOCKED_X_NEZAMS_PARTIAL_SPOTCHECK_X_UMM_AL_QURA_METADATA": TIER_4,
+    "BOE_SINGLE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_QANOONSA_M180_DIRECT_TEXT_CROSSVERIFIED": TIER_2,
+    "BOE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_NSHR_PAMPHLET_TRIPLE_VERIFIED": TIER_2,
+    "QANONIAH_API_PARTIAL_8_OF_UNKNOWN_TOTAL_10_ITEM_PREVIEW_CAP_DISCLOSED": TIER_4,
+    "MOE_OFFICIAL_PDF_DIRECT_FETCH_VISION_VERIFIED_PAGE_BY_PAGE": TIER_1,
+    "NEZAMS_X_BIBLIOTDROIT_DUAL_SECONDARY_WORDFORWORD_CROSSVERIFIED_BOE_UNREACHABLE": TIER_3,
+    "NEZAMS_SINGLE_AGGREGATOR_PARTIAL_20_OF_37_ARTICLES_ARTICLE21PLUS_CONTENT_CORRUPTED_DISCLOSED": TIER_4,
+    "CMA_OFFICIAL_PDF_DIRECT_FETCH_FONT_DEFECT_CORRECTED_2017_SUPERSESSION_CORRECTED": TIER_2,
+    "BOE_TRIPLE_WAYBACK_SNAPSHOT_X_NEZAMS_X_QANOONSA_RESOLUTION632_DIRECT_TEXT_CROSSVERIFIED": TIER_2,
+    "NEZAMS_SINGLE_AGGREGATOR_BOE_AND_WAYBACK_BOTH_UNREACHABLE_STRUCTURAL_CROSSCHECK_ONLY": TIER_3,
+    "BOE_WAYBACK_DUAL_SNAPSHOT_2019_2025_SELF_CONSISTENT_TIER_1": TIER_1,
+    "SAMA_RULEBOOK_BORN_DIGITAL_BILINGUAL_ENTIRESECTION_PRIMARY": TIER_4,
 }
 
 # Tracks whose `official_text_status` field is absent (None) in the registry — these are the
@@ -321,6 +335,53 @@ RATIONALE_OVERRIDE = {
         "مسار تدقيق إغلاق مشتق (closure/status audit) يراجع اكتمال المسارين العامّ والخاص "
         "بشركات المساهمة المدرجة فقط؛ لا يحمل هو نفسه نصاً قانونياً أساسياً، ويرث تصنيف "
         "المسارين اللذين يدقّقهما."
+    ),
+    "elderly_care_law": (
+        "official_text_status='BOE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_NSHR_PAMPHLET_TRIPLE_"
+        "VERIFIED': خلافاً للتصنيف غير الرسمي 'TIER_1' الوارد في ملاحظات سجل هذا المسار، التصنيف "
+        "الصارم هنا TIER_2: مصدر رسمي أساسي واحد فقط تم الوصول إلى محتواه الفعلي (لقطة أرشيفية "
+        "وحيدة لصفحة BOE، وليس لقطتين مستقلتين كما في awqaf_law أو saudi_engineers_law)، مقارَناً "
+        "بمصدرين ثانويين غير حكوميين (nezams.com بمطابقة حرفية كاملة، ومنشور الهيئة الوطنية "
+        "لحقوق الإنسان NSHR وهي هيئة شبه حكومية مستقلة عن الجهة المنظِّمة لا موقعاً رسمياً "
+        "لوزارة الموارد البشرية والتنمية الاجتماعية نفسها). لا يوجد مصدر رسمي ثانٍ مستقل بذاته "
+        "(بخلاف awqaf_law: BOE × web.awqaf.gov.sa)، فلا يستوفي شرط TIER_1."
+    ),
+    "foreign_schools_regulation": (
+        "official_text_status='NEZAMS_X_BIBLIOTDROIT_DUAL_SECONDARY_WORDFORWORD_CROSSVERIFIED_"
+        "BOE_UNREACHABLE': خلافاً للتصنيف غير الرسمي 'TIER_2' الوارد في نص official_source.json "
+        "نفسه، التصنيف الصارم هنا TIER_3: لم يتيسّر الوصول إلى أي مصدر رسمي/أساسي إطلاقاً هذه "
+        "الجولة (بوابة BOE أعادت 503 على كل المحاولات، وموقع وزارة التعليم أعاد 404، وأرشيف "
+        "Wayback محظور بسياسة الخروج) — الاعتماد كليةً على مصدرين ثانويين مستقلين غير حكوميين "
+        "(nezams.com وbibliotdroit.com) متطابقين حرفياً على المواد الـ21 غير المعدَّلة، دون أي "
+        "تأكيد أولي من مصدر رسمي بتاتاً. هذا يطابق تعريف TIER_3 حرفياً (تعذّر المصدر الرسمي "
+        "الأساسي + تطابق مصدرين ثانويين مستقلين)، وليس TIER_2 التي تشترط الوصول الفعلي لمصدر "
+        "رسمي واحد على الأقل."
+    ),
+    "cma_corporate_governance_regulation": (
+        "official_text_status='CMA_OFFICIAL_PDF_DIRECT_FETCH_FONT_DEFECT_CORRECTED_2017_"
+        "SUPERSESSION_CORRECTED': خلافاً للتصنيف غير الرسمي 'TIER_1-candidate' الوارد في "
+        "ملاحظات سجل هذا المسار، التصنيف الصارم هنا TIER_2: مصدر رسمي أساسي واحد فقط (ملف PDF "
+        "رسمي من cma.gov.sa)، والتدقيق المقارن الإضافي (صفحات إخبارية/صحفية من cma.gov.sa "
+        "نفسها) صادر عن نفس الجهة المصدرة لا عن جهة رسمية ثانية مستقلة، فلا يُعدّ مصدرين رسميين "
+        "متقاربين. لا يوجد تمرير OCR/صورة مستقل للمستند نفسه يعزز الحالة إلى TIER_1 على غرار "
+        "private_schools_regulation."
+    ),
+    "private_schools_regulation": (
+        "official_text_status='MOE_OFFICIAL_PDF_DIRECT_FETCH_VISION_VERIFIED_PAGE_BY_PAGE': "
+        "مصدر رسمي واحد فقط (ملف PDF من وزارة التعليم moe.gov.sa)، لكنه يستوفي صراحة الاستثناء "
+        "المنصوص عليه في تعريف TIER_1 لهذه المدونة ('مستند PDF رسمي واحد تم التحقق منه عبر "
+        "تمريرة OCR / صور صفحات مستقلة لنفس المستند الرسمي'): استُخرج النص آلياً (pdftotext) ثم "
+        "روجعت كل الصفحات الثماني بصرياً (رندرة صورة مستقلة لكل صفحة) وتطابقت الطريقتان حرفياً "
+        "على كل صفحة دون أي عيب استخراج. لذلك TIER_1 هنا مصنَّف بثقة، لا كمرشح فقط."
+    ),
+    "fisheries_law": (
+        "official_text_status='BOE_WAYBACK_DUAL_SNAPSHOT_2019_2025_SELF_CONSISTENT_TIER_1': "
+        "مصدر رسمي أساسي واحد (بوابة BOE) عبر لقطتي أرشيف Wayback مستقلتين بفارق نحو ست سنوات "
+        "(2019 و2025)، متطابقتين حرفياً بالكامل على المواد الـ13 كافة — نمط مطابق تماماً لسابقة "
+        "'BOE_WAYBACK_DUAL_INDEPENDENT_SNAPSHOT_FULL_LITERAL_MATCH_X_NEZAMS_SUPPLEMENTARY' "
+        "المصنَّفة TIER_1 أعلاه، ومعزَّز هنا إضافة بتثليث داخلي (مسار agriculture الذي يسمي هذا "
+        "النظام صراحة ضمن ما ألغاه) وتثليث خارجي (ECOLEX وInforMEA وLexis Middle East) لهوية "
+        "المرسوم وتاريخه وحالته الحالية (لاغٍ)."
     ),
     "board_of_grievances_law": (
         "official_text_status='BOARD_OFFICIAL_PDF_VISUALLY_ADJUDICATED_GAZETTE_CONFIRMED': "
