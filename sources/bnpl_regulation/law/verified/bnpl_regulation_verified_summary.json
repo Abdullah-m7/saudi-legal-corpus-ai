@@ -1,0 +1,102 @@
+{
+  "law_key": "bnpl_regulation",
+  "layer": "BNPL_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 31,
+  "official_text_status": "SAMA_RULEBOOK_PRIMARY_AR_EN_BILINGUAL_HTML_AMENDMENT_NODE_CROSS_VERIFIED",
+  "status_counts": {
+    "اصلية": 30,
+    "معدلة": 1,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "تعميم البنك المركزي السعودي رقم (450360390000)",
+  "decree_date_hijri": "5/6/1445",
+  "decree_date_gregorian": "17/12/2023",
+  "governor_decision": "قرار معالي محافظ البنك المركزي السعودي رقم (145/م ش ت) وتاريخ 23/5/1445هـ",
+  "administering_authority_en": "Saudi Central Bank (SAMA)",
+  "consolidated_amended_law": false,
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "التعريفات والأحكام العامة",
+      "articles": "1-3"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "أحكام الترخيص",
+      "articles": "4-12"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "التنظيم الداخلي",
+      "articles": "13-18"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "أحكام مزاولة النشاط",
+      "articles": "19-27"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "الإشراف والالتزام",
+      "articles": "28-29"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "أحكام ختامية",
+      "articles": "30-31"
+    }
+  ],
+  "amendment_history": [
+    {
+      "decree": "قرار معالي محافظ البنك المركزي السعودي رقم (145/م ش ت)",
+      "date_hijri": "23/5/1445",
+      "note": "قرار الاعتماد الأصلي للقواعد، منقولاً بموجب تعميم البنك المركزي السعودي رقم (450360390000) وتاريخ 5/6/1445هـ الموافق 17/12/2023م. هذا هو الإصدار الأصلي المعتمد في هذا المسار (31 مادة، 6 فصول)."
+    },
+    {
+      "decree": "تعميم البنك المركزي السعودي رقم (472038475)",
+      "date_hijri": "4/7/1447",
+      "note": "عدّل الفقرة (1) من المادة الثانية والعشرون فقط (رفع الحد الأعلى لمجموع التمويل القائم لكل عميل فرد من 5,000 إلى 10,000 ريال)، الموافق 24/12/2025م. لم يُعثر هذه الجولة على أي تعديل آخر لأي مادة أخرى من القواعد منذ صدورها."
+    }
+  ],
+  "verification_methodology_note": "PRIMARY SOURCE: rulebook.sama.gov.sa (SAMA's own official Rulebook portal, the issuing/administering authority's own site), Arabic full-text 'entiresection' view at https://rulebook.sama.gov.sa/ar/entiresection/6523 (HTTP 200, fetched directly via curl this pass, born-digital structured HTML -- no OCR needed). This single URL renders the document title, the metadata table (الرقم: 450360390000 | التاريخ (م): 2023/12/17 | التاريخ (هـ): 1445/6/5 | الحالة: نافذ -- matching this track's commissioning brief exactly), and all six الفصول (chapters)/31 المواد (articles) on one page. The page was parsed with BeautifulSoup (not naive regex/tag-stripping): every h2.page-title was located in document order (38 total: 1 document-title header, 6 'الفصل' chapter headers, 31 'المادة' article headers -- a clean, gap-free, non-duplicated 1..31 sequence, confirmed programmatically), and each heading's immediately-following div.field--name-body was extracted. Three content conventions were identified and handled distinctly, verified by direct inspection of the raw HTML: (1) plain <p> paragraphs; (2) HTML <table> rows carrying their own literal enumerator text in leading cells (e.g. '1.', '(أ)') -- the same SAMA-Rulebook table convention already documented in this corpus's debt_collection_regulation and finance_lease_regulation tracks -- converted to one line per row, joining each row's own non-empty cells in order; (3) genuine HTML <ol>/<li> auto-numbered lists carrying NO literal enumerator text in the source markup (confirmed by direct inspection -- e.g. Articles 1, 6, 7, 8, 9 use this convention) -- converted to explicit 'N. ' prefixed lines matching the browser-rendered numbering, since dropping the numbering would silently lose structure a human reader sees on the page. No nested <ol> or nested <table> inside any <li> was found anywhere in the document (checked programmatically across all 31 articles). Exactly two footnote markers (<sup>) exist in the whole document, both confirmed and preserved verbatim in place (see known_unresolved_discrepancies for their substance): one in Article 20 (a suspension-of-application note) and one asterisk-style note in Article 22 (the credit-limit amendment, also carried as a same-page editorial 'ar-notifications' banner preceding the article's own numbered text) -- both are part of the primary source's own rendered page for that article and were not omitted.\n\nENGLISH CROSS-CHECK (STRUCTURE ONLY): the equivalent English entiresection view (https://rulebook.sama.gov.sa/en/entiresection/6523, HTTP 200, fetched directly) was used ONLY to independently confirm the chapter/article count, titles, and the substance of the two footnotes -- it reproduces the identical 6-chapter/31-article structure with matching English chapter and article titles, and its own Article 20/22 footnotes state the same dates, circular number, and SAR amounts as the Arabic version. English was NEVER used as a source of Arabic wording, consistent with this corpus's standing methodology.\n\nGOVERNOR'S DECISION AND TRANSMITTAL CIRCULAR -- INDEPENDENTLY CONFIRMED, FULL TEXT RECOVERED: the Governor's Decision No. 145/M Sh T, dated 23/5/1445H, and the transmitting SAMA Circular No. 450360390000, dated 5/6/1445H (17/12/2023G) -- both cited in this track's own commissioning brief -- were independently located and read in full on their own dedicated rulebook.sama.gov.sa page (Arabic: https://rulebook.sama.gov.sa/ar/node/11012, English: https://rulebook.sama.gov.sa/en/circular-re-rules-regulating-buy-now-pay-later-bnpl-companies -- both HTTP 200), whose own metadata table states the identical number/dates, and whose own body text states verbatim (Arabic): 'نحيطكم بصدور قرار معالي المحافظ رقم 145/ م ش ت وتاريخ 1445/05/23هـ. والمتضمن اعتماد قواعد تنظيم شركات الدفع الآجل (BNPL) وفق الصيغة المرفقة.' -- an exact, independently-read match to the citation given in this track's own commissioning brief. This full text is preserved verbatim in this artifact's own preamble_ar field.\n\nARABIC-ORIGINAL PDF LOCATED AND CONFIRMED, BUT SCANNED (NOT BORN-DIGITAL) -- NOT USED AS THE GOVERNING TEXT: the transmittal circular's own page (node 11012) carries a 'تحميل الوثيقة الأصلية' (Download Original Document) link to https://rulebook.sama.gov.sa/sites/default/files/ar_net_file_store/SAMA_AR_11012_VER1.pdf (HTTP 200, fetched directly this pass, 14 pages, 1.4 MB) -- a genuine Arabic-original PDF of the gazetted circular hosted directly on the issuing authority's own Rulebook file store (NOT the www.sama.gov.sa 'RulesInstructions/FinanceRules/BNPL_rules_en.pdf' path referenced in this track's brief, which is the English-only rendering and which returned a SAMA help-desk error page when fetched directly this pass -- a documented negative finding, not fabricated access). This PDF was opened and inspected with PyMuPDF: it carries zero extractable text layer and is composed entirely of JBIG2-encoded page-image objects -- i.e. it is a SCANNED reproduction, not a born-digital PDF. Its metadata table on the rendering page (Circular No. 450360390000, dated 5/6/1445H = 17/12/2023G, Status نافذ/In-Force) matches the entiresection page's own metadata table exactly, corroborating that both pages describe the same instrument. A full OCR pass across all 14 scanned pages, sufficient to independently re-verify all 31 articles' wording character-for-character against this scanned image, was NOT completed this pass (attempted via tesseract -l ara on page 1 in this environment; the process did not return before this track's research window closed, under heavy shared-environment CPU contention) -- this is a documented limitation, not a fabricated cross-check. The GOVERNING primary text of this track therefore rests on the born-digital structured Arabic HTML (entiresection node 6523), not on this scanned PDF; the PDF's existence and matching metadata are recorded here as additional (metadata-level, not full-text) corroboration that the correct instrument was found.\n\nARTICLE 22 AMENDMENT -- INDEPENDENTLY VERIFIED VIA ITS OWN DISTINCT DECISION NODE, PRE- AND POST-AMENDMENT TEXT BOTH RECOVERED: Article 22 (حدود الائتمان / Credit Limits) carries an editorial 'ar-notifications' banner and a matching asterisk footnote, both linking to https://rulebook.sama.gov.sa/ar/node/10888 (HTTP 200, fetched and read in full this pass) -- a distinct page titled 'تعميم بشأن رفع الحد الأعلى الوارد في الفقرة (1) من المادة (الثانية والعشرون) من قواعد تنظيم شركات الدفع الآجل (BNPL)' (Circular No. 472038475, dated 4/7/1447H = 24/12/2025G, Status نافذ/In-Force). That page's own body text QUOTES paragraph (1)'s PRE-amendment wording verbatim (the (5,000) SAR cap) before announcing the raise to (10,000) SAR -- giving this track both the pre- and post-amendment text directly from the amending instrument's own page, not by inference. The English equivalent of node 10888 (https://rulebook.sama.gov.sa/en/node/10888, HTTP 200) states the identical number/dates. Article 22 is accordingly the only معدلة (amended) article in this track; its history[] entry carries both figures and the amending instrument's citation.\n\nARTICLE 20 SUSPENSION FOOTNOTE -- PRESERVED VERBATIM, NOT TREATED AS A TEXTUAL AMENDMENT: Article 20 (حدود النشاط / Activity Limits) carries a footnote (superscript 1, present on the primary source page itself, in both Arabic and English) stating that a separate SAMA decision dated 14/2/1446H suspended application of paragraph (1)'s fee prohibition specifically for administrative fees up to 1% of the financing amount or SAR 50 (whichever is less). Unlike Article 22, no wording within Article 20's own numbered paragraph (1) was changed on the source page (the prohibition's text is unchanged), and no separate linked node was available on the source page to independently open and read that decision's own full text the way node 10888 was for Article 22 -- so Article 20 remains legal_status_ar='اصلية' here, with the footnote's substance flagged in known_unresolved_discrepancies rather than modeled as a history[] amendment entry, since it narrows the article's practical application without editing its text.\n\nTRANSMITTAL CIRCULAR'S OWN ARTICLE-19 EXEMPTION -- CAPTURED IN preamble_ar, NOT INLINE IN ARTICLE 19's OWN TEXT: the same transmittal circular (node 11012) that promulgated these Rules also states, in its own operative text, an exemption of BNPL/finance companies practicing the BNPL activity from applying the 'نسب التحمل' (deductible ratios) in the Responsible Lending Principles for total financing not exceeding SAR 2,000, 'notwithstanding' Article 19 of these Rules. This exemption is NOT reflected inline in Article 19's own text on the entiresection page (Article 19's numbered text is unmodified) -- it lives only in the transmittal circular's own body text, preserved verbatim in this artifact's preamble_ar field and flagged in known_unresolved_discrepancies so a downstream reader does not miss this operative carve-out when interpreting Article 19 in isolation.\n\nTITLE VARIANCE FROM THIS TRACK'S OWN COMMISSIONING BRIEF: the commissioning brief for this track used a literal calque of the English name, 'قواعد تنظيم شركات الشراء الآن والدفع لاحقاً' ('Rules for Regulating Buy-Now-and-Pay-Later Companies'). The ACTUAL, verified official Arabic title used consistently across every rulebook.sama.gov.sa page for this instrument (the main entiresection page, the transmittal circular, and the amendment circular alike) is 'قواعد تنظيم شركات الدفع الآجل (BNPL)' (literally 'Rules for Regulating Deferred-Payment (BNPL) Companies') -- 'الدفع الآجل' (deferred payment), not a transliteration/calque of 'buy now pay later'. This track uses the verified official title throughout, not the brief's literal-translation title; see known_unresolved_discrepancies.\n\nSINGLE PRIMARY-SOURCE ARABIC RELIANCE, NO SECOND INDEPENDENT OFFICIAL SOURCE: consistent with this corpus's standing practice for SAMA circular/Governor's-Decision-level instruments (as opposed to Royal-Decree-level laws checked against laws.boe.gov.sa), the full Arabic article text in this track rests on rulebook.sama.gov.sa alone as the single governing primary source for the 31 articles' wording (no independent second Arabic text source -- e.g. a fully-OCR'd reading of the scanned PDF, or a private secondary aggregator such as nezams.com -- was cross-checked against the article text itself this pass); English was used only for the structural/footnote-substance cross-check described above, per this corpus's standing rule that English is never a source of Arabic wording.\n\nA RELATED, DISTINCT, OUT-OF-SCOPE DOCUMENT EXISTS: WebSearch this pass also surfaced a separate rulebook.sama.gov.sa page, 'Guidelines for Applying for a License to Practice (BNPL) Activity' (https://rulebook.sama.gov.sa/en/guidelines-applying-license-practice-bnpl-activity) -- licensing-application guidance/forms, not the Rules themselves. It was not opened in full or ingested this pass; noted here only so it is not mistaken for a variant of this track's own subject matter.\n\nTEXT QUALITY CHECKS PERFORMED: programmatic verification confirmed the extracted article texts contain no residual HTML tags/entities, no fullwidth colons (：, normalized to ':'), no Eastern Arabic-Indic digits (all numerals in the source and in this extraction are Western digits), and no double-space or space-before-punctuation artifacts, except for the two deliberate, verbatim, in-source Latin fragments '(BNPL)' and '(Pop-Up Window)' that are themselves part of the official Arabic text as published (the regulator's own Arabic text embeds these Latin parentheticals) -- these are not translation artifacts introduced by this pass.\n\nNo translation, paraphrase, or legal interpretation was performed on the Arabic text; the English fields above are for indexing/discovery only. Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "bnpl_regulation_title_naming_variance_from_brief",
+      "description": "عنوان هذا المسار في التكليف الأصلي ورد بصيغة ترجمة حرفية عن الإنجليزية 'قواعد تنظيم شركات الشراء الآن والدفع لاحقاً'، بينما العنوان العربي الرسمي المستخدم فعلياً وبثبات في كل صفحات rulebook.sama.gov.sa الخاصة بهذه القواعد (الصفحة الرئيسية، التعميم الناقل، تعميم التعديل) هو 'قواعد تنظيم شركات الدفع الآجل (BNPL)'. اعتُمد في هذا المسار العنوان الرسمي المؤكَّد من المصدر الأساسي المباشر، لا عنوان التكليف الحرفي."
+    },
+    {
+      "article_key": "bnpl_regulation_article_022_amended_credit_cap_raised",
+      "description": "الفقرة (1) من المادة الثانية والعشرون (حدود الائتمان) عُدّلت بموجب تعميم منفصل لاحق (رقم 472038475 وتاريخ 4/7/1447هـ الموافق 24/12/2025م)، رافعاً الحد الأعلى لمجموع التمويل القائم لكل عميل فرد من (5,000) خمسة آلاف ريال إلى (10,000) عشرة آلاف ريال. النص المثبت في هذا المسار هو النص الحالي بعد التعديل (10,000 ريال)، والنص السابق قبل التعديل محفوظ حرفياً في history الخاص بهذه المادة (pre_amendment_text_ar)، مُسترجَع من صفحة التعميم المُعدِّل ذاتها لا من استنتاج."
+    },
+    {
+      "article_key": "bnpl_regulation_article_020_fee_prohibition_suspension_note",
+      "description": "الفقرة (1) من المادة العشرون (حدود النشاط، حظر فرض الرسوم على العميل) تحمل حاشية (رقم 1) واردة على صفحة المصدر الأساسي ذاتها (بالعربية والإنجليزية) تفيد بصدور قرار من البنك المركزي بتاريخ 1446/02/14هـ تضمّن تعليق تطبيق هذه الفقرة فيما يخص الرسوم الإدارية التي قد تفرضها الشركة في حدود (1%) من مبلغ التمويل أو (50) ريال أيهما أقل. هذا القرار لم يُعدِّل نص الفقرة نفسها على صفحة المصدر (خلافاً للمادة الثانية والعشرين)، ولذلك بقيت هذه المادة 'اصلية' في هذا المسار، مع تسجيل مضمون الحاشية حرفياً ضمن نص المادة ذاته. لم يتوفر على صفحة المصدر رابط لصفحة منفصلة لهذا القرار تحديداً يمكّن من قراءة نصه الكامل والتحقق منه بشكل مستقل، خلافاً لتعميم تعديل المادة (22) (node 10888) المُتاح رابطه مباشرة."
+    },
+    {
+      "article_key": "bnpl_regulation_transmittal_circular_article_019_2000_sar_exemption",
+      "description": "التعميم الناقل ذاته (رقم 450360390000، وهو ذات التعميم المُعتمَد المعنون به هذا المسار) يتضمن -- ضمن نصه التنفيذي الخاص، لا ضمن نص القواعد ذاته -- إعفاء شركات الدفع الآجل وشركات التمويل الأخرى عند ممارستها نشاط الدفع الآجل من تطبيق نسب التحمّل الواردة في مبادئ التمويل المسئول للأفراد لمجموع تمويل لا يتجاوز (2,000) ريال، استثناءً من جملة أمور من المادة (التاسعة عشرة) من هذه القواعد. هذا الإعفاء غير منعكس داخل نص المادة (التاسعة عشرة) ذاته على صفحة عرض القسم الكامل (المادة كما وردت هناك دون تعديل)، ومحفوظ حرفياً هنا فقط ضمن preamble_ar لهذا الملف. يُنبَّه القارئ/النموذج اللغوي إلى عدم إغفال هذا الاستثناء التشغيلي عند الاعتماد على نص المادة (19) بمعزل عن نص التعميم الناقل."
+    },
+    {
+      "article_key": "bnpl_regulation_original_pdf_scanned_ocr_incomplete",
+      "description": "عُثر على نسخة PDF عربية أصلية حقيقية للتعميم الناقل (المُلحَق به نص القواعد) على ملفات rulebook.sama.gov.sa ذاتها (sites/default/files/ar_net_file_store/SAMA_AR_11012_VER1.pdf، استجابة HTTP 200، 14 صفحة). فُحص الملف برمجياً (PyMuPDF) وتبيّن أنه ملف ممسوح ضوئياً (صور صفحات بترميز JBIG2) بلا طبقة نص قابلة للاستخراج مباشرة، لا ملف رقمي المنشأ. لم تُنجَز هذه الجولة عملية تعرّف ضوئي (OCR) كاملة على الصفحات الأربع عشرة تكفي لمضاهاة نص المواد الـ31 حرفياً مقابل هذا الملف الممسوح (محاولة عبر tesseract على الصفحة الأولى لم تكتمل ضمن هذه الجولة بسبب ازدحام حاد على موارد المعالجة في بيئة مشتركة) -- قيد موثَّق صراحة لا تجاوَز عنه. النص الحاكم في هذا المسار مبني على صفحة HTML الرقمية المنشأ (entiresection node 6523) لا على هذا الملف الممسوح؛ جدول البيانات الوصفية لصفحة هذا الملف يطابق تماماً جدول البيانات الوصفية لصفحة entiresection (نفس الرقم والتاريخين والحالة)، وهو ما يُعزز الثقة أن كلتا الصفحتين تصفان ذات الصك دون أن يشكل ذلك تحققاً نصياً كاملاً بديلاً."
+    },
+    {
+      "article_key": "bnpl_regulation_english_used_for_structure_and_footnotes_only",
+      "description": "النسخة الإنجليزية لصفحة entiresection (وصفحتي node 10888 وnode 11012) استُخدمت فقط للتحقق البنيوي (عدد الفصول والمواد وعناوينها) ولمضاهاة مضمون الحاشيتين في المادتين (20) و(22) والتعميم الناقل، لا كمصدر لأي كلمة من النص العربي المثبت في هذا المسار، تماشياً مع منهجية هذا المجمّع القانوني المعتمدة."
+    },
+    {
+      "article_key": "bnpl_regulation_single_ar_source_no_second_independent_crosscheck",
+      "description": "النص العربي الكامل لهذا المسار (31 مادة) مبني على مصدر أساسي منفرد (rulebook.sama.gov.sa، بوابة ساما الرسمية ذاتها، عرض القسم الكامل). لم يُقاطَع نص المواد حرفياً مع مصدر عربي رسمي أو ثانوي مستقل ثانٍ هذه الجولة (كنص كامل مُستخرَج بالتعرف الضوئي من الملف الممسوح، أو موقع nezams.com، أو غيره) -- انظر أيضاً القيد الخاص بملف الـPDF الممسوح أعلاه."
+    },
+    {
+      "article_key": "bnpl_regulation_related_out_of_scope_licensing_guidelines_document",
+      "description": "عُثر عبر WebSearch هذه الجولة على صفحة منفصلة ومستقلة على rulebook.sama.gov.sa بعنوان 'Guidelines for Applying for a License to Practice (BNPL) Activity' (دليل إرشادي لتقديم طلب ترخيص مزاولة نشاط BNPL) -- وثيقة إرشادات ونماذج لطلب الترخيص، وليست نص القواعد ذاته. لم تُفتَح هذه الصفحة بالكامل ولم تُدرَج في هذا المسار؛ مُسجَّلة هنا فقط لتجنّب الخلط بينها وبين موضوع هذا المسار."
+    },
+    {
+      "article_key": "bnpl_regulation_no_boe_lawid_regulation_level",
+      "description": "تماشياً مع السابقة المتبعة في هذا المجمّع القانوني مع القواعد/الضوابط الصادرة بقرار محافظ/تعميم (لا بمرسوم ملكي)، لم تُفحص بوابة laws.boe.gov.sa لهذه القواعد تحديداً هذه الجولة؛ الاعتماد كان على المصدر الرسمي المباشر (rulebook.sama.gov.sa) بصفته موقع الجهة المُصدرة والمشرفة ذاتها."
+    }
+  ],
+  "source_artifact": "sources/bnpl_regulation/law/official_source/bnpl_regulation_official_source.json"
+}

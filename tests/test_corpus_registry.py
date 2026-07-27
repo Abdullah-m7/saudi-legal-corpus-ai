@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 254
+        assert registry["total_tracks"] == 268
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 14735
+        assert registry["total_primary_arabic_governing_records"] == 15108
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 15630
+        assert registry["total_registry_counted_records"] == 16003
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -323,6 +323,20 @@ class TestTracks:
         assert "waste_management_law" in ids
         assert "fisheries_law" in ids
         assert "debt_collection_regulation" in ids
+        assert "insurance_authority_statute" in ids
+        assert "bnpl_regulation" in ids
+        assert "offplan_sale_law" in ids
+        assert "contractors_classification_law" in ids
+        assert "real_estate_contributions_law" in ids
+        assert "accredited_valuers_law" in ids
+        assert "white_land_fees_law" in ids
+        assert "frequency_spectrum_regulation" in ids
+        assert "mental_health_law" in ids
+        assert "organ_donation_law" in ids
+        assert "private_healthcare_institutions_law" in ids
+        assert "high_risk_professions_regulation" in ids
+        assert "osh_service_providers_regulation" in ids
+        assert "rega_organizational_statute" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -1748,6 +1762,90 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 11
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "SAMA_RULEBOOK_BORN_DIGITAL_BILINGUAL_ENTIRESECTION_PRIMARY"
+
+    def test_insurance_authority_statute_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "insurance_authority_statute")
+        assert t["record_counts"]["arabic_articles"] == 15
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "UQN_GAZETTE_PRIMARY_X_QANOONSA_BYTE_LEVEL_X_ARGAAM_QUOTE_LEVEL_CROSSVERIFIED_BOE_UNREACHABLE"
+
+    def test_bnpl_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "bnpl_regulation")
+        assert t["record_counts"]["arabic_articles"] == 31
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 30, "معدلة": 1, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "SAMA_RULEBOOK_BORN_DIGITAL_BILINGUAL_ENTIRESECTION_SINGLE_SOURCE_NO_INDEPENDENT_CROSSCHECK"
+
+    def test_offplan_sale_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "offplan_sale_law")
+        assert t["record_counts"]["arabic_articles"] == 30
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "UQN_GAZETTE_PRIMARY_X_QANOONSA_X_NEZAMS_CROSSVERIFIED_BOE_UNREACHABLE"
+
+    def test_contractors_classification_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "contractors_classification_law")
+        assert t["record_counts"]["arabic_articles"] == 19
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 19, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOMAH_GOV_SA_OFFICIAL_PDF_DIRECT_FETCH_FONT_DEFECT_CORRECTED_X_NEZAMS_QANOONSA_ARGAAM_CROSSCHECK_BOE_UNREACHABLE"
+
+    def test_real_estate_contributions_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "real_estate_contributions_law")
+        assert t["record_counts"]["arabic_articles"] == 38
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 38, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "REGA_OFFICIAL_SCANNED_DECREE_X_UQN_GAZETTE_DUAL_OFFICIAL_CROSSVERIFIED_X_QANOONSA_BOE_UNREACHABLE"
+
+    def test_accredited_valuers_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "accredited_valuers_law")
+        assert t["record_counts"]["arabic_articles"] == 45
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 20, "معدلة": 25, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TAQEEM_GOV_SA_OFFICIAL_PDF_LIGATURE_DEFECT_CORRECTED_X_UQN_GAZETTE_X_NEZAMS_QANOONSA_CROSSVERIFIED_5_ARTICLES_SINGLE_SOURCE_BOE_UNREACHABLE"
+
+    def test_white_land_fees_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "white_land_fees_law")
+        assert t["record_counts"]["arabic_articles"] == 15
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 2, "معدلة": 13, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "MOMAH_GOV_SA_REDLINE_PDF_X_QADHA_ORG_SA_X_ALHAMOUDILAWYERS_CROSSVERIFIED_ARTICLE3_GAP_DISCLOSED_BOE_UNREACHABLE"
+
+    def test_frequency_spectrum_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "frequency_spectrum_regulation")
+        assert t["record_counts"]["arabic_articles"] == 15
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "CST_OFFICIAL_ARABIC_PDF_VISION_READ_X_ENGLISH_STRUCTURAL_CROSSCHECK_GENERAL_FRAMEWORK_ONLY_ANNEXES_EXCLUDED"
+
+    def test_mental_health_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "mental_health_law")
+        assert t["record_counts"]["arabic_articles"] == 30
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "NEZAMS_X_SAUDIPEDIA_DUAL_SECONDARY_CROSSVERIFIED_BOE_UNREACHABLE"
+
+    def test_organ_donation_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "organ_donation_law")
+        assert t["record_counts"]["arabic_articles"] == 27
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 27, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "NEZAMS_X_SAUDIPEDIA_X_WIKIPEDIA_SECONDARY_MULTI_SOURCE_BOE_AND_WAYBACK_UNREACHABLE"
+
+    def test_private_healthcare_institutions_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "private_healthcare_institutions_law")
+        assert t["record_counts"]["arabic_articles"] == 35
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 32, "معدلة": 3, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "NEZAMS_X_QANOONSA_DUAL_SECONDARY_CROSSVERIFIED_BOE_UNREACHABLE"
+
+    def test_high_risk_professions_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "high_risk_professions_regulation")
+        assert t["record_counts"]["arabic_articles"] == 19
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 19, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "NCOSH_OFFICIAL_PDF_VISION_READ_LIGATURE_DEFECT_X_UQN_GAZETTE_DUAL_OFFICIAL_CROSSVERIFIED_BOE_UNREACHABLE"
+
+    def test_osh_service_providers_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "osh_service_providers_regulation")
+        assert t["record_counts"]["arabic_articles"] == 38
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 38, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "UQN_GAZETTE_PRIMARY_PARTIAL_29_OF_38_X_QANOONSA_SECONDARY_FOR_REMAINDER_MIXED_CONFIDENCE"
+
+    def test_rega_organizational_statute_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "rega_organizational_statute")
+        assert t["record_counts"]["arabic_articles"] == 16
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 7, "معدلة": 8, "ملغاة": 0, "مضافة": 1}
+        assert t["official_text_status"] == "REGA_GOV_SA_FIVE_SCANNED_PDFS_VISION_READ_X_NEZAMS_PARTIAL_CROSSCHECK_BOE_AND_WAYBACK_BOTH_BLOCKED"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

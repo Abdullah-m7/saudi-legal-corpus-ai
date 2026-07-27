@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 254,
+  "total_tracks": 268,
   "known_source_staleness_risk_count": 16,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -86,6 +86,28 @@
         "uqn.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "accredited_valuers_law",
+      "display_name_en": "Certified/Accredited Valuers Law",
+      "display_name_ar": "نظام المقيّمين المعتمدين",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='TAQEEM_GOV_SA_OFFICIAL_PDF_LIGATURE_DEFECT_CORRECTED_X_UQN_GAZETTE_X_NEZAMS_QANOONSA_CROSSVERIFIED_5_ARTICLES_SINGLE_SOURCE_BOE_UNREACHABLE': التصنيف هنا TIER_4 رغم أن الجزء الأكبر من النص (40 من 45 مادة) يستوفي فعلياً معيار TIER_1 تقريباً (مصدرين رسميين مستقلين، taqeem.gov.sa وuqn.gov.sa، مدقَّقين بمصدرين ثانويين) — لكن خمس مواد/بنود (المادة الأولى وتعريفاتها، المادتان 4 و41 وتحديث الإحالة لنظام الشركات، إعادة صياغة المادة 13، وتسمية جهة الادعاء في المادة 34) لا تستند إلا إلى نسخة taqeem.gov.sa المصححة يدوياً (خلل الالتصاقات) دون أي تأكيد حرفي مستقل. تماشياً مع سابقة نظام ضريبة الدخل (الفصل العاشر) ونظام المرور (19 من 86 مادة)، يُعتمد الجزء الأضعف معياراً للتصنيف الكلي، لا الأقوى.",
+      "registry_source_authority": "Royal Decree No. M/43, dated 9/7/1433H, substantially amended by Royal Decree No. M/190, dated 22/11/1444H (ratifying Council of Ministers Resolution No. 795, 17/11/1444H), with two earlier narrower amendments (CoM Resolution 57/1442H; CoM Resolution 123/1443H, limited to Article 27). laws.boe.gov.sa unreachable. Current consolidated text fetched from taqeem.gov.sa (the Authority's own official site) and cross-verified against uqn.gov.sa (Official Gazette, full text of M/190 and CoM 795), nezams.com (original 1433H text plus per-article amendment annotations), and qanoonsa.com (full CoM 795 resolution text).",
+      "registry_source_url": null,
+      "official_source_file": "sources/accredited_valuers_law/law/official_source/accredited_valuers_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -771,6 +793,36 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "bnpl_regulation",
+      "display_name_en": "Rules for Regulating Buy-Now-Pay-Later (BNPL) Companies",
+      "display_name_ar": "قواعد تنظيم شركات الدفع الآجل (BNPL)",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='SAMA_RULEBOOK_BORN_DIGITAL_BILINGUAL_ENTIRESECTION_SINGLE_SOURCE_NO_INDEPENDENT_CROSSCHECK': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "SAMA Governor's Decision No. 145/م ش ت, dated 23/5/1445H, transmitted via SAMA Circular No. 450360390000, dated 5/6/1445H (17/12/2023G). Fetched directly from rulebook.sama.gov.sa's Arabic bilingual entiresection view (node 6523), this corpus's established primary source for SAMA-family instruments; no independent non-SAMA cross-check performed this pass.",
+      "registry_source_url": null,
+      "official_source_file": "sources/bnpl_regulation/law/official_source/bnpl_regulation_official_source.json",
+      "source_urls": [
+        "https://rulebook.sama.gov.sa/ar/entiresection/6523",
+        "https://rulebook.sama.gov.sa/ar/node/10888",
+        "https://rulebook.sama.gov.sa/ar/node/11012",
+        "https://rulebook.sama.gov.sa/en/circular-re-rules-regulating-buy-now-pay-later-bnpl-companies",
+        "https://rulebook.sama.gov.sa/en/entiresection/6523",
+        "https://rulebook.sama.gov.sa/en/guidelines-applying-license-practice-bnpl-activity",
+        "https://rulebook.sama.gov.sa/en/node/10888",
+        "https://rulebook.sama.gov.sa/sites/default/files/ar_net_file_store/SAMA_AR_11012_VER1.pdf"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "board_of_grievances_law",
       "display_name_en": "Law of the Board of Grievances",
       "display_name_ar": "نظام ديوان المظالم",
@@ -1345,6 +1397,28 @@
         "spa.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "contractors_classification_law",
+      "display_name_en": "Contractors Classification Law",
+      "display_name_ar": "نظام تصنيف المقاولين",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='MOMAH_GOV_SA_OFFICIAL_PDF_DIRECT_FETCH_FONT_DEFECT_CORRECTED_X_NEZAMS_QANOONSA_ARGAAM_CROSSCHECK_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree No. M/9, dated 18/1/1443H, replacing the prior 1427H classification law. laws.boe.gov.sa and Wayback Machine both unreachable this pass. Full verbatim text fetched directly from the Ministry of Municipalities and Housing's own hosted PDF (momah.gov.sa), a systematic Arabic ligature font-encoding defect corrected and independently cross-validated via Tesseract OCR plus direct visual reading of the rendered pages, cross-checked structurally against nezams.com, qanoonsa.com, and argaam.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/contractors_classification_law/law/official_source/contractors_classification_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -2526,6 +2600,26 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "frequency_spectrum_regulation",
+      "display_name_en": "Frequency Spectrum Regulations for Radio Services and Applications (General Framework)",
+      "display_name_ar": "تنظيمات استخدامات الطيف الترددي للخدمات الراديوية وتطبيقاتها (الإطار العام)",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='CST_OFFICIAL_ARABIC_PDF_VISION_READ_X_ENGLISH_STRUCTURAL_CROSSCHECK_GENERAL_FRAMEWORK_ONLY_ANNEXES_EXCLUDED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Communications, Space & Technology Commission (CST) Decision No. 559/1446, dated 23/7/1446H (23/1/2025G) (document code RS45, First Edition). Both the Arabic and English official PDFs fetched directly from cst.gov.sa. The 78-page document's General Framework (15 sections) is ingested here in full; its six technical annexes (WLAN, IMT, Maritime, Broadcasting, Fixed Wireless Links, Amateur Radio — image-only frequency-band/channel tables) are explicitly NOT ingested this pass, a deliberate scope decision to avoid transcribing dense numeric tables without a reliable text layer.",
+      "registry_source_url": null,
+      "official_source_file": "sources/frequency_spectrum_regulation/law/official_source/frequency_spectrum_regulation_official_source.json",
+      "source_urls": [
+        "https://www.cst.gov.sa/-/media/B72CC914E7914D24AF739ADD8D967EDF.pdf",
+        "https://www.cst.gov.sa/-/media/EC580E53D38047C4B57BF268E145E692.pdf",
+        "https://www.cst.gov.sa/ar/regulations-and-licenses/decisions/Regulation-1536",
+        "https://www.cst.gov.sa/ar/regulations-and-licenses/regulations/Document-1606"
+      ],
+      "named_source_authorities": [],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "gcc_anti_dumping_law",
       "display_name_en": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law",
       "display_name_ar": "النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون",
@@ -2706,6 +2800,27 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "high_risk_professions_regulation",
+      "display_name_en": "High-Risk Professions Work Organization Regulation",
+      "display_name_ar": "لائحة تنظيم العمل في المهن ذات المخاطر العالية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='NCOSH_OFFICIAL_PDF_VISION_READ_LIGATURE_DEFECT_X_UQN_GAZETTE_DUAL_OFFICIAL_CROSSVERIFIED_BOE_UNREACHABLE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Adopted per the National Committee for Occupational Safety and Health (NCOSH)'s 13th-meeting resolution (27/12/1446H = 23/6/2025G), published in Umm Al-Qura Gazette (uqn.gov.sa entry p=28771) dated 20/7/1447H = 9/1/2026G; 180-day post-publication effective date already elapsed as of this build (legal_status = نافذ). Two independent official government sources agree: NCOSH's own PDF (ncosh.gov.sa) and the separately-operated Official Gazette. A silent, systematic ToUnicode ligature-reversal defect in the PDF's own text layer meant every article was independently transcribed by direct visual reading of 300dpi rendered page images of the SAME official document — this corpus's TIER_1 allowance for an independent OCR/image-pass of the same official document.",
+      "registry_source_url": null,
+      "official_source_file": "sources/high_risk_professions_regulation/law/official_source/high_risk_professions_regulation_official_source.json",
+      "source_urls": [
+        "https://ncosh.gov.sa/media/gwwhsqoc/rowhro-25-ar.pdf",
+        "https://uqn.gov.sa/details?p=28771"
+      ],
+      "named_source_authorities": [
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "iflas_hudud_regulation",
       "display_name_en": "Rules Organizing Cross-Border Insolvency Procedures",
       "display_name_ar": "القواعد المنظمة لإجراءات الإفلاس العابرة للحدود",
@@ -2817,6 +2932,33 @@
         "zatca.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "insurance_authority_statute",
+      "display_name_en": "Statute of the Insurance Authority",
+      "display_name_ar": "تنظيم هيئة التأمين",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_PRIMARY_X_QANOONSA_BYTE_LEVEL_X_ARGAAM_QUOTE_LEVEL_CROSSVERIFIED_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Council of Ministers Resolution No. 85, dated 28/1/1445H, published in Umm Al-Qura Gazette issue No. 4995 (25 Aug 2023G). laws.boe.gov.sa unreachable (TLS connection reset); Wayback Machine egress-blocked. Full verbatim text fetched directly from uqn.gov.sa (the Official Gazette portal of record), cross-checked byte-for-byte against qanoonsa.com and quote-level against argaam.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/insurance_authority_statute/law/official_source/insurance_authority_statute_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/6994e763-5a47-4c4e-b796-b08000dccc7d/1",
+        "https://portal.uqn.gov.sa/details?p=23532",
+        "https://qanoonsa.com/p/499501/",
+        "https://qanoonsa.com/p/499502/",
+        "https://uqn.gov.sa/details?p=23533"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3328,6 +3470,26 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "mental_health_law",
+      "display_name_en": "Mental Health Care Law",
+      "display_name_ar": "نظام الرعاية الصحية النفسية",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='NEZAMS_X_SAUDIPEDIA_DUAL_SECONDARY_CROSSVERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. M/56, dated 20/9/1435H (17 July 2014G), approving Council of Ministers Resolution No. 366. laws.boe.gov.sa unreachable (connection reset); Wayback returned HTTP 403. Full verbatim text of all 30 articles from nezams.com (born-digital HTML, no OCR artifacts), cross-checked against saudipedia.com (decree identity, article count, near-verbatim wording of Article 4) and moh.gov.sa (decree identity via the Implementing Regulation's cover page).",
+      "registry_source_url": null,
+      "official_source_file": "sources/mental_health_law/law/official_source/mental_health_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "mining_investment_law",
       "display_name_en": "Mining Investment Law",
       "display_name_ar": "نظام الاستثمار التعديني",
@@ -3497,6 +3659,74 @@
         "qanoonsa.com"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "offplan_sale_law",
+      "display_name_en": "Off-Plan Sale and Lease of Real Estate Projects Law (\"WAFI\")",
+      "display_name_ar": "نظام بيع وتأجير مشروعات عقارية على الخارطة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_PRIMARY_X_QANOONSA_X_NEZAMS_CROSSVERIFIED_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree No. M/44, dated 10/3/1445H (25/9/2023G), approving Council of Ministers Resolution No. 196, dated 4/3/1445H — the \"WAFI\" off-plan real estate sale/lease program. laws.boe.gov.sa unreachable (503/connection reset). Full verbatim text fetched directly from uqn.gov.sa (Official Gazette), cross-checked near word-for-word against qanoonsa.com and nezams.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/offplan_sale_law/law/official_source/offplan_sale_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "organ_donation_law",
+      "display_name_en": "Human Organ Donation Law",
+      "display_name_ar": "نظام التبرع بالأعضاء البشرية",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='NEZAMS_X_SAUDIPEDIA_X_WIKIPEDIA_SECONDARY_MULTI_SOURCE_BOE_AND_WAYBACK_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. M/70, dated 19/8/1442H, approving Council of Ministers Resolution No. 468, dated 17/8/1442H (30 March 2021G). laws.boe.gov.sa unreachable (TLS connection reset); Wayback Machine explicitly attempted via two independent tools/routes and confirmed egress-blocked both times. Full verbatim text of all 27 articles from nezams.com, cross-checked for near-verbatim textual overlap against saudipedia.com (Article 3 consent wording, Article 21 penalty figures) and ar.wikipedia.org (SCOT institutional history).",
+      "registry_source_url": null,
+      "official_source_file": "sources/organ_donation_law/law/official_source/organ_donation_law_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-09-06; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "osh_service_providers_regulation",
+      "display_name_en": "OSH Service Providers Licensing/Accreditation Regulation",
+      "display_name_ar": "لائحة ترخيص واعتماد مزاولي ومقدمي خدمات السلامة والصحة المهنية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_PRIMARY_PARTIAL_29_OF_38_X_QANOONSA_SECONDARY_FOR_REMAINDER_MIXED_CONFIDENCE': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "Ministerial Decision No. 64764, dated 13/5/1447H (4/11/2025G), issued as a companion to the High-Risk Professions Regulation (same date, adjacent decision number) under NCOSH. Fetched from uqn.gov.sa (Official Gazette, Issue No. 5138, 20/7/1447H = 9/1/2026G) — but the gazette's own rendered HTML unexpectedly stops after Article 29 of 38 (a CMS gap, not a scope limitation of the regulation itself); the remaining 9 articles (30-38) sourced from qanoonsa.com, structurally cross-checked against Lexis Middle East.",
+      "registry_source_url": null,
+      "official_source_file": "sources/osh_service_providers_regulation/law/official_source/osh_service_providers_regulation_official_source.json",
+      "source_urls": [
+        "https://ajel.sa/local/d3rdg2bnfo",
+        "https://qanoonsa.com/p/513807/",
+        "https://uqn.gov.sa/details?p=28770"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3812,6 +4042,28 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "private_healthcare_institutions_law",
+      "display_name_en": "Private Healthcare Institutions Law",
+      "display_name_ar": "نظام المؤسسات الصحية الخاصة",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='NEZAMS_X_QANOONSA_DUAL_SECONDARY_CROSSVERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "Royal Decree No. M/40, dated 3/11/1423H (2003G); amended by Royal Decree No. M/36 (11/6/1434H), Royal Decree No. M/78 (2/12/1435H, Article 7), Council of Ministers Resolution No. 479 (9/7/1444H, Article 2), and Royal Decree No. M/103 (18/6/1445H, Article 14, newly discovered this pass). laws.boe.gov.sa unreachable (repeated connection resets/503s); Wayback refused. Current consolidated text from nezams.com (which embeds the full sequential amendment history), cross-checked word-for-word against qanoonsa.com's independent verbatim Royal Decree text.",
+      "registry_source_url": null,
+      "official_source_file": "sources/private_healthcare_institutions_law/law/official_source/private_healthcare_institutions_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "private_schools_regulation",
       "display_name_en": "Private (National) Schools Regulation",
       "display_name_ar": "لائحة تنظيم المدارس الأهلية",
@@ -4035,6 +4287,28 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "real_estate_contributions_law",
+      "display_name_en": "Real Estate Contributions Law",
+      "display_name_ar": "نظام المساهمات العقارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='REGA_OFFICIAL_SCANNED_DECREE_X_UQN_GAZETTE_DUAL_OFFICIAL_CROSSVERIFIED_X_QANOONSA_BOE_UNREACHABLE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Royal Decree No. M/203, dated 28/12/1444H, on Council of Ministers Resolution No. 881, dated 23/12/1444H, published Umm Al-Qura Gazette 3/1/1445H (21/7/2023G). laws.boe.gov.sa unreachable and Wayback egress-blocked. Two independent official sources reached and cross-verified word-for-word: REGA's own hosted scanned Royal Decree PDF (rega.gov.sa, read page-by-page) and the Official Gazette's own website (uqn.gov.sa), plus independent secondary corroboration from qanoonsa.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_contributions_law/law/official_source/real_estate_contributions_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-11-16; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "real_estate_expropriation_law",
       "display_name_en": "Law on Expropriation of Real Estate for Public Interest and Temporary Seizure of Real Estate",
       "display_name_ar": "نظام نزع ملكية العقارات للمصلحة العامة ووضع اليد المؤقت على العقارات",
@@ -4150,6 +4424,31 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "rega_organizational_statute",
+      "display_name_en": "Statute of the General Authority for Real Estate (REGA)",
+      "display_name_ar": "تنظيم الهيئة العامة للعقار",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='REGA_GOV_SA_FIVE_SCANNED_PDFS_VISION_READ_X_NEZAMS_PARTIAL_CROSSCHECK_BOE_AND_WAYBACK_BOTH_BLOCKED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Council of Ministers Resolution No. 239, dated 25/4/1438H (23 Jan 2017G), amended by Resolutions 693 (2/11/1441H), 69 (23/1/1443H), 426 (5/8/1443H), and 16 (6/1/1447H). laws.boe.gov.sa returned HTTP 503 on every attempt, and unlike prior tracks the Wayback Machine was confirmed BLOCKED at the network/tool level this pass (not merely unreachable). Full verbatim text obtained directly from REGA's own hosted scanned PDFs (rega.gov.sa) for the base statute and all four amendment decrees — none has a text layer, so every article was transcribed via direct visual reading of 200dpi rendered page images (29 pages across 5 documents), not OCR. Substance cross-checked against nezams.com's summary of the 1443H amendment and REGA's own webpage prose summary.",
+      "registry_source_url": null,
+      "official_source_file": "sources/rega_organizational_statute/law/official_source/rega_organizational_statute_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/a98158eb-927b-4f8c-a9ff-a9a700f21e78/1",
+        "https://rega.gov.sa/",
+        "https://rega.gov.sa/media/.../*.pdf"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -5141,6 +5440,28 @@
         "uqn.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "white_land_fees_law",
+      "display_name_en": "White Land and Vacant Properties Fees Law",
+      "display_name_ar": "نظام رسوم الأراضي البيضاء والعقارات الشاغرة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='MOMAH_GOV_SA_REDLINE_PDF_X_QADHA_ORG_SA_X_ALHAMOUDILAWYERS_CROSSVERIFIED_ARTICLE3_GAP_DISCLOSED_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Originally Royal Decree No. M/4, dated 12/2/1437H (2016); substantively amended and renamed by Royal Decree No. M/244, dated 7/11/1446H (following Council of Ministers Resolution No. 758, 1/11/1446H, and Shura Council Resolution No. 24/255, 26/10/1446H). laws.boe.gov.sa and Wayback both unreachable. Current (post-M/244) text taken from a Ministry-of-Municipalities-and-Housing-issued redline/comparison PDF (momah.gov.sa) cross-verified against qadha.org.sa (an independent, professionally-compiled legal reference book, Nov 2025) and alhamoudilawyers.com.",
+      "registry_source_url": null,
+      "official_source_file": "sources/white_land_fees_law/law/official_source/white_land_fees_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qadha.org.sa",
+        "qanoonsa.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },

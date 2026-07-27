@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 254,
-  "total_terms": 1675,
-  "total_definitions": 2826,
-  "tracks_with_definitions_article_parsed": 178,
+  "total_tracks_in_registry": 268,
+  "total_terms": 1753,
+  "total_definitions": 2987,
+  "tracks_with_definitions_article_parsed": 191,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -163,6 +163,10 @@
     {
       "track_id": "franchise_regulation",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "frequency_spectrum_regulation",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "gcc_ownership_law",
@@ -353,6 +357,16 @@
         "term_as_written": "أجهزة الهيئة",
         "definition_text": "مركز المعلومات الوطني، والمركز الوطني للذكاء الاصطناعي، ومكتب إدارة البيانات الوطنية.",
         "source_record_id": "sdaia-organizational-arrangements-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أخصائي الطب النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "أخصائي الطب النفسي",
+        "definition_text": "كل طبيب نفسي مرخص له من الجهة المختصة بالممارسة أخصائيا في الطب النفسي.",
+        "source_record_id": "mental-health-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1108,6 +1122,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "استشاري الطب النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "استشاري الطب النفسي",
+        "definition_text": "كل طبيب نفسي مرخص له من الجهة المختصة بالممارسة استشاريا في الطب النفسي.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "استمارة التصنيف البيئي": [
       {
         "track_id": "environmental_permits",
@@ -1334,6 +1358,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأخصائي الاجتماعي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الأخصائي الاجتماعي",
+        "definition_text": "من يحمل الشهادة الجامعية في تخصص الخدمة الاجتماعية، أو تخصص علم الاجتماع، ورخص له بالممارسة من صاحب الصلاحية.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأخصائي النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الأخصائي النفسي",
+        "definition_text": "من يحمل شهادة جامعية في تخصص علم النفس، ورخص له بالممارسة من الجهة المختصة.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأخطار البحرية": [
       {
         "track_id": "maritime_commercial_law",
@@ -1379,6 +1423,16 @@
         "term_as_written": "الأدوات القابلة للتداول لحاملها",
         "definition_text": "الأدوات النقدية التي تكون في شكل وثيقة لحاملها كالشيكات والسندات الإذنية وأوامر الدفع التي إما لحاملها أو مظهرة له أو صادرة لمستفيد صوري أو في أي شكل آخر ينتقل معه الانتفاع بمجرد تسليمه، والأدوات غير المكتملة التي تكون موقعة وحذف منها اسم المستفيد.",
         "source_record_id": "aml-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأراضي البيضاء": [
+      {
+        "track_id": "white_land_fees_law",
+        "article_number": 1,
+        "term_as_written": "الأراضي البيضاء",
+        "definition_text": "كل أرض فضاء قابلة للتطوير والتنمية، داخل حدود النطاق العمراني.",
+        "source_record_id": "white-land-fees-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1788,6 +1842,24 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأمانة العامة للمجلس": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الأمانة العامة للمجلس",
+        "definition_text": "الأمانة العامة للمجلس الوطني للسلامة والصحة المهنية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "الأمانة العامة للمجلس",
+        "definition_text": "الأمانة العامة للمجلس الوطني للسلامة والصحة المهنية.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأمانة الفنية": [
       {
         "track_id": "gcc_anti_dumping_law",
@@ -2001,6 +2073,16 @@
         "term_as_written": "الأنشطة السياحية المتخصصة",
         "definition_text": "الأنشطة التي تستهدف فئة محددة من السياح، وتخضع لاختصاص جهة أو جهات حكومية أخرى غير الوزارة، كالسياحة العلاجية والسياحة الرياضية وسياحة المعارض وسياحة المهرجانات وغيرها.",
         "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأنشطة العقارية": [
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "الأنشطة العقارية",
+        "definition_text": "عمل أو مجموعة أعمال تنفذ لتوفير منتجات عقارية محددة، منها التطوير العقاري، والمساهمات العقارية، والبيع على الخارطة، ومزاولة خدمات الوساطة في بيع العقارات أو شراؤها أو تأجيرها.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2955,6 +3037,16 @@
         "term_as_written": "الاشتراطات",
         "definition_text": "إجراءات وضوابط تراخيص البناء وإعداد المخططات الهندسية ومتطلباتها للمباني والمنشآت، وتعد جزءا لا يتجزأ من المتطلبات.",
         "source_record_id": "building-code-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الاضطراب النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الاضطراب النفسي",
+        "definition_text": "خلل في التفكير، أو المزاج، أو الإدراك، أو الذاكرة، أو القدرات العقلية الأخرى، بعضها أو كلها، ويكون شديدا إذا سبب خللا في وظيفتين أو أكثر من الوظائف الآتية:\nأ – حسن التقدير، والقدرة على اتخاذ القرار.\nب – السلوك الإنساني السوي مقارنة بالعرف المحلي.\nج – تمييز الواقع، ومعرفة واستبصار الشخص بطبيعة مرضه، أو معرفة الأسباب التي أدت إليه، وقبوله للعلاج.\nد – القيام بمتطلبات الحياة الأساسية.\nولا يشمل الاضطراب النفسي في هذا النظام من لديه مجرد تخلف عقلي أو سلوك غير أخلاقي، أو تعاطي الكحول أو المخدرات والمؤثرات العقلية أو العقاقير أو إدمانها.",
+        "source_record_id": "mental-health-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4040,6 +4132,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "رخصة يتم بموجبها منح المنشأة الصحية الإذن بمزاولة عمليات استئصال الأعضاء البشرية أو زراعتها.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "payment_systems_regulation",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -4061,6 +4161,14 @@
         "term_as_written": "الترخيص",
         "definition_text": "تخويل صادر من الهيئة للشخص الطبيعي أو الاعتباري لممارسة الوساطة العقارية أو الخدمات العقارية.",
         "source_record_id": "real-estate-brokerage-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "ترخيص مساهمة عقارية يصدر من الهيئة.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -4177,6 +4285,14 @@
       }
     ],
     "التسجيل": [
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "التسجيل",
+        "definition_text": "عملية إنشاء حساب من قبل المتقدم، سواء كان فرداً أو منشأة، على منصة المجلس، وتقديم البيانات والمعلومات والوثائق وفقاً للمسار الذي يتقدم عليه.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "postal_law",
         "article_number": 1,
@@ -4506,6 +4622,22 @@
         "definition_text": "تحديد درجة أهمية الأثر، وذلك وفقا لقيمته التاريخية، أو الثقافية، أو الفنية، أو العلمية، أو الوطنية.\nالشخص/ الأشخاص : الشخص الطبيعي، أو الاعتباري العام، أو الخاص.",
         "source_record_id": "antiquities-heritage-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "التصنيف",
+        "definition_text": "تقويم إمكانيات المقاول: المالية، والفنية، والإدارية، والتنفيذية؛ لوضعه في المجال والنشاط والدرجة المستحقة وفقا لأحكام النظام واللائحة.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "التصنيف",
+        "definition_text": "تحديد فئة ومستوى الفرد المتقدم بعد استيفائه لمتطلبات الترخيص/ الاعتماد في المسار المتقدم عليه.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التصنيف الوطني للأنشطة الاقتصادية": [
@@ -4525,6 +4657,16 @@
         "term_as_written": "التطهير",
         "definition_text": "عملية التخلص من المواد الضارة والمسببات المرضية في المنشآت الزراعية والبيطرية، بما لا يمس صحة وسلامة الكائنات الحية الموجودة بها.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التطوير العقاري": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "التطوير العقاري",
+        "definition_text": "تشييد المشروعات العقارية السكنية أو التجارية أو المكتبية أو الخدمية أو الصناعية أو السياحية أو غيرها.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4830,6 +4972,24 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التقييم": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "التقييم",
+        "definition_text": "عملية تقدير قيمة العقارات، أو المنشآت الاقتصادية، أو الآلات والمعدات والممتلكات المنقولة على اختلاف أنواعها -فيما عدا الأوراق المالية- وفقا لنوع محدد للقيمة ولغرض محدد.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "التقييم",
+        "definition_text": "دراسة وفحص ملف المتقدم، سواء كان فرداً أو منشأة، وفقاً لمتطلبات الترخيص/ الاعتماد في المسار المتقدم عليه.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التكاليف القضائية": [
       {
         "track_id": "judicial_costs_law",
@@ -4950,6 +5110,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "insurance_authority_statute",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم الهيئة.",
+        "source_record_id": "insurance-authority-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "muslaha_regulation",
         "article_number": 1,
         "term_as_written": "التنظيم",
@@ -4963,6 +5131,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم هيئة الاتصالات وتقنية المعلومات.",
         "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم الهيئة.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5250,6 +5426,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجزء المشاع": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "الجزء المشاع",
+        "definition_text": "الجزء المشترك بين ملاك الوحدات العقارية في المشروع العقاري.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجزاءات والغرامات": [
       {
         "track_id": "state_revenue_law",
@@ -5383,6 +5569,14 @@
         "term_as_written": "الجمعية",
         "definition_text": "أي جمعية تعاونية مسجلة بموجب أحكام نظام الجمعيات التعاونية مشتركة في عضوية مجلس الجمعيات التعاونية.",
         "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "الجمعية",
+        "definition_text": "جمعية المساهمين.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5644,6 +5838,14 @@
     ],
     "الجهة": [
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة",
+        "definition_text": "أي وزارة، أو جهاز حكومي، أو هيئة، أو مصلحة، أو مؤسسة عامة، أو صندوق، أو ما في حكمها، وأي جهاز مستقل ذي شخصية معنوية عامة.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "state_revenue_law",
         "article_number": 1,
         "term_as_written": "الجهة",
@@ -5798,11 +6000,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "أي جهة لها علاقة بتنفيذ أحكام هذه اللائحة أو الأنظمة واللوائح والقرارات ذات الصلة.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_law",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
         "definition_text": "أي وزارة أو جهة عامة ذات شخصية معنوية مستقلة.",
         "source_record_id": "inv-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الجهة المختصة بتطبيق أحكام النظام، التي يصدر بتحديدها أمر من رئيس مجلس الوزراء.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "أي جهة لها علاقة بتنفيذ أحكام هذه اللائحة أو الأنظمة واللوائح والقرارات ذات الصلة.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6870,6 +7096,14 @@
     ],
     "الخطر": [
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الخطر",
+        "definition_text": "احتمال حدوث ضرر على السلامة أو الصحة أو البيئة أو الممتلكات ومصدره المخاطر سواء الفيزيائية، أو الكيميائية، أو الحيوية، أو الاجتماعية النفسية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "product_safety_law",
         "article_number": 1,
         "term_as_written": "الخطر",
@@ -7017,6 +7251,16 @@
         "term_as_written": "الدراجة العادية",
         "definition_text": "كل وسيلة نقل ذات عجلتين أو أكثر غير مجهزة بمحرك آلي، وتسير بقوة راكبها.",
         "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الدرجة": [
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "الدرجة",
+        "definition_text": "النتيجة التي يحصل عليها المقاول عند تصنيفه.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7314,6 +7558,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "insurance_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "insurance-authority-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "judicial_inspection_regulation",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -7327,6 +7579,30 @@
         "term_as_written": "الرئيس",
         "definition_text": "رئيس الهيئة.",
         "source_record_id": "nazaha-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "الرئيس التنفيذي للهيئة.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7369,6 +7645,22 @@
         "term_as_written": "الرئيس التنفيذي",
         "definition_text": "الرئيس التنفيذي للمركز.",
         "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "insurance_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للهيئة.",
+        "source_record_id": "insurance-authority-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للهيئة.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7469,6 +7761,14 @@
         "term_as_written": "الرخصة",
         "definition_text": "وثيقة تصدرها الوزارة تتضمن الموافقة على قيام شخص بممارسة نشاط تعديني في منطقة محددة وفقا لأحكام النظام واللوائح.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "الرخصة",
+        "definition_text": "وثيقة تصدرها الهيئة تخول صاحبها مزاولة نشاط أو أكثر من الأنشطة العقارية.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7573,6 +7873,16 @@
         "term_as_written": "الرعاية الصحية الثانوية",
         "definition_text": "الرعاية الصحية التي تُقدِّمُها مُستشفيات عامة وأطباء مُتخصِّصون.",
         "source_record_id": "health-system-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الرعاية الصحية النفسية": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الرعاية الصحية النفسية",
+        "definition_text": "فرع من الصحة العامة يعنى بالخدمات النفسية الوقائية والعلاجية والتأهيلية.",
+        "source_record_id": "mental-health-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7682,6 +7992,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الزيارة التقييمية": [
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "الزيارة التقييمية",
+        "definition_text": "زيارة ميدانية أو افتراضية تُنفذ من قبل الإدارة المختصة بالتراخيص أو الاعتمادات في المجلس\nأو من يفوضه، سواء كانت مجدولة أو غير مجدولة، وذلك لأغراض التقييم وإدارة الجودة والرقابة على الجهات/ المنشآت.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الزيت": [
       {
         "track_id": "maritime_commercial_law",
@@ -7731,6 +8051,14 @@
       }
     ],
     "السجل": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "السجل",
+        "definition_text": "السجل الذي يقيد فيه المقيمون المعتمدون لدى الهيئة.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "civil_aviation_law",
         "article_number": 1,
@@ -7980,6 +8308,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السلامة والصحة المهنية": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "السلامة والصحة المهنية",
+        "definition_text": "حماية العامل/الموظف من أي خطر مرتبط بعمله يشكل تهديداً لسلامته أو صحته، ويشمل ذلك الصحة البدنية والعقلية والاجتماعية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السلطات المختصة": [
       {
         "track_id": "aml_law",
@@ -8222,6 +8560,14 @@
         "definition_text": "وثيقة مكتوبة بلغة واضحة ومفهومة، تحدد التزامات الوكيل تجاه المستهلك بموجب أحكام النظام وهذه الأحكام وعقد الوكالة أو التوزيع وملحقاتهما.",
         "source_record_id": "commercial-agencies-regulation-llm-art-001-annex",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "السياسة",
+        "definition_text": "سياسة البرنامج الوطني الشامل للتبليغ عن حوادث وإصابات العمل والأمراض المهنية وتوثيق البلاغات ونتائج التحقيقات المتعلقة بها.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السيطرة": [
@@ -8453,6 +8799,14 @@
         "term_as_written": "الشخص",
         "definition_text": "أي شخص ذي صفة طبيعية أو اعتبارية.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "كل إنسان مكتمل الأهلية تجاوز ثمانية عشر عاما.",
+        "source_record_id": "organ-donation-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9126,6 +9480,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الطبيب المعالج": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الطبيب المعالج",
+        "definition_text": "الطبيب المسؤول عن معاينة المريض النفسي في منشأة العلاج النفسي ومتابعة علاجه.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطبيب المهني": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الطبيب المهني",
+        "definition_text": "هو الطبيب المتخصص في الطب المهني (Occupational Medicine specialist/consultant) والمصنف من قبل الهيئة السعودية للتخصصات الصحية، وهو فرع من فروع الطب يُعنى بصحة وسلامة العامل/الموظف في أماكن العمل، ويهدف إلى الوقاية من الأمراض والإصابات المرتبطة بالمهنة وتشخيصها وعلاجها.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الطبيب النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الطبيب النفسي",
+        "definition_text": "من يحمل شهادة التخصص في الطب النفسي، ورخص له بالممارسة من الجهة المختصة.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الطرف أو الأطراف": [
       {
         "track_id": "commercial_courts_implementing_regulation",
@@ -9396,6 +9780,14 @@
     ],
     "العامل": [
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "العامل",
+        "definition_text": "كل شخص طبيعي - ذكرًا أو أنثى - يعمل لمصلحة صاحب عمل وتحت إدارته أو إشرافه مقابل أجر، ولو كان بعيدًا عن نظارته.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "labor_law",
         "article_number": 2,
         "term_as_written": "العامل",
@@ -9518,6 +9910,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العضو البشري": [
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "العضو البشري",
+        "definition_text": "فيما عدا الدم في تطبيق أحكام النظام، هو كل جزء من أجزاء جسم الإنسان الحي أو المتوفي أو أنسجته أو أي من مكوناته، التي يمكن الانتفاع منها بنقلها إلى جسم إنسان آخر.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العضوية": [
       {
         "track_id": "saudi_engineers_regulation",
@@ -9601,6 +10003,16 @@
         "term_as_written": "العقارات البلدية",
         "definition_text": "العقارات التي تملكها البلديات وفق الأنظمة والتعليمات.",
         "source_record_id": "municipal-realestate-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العقارات الشاغرة": [
+      {
+        "track_id": "white_land_fees_law",
+        "article_number": 1,
+        "term_as_written": "العقارات الشاغرة",
+        "definition_text": "المباني الواقعة داخل النطاق العمراني غير المستغلة لفترة طويلة دون مسوغ مقبول، والتي يؤثر عدم استخدامها أو عدم استغلالها في توفير معروض كاف في السوق العقارية، وذلك وفقا لأحكام النظام وما تحدده اللوائح.",
+        "source_record_id": "white-land-fees-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9936,6 +10348,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "bnpl_regulation",
+        "article_number": 1,
+        "term_as_written": "العميل",
+        "definition_text": "الشخص المستفيد من النشاط.",
+        "source_record_id": "bnpl-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "labor_recruitment_services_rules",
         "article_number": 1,
         "term_as_written": "العميل",
@@ -9967,6 +10387,16 @@
         "term_as_written": "العوائق الجوية",
         "definition_text": "إما أن تكون عوائق صناعية مثل المباني المرتفعة والأبراج والأسلاك العالية وغيرها، أو عوائق طبيعية مثل الجبال والأشجار العالية وغيرها.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العيادة": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "العيادة",
+        "definition_text": "كل مكان معد لاستقبال المرضى، والكشف عليهم وعلاجهم.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10100,6 +10530,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الفحص الطبي المهني": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الفحص الطبي المهني",
+        "definition_text": "المسوحات الاستقصائية البحثية والفحص الإكلينيكي لغرض الوقاية من الإصابة بالأمراض المهنية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الفحص الفني": [
       {
         "track_id": "traffic_law",
@@ -10115,6 +10555,16 @@
         "term_as_written": "الفحص الفني",
         "definition_text": "الكشف على المركبة في أحد مراكز الفحص الدوري المعتمدة.",
         "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الفرد": [
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "الفرد",
+        "definition_text": "كل شخص طبيعي يعمل لمصلحة جهة/ منشأة وتحت إدارتها أو إشرافها مقابل أجر أو تطوع لقطاع غير ربحي، بما في ذلك الأشخاص الذين يقدمون خدمات في مجال السلامة والصحة المهنية لحسابهم الخاص أو كعمل حر.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10255,6 +10705,14 @@
       }
     ],
     "القواعد": [
+      {
+        "track_id": "bnpl_regulation",
+        "article_number": 1,
+        "term_as_written": "القواعد",
+        "definition_text": "قواعد تنظيم شركات الدفع الآجل (BNPL) نشاط الدفع الآجل (النشاط): تمويل العميل لشراء السلع أو الخدمات من المتاجر بلا كلفة أجل مستحقة على العميل. شركة الدفع الآجل (الشركة): الشركة المساهمة المرخصة من قِبل البنك المركزي لمزاولة النشاط.",
+        "source_record_id": "bnpl-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "evidence_expertise_rules",
         "article_number": 1,
@@ -10748,6 +11206,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "cooperative_societies_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -11068,6 +11534,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لهذا النظام.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "municipal_councils_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -11081,6 +11555,30 @@
         "term_as_written": "اللائحة",
         "definition_text": "لائحة التصرف بالعقارات البلدية.",
         "source_record_id": "municipal-realestate-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة ترخيص واعتماد مزاولي ومقدمي خدمات السلامة والصحة المهنية.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11177,6 +11675,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11792,6 +12298,14 @@
         "definition_text": "اللجنة الوزارية المشكلة بموجب نظام المياه.",
         "source_record_id": "water-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "white_land_fees_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة الوزارية",
+        "definition_text": "اللجنة الوزارية المنصوص عليها في المادة (الرابعة عشرة) من النظام.",
+        "source_record_id": "white-land-fees-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اللجنة الوطنية": [
@@ -11947,6 +12461,14 @@
         "term_as_written": "اللوائح",
         "definition_text": "اللائحة التنفيذية للنظام، وغيرها من اللوائح التي تصدر بموجب أحكامه.",
         "source_record_id": "standards-quality-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "white_land_fees_law",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح اللازمة لتنفيذ النظام المتعلقة برسوم الأراضي البيضاء ورسوم العقارات الشاغرة.",
+        "source_record_id": "white-land-fees-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12192,6 +12714,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المؤسسة الصحية الخاصة": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "المؤسسة الصحية الخاصة",
+        "definition_text": "كل مؤسسة صحية يملكها القطاع الخاص معدة للعلاج، أو التشخيص، أو التمريض ، أو إجراء التحاليل الطبية، أو التأهيل، أو لإقامة الناقهين من المرضى، وتشمل ما يأتي :",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المؤسسة المالية": [
       {
         "track_id": "sama_law",
@@ -12316,6 +12848,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المتاجر": [
+      {
+        "track_id": "bnpl_regulation",
+        "article_number": 1,
+        "term_as_written": "المتاجر",
+        "definition_text": "منافذ البيع ومقدمي السلع والخدمات.",
+        "source_record_id": "bnpl-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المتاجرة": [
       {
         "track_id": "electricity_law",
@@ -12347,6 +12889,26 @@
         "term_as_written": "المتاجرة",
         "definition_text": "شراء المياه بالجملة من مرخص له؛ لأجل بيعها بالجملة، ولا يشمل ذلك بيعها للمستهلك.",
         "source_record_id": "water-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المتبرع": [
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "المتبرع",
+        "definition_text": "كل من أذن وهو على قيد الحياة بنقل أي من أعضائه البشرية أثناء حياته أو بعد وفاته، أو وافق ورثته أو أقرباؤه بنقل أي من أعضائه البشرية بعد وفاته؛ وذلك وفق أحكام النظام.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المتبرع له": [
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "المتبرع له",
+        "definition_text": "المريض الذي يزرع العضو البشري المتبرع به في جسمه.",
+        "source_record_id": "organ-donation-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12462,11 +13024,29 @@
     ],
     "المتقدم": [
       {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "المتقدِّم",
+        "definition_text": "الشخص الطبيعي أو الاعتباري (فرد أو منشأة) الذي يتقدم بطلب رسمي للحصول على الترخيص أو الاعتماد لمزاولة أو تقديم خدمات في مجال السلامة والصحة المهنية.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "premium_residency_regulation",
         "article_number": 1,
         "term_as_written": "المتقدم",
         "definition_text": "الشخص الطبيعي - ذكرًا أو أنثى- المتقدم بطلب الحصول على الإقامة المميزة.",
         "source_record_id": "premium-residency-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المجال": [
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "المجال",
+        "definition_text": "نوع العمل الذي يصنف فيه المقاول.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12477,6 +13057,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12696,6 +13284,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "المجلس الوطني للسلامة والصحة المهنية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "insurance_authority_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "insurance-authority-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "judicial_inspection_regulation",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -12709,6 +13313,22 @@
         "term_as_written": "المجلس",
         "definition_text": "المجلس البلدي.",
         "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "المجلس الصحي السعودي.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "المجلس الوطني للسلامة والصحة المهنية.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12768,11 +13388,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "real-estate-expropriation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12852,6 +13488,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المجمع الطبي العام": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "المجمع الطبي العام",
+        "definition_text": "كل مكان معد لاستقبال المرضى، والكشف عليهم وعلاجهم، وتوجد فيه ثلاثة تخصصات طبية مختلفة على الأقل أحدها من التخصصات الأساسية (الجراحة، الأمراض الباطنية، النساء والولادة، الأطفال، طب الأسرة).",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المجمع الطبي المتخصص": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "المجمع الطبي المتخصص",
+        "definition_text": "مجمع لعيادات في تخصص طبي واحد أو أكثر، وفروعه الدقيقة.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المجمع العقاري": [
       {
         "track_id": "real_estate_units_law",
@@ -12925,6 +13581,14 @@
         "term_as_written": "المحاسب القانوني",
         "definition_text": "شخص ذو صفة طبيعية أو اعتبارية مرخص له بمزاولة المهنة.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "المحاسب القانوني",
+        "definition_text": "شخص مرخص له من جهة الاختصاص، اعتمدته الجهة المختصة للمشروع العقاري.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13316,6 +13980,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المخاطر",
+        "definition_text": "الاحتمالية المرتفعة أو المنخفضة لتعرض الشخص إلى الأذى من جراء الأخطار، مع وجود مؤشر لقياس مدى خطورة الأذى -ورد في سياسة الإبلاغ.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "product_safety_law",
         "article_number": 1,
         "term_as_written": "المخاطر",
@@ -13393,6 +14065,16 @@
         "term_as_written": "المخالفة الخطرة",
         "definition_text": "كل مخالفة للكود يترتب على عدم المبادرة بإزالتها تعريض الأرواح أو الممتلكات للخطر أو تتسبب بشكل مباشر في الإضرار بصحة الإنسان أو البيئة.",
         "source_record_id": "building-code-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المختبر الطبي": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "المختبر الطبي",
+        "definition_text": "المكان المعد لإجراء الفحوصات المخبرية.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -13540,6 +14222,14 @@
         "definition_text": "مدير عام الجمارك أو من يماثله من الجهة المختصة أو في الإدارة وفق التنظيم\nالداخلي لجمارك الدول الأعضاء.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "المدير العام",
+        "definition_text": "مدير عام المركز.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "travel_documents_regulation",
@@ -13802,6 +14492,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "الشخص الحاصل على الترخيص.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "tawtheeq_law",
         "article_number": 1,
         "term_as_written": "المرخص له",
@@ -13921,6 +14619,26 @@
         "term_as_written": "المرسل إليه",
         "definition_text": "من ترسل إليه المادة البريدية.",
         "source_record_id": "postal-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المرشد النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "المرشد النفسي",
+        "definition_text": "من يحمل شهادة جامعية في تخصص الإرشاد النفسي، ورخص له بالممارسة من الجهة المختصة.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المرض المهني": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المرض المهني",
+        "definition_text": "المرض الذي ينشأ بسبب العمل في مهن أو تسبب هذا المرض، ولا يرجع إلى عوامل خارجة عن عمله وفقا لجدول الأمراض المهنية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14068,6 +14786,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز السعودي لزراعة الأعضاء.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "premium_residency_law",
         "article_number": 1,
         "term_as_written": "المركز",
@@ -14138,6 +14864,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المريض النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "المريض النفسي",
+        "definition_text": "من يعاني أو يشتبه أنه يعاني اضطرابا نفسيا.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المزادات العقارية": [
       {
         "track_id": "real_estate_brokerage_law",
@@ -14158,7 +14894,25 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المسؤول": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "المسؤول",
+        "definition_text": "المسؤول الأول في الجهة المختصة.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المسؤول الأول": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المسؤول الأول",
+        "definition_text": "الوزير، المحافظ أو الرئيس التنفيذي، الرئيس المدير، أو الأمين المشرف، أو من يقوم مقامهم.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "privatization_regulation",
         "article_number": 1,
@@ -14201,6 +14955,26 @@
         "term_as_written": "المسار",
         "definition_text": "أي جزء من الأجزاء الطولية التي يقسم إليها نهر الطريق ويسمح عرضه لمرور صف واحد من المركبات المتتابعة، سواء حددته علامات طولية على سطح الطريق أم لم تحدده.",
         "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المساهم": [
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "المساهم",
+        "definition_text": "الشخص الذي يملك حصة مشاعة في المساهمة العقارية.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المساهمة العقارية": [
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "المساهمة العقارية",
+        "definition_text": "مشروع تطوير عقاري يشترك فيه مجموعة من الأشخاص لأجل تحقيق منفعة، ويكون ذلك بتملك عقار وتطويره إلى سكني أو تجاري أو صناعي أو زراعي وغير ذلك، ثم بيع وإنهاء المساهمة، ولا يشمل ذلك الصناديق الاستثمارية العقارية.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14329,6 +15103,16 @@
         "term_as_written": "المستشار غير السعودي",
         "definition_text": "المستشار المقيد في سجل المستشارين غير السعوديين.",
         "source_record_id": "law-practice-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المستشفى": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "المستشفى",
+        "definition_text": "كل مكان معد لاستقبال المرضى والكشف عليهم وعلاجهم وتنويمهم.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14722,6 +15506,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المشروع العقاري": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "المشروع العقاري",
+        "definition_text": "مشروع عقاري يراد تطويره لبيع أو تأجير أراض مطورة أو وحدات عقارية على الخارطة، قبل البدء في تنفيذه أو في أثناء أعمال الإنشاء والتطوير بحسب التصميم أو المخطط المتفق عليه.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المشغل": [
       {
         "track_id": "civil_aviation_law",
@@ -15112,6 +15906,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المطور": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "المطور",
+        "definition_text": "الشخص ذو الصفة الاعتبارية المرخص له بمزاولة نشاط امتلاك العقارات أو استئجارها من أجل تطويرها وبيعها أو تأجيرها بحسب الأحوال، ويشمل المطور الرئيس والفرعي.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المطور الفرعي": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "المطور الفرعي",
+        "definition_text": "الشخص ذو الصفة الاعتبارية المرخص له بمزاولة نشاط امتلاك العقارات أو استئجارها من أجل تطويرها وبيعها أو تأجيرها بناء على اتفاق مع المطور الرئيس.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المعادن": [
       {
         "track_id": "mining_investment_law",
@@ -15296,6 +16110,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المعيار": [
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "المعيار",
+        "definition_text": "مجموعة العناصر المستخدمة للتصنيف.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المفتش": [
       {
         "track_id": "building_code_regulation",
@@ -15389,6 +16213,16 @@
         "term_as_written": "المقابل المالي",
         "definition_text": "مبلغ مستحق مقابل خدمات التسجيل العيني وفقاً للنظام واللائحة.",
         "source_record_id": "real-estate-registration-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المقاول": [
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "المقاول",
+        "definition_text": "شخص ذو صفة طبيعية أو اعتبارية مرخص له نظاما بالقيام -منفردا أو مشتركا- لتنفيذ عقد في أحد المجالات المحددة في اللائحة.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -15490,6 +16324,14 @@
     ],
     "المقيم المعتمد": [
       {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "المقيم المعتمد",
+        "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية الذي يرخص له بمزاولة المهنة وفقا لهذا النظام.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "المقيم المعتمد",
@@ -15515,6 +16357,16 @@
         "term_as_written": "المكافآت",
         "definition_text": "المبالغ والبدالت والأرباح وما في حكمها ،والمكافآت الدورية أو السنوية المرتبطة\nبالأداء ،والخطط التحفيزية قصرية أو طويلة الأجل ،وأي مزايا عينية أخرى ،باستثناء النفقات\nوالمصاريف الفعلية المعقولة التي تتحملها الشركة عن عضو مجلس الإدارة لغرض تأدية عمله.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المكتب الاستشاري": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "المكتب الاستشاري",
+        "definition_text": "مكتب هندسي استشاري مرخص له من جهة الاختصاص، اعتمدته الجهة المختصة للمشروع العقاري.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -15697,6 +16549,16 @@
         "term_as_written": "الممثليات",
         "definition_text": "الأجهزة التي تعتبر ممثلة لحكومة خادم الحرمين الشريفين بالخارج لرعاية مصالح المواطنين السعوديين والمرتبطة بوزارة الخارجية وتشمل السفارات والقنصليات والمفوضيات.",
         "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الممرض النفسي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الممرض النفسي",
+        "definition_text": "من يحمل شهادة البكالوريوس أو الدبلوم في التمريض، ورخص له بالممارسة من الجهة المختصة.",
+        "source_record_id": "mental-health-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16040,6 +16902,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنشآت الصحية": [
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "المنشآت الصحية",
+        "definition_text": "الجهات العامة أو الخاصة -التي تحددها اللائحة- التي تقدم خدمات الرعاية الصحية.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنشآت الصحية المعتمدة": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المنشآت الصحية المعتمدة",
+        "definition_text": "هي المنشآت المرخصة من وزارة الصحة التي اجتازت بنجاح متطلبات الاعتماد الصادرة عن المجلس الوطني للسلامة والصحة المهنية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنشأة": [
       {
         "track_id": "anti_concealment_regulation",
@@ -16066,6 +16948,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المنشأة",
+        "definition_text": "كل مشروع يديره شخص طبيعي أو اعتباري، يشغل عاملا أو أكثر، مقابل أجر أياً كان نوعه.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "labor_law",
         "article_number": 2,
         "term_as_written": "المنشأة",
@@ -16079,6 +16969,14 @@
         "term_as_written": "المنشأة",
         "definition_text": "........................................... .",
         "source_record_id": "labor-annex1-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "المنشأة",
+        "definition_text": "كل مشروع يديره شخص طبيعي أو اعتباري، يشغّل عاملاً أو أكثر، لقاء أجر أيّاً كان نوعه.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16144,6 +17042,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنشأة العلاجية النفسية": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "المنشأة العلاجية النفسية",
+        "definition_text": "هي المنشأة التي تتوافر فيها المواصفات الخاصة بالرعاية الصحية النفسية، وتقدم الخدمات النفسية، من تشخيص وعلاج وتأهيل، أيا كان نوعها؛ مستقلة كانت أو ملحقة بمنشآت صحية أخرى في القطاعين العام والخاص.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنشأة القانونية": [
       {
         "track_id": "sulook_regulation",
@@ -16151,6 +17059,16 @@
         "term_as_written": "المنشأة القانونية",
         "definition_text": "مكتب المحاماة أو شركة المحاماة المهنية.",
         "source_record_id": "sulook-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنشأة ذات المخاطر الكبرى": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المنشأة ذات المخاطر الكبرى",
+        "definition_text": "هي المنشأة التي تقوم بشكل دائم أو مؤقت بإنتاج مادة أو أكثر من المواد الخطرة أو فئات من هذه المواد أو تجهيزها أو استبعادها أو مناولتها أو استخدامها أو تخزينها بكميات تتجاوز المعايير المسموح بها، والتي يؤدي تجاوزها الى ادراجها في المنشآت ذات المخاطر العالية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -16414,6 +17332,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "المهن ذات المخاطر العالية": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المهن ذات المخاطر العالية",
+        "definition_text": "المهن التي قد يتعرض أصحابها، بشكل دائم أو جزئي، حسب مستوى ومدة التعرض والتكرار، عند أدائهم لمهام العمل لأنشطة وعمليات عالية المخاطر.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المهنة": [
       {
         "track_id": "accounting_auditing_law",
@@ -16421,6 +17349,22 @@
         "term_as_written": "المهنة",
         "definition_text": "مهنة المحاسبة والمراجعة.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "المهنة",
+        "definition_text": "مهنة التقييم.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "المهنة",
+        "definition_text": "هي عمل أو وظيفة يقوم بها الفرد بشكل منتظم، وتتطلب مهارات ومعرفة متخصصة يتم اكتسابها من خلال التعليم أو التدريب، وتهدف إلى تقديم خدمة أو عمل معين مقابل أجر أو دخل.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16752,6 +17696,14 @@
         "definition_text": "كل من يشغل وظيفة مدنية عامة في الدولة أو يمارس مهماتها أيا كانت طبيعة عمله أو مسمى وظيفته سواء كان ذلك عن طريق التعيين أو التعاقد بصفة دائمة أو مؤقتة.",
         "source_record_id": "civil-service-regulation-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الموظف",
+        "definition_text": "كل من يشغل وظيفة مدنية عامة في الدولة أو يمارس مهامها أيًا كانت طبيعة عمله أو اسم وظيفته، سواء كان ذلك عن طريق التعيين أو التعاقد بصفة دائمة أو مؤقتة.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "social_insurance_law",
@@ -17114,6 +18066,14 @@
     ],
     "النشاط": [
       {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "نوع من الأعمال الفرعية في مجال من المجالات.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_air_quality",
         "article_number": 1,
         "term_as_written": "النشاط",
@@ -17322,6 +18282,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المقيمين المعتمدين.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "agriculture_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -17415,6 +18383,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام الإفلاس.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "bnpl_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام مراقبة شركات التمويل.",
+        "source_record_id": "bnpl-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17527,6 +18503,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام المنافسة.",
         "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام تصنيف المقاولين.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17874,6 +18858,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الرعاية الصحية النفسية.",
+        "source_record_id": "mental-health-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mining_investment_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -17903,6 +18895,22 @@
         "term_as_written": "النظام",
         "definition_text": "نظام هيئة الرقابة ومكافحة الفساد.",
         "source_record_id": "nazaha-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام بيع وتأجير مشروعات عقارية على الخارطة.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام التبرع بالأعضاء البشرية.",
+        "source_record_id": "organ-donation-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17991,6 +18999,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام الوساطة العقارية.",
         "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام المساهمات العقارية.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18200,6 +19216,14 @@
         "definition_text": "نظام حماية المبلِّغين والشهود والخبراء والضحايا.",
         "source_record_id": "whistleblower-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "white_land_fees_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام رسوم الأراضي البيضاء والعقارات الشاغرة.",
+        "source_record_id": "white-land-fees-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "النظام \"القانون\"": [
@@ -18371,6 +19395,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة السعودية للمراجعين والمحاسبين.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمقيمين المعتمدين.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18582,6 +19614,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "insurance_authority_statute",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة التأمين.",
+        "source_record_id": "insurance-authority-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "law_practice_implementing_regulation",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -18662,6 +19702,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للعقار.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_expropriation_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -18683,6 +19731,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة العامة للعقار.",
         "source_record_id": "real-estate-units-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للعقار.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18892,6 +19948,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الوحدة العقارية": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "الوحدة العقارية",
+        "definition_text": "الجزء المفرز من العقار، الذي يبيعه أو يؤجره المطور للغير.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الوحدة العقارية المفرزة": [
       {
         "track_id": "real_estate_units_law",
@@ -18903,6 +19969,14 @@
       }
     ],
     "الوزارة": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة المالية.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "agriculture_law",
         "article_number": 1,
@@ -19037,6 +20111,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة التجارة.",
         "source_record_id": "oa-llm-companies-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الشؤون البلدية والقروية والإسكان.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19208,6 +20290,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الموارد البشرية والتنمية الاجتماعية.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_implementing_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -19301,6 +20391,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة الإعلام .",
         "source_record_id": "press-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الصحة .",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19414,6 +20512,14 @@
         "definition_text": "وزارة البيئة و المياه والزراعة.",
         "source_record_id": "water-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "white_land_fees_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البلديات والإسكان.",
+        "source_record_id": "white-land-fees-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوزن المحوري": [
@@ -19441,6 +20547,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير من أعضاء مجلس الوزراء يسمى بأمر من رئيس مجلس الوزراء بناءً على اقتراح من مجلس الشؤون الاقتصادية والتنمية.",
         "source_record_id": "accounting-auditing-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير المالية.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19577,6 +20691,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير التجارة.",
         "source_record_id": "oa-llm-companies-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "contractors_classification_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الشؤون البلدية والقروية والإسكان.",
+        "source_record_id": "contractors-classification-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19884,6 +21006,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الصحة.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "protection_from_abuse_law",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -19905,6 +21035,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير المالية.",
         "source_record_id": "real-estate-finance-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "rega_organizational_statute",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الإسكان.",
+        "source_record_id": "rega-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -20026,6 +21164,14 @@
         "definition_text": "وزير الداخلية .",
         "source_record_id": "weapons-ammunition-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "white_land_fees_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البلديات والإسكان.",
+        "source_record_id": "white-land-fees-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوزير المختص": [
@@ -20108,11 +21254,29 @@
     ],
     "الوسيط العقاري": [
       {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "الوسيط العقاري",
+        "definition_text": "شخص طبيعي أو اعتباري، مرخص له بممارسة الوساطة العقارية أو تقديم الخدمات العقارية وفقا للأحكام النظامية.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "real_estate_brokerage_law",
         "article_number": 1,
         "term_as_written": "الوسيط العقاري",
         "definition_text": "شخص طبيعي أو اعتباري، مرخص له بممارسة الوساطة العقارية أو تقديم الخدمات العقارية وفقاً لأحكام النظام.",
         "source_record_id": "real-estate-brokerage-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوصية": [
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "الوصية",
+        "definition_text": "إذن المتبرع بنقل أي من أعضائه البشرية بعد وفاته بلا عوض.",
+        "source_record_id": "organ-donation-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20197,6 +21361,16 @@
         "term_as_written": "الوعاء الزكوي",
         "definition_text": "الأموال الخاضعة لجباية الزكاة بموجب اللائحة.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوفاة": [
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "الوفاة",
+        "definition_text": "مفارقة الإنسان حياته بصورة يقينية وفقا للمعايير الطبية الدقيقة، بحيث يستحيل معها عودته للحياة، نتيجة توقف القلب والرئتين أو جذع الدماغ.",
+        "source_record_id": "organ-donation-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20299,6 +21473,16 @@
         "term_as_written": "الولاية",
         "definition_text": "سلطة تجعل للغير الإشراف على الشخص القاصر وتمثيله والعناية بكل ماله علاقة بماله.",
         "source_record_id": "protection-from-abuse-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الولي": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "الولي",
+        "definition_text": "الشخص الذي يملك الولاية الشرعية على النفس.",
+        "source_record_id": "mental-health-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20414,6 +21598,26 @@
         "extraction_method": "parenthesized_term"
       }
     ],
+    "بيئة العمل": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "بيئة العمل",
+        "definition_text": "مجموعة الظروف والعوامل المحيطة بالعامل/الموظف في مكان العمل الثابت أو المؤقت، والتي تؤثر بشكل مباشر أو غير مباشر على أدائه وإنتاجيته.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "بيئة العمل ذات المخاطر العالية": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "بيئة العمل ذات المخاطر العالية",
+        "definition_text": "بيئة العمل التي تتضمن ظروفاً أو أنشطة أو موادًا أو عمليات عالية المخاطر يمكن أن تؤدي إلى إصابات خطيرة أو أمراض مهنية أو وفيات للعاملين/الموظفين فيها.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "بيان الحمولة \"المانيفست\"": [
       {
         "track_id": "customs_law",
@@ -20509,6 +21713,16 @@
         "term_as_written": "تحويل الأموال",
         "definition_text": "العملية التي ينتج عنها إيداع الرصيد الدائن لصالح حساب المدفوعات الخاص ب المدفوع له تبعا لعملية مدفوعات أو سلسلة من عمليات المدفوعات، يتم تنفيذها بناء على تعليمات الدافع من خالل حساب المدفوعات الخاص به لدى مقدم خدمات المدفوعات.",
         "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تدابير الحماية والوقاية": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "تدابير الحماية والوقاية",
+        "definition_text": "جميع التدابير الوقائية التي يتم تنفيذها للحد من المخاطر والخسائر المتوقعة.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -21100,6 +22314,24 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "حساب الضمان": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "حساب الضمان",
+        "definition_text": "حساب بنكي خاص بالمشروع العقاري، تودع فيه المبالغ التي دفعها الممولون للمشروع العقاري، أو المشترون، أو المستأجرون من المشروع.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "حساب الضمان",
+        "definition_text": "الحساب المصرفي الخاص بالمساهمة العقارية.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "حصاد المياه": [
       {
         "track_id": "water_law",
@@ -21477,6 +22709,16 @@
         "term_as_written": "دور الإيواء",
         "definition_text": "دور إيواء ضحايا العنف الأسري المخصصة لاستقبال ضحايا الإيذاء سواء كانت تابعة للوزارة أو القطاع الثالث التي تشرف عليها الوزارة.",
         "source_record_id": "protection-from-abuse-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "دور ناقهي الأمراض النفسية": [
+      {
+        "track_id": "mental_health_law",
+        "article_number": 1,
+        "term_as_written": "دور ناقهي الأمراض النفسية",
+        "definition_text": "دور لإيواء المرضى النفسيين الذين تجاوزوا مدة العلاج المقررة في المنشأة العلاجية النفسية وهم لا يزالون بحاجة إلى خدمة الإيواء.",
+        "source_record_id": "mental-health-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -21916,6 +23158,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "سجل المساهمين": [
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "سجل المساهمين",
+        "definition_text": "سجل تقيد فيه أسماء المساهمين وحصصهم وأي تغيير يحدث في ملكية حصصهم.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "سجل الواقعات": [
       {
         "track_id": "civil_status_law",
@@ -21944,6 +23196,16 @@
         "definition_text": "يحتوي على بيان باسم العامل، ومقدار أجره، ومقدار الغرامة الموقعة عليه، وسبب وتاريخ إيقاعها.",
         "source_record_id": "labor-reg-llm-art-005",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "سجل قيد المطورين": [
+      {
+        "track_id": "offplan_sale_law",
+        "article_number": 1,
+        "term_as_written": "سجل قيد المطورين",
+        "definition_text": "سجل تقيد فيه أسماء المطورين المؤهلين لتطوير وبيع وتأجير المشروعات العقارية المرخص لهم من الجهة المختصة بمزاولة نشاط التطوير العقاري في المملكة.",
+        "source_record_id": "offplan-sale-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "سحب المواصفة أو الوثيقة ذات الصلة": [
@@ -22507,6 +23769,14 @@
       }
     ],
     "صاحب العمل": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "صاحب العمل",
+        "definition_text": "كل شخص طبيعي أو اعتباري يشغّل عاملًا أو أكثر مقابل أجر.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "labor_law",
         "article_number": 2,
@@ -23242,6 +24512,36 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "فرع الآلات والمعدات والممتلكات المنقولة": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "فرع الآلات والمعدات والممتلكات المنقولة",
+        "definition_text": "ويشمل على سبيل المثال: معدات النقل، ومعدات البناء، والأجهزة المكتبية، ومحتويات المباني عامة، وجميع المصالح والحقوق والالتزامات المتعلقة بها.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "فرع المنشآت الاقتصادية": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "فرع المنشآت الاقتصادية",
+        "definition_text": "منشآت الأعمال، أو مصالح الملكية فيها على اختلاف حجومها، سواء أكانت فردية أم شركات، والحقوق والالتزامات المتعلقة بها، وتقييم الأصول غير الملموسة، مثل براءات الاختراع، والعلامات التجارية، والشهرة، والملكية الفكرية.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "فروع التقييم": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "فروع التقييم",
+        "definition_text": "- فرع العقارات: جميع المصالح، والحقوق، والالتزامات المتعلقة بملكية العقارات بكل التحسينات المثبتة عليها بشكل دائم، والملحقات التابعة المرتبطة بها.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "فروع صاحب العمل": [
       {
         "track_id": "social_insurance_legacy_regulation",
@@ -23359,6 +24659,26 @@
         "term_as_written": "قاعدة البيانات العقارية",
         "definition_text": "مجموعة البيانات الرقمية المكانية والوصفية للعقارات بكافة أشكالها وصورها؛ تتكون من طبقات وجداول وخرائط ومعالم مختلفة ومتكاملة مخزنة ومرتبطة مع بعضها البعض.",
         "source_record_id": "real-estate-registration-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "قرار الاعتماد": [
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "قرار الاعتماد",
+        "definition_text": "قرار يصدره المجلس لاعتماد الفرد/ المنشأة، بعد استيفاء متطلبات الاعتماد في المسار المتقدم عليه.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "قرار الترخيص": [
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "قرار الترخيص",
+        "definition_text": "وثيقة تمنح من المجلس لترخيص الفرد/ المنشأة لمزاولة وتقديم الخدمات في مجال السلامة والصحة المهنية.\nقرار رفض طلب الترخيص/ الاعتماد: قرار يصدره المجلس عند رفض قبول المتقدم، سواء كان فرداً أو منشأة، ممن لم يستوف متطلبات الترخيص أو الاعتماد في المسار المُتَقدم عليه.\nالمرخص/ المعتمد: الفرد الحاصل أو المنشأة الحاصلة على الترخيص/ الاعتماد لمزاولة وتقديم خدمات في مجال السلامة والصحة المهنية.\nقرار تعليق الترخيص/ الاعتماد: قرار يصدره المجلس للمُرخص/ المُعتمد، سواء كان فرداً أو منشأة، في حالات محددة يترتب عليها تعليق الترخيص/ الاعتماد.\nقرار إلغاء الترخيص/ الاعتماد: قرار يصدره المجلس للمُرخص/ المُعتمد، سواء كان فرداً أو منشأة، في حالات محددة يترتب عليها إلغاء الترخيص/ الاعتماد.\nقرار شطب الترخيص/ الاعتماد: قرار يصدره المجلس للمُرخص/ المُعتمد، سواء كان فرداً أو منشأة، في حالات محددة يترتب عليها شطب الترخيص/ الاعتماد.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23691,6 +25011,16 @@
         "term_as_written": "لجنة النظر في طلبات القطاع الزراعي",
         "definition_text": "هي لجنة تدرس أي طلبات تقدم للوزارة مثل طلبات العمالة أو التراخيص أو غيرها بصفة عامة، وتقوم بعد الدراسة برفع المرئيات لصاحب الصلاحية في الوزارة لاتخاذ القرار المناسب بشأنها.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "لجنة قيد المقيمين": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "لجنة قيد المقيمين",
+        "definition_text": "اللجنة التي تنظر في طلبات القيد في السجل وتبت فيها.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -24358,6 +25688,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مدير المساهمة العقارية": [
+      {
+        "track_id": "real_estate_contributions_law",
+        "article_number": 1,
+        "term_as_written": "مدير المساهمة العقارية",
+        "definition_text": "الشخص المعين لإدارة المساهمة العقارية.",
+        "source_record_id": "real-estate-contributions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مراحل التعليم العام": [
       {
         "track_id": "general_education_law",
@@ -24395,6 +25735,16 @@
         "term_as_written": "مراكز الخدمات التسويقية",
         "definition_text": "منشآت ترخص لها الوزارة أو مقدم الخدمة تقوم بعمليات فرز وتدريج وتصنيف وتعبئة المنتجات الزراعية الطازجة المعدة لأغراض التسويق المحلي أو التصدير.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مراكز الخدمة الصحية المساندة": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "مراكز الخدمة الصحية المساندة",
+        "definition_text": "الأماكن التي تقدم الخدمات الصحية أو الفنية المتممة للعلاج والتأهيل وتشمل ما يأتي :\nأ – مراكز العلاج الطبيعي.\nب – محلات النظارات الطبية.\nج – محلات الأجهزة والأطراف الصناعية.\nد – المراكز المساندة التي يصدر قرار من وزير الصحة باعتمادها من الخدمات الصحية.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -24454,6 +25804,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مركز الأشعة": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "مركز الأشعة",
+        "definition_text": "المكان المعد لإجراء التصاوير التشخيصية الطبية أو العلاج بالأشعة.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مركز البلاغات": [
       {
         "track_id": "protection_from_abuse_regulation",
@@ -24494,6 +25854,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مركز جراحة اليوم الواحد": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "مركز جراحة اليوم الواحد",
+        "definition_text": "مؤسسة صحية مرخص لها بإدخال المرضى لعمل إجراء طبي مثل: بعض العمليات الصغيرة والمتوسطة، على أن يخرج المريض منها في اليوم نفسه، وفقا لما تحدده اللائحة التنفيذية.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مركز خدمات النقل الإسعافي": [
+      {
+        "track_id": "private_healthcare_institutions_law",
+        "article_number": 1,
+        "term_as_written": "مركز خدمات النقل الإسعافي",
+        "definition_text": "الوحدة التي تقوم بالنقل الإسعافي وتقديم الخدمات الإسعافية للمريض أو المصاب قبل وصوله للمستشفى، وفقا للمواصفات والضوابط التي تحددها جمعية الهلال الأحمر السعودي.",
+        "source_record_id": "private-healthcare-institutions-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مزاولة المهن الهندسية": [
       {
         "track_id": "engineering_practice_law",
@@ -24529,6 +25909,26 @@
         "term_as_written": "مسؤولية المنتج الممتدة",
         "definition_text": "تحمل المنتج والمستورد للمنتجات المستوردة أو المصنعة محليا أو المشتقة من مادة أخرى، المعدة للبيع أو الاستهلاك، المسؤولية القانونية والمالية لإدارة البقايا والنفايات ومعالجتها والتخلص الآمن منها، خلال دورتها الحياتية.",
         "source_record_id": "waste-management-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مسار محترف": [
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "مسار محترف",
+        "definition_text": "هو مسار مخصص للأفراد ذوي المؤهلات الأكاديمية المتقدمة في مجال السلامة والصحة المهنية\nأو ما يعادلها، ويحملون درجة البكالوريوس كحد أدنى، أو الحاصلين على مؤهلات أكاديمية أساسية مدعومة بخبرة عملية طويلة مثبتة وشهادات احترافية معتمدة في المجال، ويمكّن هذا المسار من أداء الأدوار الإشرافية والاستشارية والقيادية وتطوير السياسات مع الالتزام بالتطوير المهني المستمر.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مسار ممارس": [
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "مسار ممارس",
+        "definition_text": "هو مسار مخصص للأفراد ذوي المؤهلات الأكاديمية الأساسية في مجال السلامة والصحة المهنية\nأو مؤهلات أكاديمية أعلى في تخصصات أخرى مدعومة بخبرة عملية في مجال السلامة والصحة المهنية ومجموعة من البرامج التدريبية والشهادات المعتمدة، ويركز هذا المسار على المهام التشغيلية والتنفيذية تحت الإشراف مع الالتزام بالتطوير المهني المستمر.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -24759,6 +26159,16 @@
         "term_as_written": "معاهدة مونتريال",
         "definition_text": "اتفاقية توحيد بعض قواعد النقل الجوي الدولي المحررة في مونتريال في 28 / 5 / 1999م.",
         "source_record_id": "civil-aviation-law-llm-art-133",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "معايير التقييم": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "معايير التقييم",
+        "definition_text": "المعايير التي تعتمدها الهيئة.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -25278,6 +26688,24 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "منصة المجلس": [
+      {
+        "track_id": "high_risk_professions_regulation",
+        "article_number": 1,
+        "term_as_written": "منصة المجلس",
+        "definition_text": "المنصة الإلكترونية للمجلس الوطني للسلامة والصحة المهنية.\nالحادث المهني/ حادث عمل: هو حدث مفاجئ وغير متوقع يقع أثناء تأدية المهام الوظيفية، أو بسبب الظروف المحيطة بالعمل، وقد ينتج عنه ضرر جسدي أو نفسي للعامل/الموظف أو خسائر في الممتلكات.",
+        "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "osh_service_providers_regulation",
+        "article_number": 1,
+        "term_as_written": "منصة المجلس",
+        "definition_text": "المنصة الإلكترونية للمجلس الوطني للسلامة والصحة المهنية.",
+        "source_record_id": "osh-service-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "منطقة المناورات في المطار": [
       {
         "track_id": "civil_aviation_law",
@@ -25750,6 +27178,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نقل الأعضاء البشرية": [
+      {
+        "track_id": "organ_donation_law",
+        "article_number": 1,
+        "term_as_written": "نقل الأعضاء البشرية",
+        "definition_text": "عملية طبية يستأصل من خلالها العضو البشري -أو جزء منه- من جسم المتبرع ويزرع في جسم المتبرع له، بأي وسيلة طبية مقررة ومعتمدة لدى المركز.",
+        "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "نقل الغاز الطبيعي": [
       {
         "track_id": "income_tax_law",
@@ -26185,6 +27623,16 @@
         "term_as_written": "وكيل الشحنة",
         "definition_text": "الشخص الذي ينوب عن أصحاب البضاعة في تسلم البضاعة عند الوصول، ودفع أجرة النقل إن كانت مستحقة كلها أو بعضها.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "ومثال ذلك": [
+      {
+        "track_id": "accredited_valuers_law",
+        "article_number": 1,
+        "term_as_written": "ومثال ذلك",
+        "definition_text": "التملك والتصرف في الملكية، والرهن، والتأمين، ونزع الملكية، والارتفاق، والانتفاع.",
+        "source_record_id": "accredited-valuers-law-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],

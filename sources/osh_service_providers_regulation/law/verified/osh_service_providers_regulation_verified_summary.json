@@ -1,0 +1,107 @@
+{
+  "law_key": "osh_service_providers_regulation",
+  "layer": "OSH_SERVICE_PROVIDERS_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 38,
+  "status_counts": {
+    "اصلية": 38,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "source_tier_counts": {
+    "primary": 29,
+    "secondary_only": 9
+  },
+  "decree": "قرار وزير الموارد البشرية والتنمية الاجتماعية رئيس المجلس الوطني للسلامة والصحة المهنية رقم (64764)",
+  "decree_date_hijri": "13/5/1447",
+  "decree_date_gregorian": "4/11/2025",
+  "administering_authority_en": "National Committee for Occupational Safety and Health (NCOSH) and its General Secretariat -- Ministry of Human Resources and Social Development",
+  "consolidated_amended_law": false,
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "التعريفات",
+      "articles": "1-1"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "الأهداف",
+      "articles": "2-3"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "الأحكام العامة",
+      "articles": "4-14"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "تسجيل وترخيص/ اعتماد المنشآت",
+      "articles": "15-26"
+    },
+    {
+      "label_ar": "الفصل الخامس",
+      "title_ar": "تسجيل وترخيص/ اعتماد الأفراد",
+      "articles": "27-34"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "أحكام ختامية",
+      "articles": "35-38"
+    }
+  ],
+  "gazette_publication": {
+    "issue_no": "5138",
+    "date_hijri": "20/7/1447",
+    "date_gregorian": "9/1/2026",
+    "citation_ar": "نشر في عدد جريدة أم القرى رقم (5138) الصادر في 9 من يناير 2026م."
+  },
+  "amendment_history": [],
+  "verification_methodology_note": "PRIMARY SOURCE REACHED, BUT INCOMPLETE ON ITS OWN PAGE: uqn.gov.sa (Umm Al-Qura Official Gazette, the issuing authority's own constitutionally-designated publication organ), the regulation's own dedicated page at https://uqn.gov.sa/details?p=28770 (HTTP 200, fetched directly via curl this pass, born-digital structured HTML -- no OCR needed; page metadata confirms title, datePublished 2026-01-09T15:05:22+03:00, matching Umm Al-Qura Issue No. 5138). The page's own #article-content element was parsed with BeautifulSoup (not naive regex/tag-stripping), walking the DOM in document order and converting each Word-pasted <table> (data-tablelook Office/Word paste artifacts) into row-by-row prose rather than naive tag-stripping, which would have silently reordered or merged table cell content. This reproduces the regulation's own preamble (المقدمة) and Articles 1 through 29 in full (Chapters 1-5: التعريفات، الأهداف، الأحكام العامة، تسجيل وترخيص/اعتماد المنشآت، تسجيل وترخيص/اعتماد الأفراد) -- but the page's own HTML markup ends immediately after Article 29's own closing sentence, followed only by empty/decorative <div><br/></div> filler and the page's unrelated 'related articles' widget. No pagination link, 'read more' control, or working JSON/API endpoint for the remainder of this specific document was located this pass (a direct query against the site's own /api/article/<id>/json pattern returned an empty 'articles: []' result for this article's id). This is documented as an unexplained rendering gap on the government's own CMS for THIS specific page, not a scope decision by this track and not evidence that the regulation itself has only 29 articles (see the two independent secondary sources below, which agree the true total is 38 articles/6 chapters).\n\nSECONDARY SOURCE FOR THE FULL TEXT (qanoonsa.com): qanoonsa.com's own page for this regulation (https://qanoonsa.com/p/513807/, HTTP 200, fetched directly via curl this pass) reproduces the regulation's preamble and all 38 articles across 6 chapters, ending with Article 38's own publication/effective-date clause and an explicit citation ('نشر في عدد جريدة أم القرى رقم (5138) الصادر في 9 من يناير 2026م.') matching uqn.gov.sa's own metadata exactly. qanoonsa.com's page itself carries a standing disclaimer that it is not an official source and that users should verify against Umm Al-Qura -- consistent with treating it as SECONDARY, not primary, in this track.\n\nCROSS-CHECK, ARTICLES 1-29 (PRIMARY vs SECONDARY): a full programmatic diff was run between uqn.gov.sa's own text and qanoonsa.com's text for Articles 1-29 (digits normalized Eastern-Arabic-Indic -> Western; whitespace/newlines collapsed). 24 of the 29 articles differ ONLY in two purely cosmetic respects that qanoonsa.com's own extraction pipeline introduces systematically: (a) Arabic tashkeel/diacritics present in uqn.gov.sa's own text are absent from qanoonsa.com's (e.g. 'وفقاً' -> 'وفقا', 'المُرخص' -> 'المرخص', 'تقيّم' -> 'تقيم'), and (b) a slash is rendered with surrounding spaces on qanoonsa.com ('الترخيص / الاعتماد') versus no leading space on uqn.gov.sa ('الترخيص/ الاعتماد'). ZERO substantive wording differences were found in this diff across all 29 articles. This is strong corroboration that qanoonsa.com's own pipeline faithfully reproduces the primary text (net of its own tashkeel-stripping/spacing convention), which is the basis for relying on qanoonsa.com for Articles 30-38 where uqn.gov.sa's own page could not be used (see above).\n\nTHIRD SOURCE FOR ARTICLES 1-17 AND THE DECREE PREAMBLE (ajel.sa): ajel.sa's own news page (https://ajel.sa/local/d3rdg2bnfo, HTTP 200, fetched directly via curl this pass) independently quotes the Ministerial Decision's own preamble and four-paragraph operative text verbatim (وزير الموارد البشرية والتنمية الاجتماعية، رئيس المجلس الوطني للسلامة والصحة المهنية؛ رقم (64764) وتاريخ 1447/05/13هـ؛ محضر الاجتماع الثالث عشر للمجلس بتاريخ 1446/12/27هـ الموافق 2025/6/23م؛ 'يُعمل به بعد (180) يوماً من تاريخ نشره في الجريدة الرسمية') and reproduces the regulation's own preamble and Articles 1-17 verbatim, matching uqn.gov.sa and qanoonsa.com exactly (net of the same tashkeel/spacing convention noted above). This independently corroborates the decree number, both Hijri dates (decision date and Council-meeting date), and the first 17 articles' wording from a THIRD, independent domain.\n\nFOURTH SOURCE, STRUCTURE ONLY (Lexis Middle East): lexismiddleeast.com carries its own indexed page for 'Ministerial Decision 64764 (1447H)' (located via search this pass). Its own structural summary -- obtained via the WebFetch tool, since a direct curl GET of the same URL this pass returned HTTP 404 (documented as a discrepancy; this corroboration therefore rests on a tool-mediated read, not a directly-inspected raw page) -- independently states 38 articles across 6 chapters, with chapter-to-article-range boundaries (Chapter 4: Articles 15-26; Chapter 5: Articles 27-34; Chapter 6: Articles 35-38) matching this track's own chapter_structure exactly. This is treated as STRUCTURAL corroboration only (article/chapter counts and boundaries), not verbatim-text corroboration, since no Arabic article body text from Lexis was obtained this pass.\n\nPER-ARTICLE CONFIDENCE SPLIT (why this track is NOT uniformly Tier 1/2): Articles 1-29 (number_label_ar 'المادة الأولى' through 'المادة التاسعة والعشرون') carry status UQN_GAZETTE_OFFICIAL_PRIMARY_TEXT_AR_CROSS_VERIFIED_AJEL_QANOONSA -- text taken VERBATIM from uqn.gov.sa's own primary HTML (including its own diacritics and spacing), cross-verified against 2 independent non-governmental secondary sources with zero substantive divergence. Articles 30-38 carry status QANOONSA_SECONDARY_TEXT_UQN_PRIMARY_PAGE_TRUNCATED_STRUCTURALLY_XVERIFIED_LEXIS -- text taken from qanoonsa.com only (the primary government page did not reach this far this pass), with a second source (Lexis Middle East) confirming only the structural boundaries, not the verbatim wording. Each article's own 'source_tier' field ('primary' vs 'secondary_only') and 'status' field make this explicit and machine-checkable; see known_unresolved_discrepancies for full detail on every non-obvious judgment call in this build.\n\nTABLE HANDLING (Articles 18-19): uqn.gov.sa's own HTML represents Article 18's requirements table and Article 19's services table as Word-pasted HTML <table> elements (MsoTableGrid). These were parsed row-by-row (never naive tag-stripping, which would silently reorder or merge cell content across rows/columns) into prose: the table's own header/caption row (e.g. 'المنشآت | المتطلبات') was dropped as carrying no independent legal content, and each data row rendered as one category heading followed by its own cell content exactly as published. Article 18 on uqn.gov.sa's own page is immediately followed -- before Article 19's own heading appears -- by a SECOND, unlabeled table, byte-for-byte identical to Article 19's own services table; cross-checked against qanoonsa.com's independent reproduction (which shows only ONE table under Article 18 and a separate one, with its own intro sentence, under Article 19), this second table is judged a copy/paste duplication artifact on uqn.gov.sa's own CMS rendering and is excluded from Article 18's text in this track (not rendered twice). See known_unresolved_discrepancies for this and for the genuine content gap in Article 19's own last table row.\n\nTEXT QUALITY CHECKS PERFORMED: decorative/justification tatweel (U+0640) inserted mid-word by uqn.gov.sa's own Word-pasted preamble formatting (e.g. 'بتطبيـق' -> 'بتطبيق') was stripped programmatically wherever BOTH the preceding and following characters were themselves Arabic letters (excluding the 'هـ' Hijri-era abbreviation), matching this corpus's own established convention (see debt_collection_regulation's validator _bad_tatweel helper); legitimate stylistic tatweel connecting a prefix letter to a following parenthetical digit (e.g. 'بـ(60) يوماً', used throughout this regulation's own text and matching this corpus's existing tracks' own convention) was left intact. All Eastern Arabic-Indic digits in Articles 30-38 (qanoonsa.com's own convention) were normalized to Western digits to match uqn.gov.sa's own Articles 1-29 convention and this corpus's standing practice. No translation, paraphrase, or legal interpretation was performed on the Arabic text; the English fields in this file are for indexing/discovery only. Read-only over input; deterministic over outputs.\n\nARTICLE TITLES: uqn.gov.sa's own page captions the law's title and each chapter's title, but does NOT caption individual articles with their own distinct one-line title beyond 'المادة X:' -- unlike some other tracks in this corpus whose own source pages DO caption every article. To avoid inventing paraphrased captions not present in the source, article_title_ar is left as an empty string for all 38 articles in this track; section_ar (the chapter each article belongs to) is populated instead and is non-empty throughout.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "osh_service_providers_regulation_uqn_primary_page_truncated_after_art29",
+      "description": "صفحة اللائحة الرسمية ذاتها على uqn.gov.sa (تفاصيل?p=28770) تعرض بشكل كامل المقدمة والمواد من الأولى حتى التاسعة والعشرين (الفصول الخمسة الأولى) ثم تنتهي علامات HTML الخاصة بعنصر #article-content مباشرة بعد نص المادة التاسعة والعشرين، يتبعها فقط عناصر <div><br/></div> فارغة وقسم 'مقالات ذات صلة' غير المتعلق بالنص. لم يُعثر هذه الجولة على رابط ترقيم صفحات أو 'قراءة المزيد' أو نقطة API تعمل لبقية هذه الوثيقة تحديداً (استعلام مباشر على نمط /api/article/<id>/json الخاص بالموقع أعاد نتيجة فارغة 'articles: []'). هذا فجوة عرض غير مُفسَّرة على نظام إدارة المحتوى الحكومي ذاته لهذه الصفحة تحديداً، وليس قراراً بنطاق هذا المسار، وليس دليلاً على أن اللائحة تتكون من 29 مادة فقط (انظر المصدرين الثانويين المستقلين أدناه اللذين يؤكدان أن الإجمالي الحقيقي 38 مادة موزعة على 6 فصول)."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_articles_30_38_secondary_only",
+      "description": "المواد من الثلاثين حتى الثامنة والثلاثين (9 من أصل 38 مادة) لم يتسنَّ مقاطعتها مع صفحة uqn.gov.sa الرسمية ذاتها هذه الجولة (انظر الفجوة أعلاه) وتعتمد على مصدر ثانوي منفرد هو qanoonsa.com (موقع خاص لتجميع النصوص القانونية يحمل هو ذاته تنويهاً صريحاً بأنه ليس مصدراً رسمياً وينصح بالرجوع لجريدة أم القرى). التصالب البنيوي (لا النصي الحرفي) تم الحصول عليه من قاعدة بيانات قانونية تجارية مستقلة ثانية (Lexis Middle East)، والتي أكدت -بشكل مستقل- نفس الإجمالي (38 مادة، 6 فصول) ونفس نطاقات الفصول (الفصل الرابع: 15-26، الفصل الخامس: 27-34، الفصل السادس: 35-38). درجة الثقة في المواد 1-29 (مطابقة حرفية مع المصدر الرسمي ومصدرين ثانويين إضافيين) أعلى بشكل واضح من درجة الثقة في المواد 30-38 (نص من مصدر ثانوي واحد فقط، وتصالب بنيوي فقط لا نصي من مصدر ثانٍ) -- حقل 'status' وحقل 'source_tier' لكل مادة يوضحان هذا الفرق صراحة وبشكل قابل للفحص برمجياً؛ تصنيف هذا المسار الإجمالي مبني على الجزء الأضعف (المواد 30-38) لا الأقوى."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_qanoonsa_diacritics_normalized",
+      "description": "قورن نص qanoonsa.com للمواد 1-29 حرفياً (بعد تطبيع الأرقام الهندية وطي المسافات) مع نص uqn.gov.sa الرسمي المباشر لنفس المواد: 24 من أصل 29 مادة تختلف فقط في نقطتين شكليتين بحتتين ثابتتين في منهجية استخراج qanoonsa.com ذاتها: (أ) حذف التشكيل ('وفقاً' تصبح 'وفقا'، 'المُرخص' تصبح 'المرخص') و(ب) إضافة مسافة قبل الشرطة المائلة ('الترخيص / الاعتماد' بدلاً من 'الترخيص/ الاعتماد'). لم يُعثر على أي اختلاف جوهري في الصياغة عبر جميع المواد الـ29 التي أمكنت مقارنتها. مواد هذا المسار من 1 إلى 29 منقولة حرفياً عن uqn.gov.sa (بتشكيلها ومسافاتها الأصلية)؛ أما المواد من 30 إلى 38 فمنقولة كما وردت في qanoonsa.com بما في ذلك اصطلاحها الخاص (تشكيل محذوف، شرطة مائلة بمسافة) -- فجوة شكلية فقط في الأمانة التنسيقية مقابل صيغة المصدر الرسمي غير المؤكدة لهذا النطاق تحديداً، وليست شكاً في الصياغة ذاتها."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_article18_duplicate_table_excluded",
+      "description": "يتبع جدول المادة الثامنة عشرة على صفحة uqn.gov.sa الرسمية ذاتها -قبل ظهور عنوان المادة التاسعة عشرة نفسه- جدول HTML ثانٍ غير معنون مطابق حرفياً لجدول خدمات المادة التاسعة عشرة ذاتها. بمقاطعته مع نسخة qanoonsa.com المستقلة (التي تُظهر جدولاً واحداً فقط تحت المادة الثامنة عشرة وجدولاً منفصلاً، بجملة تمهيدية خاصة به، تحت المادة التاسعة عشرة)، حُكم على هذا الجدول الثاني بأنه خطأ تكرار لصق (copy/paste) في عرض uqn.gov.sa ذاته، واستُبعد من نص المادة الثامنة عشرة في هذا المسار (لم يُدرَج مرتين)."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_article19_last_row_gap",
+      "description": "الفئة الأخيرة في عمود 'المنشآت' بجدول المادة التاسعة عشرة ('منصات التدريب') لا يقابلها أي محتوى في عمود 'الخدمات' في كل من صفحة uqn.gov.sa الرسمية ذاتها ونسخة qanoonsa.com المستقلة على حد سواء -- فجوة أصلية حقيقية في نص اللائحة ذاته (وليست فقداناً في استخراج أو تحليل هذا المسار)، وقد حُفظت كما وردت (فارغة) دون اختلاق محتوى لها."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_argaam_undercounted",
+      "description": "صفحة argaam.com الخاصة بهذه اللائحة تذكر -في ملخصها المُعَدّ بالذكاء الاصطناعي والمُصرَّح به صراحة على الصفحة ذاتها- أن اللائحة 'تتكوّن من 29 مادة، مقسمة إلى 5 فصول'. هذا يتعارض مع الإجمالي الحقيقي المؤكد بشكل مستقل من مصدرين ثانويين (qanoonsa.com وLexis Middle East، المتطابقين في حدود الفصول) وهو 38 مادة موزعة على 6 فصول، ويُرجَّح أنه ناتج عن نفس فجوة عرض uqn.gov.sa الموثقة أعلاه إن كانت أداة argaam الآلية قد اعتمدت على نفس تلك الصفحة. لم يُعتمد رقم argaam في هذا المسار؛ ذُكر هنا للشفافية كونه أحد مصادر التكليف الأصلية لهذا المسار."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_istitlaa_unreachable",
+      "description": "صفحة الاستطلاع العام لمشروع هذه اللائحة على istitlaa.ncc.gov.sa ('لائحة ترخيص واعتماد مزاولي ومقدمي خدمات السلامة والصحة المهنية (أفراد ومنشآت)') وُجدت عبر البحث هذه الجولة لكن محاولة الوصول المباشر إليها فشلت عبر curl (Recv failure: Connection reset by peer) وعبر WebFetch (HTTP 503) على حد سواء -- بما يماثل ما وثّقه مسار debt_collection_regulation سابقاً في هذا المستودع مع النطاق ذاته. لم يُستخدم أي محتوى من هذه الصفحة."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_lexis_404_direct",
+      "description": "صفحة lexismiddleeast.com الخاصة بالقرار الوزاري رقم (64764) وُجدت عبر البحث، وتم الحصول على ملخصها البنيوي (38 مادة / 6 فصول / نطاقات فصول مطابقة) عبر أداة WebFetch؛ لكن طلب curl مباشر لنفس الرابط هذه الجولة أعاد HTTP 404. أي أن هذا التصالب البنيوي مبني على قراءة عبر أداة وسيطة لا على فحص مباشر للصفحة الخام -- مُفصَح عنه للشفافية، ولا يُعامل معاملة مصدر مفحوص مباشرة."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_gregorian_decree_date_calculated",
+      "description": "التاريخ الميلادي لتاريخ القرار ذاته (4/11/2025م لتاريخ 13/5/1447هـ) لم يرد نصاً صريحاً بهذه الصيغة عن أي مصدر عُثر عليه هذه الجولة؛ هو نتيجة تحويل تقويمي دقيق (مكتبة hijri-converter بلغة بايثون، Hijri(1447,5,13)) يطابق تماماً تاريخ نشر مقال qanoonsa.com ذاته ('4 نوفمبر 2025')، ويتأكد داخلياً من كون نفس آلية التحويل تُعيد إنتاج تحويلين آخرين وردا نصاً في المصادر هذه الجولة بدقة تامة: 20/7/1447هـ = 9/1/2026م (يطابق تاريخ نشر uqn.gov.sa ذاته وبيانات العدد 5138)، و27/12/1446هـ = 23/6/2025م (يطابق نص القرار الحرفي على ajel.sa الذي يذكر كلا التقويمين لتاريخ اجتماع المجلس الثالث عشر). مُفصَح عنه بصفته تاريخاً محسوباً لا منقولاً حرفياً عن تاريخ القرار ذاته."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_no_boe_lawid_checked",
+      "description": "تماشياً مع السابقة المتبعة في هذا المجمّع القانوني مع اللوائح الصادرة بقرار وزاري/قرار مجلس لا بمرسوم ملكي، لم تُفحص بوابة laws.boe.gov.sa لهذه اللائحة تحديداً هذه الجولة؛ الاعتماد كان على جريدة أم القرى (الجريدة الرسمية المخصصة دستورياً للنشر) بصفتها المصدر الأساسي، عملاً بنص المادة الثامنة والثلاثين ذاتها ('تنشر هذه اللائحة في الجريدة الرسمية')."
+    },
+    {
+      "article_key": "osh_service_providers_regulation_sibling_high_risk_professions_not_touched",
+      "description": "صدرت في التاريخ ذاته وبقرار مجاور الرقم (لائحة تنظيم العمل في المهن ذات المخاطر العالية، قرار وزاري رقم 64762) -- لائحة شقيقة مستقلة تماماً، مؤكَّدة عبر روابط التنقل 'السابق/التالي' الخاصة بصفحة qanoonsa.com ذاتها لهذا المسار. لم تُمس هذه اللائحة الشقيقة ولا معرّف مسارها هنا؛ تُبنى في مسار مستقل بمعرفة جهة أخرى ضمن هذا المستودع، عملاً بتعليمات هذه المهمة الصريحة."
+    }
+  ],
+  "source_artifact": "sources/osh_service_providers_regulation/law/official_source/osh_service_providers_regulation_official_source.json"
+}

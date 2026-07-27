@@ -1482,6 +1482,32 @@ EDGES = [
                 "(one-instrument-per-pass rule).",
         "source_ref": "sources/cma_corporate_governance_regulation/law/official_source/cma_corporate_governance_regulation_official_source.json (amendment_history)",
     },
+
+    # --- wave-5 batch (contractors_classification_law, private_healthcare_institutions_law) ---
+    {
+        "from_track_id": "contractors_classification_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام تصنيف المقاولين (السابق)",
+        "target_decree": "Royal Decree No. M/18, 20/3/1427H",
+        "note": "contractors_classification_law's own Article 19 states verbatim: "
+                "'يحل النظام محل نظام تصنيف المقاولين الصادر بالمرسوم الملكي رقم "
+                "(م/18) وتاريخ 20/3/1427هـ، ويلغي كل ما يتعارض معه من أحكام'. Not "
+                "separately ingested in this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/contractors_classification_law/law/official_source/contractors_classification_law_official_source.json (article 19 / supersedes_ar)",
+    },
+    {
+        "from_track_id": "private_healthcare_institutions_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المؤسسات الطبية الخاصة (السابق)",
+        "target_decree": "Royal Decree No. M/58, 3/11/1407H",
+        "note": "private_healthcare_institutions_law's own Article 33 states "
+                "verbatim: 'يحل هذا النظام محل نظام المؤسسات الطبية الخاصة الصادر "
+                "بالمرسوم الملكي ذي الرقم (م/58) والتاريخ 3/11/1407هـ'. Not "
+                "separately ingested in this corpus (one-instrument-per-pass rule).",
+        "source_ref": "sources/private_healthcare_institutions_law/law/official_source/private_healthcare_institutions_law_official_source.json (article 33 / supersedes_ar)",
+    },
 ]
 
 # ---------------------------------------------------------------------------
