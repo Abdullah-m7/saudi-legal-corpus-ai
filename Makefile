@@ -368,6 +368,20 @@ export PYTHONPATH := src:$(PYTHONPATH)
         waste-management-law-track-validate \
         fisheries-law-track-validate \
         debt-collection-regulation-track-validate \
+        insurance-authority-statute-track-validate \
+        bnpl-regulation-track-validate \
+        offplan-sale-law-track-validate \
+        contractors-classification-law-track-validate \
+        real-estate-contributions-law-track-validate \
+        accredited-valuers-law-track-validate \
+        white-land-fees-law-track-validate \
+        frequency-spectrum-regulation-track-validate \
+        mental-health-law-track-validate \
+        organ-donation-law-track-validate \
+        private-healthcare-institutions-law-track-validate \
+        high-risk-professions-regulation-track-validate \
+        osh-service-providers-regulation-track-validate \
+        rega-organizational-statute-track-validate \
         qa-gate
 
 help:
@@ -1896,6 +1910,48 @@ fisheries-law-track-validate:
 
 debt-collection-regulation-track-validate:
 	$(PY) scripts/validate_debt_collection_regulation_track.py
+
+insurance-authority-statute-track-validate:
+	$(PY) scripts/validate_insurance_authority_statute_track.py
+
+bnpl-regulation-track-validate:
+	$(PY) scripts/validate_bnpl_regulation_track.py
+
+offplan-sale-law-track-validate:
+	$(PY) scripts/validate_offplan_sale_law_track.py
+
+contractors-classification-law-track-validate:
+	$(PY) scripts/validate_contractors_classification_law_track.py
+
+real-estate-contributions-law-track-validate:
+	$(PY) scripts/validate_real_estate_contributions_law_track.py
+
+accredited-valuers-law-track-validate:
+	$(PY) scripts/validate_accredited_valuers_law_track.py
+
+white-land-fees-law-track-validate:
+	$(PY) scripts/validate_white_land_fees_law_track.py
+
+frequency-spectrum-regulation-track-validate:
+	$(PY) scripts/validate_frequency_spectrum_regulation_track.py
+
+mental-health-law-track-validate:
+	$(PY) scripts/validate_mental_health_law_track.py
+
+organ-donation-law-track-validate:
+	$(PY) scripts/validate_organ_donation_law_track.py
+
+private-healthcare-institutions-law-track-validate:
+	$(PY) scripts/validate_private_healthcare_institutions_law_track.py
+
+high-risk-professions-regulation-track-validate:
+	$(PY) scripts/validate_high_risk_professions_regulation_track.py
+
+osh-service-providers-regulation-track-validate:
+	$(PY) scripts/validate_osh_service_providers_regulation_track.py
+
+rega-organizational-statute-track-validate:
+	$(PY) scripts/validate_rega_organizational_statute_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

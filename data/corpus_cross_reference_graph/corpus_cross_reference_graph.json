@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 14566,
-  "total_references_extracted": 3299,
-  "intra_law_count": 2781,
-  "inter_law_count": 518,
+  "total_records_scanned": 14939,
+  "total_references_extracted": 3378,
+  "intra_law_count": 2836,
+  "inter_law_count": 542,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 2793,
-    "medium": 506
+    "high": 2866,
+    "medium": 512
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -51,11 +51,11 @@
       "source_record_id": "aawan-regulation-llm-art-032",
       "source_article_number": 32,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "contractors_classification_law",
       "target_article_number": null,
       "target_law_name_raw": "تأديب الموظفين",
       "raw_citation_text": "أحكام نظام تأديب الموظفين",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "accounting_auditing_law",
@@ -198,6 +198,127 @@
       "target_article_number": 12,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثانية عشرة) من اللائحة، اتخاذ أي من الإجر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات",
+      "raw_citation_text": "أحكام نظام الشركات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 34,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والثلاثين) من هذا النظام- بإلغاء ترخيص ك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-024",
+      "source_article_number": 24,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 40,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الأربعين) من هذا النظام. 2- أعضاء منتسب",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 32,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والثلاثين) من هذا النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 33,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من هذا النظام، يتولى النظر في",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 32,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والثلاثين) من هذا النظام -فيما عدا عقوبة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 33,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من هذا النظام إلى النيابة الع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-036",
+      "source_article_number": 36,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 34,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والثلاثين) من هذا النظام، وتحدد -بقرار م",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-036",
+      "source_article_number": 36,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من هذا النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-040",
+      "source_article_number": 40,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 24,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والعشرين) من هذا النظام ووفقا لما تحدده",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_law",
+      "source_record_id": "accredited-valuers-law-llm-art-043",
+      "source_article_number": 43,
+      "type": "inter_law",
+      "target_track_id": "insurance_control_law",
+      "target_article_number": 18,
+      "target_law_name_raw": "مراقبة شركات التأمين التعاوني",
+      "raw_citation_text": "المادة (الثامنة عشرة) من نظام مراقبة شركات التأمين التعاوني.",
       "confidence": "high"
     },
     {
@@ -4356,6 +4477,39 @@
       "target_article_number": 7,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة السابعة من هذا النظام، لا يجوز بأي حا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bnpl_regulation",
+      "source_record_id": "bnpl-regulation-llm-art-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات",
+      "raw_citation_text": "أحكام نظام الشركات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bnpl_regulation",
+      "source_record_id": "bnpl-regulation-llm-art-020",
+      "source_article_number": 20,
+      "type": "inter_law",
+      "target_track_id": "debt_collection_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "وإجراءات التحصيل للعملاء الأفراد",
+      "raw_citation_text": "أحكام ضوابط وإجراءات التحصيل للعملاء الأفراد",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bnpl_regulation",
+      "source_record_id": "bnpl-regulation-llm-art-021",
+      "source_article_number": 21,
+      "type": "inter_law",
+      "target_track_id": "electronic_transactions_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التعاملات الإلكترونية",
+      "raw_citation_text": "أحكام نظام التعاملات الإلكترونية و لائحته التنفيذية",
       "confidence": "high"
     },
     {
@@ -8635,6 +8789,28 @@
       "target_article_number": 5,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الخامسة ) من النظام. 3. لا تسري أحكام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "contractors_classification_law",
+      "source_record_id": "contractors-classification-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "investment_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الاستثمار الأجنبي حسب الإجراءات المعمول بها في تصنيف المقاول",
+      "raw_citation_text": "وفقا لنظام الاستثمار الأجنبي حسب الإجراءات المعمول بها في تصنيف المقاول",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "contractors_classification_law",
+      "source_record_id": "contractors-classification-law-llm-art-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "contractors_classification_law",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من النظام، لجنة (أو أكثر) تكو",
       "confidence": "high"
     },
     {
@@ -14479,6 +14655,28 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "frequency_spectrum_regulation",
+      "source_record_id": "frequency-spectrum-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الهيئة",
+      "raw_citation_text": "بموجب تنظيم الهيئة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "frequency_spectrum_regulation",
+      "source_record_id": "frequency-spectrum-regulation-llm-art-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "المقابل المالي لترخيص استخدام الترددات المنشورة على موقع الهي",
+      "raw_citation_text": "وفقا للائحة المقابل المالي لترخيص استخدام الترددات المنشورة على موقع الهي",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "gcc_anti_dumping_law",
       "source_record_id": "gcc-anti-dumping-law-llm-art-008",
       "source_article_number": 8,
@@ -14989,11 +15187,11 @@
       "source_record_id": "gtpl-reg-llm-art-031",
       "source_article_number": 31,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "contractors_classification_law",
       "target_article_number": null,
       "target_law_name_raw": "تصنيف المقاولين",
       "raw_citation_text": "أحكام نظام تصنيف المقاولين",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "gtpl_implementing_regulation",
@@ -15627,7 +15825,7 @@
       "source_record_id": "health-system-regulation-llm-art-004",
       "source_article_number": 5,
       "type": "inter_law",
-      "target_track_id": "cooperative_health_insurance_law",
+      "target_track_id": "private_healthcare_institutions_law",
       "target_article_number": null,
       "target_law_name_raw": "المؤسسات الصحية الخاصة",
       "raw_citation_text": "طبقاً لنظام المؤسسات الصحية الخاصة",
@@ -15660,7 +15858,7 @@
       "source_record_id": "health-system-regulation-llm-art-009",
       "source_article_number": 10,
       "type": "inter_law",
-      "target_track_id": "cooperative_health_insurance_law",
+      "target_track_id": "private_healthcare_institutions_law",
       "target_article_number": null,
       "target_law_name_raw": "المؤسسات الصحية الخاصة",
       "raw_citation_text": "حسب نظام المؤسسات الصحية الخاصة",
@@ -15709,6 +15907,39 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة السادسة",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "high_risk_professions_regulation",
+      "source_record_id": "high-risk-professions-regulation-llm-art-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": 10,
+      "target_law_name_raw": "فحوصات اللياقة المهنية والأمراض غير المعدية",
+      "raw_citation_text": "المادة العاشرة من لائحة فحوصات اللياقة المهنية والأمراض غير المعدية.",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "high_risk_professions_regulation",
+      "source_record_id": "high-risk-professions-regulation-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": 38,
+      "target_law_name_raw": "العمل",
+      "raw_citation_text": "المادة الثامنة والثلاثون والمادة الستون من نظام العمل.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "high_risk_professions_regulation",
+      "source_record_id": "high-risk-professions-regulation-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": 60,
+      "target_law_name_raw": "العمل",
+      "raw_citation_text": "المادة الستون من نظام العمل. وفي حال اعتراض",
+      "confidence": "high"
     },
     {
       "source_track_id": "iflas_hudud_regulation",
@@ -16632,6 +16863,17 @@
       "target_article_number": 68,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثامنة والستين من النظام على المبالغ المدفوع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_authority_statute",
+      "source_record_id": "insurance-authority-statute-llm-art-014",
+      "source_article_number": 14,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -20386,6 +20628,138 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من هذا النظام. 17 – أ – إخبار",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من هذا النظام، ما عدا الفقرة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من هذا النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من هذا النظام ؛ جاز – بتقرير",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من هذا النظام، فيعدان تقريرا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من هذا النظام. وإذا ترتب على",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) والفقرتين (2/أ) و(3/أ) من الم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة) والفقرة (ب) من المادة (الثاني",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) والمادة (السادسة عشرة)،والماد",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) ،والمادة (العشرين) من هذا النظ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العشرين) من هذا النظام. ب – لا يحول تط",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "mental_health_law",
+      "source_record_id": "mental-health-law-llm-art-026",
+      "source_article_number": 26,
+      "type": "intra_law",
+      "target_track_id": "mental_health_law",
+      "target_article_number": 25,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة والعشرين) من هذا النظام. ب ـ تتولى المح",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "mining_investment_law",
       "source_record_id": "mining-investment-law-llm-art-005",
       "source_article_number": 5,
@@ -21332,6 +21706,303 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "offplan_sale_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "real_estate_registration_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التسجيل العيني للعقار",
+      "raw_citation_text": "أحكام نظام التسجيل العيني للعقار",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-016",
+      "source_article_number": 16,
+      "type": "inter_law",
+      "target_track_id": "real_estate_units_law",
+      "target_article_number": null,
+      "target_law_name_raw": "ملكية الوحدات العقارية وفرزها وإدارتها",
+      "raw_citation_text": "وفقا لنظام ملكية الوحدات العقارية وفرزها وإدارتها",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "offplan_sale_law",
+      "target_article_number": 24,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والعشرين)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-022",
+      "source_article_number": 22,
+      "type": "intra_law",
+      "target_track_id": "offplan_sale_law",
+      "target_article_number": 26,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة والعشرين) من النظام، يتولى مفتشون -يصدر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "offplan_sale_law",
+      "target_article_number": 24,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والعشرين) من النظام- وتحديدا للعقوبات ض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "offplan_sale_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام، يراعى فيه طبيعة كل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-026",
+      "source_article_number": 26,
+      "type": "intra_law",
+      "target_track_id": "offplan_sale_law",
+      "target_article_number": 24,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والعشرين) من النظام؛ أمام المحكمة المخت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_sale_law",
+      "source_record_id": "offplan-sale-law-llm-art-026",
+      "source_article_number": 26,
+      "type": "intra_law",
+      "target_track_id": "offplan_sale_law",
+      "target_article_number": 24,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والعشرين) من النظام وتوقيع العقوبات بحق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية) من النظام، يجوز نقل الأعضاء ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام، لا يجوز إجراء عملي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من النظام، على أن ينسق قبل إج",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من النظام- التي تجرى لديها عم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العشرون) من النظام، يحظر على المتبرع أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام. 2- تحدد اللائحة ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من النظام، يعاقب بالسجن مدة ل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من النظام، يعاقب بغرامة لا تز",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-022",
+      "source_article_number": 22,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام، ودون إخلال بأي عقو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-022",
+      "source_article_number": 22,
+      "type": "inter_law",
+      "target_track_id": "board_of_grievances_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرافعات أمام ديوان المظالم",
+      "raw_citation_text": "أحكام نظام المرافعات أمام ديوان المظالم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) والفقرة (1) من المادة (الثاني",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "organ_donation_law",
+      "source_record_id": "organ-donation-law-llm-art-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "organ_donation_law",
+      "target_article_number": 22,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والعشرين) من النظام، واحدة أو أكثر من ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "osh_service_providers_regulation",
+      "source_record_id": "osh-service-providers-regulation-llm-art-018",
+      "source_article_number": 18,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التسجيل في منصة المجلس لمسار ترخيص",
+      "raw_citation_text": "وفقاً لآلية التسجيل في منصة المجلس لمسار ترخيص",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "osh_service_providers_regulation",
+      "source_record_id": "osh-service-providers-regulation-llm-art-018",
+      "source_article_number": 18,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التسجيل في منصة المجلس لمسار ترخيص",
+      "raw_citation_text": "وفقاً لآلية التسجيل في منصة المجلس لمسار ترخيص",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "osh_service_providers_regulation",
+      "source_record_id": "osh-service-providers-regulation-llm-art-018",
+      "source_article_number": 18,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التسجيل في منصة المجلس لمسار ترخيص",
+      "raw_citation_text": "وفقاً لآلية التسجيل في منصة المجلس لمسار ترخيص",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "osh_service_providers_regulation",
+      "source_record_id": "osh-service-providers-regulation-llm-art-018",
+      "source_article_number": 18,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التسجيل في منصة المجلس لمسار ترخيص",
+      "raw_citation_text": "وفقاً لآلية التسجيل في منصة المجلس لمسار ترخيص",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "osh_service_providers_regulation",
+      "source_record_id": "osh-service-providers-regulation-llm-art-024",
+      "source_article_number": 24,
+      "type": "intra_law",
+      "target_track_id": "osh_service_providers_regulation",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة عشرة من هذه اللائحة للزيارات التقي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "osh_service_providers_regulation",
+      "source_record_id": "osh-service-providers-regulation-llm-art-028",
+      "source_article_number": 28,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": 14,
+      "target_law_name_raw": "الوظائف الهندسية",
+      "raw_citation_text": "المادة الرابعة عشرة من لائحة الوظائف الهندسية. 5- التسجيل في",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "patent_law",
       "source_record_id": "patent-law-llm-art-002",
       "source_article_number": 2,
@@ -21732,11 +22403,11 @@
       "source_record_id": "payment-systems-law-llm-art-001",
       "source_article_number": 1,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "high_risk_professions_regulation",
       "target_article_number": null,
       "target_law_name_raw": "نظم المدفوعات المهمة ذات الصلة",
       "raw_citation_text": "وفقاً لقواعد نظم المدفوعات المهمة ذات الصلة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "payment_systems_law",
@@ -23862,6 +24533,50 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "private_healthcare_institutions_law",
+      "source_record_id": "private-healthcare-institutions-law-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "healthcare_professions_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مزاولة مهنة الصيدلة ولائحته التنفيذية",
+      "raw_citation_text": "وفقا لنظام مزاولة مهنة الصيدلة ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "private_healthcare_institutions_law",
+      "source_record_id": "private-healthcare-institutions-law-llm-art-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "private_healthcare_institutions_law",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العشرين)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "private_healthcare_institutions_law",
+      "source_record_id": "private-healthcare-institutions-law-llm-art-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "private_healthcare_institutions_law",
+      "target_article_number": 25,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة والعشرين)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "private_healthcare_institutions_law",
+      "source_record_id": "private-healthcare-institutions-law-llm-art-026",
+      "source_article_number": 26,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل والعمال لمن تريد التعاقد معه",
+      "raw_citation_text": "أحكام نظام العمل والعمال لمن تريد التعاقد معه",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "private_schools_regulation",
       "source_record_id": "private-schools-regulation-llm-art-008",
       "source_article_number": 8,
@@ -24218,11 +24933,11 @@
       "source_record_id": "protection-from-abuse-regulation-llm-art-007",
       "source_article_number": 7,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "mental_health_law",
       "target_article_number": null,
       "target_law_name_raw": "الرعاية الصحية النفسية واتخاذ جميع الإجراءات اللازمة والمناسب",
       "raw_citation_text": "وفقا لنظام الرعاية الصحية النفسية واتخاذ جميع الإجراءات اللازمة والمناسب",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "protection_from_abuse_regulation",
@@ -24431,6 +25146,83 @@
       "target_article_number": null,
       "target_law_name_raw": "المنافسات والمشتريات الحكومية",
       "raw_citation_text": "وفق نظام المنافسات والمشتريات الحكومية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_contributions_law",
+      "source_record_id": "real-estate-contributions-law-llm-art-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "real_estate_contributions_law",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة عشرة) من النظام، على المرخص له الال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_contributions_law",
+      "source_record_id": "real-estate-contributions-law-llm-art-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "real_estate_contributions_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام، لا يجوز للمرخص له",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_contributions_law",
+      "source_record_id": "real-estate-contributions-law-llm-art-027",
+      "source_article_number": 27,
+      "type": "inter_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المقيمين المعتمدين",
+      "raw_citation_text": "وفقا لنظام المقيمين المعتمدين",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_contributions_law",
+      "source_record_id": "real-estate-contributions-law-llm-art-029",
+      "source_article_number": 29,
+      "type": "intra_law",
+      "target_track_id": "real_estate_contributions_law",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة عشرة) من النظام تحتفظ المساهمة العق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_contributions_law",
+      "source_record_id": "real-estate-contributions-law-llm-art-032",
+      "source_article_number": 32,
+      "type": "intra_law",
+      "target_track_id": "real_estate_contributions_law",
+      "target_article_number": 35,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة والثلاثون) من النظام، يعاقب كل من يخالف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_contributions_law",
+      "source_record_id": "real-estate-contributions-law-llm-art-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "real_estate_contributions_law",
+      "target_article_number": 32,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والثلاثين) من النظام، وذلك بحسب نوع المخ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "real_estate_contributions_law",
+      "source_record_id": "real-estate-contributions-law-llm-art-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "real_estate_contributions_law",
+      "target_article_number": 33,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من النظام أمام المحكمة الإدار",
       "confidence": "high"
     },
     {
@@ -25289,6 +26081,17 @@
       "target_article_number": 26,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (السادسة والعشرين) من النظام- سبباً لاكتسابه ملك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "rega_organizational_statute",
+      "source_record_id": "rega-organizational-statute-llm-art-014",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -34217,11 +35020,11 @@
       "source_record_id": "vat-regulation-llm-art-056",
       "source_article_number": 53,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "contractors_classification_law",
       "target_article_number": null,
       "target_law_name_raw": "تصدر عن وزير المالية",
       "raw_citation_text": "وفق لائحة تصدر عن وزير المالية أو مجلس الإدارة حول المتطلبات والشروط ال",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "vat_regulation",
@@ -35299,6 +36102,72 @@
       "target_article_number": 21,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الحادية والعشرين) من النظام- بأي وسيلة تبليغ مع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "white_land_fees_law",
+      "source_record_id": "white-land-fees-law-llm-art-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "white_land_fees_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "white_land_fees_law",
+      "source_record_id": "white-land-fees-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "white_land_fees_law",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام ما يأتي: أ- ضوابط و",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "white_land_fees_law",
+      "source_record_id": "white-land-fees-law-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "white_land_fees_law",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام ما يأتي: أ- ضوابط و",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "white_land_fees_law",
+      "source_record_id": "white-land-fees-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "white_land_fees_law",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام؛ التقدم إلى الوزارة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "white_land_fees_law",
+      "source_record_id": "white-land-fees-law-llm-art-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "white_land_fees_law",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام الذين تنتقل ملكية ت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "white_land_fees_law",
+      "source_record_id": "white-land-fees-law-llm-art-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "white_land_fees_law",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من النظام خلال (ستين) يوما من",
       "confidence": "high"
     },
     {

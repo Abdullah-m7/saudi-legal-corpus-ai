@@ -292,6 +292,20 @@ TVTC_ORGANIZATIONAL_STATUTE_LLM = os.path.join(ROOT, "data", "tvtc_organizationa
 WASTE_MANAGEMENT_LAW_LLM = os.path.join(ROOT, "data", "waste_management_law_arabic_legal_llm", "waste_management_law_legal_llm_001_038.json")
 FISHERIES_LAW_LLM = os.path.join(ROOT, "data", "fisheries_law_arabic_legal_llm", "fisheries_law_legal_llm_001_013.json")
 DEBT_COLLECTION_REGULATION_LLM = os.path.join(ROOT, "data", "debt_collection_regulation_arabic_legal_llm", "debt_collection_regulation_legal_llm_001_011.json")
+INSURANCE_AUTHORITY_STATUTE_LLM = os.path.join(ROOT, "data", "insurance_authority_statute_arabic_legal_llm", "insurance_authority_statute_legal_llm_001_015.json")
+BNPL_REGULATION_LLM = os.path.join(ROOT, "data", "bnpl_regulation_arabic_legal_llm", "bnpl_regulation_legal_llm_001_031.json")
+OFFPLAN_SALE_LAW_LLM = os.path.join(ROOT, "data", "offplan_sale_law_arabic_legal_llm", "offplan_sale_law_legal_llm_001_030.json")
+CONTRACTORS_CLASSIFICATION_LAW_LLM = os.path.join(ROOT, "data", "contractors_classification_law_arabic_legal_llm", "contractors_classification_law_legal_llm_001_019.json")
+REAL_ESTATE_CONTRIBUTIONS_LAW_LLM = os.path.join(ROOT, "data", "real_estate_contributions_law_arabic_legal_llm", "real_estate_contributions_law_legal_llm_001_038.json")
+ACCREDITED_VALUERS_LAW_LLM = os.path.join(ROOT, "data", "accredited_valuers_law_arabic_legal_llm", "accredited_valuers_law_legal_llm_001_045.json")
+WHITE_LAND_FEES_LAW_LLM = os.path.join(ROOT, "data", "white_land_fees_law_arabic_legal_llm", "white_land_fees_law_legal_llm_001_015.json")
+FREQUENCY_SPECTRUM_REGULATION_LLM = os.path.join(ROOT, "data", "frequency_spectrum_regulation_arabic_legal_llm", "frequency_spectrum_regulation_legal_llm_001_015.json")
+MENTAL_HEALTH_LAW_LLM = os.path.join(ROOT, "data", "mental_health_law_arabic_legal_llm", "mental_health_law_legal_llm_001_030.json")
+ORGAN_DONATION_LAW_LLM = os.path.join(ROOT, "data", "organ_donation_law_arabic_legal_llm", "organ_donation_law_legal_llm_001_027.json")
+PRIVATE_HEALTHCARE_INSTITUTIONS_LAW_LLM = os.path.join(ROOT, "data", "private_healthcare_institutions_law_arabic_legal_llm", "private_healthcare_institutions_law_legal_llm_001_035.json")
+HIGH_RISK_PROFESSIONS_REGULATION_LLM = os.path.join(ROOT, "data", "high_risk_professions_regulation_arabic_legal_llm", "high_risk_professions_regulation_legal_llm_001_019.json")
+OSH_SERVICE_PROVIDERS_REGULATION_LLM = os.path.join(ROOT, "data", "osh_service_providers_regulation_arabic_legal_llm", "osh_service_providers_regulation_legal_llm_001_038.json")
+REGA_ORGANIZATIONAL_STATUTE_LLM = os.path.join(ROOT, "data", "rega_organizational_statute_arabic_legal_llm", "rega_organizational_statute_legal_llm_001_016.json")
 LABOR_EN_REF_GLOB = os.path.join(ROOT, "data", "english_reference", "labor_law", "batch_*", "*.jsonl")
 UNIFIED_INDEX = os.path.join(ROOT, "data", "corpus_unified_index", "corpus_unified_llm_index_summary.json")
 
@@ -577,6 +591,20 @@ def main() -> int:
     waste_management_law_llm = _load_json(WASTE_MANAGEMENT_LAW_LLM)
     fisheries_law_llm = _load_json(FISHERIES_LAW_LLM)
     debt_collection_regulation_llm = _load_json(DEBT_COLLECTION_REGULATION_LLM)
+    insurance_authority_statute_llm = _load_json(INSURANCE_AUTHORITY_STATUTE_LLM)
+    bnpl_regulation_llm = _load_json(BNPL_REGULATION_LLM)
+    offplan_sale_law_llm = _load_json(OFFPLAN_SALE_LAW_LLM)
+    contractors_classification_law_llm = _load_json(CONTRACTORS_CLASSIFICATION_LAW_LLM)
+    real_estate_contributions_law_llm = _load_json(REAL_ESTATE_CONTRIBUTIONS_LAW_LLM)
+    accredited_valuers_law_llm = _load_json(ACCREDITED_VALUERS_LAW_LLM)
+    white_land_fees_law_llm = _load_json(WHITE_LAND_FEES_LAW_LLM)
+    frequency_spectrum_regulation_llm = _load_json(FREQUENCY_SPECTRUM_REGULATION_LLM)
+    mental_health_law_llm = _load_json(MENTAL_HEALTH_LAW_LLM)
+    organ_donation_law_llm = _load_json(ORGAN_DONATION_LAW_LLM)
+    private_healthcare_institutions_law_llm = _load_json(PRIVATE_HEALTHCARE_INSTITUTIONS_LAW_LLM)
+    high_risk_professions_regulation_llm = _load_json(HIGH_RISK_PROFESSIONS_REGULATION_LLM)
+    osh_service_providers_regulation_llm = _load_json(OSH_SERVICE_PROVIDERS_REGULATION_LLM)
+    rega_organizational_statute_llm = _load_json(REGA_ORGANIZATIONAL_STATUTE_LLM)
     labor_en_count = sum(
         sum(1 for line in open(p, encoding="utf-8") if line.strip())
         for p in sorted(glob.glob(LABOR_EN_REF_GLOB))
@@ -597,7 +625,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 254,
+        "total_tracks": 268,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -855,6 +883,20 @@ def main() -> int:
             + waste_management_law_llm["record_count"]  # 38 Waste Management Law (المرسوم الملكي رقم م/3, 5/1/1443) -- see track notes for full verification tier/citation detail
             + fisheries_law_llm["record_count"]  # 13 Fisheries/Marine Resources Law (المرسوم الملكي رقم م/9, 27/3/1408) -- see track notes for full verification tier/citation detail
             + debt_collection_regulation_llm["record_count"]  # 11 SAMA Debt Collection Regulations and Procedures (تعميم البنك المركزي السعودي رقم 106889333, 6/9/1446) -- see track notes for full verification tier/citation detail
+            + insurance_authority_statute_llm["record_count"]  # 15 Statute of the Insurance Authority (قرار مجلس الوزراء رقم 85, 28/1/1445) -- see track notes for full verification tier/citation detail
+            + bnpl_regulation_llm["record_count"]  # 31 Rules for Regulating Buy-Now-Pay-Later (BNPL) Companies (قرار محافظ ساما رقم 145/م ش ت, 23/5/1445) -- see track notes for full verification tier/citation detail
+            + offplan_sale_law_llm["record_count"]  # 30 Off-Plan Sale and Lease of Real Estate Projects Law (المرسوم الملكي رقم م/44, 10/3/1445) -- see track notes for full verification tier/citation detail
+            + contractors_classification_law_llm["record_count"]  # 19 Contractors Classification Law (المرسوم الملكي رقم م/9, 18/1/1443) -- see track notes for full verification tier/citation detail
+            + real_estate_contributions_law_llm["record_count"]  # 38 Real Estate Contributions Law (المرسوم الملكي رقم م/203, 28/12/1444) -- see track notes for full verification tier/citation detail
+            + accredited_valuers_law_llm["record_count"]  # 45 Certified/Accredited Valuers Law (المرسوم الملكي رقم م/43, 9/7/1433, as amended by م/190, 22/11/1444) -- see track notes for full verification tier/citation detail
+            + white_land_fees_law_llm["record_count"]  # 15 White Land and Vacant Properties Fees Law (المرسوم الملكي رقم م/4, 12/2/1437, as amended by م/244, 7/11/1446) -- see track notes for full verification tier/citation detail
+            + frequency_spectrum_regulation_llm["record_count"]  # 15 Frequency Spectrum Regulations for Radio Services and Applications, General Framework only (قرار هيئة الاتصالات والفضاء والتقنية رقم 559/1446) -- see track notes for full verification tier/citation detail
+            + mental_health_law_llm["record_count"]  # 30 Mental Health Care Law (المرسوم الملكي رقم م/56, 20/9/1435) -- see track notes for full verification tier/citation detail
+            + organ_donation_law_llm["record_count"]  # 27 Human Organ Donation Law (المرسوم الملكي رقم م/70, 19/8/1442) -- see track notes for full verification tier/citation detail
+            + private_healthcare_institutions_law_llm["record_count"]  # 35 Private Healthcare Institutions Law (المرسوم الملكي رقم م/40, 3/11/1423) -- see track notes for full verification tier/citation detail
+            + high_risk_professions_regulation_llm["record_count"]  # 19 High-Risk Professions Work Organization Regulation (قرار وزير الموارد البشرية رقم 64762, 13/5/1447) -- see track notes for full verification tier/citation detail
+            + osh_service_providers_regulation_llm["record_count"]  # 38 OSH Service Providers Licensing/Accreditation Regulation (قرار وزير الموارد البشرية رقم 64764, 13/5/1447) -- see track notes for full verification tier/citation detail
+            + rega_organizational_statute_llm["record_count"]  # 16 Statute of the General Authority for Real Estate (REGA) (قرار مجلس الوزراء رقم 239, 25/4/1438) -- see track notes for full verification tier/citation detail
         ),
         "total_reference_records": companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count,  # 281 EN companies + 99 EN GTPL + 234 EN labor
         "total_internal_reference_records": chinese_audit.get("total_articles_implemented", 281),  # 281 Chinese
@@ -1103,6 +1145,20 @@ def main() -> int:
             + waste_management_law_llm["record_count"]
             + fisheries_law_llm["record_count"]
             + debt_collection_regulation_llm["record_count"]
+            + insurance_authority_statute_llm["record_count"]
+            + bnpl_regulation_llm["record_count"]
+            + offplan_sale_law_llm["record_count"]
+            + contractors_classification_law_llm["record_count"]
+            + real_estate_contributions_law_llm["record_count"]
+            + accredited_valuers_law_llm["record_count"]
+            + white_land_fees_law_llm["record_count"]
+            + frequency_spectrum_regulation_llm["record_count"]
+            + mental_health_law_llm["record_count"]
+            + organ_donation_law_llm["record_count"]
+            + private_healthcare_institutions_law_llm["record_count"]
+            + high_risk_professions_regulation_llm["record_count"]
+            + osh_service_providers_regulation_llm["record_count"]
+            + rega_organizational_statute_llm["record_count"]
             + companies_en["record_count"] + gtpl_en_ref["article_count"] + labor_en_count
             + chinese_audit.get("total_articles_implemented", 281)
         ),
@@ -8425,6 +8481,398 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "«ضوابط وإجراءات التحصيل» — Debt Collection Regulations and Procedures. **11 records, ALL اصلية**, 5 فصول (Chapter Five 'أحكام ختامية' carries no numbered article, preserved verbatim in closing_provisions_ar, not fabricated as a 12th article). **VERIFICATION TIER: TIER_1-candidate** — full text fetched directly from rulebook.sama.gov.sa's Arabic/English bilingual entiresection view (SAMA's own official Rulebook portal), this corpus's established primary source for SAMA-family instruments. Confirmed distinct predecessor 'First Edition' (Circular 391000083340, 26/7/1439H = 11/4/2018G) superseded — not ingested here (out of scope). Confirmed distinct from this corpus's own finance_companies_regulation: this Regulation's own Article 96 (of finance_companies_regulation) cross-references this instrument by name, not a duplicate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "insurance_authority_statute",
+                "display_name_ar": "تنظيم هيئة التأمين",
+                "display_name_en": "Statute of the Insurance Authority",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_PRIMARY_X_QANOONSA_BYTE_LEVEL_X_ARGAAM_QUOTE_LEVEL_CROSSVERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Council of Ministers Resolution No. 85, dated 28/1/1445H, published in Umm Al-Qura Gazette issue No. 4995 (25 Aug 2023G). laws.boe.gov.sa unreachable (TLS connection reset); Wayback Machine egress-blocked. Full verbatim text fetched directly from uqn.gov.sa (the Official Gazette portal of record), cross-checked byte-for-byte against qanoonsa.com and quote-level against argaam.com.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": insurance_authority_statute_llm["record_count"],
+                    "data_path": "data/insurance_authority_statute_arabic_legal_llm/insurance_authority_statute_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": insurance_authority_statute_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": insurance_authority_statute_llm["record_count"]},
+                "data_paths": [
+                    "sources/insurance_authority_statute/law/official_source/insurance_authority_statute_official_source.json",
+                    "sources/insurance_authority_statute/law/verified/insurance_authority_statute_verified_summary.json",
+                    "data/insurance_authority_statute_arabic_legal_llm/insurance_authority_statute_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make insurance-authority-statute-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«تنظيم هيئة التأمين» — Statute of the Insurance Authority. **15 records, ALL اصلية**, flat structure. **VERIFICATION TIER: TIER_2** — one official/primary source reached (uqn.gov.sa, the Official Gazette of record — arguably stronger than BOE since it IS the gazette, not a portal mirror), cross-verified against two independent secondary sources (qanoonsa.com byte-for-byte, argaam.com quote-level). Not TIER_1 because a second independent OFFICIAL source (BOE) could not be reached this pass. Resolved a chronology bug on qanoonsa.com's own resolution page (it displayed an internally-impossible date) by cross-checking against uqn.gov.sa. The Authority took over insurance regulation from SAMA and cooperative-health-insurance oversight from the Council of Cooperative Health Insurance (~4 Mar 2024) via separate numbered decisions of the companion resolution, not this statute's own 15 articles — those competency-transfer decisions and the two predecessor systems (already separately tracked as insurance_control_law and cooperative_health_insurance_law) were not re-ingested here. No repeal/predecessor clause found in this statute's own text. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "bnpl_regulation",
+                "display_name_ar": "قواعد تنظيم شركات الدفع الآجل (BNPL)",
+                "display_name_en": "Rules for Regulating Buy-Now-Pay-Later (BNPL) Companies",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "SAMA_RULEBOOK_BORN_DIGITAL_BILINGUAL_ENTIRESECTION_SINGLE_SOURCE_NO_INDEPENDENT_CROSSCHECK",
+                "source_authority": "SAMA Governor's Decision No. 145/م ش ت, dated 23/5/1445H, transmitted via SAMA Circular No. 450360390000, dated 5/6/1445H (17/12/2023G). Fetched directly from rulebook.sama.gov.sa's Arabic bilingual entiresection view (node 6523), this corpus's established primary source for SAMA-family instruments; no independent non-SAMA cross-check performed this pass.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": bnpl_regulation_llm["record_count"],
+                    "data_path": "data/bnpl_regulation_arabic_legal_llm/bnpl_regulation_legal_llm_001_031.json"}},
+                "record_counts": {"arabic_articles": bnpl_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 30, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "total": bnpl_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/bnpl_regulation/law/official_source/bnpl_regulation_official_source.json",
+                    "sources/bnpl_regulation/law/verified/bnpl_regulation_verified_summary.json",
+                    "data/bnpl_regulation_arabic_legal_llm/bnpl_regulation_legal_llm_001_031.json",
+                ],
+                "validator_targets": ["make bnpl-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«قواعد تنظيم شركات الدفع الآجل (BNPL)» — Rules for Regulating Buy-Now-Pay-Later (BNPL) Companies. **31 records: 30 اصلية / 1 معدلة (Article 22)**, 6 فصول. **VERIFICATION TIER: TIER_4** — single official primary source (rulebook.sama.gov.sa); the bilingual AR/EN cross-check is same-publisher, not an independently-produced second official source, and no non-governmental secondary source was cross-checked. Article 22 (Credit Limits) was amended by a later circular (No. 472038475, 4/7/1447H = 24/12/2025G), raising the per-customer credit cap from 5,000 to 10,000 SAR — both pre- and post-amendment wording recovered verbatim and preserved in history. The verified official Arabic title differs from the topic's literal-translation name used in the initial task brief, disclosed as a naming discrepancy. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "offplan_sale_law",
+                "display_name_ar": "نظام بيع وتأجير مشروعات عقارية على الخارطة",
+                "display_name_en": "Off-Plan Sale and Lease of Real Estate Projects Law (\"WAFI\")",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_PRIMARY_X_QANOONSA_X_NEZAMS_CROSSVERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/44, dated 10/3/1445H (25/9/2023G), approving Council of Ministers Resolution No. 196, dated 4/3/1445H — the \"WAFI\" off-plan real estate sale/lease program. laws.boe.gov.sa unreachable (503/connection reset). Full verbatim text fetched directly from uqn.gov.sa (Official Gazette), cross-checked near word-for-word against qanoonsa.com and nezams.com.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": offplan_sale_law_llm["record_count"],
+                    "data_path": "data/offplan_sale_law_arabic_legal_llm/offplan_sale_law_legal_llm_001_030.json"}},
+                "record_counts": {"arabic_articles": offplan_sale_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": offplan_sale_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/offplan_sale_law/law/official_source/offplan_sale_law_official_source.json",
+                    "sources/offplan_sale_law/law/verified/offplan_sale_law_verified_summary.json",
+                    "data/offplan_sale_law_arabic_legal_llm/offplan_sale_law_legal_llm_001_030.json",
+                ],
+                "validator_targets": ["make offplan-sale-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام بيع وتأجير مشروعات عقارية على الخارطة» — Off-Plan Sale and Lease of Real Estate Projects Law (\"WAFI\" program). **30 records, ALL اصلية**, flat structure, in force with no amendments to date. **VERIFICATION TIER: TIER_2** — primary Official Gazette (uqn.gov.sa) reached and used directly, cross-verified against two independent secondary aggregators (qanoonsa.com, nezams.com) with only cosmetic differences. Not TIER_1 since REGA's own official PDF of the law is scanned-image-only and an OCR cross-check did not complete this pass (disclosed, not fabricated). Article 29 carries only a general repeal clause naming no specific predecessor. The Implementing Regulation's exact citation was independently confirmed this pass (REGA Board Resolution ق/م/إ/هـ/8/2024/ت, 20/10/1445H, 49 articles, gazetted at uqn.gov.sa/details?p=24924) but not ingested — flagged as a ready-to-build follow-up track (offplan_sale_law_regulation). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "contractors_classification_law",
+                "display_name_ar": "نظام تصنيف المقاولين",
+                "display_name_en": "Contractors Classification Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOMAH_GOV_SA_OFFICIAL_PDF_DIRECT_FETCH_FONT_DEFECT_CORRECTED_X_NEZAMS_QANOONSA_ARGAAM_CROSSCHECK_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/9, dated 18/1/1443H, replacing the prior 1427H classification law. laws.boe.gov.sa and Wayback Machine both unreachable this pass. Full verbatim text fetched directly from the Ministry of Municipalities and Housing's own hosted PDF (momah.gov.sa), a systematic Arabic ligature font-encoding defect corrected and independently cross-validated via Tesseract OCR plus direct visual reading of the rendered pages, cross-checked structurally against nezams.com, qanoonsa.com, and argaam.com.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": contractors_classification_law_llm["record_count"],
+                    "data_path": "data/contractors_classification_law_arabic_legal_llm/contractors_classification_law_legal_llm_001_019.json"}},
+                "record_counts": {"arabic_articles": contractors_classification_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 19, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": contractors_classification_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/contractors_classification_law/law/official_source/contractors_classification_law_official_source.json",
+                    "sources/contractors_classification_law/law/verified/contractors_classification_law_verified_summary.json",
+                    "data/contractors_classification_law_arabic_legal_llm/contractors_classification_law_legal_llm_001_019.json",
+                ],
+                "validator_targets": ["make contractors-classification-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام تصنيف المقاولين» — Contractors Classification Law. **19 records, ALL اصلية**, no chapter division, a short flat statute. **VERIFICATION TIER: TIER_2** — one official primary source (momah.gov.sa's own hosted PDF) reached; laws.boe.gov.sa and Wayback both unreachable this pass. The official PDF's text layer carries a systematic font/cmap defect (a specific Arabic letter sequence extracts reversed) — corrected and independently cross-validated two more ways against the SAME PDF (Tesseract OCR pass + direct visual reading of rendered pages), all three methods agreeing. A one-day date conflict on the repealed predecessor law's citation (this law's own Article 19 vs. nezams.com metadata) is disclosed, not silently resolved. The Implementing Regulation exists (amended 2021/2023/2025 per qanoonsa.com) but was not ingested this pass — flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "real_estate_contributions_law",
+                "display_name_ar": "نظام المساهمات العقارية",
+                "display_name_en": "Real Estate Contributions Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "REGA_OFFICIAL_SCANNED_DECREE_X_UQN_GAZETTE_DUAL_OFFICIAL_CROSSVERIFIED_X_QANOONSA_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/203, dated 28/12/1444H, on Council of Ministers Resolution No. 881, dated 23/12/1444H, published Umm Al-Qura Gazette 3/1/1445H (21/7/2023G). laws.boe.gov.sa unreachable and Wayback egress-blocked. Two independent official sources reached and cross-verified word-for-word: REGA's own hosted scanned Royal Decree PDF (rega.gov.sa, read page-by-page) and the Official Gazette's own website (uqn.gov.sa), plus independent secondary corroboration from qanoonsa.com.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": real_estate_contributions_law_llm["record_count"],
+                    "data_path": "data/real_estate_contributions_law_arabic_legal_llm/real_estate_contributions_law_legal_llm_001_038.json"}},
+                "record_counts": {"arabic_articles": real_estate_contributions_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 38, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": real_estate_contributions_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/real_estate_contributions_law/law/official_source/real_estate_contributions_law_official_source.json",
+                    "sources/real_estate_contributions_law/law/verified/real_estate_contributions_law_verified_summary.json",
+                    "data/real_estate_contributions_law_arabic_legal_llm/real_estate_contributions_law_legal_llm_001_038.json",
+                ],
+                "validator_targets": ["make real-estate-contributions-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام المساهمات العقارية» — Real Estate Contributions Law. **38 records, ALL اصلية**, 7 فصول. **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — two independent official sources reached and fully cross-verified word-for-word (REGA's own scanned Royal Decree PDF, read page-by-page, and the Official Gazette's own site), plus independent secondary corroboration (qanoonsa.com). One immaterial digit-script rendering variance (Article 32's penalty amount) disclosed, not silently normalized. Article 38 uses only a generic repeal formula naming no specific predecessor Ministry of Commerce administrative controls (their exact citation could not be confirmed, mc.gov.sa unreachable). Two Shura Council resolutions cited (an unusual but confirmed pattern for this corpus). The Implementing Regulation is confirmed to exist (public-consultation and REGA regulations-section signals) but its exact citation/full text were not pinned down this pass — flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "accredited_valuers_law",
+                "display_name_ar": "نظام المقيّمين المعتمدين",
+                "display_name_en": "Certified/Accredited Valuers Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "TAQEEM_GOV_SA_OFFICIAL_PDF_LIGATURE_DEFECT_CORRECTED_X_UQN_GAZETTE_X_NEZAMS_QANOONSA_CROSSVERIFIED_5_ARTICLES_SINGLE_SOURCE_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/43, dated 9/7/1433H, substantially amended by Royal Decree No. M/190, dated 22/11/1444H (ratifying Council of Ministers Resolution No. 795, 17/11/1444H), with two earlier narrower amendments (CoM Resolution 57/1442H; CoM Resolution 123/1443H, limited to Article 27). laws.boe.gov.sa unreachable. Current consolidated text fetched from taqeem.gov.sa (the Authority's own official site) and cross-verified against uqn.gov.sa (Official Gazette, full text of M/190 and CoM 795), nezams.com (original 1433H text plus per-article amendment annotations), and qanoonsa.com (full CoM 795 resolution text).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": accredited_valuers_law_llm["record_count"],
+                    "data_path": "data/accredited_valuers_law_arabic_legal_llm/accredited_valuers_law_legal_llm_001_045.json"}},
+                "record_counts": {"arabic_articles": accredited_valuers_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 20, "معدلة": 25, "ملغاة": 0, "مضافة": 0},
+                                  "total": accredited_valuers_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/accredited_valuers_law/law/official_source/accredited_valuers_law_official_source.json",
+                    "sources/accredited_valuers_law/law/verified/accredited_valuers_law_verified_summary.json",
+                    "data/accredited_valuers_law_arabic_legal_llm/accredited_valuers_law_legal_llm_001_045.json",
+                ],
+                "validator_targets": ["make accredited-valuers-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام المقيّمين المعتمدين» — Certified/Accredited Valuers Law (current, post-M/190-amendment text). **45 records: 20 اصلية / 25 معدلة**, informal in-body theme labels only (no formal أبواب/فصول). **VERIFICATION TIER: TIER_2** — most of the text is backed by two independent primary/official sources (taqeem.gov.sa + uqn.gov.sa) cross-checked by two independent secondaries (nezams.com + qanoonsa.com); a small residual portion (5 of 45 articles/clauses) rests solely on the manually ligature-corrected taqeem.gov.sa PDF without independent verbatim corroboration, each individually flagged. taqeem.gov.sa's PDF carries a known lam+alef ligature reversal defect, corrected via careful manual reading and cross-validated article-by-article against the other three sources. The Implementing Regulation (Minister of Finance Decision No. 107, 72 articles) has a solid but ~1-week date discrepancy across sources, disclosed as a follow-up candidate (accredited_valuers_regulation), not ingested this pass. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "white_land_fees_law",
+                "display_name_ar": "نظام رسوم الأراضي البيضاء والعقارات الشاغرة",
+                "display_name_en": "White Land and Vacant Properties Fees Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MOMAH_GOV_SA_REDLINE_PDF_X_QADHA_ORG_SA_X_ALHAMOUDILAWYERS_CROSSVERIFIED_ARTICLE3_GAP_DISCLOSED_BOE_UNREACHABLE",
+                "source_authority": "Originally Royal Decree No. M/4, dated 12/2/1437H (2016); substantively amended and renamed by Royal Decree No. M/244, dated 7/11/1446H (following Council of Ministers Resolution No. 758, 1/11/1446H, and Shura Council Resolution No. 24/255, 26/10/1446H). laws.boe.gov.sa and Wayback both unreachable. Current (post-M/244) text taken from a Ministry-of-Municipalities-and-Housing-issued redline/comparison PDF (momah.gov.sa) cross-verified against qadha.org.sa (an independent, professionally-compiled legal reference book, Nov 2025) and alhamoudilawyers.com.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": white_land_fees_law_llm["record_count"],
+                    "data_path": "data/white_land_fees_law_arabic_legal_llm/white_land_fees_law_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": white_land_fees_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 2, "معدلة": 13, "ملغاة": 0, "مضافة": 0},
+                                  "total": white_land_fees_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/white_land_fees_law/law/official_source/white_land_fees_law_official_source.json",
+                    "sources/white_land_fees_law/law/verified/white_land_fees_law_verified_summary.json",
+                    "data/white_land_fees_law_arabic_legal_llm/white_land_fees_law_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make white-land-fees-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام رسوم الأراضي البيضاء والعقارات الشاغرة» — White Land and Vacant Properties Fees Law (current, post-M/244-amendment text, distinct from this corpus's rett_law which taxes transactions rather than land-holding). **15 records: 2 اصلية (unchanged) / 13 معدلة (amended by M/244)**, no chapters. **VERIFICATION TIER: TIER_2** — for 14 of 15 articles, momah.gov.sa's own redline PDF (primary/official) is the governing text, cross-verified verbatim against qadha.org.sa. Article 3 is a documented exception: momah's own redline PDF omits the M/244 amendment marker for Article 3 (stale text), contradicted by three independent signals (qadha.org.sa's fuller text, alhamoudilawyers.com, and momah's own Article 4 cross-reference to a paragraph that only exists in the amended version) — Article 3's text was therefore taken from qadha.org.sa, disclosed as an internal caveat rather than silently merged. The M/244 decree's own staggered entry-into-force mechanism (white-land provisions effective via an already-issued regulation; vacant-property provisions pending a regulation not yet issued) is documented. Two Implementing Regulations exist but were not ingested this pass. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "frequency_spectrum_regulation",
+                "display_name_ar": "تنظيمات استخدامات الطيف الترددي للخدمات الراديوية وتطبيقاتها (الإطار العام)",
+                "display_name_en": "Frequency Spectrum Regulations for Radio Services and Applications (General Framework)",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "partial",
+                "official_text_status": "CST_OFFICIAL_ARABIC_PDF_VISION_READ_X_ENGLISH_STRUCTURAL_CROSSCHECK_GENERAL_FRAMEWORK_ONLY_ANNEXES_EXCLUDED",
+                "source_authority": "Communications, Space & Technology Commission (CST) Decision No. 559/1446, dated 23/7/1446H (23/1/2025G) (document code RS45, First Edition). Both the Arabic and English official PDFs fetched directly from cst.gov.sa. The 78-page document's General Framework (15 sections) is ingested here in full; its six technical annexes (WLAN, IMT, Maritime, Broadcasting, Fixed Wireless Links, Amateur Radio — image-only frequency-band/channel tables) are explicitly NOT ingested this pass, a deliberate scope decision to avoid transcribing dense numeric tables without a reliable text layer.",
+                "language_layers": {"arabic": {"status": "partial", "governing": True,
+                    "record_count": frequency_spectrum_regulation_llm["record_count"],
+                    "data_path": "data/frequency_spectrum_regulation_arabic_legal_llm/frequency_spectrum_regulation_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": frequency_spectrum_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": frequency_spectrum_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/frequency_spectrum_regulation/law/official_source/frequency_spectrum_regulation_official_source.json",
+                    "sources/frequency_spectrum_regulation/law/verified/frequency_spectrum_regulation_verified_summary.json",
+                    "data/frequency_spectrum_regulation_arabic_legal_llm/frequency_spectrum_regulation_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make frequency-spectrum-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«تنظيمات استخدامات الطيف الترددي للخدمات الراديوية وتطبيقاتها» — Frequency Spectrum Regulations for Radio Services and Applications, **General Framework only (deliberately partial coverage, disclosed not hidden)**. **15 records, ALL اصلية** (single first edition, no amendments). **VERIFICATION TIER: TIER_2** — single official Arabic primary source (CST's own PDF, body pages are vector-rendered images with no text layer, transcribed via direct high-resolution visual reading), cross-verified structurally (section/clause counts, not word-for-word) against CST's own English PDF, which does carry a full text layer. This is same-publisher bilingual confirmation, not an independently-produced second official source. The six technical annexes (~87% of the full 78-page document, dense image-only frequency-band/channel tables) were NOT ingested — a deliberate scope decision to avoid fabrication risk, not an oversight; flagged as a distinct, much larger follow-up effort if ever undertaken. The task's originally-given Arabic title differs slightly from CST's own actual document title, disclosed. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "mental_health_law",
+                "display_name_ar": "نظام الرعاية الصحية النفسية",
+                "display_name_en": "Mental Health Care Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_X_SAUDIPEDIA_DUAL_SECONDARY_CROSSVERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/56, dated 20/9/1435H (17 July 2014G), approving Council of Ministers Resolution No. 366. laws.boe.gov.sa unreachable (connection reset); Wayback returned HTTP 403. Full verbatim text of all 30 articles from nezams.com (born-digital HTML, no OCR artifacts), cross-checked against saudipedia.com (decree identity, article count, near-verbatim wording of Article 4) and moh.gov.sa (decree identity via the Implementing Regulation's cover page).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": mental_health_law_llm["record_count"],
+                    "data_path": "data/mental_health_law_arabic_legal_llm/mental_health_law_legal_llm_001_030.json"}},
+                "record_counts": {"arabic_articles": mental_health_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": mental_health_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/mental_health_law/law/official_source/mental_health_law_official_source.json",
+                    "sources/mental_health_law/law/verified/mental_health_law_verified_summary.json",
+                    "data/mental_health_law_arabic_legal_llm/mental_health_law_legal_llm_001_030.json",
+                ],
+                "validator_targets": ["make mental-health-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام الرعاية الصحية النفسية» — Mental Health Care Law. **30 records, ALL اصلية**, no formal أبواب/فصول (single topical index instead, following this corpus's health_system_law convention). **VERIFICATION TIER: TIER_3** — primary portal (BOE) unreachable this pass; text rests on 2 independent secondary sources agreeing (nezams.com, saudipedia.com), zero primary confirmation obtained. A live but unconfirmed Council of Ministers amendment (per an Al-Riyadh newspaper headline, apparently touching Article 4) could NOT be retrieved despite exhausting every available channel (broken TLS cert chain on alriyadh.com's own server, HTTP 503/403 elsewhere) — Article 4 keeps its original dual-source-confirmed wording and is honestly NOT marked معدلة, flagged as a high-priority follow-up rather than guessed. The Implementing Regulation (3rd edition, 1442H/2021G) was located but not ingested (reversed-RTL extraction artifact across 52 pages, out of scope this pass) — flagged as a follow-up candidate (mental_health_regulation). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "organ_donation_law",
+                "display_name_ar": "نظام التبرع بالأعضاء البشرية",
+                "display_name_en": "Human Organ Donation Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_X_SAUDIPEDIA_X_WIKIPEDIA_SECONDARY_MULTI_SOURCE_BOE_AND_WAYBACK_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/70, dated 19/8/1442H, approving Council of Ministers Resolution No. 468, dated 17/8/1442H (30 March 2021G). laws.boe.gov.sa unreachable (TLS connection reset); Wayback Machine explicitly attempted via two independent tools/routes and confirmed egress-blocked both times. Full verbatim text of all 27 articles from nezams.com, cross-checked for near-verbatim textual overlap against saudipedia.com (Article 3 consent wording, Article 21 penalty figures) and ar.wikipedia.org (SCOT institutional history).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": organ_donation_law_llm["record_count"],
+                    "data_path": "data/organ_donation_law_arabic_legal_llm/organ_donation_law_legal_llm_001_027.json"}},
+                "record_counts": {"arabic_articles": organ_donation_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 27, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": organ_donation_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/organ_donation_law/law/official_source/organ_donation_law_official_source.json",
+                    "sources/organ_donation_law/law/verified/organ_donation_law_verified_summary.json",
+                    "data/organ_donation_law_arabic_legal_llm/organ_donation_law_legal_llm_001_027.json",
+                ],
+                "validator_targets": ["make organ-donation-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام التبرع بالأعضاء البشرية» — Human Organ Donation Law. **27 records, ALL اصلية**, flat structure (zero occurrences of 'الفصل' confirmed). **VERIFICATION TIER: TIER_3** — BOE and Wayback both confirmed unreachable this pass (double-confirmed via two independent tool routes for Wayback); text rests on 2+ independent secondary sources agreeing (nezams.com, saudipedia.com, ar.wikipedia.org), zero primary confirmation. Unlike waste_management_law, this Law names no specific predecessor — Article 27(2) is a generic, unnamed repeal clause only. The Implementing Regulation's existence is confirmed (lexismiddleeast.com decision citation, uqn.gov.sa listing) but its full text could not be retrieved this pass (JS-only SPA / 404 / unresolved API) — not built as a track this pass, and the task-brief's decision date for it is explicitly NOT asserted as fact. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "private_healthcare_institutions_law",
+                "display_name_ar": "نظام المؤسسات الصحية الخاصة",
+                "display_name_en": "Private Healthcare Institutions Law",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NEZAMS_X_QANOONSA_DUAL_SECONDARY_CROSSVERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Royal Decree No. M/40, dated 3/11/1423H (2003G); amended by Royal Decree No. M/36 (11/6/1434H), Royal Decree No. M/78 (2/12/1435H, Article 7), Council of Ministers Resolution No. 479 (9/7/1444H, Article 2), and Royal Decree No. M/103 (18/6/1445H, Article 14, newly discovered this pass). laws.boe.gov.sa unreachable (repeated connection resets/503s); Wayback refused. Current consolidated text from nezams.com (which embeds the full sequential amendment history), cross-checked word-for-word against qanoonsa.com's independent verbatim Royal Decree text.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": private_healthcare_institutions_law_llm["record_count"],
+                    "data_path": "data/private_healthcare_institutions_law_arabic_legal_llm/private_healthcare_institutions_law_legal_llm_001_035.json"}},
+                "record_counts": {"arabic_articles": private_healthcare_institutions_law_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 32, "معدلة": 3, "ملغاة": 0, "مضافة": 0},
+                                  "total": private_healthcare_institutions_law_llm["record_count"]},
+                "data_paths": [
+                    "sources/private_healthcare_institutions_law/law/official_source/private_healthcare_institutions_law_official_source.json",
+                    "sources/private_healthcare_institutions_law/law/verified/private_healthcare_institutions_law_verified_summary.json",
+                    "data/private_healthcare_institutions_law_arabic_legal_llm/private_healthcare_institutions_law_legal_llm_001_035.json",
+                ],
+                "validator_targets": ["make private-healthcare-institutions-law-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«نظام المؤسسات الصحية الخاصة» — Private Healthcare Institutions Law (governs ownership/licensing/operation of private hospitals, clinics, and medical centers — distinct from health_system_law and healthcare_professions_law already tracked). **35 records: 32 اصلية / 3 معدلة (Articles 2, 7, 14)**, no chapter structure. **VERIFICATION TIER: TIER_3** — BOE checked first per methodology but unreachable via curl, WebFetch, and Wayback; text rests on 2 independent secondary sources agreeing (nezams.com, qanoonsa.com), zero primary confirmation. Article 2 in fact carries THREE sequential amendments (M/36 → M/72 1441H → CoM Resolution 479), the middle one independently confirmed inside nezams.com's own page text after initially being suspected of a WebSearch hallucination. Article 14's amendment by Royal Decree M/103 (18/6/1445H) is a newly-discovered citation not in the original research brief, confirmed via qanoonsa.com's full verbatim decree text. A possible further ratifying decree for the CoM 479 amendment could not be confirmed against any directly-fetched page and was deliberately excluded from amendment_history rather than guessed. The Implementing Regulation (Ministerial Resolution 1019377, 28/5/1439H) exists but was not ingested — flagged as a follow-up candidate. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "high_risk_professions_regulation",
+                "display_name_ar": "لائحة تنظيم العمل في المهن ذات المخاطر العالية",
+                "display_name_en": "High-Risk Professions Work Organization Regulation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "NCOSH_OFFICIAL_PDF_VISION_READ_LIGATURE_DEFECT_X_UQN_GAZETTE_DUAL_OFFICIAL_CROSSVERIFIED_BOE_UNREACHABLE",
+                "source_authority": "Adopted per the National Committee for Occupational Safety and Health (NCOSH)'s 13th-meeting resolution (27/12/1446H = 23/6/2025G), published in Umm Al-Qura Gazette (uqn.gov.sa entry p=28771) dated 20/7/1447H = 9/1/2026G; 180-day post-publication effective date already elapsed as of this build (legal_status = نافذ). Two independent official government sources agree: NCOSH's own PDF (ncosh.gov.sa) and the separately-operated Official Gazette. A silent, systematic ToUnicode ligature-reversal defect in the PDF's own text layer meant every article was independently transcribed by direct visual reading of 300dpi rendered page images of the SAME official document — this corpus's TIER_1 allowance for an independent OCR/image-pass of the same official document.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": high_risk_professions_regulation_llm["record_count"],
+                    "data_path": "data/high_risk_professions_regulation_arabic_legal_llm/high_risk_professions_regulation_legal_llm_001_019.json"}},
+                "record_counts": {"arabic_articles": high_risk_professions_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 19, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": high_risk_professions_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/high_risk_professions_regulation/law/official_source/high_risk_professions_regulation_official_source.json",
+                    "sources/high_risk_professions_regulation/law/verified/high_risk_professions_regulation_verified_summary.json",
+                    "data/high_risk_professions_regulation_arabic_legal_llm/high_risk_professions_regulation_legal_llm_001_019.json",
+                ],
+                "validator_targets": ["make high-risk-professions-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«لائحة تنظيم العمل في المهن ذات المخاطر العالية» — High-Risk Professions Work Organization Regulation. **19 records, ALL اصلية**, across 6 substantive فصول (a 7th appendix chapter — a 222-profession classification table with bilingual medical-exam schedules — is explicitly NOT ingested article-by-article, a scope decision not a gap). **VERIFICATION TIER: TIER_1_PRIMARY_MULTI_SOURCE** — two independent official sources agree (NCOSH's own PDF + the Official Gazette), reinforced by an independent re-verification via direct visual reading of the same official PDF after its text layer was found to carry a silent ligature-reversal bug. Honest gap: the task brief's originally-given citation number could not itself be independently corroborated on any of the four sources actually reached — flagged explicitly rather than silently asserted. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "osh_service_providers_regulation",
+                "display_name_ar": "لائحة ترخيص واعتماد مزاولي ومقدمي خدمات السلامة والصحة المهنية",
+                "display_name_en": "OSH Service Providers Licensing/Accreditation Regulation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_PRIMARY_PARTIAL_29_OF_38_X_QANOONSA_SECONDARY_FOR_REMAINDER_MIXED_CONFIDENCE",
+                "source_authority": "Ministerial Decision No. 64764, dated 13/5/1447H (4/11/2025G), issued as a companion to the High-Risk Professions Regulation (same date, adjacent decision number) under NCOSH. Fetched from uqn.gov.sa (Official Gazette, Issue No. 5138, 20/7/1447H = 9/1/2026G) — but the gazette's own rendered HTML unexpectedly stops after Article 29 of 38 (a CMS gap, not a scope limitation of the regulation itself); the remaining 9 articles (30-38) sourced from qanoonsa.com, structurally cross-checked against Lexis Middle East.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": osh_service_providers_regulation_llm["record_count"],
+                    "data_path": "data/osh_service_providers_regulation_arabic_legal_llm/osh_service_providers_regulation_legal_llm_001_038.json"}},
+                "record_counts": {"arabic_articles": osh_service_providers_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 38, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": osh_service_providers_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/osh_service_providers_regulation/law/official_source/osh_service_providers_regulation_official_source.json",
+                    "sources/osh_service_providers_regulation/law/verified/osh_service_providers_regulation_verified_summary.json",
+                    "data/osh_service_providers_regulation_arabic_legal_llm/osh_service_providers_regulation_legal_llm_001_038.json",
+                ],
+                "validator_targets": ["make osh-service-providers-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«لائحة ترخيص واعتماد مزاولي ومقدمي خدمات السلامة والصحة المهنية» — OSH Service Providers Licensing/Accreditation Regulation. **38 records, ALL اصلية**, 6 فصول. **VERIFICATION TIER: TIER_4 (mixed per-article confidence, weakest portion used per this corpus's convention)** — Articles 1-29: primary (uqn.gov.sa) + 2 secondary cross-checks (qanoonsa.com verbatim, Lexis Middle East structural), zero divergence found in a full word-collapsed diff; Articles 30-38 (9 of 38): secondary-only (qanoonsa.com), structurally (not verbatim) cross-verified by Lexis — this weaker portion pulls the overall track to TIER_4. The Official Gazette's own rendered HTML truncating after Article 29 is a genuine CMS gap, not evidence the regulation only has 29 articles (independently contradicted by 2 sources). A genuine content gap in Article 19's own final table row is preserved as-is (present identically in both sources), not invented. Explicitly does not touch the sibling high_risk_professions_regulation track (Decision 64762, same date). Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "rega_organizational_statute",
+                "display_name_ar": "تنظيم الهيئة العامة للعقار",
+                "display_name_en": "Statute of the General Authority for Real Estate (REGA)",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "REGA_GOV_SA_FIVE_SCANNED_PDFS_VISION_READ_X_NEZAMS_PARTIAL_CROSSCHECK_BOE_AND_WAYBACK_BOTH_BLOCKED",
+                "source_authority": "Council of Ministers Resolution No. 239, dated 25/4/1438H (23 Jan 2017G), amended by Resolutions 693 (2/11/1441H), 69 (23/1/1443H), 426 (5/8/1443H), and 16 (6/1/1447H). laws.boe.gov.sa returned HTTP 503 on every attempt, and unlike prior tracks the Wayback Machine was confirmed BLOCKED at the network/tool level this pass (not merely unreachable). Full verbatim text obtained directly from REGA's own hosted scanned PDFs (rega.gov.sa) for the base statute and all four amendment decrees — none has a text layer, so every article was transcribed via direct visual reading of 200dpi rendered page images (29 pages across 5 documents), not OCR. Substance cross-checked against nezams.com's summary of the 1443H amendment and REGA's own webpage prose summary.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": rega_organizational_statute_llm["record_count"],
+                    "data_path": "data/rega_organizational_statute_arabic_legal_llm/rega_organizational_statute_legal_llm_001_016.json"}},
+                "record_counts": {"arabic_articles": rega_organizational_statute_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 7, "معدلة": 8, "ملغاة": 0, "مضافة": 1},
+                                  "total": rega_organizational_statute_llm["record_count"]},
+                "data_paths": [
+                    "sources/rega_organizational_statute/law/official_source/rega_organizational_statute_official_source.json",
+                    "sources/rega_organizational_statute/law/verified/rega_organizational_statute_verified_summary.json",
+                    "data/rega_organizational_statute_arabic_legal_llm/rega_organizational_statute_legal_llm_001_016.json",
+                ],
+                "validator_targets": ["make rega-organizational-statute-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "«تنظيم الهيئة العامة للعقار» — Statute of the General Authority for Real Estate (REGA). **16 records: 7 اصلية / 8 معدلة / 1 مضافة (Article 13bis)**, no formal chapter division. **VERIFICATION TIER: honestly distinct from this corpus's BOE-Wayback-sourced organizational statutes (e.g. tvtc_organizational_statute)** — both laws.boe.gov.sa AND the Wayback Machine were confirmed unreachable/network-blocked this pass (a step beyond the usual '503 but Wayback works' pattern); the base statute and all four amendment decrees were instead obtained directly from REGA's own hosted scanned PDFs (rega.gov.sa), with every article transcribed via direct visual reading of rendered page images since none of the five PDFs carry a text layer, partially cross-checked against nezams.com and REGA's own webpage prose. Article 4 (board composition) went through three FULL successive text replacements (693 partial → 69 complete → 16 complete) that chain safely, unlike tvtc_organizational_statute's unmergeable layered amendments — Resolution 16's text (chronologically last) is ingested as current. A confirmed, disclosed textual inconsistency: Article 1 still defines 'الوزير' as 'وزير الإسكان' verbatim, never updated by any amendment despite Article 4's own ministry list being renamed twice. A WebSearch aggregator misquoted the 1443H amendment as 'Resolution 67' — corrected to the primary-confirmed 'Resolution 69' rather than propagated. No named predecessor found (REGA was newly created in 1438H — a confirmed negative repeal finding). Arabic governs; not legal advice.",
             },
         ],
     }
