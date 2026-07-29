@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 268,
+  "total_tracks": 291,
   "known_source_staleness_risk_count": 16,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -631,6 +631,30 @@
         "misa.gov.sa",
         "nezams.com",
         "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "aviation_passenger_rights_regulation",
+      "display_name_en": "Passenger Rights Protection Regulation",
+      "display_name_ar": "لائحة حماية حقوق المسافرين",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_UQN_GAZETTE_PRIMARY_X_SECONDARY_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدرت لائحة حماية حقوق المسافرين عن مجلس إدارة الهيئة العامة للطيران المدني (الهيئة) بالقرار رقم (574/36) وتاريخ 18/11/1444هـ، ونُشر نصّها الكامل في جريدة أم القرى الرسمية (uqn.gov.sa)، العدد رقم (4995) الصادر في 9 صفر 1445هـ الموافق 25 أغسطس 2023م. تتكوّن من 3 أبواب و30 مادة: الباب الأول (التعريفات والأهداف والنطاق، مواد 1-4)، الباب الثاني (حقوق المسافرين، مواد 5-22)، والباب الثالث (أحكام عامة، مواد 23-30). تحلّ محل اللائحة التنفيذية السابقة لحماية حقوق العملاء (قرار المجلس رقم 20/380 وتاريخ 26/5/1438هـ)، وتسري أحكامها بعد (90) تسعين يوماً من تاريخ النشر في الجريدة الرسمية (المادة الثلاثون)، أي ما يقارب 23 نوفمبر 2023م -- تاريخ سابق لبناء هذا المسار، ولذلك تُسجّل اللائحة في هذا المسار بأنها نافذة.",
+      "registry_source_url": null,
+      "official_source_file": "sources/aviation_passenger_rights_regulation/law/official_source/aviation_passenger_rights_regulation_official_source.json",
+      "source_urls": [
+        "https://c.ekstatic.net/ecl/documents/rules-and-notices/sa-gaca-passenger-rights-protection-regulations-nov-2023-ar.pdf",
+        "https://gaca.gov.sa/-/media/Files/PDF/LawsAndRegulation/Consumer-Protection/Regulations/Unnamed-item.pdf",
+        "https://gaca.gov.sa/ar/passenger-rights",
+        "https://gaca.gov.sa/rules-and-regulations-category/customer-rights-regulations/guidelines-and-regulations/passenger-rights-protection-regulations",
+        "https://uqn.gov.sa/details?p=23521"
+      ],
+      "named_source_authorities": [
+        "qanoonsa.com",
+        "uqn.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
@@ -1596,6 +1620,32 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "cst_organizational_statute",
+      "display_name_en": "Organizational Statute of the Communications, Space and Technology Commission (CST)",
+      "display_name_ar": "تنظيم هيئة الاتصالات والفضاء والتقنية",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status موسوم TIER_4 صراحة (ثقة متفاوتة على مستوى المادة): النص الأساسي والمادتان 3 و4 من التعديل الأخير (قرار 430) تعتمدان على لقطتي Wayback مستقلتين لبوابة هيئة الخبراء (BOE) × مطابقة حرفية مع qanoonsa.com (بمستوى TIER_2 تقريبا)، بينما نص تعديل 2024 (قرار 430) للمواد 1 و5 و8 و10 يعتمد على qanoonsa.com فقط دون تأكيد من BOE (الذي لا يعرض نوافذ منبثقة لهذه المواد تحديدا رغم البحث المتعمد) — وفق سياسة هذه المدونة، الجزء الأضعف ذو الحجم المعتبر (أربع مواد من أصل 19) هو الذي يحكم تصنيف المسار ككل، وليس الجزء الأقوى.",
+      "registry_source_authority": "تنظيم هيئة الاتصالات والفضاء والتقنية (المسمى الأصلي: هيئة الاتصالات السعودية؛ المسمى الوسيط 1424هـ-1444هـ: هيئة الاتصالات وتقنية المعلومات) صادر بقرار مجلس الوزراء رقم (74) وتاريخ 5/3/1422هـ، بعد الاطلاع على معاملة ديوان رئاسة مجلس الوزراء رقم (7/ب/4626) وتاريخ 4/3/1422هـ المشتملة على برقية وخطاب معالي وزير البرق والبريد والهاتف، وقرار مجلس الشورى رقم (97/83) وتاريخ 19/2/1422هـ، وقرار المجلس الاقتصادي الأعلى رقم (2/22) وتاريخ 4/3/1422هـ. عُدّل التنظيم أربع مرات مؤكدة موثقة هذه الجولة: (1) قرار مجلس الوزراء رقم (133) وتاريخ 21/5/1424هـ -- إيكال مهمات تقنية المعلومات وتعديل مسمى الهيئة (خطوة وسيطة على المادة الثالثة، استُبدلت لاحقاً بالكامل)؛ (2) قرار مجلس الوزراء رقم (120) وتاريخ 21/2/1440هـ -- تعديل الفقرة (1) من المادة الرابعة (تشكيل مجلس الإدارة) (خطوة وسيطة، استُبدلت لاحقاً بالكامل)؛ (3) قرار مجلس الوزراء رقم (253) وتاريخ 7/4/1444هـ -- تعديل مسمى الهيئة إلى (هيئة الاتصالات والفضاء والتقنية) ونقل الاختصاص التنظيمي لقطاع الفضاء المدني إليها (دون نص صريح يستبدل عبارات بعينها ضمن مواد التنظيم)؛ (4) قرار مجلس الوزراء رقم (430) وتاريخ 23/6/1446هـ -- تعديل شامل للمواد الأولى والثالثة والرابعة والخامسة والثامنة والعاشرة، منشور في جريدة أم القرى العدد (5065) الصادر في 17/1/2025م.",
+      "registry_source_url": null,
+      "official_source_file": "sources/cst_organizational_statute/law/official_source/cst_organizational_statute_official_source.json",
+      "source_urls": [
+        "https://nezams.com/تنظيم-هيئة-الاتصالات-السعودية/",
+        "https://qanoonsa.com/p/495610/",
+        "https://qanoonsa.com/p/506510/"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "customs_law",
       "display_name_en": "GCC Unified Customs Law",
       "display_name_ar": "نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية",
@@ -1782,6 +1832,27 @@
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "domestic_labor_boe_portal_stale: بوابة هيئة الخبراء (laws.boe.gov.sa) لا تزال، حتى أحدث لقطة أرشيفية مفحوصة (6 سبتمبر 2025)، تعرض حصراً اللائحة السابقة الملغاة (لائحة عمال الخدمة المنزلية ومن في حكمهم، قرار مجلس الوزراء رقم 310، 7/9/1434هـ، 23 مادة) على"
+    },
+    {
+      "track_id": "dry_gas_lpg_distribution_law",
+      "display_name_en": "The Dry Gas and LPG Distribution Law for Residential/Commercial Purposes",
+      "display_name_ar": "نظام توزيع الغاز الجاف وغاز البترول السائل للأغراض السكنية والتجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_PRIMARY_MULTI_SOURCE_CONSOLIDATED_AMENDED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "صدر نظام توزيع الغاز الجاف وغاز البترول السائل للأغراض السكنية والتجارية أصلا بالمرسوم الملكي رقم (م/126) وتاريخ 1/12/1438هـ (بعد قرار مجلس الوزراء رقم (711) وتاريخ 30/12/1438هـ بحسب مصدر ثانوي واحد لم يُتحقق منه بشكل مستقل هذه الجولة -- انظر known_unresolved_discrepancies)، ونُشر في جريدة أم القرى بتاريخ 21/3/1440هـ (الموافق 29/11/2018م). كانت الجهة المُنظِّمة والمُنفِّذة أصلا 'الهيئة' (هيئة تنظيم الكهرباء والإنتاج المزدوج ECRA، التي وُسِّع نطاق اختصاصها لاحقا ليشمل الغاز)، ويرأسها 'المحافظ'. عُدِّل النظام جوهريا (17 مادة من أصل 21، بالإضافة إلى إلغاء مادة كاملة) بموجب المرسوم الملكي رقم (م/112) وتاريخ 9/11/1443هـ (بعد قرار مجلس الوزراء رقم (610) وتاريخ 8/11/1443هـ وقرار مجلس الشورى رقم (27/152) وتاريخ 27/7/1443هـ)، ونُشر في جريدة أم القرى بعددها رقم (4940) الصادر في 22 يوليو 2022م. نقل هذا التعديل الاختصاص التنظيمي والتنفيذي بالكامل من 'الهيئة' (ECRA) و'المحافظ' إلى 'الوزارة' (وزارة الطاقة) و'الوزير' (وزير الطاقة)، وأدخل آلية الترخيص عبر المنافسة التنافسية (المزايدة)، ووسَّع تعريفات النظام لتشمل 'الغاز الطبيعي البديل' و'شبكة توزيع الغاز المستقلة'، وشدَّد العقوبات والتفتيش. الجهة المشرفة والمنفذة للنظام حاليا هي وزارة الطاقة، عبر لوائح وأدلة فنية وإجرائية (اللوائح) تصدرها الوزارة، ولائحة تنفيذية منفصلة للنظام.",
+      "registry_source_url": null,
+      "official_source_file": "sources/dry_gas_lpg_distribution_law/law/official_source/dry_gas_lpg_distribution_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "misa.gov.sa",
+        "qanoonsa.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
     },
     {
       "track_id": "ecommerce_law",
@@ -1990,6 +2061,30 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "energy_supplies_system",
+      "display_name_en": "The Energy Supplies System",
+      "display_name_ar": "نظام إمدادات الطاقة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدر نظام إمدادات الطاقة بالمرسوم الملكي رقم (م/80) وتاريخ 4/6/1444هـ (الموافق 28/12/2022م)، بناء على قرار مجلس الوزراء رقم (374) وتاريخ 3/6/1444هـ، وبعد الاطلاع على قرار مجلس الشورى رقم (304/45) وتاريخ 28/11/1443هـ. الجهة المشرفة على تنفيذه هي وزارة الطاقة (المادة الأولى: الوزارة، الوزير)، وتتولى وزارة الطاقة تخصيص الطاقة للمستهلكين (المادة الرابعة) وإصدار التراخيص لأنشطة الغاز الطبيعي وسوائله والهيدروجين (المادة الخامسة)، عبر لجنة تخصيص الطاقة التي يرأسها الوزير (المادة الثالثة، تضم ممثلين عن ثماني وزارات وهيئات حكومية أخرى). يصدر الوزير اللوائح ولائحة التخصيص خلال (ستين) يوما من تاريخ نشر النظام في الجريدة الرسمية (المادة الحادية عشرة)، ويعمل بالنظام بعد مضي (ستين) يوما من تاريخ نشره، باستثناء المادة (الثالثة) التي تعمل بها اعتبارا من تاريخ صدور المرسوم مباشرة (المادة الثانية عشرة؛ البند 'ثانيا' من مرسوم الإصدار وقرار مجلس الوزراء 374). يحل هذا النظام -بنص المادة الثانية عشرة منه ذاتها- محل نظام إمدادات الغاز وتسعيره الصادر بالمرسوم الملكي رقم (م/36) وتاريخ 25/6/1424هـ. ملاحظة مهمة غير واردة في متن المواد الاثنتي عشرة المرقمة: البند (ثالثا) من مرسوم الإصدار ومن قرار مجلس الوزراء (374) كليهما ينص على استثناء انتقالي من أثر الإحلال/الإلغاء الفوري، بحيث تستمر التراخيص الصادرة وفق النظام الملغى (م/36) سارية، مع إلزام أصحابها بتصحيح أوضاعهم خلال مدة أقصاها سنتان (قابلة للتمديد بقرار من وزير الطاقة حتى ست سنوات إضافية). كذلك ينص البند (رابعا) من قرار مجلس الوزراء (374) على ترتيب تنفيذي إضافي (تحديد المقابل المالي المشار إليه في الفقرة 2 من المادة الخامسة بالاتفاق مع وزارة المالية ومركز تنمية الإيرادات غير النفطية) لا يظهر في متن مواد النظام نفسه.",
+      "registry_source_url": null,
+      "official_source_file": "sources/energy_supplies_system/law/official_source/energy_supplies_system_official_source.json",
+      "source_urls": [
+        "https://"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2025-10-17; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -2620,6 +2715,34 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "gaca_organizational_statute",
+      "display_name_en": "Organizational Statute of the General Authority of Civil Aviation (GACA)",
+      "display_name_ar": "تنظيم الهيئة العامة للطيران المدني",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_CONSOLIDATED_WHOLESALE_REISSUE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "تنظيم الهيئة العامة للطيران المدني، صادر بقرار مجلس الوزراء رقم (807) وتاريخ 14/11/1446هـ (الموافق 12 مايو 2025م)، بعد الاطلاع على معاملة الديوان الملكي رقم 72844 وتاريخ 23/10/1444هـ المشتملة على برقية الهيئة العامة للطيران المدني رقم 40776 وتاريخ 19/10/1444هـ بشأن مشروع تنظيم الهيئة، وعلى نظام مجلس الوزراء الصادر بالأمر الملكي رقم (أ/13) وتاريخ 3/3/1414هـ، وعلى المذكرات المعدة في هيئة الخبراء بمجلس الوزراء أرقام (3621) بتاريخ 23/11/1444هـ و(1767) بتاريخ 20/5/1445هـ و(2636) بتاريخ 20/7/1445هـ و(25) بتاريخ 2/1/1446هـ و(1002) بتاريخ 22/3/1446هـ، والمحضر رقم (35) بتاريخ 11/2/1446هـ، وعلى توصية مجلس الشؤون الاقتصادية والتنمية رقم (15-3/46/ت) وتاريخ 23/3/1446هـ، وعلى توصية اللجنة العامة لمجلس الوزراء رقم (10847) وتاريخ 7/11/1446هـ. نُشر في جريدة أم القرى، العدد (5088)، الصادر في 24/5/2025م. هذا القرار قرار مُنشئ لتنظيم جديد بالكامل (إعادة إصدار شاملة/consolidated wholesale re-issue): بنده (ثانياً) ينص صراحة على أن هذا التنظيم -عند نفاذه- يحل محل تنظيم الهيئة العامة للطيران المدني الصادر بقرار مجلس الوزراء رقم (33) وتاريخ 11/2/1426هـ (وهو التنظيم الذي كان قد عُدّل هو ذاته سابقاً، وفق ما ورد في موجز مهمة هذا المسار، بقراري مجلس الوزراء رقم (28) وتاريخ 15/2/1433هـ ورقم (120) وتاريخ 14/2/1438هـ). لذلك يُبنى هذا المسار على أساس نص جديد موحّد (consolidated) كل مواده الخمس عشرة أصلية بموجب القرار (807) ذاته، لا طبقة تعديلات على النص القديم -- انظر verification_methodology_note وamendment_history لتفصيل هذا القرار المنهجي والأساس النصي الذي استند إليه.",
+      "registry_source_url": null,
+      "official_source_file": "sources/gaca_organizational_statute/law/official_source/gaca_organizational_statute_official_source.json",
+      "source_urls": [
+        "https://qanoonsa.com/p/508801/",
+        "https://qanoonsa.com/p/508802/",
+        "https://uqn.gov.sa/details?p=27192",
+        "https://www.argaam.com/ar/article/articledetail/id/1816229",
+        "https://www.uqn.gov.sa/api/article/20519/json",
+        "https://www.uqn.gov.sa/details?p=27192"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "gcc_anti_dumping_law",
       "display_name_en": "GCC Unified Anti-Dumping, Countervailing and Safeguard Measures Law",
       "display_name_ar": "النظام الموحد لمكافحة الإغراق والتدابير التعويضية والوقائية لدول مجلس التعاون",
@@ -2707,6 +2830,28 @@
       "source_urls": [],
       "named_source_authorities": [],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "hajj_umrah_external_pilgrims_law",
+      "display_name_en": "Law of Service Providers for External Hajj Pilgrims",
+      "display_name_ar": "نظام مقدمي خدمة حجاج الخارج",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status موسوم بتصنيف مختلط: تسع المواد التسع غير المعدَّلة تعتمد على مصدرين ثانويين (nezams.com × tanseiqiah.sa) بمستوى TIER_3 تقريبا، بينما تعديل 2025 (المرسوم الملكي م/89) الذي يحكم 14 مادة معدَّلة + مادة مضافة واحدة يعتمد على الجريدة الرسمية (uqn.gov.sa) × qanoonsa.com بمستوى TIER_2 تقريبا — وفق سياسة هذه المدونة، الجزء الأضعف (9 مواد غير معدَّلة) هو الذي يحكم تصنيف المسار ككل (TIER_3)، رغم أن الجزء الأكبر عدديا (15 مادة) أقوى توثيقا.",
+      "registry_source_authority": "صدر نظام مقدمي خدمة حجاج الخارج بالمرسوم الملكي رقم (م/111) وتاريخ 17/9/1440هـ (الموافق 22 مايو 2019م)، بناء على قرار مجلس الوزراء رقم (545) وتاريخ 16/9/1440هـ (انظر ملاحظة التعارض الرقمي 454/545 في known_unresolved_discrepancies)، وبعد الاطلاع على قرار مجلس الشورى رقم (48/13) وتاريخ 2/5/1440هـ. نُشر في الجريدة الرسمية (أم القرى)، العدد (4782)، بتاريخ 3/10/1440هـ (ملاحظة: يظهر التاريخ في هامش بيانات nezams.com الوصفية بصيغة 4/10/1440هـ -- تعارض بيوم واحد بين مصدرين، اعتُمد 3/10/1440هـ لتوافقه مع نتيجة بحث ويب مستقلة تسمي رقم العدد صراحة، انظر known_unresolved_discrepancies). الجهة المشرفة والمنفذة هي وزارة الحج والعمرة (الوزير: وزير الحج والعمرة). يُلغي هذا النظام -بنص البند (ثانيا) من المرسوم الملكي وقرار مجلس الوزراء المرافق له كليهما، لا بنص داخل مواد النظام نفسه- أربعة أنظمة/قواعد سابقة: نظام المطوفين العام (1367هـ)، ونظام وكلاء المطوفين ومشائخ الجاوا (1365هـ)، ونظام هيئة الأدلاء بالمدينة المنورة (1356هـ)، وقواعد تأديب أفراد طوائف المطوفين والوكلاء والأدلاء والزمازمة (قرار مجلس الوزراء رقم 79، 1400هـ). صدرت لائحة تنفيذية للنظام بموجب قرار وزير الحج والعمرة رقم (410105143) وتاريخ 5/1/1441هـ (مؤكدة من نسخة PDF رسمية مشتركة نظام+لائحة على tanseiqiah.sa)؛ لم تُبنَ هذه اللائحة كمسار مستقل هذه الجولة (خارج نطاق المهمة المحددة صراحة، التي استثنت أي مسودة للائحة التنفيذية قيد الاستطلاع العام على istitlaa.ncc.gov.sa). طرأ على النظام تعديل واحد مؤكد حتى تاريخ هذه الجولة: المرسوم الملكي رقم (م/89) وتاريخ 12/5/1447هـ (الموافق 3 نوفمبر 2025م)، بناء على قرار مجلس الوزراء رقم (322) وتاريخ 6/5/1447هـ (الموافق 28 أكتوبر 2025م)، وبعد الاطلاع على قرار مجلس الشورى رقم (28/2) وتاريخ 24/3/1447هـ، ونُشر في جريدة أم القرى العدد (5122) الصادر في 14 نوفمبر 2025م. عدّل هذا التعديل 14 مادة من أصل 23 (المواد: 1، 2، 3، 4، 5، 6، 8، 9، 11، 13، 14، 17، 18، 21) وأضاف مادة جديدة (المادة التاسعة عشرة مكرر) تجيز للوزارة إنشاء مجلس تنسيقي أو أكثر لمقدمي خدمة حجاج الخارج. تسع مواد بقيت دون تعديل (7، 10، 12، 15، 16، 19، 20، 22، 23). ملاحظة أمانة: بعض نتائج WebSearch التوليفية وصفت هذا التعديل بأنه \"تعديل 21 مادة\"؛ لم يؤكَّد هذا الرقم من أي نص حرفي مجلوب فعليا هذه الجولة -- العدّ الدقيق المستخرج من النص الحرفي الكامل للتعديل (مؤكَّد من مصدر رسمي أولي، جريدة أم القرى مباشرة، ومصدر ثانوي مطابق حرفيا) هو 14 مادة معدَّلة + مادة واحدة مضافة = 15 حدث تعديل إجمالا على 23 مادة أصلية، لا 21. لا يحمل النظام هيكلا من الفصول أو الأبواب (23 مادة + مادة مكررة واحدة، متسلسلة دون تقسيم فرعي؛ تحقق برمجي شامل: صفر ورود لكلمتي \"الباب\"/\"الفصل\" في نص النظام).",
+      "registry_source_url": null,
+      "official_source_file": "sources/hajj_umrah_external_pilgrims_law/law/official_source/hajj_umrah_external_pilgrims_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3319,6 +3464,30 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "landlord_tenant_relationship_regulation",
+      "display_name_en": "Statutory Provisions Regulating the Landlord-Tenant Relationship",
+      "display_name_ar": "الأحكام النظامية الخاصة بضبط العلاقة بين المؤجر والمستأجر",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_PRIMARY_MULTI_SOURCE_RIYADH_SCOPE_DISCLOSED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "صدرت الأحكام النظامية الخاصة بضبط العلاقة بين المؤجر والمستأجر بالمرسوم الملكي رقم (م/73) وتاريخ 2/4/1447هـ (الموافق 24 سبتمبر 2025م)، بعد قرار مجلس الوزراء رقم (226) وتاريخ 24/3/1447هـ وقرار مجلس الشورى رقم (8/1) وتاريخ 22/3/1447هـ. نُشرت في جريدة أم القرى (الجريدة الرسمية) بعددها رقم (5120) الصادر في 16/5/1447هـ الموافق 7 نوفمبر 2025م. الجهة المختصة بتطبيق هذه الأحكام والإشراف عليها هي الهيئة العامة للعقار (REGA)، ومجلس إدارتها هو الجهة المخوَّلة بوضع الضوابط والآليات وجداول المخالفات والمكافآت التنفيذية لهذه الأحكام. صدر بالفعل -بعد هذه الأحكام وليس جزءاً من نصها- قرار مجلس إدارة الهيئة بالتمرير رقم (ق/م/إ/هـ/10/2025/ت) وتاريخ 20/6/1447هـ (الموافق 11 ديسمبر 2025م) بالموافقة على جدول تصنيف مخالفات هذه الأحكام وما يقابلها من غرامات (إعمالاً للبند تاسعاً/2)؛ لم يُبنَ هذا الجدول كمسار مستقل في هذه الجولة (خارج نطاق هذه المهمة: نظام واحد فقط).",
+      "registry_source_url": null,
+      "official_source_file": "sources/landlord_tenant_relationship_regulation/regulation/official_source/landlord_tenant_relationship_regulation_official_source.json",
+      "source_urls": [
+        "https://uqn.gov.sa/details?p=28602",
+        "https://www.uqn.gov.sa/details?p=28602"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "spa.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "law_practice_implementing_regulation",
       "display_name_en": "Implementing Regulation of the Code of Law Practice",
       "display_name_ar": "اللائحة التنفيذية لنظام المحاماة",
@@ -3453,6 +3622,35 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "mawani_organizational_statute",
+      "display_name_en": "Organizational Statute of the General Authority for Ports (Mawani)",
+      "display_name_ar": "تنظيم الهيئة العامة للموانئ",
+      "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
+      "verification_tier_rationale": "official_text_status='TIER_4_SINGLE_SECONDARY_SOURCE_BOE_WAYBACK_MAWANI_ALL_UNREACHABLE': أحادي المصدر لجزء معتبر من المسار، أو ثقة متفاوتة موثّقة صراحة.",
+      "registry_source_authority": "تنظيم الهيئة العامة للموانئ صادر بقرار مجلس الوزراء رقم (299) وتاريخ 11/6/1439هـ (الموافق 26-27 فبراير 2018م)، بعد الاطلاع على المعاملة الواردة من الديوان الملكي رقم 57511 وتاريخ 10/12/1438هـ المشتملة على خطاب المؤسسة العامة للموانئ رقم 01/3246 وتاريخ 10/7/1437هـ، وعلى الأمر الملكي رقم (55685) وتاريخ 30/11/1438هـ، وعلى نظام المؤسسة العامة للموانئ الصادر بالمرسوم الملكي رقم (م/13) وتاريخ 7/4/1397هـ، وعلى نظام رسوم وأجور خدمات الموانئ الصادر بالمرسوم الملكي رقم (م/42) وتاريخ 2/7/1405هـ. قرر مجلس الوزراء بموجب هذا القرار: أولاً- تعديل اسم (المؤسسة العامة للموانئ) ليكون (الهيئة العامة للموانئ)؛ ثانياً- الموافقة على تنظيم الهيئة العامة للموانئ بالصيغة المرافقة. ويتضمن التنظيم ذاته (المادة التاسعة عشرة) نصاً صريحاً يُحلّ التنظيم محل نظام المؤسسة العامة للموانئ الصادر بالمرسوم الملكي رقم (م/13) وتاريخ 7/4/1397هـ، ويُلغي كل ما يتعارض معه من أحكام. لم يُعثر هذه الجولة على أي تعديل لاحق لهذا التنظيم (20 مادة، جميعها أصلية).",
+      "registry_source_url": null,
+      "official_source_file": "sources/mawani_organizational_statute/law/official_source/mawani_organizational_statute_official_source.json",
+      "source_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/a04e017e-cefb-4939-973f-a9ee00ff5646/1",
+        "https://laws.boe.gov.sa/BoeLaws/Laws/Viewer/9edb2337-52b7-44f4-9750-a9ee00ff564f?lawId=a04e017e-cefb-4939-973f-a9ee00ff5646",
+        "https://mawani.gov.sa",
+        "https://nezams.com/تنظيم-الهيئة-العامة-للموانئ/",
+        "https://web.archive.org/web/2023/",
+        "https://www.mawani.gov.sa/ar"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "medical_reports_regulation",
       "display_name_en": "Medical Reports Regulation",
       "display_name_ar": "لائحة التقارير الطبية",
@@ -3486,6 +3684,25 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "mining_investment_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Mining Investment Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الاستثمار التعديني",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_FOUNDING_TEXT_LATER_AMENDMENT_TEXT_UNOBTAINED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدرت اللائحة التنفيذية لنظام الاستثمار التعديني بقرار وزير الصناعة والثروة المعدنية رقم (1006/1/1442) وتاريخ 9/5/1442هـ، إعمالاً للصلاحيات المخوَّلة للوزير بموجب نظام الاستثمار التعديني الصادر بالمرسوم الملكي رقم (م/140) وتاريخ 19/10/1441هـ، ونُشرت كاملة في الجريدة الرسمية (جريدة أم القرى) بتاريخ 17/5/1442هـ الموافق 1/1/2021م (تاريخ النشر مأخوذ حرفياً من الحقل الظاهر أعلى صفحة اللائحة الرسمية ذاتها على uqn.gov.sa: '1442-5-17 الموافق 2021-01-01'). صدر لاحقاً قرار وزير الصناعة والثروة المعدنية رقم (3293/1/1444) وتاريخ 5/6/1444هـ (نصه الحرفي الكامل قُرئ مباشرة من صفحته الرسمية على أم القرى عبر أرشيف Wayback Machine)، الذي استند إلى قرار مجلس الوزراء رقم (100) وتاريخ 3/2/1444هـ (القاضي في بنده الرابع بأن تراجع الوزارة أحكام اللائحة وتعدّلها 'بما يحقق مزيداً من الوضوح في شأن الأحكام المتعلقة بما يدخل في ممارسة النشاط التعديني')، وتضمَّن في بنده الأول 'الموافقة على تعديل اللائحة التنفيذية لنظام الاستثمار التعديني الصادرة بالقرار الوزاري رقم (1006/1/1442) وتاريخ 9/5/1442هـ، بالصيغة المرافقة لهذا القرار' -- أي أن نص التعديل الفعلي أُرفق بالقرار كمرفق منفصل، ولم يُدرَج نصه داخل صفحة الخبر الرسمية ذاتها التي تحمل نص القرار (التي تقتصر على ديباجة القرار وبنوده الثلاثة وتوقيع الوزير بندر بن إبراهيم الخريف، دون إرفاق نص المرفق ذاته على تلك الصفحة). على الرغم من محاولات جادة ومتعددة القنوات هذه الجولة (مفصَّلة بالكامل في verification_methodology_note وفي known_unresolved_discrepancies أدناه)، لم يتسنَّ الحصول على نص ذلك المرفق (أي: الصيغة المعدَّلة الفعلية للائحة) ولا على قائمة موثوقة تحدد بالتحديد أي مواد من المواد 166 مسَّها التعديل. لذلك فإن النص المخزَّن في هذا المسار هو نص الإصدار التأسيسي (القرار 1006/1/1442) بحالته كما نُشر أصلاً في الجريدة الرسمية، وليس نصاً موحَّداً (consolidated) يعكس تعديل 1444هـ -- بعكس تماماً حالة مسار real_estate_finance_implementing_regulation الشقيق في هذا المستودع (حيث كان النص المتاح هو النص الموحَّد الحالي بعد التعديل، لا النص التأسيسي). النظام الأم (نظام الاستثمار التعديني، المرسوم الملكي رقم م/140) وترخيصه للوزارة بإصدار لوائح تنفيذية لا يزالان ساريين، ولذلك تُسجَّل هذه اللائحة بحالة 'نافذ' على مستوى الوثيقة ككل، مع الإفصاح الصريح أن هذا لا يعني بالضرورة أن كل مادة من موادها الـ166 لم يطرأ عليها أي تغيير منذ 1442هـ.",
+      "registry_source_url": null,
+      "official_source_file": "sources/mining_investment_implementing_regulation/law/official_source/mining_investment_implementing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2023-02-10; track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3659,6 +3876,65 @@
         "qanoonsa.com"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "nca_cybersecurity_violations_investigation_rules",
+      "display_name_en": "Rules for Detecting and Investigating Cybersecurity Violations",
+      "display_name_ar": "قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_UQN_GAZETTE_X_LIVE_NCA_GOV_SA_PRIMARY': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها صادرة بقرار مجلس إدارة الهيئة الوطنية للأمن السيبراني رقم (ع26/1/1/1ت) وتاريخ 22/8/1447هـ، إعمالاً لتكليف المجلس ذاته الوارد في البند (سادساً) من الممكنات النظامية للهيئة الوطنية للأمن السيبراني (الصادرة بالمرسوم الملكي رقم (م/117) وتاريخ 21/6/1446هـ)، والذي ألزم مجلس إدارة الهيئة بإصدار قواعد ضبط المخالفات المنصوص عليها في تلك الممكنات والتحقيق فيها. نُشر نص هذه القواعد كاملاً على جريدة أم القرى الرسمية (uqn.gov.sa/decisions-and-regulations/4001430) بتاريخ 3/2/1448هـ الموافق 17/7/2026م، وهو ما يجعلها -بحسب تكليف البحث الأولي لهذا المسار- أحدث صك تشريعي سعودي تم رصده حتى تاريخ بناء هذا المسار (نُشرت في الجريدة الرسمية قبل نحو 11 يوماً فقط من تاريخ هذا التمرير 2026-07-28). ووفقاً للمادة التاسعة (الفقرة 5) من هذه القواعد ذاتها، فإن العمل بها يبدأ من تاريخ نشرها في الموقع الإلكتروني للهيئة الوطنية للأمن السيبراني (nca.gov.sa) لا من تاريخ نشرها في الجريدة الرسمية -- وقد تأكد هذا التمرير من أن نسخة هذه القواعد متاحة فعلياً وحيّة (HTTP 200) على موقع الهيئة الإلكتروني ذاته (nca.gov.sa/ar/laws-and-regulations) وعلى نطاقه الفرعي لاستضافة الملفات (cdn.nca.gov.sa) بتاريخ بناء هذا المسار ذاته، وهو ما يثبت -على الأقل- أنها منشورة بالفعل على الموقع الإلكتروني للهيئة في هذا التاريخ أو قبله؛ لم يُعثر هذا التمرير على تاريخ نشر إلكتروني دقيق مستقل عن تاريخ النشر في الجريدة الرسمية (انظر known_unresolved_discrepancies).",
+      "registry_source_url": null,
+      "official_source_file": "sources/nca_cybersecurity_violations_investigation_rules/law/official_source/nca_cybersecurity_violations_investigation_rules_official_source.json",
+      "source_urls": [
+        "https://cdn.nca.gov.sa/api/files/public/upload/99774fca-049f-4c0f-b797-43542e8e8cb9_قواعد-ضبط-مخالفات-الأمن-السيبراني-والتحقيق-فيها-.pdf"
+      ],
+      "named_source_authorities": [
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "nca_cybersecurity_violations_reporting_rules",
+      "display_name_en": "Rules Organizing the Reporting of Cybersecurity Violations",
+      "display_name_ar": "قواعد تنظيم الإبلاغ عن مخالفات الأمن السيبراني",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_DECISION_NUMBER_UNCONFIRMED_DISCLOSED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "قواعد تنظيم الإبلاغ عن مخالفات الأمن السيبراني هي إحدى القاعدتين التنفيذيتين اللتين كلَّف بإصدارهما البند (سادساً) من الممكنات النظامية للهيئة الوطنية للأمن السيبراني (الصادرة بالمرسوم الملكي رقم (م/117) وتاريخ 21/6/1446هـ) مجلسَ إدارة الهيئة صراحةً: الفقرة (1) من البند (سادساً) تُلزم المجلس بإصدار 'قواعد لتنظيم الإبلاغ عن المخالفات المشار إليها في البند (أولاً) من هذه الممكنات، بما في ذلك تحديد المكافآت المالية للمبلّغين، وضوابط صرفها واستحقاقها، والإجراءات التي تسهم في حماية المبلّغين والحفاظ على سريّة هوياتهم' -- وهذا هو هذا المسار بعينه. أما الفقرة (2) من البند ذاته فتُلزم المجلس بإصدار قواعد منفصلة تماماً لتنظيم آلية ضبط المخالفات والتحقيق فيها في الجهات الأمنية والعسكرية -- وهذه هي 'قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها'، المسار الشقيق/المرافق (companion) الذي لا يغطيه هذا الملف. المادة الأولى (التعريفات) من هذا الصك نفسه تُصرّح بأنه صادر تنفيذاً لهذه الممكنات النظامية، وتستشهد بنفس المرسوم الملكي رقم (م/117) وتاريخ 1446/6/21هـ كأساسه النظامي المباشر.\n\nتحدي التحقق من رقم/تاريخ قرار مجلس إدارة الهيئة الذي اعتمد هذا الصك تحديداً: خلافاً لتكليف البحث الأولي لهذا المسار، الذي اقترح أن هذا الصك ('قواعد تنظيم الإبلاغ عن مخالفات الأمن السيبراني') يحمل نفس رقم وتاريخ قرار مجلس الإدارة المنسوب لمسار 'قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها' الشقيق (رقم ع26/1/1/1ت وتاريخ 22/08/1447هـ)، فقد تبيّن هذه الجولة -بعد تحقق مباشر ومستقل من صفحة جريدة أم القرى الرسمية الخاصة بذلك الصك الشقيق تحديداً (uqn.gov.sa/decisions-and-regulations/4001430)- أن هذا الرقم والتاريخ (ع26/1/1/1ت، 22/08/1447هـ) مذكوران صراحةً وحصراً كعنوان فرعي لصك 'قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها' وحده ('المعتمدة بقرار مجلس إدارة الهيئة الوطنية للأمن السيبراني رقم (ع26 /1/ 1/ 1ت) وتاريخ 1447/08/22هـ')، لا لصك 'قواعد تنظيم الإبلاغ عن مخالفات الأمن السيبراني' موضوع هذا المسار. لم يُعثر هذه الجولة -رغم محاولات بحث متعددة (WebSearch مباشر، بحث مقيد site:uqn.gov.sa، بحث عن site:qanoonsa.com وsite:qistas.com)- على أي صفحة جريدة أم القرى (uqn.gov.sa) مخصصة لهذا الصك (قواعد الإبلاغ) بعينه، ولا على أي رقم قرار مجلس إدارة مستقل منشور له. لذلك يُفصَح هنا صراحةً بأن رقم/تاريخ قرار مجلس الإدارة الذي اعتمد هذا الصك تحديداً غير مؤكَّد بشكل مستقل هذه الجولة، وأن الرقم المقترَح في تكليف البحث الأولي (ع26/1/1/1ت، 22/08/1447هـ) ثبت أنه ينتمي لصك آخر مختلف (الصك الشقيق)، لا لهذا الصك -- انظر known_unresolved_discrepancies، المفتاح nca_reporting_rules_decision_number_belongs_to_companion_not_this_instrument.",
+      "registry_source_url": null,
+      "official_source_file": "sources/nca_cybersecurity_violations_reporting_rules/law/official_source/nca_cybersecurity_violations_reporting_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "offplan_sale_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Off-Plan Sale/Lease of Real Estate Projects Law (WAFI)",
+      "display_name_ar": "اللائحة التنفيذية لنظام بيع وتأجير مشروعات عقارية على الخارطة",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_REGA_RESOLUTION': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدرت اللائحة التنفيذية لنظام بيع وتأجير مشروعات عقارية على الخارطة بقرار مجلس إدارة الهيئة العامة للعقار رقم (ق/م/إ/هـ/8/2024/ت) وتاريخ 20/10/1445هـ (الموافق 29/4/2024م)، تنفيذاً لنص المادة الثامنة والعشرين من نظام بيع وتأجير مشروعات عقارية على الخارطة (المرسوم الملكي رقم م/44 وتاريخ 10/3/1445هـ، مسار offplan_sale_law في هذا المجمّع) التي توجب على المسؤول إصدار اللائحة التنفيذية للنظام خلال (تسعين) يوماً من تاريخ نشر النظام. نُشرت اللائحة في جريدة أم القرى الرسمية بتاريخ 2 ذو القعدة 1445هـ الموافق 10 مايو 2024م. تحسم المادة الثانية من اللائحة ذاتها هوية الجهة المختصة بتطبيق النظام (التي عرّفها النظام الأم تعريفاً عاماً فقط في مادته الأولى): \"مع مراعاة أحكام المادة (الرابعة) من النظام تختص الهيئة [الهيئة العامة للعقار] بالإشراف على تنظيم بيع وتأجير مشروعات عقارية على الخارطة\"، بما يشمل إصدار الدليل الإجرائي، وإصدار القرارات التنفيذية، وقيد المطورين العقاريين، وترخيص المشروعات العقارية، والرقابة والتفتيش على سائر أعمال النشاط. لم يُعثر على أي تعديل لاحق لهذه اللائحة حتى تاريخ هذه الجولة.",
+      "registry_source_url": null,
+      "official_source_file": "sources/offplan_sale_implementing_regulation/law/official_source/offplan_sale_implementing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3915,6 +4191,50 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "petroleum_petrochemical_materials_law",
+      "display_name_en": "The Petroleum and Petrochemical Materials Law",
+      "display_name_ar": "نظام المواد البترولية والبتروكيماوية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدر نظام المواد البترولية والبتروكيماوية بالمرسوم الملكي رقم (م/139) وتاريخ 12/7/1446هـ (الموافق 12 يناير 2025م)، بناء على قرار مجلس الوزراء رقم (473) وتاريخ 7/7/1446هـ، وبعد الاطلاع على قرار مجلس الشورى رقم (80/8) وتاريخ 2/5/1446هـ. الجهة المشرفة على تنفيذه هي وزارة الطاقة (المادة الأولى: الوزارة، الوزير)، وتتولى وزارة الطاقة -وفق البند (سادسا) من قرار مجلس الوزراء رقم (473)- جميع الصلاحيات والمهمات المتعلقة بتنظيم العمليات البترولية والبتروكيماوية. يصدر الوزير اللوائح التنفيذية للنظام خلال (تسعين) يوما من تاريخ نشر النظام في الجريدة الرسمية (المادة العشرون)، ويعمل بالنظام بعد مضي (تسعين) يوما من تاريخ نشره (المادة الثانية والعشرون). يحل هذا النظام -بنص المادة الحادية والعشرين منه ذاتها- محل نظام التجارة بالمنتجات البترولية الصادر بالمرسوم الملكي رقم (م/18) وتاريخ 28/1/1439هـ. ملاحظة مهمة غير واردة في متن المواد الاثنتين والعشرين المرقمة: البند (ثانيا) من مرسوم الإصدار ومن قرار مجلس الوزراء (473) كليهما ينص على استثناء انتقالي من أثر الإحلال/الإلغاء الفوري، بحيث تستمر التراخيص الصادرة وفق النظام الملغى (م/18) سارية، مع إلزام أصحابها بتصحيح أوضاعهم خلال مدة أقصاها سنتان (قابلة للتمديد بقرار من وزير الطاقة حتى ست سنوات إضافية). كذلك ينص قرار مجلس الوزراء (473) في البنود من (ثالثا) إلى (سادسا) على ترتيبات تنفيذية إضافية (تحديد المقابل المالي بالاتفاق مع وزارة المالية ومركز تنمية الإيرادات غير النفطية، وحوكمة صرف المبلغ المستقطع، وصلاحيات وزارة الطاقة التفصيلية) لا تظهر في متن مواد النظام نفسه. اللائحة التنفيذية للنظام مذكورة في نتائج بحث (qanoonsa.com/p/514706) لكن لم يتسن الوصول إلى نصها الكامل والتحقق منه هذه الجولة؛ لم تبن كمسار في هذه الجولة (انظر known_unresolved_discrepancies).",
+      "registry_source_url": null,
+      "official_source_file": "sources/petroleum_petrochemical_materials_law/law/official_source/petroleum_petrochemical_materials_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-01-17; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "pharmaceutical_establishments_law",
+      "display_name_en": "The Pharmaceutical and Herbal Establishments Law",
+      "display_name_ar": "نظام المنشآت والمستحضرات الصيدلانية والعشبية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدر نظام المنشآت والمستحضرات الصيدلانية والعشبية بالمرسوم الملكي رقم (م/108) وتاريخ 22/8/1441هـ (الموافق 16 أبريل 2020م)، بناء على قرار مجلس الوزراء رقم (534) وتاريخ 21/8/1441هـ، وبعد الاطلاع على قرار مجلس الشورى رقم (99/24) وتاريخ 18/6/1441هـ، وتوصية اللجنة العامة لمجلس الوزراء رقم (5816) وتاريخ 13/8/1441هـ. أحال مشروع النظام في الأصل معالي وزير الصحة ببرقيته رقم 2188176-1438 وتاريخ 13/8/1439هـ. يحل هذا النظام -بنص المادة الحادية والأربعين منه ذاتها- محل نظام المنشآت والمستحضرات الصيدلانية الصادر بالمرسوم الملكي رقم (م/31) وتاريخ 1/6/1425هـ، مع استثناء انتقالي صريح (البند ثالثا من ديباجة المرسوم) يبقي مؤقتا أحكام النظام القديم الخاصة بالصيدلية ومنشأة بيع المستحضرات العشبية سارية إلى حين صدور أحكام خاصة بهما. الجهة المشرفة والمنفذة هي الهيئة العامة للغذاء والدواء (SFDA) عبر مجلس إدارتها ورئيسها التنفيذي (المادة الأولى: تعريفا الهيئة والمجلس والرئيس)، وهي ذاتها ناشرة الخبر الرسمي عن النظام على موقعها (sfda.gov.sa/ar/node/79748). على جميع المنشآت الصيدلية القائمة تكييف أوضاعها خلال سنة من تاريخ العمل بالنظام (البند ثانيا من ديباجة المرسوم)؛ ويصدر مجلس الهيئة لائحته التنفيذية خلال مائة وعشرين يوما من تاريخ نشر النظام في الجريدة الرسمية (المادة الأربعون)، ويعمل بالنظام بعد مائة وعشرين يوما من تاريخ نشره في الجريدة الرسمية (المادة الثانية والأربعون). صدرت اللائحة التنفيذية بالفعل، ووجد نسخة رسمية منها بصيغة PDF منشورة على موقع الهيئة بتاريخ 2020-12-28 (sfda.gov.sa/sites/default/files/2025-05/SFDA28122020ee1.pdf) -- لم تُبنَ كمسار مستقل هذه الجولة (خارج نطاق هذه المهمة). لا يحمل النظام هيكلا من الفصول أو الأبواب (42 مادة متسلسلة دون تقسيم فرعي، مؤكد عبر مراجعة بصرية مباشرة لكل صفحات المستند الرسمي). بحسب البيانات الوصفية لـnezams.com فإن النظام لم يطرأ عليه أي تعديل حتى تاريخ هذه الجولة (\"لم يجرِ عليه تعديل\")؛ وهذا مطابق لما تأكد بالفحص البرمجي الشامل لنص الصفحة (لا يوجد أي ذكر لـ\"المرسوم الملكي رقم\" أو \"قرار مجلس الوزراء رقم\" داخل متن أي من مواده الاثنتين والأربعين عدا المادة الحادية والأربعين التي تذكر النظام السابق الملغى). ومع ذلك، عُثر على استشارة عامة (غير مؤكد أنها اكتملت أو أُقرت) على منصتي istitlaa.ncc.gov.sa وeparticipation.my.gov.sa تقترح تعديل مواد المخالفات والعقوبات في النظام (إضافة مفهوم \"المخالفات الجسيمة\" وآلية إنذار بمهلة تصحيحية) -- انظر known_unresolved_discrepancies؛ لم يُعتمد أي من هذا كتعديل نافذ لعدم التأكد من إقراره.",
+      "registry_source_url": null,
+      "official_source_file": "sources/pharmaceutical_establishments_law/law/official_source/pharmaceutical_establishments_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org",
+        "wipo.int",
+        "wipolex-res.wipo.int"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -4240,6 +4560,73 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "railway_law",
+      "display_name_en": "The Saudi Arabian Railway Law",
+      "display_name_ar": "نظام الخطوط الحديدية",
+      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
+      "verification_tier_rationale": "official_text_status='TIER_3_SECONDARY_MULTI_SOURCE_ONLY_DUAL_CROSS_VERIFIED': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "registry_source_authority": "صدر نظام الخطوط الحديدية بالمرسوم الملكي رقم (م/159) وتاريخ 22/8/1445هـ (الموافق 3/3/2024م)، بناء على قرار مجلس الوزراء رقم (692) وتاريخ 17/8/1445هـ، وبعد الاطلاع على قرار مجلس الشورى رقم (279/43) وتاريخ 22/11/1443هـ. نشر في جريدة أم القرى، العدد (5024)، الصادر في 15 مارس 2024م (الموافق تقريبا 5/9/1445هـ بحسب البيانات الوصفية المستقلة لموقع nezams.com، التي تذكر صراحة: \"تاريخ النشر: 1445/09/05هـ\"). الجهة المشرفة على تنفيذ النظام هي الهيئة العامة للنقل (TGA)، بالتنسيق مع وزارة النقل والخدمات اللوجستية (وزارة النقل والخدمات اللوجستية هي التي تتولى -بحسب البند ثالثا من قرار مجلس الوزراء رقم 692- وضع الاستراتيجيات والسياسات والخطط اللازمة لتطوير قطاع الخطوط الحديدية، بالتنسيق مع الهيئة). يصدر مجلس إدارة الهيئة اللائحة التنفيذية للنظام خلال (تسعين) يوما من تاريخ نشر النظام في الجريدة الرسمية، بعد التنسيق مع وزارة الصناعة والثروة المعدنية (المادة التاسعة والأربعون) -تفصيل تعاون بين قطاعي النقل والصناعة لافت لكنه مؤكد حرفيا في كلا المصدرين المستقلين (qanoonsa.com وnezams.com)، وهو منطقي نظرا لارتباط شبكة الخطوط الحديدية السعودية (SAR) الوثيق بنقل المعادن ومنتجات التعدين (كخامات الفوسفات والبوكسيت لصالح معدن). يعمل بالنظام بعد (تسعين) يوما من تاريخ نشره في الجريدة الرسمية (المادة الخمسون). اعتمد مجلس إدارة الهيئة العامة للنقل اللائحة التنفيذية لنظام الخطوط الحديدية بالفعل بتاريخ 22 ربيع الآخر 1446هـ الموافق 25 أكتوبر 2024م، متضمنة (91) مادة تنظيمية، بحسب خبر منشور مباشرة على نطاق وكالة الأنباء السعودية الرسمية (spa.gov.sa/N2195094) ومؤكد بشكل مستقل عبر argaam.com وsabq.org (كلاهما يذكران نفس الرقم 91 مادة وتاريخ الاعتماد ذاته).",
+      "registry_source_url": null,
+      "official_source_file": "sources/railway_law/law/official_source/railway_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "spa.gov.sa",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "Wayback/archive snapshot date(s) recorded in track's own files: 2026-02-15; track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "railway_law_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Railway Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الخطوط الحديدية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_UQN_GAZETTE_X_INDEPENDENT_PRESS_TRIPLE_CORROBORATION': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "اللائحة التنفيذية لنظام الخطوط الحديدية صادرة بقرار مجلس إدارة الهيئة العامة للنقل رقم (4/1/1/2024) وتاريخ 19/12/1445هـ (الموافق تقريباً 26 يونيو 2024م)، بناءً على الصلاحيات المخولة للمجلس نظاماً، وبعد الاطلاع على نظام الخطوط الحديدية الصادر بالمرسوم الملكي رقم (م/159) وتاريخ 22/8/1445هـ، وعلى تنظيم الهيئة العامة للنقل الصادر بقرار مجلس الوزراء رقم (323) وتاريخ 14/9/1434هـ وتعديلاته، وبعد الاطلاع على توصية اللجنة التنفيذية رقم (1/11/ت/2024/3) وتاريخ 22/5/2024م، وبعد المداولة قرر المجلس: اعتماد اللائحة التنفيذية لنظام الخطوط الحديدية وجداول المخالفات والعقوبات وفق الصيغة المرفقة (نص قرار المجلس هذا قُرئ حرفياً من صفحته الرسمية المخصصة على موقع جريدة أم القرى، uqn.gov.sa/details?p=26673). نُشرت اللائحة (91 مادة تنظيمية موزعة على 16 فصلاً) وجداول المخالفات والعقوبات (25 مخالفة) في جريدة أم القرى -- تعرض صفحتها الرسمية المخصصة لنص اللائحة ذاته (uqn.gov.sa/details?p=26674) التاريخ '1446-4-22 الموافق 25-10-2024' كتاريخ نشر، وهو نفس التاريخ الذي أكدته بشكل مستقل ثلاثة مصادر إخبارية (spa.gov.sa الوكالة الرسمية، argaam.com، sabq.org) بوصفه تاريخ 'اعتماد' اللائحة -- والتفسير الأرجح لهذا الفارق الزمني (نحو أربعة أشهر هجرية بين تاريخ قرار المجلس 19/12/1445هـ وتاريخ نشرها في الجريدة الرسمية 22/4/1446هـ) هو أن الصحافة أرّخت لـ'الاعتماد' بتاريخ نشره الفعلي في الجريدة الرسمية (اللحظة التي أصبح فيها متاحاً للعموم وتناولته وسائل الإعلام) لا بتاريخ توقيع قرار المجلس نفسه الذي سبقه بأشهر -- وهو نمط بيروقراطي معتاد وليس تناقضاً جوهرياً. تشرف على تنفيذ اللائحة الهيئة العامة للنقل (TGA)، الجهة ذاتها المشرفة على تنفيذ نظام الخطوط الحديدية الأم (المرسوم الملكي م/159).",
+      "registry_source_url": null,
+      "official_source_file": "sources/railway_law_implementing_regulation/law/official_source/railway_law_implementing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "spa.gov.sa",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_auctions_regulation",
+      "display_name_en": "Regulation of Real Estate Auctions",
+      "display_name_ar": "اللائحة التنظيمية للمزادات العقارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_DUAL_PRIMARY_TWO_MINOR_DISCLOSED_VARIANCES': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "الهيئة العامة للعقار (REGA) — مجلس إدارة الهيئة",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_auctions_regulation/law/official_source/real_estate_auctions_regulation_official_source.json",
+      "source_urls": [
+        "https://www.aleqt.com/2023/08/25/article_2608676.html",
+        "https://www.argaam.com/ar/article/articledetail/id/1666486",
+        "https://www.uqn.gov.sa/details?p=23541"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "real_estate_brokerage_law",
       "display_name_en": "Real Estate Brokerage Law",
       "display_name_ar": "نظام الوساطة العقارية",
@@ -4287,6 +4674,29 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "real_estate_contributions_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Real Estate Contributions Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام المساهمات العقارية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_MULTI_SOURCE_THREE_DISCLOSED_CONFLICTS': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدرت اللائحة التنفيذية لنظام المساهمات العقارية بقرار مجلس إدارة الهيئة العامة للعقار (بالتمرير) رقم (ق/م/إ/هـ/2024/1/ت) وتاريخ 18/7/1445هـ الموافق 30/1/2024م، استناداً إلى المادة (السابعة والثلاثين) من نظام المساهمات العقارية الصادر بالمرسوم الملكي رقم (م/203) وتاريخ 28/12/1444هـ التي توجب على المجلس إصدار اللائحة التنفيذية بالاتفاق مع هيئة السوق المالية، وبعد الاطلاع على خطاب هيئة السوق المالية رقم (ص/24/546/1) وتاريخ 10/7/1445هـ الموافق 22/1/2024م المتضمن اتفاق الهيئتين على صيغة اللائحة المرافقة. وقّع القرار معالي وزير الشؤون البلدية والقروية والإسكان رئيس مجلس إدارة الهيئة العامة للعقار الأستاذ ماجد بن عبدالله الحقيل. نُشرت اللائحة في جريدة أم القرى (الجريدة الرسمية) بتاريخ 6/8/1445هـ الموافق 16/2/2024م (العدد رقم 5020)، وأعلنت الهيئة العامة للعقار عن صدورها ونشرها عبر موقعها الرسمي وصحيفة أم القرى في اليوم ذاته (بحسب بيان وكالة الأنباء السعودية واس spa.gov.sa/N2048681). تتكون اللائحة من أربعين (40) مادة موزعة على سبعة (7) أقسام: مواد تمهيدية عامة (1-7) لا تحمل عنوان فصل صريح في أيٍّ من المصادر الأربعة المستقلة التي رجع إليها هذا المسار، تليها ستة فصول مرقمة: الفصل الأول (إجراءات الترخيص، 8-11)، الفصل الثاني (أحكام رأس مال المساهمة العقارية، 12-16)، الفصل الثالث (ممارسو نشاط المساهمات العقارية واختصاصاتهم، 17-30)، الفصل الرابع (جمعية المساهمين، 31-33)، الفصل الخامس (توزيع الأرباح وتصفية المساهمة العقارية، 34-35)، الفصل السادس (الرقابة والتفتيش والضبط، 36-40).",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_contributions_implementing_regulation/law/official_source/real_estate_contributions_implementing_regulation_official_source.json",
+      "source_urls": [
+        "https://uqn.gov.sa/details?p=24519"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "spa.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "real_estate_contributions_law",
       "display_name_en": "Real Estate Contributions Law",
       "display_name_ar": "نظام المساهمات العقارية",
@@ -4326,6 +4736,28 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "real_estate_finance_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Real Estate Finance Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام التمويل العقاري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_SAMA_RULEBOOK_PRIMARY_MULTI_SOURCE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "صدرت اللائحة التنفيذية لنظام التمويل العقاري بقرار معالي وزير المالية رقم (1229) وتاريخ 10/4/1434هـ الموافق 20/2/2013م، إعمالاً للصلاحيات المخوَّلة لوزير المالية بموجب نظام التمويل العقاري الصادر بالمرسوم الملكي رقم (م/50) وتاريخ 13/8/1433هـ، ونُشرت كاملة في الجريدة الرسمية بتاريخ 7/7/1434هـ الموافق 17/5/2013م. عُدِّلت اللائحة لاحقاً بقرار معالي وزير المالية رقم (1144) وتاريخ 2/6/1443هـ، الذي ألغى -بحسب البيان الرسمي الصادر عن البنك المركزي السعودي وتغطية صحفية مستقلة مؤرخة 19/4/2022م (argaam.com)- المادة (الرابعة) من صيغة اللائحة كما كانت قائمة حينذاك (التي كانت تحظر جمع نشاط التمويل العقاري مع أي نشاط تمويلي آخر)، سامحاً بذلك لشركات التمويل العقاري بممارسة أنشطة تمويلية أخرى دون حظر الجمع بينها وبين نشاط التمويل العقاري، مع بقاء صلاحية البنك المركزي في تقييد الترخيص بشروط خاصة. نتج عن هذا الإلغاء إعادة ترقيم تلقائية للمواد اللاحقة في النص الموحَّد المعروض حالياً على بوابة 'كتيب القواعد' الرسمية لدى البنك المركزي السعودي (SAMA Rulebook)، دون أن يترك النص الموحَّد أي علامة صريحة على مستوى المادة المفردة تبيّن أيّها استُحدث ترقيمه نتيجة لذلك الإلغاء تحديداً -- انظر verification_methodology_note وknown_unresolved_discrepancies أدناه للتفصيل الكامل. البنك المركزي السعودي (ساما) هو الجهة المشرفة والمنظِّمة لقطاع التمويل العقاري بموجب هذه اللائحة ونظامها الأساسي.",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_finance_implementing_regulation/law/official_source/real_estate_finance_implementing_regulation_official_source.json",
+      "source_urls": [
+        "https://www.bfc.gov.sa/ar-sa/RulesandRegulations1/اللائحة"
+      ],
+      "named_source_authorities": [
+        "nezams.com",
+        "rulebook.sama.gov.sa",
+        "sama.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "real_estate_finance_law",
       "display_name_en": "Real Estate Finance Law",
       "display_name_ar": "نظام التمويل العقاري",
@@ -4339,6 +4771,27 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "real_estate_marketing_advertising_regulation",
+      "display_name_en": "Regulatory Bylaw on Real Estate Marketing and Advertising",
+      "display_name_ar": "اللائحة التنظيمية للتسويق والإعلانات العقارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_REGA_GOV_SA_PRIMARY_MULTI_SOURCE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "وافق مجلس إدارة الهيئة العامة للعقار (REGA)، برئاسة معالي وزير البلديات والإسكان الأستاذ ماجد بن عبدالله الحقيل، على اللائحة التنظيمية للتسويق والإعلانات العقارية بموجب قراره رقم (2/35/م26) وتاريخ 25/10/1447هـ الموافق 13/4/2026م، إعمالاً لصلاحيات المجلس المخولة له نظاماً وبناءً على الفقرة (1) من المادة (السادسة) من نظام الوساطة العقارية الصادر بالمرسوم الملكي رقم (م/130) وتاريخ 30/11/1443هـ. نصّ القرار في فقرته الثانية على نشره في الجريدة الرسمية والعمل به من تاريخ النشر؛ وقد ذكرت صفحة اللائحة الرسمية المخصصة على الموقع الإلكتروني للهيئة (rega.gov.sa، قسم الأنظمة والقرارات / الأنظمة واللوائح والأدلة / اللوائح) تاريخ الإصدار 25/10/1447هـ وتاريخ النشر 14/11/1447هـ (الموافق تقريباً 2/5/2026م)، مع تصنيف حالة التشريع 'ساري' -- أي نافذ فعلاً، لا مشروعاً قيد الاستطلاع. اللائحة تحل محل ضوابط الإعلانات العقارية الصادرة بقرار مجلس إدارة الهيئة رقم (21/م14/3) وتاريخ 12/10/1442هـ، ومعايير ترخيص المنصات العقارية الإلكترونية وتصنيفها الصادرة بقرار مجلس إدارة الهيئة رقم (21/م14/4) وتاريخ 12/10/1442هـ (المادة الحادية عشرة). تتألف اللائحة من 12 مادة غير مقسمة إلى فصول (لا تحمل الوثيقة الرسمية أي عناوين 'الفصل')، وتنظم: التعريفات ونطاق السريان (م1-م3)، اشتراطات وإجراءات ترخيص الإعلان العقاري (م4)، البيانات الإلزامية الثماني الواجب تضمينها في الإعلان العقاري (م5)، التزامات المرخص له عند ممارسة التسويق العقاري (م6)، المحظورات في التسويق العقاري (م7)، التزامات المرخص له عند إنشاء منصة عقارية إلكترونية (م8)، حالات الاستثناء من اشتراط الترخيص المستقل (م9)، العقوبات (م10)، الإلغاء (م11)، والنشر والنفاذ (م12).",
+      "registry_source_url": null,
+      "official_source_file": "sources/real_estate_marketing_advertising_regulation/law/official_source/real_estate_marketing_advertising_regulation_official_source.json",
+      "source_urls": [
+        "https://rega.gov.sa/media/1ldhhazk/قرار-مجلس-الإدارة-بالموافقة-على-لائحة-التسويق-والاعلانات-العقارية.pdf",
+        "https://rega.gov.sa/الأنظمة-والقرارات/الأنظمة-واللوائح-والأدلة/اللوائح/اللائحة-التنظيمية-للتسويق-والإعلانات-العقارية/"
+      ],
+      "named_source_authorities": [
+        "spa.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -4535,6 +4988,27 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "road_transport_law",
+      "display_name_en": "The Saudi Arabian Road Transport Law",
+      "display_name_ar": "نظام النقل البري على الطرق",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدر نظام النقل البري على الطرق بالمرسوم الملكي رقم (م/188) وتاريخ 24/8/1446هـ (الموافق 23 فبراير 2025م)، بناء على قرار مجلس الوزراء رقم (614) وتاريخ 19/8/1446هـ، وبعد الاطلاع على قرارات مجلس الشورى رقم (69/8) وتاريخ 9/4/1445هـ، ورقم (110/11) وتاريخ 1/6/1446هـ، ورقم (183/18) وتاريخ 28/7/1446هـ. نشر في جريدة أم القرى، العدد (5073)، الصادر في 28 فبراير 2025م (الموافق 29/8/1446هـ بحسب جدول البيانات الوصفية المستقل لموقع nezams.com والبيانات الوصفية لصفحة uqn.gov.sa ذاتها 1446-8-29 الموافق 28-02-2025). يعمل بالنظام بعد مضي (180) مائة وثمانين يوما من تاريخ نشره (المادة الرابعة والثلاثون)، أي اعتبارا من نحو 27 أغسطس 2025م. الجهة المشرفة على تنفيذ النظام هي الهيئة العامة للنقل (TGA)، ويصدر مجلس إدارتها اللوائح التنفيذية للنظام خلال (180) مائة وثمانين يوما من تاريخ نشره (المادة الثانية والثلاثون).\n\nيتضمن مرسوم الإصدار (م/188) ذاته -في بنوده من (ثانيا) إلى (خامسا)- أحكاما انتقالية وإضافية مهمة لا ترد داخل أي من المواد الأربع والثلاثين المرقمة للنظام نفسه: (ثانيا) لا يخل نفاذ النظام بأحكام اتفاقية الامتياز بين حكومة المملكة وشركة الزيت العربية السعودية (أرامكو السعودية)، الموافق عليها بالمرسوم الملكي رقم (م/38) وتاريخ 6/4/1439هـ، فيما يتعلق بالحق الممنوح للشركة في نقل المواد الهيدروكربونية؛ (ثالثا) تمنح منشآت النقل البري على الطرق مهلة انتقالية لا تتجاوز (سنة) واحدة من تاريخ نفاذ النظام لتعديل أوضاعها، قابلة للتمديد بحد أقصى (6) أشهر إضافية بقرار من رئيس مجلس إدارة الهيئة؛ (رابعا) يحدد مجلس إدارة الهيئة أجور النقل لأنشطة النقل الحديدي والنقل البحري (لا النقل البري على الطرق الذي تتناوله المادة الثامنة عشرة من النظام ذاته بنص مطابق تقريبا)؛ (خامسا) استثناء من الأثر المؤجل لأحكام المادة (الرابعة والثلاثين) من النظام، تخالف الشاحنات الأجنبية التي تمارس النقل داخل المملكة دون ترخيص اعتبارا من تاريخ نشر النظام مباشرة (28 فبراير 2025م)، لا بعد مضي مائة وثمانين يوما. كذلك يكلف قرار مجلس الوزراء رقم (614) -في بنوده من (رابعا) إلى (عاشرا)- الهيئة بمهمات تنسيقية متعددة: مراجعة تنظيمها الخاص (الصادر بقرار مجلس الوزراء رقم 323 وتاريخ 14/9/1434هـ) في ضوء النظام الجديد؛ التنسيق مع وزارتي التعليم والداخلية بشأن النقل التعليمي؛ ومع وزارتي الحج والعمرة والداخلية والهيئة الملكية لمدينة مكة المكرمة والمشاعر المقدسة وهيئة تطوير المدينة المنورة بشأن نقل الحجاج والمعتمرين؛ ومع وزارة الصناعة والثروة المعدنية بشأن نقل البضائع الصناعية والتعدينية؛ ومع وزارة الطاقة بشأن نقل منتجات الطاقة؛ والتنسيق مع الهيئة العامة للطيران المدني لإعداد مذكرات تفاهم بشأن ترخيص نشاط الوساطة في النقل متعدد الوسائط للبضائع؛ وإصدار جدول تصنيف المخالفات (المنصوص عليه في الفقرة 1 من المادة الثالثة والعشرين من النظام) خلال (180) يوما من تاريخ نشر النظام.",
+      "registry_source_url": null,
+      "official_source_file": "sources/road_transport_law/law/official_source/road_transport_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "sama_law",
       "display_name_en": "Saudi Central Bank Law",
       "display_name_ar": "نظام البنك المركزي السعودي",
@@ -4621,6 +5095,28 @@
         "spa.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "seized_confiscated_funds_management_system",
+      "display_name_en": "System for the Management of Seized/Confiscated Funds in AML/CFT Crimes",
+      "display_name_ar": "نظام إدارة الأموال المحجوزة والمصادرة في جرائم غسل الأموال والجرائم الأصلية المرتبطة بها وجرائم تمويل الإرهاب",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_NOT_YET_IN_FORCE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "صدر نظام إدارة الأموال المحجوزة والمصادرة في جرائم غسل الأموال والجرائم الأصلية المرتبطة بها وجرائم تمويل الإرهاب بالمرسوم الملكي رقم (م/1) وتاريخ 2/1/1448هـ (الموافق 17/6/2026م)، بناء على قرار مجلس الوزراء رقم (16) وتاريخ 1/1/1448هـ (الموافق 16/6/2026م)، وبعد الاطلاع على قرار مجلس الشورى رقم (298/24) وتاريخ 18/10/1447هـ، ونظام الهيئة العامة للولاية على أموال القاصرين ومن في حكمهم الصادر بالمرسوم الملكي رقم (م/17) وتاريخ 13/3/1427هـ، ونظام مكافحة غسل الأموال الصادر بالمرسوم الملكي رقم (م/20) وتاريخ 5/2/1439هـ، ونظام مكافحة جرائم الإرهاب وتمويله الصادر بالمرسوم الملكي رقم (م/21) وتاريخ 12/2/1439هـ. نُشر في جريدة أم القرى الرسمية، العدد رقم (5164)، الصادر في 3/1/1448هـ (الموافق 18/6/2026م). الجهة المشرفة والمنفذة الرئيسية هي الهيئة العامة للولاية على أموال القاصرين ومن في حكمهم (المادتان 3، 5 وما بعدهما)، بالتنسيق مع وزارة المالية (التي تتولى إدارة الأموال المصادرة بعد صدور حكم قضائي نهائي، المادة 11) والمحكمة المختصة (التي تصدر أوامر نقل الأموال المحجوزة إلى الهيئة وأوامر بيعها والإفراج عنها، المواد 3، 7، 8، 13). كما نص البند (ثانيا) من قرار مجلس الوزراء رقم (16) على تشكيل لجنة دائمة برئاسة رئيس الهيئة، وعضوية ممثلين من وزارات الداخلية والمالية والعدل والتجارة والاستثمار، والبنك المركزي السعودي، والنيابة العامة، ورئاسة أمن الدولة، وهيئة السوق المالية، وهيئة الزكاة والضريبة والجمارك، ومتخصص في الشؤون المحاسبية والمالية من الهيئة؛ وهذه اللجنة آلية إشرافية منصوص عليها في قرار مجلس الوزراء نفسه وليست جزءا من مواد النظام الخمس عشرة ذاتها، فلم تُدرج كمادة (انظر known_unresolved_discrepancies). يُعمل بالنظام بعد (تسعين) يوما من تاريخ نشره في الجريدة الرسمية (المادة 15)، أي اعتبارا من نحو 16/9/2026م، وهو تاريخ لاحق لتاريخ بناء هذا المسار (2026-07-28)؛ لذلك يُسجَّل النظام في هذا المسار بأنه صادر وغير ساري بعد. يصدر مجلس إدارة الهيئة اللائحة التنفيذية خلال (تسعين) يوما من تاريخ نشر النظام (المادة 14)، ولم يُعثر هذه الجولة على أي لائحة تنفيذية صادرة فعلا (منطقي بالنظر لأن مهلة الإصدار نفسها لم تنقض بعد اعتبارا من تاريخ بناء هذا المسار).",
+      "registry_source_url": null,
+      "official_source_file": "sources/seized_confiscated_funds_management_system/law/official_source/seized_confiscated_funds_management_system_official_source.json",
+      "source_urls": [
+        "https://www.uqn.gov.sa/decisions-and-regulations/4001359"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -5044,6 +5540,32 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "tga_organizational_statute",
+      "display_name_en": "Organizing Statute of the General Authority for Transport (TGA)",
+      "display_name_ar": "تنظيم هيئة النقل العام (الهيئة العامة للنقل)",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_PRIMARY_MULTI_SOURCE_ONE_UNRESOLVED_AMENDMENT_DISCLOSED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "تنظيم هيئة النقل العام (المسمى الحالي: الهيئة العامة للنقل) صادر بقرار مجلس الوزراء رقم (323) وتاريخ 14/9/1434هـ (الموافق 22/07/2013م)، ونُشر في الجريدة الرسمية بتاريخ 30/10/1434هـ (06/09/2013م). أُعدّ التنظيم بناءً على قرار مجلس الوزراء رقم (373) وتاريخ 15/11/1433هـ (الذي قضى بأن تقوم هيئة الخبراء بمجلس الوزراء بمشاركة ممثلين من الجهات ذات العلاقة بإعداد مشروع تنظيم لهيئة النقل العام)، وبعد الاطلاع على الفقرة (2) من المادة (24) من نظام مجلس الوزراء الصادر بالأمر الملكي رقم (أ/13) وتاريخ 3/3/1414هـ، وعلى نظام النقل العام على الطرق في المملكة العربية السعودية الصادر بالمرسوم الملكي رقم (م/25) وتاريخ 21/6/1397هـ، وعلى محاضر هيئة الخبراء بمجلس الوزراء أرقام (19) و(369) و(502)، وعلى توصية اللجنة العامة لمجلس الوزراء رقم (681) وتاريخ 8/9/1434هـ. عُدّل التنظيم ست مرات مؤكدة موثقة هذه الجولة: (1) قرار مجلس الوزراء رقم (248) وتاريخ 12/6/1437هـ -- عدّل تعريف (النقل العام) في المادة الأولى وأضاف تعريفين جديدين، واستبدل المادة الرابعة بالكامل (24 اختصاصاً بدلاً من 22)، واستبدل الفقرة (1) من المادة الخامسة بالكامل (مجلس إدارة برئاسة الوزير، 8 أعضاء)؛ (2) قرار مجلس الوزراء رقم (707) وتاريخ 30/11/1438هـ -- حذف تعريف (الوزير) من المادة الأولى، وعدّل عجز المادة الثانية (الارتباط التنظيمي بات لرئيس مجلس الوزراء)، وعدّل صدر الفقرة (1) من المادة الخامسة (تعيين رئيس المجلس بأمر ملكي بدلاً من رئاسة الوزير) مع إحلال (رئيس المجلس) محل (الوزير) في الفقرة الفرعية (ح)، وأحلّ (رئيس المجلس) محل (الوزير) في المادة التاسعة؛ (3) قرار مجلس الوزراء رقم (631) وتاريخ 6/11/1440هـ -- دمج هيئة الخطوط الحديدية (الصادر تنظيمها بقرار مجلس الوزراء رقم (1) وتاريخ 12/1/1429هـ، الملغى بموجب هذا القرار) مع هيئة النقل العام في هيئة واحدة، وتعديل اسم الهيئة لاحقاً ليكون (الهيئة العامة للنقل) أينما ورد في الأنظمة والتنظيمات، وتعديل عبارة (النقل العام) لتكون (النقل) أينما وردت في هذا التنظيم (تعليمة عامة لم يُعثر على تنفيذ نصي حرفي لها داخل نص المواد المعروض على بوابة هيئة الخبراء حتى أحدث لقطة أرشيفية متاحة -- انظر tga_631_phrase_and_name_substitution_not_executed_in_boe_text)، مع إلغاء الفقرة (2) من قرار مجلس الوزراء رقم (323) الأصلي ذاته (إخضاع منسوبي الهيئة لأحكام الأمر السامي رقم 5464/م ب)، وإعادة تعريف (الوزير: وزير النقل) إلى المادة الأولى، وإعادة عجز المادة الثانية إلى (الوزير)، وإعادة صدر الفقرة (1) من المادة الخامسة إلى (برئاسة الوزير) مع إحلال (الوزير) محل (رئيس المجلس) في الفقرة الفرعية (ح)، وإحلال (الوزير) محل (رئيس المجلس) في المادة التاسعة، وإضافة فقرة (3) جديدة إلى المادة الثالثة عشرة، وإضافة مادة جديدة (الثالثة عشرة مكرر) بشأن خضوع منسوبي الهيئة لنظامي العمل والتأمينات الاجتماعية؛ (4) قرار مجلس الوزراء رقم (12) وتاريخ 2/1/1443هـ -- عدّل الفقرة (4) من المادة السادسة (اعتماد الهيكل التنظيمي للهيئة مباشرة بدلاً من رفعه للاعتماد) -- مؤكَّد عبر جريدة أم القرى مباشرة، وغير مدرَج في شعبة تعديلات المادة على بوابة هيئة الخبراء حتى أحدث لقطة أرشيفية متاحة؛ (5) قرار مجلس الوزراء رقم (586) وتاريخ 22/8/1444هـ -- استبدل الفقرة (1) من المادة الخامسة بالكامل (مجلس إدارة من 10 أعضاء بدلاً من 8، بإضافة ممثلي وزارة الموارد البشرية والتنمية الاجتماعية ووزارة الاستثمار والهيئة العامة للطرق)، وأحلّ عبارة في الفقرة (3) من المادة السابعة؛ (6) قرار مجلس الوزراء (رقمه غير محسوم بين مصدرين: 382 بحسب بوابة هيئة الخبراء، أو 386 بحسب إعادة نشر قانون لنص القرار الكامل) وتاريخ 17/5/1446هـ -- أضاف ممثلاً من وزارة الطاقة إلى عضوية مجلس إدارة الهيئة، وقضى بإعادة ترتيب الفقرات الفرعية للفقرة (1) من المادة الخامسة دون أن يحدد أي من المصدرين النص الناتج بعد إعادة الترتيب.",
+      "registry_source_url": null,
+      "official_source_file": "sources/tga_organizational_statute/law/official_source/tga_organizational_statute_official_source.json",
+      "source_urls": [
+        "https://nezams.com/تنظيم-هيئة-النقل-العام/",
+        "https://qanoonsa.com/p/505906/",
+        "https://uqn.gov.sa/?p=7026"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "qanoonsa.com",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },

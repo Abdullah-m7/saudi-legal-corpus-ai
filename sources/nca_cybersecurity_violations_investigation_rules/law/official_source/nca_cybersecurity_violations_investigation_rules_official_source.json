@@ -1,0 +1,167 @@
+{
+  "document": "قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها",
+  "document_en": "Rules for Detecting and Investigating Cybersecurity Violations",
+  "law_component": "regulation",
+  "decree": "قرار مجلس إدارة الهيئة الوطنية للأمن السيبراني رقم (ع26/1/1/1ت) وتاريخ 22/8/1447هـ",
+  "decree_date_hijri": "22/8/1447",
+  "decree_date_gregorian": "10/2/2026",
+  "legal_status_ar": "نافذ",
+  "consolidated_amended_law": false,
+  "issuing_authority_ar": "قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها صادرة بقرار مجلس إدارة الهيئة الوطنية للأمن السيبراني رقم (ع26/1/1/1ت) وتاريخ 22/8/1447هـ، إعمالاً لتكليف المجلس ذاته الوارد في البند (سادساً) من الممكنات النظامية للهيئة الوطنية للأمن السيبراني (الصادرة بالمرسوم الملكي رقم (م/117) وتاريخ 21/6/1446هـ)، والذي ألزم مجلس إدارة الهيئة بإصدار قواعد ضبط المخالفات المنصوص عليها في تلك الممكنات والتحقيق فيها. نُشر نص هذه القواعد كاملاً على جريدة أم القرى الرسمية (uqn.gov.sa/decisions-and-regulations/4001430) بتاريخ 3/2/1448هـ الموافق 17/7/2026م، وهو ما يجعلها -بحسب تكليف البحث الأولي لهذا المسار- أحدث صك تشريعي سعودي تم رصده حتى تاريخ بناء هذا المسار (نُشرت في الجريدة الرسمية قبل نحو 11 يوماً فقط من تاريخ هذا التمرير 2026-07-28). ووفقاً للمادة التاسعة (الفقرة 5) من هذه القواعد ذاتها، فإن العمل بها يبدأ من تاريخ نشرها في الموقع الإلكتروني للهيئة الوطنية للأمن السيبراني (nca.gov.sa) لا من تاريخ نشرها في الجريدة الرسمية -- وقد تأكد هذا التمرير من أن نسخة هذه القواعد متاحة فعلياً وحيّة (HTTP 200) على موقع الهيئة الإلكتروني ذاته (nca.gov.sa/ar/laws-and-regulations) وعلى نطاقه الفرعي لاستضافة الملفات (cdn.nca.gov.sa) بتاريخ بناء هذا المسار ذاته، وهو ما يثبت -على الأقل- أنها منشورة بالفعل على الموقع الإلكتروني للهيئة في هذا التاريخ أو قبله؛ لم يُعثر هذا التمرير على تاريخ نشر إلكتروني دقيق مستقل عن تاريخ النشر في الجريدة الرسمية (انظر known_unresolved_discrepancies).",
+  "issuing_authority_en": "The Rules for Detecting and Investigating Cybersecurity Violations were issued by the Board of Directors of the National Cybersecurity Authority (NCA), Decision No. (ع26/1/1/1ت) dated 22/8/1447H, implementing the Board's own mandate in Item (سادساً/Sixth) of the Authority's Regulatory (Legal) Enablers (Royal Decree No. M/117, 21/6/1446H), which required the Board to issue rules for detecting and investigating the violations defined in that instrument. The full text of these Rules was published on the official Umm Al-Qura Gazette (uqn.gov.sa/decisions-and-regulations/4001430) with a dateline of 3/2/1448H = 17/7/2026G -- per this track's own commissioning brief, one of the very newest instruments in this corpus, gazetted only around 11 days before this track's build date (2026-07-28). Per the Rules' own Article 9(5), they take effect from the date of publication on NCA's own website, not from the gazette date; this pass independently confirmed the Rules are live and reachable (HTTP 200) on both nca.gov.sa/ar/laws-and-regulations and its cdn.nca.gov.sa file host as of this track's own build date, proving they are already published there on or before that date -- though no distinct website-publication-date metadata (separate from the gazette dateline) was located.",
+  "administering_authority_en": "National Cybersecurity Authority (NCA) -- الهيئة الوطنية للأمن السيبراني",
+  "verification_methodology_note": "PRIMARY SOURCE 1 -- NCA's OWN OFFICIAL WEBSITE (LIVE, RE-FETCHED THIS PASS): a prior research pass this session had already downloaded a copy of this instrument's PDF to local scratch storage (7 pages, PDF 1.7, 438,292 bytes). This pass independently re-confirmed the document's live availability by using WebFetch against nca.gov.sa/ar/laws-and-regulations/, which surfaced a direct CDN download link (https://cdn.nca.gov.sa/api/files/public/upload/99774fca-049f-4c0f-b797-43542e8e8cb9_قواعد-ضبط-مخالفات-الأمن-السيبراني-والتحقيق-فيها-.pdf), then fetched that exact URL directly via curl over the pre-configured proxy (HTTP 200, 438,028 bytes, PDF 1.7, 7 pages -- a near-identical but NOT byte-identical file to the earlier-downloaded copy: same page count and layout, different SHA-256 hash). Diffing the two PDFs' pdftotext -layout extractions (after NFKC Unicode normalization to resolve presentation-form Lam-Alef ligature glyphs, a purely cosmetic Unicode-form issue, NOT the silent letter-transposition corruption seen in this corpus's cybersecurity_authority_law/cybersecurity_authority_enablers tracks' own PDFs -- no such transposition bug was found in this document's text layer by either pdftotext or PyMuPDF/fitz) revealed the live, freshly-fetched copy differs from the earlier-downloaded copy in EXACTLY three places, each a small grammatical correction: (1) Article 3, 'وفقًا الفقرة' (earlier copy, missing the preposition لـ) corrected to 'وفقًا للفقرة' (live copy); (2) Article 4(3), 'يشتبه في استخدمه' (earlier copy) corrected to 'يشتبه في استخدامه' (live copy); (3) Article 8(2), 'النحو الذي تحددهما الهيئة' (earlier copy, dual pronoun) corrected to 'النحو الذي تحدده الهيئة' (live copy, singular pronoun). This indicates NCA silently corrected three minor typos in its own web-hosted copy of this very recently issued instrument between the earlier download and this pass's re-fetch (both within the same build session) -- entirely plausible for a document gazetted only ~11 days before this track's build date. This track uses the LIVE, re-fetched copy's wording (the corrected version) as governing text; the earlier copy's three now-superseded variants are disclosed, not silently discarded -- see known_unresolved_discrepancies, key nca_cybersecurity_violations_investigation_rules_pdf_typo_correction_between_fetches. Every one of the 9 articles was independently re-confirmed by direct visual inspection of 400dpi rendered page images (pdftoppm) of BOTH PDF copies -- not merely by trusting either PDF's own text layer -- including targeted close-up crops of all three corrected passages, each visually confirmed exactly as described above in the live copy.\n\nPRIMARY SOURCE 2 -- THE UMM AL-QURA OFFICIAL GAZETTE (uqn.gov.sa), AN ENTIRELY SEPARATE GOVERNMENT PORTAL, FULL TEXT DIRECTLY EXTRACTED: unlike this corpus's prior experience with this exact portal for the parent cybersecurity_authority_enablers track (where uqn.gov.sa's JS-rendered listing page could not be induced to yield full article text), this pass successfully retrieved uqn.gov.sa/decisions-and-regulations/4001430's raw HTML (previously saved to local scratch storage as uqn.html by a prior research pass this same session, and independently re-confirmed live and reachable via curl, HTTP 200, this pass) and located within it a server-rendered '<article id=\"article-content\">' element containing the COMPLETE, clean, un-paginated Arabic text of all 9 articles -- not merely a topical summary or partial excerpt. This same page's own metadata independently confirms: the exact title ('قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها'); the exact adopting decision ('المعتمدة بقرار مجلس إدارة الهيئة الوطنية للأمن السيبراني رقم (ع26 /1/ 1/ 1ت) وتاريخ 1447/08/22هـ') -- an EXACT match for the decision number and Hijri date given in this track's own commissioning brief; and the gazette dateline itself ('1448-2-03 الموافق 17-07-2026') -- again an EXACT match for the commissioning brief's stated gazette date. Diffing this gazette full text against the live NCA PDF's own extraction (after normalizing bidi control characters, digit-convention differences -- the gazette's own CMS renders Western/Hindu-Arabic digits for internal fragment cross-references such as 'الفقرة (1)', while the PDF's own typeset house style uses Arabic-Indic digits 'الفقرة (١)' for the same references, a cosmetic web-publishing-pipeline artifact, not a wording difference -- and list-marker punctuation) found the two texts agree on every substantive word, with the SAME three corrections already found in the live PDF ((1) 'وفقًا للفقرة', (2) 'استخدامه', (3) 'تحدده') already present in the gazette's own text -- i.e. the gazette's full text matches the LIVE (corrected) PDF copy exactly, not the earlier-downloaded (pre-correction) copy. This is a genuine, independent, government-sourced full-text confirmation from a portal operated separately from NCA, satisfying this corpus's own TIER_1 standard ('2+ independently-produced OFFICIAL/PRIMARY sources agree with no unresolved reachability gap') without relying on any OCR or any non-governmental secondary aggregator.\n\nTIER ASSESSED: TIER_1_PRIMARY_MULTI_SOURCE. Two independent, directly-fetched, official/primary government sources (NCA's own live-hosted PDF; the Umm Al-Qura Official Gazette's own full-text HTML) agree word-for-word on the governing Arabic text of all 9 articles, with no reachability gap on either source this pass (both returned HTTP 200 on live re-fetch) and no OCR step required for either source (the PDF's own text layer, unlike this corpus's cybersecurity_authority_law/cybersecurity_authority_enablers tracks, has no letter-transposition corruption -- confirmed independently via both pdftotext and PyMuPDF/fitz, and via direct visual reading of 400dpi rendered page images for every one of the 9 articles). This is a materially STRONGER verification position than the parent cybersecurity_authority_enablers track (TIER_2, since that track's own uqn.gov.sa fetch could not yield full text and relied on qanoonsa.com, a non-governmental secondary aggregator, for its second leg).\n\nSTRUCTURE: unlike the parent cybersecurity_authority_enablers track (a flat 7-بند schedule with no 'مادة' heading anywhere), this instrument IS organized into 9 numbered مواد (articles), matching this corpus's standard law/regulation convention -- confirmed from the PDF's own layout (each article introduced by a 'المادة <ordinal>: <title>' heading, in the document's own index/الفهرس page and repeated at each article's own position) and from the gazette's own HTML, which wraps each article heading in its own <strong> tag. There are no أبواب (parts) or فصول (chapters) grouping these 9 مواد -- confirmed from both sources' identical flat structure -- so chapter_structure below carries a single flat entry spanning articles 1-9, following this corpus's own cybersecurity_authority_enablers precedent for documenting a genuinely flat (no-باب/no-فصل) structure rather than fabricating one.\n\nNUMBERED SUB-ITEM FORMATTING: Articles 4, 5, 7, 8, and 9 contain enumerated clauses that appear in the source PDF with leading Arabic-Indic numeral markers followed by a period (e.g. '١.', '٢.', '٣.' ...). This track preserves these leading numerals exactly as rendered in the PDF's own typeset house style (confirmed via direct visual inspection of the rendered page images), consistent with this corpus's own numeral-preservation principle (see the parent cybersecurity_authority_enablers track's own cybersecurity_authority_enablers_mixed_numeral_conventions_preserved discrepancy entry) of preserving exactly the numeral convention used at each specific point in the primary document actually used as governing text, rather than silently normalizing to a different convention the source itself does not use at that point. Internal cross-references to specific الفقرة/البند numbers (e.g. 'الفقرة (١) من البند (ثانياً)') are likewise preserved in the PDF's own Arabic-Indic convention, even though the gazette's own CMS renders the equivalent references with Western digits -- a web-publishing-pipeline artifact of the gazette portal, not a wording difference in the underlying legal text (see known_unresolved_discrepancies, key nca_cybersecurity_violations_investigation_rules_digit_convention_cosmetic_difference).\n\nA DOCUMENT-INTERNAL INCONSISTENCY, DISCLOSED, NOT SILENTLY RESOLVED: the source PDF's own index/الفهرس page (PDF page 3) lists Article 6's title as 'إجراءات التعامل مع الحالات الضرورية والعاجلة' (order: الضرورية والعاجلة/'urgent' then 'necessary'), but Article 6's own heading at its actual position in the body (PDF page 5) reads 'إجراءات التعامل مع الحالات العاجلة والضرورية' (order: العاجلة والضرورية/'necessary' then 'urgent', reversed) -- confirmed identically in BOTH PDF copies (earlier and live) and in the gazette's own full text (which matches the BODY order, not the index order). This track uses the body/gazette-confirmed order ('العاجلة والضرورية') as the article's own number_label_ar, since it is confirmed by 2 independent sources against the index page's own single, evidently-stale internal cross-reference; see known_unresolved_discrepancies, key nca_cybersecurity_violations_investigation_rules_toc_body_title_order_mismatch.\n\nRELATIONSHIP TO THE PARENT INSTRUMENT: Article 1 of this track's own text defines 'الممكنات النظامية' by direct cross-reference to Royal Decree No. (م/117) dated 21/6/1446H -- i.e. this corpus's own cybersecurity_authority_enablers track -- and repeatedly cross-references specific بنود of that instrument throughout (e.g. Article 1's own definition of 'المخالفات' as 'البند (أولاً) من الممكنات النظامية'; Article 3's cross-reference to 'الفقرة (١) من البند (ثانياً)'; Article 7's cross-reference to 'الفقرة (٤) من البند (ثانياً)'). This is exactly the implementing/subordinate rule that the parent enablers track's own Item (سادساً) mandated the NCA Board to issue -- confirmed by this pass as a genuine, direct implementing relationship, not a coincidental topical similarity.\n\nNo legal text is altered beyond: (a) NFKC Unicode normalization to resolve cosmetic presentation-form ligature glyphs (a Unicode-form fix, not a wording change); (b) whitespace/line-break normalization and removal of page-furniture (running headers/footers reading 'قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها' and 'عام' page-classification banners, plus page numbers) which are not part of the legal text; (c) adoption of the LIVE (corrected) wording at the three specific points described above, in preference to the earlier-downloaded copy's now-superseded typos, both disclosed. Arabic governs; no translation, paraphrase, or legal interpretation was performed on the Arabic article text (English fields in this artifact are for indexing/discovery only). Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "nca_cybersecurity_violations_investigation_rules_pdf_typo_correction_between_fetches",
+      "description": "A prior research pass this same session downloaded this instrument's official NCA PDF to local scratch storage (438,292 bytes). This pass independently re-fetched the exact same document live from nca.gov.sa's own CDN (438,028 bytes) -- same page count and layout, different SHA-256 hash. Diffing the two PDFs' text (after NFKC normalization) found exactly three differences, all minor grammatical corrections in the live copy relative to the earlier copy: (1) Article 3: 'وفقًا الفقرة' (earlier, missing the preposition لـ) -> 'وفقًا للفقرة' (live); (2) Article 4, item 3: 'يشتبه في استخدمه' (earlier) -> 'يشتبه في استخدامه' (live); (3) Article 8, item 2: 'النحو الذي تحددهما الهيئة' (earlier, dual pronoun) -> 'النحو الذي تحدده الهيئة' (live, singular pronoun). Both PDF versions were independently visually confirmed via 400dpi rendered page-image close-ups of the exact three passages (not merely by trusting either PDF's own text layer). The Umm Al-Qura Official Gazette's own full text (uqn.gov.sa) matches the LIVE (corrected) wording at all three points, which is why this track adopts the live wording as governing text. This indicates NCA silently corrected three small typos in its own web-hosted copy of this very recently issued instrument sometime between the two fetches (both within the same build session) -- plausible given the instrument was gazetted only ~11 days before this track's build date. Any future re-verification pass should re-fetch the live copy rather than assume either historical copy remains current."
+    },
+    {
+      "article_key": "nca_cybersecurity_violations_investigation_rules_digit_convention_cosmetic_difference",
+      "description": "The Umm Al-Qura Gazette's own web CMS (uqn.gov.sa) renders internal legal cross-references such as 'الفقرة (١) من البند (ثانياً)' using Western/Hindu-Arabic digits (e.g. 'الفقرة (1)'), while the NCA PDF's own typeset house style uses Arabic-Indic digits for the same references (e.g. 'الفقرة (١)'). This is confirmed to be a cosmetic web-publishing-pipeline artifact of the gazette portal's own CMS, not a wording difference in the underlying legal text -- the gazette's own dateline metadata on the SAME page similarly renders as Western digits ('1447/08/22هـ') where the PDF's own typeset date field uses Arabic-Indic digits ('١٤٤٦/٦/٢١هـ' for the enablers cross-reference date). This track preserves the PDF's own Arabic-Indic convention throughout as the governing typeset presentation, per this corpus's numeral-preservation principle."
+    },
+    {
+      "article_key": "nca_cybersecurity_violations_investigation_rules_toc_body_title_order_mismatch",
+      "description": "The source PDF's own index/الفهرس page (PDF page 3) lists Article 6's title as 'إجراءات التعامل مع الحالات الضرورية والعاجلة', but Article 6's own heading at its actual position in the body (PDF page 5) reads 'إجراءات التعامل مع الحالات العاجلة والضرورية' (the two adjectives reversed) -- confirmed identically in both the earlier and live PDF copies. The Umm Al-Qura Gazette's own full text matches the BODY order ('العاجلة والضرورية'), not the index-page order. This track uses the body/gazette-confirmed order as Article 6's own number_label_ar/title, since it is corroborated by 2 independent sources against the index page's own apparently-stale internal cross-reference; the index-page variant is disclosed here, not silently normalized away."
+    },
+    {
+      "article_key": "nca_cybersecurity_violations_investigation_rules_effective_date_tied_to_own_website_not_gazette",
+      "description": "Unlike several other tracks in this corpus where the operative instrument's own text ties its effective date to the OFFICIAL GAZETTE publication date, Article 9(5) of these Rules ties their effective date to the date of publication on the National Cybersecurity Authority's OWN ELECTRONIC WEBSITE ('يعمل بهذه القواعد من تاريخ نشرها في الموقع الإلكتروني للهيئة'), not the Umm Al-Qura Gazette date. This pass could not locate a distinct website-publication-date metadata field independent of the gazette's own dateline (3/2/1448H = 17/7/2026G); what this pass DID independently confirm is that the Rules are live and reachable (HTTP 200) on both nca.gov.sa/ar/laws-and-regulations and its cdn.nca.gov.sa file host as of this track's own build date (2026-07-28), which necessarily means they are already published on NCA's own website on or before that date -- sufficient to record legal_status_ar as 'نافذ' (in force), but this is an inference from live reachability, not a direct government statement of a specific website-publication date distinct from the gazette dateline."
+    },
+    {
+      "article_key": "nca_cybersecurity_violations_investigation_rules_decree_date_gregorian_computed_not_sourced",
+      "description": "decree_date_gregorian ('10/2/2026') for the Board Decision date (22/8/1447H) was computed using the standard Hijri-Gregorian conversion algorithm (Python's hijri-converter/Umm-al-Qura-calendar library), NOT independently found stated as such on any source reached this pass. Confidence in this specific conversion is elevated because the SAME algorithm, applied to the Umm Al-Qura Gazette's OWN independently-confirmed dateline (3/2/1448H), reproduces EXACTLY the Gregorian date already stated on that same gazette page (17/7/2026G) -- i.e. the algorithm is validated against a source-confirmed data point for this exact document, not used blind -- but the 22/8/1447H -> 10/2/2026G conversion itself remains a computed estimate, not a directly sourced government statement, and is flagged accordingly per this corpus's own practice (see e.g. the high_risk_professions_regulation track's own analogous disclosure)."
+    }
+  ],
+  "amendment_history": [
+    {
+      "decree": "قرار مجلس إدارة الهيئة الوطنية للأمن السيبراني رقم (ع26/1/1/1ت)",
+      "date_hijri": "22/8/1447",
+      "note": "الإصدار التأسيسي والوحيد -حتى تاريخ هذا التمرير- لقواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها (تسع مواد)، الصادرة إعمالاً لتكليف البند (سادساً) من الممكنات النظامية للهيئة الوطنية للأمن السيبراني (المرسوم الملكي رقم م/117، 21/6/1446هـ)، ونُشرت في جريدة أم القرى الرسمية بتاريخ 3/2/1448هـ الموافق 17/7/2026م. لم يُعثر هذا التمرير على أي تعديل لاحق لنص هذا الإصدار ذاته منذ صدوره (وهو أمر متوقع بالنظر إلى حداثة نشره -- نحو 11 يوماً فقط قبل تاريخ بناء هذا المسار)."
+    }
+  ],
+  "chapter_structure": [
+    {
+      "label_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة",
+      "title_ar": "تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)، غير مجمعة تحت أبواب أو فصول رسمية: التعريفات (الأولى) -- النطاق (الثانية) -- تحديد المفتش (الثالثة) -- صلاحيات المفتش (الرابعة) -- مسؤوليات المفتش (الخامسة) -- إجراءات التعامل مع الحالات العاجلة والضرورية (السادسة) -- التحقيق (السابعة) -- التزامات الأطراف ذوي العلاقة (الثامنة) -- أحكام عامة (التاسعة).",
+      "articles": "1-9"
+    }
+  ],
+  "article_count": 9,
+  "status_counts": {
+    "اصلية": 9,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "articles": {
+    "nca_cybersecurity_violations_investigation_rules_art_001": {
+      "number_label_ar": "المادة الأولى",
+      "article_title_ar": "التعريفات",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "يُقصَد بالألفاظ والعبارات الآتية -أينما وردت في هذه القواعد- المعاني المبينة أمام كل منها، ما لم يقتضِ السياق غير ذلك:\n\nالممكنات النظامية: الممكنات النظامية للهيئة الوطنية للأمن السيبراني، الصادرة بالمرسوم الملكي رقم (م/117) وتاريخ 21/6/1446هـ.\n\nالقواعد: قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها.\n\nالهيئة: الهيئة الوطنية للأمن السيبراني.\n\nالمجلس: مجلس إدارة الهيئة.\n\nالمحافظ: محافظ الهيئة.\n\nالمخالفات: المخالفات المنصوص عليها في البند (أولاً) من الممكنات النظامية.\n\nالمفتش: الشخص المخول بالقيام بالتفتيش وضبط المخالفات، والتحقيق فيها وفقاً لما ورد في الفقرة (١) من البند (ثانياً) من الممكنات النظامية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_002": {
+      "number_label_ar": "المادة الثانية",
+      "article_title_ar": "النطاق",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "تنطبق هذه القواعد على جميع الأشخاص -الطبيعيين والاعتباريين- المخاطبين بأحكام الممكنات النظامية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_003": {
+      "number_label_ar": "المادة الثالثة",
+      "article_title_ar": "تحديد المفتش",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "يحدد المفتشون بقرار من المحافظ وفقاً للفقرة (١) من البند (ثانياً) من الممكنات، وتمنح الهيئة للمفتش ما يثبت صفته النظامية؛ للقيام بالأعمال المنوطة به.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_004": {
+      "number_label_ar": "المادة الرابعة",
+      "article_title_ar": "صلاحيات المفتش",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "يتولى المفتشون -مجتمعين أو منفردين- القيام بأعمال الرقابة والتفتيش على الأماكن والأنشطة ذات الصلة بالأمن السيبراني؛ لضبط المخالفات والتحقيق فيها، ولهم في سبيل ذلك ما يلي:\n\n١. دخول الأماكن والوصول إلى الشبكات وأنظمة تقنية المعلومات وأنظمة التقنيات التشغيلية، ومكوناتها من أجهزة ومعدات وبرمجيات، والاطلاع على ما تحويه من بيانات ومستندات؛ بما في ذلك النسخ الاحتياطية، والمواقع الأخرى، وتفتيشها وفحصها وضبطها.\n\n٢. بحث وجمع الأدلة والمعلومات اللازمة ذات العلاقة بالمخالفة، وفحص أي وثائق أو بيانات أو معلومات أو مستندات، وأخذ نسخ منها. ولهم في ذلك التوثيق بأي من الوسائل النظامية لما يقع تحت نظرهم من أدلة أو قرائن.\n\n٣. التحفظ على أي وثائق أو سجلات أو أنظمة تقنية المعلومات أو أنظمة التقنيات التشغيلية أو أجهزة أو معدات أو برمجيات أو بيانات ونحو ذلك، مما استخدم في المخالفة، أو يشتبه في استخدامه أثناء ارتكاب المخالفة، ويتم ضبطها وإثباتها في محضر التفتيش.\n\n٤. اتخاذ أي إجراء آخر يرى المفتش أهميته في حدود الصلاحيات الممنوحة له نظاماً.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_005": {
+      "number_label_ar": "المادة الخامسة",
+      "article_title_ar": "مسؤوليات المفتش",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "على المفتش عند أدائه للأعمال المنوطة به، القيام بالآتي:\n\n١. إثبات صفته الرسمية، المشار إليها في المادة (الثالثة) من القواعد.\n\n٢. التقيد بأحكام الممكنات النظامية، وهذه القواعد، وما يصدر عن الهيئة في هذا الشأن.\n\n٣. المحافظة على السرية أثناء أداء مهامه، ومن ذلك سرية الوثائق والمعلومات والبيانات والأدلة والإفادات المكتوبة والشفاهية وغيرها التي يطلع عليها بحكم أعماله، ولا يجوز له -حتى بعد انتهاء تكليفه من الأعمال المنوطة به- الكشف عنها لأي طرف آخر إلا في حال موافقة الهيئة الخطية.\n\n٤. تحرير محضر للتفتيش وتوثيق جميع الإجراءات التي جرت أثناء التفتيش، وفق النموذج الذي تحدده الهيئة، ويتم توثيق حالات المنع أو الإعاقة عن أداء أعماله في المحضر.\n\n٥. إذا اشتبه المفتش أثناء ممارسته لمهماته بوقوع جريمة ذات صلة بالأمن السيبراني، فعليه ضبط ما يتعلق بذلك والرفع به للهيئة لإحالتها للجهات المعنية.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_006": {
+      "number_label_ar": "المادة السادسة",
+      "article_title_ar": "إجراءات التعامل مع الحالات العاجلة والضرورية",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "إذا ارتكبت أياً من المخالفات فللهيئة في الحالات العاجلة والضرورية، للحفاظ على الأمن السيبراني -بقرار يصدر من المحافظ أو من ينيبه- تعليق أو إيقاف عمل أي من الأنشطة ذات الصلة بالأمن السيبراني أو الشبكات أو أنظمة تقنية المعلومات أو أنظمة التقنيات التشغيلية، أو مكوناتها من أجهزة ومعدات وبرمجيات، محل المخالفة وفق الإجراءات التي تحددها الهيئة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_007": {
+      "number_label_ar": "المادة السابعة",
+      "article_title_ar": "التحقيق",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "في حال رأت الهيئة الحاجة إلى طلب الإفادة أو التحقيق أو سماع الأقوال في شأن أي من المخالفات، بحسب ما نصت عليه الفقرة (٤) من البند (ثانياً) من الممكنات النظامية؛ فلها القيام -بجميع الوسائل التي تراها الهيئة مناسبة- بالآتي:\n\n١. طلب الإفادة الكتابية أو الشفاهية من الأطراف ذوي العلاقة.\n\n٢. استدعاء المنسوب إليه المخالفة، أو من له صلة بالمخالفة؛ للتحقيق معه.\n\n٣. تحرير محضر تحقيق في المخالفة، وفق النموذج الذي تحدده الهيئة، ويجوز للهيئة الاكتفاء بطلب الإفادات الكتابية.\n\n٤. الإحالة إلى جهة الادعاء في الهيئة؛ وذلك في حال تبين وجود أدلة أو قرائن تؤيد ثبوت المخالفة.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_008": {
+      "number_label_ar": "المادة الثامنة",
+      "article_title_ar": "التزامات الأطراف ذوي العلاقة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "يلتزم جميع الأشخاص -الطبيعيين والاعتباريين- المخاطبين بأحكام الممكنات النظامية، وهذه القواعد بما يأتي:\n\n١. التعاون التام مع الهيئة وممثليها، وتقديم التسهيلات اللازمة، وتمكينهم من أداء مهماتهم، وعدم منعهم أو إعاقتهم -بأي شكل من الأشكال- من القيام بالأعمال المنوطة بهم، بموجب الممكنات النظامية، وهذه القواعد.\n\n٢. تقديم جميع الوثائق المطلوبة وكذلك المعلومات والبيانات والسجلات ونحو ذلك خلال المدة وعلى النحو الذي تحدده الهيئة. ويحظر الامتناع عن تقديمها أو التلاعب بها أو إتلافها أو تعديلها؛ بما يؤثر على سير إجراءات التفتيش أو التحقيق.\n\n٣. الالتزام بالتوقيع على المحاضر المطلوبة؛ وفق هذه القواعد.\n\n٤. المحافظة على سرية أعمال الضبط والتفتيش والتحقيق، ويحظر نشر أو تداول أي معلومات أو بيانات أو نحوه؛ تتعلق بإجراءات التفتيش والتحقيق الجاري، أو النتائج المترتبة عليها.\n\n٥. التقيد بالمدد التي تحددها الهيئة؛ للقيام بأي من الأعمال المنصوص عليها في هذه القواعد.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    },
+    "nca_cybersecurity_violations_investigation_rules_art_009": {
+      "number_label_ar": "المادة التاسعة",
+      "article_title_ar": "أحكام عامة",
+      "is_mukarrar": false,
+      "section_ar": "بدون تقسيم إلى أبواب أو فصول -- تسع مواد متسلسلة (المادة الأولى - المادة التاسعة)",
+      "text": "١. يجوز اتخاذ أي إجراء منصوص عليه في هذه القواعد باستخدام الوسائل الإلكترونية والتقنية.\n\n٢. للهيئة الاستعانة بمن تراه -بما في ذلك الجهات المعنية- في الرقابة والتفتيش وضبط المخالفات.\n\n٣. تقوم الهيئة بمراجعة هذه القواعد بشكل دوري، واقتراح تعديلها.\n\n٤. يقوم المحافظ بإصدار ما يلزم؛ لتنفيذ هذه القواعد.\n\n٥. يعمل بهذه القواعد من تاريخ نشرها في الموقع الإلكتروني للهيئة، وتلغي كل ما يتعارض معها.",
+      "legal_status_ar": "اصلية",
+      "structure_status_ar": "اصلية",
+      "section_status_ar": "اصلية",
+      "status": "NCA_OFFICIAL_LIVE_PDF_X_UQN_GAZETTE_FULLTEXT_DUAL_PRIMARY_CROSS_VERIFIED_TIER1",
+      "history": []
+    }
+  }
+}
