@@ -14,13 +14,42 @@ confirmed; the PDF itself extracted with word-internal character scrambling
 and could not be used for verbatim wording) and spot-checked against an
 independent blog (almirjah.wordpress.com).
 
-*** CRITICAL: this law is confirmed REPEALED effective 2026-08-01 by Royal
-Decree M/169 (14/08/1447H). The new law's full Arabic text could not be
-verified this pass and is explicitly NOT ingested — this track represents
-the currently in-force text as of the build date, with the repeal flagged
-in the source artifact's verification_methodology_note and
-known_unresolved_discrepancies. A follow-up ingestion pass for M/169 is
-recommended once its primary text is verifiable. ***
+*** CRITICAL: this law is confirmed REPEALED effective 2026-08-12 by the
+successor نظام حقوق المؤلف (note: the successor's title DROPS "حماية"),
+issued by Royal Decree M/169 dated 14/08/1447H approving Council of
+Ministers Resolution No. 560 dated 08/08/1447H, published in Umm al-Qura
+issue No. 5144 (year 104), Friday 25 Sha'ban 1447H = 13 February 2026,
+pp. 13-17, 61 articles, flat structure (no فصول).
+
+PROVENANCE UPGRADE (2026-07-29 census pass): the repeal was previously
+recorded only from secondary press/law-firm alerts. It is now confirmed
+from the PRIMARY official gazette itself — the successor's own Article 59
+states verbatim: «يحل النظام محل نظام حماية حقوق المؤلِّف، الصادر بالمرسوم
+الملكي رقم (م/٤١) وتاريخ ١٤٢٤/٧/٢هـ، ويلغي كل ما يتعارض معه من أحكام.»
+Note the repeal sits INSIDE a numbered article of the enacted text, not in
+the enacting decree's own clauses (this corpus distinguishes the two).
+
+EFFECTIVE-DATE CORRECTION: this track previously recorded 2026-08-01, which
+was NOT derivable from any clause. The successor's Article 61 states
+«يُعمل بالنظام بعد (مائة وثمانين) يوماً من تاريخ نشره في الجريدة الرسمية»;
+13 Feb 2026 + 180 days = 2026-08-12. DISCLOSED RESIDUAL AMBIGUITY: whether
+«بعد ١٨٠ يوماً» is read inclusively (2026-08-12) or exclusively
+(2026-08-13) could not be resolved from the text; 2026-08-12 is recorded as
+the earlier, more conservative boundary and the one-day uncertainty is
+flagged here rather than hidden. As of the 2026-07-29 census pass only 166
+days had elapsed, so the successor was NOT yet in force and this M/41 text
+remained the governing text.
+
+INGESTION TRAP FLAGGED FOR THE FOLLOW-UP PASS: clause «ثانياً» of Royal
+Decree M/169 carries a SUBSTANTIVE foreign-reciprocity restriction that has
+no numbered article of its own. A successor ingestion capturing only
+Articles 1-61 would silently drop it — it must be captured separately.
+
+The successor's full 61-article Arabic text has now been obtained verbatim
+from the official gazette and a follow-up pass should build it as a NEW
+track (do not overwrite this one: Article 24 of the successor keeps M/41
+relevant for protection terms that accrued before cutover, and this text
+remains the governing text through 2026-08-11). ***
 
 Consolidated amended law: 19 اصلية / 9 معدلة / 0 ملغاة / 0 مضافة (28 total
 articles). The 2018 amendment (Council of Ministers Resolution 536,
@@ -59,7 +88,7 @@ STOP = set(("من في على عن إلى أو و أن التي الذي ما غ
             "لا إلا بين حسب وفق وفقا بحسب فإن وإن المادة النظام اللائحة أحكام يجب يجوز عليه دون فيما "
             "منه منها وإذا حال وله ولها الآتية يأتي يلي ذلك").split())
 
-REPEAL_NOTICE = ("Superseded effective 2026-08-01 by Royal Decree M/169 (14/08/1447H) — "
+REPEAL_NOTICE = ("Superseded effective 2026-08-12 by Royal Decree M/169 (14/08/1447H) — "
                  "the new law's text is not yet verifiable and is not ingested; this "
                  "record reflects the text in force as of the build date.")
 
@@ -113,7 +142,7 @@ def main():
                                               "status field and the source artifact's "
                                               "verification_methodology_note for the full "
                                               "caveat, INCLUDING that this law is superseded "
-                                              "effective 2026-08-01 by Royal Decree M/169."),
+                                              "effective 2026-08-12 by Royal Decree M/169."),
                     "translation_performed": False, "legal_interpretation_performed": False,
                     "summarized_or_paraphrased": False, "english_used_for_correction": False})
         llm.append({"law_id": LAW_ID, "law_component": "law", "article_number": n,
@@ -165,8 +194,8 @@ def main():
               open(SUMMARY, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     json.dump({"layer_id": "sa-copyright-law-arabic-legal-llm-full", "law_id": LAW_ID,
                "law_component": "law",
-               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (28 مادة؛ نص موحّد: 19 أصلية، 9 معدّلة؛ يُلغى في 2026-08-01)",
-               "title_en": "Saudi Copyright Law — Arabic LLM-ready layer (28 records, consolidated, superseded 2026-08-01)",
+               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (28 مادة؛ نص موحّد: 19 أصلية، 9 معدّلة؛ يُلغى في 2026-08-12)",
+               "title_en": "Saudi Copyright Law — Arabic LLM-ready layer (28 records, consolidated, superseded 2026-08-12)",
                "record_type": "verified_arabic_article", "language": "ar",
                "governing_text_language": "ar", "record_count": len(llm),
                "article_range": [1, 28], "text_status": STATUS,

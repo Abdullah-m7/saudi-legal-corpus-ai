@@ -1249,7 +1249,7 @@ def main() -> int:
 
     cpl = tracks_by_id.get("copyright_law", {})
     cpl_counts = cpl.get("record_counts", {})
-    check("[7g86] copyright_law: 28 Arabic articles, DISTINCT tier (qadha.org.sa x WIPO Lex structural, superseded 2026-08-01)...",
+    check("[7g86] copyright_law: 28 Arabic articles, DISTINCT tier (qadha.org.sa x WIPO Lex structural, superseded 2026-08-12)...",
           cpl_counts.get("arabic_articles") == 28
           and cpl.get("official_text_status") == "SECONDARY_SOURCE_STRUCTURAL_WIPO_CROSS_CHECK_BOE_UNREACHABLE",
           f"counts={cpl_counts}")

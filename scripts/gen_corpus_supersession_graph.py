@@ -943,7 +943,7 @@ EDGES = [
         "target_decree": "Royal Decree M/169, 14/08/1447H (2 February 2026)",
         "successor_in_corpus": False,
         "note": "copyright_law's registry notes: 'THIS LAW IS CONFIRMED "
-                "SUPERSEDED EFFECTIVE 2026-08-01 by Royal Decree M/169 "
+                "SUPERSEDED EFFECTIVE 2026-08-12 by Royal Decree M/169 "
                 "(14/08/1447H / 2 February 2026), confirmed via multiple "
                 "independent Arabic news outlets and English law-firm client "
                 "alerts — but the new law's full Arabic primary text could "

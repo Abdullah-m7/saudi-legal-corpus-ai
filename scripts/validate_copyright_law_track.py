@@ -8,7 +8,7 @@ sources/copyright/law/official_source/copyright_law_official_source.json's
 verification_methodology_note for the full caveat. laws.boe.gov.sa was
 unreachable this research pass; the primary working source is qadha.org.sa's
 compiled text, structurally cross-checked against WIPO Lex. This validator
-also enforces that this law's confirmed 2026-08-01 repeal (by Royal Decree
+also enforces that this law's confirmed 2026-08-12 repeal (by Royal Decree
 M/169) is documented, not silently omitted. This validator CANNOT verify
 against a primary source the build environment could not reach."""
 from __future__ import annotations
@@ -105,8 +105,8 @@ def main():
 
     if not src.get("verification_methodology_note"):
         e.append("[2d] missing verification_methodology_note explaining the distinct tier")
-    if "2026-08-01" not in src.get("verification_methodology_note", ""):
-        e.append("[2f] verification_methodology_note must document the confirmed 2026-08-01 "
+    if "2026-08-12" not in src.get("verification_methodology_note", ""):
+        e.append("[2f] verification_methodology_note must document the confirmed 2026-08-12 "
                  "repeal by Royal Decree M/169")
     if not src.get("known_unresolved_discrepancies"):
         e.append("[2e] missing known_unresolved_discrepancies (repeal + BOE-unreachable caveats expected)")
@@ -155,7 +155,7 @@ def main():
     print("  - numbered 1..28 across 7 chapters (plus article 1's own definitions heading)")
     print("  - 2018 amendment (Council of Ministers Resolution 536): Ministry/Minister -> SAIP")
     print("    (الهيئة/المجلس) at 9 articles, verified against the amendment's own footnoted text")
-    print("  - *** CONFIRMED SUPERSEDED effective 2026-08-01 by Royal Decree M/169 *** — the new")
+    print("  - *** CONFIRMED SUPERSEDED effective 2026-08-12 by Royal Decree M/169 *** — the new")
     print("    law's text is not yet verifiable and is explicitly not ingested; flagged throughout")
     return 0
 
