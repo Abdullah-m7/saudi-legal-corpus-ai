@@ -183,7 +183,32 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   to prune. An INGESTION TRAP was captured rather than dropped: clause «ثانياً» of
   Royal Decree M/169 carries a substantive foreign-reciprocity restriction with no
   numbered article of its own, so it is stored at decree level and the validator
-  enforces both that it is present there and absent from all 61 article records.)* PDPL and Investment Arabic tracks are **verified against official
+  enforces both that it is present there and absent from all 61 article records.)* *(A second 2026-07-29 maintenance pass repaired `cma_corporate_governance_regulation`,
+  whose stored text carried a systematic ligature-transposition defect across all
+  95 articles — «الالئحة» for «اللائحة», «محاية» for «حماية», «المصاحل» for
+  «المصالح» — because it had been captured with an ordinary PDF extractor that
+  reverses the letters INSIDE each ToUnicode ligature expansion. Three of the
+  defects were substantive, not cosmetic: **Article 1 was missing three whole
+  definitions** (نظام الشركات, نظام السوق المالية, قواعد طرح الأوراق المالية
+  والالتزامات المستمرة), Article 2(ج) had its words re-ordered across a line
+  break, and CMA's numbered **footnotes were merged into article bodies** where
+  they read as if they were enacted text. The text was re-derived from CMA's own
+  PDF at glyph level; footnotes, footnote markers and page numbers were separated
+  **by measurement** — an opt-in `--mark-small` mode was added to the shared CMA
+  extractor that marks rows drawn below 0.75 of the page's own dominant size
+  (measured here: body 16.0, page number 12.0, footnote 10.0, reference marker
+  9.5/6.5) — and 21 article titles, 17 section headings and 5 chapter titles were
+  rebuilt under a **character-multiset proof**: a rebuilt title is accepted only
+  if it carries exactly the same characters as the stored one, since reversing a
+  ligature permutes characters but can never add or remove one. No word list, no
+  dictionary, no spell-correction. Three new validator checks were added and all
+  seven deliberate corruptions were caught: re-introduced ligature damage in a
+  body, in a title and in chapter_structure; a leaked footnote, bare marker and
+  page number; and deletion of the restored definitions. A pre-existing
+  footnote-leak heuristic was also found to be broken — `\d{1,2}(?!\))`
+  backtracks to the first digit and so flagged every genuine two-digit list
+  marker; it had passed only because the stored text was itself defective and
+  fused those markers to the following word.)* PDPL and Investment Arabic tracks are **verified against official
   published text** (SDAIA / MISA). The registry also records the unified retrieval
   index (16174 records) as a projection (not added to totals). See
   [`data/corpus_registry/corpus_registry.json`] and

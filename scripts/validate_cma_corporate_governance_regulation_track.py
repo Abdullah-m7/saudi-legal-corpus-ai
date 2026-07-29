@@ -52,6 +52,20 @@ FLAGGED_DISCREPANCY_KEYS = {
 }
 AR = "ء-ي"
 
+# Ligature-transposition canaries.  CMA's PDF fonts use Arabic ligature glyphs
+# whose ToUnicode entries expand to 2-3 letters; an extractor that reverses a
+# visual run to recover logical order also reverses the letters INSIDE each
+# ligature.  The forms below are what that produces, and none of them is a
+# valid Arabic word, so their presence is proof of the defect rather than
+# evidence about wording.  This is a DETECTION list only -- nothing in this
+# repository ever rewrites text by matching against it; the 2026-07-29 repair
+# re-derived every article from the PDF at glyph level instead.  See
+# scripts/repair_cma_corporate_governance_regulation_text.py.
+LIGATURE_CANARIES = (
+    "اململكة", "الالئحة", "اإلدارة", "املجلس", "محاية", "الالزمة", "حلقوقهم",
+    "المصاحل", "متهيدية", "املادة", "األحكام", "التنفيذيه", "جمالس", "املراجعة",
+)
+
 
 def _bad_tatweel(text):
     bad = 0
@@ -65,12 +79,20 @@ def _bad_tatweel(text):
 
 
 def _bare_footnote_marker(text):
-    # A footnote marker is a bare 1-2 digit number at the start of a line with
-    # no following ')' -- this document's own numbered list items always use
-    # the ')N' convention, so any surviving 'N<non-paren>' line start would be
-    # leaked footnote text.
+    # A leaked footnote has one of exactly two shapes: the reference marker
+    # alone on its own line ("3"), or the marker followed by the footnote's
+    # Arabic text on the same line ("3 صدر قرار مجلس هيئة السوق المالية...").
+    #
+    # Everything else that starts with digits in this document is legitimate
+    # and must NOT fire: the regulation numbers its own items ")N" up to "42)",
+    # its tables use "N-", and Hijri/Gregorian dates wrap onto their own line
+    # ("1443/12/1ه."). An earlier form of this check used \d{1,2}(?!\)), which
+    # backtracks to the first digit and therefore flagged every genuine
+    # two-digit marker; it passed only because the stored text was itself
+    # defective and fused those markers to the following word.
     for line in text.split("\n"):
-        if re.match(r'^\d{1,2}(?!\))', line.strip()):
+        t = line.strip()
+        if re.match(r"^\d+$", t) or re.match(r"^\d+\s+[%s]" % AR, t):
             return True
     return False
 
@@ -97,6 +119,33 @@ def main():
             seen.add(int(m.group(1)))
     if seen != set(range(1, N + 1)):
         e.append("[1] article numbers not a clean 1..%d run: %s" % (N, sorted(seen)))
+
+    # [1b] The stored text must not carry the ligature-transposition defect, in
+    # the articles or in the structural headings.  Without this the 2026-07-29
+    # repair could be silently undone by a future re-extraction.
+    # Scanned over the law-text fields only: verification_methodology_note and
+    # known_unresolved_discrepancies legitimately QUOTE the corrupted forms
+    # while documenting the defect, and must not trip their own detector.
+    blob = json.dumps([{k: v for k, v in a.items()
+                        if k in ("text", "article_title_ar", "section_ar",
+                                 "number_label_ar")}
+                       for a in arts.values()] + [src.get("chapter_structure")],
+                      ensure_ascii=False)
+    hit = [c for c in LIGATURE_CANARIES if c in blob]
+    if hit:
+        e.append("[1b] ligature-transposition defect present in the source "
+                 "artifact: %s" % ", ".join(hit))
+
+    # [1d] Article 1's definitions list.  Three whole definitions were absent
+    # from the stored text until the 2026-07-29 repair; they are on page 7 of
+    # CMA's own PDF.  Anchoring on their defined TERMS (not on wording) makes
+    # their loss a validator failure rather than a silent regression.
+    art1 = arts.get("cma_corporate_governance_regulation_art_001", {}).get("text", "")
+    for term in ("نظام الشركات:", "نظام السوق المالية:",
+                 "قواعد طرح الأوراق المالية والالتزامات المستمرة:",
+                 "قواعد الإدراج:", "الهيئة:", "السوق:", "الشركة:"):
+        if term not in art1:
+            e.append("[1d] Article 1 is missing the defined term %r" % term)
 
     chapters = src.get("chapter_structure")
     if not chapters or len(chapters) != EXPECTED_CHAPTERS:

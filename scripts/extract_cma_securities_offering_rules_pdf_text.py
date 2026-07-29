@@ -88,6 +88,11 @@ MARK_LO, MARK_HI = 0x064B, 0x0652
 EXTRA_MARKS = {0x0670, 0x0653, 0x0654, 0x0655, 0x06DF, 0x06E2}
 LTR = re.compile(r"[0-9A-Za-z]")
 HEADING_MARK = "\x01"
+# Opt-in (--mark-small) marker for rows set below the page's dominant body
+# size: footnote text, footnote markers and page numbers.  Off by default so
+# every track already built with this extractor keeps byte-identical output.
+SMALL_MARK = "\x02"
+SMALL_RATIO = 0.75
 KASHIDA_MAX_EM = 0.15
 BATCH = 20
 
@@ -200,17 +205,53 @@ def _line(items) -> str:
     return "".join(out)
 
 
-def page_text(page) -> str:
+def _body_size(rows) -> float:
+    """The page's dominant base-glyph size, measured, not assumed."""
+    tally = collections.Counter()
+    for items in rows.values():
+        for c in items:
+            if c[4] == "base" and c[1].strip():
+                tally[round(c[6], 1)] += 1
+    return tally.most_common(1)[0][0] if tally else 0.0
+
+
+def _strip_superscripts(items, body):
+    """Drop base glyphs set far below the page's body size.
+
+    On files that carry numbered footnotes the reference markers are drawn as
+    ordinary glyphs at roughly 40-60% of the body size, so an extractor that
+    ignores size glues them to the neighbouring word («sr» + «6» ->
+    «sr6»). This drops them by MEASUREMENT — the cut sits at 0.75 of the
+    page's own dominant size — never by pattern-matching digits, which would
+    also delete legitimate numbering.
+    """
+    if not body:
+        return items
+    return [c for c in items if c[4] != "base" or c[6] >= SMALL_RATIO * body]
+
+
+def page_text(page, mark_small: bool = False) -> str:
     rows = _rows(_clusters(page))
+    body = _body_size(rows) if mark_small else 0.0
     lines = []
     for y in sorted(rows):
-        t = _line(rows[y]).strip()
+        items = rows[y]
+        small = False
+        if mark_small:
+            bases = [c for c in items if c[4] == "base" and c[1].strip()]
+            # A whole row set below the body size is footnote / page furniture.
+            if bases and all(c[6] < SMALL_RATIO * body for c in bases):
+                small = True
+            else:
+                items = _strip_superscripts(items, body)
+        t = _line(items).strip()
         if t:
-            lines.append((HEADING_MARK if _is_heading(rows[y]) else "") + t)
+            prefix = SMALL_MARK if small else (HEADING_MARK if _is_heading(rows[y]) else "")
+            lines.append(prefix + t)
     return "\n".join(lines)
 
 
-def _run_range(pdf, out, lo, hi):
+def _run_range(pdf, out, lo, hi, mark_small=False):
     import fitz
     doc = fitz.open(pdf)
     hi = min(hi, doc.page_count)
@@ -218,7 +259,8 @@ def _run_range(pdf, out, lo, hi):
         for pno in range(lo, hi):
             one = fitz.open()
             one.insert_pdf(doc, from_page=pno, to_page=pno)
-            f.write("===== PAGE %d =====\n%s\n\n" % (pno + 1, page_text(one[0])))
+            f.write("===== PAGE %d =====\n%s\n\n"
+                    % (pno + 1, page_text(one[0], mark_small)))
             one.close()
     sys.stderr.write("DROPPED %s\n" % dict(collections.Counter(_dropped)))
 
@@ -233,6 +275,12 @@ def main() -> int:
     ap.add_argument("--to-page", type=int, default=10 ** 6, help="0-based, exclusive")
     ap.add_argument("--worker", nargs=2, metavar=("LO", "HI"),
                     help=argparse.SUPPRESS)
+    ap.add_argument("--mark-small", action="store_true",
+                    help="prefix rows set below the page's dominant body size "
+                         "with U+0002 (footnotes, footnote markers, page "
+                         "numbers) and drop inline superscript markers. Off by "
+                         "default: every track already built with this "
+                         "extractor keeps byte-identical output.")
     args = ap.parse_args()
 
     if not os.path.exists(args.pdf):
@@ -247,7 +295,8 @@ def main() -> int:
         return 3
 
     if args.worker:
-        _run_range(args.pdf, args.out, int(args.worker[0]), int(args.worker[1]))
+        _run_range(args.pdf, args.out, int(args.worker[0]), int(args.worker[1]),
+                   args.mark_small)
         return 0
 
     import fitz
@@ -258,8 +307,9 @@ def main() -> int:
         hi = min(lo + BATCH, total)
         part = "%s.part%04d" % (args.out, lo)
         spans = [(lo, hi)]
+        extra = ["--mark-small"] if args.mark_small else []
         r = subprocess.run([sys.executable, os.path.abspath(__file__), args.pdf,
-                            "-o", part, "--worker", str(lo), str(hi)],
+                            "-o", part, "--worker", str(lo), str(hi)] + extra,
                            capture_output=True, text=True)
         if r.returncode != 0:
             # PyMuPDF 1.28 refcount abort: retry this batch one page per process.
@@ -268,7 +318,7 @@ def main() -> int:
             for a, b in spans:
                 sub = "%s.p%04d" % (args.out, a)
                 r = subprocess.run([sys.executable, os.path.abspath(__file__), args.pdf,
-                                    "-o", sub, "--worker", str(a), str(b)],
+                                    "-o", sub, "--worker", str(a), str(b)] + extra,
                                    capture_output=True, text=True)
                 if r.returncode != 0:
                     print("FAILED on page %d:\n%s" % (a + 1, r.stderr[-800:]),

@@ -14,13 +14,13 @@
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
   "total_records_scanned": 16174,
-  "total_references_extracted": 3817,
-  "intra_law_count": 3154,
-  "inter_law_count": 663,
+  "total_references_extracted": 3828,
+  "intra_law_count": 3155,
+  "inter_law_count": 673,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 3250,
-    "medium": 567
+    "high": 3269,
+    "medium": 559
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -6496,6 +6496,28 @@
       "source_track_id": "cma_corporate_governance_regulation",
       "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
       "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "cma_corporate_governance_regulation",
+      "target_article_number": 19,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة عشرة من هذه اللائحة. الإدارة التنف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام",
+      "raw_citation_text": "أحكام نظام الشركات ونظام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+      "source_article_number": 1,
       "type": "inter_law",
       "target_track_id": "companies_law",
       "target_article_number": null,
@@ -6511,8 +6533,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 13,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة عشرة",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الثالثة عشرة والفقرة (ب) من المادة الخمسين",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6522,8 +6544,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 50,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الخمسين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الخمسين والفقرة (أ) من المادة الحادية",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6533,8 +6555,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 52,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثانية والخمسين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الثانية والخمسين والمادة السادسة والخمسين والم",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6544,8 +6566,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 56,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة السادسة والخمسين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة السادسة والخمسين والمادة الثامنة والثمانين من",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6555,8 +6577,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 88,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والثمانين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الثامنة والثمانين من هذه اللائحة إلزامية على ال",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6582,6 +6604,17 @@
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية ونظام الشركة الأساس",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه التنفيذية ونظام الشركة الأساس",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
       "source_record_id": "cma-corporate-governance-regulation-llm-art-011",
       "source_article_number": 11,
       "type": "inter_law",
@@ -6593,13 +6626,24 @@
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+      "raw_citation_text": "وفقاً للائحة\nالتنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
       "source_record_id": "cma-corporate-governance-regulation-llm-art-012",
       "source_article_number": 12,
       "type": "inter_law",
       "target_track_id": "companies_law",
       "target_article_number": 123,
       "target_law_name_raw": "الشركات",
-      "raw_citation_text": "المادة الثالثة والعشرين بعد المائة من نظام الشركات. )13الموافقة عل",
+      "raw_citation_text": "المادة الثالثة والعشرين بعد المائة من نظام الشركات. 13) الموافقة ع",
       "confidence": "high"
     },
     {
@@ -6648,14 +6692,25 @@
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لنظام الشركات",
+      "raw_citation_text": "وفقاً للائحة التنفيذية لنظام الشركات",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
       "source_record_id": "cma-corporate-governance-regulation-llm-art-016",
       "source_article_number": 16,
       "type": "intra_law",
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 17,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة السابعة عشرة",
-      "confidence": "medium"
+      "raw_citation_text": "المادة السابعة عشرة من هذه اللائحة. 2) أن تكون أغ",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6665,8 +6720,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 28,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والعشرين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الثامنة والعشرين من هذه اللائحة، وأن يرافق هذا",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6709,6 +6764,28 @@
       "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "raw_citation_text": "أحكام نظام\nالشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-028",
+      "source_article_number": 28,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام السوق المالية",
+      "raw_citation_text": "أحكام نظام الشركات ونظام السوق المالية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-028",
+      "source_article_number": 28,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام السوق المالية ولوائحهما التنفيذية",
       "raw_citation_text": "أحكام نظام الشركات ونظام السوق المالية ولوائحهما التنفيذية",
       "confidence": "medium"
     },
@@ -6720,8 +6797,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 28,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والعشرين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الثامنة والعشرين من هذه اللائحة، على عضو مجلس",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6731,13 +6808,24 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 20,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة العشرين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة العشرين من هذه اللائحة، يجوز لمجلس ال",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
       "source_record_id": "cma-corporate-governance-regulation-llm-art-040",
       "source_article_number": 40,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-041",
+      "source_article_number": 41,
       "type": "inter_law",
       "target_track_id": "companies_law",
       "target_article_number": null,
@@ -6753,7 +6841,7 @@
       "target_track_id": "companies_law",
       "target_article_number": 27,
       "target_law_name_raw": "الشركات والأحكام ذات العلاقة في هذه",
-      "raw_citation_text": "المادة السابعة والعشرين من نظام الشركات والأحكام ذات العلاقة في هذه الالئحة ،إذا رغ",
+      "raw_citation_text": "المادة السابعة والعشرين من نظام الشركات والأحكام ذات العلاقة في هذه اللائحة، إذا رغ",
       "confidence": "high"
     },
     {
@@ -6764,8 +6852,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 51,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الحادية والخمسون",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الحادية والخمسون من هذه اللائحة، يشكل مجلس الإ",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6775,8 +6863,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 20,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة العشرين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة العشرين من هذه اللائحة. ب) للّجان الا",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6786,8 +6874,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 19,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة عشرة",
-      "confidence": "medium"
+      "raw_citation_text": "المادة التاسعة عشرة من هذه اللائحة. ه) تصدر الجمع",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -6802,13 +6890,46 @@
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-066",
+      "source_article_number": 66,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام الشركات ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-086",
+      "source_article_number": 86,
+      "type": "inter_law",
+      "target_track_id": "capital_market_law",
+      "target_article_number": null,
+      "target_law_name_raw": "السوق المالية ولوائحه التنفيذية",
+      "raw_citation_text": "أحكام نظام السوق المالية ولوائحه التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
       "source_record_id": "cma-corporate-governance-regulation-llm-art-087",
       "source_article_number": 87,
       "type": "intra_law",
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 90,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة التسعين",
+      "raw_citation_text": "المادة التسعين من هذه اللائحة. 9) أي عقوبة أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_corporate_governance_regulation",
+      "source_record_id": "cma-corporate-governance-regulation-llm-art-089",
+      "source_article_number": 89,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات ونظام السوق المالية ولوائحهما التنفيذية",
+      "raw_citation_text": "بموجب نظام الشركات ونظام السوق المالية ولوائحهما التنفيذية",
       "confidence": "medium"
     },
     {
@@ -6819,8 +6940,8 @@
       "target_track_id": "cma_corporate_governance_regulation",
       "target_article_number": 91,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الحادية والتسعين",
-      "confidence": "medium"
+      "raw_citation_text": "المادة الحادية والتسعين من هذه اللائحة، وعلى هذه اللج",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_investment_funds_regulation",

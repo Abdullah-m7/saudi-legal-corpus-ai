@@ -16,8 +16,8 @@
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
   "total_tracks_in_registry": 297,
-  "total_terms": 1951,
-  "total_definitions": 3377,
+  "total_terms": 1960,
+  "total_definitions": 3390,
   "tracks_with_definitions_article_parsed": 217,
   "tracks_skipped": [
     {
@@ -480,12 +480,12 @@
         "extraction_method": "colon_pairs"
       }
     ],
-    "أصحاب المصاحل": [
+    "أصحاب المصالح": [
       {
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
-        "term_as_written": "أصحاب المصاحل",
-        "definition_text": "كل من له مصلحة مع الشركة ،كالعاملين ،والدائنين ،والعمالء ،والمورّدين،\nوالمجتمع.",
+        "term_as_written": "أصحاب المصالح",
+        "definition_text": "كل من له مصلحة مع الشركة، كالعاملين، والدائنين، والعملاء، والمورّدين،\nوالمجتمع.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -1895,7 +1895,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "الأطراف ذوو العلاقة",
-        "definition_text": ")1\nتابعي الشركة فيما عدا الشركات المملوكة بالكامل للشركة.\n)2\nالمساهمين الكبار في الشركة.\n)3\nأعضاء مجلس الإدارة وكبار التنفيذيين للشركة.\n)4\nأعضاء جمالس الإدارة لتابعي الشركة.\n)5\nأعضاء جمالس الإدارة وكبار التنفيذيين لدى المساهمين الكبار في الشركة.\n)6\nأي أقرباء لألشخاص المشار إليهم في ( 3 ،2 ،1أو  )5أعاله.\n)7\nأي شركة أو منشأة أخرى يسيطر عليها أي شخص مشار إليه في ( 5 ،3 ،2 ،1أو )6\nأعاله.\nوألغراض الفقرة ( )6من هذا التعريف ،فإنه يقصد بالأقرباء الأب والأم والزوج والزوجة والأوالد.",
+        "definition_text": "1) تابعي الشركة فيما عدا الشركات المملوكة بالكامل للشركة.\n2) المساهمين الكبار في الشركة.\n3) أعضاء مجلس الإدارة وكبار التنفيذيين للشركة.\n4) أعضاء مجالس الإدارة لتابعي الشركة.\n5) أعضاء مجالس الإدارة وكبار التنفيذيين لدى المساهمين الكبار في الشركة.\n6) أي أقرباء للأشخاص المشار إليهم في (1، 2، 3 أو 5) أعلاه.\n7) أي شركة أو منشأة أخرى يسيطر عليها أي شخص مشار إليه في (1، 2، 3، 5 أو 6)\nأعلاه.\nولأغراض الفقرة (6) من هذا التعريف، فإنه يقصد بالأقرباء الأب والأم والزوج والزوجة والأولاد.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -2031,7 +2031,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "الأقارب أو صلة القرابة",
-        "definition_text": "الآباء ،والأمهات ،والأجداد ،والجدات وإن علوا. -الأوالد ،وأوالدهم وإن نزلوا.\nالإخوة والأخوات الأشقاء ،أو ألب ،أو ألم. الأزواج والزوجات.الشركة القابضة :شركة مساهمة أو شركة مساهمة مبسطة أو شركة ذات مسؤولية حمدودة\nتؤسس شركات أو متتلك حصصًا أو أسهمًا في شركات قائمة تصبح تابعة هلا وفق أحكام نظام\nالشركات ولوائحه التنفيذية.",
+        "definition_text": "- الآباء، والأمهات، والأجداد، والجدات وإن علوا.\n- الأولاد، وأولادهم وإن نزلوا.\n- الإخوة والأخوات الأشقاء، أو لأب، أو لأم.\n- الأزواج والزوجات.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -2547,7 +2547,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "الإدارة التنفيذية أو كبار التنفيذيين",
-        "definition_text": "الأشخاص المنوط بهم إدارة عمليات الشركة اليومية ،واقتراح\nالقرارات الاستراتيجية وتنفيذها ،كالرئيس التنفيذي ونوابه والمدير المالي.",
+        "definition_text": "الأشخاص المنوط بهم إدارة عمليات الشركة اليومية، واقتراح\nالقرارات الاستراتيجية وتنفيذها، كالرئيس التنفيذي ونوابه والمدير المالي.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -6421,7 +6421,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "الجهاز الإداري",
-        "definition_text": "مجموعة الأفراد الذين يتخذون القرارات الاستراتيجية للشخص .ويُعدّ مجلس إدارة\nالشركة الجهاز الإداري هلا.",
+        "definition_text": "مجموعة الأفراد الذين يتخذون القرارات الاستراتيجية للشخص. ويُعدّ مجلس إدارة\nالشركة الجهاز الإداري لها.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -9318,6 +9318,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "السوق",
+        "definition_text": "السوق المالية السعودية.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "competition_law",
         "article_number": 1,
         "term_as_written": "السوق",
@@ -9900,6 +9908,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشركة": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "الشركة",
+        "definition_text": "شركة المساهمة المدرجة في السوق.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشركة العقارية": [
       {
         "track_id": "rett_law",
@@ -9911,6 +9929,14 @@
       }
     ],
     "الشركة القابضة": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "الشركة القابضة",
+        "definition_text": "شركة مساهمة أو شركة مساهمة مبسطة أو شركة ذات مسؤولية محدودة\nتؤسس شركات أو تمتلك حصصًا أو أسهمًا في شركات قائمة تصبح تابعة لها وفق أحكام نظام\nالشركات ولوائحه التنفيذية.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "payment_systems_regulation",
         "article_number": 1,
@@ -11009,6 +11035,36 @@
         "term_as_written": "العضو البشري",
         "definition_text": "فيما عدا الدم في تطبيق أحكام النظام، هو كل جزء من أجزاء جسم الإنسان الحي أو المتوفي أو أنسجته أو أي من مكوناته، التي يمكن الانتفاع منها بنقلها إلى جسم إنسان آخر.",
         "source_record_id": "organ-donation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العضو التنفيذي": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "العضو التنفيذي",
+        "definition_text": "عضو مجلس الإدارة الذي يكون متفرغاً في الإدارة التنفيذية للشركة ويشارك\nفي الأعمال اليومية لها.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العضو المستقل": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "العضو المستقل",
+        "definition_text": "عضو مجلس إدارة غير تنفيذي يتمتع بالاستقلال التام في مركزه وقراراته، ولا\nتنطبق عليه أي من عوارض الاستقلال المنصوص عليها في المادة التاسعة عشرة من هذه اللائحة.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "العضو غير التنفيذي": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "العضو غير التنفيذي",
+        "definition_text": "عضو مجلس الإدارة الذي لا يكون متفرغاً لإدارة الشركة ولا يشارك في\nالأعمال اليومية لها.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -15133,7 +15189,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "المجموعة",
-        "definition_text": "فيما يتعلق بشخص ،تعين ذلك الشخص وكل تابع له.",
+        "definition_text": "فيما يتعلق بشخص، تعني ذلك الشخص وكل تابع له.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -18451,7 +18507,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "المكافآت",
-        "definition_text": "المبالغ والبدالت والأرباح وما في حكمها ،والمكافآت الدورية أو السنوية المرتبطة\nبالأداء ،والخطط التحفيزية قصرية أو طويلة الأجل ،وأي مزايا عينية أخرى ،باستثناء النفقات\nوالمصاريف الفعلية المعقولة التي تتحملها الشركة عن عضو مجلس الإدارة لغرض تأدية عمله.",
+        "definition_text": "المبالغ والبدلات والأرباح وما في حكمها، والمكافآت الدورية أو السنوية المرتبطة\nبالأداء، والخطط التحفيزية قصيرة أو طويلة الأجل، وأي مزايا عينية أخرى، باستثناء النفقات\nوالمصاريف الفعلية المعقولة التي تتحملها الشركة عن عضو مجلس الإدارة لغرض تأدية عمله.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -21988,6 +22044,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة السوق المالية.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "companies_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -24479,7 +24543,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "تابع",
-        "definition_text": "الشخص الذي يسيطر على شخص آخر ،أو يسيطر عليه ذلك الشخص الآخر ،أو يشترك\nمعه في كونه مسيطراً عليه من قبل شخص ثالث .وفي أي مما سبق تكون السيطرة بشكل مباشر\nأو غري مباشر.",
+        "definition_text": "الشخص الذي يسيطر على شخص آخر، أو يسيطر عليه ذلك الشخص الآخر، أو يشترك\nمعه في كونه مسيطراً عليه من قبل شخص ثالث. وفي أي مما سبق تكون السيطرة بشكل مباشر\nأو غير مباشر.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -24952,6 +25016,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "جمعية المساهمين": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "جمعية المساهمين",
+        "definition_text": "جمعية تشكَّل من مساهمي الشركة بموجب أحكام نظام الشركات ونظام\nالشركة الأساس.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "جمعية الملاك": [
       {
         "track_id": "real_estate_units_law",
@@ -25233,7 +25307,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "حصة السيطرة",
-        "definition_text": "القدرة على التأثري في أفعال أو قرارات شخص آخر ،بشكل مباشر أو غري مباشر،\nمنفرداً أو جمتمعاً مع قريب أو تابع ،من خالل( :أ) امتالك نسبة ( )%30أو أكثر من حقوق\nالتصويت في شركة( .ب) حق تعيين ( )%30أو أكثر من أعضاء الجهاز الإداري.",
+        "definition_text": "القدرة على التأثير في أفعال أو قرارات شخص آخر، بشكل مباشر أو غير مباشر،\nمنفرداً أو مجتمعاً مع قريب أو تابع، من خلال: (أ) امتلاك نسبة (30%) أو أكثر من حقوق\nالتصويت في شركة. (ب) حق تعيين (30%) أو أكثر من أعضاء الجهاز الإداري.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -25331,6 +25405,16 @@
         "term_as_written": "حماية البيئة",
         "definition_text": "المحافظة على البيئة، وتشمل: منع التلوث، والتخفيف من حدته، والحد من تدهور البيئة، وضمان تحقيق التنمية المستدامة؛ وذلك من خلال الالتزام بالمقاييس والمعايير والإجراءات الوقائية أو العلاجية المتعلقة بالبيئة وفقاً لأحكام النظام واللوائح.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "حوكمة الشركات": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "حوكمة الشركات",
+        "definition_text": "قواعد لقيادة الشركة وتوجيهها تشتمل على آليات لتنظيم العلاقات المختلفة\nبين مجلس الإدارة والمديرين التنفيذيين والمساهمين وأصحاب المصالح، وذلك بوضع قواعد\nوإجراءات خاصة لتسهيل عملية اتخاذ القرارات وإضفاء طابع الشفافية والمصداقية عليها بغرض\nحماية حقوق المساهمين وأصحاب المصالح وتحقيق العدالة والتنافسية والشفافية في السوق وبيئة\nالأعمال.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -26531,7 +26615,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "شخص",
-        "definition_text": "أي شخص طبيعي ،أو اعتباري تقر له أنظمة المملكة بهذه الصفة.",
+        "definition_text": "أي شخص طبيعي، أو اعتباري تقر له أنظمة المملكة بهذه الصفة.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -27914,6 +27998,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "قواعد الإدراج": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "قواعد الإدراج",
+        "definition_text": "قواعد الإدراج الموافق عليها من مجلس هيئة السوق المالية.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "قواعد البيانات": [
       {
         "track_id": "electricity_regulation",
@@ -27921,6 +28015,16 @@
         "term_as_written": "قواعد البيانات",
         "definition_text": "قواعد المعلومات، والوثائق، والبيانات الإحصائية، والمعلومات الفنية، ذات العلاقة بقطاع الكهرباء.",
         "source_record_id": "electricity-regulation-llm-art-057",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "قواعد طرح الأوراق المالية والالتزامات المستمرة": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
+        "definition_text": "قواعد طرح الأوراق المالية والالتزامات المستمرة\nالصادرة عن مجلس هيئة السوق المالية.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -27949,7 +28053,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "كبار المساهمين",
-        "definition_text": "كل من ميلك ما نسبته ( )%5أو أكثر من أسهم الشركة أو حقوق التصويت\nفيها.",
+        "definition_text": "كل من يملك ما نسبته (5%) أو أكثر من أسهم الشركة أو حقوق التصويت\nفيها.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -28565,6 +28669,14 @@
         "term_as_written": "مجلس الإدارة",
         "definition_text": "مجلس إدارة الهيئة العامة للطيران المدني",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة الشركة.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -30568,12 +30680,22 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نظام السوق المالية": [
+      {
+        "track_id": "cma_corporate_governance_regulation",
+        "article_number": 1,
+        "term_as_written": "نظام السوق المالية",
+        "definition_text": "نظام السوق المالية الصادر بالمرسوم الملكي رقم (م/30) وتاريخ\n1424/6/2ه.",
+        "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "نظام الشركات": [
       {
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "نظام الشركات",
-        "definition_text": "نظام الشركات الصادر بالمرسوم الملكي رقم (م )132/وتاريخ",
+        "definition_text": "نظام الشركات الصادر بالمرسوم الملكي رقم (م/132) وتاريخ\n1443/12/1ه.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
@@ -31237,7 +31359,7 @@
         "track_id": "cma_corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "يوم",
-        "definition_text": "يوم تقوميي ،سواء أكان يوم عمل أم ال.",
+        "definition_text": "يوم تقويمي، سواء أكان يوم عمل أم لا.",
         "source_record_id": "cma-corporate-governance-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
