@@ -3,7 +3,14 @@
 """Generate the Anti-Money Laundering Law track (نظام مكافحة غسل الأموال م/20).
 
 Source: the official MOJ legal-portal consolidated text (Royal Decree M/20,
-14/2/1439H), fetched article-by-article (get-Section-Changes) and cross-verified
+dated 5/2/1439H, published 14/2/1439H — the decree date was corrected in place on
+2026-07-29 from the previously recorded 14/02/1439, which is the PUBLICATION
+date; verified live against MOJ issuanceDate 1439-02-05 / publishDate
+1439-02-14, the BOE decree-viewer title «مرسوم ملكي رقم (م/20) وتاريخ
+1439/2/5هـ», and Council of Ministers Decision 16 of 1/1/1448H. The prior value
+is preserved in the source JSON's prior_recorded_decree_date_hijri and the reason
+in decree_date_correction_note_ar; no article text was touched),
+fetched article-by-article (get-Section-Changes) and cross-verified
 against the official MOJ PDF (49/52 MATCHES_PDF outright, mean 0.961; the 3
 flagged long definition/list articles — the first «التعريفات» article, art 24
 and art 43 — visually adjudicated verbatim on the rendered pages). This law is
@@ -131,6 +138,9 @@ def main():
                "record_count": len(ver), "official_text_status": STATUS,
                "status_counts": src["status_counts"],
                "decree": src["decree"], "decree_date_hijri": src["decree_date_hijri"],
+               "publish_date_hijri": src.get("publish_date_hijri"),
+               "prior_recorded_decree_date_hijri": src.get("prior_recorded_decree_date_hijri"),
+               "decree_date_correction_note_ar": src.get("decree_date_correction_note_ar"),
                "consolidated_amended_law": True,
                "source_artifact": os.path.relpath(SRC, ROOT)},
               open(SUMMARY, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

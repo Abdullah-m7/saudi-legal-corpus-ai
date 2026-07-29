@@ -59,18 +59,42 @@ with no implementing sub-clauses in the regulation (1, 2, 23, 27, 53, 69, 70, an
 the closing 80-85) the article text is the provision as presented in the document
 (a restatement), matching what qanoniah does for Articles 1 and 2.
 
-INGESTED VERSION: the ORIGINAL founding text as issued by Resolution 2249
-(10/3/1441H). Later per-article amendments (Articles 7, 23, 47 -- see
-amendment_history and each article's history) are flagged legal_status_ar =
-معدلة but the ingested text is the original 1441 wording (the amended wording was
-not recovered this pass, as qanoniah gates everything past Article 8 behind
-login). Article 80 is flagged ملغاة on the strength of an explicit footnote in
-the primary scan itself (Council of Ministers Resolution 636, 23/10/1438H); its
-(repealed) text is preserved verbatim, never deleted.
+INGESTED VERSION: the founding text of Resolution 2249 (10/3/1441H) UPDATED with
+all five confirmed subsequent amending decisions of the Minister of Interior,
+each independently re-verified against uqn.gov.sa (the official Umm al-Qura
+gazette) in the maintenance pass of 15/2/1448H, with qanoonsa.com as a second
+source where it indexes the item:
 
-86 records: 82 اصلية, 3 معدلة (7, 23, 47), 1 ملغاة (80), 0 مضافة. The المادة
-الخمسون مكرر is classified اصلية (is_mukarrar=True), since it is part of the
-original 1441 issuance, not a later addition to the regulation.
+  3148  26/2/1443H  -- adds 47/2   (UQ 4904, 15-10-2021)
+  18243 5/12/1443H  -- REPLACES Article 23 in full (UQ 30/12/1443, 29-07-2022)
+  5622  1/4/1444H   -- amends 7/1/3/2 (UQ 4956, 11-11-2022)
+  1924  1/5/1447H   -- DELETES 21/1/4 (UQ 5119, 31-10-2025)
+  5330  16/12/1447H -- adds 16/1/5, 17/2/13, 50/12, 51/7, 54/9, 59/5, 68/4
+                       (المركبات ذاتية القيادة; UQ 5163, 12-06-2026)
+
+None of them adds an article, so the record count stays 86.
+
+DELETIONS ARE FLAGGED, NEVER REMOVED. Clause 21/1/4 (the SAR 200,000 bank
+guarantee for vehicle showrooms), deleted by Decision 1924, is preserved verbatim
+in Article 21's text with an explicit deletion note beneath it, and Article 21 is
+reclassified اصلية -> معدلة. Article 80 remains ملغاة on the strength of an
+explicit footnote in the primary scan itself (Council of Ministers Resolution
+636, 23/10/1438H); its (repealed) text is likewise preserved verbatim.
+
+DISCLOSED GAP -- Article 47/2. Decision 3148's paragraph 47/2 consists of a
+chapeau, a 32-row violation/penalty table, and a licence-suspension provision
+47/2/1. ONLY THE CHAPEAU IS INGESTED, verbatim. The gazette's own text page stops
+at the chapeau ("تتمة اللائحة مرفقة نسخة PDF") and the annexed gazette PDF's text
+layer is corrupted by a ToUnicode/font-encoding defect that extracts Arabic as
+Latin mojibake. The table was NOT transcribed from the corrupted layer and NOT
+reconstructed; the gap is flagged inline in Article 47's text and in
+known_unresolved_discrepancies (key
+traffic_regulation_art47_2_penalty_table_gazette_pdf_gap).
+
+86 records: 74 اصلية, 11 معدلة (7, 16, 17, 21, 23, 47, 50, 51, 54, 59, 68),
+1 ملغاة (80), 0 مضافة. The المادة الخمسون مكرر is classified اصلية
+(is_mukarrar=True), since it is part of the original 1441 issuance, not a later
+addition to the regulation.
 
 Diacritics (tashkeel) are stripped uniformly for consistency with this corpus's
 other tracks (the "هـ" Hijri-date marker is retained -- it is not decorative
@@ -100,8 +124,12 @@ STATUS_AMENDED = "AMENDED"
 STATUS_ADDED = "ADDED"
 STATUS_REPEALED = "REPEALED"
 KEY_RE = r"traffic_regulation_art_(\d{3})(?:_mukarrar(\d*))?$"
-AMENDED_KEYS = {"traffic_regulation_art_007", "traffic_regulation_art_023",
-                "traffic_regulation_art_047"}
+AMENDED_KEYS = {"traffic_regulation_art_007", "traffic_regulation_art_016",
+                "traffic_regulation_art_017", "traffic_regulation_art_021",
+                "traffic_regulation_art_023", "traffic_regulation_art_047",
+                "traffic_regulation_art_050", "traffic_regulation_art_051",
+                "traffic_regulation_art_054", "traffic_regulation_art_059",
+                "traffic_regulation_art_068"}
 REPEALED_KEYS = {"traffic_regulation_art_080"}
 ADDED_KEYS: set[str] = set()
 STOP = set(("من في على عن إلى أو و أن التي الذي ما غير قبل بعد عند لدى هذه هذا به بها لها له أي كل "
@@ -195,9 +223,15 @@ def main():
                                               "known_unresolved_discrepancies in the source "
                                               "artifact before relying on this track -- in "
                                               "particular the scanned-source vision+OCR extraction "
-                                              "tier for Articles 9-85, the original-1441 (pre-"
-                                              "amendment) text retained for amended Articles 7/23/"
-                                              "47, and the source-attested repeal of Article 80."),
+                                              "tier for Articles 9-85, the five gazette-confirmed "
+                                              "amending decisions applied on top of it (3148, "
+                                              "18243, 5622, 1924, 5330), the DISCLOSED GAP in "
+                                              "Article 47/2 (its 32-row penalty table is NOT "
+                                              "ingested -- the annexed gazette PDF's text layer is "
+                                              "corrupted and was neither transcribed nor "
+                                              "reconstructed), the flagged-not-removed deletion of "
+                                              "clause 21/1/4, and the source-attested repeal of "
+                                              "Article 80."),
                     "translation_performed": False, "legal_interpretation_performed": False,
                     "summarized_or_paraphrased": False, "english_used_for_correction": False})
         llm.append({"law_id": LAW_ID, "law_component": "regulation", "article_number": n,
@@ -256,9 +290,9 @@ def main():
               open(SUMMARY, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     json.dump({"layer_id": "sa-traffic-regulation-arabic-legal-llm-full",
                "law_id": LAW_ID, "law_component": "regulation",
-               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (86 سجلا؛ 82 أصلية، 3 معدلة، 1 ملغاة، 0 مضافة)",
+               "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (86 سجلا؛ 74 أصلية، 11 معدلة، 1 ملغاة، 0 مضافة)",
                "title_en": ("Implementing Regulation of the Saudi Arabian Traffic Law — Arabic "
-                            "LLM-ready layer (86 records: 82 original, 3 amended, 1 repealed, "
+                            "LLM-ready layer (86 records: 74 original, 11 amended, 1 repealed, "
                             "0 added)"),
                "record_type": "verified_arabic_article", "language": "ar",
                "governing_text_language": "ar", "record_count": len(llm),

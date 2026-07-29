@@ -1849,12 +1849,12 @@ def main() -> int:
 
     amlr = tracks_by_id.get("aml_regulation", {})
     amlr_counts = amlr.get("record_counts", {})
-    check("[7g147] aml_regulation: 25 Arabic records, aml.gov.sa scanned PDF x qanoniah.com born-digital API reconciliation (10 of 25) + OCR-adjudicated (15 of 25)...",
-          amlr_counts.get("arabic_articles") == 25
-          and amlr.get("official_text_status") == "AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE",
+    check("[7g147] aml_regulation: 27 Arabic records, Umm al-Qura born-digital official gazette PRIMARY x aml.gov.sa official scan SECONDARY x qanoniah.com tertiary (rebuilt: arts 18/19 recovered, false absence-assertion retracted)...",
+          amlr_counts.get("arabic_articles") == 27
+          and amlr.get("official_text_status") == "UQN_GOV_SA_BORN_DIGITAL_OFFICIAL_GAZETTE_PRIMARY_X_AML_GOV_SA_OFFICIAL_SCAN_SECONDARY_X_QANONIAH_BORN_DIGITAL_TERTIARY_27_ARTICLES_BOE_NO_DEDICATED_LAWID_PAGE",
           f"counts={amlr_counts}")
-    check("    aml_regulation: status breakdown 24/1/0/0...",
-          amlr_counts.get("legal_status_breakdown") == {"اصلية": 24, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+    check("    aml_regulation: status breakdown 26/1/0/0...",
+          amlr_counts.get("legal_status_breakdown") == {"اصلية": 26, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
           f"breakdown={amlr_counts.get('legal_status_breakdown')}")
 
     patr = tracks_by_id.get("patent_regulation", {})
@@ -1893,8 +1893,8 @@ def main() -> int:
           tfr_counts.get("arabic_articles") == 86
           and tfr.get("official_text_status") == "MOI_OFFICIAL_SCANNED_DOCUMENT_DUAL_VISION_OCR_PIPELINE_X_QANONIAH_COM_BORN_DIGITAL_PARTIAL_CROSSCHECK_ARTS_1_8_OF_86_BOE_NO_DEDICATED_LAWID_PAGE",
           f"counts={tfr_counts}")
-    check("    traffic_regulation: status breakdown 82/3/1/0...",
-          tfr_counts.get("legal_status_breakdown") == {"اصلية": 82, "معدلة": 3, "ملغاة": 1, "مضافة": 0},
+    check("    traffic_regulation: status breakdown 74/11/1/0 (5 confirmed amending decisions applied)...",
+          tfr_counts.get("legal_status_breakdown") == {"اصلية": 74, "معدلة": 11, "ملغاة": 1, "مضافة": 0},
           f"breakdown={tfr_counts.get('legal_status_breakdown')}")
 
     eia = tracks_by_id.get("environmental_inspection_audit", {})
@@ -2389,12 +2389,12 @@ def main() -> int:
 
     weapons_ammunition_regulation_var = tracks_by_id.get("weapons_ammunition_regulation", {})
     weapons_ammunition_regulation_var_counts = weapons_ammunition_regulation_var.get("record_counts", {})
-    check("[7g201] weapons_ammunition_regulation: 19 Arabic records...",
-          weapons_ammunition_regulation_var_counts.get("arabic_articles") == 19
+    check("[7g201] weapons_ammunition_regulation: 20 Arabic records (decision 26269 22-item amendment applied)...",
+          weapons_ammunition_regulation_var_counts.get("arabic_articles") == 20
           and weapons_ammunition_regulation_var.get("official_text_status") == "QADHA_ORG_SA_PRIMARY_PDF_TESSERACT_OCR_RECONSTRUCTED_CORRUPTED_TOUNICODE_TEXT_LAYER_X_QANOONSA_PARTIAL_2_OF_19_ARTICLES_X_UQN_GOV_SA_DIRECT_5TH_AMENDMENT_DISCOVERY_TIER_3_BOE_NO_DEDICATED_PAGE_FOUNDING_DECREE_23_VS_33_INTERNAL_CONFLICT",
           f"counts={weapons_ammunition_regulation_var_counts}")
     check("    weapons_ammunition_regulation: status breakdown 7/12/0/0...",
-          weapons_ammunition_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 7, "معدلة": 12, "ملغاة": 0, "مضافة": 0},
+          weapons_ammunition_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 7, "معدلة": 12, "ملغاة": 0, "مضافة": 1},
           f"breakdown={weapons_ammunition_regulation_var_counts.get('legal_status_breakdown')}")
 
     engineering_practice_regulation_var = tracks_by_id.get("engineering_practice_regulation", {})
@@ -3167,7 +3167,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 15689 records...", uix.get("total_records") == 15689,
+    check("[7g] unified retrieval index: 15692 records...", uix.get("total_records") == 15692,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3229,8 +3229,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 15858...",
-          registry.get("total_primary_arabic_governing_records") == 15858,
+    check("[19a] total_primary_arabic_governing_records == 15861...",
+          registry.get("total_primary_arabic_governing_records") == 15861,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3245,8 +3245,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 16753...",
-          registry.get("total_registry_counted_records") == 16753,
+    check("[19e] total_registry_counted_records == 16756...",
+          registry.get("total_registry_counted_records") == 16756,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3270,7 +3270,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"15858 + 614 + 281 = 16753")
+          f"15861 + 614 + 281 = 16756")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,

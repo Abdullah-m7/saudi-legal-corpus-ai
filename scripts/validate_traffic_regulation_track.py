@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Read-only validator for the Implementing Regulation of the Saudi Arabian
-Traffic Law track (86 records: 82 اصلية, 3 معدلة [Articles 7, 23, 47], 1 ملغاة
-[Article 80], 0 مضافة; 8 chapters; 85 numbered articles plus المادة الخمسون
-مكرر).
+Traffic Law track (86 records: 74 اصلية, 11 معدلة [Articles 7, 16, 17, 21, 23,
+47, 50, 51, 54, 59, 68], 1 ملغاة [Article 80], 0 مضافة; 8 chapters; 85 numbered
+articles plus المادة الخمسون مكرر).
+
+AMENDMENT STATE: the founding text of Resolution 2249 (10/3/1441H) updated with
+all five gazette-confirmed amending decisions of the Minister of Interior --
+3148 (26/2/1443, adds 47/2), 18243 (5/12/1443, replaces Article 23 in full),
+5622 (1/4/1444, amends 7/1/3/2), 1924 (1/5/1447, deletes 21/1/4) and 5330
+(16/12/1447, adds the seven المركبات ذاتية القيادة paragraphs 16/1/5, 17/2/13,
+50/12, 51/7, 54/9, 59/5, 68/4). None adds an article, so the count stays 86.
+Checks [2m] below assert each of the five is actually present, that superseded
+wording is preserved rather than discarded, that the deleted clause 21/1/4 is
+FLAGGED and NOT removed, and that the unrecovered Article 47/2 penalty table
+stays disclosed as a gap rather than being quietly filled in or dropped.
 
 VERIFICATION TIER -- see the generator's module docstring and
 sources/traffic/regulation/official_source/traffic_regulation_official_source.json's
@@ -43,15 +54,19 @@ N = 86                 # total records
 N_NUMBERED = 85        # distinct numbered articles (1..85); the 86th is 50 مكرر
 KEY_RE = r"traffic_regulation_art_(\d{3})(?:_mukarrar(\d*))?$"
 ALLOWED_STATUS = {"اصلية", "معدلة", "ملغاة", "مضافة"}
-EXPECTED_COUNTS = {"اصلية": 82, "معدلة": 3, "ملغاة": 1, "مضافة": 0}
+EXPECTED_COUNTS = {"اصلية": 74, "معدلة": 11, "ملغاة": 1, "مضافة": 0}
 EXPECTED_TOP_LEVEL_CHAPTERS = 8
 
 STATUS_UNCHANGED = "UNCHANGED"
 STATUS_AMENDED = "AMENDED"
 STATUS_ADDED = "ADDED"
 STATUS_REPEALED = "REPEALED"
-AMENDED_KEYS = {"traffic_regulation_art_007", "traffic_regulation_art_023",
-                "traffic_regulation_art_047"}
+AMENDED_KEYS = {"traffic_regulation_art_007", "traffic_regulation_art_016",
+                "traffic_regulation_art_017", "traffic_regulation_art_021",
+                "traffic_regulation_art_023", "traffic_regulation_art_047",
+                "traffic_regulation_art_050", "traffic_regulation_art_051",
+                "traffic_regulation_art_054", "traffic_regulation_art_059",
+                "traffic_regulation_art_068"}
 REPEALED_KEYS = {"traffic_regulation_art_080"}
 ADDED_KEYS: set[str] = set()
 MUKARRAR_KEYS = {"traffic_regulation_art_050_mukarrar"}
@@ -76,7 +91,15 @@ FLAGGED_DISCREPANCY_KEYS = {
     "traffic_regulation_annex_tables_not_modeled",
     "traffic_regulation_points_system_not_the_1443_points_regulation",
     "traffic_regulation_ocr_slashnum_reconstruction",
+    # added by the 15/2/1448H maintenance pass (five amending decisions applied)
+    "traffic_regulation_art47_2_penalty_table_gazette_pdf_gap",
+    "traffic_regulation_decision_5622_issue_date_variant",
+    "traffic_regulation_decision_1924_single_source_number_and_date",
+    "traffic_regulation_prior_source_two_decisions_stale",
 }
+# The five amending decisions applied to this track. Every one of them must stay
+# recorded, with its number, in the track-level amendment_history.
+REQUIRED_AMENDING_DECISIONS = ("3148", "18243", "5622", "1924", "5330")
 AR = "ء-ي"
 # genuine non-Arabic tokens present verbatim in the source (allow-list)
 ALLOWED_LATIN = {"FIA"}
@@ -214,6 +237,79 @@ def main():
             e.append("[2k] amendment_history must reference superseded resolution 7019")
         if "636" not in decrees:
             e.append("[2k] amendment_history must reference the Article-80 repeal (CoM 636)")
+        for dec in REQUIRED_AMENDING_DECISIONS:
+            if dec not in decrees:
+                e.append("[2k] amendment_history must reference amending decision %s" % dec)
+        if "غير مؤكد" in decrees:
+            e.append("[2k] amendment_history still carries an unconfirmed-date entry; all five "
+                     "amending decisions are gazette-dated")
+
+    # ---- the five applied amendments must actually be present in the text ----
+    # decision 5330 (16/12/1447) -- seven self-driving-vehicle paragraphs
+    for key, clause in (("traffic_regulation_art_016", "16/1/5-"),
+                        ("traffic_regulation_art_017", "17/2/13-"),
+                        ("traffic_regulation_art_050", "50/12-"),
+                        ("traffic_regulation_art_051", "51/7-"),
+                        ("traffic_regulation_art_054", "54/9-"),
+                        ("traffic_regulation_art_059", "59/5-"),
+                        ("traffic_regulation_art_068", "68/4-")):
+        t = arts.get(key, {}).get("text", "")
+        if clause not in t or "ذاتية القيادة" not in t:
+            e.append("[2m] %s: missing clause %s added by Decision 5330" % (key, clause))
+        h = " ".join(str(x.get("decree", "")) for x in arts.get(key, {}).get("history", []))
+        if "5330" not in h:
+            e.append("[2m] %s: history must cite Decision 5330" % key)
+
+    # decision 5622 (1/4/1444) -- clause 7/1/3/2 replaced, original preserved in history
+    a7t = arts.get("traffic_regulation_art_007", {}).get("text", "")
+    if "7/1/3/2- يشترط لصرف اللوحات الدبلوماسية أو القنصلية" not in a7t:
+        e.append("[2m] Article 7 must carry the 5622-amended text of clause 7/1/3/2")
+    if "ممن يحملون الصفة الدبلوماسية" in a7t:
+        e.append("[2m] Article 7 still carries the superseded 1441 wording of 7/1/3/2 in its text")
+    a7h = " ".join(str(x.get("decree", "")) + str(x.get("description", ""))
+                   for x in arts.get("traffic_regulation_art_007", {}).get("history", []))
+    if "5622" not in a7h or "ممن يحملون الصفة الدبلوماسية" not in a7h:
+        e.append("[2m] Article 7 history must cite Decision 5622 AND preserve the superseded "
+                 "1441 wording (nothing is discarded)")
+
+    # decision 1924 (1/5/1447) -- clause 21/1/4 FLAGGED deleted, text NEVER removed
+    a21 = arts.get("traffic_regulation_art_021", {})
+    a21t = a21.get("text", "")
+    if "21/1/4- وجود ضمان بنكي بمبلغ (مائتي) ألف ريال." not in a21t:
+        e.append("[2m] Article 21: deleted clause 21/1/4 text must be PRESERVED, never removed")
+    if "محذوفة" not in a21t or "1924" not in a21t:
+        e.append("[2m] Article 21: clause 21/1/4 must carry an explicit deletion flag citing 1924")
+    if "1924" not in " ".join(str(x.get("decree", "")) for x in a21.get("history", [])):
+        e.append("[2m] Article 21 history must cite Decision 1924")
+
+    # decision 18243 (5/12/1443) -- Article 23 replaced in full, original preserved in history
+    a23 = arts.get("traffic_regulation_art_023", {})
+    a23t = a23.get("text", "")
+    for need in ("23/1-", "23/2/1-", "23/10-", "الهيئة السعودية للمواصفات والمقاييس والجودة"):
+        if need not in a23t:
+            e.append("[2m] Article 23 missing %r from the 18243 replacement text" % need)
+    if len(a23t) < 2000:
+        e.append("[2m] Article 23 looks like the pre-18243 restatement, not the full replacement")
+    a23h = " ".join(str(x.get("decree", "")) + str(x.get("description", ""))
+                    for x in a23.get("history", []))
+    if "18243" not in a23h or "بالاتفاق بين وزير الداخلية ووزير النقل" not in a23h:
+        e.append("[2m] Article 23 history must cite Decision 18243 AND preserve the superseded "
+                 "1441 text (nothing is discarded)")
+
+    # decision 3148 (26/2/1443) -- 47/2 chapeau ingested; its table is a DISCLOSED GAP.
+    # The gap must stay disclosed: never silently filled, never quietly dropped.
+    a47 = arts.get("traffic_regulation_art_047", {})
+    a47t = a47.get("text", "")
+    if "47/2- مع عدم الإخلال بأي عقوبة أشد" not in a47t:
+        e.append("[2m] Article 47 must carry the verbatim 47/2 chapeau added by Decision 3148")
+    if "فجوة معلنة غير محلولة" not in a47t or "32" not in a47t:
+        e.append("[2m] Article 47 must keep the 47/2 penalty-table gap FLAGGED inline "
+                 "(32 rows + clause 47/2/1 not recovered)")
+    if re.search(r"(?m)^47/2/1-", a47t):
+        e.append("[2m] Article 47 appears to contain reconstructed 47/2 table content; that "
+                 "table was never recovered and must not be invented")
+    if "3148" not in " ".join(str(x.get("decree", "")) for x in a47.get("history", [])):
+        e.append("[2m] Article 47 history must cite Decision 3148")
 
     # preamble (the resolution text itself) must be present and carry the key facts
     pre = src.get("preamble_ar") or ""
@@ -312,7 +408,8 @@ def main():
             print("  - %s" % x)
         return 1
     print("PASS: Implementing Regulation of the Saudi Arabian Traffic Law")
-    print("  - 86 records: 82 اصلية, 3 معدلة (Articles 7, 23, 47), 1 ملغاة (Article 80), 0 مضافة")
+    print("  - 86 records: 74 اصلية, 11 معدلة (Articles 7, 16, 17, 21, 23, 47, 50, 51, 54, 59,")
+    print("    68), 1 ملغاة (Article 80), 0 مضافة")
     print("  - 8 chapters; 85 numbered articles plus المادة الخمسون مكرر (commercial-centre licensing)")
     print("  - Ministerial Resolution (Minister of Interior) No. (2249), 10/3/1441H, under the")
     print("    Traffic Law (Royal Decree M/85) -- SUPERSEDES the prior Resolution 7019/1429H")
@@ -323,11 +420,32 @@ def main():
     print("    Articles 1-8 cross-validated against qanoniah.com born-digital text: 100% for six")
     print("    articles, 99.0% for Article 2 (cosmetic); Article 7's 51.5% divergence confirms its")
     print("    amendment and that the scan is the original 1441 issuance.")
-    print("  - INGESTED VERSION: original 1441 as-issued text; amended Articles 7/23/47 flagged")
-    print("    معدلة with original text retained (amended wording not recovered this pass).")
+    print("  - INGESTED VERSION: the 1441 as-issued text UPDATED with all five gazette-confirmed")
+    print("    amending decisions of the Minister of Interior, each re-verified against")
+    print("    uqn.gov.sa this pass (qanoonsa.com as second source where indexed):")
+    print("      3148  26/2/1443H  adds 47/2 (chapeau only -- see the disclosed gap below)")
+    print("      18243 5/12/1443H  REPLACES Article 23 in full (10 clauses + fine tables)")
+    print("      5622  1/4/1444H   amends 7/1/3/2 (diplomatic/consular plates)")
+    print("      1924  1/5/1447H   DELETES 21/1/4 (SAR 200,000 showroom bank guarantee)")
+    print("      5330  16/12/1447H adds 16/1/5, 17/2/13, 50/12, 51/7, 54/9, 59/5, 68/4")
+    print("                        (المركبات ذاتية القيادة)")
+    print("    None adds an article, so the record count stays 86. Superseded 1441 wording for")
+    print("    Articles 7 and 23 is preserved in their history, never discarded.")
+    print("  - DELETION: clause 21/1/4 is FLAGGED محذوفة inline with its text preserved verbatim")
+    print("    (never removed); Article 21 reclassified اصلية -> معدلة.")
     print("  - REPEAL: Article 80 (Supreme Traffic Council) flagged ملغاة on an explicit footnote")
     print("    in the primary scan itself (Council of Ministers Resolution 636, 23/10/1438H); its")
     print("    text is preserved verbatim, never deleted.")
+    print("  - DISCLOSED UNRESOLVED GAP: Article 47/2's 32-row violation/penalty table and its")
+    print("    clause 47/2/1 are NOT ingested. The gazette text page stops at the chapeau and the")
+    print("    annexed gazette PDF's text layer is corrupted by a ToUnicode/font-encoding defect")
+    print("    (Arabic extracts as Latin mojibake). It was NOT transcribed from the corrupted")
+    print("    layer and NOT reconstructed. Flagged inline in Article 47 and in")
+    print("    known_unresolved_discrepancies; OCR-on-rendered-images is the follow-up route.")
+    print("  - SOURCE CAUTION recorded for future passes: the track's prior basis (the 1441")
+    print("    scanned MOI document) was TWO decisions stale in the sense that it gave no notice")
+    print("    at all of decisions 1924 and 5330; treat it as a historical founding text, not a")
+    print("    current consolidated one, and re-scan the gazette past 5330 (16/12/1447H).")
     return 0
 
 

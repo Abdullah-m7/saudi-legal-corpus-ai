@@ -33,9 +33,9 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 15858,
+  "total_primary_arabic_governing_records": 15861,
   "total_reference_records": 614,
-  "total_registry_counted_records": 16753,
+  "total_registry_counted_records": 16756,
   "total_tracks": 291,
   "tracks": [
     {
@@ -7568,7 +7568,7 @@
       "data_paths": [
         "sources/aml/regulation/official_source/aml_regulation_official_source.json",
         "sources/aml/regulation/verified/aml_regulation_verified_records.jsonl",
-        "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_025.json"
+        "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_027.json"
       ],
       "display_name_ar": "اللائحة التنفيذية لنظام مكافحة غسل الأموال",
       "display_name_en": "Implementing Regulation of the Anti-Money Laundering Law",
@@ -7576,28 +7576,28 @@
       "jurisdiction": "Kingdom of Saudi Arabia",
       "language_layers": {
         "arabic": {
-          "data_path": "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_025.json",
+          "data_path": "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_027.json",
           "governing": true,
-          "record_count": 25,
+          "record_count": 27,
           "status": "complete"
         }
       },
       "notes": "Implementing Regulation of the Anti-Money Laundering Law «اللائحة التنفيذية لنظام مكافحة غسل الأموال» — current consolidation via Administrative Decision No. 266507, dated 9/12/1447H (President of State Security), which updates the Regulation per the base Law's own M/223 (27/10/1447H) amendments; consolidates the founding approval (cable No. 14525, 19/2/1439H -- SAMA's own canonical reference number/date for this Regulation) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17). Issued under Article 50 of the base AML Law (M/20, 5/2/1439H). **25 articles ingested** (present numbers: 1,2,5,7,8,9,10,14,15,16,17,20,22,23,24,36,37,38,39,40,41,42,43,48,49), across the Law's own 9 numbered chapters (I-VI, VIII-X; Chapter VII العقوبات has no Regulation-level counterpart, so numbering jumps VI to VIII) -- the Regulation only elaborates Law articles needing implementing detail, numbering provisions at paragraph level ('س/ع' = paragraph س of article ع). **24 اصلية / 1 معدلة** (Article 17, per Administrative Decision 98752 -- the pre-amendment sub-paragraph text could not be recovered and was not fabricated) **/ 0 ملغاة / 0 مضافة**. **VERIFICATION TIER: TIER_3** (mixed scan-OCR + partial born-digital) — laws.boe.gov.sa checked first per methodology: unreachable this pass (connection reset) AND has no dedicated lawId page (BOE does not catalogue State-Security/administrative executive regulations). PRIMARY source is aml.gov.sa's official scanned PDF (34pp, sha256-identified, 300dpi scan, no text layer). Text reconciled from TWO independent channels: (a) 10 articles (1,2,5,7,8,9,10,14,15,16) from qanoniah.com's born-digital API, independently confirmed to be the SAME current consolidated version (last-modified metadata matches Decision 266507; Article 1 defines the newer terms المحفظة الإلكترونية/تسليم مراقب); (b) the other 15 articles OCR-extracted (tesseract-ara) from the scan and visually adjudicated article-by-article against the rendered page images -- qanoniah's overlapping articles (2, 5, 10, 16) matched the scan verbatim, cross-confirming both channels carry the same in-force text. **NO IN-REGULATION REPEAL CLAUSE NAMING A PREDECESSOR** -- a confirmed negative finding; the supersession of the prior legal regime is derivative, via the base Law's own Article 51 (which replaced the old AML Law M/31, 11/5/1433H). A separate, genuinely distinct OLDER 1430H regulation (Adl Magazine issue 43) was confirmed to exist and was deliberately NOT mixed in. Disclosed anomalies: the SAMA rulebook (rulebook.sama.gov.sa) serves an OLDER/founding version of this same Regulation (fewer definitions, no المحفظة الإلكترونية) -- used only for metadata cross-check (reference number 14525, date 19/2/1439H), never for article text, to avoid version contamination; the scanned-PDF/OCR tier for the 15 scan-sourced articles carries a residual fine-OCR-error risk; the 'س/ع' paragraph numbering has no explicit article headers in the source (number_label_ar constructed); Law article numbers not elaborated by this Regulation are deliberately skipped, not missing data; Article 17's pre-amendment text could not be recovered. Arabic governs; not legal advice.",
-      "official_text_status": "AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE",
+      "official_text_status": "UQN_GOV_SA_BORN_DIGITAL_OFFICIAL_GAZETTE_PRIMARY_X_AML_GOV_SA_OFFICIAL_SCAN_SECONDARY_X_QANONIAH_BORN_DIGITAL_TERTIARY_27_ARTICLES_BOE_NO_DEDICATED_LAWID_PAGE",
       "record_counts": {
-        "arabic_articles": 25,
+        "arabic_articles": 27,
         "legal_status_breakdown": {
-          "اصلية": 24,
+          "اصلية": 26,
           "مضافة": 0,
           "معدلة": 1,
           "ملغاة": 0
         },
-        "total": 25
+        "total": 27
       },
       "report_paths": [
         "reports/coverage_gap_map/coverage_gap_map.json"
       ],
-      "source_authority": "Administrative Decision No. 266507, dated 9/12/1447H, issued by the President of State Security, consolidating the founding approval (cable No. 14525, 19/2/1439H) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17), under Article 50 of the Anti-Money Laundering Law (Royal Decree/Law M/20, 5/2/1439H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this State-Security-level Regulation. PRIMARY source is aml.gov.sa's official scanned PDF (34pp, no text layer); text reconciled from two independent channels — 10 articles (1,2,5,7,8,9,10,14,15,16) from qanoniah.com's born-digital API (independently confirmed to be the same current consolidated version), the other 15 articles OCR-extracted (tesseract-ara) and visually adjudicated article-by-article against the rendered scan page images",
+      "source_authority": "Administrative Decision No. 266507, dated 9/12/1447H, issued by the President of State Security, consolidating the founding approval (cable No. 14525, 19/2/1439H) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17), under Article 50 of the Anti-Money Laundering Law (Royal Decree/Law M/20, 5/2/1439H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this State-Security-level Regulation. REBUILT 2026-07-29 from the born-digital official gazette: Umm al-Qura published the full attached Regulation text at uqn.gov.sa/decisions-and-regulations/4001243 (61,265 chars, 128 numbered paragraphs, 27 articles, 10 chapter headings, native HTML with no OCR). This RAISED the tier from TIER_3 (scan-OCR) to TIER_1 (born-digital official gazette cross-verified against the aml.gov.sa official scan, with qanoniah.com as a third channel). The rebuild CORRECTED three real defects in the prior OCR-based text: (1) the track held 25 articles where the gazette numbers 27 — Articles 18 and 19 were MISSING, their three paragraphs mis-filed under 17/6, 17/7 and 17/8; they are now re-homed verbatim (word-for-word identical to gazette 18/1, 18/2, 19/1), with every moved paragraph carrying a rehomed_from record and Article 17 carrying a restructuring note — nothing was added or lost; (2) the track's own known_unresolved_discrepancies previously asserted that Articles 18 and 19 were 'deliberately absent from the source' — that assertion was FALSE (it arose because the scan carries no article headers, causing mis-segmentation) and is now formally RETRACTED in place, with the prior wording preserved verbatim rather than deleted; (3) 25 corrections were applied across 23 paragraphs in 11 articles, each recording its prior text, including TWO substantive omissions that changed meaning — 17/4(ج) had dropped «الأخرى برئاسة أمن الدولة» and 49/1 had dropped the verb «يسمح». The track is NOT stale (128 gazette paragraphs vs 128 stored, same version). One discrepancy is deliberately left OPEN and disclosed rather than silently changed: paragraph tags are stored 'paragraph/article' while the gazette prints 'article/paragraph'; the gazette order is very likely correct and ours an RTL-extraction artifact, but renumbering all 128 tags plus every internal cross-reference is a separately reviewable change",
       "status": "complete",
       "track_id": "aml_regulation",
       "validator_targets": [
@@ -7783,9 +7783,9 @@
       "record_counts": {
         "arabic_articles": 86,
         "legal_status_breakdown": {
-          "اصلية": 82,
+          "اصلية": 74,
           "مضافة": 0,
-          "معدلة": 3,
+          "معدلة": 11,
           "ملغاة": 1
         },
         "total": 86
@@ -10210,7 +10210,7 @@
       "data_paths": [
         "sources/weapons_ammunition_regulation/law/official_source/weapons_ammunition_regulation_official_source.json",
         "sources/weapons_ammunition_regulation/law/verified/weapons_ammunition_regulation_verified_summary.json",
-        "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_019.json"
+        "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_020.json"
       ],
       "display_name_ar": "اللائحة التنفيذية لنظام الأسلحة والذخائر",
       "display_name_en": "Implementing Regulation of the Weapons and Ammunition Law",
@@ -10218,23 +10218,23 @@
       "jurisdiction": "Kingdom of Saudi Arabia",
       "language_layers": {
         "arabic": {
-          "data_path": "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_019.json",
+          "data_path": "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_020.json",
           "governing": true,
-          "record_count": 19,
+          "record_count": 20,
           "status": "complete"
         }
       },
       "notes": "Implementing Regulation of the Weapons and Ammunition Law «اللائحة التنفيذية لنظام الأسلحة والذخائر» — Ministerial Resolution No. (23), dated 19/1/1428H, issued by the Minister of Interior, published in Umm al-Qura gazette issue (4159), 13/7/1428H. **19 records: 7 اصلية / 12 معدلة** — this Regulation carries NO independent article numbering of its own; every record is keyed to, and cross-referenced against, the base law's own article numbers (only 19 of the base law's 63 articles carry attached implementing text in this source). **VERIFICATION TIER: TIER_3** — the primary source (qadha.org.sa's consolidated PDF) has a digital text layer corrupted by a systemic font-encoding defect requiring Tesseract OCR reconstruction, and full cross-verification is available for only 2 of the 19 articles (qanoonsa.com, Articles 3 and 5). Disclosed discrepancies: the source itself gives conflicting founding-decree numbers — '23' (preamble/index) vs '33' (amendment-history table) — with '23' adopted as correct; Ministerial Resolution 549 (4/2/1446H) adds a new paragraph to Article 23's regulation that the source states explicitly 'لم تسر بعد' (has not yet taken effect), recorded with pending status disclosed; a FIFTH amendment (Minister of Interior Resolution 1938, 10/4/1446H), independently discovered via uqn.gov.sa, adds a medical/toxicology screening requirement to Article 9's regulation and postdates the qadha.org.sa consolidated source, resting on a single direct gazette source without a second independent confirmation; pre-amendment original wording is not preserved for most amended articles; Article 13/3(b)'s text could not be confirmed with confidence due to page-layout ambiguity and is flagged rather than fabricated; Article 3's own implementing regulation was relocated in full into Article 9's regulation by Resolution 5656; fee-schedule annexes referenced by Articles 12 and 25 are out of scope. Arabic governs; not legal advice.",
       "official_text_status": "QADHA_ORG_SA_PRIMARY_PDF_TESSERACT_OCR_RECONSTRUCTED_CORRUPTED_TOUNICODE_TEXT_LAYER_X_QANOONSA_PARTIAL_2_OF_19_ARTICLES_X_UQN_GOV_SA_DIRECT_5TH_AMENDMENT_DISCOVERY_TIER_3_BOE_NO_DEDICATED_PAGE_FOUNDING_DECREE_23_VS_33_INTERNAL_CONFLICT",
       "record_counts": {
-        "arabic_articles": 19,
+        "arabic_articles": 20,
         "legal_status_breakdown": {
           "اصلية": 7,
-          "مضافة": 0,
+          "مضافة": 1,
           "معدلة": 12,
           "ملغاة": 0
         },
-        "total": 19
+        "total": 20
       },
       "report_paths": [
         "reports/coverage_gap_map/coverage_gap_map.json"
@@ -14027,7 +14027,7 @@
       "agriculture": 308,
       "alimony_fund": 17,
       "allegiance_commission": 43,
-      "aml": 77,
+      "aml": 79,
       "anti_bribery": 25,
       "anti_concealment": 38,
       "anti_cyber_crime": 16,
@@ -14216,13 +14216,13 @@
       "vat": 135,
       "waste_management": 38,
       "water": 233,
-      "weapons_ammunition": 82,
+      "weapons_ammunition": 83,
       "whistleblower": 49,
       "white_land_fees": 15,
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 15689,
+    "total_records": 15692,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

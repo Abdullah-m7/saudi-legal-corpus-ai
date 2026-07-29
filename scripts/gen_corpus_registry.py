@@ -197,7 +197,7 @@ VAT_REGULATION_LLM = os.path.join(ROOT, "data", "vat_regulation_arabic_legal_llm
 INCOME_TAX_REGULATION_LLM = os.path.join(ROOT, "data", "income_tax_regulation_arabic_legal_llm", "income_tax_regulation_legal_llm_001_074.json")
 AGRICULTURE_LAW_LLM = os.path.join(ROOT, "data", "agriculture_arabic_legal_llm", "agriculture_law_legal_llm_001_037.json")
 COMPETITION_REGULATION_LLM = os.path.join(ROOT, "data", "competition_regulation_arabic_legal_llm", "competition_regulation_legal_llm_001_005.json")
-AML_REGULATION_LLM = os.path.join(ROOT, "data", "aml_regulation_arabic_legal_llm", "aml_regulation_legal_llm_001_025.json")
+AML_REGULATION_LLM = os.path.join(ROOT, "data", "aml_regulation_arabic_legal_llm", "aml_regulation_legal_llm_001_027.json")
 PATENT_REGULATION_LLM = os.path.join(ROOT, "data", "patent_regulation_arabic_legal_llm", "patent_regulation_legal_llm_001_067.json")
 ECOMMERCE_REGULATION_LLM = os.path.join(ROOT, "data", "ecommerce_regulation_arabic_legal_llm", "ecommerce_regulation_legal_llm_001_020.json")
 FRANCHISE_REGULATION_LLM = os.path.join(ROOT, "data", "franchise_regulation_arabic_legal_llm", "franchise_regulation_legal_llm_001_016.json")
@@ -251,7 +251,7 @@ ANTI_CONCEALMENT_REGULATION_LLM = os.path.join(ROOT, "data", "anti_concealment_r
 PRIVATIZATION_REGULATION_LLM = os.path.join(ROOT, "data", "privatization_regulation_arabic_legal_llm", "privatization_regulation_legal_llm_001_169.json")
 CHAMBERS_OF_COMMERCE_REGULATION_LLM = os.path.join(ROOT, "data", "chambers_of_commerce_regulation_arabic_legal_llm", "chambers_of_commerce_regulation_legal_llm_001_063.json")
 STATE_REVENUE_REGULATION_LLM = os.path.join(ROOT, "data", "state_revenue_regulation_arabic_legal_llm", "state_revenue_regulation_legal_llm_001_065.json")
-WEAPONS_AMMUNITION_REGULATION_LLM = os.path.join(ROOT, "data", "weapons_ammunition_regulation_arabic_legal_llm", "weapons_ammunition_regulation_legal_llm_001_019.json")
+WEAPONS_AMMUNITION_REGULATION_LLM = os.path.join(ROOT, "data", "weapons_ammunition_regulation_arabic_legal_llm", "weapons_ammunition_regulation_legal_llm_001_020.json")
 ENGINEERING_PRACTICE_REGULATION_LLM = os.path.join(ROOT, "data", "engineering_practice_regulation_arabic_legal_llm", "engineering_practice_regulation_legal_llm_001_018.json")
 ALLEGIANCE_COMMISSION_REGULATION_LLM = os.path.join(ROOT, "data", "allegiance_commission_regulation_arabic_legal_llm", "allegiance_commission_regulation_legal_llm_001_018.json")
 SOCIAL_INSURANCE_REGULATION_LLM = os.path.join(ROOT, "data", "social_insurance_regulation_arabic_legal_llm", "social_insurance_regulation_legal_llm_001_107.json")
@@ -5922,18 +5922,18 @@ def main() -> int:
                 "jurisdiction": "Kingdom of Saudi Arabia",
                 "governing_language": "ar",
                 "status": "complete",
-                "official_text_status": "AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE",
-                "source_authority": "Administrative Decision No. 266507, dated 9/12/1447H, issued by the President of State Security, consolidating the founding approval (cable No. 14525, 19/2/1439H) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17), under Article 50 of the Anti-Money Laundering Law (Royal Decree/Law M/20, 5/2/1439H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this State-Security-level Regulation. PRIMARY source is aml.gov.sa's official scanned PDF (34pp, no text layer); text reconciled from two independent channels — 10 articles (1,2,5,7,8,9,10,14,15,16) from qanoniah.com's born-digital API (independently confirmed to be the same current consolidated version), the other 15 articles OCR-extracted (tesseract-ara) and visually adjudicated article-by-article against the rendered scan page images",
+                "official_text_status": "UQN_GOV_SA_BORN_DIGITAL_OFFICIAL_GAZETTE_PRIMARY_X_AML_GOV_SA_OFFICIAL_SCAN_SECONDARY_X_QANONIAH_BORN_DIGITAL_TERTIARY_27_ARTICLES_BOE_NO_DEDICATED_LAWID_PAGE",
+                "source_authority": "Administrative Decision No. 266507, dated 9/12/1447H, issued by the President of State Security, consolidating the founding approval (cable No. 14525, 19/2/1439H) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17), under Article 50 of the Anti-Money Laundering Law (Royal Decree/Law M/20, 5/2/1439H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this State-Security-level Regulation. REBUILT 2026-07-29 from the born-digital official gazette: Umm al-Qura published the full attached Regulation text at uqn.gov.sa/decisions-and-regulations/4001243 (61,265 chars, 128 numbered paragraphs, 27 articles, 10 chapter headings, native HTML with no OCR). This RAISED the tier from TIER_3 (scan-OCR) to TIER_1 (born-digital official gazette cross-verified against the aml.gov.sa official scan, with qanoniah.com as a third channel). The rebuild CORRECTED three real defects in the prior OCR-based text: (1) the track held 25 articles where the gazette numbers 27 — Articles 18 and 19 were MISSING, their three paragraphs mis-filed under 17/6, 17/7 and 17/8; they are now re-homed verbatim (word-for-word identical to gazette 18/1, 18/2, 19/1), with every moved paragraph carrying a rehomed_from record and Article 17 carrying a restructuring note — nothing was added or lost; (2) the track's own known_unresolved_discrepancies previously asserted that Articles 18 and 19 were 'deliberately absent from the source' — that assertion was FALSE (it arose because the scan carries no article headers, causing mis-segmentation) and is now formally RETRACTED in place, with the prior wording preserved verbatim rather than deleted; (3) 25 corrections were applied across 23 paragraphs in 11 articles, each recording its prior text, including TWO substantive omissions that changed meaning — 17/4(ج) had dropped «الأخرى برئاسة أمن الدولة» and 49/1 had dropped the verb «يسمح». The track is NOT stale (128 gazette paragraphs vs 128 stored, same version). One discrepancy is deliberately left OPEN and disclosed rather than silently changed: paragraph tags are stored 'paragraph/article' while the gazette prints 'article/paragraph'; the gazette order is very likely correct and ours an RTL-extraction artifact, but renumbering all 128 tags plus every internal cross-reference is a separately reviewable change",
                 "language_layers": {"arabic": {"status": "complete", "governing": True,
                     "record_count": aml_regulation_llm["record_count"],
-                    "data_path": "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_025.json"}},
+                    "data_path": "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_027.json"}},
                 "record_counts": {"arabic_articles": aml_regulation_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 24, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
+                                  "legal_status_breakdown": {"اصلية": 26, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
                                   "total": aml_regulation_llm["record_count"]},
                 "data_paths": [
                     "sources/aml/regulation/official_source/aml_regulation_official_source.json",
                     "sources/aml/regulation/verified/aml_regulation_verified_records.jsonl",
-                    "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_025.json",
+                    "data/aml_regulation_arabic_legal_llm/aml_regulation_legal_llm_001_027.json",
                 ],
                 "validator_targets": ["make aml-regulation-track-validate"],
                 "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
@@ -6040,7 +6040,7 @@ def main() -> int:
                     "record_count": traffic_regulation_llm["record_count"],
                     "data_path": "data/traffic_regulation_arabic_legal_llm/traffic_regulation_legal_llm_001_086.json"}},
                 "record_counts": {"arabic_articles": traffic_regulation_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 82, "معدلة": 3, "ملغاة": 1, "مضافة": 0},
+                                  "legal_status_breakdown": {"اصلية": 74, "معدلة": 11, "ملغاة": 1, "مضافة": 0},
                                   "total": traffic_regulation_llm["record_count"]},
                 "data_paths": [
                     "sources/traffic/regulation/official_source/traffic_regulation_official_source.json",
@@ -7438,14 +7438,14 @@ def main() -> int:
                 "source_authority": "Ministerial Resolution No. (23), dated 19/1/1428H, issued by the Minister of Interior (Prince Naif bin Abdulaziz) pursuant to Article 63 of the Weapons and Ammunition Law (Royal Decree M/45, 25/7/1426H); published in the official Umm al-Qura gazette, issue (4159), dated 13/7/1428H. Amended four times as previously known (Ministerial Resolutions 3499, 14/4/1434H; 274833, 1/11/1437H; 5656, 6/5/1442H; 549, 4/2/1446H) plus a FIFTH amendment independently discovered this pass (Minister of Interior Resolution No. 1938, dated 10/4/1446H, published 29/4/1446H), confirmed directly via the official Umm al-Qura gazette site (uqn.gov.sa). laws.boe.gov.sa: no dedicated lawId page located for this Regulation — the only related hit was a scanned-image reproduction of the base law's own royal decree. PRIMARY qadha.org.sa (the Saudi Judicial Scientific Society)'s own consolidated PDF, whose digital text layer is corrupted by a systemic ToUnicode/font-encoding defect and was therefore reconstructed via Tesseract OCR on rendered page images; SECONDARY qanoonsa.com, corroborating only 2 of the 19 articles carrying Regulation text (Articles 3 and 5) verbatim; uqn.gov.sa, fetched directly to confirm the fifth, previously-unknown amendment. The source carries an unresolved internal conflict over its own founding decree number (23 in two places vs. 33 in the amendment-history table).",
                 "language_layers": {"arabic": {"status": "complete", "governing": True,
                     "record_count": weapons_ammunition_regulation_llm["record_count"],
-                    "data_path": "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_019.json"}},
+                    "data_path": "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_020.json"}},
                 "record_counts": {"arabic_articles": weapons_ammunition_regulation_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 7, "معدلة": 12, "ملغاة": 0, "مضافة": 0},
+                                  "legal_status_breakdown": {"اصلية": 7, "معدلة": 12, "ملغاة": 0, "مضافة": 1},
                                   "total": weapons_ammunition_regulation_llm["record_count"]},
                 "data_paths": [
                     "sources/weapons_ammunition_regulation/law/official_source/weapons_ammunition_regulation_official_source.json",
                     "sources/weapons_ammunition_regulation/law/verified/weapons_ammunition_regulation_verified_summary.json",
-                    "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_019.json",
+                    "data/weapons_ammunition_regulation_arabic_legal_llm/weapons_ammunition_regulation_legal_llm_001_020.json",
                 ],
                 "validator_targets": ["make weapons-ammunition-regulation-track-validate"],
                 "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],

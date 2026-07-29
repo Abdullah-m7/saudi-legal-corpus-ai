@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 15689,
-  "total_references_extracted": 3607,
-  "intra_law_count": 3022,
-  "inter_law_count": 585,
+  "total_records_scanned": 15692,
+  "total_references_extracted": 3616,
+  "intra_law_count": 3029,
+  "inter_law_count": 587,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 3087,
-    "medium": 520
+    "high": 3090,
+    "medium": 526
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -895,8 +895,8 @@
     },
     {
       "source_track_id": "aml_regulation",
-      "source_record_id": "aml-regulation-llm-art-011",
-      "source_article_number": 17,
+      "source_record_id": "aml-regulation-llm-art-012",
+      "source_article_number": 18,
       "type": "intra_law",
       "target_track_id": "aml_regulation",
       "target_article_number": 15,
@@ -906,8 +906,8 @@
     },
     {
       "source_track_id": "aml_regulation",
-      "source_record_id": "aml-regulation-llm-art-011",
-      "source_article_number": 17,
+      "source_record_id": "aml-regulation-llm-art-012",
+      "source_article_number": 18,
       "type": "intra_law",
       "target_track_id": "aml_regulation",
       "target_article_number": 15,
@@ -917,7 +917,7 @@
     },
     {
       "source_track_id": "aml_regulation",
-      "source_record_id": "aml-regulation-llm-art-014",
+      "source_record_id": "aml-regulation-llm-art-016",
       "source_article_number": 23,
       "type": "intra_law",
       "target_track_id": "aml_regulation",
@@ -928,7 +928,7 @@
     },
     {
       "source_track_id": "aml_regulation",
-      "source_record_id": "aml-regulation-llm-art-014",
+      "source_record_id": "aml-regulation-llm-art-016",
       "source_article_number": 23,
       "type": "intra_law",
       "target_track_id": "aml_regulation",
@@ -939,7 +939,7 @@
     },
     {
       "source_track_id": "aml_regulation",
-      "source_record_id": "aml-regulation-llm-art-014",
+      "source_record_id": "aml-regulation-llm-art-016",
       "source_article_number": 23,
       "type": "inter_law",
       "target_track_id": "criminal_procedure_law",
@@ -950,7 +950,7 @@
     },
     {
       "source_track_id": "aml_regulation",
-      "source_record_id": "aml-regulation-llm-art-015",
+      "source_record_id": "aml-regulation-llm-art-017",
       "source_article_number": 24,
       "type": "intra_law",
       "target_track_id": "aml_regulation",
@@ -961,13 +961,13 @@
     },
     {
       "source_track_id": "aml_regulation",
-      "source_record_id": "aml-regulation-llm-art-018",
+      "source_record_id": "aml-regulation-llm-art-020",
       "source_article_number": 38,
       "type": "intra_law",
       "target_track_id": "aml_regulation",
       "target_article_number": 33,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة (الثالثة والثلاثون) من النظام مع النظراء الأجانب",
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من النظام مع النظراء الأجانب",
       "confidence": "high"
     },
     {
@@ -36799,6 +36799,28 @@
     },
     {
       "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-023",
+      "source_article_number": 23,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": 27,
+      "target_law_name_raw": "المرور يعاقب كل",
+      "raw_citation_text": "المادة (السابعة والعشرين) من نظام المرور يعاقب كل من يخالف الوزن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
+      "source_record_id": "traffic-regulation-llm-art-023",
+      "source_article_number": 23,
+      "type": "inter_law",
+      "target_track_id": "traffic_law",
+      "target_article_number": 27,
+      "target_law_name_raw": "المرور",
+      "raw_citation_text": "المادة (السابعة والعشرين) من نظام المرور، يعاقب كل من يخ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "traffic_regulation",
       "source_record_id": "traffic-regulation-llm-art-028",
       "source_article_number": 28,
       "type": "inter_law",
@@ -38383,8 +38405,19 @@
     },
     {
       "source_track_id": "weapons_ammunition_regulation",
-      "source_record_id": "weapons-ammunition-regulation-llm-art-006",
-      "source_article_number": 6,
+      "source_record_id": "weapons-ammunition-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "weapons_ammunition_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (9/2)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "weapons_ammunition_regulation",
+      "source_record_id": "weapons-ammunition-regulation-llm-art-004",
+      "source_article_number": 4,
       "type": "intra_law",
       "target_track_id": "weapons_ammunition_regulation",
       "target_article_number": 9,
@@ -38394,8 +38427,74 @@
     },
     {
       "source_track_id": "weapons_ammunition_regulation",
-      "source_record_id": "weapons-ammunition-regulation-llm-art-016",
-      "source_article_number": 16,
+      "source_record_id": "weapons-ammunition-regulation-llm-art-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "weapons_ammunition_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "weapons_ammunition_regulation",
+      "source_record_id": "weapons-ammunition-regulation-llm-art-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "weapons_ammunition_regulation",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية عشرة) من النظام نفسه تنص على: (للوز",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "weapons_ammunition_regulation",
+      "source_record_id": "weapons-ammunition-regulation-llm-art-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "weapons_ammunition_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "weapons_ammunition_regulation",
+      "source_record_id": "weapons-ammunition-regulation-llm-art-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "weapons_ammunition_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "weapons_ammunition_regulation",
+      "source_record_id": "weapons-ammunition-regulation-llm-art-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "weapons_ammunition_regulation",
+      "target_article_number": 25,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة والعشرين)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "weapons_ammunition_regulation",
+      "source_record_id": "weapons-ammunition-regulation-llm-art-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "weapons_ammunition_regulation",
+      "target_article_number": 25,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (25)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "weapons_ammunition_regulation",
+      "source_record_id": "weapons-ammunition-regulation-llm-art-017",
+      "source_article_number": 17,
       "type": "intra_law",
       "target_track_id": "weapons_ammunition_regulation",
       "target_article_number": 25,

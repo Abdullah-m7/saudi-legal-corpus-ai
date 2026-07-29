@@ -223,7 +223,8 @@
       "official_source_file": "sources/aml/law/official_source/aml_law_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
-        "moj.gov.sa"
+        "moj.gov.sa",
+        "uqn.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
       "known_source_staleness_risk": false,
@@ -233,13 +234,14 @@
       "track_id": "aml_regulation",
       "display_name_en": "Implementing Regulation of the Anti-Money Laundering Law",
       "display_name_ar": "اللائحة التنفيذية لنظام مكافحة غسل الأموال",
-      "verification_tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
-      "verification_tier_rationale": "official_text_status='AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
-      "registry_source_authority": "Administrative Decision No. 266507, dated 9/12/1447H, issued by the President of State Security, consolidating the founding approval (cable No. 14525, 19/2/1439H) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17), under Article 50 of the Anti-Money Laundering Law (Royal Decree/Law M/20, 5/2/1439H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this State-Security-level Regulation. PRIMARY source is aml.gov.sa's official scanned PDF (34pp, no text layer); text reconciled from two independent channels — 10 articles (1,2,5,7,8,9,10,14,15,16) from qanoniah.com's born-digital API (independently confirmed to be the same current consolidated version), the other 15 articles OCR-extracted (tesseract-ara) and visually adjudicated article-by-article against the rendered scan page images",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GOV_SA_BORN_DIGITAL_OFFICIAL_GAZETTE_PRIMARY_X_AML_GOV_SA_OFFICIAL_SCAN_SECONDARY_X_QANONIAH_BORN_DIGITAL_TERTIARY_27_ARTICLES_BOE_NO_DEDICATED_LAWID_PAGE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Administrative Decision No. 266507, dated 9/12/1447H, issued by the President of State Security, consolidating the founding approval (cable No. 14525, 19/2/1439H) and Administrative Decision No. 98752 (12/5/1446H, amending Article 17), under Article 50 of the Anti-Money Laundering Law (Royal Decree/Law M/20, 5/2/1439H) — laws.boe.gov.sa was checked first per this corpus's standard methodology but was unreachable this pass AND has no dedicated lawId page for this State-Security-level Regulation. REBUILT 2026-07-29 from the born-digital official gazette: Umm al-Qura published the full attached Regulation text at uqn.gov.sa/decisions-and-regulations/4001243 (61,265 chars, 128 numbered paragraphs, 27 articles, 10 chapter headings, native HTML with no OCR). This RAISED the tier from TIER_3 (scan-OCR) to TIER_1 (born-digital official gazette cross-verified against the aml.gov.sa official scan, with qanoniah.com as a third channel). The rebuild CORRECTED three real defects in the prior OCR-based text: (1) the track held 25 articles where the gazette numbers 27 — Articles 18 and 19 were MISSING, their three paragraphs mis-filed under 17/6, 17/7 and 17/8; they are now re-homed verbatim (word-for-word identical to gazette 18/1, 18/2, 19/1), with every moved paragraph carrying a rehomed_from record and Article 17 carrying a restructuring note — nothing was added or lost; (2) the track's own known_unresolved_discrepancies previously asserted that Articles 18 and 19 were 'deliberately absent from the source' — that assertion was FALSE (it arose because the scan carries no article headers, causing mis-segmentation) and is now formally RETRACTED in place, with the prior wording preserved verbatim rather than deleted; (3) 25 corrections were applied across 23 paragraphs in 11 articles, each recording its prior text, including TWO substantive omissions that changed meaning — 17/4(ج) had dropped «الأخرى برئاسة أمن الدولة» and 49/1 had dropped the verb «يسمح». The track is NOT stale (128 gazette paragraphs vs 128 stored, same version). One discrepancy is deliberately left OPEN and disclosed rather than silently changed: paragraph tags are stored 'paragraph/article' while the gazette prints 'article/paragraph'; the gazette order is very likely correct and ours an RTL-extraction artifact, but renumbering all 128 tags plus every internal cross-reference is a separately reviewable change",
       "registry_source_url": null,
       "official_source_file": "sources/aml/regulation/official_source/aml_regulation_official_source.json",
       "source_urls": [
-        "https://api.qanoniah.com/v1/files/gdbQ9aO8q3oykaj7X521MvYpe"
+        "https://www.uqn.gov.sa/decisions-and-regulations/4001242",
+        "https://www.uqn.gov.sa/decisions-and-regulations/4001243"
       ],
       "named_source_authorities": [
         "boe.gov.sa",
@@ -247,6 +249,7 @@
         "moj.gov.sa",
         "rulebook.sama.gov.sa",
         "sama.gov.sa",
+        "uqn.gov.sa",
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
@@ -1510,8 +1513,8 @@
       "display_name_en": "Copyright Law",
       "display_name_ar": "نظام حماية حقوق المؤلف",
       "verification_tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
-      "verification_tier_rationale": "official_text_status='SECONDARY_SOURCE_STRUCTURAL_WIPO_CROSS_CHECK_BOE_UNREACHABLE': تعذّر الوصول إلى BOE؛ النص الحرفي الكامل يستند إلى مصدر ثانوي واحد فقط (qadha.org.sa)، مع تحقق هيكلي فقط (وليس حرفياً) مقابل WIPO Lex وتحقق جزئي من مدونة مقابل الصياغة القديمة فقط. ملاحظة إضافية: القانون مؤكَّد أنه سيُستبدل اعتباراً من 2026-08-01 بموجب المرسوم الملكي م/169، الذي لم يتيسّر التحقق من نصه الكامل بعد.",
-      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/41) — qadha.org.sa compiled text (Saudi judicial-studies association), WIPO Lex structural cross-check, laws.boe.gov.sa unreachable this pass (see notes); SUPERSEDED effective 2026-08-01 by Royal Decree M/169",
+      "verification_tier_rationale": "official_text_status='SECONDARY_SOURCE_STRUCTURAL_WIPO_CROSS_CHECK_BOE_UNREACHABLE': تعذّر الوصول إلى BOE؛ النص الحرفي الكامل يستند إلى مصدر ثانوي واحد فقط (qadha.org.sa)، مع تحقق هيكلي فقط (وليس حرفياً) مقابل WIPO Lex وتحقق جزئي من مدونة مقابل الصياغة القديمة فقط. ملاحظة إضافية: القانون مؤكَّد أنه سيُستبدل اعتباراً من 2026-08-12 بموجب المرسوم الملكي م/169، الذي لم يتيسّر التحقق من نصه الكامل بعد.",
+      "registry_source_authority": "Royal Decree / مرسوم ملكي (م/41) — qadha.org.sa compiled text (Saudi judicial-studies association), WIPO Lex structural cross-check, laws.boe.gov.sa unreachable this pass (see notes); SUPERSEDED effective 2026-08-12 by Royal Decree M/169",
       "registry_source_url": null,
       "official_source_file": "sources/copyright/law/official_source/copyright_law_official_source.json",
       "source_urls": [],
@@ -5691,10 +5694,18 @@
       "registry_source_authority": "Ministerial Resolution (Minister of Interior) No. (2249), dated 10/3/1441H, signed by HRH Prince Abdulaziz bin Saud bin Naif, issued under the Traffic Law (Royal Decree M/85, 26/10/1428H, as amended by M/70, M/73, M/115); published Umm Al-Qura Gazette issue 4812, 3 Jan 2020G — laws.boe.gov.sa was checked first per methodology: it has a dedicated lawId page for the base Traffic Law itself but none for this Ministerial-Resolution-level Regulation (live portal and an Archive.org fallback both returned connection-reset this pass; the block was recorded, not circumvented). PRIMARY text source is an official scanned (no text layer) 93-page MOI document reconstructed via two independent extraction passes (direct vision reading of page images, plus tesseract-ara OCR as a cross-check layer), cross-verified VERBATIM against qanoniah.com's born-digital text for Articles 1-8 only (100% match on Articles 1,3,4,5,6,8; 99.0% on Article 2, cosmetic-only; 51.5% divergence on Article 7, confirming rather than undermining the finding since Article 7 is independently known to be one of the amended articles)",
       "registry_source_url": null,
       "official_source_file": "sources/traffic/regulation/official_source/traffic_regulation_official_source.json",
-      "source_urls": [],
+      "source_urls": [
+        "https://qanoonsa.com/p/495616/",
+        "https://qanoonsa.com/p/511901/",
+        "https://www.uqn.gov.sa/cdn/?url=wp-content/uploads/2021/10/إضافة-فقرة-برقم-47-2-للائحة-التنفيذية-لنظام-المرور.pdf",
+        "https://www.uqn.gov.sa/details?p=18431",
+        "https://www.uqn.gov.sa/details?p=20843"
+      ],
       "named_source_authorities": [
         "boe.gov.sa",
         "laws.boe.gov.sa",
+        "qadha.org.sa",
+        "qanoonsa.com",
         "uqn.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
@@ -5914,7 +5925,8 @@
       "registry_source_url": null,
       "official_source_file": "sources/weapons_ammunition_regulation/law/official_source/weapons_ammunition_regulation_official_source.json",
       "source_urls": [
-        "https://uqn.gov.sa/details?p=26708"
+        "https://uqn.gov.sa/details?p=26708",
+        "https://www.uqn.gov.sa/details?p=17351"
       ],
       "named_source_authorities": [
         "boe.gov.sa",
