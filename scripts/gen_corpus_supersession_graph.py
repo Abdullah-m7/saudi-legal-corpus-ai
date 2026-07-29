@@ -938,21 +938,55 @@ EDGES = [
     {
         "from_track_id": "copyright_law",
         "relation": "superseded_by",
-        "target_track_id": None,
-        "target_description_ar": "نظام حماية حقوق المؤلف والحقوق المجاورة (الجديد)",
-        "target_decree": "Royal Decree M/169, 14/08/1447H (2 February 2026)",
-        "successor_in_corpus": False,
-        "note": "copyright_law's registry notes: 'THIS LAW IS CONFIRMED "
-                "SUPERSEDED EFFECTIVE 2026-08-12 by Royal Decree M/169 "
-                "(14/08/1447H / 2 February 2026), confirmed via multiple "
-                "independent Arabic news outlets and English law-firm client "
-                "alerts — but the new law's full Arabic primary text could "
-                "NOT be verified this research pass ... and is explicitly "
-                "NOT ingested here.' This track ingests the text in force as "
-                "of the corpus build date (2026-07-17); a follow-up "
-                "ingestion pass for M/169 is recommended once its primary "
-                "text becomes verifiable.",
-        "source_ref": "data/corpus_registry/corpus_registry.json (copyright_law.notes)",
+        "target_track_id": "copyright_law_1447",
+        # Title corrected: the successor DROPS «حماية» — it is «نظام حقوق المؤلف»,
+        # confirmed against the gazette headline, the UQ portal <title> and the
+        # law's own Article 1.  The previously recorded Gregorian date
+        # "2 February 2026" for the decree is REMOVED: no source states the
+        # Gregorian equivalent of 14/8/1447H, and 13 February 2026 is the
+        # GAZETTE date (issue 5144), not the decree date.
+        "target_description_ar": "نظام حقوق المؤلف",
+        "target_decree": "Royal Decree M/169, 14/08/1447H (gazetted Umm al-Qura issue 5144, 25/8/1447H = 13 February 2026)",
+        "successor_in_corpus": True,
+        "successor_in_force": False,
+        "successor_in_force_date_candidates_gregorian": ["2026-08-12", "2026-08-13"],
+        "successor_in_force_date_resolved": False,
+        "predecessor_must_not_be_deleted": True,
+        "note": "The successor has now been INGESTED as the `copyright_law_1447` "
+                "track (61 articles, TIER_1) — this edge previously recorded it "
+                "as unverifiable and not in the corpus, which is no longer true. "
+                "The supersession is stated INSIDE the successor's own Article 59 "
+                "(«يحل النظام محل نظام حماية حقوق المؤلف، الصادر بالمرسوم الملكي "
+                "رقم (م/41) وتاريخ 1424/7/2هـ، ويلغي كل ما يتعارض معه من أحكام»), "
+                "NOT in the enacting decree's clauses — this corpus distinguishes "
+                "the two.  IT HAS NOT TAKEN EFFECT YET: Article 61 defers "
+                "operation 180 days from the 13 Feb 2026 gazette publication, "
+                "computing to 2026-08-12, with a disclosed and UNRESOLVED one-day "
+                "«بعد» reading (2026-08-12 vs 2026-08-13); until then this M/41 "
+                "track remains the governing text.  Even after commencement the "
+                "M/41 track MUST NOT be deleted: Article 24 of the successor "
+                "keeps it operative for protection terms that accrued before "
+                "cutover.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (copyright_law.notes, copyright_law_1447.notes)",
+    },
+    {
+        "from_track_id": "copyright_law_1447",
+        # Modeled as repeals_full, the taxonomy's existing "A's decree explicitly
+        # and fully repeals a prior instrument" relation: Article 59 replaces M/41
+        # in its entirety.  Article 24's transitional saving for pre-cutover
+        # protection terms is a residual dependency, not a partial repeal, so
+        # repeals_partial would misdescribe it.
+        "relation": "repeals_full",
+        "target_track_id": "copyright_law",
+        "target_description_ar": "نظام حماية حقوق المؤلف",
+        "target_decree": "Royal Decree M/41, 2/7/1424H",
+        "note": "The reciprocal edge, stated verbatim in Article 59 of the "
+                "successor itself.  NOT YET OPERATIVE — see the successor's "
+                "in-force fields; and Article 24 preserves the predecessor for "
+                "pre-cutover protection terms even afterwards, so this is a "
+                "supersession with a permanent residual dependency, not an "
+                "erasure.",
+        "source_ref": "data/corpus_registry/corpus_registry.json (copyright_law_1447.notes)",
     },
     {
         "from_track_id": "electricity_law",

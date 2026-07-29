@@ -609,6 +609,26 @@ LAYERS = [
      "hajj_umrah_pilgrims", "law"),
     ("data/aviation_passenger_rights_regulation_arabic_legal_llm/aviation_passenger_rights_regulation_legal_llm_001_030.json",
      "aviation_passenger_rights", "regulation"),
+    # --- wave-7 batch: CMA regulation cluster (census-confirmed, article counts verified) ---
+    ("data/cma_securities_offering_rules_arabic_legal_llm/cma_securities_offering_rules_legal_llm_001_112.json",
+     "cma_securities_offering", "law"),
+    ("data/cma_investment_funds_regulation_arabic_legal_llm/cma_investment_funds_regulation_legal_llm_001_113.json",
+     "cma_investment_funds", "law"),
+    ("data/cma_market_institutions_regulation_arabic_legal_llm/cma_market_institutions_regulation_legal_llm_001_099.json",
+     "cma_market_institutions", "regulation"),
+    # --- wave-7 batch: Excise Tax family (census-confirmed; the Regulation's real
+    # record count is 67, not the census's 64 — three مكرر articles were missed) ---
+    ("data/excise_tax_law_arabic_legal_llm/excise_tax_law_legal_llm_001_030.json",
+     "excise_tax_law", "law"),
+    ("data/excise_tax_regulation_arabic_legal_llm/excise_tax_regulation_legal_llm_001_067.json",
+     "excise_tax_regulation", "regulation"),
+    # --- wave-7 batch: the successor Copyright Law (M/169, 1447H).  NOT YET IN
+    # FORCE at build time (Article 61 defers operation to 2026-08-12); it is
+    # indexed alongside — never in place of — the M/41 `copyright` track, which
+    # remains the governing text until then.  Every record carries the
+    # not-in-force flag. ---
+    ("data/copyright_law_1447_arabic_legal_llm/copyright_law_1447_legal_llm_001_061.json",
+     "copyright_law_1447", "law"),
 ]
 
 

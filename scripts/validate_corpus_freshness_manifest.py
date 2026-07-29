@@ -121,7 +121,7 @@ def main() -> int:
 
     required_track_ids = _load_required_track_ids()
     check("[0] REQUIRED_TRACK_IDS imported from validate_corpus_registry.py...",
-          len(required_track_ids) == 291,
+          len(required_track_ids) == 297,
           f"count={len(required_track_ids)}")
 
     # [1] Output exists and parses
@@ -153,7 +153,7 @@ def main() -> int:
     ids_required = set(required_track_ids)
     missing_ids = sorted(ids_required - ids_present)
     extra_ids = sorted(ids_present - ids_required)
-    check("[3a] Track count == 291...", len(tracks) == 291, f"count={len(tracks)}")
+    check("[3a] Track count == 297...", len(tracks) == 297, f"count={len(tracks)}")
     check("[3b] No missing track ids...", len(missing_ids) == 0,
           "None missing" if not missing_ids else f"Missing: {missing_ids}")
     check("[3c] No unexpected extra track ids...", len(extra_ids) == 0,
@@ -239,7 +239,7 @@ def main() -> int:
           declared_no_source == recount_no_source,
           f"declared={declared_no_source} recount={recount_no_source}")
 
-    check("[7d] total_tracks == 291...", out.get("total_tracks") == 291,
+    check("[7d] total_tracks == 297...", out.get("total_tracks") == 297,
           f"total_tracks={out.get('total_tracks')}")
 
     # [8] Generator idempotency: snapshot current on-disk output, re-run the generator twice

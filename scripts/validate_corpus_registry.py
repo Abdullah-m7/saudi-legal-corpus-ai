@@ -340,6 +340,12 @@ REQUIRED_TRACK_IDS = [
     "mawani_organizational_statute",
     "hajj_umrah_external_pilgrims_law",
     "aviation_passenger_rights_regulation",
+    "cma_securities_offering_rules",
+    "cma_investment_funds_regulation",
+    "cma_market_institutions_regulation",
+    "excise_tax_law",
+    "excise_tax_regulation",
+    "copyright_law_1447",
 ]
 
 CHECKS: list[str] = []
@@ -384,7 +390,7 @@ def main() -> int:
 
     # [3] 268 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 291 tracks present...", len(track_ids) == 291 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 297 tracks present...", len(track_ids) == 297 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3167,7 +3173,81 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 15692 records...", uix.get("total_records") == 15692,
+    cma_securities_offering_rules_var = tracks_by_id.get("cma_securities_offering_rules", {})
+    cma_securities_offering_rules_var_counts = cma_securities_offering_rules_var.get("record_counts", {})
+    check("[7g279] cma_securities_offering_rules: 112 Arabic records...",
+          cma_securities_offering_rules_var_counts.get("arabic_articles") == 112,
+          f"counts={cma_securities_offering_rules_var_counts}")
+    check("    cma_securities_offering_rules: status breakdown 112/0/0/0...",
+          cma_securities_offering_rules_var_counts.get("legal_status_breakdown") == {"اصلية": 112, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={cma_securities_offering_rules_var_counts.get('legal_status_breakdown')}")
+
+    cma_investment_funds_regulation_var = tracks_by_id.get("cma_investment_funds_regulation", {})
+    cma_investment_funds_regulation_var_counts = cma_investment_funds_regulation_var.get("record_counts", {})
+    check("[7g280] cma_investment_funds_regulation: 113 Arabic records...",
+          cma_investment_funds_regulation_var_counts.get("arabic_articles") == 113,
+          f"counts={cma_investment_funds_regulation_var_counts}")
+    check("    cma_investment_funds_regulation: status breakdown 111/2/0/0...",
+          cma_investment_funds_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 111, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={cma_investment_funds_regulation_var_counts.get('legal_status_breakdown')}")
+
+    cma_market_institutions_regulation_var = tracks_by_id.get("cma_market_institutions_regulation", {})
+    cma_market_institutions_regulation_var_counts = cma_market_institutions_regulation_var.get("record_counts", {})
+    check("[7g281] cma_market_institutions_regulation: 99 Arabic records...",
+          cma_market_institutions_regulation_var_counts.get("arabic_articles") == 99,
+          f"counts={cma_market_institutions_regulation_var_counts}")
+    check("    cma_market_institutions_regulation: status breakdown 99/0/0/0...",
+          cma_market_institutions_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 99, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={cma_market_institutions_regulation_var_counts.get('legal_status_breakdown')}")
+
+
+    excise_tax_law_var = tracks_by_id.get("excise_tax_law", {})
+    excise_tax_law_var_counts = excise_tax_law_var.get("record_counts", {})
+    check("[7g282] excise_tax_law: 30 Arabic records...",
+          excise_tax_law_var_counts.get("arabic_articles") == 30,
+          f"counts={excise_tax_law_var_counts}")
+    check("    excise_tax_law: status breakdown 28/2/0/0...",
+          excise_tax_law_var_counts.get("legal_status_breakdown") == {"اصلية": 28, "معدلة": 2, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={excise_tax_law_var_counts.get('legal_status_breakdown')}")
+
+    excise_tax_regulation_var = tracks_by_id.get("excise_tax_regulation", {})
+    excise_tax_regulation_var_counts = excise_tax_regulation_var.get("record_counts", {})
+    check("[7g283] excise_tax_regulation: 67 Arabic records (64 numbered + 3 mukarrar)...",
+          excise_tax_regulation_var_counts.get("arabic_articles") == 67,
+          f"counts={excise_tax_regulation_var_counts}")
+    check("    excise_tax_regulation: status breakdown 48/16/0/3...",
+          excise_tax_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 48, "معدلة": 16, "ملغاة": 0, "مضافة": 3},
+          f"breakdown={excise_tax_regulation_var_counts.get('legal_status_breakdown')}")
+
+    copyright_law_1447_var = tracks_by_id.get("copyright_law_1447", {})
+    copyright_law_1447_var_counts = copyright_law_1447_var.get("record_counts", {})
+    check("[7g284] copyright_law_1447: 61 Arabic records...",
+          copyright_law_1447_var_counts.get("arabic_articles") == 61,
+          f"counts={copyright_law_1447_var_counts}")
+    check("    copyright_law_1447: status breakdown 61/0/0/0...",
+          copyright_law_1447_var_counts.get("legal_status_breakdown") == {"اصلية": 61, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={copyright_law_1447_var_counts.get('legal_status_breakdown')}")
+    # The successor Copyright Law is published but NOT yet in force.  These three
+    # fields are the only thing standing between a consumer and treating its 61
+    # articles as current law before 2026-08-12, and the one-day «بعد» ambiguity
+    # must stay a two-element range -- collapsing it to a scalar is a fabricated
+    # certainty, so the validator fails on it.
+    check("    copyright_law_1447: flagged NOT in force at build date...",
+          copyright_law_1447_var.get("in_force_as_of_build_date") is False,
+          f"in_force_as_of_build_date={copyright_law_1447_var.get('in_force_as_of_build_date')}")
+    check("    copyright_law_1447: in-force date kept as an unresolved 2-day range...",
+          copyright_law_1447_var.get("in_force_date_candidates_gregorian") == ["2026-08-12", "2026-08-13"]
+          and copyright_law_1447_var.get("in_force_date_resolved") is False,
+          f"candidates={copyright_law_1447_var.get('in_force_date_candidates_gregorian')} "
+          f"resolved={copyright_law_1447_var.get('in_force_date_resolved')}")
+    check("    copyright_law_1447: predecessor `copyright` (M/41) must not be deleted...",
+          copyright_law_1447_var.get("supersedes_track_id") == "copyright"
+          and copyright_law_1447_var.get("predecessor_must_not_be_deleted") is True,
+          f"supersedes={copyright_law_1447_var.get('supersedes_track_id')} "
+          f"must_not_delete={copyright_law_1447_var.get('predecessor_must_not_be_deleted')}")
+
+
+    check("[7g] unified retrieval index: 16174 records...", uix.get("total_records") == 16174,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3229,8 +3309,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 15861...",
-          registry.get("total_primary_arabic_governing_records") == 15861,
+    check("[19a] total_primary_arabic_governing_records == 16343...",
+          registry.get("total_primary_arabic_governing_records") == 16343,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3245,8 +3325,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 16756...",
-          registry.get("total_registry_counted_records") == 16756,
+    check("[19e] total_registry_counted_records == 17238...",
+          registry.get("total_registry_counted_records") == 17238,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3270,7 +3350,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"15861 + 614 + 281 = 16756")
+          f"16343 + 614 + 281 = 17238")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -3288,7 +3368,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 291 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 294 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

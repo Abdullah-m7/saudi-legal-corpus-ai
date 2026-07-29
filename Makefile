@@ -405,6 +405,12 @@ export PYTHONPATH := src:$(PYTHONPATH)
         mawani-organizational-statute-track-validate \
         hajj-umrah-external-pilgrims-law-track-validate \
         aviation-passenger-rights-regulation-track-validate \
+        cma-securities-offering-rules-track-validate \
+        cma-investment-funds-regulation-track-validate \
+        cma-market-institutions-regulation-track-validate \
+        excise-tax-law-track-validate \
+        excise-tax-regulation-track-validate \
+        copyright-law-1447-track-validate \
         qa-gate
 
 help:
@@ -2044,6 +2050,24 @@ hajj-umrah-external-pilgrims-law-track-validate:
 
 aviation-passenger-rights-regulation-track-validate:
 	$(PY) scripts/validate_aviation_passenger_rights_regulation_track.py
+
+cma-securities-offering-rules-track-validate:
+	$(PY) scripts/validate_cma_securities_offering_rules_track.py
+
+cma-investment-funds-regulation-track-validate:
+	$(PY) scripts/validate_cma_investment_funds_regulation_track.py
+
+cma-market-institutions-regulation-track-validate:
+	$(PY) scripts/validate_cma_market_institutions_regulation_track.py
+
+excise-tax-law-track-validate:
+	$(PY) scripts/validate_excise_tax_law_track.py
+
+excise-tax-regulation-track-validate:
+	$(PY) scripts/validate_excise_tax_regulation_track.py
+
+copyright-law-1447-track-validate:
+	$(PY) scripts/validate_copyright_law_1447_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

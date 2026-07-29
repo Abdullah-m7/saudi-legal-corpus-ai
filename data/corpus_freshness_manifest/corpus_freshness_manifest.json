@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 291,
+  "total_tracks": 297,
   "known_source_staleness_risk_count": 16,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -1210,6 +1210,78 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "cma_investment_funds_regulation",
+      "display_name_en": "Investment Funds Regulations",
+      "display_name_ar": "لائحة صناديق الاستثمار",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_CMA_OFFICIAL_CONSOLIDATED_PDF_GLYPH_LEVEL_X_GAZETTE_AMENDMENT_CROSSCHECK_NO_SECOND_INDEPENDENT_OFFICIAL_PUBLISHER': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "CMA Board Resolution (2006-219-1), 3/12/1427H (24/12/2006G), under the Capital Market Law (Royal Decree M/30, 2/6/1424H); amended by CMA Board Resolution (2025-135-1), 3/06/1447H (24/11/2025G). Article count 113 re-counted twice from the document itself (the PDF's own TOC lists 113 entries in an unbroken ordinal run المادة الأولى -> المادة الثالثة عشرة بعد المئة, and the body carries 113 matching headings in the same order); for contrast CMA's superseded 2021 consolidation has 111, so the count genuinely moved. Structure: 9 أبواب, no فصول, plus 14 ملاحق (annexes NOT ingested). TIER_2 not TIER_1: one official primary supplies the complete verbatim text (CMA's own consolidated PDF), plus a secondary cross-check of the gazette wording of the latest amendment — a complete second INDEPENDENT official publication could not be obtained (uqn.gov.sa is JS-rendered and served no article text; laws.boe.gov.sa hard-blocked; CMA's own catalogue pages are the same issuer, not independent). ONLY 2 articles are flagged معدلة, and by verbatim evidence: Resolution 1-135-2025 substitutes «فئات المستثمرين المؤهلين في السوق الموازية» for «فئات المستثمرين المؤهلين» in Art. 48(ع) and 49(ك), and both substituted phrases occur verbatim at exactly those paragraphs. Flagged but NOT incorporated (no article mapping obtainable, no pre-amendment wording reconstructed): Resolutions 2016-61-1, 2021-22-2 (a FULL text replacement effective 01/05/2021) and 2025-54-1. IMPORTANT READING NOTE recorded on every record: the 111 articles marked اصلية do NOT mean 'unchanged since 2006' — the whole text was replaced in 2021, so most current wording postdates 2006 substantially; the four-value status vocabulary cannot express 'current text, provenance unknown'. Same glyph-level extraction method as the sibling CMA tracks (no word list, no dictionary); verified against a rendered page image, 12 corruption canaries with zero hits, and a scan of all 113 bodies for Latin/presentation-forms/bidi-controls with zero findings.",
+      "registry_source_url": null,
+      "official_source_file": "sources/cma_investment_funds_regulation/law/official_source/cma_investment_funds_regulation_official_source.json",
+      "source_urls": [
+        "https://cma.gov.sa/RulesRegulations/Regulations/Documents/Investment_Funds_Regulations_11_2025_AR.pdf",
+        "https://cma.gov.sa/RulesRegulations/Regulations/Pages/default.aspx",
+        "https://cma.gov.sa/RulesRegulations/Regulations/Pages/details.aspx?code=99"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "cma.org.sa",
+        "laws.boe.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "cma_market_institutions_regulation",
+      "display_name_en": "Capital Market Institutions Regulations",
+      "display_name_ar": "لائحة مؤسسات السوق المالية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='TIER_2_CMA_OFFICIAL_PDF_PDFMINER_GLYPH_LEVEL_X_SECONDARY_CROSSCHECK_MEDIAN_AGREEMENT_1_0000_RENAME_RESOLUTION_NUMBER_UNPUBLISHED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "CMA Board Resolution (1-83-2005), 21/5/1426H (28/6/2005G), under the Capital Market Law (Royal Decree M/30, 2/6/1424H); consolidated as amended through Resolution (2-3-2026), 18/07/1447H (07/01/2026G). DECISION-NUMBER DISPLAY ORDER: an earlier census recorded these as 2005-83-1 / 2026-3-2, but the instrument's own cover page, CMA's English edition and Umm al-Qura all print 1-83-2005 / 2-3-2026 — confirmed by reading the cover page's glyph x-coordinates (digit groups laid out RTL while each group reads LTR); the form printed on the instrument is recorded and the alternative disclosed. RENAME HISTORY established, not assumed: Resolution 1-83-2005 issued this as «لائحة الأشخاص المرخص لهم»; CMA's own announcement CMA_N_2764 records the Board approving the rename to «لائحة مؤسسات السوق المالية» effective 15/3/1442H (1/11/2020G), some provisions 28/5/1443H — the SAME instrument, not two. CMA does not publish the renaming resolution's number and it is recorded as UNKNOWN, not guessed. Article count 99 verified three independent ways (the Arabic PDF's own TOC; expected-Arabic-ordinal segmentation yielding an unbroken 1..99 run; the English edition's Article 1..99); structure 9 أبواب, 13 فصول, 11 annexes (annexes NOT ingested). TIER_2 not TIER_1: the citation chain alone would support TIER_1 (cma.gov.sa PDF + Umm al-Qura), but the tier is governed by the weakest meaningfully-sized portion — the 99 article TEXTS — which rest on one official source plus one secondary cross-check, since the reachable Umm al-Qura entries cover individual amending resolutions rather than the full consolidation. EXTRACTION: pdftotext and PyMuPDF are unusable here (they reverse the characters inside each ligature CMap expansion) and pypdf silently DROPS glyphs; extraction used pdfminer at glyph level keeping each CMap expansion atomic, plus four measured (never guessed) rules for kashida stubs, combining-mark placement, missing space glyphs and split list-marker baselines. All 99 texts were compared article-by-article against an independent rendering: median agreement 1.0000, mean 0.9902, 97/99 >= 0.99; every residual divergence was inspected by hand and in EVERY case the secondary source was the defective one (it carries the uncorrected ligature bug) — nothing was resolved in its favour. NO article is flagged معدلة because this PDF carries no per-article amendment footnotes: that records the ABSENCE OF PUBLISHED ATTRIBUTION, explicitly not a claim that nothing was amended; the verified chain 1-83-2005 -> 2020 rename -> 1-101-2023 -> 4-87-2024 -> 2-3-2026 is expressly marked incomplete.",
+      "registry_source_url": null,
+      "official_source_file": "sources/cma_market_institutions_regulation/regulation/official_source/cma_market_institutions_regulation_official_source.json",
+      "source_urls": [
+        "https://cma.gov.sa/RulesRegulations/Regulations/Pages/default.aspx",
+        "https://cma.org.sa/RulesRegulations/Regulations/Documents/the_Capital_Market_Institutions_Regulations-ar.pdf",
+        "https://qanoonsa.com/p/515505/",
+        "https://uqn.gov.sa/details?p=26605"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "cma.org.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "cma_securities_offering_rules",
+      "display_name_en": "Rules on the Offer of Securities and Continuing Obligations",
+      "display_name_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_CMA_OFFICIAL_PDF_X_UQN_GAZETTE_DUAL_OFFICIAL_GLYPH_LEVEL_RECONSTRUCTION_105_OF_112_WORD_IDENTICAL': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "CMA Board Resolution (2017-123-3), 9/4/1439H (27/12/2017G), under the Capital Market Law (Royal Decree M/30, 2/6/1424H); consolidated as amended by CMA Board Resolution (2026-6-3), 30/07/1447H (19/01/2026G). TIER_1: two genuinely independent OFFICIAL publishers — CMA's own Arabic PDF on cma.gov.sa (296pp) and the Umm al-Qura official gazette (uqn.gov.sa/decisions-and-regulations/4001355) — carry the same consolidated text with identical citation and identical amending resolution; 105 of 112 articles are word-identical after normalisation, and selected passages plus the cover page were additionally checked against rendered page images. TEXT-FIDELITY NOTE: pdftotext and every ordinary extractor TRANSPOSE the letters inside each Arabic ligature in this PDF (المملكة -> اململكة). The text was rebuilt at glyph level strictly from the fonts' own ToUnicode declarations (50 multi-char mappings harvested from 14 ToUnicode streams), with zero-advance tashkeel re-attached by ink-box overlap, RTL/LTR runs re-ordered geometrically, and 173 justification-filler glyphs dropped — including 7 that the fonts wrongly map to U+0627 while drawing at 0.10em, which were injecting spurious alefs (المشاركين -> المشااركين). NO word list, NO spell-correction, NO use of the English edition; scripts/extract_cma_securities_offering_rules_pdf_text.py reproduces the text byte-for-byte from the PDF. NO article is flagged معدلة: neither official source carries per-article amendment footnotes and no pre-amendment text was reachable, so all 112 are اصلية with consolidated_amended_law=true — a deliberate refusal to guess, stated explicitly so it cannot be misread as 'never amended'. 7 article-level CMA-vs-gazette divergences are preserved verbatim as CMA prints them (including CMA's own typos, confirmed present in the published PDF by an independent extraction run) rather than silently corrected. The 38 annexes (pages 99-296, two thirds of the document) are NOT ingested and this is disclosed.",
+      "registry_source_url": null,
+      "official_source_file": "sources/cma_securities_offering_rules/law/official_source/cma_securities_offering_rules_official_source.json",
+      "source_urls": [
+        "https://cma.gov.sa/RulesRegulations/Regulations/Documents/RULES_ON_THE_OFFER_OF_SECURITIES_AND_CONTINUING_OBLIGATIONS_ar2026.pdf",
+        "https://www.uqn.gov.sa/decisions-and-regulations/4001355"
+      ],
+      "named_source_authorities": [
+        "cma.org.sa",
+        "uqn.gov.sa",
+        "web.archive.org"
+      ],
+      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "commercial_agencies_law",
       "display_name_en": "Commercial Agencies Law",
       "display_name_ar": "نظام الوكالات التجارية",
@@ -1525,6 +1597,32 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "copyright_law_1447",
+      "display_name_en": "Copyright Law (Royal Decree M/169, 1447H)",
+      "display_name_ar": "نظام حقوق المؤلف",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='TIER_1_UQN_PORTAL_PAGES_X_OFFICIAL_GAZETTE_PDF_PAGE_IMAGES_X_QANOONSA_60_OF_61_EXACT_NOT_YET_IN_FORCE_AT_BUILD_DATE': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Royal Decree M/169, 14/8/1447H, approving Council of Ministers Resolution No. 560 (8/8/1447H) after Shura Council Resolutions 305/30 (21/11/1446H) and 121/11 (10/6/1447H); published in Umm al-Qura, year 104, issue 5144, Friday 25 Sha'ban 1447H = 13 February 2026, pp. 13-17. 61 articles, flat 1->61, no gaps, no مكرر, no فصول -- verified three ways (independent re-extraction, the ordinal-label sequence, and visual reading of gazette page 17, which shows the law ending at المادة الحادية والستون). The title DROPS «حماية»: it is نظام حقوق المؤلف, confirmed against the gazette headline, the portal <title> and Article 1's own self-designation. *** NOT YET IN FORCE AT BUILD DATE. *** Article 61 verbatim: «يعمل بالنظام بعد (مائة وثمانين) يوما من تاريخ نشره في الجريدة الرسمية.» 2026-02-13 + 180 days = 2026-08-12; at the 2026-07-29 build date only 166 of 180 days had elapsed. The one-day «بعد» ambiguity (2026-08-12 vs 2026-08-13) is stored as a CANDIDATE RANGE with in_force_date_resolved=false and the track validator FAILS if anyone collapses it to a scalar; the widely circulating 2026-08-01 figure is rejected outright because it is not derivable from any clause. Until it commences, the existing `copyright` track (M/41, 28 articles) remains the governing text -- and Article 24 of THIS law keeps M/41 relevant even afterwards, for protection terms that accrued before cutover, so the summary records predecessor_must_not_be_deleted=true and the validator fails if that is flipped. INGESTION TRAP CAPTURED, NOT DROPPED: clause «ثانيا» of Royal Decree M/169 carries a SUBSTANTIVE foreign-reciprocity restriction with no numbered article of its own; it is stored three ways (preamble_ar, a dedicated decree_clauses_outside_articles list flagged is_substantive_rule=true, and carried into the LLM layer envelope), never written into any article record, and the validator enforces BOTH directions -- present at decree level, absent from all 61 articles. It is corroborated as the exact transform of CoM Resolution 560 clause «عاشرا». TIER_1_PRIMARY_MULTI_SOURCE: three server-rendered Umm al-Qura portal pages against the official issue-5144 PDF, the latter read from independently rendered 170dpi page images rather than its ligature-damaged pdftotext output; DISCLOSED CAVEAT -- both official legs share one publisher (Umm al-Qura), which the taxonomy permits but which is recorded explicitly so a reviewer may downgrade to TIER_2 without re-deriving anything. Secondary cross-check against qanoonsa.com: 60/61 exact after normalization, the 61st (Art. 59) differing only in date-component ordering. CONFIRMED NEGATIVE, not an access gap: saip.gov.sa WAS reachable and its complete 18-document legislation list does NOT carry this law, still listing only M/41 -- consistent with it not being in force; laws.boe.gov.sa reset the connection on both attempts. 11 discrepancies flagged, including that Articles 60 and 61 run their 180-day clocks off DIFFERENT anchors (صدور vs نشر), that no implementing regulation exists yet, and that Gregorian equivalents of the decree/resolution Hijri dates were deliberately NOT computed because no source states them.",
+      "registry_source_url": null,
+      "official_source_file": "sources/copyright_law_1447/law/official_source/copyright_law_1447_official_source.json",
+      "source_urls": [
+        "https://uqn.gov.sa/details?p=28844",
+        "https://uqn.gov.sa/details?p=28845",
+        "https://www.uqn.gov.sa/cdn/?url=uploads/pdf/2026/02/13/ummalqura_pdf-20260213-1.pdf\\n",
+        "https://www.uqn.gov.sa/decisions-and-regulations/4000304"
+      ],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "qanoonsa.com",
+        "saip.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -2430,6 +2528,49 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "excise_tax_law",
+      "display_name_en": "Excise Tax Law",
+      "display_name_ar": "نظام الضريبة الانتقائية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='ZATCA_OFFICIAL_CONSOLIDATED_PDF_X_SECONDARY_CROSS_VERIFIED_20_OF_30_ARTICLES_LETTER_EXACT_BOE_TLS_BLOCKED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "Royal Decree M/86, 27/8/1438H, amended by Royal Decree M/113 (2/11/1438H) and Royal Decree M/52 (28/4/1441H) -- the full issuance/amendment chain is printed verbatim on the cover page of ZATCA's own consolidated Arabic PDF, so the census citation is confirmed exactly. 30 articles (المادة الأولى -> المادة الثلاثون) in 10 فصول; the census's figure of 30 is confirmed independently. TIER_2 not TIER_1: one official source (ZATCA's own born-digital consolidated PDF, HTTP 200, 10 pp) plus one independent secondary cross-check (nezams.com); no second OFFICIAL source exists for this pass because laws.boe.gov.sa refuses TLS and Wayback/r.jina.ai are egress-blocked, and no extractable Umm al-Qura text was found. AMENDMENTS ARE ATTRIBUTED FROM THE FILE'S OWN NUMBERED FOOTNOTES, not inferred: M/113 -> Article 25, and M/113 + M/52 -> Article 27; hence 28 اصلية / 2 معدلة. FLAGGED BUT NOT INCORPORATED: the pre-amendment 1438H wording of Articles 25 and 27 (no official source established it, so no original_*_text field was fabricated), and the authority rename in Article 1 -- ZATCA's consolidated text reads هيئة الزكاة والضريبة والجمارك where the secondary shows الهيئة العامة للزكاة والدخل, with no footnote naming an amending instrument, so the article is NOT flagged معدلة. CROSS-CHECK: all 30 articles compared letter-by-letter after stripping tatweel/tashkeel/punctuation/whitespace -- 20 exact matches; each of the 10 divergences is recorded individually (authority rename; منها/منهما; ي/ى orthography in arts 8/10/13/17; اللائحة vs الهيئة in art 13; على/عن in art 23; the two genuine amendments). 10 unresolved discrepancies recorded, including a conflict over Article 27's amending instrument (ZATCA's footnote says M/113 + M/52; nezams attributes the identical current wording to Council of Ministers Resolution 287, 27/4/1441H). EXTRACTION: the PDF stores Arabic in presentation forms with systematic bidi defects; a glyph-level reconstruction (PyMuPDF rawdict, RTL re-ordering by x, per-token numeric un-reversal) was used, with ambiguous cases settled by rendering page crops to PNG and reading them -- no word list, no dictionary, no spell-correction. 32/32 diacritic marks retained; the secondary source was never used to correct a character.",
+      "registry_source_url": null,
+      "official_source_file": "sources/excise_tax_law/law/official_source/excise_tax_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "uqn.gov.sa",
+        "web.archive.org",
+        "zatca.gov.sa"
+      ],
+      "last_verified_context": "built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "excise_tax_regulation",
+      "display_name_en": "Excise Tax Implementing Regulation",
+      "display_name_ar": "اللائحة التنفيذية لنظام الضريبة الانتقائية",
+      "verification_tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+      "verification_tier_rationale": "official_text_status='ZATCA_OFFICIAL_CONSOLIDATED_PDF_X_SECONDARY_CROSS_VERIFIED_58_OF_67_RECORDS_9_SINGLE_SOURCE_BOE_TLS_BLOCKED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "registry_source_authority": "ZATCA Board Resolution (9-1-17), 13 Ramadan 1438H, under the Excise Tax Law (Royal Decree M/86, 27/8/1438H). REAL RECORD COUNT IS 67, NOT THE CENSUS'S 64: the highest article number is indeed الرابعة والستون = 64, but the Regulation also contains three مكرر articles -- 22 مكرر, 37 مكرر, 52 مكرر -- which the census missed; 67 is used and the divergence is recorded explicitly. 23 فصول; 48 اصلية / 16 معدلة / 3 مضافة. TIER_2: ZATCA's own consolidated PDF (52 pp, internal CreationDate 2 Apr 2026) plus nezams.com's independent 1440H rendering, which covers 58 of the 67 records on an offset numbering (nezams 1-8 -> current 1-8; nezams 9-58 -> current 15-64, because the Tax Stamps chapter was inserted). The 9 records with NO secondary counterpart (arts 9-14 and the three مكرر) rest on the official file alone -- that weakest meaningfully-sized portion governs the tier. AMENDMENTS INCORPORATED WITH PER-ARTICLE ATTRIBUTION from the file's own footnotes, each footnote preserved verbatim in the article's history: (13-1-23) 15 Rajab 1444H and (06-06-25) 8 Rajab 1447H / 28 Dec 2025 (the latter carrying the sweetened-beverage tier and e-cigarette device/liquid changes). FLAGGED, NOT ATTRIBUTED: (8-2-19), (2-3-19) and (14-6-22) are printed on the cover but consolidated into the running text with NO per-article footnote; which articles they changed cannot be determined from this source and was not guessed. DECISION-NUMBER DIRECTION RESOLVED WITH OFFICIAL EVIDENCE, NOT ASSUMED: the PDF draws hyphenated resolution numbers with the groups reversed ('17-1-9', '25-06-06'), but ZATCA's own regulation web page prints '(06-06-25) وتاريخ 2025/12/28م' -- the page's direction is adopted, the raw drawn form is preserved in cover_page_verbatim_ar, and the census's independent reading of 9-1-17 / 8-2-19 / 2-3-19 corroborates it. 8 unresolved discrepancies recorded (article count vs census; number direction; the unattributed pre-2023 amendments; the single-source arts 9-14; the 'تعديلات على اللائحة' PDF that 404s on ZATCA's own site; the Governor's excise-goods-definitions decision not extracted; BOE/archive unreachable; the GCC Unified Agreement not extracted). Same glyph-level extraction method as the parent law, ambiguities settled by reading rendered page crops; the only deletions are decorative justification kashida, duplicate-drawn tashkeel and footnote reference glyphs (kept separately in history) -- no Arabic letter was added or substituted.",
+      "registry_source_url": null,
+      "official_source_file": "sources/excise_tax_regulation/law/official_source/excise_tax_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "nezams.com",
+        "web.archive.org",
+        "zatca.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },

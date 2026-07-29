@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 291,
-  "total_terms": 1920,
-  "total_definitions": 3318,
-  "tracks_with_definitions_article_parsed": 214,
+  "total_tracks_in_registry": 297,
+  "total_terms": 1951,
+  "total_definitions": 3377,
+  "tracks_with_definitions_article_parsed": 217,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -87,6 +87,18 @@
     {
       "track_id": "civil_transactions_law",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "cma_investment_funds_regulation",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "cma_market_institutions_regulation",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "cma_securities_offering_rules",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
     {
       "track_id": "commercial_agencies_law",
@@ -455,6 +467,16 @@
         "term_as_written": "أسواق النفع العام",
         "definition_text": "مواقع يسمح فيها للممارسين الزراعيين بممارسة البيع بالجملة لمنتجات القطاع الزراعي بالمزاد أو البيع المباشر، ولا يشمل ذلك البيع بالتجزئة.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أصحاب الحقوق": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "أصحاب الحقوق",
+        "definition_text": "المؤلف، وفنانو الأداء، ومنتجو التسجيلات الصوتية، وهيئات البث، أو من آلت إليهم الحقوق كليا أو جزئيا بموجب النظام.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -1122,6 +1144,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "إنتاج السلع الانتقائية": [
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "إنتاج السلع الانتقائية",
+        "definition_text": "أي عمل يشمل صناعة السلع الانتقائية في المملكة، أو زراعتها، أو تغيير تركيبتها؛ بالقدر الذي يترتب عليه فرض الضريبة.",
+        "source_record_id": "excise-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اتحاد الغرف": [
       {
         "track_id": "chambers_of_commerce_law",
@@ -1535,6 +1567,16 @@
         "term_as_written": "الأخطار البحرية",
         "definition_text": "هي الحوادث غير المتوقعة التي يحتمل وقوعها؛ المتعلقة برحلة بحرية.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأداء العلني": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الأداء العلني",
+        "definition_text": "إيصال المصنف للجمهور بأي وسيلة كانت في مكان يمكن أن يكون فيه أشخاص غير أفراد الأسرة والأصدقاء.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3086,6 +3128,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الابتكار": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الابتكار",
+        "definition_text": "الإتيان بمصنف يتوفر فيه عنصر الأصالة، ويتميز بطابع خاص.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الاتجار بالآلات والمعدات الزراعية": [
       {
         "track_id": "agriculture_regulation",
@@ -3127,6 +3179,14 @@
       }
     ],
     "الاتفاقية": [
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "الاتفاقية",
+        "definition_text": "الاتفاقية الموحدة للضريبة الانتقائية لدول مجلس التعاون لدول الخليج العربية.",
+        "source_record_id": "excise-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "vat_law",
         "article_number": 1,
@@ -3453,6 +3513,14 @@
         "term_as_written": "البث",
         "definition_text": "إرسال محتوى إعلامي محملا على إشارات سلكية، أو لا سلكية؛ يمكن استقباله.",
         "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "البث",
+        "definition_text": "إرسال إشارة حاملة للبرنامج المعد للبث بوساطة الراديو أو التلفزيون أو أجهزة البث، بوسائل سلكية أو لاسلكية أو بأي وسيلة ناقلة، لكي يستقبلها الجمهور، بما في ذلك البث بالأقمار الصناعية، ويعتبر إرسال إشارات مشفرة من باب البث في حال أتيحت للجمهور وسيلة فك التشفير من قبل هيئات البث أو بموافقتها، ولا تعتبر أشكال الإرسال التي تتم عبر الشبكات الحاسوبية من باب البث.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3938,6 +4006,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التأجير": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "التأجير",
+        "definition_text": "إتاحة المصنف الملموس أو نسخ منه للجمهور للاستخدام لمدة محددة من الوقت؛ من أجل الحصول على فائدة اقتصادية أو تجارية، مباشرة كانت أو غير مباشرة.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التأخير على المدرج": [
       {
         "track_id": "aviation_passenger_rights_regulation",
@@ -4057,6 +4135,16 @@
         "term_as_written": "التبعية المعيشية",
         "definition_text": "حالة يكون فيها الشخص معتمدا على شخص آخر في معيشته وتأمين حاجاته الأساسية.",
         "source_record_id": "protection-from-abuse-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التثبيت": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "التثبيت",
+        "definition_text": "كل تجسيد للأصوات أو الصور والأصوات أو تمثيلها، يمكن من خلاله إدراكها أو استنساخها، أو نقلها باستخدام أي وسيلة.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4330,6 +4418,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التراث الثقافي": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "التراث الثقافي",
+        "definition_text": "المصنفات التي ابتكرت داخل إقليم المملكة العربية السعودية، وانتقلت من جيل إلى جيل، وتشكل جزءا من التراث الوطني أو الفني التقليدي السعودي.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التراث العمراني": [
       {
         "track_id": "antiquities_heritage_law",
@@ -4592,6 +4690,14 @@
     ],
     "الترخيص الإجباري": [
       {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الترخيص الإجباري",
+        "definition_text": "الإذن للغير باستغلال المصنف، دون موافقة أصحاب الحقوق، وفقا للأحكام المنصوص عليها في النظام.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "patent_law",
         "article_number": 2,
         "term_as_written": "الترخيص الإجباري",
@@ -4711,6 +4817,16 @@
         "term_as_written": "التسجيل الدولي",
         "definition_text": "تسجيل الطائرات لدى منظمة تتمتع بالشخصية القانونية الدولية.",
         "source_record_id": "civil-aviation-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التسجيل الصوتي": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "التسجيل الصوتي",
+        "definition_text": "تثبيت الأصوات التي يتكون منها الأداء أو غيرها من الأصوات، أو تثبيت تمثيل للأصوات في شكل غير التثبيت المدرج في مصنف سمعي بصري آخر.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5442,6 +5558,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "التلف الكلي": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "التلف الكلي",
+        "definition_text": "يكون عندما تصبح السلع الانتقائية غير صالحة للاستعمال بشكل مطلق.\n2. فيما عدا ما نصت عليه الفقرة (1) من هذه المادة، تكون للألفاظ والعبارات الواردة في اللائحة المعاني المحددة لها في الاتفاقية والنظام.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التلوث الخلطي": [
       {
         "track_id": "food_regulation",
@@ -5705,6 +5831,16 @@
         "term_as_written": "التوثيق الزراعي",
         "definition_text": "نشاط تقوم به الوزارة أو جهة التوثيق الزراعي، يؤكد مطابقة منتجات القطاع الزراعي والممارسات الزراعية للشروط والمعايير التي تحددها الوزارة.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التوزيع": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "التوزيع",
+        "definition_text": "إتاحة المصنف الملموس أو نسخ منه للجمهور عن طريق البيع وغيره من طرق نقل الملكية بتصريح\nمن صاحب الحق.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7122,6 +7258,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الحقوق المجاورة": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الحقوق المجاورة",
+        "definition_text": "الحقوق التي يتمتع بها فنانو الأداء ومنتجو التسجيلات الصوتية وهيئات البث وفقا للنظام.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الحكومة الرقمية": [
       {
         "track_id": "telecommunications_law",
@@ -7315,6 +7461,16 @@
         "term_as_written": "الختم الزمني",
         "definition_text": "بيانات إلكترونية واردة في سجل إلكتروني أو مضافة إليه أو مرتبطة به، بغرض تحديد تاريخ ووقت الإجراء الذي تم على هذا السجل، واكتشاف أي تعديل يطرأ على ذلك.",
         "source_record_id": "electronic-transactions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الختم الضريبي": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "الختم الضريبي",
+        "definition_text": "يقصد به العلامة المميزة المنصوص عليها في المادة (18) من الاتفاقية وهو عبارة عن ملصق أو رمز أو علامة يوضع على السلع الانتقائية المحددة يُفعل بطريقة إلكترونية، ويتم تحديد شكله والمعلومات التي يتضمنها من قبل الهيئة.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8014,6 +8170,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الدولة العضو": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "الدولة العضو",
+        "definition_text": "أي دولة تتمتع بالعضوية الكاملة في المجلس وفقاً لنظامه الأساسي.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الدين": [
       {
         "track_id": "bankruptcy_law",
@@ -8115,6 +8281,14 @@
         "term_as_written": "الرئيس",
         "definition_text": "رئيس المجلس.",
         "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "الرئيس التنفيذي للهيئة.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9058,6 +9232,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "السلع الانتقائية": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "السلع الانتقائية",
+        "definition_text": "السلع الخاضعة للضريبة وفقاً لأحكام النظام واللائحة.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السلع الانتقائية المحددة": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "السلع الانتقائية المحددة",
+        "definition_text": "هي السلع الانتقائية التي يلزم وضع أختام ضريبية عليها لأغراض هذه اللائحة.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "السلعة": [
       {
         "track_id": "competition_regulation",
@@ -9648,6 +9842,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشخص المستفيد من ذوي الإعاقة": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الشخص المستفيد من ذوي الإعاقة",
+        "definition_text": "الشخص ذو الإعاقة من المكفوفين أو ممن يعانون من الإعاقة البصرية إلى حد لا يمكن تحسينه لتصبح وظيفة بصره تعادل وظيفة بصر شخص بلا إعاقة، أو العاجز عن القراءة بسبب إعاقة جسدية، دون النظر لأي حالة عجز أخرى.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الشخص الملزم بسداد الضريبة": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "الشخص الملزم بسداد الضريبة",
+        "definition_text": "الشخص الملزم بموجب أحكام النظام واللائحة عن احتساب الضريبة المستحقة على حسابه والإقرار عنها وسدادها للهيئة.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشخص ذو الإعاقة": [
       {
         "track_id": "disability_rights_law",
@@ -10155,6 +10369,14 @@
       }
     ],
     "الضريبة المستحقة": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "الضريبة المستحقة",
+        "definition_text": "الضريبة على السلع الانتقائية والواجب سدادها للهيئة.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "rett_regulation",
         "article_number": 1,
@@ -11478,6 +11700,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الفترة الضريبية": [
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "الفترة الضريبية",
+        "definition_text": "المدة التي تحتسب الضريبة المستحقة خلالها.",
+        "source_record_id": "excise-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الفحص الطبي المهني": [
       {
         "track_id": "high_risk_professions_regulation",
@@ -12278,6 +12510,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "credit_information_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -12427,6 +12667,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.\n2- فيما عدا ما نصت عليه الفقرة (1) من هذه المادة، تكون للألفاظ والعبارات الواردة في النظام المعاني المحددة لها في الاتفاقية.",
+        "source_record_id": "excise-tax-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13412,6 +13660,14 @@
     ],
     "اللجنة الوزارية": [
       {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "اللجنة الوزارية",
+        "definition_text": "لجنة التعاون المالي والاقتصادي لدول المجلس.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gcc_anti_dumping_law",
         "article_number": 2,
         "term_as_written": "اللجنة الوزارية",
@@ -13922,6 +14178,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المؤلف",
+        "definition_text": "الشخص الذي يبتكر المصنف.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "press_law",
         "article_number": 1,
         "term_as_written": "المؤلف",
@@ -14412,6 +14676,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "criminal_procedure_implementing_regulation",
         "article_number": 1,
         "term_as_written": "المجلس",
@@ -14489,6 +14761,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "etec-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس التعاون لدول الخليج العربية.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -15908,6 +16188,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "الشخص الموافق له من قبل الهيئة للقيام، خلال ممارسته عمله، بإنتاج السلع الانتقائية، أو تحويل، أو حيازة، أو تخزين، أو نقل، أو تلقي السلع الانتقائية المنتجة محلياً أو المستوردة في مستودع ضريبي.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "labor_saudization_mediation_rules",
         "article_number": 1,
         "term_as_written": "المرخص له",
@@ -16966,6 +17254,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "المستودع الضريبي": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "المستودع الضريبي",
+        "definition_text": "المكان المحدد الذي يسمح فيه للمرخص له بإنتاج السلع الانتقائية، أو تحويل، أو تخزين، أو تلقي السلع الانتقائية تحت وضع معلق للضريبة.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المستورد": [
       {
         "track_id": "customs_law",
@@ -16991,6 +17289,14 @@
         "term_as_written": "المسجل",
         "definition_text": "الجهة الحكومية المحددة من الوزير لإدارة السجل التجاري.",
         "source_record_id": "commercial-register-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "المسجل",
+        "definition_text": "الشخص المسجل لدى الهيئة لأغراض الضريبة وفقاً للنظام.",
+        "source_record_id": "excise-tax-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17454,6 +17760,14 @@
         "definition_text": "أي عمل أدبي، أو علمي، أو فني.",
         "source_record_id": "copyright-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المصنف",
+        "definition_text": "كل عمل مبتكر، سواء أكان أدبيا أم فنيا أم علميا، مهما كان نوعه، أو طريقة التعبير عنه، أو الغرض منه.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المصنف الجماعي": [
@@ -17463,6 +17777,14 @@
         "term_as_written": "المصنَّف الجماعي",
         "definition_text": "المصنَّف الذي يشترك في وضعه جماعة بتوجيه من شخص طبيعي أو معنوي يتكفل بنشره تحت إدارته، أو باسمه، ويندمج عمل المشتركين فيه في الهدف العام الذي قصد إليه هذا الشخص الطبيعي، أو المعنوي بحيث لا يمكن فصل عمل كل من المشتركين وتمييزه على حدة.",
         "source_record_id": "copyright-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المصنف الجماعي",
+        "definition_text": "المصنف الذي يشترك فيه أكثر من مؤلف بتوجيه من شخص ذي صفة طبيعية أو اعتبارية، يتكفل بإدارته، ونشره باسمه ولحسابه، ويندمج عمل المؤلفين فيه؛ لتحقيق الهدف العام الذي قصده هذا الشخص، دون أن يحدد حق خاص لأي من المؤلفين على المصنف.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -17484,6 +17806,14 @@
         "definition_text": "أي مصنَّف معد للسمع والنظر في آن واحد، يتكون من مجموعة من الصور المترابطة والمصحوبة بأصوات والمسجلة على دعامة ملائمة، ويعرض بواسطة أجهزة مناسبة.",
         "source_record_id": "copyright-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المصنف السمعي البصري",
+        "definition_text": "أي مصنف يتكون من مجموعة من الصور المترابطة، وغالبا ما تكون مصحوبة بأصوات، ويعرض عبر وسائط مناسبة.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المصنف المشترك": [
@@ -17494,6 +17824,14 @@
         "definition_text": "المصنَّف الذي يشترك في وضعه شخصان أو أكثر من الأشخاص الطبيعيين أو المعنويين سواء أمكن فصل إسهام كل منهم في العمل أم لم يمكن ذلك.",
         "source_record_id": "copyright-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المصنف المشترك",
+        "definition_text": "المصنف الذي يسهم فيه أكثر من شخص من الأشخاص ذوي الصفة الطبيعية أو الاعتبارية، سواء أمكن فصل إسهام كل منهم في العمل أم لم يمكن، ولا يندرج ضمن المصنفات الجماعية.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المصنف المشتق": [
@@ -17503,6 +17841,24 @@
         "term_as_written": "المصنَّف المشتق",
         "definition_text": "كل مصنَّف يوضع استناداً إلى مصنَّف آخر سابق له.",
         "source_record_id": "copyright-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المصنف المشتق",
+        "definition_text": "كل مصنف يستمد أصله من مصنف آخر سابق له.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المصنف اليتيم": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المصنف اليتيم",
+        "definition_text": "كل مصنف أو أداء أو تسجيل صوتي أو برنامج بث، محمي بأحكام النظام لا يعرف مؤلفه، أو صاحب الحق فيه، ولا ورثة أي منهما، أو لا يمكن العثور عليهم.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -17775,6 +18131,16 @@
         "term_as_written": "المعلومات السلبية",
         "definition_text": "أي معلومات يقدمها العضو بناءً على سجل المستهلك الائتماني ضد مصلحته.",
         "source_record_id": "credit-information-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المعلومات الضرورية لإدارة الحقوق": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "المعلومات الضرورية لإدارة الحقوق",
+        "definition_text": "معلومات تعرف المصنف ومؤلفه، أو المؤدي وأدائه، أو منتج التسجيل الصوتي وتسجيله الصوتي، ومالك أي حق فيها أو أي معلومات تتعلق بشروط الانتفاع بها، أو أي أرقام أو شفرات ترمز إلى تلك المعلومات متى كان أي عنصر من تلك المعلومات مقترنا بنسخة من المصنف، أو الأداء المثبت أو التسجيل الصوتي، أو ظاهرا لدى نقل المصنف أو الأداء المثبت أو التسجيل الصوتي إلى الجمهور.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -18158,6 +18524,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الملك العام": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الملك العام",
+        "definition_text": "المصنفات التي يمكن لأي شخص الانتفاع بها أو استغلالها دون إذن، أو التزام بدفع مقابل لأصحاب الحقوق.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الملوث": [
       {
         "track_id": "agriculture_regulation",
@@ -18377,6 +18753,14 @@
         "term_as_written": "المملكة",
         "definition_text": "المملكة العربية السعودية.",
         "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "المملكة",
+        "definition_text": "إقليم المملكة العربية السعودية، ويشمل ذلك المناطق الواقعة خارج المياه الإقليمية التي تمارس المملكة العربية السعودية على مياهها وقاع بحرها والطبقات الواقعة تحت التربة والموارد الطبيعية حقوق السيادة والولاية بمقتضى نظامها والقانون الدولي.",
+        "source_record_id": "excise-tax-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19580,6 +19964,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المورد المعتمد": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "المورد المعتمد",
+        "definition_text": "الشخص المرخص من قبل الهيئة بتوريد الأختام الضريبية.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الموزع": [
       {
         "track_id": "press_law",
@@ -19890,6 +20284,14 @@
     ],
     "الناشر": [
       {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الناشر",
+        "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية ينشر مصنفا أو تسجيلا صوتيا، أو برنامج بث، أو أي أداء للجمهور بأي طريقة.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "press_law",
         "article_number": 1,
         "term_as_written": "الناشر",
@@ -19971,6 +20373,24 @@
         "term_as_written": "النسخ",
         "definition_text": "إنتاج نسخة أو أكثر من أحد المصنَّفات الأدبية، أو الفنية، أو العلمية على دعامة مادية، بما في ذلك أي تسجيل صوتي، أو بصري.\nالتراث الشعبي (الفولكلور): يقصد به جميع المصنَّفات الأدبية، أو الفنية، أو العلمية التي يفترض أنها ابتكرت في الأراضي السعودية، وانتقلت من جيل إلى جيل، وتشكل جزءاً من التراث الثقافي أو الفني التقليدي السعودي.",
         "source_record_id": "copyright-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "النسخ",
+        "definition_text": "استخراج نسخة أو أكثر من مصنف، أو تسجيل صوتي، أو برنامج بث أو أي أداء في أي شكل أو صورة، بما يؤدي إلى حفظ تلك النسخة أو النسخ عبر أي وسائط، وبأي وسيلة كانت.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "النسخة القابلة للنفاذ في نسق ميسر": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "النسخة القابلة للنفاذ في نسق ميسر",
+        "definition_text": "نسخة من مصنف بأسلوب أو شكل بديل يتيح للشخص المستفيد من ذوي الإعاقة النفاذ إلى المصنف الأصلي بسلاسة ويسر، دون إخلال بالحقوق الأدبية للمصنف الأصلي.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20129,6 +20549,14 @@
         "term_as_written": "النشر",
         "definition_text": "توفير نسخ من المصنَّف لتلبية حاجات الجمهور.",
         "source_record_id": "copyright-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "النشر",
+        "definition_text": "إتاحة نسخ من مصنف أو أداء مثبت أو تسجيل صوتي للجمهور على نحو يفي باحتياجاته المعقولة مع مراعاة طبيعة المصنف أو الأداء المثبت أو التسجيل الصوتي.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -20456,6 +20884,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام حقوق المؤلف.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "credit_information_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -20629,6 +21065,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام الإثبات.",
         "source_record_id": "evidence-manuals-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الضريبة الانتقائية.",
+        "source_record_id": "excise-tax-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -21576,6 +22020,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للملكية الفكرية.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "cst_organizational_statute",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -21653,6 +22105,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "هيئة تقويم التعليم والتدريب.",
         "source_record_id": "etec-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة الزكاة والضريبة والجمارك.",
+        "source_record_id": "excise-tax-law-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -21999,6 +22459,16 @@
         "term_as_written": "الهيئة الإدارية",
         "definition_text": "من يمارس الأعمال الإدارية ذات الصلة بالعملية التعليمية داخل المؤسسة التعليمية.",
         "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الهيئة المعتمدة": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "الهيئة المعتمدة",
+        "definition_text": "المنشأة التي تقدم خدمات التعليم والتدريب والقراءة التكيفية أو النفاذ إلى المعلومات، لفائدة الأشخاص المستفيدين من ذوي الإعاقة، ولا تهدف إلى الربح، وتشمل الجهات الحكومية والمؤسسات غير الربحية التي تقدم الخدمات نفسها للأشخاص المستفيدين من ذوي الإعاقة ضمن أنشطتها الأساسية أو التزاماتها المؤسسية.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23578,6 +24048,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الوضع المعلق للضريبة": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "الوضع المعلق للضريبة",
+        "definition_text": "الوضع الذي يعلق فيه استحقاق الضريبة على السلع الانتقائية.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الوضع المهيمن": [
       {
         "track_id": "competition_law",
@@ -23659,6 +24139,16 @@
         "term_as_written": "الوعاء الزكوي",
         "definition_text": "الأموال الخاضعة لجباية الزكاة بموجب اللائحة.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الوعاء الضريبي": [
+      {
+        "track_id": "excise_tax_regulation",
+        "article_number": 1,
+        "term_as_written": "الوعاء الضريبي",
+        "definition_text": "قيمة السلع الانتقائية التي يتم احتساب الضريبة عليها وفقًا للفقرة (1) من المادة الرابعة من هذه اللائحة؛ وتتمثل في القيمة الأعلى من أي من الأسعار التالية، غير شاملة للضريبة المستحقة وضريبة القيمة المضافة:\nأ) سعر بيع التجزئة والذي يتم تحديده وفق أحكام هذه اللائحة من قبل المستورد، أو المنتج أو أي شخص آخر يطرح سلع انتقائية للاستهلاك في المملكة.\nب) سعر بيع التجزئة المرجعي الذي تحدده الهيئة لأغراض الضريبة.\nج) السعر المعياري للسلع الانتقائية والذي يحدد بشكل دوري بين الجهات الضريبية في دول المجلس وفقًا لأحكام الاتفاقية.",
+        "source_record_id": "excise-tax-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -23847,6 +24337,14 @@
         "term_as_written": "برامج الحاسب الآلي",
         "definition_text": "مجموعة من الأوامر، والبيانات التي تتضمن توجيهات أو تطبيقات حين تشغيلها في الحاسب الآلي، أو شبكات الحاسب الآلي، وتقوم بأداء الوظيفة المطلوبة.",
         "source_record_id": "anti-cyber-crime-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "برامج الحاسب الآلي",
+        "definition_text": "مجموعة من الأوامر معبر عنها بكلمات أو رموز أو بأي شكل آخر، بإمكان الحاسب أن يقرأها عندما تدمج في وسائط، أو أن تجعله يؤدي أو ينفذ مهمة ما أو يعطي نتيجة ما.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -24051,6 +24549,16 @@
         "term_as_written": "تخصيص الطاقة",
         "definition_text": "تحديد نوع الطاقة وكميتها المتاحة للمستهلك.",
         "source_record_id": "energy-supplies-system-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تدابير الحماية التقنية": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "تدابير الحماية التقنية",
+        "definition_text": "أي تقنية فعالة تهدف إلى منع الأفعال التي لا يصرح بها أصحاب الحقوق، أو الحد منها.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -27216,6 +27724,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "فنانو الأداء": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "فنانو الأداء",
+        "definition_text": "الممثلون والمغنون والملقون والمنشدون والعازفون والموسيقيون وفنانو الأداء الحركي وغيرهم، الذين يؤدون أداءهم بأي طريقة، وقد يشمل أداؤهم مصنفات التراث الوطني أو المصنفات التي آلت إلى الملك العام.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "فني الصيدلة": [
       {
         "track_id": "pharmaceutical_establishments_law",
@@ -28088,6 +28606,14 @@
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "engineering-practice-regulation-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "excise_tax_law",
+        "article_number": 1,
+        "term_as_written": "مجلس الإدارة",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "excise-tax-law-llm-art-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "finance_companies_regulation",
@@ -29228,6 +29754,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مقدم محتوى الإنترنت": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "مقدم محتوى الإنترنت",
+        "definition_text": "أي كيان يستضيف محتوى الإنترنت، ويوفره للمستخدم النهائي عبر شبكة الإنترنت.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مقدمو الخدمات": [
       {
         "track_id": "environmental_service_providers",
@@ -30264,6 +30800,16 @@
         "definition_text": "أ.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "هيئة البث": [
+      {
+        "track_id": "copyright_law_1447",
+        "article_number": 1,
+        "term_as_written": "هيئة البث",
+        "definition_text": "الشخص ذو الصفة الاعتبارية المسؤول عن البث الإذاعي أو البصري أو السمعي البصري.",
+        "source_record_id": "copyright-law-1447-llm-art-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "هيئة التحكيم": [

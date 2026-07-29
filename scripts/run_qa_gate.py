@@ -332,6 +332,12 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_mawani_organizational_statute_track.py",
     "scripts/gen_hajj_umrah_external_pilgrims_law_track.py",
     "scripts/gen_aviation_passenger_rights_regulation_track.py",
+    "scripts/gen_cma_securities_offering_rules_track.py",
+    "scripts/gen_cma_investment_funds_regulation_track.py",
+    "scripts/gen_cma_market_institutions_regulation_track.py",
+    "scripts/gen_excise_tax_law_track.py",
+    "scripts/gen_excise_tax_regulation_track.py",
+    "scripts/gen_copyright_law_1447_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",
@@ -344,7 +350,11 @@ IDEMPOTENT_GENERATORS = [
     "scripts/run_corpus_retrieval_eval.py",
 ]
 
-VALIDATOR_TIMEOUT = 900
+# Raised again at 297 tracks / 16,174 records: the unified-index and
+# retrieval-eval validators each replay ~450-525 gold queries against the whole
+# corpus, and both legitimately run ~9-12 minutes at this scale.  This is a
+# scale budget, not a hang allowance.
+VALIDATOR_TIMEOUT = 1500
 WORKERS = 4
 
 

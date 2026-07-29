@@ -316,6 +316,23 @@ STATUS_TIER_MAP = {
     # two independently-produced OFFICIAL sources agreeing, so this is a genuine TIER_1 and an
     # upgrade from the prior TIER_3 scan-OCR basis.
     "UQN_GOV_SA_BORN_DIGITAL_OFFICIAL_GAZETTE_PRIMARY_X_AML_GOV_SA_OFFICIAL_SCAN_SECONDARY_X_QANONIAH_BORN_DIGITAL_TERTIARY_27_ARTICLES_BOE_NO_DEDICATED_LAWID_PAGE": TIER_1,
+    # --- wave-7 CMA cluster ---
+    "TIER_1_CMA_OFFICIAL_PDF_X_UQN_GAZETTE_DUAL_OFFICIAL_GLYPH_LEVEL_RECONSTRUCTION_105_OF_112_WORD_IDENTICAL": TIER_1,
+    "TIER_2_CMA_OFFICIAL_CONSOLIDATED_PDF_GLYPH_LEVEL_X_GAZETTE_AMENDMENT_CROSSCHECK_NO_SECOND_INDEPENDENT_OFFICIAL_PUBLISHER": TIER_2,
+    # wave-7 Excise Tax family: ZATCA's own born-digital consolidated PDF is the
+    # single OFFICIAL leg; the second leg is an independent SECONDARY (nezams.com),
+    # so both are TIER_2 — laws.boe.gov.sa refuses TLS and no extractable Umm
+    # al-Qura text was found, so no second official publisher exists this pass.
+    "ZATCA_OFFICIAL_CONSOLIDATED_PDF_X_SECONDARY_CROSS_VERIFIED_20_OF_30_ARTICLES_LETTER_EXACT_BOE_TLS_BLOCKED": TIER_2,
+    "ZATCA_OFFICIAL_CONSOLIDATED_PDF_X_SECONDARY_CROSS_VERIFIED_58_OF_67_RECORDS_9_SINGLE_SOURCE_BOE_TLS_BLOCKED": TIER_2,
+    # wave-7 successor Copyright Law: two OFFICIAL legs (server-rendered Umm al-Qura
+    # portal pages vs the official issue-5144 gazette PDF read from independently
+    # rendered page images), plus a secondary cross-check at 60/61 exact.  The
+    # taxonomy admits a portal database vs the official PDF published by that same
+    # portal; the shared-publisher caveat is disclosed on the track itself so a
+    # reviewer may downgrade to TIER_2 without re-deriving anything.
+    "TIER_1_UQN_PORTAL_PAGES_X_OFFICIAL_GAZETTE_PDF_PAGE_IMAGES_X_QANOONSA_60_OF_61_EXACT_NOT_YET_IN_FORCE_AT_BUILD_DATE": TIER_1,
+    "TIER_2_CMA_OFFICIAL_PDF_PDFMINER_GLYPH_LEVEL_X_SECONDARY_CROSSCHECK_MEDIAN_AGREEMENT_1_0000_RENAME_RESOLUTION_NUMBER_UNPUBLISHED": TIER_2,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_REGA_RESOLUTION": TIER_2,
     "TIER_1_SAMA_RULEBOOK_PRIMARY_MULTI_SOURCE": TIER_1,
     "TIER_2_PRIMARY_MULTI_SOURCE_THREE_DISCLOSED_CONFLICTS": TIER_2,

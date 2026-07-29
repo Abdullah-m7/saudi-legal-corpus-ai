@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 291
+        assert registry["total_tracks"] == 297
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 15858
+        assert registry["total_primary_arabic_governing_records"] == 16343
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 16753
+        assert registry["total_registry_counted_records"] == 17238
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -360,6 +360,12 @@ class TestTracks:
         assert "mawani_organizational_statute" in ids
         assert "hajj_umrah_external_pilgrims_law" in ids
         assert "aviation_passenger_rights_regulation" in ids
+        assert "cma_securities_offering_rules" in ids
+        assert "cma_investment_funds_regulation" in ids
+        assert "cma_market_institutions_regulation" in ids
+        assert "excise_tax_law" in ids
+        assert "excise_tax_regulation" in ids
+        assert "copyright_law_1447" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -1220,9 +1226,9 @@ class TestTracks:
 
     def test_aml_regulation_counts(self, registry):
         t = next(x for x in registry["tracks"] if x["track_id"] == "aml_regulation")
-        assert t["record_counts"]["arabic_articles"] == 25
-        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 24, "معدلة": 1, "ملغاة": 0, "مضافة": 0}
-        assert t["official_text_status"] == "AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE"
+        assert t["record_counts"]["arabic_articles"] == 27
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 26, "معدلة": 1, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "UQN_GOV_SA_BORN_DIGITAL_OFFICIAL_GAZETTE_PRIMARY_X_AML_GOV_SA_OFFICIAL_SCAN_SECONDARY_X_QANONIAH_BORN_DIGITAL_TERTIARY_27_ARTICLES_BOE_NO_DEDICATED_LAWID_PAGE"
 
     def test_patent_regulation_counts(self, registry):
         t = next(x for x in registry["tracks"] if x["track_id"] == "patent_regulation")
@@ -1245,7 +1251,7 @@ class TestTracks:
     def test_traffic_regulation_counts(self, registry):
         t = next(x for x in registry["tracks"] if x["track_id"] == "traffic_regulation")
         assert t["record_counts"]["arabic_articles"] == 86
-        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 82, "معدلة": 3, "ملغاة": 1, "مضافة": 0}
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 74, "معدلة": 11, "ملغاة": 1, "مضافة": 0}
         assert t["official_text_status"] == "MOI_OFFICIAL_SCANNED_DOCUMENT_DUAL_VISION_OCR_PIPELINE_X_QANONIAH_COM_BORN_DIGITAL_PARTIAL_CROSSCHECK_ARTS_1_8_OF_86_BOE_NO_DEDICATED_LAWID_PAGE"
 
     def test_environmental_inspection_audit_counts(self, registry):
@@ -1544,8 +1550,8 @@ class TestTracks:
 
     def test_weapons_ammunition_regulation_counts(self, registry):
         t = next(x for x in registry["tracks"] if x["track_id"] == "weapons_ammunition_regulation")
-        assert t["record_counts"]["arabic_articles"] == 19
-        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 7, "معدلة": 12, "ملغاة": 0, "مضافة": 0}
+        assert t["record_counts"]["arabic_articles"] == 20
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 7, "معدلة": 12, "ملغاة": 0, "مضافة": 1}
         assert t["official_text_status"] == "QADHA_ORG_SA_PRIMARY_PDF_TESSERACT_OCR_RECONSTRUCTED_CORRUPTED_TOUNICODE_TEXT_LAYER_X_QANOONSA_PARTIAL_2_OF_19_ARTICLES_X_UQN_GOV_SA_DIRECT_5TH_AMENDMENT_DISCOVERY_TIER_3_BOE_NO_DEDICATED_PAGE_FOUNDING_DECREE_23_VS_33_INTERNAL_CONFLICT"
 
     def test_engineering_practice_regulation_counts(self, registry):
@@ -2007,6 +2013,65 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 30
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
         assert t["official_text_status"] == "TIER_2_UQN_GAZETTE_PRIMARY_X_SECONDARY_CROSS_VERIFIED"
+
+    def test_cma_securities_offering_rules_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "cma_securities_offering_rules")
+        assert t["record_counts"]["arabic_articles"] == 112
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 112, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_CMA_OFFICIAL_PDF_X_UQN_GAZETTE_DUAL_OFFICIAL_GLYPH_LEVEL_RECONSTRUCTION_105_OF_112_WORD_IDENTICAL"
+
+    def test_cma_investment_funds_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "cma_investment_funds_regulation")
+        assert t["record_counts"]["arabic_articles"] == 113
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 111, "معدلة": 2, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_CMA_OFFICIAL_CONSOLIDATED_PDF_GLYPH_LEVEL_X_GAZETTE_AMENDMENT_CROSSCHECK_NO_SECOND_INDEPENDENT_OFFICIAL_PUBLISHER"
+
+    def test_cma_market_institutions_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "cma_market_institutions_regulation")
+        assert t["record_counts"]["arabic_articles"] == 99
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 99, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_CMA_OFFICIAL_PDF_PDFMINER_GLYPH_LEVEL_X_SECONDARY_CROSSCHECK_MEDIAN_AGREEMENT_1_0000_RENAME_RESOLUTION_NUMBER_UNPUBLISHED"
+
+
+    def test_excise_tax_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "excise_tax_law")
+        assert t["record_counts"]["arabic_articles"] == 30
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 28, "معدلة": 2, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "ZATCA_OFFICIAL_CONSOLIDATED_PDF_X_SECONDARY_CROSS_VERIFIED_20_OF_30_ARTICLES_LETTER_EXACT_BOE_TLS_BLOCKED"
+
+    def test_excise_tax_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "excise_tax_regulation")
+        # 64 numbered articles + 3 مكرر = 67; the census's 64 was the highest
+        # article NUMBER, not the record count.
+        assert t["record_counts"]["arabic_articles"] == 67
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 48, "معدلة": 16, "ملغاة": 0, "مضافة": 3}
+        assert t["official_text_status"] == "ZATCA_OFFICIAL_CONSOLIDATED_PDF_X_SECONDARY_CROSS_VERIFIED_58_OF_67_RECORDS_9_SINGLE_SOURCE_BOE_TLS_BLOCKED"
+
+    def test_copyright_law_1447_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "copyright_law_1447")
+        assert t["record_counts"]["arabic_articles"] == 61
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 61, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_UQN_PORTAL_PAGES_X_OFFICIAL_GAZETTE_PDF_PAGE_IMAGES_X_QANOONSA_60_OF_61_EXACT_NOT_YET_IN_FORCE_AT_BUILD_DATE"
+
+    def test_copyright_law_1447_not_in_force_flags(self, registry):
+        """The successor Copyright Law is published but does not commence until
+        2026-08-12.  These flags are what stop a consumer treating its 61
+        articles as current law, and the one-day «بعد» ambiguity must stay a
+        two-element range — collapsing it to a scalar invents a certainty the
+        text does not supply."""
+        t = next(x for x in registry["tracks"] if x["track_id"] == "copyright_law_1447")
+        assert t["in_force_as_of_build_date"] is False
+        assert t["in_force_date_candidates_gregorian"] == ["2026-08-12", "2026-08-13"]
+        assert t["in_force_date_resolved"] is False
+        assert t["supersedes_track_id"] == "copyright"
+        assert t["predecessor_must_not_be_deleted"] is True
+
+    def test_copyright_m41_predecessor_still_present(self, registry):
+        """Article 24 of the successor keeps M/41 operative for protection terms
+        that accrued before cutover, so the predecessor track is a permanent
+        dependency — never a repealed artefact to prune."""
+        ids = [x["track_id"] for x in registry["tracks"]]
+        assert "copyright_law" in ids
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),
