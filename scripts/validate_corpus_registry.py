@@ -317,6 +317,29 @@ REQUIRED_TRACK_IDS = [
     "high_risk_professions_regulation",
     "osh_service_providers_regulation",
     "rega_organizational_statute",
+    "offplan_sale_implementing_regulation",
+    "real_estate_finance_implementing_regulation",
+    "real_estate_contributions_implementing_regulation",
+    "landlord_tenant_relationship_regulation",
+    "real_estate_marketing_advertising_regulation",
+    "real_estate_auctions_regulation",
+    "petroleum_petrochemical_materials_law",
+    "dry_gas_lpg_distribution_law",
+    "energy_supplies_system",
+    "mining_investment_implementing_regulation",
+    "pharmaceutical_establishments_law",
+    "seized_confiscated_funds_management_system",
+    "nca_cybersecurity_violations_investigation_rules",
+    "nca_cybersecurity_violations_reporting_rules",
+    "cst_organizational_statute",
+    "railway_law",
+    "railway_law_implementing_regulation",
+    "road_transport_law",
+    "gaca_organizational_statute",
+    "tga_organizational_statute",
+    "mawani_organizational_statute",
+    "hajj_umrah_external_pilgrims_law",
+    "aviation_passenger_rights_regulation",
 ]
 
 CHECKS: list[str] = []
@@ -361,7 +384,7 @@ def main() -> int:
 
     # [3] 268 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 268 tracks present...", len(track_ids) == 268 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 291 tracks present...", len(track_ids) == 291 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -2914,7 +2937,237 @@ def main() -> int:
           rega_organizational_statute_var_counts.get("legal_status_breakdown") == {"اصلية": 7, "معدلة": 8, "ملغاة": 0, "مضافة": 1},
           f"breakdown={rega_organizational_statute_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 14939 records...", uix.get("total_records") == 14939,
+    offplan_sale_implementing_regulation_var = tracks_by_id.get("offplan_sale_implementing_regulation", {})
+    offplan_sale_implementing_regulation_var_counts = offplan_sale_implementing_regulation_var.get("record_counts", {})
+    check("[7g256] offplan_sale_implementing_regulation: 49 Arabic records...",
+          offplan_sale_implementing_regulation_var_counts.get("arabic_articles") == 49
+          and offplan_sale_implementing_regulation_var.get("official_text_status") == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_REGA_RESOLUTION",
+          f"counts={offplan_sale_implementing_regulation_var_counts}")
+    check("    offplan_sale_implementing_regulation: status breakdown 49/0/0/0...",
+          offplan_sale_implementing_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 49, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={offplan_sale_implementing_regulation_var_counts.get('legal_status_breakdown')}")
+
+    real_estate_finance_implementing_regulation_var = tracks_by_id.get("real_estate_finance_implementing_regulation", {})
+    real_estate_finance_implementing_regulation_var_counts = real_estate_finance_implementing_regulation_var.get("record_counts", {})
+    check("[7g257] real_estate_finance_implementing_regulation: 31 Arabic records...",
+          real_estate_finance_implementing_regulation_var_counts.get("arabic_articles") == 31
+          and real_estate_finance_implementing_regulation_var.get("official_text_status") == "TIER_1_SAMA_RULEBOOK_PRIMARY_MULTI_SOURCE",
+          f"counts={real_estate_finance_implementing_regulation_var_counts}")
+    check("    real_estate_finance_implementing_regulation: status breakdown 31/0/0/0...",
+          real_estate_finance_implementing_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 31, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={real_estate_finance_implementing_regulation_var_counts.get('legal_status_breakdown')}")
+
+    real_estate_contributions_implementing_regulation_var = tracks_by_id.get("real_estate_contributions_implementing_regulation", {})
+    real_estate_contributions_implementing_regulation_var_counts = real_estate_contributions_implementing_regulation_var.get("record_counts", {})
+    check("[7g258] real_estate_contributions_implementing_regulation: 40 Arabic records...",
+          real_estate_contributions_implementing_regulation_var_counts.get("arabic_articles") == 40
+          and real_estate_contributions_implementing_regulation_var.get("official_text_status") == "TIER_2_PRIMARY_MULTI_SOURCE_THREE_DISCLOSED_CONFLICTS",
+          f"counts={real_estate_contributions_implementing_regulation_var_counts}")
+    check("    real_estate_contributions_implementing_regulation: status breakdown 40/0/0/0...",
+          real_estate_contributions_implementing_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 40, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={real_estate_contributions_implementing_regulation_var_counts.get('legal_status_breakdown')}")
+
+    landlord_tenant_relationship_regulation_var = tracks_by_id.get("landlord_tenant_relationship_regulation", {})
+    landlord_tenant_relationship_regulation_var_counts = landlord_tenant_relationship_regulation_var.get("record_counts", {})
+    check("[7g259] landlord_tenant_relationship_regulation: 12 Arabic records...",
+          landlord_tenant_relationship_regulation_var_counts.get("arabic_articles") == 12
+          and landlord_tenant_relationship_regulation_var.get("official_text_status") == "TIER_1_PRIMARY_MULTI_SOURCE_RIYADH_SCOPE_DISCLOSED",
+          f"counts={landlord_tenant_relationship_regulation_var_counts}")
+    check("    landlord_tenant_relationship_regulation: status breakdown 12/0/0/0...",
+          landlord_tenant_relationship_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={landlord_tenant_relationship_regulation_var_counts.get('legal_status_breakdown')}")
+
+    real_estate_marketing_advertising_regulation_var = tracks_by_id.get("real_estate_marketing_advertising_regulation", {})
+    real_estate_marketing_advertising_regulation_var_counts = real_estate_marketing_advertising_regulation_var.get("record_counts", {})
+    check("[7g260] real_estate_marketing_advertising_regulation: 12 Arabic records...",
+          real_estate_marketing_advertising_regulation_var_counts.get("arabic_articles") == 12
+          and real_estate_marketing_advertising_regulation_var.get("official_text_status") == "TIER_1_REGA_GOV_SA_PRIMARY_MULTI_SOURCE",
+          f"counts={real_estate_marketing_advertising_regulation_var_counts}")
+    check("    real_estate_marketing_advertising_regulation: status breakdown 12/0/0/0...",
+          real_estate_marketing_advertising_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={real_estate_marketing_advertising_regulation_var_counts.get('legal_status_breakdown')}")
+
+    real_estate_auctions_regulation_var = tracks_by_id.get("real_estate_auctions_regulation", {})
+    real_estate_auctions_regulation_var_counts = real_estate_auctions_regulation_var.get("record_counts", {})
+    check("[7g261] real_estate_auctions_regulation: 12 Arabic records...",
+          real_estate_auctions_regulation_var_counts.get("arabic_articles") == 12
+          and real_estate_auctions_regulation_var.get("official_text_status") == "TIER_1_DUAL_PRIMARY_TWO_MINOR_DISCLOSED_VARIANCES",
+          f"counts={real_estate_auctions_regulation_var_counts}")
+    check("    real_estate_auctions_regulation: status breakdown 12/0/0/0...",
+          real_estate_auctions_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={real_estate_auctions_regulation_var_counts.get('legal_status_breakdown')}")
+
+    petroleum_petrochemical_materials_law_var = tracks_by_id.get("petroleum_petrochemical_materials_law", {})
+    petroleum_petrochemical_materials_law_var_counts = petroleum_petrochemical_materials_law_var.get("record_counts", {})
+    check("[7g262] petroleum_petrochemical_materials_law: 22 Arabic records...",
+          petroleum_petrochemical_materials_law_var_counts.get("arabic_articles") == 22
+          and petroleum_petrochemical_materials_law_var.get("official_text_status") == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+          f"counts={petroleum_petrochemical_materials_law_var_counts}")
+    check("    petroleum_petrochemical_materials_law: status breakdown 22/0/0/0...",
+          petroleum_petrochemical_materials_law_var_counts.get("legal_status_breakdown") == {"اصلية": 22, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={petroleum_petrochemical_materials_law_var_counts.get('legal_status_breakdown')}")
+
+    dry_gas_lpg_distribution_law_var = tracks_by_id.get("dry_gas_lpg_distribution_law", {})
+    dry_gas_lpg_distribution_law_var_counts = dry_gas_lpg_distribution_law_var.get("record_counts", {})
+    check("[7g263] dry_gas_lpg_distribution_law: 21 Arabic records...",
+          dry_gas_lpg_distribution_law_var_counts.get("arabic_articles") == 21
+          and dry_gas_lpg_distribution_law_var.get("official_text_status") == "TIER_1_PRIMARY_MULTI_SOURCE_CONSOLIDATED_AMENDED",
+          f"counts={dry_gas_lpg_distribution_law_var_counts}")
+    check("    dry_gas_lpg_distribution_law: status breakdown 3/17/1/0...",
+          dry_gas_lpg_distribution_law_var_counts.get("legal_status_breakdown") == {"اصلية": 3, "معدلة": 17, "ملغاة": 1, "مضافة": 0},
+          f"breakdown={dry_gas_lpg_distribution_law_var_counts.get('legal_status_breakdown')}")
+
+    energy_supplies_system_var = tracks_by_id.get("energy_supplies_system", {})
+    energy_supplies_system_var_counts = energy_supplies_system_var.get("record_counts", {})
+    check("[7g264] energy_supplies_system: 12 Arabic records...",
+          energy_supplies_system_var_counts.get("arabic_articles") == 12
+          and energy_supplies_system_var.get("official_text_status") == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+          f"counts={energy_supplies_system_var_counts}")
+    check("    energy_supplies_system: status breakdown 12/0/0/0...",
+          energy_supplies_system_var_counts.get("legal_status_breakdown") == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={energy_supplies_system_var_counts.get('legal_status_breakdown')}")
+
+    mining_investment_implementing_regulation_var = tracks_by_id.get("mining_investment_implementing_regulation", {})
+    mining_investment_implementing_regulation_var_counts = mining_investment_implementing_regulation_var.get("record_counts", {})
+    check("[7g265] mining_investment_implementing_regulation: 166 Arabic records...",
+          mining_investment_implementing_regulation_var_counts.get("arabic_articles") == 166
+          and mining_investment_implementing_regulation_var.get("official_text_status") == "TIER_2_PRIMARY_FOUNDING_TEXT_LATER_AMENDMENT_TEXT_UNOBTAINED",
+          f"counts={mining_investment_implementing_regulation_var_counts}")
+    check("    mining_investment_implementing_regulation: status breakdown 166/0/0/0...",
+          mining_investment_implementing_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 166, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={mining_investment_implementing_regulation_var_counts.get('legal_status_breakdown')}")
+
+    pharmaceutical_establishments_law_var = tracks_by_id.get("pharmaceutical_establishments_law", {})
+    pharmaceutical_establishments_law_var_counts = pharmaceutical_establishments_law_var.get("record_counts", {})
+    check("[7g266] pharmaceutical_establishments_law: 42 Arabic records...",
+          pharmaceutical_establishments_law_var_counts.get("arabic_articles") == 42
+          and pharmaceutical_establishments_law_var.get("official_text_status") == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+          f"counts={pharmaceutical_establishments_law_var_counts}")
+    check("    pharmaceutical_establishments_law: status breakdown 42/0/0/0...",
+          pharmaceutical_establishments_law_var_counts.get("legal_status_breakdown") == {"اصلية": 42, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={pharmaceutical_establishments_law_var_counts.get('legal_status_breakdown')}")
+
+    seized_confiscated_funds_management_system_var = tracks_by_id.get("seized_confiscated_funds_management_system", {})
+    seized_confiscated_funds_management_system_var_counts = seized_confiscated_funds_management_system_var.get("record_counts", {})
+    check("[7g267] seized_confiscated_funds_management_system: 15 Arabic records...",
+          seized_confiscated_funds_management_system_var_counts.get("arabic_articles") == 15
+          and seized_confiscated_funds_management_system_var.get("official_text_status") == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_NOT_YET_IN_FORCE",
+          f"counts={seized_confiscated_funds_management_system_var_counts}")
+    check("    seized_confiscated_funds_management_system: status breakdown 15/0/0/0...",
+          seized_confiscated_funds_management_system_var_counts.get("legal_status_breakdown") == {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={seized_confiscated_funds_management_system_var_counts.get('legal_status_breakdown')}")
+
+    nca_cybersecurity_violations_investigation_rules_var = tracks_by_id.get("nca_cybersecurity_violations_investigation_rules", {})
+    nca_cybersecurity_violations_investigation_rules_var_counts = nca_cybersecurity_violations_investigation_rules_var.get("record_counts", {})
+    check("[7g268] nca_cybersecurity_violations_investigation_rules: 9 Arabic records...",
+          nca_cybersecurity_violations_investigation_rules_var_counts.get("arabic_articles") == 9
+          and nca_cybersecurity_violations_investigation_rules_var.get("official_text_status") == "TIER_1_UQN_GAZETTE_X_LIVE_NCA_GOV_SA_PRIMARY",
+          f"counts={nca_cybersecurity_violations_investigation_rules_var_counts}")
+    check("    nca_cybersecurity_violations_investigation_rules: status breakdown 9/0/0/0...",
+          nca_cybersecurity_violations_investigation_rules_var_counts.get("legal_status_breakdown") == {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={nca_cybersecurity_violations_investigation_rules_var_counts.get('legal_status_breakdown')}")
+
+    nca_cybersecurity_violations_reporting_rules_var = tracks_by_id.get("nca_cybersecurity_violations_reporting_rules", {})
+    nca_cybersecurity_violations_reporting_rules_var_counts = nca_cybersecurity_violations_reporting_rules_var.get("record_counts", {})
+    check("[7g269] nca_cybersecurity_violations_reporting_rules: 8 Arabic records...",
+          nca_cybersecurity_violations_reporting_rules_var_counts.get("arabic_articles") == 8
+          and nca_cybersecurity_violations_reporting_rules_var.get("official_text_status") == "TIER_2_PRIMARY_DECISION_NUMBER_UNCONFIRMED_DISCLOSED",
+          f"counts={nca_cybersecurity_violations_reporting_rules_var_counts}")
+    check("    nca_cybersecurity_violations_reporting_rules: status breakdown 8/0/0/0...",
+          nca_cybersecurity_violations_reporting_rules_var_counts.get("legal_status_breakdown") == {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={nca_cybersecurity_violations_reporting_rules_var_counts.get('legal_status_breakdown')}")
+
+    cst_organizational_statute_var = tracks_by_id.get("cst_organizational_statute", {})
+    cst_organizational_statute_var_counts = cst_organizational_statute_var.get("record_counts", {})
+    check("[7g270] cst_organizational_statute: 19 Arabic records...",
+          cst_organizational_statute_var_counts.get("arabic_articles") == 19
+          and cst_organizational_statute_var.get("official_text_status") == "TIER_4_MIXED_PER_ARTICLE_CONFIDENCE_WEAKEST_PORTION_GOVERNS",
+          f"counts={cst_organizational_statute_var_counts}")
+    check("    cst_organizational_statute: status breakdown 13/6/0/0...",
+          cst_organizational_statute_var_counts.get("legal_status_breakdown") == {"اصلية": 13, "معدلة": 6, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={cst_organizational_statute_var_counts.get('legal_status_breakdown')}")
+
+    railway_law_var = tracks_by_id.get("railway_law", {})
+    railway_law_var_counts = railway_law_var.get("record_counts", {})
+    check("[7g271] railway_law: 50 Arabic records...",
+          railway_law_var_counts.get("arabic_articles") == 50
+          and railway_law_var.get("official_text_status") == "TIER_3_SECONDARY_MULTI_SOURCE_ONLY_DUAL_CROSS_VERIFIED",
+          f"counts={railway_law_var_counts}")
+    check("    railway_law: status breakdown 50/0/0/0...",
+          railway_law_var_counts.get("legal_status_breakdown") == {"اصلية": 50, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={railway_law_var_counts.get('legal_status_breakdown')}")
+
+    railway_law_implementing_regulation_var = tracks_by_id.get("railway_law_implementing_regulation", {})
+    railway_law_implementing_regulation_var_counts = railway_law_implementing_regulation_var.get("record_counts", {})
+    check("[7g272] railway_law_implementing_regulation: 91 Arabic records...",
+          railway_law_implementing_regulation_var_counts.get("arabic_articles") == 91
+          and railway_law_implementing_regulation_var.get("official_text_status") == "TIER_1_UQN_GAZETTE_X_INDEPENDENT_PRESS_TRIPLE_CORROBORATION",
+          f"counts={railway_law_implementing_regulation_var_counts}")
+    check("    railway_law_implementing_regulation: status breakdown 91/0/0/0...",
+          railway_law_implementing_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 91, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={railway_law_implementing_regulation_var_counts.get('legal_status_breakdown')}")
+
+    road_transport_law_var = tracks_by_id.get("road_transport_law", {})
+    road_transport_law_var_counts = road_transport_law_var.get("record_counts", {})
+    check("[7g273] road_transport_law: 34 Arabic records...",
+          road_transport_law_var_counts.get("arabic_articles") == 34
+          and road_transport_law_var.get("official_text_status") == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
+          f"counts={road_transport_law_var_counts}")
+    check("    road_transport_law: status breakdown 34/0/0/0...",
+          road_transport_law_var_counts.get("legal_status_breakdown") == {"اصلية": 34, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={road_transport_law_var_counts.get('legal_status_breakdown')}")
+
+    gaca_organizational_statute_var = tracks_by_id.get("gaca_organizational_statute", {})
+    gaca_organizational_statute_var_counts = gaca_organizational_statute_var.get("record_counts", {})
+    check("[7g274] gaca_organizational_statute: 15 Arabic records...",
+          gaca_organizational_statute_var_counts.get("arabic_articles") == 15
+          and gaca_organizational_statute_var.get("official_text_status") == "TIER_2_PRIMARY_CONSOLIDATED_WHOLESALE_REISSUE",
+          f"counts={gaca_organizational_statute_var_counts}")
+    check("    gaca_organizational_statute: status breakdown 15/0/0/0...",
+          gaca_organizational_statute_var_counts.get("legal_status_breakdown") == {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={gaca_organizational_statute_var_counts.get('legal_status_breakdown')}")
+
+    tga_organizational_statute_var = tracks_by_id.get("tga_organizational_statute", {})
+    tga_organizational_statute_var_counts = tga_organizational_statute_var.get("record_counts", {})
+    check("[7g275] tga_organizational_statute: 16 Arabic records...",
+          tga_organizational_statute_var_counts.get("arabic_articles") == 16
+          and tga_organizational_statute_var.get("official_text_status") == "TIER_2_PRIMARY_MULTI_SOURCE_ONE_UNRESOLVED_AMENDMENT_DISCLOSED",
+          f"counts={tga_organizational_statute_var_counts}")
+    check("    tga_organizational_statute: status breakdown 7/8/0/1...",
+          tga_organizational_statute_var_counts.get("legal_status_breakdown") == {"اصلية": 7, "معدلة": 8, "ملغاة": 0, "مضافة": 1},
+          f"breakdown={tga_organizational_statute_var_counts.get('legal_status_breakdown')}")
+
+    mawani_organizational_statute_var = tracks_by_id.get("mawani_organizational_statute", {})
+    mawani_organizational_statute_var_counts = mawani_organizational_statute_var.get("record_counts", {})
+    check("[7g276] mawani_organizational_statute: 20 Arabic records...",
+          mawani_organizational_statute_var_counts.get("arabic_articles") == 20
+          and mawani_organizational_statute_var.get("official_text_status") == "TIER_4_SINGLE_SECONDARY_SOURCE_BOE_WAYBACK_MAWANI_ALL_UNREACHABLE",
+          f"counts={mawani_organizational_statute_var_counts}")
+    check("    mawani_organizational_statute: status breakdown 20/0/0/0...",
+          mawani_organizational_statute_var_counts.get("legal_status_breakdown") == {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={mawani_organizational_statute_var_counts.get('legal_status_breakdown')}")
+
+    hajj_umrah_external_pilgrims_law_var = tracks_by_id.get("hajj_umrah_external_pilgrims_law", {})
+    hajj_umrah_external_pilgrims_law_var_counts = hajj_umrah_external_pilgrims_law_var.get("record_counts", {})
+    check("[7g277] hajj_umrah_external_pilgrims_law: 24 Arabic records...",
+          hajj_umrah_external_pilgrims_law_var_counts.get("arabic_articles") == 24
+          and hajj_umrah_external_pilgrims_law_var.get("official_text_status") == "TIER_3_MIXED_BASE_TIER3_AMENDMENT_TIER2_WEAKEST_PORTION_GOVERNS",
+          f"counts={hajj_umrah_external_pilgrims_law_var_counts}")
+    check("    hajj_umrah_external_pilgrims_law: status breakdown 9/14/0/1...",
+          hajj_umrah_external_pilgrims_law_var_counts.get("legal_status_breakdown") == {"اصلية": 9, "معدلة": 14, "ملغاة": 0, "مضافة": 1},
+          f"breakdown={hajj_umrah_external_pilgrims_law_var_counts.get('legal_status_breakdown')}")
+
+    aviation_passenger_rights_regulation_var = tracks_by_id.get("aviation_passenger_rights_regulation", {})
+    aviation_passenger_rights_regulation_var_counts = aviation_passenger_rights_regulation_var.get("record_counts", {})
+    check("[7g278] aviation_passenger_rights_regulation: 30 Arabic records...",
+          aviation_passenger_rights_regulation_var_counts.get("arabic_articles") == 30
+          and aviation_passenger_rights_regulation_var.get("official_text_status") == "TIER_2_UQN_GAZETTE_PRIMARY_X_SECONDARY_CROSS_VERIFIED",
+          f"counts={aviation_passenger_rights_regulation_var_counts}")
+    check("    aviation_passenger_rights_regulation: status breakdown 30/0/0/0...",
+          aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+          f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
+
+    check("[7g] unified retrieval index: 15689 records...", uix.get("total_records") == 15689,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -2976,8 +3229,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 15108...",
-          registry.get("total_primary_arabic_governing_records") == 15108,
+    check("[19a] total_primary_arabic_governing_records == 15858...",
+          registry.get("total_primary_arabic_governing_records") == 15858,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -2992,8 +3245,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 16003...",
-          registry.get("total_registry_counted_records") == 16003,
+    check("[19e] total_registry_counted_records == 16753...",
+          registry.get("total_registry_counted_records") == 16753,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3017,7 +3270,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"15108 + 614 + 281 = 16003")
+          f"15858 + 614 + 281 = 16753")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -3035,7 +3288,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 268 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 291 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

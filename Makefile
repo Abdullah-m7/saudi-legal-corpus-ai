@@ -382,6 +382,29 @@ export PYTHONPATH := src:$(PYTHONPATH)
         high-risk-professions-regulation-track-validate \
         osh-service-providers-regulation-track-validate \
         rega-organizational-statute-track-validate \
+        offplan-sale-implementing-regulation-track-validate \
+        real-estate-finance-implementing-regulation-track-validate \
+        real-estate-contributions-implementing-regulation-track-validate \
+        landlord-tenant-relationship-regulation-track-validate \
+        real-estate-marketing-advertising-regulation-track-validate \
+        real-estate-auctions-regulation-track-validate \
+        petroleum-petrochemical-materials-law-track-validate \
+        dry-gas-lpg-distribution-law-track-validate \
+        energy-supplies-system-track-validate \
+        mining-investment-implementing-regulation-track-validate \
+        pharmaceutical-establishments-law-track-validate \
+        seized-confiscated-funds-management-system-track-validate \
+        nca-cybersecurity-violations-investigation-rules-track-validate \
+        nca-cybersecurity-violations-reporting-rules-track-validate \
+        cst-organizational-statute-track-validate \
+        railway-law-track-validate \
+        railway-law-implementing-regulation-track-validate \
+        road-transport-law-track-validate \
+        gaca-organizational-statute-track-validate \
+        tga-organizational-statute-track-validate \
+        mawani-organizational-statute-track-validate \
+        hajj-umrah-external-pilgrims-law-track-validate \
+        aviation-passenger-rights-regulation-track-validate \
         qa-gate
 
 help:
@@ -1952,6 +1975,75 @@ osh-service-providers-regulation-track-validate:
 
 rega-organizational-statute-track-validate:
 	$(PY) scripts/validate_rega_organizational_statute_track.py
+
+offplan-sale-implementing-regulation-track-validate:
+	$(PY) scripts/validate_offplan_sale_implementing_regulation_track.py
+
+real-estate-finance-implementing-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_finance_implementing_regulation_track.py
+
+real-estate-contributions-implementing-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_contributions_implementing_regulation_track.py
+
+landlord-tenant-relationship-regulation-track-validate:
+	$(PY) scripts/validate_landlord_tenant_relationship_regulation_track.py
+
+real-estate-marketing-advertising-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_marketing_advertising_regulation_track.py
+
+real-estate-auctions-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_auctions_regulation_track.py
+
+petroleum-petrochemical-materials-law-track-validate:
+	$(PY) scripts/validate_petroleum_petrochemical_materials_law_track.py
+
+dry-gas-lpg-distribution-law-track-validate:
+	$(PY) scripts/validate_dry_gas_lpg_distribution_law_track.py
+
+energy-supplies-system-track-validate:
+	$(PY) scripts/validate_energy_supplies_system_track.py
+
+mining-investment-implementing-regulation-track-validate:
+	$(PY) scripts/validate_mining_investment_implementing_regulation_track.py
+
+pharmaceutical-establishments-law-track-validate:
+	$(PY) scripts/validate_pharmaceutical_establishments_law_track.py
+
+seized-confiscated-funds-management-system-track-validate:
+	$(PY) scripts/validate_seized_confiscated_funds_management_system_track.py
+
+nca-cybersecurity-violations-investigation-rules-track-validate:
+	$(PY) scripts/validate_nca_cybersecurity_violations_investigation_rules_track.py
+
+nca-cybersecurity-violations-reporting-rules-track-validate:
+	$(PY) scripts/validate_nca_cybersecurity_violations_reporting_rules_track.py
+
+cst-organizational-statute-track-validate:
+	$(PY) scripts/validate_cst_organizational_statute_track.py
+
+railway-law-track-validate:
+	$(PY) scripts/validate_railway_law_track.py
+
+railway-law-implementing-regulation-track-validate:
+	$(PY) scripts/validate_railway_law_implementing_regulation_track.py
+
+road-transport-law-track-validate:
+	$(PY) scripts/validate_road_transport_law_track.py
+
+gaca-organizational-statute-track-validate:
+	$(PY) scripts/validate_gaca_organizational_statute_track.py
+
+tga-organizational-statute-track-validate:
+	$(PY) scripts/validate_tga_organizational_statute_track.py
+
+mawani-organizational-statute-track-validate:
+	$(PY) scripts/validate_mawani_organizational_statute_track.py
+
+hajj-umrah-external-pilgrims-law-track-validate:
+	$(PY) scripts/validate_hajj_umrah_external_pilgrims_law_track.py
+
+aviation-passenger-rights-regulation-track-validate:
+	$(PY) scripts/validate_aviation_passenger_rights_regulation_track.py
 
 # -- STRICT QA GATE: every validate_*.py + generator idempotence + full pytest. One command, everything must pass. --
 qa-gate:

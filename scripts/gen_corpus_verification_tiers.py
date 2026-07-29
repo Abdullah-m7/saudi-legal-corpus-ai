@@ -311,6 +311,26 @@ STATUS_TIER_MAP = {
     "NCOSH_OFFICIAL_PDF_VISION_READ_LIGATURE_DEFECT_X_UQN_GAZETTE_DUAL_OFFICIAL_CROSSVERIFIED_BOE_UNREACHABLE": TIER_1,
     "UQN_GAZETTE_PRIMARY_PARTIAL_29_OF_38_X_QANOONSA_SECONDARY_FOR_REMAINDER_MIXED_CONFIDENCE": TIER_4,
     "REGA_GOV_SA_FIVE_SCANNED_PDFS_VISION_READ_X_NEZAMS_PARTIAL_CROSSCHECK_BOE_AND_WAYBACK_BOTH_BLOCKED": TIER_2,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_REGA_RESOLUTION": TIER_2,
+    "TIER_1_SAMA_RULEBOOK_PRIMARY_MULTI_SOURCE": TIER_1,
+    "TIER_2_PRIMARY_MULTI_SOURCE_THREE_DISCLOSED_CONFLICTS": TIER_2,
+    "TIER_1_PRIMARY_MULTI_SOURCE_RIYADH_SCOPE_DISCLOSED": TIER_1,
+    "TIER_1_REGA_GOV_SA_PRIMARY_MULTI_SOURCE": TIER_1,
+    "TIER_1_DUAL_PRIMARY_TWO_MINOR_DISCLOSED_VARIANCES": TIER_1,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": TIER_2,
+    "TIER_1_PRIMARY_MULTI_SOURCE_CONSOLIDATED_AMENDED": TIER_1,
+    "TIER_2_PRIMARY_FOUNDING_TEXT_LATER_AMENDMENT_TEXT_UNOBTAINED": TIER_2,
+    "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_NOT_YET_IN_FORCE": TIER_2,
+    "TIER_1_UQN_GAZETTE_X_LIVE_NCA_GOV_SA_PRIMARY": TIER_1,
+    "TIER_2_PRIMARY_DECISION_NUMBER_UNCONFIRMED_DISCLOSED": TIER_2,
+    "TIER_4_MIXED_PER_ARTICLE_CONFIDENCE_WEAKEST_PORTION_GOVERNS": TIER_4,
+    "TIER_3_SECONDARY_MULTI_SOURCE_ONLY_DUAL_CROSS_VERIFIED": TIER_3,
+    "TIER_1_UQN_GAZETTE_X_INDEPENDENT_PRESS_TRIPLE_CORROBORATION": TIER_1,
+    "TIER_2_PRIMARY_CONSOLIDATED_WHOLESALE_REISSUE": TIER_2,
+    "TIER_2_PRIMARY_MULTI_SOURCE_ONE_UNRESOLVED_AMENDMENT_DISCLOSED": TIER_2,
+    "TIER_4_SINGLE_SECONDARY_SOURCE_BOE_WAYBACK_MAWANI_ALL_UNREACHABLE": TIER_4,
+    "TIER_3_MIXED_BASE_TIER3_AMENDMENT_TIER2_WEAKEST_PORTION_GOVERNS": TIER_3,
+    "TIER_2_UQN_GAZETTE_PRIMARY_X_SECONDARY_CROSS_VERIFIED": TIER_2,
 }
 
 # Tracks whose `official_text_status` field is absent (None) in the registry — these are the
@@ -331,6 +351,12 @@ NULL_STATUS_TRACK_TIER = {
 # Custom, track-specific rationale text overriding the generic per-tier template below.
 # Used where the generic template would be too thin to let the repo owner audit the call.
 RATIONALE_OVERRIDE = {
+    "cst_organizational_statute": (
+        "official_text_status موسوم TIER_4 صراحة (ثقة متفاوتة على مستوى المادة): النص الأساسي والمادتان 3 و4 من التعديل الأخير (قرار 430) تعتمدان على لقطتي Wayback مستقلتين لبوابة هيئة الخبراء (BOE) × مطابقة حرفية مع qanoonsa.com (بمستوى TIER_2 تقريبا)، بينما نص تعديل 2024 (قرار 430) للمواد 1 و5 و8 و10 يعتمد على qanoonsa.com فقط دون تأكيد من BOE (الذي لا يعرض نوافذ منبثقة لهذه المواد تحديدا رغم البحث المتعمد) — وفق سياسة هذه المدونة، الجزء الأضعف ذو الحجم المعتبر (أربع مواد من أصل 19) هو الذي يحكم تصنيف المسار ككل، وليس الجزء الأقوى."
+    ),
+    "hajj_umrah_external_pilgrims_law": (
+        "official_text_status موسوم بتصنيف مختلط: تسع المواد التسع غير المعدَّلة تعتمد على مصدرين ثانويين (nezams.com × tanseiqiah.sa) بمستوى TIER_3 تقريبا، بينما تعديل 2025 (المرسوم الملكي م/89) الذي يحكم 14 مادة معدَّلة + مادة مضافة واحدة يعتمد على الجريدة الرسمية (uqn.gov.sa) × qanoonsa.com بمستوى TIER_2 تقريبا — وفق سياسة هذه المدونة، الجزء الأضعف (9 مواد غير معدَّلة) هو الذي يحكم تصنيف المسار ككل (TIER_3)، رغم أن الجزء الأكبر عدديا (15 مادة) أقوى توثيقا."
+    ),
     "companies_law": (
         "لا يحمل official_text_status قيمة مسجّلة لهذا المسار (من أقدم مسارات المدونة، سابق "
         "لاعتماد حقل official_text_status). ملف بيانات القانون الخاص به يسجّل صراحة "

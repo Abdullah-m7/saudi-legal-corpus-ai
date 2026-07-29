@@ -1508,6 +1508,159 @@ EDGES = [
                 "separately ingested in this corpus (one-instrument-per-pass rule).",
         "source_ref": "sources/private_healthcare_institutions_law/law/official_source/private_healthcare_institutions_law_official_source.json (article 33 / supersedes_ar)",
     },
+    # --- wave-6 batch (23 tracks from 268-track 8-sector gap scan) ---
+    {
+        "from_track_id": "petroleum_petrochemical_materials_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام التجارة بالمنتجات البترولية (السابق)",
+        "target_decree": "Royal Decree M/18, 28/1/1439H",
+        "note": "petroleum_petrochemical_materials_law's own Article 21 states verbatim: "
+                "'يحل النظام محل نظام التجارة بالمنتجات البترولية، الصادر بالمرسوم الملكي رقم "
+                "(م/18) وتاريخ 28/1/1439هـ، ويلغي ما يتعارض معه من أحكام.' Independently "
+                "confirmed by nezams.com and argaam.com. A partial transitional carve-out "
+                "(existing licenses under M/18 remain valid for up to 2 years, extendable to "
+                "6) is disclosed in the enacting decree's own clause ثانيا, not inside the "
+                "numbered articles. Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/petroleum_petrochemical_materials_law/law/official_source/petroleum_petrochemical_materials_law_official_source.json (article 21 / supersedes_ar)",
+    },
+    {
+        "from_track_id": "energy_supplies_system",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام إمدادات الغاز وتسعيره (السابق)",
+        "target_decree": "Royal Decree M/36, 25/6/1424H",
+        "note": "energy_supplies_system's own Article 12 states verbatim: 'يعمل بالنظام بعد "
+                "(ستين) يوما من تاريخ نشره في الجريدة الرسمية، ويحل محل نظام إمدادات الغاز "
+                "وتسعيره الصادر بالمرسوم الملكي رقم (م/36) وتاريخ 25/6/1424هـ، ويلغي كل ما "
+                "يتعارض معه من أحكام.' Independently confirmed by BOE's own official brief on "
+                "the new system and by akhbaar24.com. A partial transitional carve-out "
+                "(existing M/36 licenses remain valid, correction period up to 2 years, "
+                "extendable to 6) is disclosed in the enacting decree's own clause ثالثا, not "
+                "inside the numbered articles. Predecessor not separately ingested in this "
+                "corpus.",
+        "source_ref": "sources/energy_supplies_system/law/official_source/energy_supplies_system_official_source.json (article 12 / supersedes_ar)",
+    },
+    {
+        "from_track_id": "railway_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام النقل بالخطوط الحديدية (السابق)",
+        "target_decree": "Royal Decree M/33, 24/5/1433H",
+        "note": "Unlike most repeal edges in this corpus, this one is NOT inside any of "
+                "railway_law's own 50 numbered articles (confirmed by reviewing the full "
+                "article text: no repeal/replacement article exists among them). It instead "
+                "appears verbatim in clause ثانيا of the enacting Royal Decree M/159 itself, "
+                "and identically in clause ثانيا of the preceding Council of Ministers "
+                "Resolution 692 (17/8/1445H): 'يحل النظام -المشار إليه في البند (أولا) من هذا "
+                "المرسوم- عند نفاذه، محل نظام النقل بالخطوط الحديدية الصادر بالمرسوم الملكي رقم "
+                "(م/33) بتاريخ 24/5/1433هـ، ويلغي كل ما يتعارض معه من أحكام.' Both texts fetched "
+                "directly (HTTP 200) from qanoonsa.com. Predecessor not separately ingested in "
+                "this corpus.",
+        "source_ref": "sources/railway_law/law/official_source/railway_law_official_source.json (supersedes_ar; enacting decree clause ثانيا, not an article)",
+    },
+    {
+        "from_track_id": "pharmaceutical_establishments_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المنشآت والمستحضرات الصيدلانية (السابق)",
+        "target_decree": "Royal Decree M/31, 1/6/1425H",
+        "note": "pharmaceutical_establishments_law's own Article 41 states verbatim: 'يحل هذا "
+                "النظام محل نظام المنشآت والمستحضرات الصيدلانية، الصادر بالمرسوم الملكي رقم "
+                "(م/31) والتاريخ 1/6/1425هـ. ويلغي كل ما يتعارض معه من أحكام.' Independently "
+                "confirmed by the enacting Royal Decree's own preamble, by Council of Ministers "
+                "Resolution 534, and by WIPO Lex's independent catalogue entry (record 8514) for "
+                "the repealed predecessor. A transitional carve-out in the enacting decree's own "
+                "clause ثالثا keeps the old law's provisions for (الصيدلية) and (منشأة بيع "
+                "المستحضرات العشبية) specifically in force until dedicated replacement provisions "
+                "are issued. Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/pharmaceutical_establishments_law/law/official_source/pharmaceutical_establishments_law_official_source.json (article 41 / supersedes_ar)",
+    },
+    {
+        "from_track_id": "mawani_organizational_statute",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المؤسسة العامة للموانئ (السابق)",
+        "target_decree": "Royal Decree M/13, 7/4/1397H",
+        "note": "mawani_organizational_statute's own Article 19 carries an explicit repeal "
+                "clause replacing the statute of the predecessor Public Ports Corporation "
+                "(المؤسسة العامة للموانئ), whose name was itself changed to the General "
+                "Authority for Ports by the same Council of Ministers Resolution 299 that issued "
+                "this statute. Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/mawani_organizational_statute/law/official_source/mawani_organizational_statute_official_source.json (article 19 / supersedes_ar)",
+    },
+    {
+        "from_track_id": "road_transport_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام النقل العام على الطرق (السابق)",
+        "target_decree": "Royal Decree M/25, 21/6/1397H",
+        "note": "road_transport_law's own Article 33 (last substantive article before the "
+                "closing publication article) states verbatim: 'يحل النظام محل نظام النقل العام "
+                "على الطرق بالمملكة العربية السعودية، الصادر بالمرسوم الملكي رقم (م/25) وتاريخ "
+                "21/6/1397هـ، ويلغي جميع ما يتعارض معه.' Independently confirmed byte-identical "
+                "(after normalization) across three independent sources: uqn.gov.sa (official "
+                "Umm al-Qura Gazette portal, live fetch), qanoonsa.com, and nezams.com. "
+                "Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/road_transport_law/law/official_source/road_transport_law_official_source.json (article 33 / supersedes_ar)",
+    },
+    {
+        "from_track_id": "hajj_umrah_external_pilgrims_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام المطوفين العام (السابق)",
+        "target_decree": "Royal Order 7267, 3/11/1367H",
+        "note": "Not inside any of hajj_umrah_external_pilgrims_law's own 23 numbered articles "
+                "(confirmed: zero repeal/replacement article among them). Instead appears "
+                "verbatim in clause ثانيا (item 1) of the enacting Royal Decree M/111 itself, "
+                "and identically in clause ثانيا of the accompanying Council of Ministers "
+                "Resolution: 'الموافقة على إلغاء ما يأتي: 1.نظام المطوفين العام، الصادر بالأمر "
+                "السامي رقم (7267) وتاريخ 3/11/1367هـ.' Fetched directly (HTTP 200) from "
+                "nezams.com, matching verbatim between the decree and the resolution. "
+                "Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/hajj_umrah_external_pilgrims_law/law/official_source/hajj_umrah_external_pilgrims_law_official_source.json (supersedes_ar; enacting decree clause ثانيا/1, not an article)",
+    },
+    {
+        "from_track_id": "hajj_umrah_external_pilgrims_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام وكلاء المطوفين ومشائخ الجاوا (السابق)",
+        "target_decree": "Royal Order 14518, 21/10/1365H",
+        "note": "Second of four predecessor instruments repealed by the same clause ثانيا "
+                "(item 2) of the enacting Royal Decree M/111 and the accompanying Council of "
+                "Ministers Resolution, not inside any of the law's own 23 numbered articles. "
+                "See the sibling edge for نظام المطوفين العام for the full clause text and "
+                "sourcing. Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/hajj_umrah_external_pilgrims_law/law/official_source/hajj_umrah_external_pilgrims_law_official_source.json (supersedes_ar; enacting decree clause ثانيا/2, not an article)",
+    },
+    {
+        "from_track_id": "hajj_umrah_external_pilgrims_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "نظام هيئة الأدلاء بالمدينة المنورة (السابق)",
+        "target_decree": "Royal Order 54/1/145, 25/12/1356H",
+        "note": "Third of four predecessor instruments repealed by the same clause ثانيا "
+                "(item 3) of the enacting Royal Decree M/111 and the accompanying Council of "
+                "Ministers Resolution, not inside any of the law's own 23 numbered articles. "
+                "See the sibling edge for نظام المطوفين العام for the full clause text and "
+                "sourcing. Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/hajj_umrah_external_pilgrims_law/law/official_source/hajj_umrah_external_pilgrims_law_official_source.json (supersedes_ar; enacting decree clause ثانيا/3, not an article)",
+    },
+    {
+        "from_track_id": "hajj_umrah_external_pilgrims_law",
+        "relation": "repeals_full",
+        "target_track_id": None,
+        "target_description_ar": "قواعد تأديب أفراد طوائف المطوفين والوكلاء والأدلاء والزمازمة (السابقة)",
+        "target_decree": "Council of Ministers Resolution 79, 14/5/1400H",
+        "note": "Fourth of four predecessor instruments repealed by the same clause ثانيا "
+                "(item 4) of the enacting Royal Decree M/111 and the accompanying Council of "
+                "Ministers Resolution, not inside any of the law's own 23 numbered articles. "
+                "Discovered independently during this build pass -- not present in the "
+                "original research brief, which named only the first three predecessors. "
+                "See the sibling edge for نظام المطوفين العام for the full clause text and "
+                "sourcing. Predecessor not separately ingested in this corpus.",
+        "source_ref": "sources/hajj_umrah_external_pilgrims_law/law/official_source/hajj_umrah_external_pilgrims_law_official_source.json (supersedes_ar; enacting decree clause ثانيا/4, not an article)",
+    },
 ]
 
 # ---------------------------------------------------------------------------

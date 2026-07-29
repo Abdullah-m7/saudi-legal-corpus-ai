@@ -33,13 +33,13 @@ class TestRegistryStructure:
         assert registry["repository"] == "al3obdi/saudi-legal-corpus-ai"
 
     def test_total_tracks(self, registry):
-        assert registry["total_tracks"] == 268
+        assert registry["total_tracks"] == 291
 
     def test_validation_status(self, registry):
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 15108
+        assert registry["total_primary_arabic_governing_records"] == 15858
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 16003
+        assert registry["total_registry_counted_records"] == 16753
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry
@@ -337,6 +337,29 @@ class TestTracks:
         assert "high_risk_professions_regulation" in ids
         assert "osh_service_providers_regulation" in ids
         assert "rega_organizational_statute" in ids
+        assert "offplan_sale_implementing_regulation" in ids
+        assert "real_estate_finance_implementing_regulation" in ids
+        assert "real_estate_contributions_implementing_regulation" in ids
+        assert "landlord_tenant_relationship_regulation" in ids
+        assert "real_estate_marketing_advertising_regulation" in ids
+        assert "real_estate_auctions_regulation" in ids
+        assert "petroleum_petrochemical_materials_law" in ids
+        assert "dry_gas_lpg_distribution_law" in ids
+        assert "energy_supplies_system" in ids
+        assert "mining_investment_implementing_regulation" in ids
+        assert "pharmaceutical_establishments_law" in ids
+        assert "seized_confiscated_funds_management_system" in ids
+        assert "nca_cybersecurity_violations_investigation_rules" in ids
+        assert "nca_cybersecurity_violations_reporting_rules" in ids
+        assert "cst_organizational_statute" in ids
+        assert "railway_law" in ids
+        assert "railway_law_implementing_regulation" in ids
+        assert "road_transport_law" in ids
+        assert "gaca_organizational_statute" in ids
+        assert "tga_organizational_statute" in ids
+        assert "mawani_organizational_statute" in ids
+        assert "hajj_umrah_external_pilgrims_law" in ids
+        assert "aviation_passenger_rights_regulation" in ids
 
     def test_personal_status_counts(self, registry):
         law = next(t for t in registry["tracks"] if t["track_id"] == "personal_status_law")
@@ -1846,6 +1869,144 @@ class TestTracks:
         assert t["record_counts"]["arabic_articles"] == 16
         assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 7, "معدلة": 8, "ملغاة": 0, "مضافة": 1}
         assert t["official_text_status"] == "REGA_GOV_SA_FIVE_SCANNED_PDFS_VISION_READ_X_NEZAMS_PARTIAL_CROSSCHECK_BOE_AND_WAYBACK_BOTH_BLOCKED"
+
+    def test_offplan_sale_implementing_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "offplan_sale_implementing_regulation")
+        assert t["record_counts"]["arabic_articles"] == 49
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 49, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_REGA_RESOLUTION"
+
+    def test_real_estate_finance_implementing_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "real_estate_finance_implementing_regulation")
+        assert t["record_counts"]["arabic_articles"] == 31
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 31, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_SAMA_RULEBOOK_PRIMARY_MULTI_SOURCE"
+
+    def test_real_estate_contributions_implementing_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "real_estate_contributions_implementing_regulation")
+        assert t["record_counts"]["arabic_articles"] == 40
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 40, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_MULTI_SOURCE_THREE_DISCLOSED_CONFLICTS"
+
+    def test_landlord_tenant_relationship_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "landlord_tenant_relationship_regulation")
+        assert t["record_counts"]["arabic_articles"] == 12
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_PRIMARY_MULTI_SOURCE_RIYADH_SCOPE_DISCLOSED"
+
+    def test_real_estate_marketing_advertising_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "real_estate_marketing_advertising_regulation")
+        assert t["record_counts"]["arabic_articles"] == 12
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_REGA_GOV_SA_PRIMARY_MULTI_SOURCE"
+
+    def test_real_estate_auctions_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "real_estate_auctions_regulation")
+        assert t["record_counts"]["arabic_articles"] == 12
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_DUAL_PRIMARY_TWO_MINOR_DISCLOSED_VARIANCES"
+
+    def test_petroleum_petrochemical_materials_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "petroleum_petrochemical_materials_law")
+        assert t["record_counts"]["arabic_articles"] == 22
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 22, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED"
+
+    def test_dry_gas_lpg_distribution_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "dry_gas_lpg_distribution_law")
+        assert t["record_counts"]["arabic_articles"] == 21
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 3, "معدلة": 17, "ملغاة": 1, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_PRIMARY_MULTI_SOURCE_CONSOLIDATED_AMENDED"
+
+    def test_energy_supplies_system_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "energy_supplies_system")
+        assert t["record_counts"]["arabic_articles"] == 12
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED"
+
+    def test_mining_investment_implementing_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "mining_investment_implementing_regulation")
+        assert t["record_counts"]["arabic_articles"] == 166
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 166, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_FOUNDING_TEXT_LATER_AMENDMENT_TEXT_UNOBTAINED"
+
+    def test_pharmaceutical_establishments_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "pharmaceutical_establishments_law")
+        assert t["record_counts"]["arabic_articles"] == 42
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 42, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED"
+
+    def test_seized_confiscated_funds_management_system_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "seized_confiscated_funds_management_system")
+        assert t["record_counts"]["arabic_articles"] == 15
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_NOT_YET_IN_FORCE"
+
+    def test_nca_cybersecurity_violations_investigation_rules_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "nca_cybersecurity_violations_investigation_rules")
+        assert t["record_counts"]["arabic_articles"] == 9
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_UQN_GAZETTE_X_LIVE_NCA_GOV_SA_PRIMARY"
+
+    def test_nca_cybersecurity_violations_reporting_rules_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "nca_cybersecurity_violations_reporting_rules")
+        assert t["record_counts"]["arabic_articles"] == 8
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_DECISION_NUMBER_UNCONFIRMED_DISCLOSED"
+
+    def test_cst_organizational_statute_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "cst_organizational_statute")
+        assert t["record_counts"]["arabic_articles"] == 19
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 13, "معدلة": 6, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_4_MIXED_PER_ARTICLE_CONFIDENCE_WEAKEST_PORTION_GOVERNS"
+
+    def test_railway_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "railway_law")
+        assert t["record_counts"]["arabic_articles"] == 50
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 50, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_3_SECONDARY_MULTI_SOURCE_ONLY_DUAL_CROSS_VERIFIED"
+
+    def test_railway_law_implementing_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "railway_law_implementing_regulation")
+        assert t["record_counts"]["arabic_articles"] == 91
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 91, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_1_UQN_GAZETTE_X_INDEPENDENT_PRESS_TRIPLE_CORROBORATION"
+
+    def test_road_transport_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "road_transport_law")
+        assert t["record_counts"]["arabic_articles"] == 34
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 34, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED"
+
+    def test_gaca_organizational_statute_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "gaca_organizational_statute")
+        assert t["record_counts"]["arabic_articles"] == 15
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_CONSOLIDATED_WHOLESALE_REISSUE"
+
+    def test_tga_organizational_statute_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "tga_organizational_statute")
+        assert t["record_counts"]["arabic_articles"] == 16
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 7, "معدلة": 8, "ملغاة": 0, "مضافة": 1}
+        assert t["official_text_status"] == "TIER_2_PRIMARY_MULTI_SOURCE_ONE_UNRESOLVED_AMENDMENT_DISCLOSED"
+
+    def test_mawani_organizational_statute_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "mawani_organizational_statute")
+        assert t["record_counts"]["arabic_articles"] == 20
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 20, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_4_SINGLE_SECONDARY_SOURCE_BOE_WAYBACK_MAWANI_ALL_UNREACHABLE"
+
+    def test_hajj_umrah_external_pilgrims_law_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "hajj_umrah_external_pilgrims_law")
+        assert t["record_counts"]["arabic_articles"] == 24
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 9, "معدلة": 14, "ملغاة": 0, "مضافة": 1}
+        assert t["official_text_status"] == "TIER_3_MIXED_BASE_TIER3_AMENDMENT_TIER2_WEAKEST_PORTION_GOVERNS"
+
+    def test_aviation_passenger_rights_regulation_counts(self, registry):
+        t = next(x for x in registry["tracks"] if x["track_id"] == "aviation_passenger_rights_regulation")
+        assert t["record_counts"]["arabic_articles"] == 30
+        assert t["record_counts"]["legal_status_breakdown"] == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0}
+        assert t["official_text_status"] == "TIER_2_UQN_GAZETTE_PRIMARY_X_SECONDARY_CROSS_VERIFIED"
 
     def test_evidence_companions_counts(self, registry):
         for tid, want in (("evidence_electronic_procedures_rules", 24),

@@ -309,6 +309,29 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_high_risk_professions_regulation_track.py",
     "scripts/gen_osh_service_providers_regulation_track.py",
     "scripts/gen_rega_organizational_statute_track.py",
+    "scripts/gen_offplan_sale_implementing_regulation_track.py",
+    "scripts/gen_real_estate_finance_implementing_regulation_track.py",
+    "scripts/gen_real_estate_contributions_implementing_regulation_track.py",
+    "scripts/gen_landlord_tenant_relationship_regulation_track.py",
+    "scripts/gen_real_estate_marketing_advertising_regulation_track.py",
+    "scripts/gen_real_estate_auctions_regulation_track.py",
+    "scripts/gen_petroleum_petrochemical_materials_law_track.py",
+    "scripts/gen_dry_gas_lpg_distribution_law_track.py",
+    "scripts/gen_energy_supplies_system_track.py",
+    "scripts/gen_mining_investment_implementing_regulation_track.py",
+    "scripts/gen_pharmaceutical_establishments_law_track.py",
+    "scripts/gen_seized_confiscated_funds_management_system_track.py",
+    "scripts/gen_nca_cybersecurity_violations_investigation_rules_track.py",
+    "scripts/gen_nca_cybersecurity_violations_reporting_rules_track.py",
+    "scripts/gen_cst_organizational_statute_track.py",
+    "scripts/gen_railway_law_track.py",
+    "scripts/gen_railway_law_implementing_regulation_track.py",
+    "scripts/gen_road_transport_law_track.py",
+    "scripts/gen_gaca_organizational_statute_track.py",
+    "scripts/gen_tga_organizational_statute_track.py",
+    "scripts/gen_mawani_organizational_statute_track.py",
+    "scripts/gen_hajj_umrah_external_pilgrims_law_track.py",
+    "scripts/gen_aviation_passenger_rights_regulation_track.py",
     "scripts/gen_corpus_unified_llm_index.py",
     "scripts/gen_corpus_registry.py",
     "scripts/gen_corpus_verification_tiers.py",
@@ -321,7 +344,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/run_corpus_retrieval_eval.py",
 ]
 
-VALIDATOR_TIMEOUT = 480
+VALIDATOR_TIMEOUT = 900
 WORKERS = 4
 
 

@@ -1,0 +1,83 @@
+{
+  "law_key": "real_estate_auctions_regulation",
+  "layer": "REAL_ESTATE_AUCTIONS_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 12,
+  "status_counts": {
+    "اصلية": 12,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "source_tier_counts": {
+    "primary": 12,
+    "secondary_only": 0
+  },
+  "decree": "قرار مجلس إدارة الهيئة العامة للعقار (بلا رقم مُعلَن على أي من المصدرين الرسميين المفحوصين)",
+  "decree_date_hijri": "01/12/1444",
+  "decree_date_gregorian": "19/06/2023",
+  "administering_authority_en": "General Authority for Real Estate (REGA)",
+  "consolidated_amended_law": false,
+  "chapter_structure": [
+    {
+      "label_ar": "",
+      "title_ar": "أحكام الترخيص",
+      "articles": "2-2"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "التزامات المرخص له",
+      "articles": "3-4"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "المنصة الإلكترونية",
+      "articles": "5-5"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "طلب إقامة المزاد العقاري",
+      "articles": "6-7"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "أحكام إقامة المزاد العقاري",
+      "articles": "8-10"
+    },
+    {
+      "label_ar": "",
+      "title_ar": "أحكام ختامية",
+      "articles": "11-12"
+    }
+  ],
+  "gazette_publication": {
+    "issue_no": null,
+    "date_hijri": "09/02/1445",
+    "date_gregorian": "25/08/2023",
+    "citation_ar": "نشر في جريدة أم القرى الرسمية، بحسب صفحة اللائحة المخصصة على uqn.gov.sa (details?p=23541)، بتاريخ 09/02/1445هـ الموافق 25 من أغسطس 2023م (رقم عدد الجريدة نفسه لم يُذكر صراحة على الصفحة المخصصة لهذه اللائحة والمفحوصة هذه الجولة)."
+  },
+  "amendment_history": [],
+  "verification_methodology_note": "PRIMARY SOURCE 1 (Umm Al-Qura Official Gazette, uqn.gov.sa): the regulation's own dedicated page at https://www.uqn.gov.sa/details?p=23541 (HTTP 200, fetched directly via curl this pass -- not through a summarizing tool -- born-digital structured HTML, no OCR needed; page <title>: 'اللائحة التنظيمية للمزادات العقارية'; og:published_time meta = 2023-08-25T14:45:45+03:00, which is the exact Gregorian equivalent of 09/02/1445H). The page's own #article-content element was parsed with BeautifulSoup in document order and reproduces the full text of Articles 1 through 12 with no truncation, no table markup, and no reachability gap -- the HTML ends cleanly after Article 12's own closing sentence ('تُنشر هذه اللائحة في الجريدة الرسمية، ويُعمل بها من تاريخ نشرها.').\n\nPRIMARY SOURCE 2 (REGA's own official regulatory site, rega.gov.sa): the issuing authority's own dedicated regulation page (rega.gov.sa/الأنظمة-واللوائح-والأدلة/اللائحة/اللائحة-التنظيمية-للمزادات-العقارية-لعام-1444هـ/, HTTP 200, fetched directly this pass, born-digital Word-pasted HTML with MsoNormal paragraph markup) independently reproduces the same 12 articles and additionally exposes structured metadata fields not present on the Gazette page: تاريخ النشر (publication date) 1445/02/09, تاريخ الإصدار (issuance date) 1444/12/01, حالة التشريع (legal status) ساري, نوع التشريع لوائح, and أداة إصدار التشريع (issuing instrument) 'قرار مجلس إدارة الهيئة' -- confirming this track's citation lead (REGA Board of Directors Resolution, issued 01/12/1444H, published 09/02/1445H) verbatim from the issuing authority's own site. This regulation's own text repeatedly references its legal basis in the Real Estate Brokerage Law's Implementing Regulation and, through it, the Real Estate Brokerage Law itself (نظام الوساطة العقارية, Royal Decree No. م/130 dated 30/11/1443H, issued pursuant to Council of Ministers Resolution No. 679 dated 29/11/1443H -- already tracked in this corpus as sources/real_estate_brokerage and its Implementing Regulation as sources/real_estate_brokerage_regulation).\n\nCROSS-CHECK (PRIMARY vs PRIMARY): a full programmatic diff was run between uqn.gov.sa's own text and rega.gov.sa's own text for all 12 articles (Arabic tashkeel/diacritics and dash-style differences normalized, since these are purely cosmetic HTML-rendering artifacts -- uqn.gov.sa appends a colon directly after each 'المادة X' heading run into the following paragraph text, while rega.gov.sa renders the heading as a separate <h5> element with no colon). 10 of the 12 articles are BYTE-IDENTICAL after this cosmetic normalization. Articles 2 and 10 each show one small, genuine phrase-level wording variance between the two official sources (not a table/reordering artifact -- both were checked directly against each source's raw HTML): Article 2 item 5 reads 'ربط المنصة الإلكترونية مع منصة النفاذ الوطني...' on uqn.gov.sa (the Gazette) versus 'ربط منصة المرخص له مع منصة النفاذ الوطني...' on rega.gov.sa; Article 10 item 1 reads '...في المنصة الإلكترونية للهيئة بعد الانتهاء...' on uqn.gov.sa versus '...في المنصة الإلكترونية بعد الانتهاء...' (omitting 'للهيئة') on rega.gov.sa. Per this corpus's standing convention that the Official Gazette (Umm Al-Qura, the constitutionally designated publication organ) governs when it disagrees with an issuing agency's own website rendering, uqn.gov.sa's text is adopted as the governing text for these two articles in this track; the rega.gov.sa variant is preserved here for transparency and is NOT applied. See known_unresolved_discrepancies for both.\n\nSECONDARY / STRUCTURAL CORROBORATION (article count and legal content, not verbatim text): argaam.com (https://www.argaam.com/ar/article/articledetail/id/1666486, 'بالتفاصيل.. اللائحة التنظيمية للمزادات العقارية') and aleqt.com (https://www.aleqt.com/2023/08/25/article_2608676.html, 'الاقتصادية' -- a mainstream Saudi business newspaper, 'اعتماد اللائحة التنظيمية للمزادات العقارية.. تحوي 12 مادة') both independently confirm the regulation contains exactly 12 articles covering licensing conditions, licensee obligations, the electronic platform, auction-request procedures, and auction-conduct rules -- matching this track's structure exactly. aleqt.com additionally corroborates that the regulation was endorsed by the Minister of Municipal and Rural Affairs and Housing (in his capacity as Chairman of REGA's Board), consistent with the 'قرار مجلس إدارة الهيئة' issuing-instrument field found on rega.gov.sa. Neither secondary source discloses a specific board-resolution number.\n\nBOARD RESOLUTION NUMBER -- NOT LOCATED (disclosed gap): unlike the sibling Implementing Regulation of the Real Estate Brokerage Law (sources/real_estate_brokerage_regulation, decree 'قرار مجلس إدارة الهيئة العامة للعقار رقم (132/ق)'), no specific board-resolution number for THIS regulation was located this pass on either primary source (uqn.gov.sa, rega.gov.sa) or on the secondary sources checked (argaam.com, aleqt.com, general web search for lexismiddleeast.com indexing of this specific instrument). Both primary sources describe the issuing instrument only as 'قرار مجلس إدارة الهيئة' (a Resolution of REGA's Board of Directors) without a document number. This is recorded honestly as an unresolved gap rather than inventing a number; the decree field in this track is populated with the unnumbered description actually found on both primary sources.\n\nGREGORIAN DATE CALCULATION: the issuance date (01/12/1444H) and the Gazette publication date (09/02/1445H) were converted to Gregorian using the hijri-converter Python library (Hijri(1444,12,1).to_gregorian() = 2023-06-19; Hijri(1445,2,9).to_gregorian() = 2023-08-25). The second conversion is independently confirmed against uqn.gov.sa's own article:published_time metadata (2023-08-25T14:45:45+03:00) and against rega.gov.sa's own 'تاريخ النشر: 1445/02/09' field, and is further consistent with independent press coverage (aleqt.com's own article, dated 2023-08-25, and REGA's own news announcement that application of the regulation began '31 أغسطس 2023' -- six days after this same publication date). No text-level Gregorian date for the decree/issuance date itself was found stated verbatim in any source checked this pass; it is disclosed here as a calculated (not directly quoted) date.\n\nNO FORMAL CHAPTERS (الفصل): unlike the sibling Implementing Regulation and the osh_service_providers_regulation track (both of which use numbered 'الفصل' chapter headings), this regulation's own official text on BOTH primary sources uses only short, un-numbered topical section headers ('أحكام الترخيص', 'التزامات المرخص له', 'المنصة الإلكترونية', 'طلب إقامة المزاد العقاري', 'أحكام إقامة المزاد العقاري', 'أحكام ختامية') with no 'الفصل' word or ordinal number anywhere in the source. chapter_structure in this track therefore uses an empty label_ar (there is no formal chapter label to report) and populates title_ar only, exactly mirroring the real, un-numbered section headers that appear identically on both primary sources. Article 1 (definitions) has no heading preceding it on either source and is therefore not covered by any chapter_structure entry, exactly mirroring the precedent already established in this corpus by real_estate_brokerage_regulation's Article 1.\n\nNO DECREE PREAMBLE TEXT FOUND: neither primary source's HTML carries a decree/preamble recital (ديباجة) preceding Article 1 -- both begin their own #article-content / regulation body directly with 'المادة الأولى'. This is disclosed rather than fabricated; preamble_ar in this track is therefore a factual account of this track's own provenance, not a quoted recital clause (there is none to quote).\n\nlaws.boe.gov.sa NOT CHECKED: consistent with the precedent already established in this corpus for REGA board-level regulations (osh_service_providers_regulation, real_estate_brokerage_regulation), this regulation was issued by REGA's own Board of Directors resolution, not by Royal Decree or Council of Ministers Resolution, so it was not expected to be indexed on the Bureau of Experts' laws.boe.gov.sa portal and was not checked there this pass; reliance was placed on the Official Gazette (uqn.gov.sa) as the constitutionally designated publication organ, per Article 12 of this regulation itself ('تُنشر هذه اللائحة في الجريدة الرسمية').\n\nTEXT QUALITY CHECKS PERFORMED: no Eastern Arabic-Indic digits found in either primary source's text for this regulation (both already use Western digits, e.g. '1-', '(5%)'); no decorative mid-word tatweel (U+0640) found; no residual HTML/table markup; no translation, paraphrase, or legal interpretation performed on the Arabic text -- the English fields in this file are for indexing/discovery only. Read-only over input; deterministic over outputs.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "real_estate_auctions_regulation_article2_item5_wording_variance",
+      "description": "البند (5) من المادة الثانية يرد بصياغتين متقاربتين لكن غير متطابقتين حرفياً بين المصدرين الرسميين المباشرين: 'ربط المنصة الإلكترونية مع منصة النفاذ الوطني...' في نص جريدة أم القرى الرسمية (uqn.gov.sa)، مقابل 'ربط منصة المرخص له مع منصة النفاذ الوطني...' في نص موقع الهيئة العامة للعقار الرسمي ذاته (rega.gov.sa). تم فحص كلا المصدرين مباشرة (وليس عبر أداة تلخيص وسيطة) للتأكد من أن الفارق حقيقي وليس ناتج ترتيب عناصر HTML متداخلة. اعتُمد نص جريدة أم القرى (المصدر الرسمي المخصص دستورياً للنشر) كنص حاكم في هذا المسار، تماشياً مع الاصطلاح المتبع في هذا المستودع عند تعارض موقع الجهة المصدرة مع الجريدة الرسمية."
+    },
+    {
+      "article_key": "real_estate_auctions_regulation_article10_item1_wording_variance",
+      "description": "البند (1) من المادة العاشرة يرد بصياغتين متقاربتين بين المصدرين الرسميين المباشرين: '...في المنصة الإلكترونية للهيئة بعد الانتهاء...' في نص جريدة أم القرى الرسمية (uqn.gov.sa)، مقابل '...في المنصة الإلكترونية بعد الانتهاء...' (بحذف عبارة 'للهيئة') في نص موقع الهيئة العامة للعقار الرسمي ذاته (rega.gov.sa). اعتُمد نص جريدة أم القرى كنص حاكم في هذا المسار للسبب ذاته المذكور أعلاه بشأن المادة الثانية."
+    },
+    {
+      "article_key": "real_estate_auctions_regulation_board_resolution_number_not_located",
+      "description": "لم يُعثر هذه الجولة على رقم قرار مجلس إدارة الهيئة العامة للعقار الخاص بهذه اللائحة تحديداً، لا على أي من المصدرين الرسميين المباشرين (uqn.gov.sa، rega.gov.sa) ولا على المصدرين الثانويين المفحوصين (argaam.com، aleqt.com). كلا المصدرين الرسميين يصفان أداة الإصدار بعبارة 'قرار مجلس إدارة الهيئة' دون رقم مرفق. هذا يختلف عن اللائحة التنفيذية الشقيقة لنظام الوساطة العقارية (المسار sources/real_estate_brokerage_regulation) التي يحمل قرارها رقماً معروفاً (132/ق). حقل 'decree' في هذا المسار يعكس بأمانة العبارة غير المرقمة الواردة فعلياً في كلا المصدرين الرسميين، دون اختلاق رقم."
+    },
+    {
+      "article_key": "real_estate_auctions_regulation_no_formal_chapters",
+      "description": "لا تستخدم هذه اللائحة في نصها الرسمي على كلا المصدرين (uqn.gov.sa، rega.gov.sa) أي تقسيم رسمي مرقّم إلى 'فصول' (بخلاف اللائحة التنفيذية الشقيقة ولائحة ترخيص واعتماد مزاولي ومقدمي خدمات السلامة والصحة المهنية المبنيتين في هذا المستودع بفصول مرقمة)، بل تستخدم عناوين فرعية نصية قصيرة غير مرقمة فقط. لذلك يحمل حقل chapter_structure في هذا المسار label_ar فارغاً (لا يوجد رقم فصل ليُذكر) ويكتفي بعنوان القسم كما ورد حرفياً في كلا المصدرين. المادة الأولى (التعريفات) لا يسبقها أي عنوان فرعي في كلا المصدرين، ولذلك لا تغطيها أي مدخلة في chapter_structure، بما يطابق السابقة المعتمدة في مسار real_estate_brokerage_regulation لمادته الأولى."
+    },
+    {
+      "article_key": "real_estate_auctions_regulation_no_decree_preamble_text",
+      "description": "لا يتضمن نص أي من المصدرين الرسميين المباشرين (uqn.gov.sa، rega.gov.sa) ديباجة أو نص قرار مجلس الإدارة نفسه قبل المادة الأولى؛ يبدأ كلا المصدرين مباشرة بنص المادة الأولى. حقل preamble_ar في هذا المسار يوثّق هذه الحقيقة بأمانة بدلاً من اختلاق نص ديباجة غير موجود في المصدر."
+    }
+  ],
+  "source_artifact": "sources/real_estate_auctions_regulation/law/official_source/real_estate_auctions_regulation_official_source.json"
+}
