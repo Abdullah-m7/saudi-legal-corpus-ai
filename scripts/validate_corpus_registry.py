@@ -3168,7 +3168,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 15689 records...", uix.get("total_records") == 15689,
+    check("[7g] unified retrieval index: 15702 records...", uix.get("total_records") == 15702,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
