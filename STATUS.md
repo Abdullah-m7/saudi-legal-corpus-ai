@@ -7,6 +7,20 @@ completion change, update this file.
 corpus for AI. The **official Arabic source governs**; English and Chinese are
 **reference layers**.
 
+> **Scope note:** everything below through "Corpus-value features" documents
+> the **Saudi Companies Law's** own build in narrative detail (it was the
+> first implemented law profile, and remains the only track with full
+> Arabic + English + Chinese layers), plus the first ~193 of the corpus's
+> now-291 total Arabic-only tracks, each with its own prose write-up below.
+> Tracks added after that point are **not** individually narrated here — for
+> the current, authoritative count and per-track detail (status, record
+> counts, source authority, data/validator paths) for **all 291 tracks**,
+> use [`data/corpus_registry/corpus_registry.json`](data/corpus_registry/corpus_registry.json)
+> instead of any specific number written in this file's prose, which reflects
+> the count at the time each section was last written and is not kept in
+> sync on every track-add commit. See `START_HERE.md` for the current
+> top-level picture and `reports/coverage_gap_map/` for what's not built yet.
+
 ---
 
 ## Repository name
@@ -19,7 +33,9 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
 
 - **Baseline `main` commit:** `0a2e5c3e6457009ddf1d0ba2fb4d669091317ced`
 - **First implemented law profile:** Saudi Companies Law (M/132, 1443H) — the
-  **first** implemented law profile, **not** the whole project identity.
+  **first** implemented law profile, and the only one with full Arabic +
+  English + Chinese layers. **Not** the whole project identity: 290 further
+  Arabic-only tracks exist alongside it (see the scope note above).
 
 ## Layer counts (current)
 
@@ -3513,6 +3529,17 @@ corpus for AI. The **official Arabic source governs**; English and Chinese are
   out of scope for this track, following established precedent. Track
   under `sources/engineering_practice/`. Validate:
   `make engineering-practice-law-track-validate`.
+
+> **End of individually-narrated tracks.** The sections above cover the
+> Companies Law's full build plus the tracks added through this point in the
+> corpus's history. Tracks added after this point (the corpus is now at 291
+> total) are documented only in `data/corpus_registry/corpus_registry.json`
+> (per-track status, record counts, source authority, data/validator paths)
+> and the `notes` field of their own registry entry — not as prose here.
+> This is a deliberate, sustainable choice rather than an oversight: keeping
+> every track narrated in this file in full prose stopped scaling once the
+> corpus passed roughly this size. If you are looking for a specific track
+> and don't find it above, check the registry first.
 
 ## Corpus-value features — verification tiers, coverage gap map, supersession graph, cross-reference graph
 

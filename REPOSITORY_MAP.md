@@ -48,10 +48,32 @@ generated from it. This is the heart of the corpus.
 | `data/chinese_translation_sources/` | Source data | Extracted Chinese source articles (14 files) |
 | `data/chinese_remediation_batches/` | Generated/QA | Chinese remediation batches (P0-001..P0-005) |
 | `data/extracted/` | Source data | Text extracted from source PDFs |
-| `data/legal_corpus_factory/` | Source data | Reusable law profile, example batch config, terminology seed (foundation) |
+| `data/legal_corpus_factory/` | Source data | Reusable law profile, example batch config, terminology seed (foundation scaffold; not the pattern used by the 290 other tracks) |
+| `data/<law_key>_arabic_legal_llm/` | Generated | Per-track Arabic LLM-ready layer — 260 such directories, one (or more, for a law + its regulation) per track |
+| `data/corpus_registry/` | Generated | `corpus_registry.json` — the authoritative machine-readable index of all 291 tracks |
+| `data/corpus_unified_index/` | Generated | Flat retrieval index across every track (15,689 records) |
+| `data/corpus_verification_tiers/` | Generated | Confidence-tier classification for every track's source authority |
+| `data/corpus_supersession_graph/` | Generated | Explicitly-documented repeal/supersession edges between tracks |
+| `data/corpus_cross_reference_graph/` | Generated | Article-to-article citation graph across the unified index |
+| `data/corpus_glossary/` | Generated | Cross-law glossary of defined terms |
+| `data/corpus_chunking_layer/` | Generated | Embeddings-ready text chunking over the unified index |
+| `data/corpus_freshness_manifest/` | Generated | Per-track source-staleness risk flags + live-check CLI |
+| `data/schema_manifest/` | Generated | JSON Schema describing every document type used in the corpus |
 
-**Open first:** `data/official_arabic_legal_llm/` (governing Arabic layer) and
-`data/legal_corpus_factory/law_profiles/` (the Companies Law profile).
+**Open first:** `data/official_arabic_legal_llm/` (Companies Law's governing
+Arabic layer) for the flagship trilingual build, or
+`data/corpus_registry/corpus_registry.json` for the full 291-track corpus.
+
+## `sources/` — per-track official source + verified text
+
+| Path | Kind | What it contains |
+|------|------|-------------------|
+| `sources/<law_key>/{law\|regulation\|annexN}/official_source/` | Source data | Article-by-article official text, cross-checked against 1-2+ official sources, with an explicit verification-tier note |
+| `sources/<law_key>/{law\|regulation\|annexN}/verified/` | Generated | Verified-text records + summary, produced by that track's `scripts/gen_<law_key>_track.py` |
+
+245 track directories today. This — not `data/legal_corpus_factory/` — is
+the pattern to follow when adding a new law, implementing regulation, or
+(with no precedent yet) circular.
 
 ## `docs/` — architecture & doctrine documentation
 
@@ -81,7 +103,19 @@ Python entry points: generators (`gen_*`, `build_*`), extractors, renderers, and
 **read-only validators** (`validate_*`). Each Makefile target invokes one of
 these. Validators are read-only and idempotent — they never mutate corpus data.
 
-**Open first:** `scripts/validate_legal_corpus_factory_foundation.py`.
+Per-track scripts follow a fixed naming pattern: `gen_<law_key>_track.py`
+builds a track's verified + LLM-ready layers from its `sources/` official
+source JSON (278 such generators today); `validate_<law_key>_track.py`
+checks it (278 today, out of 372 `validate_*.py` scripts total). The
+corpus-wide derived layers (registry, unified index, verification tiers,
+supersession graph, cross-reference graph, glossary, chunking layer,
+freshness manifest, schema manifest) each have their own
+`gen_corpus_*.py`/`validate_corpus_*.py` pair that re-scans every track.
+
+**Open first:** `scripts/validate_legal_corpus_factory_foundation.py` for
+the original foundation, or `scripts/gen_arbitration_law_track.py` +
+`scripts/validate_arbitration_law_track.py` as a representative example of
+the per-track pattern.
 
 ## `tests/` — pytest suite
 

@@ -2,8 +2,11 @@
 
 Practical uses of this repository, stated **without overclaiming**. This is a
 multilingual, LLM-ready, official-source-based Saudi legal corpus for AI; the
-Companies Law is the first implemented law profile. Nothing here is production
-certified, officially adopted, or legal advice.
+Companies Law was the first implemented law profile and remains the only
+fully trilingual one. The corpus has since grown to 291 Arabic-governing
+tracks spanning most major Saudi statutory law (see `README.md`'s "Broader
+corpus" section and `data/corpus_registry/corpus_registry.json`). Nothing
+here is production certified, officially adopted, or legal advice.
 
 > **Boundaries for every use case below:** the **official Arabic source
 > governs**; English and Chinese are **reference layers** (Chinese is not
@@ -39,14 +42,16 @@ is optional for enterprise adoption and not required for repository use.
 
 ## 5. Foreign companies entering the Saudi market
 
-Structured Companies Law content that companies operating in or entering Saudi
-Arabia can use for orientation and internal research — a starting reference, not
-a substitute for qualified local counsel.
+Structured Companies Law content, plus the broader 291-track Arabic corpus
+(investment, foreign ownership, tax, real estate, and more), that companies
+operating in or entering Saudi Arabia can use for orientation and internal
+research — a starting reference, not a substitute for qualified local counsel.
 
 ## 6. Legal search
 
 Clean, selectable, searchable text (canonical JSON and generated views) enabling
-article-level search across the implemented law profile.
+article-level search across the Companies Law's full trilingual layers and the
+291-track Arabic corpus alike, via the unified retrieval index.
 
 ## 7. Public legal understanding
 

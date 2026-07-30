@@ -2,9 +2,16 @@
 
 **Multilingual, LLM-ready, official-source-based Saudi legal corpus for AI.**
 It structures Saudi laws and regulations into **auditable, machine-readable
-legal layers**. The **Saudi Companies Law is the first implemented law
-profile**, not the whole project identity; **Chinese is one language layer**,
-not the identity of the project.
+legal layers**. The **Saudi Companies Law was the first implemented law
+profile** and remains the only one with full Arabic + English + Chinese
+layers; **Chinese is one language layer**, not the identity of the project.
+Since the Companies Law build, the corpus has grown into a **291-track**
+Arabic-governing-only collection spanning most major Saudi statutory law and
+its implementing regulations — see
+[`data/corpus_registry/corpus_registry.json`](data/corpus_registry/corpus_registry.json)
+for the live, authoritative list, and the "Broader corpus" section below.
+The rest of this file documents the Companies Law's own deep, trilingual
+build in detail; that detail does not repeat for the other 290 tracks.
 
 > **New here?** Start with **[`START_HERE.md`](START_HERE.md)** · current state
 > **[`STATUS.md`](STATUS.md)** · structure **[`REPOSITORY_MAP.md`](REPOSITORY_MAP.md)**
@@ -35,10 +42,45 @@ not the identity of the project.
 
 ## Current implemented law profile — Saudi Companies Law
 
-The **Saudi Companies Law (M/132, 1443H)** is the **first implemented law
-profile**. Profile:
+The **Saudi Companies Law (M/132, 1443H)** was the **first implemented law
+profile**, using the reusable `law_profile` schema. Profile:
 [`data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json`](data/legal_corpus_factory/law_profiles/sa_companies_law_m132_1443.profile.json).
-Additional laws can be onboarded as new profiles.
+It remains the only track with full Arabic + English + Chinese layers.
+
+## Broader corpus — 291 Arabic-governing tracks
+
+Beyond the Companies Law, the corpus has grown into **291 tracks**: one Saudi
+law, implementing regulation, or annex per track, each Arabic-only (no
+English/Chinese layer), built to a lighter but still fully-verified,
+official-source-cross-checked pattern rather than the full `law_profile`
+schema above. Coverage includes labor, civil transactions, judiciary and
+procedure (criminal/civil/sharia/evidence/enforcement/board of grievances),
+capital markets, banking and SAMA, tax (VAT, income tax, zakat), real estate,
+IP (patents, trademarks, copyright), competition, e-commerce, criminal-law
+subject areas (anti-narcotics, anti-trafficking, anti-bribery, anti-cyber
+crime), and dozens more subject areas.
+
+- **Authoritative live index:** [`data/corpus_registry/corpus_registry.json`](data/corpus_registry/corpus_registry.json)
+  — per-track status, record counts, source authority, and data/validator
+  paths. Treat this file, not any count written in prose, as current.
+- **Per-track data:** `data/<law_key>_arabic_legal_llm/` (260 directories);
+  source + verified text in `sources/<law_key>/` (245 directories).
+- **Corpus-wide derived layers** built from all 291 tracks: a unified
+  retrieval index (15,689 records, `data/corpus_unified_index/`),
+  verification-tier classification, a supersession/repeal graph, an
+  article-to-article cross-reference graph, a cross-law glossary, an
+  embeddings-ready chunking layer, and a source-freshness manifest — see
+  `STATUS.md`'s "Corpus-value features" section for methodology and current
+  counts for each.
+- **How a track is built:** see `START_HERE.md`'s "What is a 'track', and
+  how is one added?" section — the pattern to follow for any new law,
+  implementing regulation, or (with no precedent in the corpus yet) circular.
+- **What's not in the corpus yet:** `reports/coverage_gap_map/COVERAGE_GAP_MAP_AR.md`
+  tracks candidate laws/regulations not yet built, each flagged with how
+  build-ready its official-source citation currently is — most remaining
+  candidates need a fresh sourcing pass (unresolved decree numbers,
+  paywalled or OCR-damaged sources, no dedicated official-portal page found
+  yet), not a mechanical copy of an existing pattern.
 
 ## Current language / layer status
 
