@@ -272,6 +272,8 @@ LAYERS = [
      "environmental_inspection_audit", "regulation"),
     ("data/environmental_violations_penalties_arabic_legal_llm/environmental_violations_penalties_reg_legal_llm_001_010.json",
      "environmental_violations_penalties", "regulation"),
+    ("data/environmental_wildlife_hunting_reg_arabic_legal_llm/environmental_wildlife_hunting_reg_legal_llm_001_013.json",
+     "environmental_wildlife_hunting", "regulation"),
     ("data/environmental_permits_reg_arabic_legal_llm/environmental_permits_reg_legal_llm_001_011.json",
      "environmental_permits", "regulation"),
     ("data/environmental_air_quality_arabic_legal_llm/environmental_air_quality_reg_legal_llm_001_008.json",

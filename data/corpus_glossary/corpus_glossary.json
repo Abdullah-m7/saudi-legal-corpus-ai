@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 291,
-  "total_terms": 1920,
-  "total_definitions": 3318,
-  "tracks_with_definitions_article_parsed": 214,
+  "total_tracks_in_registry": 292,
+  "total_terms": 1925,
+  "total_definitions": 3340,
+  "tracks_with_definitions_article_parsed": 215,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -407,6 +407,14 @@
         "term_as_written": "أراضي الغطاء النباتي",
         "definition_text": "جميع الأراضي المملوكة للدولة التي تحتوي على نباتات برية وما في حكمها.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "أراضي الغطاء النباتي",
+        "definition_text": "جميع الأراضي المملوكة للدولة التي تحتوي على نباتات برية وما في حكمها.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4486,6 +4494,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "إذن مكتوب يمنحه المركز للشخص لممارسة نشاط بيئي.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "finance_companies_law",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -5550,6 +5566,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم المركز الوطني لتنمية الحياة الفطرية.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gaca_organizational_statute",
         "article_number": 1,
         "term_as_written": "التنظيم",
@@ -6147,6 +6171,14 @@
         "term_as_written": "الجهات الأمنية",
         "definition_text": "أية جهة أمنية بوزارة الداخلية حسب الاختصاص.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الجهات الأمنية",
+        "definition_text": "أية جهة أمنية بوزارة الداخلية حسب الاختصاص.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9524,6 +9556,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص له صفة طبيعية، أو اعتبارية عامة أو خاصة.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "income_tax_law",
         "article_number": 1,
         "term_as_written": "الشخص",
@@ -10075,6 +10115,16 @@
         "term_as_written": "الصيانة الدورية",
         "definition_text": "الصيانة التي تتم وفقاً لتوصيات المنتج، وذلك بشكل دوري بحسب طبيعة استعمال السلعة.",
         "source_record_id": "commercial-agencies-regulation-llm-art-001-annex",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصيد": [
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الصيد",
+        "definition_text": "الشروع أو المطاردة أو الإمساك أو الجرح أو القتل وغيره مما يفيد الممارسة الفعلية للصيد لأي كائن فطري حيواني بري، وللمركز الاستثناء من ذلك.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11876,6 +11926,14 @@
         "definition_text": "أي كائن حي أو ميت، وينتمي علميًّا إلى المجموعات الحيوانية أو النباتية، ولا يدخل في ذلك الإنسان والكائنات المدجنة والأليفة.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الكائنات الفطرية",
+        "definition_text": "أي كائن حي أو ميت ينتمي علميا إلى المجموعات الحيوانية أو النباتية، ولا يدخل في ذلك الإنسان، والكائنات المدجنة والأليفة.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الكائنات الفطرية الحيوانية": [
@@ -11885,6 +11943,16 @@
         "term_as_written": "الكائنات الفطرية الحيوانية",
         "definition_text": "أي كائن حي أو ميت، ينتمي علميا إلى المجموعات الحيوانية، ولا يدخل في ذلك الإنسان والثروة الحيوانية.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الكائنات الفطرية الحيوانية البرية": [
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الكائنات الفطرية الحيوانية البرية",
+        "definition_text": "جميع الكائنات الفطرية التي تنتمي علميا إلى المجموعات الحيوانية، وتعيش حرة طليقة في بر المملكة (الثديات، المفترسات، الطيور، الزواحف، ... إلخ).",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12427,6 +12495,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لصيد الكائنات الفطرية البرية.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13203,6 +13279,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "لجنة النظر في المخالفات.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة النظر في المخالفات.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -15908,6 +15992,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "شخص حاصل على ترخيص وفقا لأحكام هذه اللائحة.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "labor_saudization_mediation_rules",
         "article_number": 1,
         "term_as_written": "المرخص له",
@@ -16281,6 +16373,14 @@
         "term_as_written": "المركز",
         "definition_text": "المركز الوطني للرقابة على الالتزام البيئي.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني لتنمية الحياة الفطرية.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17150,6 +17250,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المشتق": [
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "المشتق",
+        "definition_text": "كل ما يستخرج من الكائنات الفطرية، سواء أكان بشكل طبيعي أم غير طبيعي.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المشرف": [
       {
         "track_id": "building_code_law",
@@ -17882,6 +17992,14 @@
         "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة الجهة المختصة -بحسب الأحوال- لضبط مخالفات أحكام النظام أو اللوائح والتحقيق فيها وإثباتها.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "المفتشون",
+        "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة المركز، للقيام بالتفتيش، وضبط مخالفات أحكام هذه اللائحة، والتحقيق فيها، وإثباتها.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المفلس": [
@@ -18552,6 +18670,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المناطق الرطبة": [
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "المناطق الرطبة",
+        "definition_text": "الأراضي المغمورة بالمياه، سواء أكانت بشكل طبيعي أم اصطناعي، دائم أو مؤقت، وسواء أكانت هذه المياه راكدة أم جارية، عذبة أو مالحة. تتمتع هذه المناطق بأنظمة أحيائية خاصة وتستقطب الطيور المهاجرة، على سبيل المثال لا الحصر البحيرات، المستنقعات، البرك، السهول الفيضية، السبخات، ومصبات المياه الجارية.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المناطق المحمية": [
       {
         "track_id": "environmental_law",
@@ -18603,6 +18731,14 @@
       }
     ],
     "المنتج": [
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "أي جزء من أي كائن فطري، سواء أكان مصنعا جزئيا أو كليا أم غير مصنع.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "finance_lease_law",
         "article_number": 1,
@@ -19261,6 +19397,14 @@
         "term_as_written": "الموائل",
         "definition_text": "مواقع تعيش أو تنمو أو تتكاثر فيها الكائنات الفطرية بشكل طبيعي ومترابط ومتكامل مع الظروف المحيطة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الموائل",
+        "definition_text": "مواقع تعيش أو تنمو أو تتكاثر فيها الكائنات الفطرية بشكل طبيعي ومترابط ومتكامل مع الظروف المحيطة.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20605,6 +20749,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام البيئة.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام البيئة.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -22444,6 +22596,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "evidence_expertise_rules",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -23109,6 +23269,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير البيئة والمياه والزراعة.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -28196,6 +28364,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "محازة صيد بري خاصة": [
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "محازة صيد بري خاصة",
+        "definition_text": "موقع خاص مسيج، وله مداخل ومخارج محددة، يسمح بممارسة الصيد البري داخل حدوده بموجب ترخيص من المركز.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "محسنات التربة الزراعية": [
       {
         "track_id": "agriculture_regulation",
@@ -30339,6 +30517,14 @@
         "term_as_written": "وتشمل",
         "definition_text": "المراعي، والغابات، والمنتزهات الوطنية والبرية والجيولوجية، والمناطق الرطبة، والمناطق السهلية، والمناطق الرملية (الكثبان)، والمناطق الجبلية، والوديان، والمناطق الساحلية، والجزر.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_wildlife_hunting",
+        "article_number": 1,
+        "term_as_written": "وتشمل",
+        "definition_text": "المراعي، والغابات، والمنتزهات الوطنية، والبرية، والجيولوجية، والمناطق الرطبة، والمناطق السهلية، والمناطق الرملية (الكثبان)، والمناطق الجبلية، والوديان، والمناطق الساحلية، والجزر.",
+        "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

@@ -204,6 +204,7 @@ FRANCHISE_REGULATION_LLM = os.path.join(ROOT, "data", "franchise_regulation_arab
 TRAFFIC_REGULATION_LLM = os.path.join(ROOT, "data", "traffic_regulation_arabic_legal_llm", "traffic_regulation_legal_llm_001_086.json")
 ENVIRONMENTAL_INSPECTION_AUDIT_LLM = os.path.join(ROOT, "data", "environmental_inspection_audit_arabic_legal_llm", "environmental_inspection_audit_reg_legal_llm_001_010.json")
 ENVIRONMENTAL_VIOLATIONS_PENALTIES_LLM = os.path.join(ROOT, "data", "environmental_violations_penalties_arabic_legal_llm", "environmental_violations_penalties_reg_legal_llm_001_010.json")
+ENVIRONMENTAL_WILDLIFE_HUNTING_LLM = os.path.join(ROOT, "data", "environmental_wildlife_hunting_reg_arabic_legal_llm", "environmental_wildlife_hunting_reg_legal_llm_001_013.json")
 ENVIRONMENTAL_PERMITS_LLM = os.path.join(ROOT, "data", "environmental_permits_reg_arabic_legal_llm", "environmental_permits_reg_legal_llm_001_011.json")
 ENVIRONMENTAL_AIR_QUALITY_LLM = os.path.join(ROOT, "data", "environmental_air_quality_arabic_legal_llm", "environmental_air_quality_reg_legal_llm_001_008.json")
 ENVIRONMENTAL_SERVICE_PROVIDERS_LLM = os.path.join(ROOT, "data", "environmental_service_providers_reg_arabic_legal_llm", "environmental_service_providers_reg_legal_llm_001_012.json")
@@ -526,6 +527,7 @@ def main() -> int:
     traffic_regulation_llm = _load_json(TRAFFIC_REGULATION_LLM)
     environmental_inspection_audit_llm = _load_json(ENVIRONMENTAL_INSPECTION_AUDIT_LLM)
     environmental_violations_penalties_llm = _load_json(ENVIRONMENTAL_VIOLATIONS_PENALTIES_LLM)
+    environmental_wildlife_hunting_llm = _load_json(ENVIRONMENTAL_WILDLIFE_HUNTING_LLM)
     environmental_permits_llm = _load_json(ENVIRONMENTAL_PERMITS_LLM)
     environmental_air_quality_llm = _load_json(ENVIRONMENTAL_AIR_QUALITY_LLM)
     environmental_service_providers_llm = _load_json(ENVIRONMENTAL_SERVICE_PROVIDERS_LLM)
@@ -671,7 +673,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 291,
+        "total_tracks": 292,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -841,6 +843,7 @@ def main() -> int:
             + traffic_regulation_llm["record_count"]  # 86 Implementing Regulation of the Traffic Law (Minister of Interior Resolution 2249, 10/3/1441H) (TIER_3, BOE unreachable and no dedicated lawId page, PRIMARY official MOI scanned document dual vision+OCR pipeline reconciled, cross-verified against qanoniah.com born-digital text for Articles 1-8 only, 82 اصلية/3 معدلة (Articles 7,23,47)/1 ملغاة (Article 80), CONFIRMED named-predecessor repeal of Ministerial Resolution 7019 (3/7/1429H) via the Resolution's own verbatim clause, see track notes)
             + environmental_inspection_audit_llm["record_count"]  # 10 Implementing Regulation for Environmental Inspection and Audit (Ministerial Decision 15116190, 12 Jumada al-Ula 1446H, wholly replacing Decision 393691/1/1442) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY qanoonsa.com reproducing Umm Al-Qura issue 5057, 10 اصلية (8 articles + Table 1 + Appendix 1), self-supersession of the 1442H original, see track notes)
             + environmental_violations_penalties_llm["record_count"]  # 10 Implementing Regulation for Recording Environmental Violations and Imposing Penalties (Ministerial Decision 15101619, 26/4/1446H, wholly replacing Decision 312186/1/1442) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY qanoonsa.com consolidated in-force text cross-verified against qistas.com appendix, 10 اصلية (8 articles + 2 appendix templates), self-supersession of the 1442H original, see track notes)
+            + environmental_wildlife_hunting_llm["record_count"]  # 13 Implementing Regulation for Hunting of Wild Terrestrial Animals (Ministerial Decision 312179/1/1442, 4/6/1442H, Table 1 amended by Decision 15029615, 5/2/1446H) (TIER_2, BOE unreachable (HTTP 503) this pass, PRIMARY official mewa.gov.sa PDF read visually page-by-page (pypdf text layer corrupted), founding decree cross-confirmed via the Umm Al-Qura Gazette Table-1-amendment page, 13 اصلية (10 articles + Table 1 + Table 2 + Appendix 1), see track notes)
             + environmental_permits_llm["record_count"]  # 11 Implementing Regulation for Environmental Permits for Establishing and Operating Activities (Minister of Environment Decision 43615/3/1/1442, 09/08/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY Umm Al-Qura Gazette issue 4888 clean HTML cross-verified 99.66% word-level against the official born-digital gazette PDF, 11 اصلية, confirmed no named-predecessor repeal, see track notes)
             + environmental_air_quality_llm["record_count"]  # 8 Implementing Regulation for Air Quality under the Environmental Law (Ministerial Decision 512258/1/1442, 24/9/1442H) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY mewa.gov.sa born-digital PDF cross-verified ~100% word-level against qanoniah.com, 8 اصلية, confirmed no named-predecessor repeal, see track notes)
             + environmental_service_providers_llm["record_count"]  # 13 Implementing Regulation for Environmental Service Providers (Ministerial Decision 1515009/1, 3/7/1446H, wholly replacing Decision 582979/1/1442) (TIER_2, BOE unreachable and no dedicated lawId page, PRIMARY official MEWA scanned decision PDF (visually read) x qanoniah.com clean HTML, 13 اصلية (12 articles + Table 1), CONFIRMED self-supersession of the decision's own prior 582979/1/1442 original, recorded as a repeals_full edge, see track notes)
@@ -1126,6 +1129,7 @@ def main() -> int:
             + traffic_regulation_llm["record_count"]
             + environmental_inspection_audit_llm["record_count"]
             + environmental_violations_penalties_llm["record_count"]
+            + environmental_wildlife_hunting_llm["record_count"]
             + environmental_permits_llm["record_count"]
             + environmental_air_quality_llm["record_count"]
             + environmental_service_providers_llm["record_count"]
@@ -6109,6 +6113,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Implementing Regulation for Recording Environmental Violations and Imposing Penalties under the Environmental Law «اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة» — a separate topical Regulation under the Environmental Law (M/165), distinct from environmental_inspection_audit/environmental_permits/environmental_air_quality (each its own corpus key). Current in-force text issued by Ministerial Decision No. (15101619), 26/4/1446H (30 Oct 2024, Umm Al-Qura Gazette issue 5055), whose own clause (ثانيا) explicitly states the re-issued regulation «تحل محل» (replaces) the original Decision No. (312186/1/1442), 4/6/1442H — a confirmed self-supersession, recorded in the supersession graph. **10 records = 8 numbered articles + 2 appendix form-templates (محضر ضبط، محضر تحقيق), ALL 10 اصلية** (the 2024 amendment re-issued the Regulation WHOLESALE without itemising per-article changes; consolidated_amended_law=true at track level; positive evidence that Article 1's definitions changed — now referencing المؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف, created by CoM Decision 406, 14/5/1445H, post-dating the 1442H original — but a precise per-article diff could not be performed and is disclosed as a limitation, not silently resolved). **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: no dedicated lawId page exists for this Implementing Regulation. PRIMARY source is qanoonsa.com's server-rendered consolidated in-force text, with the appendix independently corroborated against qistas.com and the amending decision's own text corroborated against a second qanoonsa.com page; citation (decision numbers/dates) further cross-verified against mewa.gov.sa, uqn.gov.sa, and istitlaa.ncc.gov.sa, though the government primaries were not directly fetched for full text this pass. **CONFIRMED SELF-SUPERSESSION, NO EXTERNAL NAMED-PREDECESSOR** of a differently-titled instrument — this is the first Regulation of its kind under the 1441H Environmental Law. Disclosed: government-primary full text not directly fetchable this pass (citation-level corroboration only); the 1442H original text could not be diffed against the 2024 re-issuance; a minor source-text spacing artifact (\"الش عب\"→\"الشعب\") corrected. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "environmental_wildlife_hunting",
+                "display_name_ar": "اللائحة التنفيذية لصيد الكائنات الفطرية البرية",
+                "display_name_en": "Implementing Regulation for Hunting of Wild Terrestrial Animals",
+                "corpus_family": "statutory_law",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MEWA_OFFICIAL_PDF_VISUALLY_READ_X_UQN_GAZETTE_FOUNDING_CITATION_CROSSCHECK_BOE_UNREACHABLE",
+                "source_authority": "Ministerial Decision No. (312179/1/1442), dated 4/6/1442H, Minister of Environment, Water and Agriculture, issued under the Environmental Law (Royal Decree M/165, 19/11/1441H) and the Statute of the National Center for Wildlife Development; Table 1 (violation classification/penalties) later amended by Ministerial Decision No. (15029615), dated 5/2/1446H — laws.boe.gov.sa returned HTTP 503 this pass (unreachable, not confirmed absent). PRIMARY full text is an official mewa.gov.sa-hosted PDF (downloaded directly over HTTPS, sha256 recorded), read visually page-by-page at 200dpi because the automated pypdf text layer is corrupted for this document (dropped letters, decorative tatweel rendered as repeated characters); the founding decree citation (not printed on the PDF's own cover) independently cross-confirmed via the Umm Al-Qura Gazette page publishing the later Table-1 amendment, which quotes the founding citation verbatim",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": environmental_wildlife_hunting_llm["record_count"],
+                    "data_path": "data/environmental_wildlife_hunting_reg_arabic_legal_llm/environmental_wildlife_hunting_reg_legal_llm_001_013.json"}},
+                "record_counts": {"arabic_articles": environmental_wildlife_hunting_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 13, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": environmental_wildlife_hunting_llm["record_count"]},
+                "data_paths": [
+                    "sources/environmental_wildlife_hunting/official_source/environmental_wildlife_hunting_reg_official_source.json",
+                    "sources/environmental_wildlife_hunting/verified/environmental_wildlife_hunting_reg_verified_records.jsonl",
+                    "data/environmental_wildlife_hunting_reg_arabic_legal_llm/environmental_wildlife_hunting_reg_legal_llm_001_013.json",
+                ],
+                "validator_targets": ["make environmental-wildlife-hunting-reg-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation for Hunting of Wild Terrestrial Animals under the Environmental Law «اللائحة التنفيذية لصيد الكائنات الفطرية البرية» — a separate topical Regulation under the Environmental Law (M/165), distinct from environmental_inspection_audit/environmental_violations_penalties/environmental_permits/environmental_air_quality/environmental_service_providers/environmental_fees (each its own corpus key). Was previously flagged 'needs full discovery from scratch' in this corpus's own coverage-gap map (2026-07-24 fresh scan, sub_candidate environmental_wildlife_hunting_reg). Founding Decision No. (312179/1/1442), 4/6/1442H; its own Table 1 (violation classification and penalties) later amended by Decision No. (15029615), 5/2/1446H, WITHOUT altering the regulation's 10 articles, Table 2, or Appendix 1 (disclosed at track level, not diffed against the pre-amendment Table 1 text). **13 records = 10 numbered articles + Table (1) تصنيف المخالفات والعقوبات (23 rows) + Table (2) غرامات صيد الكائنات الحية (59 species rows: 20 mammals, 38 birds including a 12-species endemic-passerine sub-list, 1 reptile) + Appendix (1) قائمة بالطيور المتوطنة (19 species), ALL 13 اصلية**, no chapter/باب division. **VERIFICATION TIER: TIER_2** — laws.boe.gov.sa checked first per methodology: returned HTTP 503 this pass (unreachable, not confirmed to lack a dedicated lawId page). PRIMARY source is an official mewa.gov.sa-hosted PDF (downloaded directly, sha256 recorded), READ VISUALLY page-by-page at 200dpi (not the raw pypdf text layer, which is corrupted for this document — confirmed by direct comparison: e.g. 'أراضي الغطاء النباتي' extracts as the scrambled 'أراضوووي الءطال النبا ي'). The founding decree number/date, not printed on the PDF's own cover, was independently cross-confirmed via the Umm Al-Qura Gazette page (uqn.gov.sa) publishing the later Table-1 amendment, which quotes the founding citation verbatim in full. **NO SUPERSESSION EDGE MODELED** — no named-predecessor repeal clause found in the ingested text; this is a companion Implementing Regulation to the already-ingested base environmental_law track, not a replacement of a prior instrument. Disclosed: (1) the founding decree's precise authorizing article of the Environmental Law was not independently pinned to one article number this pass; (2) Table 1's post-15029615 amendment content was not diffed article-by-article against the pre-amendment version — the Table 1 text ingested here is exactly what the mewa.gov.sa PDF fetched this pass shows; (3) a genuine source-level discrepancy preserved without silent correction: the scientific name for «دخلة عربية» is truncated to the genus only (Curruca) in Table 2 but given in full (Curruca leucomelaena) in Appendix 1 of the SAME official document. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "environmental_permits",

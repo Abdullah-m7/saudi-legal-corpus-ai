@@ -280,6 +280,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         traffic-regulation-track-validate \
         environmental-inspection-audit-reg-track-validate \
         environmental-violations-penalties-reg-track-validate \
+        environmental-wildlife-hunting-reg-track-validate \
         environmental-permits-reg-track-validate \
         environmental-air-quality-reg-track-validate \
         environmental-service-providers-reg-track-validate \
@@ -1669,6 +1670,9 @@ environmental-inspection-audit-reg-track-validate:
 
 environmental-violations-penalties-reg-track-validate:
 	$(PY) scripts/validate_environmental_violations_penalties_reg_track.py
+
+environmental-wildlife-hunting-reg-track-validate:
+	$(PY) scripts/validate_environmental_wildlife_hunting_reg_track.py
 
 environmental-permits-reg-track-validate:
 	$(PY) scripts/validate_environmental_permits_reg_track.py
