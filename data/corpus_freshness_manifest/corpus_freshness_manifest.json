@@ -10,7 +10,7 @@
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
   "total_tracks": 292,
-  "known_source_staleness_risk_count": 16,
+  "known_source_staleness_risk_count": 17,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
     "awqaf_law",
@@ -19,6 +19,7 @@
     "engineering_practice_law",
     "environmental_law",
     "income_tax_law",
+    "labor_implementing_regulation",
     "nationality_law",
     "nationality_regulation",
     "patent_law",
@@ -3378,14 +3379,16 @@
       "registry_source_url": null,
       "official_source_file": "sources/labor/regulation/official_source/labor_regulation_official_source.json",
       "source_urls": [
+        "https://www.hrsd.gov.sa/sites/default/files/2025-02/",
         "https://www.hrsd.gov.sa/sites/default/files/2025-02/اللائحة"
       ],
       "named_source_authorities": [
-        "hrsd.gov.sa"
+        "hrsd.gov.sa",
+        "spa.gov.sa"
       ],
-      "last_verified_context": "cross-verified against multiple sources per track's own verification note",
-      "known_source_staleness_risk": false,
-      "known_source_staleness_pointer": ""
+      "last_verified_context": "track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
+      "known_source_staleness_risk": true,
+      "known_source_staleness_pointer": "labor_regulation_2025_08_republication_not_incorporated: This track's own source PDF (provenance.source_url) is dated 2025-02 in its HRSD URL path, captured the same month as the Labor Law's own 8/2/1446H (8 February 2025G) amending Royal Decree. HRSD's official page and the S"
     },
     {
       "track_id": "labor_law",
@@ -3400,7 +3403,8 @@
         "https://www.hrsd.gov.sa/sites/default/files/2025-05/hrsd.pdf"
       ],
       "named_source_authorities": [
-        "hrsd.gov.sa"
+        "hrsd.gov.sa",
+        "spa.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
       "known_source_staleness_risk": false,
