@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 529,
-  "top1_hits": 493,
-  "top3_hits": 516,
-  "top5_hits": 523,
-  "top1_accuracy": 0.9319,
-  "top3_accuracy": 0.9754,
+  "total_queries": 531,
+  "top1_hits": 494,
+  "top3_hits": 518,
+  "top5_hits": 525,
+  "top1_accuracy": 0.9303,
+  "top3_accuracy": 0.9755,
   "top5_accuracy": 0.9887,
-  "mrr_at_5": 0.9555,
+  "mrr_at_5": 0.9547,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9874,8 +9874,8 @@
      "score": 14
     },
     {
-     "record_id": "environmental-service-providers-reg-llm-table-013",
-     "article_number": 13,
+     "record_id": "environmental-noise-reg-llm-012",
+     "article_number": 1,
      "score": 14
     }
    ]
@@ -16418,6 +16418,68 @@
      "record_id": "tourist-visa-reg-llm-002",
      "article_number": 2,
      "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "env-noise-001",
+   "query_ar": "الضوضاء الصوت المزعج غير المرغوب فيه أو الذي يؤثر سلبيا على صحة الانسان والكائنات الحية وجودة البيئة وتنشأ من الأنشطة البشرية المختلفة كالصناعة ووسائل المواصلات والأعمال الإنشائية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "environmental_noise",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-noise-reg-llm-001",
+     "article_number": 1,
+     "score": 46
+    },
+    {
+     "record_id": "environmental-air-quality-reg-llm-art-001",
+     "article_number": 1,
+     "score": 26
+    },
+    {
+     "record_id": "environmental-permits-reg-llm-art-001",
+     "article_number": 1,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "env-noise-002",
+   "query_ar": "لا يجوز ممارسة تجاوز مقاييس مستويات الضوضاء للمناطق السكنية والتجارية إلا بتصريح من المركز الفئة أ خمسون ديسيبل نهارا وأربعون ليلا",
+   "category": "provision",
+   "gold": {
+    "corpus": "environmental_noise",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-noise-reg-llm-006",
+     "article_number": 6,
+     "score": 28
+    },
+    {
+     "record_id": "environmental-noise-reg-llm-004",
+     "article_number": 4,
+     "score": 27
+    },
+    {
+     "record_id": "environmental-noise-reg-llm-013",
+     "article_number": 2,
+     "score": 24
     }
    ]
   }

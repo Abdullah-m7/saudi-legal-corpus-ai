@@ -19,9 +19,9 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 296,
+  "total_tracks": 297,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 130,
+    "TIER_1_PRIMARY_MULTI_SOURCE": 131,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 90,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 39,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 37
@@ -783,6 +783,13 @@
       "tier_rationale": "official_text_status يذكر صراحة 'ART1_BOE_SELF_CONTRADICTION': 48 من 49 مادة تطابقت حرفياً عبر ثلاثة مصادر (BOE عبر أرشيف Wayback + green.org.sa + nezams.com)، لكن تعريف 'الجهة المختصة' في المادة 1 يقوم على تناقض داخلي موثَّق في بيانات BOE نفسها (النص الأساسي مقابل سجل التعديلات الخاص بها)، حُلّ بالاعتماد على تعزيز ثانوي واحد فقط (qanoonsa.com).",
       "has_per_article_variation": true,
       "per_article_variation_note": "المادة 1 (تعريف الجهة المختصة) وحدها تحمل تناقضاً داخلياً موثَّقاً في مصدر BOE نفسه، محلولاً بتعزيز ثانوي واحد فقط؛ بقية الـ48 مادة تطابقت حرفياً عبر ثلاثة مصادر مستقلة؛ راجع official_source.json الخاص بالمسار."
+    },
+    {
+      "track_id": "environmental_noise",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='TWO_INDEPENDENT_PRIMARY_SOURCES_VERBATIM_MATCH_VISUALLY_CONFIRMED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "environmental_permits",

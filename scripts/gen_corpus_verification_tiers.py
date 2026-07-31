@@ -111,6 +111,7 @@ STATUS_TIER_MAP = {
     # --- Tier 1: 2+ genuinely official/primary sources agree, or a primary PDF verified
     #     via an independent OCR/image pass of the same document, no reachability gap. ---
     "MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF": TIER_1,
+    "TWO_INDEPENDENT_PRIMARY_SOURCES_VERBATIM_MATCH_VISUALLY_CONFIRMED": TIER_1,
     "BOE_OFFICIAL_PORTAL_ARCHIVE_CROSS_SNAPSHOT_VERIFIED": TIER_1,
     "VERIFIED_AGAINST_OFFICIAL_SDAIA_PUBLISHED_TEXT": TIER_1,
     "VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF": TIER_1,

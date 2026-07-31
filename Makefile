@@ -308,6 +308,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         hospitality-mgmt-reg-track-validate \
         hospitality-facility-reg-track-validate \
         tourist-visa-reg-track-validate \
+        environmental-noise-reg-track-validate \
         standards-quality-regulation-track-validate \
         disability-rights-regulation-track-validate \
         anti-smoking-regulation-track-validate \
@@ -1758,6 +1759,9 @@ hospitality-facility-reg-track-validate:
 
 tourist-visa-reg-track-validate:
 	$(PY) scripts/validate_tourist_visa_reg_track.py
+
+environmental-noise-reg-track-validate:
+	$(PY) scripts/validate_environmental_noise_reg_track.py
 
 standards-quality-regulation-track-validate:
 	$(PY) scripts/validate_standards_quality_regulation_track.py

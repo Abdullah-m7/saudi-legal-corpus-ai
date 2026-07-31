@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 296,
-  "total_terms": 1940,
-  "total_definitions": 3395,
-  "tracks_with_definitions_article_parsed": 219,
+  "total_tracks_in_registry": 297,
+  "total_terms": 1947,
+  "total_definitions": 3414,
+  "tracks_with_definitions_article_parsed": 220,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -561,6 +561,16 @@
         "term_as_written": "أعضاء هيئة التدريس",
         "definition_text": "الأساتذة والأساتذة المشاركون والأساتذة المساعدون، ويعد في حكم أعضاء هيئة التدريس المحاضرون والمعيدون.",
         "source_record_id": "universities-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أعمال البناء": [
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "أعمال البناء",
+        "definition_text": "جميع الأنشطة المتعلقة بالحفر أو البناء أو الهدم أو الترميم أو الأنشطة ذات الصلة المباشرة بذلك.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5015,6 +5025,14 @@
         "term_as_written": "التصريح",
         "definition_text": "وثيقة تمنحها الجهة المختصة للشخص قبل البدء بممارسته أي نشاط له أثر بيئي.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة يمنحها المركز للشخص فيما يخص التجاوز المؤقت لمقاييس وحدود مستويات الضوضاء.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9662,6 +9680,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص ذو صفة طبيعية أو اعتبارية عامة أو خاصة.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_permits",
         "article_number": 1,
         "term_as_written": "الشخص",
@@ -10379,6 +10405,16 @@
         "term_as_written": "الضوابط",
         "definition_text": "ضوابط إجراءات الإثبات إلكترونياً.",
         "source_record_id": "evidence-elec-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الضوضاء": [
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "الضوضاء",
+        "definition_text": "الصوت المزعج غير المرغوب فيه أو الذي يؤثر سلبيا على صحة الإنسان والكائنات الحية وجودة البيئة، وتنشأ من الأنشطة البشرية المختلفة كالصناعة ووسائل المواصلات والأعمال الإنشائية وغيرها.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12611,6 +12647,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للتفتيش والتدقيق البيئي.",
         "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للضوضاء.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16572,6 +16616,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني للرقابة على الالتزام البيئي.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_permits",
         "article_number": 1,
         "term_as_written": "المركز",
@@ -17097,6 +17149,14 @@
         "term_as_written": "المستقبلات الحساسة",
         "definition_text": "المستقبلات المحتمل تأثرها بشكل ملحوظ من النشاط أو المشروع بحكم موقعها الجغرافي القريب منه أو طبيعتها الحساسة وتشمل: المكونات البيئية، والكائنات الحية، والمواقع الأثرية والثقافية والدينية، والفئات المجتمعية؛ (على سبيل المثال الكائنات المهددة بالانقراض، والمستشفيات، ودور العجزة، والمدارس، والمجمعات السكنية وغيرها).",
         "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المستقبلات الحساسة",
+        "definition_text": "المستقبلات المحتمل تأثرها بشكل ملحوظ من النشاط أو المشروع بحكم موقعها الجغرافي القريب منه أو طبيعتها الحساسة وتشمل: المكونات البيئية، والكائنات الحية، والمواقع الأثرية والثقافية والدينية، والفئات المجتمعية؛ (على سبيل المثال الكائنات المهددة بالانقراض، والمستشفيات، ودور العجزة، والمدارس، والمجمعات السكنية وغيرها). ديسيبيل أ (dBA): هي وحدة قياس شدة الضوضاء التي تتعرض لها الأذن البشرية، وتحسب بالفرق اللوغاريتمي بين ضغط الصوت المراد قياس شدته (أ) وضغط أقل صوت (P0) يمكن للأذن البشرية أن تسمعه وهو (20) ميكرو باسكال، وتقاس باستخدام مرشح صوت (Filter-A) لقياس الأصوات في مجال تردد محدد. مستوى الضوضاء المكافئة (LAeq, T): مستوى الضوضاء المرجح (A-Weighted) الثابت المكافئ. وهو مستوى الصوت الثابت الذي، في إطار ومدة زمنية (T) محددة، ينتج الطاقة نفسها التي ينتجها الصوت الفعلي المتغير زمنيا.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -17656,6 +17716,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المصرح له",
+        "definition_text": "شخص حاصل على التصريح.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_permits",
         "article_number": 1,
         "term_as_written": "المصرح له",
@@ -18179,6 +18247,14 @@
         "term_as_written": "المفتشون",
         "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة الجهة المختصة للتفتيش والرقابة البيئية وضبط مخالفات أحكام النظام واللوائح، والتحقيق فيها وإثباتها.",
         "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المفتشون",
+        "definition_text": "موظفون يصدر قرار بتحديدهم من الوزير أو رئيس مجلس إدارة المركز للتفتيش والرقابة البيئية وضبط مخالفات أحكام النظام واللائحة والتحقيق فيها وإثباتها.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18900,6 +18976,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المناطق الحساسة بيئيا",
+        "definition_text": "مناطق ذات أهمية بيئية تؤدي في حال تدهورها إلى انعكاسات بيئية سلبية.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_permits",
         "article_number": 1,
         "term_as_written": "المناطق الحساسة بيئيا",
@@ -18925,6 +19009,36 @@
         "term_as_written": "المناطق الرطبة",
         "definition_text": "الأراضي المغمورة بالمياه، سواء أكانت بشكل طبيعي أم اصطناعي، دائم أو مؤقت، وسواء أكانت هذه المياه راكدة أم جارية، عذبة أو مالحة. تتمتع هذه المناطق بأنظمة أحيائية خاصة وتستقطب الطيور المهاجرة، على سبيل المثال لا الحصر البحيرات، المستنقعات، البرك، السهول الفيضية، السبخات، ومصبات المياه الجارية.",
         "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المناطق السكنية عالية الكثافة": [
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المناطق السكنية عالية الكثافة",
+        "definition_text": "المناطق التي تحتوي على 15 إلى 20 وحدة سكنية في كل (10.000) م2 أو (7.000) إلى (9.999) شخص في كل كم2.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المناطق السكنية متوسطة الكثافة": [
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المناطق السكنية متوسطة الكثافة",
+        "definition_text": "المناطق التي تحتوي على 9 إلى 14 وحدة سكنية في كل (10.000) م2 أو (4.000) إلى (6.999) شخص في كل كم2.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المناطق السكنية منخفضة الكثافة": [
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "المناطق السكنية منخفضة الكثافة",
+        "definition_text": "المناطق التي تحتوي على 4 إلى 8 وحدات سكنية في كل (10.000) م2 أو (1.000) إلى (3.999) شخص في كل كم2.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20397,6 +20511,14 @@
         "term_as_written": "النشاط",
         "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون لها تأثيرات بيئية.",
         "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون له تأثيرات بيئية.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -22860,6 +22982,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_permits",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -23573,6 +23703,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير البيئة والمياه والزراعة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -27692,6 +27830,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "فترة الليل": [
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "فترة الليل",
+        "definition_text": "الفترة الزمنية ما بين الساعة الثامنة مساء وحتى الساعة السابعة صباحا.",
+        "source_record_id": "environmental-noise-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "فترة المقابل المالي": [
       {
         "track_id": "mining_investment_implementing_regulation",
@@ -27699,6 +27847,16 @@
         "term_as_written": "فترة المقابل المالي",
         "definition_text": "فترة استحقاق قيمة المقابل المالي الذي يجب على المرخص له دفعه وفقاً للسنة المالية للدولة.",
         "source_record_id": "mining-investment-implementing-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "فترة النهار": [
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "فترة النهار",
+        "definition_text": "الفترة الزمنية ما بين الساعة السابعة صباحا وحتى الساعة الثامنة مساء.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -30987,6 +31145,14 @@
         "term_as_written": "وتشمل",
         "definition_text": "المراعي، والغابات، والمنتزهات الوطنية والبرية والجيولوجية، والمناطق الرطبة، والمناطق السهلية، والمناطق الرملية (الكثبان)، والمناطق الجبلية، والوديان، والمناطق الساحلية، والجزر.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_noise",
+        "article_number": 1,
+        "term_as_written": "وتشمل",
+        "definition_text": "المناطق المحمية، والمنتزهات، والغابات، والأراضي الرطبة، والمناطق ذات الأهمية للطيور، والمانجروف، والمواقع ذات المناظر الطبيعية، ومناطق مساقط وتجمعات المياه وجريانها، وشواطئ البحر، والممرات المائية، وطبقات المياه الجوفية، أو أي منطقة/ مناطق يتم تحديدها أو إعلانها من قبل الدولة أو الوزارة أو المراكز الوطنية للبيئة بأنها مناطق حساسة بيئيا.",
+        "source_record_id": "environmental-noise-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
