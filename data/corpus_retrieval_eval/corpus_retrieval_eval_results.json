@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 525,
-  "top1_hits": 490,
-  "top3_hits": 512,
-  "top5_hits": 519,
-  "top1_accuracy": 0.9333,
-  "top3_accuracy": 0.9752,
+  "total_queries": 527,
+  "top1_hits": 491,
+  "top3_hits": 514,
+  "top5_hits": 521,
+  "top1_accuracy": 0.9317,
+  "top3_accuracy": 0.9753,
   "top5_accuracy": 0.9886,
-  "mrr_at_5": 0.9564,
+  "mrr_at_5": 0.9553,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -16213,25 +16213,25 @@
     "law_component": "regulation",
     "article_number": 4
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 3,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
     {
+     "record_id": "hospitality-facility-reg-llm-001",
+     "article_number": 1,
+     "score": 33
+    },
+    {
+     "record_id": "hospitality-facility-reg-llm-023",
+     "article_number": 23,
+     "score": 33
+    },
+    {
      "record_id": "tourism-travel-services-reg-llm-004",
      "article_number": 4,
      "score": 32
-    },
-    {
-     "record_id": "hospitality-mgmt-reg-llm-004",
-     "article_number": 4,
-     "score": 31
-    },
-    {
-     "record_id": "tourism-travel-services-reg-llm-024",
-     "article_number": 24,
-     "score": 30
     }
    ]
   },
@@ -16294,6 +16294,68 @@
      "record_id": "hospitality-mgmt-reg-llm-015",
      "article_number": 15,
      "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "hfr-001",
+   "query_ar": "لا يجوز ممارسة تشغيل نشاط مرفق الضيافة السياحي دون الحصول على الترخيص أو بعد انتهائه أو إلغائه أو خلال فترة تعليقه",
+   "category": "provision",
+   "gold": {
+    "corpus": "hospitality_facility",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "hospitality-facility-reg-llm-003",
+     "article_number": 3,
+     "score": 58
+    },
+    {
+     "record_id": "hospitality-facility-reg-llm-011",
+     "article_number": 11,
+     "score": 41
+    },
+    {
+     "record_id": "hospitality-facility-reg-llm-002",
+     "article_number": 2,
+     "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "hfr-002",
+   "query_ar": "التصنيف آلية تقييم مرفق الضيافة السياحي ومستوى الخدمة المقدمة فيه إلى أنواع وفئات أو درجات محددة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "hospitality_facility",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "hospitality-facility-reg-llm-001",
+     "article_number": 1,
+     "score": 47
+    },
+    {
+     "record_id": "hospitality-facility-reg-llm-012",
+     "article_number": 12,
+     "score": 42
+    },
+    {
+     "record_id": "hospitality-facility-reg-llm-023",
+     "article_number": 23,
+     "score": 40
     }
    ]
   }

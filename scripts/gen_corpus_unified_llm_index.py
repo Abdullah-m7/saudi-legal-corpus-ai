@@ -324,6 +324,8 @@ LAYERS = [
      "tourism_travel_services", "regulation"),
     ("data/hospitality_mgmt_reg_arabic_legal_llm/hospitality_mgmt_reg_legal_llm_001_024.json",
      "hospitality_mgmt", "regulation"),
+    ("data/hospitality_facility_reg_arabic_legal_llm/hospitality_facility_reg_legal_llm_001_036.json",
+     "hospitality_facility", "regulation"),
     ("data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json",
      "standards_quality", "regulation"),
     ("data/disability_rights_regulation_arabic_legal_llm/disability_rights_regulation_legal_llm_001_045.json",

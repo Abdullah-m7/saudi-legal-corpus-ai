@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 294,
-  "total_terms": 1935,
-  "total_definitions": 3373,
-  "tracks_with_definitions_article_parsed": 217,
+  "total_tracks_in_registry": 295,
+  "total_terms": 1937,
+  "total_definitions": 3384,
+  "tracks_with_definitions_article_parsed": 218,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -4556,6 +4556,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدرها الوزارة تمكن صاحبها من ممارسة نشاط تشغيل مرفق الضيافة السياحي.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "hospitality_mgmt",
         "article_number": 1,
         "term_as_written": "الترخيص",
@@ -5101,6 +5109,14 @@
         "term_as_written": "التصنيف",
         "definition_text": "تقويم إمكانيات المقاول: المالية، والفنية، والإدارية، والتنفيذية؛ لوضعه في المجال والنشاط والدرجة المستحقة وفقا لأحكام النظام واللائحة.",
         "source_record_id": "contractors-classification-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "التصنيف",
+        "definition_text": "آلية تقييم مرفق الضيافة السياحي ومستوى الخدمة المقدمة فيه، إلى أنواع وفئات أو درجات محددة.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -8791,6 +8807,14 @@
       }
     ],
     "السائح": [
+      {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "السائح",
+        "definition_text": "الشخص الطبيعي الذي يبيت لغرض السياحة مدة لا تقل عن ليلة خارج مكان إقامته المعتادة بصورة نظامية من أجل السياحة، أو يستفيد من واحدة -أو أكثر- من خدمات الأنشطة السياحية والتكميلية والمتخصصة.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "tourism_law",
         "article_number": 1,
@@ -12658,6 +12682,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة مرفق الضيافة السياحي.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "hospitality_mgmt",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -16101,6 +16133,14 @@
         "term_as_written": "المرخص له",
         "definition_text": "شخص حاصل على ترخيص وفقا لأحكام هذه اللائحة.",
         "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "كل شخصية ذات صفة اعتبارية حاصلة على ترخيص من الوزارة وفقا للنظام واللائحة.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -21012,6 +21052,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام السياحة.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "hospitality_mgmt",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -22840,6 +22888,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة السياحة.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "hospitality_mgmt",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -23529,6 +23585,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الصحة .",
         "source_record_id": "health-system-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير السياحة.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -26624,6 +26688,16 @@
         "extraction_method": "entries_only_no_intro"
       }
     ],
+    "شهادة التصنيف": [
+      {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "شهادة التصنيف",
+        "definition_text": "وثيقة محددة المدة، تصدرها الوزارة باسم مرفق الضيافة السياحي، بناء على معايير التصنيف.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "شهادة الحلال": [
       {
         "track_id": "food_regulation",
@@ -28956,6 +29030,14 @@
     ],
     "مرفق الضيافة السياحي": [
       {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "مرفق الضيافة السياحي",
+        "definition_text": "كل مكان يوفر خدمة المبيت للسائح مقابل أجر، يعمل بشكل دائم أو مؤقت.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "hospitality_mgmt",
         "article_number": 1,
         "term_as_written": "مرفق الضيافة السياحي",
@@ -29439,6 +29521,16 @@
         "term_as_written": "معاهدة مونتريال",
         "definition_text": "اتفاقية توحيد بعض قواعد النقل الجوي الدولي المحررة في مونتريال في 28 / 5 / 1999م.",
         "source_record_id": "civil-aviation-law-llm-art-133",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "معايير التصنيف": [
+      {
+        "track_id": "hospitality_facility",
+        "article_number": 1,
+        "term_as_written": "معايير التصنيف",
+        "definition_text": "الاشتراطات الواجب توافرها في مرفق الضيافة السياحي، لتحديد نوعه وفئته أو درجته.",
+        "source_record_id": "hospitality-facility-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

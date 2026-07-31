@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 294,
+  "total_tracks": 295,
   "known_source_staleness_risk_count": 17,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -2982,6 +2982,25 @@
         "uqn.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "hospitality_facility",
+      "display_name_en": "Regulation of the Tourism Hospitality Facility",
+      "display_name_ar": "لائحة مرفق الضيافة السياحي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='MT_OFFICIAL_PDF_EMBEDS_SIGNED_DECISION_LETTER_VISUALLY_READ': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Ministerial Decision No. (2289), dated 19/5/1444H, signed by the Minister of Tourism Ahmed Al-Khateeb, issued under the Tourism Law (Royal Decree M/18, 26/1/1444H, track_id: tourism_law). The decision number/date is printed directly on the official mt.gov.sa-hosted PDF's own cover page, and independently confirmed by a scanned image of the SIGNED decision letter itself on the PDF's own page 2 (reference 25.0, Minister's Office) -- a primary-document capture, not a third-party citation. The founding Royal Decree cited in the decision's own preamble matches this corpus's own tourism_law track exactly.",
+      "registry_source_url": null,
+      "official_source_file": "sources/hospitality_facility/official_source/hospitality_facility_reg_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "boe.gov.sa",
+        "laws.boe.gov.sa",
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
