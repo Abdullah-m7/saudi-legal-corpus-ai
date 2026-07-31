@@ -238,6 +238,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_environmental_noise_reg_track.py",
     "scripts/gen_environmental_protected_areas_reg_track.py",
     "scripts/gen_environmental_emergency_response_reg_track.py",
+    "scripts/gen_product_safety_regulation_track.py",
     "scripts/gen_standards_quality_regulation_track.py",
     "scripts/gen_disability_rights_regulation_track.py",
     "scripts/gen_anti_smoking_regulation_track.py",

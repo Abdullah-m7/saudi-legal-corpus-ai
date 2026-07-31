@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 299,
-  "total_terms": 1959,
-  "total_definitions": 3456,
-  "tracks_with_definitions_article_parsed": 222,
+  "total_tracks_in_registry": 300,
+  "total_terms": 1978,
+  "total_definitions": 3478,
+  "tracks_with_definitions_article_parsed": 223,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -3218,6 +3218,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الاختبار": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "الاختبار",
+        "definition_text": "عملية فنية لتحديد خاصية واحدة أو أكثر من خصائص المنتج وفقا لإجراء معين.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الاختراع": [
       {
         "track_id": "patent_law",
@@ -6402,6 +6412,14 @@
         "definition_text": "الجهات المسؤولة عن مراقبة الأسواق وفقا لأحكام النظام واللوائح.",
         "source_record_id": "product-safety-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات المختصة",
+        "definition_text": "الجهات الحكومية التي تمارس اختصاصات ذات صلة بسلامة المنتجات والرقابة على السوق.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الجهات المقبولة": [
@@ -8331,6 +8349,16 @@
         "term_as_written": "الذخيرة",
         "definition_text": "المقذوفات التي تنطلق من الأسلحة نتيجة الدفع الانفجاري أو الهوائي أو الدفع بالنابضات.",
         "source_record_id": "weapons-ammunition-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الذكاء الاصطناعي": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "الذكاء الاصطناعي",
+        "definition_text": "أنظمة تستخدم تقنيات قادرة على جمع البيانات واستخدامها للتنبؤ أو التوصية أو اتخاذ القرار بمستويات متفاوتة من التحكم الذاتي، واختيار أفضل إجراء لتحقيق أهداف محددة.",
+        "source_record_id": "product-safety-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11878,6 +11906,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الفحص": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "الفحص",
+        "definition_text": "فحص المنتج وتحديد مدى مطابقته للمتطلبات المحددة أو المتطلبات العامة بناء على الرأي الفني المختص.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الفحص الطبي المهني": [
       {
         "track_id": "high_risk_professions_regulation",
@@ -14634,6 +14672,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المتجر الإلكتروني": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "المتجر الإلكتروني",
+        "definition_text": "نشاط ذو طابع اقتصادي يباشره- كليا أو جزئيا- مشغل اقتصادي عبر وسيلة إلكترونية بغرض بيع منتجات إلى المستهلك أو الإعلان عنها أو تبادل البيانات الخاصة بها.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المتحصلات": [
       {
         "track_id": "aml_law",
@@ -15157,6 +15205,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "product-safety-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -22676,6 +22732,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "railway_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -24494,6 +24558,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الوسائل الإلكترونية": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "الوسائل الإلكترونية",
+        "definition_text": "أي من وسائل تقنية الاتصالات والمعلومات، بما في ذلك الوسائل الكهربائية والكهرومغناطيسية والبصرية والضوئية والرقمية.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الوساطة": [
       {
         "track_id": "anti_narcotics_law",
@@ -26002,6 +26076,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "خطة الاختبار": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "خطة الاختبار",
+        "definition_text": "وثيقة تضم قائمة بالمتطلبات التي سيجري تقييمها أثناء مسح السوق أو إجراءات مراقبة السوق.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "خطة التخصيص": [
       {
         "track_id": "privatization_regulation",
@@ -26704,6 +26788,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "سحب العينات": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "سحب العينات",
+        "definition_text": "انتقاء أو جمع عينة أو أكثر من المنتج وفقا لإجراء معين.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "سحب العينات التشغيلية": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "سحب العينات التشغيلية",
+        "definition_text": "الانتقاء غير الإحصائي لعينة أو أكثر من المنتج بغرض تقويم مدى مطابقته للمتطلبات المحددة.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "سحب المواصفة أو الوثيقة ذات الصلة": [
       {
         "track_id": "standards_quality_law",
@@ -26973,6 +27077,16 @@
         "term_as_written": "سيطرة",
         "definition_text": "قدرة شخص على التحكم في قرارات أو إدارة شخص آخر؛ سواء بصورة مباشرة من خلال امتلاك الأسهم أو الأصول أو أي سندات صادرة عنه، أو بصورة غير مباشرة من خلال أي اتفاق، أو ترتيب أو خلافه كالإقراض أو خيارات الأسهم وغير ذلك.",
         "source_record_id": "electricity-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شارة المطابقة": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "شارة المطابقة",
+        "definition_text": "علامة توضع على المنتج لبيان مطابقته لجميع المتطلبات الواردة في اللوائح الفنية التي تتطلب وضع تلك العلامة.",
+        "source_record_id": "product-safety-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -27727,6 +27841,16 @@
         "term_as_written": "طوارئ وأزمات المياه",
         "definition_text": "الانقطاع المفاجئ للمياه أو النقص الشديد في كمياتها المتوفرة مقابل الطلب الفعلي لتجمع سكني أو تجاري أو صناعي أو زراعي واحد على الأقل، أو تلوث المصدر المستخدم لتلبية احتياجاته.",
         "source_record_id": "water-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "ظروف الاستخدام العادية": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "ظروف الاستخدام العادية",
+        "definition_text": "استخدام منتج وفقا للمعلومات المقدمة من المشغل الاقتصادي.",
+        "source_record_id": "product-safety-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -28736,6 +28860,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "لجنة سلامة المنتجات ومراقبتها": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "لجنة سلامة المنتجات ومراقبتها",
+        "definition_text": "اللجنة المنصوص عليها في الفقرة (1) من البند خامسا من قرار مجلس الوزراء رقم (93) وتاريخ 24 /1/ 1446هـ.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "لجنة قيد المقيمين": [
       {
         "track_id": "accredited_valuers_law",
@@ -28806,6 +28940,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مؤشر التقدم": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "مؤشر التقدم",
+        "definition_text": "مؤشر يبين مدى التقدم المحقق في مسح السوق أو إجراءات مراقبة السوق في ضوء الأهداف الواردة في خطة مراقبة السوق.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مؤشر المخرجات": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "مؤشر المخرجات",
+        "definition_text": "مؤشر يوضح النتائج النهائية لمسح السوق أو إجراءات مراقبة السوق.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مؤشر المطابقة": [
       {
         "track_id": "product_safety_law",
@@ -28813,6 +28967,16 @@
         "term_as_written": "مؤشر المطابقة",
         "definition_text": "إجراء يحدد نسبة المنتجات المطابقة في الأسواق مع جميع الالتزامات المعمول بها والمتطلبات الأساسية.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مؤشر النتائج": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "مؤشر النتائج",
+        "definition_text": "مؤشر يوضح مدى إنجاز أهداف معينة من الأهداف الواردة في خطة مراقبة السوق بمرور الوقت.",
+        "source_record_id": "product-safety-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -29910,6 +30074,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مسح السوق": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "مسح السوق",
+        "definition_text": "تقييم المنتجات التي توضع أو تعرض في السوق لتقييم مدى توافقها مع المتطلبات المحددة؛ ويدخل في ذلك فحص العلامات، والتعليمات ودراسة الوثائق الفنية واختبار المنتجات.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مشتق": [
       {
         "track_id": "environmental_law",
@@ -30642,6 +30816,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "منتج يمثل خطورة": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "منتج يمثل خطورة",
+        "definition_text": "كل منتج يؤثر سلبا في سلامة المستهلك أو الممتلكات أو البيئة، بقدر يتجاوز الحدود المقبولة في ظروف الاستخدام العادية أو المتوقعة لاستخدام المنتج المعني.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "منتج يمثل خطورة كبيرة": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "منتج يمثل خطورة كبيرة",
+        "definition_text": "كل منتج يمثل خطورة -وفقا لتقييم المخاطر في الظروف العادية والمتوقعة لاستخدام المنتج- على نحو يستدعي أن تتطلب مستويات الخطورة العادية والخطورة الكبيرة تدخلا سريعا من الجهات المختصة بمراقبة السوق، بما في ذلك الحالات التي تكون فيها آثار الخطورة غامضة أو عاجلة.",
+        "source_record_id": "product-safety-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "منتجات الثروة الحيوانية": [
       {
         "track_id": "agriculture_regulation",
@@ -30747,6 +30941,16 @@
         "term_as_written": "منصة أبشر",
         "definition_text": "هو نظام إلكتروني لتنفيذ الخدمات المقدمة من الوزارة ومن ضمنها خدمات إدارات الجوازات.",
         "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "منصة إلكترونية": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "منصة إلكترونية",
+        "definition_text": "أي برمجيات، من بينها أي موقع شبكي أو جزء منه، والتطبيقات، بما يشمل تطبيقات الجوال التي تتيح للمستخدمين الحصول على منتجات المشغل الاقتصادي أو خدماته من خلال شبكة الإنترنت.",
+        "source_record_id": "product-safety-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -31225,6 +31429,16 @@
         "term_as_written": "نظام المدفوعات الوطني",
         "definition_text": "نظام المدفوعات الذي يملكه أو يشغله البنك المركزي بشكل مباشر أو غير مباشر.",
         "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "نظام راصد": [
+      {
+        "track_id": "product_safety_regulation",
+        "article_number": 1,
+        "term_as_written": "نظام راصد",
+        "definition_text": "نظام إلكتروني يهدف إلى رصد المنتجات غير الآمنة وتسهيل تبادل المعلومات مع الجهات المختصة ونشر الوعي بين المستهلكين حيال خطر المنتجات غير الآمنة.",
+        "source_record_id": "product-safety-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

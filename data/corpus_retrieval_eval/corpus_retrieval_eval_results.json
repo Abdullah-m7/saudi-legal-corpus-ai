@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 535,
-  "top1_hits": 498,
-  "top3_hits": 522,
-  "top5_hits": 529,
-  "top1_accuracy": 0.9308,
-  "top3_accuracy": 0.9757,
+  "total_queries": 537,
+  "top1_hits": 500,
+  "top3_hits": 524,
+  "top5_hits": 531,
+  "top1_accuracy": 0.9311,
+  "top3_accuracy": 0.9758,
   "top5_accuracy": 0.9888,
-  "mrr_at_5": 0.955,
+  "mrr_at_5": 0.9552,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -7239,8 +7239,8 @@
      "score": 35
     },
     {
-     "record_id": "credit-information-regulation-llm-art-002",
-     "article_number": 2,
+     "record_id": "product-safety-regulation-llm-056",
+     "article_number": 56,
      "score": 27
     }
    ]
@@ -12380,14 +12380,14 @@
      "score": 40
     },
     {
-     "record_id": "gtpl-law-llm-art-083",
-     "article_number": 83,
-     "score": 12
+     "record_id": "product-safety-regulation-llm-001",
+     "article_number": 1,
+     "score": 15
     },
     {
-     "record_id": "press-regulation-llm-art-052",
-     "article_number": 52,
-     "score": 12
+     "record_id": "product-safety-regulation-llm-040",
+     "article_number": 40,
+     "score": 13
     }
    ]
   },
@@ -16604,6 +16604,68 @@
      "record_id": "environmental-inspection-audit-reg-llm-002",
      "article_number": 2,
      "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "prodsafe-reg-001",
+   "query_ar": "تشمل المنتجات الواردة في النظام واللائحة جميع الأصناف التي توضع أو تعرض في الأسواق أو من خلال الوسائل الإلكترونية سواء كانت جديدة أو مستخدمة أو سبق إصلاحها أو تجديدها",
+   "category": "definitional",
+   "gold": {
+    "corpus": "product_safety",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "product-safety-regulation-llm-002",
+     "article_number": 2,
+     "score": 52
+    },
+    {
+     "record_id": "product-safety-regulation-llm-003",
+     "article_number": 3,
+     "score": 39
+    },
+    {
+     "record_id": "product-safety-regulation-llm-004",
+     "article_number": 4,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "prodsafe-reg-002",
+   "query_ar": "يتولى المحافظ أو من ينيبه توقيع العقوبات الواردة في الجدول رقم (1) على كل من يخالف أحكام النظام واللوائح بناء على توصية من المفتش وتتولى لجنة الفصل في مخالفات النظام تطبيق العقوبات الواردة في الجدول رقم (2)",
+   "category": "provision",
+   "gold": {
+    "corpus": "product_safety",
+    "law_component": "regulation",
+    "article_number": 72
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "product-safety-regulation-llm-072",
+     "article_number": 72,
+     "score": 51
+    },
+    {
+     "record_id": "maritime-commercial-law-llm-art-388",
+     "article_number": 388,
+     "score": 29
+    },
+    {
+     "record_id": "oa-llm-companies-art-272",
+     "article_number": 272,
+     "score": 29
     }
    ]
   }

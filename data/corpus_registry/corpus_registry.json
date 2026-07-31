@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 16012,
+  "total_primary_arabic_governing_records": 16087,
   "total_reference_records": 614,
-  "total_registry_counted_records": 16907,
-  "total_tracks": 299,
+  "total_registry_counted_records": 16982,
+  "total_tracks": 300,
   "tracks": [
     {
       "boundaries": {
@@ -9428,6 +9428,55 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
+        "sources/product_safety/regulation/official_source/product_safety_regulation_official_source.json",
+        "sources/product_safety/regulation/verified/product_safety_regulation_verified_records.jsonl",
+        "data/product_safety_regulation_arabic_legal_llm/product_safety_regulation_legal_llm_001_075.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام سلامة المنتجات",
+      "display_name_en": "Executive Regulation of the Product Safety Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/product_safety_regulation_arabic_legal_llm/product_safety_regulation_legal_llm_001_075.json",
+          "governing": true,
+          "record_count": 75,
+          "status": "complete"
+        }
+      },
+      "notes": "Executive Regulation of the Product Safety Law «اللائحة التنفيذية لنظام سلامة المنتجات» — companion regulation to the already-ingested base Product Safety Law track (Royal Decree M/36, 29/1/1446H, track_id: product_safety_law), issued by the Saudi Standards, Metrology and Quality Organization (SASO), the same body administering the base law. **75 records: 75 numbered articles across 7 أبواب** (الأول: التعريفات، م1؛ الثاني: أحكام عامة، م2-4؛ الثالث: التزامات السلامة العامة، م5-40؛ الرابع: التزامات السلامة الخاصة، م41-47؛ الخامس: الجهات المقبولة لتقويم المطابقة، م48-55؛ السادس: مسؤوليات المشغل الاقتصادي، م56-63؛ السابع: الإجراءات التصحيحية والعقوبات، م64-75), NO separate appendix records. **ALL 75 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own HTML rendering of the regulation (uqn.gov.sa/details?p=26781, published 1446-5-20H / 22/11/2024G) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. Every article ordinal (1..75) was cross-checked against a generated Arabic feminine-ordinal sequence with zero mismatches -- strong internal-consistency evidence the gazette text is complete and correctly ordered. Article 72 references 'الجدول رقم (1)' and 'الجدول رقم (2)' (penalty tables) by name, but neither table's data is present in this gazette page -- NOT fabricated, disclosed as a known gap (product_safety_regulation_tables_1_2_not_found). The PDF download link shown on the same gazette page is broken publisher-side (product_safety_regulation_pdf_link_broken). **DECISION-NUMBER DISCREPANCY DISCLOSED**: the sibling product_safety_law track's notes carry an earlier, unconfirmed reference to 'Minister of Commerce Decision No. 097, 18/5/1446H' for this regulation's adoption -- likely a mix-up with the neighboring standards_quality_regulation track's confirmed Decision No. 098 (18/5/1446H, a different SASO-family regulation under the same joint decree). This track instead uses SASO Board of Directors Decision No. (203), dated 15/11/2024G, as confirmed directly in the gazette text itself; not reconciled against a third source this pass (product_safety_regulation_decision_number_divergence_vs_registry_note). **NO SUPERSESSION EDGE MODELED** — fresh issuance, no named-predecessor repeal clause. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_PDF_LINK_BROKEN",
+      "record_counts": {
+        "arabic_articles": 75,
+        "legal_status_breakdown": {
+          "اصلية": 75,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 75
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Executive Regulation of the Product Safety Law, issued by the Saudi Standards, Metrology and Quality Organization (SASO) under the Product Safety Law (Royal Decree M/36, 29/1/1446H, track_id: product_safety_law), per Council of Ministers Resolution No. (93), 24/1/1446H, which required SASO to issue executive regulations within 90 days of the law's gazette publication. Approved by SASO Board of Directors Decision No. (203), dated 15/11/2024G. Full text fetched directly from the Umm Al-Qura Official Gazette's own HTML rendering (uqn.gov.sa/details?p=26781), published 1446-5-20H (22/11/2024G). The PDF download link presented on that same gazette page is broken publisher-side (duplicated filename in the query string, returns a short non-PDF error string).",
+      "status": "complete",
+      "track_id": "product_safety_regulation",
+      "validator_targets": [
+        "make product-safety-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
         "sources/standards_quality_regulation/law/official_source/standards_quality_regulation_official_source.json",
         "sources/standards_quality_regulation/law/verified/standards_quality_regulation_verified_records.jsonl",
         "data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json"
@@ -14565,7 +14614,7 @@
       "private_healthcare_institutions": 35,
       "private_schools": 24,
       "privatization": 214,
-      "product_safety": 37,
+      "product_safety": 112,
       "protection_from_abuse": 31,
       "public_prosecution": 30,
       "qismah": 48,
@@ -14622,7 +14671,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 15843,
+    "total_records": 15918,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

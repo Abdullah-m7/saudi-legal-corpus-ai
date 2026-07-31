@@ -334,6 +334,8 @@ LAYERS = [
      "environmental_protected_areas", "regulation"),
     ("data/environmental_emergency_response_reg_arabic_legal_llm/environmental_emergency_response_reg_legal_llm_001_012.json",
      "environmental_emergency_response", "regulation"),
+    ("data/product_safety_regulation_arabic_legal_llm/product_safety_regulation_legal_llm_001_075.json",
+     "product_safety", "regulation"),
     ("data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json",
      "standards_quality", "regulation"),
     ("data/disability_rights_regulation_arabic_legal_llm/disability_rights_regulation_legal_llm_001_045.json",

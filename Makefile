@@ -311,6 +311,7 @@ export PYTHONPATH := src:$(PYTHONPATH)
         environmental-noise-reg-track-validate \
         environmental-protected-areas-reg-track-validate \
         environmental-emergency-response-reg-track-validate \
+        product-safety-regulation-track-validate \
         standards-quality-regulation-track-validate \
         disability-rights-regulation-track-validate \
         anti-smoking-regulation-track-validate \
@@ -1770,6 +1771,9 @@ environmental-protected-areas-reg-track-validate:
 
 environmental-emergency-response-reg-track-validate:
 	$(PY) scripts/validate_environmental_emergency_response_reg_track.py
+
+product-safety-regulation-track-validate:
+	$(PY) scripts/validate_product_safety_regulation_track.py
 
 standards-quality-regulation-track-validate:
 	$(PY) scripts/validate_standards_quality_regulation_track.py
