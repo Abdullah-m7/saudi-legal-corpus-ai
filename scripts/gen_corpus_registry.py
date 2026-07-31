@@ -229,6 +229,7 @@ STANDARDS_QUALITY_LAW_LLM = os.path.join(ROOT, "data", "standards_quality_arabic
 DISABILITY_RIGHTS_LAW_LLM = os.path.join(ROOT, "data", "disability_rights_arabic_legal_llm", "disability_rights_law_legal_llm_001_033.json")
 TOURISM_LAW_LLM = os.path.join(ROOT, "data", "tourism_arabic_legal_llm", "tourism_law_legal_llm_001_019.json")
 TOURISM_TRAVEL_SERVICES_REG_LLM = os.path.join(ROOT, "data", "tourism_travel_services_reg_arabic_legal_llm", "tourism_travel_services_reg_legal_llm_001_032.json")
+HOSPITALITY_MGMT_REG_LLM = os.path.join(ROOT, "data", "hospitality_mgmt_reg_arabic_legal_llm", "hospitality_mgmt_reg_legal_llm_001_024.json")
 STANDARDS_QUALITY_REGULATION_LLM = os.path.join(ROOT, "data", "standards_quality_regulation_arabic_legal_llm", "standards_quality_regulation_legal_llm_001_023.json")
 DISABILITY_RIGHTS_REGULATION_LLM = os.path.join(ROOT, "data", "disability_rights_regulation_arabic_legal_llm", "disability_rights_regulation_legal_llm_001_045.json")
 ANTI_SMOKING_REGULATION_LLM = os.path.join(ROOT, "data", "anti_smoking_regulation_arabic_legal_llm", "anti_smoking_regulation_legal_llm_001_020.json")
@@ -553,6 +554,7 @@ def main() -> int:
     disability_rights_law_llm = _load_json(DISABILITY_RIGHTS_LAW_LLM)
     tourism_law_llm = _load_json(TOURISM_LAW_LLM)
     tourism_travel_services_reg_llm = _load_json(TOURISM_TRAVEL_SERVICES_REG_LLM)
+    hospitality_mgmt_reg_llm = _load_json(HOSPITALITY_MGMT_REG_LLM)
     standards_quality_regulation_llm = _load_json(STANDARDS_QUALITY_REGULATION_LLM)
     disability_rights_regulation_llm = _load_json(DISABILITY_RIGHTS_REGULATION_LLM)
     anti_smoking_regulation_llm = _load_json(ANTI_SMOKING_REGULATION_LLM)
@@ -675,7 +677,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 293,
+        "total_tracks": 294,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -870,6 +872,7 @@ def main() -> int:
             + disability_rights_law_llm["record_count"]  # 33 Rights of Persons with Disabilities Law (Royal Decree M/27, 11/2/1445H) (TIER_3, laws.boe.gov.sa has a dedicated lawId page but was unreachable this pass, web.archive.org confirmed egress-blocked and not bypassed, PRIMARY nezams.com cross-verified verbatim article-by-article against qanoonsa.com, all 33 اصلية across 5 أبواب, no amendment since enactment, CONFIRMED named-predecessor repeal of the old نظام رعاية المعوقين (M/37, 23/9/1421H) via Article 32, triple-corroborated including from CoM Resolution 110's own recitals, see track notes)
             + tourism_law_llm["record_count"]  # 19 Tourism Law (Royal Decree M/18, 26/1/1444H) (TIER_2, laws.boe.gov.sa has a dedicated lawId page but was unreachable this pass, web.archive.org refused/403 not bypassed, ORIGINAL full text from an official Ministry of Tourism PDF cross-checked verbatim against nezams.com and structurally cross-checked against the official BOE English translation, all 19 اصلية, flat structure/no chapters, CONFIRMED named-predecessor repeal of the old Tourism Law (M/2, 9/1/1436H) via Article 18, double-confirmed from both directions, see track notes)
             + tourism_travel_services_reg_llm["record_count"]  # 32 Regulation of Travel and Tourism Services (Ministerial Decision 2290, 19/5/1444H) (effectively TIER_1, official PDF embeds a scanned image of the signed decision letter itself on its own page 2, founding Royal Decree citation M/18 26/1/1444H matches this corpus's own tourism_law track, 32 اصلية = 31 articles across 6 chapters + fee-table appendix, see track notes)
+            + hospitality_mgmt_reg_llm["record_count"]  # 24 Management of Hospitality Facilities Regulation (Ministerial Decision 2293, 19/5/1444H) (effectively TIER_1, decision number/date printed on the official PDF's own cover page plus a scanned signed decision letter on page 2, founding Royal Decree citation M/18 26/1/1444H matches this corpus's own tourism_law track, 24 اصلية = 23 articles across 5 chapters + fee-table appendix, see track notes)
             + standards_quality_regulation_llm["record_count"]  # 23 Implementing Regulation of the Standards and Quality Law (Minister of Commerce Decision No. 098, 18/5/1446H) (TIER_1, PRIMARY x2 independent -- SASO's own official site (issuing/administering authority) + Umm al-Qura Gazette's own API, both fetched directly and agreeing on decision number/date; cross-verified against qanoonsa.com SECONDARY for full text, cosmetic numeral-style difference only, all 23 اصلية across 7 أبواب, NO predecessor regulation (first Implementing Regulation under this law), see track notes)
             + disability_rights_regulation_llm["record_count"]  # 45 Implementing Regulation of the Rights of Persons with Disabilities Law (Authority Board Resolution No. 26, 29 Shawwal 1445H) (TIER_2, PRIMARY uqn.gov.sa (Umm al-Qura Gazette portal itself) fetched directly as full HTML text; SECONDARY qanoonsa.com cross-verified article-by-article (15/45 byte-identical, remainder cosmetic differences only); laws.boe.gov.sa unreachable this pass, all 45 اصلية across 12 فصول (a genuine 12-vs-11 chapter-count discrepancy vs a third source is disclosed, not silently resolved), NO amendment found, see track notes)
             + anti_smoking_regulation_llm["record_count"]  # 17 Implementing Regulation of the Anti-Smoking Law (11 اصلية, 6 معدلة -- Articles 2,3,5,6,7,8) (TIER_2, FOUNDING RESOLUTION NUMBER/DATE NOT CONFIRMED this pass -- a prior pass's assumption that Ministerial Resolution 797557 (1/5/1441H) was the founding issuance is CORRECTED here: independently re-verified as a real, well-corroborated AMENDMENT resolution instead, whose reported content matches the Article 7 change found by diffing; PRIMARY official MOH PDF (3rd edition, 2019, vision-read) cross-checked against a 2017 WHO/EMRO-hosted edition to detect the 6 amended articles; laws.boe.gov.sa has no dedicated lawId page at all; Articles 14/15/17 intentionally absent (no regulation content in either edition), see track notes)
@@ -1157,6 +1160,7 @@ def main() -> int:
             + disability_rights_law_llm["record_count"]
             + tourism_law_llm["record_count"]
             + tourism_travel_services_reg_llm["record_count"]
+            + hospitality_mgmt_reg_llm["record_count"]
             + standards_quality_regulation_llm["record_count"]
             + disability_rights_regulation_llm["record_count"]
             + anti_smoking_regulation_llm["record_count"]
@@ -6817,6 +6821,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Regulation of Travel and Tourism Services «لائحة خدمات السفر والسياحة» — one of ten regulations the Minister of Tourism announced together under the Tourism Law (argaam.com article 1611138); none of the ten was previously in this corpus. Ministerial Decision No. (2290), dated 19/5/1444H. **32 records = 31 numbered articles across 6 chapters (أحكام تمهيدية، الترخيص، الإعفاءات، الضمانات المالية، الالتزامات المستمرة، أحكام عامة) + 1 appendix (جدول المقابل المالي, a two-part fee table), ALL 32 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: effectively TIER_1** — the official mt.gov.sa PDF embeds a scanned image of the SIGNED decision letter itself on its own page 2 (Minister's Office reference 25.0, the Minister's own signature) — a primary-document capture, not a third-party citation. The founding Royal Decree cited in the decision's own preamble (M/18, 26/1/1444H) independently matches this corpus's own tourism_law track exactly. Read visually page-by-page (170dpi, 30 pages) because the automated pypdf text layer garbles Article 1's two-column definitions layout (term displayed after its own definition). **NO SUPERSESSION EDGE MODELED** — fresh issuance, no named-predecessor repeal clause. Disclosed: the exact Umm al-Qura Gazette publication date (governing this regulation's Article 31 effective date) was not independently confirmed this pass (uqn.gov.sa returned HTTP 503); a sibling regulation from the same batch (لائحة الوجهات السياحية) was independently confirmed published 1/6/1444H, a plausible but unconfirmed proxy date for this one. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "hospitality_mgmt",
+                "display_name_ar": "لائحة إدارة مرافق الضيافة السياحية",
+                "display_name_en": "Management of Hospitality Facilities Regulation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MT_OFFICIAL_PDF_EMBEDS_SIGNED_DECISION_LETTER_VISUALLY_READ",
+                "source_authority": "Ministerial Decision No. (2293), dated 19/5/1444H, signed by the Minister of Tourism Ahmed Al-Khateeb, issued under the Tourism Law (Royal Decree M/18, 26/1/1444H, track_id: tourism_law). The decision number/date is printed directly on the official mt.gov.sa-hosted PDF's own cover page, and independently confirmed by a scanned image of the SIGNED decision letter itself on the PDF's own page 2 (reference 25.0, Minister's Office) -- a primary-document capture, not a third-party citation. The founding Royal Decree cited in the decision's own preamble matches this corpus's own tourism_law track exactly.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": hospitality_mgmt_reg_llm["record_count"],
+                    "data_path": "data/hospitality_mgmt_reg_arabic_legal_llm/hospitality_mgmt_reg_legal_llm_001_024.json"}},
+                "record_counts": {"arabic_articles": hospitality_mgmt_reg_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 24, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": hospitality_mgmt_reg_llm["record_count"]},
+                "data_paths": [
+                    "sources/hospitality_mgmt/official_source/hospitality_mgmt_reg_official_source.json",
+                    "sources/hospitality_mgmt/verified/hospitality_mgmt_reg_verified_records.jsonl",
+                    "data/hospitality_mgmt_reg_arabic_legal_llm/hospitality_mgmt_reg_legal_llm_001_024.json",
+                ],
+                "validator_targets": ["make hospitality-mgmt-reg-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Management of Hospitality Facilities Regulation «لائحة إدارة مرافق الضيافة السياحية» — second of ten regulations the Minister of Tourism announced together under the Tourism Law (argaam.com article 1611138), following tourism_travel_services (same batch, same decision date 19/5/1444H). Ministerial Decision No. (2293), dated 19/5/1444H. **24 records = 23 numbered articles across 5 chapters (أحكام تمهيدية، الترخيص، الإعفاءات، الالتزامات المستمرة، أحكام عامة) + 1 appendix (جدول المقابل المالي, a fee table), ALL 24 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: effectively TIER_1** — the decision number/date is printed directly on the official mt.gov.sa PDF's own cover page, and independently confirmed by a scanned image of the SIGNED decision letter itself on the PDF's own page 2 (Minister's Office reference 25.0, the Minister's own signature) — a primary-document capture, not a third-party citation. The founding Royal Decree cited in the decision's own preamble (M/18, 26/1/1444H) independently matches this corpus's own tourism_law track exactly. Read visually page-by-page (150dpi, 23 pages); this PDF uses a single-column layout (unlike the sibling tourism_travel_services PDF), so the automated pypdf text layer is comparatively less garbled here, but visual reading was still used to preserve this corpus's uniform verification methodology. The fee table carries the identical numeric values as the sibling tourism_travel_services fee table (same template used across this batch of regulations) — an internal consistency signal supporting transcription accuracy. **NO SUPERSESSION EDGE MODELED** — fresh issuance, no named-predecessor repeal clause. Disclosed: the exact Umm al-Qura Gazette publication date (governing this regulation's Article 23 effective date) was not independently confirmed this pass (uqn.gov.sa returned HTTP 503). Arabic governs; not legal advice.",
             },
             {
                 "track_id": "standards_quality_regulation",

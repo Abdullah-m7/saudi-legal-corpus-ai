@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 521,
-  "top1_hits": 486,
-  "top3_hits": 508,
-  "top5_hits": 515,
-  "top1_accuracy": 0.9328,
-  "top3_accuracy": 0.975,
-  "top5_accuracy": 0.9885,
-  "mrr_at_5": 0.956,
+  "total_queries": 525,
+  "top1_hits": 490,
+  "top3_hits": 512,
+  "top5_hits": 519,
+  "top1_accuracy": 0.9333,
+  "top3_accuracy": 0.9752,
+  "top5_accuracy": 0.9886,
+  "mrr_at_5": 0.9564,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -6676,14 +6676,14 @@
      "score": 45
     },
     {
+     "record_id": "tourism-travel-services-reg-llm-021",
+     "article_number": 21,
+     "score": 25
+    },
+    {
      "record_id": "oa-llm-companies-art-195",
      "article_number": 195,
      "score": 22
-    },
-    {
-     "record_id": "pdpl-reg-llm-art-037",
-     "article_number": 37,
-     "score": 20
     }
    ]
   },
@@ -16170,6 +16170,130 @@
      "record_id": "agriculture-regulation-llm-art-170",
      "article_number": 170,
      "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "ttsr-001",
+   "query_ar": "لا يجوز ممارسة نشاط خدمات السفر والسياحة دون الحصول على الترخيص أو بعد انتهائه أو إلغائه أو خلال فترة تعليقه",
+   "category": "provision",
+   "gold": {
+    "corpus": "tourism_travel_services",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tourism-travel-services-reg-llm-003",
+     "article_number": 3,
+     "score": 57
+    },
+    {
+     "record_id": "tourism-travel-services-reg-llm-010",
+     "article_number": 10,
+     "score": 41
+    },
+    {
+     "record_id": "tourism-travel-services-reg-llm-001",
+     "article_number": 1,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "ttsr-002",
+   "query_ar": "فئة حجز وحدات الضيافة ويقتصر على تقديم خدمات تسويق حجوزات وحدات مرفق الضيافة السياحي ومرفق الضيافة السياحي الخاص وإدارتها",
+   "category": "definitional",
+   "gold": {
+    "corpus": "tourism_travel_services",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tourism-travel-services-reg-llm-004",
+     "article_number": 4,
+     "score": 32
+    },
+    {
+     "record_id": "hospitality-mgmt-reg-llm-004",
+     "article_number": 4,
+     "score": 31
+    },
+    {
+     "record_id": "tourism-travel-services-reg-llm-024",
+     "article_number": 24,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "hmr-001",
+   "query_ar": "لا تجوز ممارسة نشاط إدارة مرافق الضيافة السياحية دون الحصول على الترخيص أو بعد انتهائه أو إلغائه أو خلال فترة تعليقه",
+   "category": "provision",
+   "gold": {
+    "corpus": "hospitality_mgmt",
+    "law_component": "regulation",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "hospitality-mgmt-reg-llm-003",
+     "article_number": 3,
+     "score": 63
+    },
+    {
+     "record_id": "hospitality-mgmt-reg-llm-011",
+     "article_number": 11,
+     "score": 46
+    },
+    {
+     "record_id": "hospitality-mgmt-reg-llm-015",
+     "article_number": 15,
+     "score": 46
+    }
+   ]
+  },
+  {
+   "query_id": "hmr-002",
+   "query_ar": "إدارة مرافق الضيافة السياحية تقديم الخدمات الداعمة لمشغل مرفق الضيافة السياحي ومرفق الضيافة السياحي الخاص بناء على خبرة فنية متخصصة في إدارة المرافق والخدمات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "hospitality_mgmt",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "hospitality-mgmt-reg-llm-001",
+     "article_number": 1,
+     "score": 60
+    },
+    {
+     "record_id": "hospitality-mgmt-reg-llm-004",
+     "article_number": 4,
+     "score": 44
+    },
+    {
+     "record_id": "hospitality-mgmt-reg-llm-015",
+     "article_number": 15,
+     "score": 43
     }
    ]
   }

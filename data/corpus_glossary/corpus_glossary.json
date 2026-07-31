@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 293,
-  "total_terms": 1933,
-  "total_definitions": 3359,
-  "tracks_with_definitions_article_parsed": 216,
+  "total_tracks_in_registry": 294,
+  "total_terms": 1935,
+  "total_definitions": 3373,
+  "tracks_with_definitions_article_parsed": 217,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -381,6 +381,14 @@
       }
     ],
     "أدلة الإجراءات": [
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "أدلة الإجراءات",
+        "definition_text": "وثيقة تتضمن التعليمات، أو الإرشادات، أو المعايير، أو غيرها لتحديد الإجراءات التفصيلية المكملة للائحة وفق أحكام النظام ولوائحه.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "tourism_travel_services",
         "article_number": 1,
@@ -971,6 +979,16 @@
         "term_as_written": "إدارة حماية حقوق المسافرين",
         "definition_text": "الإدارة المختصة في الهيئة بالإشراف على كافة المسائل المتعلقة بحماية حقوق المسافرين.",
         "source_record_id": "aviation-passenger-rights-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "إدارة مرافق الضيافة السياحية": [
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "إدارة مرافق الضيافة السياحية",
+        "definition_text": "تقديم الخدمات الداعمة لمشغل مرفق الضيافة السياحي ومرفق الضيافة السياحي الخاص، بناء على خبرة فنية متخصصة في إدارة المرافق والخدمات والمهارات التي تتوافق مع نوع المرفق وفئته أو درجة تصنيفه.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4535,6 +4553,14 @@
         "term_as_written": "الترخيص",
         "definition_text": "التصريح الذي تصدره المؤسسة لشركة ما بممارسة نشاط التمويل.",
         "source_record_id": "finance-companies-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدرها الوزارة تمكن صاحبها من ممارسة نشاط إدارة مرافق الضيافة السياحية.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11384,6 +11410,14 @@
     ],
     "العنوان الرسمي": [
       {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "العنوان الرسمي",
+        "definition_text": "العنوان المسجل في الترخيص، أو العنوان الوطني، أو وسائل التواصل الخاصة بممارس النشاط -بمختلف أنواعها- التي تحصلت عليه الوزارة.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "tourism_travel_services",
         "article_number": 1,
         "term_as_written": "العنوان الرسمي",
@@ -12621,6 +12655,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "hajj-umrah-external-pilgrims-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة إدارة مرافق الضيافة السياحية.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16062,6 +16104,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "كل شخصية ذات صفة اعتبارية حاصلة على ترخيص من الوزارة وفقا للنظام واللائحة.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "labor_saudization_mediation_rules",
         "article_number": 1,
         "term_as_written": "المرخص له",
@@ -18300,6 +18350,14 @@
     ],
     "المكتب الرئيسي": [
       {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "المكتب الرئيسي",
+        "definition_text": "مكتب إدارة مرافق الضيافة السياحية الذي يتم من خلاله إدارة المكتب الفرعي التابع للمرخص له وتنظيمه.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "tourism_travel_services",
         "article_number": 1,
         "term_as_written": "المكتب الرئيسي",
@@ -18319,6 +18377,14 @@
       }
     ],
     "المكتب الفرعي": [
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "المكتب الفرعي",
+        "definition_text": "مكتب إدارة مرافق الضيافة السياحية الذي يتبع إداريا وتنظيميا للمكتب الرئيسي.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "tourism_travel_services",
         "article_number": 1,
@@ -20946,6 +21012,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام السياحة.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_implementing_regulation",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -22766,6 +22840,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة السياحة.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "investment_implementing_regulation",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -23447,6 +23529,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الصحة .",
         "source_record_id": "health-system-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير السياحة.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -28866,6 +28956,14 @@
     ],
     "مرفق الضيافة السياحي": [
       {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "مرفق الضيافة السياحي",
+        "definition_text": "كل مكان يوفر خدمة المبيت للسائح مقابل أجر، يعمل بشكل دائم أو مؤقت.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "tourism_law",
         "article_number": 1,
         "term_as_written": "مرفق الضيافة السياحي",
@@ -28883,6 +28981,14 @@
       }
     ],
     "مرفق الضيافة السياحي الخاص": [
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "مرفق الضيافة السياحي الخاص",
+        "definition_text": "وحدة عقارية مؤثثة ومستقلة ومملوكة لفرد ومصرحة من الوزارة، وتوفر خدمة المبيت بشكل يومي للسائح مقابل أجر.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "tourism_travel_services",
         "article_number": 1,
@@ -29599,6 +29705,16 @@
         "term_as_written": "مكان العمل",
         "definition_text": "المكان المخصص للإقامة الدائمة أو الإقامة المؤقتة لصاحب العمل المنزلي.",
         "source_record_id": "domestic-labor-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مكتب إدارة مرافق الضيافة السياحية": [
+      {
+        "track_id": "hospitality_mgmt",
+        "article_number": 1,
+        "term_as_written": "مكتب إدارة مرافق الضيافة السياحية",
+        "definition_text": "المكان الذي يزاول من خلاله المرخص له نشاط إدارة مرافق الضيافة السياحية.",
+        "source_record_id": "hospitality-mgmt-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
