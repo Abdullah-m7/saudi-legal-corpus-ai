@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 533,
-  "top1_hits": 496,
-  "top3_hits": 520,
-  "top5_hits": 527,
-  "top1_accuracy": 0.9306,
-  "top3_accuracy": 0.9756,
-  "top5_accuracy": 0.9887,
-  "mrr_at_5": 0.9548,
+  "total_queries": 535,
+  "top1_hits": 498,
+  "top3_hits": 522,
+  "top5_hits": 529,
+  "top1_accuracy": 0.9308,
+  "top3_accuracy": 0.9757,
+  "top5_accuracy": 0.9888,
+  "mrr_at_5": 0.955,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -14090,9 +14090,9 @@
      "score": 30
     },
     {
-     "record_id": "associations-ngo-regulation-llm-art-080",
-     "article_number": 80,
-     "score": 17
+     "record_id": "environmental-emergency-response-reg-llm-004",
+     "article_number": 4,
+     "score": 21
     }
    ]
   },
@@ -16542,6 +16542,68 @@
      "record_id": "environmental-air-quality-reg-llm-art-002",
      "article_number": 2,
      "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "env-emrg-001",
+   "query_ar": "الطوارئ البيئية حادثة بيئية تشكل خطرا فوريا يتسبب أو يهدد بأضرار بيئية جسيمة أو تهديد الإنسان أو تدمير النظم البيئية أو موائل الكائنات الفطرية وتتطلب تدخلا عاجلا للحيلولة دون تفاقم الوضع وتحوله إلى كارثة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "environmental_emergency_response",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-emergency-response-reg-llm-001",
+     "article_number": 1,
+     "score": 51
+    },
+    {
+     "record_id": "environmental-emergency-response-reg-llm-012",
+     "article_number": 1,
+     "score": 25
+    },
+    {
+     "record_id": "environmental-emergency-response-reg-llm-007",
+     "article_number": 7,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "env-emrg-002",
+   "query_ar": "تسري أحكام هذه اللائحة على جميع الأشخاص بما فيهم الوسائط البحرية ضمن إقليم المملكة وتشمل المياه الداخلية والبحر الإقليمي والمنطقة المتاخمة والمنطقة الاقتصادية الخالصة والجرف القاري",
+   "category": "provision",
+   "gold": {
+    "corpus": "environmental_emergency_response",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-emergency-response-reg-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "environmental-air-quality-reg-llm-art-002",
+     "article_number": 2,
+     "score": 39
+    },
+    {
+     "record_id": "environmental-inspection-audit-reg-llm-002",
+     "article_number": 2,
+     "score": 39
     }
    ]
   }

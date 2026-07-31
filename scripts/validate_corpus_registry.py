@@ -245,6 +245,7 @@ REQUIRED_TRACK_IDS = [
     "tourist_visa",
     "environmental_noise",
     "environmental_protected_areas",
+    "environmental_emergency_response",
     "standards_quality_regulation",
     "disability_rights_regulation",
     "anti_smoking_regulation",
@@ -391,7 +392,7 @@ def main() -> int:
 
     # [3] 293 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 298 tracks present...", len(track_ids) == 298 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 299 tracks present...", len(track_ids) == 299 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3174,7 +3175,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 15831 records...", uix.get("total_records") == 15831,
+    check("[7g] unified retrieval index: 15843 records...", uix.get("total_records") == 15843,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3236,8 +3237,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 16000...",
-          registry.get("total_primary_arabic_governing_records") == 16000,
+    check("[19a] total_primary_arabic_governing_records == 16012...",
+          registry.get("total_primary_arabic_governing_records") == 16012,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3252,8 +3253,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 16895...",
-          registry.get("total_registry_counted_records") == 16895,
+    check("[19e] total_registry_counted_records == 16907...",
+          registry.get("total_registry_counted_records") == 16907,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3277,7 +3278,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"16000 + 614 + 281 = 16895")
+          f"16012 + 614 + 281 = 16907")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -3295,7 +3296,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 298 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 299 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

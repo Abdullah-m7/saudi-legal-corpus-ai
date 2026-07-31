@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 298,
-  "total_terms": 1949,
-  "total_definitions": 3440,
-  "tracks_with_definitions_article_parsed": 221,
+  "total_tracks_in_registry": 299,
+  "total_terms": 1959,
+  "total_definitions": 3456,
+  "tracks_with_definitions_article_parsed": 222,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -3246,6 +3246,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الاستجابة": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "الاستجابة",
+        "definition_text": "الإجراءات والتدابير التي يتم اتخاذها فور وقوع الحالة الطارئة لمواجهتها ومنع تفاقم الأضرار البيئية أو الحد منها.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الاستحواذ": [
       {
         "track_id": "rett_regulation",
@@ -4047,6 +4057,16 @@
         "term_as_written": "التأمينات",
         "definition_text": "التأمينات الاجتماعية المنصوص عليها في هذا النظام .",
         "source_record_id": "social-insurance-legacy-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التأهب": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "التأهب",
+        "definition_text": "حالة الاستعداد والجاهزية بالموارد، والإمكانات، والقدرات، والإجراءات، والخطط، لمواجهة حالات الطوارئ والكوارث البيئية.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6858,6 +6878,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الجهة ذات العلاقة": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "الجهة ذات العلاقة",
+        "definition_text": "أي جهة حكومية مخولة نظاما بالإشراف على قطاع تنموي، أو لها علاقة بالاستجابة لحالات الطوارئ والكوارث البيئية.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الجهة صاحبة المشروع": [
       {
         "track_id": "real_estate_expropriation_law",
@@ -7031,6 +7061,16 @@
         "term_as_written": "الحادث المروري",
         "definition_text": "كل واقعة يكون أحد أطرافها مركبة متحركة واحدة - على الأقل - أو حمولتها، وينتج منها أضرار بشرية أو مادية أو كليهما دون قصد، وينقسم إلى قسمين:",
         "source_record_id": "traffic-regulation-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الحادثة البيئية": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "الحادثة البيئية",
+        "definition_text": "واقعة أو حدث نتيجة عوامل طبيعية أو تشغيلية ضمن أي نشاط أو منشأة أو واسطة بحرية، أدت أو قد تؤدي إلى تلفيات أو أضرار ينتج عنها انسكاب أو تسرب مواد مضرة إلى البيئة.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7857,6 +7897,26 @@
         "term_as_written": "الخطر",
         "definition_text": "أي خاصية أو عمل أو إغفال يشكل أو يحتمل أن يشكل خطرا على سلامة المستهلك في الأسواق أو على الممتلكات أو على البيئة.",
         "source_record_id": "product-safety-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخطط الذاتية": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "الخطط الذاتية",
+        "definition_text": "مجموعة من التدابير لإدارة الطوارئ البيئية الداخلية للنشاط أو المنشأة؛ بما يشمل إجراءات التأهب والاستعداد للتعامل مع المخاطر البيئية التي تهدد النشاط أو المنشأة، وإجراءات ما بعد وقوع الطوارئ والكوارث البيئية، بما فيها إعادة التأهيل للمناطق المتضررة.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخطط الوطنية": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "الخطط الوطنية",
+        "definition_text": "مجموعة من التدابير والإجراءات التي تحدد أدوار ومسؤوليات الجهات ذات العلاقة للاستعداد والاستجابة بكفاءة وفاعلية لحالات الطوارئ والكوارث البيئية على المستوى الوطني.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10831,6 +10891,14 @@
       }
     ],
     "الطوارئ البيئية": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "الطوارئ البيئية",
+        "definition_text": "حادثة بيئية تشكل خطرا فوريا يتسبب أو يهدد بأضرار بيئية جسيمة؛ أو تهديد الإنسان؛ أو تدمير النظم البيئية أو موائل الكائنات الفطرية، وتتطلب تدخلا عاجلا للحيلولة دون تفاقم الوضع وتحوله إلى كارثة.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "environmental_inspection_audit",
         "article_number": 1,
@@ -16748,6 +16816,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني للرقابة على الالتزام البيئي.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_inspection_audit",
         "article_number": 1,
         "term_as_written": "المركز",
@@ -17297,6 +17373,14 @@
         "term_as_written": "المستقبلات الحساسة",
         "definition_text": "المستقبلات المحتمل تأثرها بشكل ملحوظ من النشاط أو المشروع بحكم موقعها الجغرافي القريب منه أو طبيعتها الحساسة وتشمل: المكونات البيئية، والكائنات الحية، والمواقع الأثرية والثقافية والدينية، والفئات المجتمعية؛ (على سبيل المثال الكائنات المهددة بالانقراض، والمستشفيات، ودور العجزة، والمدارس، والمجمعات السكنية وغيرها).",
         "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "المستقبلات الحساسة",
+        "definition_text": "المستقبلات المحتمل تأثرها بشكل ملحوظ من النشاط بحكم موقعها الجغرافي القريب منه أو طبيعتها الحساسة وتشمل: المكونات البيئية، والكائنات الحية، والمواقع الأثرية والثقافية والدينية، والفئات المجتمعية؛ (على سبيل المثال الكائنات المهددة بالانقراض، والمستشفيات، ودور العجزة، والمدارس، والمجمعات السكنية، وغيرها).",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18390,6 +18474,14 @@
     ],
     "المفتشون": [
       {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "المفتشون",
+        "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة المركز للتفتيش والرقابة البيئية وضبط مخالفات أحكام النظام واللوائح، والتحقيق فيها وإثباتها.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_inspection_audit",
         "article_number": 1,
         "term_as_written": "المفتشون",
@@ -19129,6 +19221,14 @@
         "term_as_written": "المناطق الحساسة بيئيا",
         "definition_text": "مناطق ذات أهمية بيئية تؤدي في حال تدهورها إلى انعكاسات بيئية سلبية وتشمل: المناطق المحمية، والمنتزهات، والغابات، والأراضي الرطبة، والمناطق ذات الأهمية للطيور، والمانجروف، والمواقع ذات المناظر الطبيعية، ومناطق مساقط وتجمعات المياه وجريانها، وشواطئ البحر، والممرات المائية، وطبقات المياه الجوفية، أو أي منطقة/ مناطق يتم تحديدها أو إعلانها من قبل الدولة أو الوزارة أو المراكز الوطنية للبيئة بأنها مناطق حساسة بيئيا.",
         "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "المناطق الحساسة بيئيا",
+        "definition_text": "مناطق ذات أهمية بيئية تؤدي في حال تدهورها إلى انعكاسات بيئية سلبية وتشمل: المناطق المحمية، والمنتزهات، والغابات، والأراضي الرطبة، والمناطق ذات الأهمية للطيور، والمانجروف، والمواقع ذات المناظر الطبيعية، ومناطق مساقط وتجمعات المياه وجريانها، وشواطئ البحر، والممرات المائية، وطبقات المياه الجوفية، أو أي منطقة/مناطق يتم تحديدها أو إعلانها من قبل الدولة أو الوزارة أو المراكز الوطنية للبيئة بأنها مناطق حساسة بيئيا.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -19982,6 +20082,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المواد الضارة": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "المواد الضارة",
+        "definition_text": "أي مادة يتسبب إدخالها أو انسكابها أو تسربها بأضرار على البيئة أو تغيير في الخصائص الفيزيائية أو الكيميائية أو البيولوجية للوسط البيئي المستقبل لها.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المواد المخدرة": [
       {
         "track_id": "anti_narcotics_law",
@@ -20675,6 +20785,14 @@
         "term_as_written": "النشاط",
         "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون له تأثيرات بيئية.",
         "source_record_id": "environmental-air-quality-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "أي مشروع أو منشأة صناعية أو تجارية أو خدمية أو أعمال أو غير ذلك من الأنشطة التي من المتوقع أن يكون لها تأثيرات بيئية.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -24356,6 +24474,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الوسائط البحرية": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "الوسائط البحرية",
+        "definition_text": "أي واسطة بحرية عائمة أيا كان شكلها سواء كانت ثابتة أو متحركة.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الوسائط البحرية غير المخصصة للصيد": [
       {
         "track_id": "agriculture_regulation",
@@ -24661,6 +24789,16 @@
         "term_as_written": "اليوم",
         "definition_text": "يوم عمل.",
         "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "انسكاب نفطي": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "انسكاب نفطي",
+        "definition_text": "تسرب أو تصريف المواد الهيدروكربونية النفطية على أي شكل وبأي كمية تشكل خطرا على البيئة وفق ما يحدده المركز.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -30215,6 +30353,16 @@
         "term_as_written": "مقدم خدمات حساب المدفوعات",
         "definition_text": "مقدم خدمات المدفوعات الذي يقدم ويحتفظ بحساب مدفوعات لصالح مستخدم خدمات المدفوعات، ويشمل ذلك البنك المرخص.",
         "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مقدم خدمة": [
+      {
+        "track_id": "environmental_emergency_response",
+        "article_number": 1,
+        "term_as_written": "مقدم خدمة",
+        "definition_text": "الشخص المرخص له من المركز لتقديم خدمات الاستجابة لحالات الطوارئ والكوارث البيئية.",
+        "source_record_id": "environmental-emergency-response-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
