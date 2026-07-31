@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 292,
-  "total_terms": 1925,
-  "total_definitions": 3340,
-  "tracks_with_definitions_article_parsed": 215,
+  "total_tracks_in_registry": 293,
+  "total_terms": 1933,
+  "total_definitions": 3359,
+  "tracks_with_definitions_article_parsed": 216,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -377,6 +377,16 @@
         "term_as_written": "أداة المدفوعات",
         "definition_text": "أي أدوات أو إجراءات متاحة من قبل مقدم خدمات المدفوعات لمستخدم خدمات المدفوعات، لغرض إنشاء أوامر خدمات المدفوعات، سواء من خالل القنوات الإلكترونية أو غير ذلك.",
         "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أدلة الإجراءات": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "أدلة الإجراءات",
+        "definition_text": "وثيقة تتضمن التعليمات، أو الإرشادات، أو المعايير، أو غيرها لتحديد الإجراءات التفصيلية المكملة للائحة وفق أحكام النظام ولوائحه.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2634,6 +2644,14 @@
         "definition_text": "ممارسة أعمال إرشاد السياح في الوجهة السياحية وغيرها.",
         "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "الإرشاد السياحي",
+        "definition_text": "ممارسة أعمال إرشاد السياح في الوجهة السياحية وغيرها.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الإرهابي": [
@@ -3521,6 +3539,16 @@
         "term_as_written": "البرنامج التعليمي",
         "definition_text": "النشاط الذي ينظم في إطار المنهج التعليمي لتحقيق أهداف محددة في مجال محدد.",
         "source_record_id": "general-education-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "البرنامج السياحي": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "البرنامج السياحي",
+        "definition_text": "مجموعة من الخدمات السياحية التي يتم إعدادها و/أو تنفيذها خلال رحلة أو عدة رحلات من قبل مقدم خدمات السفر والسياحية بمقابل أجر، خلال فترة زمنية معينة، ويكون معتمدا من الوزارة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4603,6 +4631,14 @@
         "term_as_written": "الترخيص",
         "definition_text": "وثيقة تصدرها الوزارة لممارسة نشاط أو تقديم خدمة في مجال السياحة بموجب النظام.",
         "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدرها الوزارة تمكن صاحبها من ممارسة نشاط خدمات السفر والسياحة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8736,6 +8772,14 @@
         "definition_text": "الشخص الطبيعي الذي يبيت لغرض السياحة مدة لا تقل عن ليلة خارج مكان إقامته المعتاد بصورة نظامية من أجل السياحة، أو يستفيد من واحدة -أو أكثر- من خدمات الأنشطة السياحية والتكميلية والمتخصصة.",
         "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "السائح",
+        "definition_text": "الشخص الطبيعي الذي يبيت لغرض السياحة مدة لا تقل عن ليلة خارج مكان إقامته المعتادة بصورة نظامية من أجل السياحة، أو يستفيد من واحدة -أو أكثر- من خدمات الأنشطة السياحية والتكميلية والمتخصصة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السائق": [
@@ -11338,6 +11382,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "العنوان الرسمي": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "العنوان الرسمي",
+        "definition_text": "العنوان المسجل في الترخيص، أو العنوان الوطني، أو وسائل التواصل الخاصة بممارس النشاط -بمختلف أنواعها- التي تحصلت عليه الوزارة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "العوائق الجوية": [
       {
         "track_id": "civil_aviation_law",
@@ -12975,6 +13029,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "هي لائحة -أو أكثر- لتنفيذ أحكام النظام.",
         "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة خدمات السفر والسياحة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -16088,6 +16150,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "كل شخصية ذات صفة اعتبارية حاصلة على ترخيص من الوزارة وفقا للنظام واللائحة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "waste_management_law",
         "article_number": 1,
         "term_as_written": "المرخص له",
@@ -18228,6 +18298,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المكتب الرئيسي": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "المكتب الرئيسي",
+        "definition_text": "مكتب خدمات السفر والسياحة الذي يتم من خلاله إدارة وتنظيم المكتب الفرعي التابع للمرخص له.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المكتب العلمي": [
       {
         "track_id": "pharmaceutical_establishments_law",
@@ -18235,6 +18315,16 @@
         "term_as_written": "المكتب العلمي",
         "definition_text": "المنشأة الصيدلية التي تقدم معلومات علمية وفنية وتسويقية للمستحضرات الصيدلانية والعشبية في المملكة.",
         "source_record_id": "pharmaceutical-establishments-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المكتب الفرعي": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "المكتب الفرعي",
+        "definition_text": "مكتب خدمات السفر والسياحة الذي يتبع إداريا وتنظيميا للمكتب الرئيسي.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -21304,6 +21394,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام السياحة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trade_names_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -22230,6 +22328,14 @@
         "definition_text": "أي مساحة جغرافية أو موقع تمارس أو تستهدف فيه الأنشطة السياحية أو يحتوي على مقومات سياحية، وتحدد بموجب المادة (السادسة) من النظام.",
         "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "الوجهة السياحية",
+        "definition_text": "أي مساحة جغرافية (أو موقع) تمارس الأنشطة السياحية أو تستهدفها فيه أو يحتوي على مقومات سياحية، وتحدد بموجب المادة (السادسة) من النظام.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الوحدة": [
@@ -22865,6 +22971,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة السياحة.",
         "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة السياحة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -23565,6 +23679,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير السياحة.",
         "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير السياحة.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -25021,6 +25143,14 @@
         "term_as_written": "خدمات السفر والسياحة",
         "definition_text": "ترتيب وتنظيم وتقديم الخدمات في مجال السياحة، وتشمل الرحلات والبرامج السياحية وبيع وتسويق تذاكر السفر من الشركات المرخصة وخدمات إصدار التأشيرات أو غيرها المتصلة بالسفر، وخدمات الأنشطة السياحية أو مرافق الضيافة وحجزها، ونحو ذلك.",
         "source_record_id": "tourism-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "خدمات السفر والسياحة",
+        "definition_text": "ترتيب الخدمات في مجال السياحة وتنظيمها وتقديمها، وتشمل الرحلات والبرامج السياحية وبيع تذاكر السفر من الشركات المرخصة وتسويقها، وتقديم خدمات إصدار التأشيرات أو غيرها المتصلة بالسفر، وترتيب خدمات الأنشطة السياحية، أو مرافق الضيافة وحجزها، ونحو ذلك.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -28742,6 +28872,24 @@
         "definition_text": "كل مكان يوفر خدمة المبيت للسائح مقابل أجر، يعمل بشكل دائم أو مؤقت.",
         "source_record_id": "tourism-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "مرفق الضيافة السياحي",
+        "definition_text": "كل مكان يوفر خدمة المبيت للسائح مقابل أجر، يعمل بشكل دائم أو مؤقت.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مرفق الضيافة السياحي الخاص": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "مرفق الضيافة السياحي الخاص",
+        "definition_text": "وحدة عقارية مؤثثة ومستقلة ومملوكة لفرد مصرحة من الوزارة، وتوفر خدمة المبيت بشكل يومي للسائح مقابل أجر.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مركبات الأشغال العامة": [
@@ -28955,6 +29103,16 @@
         "term_as_written": "مستنبط النبات",
         "definition_text": "الشخص الذي استنبط، أو اكتشف، أو طور صنفًا نباتيًّا جديدًا.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مستند الحجز": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "مستند الحجز",
+        "definition_text": "العقد الذي يبرمه المرخص له مع طالب الخدمة لتقديم خدمة أو أكثر من الخدمات المرخص له بها.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -29491,6 +29649,16 @@
         "term_as_written": "مكتب العمل",
         "definition_text": "الجهة الإدارية المنوط بها شؤون العمل في النطاق المكاني الذي يحدد بقرار من الوزير.",
         "source_record_id": "labor-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مكتب خدمات السفر والسياحة": [
+      {
+        "track_id": "tourism_travel_services",
+        "article_number": 1,
+        "term_as_written": "مكتب خدمات السفر والسياحة",
+        "definition_text": "المكان الذي يزاول من خلاله المرخص له نشاط خدمات السفر والسياحة، سواء كان مبنى أو موقعا إلكترونيا.",
+        "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

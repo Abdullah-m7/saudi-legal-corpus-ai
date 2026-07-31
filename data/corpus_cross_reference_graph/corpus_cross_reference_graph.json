@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 15702,
-  "total_references_extracted": 3608,
-  "intra_law_count": 3022,
-  "inter_law_count": 586,
+  "total_records_scanned": 15734,
+  "total_references_extracted": 3620,
+  "intra_law_count": 3033,
+  "inter_law_count": 587,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 3087,
-    "medium": 521
+    "high": 3097,
+    "medium": 523
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -36454,6 +36454,138 @@
       "target_article_number": 15,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة عشرة) من النظام- الآتي: أ- فرض غرا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من النظام. البرنامج السياحي:",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من اللائحة. وعلى مقدم الطلب ت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة في مقدم طلب الترخي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) في الفقرة (5) من اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة من اللائحة بحسب فئ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة وذلك وفقا للاعتبار",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من اللائحة- الآتي: أ- الغراما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من اللائحة، تغطية النقص خلال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من اللائحة، يلغى الضمان المال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-021",
+      "source_article_number": 21,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "واشتراطات الجهات المختصة",
+      "raw_citation_text": "وفقا لضوابط واشتراطات الجهات المختصة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "tourism_travel_services",
+      "source_record_id": "tourism-travel-services-reg-llm-026",
+      "source_article_number": 26,
+      "type": "intra_law",
+      "target_track_id": "tourism_travel_services",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام.",
       "confidence": "high"
     },
     {
