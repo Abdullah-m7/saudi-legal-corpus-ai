@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 531,
-  "top1_hits": 494,
-  "top3_hits": 518,
-  "top5_hits": 525,
-  "top1_accuracy": 0.9303,
-  "top3_accuracy": 0.9755,
+  "total_queries": 533,
+  "top1_hits": 496,
+  "top3_hits": 520,
+  "top5_hits": 527,
+  "top1_accuracy": 0.9306,
+  "top3_accuracy": 0.9756,
   "top5_accuracy": 0.9887,
-  "mrr_at_5": 0.9547,
+  "mrr_at_5": 0.9548,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9869,13 +9869,13 @@
      "score": 36
     },
     {
-     "record_id": "environmental-violations-penalties-reg-llm-004",
-     "article_number": 4,
-     "score": 14
+     "record_id": "environmental-protected-areas-reg-llm-011",
+     "article_number": 1,
+     "score": 15
     },
     {
-     "record_id": "environmental-noise-reg-llm-012",
-     "article_number": 1,
+     "record_id": "environmental-violations-penalties-reg-llm-004",
+     "article_number": 4,
      "score": 14
     }
    ]
@@ -16480,6 +16480,68 @@
      "record_id": "environmental-noise-reg-llm-013",
      "article_number": 2,
      "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "env-pa-001",
+   "query_ar": "المناطق المحمية مواقع برية أو بحرية أو ساحلية تحددها الوزارة والمركز ومخصصة لحماية الكائنات الفطرية وتنميتها",
+   "category": "definitional",
+   "gold": {
+    "corpus": "environmental_protected_areas",
+    "law_component": "regulation",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-protected-areas-reg-llm-001",
+     "article_number": 1,
+     "score": 28
+    },
+    {
+     "record_id": "environmental-wildlife-hunting-reg-llm-001",
+     "article_number": 1,
+     "score": 25
+    },
+    {
+     "record_id": "environmental-protected-areas-reg-llm-003",
+     "article_number": 3,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "env-pa-002",
+   "query_ar": "تسري أحكام هذه اللائحة على جميع المناطق المحمية التي يديرها أو يشرف عليها المركز ضمن إقليم المملكة",
+   "category": "provision",
+   "gold": {
+    "corpus": "environmental_protected_areas",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "environmental-protected-areas-reg-llm-002",
+     "article_number": 2,
+     "score": 51
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 38
+    },
+    {
+     "record_id": "environmental-air-quality-reg-llm-art-002",
+     "article_number": 2,
+     "score": 34
     }
    ]
   }

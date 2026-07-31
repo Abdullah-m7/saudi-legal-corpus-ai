@@ -233,6 +233,7 @@ HOSPITALITY_MGMT_REG_LLM = os.path.join(ROOT, "data", "hospitality_mgmt_reg_arab
 HOSPITALITY_FACILITY_REG_LLM = os.path.join(ROOT, "data", "hospitality_facility_reg_arabic_legal_llm", "hospitality_facility_reg_legal_llm_001_036.json")
 TOURIST_VISA_REG_LLM = os.path.join(ROOT, "data", "tourist_visa_reg_arabic_legal_llm", "tourist_visa_reg_legal_llm_001_013.json")
 ENVIRONMENTAL_NOISE_REG_LLM = os.path.join(ROOT, "data", "environmental_noise_reg_arabic_legal_llm", "environmental_noise_reg_legal_llm_001_013.json")
+ENVIRONMENTAL_PROTECTED_AREAS_REG_LLM = os.path.join(ROOT, "data", "environmental_protected_areas_reg_arabic_legal_llm", "environmental_protected_areas_reg_legal_llm_001_011.json")
 STANDARDS_QUALITY_REGULATION_LLM = os.path.join(ROOT, "data", "standards_quality_regulation_arabic_legal_llm", "standards_quality_regulation_legal_llm_001_023.json")
 DISABILITY_RIGHTS_REGULATION_LLM = os.path.join(ROOT, "data", "disability_rights_regulation_arabic_legal_llm", "disability_rights_regulation_legal_llm_001_045.json")
 ANTI_SMOKING_REGULATION_LLM = os.path.join(ROOT, "data", "anti_smoking_regulation_arabic_legal_llm", "anti_smoking_regulation_legal_llm_001_020.json")
@@ -561,6 +562,7 @@ def main() -> int:
     hospitality_facility_reg_llm = _load_json(HOSPITALITY_FACILITY_REG_LLM)
     tourist_visa_reg_llm = _load_json(TOURIST_VISA_REG_LLM)
     environmental_noise_reg_llm = _load_json(ENVIRONMENTAL_NOISE_REG_LLM)
+    environmental_protected_areas_reg_llm = _load_json(ENVIRONMENTAL_PROTECTED_AREAS_REG_LLM)
     standards_quality_regulation_llm = _load_json(STANDARDS_QUALITY_REGULATION_LLM)
     disability_rights_regulation_llm = _load_json(DISABILITY_RIGHTS_REGULATION_LLM)
     anti_smoking_regulation_llm = _load_json(ANTI_SMOKING_REGULATION_LLM)
@@ -683,7 +685,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 297,
+        "total_tracks": 298,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -882,6 +884,7 @@ def main() -> int:
             + hospitality_facility_reg_llm["record_count"]  # 36 Regulation of the Tourism Hospitality Facility (Ministerial Decision 2289, 19/5/1444H) (effectively TIER_1, decision number/date printed on the official PDF's own cover page plus a scanned signed decision letter on page 2, founding Royal Decree citation M/18 26/1/1444H matches this corpus's own tourism_law track, 36 اصلية = 35 articles across 6 chapters + a consolidated multi-part fee-table appendix, see track notes)
             + tourist_visa_reg_llm["record_count"]  # 13 Regulation of the Tourist Visit Visa (Ministerial Decision 2344, 19/5/1444H) (TIER_2, decision number/date printed on the official PDF's own cover page only, no signed decision letter embedded unlike three sibling tracks, founding Royal Decree citation M/18 26/1/1444H matches this corpus's own tourism_law track, 13 اصلية, flat structure no chapters no appendix, see track notes)
             + environmental_noise_reg_llm["record_count"]  # 13 Executive Regulation for Noise (Environmental Law M/165, 19/11/1441H) (genuine TIER_1_PRIMARY_MULTI_SOURCE, text cross-verified verbatim between the official MEWA PDF and the Umm Al-Qura Gazette's own HTML rendering including a genuine drafting anomaly preserved from both, 13 اصلية = 11 articles + Table 5 penalties + Annex 1 monitoring requirements, see track notes)
+            + environmental_protected_areas_reg_llm["record_count"]  # 11 Executive Regulation for Protected Areas (Environmental Law M/165, 19/11/1441H) (TIER_2, single primary text source visually read, confirmed byte-identical to the same file independently hosted on ncw.gov.sa (the competent Center), 11 اصلية = 10 articles + Table 1 penalties (32 rows), see track notes)
             + standards_quality_regulation_llm["record_count"]  # 23 Implementing Regulation of the Standards and Quality Law (Minister of Commerce Decision No. 098, 18/5/1446H) (TIER_1, PRIMARY x2 independent -- SASO's own official site (issuing/administering authority) + Umm al-Qura Gazette's own API, both fetched directly and agreeing on decision number/date; cross-verified against qanoonsa.com SECONDARY for full text, cosmetic numeral-style difference only, all 23 اصلية across 7 أبواب, NO predecessor regulation (first Implementing Regulation under this law), see track notes)
             + disability_rights_regulation_llm["record_count"]  # 45 Implementing Regulation of the Rights of Persons with Disabilities Law (Authority Board Resolution No. 26, 29 Shawwal 1445H) (TIER_2, PRIMARY uqn.gov.sa (Umm al-Qura Gazette portal itself) fetched directly as full HTML text; SECONDARY qanoonsa.com cross-verified article-by-article (15/45 byte-identical, remainder cosmetic differences only); laws.boe.gov.sa unreachable this pass, all 45 اصلية across 12 فصول (a genuine 12-vs-11 chapter-count discrepancy vs a third source is disclosed, not silently resolved), NO amendment found, see track notes)
             + anti_smoking_regulation_llm["record_count"]  # 17 Implementing Regulation of the Anti-Smoking Law (11 اصلية, 6 معدلة -- Articles 2,3,5,6,7,8) (TIER_2, FOUNDING RESOLUTION NUMBER/DATE NOT CONFIRMED this pass -- a prior pass's assumption that Ministerial Resolution 797557 (1/5/1441H) was the founding issuance is CORRECTED here: independently re-verified as a real, well-corroborated AMENDMENT resolution instead, whose reported content matches the Article 7 change found by diffing; PRIMARY official MOH PDF (3rd edition, 2019, vision-read) cross-checked against a 2017 WHO/EMRO-hosted edition to detect the 6 amended articles; laws.boe.gov.sa has no dedicated lawId page at all; Articles 14/15/17 intentionally absent (no regulation content in either edition), see track notes)
@@ -1173,6 +1176,7 @@ def main() -> int:
             + hospitality_facility_reg_llm["record_count"]
             + tourist_visa_reg_llm["record_count"]
             + environmental_noise_reg_llm["record_count"]
+            + environmental_protected_areas_reg_llm["record_count"]
             + standards_quality_regulation_llm["record_count"]
             + disability_rights_regulation_llm["record_count"]
             + anti_smoking_regulation_llm["record_count"]
@@ -6945,6 +6949,34 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Executive Regulation for Noise «اللائحة التنفيذية للضوضاء» — companion regulation to the already-ingested base Environmental Law track (Royal Decree M/165, 19/11/1441H), same family as environmental_wildlife_hunting / environmental_inspection_audit / environmental_violations_penalties / etc. **13 records: 11 numbered articles (المادة الأولى .. الحادية عشرة), NO chapter division, + 2 appendix-type records** (الجدول (٥) المخالفات والعقوبات؛ الملحق (١) اشتراطات رصد مستويات الضوضاء). **ALL 13 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: genuine TIER_1_PRIMARY_MULTI_SOURCE** (not merely 'effectively' TIER_1) — text cross-verified verbatim from TWO independent official primary sources that match exactly: (1) an official MEWA RulesLibrary PDF (mewa.gov.sa, native Word-generated text layer, visually confirmed page-by-page at 150dpi), and (2) the Umm Al-Qura Gazette's own HTML rendering of the full regulation text (uqn.gov.sa, published 15/11/1442H / 25/06/2021G). Both sources reproduce, identically, a genuine drafting anomaly in the official text itself: Article 11 refers to the penalties table as 'الجدول (1)', while the table itself is printed as 'الجدول (5)' (the fifth table by document order, after the four noise-level standard tables) — preserved verbatim rather than silently corrected, per this corpus's established practice (e.g. arbitration_law). No independent ministerial/CoM decision number was located for this specific regulation this pass; disclosed rather than guessed. **NO SUPERSESSION EDGE MODELED** — fresh issuance, no named-predecessor repeal clause. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "environmental_protected_areas",
+                "display_name_ar": "اللائحة التنفيذية للمناطق المحمية",
+                "display_name_en": "Executive Regulation for Protected Areas",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "MEWA_PDF_VISUALLY_READ_CROSS_HOSTED_NCW_BYTE_IDENTICAL",
+                "source_authority": "Executive Regulation for Protected Areas, issued under the Environmental Law (Royal Decree M/165, 19/11/1441H, track_id: environmental_law). No independent ministerial/CoM decision number was found for this specific regulation this pass. Full text from an official mewa.gov.sa RulesLibrary PDF, visually confirmed page-by-page; confirmed byte-identical (sha256/md5) to the same file independently hosted on the National Center for Wildlife Development's own site (ncw.gov.sa) -- NCW is 'المركز', the competent Center referenced throughout this regulation's own text.",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": environmental_protected_areas_reg_llm["record_count"],
+                    "data_path": "data/environmental_protected_areas_reg_arabic_legal_llm/environmental_protected_areas_reg_legal_llm_001_011.json"}},
+                "record_counts": {"arabic_articles": environmental_protected_areas_reg_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": environmental_protected_areas_reg_llm["record_count"]},
+                "data_paths": [
+                    "sources/environmental_protected_areas/official_source/environmental_protected_areas_reg_official_source.json",
+                    "sources/environmental_protected_areas/verified/environmental_protected_areas_reg_verified_records.jsonl",
+                    "data/environmental_protected_areas_reg_arabic_legal_llm/environmental_protected_areas_reg_legal_llm_001_011.json",
+                ],
+                "validator_targets": ["make environmental-protected-areas-reg-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Executive Regulation for Protected Areas «اللائحة التنفيذية للمناطق المحمية» — companion regulation to the already-ingested base Environmental Law track (Royal Decree M/165, 19/11/1441H), same family as environmental_wildlife_hunting / environmental_noise / etc. **11 records: 10 numbered articles (المادة الأولى .. العاشرة), NO chapter division, + 1 appendix-type record** (الجدول (١) المخالفات والعقوبات، 32 صفاً). **ALL 11 اصلية** (as ingested; no amendment history confirmed this pass). **VERIFICATION TIER: TIER_2** — the automated pypdf/pdftotext text layer for this specific PDF is corrupted (dropped letters, e.g. 'الالئحة' instead of 'اللائحة'), so the full 17-page document was read visually (150dpi) page-by-page. The file is confirmed byte-identical (sha256/md5) to the same PDF independently hosted on the National Center for Wildlife Development's own site (ncw.gov.sa/assets/files/regulations/regulations-for-protected-areas.pdf) — NCW is 'المركز', the competent Center named throughout this regulation's own text — i.e. the identical file is served from two independent official .gov.sa domains, a corroborating signal short of an independently-transcribed second full-text source. No independent ministerial/CoM decision number was found for this specific regulation this pass; the Umm Al-Qura Gazette page for this regulation (uqn.gov.sa/?p=8012) remains on an older JavaScript-rendered format that could not be extracted directly this pass (unlike the sibling environmental_noise track's newer, directly-extractable gazette page). Disclosed: a public-consultation page (istitlaa.ncc.gov.sa) references a possible pending update to this regulation, not confirmed as finalized/published this pass — the version ingested here is the latest confirmed-accessible official text (file dated September 2021, independently re-hosted by NCW as of July 2023 with an identical byte-for-byte file). **NO SUPERSESSION EDGE MODELED** — no named-predecessor repeal clause found. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "standards_quality_regulation",

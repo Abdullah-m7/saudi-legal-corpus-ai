@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 297,
-  "total_terms": 1947,
-  "total_definitions": 3414,
-  "tracks_with_definitions_article_parsed": 220,
+  "total_tracks_in_registry": 298,
+  "total_terms": 1949,
+  "total_definitions": 3440,
+  "tracks_with_definitions_article_parsed": 221,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -1059,6 +1059,14 @@
         "term_as_written": "إعادة التأهيل",
         "definition_text": "كل إجراء على موقع متدهور بيئيَّا، أو ألحق به ضرر بيئي أو تلوّث؛ لإعادته إلى حالته الطبيعية من التوازن البيئي، وفقاً للمعايير التي تحددها الجهة المختصة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "إعادة التأهيل",
+        "definition_text": "كل إجراء يتم على موقع متدهور بيئيا، أو ألحق بها ضرر بيئي؛ لإعادته إلى حالته الطبيعية من التوازن البيئي، وفقا للمعايير التي تحددها الجهة المختصة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -4402,6 +4410,14 @@
         "definition_text": "إضرار شديد بالأوساط البيئية بسبب استنزاف الموارد الطبيعية، أو تدمير الموائل البيئية، أو انقراض الحياة الفطرية، أو تلوث الأوساط البيئية وتدني مستوى جودة الهواء والمياه والتربة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "التدهور البيئي",
+        "definition_text": "إضرار شديد بالأوساط البيئية بسبب استنزاف الموارد الطبيعية، أو تدمير الموائل البيئية، أو انقراض الحياة الفطرية، أو تلوث الأوساط البيئية، وتدني مستوى جودة الهواء والمياه والتربة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "التدوير": [
@@ -4559,6 +4575,14 @@
         "term_as_written": "الترخيص",
         "definition_text": "وثيقة يمنحها المركز للشخص للإذن له بممارسة نشاط بيئي.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة يمنحها المركز للشخص للإذن له بممارسة نشاط بيئي.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5041,6 +5065,14 @@
         "term_as_written": "التصريح",
         "definition_text": "وثيقة يمنحها المركز قبل البدء بممارسة النشاط.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة يمنحها المركز قبل البدء بممارسة النشاط.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5779,6 +5811,14 @@
         "term_as_written": "التنوع الأحيائي",
         "definition_text": "التعدد في أنواع الكائنات النباتية أو الحيوانية أو المجهرية وعددها، والتباين بين هذه الأنواع.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "التنوع الأحيائي",
+        "definition_text": "التعدد في أنواع الكائنات النباتية، أو الحيوانية، أو المجهرية، وعددها، والتباين بين هذه الأنواع.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -6604,6 +6644,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الوزارة أو أي من المراكز الوطنية لقطاع البيئة كل بحسب اختصاصه، ووفقا لما تحدده اللوائح.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_service_providers",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
@@ -6775,6 +6823,14 @@
         "term_as_written": "الجهة المشرفة",
         "definition_text": "أية جهة حكومية مخولة نظاما بالإشراف على النشاط، وتختص بإصدار تراخيص لممارسة الأنشطة التي تخضع لإشرافها.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الجهة المشرفة",
+        "definition_text": "أي جهة حكومية مخولة نظاما بالإشراف على النشاط، وتختص بإصدار تراخيص لممارسة الأنشطة التي تخضع لإشرافها.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -7336,6 +7392,14 @@
         "definition_text": "الكائنات الفطرية النباتية والحيوانية وموائلها.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الحياة الفطرية",
+        "definition_text": "الكائنات الفطرية النباتية والحيوانية وموائلها.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الحيازة": [
@@ -7685,6 +7749,16 @@
         "term_as_written": "الخسارة البحرية الخاصة",
         "definition_text": "كل خسارة لا تنطبق عليها أحكام الخسائر البحرية المشتركة.",
         "source_record_id": "maritime-commercial-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الخصائص البيئية": [
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الخصائص البيئية",
+        "definition_text": "خصائص كل ما يحيط بالإنسان أو الحيوان أو النبات أو أي كائن حي من ماء وهواء ويابسة وتربة وأحياء وتنوع أحيائي وغازات في الغلاف الجوي ومسطحات مائية، وما تحتويه هذه الأوساط من جماد ونبات وحيوان وأشكال مختلفة من طاقة وموائل بيئية وعمليات طبيعية وتفاعلها فيما بينها.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9378,6 +9452,14 @@
         "definition_text": "النشاط السياحي الصديق للبيئة الذي يمارسه الإنسان، محافظاً على الميراث الفطري الطبيعي والحضاري للبيئية.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "السياحة البيئية",
+        "definition_text": "النشاط السياحي الصديق للبيئة الذي يمارسه الإنسان، محافظا على الميراث الفطري الطبيعي والحضاري للبيئة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السيارة": [
@@ -9693,6 +9775,14 @@
         "term_as_written": "الشخص",
         "definition_text": "أي شخص ذو صفة طبيعية أو اعتبارية عامة أو خاصة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "أي شخص ذو صفة طبيعية أو اعتبارية عامة أو خاصة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -10267,6 +10357,14 @@
       }
     ],
     "الصيد": [
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الصيد",
+        "definition_text": "الشروع أو المطاردة أو الإمساك أو الجرح أو القتل وغيره مما يفيد الممارسة الفعلية للصيد لأي كائن فطري حيواني، بري أو بحري.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "environmental_wildlife_hunting",
         "article_number": 1,
@@ -11652,6 +11750,14 @@
         "definition_text": "النباتات الطبيعية سواء أكانت أعشابًا أم شجيرات أم أشجارًا.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الغطاء النباتي",
+        "definition_text": "النباتات الطبيعية سواء كانت أعشابا، أم شجيرات، أم أشجارا.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الغير": [
@@ -12101,6 +12207,14 @@
         "term_as_written": "الكائنات الفطرية",
         "definition_text": "أي كائن حي أو ميت، وينتمي علميًّا إلى المجموعات الحيوانية أو النباتية، ولا يدخل في ذلك الإنسان والكائنات المدجنة والأليفة.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الكائنات الفطرية",
+        "definition_text": "أي كائن حي أو ميت، وينتمي علميا إلى المجموعات الحيوانية أو النباتية، ولا يدخل في ذلك الانسان والكائنات المدجنة والأليفة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -12663,6 +12777,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للمناطق المحمية.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13846,6 +13968,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "اللوائح",
+        "definition_text": "اللوائح التنفيذية للنظام.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_service_providers",
         "article_number": 1,
         "term_as_written": "اللوائح",
@@ -14238,6 +14368,16 @@
         "definition_text": "لا يجوز لصاحب العمل أو العامل أن يقوم بعمل من شأنه إساءة استعمال أحكام هذا النظام أو القرارات واللوائح الصادرة تنفيذاً لأحكامه. كما لا يجوز لأي منهما القيام بعمل من شأنه الضغط على حرية الآخر أو حرية عمال أو أصحاب عمل آخرين لتحقيق أي مصلحة أو وجهة نظر يتبناها مما يتنافى مع حرية العمل أو اختصاص الجهة المختصة بتسوية الخلافات.",
         "source_record_id": "labor-reg-llm-art-005",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "الماشية": [
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الماشية",
+        "definition_text": "الحيوانات المستأنسة للتربية (الإبل والأبقار والضأن والماعز).",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المال المتحقق ملكيته للشركاء": [
@@ -16632,6 +16772,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "المركز",
+        "definition_text": "المركز الوطني لتنمية الحياة الفطرية.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_wildlife_hunting",
         "article_number": 1,
         "term_as_written": "المركز",
@@ -18266,6 +18414,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "المفتشون",
+        "definition_text": "موظفون يصدر بتحديدهم قرار من الوزير أو رئيس مجلس إدارة المركز للتفتيش والرقابة البيئية وضبط مخالفات أحكام النظام واللوائح والتحقيق فيها وإثباتها.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_violations_penalties",
         "article_number": 1,
         "term_as_written": "المفتشون",
@@ -19050,6 +19206,14 @@
         "definition_text": "مواقع برية أو بحرية أو ساحلية تحددها الجهة المختصة، ومخصصة لحماية الكائنات الفطرية وتنميتها.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "المناطق المحمية",
+        "definition_text": "مواقع برية أو بحرية أو ساحلية تحددها الوزارة والمركز، ومخصصة لحماية الكائنات الفطرية وتنميتها.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المنافذ": [
@@ -19762,6 +19926,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الموائل",
+        "definition_text": "مواقع تعيش أو تنمو أو تتكاثر فيها الكائنات الفطرية بشكل طبيعي ومترابط ومتكامل مع الظروف المحيطة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_wildlife_hunting",
         "article_number": 1,
         "term_as_written": "الموائل",
@@ -19867,6 +20039,14 @@
         "term_as_written": "الموارد الطبيعية",
         "definition_text": "جميع المواد الحية وغير الحية -الموجودة في الطبيعة- ومنتجاتها، التي يستغلها أو يستثمرها الإنسان بشكل مباشر، كالهواء والمياه والأراضي والتربة والتنوع الأحيائي والتكوينات الجيولوجية ذات القيمة البيئية.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الموارد الطبيعية",
+        "definition_text": "جميع المواد الحية وغير الحية، الموجودة في الطبيعة ومنتجاتها، التي يستثمرها الإنسان بشكل مباشر، كالهواء، والمياه، والأراضي، والتربة، والتنوع الأحيائي، والتكوينات الجيولوجية ذات القيمة البيئية.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -22998,6 +23178,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_service_providers",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -23719,6 +23907,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير البيئة والمياه والزراعة.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -29584,6 +29780,14 @@
         "definition_text": "كل ما يستخرج من الكائنات الفطرية سواء بشكل طبيعي أو غير طبيعي.",
         "source_record_id": "environmental-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "مشتق",
+        "definition_text": "كل ما يستخرج من الكائنات الفطرية سواء بشكل طبيعي أو غير طبيعي.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مشرف المرفأ": [
@@ -30259,6 +30463,14 @@
         "term_as_written": "منتج",
         "definition_text": "أي جزء من أي كائن فطري، سواء أكان مصنّعًا جزئيًّا أم كليًّا أو غير مصنّع.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "environmental_protected_areas",
+        "article_number": 1,
+        "term_as_written": "منتج",
+        "definition_text": "أي جزء من أي كائن فطري، سواء كان مصنع جزئيا أو كليا أو غير مصنع.",
+        "source_record_id": "environmental-protected-areas-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

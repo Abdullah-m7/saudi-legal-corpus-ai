@@ -330,6 +330,8 @@ LAYERS = [
      "tourist_visa", "regulation"),
     ("data/environmental_noise_reg_arabic_legal_llm/environmental_noise_reg_legal_llm_001_013.json",
      "environmental_noise", "regulation"),
+    ("data/environmental_protected_areas_reg_arabic_legal_llm/environmental_protected_areas_reg_legal_llm_001_011.json",
+     "environmental_protected_areas", "regulation"),
     ("data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json",
      "standards_quality", "regulation"),
     ("data/disability_rights_regulation_arabic_legal_llm/disability_rights_regulation_legal_llm_001_045.json",

@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 15989,
+  "total_primary_arabic_governing_records": 16000,
   "total_reference_records": 614,
-  "total_registry_counted_records": 16884,
-  "total_tracks": 297,
+  "total_registry_counted_records": 16895,
+  "total_tracks": 298,
   "tracks": [
     {
       "boundaries": {
@@ -9330,6 +9330,55 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
+        "sources/environmental_protected_areas/official_source/environmental_protected_areas_reg_official_source.json",
+        "sources/environmental_protected_areas/verified/environmental_protected_areas_reg_verified_records.jsonl",
+        "data/environmental_protected_areas_reg_arabic_legal_llm/environmental_protected_areas_reg_legal_llm_001_011.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية للمناطق المحمية",
+      "display_name_en": "Executive Regulation for Protected Areas",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/environmental_protected_areas_reg_arabic_legal_llm/environmental_protected_areas_reg_legal_llm_001_011.json",
+          "governing": true,
+          "record_count": 11,
+          "status": "complete"
+        }
+      },
+      "notes": "Executive Regulation for Protected Areas «اللائحة التنفيذية للمناطق المحمية» — companion regulation to the already-ingested base Environmental Law track (Royal Decree M/165, 19/11/1441H), same family as environmental_wildlife_hunting / environmental_noise / etc. **11 records: 10 numbered articles (المادة الأولى .. العاشرة), NO chapter division, + 1 appendix-type record** (الجدول (١) المخالفات والعقوبات، 32 صفاً). **ALL 11 اصلية** (as ingested; no amendment history confirmed this pass). **VERIFICATION TIER: TIER_2** — the automated pypdf/pdftotext text layer for this specific PDF is corrupted (dropped letters, e.g. 'الالئحة' instead of 'اللائحة'), so the full 17-page document was read visually (150dpi) page-by-page. The file is confirmed byte-identical (sha256/md5) to the same PDF independently hosted on the National Center for Wildlife Development's own site (ncw.gov.sa/assets/files/regulations/regulations-for-protected-areas.pdf) — NCW is 'المركز', the competent Center named throughout this regulation's own text — i.e. the identical file is served from two independent official .gov.sa domains, a corroborating signal short of an independently-transcribed second full-text source. No independent ministerial/CoM decision number was found for this specific regulation this pass; the Umm Al-Qura Gazette page for this regulation (uqn.gov.sa/?p=8012) remains on an older JavaScript-rendered format that could not be extracted directly this pass (unlike the sibling environmental_noise track's newer, directly-extractable gazette page). Disclosed: a public-consultation page (istitlaa.ncc.gov.sa) references a possible pending update to this regulation, not confirmed as finalized/published this pass — the version ingested here is the latest confirmed-accessible official text (file dated September 2021, independently re-hosted by NCW as of July 2023 with an identical byte-for-byte file). **NO SUPERSESSION EDGE MODELED** — no named-predecessor repeal clause found. Arabic governs; not legal advice.",
+      "official_text_status": "MEWA_PDF_VISUALLY_READ_CROSS_HOSTED_NCW_BYTE_IDENTICAL",
+      "record_counts": {
+        "arabic_articles": 11,
+        "legal_status_breakdown": {
+          "اصلية": 11,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 11
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Executive Regulation for Protected Areas, issued under the Environmental Law (Royal Decree M/165, 19/11/1441H, track_id: environmental_law). No independent ministerial/CoM decision number was found for this specific regulation this pass. Full text from an official mewa.gov.sa RulesLibrary PDF, visually confirmed page-by-page; confirmed byte-identical (sha256/md5) to the same file independently hosted on the National Center for Wildlife Development's own site (ncw.gov.sa) -- NCW is 'المركز', the competent Center referenced throughout this regulation's own text.",
+      "status": "complete",
+      "track_id": "environmental_protected_areas",
+      "validator_targets": [
+        "make environmental-protected-areas-reg-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
         "sources/standards_quality_regulation/law/official_source/standards_quality_regulation_official_source.json",
         "sources/standards_quality_regulation/law/verified/standards_quality_regulation_verified_records.jsonl",
         "data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json"
@@ -14391,6 +14440,7 @@
       "environmental_inspection_audit": 10,
       "environmental_noise": 13,
       "environmental_permits": 11,
+      "environmental_protected_areas": 11,
       "environmental_service_providers": 13,
       "environmental_violations_penalties": 10,
       "environmental_wildlife_hunting": 13,
@@ -14522,7 +14572,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 15820,
+    "total_records": 15831,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

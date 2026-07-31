@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 15820,
-  "total_references_extracted": 3639,
-  "intra_law_count": 3051,
-  "inter_law_count": 588,
+  "total_records_scanned": 15831,
+  "total_references_extracted": 3641,
+  "intra_law_count": 3052,
+  "inter_law_count": 589,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 3110,
-    "medium": 529
+    "high": 3111,
+    "medium": 530
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -13112,6 +13112,28 @@
       "target_article_number": null,
       "target_law_name_raw": "التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة مع مراع",
       "raw_citation_text": "وفقا للائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة مع مراع",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "environmental_protected_areas",
+      "source_record_id": "environmental-protected-areas-reg-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "environmental_protected_areas",
+      "target_article_number": 35,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة والثلاثين من النظام. ب- الأفعال التي تؤ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "environmental_protected_areas",
+      "source_record_id": "environmental-protected-areas-reg-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذية لضبط المخالفات وايقاع العقوبات لنظام البيئة مع مراع",
+      "raw_citation_text": "وفقا للائحة التنفيذية لضبط المخالفات وايقاع العقوبات لنظام البيئة مع مراع",
       "confidence": "medium"
     },
     {
