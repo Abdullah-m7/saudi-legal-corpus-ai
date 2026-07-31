@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 300,
-  "total_terms": 1978,
-  "total_definitions": 3478,
-  "tracks_with_definitions_article_parsed": 223,
+  "total_tracks_in_registry": 309,
+  "total_terms": 2009,
+  "total_definitions": 3548,
+  "tracks_with_definitions_article_parsed": 230,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -129,6 +129,10 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "donations_collection_regulation",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
       "track_id": "ecommerce_regulation",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
@@ -171,6 +175,10 @@
     {
       "track_id": "gcc_ownership_law",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "geographical_indications_regulation",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
     {
       "track_id": "gtpl_implementing_regulation",
@@ -1256,6 +1264,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اتفاقية الإدارة": [
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "اتفاقية الإدارة",
+        "definition_text": "اتفاقية يبرمها الواقف أو الناظر مع مؤسسة سوق مالية مرخصة من قبل الجهة المختصة؛ لإدارة المحفظة الاستثمارية الوقفية.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اتفاقية الاستخدام": [
       {
         "track_id": "railway_law",
@@ -2116,6 +2134,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأمانة العامة": [
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "الأمانة العامة",
+        "definition_text": "الأمانة العامة للجان الفصل في المنازعات والمخالفات التأمينية.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأمانة العامة للمجلس": [
       {
         "track_id": "high_risk_professions_regulation",
@@ -2308,6 +2336,14 @@
     ],
     "الأمين العام": [
       {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "الأمين العام",
+        "definition_text": "الأمين العام للجان الفصل في المنازعات والمخالفات التأمينية.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "mosalaha_center_regulation",
         "article_number": 1,
         "term_as_written": "الأمين العام",
@@ -2360,6 +2396,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الأنشطة الترفيهية": [
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "الأنشطة الترفيهية",
+        "definition_text": "تشغيل المدن والمراكز الترفيهية، وإقامة الفعاليات والعروض الترفيهية، وإقامة العروض الحية.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأنشطة الحرفية واليدوية": [
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "الأنشطة الحرفية واليدوية",
+        "definition_text": "الأنشطة الحرفية واليدوية المحددة بموجب قواعد الترخيص وتشمل الحرفة والصناعة اليدوية الإنتاجية الفنية أو التراثية، والحرفة والصناعة اليدوية الخدمية.",
+        "source_record_id": "handicrafts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الأنشطة السياحية": [
       {
         "track_id": "tourism_law",
@@ -2407,6 +2463,16 @@
         "term_as_written": "الأنشطة المحظورة",
         "definition_text": "الأنشطة التي يحظر على المستثمر الأجنبي الاستثمار فيها -من حيث الأصل- وفق القائمة التي تصدرها لجنة الفحص.",
         "source_record_id": "inv-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الأنشطة المساندة": [
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "الأنشطة المساندة",
+        "definition_text": "تنظيم وإدارة الحشود للأنشطة الترفيهية، وتقديم خدمات الحجز وبيع التذاكر للأنشطة الترفيهية.",
+        "source_record_id": "entertainment-activities-law-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -2820,6 +2886,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الإشغال": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "الإشغال",
+        "definition_text": "انتفاء جميع معايير الشغور عن المبنى الخاضع للرسم.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الإضافات العلفية": [
       {
         "track_id": "agriculture_regulation",
@@ -2919,6 +2995,16 @@
         "term_as_written": "الإعلام المرئي والمسموع",
         "definition_text": "عملية بث محتوى إعلامي، أو إعادة بثه، أو إنتاجه للبث، أو توزيعه، أو بيعه ليصل إلى الجمهور، ولا يشمل ما يتصف بطابع المراسلات الخاصة.",
         "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الإعلان": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "الإعلان",
+        "definition_text": "إعلان صادر بقرار من الوزير في شأن إخضاع المدينة أو جزء منها لتطبيق الرسم.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -4470,6 +4556,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الترافع عن بعد": [
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "الترافع عن بعد",
+        "definition_text": "الترافع من خلال وسائل الاتصال الإلكترونية التي تحددها الأمانة العامة بين أطراف الدعوى أمام اللجان.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "التربية الريفية للثروة الحيوانية": [
       {
         "track_id": "agriculture_regulation",
@@ -4574,6 +4670,14 @@
         "definition_text": "الترخيص الذي تمنحه الوزارة للمكاتب والشركات الهندسية عند مزاولتها أيا من المهن الهندسية، وفقا لمعايير مزاولة المهنة وشروط التراخيص التي تضعها الهيئة.",
         "source_record_id": "engineering-practice-regulation-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص",
+        "definition_text": "وثيقة تصدرها الهيئة تخول المرخص له بممارسة الأنشطة المنصوص عليها في الفقرة (1) من المادة (الخامسة) من النظام.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "environmental_air_quality",
@@ -4797,6 +4901,24 @@
         "term_as_written": "الترخيص التعاقدي",
         "definition_text": "عقد يخول بمقتضاه مالك وثيقة الحماية طرفًا آخر بعض أو جميع حقوقه في استغلال تلك الوثيقة، مدة معينة لقاء أجر محدد.",
         "source_record_id": "patent-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الترخيص الحرفي": [
+      {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "الترخيص الحرفي",
+        "definition_text": "الترخيص الذي يخول صاحبه ممارسة حرفة أو صناعة يدوية محددة لأغراض تجارية، أو الذي يخول صاحبه الاتجار -بصفة رئيسة- بالمنتجات الحرفية اليدوية.",
+        "source_record_id": "handicrafts-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "الترخيص الحرفي",
+        "definition_text": "الترخيص الذي يخول صاحبه من ممارسة حرفة أو صناعة يدوية محددة لأغراض تجارية، أو الذي يخول صاحبه الاتجار -بصفة رئيسة- بالمنتجات الحرفية اليدوية.",
+        "source_record_id": "handicrafts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -5058,6 +5180,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "إذن مؤقت تصدره الهيئة يسمح للمرخص له بممارسة الأنشطة المنصوص عليها في الفقرة (2) من المادة (الخامسة) من النظام.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_air_quality",
         "article_number": 1,
         "term_as_written": "التصريح",
@@ -5209,6 +5339,14 @@
         "term_as_written": "التصنيف",
         "definition_text": "تقويم إمكانيات المقاول: المالية، والفنية، والإدارية، والتنفيذية؛ لوضعه في المجال والنشاط والدرجة المستحقة وفقا لأحكام النظام واللائحة.",
         "source_record_id": "contractors-classification-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "التصنيف",
+        "definition_text": "عملية تقييم وفرز المرخص لهم إلى فئات وفقا لمؤهلاتهم الفنية وكفاءتهم التشغيلية، وتقييم جودة الأنشطة الترفيهية والأنشطة المساندة، بهدف قياس الأداء وتعزيز جودة الخدمات المقدمة في تلك الأنشطة.",
+        "source_record_id": "entertainment-activities-law-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -5749,6 +5887,14 @@
         "term_as_written": "التنظيم",
         "definition_text": "تنظيم المركز الوطني لتنمية الحياة الفطرية.",
         "source_record_id": "environmental-wildlife-hunting-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "falcon_center_statute",
+        "article_number": 1,
+        "term_as_written": "التنظيم",
+        "definition_text": "تنظيم المركز.",
+        "source_record_id": "falcon-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6786,6 +6932,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "هيئة السوق المالية.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "waste_management_law",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
@@ -6819,6 +6973,16 @@
         "term_as_written": "الجهة المختصة بالوزارة",
         "definition_text": "الوحدة المركزية لكود البناء السعودي بوزارة الشؤون البلدية والقروية والإسكان.",
         "source_record_id": "building-code-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الجهة المستفيدة": [
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة المستفيدة",
+        "definition_text": "الجهة التي تقدم خدمة توزيع الريع على مصارف الوقف في المنتج الاستثماري الوقفي بعد تأسيسه.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7271,6 +7435,24 @@
         "term_as_written": "الحدث",
         "definition_text": "الشخص الذي أتم الخامسة عشرة من عمره ولم يبلغ الثامنة عشرة.",
         "source_record_id": "labor-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الحرفي": [
+      {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "الحرفي",
+        "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية يمارس حرفة أو صناعة يدوية.",
+        "source_record_id": "handicrafts-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "الحرفي",
+        "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية مارس أو يمارس حرفة أو صناعة يدوية.",
+        "source_record_id": "handicrafts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8444,6 +8626,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "falcon_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس",
+        "definition_text": "رئيس المجلس.",
+        "source_record_id": "falcon-center-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gaca_organizational_statute",
         "article_number": 1,
         "term_as_written": "الرئيس",
@@ -8595,6 +8785,14 @@
         "term_as_written": "الرئيس التنفيذي",
         "definition_text": "الرئيس التنفيذي للمركز.",
         "source_record_id": "environmental-inspection-audit-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "falcon_center_statute",
+        "article_number": 1,
+        "term_as_written": "الرئيس التنفيذي",
+        "definition_text": "الرئيس التنفيذي للمركز.",
+        "source_record_id": "falcon-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -9094,6 +9292,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "السجل",
+        "definition_text": "السجل الوطني للحرفيين، وهو سجل يتمثل بقاعدة بيانات تدون فيها البيانات الخاصة بالحرفيين، وتصنيفاتهم، وحرفهم وصناعتهم اليدوية، وأنشطتهم.",
+        "source_record_id": "handicrafts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sports_law",
         "article_number": 1,
         "term_as_written": "السجل",
@@ -9219,6 +9425,16 @@
         "term_as_written": "السجل المدني المركزي",
         "definition_text": "هو السجل العام الذي تدون فيه الحالات المدنية لجميع السعوديين.",
         "source_record_id": "civil-status-law-llm-art-002",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السجل الوطني للحرفيين": [
+      {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "السجل الوطني للحرفيين",
+        "definition_text": "قاعدة بيانات تدون فيها البيانات الخاصة بالحرفيين، وتصنيفاتهم، وحرفهم وصناعاتهم اليدوية، وأنشطتهم، وغير ذلك من المعلومات التي تحددها اللائحة.",
+        "source_record_id": "handicrafts-law-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -9435,6 +9651,16 @@
         "term_as_written": "السنة",
         "definition_text": "هجرية قمرية.",
         "source_record_id": "nationality-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "السنة المرجعية": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "السنة المرجعية",
+        "definition_text": "مدة اثني عشر شهرا، تحددها الوزارة لأغراض تحديد فترة الشغور المعتبرة.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -10014,6 +10240,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشخص المرخص": [
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "الشخص المرخص",
+        "definition_text": "شركة التأمين وشركة إعادة التأمين ومزاولو الخدمات المساندة للتأمين. أو أي من هذه الأشخاص.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشخص ذو الإعاقة": [
       {
         "track_id": "disability_rights_law",
@@ -10294,6 +10530,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الصكوك الاستثمارية الوقفية": [
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "الصكوك الاستثمارية الوقفية",
+        "definition_text": "صكوك استثمارية تصدر لتمثل حصصا موقوفة -أو ستؤول إلى وقف-، في ملكية أصول أو منافع أو مشاريع أو حقوق.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الصناعات الزراعية التحويلية": [
       {
         "track_id": "agriculture_regulation",
@@ -10343,6 +10589,16 @@
         "term_as_written": "الصندوق",
         "definition_text": "صندوق استثماري أو صندوق استثمار عقاري، مؤسس في المملكة، ويمكن طرح وحداته من قبل مدير الصندوق على المستثمرين في المملكة، وفقا للأنظمة واللوائح ذات الصلة السارية في المملكة.",
         "source_record_id": "zakat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الصندوق الاستثماري الوقفي": [
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "الصندوق الاستثماري الوقفي",
+        "definition_text": "صندوق استثماري يجمع رؤوس أموال موقوفة، ويديرها ويستثمرها، وفقا لوثيقة الشروط والأحكام، والملحق الوقفي.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11174,6 +11430,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "العضو",
+        "definition_text": "عضو أي لجنة من اللجان، ويشمل ذلك رئيس اللجنة ما لم يقتض السياق غير ذلك.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "payment_systems_law",
         "article_number": 1,
         "term_as_written": "العضو",
@@ -11287,6 +11551,14 @@
       }
     ],
     "العقارات الشاغرة": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "العقارات الشاغرة",
+        "definition_text": "المباني الواقعة داخل النطاق العمراني غير المستغلة لفترة طويلة دون مسوغ مقبول، والتي يؤثر عدم استخدامها أو استغلالها في توفير معروض كاف في السوق العقارية، وذلك وفقا لأحكام النظام واللائحة.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "white_land_fees_law",
         "article_number": 1,
@@ -12047,6 +12319,16 @@
         "term_as_written": "القاطرة",
         "definition_text": "مركبة موصول بها مقطورة يكونان معا وحدة واحدة.",
         "source_record_id": "road-transport-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "القرار": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "القرار",
+        "definition_text": "قرار صادر عن الوزير لتطبيق الأحكام الواردة في اللائحة.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12846,6 +13128,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "environmental_air_quality",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -12979,6 +13269,22 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "hajj-umrah-external-pilgrims-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "handicrafts-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لنظام الحرف والصناعات اليدوية.",
+        "source_record_id": "handicrafts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -13454,6 +13760,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية لرسوم العقارات الشاغرة.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -13610,6 +13924,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "اللجان": [
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "اللجان",
+        "definition_text": "اللجان الابتدائية واللجنة الاستئنافية.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "اللجان الابتدائية": [
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "اللجان الابتدائية",
+        "definition_text": "اللجنة/ اللجان الابتدائية المختصة بالفصل في المنازعات والمخالفات التأمينية.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "اللجان الانتخابية": [
       {
         "track_id": "municipal_councils_law",
@@ -13716,6 +14050,14 @@
         "definition_text": "لجنة الاعتماد المهني بالهيئة.",
         "source_record_id": "engineering-practice-regulation-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة النظر في المخالفات.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "environmental_violations_penalties",
@@ -13849,6 +14191,14 @@
         "term_as_written": "اللجنة الاستئنافية",
         "definition_text": "اللجنة الاستئنافية المشكلة بموجب نظام المطبوعات والنشر .",
         "source_record_id": "audiovisual-media-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "اللجنة الاستئنافية",
+        "definition_text": "اللجنة الاستئنافية المختصة بالنظر في الاعتراضات التي يقدمها ذوو الشأن على قرارات اللجان الابتدائية.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -14588,6 +14938,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المبنى": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "المبنى",
+        "definition_text": "كل بناء ثابت أو جزء منه مستقل، أو تابع له وقابل للإشغال وله آلية انتفاع مخصصة وقابل لقياس الإشغال بشكل مستقل.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المبيد": [
       {
         "track_id": "agriculture_regulation",
@@ -15040,11 +15400,27 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "etec_law",
         "article_number": 1,
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "etec-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "falcon_center_statute",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة المركز.",
+        "source_record_id": "falcon-center-statute-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -15072,6 +15448,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "handicrafts-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "handicrafts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "health_system_law",
         "article_number": 1,
         "term_as_written": "المجلِس",
@@ -15093,6 +15485,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "insurance-authority-statute-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة هيئة التأمين.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -15738,6 +16138,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المحفظة الاستثمارية الوقفية": [
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "المحفظة الاستثمارية الوقفية",
+        "definition_text": "محفظة استثمارية مرتبطة بالحساب الاستثماري للوقف.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المحقق": [
       {
         "track_id": "judicial_inspection_regulation",
@@ -16276,6 +16686,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المدينة": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "المدينة",
+        "definition_text": "المدينة وتشمل المحافظة والمركز.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المراعي": [
       {
         "track_id": "environmental_law",
@@ -16445,6 +16865,14 @@
         "term_as_written": "المرخَّص له",
         "definition_text": "الشخص الطبيعي أو الاعتباري الذي تٌرخِّص له الوكالة تقديم خدمة من خدمات التنفيذ.",
         "source_record_id": "enforcement-providers-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "الحاصل على ترخيص أو تصريح أو شهادة اعتماد من الهيئة لممارسة أي من الأنشطة الترفيهية أو الأنشطة المساندة.",
+        "source_record_id": "entertainment-activities-law-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -18020,6 +18448,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "المصرح له",
+        "definition_text": "مقدم الطلب الذي صدرت له موافقة من الهيئة على طرح المنتج الاستثماري الوقفي الذي يتطلب الطرح.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "waste_management_law",
         "article_number": 1,
         "term_as_written": "المصرح له",
@@ -18878,6 +19314,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "المكلف",
+        "definition_text": "مالك المبنى الخاضع للرسم ذو الصفة الطبيعية أو الاعتبارية -عدا الدولة-، ويشمل ذلك من في حكمه؛ كالمنتفع من العقار وفق عقد انتفاع موثق خلال السنة المرجعية أو جزء منها.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "zakat_law",
         "article_number": 1,
         "term_as_written": "المكلف",
@@ -18893,6 +19337,16 @@
         "term_as_written": "المكونات السائلة",
         "definition_text": "أي مادة سائلة أو زيتية تسبب تلوثًا للأوساط البيئية.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الملحق الوقفي": [
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "الملحق الوقفي",
+        "definition_text": "وثيقة تحدد الأحكام والشروط الوقفية في المنتج الاستثماري الوقفي.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -19454,6 +19908,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنتج الاستثماري الوقفي": [
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "المنتج الاستثماري الوقفي",
+        "definition_text": "المحفظة الاستثمارية الوقفية، والصندوق الاستثماري الوقفي، والصكوك الاستثمارية الوقفية، الخاضعة لإشراف الجهة المختصة.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنتج العضوي": [
       {
         "track_id": "agriculture_law",
@@ -19767,6 +20231,16 @@
         "term_as_written": "المنصات العقارية الإلكترونية",
         "definition_text": "التطبيقات أو المواقع الإلكترونية المرخصة التي تتيح للمعلنين نشر الإعلانات العقارية أو تسويقها.",
         "source_record_id": "real-estate-marketing-advertising-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنصة": [
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "المنصة",
+        "definition_text": "منصة إلكترونية تحددها الوزارة.",
+        "source_record_id": "handicrafts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -21018,6 +21492,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "النطاق الجغرافي": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "النطاق الجغرافي",
+        "definition_text": "حدود مكانية تشمل مجموعة من المباني، ضمن نطاق المدينة الخاضعة لتطبيق الرسم.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "النطاق الجمركي": [
       {
         "track_id": "customs_law",
@@ -21046,6 +21530,16 @@
         "definition_text": "ويشمل الأراضي الواقعة ما بين الشواطئ أو الحدود البرية من جهة\nوخط داخلي من جهة أخرى يحدد بقرار من الوزير أو الجهة المختصة.",
         "source_record_id": "customs-law-llm-art-002",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "النطاق العمراني": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "النطاق العمراني",
+        "definition_text": "حدود توطين الأنشطة الحضرية، واستيعاب النمو العمراني للمدينة خلال فترة زمنية محددة.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "النظارة": [
@@ -21434,6 +21928,14 @@
         "definition_text": "نظام مزاولة المهن الهندسية، الصادر بالمرسوم الملكي رقم (م/36) وتاريخ 19 /4/ 1438هـ.",
         "source_record_id": "engineering-practice-regulation-llm-art-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام الأنشطة الترفيهية والأنشطة المساندة لها.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "environmental_air_quality",
@@ -22084,6 +22586,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام رسوم الأراضي البيضاء والعقارات الشاغرة.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -22596,6 +23106,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة التراث.",
+        "source_record_id": "handicrafts-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة التراث.",
+        "source_record_id": "handicrafts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "income_tax_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -22881,6 +23407,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة العامة للزكاة والدخل.",
         "source_record_id": "vat-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة العامة للأوقاف.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -23432,6 +23966,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الثقافة.",
+        "source_record_id": "handicrafts-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الثقافة.",
+        "source_record_id": "handicrafts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "health_system_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -23701,6 +24251,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة الداخلية.",
         "source_record_id": "travel-documents-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البلديات والإسكان.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -24161,6 +24719,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الحج والعمرة.",
         "source_record_id": "hajj-umrah-external-pilgrims-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "handicrafts_law",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير الثقافة.",
+        "source_record_id": "handicrafts-law-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -24855,6 +25421,14 @@
         "term_as_written": "اليوم",
         "definition_text": "اليوم التقويمي، سواء أكان يوم عمل أم لا.",
         "source_record_id": "oa-llm-companies-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "اليوم",
+        "definition_text": "اليوم التقويمي بما في ذلك أيام العطل الرسمية للدولة.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -26420,6 +26994,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "رئيس اللجنة": [
+      {
+        "track_id": "insurance_disputes_committees_rules",
+        "article_number": 1,
+        "term_as_written": "رئيس اللجنة",
+        "definition_text": "رئيس أي لجنة من اللجان.",
+        "source_record_id": "insurance-disputes-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "رئيس المجلس": [
       {
         "track_id": "civil_aviation_law",
@@ -27346,6 +27930,24 @@
         "definition_text": "إذن بإشغال المبنى يصدره الجهاز البلدي بعد التأكد من مطابقته للكود.",
         "source_record_id": "building-code-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "شهادة الإشغال",
+        "definition_text": "إذن بإشغال المبنى تصدره الجهة المختصة بعد التأكد من مطابقة المبنى لكود البناء السعودي.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "شهادة الاعتماد": [
+      {
+        "track_id": "entertainment_activities_law",
+        "article_number": 1,
+        "term_as_written": "شهادة الاعتماد",
+        "definition_text": "موافقة تصدرها الهيئة باعتماد المتقدم لممارسة الأنشطة المساندة.",
+        "source_record_id": "entertainment-activities-law-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "شهادة الالتزام البيئي": [
@@ -28240,6 +28842,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "فاتورة الرسم": [
+      {
+        "track_id": "vacant_properties_fees_regulation",
+        "article_number": 1,
+        "term_as_written": "فاتورة الرسم",
+        "definition_text": "أمر سداد، تصدره الوزارة في تواريخ محددة، على كل مبنى خاضع لتطبيق الرسم، يحتوي على البيانات المنصوص عليها في النظام واللائحة.",
+        "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "فترة الأمان للمبيدات": [
       {
         "track_id": "agriculture_regulation",
@@ -28575,6 +29187,16 @@
         "term_as_written": "قواعد البيانات",
         "definition_text": "قواعد المعلومات، والوثائق، والبيانات الإحصائية، والمعلومات الفنية، ذات العلاقة بقطاع الكهرباء.",
         "source_record_id": "electricity-regulation-llm-art-057",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "قواعد التراخيص": [
+      {
+        "track_id": "handicrafts_regulation",
+        "article_number": 1,
+        "term_as_written": "قواعد التراخيص",
+        "definition_text": "مستند يتضمن قائمة الأنشطة الحرفية واليدوية والشروط الفنية لكل ترخيص أو تصريح، إضافة لجدول المخالفات والعقوبات والمهل المحددة لتصحيح المخالفات -إن وجدت-.",
+        "source_record_id": "handicrafts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -30497,6 +31119,14 @@
         "term_as_written": "مقدم الطلب",
         "definition_text": "الشخص ذو الصفة االعتبارية - أو من ينوب عنه - الذي يقدم طلب ال ترخيص.",
         "source_record_id": "payment-systems-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "waqf_investment_products_regulation",
+        "article_number": 1,
+        "term_as_written": "مقدم الطلب",
+        "definition_text": "الشخص الذي يتقدم للهيئة بطلب الموافقة على طرح المنتج الاستثماري الوقفي الذي يتطلب الطرح.",
+        "source_record_id": "waqf-investment-products-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 15918,
-  "total_references_extracted": 3650,
-  "intra_law_count": 3057,
-  "inter_law_count": 593,
+  "total_records_scanned": 16138,
+  "total_references_extracted": 3702,
+  "intra_law_count": 3104,
+  "inter_law_count": 598,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 3117,
-    "medium": 533
+    "high": 3164,
+    "medium": 538
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -11531,6 +11531,116 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الثالثة ) من النظام - عبر القنوات الإلك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الرابعة ) من النظام - بما تقضي به الأحك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الثامنة ) من النظام، وإيضاح تكاليفها ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الثامنة ) من النظام، وبيان تكاليفها الم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الثامنة ) من النظام، تجوز الدعوة إلى جم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الثامنة ) من النظام . وتحدد الجهة المرخ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الحادية عشرة ) من النظام، مرافقا له المسوغات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الرابعة عشرة ) من هذه اللائحة، وفق قرار يصدر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الثانية عشرة ) من النظام، على الجهة المرخص ل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "donations_collection_regulation",
+      "source_record_id": "donations-collection-regulation-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "donations_collection_regulation",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة ( الثامنة عشرة ) من النظام وفقا لشرط المتبرع (",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "dry_gas_lpg_distribution_law",
       "source_record_id": "dry-gas-lpg-distribution-law-llm-art-001",
       "source_article_number": 1,
@@ -12774,6 +12884,61 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "entertainment_activities_law",
+      "source_record_id": "entertainment-activities-law-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "entertainment_activities_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من النظام. التصنيف: عملية تقي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "entertainment_activities_law",
+      "source_record_id": "entertainment-activities-law-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "entertainment_activities_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من النظام. شهادة الاعتماد: مو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "entertainment_activities_law",
+      "source_record_id": "entertainment-activities-law-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "entertainment_activities_law",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام، يحدد المجلس المقاب",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "entertainment_activities_law",
+      "source_record_id": "entertainment-activities-law-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "entertainment_activities_law",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من النظام وفق أحكامه، دون إخل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "entertainment_activities_law",
+      "source_record_id": "entertainment-activities-law-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "entertainment_activities_law",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة)",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "environmental_law",
       "source_record_id": "environmental-law-llm-art-015",
       "source_article_number": 15,
@@ -13940,6 +14105,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "falcon_center_statute",
+      "source_record_id": "falcon-center-statute-llm-015",
+      "source_article_number": 15,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "finance_companies_law",
       "source_record_id": "finance-companies-law-llm-art-005",
       "source_article_number": 5,
@@ -15037,6 +15213,94 @@
       "target_article_number": 62,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثانية والستين) من النظام على أعضاء الهيئة ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "حماية المؤشرات الجغرافية",
+      "raw_citation_text": "المادة الأولى ) من نظام حماية المؤشرات الجغرافية الصادر بالمرسو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "geographical_indications_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من اللائحة؛ إذا وجد المؤشر ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "geographical_indications_regulation",
+      "target_article_number": 1,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الأولى من النظام، أو يمثل مجموعة منت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "geographical_indications_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة العاشرة من النظام، أو قدم من جهة مختص",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "geographical_indications_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "geographical_indications_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من اللائحة، وتاريخ بدء وانتها",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-029",
+      "source_article_number": 29,
+      "type": "intra_law",
+      "target_track_id": "geographical_indications_regulation",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العشرون) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "geographical_indications_regulation",
+      "source_record_id": "geographical-indications-regulation-llm-034",
+      "source_article_number": 34,
+      "type": "intra_law",
+      "target_track_id": "geographical_indications_regulation",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العشرون) من النظام، وذلك في حدود ما ير",
       "confidence": "high"
     },
     {
@@ -16214,6 +16478,105 @@
       "target_article_number": null,
       "target_law_name_raw": "الشركات",
       "raw_citation_text": "أحكام نظام الشركات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_law",
+      "source_record_id": "handicrafts-law-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام. 2- تكون مدة اللجنة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_law",
+      "source_record_id": "handicrafts-law-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_law",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) ، والفقرة (2) من المادة (الخام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_law",
+      "source_record_id": "handicrafts-law-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_law",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) ، والمادتين (السابعة) و(الثامن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_law",
+      "source_record_id": "handicrafts-law-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_law",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من النظام- عليه غرامة لا تزيد",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_law",
+      "source_record_id": "handicrafts-law-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_law",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من النظام، في حالة تكرار ارتك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_regulation",
+      "source_record_id": "handicrafts-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الترخيص وتشمل الحرفة والصناعة اليدوية الإنتاجية الفنية",
+      "raw_citation_text": "بموجب قواعد الترخيص وتشمل الحرفة والصناعة اليدوية الإنتاجية الفنية أو الت",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "handicrafts_regulation",
+      "source_record_id": "handicrafts-regulation-llm-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من اللائحة أو سبق له ممارستها",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_regulation",
+      "source_record_id": "handicrafts-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة من اللائحة. ج- يشترط على الحر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "handicrafts_regulation",
+      "source_record_id": "handicrafts-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "handicrafts_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة وعلى موافقة الهيئة",
       "confidence": "high"
     },
     {
@@ -17556,6 +17919,105 @@
       "target_article_number": 1,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الأولى) من هذا النظام يسري نظام الشرك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من القواعد؛ يحدد رئيس اللجنة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "توزيع الدعاوى بين أعضاء اللجنة",
+      "raw_citation_text": "حسب آلية توزيع الدعاوى بين أعضاء اللجنة التي حددتها اللجنة نفسها أو لج",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من القواعد- عرض الصلح على أطر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من القواعد؛ فللأمانة العامة أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من القواعد، يتمتع ناظر الدعوى",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من القواعد، تبلغ الأمانة العا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 33,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من القواعد.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 33,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والثلاثين) من القواعد، على اللجان الابتد",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "insurance_disputes_committees_rules",
+      "source_record_id": "insurance-disputes-committees-rules-llm-044",
+      "source_article_number": 44,
+      "type": "intra_law",
+      "target_track_id": "insurance_disputes_committees_rules",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من القواعد.",
       "confidence": "high"
     },
     {
@@ -30609,11 +31071,11 @@
       "source_record_id": "shura-council-internal-regulation-llm-art-034",
       "source_article_number": 34,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "waqf_investment_products_regulation",
       "target_article_number": null,
       "target_law_name_raw": "تنظيم الشؤون المالية والوظيفية",
       "raw_citation_text": "وفقاً للائحة تنظيم الشؤون المالية والوظيفية",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "social_insurance_law",
@@ -37590,6 +38052,50 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "vacant_properties_fees_regulation",
+      "source_record_id": "vacant-properties-fees-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "vacant_properties_fees_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "vacant_properties_fees_regulation",
+      "source_record_id": "vacant-properties-fees-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "vacant_properties_fees_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من اللائحة. 2- وجود مانع يحول",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "vacant_properties_fees_regulation",
+      "source_record_id": "vacant-properties-fees-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "vacant_properties_fees_regulation",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "vacant_properties_fees_regulation",
+      "source_record_id": "vacant-properties-fees-regulation-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "vacant_properties_fees_regulation",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة عشرة) من اللائحة. 2- تضع الوزارة لا",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "vat_law",
       "source_record_id": "vat-law-llm-art-050",
       "source_article_number": 50,
@@ -38302,6 +38808,72 @@
       "target_article_number": 2,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثانية من النظام، يتم تطبيق نسبة الض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waqf_investment_products_regulation",
+      "source_record_id": "waqf-investment-products-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "awqaf_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "الهيئة العامة للأوقاف",
+      "raw_citation_text": "المادة (الأولى) من نظام الهيئة العامة للأوقاف. 2- يقصد بالألف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waqf_investment_products_regulation",
+      "source_record_id": "waqf-investment-products-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "waqf_investment_products_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "waqf_investment_products_regulation",
+      "source_record_id": "waqf-investment-products-regulation-llm-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "waqf_investment_products_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من هذه اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waqf_investment_products_regulation",
+      "source_record_id": "waqf-investment-products-regulation-llm-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "waqf_investment_products_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من اللائحة، يحدد الملحق الوقف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waqf_investment_products_regulation",
+      "source_record_id": "waqf-investment-products-regulation-llm-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "waqf_investment_products_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من هذه اللائحة، يحدد الملحق ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "waqf_investment_products_regulation",
+      "source_record_id": "waqf-investment-products-regulation-llm-029",
+      "source_article_number": 29,
+      "type": "intra_law",
+      "target_track_id": "waqf_investment_products_regulation",
+      "target_article_number": 31,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والثلاثون) من اللائحة، وأي تقارير إضافية",
       "confidence": "high"
     },
     {

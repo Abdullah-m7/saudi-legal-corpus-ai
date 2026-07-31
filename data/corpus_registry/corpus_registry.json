@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 16087,
+  "total_primary_arabic_governing_records": 16307,
   "total_reference_records": 614,
-  "total_registry_counted_records": 16982,
-  "total_tracks": 300,
+  "total_registry_counted_records": 17202,
+  "total_tracks": 309,
   "tracks": [
     {
       "boundaries": {
@@ -9475,6 +9475,447 @@
         "not_official_translation": true,
         "not_verified_official_text": true
       },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/handicrafts_law/official_source/handicrafts_law_official_source.json",
+        "sources/handicrafts_law/verified/handicrafts_law_verified_records.jsonl",
+        "data/handicrafts_law_arabic_legal_llm/handicrafts_law_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "نظام الحرف والصناعات اليدوية",
+      "display_name_en": "Handicrafts and Handmade Industries Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/handicrafts_law_arabic_legal_llm/handicrafts_law_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Handicrafts and Handmade Industries Law «نظام الحرف والصناعات اليدوية» — **18 numbered articles, no appendix records. ALL 18 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000207, published 4/8/1447H / 2026-01-23) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..18 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Handicrafts and Handmade Industries Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000207), published 4/8/1447H (2026-01-23). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "handicrafts_law",
+      "validator_targets": [
+        "make handicrafts-law-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/handicrafts_regulation/official_source/handicrafts_regulation_official_source.json",
+        "sources/handicrafts_regulation/verified/handicrafts_regulation_verified_records.jsonl",
+        "data/handicrafts_regulation_arabic_legal_llm/handicrafts_regulation_legal_llm_001_014.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام الحرف والصناعات اليدوية",
+      "display_name_en": "Executive Regulation of the Handicrafts and Handmade Industries Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/handicrafts_regulation_arabic_legal_llm/handicrafts_regulation_legal_llm_001_014.json",
+          "governing": true,
+          "record_count": 14,
+          "status": "complete"
+        }
+      },
+      "notes": "Executive Regulation of the Handicrafts and Handmade Industries Law «اللائحة التنفيذية لنظام الحرف والصناعات اليدوية» — **14 numbered articles, no appendix records. ALL 14 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000428, published 3/9/1447H / 2026-02-20) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..14 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 14,
+        "legal_status_breakdown": {
+          "اصلية": 14,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 14
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Executive Regulation of the Handicrafts and Handmade Industries Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000428), published 3/9/1447H (2026-02-20). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "handicrafts_regulation",
+      "validator_targets": [
+        "make handicrafts-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/donations_collection_regulation/official_source/donations_collection_regulation_official_source.json",
+        "sources/donations_collection_regulation/verified/donations_collection_regulation_verified_records.jsonl",
+        "data/donations_collection_regulation_arabic_legal_llm/donations_collection_regulation_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام جمع التبرعات",
+      "display_name_en": "Executive Regulation of the Donations Collection Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/donations_collection_regulation_arabic_legal_llm/donations_collection_regulation_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Executive Regulation of the Donations Collection Law «اللائحة التنفيذية لنظام جمع التبرعات» — **17 numbered articles, no appendix records. ALL 17 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000948, published 28/11/1447H / 2026-05-15) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..17 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Executive Regulation of the Donations Collection Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000948), published 28/11/1447H (2026-05-15). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "donations_collection_regulation",
+      "validator_targets": [
+        "make donations-collection-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/falcon_center_statute/official_source/falcon_center_statute_official_source.json",
+        "sources/falcon_center_statute/verified/falcon_center_statute_verified_records.jsonl",
+        "data/falcon_center_statute_arabic_legal_llm/falcon_center_statute_legal_llm_001_017.json"
+      ],
+      "display_name_ar": "تنظيم المركز الوطني للصقور",
+      "display_name_en": "Statute of the National Falcon Center",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/falcon_center_statute_arabic_legal_llm/falcon_center_statute_legal_llm_001_017.json",
+          "governing": true,
+          "record_count": 17,
+          "status": "complete"
+        }
+      },
+      "notes": "Statute of the National Falcon Center «تنظيم المركز الوطني للصقور» — **17 numbered articles, no appendix records. ALL 17 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000954, published 28/11/1447H / 2026-05-15) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..17 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 17,
+        "legal_status_breakdown": {
+          "اصلية": 17,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 17
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Statute of the National Falcon Center — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000954), published 28/11/1447H (2026-05-15). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "falcon_center_statute",
+      "validator_targets": [
+        "make falcon-center-statute-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/geographical_indications_regulation/official_source/geographical_indications_regulation_official_source.json",
+        "sources/geographical_indications_regulation/verified/geographical_indications_regulation_verified_records.jsonl",
+        "data/geographical_indications_regulation_arabic_legal_llm/geographical_indications_regulation_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لنظام حماية المؤشرات الجغرافية",
+      "display_name_en": "Executive Regulation of the Geographical Indications Protection Law",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/geographical_indications_regulation_arabic_legal_llm/geographical_indications_regulation_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "Executive Regulation of the Geographical Indications Protection Law «اللائحة التنفيذية لنظام حماية المؤشرات الجغرافية» — **37 numbered articles, no appendix records. ALL 37 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001049, published 5/12/1447H / 2026-05-22) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..37 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 37,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 37
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Executive Regulation of the Geographical Indications Protection Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001049), published 5/12/1447H (2026-05-22). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "geographical_indications_regulation",
+      "validator_targets": [
+        "make geographical-indications-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/vacant_properties_fees_regulation/official_source/vacant_properties_fees_regulation_official_source.json",
+        "sources/vacant_properties_fees_regulation/verified/vacant_properties_fees_regulation_verified_records.jsonl",
+        "data/vacant_properties_fees_regulation_arabic_legal_llm/vacant_properties_fees_regulation_legal_llm_001_018.json"
+      ],
+      "display_name_ar": "اللائحة التنفيذية لرسوم العقارات الشاغرة",
+      "display_name_en": "Executive Regulation for Vacant Properties Fees",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/vacant_properties_fees_regulation_arabic_legal_llm/vacant_properties_fees_regulation_legal_llm_001_018.json",
+          "governing": true,
+          "record_count": 18,
+          "status": "complete"
+        }
+      },
+      "notes": "Executive Regulation for Vacant Properties Fees «اللائحة التنفيذية لرسوم العقارات الشاغرة» — **18 numbered articles, no appendix records. ALL 18 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000950, published 28/11/1447H / 2026-05-15) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..18 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 18,
+        "legal_status_breakdown": {
+          "اصلية": 18,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 18
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Executive Regulation for Vacant Properties Fees — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4000950), published 28/11/1447H (2026-05-15). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "vacant_properties_fees_regulation",
+      "validator_targets": [
+        "make vacant-properties-fees-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/waqf_investment_products_regulation/official_source/waqf_investment_products_regulation_official_source.json",
+        "sources/waqf_investment_products_regulation/verified/waqf_investment_products_regulation_verified_records.jsonl",
+        "data/waqf_investment_products_regulation_arabic_legal_llm/waqf_investment_products_regulation_legal_llm_001_037.json"
+      ],
+      "display_name_ar": "لائحة المنتجات الاستثمارية الوقفية",
+      "display_name_en": "Regulation on Waqf Investment Products",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/waqf_investment_products_regulation_arabic_legal_llm/waqf_investment_products_regulation_legal_llm_001_037.json",
+          "governing": true,
+          "record_count": 37,
+          "status": "complete"
+        }
+      },
+      "notes": "Regulation on Waqf Investment Products «لائحة المنتجات الاستثمارية الوقفية» — **37 numbered articles, no appendix records. ALL 37 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001176, published 26/12/1447H / 2026-06-12) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..37 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 37,
+        "legal_status_breakdown": {
+          "اصلية": 37,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 37
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Regulation on Waqf Investment Products — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001176), published 26/12/1447H (2026-06-12). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "waqf_investment_products_regulation",
+      "validator_targets": [
+        "make waqf-investment-products-regulation-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
+        "sources/insurance_disputes_committees_rules/official_source/insurance_disputes_committees_rules_official_source.json",
+        "sources/insurance_disputes_committees_rules/verified/insurance_disputes_committees_rules_verified_records.jsonl",
+        "data/insurance_disputes_committees_rules_arabic_legal_llm/insurance_disputes_committees_rules_legal_llm_001_046.json"
+      ],
+      "display_name_ar": "قواعد وإجراءات عمل لجان الفصل في المنازعات والمخالفات التأمينية",
+      "display_name_en": "Rules and Procedures of the Committees for Resolution of Insurance Disputes and Violations",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/insurance_disputes_committees_rules_arabic_legal_llm/insurance_disputes_committees_rules_legal_llm_001_046.json",
+          "governing": true,
+          "record_count": 46,
+          "status": "complete"
+        }
+      },
+      "notes": "Rules and Procedures of the Committees for Resolution of Insurance Disputes and Violations «قواعد وإجراءات عمل لجان الفصل في المنازعات والمخالفات التأمينية» — **46 numbered articles, no appendix records. ALL 46 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001121, published 19/12/1447H / 2026-06-05) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..46 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 46,
+        "legal_status_breakdown": {
+          "اصلية": 46,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 46
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Rules and Procedures of the Committees for Resolution of Insurance Disputes and Violations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001121), published 19/12/1447H (2026-06-05). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "insurance_disputes_committees_rules",
+      "validator_targets": [
+        "make insurance-disputes-committees-rules-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_law",
+      "data_paths": [
+        "sources/entertainment_activities_law/official_source/entertainment_activities_law_official_source.json",
+        "sources/entertainment_activities_law/verified/entertainment_activities_law_verified_records.jsonl",
+        "data/entertainment_activities_law_arabic_legal_llm/entertainment_activities_law_legal_llm_001_016.json"
+      ],
+      "display_name_ar": "نظام الأنشطة الترفيهية والأنشطة المساندة لها",
+      "display_name_en": "Law of Entertainment Activities and Supporting Activities",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/entertainment_activities_law_arabic_legal_llm/entertainment_activities_law_legal_llm_001_016.json",
+          "governing": true,
+          "record_count": 16,
+          "status": "complete"
+        }
+      },
+      "notes": "Law of Entertainment Activities and Supporting Activities «نظام الأنشطة الترفيهية والأنشطة المساندة لها» — **16 numbered articles, no appendix records. ALL 16 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_1** — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001278, published 18/1/1448H / 2026-07-03) — the Gazette is the official publication of record for Saudi laws/regulations, a direct primary-source fetch (not a third-party mirror, not OCR), matching this corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. **DISCOVERY METHOD (new this pass)**: located by downloading and indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs), then cross-matching every gazette-published law/regulation title against the live corpus registry — a systematic gap-discovery channel replacing ad-hoc web search. **SEGMENTATION INTEGRITY**: article boundaries captured by a strict sequential scan that requires the expected Arabic feminine ordinal followed by a colon, which structurally excludes in-text cross-references (e.g. «المادة (التاسعة) من اللائحة», no colon); every article number 1..16 verified against a programmatically generated ordinal sequence, zero empty articles, zero chapter-heading or site-navigation leakage. Tashkeel and decorative tatweel stripped uniformly per corpus convention. See known_unresolved_discrepancies in the source artifact. **NO SUPERSESSION EDGE MODELED**. Arabic governs; not legal advice.",
+      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+      "record_counts": {
+        "arabic_articles": 16,
+        "legal_status_breakdown": {
+          "اصلية": 16,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 16
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Law of Entertainment Activities and Supporting Activities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/decisions-and-regulations/4001278), published 18/1/1448H (2026-07-03). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
+      "status": "complete",
+      "track_id": "entertainment_activities_law",
+      "validator_targets": [
+        "make entertainment-activities-law-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
       "corpus_family": "statutory_regulation",
       "data_paths": [
         "sources/standards_quality_regulation/law/official_source/standards_quality_regulation_official_source.json",
@@ -14521,6 +14962,7 @@
       "disability_rights": 78,
       "documentation_settlement": 15,
       "domestic_labor": 33,
+      "donations_collection_regulation": 17,
       "dry_gas_lpg": 21,
       "ecommerce": 46,
       "einvoicing": 7,
@@ -14532,6 +14974,7 @@
       "enforcement": 371,
       "enforcement_providers": 18,
       "engineering_practice": 35,
+      "entertainment_activities_law": 16,
       "environmental": 49,
       "environmental_air_quality": 8,
       "environmental_emergency_response": 12,
@@ -14545,6 +14988,7 @@
       "environmental_wildlife_hunting": 13,
       "etec": 18,
       "evidence": 322,
+      "falcon_center_statute": 17,
       "finance_companies": 147,
       "finance_lease": 60,
       "fisheries": 13,
@@ -14557,8 +15001,11 @@
       "gcc_anti_dumping": 17,
       "gcc_ownership": 6,
       "general_education": 68,
+      "geographical_indications_regulation": 37,
       "gtpl": 256,
       "hajj_umrah_pilgrims": 24,
+      "handicrafts_law": 18,
+      "handicrafts_regulation": 14,
       "health_system": 29,
       "healthcare_professions": 74,
       "high_risk_professions": 19,
@@ -14568,6 +15015,7 @@
       "income_tax": 155,
       "insurance_authority": 15,
       "insurance_control": 25,
+      "insurance_disputes_committees_rules": 46,
       "investment": 53,
       "judgment_objection_methods": 62,
       "judicial_costs": 40,
@@ -14662,7 +15110,9 @@
       "travel_documents": 69,
       "tvtc": 13,
       "universities": 58,
+      "vacant_properties_fees_regulation": 18,
       "vat": 135,
+      "waqf_investment_products_regulation": 37,
       "waste_management": 38,
       "water": 233,
       "weapons_ammunition": 82,
@@ -14671,7 +15121,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 15918,
+    "total_records": 16138,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

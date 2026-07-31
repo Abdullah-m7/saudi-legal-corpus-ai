@@ -312,6 +312,15 @@ export PYTHONPATH := src:$(PYTHONPATH)
         environmental-protected-areas-reg-track-validate \
         environmental-emergency-response-reg-track-validate \
         product-safety-regulation-track-validate \
+        handicrafts-law-track-validate \
+        handicrafts-regulation-track-validate \
+        donations-collection-regulation-track-validate \
+        falcon-center-statute-track-validate \
+        geographical-indications-regulation-track-validate \
+        vacant-properties-fees-regulation-track-validate \
+        waqf-investment-products-regulation-track-validate \
+        insurance-disputes-committees-rules-track-validate \
+        entertainment-activities-law-track-validate \
         standards-quality-regulation-track-validate \
         disability-rights-regulation-track-validate \
         anti-smoking-regulation-track-validate \
@@ -1774,6 +1783,33 @@ environmental-emergency-response-reg-track-validate:
 
 product-safety-regulation-track-validate:
 	$(PY) scripts/validate_product_safety_regulation_track.py
+
+handicrafts-law-track-validate:
+	$(PY) scripts/validate_handicrafts_law_track.py
+
+handicrafts-regulation-track-validate:
+	$(PY) scripts/validate_handicrafts_regulation_track.py
+
+donations-collection-regulation-track-validate:
+	$(PY) scripts/validate_donations_collection_regulation_track.py
+
+falcon-center-statute-track-validate:
+	$(PY) scripts/validate_falcon_center_statute_track.py
+
+geographical-indications-regulation-track-validate:
+	$(PY) scripts/validate_geographical_indications_regulation_track.py
+
+vacant-properties-fees-regulation-track-validate:
+	$(PY) scripts/validate_vacant_properties_fees_regulation_track.py
+
+waqf-investment-products-regulation-track-validate:
+	$(PY) scripts/validate_waqf_investment_products_regulation_track.py
+
+insurance-disputes-committees-rules-track-validate:
+	$(PY) scripts/validate_insurance_disputes_committees_rules_track.py
+
+entertainment-activities-law-track-validate:
+	$(PY) scripts/validate_entertainment_activities_law_track.py
 
 standards-quality-regulation-track-validate:
 	$(PY) scripts/validate_standards_quality_regulation_track.py
