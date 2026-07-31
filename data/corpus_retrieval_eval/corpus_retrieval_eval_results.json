@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 527,
-  "top1_hits": 491,
-  "top3_hits": 514,
-  "top5_hits": 521,
-  "top1_accuracy": 0.9317,
-  "top3_accuracy": 0.9753,
-  "top5_accuracy": 0.9886,
-  "mrr_at_5": 0.9553,
+  "total_queries": 529,
+  "top1_hits": 493,
+  "top3_hits": 516,
+  "top5_hits": 523,
+  "top1_accuracy": 0.9319,
+  "top3_accuracy": 0.9754,
+  "top5_accuracy": 0.9887,
+  "mrr_at_5": 0.9555,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -12571,9 +12571,9 @@
      "score": 19
     },
     {
-     "record_id": "tourism-law-llm-art-006",
-     "article_number": 6,
-     "score": 17
+     "record_id": "tourist-visa-reg-llm-001",
+     "article_number": 1,
+     "score": 19
     }
    ]
   },
@@ -16356,6 +16356,68 @@
      "record_id": "hospitality-facility-reg-llm-023",
      "article_number": 23,
      "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "tvr-001",
+   "query_ar": "على كل من يرغب في الدخول إلى المملكة لغرض السياحة الحصول على تأشيرة سارية المفعول ما لم يكن دخوله لا يتطلب ذلك",
+   "category": "provision",
+   "gold": {
+    "corpus": "tourist_visa",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tourist-visa-reg-llm-002",
+     "article_number": 2,
+     "score": 63
+    },
+    {
+     "record_id": "tourist-visa-reg-llm-001",
+     "article_number": 1,
+     "score": 45
+    },
+    {
+     "record_id": "tourist-visa-reg-llm-006",
+     "article_number": 6,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "tvr-002",
+   "query_ar": "يستحصل مبلغ ثلاثمائة ريال رسم تأشيرة زيارة لغرض السياحة وذلك وفق ما قضى به المرسوم الملكي رقم 2",
+   "category": "provision",
+   "gold": {
+    "corpus": "tourist_visa",
+    "law_component": "regulation",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tourist-visa-reg-llm-009",
+     "article_number": 9,
+     "score": 56
+    },
+    {
+     "record_id": "tourist-visa-reg-llm-001",
+     "article_number": 1,
+     "score": 31
+    },
+    {
+     "record_id": "tourist-visa-reg-llm-002",
+     "article_number": 2,
+     "score": 27
     }
    ]
   }

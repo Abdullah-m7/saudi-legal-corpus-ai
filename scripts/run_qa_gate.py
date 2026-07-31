@@ -234,6 +234,7 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_tourism_travel_services_reg_track.py",
     "scripts/gen_hospitality_mgmt_reg_track.py",
     "scripts/gen_hospitality_facility_reg_track.py",
+    "scripts/gen_tourist_visa_reg_track.py",
     "scripts/gen_standards_quality_regulation_track.py",
     "scripts/gen_disability_rights_regulation_track.py",
     "scripts/gen_anti_smoking_regulation_track.py",

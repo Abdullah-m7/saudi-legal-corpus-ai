@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 295,
-  "total_terms": 1937,
-  "total_definitions": 3384,
-  "tracks_with_definitions_article_parsed": 218,
+  "total_tracks_in_registry": 296,
+  "total_terms": 1940,
+  "total_definitions": 3395,
+  "tracks_with_definitions_article_parsed": 219,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -415,6 +415,16 @@
         "term_as_written": "أدوات النحل",
         "definition_text": "ما يستعملها النحال داخل الخلايا أو خارجها، للمساعدة في تنفيذ عمليات النحالة المختلفة.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "أذونات تأشيرة الزيارة لغرض السياحة": [
+      {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "أذونات تأشيرة الزيارة لغرض السياحة",
+        "definition_text": "الموافقة التي تصدرها الوزارة على طلبات الحصول على تأشيرات الزيارة لغرض السياحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -3999,6 +4009,16 @@
         "term_as_written": "التأخير على المَدْرَج",
         "definition_text": "الوقت الذي تبقى فيه الطائرة على الأرض، بالنسبة للمغادرة من وقت اكتمال التصعيد للطائرة حتى وقت إقلاعها وبالنسبة للوصول من وقت هبوطها على المدرج لحين إتاحة النزول للركاب.",
         "source_record_id": "aviation-passenger-rights-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "التأشيرة": [
+      {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "التأشيرة",
+        "definition_text": "تأشيرة الزيارة لغرض السياحة، هي أذن بالدخول تمنح بشروط محددة وفقا لهذه اللائحة، وتصدر من وزارة الخارجية والبعثات السعودية في الخارج أو السفارة الرقمية في منصة وزارة الخارجية أو عند الوصول.",
+        "source_record_id": "tourist-visa-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -8830,6 +8850,14 @@
         "definition_text": "الشخص الطبيعي الذي يبيت لغرض السياحة مدة لا تقل عن ليلة خارج مكان إقامته المعتادة بصورة نظامية من أجل السياحة، أو يستفيد من واحدة -أو أكثر- من خدمات الأنشطة السياحية والتكميلية والمتخصصة.",
         "source_record_id": "tourism-travel-services-reg-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "السائح",
+        "definition_text": "كل من يتقدم بطلب على تأشيرة على الحصول على تأشيرة تمكنه من زيارة المملكة لغرض السياحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "السائق": [
@@ -13114,6 +13142,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة تأشيرة الزيارة لغرض السياحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trade_names_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -16248,6 +16284,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "كل شخص اعتباري حاصل على ترخيص من الوزارة بموجب النظام واللائحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "waste_management_law",
         "article_number": 1,
         "term_as_written": "المرخص له",
@@ -18763,6 +18807,14 @@
         "term_as_written": "المملكة",
         "definition_text": "المملكة العربية السعودية.",
         "source_record_id": "road-transport-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "المملكة",
+        "definition_text": "المملكة العربية السعودية.",
+        "source_record_id": "tourist-visa-reg-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -21524,6 +21576,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام السياحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trade_names_law",
         "article_number": 1,
         "term_as_written": "النظام",
@@ -23120,6 +23180,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة السياحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trade_names_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -23844,6 +23912,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير السياحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "trade_names_law",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -24251,6 +24327,16 @@
         "term_as_written": "اليوم",
         "definition_text": "يوم عمل.",
         "source_record_id": "municipal-councils-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "باقة البرنامج السياحي": [
+      {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "باقة البرنامج السياحي",
+        "definition_text": "هي باقة معتمدة من قبل الوزارة، تقدم من المرخص له لخدمات السفر والسياحة، يتم شراؤها من قبل الراغب في القدوم إلى المملكة، على أن تشمل تكاليف رسوم الحصول على التأشيرة، والإقامة حسب مدة البرنامج، ورحلة الطيران ذهابا وإيابا، وغيرها من خدمات السفر والسياحة.",
+        "source_record_id": "tourist-visa-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -25305,6 +25391,14 @@
         "term_as_written": "خدمات السفر والسياحة",
         "definition_text": "ترتيب الخدمات في مجال السياحة وتنظيمها وتقديمها، وتشمل الرحلات والبرامج السياحية وبيع تذاكر السفر من الشركات المرخصة وتسويقها، وتقديم خدمات إصدار التأشيرات أو غيرها المتصلة بالسفر، وترتيب خدمات الأنشطة السياحية، أو مرافق الضيافة وحجزها، ونحو ذلك.",
         "source_record_id": "tourism-travel-services-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "tourist_visa",
+        "article_number": 1,
+        "term_as_written": "خدمات السفر والسياحة",
+        "definition_text": "ترتيب وتنظيم خدمات في مجال السياحة، وتشمل الرحلات والبرامج السياحية، وبيع وتسويق تذاكر السفر من الشركات المرخصة، وتقديم خدمات إصدار التأشيرات أو غيرها المتصلة بالسفر، وترتيب خدمات الأنشطة السياحية، أو مرافق الضيافة وحجزها، ونحو ذلك.",
+        "source_record_id": "tourist-visa-reg-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],

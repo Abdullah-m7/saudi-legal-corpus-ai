@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 15963,
+  "total_primary_arabic_governing_records": 15976,
   "total_reference_records": 614,
-  "total_registry_counted_records": 16858,
-  "total_tracks": 295,
+  "total_registry_counted_records": 16871,
+  "total_tracks": 296,
   "tracks": [
     {
       "boundaries": {
@@ -9232,6 +9232,55 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
+        "sources/tourist_visa/official_source/tourist_visa_reg_official_source.json",
+        "sources/tourist_visa/verified/tourist_visa_reg_verified_records.jsonl",
+        "data/tourist_visa_reg_arabic_legal_llm/tourist_visa_reg_legal_llm_001_013.json"
+      ],
+      "display_name_ar": "لائحة تأشيرة الزيارة لغرض السياحة",
+      "display_name_en": "Regulation of the Tourist Visit Visa",
+      "governing_language": "ar",
+      "jurisdiction": "Kingdom of Saudi Arabia",
+      "language_layers": {
+        "arabic": {
+          "data_path": "data/tourist_visa_reg_arabic_legal_llm/tourist_visa_reg_legal_llm_001_013.json",
+          "governing": true,
+          "record_count": 13,
+          "status": "complete"
+        }
+      },
+      "notes": "Regulation of the Tourist Visit Visa «لائحة تأشيرة الزيارة لغرض السياحة» — fourth of ten regulations the Minister of Tourism announced together under the Tourism Law (argaam.com article 1611138), following tourism_travel_services (2290), hospitality_mgmt (2293), and hospitality_facility (2289) — all four share the same decision date 19/5/1444H. Ministerial Decision No. (2344), dated 19/5/1444H. **13 records: FLAT statute (المادة الأولى .. الثالثة عشرة), NO أبواب/فصول divisions, NO appendix** — the fixed 300 SAR visa fee (citing Royal Decree No. 2, 5/1/1441H) is stated inline in Article 9, not a separate fee table. **ALL 13 اصلية** (fresh issuance, no amendment history). **VERIFICATION TIER: TIER_2** — unlike the three sibling tracks in this batch, this PDF does NOT embed a scanned signed-decision-letter page; the decision number/date is printed only on the cover page, still a direct official-source citation but without the primary-document signature capture that elevated the siblings to effectively TIER_1. The founding Royal Decree cited in this regulation's own Article 1 (definition of 'النظام', M/18, 26/1/1444H) independently matches this corpus's own tourism_law track exactly. Read visually page-by-page (150dpi, 7 pages). **NO SUPERSESSION EDGE MODELED** — fresh issuance, no named-predecessor repeal clause. Disclosed: the exact Umm al-Qura Gazette publication date was not independently confirmed this pass (uqn.gov.sa returned HTTP 503). Arabic governs; not legal advice.",
+      "official_text_status": "MT_OFFICIAL_PDF_COVER_PAGE_CITATION_NO_SIGNED_LETTER_VISUALLY_READ",
+      "record_counts": {
+        "arabic_articles": 13,
+        "legal_status_breakdown": {
+          "اصلية": 13,
+          "مضافة": 0,
+          "معدلة": 0,
+          "ملغاة": 0
+        },
+        "total": 13
+      },
+      "report_paths": [
+        "reports/coverage_gap_map/coverage_gap_map.json"
+      ],
+      "source_authority": "Ministerial Decision No. (2344), dated 19/5/1444H, issued under the Tourism Law (Royal Decree M/18, 26/1/1444H, track_id: tourism_law). The decision number/date is printed directly on the official mt.gov.sa-hosted PDF's own cover page. Unlike three sibling tracks in this batch (2290, 2293, 2289), this PDF does NOT embed a scanned signed-decision-letter page -- classified TIER_2. The founding Royal Decree cited in this regulation's own Article 1 matches this corpus's own tourism_law track exactly.",
+      "status": "complete",
+      "track_id": "tourist_visa",
+      "validator_targets": [
+        "make tourist-visa-reg-track-validate"
+      ]
+    },
+    {
+      "boundaries": {
+        "arabic_governs": true,
+        "no_public_release": true,
+        "no_trilingual_alignment": true,
+        "not_legal_advice": true,
+        "not_official_translation": true,
+        "not_verified_official_text": true
+      },
+      "corpus_family": "statutory_regulation",
+      "data_paths": [
         "sources/standards_quality_regulation/law/official_source/standards_quality_regulation_official_source.json",
         "sources/standards_quality_regulation/law/verified/standards_quality_regulation_verified_records.jsonl",
         "data/standards_quality_regulation_arabic_legal_llm/standards_quality_regulation_legal_llm_001_023.json"
@@ -14407,6 +14456,7 @@
       "tga": 16,
       "tourism": 19,
       "tourism_travel_services": 32,
+      "tourist_visa": 13,
       "trade_names": 42,
       "trademark": 52,
       "traffic": 172,
@@ -14422,7 +14472,7 @@
       "zakat": 128
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 15794,
+    "total_records": 15807,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"
