@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 811,
-  "top1_hits": 721,
-  "top3_hits": 780,
-  "top5_hits": 791,
-  "top1_accuracy": 0.889,
-  "top3_accuracy": 0.9618,
-  "top5_accuracy": 0.9753,
-  "mrr_at_5": 0.9259,
+  "total_queries": 933,
+  "top1_hits": 833,
+  "top3_hits": 900,
+  "top5_hits": 912,
+  "top1_accuracy": 0.8928,
+  "top3_accuracy": 0.9646,
+  "top5_accuracy": 0.9775,
+  "mrr_at_5": 0.9284,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -23,6 +23,7 @@
    "dmz-003",
    "irh-002",
    "tlc-001",
+   "nrc-001",
    "gz-1c2f13-1",
    "gz-1c2f13-2",
    "gz-7099b7-1",
@@ -805,9 +806,9 @@
      "score": 10
     },
     {
-     "record_id": "oa-llm-companies-art-234",
-     "article_number": 234,
-     "score": 9
+     "record_id": "public-utility-market-facilities-controls-llm-008",
+     "article_number": 8,
+     "score": 10
     }
    ]
   },
@@ -1141,13 +1142,13 @@
      "score": 30
     },
     {
-     "record_id": "enforcement-providers-regulation-llm-art-008",
-     "article_number": 8,
-     "score": 10
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 11
     },
     {
-     "record_id": "telecommunications-law-llm-art-031",
-     "article_number": 31,
+     "record_id": "enforcement-providers-regulation-llm-art-008",
+     "article_number": 8,
      "score": 10
     }
    ]
@@ -1239,7 +1240,7 @@
      "score": 21
     },
     {
-     "record_id": "waqf-investment-products-regulation-llm-001",
+     "record_id": "waqf-investment-portfolios-regulation-llm-001",
      "article_number": 1,
      "score": 10
     }
@@ -1663,6 +1664,11 @@
    "hit_top5": false,
    "top_hits": [
     {
+     "record_id": "government-resource-systems-center-statute-llm-005",
+     "article_number": 5,
+     "score": 10
+    },
+    {
      "record_id": "inv-reg-llm-art-009",
      "article_number": 9,
      "score": 10
@@ -1670,11 +1676,6 @@
     {
      "record_id": "inv-law-llm-art-009",
      "article_number": 9,
-     "score": 10
-    },
-    {
-     "record_id": "national-infrastructure-fund-law-llm-004",
-     "article_number": 4,
      "score": 10
     }
    ]
@@ -2401,11 +2402,16 @@
     "law_component": "implementing_regulation",
     "article_number": 83
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "real-estate-transaction-tax-regulation-llm-007",
+     "article_number": 7,
+     "score": 16
+    },
     {
      "record_id": "sharia-procedure-regulation-llm-prov-083",
      "article_number": 83,
@@ -2414,11 +2420,6 @@
     {
      "record_id": "personal-status-law-llm-art-159",
      "article_number": 159,
-     "score": 12
-    },
-    {
-     "record_id": "personal-status-law-llm-art-160",
-     "article_number": 160,
      "score": 12
     }
    ]
@@ -3528,14 +3529,14 @@
      "score": 36
     },
     {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 31
+    },
+    {
      "record_id": "bankruptcy-law-llm-art-009",
      "article_number": 9,
      "score": 28
-    },
-    {
-     "record_id": "bankruptcy-fees-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 26
     }
    ]
   },
@@ -5822,14 +5823,14 @@
      "score": 62
     },
     {
-     "record_id": "riyadh-biotechnology-center-statute-llm-002",
+     "record_id": "king-abdullah-language-planning-center-statute-llm-002",
      "article_number": 2,
-     "score": 32
+     "score": 33
     },
     {
-     "record_id": "sdaia-organizational-arrangements-llm-art-002",
+     "record_id": "national-curriculum-center-statute-llm-002",
      "article_number": 2,
-     "score": 31
+     "score": 33
     }
    ]
   },
@@ -5997,25 +5998,25 @@
     "law_component": "regulation",
     "article_number": 1
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 3,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
     {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 25
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-004",
+     "article_number": 4,
+     "score": 24
+    },
+    {
      "record_id": "marriage-non-saudi-regulation-llm-art-001",
      "article_number": 1,
      "score": 21
-    },
-    {
-     "record_id": "inv-law-llm-art-009",
-     "article_number": 9,
-     "score": 21
-    },
-    {
-     "record_id": "civil-defense-law-llm-art-012",
-     "article_number": 12,
-     "score": 15
     }
    ]
   },
@@ -6323,8 +6324,8 @@
      "score": 25
     },
     {
-     "record_id": "commercial-register-law-llm-art-008",
-     "article_number": 8,
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
      "score": 21
     }
    ]
@@ -6473,14 +6474,14 @@
      "score": 39
     },
     {
-     "record_id": "marriage-contract-hearing-regulation-llm-art-004",
-     "article_number": 4,
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
      "score": 36
     },
     {
-     "record_id": "marriage-contract-hearing-regulation-llm-art-003",
-     "article_number": 3,
-     "score": 35
+     "record_id": "marriage-contract-hearing-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 36
     }
    ]
   },
@@ -7186,13 +7187,13 @@
      "score": 32
     },
     {
-     "record_id": "national-infrastructure-fund-law-llm-003",
+     "record_id": "nonprofit-sector-development-center-statute-llm-003",
      "article_number": 3,
-     "score": 16
+     "score": 17
     },
     {
-     "record_id": "sama-law-llm-art-002",
-     "article_number": 2,
+     "record_id": "national-infrastructure-fund-law-llm-003",
+     "article_number": 3,
      "score": 16
     }
    ]
@@ -7899,13 +7900,13 @@
      "score": 35
     },
     {
-     "record_id": "rett-law-llm-art-015",
-     "article_number": 15,
-     "score": 26
+     "record_id": "real-estate-transaction-tax-regulation-llm-008",
+     "article_number": 8,
+     "score": 30
     },
     {
-     "record_id": "vat-law-llm-art-042",
-     "article_number": 42,
+     "record_id": "rett-law-llm-art-015",
+     "article_number": 15,
      "score": 26
     }
    ]
@@ -8043,10 +8044,10 @@
     "law_component": "law",
     "article_number": 37
    },
-   "gold_rank": 5,
+   "gold_rank": null,
    "hit_top1": false,
    "hit_top3": false,
-   "hit_top5": true,
+   "hit_top5": false,
    "top_hits": [
     {
      "record_id": "finance-lease-law-llm-art-020",
@@ -9392,9 +9393,9 @@
      "score": 22
     },
     {
-     "record_id": "military-industries-rnd-regulation-llm-016",
-     "article_number": 16,
-     "score": 20
+     "record_id": "occupational-safety-health-council-statute-llm-005",
+     "article_number": 5,
+     "score": 21
     }
    ]
   },
@@ -9423,9 +9424,9 @@
      "score": 21
     },
     {
-     "record_id": "labor-annex3-llm-art-008",
-     "article_number": 8,
-     "score": 17
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 18
     }
    ]
   },
@@ -9810,25 +9811,25 @@
     "law_component": "law",
     "article_number": 1
    },
-   "gold_rank": 1,
-   "hit_top1": true,
-   "hit_top3": true,
+   "gold_rank": 4,
+   "hit_top1": false,
+   "hit_top3": false,
    "hit_top5": true,
    "top_hits": [
     {
-     "record_id": "health-system-law-llm-art-001",
+     "record_id": "public-health-authority-statute-llm-001",
      "article_number": 1,
-     "score": 17
+     "score": 31
     },
     {
-     "record_id": "awqaf-law-llm-art-011",
-     "article_number": 11,
-     "score": 11
+     "record_id": "public-health-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 20
     },
     {
-     "record_id": "awqaf-law-llm-art-006",
-     "article_number": 6,
-     "score": 11
+     "record_id": "public-health-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 20
     }
    ]
   },
@@ -10167,9 +10168,9 @@
      "score": 45
     },
     {
-     "record_id": "travel-documents-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 38
+     "record_id": "municipal-licensing-procedures-regulation-llm-016",
+     "article_number": 16,
+     "score": 41
     }
    ]
   },
@@ -10379,14 +10380,14 @@
      "score": 29
     },
     {
-     "record_id": "ballast-water-regulation-llm-022",
-     "article_number": 22,
-     "score": 18
+     "record_id": "private-entity-client-data-transfer-regulation-llm-001",
+     "article_number": 1,
+     "score": 26
     },
     {
-     "record_id": "seized-confiscated-funds-management-system-llm-art-001",
-     "article_number": 1,
-     "score": 18
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 26
     }
    ]
   },
@@ -10441,14 +10442,14 @@
      "score": 14
     },
     {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-003",
+     "article_number": 3,
+     "score": 13
+    },
+    {
      "record_id": "electricity-law-llm-art-010",
      "article_number": 10,
      "score": 12
-    },
-    {
-     "record_id": "electricity-regulation-llm-art-024",
-     "article_number": 24,
-     "score": 10
     }
    ]
   },
@@ -10658,14 +10659,14 @@
      "score": 43
     },
     {
-     "record_id": "seized-confiscated-funds-management-system-llm-art-002",
-     "article_number": 2,
-     "score": 19
+     "record_id": "nonprofit-sector-development-center-statute-llm-003",
+     "article_number": 3,
+     "score": 27
     },
     {
-     "record_id": "petroleum-petrochemical-materials-law-llm-art-002",
-     "article_number": 2,
-     "score": 17
+     "record_id": "food-security-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 21
     }
    ]
   },
@@ -11205,11 +11206,16 @@
     "law_component": "regulation",
     "article_number": 4
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "white-land-fees-executive-regulation-llm-002",
+     "article_number": 2,
+     "score": 17
+    },
     {
      "record_id": "environmental-permits-reg-llm-art-004",
      "article_number": 4,
@@ -11218,11 +11224,6 @@
     {
      "record_id": "civil-service-regulation-llm-art-099",
      "article_number": 99,
-     "score": 16
-    },
-    {
-     "record_id": "civil-service-regulation-llm-art-100",
-     "article_number": 100,
      "score": 16
     }
    ]
@@ -13096,11 +13097,16 @@
     "law_component": "law",
     "article_number": 9
    },
-   "gold_rank": 2,
+   "gold_rank": 3,
    "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-007",
+     "article_number": 7,
+     "score": 38
+    },
     {
      "record_id": "military-industries-rnd-regulation-llm-016",
      "article_number": 16,
@@ -13109,11 +13115,6 @@
     {
      "record_id": "etec-law-llm-art-009",
      "article_number": 9,
-     "score": 36
-    },
-    {
-     "record_id": "national-emergency-management-authority-statute-llm-008",
-     "article_number": 8,
      "score": 36
     }
    ]
@@ -13293,14 +13294,14 @@
      "score": 29
     },
     {
-     "record_id": "credit-information-law-llm-art-001",
-     "article_number": 1,
-     "score": 15
+     "record_id": "private-entity-client-data-transfer-regulation-llm-005",
+     "article_number": 5,
+     "score": 28
     },
     {
-     "record_id": "gtpl-reg-llm-art-007",
-     "article_number": 7,
-     "score": 15
+     "record_id": "private-entity-client-data-transfer-regulation-llm-001",
+     "article_number": 1,
+     "score": 27
     }
    ]
   },
@@ -13608,8 +13609,8 @@
      "score": 28
     },
     {
-     "record_id": "high-risk-professions-regulation-llm-art-006",
-     "article_number": 6,
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-004",
+     "article_number": 4,
      "score": 24
     }
    ]
@@ -13794,9 +13795,9 @@
      "score": 37
     },
     {
-     "record_id": "basic-law-of-governance-llm-art-005",
-     "article_number": 5,
-     "score": 24
+     "record_id": "king-abdullah-language-planning-center-statute-llm-001",
+     "article_number": 1,
+     "score": 28
     }
    ]
   },
@@ -14285,13 +14286,13 @@
      "score": 22
     },
     {
-     "record_id": "taxi-activity-regulation-llm-027",
-     "article_number": 27,
-     "score": 17
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-007",
+     "article_number": 7,
+     "score": 18
     },
     {
-     "record_id": "civil-service-regulation-llm-art-208",
-     "article_number": 208,
+     "record_id": "taxi-activity-regulation-llm-027",
+     "article_number": 27,
      "score": 17
     }
    ]
@@ -14786,9 +14787,9 @@
      "score": 23
     },
     {
-     "record_id": "press-regulation-llm-art-087",
-     "article_number": 87,
-     "score": 22
+     "record_id": "private-entity-client-data-transfer-regulation-llm-003",
+     "article_number": 3,
+     "score": 23
     }
    ]
   },
@@ -14874,14 +14875,14 @@
      "score": 39
     },
     {
-     "record_id": "riyadh-nonprofit-foundation-statute-llm-001",
-     "article_number": 1,
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-002",
+     "article_number": 2,
      "score": 26
     },
     {
-     "record_id": "riyadh-biotechnology-center-statute-llm-001",
+     "record_id": "riyadh-nonprofit-foundation-statute-llm-001",
      "article_number": 1,
-     "score": 23
+     "score": 26
     }
    ]
   },
@@ -15184,13 +15185,13 @@
      "score": 35
     },
     {
-     "record_id": "white-land-fees-law-llm-art-003",
-     "article_number": 3,
-     "score": 15
+     "record_id": "white-land-fees-executive-regulation-llm-005",
+     "article_number": 5,
+     "score": 16
     },
     {
-     "record_id": "white-land-fees-law-llm-art-005",
-     "article_number": 5,
+     "record_id": "white-land-fees-law-llm-art-003",
+     "article_number": 3,
      "score": 15
     }
    ]
@@ -15375,7 +15376,7 @@
      "score": 41
     },
     {
-     "record_id": "osh-service-providers-regulation-llm-art-003",
+     "record_id": "occupational-safety-health-council-statute-llm-003",
      "article_number": 3,
      "score": 38
     }
@@ -15406,9 +15407,9 @@
      "score": 47
     },
     {
-     "record_id": "cst-organizational-statute-llm-art-013",
-     "article_number": 13,
-     "score": 41
+     "record_id": "media-regulation-authority-statute-llm-011",
+     "article_number": 11,
+     "score": 44
     }
    ]
   },
@@ -15866,14 +15867,14 @@
      "score": 56
     },
     {
-     "record_id": "sdaia-organizational-arrangements-llm-art-002",
+     "record_id": "saudi-auditors-accountants-authority-statute-llm-002",
      "article_number": 2,
      "score": 41
     },
     {
-     "record_id": "etec-law-llm-art-002",
+     "record_id": "saudi-red-sea-authority-statute-llm-002",
      "article_number": 2,
-     "score": 35
+     "score": 41
     }
    ]
   },
@@ -16734,14 +16735,14 @@
      "score": 39
     },
     {
-     "record_id": "architecture-design-authority-statute-llm-009",
-     "article_number": 9,
-     "score": 18
+     "record_id": "public-health-authority-statute-llm-008",
+     "article_number": 8,
+     "score": 22
     },
     {
-     "record_id": "culinary-arts-authority-statute-llm-009",
-     "article_number": 9,
-     "score": 18
+     "record_id": "two-holy-mosques-authority-statute-llm-010",
+     "article_number": 10,
+     "score": 22
     }
    ]
   },
@@ -16889,14 +16890,14 @@
      "score": 57
     },
     {
-     "record_id": "gaca-organizational-statute-llm-art-002",
+     "record_id": "national-transport-safety-center-statute-llm-002",
      "article_number": 2,
-     "score": 44
+     "score": 52
     },
     {
-     "record_id": "national-institute-educational-professional-development-statute-llm-002",
+     "record_id": "nonprofit-sector-development-center-statute-llm-002",
      "article_number": 2,
-     "score": 41
+     "score": 51
     }
    ]
   },
@@ -16920,14 +16921,14 @@
      "score": 55
     },
     {
-     "record_id": "real-estate-development-fund-law-llm-010",
-     "article_number": 10,
-     "score": 37
+     "record_id": "national-curriculum-center-statute-llm-008",
+     "article_number": 8,
+     "score": 42
     },
     {
-     "record_id": "documentation-settlement-regulation-llm-art-007",
-     "article_number": 7,
-     "score": 35
+     "record_id": "nonprofit-sector-development-center-statute-llm-008",
+     "article_number": 8,
+     "score": 41
     }
    ]
   },
@@ -17013,14 +17014,14 @@
      "score": 67
     },
     {
-     "record_id": "vacant-properties-fees-regulation-llm-001",
-     "article_number": 1,
+     "record_id": "white-land-fees-executive-regulation-llm-002",
+     "article_number": 2,
      "score": 41
     },
     {
-     "record_id": "vacant-properties-fees-regulation-llm-006",
-     "article_number": 6,
-     "score": 38
+     "record_id": "vacant-properties-fees-regulation-llm-001",
+     "article_number": 1,
+     "score": 41
     }
    ]
   },
@@ -17044,14 +17045,14 @@
      "score": 41
     },
     {
+     "record_id": "white-land-fees-executive-regulation-llm-005",
+     "article_number": 5,
+     "score": 26
+    },
+    {
      "record_id": "alula-royal-commission-violations-committees-rules-llm-001",
      "article_number": 1,
      "score": 23
-    },
-    {
-     "record_id": "press-regulation-llm-art-018",
-     "article_number": 18,
-     "score": 21
     }
    ]
   },
@@ -17390,9 +17391,9 @@
      "score": 28
     },
     {
-     "record_id": "financial-institutions-resolution-law-llm-008",
-     "article_number": 8,
-     "score": 25
+     "record_id": "enterprise-size-measurement-rules-llm-001",
+     "article_number": 1,
+     "score": 27
     }
    ]
   },
@@ -17824,7 +17825,7 @@
      "score": 30
     },
     {
-     "record_id": "gaca-organizational-statute-llm-art-003",
+     "record_id": "saudi-tourism-authority-statute-llm-003",
      "article_number": 3,
      "score": 28
     }
@@ -17881,14 +17882,14 @@
      "score": 42
     },
     {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 22
+    },
+    {
      "record_id": "anti-begging-law-llm-007",
      "article_number": 7,
      "score": 21
-    },
-    {
-     "record_id": "anti-begging-law-llm-001",
-     "article_number": 1,
-     "score": 13
     }
    ]
   },
@@ -18010,9 +18011,9 @@
      "score": 39
     },
     {
-     "record_id": "railway-law-implementing-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 33
+     "record_id": "private-entity-client-data-transfer-regulation-llm-011",
+     "article_number": 11,
+     "score": 38
     }
    ]
   },
@@ -18191,14 +18192,14 @@
      "score": 49
     },
     {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-004",
+     "article_number": 4,
+     "score": 21
+    },
+    {
      "record_id": "private-universities-regulation-llm-010",
      "article_number": 10,
      "score": 20
-    },
-    {
-     "record_id": "child-protection-regulation-llm-art-018",
-     "article_number": 18,
-     "score": 19
     }
    ]
   },
@@ -18439,14 +18440,14 @@
      "score": 62
     },
     {
+     "record_id": "state-property-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 35
+    },
+    {
      "record_id": "state-realestate-disposal-regulation-llm-001",
      "article_number": 1,
      "score": 33
-    },
-    {
-     "record_id": "state-realestate-disposal-regulation-llm-047",
-     "article_number": 47,
-     "score": 30
     }
    ]
   },
@@ -18614,9 +18615,9 @@
     "law_component": "regulation",
     "article_number": 2
    },
-   "gold_rank": 2,
+   "gold_rank": 4,
    "hit_top1": false,
-   "hit_top3": true,
+   "hit_top3": false,
    "hit_top5": true,
    "top_hits": [
     {
@@ -18625,14 +18626,14 @@
      "score": 35
     },
     {
-     "record_id": "mergers-acquisitions-regulation-llm-002",
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
      "article_number": 2,
-     "score": 29
+     "score": 31
     },
     {
-     "record_id": "press-regulation-llm-art-008",
-     "article_number": 8,
-     "score": 29
+     "record_id": "private-entity-client-data-transfer-regulation-llm-003",
+     "article_number": 3,
+     "score": 30
     }
    ]
   },
@@ -18847,9 +18848,9 @@
      "score": 41
     },
     {
-     "record_id": "environmental-fees-reg-llm-art-002",
-     "article_number": 2,
-     "score": 17
+     "record_id": "palms-dates-center-statute-llm-005",
+     "article_number": 5,
+     "score": 22
     }
    ]
   },
@@ -20180,9 +20181,9 @@
      "score": 55
     },
     {
-     "record_id": "falcon-center-statute-llm-002",
+     "record_id": "government-resource-systems-center-statute-llm-002",
      "article_number": 2,
-     "score": 42
+     "score": 45
     }
    ]
   },
@@ -20578,14 +20579,14 @@
      "score": 55
     },
     {
-     "record_id": "electricity-regulation-llm-art-081",
-     "article_number": 81,
-     "score": 39
+     "record_id": "private-entity-client-data-transfer-regulation-llm-005",
+     "article_number": 5,
+     "score": 44
     },
     {
-     "record_id": "electricity-regulation-llm-art-077",
-     "article_number": 77,
-     "score": 35
+     "record_id": "private-entity-client-data-transfer-regulation-llm-006",
+     "article_number": 6,
+     "score": 44
     }
    ]
   },
@@ -21756,14 +21757,14 @@
      "score": 56
     },
     {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-003",
+     "article_number": 3,
+     "score": 47
+    },
+    {
      "record_id": "duty-free-markets-rules-llm-017",
      "article_number": 17,
      "score": 46
-    },
-    {
-     "record_id": "duty-free-markets-rules-llm-014",
-     "article_number": 14,
-     "score": 44
     }
    ]
   },
@@ -21885,9 +21886,9 @@
      "score": 32
     },
     {
-     "record_id": "alula-royal-commission-violations-committees-rules-llm-024",
-     "article_number": 24,
-     "score": 26
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 27
     }
    ]
   },
@@ -22252,14 +22253,14 @@
      "score": 60
     },
     {
-     "record_id": "king-faisal-specialist-hospital-statute-llm-020",
-     "article_number": 20,
-     "score": 36
+     "record_id": "job-seeker-allowance-statute-llm-012",
+     "article_number": 12,
+     "score": 41
     },
     {
-     "record_id": "maritime-commercial-law-llm-art-391",
-     "article_number": 391,
-     "score": 33
+     "record_id": "zatca-statute-llm-015",
+     "article_number": 15,
+     "score": 37
     }
    ]
   },
@@ -22412,9 +22413,9 @@
      "score": 31
     },
     {
-     "record_id": "securities-disputes-rules-llm-007",
-     "article_number": 7,
-     "score": 25
+     "record_id": "private-entity-client-data-transfer-regulation-llm-004",
+     "article_number": 4,
+     "score": 26
     }
    ]
   },
@@ -22722,9 +22723,9 @@
      "score": 25
     },
     {
-     "record_id": "board-of-grievances-law-llm-art-007",
-     "article_number": 7,
-     "score": 21
+     "record_id": "rdi-authority-statute-llm-008",
+     "article_number": 8,
+     "score": 24
     }
    ]
   },
@@ -23833,14 +23834,14 @@
      "score": 46
     },
     {
+     "record_id": "visiting-yachts-controls-llm-004",
+     "article_number": 4,
+     "score": 33
+    },
+    {
      "record_id": "alula-royal-commission-violations-committees-rules-llm-001",
      "article_number": 1,
      "score": 30
-    },
-    {
-     "record_id": "saudi-yachts-regulation-llm-011",
-     "article_number": 11,
-     "score": 29
     }
    ]
   },
@@ -23864,13 +23865,13 @@
      "score": 36
     },
     {
-     "record_id": "labor-annex4-llm-art-063",
-     "article_number": 63,
-     "score": 30
+     "record_id": "visiting-yachts-controls-llm-004",
+     "article_number": 4,
+     "score": 35
     },
     {
-     "record_id": "alula-royal-commission-violations-committees-rules-llm-001",
-     "article_number": 1,
+     "record_id": "labor-annex4-llm-art-063",
+     "article_number": 63,
      "score": 30
     }
    ]
@@ -23957,14 +23958,14 @@
      "score": 58
     },
     {
-     "record_id": "national-emergency-management-authority-statute-llm-005",
-     "article_number": 5,
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-004",
+     "article_number": 4,
      "score": 36
     },
     {
-     "record_id": "national-emergency-management-authority-statute-llm-009",
-     "article_number": 9,
-     "score": 35
+     "record_id": "national-emergency-management-authority-statute-llm-005",
+     "article_number": 5,
+     "score": 36
     }
    ]
   },
@@ -23988,14 +23989,14 @@
      "score": 40
     },
     {
+     "record_id": "high-industrial-security-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 33
+    },
+    {
      "record_id": "national-risk-council-statute-llm-005",
      "article_number": 5,
      "score": 32
-    },
-    {
-     "record_id": "architecture-design-authority-statute-llm-005",
-     "article_number": 5,
-     "score": 31
     }
    ]
   },
@@ -24050,14 +24051,14 @@
      "score": 51
     },
     {
-     "record_id": "marriage-contract-hearing-regulation-llm-art-002",
-     "article_number": 2,
-     "score": 27
+     "record_id": "general-irrigation-corporation-statute-llm-004",
+     "article_number": 4,
+     "score": 30
     },
     {
-     "record_id": "riyadh-nonprofit-foundation-statute-llm-007",
-     "article_number": 7,
-     "score": 25
+     "record_id": "general-irrigation-corporation-statute-llm-006",
+     "article_number": 6,
+     "score": 30
     }
    ]
   },
@@ -24101,11 +24102,16 @@
     "law_component": "statute",
     "article_number": 15
    },
-   "gold_rank": 2,
+   "gold_rank": 3,
    "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "state-property-authority-statute-llm-011",
+     "article_number": 11,
+     "score": 50
+    },
     {
      "record_id": "gaca-organizational-statute-llm-art-013",
      "article_number": 13,
@@ -24115,11 +24121,6 @@
      "record_id": "digital-government-authority-statute-llm-015",
      "article_number": 15,
      "score": 45
-    },
-    {
-     "record_id": "insurance-authority-statute-llm-art-011",
-     "article_number": 11,
-     "score": 44
     }
    ]
   },
@@ -24174,14 +24175,14 @@
      "score": 60
     },
     {
-     "record_id": "national-infrastructure-fund-law-llm-006",
-     "article_number": 6,
-     "score": 39
+     "record_id": "cultural-development-fund-law-llm-010",
+     "article_number": 10,
+     "score": 42
     },
     {
-     "record_id": "real-estate-development-fund-law-llm-006",
-     "article_number": 6,
-     "score": 30
+     "record_id": "agricultural-development-fund-law-llm-011",
+     "article_number": 11,
+     "score": 39
     }
    ]
   },
@@ -24267,14 +24268,14 @@
      "score": 47
     },
     {
-     "record_id": "payment-systems-regulation-llm-art-032",
-     "article_number": 32,
-     "score": 23
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 27
     },
     {
-     "record_id": "capital-market-law-llm-art-050",
-     "article_number": 50,
-     "score": 23
+     "record_id": "private-entity-client-data-transfer-regulation-llm-011",
+     "article_number": 11,
+     "score": 26
     }
    ]
   },
@@ -24360,14 +24361,14 @@
      "score": 59
     },
     {
-     "record_id": "falcon-center-statute-llm-008",
-     "article_number": 8,
-     "score": 31
+     "record_id": "agricultural-development-fund-law-llm-009",
+     "article_number": 9,
+     "score": 35
     },
     {
-     "record_id": "real-estate-development-fund-law-llm-010",
-     "article_number": 10,
-     "score": 31
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-009",
+     "article_number": 9,
+     "score": 33
     }
    ]
   },
@@ -24453,14 +24454,14 @@
      "score": 57
     },
     {
-     "record_id": "national-infrastructure-fund-law-llm-007",
-     "article_number": 7,
-     "score": 40
+     "record_id": "agricultural-development-fund-law-llm-004",
+     "article_number": 4,
+     "score": 46
     },
     {
-     "record_id": "real-estate-development-fund-law-llm-007",
-     "article_number": 7,
-     "score": 37
+     "record_id": "cultural-development-fund-law-llm-004",
+     "article_number": 4,
+     "score": 41
     }
    ]
   },
@@ -24484,14 +24485,14 @@
      "score": 61
     },
     {
-     "record_id": "national-infrastructure-fund-law-llm-009",
-     "article_number": 9,
-     "score": 35
+     "record_id": "sme-bank-law-llm-013",
+     "article_number": 13,
+     "score": 48
     },
     {
-     "record_id": "real-estate-development-fund-law-llm-006",
-     "article_number": 6,
-     "score": 35
+     "record_id": "agricultural-development-fund-law-llm-007",
+     "article_number": 7,
+     "score": 42
     }
    ]
   },
@@ -24577,14 +24578,14 @@
      "score": 53
     },
     {
-     "record_id": "alula-royal-commission-violations-committees-rules-llm-001",
-     "article_number": 1,
-     "score": 26
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-006",
+     "article_number": 6,
+     "score": 33
     },
     {
-     "record_id": "alula-royal-commission-violations-committees-rules-llm-006",
-     "article_number": 6,
-     "score": 26
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-009",
+     "article_number": 9,
+     "score": 33
     }
    ]
   },
@@ -24608,14 +24609,14 @@
      "score": 40
     },
     {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 22
+    },
+    {
      "record_id": "disability-social-programs-regulation-llm-001",
      "article_number": 1,
      "score": 21
-    },
-    {
-     "record_id": "riyadh-biotechnology-center-statute-llm-004",
-     "article_number": 4,
-     "score": 17
     }
    ]
   },
@@ -24639,13 +24640,13 @@
      "score": 41
     },
     {
-     "record_id": "mining-investment-implementing-regulation-llm-art-136",
-     "article_number": 136,
-     "score": 20
+     "record_id": "government-property-allocation-transfer-controls-llm-005",
+     "article_number": 5,
+     "score": 24
     },
     {
-     "record_id": "privatization-regulation-llm-art-005",
-     "article_number": 5,
+     "record_id": "mining-investment-implementing-regulation-llm-art-136",
+     "article_number": 136,
      "score": 20
     }
    ]
@@ -25073,13 +25074,13 @@
      "score": 46
     },
     {
-     "record_id": "health-system-law-llm-art-016",
-     "article_number": 16,
-     "score": 32
+     "record_id": "royal-institute-traditional-arts-statute-llm-005",
+     "article_number": 5,
+     "score": 39
     },
     {
-     "record_id": "general-education-law-llm-art-007",
-     "article_number": 7,
+     "record_id": "health-system-law-llm-art-016",
+     "article_number": 16,
      "score": 32
     }
    ]
@@ -25140,9 +25141,9 @@
      "score": 29
     },
     {
-     "record_id": "hrdf-support-violations-regulation-llm-002",
-     "article_number": 2,
-     "score": 26
+     "record_id": "digital-content-council-statute-llm-001",
+     "article_number": 1,
+     "score": 28
     }
    ]
   },
@@ -25174,6 +25175,3788 @@
      "record_id": "tourism-law-llm-art-015",
      "article_number": 15,
      "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5f4791-1",
+   "query_ar": "يقدم الصندوق قروضا إلى الأفراد والجمعيات والشركات والمؤسسات والمستثمرين الأجانب -المرخص لهم بالعمل في المملكة طبقا لنظام الاستثمار الأجنبي- والهيئات والمنظمات التي تعمل بشكل رئيس في القطاع الزراعي، وت",
+   "category": "definitional",
+   "gold": {
+    "corpus": "agricultural_development_fund_law",
+    "law_component": "law",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "agricultural-development-fund-law-llm-005",
+     "article_number": 5,
+     "score": 35
+    },
+    {
+     "record_id": "agriculture-regulation-llm-art-208",
+     "article_number": 208,
+     "score": 28
+    },
+    {
+     "record_id": "contractors-classification-law-llm-art-011",
+     "article_number": 11,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5f4791-2",
+   "query_ar": "مع مراعاة المحافظة على البيئة وترشيد استخدام المياه في الزراعة، يهدف الصندوق -وفقا للاستراتيجيات والسياسات المعتمدة- إلى دعم التنمية الزراعية المستدامة، والمساهمة في تحقيق الأمن الغذائي، عن طريق تقديم",
+   "category": "provision",
+   "gold": {
+    "corpus": "agricultural_development_fund_law",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "agricultural-development-fund-law-llm-003",
+     "article_number": 3,
+     "score": 54
+    },
+    {
+     "record_id": "cultural-development-fund-law-llm-003",
+     "article_number": 3,
+     "score": 31
+    },
+    {
+     "record_id": "agricultural-development-fund-law-llm-007",
+     "article_number": 7,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0f7892-1",
+   "query_ar": "يكون للألفاظ والعبارة الآتية -أينما وردت في هذه الترتيبات- المعاني المبينة أمام كل منها، ما لم يقتض السياق غير ذلك: الترتيبات: الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الباحة. المكتب: المكت",
+   "category": "definitional",
+   "gold": {
+    "corpus": "baha_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "baha-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 78
+    },
+    {
+     "record_id": "jouf-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 72
+    },
+    {
+     "record_id": "jazan-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 71
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0f7892-2",
+   "query_ar": "1- تعقد اجتماعات اللجنة في مقر المكتب برئاسة الرئيس أو من ينيبه من الأعضاء، ويجوز -عند الحاجة- عقدها في مكان آخر داخل المنطقة. 2- تعقد اللجنة اجتماعاتها بصفة دورية أربع مرات -على الأقل- في السنة، وللر",
+   "category": "provision",
+   "gold": {
+    "corpus": "baha_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "baha-strategic-office-statute-llm-005",
+     "article_number": 5,
+     "score": 48
+    },
+    {
+     "record_id": "jazan-strategic-office-statute-llm-005",
+     "article_number": 5,
+     "score": 48
+    },
+    {
+     "record_id": "jouf-strategic-office-statute-llm-005",
+     "article_number": 5,
+     "score": 48
+    }
+   ]
+  },
+  {
+   "query_id": "gz-4bcd3f-1",
+   "query_ar": "لجنة الفصل في الطعون والمخالفات الانتخابية 1- تشكل لجنة النظر في الطعون والمخالفات الانتخابية بقرار من الأمين على ألا تقل عن ثلاثة من ذوي الكفاءة والخبرة، ويكون رئيسها مختصا قانونيا أو شرعيا، وتصدر قر",
+   "category": "definitional",
+   "gold": {
+    "corpus": "crafts_professions_heads_elections_regulation",
+    "law_component": "regulation",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "crafts-professions-heads-elections-regulation-llm-012",
+     "article_number": 12,
+     "score": 38
+    },
+    {
+     "record_id": "oa-llm-companies-art-267",
+     "article_number": 267,
+     "score": 34
+    },
+    {
+     "record_id": "general-education-law-llm-art-062",
+     "article_number": 62,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-4bcd3f-2",
+   "query_ar": "اختصاصات رؤساء الحرف والمهن أو نوابهم 1- تمثيل أعضاء الحرف والمهن أمام كافة الجهات الرسمية. 2- مواجهة وحل المشكلات أو المنازعات التي قد تنشأ بين أعضاء الحرف والمهن فيما بينهم أو مع من يتعاملون معهم. 3",
+   "category": "provision",
+   "gold": {
+    "corpus": "crafts_professions_heads_elections_regulation",
+    "law_component": "regulation",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "crafts-professions-heads-elections-regulation-llm-010",
+     "article_number": 10,
+     "score": 53
+    },
+    {
+     "record_id": "crafts-professions-heads-elections-regulation-llm-002",
+     "article_number": 2,
+     "score": 30
+    },
+    {
+     "record_id": "crafts-professions-heads-elections-regulation-llm-001",
+     "article_number": 1,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-7a18f2-1",
+   "query_ar": "تصريح المرور 1- في \"الحالات الطارئة\": يجوز لسفينة الرحلات السياحية (الكروز) الدخول في النطاق الجغرافي دون أي تراخيص، وعليه تعيين وكيل ملاحي سياحي خلال مدة أقصاها (3) أيام من دخوله. 2- في \"حالات الملاح",
+   "category": "definitional",
+   "gold": {
+    "corpus": "cruise_ships_controls",
+    "law_component": "rules",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cruise-ships-controls-llm-004",
+     "article_number": 4,
+     "score": 67
+    },
+    {
+     "record_id": "cruise-ships-controls-llm-001",
+     "article_number": 1,
+     "score": 44
+    },
+    {
+     "record_id": "cruise-ships-controls-llm-003",
+     "article_number": 3,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-7a18f2-2",
+   "query_ar": "إجراءات الوصول والمغادرة 1- تقدم جميع المستندات المطلوبة من خلال المنصة الإلكترونية للحصول على تأشيرات لأفراد للطاقم والركاب وإنهاء إجراءات الفسح المسبق للتصريح الجمركي. 2- تبلغ سفينة الرحلات السياحية",
+   "category": "provision",
+   "gold": {
+    "corpus": "cruise_ships_controls",
+    "law_component": "rules",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cruise-ships-controls-llm-006",
+     "article_number": 6,
+     "score": 48
+    },
+    {
+     "record_id": "cruise-ships-controls-llm-001",
+     "article_number": 1,
+     "score": 29
+    },
+    {
+     "record_id": "cruise-ships-controls-llm-012",
+     "article_number": 12,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-973fd8-1",
+   "query_ar": "يتمتع الإقراض أو التمويل بكافة أنواعه التي يقدمها الصندوق بالمزايا والضمانات المنصوص عليها وفقا لنظام إيرادات الدولة، وتكون قابلة للتحصيل، كأموال الدولة الأخرى.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "cultural_development_fund_law",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cultural-development-fund-law-llm-013",
+     "article_number": 13,
+     "score": 46
+    },
+    {
+     "record_id": "national-infrastructure-fund-law-llm-013",
+     "article_number": 13,
+     "score": 28
+    },
+    {
+     "record_id": "state-revenue-regulation-llm-art-047",
+     "article_number": 47,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "gz-973fd8-2",
+   "query_ar": "يهدف الصندوق إلى الإسهام في دعم التنمية الثقافية والمجالات المتصلة بها، واستدامتها، وذلك وفقا للاستراتيجيات والسياسات المعتمدة في هذا الشأن.",
+   "category": "provision",
+   "gold": {
+    "corpus": "cultural_development_fund_law",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "cultural-development-fund-law-llm-003",
+     "article_number": 3,
+     "score": 48
+    },
+    {
+     "record_id": "national-infrastructure-fund-law-llm-003",
+     "article_number": 3,
+     "score": 21
+    },
+    {
+     "record_id": "real-estate-development-fund-law-llm-003",
+     "article_number": 3,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "gz-81a92c-1",
+   "query_ar": "دون إخلال باختصاصات ومسؤوليات الجهات الحكومية الأخرى، للمجلس –في سبيل تحقيق أهدافه– القيام بالمهمات والاختصاصات اللازمة التي تخدم الغايات التي أنشئ من أجلها، وله على وجه الخصوص ما يلي: 1- تنظيم سوق من",
+   "category": "definitional",
+   "gold": {
+    "corpus": "digital_content_council_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "digital-content-council-statute-llm-004",
+     "article_number": 4,
+     "score": 47
+    },
+    {
+     "record_id": "government-resource-systems-center-statute-llm-004",
+     "article_number": 4,
+     "score": 31
+    },
+    {
+     "record_id": "national-transport-safety-center-statute-llm-004",
+     "article_number": 4,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-81a92c-2",
+   "query_ar": "يهدف المجلس إلى تطوير وتنمية المحتوى الرقمي في المملكة، وتنسيق الجهود بين الجهات ذات الصلة لتحسين البيئة التشريعية والتنظيمية للمحتوى الرقمي، ودراسة المعوقات والتحديات التي تحد من تنمية قطاع المحتوى ا",
+   "category": "provision",
+   "gold": {
+    "corpus": "digital_content_council_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "digital-content-council-statute-llm-003",
+     "article_number": 3,
+     "score": 62
+    },
+    {
+     "record_id": "digital-content-council-statute-llm-004",
+     "article_number": 4,
+     "score": 42
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-001",
+     "article_number": 1,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5c3322-1",
+   "query_ar": "يلتزم المخصص له بما يأتي: 1- عدم استخدام الطاقة في غير أغراض التخصيص المذكورة في وثيقة تخصيص الطاقة. 2- تقديم البيانات والمعلومات والمستندات التي تطلبها الوزارة لغرض متابعة التزام المخصص له بأحكام الن",
+   "category": "definitional",
+   "gold": {
+    "corpus": "energy_allocation_regulation",
+    "law_component": "regulation",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "energy-allocation-regulation-llm-011",
+     "article_number": 11,
+     "score": 60
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-018",
+     "article_number": 18,
+     "score": 32
+    },
+    {
+     "record_id": "energy-allocation-regulation-llm-003",
+     "article_number": 3,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5c3322-2",
+   "query_ar": "1- على طالب التخصيص تقديم أي بيانات أو مستندات تعدها الوزارة لازمة لدراسة طلب التخصيص وتقييمه، وذلك خلال (10) عشرة أيام عمل من تاريخ إشعاره بحالة الطلب، وعند مضي هذه المدة دون تصحيح الطلب أو تقديم الم",
+   "category": "provision",
+   "gold": {
+    "corpus": "energy_allocation_regulation",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "energy-allocation-regulation-llm-004",
+     "article_number": 4,
+     "score": 55
+    },
+    {
+     "record_id": "energy-allocation-regulation-llm-003",
+     "article_number": 3,
+     "score": 31
+    },
+    {
+     "record_id": "electronic-transactions-regulation-llm-art-014",
+     "article_number": 14,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1e8c1c-1",
+   "query_ar": "تعريف المنشآت يتم تصنيف المنشأة بحسب عدد موظفيها بدوام كامل أو إيراداتها، ويكون الاعتبار للقيمة الأكبر بينهما وفقا لما يلي: منشأة متناهية الصغر: وهي التي يكون عدد موظفيها بدوام كامل من 1 إلى 5 أشخاص، ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "enterprise_size_measurement_rules",
+    "law_component": "rules",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "enterprise-size-measurement-rules-llm-004",
+     "article_number": 4,
+     "score": 58
+    },
+    {
+     "record_id": "labor-reg-llm-art-014",
+     "article_number": 14,
+     "score": 25
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-003",
+     "article_number": 3,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1e8c1c-2",
+   "query_ar": "أحكام عامة 1- تتولى الهيئة التنسيق مع وزارة الاستثمار للتحقق من حجم المنشأة الأجنبية المتقدمة بطلب الحصول على الشهادة. 2- يمكن للمنشأة إلغاء الشهادة السارية لها وإعادة إصدارها في حال تم تغيير الكيان أ",
+   "category": "provision",
+   "gold": {
+    "corpus": "enterprise_size_measurement_rules",
+    "law_component": "rules",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "enterprise-size-measurement-rules-llm-012",
+     "article_number": 12,
+     "score": 56
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 29
+    },
+    {
+     "record_id": "enterprise-size-measurement-rules-llm-006",
+     "article_number": 6,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-227708-1",
+   "query_ar": "ترتيبات الضمان المالي في اتفاقية المقاصة متعددة الفروع في حال حصول الطرف غير المفلس في اتفاقية مقاصة متعددة الفروع على ضمان بموجب ترتيبات الضمان المالي لضمان ودعم التزامات الطرف الأجنبي متعدد الفروع ب",
+   "category": "definitional",
+   "gold": {
+    "corpus": "final_clearing_collateral_regulation",
+    "law_component": "regulation",
+    "article_number": 15
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "final-clearing-collateral-regulation-llm-014",
+     "article_number": 14,
+     "score": 49
+    },
+    {
+     "record_id": "final-clearing-collateral-regulation-llm-002",
+     "article_number": 2,
+     "score": 45
+    },
+    {
+     "record_id": "final-clearing-collateral-regulation-llm-015",
+     "article_number": 15,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "gz-227708-2",
+   "query_ar": "نفاذ اتفاقية المقاصة متعددة الفروع في مواجهة الفرع المحلي المفلس أ- تحسب قيمة التزام الفرع المحلي المفلس تجاه الطرف غير المفلس بموجب اتفاقية مقاصة متعددة الفروع ابتداء من تاريخ إنهاء العقود المالية ال",
+   "category": "provision",
+   "gold": {
+    "corpus": "final_clearing_collateral_regulation",
+    "law_component": "regulation",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "final-clearing-collateral-regulation-llm-014",
+     "article_number": 14,
+     "score": 53
+    },
+    {
+     "record_id": "final-clearing-collateral-regulation-llm-002",
+     "article_number": 2,
+     "score": 43
+    },
+    {
+     "record_id": "final-clearing-collateral-regulation-llm-005",
+     "article_number": 5,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "gz-38df62-1",
+   "query_ar": "تهدف الهيئة إلى تنظيم الأمن الغذائي وتطويره وتعزيزه، بما يكفل حماية المصالح الحيوية للدولة وأمنها الوطني، ومراقبة الالتزام بالأنظمة والخطط الصادرة بشأنه.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "food_security_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "food-security-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 51
+    },
+    {
+     "record_id": "inv-law-llm-art-009",
+     "article_number": 9,
+     "score": 29
+    },
+    {
+     "record_id": "gaca-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "gz-38df62-2",
+   "query_ar": "للهيئة -دون إخلال باختصاصات الجهات الأخرى- القيام بكل ما يلزم لتحقيق أهدافها، ومن ذلك ما يأتي: 1- اقتراح مشروعات الأنظمة واللوائح ذات الصلة باختصاصاتها، واقتراح تعديل النافذ منها، والرفع عما يتطلب اتخ",
+   "category": "provision",
+   "gold": {
+    "corpus": "food_security_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "food-security-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 42
+    },
+    {
+     "record_id": "saudi-water-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 38
+    },
+    {
+     "record_id": "general-roads-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d19284-1",
+   "query_ar": "تهدف المؤسسة إلى تنظيم الأعمال والخدمات المتعلقة بنشاط الري ونشاط السدود ونشاط إعادة استخدام المياه المعالجة في المملكة، والرقابة على تلك الأنشطة وتشغيلها وتطويرها.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "general_irrigation_corporation_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "general-irrigation-corporation-statute-llm-003",
+     "article_number": 3,
+     "score": 57
+    },
+    {
+     "record_id": "general-irrigation-corporation-statute-llm-004",
+     "article_number": 4,
+     "score": 41
+    },
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d19284-2",
+   "query_ar": "تتولى المؤسسة إدارة نشاط الري ونشاط السدود ونشاط إعادة استخدام المياه المعالجة في المملكة، وتشغيلها وتطويرها. ولها -دون إخلال باختصاصات الجهات الحكومية الأخرى- القيام بكل ما يلزم في سبيل تحقيق أهدافها",
+   "category": "provision",
+   "gold": {
+    "corpus": "general_irrigation_corporation_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "general-irrigation-corporation-statute-llm-004",
+     "article_number": 4,
+     "score": 50
+    },
+    {
+     "record_id": "government-foreign-property-lease-controls-llm-001",
+     "article_number": 1,
+     "score": 30
+    },
+    {
+     "record_id": "government-foreign-property-lease-controls-llm-013",
+     "article_number": 13,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-774a90-1",
+   "query_ar": "تهدف الهيئة إلى تنظيم قطاع الطرق، والإشراف عليه، بما يساعد في تدعيم عملية النقل والخدمات اللوجستية في المملكة، وتمكين الجهات العاملة في هذا القطاع بما ينعكس على التنمية الاقتصادية بالمملكة.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "general_roads_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "general-roads-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 51
+    },
+    {
+     "record_id": "tga-organizational-statute-llm-art-004",
+     "article_number": 4,
+     "score": 41
+    },
+    {
+     "record_id": "gaca-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "gz-774a90-2",
+   "query_ar": "للهيئة في سبيل تحقيق أهدافها -دون إخلال باختصاصات الجهات الأخرى ذات العلاقة- القيام بما يأتي: 1- وضع السياسات العامة المتعلقة بجميع الطرق داخل النطاق العمراني وخارجه وصيانتها، بالتنسيق مع الجهات الأخر",
+   "category": "provision",
+   "gold": {
+    "corpus": "general_roads_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "general-roads-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 62
+    },
+    {
+     "record_id": "public-health-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 38
+    },
+    {
+     "record_id": "food-security-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d53e9a-1",
+   "query_ar": "شروط التخصيص يشترط في العقار الذي يتم النظر في تخصيصه ما يأتي: أن يكون العقار شاغرا. في حالة كون العقار مشغولا من جهة أخرى، يتم الاتفاق معها وأخذ موافقة صاحب الصلاحية فيها على التنازل عنه للجهة طالبة ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "government_property_allocation_transfer_controls",
+    "law_component": "rules",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "government-property-allocation-transfer-controls-llm-005",
+     "article_number": 5,
+     "score": 52
+    },
+    {
+     "record_id": "state-property-allocation-recovery-controls-llm-006",
+     "article_number": 6,
+     "score": 28
+    },
+    {
+     "record_id": "labor-reg-llm-art-014",
+     "article_number": 14,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d53e9a-2",
+   "query_ar": "أسباب الاسترداد للجهة المخولة استرداد العقار أو جزء منه من الجهة المخصص لها في إحدى الحالات الآتية: استغناء الجهة المخصص لها عن العقار، أو انتهاء الغرض من استخدامها له. استعمال الموقع أو جزء منه، في غ",
+   "category": "provision",
+   "gold": {
+    "corpus": "government_property_allocation_transfer_controls",
+    "law_component": "rules",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "government-property-allocation-transfer-controls-llm-010",
+     "article_number": 10,
+     "score": 45
+    },
+    {
+     "record_id": "state-property-allocation-recovery-controls-llm-013",
+     "article_number": 13,
+     "score": 25
+    },
+    {
+     "record_id": "oa-llm-companies-art-069",
+     "article_number": 69,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "gz-46b194-1",
+   "query_ar": "دون إخلال باختصاصات الجهات ذات العلاقة، يتولى المركز الاختصاصات والمهمات الآتية: 1- وضع السياسات والاستراتيجيات والخطط والبرامج ذات الصلة بنظم الموارد الحكومية وحوكمتها، وذلك بالتنسيق مع الجهات ذات ال",
+   "category": "definitional",
+   "gold": {
+    "corpus": "government_resource_systems_center_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "government-resource-systems-center-statute-llm-004",
+     "article_number": 4,
+     "score": 55
+    },
+    {
+     "record_id": "government-resource-systems-center-statute-llm-001",
+     "article_number": 1,
+     "score": 37
+    },
+    {
+     "record_id": "government-resource-systems-center-statute-llm-003",
+     "article_number": 3,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "gz-46b194-2",
+   "query_ar": "يهدف المركز إلى ما يلي: 1- توفير نظم إلكترونية معيارية وموحدة لإدارة الموارد الحكومية، تدعم تكامل وتوحيد وتحسين الإجراءات بين الجهات الحكومية، وتدعم عمليات اتخاذ القرار عبر تحسين جودة البيانات والتقار",
+   "category": "provision",
+   "gold": {
+    "corpus": "government_resource_systems_center_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "government-resource-systems-center-statute-llm-003",
+     "article_number": 3,
+     "score": 63
+    },
+    {
+     "record_id": "government-resource-systems-center-statute-llm-004",
+     "article_number": 4,
+     "score": 47
+    },
+    {
+     "record_id": "government-resource-systems-center-statute-llm-001",
+     "article_number": 1,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "gz-da27dd-1",
+   "query_ar": "ترفع الهيئة، خلال (تسعين) يوما من بداية كل سنة مالية، إلى رئيس مجلس الوزراء تقريرا سنويا عما حققته من إنجازات مقارنة بالسنة المنقضية وما واجهها من صعوبات وما تراه من مقترحات لحسن سير العمل.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "high_industrial_security_authority_statute",
+    "law_component": "statute",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "high-industrial-security-authority-statute-llm-014",
+     "article_number": 14,
+     "score": 59
+    },
+    {
+     "record_id": "media-regulation-authority-statute-llm-013",
+     "article_number": 13,
+     "score": 56
+    },
+    {
+     "record_id": "state-property-authority-statute-llm-012",
+     "article_number": 12,
+     "score": 56
+    }
+   ]
+  },
+  {
+   "query_id": "gz-da27dd-2",
+   "query_ar": "1- يسري على منسوبي الهيئة المدنيين -عدا المحافظ- نظام العمل ونظام التأمينات الاجتماعية. 2- تسري على منسوبي الهيئة العسكريين أنظمة الخدمة العسكرية ولوائحها، ونظام التقاعد العسكري، ويتمتعون بكل مزايا من",
+   "category": "provision",
+   "gold": {
+    "corpus": "high_industrial_security_authority_statute",
+    "law_component": "statute",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "high-industrial-security-authority-statute-llm-008",
+     "article_number": 8,
+     "score": 52
+    },
+    {
+     "record_id": "media-regulation-authority-statute-llm-015",
+     "article_number": 15,
+     "score": 38
+    },
+    {
+     "record_id": "saudi-red-sea-authority-statute-llm-012",
+     "article_number": 12,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5d675d-1",
+   "query_ar": "1- يلتزم المرخص له بالتقيد بأحكام هذه القواعد بشكل خاص، وبآداب وأخلاقيات المهنة بشكل عام، وفي حال مخالفته لهذه القواعد أو الآداب -ودون الإخلال بأية عقوبة أشد منصوص عليها في الأنظمة واللوائح الأخرى- في",
+   "category": "definitional",
+   "gold": {
+    "corpus": "industrial_mining_consultancy_rules",
+    "law_component": "rules",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "industrial-mining-consultancy-rules-llm-013",
+     "article_number": 13,
+     "score": 46
+    },
+    {
+     "record_id": "accounting-services-rules-llm-015",
+     "article_number": 15,
+     "score": 34
+    },
+    {
+     "record_id": "zakat-tax-accounting-services-rules-llm-015",
+     "article_number": 15,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5d675d-2",
+   "query_ar": "يلتزم المرخص له بتزويد الوزارة بالبيانات الآتية: أ- عنوان مكتبه والفروع التابعة له -إن وجدت- وما قد يطرأ عليها من تحديث. ب- بيانات العاملين المهنيين لديه. ج- أي بيانات أخرى تطلبها الوزارة. وعليه إشعار",
+   "category": "provision",
+   "gold": {
+    "corpus": "industrial_mining_consultancy_rules",
+    "law_component": "rules",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "industrial-mining-consultancy-rules-llm-009",
+     "article_number": 9,
+     "score": 52
+    },
+    {
+     "record_id": "labor-annex4-llm-art-034",
+     "article_number": 34,
+     "score": 24
+    },
+    {
+     "record_id": "labor-annex4-llm-art-017",
+     "article_number": 17,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "gz-66b3d7-1",
+   "query_ar": "يكون للألفاظ والعبارة الآتية -أينما وردت في هذه الترتيبات- المعاني المبينة أما كل منها، ما لم يقتض السياق غير ذلك: الترتيبات: الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة جازان. المكتب: المكتب ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "jazan_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "jazan-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 78
+    },
+    {
+     "record_id": "baha-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 71
+    },
+    {
+     "record_id": "jouf-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 71
+    }
+   ]
+  },
+  {
+   "query_id": "gz-66b3d7-2",
+   "query_ar": "1- تعقد اجتماعات اللجنة في مقر المكتب برئاسة الرئيس أو من ينيبه من الأعضاء، ويجوز -عند الحاجة- عقدها في مكان آخر داخل المنطقة. 2- تعقد اللجنة اجتماعاتها بصفة دورية أربع مرات -على الأقل- في السنة، وللر",
+   "category": "provision",
+   "gold": {
+    "corpus": "jazan_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 5
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "baha-strategic-office-statute-llm-005",
+     "article_number": 5,
+     "score": 48
+    },
+    {
+     "record_id": "jazan-strategic-office-statute-llm-005",
+     "article_number": 5,
+     "score": 48
+    },
+    {
+     "record_id": "jouf-strategic-office-statute-llm-005",
+     "article_number": 5,
+     "score": 48
+    }
+   ]
+  },
+  {
+   "query_id": "gz-43f78e-1",
+   "query_ar": "يلتزم المؤهل والمستفيد بدءا من تاريخ قبول الطلب أو تاریخ صرف الإعانة بما يأتي: 1- إشعار الصندوق فورا بكل تغيير يطرأ ويترتب عليه -أو قد يترتب عليه- عدم أهليته للإعانة. 2- تقديم المستندات التي يطلبها ال",
+   "category": "definitional",
+   "gold": {
+    "corpus": "job_seeker_allowance_statute",
+    "law_component": "statute",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "job-seeker-allowance-statute-llm-007",
+     "article_number": 7,
+     "score": 43
+    },
+    {
+     "record_id": "weapons-ammunition-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 23
+    },
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-025",
+     "article_number": 25,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "gz-43f78e-2",
+   "query_ar": "دون إخلال باختصاصات صندوق التنمية الوطني، يتولى الصندوق الآتي: 1- إعداد القرارات التنفيذية اللازمة لتنفيذ أحكام التنظيم؛ ليعتمدها المجلس. 2- التنسيق مع الجهات الحكومية والخاصة لتسهيل إجراءات تقديم الط",
+   "category": "provision",
+   "gold": {
+    "corpus": "job_seeker_allowance_statute",
+    "law_component": "statute",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "job-seeker-allowance-statute-llm-010",
+     "article_number": 10,
+     "score": 38
+    },
+    {
+     "record_id": "cultural-development-fund-law-llm-004",
+     "article_number": 4,
+     "score": 38
+    },
+    {
+     "record_id": "real-estate-development-fund-law-llm-007",
+     "article_number": 7,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-229dae-1",
+   "query_ar": "يكون للألفاظ والعبارة الآتية -أينما وردت في هذه الترتيبات- المعاني المبينة أمام كل منها، ما لم يقتض السياق غير ذلك: الترتيبات: الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الجوف. المكتب: المكتب",
+   "category": "definitional",
+   "gold": {
+    "corpus": "jouf_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "jouf-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 78
+    },
+    {
+     "record_id": "baha-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 72
+    },
+    {
+     "record_id": "jazan-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 71
+    }
+   ]
+  },
+  {
+   "query_id": "gz-229dae-2",
+   "query_ar": "يهدف المكتب إلى التخطيط والتطوير الشامل لمنطقة الجوف في المجالات العمرانية، والسكانية، والاقتصادية، والتنموية، والاجتماعية، والثقافية، والبيئية، والنقل، والبنية الأساسية، والبنية التحتية الرقمية، وإلى",
+   "category": "provision",
+   "gold": {
+    "corpus": "jouf_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "jouf-strategic-office-statute-llm-003",
+     "article_number": 3,
+     "score": 28
+    },
+    {
+     "record_id": "baha-strategic-office-statute-llm-003",
+     "article_number": 3,
+     "score": 22
+    },
+    {
+     "record_id": "jazan-strategic-office-statute-llm-003",
+     "article_number": 3,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-9a71a6-1",
+   "query_ar": "تهدف المدينة إلى أن تكون مركزا علميا وبحثيا متميزا، مساهما في التنمية في المملكة من خلال البحث والتطوير في المجالات ذات الصلة بالاستخدامات السلمية للطاقة الذرية وتطبيقات الطاقة المتجددة، والإسهام في ت",
+   "category": "definitional",
+   "gold": {
+    "corpus": "kacare_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "kacare-statute-llm-003",
+     "article_number": 3,
+     "score": 58
+    },
+    {
+     "record_id": "kacare-statute-llm-004",
+     "article_number": 4,
+     "score": 35
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-001",
+     "article_number": 1,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-9a71a6-2",
+   "query_ar": "مع مراعاة الاختصاصات المقرة نظاما للجهات الحكومية الأخرى، تتولى المدينة في سبيل تحقيق أهدافها المهمات التالية: 1- المشاركة في إعداد الخطط الوطنية ذات الصلة بمجالات الاستخدامات السلمية للطاقة الذرية وت",
+   "category": "provision",
+   "gold": {
+    "corpus": "kacare_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "kacare-statute-llm-004",
+     "article_number": 4,
+     "score": 45
+    },
+    {
+     "record_id": "kacare-statute-llm-003",
+     "article_number": 3,
+     "score": 26
+    },
+    {
+     "record_id": "kacare-statute-llm-008",
+     "article_number": 8,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d9f380-1",
+   "query_ar": "تعد المدينة مركز المختبرات الوطنية في المجالات العلمية والتقنية والبحثية، ومرجعا في مجالات التقنية الحصرية ونقلها وتوطينها وتطويرها لتكون جزءا من تنمية المحتوى المحلي، وتعمل على تجسير الفجوة بين البحث",
+   "category": "definitional",
+   "gold": {
+    "corpus": "kacst_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "kacst-statute-llm-003",
+     "article_number": 3,
+     "score": 58
+    },
+    {
+     "record_id": "kacst-statute-llm-001",
+     "article_number": 1,
+     "score": 28
+    },
+    {
+     "record_id": "rdi-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d9f380-2",
+   "query_ar": "للمدينة في سبيل تحقيق أهدافها -دون إخلال باختصاصات الجهات الأخرى ذات العلاقة- ما يأتي: 1- تنفيذ برامج البحث العلمي الأساسية والتطبيقية والتطويرية بما يتفق مع الاستراتيجية الوطنية للبحث والتطوير والابت",
+   "category": "provision",
+   "gold": {
+    "corpus": "kacst_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "kacst-statute-llm-004",
+     "article_number": 4,
+     "score": 44
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-005",
+     "article_number": 5,
+     "score": 41
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-001",
+     "article_number": 1,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-40cdc2-1",
+   "query_ar": "يهدف المركز إلى تأصيل أعمال التخطيط والسياسات اللغوية على المستوى الوطني، ليكون مرجعية موثوقة للمختصين في اتخاذ القرارات اللغوية المناسبة، وبيت خبرة على مستوى العالم العربي. ويتولى –في سبيل تحقيق ذلك–",
+   "category": "definitional",
+   "gold": {
+    "corpus": "king_abdullah_language_planning_center_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "king-abdullah-language-planning-center-statute-llm-003",
+     "article_number": 3,
+     "score": 54
+    },
+    {
+     "record_id": "national-transport-safety-center-statute-llm-003",
+     "article_number": 3,
+     "score": 28
+    },
+    {
+     "record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-007",
+     "article_number": 7,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-40cdc2-2",
+   "query_ar": "تشكل في المركز –بقرار من المجلس– لجنة استشارية من خمسة أشخاص على الأقل غير متفرغين، يساعدون المدير العام، وتكون من مهمات هذه اللجنة المساعدة فيما يأتي: 1- اقتراح السياسات العامة المتعلقة بنشاط المركز ",
+   "category": "provision",
+   "gold": {
+    "corpus": "king_abdullah_language_planning_center_statute",
+    "law_component": "statute",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "king-abdullah-language-planning-center-statute-llm-008",
+     "article_number": 8,
+     "score": 49
+    },
+    {
+     "record_id": "public-transport-users-rights-regulation-llm-017",
+     "article_number": 17,
+     "score": 35
+    },
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-009",
+     "article_number": 9,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "gz-404366-1",
+   "query_ar": "نظام إدارة الطوارئ 1- يجب أن يكون في كل مرسى قسم للأرصاد الجوية مسؤول عن إيصال تحذيرات التنبؤات الجوية إلى المستفيدين من المرسى. ويجب أن تتضمن على سبيل المثال لا الحصر التحذيرات وأي توقعات لسرعة الريا",
+   "category": "definitional",
+   "gold": {
+    "corpus": "marina_design_operation_controls",
+    "law_component": "rules",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marina-design-operation-controls-llm-010",
+     "article_number": 10,
+     "score": 44
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-003",
+     "article_number": 3,
+     "score": 31
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-404366-2",
+   "query_ar": "متطلبات ترخيص مشغل مرسى بحري سياحي 1- يجب على مشغل المرسى البحري السياحي الذي يرغب في تشغيل المرسى أن يكون لديه ترخيص سار صادر من الهيئة، وذلك بعد استيفاء كافة المتطلبات والإجراءات المتعلقة بالخدمة. 2",
+   "category": "provision",
+   "gold": {
+    "corpus": "marina_design_operation_controls",
+    "law_component": "rules",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marina-design-operation-controls-llm-006",
+     "article_number": 6,
+     "score": 51
+    },
+    {
+     "record_id": "marina-design-operation-controls-llm-004",
+     "article_number": 4,
+     "score": 45
+    },
+    {
+     "record_id": "marina-design-operation-controls-llm-008",
+     "article_number": 8,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1cdde3-1",
+   "query_ar": "إلغاء الترخيص: مع عدم الإخلال بالعقوبات المنصوص عليها في اللائحة، يجوز للسلطة البحرية إلغاء الترخيص في الحالات الآتية: 1- عند تقديم المنشأة بيانات أو مسوغات غير صحيحة أو غير سارية للحصول على الترخيص. ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "maritime_travel_ticket_sales_regulation",
+    "law_component": "regulation",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "maritime-travel-ticket-sales-regulation-llm-008",
+     "article_number": 8,
+     "score": 56
+    },
+    {
+     "record_id": "fisheries-law-llm-art-009",
+     "article_number": 9,
+     "score": 30
+    },
+    {
+     "record_id": "maritime-travel-ticket-sales-regulation-llm-004",
+     "article_number": 4,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1cdde3-2",
+   "query_ar": "تجديد الترخيص: 1- ينتهي الترخيص بانتهاء مدته. 2- لا يجوز للمنشأة ممارسة النشاط بعد انتهاء مدة الترخيص حتى يتم تجديده. 3- لا يقبل طلب المنشأة بتجديد الترخيص بعد تاريخ انتهائه بمدة تزيد على ثلاثين يوما،",
+   "category": "provision",
+   "gold": {
+    "corpus": "maritime_travel_ticket_sales_regulation",
+    "law_component": "regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "maritime-travel-ticket-sales-regulation-llm-005",
+     "article_number": 5,
+     "score": 51
+    },
+    {
+     "record_id": "press-regulation-llm-art-006",
+     "article_number": 6,
+     "score": 36
+    },
+    {
+     "record_id": "labor-annex4-llm-art-015",
+     "article_number": 15,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-bdb1d6-1",
+   "query_ar": "تهدف الهيئة إلى تنظيم قطاع الإعلام في المملكة وأنشطته المختلفة، ونشاط البث الإعلامي، ومراقبة أدائه وتطويره وتشجيع الاستثمار فيه، ووضع ضوابط للمحتوى الإعلامي، وتنظيم وضع العاملين في مجال الإعلام، ولها ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "media_regulation_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "media-regulation-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 66
+    },
+    {
+     "record_id": "gaca-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 36
+    },
+    {
+     "record_id": "mawani-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-bdb1d6-2",
+   "query_ar": "تتألف موارد الهيئة مما يلي: 1- ما يخصص للهيئة من اعتمادات في الميزانية العامة للدولة. 2- ما يخصص للهيئة من المقابل المالي الذي تتقاضاه الدولة من رخص البث الإعلامي. 3- المقابل المالي الذي تتقاضاه الهيئ",
+   "category": "provision",
+   "gold": {
+    "corpus": "media_regulation_authority_statute",
+    "law_component": "statute",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "media-regulation-authority-statute-llm-008",
+     "article_number": 8,
+     "score": 52
+    },
+    {
+     "record_id": "rega-organizational-statute-llm-art-011",
+     "article_number": 11,
+     "score": 47
+    },
+    {
+     "record_id": "tga-organizational-statute-llm-art-011",
+     "article_number": 11,
+     "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c51eca-1",
+   "query_ar": "تجديد التراخيص التجارية وتعديلها وإيقافها وإلغاؤها يكون تجديد التراخيص التجارية وتعديلها -بعد توفر المتطلبات والشروط الواردة في المادة السابعة- وإيقافها وإلغاؤها على النحو الآتي: أولا: يكون تجديد التر",
+   "category": "definitional",
+   "gold": {
+    "corpus": "municipal_licensing_procedures_regulation",
+    "law_component": "regulation",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "municipal-licensing-procedures-regulation-llm-010",
+     "article_number": 10,
+     "score": 33
+    },
+    {
+     "record_id": "trade-remedies-regulation-llm-037",
+     "article_number": 37,
+     "score": 26
+    },
+    {
+     "record_id": "agriculture-regulation-llm-art-244",
+     "article_number": 244,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c51eca-2",
+   "query_ar": "التراخيص التجارية ذات الطبيعة المختلفة أولا: يكون إصدار الترخيص التجاري ذي الطبيعة المختلفة من خلال المنصة الإلكترونية بعد توافر الشروط الآتية: 1- أن يكون شخصا طبيعيا سعوديا لا يقل عمره عن ثمانية عشر ",
+   "category": "provision",
+   "gold": {
+    "corpus": "municipal_licensing_procedures_regulation",
+    "law_component": "regulation",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "municipal-licensing-procedures-regulation-llm-013",
+     "article_number": 13,
+     "score": 50
+    },
+    {
+     "record_id": "municipal-licensing-procedures-regulation-llm-001",
+     "article_number": 1,
+     "score": 37
+    },
+    {
+     "record_id": "municipal-licensing-procedures-regulation-llm-008",
+     "article_number": 8,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-b69f3a-1",
+   "query_ar": "دون إخلال باختصاصات ومسؤوليات الجهات الحكومية الأخرى، للمركز -في سبيل تحقيق أهدافه- القيام بالمهمات والاختصاصات الآتية: 1- اقتراح مشروع الاستراتيجية الوطنية للمناهج، ورفعه وفقا للإجراءات النظامية. 2- ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "national_curriculum_center_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-curriculum-center-statute-llm-004",
+     "article_number": 4,
+     "score": 39
+    },
+    {
+     "record_id": "national-curriculum-center-statute-llm-008",
+     "article_number": 8,
+     "score": 34
+    },
+    {
+     "record_id": "falcon-center-statute-llm-004",
+     "article_number": 4,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-b69f3a-2",
+   "query_ar": "يهدف المركز إلى تحقيق ما يأتي: 1- تطوير المناهج تطويرا يستجيب لمتطلبات التنمية والمستهدفات الوطنية وفق أحدث النظريات، والنماذج، والأساليب العلمية والتربوية، وبما يراعي الثوابت الإسلامية والرؤى والتوجه",
+   "category": "provision",
+   "gold": {
+    "corpus": "national_curriculum_center_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-curriculum-center-statute-llm-003",
+     "article_number": 3,
+     "score": 50
+    },
+    {
+     "record_id": "real-estate-development-fund-law-llm-003",
+     "article_number": 3,
+     "score": 18
+    },
+    {
+     "record_id": "agricultural-development-fund-law-llm-004",
+     "article_number": 4,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ad2c7d-1",
+   "query_ar": "المعهد هو الجهة المعنية بالإشراف والدعم للأبحاث الانتقالية والتجارب السريرية في مجال الصحة، وله -دون إخلال باختصاصات الجهات الأخرى ومسؤولياتها- القيام بكل ما يلزم لتحقيق أهدافه، ومن ذلك ما يأتي: 1- ال",
+   "category": "definitional",
+   "gold": {
+    "corpus": "national_health_research_institute_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-health-research-institute-statute-llm-004",
+     "article_number": 4,
+     "score": 59
+    },
+    {
+     "record_id": "national-health-research-institute-statute-llm-006",
+     "article_number": 6,
+     "score": 42
+    },
+    {
+     "record_id": "national-health-research-institute-statute-llm-003",
+     "article_number": 3,
+     "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ad2c7d-2",
+   "query_ar": "يهدف المعهد إلى الآتي: 1- المساهمة في تحسين صحة الإنسان ورفاهيته وجودة حياته. 2- تمويل الأبحاث الانتقالية والتجارب السريرية في مجال الصحة، وضمان جودة وكفاءة مخرجاتها. 3- تحويل نتائج الأبحاث الانتقالية",
+   "category": "provision",
+   "gold": {
+    "corpus": "national_health_research_institute_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-health-research-institute-statute-llm-003",
+     "article_number": 3,
+     "score": 59
+    },
+    {
+     "record_id": "national-health-research-institute-statute-llm-004",
+     "article_number": 4,
+     "score": 44
+    },
+    {
+     "record_id": "national-health-research-institute-statute-llm-001",
+     "article_number": 1,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8080c1-1",
+   "query_ar": "دون إخلال باختصاصات الجهات الحكومية ذات العلاقة، للمركز في سبيل تحقيق أهدافه أن يمارس -بالتعاون مع الجهات الحكومية ذات العلاقة كل فيما يخصه- الاختصاصات الآتية: 1- وضع السياسات والخطط والبرامج اللازمة ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "national_inspection_control_center_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-inspection-control-center-statute-llm-004",
+     "article_number": 4,
+     "score": 43
+    },
+    {
+     "record_id": "palms-dates-center-statute-llm-003",
+     "article_number": 3,
+     "score": 35
+    },
+    {
+     "record_id": "national-curriculum-center-statute-llm-004",
+     "article_number": 4,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8080c1-2",
+   "query_ar": "يكون للمركز مجلس إدارة برئاسة وزير الشؤون البلدية والقروية والإسكان، وعضوية كل من: 1- ممثل من وزارة الداخلية (المديرية العامة للدفاع المدني). 2- ممثل من وزارة الشؤون البلدية والقروية والإسكان. 3- ممثل",
+   "category": "provision",
+   "gold": {
+    "corpus": "national_inspection_control_center_statute",
+    "law_component": "statute",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-inspection-control-center-statute-llm-005",
+     "article_number": 5,
+     "score": 49
+    },
+    {
+     "record_id": "saudi-red-sea-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 37
+    },
+    {
+     "record_id": "civil-defense-regulation-llm-firefighting-rescue-art-006",
+     "article_number": 6,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "gz-45a33d-1",
+   "query_ar": "للمركز في سبيل تحقيق أهدافه -دون إخلال باختصاصات الجهات الأخرى ذات العلاقة، ودون إخلال بالتزامات المملكة بموجب الاتفاقيات الدولية التي تكون طرفا فيها- القيام بما يأتي: 1- وضع السياسات والخطط والبرامج ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "national_transport_safety_center_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-transport-safety-center-statute-llm-004",
+     "article_number": 4,
+     "score": 45
+    },
+    {
+     "record_id": "national-curriculum-center-statute-llm-004",
+     "article_number": 4,
+     "score": 39
+    },
+    {
+     "record_id": "inv-law-llm-art-013",
+     "article_number": 13,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "gz-45a33d-2",
+   "query_ar": "يهدف المركز إلى تعزيز مستوى السلامة في منظومة النقل بكل أنماطه، من خلال نشر الوعي وثقافة السلامة بين المستفيدين داخل المنظومة وخارجها، وإصدار توصيات إرشادية مبنية على عمليات تحقيقات السلامة وأفضل المم",
+   "category": "provision",
+   "gold": {
+    "corpus": "national_transport_safety_center_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "national-transport-safety-center-statute-llm-003",
+     "article_number": 3,
+     "score": 63
+    },
+    {
+     "record_id": "national-transport-safety-center-statute-llm-004",
+     "article_number": 4,
+     "score": 31
+    },
+    {
+     "record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-007",
+     "article_number": 7,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c958a2-1",
+   "query_ar": "ينشئ المركز سجل المستفيد الحقيقي، ويقيد فيه بيانات الجمعية والمؤسسة وبيانات المستفيد الحقيقي لكل منهما وتاريخ التقييد -من خلال نموذج الإفصاح- وكل تحديث يطرأ عليها، على أن يشمل السجل على الأقل البيانات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "nonprofit_beneficial_owner_rules",
+    "law_component": "rules",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nonprofit-beneficial-owner-rules-llm-006",
+     "article_number": 6,
+     "score": 59
+    },
+    {
+     "record_id": "nonprofit-beneficial-owner-rules-llm-008",
+     "article_number": 8,
+     "score": 37
+    },
+    {
+     "record_id": "nonprofit-beneficial-owner-rules-llm-001",
+     "article_number": 1,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c958a2-2",
+   "query_ar": "1- تلتزم الجمعية أو المؤسسة بجمع معلومات كافية ودقيقة ومحدثة عن المستفيد الحقيقي منها، وعليها الاحتفاظ بها والإفصاح عنها للمركز، وفقا لما هو محدد في المادة السادسة، وعلى المركز إدراج هذه المعلومات في ",
+   "category": "provision",
+   "gold": {
+    "corpus": "nonprofit_beneficial_owner_rules",
+    "law_component": "rules",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nonprofit-beneficial-owner-rules-llm-004",
+     "article_number": 4,
+     "score": 70
+    },
+    {
+     "record_id": "nonprofit-beneficial-owner-rules-llm-007",
+     "article_number": 7,
+     "score": 53
+    },
+    {
+     "record_id": "nonprofit-beneficial-owner-rules-llm-008",
+     "article_number": 8,
+     "score": 47
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d9685f-1",
+   "query_ar": "دون إخلال باختصاصات الجهات الأخرى، للمركز القيام بكل ما يلزم في سبيل تحقيق أهدافه وفق التنظيم، ومن ذلك ما يأتي: 1- إعداد الاستراتيجيات والخطط والبرامج ومؤشرات الأداء ذات العلاقة بالقطاع غير الربحي، وا",
+   "category": "definitional",
+   "gold": {
+    "corpus": "nonprofit_sector_development_center_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nonprofit-sector-development-center-statute-llm-004",
+     "article_number": 4,
+     "score": 52
+    },
+    {
+     "record_id": "national-transport-safety-center-statute-llm-004",
+     "article_number": 4,
+     "score": 33
+    },
+    {
+     "record_id": "nonprofit-sector-development-center-statute-llm-008",
+     "article_number": 8,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d9685f-2",
+   "query_ar": "يهدف المركز إلى تنظيم دور منظمات القطاع غير الربحي وتفعيله وتوسيعه في المجالات التنموية، والعمل على تكامل الجهود الحكومية في تقديم خدمات الترخيص لتلك المنظمات، والإشراف المالي والإداري والفني على القط",
+   "category": "provision",
+   "gold": {
+    "corpus": "nonprofit_sector_development_center_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nonprofit-sector-development-center-statute-llm-003",
+     "article_number": 3,
+     "score": 77
+    },
+    {
+     "record_id": "nonprofit-sector-development-center-statute-llm-004",
+     "article_number": 4,
+     "score": 55
+    },
+    {
+     "record_id": "nonprofit-sector-development-center-statute-llm-001",
+     "article_number": 1,
+     "score": 47
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d00d5c-1",
+   "query_ar": "يهدف المكتب إلى التخطيط والتطوير الشامل لمنطقة الحدود الشمالية في المجالات العمرانية، والسكانية، والاقتصادية، والتنموية، والاجتماعية، والثقافية، والبيئية، والنقل، والبنية الأساسية، والبنية التحتية الر",
+   "category": "definitional",
+   "gold": {
+    "corpus": "northern_borders_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "northern-borders-strategic-office-statute-llm-003",
+     "article_number": 3,
+     "score": 32
+    },
+    {
+     "record_id": "baha-strategic-office-statute-llm-003",
+     "article_number": 3,
+     "score": 20
+    },
+    {
+     "record_id": "jazan-strategic-office-statute-llm-003",
+     "article_number": 3,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d00d5c-2",
+   "query_ar": "يكون للألفاظ والعبارات الآتية -أينما وردت في هذه الترتيبات- المعاني المبينة أمام كل منها، ما لم يقتض السياق غير ذلك: الترتيبات: الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الحدود الشمالية. الم",
+   "category": "provision",
+   "gold": {
+    "corpus": "northern_borders_strategic_office_statute",
+    "law_component": "statute",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "northern-borders-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 83
+    },
+    {
+     "record_id": "baha-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 70
+    },
+    {
+     "record_id": "jouf-strategic-office-statute-llm-001",
+     "article_number": 1,
+     "score": 70
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ff1676-1",
+   "query_ar": "يهدف المجلس إلى تطبيق حوكمة السلامة والصحة المهنية على المستوى الوطني، وتحديد وتنسيق الأدوار بين الجهات الحكومية ذات العلاقة، ومتابعة تنفيذ السياسة الوطنية للسلامة والصحة المهنية، وله -في سبيل تحقيق ذ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "occupational_safety_health_council_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "occupational-safety-health-council-statute-llm-003",
+     "article_number": 3,
+     "score": 73
+    },
+    {
+     "record_id": "occupational-safety-health-council-statute-llm-001",
+     "article_number": 1,
+     "score": 52
+    },
+    {
+     "record_id": "occupational-safety-health-council-statute-llm-002",
+     "article_number": 2,
+     "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ff1676-2",
+   "query_ar": "أ- يكون تشكيل المجلس برئاسة الوزير، وعضوية كل من: 1- نائب الوزير للعمل عضوا ونائبا للرئيس 2- ممثل من وزارة الصحة. 3- ممثل من وزارة المالية. 4- ممثل من وزارة الصناعة والثروة المعدنية. 5- ممثل من وزارة ",
+   "category": "provision",
+   "gold": {
+    "corpus": "occupational_safety_health_council_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "occupational-safety-health-council-statute-llm-004",
+     "article_number": 4,
+     "score": 45
+    },
+    {
+     "record_id": "national-health-research-institute-statute-llm-005",
+     "article_number": 5,
+     "score": 30
+    },
+    {
+     "record_id": "mental-health-law-llm-art-003",
+     "article_number": 3,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-15d1f9-1",
+   "query_ar": "دون إخلال باختصاصات الجهات الحكومية ذات العلاقة، يهدف المركز إلى المساهمة في تطوير واستدامة زراعة النخيل وإنتاج التمور في المملكة وتعزيزها ورفع جودتها، والعمل على وضع منظومة متكاملة من الخدمات الزراعي",
+   "category": "definitional",
+   "gold": {
+    "corpus": "palms_dates_center_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "palms-dates-center-statute-llm-003",
+     "article_number": 3,
+     "score": 53
+    },
+    {
+     "record_id": "government-resource-systems-center-statute-llm-004",
+     "article_number": 4,
+     "score": 36
+    },
+    {
+     "record_id": "national-transport-safety-center-statute-llm-004",
+     "article_number": 4,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-15d1f9-2",
+   "query_ar": "يقوم المجلس بالآتي: 1- إعداد مشروع تنظيم للمركز، وذلك في ضوء ما ورد في هذه الترتيبات، وما قد يظهر له في هذا الشأن. 2- رفع مشروع التنظيم لاستكمال الإجراءات النظامية اللازمة في شأنه خلال مدة لا تتجاوز (",
+   "category": "provision",
+   "gold": {
+    "corpus": "palms_dates_center_statute",
+    "law_component": "statute",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "palms-dates-center-statute-llm-012",
+     "article_number": 12,
+     "score": 65
+    },
+    {
+     "record_id": "national-inspection-control-center-statute-llm-014",
+     "article_number": 14,
+     "score": 50
+    },
+    {
+     "record_id": "national-curriculum-center-statute-llm-008",
+     "article_number": 8,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "gz-60bd27-1",
+   "query_ar": "1- تعمل المؤسسة على أسس ومعايير تجارية غير هادفة للربح، بما يمكنها من القيام بمسؤولياتها وأداء مهماتها في تنظيم خدماتها وتطويرها؛ وذلك وفقا لما تحدده اللوائح التي يقرها المجلس. 2- تشرف الهيئة على المؤ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "prince_mohammed_bin_salman_park_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "prince-mohammed-bin-salman-park-statute-llm-003",
+     "article_number": 3,
+     "score": 59
+    },
+    {
+     "record_id": "mawani-organizational-statute-llm-art-004",
+     "article_number": 4,
+     "score": 56
+    },
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-009",
+     "article_number": 9,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-60bd27-2",
+   "query_ar": "تهدف المؤسسة إلى رفع تنافسية مدينة الرياض، وتعزيز مستوى جودة الحياة فيها بتوفير مساحة خضراء وغطاء نباتي لبيئة أفضل، ودعم الناتج المحلي بإيجاد مزيد من فرص العمل. ولها في سبيل تحقيق ذلك –دون إخلال بما و",
+   "category": "provision",
+   "gold": {
+    "corpus": "prince_mohammed_bin_salman_park_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "prince-mohammed-bin-salman-park-statute-llm-004",
+     "article_number": 4,
+     "score": 43
+    },
+    {
+     "record_id": "riyadh-nonprofit-foundation-statute-llm-005",
+     "article_number": 5,
+     "score": 28
+    },
+    {
+     "record_id": "riyadh-biotechnology-center-statute-llm-004",
+     "article_number": 4,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-7bcc26-1",
+   "query_ar": "يهدف هذا النظام إلى وضع القواعد العامة لنقل معلومات المتعاملين مع المنشآت الخاصة إلى مركز المعلومات الوطني في وزارة الداخلية إلكترونيا عبر نظام شموس، وتحديد آلية ضبط المخالفات والعقوبات المترتبة عليها",
+   "category": "definitional",
+   "gold": {
+    "corpus": "private_entity_client_data_transfer_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 129
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-001",
+     "article_number": 1,
+     "score": 116
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-003",
+     "article_number": 3,
+     "score": 107
+    }
+   ]
+  },
+  {
+   "query_id": "gz-7bcc26-2",
+   "query_ar": "تتولى الوزارة مسؤولية تشغيل نظام شموس، والإشراف على تطبيقه، وتطويره، واتخاذ الإجراءات اللازمة لتحقيق ذلك. (4 / 1)- يصدر معالي مدير الأمن العام قرارا بتشكيل لجنة رئيسية دائمة لمتابعة تطبيق نظام شموس، ب",
+   "category": "provision",
+   "gold": {
+    "corpus": "private_entity_client_data_transfer_regulation",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-004",
+     "article_number": 4,
+     "score": 49
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 28
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-005",
+     "article_number": 5,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-9f27b1-1",
+   "query_ar": "تهدف الهيئة إلى حماية الصحة العامة وتعزيزها، والوقاية من التعرض للإصابة بالأمراض -المعدية وغير المعدية- ورفع الجاهزية العامة للاستجابة لطوارئ الصحة العامة، وتنظيم الجهود بين الجهات ذات العلاقة، وفقا ل",
+   "category": "definitional",
+   "gold": {
+    "corpus": "public_health_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "public-health-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 59
+    },
+    {
+     "record_id": "public-health-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 46
+    },
+    {
+     "record_id": "tga-organizational-statute-llm-art-004",
+     "article_number": 4,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-9f27b1-2",
+   "query_ar": "للهيئة -دون إخلال باختصاصات ومسؤوليات الجهات الأخرى- القيام بكل ما يلزم في سبيل تحقيق أهدافها، ولها على وجه خاص ممارسة الاختصاصات الآتية: 1- وضع السياسات والخطط والبرامج والمبادرات والأدلة ذات الصلة ب",
+   "category": "provision",
+   "gold": {
+    "corpus": "public_health_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "public-health-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 34
+    },
+    {
+     "record_id": "saudi-water-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 34
+    },
+    {
+     "record_id": "general-roads-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "gz-52af0d-1",
+   "query_ar": "اشتراطات التعبئة والتغليف للخضار والفواكه 1- المتطلبات العامة: تحدد هذه المعايير الاشتراطات الأساسية التي يجب أن تتوفر في عبوات المنتجات الزراعية لضمان جودتها وسلامتها أثناء المناولة والتوزيع. أ- الحم",
+   "category": "definitional",
+   "gold": {
+    "corpus": "public_utility_market_facilities_controls",
+    "law_component": "rules",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "public-utility-market-facilities-controls-llm-012",
+     "article_number": 12,
+     "score": 36
+    },
+    {
+     "record_id": "gcc-pesticides-regulation-llm-001",
+     "article_number": 1,
+     "score": 22
+    },
+    {
+     "record_id": "building-code-inspection-bodies-regulation-llm-002",
+     "article_number": 2,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "gz-52af0d-2",
+   "query_ar": "ضوابط بيع المواشي المعدة للذبح 1- ضوابط البيع للمواشي المعدة للذبح (داخل الحظائر): أ- يمنع بيع أي مواش دون تحديد وزنها باستخدام ميزان وفق الاشتراطات المعتمدة. ب- يلتزم مستأجر الحظيرة بتوفير ميزان حسب ",
+   "category": "provision",
+   "gold": {
+    "corpus": "public_utility_market_facilities_controls",
+    "law_component": "rules",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "public-utility-market-facilities-controls-llm-008",
+     "article_number": 8,
+     "score": 46
+    },
+    {
+     "record_id": "public-utility-market-facilities-controls-llm-012",
+     "article_number": 12,
+     "score": 19
+    },
+    {
+     "record_id": "public-utility-market-facilities-controls-llm-011",
+     "article_number": 11,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "gz-84d7d4-1",
+   "query_ar": "تهدف الهيئة إلى دعم وتشجيع القطاع، والإشراف عليه وتنظيمه، وتعمل على تحقيق التناغم والانسجام والتنسيق بين أدوار الجهات البحثية وتمكينها وتحفيزها، وتعزيز توطين التقنية في أنشطة البحث والتطوير والابتكار ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "rdi_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "rdi-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 68
+    },
+    {
+     "record_id": "rdi-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 43
+    },
+    {
+     "record_id": "rdi-authority-statute-llm-001",
+     "article_number": 1,
+     "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "gz-84d7d4-2",
+   "query_ar": "للهيئة في سبيل تحقيق أهدافها -مع مراعاة اختصاصات الجهات الأخرى ذات العلاقة- ممارسة الاختصاصات والقيام بالمهمات الآتية: 1- اقتراح الأولويات والسياسات العامة والاستراتيجيات ومشروعات الأنظمة المتعلقة بال",
+   "category": "provision",
+   "gold": {
+    "corpus": "rdi_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "general-roads-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 41
+    },
+    {
+     "record_id": "public-health-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 36
+    },
+    {
+     "record_id": "rdi-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5ed37c-1",
+   "query_ar": "تستحق الضريبة في تاريخ التصرف على أساس القيمة المتفق عليها بين طرفيه أو أطرافه أو قيمة العقار، وبشرط ألا تقل عن القيمة السوقية العادلة في تاريخ التصرف -على ألا تتضمن قيمة العقار لأغراض احتساب الضريبة ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "real_estate_transaction_tax_regulation",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-transaction-tax-regulation-llm-004",
+     "article_number": 4,
+     "score": 37
+    },
+    {
+     "record_id": "rett-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 33
+    },
+    {
+     "record_id": "vat-regulation-llm-art-041",
+     "article_number": 38,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5ed37c-2",
+   "query_ar": "تشكل الهيئة لجنة بقرار من الوزير يرأسها المحافظ تختص بمراجعة وتقييم كافة المتطلبات النظامية والفنية اللازمة لتطبيق أحكام هذه الضريبة واللائحة، ولها في سبيل ذلك ما يلي: 1- اقتراح التوصيات اللازمة للمعا",
+   "category": "provision",
+   "gold": {
+    "corpus": "real_estate_transaction_tax_regulation",
+    "law_component": "regulation",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "real-estate-transaction-tax-regulation-llm-014",
+     "article_number": 14,
+     "score": 49
+    },
+    {
+     "record_id": "gaca-organizational-statute-llm-art-006",
+     "article_number": 6,
+     "score": 28
+    },
+    {
+     "record_id": "finance-companies-regulation-llm-art-104",
+     "article_number": 104,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0ba63a-1",
+   "query_ar": "للخدمات الطبية والوحدات الطبية ووسائل النقل الطبي والمنشآت الطبية التابعة للقوات العسكرية ومنسوبيها وممتلكاتها، وكذلك المرشدين التابعين لها –في وقت السلم ووقت النزاع المسلح- استخدام الشارة تحت إشراف ا",
+   "category": "definitional",
+   "gold": {
+    "corpus": "red_crescent_emblem_law",
+    "law_component": "law",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "red-crescent-emblem-law-llm-007",
+     "article_number": 7,
+     "score": 60
+    },
+    {
+     "record_id": "red-crescent-emblem-law-llm-006",
+     "article_number": 6,
+     "score": 35
+    },
+    {
+     "record_id": "red-crescent-emblem-law-llm-009",
+     "article_number": 9,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0ba63a-2",
+   "query_ar": "1- تستخدم الشارة في وقت النزاع المسلح لغرض حماية كل من يعمل في مجالات الخدمات الطبية والوحدات الطبية ووسائل النقل الطبي والمنشآت الطبية العسكرية أو المدنية وممتلكاتهما، وتكون مقاييس الشارة عندئذ كبيرة",
+   "category": "provision",
+   "gold": {
+    "corpus": "red_crescent_emblem_law",
+    "law_component": "law",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "red-crescent-emblem-law-llm-006",
+     "article_number": 6,
+     "score": 56
+    },
+    {
+     "record_id": "red-crescent-emblem-law-llm-007",
+     "article_number": 7,
+     "score": 43
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-001",
+     "article_number": 1,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0791b0-1",
+   "query_ar": "دون إخلال بالاختصاصات المقرة نظاما للجهات الأخرى، تقوم المؤسسة بكل ما يلزم في سبيل تحقيق أهدافها، ولها على وجه خاص ما يأتي: 1- إعداد وتنفيذ الخطط والبرامج والمبادرات والمشاريع، التي تهدف إلى المحافظة ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "red_sea_coral_turtles_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 46
+    },
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-009",
+     "article_number": 9,
+     "score": 32
+    },
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-006",
+     "article_number": 6,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0791b0-2",
+   "query_ar": "تهدف المؤسسة إلى التنظيم والإشراف والمحافظة على الشعب المرجانية والسلاحف وأماكن تعشيشها في البحر الأحمر، وإدارتها، وإنمائها واستدامتها، والعمل على إعادة تأهيل الشعب المرجانية المتدهورة، وأماكن تعشيش ا",
+   "category": "provision",
+   "gold": {
+    "corpus": "red_sea_coral_turtles_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 87
+    },
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 70
+    },
+    {
+     "record_id": "red-sea-coral-turtles-authority-statute-llm-001",
+     "article_number": 1,
+     "score": 67
+    }
+   ]
+  },
+  {
+   "query_id": "gz-aac592-1",
+   "query_ar": "التجنب الضريبي The Regional Headquarters must comply with the Transfer Pricing Bylaws issued by the General Authority for Zakat and Tax Board –previously- Resolution No (6-1-19) dated 25/05/1440 H cor",
+   "category": "definitional",
+   "gold": {
+    "corpus": "regional_headquarters_tax_rules",
+    "law_component": "rules",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "regional-headquarters-tax-rules-llm-012",
+     "article_number": 12,
+     "score": 10
+    },
+    {
+     "record_id": "civil-law-llm-art-019",
+     "article_number": 19,
+     "score": 5
+    },
+    {
+     "record_id": "civil-law-llm-art-025",
+     "article_number": 25,
+     "score": 5
+    }
+   ]
+  },
+  {
+   "query_id": "gz-aac592-2",
+   "query_ar": "المتطلبات الاقتصادية الفعلية Notwithstanding the eligibility criteria required by The Governing Body, Regional Headquarters must satisfy all of the following Economic Substance Requirements: دون الإخل",
+   "category": "provision",
+   "gold": {
+    "corpus": "regional_headquarters_tax_rules",
+    "law_component": "rules",
+    "article_number": 5
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-005",
+     "article_number": 5,
+     "score": 16
+    },
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-012",
+     "article_number": 12,
+     "score": 15
+    },
+    {
+     "record_id": "regional-headquarters-tax-rules-llm-005",
+     "article_number": 5,
+     "score": 12
+    }
+   ]
+  },
+  {
+   "query_id": "gz-f87c23-1",
+   "query_ar": "يهدف المعهد إلى الإسهام في العناية بالفنون التقليدية، وذلك من خلال تحقيق الأهداف الآتية: 1- التأكيد على الهوية الوطنية من خلال إثراء الفنون التقليدية، والترويج لها. 2- تشجيع وتدريب المواهب والقدرات في",
+   "category": "definitional",
+   "gold": {
+    "corpus": "royal_institute_traditional_arts_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "royal-institute-traditional-arts-statute-llm-003",
+     "article_number": 3,
+     "score": 48
+    },
+    {
+     "record_id": "royal-institute-traditional-arts-statute-llm-004",
+     "article_number": 4,
+     "score": 32
+    },
+    {
+     "record_id": "royal-institute-traditional-arts-statute-llm-001",
+     "article_number": 1,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-f87c23-2",
+   "query_ar": "1- يكون للمعهد مجلس علمي برئاسة الرئيس التنفيذي، وعضوية عدد لا يتجاوز (تسعة) من المختصين في الفنون التقليدية. 2- يعين أعضاء المجلس العلمي بقرار من مجلس الأمناء بناء على توصية من الرئيس التنفيذي، لمدة ",
+   "category": "provision",
+   "gold": {
+    "corpus": "royal_institute_traditional_arts_statute",
+    "law_component": "statute",
+    "article_number": 9
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "royal-institute-traditional-arts-statute-llm-009",
+     "article_number": 9,
+     "score": 56
+    },
+    {
+     "record_id": "king-salman-arabic-language-academy-statute-llm-009",
+     "article_number": 9,
+     "score": 30
+    },
+    {
+     "record_id": "nazaha-law-llm-art-014",
+     "article_number": 14,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-3f0eee-1",
+   "query_ar": "تحديد مستويات الحد الأدنى للتطقيم الآمن للسفينة: تحدد السلطة البحرية مستويات التطقيم الآمن على السفن وفقا للآتي: 1- في حال عدم وجود عامل لاسلكي مخصص لتشغيل النظام العالمي للاستغاثة والسلامة البحرية (G",
+   "category": "definitional",
+   "gold": {
+    "corpus": "safe_manning_regulation",
+    "law_component": "regulation",
+    "article_number": 9
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "safe-manning-regulation-llm-010",
+     "article_number": 10,
+     "score": 51
+    },
+    {
+     "record_id": "safe-manning-regulation-llm-009",
+     "article_number": 9,
+     "score": 47
+    },
+    {
+     "record_id": "safe-manning-regulation-llm-001",
+     "article_number": 1,
+     "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "gz-3f0eee-2",
+   "query_ar": "يلتزم مشغل السفينة بالآتي: 1- الاحتفاظ بالوثيقة ووثائق وبيانات جميع البحارة على متن السفينة. 2- أن يكون كل بحار معين في السفينة يحمل شهادة تأهيلية ملائمة ومصادق عليها بموجب أحكام الاتفاقية. 3- أن يكون",
+   "category": "provision",
+   "gold": {
+    "corpus": "safe_manning_regulation",
+    "law_component": "regulation",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "safe-manning-regulation-llm-011",
+     "article_number": 11,
+     "score": 39
+    },
+    {
+     "record_id": "ballast-water-regulation-llm-001",
+     "article_number": 1,
+     "score": 24
+    },
+    {
+     "record_id": "safe-manning-regulation-llm-001",
+     "article_number": 1,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1eb570-1",
+   "query_ar": "1- تتكون عضوية الهيئة من: أ- أعضاء أساسيون، وهم الحاصلون على شهادة زمالة الهيئة. ب- أعضاء منتسبون، وهم من يأتي: 1- جميع الحاصلين على الشهادة الجامعية أو الدبلوم في المحاسبة. 2- جميع العاملين في المهنة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "saudi_auditors_accountants_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-auditors-accountants-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 48
+    },
+    {
+     "record_id": "saudi-engineers-law-llm-art-003",
+     "article_number": 3,
+     "score": 31
+    },
+    {
+     "record_id": "accredited-valuers-law-llm-art-024",
+     "article_number": 24,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1eb570-2",
+   "query_ar": "تعين الجمعية العامة مراجع حسابات خارجيا (أو أكثر) من المرخص لهم بمزاولة المهنة في المملكة بناء على ترشيح من المجلس -على ألا يكون مراجع حسابات الهيئة أو أحد شركائه عضوا في المجلس أو أيا من المجالس والل",
+   "category": "provision",
+   "gold": {
+    "corpus": "saudi_auditors_accountants_authority_statute",
+    "law_component": "statute",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-auditors-accountants-authority-statute-llm-012",
+     "article_number": 12,
+     "score": 56
+    },
+    {
+     "record_id": "mawani-organizational-statute-llm-art-016",
+     "article_number": 16,
+     "score": 42
+    },
+    {
+     "record_id": "rega-organizational-statute-llm-art-015",
+     "article_number": 14,
+     "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "gz-59afb7-1",
+   "query_ar": "دون إخلال باختصاصات الجهات الأخرى، تتولى الوكالة لتحقيق أهدافها -على سبيل المثال لا الحصر- المهمات والاختصاصات الآتية: 1- تقديم الخدمات الإخبارية والمواد الصحفية التي تجمع وتعد من مختلف المصادر داخل ا",
+   "category": "definitional",
+   "gold": {
+    "corpus": "saudi_press_agency_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-press-agency-statute-llm-004",
+     "article_number": 4,
+     "score": 37
+    },
+    {
+     "record_id": "environmental-air-quality-reg-llm-art-005",
+     "article_number": 5,
+     "score": 28
+    },
+    {
+     "record_id": "postal-law-llm-art-003",
+     "article_number": 3,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-59afb7-2",
+   "query_ar": "تهدف الوكالة إلى الآتي: 1- تغطية الأحداث والقضايا والنشاطات المختلفة ومتابعتها وتوثيقها على المستوى المحلي والإقليمي والدولي، وبصفة خاصة ذات الصلة بالمملكة. 2- بث الأخبار المحلية والإقليمية والدولية، ",
+   "category": "provision",
+   "gold": {
+    "corpus": "saudi_press_agency_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-press-agency-statute-llm-003",
+     "article_number": 3,
+     "score": 38
+    },
+    {
+     "record_id": "riyadh-nonprofit-foundation-statute-llm-005",
+     "article_number": 5,
+     "score": 18
+    },
+    {
+     "record_id": "official-communications-records-regulation-llm-002",
+     "article_number": 2,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "gz-f1f847-1",
+   "query_ar": "1- تنشئ الهيئة منصة إلكترونية تربط بها الجهات الممثلة في عضوية المجلس، ومن تراه الهيئة من الجهات ذات العلاقة؛ للتنسيق بينها لغرض تسهيل الخدمات المقدمة من الهيئة. 2- للهيئة -بحسب الاحتياج- إنشاء مكاتب ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "saudi_red_sea_authority_statute",
+    "law_component": "statute",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-red-sea-authority-statute-llm-008",
+     "article_number": 8,
+     "score": 56
+    },
+    {
+     "record_id": "rega-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 27
+    },
+    {
+     "record_id": "high-risk-professions-regulation-llm-art-012",
+     "article_number": 12,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-f1f847-2",
+   "query_ar": "تهدف الهيئة إلى تنظيم الأنشطة الملاحية والأنشطة البحرية في النطاق الجغرافي، بما لا يخل باختصاصات الجهات الأخرى، وذلك بما يضمن تحقيق الاستخدام الأمثل والمستدام لها، ويسهم في رفع كفايتها. وللهيئة القيام",
+   "category": "provision",
+   "gold": {
+    "corpus": "saudi_red_sea_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-red-sea-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 63
+    },
+    {
+     "record_id": "saudi-red-sea-authority-statute-llm-001",
+     "article_number": 1,
+     "score": 40
+    },
+    {
+     "record_id": "entertainment-activities-law-llm-003",
+     "article_number": 3,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "gz-f9f696-1",
+   "query_ar": "تهدف الوكالة إلى قيادة تطوير قطاع الفضاء المدني، وتعزيز الاستخدام السلمي للفضاء، وتعزيز مكانة المملكة بصفتها مركزا إقليميا ودوليا رائدا في مجال علوم الفضاء وتقنياته، والإسهام في خدمة القطاعات التنموية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "saudi_space_agency_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-space-agency-statute-llm-003",
+     "article_number": 3,
+     "score": 48
+    },
+    {
+     "record_id": "gaca-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 27
+    },
+    {
+     "record_id": "civil-aviation-law-llm-art-001",
+     "article_number": 1,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "gz-f9f696-2",
+   "query_ar": "يكون للوكالة مجلس إدارة برئاسة وزير الاتصالات وتقنية المعلومات، وعضوية كل من: 1- محافظ هيئة الاتصالات والفضاء والتقنية (نائبا للرئيس). 2- رئيس الهيئة العامة للطيران المدني. 3- رئيس مدينة الملك عبدالعز",
+   "category": "provision",
+   "gold": {
+    "corpus": "saudi_space_agency_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-space-agency-statute-llm-004",
+     "article_number": 4,
+     "score": 49
+    },
+    {
+     "record_id": "cst-organizational-statute-llm-art-004",
+     "article_number": 4,
+     "score": 42
+    },
+    {
+     "record_id": "telecommunications-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 42
+    }
+   ]
+  },
+  {
+   "query_id": "gz-65d48b-1",
+   "query_ar": "للهيئة، عند إعداد تقارير قياس تجربة الزائر، طلب أي معلومات أو بيانات أو تقارير من الجهات الحكومية أو من القطاع الخاص. وعلى تلك الجهات توفير المعلومات المطلوبة، وتسهيل إجراءات القياس في المواقع والأنشط",
+   "category": "definitional",
+   "gold": {
+    "corpus": "saudi_tourism_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-tourism-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 51
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-005",
+     "article_number": 5,
+     "score": 37
+    },
+    {
+     "record_id": "private-entity-client-data-transfer-regulation-llm-002",
+     "article_number": 2,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-65d48b-2",
+   "query_ar": "تهدف الهيئة إلى إبراز المملكة وجهة سياحية عالميا ومحليا وجذب الزوار إليها وتشجيع السياحة فيها، وتحقيق التكامل والتعاون بين القطاعين العام والخاص لضمان الارتقاء بمستوى تجربة الزائر؛ بما يعود بالنفع على",
+   "category": "provision",
+   "gold": {
+    "corpus": "saudi_tourism_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-tourism-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 40
+    },
+    {
+     "record_id": "tga-organizational-statute-llm-art-004",
+     "article_number": 4,
+     "score": 28
+    },
+    {
+     "record_id": "privatization-governing-rules-llm-005",
+     "article_number": 5,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "gz-da90a0-1",
+   "query_ar": "تهدف الهيئة إلى تنظيم الأعمال والخدمات المتعلقة بأنشطة المياه والرقابة عليها وتطوير أساليبها؛ بما يسهم في تعزيز الاستدامة المالية وتحقيق أهداف رؤية المملكة.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "saudi_water_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-water-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 47
+    },
+    {
+     "record_id": "general-irrigation-corporation-statute-llm-003",
+     "article_number": 3,
+     "score": 31
+    },
+    {
+     "record_id": "gaca-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-da90a0-2",
+   "query_ar": "يقصد بالكلمات والعبارات الآتية -أينما وردت في هذه الترتيبات التنظيمية- المعاني المبينة أمام كل منها: الهيئة: الهيئة السعودية للمياه. الوزير: وزير البيئة والمياه والزراعة. الترتيبات التنظيمية: الترتيبا",
+   "category": "provision",
+   "gold": {
+    "corpus": "saudi_water_authority_statute",
+    "law_component": "statute",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "saudi-water-authority-statute-llm-001",
+     "article_number": 1,
+     "score": 51
+    },
+    {
+     "record_id": "food-security-authority-statute-llm-001",
+     "article_number": 1,
+     "score": 47
+    },
+    {
+     "record_id": "water-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "gz-cf5763-1",
+   "query_ar": "التزامات الشركة: تلتزم الشركة في تطبيقها متطلبات الإدارة لأجل التشغيل الآمن والسليم للسفن ومنع التلوث وسلامة الملاحة وفق الآتي: 1) يجب أن تضع الشركة سياسة للسلامة وحماية البيئة تصف كيفية تحقيق أهداف ا",
+   "category": "definitional",
+   "gold": {
+    "corpus": "ship_safety_management_regulation",
+    "law_component": "regulation",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ship-safety-management-regulation-llm-004",
+     "article_number": 4,
+     "score": 33
+    },
+    {
+     "record_id": "oa-llm-companies-art-020",
+     "article_number": 20,
+     "score": 23
+    },
+    {
+     "record_id": "safe-manning-regulation-llm-010",
+     "article_number": 10,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-cf5763-2",
+   "query_ar": "الشهادات المؤقتة: يجوز للسلطة البحرية إصدار: 1- شهادة امتثال مؤقتة بالنسبة للشركة الجديدة لفترة لا تتجاوز اثني عشر شهرا وفق الآتي: أ- بناء على طلب يقدم من الشركة مؤيدا بالمستندات والوثائق ذات الصلة بت",
+   "category": "provision",
+   "gold": {
+    "corpus": "ship_safety_management_regulation",
+    "law_component": "regulation",
+    "article_number": 8
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ship-safety-management-regulation-llm-008",
+     "article_number": 8,
+     "score": 39
+    },
+    {
+     "record_id": "oa-llm-companies-art-157",
+     "article_number": 157,
+     "score": 29
+    },
+    {
+     "record_id": "oa-llm-companies-art-102",
+     "article_number": 102,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-6094ba-1",
+   "query_ar": "يهدف البنك إلى دعم المنشآت، وتنميتها من خلال توفير الحلول والخدمات والمنتجات التمويلية لها، ودعم وتطوير البنية التحتية لتمويلها، وفقا للاستراتيجيات والسياسات المعتمدة في هذا الشأن.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "sme_bank_law",
+    "law_component": "law",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sme-bank-law-llm-003",
+     "article_number": 3,
+     "score": 55
+    },
+    {
+     "record_id": "national-infrastructure-fund-law-llm-003",
+     "article_number": 3,
+     "score": 32
+    },
+    {
+     "record_id": "national-infrastructure-fund-law-llm-004",
+     "article_number": 4,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-6094ba-2",
+   "query_ar": "1- دون إخلال باختصاصات الصندوق، يكون للبنك -في سبيل تحقيق أهدافه- جميع الصلاحيات اللازمة وفق ما تقضي به الأنظمة في هذا الشأن، ومن ذلك ما يأتي: أ- الإقراض، وغيره من صور التمويل للمنشآت. ب- الاقتراض، وغ",
+   "category": "provision",
+   "gold": {
+    "corpus": "sme_bank_law",
+    "law_component": "law",
+    "article_number": 4
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "agricultural-development-fund-law-llm-004",
+     "article_number": 4,
+     "score": 39
+    },
+    {
+     "record_id": "sme-bank-law-llm-004",
+     "article_number": 4,
+     "score": 34
+    },
+    {
+     "record_id": "sme-bank-law-llm-006",
+     "article_number": 6,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "gz-95a517-1",
+   "query_ar": "يكون للهيئة مجلس إدارة برئاسة وزير المالية، وعضوية كل من: 1- محافظ الهيئة. - ممثل عن وزارة الداخلية. - ممثل عن وزارة العدل. 4- ممثل عن وزارة المالية. 5- ممثل عن وزارة الشؤون البلدية والقروية. 6- ممثل ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "state_property_authority_statute",
+    "law_component": "statute",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-property-authority-statute-llm-005",
+     "article_number": 5,
+     "score": 49
+    },
+    {
+     "record_id": "general-roads-authority-statute-llm-005",
+     "article_number": 5,
+     "score": 42
+    },
+    {
+     "record_id": "saudi-water-authority-statute-llm-005",
+     "article_number": 5,
+     "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "gz-95a517-2",
+   "query_ar": "تهدف الهيئة إلى تنظيم ما يتصل بعقارات الدولة، وحمايتها والمحافظة عليها، وكيفية التصرف بها، واستغلالها واستخدامها واستثمارها بالشكل الأمثل، والإشراف عليها، وتوحيد رسم السياسات المتعلقة بها.",
+   "category": "provision",
+   "gold": {
+    "corpus": "state_property_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-property-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 63
+    },
+    {
+     "record_id": "state-property-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 28
+    },
+    {
+     "record_id": "awqaf-law-llm-art-003",
+     "article_number": 3,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-b7da8a-1",
+   "query_ar": "للهيئة -دون إخلال باختصاصات ومسؤوليات الرئاسة والجهات ذات العلاقة- القيام بكل ما يلزم لتحقيق أهدافها، ولها في سبيل ذلك على وجه خاص ما يأتي: 1- تهيئة جميع الخدمات داخل المسجد الحرام والمسجد النبوي لقاص",
+   "category": "definitional",
+   "gold": {
+    "corpus": "two_holy_mosques_authority_statute",
+    "law_component": "statute",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "two-holy-mosques-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 76
+    },
+    {
+     "record_id": "two-holy-mosques-authority-statute-llm-001",
+     "article_number": 1,
+     "score": 50
+    },
+    {
+     "record_id": "two-holy-mosques-authority-statute-llm-006",
+     "article_number": 6,
+     "score": 42
+    }
+   ]
+  },
+  {
+   "query_id": "gz-b7da8a-2",
+   "query_ar": "تهدف الهيئة إلى الارتقاء بمستوى الخدمات المقدمة في المسجد الحرام والمسجد النبوي، بما يمكن قاصديهما من أداء العبادات والشعائر بيسر وسهولة وسكينة وطمأنينة.",
+   "category": "provision",
+   "gold": {
+    "corpus": "two_holy_mosques_authority_statute",
+    "law_component": "statute",
+    "article_number": 3
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "two-holy-mosques-authority-statute-llm-003",
+     "article_number": 3,
+     "score": 67
+    },
+    {
+     "record_id": "two-holy-mosques-authority-statute-llm-004",
+     "article_number": 4,
+     "score": 45
+    },
+    {
+     "record_id": "two-holy-mosques-authority-statute-llm-001",
+     "article_number": 1,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-58b5d5-1",
+   "query_ar": "الشروط والمتطلبات العامة لإصدار الترخيص الفني (السياحي الترفيهي) 1- يلتزم اليخت الزائر خلال مدة إقامته في النطاق الجغرافي بالامتثال للتعليمات ذات العلاقة بما في ذلك على سبيل المثال: أ- أي متطلبات فنية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "visiting_yachts_controls",
+    "law_component": "rules",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "visiting-yachts-controls-llm-007",
+     "article_number": 7,
+     "score": 53
+    },
+    {
+     "record_id": "visiting-yachts-controls-llm-004",
+     "article_number": 4,
+     "score": 37
+    },
+    {
+     "record_id": "visiting-yachts-controls-llm-006",
+     "article_number": 6,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-58b5d5-2",
+   "query_ar": "أحكام عامة يجب على اليخت الزائر الذي يرغب في الدخول و/أو الزيارة و/أو التنقل في النطاق الجغرافي الالتزام بما يلي: 1- تعيين وتفويض وكيل ملاحي سياحي لليخت قبل دخول النطاق الجغرافي، ويكون هو الممثل الرسم",
+   "category": "provision",
+   "gold": {
+    "corpus": "visiting_yachts_controls",
+    "law_component": "rules",
+    "article_number": 4
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "visiting-yachts-controls-llm-004",
+     "article_number": 4,
+     "score": 45
+    },
+    {
+     "record_id": "alula-royal-commission-violations-committees-rules-llm-001",
+     "article_number": 1,
+     "score": 27
+    },
+    {
+     "record_id": "visiting-yachts-controls-llm-010",
+     "article_number": 10,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5e7d84-1",
+   "query_ar": "إنشاء المحفظة الاستثمارية الوقفية لا يجوز إنشاء المحفظة الاستثمارية الوقفية أو إدارتها إلا بعد تسجيلها لدى الهيئة وفقا للآتي: 1- على المتقدم ابتداء طلب تسجيل محفظة استثمارية وقفية لدى الهيئة، على أن ي",
+   "category": "definitional",
+   "gold": {
+    "corpus": "waqf_investment_portfolios_regulation",
+    "law_component": "regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "waqf-investment-portfolios-regulation-llm-005",
+     "article_number": 5,
+     "score": 55
+    },
+    {
+     "record_id": "waqf-investment-portfolios-regulation-llm-001",
+     "article_number": 1,
+     "score": 36
+    },
+    {
+     "record_id": "waqf-investment-portfolios-regulation-llm-007",
+     "article_number": 7,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-5e7d84-2",
+   "query_ar": "اتفاقية الإدارة دون الإخلال بالمتطلبات الواردة في نظام هيئة السوق المالية ولوائحها التنفيذية، تحدد اتفاقية الإدارة المنظمة لإدارة المحفظة الاستثمارية الوقفية الخاصة -كحد أدنى- الآتي: 1- استراتيجية الا",
+   "category": "provision",
+   "gold": {
+    "corpus": "waqf_investment_portfolios_regulation",
+    "law_component": "regulation",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "waqf-investment-portfolios-regulation-llm-007",
+     "article_number": 7,
+     "score": 59
+    },
+    {
+     "record_id": "waqf-investment-portfolios-regulation-llm-004",
+     "article_number": 4,
+     "score": 47
+    },
+    {
+     "record_id": "waqf-investment-portfolios-regulation-llm-001",
+     "article_number": 1,
+     "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "gz-56961e-1",
+   "query_ar": "1- يحدد -بقرار من الوزير- داخل كل مدينة خاضعة للرسم نطاق أو نطاقات جغرافية، تشتمل على ما يلي: أ- نسبة أو نسب الرسم السنوية. ب- استخدامات الأراضي البيضاء. ج- الحد الأدنى لمساحة الأرض ولمساحة مجموع الأر",
+   "category": "definitional",
+   "gold": {
+    "corpus": "white_land_fees_executive_regulation",
+    "law_component": "regulation",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "white-land-fees-executive-regulation-llm-006",
+     "article_number": 6,
+     "score": 48
+    },
+    {
+     "record_id": "vacant-properties-fees-regulation-llm-006",
+     "article_number": 6,
+     "score": 36
+    },
+    {
+     "record_id": "white-land-fees-executive-regulation-llm-001",
+     "article_number": 1,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "gz-56961e-2",
+   "query_ar": "1- تكون المدينة خاضعة لتطبيق الرسم عند توافر أي من المعايير الآتية: أ- وجود فجوة بين العرض والطلب في الأراضي المطورة. ب- التضخم في أسعار العقارات. ج- نقص المعروض من الأراضي المطورة. د- احتكار الأراضي ",
+   "category": "provision",
+   "gold": {
+    "corpus": "white_land_fees_executive_regulation",
+    "law_component": "regulation",
+    "article_number": 5
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "white-land-fees-executive-regulation-llm-005",
+     "article_number": 5,
+     "score": 34
+    },
+    {
+     "record_id": "white-land-fees-executive-regulation-llm-001",
+     "article_number": 1,
+     "score": 29
+    },
+    {
+     "record_id": "white-land-fees-law-llm-art-002",
+     "article_number": 2,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "gz-4e7a85-1",
+   "query_ar": "تراخيص الأنواع المنماة تحت الأسر، أو اصطناعيا (1) لا يجوز إقامة أية منشآت لتربية وإكثار كائنات فطرية تحت الأسر، أو بالإكثار الاصطناعي للعينات المدرجة في قوائم المركز والاتفاقية لأي غرض كان دون الحصول ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "wildlife_trade_regulation",
+    "law_component": "regulation",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "wildlife-trade-regulation-llm-010",
+     "article_number": 10,
+     "score": 45
+    },
+    {
+     "record_id": "wildlife-trade-regulation-llm-001",
+     "article_number": 1,
+     "score": 20
+    },
+    {
+     "record_id": "oa-llm-companies-art-169",
+     "article_number": 169,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "gz-4e7a85-2",
+   "query_ar": "اشتراطات تراخيص الاتجار في عينات الكائنات الفطرية (1) للمركز المختص - في أي وقت - سحب أو تعديل أي ترخيص أصدره إذا رأى ضرورة لذلك وكان الترخيص قد صدر استنادا إلى بيانات غير صحيحة، أو مضللة من جانب مقدم",
+   "category": "provision",
+   "gold": {
+    "corpus": "wildlife_trade_regulation",
+    "law_component": "regulation",
+    "article_number": 7
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "wildlife-trade-regulation-llm-007",
+     "article_number": 7,
+     "score": 62
+    },
+    {
+     "record_id": "environmental-wildlife-hunting-reg-llm-008",
+     "article_number": 8,
+     "score": 38
+    },
+    {
+     "record_id": "wildlife-trade-regulation-llm-005",
+     "article_number": 5,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "gz-32737a-1",
+   "query_ar": "يكون للمصطلحات والعبارات الآتية المعاني الموضحة أمام كل منها: الهيئة: هيئة الزكاة والضريبة والجمارك. الوزير: وزير المالية. المجلس: مجلس إدارة الهيئة. الرئيس: رئيس المجلس. المحافظ: محافظ الهيئة. المكلف",
+   "category": "definitional",
+   "gold": {
+    "corpus": "zatca_statute",
+    "law_component": "statute",
+    "article_number": 1
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "zatca-statute-llm-001",
+     "article_number": 1,
+     "score": 60
+    },
+    {
+     "record_id": "zatca-statute-llm-004",
+     "article_number": 4,
+     "score": 42
+    },
+    {
+     "record_id": "digital-government-authority-statute-llm-006",
+     "article_number": 6,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-32737a-2",
+   "query_ar": "يلغي التنظيم كلا من تنظيم الهيئة العامة للزكاة والدخل الصادر بقرار مجلس الوزراء رقم (465) وتاريخ 20/7/1438ه، وتنظيم الهيئة العامة للجمارك الصادر بقرار مجلس الوزراء رقم (352) وتاريخ 3/7/1439ه، وكل ما ي",
+   "category": "provision",
+   "gold": {
+    "corpus": "zatca_statute",
+    "law_component": "statute",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "zatca-statute-llm-015",
+     "article_number": 15,
+     "score": 53
+    },
+    {
+     "record_id": "job-seeker-allowance-statute-llm-012",
+     "article_number": 12,
+     "score": 36
+    },
+    {
+     "record_id": "awqaf-law-llm-art-025",
+     "article_number": 25,
+     "score": 34
     }
    ]
   }

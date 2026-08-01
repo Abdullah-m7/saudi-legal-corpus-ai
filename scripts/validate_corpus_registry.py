@@ -303,6 +303,67 @@ REQUIRED_TRACK_IDS = [
     "accredited_valuers_fellowship_rules",
     "national_institute_educational_professional_development_statute",
     "hrdf_support_violations_regulation",
+    "agricultural_development_fund_law",
+    "baha_strategic_office_statute",
+    "crafts_professions_heads_elections_regulation",
+    "cruise_ships_controls",
+    "cultural_development_fund_law",
+    "digital_content_council_statute",
+    "energy_allocation_regulation",
+    "enterprise_size_measurement_rules",
+    "final_clearing_collateral_regulation",
+    "food_security_authority_statute",
+    "general_irrigation_corporation_statute",
+    "general_roads_authority_statute",
+    "government_property_allocation_transfer_controls",
+    "government_resource_systems_center_statute",
+    "high_industrial_security_authority_statute",
+    "industrial_mining_consultancy_rules",
+    "jazan_strategic_office_statute",
+    "job_seeker_allowance_statute",
+    "jouf_strategic_office_statute",
+    "kacare_statute",
+    "kacst_statute",
+    "king_abdullah_language_planning_center_statute",
+    "marina_design_operation_controls",
+    "maritime_travel_ticket_sales_regulation",
+    "media_regulation_authority_statute",
+    "municipal_licensing_procedures_regulation",
+    "national_curriculum_center_statute",
+    "national_health_research_institute_statute",
+    "national_inspection_control_center_statute",
+    "national_transport_safety_center_statute",
+    "nonprofit_beneficial_owner_rules",
+    "nonprofit_sector_development_center_statute",
+    "northern_borders_strategic_office_statute",
+    "occupational_safety_health_council_statute",
+    "palms_dates_center_statute",
+    "prince_mohammed_bin_salman_park_statute",
+    "private_entity_client_data_transfer_regulation",
+    "public_health_authority_statute",
+    "public_utility_market_facilities_controls",
+    "rdi_authority_statute",
+    "real_estate_transaction_tax_regulation",
+    "red_crescent_emblem_law",
+    "red_sea_coral_turtles_authority_statute",
+    "regional_headquarters_tax_rules",
+    "royal_institute_traditional_arts_statute",
+    "safe_manning_regulation",
+    "saudi_auditors_accountants_authority_statute",
+    "saudi_press_agency_statute",
+    "saudi_red_sea_authority_statute",
+    "saudi_space_agency_statute",
+    "saudi_tourism_authority_statute",
+    "saudi_water_authority_statute",
+    "ship_safety_management_regulation",
+    "sme_bank_law",
+    "state_property_authority_statute",
+    "two_holy_mosques_authority_statute",
+    "visiting_yachts_controls",
+    "waqf_investment_portfolios_regulation",
+    "white_land_fees_executive_regulation",
+    "wildlife_trade_regulation",
+    "zatca_statute",
     "museums_authority_licensing_regulation",
     "heritage_authority_licensing_regulation",
     "literature_publishing_translation_authority_licensing_regulation",
@@ -531,7 +592,7 @@ def main() -> int:
 
     # [3] 293 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 437 tracks present...", len(track_ids) == 437 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 498 tracks present...", len(track_ids) == 498 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3314,7 +3375,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 20162 records...", uix.get("total_records") == 20162,
+    check("[7g] unified retrieval index: 21047 records...", uix.get("total_records") == 21047,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3376,8 +3437,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 20331...",
-          registry.get("total_primary_arabic_governing_records") == 20331,
+    check("[19a] total_primary_arabic_governing_records == 21216...",
+          registry.get("total_primary_arabic_governing_records") == 21216,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3392,8 +3453,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 21226...",
-          registry.get("total_registry_counted_records") == 21226,
+    check("[19e] total_registry_counted_records == 22111...",
+          registry.get("total_registry_counted_records") == 22111,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3417,7 +3478,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"20331 + 614 + 281 = 21226")
+          f"21216 + 614 + 281 = 22111")
 
     # [21b] Every track's registry display name must be the official Arabic title
     # its own source artifact carries. Hand-abbreviated registry names had drifted
@@ -3455,7 +3516,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 437 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 498 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
