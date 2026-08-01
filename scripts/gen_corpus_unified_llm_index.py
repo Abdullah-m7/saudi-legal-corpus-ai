@@ -344,8 +344,6 @@ LAYERS = [
      "museums_authority_licensing_regulation", "regulation"),
     ("data/arabian_horse_regulation_arabic_legal_llm/arabian_horse_regulation_legal_llm_001_009.json",
      "arabian_horse_regulation", "regulation"),
-    ("data/civil_defense_firefighting_rescue_regulation_arabic_legal_llm/civil_defense_firefighting_rescue_regulation_legal_llm_001_009.json",
-     "civil_defense_firefighting_rescue_regulation", "regulation"),
     ("data/classification_societies_authorisation_regulation_arabic_legal_llm/classification_societies_authorisation_regulation_legal_llm_001_012.json",
      "classification_societies_authorisation_regulation", "regulation"),
     ("data/community_funds_rules_arabic_legal_llm/community_funds_rules_legal_llm_001_010.json",

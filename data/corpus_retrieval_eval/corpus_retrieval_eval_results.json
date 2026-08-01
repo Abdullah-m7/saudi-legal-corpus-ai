@@ -4,14 +4,14 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 1033,
-  "top1_hits": 924,
-  "top3_hits": 997,
-  "top5_hits": 1011,
-  "top1_accuracy": 0.8945,
-  "top3_accuracy": 0.9652,
+  "total_queries": 1031,
+  "top1_hits": 923,
+  "top3_hits": 995,
+  "top5_hits": 1009,
+  "top1_accuracy": 0.8952,
+  "top3_accuracy": 0.9651,
   "top5_accuracy": 0.9787,
-  "mrr_at_5": 0.9297,
+  "mrr_at_5": 0.93,
   "misses_top5": [
    "civ-004",
    "pdp-010",
@@ -9704,9 +9704,9 @@
      "score": 22
     },
     {
-     "record_id": "civil-defense-firefighting-rescue-regulation-llm-006",
-     "article_number": 6,
-     "score": 22
+     "record_id": "civil-defense-regulation-llm-firefighting-rescue-art-002",
+     "article_number": 2,
+     "score": 21
     }
    ]
   },
@@ -29020,68 +29020,6 @@
      "record_id": "arabian-horse-regulation-llm-004",
      "article_number": 4,
      "score": 33
-    }
-   ]
-  },
-  {
-   "query_id": "gz-a929a6-1",
-   "query_ar": "دون الإخلال بالمهام والمسؤوليات الواردة في نظام الدفاع المدني الصادر بالمرسوم الملكي رقم (م/10) وتاريخ 10 /5/ 1406ه، وما تبعها من قرارات تكميلية أو تحديث لمهام الوزارات والأجهزة الحكومية، تتولى المدير",
-   "category": "definitional",
-   "gold": {
-    "corpus": "civil_defense_firefighting_rescue_regulation",
-    "law_component": "regulation",
-    "article_number": 3
-   },
-   "gold_rank": 2,
-   "hit_top1": false,
-   "hit_top3": true,
-   "hit_top5": true,
-   "top_hits": [
-    {
-     "record_id": "civil-defense-regulation-llm-firefighting-rescue-art-003",
-     "article_number": 3,
-     "score": 56
-    },
-    {
-     "record_id": "civil-defense-firefighting-rescue-regulation-llm-003",
-     "article_number": 3,
-     "score": 53
-    },
-    {
-     "record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-     "article_number": 1,
-     "score": 43
-    }
-   ]
-  },
-  {
-   "query_id": "gz-a929a6-2",
-   "query_ar": "يقصد بالمصطلحات والعبارات الآتية أينما وردت في هذه اللائحة المعاني المبينة أمامها، ما لم يقتض السياق خلاف ذلك. 1- النظام: يقصد به نظام الدفاع المدني الصادر بالمرسوم الملكي رقم (م/10) وتاريخ 10 /5/ 140",
-   "category": "provision",
-   "gold": {
-    "corpus": "civil_defense_firefighting_rescue_regulation",
-    "law_component": "regulation",
-    "article_number": 1
-   },
-   "gold_rank": 1,
-   "hit_top1": true,
-   "hit_top3": true,
-   "hit_top5": true,
-   "top_hits": [
-    {
-     "record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-     "article_number": 1,
-     "score": 50
-    },
-    {
-     "record_id": "civil-defense-regulation-llm-firefighting-rescue-art-001",
-     "article_number": 1,
-     "score": 46
-    },
-    {
-     "record_id": "railway-violations-committee-rules-llm-001",
-     "article_number": 1,
-     "score": 44
     }
    ]
   },

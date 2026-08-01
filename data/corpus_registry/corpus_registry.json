@@ -33,10 +33,10 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 21707,
+  "total_primary_arabic_governing_records": 21698,
   "total_reference_records": 614,
-  "total_registry_counted_records": 22602,
-  "total_tracks": 548,
+  "total_registry_counted_records": 22593,
+  "total_tracks": 547,
   "tracks": [
     {
       "boundaries": {
@@ -18690,56 +18690,6 @@
       },
       "corpus_family": "statutory_regulation",
       "data_paths": [
-        "sources/civil_defense_firefighting_rescue_regulation/official_source/civil_defense_firefighting_rescue_regulation_official_source.json",
-        "sources/civil_defense_firefighting_rescue_regulation/verified/civil_defense_firefighting_rescue_regulation_verified_records.jsonl",
-        "data/civil_defense_firefighting_rescue_regulation_arabic_legal_llm/civil_defense_firefighting_rescue_regulation_legal_llm_001_009.json"
-      ],
-      "display_name_ar": "لائحة تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني",
-      "display_name_en": "Regulation Governing Firefighting and Rescue Works at the General Directorate of Civil Defense",
-      "governing_language": "ar",
-      "jurisdiction": "Kingdom of Saudi Arabia",
-      "language_layers": {
-        "arabic": {
-          "data_path": "data/civil_defense_firefighting_rescue_regulation_arabic_legal_llm/civil_defense_firefighting_rescue_regulation_legal_llm_001_009.json",
-          "governing": true,
-          "record_count": 9,
-          "status": "complete"
-        }
-      },
-      "notes": "Regulation Governing Firefighting and Rescue Works at the General Directorate of Civil Defense «لائحة تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/3/1443H / 2021-11-05. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
-      "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
-      "record_counts": {
-        "arabic_articles": 9,
-        "legal_status_breakdown": {
-          "اصلية": 9,
-          "مضافة": 0,
-          "معدلة": 0,
-          "ملغاة": 0
-        },
-        "total": 9
-      },
-      "report_paths": [
-        "reports/coverage_gap_map/coverage_gap_map.json",
-        "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"
-      ],
-      "source_authority": "Regulation Governing Firefighting and Rescue Works at the General Directorate of Civil Defense — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/3/1443H (2021-11-05).",
-      "status": "complete",
-      "track_id": "civil_defense_firefighting_rescue_regulation",
-      "validator_targets": [
-        "make civil-defense-firefighting-rescue-regulation-track-validate"
-      ]
-    },
-    {
-      "boundaries": {
-        "arabic_governs": true,
-        "no_public_release": true,
-        "no_trilingual_alignment": true,
-        "not_legal_advice": true,
-        "not_official_translation": true,
-        "not_verified_official_text": true
-      },
-      "corpus_family": "statutory_regulation",
-      "data_paths": [
         "sources/classification_societies_authorisation_regulation/official_source/classification_societies_authorisation_regulation_official_source.json",
         "sources/classification_societies_authorisation_regulation/verified/classification_societies_authorisation_regulation_verified_records.jsonl",
         "data/classification_societies_authorisation_regulation_arabic_legal_llm/classification_societies_authorisation_regulation_legal_llm_001_012.json"
@@ -26879,7 +26829,6 @@
       "civil": 721,
       "civil_aviation": 180,
       "civil_defense": 57,
-      "civil_defense_firefighting_rescue_regulation": 9,
       "civil_service": 305,
       "civil_status": 96,
       "classification_societies_authorisation_regulation": 12,
@@ -27282,7 +27231,7 @@
       "zatca_statute": 16
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 21538,
+    "total_records": 21529,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

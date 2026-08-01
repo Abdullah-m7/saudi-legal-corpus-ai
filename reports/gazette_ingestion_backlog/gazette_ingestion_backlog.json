@@ -1744,5 +1744,1729 @@
    "reason": "VERSION PAIR (UNRESOLVED) — وثيقتان بالموضوع نفسه: الأولى 2022-03-25 بعشر مواد، والثانية 2023-10-20 بست مواد. اختلاف عدد المواد يمنع الجزم بأن الثانية بديل كامل للأولى لا أداة أضيق نطاقاً، ولا تذكر أيٌّ منهما إلغاء الأخرى صراحةً في نص الجريدة. لا تُبنى أيٌّ منهما حتى يُحسم ذلك من مصدر رسمي؛ الترجيح بلا دليل ممنوع."
   }
  ],
- "do_not_build_note": "Documents that PASS every quality gate but must not be ingested for reasons the gates cannot see — chiefly legal currency (repeal/supersession). The pipeline validates textual integrity; whether an instrument is still in force is contextual knowledge and stays a human screening step. Check this list before emitting any future batch. أُضيف 2026-08-01: النمط الأكثر خداعاً هو **زوج «الترتيبات التنظيمية» ثم «تنظيم»** لنفس الجهة — عنوانان مختلفان لأداتين متعاقبتين، فلا يلتقطهما فحصُ تشابه العنوان ولا فحصُ تداخل النص (النصان مختلفان فعلاً). يُكشف الزوج بمقابلة **اسم الجهة** بعد تجريد صيغة العنوان عبر الأرشيف كله، ثم يُبنى الأحدث تاريخَ نشرٍ فقط."
+ "do_not_build_note": "Documents that PASS every quality gate but must not be ingested for reasons the gates cannot see — chiefly legal currency (repeal/supersession). The pipeline validates textual integrity; whether an instrument is still in force is contextual knowledge and stays a human screening step. Check this list before emitting any future batch. أُضيف 2026-08-01: النمط الأكثر خداعاً هو **زوج «الترتيبات التنظيمية» ثم «تنظيم»** لنفس الجهة — عنوانان مختلفان لأداتين متعاقبتين، فلا يلتقطهما فحصُ تشابه العنوان ولا فحصُ تداخل النص (النصان مختلفان فعلاً). يُكشف الزوج بمقابلة **اسم الجهة** بعد تجريد صيغة العنوان عبر الأرشيف كله، ثم يُبنى الأحدث تاريخَ نشرٍ فقط.",
+ "second_tranche": {
+  "note": "TRANCHE 2 — produced 2026-08-01 by sweeping the gazette sitemap in full (9,486 URLs; 9,028 addressable) instead of the 236-document sample used for tranche 1. Each page was triaged on arrival and only legal-document-shaped titles were kept (353), so the sweep cost bounded disk rather than ~7 GB. These entries were gated with the CORRECTED G2 content check (unified-index fingerprints + 8-word shingle containment); the previous prefix-based check reported several already-ingested laws as 0% overlap and would have re-ingested them.",
+  "pages_kept": 353,
+  "build_ready_count": 80,
+  "build_ready_article_total": 2342,
+  "duplicate_rejected": 96,
+  "other_gate_rejected": {
+   "G3": 121,
+   "G1": 1,
+   "G5": 1,
+   "G10": 4,
+   "G8": 2
+  },
+  "needs_human_adjudication_count": 48,
+  "needs_human_adjudication_note": "تداخلها النصي مع مسار قائم بين 35% و97%: ليست تكراراً تاماً ولا وثيقة جديدة بيقين. أكثرها الأداة نفسها بفارق نسخة أو تنسيق، وبعضها أداة متمايزة تتقاسم صياغة معيارية. لا يُبنى منها شيء آلياً — يُحسم كل عنصر بمقابلة بشرية مع نص الجريدة.",
+  "build_ready": [
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "تنظيم المركز الوطني لكفاءة وترشيد المياه",
+    "component": "statute",
+    "gazette_hijri": "30/6/1442",
+    "gazette_gregorian": "2021-02-12",
+    "decision": null,
+    "article_count": 14,
+    "max_article_number": 14,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'water_law', but only 14% of its articles are already ingested (best content match: 'falcon_center_statute') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17200"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام المنشآت والمستحضرات الصيدلانية والعشبية",
+    "component": "regulation",
+    "gazette_hijri": "16/6/1442",
+    "gazette_gregorian": "2021-01-29",
+    "decision": null,
+    "article_count": 42,
+    "max_article_number": 42,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'pharmaceutical_establishments_law', but only 21% of its articles are already ingested (best content match: 'pharmaceutical_establishments') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17304"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "تنظيم هيئة تنظيم المياه والكهرباء",
+    "component": "statute",
+    "gazette_hijri": "24/5/1442",
+    "gazette_gregorian": "2021-01-08",
+    "decision": null,
+    "article_count": 20,
+    "max_article_number": 20,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'water_law', but only 5% of its articles are already ingested (best content match: 'digital_content_council_statute') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17389"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "القواعد المنظمة لعمل أمناء الإفلاس والخبراء",
+    "component": "rules",
+    "gazette_hijri": "24/5/1442",
+    "gazette_gregorian": "2021-01-08",
+    "decision": "قرار لجنة الإفلاس رقم (0220/98) وتاريخ 08 /05/ 1442ه",
+    "article_count": 40,
+    "max_article_number": 40,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'bankruptcy_law', but only 2% of its articles are already ingested (best content match: 'accredited_valuers_fellowship_rules') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17399"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة المعلومات والوثائق المنصوص عليها في نظام الإفلاس ولائحته التنفيذية",
+    "component": "regulation",
+    "gazette_hijri": "24/5/1442",
+    "gazette_gregorian": "2021-01-08",
+    "decision": "قرار لجنة الإفلاس رقم (0218/17) وتاريخ 13 /03/ 1440ه",
+    "article_count": 30,
+    "max_article_number": 30,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'bankruptcy_law', but only 3% of its articles are already ingested (best content match: 'arbitration') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17401"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "اللائحة التنظيمية لدور الأحداث",
+    "component": "regulation",
+    "gazette_hijri": "11/9/1442",
+    "gazette_gregorian": "2021-04-23",
+    "decision": null,
+    "article_count": 36,
+    "max_article_number": 36,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'juveniles_law', but only 3% of its articles are already ingested (best content match: 'associations_ngo') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17494"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "لائحة سلوكيات السوق المالية",
+    "component": "regulation",
+    "gazette_hijri": "2/10/1442",
+    "gazette_gregorian": "2021-05-14",
+    "decision": null,
+    "article_count": 21,
+    "max_article_number": 21,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'capital_market_law', but only 10% of its articles are already ingested (best content match: 'securities_disputes_rules') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17610"
+   },
+   {
+    "track_id_proposed": "__",
+    "track_id": null,
+    "title_ar": "تنظيم وزارة الاستثمار",
+    "component": "statute",
+    "gazette_hijri": "23/10/1442",
+    "gazette_gregorian": "2021-06-04",
+    "decision": null,
+    "article_count": 5,
+    "max_article_number": 5,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'investment_law', but only 20% of its articles are already ingested (best content match: 'digital_government_authority_statute') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17727"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة الداخلية لمجلس القضاء الإداري",
+    "component": "regulation",
+    "gazette_hijri": "22/11/1442",
+    "gazette_gregorian": "2021-07-02",
+    "decision": null,
+    "article_count": 16,
+    "max_article_number": 16,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'judiciary_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=17890"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة المنظمة لنشاط النقل الخفيف للبضائع على الطرق",
+    "component": "regulation",
+    "gazette_hijri": "20/12/1442",
+    "gazette_gregorian": "2021-07-30",
+    "decision": null,
+    "article_count": 27,
+    "max_article_number": 27,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'road_transport_law', but only 4% of its articles are already ingested (best content match: 'freight_broker_logistics_regulation') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=18044"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة التفتيش القضائي بديوان المظالم",
+    "component": "regulation",
+    "gazette_hijri": "27/12/1442",
+    "gazette_gregorian": "2021-08-06",
+    "decision": null,
+    "article_count": 41,
+    "max_article_number": 41,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'judicial_inspection_regulation', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=18070"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام البيئة للإدارة المستدامة للبيئة البحرية والساحلية",
+    "component": "regulation",
+    "gazette_hijri": "3/2/1443",
+    "gazette_gregorian": "2021-09-10",
+    "decision": null,
+    "article_count": 7,
+    "max_article_number": 7,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'environmental_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=18271"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "ضوابط ممارسة أنشطة الوساطة في الامتياز التجاري",
+    "component": "rules",
+    "gazette_hijri": "17/2/1443",
+    "gazette_gregorian": "2021-09-24",
+    "decision": null,
+    "article_count": 17,
+    "max_article_number": 17,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'franchise_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=18344"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة تصنيف مخالفات كود البناء السعودي",
+    "component": "regulation",
+    "gazette_hijri": "9/3/1443",
+    "gazette_gregorian": "2021-10-15",
+    "decision": null,
+    "article_count": 19,
+    "max_article_number": 19,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'building_code_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=18456"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام تصنيف المقاولين",
+    "component": "regulation",
+    "gazette_hijri": "21/4/1443",
+    "gazette_gregorian": "2021-11-26",
+    "decision": null,
+    "article_count": 18,
+    "max_article_number": 18,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'contractors_classification_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=18608"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة المنظمة لإصدار الترخيص الملاحي ورخصة العمل",
+    "component": "regulation",
+    "gazette_hijri": "25/6/1443",
+    "gazette_gregorian": "2022-01-28",
+    "decision": null,
+    "article_count": 18,
+    "max_article_number": 18,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'labor_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=18916"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لصندوق الآثار والمتاحف والتراث العمراني",
+    "component": "regulation",
+    "gazette_hijri": "24/7/1443",
+    "gazette_gregorian": "2022-02-25",
+    "decision": null,
+    "article_count": 22,
+    "max_article_number": 22,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'antiquities_heritage_law', but only 5% of its articles are already ingested (best content match: 'arbitration') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19021"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية للتفتيش وضبط مخالفات الآثار والمتاحف والتراث العمراني والنظر فيها",
+    "component": "regulation",
+    "gazette_hijri": "24/7/1443",
+    "gazette_gregorian": "2022-02-25",
+    "decision": null,
+    "article_count": 30,
+    "max_article_number": 30,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'antiquities_heritage_law', but only 3% of its articles are already ingested (best content match: 'arbitration') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19023"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة الإبلاغ عن مخالفات نظام السوق المالية",
+    "component": "regulation",
+    "gazette_hijri": "8/8/1443",
+    "gazette_gregorian": "2022-03-11",
+    "decision": null,
+    "article_count": 14,
+    "max_article_number": 14,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'capital_market_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19095"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "ضوابط السماح للممارسين الصحيين الحكوميين بالعمل في القطاع الصحي الخاص خارج أوقات الدوام الرسمي",
+    "component": "rules",
+    "gazette_hijri": "21/9/1443",
+    "gazette_gregorian": "2022-04-22",
+    "decision": null,
+    "article_count": 11,
+    "max_article_number": 11,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'health_system_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19344"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "تنظيم مجالس التنمية السياحية في المناطق",
+    "component": "statute",
+    "gazette_hijri": "21/9/1443",
+    "gazette_gregorian": "2022-04-22",
+    "decision": null,
+    "article_count": 13,
+    "max_article_number": 13,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'regions_law', but only 15% of its articles are already ingested (best content match: 'occupational_safety_health_council_statute') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19346"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "تنظيم مركز الإقامة المميزة",
+    "component": "statute",
+    "gazette_hijri": "4/11/1443",
+    "gazette_gregorian": "2022-06-03",
+    "decision": null,
+    "article_count": 14,
+    "max_article_number": 14,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'residency_law', but only 7% of its articles are already ingested (best content match: 'architecture_design_authority_statute') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19536"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "تنظيم مركز التأمين الصحي الوطني",
+    "component": "statute",
+    "gazette_hijri": "11/11/1443",
+    "gazette_gregorian": "2022-06-10",
+    "decision": null,
+    "article_count": 20,
+    "max_article_number": 20,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'health_system_law', but only 5% of its articles are already ingested (best content match: 'digital_government_authority_statute') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19566"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام حماية حقوق المؤلف",
+    "component": "regulation",
+    "gazette_hijri": "7/1/1444",
+    "gazette_gregorian": "2022-08-05",
+    "decision": null,
+    "article_count": 52,
+    "max_article_number": 52,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'copyright_law', but only 2% of its articles are already ingested (best content match: 'classification_societies_authorisation_regulation') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=19857"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنظيمية للجان إصلاح ذات البين في إمارات المناطق",
+    "component": "regulation",
+    "gazette_hijri": "20/2/1444",
+    "gazette_gregorian": "2022-09-16",
+    "decision": null,
+    "article_count": 16,
+    "max_article_number": 16,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'regions_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=20079"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لتنظيم الترخيص لمكاتب المحاماة الأجنبية",
+    "component": "regulation",
+    "gazette_hijri": "27/2/1444",
+    "gazette_gregorian": "2022-09-23",
+    "decision": null,
+    "article_count": 24,
+    "max_article_number": 24,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'law_practice_law', but only 21% of its articles are already ingested (best content match: 'law_practice') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=20150"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد الحد من تعارض المصالح لمن سبق له العمل في السلك القضائي عند مزاولته مهنة المحاماة",
+    "component": "rules",
+    "gazette_hijri": "24/4/1444",
+    "gazette_gregorian": "2022-11-18",
+    "decision": null,
+    "article_count": 8,
+    "max_article_number": 8,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'labor_law', but only 12% of its articles are already ingested (best content match: 'sulook') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=20895"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام البريد",
+    "component": "regulation",
+    "gazette_hijri": "1/5/1444",
+    "gazette_gregorian": "2022-11-25",
+    "decision": null,
+    "article_count": 92,
+    "max_article_number": 92,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'postal_law', but only 1% of its articles are already ingested (best content match: 'pdpl') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=20932"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة لجنة النظر في مخالفات نظام السياحة ولوائحه",
+    "component": "regulation",
+    "gazette_hijri": "1/6/1444",
+    "gazette_gregorian": "2022-12-25",
+    "decision": null,
+    "article_count": 23,
+    "max_article_number": 23,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'tourism_law', but only 9% of its articles are already ingested (best content match: 'hospitality_facility') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21126"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "الترتيبات التنظيمية لمركز المناطق الاقتصادية الخاصة بمدينة الرياض",
+    "component": "statute",
+    "gazette_hijri": "6/6/1444",
+    "gazette_gregorian": "2022-12-30",
+    "decision": null,
+    "article_count": 20,
+    "max_article_number": 20,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'regions_law', but only 5% of its articles are already ingested (best content match: 'falcon_center_statute') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21160"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "ضوابط تعاقد الجهات الحكومية مع الشركات التي ليس لها مقر إقليمي في المملكة والأطراف ذوي العلاقة",
+    "component": "rules",
+    "gazette_hijri": "13/6/1444",
+    "gazette_gregorian": "2023-01-06",
+    "decision": null,
+    "article_count": 21,
+    "max_article_number": 21,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'companies_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21199"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد عدم خضوع المكلف المملوك لوقف لجباية الزكاة",
+    "component": "rules",
+    "gazette_hijri": "13/6/1444",
+    "gazette_gregorian": "2023-01-06",
+    "decision": null,
+    "article_count": 6,
+    "max_article_number": 6,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'zakat_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21213"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام الشركات",
+    "component": "regulation",
+    "gazette_hijri": "25/6/1444",
+    "gazette_gregorian": "2023-01-18",
+    "decision": null,
+    "article_count": 95,
+    "max_article_number": 95,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'companies_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21325"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "الضوابط المنظمة للرسوم الدراسية في المدارس الأهلية 1444ه - 2023م",
+    "component": "rules",
+    "gazette_hijri": "19/7/1444",
+    "gazette_gregorian": "2023-02-10",
+    "decision": null,
+    "article_count": 9,
+    "max_article_number": 9,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'private_schools_regulation', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21413"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "ضوابط استئجار الجهات الحكومية للعقارات خارج المملكة",
+    "component": "rules",
+    "gazette_hijri": "26/7/1444",
+    "gazette_gregorian": "2023-02-17",
+    "decision": "قرار مجلس إدارة الهيئة رقم (ق/28/ 2023) وتاريخ 16 /07/ 1444ه",
+    "article_count": 12,
+    "max_article_number": 12,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'government_foreign_property_lease_controls', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21469"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "تعليمات الحوكمة الشرعية في مؤسسات السوق المالية",
+    "component": "rules",
+    "gazette_hijri": "4/8/1444",
+    "gazette_gregorian": "2023-02-24",
+    "decision": null,
+    "article_count": 16,
+    "max_article_number": 16,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'capital_market_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21490"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+    "component": "regulation",
+    "gazette_hijri": "23/9/1444",
+    "gazette_gregorian": "2023-04-14",
+    "decision": null,
+    "article_count": 69,
+    "max_article_number": 69,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'companies_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21691"
+   },
+   {
+    "track_id_proposed": "__",
+    "track_id": null,
+    "title_ar": "لائحة حوكمة الشركات",
+    "component": "regulation",
+    "gazette_hijri": "23/9/1444",
+    "gazette_gregorian": "2023-04-14",
+    "decision": null,
+    "article_count": 95,
+    "max_article_number": 95,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'companies_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21707"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد عدم خضوع الجمعيات والمؤسسات الأهلية والوحدات التدريبية لجباية الزكاة",
+    "component": "rules",
+    "gazette_hijri": "22/10/1444",
+    "gazette_gregorian": "2023-05-12",
+    "decision": null,
+    "article_count": 7,
+    "max_article_number": 7,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'zakat_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=21808"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام استخدام كاميرات المراقبة الأمنية",
+    "component": "regulation",
+    "gazette_hijri": "20/11/1444",
+    "gazette_gregorian": "2023-06-09",
+    "decision": null,
+    "article_count": 20,
+    "max_article_number": 20,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'security_cameras_law', but only 5% of its articles are already ingested (best content match: 'donations_collection_regulation') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23050"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "لائحة مؤسسات السوق المالية",
+    "component": "regulation",
+    "gazette_hijri": "19/12/1444",
+    "gazette_gregorian": "2023-07-07",
+    "decision": null,
+    "article_count": 99,
+    "max_article_number": 99,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'capital_market_law', but only 2% of its articles are already ingested (best content match: 'securities_disputes_rules') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23232"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد حوكمة الجمعيات والمؤسسات الأهلية",
+    "component": "rules",
+    "gazette_hijri": "17/1/1445",
+    "gazette_gregorian": "2023-08-04",
+    "decision": "قرار مجلس إدارة المركز الوطني لتنمية القطاع غير الربحي رقم (ت/9 /1 /23) وتاريخ 18/ 12 /1444ه",
+    "article_count": 46,
+    "max_article_number": 46,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'associations_ngo_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23408"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنظيمية لتصنيف الوسائط البحرية المستخدمة في السياحة الساحلية",
+    "component": "regulation",
+    "gazette_hijri": "17/1/1445",
+    "gazette_gregorian": "2023-08-04",
+    "decision": "قرار مجلس إدارة الهيئة رقم (1ت-3-2023) بتاريخ 22 /12/ 1444ه",
+    "article_count": 6,
+    "max_article_number": 6,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'tourism_law', but only 33% of its articles are already ingested (best content match: 'maritime_tour_operator_regulation') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23421"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة نقل البيانات الشخصية خارج المملكة",
+    "component": "regulation",
+    "gazette_hijri": "22/2/1445",
+    "gazette_gregorian": "2023-09-07",
+    "decision": null,
+    "article_count": 10,
+    "max_article_number": 10,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'pdpl_cross_border_transfer_regulation', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23597"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام المقيمين المعتمدين",
+    "component": "regulation",
+    "gazette_hijri": "23/2/1445",
+    "gazette_gregorian": "2023-09-08",
+    "decision": null,
+    "article_count": 71,
+    "max_article_number": 72,
+    "missing_article_numbers": [
+     71
+    ],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'accredited_valuers_law', but only 1% of its articles are already ingested (best content match: 'arbitration') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23606"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة ضبط وإثبات مخالفات أحكام نظام الكهرباء والفصل فيها",
+    "component": "regulation",
+    "gazette_hijri": "5/4/1445",
+    "gazette_gregorian": "2023-10-20",
+    "decision": "قرار مجلس إدارة هيئة تنظيم المياه والكهرباء رقم (02/ 45-1) وتاريخ 19 /03/ 1445ه",
+    "article_count": 26,
+    "max_article_number": 26,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'electricity_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23890"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنظيمية لفروع الجامعات الأجنبية",
+    "component": "regulation",
+    "gazette_hijri": "5/4/1445",
+    "gazette_gregorian": "2023-10-20",
+    "decision": "قرار مجلس شؤون الجامعات رقم (4 /16/ 45) المتخذ في اجتماعه (السادس عشر) المعقود بتاريخ 14 /02/ 1445ه",
+    "article_count": 26,
+    "max_article_number": 26,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'universities_law', but only 12% of its articles are already ingested (best content match: 'private_universities_regulation') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=23897"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة اللجان الوطنية واللجان القطاعية في الغرف التجارية",
+    "component": "regulation",
+    "gazette_hijri": "24/5/1445",
+    "gazette_gregorian": "2023-12-08",
+    "decision": null,
+    "article_count": 42,
+    "max_article_number": 42,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'chambers_of_commerce_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=24205"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام تصنيف المقاولين",
+    "component": "regulation",
+    "gazette_hijri": "23/6/1445",
+    "gazette_gregorian": "2024-01-05",
+    "decision": null,
+    "article_count": 18,
+    "max_article_number": 18,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'contractors_classification_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=24330"
+   },
+   {
+    "track_id_proposed": "__",
+    "track_id": null,
+    "title_ar": "لائحة تراخيص الحفريات",
+    "component": "regulation",
+    "gazette_hijri": "13/8/1445",
+    "gazette_gregorian": "2024-02-23",
+    "decision": null,
+    "article_count": 14,
+    "max_article_number": 14,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/details?p=24563"
+   },
+   {
+    "track_id_proposed": "__",
+    "track_id": null,
+    "title_ar": "نظام جمع التبرعات",
+    "component": "law",
+    "gazette_hijri": "19/2/1446",
+    "gazette_gregorian": "2024-08-23",
+    "decision": null,
+    "article_count": 23,
+    "max_article_number": 23,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'donations_collection_regulation', but only 4% of its articles are already ingested (best content match: 'chambers_of_commerce') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=25376"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة الفنية لأجهزة الاتصالات وتقنية المعلومات",
+    "component": "regulation",
+    "gazette_hijri": "12/2/1446",
+    "gazette_gregorian": "2024-08-16",
+    "decision": null,
+    "article_count": 12,
+    "max_article_number": 12,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'telecommunications_law', but only 17% of its articles are already ingested (best content match: 'paper_cardboard_technical_regulation') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=25398"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد عمل لجنة النظر في مخالفات أحكام نظام حقوق الأشخاص ذوي الإعاقة",
+    "component": "rules",
+    "gazette_hijri": "24/3/1446",
+    "gazette_gregorian": "2024-09-27",
+    "decision": null,
+    "article_count": 18,
+    "max_article_number": 18,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'disability_rights_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=26539"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنظيمية لتأشيرات العمل المؤقت والعمل المؤقت لخدمات الحج والعمرة",
+    "component": "regulation",
+    "gazette_hijri": "8/4/1446",
+    "gazette_gregorian": "2024-10-11",
+    "decision": null,
+    "article_count": 23,
+    "max_article_number": 23,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'labor_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=26602"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة التفتيش القضائي بديوان المظالم",
+    "component": "regulation",
+    "gazette_hijri": "16/1/1447",
+    "gazette_gregorian": "2025-07-11",
+    "decision": "قرار مجلس القضاء الإداري رقم (18/ 1446 / سابعا) وتاريخ 29/",
+    "article_count": 42,
+    "max_article_number": 42,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'judicial_inspection_regulation', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=27251"
+   },
+   {
+    "track_id_proposed": "__",
+    "track_id": null,
+    "title_ar": "تعليمات الحسابات الاستثمارية",
+    "component": "rules",
+    "gazette_hijri": "21/2/1447",
+    "gazette_gregorian": "2025-08-15",
+    "decision": null,
+    "article_count": 17,
+    "max_article_number": 17,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/details?p=27344"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد تفعيل الاستثمار ذي الأثر الاجتماعي",
+    "component": "rules",
+    "gazette_hijri": "28/2/1447",
+    "gazette_gregorian": "2025-08-22",
+    "decision": null,
+    "article_count": 14,
+    "max_article_number": 14,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'investment_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=27373"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام تصنيف المقاولين",
+    "component": "regulation",
+    "gazette_hijri": "13/3/1447",
+    "gazette_gregorian": "2025-09-05",
+    "decision": null,
+    "article_count": 20,
+    "max_article_number": 20,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'contractors_classification_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=27425"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة إنشاء الأوقاف أو تمويلها من خلال جمع التبرعات",
+    "component": "regulation",
+    "gazette_hijri": "25/4/1447",
+    "gazette_gregorian": "2025-10-17",
+    "decision": "قرار مجلس إدارة الهيئة رقم (6 /1 /47/ت) وتاريخ 23 /03/ 1447ه",
+    "article_count": 12,
+    "max_article_number": 12,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'donations_collection_regulation', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=27532"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "نظام حماية المؤشرات الجغرافية",
+    "component": "law",
+    "gazette_hijri": "7/6/1447",
+    "gazette_gregorian": "2025-11-28",
+    "decision": null,
+    "article_count": 27,
+    "max_article_number": 27,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'geographical_indications_regulation', but only 7% of its articles are already ingested (best content match: 'state_property_lease_law') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=28662"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد ومعايير أسماء المرافق العامة",
+    "component": "rules",
+    "gazette_hijri": "13/7/1447",
+    "gazette_gregorian": "2026-01-02",
+    "decision": null,
+    "article_count": 12,
+    "max_article_number": 12,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/details?p=28753"
+   },
+   {
+    "track_id_proposed": "__",
+    "track_id": null,
+    "title_ar": "نظام حقوق المؤلف",
+    "component": "law",
+    "gazette_hijri": "25/8/1447",
+    "gazette_gregorian": "2026-02-13",
+    "decision": null,
+    "article_count": 61,
+    "max_article_number": 61,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'copyright_law', but only 2% of its articles are already ingested (best content match: 'companies_law') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/details?p=28845"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "ضوابط الاستعانة بمقدمي خدمات التنفيذ أمام ديوان المظالم",
+    "component": "rules",
+    "gazette_hijri": "18/8/1447",
+    "gazette_gregorian": "2026-02-06",
+    "decision": null,
+    "article_count": 10,
+    "max_article_number": 10,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'enforcement_law', but only 20% of its articles are already ingested (best content match: 'enforcement_providers') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000230"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد حوكمة الجمعيات والمؤسسات الأهلية",
+    "component": "rules",
+    "gazette_hijri": "24/8/1447",
+    "gazette_gregorian": "2026-02-12",
+    "decision": "قرار مجلس إدارة المركز الوطني لتنمية القطاع غير الربحي رقم (ت/9 /1 /23) وتاريخ 18 /12/ 1444ه",
+    "article_count": 47,
+    "max_article_number": 47,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'associations_ngo_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000254"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "القواعد المنظمة لمهنة الاستشارات المالية (لغير الأوراق المالية)",
+    "component": "rules",
+    "gazette_hijri": "11/8/1447",
+    "gazette_gregorian": "2026-01-30",
+    "decision": null,
+    "article_count": 19,
+    "max_article_number": 19,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000290"
+   },
+   {
+    "track_id_proposed": "__",
+    "track_id": null,
+    "title_ar": "نظام حقوق المؤلف",
+    "component": "law",
+    "gazette_hijri": "25/8/1447",
+    "gazette_gregorian": "2026-02-13",
+    "decision": null,
+    "article_count": 61,
+    "max_article_number": 61,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'copyright_law', but only 2% of its articles are already ingested (best content match: 'companies_law') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000299"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "ضوابط بقاء المركبات المسجلة في إحدى دول مجلس التعاون في السعودية",
+    "component": "rules",
+    "gazette_hijri": "10/9/1447",
+    "gazette_gregorian": "2026-02-27",
+    "decision": null,
+    "article_count": 7,
+    "max_article_number": 7,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000446"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة نشاط شبكة الغاز للأغراض السكنية والتجارية",
+    "component": "regulation",
+    "gazette_hijri": "10/9/1447",
+    "gazette_gregorian": "2026-02-27",
+    "decision": null,
+    "article_count": 20,
+    "max_article_number": 20,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000453"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة ضبط المخالفات وإيقاع العقوبات",
+    "component": "regulation",
+    "gazette_hijri": "10/9/1447",
+    "gazette_gregorian": "2026-02-27",
+    "decision": null,
+    "article_count": 18,
+    "max_article_number": 18,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'environmental_violations_penalties', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000460"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "النظام الأساس لجامعة الرياض للفنون",
+    "component": "statute",
+    "gazette_hijri": "24/9/1447",
+    "gazette_gregorian": "2026-03-13",
+    "decision": null,
+    "article_count": 20,
+    "max_article_number": 20,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000576"
+   },
+   {
+    "track_id_proposed": "___",
+    "track_id": null,
+    "title_ar": "تعليمات صناديق الاستثمار المبسطة",
+    "component": "rules",
+    "gazette_hijri": "28/11/1447",
+    "gazette_gregorian": "2026-05-15",
+    "decision": null,
+    "article_count": 31,
+    "max_article_number": 31,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'investment_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000963"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "النظام الأساس للمركز العالمي لمكافحة الفكر المتطرف",
+    "component": "statute",
+    "gazette_hijri": "5/12/1447",
+    "gazette_gregorian": "2026-05-22",
+    "decision": null,
+    "article_count": 14,
+    "max_article_number": 14,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001035"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "الترتيبات التنظيمية لمركز ذاكرة الثقافة السعودية",
+    "component": "statute",
+    "gazette_hijri": "18/1/1448",
+    "gazette_gregorian": "2026-07-03",
+    "decision": null,
+    "article_count": 12,
+    "max_article_number": 12,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001288"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+    "component": "regulation",
+    "gazette_hijri": "18/1/1448",
+    "gazette_gregorian": "2026-07-03",
+    "decision": null,
+    "article_count": 69,
+    "max_article_number": 69,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'companies_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001295"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد سجل الشركات في المناطق الاقتصادية الخاصة",
+    "component": "rules",
+    "gazette_hijri": "25/1/1448",
+    "gazette_gregorian": "2026-07-10",
+    "decision": null,
+    "article_count": 32,
+    "max_article_number": 32,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'companies_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001345"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد الشركات في المناطق الاقتصادية الخاصة",
+    "component": "rules",
+    "gazette_hijri": "25/1/1448",
+    "gazette_gregorian": "2026-07-10",
+    "decision": null,
+    "article_count": 108,
+    "max_article_number": 108,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'companies_law', but only 18% of its articles are already ingested (best content match: 'companies_law') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001347"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "قواعد الأسماء التجارية في المناطق الاقتصادية الخاصة",
+    "component": "rules",
+    "gazette_hijri": "25/1/1448",
+    "gazette_gregorian": "2026-07-10",
+    "decision": null,
+    "article_count": 25,
+    "max_article_number": 25,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'trade_names_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001349"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "لائحة صلاحيات تطبيق هيئة الرقابة ومكافحة الفساد للأحكام الواردة في نظام الإجراءات الجزائية ولائحته التنفيذية ونظام النيابة العامة",
+    "component": "regulation",
+    "gazette_hijri": "10/2/1448",
+    "gazette_gregorian": "2026-07-24",
+    "decision": null,
+    "article_count": 21,
+    "max_article_number": 21,
+    "missing_article_numbers": [],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'criminal_procedure_law', but only 5% of its articles are already ingested (best content match: 'commercial_courts') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001450"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "ضوابط التسميات التسويقية للمدن الاقتصادية والمناطق الاقتصادية الخاصة",
+    "component": "rules",
+    "gazette_hijri": "10/2/1448",
+    "gazette_gregorian": "2026-07-24",
+    "decision": null,
+    "article_count": 14,
+    "max_article_number": 14,
+    "missing_article_numbers": [],
+    "notes": [],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001453"
+   },
+   {
+    "track_id_proposed": "____",
+    "track_id": null,
+    "title_ar": "اللائحة التنفيذية لنظام حقوق المؤلف",
+    "component": "regulation",
+    "gazette_hijri": "17/2/1448",
+    "gazette_gregorian": "2026-07-31",
+    "decision": null,
+    "article_count": 95,
+    "max_article_number": 98,
+    "missing_article_numbers": [
+     39,
+     41,
+     60
+    ],
+    "notes": [
+     "G2-NOTE: title resembles registry track 'copyright_law', but only 1% of its articles are already ingested (best content match: 'geographical_indications_regulation') — treated as a DISTINCT instrument, not a duplicate"
+    ],
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001498"
+   }
+  ],
+  "needs_human_adjudication": [
+   {
+    "title_ar": "اللائحة التنفيذية لنظام التوثيق",
+    "url": "https://www.uqn.gov.sa/details?p=17181",
+    "overlap_percent": 97,
+    "overlapping_track": "tawtheeq",
+    "blocking_gates": [
+     "G2: 97% of this document's articles already exist in track 'tawtheeq' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام الغرف التجارية",
+    "url": "https://www.uqn.gov.sa/details?p=18183",
+    "overlap_percent": 97,
+    "overlapping_track": "chambers_of_commerce",
+    "blocking_gates": [
+     "G2: 97% of this document's articles already exist in track 'chambers_of_commerce' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "لائحة حماية حقوق المسافرين",
+    "url": "https://www.uqn.gov.sa/details?p=23521",
+    "overlap_percent": 97,
+    "overlapping_track": "aviation_passenger_rights",
+    "blocking_gates": [
+     "G2: 97% of this document's articles already exist in track 'aviation_passenger_rights' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام التبرع بالأعضاء البشرية",
+    "url": "https://www.uqn.gov.sa/details?p=17431",
+    "overlap_percent": 96,
+    "overlapping_track": "organ_donation",
+    "blocking_gates": [
+     "G2: 96% of this document's articles already exist in track 'organ_donation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام التكاليف القضائية",
+    "url": "https://www.uqn.gov.sa/details?p=18304",
+    "overlap_percent": 96,
+    "overlapping_track": "judicial_costs",
+    "blocking_gates": [
+     "G2: 96% of this document's articles already exist in track 'judicial_costs' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام الاتصالات وتقنية المعلومات",
+    "url": "https://www.uqn.gov.sa/details?p=21063",
+    "overlap_percent": 96,
+    "overlapping_track": "telecommunications",
+    "blocking_gates": [
+     "G2: 96% of this document's articles already exist in track 'telecommunications' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات",
+    "url": "https://www.uqn.gov.sa/details?p=23692",
+    "overlap_percent": 96,
+    "overlapping_track": "international_bus_transport_regulation",
+    "blocking_gates": [
+     "G2: 96% of this document's articles already exist in track 'international_bus_transport_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام تصنيف المقاولين",
+    "url": "https://www.uqn.gov.sa/details?p=18206",
+    "overlap_percent": 95,
+    "overlapping_track": "contractors_classification",
+    "blocking_gates": [
+     "G2: 95% of this document's articles already exist in track 'contractors_classification' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام التأمينات الاجتماعية",
+    "url": "https://www.uqn.gov.sa/details?p=25239",
+    "overlap_percent": 95,
+    "overlapping_track": "social_insurance",
+    "blocking_gates": [
+     "G2: 95% of this document's articles already exist in track 'social_insurance' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+     "G8: article 24 is referenced in the document but was not segmented — possible merged/lost text",
+     "G8: article 60 is referenced in the document but was not segmented — possible merged/lost text"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية",
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000284",
+    "overlap_percent": 95,
+    "overlapping_track": "associations_ngo",
+    "blocking_gates": [
+     "G2: 95% of this document's articles already exist in track 'associations_ngo' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام الغرف التجارية",
+    "url": "https://www.uqn.gov.sa/details?p=17284",
+    "overlap_percent": 94,
+    "overlapping_track": "chambers_of_commerce",
+    "blocking_gates": [
+     "G2: 94% of this document's articles already exist in track 'chambers_of_commerce' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام مزاولة المهن الهندسية",
+    "url": "https://www.uqn.gov.sa/details?p=24294",
+    "overlap_percent": 94,
+    "overlapping_track": "engineering_practice",
+    "blocking_gates": [
+     "G2: 94% of this document's articles already exist in track 'engineering_practice' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام الاستثمار",
+    "url": "https://www.uqn.gov.sa/details?p=25337",
+    "overlap_percent": 94,
+    "overlapping_track": "investment",
+    "blocking_gates": [
+     "G2: 94% of this document's articles already exist in track 'investment' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام الوساطة العقارية",
+    "url": "https://www.uqn.gov.sa/details?p=21268",
+    "overlap_percent": 93,
+    "overlapping_track": "real_estate_brokerage",
+    "blocking_gates": [
+     "G2: 93% of this document's articles already exist in track 'real_estate_brokerage' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام السجل التجاري",
+    "url": "https://www.uqn.gov.sa/details?p=26565",
+    "overlap_percent": 93,
+    "overlapping_track": "commercial_register",
+    "blocking_gates": [
+     "G2: 93% of this document's articles already exist in track 'commercial_register' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام الشركات",
+    "url": "https://www.uqn.gov.sa/details?p=19697",
+    "overlap_percent": 92,
+    "overlapping_track": "companies_law",
+    "blocking_gates": [
+     "G2: 92% of this document's articles already exist in track 'companies_law' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "لائحة تأشيرة الزيارة لغرض السياحة",
+    "url": "https://www.uqn.gov.sa/details?p=21135",
+    "overlap_percent": 92,
+    "overlapping_track": "tourist_visa",
+    "blocking_gates": [
+     "G2: 92% of this document's articles already exist in track 'tourist_visa' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية",
+    "url": "https://www.uqn.gov.sa/details?p=26660",
+    "overlap_percent": 92,
+    "overlapping_track": "marina_design_operation_controls",
+    "blocking_gates": [
+     "G2: 92% of this document's articles already exist in track 'marina_design_operation_controls' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية للضوضاء",
+    "url": "https://www.uqn.gov.sa/details?p=17835",
+    "overlap_percent": 91,
+    "overlapping_track": "environmental_noise",
+    "blocking_gates": [
+     "G2: 91% of this document's articles already exist in track 'environmental_noise' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "القواعد المنظمة لإجراءات الإفلاس العابرة للحدود",
+    "url": "https://www.uqn.gov.sa/details?p=21056",
+    "overlap_percent": 91,
+    "overlapping_track": "iflas_hudud",
+    "blocking_gates": [
+     "G2: 91% of this document's articles already exist in track 'iflas_hudud' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لضوابط إعداد وتنفيذ خطط التأهب والاستجابة لحالات الطوارئ والكوارث البيئية",
+    "url": "https://www.uqn.gov.sa/details?p=24377",
+    "overlap_percent": 91,
+    "overlapping_track": "environmental_emergency_response",
+    "blocking_gates": [
+     "G2: 91% of this document's articles already exist in track 'environmental_emergency_response' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام الأسماء التجارية",
+    "url": "https://www.uqn.gov.sa/details?p=26566",
+    "overlap_percent": 91,
+    "overlapping_track": "trade_names",
+    "blocking_gates": [
+     "G2: 91% of this document's articles already exist in track 'trade_names' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية",
+    "url": "https://www.uqn.gov.sa/details?p=27346",
+    "overlap_percent": 91,
+    "overlapping_track": "foreign_investment_securities_rules",
+    "blocking_gates": [
+     "G2: 91% of this document's articles already exist in track 'foreign_investment_securities_rules' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لصيد الكائنات الفطرية البرية",
+    "url": "https://www.uqn.gov.sa/details?p=17883",
+    "overlap_percent": 90,
+    "overlapping_track": "environmental_wildlife_hunting",
+    "blocking_gates": [
+     "G2: 90% of this document's articles already exist in track 'environmental_wildlife_hunting' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام التسجيل العيني للعقار",
+    "url": "https://www.uqn.gov.sa/details?p=19434",
+    "overlap_percent": 90,
+    "overlapping_track": "real_estate_registration",
+    "blocking_gates": [
+     "G2: 90% of this document's articles already exist in track 'real_estate_registration' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام المساهمات العقارية",
+    "url": "https://www.uqn.gov.sa/details?p=24519",
+    "overlap_percent": 90,
+    "overlapping_track": "real_estate_contributions_regulation",
+    "blocking_gates": [
+     "G2: 90% of this document's articles already exist in track 'real_estate_contributions_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لجودة الهواء لنظام البيئة",
+    "url": "https://www.uqn.gov.sa/details?p=17812",
+    "overlap_percent": 88,
+    "overlapping_track": "environmental_air_quality",
+    "blocking_gates": [
+     "G2: 88% of this document's articles already exist in track 'environmental_air_quality' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام مهنة المحاسبة والمراجعة",
+    "url": "https://www.uqn.gov.sa/details?p=17889",
+    "overlap_percent": 87,
+    "overlapping_track": "accounting_auditing",
+    "blocking_gates": [
+     "G2: 87% of this document's articles already exist in track 'accounting_auditing' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام تملك غير السعوديين للعقار",
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001281",
+    "overlap_percent": 86,
+    "overlapping_track": "foreign_ownership",
+    "blocking_gates": [
+     "G2: 86% of this document's articles already exist in track 'foreign_ownership' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "لائحة خدمات السفر والسياحة",
+    "url": "https://www.uqn.gov.sa/details?p=21117",
+    "overlap_percent": 84,
+    "overlapping_track": "tourism_travel_services",
+    "blocking_gates": [
+     "G2: 84% of this document's articles already exist in track 'tourism_travel_services' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+     "G5: article 24 contains site-navigation boilerplate"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام مكافحة التستر",
+    "url": "https://www.uqn.gov.sa/details?p=17006",
+    "overlap_percent": 83,
+    "overlapping_track": "anti_concealment",
+    "blocking_gates": [
+     "G2: 83% of this document's articles already exist in track 'anti_concealment' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "ضوابط إجراءات الإثبات إلكترونيا",
+    "url": "https://www.uqn.gov.sa/details?p=20765",
+    "overlap_percent": 83,
+    "overlapping_track": "evidence",
+    "blocking_gates": [
+     "G2: 83% of this document's articles already exist in track 'evidence' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "قواعد سلوك مهنة التقييم وآدابها",
+    "url": "https://www.uqn.gov.sa/details?p=23656",
+    "overlap_percent": 82,
+    "overlapping_track": "valuation_profession_conduct_rules",
+    "blocking_gates": [
+     "G2: 82% of this document's articles already exist in track 'valuation_profession_conduct_rules' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "لائحة مرفق الضيافة السياحي",
+    "url": "https://www.uqn.gov.sa/details?p=21130",
+    "overlap_percent": 80,
+    "overlapping_track": "hospitality_facility",
+    "blocking_gates": [
+     "G2: 80% of this document's articles already exist in track 'hospitality_facility' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+     "G5: article 26 contains site-navigation boilerplate",
+     "G5: article 27 contains site-navigation boilerplate",
+     "G5: article 28 contains site-navigation boilerplate"
+    ]
+   },
+   {
+    "title_ar": "لائحة العمالة المنزلية ومن في حكمها",
+    "url": "https://www.uqn.gov.sa/details?p=23820",
+    "overlap_percent": 79,
+    "overlapping_track": "domestic_labor",
+    "blocking_gates": [
+     "G2: 79% of this document's articles already exist in track 'domestic_labor' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "لائحة إدارة مرافق الضيافة السياحية",
+    "url": "https://www.uqn.gov.sa/details?p=21115",
+    "overlap_percent": 78,
+    "overlapping_track": "hospitality_mgmt",
+    "blocking_gates": [
+     "G2: 78% of this document's articles already exist in track 'hospitality_mgmt' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "لائحة نقل البيانات الشخصية إلى خارج المملكة",
+    "url": "https://www.uqn.gov.sa/details?p=25412",
+    "overlap_percent": 78,
+    "overlapping_track": "pdpl",
+    "blocking_gates": [
+     "G2: 78% of this document's articles already exist in track 'pdpl' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام مهنة المحاسبة والمراجعة",
+    "url": "https://www.uqn.gov.sa/details?p=16945",
+    "overlap_percent": 77,
+    "overlapping_track": "accounting_auditing",
+    "blocking_gates": [
+     "G2: 77% of this document's articles already exist in track 'accounting_auditing' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية",
+    "url": "https://www.uqn.gov.sa/details?p=26635",
+    "overlap_percent": 75,
+    "overlapping_track": "railway_violations_committee_rules",
+    "blocking_gates": [
+     "G2: 75% of this document's articles already exist in track 'railway_violations_committee_rules' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام حماية البيانات الشخصية",
+    "url": "https://www.uqn.gov.sa/details?p=18347",
+    "overlap_percent": 67,
+    "overlapping_track": "pdpl",
+    "blocking_gates": [
+     "G2: 67% of this document's articles already exist in track 'pdpl' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+    "url": "https://www.uqn.gov.sa/details?p=17879",
+    "overlap_percent": 62,
+    "overlapping_track": "environmental_violations_penalties",
+    "blocking_gates": [
+     "G2: 62% of this document's articles already exist in track 'environmental_violations_penalties' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "نظام البريد",
+    "url": "https://www.uqn.gov.sa/details?p=18451",
+    "overlap_percent": 54,
+    "overlapping_track": "postal",
+    "blocking_gates": [
+     "G2: 54% of this document's articles already exist in track 'postal' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لجباية الزكاة 1445ه",
+    "url": "https://www.uqn.gov.sa/details?p=24722",
+    "overlap_percent": 51,
+    "overlapping_track": "zakat",
+    "blocking_gates": [
+     "G2: 51% of this document's articles already exist in track 'zakat' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية للتفتيش والتدقيق البيئي",
+    "url": "https://www.uqn.gov.sa/details?p=17833",
+    "overlap_percent": 50,
+    "overlapping_track": "environmental_inspection_audit",
+    "blocking_gates": [
+     "G2: 50% of this document's articles already exist in track 'environmental_inspection_audit' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام التبرع بالأعضاء البشرية",
+    "url": "https://www.uqn.gov.sa/details?p=19438",
+    "overlap_percent": 48,
+    "overlapping_track": "organ_donation",
+    "blocking_gates": [
+     "G2: 48% of this document's articles already exist in track 'organ_donation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية",
+    "url": "https://www.uqn.gov.sa/details?p=21360",
+    "overlap_percent": 48,
+    "overlapping_track": "associations_ngo",
+    "blocking_gates": [
+     "G2: 48% of this document's articles already exist in track 'associations_ngo' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
+    "url": "https://www.uqn.gov.sa/details?p=18175",
+    "overlap_percent": 47,
+    "overlapping_track": "building_code",
+    "blocking_gates": [
+     "G2: 47% of this document's articles already exist in track 'building_code' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   },
+   {
+    "title_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
+    "url": "https://www.uqn.gov.sa/details?p=21449",
+    "overlap_percent": 47,
+    "overlapping_track": "building_code",
+    "blocking_gates": [
+     "G2: 47% of this document's articles already exist in track 'building_code' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+    ]
+   }
+  ]
+ }
 }

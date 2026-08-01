@@ -353,7 +353,6 @@ WHITE_LAND_FEES_EXECUTIVE_REGULATION_LLM = os.path.join(ROOT, "data", "white_lan
 WILDLIFE_TRADE_REGULATION_LLM = os.path.join(ROOT, "data", "wildlife_trade_regulation_arabic_legal_llm", "wildlife_trade_regulation_legal_llm_001_013.json")
 ZATCA_STATUTE_LLM = os.path.join(ROOT, "data", "zatca_statute_arabic_legal_llm", "zatca_statute_legal_llm_001_016.json")
 ARABIAN_HORSE_REGULATION_LLM = os.path.join(ROOT, "data", "arabian_horse_regulation_arabic_legal_llm", "arabian_horse_regulation_legal_llm_001_009.json")
-CIVIL_DEFENSE_FIREFIGHTING_RESCUE_REGULATION_LLM = os.path.join(ROOT, "data", "civil_defense_firefighting_rescue_regulation_arabic_legal_llm", "civil_defense_firefighting_rescue_regulation_legal_llm_001_009.json")
 CLASSIFICATION_SOCIETIES_AUTHORISATION_REGULATION_LLM = os.path.join(ROOT, "data", "classification_societies_authorisation_regulation_arabic_legal_llm", "classification_societies_authorisation_regulation_legal_llm_001_012.json")
 COMMUNITY_FUNDS_RULES_LLM = os.path.join(ROOT, "data", "community_funds_rules_arabic_legal_llm", "community_funds_rules_legal_llm_001_010.json")
 COMPETENCIES_CONTRACTORS_PROGRAM_RULES_LLM = os.path.join(ROOT, "data", "competencies_contractors_program_rules_arabic_legal_llm", "competencies_contractors_program_rules_legal_llm_001_005.json")
@@ -932,7 +931,6 @@ def main() -> int:
     wildlife_trade_regulation_llm = _load_json(WILDLIFE_TRADE_REGULATION_LLM)
     zatca_statute_llm = _load_json(ZATCA_STATUTE_LLM)
     arabian_horse_regulation_llm = _load_json(ARABIAN_HORSE_REGULATION_LLM)
-    civil_defense_firefighting_rescue_regulation_llm = _load_json(CIVIL_DEFENSE_FIREFIGHTING_RESCUE_REGULATION_LLM)
     classification_societies_authorisation_regulation_llm = _load_json(CLASSIFICATION_SOCIETIES_AUTHORISATION_REGULATION_LLM)
     community_funds_rules_llm = _load_json(COMMUNITY_FUNDS_RULES_LLM)
     competencies_contractors_program_rules_llm = _load_json(COMPETENCIES_CONTRACTORS_PROGRAM_RULES_LLM)
@@ -1185,7 +1183,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 548,
+        "total_tracks": 547,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -1504,7 +1502,6 @@ def main() -> int:
             + wildlife_trade_regulation_llm["record_count"]  # 13 Executive Regulation on Trade in Wild Organisms, their Products and Derivatives (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + zatca_statute_llm["record_count"]  # 16 Statute of the Zakat, Tax and Customs Authority (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + arabian_horse_regulation_llm["record_count"]  # 9 Regulatory Rules for the Purebred Arabian Horse (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
-            + civil_defense_firefighting_rescue_regulation_llm["record_count"]  # 9 Regulation Governing Firefighting and Rescue Works at the General Directorate of Civil Defense (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + classification_societies_authorisation_regulation_llm["record_count"]  # 12 Regulation on the Conditions for Authorising Classification Societies in the Kingdom (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + community_funds_rules_llm["record_count"]  # 10 Rules Governing Community Funds (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + competencies_contractors_program_rules_llm["record_count"]  # 5 Rules Governing the Competencies and Contractors Program (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
@@ -2046,7 +2043,6 @@ def main() -> int:
             + wildlife_trade_regulation_llm["record_count"]
             + zatca_statute_llm["record_count"]
             + arabian_horse_regulation_llm["record_count"]
-            + civil_defense_firefighting_rescue_regulation_llm["record_count"]
             + classification_societies_authorisation_regulation_llm["record_count"]
             + community_funds_rules_llm["record_count"]
             + competencies_contractors_program_rules_llm["record_count"]
@@ -13361,35 +13357,6 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "Regulatory Rules for the Purebred Arabian Horse «اللائحة التنظيمية للخيل العربية الأصيلة» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/7/1442H / 2021-02-19. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
-            },
-            {
-                "track_id": "civil_defense_firefighting_rescue_regulation",
-                "display_name_ar": "لائحة تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني",
-                "display_name_en": "Regulation Governing Firefighting and Rescue Works at the General Directorate of Civil Defense",
-                "corpus_family": "statutory_regulation",
-                "jurisdiction": "Kingdom of Saudi Arabia",
-                "governing_language": "ar",
-                "status": "complete",
-                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
-                "source_authority": "Regulation Governing Firefighting and Rescue Works at the General Directorate of Civil Defense — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/3/1443H (2021-11-05).",
-                "language_layers": {"arabic": {"status": "complete", "governing": True,
-                    "record_count": civil_defense_firefighting_rescue_regulation_llm["record_count"],
-                    "data_path": "data/civil_defense_firefighting_rescue_regulation_arabic_legal_llm/civil_defense_firefighting_rescue_regulation_legal_llm_001_009.json"}},
-                "record_counts": {"arabic_articles": civil_defense_firefighting_rescue_regulation_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
-                                  "total": civil_defense_firefighting_rescue_regulation_llm["record_count"]},
-                "data_paths": [
-                    "sources/civil_defense_firefighting_rescue_regulation/official_source/civil_defense_firefighting_rescue_regulation_official_source.json",
-                    "sources/civil_defense_firefighting_rescue_regulation/verified/civil_defense_firefighting_rescue_regulation_verified_records.jsonl",
-                    "data/civil_defense_firefighting_rescue_regulation_arabic_legal_llm/civil_defense_firefighting_rescue_regulation_legal_llm_001_009.json",
-                ],
-                "validator_targets": ["make civil-defense-firefighting-rescue-regulation-track-validate"],
-                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
-                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
-                "boundaries": {"arabic_governs": True, "not_official_translation": True,
-                               "not_verified_official_text": True, "not_legal_advice": True,
-                               "no_trilingual_alignment": True, "no_public_release": True},
-                "notes": "Regulation Governing Firefighting and Rescue Works at the General Directorate of Civil Defense «لائحة تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/3/1443H / 2021-11-05. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "classification_societies_authorisation_regulation",

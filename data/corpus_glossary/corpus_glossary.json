@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 548,
+  "total_tracks_in_registry": 547,
   "total_terms": 3023,
-  "total_definitions": 6324,
-  "tracks_with_definitions_article_parsed": 449,
+  "total_definitions": 6317,
+  "tracks_with_definitions_article_parsed": 448,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -4746,14 +4746,6 @@
     ],
     "الإطفاء": [
       {
-        "track_id": "civil_defense_firefighting_rescue_regulation",
-        "article_number": 1,
-        "term_as_written": "الإطفاء",
-        "definition_text": "مجموعة الإجراءات والأعمال اللازمة التي تقوم بها مراكز الإطفاء التابعة للمديرية العامة للدفاع المدني والجهات المساندة لها حسب الإمكانات المتاحة لمكافحة الحرائق التي تهدد حياة الإنسان أو الممتلكات العامة أو الخاصة.",
-        "source_record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
         "track_id": "civil_defense_regulation",
         "article_number": 1,
         "term_as_written": "الإطفاء",
@@ -5095,14 +5087,6 @@
       }
     ],
     "الإنقاذ": [
-      {
-        "track_id": "civil_defense_firefighting_rescue_regulation",
-        "article_number": 1,
-        "term_as_written": "الإنقاذ",
-        "definition_text": "مجموعة الإجراءات والأعمال التي تقوم بها مراكز الإنقاذ في المديرية العامة للدفاع المدني والجهات المساندة لها حسب الإمكانات المتاحة لإنقاذ الأرواح والممتلكات من الأخطار الناتجة عن حريق أو هدم أو سيل أو عاصفة أو أي حادث يلحق الضرر أو يهدد حياة الإنسان أو الممتلكات العامة أو الخاصة.",
-        "source_record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
       {
         "track_id": "civil_defense_regulation",
         "article_number": 1,
@@ -12850,14 +12834,6 @@
     ],
     "الحادث": [
       {
-        "track_id": "civil_defense_firefighting_rescue_regulation",
-        "article_number": 1,
-        "term_as_written": "الحادث",
-        "definition_text": "حالة من حالات الطوارئ تتطلب استجابة سريعة لحماية الأرواح والممتلكات ويقصد به حوادث الإطفاء والإنقاذ التي تعد من اختصاص المديرية العامة للدفاع المدني.",
-        "source_record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
         "track_id": "civil_defense_regulation",
         "article_number": 1,
         "term_as_written": "الحادث",
@@ -14561,14 +14537,6 @@
       }
     ],
     "الدفاع المدني": [
-      {
-        "track_id": "civil_defense_firefighting_rescue_regulation",
-        "article_number": 1,
-        "term_as_written": "الدفاع المدني",
-        "definition_text": "مجموعة من الإجراءات والأعمال اللازمة لحماية السكان والممتلكات العامة والخاصة من أخطار الحريق والكوارث والحروب والحوادث المختلفة وإغاثة المنكوبين وتأمين سلامة المواصلات والاتصالات وسير العمل في المرافق العامة وحماية مصادر الثروة الوطنية في زمن السلم وحالات الحرب والطوارئ.",
-        "source_record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
       {
         "track_id": "civil_defense_regulation",
         "article_number": 1,
@@ -22906,14 +22874,6 @@
         "extraction_method": "colon_pairs"
       },
       {
-        "track_id": "civil_defense_firefighting_rescue_regulation",
-        "article_number": 1,
-        "term_as_written": "اللائحة",
-        "definition_text": "هي مجموعة ضوابط وإجراءات تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني وتحديد المسؤوليات أثناء تنفيذ تلك الأعمال، المعتمدة من صاحب السمو الملكي وزير الداخلية رئيس اللجنة التنفيذية لمجلس المخاطر الوطنية.",
-        "source_record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
         "track_id": "civil_defense_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -29857,14 +29817,6 @@
       }
     ],
     "المديرية العامة للدفاع المدني": [
-      {
-        "track_id": "civil_defense_firefighting_rescue_regulation",
-        "article_number": 1,
-        "term_as_written": "المديرية العامة للدفاع المدني",
-        "definition_text": "إحدى قطاعات وزارة الداخلية المعنية بتنفيذ أعمال الدفاع المدني وتنسيق الإجراءات الأخرى مع الجهات المختصة.",
-        "source_record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
       {
         "track_id": "civil_defense_regulation",
         "article_number": 1,
@@ -48959,14 +48911,6 @@
       }
     ],
     "صاحب الشأن": [
-      {
-        "track_id": "civil_defense_firefighting_rescue_regulation",
-        "article_number": 1,
-        "term_as_written": "صاحب الشأن",
-        "definition_text": "هو الشخص المسؤول في المنشأة أو الجهة المعنية سواء كان مالكا أو مستأجرا أو مستخدما فعليا أو مسؤولا عن الأمن والسلامة بالمنشأة.",
-        "source_record_id": "civil-defense-firefighting-rescue-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
       {
         "track_id": "civil_defense_regulation",
         "article_number": 1,

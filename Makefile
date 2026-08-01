@@ -429,7 +429,6 @@ export PYTHONPATH := src:$(PYTHONPATH)
         wildlife-trade-regulation-track-validate \
         zatca-statute-track-validate \
         arabian-horse-regulation-track-validate \
-        civil-defense-firefighting-rescue-regulation-track-validate \
         classification-societies-authorisation-regulation-track-validate \
         community-funds-rules-track-validate \
         competencies-contractors-program-rules-track-validate \
@@ -2373,9 +2372,6 @@ zatca-statute-track-validate:
 
 arabian-horse-regulation-track-validate:
 	$(PY) scripts/validate_arabian_horse_regulation_track.py
-
-civil-defense-firefighting-rescue-regulation-track-validate:
-	$(PY) scripts/validate_civil_defense_firefighting_rescue_regulation_track.py
 
 classification-societies-authorisation-regulation-track-validate:
 	$(PY) scripts/validate_classification_societies_authorisation_regulation_track.py

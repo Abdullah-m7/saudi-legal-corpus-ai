@@ -32,11 +32,14 @@ PIPELINE
 
 GATES (a document must pass ALL of them)
   G1  title is legal-document shaped and is not an amendment/draft
-  G2  not already covered by a live registry track. A similar TITLE is only a
-      suspicion; rejection requires that >= DUPLICATE_OVERLAP of the candidate's
-      own article text already exist in a built track. Saudi practice issues
-      legally distinct instruments under near-identical titles (an authority's
-      «تنظيم» vs its «لائحة التراخيص»), so title-only dedup hides real gaps.
+  G2  not already covered by a live registry track. The decision is made on
+      ARTICLE TEXT, matched by word shingles against every track in the unified
+      index -- titles are the weaker signal in both directions. >= 
+      DUPLICATE_OVERLAP is a duplicate; >= GRAY_BAND is refused as a possible
+      version difference needing human adjudication; below that the document is
+      distinct even if its title collides (Saudi practice issues legally
+      distinct instruments under near-identical titles: an authority's «تنظيم»
+      vs its «لائحة التراخيص»).
   G3  segmentation yields >= MIN_ARTICLES articles
   G4  no empty / near-empty article bodies
   G5  no site-navigation or masthead boilerplate leaked into any article
@@ -381,42 +384,78 @@ def registry_titles():
 # a gating sweep evaluates hundreds of pages against the same corpus.
 _FINGERPRINTS = None
 DUPLICATE_OVERLAP = 0.97
+# Fraction of an article's shingles that must already exist in a track for that
+# article to count as ingested there.
+ARTICLE_CONTAINMENT = 0.80
+# Overlap below DUPLICATE_OVERLAP but at or above this is neither clearly new
+# nor clearly a duplicate; such a document is refused rather than auto-built.
+GRAY_BAND = 0.35
+SHINGLE_WORDS = 8
+
+
+def shingles(text):
+    """Hashed 8-word shingles of an article, for order-preserving fuzzy matching."""
+    w = norm_ar(text).split()
+    if not w:
+        return frozenset()
+    if len(w) <= SHINGLE_WORDS:
+        return frozenset({hash(" ".join(w))})
+    return frozenset(hash(" ".join(w[i:i + SHINGLE_WORDS]))
+                     for i in range(len(w) - SHINGLE_WORDS + 1))
 
 
 def track_fingerprints():
-    """{track_id: {normalised article-text prefix, ...}} for every built track."""
+    """{track_id: {shingle, ...}} for every track already in the corpus.
+
+    Built from the unified LLM index rather than from sources/, because the
+    source artifacts do not share one schema: only the pipeline-produced tracks
+    keep an `articles` dict, so reading sources/ fingerprinted 113 of 548 tracks
+    and left the rest -- including the Companies Law, the Evidence Law and the
+    Personal Status Law -- invisible to the duplicate check. The unified index
+    holds every track's article text in one shape."""
     global _FINGERPRINTS
     if _FINGERPRINTS is None:
         _FINGERPRINTS = {}
-        pat = os.path.join(ROOT, "sources", "*", "official_source", "*.json")
-        for p in glob.glob(pat):
-            tid = os.path.relpath(p, os.path.join(ROOT, "sources")).split(os.sep)[0]
-            try:
-                arts = json.load(open(p, encoding="utf-8")).get("articles")
-            except (ValueError, OSError):
-                continue
-            if not isinstance(arts, dict):
-                continue
-            fp = {norm_ar(a.get("text", ""))[:300] for a in arts.values() if a.get("text")}
-            if fp:
-                _FINGERPRINTS.setdefault(tid, set()).update(fp)
+        path = os.path.join(ROOT, "data", "corpus_unified_index",
+                            "corpus_unified_llm_index.jsonl")
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                r = json.loads(line)
+                s = shingles(r.get("text_ar", ""))
+                if s:
+                    _FINGERPRINTS.setdefault(r["corpus"], set()).update(s)
     return _FINGERPRINTS
 
 
 def best_content_match(article_texts, exclude=None):
-    """(overlap_fraction, track_id) for the built track whose article texts best
-    cover `article_texts`. (0.0, None) when nothing is on disk to compare against.
+    """(overlap_fraction, track_id) for the built track that best already
+    contains `article_texts`. (0.0, None) when nothing is on disk to compare to.
 
-    `exclude` skips a track id -- needed when REBUILDING an existing track, which
-    would otherwise be reported as a perfect duplicate of itself."""
-    cand = {norm_ar(t)[:300] for t in article_texts if t}
-    if not cand:
+    An article counts as already ingested when ARTICLE_CONTAINMENT of its word
+    shingles appear in that track. Shingles, not a text prefix: the same article
+    is stored across the corpus with different leading matter -- the gazette
+    renders an inline heading («التعريفات: ...») that the corpus copy lacks, and
+    older tracks carry markdown emphasis and hard line breaks. A prefix
+    comparison reads those as a total mismatch, so a law the corpus already
+    holds (the Companies Law, the Evidence Law) scored 0% overlap and would
+    have been re-ingested under a second track id. Shingle containment is
+    insensitive to where the difference falls.
+
+    `exclude` skips a track id -- needed when REBUILDING an existing track,
+    which would otherwise be reported as a perfect duplicate of itself."""
+    cands = [shingles(t) for t in article_texts if t]
+    cands = [c for c in cands if c]
+    if not cands:
         return 0.0, None
     best = (0.0, None)
     for tid, fp in track_fingerprints().items():
         if tid == exclude:
             continue
-        ov = len(cand & fp) / len(cand)
+        hit = sum(1 for c in cands if len(c & fp) / len(c) >= ARTICLE_CONTAINMENT)
+        ov = hit / len(cands)
         if ov > best[0]:
             best = (ov, tid)
     return best
@@ -472,17 +511,26 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
             if rt and len(tt & rt) / max(1, min(len(tt), len(rt))) >= 0.75:
                 title_hit = tid
                 break
-    if title_hit:
-        overlap, match = best_content_match([a[2] for a in arts], exclude=exclude)
-        if overlap >= DUPLICATE_OVERLAP:
-            reasons.append("G2: already covered by registry track '%s' (%.0f%% of this "
-                           "document's article text is already ingested there)"
-                           % (match, overlap * 100))
-        else:
-            notes.append("G2-NOTE: title resembles registry track '%s', but only %.0f%% "
-                           "of the article text is already ingested (best content match: "
-                           "'%s') — treated as a DISTINCT instrument, not a duplicate"
-                           % (title_hit, overlap * 100, match or "none"))
+    # The content check runs ALWAYS, not only when the title collided: the title
+    # is the weaker signal in both directions.
+    overlap, match = best_content_match([a[2] for a in arts], exclude=exclude)
+    if overlap >= DUPLICATE_OVERLAP:
+        reasons.append("G2: already covered by registry track '%s' (%.0f%% of this "
+                       "document's articles are already ingested there)"
+                       % (match, overlap * 100))
+    elif overlap >= GRAY_BAND:
+        # Substantial but not total overlap. This is where a superseded edition,
+        # a partial re-issue, or a segmentation difference lives, and it is not
+        # safe to auto-build either way. Refuse and hand it to a human.
+        reasons.append("G2: %.0f%% of this document's articles already exist in track "
+                       "'%s' — substantial but not total overlap, so this is a possible "
+                       "version difference or partial duplicate and must be adjudicated "
+                       "by hand, not auto-built" % (overlap * 100, match))
+    elif title_hit:
+        notes.append("G2-NOTE: title resembles registry track '%s', but only %.0f%% "
+                     "of its articles are already ingested (best content match: '%s') "
+                     "— treated as a DISTINCT instrument, not a duplicate"
+                     % (title_hit, overlap * 100, match or "none"))
 
     # G3 — enough structure to be a track
     if diag["count"] < MIN_ARTICLES:
