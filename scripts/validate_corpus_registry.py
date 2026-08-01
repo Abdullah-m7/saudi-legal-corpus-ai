@@ -248,6 +248,68 @@ REQUIRED_TRACK_IDS = [
     "environmental_emergency_response",
     "product_safety_regulation",
     "handicrafts_law",
+    "medical_devices_law",
+    "public_transport_users_rights_mechanism",
+    "gcc_pesticides_regulation",
+    "military_industries_rnd_regulation",
+    "international_bus_transport_regulation",
+    "vehicle_periodic_inspection_regulation",
+    "health_specialties_membership_regulation",
+    "disability_social_programs_regulation",
+    "vehicle_damage_assessment_rules",
+    "tourist_accommodation_facilities_regulation",
+    "ngo_council_regulation",
+    "health_holding_company_statute",
+    "family_funds_rules",
+    "airports_economic_regulation",
+    "valuation_profession_conduct_rules",
+    "nazara_works_regulation",
+    "ballast_water_regulation",
+    "sez_kaec_regulation",
+    "sez_jazan_regulation",
+    "sez_raskhair_regulation",
+    "securities_offering_obligations_rules",
+    "charitable_societies_council_regulation",
+    "customs_procedures_controls",
+    "social_security_regulation",
+    "revenue_sharing_rules",
+    "freight_broker_logistics_regulation",
+    "property_ownership_committees_rules",
+    "disability_nongov_social_facilities_regulation",
+    "free_zone_employees_treatment_rules",
+    "inspection_control_seizure_rules",
+    "ip_services_licensing_rules",
+    "deposit_zones_rules",
+    "air_transport_services_economic_regulation",
+    "privatization_governing_rules",
+    "ground_handling_air_cargo_economic_regulation",
+    "museums_regulation",
+    "private_universities_regulation",
+    "gcc_road_transport_law",
+    "marpol_regulation",
+    "securities_disputes_rules",
+    "state_realestate_disposal_regulation",
+    "securities_depository_markets_regulation",
+    "capital_adequacy_rules",
+    "mergers_acquisitions_regulation",
+    "taxi_activity_regulation",
+    "zakat_tax_customs_committees_rules",
+    "official_communications_records_regulation",
+    "housing_support_regulation",
+    "special_purpose_entities_rules",
+    "medical_devices_regulation",
+    "financial_institutions_resolution_law",
+    "trade_remedies_law",
+    "trade_remedies_regulation",
+    "financial_fraud_law",
+    "state_property_lease_law",
+    "state_property_lease_regulation",
+    "job_discipline_law",
+    "statistics_law",
+    "anti_begging_law",
+    "security_cameras_law",
+    "antiquities_heritage_regulation",
+    "meteorology_law",
     "handicrafts_regulation",
     "donations_collection_regulation",
     "falcon_center_statute",
@@ -402,7 +464,7 @@ def main() -> int:
 
     # [3] 293 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 309 tracks present...", len(track_ids) == 309 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 371 tracks present...", len(track_ids) == 371 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3185,7 +3247,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 16138 records...", uix.get("total_records") == 16138,
+    check("[7g] unified retrieval index: 18993 records...", uix.get("total_records") == 18993,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3247,8 +3309,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 16307...",
-          registry.get("total_primary_arabic_governing_records") == 16307,
+    check("[19a] total_primary_arabic_governing_records == 19162...",
+          registry.get("total_primary_arabic_governing_records") == 19162,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3263,8 +3325,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 17202...",
-          registry.get("total_registry_counted_records") == 17202,
+    check("[19e] total_registry_counted_records == 20057...",
+          registry.get("total_registry_counted_records") == 20057,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3288,7 +3350,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"16307 + 614 + 281 = 17202")
+          f"19162 + 614 + 281 = 20057")
 
     check("[22] No total_known_records field (replaced)...",
           "total_known_records" not in registry,
@@ -3306,7 +3368,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 309 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 371 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "

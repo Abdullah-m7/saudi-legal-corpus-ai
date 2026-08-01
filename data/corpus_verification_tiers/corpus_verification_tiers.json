@@ -19,9 +19,9 @@
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE"
   ],
-  "total_tracks": 309,
+  "total_tracks": 371,
   "summary_by_tier": {
-    "TIER_1_PRIMARY_MULTI_SOURCE": 142,
+    "TIER_1_PRIMARY_MULTI_SOURCE": 204,
     "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED": 91,
     "TIER_3_SECONDARY_MULTI_SOURCE_ONLY": 39,
     "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE": 37
@@ -71,6 +71,20 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "air_transport_services_economic_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "airports_economic_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "alimony_fund_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -102,6 +116,13 @@
       "track_id": "aml_regulation",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='AML_GOV_SA_SCANNED_PDF_X_QANONIAH_COM_BORN_DIGITAL_API_RECONCILED_10_OF_25_ARTICLES_OCR_ADJUDICATED_15_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "anti_begging_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -197,6 +218,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "antiquities_heritage_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "arbitration_implementing_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -244,6 +272,13 @@
       "tier_rationale": "official_text_status='BOE_WAYBACK_SIX_SNAPSHOT_X_AWQAF_GOV_SCANNED_DECREE_X_NEZAMS_CROSS_VERIFIED_LIVE_BOE_UNREACHABLE': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول، واعتُمدت ست لقطات أرشيف Wayback Machine مستقلة لصفحة BOE نفسها (تمتد من 21 نوفمبر 2019 إلى 12 ديسمبر 2025) كمصدر أساسي، متطابقة حرفياً على 23 من 25 مادة عبر كل اللقطات، وقورنت بمصدر رسمي ثانٍ مستقل بذاته (نسخة ممسوحة ضوئياً للمرسوم الملكي الأصلي الموقّع من الملك سلمان، مستضافة على الموقع الرسمي لنفس الجهة المنظِّمة web.awqaf.gov.sa، قُرئت بصرياً إذ لا تحوي طبقة نص) ومصدر ثانوي (nezams.com). مصدران رسميان (BOE وweb.awqaf.gov.sa، نطاق .gov.sa منفصل فعلياً وليس نسخة من نفس محتوى BOE كحال FAOLEX في مسار nazaha_law) متقاربان، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين فأكثر متقاربين)، مماثل لنمط finance_companies_law (BOE عبر Wayback × bfc.gov.sa). راجع has_per_article_variation للمادتين 6 و21 اللتين تحملان تناقضاً مؤكَّداً (لا افتراضياً) بين سجل تعديلات BOE ونصه الرئيسي الراكد، مفصَّلاً في official_source.json الخاص بالمسار.",
       "has_per_article_variation": true,
       "per_article_variation_note": "23 مادة غير معدَّلة مصدرها مزدوج رسمي (ست لقطات Wayback لبوابة BOE × نسخة الأوقاف الممسوحة ضوئياً)، متطابقة دون فارق جوهري. أما المادة السادسة (تشكيل مجلس الإدارة) فتحمل تناقضاً مؤكَّداً غير محلول: سجل BOE يوثّق أربعة تعديلات (قرارات مجلس الوزراء 262/1438هـ، 618/1442هـ، 638/1442هـ، 651/1443هـ) بينما النص الرئيسي لبوابة BOE ظل ثابتاً دون تغيير عبر جميع اللقطات الست من 2019 إلى 2025، بل إن نص 'قبل التعديل' الموثّق في سجل BOE نفسه لا يطابق النص التاريخي الفعلي أيضاً — اعتُمد النص الرئيسي الراكد كما هو دون دمج افتراضي. أما المادة الحادية والعشرون (الرسوم) فتحمل تعديلاً واحداً واضحاً وموثَّقاً بالكامل (المرسوم الملكي م/72، 1444هـ) في سجل BOE، لم ينعكس بعد في النص الرئيسي رغم مرور أكثر من عامين — اعتُمد نص سجل التعديلات المقتبس كنص حالي، تماشياً مع سابقة accounting_auditing_law لهذا النمط تحديداً، وتأكَّد بتغطية صحفية مستقلة؛ راجع official_source.json الخاص بالمسار للتفاصيل الكاملة."
+    },
+    {
+      "track_id": "ballast_water_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
     },
     {
       "track_id": "banking_control_law",
@@ -330,6 +365,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "capital_adequacy_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "capital_market_law",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status='MIXED_TIER_SEE_PER_ARTICLE_VERIFICATION_TIER' — أعقد حالة في هذه المدونة: 55 من 68 سجلاً تحققت جيداً (نص 2003 الأصلي أو نص محدَّث مُستقى من موقع هيئة السوق المالية)، لكن 12 مادة (المحور الفعلي لإعادة الهيكلة بموجب م/16 لعام 2019) لم يتيسّر استرجاع صياغتها الحالية، فأُدرجت كنص تاريخي (2003) معلَّم صراحة بأنه ليس النص الساري؛ وسجل إضافي (المادة 20 مكرر) أُعيد بناؤه من وصف نصي لا من قراءة مباشرة. التصنيف هنا يعتمد الجزء الأضعف (الـ12 مادة + السجل المُعاد بناؤه).",
@@ -347,6 +389,13 @@
       "track_id": "chambers_of_commerce_regulation",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='MATCHES_UQN_GAZETTE_X_FSC_INDEPENDENT_CROSS_CHECK': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "charitable_societies_council_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -582,6 +631,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "customs_procedures_controls",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "customs_regulation",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_BOE_UNREACHABLE': نفس تصنيف نظام الجمارك الموحد (customs_law) — مصدر واحد فقط (نسخة ZATCA الرسمية المشتركة)، بوابة BOE متعذرة الوصول، دون أي تدقيق مقارن مستقل.",
@@ -610,6 +666,20 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "deposit_zones_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "disability_nongov_social_facilities_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "disability_rights_law",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='BOE_LAWID_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_PRIMARY_X_QANOONSA_CROSS_VERIFIED': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
@@ -620,6 +690,13 @@
       "track_id": "disability_rights_regulation",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='UQN_GOV_SA_PRIMARY_HTML_X_QANOONSA_ARTICLE_BY_ARTICLE_CROSSVERIFIED_BOE_SHARED_PAGE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "disability_social_programs_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -890,6 +967,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "family_funds_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "finance_companies_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='BOE_WAYBACK_PRIMARY_X_BFC_OCR_X_NEZAMS_CROSS_VERIFIED': بوابة هيئة الخبراء (BOE) الحية متعذرة الوصول (503 مباشرة، 422 عبر r.jina.ai)، لكن نسخة أرشيف Wayback Machine لصفحة BOE نفسها كانت متاحة وتُعامَل كمصدر أساسي، وقورنت برمجياً (فرق نصي مطبَّع) مع نسخة PDF الرسمية من bfc.gov.sa (نطاق حكومي .gov.sa آخر، حُوِّلت عبر OCR بسبب خط/cmap تالف في النسخة الأصلية) — مصدران رسميان (نطاقي .gov.sa) متقاربان دون أي فارق جوهري عبر الأربعين مادة الأصلية، وهو ما يطابق تعريف TIER_1 (مصدرين رسميين متقاربين). لكن نص تعديل 2024 (المرسوم الملكي م/272) نفسه لا يستند إلا إلى مصدر ثانوي واحد (qanoonsa.com) مقارَناً بمصدر ثانوي آخر (حواشي nezams.com) — دون أي تأكيد رسمي مباشر لنص هذا التعديل تحديداً؛ راجع has_per_article_variation لهذا التمايز.",
@@ -914,6 +998,20 @@
       "track_id": "finance_lease_regulation",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='TIER_2_SAMA_RULEBOOK_BORN_DIGITAL_HTML_X_DEDICATED_AMENDMENT_DECISION_NODE_X_ENGLISH_STRUCTURAL_CROSSCHECK': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "financial_fraud_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "financial_institutions_resolution_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -974,6 +1072,20 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "free_zone_employees_treatment_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "freight_broker_logistics_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "frequency_spectrum_regulation",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='CST_OFFICIAL_ARABIC_PDF_VISION_READ_X_ENGLISH_STRUCTURAL_CROSSCHECK_GENERAL_FRAMEWORK_ONLY_ANNEXES_EXCLUDED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1002,6 +1114,20 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "gcc_pesticides_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "gcc_road_transport_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "general_education_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='UQN_GOV_SA_PRIMARY_FULLTEXT_X_SPA_OFFICIAL_CORROBORATION_X_SABQ_STRUCTURAL_CROSSCHECK_BOE_NO_PAGE_YET_NOT_YET_IN_FORCE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1010,6 +1136,13 @@
     },
     {
       "track_id": "geographical_indications_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "ground_handling_air_cargo_economic_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
@@ -1045,6 +1178,20 @@
     },
     {
       "track_id": "handicrafts_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "health_holding_company_statute",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "health_specialties_membership_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
@@ -1100,6 +1247,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "housing_support_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "iflas_hudud_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1142,6 +1296,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "inspection_control_seizure_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "insurance_authority_statute",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='UQN_GAZETTE_PRIMARY_X_QANOONSA_BYTE_LEVEL_X_ARGAAM_QUOTE_LEVEL_CROSSVERIFIED_BOE_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1163,6 +1324,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "international_bus_transport_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "investment_implementing_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1173,6 +1341,20 @@
       "track_id": "investment_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='VERIFIED_TRANSCRIBED_FROM_OFFICIAL_MISA_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "ip_services_licensing_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "job_discipline_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1338,6 +1520,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "marpol_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "marriage_contract_hearing_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1359,6 +1548,20 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "medical_devices_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "medical_devices_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "medical_reports_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1369,6 +1572,27 @@
       "track_id": "mental_health_law",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='NEZAMS_X_SAUDIPEDIA_DUAL_SECONDARY_CROSSVERIFIED_BOE_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "mergers_acquisitions_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "meteorology_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "military_industries_rnd_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1415,6 +1639,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "museums_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "muslaha_regulation",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1443,6 +1674,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "nazara_works_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "nca_cybersecurity_violations_investigation_rules",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='TIER_1_UQN_GAZETTE_X_LIVE_NCA_GOV_SA_PRIMARY': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -1453,6 +1691,20 @@
       "track_id": "nca_cybersecurity_violations_reporting_rules",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='TIER_2_PRIMARY_DECISION_NUMBER_UNCONFIRMED_DISCLOSED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "ngo_council_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "official_communications_records_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1618,6 +1870,20 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "private_universities_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "privatization_governing_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "privatization_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_FULL_TEXT_X_MISA_GOV_SA_NCP_OFFICIAL_PDF_PARTIAL_VERBATIM_CONFIRMATION': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1646,6 +1912,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "property_ownership_committees_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "protection_from_abuse_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_MOF_OFFICIAL_REGULATIONS_LIBRARY_PDF_GOVERNING_TEXT_X_NEZAMS_COM_CROSSCHECK_X_UMM_AL_QURA_FOR_1443H_AMENDMENT': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1663,6 +1936,13 @@
       "track_id": "public_prosecution_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_SINGLE_WAYBACK_SNAPSHOT_X_NEZAMS_BYTE_MATCH_X_QANOONSA_M180_DIRECT_TEXT_CROSSVERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "public_transport_users_rights_mechanism",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1821,6 +2101,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "revenue_sharing_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "road_transport_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1856,9 +2143,58 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "securities_depository_markets_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "securities_disputes_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "securities_offering_obligations_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "security_cameras_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "seized_confiscated_funds_management_system",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED_NOT_YET_IN_FORCE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "sez_jazan_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "sez_kaec_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "sez_raskhair_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1919,6 +2255,20 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "social_security_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "special_purpose_entities_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "sports_law",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='BOE_AND_MOS_UNREACHABLE_WAYBACK_EGRESS_BLOCKED_X_NEZAMS_COM_PRIMARY_X_QANOONSA_COM_CROSSCHECK_X_UQN_GAZETTE_API_FOR_DECREE_IDENTITY': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
@@ -1947,6 +2297,27 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "state_property_lease_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "state_property_lease_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "state_realestate_disposal_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "state_revenue_law",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='BOE_WAYBACK_X_NEZAMS_X_QANOONSA_CROSS_VERIFIED': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -1957,6 +2328,13 @@
       "track_id": "state_revenue_regulation",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='MOF_OFFICIAL_PDF_DIRECT_FETCH_VISUALLY_PAGE_IMAGE_TRANSCRIBED_X_QANONIAH_API_PARTIAL_CROSSCHECK_ARTS_1_8_ONLY_TIER_2_BOE_NO_DEDICATED_PAGE_NCAR_GOV_SA_UNREACHABLE': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "statistics_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -1978,6 +2356,13 @@
       "track_id": "tawtheeq_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='MOJ_PORTAL_API_CROSS_CHECKED_OFFICIAL_PDF': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "taxi_activity_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -2031,6 +2416,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "tourist_accommodation_facilities_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "tourist_visa",
       "tier": "TIER_2_PRIMARY_SECONDARY_CROSS_VERIFIED",
       "tier_rationale": "official_text_status='MT_OFFICIAL_PDF_COVER_PAGE_CITATION_NO_SIGNED_LETTER_VISUALLY_READ': مصدر رسمي واحد، مدقَّق مقارنةً بمصادر ثانوية غير حكومية فقط.",
@@ -2048,6 +2440,20 @@
       "track_id": "trade_names_regulation",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='QANOONSA_TEXT_PRIMARY_X_WAYBACK_SNAPSHOT_CROSSCHECK_X_NDMLAW_INDEPENDENT_SECONDARY_VERBATIM_MATCH_X_MC_GOV_SA_METADATA_CONFIRMED_TIER3_BOE_NO_DEDICATED_PAGE_UQN_SPA_UNREACHABLE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "trade_remedies_law",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "trade_remedies_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -2108,6 +2514,13 @@
       "per_article_variation_note": ""
     },
     {
+      "track_id": "valuation_profession_conduct_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
       "track_id": "vat_law",
       "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
       "tier_rationale": "official_text_status='ZATCA_OFFICIAL_PDF_X_BOE_PORTAL_CROSS_VERIFIED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
@@ -2118,6 +2531,20 @@
       "track_id": "vat_regulation",
       "tier": "TIER_3_SECONDARY_MULTI_SOURCE_ONLY",
       "tier_rationale": "official_text_status='ZATCA_GOV_SA_OFFICIAL_CONSOLIDATED_PDF_TENTH_EDITION_2025_04_DUAL_PYMUPDF_GEOMETRIC_X_TESSERACT_OCR_RECONCILED_BOE_NO_DEDICATED_LAWID_PAGE': المصدر الرسمي الأساسي متعذّر الوصول؛ الاعتماد كليةً على مصدرين ثانويين مستقلين متطابقين.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "vehicle_damage_assessment_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "vehicle_periodic_inspection_regulation",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     },
@@ -2188,6 +2615,13 @@
       "track_id": "zakat_law",
       "tier": "TIER_4_SINGLE_SOURCE_OR_MIXED_CONFIDENCE",
       "tier_rationale": "official_text_status='ZATCA_PDF_PRIMARY_SINGLE_SOURCE_GAZETTE_SPOT_VERIFIED': بوابة هيئة الخبراء (BOE) تعذّر الوصول إليها عبر جولتي بحث وبناء منفصلتين (503 في كل مرة)؛ الصياغة الحرفية الكاملة للمواد الـ128 تستند إلى مصدر رسمي واحد فقط (نسخة PDF الرسمية من ZATCA)، وبوابة أم القرى (uqn.gov.sa) استُخدمت فقط للتحقق الموجَّه من حقيقتين محددتين (تاريخ القرار 1007 وعنوان المادة 13)، وليس كتدقيق حرفي كامل ثانٍ — أدنى من TIER_2 التي تتطلب تدقيقاً مقارناً شاملاً، وليس موضعياً فقط.",
+      "has_per_article_variation": false,
+      "per_article_variation_note": ""
+    },
+    {
+      "track_id": "zakat_tax_customs_committees_rules",
+      "tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
       "has_per_article_variation": false,
       "per_article_variation_note": ""
     }

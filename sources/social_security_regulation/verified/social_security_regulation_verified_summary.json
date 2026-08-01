@@ -1,0 +1,75 @@
+{
+  "law_key": "social_security_regulation",
+  "layer": "SOCIAL_SECURITY_REGULATION_ARABIC_VERIFIED_TEXT",
+  "record_count": 28,
+  "article_count": 28,
+  "appendix_count": 0,
+  "status_counts": {
+    "اصلية": 28,
+    "معدلة": 0,
+    "ملغاة": 0,
+    "مضافة": 0
+  },
+  "decree": "غير مذكور في مصدر الجريدة الرسمية",
+  "decree_date_hijri": "15/11/1442",
+  "gazette_publication_date_hijri": "15/11/1442",
+  "gazette_publication_date_gregorian": "2021-06-25",
+  "legal_basis_ar": " — منشورة في جريدة أم القرى بتاريخ 15/11/1442هـ الموافق 2021-06-25م.",
+  "base_law_track": "",
+  "legal_status_ar": "ساري",
+  "consolidated_amended_law": false,
+  "amendment_history": [],
+  "chapter_structure": [
+    {
+      "label_ar": "الفصل الأول",
+      "title_ar": "التعريفات",
+      "articles": "1"
+    },
+    {
+      "label_ar": "الفصل الثاني",
+      "title_ar": "تقديم طلب المعاش",
+      "articles": "2-21"
+    },
+    {
+      "label_ar": "الفصل الثالث",
+      "title_ar": "المستفيدون وشروط الاستحقاق",
+      "articles": "6-7"
+    },
+    {
+      "label_ar": "الفصل الرابع",
+      "title_ar": "تقدير الاستحقاق وآلية احتساب المعاش",
+      "articles": "8-14"
+    },
+    {
+      "label_ar": "الفصل السادس",
+      "title_ar": "صرف المعاش",
+      "articles": "23-25"
+    },
+    {
+      "label_ar": "الفصل السابع",
+      "title_ar": "ضوابط زيارة الباحث الاجتماعي المساكن",
+      "articles": "26"
+    },
+    {
+      "label_ar": "الفصل الثامن",
+      "title_ar": "أحكام عامة",
+      "articles": "27-29"
+    }
+  ],
+  "verification_methodology_note": "النص الكامل جُلب مباشرة من صفحة جريدة أم القرى الرسمية (uqn.gov.sa/details?p=17861). أُنتج هذا المسار عبر خط الإنتاج المؤتمت scripts/gazette_autoingest.py: تُشتق كل حقول المواصفة من الصفحة نفسها، ثم تمر الوثيقة على بطارية بوابات الجودة التسع (G1-G9) — ولا تُصدَر إلا إذا اجتازتها جميعاً. البنية: 28 مادة، أعلى رقم (29). المعرّف (track_id) مُسنَد يدوياً وليس مولَّداً آلياً، وهو حدّ تصميمي معلن في خط الإنتاج لأن المعرفات دائمة. **VERIFICATION TIER: TIER_1**. العربية هي النص الحاكم؛ لا ترجمة ولا تفسير ولا إعادة صياغة.",
+  "known_unresolved_discrepancies": [
+    {
+      "article_key": "social_security_regulation_source_is_gazette_html_only",
+      "description": "النص مأخوذ حصراً من صفحة جريدة أم القرى الرسمية (uqn.gov.sa/details?p=17861) المُصيَّرة من الخادم؛ لم يُعثر على نسخة PDF رسمية منفصلة للمقابلة، فالتحقق يستند إلى مصدر أساسي واحد هو نص الجريدة الرسمية المعتمد."
+    },
+    {
+      "article_key": "social_security_regulation_no_decision_number_in_source",
+      "description": "لم تتضمن صفحة الجريدة رقم قرار إصدار صريحاً مسبوقاً بصيغة إصدار (الصادرة بموجب/المعتمدة بـ)؛ المُثبَت المؤكد هو تاريخ النشر (15/11/1442هـ الموافق 2021-06-25م). لم يُخمَّن أي رقم، ولم تُستخدم أي إشارة إلى قرارات أخرى واردة في الديباجة لأنها مراجع لأنظمة أخرى لا قرار إصدار."
+    },
+    {
+      "article_key": "social_security_regulation_source_numbering_gap",
+      "description": "ترقيم المصدر يتخطى الرقم (22) بينما يستمر إلى المادة (29). اجتازت الفجوة بوابة السلامة G8: العدد الترتيبي غائب عن الوثيقة كلياً، والمادتان المجاورتان تنتهيان بعلامة وقف — أي لا نص مدموج ولا مبتور. يُفصح ولا يُخمَّن؛ الترقيم الأصلي محفوظ."
+    }
+  ],
+  "source_artifact": "sources/social_security_regulation/official_source/social_security_regulation_official_source.json"
+}

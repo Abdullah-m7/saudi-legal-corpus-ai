@@ -313,6 +313,68 @@ export PYTHONPATH := src:$(PYTHONPATH)
         environmental-emergency-response-reg-track-validate \
         product-safety-regulation-track-validate \
         handicrafts-law-track-validate \
+        medical-devices-law-track-validate \
+        public-transport-users-rights-mechanism-track-validate \
+        gcc-pesticides-regulation-track-validate \
+        military-industries-rnd-regulation-track-validate \
+        international-bus-transport-regulation-track-validate \
+        vehicle-periodic-inspection-regulation-track-validate \
+        health-specialties-membership-regulation-track-validate \
+        disability-social-programs-regulation-track-validate \
+        vehicle-damage-assessment-rules-track-validate \
+        tourist-accommodation-facilities-regulation-track-validate \
+        ngo-council-regulation-track-validate \
+        health-holding-company-statute-track-validate \
+        family-funds-rules-track-validate \
+        airports-economic-regulation-track-validate \
+        valuation-profession-conduct-rules-track-validate \
+        nazara-works-regulation-track-validate \
+        ballast-water-regulation-track-validate \
+        sez-kaec-regulation-track-validate \
+        sez-jazan-regulation-track-validate \
+        sez-raskhair-regulation-track-validate \
+        securities-offering-obligations-rules-track-validate \
+        charitable-societies-council-regulation-track-validate \
+        customs-procedures-controls-track-validate \
+        social-security-regulation-track-validate \
+        revenue-sharing-rules-track-validate \
+        freight-broker-logistics-regulation-track-validate \
+        property-ownership-committees-rules-track-validate \
+        disability-nongov-social-facilities-regulation-track-validate \
+        free-zone-employees-treatment-rules-track-validate \
+        inspection-control-seizure-rules-track-validate \
+        ip-services-licensing-rules-track-validate \
+        deposit-zones-rules-track-validate \
+        air-transport-services-economic-regulation-track-validate \
+        privatization-governing-rules-track-validate \
+        ground-handling-air-cargo-economic-regulation-track-validate \
+        museums-regulation-track-validate \
+        private-universities-regulation-track-validate \
+        gcc-road-transport-law-track-validate \
+        marpol-regulation-track-validate \
+        securities-disputes-rules-track-validate \
+        state-realestate-disposal-regulation-track-validate \
+        securities-depository-markets-regulation-track-validate \
+        capital-adequacy-rules-track-validate \
+        mergers-acquisitions-regulation-track-validate \
+        taxi-activity-regulation-track-validate \
+        zakat-tax-customs-committees-rules-track-validate \
+        official-communications-records-regulation-track-validate \
+        housing-support-regulation-track-validate \
+        special-purpose-entities-rules-track-validate \
+        medical-devices-regulation-track-validate \
+        financial-institutions-resolution-law-track-validate \
+        trade-remedies-law-track-validate \
+        trade-remedies-regulation-track-validate \
+        financial-fraud-law-track-validate \
+        state-property-lease-law-track-validate \
+        state-property-lease-regulation-track-validate \
+        job-discipline-law-track-validate \
+        statistics-law-track-validate \
+        anti-begging-law-track-validate \
+        security-cameras-law-track-validate \
+        antiquities-heritage-regulation-track-validate \
+        meteorology-law-track-validate \
         handicrafts-regulation-track-validate \
         donations-collection-regulation-track-validate \
         falcon-center-statute-track-validate \
@@ -1786,6 +1848,192 @@ product-safety-regulation-track-validate:
 
 handicrafts-law-track-validate:
 	$(PY) scripts/validate_handicrafts_law_track.py
+
+medical-devices-law-track-validate:
+	$(PY) scripts/validate_medical_devices_law_track.py
+
+public-transport-users-rights-mechanism-track-validate:
+	$(PY) scripts/validate_public_transport_users_rights_mechanism_track.py
+
+gcc-pesticides-regulation-track-validate:
+	$(PY) scripts/validate_gcc_pesticides_regulation_track.py
+
+military-industries-rnd-regulation-track-validate:
+	$(PY) scripts/validate_military_industries_rnd_regulation_track.py
+
+international-bus-transport-regulation-track-validate:
+	$(PY) scripts/validate_international_bus_transport_regulation_track.py
+
+vehicle-periodic-inspection-regulation-track-validate:
+	$(PY) scripts/validate_vehicle_periodic_inspection_regulation_track.py
+
+health-specialties-membership-regulation-track-validate:
+	$(PY) scripts/validate_health_specialties_membership_regulation_track.py
+
+disability-social-programs-regulation-track-validate:
+	$(PY) scripts/validate_disability_social_programs_regulation_track.py
+
+vehicle-damage-assessment-rules-track-validate:
+	$(PY) scripts/validate_vehicle_damage_assessment_rules_track.py
+
+tourist-accommodation-facilities-regulation-track-validate:
+	$(PY) scripts/validate_tourist_accommodation_facilities_regulation_track.py
+
+ngo-council-regulation-track-validate:
+	$(PY) scripts/validate_ngo_council_regulation_track.py
+
+health-holding-company-statute-track-validate:
+	$(PY) scripts/validate_health_holding_company_statute_track.py
+
+family-funds-rules-track-validate:
+	$(PY) scripts/validate_family_funds_rules_track.py
+
+airports-economic-regulation-track-validate:
+	$(PY) scripts/validate_airports_economic_regulation_track.py
+
+valuation-profession-conduct-rules-track-validate:
+	$(PY) scripts/validate_valuation_profession_conduct_rules_track.py
+
+nazara-works-regulation-track-validate:
+	$(PY) scripts/validate_nazara_works_regulation_track.py
+
+ballast-water-regulation-track-validate:
+	$(PY) scripts/validate_ballast_water_regulation_track.py
+
+sez-kaec-regulation-track-validate:
+	$(PY) scripts/validate_sez_kaec_regulation_track.py
+
+sez-jazan-regulation-track-validate:
+	$(PY) scripts/validate_sez_jazan_regulation_track.py
+
+sez-raskhair-regulation-track-validate:
+	$(PY) scripts/validate_sez_raskhair_regulation_track.py
+
+securities-offering-obligations-rules-track-validate:
+	$(PY) scripts/validate_securities_offering_obligations_rules_track.py
+
+charitable-societies-council-regulation-track-validate:
+	$(PY) scripts/validate_charitable_societies_council_regulation_track.py
+
+customs-procedures-controls-track-validate:
+	$(PY) scripts/validate_customs_procedures_controls_track.py
+
+social-security-regulation-track-validate:
+	$(PY) scripts/validate_social_security_regulation_track.py
+
+revenue-sharing-rules-track-validate:
+	$(PY) scripts/validate_revenue_sharing_rules_track.py
+
+freight-broker-logistics-regulation-track-validate:
+	$(PY) scripts/validate_freight_broker_logistics_regulation_track.py
+
+property-ownership-committees-rules-track-validate:
+	$(PY) scripts/validate_property_ownership_committees_rules_track.py
+
+disability-nongov-social-facilities-regulation-track-validate:
+	$(PY) scripts/validate_disability_nongov_social_facilities_regulation_track.py
+
+free-zone-employees-treatment-rules-track-validate:
+	$(PY) scripts/validate_free_zone_employees_treatment_rules_track.py
+
+inspection-control-seizure-rules-track-validate:
+	$(PY) scripts/validate_inspection_control_seizure_rules_track.py
+
+ip-services-licensing-rules-track-validate:
+	$(PY) scripts/validate_ip_services_licensing_rules_track.py
+
+deposit-zones-rules-track-validate:
+	$(PY) scripts/validate_deposit_zones_rules_track.py
+
+air-transport-services-economic-regulation-track-validate:
+	$(PY) scripts/validate_air_transport_services_economic_regulation_track.py
+
+privatization-governing-rules-track-validate:
+	$(PY) scripts/validate_privatization_governing_rules_track.py
+
+ground-handling-air-cargo-economic-regulation-track-validate:
+	$(PY) scripts/validate_ground_handling_air_cargo_economic_regulation_track.py
+
+museums-regulation-track-validate:
+	$(PY) scripts/validate_museums_regulation_track.py
+
+private-universities-regulation-track-validate:
+	$(PY) scripts/validate_private_universities_regulation_track.py
+
+gcc-road-transport-law-track-validate:
+	$(PY) scripts/validate_gcc_road_transport_law_track.py
+
+marpol-regulation-track-validate:
+	$(PY) scripts/validate_marpol_regulation_track.py
+
+securities-disputes-rules-track-validate:
+	$(PY) scripts/validate_securities_disputes_rules_track.py
+
+state-realestate-disposal-regulation-track-validate:
+	$(PY) scripts/validate_state_realestate_disposal_regulation_track.py
+
+securities-depository-markets-regulation-track-validate:
+	$(PY) scripts/validate_securities_depository_markets_regulation_track.py
+
+capital-adequacy-rules-track-validate:
+	$(PY) scripts/validate_capital_adequacy_rules_track.py
+
+mergers-acquisitions-regulation-track-validate:
+	$(PY) scripts/validate_mergers_acquisitions_regulation_track.py
+
+taxi-activity-regulation-track-validate:
+	$(PY) scripts/validate_taxi_activity_regulation_track.py
+
+zakat-tax-customs-committees-rules-track-validate:
+	$(PY) scripts/validate_zakat_tax_customs_committees_rules_track.py
+
+official-communications-records-regulation-track-validate:
+	$(PY) scripts/validate_official_communications_records_regulation_track.py
+
+housing-support-regulation-track-validate:
+	$(PY) scripts/validate_housing_support_regulation_track.py
+
+special-purpose-entities-rules-track-validate:
+	$(PY) scripts/validate_special_purpose_entities_rules_track.py
+
+medical-devices-regulation-track-validate:
+	$(PY) scripts/validate_medical_devices_regulation_track.py
+
+financial-institutions-resolution-law-track-validate:
+	$(PY) scripts/validate_financial_institutions_resolution_law_track.py
+
+trade-remedies-law-track-validate:
+	$(PY) scripts/validate_trade_remedies_law_track.py
+
+trade-remedies-regulation-track-validate:
+	$(PY) scripts/validate_trade_remedies_regulation_track.py
+
+financial-fraud-law-track-validate:
+	$(PY) scripts/validate_financial_fraud_law_track.py
+
+state-property-lease-law-track-validate:
+	$(PY) scripts/validate_state_property_lease_law_track.py
+
+state-property-lease-regulation-track-validate:
+	$(PY) scripts/validate_state_property_lease_regulation_track.py
+
+job-discipline-law-track-validate:
+	$(PY) scripts/validate_job_discipline_law_track.py
+
+statistics-law-track-validate:
+	$(PY) scripts/validate_statistics_law_track.py
+
+anti-begging-law-track-validate:
+	$(PY) scripts/validate_anti_begging_law_track.py
+
+security-cameras-law-track-validate:
+	$(PY) scripts/validate_security_cameras_law_track.py
+
+antiquities-heritage-regulation-track-validate:
+	$(PY) scripts/validate_antiquities_heritage_regulation_track.py
+
+meteorology-law-track-validate:
+	$(PY) scripts/validate_meteorology_law_track.py
 
 handicrafts-regulation-track-validate:
 	$(PY) scripts/validate_handicrafts_regulation_track.py

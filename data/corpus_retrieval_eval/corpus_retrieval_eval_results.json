@@ -4,17 +4,18 @@
  "queries_path": "data/corpus_retrieval_eval/corpus_retrieval_eval_queries.json",
  "top_k": 5,
  "metrics": {
-  "total_queries": 555,
-  "top1_hits": 517,
-  "top3_hits": 542,
-  "top5_hits": 549,
-  "top1_accuracy": 0.9315,
-  "top3_accuracy": 0.9766,
-  "top5_accuracy": 0.9892,
-  "mrr_at_5": 0.9554,
+  "total_queries": 679,
+  "top1_hits": 623,
+  "top3_hits": 664,
+  "top5_hits": 672,
+  "top1_accuracy": 0.9175,
+  "top3_accuracy": 0.9779,
+  "top5_accuracy": 0.9897,
+  "mrr_at_5": 0.9486,
   "misses_top5": [
    "civ-004",
    "pdp-010",
+   "gtp-003",
    "mtn-002",
    "dmz-001",
    "dmz-003",
@@ -476,13 +477,13 @@
      "score": 19
     },
     {
-     "record_id": "oa-llm-companies-art-002",
-     "article_number": 2,
+     "record_id": "sez-jazan-regulation-llm-020",
+     "article_number": 20,
      "score": 10
     },
     {
-     "record_id": "oa-llm-companies-art-005",
-     "article_number": 5,
+     "record_id": "sez-kaec-regulation-llm-021",
+     "article_number": 21,
      "score": 10
     }
    ]
@@ -879,14 +880,14 @@
      "score": 46
     },
     {
-     "record_id": "pdpl-law-llm-art-028",
-     "article_number": 28,
-     "score": 15
+     "record_id": "official-communications-records-regulation-llm-001",
+     "article_number": 1,
+     "score": 17
     },
     {
-     "record_id": "copyright-law-llm-art-004",
-     "article_number": 4,
-     "score": 10
+     "record_id": "official-communications-records-regulation-llm-057",
+     "article_number": 57,
+     "score": 16
     }
    ]
   },
@@ -1333,25 +1334,25 @@
     "law_component": "law",
     "article_number": 42
    },
-   "gold_rank": 5,
+   "gold_rank": null,
    "hit_top1": false,
    "hit_top3": false,
-   "hit_top5": true,
+   "hit_top5": false,
    "top_hits": [
+    {
+     "record_id": "state-realestate-disposal-regulation-llm-040",
+     "article_number": 40,
+     "score": 19
+    },
+    {
+     "record_id": "state-realestate-disposal-regulation-llm-038",
+     "article_number": 38,
+     "score": 16
+    },
     {
      "record_id": "oa-llm-companies-art-015",
      "article_number": 15,
      "score": 16
-    },
-    {
-     "record_id": "gtpl-law-llm-art-061",
-     "article_number": 61,
-     "score": 14
-    },
-    {
-     "record_id": "gtpl-reg-llm-art-070",
-     "article_number": 70,
-     "score": 13
     }
    ]
   },
@@ -1364,11 +1365,16 @@
     "law_component": "law",
     "article_number": 72
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "revenue-sharing-rules-llm-015",
+     "article_number": 15,
+     "score": 13
+    },
     {
      "record_id": "gtpl-law-llm-art-072",
      "article_number": 72,
@@ -1378,11 +1384,6 @@
      "record_id": "privatization-law-llm-art-027",
      "article_number": 27,
      "score": 12
-    },
-    {
-     "record_id": "gtpl-reg-llm-art-124",
-     "article_number": 124,
-     "score": 11
     }
    ]
   },
@@ -1814,9 +1815,9 @@
      "score": 21
     },
     {
-     "record_id": "accounting-auditing-law-llm-art-008",
-     "article_number": 8,
-     "score": 15
+     "record_id": "ballast-water-regulation-llm-021",
+     "article_number": 21,
+     "score": 16
     }
    ]
   },
@@ -1871,14 +1872,14 @@
      "score": 24
     },
     {
-     "record_id": "labor-annex2-llm-table-8",
-     "article_number": 8,
-     "score": 18
+     "record_id": "disability-nongov-social-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 20
     },
     {
-     "record_id": "labor-annex2-llm-table-7",
-     "article_number": 7,
-     "score": 16
+     "record_id": "disability-nongov-social-facilities-regulation-llm-006",
+     "article_number": 6,
+     "score": 20
     }
    ]
   },
@@ -2527,9 +2528,9 @@
      "score": 16
     },
     {
-     "record_id": "evidence-law-llm-art-111",
-     "article_number": 111,
-     "score": 11
+     "record_id": "securities-disputes-rules-llm-027",
+     "article_number": 27,
+     "score": 14
     }
    ]
   },
@@ -3209,8 +3210,8 @@
      "score": 20
     },
     {
-     "record_id": "domestic-labor-regulation-llm-art-005",
-     "article_number": 5,
+     "record_id": "marpol-regulation-llm-095",
+     "article_number": 95,
      "score": 19
     }
    ]
@@ -4165,14 +4166,14 @@
      "score": 37
     },
     {
+     "record_id": "securities-disputes-rules-llm-001",
+     "article_number": 1,
+     "score": 19
+    },
+    {
      "record_id": "pdpl-reg-llm-art-004",
      "article_number": 4,
      "score": 18
-    },
-    {
-     "record_id": "civil-service-regulation-llm-art-176",
-     "article_number": 176,
-     "score": 17
     }
    ]
   },
@@ -4759,9 +4760,9 @@
      "score": 15
     },
     {
-     "record_id": "gcc-ownership-llm-art-003",
-     "article_number": 3,
-     "score": 12
+     "record_id": "property-ownership-committees-rules-llm-007",
+     "article_number": 7,
+     "score": 13
     }
    ]
   },
@@ -4852,9 +4853,9 @@
      "score": 29
     },
     {
-     "record_id": "customs-regulation-llm-art-012",
-     "article_number": 11,
-     "score": 25
+     "record_id": "gcc-road-transport-law-llm-001",
+     "article_number": 1,
+     "score": 29
     }
    ]
   },
@@ -4971,13 +4972,13 @@
      "score": 33
     },
     {
-     "record_id": "osh-service-providers-regulation-llm-art-027",
-     "article_number": 27,
+     "record_id": "marpol-regulation-llm-087",
+     "article_number": 87,
      "score": 15
     },
     {
-     "record_id": "state-revenue-regulation-llm-art-037",
-     "article_number": 37,
+     "record_id": "osh-service-providers-regulation-llm-art-027",
+     "article_number": 27,
      "score": 15
     }
    ]
@@ -5281,13 +5282,13 @@
      "score": 39
     },
     {
-     "record_id": "food-regulation-llm-art-021",
-     "article_number": 21,
-     "score": 20
+     "record_id": "valuation-profession-conduct-rules-llm-023",
+     "article_number": 23,
+     "score": 33
     },
     {
-     "record_id": "press-regulation-llm-art-076",
-     "article_number": 76,
+     "record_id": "food-regulation-llm-art-021",
+     "article_number": 21,
      "score": 20
     }
    ]
@@ -5343,14 +5344,14 @@
      "score": 33
     },
     {
-     "record_id": "credit-information-regulation-llm-art-016",
-     "article_number": 16,
-     "score": 20
+     "record_id": "securities-offering-obligations-rules-llm-103",
+     "article_number": 103,
+     "score": 22
     },
     {
-     "record_id": "associations-ngo-regulation-llm-art-051",
-     "article_number": 51,
-     "score": 20
+     "record_id": "securities-disputes-rules-llm-062",
+     "article_number": 62,
+     "score": 21
     }
    ]
   },
@@ -5839,14 +5840,14 @@
      "score": 37
     },
     {
-     "record_id": "protection-from-abuse-regulation-llm-art-008",
-     "article_number": 8,
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
      "score": 19
     },
     {
-     "record_id": "judiciary-bog-mechanism-llm-art-009",
-     "article_number": 9,
-     "score": 18
+     "record_id": "protection-from-abuse-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 19
     }
    ]
   },
@@ -6247,8 +6248,8 @@
      "score": 27
     },
     {
-     "record_id": "insurance-disputes-committees-rules-llm-046",
-     "article_number": 46,
+     "record_id": "property-ownership-committees-rules-llm-007",
+     "article_number": 7,
      "score": 16
     }
    ]
@@ -7208,8 +7209,8 @@
      "score": 37
     },
     {
-     "record_id": "evidence-law-llm-art-128",
-     "article_number": 128,
+     "record_id": "statistics-law-llm-021",
+     "article_number": 21,
      "score": 33
     }
    ]
@@ -7270,8 +7271,8 @@
      "score": 25
     },
     {
-     "record_id": "oa-llm-companies-art-272",
-     "article_number": 272,
+     "record_id": "charitable-societies-council-regulation-llm-018",
+     "article_number": 18,
      "score": 23
     }
    ]
@@ -7327,14 +7328,14 @@
      "score": 40
     },
     {
+     "record_id": "securities-offering-obligations-rules-llm-103",
+     "article_number": 103,
+     "score": 28
+    },
+    {
      "record_id": "capital-market-law-llm-art-055",
      "article_number": 55,
      "score": 25
-    },
-    {
-     "record_id": "capital-market-law-llm-art-001",
-     "article_number": 1,
-     "score": 23
     }
    ]
   },
@@ -7394,8 +7395,8 @@
      "score": 21
     },
     {
-     "record_id": "press-regulation-llm-art-066",
-     "article_number": 66,
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
      "score": 14
     }
    ]
@@ -7611,9 +7612,9 @@
      "score": 21
     },
     {
-     "record_id": "press-regulation-llm-art-022",
-     "article_number": 22,
-     "score": 17
+     "record_id": "trade-remedies-regulation-llm-002",
+     "article_number": 2,
+     "score": 18
     }
    ]
   },
@@ -7626,25 +7627,25 @@
     "law_component": "law",
     "article_number": 42
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 3,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
     {
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
+     "score": 24
+    },
+    {
+     "record_id": "gcc-road-transport-law-llm-001",
+     "article_number": 1,
+     "score": 22
+    },
+    {
      "record_id": "trademark-law-llm-art-042",
      "article_number": 42,
      "score": 21
-    },
-    {
-     "record_id": "gcc-anti-dumping-law-llm-art-002",
-     "article_number": 2,
-     "score": 19
-    },
-    {
-     "record_id": "gcc-anti-dumping-law-llm-art-013",
-     "article_number": 13,
-     "score": 18
     }
    ]
   },
@@ -8133,13 +8134,13 @@
      "score": 37
     },
     {
-     "record_id": "traffic-law-llm-art-024",
-     "article_number": 24,
-     "score": 16
+     "record_id": "vehicle-periodic-inspection-regulation-llm-004",
+     "article_number": 4,
+     "score": 26
     },
     {
-     "record_id": "aml-regulation-llm-art-024",
-     "article_number": 48,
+     "record_id": "traffic-law-llm-art-024",
+     "article_number": 24,
      "score": 16
     }
    ]
@@ -8262,8 +8263,8 @@
      "score": 24
     },
     {
-     "record_id": "oa-llm-companies-art-256",
-     "article_number": 256,
+     "record_id": "trade-remedies-law-llm-001",
+     "article_number": 1,
      "score": 19
     }
    ]
@@ -8505,13 +8506,13 @@
      "score": 28
     },
     {
-     "record_id": "saudi-engineers-law-llm-art-009",
-     "article_number": 9,
+     "record_id": "international-bus-transport-regulation-llm-030",
+     "article_number": 30,
      "score": 19
     },
     {
-     "record_id": "waste-management-law-llm-art-038",
-     "article_number": 38,
+     "record_id": "saudi-engineers-law-llm-art-009",
+     "article_number": 9,
      "score": 19
     }
    ]
@@ -8975,8 +8976,8 @@
      "score": 16
     },
     {
-     "record_id": "domestic-labor-regulation-llm-art-008",
-     "article_number": 8,
+     "record_id": "ballast-water-regulation-llm-001",
+     "article_number": 1,
      "score": 15
     }
    ]
@@ -9063,14 +9064,14 @@
      "score": 24
     },
     {
-     "record_id": "oa-llm-companies-art-256",
-     "article_number": 256,
-     "score": 18
+     "record_id": "trade-remedies-regulation-llm-026",
+     "article_number": 26,
+     "score": 24
     },
     {
-     "record_id": "capital-market-law-llm-art-062",
-     "article_number": 62,
-     "score": 17
+     "record_id": "trade-remedies-law-llm-001",
+     "article_number": 1,
+     "score": 20
     }
    ]
   },
@@ -9192,9 +9193,9 @@
      "score": 18
     },
     {
-     "record_id": "anti-cyber-crime-law-llm-art-015",
-     "article_number": 15,
-     "score": 16
+     "record_id": "gcc-road-transport-law-llm-023",
+     "article_number": 23,
+     "score": 17
     }
    ]
   },
@@ -9378,8 +9379,8 @@
      "score": 22
     },
     {
-     "record_id": "oa-llm-companies-art-071",
-     "article_number": 71,
+     "record_id": "military-industries-rnd-regulation-llm-016",
+     "article_number": 16,
      "score": 20
     }
    ]
@@ -9869,14 +9870,14 @@
      "score": 36
     },
     {
-     "record_id": "environmental-protected-areas-reg-llm-011",
-     "article_number": 1,
-     "score": 15
+     "record_id": "sez-jazan-regulation-llm-028",
+     "article_number": 28,
+     "score": 18
     },
     {
-     "record_id": "environmental-violations-penalties-reg-llm-004",
-     "article_number": 4,
-     "score": 14
+     "record_id": "sez-kaec-regulation-llm-029",
+     "article_number": 29,
+     "score": 18
     }
    ]
   },
@@ -10365,14 +10366,14 @@
      "score": 29
     },
     {
-     "record_id": "seized-confiscated-funds-management-system-llm-art-001",
-     "article_number": 1,
+     "record_id": "ballast-water-regulation-llm-022",
+     "article_number": 22,
      "score": 18
     },
     {
-     "record_id": "awqaf-law-llm-art-025",
-     "article_number": 25,
-     "score": 17
+     "record_id": "seized-confiscated-funds-management-system-llm-art-001",
+     "article_number": 1,
+     "score": 18
     }
    ]
   },
@@ -10458,14 +10459,14 @@
      "score": 43
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
+     "record_id": "ballast-water-regulation-llm-014",
+     "article_number": 14,
      "score": 24
     },
     {
-     "record_id": "oa-llm-companies-art-272",
-     "article_number": 272,
-     "score": 22
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 24
     }
    ]
   },
@@ -10551,14 +10552,14 @@
      "score": 34
     },
     {
-     "record_id": "customs-law-llm-art-074",
-     "article_number": 69,
-     "score": 17
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
+     "score": 20
     },
     {
-     "record_id": "customs-law-llm-art-187",
-     "article_number": 178,
-     "score": 16
+     "record_id": "gcc-road-transport-law-llm-001",
+     "article_number": 1,
+     "score": 18
     }
    ]
   },
@@ -10804,9 +10805,9 @@
      "score": 17
     },
     {
-     "record_id": "aml-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 15
+     "record_id": "capital-adequacy-rules-llm-085",
+     "article_number": 85,
+     "score": 16
     }
    ]
   },
@@ -10866,8 +10867,8 @@
      "score": 24
     },
     {
-     "record_id": "inv-reg-llm-art-016",
-     "article_number": 16,
+     "record_id": "securities-disputes-rules-llm-054",
+     "article_number": 54,
      "score": 24
     }
    ]
@@ -11238,8 +11239,8 @@
      "score": 16
     },
     {
-     "record_id": "pdpl-reg-llm-art-037",
-     "article_number": 37,
+     "record_id": "air-transport-services-economic-regulation-llm-025",
+     "article_number": 25,
      "score": 14
     }
    ]
@@ -11264,14 +11265,14 @@
      "score": 46
     },
     {
-     "record_id": "water-regulation-llm-art-001",
+     "record_id": "marpol-regulation-llm-001",
      "article_number": 1,
-     "score": 23
+     "score": 25
     },
     {
-     "record_id": "water-regulation-llm-art-003",
-     "article_number": 3,
-     "score": 23
+     "record_id": "marpol-regulation-llm-071",
+     "article_number": 71,
+     "score": 24
     }
    ]
   },
@@ -11424,9 +11425,9 @@
      "score": 25
     },
     {
-     "record_id": "aml-regulation-llm-art-004",
-     "article_number": 7,
-     "score": 22
+     "record_id": "marpol-regulation-llm-001",
+     "article_number": 1,
+     "score": 23
     }
    ]
   },
@@ -11517,9 +11518,9 @@
      "score": 25
     },
     {
-     "record_id": "etec-law-llm-art-007",
-     "article_number": 7,
-     "score": 24
+     "record_id": "private-universities-regulation-llm-025",
+     "article_number": 25,
+     "score": 25
     }
    ]
   },
@@ -11594,11 +11595,16 @@
     "law_component": "law",
     "article_number": 20
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "housing-support-regulation-llm-039",
+     "article_number": 39,
+     "score": 28
+    },
     {
      "record_id": "privatization-law-llm-art-020",
      "article_number": 20,
@@ -11608,11 +11614,6 @@
      "record_id": "privatization-law-llm-art-007",
      "article_number": 7,
      "score": 27
-    },
-    {
-     "record_id": "seized-confiscated-funds-management-system-llm-art-011",
-     "article_number": 11,
-     "score": 23
     }
    ]
   },
@@ -11636,13 +11637,13 @@
      "score": 36
     },
     {
-     "record_id": "oa-llm-companies-art-235",
-     "article_number": 235,
-     "score": 22
+     "record_id": "antiquities-heritage-regulation-llm-012",
+     "article_number": 12,
+     "score": 30
     },
     {
-     "record_id": "oa-llm-companies-art-272",
-     "article_number": 272,
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
      "score": 22
     }
    ]
@@ -11672,8 +11673,8 @@
      "score": 47
     },
     {
-     "record_id": "evidence-law-llm-art-128",
-     "article_number": 128,
+     "record_id": "statistics-law-llm-021",
+     "article_number": 21,
      "score": 45
     }
    ]
@@ -12039,14 +12040,14 @@
      "score": 36
     },
     {
+     "record_id": "state-property-lease-law-llm-001",
+     "article_number": 1,
+     "score": 24
+    },
+    {
      "record_id": "anti-smoking-law-llm-art-007",
      "article_number": 7,
      "score": 23
-    },
-    {
-     "record_id": "gtpl-law-llm-art-001",
-     "article_number": 1,
-     "score": 20
     }
    ]
   },
@@ -12509,9 +12510,9 @@
      "score": 36
     },
     {
-     "record_id": "pdpl-reg-llm-art-006",
-     "article_number": 6,
-     "score": 33
+     "record_id": "disability-nongov-social-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 35
     }
    ]
   },
@@ -12535,14 +12536,14 @@
      "score": 56
     },
     {
-     "record_id": "petroleum-petrochemical-materials-law-llm-art-013",
+     "record_id": "disability-social-programs-regulation-llm-013",
      "article_number": 13,
-     "score": 23
+     "score": 26
     },
     {
-     "record_id": "disability-rights-law-llm-art-001",
-     "article_number": 1,
-     "score": 22
+     "record_id": "disability-nongov-social-facilities-regulation-llm-020",
+     "article_number": 20,
+     "score": 25
     }
    ]
   },
@@ -12597,14 +12598,14 @@
      "score": 46
     },
     {
+     "record_id": "statistics-law-llm-017",
+     "article_number": 17,
+     "score": 38
+    },
+    {
      "record_id": "real-estate-contributions-law-llm-art-033",
      "article_number": 33,
      "score": 35
-    },
-    {
-     "record_id": "energy-supplies-system-llm-art-009",
-     "article_number": 9,
-     "score": 32
     }
    ]
   },
@@ -12721,14 +12722,14 @@
      "score": 44
     },
     {
-     "record_id": "insurance-control-law-llm-art-002",
-     "article_number": 2,
-     "score": 27
+     "record_id": "disability-nongov-social-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 32
     },
     {
-     "record_id": "disability-rights-law-llm-art-009",
-     "article_number": 9,
-     "score": 26
+     "record_id": "disability-nongov-social-facilities-regulation-llm-006",
+     "article_number": 6,
+     "score": 32
     }
    ]
   },
@@ -13005,9 +13006,9 @@
      "score": 25
     },
     {
-     "record_id": "civil-service-regulation-llm-art-186",
-     "article_number": 186,
-     "score": 17
+     "record_id": "securities-offering-obligations-rules-llm-103",
+     "article_number": 103,
+     "score": 19
     }
    ]
   },
@@ -13036,8 +13037,8 @@
      "score": 10
     },
     {
-     "record_id": "state-revenue-law-llm-art-013",
-     "article_number": 13,
+     "record_id": "state-realestate-disposal-regulation-llm-033",
+     "article_number": 33,
      "score": 10
     }
    ]
@@ -13082,11 +13083,16 @@
     "law_component": "law",
     "article_number": 9
    },
-   "gold_rank": 1,
-   "hit_top1": true,
+   "gold_rank": 2,
+   "hit_top1": false,
    "hit_top3": true,
    "hit_top5": true,
    "top_hits": [
+    {
+     "record_id": "military-industries-rnd-regulation-llm-016",
+     "article_number": 16,
+     "score": 37
+    },
     {
      "record_id": "etec-law-llm-art-009",
      "article_number": 9,
@@ -13095,11 +13101,6 @@
     {
      "record_id": "falcon-center-statute-llm-007",
      "article_number": 7,
-     "score": 28
-    },
-    {
-     "record_id": "sama-law-llm-art-011",
-     "article_number": 11,
      "score": 28
     }
    ]
@@ -13310,14 +13311,14 @@
      "score": 39
     },
     {
-     "record_id": "trade-names-law-llm-art-007",
-     "article_number": 7,
-     "score": 20
+     "record_id": "sez-jazan-regulation-llm-023",
+     "article_number": 23,
+     "score": 24
     },
     {
-     "record_id": "gaca-organizational-statute-llm-art-001",
-     "article_number": 1,
-     "score": 19
+     "record_id": "sez-kaec-regulation-llm-024",
+     "article_number": 24,
+     "score": 24
     }
    ]
   },
@@ -13682,14 +13683,14 @@
      "score": 33
     },
     {
-     "record_id": "oa-llm-companies-art-049",
-     "article_number": 49,
+     "record_id": "state-realestate-disposal-regulation-llm-051",
+     "article_number": 51,
      "score": 20
     },
     {
-     "record_id": "tourism-law-llm-art-015",
-     "article_number": 15,
-     "score": 19
+     "record_id": "state-realestate-disposal-regulation-llm-021",
+     "article_number": 21,
+     "score": 20
     }
    ]
   },
@@ -14271,13 +14272,13 @@
      "score": 22
     },
     {
-     "record_id": "civil-service-regulation-llm-art-208",
-     "article_number": 208,
+     "record_id": "taxi-activity-regulation-llm-027",
+     "article_number": 27,
      "score": 17
     },
     {
-     "record_id": "travel-documents-regulation-llm-art-028",
-     "article_number": 28,
+     "record_id": "civil-service-regulation-llm-art-208",
+     "article_number": 208,
      "score": 17
     }
    ]
@@ -14395,14 +14396,14 @@
      "score": 23
     },
     {
+     "record_id": "air-transport-services-economic-regulation-llm-001",
+     "article_number": 1,
+     "score": 17
+    },
+    {
      "record_id": "oa-llm-companies-art-130",
      "article_number": 130,
      "score": 16
-    },
-    {
-     "record_id": "aml-regulation-llm-art-001",
-     "article_number": 1,
-     "score": 15
     }
    ]
   },
@@ -14741,8 +14742,8 @@
      "score": 26
     },
     {
-     "record_id": "labor-reg-llm-art-014",
-     "article_number": 14,
+     "record_id": "securities-offering-obligations-rules-llm-103",
+     "article_number": 103,
      "score": 21
     }
    ]
@@ -15082,8 +15083,8 @@
      "score": 28
     },
     {
-     "record_id": "white-land-fees-law-llm-art-009",
-     "article_number": 9,
+     "record_id": "disability-nongov-social-facilities-regulation-llm-016",
+     "article_number": 16,
      "score": 23
     }
    ]
@@ -15144,8 +15145,8 @@
      "score": 18
     },
     {
-     "record_id": "real-estate-expropriation-law-llm-art-027",
-     "article_number": 27,
+     "record_id": "sez-kaec-regulation-llm-004",
+     "article_number": 4,
      "score": 16
     }
    ]
@@ -15418,14 +15419,14 @@
      "score": 64
     },
     {
-     "record_id": "offplan-sale-law-llm-art-025",
-     "article_number": 25,
+     "record_id": "marpol-regulation-llm-075",
+     "article_number": 75,
      "score": 37
     },
     {
-     "record_id": "pdpl-reg-llm-art-006",
-     "article_number": 6,
-     "score": 34
+     "record_id": "offplan-sale-law-llm-art-025",
+     "article_number": 25,
+     "score": 37
     }
    ]
   },
@@ -15454,7 +15455,7 @@
      "score": 23
     },
     {
-     "record_id": "labor-annex3-llm-art-001",
+     "record_id": "military-industries-rnd-regulation-llm-001",
      "article_number": 1,
      "score": 23
     }
@@ -15511,14 +15512,14 @@
      "score": 46
     },
     {
+     "record_id": "state-realestate-disposal-regulation-llm-021",
+     "article_number": 21,
+     "score": 25
+    },
+    {
      "record_id": "landlord-tenant-relationship-regulation-llm-art-003",
      "article_number": 3,
      "score": 22
-    },
-    {
-     "record_id": "landlord-tenant-relationship-regulation-llm-art-004",
-     "article_number": 4,
-     "score": 21
     }
    ]
   },
@@ -15950,9 +15951,9 @@
      "score": 42
     },
     {
-     "record_id": "road-transport-law-llm-art-008",
-     "article_number": 8,
-     "score": 28
+     "record_id": "public-transport-users-rights-mechanism-llm-002",
+     "article_number": 2,
+     "score": 32
     }
    ]
   },
@@ -16100,14 +16101,14 @@
      "score": 46
     },
     {
-     "record_id": "competition-regulation-llm-art-003",
-     "article_number": 3,
-     "score": 25
+     "record_id": "air-transport-services-economic-regulation-llm-001",
+     "article_number": 1,
+     "score": 34
     },
     {
-     "record_id": "income-tax-regulation-llm-art-010",
-     "article_number": 10,
-     "score": 23
+     "record_id": "air-transport-services-economic-regulation-llm-022",
+     "article_number": 22,
+     "score": 32
     }
    ]
   },
@@ -16720,13 +16721,13 @@
      "score": 39
     },
     {
-     "record_id": "falcon-center-statute-llm-008",
-     "article_number": 8,
-     "score": 16
+     "record_id": "securities-offering-obligations-rules-llm-103",
+     "article_number": 103,
+     "score": 17
     },
     {
-     "record_id": "capital-market-law-llm-art-011",
-     "article_number": 11,
+     "record_id": "falcon-center-statute-llm-008",
+     "article_number": 8,
      "score": 16
     }
    ]
@@ -17092,14 +17093,14 @@
      "score": 53
     },
     {
-     "record_id": "waqf-investment-products-regulation-llm-001",
-     "article_number": 1,
+     "record_id": "securities-offering-obligations-rules-llm-103",
+     "article_number": 103,
      "score": 25
     },
     {
-     "record_id": "waqf-investment-products-regulation-llm-029",
-     "article_number": 29,
-     "score": 24
+     "record_id": "waqf-investment-products-regulation-llm-001",
+     "article_number": 1,
+     "score": 25
     }
    ]
   },
@@ -17154,14 +17155,14 @@
      "score": 53
     },
     {
+     "record_id": "zakat-tax-customs-committees-rules-llm-021",
+     "article_number": 21,
+     "score": 40
+    },
+    {
      "record_id": "commercial-courts-law-llm-art-032",
      "article_number": 32,
      "score": 22
-    },
-    {
-     "record_id": "agriculture-regulation-llm-art-204",
-     "article_number": 204,
-     "score": 21
     }
    ]
   },
@@ -17224,6 +17225,3850 @@
      "record_id": "oa-llm-companies-art-199",
      "article_number": 199,
      "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "meddev-law-001",
+   "query_ar": "تخضع لأحكام النظام الأنشطة الآتية: 1- تصميم الأجهزة والمستلزمات الطبية، وتصنيعها. 2- استيراد الأجهزة والمستلزمات الطبية، وتسويقها، وتوزيعها، وتخزينها. 3- تقديم خدمات التحقق من مطابقة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "medical_devices_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "medical-devices-law-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-002",
+     "article_number": 2,
+     "score": 53
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-010",
+     "article_number": 10,
+     "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "meddev-law-002",
+   "query_ar": "لا تجوز إقامة حملات توعية أو حملات خيرية أو ما في حكمهما متعلقة بالأجهزة والمستلزمات الطبية، إلا بعد موافقة الهيئة ووفقا للشروط التي تحددها",
+   "category": "provision",
+   "gold": {
+    "corpus": "medical_devices_law",
+    "law_component": "law",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "medical-devices-law-llm-025",
+     "article_number": 25,
+     "score": 56
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-025",
+     "article_number": 25,
+     "score": 52
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-024",
+     "article_number": 24,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "meddev-reg-001",
+   "query_ar": "تخضع لأحكام النظام الأنشطة التالية: 1- تصميم الأجهزة والمستلزمات الطبية، وتصنيعها. 2- استيراد الأجهزة والمستلزمات الطبية، وتسويقها، وتوزيعها، وتخزينها. 3 - تقديم خدمات التحقق من مطابقة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "medical_devices_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "medical-devices-regulation-llm-002",
+     "article_number": 2,
+     "score": 58
+    },
+    {
+     "record_id": "medical-devices-law-llm-002",
+     "article_number": 2,
+     "score": 53
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-010",
+     "article_number": 10,
+     "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "meddev-reg-002",
+   "query_ar": "لا تجوز إقامة حملات توعية أو حملات خيرية أو ما في حكمهما متعلقة بالأجهزة والمستلزمات الطبية، إلا بعد موافقة الهيئة ووفقا للشروط التي تحددها اللائحة. اللائحة: 25/ 1 على الراغبين في إقامة",
+   "category": "provision",
+   "gold": {
+    "corpus": "medical_devices_regulation",
+    "law_component": "regulation",
+    "article_number": 25
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "medical-devices-regulation-llm-025",
+     "article_number": 25,
+     "score": 61
+    },
+    {
+     "record_id": "medical-devices-law-llm-025",
+     "article_number": 25,
+     "score": 57
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-024",
+     "article_number": 24,
+     "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "finres-001",
+   "query_ar": "تصنف المنشأة المالية بأنها مهمة بقرار يصدر من الجهة المختصة، وفق معايير تضعها كل جهة مختصة للمنشآت الخاضعة لإشرافها، على أن يراعى في هذه المعايير حجم المنشأة المالية، وتعقيدها الناتج من",
+   "category": "definitional",
+   "gold": {
+    "corpus": "financial_institutions_resolution_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "financial-institutions-resolution-law-llm-002",
+     "article_number": 2,
+     "score": 57
+    },
+    {
+     "record_id": "oa-llm-companies-art-274",
+     "article_number": 274,
+     "score": 28
+    },
+    {
+     "record_id": "securities-offering-obligations-rules-llm-103",
+     "article_number": 103,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "finres-002",
+   "query_ar": "لا يحق للجهة المختصة تعديل أي من الحقوق والالتزامات الآتية: 1- الودائع وفق ما تحدده الجهة المختصة. 2- بوالص التأمين. 3- الالتزامات المضمونة، ما عدا ما زاد من قيمة الضمان على قيمة الالتزام.",
+   "category": "provision",
+   "gold": {
+    "corpus": "financial_institutions_resolution_law",
+    "law_component": "law",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "financial-institutions-resolution-law-llm-020",
+     "article_number": 20,
+     "score": 41
+    },
+    {
+     "record_id": "oa-llm-companies-art-110",
+     "article_number": 110,
+     "score": 33
+    },
+    {
+     "record_id": "oa-llm-companies-art-274",
+     "article_number": 274,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "traderem-law-001",
+   "query_ar": "يهدف النظام إلى حماية الصناعة المحلية من الضرر الناتج عن الواردات المغرقة والمدعومة، والوقاية من الزيادة في الواردات، والدفاع عن صادرات المملكة التي تتعرض لإجراءات المعالجات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "trade_remedies_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trade-remedies-law-llm-002",
+     "article_number": 2,
+     "score": 57
+    },
+    {
+     "record_id": "trade-remedies-regulation-llm-023",
+     "article_number": 23,
+     "score": 32
+    },
+    {
+     "record_id": "trade-remedies-regulation-llm-020",
+     "article_number": 20,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "traderem-law-002",
+   "query_ar": "1- يعلن أشخاص المصلحة العامة عن أنفسهم خلال الفترة التي تحددها اللائحة في إعلان بدء التحقيقات والمراجعة النهائية ومراجعة تمديد التدابير الوقائية. 2- يقدم أشخاص المصلحة العامة معلومات مؤيدة",
+   "category": "provision",
+   "gold": {
+    "corpus": "trade_remedies_law",
+    "law_component": "law",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trade-remedies-law-llm-019",
+     "article_number": 19,
+     "score": 53
+    },
+    {
+     "record_id": "trade-remedies-regulation-llm-043",
+     "article_number": 43,
+     "score": 45
+    },
+    {
+     "record_id": "trade-remedies-law-llm-020",
+     "article_number": 20,
+     "score": 42
+    }
+   ]
+  },
+  {
+   "query_id": "traderem-reg-001",
+   "query_ar": "تهدف اللائحة إلى تنظيم ما يلزم من أحكام لقيام الهيئة بمهامها فيما يتعلق بتقديم طلبات الشكاوى وطلبات المراجعات ومباشرة التحقيقات والمراجعات، وغير ذلك من أحكام محالة لها من نظام المعالجات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "trade_remedies_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trade-remedies-regulation-llm-002",
+     "article_number": 2,
+     "score": 37
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-039",
+     "article_number": 39,
+     "score": 34
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "traderem-reg-002",
+   "query_ar": "1- بموجب الفقرة (2) من المادة (الحادية عشرة) من النظام، يجوز فرض التدابير بأثر رجعي على الواردات الموجهة إلى المملكة لفترة لا تزيد على (تسعين) يوما قبل تاريخ قرار فرض التدابير المؤقتة وفيما",
+   "category": "provision",
+   "gold": {
+    "corpus": "trade_remedies_regulation",
+    "law_component": "regulation",
+    "article_number": 33
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "trade-remedies-law-llm-011",
+     "article_number": 11,
+     "score": 50
+    },
+    {
+     "record_id": "trade-remedies-regulation-llm-033",
+     "article_number": 33,
+     "score": 44
+    },
+    {
+     "record_id": "trade-remedies-law-llm-005",
+     "article_number": 5,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "finfraud-001",
+   "query_ar": "يعاقب بالسجن مدة لا تتجاوز (خمس) سنوات، وبغرامة مالية لا تزيد على (ثلاثة) ملايين ريال، أو بإحدى هاتين العقوبتين، كل من استولى دون وجه حق على مال سلم إليه بحكم عمله أو على سبيل الأمانة، أو",
+   "category": "definitional",
+   "gold": {
+    "corpus": "financial_fraud_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "financial-fraud-law-llm-002",
+     "article_number": 2,
+     "score": 60
+    },
+    {
+     "record_id": "financial-fraud-law-llm-001",
+     "article_number": 1,
+     "score": 48
+    },
+    {
+     "record_id": "whistleblower-law-llm-art-026",
+     "article_number": 26,
+     "score": 39
+    }
+   ]
+  },
+  {
+   "query_id": "finfraud-002",
+   "query_ar": "دون إخلال بحق الغير حسن النية، تصادر بحكم قضائي الأدوات والآلات المستخدمة في ارتكاب أي من الجرائم المنصوص عليها في هذا النظام، وكذلك المتحصلات المتحققة من",
+   "category": "provision",
+   "gold": {
+    "corpus": "financial_fraud_law",
+    "law_component": "law",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "financial-fraud-law-llm-006",
+     "article_number": 6,
+     "score": 48
+    },
+    {
+     "record_id": "whistleblower-law-llm-art-031",
+     "article_number": 31,
+     "score": 41
+    },
+    {
+     "record_id": "anti-concealment-law-llm-art-010",
+     "article_number": 10,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "stlease-law-001",
+   "query_ar": "يهدف النظام إلى الآتي: 1- تنظيم عمليات استئجار الدولة من خلال الجهات الحكومية للعقار وفقا لاحتياجات الجهات الحكومية. 2- ترشيد التكاليف المالية لعمليات استئجار الجهات الحكومية للعقار. 3-",
+   "category": "definitional",
+   "gold": {
+    "corpus": "state_property_lease_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-property-lease-law-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "state-property-lease-law-llm-001",
+     "article_number": 1,
+     "score": 43
+    },
+    {
+     "record_id": "state-property-lease-regulation-llm-074",
+     "article_number": 75,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "stlease-law-002",
+   "query_ar": "1- تبلغ الجهة الحكومية المستأجرة -عبر البوابة أو بأي وسيلة أخرى تحددها اللائحة- المؤجر بالحضور لتسلم العقار بعد إخلائه أو في نهاية عقد الاستئجار، ويحدد في التبليغ موعد التسلم خلال مدة لا",
+   "category": "provision",
+   "gold": {
+    "corpus": "state_property_lease_law",
+    "law_component": "law",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-property-lease-law-llm-016",
+     "article_number": 16,
+     "score": 53
+    },
+    {
+     "record_id": "state-property-lease-law-llm-013",
+     "article_number": 13,
+     "score": 37
+    },
+    {
+     "record_id": "state-property-lease-law-llm-019",
+     "article_number": 19,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "stlease-reg-001",
+   "query_ar": "1- يجب أن تضع الجهة الحكومية الخطة السنوية المشار إليها في المادة (الثالثة) من النظام وفق نموذج الخطة المعتمد من الهيئة، على أن تتضمن الخطة البيانات الآتية: أ- المنطقة أو المدينة أو",
+   "category": "definitional",
+   "gold": {
+    "corpus": "state_property_lease_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-property-lease-regulation-llm-002",
+     "article_number": 2,
+     "score": 42
+    },
+    {
+     "record_id": "gtpl-law-llm-art-087",
+     "article_number": 87,
+     "score": 35
+    },
+    {
+     "record_id": "press-regulation-llm-art-083",
+     "article_number": 83,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "stlease-reg-002",
+   "query_ar": "1- على لجنة فحص العروض مراجعة جداول الأسعار الواردة في العرض -سواء في مفرداتها أو مجموعها- وإجراء التصحيحات الحسابية اللازمة في العرض. 2- إذا وجد اختلاف بين السعر المبين كتابة والسعر المبين",
+   "category": "provision",
+   "gold": {
+    "corpus": "state_property_lease_regulation",
+    "law_component": "regulation",
+    "article_number": 40
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gtpl-reg-llm-art-081",
+     "article_number": 81,
+     "score": 50
+    },
+    {
+     "record_id": "state-property-lease-regulation-llm-040",
+     "article_number": 40,
+     "score": 50
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-084",
+     "article_number": 84,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "jobdisc-001",
+   "query_ar": "يهدف النظام إلى حماية الوظيفة العامة، وضمان سير المرفق العام بانتظام، وحسن أداء الموظف",
+   "category": "definitional",
+   "gold": {
+    "corpus": "job_discipline_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "job-discipline-law-llm-002",
+     "article_number": 2,
+     "score": 38
+    },
+    {
+     "record_id": "tga-organizational-statute-llm-art-004",
+     "article_number": 4,
+     "score": 20
+    },
+    {
+     "record_id": "oa-llm-companies-art-187",
+     "article_number": 187,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "jobdisc-002",
+   "query_ar": "تزود الهيئة وزارة الموارد البشرية والتنمية الاجتماعية والجهة الحكومية التي يتبع لها الموظف -إن كان لا يزال موظفا حكوميا- بصورة من الحكم النهائي الصادر",
+   "category": "provision",
+   "gold": {
+    "corpus": "job_discipline_law",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "job-discipline-law-llm-013",
+     "article_number": 13,
+     "score": 48
+    },
+    {
+     "record_id": "job-discipline-law-llm-016",
+     "article_number": 16,
+     "score": 34
+    },
+    {
+     "record_id": "privatization-law-llm-art-033",
+     "article_number": 33,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "statlaw-001",
+   "query_ar": "يهدف النظام إلى تنظيم العمل الإحصائي وزيادة فاعليته وشموليته، ورفع جودة الإحصاءات في المملكة وتعميق أثرها في دعم الخطط التنموية وصناعة القرار، وتنظيم الأدوار بين الهيئة والجهات العامة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "statistics_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "statistics-law-llm-002",
+     "article_number": 2,
+     "score": 51
+    },
+    {
+     "record_id": "tga-organizational-statute-llm-art-004",
+     "article_number": 4,
+     "score": 30
+    },
+    {
+     "record_id": "gaca-organizational-statute-llm-art-003",
+     "article_number": 3,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "statlaw-002",
+   "query_ar": "- للأغراض الإحصائية والبحثية والدراسة والتحليل، تتيح الهيئة الاطلاع على البيانات والمعلومات التي حصلت عليها بعد إجراء تعديلات عليها تضمن عدم وضوح البيانات الفردية أو الاستدلال على هوية",
+   "category": "provision",
+   "gold": {
+    "corpus": "statistics_law",
+    "law_component": "law",
+    "article_number": 12
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "statistics-law-llm-012",
+     "article_number": 12,
+     "score": 48
+    },
+    {
+     "record_id": "oa-llm-companies-art-214",
+     "article_number": 214,
+     "score": 21
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-009",
+     "article_number": 9,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "begging-001",
+   "query_ar": "1- يحظر التسول بصوره وأشكاله كافة، مهما كانت مسوغاته. 2- تختص وزارة الداخلية بالقبض على",
+   "category": "definitional",
+   "gold": {
+    "corpus": "anti_begging_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-begging-law-llm-002",
+     "article_number": 2,
+     "score": 42
+    },
+    {
+     "record_id": "anti-begging-law-llm-007",
+     "article_number": 7,
+     "score": 21
+    },
+    {
+     "record_id": "anti-begging-law-llm-001",
+     "article_number": 1,
+     "score": 13
+    }
+   ]
+  },
+  {
+   "query_id": "begging-002",
+   "query_ar": "تصادر –بحكم قضائي– جميع الأموال النقدية والعينية التي حصل عليها المتسول من تسوله، أو التي من شأنها أن تستعمل فيه. فإن تعذر ضبط أي من تلك الأموال؛ حكمت المحكمة المختصة بغرامة تعادل قيمتها؛",
+   "category": "provision",
+   "gold": {
+    "corpus": "anti_begging_law",
+    "law_component": "law",
+    "article_number": 6
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "anti-begging-law-llm-006",
+     "article_number": 6,
+     "score": 53
+    },
+    {
+     "record_id": "aml-regulation-llm-art-019",
+     "article_number": 39,
+     "score": 28
+    },
+    {
+     "record_id": "seized-confiscated-funds-management-system-llm-art-008",
+     "article_number": 8,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "seccam-001",
+   "query_ar": "تطبق أحكام النظام على الآتي: 1- الوزارات والهيئات والمؤسسات العامة. 2- المنشآت النفطية والبتروكيميائية. 3- منشآت توليد الطاقة وتحلية المياه. 4- مرافق الإيواء السياحي. 5- المجمعات التجارية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "security_cameras_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 33
+    },
+    {
+     "record_id": "security-cameras-law-llm-002",
+     "article_number": 2,
+     "score": 30
+    },
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-013",
+     "article_number": 13,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "seccam-002",
+   "query_ar": "يجوز للوزارة إسناد مهمات ضبط بعض مخالفات أحكام النظام -عدا المخالفات ذات الطابع الأمني- إلى القطاع الخاص؛ وذلك وفقا للإجراءات النظامية ذات",
+   "category": "provision",
+   "gold": {
+    "corpus": "security_cameras_law",
+    "law_component": "law",
+    "article_number": 10
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "security-cameras-law-llm-010",
+     "article_number": 10,
+     "score": 45
+    },
+    {
+     "record_id": "road-transport-law-llm-art-031",
+     "article_number": 31,
+     "score": 26
+    },
+    {
+     "record_id": "environmental-permits-reg-llm-art-011",
+     "article_number": 11,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "antiq-reg-001",
+   "query_ar": "للهيئة في سبيل تطبيق أحكام النظام، وهذه اللائحة والإشراف على تنفيذهما اتخاذ ما يلي: 1- إصدار القرارات التنفيذية، والنشرات، وقواعد المعلومات، والدوريات اللازمة. 2- الإشراف والمراقبة الفنية،",
+   "category": "definitional",
+   "gold": {
+    "corpus": "antiquities_heritage_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "museums-regulation-llm-002",
+     "article_number": 2,
+     "score": 41
+    },
+    {
+     "record_id": "antiquities-heritage-regulation-llm-002",
+     "article_number": 2,
+     "score": 39
+    },
+    {
+     "record_id": "railway-law-implementing-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "antiq-reg-002",
+   "query_ar": "1- للهيئة الموافقة على إجراء دراسات متخصصة في مجال الآثار من قبل الباحثين في هذا المجال، سواء أكانت الدراسة داخل موقع أثري أو أكثر. 2- تقدم الهيئة المساعدة الممكنة للباحث في إعداد دراسته",
+   "category": "provision",
+   "gold": {
+    "corpus": "antiquities_heritage_regulation",
+    "law_component": "regulation",
+    "article_number": 58
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "antiquities-heritage-regulation-llm-057",
+     "article_number": 58,
+     "score": 53
+    },
+    {
+     "record_id": "museums-regulation-llm-042",
+     "article_number": 42,
+     "score": 46
+    },
+    {
+     "record_id": "tga-organizational-statute-llm-art-006",
+     "article_number": 6,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "meteo-001",
+   "query_ar": "يجب عند القيام بأي من خدمات الأرصاد الجوية الالتزام بالاشتراطات والضوابط والإجراءات والمقاييس والمعايير اللازمة للأرصاد الجوية، وذلك وفقا لما تحدده",
+   "category": "definitional",
+   "gold": {
+    "corpus": "meteorology_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "meteorology-law-llm-002",
+     "article_number": 2,
+     "score": 49
+    },
+    {
+     "record_id": "meteorology-law-llm-003",
+     "article_number": 3,
+     "score": 29
+    },
+    {
+     "record_id": "meteorology-law-llm-001",
+     "article_number": 1,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "meteo-002",
+   "query_ar": "1- يتولى مفتشون من المركز -يصدر بتحديدهم قرار من الوزير- ضبط مخالفات أحكام النظام واللوائح، والتحقيق فيها وإثباتها، وتحدد اللوائح آليات وإجراءات عملهم. 2- للمفتش قبل دخول المواقع بغرض",
+   "category": "provision",
+   "gold": {
+    "corpus": "meteorology_law",
+    "law_component": "law",
+    "article_number": 11
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "meteorology-law-llm-011",
+     "article_number": 11,
+     "score": 38
+    },
+    {
+     "record_id": "road-transport-law-llm-art-019",
+     "article_number": 19,
+     "score": 35
+    },
+    {
+     "record_id": "contractors-classification-law-llm-art-014",
+     "article_number": 14,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "museum-001",
+   "query_ar": "للهيئة –في سبيل تطبيق أحكام النظام، وهذه اللائحة والإشراف على تنفيذهما– اتخاذ ما يلي: 1- إصدار القرارات التنفيذية، والنشرات، والدوريات اللازمة. 2- الإشراف والمراقبة الفنية، والمالية على",
+   "category": "definitional",
+   "gold": {
+    "corpus": "museums_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "museums-regulation-llm-002",
+     "article_number": 2,
+     "score": 42
+    },
+    {
+     "record_id": "antiquities-heritage-regulation-llm-002",
+     "article_number": 2,
+     "score": 38
+    },
+    {
+     "record_id": "railway-law-implementing-regulation-llm-art-001",
+     "article_number": 1,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "museum-002",
+   "query_ar": "للهيئة -في حالة إخلال الباحث بالضوابط والاشتراطات التي صدرت بموجبها الموافقة- أن تصدر قرارا بإلغائها، أو تعليقها بحسب الحال. وفي حالة صدور القرار بتعليق الموافقة فعلى الباحث تصحيح وضعه خلال",
+   "category": "provision",
+   "gold": {
+    "corpus": "museums_regulation",
+    "law_component": "regulation",
+    "article_number": 46
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "antiquities-heritage-regulation-llm-061",
+     "article_number": 62,
+     "score": 51
+    },
+    {
+     "record_id": "museums-regulation-llm-046",
+     "article_number": 46,
+     "score": 51
+    },
+    {
+     "record_id": "cybersecurity-authority-enablers-llm-art-005",
+     "article_number": 5,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "privuni-001",
+   "query_ar": "تهدف مؤسسة التعليم العالي إلى تقديم برامج تعليمية (فوق المستوى الثانوي) والإسهام في رفع مستوى التعليم والبحث العلمي وخدمة المجتمع، وتوفير التخصصات العلمية المناسبة، مع إمكانية تقديم برامج",
+   "category": "definitional",
+   "gold": {
+    "corpus": "private_universities_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "private-universities-regulation-llm-002",
+     "article_number": 2,
+     "score": 49
+    },
+    {
+     "record_id": "private-universities-regulation-llm-010",
+     "article_number": 10,
+     "score": 20
+    },
+    {
+     "record_id": "child-protection-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "privuni-002",
+   "query_ar": "يشترط فيمن يكلف رئيسا للجامعة ما يلي: 1- أن يكون مؤهلا تأهيلا علميا مناسبا. 2- أن يكون سبق له العمل في وظائف قيادية إدارية أو أكاديمية. 3- أن يكون متفرغا لهذا العمل. 4- ألا يكون أحد",
+   "category": "provision",
+   "gold": {
+    "corpus": "private_universities_regulation",
+    "law_component": "regulation",
+    "article_number": 30
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "private-universities-regulation-llm-030",
+     "article_number": 30,
+     "score": 50
+    },
+    {
+     "record_id": "private-universities-regulation-llm-036",
+     "article_number": 36,
+     "score": 23
+    },
+    {
+     "record_id": "muslaha-regulation-llm-art-007",
+     "article_number": 7,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gccroad-001",
+   "query_ar": "الهدف والنطاق 1- يهدف النظام (القانون) إلى تنظيم النقل البري الدولي بين دول المجلس، ورفع مستوى السلامة على الطرق. 2- تسري أحكام هذا النظام (القانون) واللائحة، على النقل البري الدولي بين دول",
+   "category": "definitional",
+   "gold": {
+    "corpus": "gcc_road_transport_law",
+    "law_component": "law",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gcc-road-transport-law-llm-002",
+     "article_number": 2,
+     "score": 76
+    },
+    {
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
+     "score": 68
+    },
+    {
+     "record_id": "gcc-road-transport-law-llm-001",
+     "article_number": 1,
+     "score": 59
+    }
+   ]
+  },
+  {
+   "query_id": "gccroad-002",
+   "query_ar": "الأوزان والأبعاد لوسيلة النقل 1- يحظر تجاوز الوزن الإجمالي، أو الوزن الأقصى على كل محور، أو الأبعاد الكلية (الطول والعرض، والارتفاع) المسموح بها لسير وسيلة النقل على شبكة الطرق في الدولة",
+   "category": "provision",
+   "gold": {
+    "corpus": "gcc_road_transport_law",
+    "law_component": "law",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gcc-road-transport-law-llm-013",
+     "article_number": 13,
+     "score": 50
+    },
+    {
+     "record_id": "gcc-road-transport-law-llm-016",
+     "article_number": 16,
+     "score": 38
+    },
+    {
+     "record_id": "road-transport-law-llm-art-004",
+     "article_number": 4,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "marpol-001",
+   "query_ar": "الالتزامات العامة بمقتضى الاتفاقية وأهدافها 1- تلتزم السفن التي ترفع علم المملكة بتطبيق أحكام الاتفاقية، وذلك لمنع التلوث للبيئة البحرية الناشئ عن تصريف مواد ضارة أو نفايات تحتوي على مثل",
+   "category": "definitional",
+   "gold": {
+    "corpus": "marpol_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marpol-regulation-llm-002",
+     "article_number": 2,
+     "score": 55
+    },
+    {
+     "record_id": "marpol-regulation-llm-001",
+     "article_number": 1,
+     "score": 39
+    },
+    {
+     "record_id": "marpol-regulation-llm-082",
+     "article_number": 82,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "marpol-002",
+   "query_ar": "مرافق الاستقبال وترتيبات تفريغ البضائع تقوم السلطة البحرية بالتنسيق مع الجهات ذات العلاقة لتوفير مرافق لاستقبال المواد السامة السائلة وفقا لما هو متفق عليه مع تلك الجهات استنادا لمتطلبات",
+   "category": "provision",
+   "gold": {
+    "corpus": "marpol_regulation",
+    "law_component": "regulation",
+    "article_number": 51
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "marpol-regulation-llm-051",
+     "article_number": 51,
+     "score": 50
+    },
+    {
+     "record_id": "marpol-regulation-llm-034",
+     "article_number": 34,
+     "score": 37
+    },
+    {
+     "record_id": "marpol-regulation-llm-084",
+     "article_number": 84,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "secdisp-001",
+   "query_ar": "إيداع الشكوى لدى الهيئة لا يجوز إيداع أي صحيفة دعوى لدى اللجنة ما لم يتم إيداع شكوى أولا لدى الهيئة، وما لم تمض مدة تسعين يوما من تاريخ إيداعها، إلا إذا أخطرت الهيئة مقدم الشكوى بجواز",
+   "category": "definitional",
+   "gold": {
+    "corpus": "securities_disputes_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "securities-disputes-rules-llm-002",
+     "article_number": 2,
+     "score": 52
+    },
+    {
+     "record_id": "capital-market-law-llm-art-025",
+     "article_number": 25,
+     "score": 39
+    },
+    {
+     "record_id": "railway-law-implementing-regulation-llm-art-089",
+     "article_number": 89,
+     "score": 27
+    }
+   ]
+  },
+  {
+   "query_id": "secdisp-002",
+   "query_ar": "حق الاستئناف وميعاده (أ) يجوز لأطراف الدعوى استئناف القرارات الصادرة عن الدائرة أمام لجنة الاستئناف خلال ثلاثين يوما من تاريخ تبليغهم بها. (ب) لا يجوز لمن قضي له بكل طلباته أو لطرف الدعوى",
+   "category": "provision",
+   "gold": {
+    "corpus": "securities_disputes_rules",
+    "law_component": "rules",
+    "article_number": 43
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "securities-disputes-rules-llm-043",
+     "article_number": 43,
+     "score": 52
+    },
+    {
+     "record_id": "securities-disputes-rules-llm-044",
+     "article_number": 44,
+     "score": 31
+    },
+    {
+     "record_id": "securities-disputes-rules-llm-073",
+     "article_number": 73,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "strealest-001",
+   "query_ar": "تهدف اللائحة إلى الآتي: 1- تنمية عقارات الدولة. 2- تحقيق الاستغلال الأمثل لعقارات الدولة بما يحقق الأهداف المرجوة منها. 3- تنظيم الإجراءات ذات الصلة بالتصرف في عقارات الدولة بما في ذلك",
+   "category": "definitional",
+   "gold": {
+    "corpus": "state_realestate_disposal_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-realestate-disposal-regulation-llm-002",
+     "article_number": 2,
+     "score": 62
+    },
+    {
+     "record_id": "state-realestate-disposal-regulation-llm-001",
+     "article_number": 1,
+     "score": 33
+    },
+    {
+     "record_id": "state-realestate-disposal-regulation-llm-047",
+     "article_number": 47,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "strealest-002",
+   "query_ar": "1- يقدم مع العرض ضمان ابتدائي بنسبة تحدد في كراسة الشروط تتراوح من (1%) إلى (2%) من قيمة العرض، ويستبعد العرض الذي لم يقدم معه الضمان. 2- ترد الضمانات الابتدائية إلى أصحاب العروض غير",
+   "category": "provision",
+   "gold": {
+    "corpus": "state_realestate_disposal_regulation",
+    "law_component": "regulation",
+    "article_number": 38
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "state-realestate-disposal-regulation-llm-038",
+     "article_number": 38,
+     "score": 54
+    },
+    {
+     "record_id": "gtpl-reg-llm-art-070",
+     "article_number": 70,
+     "score": 29
+    },
+    {
+     "record_id": "gtpl-law-llm-art-061",
+     "article_number": 61,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "secdepo-001",
+   "query_ar": "التعريفات أ‌- يقصد بكلمة (النظام) -أينما وردت في هذه اللائحة- نظام السوق المالية الصادر بالمرسوم الملكي رقم م/30 وتاريخ 2 /6/ 1424ه. ب‌- يقصد بالكلمات والعبارات الواردة في هذه اللائحة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "securities_depository_markets_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "securities-depository-markets-regulation-llm-002",
+     "article_number": 2,
+     "score": 51
+    },
+    {
+     "record_id": "special-purpose-entities-rules-llm-002",
+     "article_number": 2,
+     "score": 41
+    },
+    {
+     "record_id": "securities-offering-obligations-rules-llm-002",
+     "article_number": 2,
+     "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "secdepo-002",
+   "query_ar": "قواعد التعثر وإجراءاته ‌أ- يجب أن يتوافر لدى السوق الأساسية ومركز الإيداع قواعد وإجراءات للتعثر، تضمن لهما الاستمرار في الوفاء بالتزاماتهما وتعزيز مواردهما في حال تعثر أحد أعضائهما،",
+   "category": "provision",
+   "gold": {
+    "corpus": "securities_depository_markets_regulation",
+    "law_component": "regulation",
+    "article_number": 31
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "securities-depository-markets-regulation-llm-031",
+     "article_number": 31,
+     "score": 49
+    },
+    {
+     "record_id": "insurance-disputes-committees-rules-llm-046",
+     "article_number": 46,
+     "score": 26
+    },
+    {
+     "record_id": "securities-depository-markets-regulation-llm-060",
+     "article_number": 60,
+     "score": 23
+    }
+   ]
+  },
+  {
+   "query_id": "capadeq-001",
+   "query_ar": "التعريفات أ- يقصد بكلمة (النظام) -أينما وردت في هذه القواعد- نظام السوق المالية الصادر بالمرسوم الملكي رقم م/30 وتاريخ 2/6/1424ه. ب- يقصد بالكلمات والعبارات الواردة في هذه القواعد المعاني",
+   "category": "definitional",
+   "gold": {
+    "corpus": "capital_adequacy_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 4,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "special-purpose-entities-rules-llm-002",
+     "article_number": 2,
+     "score": 52
+    },
+    {
+     "record_id": "securities-depository-markets-regulation-llm-002",
+     "article_number": 2,
+     "score": 51
+    },
+    {
+     "record_id": "securities-offering-obligations-rules-llm-002",
+     "article_number": 2,
+     "score": 47
+    }
+   ]
+  },
+  {
+   "query_id": "capadeq-002",
+   "query_ar": "الطريقة الشاملة - معاملات التقلب أ- تطبق معاملات التقلب -المنصوص عليها في الفقرات (ب) و(ج) و(د) من هذه المادة- على التعرضات والضمان الخاضع للتقييم أو لتغطية الهامش بشكل يومي وفقا لأسعار",
+   "category": "provision",
+   "gold": {
+    "corpus": "capital_adequacy_rules",
+    "law_component": "rules",
+    "article_number": 60
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "capital-adequacy-rules-llm-060",
+     "article_number": 60,
+     "score": 37
+    },
+    {
+     "record_id": "capital-adequacy-rules-llm-061",
+     "article_number": 61,
+     "score": 37
+    },
+    {
+     "record_id": "food-law-llm-art-035",
+     "article_number": 36,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "manda-001",
+   "query_ar": "نطاق التطبيق ‌أ) تهدف هذه اللائحة إلى تنظيم الآتي: 1) عمليات الاستحواذ بموجب صلاحيات الهيئة المنصوص عليها في النظام. 2) عمليات الاندماج بموجب صلاحيات الهيئة المنصوص عليها في نظام الشركات.",
+   "category": "definitional",
+   "gold": {
+    "corpus": "mergers_acquisitions_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 35
+    },
+    {
+     "record_id": "mergers-acquisitions-regulation-llm-002",
+     "article_number": 2,
+     "score": 29
+    },
+    {
+     "record_id": "press-regulation-llm-art-008",
+     "article_number": 8,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "manda-002",
+   "query_ar": "شرط القبول ‌أ) مع مراعاة الفقرة (أ) من المادة الخامسة والعشرين من هذه اللائحة، يجب في أي عرض لغرض السيطرة –خاضع لأحكام المادة الثالثة والعشرين من هذه اللائحة- للأسهم المتمتعة بحقوق التصويت",
+   "category": "provision",
+   "gold": {
+    "corpus": "mergers_acquisitions_regulation",
+    "law_component": "regulation",
+    "article_number": 27
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "associations-ngo-regulation-llm-art-065",
+     "article_number": 65,
+     "score": 39
+    },
+    {
+     "record_id": "mergers-acquisitions-regulation-llm-027",
+     "article_number": 27,
+     "score": 37
+    },
+    {
+     "record_id": "marpol-regulation-llm-015",
+     "article_number": 15,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "taxi-001",
+   "query_ar": "نطاق سريان اللائحة: تسري أحكام هذه اللائحة على ممارسي نشاط الأجرة، ونشاط وسيط الأجرة، ونشاط التوجيه، وتعد إحدى لوائح نظام النقل العام على",
+   "category": "definitional",
+   "gold": {
+    "corpus": "taxi_activity_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "taxi-activity-regulation-llm-002",
+     "article_number": 2,
+     "score": 53
+    },
+    {
+     "record_id": "international-bus-transport-regulation-llm-002",
+     "article_number": 2,
+     "score": 39
+    },
+    {
+     "record_id": "taxi-activity-regulation-llm-001",
+     "article_number": 1,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "taxi-002",
+   "query_ar": "تجديد بطاقة التشغيل: 1- تجدد بطاقة تشغيل السيارة بطلب من المرخص/المصرح له بممارسة نشاط الأجرة، وبتوافر نفس الشروط التي صدرت بها ابتداء، بعد سداد الغرامات المالية والمقابل المالي (إن وجدت)،",
+   "category": "provision",
+   "gold": {
+    "corpus": "taxi_activity_regulation",
+    "law_component": "regulation",
+    "article_number": 28
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "taxi-activity-regulation-llm-028",
+     "article_number": 28,
+     "score": 54
+    },
+    {
+     "record_id": "taxi-activity-regulation-llm-024",
+     "article_number": 24,
+     "score": 46
+    },
+    {
+     "record_id": "taxi-activity-regulation-llm-027",
+     "article_number": 27,
+     "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "zatcacom-001",
+   "query_ar": "رفع الدعوى: يكون رفع الدعوى وتقديم المذكرات وكل إجراءات التقاضي حضوريا أو عن بعد من خلال الوسائل الإلكترونية ووفق المتطلبات التي تحددها الأمانة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "zakat_tax_customs_committees_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "zakat-tax-customs-committees-rules-llm-002",
+     "article_number": 2,
+     "score": 45
+    },
+    {
+     "record_id": "elitigation-guide-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 27
+    },
+    {
+     "record_id": "securities-disputes-rules-llm-078",
+     "article_number": 78,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "zatcacom-002",
+   "query_ar": "تقرير الخبير: يجب على الخبير الذي تنتدبه الدائرة إيداع التقرير خلال المدة المحددة له في قرار ندبه، فإن لم يتمكن من إيداع التقرير في الميعاد المحدد فعليه أن يقدم تقريرا يبين فيه سبب ذلك،",
+   "category": "provision",
+   "gold": {
+    "corpus": "zakat_tax_customs_committees_rules",
+    "law_component": "rules",
+    "article_number": 26
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "zakat-tax-customs-committees-rules-llm-026",
+     "article_number": 26,
+     "score": 54
+    },
+    {
+     "record_id": "insurance-disputes-committees-rules-llm-026",
+     "article_number": 26,
+     "score": 44
+    },
+    {
+     "record_id": "sharia-procedure-regulation-llm-prov-365",
+     "article_number": 365,
+     "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "offcomm-001",
+   "query_ar": "تهدف اللائحة إلى الآتي: 1- وضع الضوابط التي تنظم المراسلات الواردة والصادرة وتوثقها، وتوحد معاييرها الموضوعية والشكلية، وتنظم إجراءات ورودها وصدورها وتسليمها وتسلمها فيما بين الأجهزة أو",
+   "category": "definitional",
+   "gold": {
+    "corpus": "official_communications_records_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "official-communications-records-regulation-llm-002",
+     "article_number": 2,
+     "score": 46
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-010",
+     "article_number": 10,
+     "score": 22
+    },
+    {
+     "record_id": "medical-devices-regulation-llm-001",
+     "article_number": 1,
+     "score": 21
+    }
+   ]
+  },
+  {
+   "query_id": "offcomm-002",
+   "query_ar": "تتولى الوحدة الإدارية المعنية في كل جهاز تحديد الموضوعات المهمة مما يدخل في نطاق اختصاصه، وترسل للمركز الوطني للوثائق",
+   "category": "provision",
+   "gold": {
+    "corpus": "official_communications_records_regulation",
+    "law_component": "regulation",
+    "article_number": 44
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "official-communications-records-regulation-llm-044",
+     "article_number": 44,
+     "score": 42
+    },
+    {
+     "record_id": "official-communications-records-regulation-llm-041",
+     "article_number": 41,
+     "score": 41
+    },
+    {
+     "record_id": "environmental-fees-reg-llm-art-002",
+     "article_number": 2,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "housup-001",
+   "query_ar": "يجب أن تتحقق الشروط المنصوص عليها في هذا الفصل لتقديم طلب الحصول على دعم",
+   "category": "definitional",
+   "gold": {
+    "corpus": "housing_support_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "housing-support-regulation-llm-002",
+     "article_number": 2,
+     "score": 38
+    },
+    {
+     "record_id": "inv-reg-llm-art-016",
+     "article_number": 16,
+     "score": 33
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "housup-002",
+   "query_ar": "يمنح المتقدم نقاطا بناء على عدد أفراد أسرته بحد أقصى عشرون نقطة وفق الجدول الآتي: (عدد أفراد الأسرة (بما فيهم المتقدم عدد النقاط التي تمنح 6 أفراد أو أكثر عشرون نقطة 5 أفراد خمس عشرة نقطة 4",
+   "category": "provision",
+   "gold": {
+    "corpus": "housing_support_regulation",
+    "law_component": "regulation",
+    "article_number": 27
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "housing-support-regulation-llm-027",
+     "article_number": 27,
+     "score": 45
+    },
+    {
+     "record_id": "housing-support-regulation-llm-031",
+     "article_number": 31,
+     "score": 35
+    },
+    {
+     "record_id": "housing-support-regulation-llm-028",
+     "article_number": 28,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "spe-001",
+   "query_ar": "التعريفات أ) يقصد بكلمة (النظام) أينما وردت في هذه القواعد نظام السوق المالية الصادر بالمرسوم الملكي رقم م/30 وتاريخ 2 /6 /1424ه. ب) يقصد بالكلمات والعبارات الواردة في هذه القواعد المعاني",
+   "category": "definitional",
+   "gold": {
+    "corpus": "special_purpose_entities_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "special-purpose-entities-rules-llm-002",
+     "article_number": 2,
+     "score": 52
+    },
+    {
+     "record_id": "securities-depository-markets-regulation-llm-002",
+     "article_number": 2,
+     "score": 51
+    },
+    {
+     "record_id": "securities-offering-obligations-rules-llm-002",
+     "article_number": 2,
+     "score": 47
+    }
+   ]
+  },
+  {
+   "query_id": "spe-002",
+   "query_ar": "متطلبات الإشعار أ) على عضو مجلس الإدارة التأكد من الآتي: 1- التزامه بمتطلبات الإشعار الواردة في الملحق (1) من هذه القواعد، حيثما ينطبق. 2- أن تكون جميع المعلومات التي يقدمها إلى الهيئة",
+   "category": "provision",
+   "gold": {
+    "corpus": "special_purpose_entities_rules",
+    "law_component": "rules",
+    "article_number": 28
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "special-purpose-entities-rules-llm-028",
+     "article_number": 28,
+     "score": 55
+    },
+    {
+     "record_id": "special-purpose-entities-rules-llm-032",
+     "article_number": 32,
+     "score": 35
+    },
+    {
+     "record_id": "special-purpose-entities-rules-llm-013",
+     "article_number": 13,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ee8f01-1",
+   "query_ar": "التعاريف يقصد بالعبارات والألفاظ الآتية أينما وردت في هذه الآلية المعاني المبينة مقابل كل منها ما لم يدل سياق النص على خلاف ذلك: 1- اللائحة: لائحة حقوق والتزامات مستخدمي وسائل النقل العام",
+   "category": "definitional",
+   "gold": {
+    "corpus": "public_transport_users_rights_mechanism",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-002",
+     "article_number": 2,
+     "score": 78
+    },
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-001",
+     "article_number": 1,
+     "score": 51
+    },
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-070",
+     "article_number": 70,
+     "score": 50
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ee8f01-2",
+   "query_ar": "مساعدة وتمكين الأشخاص ذوي الإعاقة من استخدام القطار 1- يجب على الناقل تقديم المساعدة للركاب من ذوي الإعاقة أو ذوي القدرة المحدودة على الحركة وتدريب الكادر المناسب من الموظفين للتعامل مع",
+   "category": "provision",
+   "gold": {
+    "corpus": "public_transport_users_rights_mechanism",
+    "law_component": "rules",
+    "article_number": 39
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-039",
+     "article_number": 39,
+     "score": 48
+    },
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-017",
+     "article_number": 17,
+     "score": 47
+    },
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-064",
+     "article_number": 64,
+     "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "gz-3ce633-1",
+   "query_ar": "لجنة تسجيل المبيدات تنشأ لجنة لتسجيل المبيدات تسمى (لجنة تسجيل المبيدات)، تكون مسؤولة عن تسجيل المبيدات والقيام بالمهام التي توكل إليها ضمن بنود هذه",
+   "category": "definitional",
+   "gold": {
+    "corpus": "gcc_pesticides_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gcc-pesticides-regulation-llm-002",
+     "article_number": 2,
+     "score": 46
+    },
+    {
+     "record_id": "gcc-pesticides-regulation-llm-004",
+     "article_number": 4,
+     "score": 19
+    },
+    {
+     "record_id": "gcc-pesticides-regulation-llm-001",
+     "article_number": 1,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "gz-3ce633-2",
+   "query_ar": "- على المزارع أو المكلف باستخدام المبيد أن ينفذ التعليمات الواردة بملصق وعاء المبيد وخاصة فيما يتعلق بطريقة الاستعمال، والفترة الآمنة والمحاصيل التي ستتم معاملتها أو رشها والاحتياطات الواجب",
+   "category": "provision",
+   "gold": {
+    "corpus": "gcc_pesticides_regulation",
+    "law_component": "regulation",
+    "article_number": 26
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "gcc-pesticides-regulation-llm-026",
+     "article_number": 26,
+     "score": 30
+    },
+    {
+     "record_id": "gcc-pesticides-regulation-llm-001",
+     "article_number": 1,
+     "score": 20
+    },
+    {
+     "record_id": "gcc-pesticides-regulation-llm-036",
+     "article_number": 36,
+     "score": 16
+    }
+   ]
+  },
+  {
+   "query_id": "gz-662530-1",
+   "query_ar": "(الهدف من اللائحة ونطاق تطبيقها) 1- تهدف اللائحة إلى تنظيم أنشطة البحث والتطوير في القطاع بالمملكة. 2- تطبق أحكام هذه اللائحة على جميع مكونات المنظومة شاملة الجهات المستفيدة الممثلة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "military_industries_rnd_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "military-industries-rnd-regulation-llm-002",
+     "article_number": 2,
+     "score": 56
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-005",
+     "article_number": 5,
+     "score": 45
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-001",
+     "article_number": 1,
+     "score": 42
+    }
+   ]
+  },
+  {
+   "query_id": "gz-662530-2",
+   "query_ar": "(ممكنات التنفيذ) أ. يجب توفر ممكنات التنفيذ المحددة في المقترح أو المدرجة عند الموافقة على المقترح لدى الجهة المنفذة للبرنامج أو المشروع، وذلك يشمل ولا يقتصر على الآتي: 1- القدرات البشرية",
+   "category": "provision",
+   "gold": {
+    "corpus": "military_industries_rnd_regulation",
+    "law_component": "regulation",
+    "article_number": 27
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "military-industries-rnd-regulation-llm-027",
+     "article_number": 27,
+     "score": 49
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-028",
+     "article_number": 28,
+     "score": 27
+    },
+    {
+     "record_id": "military-industries-rnd-regulation-llm-025",
+     "article_number": 25,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-e1d1b6-1",
+   "query_ar": "تسري أحكام هذه اللائحة على ممارسي نشاط النقل الدولي للركاب بالحافلات من/إلى خارج المملكة، وتعد إحدى لوائح نظام النقل العام على",
+   "category": "definitional",
+   "gold": {
+    "corpus": "international_bus_transport_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "international-bus-transport-regulation-llm-002",
+     "article_number": 2,
+     "score": 69
+    },
+    {
+     "record_id": "international-bus-transport-regulation-llm-001",
+     "article_number": 1,
+     "score": 49
+    },
+    {
+     "record_id": "international-bus-transport-regulation-llm-046",
+     "article_number": 46,
+     "score": 45
+    }
+   ]
+  },
+  {
+   "query_id": "gz-e1d1b6-2",
+   "query_ar": "يجب على الناقل إصدار تذكرة سفر لكل راكب، يوضح فيها بيانات الراكب والرحلة (اسم الراكب، ورقم الهوية، والجنسية، ورقم الرحلة، ومكان انطلاق الرحلة ووجهة الوصول، وموعد الانطلاق والوصول، وقيمة",
+   "category": "provision",
+   "gold": {
+    "corpus": "international_bus_transport_regulation",
+    "law_component": "regulation",
+    "article_number": 24
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "international-bus-transport-regulation-llm-024",
+     "article_number": 24,
+     "score": 50
+    },
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-071",
+     "article_number": 71,
+     "score": 23
+    },
+    {
+     "record_id": "public-transport-users-rights-mechanism-llm-024",
+     "article_number": 24,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ec4101-1",
+   "query_ar": "تطبق أحكام هذه اللائحة على كافة الخدمات والأنشطة المتعلقة بالفحص الفني المشار إليها في",
+   "category": "definitional",
+   "gold": {
+    "corpus": "vehicle_periodic_inspection_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vehicle-periodic-inspection-regulation-llm-002",
+     "article_number": 2,
+     "score": 48
+    },
+    {
+     "record_id": "environmental-permits-reg-llm-art-010",
+     "article_number": 10,
+     "score": 23
+    },
+    {
+     "record_id": "environmental-service-providers-reg-llm-art-006",
+     "article_number": 6,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-ec4101-2",
+   "query_ar": "يحظر على الجهة المرخص لها التنازل عن الترخيص إلى جهة أخرى إلا بعد صدور الموافقة النهائية من اللجنة بعد استيفاء المتطلبات التالية: تعبئة وتقديم النموذج الخاص بطلب التنازل عن الترخيص. استيفاء",
+   "category": "provision",
+   "gold": {
+    "corpus": "vehicle_periodic_inspection_regulation",
+    "law_component": "regulation",
+    "article_number": 23
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vehicle-periodic-inspection-regulation-llm-023",
+     "article_number": 23,
+     "score": 50
+    },
+    {
+     "record_id": "labor-annex4-llm-art-012",
+     "article_number": 12,
+     "score": 35
+    },
+    {
+     "record_id": "press-regulation-llm-art-016",
+     "article_number": 16,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d41fa3-1",
+   "query_ar": "الأهداف تهدف هذه اللائحة إلى بيان أحكام التصنيف والتسجيل ومنح",
+   "category": "definitional",
+   "gold": {
+    "corpus": "health_specialties_membership_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-specialties-membership-regulation-llm-002",
+     "article_number": 2,
+     "score": 34
+    },
+    {
+     "record_id": "zakat-law-llm-art-002",
+     "article_number": 2,
+     "score": 19
+    },
+    {
+     "record_id": "environmental-permits-reg-llm-art-005",
+     "article_number": 5,
+     "score": 17
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d41fa3-2",
+   "query_ar": "شروط التسجيل 1- أن يكون المتقدم حاصلا على مؤهل صحي معترف به في أحد التخصصات الصحية أو اختصاصاتها. 2- أن يكون حسن السيرة والسلوك. 3- أن يكون حاصلا على التصنيف. 4- سداد رسوم التسجيل. 5- أي",
+   "category": "provision",
+   "gold": {
+    "corpus": "health_specialties_membership_regulation",
+    "law_component": "regulation",
+    "article_number": 21
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-specialties-membership-regulation-llm-021",
+     "article_number": 21,
+     "score": 53
+    },
+    {
+     "record_id": "health-specialties-membership-regulation-llm-032",
+     "article_number": 32,
+     "score": 23
+    },
+    {
+     "record_id": "healthcare-professions-regulation-llm-art-003",
+     "article_number": 3,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1f8c71-1",
+   "query_ar": "تعمل الوزارة في سبيل تنفيذ أحكام اللائحة وقواعدها التنفيذية على ما يلي: 1- تطوير قاعدة البيانات الاجتماعية للأشخاص ذوي الإعاقة. 2- اعتماد طرق تقييم الإعاقة التي يحدد على أساسها المستوى",
+   "category": "definitional",
+   "gold": {
+    "corpus": "disability_social_programs_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-social-programs-regulation-llm-002",
+     "article_number": 2,
+     "score": 75
+    },
+    {
+     "record_id": "disability-social-programs-regulation-llm-001",
+     "article_number": 1,
+     "score": 53
+    },
+    {
+     "record_id": "disability-nongov-social-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 52
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1f8c71-2",
+   "query_ar": "لا يقبل في البرامج الاجتماعية أو المهنية المقدمة في المنشآت الحكومية التابعة للوزارة: 1- المصابون بأمراض سارية أو معدية أو باضطرابات نفسية تشكل خطرا على أنفسهم أو الآخرين. 2- غير المستقرين",
+   "category": "provision",
+   "gold": {
+    "corpus": "disability_social_programs_regulation",
+    "law_component": "regulation",
+    "article_number": 21
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-social-programs-regulation-llm-021",
+     "article_number": 21,
+     "score": 54
+    },
+    {
+     "record_id": "disability-nongov-social-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 32
+    },
+    {
+     "record_id": "disability-social-programs-regulation-llm-023",
+     "article_number": 23,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-2b0c60-1",
+   "query_ar": "تطبق أحكام القواعد على كافة المقيمين المعتمدين أو الحاصلين على الموافقة المؤقتة -بحسب الأحوال- في فرع تقييم أضرار",
+   "category": "definitional",
+   "gold": {
+    "corpus": "vehicle_damage_assessment_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vehicle-damage-assessment-rules-llm-002",
+     "article_number": 2,
+     "score": 56
+    },
+    {
+     "record_id": "vehicle-damage-assessment-rules-llm-001",
+     "article_number": 1,
+     "score": 38
+    },
+    {
+     "record_id": "vehicle-damage-assessment-rules-llm-019",
+     "article_number": 19,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-2b0c60-2",
+   "query_ar": "يجب إنشاء المسارات ومناطق العمل بما يضمن التدفق الانسيابي للمركبات بحسب فئة المركز ووفقا للآتي: 1- مسار الأضرار البسيطة والمتوسطة: المخصص للمركبات ذات الأضرار البسيطة والمتوسطة وفقا لمعايير",
+   "category": "provision",
+   "gold": {
+    "corpus": "vehicle_damage_assessment_rules",
+    "law_component": "rules",
+    "article_number": 21
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "vehicle-damage-assessment-rules-llm-021",
+     "article_number": 21,
+     "score": 31
+    },
+    {
+     "record_id": "vehicle-damage-assessment-rules-llm-022",
+     "article_number": 22,
+     "score": 21
+    },
+    {
+     "record_id": "high-risk-professions-regulation-llm-art-009",
+     "article_number": 9,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "gz-43ce74-1",
+   "query_ar": "تهدف هذه اللائحة إلى تنظيم ممارسة تشغيل مرافق الإيواء السياحي، وتحديد إجراءات وشروط الحصول على الرخصة وشهادة التصنيف، والالتزامات المستمرة الواجب اتباعها، بالإضافة إلى إجراءات الرقابة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "tourist_accommodation_facilities_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-002",
+     "article_number": 2,
+     "score": 63
+    },
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 45
+    },
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-021",
+     "article_number": 21,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-43ce74-2",
+   "query_ar": "لضمان جودة الخدمة المقدمة، يجب على المرخص له الالتزام بالتالي: 1. تعليق المستندات التالية في مكان بارز في الاستقبال بمرفق الإيواء السياحي: أ. الرخصة. ب. شهادة التصنيف، مع مراعاة ما نصت عليه",
+   "category": "provision",
+   "gold": {
+    "corpus": "tourist_accommodation_facilities_regulation",
+    "law_component": "regulation",
+    "article_number": 21
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-021",
+     "article_number": 21,
+     "score": 58
+    },
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-026",
+     "article_number": 26,
+     "score": 40
+    },
+    {
+     "record_id": "tourist-accommodation-facilities-regulation-llm-001",
+     "article_number": 1,
+     "score": 37
+    }
+   ]
+  },
+  {
+   "query_id": "gz-a4809d-1",
+   "query_ar": "ينشأ بموجب هذه اللائحة مجلس للمؤسسات الأهلية، يتمتع بالشخصية الاعتبارية والاستقلال المالي والإداري، ويكون مقره الرئيس في مدينة الرياض، وله بعد موافقة المركز إنشاء لجان مناطقية أو",
+   "category": "definitional",
+   "gold": {
+    "corpus": "ngo_council_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ngo-council-regulation-llm-002",
+     "article_number": 2,
+     "score": 61
+    },
+    {
+     "record_id": "charitable-societies-council-regulation-llm-002",
+     "article_number": 2,
+     "score": 55
+    },
+    {
+     "record_id": "associations-ngo-regulation-llm-art-072",
+     "article_number": 72,
+     "score": 45
+    }
+   ]
+  },
+  {
+   "query_id": "gz-a4809d-2",
+   "query_ar": "تكون إجراءات الترشح والاقتراع وفرز الأصوات وإعلان نتيجة انتخاب أعضاء مجلس الإدارة وفقا لما يأتي: 1- يصدر مجلس الإدارة قرار البدء في عملية الانتخاب وفق جدول زمني محدد، ويضع التعليمات",
+   "category": "provision",
+   "gold": {
+    "corpus": "ngo_council_regulation",
+    "law_component": "regulation",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ngo-council-regulation-llm-020",
+     "article_number": 20,
+     "score": 44
+    },
+    {
+     "record_id": "oa-llm-companies-art-068",
+     "article_number": 68,
+     "score": 43
+    },
+    {
+     "record_id": "charitable-societies-council-regulation-llm-048",
+     "article_number": 48,
+     "score": 40
+    }
+   ]
+  },
+  {
+   "query_id": "gz-242907-1",
+   "query_ar": "اسم الشركة شركة الصحة القابضة (شركة شخص واحد مساهمة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "health_holding_company_statute",
+    "law_component": "statute",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-holding-company-statute-llm-002",
+     "article_number": 2,
+     "score": 42
+    },
+    {
+     "record_id": "oa-llm-companies-art-150",
+     "article_number": 150,
+     "score": 27
+    },
+    {
+     "record_id": "oa-llm-companies-art-098",
+     "article_number": 98,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "gz-242907-2",
+   "query_ar": "مداولات مجلس الإدارة تثبت مداولات مجلس الإدارة وقراراته في محاضر يوقعها رئيس المجلس وأعضاؤه الحاضرون وأمين السر، وتدون هذه المحاضر في سجل خاص يوقعه رئيس مجلس الإدارة وأمين",
+   "category": "provision",
+   "gold": {
+    "corpus": "health_holding_company_statute",
+    "law_component": "statute",
+    "article_number": 20
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "health-holding-company-statute-llm-020",
+     "article_number": 20,
+     "score": 44
+    },
+    {
+     "record_id": "oa-llm-companies-art-083",
+     "article_number": 83,
+     "score": 42
+    },
+    {
+     "record_id": "oa-llm-companies-art-078",
+     "article_number": 78,
+     "score": 30
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0de692-1",
+   "query_ar": "يعد الصندوق العائلي مؤسسة أهلية، وتطبق عليه الأحكام المنصوص عليها في هذه",
+   "category": "definitional",
+   "gold": {
+    "corpus": "family_funds_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "family-funds-rules-llm-002",
+     "article_number": 2,
+     "score": 36
+    },
+    {
+     "record_id": "associations-ngo-regulation-llm-art-043",
+     "article_number": 43,
+     "score": 31
+    },
+    {
+     "record_id": "judgment-objection-methods-regulation-llm-art-052",
+     "article_number": 52,
+     "score": 18
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0de692-2",
+   "query_ar": "مع مراعاة أحكام النظام، يجب على الصندوق أن يتعامل مع أموال الزكاة في حساب مستقل وأن ينشئ لها سجلا خاصا بها، ويجب عليه التصرف في أموال الزكاة بما يتفق مع أحكام الشريعة",
+   "category": "provision",
+   "gold": {
+    "corpus": "family_funds_rules",
+    "law_component": "rules",
+    "article_number": 19
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "family-funds-rules-llm-019",
+     "article_number": 19,
+     "score": 50
+    },
+    {
+     "record_id": "associations-ngo-regulation-llm-art-031",
+     "article_number": 31,
+     "score": 41
+    },
+    {
+     "record_id": "associations-ngo-regulation-llm-art-061",
+     "article_number": 61,
+     "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1900ad-1",
+   "query_ar": "آلية التصنيف 1. تقوم الهيئة بتصنيف المطارات في المملكة وفقا للتصنيف التالي: ‌أ. المطارات المحددة. ‌ب. المطارات غير المحددة. 2. تستند الهيئة عند تصنيف أي مطار إلى عدة عوامل، منها: ‌أ. عدد",
+   "category": "definitional",
+   "gold": {
+    "corpus": "airports_economic_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "airports-economic-regulation-llm-002",
+     "article_number": 2,
+     "score": 47
+    },
+    {
+     "record_id": "environmental-service-providers-reg-llm-art-005",
+     "article_number": 5,
+     "score": 25
+    },
+    {
+     "record_id": "airports-economic-regulation-llm-003",
+     "article_number": 3,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "gz-1900ad-2",
+   "query_ar": "إجراءات الاستشارة 1. يجب على مشغل المطار أن يقدم ملف استثمار المشروع والذي يشتمل على كافة المعلومات المطلوبة عن المشروع إلى الهيئة ولجنة مستخدمي المطار ولجنة مقدمي الخدمة في المطار. 2. تمر",
+   "category": "provision",
+   "gold": {
+    "corpus": "airports_economic_regulation",
+    "law_component": "regulation",
+    "article_number": 18
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "airports-economic-regulation-llm-018",
+     "article_number": 18,
+     "score": 49
+    },
+    {
+     "record_id": "airports-economic-regulation-llm-006",
+     "article_number": 6,
+     "score": 31
+    },
+    {
+     "record_id": "airports-economic-regulation-llm-019",
+     "article_number": 19,
+     "score": 26
+    }
+   ]
+  },
+  {
+   "query_id": "gz-bd97fc-1",
+   "query_ar": "تهدف القواعد إلى تحقيق الآتي: 1- تطوير مهنة التقييم والارتقاء بها، ورفع مستوى العاملين فيها. 2- ضبط مسؤولية المقيم المعتمد في ممارسته لمهنته ، وتوضيح مسؤولياته تجاه المشارك معه في إعداد",
+   "category": "definitional",
+   "gold": {
+    "corpus": "valuation_profession_conduct_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "valuation-profession-conduct-rules-llm-002",
+     "article_number": 2,
+     "score": 57
+    },
+    {
+     "record_id": "valuation-profession-conduct-rules-llm-029",
+     "article_number": 29,
+     "score": 32
+    },
+    {
+     "record_id": "valuation-profession-conduct-rules-llm-001",
+     "article_number": 1,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-bd97fc-2",
+   "query_ar": "دون إخلال بالمسؤولية المدنية؛ لا يعد إخلالا بالسلوك المهني اعتذار المقيم المعتمد عن الاستمرار في تنفيذ عملية التقييم قبل إتمامها، إذا أدى الاستمرار في عملية التقييم إلى مخالفة الأحكام",
+   "category": "provision",
+   "gold": {
+    "corpus": "valuation_profession_conduct_rules",
+    "law_component": "rules",
+    "article_number": 18
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "valuation-profession-conduct-rules-llm-018",
+     "article_number": 18,
+     "score": 54
+    },
+    {
+     "record_id": "valuation-profession-conduct-rules-llm-030",
+     "article_number": 30,
+     "score": 28
+    },
+    {
+     "record_id": "sulook-regulation-llm-art-022",
+     "article_number": 22,
+     "score": 25
+    }
+   ]
+  },
+  {
+   "query_id": "gz-01272a-1",
+   "query_ar": "أهداف اللائحة تهدف اللائحة إلى تحقيق الآتي: 1- ضبط أعمال النظارة وتنظيمها بما يحقق مقصد الواقف، ويعزز من الدور التنموي للأوقاف. 2- رفع الكفاءة المهنية للنظار؛ حماية للوقف والحقوق المتعلقة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "nazara_works_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nazara-works-regulation-llm-002",
+     "article_number": 2,
+     "score": 57
+    },
+    {
+     "record_id": "child-protection-regulation-llm-art-002",
+     "article_number": 2,
+     "score": 25
+    },
+    {
+     "record_id": "awqaf-law-llm-art-005",
+     "article_number": 5,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "gz-01272a-2",
+   "query_ar": "تفرغ الناظر 1- على الناظر أن يخصص الوقت والجهد الكافيين والمناسبين للقيام بمهامه. 2- يجوز للناظر الجمع بين مزاولة النظارة ومزاولة الأعمال الأخرى، بشرط ألا تتعارض مع مصالح الوقف واستمراريته،",
+   "category": "provision",
+   "gold": {
+    "corpus": "nazara_works_regulation",
+    "law_component": "regulation",
+    "article_number": 17
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "nazara-works-regulation-llm-017",
+     "article_number": 17,
+     "score": 56
+    },
+    {
+     "record_id": "nazara-works-regulation-llm-012",
+     "article_number": 12,
+     "score": 25
+    },
+    {
+     "record_id": "accredited-valuers-law-llm-art-013",
+     "article_number": 13,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "gz-a331be-1",
+   "query_ar": "الغرض من اللائحة: تهدف هذه اللائحة إلى وضع إطار تنظيمي لمتطلبات ضبط وإدارة مياه الصابورة على السفن ومكافحة التلوث البحري الناجم عن تصريف مياه الصابورة في المناطق البحرية وآلية تنفيذ",
+   "category": "definitional",
+   "gold": {
+    "corpus": "ballast_water_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ballast-water-regulation-llm-002",
+     "article_number": 2,
+     "score": 81
+    },
+    {
+     "record_id": "ballast-water-regulation-llm-014",
+     "article_number": 14,
+     "score": 57
+    },
+    {
+     "record_id": "ballast-water-regulation-llm-004",
+     "article_number": 4,
+     "score": 55
+    }
+   ]
+  },
+  {
+   "query_id": "gz-a331be-2",
+   "query_ar": "مرافق استقبال مياه الصابورة أو الرواسب: 1- يجب على الجهات المعنية أن تقوم بالتنسيق فيما بينها لتوفير مرافق مناسبة لاستقبال مياه الصابورة أو الرواسب من السفن التي تتردد على الميناء أو الفرضة",
+   "category": "provision",
+   "gold": {
+    "corpus": "ballast_water_regulation",
+    "law_component": "regulation",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ballast-water-regulation-llm-016",
+     "article_number": 16,
+     "score": 59
+    },
+    {
+     "record_id": "ballast-water-regulation-llm-019",
+     "article_number": 19,
+     "score": 51
+    },
+    {
+     "record_id": "ballast-water-regulation-llm-005",
+     "article_number": 5,
+     "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8c6434-1",
+   "query_ar": "هدف اللائحة تهدف اللائحة إلى تنظيم أعمال المنطقة والأنشطة فيها بما يساهم في تحقيق أهدافها، وذلك وفقا للموقع الجغرافي والخرائط المعتمدة بموجب قرارات مجلس الوزراء ذات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "sez_kaec_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-jazan-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "sez-kaec-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "sez-raskhair-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8c6434-2",
+   "query_ar": "صلاحية الإشراف على تنفيذ الأحكام المتعلقة بالعمل والعمال تتولى الهيئة -بالتنسيق مع وزارة الموارد البشرية والتنمية الاجتماعية- الإشراف على تنفيذ الأحكام المتعلقة بالعمل والعمال، واتخاذ ما",
+   "category": "provision",
+   "gold": {
+    "corpus": "sez_kaec_regulation",
+    "law_component": "regulation",
+    "article_number": 18
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-jazan-regulation-llm-017",
+     "article_number": 17,
+     "score": 43
+    },
+    {
+     "record_id": "sez-kaec-regulation-llm-018",
+     "article_number": 18,
+     "score": 43
+    },
+    {
+     "record_id": "sez-raskhair-regulation-llm-017",
+     "article_number": 17,
+     "score": 43
+    }
+   ]
+  },
+  {
+   "query_id": "gz-dbb5df-1",
+   "query_ar": "هدف اللائحة تهدف اللائحة إلى تنظيم أعمال المنطقة والأنشطة فيها بما يساهم في تحقيق أهدافها، وذلك وفقا للموقع الجغرافي والخرائط المعتمدة بموجب قرارات مجلس الوزراء ذات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "sez_jazan_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-jazan-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "sez-kaec-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "sez-raskhair-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    }
+   ]
+  },
+  {
+   "query_id": "gz-dbb5df-2",
+   "query_ar": "سجل الشركات تنشئ الهيئة سجل شركات لتسجيل الشركات التي تمارس الأنشطة في المنطقة، وتقيد فيه البيانات التي تحددها اللائحة والقواعد التي تصدرها الهيئة -بالاتفاق مع وزارة التجارة- بهذا",
+   "category": "provision",
+   "gold": {
+    "corpus": "sez_jazan_regulation",
+    "law_component": "regulation",
+    "article_number": 18
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-jazan-regulation-llm-018",
+     "article_number": 18,
+     "score": 52
+    },
+    {
+     "record_id": "sez-kaec-regulation-llm-019",
+     "article_number": 19,
+     "score": 52
+    },
+    {
+     "record_id": "sez-raskhair-regulation-llm-018",
+     "article_number": 18,
+     "score": 52
+    }
+   ]
+  },
+  {
+   "query_id": "gz-4a934f-1",
+   "query_ar": "هدف اللائحة تهدف اللائحة إلى تنظيم أعمال المنطقة والأنشطة فيها بما يساهم في تحقيق أهدافها، وذلك وفقا للموقع الجغرافي والخرائط المعتمدة بموجب قرارات مجلس الوزراء ذات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "sez_raskhair_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-jazan-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "sez-kaec-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "sez-raskhair-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    }
+   ]
+  },
+  {
+   "query_id": "gz-4a934f-2",
+   "query_ar": "سجل الشركات تنشئ الهيئة سجل شركات لتسجيل الشركات التي تمارس الأنشطة في المنطقة، وتقيد فيه البيانات التي تحددها اللائحة والقواعد التي تصدرها الهيئة -بالاتفاق مع وزارة التجارة- بهذا",
+   "category": "provision",
+   "gold": {
+    "corpus": "sez_raskhair_regulation",
+    "law_component": "regulation",
+    "article_number": 18
+   },
+   "gold_rank": 3,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "sez-jazan-regulation-llm-018",
+     "article_number": 18,
+     "score": 52
+    },
+    {
+     "record_id": "sez-kaec-regulation-llm-019",
+     "article_number": 19,
+     "score": 52
+    },
+    {
+     "record_id": "sez-raskhair-regulation-llm-018",
+     "article_number": 18,
+     "score": 52
+    }
+   ]
+  },
+  {
+   "query_id": "gz-b904ac-1",
+   "query_ar": "أحكام تمهيدية أ) يقصد بكلمة (النظام) أينما وردت في هذه القواعد نظام السوق المالية الصادر بالمرسوم الملكي رقم م/30 وتاريخ 2 /6 /1424ه. ب) يقصد بالكلمات والعبارات الواردة في هذه القواعد",
+   "category": "definitional",
+   "gold": {
+    "corpus": "securities_offering_obligations_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "securities-offering-obligations-rules-llm-002",
+     "article_number": 2,
+     "score": 52
+    },
+    {
+     "record_id": "special-purpose-entities-rules-llm-002",
+     "article_number": 2,
+     "score": 46
+    },
+    {
+     "record_id": "securities-depository-markets-regulation-llm-002",
+     "article_number": 2,
+     "score": 45
+    }
+   ]
+  },
+  {
+   "query_id": "gz-b904ac-2",
+   "query_ar": "النطاق والتطبيق أ- يهدف هذا الباب إلى تنظيم إصدار الأسهم وتسجيلها وطرحها أو إلغاؤها نتيجة التغير في رأس مال المصدر المدرجة أسهمه في السوق الرئيسية. ب- لا تنطبق أحكام هذا الباب على المنشأة",
+   "category": "provision",
+   "gold": {
+    "corpus": "securities_offering_obligations_rules",
+    "law_component": "rules",
+    "article_number": 52
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "securities-offering-obligations-rules-llm-052",
+     "article_number": 52,
+     "score": 52
+    },
+    {
+     "record_id": "oa-llm-companies-art-127",
+     "article_number": 127,
+     "score": 31
+    },
+    {
+     "record_id": "securities-offering-obligations-rules-llm-059",
+     "article_number": 59,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-486519-1",
+   "query_ar": "ينشأ بموجب هذه اللائحة مجلس للجمعيات الأهلية، يتمتع بالشخصية الاعتبارية والاستقلال المالي والإداري، ويكون مقره الرئيس في مدينة الرياض، وله بعد موافقة المركز إنشاء مجالس فرعية مناطقية أو",
+   "category": "definitional",
+   "gold": {
+    "corpus": "charitable_societies_council_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "charitable-societies-council-regulation-llm-002",
+     "article_number": 2,
+     "score": 62
+    },
+    {
+     "record_id": "ngo-council-regulation-llm-002",
+     "article_number": 2,
+     "score": 55
+    },
+    {
+     "record_id": "falcon-center-statute-llm-002",
+     "article_number": 2,
+     "score": 42
+    }
+   ]
+  },
+  {
+   "query_id": "gz-486519-2",
+   "query_ar": "1- يكون هدف المجالس الفرعية تمثيل الجمعيات الأهلية الواقعة في نطاقها الجغرافي أو التخصصي في الشأن العام لها أمام المركز والجهات الحكومية وغير الحكومية في نطاقها، وتحقيق التعاون والتكامل",
+   "category": "provision",
+   "gold": {
+    "corpus": "charitable_societies_council_regulation",
+    "law_component": "regulation",
+    "article_number": 33
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "charitable-societies-council-regulation-llm-033",
+     "article_number": 33,
+     "score": 58
+    },
+    {
+     "record_id": "associations-ngo-regulation-llm-art-101",
+     "article_number": 101,
+     "score": 51
+    },
+    {
+     "record_id": "charitable-societies-council-regulation-llm-003",
+     "article_number": 3,
+     "score": 48
+    }
+   ]
+  },
+  {
+   "query_id": "gz-3dcef2-1",
+   "query_ar": "نطاق التطبيق تنظم هذه الضوابط الإجراءات الجمركية الموضحة في نظام الجمارك الموحد والتي منحت المحافظ «المدير العام» صلاحية تحديدها، ويخضع لأحكام هذه الضوابط الأشخاص ذوو العلاقة بعمليات",
+   "category": "definitional",
+   "gold": {
+    "corpus": "customs_procedures_controls",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "customs-procedures-controls-llm-002",
+     "article_number": 2,
+     "score": 59
+    },
+    {
+     "record_id": "customs-procedures-controls-llm-001",
+     "article_number": 1,
+     "score": 32
+    },
+    {
+     "record_id": "customs-law-llm-art-066",
+     "article_number": 61,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-3dcef2-2",
+   "query_ar": "النقل بالعبور مع مراعاة أحكام الاتفاقيات الإقليمية والدولية النافذة وأحكام نظام الجمارك الموحد، يجب عند نقل البضائع بالعبور «ترانزيت» الالتزام بما يلي: - نقل البضائع العابرة وإيصالها إلى",
+   "category": "provision",
+   "gold": {
+    "corpus": "customs_procedures_controls",
+    "law_component": "rules",
+    "article_number": 25
+   },
+   "gold_rank": 2,
+   "hit_top1": false,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "customs-law-llm-art-076",
+     "article_number": 71,
+     "score": 47
+    },
+    {
+     "record_id": "customs-procedures-controls-llm-025",
+     "article_number": 25,
+     "score": 44
+    },
+    {
+     "record_id": "customs-law-llm-art-025",
+     "article_number": 24,
+     "score": 36
+    }
+   ]
+  },
+  {
+   "query_id": "gz-717fb1-1",
+   "query_ar": "1- يقدم طلب المعاش إلى الوزارة عن طريق المكتب أو المنصة الإلكترونية أو الاتصال بهاتف الوزارة المخصص لهذا الغرض، ويجب تضمين نموذج الطلب البيانات التالية: أ- الاسم الرباعي لمقدم الطلب. ب- رقم",
+   "category": "definitional",
+   "gold": {
+    "corpus": "social_security_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-security-regulation-llm-002",
+     "article_number": 2,
+     "score": 34
+    },
+    {
+     "record_id": "pdpl-reg-llm-art-006",
+     "article_number": 6,
+     "score": 23
+    },
+    {
+     "record_id": "labor-annex5-llm-015-permanent",
+     "article_number": 15,
+     "score": 22
+    }
+   ]
+  },
+  {
+   "query_id": "gz-717fb1-2",
+   "query_ar": "تصنف الوزارة المستفيد بناء على البيانات والمعلومات المتعلقة بحالته الصحية والبدنية والاجتماعية، وذلك على النحو التالي: 1- مستفيد قادر على العمل، إذا كان سليما بلغ الثامنة عشرة عاما. 2-",
+   "category": "provision",
+   "gold": {
+    "corpus": "social_security_regulation",
+    "law_component": "regulation",
+    "article_number": 15
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "social-security-regulation-llm-015",
+     "article_number": 15,
+     "score": 46
+    },
+    {
+     "record_id": "mental-health-law-llm-art-018",
+     "article_number": 18,
+     "score": 26
+    },
+    {
+     "record_id": "child-protection-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 24
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c5ffc7-1",
+   "query_ar": "يهدف تأمين السلع والخدمات وفق أسلوب المشاركة في الدخل إلى ما يأتي: 1- رفع جودة السلع والخدمات، وترشيد الإنفاق العام، وزيادة إيرادات الدولة، وتحسين القيمة مقابل المال للخزينة العامة للدولة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "revenue_sharing_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "revenue-sharing-rules-llm-002",
+     "article_number": 2,
+     "score": 57
+    },
+    {
+     "record_id": "revenue-sharing-rules-llm-001",
+     "article_number": 1,
+     "score": 38
+    },
+    {
+     "record_id": "revenue-sharing-rules-llm-004",
+     "article_number": 4,
+     "score": 38
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c5ffc7-2",
+   "query_ar": "1- يجوز -بموافقة رئيس الجهة الحكومية أو من يفوضه وفقا لأحكام النظام واللوائح- منح الشريك الخاص الحق فيما يأتي: أ- تحصيل الإيرادات لصالحه مباشرة لقاء السلع والخدمات التي يقدمها؛ وفقا للعقد،",
+   "category": "provision",
+   "gold": {
+    "corpus": "revenue_sharing_rules",
+    "law_component": "rules",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "revenue-sharing-rules-llm-016",
+     "article_number": 16,
+     "score": 48
+    },
+    {
+     "record_id": "revenue-sharing-rules-llm-005",
+     "article_number": 5,
+     "score": 34
+    },
+    {
+     "record_id": "revenue-sharing-rules-llm-009",
+     "article_number": 9,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "gz-62c1e7-1",
+   "query_ar": "مع عدم الإخلال بأحكام الاتفاقيات الدولية التي تكون المملكة العربية السعودية طرفا فيها: 1- تسري أحكام هذه اللائحة على أعمال المرخص داخل أراضي المملكة العربية السعودية أو من المملكة العربية",
+   "category": "definitional",
+   "gold": {
+    "corpus": "freight_broker_logistics_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "freight-broker-logistics-regulation-llm-002",
+     "article_number": 2,
+     "score": 45
+    },
+    {
+     "record_id": "arbitration-law-llm-art-002",
+     "article_number": 2,
+     "score": 35
+    },
+    {
+     "record_id": "nationality-regulation-llm-art-034",
+     "article_number": 34,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-62c1e7-2",
+   "query_ar": "على المرسل الالتزام بما يلي: 1 - تزويد المرخص بجميع متطلبات الشحن والنقل الضرورية وتقديم المعلومات التي تساعد على تنفيذ عقد الشحن وعقد النقل بصورة جيدة بما في ذلك المستندات والوثائق",
+   "category": "provision",
+   "gold": {
+    "corpus": "freight_broker_logistics_regulation",
+    "law_component": "regulation",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "freight-broker-logistics-regulation-llm-016",
+     "article_number": 16,
+     "score": 47
+    },
+    {
+     "record_id": "freight-broker-logistics-regulation-llm-014",
+     "article_number": 14,
+     "score": 39
+    },
+    {
+     "record_id": "freight-broker-logistics-regulation-llm-001",
+     "article_number": 1,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-96f478-1",
+   "query_ar": "تطبق اللجان هذه القواعد، وتسري على جميع الطلبات المقدمة على منصة (إحكام) لتملك العقارات أو استكمال صكوك حجج الاستحكام أو تعديلها، والتي تختص بنظرها اللجان المشكلة وفقا للأمر الملكي الكريم",
+   "category": "definitional",
+   "gold": {
+    "corpus": "property_ownership_committees_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "property-ownership-committees-rules-llm-002",
+     "article_number": 2,
+     "score": 56
+    },
+    {
+     "record_id": "property-ownership-committees-rules-llm-001",
+     "article_number": 1,
+     "score": 28
+    },
+    {
+     "record_id": "property-ownership-committees-rules-llm-005",
+     "article_number": 5,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-96f478-2",
+   "query_ar": "عند ورود ما يقتضي تصحيح محضر التوصية فيكون التصحيح بحسب الأحوال الآتية: 1- إذا كان التصحيح على ما ورد في ذات التوصية فيجب إصدار محضر تصحيحي ويوقع من قبل جميع أعضاء لجنة النظر. 2 -إذا كان",
+   "category": "provision",
+   "gold": {
+    "corpus": "property_ownership_committees_rules",
+    "law_component": "rules",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "property-ownership-committees-rules-llm-016",
+     "article_number": 16,
+     "score": 62
+    },
+    {
+     "record_id": "property-ownership-committees-rules-llm-023",
+     "article_number": 23,
+     "score": 32
+    },
+    {
+     "record_id": "oa-llm-companies-art-267",
+     "article_number": 267,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-6497b7-1",
+   "query_ar": "يحظر على المنشأة ممارسة النشاط قبل الحصول على",
+   "category": "definitional",
+   "gold": {
+    "corpus": "disability_nongov_social_facilities_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-nongov-social-facilities-regulation-llm-002",
+     "article_number": 2,
+     "score": 27
+    },
+    {
+     "record_id": "international-bus-transport-regulation-llm-003",
+     "article_number": 3,
+     "score": 21
+    },
+    {
+     "record_id": "press-regulation-llm-art-062",
+     "article_number": 62,
+     "score": 19
+    }
+   ]
+  },
+  {
+   "query_id": "gz-6497b7-2",
+   "query_ar": "تتولى الوزارة بالتنسيق مع الجهات ذات العلاقة القيام بعمليات الرقابة، وتوضح القواعد التنفيذية آلية الرقابة على المنشآت بما يضمن الالتزام بتنفيذ ما ورد في اللائحة وقواعدها التنفيذية. ويجوز",
+   "category": "provision",
+   "gold": {
+    "corpus": "disability_nongov_social_facilities_regulation",
+    "law_component": "regulation",
+    "article_number": 16
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "disability-nongov-social-facilities-regulation-llm-016",
+     "article_number": 16,
+     "score": 55
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-081",
+     "article_number": 81,
+     "score": 39
+    },
+    {
+     "record_id": "electricity-regulation-llm-art-077",
+     "article_number": 77,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8f5275-1",
+   "query_ar": "تسري القواعد والترتيبات على الموظفين والعمال السعوديين في الأجهزة التي يصدر في شأنها قرار التحول، وفي الأجهزة أو في الخدمات الحكومية التي يصدر في شأنها قرار التخصيص؛ بحسب",
+   "category": "definitional",
+   "gold": {
+    "corpus": "free_zone_employees_treatment_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "free-zone-employees-treatment-rules-llm-002",
+     "article_number": 2,
+     "score": 64
+    },
+    {
+     "record_id": "free-zone-employees-treatment-rules-llm-001",
+     "article_number": 1,
+     "score": 48
+    },
+    {
+     "record_id": "free-zone-employees-treatment-rules-llm-022",
+     "article_number": 22,
+     "score": 41
+    }
+   ]
+  },
+  {
+   "query_id": "gz-8f5275-2",
+   "query_ar": "يعامل الموظف الذي تتوافر فيه المعايير المنصوص عليها في المادة (الثانية عشرة) من القواعد والترتيبات ولا يرغب في الانتقال إلى القطاع الخاص ، وفق الترتيبات الآتية: 1- استيعابه في الجهة المشرفة",
+   "category": "provision",
+   "gold": {
+    "corpus": "free_zone_employees_treatment_rules",
+    "law_component": "rules",
+    "article_number": 15
+   },
+   "gold_rank": 4,
+   "hit_top1": false,
+   "hit_top3": false,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "free-zone-employees-treatment-rules-llm-017",
+     "article_number": 17,
+     "score": 66
+    },
+    {
+     "record_id": "free-zone-employees-treatment-rules-llm-008",
+     "article_number": 8,
+     "score": 58
+    },
+    {
+     "record_id": "free-zone-employees-treatment-rules-llm-018",
+     "article_number": 18,
+     "score": 50
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d41084-1",
+   "query_ar": "تهدف هذه القواعد إلى بيان الأحكام التي تنظم إجراءات الفحص والرقابة والضبط بما يرفع من كفاءة الأعمال، ويحسن من معدلات امتثال المنشآت غير الحكومية للأنظمة واللوائح والتعليمات وبما يحقق الآتي:",
+   "category": "definitional",
+   "gold": {
+    "corpus": "inspection_control_seizure_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inspection-control-seizure-rules-llm-002",
+     "article_number": 2,
+     "score": 56
+    },
+    {
+     "record_id": "inspection-control-seizure-rules-llm-011",
+     "article_number": 11,
+     "score": 35
+    },
+    {
+     "record_id": "inspection-control-seizure-rules-llm-004",
+     "article_number": 4,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-d41084-2",
+   "query_ar": "يعد المراقب التقرير اللازم عن المهمة التي سيتولاها في الفحص أو التحقق من المخالفات، على أن يشتمل التقرير على أسباب الفحص والرقابة، وبيانات الشكوى وتفاصيلها والمستندات الداعمة لها، والبيانات",
+   "category": "provision",
+   "gold": {
+    "corpus": "inspection_control_seizure_rules",
+    "law_component": "rules",
+    "article_number": 14
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "inspection-control-seizure-rules-llm-014",
+     "article_number": 14,
+     "score": 52
+    },
+    {
+     "record_id": "inspection-control-seizure-rules-llm-019",
+     "article_number": 19,
+     "score": 29
+    },
+    {
+     "record_id": "inspection-control-seizure-rules-llm-011",
+     "article_number": 11,
+     "score": 28
+    }
+   ]
+  },
+  {
+   "query_id": "gz-940ff0-1",
+   "query_ar": "الهدف من القواعد تهدف هذه القواعد إلى تنظيم أعمال مقدمي خدمات الملكية الفكرية من خلال إقرار الإجراءات ووضع الضوابط والاشتراطات اللازمة",
+   "category": "definitional",
+   "gold": {
+    "corpus": "ip_services_licensing_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ip-services-licensing-rules-llm-002",
+     "article_number": 2,
+     "score": 58
+    },
+    {
+     "record_id": "ip-services-licensing-rules-llm-001",
+     "article_number": 1,
+     "score": 37
+    },
+    {
+     "record_id": "ip-services-licensing-rules-llm-003",
+     "article_number": 3,
+     "score": 33
+    }
+   ]
+  },
+  {
+   "query_id": "gz-940ff0-2",
+   "query_ar": "تجديد الترخيص يتم تجديد الترخيص تلقائيا بناء على طلب يقدم من المرخص له قبل تاريخ انتهاء الترخيص بثلاثين يوما على الأقل. يلتزم المرخص له بسداد المقابل المالي المقرر لتجديد",
+   "category": "provision",
+   "gold": {
+    "corpus": "ip_services_licensing_rules",
+    "law_component": "rules",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ip-services-licensing-rules-llm-013",
+     "article_number": 13,
+     "score": 52
+    },
+    {
+     "record_id": "railway-law-implementing-regulation-llm-art-020",
+     "article_number": 20,
+     "score": 30
+    },
+    {
+     "record_id": "hospitality-mgmt-reg-llm-024",
+     "article_number": 1,
+     "score": 29
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c9f4e0-1",
+   "query_ar": "نطاق التطبيق مع عدم الإخلال بحق الهيئة في الإشراف والرقابة الجمركية على مناطق الإيداع والمستودعات الجمركية التي تديرها الهيئات الأخرى والأنظمة واللوائح السارية ذات العلاقة، يخضع لأحكام هذه",
+   "category": "definitional",
+   "gold": {
+    "corpus": "deposit_zones_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "deposit-zones-rules-llm-002",
+     "article_number": 2,
+     "score": 57
+    },
+    {
+     "record_id": "deposit-zones-rules-llm-018",
+     "article_number": 18,
+     "score": 37
+    },
+    {
+     "record_id": "deposit-zones-rules-llm-009",
+     "article_number": 9,
+     "score": 35
+    }
+   ]
+  },
+  {
+   "query_id": "gz-c9f4e0-2",
+   "query_ar": "البضائع المقيدة 1- يجب الحصول على موافقة الجهات المختصة عند إدخال البضائع التالية: أ- البضائع القابلة للاشتعال. ب- المواد المشعة أو الكيميائية الخطرة. ج- الأسلحة والذخائر والمتفجرات أيا كان",
+   "category": "provision",
+   "gold": {
+    "corpus": "deposit_zones_rules",
+    "law_component": "rules",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "deposit-zones-rules-llm-013",
+     "article_number": 13,
+     "score": 47
+    },
+    {
+     "record_id": "weapons-ammunition-regulation-llm-art-004",
+     "article_number": 4,
+     "score": 32
+    },
+    {
+     "record_id": "weapons-ammunition-regulation-llm-art-018",
+     "article_number": 18,
+     "score": 31
+    }
+   ]
+  },
+  {
+   "query_id": "gz-42647d-1",
+   "query_ar": "الأحكام العامة 1. تنظم هذه اللائحة التراخيص والموافقات الاقتصادية الآتية: أ‌. ترخيص اقتصادي للناقل الجوي الوطني. ب‌. ترخيص اقتصادي للناقل الجوي بالطلب. ت‌. ترخيص اقتصادي للناقل الجوي",
+   "category": "definitional",
+   "gold": {
+    "corpus": "air_transport_services_economic_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-002",
+     "article_number": 2,
+     "score": 54
+    },
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-009",
+     "article_number": 9,
+     "score": 33
+    },
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-005",
+     "article_number": 5,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-42647d-2",
+   "query_ar": "تجديد الترخيص الاقتصادي 1. يجب على الناقل الجوي الوطني والناقل الجوي بالطلب المرخص له عند رغبته بتجديد ترخيصه، أن يقدم طلبا لتجديد ترخيصه قبل (6) ستة أشهر على الأقل من تاريخ انتهاء صلاحية",
+   "category": "provision",
+   "gold": {
+    "corpus": "air_transport_services_economic_regulation",
+    "law_component": "regulation",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-013",
+     "article_number": 13,
+     "score": 57
+    },
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-009",
+     "article_number": 9,
+     "score": 46
+    },
+    {
+     "record_id": "air-transport-services-economic-regulation-llm-014",
+     "article_number": 14,
+     "score": 34
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0e39df-1",
+   "query_ar": "تسري القواعد على مشاريع التخصيص والعقود الخاضعة لأحكام النظام، والأجهزة المعنية بتلك المشاريع",
+   "category": "definitional",
+   "gold": {
+    "corpus": "privatization_governing_rules",
+    "law_component": "rules",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "privatization-governing-rules-llm-002",
+     "article_number": 2,
+     "score": 42
+    },
+    {
+     "record_id": "oa-llm-companies-art-235",
+     "article_number": 235,
+     "score": 21
+    },
+    {
+     "record_id": "privatization-governing-rules-llm-001",
+     "article_number": 1,
+     "score": 20
+    }
+   ]
+  },
+  {
+   "query_id": "gz-0e39df-2",
+   "query_ar": "استثناء من الفقرة (1) من المادة (الثانية عشرة)، للجنة الإشرافية منح الصلاحيات الممنوحة للجهاز المعني لفريق عملها ليمارسها في حال تحقق أي من الحالات الآتية: أ- تقصير الجهاز المعني باعتباره",
+   "category": "provision",
+   "gold": {
+    "corpus": "privatization_governing_rules",
+    "law_component": "rules",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "privatization-governing-rules-llm-013",
+     "article_number": 13,
+     "score": 55
+    },
+    {
+     "record_id": "privatization-governing-rules-llm-015",
+     "article_number": 15,
+     "score": 33
+    },
+    {
+     "record_id": "privatization-regulation-llm-art-024",
+     "article_number": 24,
+     "score": 32
+    }
+   ]
+  },
+  {
+   "query_id": "gz-30010d-1",
+   "query_ar": "نطاق التطبيق تختص هذه اللائحة بتنظيم التراخيص الاقتصادية المتعلقة بتقديم الخدمات التالية في مطار أو أكثر من مطارات المملكة: 1. خدمات المناولة الأرضية. 2. خدمات الشحن",
+   "category": "definitional",
+   "gold": {
+    "corpus": "ground_handling_air_cargo_economic_regulation",
+    "law_component": "regulation",
+    "article_number": 2
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-002",
+     "article_number": 2,
+     "score": 72
+    },
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-009",
+     "article_number": 9,
+     "score": 52
+    },
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-003",
+     "article_number": 3,
+     "score": 51
+    }
+   ]
+  },
+  {
+   "query_id": "gz-30010d-2",
+   "query_ar": "التزامات مشغل المطار 1. يجب على مشغل المطار التأكد من استيفاء مقدم الطلب لأحد المتطلبات التالية عند مشاركته في أي عملية اختيار لتقديم خدمة المناولة الأرضية في أحد مطارات المملكة: ‌أ. ترخيص",
+   "category": "provision",
+   "gold": {
+    "corpus": "ground_handling_air_cargo_economic_regulation",
+    "law_component": "regulation",
+    "article_number": 13
+   },
+   "gold_rank": 1,
+   "hit_top1": true,
+   "hit_top3": true,
+   "hit_top5": true,
+   "top_hits": [
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-013",
+     "article_number": 13,
+     "score": 61
+    },
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-008",
+     "article_number": 8,
+     "score": 44
+    },
+    {
+     "record_id": "ground-handling-air-cargo-economic-regulation-llm-014",
+     "article_number": 14,
+     "score": 38
     }
    ]
   }
