@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Read-only validator for the القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال track.
+"""Read-only validator for the القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال في القطاعات المستهدفة بالتحول والتخصيص track.
 
-18 records: 18 numbered articles, no appendix records. All اصلية.
+28 records: 28 numbered articles, no appendix records. All اصلية.
 
 VERIFICATION TIER: TIER_1 -- full text fetched directly from the Umm Al-Qura
 Official Gazette's own server-rendered HTML page. This validator only checks
@@ -113,7 +113,9 @@ def main():
                 e.append("[2f] %s: residual %s artifact" % (k, lbl))
         if "نسخة تجريبية" in t or "الرئيسية القرارات" in t:
             e.append("[2f] %s: site navigation boilerplate leaked into article text" % k)
-        if re.search(r"(الباب|الفصل)\s+(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع)\s*:?\s*[^\s]{0,40}$", t):
+        if re.search(r"\s(الباب|الفصل)\s+(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|العاشر"
+                 r"|(?:الحادي|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع)\s+عشر"
+                 r"|العشرون|التمهيدي)\s*:?\s*[^\n]{0,90}$", t):
             e.append("[2f] %s: trailing chapter heading leaked into article text" % k)
     if sc.get("اصلية", 0) != N_RECORDS:
         e.append("[2] اصلية count %d != %d" % (sc.get("اصلية", 0), N_RECORDS))
@@ -148,7 +150,7 @@ def main():
         e.append("[2j] gazette_publication_date_gregorian must be 2021-06-11")
     if src.get("legal_status_ar") != "ساري":
         e.append("[2j] legal_status_ar must be ساري")
-    if src.get("document") != "القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال":
+    if src.get("document") != "القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال في القطاعات المستهدفة بالتحول والتخصيص":
         e.append("[2j] document title mismatch")
 
     # [4] verified records
@@ -194,11 +196,11 @@ def main():
             e.append("[5] %s: text_summarized_or_paraphrased must be False" % r["article_key"])
 
     if e:
-        print("FAIL: %d error(s) in Rules and Arrangements on the Treatment of Employees and Workers track:" % len(e))
+        print("FAIL: %d error(s) in Rules and Arrangements on the Treatment of Employees and Workers in Sectors Targeted for Transformation and Privatisation track:" % len(e))
         for x in e[:40]:
             print("  - %s" % x)
         return 1
-    print("PASS: Rules and Arrangements on the Treatment of Employees and Workers")
+    print("PASS: Rules and Arrangements on the Treatment of Employees and Workers in Sectors Targeted for Transformation and Privatisation")
     print("  - 28 records: 28 articles, no appendices; all 28 اصلية")
     print("  - Full text fetched directly from the Umm Al-Qura Official Gazette's own")
     print("    server-rendered HTML (the official publication of record for Saudi laws)")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate the قواعد الترخيص لتقديم خدمات الملكية الفكرية track.
+"""Generate the قواعد الترخيص لتقديم خدمات الملكية الفكرية 1442ه – 2020م track.
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
@@ -12,7 +12,7 @@ corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 VERIFICATION TIER -- TIER_1. See the official_source JSON's
 verification_methodology_note and known_unresolved_discrepancies.
 
-STRUCTURE: 18 numbered articles, no appendix records. All اصلية.
+STRUCTURE: 25 numbered articles, no appendix records. All اصلية.
 
 TEXT HANDLING: verbatim Arabic as rendered by the official Gazette's own
 HTML. Arabic governs; no translation / paraphrase / interpretation.
@@ -35,7 +35,7 @@ LLM_PATH = os.path.join(ROOT, "data", "ip_services_licensing_rules_arabic_legal_
                         "ip_services_licensing_rules_legal_llm_001_025.json")
 
 LAW_ID = "sa-ip-services-licensing-rules"
-LAW_AR = "قواعد الترخيص لتقديم خدمات الملكية الفكرية"
+LAW_AR = "قواعد الترخيص لتقديم خدمات الملكية الفكرية 1442ه – 2020م"
 STATUS_UNCHANGED = "UNCHANGED"
 ART_RE = r"ip_services_licensing_rules_art_(\d{3})$"
 
@@ -144,7 +144,7 @@ def main():
                 "source_authority": ("Licensing Rules for the Provision of Intellectual Property Services -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
                                      "(published 9/6/1442H / 2021-01-22)"),
-                "source_authority_ar": ("قواعد الترخيص لتقديم خدمات الملكية الفكرية — النص الكامل جُلب مباشرة من صفحة جريدة أم "
+                "source_authority_ar": ("قواعد الترخيص لتقديم خدمات الملكية الفكرية 1442ه – 2020م — النص الكامل جُلب مباشرة من صفحة جريدة أم "
                                         "القرى الرسمية (تاريخ النشر 9/6/1442هـ الموافق 2021-01-22م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,

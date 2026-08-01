@@ -12,7 +12,7 @@ corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 VERIFICATION TIER -- TIER_1. See the official_source JSON's
 verification_methodology_note and known_unresolved_discrepancies.
 
-STRUCTURE: 18 numbered articles, no appendix records. All اصلية.
+STRUCTURE: 36 numbered articles, no appendix records. All اصلية.
 
 TEXT HANDLING: verbatim Arabic as rendered by the official Gazette's own
 HTML. Arabic governs; no translation / paraphrase / interpretation.

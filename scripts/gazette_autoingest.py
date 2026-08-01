@@ -32,7 +32,11 @@ PIPELINE
 
 GATES (a document must pass ALL of them)
   G1  title is legal-document shaped and is not an amendment/draft
-  G2  not already covered by a live registry track (token-overlap dedup)
+  G2  not already covered by a live registry track. A similar TITLE is only a
+      suspicion; rejection requires that >= DUPLICATE_OVERLAP of the candidate's
+      own article text already exist in a built track. Saudi practice issues
+      legally distinct instruments under near-identical titles (an authority's
+      «تنظيم» vs its «لائحة التراخيص»), so title-only dedup hides real gaps.
   G3  segmentation yields >= MIN_ARTICLES articles
   G4  no empty / near-empty article bodies
   G5  no site-navigation or masthead boilerplate leaked into any article
@@ -44,6 +48,8 @@ GATES (a document must pass ALL of them)
       record). Otherwise the document is rejected, not patched.
   G9  a curated track id must be supplied at emission time; the pipeline only
       proposes a triage slug (permanent identifiers are not machine-generated)
+  G10 no article dwarfs the document's own median length, which would mean an
+      unheaded annex/schedule block was absorbed into the preceding article
 
 Arabic governs throughout. Read-only over the corpus; the only writes are
 the emitted artifacts under sources/ and scripts/, plus the JSON report.
@@ -51,6 +57,7 @@ the emitted artifacts under sources/ and scripts/, plus the JSON report.
 
 from __future__ import annotations
 
+import glob
 import json
 import os
 import re
@@ -185,6 +192,20 @@ def page_text(path: str):
     t = t[:end] if end > 0 else t
     if "طباعة" in t[:6000]:            # last item of the site nav / share bar
         t = t.split("طباعة", 1)[1]
+
+    # The CMS truncates its own <title> tag at ~70 characters and appends an
+    # ellipsis, which would store a CLIPPED legal title as the document name
+    # (e.g. "اللائحة التنفيذية لنظام تنفيذ اتفاقية حظر تطوير وإنتاج وتكديس الأسل...").
+    # The untruncated title is the page's first heading line, immediately above
+    # the publication date. Prefer it, but only when it genuinely extends the
+    # clipped stem -- never substitute an unrelated line.
+    if title.endswith("...") or title.endswith("…"):
+        stem = title.rstrip(".…").strip()
+        for line in t.split("\n"):
+            line = strip_text(line)
+            if line.startswith(stem[:40]) and len(line) > len(stem):
+                title = line
+                break
     return title, t
 
 
@@ -355,6 +376,52 @@ def registry_titles():
             {t["track_id"] for t in reg["tracks"]})
 
 
+# G2 confirmation corpus: the article texts of every track already on disk,
+# fingerprinted as normalised 300-char prefixes. Built lazily and cached because
+# a gating sweep evaluates hundreds of pages against the same corpus.
+_FINGERPRINTS = None
+DUPLICATE_OVERLAP = 0.97
+
+
+def track_fingerprints():
+    """{track_id: {normalised article-text prefix, ...}} for every built track."""
+    global _FINGERPRINTS
+    if _FINGERPRINTS is None:
+        _FINGERPRINTS = {}
+        pat = os.path.join(ROOT, "sources", "*", "official_source", "*.json")
+        for p in glob.glob(pat):
+            tid = os.path.relpath(p, os.path.join(ROOT, "sources")).split(os.sep)[0]
+            try:
+                arts = json.load(open(p, encoding="utf-8")).get("articles")
+            except (ValueError, OSError):
+                continue
+            if not isinstance(arts, dict):
+                continue
+            fp = {norm_ar(a.get("text", ""))[:300] for a in arts.values() if a.get("text")}
+            if fp:
+                _FINGERPRINTS.setdefault(tid, set()).update(fp)
+    return _FINGERPRINTS
+
+
+def best_content_match(article_texts, exclude=None):
+    """(overlap_fraction, track_id) for the built track whose article texts best
+    cover `article_texts`. (0.0, None) when nothing is on disk to compare against.
+
+    `exclude` skips a track id -- needed when REBUILDING an existing track, which
+    would otherwise be reported as a perfect duplicate of itself."""
+    cand = {norm_ar(t)[:300] for t in article_texts if t}
+    if not cand:
+        return 0.0, None
+    best = (0.0, None)
+    for tid, fp in track_fingerprints().items():
+        if tid == exclude:
+            continue
+        ov = len(cand & fp) / len(cand)
+        if ov > best[0]:
+            best = (ov, tid)
+    return best
+
+
 _DEDUP_STOP = {"نظام", "اللائحه", "التنفيذيه", "لنظام", "قواعد", "لائحه", "تنظيم",
                "النظام", "الترتيبات", "التنظيميه", "الاساس", "ضوابط", "تعليمات",
                "القواعد", "المنظمه", "الاليه", "في", "من", "على"}
@@ -364,9 +431,10 @@ def _dedup_tokens(s: str):
     return {w for w in norm_ar(s).split() if len(w) > 2 and w not in _DEDUP_STOP}
 
 
-def evaluate(title: str, body: str, reg_names, taken):
+def evaluate(title: str, body: str, reg_names, taken, exclude=None):
     """Run every gate. Returns (spec_or_None, reject_reasons)."""
     reasons = []
+    notes = []
 
     # G1 — shape of the document
     if not title or not LEGAL_PREFIX.match(title):
@@ -374,16 +442,47 @@ def evaluate(title: str, body: str, reg_names, taken):
     if any(k in title for k in AMENDMENT_MARKERS):
         reasons.append("G1: title marks an amendment/draft/repeal, not a standalone instrument")
 
+    arts, diag = segment(body)
+
     # G2 — already covered?
+    #
+    # Title similarity alone is NOT sufficient evidence of duplication, and
+    # acting on it silently hides real coverage gaps. Saudi practice routinely
+    # issues, under near-identical titles, instruments that are legally distinct:
+    # an authority's «تنظيم» (its constitutive statute) against that same
+    # authority's «لائحة التراخيص»; a «لائحة» against the «الآلية التفصيلية»
+    # implementing it; a «تنظيم» against its own «اللائحة التنفيذية». Conversely
+    # boilerplate-heavy families (the special-economic-zone regulations) look
+    # ~90% alike by text while being separate instruments for separate zones.
+    #
+    # So the title match is only a suspicion; rejection additionally requires
+    # that the candidate's own article text be substantially reproduced by a
+    # track already on disk. The reported track is the best CONTENT match, not
+    # the first title match -- token overlap picks the wrong sibling often
+    # inside these families.
+    #
+    # This gate previously rejected on the title alone. Re-gating the backlog
+    # after the fix recovered 13 wrongly-suppressed documents / 205 articles,
+    # among them all nine cultural-authority constitutive statutes.
     tt = _dedup_tokens(title)
+    title_hit = None
     if tt:
         for tid, dn in reg_names:
             rt = _dedup_tokens(dn)
             if rt and len(tt & rt) / max(1, min(len(tt), len(rt))) >= 0.75:
-                reasons.append(f"G2: already covered by registry track '{tid}'")
+                title_hit = tid
                 break
-
-    arts, diag = segment(body)
+    if title_hit:
+        overlap, match = best_content_match([a[2] for a in arts], exclude=exclude)
+        if overlap >= DUPLICATE_OVERLAP:
+            reasons.append("G2: already covered by registry track '%s' (%.0f%% of this "
+                           "document's article text is already ingested there)"
+                           % (match, overlap * 100))
+        else:
+            notes.append("G2-NOTE: title resembles registry track '%s', but only %.0f%% "
+                           "of the article text is already ingested (best content match: "
+                           "'%s') — treated as a DISTINCT instrument, not a duplicate"
+                           % (title_hit, overlap * 100, match or "none"))
 
     # G3 — enough structure to be a track
     if diag["count"] < MIN_ARTICLES:
@@ -400,8 +499,28 @@ def evaluate(title: str, body: str, reg_names, taken):
         if TASHKEEL.search(txt) or "ـ" in txt:
             reasons.append(f"G7: article {num} has residual tashkeel/tatweel")
 
-    # G8 — numbering gaps must be provably safe
+    # G8 — numbering gaps must be provably safe.
+    #
+    # A gap at the FIRST article number is categorically different from one in
+    # the middle: the neighbour test cannot look "before the start", so if the
+    # document opens with substantive prose that simply lacks a «المادة الأولى:»
+    # heading, that text is silently DROPPED rather than skipped. Observed in
+    # the wild (Yanbu/Umluj/Al-Wajh/Duba Development Authority arrangements,
+    # whose unlabelled definitions article would have been lost). Treat any
+    # leading gap accompanied by real text before the first heading as unsafe.
     by_num = {a[0]: a for a in arts}
+    if arts and diag["missing"]:
+        first_captured = arts[0][0]
+        lead = strip_text(body[:body.find("المادة")]) if "المادة" in body else ""
+        # drop the masthead (title + dates) before judging whether prose remains
+        lead_body = re.sub(r"^.{0,200}?\d{2}-\d{2}-\d{4}", "", lead).strip()
+        for gap in [g for g in diag["missing"] if g < first_captured]:
+            if len(lead_body) >= 120:
+                reasons.append(
+                    "G8: article %d has no heading in the source but substantive text "
+                    "precedes the first captured heading (%d chars) — that text would be "
+                    "dropped, not skipped" % (gap, len(lead_body)))
+
     for gap in diag["missing"]:
         o = ordinal(gap)
         if re.search(MADDA + _flex(o), body):
@@ -413,6 +532,23 @@ def evaluate(title: str, body: str, reg_names, taken):
             if a and a[2] and a[2].rstrip()[-1:] not in SENTENCE_FINAL:
                 reasons.append(f"G8: article {neighbour} adjoining gap {gap} does not end on "
                                f"sentence-final punctuation — text may be merged")
+
+    # G10 — length sanity. A non-article block (annexes, schedules, long tables)
+    # that carries no «المادة N:» heading gets absorbed into whichever article
+    # precedes it, producing one pathologically long record while every gate
+    # above still passes. Observed in the wild: the 2026 consolidation of the
+    # CMA Rules on the Offer of Securities absorbed its entire annex block into
+    # article 112 (268,802 chars against a ~1,500-char median). Flag any article
+    # that dwarfs the document's own median.
+    if len(arts) >= 5:
+        lengths = sorted(len(a[2]) for a in arts)
+        median = lengths[len(lengths) // 2]
+        for num, _o, txt, _ch in arts:
+            if median > 0 and len(txt) > max(20 * median, 40000):
+                reasons.append(
+                    "G10: article %d is %d chars against a %d-char median — a non-article "
+                    "block (annexes/schedules) was probably absorbed into it"
+                    % (num, len(txt), median))
 
     if reasons:
         return None, sorted(set(reasons))
@@ -433,6 +569,7 @@ def evaluate(title: str, body: str, reg_names, taken):
         "article_count": diag["count"],
         "max_article_number": diag["max"],
         "missing_article_numbers": diag["missing"],
+        "notes": notes,
         "articles": arts,
     }, []
 

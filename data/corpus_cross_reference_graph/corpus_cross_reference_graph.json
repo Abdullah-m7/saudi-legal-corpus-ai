@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 18993,
-  "total_references_extracted": 4664,
-  "intra_law_count": 3866,
-  "inter_law_count": 798,
+  "total_records_scanned": 20162,
+  "total_references_extracted": 4719,
+  "intra_law_count": 3886,
+  "inter_law_count": 833,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 3868,
-    "medium": 796
+    "high": 3939,
+    "medium": 780
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -201,6 +201,50 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "accounting_services_rules",
+      "source_record_id": "accounting-services-rules-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "accounting_services_rules",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من القواعد. 2- طلب المرخص له",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accounting_services_rules",
+      "source_record_id": "accounting-services-rules-llm-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات المهنية وإخطار الهيئة بإجراءات إسناد الأعمال",
+      "raw_citation_text": "وفقا لنظام الشركات المهنية وإخطار الهيئة بإجراءات إسناد الأعمال التي يشر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accounting_services_rules",
+      "source_record_id": "accounting-services-rules-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "accounting_services_rules",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من القواعد، اتخاذ أي من الإجر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accounting_services_rules",
+      "source_record_id": "accounting-services-rules-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "accounting_services_rules",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة)",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "accredited_valuers_law",
       "source_record_id": "accredited-valuers-law-llm-art-004",
       "source_article_number": 4,
@@ -319,6 +363,39 @@
       "target_article_number": 18,
       "target_law_name_raw": "مراقبة شركات التأمين التعاوني",
       "raw_citation_text": "المادة (الثامنة عشرة) من نظام مراقبة شركات التأمين التعاوني.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_fellowship_rules",
+      "source_record_id": "accredited-valuers-fellowship-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "المقيمين المعتمدين",
+      "raw_citation_text": "المادة الأولى من نظام المقيمين المعتمدين، الصادر بالمرسو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_fellowship_rules",
+      "source_record_id": "accredited-valuers-fellowship-rules-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_fellowship_rules",
+      "target_article_number": 34,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة والثلاثين) من النظام متى توافر موجب ذلك.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "accredited_valuers_fellowship_rules",
+      "source_record_id": "accredited-valuers-fellowship-rules-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "accredited_valuers_fellowship_rules",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من القواعد، من الرئيس التنفيذ",
       "confidence": "high"
     },
     {
@@ -535,11 +612,11 @@
       "source_record_id": "agriculture-regulation-llm-art-052",
       "source_article_number": 52,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "state_property_acquisition_controls",
       "target_article_number": null,
       "target_law_name_raw": "المنظمة الدولية للمعايير",
       "raw_citation_text": "وفق دليل المنظمة الدولية للمعايير رقم",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "agriculture_regulation",
@@ -2027,6 +2104,28 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "antifouling_systems_regulation",
+      "source_record_id": "antifouling-systems-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "regions_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المناطق البحرية للمملكة العربية السعودية",
+      "raw_citation_text": "وفقا لنظام المناطق البحرية للمملكة العربية السعودية الصادر بالمرسوم المل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "antifouling_systems_regulation",
+      "source_record_id": "antifouling-systems-regulation-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "antifouling_systems_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (5) من هذه اللائحة. (",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "antiquities_heritage_law",
       "source_record_id": "antiquities-heritage-law-llm-art-008",
       "source_article_number": 8,
@@ -2376,6 +2475,17 @@
       "target_article_number": 55,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة والخمسين) من النظام، هي المحكمة العليا.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "architecture_design_authority_statute",
+      "source_record_id": "architecture-design-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -4594,11 +4704,11 @@
       "source_record_id": "bankruptcy-regulation-llm-art-094",
       "source_article_number": 94,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "trustees_experts_fees_rules",
       "target_article_number": null,
       "target_law_name_raw": "أتعاب الأمناء والخبراء",
       "raw_citation_text": "وفق قواعد أتعاب الأمناء والخبراء",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "bankruptcy_case_rules",
@@ -4858,11 +4968,11 @@
       "source_record_id": "basic-law-of-governance-llm-art-067",
       "source_article_number": 67,
       "type": "inter_law",
-      "target_track_id": "public_prosecution_law",
+      "target_track_id": null,
       "target_article_number": null,
       "target_law_name_raw": "الشريعة الإسلامية",
       "raw_citation_text": "وفقا لقواعد الشريعة الإسلامية",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "source_track_id": "basic_law_of_governance",
@@ -4873,6 +4983,61 @@
       "target_article_number": 7,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة السابعة من هذا النظام، لا يجوز بأي حا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "biological_weapons_convention_regulation",
+      "source_record_id": "biological-weapons-convention-regulation-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "biological_weapons_convention_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من اللائحة. ب- وضع الشروط وال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "biological_weapons_convention_regulation",
+      "source_record_id": "biological-weapons-convention-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "biological_weapons_convention_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، ولا تستخدم تلك الت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "biological_weapons_convention_regulation",
+      "source_record_id": "biological-weapons-convention-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "biological_weapons_convention_regulation",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "biological_weapons_convention_regulation",
+      "source_record_id": "biological-weapons-convention-regulation-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "biological_weapons_convention_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من اللائحة، وترسل نسخة منه لل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "biological_weapons_convention_regulation",
+      "source_record_id": "biological-weapons-convention-regulation-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "biological_weapons_convention_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من اللائحة.",
       "confidence": "high"
     },
     {
@@ -5133,11 +5298,55 @@
       "source_record_id": "building-code-regulation-llm-art-027",
       "source_article_number": 27,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "building_code_inspection_bodies_regulation",
       "target_article_number": null,
       "target_law_name_raw": "المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود الب",
       "raw_citation_text": "حسب لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود الب",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "building_code_inspection_bodies_regulation",
+      "source_record_id": "building-code-inspection-bodies-regulation-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "building_code_inspection_bodies_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الرابعة من هذه اللائحة، يقوم المالك أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "building_code_inspection_bodies_regulation",
+      "source_record_id": "building-code-inspection-bodies-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الهيئة ولوائحها",
+      "raw_citation_text": "وفقا لتنظيم الهيئة ولوائحها",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "building_code_inspection_bodies_regulation",
+      "source_record_id": "building-code-inspection-bodies-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "enforcement_law",
+      "target_article_number": null,
+      "target_law_name_raw": "تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
+      "raw_citation_text": "حسب نظام تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "building_code_inspection_bodies_regulation",
+      "source_record_id": "building-code-inspection-bodies-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "enforcement_law",
+      "target_article_number": null,
+      "target_law_name_raw": "تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
+      "raw_citation_text": "حسب نظام تطبيق الكود ولائحته التنفيذية ولائحة تصنيف المخالفات",
+      "confidence": "high"
     },
     {
       "source_track_id": "capital_adequacy_rules",
@@ -5760,11 +5969,11 @@
       "source_record_id": "capital-adequacy-rules-llm-116",
       "source_article_number": 117,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "cma_auditors_registration_rules",
       "target_article_number": null,
       "target_law_name_raw": "تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
       "raw_citation_text": "وفقا لقواعد تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "capital_market_law",
@@ -6480,6 +6689,61 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة السادسة والعشرين",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "chemicals_management_regulation",
+      "source_record_id": "chemicals-management-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تنفيذ اتفاقية حظر استحداث وإنتاج وتخزين واستعمال الأسلحة الكي",
+      "raw_citation_text": "وفقا لنظام تنفيذ اتفاقية حظر استحداث وإنتاج وتخزين واستعمال الأسلحة الكي",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "chemicals_management_regulation",
+      "source_record_id": "chemicals-management-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "chemicals_management_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من هذا النظام، لا تجوز إدارة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "chemicals_management_regulation",
+      "source_record_id": "chemicals-management-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "chemicals_management_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من هذا النظام، بما لا يتعارض",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "chemicals_management_regulation",
+      "source_record_id": "chemicals-management-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "chemicals_management_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة ونص الفقرة (3) من المادة العا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "chemicals_management_regulation",
+      "source_record_id": "chemicals-management-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "chemicals_management_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة العاشرة من النظام، والفقرة (11 /1) من",
+      "confidence": "high"
     },
     {
       "source_track_id": "child_protection_law",
@@ -7635,6 +7899,105 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (83)",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة",
+      "raw_citation_text": "أحكام نظام مهنة المحاسبة والمراجعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة",
+      "raw_citation_text": "أحكام نظام مهنة المحاسبة والمراجعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة",
+      "raw_citation_text": "أحكام نظام مهنة المحاسبة والمراجعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-007",
+      "source_article_number": 7,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة",
+      "raw_citation_text": "وفقا لنظام مهنة المحاسبة والمراجعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": 10,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة خلال السنوات الخمس السابقة لتاريخ طلب",
+      "raw_citation_text": "المادة العاشرة من نظام مهنة المحاسبة والمراجعة خلال السنوات الخمس السابقة لتاريخ طلب التسجيل. د- ألا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة",
+      "raw_citation_text": "وفقا لنظام مهنة المحاسبة والمراجعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة",
+      "raw_citation_text": "وفقا لنظام مهنة المحاسبة والمراجعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة مدة لا تقل عن خمس سنوات",
+      "raw_citation_text": "وفقا لنظام مهنة المحاسبة والمراجعة مدة لا تقل عن خمس سنوات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cma_auditors_registration_rules",
+      "source_record_id": "cma-auditors-registration-rules-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": "accounting_auditing_law",
+      "target_article_number": null,
+      "target_law_name_raw": "مهنة المحاسبة والمراجعة",
+      "raw_citation_text": "وفقا لنظام مهنة المحاسبة والمراجعة",
+      "confidence": "high"
     },
     {
       "source_track_id": "cma_corporate_governance_regulation",
@@ -11993,6 +12356,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "culinary_arts_authority_statute",
+      "source_record_id": "culinary-arts-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "customs_law",
       "source_record_id": "customs-law-llm-art-002",
       "source_article_number": 2,
@@ -13247,6 +13621,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "digital_government_authority_statute",
+      "source_record_id": "digital-government-authority-statute-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "disability_nongov_social_facilities_regulation",
       "source_record_id": "disability-nongov-social-facilities-regulation-llm-005",
       "source_article_number": 5,
@@ -13610,6 +13995,61 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "driving_schools_regulation",
+      "source_record_id": "driving-schools-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "driving_schools_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (36/7) من اللائحة التنفيذية. 8- تحدي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "driving_schools_regulation",
+      "source_record_id": "driving-schools-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "driving_schools_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة من هذه اللائحة مع استيفاء الم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "driving_schools_regulation",
+      "source_record_id": "driving-schools-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "driving_schools_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة والثلاثين والمادة التاسعة والثلاثين من",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "driving_schools_regulation",
+      "source_record_id": "driving-schools-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "driving_schools_regulation",
+      "target_article_number": 39,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة والثلاثين من النظام. 2- استخدام نماذج ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "driving_schools_regulation",
+      "source_record_id": "driving-schools-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "driving_schools_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة والثلاثين من النظام واللائحة التنفيذية.",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "dry_gas_lpg_distribution_law",
       "source_record_id": "dry-gas-lpg-distribution-law-llm-art-001",
       "source_article_number": 1,
@@ -13662,6 +14102,105 @@
       "target_article_number": 17,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (السابعة عشرة) من هذا النظام- للنظر فيها، وع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية",
+      "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "duty_free_markets_rules",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة من هذه القواعد: 1- تمنح الرخص",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الجمارك الموحد والأنظمة الأخرى ذات العلاقة",
+      "raw_citation_text": "أحكام نظام الجمارك الموحد والأنظمة الأخرى ذات العلاقة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "duty_free_markets_rules",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة عشرة من هذه القواعد، تكون عمليات ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-014",
+      "source_article_number": 14,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": 87,
+      "target_law_name_raw": "الجمارك الموحد",
+      "raw_citation_text": "المادة (87) من نظام الجمارك الموحد. 7- الالتزام بع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-021",
+      "source_article_number": 21,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": 144,
+      "target_law_name_raw": "الجمارك الموحد",
+      "raw_citation_text": "المادة (144) من نظام الجمارك الموحد. 4- إذا تبين من",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-022",
+      "source_article_number": 22,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية",
+      "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-022",
+      "source_article_number": 22,
+      "type": "inter_law",
+      "target_track_id": "enforcement_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
+      "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "duty_free_markets_rules",
+      "source_record_id": "duty-free-markets-rules-llm-023",
+      "source_article_number": 23,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الجمارك الموحد",
+      "raw_citation_text": "وفقا لنظام الجمارك الموحد",
       "confidence": "high"
     },
     {
@@ -16074,6 +16613,28 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "export_restriction_governance_statute",
+      "source_record_id": "export-restriction-governance-statute-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "export_restriction_governance_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من التنظيم. الرئيس: رئيس اللج",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "export_restriction_governance_statute",
+      "source_record_id": "export-restriction-governance-statute-llm-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "عملها",
+      "raw_citation_text": "وفق ضوابط عملها",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "falcon_center_statute",
       "source_record_id": "falcon-center-statute-llm-015",
       "source_article_number": 15,
@@ -16225,6 +16786,28 @@
       "target_article_number": 25,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة والعشرين) من هذه القواعد.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "fashion_authority_statute",
+      "source_record_id": "fashion-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "film_authority_statute",
+      "source_record_id": "film-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -16731,6 +17314,17 @@
       "target_article_number": 9,
       "target_law_name_raw": "التنفيذ",
       "raw_citation_text": "المادة التاسعة من نظام التنفيذ. ويفيد الالتزام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "financial_academy_statute",
+      "source_record_id": "financial-academy-statute-llm-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -18857,6 +19451,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "government_foreign_property_lease_controls",
+      "source_record_id": "government-foreign-property-lease-controls-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "government_foreign_property_lease_controls",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة)",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "ground_handling_air_cargo_economic_regulation",
       "source_record_id": "ground-handling-air-cargo-economic-regulation-llm-001",
       "source_article_number": 1,
@@ -20430,15 +21035,26 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "heritage_authority_statute",
+      "source_record_id": "heritage-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "high_risk_professions_regulation",
       "source_record_id": "high-risk-professions-regulation-llm-art-010",
       "source_article_number": 10,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "occupational_fitness_examinations_regulation",
       "target_article_number": 10,
       "target_law_name_raw": "فحوصات اللياقة المهنية والأمراض غير المعدية",
       "raw_citation_text": "المادة العاشرة من لائحة فحوصات اللياقة المهنية والأمراض غير المعدية.",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "high_risk_professions_regulation",
@@ -20823,6 +21439,28 @@
       "target_article_number": 18,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثامنة عشرة من التنظيم بعد موافقة الوزارة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "hrdf_support_violations_regulation",
+      "source_record_id": "hrdf-support-violations-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "hrdf_support_violations_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثانية عشرة من هذه اللائحة، فإنه يحق للصن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "hrdf_support_violations_regulation",
+      "source_record_id": "hrdf-support-violations-regulation-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "hrdf_support_violations_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة من هذه اللائحة لحفظ حقوقه.",
       "confidence": "high"
     },
     {
@@ -23136,6 +23774,160 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "king_faisal_specialist_hospital_statute",
+      "source_record_id": "king-faisal-specialist-hospital-statute-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "king_faisal_specialist_hospital_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، للمستشفى في سبيل ت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_faisal_specialist_hospital_statute",
+      "source_record_id": "king-faisal-specialist-hospital-statute-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "king_faisal_specialist_hospital_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، يختص المجلس بكل ما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_faisal_specialist_hospital_statute",
+      "source_record_id": "king-faisal-specialist-hospital-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_khaled_eye_hospital_statute",
+      "source_record_id": "king-khaled-eye-hospital-statute-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "king_khaled_eye_hospital_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، للمستشفى في سبيل ت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_khaled_eye_hospital_statute",
+      "source_record_id": "king-khaled-eye-hospital-statute-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "king_khaled_eye_hospital_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام. ل- إبرام الاتفاقيا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_khaled_eye_hospital_statute",
+      "source_record_id": "king-khaled-eye-hospital-statute-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "king_khaled_eye_hospital_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام. ن- التعاون مع الهي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_khaled_eye_hospital_statute",
+      "source_record_id": "king-khaled-eye-hospital-statute-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "king_khaled_eye_hospital_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، يختص المجلس بكل ما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_khaled_eye_hospital_statute",
+      "source_record_id": "king-khaled-eye-hospital-statute-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "king_khaled_eye_hospital_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام. 13- الموافقة على إ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_khaled_eye_hospital_statute",
+      "source_record_id": "king-khaled-eye-hospital-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_saud_university_statute",
+      "source_record_id": "king-saud-university-statute-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "king_saud_university_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، تتمتع الجامعة بالأ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_saud_university_statute",
+      "source_record_id": "king-saud-university-statute-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "king_saud_university_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، للجامعة في سبيل تح",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_saud_university_statute",
+      "source_record_id": "king-saud-university-statute-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "king_saud_university_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، يختص المجلس بكل ما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_saud_university_statute",
+      "source_record_id": "king-saud-university-statute-llm-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "king_saud_university_statute",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من النظام، يشكل المجلس -كل سن",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "king_saud_university_statute",
+      "source_record_id": "king-saud-university-statute-llm-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "labor_law",
       "source_record_id": "labor-law-llm-art-007",
       "source_article_number": 7,
@@ -24229,11 +25021,11 @@
       "source_record_id": "labor-annex5-llm-021-part-time",
       "source_article_number": 21,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "marpol_regulation",
       "target_article_number": 27,
       "target_law_name_raw": "وتعديلاتها",
       "raw_citation_text": "المادة (27) من اللائحة التنفيذية لنظام وتعديلا",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "labor_model_contract_forms",
@@ -25245,6 +26037,28 @@
       "target_article_number": 18,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثامنة عشرة) من النظام. ٢- مزاولة المحامي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "libraries_authority_statute",
+      "source_record_id": "libraries-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "literature_publishing_translation_authority_statute",
+      "source_record_id": "literature-publishing-translation-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
       "confidence": "high"
     },
     {
@@ -28900,6 +29714,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "museums_authority_statute",
+      "source_record_id": "museums-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "museums_regulation",
       "source_record_id": "museums-regulation-llm-013",
       "source_article_number": 13,
@@ -29021,6 +29846,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "music_authority_statute",
+      "source_record_id": "music-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "muslaha_regulation",
       "source_record_id": "muslaha-regulation-llm-art-001",
       "source_article_number": 1,
@@ -29074,6 +29910,61 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة السادسة عشرة",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "national_emergency_management_authority_statute",
+      "source_record_id": "national-emergency-management-authority-statute-llm-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "national_infrastructure_fund_law",
+      "source_record_id": "national-infrastructure-fund-law-llm-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": "state_revenue_law",
+      "target_article_number": null,
+      "target_law_name_raw": "إيرادات الدولة",
+      "raw_citation_text": "وفقا لنظام إيرادات الدولة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "national_risk_council_statute",
+      "source_record_id": "national-risk-council-statute-llm-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تصدر منه يحدد فيها نطاق تكوين تلك اللجان",
+      "raw_citation_text": "وفق قواعد تصدر منه يحدد فيها نطاق تكوين تلك اللجان",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "national_risk_council_statute",
+      "source_record_id": "national-risk-council-statute-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "national_risk_council_statute",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "national_risk_council_statute",
+      "source_record_id": "national-risk-council-statute-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
     },
     {
       "source_track_id": "nationality_law",
@@ -29612,6 +30503,116 @@
       "target_article_number": 35,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الخامسة والثلاثين من هذه اللائحة يضع مجلس الإدا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "source_record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "associations_ngo_law",
+      "target_article_number": 3,
+      "target_law_name_raw": "الجمعيات والمؤسسات الأهلية",
+      "raw_citation_text": "المادة (الثالثة) من نظام الجمعيات والمؤسسات الأهلية. 6- المؤسسة: ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "source_record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "associations_ngo_law",
+      "target_article_number": 3,
+      "target_law_name_raw": "الجمعيات والمؤسسات الأهلية",
+      "raw_citation_text": "المادة (الثالثة) من نظام الجمعيات والمؤسسات الأهلية. 7- النظام الإل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "source_record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "target_article_number": 23,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة والعشرين من النظام. 8- الإسهام في التأ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "source_record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من هذه اللائحة- التأكد من است",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "source_record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من هذه اللائحة أحد الإجراءات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "source_record_id": "nonprofit-center-supervisory-bodies-relations-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "nonprofit_center_supervisory_bodies_relations_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام. 2- إبلاغ صاحب الطل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "occupational_fitness_examinations_regulation",
+      "source_record_id": "occupational-fitness-examinations-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "occupational_fitness_examinations_regulation",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الحادية عشرة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "occupational_fitness_examinations_regulation",
+      "source_record_id": "occupational-fitness-examinations-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": null,
+      "target_law_name_raw": "حماية البيانات الشخصية",
+      "raw_citation_text": "أحكام نظام حماية البيانات الشخصية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "occupational_fitness_examinations_regulation",
+      "source_record_id": "occupational-fitness-examinations-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "سياسة حوكمة البيانات الوطنية والتنظيمات ذات العلاقة",
+      "raw_citation_text": "وفقا لضوابط سياسة حوكمة البيانات الوطنية والتنظيمات ذات العلاقة الصادرة ع",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "occupational_fitness_examinations_regulation",
+      "source_record_id": "occupational-fitness-examinations-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "pdpl_law",
+      "target_article_number": null,
+      "target_law_name_raw": "حماية البيانات الشخصية والخصوصية الصحية",
+      "raw_citation_text": "أحكام نظام حماية البيانات الشخصية والخصوصية الصحية",
       "confidence": "high"
     },
     {
@@ -33520,6 +34521,83 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "public_auction_sale_rules",
+      "source_record_id": "public-auction-sale-rules-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": 75,
+      "target_law_name_raw": "الجمارك الموحد",
+      "raw_citation_text": "المادة (75) من نظام الجمارك الموحد. 5- البضائع الت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_auction_sale_rules",
+      "source_record_id": "public-auction-sale-rules-llm-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "public_auction_sale_rules",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من هذه القواعد. 6- البضائع وو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_auction_sale_rules",
+      "source_record_id": "public-auction-sale-rules-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "public_auction_sale_rules",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثالثة من القواعد، للمحافظ -بقرار من",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_auction_sale_rules",
+      "source_record_id": "public-auction-sale-rules-llm-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": 166,
+      "target_law_name_raw": "الجمارك الموحد",
+      "raw_citation_text": "المادة (166) من نظام الجمارك الموحد. ج- البضائع ووس",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_auction_sale_rules",
+      "source_record_id": "public-auction-sale-rules-llm-015",
+      "source_article_number": 15,
+      "type": "inter_law",
+      "target_track_id": "gtpl_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المنافسات والمشتريات الحكومية",
+      "raw_citation_text": "أحكام نظام المنافسات والمشتريات الحكومية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_auction_sale_rules",
+      "source_record_id": "public-auction-sale-rules-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "customs_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية",
+      "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_auction_sale_rules",
+      "source_record_id": "public-auction-sale-rules-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "enforcement_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
+      "raw_citation_text": "أحكام نظام الجمارك الموحد ولائحته التنفيذية في كل ما لم يرد به نص خاص في",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "public_prosecution_law",
       "source_record_id": "public-prosecution-law-llm-art-012",
       "source_article_number": 12,
@@ -33550,6 +34628,149 @@
       "target_article_number": null,
       "target_law_name_raw": "المرافعات الشرعية",
       "raw_citation_text": "وفق نظام المرافعات الشرعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_transport_users_rights_regulation",
+      "source_record_id": "public-transport-users-rights-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "public_transport_users_rights_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من اللائحة- الآتي: 1- الاستفا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_transport_users_rights_regulation",
+      "source_record_id": "public-transport-users-rights-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "وما تضعه الهيئة",
+      "raw_citation_text": "وفقا للائحة وما تضعه الهيئة من سياسات",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "public_transport_users_rights_regulation",
+      "source_record_id": "public-transport-users-rights-regulation-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "public_transport_users_rights_regulation",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة عشرة) من اللائحة، وذلك خلال ستين (6",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_transport_users_rights_regulation",
+      "source_record_id": "public-transport-users-rights-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "public_transport_users_rights_regulation",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من اللائحة، وفقا لما تضعه اله",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_transport_users_rights_regulation",
+      "source_record_id": "public-transport-users-rights-regulation-llm-020",
+      "source_article_number": 20,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "المشاركة في الدخل والأنظمة ذات العلاقة",
+      "raw_citation_text": "وفق قواعد المشاركة في الدخل والأنظمة ذات العلاقة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-002",
+      "source_article_number": 2,
+      "type": "intra_law",
+      "target_track_id": "public_utility_markets_general_rules",
+      "target_article_number": 98,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة والتسعين) من اللائحة. 4- عند توافق السو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-002",
+      "source_article_number": 2,
+      "type": "inter_law",
+      "target_track_id": "debt_collection_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "إجراءات التراخيص البلدية",
+      "raw_citation_text": "حسب نظام إجراءات التراخيص البلدية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "debt_collection_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "إجراءات التراخيص البلدية",
+      "raw_citation_text": "حسب نظام إجراءات التراخيص البلدية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "debt_collection_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "إجراءات التراخيص البلدية",
+      "raw_citation_text": "حسب نظام إجراءات التراخيص البلدية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-009",
+      "source_article_number": 9,
+      "type": "inter_law",
+      "target_track_id": "debt_collection_regulation",
+      "target_article_number": null,
+      "target_law_name_raw": "إجراءات التراخيص البلدية",
+      "raw_citation_text": "حسب نظام إجراءات التراخيص البلدية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-010",
+      "source_article_number": 10,
+      "type": "inter_law",
+      "target_track_id": "agriculture_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الزراعة",
+      "raw_citation_text": "وفقا لنظام الزراعة الصادر بالمرسوم الملكي رقم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-014",
+      "source_article_number": 14,
+      "type": "inter_law",
+      "target_track_id": "agriculture_regulation",
+      "target_article_number": 242,
+      "target_law_name_raw": "الزراعة حسب",
+      "raw_citation_text": "المادة (242) من اللائحة التنفيذية لنظام الزراعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "public_utility_markets_general_rules",
+      "source_record_id": "public-utility-markets-general-rules-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "agriculture_regulation",
+      "target_article_number": 39,
+      "target_law_name_raw": "الزراعة",
+      "raw_citation_text": "المادة (التاسعة والثلاثين) من اللائحة التنفيذية لنظام الزر",
       "confidence": "high"
     },
     {
@@ -34111,6 +35332,72 @@
       "target_article_number": null,
       "target_law_name_raw": "عملها وحسب التصنيف الوارد في جدول المخالفات والعقوبات",
       "raw_citation_text": "وفقاً لقواعد عملها وحسب التصنيف الوارد في جدول المخالفات والعقوبات",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "railway_violations_committee_rules",
+      "source_record_id": "railway-violations-committee-rules-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "railway_violations_committee_rules",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة والعشرين والفقرة (1) من المادة التاسعة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "railway_violations_committee_rules",
+      "source_record_id": "railway-violations-committee-rules-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "railway_violations_committee_rules",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة والعشرين مكرر من النظام. ب- البت في ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "railway_violations_committee_rules",
+      "source_record_id": "railway-violations-committee-rules-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "railway_violations_committee_rules",
+      "target_article_number": 31,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والثلاثين) من النظام. ج- النظر في الشكاو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "railway_violations_committee_rules",
+      "source_record_id": "railway-violations-committee-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "railway_violations_committee_rules",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة من هذه القواعد. 2- يكون تمثيل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "railway_violations_committee_rules",
+      "source_record_id": "railway-violations-committee-rules-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "railway_violations_committee_rules",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة عشرة من هذه القواعد. 4- يجوز للجنة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "railway_violations_committee_rules",
+      "source_record_id": "railway-violations-committee-rules-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "railway_violations_committee_rules",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة والعشرين",
       "confidence": "medium"
     },
     {
@@ -35478,6 +36765,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "rehabilitation_and_damage_compensation_rules",
+      "source_record_id": "rehabilitation-and-damage-compensation-rules-llm-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "rehabilitation_and_damage_compensation_rules",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثامنة من هذه القواعد، لا يعد المخال",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "residency_law",
       "source_record_id": "residency-law-llm-art-004",
       "source_article_number": 4,
@@ -36226,6 +37524,50 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "riyadh_biotechnology_center_statute",
+      "source_record_id": "riyadh-biotechnology-center-statute-llm-017",
+      "source_article_number": 17,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "riyadh_nonprofit_foundation_statute",
+      "source_record_id": "riyadh-nonprofit-foundation-statute-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "riyadh_nonprofit_foundation_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام- جميع الصلاحيات الل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "riyadh_nonprofit_foundation_statute",
+      "source_record_id": "riyadh-nonprofit-foundation-statute-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "riyadh_nonprofit_foundation_statute",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من النظام، يختص المجلس بكل ما",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "riyadh_nonprofit_foundation_statute",
+      "source_record_id": "riyadh-nonprofit-foundation-statute-llm-016",
+      "source_article_number": 16,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "road_transport_law",
       "source_record_id": "road-transport-law-llm-art-006",
       "source_article_number": 6,
@@ -36501,6 +37843,17 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "saudi_yachts_regulation",
+      "source_record_id": "saudi-yachts-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "التنظيمية للوكيل الملاحي السياحي",
+      "raw_citation_text": "وفقا للائحة التنظيمية للوكيل الملاحي السياحي",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "sdaia_organizational_arrangements",
       "source_record_id": "sdaia-organizational-arrangements-llm-art-015",
       "source_article_number": 15,
@@ -36560,11 +37913,11 @@
       "source_record_id": "securities-depository-markets-regulation-llm-058",
       "source_article_number": 58,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "cma_auditors_registration_rules",
       "target_article_number": null,
       "target_law_name_raw": "تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
       "raw_citation_text": "وفقا لقواعد تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "securities_disputes_rules",
@@ -36798,1172 +38151,6 @@
       "confidence": "high"
     },
     {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-011",
-      "source_article_number": 11,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 10,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة العاشرة والمادة الثانية عشرة من هذه ا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-011",
-      "source_article_number": 11,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 12,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثانية عشرة من هذه القواعد.",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-015",
-      "source_article_number": 15,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 18,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة عشرة من هذه القواعد على المصدر الأ",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-015",
-      "source_article_number": 15,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-016",
-      "source_article_number": 16,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-020",
-      "source_article_number": 20,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "أحكام قواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-024",
-      "source_article_number": 24,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرين من هذه القواعد حيثما تنطبق. و",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-024",
-      "source_article_number": 24,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرين من هذه القواعد على الراعي فقط",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-024",
-      "source_article_number": 24,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرين من هذه القواعد على المنشأة ذا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-024",
-      "source_article_number": 24,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرين من هذه القواعد على إصدار أدوا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-025",
-      "source_article_number": 25,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 24,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الرابعة والعشرين من هذه القواعد، حيثما تنطبق.",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-027",
-      "source_article_number": 27,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "أحكام قواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-028",
-      "source_article_number": 28,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 17,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السابعة عشرة من هذه القواعد. 11- مسودة نشر",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-028",
-      "source_article_number": 28,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "بموجب قواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-030",
-      "source_article_number": 30,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 56,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السادسة والخمسين من هذه القواعد. 6- الأسهم الن",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-030",
-      "source_article_number": 30,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 57,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السابعة والخمسين من هذه القواعد. 7- تجزئة أسهم",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-032",
-      "source_article_number": 32,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "بموجب قواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-038",
-      "source_article_number": 38,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 39,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والثلاثين من هذه القواعد. ب- يجب أن تتو",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-040",
-      "source_article_number": 40,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 48,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والأربعين من هذه القواعد. د- عند دخول ا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-040",
-      "source_article_number": 40,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 49,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والأربعين من هذه القواعد.",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-043",
-      "source_article_number": 43,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 50,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الخمسين من هذه القواعد.",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-045",
-      "source_article_number": 45,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 44,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الرابعة والأربعين من هذه القواعد: 1- إذا تضمنت",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-046",
-      "source_article_number": 46,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 44,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الرابعة والأربعين من هذه القواعد، تخضع جميع است",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-048",
-      "source_article_number": 48,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 11,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الحادية عشرة من القواعد المنظمة للمنشآت ذا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-048",
-      "source_article_number": 48,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 11,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الحادية عشرة من القواعد المنظمة للمنشآت ذا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-048",
-      "source_article_number": 48,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 11,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الحادية عشرة من القواعد المنظمة للمنشآت ذا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-048",
-      "source_article_number": 48,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 31,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الحادية والثلاثين من القواعد المنظمة للمنشآت ذا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-052",
-      "source_article_number": 52,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-054",
-      "source_article_number": 54,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 28,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والعشرين من هذه القواعد، يجب على المصد",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-056",
-      "source_article_number": 56,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 28,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والعشرين من هذه القواعد، يجب على المصد",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-057",
-      "source_article_number": 57,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 28,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والعشرين من هذه القواعد، إذا كان الغرض",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 60,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الستين",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 62,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثانية والستين و(أ) و(ه) من المادة الثالثة و",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 63,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والستين والمواد الرابعة والستين والسا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 62,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثانية والستين من هذه القواعد على الراعي فقط",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 67,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السابعة والستين والمادة التاسعة والستين والفق",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 69,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والستين والفقرة (ب) من المادة الثامنة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 68,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والستين من هذه القواعد على الإصدارات",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 62,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثانية والستين والفقرة الفرعية (1) من الفقرة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 63,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والستين والمواد الرابعة والستين والخا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-059",
-      "source_article_number": 59,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-060",
-      "source_article_number": 60,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "companies_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الشركات",
-      "raw_citation_text": "بموجب نظام الشركات",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج بما في ذلك البدء بأي إجراءات",
-      "raw_citation_text": "وفقا لقواعد الإدراج بما في ذلك البدء بأي إجراءات بموجب أنظمة الإفلاس",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس",
-      "raw_citation_text": "بموجب نظام الإفلاس",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس مع بيان أثر ذلك في الوضع المالي للمصدر",
-      "raw_citation_text": "بموجب نظام الإفلاس مع بيان أثر ذلك في الوضع المالي للمصدر أو المسار العا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-062",
-      "source_article_number": 62,
-      "type": "inter_law",
-      "target_track_id": "bankruptcy_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الإفلاس ولائحته التنفيذية",
-      "raw_citation_text": "بموجب نظام الإفلاس ولائحته التنفيذية",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-063",
-      "source_article_number": 63,
-      "type": "inter_law",
-      "target_track_id": "companies_law",
-      "target_article_number": null,
-      "target_law_name_raw": "الشركات ولائحة حوكمة الشركات",
-      "raw_citation_text": "أحكام نظام الشركات ولائحة حوكمة الشركات",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-063",
-      "source_article_number": 63,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
-      "raw_citation_text": "وفقا لقواعد تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-063",
-      "source_article_number": 63,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-064",
-      "source_article_number": 64,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "حوكمة الشركات ويتضمن عرضا لعملياته خلال السنة المالية الأخيرة",
-      "raw_citation_text": "بموجب لائحة حوكمة الشركات ويتضمن عرضا لعملياته خلال السنة المالية الأخيرة",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-067",
-      "source_article_number": 67,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج ذات الأحقية في التصويت مقتصرا على المدرج منها في السو",
-      "raw_citation_text": "وفقا لقواعد الإدراج ذات الأحقية في التصويت مقتصرا على المدرج منها في السو",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-067",
-      "source_article_number": 67,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-068",
-      "source_article_number": 68,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 63,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والستين من هذه القواعد. 2- خلال ال (3",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-068",
-      "source_article_number": 68,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 63,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والستون من هذه القواعد. ب- يستثنى من",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-072",
-      "source_article_number": 72,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 21,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الحادية والعشرين من هذه القواعد، مع استبدال ال",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-072",
-      "source_article_number": 72,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "أحكام قواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-075",
-      "source_article_number": 75,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 73,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والسبعين من هذه القواعد. 8- مسودة نشرة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-078",
-      "source_article_number": 78,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 86,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السادسة والثمانين من هذه القواعد. 5- الأسهم الن",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-078",
-      "source_article_number": 78,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 87,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السابعة والثمانين من هذه القواعد. 6- تجزئة أسهم",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-080",
-      "source_article_number": 80,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "بموجب قواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-082",
-      "source_article_number": 82,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 34,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الرابعة والثلاثين من هذه القواعد.",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-084",
-      "source_article_number": 84,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 75,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الخامسة والسبعين من هذه القواعد، يجب على المصد",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-087",
-      "source_article_number": 87,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 75,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الخامسة والسبعين من هذه القواعد، يجب على المصد",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-089",
-      "source_article_number": 89,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 63,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والستين من هذه القواعد. 2- يجب على ال",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-089",
-      "source_article_number": 89,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 68,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة والستين من هذه القواعد. 4- تعد المعلو",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-089",
-      "source_article_number": 89,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 69,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والستين من هذه القواعد. 6- استثناء من",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-089",
-      "source_article_number": 89,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 69,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والستين من هذه القواعد، يجوز لمؤسسة ا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-089",
-      "source_article_number": 89,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "حوكمة الشركات استرشادية على المصدرين المدرجة أسهمهم في السوق",
-      "raw_citation_text": "بموجب لائحة حوكمة الشركات استرشادية على المصدرين المدرجة أسهمهم في السوق",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-089",
-      "source_article_number": 89,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "بموجب قواعد الإدراج من قبل المصدرالمدرجة أسهمه إدراجا مباشرا في السوق الم",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-089",
-      "source_article_number": 89,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 8,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة من هذه القواعد يكون تحتها هذا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 8,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة من هذه القواعد يكون تحتها هذا",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرون",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرون",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرون",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرون",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرون",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 23,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثالثة والعشرون",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 6,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السادسة من هذه القواعد ابتداء من تاري",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 6,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السادسة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 6,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة السادسة من هذه القواعد. 2) وفقا لقرار",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 8,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة من هذه القواعد ابتداء من تاري",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 8,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 9,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 8,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة من هذه القواعد. 3) وفقا لقرار",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 9,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة من هذه القواعد ابتداء من تاري",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 10,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة العاشرة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 9,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة من هذه القواعد. 4) وفقا لقرار",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 14,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الرابعة عشرة من هذه القواعد ابتداء من تاري",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 15,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الخامسة عشرة",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "intra_law",
-      "target_track_id": "securities_offering_obligations_rules",
-      "target_article_number": 14,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة الرابعة عشرة من هذه القواعد.",
-      "confidence": "high"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "السوق المالية ولوائحه التنفيذية وقواعد السوق",
-      "raw_citation_text": "وفقا لنظام السوق المالية ولوائحه التنفيذية وقواعد السوق",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "السوق المالية ولوائحه التنفيذية وقواعد السوق",
-      "raw_citation_text": "وفقا لنظام السوق المالية ولوائحه التنفيذية وقواعد السوق",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج بيع أسهمهم وفقا لتقديرها",
-      "raw_citation_text": "بموجب قواعد الإدراج بيع أسهمهم وفقا لتقديرها",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "inter_law",
-      "target_track_id": null,
-      "target_article_number": null,
-      "target_law_name_raw": "الإدراج",
-      "raw_citation_text": "وفقا لقواعد الإدراج",
-      "confidence": "medium"
-    },
-    {
-      "source_track_id": "securities_offering_obligations_rules",
-      "source_record_id": "securities-offering-obligations-rules-llm-103",
-      "source_article_number": 103,
-      "type": "inter_law",
-      "target_track_id": "capital_market_law",
-      "target_article_number": null,
-      "target_law_name_raw": "السوق المالية ولوائحه التنفيذية",
-      "raw_citation_text": "وفقا لنظام السوق المالية ولوائحه التنفيذية",
-      "confidence": "high"
-    },
-    {
       "source_track_id": "security_cameras_law",
       "source_record_id": "security-cameras-law-llm-011",
       "source_article_number": 11,
@@ -38038,6 +38225,39 @@
       "target_article_number": null,
       "target_law_name_raw": "مكافحة غسل الأموال",
       "raw_citation_text": "أحكام نظام مكافحة غسل الأموال أو نظام مكافحة جرائم الإرهاب وتمويله",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "sez_cloud_computing_regulation",
+      "source_record_id": "sez-cloud-computing-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": "zakat_law",
+      "target_article_number": null,
+      "target_law_name_raw": "جباية الزكاة",
+      "raw_citation_text": "أحكام نظام جباية الزكاة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "sez_cloud_computing_regulation",
+      "source_record_id": "sez-cloud-computing-regulation-llm-023",
+      "source_article_number": 23,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "وإجراءات يتم الاتفاق عليها بين الهيئة ووزارة الموارد البشرية",
+      "raw_citation_text": "وفق آلية وإجراءات يتم الاتفاق عليها بين الهيئة ووزارة الموارد البشرية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "sez_cloud_computing_regulation",
+      "source_record_id": "sez-cloud-computing-regulation-llm-026",
+      "source_article_number": 26,
+      "type": "intra_law",
+      "target_track_id": "sez_cloud_computing_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من اللائحة، ومشاركة البيانات",
       "confidence": "high"
     },
     {
@@ -44029,11 +44249,11 @@
       "source_record_id": "special-purpose-entities-rules-llm-034",
       "source_article_number": 34,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "cma_auditors_registration_rules",
       "target_article_number": null,
       "target_law_name_raw": "تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
       "raw_citation_text": "وفقا لقواعد تسجيل مراجعي حسابات المنشآت الخاضعة لإشراف الهيئة",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "special_purpose_entities_rules",
@@ -44408,6 +44628,50 @@
       "target_law_name_raw": "المحاماة ولائحته التنفيذية",
       "raw_citation_text": "أحكام نظام المحاماة ولائحته التنفيذية",
       "confidence": "high"
+    },
+    {
+      "source_track_id": "state_property_acquisition_controls",
+      "source_record_id": "state-property-acquisition-controls-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": "state_property_lease_law",
+      "target_article_number": null,
+      "target_law_name_raw": "استئجار الدولة للعقار",
+      "raw_citation_text": "أحكام نظام استئجار الدولة للعقار",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_property_acquisition_controls",
+      "source_record_id": "state-property-acquisition-controls-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "state_property_acquisition_controls",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من الضوابط. 2- تقدير الاحتياج",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_property_allocation_recovery_controls",
+      "source_record_id": "state-property-allocation-recovery-controls-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "state_property_allocation_recovery_controls",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من الضوابط، مع التقيد بالآتي:",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "state_property_allocation_recovery_controls",
+      "source_record_id": "state-property-allocation-recovery-controls-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "state_property_allocation_recovery_controls",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة)",
+      "confidence": "medium"
     },
     {
       "source_track_id": "state_property_lease_law",
@@ -44975,11 +45239,11 @@
       "source_record_id": "state-property-lease-regulation-llm-074",
       "source_article_number": 75,
       "type": "inter_law",
-      "target_track_id": null,
+      "target_track_id": "state_property_acquisition_controls",
       "target_article_number": null,
       "target_law_name_raw": "تملك الدولة للعقار",
       "raw_citation_text": "وفق ضوابط تملك الدولة للعقار التي يضعها المجلس",
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "source_track_id": "state_realestate_disposal_regulation",
@@ -46467,6 +46731,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "theater_performing_arts_authority_statute",
+      "source_record_id": "theater-performing-arts-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "tourism_law",
       "source_record_id": "tourism-law-llm-art-001",
       "source_article_number": 1,
@@ -46541,6 +46816,94 @@
       "target_article_number": 15,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الخامسة عشرة) من النظام- الآتي: أ- فرض غرا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_activity_inspection_regulation",
+      "source_record_id": "tourism-activity-inspection-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "intra_law",
+      "target_track_id": "tourism_activity_inspection_regulation",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة) من النظام. الأنشطة السياحية :",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_activity_inspection_regulation",
+      "source_record_id": "tourism-activity-inspection-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "tourism_activity_inspection_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من اللائحة.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_activity_inspection_regulation",
+      "source_record_id": "tourism-activity-inspection-regulation-llm-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "tourism_activity_inspection_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الرابعة) من اللائحة، يتولى مفتش السياح",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_activity_inspection_regulation",
+      "source_record_id": "tourism-activity-inspection-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "tourism_activity_inspection_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من اللائحة. أي معلومات أو بيا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_consultancy_regulation",
+      "source_record_id": "tourism-consultancy-regulation-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "tourism_consultancy_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) والفقرة (3) من المادة (السادس",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_consultancy_regulation",
+      "source_record_id": "tourism-consultancy-regulation-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "tourism_consultancy_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من اللائحة بحسب الأحوال، وذلك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_consultancy_regulation",
+      "source_record_id": "tourism-consultancy-regulation-llm-018",
+      "source_article_number": 18,
+      "type": "intra_law",
+      "target_track_id": "tourism_consultancy_regulation",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourism_consultancy_regulation",
+      "source_record_id": "tourism-consultancy-regulation-llm-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "tourism_consultancy_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (التاسعة) من النظام.",
       "confidence": "high"
     },
     {
@@ -46849,6 +47212,50 @@
       "target_article_number": 33,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (الثالثة والثلاثين) من هذه اللائحة. ب. إحالة محضر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourist_guidance_regulation",
+      "source_record_id": "tourist-guidance-regulation-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "tourist_guidance_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة في مقدم طلب الترخي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourist_guidance_regulation",
+      "source_record_id": "tourist-guidance-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "tourist_guidance_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة بحسب فئة الترخيص.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourist_guidance_regulation",
+      "source_record_id": "tourist-guidance-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "tourist_guidance_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة -عدا الفقرة (2) وا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "tourist_guidance_regulation",
+      "source_record_id": "tourist-guidance-regulation-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "tourist_guidance_regulation",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام.",
       "confidence": "high"
     },
     {
@@ -48392,6 +48799,116 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "bankruptcy_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "الإفلاس",
+      "raw_citation_text": "المادة (الأولى) من نظام الإفلاس، الصادر بالمرسو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "bankruptcy_implementing_regulation",
+      "target_article_number": 1,
+      "target_law_name_raw": "الإفلاس",
+      "raw_citation_text": "المادة (الأولى) من اللائحة التنفيذية لنظام الإف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "bankruptcy_implementing_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": "الإفلاس",
+      "raw_citation_text": "المادة (الخامسة) ، أو المادة (الحادية والثمانين)",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": "bankruptcy_implementing_regulation",
+      "target_article_number": 81,
+      "target_law_name_raw": "الإفلاس",
+      "raw_citation_text": "المادة (الحادية والثمانين) من اللائحة التنفيذية لنظام الإف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "trustees_experts_fees_rules",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من هذه القواعد وفق الآتي: أ-",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "trustees_experts_fees_rules",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة من هذه القواعد؛ للمحكمة- عند",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "trustees_experts_fees_rules",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من هذه القواعد بما لا يتجاوز",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "trustees_experts_fees_rules",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة) من هذه القواعد استحقاقها على",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "trustees_experts_fees_rules",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من هذه القواعد. حوافز الأداء",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "trustees_experts_fees_rules",
+      "source_record_id": "trustees-experts-fees-rules-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "trustees_experts_fees_rules",
+      "target_article_number": 217,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة عشرة بعد المائتين) من النظام، يعد حكم المحكمة أو",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "universities_law",
       "source_record_id": "universities-law-llm-art-021",
       "source_article_number": 21,
@@ -49292,6 +49809,50 @@
       "target_law_name_raw": "المرور ولائحته التنفيذية لا تطابق واقع المركبة",
       "raw_citation_text": "وفقا لنظام المرور ولائحته التنفيذية لا تطابق واقع المركبة",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "vehicle_periodic_inspection_statute",
+      "source_record_id": "vehicle-periodic-inspection-statute-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "vehicle_periodic_inspection_statute",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من التنظيم. 2- يصدر الرئيس بق",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "vehicle_periodic_inspection_statute",
+      "source_record_id": "vehicle-periodic-inspection-statute-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "vehicle_periodic_inspection_statute",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثانية عشر : يحق لمن صدر في شأنه قرار من",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "vehicle_periodic_inspection_statute",
+      "source_record_id": "vehicle-periodic-inspection-statute-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "vehicle_periodic_inspection_statute",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من التنظيم الاعتراض عليه أمام",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "visual_arts_authority_statute",
+      "source_record_id": "visual-arts-authority-statute-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "labor_law",
+      "target_article_number": null,
+      "target_law_name_raw": "العمل ونظام التأمينات الاجتماعية",
+      "raw_citation_text": "أحكام نظام العمل ونظام التأمينات الاجتماعية",
+      "confidence": "high"
     },
     {
       "source_track_id": "waqf_investment_products_regulation",
@@ -51228,6 +51789,50 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (التاسعة عشرة بعد المئة) من اللائحة. 8.صدور قرار منه ل",
       "confidence": "high"
+    },
+    {
+      "source_track_id": "zakat_tax_accounting_services_rules",
+      "source_record_id": "zakat-tax-accounting-services-rules-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "zakat_tax_accounting_services_rules",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من القواعد. 2- طلب المرخص له",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "zakat_tax_accounting_services_rules",
+      "source_record_id": "zakat-tax-accounting-services-rules-llm-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": "companies_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الشركات وإخطار الهيئة بإجراءات إسناد الأعمال",
+      "raw_citation_text": "وفقا لنظام الشركات وإخطار الهيئة بإجراءات إسناد الأعمال التي يشرف عليها",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "zakat_tax_accounting_services_rules",
+      "source_record_id": "zakat-tax-accounting-services-rules-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "zakat_tax_accounting_services_rules",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة عشرة) من القواعد، اتخاذ أي من الإجر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "zakat_tax_accounting_services_rules",
+      "source_record_id": "zakat-tax-accounting-services-rules-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "zakat_tax_accounting_services_rules",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة عشرة)",
+      "confidence": "medium"
     },
     {
       "source_track_id": "zakat_tax_customs_committees_rules",

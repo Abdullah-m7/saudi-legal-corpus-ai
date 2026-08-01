@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Read-only validator for the قواعد الترخيص لتقديم خدمات الملكية الفكرية track.
+"""Read-only validator for the قواعد الترخيص لتقديم خدمات الملكية الفكرية 1442ه – 2020م track.
 
-18 records: 18 numbered articles, no appendix records. All اصلية.
+25 records: 25 numbered articles, no appendix records. All اصلية.
 
 VERIFICATION TIER: TIER_1 -- full text fetched directly from the Umm Al-Qura
 Official Gazette's own server-rendered HTML page. This validator only checks
@@ -113,7 +113,9 @@ def main():
                 e.append("[2f] %s: residual %s artifact" % (k, lbl))
         if "نسخة تجريبية" in t or "الرئيسية القرارات" in t:
             e.append("[2f] %s: site navigation boilerplate leaked into article text" % k)
-        if re.search(r"(الباب|الفصل)\s+(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع)\s*:?\s*[^\s]{0,40}$", t):
+        if re.search(r"\s(الباب|الفصل)\s+(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|العاشر"
+                 r"|(?:الحادي|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع)\s+عشر"
+                 r"|العشرون|التمهيدي)\s*:?\s*[^\n]{0,90}$", t):
             e.append("[2f] %s: trailing chapter heading leaked into article text" % k)
     if sc.get("اصلية", 0) != N_RECORDS:
         e.append("[2] اصلية count %d != %d" % (sc.get("اصلية", 0), N_RECORDS))
@@ -148,7 +150,7 @@ def main():
         e.append("[2j] gazette_publication_date_gregorian must be 2021-01-22")
     if src.get("legal_status_ar") != "ساري":
         e.append("[2j] legal_status_ar must be ساري")
-    if src.get("document") != "قواعد الترخيص لتقديم خدمات الملكية الفكرية":
+    if src.get("document") != "قواعد الترخيص لتقديم خدمات الملكية الفكرية 1442ه – 2020م":
         e.append("[2j] document title mismatch")
 
     # [4] verified records

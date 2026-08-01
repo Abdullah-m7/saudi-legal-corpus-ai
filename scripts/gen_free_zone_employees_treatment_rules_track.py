@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate the القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال track.
+"""Generate the القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال في القطاعات المستهدفة بالتحول والتخصيص track.
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
@@ -12,7 +12,7 @@ corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 VERIFICATION TIER -- TIER_1. See the official_source JSON's
 verification_methodology_note and known_unresolved_discrepancies.
 
-STRUCTURE: 18 numbered articles, no appendix records. All اصلية.
+STRUCTURE: 28 numbered articles, no appendix records. All اصلية.
 
 TEXT HANDLING: verbatim Arabic as rendered by the official Gazette's own
 HTML. Arabic governs; no translation / paraphrase / interpretation.
@@ -35,7 +35,7 @@ LLM_PATH = os.path.join(ROOT, "data", "free_zone_employees_treatment_rules_arabi
                         "free_zone_employees_treatment_rules_legal_llm_001_028.json")
 
 LAW_ID = "sa-free-zone-employees-treatment-rules"
-LAW_AR = "القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال"
+LAW_AR = "القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال في القطاعات المستهدفة بالتحول والتخصيص"
 STATUS_UNCHANGED = "UNCHANGED"
 ART_RE = r"free_zone_employees_treatment_rules_art_(\d{3})$"
 
@@ -141,10 +141,10 @@ def main():
             ],
             "text_status": a["status"],
             "source_trust": {
-                "source_authority": ("Rules and Arrangements on the Treatment of Employees and Workers -- full text fetched directly from the Umm "
+                "source_authority": ("Rules and Arrangements on the Treatment of Employees and Workers in Sectors Targeted for Transformation and Privatisation -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
                                      "(published 1/11/1442H / 2021-06-11)"),
-                "source_authority_ar": ("القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال — النص الكامل جُلب مباشرة من صفحة جريدة أم "
+                "source_authority_ar": ("القواعد والترتيبات الخاصة بكيفية معاملة الموظفين والعمال في القطاعات المستهدفة بالتحول والتخصيص — النص الكامل جُلب مباشرة من صفحة جريدة أم "
                                         "القرى الرسمية (تاريخ النشر 1/11/1442هـ الموافق 2021-06-11م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,
@@ -186,7 +186,7 @@ def main():
         "law_id": LAW_ID,
         "law_component": "rules",
         "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (28 مادة، جميعها أصلية)",
-        "title_en": "Rules and Arrangements on the Treatment of Employees and Workers — Arabic LLM-ready layer (28 articles; all original)",
+        "title_en": "Rules and Arrangements on the Treatment of Employees and Workers in Sectors Targeted for Transformation and Privatisation — Arabic LLM-ready layer (28 articles; all original)",
         "record_type": "verified_arabic_article",
         "language": "ar",
         "governing_text_language": "ar",
@@ -200,7 +200,7 @@ def main():
         "not_legal_advice": True,
         "records": llm,
     }, open(LLM_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print("Wrote %d verified + %d LLM-ready Rules and Arrangements on the Treatment of Employees and Workers records" % (len(ver), len(llm)))
+    print("Wrote %d verified + %d LLM-ready Rules and Arrangements on the Treatment of Employees and Workers in Sectors Targeted for Transformation and Privatisation records" % (len(ver), len(llm)))
 
 
 if __name__ == "__main__":

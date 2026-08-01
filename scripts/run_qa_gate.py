@@ -241,6 +241,20 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_product_safety_regulation_track.py",
     "scripts/gen_handicrafts_law_track.py",
     "scripts/gen_medical_devices_law_track.py",
+    "scripts/gen_museums_authority_licensing_regulation_track.py",
+    "scripts/gen_heritage_authority_licensing_regulation_track.py",
+    "scripts/gen_literature_publishing_translation_authority_licensing_regulation_track.py",
+    "scripts/gen_film_authority_licensing_regulation_track.py",
+    "scripts/gen_fashion_authority_licensing_regulation_track.py",
+    "scripts/gen_music_authority_licensing_regulation_track.py",
+    "scripts/gen_culinary_arts_authority_licensing_regulation_track.py",
+    "scripts/gen_architecture_design_authority_licensing_regulation_track.py",
+    "scripts/gen_visual_arts_authority_licensing_regulation_track.py",
+    "scripts/gen_tourism_consultancy_regulation_track.py",
+    "scripts/gen_tourism_activity_inspection_regulation_track.py",
+    "scripts/gen_duty_free_markets_rules_track.py",
+    "scripts/gen_driving_schools_regulation_track.py",
+    "scripts/gen_railway_violations_committee_rules_track.py",
     "scripts/gen_public_transport_users_rights_mechanism_track.py",
     "scripts/gen_gcc_pesticides_regulation_track.py",
     "scripts/gen_military_industries_rnd_regulation_track.py",
@@ -260,7 +274,6 @@ IDEMPOTENT_GENERATORS = [
     "scripts/gen_sez_kaec_regulation_track.py",
     "scripts/gen_sez_jazan_regulation_track.py",
     "scripts/gen_sez_raskhair_regulation_track.py",
-    "scripts/gen_securities_offering_obligations_rules_track.py",
     "scripts/gen_charitable_societies_council_regulation_track.py",
     "scripts/gen_customs_procedures_controls_track.py",
     "scripts/gen_social_security_regulation_track.py",
@@ -424,7 +437,13 @@ IDEMPOTENT_GENERATORS = [
     "scripts/run_corpus_retrieval_eval.py",
 ]
 
-VALIDATOR_TIMEOUT = 900
+# Raised from 900s on 2026-08-01. The retrieval-eval pass is O(queries x index
+# records) and the corpus has grown to 437 tracks / 20,162 indexed records /
+# 811 gold queries, so a single scoring pass now takes ~17 minutes and its
+# validator runs one twice (committed-vs-fresh reproduction). At 900s the gate
+# reported a TIMEOUT that looked like a validator failure but was purely the
+# clock; the same validator passes standalone.
+VALIDATOR_TIMEOUT = 3600
 WORKERS = 4
 
 

@@ -314,6 +314,73 @@ export PYTHONPATH := src:$(PYTHONPATH)
         product-safety-regulation-track-validate \
         handicrafts-law-track-validate \
         medical-devices-law-track-validate \
+        libraries-authority-licensing-regulation-track-validate \
+        theater-performing-arts-authority-licensing-regulation-track-validate \
+        tourist-guidance-regulation-track-validate \
+        king-saud-university-statute-track-validate \
+        king-faisal-specialist-hospital-statute-track-validate \
+        king-khaled-eye-hospital-statute-track-validate \
+        state-property-acquisition-controls-track-validate \
+        rehabilitation-and-damage-compensation-rules-track-validate \
+        export-restriction-governance-statute-track-validate \
+        occupational-fitness-examinations-regulation-track-validate \
+        municipal-professions-crafts-licensing-regulation-track-validate \
+        antifouling-systems-regulation-track-validate \
+        cma-auditors-registration-rules-track-validate \
+        national-risk-council-statute-track-validate \
+        public-utility-markets-general-rules-track-validate \
+        literature-publishing-translation-authority-statute-track-validate \
+        museums-authority-statute-track-validate \
+        heritage-authority-statute-track-validate \
+        film-authority-statute-track-validate \
+        libraries-authority-statute-track-validate \
+        architecture-design-authority-statute-track-validate \
+        music-authority-statute-track-validate \
+        theater-performing-arts-authority-statute-track-validate \
+        visual-arts-authority-statute-track-validate \
+        culinary-arts-authority-statute-track-validate \
+        fashion-authority-statute-track-validate \
+        vehicle-periodic-inspection-statute-track-validate \
+        public-transport-users-rights-regulation-track-validate \
+        sez-cloud-computing-regulation-track-validate \
+        alula-royal-commission-violations-committees-rules-track-validate \
+        nonprofit-center-supervisory-bodies-relations-regulation-track-validate \
+        saudi-yachts-regulation-track-validate \
+        zakat-tax-accounting-services-rules-track-validate \
+        national-emergency-management-authority-statute-track-validate \
+        riyadh-biotechnology-center-statute-track-validate \
+        digital-government-authority-statute-track-validate \
+        real-estate-development-fund-law-track-validate \
+        building-code-inspection-bodies-regulation-track-validate \
+        accounting-services-rules-track-validate \
+        king-salman-arabic-language-academy-statute-track-validate \
+        biological-weapons-convention-regulation-track-validate \
+        national-infrastructure-fund-law-track-validate \
+        public-auction-sale-rules-track-validate \
+        riyadh-nonprofit-foundation-statute-track-validate \
+        state-property-allocation-recovery-controls-track-validate \
+        government-foreign-property-lease-controls-track-validate \
+        chemicals-management-regulation-track-validate \
+        trustees-experts-fees-rules-track-validate \
+        metrology-calibration-regulation-track-validate \
+        financial-academy-statute-track-validate \
+        accredited-valuers-fellowship-rules-track-validate \
+        national-institute-educational-professional-development-statute-track-validate \
+        hrdf-support-violations-regulation-track-validate \
+        museums-authority-licensing-regulation-track-validate \
+        heritage-authority-licensing-regulation-track-validate \
+        literature-publishing-translation-authority-licensing-regulation-track-validate \
+        film-authority-licensing-regulation-track-validate \
+        fashion-authority-licensing-regulation-track-validate \
+        music-authority-licensing-regulation-track-validate \
+        culinary-arts-authority-licensing-regulation-track-validate \
+        architecture-design-authority-licensing-regulation-track-validate \
+        visual-arts-authority-licensing-regulation-track-validate \
+        tourism-consultancy-regulation-track-validate \
+        tourism-activity-inspection-regulation-track-validate \
+        duty-free-markets-rules-track-validate \
+        driving-schools-regulation-track-validate \
+        railway-violations-committee-rules-track-validate \
         public-transport-users-rights-mechanism-track-validate \
         gcc-pesticides-regulation-track-validate \
         military-industries-rnd-regulation-track-validate \
@@ -333,7 +400,6 @@ export PYTHONPATH := src:$(PYTHONPATH)
         sez-kaec-regulation-track-validate \
         sez-jazan-regulation-track-validate \
         sez-raskhair-regulation-track-validate \
-        securities-offering-obligations-rules-track-validate \
         charitable-societies-council-regulation-track-validate \
         customs-procedures-controls-track-validate \
         social-security-regulation-track-validate \
@@ -1852,6 +1918,207 @@ handicrafts-law-track-validate:
 medical-devices-law-track-validate:
 	$(PY) scripts/validate_medical_devices_law_track.py
 
+libraries-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_libraries_authority_licensing_regulation_track.py
+
+theater-performing-arts-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_theater_performing_arts_authority_licensing_regulation_track.py
+
+tourist-guidance-regulation-track-validate:
+	$(PY) scripts/validate_tourist_guidance_regulation_track.py
+
+king-saud-university-statute-track-validate:
+	$(PY) scripts/validate_king_saud_university_statute_track.py
+
+king-faisal-specialist-hospital-statute-track-validate:
+	$(PY) scripts/validate_king_faisal_specialist_hospital_statute_track.py
+
+king-khaled-eye-hospital-statute-track-validate:
+	$(PY) scripts/validate_king_khaled_eye_hospital_statute_track.py
+
+state-property-acquisition-controls-track-validate:
+	$(PY) scripts/validate_state_property_acquisition_controls_track.py
+
+rehabilitation-and-damage-compensation-rules-track-validate:
+	$(PY) scripts/validate_rehabilitation_and_damage_compensation_rules_track.py
+
+export-restriction-governance-statute-track-validate:
+	$(PY) scripts/validate_export_restriction_governance_statute_track.py
+
+occupational-fitness-examinations-regulation-track-validate:
+	$(PY) scripts/validate_occupational_fitness_examinations_regulation_track.py
+
+municipal-professions-crafts-licensing-regulation-track-validate:
+	$(PY) scripts/validate_municipal_professions_crafts_licensing_regulation_track.py
+
+antifouling-systems-regulation-track-validate:
+	$(PY) scripts/validate_antifouling_systems_regulation_track.py
+
+cma-auditors-registration-rules-track-validate:
+	$(PY) scripts/validate_cma_auditors_registration_rules_track.py
+
+national-risk-council-statute-track-validate:
+	$(PY) scripts/validate_national_risk_council_statute_track.py
+
+public-utility-markets-general-rules-track-validate:
+	$(PY) scripts/validate_public_utility_markets_general_rules_track.py
+
+literature-publishing-translation-authority-statute-track-validate:
+	$(PY) scripts/validate_literature_publishing_translation_authority_statute_track.py
+
+museums-authority-statute-track-validate:
+	$(PY) scripts/validate_museums_authority_statute_track.py
+
+heritage-authority-statute-track-validate:
+	$(PY) scripts/validate_heritage_authority_statute_track.py
+
+film-authority-statute-track-validate:
+	$(PY) scripts/validate_film_authority_statute_track.py
+
+libraries-authority-statute-track-validate:
+	$(PY) scripts/validate_libraries_authority_statute_track.py
+
+architecture-design-authority-statute-track-validate:
+	$(PY) scripts/validate_architecture_design_authority_statute_track.py
+
+music-authority-statute-track-validate:
+	$(PY) scripts/validate_music_authority_statute_track.py
+
+theater-performing-arts-authority-statute-track-validate:
+	$(PY) scripts/validate_theater_performing_arts_authority_statute_track.py
+
+visual-arts-authority-statute-track-validate:
+	$(PY) scripts/validate_visual_arts_authority_statute_track.py
+
+culinary-arts-authority-statute-track-validate:
+	$(PY) scripts/validate_culinary_arts_authority_statute_track.py
+
+fashion-authority-statute-track-validate:
+	$(PY) scripts/validate_fashion_authority_statute_track.py
+
+vehicle-periodic-inspection-statute-track-validate:
+	$(PY) scripts/validate_vehicle_periodic_inspection_statute_track.py
+
+public-transport-users-rights-regulation-track-validate:
+	$(PY) scripts/validate_public_transport_users_rights_regulation_track.py
+
+sez-cloud-computing-regulation-track-validate:
+	$(PY) scripts/validate_sez_cloud_computing_regulation_track.py
+
+alula-royal-commission-violations-committees-rules-track-validate:
+	$(PY) scripts/validate_alula_royal_commission_violations_committees_rules_track.py
+
+nonprofit-center-supervisory-bodies-relations-regulation-track-validate:
+	$(PY) scripts/validate_nonprofit_center_supervisory_bodies_relations_regulation_track.py
+
+saudi-yachts-regulation-track-validate:
+	$(PY) scripts/validate_saudi_yachts_regulation_track.py
+
+zakat-tax-accounting-services-rules-track-validate:
+	$(PY) scripts/validate_zakat_tax_accounting_services_rules_track.py
+
+national-emergency-management-authority-statute-track-validate:
+	$(PY) scripts/validate_national_emergency_management_authority_statute_track.py
+
+riyadh-biotechnology-center-statute-track-validate:
+	$(PY) scripts/validate_riyadh_biotechnology_center_statute_track.py
+
+digital-government-authority-statute-track-validate:
+	$(PY) scripts/validate_digital_government_authority_statute_track.py
+
+real-estate-development-fund-law-track-validate:
+	$(PY) scripts/validate_real_estate_development_fund_law_track.py
+
+building-code-inspection-bodies-regulation-track-validate:
+	$(PY) scripts/validate_building_code_inspection_bodies_regulation_track.py
+
+accounting-services-rules-track-validate:
+	$(PY) scripts/validate_accounting_services_rules_track.py
+
+king-salman-arabic-language-academy-statute-track-validate:
+	$(PY) scripts/validate_king_salman_arabic_language_academy_statute_track.py
+
+biological-weapons-convention-regulation-track-validate:
+	$(PY) scripts/validate_biological_weapons_convention_regulation_track.py
+
+national-infrastructure-fund-law-track-validate:
+	$(PY) scripts/validate_national_infrastructure_fund_law_track.py
+
+public-auction-sale-rules-track-validate:
+	$(PY) scripts/validate_public_auction_sale_rules_track.py
+
+riyadh-nonprofit-foundation-statute-track-validate:
+	$(PY) scripts/validate_riyadh_nonprofit_foundation_statute_track.py
+
+state-property-allocation-recovery-controls-track-validate:
+	$(PY) scripts/validate_state_property_allocation_recovery_controls_track.py
+
+government-foreign-property-lease-controls-track-validate:
+	$(PY) scripts/validate_government_foreign_property_lease_controls_track.py
+
+chemicals-management-regulation-track-validate:
+	$(PY) scripts/validate_chemicals_management_regulation_track.py
+
+trustees-experts-fees-rules-track-validate:
+	$(PY) scripts/validate_trustees_experts_fees_rules_track.py
+
+metrology-calibration-regulation-track-validate:
+	$(PY) scripts/validate_metrology_calibration_regulation_track.py
+
+financial-academy-statute-track-validate:
+	$(PY) scripts/validate_financial_academy_statute_track.py
+
+accredited-valuers-fellowship-rules-track-validate:
+	$(PY) scripts/validate_accredited_valuers_fellowship_rules_track.py
+
+national-institute-educational-professional-development-statute-track-validate:
+	$(PY) scripts/validate_national_institute_educational_professional_development_statute_track.py
+
+hrdf-support-violations-regulation-track-validate:
+	$(PY) scripts/validate_hrdf_support_violations_regulation_track.py
+
+museums-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_museums_authority_licensing_regulation_track.py
+
+heritage-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_heritage_authority_licensing_regulation_track.py
+
+literature-publishing-translation-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_literature_publishing_translation_authority_licensing_regulation_track.py
+
+film-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_film_authority_licensing_regulation_track.py
+
+fashion-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_fashion_authority_licensing_regulation_track.py
+
+music-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_music_authority_licensing_regulation_track.py
+
+culinary-arts-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_culinary_arts_authority_licensing_regulation_track.py
+
+architecture-design-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_architecture_design_authority_licensing_regulation_track.py
+
+visual-arts-authority-licensing-regulation-track-validate:
+	$(PY) scripts/validate_visual_arts_authority_licensing_regulation_track.py
+
+tourism-consultancy-regulation-track-validate:
+	$(PY) scripts/validate_tourism_consultancy_regulation_track.py
+
+tourism-activity-inspection-regulation-track-validate:
+	$(PY) scripts/validate_tourism_activity_inspection_regulation_track.py
+
+duty-free-markets-rules-track-validate:
+	$(PY) scripts/validate_duty_free_markets_rules_track.py
+
+driving-schools-regulation-track-validate:
+	$(PY) scripts/validate_driving_schools_regulation_track.py
+
+railway-violations-committee-rules-track-validate:
+	$(PY) scripts/validate_railway_violations_committee_rules_track.py
+
 public-transport-users-rights-mechanism-track-validate:
 	$(PY) scripts/validate_public_transport_users_rights_mechanism_track.py
 
@@ -1908,9 +2175,6 @@ sez-jazan-regulation-track-validate:
 
 sez-raskhair-regulation-track-validate:
 	$(PY) scripts/validate_sez_raskhair_regulation_track.py
-
-securities-offering-obligations-rules-track-validate:
-	$(PY) scripts/validate_securities_offering_obligations_rules_track.py
 
 charitable-societies-council-regulation-track-validate:
 	$(PY) scripts/validate_charitable_societies_council_regulation_track.py

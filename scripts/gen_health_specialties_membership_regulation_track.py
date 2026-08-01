@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate the لائحة عضوية الهيئة السعودية للتخصصات الصحية track.
+"""Generate the لائحة عضوية الهيئة السعودية للتخصصات الصحية 1446ه- 2024م track.
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
@@ -12,7 +12,7 @@ corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 VERIFICATION TIER -- TIER_1. See the official_source JSON's
 verification_methodology_note and known_unresolved_discrepancies.
 
-STRUCTURE: 18 numbered articles, no appendix records. All اصلية.
+STRUCTURE: 41 numbered articles, no appendix records. All اصلية.
 
 TEXT HANDLING: verbatim Arabic as rendered by the official Gazette's own
 HTML. Arabic governs; no translation / paraphrase / interpretation.
@@ -35,7 +35,7 @@ LLM_PATH = os.path.join(ROOT, "data", "health_specialties_membership_regulation_
                         "health_specialties_membership_regulation_legal_llm_001_041.json")
 
 LAW_ID = "sa-health-specialties-membership-regulation"
-LAW_AR = "لائحة عضوية الهيئة السعودية للتخصصات الصحية"
+LAW_AR = "لائحة عضوية الهيئة السعودية للتخصصات الصحية 1446ه- 2024م"
 STATUS_UNCHANGED = "UNCHANGED"
 ART_RE = r"health_specialties_membership_regulation_art_(\d{3})$"
 
@@ -141,10 +141,10 @@ def main():
             ],
             "text_status": a["status"],
             "source_trust": {
-                "source_authority": ("Membership Regulation of the Saudi Commission for Health Specialties -- full text fetched directly from the Umm "
+                "source_authority": ("Membership Regulation of the Saudi Commission for Health Specialties 1446H - 2024 -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
                                      "(published 7/9/1446H / 2025-03-07)"),
-                "source_authority_ar": ("لائحة عضوية الهيئة السعودية للتخصصات الصحية — النص الكامل جُلب مباشرة من صفحة جريدة أم "
+                "source_authority_ar": ("لائحة عضوية الهيئة السعودية للتخصصات الصحية 1446ه- 2024م — النص الكامل جُلب مباشرة من صفحة جريدة أم "
                                         "القرى الرسمية (تاريخ النشر 7/9/1446هـ الموافق 2025-03-07م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,
@@ -186,7 +186,7 @@ def main():
         "law_id": LAW_ID,
         "law_component": "regulation",
         "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (41 مادة، جميعها أصلية)",
-        "title_en": "Membership Regulation of the Saudi Commission for Health Specialties — Arabic LLM-ready layer (41 articles; all original)",
+        "title_en": "Membership Regulation of the Saudi Commission for Health Specialties 1446H - 2024 — Arabic LLM-ready layer (41 articles; all original)",
         "record_type": "verified_arabic_article",
         "language": "ar",
         "governing_text_language": "ar",
@@ -200,7 +200,7 @@ def main():
         "not_legal_advice": True,
         "records": llm,
     }, open(LLM_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print("Wrote %d verified + %d LLM-ready Membership Regulation of the Saudi Commission for Health Specialties records" % (len(ver), len(llm)))
+    print("Wrote %d verified + %d LLM-ready Membership Regulation of the Saudi Commission for Health Specialties 1446H - 2024 records" % (len(ver), len(llm)))
 
 
 if __name__ == "__main__":

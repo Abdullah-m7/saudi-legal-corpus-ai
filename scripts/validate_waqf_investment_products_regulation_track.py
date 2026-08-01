@@ -109,7 +109,9 @@ def main():
                 e.append("[2f] %s: residual %s artifact" % (k, lbl))
         if "نسخة تجريبية" in t or "الرئيسية القرارات" in t:
             e.append("[2f] %s: site navigation boilerplate leaked into article text" % k)
-        if re.search(r"(الباب|الفصل)\s+(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع)\s*:?\s*[^\s]{0,40}$", t):
+        if re.search(r"\s(الباب|الفصل)\s+(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|العاشر"
+                 r"|(?:الحادي|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع)\s+عشر"
+                 r"|العشرون|التمهيدي)\s*:?\s*[^\n]{0,90}$", t):
             e.append("[2f] %s: trailing chapter heading leaked into article text" % k)
     if sc.get("اصلية", 0) != N_RECORDS:
         e.append("[2] اصلية count %d != %d" % (sc.get("اصلية", 0), N_RECORDS))

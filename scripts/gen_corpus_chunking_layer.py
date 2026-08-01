@@ -192,6 +192,7 @@ def _pack_atoms_into_chunks(text, atoms):
         chunks.append((s, e, wc, overlap_words_with_previous))
 
     pending_overlap = 0
+    carry_count = 0   # leading atoms of cur_atoms that are duplicated overlap
     for (s, e) in atoms:
         piece_wc = _word_count(text[s:e])
         if cur_atoms and (cur_words + piece_wc) > CHUNK_TARGET_WORDS:
@@ -207,6 +208,18 @@ def _pack_atoms_into_chunks(text, atoms):
             cur_atoms = carry
             cur_words = carry_words
             pending_overlap = carry_words
+            carry_count = len(carry)
+        # Enforce the absolute ceiling. An atom may itself be as large as
+        # CHUNK_HARD_MAX_WORDS, so seeding a chunk with carried overlap could
+        # push it past the ceiling -- which is how nine chunks in the corpus
+        # ended up between 501 and 572 words. Shed carried atoms (they are pure
+        # duplication of the previous chunk's tail, so coverage is unaffected
+        # and the chunks stay contiguous) until the atom fits.
+        while carry_count > 0 and (cur_words + piece_wc) > CHUNK_HARD_MAX_WORDS:
+            dropped = cur_atoms.pop(0)
+            carry_count -= 1
+            cur_words -= dropped[2]
+            pending_overlap -= dropped[2]
         cur_atoms.append((s, e, piece_wc))
         cur_words += piece_wc
 
