@@ -1,918 +1,13 @@
 {
  "generated_note": "Gated ingestion backlog produced by scripts/gazette_autoingest.py over the Umm Al-Qura Official Gazette archive (discovered via the Gazette's own sitemap, uqn.gov.sa/sitemap_0.xml -> 164 monthly sub-sitemaps -> 9,486 archived URLs). Every entry below was fetched, parsed, segmented and run through the pipeline's full quality-gate battery (G1-G10). ACCEPTED entries passed every gate and are build-ready: every spec field here was derived mechanically from the gazette page itself. Documents already present in the corpus are not listed as accepted — G2 rejects them on proven text overlap. REJECTED entries were NOT built and carry the exact gate that stopped them — nothing was forced, patched or guessed. A curated English track_id must still be assigned at emission time (see the automation-boundary note in the module); `track_id_proposed` is a triage handle only and must not be used as a permanent identifier. REGENERATED 2026-08-01 after two engine corrections: G2 now confirms duplication against ARTICLE TEXT rather than title tokens (the previous title-only rule was suppressing 13 legally distinct instruments / 205 articles, among them all eleven cultural-authority constitutive statutes), and the untruncated document title is now read from the page's own heading because the CMS clips its <title> tag at ~70 characters.",
  "pipeline": "scripts/gazette_autoingest.py",
- "accepted_count": 56,
- "accepted_article_total": 551,
- "rejected_count": 180,
- "decision_number_present_in_masthead": 12,
- "with_disclosed_numbering_gap": 1,
- "title_resembles_existing_but_distinct": 3,
- "accepted": [
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية للخيل العربية الأصيلة",
-   "component": "regulation",
-   "gazette_hijri": "7/7/1442",
-   "gazette_gregorian": "2021-02-19",
-   "decision": null,
-   "article_count": 9,
-   "max_article_number": 9,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17203",
-   "best_existing_text_overlap": 0.111,
-   "best_existing_track": "biological_weapons_convention_regulation"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "قواعد أعمال اللجنة التنفيذية الدائمة لمراكز الخدمة ومحطات الوقود",
-   "component": "rules",
-   "gazette_hijri": "25/9/1442",
-   "gazette_gregorian": "2021-05-07",
-   "decision": null,
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17559",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنفيذية للمواد المستنفدة لطبقة الأوزون ومركبات الكربون الهيدروفلورية",
-   "component": "regulation",
-   "gazette_hijri": "15/11/1442",
-   "gazette_gregorian": "2021-06-25",
-   "decision": null,
-   "article_count": 9,
-   "max_article_number": 9,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17837",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنفيذية لإعادة التأهيل البيئي للمواقع المتدهورة ومعالجة المواقع الملوثة",
-   "component": "regulation",
-   "gazette_hijri": "15/11/1442",
-   "gazette_gregorian": "2021-06-25",
-   "decision": null,
-   "article_count": 8,
-   "max_article_number": 8,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17839",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنفيذية لتنمية الغطاء النباتي ومكافحة التصحر",
-   "component": "regulation",
-   "gazette_hijri": "15/11/1442",
-   "gazette_gregorian": "2021-06-25",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17863",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية للحد من المواد الخطرة في الأجهزة والمعدات الكهربائية والإلكترونية",
-   "component": "regulation",
-   "gazette_hijri": "29/11/1442",
-   "gazette_gregorian": "2021-07-09",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17911",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "___",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية للمنتجات الجلدية",
-   "component": "regulation",
-   "gazette_hijri": "29/11/1442",
-   "gazette_gregorian": "2021-07-09",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17912",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية للمركبات المستوردة المستعملة",
-   "component": "regulation",
-   "gazette_hijri": "29/11/1442",
-   "gazette_gregorian": "2021-07-09",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=17922",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "___",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية للورق والكرتون",
-   "component": "regulation",
-   "gazette_hijri": "5/1/1443",
-   "gazette_gregorian": "2021-08-13",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=18108",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "___",
-   "track_id": null,
-   "title_ar": "ضوابط تحليل أسواق العقار",
-   "component": "rules",
-   "gazette_hijri": "12/1/1443",
-   "gazette_gregorian": "2021-08-20",
-   "decision": null,
-   "article_count": 6,
-   "max_article_number": 6,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=18158",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "لائحة تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني",
-   "component": "regulation",
-   "gazette_hijri": "30/3/1443",
-   "gazette_gregorian": "2021-11-05",
-   "decision": null,
-   "article_count": 9,
-   "max_article_number": 9,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=18510",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط استئجار الجهات الحكومية للعقارات خارج المملكة",
-   "component": "rules",
-   "gazette_hijri": "15/8/1443",
-   "gazette_gregorian": "2022-03-18",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [
-    "G2-NOTE: title resembles registry track 'government_foreign_property_lease_controls', but only 0% of the article text is already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
-   ],
-   "url": "https://www.uqn.gov.sa/details?p=19137",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "لائحة الضوابط الخاصة بتحديد تكاليف الإصلاح وتقدير التعويضات عن المنفعة التي فقدها المرفق",
-   "component": "regulation",
-   "gazette_hijri": "22/8/1443",
-   "gazette_gregorian": "2022-03-25",
-   "decision": null,
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=19187",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "القواعد المنظمة لبرنامج الكفاءات والمتعاقدين",
-   "component": "rules",
-   "gazette_hijri": "28/1/1444",
-   "gazette_gregorian": "2022-08-26",
-   "decision": null,
-   "article_count": 5,
-   "max_article_number": 5,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=19971",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة المنظمة لسجل الخدمة البحرية",
-   "component": "regulation",
-   "gazette_hijri": "6/2/1444",
-   "gazette_gregorian": "2022-09-02",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=20006",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية لحلي الزينة والإكسسوارات",
-   "component": "regulation",
-   "gazette_hijri": "27/2/1444",
-   "gazette_gregorian": "2022-09-23",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=20155",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط رسوم تخزين البضائع بالمنافذ الجمركية البرية",
-   "component": "rules",
-   "gazette_hijri": "11/3/1444",
-   "gazette_gregorian": "2022-10-07",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=20299",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "__",
-   "track_id": null,
-   "title_ar": "لائحة الوجهات السياحية",
-   "component": "regulation",
-   "gazette_hijri": "1/6/1444",
-   "gazette_gregorian": "2022-12-25",
-   "decision": null,
-   "article_count": 8,
-   "max_article_number": 8,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=21124",
-   "best_existing_text_overlap": 0.125,
-   "best_existing_track": "trade_remedies_regulation"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنفيذية لاعتماد مؤسسات التعليم والتدريب البحري",
-   "component": "regulation",
-   "gazette_hijri": "4/8/1444",
-   "gazette_gregorian": "2023-02-24",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=21487",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "الترتيبات التنظيمية لمركز برنامج تعزيز الشراكة مع القطاع الخاص (شريك)",
-   "component": "statute",
-   "gazette_hijri": "11/8/1444",
-   "gazette_gregorian": "2023-03-03",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=21520",
-   "best_existing_text_overlap": 0.091,
-   "best_existing_track": "palms_dates_center_statute"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "تنظيم مركز سارة السديري لدراسات المرأة",
-   "component": "statute",
-   "gazette_hijri": "2/9/1444",
-   "gazette_gregorian": "2023-03-24",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=21610",
-   "best_existing_text_overlap": 0.083,
-   "best_existing_track": "general_irrigation_corporation_statute"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "قواعد عمل اللجنة الدائمة للبت في الاعتراضات المقدمة من الجهات الحكومية على طلبات تخصيص مناطق المجمعات التعدينية وطلبات منح الرخص التعدينية",
-   "component": "rules",
-   "gazette_hijri": "26/9/1444",
-   "gazette_gregorian": "2023-04-17",
-   "decision": null,
-   "article_count": 9,
-   "max_article_number": 9,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=21748",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "قواعد إقرار الأحكام المنظمة لشؤون العاملين في الأجهزة العامة وتعويضاتهم",
-   "component": "rules",
-   "gazette_hijri": "13/11/1444",
-   "gazette_gregorian": "2023-06-02",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=22967",
-   "best_existing_text_overlap": 0.083,
-   "best_existing_track": "privatization_governing_rules"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية",
-   "component": "rules",
-   "gazette_hijri": "13/11/1444",
-   "gazette_gregorian": "2023-06-02",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=22977",
-   "best_existing_text_overlap": 0.091,
-   "best_existing_track": "cma_auditors_registration_rules"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية لمنظم الرحلات البحرية السياحية",
-   "component": "regulation",
-   "gazette_hijri": "17/1/1445",
-   "gazette_gregorian": "2023-08-04",
-   "decision": "قرار مجلس إدارة الهيئة رقم (1ت-3-2023) بتاريخ 22 /12/ 1444ه",
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=23415",
-   "best_existing_text_overlap": 0.1,
-   "best_existing_track": "saudi_yachts_regulation"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية لليخوت الخاصة الزائرة",
-   "component": "regulation",
-   "gazette_hijri": "17/1/1445",
-   "gazette_gregorian": "2023-08-04",
-   "decision": "قرار مجلس إدارة الهيئة رقم (1ت-3-2023) بتاريخ 22 /12/ 1444ه",
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=23416",
-   "best_existing_text_overlap": 0.091,
-   "best_existing_track": "saudi_yachts_regulation"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية لسفن الرحلات السياحية (الكروز)",
-   "component": "regulation",
-   "gazette_hijri": "17/1/1445",
-   "gazette_gregorian": "2023-08-04",
-   "decision": "قرار مجلس إدارة الهيئة رقم (1ت-3-2023) بتاريخ 22 /12/ 1444ه",
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [
-    "G2-NOTE: title resembles registry track 'cruise_ships_controls', but only 9% of the article text is already ingested (best content match: 'saudi_yachts_regulation') — treated as a DISTINCT instrument, not a duplicate"
-   ],
-   "url": "https://www.uqn.gov.sa/details?p=23418",
-   "best_existing_text_overlap": 0.091,
-   "best_existing_track": "saudi_yachts_regulation"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية لتأجير اليخوت الضخمة",
-   "component": "regulation",
-   "gazette_hijri": "17/1/1445",
-   "gazette_gregorian": "2023-08-04",
-   "decision": "قرار مجلس إدارة الهيئة رقم (1ت-3-2023) بتاريخ 22 /12/ 1444ه",
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=23420",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "لائحة رسوم تقديم منتجات التبغ",
-   "component": "regulation",
-   "gazette_hijri": "24/1/1445",
-   "gazette_gregorian": "2023-08-11",
-   "decision": null,
-   "article_count": 5,
-   "max_article_number": 5,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=23467",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "قواعد برامج التعليم المهني المستمر",
-   "component": "rules",
-   "gazette_hijri": "24/2/1445",
-   "gazette_gregorian": "2023-09-09",
-   "decision": null,
-   "article_count": 9,
-   "max_article_number": 9,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=23654",
-   "best_existing_text_overlap": 0.222,
-   "best_existing_track": "accredited_valuers_fellowship_rules"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية للمركز العام للنقل بمدينة مكة المكرمة والمشاعر المقدسة",
-   "component": "regulation",
-   "gazette_hijri": "14/3/1445",
-   "gazette_gregorian": "2023-09-29",
-   "decision": "قرار مجلس الإدارة رقم (م/ت/20230816 /1 /2) وتاريخ 29 /1 /1445ه",
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=23779",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط تحديد تكاليف الإصلاح وتقدير التعويضات",
-   "component": "rules",
-   "gazette_hijri": "5/4/1445",
-   "gazette_gregorian": "2023-10-20",
-   "decision": "قرار مجلس إدارة هيئة تنظيم المياه والكهرباء رقم (02/ 45-2) وتاريخ 19 /03/ 1445ه",
-   "article_count": 6,
-   "max_article_number": 7,
-   "missing_article_numbers": [
-    6
-   ],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=23892",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "___",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية للتوافق الكهرومغناطيسي",
-   "component": "regulation",
-   "gazette_hijri": "3/5/1445",
-   "gazette_gregorian": "2023-11-17",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=24063",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية للأجهزة الكهربائية والمعدات المعدة للاستخدام في الأجواء القابلة للانفجار",
-   "component": "regulation",
-   "gazette_hijri": "3/5/1445",
-   "gazette_gregorian": "2023-11-17",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=24064",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "___",
-   "track_id": null,
-   "title_ar": "اللائحة العامة لنماذج المطابقة",
-   "component": "regulation",
-   "gazette_hijri": "3/5/1445",
-   "gazette_gregorian": "2023-11-17",
-   "decision": null,
-   "article_count": 7,
-   "max_article_number": 7,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=24065",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية للاستشارات والتحليلات العقارية",
-   "component": "regulation",
-   "gazette_hijri": "9/6/1445",
-   "gazette_gregorian": "2023-12-22",
-   "decision": null,
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=24279",
-   "best_existing_text_overlap": 0.1,
-   "best_existing_track": "vehicle_periodic_inspection_regulation"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "لائحة شروط تفويض هيئات التصنيف في المملكة العربية السعودية",
-   "component": "regulation",
-   "gazette_hijri": "30/6/1445",
-   "gazette_gregorian": "2024-01-12",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=24357",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط حساب الضمان للمساهمات العقارية",
-   "component": "rules",
-   "gazette_hijri": "6/8/1445",
-   "gazette_gregorian": "2024-02-16",
-   "decision": "قرار مجلس إدارة الهيئة العامة للعقار رقم (ق/م/إ/ه/2 /2024/ت) وتاريخ 18 /07/ 1445ه",
-   "article_count": 7,
-   "max_article_number": 7,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=24520",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط الرقابة والامتثال والتراخيص لأعمال مشاريع البنية التحتية بمنطقة الرياض",
-   "component": "rules",
-   "gazette_hijri": "20/8/1445",
-   "gazette_gregorian": "2024-03-01",
-   "decision": "قرار مجلس إدارة المركز رقم (11)",
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=24609",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "قواعد وإجراءات عمل لجان تسوية الخلافات والمنازعات الزكوية والضريبية",
-   "component": "rules",
-   "gazette_hijri": "16/11/1445",
-   "gazette_gregorian": "2024-05-24",
-   "decision": "قرار مجلس إدارة هيئة الزكاة والضريبة والجمارك رقم (05-02-24) وتاريخ 14 /9/ 1445ه",
-   "article_count": 9,
-   "max_article_number": 9,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=25004",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط إعفاء البضائع المعادة من الرسوم الجمركية",
-   "component": "rules",
-   "gazette_hijri": "29/12/1445",
-   "gazette_gregorian": "2024-07-05",
-   "decision": "قرار مجلس إدارة هيئة الزكاة والضريبة والجمارك رقم (10-3-24) وتاريخ 11/ 11/ 1445ه",
-   "article_count": 8,
-   "max_article_number": 8,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=25232",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "___",
-   "track_id": null,
-   "title_ar": "القواعد المنظمة للصناديق الأهلية",
-   "component": "rules",
-   "gazette_hijri": "5/2/1446",
-   "gazette_gregorian": "2024-08-09",
-   "decision": null,
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=25321",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية لمعدات وتجهيزات المركبات ذات الاستخدام الخاص",
-   "component": "regulation",
-   "gazette_hijri": "19/2/1446",
-   "gazette_gregorian": "2024-08-23",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=25393",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "الضوابط والإجراءات لعمليات التزود بالوقود في المراسي البحرية السياحيةقرار مجلس إدارة الهيئة السعودية للبحر الأحمر رقم (1ت-2-2024) وتاريخ 15 /01 /1446ه",
-   "component": "rules",
-   "gazette_hijri": "1/4/1446",
-   "gazette_gregorian": "2024-10-04",
-   "decision": null,
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [
-    "G2-NOTE: title resembles registry track 'saudi_red_sea_authority_statute', but only 0% of the article text is already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
-   ],
-   "url": "https://www.uqn.gov.sa/details?p=26580",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "الضوابط والإجراءات للوكيل الملاحي السياحي",
-   "component": "rules",
-   "gazette_hijri": "1/4/1446",
-   "gazette_gregorian": "2024-10-04",
-   "decision": null,
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26581",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "الضوابط والاجراءات لتصنيف الوسايط البحرية السياحية",
-   "component": "rules",
-   "gazette_hijri": "20/4/1446",
-   "gazette_gregorian": "2024-10-23",
-   "decision": null,
-   "article_count": 5,
-   "max_article_number": 5,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26659",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "الضوابط والاجراءت لتاجير اليخوت الضخمة",
-   "component": "rules",
-   "gazette_hijri": "20/4/1446",
-   "gazette_gregorian": "2024-10-23",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26661",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط زراعة القمح والأعلاف الموسمية",
-   "component": "rules",
-   "gazette_hijri": "22/4/1446",
-   "gazette_gregorian": "2024-10-25",
-   "decision": null,
-   "article_count": 6,
-   "max_article_number": 6,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26672",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة الفنية للصهاريج (صهاريج نقل الغاز الجاف)",
-   "component": "regulation",
-   "gazette_hijri": "5/6/1446",
-   "gazette_gregorian": "2024-12-06",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26830",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "الترتيبات التنظيمية لرئاسة الشؤون الدينية بالمسجد الحرام والمسجد النبوي",
-   "component": "statute",
-   "gazette_hijri": "5/6/1446",
-   "gazette_gregorian": "2024-12-06",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26833",
-   "best_existing_text_overlap": 0.083,
-   "best_existing_track": "two_holy_mosques_authority_statute"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط تربية النحل في محمية الملك عبدالعزيز الملكية",
-   "component": "rules",
-   "gazette_hijri": "10/7/1446",
-   "gazette_gregorian": "2025-01-10",
-   "decision": "قرار مجلس إدارة هيئة تطوير محمية الملك عبدالعزيز الملكية رقم (ق-1-ت5 /46) بتاريخ 16/ 12 /2024",
-   "article_count": 9,
-   "max_article_number": 9,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26890",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط التصريح للأنشطة السياحية في محمية الملك عبدالعزيز الملكية",
-   "component": "rules",
-   "gazette_hijri": "10/7/1446",
-   "gazette_gregorian": "2025-01-10",
-   "decision": "قرار مجلس إدارة هيئة تطوير محمية الملك عبدالعزيز الملكية رقم (ق-2-ت5 /46) بتاريخ 16 /12 /2024",
-   "article_count": 10,
-   "max_article_number": 10,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=26891",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "ضوابط إصدار رخص حفر الآبار الجديدة على الرف الرسوبي",
-   "component": "rules",
-   "gazette_hijri": "23/1/1447",
-   "gazette_gregorian": "2025-07-18",
-   "decision": null,
-   "article_count": 8,
-   "max_article_number": 8,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=27278",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "___",
-   "track_id": null,
-   "title_ar": "تنظيم مركز الإحالات الطبية",
-   "component": "statute",
-   "gazette_hijri": "7/2/1447",
-   "gazette_gregorian": "2025-08-01",
-   "decision": null,
-   "article_count": 11,
-   "max_article_number": 11,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=27310",
-   "best_existing_text_overlap": 0.091,
-   "best_existing_track": "general_irrigation_corporation_statute"
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "اللائحة التنظيمية للتصرف بالخيل المملوكة لمركز الملك عبدالعزيز للخيل العربية الأصيلة",
-   "component": "regulation",
-   "gazette_hijri": "13/7/1447",
-   "gazette_gregorian": "2026-01-02",
-   "decision": null,
-   "article_count": 12,
-   "max_article_number": 12,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=28752",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  },
-  {
-   "track_id_proposed": "____",
-   "track_id": null,
-   "title_ar": "تنظيم اللجنة الوطنية للتربية والثقافة والعلوم",
-   "component": "statute",
-   "gazette_hijri": "4/8/1447",
-   "gazette_gregorian": "2026-01-23",
-   "decision": null,
-   "article_count": 13,
-   "max_article_number": 13,
-   "missing_article_numbers": [],
-   "notes": [],
-   "url": "https://www.uqn.gov.sa/details?p=28806",
-   "best_existing_text_overlap": 0.0,
-   "best_existing_track": null
-  }
- ],
+ "accepted_count": 0,
+ "accepted_article_total": 0,
+ "rejected_count": 236,
+ "decision_number_present_in_masthead": 0,
+ "with_disclosed_numbering_gap": 0,
+ "title_resembles_existing_but_distinct": 0,
+ "accepted": [],
  "rejected": [
   {
    "title_ar": "تنظيم هيئة الحكومة الرقمية",
@@ -934,6 +29,13 @@
    "blocking_gates": [
     "G2: already covered by registry track 'tourist_accommodation_facilities_regulation' (100% of this document's article text is already ingested there)",
     "G5: article 24 contains site-navigation boilerplate"
+   ]
+  },
+  {
+   "title_ar": "اللائحة التنظيمية للخيل العربية الأصيلة",
+   "url": "https://www.uqn.gov.sa/details?p=17203",
+   "blocking_gates": [
+    "G2: already covered by registry track 'arabian_horse_regulation' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -990,6 +92,13 @@
    "url": "https://www.uqn.gov.sa/details?p=17438",
    "blocking_gates": [
     "G2: already covered by registry track 'trustees_experts_fees_rules' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "قواعد أعمال اللجنة التنفيذية الدائمة لمراكز الخدمة ومحطات الوقود",
+   "url": "https://www.uqn.gov.sa/details?p=17559",
+   "blocking_gates": [
+    "G2: already covered by registry track 'service_centers_fuel_stations_committee_rules' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1059,6 +168,20 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنفيذية للمواد المستنفدة لطبقة الأوزون ومركبات الكربون الهيدروفلورية",
+   "url": "https://www.uqn.gov.sa/details?p=17837",
+   "blocking_gates": [
+    "G2: already covered by registry track 'ozone_depleting_substances_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة التنفيذية لإعادة التأهيل البيئي للمواقع المتدهورة ومعالجة المواقع الملوثة",
+   "url": "https://www.uqn.gov.sa/details?p=17839",
+   "blocking_gates": [
+    "G2: already covered by registry track 'environmental_rehabilitation_contaminated_sites_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
    "url": "https://www.uqn.gov.sa/details?p=17848",
    "blocking_gates": [
@@ -1073,10 +196,52 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنفيذية لتنمية الغطاء النباتي ومكافحة التصحر",
+   "url": "https://www.uqn.gov.sa/details?p=17863",
+   "blocking_gates": [
+    "G2: already covered by registry track 'vegetation_cover_desertification_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "اللائحة التنفيذية للإتجار بالكائنات الفطرية ومنتجاتها ومشتقاتها",
    "url": "https://www.uqn.gov.sa/details?p=17881",
    "blocking_gates": [
     "G2: already covered by registry track 'wildlife_trade_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة الفنية للحد من المواد الخطرة في الأجهزة والمعدات الكهربائية والإلكترونية",
+   "url": "https://www.uqn.gov.sa/details?p=17911",
+   "blocking_gates": [
+    "G2: already covered by registry track 'hazardous_substances_electrical_equipment_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة الفنية للمنتجات الجلدية",
+   "url": "https://www.uqn.gov.sa/details?p=17912",
+   "blocking_gates": [
+    "G2: already covered by registry track 'leather_products_technical_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة الفنية للمركبات المستوردة المستعملة",
+   "url": "https://www.uqn.gov.sa/details?p=17922",
+   "blocking_gates": [
+    "G2: already covered by registry track 'used_imported_vehicles_technical_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة الفنية للورق والكرتون",
+   "url": "https://www.uqn.gov.sa/details?p=18108",
+   "blocking_gates": [
+    "G2: already covered by registry track 'paper_cardboard_technical_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط تحليل أسواق العقار",
+   "url": "https://www.uqn.gov.sa/details?p=18158",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_market_analysis_controls' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1119,6 +284,13 @@
    "url": "https://www.uqn.gov.sa/details?p=18507",
    "blocking_gates": [
     "G2: already covered by registry track 'king_abdullah_language_planning_center_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "لائحة تنظيم أعمال الإطفاء والإنقاذ بالمديرية العامة للدفاع المدني",
+   "url": "https://www.uqn.gov.sa/details?p=18510",
+   "blocking_gates": [
+    "G2: already covered by registry track 'civil_defense_firefighting_rescue_regulation' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1168,6 +340,20 @@
    "url": "https://www.uqn.gov.sa/details?p=18987",
    "blocking_gates": [
     "G2: already covered by registry track 'occupational_safety_health_council_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط استئجار الجهات الحكومية للعقارات خارج المملكة",
+   "url": "https://www.uqn.gov.sa/details?p=19137",
+   "blocking_gates": [
+    "DO_NOT_BUILD: passes every gate but is listed in do_not_build — see do_not_build_note"
+   ]
+  },
+  {
+   "title_ar": "لائحة الضوابط الخاصة بتحديد تكاليف الإصلاح وتقدير التعويضات عن المنفعة التي فقدها المرفق",
+   "url": "https://www.uqn.gov.sa/details?p=19187",
+   "blocking_gates": [
+    "DO_NOT_BUILD: passes every gate but is listed in do_not_build — see do_not_build_note"
    ]
   },
   {
@@ -1283,6 +469,13 @@
    ]
   },
   {
+   "title_ar": "القواعد المنظمة لبرنامج الكفاءات والمتعاقدين",
+   "url": "https://www.uqn.gov.sa/details?p=19971",
+   "blocking_gates": [
+    "G2: already covered by registry track 'competencies_contractors_program_rules' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "اللائحة المنظمة لنشاط بيع تذاكر السفر البحرية",
    "url": "https://www.uqn.gov.sa/details?p=20004",
    "blocking_gates": [
@@ -1290,10 +483,31 @@
    ]
   },
   {
+   "title_ar": "اللائحة المنظمة لسجل الخدمة البحرية",
+   "url": "https://www.uqn.gov.sa/details?p=20006",
+   "blocking_gates": [
+    "G2: already covered by registry track 'maritime_service_record_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "النظام الأساس لجامعة الملك سعود",
    "url": "https://www.uqn.gov.sa/details?p=20025",
    "blocking_gates": [
     "G2: already covered by registry track 'king_saud_university_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة الفنية لحلي الزينة والإكسسوارات",
+   "url": "https://www.uqn.gov.sa/details?p=20155",
+   "blocking_gates": [
+    "G2: already covered by registry track 'jewellery_accessories_technical_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط رسوم تخزين البضائع بالمنافذ الجمركية البرية",
+   "url": "https://www.uqn.gov.sa/details?p=20299",
+   "blocking_gates": [
+    "G2: already covered by registry track 'land_customs_storage_fees_controls' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1367,6 +581,13 @@
    ]
   },
   {
+   "title_ar": "لائحة الوجهات السياحية",
+   "url": "https://www.uqn.gov.sa/details?p=21124",
+   "blocking_gates": [
+    "G2: already covered by registry track 'tourist_destinations_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "قواعد الأسواق الحرة",
    "url": "https://www.uqn.gov.sa/details?p=21223",
    "blocking_gates": [
@@ -1437,10 +658,38 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنفيذية لاعتماد مؤسسات التعليم والتدريب البحري",
+   "url": "https://www.uqn.gov.sa/details?p=21487",
+   "blocking_gates": [
+    "G2: already covered by registry track 'maritime_education_training_accreditation_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "الترتيبات التنظيمية لمركز برنامج تعزيز الشراكة مع القطاع الخاص (شريك)",
+   "url": "https://www.uqn.gov.sa/details?p=21520",
+   "blocking_gates": [
+    "G2: already covered by registry track 'shareek_program_center_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "تنظيم الأكاديمية المالية",
    "url": "https://www.uqn.gov.sa/details?p=21580",
    "blocking_gates": [
     "G2: already covered by registry track 'financial_academy_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "تنظيم مركز سارة السديري لدراسات المرأة",
+   "url": "https://www.uqn.gov.sa/details?p=21610",
+   "blocking_gates": [
+    "G2: already covered by registry track 'sarah_sudairi_womens_studies_center_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "قواعد عمل اللجنة الدائمة للبت في الاعتراضات المقدمة من الجهات الحكومية على طلبات تخصيص مناطق المجمعات التعدينية وطلبات منح الرخص التعدينية",
+   "url": "https://www.uqn.gov.sa/details?p=21748",
+   "blocking_gates": [
+    "G2: already covered by registry track 'government_allocation_objections_committee_rules' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1458,10 +707,24 @@
    ]
   },
   {
+   "title_ar": "قواعد إقرار الأحكام المنظمة لشؤون العاملين في الأجهزة العامة وتعويضاتهم",
+   "url": "https://www.uqn.gov.sa/details?p=22967",
+   "blocking_gates": [
+    "G2: already covered by registry track 'public_agencies_staff_provisions_rules' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "تعليمات الحسابات الاستثمارية المعدلة",
    "url": "https://www.uqn.gov.sa/details?p=22976",
    "blocking_gates": [
     "DO_NOT_BUILD: passes every gate but is listed in do_not_build — see do_not_build_note"
+   ]
+  },
+  {
+   "title_ar": "القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية",
+   "url": "https://www.uqn.gov.sa/details?p=22977",
+   "blocking_gates": [
+    "G2: already covered by registry track 'foreign_investment_securities_rules' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1514,6 +777,20 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنظيمية لمنظم الرحلات البحرية السياحية",
+   "url": "https://www.uqn.gov.sa/details?p=23415",
+   "blocking_gates": [
+    "G2: already covered by registry track 'maritime_tour_operator_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة التنظيمية لليخوت الخاصة الزائرة",
+   "url": "https://www.uqn.gov.sa/details?p=23416",
+   "blocking_gates": [
+    "DO_NOT_BUILD: passes every gate but is listed in do_not_build — see do_not_build_note"
+   ]
+  },
+  {
    "title_ar": "اللائحة التنظيمية للوكيل الملاحي السياحي",
    "url": "https://www.uqn.gov.sa/details?p=23417",
    "blocking_gates": [
@@ -1521,10 +798,24 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنظيمية لسفن الرحلات السياحية (الكروز)",
+   "url": "https://www.uqn.gov.sa/details?p=23418",
+   "blocking_gates": [
+    "DO_NOT_BUILD: passes every gate but is listed in do_not_build — see do_not_build_note"
+   ]
+  },
+  {
    "title_ar": "اللائحة التنظيمية لتصميم وتشغيل المراسي البحرية السياحية",
    "url": "https://www.uqn.gov.sa/details?p=23419",
    "blocking_gates": [
     "G8: article 6 is referenced in the document but was not segmented — possible merged/lost text"
+   ]
+  },
+  {
+   "title_ar": "اللائحة التنظيمية لتأجير اليخوت الضخمة",
+   "url": "https://www.uqn.gov.sa/details?p=23420",
+   "blocking_gates": [
+    "DO_NOT_BUILD: passes every gate but is listed in do_not_build — see do_not_build_note"
    ]
   },
   {
@@ -1543,6 +834,13 @@
    "url": "https://www.uqn.gov.sa/details?p=23458",
    "blocking_gates": [
     "G2: already covered by registry track 'public_transport_users_rights_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "لائحة رسوم تقديم منتجات التبغ",
+   "url": "https://www.uqn.gov.sa/details?p=23467",
+   "blocking_gates": [
+    "G2: already covered by registry track 'tobacco_products_submission_fees_regulation' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1574,6 +872,13 @@
    ]
   },
   {
+   "title_ar": "قواعد برامج التعليم المهني المستمر",
+   "url": "https://www.uqn.gov.sa/details?p=23654",
+   "blocking_gates": [
+    "G2: already covered by registry track 'continuing_professional_education_rules' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "نظام صندوق التنمية الزراعية",
    "url": "https://www.uqn.gov.sa/details?p=23697",
    "blocking_gates": [
@@ -1588,6 +893,13 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنظيمية للمركز العام للنقل بمدينة مكة المكرمة والمشاعر المقدسة",
+   "url": "https://www.uqn.gov.sa/details?p=23779",
+   "blocking_gates": [
+    "G2: already covered by registry track 'makkah_holy_sites_transport_center_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "القواعد التنظيمية لقياس حجم المنشأة",
    "url": "https://www.uqn.gov.sa/details?p=23822",
    "blocking_gates": [
@@ -1599,6 +911,13 @@
    "url": "https://www.uqn.gov.sa/details?p=23863",
    "blocking_gates": [
     "G2: already covered by registry track 'freight_broker_logistics_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط تحديد تكاليف الإصلاح وتقدير التعويضات",
+   "url": "https://www.uqn.gov.sa/details?p=23892",
+   "blocking_gates": [
+    "DO_NOT_BUILD: passes every gate but is listed in do_not_build — see do_not_build_note"
    ]
   },
   {
@@ -1644,6 +963,27 @@
    ]
   },
   {
+   "title_ar": "اللائحة الفنية للتوافق الكهرومغناطيسي",
+   "url": "https://www.uqn.gov.sa/details?p=24063",
+   "blocking_gates": [
+    "G2: already covered by registry track 'electromagnetic_compatibility_technical_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة الفنية للأجهزة الكهربائية والمعدات المعدة للاستخدام في الأجواء القابلة للانفجار",
+   "url": "https://www.uqn.gov.sa/details?p=24064",
+   "blocking_gates": [
+    "G2: already covered by registry track 'explosive_atmospheres_equipment_technical_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة العامة لنماذج المطابقة",
+   "url": "https://www.uqn.gov.sa/details?p=24065",
+   "blocking_gates": [
+    "G2: already covered by registry track 'conformity_models_general_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "تنظيم مجمع الملك سلمان العالمي للغة العربية",
    "url": "https://www.uqn.gov.sa/details?p=24103",
    "blocking_gates": [
@@ -1679,10 +1019,24 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنظيمية للاستشارات والتحليلات العقارية",
+   "url": "https://www.uqn.gov.sa/details?p=24279",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_consultancy_analytics_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "الضوابط المنظمة للإجراءات الجمركية",
    "url": "https://www.uqn.gov.sa/details?p=24297",
    "blocking_gates": [
     "G2: already covered by registry track 'customs_procedures_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "لائحة شروط تفويض هيئات التصنيف في المملكة العربية السعودية",
+   "url": "https://www.uqn.gov.sa/details?p=24357",
+   "blocking_gates": [
+    "G2: already covered by registry track 'classification_societies_authorisation_regulation' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1707,6 +1061,13 @@
    ]
   },
   {
+   "title_ar": "ضوابط حساب الضمان للمساهمات العقارية",
+   "url": "https://www.uqn.gov.sa/details?p=24520",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_contributions_escrow_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "القواعد الضريبية للمقرات الإقليمية",
    "url": "https://www.uqn.gov.sa/details?p=24526",
    "blocking_gates": [
@@ -1718,6 +1079,13 @@
    "url": "https://www.uqn.gov.sa/details?p=24561",
    "blocking_gates": [
     "G2: already covered by registry track 'saudi_tourism_authority_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط الرقابة والامتثال والتراخيص لأعمال مشاريع البنية التحتية بمنطقة الرياض",
+   "url": "https://www.uqn.gov.sa/details?p=24609",
+   "blocking_gates": [
+    "G2: already covered by registry track 'riyadh_infrastructure_projects_compliance_controls' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1788,6 +1156,13 @@
    "url": "https://www.uqn.gov.sa/details?p=24972",
    "blocking_gates": [
     "G2: already covered by registry track 'vehicle_damage_assessment_rules' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "قواعد وإجراءات عمل لجان تسوية الخلافات والمنازعات الزكوية والضريبية",
+   "url": "https://www.uqn.gov.sa/details?p=25004",
+   "blocking_gates": [
+    "G2: already covered by registry track 'zakat_tax_dispute_settlement_committees_rules' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1882,6 +1257,20 @@
    ]
   },
   {
+   "title_ar": "ضوابط إعفاء البضائع المعادة من الرسوم الجمركية",
+   "url": "https://www.uqn.gov.sa/details?p=25232",
+   "blocking_gates": [
+    "G2: already covered by registry track 'returned_goods_customs_exemption_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "القواعد المنظمة للصناديق الأهلية",
+   "url": "https://www.uqn.gov.sa/details?p=25321",
+   "blocking_gates": [
+    "G2: already covered by registry track 'community_funds_rules' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "اللائحة المنظمة للعلاقة بين المركز الوطني لتنمية القطاع غير الربحي والجهات المشرفة فنيا على الجمعيات والمؤسسات الأهلية",
    "url": "https://www.uqn.gov.sa/details?p=25327",
    "blocking_gates": [
@@ -1893,6 +1282,13 @@
    "url": "https://www.uqn.gov.sa/details?p=25329",
    "blocking_gates": [
     "G2: already covered by registry track 'alula_royal_commission_violations_committees_rules' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "اللائحة الفنية لمعدات وتجهيزات المركبات ذات الاستخدام الخاص",
+   "url": "https://www.uqn.gov.sa/details?p=25393",
+   "blocking_gates": [
+    "G2: already covered by registry track 'special_use_vehicle_equipment_technical_regulation' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1938,6 +1334,34 @@
    ]
   },
   {
+   "title_ar": "الضوابط والإجراءات لعمليات التزود بالوقود في المراسي البحرية السياحيةقرار مجلس إدارة الهيئة السعودية للبحر الأحمر رقم (1ت-2-2024) وتاريخ 15 /01 /1446ه",
+   "url": "https://www.uqn.gov.sa/details?p=26580",
+   "blocking_gates": [
+    "G2: already covered by registry track 'marina_bunkering_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "الضوابط والإجراءات للوكيل الملاحي السياحي",
+   "url": "https://www.uqn.gov.sa/details?p=26581",
+   "blocking_gates": [
+    "G2: already covered by registry track 'maritime_tourism_agent_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "الضوابط والاجراءات لتصنيف الوسايط البحرية السياحية",
+   "url": "https://www.uqn.gov.sa/details?p=26659",
+   "blocking_gates": [
+    "G2: already covered by registry track 'maritime_tourism_craft_classification_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "الضوابط والاجراءت لتاجير اليخوت الضخمة",
+   "url": "https://www.uqn.gov.sa/details?p=26661",
+   "blocking_gates": [
+    "G2: already covered by registry track 'superyacht_chartering_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "الضوابط والاجراءات لليخوت الزايرة",
    "url": "https://www.uqn.gov.sa/details?p=26662",
    "blocking_gates": [
@@ -1949,6 +1373,13 @@
    "url": "https://www.uqn.gov.sa/details?p=26663",
    "blocking_gates": [
     "G2: already covered by registry track 'cruise_ships_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط زراعة القمح والأعلاف الموسمية",
+   "url": "https://www.uqn.gov.sa/details?p=26672",
+   "blocking_gates": [
+    "G2: already covered by registry track 'wheat_seasonal_fodder_cultivation_controls' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -1966,6 +1397,20 @@
    ]
   },
   {
+   "title_ar": "اللائحة الفنية للصهاريج (صهاريج نقل الغاز الجاف)",
+   "url": "https://www.uqn.gov.sa/details?p=26830",
+   "blocking_gates": [
+    "G2: already covered by registry track 'dry_gas_tankers_technical_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "الترتيبات التنظيمية لرئاسة الشؤون الدينية بالمسجد الحرام والمسجد النبوي",
+   "url": "https://www.uqn.gov.sa/details?p=26833",
+   "blocking_gates": [
+    "G2: already covered by registry track 'two_holy_mosques_religious_affairs_presidency_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "الترتيبات التنظيمية للهيئة العامة للعناية بشؤون المسجد الحرام والمسجد النبوي",
    "url": "https://www.uqn.gov.sa/details?p=26834",
    "blocking_gates": [
@@ -1977,6 +1422,20 @@
    "url": "https://www.uqn.gov.sa/details?p=26868",
    "blocking_gates": [
     "G2: already covered by registry track 'antifouling_systems_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط تربية النحل في محمية الملك عبدالعزيز الملكية",
+   "url": "https://www.uqn.gov.sa/details?p=26890",
+   "blocking_gates": [
+    "G2: already covered by registry track 'king_abdulaziz_reserve_beekeeping_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط التصريح للأنشطة السياحية في محمية الملك عبدالعزيز الملكية",
+   "url": "https://www.uqn.gov.sa/details?p=26891",
+   "blocking_gates": [
+    "G2: already covered by registry track 'king_abdulaziz_reserve_tourism_permits_controls' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -2019,6 +1478,20 @@
    "url": "https://www.uqn.gov.sa/details?p=27274",
    "blocking_gates": [
     "G2: already covered by registry track 'general_irrigation_corporation_statute' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "ضوابط إصدار رخص حفر الآبار الجديدة على الرف الرسوبي",
+   "url": "https://www.uqn.gov.sa/details?p=27278",
+   "blocking_gates": [
+    "G2: already covered by registry track 'sedimentary_shelf_well_drilling_permits_controls' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "تنظيم مركز الإحالات الطبية",
+   "url": "https://www.uqn.gov.sa/details?p=27310",
+   "blocking_gates": [
+    "G2: already covered by registry track 'medical_referrals_center_statute' (100% of this document's article text is already ingested there)"
    ]
   },
   {
@@ -2155,6 +1628,13 @@
    ]
   },
   {
+   "title_ar": "اللائحة التنظيمية للتصرف بالخيل المملوكة لمركز الملك عبدالعزيز للخيل العربية الأصيلة",
+   "url": "https://www.uqn.gov.sa/details?p=28752",
+   "blocking_gates": [
+    "G2: already covered by registry track 'kacaah_horse_disposal_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
    "title_ar": "اللائحة التنظيمية للمنطقة الاقتصادية الخاصة بجازان",
    "url": "https://www.uqn.gov.sa/details?p=28788",
    "blocking_gates": [
@@ -2180,6 +1660,13 @@
    "url": "https://www.uqn.gov.sa/details?p=28791",
    "blocking_gates": [
     "G2: already covered by registry track 'sez_kaec_regulation' (100% of this document's article text is already ingested there)"
+   ]
+  },
+  {
+   "title_ar": "تنظيم اللجنة الوطنية للتربية والثقافة والعلوم",
+   "url": "https://www.uqn.gov.sa/details?p=28806",
+   "blocking_gates": [
+    "G2: already covered by registry track 'unesco_national_commission_statute' (100% of this document's article text is already ingested there)"
    ]
   }
  ],
@@ -2220,6 +1707,41 @@
    "title_ar": "تعليمات الحسابات الاستثمارية / تعليمات الحسابات الاستثمارية المعدلة",
    "url": "https://www.uqn.gov.sa/details?p=23230 — و https://www.uqn.gov.sa/details?p=22976",
    "reason": "VERSION PAIR — وثيقتان لأداة واحدة (إحداهما موسومة «المعدلة»). بناء أي منهما دون فصل تعاقبي صريح سيُدخل نسخة متجاوَزة موسومة «ساري»."
+  },
+  {
+   "title_ar": "ضوابط استئجار الجهات الحكومية للعقارات خارج المملكة",
+   "url": "https://www.uqn.gov.sa/details?p=19137",
+   "reason": "SUPERSEDED — نسخة 2022-03-18 من الضوابط نفسها، استُبدلت بـ«ضوابط استئجار الجهات الحكومية للعقارات خارج المملكة العربية السعودية» المنشورة 2025-01-31 (uqn.gov.sa/details?p=26970)، وهي المسار المبني `government_foreign_property_lease_controls`."
+  },
+  {
+   "title_ar": "اللائحة التنظيمية لسفن الرحلات السياحية (الكروز)",
+   "url": "https://www.uqn.gov.sa/details?p=23418",
+   "reason": "SUPERSEDED — استُبدلت بـ«الضوابط والإجراءات لسفن الرحلات السياحية الكروز» المنشورة 2024-10-23 (uqn.gov.sa/details?p=26663)، وهي المسار المبني `cruise_ships_controls`. جزء من عائلة السياحة البحرية التي أُعيد إصدارها كاملةً في 2024 بصيغة «الضوابط والإجراءات» بدل «اللائحة التنظيمية»."
+  },
+  {
+   "title_ar": "اللائحة التنظيمية لتصميم وتشغيل المراسي البحرية السياحية",
+   "url": "https://www.uqn.gov.sa/details?p=23419",
+   "reason": "SUPERSEDED — استُبدلت بـ«الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية» المنشورة 2024-10-04 (uqn.gov.sa/details?p=26575)، وهي المسار المبني `marina_design_operation_controls`."
+  },
+  {
+   "title_ar": "اللائحة التنظيمية للوكيل الملاحي السياحي",
+   "url": "https://www.uqn.gov.sa/details?p=23417",
+   "reason": "SUPERSEDED — استُبدلت بـ«الضوابط والإجراءات للوكيل الملاحي السياحي» المنشورة 2024-10-04 (uqn.gov.sa/details?p=26581)، وهي النسخة التي بُنيت."
+  },
+  {
+   "title_ar": "اللائحة التنظيمية لتأجير اليخوت الضخمة",
+   "url": "https://www.uqn.gov.sa/details?p=23420",
+   "reason": "SUPERSEDED — استُبدلت بـ«الضوابط والاجراءت لتاجير اليخوت الضخمة» المنشورة 2024-10-23 (uqn.gov.sa/details?p=26661)، وهي النسخة التي بُنيت."
+  },
+  {
+   "title_ar": "اللائحة التنظيمية لليخوت الخاصة الزائرة",
+   "url": "https://www.uqn.gov.sa/details?p=23416",
+   "reason": "SUPERSEDED — استُبدلت بـ«الضوابط والاجراءات لليخوت الزايرة» المنشورة 2024-10-23 (uqn.gov.sa/details?p=26662)، وهي المسار المبني `visiting_yachts_controls`."
+  },
+  {
+   "title_ar": "لائحة الضوابط الخاصة بتحديد تكاليف الإصلاح وتقدير التعويضات / ضوابط تحديد تكاليف الإصلاح وتقدير التعويضات",
+   "url": "https://www.uqn.gov.sa/details?p=19187 — و https://www.uqn.gov.sa/details?p=23892",
+   "reason": "VERSION PAIR (UNRESOLVED) — وثيقتان بالموضوع نفسه: الأولى 2022-03-25 بعشر مواد، والثانية 2023-10-20 بست مواد. اختلاف عدد المواد يمنع الجزم بأن الثانية بديل كامل للأولى لا أداة أضيق نطاقاً، ولا تذكر أيٌّ منهما إلغاء الأخرى صراحةً في نص الجريدة. لا تُبنى أيٌّ منهما حتى يُحسم ذلك من مصدر رسمي؛ الترجيح بلا دليل ممنوع."
   }
  ],
  "do_not_build_note": "Documents that PASS every quality gate but must not be ingested for reasons the gates cannot see — chiefly legal currency (repeal/supersession). The pipeline validates textual integrity; whether an instrument is still in force is contextual knowledge and stays a human screening step. Check this list before emitting any future batch. أُضيف 2026-08-01: النمط الأكثر خداعاً هو **زوج «الترتيبات التنظيمية» ثم «تنظيم»** لنفس الجهة — عنوانان مختلفان لأداتين متعاقبتين، فلا يلتقطهما فحصُ تشابه العنوان ولا فحصُ تداخل النص (النصان مختلفان فعلاً). يُكشف الزوج بمقابلة **اسم الجهة** بعد تجريد صيغة العنوان عبر الأرشيف كله، ثم يُبنى الأحدث تاريخَ نشرٍ فقط."

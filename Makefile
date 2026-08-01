@@ -428,6 +428,56 @@ export PYTHONPATH := src:$(PYTHONPATH)
         white-land-fees-executive-regulation-track-validate \
         wildlife-trade-regulation-track-validate \
         zatca-statute-track-validate \
+        arabian-horse-regulation-track-validate \
+        civil-defense-firefighting-rescue-regulation-track-validate \
+        classification-societies-authorisation-regulation-track-validate \
+        community-funds-rules-track-validate \
+        competencies-contractors-program-rules-track-validate \
+        conformity-models-general-regulation-track-validate \
+        continuing-professional-education-rules-track-validate \
+        dry-gas-tankers-technical-regulation-track-validate \
+        electromagnetic-compatibility-technical-regulation-track-validate \
+        environmental-rehabilitation-contaminated-sites-regulation-track-validate \
+        explosive-atmospheres-equipment-technical-regulation-track-validate \
+        foreign-investment-securities-rules-track-validate \
+        government-allocation-objections-committee-rules-track-validate \
+        hazardous-substances-electrical-equipment-regulation-track-validate \
+        jewellery-accessories-technical-regulation-track-validate \
+        kacaah-horse-disposal-regulation-track-validate \
+        king-abdulaziz-reserve-beekeeping-controls-track-validate \
+        king-abdulaziz-reserve-tourism-permits-controls-track-validate \
+        land-customs-storage-fees-controls-track-validate \
+        leather-products-technical-regulation-track-validate \
+        makkah-holy-sites-transport-center-regulation-track-validate \
+        marina-bunkering-controls-track-validate \
+        maritime-education-training-accreditation-regulation-track-validate \
+        maritime-service-record-regulation-track-validate \
+        maritime-tour-operator-regulation-track-validate \
+        maritime-tourism-agent-controls-track-validate \
+        maritime-tourism-craft-classification-controls-track-validate \
+        medical-referrals-center-statute-track-validate \
+        ozone-depleting-substances-regulation-track-validate \
+        paper-cardboard-technical-regulation-track-validate \
+        public-agencies-staff-provisions-rules-track-validate \
+        real-estate-consultancy-analytics-regulation-track-validate \
+        real-estate-contributions-escrow-controls-track-validate \
+        real-estate-market-analysis-controls-track-validate \
+        returned-goods-customs-exemption-controls-track-validate \
+        riyadh-infrastructure-projects-compliance-controls-track-validate \
+        sarah-sudairi-womens-studies-center-statute-track-validate \
+        sedimentary-shelf-well-drilling-permits-controls-track-validate \
+        service-centers-fuel-stations-committee-rules-track-validate \
+        shareek-program-center-statute-track-validate \
+        special-use-vehicle-equipment-technical-regulation-track-validate \
+        superyacht-chartering-controls-track-validate \
+        tobacco-products-submission-fees-regulation-track-validate \
+        tourist-destinations-regulation-track-validate \
+        two-holy-mosques-religious-affairs-presidency-statute-track-validate \
+        unesco-national-commission-statute-track-validate \
+        used-imported-vehicles-technical-regulation-track-validate \
+        vegetation-cover-desertification-regulation-track-validate \
+        wheat-seasonal-fodder-cultivation-controls-track-validate \
+        zakat-tax-dispute-settlement-committees-rules-track-validate \
         museums-authority-licensing-regulation-track-validate \
         heritage-authority-licensing-regulation-track-validate \
         literature-publishing-translation-authority-licensing-regulation-track-validate \
@@ -2320,6 +2370,156 @@ wildlife-trade-regulation-track-validate:
 
 zatca-statute-track-validate:
 	$(PY) scripts/validate_zatca_statute_track.py
+
+arabian-horse-regulation-track-validate:
+	$(PY) scripts/validate_arabian_horse_regulation_track.py
+
+civil-defense-firefighting-rescue-regulation-track-validate:
+	$(PY) scripts/validate_civil_defense_firefighting_rescue_regulation_track.py
+
+classification-societies-authorisation-regulation-track-validate:
+	$(PY) scripts/validate_classification_societies_authorisation_regulation_track.py
+
+community-funds-rules-track-validate:
+	$(PY) scripts/validate_community_funds_rules_track.py
+
+competencies-contractors-program-rules-track-validate:
+	$(PY) scripts/validate_competencies_contractors_program_rules_track.py
+
+conformity-models-general-regulation-track-validate:
+	$(PY) scripts/validate_conformity_models_general_regulation_track.py
+
+continuing-professional-education-rules-track-validate:
+	$(PY) scripts/validate_continuing_professional_education_rules_track.py
+
+dry-gas-tankers-technical-regulation-track-validate:
+	$(PY) scripts/validate_dry_gas_tankers_technical_regulation_track.py
+
+electromagnetic-compatibility-technical-regulation-track-validate:
+	$(PY) scripts/validate_electromagnetic_compatibility_technical_regulation_track.py
+
+environmental-rehabilitation-contaminated-sites-regulation-track-validate:
+	$(PY) scripts/validate_environmental_rehabilitation_contaminated_sites_regulation_track.py
+
+explosive-atmospheres-equipment-technical-regulation-track-validate:
+	$(PY) scripts/validate_explosive_atmospheres_equipment_technical_regulation_track.py
+
+foreign-investment-securities-rules-track-validate:
+	$(PY) scripts/validate_foreign_investment_securities_rules_track.py
+
+government-allocation-objections-committee-rules-track-validate:
+	$(PY) scripts/validate_government_allocation_objections_committee_rules_track.py
+
+hazardous-substances-electrical-equipment-regulation-track-validate:
+	$(PY) scripts/validate_hazardous_substances_electrical_equipment_regulation_track.py
+
+jewellery-accessories-technical-regulation-track-validate:
+	$(PY) scripts/validate_jewellery_accessories_technical_regulation_track.py
+
+kacaah-horse-disposal-regulation-track-validate:
+	$(PY) scripts/validate_kacaah_horse_disposal_regulation_track.py
+
+king-abdulaziz-reserve-beekeeping-controls-track-validate:
+	$(PY) scripts/validate_king_abdulaziz_reserve_beekeeping_controls_track.py
+
+king-abdulaziz-reserve-tourism-permits-controls-track-validate:
+	$(PY) scripts/validate_king_abdulaziz_reserve_tourism_permits_controls_track.py
+
+land-customs-storage-fees-controls-track-validate:
+	$(PY) scripts/validate_land_customs_storage_fees_controls_track.py
+
+leather-products-technical-regulation-track-validate:
+	$(PY) scripts/validate_leather_products_technical_regulation_track.py
+
+makkah-holy-sites-transport-center-regulation-track-validate:
+	$(PY) scripts/validate_makkah_holy_sites_transport_center_regulation_track.py
+
+marina-bunkering-controls-track-validate:
+	$(PY) scripts/validate_marina_bunkering_controls_track.py
+
+maritime-education-training-accreditation-regulation-track-validate:
+	$(PY) scripts/validate_maritime_education_training_accreditation_regulation_track.py
+
+maritime-service-record-regulation-track-validate:
+	$(PY) scripts/validate_maritime_service_record_regulation_track.py
+
+maritime-tour-operator-regulation-track-validate:
+	$(PY) scripts/validate_maritime_tour_operator_regulation_track.py
+
+maritime-tourism-agent-controls-track-validate:
+	$(PY) scripts/validate_maritime_tourism_agent_controls_track.py
+
+maritime-tourism-craft-classification-controls-track-validate:
+	$(PY) scripts/validate_maritime_tourism_craft_classification_controls_track.py
+
+medical-referrals-center-statute-track-validate:
+	$(PY) scripts/validate_medical_referrals_center_statute_track.py
+
+ozone-depleting-substances-regulation-track-validate:
+	$(PY) scripts/validate_ozone_depleting_substances_regulation_track.py
+
+paper-cardboard-technical-regulation-track-validate:
+	$(PY) scripts/validate_paper_cardboard_technical_regulation_track.py
+
+public-agencies-staff-provisions-rules-track-validate:
+	$(PY) scripts/validate_public_agencies_staff_provisions_rules_track.py
+
+real-estate-consultancy-analytics-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_consultancy_analytics_regulation_track.py
+
+real-estate-contributions-escrow-controls-track-validate:
+	$(PY) scripts/validate_real_estate_contributions_escrow_controls_track.py
+
+real-estate-market-analysis-controls-track-validate:
+	$(PY) scripts/validate_real_estate_market_analysis_controls_track.py
+
+returned-goods-customs-exemption-controls-track-validate:
+	$(PY) scripts/validate_returned_goods_customs_exemption_controls_track.py
+
+riyadh-infrastructure-projects-compliance-controls-track-validate:
+	$(PY) scripts/validate_riyadh_infrastructure_projects_compliance_controls_track.py
+
+sarah-sudairi-womens-studies-center-statute-track-validate:
+	$(PY) scripts/validate_sarah_sudairi_womens_studies_center_statute_track.py
+
+sedimentary-shelf-well-drilling-permits-controls-track-validate:
+	$(PY) scripts/validate_sedimentary_shelf_well_drilling_permits_controls_track.py
+
+service-centers-fuel-stations-committee-rules-track-validate:
+	$(PY) scripts/validate_service_centers_fuel_stations_committee_rules_track.py
+
+shareek-program-center-statute-track-validate:
+	$(PY) scripts/validate_shareek_program_center_statute_track.py
+
+special-use-vehicle-equipment-technical-regulation-track-validate:
+	$(PY) scripts/validate_special_use_vehicle_equipment_technical_regulation_track.py
+
+superyacht-chartering-controls-track-validate:
+	$(PY) scripts/validate_superyacht_chartering_controls_track.py
+
+tobacco-products-submission-fees-regulation-track-validate:
+	$(PY) scripts/validate_tobacco_products_submission_fees_regulation_track.py
+
+tourist-destinations-regulation-track-validate:
+	$(PY) scripts/validate_tourist_destinations_regulation_track.py
+
+two-holy-mosques-religious-affairs-presidency-statute-track-validate:
+	$(PY) scripts/validate_two_holy_mosques_religious_affairs_presidency_statute_track.py
+
+unesco-national-commission-statute-track-validate:
+	$(PY) scripts/validate_unesco_national_commission_statute_track.py
+
+used-imported-vehicles-technical-regulation-track-validate:
+	$(PY) scripts/validate_used_imported_vehicles_technical_regulation_track.py
+
+vegetation-cover-desertification-regulation-track-validate:
+	$(PY) scripts/validate_vegetation_cover_desertification_regulation_track.py
+
+wheat-seasonal-fodder-cultivation-controls-track-validate:
+	$(PY) scripts/validate_wheat_seasonal_fodder_cultivation_controls_track.py
+
+zakat-tax-dispute-settlement-committees-rules-track-validate:
+	$(PY) scripts/validate_zakat_tax_dispute_settlement_committees_rules_track.py
 
 museums-authority-licensing-regulation-track-validate:
 	$(PY) scripts/validate_museums_authority_licensing_regulation_track.py
