@@ -9,7 +9,7 @@
   "network_access": false,
   "notes": "Purely additive, read-only survey layer over this corpus's 189 tracks, built entirely from files already committed to this repository (the corpus registry, the verification-tiers layer, and each track's own official_source.json-equivalent file). Makes NO network calls and NEVER calls datetime.now() — every date-like value here (fetch_date, Wayback snapshot dates, etc.) is extracted verbatim from a track's own already-committed files, which keeps this generator deterministic and idempotent. Does not modify the registry, the verification-tiers file, or any of the 189 tracks' own files. For a LIVE (network-dependent, non-deterministic, NOT part of the QA gate) reachability/drift check against the URLs recorded here, run scripts/check_corpus_freshness.py standalone.",
   "known_source_staleness_risk_methodology": "known_source_staleness_risk=true only where a track's OWN known_unresolved_discrepancies entry documents that the PRIMARY government portal's displayed/consolidated text was confirmed stale/outdated at build time (e.g. an amendment the portal has not incorporated, or a portal body that contradicts its own amendment-history annotation) — not merely 'unreachable this pass' (a reachability caveat, not a confirmed-content problem), and not a stale INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a different, non-monitorable concern; re-checking the portal will not resolve it).",
-  "total_tracks": 547,
+  "total_tracks": 620,
   "known_source_staleness_risk_count": 17,
   "known_source_staleness_risk_tracks": [
     "accounting_auditing_law",
@@ -125,6 +125,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "accredited_valuers_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Accredited Valuers Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام المقيمين المعتمدين",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Accredited Valuers Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/2/1445H (2023-09-08).",
+      "registry_source_url": null,
+      "official_source_file": "sources/accredited_valuers_implementing_regulation/official_source/accredited_valuers_implementing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "accredited_valuers_law",
       "display_name_en": "Certified/Accredited Valuers Law",
       "display_name_ar": "نظام المقيّمين المعتمدين",
@@ -143,6 +160,23 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "administrative_judicial_council_bylaw",
+      "display_name_en": "Internal Bylaw of the Administrative Judicial Council",
+      "display_name_ar": "اللائحة الداخلية لمجلس القضاء الإداري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Internal Bylaw of the Administrative Judicial Council — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/11/1442H (2021-07-02).",
+      "registry_source_url": null,
+      "official_source_file": "sources/administrative_judicial_council_bylaw/official_source/administrative_judicial_council_bylaw_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -696,6 +730,40 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "antiquities_inspection_violations_regulation",
+      "display_name_en": "Implementing Regulation for the Inspection and Seizure of Antiquities, Museums and Urban Heritage Violations and their Adjudication",
+      "display_name_ar": "اللائحة التنفيذية للتفتيش وضبط مخالفات الآثار والمتاحف والتراث العمراني والنظر فيها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation for the Inspection and Seizure of Antiquities, Museums and Urban Heritage Violations and their Adjudication — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/7/1443H (2022-02-25).",
+      "registry_source_url": null,
+      "official_source_file": "sources/antiquities_inspection_violations_regulation/official_source/antiquities_inspection_violations_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "antiquities_museums_fund_regulation",
+      "display_name_en": "Implementing Regulation of the Antiquities, Museums and Urban Heritage Fund",
+      "display_name_ar": "اللائحة التنفيذية لصندوق الآثار والمتاحف والتراث العمراني",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Antiquities, Museums and Urban Heritage Fund — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/7/1443H (2022-02-25).",
+      "registry_source_url": null,
+      "official_source_file": "sources/antiquities_museums_fund_regulation/official_source/antiquities_museums_fund_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "arabian_horse_regulation",
       "display_name_en": "Regulatory Rules for the Purebred Arabian Horse",
       "display_name_ar": "اللائحة التنظيمية للخيل العربية الأصيلة",
@@ -1014,6 +1082,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "bankruptcy_information_documents_regulation",
+      "display_name_en": "Regulation on the Information and Documents Prescribed in the Bankruptcy Law and its Implementing Regulation",
+      "display_name_ar": "لائحة المعلومات والوثائق المنصوص عليها في نظام الإفلاس ولائحته التنفيذية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation on the Information and Documents Prescribed in the Bankruptcy Law and its Implementing Regulation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/5/1442H (2021-01-08).",
+      "registry_source_url": null,
+      "official_source_file": "sources/bankruptcy_information_documents_regulation/official_source/bankruptcy_information_documents_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "bankruptcy_law",
       "display_name_en": "Bankruptcy Law",
       "display_name_ar": "نظام الإفلاس",
@@ -1027,6 +1112,23 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "bankruptcy_trustees_experts_rules",
+      "display_name_en": "Rules Governing the Work of Bankruptcy Trustees and Experts",
+      "display_name_ar": "القواعد المنظمة لعمل أمناء الإفلاس والخبراء",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules Governing the Work of Bankruptcy Trustees and Experts — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/5/1442H (2021-01-08).",
+      "registry_source_url": null,
+      "official_source_file": "sources/bankruptcy_trustees_experts_rules/official_source/bankruptcy_trustees_experts_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -1145,6 +1247,40 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "bog_enforcement_service_providers_controls",
+      "display_name_en": "Controls on Engaging Enforcement Service Providers before the Board of Grievances",
+      "display_name_ar": "ضوابط الاستعانة بمقدمي خدمات التنفيذ أمام ديوان المظالم",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls on Engaging Enforcement Service Providers before the Board of Grievances — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 18/8/1447H (2026-02-06).",
+      "registry_source_url": null,
+      "official_source_file": "sources/bog_enforcement_service_providers_controls/official_source/bog_enforcement_service_providers_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "bog_judicial_inspection_regulation",
+      "display_name_en": "Judicial Inspection Regulation of the Board of Grievances",
+      "display_name_ar": "لائحة التفتيش القضائي بديوان المظالم",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Judicial Inspection Regulation of the Board of Grievances — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 16/1/1447H (2025-07-11).",
+      "registry_source_url": null,
+      "official_source_file": "sources/bog_judicial_inspection_regulation/official_source/bog_judicial_inspection_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "building_code_inspection_bodies_regulation",
       "display_name_en": "Regulation on General Requirements for Designating Inspection Bodies and Inspectors for Saudi Building Code Works",
       "display_name_ar": "لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي",
@@ -1204,6 +1340,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "building_code_violations_classification_regulation",
+      "display_name_en": "Regulation Classifying Saudi Building Code Violations",
+      "display_name_ar": "لائحة تصنيف مخالفات كود البناء السعودي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation Classifying Saudi Building Code Violations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 9/3/1443H (2021-10-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/building_code_violations_classification_regulation/official_source/building_code_violations_classification_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "capital_adequacy_rules",
       "display_name_en": "Amended Prudential (Capital Adequacy) Rules",
       "display_name_ar": "قواعد الكفاية المالية المعدلة",
@@ -1212,6 +1365,40 @@
       "registry_source_authority": "Amended Prudential (Capital Adequacy) Rules — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page (uqn.gov.sa/details?p=21562), published 18/8/1444H (2023-03-10). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
       "registry_source_url": null,
       "official_source_file": "sources/capital_adequacy_rules/official_source/capital_adequacy_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "capital_market_conduct_regulation",
+      "display_name_en": "Market Conduct Regulations",
+      "display_name_ar": "لائحة سلوكيات السوق المالية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Market Conduct Regulations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 2/10/1442H (2021-05-14).",
+      "registry_source_url": null,
+      "official_source_file": "sources/capital_market_conduct_regulation/official_source/capital_market_conduct_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "capital_market_institutions_regulation",
+      "display_name_en": "Capital Market Institutions Regulations",
+      "display_name_ar": "لائحة مؤسسات السوق المالية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Capital Market Institutions Regulations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/12/1444H (2023-07-07).",
+      "registry_source_url": null,
+      "official_source_file": "sources/capital_market_institutions_regulation/official_source/capital_market_institutions_regulation_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -1235,6 +1422,40 @@
         "laws.boe.gov.sa"
       ],
       "last_verified_context": "built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "capital_market_whistleblowing_regulation",
+      "display_name_en": "Regulation on Reporting Violations of the Capital Market Law",
+      "display_name_ar": "لائحة الإبلاغ عن مخالفات نظام السوق المالية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation on Reporting Violations of the Capital Market Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/8/1443H (2022-03-11).",
+      "registry_source_url": null,
+      "official_source_file": "sources/capital_market_whistleblowing_regulation/official_source/capital_market_whistleblowing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "chambers_commerce_committees_regulation",
+      "display_name_en": "Regulation of National and Sectoral Committees in the Chambers of Commerce",
+      "display_name_ar": "لائحة اللجان الوطنية واللجان القطاعية في الغرف التجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation of National and Sectoral Committees in the Chambers of Commerce — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/5/1445H (2023-12-08).",
+      "registry_source_url": null,
+      "official_source_file": "sources/chambers_commerce_committees_regulation/official_source/chambers_commerce_committees_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -1565,6 +1786,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "coastal_tourism_craft_classification_regulation",
+      "display_name_en": "Regulatory Rules for Classifying Maritime Craft Used in Coastal Tourism",
+      "display_name_ar": "اللائحة التنظيمية لتصنيف الوسائط البحرية المستخدمة في السياحة الساحلية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Rules for Classifying Maritime Craft Used in Coastal Tourism — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H (2023-08-04).",
+      "registry_source_url": null,
+      "official_source_file": "sources/coastal_tourism_craft_classification_regulation/official_source/coastal_tourism_craft_classification_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "commercial_agencies_law",
       "display_name_en": "Commercial Agencies Law",
       "display_name_ar": "نظام الوكالات التجارية",
@@ -1762,6 +2000,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "companies_law_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Companies Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام الشركات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Companies Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/6/1444H (2023-01-18).",
+      "registry_source_url": null,
+      "official_source_file": "sources/companies_law_implementing_regulation/official_source/companies_law_implementing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "competencies_contractors_program_rules",
       "display_name_en": "Rules Governing the Competencies and Contractors Program",
       "display_name_ar": "القواعد المنظمة لبرنامج الكفاءات والمتعاقدين",
@@ -1873,6 +2128,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "contractors_classification_regulation",
+      "display_name_en": "Implementing Regulation of the Contractors Classification Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام تصنيف المقاولين",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Contractors Classification Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/3/1447H (2025-09-05).",
+      "registry_source_url": null,
+      "official_source_file": "sources/contractors_classification_regulation/official_source/contractors_classification_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "cooperative_health_insurance_law",
       "display_name_en": "Cooperative Health Insurance Law",
       "display_name_ar": "نظام الضمان الصحي التعاوني",
@@ -1948,6 +2220,57 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "copyright_law_2026",
+      "display_name_en": "Copyright Law",
+      "display_name_ar": "نظام حقوق المؤلف",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Copyright Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H (2026-02-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/copyright_law_2026/official_source/copyright_law_2026_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "copyright_law_implementing_regulation",
+      "display_name_en": "Implementing Regulation of the Copyright Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام حقوق المؤلف",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Copyright Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/2/1448H (2026-07-31).",
+      "registry_source_url": null,
+      "official_source_file": "sources/copyright_law_implementing_regulation/official_source/copyright_law_implementing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "corporate_governance_regulation",
+      "display_name_en": "Corporate Governance Regulations",
+      "display_name_ar": "لائحة حوكمة الشركات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Corporate Governance Regulations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/9/1444H (2023-04-14).",
+      "registry_source_url": null,
+      "official_source_file": "sources/corporate_governance_regulation/official_source/corporate_governance_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -2391,6 +2714,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "disability_rights_violations_committee_rules",
+      "display_name_en": "Rules of Procedure of the Committee for Adjudicating Violations of the Law on the Rights of Persons with Disabilities",
+      "display_name_ar": "قواعد عمل لجنة النظر في مخالفات أحكام نظام حقوق الأشخاص ذوي الإعاقة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules of Procedure of the Committee for Adjudicating Violations of the Law on the Rights of Persons with Disabilities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/3/1446H (2024-09-27).",
+      "registry_source_url": null,
+      "official_source_file": "sources/disability_rights_violations_committee_rules/official_source/disability_rights_violations_committee_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "disability_social_programs_regulation",
       "display_name_en": "Regulatory Rules for Social and Vocational Programs for Persons with Disabilities",
       "display_name_ar": "اللائحة التنظيمية للبرامج الاجتماعية والمهنية للأشخاص ذوي الإعاقة",
@@ -2445,6 +2785,23 @@
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; track's own discrepancies confirm the primary portal's displayed text as stale/outdated at build time (see known_source_staleness_pointer)",
       "known_source_staleness_risk": true,
       "known_source_staleness_pointer": "domestic_labor_boe_portal_stale: بوابة هيئة الخبراء (laws.boe.gov.sa) لا تزال، حتى أحدث لقطة أرشيفية مفحوصة (6 سبتمبر 2025)، تعرض حصراً اللائحة السابقة الملغاة (لائحة عمال الخدمة المنزلية ومن في حكمهم، قرار مجلس الوزراء رقم 310، 7/9/1434هـ، 23 مادة) على"
+    },
+    {
+      "track_id": "donations_collection_law",
+      "display_name_en": "Law on the Collection of Donations",
+      "display_name_ar": "نظام جمع التبرعات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Law on the Collection of Donations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/2/1446H (2024-08-23).",
+      "registry_source_url": null,
+      "official_source_file": "sources/donations_collection_law/official_source/donations_collection_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
     },
     {
       "track_id": "donations_collection_regulation",
@@ -2573,6 +2930,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "economic_cities_marketing_names_controls",
+      "display_name_en": "Controls on the Marketing Designations of Economic Cities and Special Economic Zones",
+      "display_name_ar": "ضوابط التسميات التسويقية للمدن الاقتصادية والمناطق الاقتصادية الخاصة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls on the Marketing Designations of Economic Cities and Special Economic Zones — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 10/2/1448H (2026-07-24).",
+      "registry_source_url": null,
+      "official_source_file": "sources/economic_cities_marketing_names_controls/official_source/economic_cities_marketing_names_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "einvoicing_regulation",
       "display_name_en": "E-Invoicing Regulation",
       "display_name_ar": "لائحة الفوترة الإلكترونية",
@@ -2685,6 +3059,23 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "electricity_violations_regulation",
+      "display_name_en": "Regulation on Recording and Proving Violations of the Electricity Law and their Adjudication",
+      "display_name_ar": "لائحة ضبط وإثبات مخالفات أحكام نظام الكهرباء والفصل فيها",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation on Recording and Proving Violations of the Electricity Law and their Adjudication — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/4/1445H (2023-10-20).",
+      "registry_source_url": null,
+      "official_source_file": "sources/electricity_violations_regulation/official_source/electricity_violations_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3267,6 +3658,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "excavation_permits_regulation",
+      "display_name_en": "Excavation Permits Regulation",
+      "display_name_ar": "لائحة تراخيص الحفريات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Excavation Permits Regulation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/8/1445H (2024-02-23).",
+      "registry_source_url": null,
+      "official_source_file": "sources/excavation_permits_regulation/official_source/excavation_permits_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "explosive_atmospheres_equipment_technical_regulation",
       "display_name_en": "Technical Regulation for Electrical Apparatus and Equipment Intended for Use in Explosive Atmospheres",
       "display_name_ar": "اللائحة الفنية للأجهزة الكهربائية والمعدات المعدة للاستخدام في الأجواء القابلة للانفجار",
@@ -3292,6 +3700,23 @@
       "registry_source_authority": "Governance Statute for Export Prohibition and Restriction Procedures — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/6/1443H (2022-01-14).",
       "registry_source_url": null,
       "official_source_file": "sources/export_restriction_governance_statute/official_source/export_restriction_governance_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "extremism_countering_center_statute",
+      "display_name_en": "Statute of the Global Center for Combating Extremist Ideology",
+      "display_name_ar": "النظام الأساس للمركز العالمي لمكافحة الفكر المتطرف",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of the Global Center for Combating Extremist Ideology — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/12/1447H (2026-05-22).",
+      "registry_source_url": null,
+      "official_source_file": "sources/extremism_countering_center_statute/official_source/extremism_countering_center_statute_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -3532,6 +3957,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "financial_advisory_profession_rules",
+      "display_name_en": "Rules Governing the Financial Advisory Profession (Non-Securities)",
+      "display_name_ar": "القواعد المنظمة لمهنة الاستشارات المالية (لغير الأوراق المالية)",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules Governing the Financial Advisory Profession (Non-Securities) — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/8/1447H (2026-01-30).",
+      "registry_source_url": null,
+      "official_source_file": "sources/financial_advisory_profession_rules/official_source/financial_advisory_profession_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "financial_fraud_law",
       "display_name_en": "Anti-Financial-Fraud and Breach of Trust Law",
       "display_name_ar": "نظام مكافحة الاحتيال المالي وخيانة الأمانة",
@@ -3662,6 +4104,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "foreign_law_firms_licensing_regulation",
+      "display_name_en": "Implementing Regulation for Licensing Foreign Law Firms",
+      "display_name_ar": "اللائحة التنفيذية لتنظيم الترخيص لمكاتب المحاماة الأجنبية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation for Licensing Foreign Law Firms — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/2/1444H (2022-09-23).",
+      "registry_source_url": null,
+      "official_source_file": "sources/foreign_law_firms_licensing_regulation/official_source/foreign_law_firms_licensing_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "foreign_ownership_law",
       "display_name_en": "Non-Saudi Real Estate Ownership Law",
       "display_name_ar": "نظام تملك غير السعوديين للعقار",
@@ -3723,6 +4182,40 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "foreign_university_branches_regulation",
+      "display_name_en": "Regulatory Rules for Branches of Foreign Universities",
+      "display_name_ar": "اللائحة التنظيمية لفروع الجامعات الأجنبية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Rules for Branches of Foreign Universities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/4/1445H (2023-10-20).",
+      "registry_source_url": null,
+      "official_source_file": "sources/foreign_university_branches_regulation/official_source/foreign_university_branches_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "franchise_brokerage_controls",
+      "display_name_en": "Controls on the Practice of Franchise Brokerage Activities",
+      "display_name_ar": "ضوابط ممارسة أنشطة الوساطة في الامتياز التجاري",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls on the Practice of Franchise Brokerage Activities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/2/1443H (2021-09-24).",
+      "registry_source_url": null,
+      "official_source_file": "sources/franchise_brokerage_controls/official_source/franchise_brokerage_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -3909,6 +4402,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "gcc_registered_vehicles_stay_controls",
+      "display_name_en": "Controls on the Stay in Saudi Arabia of Vehicles Registered in a GCC State",
+      "display_name_ar": "ضوابط بقاء المركبات المسجلة في إحدى دول مجلس التعاون في السعودية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls on the Stay in Saudi Arabia of Vehicles Registered in a GCC State — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 10/9/1447H (2026-02-27).",
+      "registry_source_url": null,
+      "official_source_file": "sources/gcc_registered_vehicles_stay_controls/official_source/gcc_registered_vehicles_stay_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "gcc_road_transport_law",
       "display_name_en": "Unified Law of International Road Transport for the GCC States",
       "display_name_ar": "النظام (القانون) الموحد للنقل البري الدولي بين دول مجلس التعاون لدول الخليج العربية",
@@ -3980,6 +4490,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "geographical_indications_protection_law",
+      "display_name_en": "Law on the Protection of Geographical Indications",
+      "display_name_ar": "نظام حماية المؤشرات الجغرافية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Law on the Protection of Geographical Indications — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/6/1447H (2025-11-28).",
+      "registry_source_url": null,
+      "official_source_file": "sources/geographical_indications_protection_law/official_source/geographical_indications_protection_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "geographical_indications_regulation",
       "display_name_en": "Executive Regulation of the Geographical Indications Protection Law",
       "display_name_ar": "اللائحة التنفيذية لنظام حماية المؤشرات الجغرافية",
@@ -4022,6 +4549,40 @@
       "registry_source_authority": "Controls on the Leasing of Real Estate Abroad by Government Entities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/8/1446H (2025-01-31).",
       "registry_source_url": null,
       "official_source_file": "sources/government_foreign_property_lease_controls/official_source/government_foreign_property_lease_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "government_foreign_property_lease_controls_2023",
+      "display_name_en": "Controls on the Leasing of Real Estate Abroad by Government Entities (2023)",
+      "display_name_ar": "ضوابط استئجار الجهات الحكومية للعقارات خارج المملكة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls on the Leasing of Real Estate Abroad by Government Entities (2023) — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/7/1444H (2023-02-17).",
+      "registry_source_url": null,
+      "official_source_file": "sources/government_foreign_property_lease_controls_2023/official_source/government_foreign_property_lease_controls_2023_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "government_health_practitioners_private_work_controls",
+      "display_name_en": "Controls Permitting Government Health Practitioners to Work in the Private Health Sector outside Official Hours",
+      "display_name_ar": "ضوابط السماح للممارسين الصحيين الحكوميين بالعمل في القطاع الصحي الخاص خارج أوقات الدوام الرسمي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls Permitting Government Health Practitioners to Work in the Private Health Sector outside Official Hours — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/9/1443H (2022-04-22).",
+      "registry_source_url": null,
+      "official_source_file": "sources/government_health_practitioners_private_work_controls/official_source/government_health_practitioners_private_work_controls_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -4452,6 +5013,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "ict_devices_technical_regulation",
+      "display_name_en": "Technical Regulation for Communications and Information Technology Devices",
+      "display_name_ar": "اللائحة الفنية لأجهزة الاتصالات وتقنية المعلومات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Technical Regulation for Communications and Information Technology Devices — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/2/1446H (2024-08-16).",
+      "registry_source_url": null,
+      "official_source_file": "sources/ict_devices_technical_regulation/official_source/ict_devices_technical_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "iflas_hudud_regulation",
       "display_name_en": "Rules Organizing Cross-Border Insolvency Procedures",
       "display_name_ar": "القواعد المنظمة لإجراءات الإفلاس العابرة للحدود",
@@ -4685,6 +5263,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "investment_accounts_instructions",
+      "display_name_en": "Investment Accounts Instructions",
+      "display_name_ar": "تعليمات الحسابات الاستثمارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Investment Accounts Instructions — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/2/1447H (2025-08-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/investment_accounts_instructions/official_source/investment_accounts_instructions_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "investment_implementing_regulation",
       "display_name_en": "Investment Law Implementing Regulations",
       "display_name_ar": "اللائحة التنفيذية لنظام الاستثمار",
@@ -4902,6 +5497,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "judicial_service_conflict_of_interest_rules",
+      "display_name_en": "Rules Limiting Conflicts of Interest for Former Members of the Judiciary Practising Law",
+      "display_name_ar": "قواعد الحد من تعارض المصالح لمن سبق له العمل في السلك القضائي عند مزاولته مهنة المحاماة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules Limiting Conflicts of Interest for Former Members of the Judiciary Practising Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/4/1444H (2022-11-18).",
+      "registry_source_url": null,
+      "official_source_file": "sources/judicial_service_conflict_of_interest_rules/official_source/judicial_service_conflict_of_interest_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "judicial_training_center_guide",
       "display_name_en": "Organizational Guide for the Judicial Training Center",
       "display_name_ar": "الدليل التنظيمي لمركز التدريب العدلي",
@@ -4949,6 +5561,23 @@
         "moj.gov.sa"
       ],
       "last_verified_context": "cross-verified against multiple sources per track's own verification note",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "juvenile_homes_regulation",
+      "display_name_en": "Regulatory Rules for Juvenile Homes",
+      "display_name_ar": "اللائحة التنظيمية لدور الأحداث",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Rules for Juvenile Homes — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/9/1442H (2021-04-23).",
+      "registry_source_url": null,
+      "official_source_file": "sources/juvenile_homes_regulation/official_source/juvenile_homes_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -5436,6 +6065,40 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "light_goods_road_transport_regulation",
+      "display_name_en": "Regulation Governing Light Goods Transport by Road",
+      "display_name_ar": "اللائحة المنظمة لنشاط النقل الخفيف للبضائع على الطرق",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation Governing Light Goods Transport by Road — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/12/1442H (2021-07-30).",
+      "registry_source_url": null,
+      "official_source_file": "sources/light_goods_road_transport_regulation/official_source/light_goods_road_transport_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "listed_jsc_companies_regulation",
+      "display_name_en": "Implementing Regulation of the Companies Law for Listed Joint Stock Companies",
+      "display_name_ar": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Companies Law for Listed Joint Stock Companies — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 18/1/1448H (2026-07-03).",
+      "registry_source_url": null,
+      "official_source_file": "sources/listed_jsc_companies_regulation/official_source/listed_jsc_companies_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "literature_publishing_translation_authority_licensing_regulation",
       "display_name_en": "Licensing Regulation — Literature, Publishing and Translation Authority",
       "display_name_ar": "لائحة التراخيص - هيئة الأدب والنشر والترجمة",
@@ -5512,6 +6175,23 @@
       "registry_source_authority": "Controls and Procedures for the Design and Operation of Tourist Marinas — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/4/1446H (2024-10-04).",
       "registry_source_url": null,
       "official_source_file": "sources/marina_design_operation_controls/official_source/marina_design_operation_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "marine_coastal_environment_regulation",
+      "display_name_en": "Implementing Regulation of the Environment Law for the Sustainable Management of the Marine and Coastal Environment",
+      "display_name_ar": "اللائحة التنفيذية لنظام البيئة للإدارة المستدامة للبيئة البحرية والساحلية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Environment Law for the Sustainable Management of the Marine and Coastal Environment — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 3/2/1443H (2021-09-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/marine_coastal_environment_regulation/official_source/marine_coastal_environment_regulation_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -5964,6 +6644,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "ministry_of_investment_statute",
+      "display_name_en": "Statute of the Ministry of Investment",
+      "display_name_ar": "تنظيم وزارة الاستثمار",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of the Ministry of Investment — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/10/1442H (2021-06-04).",
+      "registry_source_url": null,
+      "official_source_file": "sources/ministry_of_investment_statute/official_source/ministry_of_investment_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "mosalaha_center_regulation",
       "display_name_en": "Regulation of the Conciliation Center",
       "display_name_ar": "تنظيم مركز المصالحة",
@@ -6207,6 +6904,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "national_health_insurance_center_statute",
+      "display_name_en": "Statute of the National Health Insurance Center",
+      "display_name_ar": "تنظيم مركز التأمين الصحي الوطني",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of the National Health Insurance Center — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 11/11/1443H (2022-06-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/national_health_insurance_center_statute/official_source/national_health_insurance_center_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "national_health_research_institute_statute",
       "display_name_en": "Statute of the National Institute for Health Research",
       "display_name_ar": "تنظيم المعهد الوطني لأبحاث الصحة",
@@ -6350,6 +7064,40 @@
       "known_source_staleness_pointer": "nationality_regulation_article28_repealed: المادة الثامنة والعشرون من هذه اللائحة (نصها الأصلي: \"يصدر وزير الداخلية القرارات اللازمة لمنح الجنسية بموجب المادة (8) من النظام\") أُلغيت بالكامل بقرار من وزير الداخلية (الأمير عبدالعزيز بن سعود بن نايف)، بحسب خبر رسمي"
     },
     {
+      "track_id": "navigation_licence_work_permit_regulation",
+      "display_name_en": "Regulation Governing the Issuance of the Navigation Licence and the Work Permit",
+      "display_name_ar": "اللائحة المنظمة لإصدار الترخيص الملاحي ورخصة العمل",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation Governing the Issuance of the Navigation Licence and the Work Permit — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/6/1443H (2022-01-28).",
+      "registry_source_url": null,
+      "official_source_file": "sources/navigation_licence_work_permit_regulation/official_source/navigation_licence_work_permit_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "nazaha_criminal_procedure_powers_regulation",
+      "display_name_en": "Regulation on the Oversight and Anti-Corruption Authority's Powers to Apply the Provisions of the Criminal Procedure Law",
+      "display_name_ar": "لائحة صلاحيات تطبيق هيئة الرقابة ومكافحة الفساد للأحكام الواردة في نظام الإجراءات الجزائية ولائحته التنفيذية ونظام النيابة العامة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation on the Oversight and Anti-Corruption Authority's Powers to Apply the Provisions of the Criminal Procedure Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 10/2/1448H (2026-07-24).",
+      "registry_source_url": null,
+      "official_source_file": "sources/nazaha_criminal_procedure_powers_regulation/official_source/nazaha_criminal_procedure_powers_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "nazaha_law",
       "display_name_en": "Law (Statute) of the Control and Anti-Corruption Authority (Nazaha)",
       "display_name_ar": "نظام هيئة الرقابة ومكافحة الفساد",
@@ -6478,6 +7226,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "nonprofit_governance_rules",
+      "display_name_en": "Governance Rules for Associations and Non-Profit Foundations",
+      "display_name_ar": "قواعد حوكمة الجمعيات والمؤسسات الأهلية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Governance Rules for Associations and Non-Profit Foundations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/8/1447H (2026-02-12).",
+      "registry_source_url": null,
+      "official_source_file": "sources/nonprofit_governance_rules/official_source/nonprofit_governance_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "nonprofit_sector_development_center_statute",
       "display_name_en": "Statute of the National Center for Non-Profit Sector Development",
       "display_name_ar": "تنظيم المركز الوطني لتنمية القطاع غير الربحي",
@@ -6486,6 +7251,23 @@
       "registry_source_authority": "Statute of the National Center for Non-Profit Sector Development — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/11/1442H (2021-06-11).",
       "registry_source_url": null,
       "official_source_file": "sources/nonprofit_sector_development_center_statute/official_source/nonprofit_sector_development_center_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "nonprofit_zakat_exemption_rules",
+      "display_name_en": "Rules on the Non-Subjection of Associations, Non-Profit Foundations and Training Units to Zakat Collection",
+      "display_name_ar": "قواعد عدم خضوع الجمعيات والمؤسسات الأهلية والوحدات التدريبية لجباية الزكاة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules on the Non-Subjection of Associations, Non-Profit Foundations and Training Units to Zakat Collection — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/10/1444H (2023-05-12).",
+      "registry_source_url": null,
+      "official_source_file": "sources/nonprofit_zakat_exemption_rules/official_source/nonprofit_zakat_exemption_rules_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -6853,6 +7635,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "personal_data_transfer_abroad_regulation",
+      "display_name_en": "Regulation on the Transfer of Personal Data outside the Kingdom",
+      "display_name_ar": "لائحة نقل البيانات الشخصية خارج المملكة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation on the Transfer of Personal Data outside the Kingdom — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/2/1445H (2023-09-07).",
+      "registry_source_url": null,
+      "official_source_file": "sources/personal_data_transfer_abroad_regulation/official_source/personal_data_transfer_abroad_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "personal_status_implementing_regulation",
       "display_name_en": "Implementing Regulation of the Personal Status Law",
       "display_name_ar": "لائحة نظام الأحوال الشخصية",
@@ -6935,6 +7734,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "pharmaceutical_herbal_establishments_regulation",
+      "display_name_en": "Implementing Regulation of the Law of Pharmaceutical and Herbal Establishments and Products",
+      "display_name_ar": "اللائحة التنفيذية لنظام المنشآت والمستحضرات الصيدلانية والعشبية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Law of Pharmaceutical and Herbal Establishments and Products — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 16/6/1442H (2021-01-29).",
+      "registry_source_url": null,
+      "official_source_file": "sources/pharmaceutical_herbal_establishments_regulation/official_source/pharmaceutical_herbal_establishments_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "postal_law",
       "display_name_en": "Postal Law",
       "display_name_ar": "نظام البريد",
@@ -6955,6 +7771,40 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "postal_law_regulation",
+      "display_name_en": "Implementing Regulation of the Postal Law",
+      "display_name_ar": "اللائحة التنفيذية لنظام البريد",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Postal Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/5/1444H (2022-11-25).",
+      "registry_source_url": null,
+      "official_source_file": "sources/postal_law_regulation/official_source/postal_law_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "premium_residency_center_statute",
+      "display_name_en": "Statute of the Premium Residency Center",
+      "display_name_ar": "تنظيم مركز الإقامة المميزة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of the Premium Residency Center — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/11/1443H (2022-06-03).",
+      "registry_source_url": null,
+      "official_source_file": "sources/premium_residency_center_statute/official_source/premium_residency_center_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -7130,6 +7980,23 @@
         "uqn.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "private_schools_tuition_controls",
+      "display_name_en": "Controls Governing Tuition Fees in Private Schools 1444H - 2023",
+      "display_name_ar": "الضوابط المنظمة للرسوم الدراسية في المدارس الأهلية 1444ه - 2023م",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls Governing Tuition Fees in Private Schools 1444H - 2023 — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 19/7/1444H (2023-02-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/private_schools_tuition_controls/official_source/private_schools_tuition_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -7343,6 +8210,23 @@
       "registry_source_authority": "Rules Governing Sale by Public Auction — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/12/1445H (2024-06-28).",
       "registry_source_url": null,
       "official_source_file": "sources/public_auction_sale_rules/official_source/public_auction_sale_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "public_facility_names_rules",
+      "display_name_en": "Rules and Standards for the Names of Public Facilities",
+      "display_name_ar": "قواعد ومعايير أسماء المرافق العامة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules and Standards for the Names of Public Facilities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/7/1447H (2026-01-02).",
+      "registry_source_url": null,
+      "official_source_file": "sources/public_facility_names_rules/official_source/public_facility_names_rules_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -7917,6 +8801,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "reconciliation_committees_regulation",
+      "display_name_en": "Regulatory Rules for the Reconciliation Committees in the Regional Emirates",
+      "display_name_ar": "اللائحة التنظيمية للجان إصلاح ذات البين في إمارات المناطق",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Rules for the Reconciliation Committees in the Regional Emirates — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/2/1444H (2022-09-16).",
+      "registry_source_url": null,
+      "official_source_file": "sources/reconciliation_committees_regulation/official_source/reconciliation_committees_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "red_crescent_emblem_law",
       "display_name_en": "Law on the Use and Protection of the Red Crescent Emblem and Name and their Equivalents",
       "display_name_ar": "نظام استخدام وحماية شارة واسم الهلال الأحمر وما في حكمهما",
@@ -7976,6 +8877,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "regional_headquarters_procurement_controls",
+      "display_name_en": "Controls on Government Entities Contracting with Companies Lacking a Regional Headquarters in the Kingdom",
+      "display_name_ar": "ضوابط تعاقد الجهات الحكومية مع الشركات التي ليس لها مقر إقليمي في المملكة والأطراف ذوي العلاقة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Controls on Government Entities Contracting with Companies Lacking a Regional Headquarters in the Kingdom — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H (2023-01-06).",
+      "registry_source_url": null,
+      "official_source_file": "sources/regional_headquarters_procurement_controls/official_source/regional_headquarters_procurement_controls_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "regional_headquarters_tax_rules",
       "display_name_en": "Tax Rules for Regional Headquarters",
       "display_name_ar": "القواعد الضريبية للمقرات الإقليمية",
@@ -7984,6 +8902,23 @@
       "registry_source_authority": "Tax Rules for Regional Headquarters — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/8/1445H (2024-02-16).",
       "registry_source_url": null,
       "official_source_file": "sources/regional_headquarters_tax_rules/official_source/regional_headquarters_tax_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "regional_tourism_development_councils_statute",
+      "display_name_en": "Statute of the Regional Tourism Development Councils",
+      "display_name_ar": "تنظيم مجالس التنمية السياحية في المناطق",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of the Regional Tourism Development Councils — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 21/9/1443H (2022-04-22).",
+      "registry_source_url": null,
+      "official_source_file": "sources/regional_tourism_development_councils_statute/official_source/regional_tourism_development_councils_statute_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -8043,6 +8978,23 @@
         "laws.boe.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "residential_commercial_gas_network_regulation",
+      "display_name_en": "Regulation of the Gas Network Activity for Residential and Commercial Purposes",
+      "display_name_ar": "لائحة نشاط شبكة الغاز للأغراض السكنية والتجارية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation of the Gas Network Activity for Residential and Commercial Purposes — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 10/9/1447H (2026-02-27).",
+      "registry_source_url": null,
+      "official_source_file": "sources/residential_commercial_gas_network_regulation/official_source/residential_commercial_gas_network_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -8126,6 +9078,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "riyadh_arts_university_statute",
+      "display_name_en": "Statute of Riyadh University for the Arts",
+      "display_name_ar": "النظام الأساس لجامعة الرياض للفنون",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of Riyadh University for the Arts — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/9/1447H (2026-03-13).",
+      "registry_source_url": null,
+      "official_source_file": "sources/riyadh_arts_university_statute/official_source/riyadh_arts_university_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "riyadh_biotechnology_center_statute",
       "display_name_en": "Statute of the Riyadh Center for Biotechnology Foundation",
       "display_name_ar": "النظام الأساس لمؤسسة مركز الرياض للتقنية الحيوية",
@@ -8168,6 +9137,23 @@
       "registry_source_authority": "Statute of the Riyadh Non-Profit Foundation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/12/1445H (2024-06-28).",
       "registry_source_url": null,
       "official_source_file": "sources/riyadh_nonprofit_foundation_statute/official_source/riyadh_nonprofit_foundation_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "riyadh_sez_center_statute",
+      "display_name_en": "Organisational Arrangements of the Special Economic Zones Center in Riyadh",
+      "display_name_ar": "الترتيبات التنظيمية لمركز المناطق الاقتصادية الخاصة بمدينة الرياض",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Organisational Arrangements of the Special Economic Zones Center in Riyadh — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 6/6/1444H (2022-12-30).",
+      "registry_source_url": null,
+      "official_source_file": "sources/riyadh_sez_center_statute/official_source/riyadh_sez_center_statute_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -8277,6 +9263,23 @@
       "registry_source_authority": "Statute of the Saudi Organization for Chartered and Professional Accountants — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 16/8/1442H (2021-03-29).",
       "registry_source_url": null,
       "official_source_file": "sources/saudi_auditors_accountants_authority_statute/official_source/saudi_auditors_accountants_authority_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "saudi_culture_memory_center_statute",
+      "display_name_en": "Organisational Arrangements of the Center for the Memory of Saudi Culture",
+      "display_name_ar": "الترتيبات التنظيمية لمركز ذاكرة الثقافة السعودية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Organisational Arrangements of the Center for the Memory of Saudi Culture — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 18/1/1448H (2026-07-03).",
+      "registry_source_url": null,
+      "official_source_file": "sources/saudi_culture_memory_center_statute/official_source/saudi_culture_memory_center_statute_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -8509,6 +9512,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "security_cameras_law_regulation",
+      "display_name_en": "Implementing Regulation of the Law on the Use of Security Surveillance Cameras",
+      "display_name_ar": "اللائحة التنفيذية لنظام استخدام كاميرات المراقبة الأمنية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Implementing Regulation of the Law on the Use of Security Surveillance Cameras — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 20/11/1444H (2023-06-09).",
+      "registry_source_url": null,
+      "official_source_file": "sources/security_cameras_law_regulation/official_source/security_cameras_law_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "sedimentary_shelf_well_drilling_permits_controls",
       "display_name_en": "Controls on Issuing Permits to Drill New Wells on the Sedimentary Shelf",
       "display_name_ar": "ضوابط إصدار رخص حفر الآبار الجديدة على الرف الرسوبي",
@@ -8582,6 +9602,40 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "sez_companies_register_rules",
+      "display_name_en": "Companies Register Rules in the Special Economic Zones",
+      "display_name_ar": "قواعد سجل الشركات في المناطق الاقتصادية الخاصة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Companies Register Rules in the Special Economic Zones — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/1/1448H (2026-07-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/sez_companies_register_rules/official_source/sez_companies_register_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "sez_companies_rules",
+      "display_name_en": "Companies Rules in the Special Economic Zones",
+      "display_name_ar": "قواعد الشركات في المناطق الاقتصادية الخاصة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Companies Rules in the Special Economic Zones — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/1/1448H (2026-07-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/sez_companies_rules/official_source/sez_companies_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "sez_jazan_regulation",
       "display_name_en": "Regulatory Rules of the Jazan Special Economic Zone",
       "display_name_ar": "اللائحة التنظيمية للمنطقة الاقتصادية الخاصة بجازان",
@@ -8624,6 +9678,23 @@
       "registry_source_authority": "Regulatory Rules of the Ras Al-Khair Special Economic Zone — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 27/7/1447H (2026-01-16). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
       "registry_source_url": null,
       "official_source_file": "sources/sez_raskhair_regulation/official_source/sez_raskhair_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "sez_trade_names_rules",
+      "display_name_en": "Trade Names Rules in the Special Economic Zones",
+      "display_name_ar": "قواعد الأسماء التجارية في المناطق الاقتصادية الخاصة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Trade Names Rules in the Special Economic Zones — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/1/1448H (2026-07-10).",
+      "registry_source_url": null,
+      "official_source_file": "sources/sez_trade_names_rules/official_source/sez_trade_names_rules_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -8686,6 +9757,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "shariah_governance_capital_market_instructions",
+      "display_name_en": "Shariah Governance Instructions for Capital Market Institutions",
+      "display_name_ar": "تعليمات الحوكمة الشرعية في مؤسسات السوق المالية",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Shariah Governance Instructions for Capital Market Institutions — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/8/1444H (2023-02-24).",
+      "registry_source_url": null,
+      "official_source_file": "sources/shariah_governance_capital_market_instructions/official_source/shariah_governance_capital_market_instructions_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "ship_safety_management_regulation",
       "display_name_en": "Executive Regulation on Safety Management and Ship Operation",
       "display_name_ar": "اللائحة التنفيذية لإدارة السلامة وتشغيل السفن",
@@ -8744,6 +9832,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "simplified_investment_funds_instructions",
+      "display_name_en": "Instructions for Simplified Investment Funds",
+      "display_name_ar": "تعليمات صناديق الاستثمار المبسطة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Instructions for Simplified Investment Funds — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/11/1447H (2026-05-15).",
+      "registry_source_url": null,
+      "official_source_file": "sources/simplified_investment_funds_instructions/official_source/simplified_investment_funds_instructions_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "sme_bank_law",
       "display_name_en": "Law of the Small and Medium Enterprises Bank",
       "display_name_ar": "نظام بنك المنشآت الصغيرة والمتوسطة",
@@ -8752,6 +9857,23 @@
       "registry_source_authority": "Law of the Small and Medium Enterprises Bank — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/4/1444H (2022-11-11).",
       "registry_source_url": null,
       "official_source_file": "sources/sme_bank_law/official_source/sme_bank_law_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "social_impact_investment_rules",
+      "display_name_en": "Rules for Activating Social Impact Investment",
+      "display_name_ar": "قواعد تفعيل الاستثمار ذي الأثر الاجتماعي",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules for Activating Social Impact Investment — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/2/1447H (2025-08-22).",
+      "registry_source_url": null,
+      "official_source_file": "sources/social_impact_investment_rules/official_source/social_impact_investment_rules_official_source.json",
       "source_urls": [],
       "named_source_authorities": [
         "uqn.gov.sa"
@@ -9277,6 +10399,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "temporary_work_visas_regulation",
+      "display_name_en": "Regulatory Rules for Temporary Work Visas and Temporary Work for Hajj and Umrah Services",
+      "display_name_ar": "اللائحة التنظيمية لتأشيرات العمل المؤقت والعمل المؤقت لخدمات الحج والعمرة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulatory Rules for Temporary Work Visas and Temporary Work for Hajj and Umrah Services — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 8/4/1446H (2024-10-11).",
+      "registry_source_url": null,
+      "official_source_file": "sources/temporary_work_visas_regulation/official_source/temporary_work_visas_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "terrorism_implementing_regulation",
       "display_name_en": "Implementing Regulation of the Law on Combating Crimes of Terrorism and its Financing",
       "display_name_ar": "اللائحة التنفيذية لنظام مكافحة جرائم الإرهاب وتمويله",
@@ -9459,6 +10598,23 @@
         "uqn.gov.sa"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "tourism_violations_committee_regulation",
+      "display_name_en": "Regulation of the Committee for Adjudicating Violations of the Tourism Law and its Regulations",
+      "display_name_ar": "لائحة لجنة النظر في مخالفات نظام السياحة ولوائحه",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation of the Committee for Adjudicating Violations of the Tourism Law and its Regulations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/6/1444H (2022-12-25).",
+      "registry_source_url": null,
+      "official_source_file": "sources/tourism_violations_committee_regulation/official_source/tourism_violations_committee_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },
@@ -9986,6 +11142,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "violations_penalties_regulation",
+      "display_name_en": "Regulation on Recording Violations and Imposing Penalties",
+      "display_name_ar": "لائحة ضبط المخالفات وإيقاع العقوبات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation on Recording Violations and Imposing Penalties — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 10/9/1447H (2026-02-27).",
+      "registry_source_url": null,
+      "official_source_file": "sources/violations_penalties_regulation/official_source/violations_penalties_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "visiting_yachts_controls",
       "display_name_en": "Controls and Procedures for Visiting Yachts",
       "display_name_ar": "الضوابط والاجراءات لليخوت الزايرة",
@@ -10037,6 +11210,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "waqf_establishment_donations_regulation",
+      "display_name_en": "Regulation on Establishing or Funding Endowments through the Collection of Donations",
+      "display_name_ar": "لائحة إنشاء الأوقاف أو تمويلها من خلال جمع التبرعات",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Regulation on Establishing or Funding Endowments through the Collection of Donations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/4/1447H (2025-10-17).",
+      "registry_source_url": null,
+      "official_source_file": "sources/waqf_establishment_donations_regulation/official_source/waqf_establishment_donations_regulation_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "waqf_investment_portfolios_regulation",
       "display_name_en": "Regulation on the Establishment of Waqf Investment Portfolios",
       "display_name_ar": "لائحة إنشاء المحافظ الاستثمارية الوقفية",
@@ -10071,6 +11261,23 @@
       "known_source_staleness_pointer": ""
     },
     {
+      "track_id": "waqf_owned_taxpayer_zakat_rules",
+      "display_name_en": "Rules on the Non-Subjection of a Waqf-Owned Taxpayer to Zakat Collection",
+      "display_name_ar": "قواعد عدم خضوع المكلف المملوك لوقف لجباية الزكاة",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Rules on the Non-Subjection of a Waqf-Owned Taxpayer to Zakat Collection — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/6/1444H (2023-01-06).",
+      "registry_source_url": null,
+      "official_source_file": "sources/waqf_owned_taxpayer_zakat_rules/official_source/waqf_owned_taxpayer_zakat_rules_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
       "track_id": "waste_management_law",
       "display_name_en": "Waste Management Law",
       "display_name_ar": "نظام إدارة النفايات",
@@ -10088,6 +11295,40 @@
         "web.archive.org"
       ],
       "last_verified_context": "track's own notes record the primary government portal as unreachable at some point during its build; built via a Wayback Machine archive, but no machine-extractable snapshot date found in track's own text",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "water_efficiency_center_statute",
+      "display_name_en": "Statute of the National Center for Water Efficiency and Rationalisation",
+      "display_name_ar": "تنظيم المركز الوطني لكفاءة وترشيد المياه",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of the National Center for Water Efficiency and Rationalisation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 30/6/1442H (2021-02-12).",
+      "registry_source_url": null,
+      "official_source_file": "sources/water_efficiency_center_statute/official_source/water_efficiency_center_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
+      "known_source_staleness_risk": false,
+      "known_source_staleness_pointer": ""
+    },
+    {
+      "track_id": "water_electricity_regulatory_authority_statute",
+      "display_name_en": "Statute of the Water and Electricity Regulatory Authority",
+      "display_name_ar": "تنظيم هيئة تنظيم المياه والكهرباء",
+      "verification_tier": "TIER_1_PRIMARY_MULTI_SOURCE",
+      "verification_tier_rationale": "official_text_status='UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED': مصدران رسميان مستقلان (أو أكثر) متطابقان دون فجوة وصول.",
+      "registry_source_authority": "Statute of the Water and Electricity Regulatory Authority — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 24/5/1442H (2021-01-08).",
+      "registry_source_url": null,
+      "official_source_file": "sources/water_electricity_regulatory_authority_statute/official_source/water_electricity_regulatory_authority_statute_official_source.json",
+      "source_urls": [],
+      "named_source_authorities": [
+        "uqn.gov.sa"
+      ],
+      "last_verified_context": "no explicit capture-date/reachability signal found in track's own recorded files; see verification_tier and source_authority above",
       "known_source_staleness_risk": false,
       "known_source_staleness_pointer": ""
     },

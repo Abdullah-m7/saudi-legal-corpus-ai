@@ -413,6 +413,79 @@ REQUIRED_TRACK_IDS = [
     "vegetation_cover_desertification_regulation",
     "wheat_seasonal_fodder_cultivation_controls",
     "zakat_tax_dispute_settlement_committees_rules",
+    "accredited_valuers_implementing_regulation",
+    "administrative_judicial_council_bylaw",
+    "antiquities_inspection_violations_regulation",
+    "antiquities_museums_fund_regulation",
+    "bankruptcy_information_documents_regulation",
+    "bankruptcy_trustees_experts_rules",
+    "bog_enforcement_service_providers_controls",
+    "bog_judicial_inspection_regulation",
+    "building_code_violations_classification_regulation",
+    "capital_market_conduct_regulation",
+    "capital_market_institutions_regulation",
+    "capital_market_whistleblowing_regulation",
+    "chambers_commerce_committees_regulation",
+    "coastal_tourism_craft_classification_regulation",
+    "companies_law_implementing_regulation",
+    "contractors_classification_regulation",
+    "copyright_law_2026",
+    "copyright_law_implementing_regulation",
+    "corporate_governance_regulation",
+    "disability_rights_violations_committee_rules",
+    "donations_collection_law",
+    "economic_cities_marketing_names_controls",
+    "electricity_violations_regulation",
+    "excavation_permits_regulation",
+    "extremism_countering_center_statute",
+    "financial_advisory_profession_rules",
+    "foreign_law_firms_licensing_regulation",
+    "foreign_university_branches_regulation",
+    "franchise_brokerage_controls",
+    "gcc_registered_vehicles_stay_controls",
+    "geographical_indications_protection_law",
+    "government_foreign_property_lease_controls_2023",
+    "government_health_practitioners_private_work_controls",
+    "ict_devices_technical_regulation",
+    "investment_accounts_instructions",
+    "judicial_service_conflict_of_interest_rules",
+    "juvenile_homes_regulation",
+    "light_goods_road_transport_regulation",
+    "listed_jsc_companies_regulation",
+    "marine_coastal_environment_regulation",
+    "ministry_of_investment_statute",
+    "national_health_insurance_center_statute",
+    "navigation_licence_work_permit_regulation",
+    "nazaha_criminal_procedure_powers_regulation",
+    "nonprofit_governance_rules",
+    "nonprofit_zakat_exemption_rules",
+    "personal_data_transfer_abroad_regulation",
+    "pharmaceutical_herbal_establishments_regulation",
+    "postal_law_regulation",
+    "premium_residency_center_statute",
+    "private_schools_tuition_controls",
+    "public_facility_names_rules",
+    "reconciliation_committees_regulation",
+    "regional_headquarters_procurement_controls",
+    "regional_tourism_development_councils_statute",
+    "residential_commercial_gas_network_regulation",
+    "riyadh_arts_university_statute",
+    "riyadh_sez_center_statute",
+    "saudi_culture_memory_center_statute",
+    "security_cameras_law_regulation",
+    "sez_companies_register_rules",
+    "sez_companies_rules",
+    "sez_trade_names_rules",
+    "shariah_governance_capital_market_instructions",
+    "simplified_investment_funds_instructions",
+    "social_impact_investment_rules",
+    "temporary_work_visas_regulation",
+    "tourism_violations_committee_regulation",
+    "violations_penalties_regulation",
+    "waqf_establishment_donations_regulation",
+    "waqf_owned_taxpayer_zakat_rules",
+    "water_efficiency_center_statute",
+    "water_electricity_regulatory_authority_statute",
     "museums_authority_licensing_regulation",
     "heritage_authority_licensing_regulation",
     "literature_publishing_translation_authority_licensing_regulation",
@@ -641,7 +714,7 @@ def main() -> int:
 
     # [3] 293 tracks
     track_ids = [t.get("track_id", "") for t in registry.get("tracks", [])]
-    check("[3] 547 tracks present...", len(track_ids) == 547 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
+    check("[3] 620 tracks present...", len(track_ids) == 620 and all(tid in track_ids for tid in REQUIRED_TRACK_IDS),
           f"Tracks: {track_ids}")
 
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
@@ -3424,7 +3497,7 @@ def main() -> int:
           aviation_passenger_rights_regulation_var_counts.get("legal_status_breakdown") == {"اصلية": 30, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
           f"breakdown={aviation_passenger_rights_regulation_var_counts.get('legal_status_breakdown')}")
 
-    check("[7g] unified retrieval index: 21529 records...", uix.get("total_records") == 21529,
+    check("[7g] unified retrieval index: 23566 records...", uix.get("total_records") == 23566,
           f"total_records={uix.get('total_records')}")
 
     # [8] data_paths exist
@@ -3486,8 +3559,8 @@ def main() -> int:
     check("[18] Validator is read-only...", True, "Does not modify any files")
 
     # [19] Count semantics: explicit count fields
-    check("[19a] total_primary_arabic_governing_records == 21698...",
-          registry.get("total_primary_arabic_governing_records") == 21698,
+    check("[19a] total_primary_arabic_governing_records == 23735...",
+          registry.get("total_primary_arabic_governing_records") == 23735,
           f"Value: {registry.get('total_primary_arabic_governing_records')}")
 
     check("[19b] total_reference_records == 614...",
@@ -3502,8 +3575,8 @@ def main() -> int:
           registry.get("total_implementing_regulations_records") == 169,
           f"Value: {registry.get('total_implementing_regulations_records')}")
 
-    check("[19e] total_registry_counted_records == 22593...",
-          registry.get("total_registry_counted_records") == 22593,
+    check("[19e] total_registry_counted_records == 24630...",
+          registry.get("total_registry_counted_records") == 24630,
           f"Value: {registry.get('total_registry_counted_records')}")
 
     # [20] count_policy exists and has required keys
@@ -3527,7 +3600,7 @@ def main() -> int:
           registry.get("total_primary_arabic_governing_records", 0)
           + registry.get("total_reference_records", 0)
           + registry.get("total_internal_reference_records", 0),
-          f"21698 + 614 + 281 = 22593")
+          f"23735 + 614 + 281 = 24630")
 
     # [21b] Every track's registry display name must be the official Arabic title
     # its own source artifact carries. Hand-abbreviated registry names had drifted
@@ -3565,7 +3638,7 @@ def print_results() -> None:
     print("=" * 60)
     if FAILED == 0:
         print("RESULT: ALL CHECKS PASSED ✓")
-        print("[PASS] Corpus Registry Index Foundation: 547 tracks (companies_law, "
+        print("[PASS] Corpus Registry Index Foundation: 620 tracks (companies_law, "
               "implementing_regulations_general, implementing_regulations_listed_joint_stock, "
               "implementing_regulations_arabic_program_closure, pdpl_law, "
               "pdpl_implementing_regulation, investment_law, investment_implementing_regulation, "
