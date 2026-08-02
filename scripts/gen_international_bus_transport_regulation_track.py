@@ -4,8 +4,8 @@
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
-server-rendered HTML page (uqn.gov.sa/details?p=20991),
-published 8/5/1444H (2022-12-02). The Gazette IS the official publication of record
+server-rendered HTML page (uqn.gov.sa/details?p=23692),
+published 30/2/1445H (2023-09-15). The Gazette IS the official publication of record
 for Saudi laws/regulations -- a direct primary-source fetch, matching this
 corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 
@@ -69,7 +69,7 @@ def main():
 
     gov_note = ("Arabic governs; PRIMARY full text fetched directly from the Umm Al-Qura "
                 "Official Gazette's own server-rendered HTML page "
-                "(uqn.gov.sa/details?p=20991), published 8/5/1444H (2022-12-02). "
+                "(uqn.gov.sa/details?p=23692), published 30/2/1445H (2023-09-15). "
                 "The Gazette is the official publication of record for Saudi laws/"
                 "regulations -- a direct primary-source fetch, matching this corpus's "
                 "established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. TIER_1. See "
@@ -143,9 +143,9 @@ def main():
             "source_trust": {
                 "source_authority": ("Regulation Governing International Passenger Transport by Bus -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
-                                     "(published 8/5/1444H / 2022-12-02)"),
+                                     "(published 30/2/1445H / 2023-09-15)"),
                 "source_authority_ar": ("اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات — النص الكامل جُلب مباشرة من صفحة جريدة أم "
-                                        "القرى الرسمية (تاريخ النشر 8/5/1444هـ الموافق 2022-12-02م)"),
+                                        "القرى الرسمية (تاريخ النشر 30/2/1445هـ الموافق 2023-09-15م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,
                 "legal_status_ar": ls,

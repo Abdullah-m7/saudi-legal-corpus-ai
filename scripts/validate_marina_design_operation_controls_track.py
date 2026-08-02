@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Read-only validator for the الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية track.
+"""Read-only validator for the الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية track.
 
 13 records: 13 numbered articles, no appendix records. All اصلية.
 
@@ -144,13 +144,13 @@ def main():
         e.append("[2e] expected discrepancy entries missing: %s" % sorted(missing))
 
     # [2j] anchor facts
-    if src.get("gazette_publication_date_hijri") != "1/4/1446":
-        e.append("[2j] gazette_publication_date_hijri must be 1/4/1446")
-    if src.get("gazette_publication_date_gregorian") != "2024-10-04":
-        e.append("[2j] gazette_publication_date_gregorian must be 2024-10-04")
+    if src.get("gazette_publication_date_hijri") != "20/4/1446":
+        e.append("[2j] gazette_publication_date_hijri must be 20/4/1446")
+    if src.get("gazette_publication_date_gregorian") != "2024-10-23":
+        e.append("[2j] gazette_publication_date_gregorian must be 2024-10-23")
     if src.get("legal_status_ar") != "ساري":
         e.append("[2j] legal_status_ar must be ساري")
-    if src.get("document") != "الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية":
+    if src.get("document") != "الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية":
         e.append("[2j] document title mismatch")
 
     # [4] verified records

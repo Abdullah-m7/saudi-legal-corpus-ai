@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Read-only validator for the قواعد عمل لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته track.
+"""Read-only validator for the قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية track.
 
 24 records: 24 numbered articles, no appendix records. All اصلية.
 
@@ -32,7 +32,7 @@ N_ARTICLES = 24
 N_RECORDS = 24
 ART_RE = r"railway_violations_committee_rules_art_(\d{3})$"
 ALLOWED_STATUS = {"اصلية", "معدلة", "ملغاة", "مضافة"}
-FLAGGED_DISCREPANCY_KEYS = {"railway_violations_committee_rules_source_is_gazette_html_only"}
+FLAGGED_DISCREPANCY_KEYS = {"railway_violations_committee_rules_no_decision_number_in_source", "railway_violations_committee_rules_source_is_gazette_html_only"}
 AR = "ء-ي"
 TASHKEEL = re.compile("[ً-ٰٟ]")  # excludes Arabic-Indic digits U+0660-0669
 
@@ -144,13 +144,13 @@ def main():
         e.append("[2e] expected discrepancy entries missing: %s" % sorted(missing))
 
     # [2j] anchor facts
-    if src.get("gazette_publication_date_hijri") != "1/11/1442":
-        e.append("[2j] gazette_publication_date_hijri must be 1/11/1442")
-    if src.get("gazette_publication_date_gregorian") != "2021-06-11":
-        e.append("[2j] gazette_publication_date_gregorian must be 2021-06-11")
+    if src.get("gazette_publication_date_hijri") != "15/4/1446":
+        e.append("[2j] gazette_publication_date_hijri must be 15/4/1446")
+    if src.get("gazette_publication_date_gregorian") != "2024-10-18":
+        e.append("[2j] gazette_publication_date_gregorian must be 2024-10-18")
     if src.get("legal_status_ar") != "ساري":
         e.append("[2j] legal_status_ar must be ساري")
-    if src.get("document") != "قواعد عمل لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته":
+    if src.get("document") != "قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية":
         e.append("[2j] document title mismatch")
 
     # [4] verified records
@@ -196,11 +196,11 @@ def main():
             e.append("[5] %s: text_summarized_or_paraphrased must be False" % r["article_key"])
 
     if e:
-        print("FAIL: %d error(s) in Rules of Procedure of the Committee Reviewing Railway Transport Law Violations track:" % len(e))
+        print("FAIL: %d error(s) in Rules of Procedure for the Committee Adjudicating Violations of the Railways Law and its Implementing Regulation track:" % len(e))
         for x in e[:40]:
             print("  - %s" % x)
         return 1
-    print("PASS: Rules of Procedure of the Committee Reviewing Railway Transport Law Violations")
+    print("PASS: Rules of Procedure for the Committee Adjudicating Violations of the Railways Law and its Implementing Regulation")
     print("  - 24 records: 24 articles, no appendices; all 24 اصلية")
     print("  - Full text fetched directly from the Umm Al-Qura Official Gazette's own")
     print("    server-rendered HTML (the official publication of record for Saudi laws)")

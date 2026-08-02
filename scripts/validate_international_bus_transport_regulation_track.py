@@ -144,10 +144,10 @@ def main():
         e.append("[2e] expected discrepancy entries missing: %s" % sorted(missing))
 
     # [2j] anchor facts
-    if src.get("gazette_publication_date_hijri") != "8/5/1444":
-        e.append("[2j] gazette_publication_date_hijri must be 8/5/1444")
-    if src.get("gazette_publication_date_gregorian") != "2022-12-02":
-        e.append("[2j] gazette_publication_date_gregorian must be 2022-12-02")
+    if src.get("gazette_publication_date_hijri") != "30/2/1445":
+        e.append("[2j] gazette_publication_date_hijri must be 30/2/1445")
+    if src.get("gazette_publication_date_gregorian") != "2023-09-15":
+        e.append("[2j] gazette_publication_date_gregorian must be 2023-09-15")
     if src.get("legal_status_ar") != "ساري":
         e.append("[2j] legal_status_ar must be ساري")
     if src.get("document") != "اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات":

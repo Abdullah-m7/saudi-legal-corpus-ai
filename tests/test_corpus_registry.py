@@ -39,7 +39,7 @@ class TestRegistryStructure:
         assert registry["validation_status"] == "PASS"
 
     def test_total_primary_arabic(self, registry):
-        assert registry["total_primary_arabic_governing_records"] == 23735
+        assert registry["total_primary_arabic_governing_records"] == 23734
 
     def test_total_reference(self, registry):
         assert registry["total_reference_records"] == 614
@@ -51,7 +51,7 @@ class TestRegistryStructure:
         assert registry["total_implementing_regulations_records"] == 169
 
     def test_total_registry_counted(self, registry):
-        assert registry["total_registry_counted_records"] == 24630
+        assert registry["total_registry_counted_records"] == 24629
 
     def test_no_total_known_records(self, registry):
         assert "total_known_records" not in registry

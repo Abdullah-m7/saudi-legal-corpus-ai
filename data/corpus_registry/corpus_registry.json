@@ -33,9 +33,9 @@
   "repository": "al3obdi/saudi-legal-corpus-ai",
   "total_implementing_regulations_records": 169,
   "total_internal_reference_records": 281,
-  "total_primary_arabic_governing_records": 23735,
+  "total_primary_arabic_governing_records": 23734,
   "total_reference_records": 614,
-  "total_registry_counted_records": 24630,
+  "total_registry_counted_records": 24629,
   "total_tracks": 620,
   "tracks": [
     {
@@ -11942,7 +11942,7 @@
       "data_paths": [
         "sources/valuation_profession_conduct_rules/official_source/valuation_profession_conduct_rules_official_source.json",
         "sources/valuation_profession_conduct_rules/verified/valuation_profession_conduct_rules_verified_records.jsonl",
-        "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_034.json"
+        "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_033.json"
       ],
       "display_name_ar": "قواعد سلوك مهنة التقييم وآدابها",
       "display_name_en": "Code of Conduct and Ethics of the Valuation Profession",
@@ -11950,23 +11950,23 @@
       "jurisdiction": "Kingdom of Saudi Arabia",
       "language_layers": {
         "arabic": {
-          "data_path": "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_034.json",
+          "data_path": "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_033.json",
           "governing": true,
-          "record_count": 34,
+          "record_count": 33,
           "status": "complete"
         }
       },
       "notes": "Code of Conduct and Ethics of the Valuation Profession «قواعد سلوك مهنة التقييم وآدابها» — **34 articles ingested (highest article number in the source: 34). ALL 34 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/10/1444H / 2023-05-12; the Gazette is the official publication of record for Saudi laws/regulations, not a mirror and not OCR. **PRODUCED BY THE AUTOMATED PIPELINE** scripts/gazette_autoingest.py: every spec field is derived from the gazette page itself and the document was emitted only after passing all ten quality gates (legal-document shape; registry dedup; minimum structure; no empty articles; no navigation-boilerplate leakage; no chapter-heading leakage; no residual tashkeel/tatweel; any source-side numbering gap proven safe — missing ordinal absent from the document and both neighbouring articles ending on sentence-final punctuation; curated identifier). The track_id is assigned by hand, not machine-generated — a deliberate automation boundary, since identifiers are permanent. See known_unresolved_discrepancies for single-source gazette provenance, absent issuing decision number where applicable, and any disclosed numbering gap. Arabic governs; not legal advice.",
       "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
       "record_counts": {
-        "arabic_articles": 34,
+        "arabic_articles": 33,
         "legal_status_breakdown": {
-          "اصلية": 34,
+          "اصلية": 33,
           "مضافة": 0,
           "معدلة": 0,
           "ملغاة": 0
         },
-        "total": 34
+        "total": 33
       },
       "report_paths": [
         "reports/coverage_gap_map/coverage_gap_map.json",
@@ -16694,7 +16694,7 @@
         "sources/marina_design_operation_controls/verified/marina_design_operation_controls_verified_records.jsonl",
         "data/marina_design_operation_controls_arabic_legal_llm/marina_design_operation_controls_legal_llm_001_013.json"
       ],
-      "display_name_ar": "الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية",
+      "display_name_ar": "الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية",
       "display_name_en": "Controls and Procedures for the Design and Operation of Tourist Marinas",
       "governing_language": "ar",
       "jurisdiction": "Kingdom of Saudi Arabia",
@@ -25394,7 +25394,7 @@
         "sources/railway_violations_committee_rules/verified/railway_violations_committee_rules_verified_records.jsonl",
         "data/railway_violations_committee_rules_arabic_legal_llm/railway_violations_committee_rules_legal_llm_001_024.json"
       ],
-      "display_name_ar": "قواعد عمل لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته",
+      "display_name_ar": "قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية",
       "display_name_en": "Rules of Procedure of the Committee Reviewing Railway Transport Law Violations",
       "governing_language": "ar",
       "jurisdiction": "Kingdom of Saudi Arabia",
@@ -30923,7 +30923,7 @@
       "universities": 58,
       "used_imported_vehicles_technical_regulation": 11,
       "vacant_properties_fees_regulation": 18,
-      "valuation_profession_conduct_rules": 34,
+      "valuation_profession_conduct_rules": 33,
       "vat": 135,
       "vegetation_cover_desertification_regulation": 11,
       "vehicle_damage_assessment_rules": 40,
@@ -30954,7 +30954,7 @@
       "zatca_statute": 16
     },
     "search_tool": "scripts/search_corpus_unified.py",
-    "total_records": 23566,
+    "total_records": 23565,
     "validator_target": "make corpus-unified-llm-index-validate"
   },
   "validation_status": "PASS"

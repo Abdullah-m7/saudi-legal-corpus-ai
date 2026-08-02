@@ -4,15 +4,15 @@
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
-server-rendered HTML page (uqn.gov.sa/details?p=21805),
-published 22/10/1444H (2023-05-12). The Gazette IS the official publication of record
+server-rendered HTML page (uqn.gov.sa/details?p=23656),
+published 24/2/1445H (2023-09-09). The Gazette IS the official publication of record
 for Saudi laws/regulations -- a direct primary-source fetch, matching this
 corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 
 VERIFICATION TIER -- TIER_1. See the official_source JSON's
 verification_methodology_note and known_unresolved_discrepancies.
 
-STRUCTURE: 34 numbered articles, no appendix records. All اصلية.
+STRUCTURE: 33 numbered articles, no appendix records. All اصلية.
 
 TEXT HANDLING: verbatim Arabic as rendered by the official Gazette's own
 HTML. Arabic governs; no translation / paraphrase / interpretation.
@@ -32,7 +32,7 @@ OUT_VER = os.path.join(ROOT, "sources", "valuation_profession_conduct_rules", "v
 RECORDS = os.path.join(OUT_VER, "valuation_profession_conduct_rules_verified_records.jsonl")
 SUMMARY = os.path.join(OUT_VER, "valuation_profession_conduct_rules_verified_summary.json")
 LLM_PATH = os.path.join(ROOT, "data", "valuation_profession_conduct_rules_arabic_legal_llm",
-                        "valuation_profession_conduct_rules_legal_llm_001_034.json")
+                        "valuation_profession_conduct_rules_legal_llm_001_033.json")
 
 LAW_ID = "sa-valuation-profession-conduct-rules"
 LAW_AR = "قواعد سلوك مهنة التقييم وآدابها"
@@ -69,7 +69,7 @@ def main():
 
     gov_note = ("Arabic governs; PRIMARY full text fetched directly from the Umm Al-Qura "
                 "Official Gazette's own server-rendered HTML page "
-                "(uqn.gov.sa/details?p=21805), published 22/10/1444H (2023-05-12). "
+                "(uqn.gov.sa/details?p=23656), published 24/2/1445H (2023-09-09). "
                 "The Gazette is the official publication of record for Saudi laws/"
                 "regulations -- a direct primary-source fetch, matching this corpus's "
                 "established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. TIER_1. See "
@@ -143,9 +143,9 @@ def main():
             "source_trust": {
                 "source_authority": ("Code of Conduct and Ethics of the Valuation Profession -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
-                                     "(published 22/10/1444H / 2023-05-12)"),
+                                     "(published 24/2/1445H / 2023-09-09)"),
                 "source_authority_ar": ("قواعد سلوك مهنة التقييم وآدابها — النص الكامل جُلب مباشرة من صفحة جريدة أم "
-                                        "القرى الرسمية (تاريخ النشر 22/10/1444هـ الموافق 2023-05-12م)"),
+                                        "القرى الرسمية (تاريخ النشر 24/2/1445هـ الموافق 2023-09-09م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,
                 "legal_status_ar": ls,
@@ -185,15 +185,15 @@ def main():
         "layer_id": "valuation-profession-conduct-rules-arabic-legal-llm-full",
         "law_id": LAW_ID,
         "law_component": "rules",
-        "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (34 مادة، جميعها أصلية)",
-        "title_en": "Code of Conduct and Ethics of the Valuation Profession — Arabic LLM-ready layer (34 articles; all original)",
+        "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (33 مادة، جميعها أصلية)",
+        "title_en": "Code of Conduct and Ethics of the Valuation Profession — Arabic LLM-ready layer (33 articles; all original)",
         "record_type": "verified_arabic_article",
         "language": "ar",
         "governing_text_language": "ar",
         "record_count": len(llm),
         "article_count": src["article_count"],
         "appendix_count": src["appendix_count"],
-        "article_range": [1, 34],
+        "article_range": [1, 33],
         "text_status": STATUS_UNCHANGED,
         "consolidated_amended_law": src.get("consolidated_amended_law", False),
         "status_counts": src["status_counts"],

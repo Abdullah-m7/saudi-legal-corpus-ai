@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 23566,
-  "total_references_extracted": 5512,
-  "intra_law_count": 4365,
-  "inter_law_count": 1147,
+  "total_records_scanned": 23565,
+  "total_references_extracted": 5515,
+  "intra_law_count": 4366,
+  "inter_law_count": 1149,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 4534,
-    "medium": 978
+    "high": 4538,
+    "medium": 977
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -21218,7 +21218,7 @@
       "target_track_id": null,
       "target_article_number": 5,
       "target_law_name_raw": "أعمال الأوراق المالية",
-      "raw_citation_text": "المادة الخامسة من لائحة أعمال الأوراق المالية. - مدير المحفظ",
+      "raw_citation_text": "المادة الخامسة من لائحة أعمال الأوراق المالية. • مدير المحفظ",
       "confidence": "medium"
     },
     {
@@ -41951,9 +41951,9 @@
       "source_article_number": 4,
       "type": "intra_law",
       "target_track_id": "railway_violations_committee_rules",
-      "target_article_number": 29,
+      "target_article_number": 36,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والعشرين والفقرة (1) من المادة التاسعة",
+      "raw_citation_text": "المادة (السادسة والثلاثين) من النظام عدا الفقرات (11) و(",
       "confidence": "high"
     },
     {
@@ -41962,9 +41962,9 @@
       "source_article_number": 4,
       "type": "intra_law",
       "target_track_id": "railway_violations_committee_rules",
-      "target_article_number": 29,
+      "target_article_number": 37,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والعشرين مكرر من النظام. ب- البت في ال",
+      "raw_citation_text": "المادة (السابعة والثلاثين) والمادة (الأربعين) من النظام.",
       "confidence": "high"
     },
     {
@@ -41973,9 +41973,20 @@
       "source_article_number": 4,
       "type": "intra_law",
       "target_track_id": "railway_violations_committee_rules",
-      "target_article_number": 31,
+      "target_article_number": 40,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة (الحادية والثلاثين) من النظام. ج- النظر في الشكاو",
+      "raw_citation_text": "المادة (الأربعين) من النظام. ب- البت في المخالف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "railway_violations_committee_rules",
+      "source_record_id": "railway-violations-committee-rules-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "railway_violations_committee_rules",
+      "target_article_number": 43,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثالثة والأربعين) من النظام. ج- النظر في الشكاو",
       "confidence": "high"
     },
     {
@@ -41986,7 +41997,7 @@
       "target_track_id": "railway_violations_committee_rules",
       "target_article_number": 9,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة من هذه القواعد. 2- يكون تمثيل",
+      "raw_citation_text": "المادة التاسعة من هذه القواعد، يكون تمثيل أط",
       "confidence": "high"
     },
     {
@@ -41997,19 +42008,8 @@
       "target_track_id": "railway_violations_committee_rules",
       "target_article_number": 18,
       "target_law_name_raw": null,
-      "raw_citation_text": "المادة الثامنة عشرة من هذه القواعد. 4- يجوز للجنة",
+      "raw_citation_text": "المادة الثامنة عشرة من هذه القواعد.",
       "confidence": "high"
-    },
-    {
-      "source_track_id": "railway_violations_committee_rules",
-      "source_record_id": "railway-violations-committee-rules-llm-017",
-      "source_article_number": 17,
-      "type": "intra_law",
-      "target_track_id": "railway_violations_committee_rules",
-      "target_article_number": 29,
-      "target_law_name_raw": null,
-      "raw_citation_text": "المادة التاسعة والعشرين",
-      "confidence": "medium"
     },
     {
       "source_track_id": "real_estate_auctions_regulation",
@@ -57369,13 +57369,46 @@
     },
     {
       "source_track_id": "valuation_profession_conduct_rules",
-      "source_record_id": "valuation-profession-conduct-rules-llm-027",
-      "source_article_number": 27,
+      "source_record_id": "valuation-profession-conduct-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "accredited_valuers_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "المقيمين المعتمدين",
+      "raw_citation_text": "المادة (الأولى) من نظام المقيمين المعتمدين، الصادر بالمرسو",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "valuation_profession_conduct_rules",
+      "source_record_id": "valuation-profession-conduct-rules-llm-006",
+      "source_article_number": 6,
+      "type": "inter_law",
+      "target_track_id": "general_education_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التعليم المستمر",
+      "raw_citation_text": "أحكام قواعد التعليم المستمر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "valuation_profession_conduct_rules",
+      "source_record_id": "valuation-profession-conduct-rules-llm-025",
+      "source_article_number": 25,
       "type": "intra_law",
       "target_track_id": "valuation_profession_conduct_rules",
       "target_article_number": 17,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (السابعة عشرة) من النظام، والمعايير المحاسبي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "valuation_profession_conduct_rules",
+      "source_record_id": "valuation-profession-conduct-rules-llm-030",
+      "source_article_number": 30,
+      "type": "intra_law",
+      "target_track_id": "valuation_profession_conduct_rules",
+      "target_article_number": 32,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية والثلاثين) من النظام على كل من يخالف الق",
       "confidence": "high"
     },
     {

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Read-only validator for the قواعد سلوك مهنة التقييم وآدابها track.
 
-34 records: 34 numbered articles, no appendix records. All اصلية.
+33 records: 33 numbered articles, no appendix records. All اصلية.
 
 VERIFICATION TIER: TIER_1 -- full text fetched directly from the Umm Al-Qura
 Official Gazette's own server-rendered HTML page. This validator only checks
@@ -26,10 +26,10 @@ RECORDS = os.path.join(ROOT, "sources", "valuation_profession_conduct_rules", "v
 SUMMARY = os.path.join(ROOT, "sources", "valuation_profession_conduct_rules", "verified",
                        "valuation_profession_conduct_rules_verified_summary.json")
 LLM = os.path.join(ROOT, "data", "valuation_profession_conduct_rules_arabic_legal_llm",
-                   "valuation_profession_conduct_rules_legal_llm_001_034.json")
+                   "valuation_profession_conduct_rules_legal_llm_001_033.json")
 
-N_ARTICLES = 34
-N_RECORDS = 34
+N_ARTICLES = 33
+N_RECORDS = 33
 ART_RE = r"valuation_profession_conduct_rules_art_(\d{3})$"
 ALLOWED_STATUS = {"اصلية", "معدلة", "ملغاة", "مضافة"}
 FLAGGED_DISCREPANCY_KEYS = {"valuation_profession_conduct_rules_no_decision_number_in_source", "valuation_profession_conduct_rules_source_is_gazette_html_only"}
@@ -71,7 +71,7 @@ def main():
         nums.append(int(m.group(1)))
         if a.get("is_appendix") is not False:
             e.append("[1] %s: is_appendix must be False" % k)
-    EXPECTED_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+    EXPECTED_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
     MISSING_IN_SOURCE = []
     if sorted(nums) != EXPECTED_NUMBERS:
         e.append("[1] article numbers differ from the source's own numbering")
@@ -144,10 +144,10 @@ def main():
         e.append("[2e] expected discrepancy entries missing: %s" % sorted(missing))
 
     # [2j] anchor facts
-    if src.get("gazette_publication_date_hijri") != "22/10/1444":
-        e.append("[2j] gazette_publication_date_hijri must be 22/10/1444")
-    if src.get("gazette_publication_date_gregorian") != "2023-05-12":
-        e.append("[2j] gazette_publication_date_gregorian must be 2023-05-12")
+    if src.get("gazette_publication_date_hijri") != "24/2/1445":
+        e.append("[2j] gazette_publication_date_hijri must be 24/2/1445")
+    if src.get("gazette_publication_date_gregorian") != "2023-09-09":
+        e.append("[2j] gazette_publication_date_gregorian must be 2023-09-09")
     if src.get("legal_status_ar") != "ساري":
         e.append("[2j] legal_status_ar must be ساري")
     if src.get("document") != "قواعد سلوك مهنة التقييم وآدابها":
@@ -201,7 +201,7 @@ def main():
             print("  - %s" % x)
         return 1
     print("PASS: Code of Conduct and Ethics of the Valuation Profession")
-    print("  - 34 records: 34 articles, no appendices; all 34 اصلية")
+    print("  - 33 records: 33 articles, no appendices; all 33 اصلية")
     print("  - Full text fetched directly from the Umm Al-Qura Official Gazette's own")
     print("    server-rendered HTML (the official publication of record for Saudi laws)")
     print("  - VERIFICATION TIER: TIER_1")

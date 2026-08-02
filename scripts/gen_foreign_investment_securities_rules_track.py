@@ -4,8 +4,8 @@
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
-server-rendered HTML page (uqn.gov.sa/details?p=22977),
-published 13/11/1444H (2023-06-02). The Gazette IS the official publication of record
+server-rendered HTML page (uqn.gov.sa/details?p=27346),
+published 21/2/1447H (2025-08-15). The Gazette IS the official publication of record
 for Saudi laws/regulations -- a direct primary-source fetch, matching this
 corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 
@@ -69,7 +69,7 @@ def main():
 
     gov_note = ("Arabic governs; PRIMARY full text fetched directly from the Umm Al-Qura "
                 "Official Gazette's own server-rendered HTML page "
-                "(uqn.gov.sa/details?p=22977), published 13/11/1444H (2023-06-02). "
+                "(uqn.gov.sa/details?p=27346), published 21/2/1447H (2025-08-15). "
                 "The Gazette is the official publication of record for Saudi laws/"
                 "regulations -- a direct primary-source fetch, matching this corpus's "
                 "established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. TIER_1. See "
@@ -143,9 +143,9 @@ def main():
             "source_trust": {
                 "source_authority": ("Rules Governing Foreign Investment in Securities -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
-                                     "(published 13/11/1444H / 2023-06-02)"),
+                                     "(published 21/2/1447H / 2025-08-15)"),
                 "source_authority_ar": ("القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية — النص الكامل جُلب مباشرة من صفحة جريدة أم "
-                                        "القرى الرسمية (تاريخ النشر 13/11/1444هـ الموافق 2023-06-02م)"),
+                                        "القرى الرسمية (تاريخ النشر 21/2/1447هـ الموافق 2025-08-15م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,
                 "legal_status_ar": ls,

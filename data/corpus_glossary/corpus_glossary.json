@@ -16,9 +16,9 @@
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
   "total_tracks_in_registry": 620,
-  "total_terms": 3249,
-  "total_definitions": 7018,
-  "tracks_with_definitions_article_parsed": 508,
+  "total_terms": 3245,
+  "total_definitions": 7005,
+  "tracks_with_definitions_article_parsed": 507,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -203,6 +203,10 @@
     {
       "track_id": "food_law",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "foreign_investment_securities_rules",
+      "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
     },
     {
       "track_id": "foreign_schools_regulation",
@@ -2849,14 +2853,6 @@
         "term_as_written": "الأحكام والقواعد المنظمة لمهنة التقييم",
         "definition_text": "تشمل أحكام النظام، واللائحة، وقواعد السلوك، والمعايير، والدليل، وقواعد التعليم المستمر، والقرارات والتعليمات الصادرة عن الهيئة المتعلقة بالمهنة.",
         "source_record_id": "accredited-valuers-implementing-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "الأحكام والقواعد المنظمة لمهنة التقييم",
-        "definition_text": "تشمل أحكام النظام، واللائحة، والقواعد، والمعايير، والدليل، والقرارات والتعليمات الصادرة عن الهيئة المتعلقة بالمهنة.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -20449,7 +20445,7 @@
         "track_id": "railway_violations_committee_rules",
         "article_number": 1,
         "term_as_written": "الشكوى",
-        "definition_text": "أي شكوى تنشأ في نشاط النقل بالخطوط الحديدية، التي تقدم إلى اللجنة ضد أصحاب الامتياز أو المرخص لهم أو بين هؤلاء ومستفيد من الخدمة، أو بين الهيئة ومرخص له أو العكس.",
+        "definition_text": "أي شكوى تنشأ في نشاط الخطوط الحديدية، التي تقدم إلى اللجنة ضد أصحاب الامتياز أو المرخص لهم أو بين هؤلاء ومستفيد من الخدمة، أو بين الهيئة ومرخص له.",
         "source_record_id": "railway-violations-committee-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
@@ -23192,14 +23188,6 @@
         "definition_text": "من يقوم -أو يشرع في القيام- بأي من الأعمال التي تحددها اللائحة مع إحدى المؤسسات المالية أو الأعمال والمهن غير المالية المحددة.",
         "source_record_id": "terrorism-law-llm-art-001",
         "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "العميل",
-        "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية الذي يكلف المقيم بأداء مهمة التقييم.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
-        "extraction_method": "colon_pairs"
       }
     ],
     "العناية والصيانة": [
@@ -24553,14 +24541,6 @@
         "term_as_written": "القواعد",
         "definition_text": "قواعد السلوك المهني للمحامين.",
         "source_record_id": "sulook-regulation-llm-art-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "القواعد",
-        "definition_text": "قواعد سلوك مهنة التقييم وآدابها.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -26726,14 +26706,6 @@
         "extraction_method": "colon_pairs"
       },
       {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "اللائحة",
-        "definition_text": "اللائحة التنفيذية للنظام.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -27607,7 +27579,7 @@
         "track_id": "railway_violations_committee_rules",
         "article_number": 1,
         "term_as_written": "اللجنة",
-        "definition_text": "لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته.",
+        "definition_text": "لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية.",
         "source_record_id": "railway-violations-committee-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
@@ -35032,26 +35004,6 @@
         "extraction_method": "colon_pairs"
       }
     ],
-    "المستثمر الأجنبي المؤهل": [
-      {
-        "track_id": "foreign_investment_securities_rules",
-        "article_number": 2,
-        "term_as_written": "المستثمر الأجنبي المؤهل",
-        "definition_text": "مستثمر أجنبي مؤهل وفقا لأحكام الباب الثالث من هذه القواعد للاستثمار في الأسهم المدرجة في السوق الرئيسية.",
-        "source_record_id": "foreign-investment-securities-rules-llm-002",
-        "extraction_method": "colon_pairs"
-      }
-    ],
-    "المستثمر الاستراتيجي الأجنبي": [
-      {
-        "track_id": "foreign_investment_securities_rules",
-        "article_number": 2,
-        "term_as_written": "المستثمر الاستراتيجي الأجنبي",
-        "definition_text": "شخص اعتباري أجنبي يهدف إلى تملك نسبة مباشرة في أسهم شركة مدرجة لمدة لا تقل عن سنتين، لغرض المساهمة في تعزيز الأداء المالي أو التشغيلي لهذه الشركة المدرجة.",
-        "source_record_id": "foreign-investment-securities-rules-llm-002",
-        "extraction_method": "colon_pairs"
-      }
-    ],
     "المستثمر المحلي": [
       {
         "track_id": "investment_law",
@@ -37405,7 +37357,7 @@
         "track_id": "international_bus_transport_regulation",
         "article_number": 1,
         "term_as_written": "المقابل المالي",
-        "definition_text": "ما يخصص للهيئة من موارد مالية نظير إصدار/تجديد الترخيص، أو بطاقات التشغيل، أو بطاقات السائقين، أو أي من الخدمات الأخرى التي تقدمها الهيئة.",
+        "definition_text": "ما يخصص للهيئة من موارد مالية نظير إصدار/ تجديد الترخيص، أو بطاقات التشغيل، أو بطاقات السائقين، أو أي من الخدمات الأخرى التي تقدمها الهيئة.",
         "source_record_id": "international-bus-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
@@ -37685,14 +37637,6 @@
         "term_as_written": "المقيم المعتمد",
         "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية المرخص له بمزاولة مهنة التقييم.",
         "source_record_id": "real-estate-expropriation-law-llm-art-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "المقيم المعتمد",
-        "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية المرخص له بمزاولة المهنة وفقا للنظام.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -40365,14 +40309,6 @@
         "term_as_written": "المهنة",
         "definition_text": "مهنة المحاماة.",
         "source_record_id": "sulook-regulation-llm-art-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "المهنة",
-        "definition_text": "مهنة التقييم.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -45364,14 +45300,6 @@
         "extraction_method": "colon_pairs"
       },
       {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "الهيئة",
-        "definition_text": "الهيئة السعودية للمقيمين المعتمدين.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
         "track_id": "vat_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -49193,7 +49121,7 @@
         "track_id": "marina_design_operation_controls",
         "article_number": 1,
         "term_as_written": "اليخت الزائر",
-        "definition_text": "اليخت الذي يرفع علم دولة أجنبية أيا كان نوعه وحجمه والذي يزور ويبحر داخل النطاق الجغرافي بغرض السياحة او الصيانة او التزود بالوقود او الحصول على التوريدات او المشاركة في المعارض البحرية.",
+        "definition_text": "اليخت الذي يرفع علم دولة اجنبية ايا كان نوعه وحجمه والذي يزور ويبحر داخل النطاق الجغرافي بغرض السياحة او الصيانة او التزود بالوقود او الحصول على التوريدات او المشاركة في المعارض البحرية.",
         "source_record_id": "marina-design-operation-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -50485,14 +50413,6 @@
         "term_as_written": "تقرير التقييم",
         "definition_text": "الوثيقة التي يصدرها المقيم المعتمد لعملائه، متضمنة نتيجة التقييم، ومستوفية لالتزامات المقيم المعتمد المبينة في الأحكام والقواعد المنظمة لمهنة التقييم.",
         "source_record_id": "accredited-valuers-implementing-regulation-llm-001",
-        "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "تقرير التقييم",
-        "definition_text": "الوثيقة التي يصدرها المقيم المعتمد لعملائه، متضم نة نتيجة التقييم، ومستوفية لالتزامات المقيم المعتمد المبينة في النظام واللائحة والدليل، ومتوافقة مع معايير التقييم المعتمدة.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -57474,16 +57394,6 @@
         "extraction_method": "colon_pairs"
       }
     ],
-    "متطلب الترخيص": [
-      {
-        "track_id": "foreign_investment_securities_rules",
-        "article_number": 2,
-        "term_as_written": "متطلب الترخيص",
-        "definition_text": "متطلب الترخيص المنصوص عليه في المادة الخامسة من لائحة أعمال الأوراق المالية.",
-        "source_record_id": "foreign-investment-securities-rules-llm-002",
-        "extraction_method": "colon_pairs"
-      }
-    ],
     "متطلبات التعيين في المناصب القيادية": [
       {
         "track_id": "payment_systems_regulation",
@@ -58434,16 +58344,6 @@
         "extraction_method": "colon_pairs"
       }
     ],
-    "مدير المحفظة الأجنبي": [
-      {
-        "track_id": "foreign_investment_securities_rules",
-        "article_number": 2,
-        "term_as_written": "مدير المحفظة الأجنبي",
-        "definition_text": "مؤسسة مالية أجنبية ذات شخصية اعتبارية تدير أصول عملاء وتتعامل أو تنوي التعامل مع المستثمر الأجنبي المؤهل لغرض استثمار أموال ذلك الشخص في الأوراق المالية المدرجة.",
-        "source_record_id": "foreign-investment-securities-rules-llm-002",
-        "extraction_method": "colon_pairs"
-      }
-    ],
     "مدير المزاد العقاري": [
       {
         "track_id": "real_estate_auctions_regulation",
@@ -59323,7 +59223,7 @@
         "track_id": "marina_design_operation_controls",
         "article_number": 1,
         "term_as_written": "مشغل المرسى",
-        "definition_text": "المنشأة ذو الصفة الاعتبارية المرخص لها من الهيئة التي تقوم بالتنظيم والتشغيل اليومي للمرسى البحري السياحي.",
+        "definition_text": "المنشأة ذات الصفة الاعتبارية المرخص لها من الهيئة التي تقوم بالتنظيم والتشغيل اليومي للمرسى البحري السياحي.",
         "source_record_id": "marina-design-operation-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -60808,14 +60708,6 @@
         "definition_text": "المنشأة الفردية أو الشركة المهنية المستوفية للاشتراطات النظامية المتعلقة بممارسة مهنة التقييم.",
         "source_record_id": "accredited-valuers-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
-      },
-      {
-        "track_id": "valuation_profession_conduct_rules",
-        "article_number": 1,
-        "term_as_written": "منشأة التقييم",
-        "definition_text": "المنشأة الفردية أو الشركة المهنية المستوفية للاشتراطات النظامية المتعلقة بممارسة مهنة التقييم.",
-        "source_record_id": "valuation-profession-conduct-rules-llm-001",
-        "extraction_method": "colon_pairs"
       }
     ],
     "منشأة بيع المستحضرات العشبية": [
@@ -61449,7 +61341,7 @@
         "track_id": "international_bus_transport_regulation",
         "article_number": 1,
         "term_as_written": "نشاط النقل الدولي",
-        "definition_text": "نقل الركاب بالحافلات من/إلى خارج المملكة.",
+        "definition_text": "نقل الركاب بالحافلات من/ إلى خارج المملكة.",
         "source_record_id": "international-bus-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -61607,7 +61499,7 @@
         "track_id": "marina_design_operation_controls",
         "article_number": 1,
         "term_as_written": "نظام إدارة المرسى",
-        "definition_text": "أنظمة مشغلي المراسي البحرية السياحية فيما يتعلق بالمسائل التالية: أ‌- نظام إدارة السلامة والبيئة. ب‌- نظام إدارة الطوارئ. ج‌- نظام إدارة الاتصالات. د- نظام إدارة فحص وصيانة المرسى. ه- نظام إدارة الأمن. و- وغيرها من الأنظمة المختصة بتنظيم إدارة المرسى.",
+        "definition_text": "أنظمة مشغلي المراسي البحرية السياحية فيما يتعلق بالمسائل التالية: أ- نظام إدارة السلامة والبيئة. ب- نظام إدارة الطوارئ. ج- نظام إدارة الاتصالات. د- نظام إدارة فحص وصيانة المرسى. ه- نظام إدارة الأمن. و- وغيرها من الأنظمة المختصة بتنظيم إدارة المرسى.",
         "source_record_id": "marina-design-operation-controls-llm-001",
         "extraction_method": "colon_pairs"
       }
@@ -61817,7 +61709,7 @@
         "track_id": "international_bus_transport_regulation",
         "article_number": 1,
         "term_as_written": "نظام المرور ولائحته التنفيذية",
-        "definition_text": "نظام المرور الصادر بالمرسوم الملكي رقم (م/85) وتاريخ 26 /10 /1428ه، والمعدل بالمرسوم الملكي رقم (م/70) وتاريخ 6 /11 /1437ه، والمعدل بالمرسوم الملكي رقم (م/73) وتاريخ 18/ 7 /1439ه، والمعدل بالمرسوم الملكي رقم (م/115) وتاريخ 5 /12 /1439ه، ولائحته التنفيذية، وما يطرأ عليهما من تعديلات.",
+        "definition_text": "نظام المرور الصادر بالمرسوم الملكي رقم (م/85) وتاريخ 26 /10/ 1428ه، والمعدل بالمرسوم الملكي رقم (م/70) وتاريخ 6 /11/ 1437ه، والمعدل بالمرسوم الملكي رقم (م/73) وتاريخ 18 /7/ 1439ه، والمعدل بالمرسوم الملكي رقم (م/115) وتاريخ 5 /12/ 1439ه، ولائحته التنفيذية، وما يطرأ عليهما من تعديلات.",
         "source_record_id": "international-bus-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
@@ -61853,7 +61745,7 @@
         "track_id": "international_bus_transport_regulation",
         "article_number": 1,
         "term_as_written": "نظام النقل العام على الطرق",
-        "definition_text": "نظام النقل العام على الطرق بالمملكة العربية السعودية الصادر بالمرسوم الملكي رقم (م/25) وتاريخ 21 /6 /1397ه، وما يطرأ عليه من تعديل أو تحديث.",
+        "definition_text": "نظام النقل العام على الطرق بالمملكة العربية السعودية الصادر بالمرسوم الملكي رقم (م/25) وتاريخ 21 /6/ 1397ه، وما يطرأ عليه من تعديل أو تحديث.",
         "source_record_id": "international-bus-transport-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },

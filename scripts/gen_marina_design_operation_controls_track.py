@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate the الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية track.
+"""Generate the الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية track.
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
-server-rendered HTML page (uqn.gov.sa/details?p=26575),
-published 1/4/1446H (2024-10-04). The Gazette IS the official publication of record
+server-rendered HTML page (uqn.gov.sa/details?p=26660),
+published 20/4/1446H (2024-10-23). The Gazette IS the official publication of record
 for Saudi laws/regulations -- a direct primary-source fetch, matching this
 corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 
@@ -35,7 +35,7 @@ LLM_PATH = os.path.join(ROOT, "data", "marina_design_operation_controls_arabic_l
                         "marina_design_operation_controls_legal_llm_001_013.json")
 
 LAW_ID = "sa-marina-design-operation-controls"
-LAW_AR = "الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية"
+LAW_AR = "الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية"
 STATUS_UNCHANGED = "UNCHANGED"
 ART_RE = r"marina_design_operation_controls_art_(\d{3})$"
 
@@ -69,7 +69,7 @@ def main():
 
     gov_note = ("Arabic governs; PRIMARY full text fetched directly from the Umm Al-Qura "
                 "Official Gazette's own server-rendered HTML page "
-                "(uqn.gov.sa/details?p=26575), published 1/4/1446H (2024-10-04). "
+                "(uqn.gov.sa/details?p=26660), published 20/4/1446H (2024-10-23). "
                 "The Gazette is the official publication of record for Saudi laws/"
                 "regulations -- a direct primary-source fetch, matching this corpus's "
                 "established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. TIER_1. See "
@@ -143,9 +143,9 @@ def main():
             "source_trust": {
                 "source_authority": ("Controls and Procedures for the Design and Operation of Tourist Marinas -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
-                                     "(published 1/4/1446H / 2024-10-04)"),
-                "source_authority_ar": ("الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية — النص الكامل جُلب مباشرة من صفحة جريدة أم "
-                                        "القرى الرسمية (تاريخ النشر 1/4/1446هـ الموافق 2024-10-04م)"),
+                                     "(published 20/4/1446H / 2024-10-23)"),
+                "source_authority_ar": ("الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية — النص الكامل جُلب مباشرة من صفحة جريدة أم "
+                                        "القرى الرسمية (تاريخ النشر 20/4/1446هـ الموافق 2024-10-23م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,
                 "legal_status_ar": ls,

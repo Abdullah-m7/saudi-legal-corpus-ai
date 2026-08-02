@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate the قواعد عمل لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته track.
+"""Generate the قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية track.
 
 CITATION: no issuing decision number is stated in the official gazette source; the confirmed anchor is the gazette publication date.
 Text fetched directly from the Umm Al-Qura Official Gazette's own
-server-rendered HTML page (uqn.gov.sa/details?p=17771),
-published 1/11/1442H (2021-06-11). The Gazette IS the official publication of record
+server-rendered HTML page (uqn.gov.sa/details?p=26635),
+published 15/4/1446H (2024-10-18). The Gazette IS the official publication of record
 for Saudi laws/regulations -- a direct primary-source fetch, matching this
 corpus's established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent.
 
@@ -35,7 +35,7 @@ LLM_PATH = os.path.join(ROOT, "data", "railway_violations_committee_rules_arabic
                         "railway_violations_committee_rules_legal_llm_001_024.json")
 
 LAW_ID = "sa-railway-violations-committee-rules"
-LAW_AR = "قواعد عمل لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته"
+LAW_AR = "قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية"
 STATUS_UNCHANGED = "UNCHANGED"
 ART_RE = r"railway_violations_committee_rules_art_(\d{3})$"
 
@@ -69,7 +69,7 @@ def main():
 
     gov_note = ("Arabic governs; PRIMARY full text fetched directly from the Umm Al-Qura "
                 "Official Gazette's own server-rendered HTML page "
-                "(uqn.gov.sa/details?p=17771), published 1/11/1442H (2021-06-11). "
+                "(uqn.gov.sa/details?p=26635), published 15/4/1446H (2024-10-18). "
                 "The Gazette is the official publication of record for Saudi laws/"
                 "regulations -- a direct primary-source fetch, matching this corpus's "
                 "established UQN_GAZETTE_DIRECT_FETCH_TIER1 precedent. TIER_1. See "
@@ -141,11 +141,11 @@ def main():
             ],
             "text_status": a["status"],
             "source_trust": {
-                "source_authority": ("Rules of Procedure of the Committee Reviewing Railway Transport Law Violations -- full text fetched directly from the Umm "
+                "source_authority": ("Rules of Procedure for the Committee Adjudicating Violations of the Railways Law and its Implementing Regulation -- full text fetched directly from the Umm "
                                      "Al-Qura Official Gazette's own HTML rendering "
-                                     "(published 1/11/1442H / 2021-06-11)"),
-                "source_authority_ar": ("قواعد عمل لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته — النص الكامل جُلب مباشرة من صفحة جريدة أم "
-                                        "القرى الرسمية (تاريخ النشر 1/11/1442هـ الموافق 2021-06-11م)"),
+                                     "(published 15/4/1446H / 2024-10-18)"),
+                "source_authority_ar": ("قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية — النص الكامل جُلب مباشرة من صفحة جريدة أم "
+                                        "القرى الرسمية (تاريخ النشر 15/4/1446هـ الموافق 2024-10-18م)"),
                 "source_status": a["status"].lower(),
                 "source_document_ar": LAW_AR,
                 "legal_status_ar": ls,
@@ -186,7 +186,7 @@ def main():
         "law_id": LAW_ID,
         "law_component": "rules",
         "title_ar": LAW_AR + " — الطبقة العربية الجاهزة للنماذج اللغوية (24 مادة، جميعها أصلية)",
-        "title_en": "Rules of Procedure of the Committee Reviewing Railway Transport Law Violations — Arabic LLM-ready layer (24 articles; all original)",
+        "title_en": "Rules of Procedure for the Committee Adjudicating Violations of the Railways Law and its Implementing Regulation — Arabic LLM-ready layer (24 articles; all original)",
         "record_type": "verified_arabic_article",
         "language": "ar",
         "governing_text_language": "ar",
@@ -200,7 +200,7 @@ def main():
         "not_legal_advice": True,
         "records": llm,
     }, open(LLM_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print("Wrote %d verified + %d LLM-ready Rules of Procedure of the Committee Reviewing Railway Transport Law Violations records" % (len(ver), len(llm)))
+    print("Wrote %d verified + %d LLM-ready Rules of Procedure for the Committee Adjudicating Violations of the Railways Law and its Implementing Regulation records" % (len(ver), len(llm)))
 
 
 if __name__ == "__main__":

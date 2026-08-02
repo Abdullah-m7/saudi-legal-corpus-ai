@@ -501,7 +501,7 @@ NGO_COUNCIL_REGULATION_LLM = os.path.join(ROOT, "data", "ngo_council_regulation_
 HEALTH_HOLDING_COMPANY_STATUTE_LLM = os.path.join(ROOT, "data", "health_holding_company_statute_arabic_legal_llm", "health_holding_company_statute_legal_llm_001_038.json")
 FAMILY_FUNDS_RULES_LLM = os.path.join(ROOT, "data", "family_funds_rules_arabic_legal_llm", "family_funds_rules_legal_llm_001_036.json")
 AIRPORTS_ECONOMIC_REGULATION_LLM = os.path.join(ROOT, "data", "airports_economic_regulation_arabic_legal_llm", "airports_economic_regulation_legal_llm_001_034.json")
-VALUATION_PROFESSION_CONDUCT_RULES_LLM = os.path.join(ROOT, "data", "valuation_profession_conduct_rules_arabic_legal_llm", "valuation_profession_conduct_rules_legal_llm_001_034.json")
+VALUATION_PROFESSION_CONDUCT_RULES_LLM = os.path.join(ROOT, "data", "valuation_profession_conduct_rules_arabic_legal_llm", "valuation_profession_conduct_rules_legal_llm_001_033.json")
 NAZARA_WORKS_REGULATION_LLM = os.path.join(ROOT, "data", "nazara_works_regulation_arabic_legal_llm", "nazara_works_regulation_legal_llm_001_032.json")
 BALLAST_WATER_REGULATION_LLM = os.path.join(ROOT, "data", "ballast_water_regulation_arabic_legal_llm", "ballast_water_regulation_legal_llm_001_031.json")
 SEZ_KAEC_REGULATION_LLM = os.path.join(ROOT, "data", "sez_kaec_regulation_arabic_legal_llm", "sez_kaec_regulation_legal_llm_001_035.json")
@@ -9747,14 +9747,14 @@ def main() -> int:
                 "source_authority": "Code of Conduct and Ethics of the Valuation Profession — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/10/1444H (2023-05-12). Discovered by indexing the Gazette's own official sitemap (uqn.gov.sa/sitemap_0.xml).",
                 "language_layers": {"arabic": {"status": "complete", "governing": True,
                     "record_count": valuation_profession_conduct_rules_llm["record_count"],
-                    "data_path": "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_034.json"}},
+                    "data_path": "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_033.json"}},
                 "record_counts": {"arabic_articles": valuation_profession_conduct_rules_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 34, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "legal_status_breakdown": {"اصلية": 33, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
                                   "total": valuation_profession_conduct_rules_llm["record_count"]},
                 "data_paths": [
                     "sources/valuation_profession_conduct_rules/official_source/valuation_profession_conduct_rules_official_source.json",
                     "sources/valuation_profession_conduct_rules/verified/valuation_profession_conduct_rules_verified_records.jsonl",
-                    "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_034.json",
+                    "data/valuation_profession_conduct_rules_arabic_legal_llm/valuation_profession_conduct_rules_legal_llm_001_033.json",
                 ],
                 "validator_targets": ["make valuation-profession-conduct-rules-track-validate"],
                 "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
@@ -12492,7 +12492,7 @@ def main() -> int:
             },
             {
                 "track_id": "marina_design_operation_controls",
-                "display_name_ar": "الضوابط والإجراءات لتصميم وتشغيل المراسي البحرية السياحية",
+                "display_name_ar": "الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية",
                 "display_name_en": "Controls and Procedures for the Design and Operation of Tourist Marinas",
                 "corpus_family": "statutory_regulation",
                 "jurisdiction": "Kingdom of Saudi Arabia",
@@ -17538,7 +17538,7 @@ def main() -> int:
             },
             {
                 "track_id": "railway_violations_committee_rules",
-                "display_name_ar": "قواعد عمل لجنة النظر في مخالفات نظام النقل بالخطوط الحديدية ولائحته",
+                "display_name_ar": "قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية",
                 "display_name_en": "Rules of Procedure of the Committee Reviewing Railway Transport Law Violations",
                 "corpus_family": "statutory_regulation",
                 "jurisdiction": "Kingdom of Saudi Arabia",
