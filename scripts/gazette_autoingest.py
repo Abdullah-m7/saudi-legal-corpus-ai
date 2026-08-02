@@ -35,7 +35,11 @@ GATES (a document must pass ALL of them)
   G2  not already covered by a live registry track. The decision is made on
       ARTICLE TEXT, matched by word shingles against every track in the unified
       index -- titles are the weaker signal in both directions. >= 
-      DUPLICATE_OVERLAP is a duplicate; >= GRAY_BAND is refused as a possible
+      DUPLICATE_OVERLAP is a duplicate ONLY if it is not published later than
+      the track it matches -- a later re-issue amending a few articles scores in
+      exactly that band, and rejecting it as a duplicate would keep superseded
+      text; such a document is reported as G2-LATER-EDITION instead. >= GRAY_BAND
+      is refused as a possible
       version difference needing human adjudication; below that the document is
       distinct even if its title collides (Saudi practice issues legally
       distinct instruments under near-identical titles: an authority's «تنظيم»
@@ -430,6 +434,28 @@ def track_fingerprints():
     return _FINGERPRINTS
 
 
+_TRACK_DATES = None
+
+
+def track_dates():
+    """{track_id: gazette publication date (YYYY-MM-DD)} for every track that
+    records one. Used by G2 to tell a duplicate from a LATER EDITION."""
+    global _TRACK_DATES
+    if _TRACK_DATES is None:
+        _TRACK_DATES = {}
+        for pat in (os.path.join(ROOT, "sources", "*", "official_source", "*.json"),
+                    os.path.join(ROOT, "sources", "*", "*", "official_source", "*.json")):
+            for p in glob.glob(pat):
+                tid = os.path.relpath(p, os.path.join(ROOT, "sources")).split(os.sep)[0]
+                try:
+                    d = json.load(open(p, encoding="utf-8")).get("gazette_publication_date_gregorian")
+                except (ValueError, OSError):
+                    continue
+                if d and tid not in _TRACK_DATES:
+                    _TRACK_DATES[tid] = d
+    return _TRACK_DATES
+
+
 def best_content_match(article_texts, exclude=None):
     """(overlap_fraction, track_id) for the built track that best already
     contains `article_texts`. (0.0, None) when nothing is on disk to compare to.
@@ -515,9 +541,25 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
     # is the weaker signal in both directions.
     overlap, match = best_content_match([a[2] for a in arts], exclude=exclude)
     if overlap >= DUPLICATE_OVERLAP:
-        reasons.append("G2: already covered by registry track '%s' (%.0f%% of this "
-                       "document's articles are already ingested there)"
-                       % (match, overlap * 100))
+        # High overlap is NOT enough to call this a duplicate. A later edition of
+        # the same instrument -- a re-issue amending a handful of articles --
+        # scores exactly here, so rejecting on overlap alone silently discards the
+        # CURRENT text while the corpus keeps the superseded one. Observed in the
+        # wild: the 2024 edition of لائحة التصرف في عقارات الدولة scores 97%
+        # against the 2022 text we held, and its article 47 carries a whole clause
+        # the older text lacks. So compare dates too.
+        cand_date = derive_dates(body)[1]
+        held = track_dates().get(match)
+        if cand_date and held and cand_date > held:
+            reasons.append("G2-LATER-EDITION: this document is %.0f%% the same as track '%s' "
+                           "but was published LATER (%s vs the %s edition on file) — the corpus "
+                           "is holding superseded text; refresh that track from this page rather "
+                           "than discarding this document as a duplicate"
+                           % (overlap * 100, match, cand_date, held))
+        else:
+            reasons.append("G2: already covered by registry track '%s' (%.0f%% of this "
+                           "document's articles are already ingested there)"
+                           % (match, overlap * 100))
     elif overlap >= GRAY_BAND:
         # Substantial but not total overlap. This is where a superseded edition,
         # a partial re-issue, or a segmentation difference lives, and it is not

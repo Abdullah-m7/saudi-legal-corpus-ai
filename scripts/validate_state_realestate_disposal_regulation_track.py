@@ -32,7 +32,7 @@ N_ARTICLES = 74
 N_RECORDS = 74
 ART_RE = r"state_realestate_disposal_regulation_art_(\d{3})$"
 ALLOWED_STATUS = {"اصلية", "معدلة", "ملغاة", "مضافة"}
-FLAGGED_DISCREPANCY_KEYS = {"state_realestate_disposal_regulation_source_is_gazette_html_only"}
+FLAGGED_DISCREPANCY_KEYS = {"state_realestate_disposal_regulation_no_decision_number_in_source", "state_realestate_disposal_regulation_source_is_gazette_html_only"}
 AR = "ء-ي"
 TASHKEEL = re.compile("[ً-ٰٟ]")  # excludes Arabic-Indic digits U+0660-0669
 
@@ -144,10 +144,10 @@ def main():
         e.append("[2e] expected discrepancy entries missing: %s" % sorted(missing))
 
     # [2j] anchor facts
-    if src.get("gazette_publication_date_hijri") != "1/5/1444":
-        e.append("[2j] gazette_publication_date_hijri must be 1/5/1444")
-    if src.get("gazette_publication_date_gregorian") != "2022-11-25":
-        e.append("[2j] gazette_publication_date_gregorian must be 2022-11-25")
+    if src.get("gazette_publication_date_hijri") != "14/7/1445":
+        e.append("[2j] gazette_publication_date_hijri must be 14/7/1445")
+    if src.get("gazette_publication_date_gregorian") != "2024-01-26":
+        e.append("[2j] gazette_publication_date_gregorian must be 2024-01-26")
     if src.get("legal_status_ar") != "ساري":
         e.append("[2j] legal_status_ar must be ساري")
     if src.get("document") != "لائحة التصرف في عقارات الدولة":
