@@ -8,7 +8,7 @@
   "legal_basis_ar": " — منشورة في جريدة أم القرى بتاريخ 22/11/1442هـ الموافق 2021-07-02م.",
   "base_law_track": "",
   "legal_status_ar": "ساري",
-  "consolidated_amended_law": false,
+  "consolidated_amended_law": true,
   "issuing_authority_ar": "اللائحة الداخلية لمجلس القضاء الإداري — منشورة في جريدة أم القرى بتاريخ 22/11/1442هـ الموافق 2021-07-02م.",
   "issuing_authority_en": "Internal Bylaw of the Administrative Judicial Council — published in the Umm Al-Qura Official Gazette on 22/11/1442H (2021-07-02).",
   "verification_methodology_note": "النص الكامل جُلب مباشرة من صفحة جريدة أم القرى الرسمية (uqn.gov.sa/details?p=17890) المُصيَّرة من الخادم كـ HTML — مصدر أساسي مباشر وليس نسخة وسيطة أو مسحاً ضوئياً؛ اكتُشفت عبر فهرسة خريطة الموقع الرسمية (uqn.gov.sa/sitemap_0.xml). البنية: 16 مادة، وأعلى رقم مادة (16) بلا فجوات. **منهجية التقطيع**: تُرصد عناوين المواد بترتيب ورودها ويُحوَّل رقم كل عنوان إلى عدد صحيح — ويقبل المحرك الاصطلاحين المستعملين في الجريدة: العدد الترتيبي العربي («المادة الخامسة:») والترقيم الرقمي («المادة (5):» بأرقام لاتينية أو عربية-هندية) — ثم تُختار أطول متتالية تصاعدية، بما يُسقِط أي مطابقة زائفة من إشارة مرجعية داخل النص (لا تتبعها نقطتان) دون قطع العناوين الحقيقية بعدها. لا مادة فارغة ولا تسرب لعناوين الفصول أو لقوائم تنقل الموقع. **دُقِّق عدم التكرار على مستوى النص لا العنوان**: قُوبلت مواد هذه الوثيقة بنصوص كل المسارات المبنية، وأعلى تطابق 0%، أي أنها أداة مستقلة لا نسخة مكررة. **VERIFICATION TIER: TIER_1**. العربية هي النص الحاكم؛ لا ترجمة ولا تفسير. التشكيل والتطويل الزخرفي مجرّدان بشكل موحد.",
@@ -26,11 +26,20 @@
       "description": "عنوان هذه الوثيقة يشبه عنوان مسار قائم، غير أن مقابلة النصوص أثبتت أنها أداة نظامية مستقلة لا نسخة مكررة. التفصيل: G2-NOTE: title resembles registry track 'judiciary_law', but only 0% of its articles are already ingested (best content match: 'none') — treated as a DISTINCT instrument, not a duplicate"
     },
     {
-      "article_key": "administrative_judicial_council_bylaw_amended_after_edition_on_file",
-      "description": "**تنبيه سريان**: النسخة المُستوعبة هنا منشورة بتاريخ 2021-07-02، وقد رصد تدقيق السريان (scripts/audit_corpus_currency.py) 1 إشعار تعديل في أرشيف جريدة أم القرى **بعد** هذا التاريخ وموضوعه هذه الأداة نفسها: 2024-03-29 — تعديل المادة (14) من اللائحة الداخلية لمجلس القضاء الإداري (https://www.uqn.gov.sa/details?p=24766). **الإشعار ليس نص التعديل**، ولذلك لا يُدَّعى هنا شيء عن مضمونه ولم يُعدَّل نص أي مادة استناداً إليه. المُفصَح عنه هو أن نص هذا المسار **قد لا يكون محدَّثاً**، وأن الصفحة الرسمية المذكورة هي موضع المراجعة. يُرفع هذا التنبيه فقط عند استيعاب النص المعدَّل من مصدر رسمي."
+      "article_key": "administrative_judicial_council_bylaw_amendment_applied_art_014",
+      "description": "**طُبِّق تعديل منشور**: نصّت صفحة الجريدة الرسمية (https://www.uqn.gov.sa/details?p=24766، 2024-03-29) على استبدال نص المادة (14) بنصٍّ ذكرته حرفياً ومحدَّداً بأقواس، فاستُبدل النص كما نُشر — لم يُصَغ ولم يُفسَّر شيء. replacement shares 78% of its wording with the stored article. النص السابق محفوظ في `history` داخل المادة. **حدود ما طُبِّق**: التعديلات الأخرى المرصودة على هذا المسار (إن وُجدت) لا تذكر نص الاستبدال على الصفحة نفسها بل تحيل إلى مرفق أو تكتفي ببيان الأثر، فلم تُطبَّق وتبقى مُفصحاً عنها."
     }
   ],
-  "amendment_history": [],
+  "amendment_history": [
+    {
+      "gazette_date": "2024-03-29",
+      "gazette_url": "https://www.uqn.gov.sa/details?p=24766",
+      "title_ar": "تعديل المادة (14) من اللائحة الداخلية لمجلس القضاء الإداري",
+      "affected_articles": [
+        14
+      ]
+    }
+  ],
   "chapter_structure": [
     {
       "label_ar": "المواد",
@@ -44,8 +53,8 @@
   "max_article_number_in_source": 16,
   "missing_article_numbers": [],
   "status_counts": {
-    "اصلية": 16,
-    "معدلة": 0,
+    "اصلية": 15,
+    "معدلة": 1,
     "ملغاة": 0,
     "مضافة": 0
   },
@@ -239,12 +248,20 @@
       "is_mukarrar": false,
       "title_ar": "",
       "section_ar": "اللائحة الداخلية لمجلس القضاء الإداري",
-      "text": "للمجلس أن يؤلف من أعضائه لجنة أو أكثر لدراسة ما يراه من المواضيع المعروضة على المجلس.",
+      "text": "للمجلس أو لرئيسه أن يؤلف من أعضاء المجلس أو من غيرهم، لجنة أو أكثر لدراسة ما يراه من المواضيع المعروضة على المجلس",
       "status": "MATCHES_UQN_GAZETTE",
-      "legal_status_ar": "اصلية",
-      "structure_status_ar": "اصلية",
+      "legal_status_ar": "معدلة",
+      "structure_status_ar": "معدلة",
       "text_complete": true,
-      "history": []
+      "history": [
+        {
+          "amended_on_gazette_date": "2024-03-29",
+          "gazette_url": "https://www.uqn.gov.sa/details?p=24766",
+          "notice_title_ar": "تعديل المادة (14) من اللائحة الداخلية لمجلس القضاء الإداري",
+          "note": "استُبدل نص هذه المادة بالنص الذي نصّت عليه صفحة الجريدة الرسمية حرفياً. replacement shares 78% of its wording with the stored article. النص السابق محفوظ أدناه للمقابلة.",
+          "previous_text_ar": "للمجلس أن يؤلف من أعضائه لجنة أو أكثر لدراسة ما يراه من المواضيع المعروضة على المجلس."
+        }
+      ]
     },
     "administrative_judicial_council_bylaw_art_015": {
       "number_label_ar": "المادة (الخامسة عشرة)",

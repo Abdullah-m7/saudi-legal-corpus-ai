@@ -89,10 +89,8 @@ def main():
         sc[ls] += 1
         if a.get("structure_status_ar") != ls:
             e.append("[2] %s: structure_status divergence" % k)
-        if ls != "اصلية":
-            e.append("[2] %s: all records must be اصلية" % k)
-        if a.get("history"):
-            e.append("[2] %s: article-level history must be empty" % k)
+        if a.get("history") and a.get("legal_status_ar") != "معدلة":
+            e.append("[2] %s: only an amended article may carry history" % k)
         t = a.get("text", "")
         if not t.strip():
             e.append("[2] %s: empty text" % k)
@@ -117,8 +115,12 @@ def main():
                  r"|(?:الحادي|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع)\s+عشر"
                  r"|العشرون|التمهيدي)\s*:?\s*[^\n]{0,90}$", t):
             e.append("[2f] %s: trailing chapter heading leaked into article text" % k)
-    if sc.get("اصلية", 0) != N_RECORDS:
-        e.append("[2] اصلية count %d != %d" % (sc.get("اصلية", 0), N_RECORDS))
+    # One article was replaced by a published amendment (see the source artifact's
+    # amendment_history and that article's own history), so this track is no longer
+    # all-اصلية. Assert the exact split rather than weakening the check.
+    if sc.get("اصلية", 0) != 15 or sc.get("معدلة", 0) != 1:
+        e.append("[2] status split %d اصلية / %d معدلة, expected 15 / 1"
+                 % (sc.get("اصلية", 0), sc.get("معدلة", 0)))
 
     # [2c] chapter_structure coverage
     cov = set()

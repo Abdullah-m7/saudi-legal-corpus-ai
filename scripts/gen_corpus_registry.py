@@ -10416,7 +10416,7 @@ def main() -> int:
                     "record_count": king_saud_university_statute_llm["record_count"],
                     "data_path": "data/king_saud_university_statute_arabic_legal_llm/king_saud_university_statute_legal_llm_001_022.json"}},
                 "record_counts": {"arabic_articles": king_saud_university_statute_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 22, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "legal_status_breakdown": {"اصلية": 21, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
                                   "total": king_saud_university_statute_llm["record_count"]},
                 "data_paths": [
                     "sources/king_saud_university_statute/official_source/king_saud_university_statute_official_source.json",
@@ -10429,7 +10429,7 @@ def main() -> int:
                 "boundaries": {"arabic_governs": True, "not_official_translation": True,
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
-                "notes": "Statute of King Saud University «النظام الأساس لجامعة الملك سعود» — **22 articles. ALL 22 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H / 2022-09-09. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+                "notes": "Statute of King Saud University «النظام الأساس لجامعة الملك سعود» — **22 articles: 21 اصلية + 1 معدلة (one article replaced by a published amendment)**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 13/2/1444H / 2022-09-09. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "king_faisal_specialist_hospital_statute",
@@ -15085,7 +15085,7 @@ def main() -> int:
                     "record_count": administrative_judicial_council_bylaw_llm["record_count"],
                     "data_path": "data/administrative_judicial_council_bylaw_arabic_legal_llm/administrative_judicial_council_bylaw_legal_llm_001_016.json"}},
                 "record_counts": {"arabic_articles": administrative_judicial_council_bylaw_llm["record_count"],
-                                  "legal_status_breakdown": {"اصلية": 16, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 1, "ملغاة": 0, "مضافة": 0},
                                   "total": administrative_judicial_council_bylaw_llm["record_count"]},
                 "data_paths": [
                     "sources/administrative_judicial_council_bylaw/official_source/administrative_judicial_council_bylaw_official_source.json",
@@ -15098,7 +15098,7 @@ def main() -> int:
                 "boundaries": {"arabic_governs": True, "not_official_translation": True,
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
-                "notes": "Internal Bylaw of the Administrative Judicial Council «اللائحة الداخلية لمجلس القضاء الإداري» — **16 articles. ALL 16 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/11/1442H / 2021-07-02. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+                "notes": "Internal Bylaw of the Administrative Judicial Council «اللائحة الداخلية لمجلس القضاء الإداري» — **16 articles: 15 اصلية + 1 معدلة (one article replaced by a published amendment)**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/11/1442H / 2021-07-02. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "antiquities_inspection_violations_regulation",
