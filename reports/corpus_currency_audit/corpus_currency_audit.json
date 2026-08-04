@@ -1,21 +1,240 @@
 {
  "generated_note": "Currency audit. For every track, every AMENDMENT NOTICE published in the Umm Al-Qura archive after the edition the corpus holds. An amendment notice is not a standalone instrument and is deliberately never ingested as a track (gate G1 drops it); it is evidence ABOUT a track already on file. This report asserts nothing about the amendment's content -- the notice is not the amended text. It names the track, the edition date on file, and the gazette page to go read. Matching is on the notice's SUBJECT: a notice must cover at least MIN_TRACK_COVER of the track title's distinctive words, which is what stops a notice about one authority from matching another that merely shares a word.",
- "gazette_pages_indexed": 9028,
- "amendment_notices_found": 511,
- "tracks_on_file": 569,
- "tracks_with_edition_date": 554,
- "tracks_predating_an_amendment": 42,
+ "gazette_pages_indexed": 8997,
+ "amendment_notices_found": 517,
+ "tracks_on_file": 608,
+ "tracks_with_edition_date": 586,
+ "tracks_predating_an_amendment": 50,
  "match_thresholds": {
   "min_shared_words": 2,
   "min_shorter_title_cover": 0.6,
-  "min_track_title_cover": 0.7
+  "min_track_title_cover": 1.0,
+  "partial_match_cover_floor": 0.7
  },
+ "partial_title_matches_not_flagged_note": "Notices whose subject type matches the track and which postdate its edition, but which do not name every distinctive word of the track's title. They are NOT asserted as findings and no track is warned on their account -- they are recorded so that a match this audit was not certain enough to assert still leaves a trace. Most are a notice about a NEIGHBOURING instrument in the same family; some are the real thing under a shortened name. Adjudicating one means reading the page.",
+ "partial_title_matches_not_flagged": [
+  {
+   "track_id": "baha_strategic_office_statute",
+   "title_ar": "الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الباحة",
+   "edition_on_file": "2022-08-05",
+   "candidates": [
+    {
+     "date": "2023-03-17",
+     "title_cover": 0.8,
+     "url": "https://www.uqn.gov.sa/details?p=21582",
+     "title_ar": "تعديل المادة (الرابعة) من الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الحدود الشمالية"
+    }
+   ]
+  },
+  {
+   "track_id": "board_of_grievances_law",
+   "title_ar": "نظام ديوان المظالم",
+   "edition_on_file": "2007-10-01",
+   "candidates": [
+    {
+     "date": "2022-06-17",
+     "title_cover": 1.0,
+     "url": "https://www.uqn.gov.sa/details?p=19596",
+     "title_ar": "تعديل الفقرة (5) من البند (سابعاً) من آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم"
+    }
+   ]
+  },
+  {
+   "track_id": "building_code_inspection_bodies_regulation",
+   "title_ar": "لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي",
+   "edition_on_file": "2021-05-21",
+   "candidates": [
+    {
+     "date": "2026-05-15",
+     "title_cover": 1.0,
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000964",
+     "title_ar": "اعتماد تعديل لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي"
+    }
+   ]
+  },
+  {
+   "track_id": "building_code_law",
+   "title_ar": "نظام تطبيق كود البناء السعودي",
+   "edition_on_file": "2025-03-12",
+   "candidates": [
+    {
+     "date": "2026-05-15",
+     "title_cover": 0.75,
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000964",
+     "title_ar": "اعتماد تعديل لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي"
+    }
+   ]
+  },
+  {
+   "track_id": "building_code_regulation",
+   "title_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
+   "edition_on_file": "2023-01-30",
+   "candidates": [
+    {
+     "date": "2026-05-15",
+     "title_cover": 0.75,
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000964",
+     "title_ar": "اعتماد تعديل لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي"
+    }
+   ]
+  },
+  {
+   "track_id": "chambers_of_commerce_law",
+   "title_ar": "نظام الغرف التجارية",
+   "edition_on_file": "2020-12-08",
+   "candidates": [
+    {
+     "date": "2026-01-23",
+     "title_cover": 1.0,
+     "url": "https://www.uqn.gov.sa/details?p=28812",
+     "title_ar": "تعديل مادة من لائحة اللجان الوطنية والقطاعية في الغرف التجارية"
+    }
+   ]
+  },
+  {
+   "track_id": "chambers_of_commerce_regulation",
+   "title_ar": "اللائحة التنفيذية لنظام الغرف التجارية",
+   "edition_on_file": "2025-11-03",
+   "candidates": [
+    {
+     "date": "2026-01-23",
+     "title_cover": 1.0,
+     "url": "https://www.uqn.gov.sa/details?p=28812",
+     "title_ar": "تعديل مادة من لائحة اللجان الوطنية والقطاعية في الغرف التجارية"
+    }
+   ]
+  },
+  {
+   "track_id": "hazardous_substances_electrical_equipment_regulation",
+   "title_ar": "اللائحة الفنية للحد من المواد الخطرة في الأجهزة والمعدات الكهربائية والإلكترونية",
+   "edition_on_file": "2021-07-09",
+   "candidates": [
+    {
+     "date": "2022-07-29",
+     "title_cover": 0.86,
+     "url": "https://www.uqn.gov.sa/details?p=19814",
+     "title_ar": "اعتماد تحديث اللائحة الفنية للحد من المواد الخطرة في الأجهزة والمعدات الكهربائية"
+    }
+   ]
+  },
+  {
+   "track_id": "jazan_strategic_office_statute",
+   "title_ar": "الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة جازان",
+   "edition_on_file": "2022-06-25",
+   "candidates": [
+    {
+     "date": "2023-03-17",
+     "title_cover": 0.8,
+     "url": "https://www.uqn.gov.sa/details?p=21582",
+     "title_ar": "تعديل المادة (الرابعة) من الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الحدود الشمالية"
+    }
+   ]
+  },
+  {
+   "track_id": "jouf_strategic_office_statute",
+   "title_ar": "الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الجوف",
+   "edition_on_file": "2022-06-25",
+   "candidates": [
+    {
+     "date": "2023-03-17",
+     "title_cover": 0.8,
+     "url": "https://www.uqn.gov.sa/details?p=21582",
+     "title_ar": "تعديل المادة (الرابعة) من الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الحدود الشمالية"
+    }
+   ]
+  },
+  {
+   "track_id": "judiciary_bog_mechanism",
+   "title_ar": "آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم",
+   "edition_on_file": "2007-10-01",
+   "candidates": [
+    {
+     "date": "2022-06-17",
+     "title_cover": 1.0,
+     "url": "https://www.uqn.gov.sa/details?p=19596",
+     "title_ar": "تعديل الفقرة (5) من البند (سابعاً) من آلية العمل التنفيذية لنظام القضاء ونظام ديوان المظالم"
+    }
+   ]
+  },
+  {
+   "track_id": "light_goods_road_transport_regulation",
+   "title_ar": "اللائحة المنظمة لنشاط النقل الخفيف للبضائع على الطرق",
+   "edition_on_file": "2021-07-30",
+   "candidates": [
+    {
+     "date": "2024-09-27",
+     "title_cover": 0.8,
+     "url": "https://www.uqn.gov.sa/details?p=26540",
+     "title_ar": "تعديل المادة الثانية والعشرين من اللائحة المنظمة لنشاط النقل الخفيف على الطرق"
+    }
+   ]
+  },
+  {
+   "track_id": "regional_tourism_development_councils_statute",
+   "title_ar": "تنظيم مجالس التنمية السياحية في المناطق",
+   "edition_on_file": "2022-04-23",
+   "candidates": [
+    {
+     "date": "2026-01-09",
+     "title_cover": 0.75,
+     "url": "https://www.uqn.gov.sa/details?p=28774",
+     "title_ar": "إلغاء مجلس التنمية السياحي ومجالس التنمية السياحية في المناطق"
+    }
+   ]
+  },
+  {
+   "track_id": "telecommunications_law",
+   "title_ar": "نظام الاتصالات وتقنية المعلومات",
+   "edition_on_file": "2022-06-02",
+   "candidates": [
+    {
+     "date": "2022-11-11",
+     "title_cover": 1.0,
+     "url": "https://www.uqn.gov.sa/details?p=20835",
+     "title_ar": "إنشاء مجلس باسم (المجلس الأعلى للفضاء) وتعديل اسم هيئة الاتصالات وتقنية المعلومات إلى (هيئة الاتصالات والفضاء والتقنية )"
+    }
+   ]
+  },
+  {
+   "track_id": "trademark_law",
+   "title_ar": "قانون (نظام) العلامات التجارية لدول مجلس التعاون لدول الخليج العربية",
+   "edition_on_file": "2014-05-26",
+   "candidates": [
+    {
+     "date": "2024-01-26",
+     "title_cover": 0.75,
+     "url": "https://www.uqn.gov.sa/details?p=24428",
+     "title_ar": "تعديل المادتين (72) و(102) من نظام «قانون» الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية"
+    },
+    {
+     "date": "2023-01-06",
+     "title_cover": 0.75,
+     "url": "https://www.uqn.gov.sa/details?p=21202",
+     "title_ar": "تعديل المادة (61) من نظام (قانون) الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية"
+    },
+    {
+     "date": "2022-03-18",
+     "title_cover": 0.75,
+     "url": "https://www.uqn.gov.sa/details?p=19135",
+     "title_ar": "الموافقة على نظام (قانون) بتعديل بعض أحكام نظام براءات الاختراع لدول مجلس التعاون لدول الخليج العربية المقر من المجلس الأعلى عام 1999م"
+    },
+    {
+     "date": "2021-09-17",
+     "title_cover": 0.75,
+     "url": "https://www.uqn.gov.sa/details?p=18309",
+     "title_ar": "الموافقة على تعديل نظام «قانون» الجمارك الموحد لدول مجلس التعاون لدول الخليج العربية"
+    }
+   ]
+  }
+ ],
  "at_risk": [
   {
-   "track_id": "capital_market",
+   "track_id": "capital_market_law",
    "title_ar": "نظام السوق المالية",
    "edition_on_file": "2003-08-01",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/capital_market/law/official_source/capital_market_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2026-07-10",
@@ -29,6 +248,8 @@
    "title_ar": "الترتيبات التنظيمية لمجلس المخاطر الوطنية",
    "edition_on_file": "2022-04-09",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/national_risk_council_statute/official_source/national_risk_council_statute_official_source.json",
+   "instrument_type": "STATUTE",
    "amendment_notices": [
     {
      "date": "2026-07-03",
@@ -42,11 +263,18 @@
    "title_ar": "الضوابط المنظمة للإجراءات الجمركية",
    "edition_on_file": "2023-12-29",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/customs_procedures_controls/official_source/customs_procedures_controls_official_source.json",
+   "instrument_type": "CONTROLS",
    "amendment_notices": [
     {
      "date": "2026-06-26",
      "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001241",
      "title_ar": "التعديلات الواردة على الضوابط المنظمة للإجراءات الجمركية"
+    },
+    {
+     "date": "2026-06-26",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001240",
+     "title_ar": "الموافقة على تعديل الضوابط المنظمة للإجراءات الجمركية وقواعد مناطق الإيداع"
     },
     {
      "date": "2024-10-25",
@@ -56,10 +284,32 @@
    ]
   },
   {
-   "track_id": "aml",
+   "track_id": "deposit_zones_rules",
+   "title_ar": "قواعد مناطق الإيداع",
+   "edition_on_file": "2024-01-26",
+   "anchor_is_exact_gazette_date": true,
+   "source_artifact": "sources/deposit_zones_rules/official_source/deposit_zones_rules_official_source.json",
+   "instrument_type": "RULES",
+   "amendment_notices": [
+    {
+     "date": "2026-06-26",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001245",
+     "title_ar": "التعديلات الواردة على قواعد مناطق الإيداع"
+    },
+    {
+     "date": "2026-06-26",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001240",
+     "title_ar": "الموافقة على تعديل الضوابط المنظمة للإجراءات الجمركية وقواعد مناطق الإيداع"
+    }
+   ]
+  },
+  {
+   "track_id": "aml_regulation",
    "title_ar": "اللائحة التنفيذية لنظام مكافحة غسل الأموال",
    "edition_on_file": "2026-05-26",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/aml/regulation/official_source/aml_regulation_official_source.json",
+   "instrument_type": "REGULATION",
    "amendment_notices": [
     {
      "date": "2026-06-26",
@@ -74,43 +324,47 @@
    ]
   },
   {
-   "track_id": "deposit_zones_rules",
-   "title_ar": "قواعد مناطق الإيداع",
-   "edition_on_file": "2024-01-26",
-   "anchor_is_exact_gazette_date": true,
+   "track_id": "aml_law",
+   "title_ar": "نظام مكافحة غسل الأموال",
+   "edition_on_file": "2017-11-04",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/aml/law/official_source/aml_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
-     "date": "2026-06-26",
-     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001245",
-     "title_ar": "التعديلات الواردة على قواعد مناطق الإيداع"
+     "date": "2026-04-17",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000747",
+     "title_ar": "تعديل نظام مكافحة غسل الأموال"
     }
    ]
   },
   {
-   "track_id": "associations_ngo",
-   "title_ar": "نظام الجمعيات والمؤسسات الأهلية",
-   "edition_on_file": "2022-02-02",
+   "track_id": "investment_accounts_instructions",
+   "title_ar": "تعليمات الحسابات الاستثمارية",
+   "edition_on_file": "2025-08-16",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/investment_accounts_instructions/official_source/investment_accounts_instructions_official_source.json",
+   "instrument_type": "INSTRUCTIONS",
    "amendment_notices": [
     {
-     "date": "2026-02-06",
-     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000282",
-     "title_ar": "الموافقة على تعديل اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية"
-    },
+     "date": "2026-03-06",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000522",
+     "title_ar": "اعتماد تعديل القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية وتعليمات الحسابات الاستثمارية وتعليمات إصدار شهادات الإيداع خارج المملكة"
+    }
+   ]
+  },
+  {
+   "track_id": "foreign_investment_securities_rules",
+   "title_ar": "القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية",
+   "edition_on_file": "2025-08-16",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/foreign_investment_securities_rules/official_source/foreign_investment_securities_rules_official_source.json",
+   "instrument_type": "RULES",
+   "amendment_notices": [
     {
-     "date": "2026-02-06",
-     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000251",
-     "title_ar": "الموافقة على تعديل قواعد حوكمة الجمعيات والمؤسسات الأهلية"
-    },
-    {
-     "date": "2023-10-27",
-     "url": "https://www.uqn.gov.sa/details?p=23961",
-     "title_ar": "الموافقة على تعديل اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية"
-    },
-    {
-     "date": "2023-02-03",
-     "url": "https://www.uqn.gov.sa/details?p=21361",
-     "title_ar": "الموافقة على تعديل اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية"
+     "date": "2026-03-06",
+     "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000522",
+     "title_ar": "اعتماد تعديل القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية وتعليمات الحسابات الاستثمارية وتعليمات إصدار شهادات الإيداع خارج المملكة"
     }
    ]
   },
@@ -119,6 +373,8 @@
    "title_ar": "القواعد المنظمة لخدمات المحاسبة",
    "edition_on_file": "2022-05-21",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/accounting_services_rules/official_source/accounting_services_rules_official_source.json",
+   "instrument_type": "RULES",
    "amendment_notices": [
     {
      "date": "2026-01-30",
@@ -138,67 +394,12 @@
    ]
   },
   {
-   "track_id": "chambers_of_commerce_regulation",
-   "title_ar": "اللائحة التنفيذية لنظام الغرف التجارية",
-   "edition_on_file": "2025-11-03",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2026-01-23",
-     "url": "https://www.uqn.gov.sa/details?p=28812",
-     "title_ar": "تعديل مادة من لائحة اللجان الوطنية والقطاعية في الغرف التجارية"
-    }
-   ]
-  },
-  {
-   "track_id": "chambers_of_commerce",
-   "title_ar": "نظام الغرف التجارية",
-   "edition_on_file": "2020-12-08",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2026-01-23",
-     "url": "https://www.uqn.gov.sa/details?p=28812",
-     "title_ar": "تعديل مادة من لائحة اللجان الوطنية والقطاعية في الغرف التجارية"
-    }
-   ]
-  },
-  {
-   "track_id": "regional_tourism_development_councils_statute",
-   "title_ar": "تنظيم مجالس التنمية السياحية في المناطق",
-   "edition_on_file": "2022-04-23",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2026-01-09",
-     "url": "https://www.uqn.gov.sa/details?p=28774",
-     "title_ar": "إلغاء مجلس التنمية السياحي ومجالس التنمية السياحية في المناطق"
-    }
-   ]
-  },
-  {
-   "track_id": "contractors_classification_law",
-   "title_ar": "نظام تصنيف المقاولين",
-   "edition_on_file": "2021-08-27",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2025-09-05",
-     "url": "https://www.uqn.gov.sa/details?p=27424",
-     "title_ar": "تعديل اللائحة التنفيذية لنظام تصنيف المقاولين"
-    },
-    {
-     "date": "2024-01-05",
-     "url": "https://www.uqn.gov.sa/details?p=24329",
-     "title_ar": "الموافقة على تعديل اللائحة التنفيذية لنظام تصنيف المقاولين"
-    }
-   ]
-  },
-  {
    "track_id": "saudi_red_sea_authority_statute",
    "title_ar": "تنظيم الهيئة السعودية للبحر الأحمر",
    "edition_on_file": "2023-11-10",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/saudi_red_sea_authority_statute/official_source/saudi_red_sea_authority_statute_official_source.json",
+   "instrument_type": "STATUTE",
    "amendment_notices": [
     {
      "date": "2025-08-22",
@@ -217,6 +418,8 @@
    "title_ar": "تنظيم الهيئة العامة للعقار",
    "edition_on_file": "2025-07-02",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/rega_organizational_statute/law/official_source/rega_organizational_statute_official_source.json",
+   "instrument_type": "STATUTE",
    "amendment_notices": [
     {
      "date": "2025-08-22",
@@ -230,6 +433,8 @@
    "title_ar": "القواعد المنظمة لخدمات محاسبة الزكاة والضريبة",
    "edition_on_file": "2024-10-05",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/zakat_tax_accounting_services_rules/official_source/zakat_tax_accounting_services_rules_official_source.json",
+   "instrument_type": "RULES",
    "amendment_notices": [
     {
      "date": "2025-08-08",
@@ -239,36 +444,12 @@
    ]
   },
   {
-   "track_id": "board_of_grievances",
-   "title_ar": "نظام ديوان المظالم",
-   "edition_on_file": "2007-10-01",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2025-07-25",
-     "url": "https://www.uqn.gov.sa/details?p=27295",
-     "title_ar": "تعديل وحذف في اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم"
-    }
-   ]
-  },
-  {
-   "track_id": "bog_enforcement_law",
-   "title_ar": "نظام التنفيذ أمام ديوان المظالم",
-   "edition_on_file": "2021-09-05",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2025-07-25",
-     "url": "https://www.uqn.gov.sa/details?p=27295",
-     "title_ar": "تعديل وحذف في اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم"
-    }
-   ]
-  },
-  {
    "track_id": "saudi_tourism_authority_statute",
    "title_ar": "تنظيم الهيئة السعودية للسياحة",
    "edition_on_file": "2024-02-23",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/saudi_tourism_authority_statute/official_source/saudi_tourism_authority_statute_official_source.json",
+   "instrument_type": "STATUTE",
    "amendment_notices": [
     {
      "date": "2025-02-28",
@@ -278,28 +459,82 @@
    ]
   },
   {
-   "track_id": "council_of_ministers",
-   "title_ar": "نظام مجلس الوزراء",
-   "edition_on_file": "1993-08-21",
+   "track_id": "taxi_activity_regulation",
+   "title_ar": "اللائحة المنظمة لنشاط الأجرة ووسيط الأجرة والتوجيه",
+   "edition_on_file": "2023-07-28",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/taxi_activity_regulation/official_source/taxi_activity_regulation_official_source.json",
+   "instrument_type": "REGULATION",
    "amendment_notices": [
     {
-     "date": "2024-10-29",
-     "url": "https://www.uqn.gov.sa/details?p=26698",
-     "title_ar": "مجلس الوزراء: الموافقة على تعديل المادة الخامسة من نظام القضاء"
+     "date": "2024-09-27",
+     "url": "https://www.uqn.gov.sa/details?p=26533",
+     "title_ar": "تعديل المادة الثالثة والأربعين من اللائحة المنظمة لنشاط الأجرة ووسيط الأجرة والتوجيه"
+    },
+    {
+     "date": "2023-12-29",
+     "url": "https://www.uqn.gov.sa/details?p=24292",
+     "title_ar": "الموافقة على تعديل اللائحة المنظمة لنشاط الأجرة ووسيط الأجرة والتوجيه"
     }
    ]
   },
   {
-   "track_id": "building_code_regulation",
-   "title_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
-   "edition_on_file": "2023-01-30",
+   "track_id": "international_bus_transport_regulation",
+   "title_ar": "اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات",
+   "edition_on_file": "2023-09-16",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/international_bus_transport_regulation/official_source/international_bus_transport_regulation_official_source.json",
+   "instrument_type": "REGULATION",
    "amendment_notices": [
     {
-     "date": "2024-10-18",
-     "url": "https://www.uqn.gov.sa/details?p=26627",
-     "title_ar": "الموافقة على تعديل المادة التاسعة من نظام تطبيق كود البناء السعودي"
+     "date": "2024-09-27",
+     "url": "https://www.uqn.gov.sa/details?p=26541",
+     "title_ar": "تعديل المادة التاسعة والعشرين من اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات"
+    }
+   ]
+  },
+  {
+   "track_id": "environmental_wildlife_hunting_reg",
+   "title_ar": "اللائحة التنفيذية لصيد الكائنات الفطرية البرية",
+   "edition_on_file": "2021-01-18",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/environmental_wildlife_hunting/official_source/environmental_wildlife_hunting_reg_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-05",
+     "url": "https://www.uqn.gov.sa/details?p=25426",
+     "title_ar": "تعديل الجدول رقم (1): تصنيف المخالفات والعقوبات من اللائحة التنفيذية لصيد الكائنات الفطرية البرية لنظام البيئة"
+    }
+   ]
+  },
+  {
+   "track_id": "environmental_rehabilitation_contaminated_sites_regulation",
+   "title_ar": "اللائحة التنفيذية لإعادة التأهيل البيئي للمواقع المتدهورة ومعالجة المواقع الملوثة",
+   "edition_on_file": "2021-06-25",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/environmental_rehabilitation_contaminated_sites_regulation/official_source/environmental_rehabilitation_contaminated_sites_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-05",
+     "url": "https://www.uqn.gov.sa/details?p=25428",
+     "title_ar": "تعديل الجدول رقم (1): المخالفات والعقوبات من اللائحة التنفيذية لإعادة التأهيل البيئي للمواقع المتدهورة ومعالجة المواقع الملوثة"
+    }
+   ]
+  },
+  {
+   "track_id": "environmental_protected_areas_reg",
+   "title_ar": "اللائحة التنفيذية للمناطق المحمية",
+   "edition_on_file": "2020-07-10",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/environmental_protected_areas/official_source/environmental_protected_areas_reg_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-05",
+     "url": "https://www.uqn.gov.sa/details?p=25438",
+     "title_ar": "تعديل الجدول رقم (1) للمخالفات والعقوبات من اللائحة التنفيذية للمناطق المحمية لنظام البيئة"
     }
    ]
   },
@@ -308,6 +543,8 @@
    "title_ar": "اللائحة التنفيذية لتنمية الغطاء النباتي ومكافحة التصحر",
    "edition_on_file": "2021-06-25",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/vegetation_cover_desertification_regulation/official_source/vegetation_cover_desertification_regulation_official_source.json",
+   "instrument_type": "REGULATION",
    "amendment_notices": [
     {
      "date": "2024-09-05",
@@ -317,43 +554,82 @@
    ]
   },
   {
-   "track_id": "finance_companies",
+   "track_id": "environmental_permits_reg",
+   "title_ar": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة",
+   "edition_on_file": "2021-03-23",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/environmental_permits/official_source/environmental_permits_reg_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-05",
+     "url": "https://www.uqn.gov.sa/details?p=25442",
+     "title_ar": "تعديل الجدول رقم (2) للمخالفات والعقوبات من اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة لنظام البيئة"
+    }
+   ]
+  },
+  {
+   "track_id": "ozone_depleting_substances_regulation",
+   "title_ar": "اللائحة التنفيذية للمواد المستنفدة لطبقة الأوزون ومركبات الكربون الهيدروفلورية",
+   "edition_on_file": "2021-06-25",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/ozone_depleting_substances_regulation/official_source/ozone_depleting_substances_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-05",
+     "url": "https://www.uqn.gov.sa/details?p=25445",
+     "title_ar": "تعديل الجدول رقم (1) للمخالفات والعقوبات من اللائحة التنفيذية للمواد المستنفدة لطبقة الأوزون ومركبات الكربون الهيدروفلورية لنظام البيئة"
+    }
+   ]
+  },
+  {
+   "track_id": "marine_coastal_environment_regulation",
+   "title_ar": "اللائحة التنفيذية لنظام البيئة للإدارة المستدامة للبيئة البحرية والساحلية",
+   "edition_on_file": "2021-09-11",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/marine_coastal_environment_regulation/official_source/marine_coastal_environment_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2024-09-05",
+     "url": "https://www.uqn.gov.sa/details?p=25447",
+     "title_ar": "تعديل الجدول رقم (1) للمخالفات والعقوبات من اللائحة التنفيذية للإدارة المستدامة للبيئة البحرية والساحلية لنظام البيئة"
+    }
+   ]
+  },
+  {
+   "track_id": "finance_companies_law",
    "title_ar": "نظام مراقبة شركات التمويل",
    "edition_on_file": "2012-07-03",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/finance_companies/law/official_source/finance_companies_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2024-06-20",
      "url": "https://www.uqn.gov.sa/details?p=25138",
      "title_ar": "الموافقة على تعديل نظام مراقبة شركات التمويل"
+    },
+    {
+     "date": "2021-10-29",
+     "url": "https://www.uqn.gov.sa/details?p=18494",
+     "title_ar": "تعديل الفقرة (2) من المادة (الخامسة والثلاثين) من نظام مراقبة شركات التمويل"
     }
    ]
   },
   {
-   "track_id": "civil_status",
-   "title_ar": "نظام الأحوال المدنية",
-   "edition_on_file": "2019-07-30",
+   "track_id": "water_electricity_regulatory_authority_statute",
+   "title_ar": "تنظيم هيئة تنظيم المياه والكهرباء",
+   "edition_on_file": "2021-01-08",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/water_electricity_regulatory_authority_statute/official_source/water_electricity_regulatory_authority_statute_official_source.json",
+   "instrument_type": "STATUTE",
    "amendment_notices": [
     {
-     "date": "2024-06-08",
-     "url": "https://www.uqn.gov.sa/details?p=25099",
-     "title_ar": "تعديل المواد (40، 41، 43) من اللائحة التنفيذية لنظام الأحوال المدنية"
-    },
-    {
-     "date": "2024-06-08",
-     "url": "https://www.uqn.gov.sa/details?p=25098",
-     "title_ar": "تعديل مواد من اللائحة التنفيذية لنظام الأحوال المدنية"
-    },
-    {
-     "date": "2024-04-05",
-     "url": "https://www.uqn.gov.sa/details?p=24792",
-     "title_ar": "الموافقة على تعديل نظام الأحوال المدنية"
-    },
-    {
-     "date": "2022-06-10",
-     "url": "https://www.uqn.gov.sa/details?p=19574",
-     "title_ar": "تعديل بعض مواد اللائحة التنفيذية لنظام الأحوال المدنية"
+     "date": "2024-05-17",
+     "url": "https://www.uqn.gov.sa/details?p=24962",
+     "title_ar": "الموافقة على تحويل المؤسسة العامة لتحلية المياه المالحة إلى هيئة وتعديل اسم هيئة تنظيم المياه والكهرباء"
     }
    ]
   },
@@ -362,6 +638,8 @@
    "title_ar": "اللائحة التنفيذية لضريبة التصرفات العقارية",
    "edition_on_file": "2022-08-19",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/real_estate_transaction_tax_regulation/official_source/real_estate_transaction_tax_regulation_official_source.json",
+   "instrument_type": "REGULATION",
    "amendment_notices": [
     {
      "date": "2024-05-03",
@@ -386,41 +664,57 @@
    ]
   },
   {
-   "track_id": "premium_residency_regulation",
-   "title_ar": "اللائحة التنفيذية لنظام الإقامة المميزة",
-   "edition_on_file": "2023-09-04",
+   "track_id": "civil_status_law",
+   "title_ar": "نظام الأحوال المدنية",
+   "edition_on_file": "2019-07-30",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/civil_status/law/official_source/civil_status_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
-     "date": "2024-01-10",
-     "url": "https://www.uqn.gov.sa/details?p=24355",
-     "title_ar": "تعديل نظام الإقامة المميزة"
-    },
-    {
-     "date": "2024-01-10",
-     "url": "https://www.uqn.gov.sa/details?p=24353",
-     "title_ar": "الموافقة على تعديل نظام الإقامة المميزة"
+     "date": "2024-04-05",
+     "url": "https://www.uqn.gov.sa/details?p=24792",
+     "title_ar": "الموافقة على تعديل نظام الأحوال المدنية"
     }
    ]
   },
   {
-   "track_id": "taxi_activity_regulation",
-   "title_ar": "اللائحة المنظمة لنشاط الأجرة ووسيط الأجرة والتوجيه",
-   "edition_on_file": "2023-07-28",
+   "track_id": "criminal_procedure_regulation",
+   "title_ar": "اللائحة التنفيذية لنظام الإجراءات الجزائية",
+   "edition_on_file": "2015-01-12",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/criminal_procedure/regulation/official_source/criminal_procedure_regulation_official_source.json",
+   "instrument_type": "REGULATION",
    "amendment_notices": [
     {
-     "date": "2023-12-29",
-     "url": "https://www.uqn.gov.sa/details?p=24292",
-     "title_ar": "الموافقة على تعديل اللائحة المنظمة لنشاط الأجرة ووسيط الأجرة والتوجيه"
+     "date": "2024-03-15",
+     "url": "https://www.uqn.gov.sa/details?p=24672",
+     "title_ar": "تعديل المادة التاسعة والسبعين بعد المائة من اللائحة التنفيذية لنظام الإجراءات الجزائية"
     }
    ]
   },
   {
-   "track_id": "electronic_transactions",
+   "track_id": "king_faisal_specialist_hospital_statute",
+   "title_ar": "النظام الأساس لمستشفى الملك فيصل التخصصي ومركز الأبحاث",
+   "edition_on_file": "2021-12-25",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/king_faisal_specialist_hospital_statute/official_source/king_faisal_specialist_hospital_statute_official_source.json",
+   "instrument_type": "LAW",
+   "amendment_notices": [
+    {
+     "date": "2023-12-08",
+     "url": "https://www.uqn.gov.sa/details?p=24203",
+     "title_ar": "الموافقة على تعديل الفقرة (1) من المادة السادسة من النظام الأساس لمستشفى الملك فيصل التخصصي ومركز الأبحاث"
+    }
+   ]
+  },
+  {
+   "track_id": "electronic_transactions_law",
    "title_ar": "نظام التعاملات الإلكترونية",
    "edition_on_file": "2007-03-27",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/electronic_transactions/law/official_source/electronic_transactions_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2023-11-03",
@@ -430,10 +724,62 @@
    ]
   },
   {
-   "track_id": "income_tax",
+   "track_id": "patent_law",
+   "title_ar": "نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية",
+   "edition_on_file": "2004-07-17",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/patent/law/official_source/patent_law_official_source.json",
+   "instrument_type": "LAW",
+   "amendment_notices": [
+    {
+     "date": "2023-10-06",
+     "url": "https://www.uqn.gov.sa/details?p=23815",
+     "title_ar": "تعديل نظام براءات الاختراع والتصميمات التخطيطية للدارات المتكاملة والأصناف النباتية والنماذج الصناعية"
+    }
+   ]
+  },
+  {
+   "track_id": "real_estate_units_regulation",
+   "title_ar": "اللائحة التنفيذية لنظام ملكية الوحدات العقارية وفرزها وإدارتها",
+   "edition_on_file": "2020-06-14",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/real_estate_units/implementing_regulation/official_source/real_estate_units_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2023-09-22",
+     "url": "https://www.uqn.gov.sa/details?p=23734",
+     "title_ar": "تعديلان في اللائحة التنفيذية لنظام ملكية الوحدات العقارية وفرزها وإدارتها"
+    }
+   ]
+  },
+  {
+   "track_id": "income_tax_regulation",
    "title_ar": "اللائحة التنفيذية لنظام ضريبة الدخل",
    "edition_on_file": "2023-07-26",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/income_tax/regulation/official_source/income_tax_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2023-09-12",
+     "url": "https://www.uqn.gov.sa/details?p=23668",
+     "title_ar": "تعديل اللائحة التنفيذية لجباية الزكاة ونظام ضريبة الدخل"
+    },
+    {
+     "date": "2023-09-12",
+     "url": "https://www.uqn.gov.sa/details?p=23667",
+     "title_ar": "الموافقة على تعديل اللائحة التنفيذية لجباية الزكاة واللائحة التنفيذية لنظام ضريبة الدخل"
+    }
+   ]
+  },
+  {
+   "track_id": "income_tax_law",
+   "title_ar": "نظام ضريبة الدخل",
+   "edition_on_file": "2004-03-07",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/income_tax/law/official_source/income_tax_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2023-09-12",
@@ -447,6 +793,8 @@
    "title_ar": "تنظيم الهيئة العليا للأمن الصناعي",
    "edition_on_file": "2022-08-05",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/high_industrial_security_authority_statute/official_source/high_industrial_security_authority_statute_official_source.json",
+   "instrument_type": "STATUTE",
    "amendment_notices": [
     {
      "date": "2023-04-17",
@@ -456,16 +804,28 @@
    ]
   },
   {
-   "track_id": "mining_investment",
+   "track_id": "northern_borders_strategic_office_statute",
+   "title_ar": "الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الحدود الشمالية",
+   "edition_on_file": "2023-01-27",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/northern_borders_strategic_office_statute/official_source/northern_borders_strategic_office_statute_official_source.json",
+   "instrument_type": "STATUTE",
+   "amendment_notices": [
+    {
+     "date": "2023-03-17",
+     "url": "https://www.uqn.gov.sa/details?p=21582",
+     "title_ar": "تعديل المادة (الرابعة) من الترتيبات التنظيمية للمكتب الاستراتيجي لتطوير منطقة الحدود الشمالية"
+    }
+   ]
+  },
+  {
+   "track_id": "mining_investment_law",
    "title_ar": "نظام الاستثمار التعديني",
    "edition_on_file": "2020-06-11",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/mining_investment/law/official_source/mining_investment_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
-    {
-     "date": "2023-02-10",
-     "url": "https://www.uqn.gov.sa/details?p=21414",
-     "title_ar": "الموافقة على تعديل اللائحة التنفيذية لنظام الاستثمار التعديني"
-    },
     {
      "date": "2022-09-09",
      "url": "https://www.uqn.gov.sa/details?p=20037",
@@ -474,36 +834,12 @@
    ]
   },
   {
-   "track_id": "nationality",
-   "title_ar": "اللائحة التنفيذية لنظام الجنسية العربية السعودية",
-   "edition_on_file": "2005-04-18",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2023-01-13",
-     "url": "https://www.uqn.gov.sa/details?p=21249",
-     "title_ar": "تعديل المادة (8) من نظام الجنسية العربية السعودية"
-    }
-   ]
-  },
-  {
-   "track_id": "copyright",
-   "title_ar": "نظام حماية حقوق المؤلف",
-   "edition_on_file": "2003-08-30",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2022-08-05",
-     "url": "https://www.uqn.gov.sa/details?p=19858",
-     "title_ar": "الموافقة على تعديل اللائحة التنفيذية لنظام حماية حقوق المؤلف"
-    }
-   ]
-  },
-  {
-   "track_id": "documentation_settlement",
+   "track_id": "documentation_settlement_regulation",
    "title_ar": "تنظيم مركز الاسناد والتصفية",
    "edition_on_file": "2019-03-26",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/documentation_settlement/regulation/official_source/documentation_settlement_regulation_official_source.json",
+   "instrument_type": "STATUTE",
    "amendment_notices": [
     {
      "date": "2022-07-22",
@@ -513,10 +849,32 @@
    ]
   },
   {
-   "track_id": "state_revenue",
+   "track_id": "dry_gas_lpg_distribution_law",
+   "title_ar": "نظام توزيع الغاز الجاف وغاز البترول السائل للأغراض السكنية والتجارية",
+   "edition_on_file": "2022-06-09",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/dry_gas_lpg_distribution_law/law/official_source/dry_gas_lpg_distribution_law_official_source.json",
+   "instrument_type": "LAW",
+   "amendment_notices": [
+    {
+     "date": "2022-07-22",
+     "url": "https://www.uqn.gov.sa/details?p=19766",
+     "title_ar": "تعديلات نظام توزيع الغاز الجاف وغاز البترول السائل للأغراض السكنية والتجارية"
+    },
+    {
+     "date": "2022-07-22",
+     "url": "https://www.uqn.gov.sa/details?p=19762",
+     "title_ar": "الموافقة على تعديلات نظام توزيع الغاز الجاف وغاز البترول السائل للأغراض السكنية والتجارية"
+    }
+   ]
+  },
+  {
+   "track_id": "state_revenue_law",
    "title_ar": "نظام إيرادات الدولة",
    "edition_on_file": "2010-10-26",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/state_revenue/law/official_source/state_revenue_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2022-05-13",
@@ -526,59 +884,27 @@
    ]
   },
   {
-   "track_id": "state_revenue_regulation",
-   "title_ar": "اللائحة التنفيذية لنظام إيرادات الدولة",
-   "edition_on_file": "2011-02-17",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2022-05-13",
-     "url": "https://www.uqn.gov.sa/details?p=19417",
-     "title_ar": "تعديل نظام إيرادات الدولة"
-    }
-   ]
-  },
-  {
-   "track_id": "sharia_procedure",
+   "track_id": "sharia_procedure_regulation",
    "title_ar": "اللائحة التنفيذية لنظام المرافعات الشرعية",
    "edition_on_file": "2014-03-21",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/sharia_procedure/regulation/official_source/sharia_procedure_regulation_official_source.json",
+   "instrument_type": "REGULATION",
    "amendment_notices": [
     {
      "date": "2022-03-25",
      "url": "https://www.uqn.gov.sa/details?p=19182",
      "title_ar": "تعديل بعض مواد اللائحة التنفيذية لنظام المرافعات الشرعية"
-    },
-    {
-     "date": "2021-07-02",
-     "url": "https://www.uqn.gov.sa/details?p=17888",
-     "title_ar": "تعديل نظام المرافعات الشرعية"
-    },
-    {
-     "date": "2021-04-30",
-     "url": "https://www.uqn.gov.sa/details?p=17542",
-     "title_ar": "تعديل المادة (الخامسة والستين) من نظام المرافعات الشرعية"
     }
    ]
   },
   {
-   "track_id": "protection_from_abuse_regulation",
-   "title_ar": "اللائحة التنفيذية لنظام الحماية من الإيذاء",
-   "edition_on_file": "2018-12-29",
-   "anchor_is_exact_gazette_date": false,
-   "amendment_notices": [
-    {
-     "date": "2022-03-18",
-     "url": "https://www.uqn.gov.sa/details?p=19143",
-     "title_ar": "تعديل نظامي الحماية من الإيذاء وحماية الطفل"
-    }
-   ]
-  },
-  {
-   "track_id": "sama",
+   "track_id": "sama_law",
    "title_ar": "نظام البنك المركزي السعودي",
    "edition_on_file": "2020-11-27",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/sama/law/official_source/sama_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2022-03-11",
@@ -588,10 +914,12 @@
    ]
   },
   {
-   "track_id": "anti_bribery",
+   "track_id": "anti_bribery_law",
    "title_ar": "نظام مكافحة الرشوة",
    "edition_on_file": "1992-06-30",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/anti_bribery/law/official_source/anti_bribery_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2021-12-10",
@@ -601,10 +929,12 @@
    ]
   },
   {
-   "track_id": "criminal_procedure",
-   "title_ar": "اللائحة التنفيذية لنظام الإجراءات الجزائية",
-   "edition_on_file": "2015-01-12",
+   "track_id": "criminal_procedure_law",
+   "title_ar": "نظام الإجراءات الجزائية",
+   "edition_on_file": "2013-11-26",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/criminal_procedure/law/official_source/criminal_procedure_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2021-11-19",
@@ -614,10 +944,27 @@
    ]
   },
   {
-   "track_id": "insurance_control",
+   "track_id": "einvoicing_regulation",
+   "title_ar": "لائحة الفوترة الإلكترونية",
+   "edition_on_file": "2020-11-20",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/einvoicing_regulation/law/official_source/einvoicing_regulation_official_source.json",
+   "instrument_type": "REGULATION",
+   "amendment_notices": [
+    {
+     "date": "2021-11-12",
+     "url": "https://www.uqn.gov.sa/details?p=18579",
+     "title_ar": "التعديلات على اللائحة التنفيذية لضريبة القيمة المضافة للموائمة مع متطلبات تطبيق أحكام لائحة الفوترة الإلكترونية"
+    }
+   ]
+  },
+  {
+   "track_id": "insurance_control_law",
    "title_ar": "نظام مراقبة شركات التأمين التعاوني",
    "edition_on_file": "2003-08-01",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/insurance_control/law/official_source/insurance_control_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
      "date": "2021-09-10",
@@ -632,11 +979,33 @@
    ]
   },
   {
-   "track_id": "anti_fraud",
+   "track_id": "sulook_regulation",
+   "title_ar": "قواعد السلوك المهني للمحامين",
+   "edition_on_file": "2021-08-03",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/sulook/regulation/official_source/sulook_regulation_official_source.json",
+   "instrument_type": "RULES",
+   "amendment_notices": [
+    {
+     "date": "2021-09-03",
+     "url": "https://www.uqn.gov.sa/details?p=18233",
+     "title_ar": "الموافقة على قواعد السلوك المهني للمحامين وتعديل اللائحة التنفيذية لنظام المحاماة"
+    }
+   ]
+  },
+  {
+   "track_id": "anti_fraud_law",
    "title_ar": "نظام مكافحة الغش التجاري",
    "edition_on_file": "2008-04-30",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/anti_fraud/law/official_source/anti_fraud_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
+    {
+     "date": "2021-08-13",
+     "url": "https://www.uqn.gov.sa/details?p=18118",
+     "title_ar": "الموافقة على تعديل المادة (الثالثة والعشرين) من نظام مكافحة الغش التجاري"
+    },
     {
      "date": "2021-04-30",
      "url": "https://www.uqn.gov.sa/details?p=17536",
@@ -645,15 +1014,62 @@
    ]
   },
   {
-   "track_id": "anti_fraud_regulation",
-   "title_ar": "اللائحة التنفيذية لنظام مكافحة الغش التجاري",
-   "edition_on_file": "2009-12-23",
+   "track_id": "sharia_procedure_law",
+   "title_ar": "نظام المرافعات الشرعية",
+   "edition_on_file": "2013-11-26",
    "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/sharia_procedure/law/official_source/sharia_procedure_law_official_source.json",
+   "instrument_type": "LAW",
    "amendment_notices": [
     {
+     "date": "2021-07-02",
+     "url": "https://www.uqn.gov.sa/details?p=17888",
+     "title_ar": "تعديل نظام المرافعات الشرعية"
+    },
+    {
+     "date": "2021-06-11",
+     "url": "https://www.uqn.gov.sa/details?p=17763",
+     "title_ar": "تعديل الفقرة (ب) من المادة (التاسعة والستين بعد المائة) من نظام المرافعات الشرعية"
+    },
+    {
      "date": "2021-04-30",
-     "url": "https://www.uqn.gov.sa/details?p=17536",
-     "title_ar": "تعديل المادة (الخامسة) من نظام مكافحة الغش التجاري"
+     "url": "https://www.uqn.gov.sa/details?p=17542",
+     "title_ar": "تعديل المادة (الخامسة والستين) من نظام المرافعات الشرعية"
+    }
+   ]
+  },
+  {
+   "track_id": "social_insurance_legacy_law",
+   "title_ar": "نظام التأمينات الاجتماعية",
+   "edition_on_file": "2000-11-30",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/social_insurance_legacy/law/official_source/social_insurance_legacy_law_official_source.json",
+   "instrument_type": "LAW",
+   "amendment_notices": [
+    {
+     "date": "2021-03-19",
+     "url": "https://www.uqn.gov.sa/details?p=17102",
+     "title_ar": "تعديل نظام التأمينات الاجتماعية الصادر بالمرسوم الملكي رقم (م/33) وتاريخ 1421/9/3هـ"
+    },
+    {
+     "date": "2021-02-12",
+     "url": "https://www.uqn.gov.sa/details?p=17193",
+     "title_ar": "تعديل الفقرتين (1) و (2) من المادة العاشرة من نظام التأمينات الاجتماعية"
+    }
+   ]
+  },
+  {
+   "track_id": "anti_narcotics_law",
+   "title_ar": "نظام مكافحة المخدرات والمؤثرات العقلية",
+   "edition_on_file": "2005-08-13",
+   "anchor_is_exact_gazette_date": false,
+   "source_artifact": "sources/anti_narcotics/law/official_source/anti_narcotics_law_official_source.json",
+   "instrument_type": "LAW",
+   "amendment_notices": [
+    {
+     "date": "2021-03-05",
+     "url": "https://www.uqn.gov.sa/details?p=17123",
+     "title_ar": "تنويه: إضافة مادة من المواد المخدرة والمؤثرات العقلية والسلائف الكيميائية إلى نظام مكافحة المخدرات والمؤثرات العقلية التي سبق نشرها في العدد (4852)"
     }
    ]
   }

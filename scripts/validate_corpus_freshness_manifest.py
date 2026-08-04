@@ -30,7 +30,14 @@ Checks:
       a different, non-portal-drift concern) unless it too has a genuinely documented
       staleness discrepancy.
   7.  known_source_staleness_risk_count / known_source_staleness_risk_tracks in the output
-      match a fresh recount of the tracks[] array.
+      match a fresh recount of the tracks[] array; the same for the
+      published_amendment_after_edition_* counters; `published_amendment_after_edition_on_file`
+      is true exactly when a non-empty `published_amendment_pointer` is present; and every
+      track the manifest flags is ALSO flagged by reports/corpus_currency_audit and discloses
+      the warning in its own known_unresolved_discrepancies. That last check is the point of
+      the field: the same fact is recorded in three independent places, and the corpus must
+      not be able to say in one place that a text may be superseded while saying nothing
+      about it in another.
   8.  Generator idempotency: re-running scripts/gen_corpus_freshness_manifest.py reproduces
       byte-identical output twice in a row (deterministic, no network calls, no
       datetime.now() fabrication).
@@ -59,6 +66,8 @@ REQUIRED_TOP_FIELDS = [
     "schema_version", "generated_by", "source_registry", "source_verification_tiers",
     "read_only_derived_layer", "network_access", "total_tracks",
     "known_source_staleness_risk_count", "known_source_staleness_risk_tracks",
+    "published_amendment_methodology", "published_amendment_after_edition_count",
+    "published_amendment_after_edition_tracks",
     "tracks_without_resolvable_official_source_file", "tracks",
 ]
 
@@ -76,6 +85,8 @@ REQUIRED_TRACK_ENTRY_FIELDS = {
     "last_verified_context": str,
     "known_source_staleness_risk": bool,
     "known_source_staleness_pointer": str,
+    "published_amendment_after_edition_on_file": bool,
+    "published_amendment_pointer": str,
 }
 
 # Spot-check expectations (see task rationale / gen_corpus_freshness_manifest.py docstring,
@@ -232,6 +243,66 @@ def main() -> int:
     check("[7b] known_source_staleness_risk_tracks matches a fresh recount...",
           declared_tracks == recount_flagged,
           f"declared={declared_tracks} recount={recount_flagged}")
+
+    # [7d-f] The published-amendment signal: pointer consistency, a fresh recount, and
+    #        agreement with the two independent places the same fact is recorded — the audit
+    #        report and each flagged track's own known_unresolved_discrepancies. A manifest
+    #        that flagged a track the track itself does not disclose would be the corpus
+    #        contradicting itself about whether its own text may be out of date.
+    amend_true_no_pointer = [
+        t["track_id"] for t in tracks
+        if t.get("published_amendment_after_edition_on_file") is True
+        and not str(t.get("published_amendment_pointer", "")).strip()
+    ]
+    amend_false_with_pointer = [
+        t["track_id"] for t in tracks
+        if t.get("published_amendment_after_edition_on_file") is False
+        and str(t.get("published_amendment_pointer", "")).strip()
+    ]
+    check("[7d] published_amendment_after_edition_on_file=true implies a non-empty pointer, "
+          "and false implies an empty one...",
+          not amend_true_no_pointer and not amend_false_with_pointer,
+          "Consistent" if not (amend_true_no_pointer or amend_false_with_pointer)
+          else f"true-without-pointer={amend_true_no_pointer} "
+               f"false-with-pointer={amend_false_with_pointer}")
+
+    recount_amend = sorted(t["track_id"] for t in tracks
+                           if t.get("published_amendment_after_edition_on_file") is True)
+    check("[7e] published_amendment_after_edition_count/_tracks match a fresh recount...",
+          out.get("published_amendment_after_edition_count") == len(recount_amend)
+          and sorted(out.get("published_amendment_after_edition_tracks", [])) == recount_amend,
+          f"declared={out.get('published_amendment_after_edition_count')} "
+          f"recount={len(recount_amend)}")
+
+    audit_path = os.path.join(ROOT, "reports", "corpus_currency_audit",
+                              "corpus_currency_audit.json")
+    if os.path.isfile(audit_path):
+        with open(audit_path, "r", encoding="utf-8") as f:
+            audit = json.load(f)
+        flagged_artifacts = {e["source_artifact"] for e in audit.get("at_risk", [])
+                             if e.get("source_artifact")}
+        undisclosed = []
+        for t in tracks:
+            if not t.get("published_amendment_after_edition_on_file"):
+                continue
+            src = t.get("official_source_file")
+            if not src or src not in flagged_artifacts:
+                undisclosed.append(t["track_id"] + " (not in the audit report)")
+                continue
+            full = os.path.join(ROOT, src)
+            if not os.path.isfile(full):
+                undisclosed.append(t["track_id"] + " (source artifact missing)")
+                continue
+            with open(full, "r", encoding="utf-8") as f:
+                obj = json.load(f)
+            keys = [d.get("article_key", "")
+                    for d in obj.get("known_unresolved_discrepancies") or []]
+            if not any(k.endswith("_amended_after_edition_on_file") for k in keys):
+                undisclosed.append(t["track_id"] + " (track does not disclose it)")
+        check("[7f] every manifest-flagged track is flagged by the audit report AND discloses "
+              "the warning in its own known_unresolved_discrepancies...",
+              len(undisclosed) == 0,
+              "All three agree" if not undisclosed else f"Disagreement on: {undisclosed}")
 
     recount_no_source = sorted(t["track_id"] for t in tracks if t.get("official_source_file") is None)
     declared_no_source = sorted(out.get("tracks_without_resolvable_official_source_file", []))

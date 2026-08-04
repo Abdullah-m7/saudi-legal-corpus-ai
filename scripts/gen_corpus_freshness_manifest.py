@@ -83,6 +83,9 @@ TIERS_PATH = os.path.join(ROOT, "data", "corpus_verification_tiers", "corpus_ver
 OUT_DIR = os.path.join(ROOT, "data", "corpus_freshness_manifest")
 OUT_PATH = os.path.join(OUT_DIR, "corpus_freshness_manifest.json")
 
+CURRENCY_AUDIT_PATH = os.path.join(
+    ROOT, "reports", "corpus_currency_audit", "corpus_currency_audit.json")
+
 sys.path.insert(0, SCRIPTS_DIR)
 from validate_corpus_registry import REQUIRED_TRACK_IDS  # noqa: E402
 
@@ -114,6 +117,48 @@ KNOWN_AUTHORITY_DOMAINS = [
     "qadha.org.sa",
     "qanoonsa.com",
 ]
+
+# --- published-amendment signal ------------------------------------------------------------
+# This is NOT the same claim as known_source_staleness_risk, and the two must not be merged.
+#
+#   known_source_staleness_risk  answers "was the PORTAL we read showing outdated text at build
+#                                time?" It is evidence about our READING of the source, and it
+#                                is established by the track's own documented investigation.
+#   published_amendment_after_edition_on_file  answers "has Umm Al-Qura published an amendment
+#                                to this instrument SINCE the edition we hold?" It is evidence
+#                                about the LAW moving on after a correct reading, and it is
+#                                established by scripts/audit_corpus_currency.py matching dated
+#                                amendment notices against each track's edition anchor.
+#
+# A track can be either, both, or neither. Reading a portal correctly does not stop the law from
+# changing the next week, and an amendment notice says nothing about whether the portal was
+# stale when we read it. Collapsing them would let a clean portal read imply currency.
+def load_currency_audit() -> dict:
+    """{repo-relative official_source path: audit entry}. Empty when the audit has not been
+    run — the manifest then reports the signal as absent rather than as false, which is the
+    honest reading of "we did not check"."""
+    if not os.path.isfile(CURRENCY_AUDIT_PATH):
+        return {}
+    with open(CURRENCY_AUDIT_PATH, "r", encoding="utf-8") as f:
+        rep = json.load(f)
+    return {e["source_artifact"]: e for e in rep.get("at_risk", []) if e.get("source_artifact")}
+
+
+def amendment_pointer(entry: dict) -> str:
+    """One line naming the edition held and the latest notice that postdates it, with its URL.
+    Says nothing about what the amendment CONTAINS: the notice is not the amended text."""
+    notices = entry.get("amendment_notices") or []
+    latest = notices[0] if notices else {}
+    return (
+        "edition on file %s%s; %d amendment notice(s) published later in Umm Al-Qura, most "
+        "recently %s \u2014 %s (%s). The notice is not the amended text: nothing here asserts "
+        "what the amendment says, only that the stored text may no longer be current."
+        % (entry.get("edition_on_file", "?"),
+           "" if entry.get("anchor_is_exact_gazette_date") else " (converted from Hijri)",
+           len(notices), latest.get("date", "?"), latest.get("title_ar", "?"),
+           latest.get("url", "?"))
+    )
+
 
 URL_RE = re.compile(r"https?://[^\s\"'<>\)\]]+")
 # Strip trailing ASCII punctuation plus Arabic comma (،), Arabic semicolon (؛), and Arabic
@@ -343,7 +388,7 @@ def build_last_verified_context(text: str, source_obj: dict | None, staleness_ri
     return "; ".join(parts)
 
 
-def build_entry(track: dict, tier_entry: dict | None) -> dict:
+def build_entry(track: dict, tier_entry: dict | None, currency: dict) -> dict:
     track_id = track["track_id"]
     data_paths = track.get("data_paths", [])
     official_source_path = resolve_official_source_path(track_id, data_paths)
@@ -367,6 +412,7 @@ def build_entry(track: dict, tier_entry: dict | None) -> dict:
     named_authorities = extract_named_authorities(joined_text)
     staleness_risk, staleness_pointer = detect_staleness_risk(source_obj)
     last_verified_context = build_last_verified_context(joined_text, source_obj, staleness_risk)
+    amend_entry = currency.get(official_source_path) if official_source_path else None
 
     return {
         "track_id": track_id,
@@ -382,6 +428,8 @@ def build_entry(track: dict, tier_entry: dict | None) -> dict:
         "last_verified_context": last_verified_context,
         "known_source_staleness_risk": staleness_risk,
         "known_source_staleness_pointer": staleness_pointer,
+        "published_amendment_after_edition_on_file": bool(amend_entry),
+        "published_amendment_pointer": amendment_pointer(amend_entry) if amend_entry else "",
     }
 
 
@@ -398,6 +446,7 @@ def main() -> int:
     with open(TIERS_PATH, "r", encoding="utf-8") as f:
         tiers = json.load(f)
 
+    currency = load_currency_audit()
     tiers_by_id = {t["track_id"]: t for t in tiers.get("tracks", [])}
     tracks_by_id = {t["track_id"]: t for t in registry.get("tracks", [])}
 
@@ -409,11 +458,13 @@ def main() -> int:
                 f"gen_corpus_freshness_manifest: track '{track_id}' from REQUIRED_TRACK_IDS "
                 f"not found in corpus_registry.json."
             )
-        entries.append(build_entry(track, tiers_by_id.get(track_id)))
+        entries.append(build_entry(track, tiers_by_id.get(track_id), currency))
 
     entries.sort(key=lambda e: e["track_id"])
 
     staleness_flagged = [e["track_id"] for e in entries if e["known_source_staleness_risk"]]
+    amendment_flagged = [e["track_id"] for e in entries
+                         if e["published_amendment_after_edition_on_file"]]
     no_official_source_file = [e["track_id"] for e in entries if e["official_source_file"] is None]
 
     out = {
@@ -447,9 +498,24 @@ def main() -> int:
             "INSTITUTIONAL/MINISTRY NAME permanently baked into old statute wording (a "
             "different, non-monitorable concern; re-checking the portal will not resolve it)."
         ),
+        "published_amendment_methodology": (
+            "published_amendment_after_edition_on_file=true where "
+            "scripts/audit_corpus_currency.py matched a DATED amendment notice in the Umm "
+            "Al-Qura archive whose subject is this instrument and whose publication date is "
+            "later than the edition anchor recorded in the track's own source artifact. This "
+            "is a DIFFERENT claim from known_source_staleness_risk: staleness risk is about "
+            "the portal we read having shown outdated text, this is about the law having been "
+            "amended after a correct reading. Neither implies the other, and a track flagged "
+            "here has NOT had any article altered on the notice's authority — an amendment "
+            "notice is not the amended text, so applying it would be drafting rather than "
+            "ingestion. Every flagged track also carries the same warning, with the full "
+            "notice list, in its own known_unresolved_discrepancies."
+        ),
         "total_tracks": len(entries),
         "known_source_staleness_risk_count": len(staleness_flagged),
         "known_source_staleness_risk_tracks": staleness_flagged,
+        "published_amendment_after_edition_count": len(amendment_flagged),
+        "published_amendment_after_edition_tracks": amendment_flagged,
         "tracks_without_resolvable_official_source_file": no_official_source_file,
         "tracks": entries,
     }
@@ -462,6 +528,7 @@ def main() -> int:
     print(f"Wrote {OUT_PATH}")
     print(f"Total tracks: {len(entries)}")
     print(f"known_source_staleness_risk=true: {len(staleness_flagged)} -> {staleness_flagged}")
+    print(f"published_amendment_after_edition_on_file=true: {len(amendment_flagged)}")
     if no_official_source_file:
         print(f"Tracks with no resolvable official_source file (registry-only fields used): "
               f"{no_official_source_file}")

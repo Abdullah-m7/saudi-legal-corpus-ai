@@ -6979,5 +6979,11 @@
    "PDF text layer is glyph-mangled (presentation-form glyphs; many lines stored in reversed word/char order). Per pipeline spec the PDF capture used a 300dpi render + tesseract-ara OCR as the primary channel and a reversal-folded text-layer channel as secondary; pdf_similarity = max(OCR, text-layer).",
    "90 of 243 articles are non-original: 75 repealed (ملغاة), 14 amended (معدلة), 1 added (مضافة, the 224-مكرر). The consolidated PDF RETAINS the body text of repealed/amended articles and only annotates the heading (e.g. \"المادة الخامسة والثلاثون |ملغاة\"); the PDF contains exactly 75 \"ملغاة\" markers, matching the 75 repealed API articles exactly. Consequently repealed/amended articles still MATCH_PDF (text verbatim-identical); their non-original STATUS is captured in legal_status_ar + amended_articles + per-article history (with decree numbers/dates). Chapter 9 (باب التاسع, إجراءات الإثبات) was repealed in full and removed from the current API structure, but its \"ملغي\"-marked heading still prints in the PDF."
   ]
- }
+ },
+ "known_unresolved_discrepancies": [
+  {
+   "article_key": "sharia_procedure_law_amended_after_edition_on_file",
+   "description": "**تنبيه سريان**: النسخة المُستوعبة هنا منشورة بتاريخ 2013-11-26، وقد رصد تدقيق السريان (scripts/audit_corpus_currency.py) 3 إشعارات تعديل في أرشيف جريدة أم القرى **بعد** هذا التاريخ، يحمل عنوانه اسم هذه الأداة بكل كلماته المميِّزة ونوعها ذاته (نظام): 2021-07-02 — تعديل نظام المرافعات الشرعية (https://www.uqn.gov.sa/details?p=17888)؛ 2021-06-11 — تعديل الفقرة (ب) من المادة (التاسعة والستين بعد المائة) من نظام المرافعات الشرعية (https://www.uqn.gov.sa/details?p=17763)؛ 2021-04-30 — تعديل المادة (الخامسة والستين) من نظام المرافعات الشرعية (https://www.uqn.gov.sa/details?p=17542). **الإشعار ليس نص التعديل**، ولذلك لا يُدَّعى هنا شيء عن مضمونه ولم يُعدَّل نص أي مادة استناداً إليه. والمطابقة على العنوان لا على المتن، وقد يَرِد اسم أداة داخل عنوانٍ موضوعُه أداة مجاورة، فالصفحة الرسمية المذكورة هي الفيصل. المُفصَح عنه هو أن نص هذا المسار **قد لا يكون محدَّثاً**. يُرفع هذا التنبيه فقط عند استيعاب النص المعدَّل من مصدر رسمي. (تاريخ الطبعة أعلاه محسوب من التاريخ الهجري المُثبَت في المصدر، لا مقروءاً من ترويسة الجريدة؛ وقد اشتُرط فارق ثلاثين يوماً على الأقل حتى لا يُنتج خطأ التحويل تنبيهاً كاذباً.)"
+  }
+ ]
 }

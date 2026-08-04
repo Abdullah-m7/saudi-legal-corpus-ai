@@ -69,7 +69,24 @@ NUMBERED_DECISION_RE = re.compile(r"قرار\s+[^\n]{0,40}?رقم\s*\(?\s*[0-9\u
 # يوافق على تعديل نظام المقيمين المعتمدين». The amendment is to the OTHER
 # instrument named in the sentence; the body only approved it. Without this the
 # Law of the Council of Ministers collected every approval the Council ever made.
-ACTOR_HEADLINE_RE = re.compile(r"(يوافق\s+على|برئاسة|:\s*تعديل|\.\.)")
+#
+# The double dot is the Arabic headline separator, and it must be matched as a
+# separator only: two dots with more text after them. A bare `\.\.` also matches
+# the trailing ellipsis the archive's CMS leaves when it cuts a title at 70
+# characters, and that silently excluded 185 genuine amendment notices — every
+# one of them a real notice whose title was merely too long to fit. The three
+# alternatives above already catch every actual headline in the archive, so the
+# separator earns its place only in its precise form.
+ACTOR_HEADLINE_RE = re.compile(r"(يوافق\s+على|برئاسة|:\s*تعديل|\.\.(?=\s*[^\s.]))")
+
+# The same construction with the actor in front and a colon after it: «مجلس الوزراء:
+# الموافقة على تعديل المادة الخامسة من نظام القضاء» is a Council decision about the
+# JUDICIARY Law, but it names the Council in full, so it covered every distinctive word of
+# «نظام مجلس الوزراء» and reported that law as superseded. The prefix must actually NAME A
+# BODY: «تعديل الجدول رقم (1): تصنيف المخالفات والعقوبات من اللائحة التنفيذية لصيد الكائنات
+# الفطرية» also carries a colon, and it is a genuine amendment notice.
+ACTOR_COLON_RE = re.compile(
+    r"^[^:\n]{0,40}?(مجلس|وزارة|هيئة|الهيئة|اللجنة|أمانة|الأمانة|ديوان)[^:\n]{0,20}:\s")
 
 MIN_SHARED = 2          # a match needs at least this many discriminating words
 MIN_RATIO = 0.60        # ...covering this share of the shorter title
@@ -78,7 +95,85 @@ MIN_RATIO = 0.60        # ...covering this share of the shorter title
 # any track whose title happens to contain «الهيئة السعودية», and a notice about
 # «المؤسسة العامة للصناعات العسكرية» matches «المؤسسة العامة للري». The subject
 # of the notice has to be the track, not merely overlap with it.
-MIN_TRACK_COVER = 0.70
+MIN_TRACK_COVER = 1.00
+# ...below which a match is recorded as a lead rather than asserted as a finding.
+PARTIAL_COVER = 0.70
+
+# --- instrument type ----------------------------------------------------------------------
+# The type words above are stopped because they appear in nearly every title, but "common"
+# is not "irrelevant": the type word is exactly what separates an instrument from its own
+# implementing regulation. «تعديل اللائحة التنفيذية لنظام تصنيف المقاولين» amends the
+# REGULATION, and once «لائحة»، «التنفيذية» and «نظام» are stopped it covers 100% of the
+# distinctive words of the LAW «نظام تصنيف المقاولين» — so the law was being reported stale
+# on the strength of a notice that never touched it. Five families were wrong this way: the
+# NGO Law, both Chambers of Commerce tracks, the Building Code Law and the Board of
+# Grievances Law.
+#
+# So the type is matched, while still being kept out of the word-overlap ratio where it would
+# inflate every score.
+TYPE_WORDS = [
+    ("REGULATION", ("اللائحه", "لائحه", "اللوائح")),
+    ("RULES", ("القواعد", "قواعد")),
+    ("INSTRUCTIONS", ("تعليمات", "التعليمات")),
+    ("CONTROLS", ("الضوابط", "ضوابط")),
+    ("STATUTE", ("تنظيم", "التنظيم", "الترتيبات")),
+    ("LAW", ("نظام", "النظام", "لنظام", "بنظام", "نظامي", "نظامين", "انظمه", "الانظمه")),
+]
+_TYPE_OF = {w: t for t, ws in TYPE_WORDS for w in ws}
+
+
+def instrument_type(title):
+    """The type of the instrument a TRACK title names, or None.
+
+    The first type word wins: «اللائحة التنفيذية لنظام الجمعيات» is a REGULATION that happens
+    to name the law it implements."""
+    for w in norm_ar(title).split():
+        t = _TYPE_OF.get(w)
+        if t:
+            return t
+    return None
+
+
+def notice_subject_types(title):
+    """The set of instrument types a NOTICE takes as its subject.
+
+    A notice can genuinely have more than one subject, but only through coordination:
+    «تعديل الضوابط المنظمة للإجراءات الجمركية وقواعد مناطق الإيداع» amends both the Controls
+    and the Rules. A type word reached through a preposition instead — the «لنظام» in
+    «اللائحة التنفيذية لنظام تصنيف المقاولين» — is naming which regulation is meant, not
+    adding a second subject. So the head type counts, and after it only a type word carried
+    by a coordinating «و»."""
+    words = norm_ar(title).split()
+    out, head, genitive = set(), False, False
+    for w in words:
+        coordinated = w.startswith("و") and w[1:] in _TYPE_OF
+        base = w[1:] if coordinated else w
+        t = _TYPE_OF.get(base)
+        if not t:
+            continue
+        if not head:
+            head = True
+            # A type word reached through a genitive linker is never the subject: «آلية
+            # العمل التنفيذية لنظام القضاء ونظام ديوان المظالم» amends the MECHANISM, and
+            # the two laws it names are what the mechanism is FOR. The subject there is an
+            # untyped noun, so the notice classifies as type-less and becomes a lead rather
+            # than a finding.
+            if w.startswith(("ل", "ب")):
+                genitive = True
+                continue
+            out.add(t)
+            # «لنظام», «بنظام» — the head instrument was reached through a genitive linker,
+            # so the title is already inside an "of the ..." phrase. A «و» after that
+            # continues the phrase rather than starting a second subject: «آلية العمل
+            # التنفيذية لنظام القضاء ونظام ديوان المظالم» is ONE instrument covering two
+            # laws, not an amendment to the Board of Grievances Law.
+        elif coordinated and not genitive:
+            out.add(t)
+        elif coordinated:
+            continue
+        else:
+            genitive = genitive or w.startswith(("ل", "ب"))
+    return out
 
 
 def toks(s):
@@ -149,14 +244,25 @@ def edition_anchor(s):
     return best[0], all(e for d, e in dates if d == best[0])
 
 
+ARTIFACT_SUFFIX_RE = re.compile(r"_official_[a-z_]*source$")
+
+
 def track_editions():
-    """{track_id: (arabic title, anchor date or '', anchor_is_exact)} for every
-    track on file."""
+    """{track_id: (arabic title, anchor date or '', anchor_is_exact, path)} for
+    every instrument on file.
+
+    Keyed on the ARTIFACT, not on its top-level source directory. Thirty-four
+    directories hold more than one instrument — sources/labor/ alone holds the
+    Labour Law, its Implementing Regulation and five annexes — and keying on the
+    directory kept only whichever the glob happened to reach first, hiding 45
+    instruments from the currency check with no trace that they were skipped.
+    Each artifact's own filename stem is unique across the corpus, so it is what
+    identifies the instrument here."""
     out = {}
     for pat in (os.path.join(ROOT, "sources", "*", "official_source", "*.json"),
                 os.path.join(ROOT, "sources", "*", "*", "official_source", "*.json")):
         for p in glob.glob(pat):
-            tid = os.path.relpath(p, os.path.join(ROOT, "sources")).split(os.sep)[0]
+            tid = ARTIFACT_SUFFIX_RE.sub("", os.path.basename(p)[:-5])
             if tid in out:
                 continue
             try:
@@ -166,7 +272,7 @@ def track_editions():
             doc = s.get("document")
             if doc:
                 d, exact = edition_anchor(s)
-                out[tid] = (doc, d, exact)
+                out[tid] = (doc, d, exact, os.path.relpath(p, ROOT))
     return out
 
 
@@ -175,8 +281,12 @@ def main(index_path):
         print("no gazette title index at %s" % index_path)
         return 0
     index = json.load(open(index_path, encoding="utf-8"))
+    # The index is stored wrapped ({generated_note, pages, index}) so the file
+    # documents itself; earlier revisions were a flat {uid: record} map.
+    if "index" in index and isinstance(index["index"], dict):
+        index = index["index"]
     tracks = track_editions()
-    dated = {t: d for t, (_a, d, _e) in tracks.items() if d}
+    dated = {t: d for t, (_a, d, _e, _p) in tracks.items() if d}
     print("gazette pages indexed: %d | tracks on file: %d (%d with an edition anchor)"
           % (len(index), len(tracks), len(dated)))
 
@@ -184,23 +294,35 @@ def main(index_path):
                if v.get("title") and AMENDMENT_RE.search(v["title"])]
     print("amendment-shaped gazette titles: %d" % len(notices))
 
-    T = {tid: (toks(a), d, e) for tid, (a, d, e) in tracks.items()}
+    T = {tid: (toks(a), d, e, instrument_type(a)) for tid, (a, d, e, _p) in tracks.items()}
     at_risk = {}
+    partial = {}
     for uid, title, ndate in notices:
         nt = toks(title)
         if len(nt) < MIN_SHARED:
             continue
-        if NUMBERED_DECISION_RE.search(title) or ACTOR_HEADLINE_RE.search(title):
+        if (NUMBERED_DECISION_RE.search(title) or ACTOR_HEADLINE_RE.search(title)
+                or ACTOR_COLON_RE.search(title)):
             continue
-        for tid, (tt, tdate, exact) in T.items():
+        subject_types = notice_subject_types(title)
+        for tid, (tt, tdate, exact, ttype) in T.items():
             if not tt:
                 continue
+            # A notice that names no instrument type at all — «إنشاء مجلس باسم (المجلس
+            # الأعلى للفضاء) وتعديل اسم هيئة الاتصالات وتقنية المعلومات» renames an
+            # AUTHORITY, not a law — is not evidence about any particular instrument, so it
+            # is recorded as a lead rather than asserted.
+            type_ok = bool(ttype) and ttype in subject_types
+            if ttype and not type_ok:
+                if subject_types:
+                    continue   # the notice names a type, and it is not this track's
             shared = nt & tt
             if len(shared) < MIN_SHARED:
                 continue
             if len(shared) / min(len(nt), len(tt)) < MIN_RATIO:
                 continue
-            if len(shared) / len(tt) < MIN_TRACK_COVER:
+            cover = len(shared) / len(tt)
+            if cover < PARTIAL_COVER:
                 continue
             # Only a notice published AFTER the edition on file is evidence of
             # staleness. Without a date on either side we cannot tell, and this
@@ -216,7 +338,15 @@ def main(index_path):
                     continue
                 if (a - b).days < CONVERSION_GUARD_DAYS:
                     continue
-            at_risk.setdefault(tid, []).append((ndate, uid, title))
+            # Full cover means the notice names EVERY distinctive word of the track's
+            # title. Anything less is set aside rather than dropped: it is reported under
+            # partial_title_matches_not_flagged so a reader can adjudicate it, because a
+            # match this audit is not sure enough to assert is still a lead, and silently
+            # discarding it would leave no trace that anything was seen at all.
+            if cover >= MIN_TRACK_COVER and type_ok:
+                at_risk.setdefault(tid, []).append((ndate, uid, title))
+            else:
+                partial.setdefault(tid, []).append((ndate, uid, title, round(cover, 2)))
 
     print("\ntracks whose edition on file predates a published amendment notice: %d"
           % len(at_risk))
@@ -251,12 +381,33 @@ def main(index_path):
         "tracks_predating_an_amendment": len(rows),
         "match_thresholds": {"min_shared_words": MIN_SHARED,
                              "min_shorter_title_cover": MIN_RATIO,
-                             "min_track_title_cover": MIN_TRACK_COVER},
+                             "min_track_title_cover": MIN_TRACK_COVER,
+                             "partial_match_cover_floor": PARTIAL_COVER},
+        "partial_title_matches_not_flagged_note": (
+            "Notices whose subject type matches the track and which postdate its edition, but "
+            "which do not name every distinctive word of the track's title. They are NOT "
+            "asserted as findings and no track is warned on their account -- they are recorded "
+            "so that a match this audit was not certain enough to assert still leaves a trace. "
+            "Most are a notice about a NEIGHBOURING instrument in the same family; some are the "
+            "real thing under a shortened name. Adjudicating one means reading the page."),
+        "partial_title_matches_not_flagged": [
+            {"track_id": tid,
+             "title_ar": tracks[tid][0],
+             "edition_on_file": tracks[tid][1],
+             "candidates": [
+                 {"date": d, "title_cover": c,
+                  "url": "https://www.uqn.gov.sa/details?p=%s" % u if not u.startswith("400")
+                  else "https://www.uqn.gov.sa/decisions-and-regulations/%s" % u,
+                  "title_ar": ti}
+                 for d, u, ti, c in sorted(v, reverse=True)]}
+            for tid, v in sorted(partial.items())],
         "at_risk": [
             {"track_id": tid,
              "title_ar": tracks[tid][0],
              "edition_on_file": tracks[tid][1],
              "anchor_is_exact_gazette_date": tracks[tid][2],
+             "source_artifact": tracks[tid][3],
+             "instrument_type": T[tid][3],
              "amendment_notices": [
                  {"date": d, "url": "https://www.uqn.gov.sa/details?p=%s" % u
                   if not u.startswith("400")
