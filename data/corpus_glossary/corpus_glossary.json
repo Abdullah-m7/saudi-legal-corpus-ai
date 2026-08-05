@@ -15,10 +15,10 @@
     "A definitions article that itself nests lettered sub-categories inside one parent term's definition (e.g. '... وينقسم إلى قسمين: أ – ... ب – ...') can have one of those inner sub-headings ALSO independently satisfy this generator's entry pattern, producing an extra, separate — still byte-exact, still accurate — term entry for that inner sub-heading alongside the parent term's own full definition (whose span still includes that same inner text). This is redundancy, not incorrect data, but means the same underlying source text can appear attached to two different term keys.",
     "3 registry tracks (implementing_regulations_general, implementing_regulations_listed_joint_stock, implementing_regulations_arabic_program_closure) have no records at all in data/corpus_unified_index/corpus_unified_llm_index.jsonl (that index only projects the primary per-law Arabic layers listed in gen_corpus_unified_llm_index.py's LAYERS, and these 3 companies-law sub-tracks are not among them) — there is nothing for this generator to scan for them, so they appear in tracks_skipped for that reason."
   ],
-  "total_tracks_in_registry": 721,
-  "total_terms": 3478,
-  "total_definitions": 7477,
-  "tracks_with_definitions_article_parsed": 559,
+  "total_tracks_in_registry": 743,
+  "total_terms": 3544,
+  "total_definitions": 7680,
+  "tracks_with_definitions_article_parsed": 574,
   "tracks_skipped": [
     {
       "track_id": "aawan_regulation",
@@ -34,6 +34,10 @@
     },
     {
       "track_id": "accounting_services_rules",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "administrative_entities_enforcement_request_procedures",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -217,6 +221,10 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "emergency_orders_annulment_claims_rules",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "enforcement_implementing_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
@@ -281,6 +289,14 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "guaranteed_standards_guide",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "hague_apostille_convention",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "health_holding_company_statute",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
@@ -298,6 +314,10 @@
     },
     {
       "track_id": "heavy_equipment_regulation_center_statute",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
+      "track_id": "heavy_equipment_safety_inspection_bodies_accreditation_rules",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
@@ -405,6 +425,10 @@
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
+      "track_id": "open_field_vegetable_crops_export_conditions",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
+    },
+    {
       "track_id": "personal_status_implementing_regulation",
       "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
@@ -463,6 +487,10 @@
     {
       "track_id": "rehabilitation_and_damage_compensation_rules",
       "reason": "A definitions-style intro clause was found, but this generator's term:definition splitting patterns (colon-pair and parenthesized-term) could not reliably parse it — most commonly because the article is a pure cross-reference to another law's own Article 1 with no local term:definition pairs of its own. Skipped per precision-over-recall rather than force-split."
+    },
+    {
+      "track_id": "repair_cost_compensation_estimation_controls",
+      "reason": "No definitions-article intro clause (يقصد بـ.../تكون للكلمات.../etc.) or a reliably-parseable term:definition list was found anywhere in this track's articles. This track may genuinely lack a formal definitions article, or define terms via phrasing outside this generator's pattern coverage."
     },
     {
       "track_id": "residency_law",
@@ -750,6 +778,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "أجور الخدمات": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "أجور الخدمات",
+        "definition_text": "هي المبالغ التي تحصل مقابل أداء خدمات عبور البضائع بين الدول الأطراف في الاتفاقية.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "أحكام عامة": [
       {
         "track_id": "private_training_executive_rules",
@@ -887,6 +925,14 @@
         "term_as_written": "أدلة الإجراءات",
         "definition_text": "وثيقة تصدر وفق الأنظمة تتضمن التعليمات، أو الإرشادات، أو المعايير، أو غيرها لتحديد الإجراءات التفصيلية المكملة للقواعد.",
         "source_record_id": "alula-royal-commission-violations-committees-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "أدلة الإجراءات",
+        "definition_text": "وثيقة تتضمن التعليمات، أو الإرشادات، أو المعايير، أو غيرها لتحديد الإجراءات التفصيلية المكملة للائحة وفق أحكام النظام ولوائحه.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -1480,6 +1526,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "أمين المجلس": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "أمين المجلس",
+        "definition_text": "موظف الصندوق الذي يقوم بمهام أمانة المجلس.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "أنشطة الاتحاد": [
       {
         "track_id": "treaty_iata_headquarters",
@@ -1759,6 +1815,14 @@
       }
     ],
     "إجراءات تقويم المطابقة": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "إجراءات تقويم المطابقة",
+        "definition_text": "وثيقة معتمدة من مجلس الإدارة توضح الإجراء المستخدم بطريقة مباشرة أو غير مباشرة لتقويم المطابقة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "conformity_models_general_regulation",
         "article_number": 1,
@@ -2360,6 +2424,14 @@
     ],
     "إقرار المورد بالمطابقة": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "إقرار المورد بالمطابقة",
+        "definition_text": "إقرار من المورد نفسه بأن منتجه مطابق لمتطلبات التشريعات المعمول بها، وذلك دون أي تدخل إلزامي من طرف ثالث -في كافة المراحل الخاصة بعملية التصنيع- وقد يعتمد الإقرار على اختبارات على المنتج وفقا للتشريعات ذات العلاقة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "إقرار المورد بالمطابقة",
@@ -2390,6 +2462,14 @@
         "definition_text": "إقرار من المورد نفسه بأن منتجه مطابق لمتطلبات التشريعات المعمول بها، وذلك دون أي تدخل إلزامي من طرف ثالث -لا في مرحلة التصميم ولا في مرحلة الإنتاج الخاصة بعملية التصنيع- و قد يعتمد الإقرار على إجراء اختبارات على المنتج وفقا للتشريعات ذات العلاقة.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "إقرار المورد بالمطابقة",
+        "definition_text": "إقرار من المورد نفسه بأن منتجه مطابق لمتطلبات التشريعات المعمول بها، وذلك دون أي تدخل إلزامي من طرف ثالث -لا في مرحلة التصميم ولا في مرحلة الإنتاج الخاصة بعملية التصنيع- وقد يعتمد الإقرار على اختبارات على المنتج وفقا للتشريعات ذات العلاقة.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -2675,6 +2755,16 @@
         "term_as_written": "اتفاقية الدعم",
         "definition_text": "الاتفاقية الموقعة بين الصندوق والمستفيدين أو المنشآت سواء كانت ورقية أو إلكترونية.",
         "source_record_id": "hrdf-support-violations-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "اتفاقية الضمانات": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "اتفاقية الضمانات",
+        "definition_text": "اتفاقية تبرم بين الصندوق وجهات التمويل ويقدم بموجبها الصندوق ضمانات كلية أو نسبية إلى الجهة التمويلية عما يقدم لبعض الفئات المستهدفة المستفيدة من القرض العقاري المدعوم.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
       }
     ],
@@ -5112,6 +5202,14 @@
     ],
     "الأنشطة الملاحية": [
       {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "الأنشطة الملاحية",
+        "definition_text": "الأنشطة البحرية الملاحية للواسطة البحرية التي تستخدم لأغراض سياحية وترفيهية أو تمارس عليها تلك الأنشطة في النطاق الجغرافي.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "saudi_red_sea_authority_statute",
         "article_number": 1,
         "term_as_written": "الأنشطة الملاحية",
@@ -5601,6 +5699,14 @@
         "term_as_written": "الإدارة المختصة",
         "definition_text": "الإدارة التي يصدر بتحديدها قرار من الرئيس التنفيذي.",
         "source_record_id": "continuing-professional-education-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الإدارة المختصة",
+        "definition_text": "الإدارة المختصة في الهيئة.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -6558,6 +6664,14 @@
         "definition_text": "الإتيان بمصنف يتوفر فيه عنصر الأصالة، ويتميز بطابع خاص.",
         "source_record_id": "copyright-law-2026-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الابتكار",
+        "definition_text": "الطابع الشخصي الذي يعرضه المؤلف في مصنفه ويعطي المصنف تميزا وجدة، ويبرز المصنف من خلال مقومات الفكرة التي عرضها أو الطريقة التي اتخذها لعرض هذه الفكرة.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "الاتجار الدولي": [
@@ -6980,6 +7094,14 @@
     ],
     "الاستدعاء": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الاستدعاء",
+        "definition_text": "هو أي إجراء يهدف إلى استرجاع المنتجات المعروضة التي سبق توفيرها للمستخدم النهائي.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "الاستدعاء",
@@ -7010,6 +7132,14 @@
         "definition_text": "أي إجراء يهدف إلى استرجاع المنتجات المعروضة التي قد تم توفيرها للمستخدم النهائي، وفقا للائحة للاستدعاء.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الاستدعاء",
+        "definition_text": "هو أي إجراء يهدف إلى استرجاع المنتجات المعروضة التي قد تم توفيرها للمستخدم النهائي.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -7329,6 +7459,16 @@
         "term_as_written": "الاعتبارات البيئية",
         "definition_text": "كل ما يجب أخذه في الحسبان -عند تخطيط أي مشروع- من أنظمة وقرارات واستراتيجيات وبرامج بيئية.",
         "source_record_id": "environmental-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "الاعتداء على حق المؤلف": [
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الاعتداء على حق المؤلف",
+        "definition_text": "أي استعمال غير مسموح به للمصنف من صاحب الحق ومخالف لتعليمات الاستخدام التي يحددها صاحب الحق، أو ارتكاب مخالفة أو أكثر من المخالفات المنصوص عليها في النظام وهذه اللائحة.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -7904,6 +8044,14 @@
     ],
     "البضاعة": [
       {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "البضاعة",
+        "definition_text": "كل مادة طبيعية أو منتج حيواني أو زراعي أو صناعي أو فكري.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "customs_law",
         "article_number": 2,
         "term_as_written": "البضاعة",
@@ -8214,6 +8362,14 @@
     ],
     "البنية التحتية": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "البنية التحتية",
+        "definition_text": "هيكل المحطة أو الهيكل على طول الخط المصمم خصيصا لكل التركيبات المعلقة ويتم بناؤه في الموقع، والذي يأخذ في الاعتبار تخطيط وبيانات النظام، ويكون ضروريا لإنشاء وتشغيل التركيبات المعلقة، بما في ذلك الأساسات.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "privatization_law",
         "article_number": 1,
         "term_as_written": "البنية التحتية",
@@ -8332,6 +8488,16 @@
         "definition_text": "البوابة الإلكترونية المعتمدة من الهيئة لعمليات استئجار الجهات الحكومية للعقار.",
         "source_record_id": "state-property-lease-law-llm-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "البوابة الإلكترونية": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "البوابة الإلكترونية",
+        "definition_text": "البوابة الإلكترونية الموحدة التي ينشئها الصندوق للمستخدمين؛ للاستفادة من الخدمات المقدمة منه.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "البوابة الوطنية الموحدة": [
@@ -10346,6 +10512,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الترخيص الإلزامي": [
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الترخيص الإلزامي",
+        "definition_text": "الإذن للغير باستغلال المصنف، دون موافقة المؤلف أو أصحاب حقوق المؤلف، وفقا للأحكام المنصوص عليها في النظام واللائحة.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الترخيص الإنشائي": [
       {
         "track_id": "agriculture_regulation",
@@ -10677,6 +10853,14 @@
         "term_as_written": "التسجيل الصوتي",
         "definition_text": "تثبيت الأصوات التي يتكون منها الأداء أو غيرها من الأصوات، أو تثبيت تمثيل للأصوات في شكل غير التثبيت المدرج في مصنف سمعي بصري آخر.",
         "source_record_id": "copyright-law-2026-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "التسجيل الصوتي",
+        "definition_text": "تثبيت الأصوات التي يتكون منها الأداء أو غيرها من الأصوات، أو تثبيت تمثيل للأصوات في شكل خلاف التثبيت المدرج في مصنف سمعي بصري آخر.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -11073,6 +11257,14 @@
         "term_as_written": "التصريح",
         "definition_text": "وثيقة تمنحها الجهة المختصة للشخص قبل البدء بممارسة أي نشاط له أثر بيئي.",
         "source_record_id": "environmental-violations-penalties-reg-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "التصريح",
+        "definition_text": "وثيقة محددة المدة تصدرها الوزارة بالموافقة لممارسة النشاط وفق أحكام النظام واللائحة.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -11592,6 +11784,14 @@
     ],
     "التعريفة": [
       {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "التعريفة",
+        "definition_text": "هي المقابل المالي المعتمد لاستهلاك الكهرباء في المنشآت العاملة في نشاط الحوسبة السحابية وتحقق اشتراطات التأهيل.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "dry_gas_lpg_distribution_law",
         "article_number": 1,
         "term_as_written": "التعريفة",
@@ -11761,6 +11961,14 @@
         "term_as_written": "التعويض",
         "definition_text": "قيمة تدفع لجبر الضرر الناتج عن المخالفة، ومنها تكاليف تصحيح الأوضاع وإعادة التأهيل التي يدفعها المخالف حال تعذر إعادة التأهيل.",
         "source_record_id": "tourism-violations-committee-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "التعويض",
+        "definition_text": "يقصد به التعويض لجبر جميع الأضرار التي لحقت بالمرفق، بما في ذلك تكاليف إصلاح التلف الذي تسبب المخالف في حدوثه والتعويض عن المنفعة التي فقدها المرفق.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -12174,6 +12382,14 @@
         "definition_text": "منح الائتمان بعقود للأنشطة المنصوص عليها في هذا النظام.",
         "source_record_id": "finance-companies-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "التمويل",
+        "definition_text": "ما يقدمه الصندوق من قروض عقارية مباشرة أو مدعومة أو ما يقدمه من الضمانات للمطورين العقاريين وجهات التمويل.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "real_estate_development_fund_law",
@@ -13784,6 +14000,14 @@
     ],
     "الجهات الرقابية": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات الرقابية",
+        "definition_text": "هي الجهة/الجهات الحكومية ذات المهام الرقابية حسب اختصاصها، المسؤولة عن تنفيذ أو متابعة تنفيذ اللوائح الفنية سواء في المنافذ الجمركية أو الأسواق أو المصانع.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "الجهات الرقابية",
@@ -13814,6 +14038,14 @@
         "definition_text": "هي الجهة/الجهات الحكومية ذات المهام الرقابية حسب اختصاصها والمسؤولة عن تنفيذ أو متابعة تنفيذ اللوائح الفنية سواء في المنافذ الجمركية أو الأسواق أو المصانع.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات الرقابية",
+        "definition_text": "هي الجهة / الجهات الحكومية ذات المهام الرقابية حسب اختصاصها والمسؤولة عن تنفيذ أو متابعة تنفيذ اللوائح الفنية سواء في المنافذ الجمركية أو الأسواق أو المصانع.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -13897,6 +14129,14 @@
         "term_as_written": "الجهات المختصة",
         "definition_text": "الجهات ذات الصلة بنشاط استثمار المواقع والمباني الأثرية والتراثية، وتشغيل مواقع خدمات الزوار في المواقع الأثرية والتراثية.",
         "source_record_id": "antiquities-heritage-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات المختصة",
+        "definition_text": "الجهات المختصة بتطبيق أحكام هذه اللائحة الفنية وترخيص المنشأة ونشاطها.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14012,6 +14252,14 @@
     ],
     "الجهات المقبولة": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات المقبولة",
+        "definition_text": "هي جهات تقويم مطابقة تقبلها الهيئة وفق لائحة قبول جهات تقويم المطابقة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "conformity_models_general_regulation",
         "article_number": 1,
         "term_as_written": "الجهات المقبولة",
@@ -14042,6 +14290,14 @@
         "definition_text": "هي جهات تقويم مطابقة تم قبولها من الهيئة وفق لائحة قبول جهات تقويم المطابقة.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهات المقبولة",
+        "definition_text": "هي جهات تقويم مطابقة تم قبولها من الهيئة وفق لائحة قبول جهات تقويم المطابقة.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -14712,11 +14968,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "هي جهاز البیئة أو أي جهة أخرى تحددها الدولة. 18- حرق النفایات: هي العملیة التي یتم بها التخلص من النفایات الصلبة والسائلة والغازیة القابلة للاحتراق في درجات حرارة عالیة لینتج عنها غازات أو مواد أو مركبات لا تؤثر على البیئة ونواتج لا تحتوي على مواد خطرة.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "high_risk_professions_regulation",
         "article_number": 1,
         "term_as_written": "الجهة المختصة",
         "definition_text": "أي جهة لها علاقة بتنفيذ أحكام هذه اللائحة أو الأنظمة واللوائح والقرارات ذات الصلة.",
         "source_record_id": "high-risk-professions-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "الجهات المختصة نظاميا بالمملكة بإصدار التراخيص الخاصة بالمنتج، وتطبيق أحكام هذه اللائحة الفنية والأنظمة المتعلقة بها.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -14901,6 +15173,14 @@
         "term_as_written": "الجهة المختصة",
         "definition_text": "الجهات المختصة نظاميا بالمملكة بإصدار التراخيص الخاصة بالمنتج، وتطبيق أحكام هذه اللائحة.",
         "source_record_id": "used-imported-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "الجهة المختصة",
+        "definition_text": "كل شخص طبيعي أو اعتباري ممن يصدر بتحديدهم قرار من اللجنة التوجيهية بموجب نظام المياه، لممارسة أعمال الضبط والتحقيق وإثبات مخالفات أحكام نظام المياه المتعلقة باختصاص الهيئة.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -15577,6 +15857,14 @@
       }
     ],
     "الحاوية": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "الحاوية",
+        "definition_text": "أوعية نمطية معدة لاحتواء البضائع ذات حجم داخلي بوحدة قياس متر مكعب معدة لنقلها بمركبات الطرق و/ أو عربات النقل و/ أو وسائل النقل المائية.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
       {
         "track_id": "official_communications_records_regulation",
         "article_number": 1,
@@ -16348,6 +16636,16 @@
         "definition_text": "بيانات إلكترونية مدرجة في تعامل إلكتروني أو مضافة إليه أو مرتبطة به منطقياً، تستخدم لإثبات صحة ارتباط الختم بهوية من نسب إليه ومصادقته على التعامل الإلكتروني، واكتشاف أي تعديل يطرأ على هذا التعامل بعد الختم عليه.",
         "source_record_id": "electronic-transactions-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "الختم الجمركي": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "الختم الجمركي",
+        "definition_text": "هو قفل يحمل رقما تسلسليا واسم الدولة تضعه السلطة الجمركية على وسائل النقل والبضائع لعدم العبث في محتوياتها.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "الختم الزمني": [
@@ -17370,6 +17668,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الدعم العيني": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الدعم العيني",
+        "definition_text": "الخصم الذي يحصل عليه المستفيد من قيمة الأرض أو الوحدة السكنية التي يحصل عليها.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "الدعم المخصص": [
       {
         "track_id": "trade_remedies_law",
@@ -17457,6 +17765,22 @@
         "term_as_written": "الدليل",
         "definition_text": "الدليل المهني الذي تصدره الهيئة لكل فرع من فروع التقييم، أو الذي يصدر لأغراض خاصة.",
         "source_record_id": "accredited-valuers-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "الدليل",
+        "definition_text": "دليل تقديم الخدمة الكهربائية الصادر بقرار هيئة تنظيم الكهرباء والإنتاج المزدوج (سابقا) رقم (46/ 430) وتاريخ 01/ 07/ 1430ه، وتعديلاته.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "الدليل",
+        "definition_text": "دليل تقديم خدمات المياه والصرف الصحي.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -19232,6 +19556,14 @@
     ],
     "الراكب": [
       {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "الراكب",
+        "definition_text": "الشخص الذي تنقله السفينة من غير الربان وأفراد الطاقم وغيرهم من العاملين على ظهرها.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "gcc_road_transport_law",
         "article_number": 1,
         "term_as_written": "الراكب",
@@ -19367,6 +19699,22 @@
         "term_as_written": "الربان",
         "definition_text": "الشخص المؤهل لقيادة السفينة والمسؤول عن إدارتها.",
         "source_record_id": "saudi-yachts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "الربان",
+        "definition_text": "الشخص المؤهل لقيادة السفينة والمسؤول عن إدارتها.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "الربان",
+        "definition_text": "الشخص المؤهل لقيادة السفينة والمسؤول عن إدارتها.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -19924,6 +20272,14 @@
     ],
     "السائح": [
       {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "السائح",
+        "definition_text": "الشخص الطبيعي الذي يبيت لغرض السياحة مدة لا تقل عن ليلة خارج مكان إقامته المعتادة بصورة نظامية، أو يستفيد من واحدة -أو أكثر- من خدمات الأنشطة السياحية والتكميلية والمتخصصة.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "hospitality_facility",
         "article_number": 1,
         "term_as_written": "السائح",
@@ -20196,6 +20552,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "offplan_developer_technical_financial_qualification",
+        "article_number": 1,
+        "term_as_written": "السجل",
+        "definition_text": "سجل المطورين العقاريين المؤهلين بعد اعتماد اللجنة على قيدهم ومنحهم شهادة بذلك.",
+        "source_record_id": "offplan-developer-technical-financial-qualification-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "sports_law",
         "article_number": 1,
         "term_as_written": "السجل",
@@ -20392,6 +20756,14 @@
     ],
     "السحب": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "السحب",
+        "definition_text": "هو أي إجراء يهدف إلى منع عرض المنتجات في السوق وفي سلسلة التوريد.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "السحب",
@@ -20422,6 +20794,14 @@
         "definition_text": "أي إجراء يهدف إلى منع المنتجات من العرض في السوق وفي سلسلة التوريد.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "السحب",
+        "definition_text": "هو أي إجراء يهدف إلى منع المنتجات من العرض في السوق وفي سلسلة التوريد.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -21024,6 +21404,14 @@
     ],
     "السند": [
       {
+        "track_id": "bog_enforcement_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "السند",
+        "definition_text": "سند التنفيذ المشمول بأحكام النظام.",
+        "source_record_id": "bog-enforcement-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bog_enforcement_law",
         "article_number": 1,
         "term_as_written": "السند",
@@ -21534,6 +21922,14 @@
         "definition_text": "أي شخص ذي صفة طبيعية أو اعتبارية، عامة أو خاصة.",
         "source_record_id": "anti-cyber-crime-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "الشخص",
+        "definition_text": "الشخص الطبيعي أو المعنوي.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "bankruptcy_law",
@@ -22172,6 +22568,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الشريحة الأعلى للتعريفة": [
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "الشريحة الأعلى للتعريفة",
+        "definition_text": "يقصد بها الشريحة الأعلى للتعريفة المعتمدة للمياه الواردة بدليل تقديم خدمات المياه والصرف الصحي.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "الشريحة الأولى لرأس المال": [
       {
         "track_id": "capital_adequacy_rules",
@@ -22662,6 +23068,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الصندوق",
+        "definition_text": "صندوق التنمية العقارية.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "real_estate_development_fund_law",
         "article_number": 1,
         "term_as_written": "الصندوق",
@@ -22948,6 +23362,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الضامن": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "الضامن",
+        "definition_text": "شخص معتمد من سلطات الجمارك في بلد طرف متعاقد لتقديم الضمانات أو الكفالات في عملية عبور.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "الضبط": [
       {
         "track_id": "judicial_documents_regulation",
@@ -22984,6 +23408,16 @@
         "definition_text": "الضرائب غير المباشرة التي يتم فرضها على البضائع المستوردة وذلك دون الإخلال بأحكام تعليقها الواردة في الاتفاقية الموحدة لضريبة القيمة المضافة والاتفاقية الموحدة للضريبة الانتقائية والأنظمة واللوائح ذات العلاقة.",
         "source_record_id": "deposit-zones-rules-llm-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "الضرائب والرسوم": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "الضرائب والرسوم",
+        "definition_text": "جميع الضرائب والرسوم التي تستحق على البضائع ووسائط نقلها في حالة استيرادها أو تصديرها أو إعادة تصديرها أو عبورها لأحد الأطراف المتعاقدة.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "الضرر": [
@@ -23078,6 +23512,14 @@
     ],
     "الضمان": [
       {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "الضمان",
+        "definition_text": "التزام مالي يتعهد الضامن بموجبه دفع المبالغ المستحقة من جراء عملية العبور «الترانزيت» بين الدول العربية عند الاستحقاق.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "final_clearing_collateral_regulation",
         "article_number": 2,
         "term_as_written": "الضمان",
@@ -23119,6 +23561,14 @@
       }
     ],
     "الضمانات": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الضمانات",
+        "definition_text": "الوثائق التي يصدرها الصندوق وينشأ بموجبها حق ائتماني مباشر لمصلحة عقد التمويل.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
       {
         "track_id": "real_estate_development_fund_law",
         "article_number": 1,
@@ -23249,6 +23699,14 @@
         "term_as_written": "الضوابط",
         "definition_text": "ضوابط تخصيص عقارات الدولة واستردادها.",
         "source_record_id": "state-property-allocation-recovery-controls-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "الضوابط",
+        "definition_text": "الضوابط الخاصة بتحديد تكاليف الإصلاح، وتقدير التعويضات عن المنفعة التي فقدها المرفق؛ بناء على الفقرة (2) من المادة (الثانية والسبعين) من نظام المياه.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -24196,6 +24654,14 @@
     ],
     "العرض في السوق": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "العرض في السوق",
+        "definition_text": "يعني أي إمداد بالمنتج بهدف التوزيع أو الاستهلاك أو الاستخدام في المملكة في إطار نشاط تجاري سواء كان ذلك مقابل مبالغ مادية أو بدون مقابل.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "العرض في السوق",
@@ -24226,6 +24692,14 @@
         "definition_text": "أي إمداد بالمنتج بهدف التوزيع أو الاستهلاك أو الاستخدام في المملكة في إطار نشاط تجاري، سواء أكان ذلك مقابل مبالغ مادية أو بدون مقابل.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "العرض في السوق",
+        "definition_text": "تعني أي إمداد بالمنتج بهدف التوزيع أو الاستهلاك أو الاستخدام في المملكة في إطار نشاط تجاري سواء كان ذلك مقابل مبالغ مادية أو بدون مقابل.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -25108,6 +25582,14 @@
     ],
     "العنوان الرسمي": [
       {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "العنوان الرسمي",
+        "definition_text": "العنوان المسجل في التصريح، أو العنوان الوطني، أو وسائل التواصل الخاصة بممارس النشاط -بمختلف أنواعها- التي تحصلت عليه الوزارة.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "hospitality_mgmt",
         "article_number": 1,
         "term_as_written": "العنوان الرسمي",
@@ -25840,6 +26322,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "الفصل الثالث": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "الفصل الثالث",
+        "definition_text": "التعريفات والمصطلحات 3 -1 يكون للألفاظ والعبارات المعرفة في نظام الكهرباء أو في اللائحة التنفيذية لنظام الكهرباء الخاصة بمهام الهيئة أو تنظيم الهيئة أو دليل تقديم الخدمة الكهربائية (الدليل) المعاني نفسها في هذه الوثيقة ما لم يتطلب السياق خلاف ذلك. 3 -2 يقصد بالألفاظ والعبارات الآتية المعاني الموضحة أمام كل منها عند استخدامها في هذه الوثيقة، مالم يتطلب السياق خلاف ذلك: قرار مجلس الوزراء: قرار مجلس الوزراء الصادر بالرقم (407) والتاريخ (18/ 7/ 1442ه).",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "الفعالية الرياضية": [
       {
         "track_id": "sports_law",
@@ -26406,7 +26898,25 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "القرض العقاري المباشر": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "القرض العقاري المباشر",
+        "definition_text": "القرض الذي يقدمه الصندوق للمستفيدين من رأس ماله.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "القرض العقاري المدعوم": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "القرض العقاري المدعوم",
+        "definition_text": "برنامج تمويل عقاري سكني يقدمه الصندوق إلى المستفيد عن طريق جهات التمويل المرخصة، مدعوم الأرباح من الصندوق دعما كاملا أو جزئيا، وذلك من خلال عقود تبرم لهذا الغرض.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
       {
         "track_id": "real_estate_development_fund_law",
         "article_number": 1,
@@ -26501,6 +27011,14 @@
         "term_as_written": "القطاع",
         "definition_text": "قطاع محطات الوقود ومراكز الخدمة.",
         "source_record_id": "service-centers-fuel-stations-committee-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "القطاع",
+        "definition_text": "السكني أو التجاري أو الصناعي أو الحكومي أو الغير ربحي.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -26745,6 +27263,14 @@
         "term_as_written": "القواعد",
         "definition_text": "قواعد حوكمة الجمعيات والمؤسسات الأهلية.",
         "source_record_id": "nonprofit-governance-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "offplan_developer_technical_financial_qualification",
+        "article_number": 1,
+        "term_as_written": "القواعد",
+        "definition_text": "قواعد ومعايير التأهيل الفني والمالي للمطورين العقاريين لمشاريع البيع على الخارطة.",
+        "source_record_id": "offplan-developer-technical-financial-qualification-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -27500,6 +28026,22 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "bog_enforcement_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "bog-enforcement-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "bog_enforcement_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "1/ 1- يقصد بالتنفيذ -في تطبيق أحكام النظام واللائحة- تحقيق مقتضى السند في الواقع فعليا. 1/ 2- يكون للألفاظ والعبارات الواردة في اللائحة معاني الألفاظ والعبارات الواردة في النظام، ما لم يقتض السياق خلاف ذلك. 1/ 3- تكون التبليغات الواردة في النظام واللائحة بالوسائل الإلكترونية، وإذا تعذر ذلك فتكون بالوسائل الأخرى.",
+        "source_record_id": "bog-enforcement-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bog_enforcement_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -27716,6 +28258,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "credit_information_regulation",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -27729,6 +28279,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للنظام.",
         "source_record_id": "criminal-procedure-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنظيمية لسفن الرحلات السياحية (الكروز).",
+        "source_record_id": "cruise-ships-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -27964,6 +28522,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "لائحة الأنشطة التجريبية.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "family_funds_rules",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -28058,6 +28624,22 @@
         "definition_text": "اللائحة المنظمة لنشاط وسطاء الشحن (الخدمات اللوجستية). 31- وسيط الشحن (الخدمات اللوجستية) : القيام بترتيبات عمليات نقل البضاعة من المرسل إلى المرسل إليه وإدارة وتخطيط العمليات الداعمة لنقل البضائع.",
         "source_record_id": "freight-broker-logistics-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "1- 1 نفايات عبوات الغازات المضغوطة: هي اسطوانات الغازات الفارغة أو التالفة والخراطيش (الكارترج) وعبوات التعقيم والبخاخات (أريسولات). 1- 2 نفايات المواد السامة للجينات والخلايا: نفايات مواد صيدلانية خاصة شديدة الخطورة لها القدرة على قتل أو منع انقسام الخلايا أو مكونات الجينات، ويشمل ذلك المواد المستخدمة في علاج بعض أنواع السرطان وحالات نقل الأعضاء، كما تشمل هذه النفايات أي لوازم مستخدمة في تحضير هذه المواد بالإضافة إلى إفرازات المريض الذي يتم علاجه بهذه المواد ولمدة أسبوع من تاريخ آخر جرعة أخذها. 1- 3 النفايات شديدة العدوى: هي النفايات المعدية المحتوية يقينا وبدرجة كبيرة على عوامل بيولوجية خطرة. 1- 4 النفايات: نفايات الرعاية الصحية الخطرة. 1- 5 فرز (فصل) النفايات: عزل مجموعة نفايات الرعاية الصحية الخطرة في الأكياس والحاويات المخصصة لها ابتداء من نقطة إنتاجها في المنشأة وخلال مراحل الجمع والتعبئة والتخزين والنقل داخل المنشأة. 1- 6 المنتج: هو أي شخص طبيعي أو اعتباري يؤدي نشاطه إلى إنتاج نفايات الرعاية الصحية. 1- 7 المنشأة: هي أي مستشفى أو عيادة أو مركز طبي أو مركز بيطري أو شركة أدوية أو مركز أبحاث طبي أو صيدلية أو دور نقاهة عامة أو أهلية. 1- 8 نقطة التجميع: المكان الذي يتم فيه جمع أكياس النفايات داخل أقسام المنشأة. 1- 9 التخزين المؤقت: حفظ مؤقت لا يتعدى 24 ساعة لنفايات الرعاية الصحية الخطرة في مركز تجميع محدد داخل المنشأة. 1- 10 النقل: هو نقل نفايات الرعاية الصحية الخطرة خارج المنشآت الصحية إلى مراكز وحدات المعالجة. 1- 11 الناقل: الشخص الطبيعي أو الاعتباري (شركة أو مؤسسة عامة أو خاصة) الذي يعمل في مجال نقل نفايات الرعاية الصحية الخطرة إلى وحدة المعالجة والتخلص. 1- 12 وثيقة النقل: الإستمارة التي تشتمل على كافة البيانات المستوفاة والموقعة من قبل المنتج والناقل والمتخلص والتي تتكون غالبا من عدة نسخ تصاحب حمولة نفايات الرعاية الصحية الخطرة المنقولة من المنشأة المنتجة للنفايات إلى وحدة المعالجة حسب النموذج رقم (1). 1- 13الصحة العامة: منظور متكامل وشامل لصحة الفرد والأسرة والمجتمع والتأثيرات البيئية والاجتماعية والاقتصادية والوراثية عليها. 1- 14البيئة: كل ما يحيط بالإنسان من ماء وهواء ويابسة وفضاء خارجي وكل ما تحتويه هذه الأوساط من جماد ونبات وحيوان وأشكال مختلفة من طاقة ونظم وعمليات طبيعية وأنشطة بشرية. 1- 15التلوث البيئي: وجود مادة أو أكثر من المواد أو العوامل البيولوجية أو الكيميائية أو الإشعاعية بكميات أو صفات أو لمدة زمنية تؤدي بطريق مباشر أو غير مباشر إلى الإضرار بالصحة العامة أو الأحياء أو الموارد الطبيعية أو الممتلكات أو تؤثر سلبيا على نوعية الحياة ورفاهية الإنسان. 1- 16المعالجة المبدئية: معاملة النفايات شديدة العدوى في أماكن إنتاجها باستعمال درجات حرارة تحت ضغط أو بمواد كيماوية بهدف الإقلال من العوامل البيولوجية الموجودة فيها. 1- 17الكيس الأحمر: كيس بلاستيكي أحمر اللون لا تقل سماكته عن 150 ميكرون ذو سعة 100 لتر بحد أقصى مكتوب عليه عبارة نفايات طبية خطرة وشعار النفايات الحيوية الخطرة. 1- 18الكيس الأصفر: كيس بلاستيكي أصفر اللون لا تقل سماكته عن 150 ميكرون ذو سعة 100 لتر بحد أقصى مكتوب عليه عبارة نفايات طبية خطرة وشعار النفايات الحيوية الخطرة. 1- 19حاوية نفايات الأدوات الحادة: حاوية بلاستيكية صفراء اللون قوية وغير قابلة للثقب وغير منفذة للسوائل مكتوب عليها عبارة نفايات حادة خطرة وشعار النفايات الطبية الخطرة توجد بها فتحة تسمح بإدخال نفايات الأدوات الحادة ومزودة بغطاء لإحكام القفل، ومقبض لسهولة الحمل. 1- 20حاويات الأكياس (السلال): سلال مصنوعة من الصلب الذي لا يصدأ ( ستانلس ستيل ) أو من مادة بلاستيكية سهلة التنظيف ذات غطاء علوي محكم يفتح بالقدم ويكتب على غطائها وجانبها الأمامي عبارة نفايات طبية خطرة وشعار النفايات الحيوية الخطرة. 1- 21حاويات المواد المشعة: حاويات مصنوعة أو محاطة بالرصاص مدون عليها الشعار الدولي للإشعاع. 1- 22 عربات النقل: عربات صفراء اللون ذات عجلات لسهولة الحركة مصنوعة من مواد مقاومة للصدأ ولا تتأثر بالأحماض أو القلويات مانعة للتسرب وذات أسطح وزوايا سهلة التنظيف وذات حجم مناسب لنقل عشرة أكياس في المرة الواحدة ومزودة بغطاء لإحكام قفلها أثناء النقل ومقبض لسهولة تحريكها ويكتب على جوانبها وغطائها بخط واضح نفايات طبية خطرة ومبين عليها شعار النفايات الحيوية الخطرة. 1- 23 حاوية النفايات السائلة: حاويات صفراء اللون مصنوعة من مادة لا تتفاعل مع المواد الكيماوية التي توضع بداخلها وقوية تتحمل التخزين ومحكمة الإغلاق ولا تتعدى سعتها (50) لترا ويكتب على جوانبها بخط واضح نفايات كيميائية وشعار النفايات الطبية الخطرة. 1- 24 البطاقة اللاصقة: بطاقة تلصق على الكيس أو الحاوية تحتوي على البيانات التالية: (اسم المنشأة، اسم القسم أو الجناح، نوع النفايات التي يحتويها الكيس أو الحاوية، اسم الشخص الذي قام بإغلاق الكيس أو الحاوية، الوقت والتاريخ) وتكون بحجم مناسب لا يقل عن 15سم × 14سم مكتوبة بياناتها بحبر ثابت مقاوم للماء ومطبوع عليها شعار النفايات الحيوية الخطرة النموذج رقم (2). 1- 25شعار النفايات الحيوية الخطرة: هو الشعار الموضح في الشكل رقم (1). 1- 26شعار نفايات المواد السامة للخلايا: هو الشعار الموضح في الشكل رقم (2). 1- 27الشعار الدولي للإشعاع: هو الشعار الموضح في الشكل رقم (3). 1- 28الموافقة البيئية: هو الترخيص الصادر من الهيئة العامة للأرصاد وحماية البيئة بغرض الموافقة على إقامة مراكز المعالجة أو أماكن التخلص. 1- 29 وحدة معالجة النفايات: المنشأة أو المركز الذي تتم فيه عملية معالجة نفايات الرعاية الصحية الخطرة. 1- 30 تقنية المعالجة: التقنية التي تعتمد عليها أجهزة وحدات المعالجة للقيام بمعالجة نفايات الرعاية الصحية الخطرة. 1- 31 تقنية معتمدة: تقنية لمعالجة نفايات الرعاية الخطرة مصرح باستخدامها من قبل الهيئة العامة للأرصاد وحماية البيئة. 1- 32 المعالجة: أي وسيلة أو تقنية تستخدم لتغيير الصفة الفيزيائية أو الكيميائية أو البيولوجية للنفايات وتستعمل لمعادلة النفايات أو الاستفادة من المواد أو الطاقة الموجودة فيها أو المتحررة منها أو لتحويل النفايات الخطرة إلى نفايات غير خطرة أو اقل خطورة أو أكثر أمانا عند النقل أو التخزين أو التخلص أو تهيئتها بغرض تخزينها أو التقليل من حجمها. 1- 33 حرق النفايات: هي العملية التي يتم بها التخلص من النفايات الصلبة والسائلة والغازية القابلة للاحتراق في درجات حرارة عالية لينتج عنها غازات أو مواد أو مركبات لا تؤثر على البيئة ونواتج لا تحتوي على مواد خطرة. 1- 34 مرافق التخلص: المرافق التي تصدر لها موافقة بيئية من الهيئة العامة للأرصاد وحماية البيئة لغرض معالجة نفايات الرعاية الصحية الخطرة. 1- 35 مسؤول النفايات الطبية: هو شخص يحمل الدرجة الجامعية في علوم البيئة أو العلوم الطبية المساعدة والعلوم في تخصصات الصحة العامة والمفوض بمتابعة تطبيق إدارة نفايات الرعاية الصحية داخل المنشأة. 1- 36 برنامج النفايات الطبية: هو الوحدة الإدارية المفوضة بمتابعة إدارة نفايات الرعاية الصحية في الوزارة. 1- 37 الوزارة : وزارة الصحة.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 4,
+        "term_as_written": "اللائحة",
+        "definition_text": "4- 1 يتولى الشخص الذي أنتج نفايات الرعاية الصحية تصنيفها إلى النوعين التاليين وما يحدده المركز الوطني لإدارة النفايات وفقا للتصنيفات المعتمدة لديه. أ- نفايات الرعاية الصحية غير الخطرة. ب- نفايات الرعاية الصحية الخطرة، والتي يتولى المنتج تصنيفها للأنواع التالية: 1- النفايات المعدية. 2- نفايات الأجزاء وبقايا أعضاء الجسم. 3- نفايات الأدوات الحادة. 4- النفايات الصيدلانية. 5- نفايات المواد السامة للجينات والخلايا. 6- النفايات الكيماوية. 7- نفايات المواد المشعة. 8- نفايات عبوات الغازات المضغوطة.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-004",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "gcc_road_transport_law",
@@ -28660,6 +29242,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنفيذية للنظام.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "real_estate_development_fund_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -28868,6 +29458,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنظيمية لتأجير اليخوت الضخمة.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "tawtheeq_law",
         "article_number": 1,
         "term_as_written": "اللائحة",
@@ -29057,6 +29655,14 @@
         "term_as_written": "اللائحة",
         "definition_text": "اللائحة التنفيذية للتنظيم.",
         "source_record_id": "vehicle-periodic-inspection-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة",
+        "definition_text": "اللائحة التنظيمية لليخوت الخاصة الزائرة.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -29360,6 +29966,14 @@
         "definition_text": "اللائحة التي تضعها لجنة التعاون التجارية تنفيذا لهذا القانون (النظام).",
         "source_record_id": "trademark-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة التنفيذية",
+        "definition_text": "اللائحة التنفيذية لنظام المياه الخاصة بتنظيم أنشطة تقديم الخدمة، الصادرة بموجب قرار معالي وزير البيئة والمياه والزراعة رقم (140115/ 1 /1442) وتاريخ 7 /3 /1442ه، بناء على الفقرة (2) من المادة (السادسة والسبعين) من نظام المياه الصادر بالمرسوم الملكي رقم (م/159) وتاريخ 11 /11 /1441ه، والبندين (سابعا) و(ثامنا) من قرار مجلس الوزراء رقم (710) وتاريخ 9 /11 /1441ه.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اللائحة التنفيذية لنظام الجمارك": [
@@ -29383,6 +29997,14 @@
       }
     ],
     "اللائحة الفنية": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة الفنية",
+        "definition_text": "وثيقة معتمدة من مجلس الإدارة تضع خصائص المنتجات والعمليات المرتبطة بها وطرائق إنتاجها، بما في ذلك الأحكام الإدارية سارية المفعول المطبقة، التي يجب الالتزام بها. وقد تشمل أو تبحث بشكل خاص في المصطلحات والتعاريف والتعبئة، ومتطلبات وضع الشارات أو العلامات على المنتجات أو الخدمات أو العمليات أو طرائق الإنتاج.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
@@ -29414,6 +30036,14 @@
         "definition_text": "وثيقة معتمدة من مجلس الإدارة تضع خصائص المنتجات والعمليات المرتبطة بها وطرائق إنتاجها، بما في ذلك الأحكام الإدارية سارية المفعول المطبقة؛ التي يجب الالتزام بها. وقد تشمل أو تبحث بشكل خاص في المصطلحات والتعاريف والتعبئة، ومتطلبات وضع الشارات أو العلامات على المنتجات أو الخدمات أو العمليات أو طرائق الإنتاج.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "اللائحة الفنية",
+        "definition_text": "وثيقة معتمدة من مجلس الإدارة تضع خصائص المنتجات والعمليات المرتبطة بها وطرق إنتاجها، بما في ذلك الأحكام الإدارية سارية المفعول المطبقة، التي يجب الالتزام بها. وقد تشمل أو تبحث بشكل خاص في المصطلحات والتعاريف والتعبئة، ومتطلبات وضع الشارات أو العلامات على المنتجات أو الخدمات أو العمليات أو طرائق الإنتاج.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -29598,6 +30228,14 @@
         "definition_text": "لجنة النظر في مخالفات أحكام النظام، وإيقاع العقوبات الواردة فيه.",
         "source_record_id": "antiquities-inspection-violations-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "اللجنة الفنية التي تؤلف وفق أحكام هذه الاتفاقية.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "baha_strategic_office_statute",
@@ -29896,6 +30534,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "offplan_developer_technical_financial_qualification",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة بيع أو تأجير وحدات عقارية على الخارطة.",
+        "source_record_id": "offplan-developer-technical-financial-qualification-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "patent_law",
         "article_number": 2,
         "term_as_written": "اللجنة",
@@ -30069,6 +30715,14 @@
         "term_as_written": "اللجنة",
         "definition_text": "لجنة النظر في مخالفات النظام ولوائحه المنصوص عليها في الفقرة (1) من المادة (الخامسة عشرة) من النظام.",
         "source_record_id": "tourism-violations-committee-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "اللجنة",
+        "definition_text": "لجنة النظر والفصل في مخالفات أحكام نظام المياه المتعلقة باختصاص الهيئة ولوائحه.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -31310,6 +31964,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المؤلف",
+        "definition_text": "كل مبدع ابتكر بجهده أيا من المصنفات الأدبية أو الفنية أو العلمية مثل الأديب أو الشاعر أو الرسام أو الموسيقي أو غير هؤلاء من الفنانين، وفقا للقالب الذي يفرغ فيه التعبير.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "press_law",
         "article_number": 1,
         "term_as_written": "المؤلف",
@@ -31515,6 +32177,22 @@
         "term_as_written": "المالك",
         "definition_text": "الشخص الذي يشغل السفينة لحسابه بوصفه مالكا، أو مستأجرا، أو مديرا للشيوع.",
         "source_record_id": "saudi-yachts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "المالك",
+        "definition_text": "صاحب اليخت الضخم، سواء واحدا أو أكثر مما يلي: أ- الشخص الذي يمتلك مصلحة قانونية أو نفعية في يخت ضخم ما عدا المرتهن. ب- الشخص المسؤول عن الإدارة على اليخت الضخم. ج- الشخص الذي يتحمل المسؤولية الكاملة عن يخت ضخم ويكون مفوضا من الشخص المذكور في الفقرتين (أ) أو (ب). منصة إبحار منصة حكومية تابعة للهيئة تقدم جميع الخدمات المتعلقة بسياحة اليخوت البحرية.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "المالك",
+        "definition_text": "صاحب اليخت، سواء واحدا أو أكثر مما يلي: أ- الشخص الذي يمتلك مصلحة قانونية أو نفعية في يخت ضخم ما عدا المرتهن. ب- الشخص المسؤول عن الإدارة على اليخت الضخم. ج- الشخص الذي يتحمل المسؤولية الكاملة عن يخت ضخم ويكون مفوضا من الشخص المذكور في الفقرتين (أ) أو (ب).",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -31892,6 +32570,14 @@
     ],
     "المتطلبات الأساسية": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المتطلبات الأساسية",
+        "definition_text": "المتطلبات الخاصة بالمنتجات، التي قد تؤثر في السلامة والصحة والبيئة، التي يجب الالتزام بها. الخطر (أخطار Hazards): مصدر محتمل للضرر. المخاطرRisk(s) : احتمال ظهور خطر مسبب للضرر؛ مرتبط بدرجة شدة الضرر.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "conformity_models_general_regulation",
         "article_number": 1,
         "term_as_written": "المتطلبات الأساسية",
@@ -31930,6 +32616,14 @@
         "definition_text": "المتطلبات الخاصة بالمنتجات التي قد تؤثر على السلامة والصحة والبيئة؛ التي يجب الالتزام بها.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المتطلبات الأساسية",
+        "definition_text": "المتطلبات الخاصة بالمنتجات، التي قد تؤثر على السلامة والصحة والبيئة، التي يجب الالتزام بها. الخطر (أخطار) (Hazard(s: مصدر محتمل للضرر. المخاطر (Risk(s: احتمال ظهور خطر مسبب للضرر؛ مرتبطا بدرجة شدة الضرر، ويحسب في العادة كحاصل ضرب احتمال حدوث الخطر بدرجة شدة الضرر.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -32296,11 +32990,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "bog_enforcement_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس القضاء الإداري.",
+        "source_record_id": "bog-enforcement-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bog_enforcement_law",
         "article_number": 1,
         "term_as_written": "المجلس",
         "definition_text": "مجلس القضاء الإداري.",
         "source_record_id": "bog-enforcement-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -32389,6 +33099,14 @@
         "term_as_written": "المجلس",
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "copyright-law-2026-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -32814,6 +33532,14 @@
         "definition_text": "مجلس إدارة صندوق تنمية الموارد البشرية.",
         "source_record_id": "hrdf-support-violations-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الهيئة.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -33446,6 +34172,14 @@
         "definition_text": "مجلس إدارة الهيئة.",
         "source_record_id": "real-estate-contributions-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المجلس",
+        "definition_text": "مجلس إدارة الصندوق.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "real_estate_development_fund_law",
@@ -34763,6 +35497,14 @@
         "term_as_written": "المحكمة",
         "definition_text": "المحكمة التجارية.",
         "source_record_id": "bankruptcy-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "bog_enforcement_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المحكمة",
+        "definition_text": "محكمة التنفيذ الإدارية.",
+        "source_record_id": "bog-enforcement-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -36460,6 +37202,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "المرخص له",
+        "definition_text": "المرخص له بممارسة نشاط من أنشطة تقديم الخدمة ويشمل ذلك من حصل على إذن عام بممارسة النشاط بموجب النظام ولوائحه.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vegetation_cover_desertification_regulation",
         "article_number": 1,
         "term_as_written": "المرخص له",
@@ -36678,6 +37428,14 @@
     ],
     "المرسى البحري السياحي": [
       {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "المرسى البحري السياحي",
+        "definition_text": "المنطقة المستخدمة لتوقف أو رسو الواسطة البحرية في النطاق الجغرافي.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "marina_design_operation_controls",
         "article_number": 1,
         "term_as_written": "المرسى البحري السياحي",
@@ -36691,6 +37449,14 @@
         "term_as_written": "المرسى البحري السياحي",
         "definition_text": "المنطقة المستخدمة لتوقف أو رسو الواسطة البحرية في النطاق الجغرافي.",
         "source_record_id": "saudi-red-sea-authority-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "المرسى البحري السياحي",
+        "definition_text": "المنطقة المستخدمة لتوقف أو رسو الواسطة البحرية في النطاق الجغرافي.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -36729,6 +37495,16 @@
         "term_as_written": "المرفأ",
         "definition_text": "المكان المهيأ لرسو الوسائط البحرية وسفن الصيد للاحتماء وإنزال الأسماك بما في ذلك القيام بعمليات الإصلاح والصيانة لواسطة الصيد، كما يشمل قناة الدخول والممر والأحواض والمراسي والعلامات البحرية والمنطقة المحددة من اليابسة المتصلة بالمرفأ وجميع منشآته.",
         "source_record_id": "agriculture-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المرفق": [
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "المرفق",
+        "definition_text": "جميع المنشآت التابعة لمقدمي الخدمة المرخص لهم بنشاط تقديم الخدمة، مثل محطات تحلية المياه وخطوط أنابيب توصيل المياه، ومحطات المعالجة ومحطات التنقية ومعدات وأجهزة المرخص له؛ وخطوط وشبكات التوزيع.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -37664,6 +38440,14 @@
         "definition_text": "من يملك منفعة الأصل المؤجر بموجب العقد.\n   ٤.",
         "source_record_id": "lessor-repossession-regulation-llm-art-002",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "المستأجر",
+        "definition_text": "الشخص الذي يستأجر اليخت الضخم.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المستثمر": [
@@ -38004,6 +38788,14 @@
         "definition_text": "طالب خدمة الاستشارة العقارية من المرخص له.",
         "source_record_id": "real-estate-consultancy-analytics-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المستفيد",
+        "definition_text": "من له طلب قرض لدى الصندوق أو الوزارة وصدرت الموافقة على طلبه، أو أي قوائم طلب قرض آخر يقرها مجلس الإدارة.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "real_estate_development_fund_law",
@@ -38348,6 +39140,16 @@
         "definition_text": "المستهلك الذي يكون استهلاكه من الكهرباء أعلى من الحد الذي تقرره الهيئة من وقت لآخر ووفقا للضوابط التي تصدرها.",
         "source_record_id": "electricity-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "المستهلك المؤهل": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "المستهلك المؤهل",
+        "definition_text": "كل شخص يتم تزويده بالخدمة الكهربائية لغرض تغذية استهلاك نشاط الحوسبة السحابية والذي تنطبق عليه شروط تعريفة استهلاك الطاقة الكهربائية لنشاط الحوسبة السحابية كما هو موضح في الفصل السادس من هذه الوثيقة.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "المستودع": [
@@ -38968,6 +39770,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المصرح": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "المصرح",
+        "definition_text": "الشخص المخول بالتوقيع على بيان (تصريح) العبور.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "المصرح له": [
       {
         "track_id": "environmental_air_quality",
@@ -38999,6 +39811,14 @@
         "term_as_written": "المصرح له",
         "definition_text": "شخص حاصل على التصريح.",
         "source_record_id": "environmental-permits-reg-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "المصرح له",
+        "definition_text": "كل شخص ذي صفة طبيعية أو اعتبارية حاصل على تصريح لممارسة النشاط التجريبي.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -39190,6 +40010,14 @@
         "definition_text": "كل عمل مبتكر، سواء أكان أدبيا أم فنيا أم علميا، مهما كان نوعه، أو طريقة التعبير عنه، أو الغرض منه.",
         "source_record_id": "copyright-law-2026-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المصنف",
+        "definition_text": "هو الإنتاج الأدبي أو العلمي أو الفني المبتكر مهما كان نوعه أو أهميته أو طريقة التعبير عنه أو الغرض من تأليفه.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "المصنف الجماعي": [
@@ -39284,6 +40112,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المصنفات الأدبية": [
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المصنفات الأدبية",
+        "definition_text": "المصنفات التي يعبر عنها بالكلمات أيا كان محتواها، وهي إما أن تكون مكتوبة أو شفهية.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المصنفات الفنية": [
       {
         "track_id": "copyright_law_implementing_regulation",
@@ -39291,6 +40129,14 @@
         "term_as_written": "المصنفات الفنية",
         "definition_text": "المصنفات التي تقوم على التعبير الجمالي وتخاطب الحس الفني، أيا كانت وسيلة التعبير عنها، بما في ذلك الرسم أو التلوين أو التشكيل أو الحركة أو الصوت أو الصورة.",
         "source_record_id": "copyright-law-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المصنفات الفنية",
+        "definition_text": "المصنفات التي تخاطب الحس الجمالي للجمهور كالرسم أو التلوين أو الحركة أو الصوت أو الصورة أو المشاهدة أو الموسيقى.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -40435,6 +41281,16 @@
         "term_as_written": "المقصد النهائي",
         "definition_text": "النقطةُ التي تنتهي عندها الرحلة، سواءً كانت دون توقف أو متتابعة، وفقاً للحجز المتفق عليه.",
         "source_record_id": "aviation-passenger-rights-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "المقطع المثقوب": [
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "المقطع المثقوب",
+        "definition_text": "يقصد به مساحة مقطع الثقب أو الكسر الجزئي أو الكلي والذي يتسرب منه المياه ووحدة قياسه المتر المربع.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -41706,12 +42562,28 @@
     ],
     "المنتج": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "تركيبات العربات المعلقة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "conformity_models_general_regulation",
         "article_number": 1,
         "term_as_written": "المنتج",
         "definition_text": "أي منتج يوضع أو يعرض في الأسواق.",
         "source_record_id": "conformity-models-general-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "الشخص الطبيعي أو الاعتباري الذي يبادر بوضع المصنف السمعي البصري على دعامة مادية بغرض عرضها للجمهور تحت مسؤوليته المالية.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "environmental_wildlife_hunting",
@@ -41738,6 +42610,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "هو أي شخص طبیعي أو اعتباري یؤدي نشاطه إلى إنتاج نفایات الرعایة الصحیة مثل المنشأة الصحیة.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "geographical_indications_protection_law",
         "article_number": 1,
         "term_as_written": "المنتج",
@@ -41751,6 +42631,14 @@
         "term_as_written": "المنتج",
         "definition_text": "شخص طبيعي أو اعتباري يقوم -حسب طبيعة المنتج- بالآتي: 1- تجهيز أو تغليف المنتجات الزراعية أو الغذائية. 2- استغلال المنتجات الطبيعية. 3- المتاجرة بمنتجات الحرف اليدوية أو الصناعية أو التعامل بها أو استغلالها أو تصنيعها.",
         "source_record_id": "geographical-indications-protection-law-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المنتج",
+        "definition_text": "المركبات الهيدروجينية والأنظمة المرتبطة بها. المركبة الهيدروجينية hydrogen-powered vehicle: أي مركبة تستخدم الهيدروجين وقودا لدفع المركبة. نظام الدفع propulsion system: يقصد به نظام خلايا الوقود المستخدم لدفع المركبة. مكونات نظام الهيدروجين hydrogen component: خزان الهيدروجين وجميع الأجزاء الأخرى للمركبة التي تعمل بالهيدروجين والتي تكون على اتصال مباشر بالهيدروجين أو التي تشكل جزءا من نظام الهيدروجين. نظام الهيدروجين system of hydrogen: منظومة التحكم في مسار الهيدروجين بين المكونات وأجزاء التوصيل المجهزة للمركبات التي تعمل بالهيدروجين، باستثناء أنظمة الدفع أو وحدات الطاقة المساعدة.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -41974,6 +42862,14 @@
     ],
     "المنتجات والمبادرات": [
       {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "المنتجات والمبادرات",
+        "definition_text": "البرامج وأنواع التمويل التي يقرها الصندوق لتمكين المستفيد من الحصول على مسكن.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "real_estate_development_fund_law",
         "article_number": 1,
         "term_as_written": "المنتجات والمبادرات",
@@ -42086,6 +42982,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنشآت الجديدة": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "المنشآت الجديدة",
+        "definition_text": "هي جميع المنشآت العاملة في نشاط الحوسبة السحابية والتي تم إطلاق الخدمة الكهربائية لها بعد تاريخ صدور قرار مجلس الوزراء وكان تاريخ تقديم طلب إيصال الكهرباء لها قبل نهاية عام 2023م والمسجلة أو المرخصة من قبل هيئة الاتصالات.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "المنشآت الخاصة": [
       {
         "track_id": "private_entity_client_data_transfer_regulation",
@@ -42132,6 +43038,16 @@
         "definition_text": "هي المنشآت المرخصة من وزارة الصحة التي اجتازت بنجاح متطلبات الاعتماد الصادرة عن المجلس الوطني للسلامة والصحة المهنية.",
         "source_record_id": "high-risk-professions-regulation-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "المنشآت القائمة": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "المنشآت القائمة",
+        "definition_text": "هي جميع المنشآت العاملة في نشاط الحوسبة السحابية والتي تم إطلاق الخدمة الكهربائية لها قبل تاريخ صدور قرار مجلس الوزراء والمسجلة أو المرخصة من قبل هيئة الاتصالات.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "المنشآت المرخصة للتعامل مع العوامل البيولوجية": [
@@ -42208,6 +43124,14 @@
         "definition_text": "كل شخصية لها كيان قانوني (شركة) أو مؤسسة فردية.",
         "source_record_id": "freight-broker-logistics-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 1,
+        "term_as_written": "المنشأة",
+        "definition_text": "هي أي مستشفى أو عیادة أو مركز طبي أو بیطري أو شركة أدویة أو مركز أبحاث طبي أو صیدلیة أو مختبر أو دور نقاهة عامة أو خاصة.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "high_risk_professions_regulation",
@@ -43012,6 +43936,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المنظم": [
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "المنظم",
+        "definition_text": "الجهة التي تباشر ممارسة المهام المتعلقة بتنظيم أنشطة تقديم الخدمة ويشمل ذلك جميع المهام المسندة إلى هيئة تنظيم المياه والكهرباء، بناء على أحكام النظام، باستثناء ما يتعلق بنشاط الإنتاج المزدوج، استنادا إلى قرار معالي وزير البيئة والمياه والزراعة رقم (297999/1/1442) وتاريخ 25 /5 /1442ه، والبند (سابعا) من قرار مجلس الوزراء رقم (710) وتاريخ 9 /11 /1441ه، والبند (خامسا) من قرار مجلس الوزراء رقم (263) وتاريخ 14 /5 /1442ه.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "المنظمات الدولية": [
       {
         "track_id": "unesco_national_commission_statute",
@@ -43520,6 +44454,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "المواد الخام": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "المواد الخام",
+        "definition_text": "هي المواد والموارد غير المصنعة أو المصنعة جزئيا والتي ينبغي توفرها على وجه الخصوص لإنتاج وتصنيع المنتجات النهائية.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "المواد الخطرة": [
       {
         "track_id": "freight_broker_logistics_regulation",
@@ -43878,6 +44822,14 @@
     ],
     "المواصفة القياسية": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المواصفة القياسية",
+        "definition_text": "وثيقة تحدد صفات السلعة أو المادة أو الخدمة أو كل ما يخضع للقياس أو أوصافها أو خصائصها أو مستوى جودتها أو أبعادها ومقاييسها أو متطلبات السلامة والأمان فيها، كما تشمل المصطلحات والرموز وطرائق الاختبار وسحب العينات والتغليف وبطاقات البيانات والعلامات.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "المواصفة القياسية",
@@ -43908,6 +44860,14 @@
         "definition_text": "وثيقة معتمدة من مجلس الإدارة؛ تضع -للاستخدام الاعتيادي والمتكرر- القواعد والتعليمات أو الخصائص للمنتجات أو العمليات وطرائق الإنتاج ذات العلاقة؛ التي يكون تطبيقها اختياريا، وقد تشمل أو تبحث بشكل خاص المصطلحات، والتعاريف والتعبئة، ومتطلبات وضع الشارات أو العلامات التي تنطبق على المنتجات أو الخدمات أو العمليات أو طرائق الإنتاج.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المواصفة القياسية",
+        "definition_text": "وثيقة تحدد صفات السلعة أو المادة أو الخدمة أو كل ما يخضع للقياس أو أوصافها أو خصائصها أو مستوى جودتها أو أبعادها ومقاييسها أو متطلبات السلامة والأمان فيها، كما تشمل المصطلحات والرموز وطرق الاختبار وسحب العينات والتغليف وبطاقات البيانات والعلامات.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -44136,6 +45096,14 @@
     ],
     "المورد": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المورد",
+        "definition_text": "ويقصد به ما يلي: -صانع المنتج، في حالة إقامته في المملكة، أو كل شخص يقدم هويته على أنه صانع للمنتج وذلك من خلال تسميته المنتج باسمه أو أي وصف تجاري ذي صلة، وكذلك كل شخص يقدم على تجديد المنتج. -وكيل الصانع في المملكة في حالة إقامة الصانع خارج المملكة، أو المستورد في حالة عدم وجود وكيل للصانع في المملكة. -كل شخص في سلسلة التوريد ممن قد يكون لنشاطه أثر على خصائص المنتج.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "conformity_models_general_regulation",
         "article_number": 1,
         "term_as_written": "المورد",
@@ -44182,6 +45150,14 @@
         "definition_text": "ويقصد به ما يلي: صانع المنتج، في حالة إقامته في المملكة، أو كل شخص يقدم هويته على أنه صانع للمنتج وذلك من خلال تسميته المنتج باسمه أو أي وصف تجاري ذي صلة، وكذلك كل شخص يقدم على تجديد المنتج. وكيل الصانع في المملكة في حالة إقامة الصانع خارج المملكة، أو المستورد في حالة عدم وجود وكيل للصانع في المملكة. كل شخص في سلسلة التوريد ممن قد يكون لنشاطه أثر على خصائص المنتج.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "المورد",
+        "definition_text": "ويقصد به كل من: - صانع المنتج، في حالة إقامته في المملكة، أو كل شخص يقدم هويته على أنه صانع للمنتج وذلك من خلال تسميته المنتج باسمه أو أي وصف تجاري ذي صلة، وكذلك كل شخص يقدم على تجديد المنتج. - وكيل الصانع في المملكة في حالة إقامة الصانع خارج المملكة، أو المستورد في حالة عدم وجود وكيل للصانع في المملكة. - كل شخص في سلسلة التوريد، ممن قد يكون لنشاطه أثر على خصائص المنتج.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -44690,6 +45666,14 @@
     ],
     "الناقل": [
       {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "الناقل",
+        "definition_text": "الشخص الذي يقوم بالنقل في عملية عبور والمعتمد بذلك من السلطات المختصة.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "customs_law",
         "article_number": 2,
         "term_as_written": "الناقل",
@@ -44704,6 +45688,14 @@
         "definition_text": "الشخص المرخص والذي يقوم بعملية النقل بوسائل النقل الخاصة به بنفسه أو من ينيبه ويتحمل مسؤولية عقد النقل.",
         "source_record_id": "freight-broker-logistics-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 1,
+        "term_as_written": "الناقل",
+        "definition_text": "هو الشخص الطبیعي أو الاعتباري (شركة أو مؤسسة عامة أو خاصة) الذي یعمل في مجال نقل نفایات الرعایة الصحیة الخطرة إلى وحدة المعالجة والتخلص. 14- وثیقة النقل: هي الإستمارة التي تشتمل على كافة البیانات المستوفاة والموقعة من قبل المنتج والناقل والمستخلص والتي تتكون غالبا من عدة نسخ تصاحب حمولة نفایات الرعایة الصحیة المنقولة من المنشأة المنتجة للنفایات إلى وحدة المعالجة.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-001",
+        "extraction_method": "entries_only_no_intro"
       },
       {
         "track_id": "gcc_road_transport_law",
@@ -45042,6 +46034,14 @@
         "extraction_method": "entries_only_no_intro"
       },
       {
+        "track_id": "offplan_developer_technical_financial_qualification",
+        "article_number": 1,
+        "term_as_written": "النشاط",
+        "definition_text": "بيع وحدات عقارية على الخارطة، سواء أكانت تجارية أم استثمارية أم مكتبية أم خدمية أم صناعية أم سياحية أم غيرها، ومهما كان أسلوب تطويرها أو إنشائها.",
+        "source_record_id": "offplan-developer-technical-financial-qualification-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "ozone_depleting_substances_regulation",
         "article_number": 1,
         "term_as_written": "النشاط",
@@ -45107,6 +46107,16 @@
         "term_as_written": "النشاط الاقتصادي",
         "definition_text": "النشاط الذي يتضمن إنتاج أو توزيع أو شراء أو بيع السلع، ويشمل ذلك كل عمل تجاري أو زراعي أو صناعي أو خدمي أو مهني.",
         "source_record_id": "competition-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "النشاط التجريبي": [
+      {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "النشاط التجريبي",
+        "definition_text": "نشاط لا يندرج تحت اختصاص جهة محددة أو إشرافها، ويغلب عليه الطابع السياحي.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -45183,6 +46193,14 @@
         "term_as_written": "النشر",
         "definition_text": "إتاحة نسخ من مصنف أو أداء مثبت أو تسجيل صوتي للجمهور على نحو يفي باحتياجاته المعقولة مع مراعاة طبيعة المصنف أو الأداء المثبت أو التسجيل الصوتي.",
         "source_record_id": "copyright-law-2026-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "النشر",
+        "definition_text": "نقل المصنف أو إيصاله بأسلوب مباشر أو غير مباشر إلى الجمهور أو استخراج نسخ أو صور منه أو من أي جزء من أجزائه يمكن قراءتها أو رؤيتها أو سماعها أو أدائها.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -45268,6 +46286,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "النطاق الجغرافي",
+        "definition_text": "البحر الإقليمي التابع للمملكة العربية السعودية في البحر الأحمر، الذي تمارس فيه الأنشطة الملاحية والأنشطة البحرية، والجزء من اليابسة المرتبط بممارسة تلك الأنشطة؛ عدا المناطق العسكرية والأمنية وغيرها فيهما. سفن الرحلات السياحية (الكروز): سفينة ركاب كبيرة مصممة أو مستخدمة لغرض الترفيه أو السياحة مدفوعة التكاليف، وقادرة على استيعاب عدد كبير من الركاب على متنها.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "jeddah_development_authority_statute",
         "article_number": 1,
         "term_as_written": "النطاق الجغرافي",
@@ -45340,11 +46366,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "النطاق الجغرافي",
+        "definition_text": "البحر الإقليمي التابع للمملكة العربية السعودية في البحر الأحمر، الذي تمارس فيه الأنشطة الملاحية والأنشطة البحرية، والجزء من اليابسة المرتبط بممارسة تلك الأنشطة؛ عدا المناطق العسكرية والأمنية وغيرها فيهما.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vacant_properties_fees_regulation",
         "article_number": 1,
         "term_as_written": "النطاق الجغرافي",
         "definition_text": "حدود مكانية تشمل مجموعة من المباني، ضمن نطاق المدينة الخاضعة لتطبيق الرسم.",
         "source_record_id": "vacant-properties-fees-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "النطاق الجغرافي",
+        "definition_text": "البحر الإقليمي التابع للمملكة العربية السعودية في البحر الأحمر، الذي تمارس فيه الأنشطة الملاحية والأنشطة البحرية، والجزء من اليابسة المرتبط بممارسة تلك الأنشطة؛ عدا المناطق العسكرية والأمنية وغيرها فيهما.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -45751,6 +46793,14 @@
         "term_as_written": "النظام",
         "definition_text": "نظام الجمعيات التعاونية الصادر بقرار مجلس الوزراء رقم (73) في 9/3/1429هـ.",
         "source_record_id": "cooperative-societies-regulation-llm-art-054",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام",
+        "definition_text": "نظام حماية حقوق المؤلف.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -46910,6 +47960,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "النظام الفرعي": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "النظام الفرعي",
+        "definition_text": "الأنظمة الفرعية حسب التصنيفات المذكورة في الملحق (3) والمواصفات القياسية ذات العلاقة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "النظام المعلوماتي": [
       {
         "track_id": "anti_cyber_crime_law",
@@ -46992,6 +48052,16 @@
         "definition_text": "النفايات المصنفة على أنها نفايات خطرة بناء على أحكام النظام واللائحة، الناتجة من الأنشطة الصناعية أو غير الصناعية التي تحتوي على مواد سامة أو مواد قابلة للاشتعال أو للتفاعل، أو مواد مسببة للتآكل، أو مواد مذيبة، أو مواد مزيلة للشحوم، أو الزيوت، أو مواد ملونة، أو رواسب عجينية، أو أحماض وقلويات.",
         "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "النفايات الكيماوية": [
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 4,
+        "term_as_written": "النفايات الكيماوية",
+        "definition_text": "تعتبر نفايات المواد الكيماوية خطرة إذا انطبق عليها أي من الصفات التالية: 1- سامة. 2- قابلة للاشتعال. 3- تسبب تآكل المواد الأخرى. 4- نشطة التفاعل أو قابلة للانفجار. 5- لها القدرة على إحداث العيوب الخلقية في الأجنة أو تغيير المواد الجينية أو تسبب الإصابة بالسرطان أو تؤدي إلى إيقاف نمو الخلايا.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-004",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "النفايات الكيميائية": [
@@ -47572,6 +48642,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "capital_market_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -47601,6 +48679,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة العامة للنقل (السلطة البحرية).",
         "source_record_id": "classification-societies-authorisation-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة تنظيم المياه والكهرباء (هيئة تنظيم الكهرباء والإنتاج المزدوج سابقا).",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
         "extraction_method": "entries_only_no_intro"
       },
       {
@@ -47652,11 +48738,27 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للملكية الفكرية.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "corporate_governance_regulation",
         "article_number": 1,
         "term_as_written": "الهيئة",
         "definition_text": "هيئة السوق المالية.",
         "source_record_id": "corporate-governance-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للبحر الأحمر.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -47940,6 +49042,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "ict_devices_technical_regulation",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -48177,6 +49287,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "هيئة المساحة الجيولوجية السعودية.",
         "source_record_id": "mining-investment-law-llm-art-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "mobile_generation_electricity_service_rules",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "هيئة تنظيم المياه والكهرباء.",
+        "source_record_id": "mobile-generation-electricity-service-rules-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -48644,6 +49762,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للبحر الأحمر.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "telecommunications_law",
         "article_number": 1,
         "term_as_written": "الهيئة",
@@ -48721,6 +49847,14 @@
         "term_as_written": "الهيئة",
         "definition_text": "الهيئة السعودية للمواصفات والمقاييس والجودة.",
         "source_record_id": "vehicle-periodic-inspection-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "الهيئة",
+        "definition_text": "الهيئة السعودية للبحر الأحمر.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -48925,6 +50059,14 @@
       }
     ],
     "الوثيقة": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "الوثيقة",
+        "definition_text": "هذه الوثيقة الموسومة ب \"تعريفة استهلاك الكهرباء لنشاط الحوسبة السحابية: القواعد والإجراءات التنفيذية\".",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      },
       {
         "track_id": "official_communications_records_regulation",
         "article_number": 1,
@@ -49572,6 +50714,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة السياحة.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "fashion_authority_statute",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -50012,6 +51162,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة الشؤون البلدية والقروية والإسكان.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
+      {
         "track_id": "real_estate_development_fund_law",
         "article_number": 1,
         "term_as_written": "الوزارة",
@@ -50265,6 +51423,14 @@
         "term_as_written": "الوزارة",
         "definition_text": "وزارة الثقافة.",
         "source_record_id": "unesco-national-commission-statute-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزارة",
+        "definition_text": "وزارة البيئة والمياه والزراعة.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -50913,6 +52079,14 @@
         "term_as_written": "الوزير",
         "definition_text": "وزير الشؤون البلدية والقروية والإسكان.",
         "source_record_id": "excavation-permits-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير السياحة.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
         "extraction_method": "colon_pairs"
       },
       {
@@ -51804,6 +52978,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "الوزير",
+        "definition_text": "وزير البيئة والمياه والزراعة.",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "vegetation_cover_desertification_regulation",
         "article_number": 1,
         "term_as_written": "الوزير",
@@ -52210,6 +53392,14 @@
     ],
     "الوضع في السوق": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الوضع في السوق",
+        "definition_text": "هو وضع المنتج لأول مرة في سوق المملكة، والمسؤول عنه إما الصانع أو المستورد.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "الوضع في السوق",
@@ -52248,6 +53438,14 @@
         "definition_text": "هو وضع المنتج في سوق المملكة، ويكون المسؤول عنه إما الصانع أو المستورد.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "الوضع في السوق",
+        "definition_text": "هو وضع المنتج لأول مرة في سوق المملكة، والمسؤول عنه إما المورد أو المستورد.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -52538,6 +53736,14 @@
     ],
     "الوكيل الملاحي السياحي": [
       {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "الوكيل الملاحي السياحي",
+        "definition_text": "الشخص ذو الصفة الاعتبارية المرخص له من الهيئة بتقديم الخدمات للواسطة البحرية لممارسة الأنشطة الملاحية في النطاق الجغرافي.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "marina_bunkering_controls",
         "article_number": 1,
         "term_as_written": "الوكيل الملاحي السياحي",
@@ -52575,6 +53781,22 @@
         "term_as_written": "الوكيل الملاحي السياحي",
         "definition_text": "الشخص ذو الصفة الاعتبارية المرخص له من الهيئة بتقديم الخدمات للواسط البحرية لممارسة الأنشطة الملاحية في النطاق الجغرافي.",
         "source_record_id": "saudi-yachts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "الوكيل الملاحي السياحي",
+        "definition_text": "الشخص ذو الصفة الاعتبارية المرخص له من الهيئة بتقديم الخدمات للواسطة البحرية لممارسة الأنشطة الملاحية في النطاق الجغرافي.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "الوكيل الملاحي السياحي",
+        "definition_text": "الشخص ذو الصفة الاعتبارية المرخص له من الهيئة بتقديم الخدمات للواسطة البحرية لممارسة الأنشطة الملاحية في النطاق الجغرافي.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -52634,6 +53856,14 @@
         "definition_text": "اليخت الذي يرفع علم دولة اجنبية ايا كان نوعه وحجمه والذي يزور ويبحر داخل النطاق الجغرافي بغرض السياحة او الصيانة او التزود بالوقود او الحصول على التوريدات او المشاركة في المعارض البحرية.",
         "source_record_id": "marina-design-operation-controls-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "اليخت الزائر",
+        "definition_text": "أي يخت يرفع علم دولة أجنبية أيا كان نوعه وحجمه والذي يزور ويبحر داخل النطاق الجغرافي بغرض السياحة أو الصيانة أو التزود بالوقود أو الحصول على التوريدات أو المشاركة في المعارض البحرية.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "اليخت السعودي": [
@@ -52653,6 +53883,14 @@
         "term_as_written": "اليخت الضخم",
         "definition_text": "اليخت الضخم الذي يكون مزودا بمحرك أو شراع، ويبلغ طوله 24 مترا فأكثر، ومصمما لأغراض الاستخدام التجاري والترفيهي، ولا يكون على متنه أكثر من 12 راكبا، وفقا لكود اليخت الضخم المعمول به في الدولة التي يرفع علمها، أو 36 راكبا وفقا لكود يخت الركاب في الدولة التي يرفع علمها. سفن الرحلات السياحية (الكروز): سفينة ركاب كبيرة مصممة أو مستخدمة لغرض الترفيه أو السياحة مدفوعة التكاليف، وقادرة على استيعاب عدد كبير من الركاب على متنها.",
         "source_record_id": "coastal-tourism-craft-classification-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "اليخت الضخم",
+        "definition_text": "اليخت الضخم الذي يرفع أعلاما أجنبية ويكون مزودا بمحرك أو شراع، ويبلغ طوله 24 مترا فأكثر، ومصمما لأغراض الاستخدام التجاري والترفيهي، ولا يكون على متنه أكثر من 12 راكبا -من غير الطاقم- وفقا لكود اليخت الضخم المعمول به في الدولة التي يرفع علمها، أو 36 راكبا -من غير الطاقم- وفقا لكود يخت الركاب في الدولة التي يرفع علمها.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -53712,6 +54950,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "تركيبات العربات المعلقة": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "تركيبات العربات المعلقة",
+        "definition_text": "نظام كامل في الموقع، يتألف من بنية تحتية وأنظمة فرعية، تم تصميمه وإنشاؤه وتجميعه ووضعه في الخدمة بهدف نقل الأشخاص، حيث يتم توفير السحب بواسطة كابلات موضوعة على طول الخط، ومنها على سبيل المثال: التلفريك (Cable Car)، مصعد السحب (Drag lift)، الكراسي المعلقة (Chairlifts).",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "تسجيل التصرفات العقارية": [
       {
         "track_id": "real_estate_registration_implementing_regulation",
@@ -53760,6 +55008,34 @@
         "definition_text": "(Electromagnetic disturbance) أي ظاهرة كهرومغناطيسية قد تحد/ تقلل من كفاءة أداء المعدات، وقد يكون التشويش الكهرومغناطيسي عبارة عن ضوضاء كهرومغناطيسية أو إشارة غير مرغوب بها، أو تغييرا في وسط الانتشار ذاته. المناعة (حصانة) (Immunity): نظام أو معدة كهربائية أو وحدة منها أو نظام على أداء عملها دون التأثر بأي تشويش كهرومغناطيسي. البيئة الكهرومغناطيسية (Electromagnetic environmen): جميع الظواهر الكهرومغناطيسية التي يمكن إدراكها في موقع معين.",
         "source_record_id": "electromagnetic-compatibility-technical-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "تصريح الإبحار": [
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "تصريح الإبحار",
+        "definition_text": "التصريح الصادر من الهيئة يسمح لليخت (اليخت الضخم) بالإبحار داخل النطاق الجغرافي.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "تصريح الإبحار",
+        "definition_text": "تصريح يصدر من الهيئة السعودية للبحر الأحمر يسمح لليخت الزائر بالإبحار داخل النطاق الجغرافي.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "تصريح التأجير": [
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "تصريح التأجير",
+        "definition_text": "التصريح الصادر من الهيئة بموجب هذه اللائحة للسماح بتأجير اليخوت الضخمة التي ترفع أعلاما أجنبية لأغراض السياحة في النطاق الجغرافي.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "تصريح الترخيص الفئوي العام": [
@@ -54466,6 +55742,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "جهات التفتيش": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "جهات التفتيش",
+        "definition_text": "جهة تقويم مطابقة معتمدة وفقا للآيزو 17020، ومقبولة من الهيئة وفقا للائحة قبول جهات تقويم المطابقة، للقيام بإجراءات التفتيش على المنتج، وذلك قبل وضعه تحت الاستخدام العام أو أثناء إجراءات الاختبارات الدورية، وإصدار شهادة تفتيش وفقا للمتطلبات المحددة في هذه اللائحة الفنية.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "جهات التفتيش المقبولة": [
       {
         "track_id": "used_imported_vehicles_technical_regulation",
@@ -55002,6 +56288,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "حمولة استثنائية": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "حمولة استثنائية",
+        "definition_text": "بضاعة لا يجري عادة نقلها في وسيلة نقل قابلة للتغليف والختم بسبب وزنها و/ أو حجمها و/ أو طبيعتها على أن يكون من السهل التعرف عليها ويتعذر وضعها ضمن صندوق الحمولة والإغلاق الآمن وسيطرة الأقفال الجمركية أو في حال انتقال هذه البضائع بوسائلها الخاصة (بقوة المحرك) من مكتب جمركي في نقطة المغادرة إلى مكتب جمركي في نقطة الوصول وعلى سبيل المثال لا الحصر: أ- نقل الحيوانات والمواشي الحية ضمن مركبات خاصة. ب- نقل أجزاء من المعدات والآليات ذات الأوزان و/ أو الأحجام على شاحنات خاصة (نقل المثقلات). ج- نقل السيارات على ناقلات خاصة.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "حوادث الأجهزة والمستلزمات الطبية": [
       {
         "track_id": "medical_devices_law",
@@ -55369,6 +56665,26 @@
         "term_as_written": "خطة التخصيص",
         "definition_text": "خطة متعلقة بقطاع محدد، تحدد أهداف مشاريع التخصيص ضمن القطاع، وقائمة مشاريع التخصيص في القطاع والجدول الزمني للتنفيذ.",
         "source_record_id": "privatization-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خطة التقييم": [
+      {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "خطة التقييم",
+        "definition_text": "إجراءات تقييم النشاط التجريبي وآلياته.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "خطة الخروج": [
+      {
+        "track_id": "experimental_activities_regulation",
+        "article_number": 1,
+        "term_as_written": "خطة الخروج",
+        "definition_text": "إجراءات للخروج من النشاط التجريبي وآلياته.",
+        "source_record_id": "experimental-activities-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -56814,6 +58130,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "سرعة التدفق": [
+      {
+        "track_id": "utility_benefit_loss_compensation_regulation",
+        "article_number": 1,
+        "term_as_written": "سرعة التدفق",
+        "definition_text": "يقصد بها سرعة تدفق المياه المتسربة من المقطع المثقوب وقيمتها (1 متر/الثانية).",
+        "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "سعر التذكرة": [
       {
         "track_id": "aviation_passenger_rights_regulation",
@@ -56958,6 +58284,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "سكة حديدية مائلة": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "سكة حديدية مائلة",
+        "definition_text": "تركيب معلق يتم فيها سحب الناقلات بواسطة حبل واحد أو أكثر على طول مسار قد يكون على الأرض أو يكون مدعوما بهياكل ثابتة. 2/1 يكون للكلمات والعبارات الأخرى الواردة في هذه اللائحة الفنية المعاني الواردة في الأنظمة واللوائح والقرارات المعمول بها في المملكة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "سلسلة إمداد المياه": [
       {
         "track_id": "water_efficiency_center_statute",
@@ -57039,6 +58375,14 @@
       }
     ],
     "سلطات مسح السوق": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "سلطات مسح السوق",
+        "definition_text": "الجهات الحكومية المختصة بمراقبة الأسواق والإجراءات المتخذة للتأكد من مطابقة المنتجات لمتطلبات اللوائح الصادرة من مجلس الإدارة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
@@ -57848,6 +59192,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "شهادة التأهيل": [
+      {
+        "track_id": "offplan_developer_technical_financial_qualification",
+        "article_number": 1,
+        "term_as_written": "شهادة التأهيل",
+        "definition_text": "وثيقة نظامية تمنح لمزاولة أنشطة البيع أو التأجير على الخارطة بعد اجتياز برنامج تأهيل المطورين العقاريين.",
+        "source_record_id": "offplan-developer-technical-financial-qualification-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "شهادة التصديق الرقمي": [
       {
         "track_id": "electronic_transactions_law",
@@ -57877,6 +59231,14 @@
       }
     ],
     "شهادة التفتيش": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "شهادة التفتيش",
+        "definition_text": "الشهادة الصادرة عن جهة التفتيش المقبولة، التي تؤكد استيفاء المنتج أو المرافق أو المصانع أو المعدات أو العمليات أو الخدمات لمتطلبات لائحة فنية أو مواصفات قياسية محددة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "used_imported_vehicles_technical_regulation",
         "article_number": 1,
@@ -57956,6 +59318,14 @@
     ],
     "شهادة المطابقة": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "شهادة المطابقة",
+        "definition_text": "الشهادة الصادرة عن الهيئة أو إحدى الجهات المقبولة، التي تؤكد مطابقة المنتج أو أي دفعة منه لمتطلبات المواصفات القياسية ذات العلاقة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "شهادة المطابقة",
@@ -57978,6 +59348,14 @@
         "definition_text": "الشهادة الصادرة عن الهيئة أو إحدى الجهات المقبولة لديها؛ التي تؤكد مطابقة المنتج أو أي دفعة منه لمتطلبات المواصفات القياسية ذات العلاقة.",
         "source_record_id": "hazardous-substances-electrical-equipment-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "شهادة المطابقة",
+        "definition_text": "الشهادة الصادرة عن الهيئة أو إحدى الجهات المقبولة، التي تؤكد مطابقة المنتج أو أي دفعة منه أو المرافق أو المصانع أو المعدات أو العمليات أو الخدمات لمتطلبات اللوائح الفنية والمواصفات القياسية ذات العلاقة.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       },
       {
         "track_id": "ict_devices_technical_regulation",
@@ -58512,6 +59890,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "طاقم اليخت الضخم": [
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "طاقم اليخت الضخم",
+        "definition_text": "جميع الأشخاص العاملين على متن اليخت بأي صفة، بما في ذلك الربان وكبير الضباط والمهندس.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "طالب التأشيرة": [
       {
         "track_id": "temporary_work_visas_regulation",
@@ -58519,6 +59907,16 @@
         "term_as_written": "طالب التأشيرة",
         "definition_text": "المنشأة التي تدار من شخص طبيعي أو اعتباري وتشغل عاملا أو أكثر لقاء أجر أيا كان نوعه.",
         "source_record_id": "temporary-work-visas-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "طالب التأهيل": [
+      {
+        "track_id": "offplan_developer_technical_financial_qualification",
+        "article_number": 1,
+        "term_as_written": "طالب التأهيل",
+        "definition_text": "المؤسسة أو الشركة الراغبة في التقديم للحصول على شهادة التأهيل.",
+        "source_record_id": "offplan-developer-technical-financial-qualification-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -58814,6 +60212,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "عربات النقل": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "عربات النقل",
+        "definition_text": "العربات المخصصة لنقل البضائع على السكك الحديدية.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "عضو طاقم السفينة": [
       {
         "track_id": "treaty_iraq_maritime_transport",
@@ -58923,6 +60331,16 @@
         "term_as_written": "عقد إيجار سفينة غير مجهزة",
         "definition_text": "العقد الذي يلتزم بمقتضاه المؤجر بوضع سفينة معينة تحت تصرف المستأجر لمدة محددة دون تجهيزها بمؤن, أو بحارة، أو وقود.",
         "source_record_id": "maritime-commercial-regulation-llm-art-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "عقد الإيجار المعترف به": [
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "عقد الإيجار المعترف به",
+        "definition_text": "مشارطة إيجار حسب الصيغة المعتمدة من جمعية اليخوت العالمية (MYBA (أو أي جمعية تأجير يخوت ضخمة أخرى معترف بها دوليا.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -59140,6 +60558,14 @@
     ],
     "علامة الجودة السعودية": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "علامة الجودة السعودية",
+        "definition_text": "هي علامة اعتمدتها الهيئة تدل على أن المنشأة ذات نظام إدارة فعال يضمن إنتاج سلعة مطابقة للائحة وإجراء المنح والمواصفات القياسية السعودية الخاصة بها.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "conformity_models_general_regulation",
         "article_number": 1,
         "term_as_written": "علامة الجودة السعودية",
@@ -59282,6 +60708,16 @@
         "definition_text": "مراجعة القوائم المالية، التي تعدها المنشأة، وفقا لمعايير المراجعة المعتمدة من الهيئة السعودية للمراجعين والمحاسبين لغرض إبداء الرأي فيما إذا كانت هذه القوائم تظهر بعدل المركز المالي للمنشأة في تاريخ معين ونتائج أعمالها عن فترة مالية محددة، أو فحص القوائم المالية الأولية، التي تعدها المنشأة، لغرض إبداء استنتاج عما إذا كان قد نمى إلى العلم أي شيء يدعو إلى الاعتقاد بأن القوائم المالية الأولية غير معدة من جميع الجوانب الجوهرية وفقا لمعايير المحاسبة المعتمدة من الهيئة السعودية للمراجعين والمحاسبين.",
         "source_record_id": "cma-auditors-registration-rules-llm-002",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "عملية عبور": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "عملية عبور",
+        "definition_text": "نقل البضائع من مكتب انطلاق إلى مكتب المقصد طبقا لأحكام هذه الاتفاقية.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "غاز البترول السائل": [
@@ -59736,6 +61172,14 @@
         "definition_text": "الممثلون والمغنون والملقون والمنشدون والعازفون والموسيقيون وفنانو الأداء الحركي وغيرهم، الذين يؤدون أداءهم بأي طريقة، وقد يشمل أداؤهم مصنفات التراث الوطني أو المصنفات التي آلت إلى الملك العام.",
         "source_record_id": "copyright-law-2026-llm-001",
         "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "فنانو الأداء",
+        "definition_text": "الممثلون والعازفون والمغنون والراقصون والمنشدون، وغيرهم من الذين يؤدون عملا فنيا من مصنفات أدبية أو فنية بصورة أو أخرى.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "فني": [
@@ -59943,6 +61387,26 @@
         "term_as_written": "قائمة المنع",
         "definition_text": "قائمة بأسماء من يتقرر منعهم من الحصول على ترخيص ممارسة النشاط الثقافي المنظم بموجب هذه اللائحة.",
         "source_record_id": "visual-arts-authority-licensing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "قابلية التشغيل": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "قابلية التشغيل",
+        "definition_text": "جميع الأحكام والتدابير الفنية التي لها تأثير على التصميم والبناء، والتي تعتبر ضرورية لعمل تركيب الكابلات بأمان.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "قابلية الصيانة": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "قابلية الصيانة",
+        "definition_text": "جميع الأحكام والتدابير الفنية التي لها تأثير على التصميم والبناء والضرورية للصيانة، والتي تم تصميمها لضمان عمل تركيب الكابلات بأمان. التلفريك (Cable Car): تركيب معلق حيث يتم تعليق الناقلات ودفعها بواسطة كبل واحد أو أكثر. مصعد السحب (Drag lift): تركيب معلق حيث يتم سحب الركاب بواسطة معدات مناسبة على طول المسار المعد.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -61474,6 +62938,14 @@
         "definition_text": "مال عام يقدم من الصندوق للمستفيدين أو المنشآت مشروط باستيفاء الالتزامات النظامية.",
         "source_record_id": "hrdf-support-violations-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      },
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "مبلغ الدعم",
+        "definition_text": "المبلغ المحتسب للمستفيد وفق مصفوفة الدعم.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "مبنى تراثي": [
@@ -61666,11 +63138,35 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "مجلس إدارة الهيئة",
+        "definition_text": "مجلس إدارة الهيئة السعودية للبحر الأحمر.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "maritime_tour_operator_regulation",
         "article_number": 1,
         "term_as_written": "مجلس إدارة الهيئة",
         "definition_text": "مجلس إدارة الهيئة السعودية للبحر الأحمر.",
         "source_record_id": "maritime-tour-operator-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "مجلس إدارة الهيئة",
+        "definition_text": "مجلس إدارة الهيئة السعودية للبحر الأحمر.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "مجلس إدارة الهيئة",
+        "definition_text": "مجلس إدارة الهيئة السعودية للبحر الأحمر.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -62366,6 +63862,16 @@
         "definition_text": "رسم هندسي يوضح العقارات المقرر نزع ملكيتها أو وضع اليد المؤقت عليها.",
         "source_record_id": "real-estate-expropriation-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "مدة الاستحقاق": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "مدة الاستحقاق",
+        "definition_text": "هي المدة التي يكون فيها المستهلك مستحقا للتعريفة الموضحة في الفصل السابع من هذه الوثيقة.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "مدة التأخير": [
@@ -63280,6 +64786,14 @@
     ],
     "مسح السوق": [
       {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "مسح السوق",
+        "definition_text": "الأنشطة والتدابير التي تتخذها سلطات مسح السوق للتحقق من أن المنتجات تستوفي المتطلبات المنصوص عليها في اللوائح الفنية ذات العلاقة، وأنها لا تشكل خطرا على الصحة والسلامة والبيئة، أو أي جانب آخر يتعلق بحماية المصلحة العامة.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "dry_gas_tankers_technical_regulation",
         "article_number": 1,
         "term_as_written": "مسح السوق",
@@ -63358,6 +64872,16 @@
         "definition_text": "الأنشطة والتدابير التي تتخذها سلطات مسح السوق للتحقق من أن المنتجات تستوفي المتطلبات المنصوص عليها في اللوائح الفنية ذات العلاقة، وأنها لا تشكل خطرا على الصحة والسلامة والبيئة، أو أي جانب آخر يتعلق بحماية المصلحة العامة.",
         "source_record_id": "special-use-vehicle-equipment-technical-regulation-llm-001",
         "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "مشارطة الإيجار": [
+      {
+        "track_id": "superyacht_chartering_regulation",
+        "article_number": 1,
+        "term_as_written": "مشارطة الإيجار",
+        "definition_text": "تأجير اليخت الضخم من المستأجر بموجب عقد إيجار اليخت المعترف به لمدة محددة ولغرض محدد.",
+        "source_record_id": "superyacht-chartering-regulation-llm-001",
+        "extraction_method": "colon_pairs"
       }
     ],
     "مشاريع البنية التحتية": [
@@ -63570,6 +65094,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مصفوفة الدعم": [
+      {
+        "track_id": "real_estate_development_fund_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "مصفوفة الدعم",
+        "definition_text": "الآلية المعتمدة التي يتم بناء عليها احتساب نسبة الدعم.",
+        "source_record_id": "real-estate-development-fund-implementing-regulation-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "مصفوفة الصلاحيات": [
       {
         "track_id": "public_entities_governance_guide",
@@ -63718,6 +65252,26 @@
         "definition_text": "معامل يحدد من قبل المركز الوطني للرقابة على الالتزام البيئي بناء على الأثر البيئي لأنواع الأنشطة كالتعدين والطاقة والصناعة وغيرها من الأنشطة المختلفة، ويستخدم المعامل في احتساب مقدار المقابل المالي للتصريح البيئي للتشغيل، وفقا لأحكام اللائحة.",
         "source_record_id": "environmental-fees-reg-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "معامل الحمل الكهربائي السنوي": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "معامل الحمل الكهربائي السنوي",
+        "definition_text": "هو متوسط الحمل الكهربائي السنوي مقسوما على أقصى حمل ساعي خلال السنة.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "معامل الحمل الكهربائي لفترة معينة": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "معامل الحمل الكهربائي لفترة معينة",
+        "definition_text": "هو متوسط الحمل الكهربائي لتلك الفترة مقسوما على أقصى حمل ساعي خلال تلك الفترة.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "معاهدة شيكاغو": [
@@ -63902,6 +65456,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مقاول مؤهل": [
+      {
+        "track_id": "mobile_generation_electricity_service_rules",
+        "article_number": 1,
+        "term_as_written": "مقاول مؤهل",
+        "definition_text": "كيان مؤهل لدى مقدم الخدمة لمزاولة نشاط توليد الكهرباء من وحدات متنقلة وفقا لدليل تأهيل مقاولي نشاط التوليد المتنقل المعتمد من الهيئة.",
+        "source_record_id": "mobile-generation-electricity-service-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "مقدار الدعم": [
       {
         "track_id": "trade_remedies_law",
@@ -63996,6 +65560,14 @@
         "extraction_method": "colon_pairs"
       },
       {
+        "track_id": "mobile_generation_electricity_service_rules",
+        "article_number": 1,
+        "term_as_written": "مقدم الخدمة",
+        "definition_text": "كيان مرخص له من قبل الهيئة لمزاولة نشاط توزيع الكهرباء وبيعها بالتجزئة.",
+        "source_record_id": "mobile-generation-electricity-service-rules-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "postal_law",
         "article_number": 1,
         "term_as_written": "مقدم الخدمة",
@@ -64026,6 +65598,16 @@
         "definition_text": "الشخص المرخص له أو المصرح له بمزاولة نشاط من أنشطة إدارة النفايات.",
         "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "مقدم الخدمة الكهربائية": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "مقدم الخدمة الكهربائية",
+        "definition_text": "كل شخص يحمل رخصة سارية المفعول صادرة من الهيئة تصرح له القيام بنشاط توزيع الكهرباء وبيعها بالتجزئة.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "مقدم الخدمة المرتبط بنظام المدفوعات": [
@@ -64346,6 +65928,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مكتب الانطلاق": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "مكتب الانطلاق",
+        "definition_text": "مكتب جمارك تابع لأحد الأطراف المتعاقدة تبدأ منه عملية العبور، ويمكن أن يكون في نفس الوقت مكتب تحميل.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "مكتب البريد": [
       {
         "track_id": "postal_law",
@@ -64354,6 +65946,16 @@
         "definition_text": "المكان الذي يعده مقدم الخدمة؛ لغرض تقديم الخدمات البريدية.",
         "source_record_id": "postal-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "مكتب التحميل": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "مكتب التحميل",
+        "definition_text": "مكتب جمارك يقع في أرض أحد الأطراف المتعاقدة يكون من سلطاته وضع الأختام الجمركية على وسائل النقل لأغراض عملية العبور.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "مكتب التسجيل": [
@@ -64376,6 +65978,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "مكتب العبور": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "مكتب العبور",
+        "definition_text": "مكتب جمارك تابع لأحد الأطراف المتعاقدة تمر به وسيلة النقل في عملية العبور.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "مكتب العمل": [
       {
         "track_id": "labor_law",
@@ -64394,6 +66006,16 @@
         "definition_text": "الجهة التي تمارس عمليات المراجعة وفقا لأحكام نظام مهنة المحاسبة والمراجعة، سواء أكانت مكتبا فرديا أم شركة مهنية.",
         "source_record_id": "cma-auditors-registration-rules-llm-002",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "مكتب المقصد": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "مكتب المقصد",
+        "definition_text": "مكتب جمارك تنتهي عنده عملية العبور. 9- بيان الحمولة (المانيفست): المستند الذي يدون فيه وصف البضائع المشحونة وفق تصنيفات النظام المنسق في وسائل نقل والذي يتضمن ما يلي: أ- وصف البضائع. ب- علامات، وأرقام، عدد ونوع الطرود أو الوحدات. ج- نوع الحمولة (خطرة - سريعة الاشتعال - سامة - كيماوية) تدخل في الصناعات المدنية. د- قيمة البضائع. ه- منشأ البضائع ومصدرها. و- بلد المقصد. ز- الوزن القائم للبضاعة. ح- تعريف لوسيلة النقل. ط- اسم وعنوان الشخص الموقع على بيان الحمولة. ي- اسم المرسل والمرسل إليه. ك- تفاصيل أي مستندات ملحقة ببيان الحمولة. ل- رقم البيان المسلسل وتاريخه. م- حقل للملاحظات المتعلقة بأختام الجمارك وتاريخ وضعها. ن- حقل للملاحظات الخاصة. 10- بيان (تصريح) العبور: البيان الواجب تقديمه في كل عملية عبور في الدولة التي تبدأ فيها العملية.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "مكتب تنسيق المشروعات": [
@@ -64463,6 +66085,16 @@
         "term_as_written": "مكونات الحركة الدولية",
         "definition_text": "اللجنة الدولية للصليب الأحمر، والاتحاد الدولي لجمعيات الصليب الأحمر والهلال الأحمر، والهيئات والجمعيات الوطنية للصليب الأحمر والهلال الأحمر الأعضاء في الاتحاد الدولي لجمعيات الصليب الأحمر والهلال الأحمر.",
         "source_record_id": "red-crescent-emblem-law-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "مكونات السلامة": [
+      {
+        "track_id": "cableway_installations_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "مكونات السلامة",
+        "definition_text": "أي مكون من مكونات المعدات أو أي جهاز يراد دمجه في نظام فرعي أو التركيبات المعلقة لغرض ضمان وظيفة السلامة، والتي يعرض فشلها سلامة أو صحة الركاب أو موظفي التشغيل أو الأطراف الأخرى للخطر.",
+        "source_record_id": "cableway-installations-technical-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -64624,6 +66256,14 @@
     ],
     "منازعة التنفيذ": [
       {
+        "track_id": "bog_enforcement_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "منازعة التنفيذ",
+        "definition_text": "دعوى تتعلق بشروط صحة التنفيذ وسلامة إجراءاته.",
+        "source_record_id": "bog-enforcement-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
         "track_id": "bog_enforcement_law",
         "article_number": 1,
         "term_as_written": "منازعة التنفيذ",
@@ -64753,6 +66393,14 @@
         "term_as_written": "منتج التسجيل الصوتي",
         "definition_text": "الشخص ذو الصفة الطبيعية أو الاعتبارية الذي يتم بمبادرة منه وبمسؤوليته تثبيت الأصوات -التي يتكون منها الأداء أو غيرها من الأصوات أو تثبيت أي تمثيل للأصوات- لأول مرة.",
         "source_record_id": "copyright-law-implementing-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
+      {
+        "track_id": "copyright_protection_implementing_regulation",
+        "article_number": 1,
+        "term_as_written": "منتج التسجيل الصوتي",
+        "definition_text": "الشخص الطبيعي أو الاعتباري الذي يتم بمبادرة منه وبمسؤوليته تثبيت الأصوات لأول مرة التي يتكون منها الأداء أو غيرها من الأصوات أو تثبيت أي تمثيل للأصوات.",
+        "source_record_id": "copyright-protection-implementing-regulation-llm-001",
         "extraction_method": "colon_pairs"
       }
     ],
@@ -65040,6 +66688,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "منصة إبحار": [
+      {
+        "track_id": "visiting_private_yachts_regulation",
+        "article_number": 1,
+        "term_as_written": "منصة إبحار",
+        "definition_text": "منصة حكومية تابعة للهيئة تقدم جميع الخدمات المتعلقة بسياحة الوسائط البحرية.",
+        "source_record_id": "visiting-private-yachts-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
     "منصة إلكترونية": [
       {
         "track_id": "product_safety_regulation",
@@ -65116,6 +66774,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "منطقة العبور": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "منطقة العبور",
+        "definition_text": "أراضي الدول الأطراف في هذه الاتفاقية.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "منطقة المناورات في المطار": [
       {
         "track_id": "civil_aviation_law",
@@ -65137,6 +66805,14 @@
       }
     ],
     "منظم الرحلات البحرية السياحية": [
+      {
+        "track_id": "cruise_ships_regulation",
+        "article_number": 1,
+        "term_as_written": "منظم الرحلات البحرية السياحية",
+        "definition_text": "الشخص ذو الصفة الاعتبارية المرخص له من الهيئة بممارسة أعمال تنظيم الرحلات البحرية السياحية في النطاق الجغرافي.",
+        "source_record_id": "cruise-ships-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      },
       {
         "track_id": "maritime_tour_operator_regulation",
         "article_number": 1,
@@ -65594,6 +67270,16 @@
         "definition_text": "توجيه سيارات الأجرة أو السيارات الخاصة لنقل الركاب بأجر بواسطة تطبيقات الأجهزة الذكية.",
         "source_record_id": "taxi-activity-regulation-llm-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "نشاط الحوسبة السحابية": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "نشاط الحوسبة السحابية",
+        "definition_text": "هو نشاط تقديم خدمات الحوسبة السحابية والبنية التحتية المخصصة والممكنة لها والمرتبطة بها، والذي يتم تنظيمه من قبل هيئة الاتصالات وتقنية المعلومات من خلال تسجيل أو ترخيص الجهات العاملة به.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "نشاط الدفع الآجل": [
@@ -66290,6 +67976,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نفايات أجزاء وبقايا أعضاء الجسم": [
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 4,
+        "term_as_written": "نفايات أجزاء وبقايا أعضاء الجسم",
+        "definition_text": "تحتوي على الأنسجة والأعضاء أو أجزائها والأنسجة الجنينية والمشيمية والدم ومشتقاته وسوائل الجسم الأخرى وجثث الحيوانات.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-004",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "نفايات الأدوات الحادة": [
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 4,
+        "term_as_written": "نفايات الأدوات الحادة",
+        "definition_text": "هي التي يمكن أن تسبب قطعا أو جرحا أو وخزا للجسم مثل إبر المحاقن والمشارط والشفرات والزجاج المكسور والأدوات الحادة الأخرى. 4- النفايات الصيدلانية (الأدوية): وتشمل النفايات الناتجة عن تصنيع وتحضير الأدوية والمستحضرات الصيدلانية والمنتجات الدوائية التالفة أو المنتهية الصلاحية، والمنتجات الدوائية الملوثة والأمصال واللقاحات وتشمل الأوعية والأدوات المستخدمة في إنتاجها وتعبئتها وتوزيعها.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-004",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "نفايات العوامل البيولوجية": [
       {
         "track_id": "biological_weapons_convention_regulation",
@@ -66300,6 +68006,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "نفايات المواد السامة للجينات والخلايا": [
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 4,
+        "term_as_written": "نفايات المواد السامة للجينات والخلايا",
+        "definition_text": "وهي التي يمكنها أن تؤثر على الجينات والخلايا، بحيث تؤدي إلى مشاكل صحية مثل العيوب الخلقية في الجنين أو القادرة على إحداث الإصابة بالسرطان ولها القدرة على إيقاف نمو الخلايا وتستخدم هذه المواد في أقسام الطب النووي ووحدات علاج الأورام والتشخيص بالإشعاع، بما في ذلك مياه الصرف الصحي الناتجة من دورات المياه الخاصة بالمرضى المعالجين بهذه المواد.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-004",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
+    "نفايات المواد المشعة": [
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 4,
+        "term_as_written": "نفايات المواد المشعة",
+        "definition_text": "وتشمل جميع المواد (الصلبة والسائلة) التي لها نشاط إشعاعي وتستخدم في الفحص والتشخيص والعلاج وجميع المواد الملوثة بها (سواء كانت هذه المواد صلبة أو سائلة).",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-004",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "نفايات الوسائط البحرية": [
       {
         "track_id": "waste_management_law",
@@ -66308,6 +68034,16 @@
         "definition_text": "النفايات التي تنتج من جميع وسائط ووسائل النقل والوحدات العائمة التي تستخدم لمزاولة الأنشطة البحرية، وتشمل السفن وقوارب الصيد والنزهة البحرية، أو وسائط الرياضات البحرية.",
         "source_record_id": "waste-management-law-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "نفايات عبوات الغازات المضغوطة": [
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 4,
+        "term_as_written": "نفايات عبوات الغازات المضغوطة",
+        "definition_text": "وهي عبوات الغازات المضغوطة الفارغة أو التالفة التي استخدمت في تعبئة الغازات الخاملة أو الغازات التي يحتمل أن تسبب الضرر وقد تنفجر هذه العبوات عندما تتعرض للثقب أو لدرجات حرارة عالية.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-004",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "نقاط التوقف": [
@@ -66614,6 +68350,16 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "هيئة الاتصالات": [
+      {
+        "track_id": "cloud_computing_electricity_tariff_executive_rules",
+        "article_number": 3,
+        "term_as_written": "هيئة الاتصالات",
+        "definition_text": "هيئة الاتصالات وتقنية المعلومات.",
+        "source_record_id": "cloud-computing-electricity-tariff-executive-rules-llm-003",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "هيئة البث": [
       {
         "track_id": "copyright_law_2026",
@@ -66774,6 +68520,26 @@
         "extraction_method": "colon_pairs"
       }
     ],
+    "وتشمل على وجه الخصوص": [
+      {
+        "track_id": "hydrogen_vehicles_technical_regulation",
+        "article_number": 1,
+        "term_as_written": "وتشمل على وجه الخصوص",
+        "definition_text": "أ) أنظمة التحكم في استخدام الهيدروجين ومراقبته. ب) أنظمة التركيب لمكونات الهيدروجين في المركبة. ج) أنظمة تحديد تدفق الهيدروجين. د) أنظمة الحماية من الضغط الزائد. ه) أنظمة الكشف عن فشل المبادل الحراري. أقصى ضغط تشغيلي مسموح به (maximum allowable working pressure (MAWP: أقصى ضغط يمكن أن يتعرض له أحد المكونات وفقا لتصميمه والذي يعمل أساسا لتحديد مقاومة المكون المعني. ضغط التشغيل الاسمي (nominal working pressure (NWP: - في حالة الخزانات، يستقر الضغط عند درجة حرارة موحدة تبلغ 288 كلفن (15درجة مئوية) لخزان ممتلئ. - في حالة المكونات الأخرى، مستوى الضغط الذي يعمل عنده المكون في ظل الظروف العادية. الخزان الداخلي inner tank: جزء من خزان الهيدروجين المخصص لاستقبال الهيدروجين السائل الذي يحتوي على الهيدروجين المبرد. الفئة M: المركبات ذات المحركات التي تحتوي على أربع عجلات على الأقل، مصممة ومصنعة لنقل الركاب.",
+        "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+        "extraction_method": "colon_pairs"
+      }
+    ],
+    "وتقسم إلى نوعين": [
+      {
+        "track_id": "gcc_healthcare_waste_management_system",
+        "article_number": 1,
+        "term_as_written": "وتقسم إلى نوعين",
+        "definition_text": "1- 1 نفایات الرعایة الصحیة غیر الخطرة: وهي جميع النفایات التي تشتمل على مواد كالتي توجد في النفایات البلدية، وتنتج هذه النفایات من الأقسام الإدارية ومن أعمال النظافة العامة داخل المنشآت الصحیة، وتشكل الجزء الأكبر من إجمالي نفایات الرعایة الصحیة، ویعامل هذا النوع معاملة النفایات البلدية. 1- 2 نفایات الرعایة الصحیة الخطرة: هي النفایات التي تنتج من مصادر ملوثة أو محتمل تلوثها بالعوامل المعدیة أو الكيماوية أو المشعة وتشكل النسبة الأقل من إجمالي نفایات الرعایة الصحیة، وتشكل خطرا على الفرد والمجتمع والبيئة أثناء إنتاجها أو جمعها أو تداولها أو تخزینها أو نقلها أو التخلص منها. 2- نفایات الأجزاء وبقایا الأعضاء البشرية والحيوانية: هي النفایات التي تحتوي على الأنسجة، والأعضاء البشرية، والنسج الجنينية والمشیمیة، وجثث الحيوانات، / والدم ومشتقاته، والسوائل الجسمیة. 3- النفایات المعدیة: هي تلك النفایات التي قد تنقل أیا من الأمراض المعدیة نتيجة تلوثها بالبكتريا، الفيروسات، الطفيليات،والفطريات. 4- النفایات الكيماوية: هي تلك النفایات التي تشتمل على المواد الكيماوية الصلبة أو السائلة أو الغازية الناتجة من الأنشطة التشخيصية، العلاجية، المختبرية، أو المستخدمة في التنظيف وإجراءات التطهیر أو التعقيم. 5- النفایات الحادة: هي النفایات التي تحتوي على الأدوات الحادة مثل المحاقن، المشارط، المباضع الجراحية، المناشير، الشفرات، الزجاج المهشم، وأي أدوات حادة أخرى قد تسبب قطعا أو وخزا للجسم. 6- النفایات الصيدلانية (الأدوية): هي تلك النفایات المتخلفة عن الأنشطة الوقائية أو العلاجية أو عن إنتاج وتحضیر المستحضرات الصيدلية والعقاقير والأدوية التالفة أو منتهیة الصلاحية. 7- النفایات الملوثة بالمواد المشعة: هي تلك النفایات التي تتضمن جميع المواد الصلبة والسائلة والغازية الملوثة بنویدات المواد المشعة الناتجة من استخدامها في فحوصات الأنسجة البشرية والسوائل، وفي إجراءات تشخيص وتحديد الأورام وعلاجها. 8- نفایات عبوات الغازات المضغوطة: هي أسطوانات الغازات الفارغة أو التالفة والخراطيش (الكارترج) وعبوات التعقيم والبخاخات (أریسولات). 9- نفایات المواد السامة للجینات والخلایا: هي نفایات مواد صیدلانیة خاصة شدیدة الخطورة، ولها القدرة على قتل أو منع انقسام الخلایا أو مكونات الجینات، ویشمل هذا، تلك المواد المستخدمة في علاج بعض أنواع السرطان وحالات نقل الأعضاء، كما تشمل هذه النفایات أي لوازم مستخدمة في تحضیر هذه المواد بالإضافة إلى إفرازات المریض الذي یتم علاجه بهذه المواد، وحتى أسبوع من تاریخ آخر جرعة أخذها المريض. 10- وحدة معالجة النفایات: تعني المنشأة التي تتم فیها عملیات تغییر الخاصیة البيولوجية أو الكیماویة أو الفیزیائیة لنفایات الرعایة الصحیة الخطرة بهدف القضاء على خطورتها حتى تصبح آمنة صحیا وبیئیا. 11- فرز (فصل) النفایات: هو عزل مجموعة نفایات الرعایة الصحیة الخطرة (بواسطة المنتج) ابتداء من نقطة إنتاجها في المنشأة وخلال مراحل الجمع والتعبئة والتخزین والنقل داخل المنشأة 12- التخزین: هو حفظ مؤقت لنفایات الرعایة الصحیة الخطرة في موقع تجميع محدد.",
+        "source_record_id": "gcc-healthcare-waste-management-system-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      }
+    ],
     "وثائق طرح مشروع التخصيص": [
       {
         "track_id": "privatization_regulation",
@@ -66893,6 +68659,14 @@
       }
     ],
     "وثيقة النقل": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "وثيقة النقل",
+        "definition_text": "مستند يصدر بموجب عقد نقل البضائع ويعتبر إثباتا على استلام الناقل للبضاعة موضوع النقل بالحالة المبينة فيها لتسليمها إلى المرسل إليه بذات الحالة.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
+      },
       {
         "track_id": "gcc_road_transport_law",
         "article_number": 1,
@@ -67140,6 +68914,16 @@
         "definition_text": "المركبات والشاحنات والحافلات، والقطارات، والمركبات البحرية، بمختلف أنواعها.",
         "source_record_id": "tga-organizational-statute-llm-art-001",
         "extraction_method": "colon_pairs"
+      }
+    ],
+    "وسائل النقل المائية": [
+      {
+        "track_id": "arab_states_transit_transport_agreement",
+        "article_number": 1,
+        "term_as_written": "وسائل النقل المائية",
+        "definition_text": "الوسائل التي تستخدم في نقل البضائع في الممرات المائية الداخلية والبحار.",
+        "source_record_id": "arab-states-transit-transport-agreement-llm-001",
+        "extraction_method": "entries_only_no_intro"
       }
     ],
     "وسيط الشحن": [

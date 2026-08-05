@@ -575,6 +575,28 @@ PUBLIC_ENTITIES_GOVERNANCE_GUIDE_LLM = os.path.join(ROOT, "data", "public_entiti
 PUBLIC_TRANSPORT_USERS_RIGHTS_ENFORCEMENT_GUIDE_LLM = os.path.join(ROOT, "data", "public_transport_users_rights_enforcement_guide_arabic_legal_llm", "public_transport_users_rights_enforcement_guide_legal_llm_001_009.json")
 LAND_TRANSPORT_TRAINING_CENTERS_ACCREDITATION_LLM = os.path.join(ROOT, "data", "land_transport_training_centers_accreditation_arabic_legal_llm", "land_transport_training_centers_accreditation_legal_llm_001_014.json")
 ARABIC_LANGUAGE_NATIONAL_POLICY_LLM = os.path.join(ROOT, "data", "arabic_language_national_policy_arabic_legal_llm", "arabic_language_national_policy_legal_llm_001_005.json")
+GCC_HEALTHCARE_WASTE_MANAGEMENT_SYSTEM_LLM = os.path.join(ROOT, "data", "gcc_healthcare_waste_management_system_arabic_legal_llm", "gcc_healthcare_waste_management_system_legal_llm_001_023.json")
+OFFPLAN_DEVELOPER_TECHNICAL_FINANCIAL_QUALIFICATION_LLM = os.path.join(ROOT, "data", "offplan_developer_technical_financial_qualification_arabic_legal_llm", "offplan_developer_technical_financial_qualification_legal_llm_001_013.json")
+HYDROGEN_VEHICLES_TECHNICAL_REGULATION_LLM = os.path.join(ROOT, "data", "hydrogen_vehicles_technical_regulation_arabic_legal_llm", "hydrogen_vehicles_technical_regulation_legal_llm_001_012.json")
+CABLEWAY_INSTALLATIONS_TECHNICAL_REGULATION_LLM = os.path.join(ROOT, "data", "cableway_installations_technical_regulation_arabic_legal_llm", "cableway_installations_technical_regulation_legal_llm_001_015.json")
+BOG_ENFORCEMENT_IMPLEMENTING_REGULATION_LLM = os.path.join(ROOT, "data", "bog_enforcement_implementing_regulation_arabic_legal_llm", "bog_enforcement_implementing_regulation_legal_llm_001_037.json")
+ADMINISTRATIVE_ENTITIES_ENFORCEMENT_REQUEST_PROCEDURES_LLM = os.path.join(ROOT, "data", "administrative_entities_enforcement_request_procedures_arabic_legal_llm", "administrative_entities_enforcement_request_procedures_legal_llm_001_014.json")
+CLOUD_COMPUTING_ELECTRICITY_TARIFF_EXECUTIVE_RULES_LLM = os.path.join(ROOT, "data", "cloud_computing_electricity_tariff_executive_rules_arabic_legal_llm", "cloud_computing_electricity_tariff_executive_rules_legal_llm_001_008.json")
+OPEN_FIELD_VEGETABLE_CROPS_EXPORT_CONDITIONS_LLM = os.path.join(ROOT, "data", "open_field_vegetable_crops_export_conditions_arabic_legal_llm", "open_field_vegetable_crops_export_conditions_legal_llm_001_009.json")
+MOBILE_GENERATION_ELECTRICITY_SERVICE_RULES_LLM = os.path.join(ROOT, "data", "mobile_generation_electricity_service_rules_arabic_legal_llm", "mobile_generation_electricity_service_rules_legal_llm_001_013.json")
+GUARANTEED_STANDARDS_GUIDE_LLM = os.path.join(ROOT, "data", "guaranteed_standards_guide_arabic_legal_llm", "guaranteed_standards_guide_legal_llm_001_009.json")
+HEAVY_EQUIPMENT_SAFETY_INSPECTION_BODIES_ACCREDITATION_RULES_LLM = os.path.join(ROOT, "data", "heavy_equipment_safety_inspection_bodies_accreditation_rules_arabic_legal_llm", "heavy_equipment_safety_inspection_bodies_accreditation_rules_legal_llm_001_012.json")
+EMERGENCY_ORDERS_ANNULMENT_CLAIMS_RULES_LLM = os.path.join(ROOT, "data", "emergency_orders_annulment_claims_rules_arabic_legal_llm", "emergency_orders_annulment_claims_rules_legal_llm_001_008.json")
+HAGUE_APOSTILLE_CONVENTION_LLM = os.path.join(ROOT, "data", "hague_apostille_convention_arabic_legal_llm", "hague_apostille_convention_legal_llm_001_015.json")
+ARAB_STATES_TRANSIT_TRANSPORT_AGREEMENT_LLM = os.path.join(ROOT, "data", "arab_states_transit_transport_agreement_arabic_legal_llm", "arab_states_transit_transport_agreement_legal_llm_001_045.json")
+COPYRIGHT_PROTECTION_IMPLEMENTING_REGULATION_LLM = os.path.join(ROOT, "data", "copyright_protection_implementing_regulation_arabic_legal_llm", "copyright_protection_implementing_regulation_legal_llm_001_052.json")
+REAL_ESTATE_DEVELOPMENT_FUND_IMPLEMENTING_REGULATION_LLM = os.path.join(ROOT, "data", "real_estate_development_fund_implementing_regulation_arabic_legal_llm", "real_estate_development_fund_implementing_regulation_legal_llm_001_025.json")
+EXPERIMENTAL_ACTIVITIES_REGULATION_LLM = os.path.join(ROOT, "data", "experimental_activities_regulation_arabic_legal_llm", "experimental_activities_regulation_legal_llm_001_023.json")
+VISITING_PRIVATE_YACHTS_REGULATION_LLM = os.path.join(ROOT, "data", "visiting_private_yachts_regulation_arabic_legal_llm", "visiting_private_yachts_regulation_legal_llm_001_011.json")
+CRUISE_SHIPS_REGULATION_LLM = os.path.join(ROOT, "data", "cruise_ships_regulation_arabic_legal_llm", "cruise_ships_regulation_legal_llm_001_011.json")
+SUPERYACHT_CHARTERING_REGULATION_LLM = os.path.join(ROOT, "data", "superyacht_chartering_regulation_arabic_legal_llm", "superyacht_chartering_regulation_legal_llm_001_010.json")
+UTILITY_BENEFIT_LOSS_COMPENSATION_REGULATION_LLM = os.path.join(ROOT, "data", "utility_benefit_loss_compensation_regulation_arabic_legal_llm", "utility_benefit_loss_compensation_regulation_legal_llm_001_010.json")
+REPAIR_COST_COMPENSATION_ESTIMATION_CONTROLS_LLM = os.path.join(ROOT, "data", "repair_cost_compensation_estimation_controls_arabic_legal_llm", "repair_cost_compensation_estimation_controls_legal_llm_001_007.json")
 MUSEUMS_AUTHORITY_LICENSING_REGULATION_LLM = os.path.join(ROOT, "data", "museums_authority_licensing_regulation_arabic_legal_llm", "museums_authority_licensing_regulation_legal_llm_001_023.json")
 HERITAGE_AUTHORITY_LICENSING_REGULATION_LLM = os.path.join(ROOT, "data", "heritage_authority_licensing_regulation_arabic_legal_llm", "heritage_authority_licensing_regulation_legal_llm_001_023.json")
 LITERATURE_PUBLISHING_TRANSLATION_AUTHORITY_LICENSING_REGULATION_LLM = os.path.join(ROOT, "data", "literature_publishing_translation_authority_licensing_regulation_arabic_legal_llm", "literature_publishing_translation_authority_licensing_regulation_legal_llm_001_023.json")
@@ -1327,6 +1349,28 @@ def main() -> int:
     public_transport_users_rights_enforcement_guide_llm = _load_json(PUBLIC_TRANSPORT_USERS_RIGHTS_ENFORCEMENT_GUIDE_LLM)
     land_transport_training_centers_accreditation_llm = _load_json(LAND_TRANSPORT_TRAINING_CENTERS_ACCREDITATION_LLM)
     arabic_language_national_policy_llm = _load_json(ARABIC_LANGUAGE_NATIONAL_POLICY_LLM)
+    gcc_healthcare_waste_management_system_llm = _load_json(GCC_HEALTHCARE_WASTE_MANAGEMENT_SYSTEM_LLM)
+    offplan_developer_technical_financial_qualification_llm = _load_json(OFFPLAN_DEVELOPER_TECHNICAL_FINANCIAL_QUALIFICATION_LLM)
+    hydrogen_vehicles_technical_regulation_llm = _load_json(HYDROGEN_VEHICLES_TECHNICAL_REGULATION_LLM)
+    cableway_installations_technical_regulation_llm = _load_json(CABLEWAY_INSTALLATIONS_TECHNICAL_REGULATION_LLM)
+    bog_enforcement_implementing_regulation_llm = _load_json(BOG_ENFORCEMENT_IMPLEMENTING_REGULATION_LLM)
+    administrative_entities_enforcement_request_procedures_llm = _load_json(ADMINISTRATIVE_ENTITIES_ENFORCEMENT_REQUEST_PROCEDURES_LLM)
+    cloud_computing_electricity_tariff_executive_rules_llm = _load_json(CLOUD_COMPUTING_ELECTRICITY_TARIFF_EXECUTIVE_RULES_LLM)
+    open_field_vegetable_crops_export_conditions_llm = _load_json(OPEN_FIELD_VEGETABLE_CROPS_EXPORT_CONDITIONS_LLM)
+    mobile_generation_electricity_service_rules_llm = _load_json(MOBILE_GENERATION_ELECTRICITY_SERVICE_RULES_LLM)
+    guaranteed_standards_guide_llm = _load_json(GUARANTEED_STANDARDS_GUIDE_LLM)
+    heavy_equipment_safety_inspection_bodies_accreditation_rules_llm = _load_json(HEAVY_EQUIPMENT_SAFETY_INSPECTION_BODIES_ACCREDITATION_RULES_LLM)
+    emergency_orders_annulment_claims_rules_llm = _load_json(EMERGENCY_ORDERS_ANNULMENT_CLAIMS_RULES_LLM)
+    hague_apostille_convention_llm = _load_json(HAGUE_APOSTILLE_CONVENTION_LLM)
+    arab_states_transit_transport_agreement_llm = _load_json(ARAB_STATES_TRANSIT_TRANSPORT_AGREEMENT_LLM)
+    copyright_protection_implementing_regulation_llm = _load_json(COPYRIGHT_PROTECTION_IMPLEMENTING_REGULATION_LLM)
+    real_estate_development_fund_implementing_regulation_llm = _load_json(REAL_ESTATE_DEVELOPMENT_FUND_IMPLEMENTING_REGULATION_LLM)
+    experimental_activities_regulation_llm = _load_json(EXPERIMENTAL_ACTIVITIES_REGULATION_LLM)
+    visiting_private_yachts_regulation_llm = _load_json(VISITING_PRIVATE_YACHTS_REGULATION_LLM)
+    cruise_ships_regulation_llm = _load_json(CRUISE_SHIPS_REGULATION_LLM)
+    superyacht_chartering_regulation_llm = _load_json(SUPERYACHT_CHARTERING_REGULATION_LLM)
+    utility_benefit_loss_compensation_regulation_llm = _load_json(UTILITY_BENEFIT_LOSS_COMPENSATION_REGULATION_LLM)
+    repair_cost_compensation_estimation_controls_llm = _load_json(REPAIR_COST_COMPENSATION_ESTIMATION_CONTROLS_LLM)
     museums_authority_licensing_regulation_llm = _load_json(MUSEUMS_AUTHORITY_LICENSING_REGULATION_LLM)
     heritage_authority_licensing_regulation_llm = _load_json(HERITAGE_AUTHORITY_LICENSING_REGULATION_LLM)
     literature_publishing_translation_authority_licensing_regulation_llm = _load_json(LITERATURE_PUBLISHING_TRANSLATION_AUTHORITY_LICENSING_REGULATION_LLM)
@@ -1531,7 +1575,7 @@ def main() -> int:
             "english_reference_guidance_only": True,
             "chinese_internal_reference_only": True,
         },
-        "total_tracks": 721,
+        "total_tracks": 743,
         "total_primary_arabic_governing_records": (
             companies_ar["record_count"]        # 281 Companies Law
             + gen_llm["record_count"]           # 95 general IR articles
@@ -2072,6 +2116,28 @@ def main() -> int:
             + public_transport_users_rights_enforcement_guide_llm["record_count"]  # 9 Procedural Guide for Enforcing the Public Transport Users' Rights Regulation (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + land_transport_training_centers_accreditation_llm["record_count"]  # 14 Conditions and Procedures for Qualifying and Accrediting Training and Testing Centres for Land Transport Drivers and Operations Managers (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + arabic_language_national_policy_llm["record_count"]  # 5 National Policy for the Arabic Language in Saudi Arabia (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + gcc_healthcare_waste_management_system_llm["record_count"]  # 23 GCC Unified System for Healthcare Waste Management (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + offplan_developer_technical_financial_qualification_llm["record_count"]  # 13 Rules and Criteria for the Technical and Financial Qualification of Real Estate Developers of Infrastructure Projects (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + hydrogen_vehicles_technical_regulation_llm["record_count"]  # 12 Technical Regulation for Hydrogen Vehicles (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + cableway_installations_technical_regulation_llm["record_count"]  # 15 Technical Regulation for Cableway Installations (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + bog_enforcement_implementing_regulation_llm["record_count"]  # 37 Implementing Regulation of the Enforcement Law before the Board of Grievances (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + administrative_entities_enforcement_request_procedures_llm["record_count"]  # 14 Procedures for Enforcement Requests Submitted by Administrative Entities (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + cloud_computing_electricity_tariff_executive_rules_llm["record_count"]  # 8 Executive Rules and Procedures for Applying the Electricity Consumption Tariff to Cloud Computing Activity (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + open_field_vegetable_crops_export_conditions_llm["record_count"]  # 9 Conditions and Controls for Exporting Vegetable Crops Grown in Open Areas Irrigated with Renewable Water (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + mobile_generation_electricity_service_rules_llm["record_count"]  # 13 Controls for Providing Electricity Service through Mobile Generation (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + guaranteed_standards_guide_llm["record_count"]  # 9 Guaranteed Standards Guide (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + heavy_equipment_safety_inspection_bodies_accreditation_rules_llm["record_count"]  # 12 Controls for Accrediting Inspection and Oversight Bodies for Heavy Equipment Safety (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + emergency_orders_annulment_claims_rules_llm["record_count"]  # 8 Rules for Hearing Claims to Annul Decisions Related to Applying the Provisions of Emergency Orders (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + hague_apostille_convention_llm["record_count"]  # 15 Hague Convention Abolishing the Requirement of Legalisation for Foreign Public Documents (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + arab_states_transit_transport_agreement_llm["record_count"]  # 45 Agreement on the Regulation of Transit Transport among Arab States (Amended) (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + copyright_protection_implementing_regulation_llm["record_count"]  # 52 Implementing Regulation of the Copyright Protection Law (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + real_estate_development_fund_implementing_regulation_llm["record_count"]  # 25 Implementing Regulation of the Real Estate Development Fund Law (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + experimental_activities_regulation_llm["record_count"]  # 23 Regulation of Experimental Activities (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + visiting_private_yachts_regulation_llm["record_count"]  # 11 Organisational Regulation for Visiting Private Yachts (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + cruise_ships_regulation_llm["record_count"]  # 11 Organisational Regulation for Cruise Ships (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + superyacht_chartering_regulation_llm["record_count"]  # 10 Organisational Regulation for Superyacht Chartering (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + utility_benefit_loss_compensation_regulation_llm["record_count"]  # 10 Regulation of Controls for Determining Repair Costs and Estimating Compensation for Benefit Lost by the Utility (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
+            + repair_cost_compensation_estimation_controls_llm["record_count"]  # 6 Controls for Determining Repair Costs and Estimating Compensation (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + museums_authority_licensing_regulation_llm["record_count"]  # 23 Licensing Regulation — Museums Authority (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + heritage_authority_licensing_regulation_llm["record_count"]  # 23 Licensing Regulation — Heritage Authority (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
             + literature_publishing_translation_authority_licensing_regulation_llm["record_count"]  # 23 Licensing Regulation — Literature, Publishing and Translation Authority (TIER_1, direct Umm Al-Qura Gazette fetch, pipeline-produced)
@@ -2787,6 +2853,28 @@ def main() -> int:
             + public_transport_users_rights_enforcement_guide_llm["record_count"]
             + land_transport_training_centers_accreditation_llm["record_count"]
             + arabic_language_national_policy_llm["record_count"]
+            + gcc_healthcare_waste_management_system_llm["record_count"]
+            + offplan_developer_technical_financial_qualification_llm["record_count"]
+            + hydrogen_vehicles_technical_regulation_llm["record_count"]
+            + cableway_installations_technical_regulation_llm["record_count"]
+            + bog_enforcement_implementing_regulation_llm["record_count"]
+            + administrative_entities_enforcement_request_procedures_llm["record_count"]
+            + cloud_computing_electricity_tariff_executive_rules_llm["record_count"]
+            + open_field_vegetable_crops_export_conditions_llm["record_count"]
+            + mobile_generation_electricity_service_rules_llm["record_count"]
+            + guaranteed_standards_guide_llm["record_count"]
+            + heavy_equipment_safety_inspection_bodies_accreditation_rules_llm["record_count"]
+            + emergency_orders_annulment_claims_rules_llm["record_count"]
+            + hague_apostille_convention_llm["record_count"]
+            + arab_states_transit_transport_agreement_llm["record_count"]
+            + copyright_protection_implementing_regulation_llm["record_count"]
+            + real_estate_development_fund_implementing_regulation_llm["record_count"]
+            + experimental_activities_regulation_llm["record_count"]
+            + visiting_private_yachts_regulation_llm["record_count"]
+            + cruise_ships_regulation_llm["record_count"]
+            + superyacht_chartering_regulation_llm["record_count"]
+            + utility_benefit_loss_compensation_regulation_llm["record_count"]
+            + repair_cost_compensation_estimation_controls_llm["record_count"]
             + museums_authority_licensing_regulation_llm["record_count"]
             + heritage_authority_licensing_regulation_llm["record_count"]
             + literature_publishing_translation_authority_licensing_regulation_llm["record_count"]
@@ -20491,6 +20579,644 @@ def main() -> int:
                                "not_verified_official_text": True, "not_legal_advice": True,
                                "no_trilingual_alignment": True, "no_public_release": True},
                 "notes": "National Policy for the Arabic Language in Saudi Arabia «السياسة الوطنية للغة العربية في السعودية» — **5 articles. ALL 5 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/8/1447H / 2026-02-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "gcc_healthcare_waste_management_system",
+                "display_name_ar": "النظام الموحد لإدارة نفايات الرعاية الصحية بدول مجلس التعاون لدول الخليج العربي",
+                "display_name_en": "GCC Unified System for Healthcare Waste Management",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "GCC Unified System for Healthcare Waste Management — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/9/1442H (2021-04-16).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": gcc_healthcare_waste_management_system_llm["record_count"],
+                    "data_path": "data/gcc_healthcare_waste_management_system_arabic_legal_llm/gcc_healthcare_waste_management_system_legal_llm_001_023.json"}},
+                "record_counts": {"arabic_articles": gcc_healthcare_waste_management_system_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": gcc_healthcare_waste_management_system_llm["record_count"]},
+                "data_paths": [
+                    "sources/gcc_healthcare_waste_management_system/official_source/gcc_healthcare_waste_management_system_official_source.json",
+                    "sources/gcc_healthcare_waste_management_system/verified/gcc_healthcare_waste_management_system_verified_records.jsonl",
+                    "data/gcc_healthcare_waste_management_system_arabic_legal_llm/gcc_healthcare_waste_management_system_legal_llm_001_023.json",
+                ],
+                "validator_targets": ["make gcc-healthcare-waste-management-system-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "GCC Unified System for Healthcare Waste Management «النظام الموحد لإدارة نفايات الرعاية الصحية بدول مجلس التعاون لدول الخليج العربي» — **23 articles. ALL 23 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/9/1442H / 2021-04-16. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "offplan_developer_technical_financial_qualification",
+                "display_name_ar": "قواعد ومعايير التأهيل الفني والمالي للمطورين العقاريين لمشاريع البيع على الخارطة",
+                "display_name_en": "Rules and Criteria for the Technical and Financial Qualification of Real Estate Developers of Infrastructure Projects",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Rules and Criteria for the Technical and Financial Qualification of Real Estate Developers of Infrastructure Projects — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/3/1443H (2021-10-29).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": offplan_developer_technical_financial_qualification_llm["record_count"],
+                    "data_path": "data/offplan_developer_technical_financial_qualification_arabic_legal_llm/offplan_developer_technical_financial_qualification_legal_llm_001_013.json"}},
+                "record_counts": {"arabic_articles": offplan_developer_technical_financial_qualification_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 13, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": offplan_developer_technical_financial_qualification_llm["record_count"]},
+                "data_paths": [
+                    "sources/offplan_developer_technical_financial_qualification/official_source/offplan_developer_technical_financial_qualification_official_source.json",
+                    "sources/offplan_developer_technical_financial_qualification/verified/offplan_developer_technical_financial_qualification_verified_records.jsonl",
+                    "data/offplan_developer_technical_financial_qualification_arabic_legal_llm/offplan_developer_technical_financial_qualification_legal_llm_001_013.json",
+                ],
+                "validator_targets": ["make offplan-developer-technical-financial-qualification-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules and Criteria for the Technical and Financial Qualification of Real Estate Developers of Infrastructure Projects «قواعد ومعايير التأهيل الفني والمالي للمطورين العقاريين لمشاريع البيع على الخارطة» — **13 articles. ALL 13 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/3/1443H / 2021-10-29. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "hydrogen_vehicles_technical_regulation",
+                "display_name_ar": "اللائحة الفنية للمركبات الهيدروجينية",
+                "display_name_en": "Technical Regulation for Hydrogen Vehicles",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Technical Regulation for Hydrogen Vehicles — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/8/1443H (2022-03-18).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": hydrogen_vehicles_technical_regulation_llm["record_count"],
+                    "data_path": "data/hydrogen_vehicles_technical_regulation_arabic_legal_llm/hydrogen_vehicles_technical_regulation_legal_llm_001_012.json"}},
+                "record_counts": {"arabic_articles": hydrogen_vehicles_technical_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": hydrogen_vehicles_technical_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/hydrogen_vehicles_technical_regulation/official_source/hydrogen_vehicles_technical_regulation_official_source.json",
+                    "sources/hydrogen_vehicles_technical_regulation/verified/hydrogen_vehicles_technical_regulation_verified_records.jsonl",
+                    "data/hydrogen_vehicles_technical_regulation_arabic_legal_llm/hydrogen_vehicles_technical_regulation_legal_llm_001_012.json",
+                ],
+                "validator_targets": ["make hydrogen-vehicles-technical-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Technical Regulation for Hydrogen Vehicles «اللائحة الفنية للمركبات الهيدروجينية» — **12 articles. ALL 12 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 15/8/1443H / 2022-03-18. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cableway_installations_technical_regulation",
+                "display_name_ar": "اللائحة الفنية لتركيبات العربات المعلقة",
+                "display_name_en": "Technical Regulation for Cableway Installations",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Technical Regulation for Cableway Installations — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 9/2/1445H (2023-08-25).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cableway_installations_technical_regulation_llm["record_count"],
+                    "data_path": "data/cableway_installations_technical_regulation_arabic_legal_llm/cableway_installations_technical_regulation_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": cableway_installations_technical_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": cableway_installations_technical_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/cableway_installations_technical_regulation/official_source/cableway_installations_technical_regulation_official_source.json",
+                    "sources/cableway_installations_technical_regulation/verified/cableway_installations_technical_regulation_verified_records.jsonl",
+                    "data/cableway_installations_technical_regulation_arabic_legal_llm/cableway_installations_technical_regulation_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make cableway-installations-technical-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Technical Regulation for Cableway Installations «اللائحة الفنية لتركيبات العربات المعلقة» — **15 articles. ALL 15 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 9/2/1445H / 2023-08-25. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "bog_enforcement_implementing_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم",
+                "display_name_en": "Implementing Regulation of the Enforcement Law before the Board of Grievances",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Implementing Regulation of the Enforcement Law before the Board of Grievances — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/2/1445H (2023-09-08).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": bog_enforcement_implementing_regulation_llm["record_count"],
+                    "data_path": "data/bog_enforcement_implementing_regulation_arabic_legal_llm/bog_enforcement_implementing_regulation_legal_llm_001_037.json"}},
+                "record_counts": {"arabic_articles": bog_enforcement_implementing_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 37, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": bog_enforcement_implementing_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/bog_enforcement_implementing_regulation/official_source/bog_enforcement_implementing_regulation_official_source.json",
+                    "sources/bog_enforcement_implementing_regulation/verified/bog_enforcement_implementing_regulation_verified_records.jsonl",
+                    "data/bog_enforcement_implementing_regulation_arabic_legal_llm/bog_enforcement_implementing_regulation_legal_llm_001_037.json",
+                ],
+                "validator_targets": ["make bog-enforcement-implementing-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Enforcement Law before the Board of Grievances «اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم» — **37 articles. ALL 37 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/2/1445H / 2023-09-08. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "administrative_entities_enforcement_request_procedures",
+                "display_name_ar": "إجراءات طلبات التنفيذ المقدمة من الجهات الإدارية",
+                "display_name_en": "Procedures for Enforcement Requests Submitted by Administrative Entities",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Procedures for Enforcement Requests Submitted by Administrative Entities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/7/1442H (2021-03-12).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": administrative_entities_enforcement_request_procedures_llm["record_count"],
+                    "data_path": "data/administrative_entities_enforcement_request_procedures_arabic_legal_llm/administrative_entities_enforcement_request_procedures_legal_llm_001_014.json"}},
+                "record_counts": {"arabic_articles": administrative_entities_enforcement_request_procedures_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 14, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": administrative_entities_enforcement_request_procedures_llm["record_count"]},
+                "data_paths": [
+                    "sources/administrative_entities_enforcement_request_procedures/official_source/administrative_entities_enforcement_request_procedures_official_source.json",
+                    "sources/administrative_entities_enforcement_request_procedures/verified/administrative_entities_enforcement_request_procedures_verified_records.jsonl",
+                    "data/administrative_entities_enforcement_request_procedures_arabic_legal_llm/administrative_entities_enforcement_request_procedures_legal_llm_001_014.json",
+                ],
+                "validator_targets": ["make administrative-entities-enforcement-request-procedures-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Procedures for Enforcement Requests Submitted by Administrative Entities «إجراءات طلبات التنفيذ المقدمة من الجهات الإدارية» — **14 articles. ALL 14 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/7/1442H / 2021-03-12. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cloud_computing_electricity_tariff_executive_rules",
+                "display_name_ar": "القواعد والإجراءات التنفيذية اللازمة لتطبيق تعريفة استهلاك الكهرباء لنشاط الحوسبة السحابية",
+                "display_name_en": "Executive Rules and Procedures for Applying the Electricity Consumption Tariff to Cloud Computing Activity",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Executive Rules and Procedures for Applying the Electricity Consumption Tariff to Cloud Computing Activity — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/9/1442H (2021-04-16).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cloud_computing_electricity_tariff_executive_rules_llm["record_count"],
+                    "data_path": "data/cloud_computing_electricity_tariff_executive_rules_arabic_legal_llm/cloud_computing_electricity_tariff_executive_rules_legal_llm_001_008.json"}},
+                "record_counts": {"arabic_articles": cloud_computing_electricity_tariff_executive_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": cloud_computing_electricity_tariff_executive_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/cloud_computing_electricity_tariff_executive_rules/official_source/cloud_computing_electricity_tariff_executive_rules_official_source.json",
+                    "sources/cloud_computing_electricity_tariff_executive_rules/verified/cloud_computing_electricity_tariff_executive_rules_verified_records.jsonl",
+                    "data/cloud_computing_electricity_tariff_executive_rules_arabic_legal_llm/cloud_computing_electricity_tariff_executive_rules_legal_llm_001_008.json",
+                ],
+                "validator_targets": ["make cloud-computing-electricity-tariff-executive-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Executive Rules and Procedures for Applying the Electricity Consumption Tariff to Cloud Computing Activity «القواعد والإجراءات التنفيذية اللازمة لتطبيق تعريفة استهلاك الكهرباء لنشاط الحوسبة السحابية» — **8 articles. ALL 8 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/9/1442H / 2021-04-16. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "open_field_vegetable_crops_export_conditions",
+                "display_name_ar": "شروط وضوابط تصدير محاصيل الخضار المزروعة في مساحات مكشوفة تعتمد في الري على المياه المتجددة",
+                "display_name_en": "Conditions and Controls for Exporting Vegetable Crops Grown in Open Areas Irrigated with Renewable Water",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Conditions and Controls for Exporting Vegetable Crops Grown in Open Areas Irrigated with Renewable Water — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 16/3/1443H (2021-10-22).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": open_field_vegetable_crops_export_conditions_llm["record_count"],
+                    "data_path": "data/open_field_vegetable_crops_export_conditions_arabic_legal_llm/open_field_vegetable_crops_export_conditions_legal_llm_001_009.json"}},
+                "record_counts": {"arabic_articles": open_field_vegetable_crops_export_conditions_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": open_field_vegetable_crops_export_conditions_llm["record_count"]},
+                "data_paths": [
+                    "sources/open_field_vegetable_crops_export_conditions/official_source/open_field_vegetable_crops_export_conditions_official_source.json",
+                    "sources/open_field_vegetable_crops_export_conditions/verified/open_field_vegetable_crops_export_conditions_verified_records.jsonl",
+                    "data/open_field_vegetable_crops_export_conditions_arabic_legal_llm/open_field_vegetable_crops_export_conditions_legal_llm_001_009.json",
+                ],
+                "validator_targets": ["make open-field-vegetable-crops-export-conditions-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Conditions and Controls for Exporting Vegetable Crops Grown in Open Areas Irrigated with Renewable Water «شروط وضوابط تصدير محاصيل الخضار المزروعة في مساحات مكشوفة تعتمد في الري على المياه المتجددة» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 16/3/1443H / 2021-10-22. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "mobile_generation_electricity_service_rules",
+                "display_name_ar": "ضوابط تقديم الخدمة الكهربائية عن طريق التوليد المتنقل",
+                "display_name_en": "Controls for Providing Electricity Service through Mobile Generation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Controls for Providing Electricity Service through Mobile Generation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/7/1444H (2023-02-17).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": mobile_generation_electricity_service_rules_llm["record_count"],
+                    "data_path": "data/mobile_generation_electricity_service_rules_arabic_legal_llm/mobile_generation_electricity_service_rules_legal_llm_001_013.json"}},
+                "record_counts": {"arabic_articles": mobile_generation_electricity_service_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 13, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": mobile_generation_electricity_service_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/mobile_generation_electricity_service_rules/official_source/mobile_generation_electricity_service_rules_official_source.json",
+                    "sources/mobile_generation_electricity_service_rules/verified/mobile_generation_electricity_service_rules_verified_records.jsonl",
+                    "data/mobile_generation_electricity_service_rules_arabic_legal_llm/mobile_generation_electricity_service_rules_legal_llm_001_013.json",
+                ],
+                "validator_targets": ["make mobile-generation-electricity-service-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Controls for Providing Electricity Service through Mobile Generation «ضوابط تقديم الخدمة الكهربائية عن طريق التوليد المتنقل» — **13 articles. ALL 13 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 26/7/1444H / 2023-02-17. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "guaranteed_standards_guide",
+                "display_name_ar": "دليل المعايير المضمونة",
+                "display_name_en": "Guaranteed Standards Guide",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Guaranteed Standards Guide — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/3/1445H (2023-10-13).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": guaranteed_standards_guide_llm["record_count"],
+                    "data_path": "data/guaranteed_standards_guide_arabic_legal_llm/guaranteed_standards_guide_legal_llm_001_009.json"}},
+                "record_counts": {"arabic_articles": guaranteed_standards_guide_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 9, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": guaranteed_standards_guide_llm["record_count"]},
+                "data_paths": [
+                    "sources/guaranteed_standards_guide/official_source/guaranteed_standards_guide_official_source.json",
+                    "sources/guaranteed_standards_guide/verified/guaranteed_standards_guide_verified_records.jsonl",
+                    "data/guaranteed_standards_guide_arabic_legal_llm/guaranteed_standards_guide_legal_llm_001_009.json",
+                ],
+                "validator_targets": ["make guaranteed-standards-guide-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Guaranteed Standards Guide «دليل المعايير المضمونة» — **9 articles. ALL 9 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 28/3/1445H / 2023-10-13. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "heavy_equipment_safety_inspection_bodies_accreditation_rules",
+                "display_name_ar": "ضوابط اعتماد جهات التفتيش والرقابة على سلامة المعدات الثقيلة",
+                "display_name_en": "Controls for Accrediting Inspection and Oversight Bodies for Heavy Equipment Safety",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Controls for Accrediting Inspection and Oversight Bodies for Heavy Equipment Safety — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/10/1445H (2024-04-26).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": heavy_equipment_safety_inspection_bodies_accreditation_rules_llm["record_count"],
+                    "data_path": "data/heavy_equipment_safety_inspection_bodies_accreditation_rules_arabic_legal_llm/heavy_equipment_safety_inspection_bodies_accreditation_rules_legal_llm_001_012.json"}},
+                "record_counts": {"arabic_articles": heavy_equipment_safety_inspection_bodies_accreditation_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 12, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": heavy_equipment_safety_inspection_bodies_accreditation_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/heavy_equipment_safety_inspection_bodies_accreditation_rules/official_source/heavy_equipment_safety_inspection_bodies_accreditation_rules_official_source.json",
+                    "sources/heavy_equipment_safety_inspection_bodies_accreditation_rules/verified/heavy_equipment_safety_inspection_bodies_accreditation_rules_verified_records.jsonl",
+                    "data/heavy_equipment_safety_inspection_bodies_accreditation_rules_arabic_legal_llm/heavy_equipment_safety_inspection_bodies_accreditation_rules_legal_llm_001_012.json",
+                ],
+                "validator_targets": ["make heavy-equipment-safety-inspection-bodies-accreditation-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Controls for Accrediting Inspection and Oversight Bodies for Heavy Equipment Safety «ضوابط اعتماد جهات التفتيش والرقابة على سلامة المعدات الثقيلة» — **12 articles. ALL 12 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/10/1445H / 2024-04-26. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "emergency_orders_annulment_claims_rules",
+                "display_name_ar": "قواعد نظر دعاوى إلغاء القرارات المتعلقة بتطبيق أحكام أوامر الطوارئ",
+                "display_name_en": "Rules for Hearing Claims to Annul Decisions Related to Applying the Provisions of Emergency Orders",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Rules for Hearing Claims to Annul Decisions Related to Applying the Provisions of Emergency Orders — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/1/1447H (2025-07-18).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": emergency_orders_annulment_claims_rules_llm["record_count"],
+                    "data_path": "data/emergency_orders_annulment_claims_rules_arabic_legal_llm/emergency_orders_annulment_claims_rules_legal_llm_001_008.json"}},
+                "record_counts": {"arabic_articles": emergency_orders_annulment_claims_rules_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 8, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": emergency_orders_annulment_claims_rules_llm["record_count"]},
+                "data_paths": [
+                    "sources/emergency_orders_annulment_claims_rules/official_source/emergency_orders_annulment_claims_rules_official_source.json",
+                    "sources/emergency_orders_annulment_claims_rules/verified/emergency_orders_annulment_claims_rules_verified_records.jsonl",
+                    "data/emergency_orders_annulment_claims_rules_arabic_legal_llm/emergency_orders_annulment_claims_rules_legal_llm_001_008.json",
+                ],
+                "validator_targets": ["make emergency-orders-annulment-claims-rules-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Rules for Hearing Claims to Annul Decisions Related to Applying the Provisions of Emergency Orders «قواعد نظر دعاوى إلغاء القرارات المتعلقة بتطبيق أحكام أوامر الطوارئ» — **8 articles. ALL 8 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 23/1/1447H / 2025-07-18. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "hague_apostille_convention",
+                "display_name_ar": "اتفاقية لاهاي بشأن إلغاء إلزامية المصادقة على الوثائق العمومية الأجنبية «أبوستيل»",
+                "display_name_en": "Hague Convention Abolishing the Requirement of Legalisation for Foreign Public Documents",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Hague Convention Abolishing the Requirement of Legalisation for Foreign Public Documents — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/6/1443H (2022-01-07).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": hague_apostille_convention_llm["record_count"],
+                    "data_path": "data/hague_apostille_convention_arabic_legal_llm/hague_apostille_convention_legal_llm_001_015.json"}},
+                "record_counts": {"arabic_articles": hague_apostille_convention_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 15, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": hague_apostille_convention_llm["record_count"]},
+                "data_paths": [
+                    "sources/hague_apostille_convention/official_source/hague_apostille_convention_official_source.json",
+                    "sources/hague_apostille_convention/verified/hague_apostille_convention_verified_records.jsonl",
+                    "data/hague_apostille_convention_arabic_legal_llm/hague_apostille_convention_legal_llm_001_015.json",
+                ],
+                "validator_targets": ["make hague-apostille-convention-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Hague Convention Abolishing the Requirement of Legalisation for Foreign Public Documents «اتفاقية لاهاي بشأن إلغاء إلزامية المصادقة على الوثائق العمومية الأجنبية «أبوستيل»» — **15 articles. ALL 15 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 4/6/1443H / 2022-01-07. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "arab_states_transit_transport_agreement",
+                "display_name_ar": "اتفاقية تنظيم النقل بالعبور «الترانزيت» بين الدول العربية (المعدلة)",
+                "display_name_en": "Agreement on the Regulation of Transit Transport among Arab States (Amended)",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Agreement on the Regulation of Transit Transport among Arab States (Amended) — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/7/1444H (2023-02-03).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": arab_states_transit_transport_agreement_llm["record_count"],
+                    "data_path": "data/arab_states_transit_transport_agreement_arabic_legal_llm/arab_states_transit_transport_agreement_legal_llm_001_045.json"}},
+                "record_counts": {"arabic_articles": arab_states_transit_transport_agreement_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 45, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": arab_states_transit_transport_agreement_llm["record_count"]},
+                "data_paths": [
+                    "sources/arab_states_transit_transport_agreement/official_source/arab_states_transit_transport_agreement_official_source.json",
+                    "sources/arab_states_transit_transport_agreement/verified/arab_states_transit_transport_agreement_verified_records.jsonl",
+                    "data/arab_states_transit_transport_agreement_arabic_legal_llm/arab_states_transit_transport_agreement_legal_llm_001_045.json",
+                ],
+                "validator_targets": ["make arab-states-transit-transport-agreement-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Agreement on the Regulation of Transit Transport among Arab States (Amended) «اتفاقية تنظيم النقل بالعبور «الترانزيت» بين الدول العربية (المعدلة)» — **45 articles. ALL 45 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 12/7/1444H / 2023-02-03. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "copyright_protection_implementing_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام حماية حقوق المؤلف",
+                "display_name_en": "Implementing Regulation of the Copyright Protection Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Implementing Regulation of the Copyright Protection Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/1/1444H (2022-08-05).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": copyright_protection_implementing_regulation_llm["record_count"],
+                    "data_path": "data/copyright_protection_implementing_regulation_arabic_legal_llm/copyright_protection_implementing_regulation_legal_llm_001_052.json"}},
+                "record_counts": {"arabic_articles": copyright_protection_implementing_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 52, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": copyright_protection_implementing_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/copyright_protection_implementing_regulation/official_source/copyright_protection_implementing_regulation_official_source.json",
+                    "sources/copyright_protection_implementing_regulation/verified/copyright_protection_implementing_regulation_verified_records.jsonl",
+                    "data/copyright_protection_implementing_regulation_arabic_legal_llm/copyright_protection_implementing_regulation_legal_llm_001_052.json",
+                ],
+                "validator_targets": ["make copyright-protection-implementing-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Copyright Protection Law «اللائحة التنفيذية لنظام حماية حقوق المؤلف» — **52 articles. ALL 52 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 7/1/1444H / 2022-08-05. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "real_estate_development_fund_implementing_regulation",
+                "display_name_ar": "اللائحة التنفيذية لنظام صندوق التنمية العقارية الصادر بالمرسوم الملكي رقم (م/47) وتاريخ 23 /05/ 1442ه",
+                "display_name_en": "Implementing Regulation of the Real Estate Development Fund Law",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Implementing Regulation of the Real Estate Development Fund Law — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/9/1442H (2021-05-07).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": real_estate_development_fund_implementing_regulation_llm["record_count"],
+                    "data_path": "data/real_estate_development_fund_implementing_regulation_arabic_legal_llm/real_estate_development_fund_implementing_regulation_legal_llm_001_025.json"}},
+                "record_counts": {"arabic_articles": real_estate_development_fund_implementing_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 25, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": real_estate_development_fund_implementing_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/real_estate_development_fund_implementing_regulation/official_source/real_estate_development_fund_implementing_regulation_official_source.json",
+                    "sources/real_estate_development_fund_implementing_regulation/verified/real_estate_development_fund_implementing_regulation_verified_records.jsonl",
+                    "data/real_estate_development_fund_implementing_regulation_arabic_legal_llm/real_estate_development_fund_implementing_regulation_legal_llm_001_025.json",
+                ],
+                "validator_targets": ["make real-estate-development-fund-implementing-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Implementing Regulation of the Real Estate Development Fund Law «اللائحة التنفيذية لنظام صندوق التنمية العقارية الصادر بالمرسوم الملكي رقم (م/47) وتاريخ 23 /05/ 1442ه» — **25 articles. ALL 25 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 25/9/1442H / 2021-05-07. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "experimental_activities_regulation",
+                "display_name_ar": "لائحة الأنشطة التجريبية",
+                "display_name_en": "Regulation of Experimental Activities",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Regulation of Experimental Activities — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/6/1444H (2022-12-25).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": experimental_activities_regulation_llm["record_count"],
+                    "data_path": "data/experimental_activities_regulation_arabic_legal_llm/experimental_activities_regulation_legal_llm_001_023.json"}},
+                "record_counts": {"arabic_articles": experimental_activities_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 23, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": experimental_activities_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/experimental_activities_regulation/official_source/experimental_activities_regulation_official_source.json",
+                    "sources/experimental_activities_regulation/verified/experimental_activities_regulation_verified_records.jsonl",
+                    "data/experimental_activities_regulation_arabic_legal_llm/experimental_activities_regulation_legal_llm_001_023.json",
+                ],
+                "validator_targets": ["make experimental-activities-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Regulation of Experimental Activities «لائحة الأنشطة التجريبية» — **23 articles. ALL 23 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 1/6/1444H / 2022-12-25. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "visiting_private_yachts_regulation",
+                "display_name_ar": "اللائحة التنظيمية لليخوت الخاصة الزائرة",
+                "display_name_en": "Organisational Regulation for Visiting Private Yachts",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Organisational Regulation for Visiting Private Yachts — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H (2023-08-04).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": visiting_private_yachts_regulation_llm["record_count"],
+                    "data_path": "data/visiting_private_yachts_regulation_arabic_legal_llm/visiting_private_yachts_regulation_legal_llm_001_011.json"}},
+                "record_counts": {"arabic_articles": visiting_private_yachts_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": visiting_private_yachts_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/visiting_private_yachts_regulation/official_source/visiting_private_yachts_regulation_official_source.json",
+                    "sources/visiting_private_yachts_regulation/verified/visiting_private_yachts_regulation_verified_records.jsonl",
+                    "data/visiting_private_yachts_regulation_arabic_legal_llm/visiting_private_yachts_regulation_legal_llm_001_011.json",
+                ],
+                "validator_targets": ["make visiting-private-yachts-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Organisational Regulation for Visiting Private Yachts «اللائحة التنظيمية لليخوت الخاصة الزائرة» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H / 2023-08-04. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "cruise_ships_regulation",
+                "display_name_ar": "اللائحة التنظيمية لسفن الرحلات السياحية (الكروز)",
+                "display_name_en": "Organisational Regulation for Cruise Ships",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Organisational Regulation for Cruise Ships — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H (2023-08-04).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": cruise_ships_regulation_llm["record_count"],
+                    "data_path": "data/cruise_ships_regulation_arabic_legal_llm/cruise_ships_regulation_legal_llm_001_011.json"}},
+                "record_counts": {"arabic_articles": cruise_ships_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 11, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": cruise_ships_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/cruise_ships_regulation/official_source/cruise_ships_regulation_official_source.json",
+                    "sources/cruise_ships_regulation/verified/cruise_ships_regulation_verified_records.jsonl",
+                    "data/cruise_ships_regulation_arabic_legal_llm/cruise_ships_regulation_legal_llm_001_011.json",
+                ],
+                "validator_targets": ["make cruise-ships-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Organisational Regulation for Cruise Ships «اللائحة التنظيمية لسفن الرحلات السياحية (الكروز)» — **11 articles. ALL 11 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H / 2023-08-04. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "superyacht_chartering_regulation",
+                "display_name_ar": "اللائحة التنظيمية لتأجير اليخوت الضخمة",
+                "display_name_en": "Organisational Regulation for Superyacht Chartering",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Organisational Regulation for Superyacht Chartering — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H (2023-08-04).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": superyacht_chartering_regulation_llm["record_count"],
+                    "data_path": "data/superyacht_chartering_regulation_arabic_legal_llm/superyacht_chartering_regulation_legal_llm_001_010.json"}},
+                "record_counts": {"arabic_articles": superyacht_chartering_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 10, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": superyacht_chartering_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/superyacht_chartering_regulation/official_source/superyacht_chartering_regulation_official_source.json",
+                    "sources/superyacht_chartering_regulation/verified/superyacht_chartering_regulation_verified_records.jsonl",
+                    "data/superyacht_chartering_regulation_arabic_legal_llm/superyacht_chartering_regulation_legal_llm_001_010.json",
+                ],
+                "validator_targets": ["make superyacht-chartering-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Organisational Regulation for Superyacht Chartering «اللائحة التنظيمية لتأجير اليخوت الضخمة» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 17/1/1445H / 2023-08-04. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "utility_benefit_loss_compensation_regulation",
+                "display_name_ar": "لائحة الضوابط الخاصة بتحديد تكاليف الإصلاح وتقدير التعويضات عن المنفعة التي فقدها المرفق",
+                "display_name_en": "Regulation of Controls for Determining Repair Costs and Estimating Compensation for Benefit Lost by the Utility",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Regulation of Controls for Determining Repair Costs and Estimating Compensation for Benefit Lost by the Utility — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/8/1443H (2022-03-25).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": utility_benefit_loss_compensation_regulation_llm["record_count"],
+                    "data_path": "data/utility_benefit_loss_compensation_regulation_arabic_legal_llm/utility_benefit_loss_compensation_regulation_legal_llm_001_010.json"}},
+                "record_counts": {"arabic_articles": utility_benefit_loss_compensation_regulation_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 10, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": utility_benefit_loss_compensation_regulation_llm["record_count"]},
+                "data_paths": [
+                    "sources/utility_benefit_loss_compensation_regulation/official_source/utility_benefit_loss_compensation_regulation_official_source.json",
+                    "sources/utility_benefit_loss_compensation_regulation/verified/utility_benefit_loss_compensation_regulation_verified_records.jsonl",
+                    "data/utility_benefit_loss_compensation_regulation_arabic_legal_llm/utility_benefit_loss_compensation_regulation_legal_llm_001_010.json",
+                ],
+                "validator_targets": ["make utility-benefit-loss-compensation-regulation-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Regulation of Controls for Determining Repair Costs and Estimating Compensation for Benefit Lost by the Utility «لائحة الضوابط الخاصة بتحديد تكاليف الإصلاح وتقدير التعويضات عن المنفعة التي فقدها المرفق» — **10 articles. ALL 10 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 22/8/1443H / 2022-03-25. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
+            },
+            {
+                "track_id": "repair_cost_compensation_estimation_controls",
+                "display_name_ar": "ضوابط تحديد تكاليف الإصلاح وتقدير التعويضات",
+                "display_name_en": "Controls for Determining Repair Costs and Estimating Compensation",
+                "corpus_family": "statutory_regulation",
+                "jurisdiction": "Kingdom of Saudi Arabia",
+                "governing_language": "ar",
+                "status": "complete",
+                "official_text_status": "UQN_GAZETTE_DIRECT_FETCH_TIER1_SITEMAP_DISCOVERED",
+                "source_authority": "Controls for Determining Repair Costs and Estimating Compensation — full text fetched directly from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/4/1445H (2023-10-20).",
+                "language_layers": {"arabic": {"status": "complete", "governing": True,
+                    "record_count": repair_cost_compensation_estimation_controls_llm["record_count"],
+                    "data_path": "data/repair_cost_compensation_estimation_controls_arabic_legal_llm/repair_cost_compensation_estimation_controls_legal_llm_001_007.json"}},
+                "record_counts": {"arabic_articles": repair_cost_compensation_estimation_controls_llm["record_count"],
+                                  "legal_status_breakdown": {"اصلية": 6, "معدلة": 0, "ملغاة": 0, "مضافة": 0},
+                                  "total": repair_cost_compensation_estimation_controls_llm["record_count"]},
+                "data_paths": [
+                    "sources/repair_cost_compensation_estimation_controls/official_source/repair_cost_compensation_estimation_controls_official_source.json",
+                    "sources/repair_cost_compensation_estimation_controls/verified/repair_cost_compensation_estimation_controls_verified_records.jsonl",
+                    "data/repair_cost_compensation_estimation_controls_arabic_legal_llm/repair_cost_compensation_estimation_controls_legal_llm_001_007.json",
+                ],
+                "validator_targets": ["make repair-cost-compensation-estimation-controls-track-validate"],
+                "report_paths": ["reports/coverage_gap_map/coverage_gap_map.json",
+                                 "reports/gazette_ingestion_backlog/gazette_ingestion_backlog.json"],
+                "boundaries": {"arabic_governs": True, "not_official_translation": True,
+                               "not_verified_official_text": True, "not_legal_advice": True,
+                               "no_trilingual_alignment": True, "no_public_release": True},
+                "notes": "Controls for Determining Repair Costs and Estimating Compensation «ضوابط تحديد تكاليف الإصلاح وتقدير التعويضات» — **6 articles. ALL 6 اصلية**. **VERIFICATION TIER: TIER_1** — direct fetch from the Umm Al-Qura Official Gazette's own server-rendered HTML page, published 5/4/1445H / 2023-10-20. **PRODUCED BY** scripts/gazette_autoingest.py: every spec field derived from the gazette page, emitted only after passing all ten quality gates; the track_id is hand-assigned, a deliberate automation boundary since identifiers are permanent. Arabic governs; not legal advice.",
             },
             {
                 "track_id": "museums_authority_licensing_regulation",

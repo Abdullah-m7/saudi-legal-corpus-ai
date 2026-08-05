@@ -651,6 +651,28 @@ export PYTHONPATH := src:$(PYTHONPATH)
         public-transport-users-rights-enforcement-guide-track-validate \
         land-transport-training-centers-accreditation-track-validate \
         arabic-language-national-policy-track-validate \
+        gcc-healthcare-waste-management-system-track-validate \
+        offplan-developer-technical-financial-qualification-track-validate \
+        hydrogen-vehicles-technical-regulation-track-validate \
+        cableway-installations-technical-regulation-track-validate \
+        bog-enforcement-implementing-regulation-track-validate \
+        administrative-entities-enforcement-request-procedures-track-validate \
+        cloud-computing-electricity-tariff-executive-rules-track-validate \
+        open-field-vegetable-crops-export-conditions-track-validate \
+        mobile-generation-electricity-service-rules-track-validate \
+        guaranteed-standards-guide-track-validate \
+        heavy-equipment-safety-inspection-bodies-accreditation-rules-track-validate \
+        emergency-orders-annulment-claims-rules-track-validate \
+        hague-apostille-convention-track-validate \
+        arab-states-transit-transport-agreement-track-validate \
+        copyright-protection-implementing-regulation-track-validate \
+        real-estate-development-fund-implementing-regulation-track-validate \
+        experimental-activities-regulation-track-validate \
+        visiting-private-yachts-regulation-track-validate \
+        cruise-ships-regulation-track-validate \
+        superyacht-chartering-regulation-track-validate \
+        utility-benefit-loss-compensation-regulation-track-validate \
+        repair-cost-compensation-estimation-controls-track-validate \
         museums-authority-licensing-regulation-track-validate \
         heritage-authority-licensing-regulation-track-validate \
         literature-publishing-translation-authority-licensing-regulation-track-validate \
@@ -3212,6 +3234,72 @@ land-transport-training-centers-accreditation-track-validate:
 
 arabic-language-national-policy-track-validate:
 	$(PY) scripts/validate_arabic_language_national_policy_track.py
+
+gcc-healthcare-waste-management-system-track-validate:
+	$(PY) scripts/validate_gcc_healthcare_waste_management_system_track.py
+
+offplan-developer-technical-financial-qualification-track-validate:
+	$(PY) scripts/validate_offplan_developer_technical_financial_qualification_track.py
+
+hydrogen-vehicles-technical-regulation-track-validate:
+	$(PY) scripts/validate_hydrogen_vehicles_technical_regulation_track.py
+
+cableway-installations-technical-regulation-track-validate:
+	$(PY) scripts/validate_cableway_installations_technical_regulation_track.py
+
+bog-enforcement-implementing-regulation-track-validate:
+	$(PY) scripts/validate_bog_enforcement_implementing_regulation_track.py
+
+administrative-entities-enforcement-request-procedures-track-validate:
+	$(PY) scripts/validate_administrative_entities_enforcement_request_procedures_track.py
+
+cloud-computing-electricity-tariff-executive-rules-track-validate:
+	$(PY) scripts/validate_cloud_computing_electricity_tariff_executive_rules_track.py
+
+open-field-vegetable-crops-export-conditions-track-validate:
+	$(PY) scripts/validate_open_field_vegetable_crops_export_conditions_track.py
+
+mobile-generation-electricity-service-rules-track-validate:
+	$(PY) scripts/validate_mobile_generation_electricity_service_rules_track.py
+
+guaranteed-standards-guide-track-validate:
+	$(PY) scripts/validate_guaranteed_standards_guide_track.py
+
+heavy-equipment-safety-inspection-bodies-accreditation-rules-track-validate:
+	$(PY) scripts/validate_heavy_equipment_safety_inspection_bodies_accreditation_rules_track.py
+
+emergency-orders-annulment-claims-rules-track-validate:
+	$(PY) scripts/validate_emergency_orders_annulment_claims_rules_track.py
+
+hague-apostille-convention-track-validate:
+	$(PY) scripts/validate_hague_apostille_convention_track.py
+
+arab-states-transit-transport-agreement-track-validate:
+	$(PY) scripts/validate_arab_states_transit_transport_agreement_track.py
+
+copyright-protection-implementing-regulation-track-validate:
+	$(PY) scripts/validate_copyright_protection_implementing_regulation_track.py
+
+real-estate-development-fund-implementing-regulation-track-validate:
+	$(PY) scripts/validate_real_estate_development_fund_implementing_regulation_track.py
+
+experimental-activities-regulation-track-validate:
+	$(PY) scripts/validate_experimental_activities_regulation_track.py
+
+visiting-private-yachts-regulation-track-validate:
+	$(PY) scripts/validate_visiting_private_yachts_regulation_track.py
+
+cruise-ships-regulation-track-validate:
+	$(PY) scripts/validate_cruise_ships_regulation_track.py
+
+superyacht-chartering-regulation-track-validate:
+	$(PY) scripts/validate_superyacht_chartering_regulation_track.py
+
+utility-benefit-loss-compensation-regulation-track-validate:
+	$(PY) scripts/validate_utility_benefit_loss_compensation_regulation_track.py
+
+repair-cost-compensation-estimation-controls-track-validate:
+	$(PY) scripts/validate_repair_cost_compensation_estimation_controls_track.py
 
 museums-authority-licensing-regulation-track-validate:
 	$(PY) scripts/validate_museums_authority_licensing_regulation_track.py

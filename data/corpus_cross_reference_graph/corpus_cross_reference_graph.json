@@ -13,14 +13,14 @@
     "'مكرر' (repeated/inserted) article citations (e.g. 'المادة (16) مكرر') are skipped entirely rather than guessed, since resolving them to a specific مكرر record requires more context than a bare number provides.",
     "This generator does not attempt every possible reference in Saudi legal Arabic; vague collective references with no specific article or confidently-matchable law title (e.g. 'الأنظمة ذات العلاقة', 'نظام آخر') are intentionally skipped, per this project's precision-over-recall instruction."
   ],
-  "total_records_scanned": 25073,
-  "total_references_extracted": 5836,
-  "intra_law_count": 4582,
-  "inter_law_count": 1254,
+  "total_records_scanned": 25454,
+  "total_references_extracted": 5940,
+  "intra_law_count": 4656,
+  "inter_law_count": 1284,
   "ambiguous_scope_count": 0,
   "confidence_counts": {
-    "high": 4611,
-    "medium": 1225
+    "high": 4662,
+    "medium": 1278
   },
   "confidence_methodology": "high: an explicit same-law marker ('من هذا النظام'/'من هذه اللائحة'/'من النظام'/etc, definite article) directly follows the citation, OR a named different/same law ('من نظام <X>') was matched against this corpus's own track titles with a distinctive, unambiguous score. medium: (a) an inter-law citation's law name text did not confidently resolve to one specific corpus track (target_track_id is null) — including the case of a bare title shared by two corpus tracks (this corpus's own documented social_insurance_law / social_insurance_legacy_law identical-title collision); or (b) no explicit scope marker was found near the citation at all, so it defaults to intra_law under this corpus's dominant bare-citation-means-same-law drafting convention, without the explicit confirmation that would warrant 'high'. ambiguous_scope citations are always 'medium' by construction.",
   "references": [
@@ -605,6 +605,28 @@
       "target_article_number": 39,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (التاسعة والثلاثون) من النظام، فإنه يجب على كل من",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "administrative_entities_enforcement_request_procedures",
+      "source_record_id": "administrative-entities-enforcement-request-procedures-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "board_of_grievances_law",
+      "target_article_number": 1,
+      "target_law_name_raw": "المرافعات أمام ديوان المظالم ولائحتها التنفيذية",
+      "raw_citation_text": "المادة (1/5) من نظام المرافعات أمام ديوان المظالم ولائحتها التنفيذية، على أن يشتمل ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "administrative_entities_enforcement_request_procedures",
+      "source_record_id": "administrative-entities-enforcement-request-procedures-llm-014",
+      "source_article_number": 14,
+      "type": "inter_law",
+      "target_track_id": "board_of_grievances_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرافعات أمام ديوان المظالم ولائحته التنفيذية",
+      "raw_citation_text": "أحكام نظام المرافعات أمام ديوان المظالم ولائحته التنفيذية",
       "confidence": "high"
     },
     {
@@ -2684,6 +2706,116 @@
       "target_article_number": 6,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة 6",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 2,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الثانية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (11)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (11)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (14)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (11)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (10)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 20,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (20)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة الخامسة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-039",
+      "source_article_number": 39,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (11)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "arab_states_transit_transport_agreement",
+      "source_record_id": "arab-states-transit-transport-agreement-llm-042",
+      "source_article_number": 42,
+      "type": "intra_law",
+      "target_track_id": "arab_states_transit_transport_agreement",
+      "target_article_number": 41,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (41)",
       "confidence": "medium"
     },
     {
@@ -6064,6 +6196,314 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-003",
+      "source_article_number": 3,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "للتوزيع يصدرها رئيس المجلس",
+      "raw_citation_text": "وفق قواعد للتوزيع يصدرها رئيس المجلس",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "electronic_transactions_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التعاملات الإلكترونية",
+      "raw_citation_text": "وفقا لنظام التعاملات الإلكترونية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "arbitration_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التحكيم سندا تنفيذيا حتى يصدر أمر بتنفيذه",
+      "raw_citation_text": "وفق نظام التحكيم سندا تنفيذيا حتى يصدر أمر بتنفيذه من المحكمة المختصة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (8) من النظام. ح- رقم الحساب المص",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-009",
+      "source_article_number": 9,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة) من النظام- انقضاء الالتزام، أ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-010",
+      "source_article_number": 10,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (5) من النظام والمواد (5/ 1) و(5/",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثانية عشرة) من النظام- أن تطلب من دائرة ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (10) من النظام، فيكون بيان الإجراء",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (12) من النظام. 14/ 4- إذا أصدرت ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 22,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (22) من النظام. ولا يمنع البت في ط",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-017",
+      "source_article_number": 17,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (16) من النظام بناء على طلب صاحب ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 17,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (17) من النظام، أن تكلف الجهة بمبا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 34,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (34) من النظام. 19/ 4- إذا واجهت ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (14) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) بحسب الأحوال- أن تفرض غرامة ل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-020",
+      "source_article_number": 20,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (12) من النظام- الأمر بفرض الغرامة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-021",
+      "source_article_number": 21,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 29,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (29) من النظام والمادتين (29/ 1) و",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-024",
+      "source_article_number": 24,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 8,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (8) من النظام كما لو أن طلب التنف",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-026",
+      "source_article_number": 26,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 36,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (36) من النظام، تطبق على الطلبات ا",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-028",
+      "source_article_number": 28,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 27,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (27/ 5) من اللائحة. 28/ 2- إذا كان حك",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-030",
+      "source_article_number": 30,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (العاشرة) من النظام، أو وصول إجراءات ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-031",
+      "source_article_number": 31,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 30,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثلاثين) من النظام، بالعقوبة المقررة ل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-033",
+      "source_article_number": 33,
+      "type": "intra_law",
+      "target_track_id": "bog_enforcement_implementing_regulation",
+      "target_article_number": 30,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثلاثين) من النظام، من جرائم الفساد، و",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-034",
+      "source_article_number": 34,
+      "type": "inter_law",
+      "target_track_id": "enforcement_law",
+      "target_article_number": null,
+      "target_law_name_raw": "التنفيذ",
+      "raw_citation_text": "أحكام نظام التنفيذ",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "bog_enforcement_implementing_regulation",
+      "source_record_id": "bog-enforcement-implementing-regulation-llm-036",
+      "source_article_number": 36,
+      "type": "inter_law",
+      "target_track_id": "board_of_grievances_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المرافعات أمام ديوان المظالم",
+      "raw_citation_text": "أحكام نظام المرافعات أمام ديوان المظالم",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "bog_enforcement_service_providers_controls",
       "source_record_id": "bog-enforcement-service-providers-controls-llm-001",
       "source_article_number": 1,
@@ -6238,6 +6678,94 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثانية عشرة من النظام، وتراعي في ذلك الأس",
       "confidence": "high"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "قبول جهات تقويم المطابقة",
+      "raw_citation_text": "وفق لائحة قبول جهات تقويم المطابقة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "قبول جهات تقويم المطابقة",
+      "raw_citation_text": "وفقا للائحة قبول جهات تقويم المطابقة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "cableway_installations_technical_regulation",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (7)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-004",
+      "source_article_number": 4,
+      "type": "inter_law",
+      "target_track_id": "nationality_law",
+      "target_article_number": null,
+      "target_law_name_raw": "القياس والمعايرة السعودي",
+      "raw_citation_text": "وفقا لنظام القياس والمعايرة السعودي",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "cableway_installations_technical_regulation",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (12)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "قبول جهات تقويم المطابقة",
+      "raw_citation_text": "وفقا للائحة قبول جهات تقويم المطابقة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-013",
+      "source_article_number": 13,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "الفنية العامة لعلامة الجودة السعودية",
+      "raw_citation_text": "وفقا للائحة الفنية العامة لعلامة الجودة السعودية",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "cableway_installations_technical_regulation",
+      "source_record_id": "cableway-installations-technical-regulation-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "cableway_installations_technical_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (5)",
+      "confidence": "medium"
     },
     {
       "source_track_id": "capital_adequacy_rules",
@@ -12972,6 +13500,72 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "copyright_protection_implementing_regulation",
+      "source_record_id": "copyright-protection-implementing-regulation-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "copyright_protection_implementing_regulation",
+      "target_article_number": 9,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة التاسعة من النظام فإن الحقوق المالية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "copyright_protection_implementing_regulation",
+      "source_record_id": "copyright-protection-implementing-regulation-llm-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "copyright_protection_implementing_regulation",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام. ثانيا: تقع على الم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "copyright_protection_implementing_regulation",
+      "source_record_id": "copyright-protection-implementing-regulation-llm-025",
+      "source_article_number": 25,
+      "type": "intra_law",
+      "target_track_id": "copyright_protection_implementing_regulation",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام.",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "copyright_protection_implementing_regulation",
+      "source_record_id": "copyright-protection-implementing-regulation-llm-043",
+      "source_article_number": 43,
+      "type": "intra_law",
+      "target_track_id": "copyright_protection_implementing_regulation",
+      "target_article_number": 21,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الحادية والعشرين) من النظام عند إعداد النسخة ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "copyright_protection_implementing_regulation",
+      "source_record_id": "copyright-protection-implementing-regulation-llm-049",
+      "source_article_number": 49,
+      "type": "intra_law",
+      "target_track_id": "copyright_protection_implementing_regulation",
+      "target_article_number": 18,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الثامنة عشرة) من النظام المتعلق بالاتفاقيات",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "copyright_protection_implementing_regulation",
+      "source_record_id": "copyright-protection-implementing-regulation-llm-049",
+      "source_article_number": 49,
+      "type": "intra_law",
+      "target_track_id": "copyright_protection_implementing_regulation",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من هذه اللائحة.",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "corporate_governance_regulation",
       "source_record_id": "corporate-governance-regulation-llm-001",
       "source_article_number": 1,
@@ -15379,6 +15973,28 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (17)",
       "confidence": "medium"
+    },
+    {
+      "source_track_id": "cruise_ships_regulation",
+      "source_record_id": "cruise-ships-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "cruise_ships_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (3) من هذه اللائحة. 2- اتخاذ جميع",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "cruise_ships_regulation",
+      "source_record_id": "cruise-ships-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "cruise_ships_regulation",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (3) من هذه اللائحة. 2- يطلب من سف",
+      "confidence": "high"
     },
     {
       "source_track_id": "cst_organizational_statute",
@@ -18813,6 +19429,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "emergency_orders_annulment_claims_rules",
+      "source_record_id": "emergency-orders-annulment-claims-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "board_of_grievances_law",
+      "target_article_number": 6,
+      "target_law_name_raw": "المرافعات أمام ديوان المظالم",
+      "raw_citation_text": "المادة (السادسة) من نظام المرافعات أمام ديوان المظالم (يومين) من تاري",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "energy_allocation_regulation",
       "source_record_id": "energy-allocation-regulation-llm-001",
       "source_article_number": 1,
@@ -20592,6 +21219,50 @@
       "target_article_number": 4,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الرابعة من هذه اللائحة. 2- يجب ألا تت",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "experimental_activities_regulation",
+      "source_record_id": "experimental-activities-regulation-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "experimental_activities_regulation",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (الخامسة) من اللائحة، بالموافقة على تجر",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "experimental_activities_regulation",
+      "source_record_id": "experimental-activities-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "experimental_activities_regulation",
+      "target_article_number": 7,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السابعة) من اللائحة في مقدم طلب التصري",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "experimental_activities_regulation",
+      "source_record_id": "experimental-activities-regulation-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "experimental_activities_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة) من اللائحة، على جميع المصرح ل",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "experimental_activities_regulation",
+      "source_record_id": "experimental-activities-regulation-llm-019",
+      "source_article_number": 19,
+      "type": "intra_law",
+      "target_track_id": "experimental_activities_regulation",
+      "target_article_number": 16,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (السادسة عشرة) من النظام.",
       "confidence": "high"
     },
     {
@@ -23169,6 +23840,61 @@
       "confidence": "medium"
     },
     {
+      "source_track_id": "gcc_healthcare_waste_management_system",
+      "source_record_id": "gcc-healthcare-waste-management-system-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "gcc_healthcare_waste_management_system",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (4)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "gcc_healthcare_waste_management_system",
+      "source_record_id": "gcc-healthcare-waste-management-system-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "gcc_healthcare_waste_management_system",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (6)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "gcc_healthcare_waste_management_system",
+      "source_record_id": "gcc-healthcare-waste-management-system-llm-013",
+      "source_article_number": 13,
+      "type": "intra_law",
+      "target_track_id": "gcc_healthcare_waste_management_system",
+      "target_article_number": 5,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (5)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "gcc_healthcare_waste_management_system",
+      "source_record_id": "gcc-healthcare-waste-management-system-llm-016",
+      "source_article_number": 16,
+      "type": "intra_law",
+      "target_track_id": "gcc_healthcare_waste_management_system",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (6)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "gcc_healthcare_waste_management_system",
+      "source_record_id": "gcc-healthcare-waste-management-system-llm-020",
+      "source_article_number": 20,
+      "type": "inter_law",
+      "target_track_id": "private_healthcare_institutions_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المؤسسات الصحية الخاصة إذا كانت المخالفة داخل المنشآت الصحية",
+      "raw_citation_text": "وفقا لنظام المؤسسات الصحية الخاصة إذا كانت المخالفة داخل المنشآت الصحية",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "gcc_pesticides_regulation",
       "source_record_id": "gcc-pesticides-regulation-llm-004",
       "source_article_number": 4,
@@ -25391,6 +26117,204 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "guaranteed_standards_guide",
+      "source_record_id": "guaranteed-standards-guide-llm-007",
+      "source_article_number": 7,
+      "type": "inter_law",
+      "target_track_id": "mobile_generation_electricity_service_rules",
+      "target_article_number": null,
+      "target_law_name_raw": "تقديم الخدمة الكهربائية",
+      "raw_citation_text": "حسب دليل تقديم الخدمة الكهربائية",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-003",
+      "source_article_number": 3,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 4",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-004",
+      "source_article_number": 4,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 3",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-006",
+      "source_article_number": 6,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 3",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 3,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 3",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 4",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-011",
+      "source_article_number": 11,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 10",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 10",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 11",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-012",
+      "source_article_number": 12,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 15,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 15",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-014",
+      "source_article_number": 14,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 11",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 10",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 6",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 10",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 11,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 11",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 12,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 12",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 13,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 13",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hague_apostille_convention",
+      "source_record_id": "hague-apostille-convention-llm-015",
+      "source_article_number": 15,
+      "type": "intra_law",
+      "target_track_id": "hague_apostille_convention",
+      "target_article_number": 14,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة 14",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "hajj_umrah_external_pilgrims_law",
       "source_record_id": "hajj-umrah-external-pilgrims-law-llm-art-003",
       "source_article_number": 3,
@@ -26302,6 +27226,50 @@
       "target_law_name_raw": null,
       "raw_citation_text": "المادة التاسعة من هذه اللائحة لحفظ حقوقه.",
       "confidence": "high"
+    },
+    {
+      "source_track_id": "hydrogen_vehicles_technical_regulation",
+      "source_record_id": "hydrogen-vehicles-technical-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "قبول جهات تقويم المطابقة",
+      "raw_citation_text": "وفق لائحة قبول جهات تقويم المطابقة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hydrogen_vehicles_technical_regulation",
+      "source_record_id": "hydrogen-vehicles-technical-regulation-llm-007",
+      "source_article_number": 7,
+      "type": "intra_law",
+      "target_track_id": "hydrogen_vehicles_technical_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (10)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hydrogen_vehicles_technical_regulation",
+      "source_record_id": "hydrogen-vehicles-technical-regulation-llm-008",
+      "source_article_number": 8,
+      "type": "intra_law",
+      "target_track_id": "hydrogen_vehicles_technical_regulation",
+      "target_article_number": 10,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (10)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "hydrogen_vehicles_technical_regulation",
+      "source_record_id": "hydrogen-vehicles-technical-regulation-llm-009",
+      "source_article_number": 9,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "قبول جهات تقويم المطابقة",
+      "raw_citation_text": "وفقا للائحة قبول جهات تقويم المطابقة",
+      "confidence": "medium"
     },
     {
       "source_track_id": "ict_devices_technical_regulation",
@@ -35819,6 +36787,17 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "mobile_generation_electricity_service_rules",
+      "source_record_id": "mobile-generation-electricity-service-rules-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تأهيل مقاولي نشاط التوليد المتنقل المعتمد",
+      "raw_citation_text": "وفقا لدليل تأهيل مقاولي نشاط التوليد المتنقل المعتمد من الهيئة",
+      "confidence": "medium"
+    },
+    {
       "source_track_id": "municipal_councils_law",
       "source_record_id": "municipal-councils-law-llm-art-001",
       "source_article_number": 1,
@@ -37708,6 +38687,28 @@
       "target_article_number": 27,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة (السابعة والعشرين) من اللائحة. 3- إدخال أسماء ال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_developer_technical_financial_qualification",
+      "source_record_id": "offplan-developer-technical-financial-qualification-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "offplan_developer_technical_financial_qualification",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (4) من هذه القواعد، يجوز للجنة من",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "offplan_developer_technical_financial_qualification",
+      "source_record_id": "offplan-developer-technical-financial-qualification-llm-011",
+      "source_article_number": 11,
+      "type": "inter_law",
+      "target_track_id": "bankruptcy_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الإفلاس للمؤهل",
+      "raw_citation_text": "بموجب نظام الإفلاس للمؤهل أو التصفية بموجب نظام الشركات",
       "confidence": "high"
     },
     {
@@ -43585,6 +44586,28 @@
       "confidence": "high"
     },
     {
+      "source_track_id": "real_estate_development_fund_implementing_regulation",
+      "source_record_id": "real-estate-development-fund-implementing-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "intra_law",
+      "target_track_id": "real_estate_development_fund_implementing_regulation",
+      "target_article_number": 4,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة (4)",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "real_estate_development_fund_implementing_regulation",
+      "source_record_id": "real-estate-development-fund-implementing-regulation-llm-023",
+      "source_article_number": 23,
+      "type": "intra_law",
+      "target_track_id": "real_estate_development_fund_implementing_regulation",
+      "target_article_number": 6,
+      "target_law_name_raw": null,
+      "raw_citation_text": "المادة السادسة من النظام يصدر المجلس الآتي:",
+      "confidence": "high"
+    },
+    {
       "source_track_id": "real_estate_expropriation_law",
       "source_record_id": "real-estate-expropriation-law-llm-art-009",
       "source_article_number": 9,
@@ -44913,6 +45936,17 @@
       "target_article_number": 8,
       "target_law_name_raw": null,
       "raw_citation_text": "المادة الثامنة من هذه القواعد، لا يعد المخال",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "repair_cost_compensation_estimation_controls",
+      "source_record_id": "repair-cost-compensation-estimation-controls-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "electricity_law",
+      "target_article_number": null,
+      "target_law_name_raw": "الكهرباء والفصل فيها المعاني نفسها في هذه الضوابط ما لم يقتض",
+      "raw_citation_text": "أحكام نظام الكهرباء والفصل فيها المعاني نفسها في هذه الضوابط ما لم يقتض",
       "confidence": "high"
     },
     {
@@ -60852,6 +61886,116 @@
       "target_article_number": null,
       "target_law_name_raw": "قبول جهات تقويم المطابقة",
       "raw_citation_text": "وفقا للائحة قبول جهات تقويم المطابقة",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "water_law",
+      "target_article_number": 76,
+      "target_law_name_raw": "المياه",
+      "raw_citation_text": "المادة (السادسة والسبعين) من نظام المياه الصادر بالمرسوم",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "water_law",
+      "target_article_number": 72,
+      "target_law_name_raw": "المياه",
+      "raw_citation_text": "المادة (الثانية والسبعين) من نظام المياه. الوزارة: وزارة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "water_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المياه المتعلقة باختصاص الهيئة ولوائحه",
+      "raw_citation_text": "أحكام نظام المياه المتعلقة باختصاص الهيئة ولوائحه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "water_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المياه",
+      "raw_citation_text": "بموجب نظام المياه",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-001",
+      "source_article_number": 1,
+      "type": "inter_law",
+      "target_track_id": "water_law",
+      "target_article_number": null,
+      "target_law_name_raw": "المياه المتعلقة باختصاص الهيئة",
+      "raw_citation_text": "أحكام نظام المياه المتعلقة باختصاص الهيئة",
+      "confidence": "high"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تقدير الاستهلاك الواردة بالدليل ويكون سعر المتر المكعب وفقا ل",
+      "raw_citation_text": "وفقا لضوابط تقدير الاستهلاك الواردة بالدليل ويكون سعر المتر المكعب وفقا ل",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تقدير الاستهلاك الواردة بالدليل",
+      "raw_citation_text": "وفقا لضوابط تقدير الاستهلاك الواردة بالدليل",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تقدير الاستهلاك الواردة بالدليل ويكون سعر المتر المكعب وفقا ل",
+      "raw_citation_text": "وفقا لضوابط تقدير الاستهلاك الواردة بالدليل ويكون سعر المتر المكعب وفقا ل",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تقدير الاستهلاك الواردة بالدليل",
+      "raw_citation_text": "وفقا لضوابط تقدير الاستهلاك الواردة بالدليل",
+      "confidence": "medium"
+    },
+    {
+      "source_track_id": "utility_benefit_loss_compensation_regulation",
+      "source_record_id": "utility-benefit-loss-compensation-regulation-llm-005",
+      "source_article_number": 5,
+      "type": "inter_law",
+      "target_track_id": null,
+      "target_article_number": null,
+      "target_law_name_raw": "تقدير الاستهلاك الواردة بالدليل",
+      "raw_citation_text": "وفقا لضوابط تقدير الاستهلاك الواردة بالدليل",
       "confidence": "medium"
     },
     {

@@ -51,8 +51,11 @@ GATES (a document must pass ALL of them)
   G3  segmentation yields >= MIN_ARTICLES articles, OR -- for the large family
       of instruments drafted in ordinal bands («أولاً: ... ثانياً: ...») rather
       than in «مادة» -- a COMPLETE band run of >= MIN_BANDS starting at «أولاً»
-      with no gap. A band is not an article and is never relabelled as one; the
-      form is carried on the spec as `numbering_form`.
+      with no gap, OR -- for instruments drafted as a flat numbered list
+      («1- ... 2- ...») -- a COMPLETE clause run of >= MIN_CLAUSES starting at 1
+      with no gap and no decimal sectioning (see segment_clauses). A band or a
+      clause is not an article and is never relabelled as one; the form is
+      carried on the spec as `numbering_form`.
   G4  no empty / near-empty article bodies
   G5  no site-navigation or masthead boilerplate leaked into any article
   G6  no chapter-heading leaked into the tail of any article
@@ -78,6 +81,7 @@ the emitted artifacts under sources/ and scripts/, plus the JSON report.
 
 from __future__ import annotations
 
+import difflib
 import glob
 import json
 import os
@@ -101,6 +105,11 @@ SENTENCE_FINAL = ".؟!:》”\"'）)"
 
 TASHKEEL = re.compile("[ً-ٰٟ]")  # excludes Arabic-Indic digits U+0660-0669
 MADDA = r"ا\s*ل\s*م\s*ا\s*د\s*ة"  # tolerates stray intra-word spaces from typesetting
+# The same word without its definite article. Used ONLY by the fallback segmenter: «مادة»
+# alone is a common noun and matching it everywhere manufactures headings, but «النظام
+# الموحد لإدارة نفايات الرعاية الصحية بدول مجلس التعاون» heads every one of its articles
+# «مادة (6):» and reads as zero articles without it.
+MADDA_LOOSE = r"(?:ا\s*ل\s*)?م\s*ا\s*د\s*ة"
 _ARABIC_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")
 
 
@@ -179,25 +188,139 @@ CH_RE = re.compile(
     r"|(?:الحادي|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع)\s+عشر"
     r"|العشرون|التمهيدي)\b[:\s]*([^\n]{0,60}?)(?=\s*المادة|\s*$)")
 
+# The heading of the NEXT structural unit, left at the end of an article's text.
+#
+# The leading boundary is load-bearing and was missing. Without it this pattern
+# also matches a CROSS-REFERENCE to a chapter that happens to fall near the end
+# of a sentence, and because it consumes everything to the end of the line, it
+# deletes the rest of the provision with it. «قواعد الكفاية المالية», article 12,
+# was stored as «... التعرّضات الخاضعة لمتطلبات رأس المال لمخاطر السوق المنصوص
+# عليها في» — the gazette's own text continues «الفصل الثاني من هذا الباب، ولا
+# يشمل ذلك التعرّضات لصفقات عقود المشتقات.», and the stripper took all of it
+# because the sentence said «في الفصل الثاني».
+#
+# A cross-reference to a chapter is introduced by a PREPOSITION — «المنصوص عليها
+# في الفصل الثاني», «الواردة في الباب الثالث». A stacked heading is introduced by
+# nothing at all: it simply follows the previous unit's last word or its own
+# parent heading. Testing the preceding token is what separates them, and it is a
+# fact about the two strings rather than a reading of them.
+#
+# Anchoring on a sentence end instead was tried and is wrong in the other
+# direction: «... التنقيب عن الآثار الفصل الأول: المسح الأثري» is a genuine
+# stacked heading that follows a noun, not a full stop, and would survive.
+#
+# The chapter words also carry the gazette's stray intra-word spaces — «ا لباب
+# الثالث» appears in «اللائحة التنفيذية لنظام الآثار والمتاحف والتراث العمراني» —
+# so they are matched with the same space tolerance as «المادة». Without it the
+# outer heading of a stacked pair cannot be stripped once the inner one is gone.
+# Only prepositions that can INTRODUCE a following noun. The pronoun-suffixed
+# forms — «بها», «عليه», «إليها» — close a phrase instead of opening one, and
+# putting them here suppressed genuine headings: «... والتقيد بها. الفصل الخامس:
+# أحكام عامة» was read as a citation because the token before «الفصل» was «بها».
+_CH_PREPOSITIONS = {"في", "من", "إلى", "الى", "على", "وفق", "وفقا", "وفقاً",
+                    "بموجب", "حسب", "ضمن", "بحسب"}
+# A preposition that ends a SENTENCE is not introducing what follows it either.
+_SENTENCE_END = ".؛:!؟"
+_BAB = r"ا\s*ل\s*ب\s*ا\s*ب"
+_FASL = r"ا\s*ل\s*ف\s*ص\s*ل"
+_CH_ORDINAL = (r"(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|العاشر"
+               r"|(?:الحادي|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع)\s+عشر"
+               r"|العشرون|التمهيدي)")
 TRAILING_CH_RE = re.compile(
-    r"\s*(الباب|الفصل)\s+(الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|العاشر"
-    r"|(?:الحادي|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع)\s+عشر"
-    r"|العشرون|التمهيدي)\s*:?\s*[^\n]{0,90}$")
+    r"\s*(" + _BAB + r"|" + _FASL + r")\s+" + _CH_ORDINAL + r"\s*:?\s*[^\n]{0,90}$")
+# The same opening, without the run-to-end-of-line tail: used only to enumerate
+# candidate positions so each can be tested where it sits.
+CH_WORD_RE = re.compile(r"\s*(" + _BAB + r"|" + _FASL + r")\s+" + _CH_ORDINAL)
+
+
+def trailing_chapter_heading(txt):
+    """The match, if the tail is a stacked HEADING rather than a cross-reference.
+
+    Python cannot express «not preceded by any of these words» as a lookbehind
+    (they are not all the same width), so the preceding token is read off the
+    string instead. That keeps the decision in one place and lets it be stated
+    plainly: a chapter word introduced by a preposition is a citation, and
+    deleting it deletes the rest of the provision with it.
+
+    EVERY candidate is examined, and the LAST admissible one wins. Stopping at the
+    leftmost match and giving up when it turned out to be a citation was measured
+    and is wrong in the other direction: «... المنصوص عليها في الباب الثالث من هذه
+    القواعد. الباب الثاني قاعدة رأس المال» carries a citation AND, after it, a real
+    heading — and rejecting on the citation left the heading inside the article."""
+    best = None
+    # finditer over TRAILING_CH_RE itself cannot be used: its first match runs to
+    # the end of the line, so a heading that FOLLOWS a citation is inside that
+    # match and never offered as a candidate of its own. Candidate positions are
+    # located separately and each is tested where it sits.
+    for c in CH_WORD_RE.finditer(txt):
+        m = TRAILING_CH_RE.match(txt, c.start())
+        if not m:
+            continue
+        before = txt[:c.start()].rstrip()
+        if before and before[-1] in _SENTENCE_END:
+            best = m
+            continue
+        last = re.split(r"[\s،؛]", before)[-1] if before else ""
+        if last.strip("،()") in _CH_PREPOSITIONS:
+            continue
+        best = m
+    return best
 
 # Both heading conventions used by the Gazette: Arabic feminine ordinals
 # ("المادة الخامسة:") and explicit digits ("المادة (5):", Western or
 # Arabic-Indic). A trailing colon is mandatory, which is what excludes
 # in-text cross-references such as "المادة (التاسعة) من اللائحة".
+# A heading's terminator is a colon OR a dash. The gazette uses both, and often the
+# dash alone: «المادة (1) – التعريفات يقصد بالألفاظ ...» carries no colon anywhere, so
+# a colon-only rule read «اللائحة التنفيذية لمنع ومعالجة تلوث التربة» as zero articles
+# and G3 refused it. 42 uncovered pages were blocked this way, among them substantial
+# environmental and technical regulations.
+TERMINATOR = r"[:\u2013\u2014\-]"
+
 HEADING_RE = re.compile(
     MADDA +
     r"(?:"
-    # digit form — unambiguous, so an inline heading title before the colon is safe:
-    #   «المادة (5):»   «المادة (5) المصطلحات والتعاريف:»
-    r"\s*\(\s*([0-9\u0660-\u0669]{1,4})\s*\)(?:[^:\n]{0,40})?:"
+    # digit form — unambiguous, so an inline heading title before the terminator is
+    # safe, and the terminator may sit on either side of that title:
+    #   «المادة (5):»  «المادة (5) المصطلحات والتعاريف:»  «المادة (5) – التعريفات»
+    #   «المادة (2): – نطاق التطبيق»
+    r"\s*\(\s*(?P<d1>[0-9\u0660-\u0669]{1,4})\s*\)\s*" + TERMINATOR +
+    r"|\s*\(\s*(?P<d2>[0-9\u0660-\u0669]{1,4})\s*\)(?:[^:\n]{0,40})?:"
     # ordinal form — the colon must follow the ordinal directly (optionally after a
     # duplicated digit, «المادة الخامسة (5):»). Keeping this strict is what excludes
     # in-text cross-references such as «المادة (التاسعة) من اللائحة».
-    r"|\s*\(?\s*([^\s:\n()\.،؛][^:\n()\.،؛]{0,44}?)\s*\)?"
+    r"|\s*\(?\s*(?P<ord>[^\s:\n()\.،؛][^:\n()\.،؛]{0,44}?)\s*\)?"
+    r"\s*(?:\(\s*[0-9\u0660-\u0669]{1,4}\s*\))?\s*:"
+    r")")
+
+# The permissive heading pattern, used ONLY when the strict one finds too little to be
+# a document. It drops the definite article and makes the terminator optional, because
+# the gazette does head articles «المادة (5) تحديد المواقع ذات التربة الملوثة 1- يقوم
+# المركز ...» with no punctuation at all.
+#
+# It is a FALLBACK rather than a widening, and the difference was measured: applied to
+# every page, it changes the article count on two of the 397 already-built pages that
+# segment correctly today — phantom headings picked up from running text. Applied only
+# where the strict pattern yields less than MIN_ARTICLES, it cannot touch those pages at
+# all, and it still recovers the documents that strictness was refusing.
+#
+# It also carries two placements of the number that the strict pattern does not admit,
+# each found by reading the documents the gates were still refusing:
+#   * the colon BEFORE the parenthesis — «المادة: (1) المصطلحات والتعاريف» heads every
+#     article of «اللائحة الفنية للصهاريج – الجزء الثاني», which read as two articles;
+#   * a BARE digit with no parenthesis at all — «المادة 1: يقصد بالتعابير ...», the form
+#     used by «اتفاقية تنظيم النقل بالعبور بين الدول العربية» and «اتفاقية لاهاي بشأن
+#     إلغاء إلزامية المصادقة على الوثائق العمومية الأجنبية». The bare form REQUIRES its
+#     terminator — «المادة 5 من نظام كذا» must stay a citation — and it is placed ahead
+#     of the ordinal alternative, which would otherwise capture the digit as an ordinal
+#     word and then discard it for not parsing.
+HEADING_RE_LOOSE = re.compile(
+    MADDA_LOOSE +
+    r"(?:"
+    r"\s*(?::\s*)?\(\s*(?P<d1>[0-9\u0660-\u0669]{1,4})\s*\)\s*" + TERMINATOR + r"?"
+    r"|\s*(?::\s*)?\(\s*(?P<d2>[0-9\u0660-\u0669]{1,4})\s*\)(?:[^:\n]{0,40})?:"
+    r"|\s+(?P<d3>[0-9\u0660-\u0669]{1,4})\s*" + TERMINATOR +
+    r"|\s*\(?\s*(?P<ord>[^\s:\n()\.،؛][^:\n()\.،؛]{0,44}?)\s*\)?"
     r"\s*(?:\(\s*[0-9\u0660-\u0669]{1,4}\s*\))?\s*:"
     r")")
 
@@ -324,7 +447,66 @@ def segment_bands(body: str):
     return bands, {"count": len(bands), "max": len(bands), "missing": []}
 
 
-def segment(body: str):
+# A third drafting form, and the one that is easiest to read wrongly. A sizeable
+# family of «قواعد / ضوابط / إجراءات» is published as a flat numbered list —
+# «1- ... 2- ... 3- ...» — with no «مادة» heading and no ordinal band anywhere in
+# it, so both segmenters above return nothing and G3 refuses the document. Seven
+# instruments in the measured backlog are shaped exactly that way, among them
+# «إجراءات طلبات التنفيذ المقدمة من الجهات الإدارية» (14 clauses) and «قواعد نظر
+# دعاوى إلغاء القرارات المتعلقة بتطبيق أحكام أوامر الطوارئ» (8).
+#
+# The danger is the mirror image of the opportunity: a numbered list is also the
+# commonest INCIDENTAL structure in Arabic legal prose — a definitions list, an
+# exceptions list nested inside one article. Reading such a list as the
+# instrument's own division would invent a structure the gazette never gave it.
+# Four conditions separate the two, and all four must hold:
+#
+#   * the run is complete and gap-free from 1 (same rule as the bands, and for
+#     the same reason: an incidental list rarely enumerates the whole document);
+#   * it is at least MIN_CLAUSES long — set above MIN_ARTICLES deliberately,
+#     because a bare digit is far weaker evidence of structure than the word
+#     «المادة» is;
+#   * the article and band segmenters both came up short first, so a document
+#     that IS article-drafted is never re-read as clauses (measured: «اللائحة
+#     التنظيمية لتصنيف الوسائط البحرية» segments to 6 articles, and its
+#     exceptions list 1-9 sits INSIDE article four);
+#   * the document is not decimally sectioned. The railway guides head their
+#     sections «1.1، 2.1، 3.1» and also carry a short flat run; the decimal
+#     markers are the real division and the flat run is not.
+CLAUSE_RE = re.compile(r"(?:(?<=\s)|^)([0-9٠-٩]{1,3})\s*[-–—]\s*(?=[ء-ي])")
+DECIMAL_SECTION_RE = re.compile(r"(?<![\d.])\d{1,2}\.\d{1,2}(?![\d.])")
+MIN_CLAUSES = 6
+
+
+def segment_clauses(body: str):
+    """Flat numbered clauses in document order -> (clauses, diagnostics).
+
+    Returns nothing at all unless the run is a complete 1..N enumeration; see
+    the note above for why every one of the four conditions is load-bearing."""
+    hits = []
+    for m in CLAUSE_RE.finditer(body):
+        try:
+            n = int(m.group(1).translate(_ARABIC_DIGITS))
+        except ValueError:
+            continue
+        hits.append((n, m.start(), m.end(), m.group(1)))
+
+    nums = [h[0] for h in hits]
+    if len(nums) < MIN_CLAUSES or nums != list(range(1, len(nums) + 1)):
+        return [], {"count": 0, "max": 0, "missing": []}
+    if len(DECIMAL_SECTION_RE.findall(body)) >= len(nums):
+        return [], {"count": 0, "max": 0, "missing": []}
+
+    clauses = []
+    for i, (num, s, e, label) in enumerate(hits):
+        nxt = hits[i + 1][1] if i + 1 < len(hits) else len(body)
+        # The label is stored as the gazette printed the NUMBER — Arabic-Indic
+        # digits stay Arabic-Indic — because the clause is cited by that mark.
+        clauses.append((num, "%s-" % label, strip_text(body[e:nxt]), ("", "")))
+    return clauses, {"count": len(clauses), "max": len(clauses), "missing": []}
+
+
+def segment(body: str, pattern=None):
     """Article headings in document order -> (articles, diagnostics).
 
     Robustness: every heading candidate is resolved to an integer, then the
@@ -334,21 +516,47 @@ def segment(body: str):
     heading that follows it.
     """
     cands = []
-    for m in HEADING_RE.finditer(body):
-        if m.group(1) is not None:
+    for m in (pattern or HEADING_RE).finditer(body):
+        # Named groups, because the two patterns admit different numbers of digit
+        # placements and positional groups would silently shift under the next one.
+        g = m.groupdict()
+        digits = g.get("d1") or g.get("d2") or g.get("d3")
+        if digits is not None:
             try:
-                n = int(m.group(1).translate(_ARABIC_DIGITS))
+                n = int(digits.translate(_ARABIC_DIGITS))
             except ValueError:
                 continue
             if not 1 <= n <= 999:
                 continue
         else:
-            n = parse_ordinal(m.group(2))
+            n = parse_ordinal(g.get("ord"))
             if n is None:
                 continue
+        # A CROSS-REFERENCE, not a heading: «المادة الثالثة (فقرة - 1) من تنظيم الهيئة
+        # السعودية للمواصفات». A real heading is followed by the article's own words; a
+        # citation is followed by «من» and the name of the instrument it cites. Without
+        # this, loosening the terminator turns every citation into a phantom article.
+        tail = body[m.end():m.end() + 16].lstrip()
+        if tail.startswith("من ") or tail.startswith("منه") or tail.startswith("وما "):
+            continue
+        # Extending the same preposition test to ARTICLE headings — «الاشتراطات
+        # الواردة في مادة (8) أو وحدة تجميد» is a citation the tail rule cannot see,
+        # because its tail is «أو» — was tried and is NOT kept. Measured on the two
+        # articles it was meant to repair, it made both worse: «اتفاقية ربط أنظمة
+        # المدفوعات الخليجية» article 13 swallowed article 14 whole, and the GCC
+        # healthcare-waste article 7 came out shorter than it is stored. The
+        # interaction with the longest-increasing-subsequence reconstruction is not
+        # understood well enough to ship, and a segmenter change that silently
+        # merges two articles is worse than the fragment it was fixing.
+        #
+        # The two affected records stay as they are and are disclosed by
+        # audit_corpus_text_quality.py, which is the honest state: a known defect
+        # named in a report beats an unverified fix in the segmenter.
         cands.append((n, m.start(), m.end()))
 
     if not cands:
+        if pattern is None:
+            return segment(body, HEADING_RE_LOOSE)
         return [], {"count": 0, "max": 0, "missing": []}
 
     import bisect
@@ -384,15 +592,28 @@ def segment(body: str):
         nxt = hits[i + 1][1] if i + 1 < len(hits) else len(body)
         txt = strip_text(body[e:nxt])
         while True:                              # headings can stack: «الباب X الفصل Y»
-            stripped = TRAILING_CH_RE.sub("", txt)
-            if stripped == txt:
+            m = trailing_chapter_heading(txt)
+            if not m:
                 break
-            txt = stripped
+            txt = txt[:m.start()]
         arts.append((num, ordinal(num), strip_text(txt), chapter_at(s)))
 
     present = {a[0] for a in arts}
     missing = [n for n in range(1, max(present) + 1) if n not in present]
-    return arts, {"count": len(arts), "max": max(present), "missing": missing}
+    diag = {"count": len(arts), "max": max(present), "missing": missing}
+    # Fall back when the strict pattern found too little to be a document, and ALSO
+    # when what it found has holes in it: «اللائحة التنفيذية لمنع ومعالجة تلوث التربة»
+    # segments to articles 1-4, 7, 8 because 5 and 6 are headed with no punctuation at
+    # all, and a run with holes is itself the signal that headings were missed.
+    #
+    # The loose result is accepted only if it is strictly larger AND gap-free. That
+    # second condition is the safety: a permissive pattern that picks phantom headings
+    # out of running text produces a run with holes, so it cannot win by being sloppier.
+    if pattern is None and (diag["count"] < MIN_ARTICLES or diag["missing"]):
+        loose_arts, loose_diag = segment(body, HEADING_RE_LOOSE)
+        if loose_diag["count"] > diag["count"] and not loose_diag["missing"]:
+            return loose_arts, loose_diag
+    return arts, diag
 
 
 # ---------------------------------------------------------------- spec derivation
@@ -635,6 +856,39 @@ def track_dates():
     return _TRACK_DATES
 
 
+NAME_TOKEN_OVERLAP = 0.80
+SPELLING_VARIANT_RATIO = 0.75
+
+
+def _name_tokens(title):
+    s = re.sub(r"[ً-ٰٟـ]", "", title or "")
+    s = (s.replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
+          .replace("ة", "ه").replace("ى", "ي"))
+    return {w for w in re.sub(r"[^\w؀-ۿ]+", " ", s).split() if len(w) > 1}
+
+
+def same_instrument_name(a, b):
+    """Do these two titles name the SAME instrument, allowing for spelling?
+
+    Two conditions, and the second is what makes the first safe. Token overlap
+    alone puts «اتفاقية خدمات جوية مع غانا» and «... مع قطر» at 82% — the same
+    instrument type between different parties, which is not the same instrument.
+    So every token present in one title and absent from the other must also be a
+    SPELLING VARIANT of some token in the other: «مكافاه»/«مكافات» are, «غانا»
+    and «قطر» are not. See G14 in evaluate() for what this is used to refuse."""
+    ta, tb = _name_tokens(a), _name_tokens(b)
+    if not ta or not tb:
+        return False
+    if len(ta & tb) / len(ta | tb) < NAME_TOKEN_OVERLAP:
+        return False
+    for w in ta ^ tb:
+        other = tb if w in ta else ta
+        if not any(difflib.SequenceMatcher(None, w, o).ratio() >= SPELLING_VARIANT_RATIO
+                   for o in other):
+            return False
+    return True
+
+
 def best_content_match(article_texts, exclude=None):
     """(overlap_fraction, track_id) for the built track that best already
     contains `article_texts`. (0.0, None) when nothing is on disk to compare to.
@@ -696,6 +950,13 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
         bands, bdiag = segment_bands(body)
         if bdiag["count"] >= MIN_BANDS:
             arts, diag, numbering_form = bands, bdiag, "ordinal_bands"
+        else:
+            # Last of the three forms, and tried last on purpose: a bare «1-» is
+            # the weakest structural mark of the three, so it only speaks when
+            # neither «المادة» nor «أولاً» is present to speak instead.
+            cls, cdiag = segment_clauses(body)
+            if cdiag["count"] >= MIN_CLAUSES:
+                arts, diag, numbering_form = cls, cdiag, "numbered_clauses"
 
     # G2 — already covered?
     #
@@ -797,6 +1058,50 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
                     "alongside its own successor" % (tid, dn[:70]))
                 break
 
+    # G14 — the SAME instrument name, and the corpus already holds a LATER edition.
+    #
+    # Found by auditing, not by design. «ضوابط مكافأة أعضاء مجالس إدارة الأجهزة
+    # واللجان المنبثقة عنها» (Umm Al-Qura, 2021-03-05) passed every gate above
+    # while the corpus already held «ضوابط مكافآت أعضاء مجالس إدارة الأجهزة
+    # واللجان المنبثقة عنها» (2023-09-21) — the same instrument, one word apart in
+    # spelling, rewritten enough that document containment came to 8% and no
+    # overlap-based gate could see it. Building it would have added SUPERSEDED
+    # text to a corpus that already carried its successor, and a model reading
+    # both has no way to tell which one to answer with.
+    #
+    # Title similarity alone is not enough to say «same instrument» — the treaty
+    # family shares 82% of its title tokens across different counterparties
+    # («اتفاقية خدمات جوية مع غانا» vs «... مع قطر»). So a token-overlap floor is
+    # paired with a second condition: every token that differs must be a spelling
+    # variant of a token in the other title, not a different word. «مكافاه» and
+    # «مكافات» pass that; «غانا» and «قطر» do not. Measured over the whole corpus,
+    # the two conditions together call exactly two existing pairs the same
+    # instrument — cma_corporate_governance_regulation / corporate_governance_
+    # regulation, and social_insurance / social_insurance_legacy — and the corpus
+    # holds both of those deliberately and says so in their names.
+    #
+    # As with G2-PREDECESSOR, this does not decide that the earlier text is
+    # repealed. It decides that the corpus must not silently gain it alongside
+    # the later edition it already holds.
+    dates = track_dates()
+    this_date = derive_dates(body)[1]
+    for tid, dn in reg_names:
+        if tid == exclude or not dn:
+            continue
+        held = dates.get(tid, "")
+        if not held or not this_date or held <= this_date:
+            continue
+        if same_instrument_name(title, dn):
+            reasons.append(
+                "G14-LATER-EDITION-HELD: the corpus already holds this same instrument name as "
+                "track '%s' («%s») published %s, later than this document's %s. Every differing "
+                "word between the two titles is a spelling variant, not a different subject, so "
+                "this is an EARLIER EDITION of a text already on file. Which edition is in force "
+                "is not settled by either document, so it is adjudicated by hand rather than "
+                "built alongside its own successor"
+                % (tid, dn[:70], held, this_date))
+            break
+
     if title_hit and not any(r.startswith("G2") for r in reasons):
         notes.append("G2-NOTE: title resembles registry track '%s', but only %.0f%% "
                      "of its articles are already ingested (best content match: '%s') "
@@ -804,10 +1109,12 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
                      % (title_hit, overlap * 100, match or "none"))
 
     # G3 — enough structure to be a track
-    floor = MIN_BANDS if numbering_form == "ordinal_bands" else MIN_ARTICLES
+    floor = {"ordinal_bands": MIN_BANDS,
+             "numbered_clauses": MIN_CLAUSES}.get(numbering_form, MIN_ARTICLES)
     if diag["count"] < floor:
         reasons.append(f"G3: only {diag['count']} article(s) segmented (min {MIN_ARTICLES}), "
-                       f"and no complete ordinal-band run either (min {MIN_BANDS})")
+                       f"and no complete ordinal-band run either (min {MIN_BANDS}), "
+                       f"and no complete numbered-clause run either (min {MIN_CLAUSES})")
 
     # G4..G7 — per-article integrity
     for num, _o, txt, _ch in arts:
@@ -815,7 +1122,7 @@ def evaluate(title: str, body: str, reg_names, taken, exclude=None):
             reasons.append(f"G4: article {num} is empty/near-empty")
         if any(nav in txt for nav in NAV_MARKERS):
             reasons.append(f"G5: article {num} contains site-navigation boilerplate")
-        if TRAILING_CH_RE.search(txt):
+        if trailing_chapter_heading(txt):
             reasons.append(f"G6: article {num} has a trailing chapter heading")
         if TASHKEEL.search(txt) or "ـ" in txt:
             reasons.append(f"G7: article {num} has residual tashkeel/tatweel")

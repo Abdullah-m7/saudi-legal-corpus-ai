@@ -1,0 +1,904 @@
+{
+ "generated_note": "Restores article text that this repository removed. segment() strips a chapter heading left at an article's tail, and its pattern consumed everything from the chapter word to the end of the line — so an article whose last sentence CITED a chapter lost the rest of that sentence. The stripper now tests the token before the chapter word and leaves a citation alone; this repairs the artifacts built before it did. An article is rewritten ONLY when its stored text is a strict PREFIX of what the source now yields, which is what makes the repair incapable of substituting different words for words already on file. Every other disagreement is reported untouched.",
+ "applied": true,
+ "articles_repaired": 8,
+ "tracks_repaired": 7,
+ "repairs": [
+  {
+   "track_id": "airports_economic_regulation",
+   "article_key": "airports_economic_regulation_art_024",
+   "stored_chars": 177,
+   "repaired_chars": 222,
+   "restored_tail": " الفصل الخامس والملحق رقم (2) من هذه اللوائح."
+  },
+  {
+   "track_id": "capital_adequacy_rules",
+   "article_key": "capital_adequacy_rules_art_003",
+   "stored_chars": 566,
+   "repaired_chars": 595,
+   "restored_tail": " الباب الثالث من هذه القواعد."
+  },
+  {
+   "track_id": "capital_adequacy_rules",
+   "article_key": "capital_adequacy_rules_art_012",
+   "stored_chars": 361,
+   "repaired_chars": 432,
+   "restored_tail": " الفصل الثاني من هذا الباب، ولا يشمل ذلك التعرضات لصفقات عقود المشتقات."
+  },
+  {
+   "track_id": "capital_market_institutions_regulation",
+   "article_key": "capital_market_institutions_regulation_art_054",
+   "stored_chars": 575,
+   "repaired_chars": 602,
+   "restored_tail": " الفصل الثالث من هذا الباب."
+  },
+  {
+   "track_id": "listed_jsc_companies_regulation",
+   "article_key": "listed_jsc_companies_regulation_art_031",
+   "stored_chars": 237,
+   "repaired_chars": 264,
+   "restored_tail": " الفصل الثاني من هذا الباب."
+  },
+  {
+   "track_id": "public_transport_users_rights_mechanism",
+   "article_key": "public_transport_users_rights_mechanism_art_066",
+   "stored_chars": 1539,
+   "repaired_chars": 1600,
+   "restored_tail": " الفصل الرابع من النظام البحري التجاري المعمول به في المملكة."
+  },
+  {
+   "track_id": "safe_manning_regulation",
+   "article_key": "safe_manning_regulation_art_005",
+   "stored_chars": 314,
+   "repaired_chars": 343,
+   "restored_tail": " الفصل الثالث من هذه اللائحة."
+  },
+  {
+   "track_id": "treaty_qatar_air_services",
+   "article_key": "treaty_qatar_air_services_art_019",
+   "stored_chars": 682,
+   "repaired_chars": 740,
+   "restored_tail": " الفصل الثالث من الملحق الخاص بمصادرة وثائق السفر المزورة."
+  }
+ ],
+ "left_for_adjudication": [
+  {
+   "track_id": "antiquities_heritage_regulation",
+   "article_key": "antiquities_heritage_regulation_art_045",
+   "stored_chars": 440,
+   "source_chars": 393,
+   "reason": "the source now yields SHORTER text",
+   "stored_tail": "ة حمايته وينهى الوقف أو التعليق بزوال سببه. ا لباب الثالث: المسح الأثري والتنقيب عن الآثار",
+   "source_tail": "رتب عليه الإضرار بموقع التراث العمراني أو بمنطقة حمايته وينهى الوقف أو التعليق بزوال سببه."
+  },
+  {
+   "track_id": "antiquities_heritage_regulation",
+   "article_key": "antiquities_heritage_regulation_art_049",
+   "stored_chars": 299,
+   "source_chars": 232,
+   "reason": "the source now yields SHORTER text",
+   "stored_tail": "دليل الإجرائي للتراخيص. ال فصل الثالث: الآثار المترتبة على المسح الأثري والتنقيب عن الآثار",
+   "source_tail": " بالمسح الأثري والتنقيب عن الآثار، وفقا للإجراءات المنصوص عليها بالدليل الإجرائي للتراخيص."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_001",
+   "stored_chars": 355,
+   "source_chars": 357,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "في البنوك المرخصة في المملكة وفقا لتعليمات البنك المركزي السعودي؛ وذلك لغرض جمع التبرعات .",
+   "source_tail": "في البنوك المرخصة في المملكة وفقا لتعليمات البنك المركزي السعودي؛ وذلك لغرض جمع التبرعات ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_002",
+   "stored_chars": 555,
+   "source_chars": 557,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ع للجهة المرخص لها، على اسم النطاق السعودي وفقا للأحكام المنظمة لأسماء النطاقات السعودية .",
+   "source_tail": "ع للجهة المرخص لها، على اسم النطاق السعودي وفقا للأحكام المنظمة لأسماء النطاقات السعودية ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_004",
+   "stored_chars": 884,
+   "source_chars": 886,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لتبرعات وفقا لما ورد في المادة ( الثامنة ) من النظام، وإيضاح تكاليفها المالية ( إن وجدت ).",
+   "source_tail": "لتبرعات وفقا لما ورد في المادة ( الثامنة ) من النظام، وإيضاح تكاليفها المالية ( إن وجدت )."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_005",
+   "stored_chars": 614,
+   "source_chars": 616,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ئيات حيال مدى مناسبة صدور موافقة منها على تلقي الجهة المرخص لها للتبرعات من خارج المملكة .",
+   "source_tail": "ئيات حيال مدى مناسبة صدور موافقة منها على تلقي الجهة المرخص لها للتبرعات من خارج المملكة ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_006",
+   "stored_chars": 1187,
+   "source_chars": 1193,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "وجدت . ه - دراسة الجدوى الاقتصادية من إقامة الحملة إذا كانت لغرض إقامة مشروعات استثمارية .",
+   "source_tail": "وجدت . ه - دراسة الجدوى الاقتصادية من إقامة الحملة إذا كانت لغرض إقامة مشروعات استثمارية ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_007",
+   "stored_chars": 640,
+   "source_chars": 649,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "التواصل مع الجهة المرخص لها، بما في ذلك رقم الهاتف والموقع الإلكتروني والبريد الإلكتروني .",
+   "source_tail": "التواصل مع الجهة المرخص لها، بما في ذلك رقم الهاتف والموقع الإلكتروني والبريد الإلكتروني ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_009",
+   "stored_chars": 363,
+   "source_chars": 366,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "صيلة التبرعات الناتجة عن الحملة، متضمنا ما تم التصرف فيه من حصيلة التبرعات وما تبقى منها .",
+   "source_tail": "صيلة التبرعات الناتجة عن الحملة، متضمنا ما تم التصرف فيه من حصيلة التبرعات وما تبقى منها ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_010",
+   "stored_chars": 331,
+   "source_chars": 334,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " 2- القنوات الرقمية للجهات الحكومية . 3- مغلفات السلع والمنتجات بعد موافقة الجهة المرخصة .",
+   "source_tail": " - القنوات الرقمية للجهات الحكومية . 3 - مغلفات السلع والمنتجات بعد موافقة الجهة المرخصة ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_012",
+   "stored_chars": 989,
+   "source_chars": 991,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ق قرار يصدر من المسؤول الأول في الجهة المرخصة بعد التنسيق مع الجهات الحكومية ذات العلاقة .",
+   "source_tail": "ق قرار يصدر من المسؤول الأول في الجهة المرخصة بعد التنسيق مع الجهات الحكومية ذات العلاقة ."
+  },
+  {
+   "track_id": "donations_collection_regulation",
+   "article_key": "donations_collection_regulation_art_014",
+   "stored_chars": 570,
+   "source_chars": 573,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "الماء . 3- الأغراض غير الربحية : ومنها المشروعات الصحية والتعليمية وتطوير البنية التحتية .",
+   "source_tail": "لماء . 3 - الأغراض غير الربحية : ومنها المشروعات الصحية والتعليمية وتطوير البنية التحتية ."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_003",
+   "stored_chars": 292,
+   "source_chars": 294,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "2- دون إخلال بمتطلبات الجهات الأخرى ذات الصلة، للمجلس الإعفاء من متطلب الحصول على التصريح.",
+   "source_tail": " - دون إخلال بمتطلبات الجهات الأخرى ذات الصلة، للمجلس الإعفاء من متطلب الحصول على التصريح."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_004",
+   "stored_chars": 287,
+   "source_chars": 289,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لمساندة المشمولة بأحكام النظام الفعاليات والعروض الترفيهية الخاصة التي لا يدعى لها العموم.",
+   "source_tail": "لمساندة المشمولة بأحكام النظام الفعاليات والعروض الترفيهية الخاصة التي لا يدعى لها العموم."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_005",
+   "stored_chars": 964,
+   "source_chars": 971,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " تصنيف المرخص لهم، والأنشطة الترفيهية والأنشطة المساندة، ولها إصدار شهادات تصنيف لكل منها.",
+   "source_tail": " تصنيف المرخص لهم، والأنشطة الترفيهية والأنشطة المساندة، ولها إصدار شهادات تصنيف لكل منها."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_006",
+   "stored_chars": 548,
+   "source_chars": 552,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لائحة الأحكام المترتبة على إلغاء الترخيص أو التصريح أو شهادة الاعتماد أو تعليقه أو تعديله.",
+   "source_tail": "لائحة الأحكام المترتبة على إلغاء الترخيص أو التصريح أو شهادة الاعتماد أو تعليقه أو تعديله."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_007",
+   "stored_chars": 277,
+   "source_chars": 279,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " بيع تذاكر الأنشطة الترفيهية بما لا يتجاوز (10%) من قيمة كل تذكرة، وفقا لما تحدده اللائحة.",
+   "source_tail": " بيع تذاكر الأنشطة الترفيهية بما لا يتجاوز (10%) من قيمة كل تذكرة، وفقا لما تحدده اللائحة."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_009",
+   "stored_chars": 356,
+   "source_chars": 360,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "كام النظامية ذات الصلة. 4- أحكام وشروط وضوابط الترخيص والتصريح وشهادة الاعتماد الصادرة له.",
+   "source_tail": "ام النظامية ذات الصلة. 4 - أحكام وشروط وضوابط الترخيص والتصريح وشهادة الاعتماد الصادرة له."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_010",
+   "stored_chars": 1162,
+   "source_chars": 1168,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "عين على المفتشين التقيد بها في أداء مهماتهم وممارسة الصلاحيات المنصوص عليها في هذه المادة.",
+   "source_tail": "عين على المفتشين التقيد بها في أداء مهماتهم وممارسة الصلاحيات المنصوص عليها في هذه المادة."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_012",
+   "stored_chars": 909,
+   "source_chars": 912,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "حدها الأقصى، وتعد المخالفة مكررة إذا وقعت خلال (سنة) من تاريخ ارتكاب المخالفة السابقة لها.",
+   "source_tail": "حدها الأقصى، وتعد المخالفة مكررة إذا وقعت خلال (سنة) من تاريخ ارتكاب المخالفة السابقة لها."
+  },
+  {
+   "track_id": "entertainment_activities_law",
+   "article_key": "entertainment_activities_law_art_013",
+   "stored_chars": 526,
+   "source_chars": 530,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ن التظلم من قرارات اللجنة أمام المحكمة الإدارية خلال (ستين) يوما من تاريخ الإبلاغ بالقرار.",
+   "source_tail": "ن التظلم من قرارات اللجنة أمام المحكمة الإدارية خلال (ستين) يوما من تاريخ الإبلاغ بالقرار."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_appendix_001",
+   "stored_chars": 2516,
+   "source_chars": 3049,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": ",000) ريال؛ ملاحظات: حسب الأضرار المترتبة مع إلزام المخالف بمعالجة الأضرار ودفع التعويضات.",
+   "source_tail": "بيئة أو تغيير في الخصائص الفيزيائية أو الكيميائية أو البيولوجية للوسط البيئي المستقبل لها."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_001",
+   "stored_chars": 3039,
+   "source_chars": 3049,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "بيئة أو تغيير في الخصائص الفيزيائية أو الكيميائية أو البيولوجية للوسط البيئي المستقبل لها.",
+   "source_tail": "بيئة أو تغيير في الخصائص الفيزيائية أو الكيميائية أو البيولوجية للوسط البيئي المستقبل لها."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_002",
+   "stored_chars": 186,
+   "source_chars": 199,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " الداخلية؛ والبحر الإقليمي؛ والمنطقة المتاخمة؛ والمنطقة الاقتصادية الخالصة؛ والجرف القاري.",
+   "source_tail": " الداخلية؛ والبحر الإقليمي؛ والمنطقة المتاخمة؛ والمنطقة الاقتصادية الخالصة؛ والجرف القاري."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_003",
+   "stored_chars": 3275,
+   "source_chars": 3321,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ة المتعلقة بالتأهب والاستجابة لحالات الطوارئ والكوارث البيئية التي تكون المملكة طرفا فيها.",
+   "source_tail": "ة المتعلقة بالتأهب والاستجابة لحالات الطوارئ والكوارث البيئية التي تكون المملكة طرفا فيها."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_004",
+   "stored_chars": 3593,
+   "source_chars": 3657,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " حيال اعتراضه بعد صدور القرار بمدة (15) يوم عمل، فيتم اعتبار الاعتراض غير مقبول من المركز.",
+   "source_tail": " حيال اعتراضه بعد صدور القرار بمدة (15) يوم عمل، فيتم اعتبار الاعتراض غير مقبول من المركز."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_005",
+   "stored_chars": 823,
+   "source_chars": 849,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "تعبوية. هـ- أي بيانات أو معلومات أخرى يطلبها المركز، وله إعداد واعتماد نموذج موحد للطلبات.",
+   "source_tail": "لتعبوية. ه- أي بيانات أو معلومات أخرى يطلبها المركز، وله إعداد واعتماد نموذج موحد للطلبات."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_006",
+   "stored_chars": 293,
+   "source_chars": 337,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " إليها في الفقرة (1) من هذه المادة فور علمهم بوقوع أي حادثة بيئية مهما كان حجمها أو نوعها.",
+   "source_tail": " إليها في الفقرة (1) من هذه المادة فور علمهم بوقوع أي حادثة بيئية مهما كان حجمها أو نوعها."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_007",
+   "stored_chars": 796,
+   "source_chars": 847,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ة اللازمة لتنفيذ الخطة الذاتية للتأهب والاستجابة لحالات الطوارئ والكوارث البيئية المحتملة.",
+   "source_tail": "ة اللازمة لتنفيذ الخطة الذاتية للتأهب والاستجابة لحالات الطوارئ والكوارث البيئية المحتملة."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_008",
+   "stored_chars": 1673,
+   "source_chars": 1718,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "كز عملية احتساب التعويضات وإعادة تأهيل المناطق المتضررة حسب اللائحة التنفيذية الخاصة بذلك.",
+   "source_tail": "كز عملية احتساب التعويضات وإعادة تأهيل المناطق المتضررة حسب اللائحة التنفيذية الخاصة بذلك."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_009",
+   "stored_chars": 443,
+   "source_chars": 487,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "علاقة، وله متابعة مصادر التلوث، وأخذ العينات والتوثيق بأي وسيلة ومنها التصوير الفوتوغرافي.",
+   "source_tail": "علاقة، وله متابعة مصادر التلوث، وأخذ العينات والتوثيق بأي وسيلة ومنها التصوير الفوتوغرافي."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_010",
+   "stored_chars": 767,
+   "source_chars": 777,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " في حدود الواسطة البحرية ويحتمل أن يتفاقم أثرها، ويتحمل النشاط كافة التكاليف اللازمة لذلك.",
+   "source_tail": " في حدود الواسطة البحرية ويحتمل أن يتفاقم أثرها، ويتحمل النشاط كافة التكاليف اللازمة لذلك."
+  },
+  {
+   "track_id": "environmental_emergency_response",
+   "article_key": "environmental_emergency_response_reg_art_011",
+   "stored_chars": 1149,
+   "source_chars": 3454,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "وفقا لتقديره إصدار إنذار أو أكثر للشخص قبل إيقاع أي من الغرامات المنصوص عليها بالجدول (1).",
+   "source_tail": "سيمة 50.000 5.000.000 حسب الأضرار المترتبة مع إلزام المخالف بمعالجة الأضرار ودفع التعويضات"
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_001",
+   "stored_chars": 168,
+   "source_chars": 170,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لى) من نظام حماية المؤشرات الجغرافية الصادر بالمرسوم الملكي رقم (م/102) وتاريخ 26/5/1447ﻫ.",
+   "source_tail": ") من نظام حماية المؤشرات الجغرافية الصادر بالمرسوم الملكي رقم (م/102) وتاريخ 26/ 5 /1447ﻫ."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_002",
+   "stored_chars": 249,
+   "source_chars": 251,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ت المختصة وطنيا أو دوليا التي تطلب الاعتراف بالمؤشرات الجغرافية الواقعة ضمن نطاق اختصاصها.",
+   "source_tail": "ت المختصة وطنيا أو دوليا التي تطلب الاعتراف بالمؤشرات الجغرافية الواقعة ضمن نطاق اختصاصها."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_003",
+   "stored_chars": 389,
+   "source_chars": 391,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ي بيان للسجل، ولها تعديل أو حذف أي بيان دون في السجل بدون وجه حق أو كان غير مطابق للحقيقة.",
+   "source_tail": "ي بيان للسجل، ولها تعديل أو حذف أي بيان دون في السجل بدون وجه حق أو كان غير مطابق للحقيقة."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_004",
+   "stored_chars": 1073,
+   "source_chars": 1079,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " بموجب قرارات نافذة. 7- أن يرتبط تسجيل المؤشر الجغرافي بالمنطقة المحددة في دليل الاستعمال.",
+   "source_tail": "بموجب قرارات نافذة. 7 - أن يرتبط تسجيل المؤشر الجغرافي بالمنطقة المحددة في دليل الاستعمال."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_005",
+   "stored_chars": 442,
+   "source_chars": 445,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لاستعمال خصائص تمييز المؤشر الجغرافي عن مثيله الذي يحمل ذات المؤشر الجغرافي في منطقة أخرى.",
+   "source_tail": "لاستعمال خصائص تمييز المؤشر الجغرافي عن مثيله الذي يحمل ذات المؤشر الجغرافي في منطقة أخرى."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_006",
+   "stored_chars": 868,
+   "source_chars": 873,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "تصة وطنيا أو إقليميا أو دوليا تطلب الاعتراف بالمؤشرات الجغرافية الواقعة ضمن نطاق اختصاصها.",
+   "source_tail": "تصة وطنيا أو إقليميا أو دوليا تطلب الاعتراف بالمؤشرات الجغرافية الواقعة ضمن نطاق اختصاصها."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_007",
+   "stored_chars": 292,
+   "source_chars": 296,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "افية المشتهر فيها المنتج. 4- صورة قابلة للنشر لشكل المؤشر الجغرافي، متى كان له تمثيل بصري.",
+   "source_tail": "فية المشتهر فيها المنتج. 4 - صورة قابلة للنشر لشكل المؤشر الجغرافي، متى كان له تمثيل بصري."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_008",
+   "stored_chars": 379,
+   "source_chars": 382,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " (تسعين) يوما من تاريخ إشعاره، وفي حال عدم الرد خلال المهلة النظامية جاز للهيئة رفض الطلب.",
+   "source_tail": " (تسعين) يوما من تاريخ إشعاره، وفي حال عدم الرد خلال المهلة النظامية جاز للهيئة رفض الطلب."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_009",
+   "stored_chars": 496,
+   "source_chars": 502,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " -إن وجد-. 5- طريقة التعبئة والتغليف -إن وجد-. 6- التدخل البشري المؤثر في المنتج -إن وجد-.",
+   "source_tail": "إن وجد-. 5 - طريقة التعبئة والتغليف -إن وجد-. 6 - التدخل البشري المؤثر في المنتج -إن وجد-."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_011",
+   "stored_chars": 601,
+   "source_chars": 603,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لب استيفاء ذلك خلال مدة لا تتجاوز (ثلاثين) يوما من تاريخ إخطاره، وإلا عد الطلب كأن لم يكن.",
+   "source_tail": "لب استيفاء ذلك خلال مدة لا تتجاوز (ثلاثين) يوما من تاريخ إخطاره، وإلا عد الطلب كأن لم يكن."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_012",
+   "stored_chars": 545,
+   "source_chars": 547,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "د- دليل الاستعمال، والمنتجات التي سجل عنها المؤشر الجغرافي، وأي قيود أو اشتراطات -إن وجد-.",
+   "source_tail": "د- دليل الاستعمال، والمنتجات التي سجل عنها المؤشر الجغرافي، وأي قيود أو اشتراطات -إن وجد-."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_013",
+   "stored_chars": 649,
+   "source_chars": 653,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "اض على قرار اللجنة أمام المحكمة المختصة خلال (ستين) يوما من تاريخ إبلاغه بقرار رفض التظلم.",
+   "source_tail": "اض على قرار اللجنة أمام المحكمة المختصة خلال (ستين) يوما من تاريخ إبلاغه بقرار رفض التظلم."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_015",
+   "stored_chars": 813,
+   "source_chars": 816,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "التجاري واسم وكيله -إن وجد-. ه- صورة لشكل المؤشر الجغرافي، متى كان له تمثيل بصري –إن وجد-.",
+   "source_tail": "التجاري واسم وكيله -إن وجد-. ه- صورة لشكل المؤشر الجغرافي، متى كان له تمثيل بصري –إن وجد-."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_016",
+   "stored_chars": 369,
+   "source_chars": 372,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "القيمة التنافسية للمنتجات الوطنية المرتبطة بالمؤشر الجغرافي. 3- تحقق مصلحة عامة في تسجيله.",
+   "source_tail": "لقيمة التنافسية للمنتجات الوطنية المرتبطة بالمؤشر الجغرافي. 3 - تحقق مصلحة عامة في تسجيله."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_017",
+   "stored_chars": 264,
+   "source_chars": 266,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "أ على اسم مقدم الطلب أو عنوانه. 2- تغيير أو إضافة وكيل، أو تغيير اسمه أو عنوانه أو كلاهما.",
+   "source_tail": " على اسم مقدم الطلب أو عنوانه. 2 - تغيير أو إضافة وكيل، أو تغيير اسمه أو عنوانه أو كلاهما."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_018",
+   "stored_chars": 461,
+   "source_chars": 464,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ية جديدة في المنطقة الجغرافية يكون لها تأثير مباشر على المنتجات المرتبطة بالمؤشر الجغرافي.",
+   "source_tail": "ية جديدة في المنطقة الجغرافية يكون لها تأثير مباشر على المنتجات المرتبطة بالمؤشر الجغرافي."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_020",
+   "stored_chars": 286,
+   "source_chars": 288,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "يخ انتهائها. 2- تنتهي مدة تسجيل المؤشر الجغرافي بعدم تقديم طلب التجديد خلال المدة المحددة.",
+   "source_tail": "خ انتهائها. 2 - تنتهي مدة تسجيل المؤشر الجغرافي بعدم تقديم طلب التجديد خلال المدة المحددة."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_026",
+   "stored_chars": 1008,
+   "source_chars": 1009,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " التخزين، وذلك بما يحول دون تلفه أو الإضرار بسلامته متى كان لذلك أثر في إجراءات الاستدلال.",
+   "source_tail": " التخزين، وذلك بما يحول دون تلفه أو الإضرار بسلامته متى كان لذلك أثر في إجراءات الاستدلال."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_027",
+   "stored_chars": 445,
+   "source_chars": 447,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ذوي الصلة، ويدون في المحضر ما يتعلق بحالات الامتناع عن التوقيع أو مغادرة الموقع أو الهروب.",
+   "source_tail": "ذوي الصلة، ويدون في المحضر ما يتعلق بحالات الامتناع عن التوقيع أو مغادرة الموقع أو الهروب."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_028",
+   "stored_chars": 551,
+   "source_chars": 552,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ل عدم حضوره دون إحالة الواقعة إلى النيابة العامة متى توافرت دلائل أولية على وقوع المخالفة.",
+   "source_tail": "ل عدم حضوره دون إحالة الواقعة إلى النيابة العامة متى توافرت دلائل أولية على وقوع المخالفة."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_031",
+   "stored_chars": 173,
+   "source_chars": 175,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " 2- لكل ذي مصلحة تقديم اعتراض لدى المحكمة المختصة في إجراءات القيد في السجل وما يطرأ عليه.",
+   "source_tail": "2 - لكل ذي مصلحة تقديم اعتراض لدى المحكمة المختصة في إجراءات القيد في السجل وما يطرأ عليه."
+  },
+  {
+   "track_id": "geographical_indications_regulation",
+   "article_key": "geographical_indications_regulation_art_034",
+   "stored_chars": 459,
+   "source_chars": 461,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ي قرينة على سلامة الاستعمال أو مشروعيته، ولا يحول ذلك دون اتخاذ التدابير القضائية اللاحقة.",
+   "source_tail": "ي قرينة على سلامة الاستعمال أو مشروعيته، ولا يحول ذلك دون اتخاذ التدابير القضائية اللاحقة."
+  },
+  {
+   "track_id": "handicrafts_regulation",
+   "article_key": "handicrafts_regulation_art_003",
+   "stored_chars": 1538,
+   "source_chars": 1556,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "دة القيد بنفس الطريقة المحددة للقيد للمرة الأولى، على أن يستوفي الطلب جميع المتطلبات لذلك.",
+   "source_tail": "دة القيد بنفس الطريقة المحددة للقيد للمرة الأولى، على أن يستوفي الطلب جميع المتطلبات لذلك."
+  },
+  {
+   "track_id": "handicrafts_regulation",
+   "article_key": "handicrafts_regulation_art_004",
+   "stored_chars": 585,
+   "source_chars": 597,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "قرة (أ) من هذه المادة. ج- للمجلس -بالتنسيق مع الجهات ذات العلاقة- إضافة مجالات حرفية أخرى.",
+   "source_tail": "قرة (أ) من هذه المادة. ج- للمجلس -بالتنسيق مع الجهات ذات العلاقة- إضافة مجالات حرفية أخرى."
+  },
+  {
+   "track_id": "handicrafts_regulation",
+   "article_key": "handicrafts_regulation_art_006",
+   "stored_chars": 1144,
+   "source_chars": 1151,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "المحددة للحصول على الترخيص للمرة الأولى، على أن يستوفي الطلب جميع المتطلبات النظامية لذلك.",
+   "source_tail": "المحددة للحصول على الترخيص للمرة الأولى، على أن يستوفي الطلب جميع المتطلبات النظامية لذلك."
+  },
+  {
+   "track_id": "handicrafts_regulation",
+   "article_key": "handicrafts_regulation_art_012",
+   "stored_chars": 270,
+   "source_chars": 273,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ي. 3- دعم فني. ج- للمجلس -وفقا لما تقتضيه المصلحة- إضافة أنواع أخرى من المكافآت التشجيعية.",
+   "source_tail": ". 3 - دعم فني. ج- للمجلس -وفقا لما تقتضيه المصلحة- إضافة أنواع أخرى من المكافآت التشجيعية."
+  },
+  {
+   "track_id": "ship_safety_management_regulation",
+   "article_key": "ship_safety_management_regulation_art_010",
+   "stored_chars": 764,
+   "source_chars": 471,
+   "reason": "the source now yields SHORTER text",
+   "stored_tail": "لتظلم من قرار اللجنة أمام ديوان المظالم خلال (60) ستين يوما من تاريخ إقراره من قبل اللجنة.",
+   "source_tail": "لى عدم الامتثال جوهريا. ب- عدم طلب الخضوع للتحقق كما هو محدد في المادة (5) من هذه اللائحة."
+  },
+  {
+   "track_id": "tourist_guidance_regulation",
+   "article_key": "tourist_guidance_regulation_art_009",
+   "stored_chars": 152,
+   "source_chars": 127,
+   "reason": "the source now yields SHORTER text",
+   "stored_tail": "لترخيص أو تعليقه مؤقتا، وإنهاء جميع الالتزامات القائمة بناء عليه. ا لفصل الثالث: الاعفاءات",
+   "source_tail": "على الموافقة، عند إلغاء الترخيص أو تعليقه مؤقتا، وإنهاء جميع الالتزامات القائمة بناء عليه."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_002",
+   "stored_chars": 197,
+   "source_chars": 199,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "اني إلا بما هو وارد في المخططات التنظيمية الصادرة من الجهات المختصة أو شهادة إشغال المبنى.",
+   "source_tail": "اني إلا بما هو وارد في المخططات التنظيمية الصادرة من الجهات المختصة أو شهادة إشغال المبنى."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_003",
+   "stored_chars": 726,
+   "source_chars": 730,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لمبنى؛ للتثبت من تحقق الإشغال أو الوقوف على أسباب الشغور، وذلك وفقا للإجراءات التي تحددها.",
+   "source_tail": "لمبنى؛ للتثبت من تحقق الإشغال أو الوقوف على أسباب الشغور، وذلك وفقا للإجراءات التي تحددها."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_004",
+   "stored_chars": 891,
+   "source_chars": 894,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ما يتوافق مع الإجراءات والمعايير ذات الصلة المعتمدة من الهيئة السعودية للمقيمين المعتمدين.",
+   "source_tail": "ما يتوافق مع الإجراءات والمعايير ذات الصلة المعتمدة من الهيئة السعودية للمقيمين المعتمدين."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_005",
+   "stored_chars": 870,
+   "source_chars": 875,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "فقرة (4) من هذه المادة، يصدر الإعلان بتطبيق الرسم وفقا لأحكام المادة (التاسعة) من اللائحة.",
+   "source_tail": "فقرة (4) من هذه المادة، يصدر الإعلان بتطبيق الرسم وفقا لأحكام المادة (التاسعة) من اللائحة."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_006",
+   "stored_chars": 547,
+   "source_chars": 549,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " في أي مدينة أو نطاق جغرافي، لتقرير تطبيق الرسم على العقارات الشاغرة داخل النطاق العمراني.",
+   "source_tail": " في أي مدينة أو نطاق جغرافي، لتقرير تطبيق الرسم على العقارات الشاغرة داخل النطاق العمراني."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_008",
+   "stored_chars": 571,
+   "source_chars": 576,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " لنوع استخدام المبنى، وتصدر محددات الاستهلاك بقرار من الوزير -بعد موافقة اللجنة الوزارية-.",
+   "source_tail": " لنوع استخدام المبنى، وتصدر محددات الاستهلاك بقرار من الوزير -بعد موافقة اللجنة الوزارية-."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_009",
+   "stored_chars": 556,
+   "source_chars": 558,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "علان في الجريدة الرسمية والبوابة الإلكترونية التي تخصصها الوزارة لتطبيق أحكام هذه اللائحة.",
+   "source_tail": "علان في الجريدة الرسمية والبوابة الإلكترونية التي تخصصها الوزارة لتطبيق أحكام هذه اللائحة."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_010",
+   "stored_chars": 705,
+   "source_chars": 710,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لا كعنوان رئيسي للمكلف وفق الأنظمة ذات العلاقة، وأن يتقدم للوزارة بالمستندات المؤيدة لذلك.",
+   "source_tail": "لا كعنوان رئيسي للمكلف وفق الأنظمة ذات العلاقة، وأن يتقدم للوزارة بالمستندات المؤيدة لذلك."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_011",
+   "stored_chars": 538,
+   "source_chars": 542,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "خه في إيقاع أي غرامة ناتجة عن تخلف المكلف عن التسديد أو عدم تقدمه بالوثائق المطلوبة نظاما.",
+   "source_tail": "خه في إيقاع أي غرامة ناتجة عن تخلف المكلف عن التسديد أو عدم تقدمه بالوثائق المطلوبة نظاما."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_012",
+   "stored_chars": 351,
+   "source_chars": 353,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "م المشار إليها في الفقرة (2) من المادة (الخامسة عشرة)، وتحديد المدة اللازمة لإشغال المبنى.",
+   "source_tail": "م المشار إليها في الفقرة (2) من المادة (الخامسة عشرة)، وتحديد المدة اللازمة لإشغال المبنى."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_013",
+   "stored_chars": 475,
+   "source_chars": 486,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "في التسديد. 11- حقه في الاعتراض، ومدته بحسب الإجراءات النظامية، من تاريخ تبليغه بالفاتورة.",
+   "source_tail": "ي التسديد. 11 - حقه في الاعتراض، ومدته بحسب الإجراءات النظامية، من تاريخ تبليغه بالفاتورة."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_015",
+   "stored_chars": 483,
+   "source_chars": 486,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " الشاغر الخاضع لتطبيق الرسم مملوكا لأكثر من شخص، سواء من ذوي الصفة الطبيعية أو الاعتبارية.",
+   "source_tail": " الشاغر الخاضع لتطبيق الرسم مملوكا لأكثر من شخص، سواء من ذوي الصفة الطبيعية أو الاعتبارية."
+  },
+  {
+   "track_id": "vacant_properties_fees_regulation",
+   "article_key": "vacant_properties_fees_regulation_art_016",
+   "stored_chars": 526,
+   "source_chars": 530,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لخاص بمبالغ الرسوم والغرامات المحصلة، على مشروعات الإسكان، وذلك بالاتفاق مع وزارة المالية.",
+   "source_tail": "لخاص بمبالغ الرسوم والغرامات المحصلة، على مشروعات الإسكان، وذلك بالاتفاق مع وزارة المالية."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_001",
+   "stored_chars": 1346,
+   "source_chars": 1348,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "قدم الطلب الذي صدرت له موافقة من الهيئة على طرح المنتج الاستثماري الوقفي الذي يتطلب الطرح.",
+   "source_tail": "قدم الطلب الذي صدرت له موافقة من الهيئة على طرح المنتج الاستثماري الوقفي الذي يتطلب الطرح."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_002",
+   "stored_chars": 236,
+   "source_chars": 238,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "في التنمية الاقتصادية وفقا لمستهدفات الهيئة العامة للأوقاف، المستمدة من رؤية المملكة 2030.",
+   "source_tail": "في التنمية الاقتصادية وفقا لمستهدفات الهيئة العامة للأوقاف، المستمدة من رؤية المملكة 2030."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_003",
+   "stored_chars": 175,
+   "source_chars": 177,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لجهة المختصة. 2- مقدمي الطلبات، والمصرح لهم، وواقفي المنتجات الاستثمارية الوقفية، ونظارها.",
+   "source_tail": "جهة المختصة. 2 - مقدمي الطلبات، والمصرح لهم، وواقفي المنتجات الاستثمارية الوقفية، ونظارها."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_007",
+   "stored_chars": 335,
+   "source_chars": 337,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "من مستندات المنتج الاستثماري الوقفي، وهو المرجع الرئيس في تحديد الأحكام الوقفية الخاصة به.",
+   "source_tail": "من مستندات المنتج الاستثماري الوقفي، وهو المرجع الرئيس في تحديد الأحكام الوقفية الخاصة به."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_008",
+   "stored_chars": 675,
+   "source_chars": 683,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ارة المخاطر، أو الاقتراض باسم الوقف، أو التصرف في أصوله، بما لا يتعارض مع الأحكام الشرعية.",
+   "source_tail": "ارة المخاطر، أو الاقتراض باسم الوقف، أو التصرف في أصوله، بما لا يتعارض مع الأحكام الشرعية."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_009",
+   "stored_chars": 339,
+   "source_chars": 344,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " المشروع أو الأصل الوقفي. 5- أي وثائق أخرى تطلبها الهيئة تخص نوع المنتج الاستثماري الوقفي.",
+   "source_tail": "المشروع أو الأصل الوقفي. 5 - أي وثائق أخرى تطلبها الهيئة تخص نوع المنتج الاستثماري الوقفي."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_010",
+   "stored_chars": 640,
+   "source_chars": 644,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "دم الطلب أن يتقدم بطلب جديد بعد استيفاء المتطلبات المبينة في اللائحة، أو زوال أسباب الرفض.",
+   "source_tail": "دم الطلب أن يتقدم بطلب جديد بعد استيفاء المتطلبات المبينة في اللائحة، أو زوال أسباب الرفض."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_011",
+   "stored_chars": 584,
+   "source_chars": 587,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " إجراءات الطرح لأي سبب، وذلك خلال (10) أيام عمل من تاريخ التوقف عن المضي في إجراءات الطرح.",
+   "source_tail": " إجراءات الطرح لأي سبب، وذلك خلال (10) أيام عمل من تاريخ التوقف عن المضي في إجراءات الطرح."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_013",
+   "stored_chars": 261,
+   "source_chars": 263,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "(5) أيام عمل من تاريخ اكتمال الطرح. 2- يجب أن تعد وثيقة الوقف بما يتوافق مع الملحق الوقفي.",
+   "source_tail": "5) أيام عمل من تاريخ اكتمال الطرح. 2 - يجب أن تعد وثيقة الوقف بما يتوافق مع الملحق الوقفي."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_014",
+   "stored_chars": 754,
+   "source_chars": 757,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "طلب كأن لم يكن. 3- تصدر الهيئة شهادة تسجيل الوقف بعد استيفاء المتطلبات المبينة في اللائحة.",
+   "source_tail": "لب كأن لم يكن. 3 - تصدر الهيئة شهادة تسجيل الوقف بعد استيفاء المتطلبات المبينة في اللائحة."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_022",
+   "stored_chars": 424,
+   "source_chars": 426,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ثمارية الوقفية، وفقا للإجراءات الخاصة بنقل الأوراق المالية من دون صفقات لدى الجهة المختصة.",
+   "source_tail": "ثمارية الوقفية، وفقا للإجراءات الخاصة بنقل الأوراق المالية من دون صفقات لدى الجهة المختصة."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_023",
+   "stored_chars": 383,
+   "source_chars": 385,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " الحساب الاستثماري. 2- اتفاقية الإدارة؛ إذا أسندت إدارة المحفظة إلى مؤسسة سوق مالية مرخصة.",
+   "source_tail": "الحساب الاستثماري. 2 - اتفاقية الإدارة؛ إذا أسندت إدارة المحفظة إلى مؤسسة سوق مالية مرخصة."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_024",
+   "stored_chars": 674,
+   "source_chars": 677,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لمؤسسة السوق المالية التي تدير المحفظة الاستثمارية الوقفية أجرة المثل، إلا بموافقة الهيئة.",
+   "source_tail": "لمؤسسة السوق المالية التي تدير المحفظة الاستثمارية الوقفية أجرة المثل، إلا بموافقة الهيئة."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_025",
+   "stored_chars": 439,
+   "source_chars": 443,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "ول التي يستثمر فيها، ومستوى المخاطر الرئيسية للاستثمار في الصندوق. 4- سياسة توزيع الأرباح.",
+   "source_tail": "ل التي يستثمر فيها، ومستوى المخاطر الرئيسية للاستثمار في الصندوق. 4 - سياسة توزيع الأرباح."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_027",
+   "stored_chars": 711,
+   "source_chars": 714,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لصندوق الناتج عن الدمج الأحكام المنصوص عليها في اللائحة بشأن الصناديق الاستثمارية الوقفية.",
+   "source_tail": "لصندوق الناتج عن الدمج الأحكام المنصوص عليها في اللائحة بشأن الصناديق الاستثمارية الوقفية."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_028",
+   "stored_chars": 497,
+   "source_chars": 498,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "لاسترداد أصل قيمة الصك وعوائد محددة، أو تنازلهم كليا أو جزئيا عن ذلك لصالح المشروع الوقفي.",
+   "source_tail": "لاسترداد أصل قيمة الصك وعوائد محددة، أو تنازلهم كليا أو جزئيا عن ذلك لصالح المشروع الوقفي."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_029",
+   "stored_chars": 585,
+   "source_chars": 587,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "مدة لا تتجاوز (5) أيام عمل من تاريخ وقوع أي تغيير جوهري يطرأ على المنتج الاستثماري الوقفي.",
+   "source_tail": "مدة لا تتجاوز (5) أيام عمل من تاريخ وقوع أي تغيير جوهري يطرأ على المنتج الاستثماري الوقفي."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_030",
+   "stored_chars": 591,
+   "source_chars": 597,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": " أو مصارفه. 6- أي قيود أو حجوزات تفرض على المنتج الاستثماري الوقفي من أي جهة نظامية مختصة.",
+   "source_tail": "أو مصارفه. 6 - أي قيود أو حجوزات تفرض على المنتج الاستثماري الوقفي من أي جهة نظامية مختصة."
+  },
+  {
+   "track_id": "waqf_investment_products_regulation",
+   "article_key": "waqf_investment_products_regulation_art_031",
+   "stored_chars": 527,
+   "source_chars": 528,
+   "reason": "the source text diverges rather than extends",
+   "stored_tail": "التزام بتنفيذ شروط الواقف. و- أي وقائع أو بيانات جوهرية قد تؤثر على تحقيق الأغراض الوقفية.",
+   "source_tail": "التزام بتنفيذ شروط الواقف. و- أي وقائع أو بيانات جوهرية قد تؤثر على تحقيق الأغراض الوقفية."
+  }
+ ],
+ "pages_unreachable_this_pass": []
+}
