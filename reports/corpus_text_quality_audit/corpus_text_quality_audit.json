@@ -1,0 +1,285 @@
+{
+ "generated_note": "Asks the text questions that sit between 'the file parses' and 'the law is right'. Each finding is phrased as a defect a reader could point at: a chapter heading absorbed into a provision's tail, a declared numbering gap that the stored records contradict, one instrument carrying the same text twice, a `text_complete: true` over a fragment, a disclosure naming an article that does not exist. None of these is visible to a count-based validator, and all of them change what a model reading the corpus would say. Read-only; writes only this report.",
+ "tracks_examined": 735,
+ "records_examined": 24975,
+ "1_structure_leaked_into_a_provision": {
+  "count": 0,
+  "by_track": [],
+  "entries": []
+ },
+ "2_declared_numbering_gaps_that_the_records_contradict": {
+  "count": 2,
+  "entries": [
+   {
+    "track_id": "aml/regulation",
+    "declared": [],
+    "derived_from_stored_records": [
+     3,
+     4,
+     6,
+     11,
+     12,
+     13,
+     18,
+     19,
+     21,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     44,
+     45,
+     46,
+     47
+    ]
+   },
+   {
+    "track_id": "health_system/regulation",
+    "declared": [],
+    "derived_from_stored_records": [
+     1
+    ]
+   }
+  ]
+ },
+ "3_same_text_held_twice_in_one_instrument": {
+  "count": 9,
+  "by_track": [
+   [
+    "associations_ngo_regulation/law",
+    2
+   ],
+   [
+    "sharia_procedure/regulation",
+    2
+   ],
+   [
+    "antiquities_heritage_regulation",
+    1
+   ],
+   [
+    "museums_regulation",
+    1
+   ],
+   [
+    "rural_livestock_husbandry_guide",
+    1
+   ],
+   [
+    "bankruptcy/law",
+    1
+   ],
+   [
+    "telecommunications_regulation/law",
+    1
+   ]
+  ],
+  "entries": [
+   {
+    "track_id": "antiquities_heritage_regulation",
+    "article_keys": [
+     "antiquities_heritage_regulation_art_055",
+     "antiquities_heritage_regulation_art_091"
+    ],
+    "chars": 110,
+    "text_head": "في حالة صدور قرار من اللجنة بإيقاف النشاط، أو تعليق الترخيص، فيجب ألا تتجاوز مدة الإيقاف، أو التعليق ستة أشهر."
+   },
+   {
+    "track_id": "museums_regulation",
+    "article_keys": [
+     "museums_regulation_art_029",
+     "museums_regulation_art_088"
+    ],
+    "chars": 110,
+    "text_head": "في حالة صدور قرار من اللجنة بإيقاف النشاط، أو تعليق الترخيص، فيجب ألا تتجاوز مدة الإيقاف، أو التعليق ستة أشهر."
+   },
+   {
+    "track_id": "rural_livestock_husbandry_guide",
+    "article_keys": [
+     "rural_livestock_husbandry_guide_art_004",
+     "rural_livestock_husbandry_guide_art_005"
+    ],
+    "chars": 135,
+    "text_head": "أن يلتزم المربي بجميع الاشتراطات التي تعلنها الوزارة أو مركز وقاء بشأن التحصينات الخاصة بالثروة الحيوانية ومتا"
+   },
+   {
+    "track_id": "associations_ngo_regulation/law",
+    "article_keys": [
+     "associations_ngo_regulation_art_008",
+     "associations_ngo_regulation_art_047"
+    ],
+    "chars": 364,
+    "text_head": "إذا كان أحد طالبي التأسيس شخصية اعتبارية غير حكومية فعليه تقديم الآتي: أ. السجل التجاري، أو الترخيص، أو شهادة "
+   },
+   {
+    "track_id": "associations_ngo_regulation/law",
+    "article_keys": [
+     "associations_ngo_regulation_art_010",
+     "associations_ngo_regulation_art_049"
+    ],
+    "chars": 351,
+    "text_head": "يكون صاحب الصلاحية في الشخصية الاعتبارية على النحو الآتي: 1. جميع الشركاء في الشركة أو المفوض نيابة عنهم. 2. ا"
+   },
+   {
+    "track_id": "bankruptcy/law",
+    "article_keys": [
+     "bankruptcy_art_029",
+     "bankruptcy_art_074"
+    ],
+    "chars": 114,
+    "text_head": "إذا تعدد الدائنون وكان هناك اختلاف في طبيعة ديونهم أو حقوقهم، فعلى المدين تصنيفهم إلى فئات وفقا لما تحدده اللا"
+   },
+   {
+    "track_id": "sharia_procedure/regulation",
+    "article_keys": [
+     "mur_reg_art_300",
+     "mur_reg_art_301"
+    ],
+    "chars": 63,
+    "text_head": "للخصم في الدعاوى التجارية استجواب خصمه مباشرة تحت إشراف القاضي."
+   },
+   {
+    "track_id": "sharia_procedure/regulation",
+    "article_keys": [
+     "mur_reg_art_384",
+     "mur_reg_art_399"
+    ],
+    "chars": 77,
+    "text_head": "تختص المحكمة العامة بنظر الدعوى المذكورة في هذه المادة مهما كان مضمون الورقة."
+   },
+   {
+    "track_id": "telecommunications_regulation/law",
+    "article_keys": [
+     "telecommunications_regulation_art_045",
+     "telecommunications_regulation_art_046"
+    ],
+    "chars": 234,
+    "text_head": "يلتزم مقدم الخدمة ذي البنية التحتية بالمحافظة على سرية بيانات البنية التحتية الحرجة التي يشكل الإفصاح عنها أو "
+   }
+  ]
+ },
+ "4_text_complete_asserted_over_a_fragment": {
+  "count": 11,
+  "by_track": [
+   [
+    "capital_adequacy_rules",
+    2
+   ],
+   [
+    "airports_economic_regulation",
+    1
+   ],
+   [
+    "capital_market_institutions_regulation",
+    1
+   ],
+   [
+    "gcc_healthcare_waste_management_system",
+    1
+   ],
+   [
+    "listed_jsc_companies_regulation",
+    1
+   ],
+   [
+    "public_transport_users_rights_mechanism",
+    1
+   ],
+   [
+    "safe_manning_regulation",
+    1
+   ],
+   [
+    "treaty_gcc_payment_systems_linkage",
+    1
+   ],
+   [
+    "treaty_qatar_air_services",
+    1
+   ],
+   [
+    "dry_gas_lpg_distribution_law/law",
+    1
+   ]
+  ],
+  "entries": [
+   {
+    "track_id": "airports_economic_regulation",
+    "article_key": "airports_economic_regulation_art_024",
+    "words": 27,
+    "text": "قواعد تخصيص الخانات الزمنية يجب أن تخضع عملية تخصيص الخانات الزمنية إلى تعليمات الأياتا الخاصة بتخصيص الخانات الزمنية لل"
+   },
+   {
+    "track_id": "capital_adequacy_rules",
+    "article_key": "capital_adequacy_rules_art_003",
+    "words": 98,
+    "text": "متطلبات الحد الأدنى لكفاية رأس المال أ- يجب على مؤسسة السوق المالية المرخص لها في ممارسة نشاط أو أكثر من أنشطة التعامل أ"
+   },
+   {
+    "track_id": "capital_adequacy_rules",
+    "article_key": "capital_adequacy_rules_art_012",
+    "words": 55,
+    "text": "النطاق يجب على مؤسسة السوق المالية احتساب الأصول المرجحة بالمخاطر لمخاطر الائتمان لجميع التعرضات في قائمة المركز المالي "
+   },
+   {
+    "track_id": "capital_market_institutions_regulation",
+    "article_key": "capital_market_institutions_regulation_art_054",
+    "words": 85,
+    "text": "وضع النظم والإجراءات الرقابية والمحافظة عليها أ) يجب على مؤسسة السوق المالية وضع النظم والإجراءات الرقابية المناسبة لأعم"
+   },
+   {
+    "track_id": "gcc_healthcare_waste_management_system",
+    "article_key": "gcc_healthcare_waste_management_system_art_007",
+    "words": 985,
+    "text": "اشتراطات الجمع والنقل داخل المنشأة 1- يتطلب جمع ونقل أكياس وحاويات نفايات الرعاية الصحية استخدام عربات (تروليات) مخصصة ل"
+   },
+   {
+    "track_id": "listed_jsc_companies_regulation",
+    "article_key": "listed_jsc_companies_regulation_art_031",
+    "words": 41,
+    "text": "ضوابط رهن المساهم أسهمه يجوز للمساهم في الشركة رهن كل أسهمه أو بعضها، وفقا للضوابط التالية: 1- الحصول على أي موافقات نظا"
+   },
+   {
+    "track_id": "public_transport_users_rights_mechanism",
+    "article_key": "public_transport_users_rights_mechanism_art_066",
+    "words": 271,
+    "text": "الأمتعة 1- يجوز للمسافرين تسجيل الأمتعة، لقاء أي رسوم محتملة قد يفرضها الناقل ووفقا لشروط النقل المعمول بها لديه. 2- تعد"
+   },
+   {
+    "track_id": "safe_manning_regulation",
+    "article_key": "safe_manning_regulation_art_005",
+    "words": 50,
+    "text": "إجراءات إصدار الوثيقة: 1- يقدم المشغل مقترح التطقيم الآمن للسفينة طبقا للنموذج المعتمد إلى السلطة البحرية مرفقا به كافة "
+   },
+   {
+    "track_id": "treaty_gcc_payment_systems_linkage",
+    "article_key": "treaty_gcc_payment_systems_linkage_art_013",
+    "words": 19,
+    "text": "تعديل الاتفاقية يتم تعديل هذه الاتفاقية باتفاق جميع الأطراف الموقعة عليها ويخضع نفاذ التعديل لذات الإجراءات المنصوص عليه"
+   },
+   {
+    "track_id": "treaty_qatar_air_services",
+    "article_key": "treaty_qatar_air_services_art_019",
+    "words": 105,
+    "text": "المسافرون المرفوض دخولهم والمسافرون بلا وثائق والمبعدون 1- يوافق كل من الطرفين المتعاقدين على اتخاذ ضوابط رقابية فعالة ع"
+   },
+   {
+    "track_id": "dry_gas_lpg_distribution_law/law",
+    "article_key": "dry_gas_lpg_distribution_law_art_009",
+    "words": 1,
+    "text": "(ملغاة)"
+   }
+  ]
+ },
+ "5_disclosures_naming_an_article_that_does_not_exist": {
+  "count": 0,
+  "entries": []
+ }
+}

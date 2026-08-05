@@ -1,0 +1,4611 @@
+{
+ "generated_note": "Every Umm Al-Qura page the ingestion pipeline has examined, and what it decided. A refusal quotes the gate that refused it, verbatim, so an absence from the corpus can be argued with rather than merely noticed. Where a page was examined more than once — the pipeline was widened repeatedly, and a page refused under a narrower reading was sometimes accepted later — only the LAST verdict is recorded, because only it describes the corpus as it stands. Publishing this is what lets the coverage accounting tell a page that was judged apart from a page that was never looked at; without it, both read as 'unreached' and the corpus looks less diligent than it is while hiding the pages that genuinely need work.",
+ "pages_examined": 492,
+ "accepted": 121,
+ "refused": 371,
+ "rejected": [
+  {
+   "uid": "16942",
+   "url": "https://www.uqn.gov.sa/details?p=16942",
+   "title_ar": "المواصفات القياسية السعودية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (179)",
+   "date": "2021-03-26",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G13: 26% of this document's words are reference codes rather than Arabic prose — its records are flattened TABLES, not provisions, and carry no normative sentence to cite"
+   ]
+  },
+  {
+   "uid": "16945",
+   "url": "https://www.uqn.gov.sa/details?p=16945",
+   "title_ar": "نظام مهنة المحاسبة والمراجعة",
+   "date": "2021-03-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 77% of this document's articles already exist in track 'accounting_auditing' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "16949",
+   "url": "https://www.uqn.gov.sa/details?p=16949",
+   "title_ar": "نظام التخصيص",
+   "date": "2021-03-26",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'privatization' (98% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17006",
+   "url": "https://www.uqn.gov.sa/details?p=17006",
+   "title_ar": "اللائحة التنفيذية لنظام مكافحة التستر",
+   "date": "2021-03-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 83% of this document's articles already exist in track 'anti_concealment' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17016",
+   "url": "https://www.uqn.gov.sa/details?p=17016",
+   "title_ar": "اتفاقية تعاون مع (سيليك)",
+   "date": "2021-03-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17070",
+   "url": "https://www.uqn.gov.sa/details?p=17070",
+   "title_ar": "السياسة الوطنية لإدارة النفايات المشعة في المملكة",
+   "date": "2021-02-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17073",
+   "url": "https://www.uqn.gov.sa/details?p=17073",
+   "title_ar": "نظام الأجهزة والمستلزمات الطبية",
+   "date": "2021-02-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'medical_devices_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17126",
+   "url": "https://www.uqn.gov.sa/details?p=17126",
+   "title_ar": "اتفاقية مع اليونسكو",
+   "date": "2021-03-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17181",
+   "url": "https://www.uqn.gov.sa/details?p=17181",
+   "title_ar": "اللائحة التنفيذية لنظام التوثيق",
+   "date": "2021-02-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 97% of this document's articles already exist in track 'tawtheeq' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17200",
+   "url": "https://www.uqn.gov.sa/details?p=17200",
+   "title_ar": "تنظيم المركز الوطني لكفاءة وترشيد المياه",
+   "date": "2021-02-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'water_efficiency_center_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17281",
+   "url": "https://www.uqn.gov.sa/details?p=17281",
+   "title_ar": "نظام معالجة المنشآت المالية المهمة",
+   "date": "2020-12-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'financial_institutions_resolution_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17284",
+   "url": "https://www.uqn.gov.sa/details?p=17284",
+   "title_ar": "نظام الغرف التجارية",
+   "date": "2020-12-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 94% of this document's articles already exist in track 'chambers_of_commerce' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17299",
+   "url": "https://www.uqn.gov.sa/details?p=17299",
+   "title_ar": "اللائحة التنفيذية لنظام الاستثمار التعديني",
+   "date": "2021-01-01",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'mining_investment_regulation' (99% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17304",
+   "url": "https://www.uqn.gov.sa/details?p=17304",
+   "title_ar": "اللائحة التنفيذية لنظام المنشآت والمستحضرات الصيدلانية والعشبية",
+   "date": "2021-01-29",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'pharmaceutical_herbal_establishments_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17324",
+   "url": "https://www.uqn.gov.sa/details?p=17324",
+   "title_ar": "نظام الزراعة",
+   "date": "2021-04-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'agriculture' (97% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17387",
+   "url": "https://www.uqn.gov.sa/details?p=17387",
+   "title_ar": "نظام الكهرباء",
+   "date": "2021-01-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'electricity' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17389",
+   "url": "https://www.uqn.gov.sa/details?p=17389",
+   "title_ar": "تنظيم هيئة تنظيم المياه والكهرباء",
+   "date": "2021-01-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'water_electricity_regulatory_authority_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17399",
+   "url": "https://www.uqn.gov.sa/details?p=17399",
+   "title_ar": "القواعد المنظمة لعمل أمناء الإفلاس والخبراء",
+   "date": "2021-01-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'bankruptcy_trustees_experts_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17401",
+   "url": "https://www.uqn.gov.sa/details?p=17401",
+   "title_ar": "لائحة المعلومات والوثائق المنصوص عليها في نظام الإفلاس ولائحته التنفيذية",
+   "date": "2021-01-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'bankruptcy_information_documents_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17431",
+   "url": "https://www.uqn.gov.sa/details?p=17431",
+   "title_ar": "نظام التبرع بالأعضاء البشرية",
+   "date": "2021-04-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 96% of this document's articles already exist in track 'organ_donation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17459",
+   "url": "https://www.uqn.gov.sa/details?p=17459",
+   "title_ar": "النظام الموحد لإدارة نفايات الرعاية الصحية بدول مجلس التعاون لدول الخليج العربي",
+   "date": "2021-04-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'gcc_healthcare_waste_management_system' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17489",
+   "url": "https://www.uqn.gov.sa/details?p=17489",
+   "title_ar": "اتفاقية بين حكومة المملكة والصندوق الدولي للتنمية الزراعية",
+   "date": "2021-04-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17494",
+   "url": "https://www.uqn.gov.sa/details?p=17494",
+   "title_ar": "اللائحة التنظيمية لدور الأحداث",
+   "date": "2021-04-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'juvenile_homes_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17528",
+   "url": "https://www.uqn.gov.sa/details?p=17528",
+   "title_ar": "نظام مكافحة الاحتيال المالي وخيانة الأمانة",
+   "date": "2021-04-30",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'financial_fraud_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17577",
+   "url": "https://www.uqn.gov.sa/details?p=17577",
+   "title_ar": "اتفاقية بين المملكة ولاتفيا لتجنب الازدواج الضريبي",
+   "date": "2021-04-30",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17578",
+   "url": "https://www.uqn.gov.sa/details?p=17578",
+   "title_ar": "السياسة الوطنية لمنع عمل الأطفال في المملكة (مشروع)",
+   "date": "2021-05-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17600",
+   "url": "https://www.uqn.gov.sa/details?p=17600",
+   "title_ar": "نظام الأرصاد",
+   "date": "2021-05-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'meteorology_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17610",
+   "url": "https://www.uqn.gov.sa/details?p=17610",
+   "title_ar": "لائحة سلوكيات السوق المالية",
+   "date": "2021-05-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'capital_market_conduct_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17637",
+   "url": "https://www.uqn.gov.sa/details?p=17637",
+   "title_ar": "اللائحة الفنية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (180)",
+   "date": "2021-05-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17638",
+   "url": "https://www.uqn.gov.sa/details?p=17638",
+   "title_ar": "اللائحة الفنية لسلامة الآلات (الجزء الثاني: الآلات المتنقلة ومعدات الأشغال الثقيلة)",
+   "date": "2021-05-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2-EDITION: only 0% of this document's articles are verbatim matches, but 54% of its whole text already exists in track 'jewellery_accessories_technical_regulation' — that is the signature of the SAME instrument in a different edition, with every article edited. Which edition is in force cannot be settled from text overlap, so this is adjudicated by hand, not auto-built",
+    "G3: only 1 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17689",
+   "url": "https://www.uqn.gov.sa/details?p=17689",
+   "title_ar": "المواصفات القياسية السعودية المعتمدة من اللجنة التنفيذية المنبثقة عن مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة في اجتماعها رقم (31)",
+   "date": "2021-05-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17727",
+   "url": "https://www.uqn.gov.sa/details?p=17727",
+   "title_ar": "تنظيم وزارة الاستثمار",
+   "date": "2021-06-04",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'ministry_of_investment_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17792",
+   "url": "https://www.uqn.gov.sa/details?p=17792",
+   "title_ar": "اتفاقية للتعاون بين حكومة المملكة وحكومة جمهورية الكونغو الديمقراطية",
+   "date": "2021-06-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17812",
+   "url": "https://www.uqn.gov.sa/details?p=17812",
+   "title_ar": "اللائحة التنفيذية لجودة الهواء لنظام البيئة",
+   "date": "2021-06-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 88% of this document's articles already exist in track 'environmental_air_quality' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17817",
+   "url": "https://www.uqn.gov.sa/details?p=17817",
+   "title_ar": "اتفاقية للتعاون بين حكومة المملكة وحكومة جمهورية كوت ديفوار",
+   "date": "2021-06-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17831",
+   "url": "https://www.uqn.gov.sa/details?p=17831",
+   "title_ar": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة",
+   "date": "2021-06-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'environmental_permits' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17833",
+   "url": "https://www.uqn.gov.sa/details?p=17833",
+   "title_ar": "اللائحة التنفيذية للتفتيش والتدقيق البيئي",
+   "date": "2021-06-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 50% of this document's articles already exist in track 'environmental_inspection_audit' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17835",
+   "url": "https://www.uqn.gov.sa/details?p=17835",
+   "title_ar": "اللائحة التنفيذية للضوضاء",
+   "date": "2021-06-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 91% of this document's articles already exist in track 'environmental_noise' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17849",
+   "url": "https://www.uqn.gov.sa/details?p=17849",
+   "title_ar": "القواعد المنظمة للمنشآت ذات الأغراض الخاصة",
+   "date": "2021-06-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'special_purpose_entities_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "17879",
+   "url": "https://www.uqn.gov.sa/details?p=17879",
+   "title_ar": "اللائحة التنفيذية لضبط المخالفات وإيقاع العقوبات لنظام البيئة",
+   "date": "2021-07-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 62% of this document's articles already exist in track 'environmental_violations_penalties' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17883",
+   "url": "https://www.uqn.gov.sa/details?p=17883",
+   "title_ar": "اللائحة التنفيذية لصيد الكائنات الفطرية البرية",
+   "date": "2021-07-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 90% of this document's articles already exist in track 'environmental_wildlife_hunting' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17889",
+   "url": "https://www.uqn.gov.sa/details?p=17889",
+   "title_ar": "اللائحة التنفيذية لنظام مهنة المحاسبة والمراجعة",
+   "date": "2021-07-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 87% of this document's articles already exist in track 'accounting_auditing' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17890",
+   "url": "https://www.uqn.gov.sa/details?p=17890",
+   "title_ar": "اللائحة الداخلية لمجلس القضاء الإداري",
+   "date": "2021-07-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 94% of this document's articles already exist in track 'administrative_judicial_council_bylaw' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17891",
+   "url": "https://www.uqn.gov.sa/details?p=17891",
+   "title_ar": "اللائحة التنفيذية لمنع ومعالجة تلوث التربة",
+   "date": "2021-07-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2-EDITION: only 12% of this document's articles are verbatim matches, but 36% of its whole text already exists in track 'environmental_rehabilitation_contaminated_sites_regulation' — that is the signature of the SAME instrument in a different edition, with every article edited. Which edition is in force cannot be settled from text overlap, so this is adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "17925",
+   "url": "https://www.uqn.gov.sa/details?p=17925",
+   "title_ar": "اللوائح الفنية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (179)",
+   "date": "2021-07-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "17961",
+   "url": "https://www.uqn.gov.sa/details?p=17961",
+   "title_ar": "المواصفات القياسية السعودية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم ( )",
+   "date": "2021-06-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18012",
+   "url": "https://www.uqn.gov.sa/details?p=18012",
+   "title_ar": "اللائحة التنفيذية لحماية الأوساط المائية من التلوث",
+   "date": "2021-07-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 4 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18044",
+   "url": "https://www.uqn.gov.sa/details?p=18044",
+   "title_ar": "اللائحة المنظمة لنشاط النقل الخفيف للبضائع على الطرق",
+   "date": "2021-07-30",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'light_goods_road_transport_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18063",
+   "url": "https://www.uqn.gov.sa/details?p=18063",
+   "title_ar": "اللائحة التنفيذية لنظام البيئة للضوابط والإجراءات المتعلقة بالمقابل المالي للتراخيص والتصاريح والخدمات البيئية",
+   "date": "2021-08-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'environmental_fees' (100% of this document's articles are already ingested there)",
+    "G3: only 4 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18071",
+   "url": "https://www.uqn.gov.sa/details?p=18071",
+   "title_ar": "قواعد وشروط التحقق من إثبات المنشأ",
+   "date": "2021-08-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18106",
+   "url": "https://www.uqn.gov.sa/details?p=18106",
+   "title_ar": "القواعد المنظمة للوسطاء العقاريين المؤهلين للتسويق للمشاريع الصغيرة والمتوسطة على الخارطة",
+   "date": "2021-08-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18107",
+   "url": "https://www.uqn.gov.sa/details?p=18107",
+   "title_ar": "اللائحة الفنية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (181)",
+   "date": "2021-08-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18141",
+   "url": "https://www.uqn.gov.sa/details?p=18141",
+   "title_ar": "قواعد تنظيم البرمجيات الحكومية الحرة ومفتوحة المصدر",
+   "date": "2021-08-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18157",
+   "url": "https://www.uqn.gov.sa/details?p=18157",
+   "title_ar": "المواصفات القياسية السعودية الإلزامية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (181)",
+   "date": "2021-08-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18175",
+   "url": "https://www.uqn.gov.sa/details?p=18175",
+   "title_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
+   "date": "2021-08-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 47% of this document's articles already exist in track 'building_code' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18183",
+   "url": "https://www.uqn.gov.sa/details?p=18183",
+   "title_ar": "اللائحة التنفيذية لنظام الغرف التجارية",
+   "date": "2021-08-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 97% of this document's articles already exist in track 'chambers_of_commerce' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18187",
+   "url": "https://www.uqn.gov.sa/details?p=18187",
+   "title_ar": "المواصفات القياسية السعودية الاختياريةالمعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (181)",
+   "date": "2021-08-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18206",
+   "url": "https://www.uqn.gov.sa/details?p=18206",
+   "title_ar": "نظام تصنيف المقاولين",
+   "date": "2021-09-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 95% of this document's articles already exist in track 'contractors_classification' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18215",
+   "url": "https://www.uqn.gov.sa/details?p=18215",
+   "title_ar": "لائحة صناديق الاستثمار المعدلة",
+   "date": "2021-09-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18217",
+   "url": "https://www.uqn.gov.sa/details?p=18217",
+   "title_ar": "لائحة صناديق الاستثمار العقاري المعدلة",
+   "date": "2021-09-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18244",
+   "url": "https://www.uqn.gov.sa/details?p=18244",
+   "title_ar": "نظام التنفيذ أمام ديوان المظالم",
+   "date": "2021-09-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'bog_enforcement' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18271",
+   "url": "https://www.uqn.gov.sa/details?p=18271",
+   "title_ar": "اللائحة التنفيذية لنظام البيئة للإدارة المستدامة للبيئة البحرية والساحلية",
+   "date": "2021-09-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'marine_coastal_environment_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18289",
+   "url": "https://www.uqn.gov.sa/details?p=18289",
+   "title_ar": "نظام إدارة النفايات",
+   "date": "2021-09-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'waste_management' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18291",
+   "url": "https://www.uqn.gov.sa/details?p=18291",
+   "title_ar": "دليل استرشادي لاقتراح سن أحكام المخالفات الإدارية",
+   "date": "2021-09-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G12: 11 of 11 records open with a governmental decision verb — this is a council SESSION SUMMARY listing unrelated decisions, not an instrument, and the page's title names only one of the items on it"
+   ]
+  },
+  {
+   "uid": "18304",
+   "url": "https://www.uqn.gov.sa/details?p=18304",
+   "title_ar": "نظام التكاليف القضائية",
+   "date": "2021-09-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 96% of this document's articles already exist in track 'judicial_costs' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18319",
+   "url": "https://www.uqn.gov.sa/details?p=18319",
+   "title_ar": "نظام الانضباط الوظيفي",
+   "date": "2021-09-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'job_discipline_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18341",
+   "url": "https://www.uqn.gov.sa/details?p=18341",
+   "title_ar": "نظام مكافحة التسول",
+   "date": "2021-09-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'anti_begging_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18344",
+   "url": "https://www.uqn.gov.sa/details?p=18344",
+   "title_ar": "ضوابط ممارسة أنشطة الوساطة في الامتياز التجاري",
+   "date": "2021-09-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'franchise_brokerage_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18347",
+   "url": "https://www.uqn.gov.sa/details?p=18347",
+   "title_ar": "نظام حماية البيانات الشخصية",
+   "date": "2021-09-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 67% of this document's articles already exist in track 'pdpl' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18351",
+   "url": "https://www.uqn.gov.sa/details?p=18351",
+   "title_ar": "ضوابط استثناء الجهات الحكومية من تطبيق المادة السابعة من نظام استئجار الدولة للعقار واخلائه",
+   "date": "2021-09-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18384",
+   "url": "https://www.uqn.gov.sa/details?p=18384",
+   "title_ar": "قواعد الإعفاء في نظام مكافحة التستر",
+   "date": "2021-10-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 50% of this document's articles already exist in track 'crime_disclosure_financial_rewards_rules' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+    "G3: only 4 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18387",
+   "url": "https://www.uqn.gov.sa/details?p=18387",
+   "title_ar": "اللائحة التنفيذية للمناطق المحمية",
+   "date": "2021-10-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'environmental_protected_areas' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18423",
+   "url": "https://www.uqn.gov.sa/details?p=18423",
+   "title_ar": "نظام مكافحة التسول",
+   "date": "2021-10-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2-LATER-EDITION: this document is 100% the same as track 'anti_begging_law' but was published LATER (2021-10-15 vs the 2021-09-24 edition on file) — the corpus is holding superseded text; refresh that track from this page rather than discarding this document as a duplicate"
+   ]
+  },
+  {
+   "uid": "18451",
+   "url": "https://www.uqn.gov.sa/details?p=18451",
+   "title_ar": "نظام البريد",
+   "date": "2021-10-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 54% of this document's articles already exist in track 'postal' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18456",
+   "url": "https://www.uqn.gov.sa/details?p=18456",
+   "title_ar": "لائحة تصنيف مخالفات كود البناء السعودي",
+   "date": "2021-10-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'building_code_violations_classification_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18498",
+   "url": "https://www.uqn.gov.sa/details?p=18498",
+   "title_ar": "قواعد ومعايير التأهيل الفني والمالي للمطورين العقاريين لمشاريع البيع على الخارطة",
+   "date": "2021-10-29",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'offplan_developer_technical_financial_qualification' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18509",
+   "url": "https://www.uqn.gov.sa/details?p=18509",
+   "title_ar": "نظام المدفوعات وخدماتها",
+   "date": "2021-11-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'payment_systems' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18539",
+   "url": "https://www.uqn.gov.sa/details?p=18539",
+   "title_ar": "لائحة فرق الإطفاء والإنقاذ الخاصة",
+   "date": "2021-11-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18540",
+   "url": "https://www.uqn.gov.sa/details?p=18540",
+   "title_ar": "الدليل الإرشادي للائحة فرق الإطفاء والإنقاذ الخاصة",
+   "date": "2021-11-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 2 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18610",
+   "url": "https://www.uqn.gov.sa/details?p=18610",
+   "title_ar": "اللائحة التنفيذية لنظام الأجهزة والمستلزمات الطبية",
+   "date": "2021-11-26",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'medical_devices_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18640",
+   "url": "https://www.uqn.gov.sa/details?p=18640",
+   "title_ar": "اللائحة التنفيذية لنظام الكهرباء فيما يتعلق بمهمات هيئة تنظيم المياه والكهرباء",
+   "date": "2021-12-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'electricity' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18674",
+   "url": "https://www.uqn.gov.sa/details?p=18674",
+   "title_ar": "اللائحة التنفيذية لنظام الكهرباء الخاصة بمهمات الوزارة",
+   "date": "2021-12-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'electricity' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18733",
+   "url": "https://www.uqn.gov.sa/details?p=18733",
+   "title_ar": "اللائحة الفنية لسلامة معدات الرفع",
+   "date": "2021-12-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 42% of this document's articles already exist in track 'paper_cardboard_technical_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18734",
+   "url": "https://www.uqn.gov.sa/details?p=18734",
+   "title_ar": "اللائحة الفنية للغراء والمواد اللاصقة",
+   "date": "2021-12-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 50% of this document's articles already exist in track 'paper_cardboard_technical_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "18818",
+   "url": "https://www.uqn.gov.sa/details?p=18818",
+   "title_ar": "نظام الإثبات",
+   "date": "2022-01-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'evidence' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18828",
+   "url": "https://www.uqn.gov.sa/details?p=18828",
+   "title_ar": "المواصفات القياسية السعودية الإلزامية والاختيارية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (182)",
+   "date": "2021-11-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18838",
+   "url": "https://www.uqn.gov.sa/details?p=18838",
+   "title_ar": "نظام حقوق كبير السن ورعايته",
+   "date": "2022-01-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'elderly_care' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18844",
+   "url": "https://www.uqn.gov.sa/details?p=18844",
+   "title_ar": "قواعد برامج التعليم المهني المستمر",
+   "date": "2022-01-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "18916",
+   "url": "https://www.uqn.gov.sa/details?p=18916",
+   "title_ar": "اللائحة المنظمة لإصدار الترخيص الملاحي ورخصة العمل",
+   "date": "2022-01-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'navigation_licence_work_permit_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "18991",
+   "url": "https://www.uqn.gov.sa/details?p=18991",
+   "title_ar": "اللائحة التنفيذية لضريبة التصرفات العقارية",
+   "date": "2022-02-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19021",
+   "url": "https://www.uqn.gov.sa/details?p=19021",
+   "title_ar": "اللائحة التنفيذية لصندوق الآثار والمتاحف والتراث العمراني",
+   "date": "2022-02-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'antiquities_museums_fund_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19022",
+   "url": "https://www.uqn.gov.sa/details?p=19022",
+   "title_ar": "اللائحة التنفيذية للآثار والتراث العمراني",
+   "date": "2022-02-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'antiquities_heritage_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19023",
+   "url": "https://www.uqn.gov.sa/details?p=19023",
+   "title_ar": "اللائحة التنفيذية للتفتيش وضبط مخالفات الآثار والمتاحف والتراث العمراني والنظر فيها",
+   "date": "2022-02-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'antiquities_inspection_violations_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19024",
+   "url": "https://www.uqn.gov.sa/details?p=19024",
+   "title_ar": "اللائحة التنفيذية للمتاحف",
+   "date": "2022-02-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'museums_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19026",
+   "url": "https://www.uqn.gov.sa/details?p=19026",
+   "title_ar": "التعليمات التنفيذية لتطبيق جزاءات مخالفات البيع بجدول المخالفات والجزاءات البلدية",
+   "date": "2022-02-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 3 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19054",
+   "url": "https://www.uqn.gov.sa/details?p=19054",
+   "title_ar": "اللائحة التنفيذية لمنع التلوث البحري من السفن (ماربول) 1973م، وبروتوكولاتها وتعديلاتها",
+   "date": "2022-03-04",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'marpol_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19095",
+   "url": "https://www.uqn.gov.sa/details?p=19095",
+   "title_ar": "لائحة الإبلاغ عن مخالفات نظام السوق المالية",
+   "date": "2022-03-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'capital_market_whistleblowing_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19097",
+   "url": "https://www.uqn.gov.sa/details?p=19097",
+   "title_ar": "المواصفات القياسية السعودية الإلزامية والاختيارية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (183) المنعقد بتاريخ 10 /06/ 1443ه",
+   "date": "2022-03-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19139",
+   "url": "https://www.uqn.gov.sa/details?p=19139",
+   "title_ar": "نظام الأحوال الشخصية",
+   "date": "2022-03-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'personal_status' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19141",
+   "url": "https://www.uqn.gov.sa/details?p=19141",
+   "title_ar": "اللوائح الفنية السعودية المعتمدة من مجلس إدارة الهيئة في اجتماعه رقم (183) المنعقد بتاريخ 10 /06/ 1443ه",
+   "date": "2022-03-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19145",
+   "url": "https://www.uqn.gov.sa/details?p=19145",
+   "title_ar": "اللائحة الفنية للمركبات الهيدروجينية",
+   "date": "2022-03-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'hydrogen_vehicles_technical_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19146",
+   "url": "https://www.uqn.gov.sa/details?p=19146",
+   "title_ar": "اللائحة الفنية للصهاريج – الجزء الثاني: صهاريج نقل الغاز البترولي المسال",
+   "date": "2022-03-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 55% of this document's articles already exist in track 'dry_gas_tankers_technical_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "19178",
+   "url": "https://www.uqn.gov.sa/details?p=19178",
+   "title_ar": "لائحة إجراءات الفصل في منازعات الأوراق المالية1",
+   "date": "2022-03-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'securities_disputes_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19188",
+   "url": "https://www.uqn.gov.sa/details?p=19188",
+   "title_ar": "لائحة الشهادات التأهيلية البحرية",
+   "date": "2022-03-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19341",
+   "url": "https://www.uqn.gov.sa/details?p=19341",
+   "title_ar": "اللائحة التنفيذية لنظام التكاليف القضائية",
+   "date": "2022-04-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'judicial_costs' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19344",
+   "url": "https://www.uqn.gov.sa/details?p=19344",
+   "title_ar": "ضوابط السماح للممارسين الصحيين الحكوميين بالعمل في القطاع الصحي الخاص خارج أوقات الدوام الرسمي",
+   "date": "2022-04-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'government_health_practitioners_private_work_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19346",
+   "url": "https://www.uqn.gov.sa/details?p=19346",
+   "title_ar": "تنظيم مجالس التنمية السياحية في المناطق",
+   "date": "2022-04-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'regional_tourism_development_councils_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19348",
+   "url": "https://www.uqn.gov.sa/details?p=19348",
+   "title_ar": "قواعد الضبط ورفع الدعوى التأديبية ونظرها",
+   "date": "2022-04-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19352",
+   "url": "https://www.uqn.gov.sa/details?p=19352",
+   "title_ar": "شروط ومتطلبات رخصة مزاولة نشاط مرافق الإيواء السياحي في مدينتي (مكة المكرمة والمدينة المنورة)",
+   "date": "2022-04-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19353",
+   "url": "https://www.uqn.gov.sa/details?p=19353",
+   "title_ar": "المواصفات القياسية السعودية الإلزامية والاختيارية المعتمدة في اجتماع مجلس إدارة الهيئة رقم (184) المنعقد بتاريخ 28 /08 /1443ه",
+   "date": "2022-04-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G13: 41% of this document's words are reference codes rather than Arabic prose — its records are flattened TABLES, not provisions, and carry no normative sentence to cite"
+   ]
+  },
+  {
+   "uid": "19434",
+   "url": "https://www.uqn.gov.sa/details?p=19434",
+   "title_ar": "نظام التسجيل العيني للعقار",
+   "date": "2022-05-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 90% of this document's articles already exist in track 'real_estate_registration' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "19438",
+   "url": "https://www.uqn.gov.sa/details?p=19438",
+   "title_ar": "اللائحة التنفيذية لنظام التبرع بالأعضاء البشرية",
+   "date": "2022-05-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 48% of this document's articles already exist in track 'organ_donation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "19473",
+   "url": "https://www.uqn.gov.sa/details?p=19473",
+   "title_ar": "اللوائح الفنية المعتمدة في اجتماع مجلس إدارة الهيئة رقم (184) المنعقد بتاريخ 28 /08/ 1443ه",
+   "date": "2022-05-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19520",
+   "url": "https://www.uqn.gov.sa/details?p=19520",
+   "title_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة المعدلة",
+   "date": "2022-05-31",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19536",
+   "url": "https://www.uqn.gov.sa/details?p=19536",
+   "title_ar": "تنظيم مركز الإقامة المميزة",
+   "date": "2022-06-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'premium_residency_center_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19566",
+   "url": "https://www.uqn.gov.sa/details?p=19566",
+   "title_ar": "تنظيم مركز التأمين الصحي الوطني",
+   "date": "2022-06-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'national_health_insurance_center_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19570",
+   "url": "https://www.uqn.gov.sa/details?p=19570",
+   "title_ar": "نظام الاتصالات وتقنية المعلومات",
+   "date": "2022-06-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'telecommunications' (98% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19637",
+   "url": "https://www.uqn.gov.sa/details?p=19637",
+   "title_ar": "الضوابط والمتطلبات والمواصفات الفنية والقواعد الإجرائية اللازمة لتنفيذ أحكام لائحة الفوترة الإلكترونية الصادرة بموجب قرار محافظ الهيئة رقم (62738) وتاريخ 23/ 11/ 1443 ه",
+   "date": "2022-06-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 78% of this document's articles already exist in track 'electricity_tariff_technical_controls' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+    "G5: article 9 contains site-navigation boilerplate"
+   ]
+  },
+  {
+   "uid": "19657",
+   "url": "https://www.uqn.gov.sa/details?p=19657",
+   "title_ar": "ضوابط ومتطلبات تنفيذ أحكام لائحة الفوترة الإلكترونية",
+   "date": "2022-06-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "19697",
+   "url": "https://www.uqn.gov.sa/details?p=19697",
+   "title_ar": "نظام الشركات",
+   "date": "2022-07-04",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 92% of this document's articles already exist in track 'companies_law' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "19752",
+   "url": "https://www.uqn.gov.sa/details?p=19752",
+   "title_ar": "نظام الوساطة العقارية",
+   "date": "2022-07-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_brokerage' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19844",
+   "url": "https://www.uqn.gov.sa/details?p=19844",
+   "title_ar": "نظام استئجار الدولة للعقار",
+   "date": "2022-08-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'state_property_lease_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19990",
+   "url": "https://www.uqn.gov.sa/details?p=19990",
+   "title_ar": "لائحة تأشيرة الزيارة لغرض السياحة",
+   "date": "2022-09-01",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'tourist_visa' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "19997",
+   "url": "https://www.uqn.gov.sa/details?p=19997",
+   "title_ar": "نظام السياحة",
+   "date": "2022-09-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'tourism' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20013",
+   "url": "https://www.uqn.gov.sa/details?p=20013",
+   "title_ar": "اللائحة التنفيذية لنظام التسجيل العيني للعقار",
+   "date": "2022-09-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_registration' (98% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20060",
+   "url": "https://www.uqn.gov.sa/details?p=20060",
+   "title_ar": "اللائحة التنفيذية لنظام الزراعة",
+   "date": "2022-09-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'agriculture' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20079",
+   "url": "https://www.uqn.gov.sa/details?p=20079",
+   "title_ar": "اللائحة التنظيمية للجان إصلاح ذات البين في إمارات المناطق",
+   "date": "2022-09-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'reconciliation_committees_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20150",
+   "url": "https://www.uqn.gov.sa/details?p=20150",
+   "title_ar": "اللائحة التنفيذية لتنظيم الترخيص لمكاتب المحاماة الأجنبية",
+   "date": "2022-09-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'foreign_law_firms_licensing_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20152",
+   "url": "https://www.uqn.gov.sa/details?p=20152",
+   "title_ar": "اللوائح الفنية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (186) المنعقد بتاريخ 01 /12/ 1443ه",
+   "date": "2022-09-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "20159",
+   "url": "https://www.uqn.gov.sa/details?p=20159",
+   "title_ar": "اللائحة الفنية لأوعية الضغط البسيطة",
+   "date": "2022-09-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 42% of this document's articles already exist in track 'cableway_installations_technical_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "20291",
+   "url": "https://www.uqn.gov.sa/details?p=20291",
+   "title_ar": "نظام استخدام كاميرات المراقبة الأمنية",
+   "date": "2022-10-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'security_cameras_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20765",
+   "url": "https://www.uqn.gov.sa/details?p=20765",
+   "title_ar": "ضوابط إجراءات الإثبات إلكترونيا",
+   "date": "2022-10-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 83% of this document's articles already exist in track 'evidence' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "20766",
+   "url": "https://www.uqn.gov.sa/details?p=20766",
+   "title_ar": "القواعد الخاصة بتنظيم شؤون الخبرة أمام المحاكم",
+   "date": "2022-10-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'evidence' (97% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20767",
+   "url": "https://www.uqn.gov.sa/details?p=20767",
+   "title_ar": "الأدلة الإجرائية لنظام الإثبات",
+   "date": "2022-10-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'evidence' (99% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20772",
+   "url": "https://www.uqn.gov.sa/details?p=20772",
+   "title_ar": "المواصفات القياسية السعودية الإلزامية والاختيارية المعتمدة في اجتماع مجلس إدارة الهيئة رقم (187) المنعقد بتاريخ 10 /03/ 1444ه",
+   "date": "2022-10-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "20895",
+   "url": "https://www.uqn.gov.sa/details?p=20895",
+   "title_ar": "قواعد الحد من تعارض المصالح لمن سبق له العمل في السلك القضائي عند مزاولته مهنة المحاماة",
+   "date": "2022-11-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'judicial_service_conflict_of_interest_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20930",
+   "url": "https://www.uqn.gov.sa/details?p=20930",
+   "title_ar": "لائحة التصرف في عقارات الدولة",
+   "date": "2022-11-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'state_realestate_disposal_regulation' (97% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20932",
+   "url": "https://www.uqn.gov.sa/details?p=20932",
+   "title_ar": "اللائحة التنفيذية لنظام البريد",
+   "date": "2022-11-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'postal_law_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "20969",
+   "url": "https://www.uqn.gov.sa/details?p=20969",
+   "title_ar": "نظام المعالجات التجارية في التجارة الدولية",
+   "date": "2022-12-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'trade_remedies_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21056",
+   "url": "https://www.uqn.gov.sa/details?p=21056",
+   "title_ar": "القواعد المنظمة لإجراءات الإفلاس العابرة للحدود",
+   "date": "2022-12-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 91% of this document's articles already exist in track 'iflas_hudud' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "21063",
+   "url": "https://www.uqn.gov.sa/details?p=21063",
+   "title_ar": "اللائحة التنفيذية لنظام الاتصالات وتقنية المعلومات",
+   "date": "2022-12-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 96% of this document's articles already exist in track 'telecommunications' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "21065",
+   "url": "https://www.uqn.gov.sa/details?p=21065",
+   "title_ar": "اللائحة الفنية لمعدات الضغط",
+   "date": "2022-12-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G10: article 13 is 41311 chars against a 1693-char median — a non-article block (annexes/schedules) was probably absorbed into it"
+   ]
+  },
+  {
+   "uid": "21066",
+   "url": "https://www.uqn.gov.sa/details?p=21066",
+   "title_ar": "اللائحة الفنية المعتمدة في اجتماع مجلس إدارة الهيئة رقم (187) المنعقد بتاريخ 10 /03/ 1444ه",
+   "date": "2022-12-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "21115",
+   "url": "https://www.uqn.gov.sa/details?p=21115",
+   "title_ar": "لائحة إدارة مرافق الضيافة السياحية",
+   "date": "2022-12-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 78% of this document's articles already exist in track 'hospitality_mgmt' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "21117",
+   "url": "https://www.uqn.gov.sa/details?p=21117",
+   "title_ar": "لائحة خدمات السفر والسياحة",
+   "date": "2022-12-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 84% of this document's articles already exist in track 'tourism_travel_services' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+    "G5: article 24 contains site-navigation boilerplate"
+   ]
+  },
+  {
+   "uid": "21126",
+   "url": "https://www.uqn.gov.sa/details?p=21126",
+   "title_ar": "لائحة لجنة النظر في مخالفات نظام السياحة ولوائحه",
+   "date": "2022-12-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'tourism_violations_committee_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21128",
+   "url": "https://www.uqn.gov.sa/details?p=21128",
+   "title_ar": "لائحة مرفق الضيافة السياحي الخاص",
+   "date": "2022-12-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G5: article 14 contains site-navigation boilerplate"
+   ]
+  },
+  {
+   "uid": "21130",
+   "url": "https://www.uqn.gov.sa/details?p=21130",
+   "title_ar": "لائحة مرفق الضيافة السياحي",
+   "date": "2022-12-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 80% of this document's articles already exist in track 'hospitality_facility' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+    "G5: article 26 contains site-navigation boilerplate",
+    "G5: article 27 contains site-navigation boilerplate",
+    "G5: article 28 contains site-navigation boilerplate"
+   ]
+  },
+  {
+   "uid": "21135",
+   "url": "https://www.uqn.gov.sa/details?p=21135",
+   "title_ar": "لائحة تأشيرة الزيارة لغرض السياحة",
+   "date": "2022-12-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 92% of this document's articles already exist in track 'tourist_visa' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "21160",
+   "url": "https://www.uqn.gov.sa/details?p=21160",
+   "title_ar": "الترتيبات التنظيمية لمركز المناطق الاقتصادية الخاصة بمدينة الرياض",
+   "date": "2022-12-30",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'riyadh_sez_center_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21165",
+   "url": "https://www.uqn.gov.sa/details?p=21165",
+   "title_ar": "القواعد والضوابط والإجراءات التنفيذية",
+   "date": "2022-12-30",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "21185",
+   "url": "https://www.uqn.gov.sa/details?p=21185",
+   "title_ar": "نظام إمدادات الطاقة",
+   "date": "2023-01-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'energy_supplies' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21199",
+   "url": "https://www.uqn.gov.sa/details?p=21199",
+   "title_ar": "ضوابط تعاقد الجهات الحكومية مع الشركات التي ليس لها مقر إقليمي في المملكة والأطراف ذوي العلاقة",
+   "date": "2023-01-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'regional_headquarters_procurement_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21213",
+   "url": "https://www.uqn.gov.sa/details?p=21213",
+   "title_ar": "قواعد عدم خضوع المكلف المملوك لوقف لجباية الزكاة",
+   "date": "2023-01-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'waqf_owned_taxpayer_zakat_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21250",
+   "url": "https://www.uqn.gov.sa/details?p=21250",
+   "title_ar": "إطار شراكة لتطوير الطاقة النظيفة بين المملكة وأمريكا",
+   "date": "2023-01-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "21268",
+   "url": "https://www.uqn.gov.sa/details?p=21268",
+   "title_ar": "اللائحة التنفيذية لنظام الوساطة العقارية",
+   "date": "2023-01-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 93% of this document's articles already exist in track 'real_estate_brokerage' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "21280",
+   "url": "https://www.uqn.gov.sa/details?p=21280",
+   "title_ar": "السياسة الوطنية لتشجيع تكافؤ الفرص والمساواة في المعاملة في الاستخدام والمهنة في المملكة",
+   "date": "2023-01-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 1 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)",
+    "G8: article 1 has no heading in the source but substantive text precedes the first captured heading (384 chars) — that text would be dropped, not skipped"
+   ]
+  },
+  {
+   "uid": "21298",
+   "url": "https://www.uqn.gov.sa/details?p=21298",
+   "title_ar": "اتفاقية حماية وتعزيز تنوع أشكال التعبير الثقافي",
+   "date": "2023-01-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G8: article 20 adjoining gap 21 does not end on sentence-final punctuation — text may be merged",
+    "G8: article 3 adjoining gap 4 does not end on sentence-final punctuation — text may be merged"
+   ]
+  },
+  {
+   "uid": "21318",
+   "url": "https://www.uqn.gov.sa/details?p=21318",
+   "title_ar": "اللائحة التنفيذية لنظام استئجار الدولة للعقار",
+   "date": "2023-01-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'state_property_lease_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21325",
+   "url": "https://www.uqn.gov.sa/details?p=21325",
+   "title_ar": "اللائحة التنفيذية لنظام الشركات",
+   "date": "2023-01-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'companies_law_implementing_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21360",
+   "url": "https://www.uqn.gov.sa/details?p=21360",
+   "title_ar": "اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية",
+   "date": "2023-02-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 48% of this document's articles already exist in track 'associations_ngo' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "21413",
+   "url": "https://www.uqn.gov.sa/details?p=21413",
+   "title_ar": "الضوابط المنظمة للرسوم الدراسية في المدارس الأهلية 1444ه - 2023م",
+   "date": "2023-02-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'private_schools_tuition_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21449",
+   "url": "https://www.uqn.gov.sa/details?p=21449",
+   "title_ar": "اللائحة التنفيذية لنظام تطبيق كود البناء السعودي",
+   "date": "2023-02-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 47% of this document's articles already exist in track 'building_code' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "21451",
+   "url": "https://www.uqn.gov.sa/details?p=21451",
+   "title_ar": "اللائحة الفنية المعتمدة في اجتماع مجلس إدارة الهيئة رقم (188) المنعقد بتاريخ 12 /06/ 1444ه",
+   "date": "2023-02-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "21453",
+   "url": "https://www.uqn.gov.sa/details?p=21453",
+   "title_ar": "قواعد وشروط سير الشاحنات ذات المقطورات المزدوجة على الطرق",
+   "date": "2023-02-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 4 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "21469",
+   "url": "https://www.uqn.gov.sa/details?p=21469",
+   "title_ar": "ضوابط استئجار الجهات الحكومية للعقارات خارج المملكة",
+   "date": "2023-02-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'government_foreign_property_lease_controls_2023' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21490",
+   "url": "https://www.uqn.gov.sa/details?p=21490",
+   "title_ar": "تعليمات الحوكمة الشرعية في مؤسسات السوق المالية",
+   "date": "2023-02-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'shariah_governance_capital_market_instructions' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21491",
+   "url": "https://www.uqn.gov.sa/details?p=21491",
+   "title_ar": "لائحة أسواق ومراكز إيداع الأوراق المالية",
+   "date": "2023-02-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'securities_depository_markets_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21562",
+   "url": "https://www.uqn.gov.sa/details?p=21562",
+   "title_ar": "قواعد الكفاية المالية المعدلة",
+   "date": "2023-03-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'capital_adequacy_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21573",
+   "url": "https://www.uqn.gov.sa/details?p=21573",
+   "title_ar": "اللائحة التنفيذية لنظام المعالجات التجارية في التجارة الدولية",
+   "date": "2023-03-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'trade_remedies_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21584",
+   "url": "https://www.uqn.gov.sa/details?p=21584",
+   "title_ar": "قواعد التحكيم في عقود التخصيص",
+   "date": "2023-03-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "21641",
+   "url": "https://www.uqn.gov.sa/details?p=21641",
+   "title_ar": "قواعد المصادر الاحتياطية للطاقة الكهربائية",
+   "date": "2023-03-31",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "21693",
+   "url": "https://www.uqn.gov.sa/details?p=21693",
+   "title_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
+   "date": "2023-04-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G10: article 125 is 274064 chars against a 684-char median — a non-article block (annexes/schedules) was probably absorbed into it"
+   ]
+  },
+  {
+   "uid": "21696",
+   "url": "https://www.uqn.gov.sa/details?p=21696",
+   "title_ar": "لائحة الاندماج والاستحواذ",
+   "date": "2023-04-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'mergers_acquisitions_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21707",
+   "url": "https://www.uqn.gov.sa/details?p=21707",
+   "title_ar": "لائحة حوكمة الشركات",
+   "date": "2023-04-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'corporate_governance_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "21808",
+   "url": "https://www.uqn.gov.sa/details?p=21808",
+   "title_ar": "قواعد عدم خضوع الجمعيات والمؤسسات الأهلية والوحدات التدريبية لجباية الزكاة",
+   "date": "2023-05-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'nonprofit_zakat_exemption_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "22833",
+   "url": "https://www.uqn.gov.sa/details?p=22833",
+   "title_ar": "اللوائح الفنية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (191) المنعقد بتاريخ 15 /09 /1444ه",
+   "date": "2023-05-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2-EDITION: only 0% of this document's articles are verbatim matches, but 40% of its whole text already exists in track 'dry_gas_tankers_technical_regulation' — that is the signature of the SAME instrument in a different edition, with every article edited. Which edition is in force cannot be settled from text overlap, so this is adjudicated by hand, not auto-built",
+    "G3: only 1 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)",
+    "G8: article 4 adjoining gap 3 does not end on sentence-final punctuation — text may be merged"
+   ]
+  },
+  {
+   "uid": "22908",
+   "url": "https://www.uqn.gov.sa/details?p=22908",
+   "title_ar": "تنظيم الإشارات الضوئية البحرية (المساعدات الملاحية) في المناطق البحرية الخاضعة لسيادة المملكة",
+   "date": "2023-05-26",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "22912",
+   "url": "https://www.uqn.gov.sa/details?p=22912",
+   "title_ar": "قواعد عمل لجنة النظر في مخالفات المتنافسين والمتعاقد معهم لأحكام نظام المنافسات والمشتريات الحكومية والعقود المبرمة معهم",
+   "date": "2023-05-26",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2-EDITION: only 0% of this document's articles are verbatim matches, but 39% of its whole text already exists in track 'alula_royal_commission_violations_committees_rules' — that is the signature of the SAME instrument in a different edition, with every article edited. Which edition is in force cannot be settled from text overlap, so this is adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "23050",
+   "url": "https://www.uqn.gov.sa/details?p=23050",
+   "title_ar": "اللائحة التنفيذية لنظام استخدام كاميرات المراقبة الأمنية",
+   "date": "2023-06-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'security_cameras_law_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23076",
+   "url": "https://www.uqn.gov.sa/details?p=23076",
+   "title_ar": "نظام المعاملات المدنية يمثل نقلة كبرى ضمن منظومة التشريعات المتخصصة والإصلاح القضائي",
+   "date": "2023-06-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23084",
+   "url": "https://www.uqn.gov.sa/details?p=23084",
+   "title_ar": "دليل الخطوط الحديدية - إدارة الأداء والامتثال",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23085",
+   "url": "https://www.uqn.gov.sa/details?p=23085",
+   "title_ar": "دليل الخطوط الحديدية - إدارة الأصول",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23086",
+   "url": "https://www.uqn.gov.sa/details?p=23086",
+   "title_ar": "دليل الخطوط الحديدية - الوثيقة الرئيسية وتشمل التعريفات",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23087",
+   "url": "https://www.uqn.gov.sa/details?p=23087",
+   "title_ar": "دليل الخطوط الحديدية - التخطيط والاستجابة للطوارئ",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23088",
+   "url": "https://www.uqn.gov.sa/details?p=23088",
+   "title_ar": "دليل الخطوط الحديدية - ترخيص التشغيل(وتشمل نموذج طلب الترخيص ودليل تأمين المسئولية تجاه الغير / الطرف الثالث)",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23089",
+   "url": "https://www.uqn.gov.sa/details?p=23089",
+   "title_ar": "دليل الخطوط الحديدية - نقل ومناولة البضائع الخطرة بالخطوط الحديدية",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23090",
+   "url": "https://www.uqn.gov.sa/details?p=23090",
+   "title_ar": "دليل الخطوط الحديدية - الابلاغ عن الحوادث والتحقيق فيها",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23091",
+   "url": "https://www.uqn.gov.sa/details?p=23091",
+   "title_ar": "دليل الخطوط الحديدية - أنظمة إدارة السلامة",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23093",
+   "url": "https://www.uqn.gov.sa/details?p=23093",
+   "title_ar": "دليل الخطوط الحديدية - الرسوم والتكاليف",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23094",
+   "url": "https://www.uqn.gov.sa/details?p=23094",
+   "title_ar": "دليل الخطوط الحديدية - التصميم والبناء الآمن",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23095",
+   "url": "https://www.uqn.gov.sa/details?p=23095",
+   "title_ar": "دليل الخطوط الحديدية - شهادة السلامة",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23096",
+   "url": "https://www.uqn.gov.sa/details?p=23096",
+   "title_ar": "دليل الخطوط الحديدية - المعايير الفنية وقابلية التشغيل البيني",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23097",
+   "url": "https://www.uqn.gov.sa/details?p=23097",
+   "title_ar": "دليل الخطوط الحديدية - خطة تسليم وتنفيذ أعمال الترخيص",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23098",
+   "url": "https://www.uqn.gov.sa/details?p=23098",
+   "title_ar": "دليل الخطوط الحديدية - إدارة التغيير والسيطرة",
+   "date": "2023-06-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23125",
+   "url": "https://www.uqn.gov.sa/details?p=23125",
+   "title_ar": "نظام المعاملات المدنية",
+   "date": "2023-06-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G10: article 250 is 113787 chars against a 161-char median — a non-article block (annexes/schedules) was probably absorbed into it",
+    "G2: 94% of this document's articles already exist in track 'civil' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+    "G8: article 123 is referenced in the document but was not segmented — possible merged/lost text",
+    "G8: article 124 is referenced in the document but was not segmented — possible merged/lost text",
+    "G8: article 28 is referenced in the document but was not segmented — possible merged/lost text"
+   ]
+  },
+  {
+   "uid": "23144",
+   "url": "https://www.uqn.gov.sa/details?p=23144",
+   "title_ar": "لائحة التقارير الطبية المنصوص عليها في نظام الأحوال الشخصية",
+   "date": "2023-06-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'medical_reports' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23231",
+   "url": "https://www.uqn.gov.sa/details?p=23231",
+   "title_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
+   "date": "2023-07-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G10: article 121 is 274007 chars against a 724-char median — a non-article block (annexes/schedules) was probably absorbed into it"
+   ]
+  },
+  {
+   "uid": "23232",
+   "url": "https://www.uqn.gov.sa/details?p=23232",
+   "title_ar": "لائحة مؤسسات السوق المالية",
+   "date": "2023-07-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'capital_market_institutions_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23266",
+   "url": "https://www.uqn.gov.sa/details?p=23266",
+   "title_ar": "اتفاقية الأمم المتحدة بشأن عقود البيع الدولي للبضائع",
+   "date": "2023-07-14",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23306",
+   "url": "https://www.uqn.gov.sa/details?p=23306",
+   "title_ar": "نظام المساهمات العقارية",
+   "date": "2023-07-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_contributions' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23375",
+   "url": "https://www.uqn.gov.sa/details?p=23375",
+   "title_ar": "إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن",
+   "date": "2023-07-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 70% of this document's articles already exist in track 'intracity_bus_transport_licensing' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "23377",
+   "url": "https://www.uqn.gov.sa/details?p=23377",
+   "title_ar": "اللائحة المنظمة لنشاط الأجرة ووسيط الأجرة والتوجيه",
+   "date": "2023-07-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'taxi_activity_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23421",
+   "url": "https://www.uqn.gov.sa/details?p=23421",
+   "title_ar": "اللائحة التنظيمية لتصنيف الوسائط البحرية المستخدمة في السياحة الساحلية",
+   "date": "2023-08-04",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'coastal_tourism_craft_classification_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23463",
+   "url": "https://www.uqn.gov.sa/details?p=23463",
+   "title_ar": "اللائحة التنفيذية لطرق الاعتراض على الأحكام",
+   "date": "2023-08-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'judgment_objection_methods' (98% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23469",
+   "url": "https://www.uqn.gov.sa/details?p=23469",
+   "title_ar": "اللوائح الفنية الغذائية المعتمدة بقرار مجلس إدارة الهيئة العامة للغذاء والدواء",
+   "date": "2023-08-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23521",
+   "url": "https://www.uqn.gov.sa/details?p=23521",
+   "title_ar": "لائحة حماية حقوق المسافرين",
+   "date": "2023-08-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 97% of this document's articles already exist in track 'aviation_passenger_rights' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "23533",
+   "url": "https://www.uqn.gov.sa/details?p=23533",
+   "title_ar": "تنظيم هيئة التأمين",
+   "date": "2023-08-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'insurance_authority' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23539",
+   "url": "https://www.uqn.gov.sa/details?p=23539",
+   "title_ar": "اللائحة الفنية لتركيبات العربات المعلقة",
+   "date": "2023-08-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'cableway_installations_technical_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23541",
+   "url": "https://www.uqn.gov.sa/details?p=23541",
+   "title_ar": "اللائحة التنظيمية للمزادات العقارية",
+   "date": "2023-08-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_auctions' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23595",
+   "url": "https://www.uqn.gov.sa/details?p=23595",
+   "title_ar": "اللائحة التنفيذية لنظام حماية البيانات الشخصية",
+   "date": "2023-09-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'pdpl' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23597",
+   "url": "https://www.uqn.gov.sa/details?p=23597",
+   "title_ar": "لائحة نقل البيانات الشخصية خارج المملكة",
+   "date": "2023-09-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'personal_data_transfer_abroad_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23603",
+   "url": "https://www.uqn.gov.sa/details?p=23603",
+   "title_ar": "نظام حقوق الأشخاص ذوي الإعاقة",
+   "date": "2023-09-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'disability_rights' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23606",
+   "url": "https://www.uqn.gov.sa/details?p=23606",
+   "title_ar": "اللائحة التنفيذية لنظام المقيمين المعتمدين",
+   "date": "2023-09-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'accredited_valuers_implementing_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23627",
+   "url": "https://www.uqn.gov.sa/details?p=23627",
+   "title_ar": "اللائحة التنفيذية لنظام التنفيذ أمام ديوان المظالم",
+   "date": "2023-09-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'bog_enforcement_implementing_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23656",
+   "url": "https://www.uqn.gov.sa/details?p=23656",
+   "title_ar": "قواعد سلوك مهنة التقييم وآدابها",
+   "date": "2023-09-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'valuation_profession_conduct_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23692",
+   "url": "https://www.uqn.gov.sa/details?p=23692",
+   "title_ar": "اللائحة المنظمة لنشاط النقل الدولي للركاب بالحافلات",
+   "date": "2023-09-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'international_bus_transport_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23710",
+   "url": "https://www.uqn.gov.sa/details?p=23710",
+   "title_ar": "المواصفات القياسية السعودية الإلزامية والاختيارية رقم (192)",
+   "date": "2023-09-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "23820",
+   "url": "https://www.uqn.gov.sa/details?p=23820",
+   "title_ar": "لائحة العمالة المنزلية ومن في حكمها",
+   "date": "2023-10-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 79% of this document's articles already exist in track 'domestic_labor' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "23890",
+   "url": "https://www.uqn.gov.sa/details?p=23890",
+   "title_ar": "لائحة ضبط وإثبات مخالفات أحكام نظام الكهرباء والفصل فيها",
+   "date": "2023-10-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'electricity_violations_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23896",
+   "url": "https://www.uqn.gov.sa/details?p=23896",
+   "title_ar": "اللائحة التنظيمية للجامعات والكليات الأهلية",
+   "date": "2023-10-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'private_universities_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23897",
+   "url": "https://www.uqn.gov.sa/details?p=23897",
+   "title_ar": "اللائحة التنظيمية لفروع الجامعات الأجنبية",
+   "date": "2023-10-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'foreign_university_branches_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "23956",
+   "url": "https://www.uqn.gov.sa/details?p=23956",
+   "title_ar": "قواعد عمل اللجان الزكوية والضريبية والجمركية",
+   "date": "2023-10-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'zakat_tax_customs_committees_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24014",
+   "url": "https://www.uqn.gov.sa/details?p=24014",
+   "title_ar": "الدليل التفصيلي لضوابط استيراد الأحياء المائية بغرض الاستزراع المائي إلى المملكة",
+   "date": "2023-11-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G13: 48% of this document's words are reference codes rather than Arabic prose — its records are flattened TABLES, not provisions, and carry no normative sentence to cite"
+   ]
+  },
+  {
+   "uid": "24060",
+   "url": "https://www.uqn.gov.sa/details?p=24060",
+   "title_ar": "ضوابط للعمل خارج أوقات الدوام الرسمي وأيام العطل والعيدين",
+   "date": "2023-11-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "24062",
+   "url": "https://www.uqn.gov.sa/details?p=24062",
+   "title_ar": "اللوائح الفنية المعتمدة في اجتماع مجلس إدارة الهيئة السعودية للمواصفات والمقاييس والجودة رقم (194) المنعقد بتاريخ 13 /03/ 1445ه",
+   "date": "2023-11-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "24149",
+   "url": "https://www.uqn.gov.sa/details?p=24149",
+   "title_ar": "الدليل الوطني لتصدير منتجات الأحياء المائية",
+   "date": "2023-12-01",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "24205",
+   "url": "https://www.uqn.gov.sa/details?p=24205",
+   "title_ar": "لائحة اللجان الوطنية واللجان القطاعية في الغرف التجارية",
+   "date": "2023-12-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'chambers_commerce_committees_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24294",
+   "url": "https://www.uqn.gov.sa/details?p=24294",
+   "title_ar": "اللائحة التنفيذية لنظام مزاولة المهن الهندسية",
+   "date": "2023-12-29",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 94% of this document's articles already exist in track 'engineering_practice' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "24327",
+   "url": "https://www.uqn.gov.sa/details?p=24327",
+   "title_ar": "نظام بيع وتأجير مشروعات عقارية على الخارطة",
+   "date": "2024-01-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'offplan_sale' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24377",
+   "url": "https://www.uqn.gov.sa/details?p=24377",
+   "title_ar": "اللائحة التنفيذية لضوابط إعداد وتنفيذ خطط التأهب والاستجابة لحالات الطوارئ والكوارث البيئية",
+   "date": "2024-01-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 91% of this document's articles already exist in track 'environmental_emergency_response' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "24399",
+   "url": "https://www.uqn.gov.sa/details?p=24399",
+   "title_ar": "لائحة التصرف في عقارات الدولة",
+   "date": "2024-01-26",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'state_realestate_disposal_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24451",
+   "url": "https://www.uqn.gov.sa/details?p=24451",
+   "title_ar": "اللائحة التنفيذية لنظام التخصيص",
+   "date": "2024-02-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'privatization' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24487",
+   "url": "https://www.uqn.gov.sa/details?p=24487",
+   "title_ar": "لائحة الاتصالات الرسمية والمحافظة على الوثائق ومعلوماتها",
+   "date": "2024-02-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'official_communications_records_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24492",
+   "url": "https://www.uqn.gov.sa/details?p=24492",
+   "title_ar": "دليل جودة وسلامة المنتجات الزراعية",
+   "date": "2024-02-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "24493",
+   "url": "https://www.uqn.gov.sa/details?p=24493",
+   "title_ar": "دليل الأمن الحيوي للروبيان المستزرع في المملكة العربية السعودية (1444ه-2022م)",
+   "date": "2024-02-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "24519",
+   "url": "https://www.uqn.gov.sa/details?p=24519",
+   "title_ar": "اللائحة التنفيذية لنظام المساهمات العقارية",
+   "date": "2024-02-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 90% of this document's articles already exist in track 'real_estate_contributions_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "24563",
+   "url": "https://www.uqn.gov.sa/details?p=24563",
+   "title_ar": "لائحة تراخيص الحفريات",
+   "date": "2024-02-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'excavation_permits_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24614",
+   "url": "https://www.uqn.gov.sa/details?p=24614",
+   "title_ar": "نظام حماية المبلغين والشهود والخبراء والضحايا",
+   "date": "2024-03-01",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'whistleblower' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24638",
+   "url": "https://www.uqn.gov.sa/details?p=24638",
+   "title_ar": "دليل اللائحة التنفيذية لمعايير ومواصفات نشاط الزراعة العضوية",
+   "date": "2024-03-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G10: article 31 is 47047 chars against a 1004-char median — a non-article block (annexes/schedules) was probably absorbed into it"
+   ]
+  },
+  {
+   "uid": "24689",
+   "url": "https://www.uqn.gov.sa/details?p=24689",
+   "title_ar": "نظام الخطوط الحديدية",
+   "date": "2024-03-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'railway' (98% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24722",
+   "url": "https://www.uqn.gov.sa/details?p=24722",
+   "title_ar": "اللائحة التنفيذية لجباية الزكاة 1445ه",
+   "date": "2024-03-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 51% of this document's articles already exist in track 'zakat' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "24740",
+   "url": "https://www.uqn.gov.sa/details?p=24740",
+   "title_ar": "دليل الأمن الحيوي لاستزراع الأسماك في المملكة العربية السعودية (1444ه - 2022م)",
+   "date": "2024-03-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "24743",
+   "url": "https://www.uqn.gov.sa/details?p=24743",
+   "title_ar": "دليل السجلات الزراعية لمربي الثروة الحيوانية والصياد الحرفي",
+   "date": "2024-03-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G5: article 7 contains site-navigation boilerplate"
+   ]
+  },
+  {
+   "uid": "24891",
+   "url": "https://www.uqn.gov.sa/details?p=24891",
+   "title_ar": "أحكام عامة على الجداول المرفقة بنظام مكافحة المخدرات والمؤثرات العقلية",
+   "date": "2024-05-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G10: article 8 is 45841 chars against a 489-char median — a non-article block (annexes/schedules) was probably absorbed into it",
+    "G2: 88% of this document's articles already exist in track 'narcotics_schedules_general_provisions' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "24924",
+   "url": "https://www.uqn.gov.sa/details?p=24924",
+   "title_ar": "اللائحة التنفيذية لنظام بيع وتأجير مشروعات عقارية على الخارطة",
+   "date": "2024-05-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 92% of this document's articles already exist in track 'offplan_sale_regulation' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "24925",
+   "url": "https://www.uqn.gov.sa/details?p=24925",
+   "title_ar": "النظام (القانون) الموحد للنقل البري الدولي بين دول مجلس التعاون لدول الخليج العربية",
+   "date": "2024-05-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'gcc_road_transport_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24967",
+   "url": "https://www.uqn.gov.sa/details?p=24967",
+   "title_ar": "اللائحة التنفيذية لنظام حقوق الأشخاص ذوي الإعاقة",
+   "date": "2024-05-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'disability_rights' (98% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "24994",
+   "url": "https://www.uqn.gov.sa/details?p=24994",
+   "title_ar": "الدليل الإجرائي لتنظيم العمل المرن",
+   "date": "2024-05-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25045",
+   "url": "https://www.uqn.gov.sa/details?p=25045",
+   "title_ar": "معايير وضوابط طلب إعفاء نشاط إدارة النفايات من شروط أو متطلبات الرخصة أو التصريح أو المقابل المالي لها",
+   "date": "2024-05-29",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 1 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25092",
+   "url": "https://www.uqn.gov.sa/details?p=25092",
+   "title_ar": "اللائحة التنفيذية لنظام التعاملات الإلكترونية",
+   "date": "2024-06-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'electronic_transactions' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "25234",
+   "url": "https://www.uqn.gov.sa/details?p=25234",
+   "title_ar": "ضوابط إعفاء البضائع المعادة من الرسوم الجمركية",
+   "date": "2024-07-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'returned_goods_customs_exemption_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "25239",
+   "url": "https://www.uqn.gov.sa/details?p=25239",
+   "title_ar": "نظام التأمينات الاجتماعية",
+   "date": "2024-07-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 95% of this document's articles already exist in track 'social_insurance' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built",
+    "G8: article 24 is referenced in the document but was not segmented — possible merged/lost text",
+    "G8: article 60 is referenced in the document but was not segmented — possible merged/lost text"
+   ]
+  },
+  {
+   "uid": "25240",
+   "url": "https://www.uqn.gov.sa/details?p=25240",
+   "title_ar": "اللائحة التنفيذية لنظام التأمينات الاجتماعية",
+   "date": "2024-07-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'social_insurance' (100% of this document's articles are already ingested there)",
+    "G8: article 11 is referenced in the document but was not segmented — possible merged/lost text"
+   ]
+  },
+  {
+   "uid": "25318",
+   "url": "https://www.uqn.gov.sa/details?p=25318",
+   "title_ar": "نظام هيئة الرقابة ومكافحة الفساد",
+   "date": "2024-08-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'nazaha' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "25337",
+   "url": "https://www.uqn.gov.sa/details?p=25337",
+   "title_ar": "نظام الاستثمار",
+   "date": "2024-08-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 94% of this document's articles already exist in track 'investment' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "25353",
+   "url": "https://www.uqn.gov.sa/details?p=25353",
+   "title_ar": "التعرفة الجمركية المتكاملة",
+   "date": "2024-08-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25376",
+   "url": "https://www.uqn.gov.sa/details?p=25376",
+   "title_ar": "نظام جمع التبرعات",
+   "date": "2024-08-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'donations_collection_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "25398",
+   "url": "https://www.uqn.gov.sa/details?p=25398",
+   "title_ar": "اللائحة الفنية لأجهزة الاتصالات وتقنية المعلومات",
+   "date": "2024-08-16",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'ict_devices_technical_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "25412",
+   "url": "https://www.uqn.gov.sa/details?p=25412",
+   "title_ar": "لائحة نقل البيانات الشخصية إلى خارج المملكة",
+   "date": "2024-09-01",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 78% of this document's articles already exist in track 'pdpl' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "25427",
+   "url": "https://www.uqn.gov.sa/details?p=25427",
+   "title_ar": "اللائحة التنفيذية لصيد الكائنات الفطرية البرية",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25429",
+   "url": "https://www.uqn.gov.sa/details?p=25429",
+   "title_ar": "اللائحة التنفيذية لإعادة التأهيل البيئي للمواقع المتدهورة ومعالجة المواقع الملوثة",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25431",
+   "url": "https://www.uqn.gov.sa/details?p=25431",
+   "title_ar": "اللائحة التنفيذية لمنع ومعالجة تلوث التربة",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25433",
+   "url": "https://www.uqn.gov.sa/details?p=25433",
+   "title_ar": "اللائحة التنفيذية لحماية الكائنات الفطرية ومنتجاتها ومشتقاتها",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25435",
+   "url": "https://www.uqn.gov.sa/details?p=25435",
+   "title_ar": "اللائحة التنفيذية لحماية الأوساط المائية من التلوث",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 3 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)",
+    "G8: article 1 has no heading in the source but substantive text precedes the first captured heading (196 chars) — that text would be dropped, not skipped",
+    "G8: article 2 has no heading in the source but substantive text precedes the first captured heading (196 chars) — that text would be dropped, not skipped",
+    "G8: article 3 has no heading in the source but substantive text precedes the first captured heading (196 chars) — that text would be dropped, not skipped",
+    "G8: article 4 has no heading in the source but substantive text precedes the first captured heading (196 chars) — that text would be dropped, not skipped",
+    "G8: article 5 has no heading in the source but substantive text precedes the first captured heading (196 chars) — that text would be dropped, not skipped",
+    "G8: article 6 adjoining gap 5 does not end on sentence-final punctuation — text may be merged"
+   ]
+  },
+  {
+   "uid": "25437",
+   "url": "https://www.uqn.gov.sa/details?p=25437",
+   "title_ar": "اللائحة التنفيذية لجودة الهواء",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 1 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)",
+    "G8: article 1 has no heading in the source but substantive text precedes the first captured heading (1608 chars) — that text would be dropped, not skipped",
+    "G8: article 2 has no heading in the source but substantive text precedes the first captured heading (1608 chars) — that text would be dropped, not skipped",
+    "G8: article 3 has no heading in the source but substantive text precedes the first captured heading (1608 chars) — that text would be dropped, not skipped",
+    "G8: article 4 has no heading in the source but substantive text precedes the first captured heading (1608 chars) — that text would be dropped, not skipped",
+    "G8: article 5 has no heading in the source but substantive text precedes the first captured heading (1608 chars) — that text would be dropped, not skipped",
+    "G8: article 6 has no heading in the source but substantive text precedes the first captured heading (1608 chars) — that text would be dropped, not skipped",
+    "G8: article 7 has no heading in the source but substantive text precedes the first captured heading (1608 chars) — that text would be dropped, not skipped",
+    "G8: article 8 adjoining gap 7 does not end on sentence-final punctuation — text may be merged"
+   ]
+  },
+  {
+   "uid": "25439",
+   "url": "https://www.uqn.gov.sa/details?p=25439",
+   "title_ar": "اللائحة التنفيذية للمناطق المحمية",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25443",
+   "url": "https://www.uqn.gov.sa/details?p=25443",
+   "title_ar": "اللائحة التنفيذية للاحتطاب",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25444",
+   "url": "https://www.uqn.gov.sa/details?p=25444",
+   "title_ar": "اللائحة التنفيذية للتصاريح البيئية لإنشاء وتشغيل الأنشطة",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25446",
+   "url": "https://www.uqn.gov.sa/details?p=25446",
+   "title_ar": "اللائحة التنفيذية للمواد المستنفدة لطبقة الأوزون ومركبات الكربون الهيدروفلورية",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25448",
+   "url": "https://www.uqn.gov.sa/details?p=25448",
+   "title_ar": "اللائحة التنفيذية للإدارة المستدامة للبيئة البحرية والساحلية",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "25454",
+   "url": "https://www.uqn.gov.sa/details?p=25454",
+   "title_ar": "اللائحة التنفيذية للضوضاء",
+   "date": "2024-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 1 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)",
+    "G8: article 1 has no heading in the source but substantive text precedes the first captured heading (369 chars) — that text would be dropped, not skipped",
+    "G8: article 2 has no heading in the source but substantive text precedes the first captured heading (369 chars) — that text would be dropped, not skipped",
+    "G8: article 3 has no heading in the source but substantive text precedes the first captured heading (369 chars) — that text would be dropped, not skipped",
+    "G8: article 4 has no heading in the source but substantive text precedes the first captured heading (369 chars) — that text would be dropped, not skipped",
+    "G8: article 5 has no heading in the source but substantive text precedes the first captured heading (369 chars) — that text would be dropped, not skipped",
+    "G8: article 6 has no heading in the source but substantive text precedes the first captured heading (369 chars) — that text would be dropped, not skipped",
+    "G8: article 7 has no heading in the source but substantive text precedes the first captured heading (369 chars) — that text would be dropped, not skipped"
+   ]
+  },
+  {
+   "uid": "26539",
+   "url": "https://www.uqn.gov.sa/details?p=26539",
+   "title_ar": "قواعد عمل لجنة النظر في مخالفات أحكام نظام حقوق الأشخاص ذوي الإعاقة",
+   "date": "2024-09-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'disability_rights_violations_committee_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26565",
+   "url": "https://www.uqn.gov.sa/details?p=26565",
+   "title_ar": "نظام السجل التجاري",
+   "date": "2024-10-04",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 93% of this document's articles already exist in track 'commercial_register' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "26566",
+   "url": "https://www.uqn.gov.sa/details?p=26566",
+   "title_ar": "نظام الأسماء التجارية",
+   "date": "2024-10-04",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 91% of this document's articles already exist in track 'trade_names' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "26600",
+   "url": "https://www.uqn.gov.sa/details?p=26600",
+   "title_ar": "نظام ضريبة التصرفات العقارية",
+   "date": "2024-10-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'rett' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26602",
+   "url": "https://www.uqn.gov.sa/details?p=26602",
+   "title_ar": "اللائحة التنظيمية لتأشيرات العمل المؤقت والعمل المؤقت لخدمات الحج والعمرة",
+   "date": "2024-10-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'temporary_work_visas_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26635",
+   "url": "https://www.uqn.gov.sa/details?p=26635",
+   "title_ar": "قواعد عمل لجنة النظر في مخالفات نظام الخطوط الحديدية ولائحته التنفيذية",
+   "date": "2024-10-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'railway_violations_committee_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26660",
+   "url": "https://www.uqn.gov.sa/details?p=26660",
+   "title_ar": "الضوابط والاجراءات لتصميم وتشغيل المراسي البحرية السياحية",
+   "date": "2024-10-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'marina_design_operation_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26674",
+   "url": "https://www.uqn.gov.sa/details?p=26674",
+   "title_ar": "اللائحة التنفيذية لنظام الخطوط الحديدية",
+   "date": "2024-10-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'railway_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26765",
+   "url": "https://www.uqn.gov.sa/details?p=26765",
+   "title_ar": "اللائحة التنفيذية لنظام المحاماة",
+   "date": "2024-11-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'law_practice' (99% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26779",
+   "url": "https://www.uqn.gov.sa/details?p=26779",
+   "title_ar": "اللائحة التنفيذية لنظام المواصفات والجودة",
+   "date": "2024-11-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'standards_quality' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "26781",
+   "url": "https://www.uqn.gov.sa/details?p=26781",
+   "title_ar": "اللائحة التنفيذية لنظام سلامة المنتجات",
+   "date": "2024-11-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'product_safety' (100% of this document's articles are already ingested there)",
+    "G8: article 46 is referenced in the document but was not segmented — possible merged/lost text",
+    "G8: article 6 is referenced in the document but was not segmented — possible merged/lost text"
+   ]
+  },
+  {
+   "uid": "26880",
+   "url": "https://www.uqn.gov.sa/details?p=26880",
+   "title_ar": "اللائحة التنفيذية لمقدمي الخدمات البيئية لنظام البيئة",
+   "date": "2025-01-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26928",
+   "url": "https://www.uqn.gov.sa/details?p=26928",
+   "title_ar": "الآلية المنظمة لإصدار رخص حفر الآبار الجديدة في المزارع الواقعة على الدرع العربي",
+   "date": "2025-01-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26929",
+   "url": "https://www.uqn.gov.sa/details?p=26929",
+   "title_ar": "الآلية المنظمة لإصدار رخص حفر الآبار الجديدة في المزارع الواقعة على الدرع العربي",
+   "date": "2025-01-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26930",
+   "url": "https://www.uqn.gov.sa/details?p=26930",
+   "title_ar": "الآلية المنظمة لإصدار رخص استخراج المياه غير الصالحة للشرب للأشياب القائمة لمن لا يملكون صك تملك",
+   "date": "2025-01-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26931",
+   "url": "https://www.uqn.gov.sa/details?p=26931",
+   "title_ar": "الآلية المنظمة لإصدار رخص حفر الآبار الجديدة في المزارع الواقعة على الدرع العربي",
+   "date": "2025-01-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26932",
+   "url": "https://www.uqn.gov.sa/details?p=26932",
+   "title_ar": "الضوابط والأدلة الفنية لإدارة نفايات الرعاية الصحية",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26933",
+   "url": "https://www.uqn.gov.sa/details?p=26933",
+   "title_ar": "الضوابط والأدلة الفنية لتصميم مرافق استرداد المواد وإنشائها وتشغيلها",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26934",
+   "url": "https://www.uqn.gov.sa/details?p=26934",
+   "title_ar": "الضوابط والأدلة الفنية لتصميم مرافق حرق النفايات وإنشائها وتشغيلها",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26935",
+   "url": "https://www.uqn.gov.sa/details?p=26935",
+   "title_ar": "الضوابط والأدلة الفنية لتصميم وانشاء وتشغيل منشآت المعالجة الفيزيائية الكيميائية",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26936",
+   "url": "https://www.uqn.gov.sa/details?p=26936",
+   "title_ar": "الضوابط والأدلة الفنية لتصنيف النفايات",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26937",
+   "url": "https://www.uqn.gov.sa/details?p=26937",
+   "title_ar": "الضوابط والأدلة الفنية لخطط إدارة النفايات",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26938",
+   "url": "https://www.uqn.gov.sa/details?p=26938",
+   "title_ar": "الضوابط والأدلة الفنية للتراخيص",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26939",
+   "url": "https://www.uqn.gov.sa/details?p=26939",
+   "title_ar": "الضوابط والأدلة الفنية للتفتيش والتدقيق",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26940",
+   "url": "https://www.uqn.gov.sa/details?p=26940",
+   "title_ar": "الضوابط والأدلة الفنية لنقل النفايات",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26941",
+   "url": "https://www.uqn.gov.sa/details?p=26941",
+   "title_ar": "الضوابط والأدلة الفنية لتصميم وإنشاء وتشغيل المرادم",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26942",
+   "url": "https://www.uqn.gov.sa/details?p=26942",
+   "title_ar": "الضوابط والأدلة الفنية لمعايير قبول النفايات في المرادم",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26943",
+   "url": "https://www.uqn.gov.sa/details?p=26943",
+   "title_ar": "الضوابط والأدلة الفنية للمعالجة الميكانيكية البيولجية للنفايات",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "26944",
+   "url": "https://www.uqn.gov.sa/details?p=26944",
+   "title_ar": "الضوابط والأدلة الفنية للتخزين المؤقت للنفايات",
+   "date": "2025-01-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27013",
+   "url": "https://www.uqn.gov.sa/details?p=27013",
+   "title_ar": "لائحة نظام الأحوال الشخصية",
+   "date": "2025-02-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'personal_status' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27037",
+   "url": "https://www.uqn.gov.sa/details?p=27037",
+   "title_ar": "نظام النقل البري على الطرق",
+   "date": "2025-02-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'road_transport' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27085",
+   "url": "https://www.uqn.gov.sa/details?p=27085",
+   "title_ar": "تنظيم نشر الأنظمة في الجريدة الرسمية",
+   "date": "2025-03-21",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27189",
+   "url": "https://www.uqn.gov.sa/details?p=27189",
+   "title_ar": "الكود السعودي لمصادر المياه واستخداماتها",
+   "date": "2025-05-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27192",
+   "url": "https://www.uqn.gov.sa/details?p=27192",
+   "title_ar": "تنظيم الهيئة العامة للطيران المدني",
+   "date": "2025-05-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'gaca' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27249",
+   "url": "https://www.uqn.gov.sa/details?p=27249",
+   "title_ar": "دليل معايير مستوى الخدمة الكهربائية",
+   "date": "2025-07-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27251",
+   "url": "https://www.uqn.gov.sa/details?p=27251",
+   "title_ar": "لائحة التفتيش القضائي بديوان المظالم",
+   "date": "2025-07-11",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'bog_judicial_inspection_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27293",
+   "url": "https://www.uqn.gov.sa/details?p=27293",
+   "title_ar": "نظام تملك غير السعوديين للعقار",
+   "date": "2025-07-25",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'foreign_ownership' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27322",
+   "url": "https://www.uqn.gov.sa/details?p=27322",
+   "title_ar": "ضوابط إجراءات تراخيص وتصاريح أعمال مشاريع البنية التحتية بمنطقة الرياض",
+   "date": "2025-08-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27323",
+   "url": "https://www.uqn.gov.sa/details?p=27323",
+   "title_ar": "الشروط الصحية والفنية والسلامة اللازم توافرها في المساكن الجماعية للأفراد",
+   "date": "2025-08-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27325",
+   "url": "https://www.uqn.gov.sa/details?p=27325",
+   "title_ar": "ضوابط إجراءات تراخيص وتصاريح أعمال مشاريع البنية التحتية بمنطقة الرياض",
+   "date": "2025-08-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27339",
+   "url": "https://www.uqn.gov.sa/details?p=27339",
+   "title_ar": "نظام الإحصاء",
+   "date": "2025-08-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'statistics_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27344",
+   "url": "https://www.uqn.gov.sa/details?p=27344",
+   "title_ar": "تعليمات الحسابات الاستثمارية",
+   "date": "2025-08-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'investment_accounts_instructions' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27346",
+   "url": "https://www.uqn.gov.sa/details?p=27346",
+   "title_ar": "القواعد المنظمة للاستثمار الأجنبي في الأوراق المالية",
+   "date": "2025-08-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'foreign_investment_securities_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27373",
+   "url": "https://www.uqn.gov.sa/details?p=27373",
+   "title_ar": "قواعد تفعيل الاستثمار ذي الأثر الاجتماعي",
+   "date": "2025-08-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'social_impact_investment_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27410",
+   "url": "https://www.uqn.gov.sa/details?p=27410",
+   "title_ar": "تنظيم المؤسسة العامة للري",
+   "date": "2025-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2-LATER-EDITION: this document is 100% the same as track 'general_irrigation_corporation_statute' but was published LATER (2025-09-05 vs the 2025-07-18 edition on file) — the corpus is holding superseded text; refresh that track from this page rather than discarding this document as a duplicate"
+   ]
+  },
+  {
+   "uid": "27425",
+   "url": "https://www.uqn.gov.sa/details?p=27425",
+   "title_ar": "اللائحة التنفيذية لنظام تصنيف المقاولين",
+   "date": "2025-09-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'contractors_classification_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27461",
+   "url": "https://www.uqn.gov.sa/details?p=27461",
+   "title_ar": "نظام نزع ملكية العقارات للمصلحة العامة ووضع اليد المؤقت على العقارات",
+   "date": "2025-09-19",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'real_estate_expropriation' (97% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27474",
+   "url": "https://www.uqn.gov.sa/details?p=27474",
+   "title_ar": "اتفاقية للدفاع الاستراتيجي المشترك بين المملكة وباكستان",
+   "date": "2025-09-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "27511",
+   "url": "https://www.uqn.gov.sa/details?p=27511",
+   "title_ar": "اللائحة التنفيذية لتنظيم الدعم السكني",
+   "date": "2025-10-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'housing_support_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "27532",
+   "url": "https://www.uqn.gov.sa/details?p=27532",
+   "title_ar": "لائحة إنشاء الأوقاف أو تمويلها من خلال جمع التبرعات",
+   "date": "2025-10-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'waqf_establishment_donations_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "28602",
+   "url": "https://www.uqn.gov.sa/details?p=28602",
+   "title_ar": "الأحكام النظامية الخاصة بضبط العلاقة بين المؤجر والمستأجر",
+   "date": "2025-11-07",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'landlord_tenant' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "28662",
+   "url": "https://www.uqn.gov.sa/details?p=28662",
+   "title_ar": "نظام حماية المؤشرات الجغرافية",
+   "date": "2025-11-28",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'geographical_indications_protection_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "28753",
+   "url": "https://www.uqn.gov.sa/details?p=28753",
+   "title_ar": "قواعد ومعايير أسماء المرافق العامة",
+   "date": "2026-01-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'public_facility_names_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "28755",
+   "url": "https://www.uqn.gov.sa/details?p=28755",
+   "title_ar": "القواعد الموحدة لتمكين الأشخاص ذوي الإعاقة لمجلس التعاون لدول الخليج العربية",
+   "date": "2026-01-02",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "28770",
+   "url": "https://www.uqn.gov.sa/details?p=28770",
+   "title_ar": "لائحة ترخيص واعتماد مزاولي ومقدمي خدمات السلامة والصحة المهنية",
+   "date": "2026-01-09",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'osh_service_providers' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "28809",
+   "url": "https://www.uqn.gov.sa/details?p=28809",
+   "title_ar": "نظام الحرف والصناعات اليدوية",
+   "date": "2026-01-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'handicrafts_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000207",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000207",
+   "title_ar": "نظام الحرف والصناعات اليدوية",
+   "date": "2026-01-23",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'handicrafts_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000230",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000230",
+   "title_ar": "ضوابط الاستعانة بمقدمي خدمات التنفيذ أمام ديوان المظالم",
+   "date": "2026-02-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'bog_enforcement_service_providers_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000248",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000248",
+   "title_ar": "دليل تسمية الجمعيات والمؤسسات الأهلية والصناديق العائلية والأهلية",
+   "date": "2026-02-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "4000254",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000254",
+   "title_ar": "قواعد حوكمة الجمعيات والمؤسسات الأهلية",
+   "date": "2026-02-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'nonprofit_governance_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000279",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000279",
+   "title_ar": "الإطار التنظيمي للبيئة التنظيمية التجريبية",
+   "date": "2026-02-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "4000284",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000284",
+   "title_ar": "اللائحة التنفيذية لنظام الجمعيات والمؤسسات الأهلية",
+   "date": "2026-02-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 95% of this document's articles already exist in track 'associations_ngo' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "4000290",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000290",
+   "title_ar": "القواعد المنظمة لمهنة الاستشارات المالية (لغير الأوراق المالية)",
+   "date": "2026-01-30",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'financial_advisory_profession_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000299",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000299",
+   "title_ar": "نظام حقوق المؤلف",
+   "date": "2026-02-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'copyright_law_2026' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000302",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000302",
+   "title_ar": "السياسة الوطنية للغة العربية في السعودية",
+   "date": "2026-02-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "4000428",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000428",
+   "title_ar": "اللائحة التنفيذية لنظام الحرف والصناعات اليدوية",
+   "date": "2026-02-20",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'handicrafts_regulation' (100% of this document's articles are already ingested there)",
+    "G8: article 1 has no heading in the source but substantive text precedes the first captured heading (1106 chars) — that text would be dropped, not skipped"
+   ]
+  },
+  {
+   "uid": "4000446",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000446",
+   "title_ar": "ضوابط بقاء المركبات المسجلة في إحدى دول مجلس التعاون في السعودية",
+   "date": "2026-02-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'gcc_registered_vehicles_stay_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000453",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000453",
+   "title_ar": "لائحة نشاط شبكة الغاز للأغراض السكنية والتجارية",
+   "date": "2026-02-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'residential_commercial_gas_network_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000460",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000460",
+   "title_ar": "لائحة ضبط المخالفات وإيقاع العقوبات",
+   "date": "2026-02-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'violations_penalties_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000461",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000461",
+   "title_ar": "لائحة جدول مخالفات أحكام نظام إمدادات الطاقة وعقوباتها",
+   "date": "2026-02-27",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "4000536",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000536",
+   "title_ar": "ضوابط الأمن السيبراني لجهات القطاع الخاص من غير ذات البنى التحتية الحساسة",
+   "date": "2026-03-06",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "4000576",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000576",
+   "title_ar": "النظام الأساس لجامعة الرياض للفنون",
+   "date": "2026-03-13",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'riyadh_arts_university_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000948",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000948",
+   "title_ar": "اللائحة التنفيذية لنظام جمع التبرعات",
+   "date": "2026-05-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'donations_collection_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000950",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000950",
+   "title_ar": "اللائحة التنفيذية لرسوم العقارات الشاغرة",
+   "date": "2026-05-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'vacant_properties_fees_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000954",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000954",
+   "title_ar": "تنظيم المركز الوطني للصقور",
+   "date": "2026-05-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'falcon_center_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000963",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000963",
+   "title_ar": "تعليمات صناديق الاستثمار المبسطة",
+   "date": "2026-05-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'simplified_investment_funds_instructions' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4000966",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000966",
+   "title_ar": "لائحة المتطلبات العامة لتعيين جهات التفتيش والمفتشين لأعمال كود البناء السعودي",
+   "date": "2026-05-15",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G3: only 0 article(s) segmented (min 5), and no complete ordinal-band run either (min 4), and no complete numbered-clause run either (min 6)"
+   ]
+  },
+  {
+   "uid": "4001035",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001035",
+   "title_ar": "النظام الأساس للمركز العالمي لمكافحة الفكر المتطرف",
+   "date": "2026-05-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'extremism_countering_center_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001049",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001049",
+   "title_ar": "اللائحة التنفيذية لنظام حماية المؤشرات الجغرافية",
+   "date": "2026-05-22",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'geographical_indications_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001121",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001121",
+   "title_ar": "قواعد وإجراءات عمل لجان الفصل في المنازعات والمخالفات التأمينية",
+   "date": "2026-06-05",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'insurance_disputes_committees_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001171",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001171",
+   "title_ar": "اللائحة التنفيذية لنظام حماية المبلغين والشهود والخبراء والضحايا",
+   "date": "2026-06-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'whistleblower' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001176",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001176",
+   "title_ar": "لائحة المنتجات الاستثمارية الوقفية",
+   "date": "2026-06-12",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'waqf_investment_products_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001216",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001216",
+   "title_ar": "نظام إدارة الأموال المحجوزة والمصادرة في جرائم غسل الأموال والجرائم الأصلية المرتبطة بها وجرائم تمويل الإرهاب",
+   "date": "2026-06-18",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'seized_confiscated_funds' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001278",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001278",
+   "title_ar": "نظام الأنشطة الترفيهية والأنشطة المساندة لها",
+   "date": "2026-07-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'entertainment_activities_law' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001281",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001281",
+   "title_ar": "اللائحة التنفيذية لنظام تملك غير السعوديين للعقار",
+   "date": "2026-07-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: 86% of this document's articles already exist in track 'foreign_ownership' — substantial but not total overlap, so this is a possible version difference or partial duplicate and must be adjudicated by hand, not auto-built"
+   ]
+  },
+  {
+   "uid": "4001288",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001288",
+   "title_ar": "الترتيبات التنظيمية لمركز ذاكرة الثقافة السعودية",
+   "date": "2026-07-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'saudi_culture_memory_center_statute' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001295",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001295",
+   "title_ar": "اللائحة التنفيذية لنظام الشركات الخاصة بشركات المساهمة المدرجة",
+   "date": "2026-07-03",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'listed_jsc_companies_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001345",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001345",
+   "title_ar": "قواعد سجل الشركات في المناطق الاقتصادية الخاصة",
+   "date": "2026-07-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'sez_companies_register_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001347",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001347",
+   "title_ar": "قواعد الشركات في المناطق الاقتصادية الخاصة",
+   "date": "2026-07-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'sez_companies_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001349",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001349",
+   "title_ar": "قواعد الأسماء التجارية في المناطق الاقتصادية الخاصة",
+   "date": "2026-07-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'sez_trade_names_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001355",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001355",
+   "title_ar": "قواعد طرح الأوراق المالية والالتزامات المستمرة",
+   "date": "2026-07-08",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G10: article 112 is 268802 chars against a 679-char median — a non-article block (annexes/schedules) was probably absorbed into it"
+   ]
+  },
+  {
+   "uid": "4001359",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001359",
+   "title_ar": "نظام إدارة الأموال المحجوزة والمصادرة في جرائم غسل الأموال والجرائم الأصلية المرتبطة بها وجرائم تمويل الإرهاب",
+   "date": "2026-07-10",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'seized_confiscated_funds' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001429",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001429",
+   "title_ar": "قواعد تنظيم الإبلاغ عن مخالفات الأمن السيبراني",
+   "date": "2026-07-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'nca_reporting_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001430",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001430",
+   "title_ar": "قواعد ضبط مخالفات الأمن السيبراني والتحقيق فيها",
+   "date": "2026-07-17",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'nca_investigation_rules' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001450",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001450",
+   "title_ar": "لائحة صلاحيات تطبيق هيئة الرقابة ومكافحة الفساد للأحكام الواردة في نظام الإجراءات الجزائية ولائحته التنفيذية ونظام النيابة العامة",
+   "date": "2026-07-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'nazaha_criminal_procedure_powers_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001453",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001453",
+   "title_ar": "ضوابط التسميات التسويقية للمدن الاقتصادية والمناطق الاقتصادية الخاصة",
+   "date": "2026-07-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'economic_cities_marketing_names_controls' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001465",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001465",
+   "title_ar": "نظام التعليم العام",
+   "date": "2026-07-24",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'general_education' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001498",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001498",
+   "title_ar": "اللائحة التنفيذية لنظام حقوق المؤلف",
+   "date": "2026-07-31",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G2: already covered by registry track 'copyright_law_implementing_regulation' (100% of this document's articles are already ingested there)"
+   ]
+  },
+  {
+   "uid": "4001502",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001502",
+   "title_ar": "قواعد وإجراءات تسوية مخالفات نظام حقوق المؤلف",
+   "date": "2026-07-31",
+   "verdict": "refused",
+   "blocking_gates": [
+    "G8: article 9 is referenced in the document but was not segmented — possible merged/lost text"
+   ]
+  }
+ ],
+ "accepted_pages": [
+  {
+   "uid": "16999",
+   "url": "https://www.uqn.gov.sa/details?p=16999",
+   "title_ar": "الترتيبات التنظيمية لهيئة الصحة العامة",
+   "date": "2021-03-12",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17002",
+   "url": "https://www.uqn.gov.sa/details?p=17002",
+   "title_ar": "إجراءات طلبات التنفيذ المقدمة من الجهات الإدارية",
+   "date": "2021-03-12",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17021",
+   "url": "https://www.uqn.gov.sa/details?p=17021",
+   "title_ar": "ضوابط مكافأة أعضاء مجالس إدارة الأجهزة واللجان المنبثقة عنها",
+   "date": "2021-03-05",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17024",
+   "url": "https://www.uqn.gov.sa/details?p=17024",
+   "title_ar": "لائحة تصحيح أوضاع مخالفي نظام مكافحة التستر",
+   "date": "2021-03-05",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17029",
+   "url": "https://www.uqn.gov.sa/details?p=17029",
+   "title_ar": "تنظيم هيئة كفاءة الإنفاق والمشروعات الحكومية",
+   "date": "2021-03-05",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17076",
+   "url": "https://www.uqn.gov.sa/details?p=17076",
+   "title_ar": "قواعد حساب زكاة مكلفي التقديري",
+   "date": "2021-02-26",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17169",
+   "url": "https://www.uqn.gov.sa/details?p=17169",
+   "title_ar": "الترتيبات التنظيمية لجائزة الملك عبدالعزيز للجودة",
+   "date": "2021-02-19",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17210",
+   "url": "https://www.uqn.gov.sa/details?p=17210",
+   "title_ar": "السياسة الوطنية للسلامة والصحة المهنية",
+   "date": "2021-02-05",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17319",
+   "url": "https://www.uqn.gov.sa/details?p=17319",
+   "title_ar": "البروتوكول المكمل لاتفاقية قمع الاستيلاء غير المشروع على الطائرات",
+   "date": "2021-04-02",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17391",
+   "url": "https://www.uqn.gov.sa/details?p=17391",
+   "title_ar": "اتفاقية بين حكومة المملكة وحكومة جمهورية البرازيل بشأن تنظيم إجراءات منح مواطني البلدين تأشيرة زيارة",
+   "date": "2021-01-08",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17434",
+   "url": "https://www.uqn.gov.sa/details?p=17434",
+   "title_ar": "اتفاقية بين المملكة ومنظمة السياحة العالمية",
+   "date": "2021-04-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17472",
+   "url": "https://www.uqn.gov.sa/details?p=17472",
+   "title_ar": "القواعد والإجراءات التنفيذية اللازمة لتطبيق تعريفة استهلاك الكهرباء لنشاط الحوسبة السحابية",
+   "date": "2021-04-16",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17479",
+   "url": "https://www.uqn.gov.sa/details?p=17479",
+   "title_ar": "قواعد مراقبة عقارات الدولة وإزالة التعديات",
+   "date": "2021-04-23",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17486",
+   "url": "https://www.uqn.gov.sa/details?p=17486",
+   "title_ar": "الترتيبات التنظيمية لمركز تنظيم المعدات الثقيلة",
+   "date": "2021-04-23",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17734",
+   "url": "https://www.uqn.gov.sa/details?p=17734",
+   "title_ar": "ضوابط الإعلانات العقارية",
+   "date": "2021-06-04",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17737",
+   "url": "https://www.uqn.gov.sa/details?p=17737",
+   "title_ar": "معايير ترخيص المنصات العقارية الإلكترونية وتصنيفها",
+   "date": "2021-06-04",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17745",
+   "url": "https://www.uqn.gov.sa/details?p=17745",
+   "title_ar": "الضوابط والمتطلبات والمواصفات الفنية والقواعد الإجرائية اللازمة لتنفيذ أحكام لائحة الفوترة الإلكترونية",
+   "date": "2021-05-28",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17914",
+   "url": "https://www.uqn.gov.sa/details?p=17914",
+   "title_ar": "الترتيبات التنظيمية للمركز الوطني لنظم الموارد الحكومية",
+   "date": "2021-07-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17921",
+   "url": "https://www.uqn.gov.sa/details?p=17921",
+   "title_ar": "القواعد والإجراءات التنفيذية للائحة التدريب الأهلي 1442ه",
+   "date": "2021-07-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17957",
+   "url": "https://www.uqn.gov.sa/details?p=17957",
+   "title_ar": "اللائحة التنفيذية لنظام البيئة لمقدمي الخدمات البيئية",
+   "date": "2021-07-16",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "17999",
+   "url": "https://www.uqn.gov.sa/details?p=17999",
+   "title_ar": "اتفاقية عامة للتعاون بين حكومة المملكة وحكومة تشاد",
+   "date": "2021-07-23",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18010",
+   "url": "https://www.uqn.gov.sa/details?p=18010",
+   "title_ar": "اتفاقية نظام ربط أنظمة المدفوعات بين دول مجلس التعاون لدول الخليج العربية",
+   "date": "2021-07-23",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18132",
+   "url": "https://www.uqn.gov.sa/details?p=18132",
+   "title_ar": "البروتوكول الإقليمي الخاص بالتعاون الفني لاستعارة ونقل الخبراء والفنيين والأجهزة والمعدات والمواد في الحالات الطارئة",
+   "date": "2021-08-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18134",
+   "url": "https://www.uqn.gov.sa/details?p=18134",
+   "title_ar": "اتفاقية التعاون الجمركي المشترك بين هيئة الزكاة والضريبة والجمارك في المملكة وشؤون الجمارك بمملكة البحرين",
+   "date": "2021-08-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18209",
+   "url": "https://www.uqn.gov.sa/details?p=18209",
+   "title_ar": "اتفاقية بين مجلس الغرف التجارية الصناعية السعودية ومكتب الممثل الاقتصادي والثقافي لتايبيه في المملكة",
+   "date": "2021-09-03",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18348",
+   "url": "https://www.uqn.gov.sa/details?p=18348",
+   "title_ar": "الدليل الاسترشادي لاقتراح سن أحكام المخالفة الإدارية وجزائها",
+   "date": "2021-09-24",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18359",
+   "url": "https://www.uqn.gov.sa/details?p=18359",
+   "title_ar": "آلية عمل وحوكمة إبرام الاتفاقيات التجارية وذات الصلة بالتجارة",
+   "date": "2021-10-01",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18385",
+   "url": "https://www.uqn.gov.sa/details?p=18385",
+   "title_ar": "قواعد منح المكافآت المالية للعاملين على كشف الجرائم والمخالفات المنصوص عليها في نظام مكافحة التستر",
+   "date": "2021-10-08",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18425",
+   "url": "https://www.uqn.gov.sa/details?p=18425",
+   "title_ar": "اتفاقية بين حكومة المملكة وحكومة جمهورية العراق لتجنب الازدواج الضريبي",
+   "date": "2021-10-15",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18440",
+   "url": "https://www.uqn.gov.sa/details?p=18440",
+   "title_ar": "شروط وضوابط تصدير محاصيل الخضار المزروعة في مساحات مكشوفة تعتمد في الري على المياه المتجددة",
+   "date": "2021-10-22",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18639",
+   "url": "https://www.uqn.gov.sa/details?p=18639",
+   "title_ar": "اتفاقية عامة للتعاون بين المملكة وجمهورية رواندا",
+   "date": "2021-12-03",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18664",
+   "url": "https://www.uqn.gov.sa/details?p=18664",
+   "title_ar": "اتفاقية مقر بين حكومة المملكة واتحاد النقل الجوي الدولي (إياتا)",
+   "date": "2021-12-10",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18671",
+   "url": "https://www.uqn.gov.sa/details?p=18671",
+   "title_ar": "الترتيبات التنظيمية للهيئة السعودية للبحر الأحمر",
+   "date": "2021-12-10",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18672",
+   "url": "https://www.uqn.gov.sa/details?p=18672",
+   "title_ar": "الترتيبات التنظيمية للمؤسسة العامة للمحافظة على الشعب المرجانية والسلاحف في البحر الأحمر",
+   "date": "2021-12-10",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18673",
+   "url": "https://www.uqn.gov.sa/details?p=18673",
+   "title_ar": "شروط وضوابط استيراد الخضار والفاكهة الطازجة للمملكة",
+   "date": "2021-12-10",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18678",
+   "url": "https://www.uqn.gov.sa/details?p=18678",
+   "title_ar": "اتفاقية المحافظة على الحياة الفطرية ومواطنها الطبيعية في مجلس التعاون لدول الخليج العربية",
+   "date": "2021-12-10",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18816",
+   "url": "https://www.uqn.gov.sa/details?p=18816",
+   "title_ar": "اتفاقية لاهاي بشأن إلغاء إلزامية المصادقة على الوثائق العمومية الأجنبية «أبوستيل»",
+   "date": "2022-01-07",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18870",
+   "url": "https://www.uqn.gov.sa/details?p=18870",
+   "title_ar": "الترتيبات التنظيمية للأكاديمية العالمية للسياحة",
+   "date": "2022-01-21",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "18937",
+   "url": "https://www.uqn.gov.sa/details?p=18937",
+   "title_ar": "اتفاقية تعاون بين وزارة السياحة في المملكة ومنظمة السياحة العالمية لتنمية القدرات البشرية عن طريق التعليم الإلكتروني",
+   "date": "2022-02-04",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19016",
+   "url": "https://www.uqn.gov.sa/details?p=19016",
+   "title_ar": "اتفاقية بين حكومتي المملكة و قطر في مجال خدمات النقل الجوي",
+   "date": "2022-02-25",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19080",
+   "url": "https://www.uqn.gov.sa/details?p=19080",
+   "title_ar": "اتفاقية بين حكومتي المملكة وجمهورية باكستان الإسلامية لنقل المحكوم عليهم بعقوبات سالبة للحرية",
+   "date": "2022-03-11",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19132",
+   "url": "https://www.uqn.gov.sa/details?p=19132",
+   "title_ar": "اتفاقية للتعاون بين وزارة البيئة والمياه والزراعة في المملكة وأمانة اتفاقية الأمم المتحدة لمكافحة التصحر",
+   "date": "2022-03-18",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19302",
+   "url": "https://www.uqn.gov.sa/details?p=19302",
+   "title_ar": "التعليمات الخاصة بصناديق استثمار التمويل المباشر",
+   "date": "2022-04-15",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19313",
+   "url": "https://www.uqn.gov.sa/details?p=19313",
+   "title_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة والكاميرون",
+   "date": "2022-04-15",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19435",
+   "url": "https://www.uqn.gov.sa/details?p=19435",
+   "title_ar": "اتفاقية بين حكومتي المملكة وأذربيجان حول التعاون والمساعدة المتبادلة في المسائل الجمركية",
+   "date": "2022-05-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19503",
+   "url": "https://www.uqn.gov.sa/details?p=19503",
+   "title_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية جنوب السودان",
+   "date": "2022-05-27",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19685",
+   "url": "https://www.uqn.gov.sa/details?p=19685",
+   "title_ar": "اتفاقية تعاون بين حكومتي المملكة واليونان في مجال النقل البحري",
+   "date": "2022-07-01",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19759",
+   "url": "https://www.uqn.gov.sa/details?p=19759",
+   "title_ar": "الإطار التنظيمي لمشاريع النقل العام",
+   "date": "2022-07-22",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19765",
+   "url": "https://www.uqn.gov.sa/details?p=19765",
+   "title_ar": "الترتيبات التنظيمية لمركز دعم هيئات التطوير",
+   "date": "2022-07-22",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19767",
+   "url": "https://www.uqn.gov.sa/details?p=19767",
+   "title_ar": "القواعد والإجراءات الخاصة بالمطورين العقاريين المرخصين باعتبارهم أشخاصا مؤهلين لاسترداد ضريبة القيمة المضافة",
+   "date": "2022-07-22",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19807",
+   "url": "https://www.uqn.gov.sa/details?p=19807",
+   "title_ar": "اتفاقية بين حكومتي المملكة وهنغاريا في مجال خدمات النقل الجوي",
+   "date": "2022-07-29",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19820",
+   "url": "https://www.uqn.gov.sa/details?p=19820",
+   "title_ar": "أحكام عامة على الجداول المرفقة بنظام مكافحة المخدرات والمؤثرات العقلية",
+   "date": "2022-07-29",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19850",
+   "url": "https://www.uqn.gov.sa/details?p=19850",
+   "title_ar": "اتفاقية تعاون بين حكومتي المملكة والعراق في مجال النقل البحري",
+   "date": "2022-08-05",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19877",
+   "url": "https://www.uqn.gov.sa/details?p=19877",
+   "title_ar": "اتفاقية تعاون في مجال استعمال واستبدال رخص القيادة بين حكومتي المملكة وألبانيا",
+   "date": "2022-08-12",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19893",
+   "url": "https://www.uqn.gov.sa/details?p=19893",
+   "title_ar": "الترتيبات التنظيمية لأكاديمية مهد الرياضية",
+   "date": "2022-08-12",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "19899",
+   "url": "https://www.uqn.gov.sa/details?p=19899",
+   "title_ar": "الترتيبات التنظيمية للهيئة السعودية لتسويق الاستثمار",
+   "date": "2022-08-12",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20007",
+   "url": "https://www.uqn.gov.sa/details?p=20007",
+   "title_ar": "اتفاقية بين حكومتي المملكة وبنغلاديش الشعبية حول التعاون والمساعدة المتبادلة في المسائل الجمركية",
+   "date": "2022-09-02",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20028",
+   "url": "https://www.uqn.gov.sa/details?p=20028",
+   "title_ar": "الاتفاقية العربية لمنع ومكافحة الاستنساخ البشري",
+   "date": "2022-09-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20044",
+   "url": "https://www.uqn.gov.sa/details?p=20044",
+   "title_ar": "اتفاقية بشأن إنشاء المنظمة الدولية للمساعدات الملاحية البحرية",
+   "date": "2022-09-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20053",
+   "url": "https://www.uqn.gov.sa/details?p=20053",
+   "title_ar": "إجراءات وشروط الترخيص لممارسة النقل العام بالحافلات داخل المدن",
+   "date": "2022-09-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20076",
+   "url": "https://www.uqn.gov.sa/details?p=20076",
+   "title_ar": "اتفاقية بين حكومتي المملكة وغانا في مجال خدمات النقل الجوي",
+   "date": "2022-09-16",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20652",
+   "url": "https://www.uqn.gov.sa/details?p=20652",
+   "title_ar": "قواعد وترتيبات نقل موظفي وعمال جريدة أم القرى إلى وكالة الأنباء السعودية",
+   "date": "2022-10-14",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20838",
+   "url": "https://www.uqn.gov.sa/details?p=20838",
+   "title_ar": "الترتيبات التنظيمية لهيئة تطوير الأحساء",
+   "date": "2022-11-11",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "20846",
+   "url": "https://www.uqn.gov.sa/details?p=20846",
+   "title_ar": "الإطار التنظيمي للطاقة المتجددة للاستهلاك الذاتي",
+   "date": "2022-11-11",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21018",
+   "url": "https://www.uqn.gov.sa/details?p=21018",
+   "title_ar": "اتفاقية بين حكومتي المملكة وغويانا التعاونية في مجال خدمات النقل الجوي",
+   "date": "2022-12-02",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21190",
+   "url": "https://www.uqn.gov.sa/details?p=21190",
+   "title_ar": "اتفاقية تعاون بين حكومتي المملكة وجمهورية جيبوتي في مجال النقل البحري",
+   "date": "2023-01-06",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21203",
+   "url": "https://www.uqn.gov.sa/details?p=21203",
+   "title_ar": "اتفاقية بين جمهورية التشيك والمملكة في مجال الخدمات الجوية",
+   "date": "2023-01-06",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21240",
+   "url": "https://www.uqn.gov.sa/details?p=21240",
+   "title_ar": "اتفاقية مقر بين حكومة المملكة ومنظمة التعاون الرقمي",
+   "date": "2023-01-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21253",
+   "url": "https://www.uqn.gov.sa/details?p=21253",
+   "title_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وجمهورية نيبال",
+   "date": "2023-01-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21346",
+   "url": "https://www.uqn.gov.sa/details?p=21346",
+   "title_ar": "اتفاقية تنظيم النقل بالعبور «الترانزيت» بين الدول العربية (المعدلة)",
+   "date": "2023-02-03",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21393",
+   "url": "https://www.uqn.gov.sa/details?p=21393",
+   "title_ar": "الاتفاقية العربية لتنظيم نقل الركاب على الطرق بين الدول العربية وعبرها",
+   "date": "2023-02-10",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21396",
+   "url": "https://www.uqn.gov.sa/details?p=21396",
+   "title_ar": "اتفاقية تعاون في مجال الطاقة بين المملكة وأوزبكستان",
+   "date": "2023-02-10",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21467",
+   "url": "https://www.uqn.gov.sa/details?p=21467",
+   "title_ar": "ضوابط تقديم الخدمة الكهربائية عن طريق التوليد المتنقل",
+   "date": "2023-02-17",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21494",
+   "url": "https://www.uqn.gov.sa/details?p=21494",
+   "title_ar": "تعليمات بناء سجل الأوامر وتخصيص الأسهم في الاكتتابات الأولية",
+   "date": "2023-02-24",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21528",
+   "url": "https://www.uqn.gov.sa/details?p=21528",
+   "title_ar": "أحكام عامة على الجداول المرفقة بنظام مكافحة المخدرات والمؤثرات العقلية",
+   "date": "2023-03-03",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21578",
+   "url": "https://www.uqn.gov.sa/details?p=21578",
+   "title_ar": "ضوابط إيقاف الخدمات",
+   "date": "2023-03-17",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21690",
+   "url": "https://www.uqn.gov.sa/details?p=21690",
+   "title_ar": "الإجراءات والتعليمات الخاصة بالشركات المدرجة أسهمها في السوق التي بلغت خسائرها المتراكمة 20% فأكثر من رأس مالها",
+   "date": "2023-04-14",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "21781",
+   "url": "https://www.uqn.gov.sa/details?p=21781",
+   "title_ar": "التعليمات التنفيذية للائحة جمع التبرعات للوجوه الخيرية",
+   "date": "2023-04-28",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23092",
+   "url": "https://www.uqn.gov.sa/details?p=23092",
+   "title_ar": "دليل الخطوط الحديدية - تعيين استشاري مختص مستقل",
+   "date": "2023-06-16",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23129",
+   "url": "https://www.uqn.gov.sa/details?p=23129",
+   "title_ar": "التنظيم الخاص بالعسكريين في هيئة الرقابة ومكافحة الفساد",
+   "date": "2023-06-19",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23310",
+   "url": "https://www.uqn.gov.sa/details?p=23310",
+   "title_ar": "الإطار التنظيمي للطاقة المتجددة للاستهلاك الذاتي",
+   "date": "2023-07-21",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23370",
+   "url": "https://www.uqn.gov.sa/details?p=23370",
+   "title_ar": "الترتيبات التنظيمية لمركز مشاريع البنية التحتية بمنطقة الرياض",
+   "date": "2023-07-28",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23456",
+   "url": "https://www.uqn.gov.sa/details?p=23456",
+   "title_ar": "الآلية التصحيحية للمنشآت القائمة والتي تقدم خدمات المحاسبة قبل صدور قرار مجلس إدارة الهيئة السعودية للمراجعين والمحاسبين رقم (4 /1) وتاريخ 2 /9/ 1443ه",
+   "date": "2023-08-11",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23567",
+   "url": "https://www.uqn.gov.sa/details?p=23567",
+   "title_ar": "الترتيبات التنظيمية لمجلس الاستثمار",
+   "date": "2023-09-01",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23732",
+   "url": "https://www.uqn.gov.sa/details?p=23732",
+   "title_ar": "ضوابط مكافآت أعضاء مجالس إدارة الأجهزة واللجان المنبثقة عنها",
+   "date": "2023-09-21",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23778",
+   "url": "https://www.uqn.gov.sa/details?p=23778",
+   "title_ar": "شروط ومتطلبات تأهيل الجهات الاستشارية الهندسية لمشاريع بيع أو تأجير الوحدات العقارية على الخارطة",
+   "date": "2023-09-29",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23819",
+   "url": "https://www.uqn.gov.sa/details?p=23819",
+   "title_ar": "الترتيبات التنظيمية لهيئة تطوير محافظة جدة",
+   "date": "2023-10-06",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23862",
+   "url": "https://www.uqn.gov.sa/details?p=23862",
+   "title_ar": "دليل المعايير المضمونة",
+   "date": "2023-10-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "23976",
+   "url": "https://www.uqn.gov.sa/details?p=23976",
+   "title_ar": "السياسة الاقتصادية للطيران المدني في المملكة العربية السعودية",
+   "date": "2023-10-30",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24151",
+   "url": "https://www.uqn.gov.sa/details?p=24151",
+   "title_ar": "دليل السياسات والممارسات الوطنية للاستزراع المائي",
+   "date": "2023-12-01",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24289",
+   "url": "https://www.uqn.gov.sa/details?p=24289",
+   "title_ar": "الترتيبات التنظيمية للهيئة السعودية للألعاب والرياضات الإلكترونية",
+   "date": "2023-12-29",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24332",
+   "url": "https://www.uqn.gov.sa/details?p=24332",
+   "title_ar": "ضوابط استخدام اسم السعودية وأسماء المدن والمناطق والأماكن العامة في الاسم التجاري",
+   "date": "2024-01-05",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24424",
+   "url": "https://www.uqn.gov.sa/details?p=24424",
+   "title_ar": "الإطار التنظيمي للتسجيل البيني للمنتجات المالية بين الجهات المنظمة للأسواق المالية بدول المجلس",
+   "date": "2024-01-26",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24450",
+   "url": "https://www.uqn.gov.sa/details?p=24450",
+   "title_ar": "الاتفاقية العربية لمنع ومكافحة الاستنساخ البشري",
+   "date": "2024-02-02",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24484",
+   "url": "https://www.uqn.gov.sa/details?p=24484",
+   "title_ar": "اتفاقية التعاون الاقتصادي بين حكومة المملكة العربية السعودية وحكومة جمهورية لاتفيا",
+   "date": "2024-02-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24522",
+   "url": "https://www.uqn.gov.sa/details?p=24522",
+   "title_ar": "الضوابط العامة لإقامة مزادات الإبل المؤقتة خارج أسواق النفع العام",
+   "date": "2024-02-16",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24606",
+   "url": "https://www.uqn.gov.sa/details?p=24606",
+   "title_ar": "دليل الصحة الحيوانية",
+   "date": "2024-03-01",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24683",
+   "url": "https://www.uqn.gov.sa/details?p=24683",
+   "title_ar": "دليل المسالخ وفحص اللحوم ونقلها",
+   "date": "2024-03-15",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24685",
+   "url": "https://www.uqn.gov.sa/details?p=24685",
+   "title_ar": "دليل التربية الريفية للثروة الحيوانية",
+   "date": "2024-03-15",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "24886",
+   "url": "https://www.uqn.gov.sa/details?p=24886",
+   "title_ar": "ضوابط اعتماد جهات التفتيش والرقابة على سلامة المعدات الثقيلة",
+   "date": "2024-04-26",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "25048",
+   "url": "https://www.uqn.gov.sa/details?p=25048",
+   "title_ar": "المعايير المهنية لتقييم أضرار المركبات",
+   "date": "2024-05-31",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "25324",
+   "url": "https://www.uqn.gov.sa/details?p=25324",
+   "title_ar": "الدليل الاسترشادي لحوكمة الجهات العامة",
+   "date": "2024-08-09",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "25371",
+   "url": "https://www.uqn.gov.sa/details?p=25371",
+   "title_ar": "دليل إجراءات ضبط مخالفات لائحة حقوق والتزامات مستخدمي وسائل النقل العام وآليتها التفصيلية",
+   "date": "2024-08-16",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "25409",
+   "url": "https://www.uqn.gov.sa/details?p=25409",
+   "title_ar": "ضوابط تخصيص عقارات الدولة للقطاع غير الربحي",
+   "date": "2024-08-30",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "26571",
+   "url": "https://www.uqn.gov.sa/details?p=26571",
+   "title_ar": "شروط وإجراءات تأهيل واعتماد مراكز التدريب ومراكز الاختبار لسائقي ومديري التشغيل في أنشطة النقل البري",
+   "date": "2024-10-04",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "26918",
+   "url": "https://www.uqn.gov.sa/details?p=26918",
+   "title_ar": "اتفاقية عامة للتعاون بين حكومة المملكة وحكومة جمهورية هندوراس",
+   "date": "2025-01-17",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "26972",
+   "url": "https://www.uqn.gov.sa/details?p=26972",
+   "title_ar": "قواعد إجراء التسويات المالية مع من ارتكبوا جرائم فساد من ذوي الصفة الطبيعية أو الاعتبارية",
+   "date": "2025-01-31",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "27011",
+   "url": "https://www.uqn.gov.sa/details?p=27011",
+   "title_ar": "ضوابط شراء واستئجار الجهات الحكومية للمركبات",
+   "date": "2025-02-21",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "27275",
+   "url": "https://www.uqn.gov.sa/details?p=27275",
+   "title_ar": "قواعد نظر دعاوى إلغاء القرارات المتعلقة بتطبيق أحكام أوامر الطوارئ",
+   "date": "2025-07-18",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "27436",
+   "url": "https://www.uqn.gov.sa/details?p=27436",
+   "title_ar": "قواعد تحديد درجات إركاب الموظفين والعاملين في الأجهزة العامة من مدنيين وعسكريين",
+   "date": "2025-09-12",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "27471",
+   "url": "https://www.uqn.gov.sa/details?p=27471",
+   "title_ar": "قواعد تحديد درجات إركاب الموظفين والعاملين في الأجهزة العامة من مدنيين وعسكريين",
+   "date": "2025-09-19",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "28745",
+   "url": "https://www.uqn.gov.sa/details?p=28745",
+   "title_ar": "آلية تنظيم علاقة شراء الرعاية الصحية من القطاع الخاص",
+   "date": "2026-01-02",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "28754",
+   "url": "https://www.uqn.gov.sa/details?p=28754",
+   "title_ar": "ضوابط بند الكفاءات المتميزة المخصص لأغراض التحفيز في الجهات العامة",
+   "date": "2026-01-02",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "28787",
+   "url": "https://www.uqn.gov.sa/details?p=28787",
+   "title_ar": "القواعد العامة للاستخدام الثانوي للبيانات",
+   "date": "2026-01-16",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "28846",
+   "url": "https://www.uqn.gov.sa/details?p=28846",
+   "title_ar": "السياسة الوطنية للغة العربية في السعودية",
+   "date": "2026-02-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "4000320",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000320",
+   "title_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وإستونيا",
+   "date": "2026-02-13",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "4000409",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000409",
+   "title_ar": "الترتيبات التنظيمية لمركز الأمير محمد بن سلمان العالمي للخط العربي",
+   "date": "2026-02-20",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "4000419",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000419",
+   "title_ar": "اتفاقية عامة للتعاون بين حكومتي المملكة وقبرص",
+   "date": "2026-02-20",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "4000425",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4000425",
+   "title_ar": "الترتيبات التنظيمية لمركز الأمير محمد بن سلمان العالمي للخط العربي",
+   "date": "2026-02-20",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "4001418",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001418",
+   "title_ar": "الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفاكيا",
+   "date": "2026-07-17",
+   "verdict": "accepted"
+  },
+  {
+   "uid": "4001425",
+   "url": "https://www.uqn.gov.sa/decisions-and-regulations/4001425",
+   "title_ar": "الاتفاقية العامة للتعاون بين حكومتي المملكة وسلوفينيا",
+   "date": "2026-07-17",
+   "verdict": "accepted"
+  }
+ ]
+}

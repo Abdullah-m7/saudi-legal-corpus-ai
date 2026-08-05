@@ -1,0 +1,270 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Does the stored text say what the source says — and does it say it once?
+
+The corpus already audits two narrow text questions: encoding damage, and the
+same instrument held under two names. This audit asks the broader ones that sit
+between "the file parses" and "the law is right", each phrased so that a finding
+is a defect a reader could point at rather than a statistic.
+
+  1. STRUCTURE THAT LEAKED INTO A PROVISION.
+     A chapter heading, an annex marker, or the next article's own heading
+     absorbed into the tail of the previous article. The provision then reads as
+     saying something it does not say, and no count-based check can see it.
+
+  2. NUMBERING THE SOURCE SKIPS.
+     Every track records its own gaps in `missing_article_numbers`. This
+     re-derives them from the stored records and reports any track whose
+     declared gaps and actual gaps disagree — a declaration that has drifted from
+     the thing it declares is worse than none.
+
+  3. TEXT REPEATED INSIDE ONE INSTRUMENT.
+     Two articles of the same instrument carrying identical text is either a real
+     duplication in the gazette (which should be disclosed) or a segmentation
+     fault that copied one article twice (which should be fixed). Both need
+     naming; neither is visible to a per-article check.
+
+  4. A DECLARED COMPLETENESS THAT THE TEXT CONTRADICTS.
+     `text_complete: true` on a record whose text is a bare fragment — under a
+     handful of words, or ending mid-clause — is the corpus asserting something
+     about itself that its own content refutes.
+
+  5. DISCLOSURES THAT POINT AT NOTHING.
+     Every entry in `known_unresolved_discrepancies` names an `article_key`.
+     Where that key is neither a real article of the track nor one of the
+     track-level keys the corpus uses by convention, the disclosure cannot be
+     acted on, and an unactionable disclosure is decoration.
+
+Read-only over the corpus; writes only its own report. Exit status is always 0 —
+this measures, it does not gate.
+"""
+
+from __future__ import annotations
+
+import glob
+import json
+import os
+import re
+import sys
+from collections import Counter, defaultdict
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT_DIR = os.path.join(ROOT, "reports", "corpus_text_quality_audit")
+
+# 1 — structure that leaked. These are headings, not provisions; a provision that
+# ENDS on one has absorbed it from the document that follows.
+TRAILING_STRUCTURE = re.compile(
+    r"(?:الباب|الفصل|القسم|الجزء|الملحق|الملاحق|الجدول|المرفق)\s+"
+    r"(?:الأول|الثاني|الثالث|الرابع|الخامس|السادس|السابع|الثامن|التاسع|العاشر|"
+    r"الحادي|رقم|\(?\s*[0-9٠-٩]{1,3}\s*\)?)\s*[:：]?\s*$")
+# A heading of the NEXT article left at the end of this one. The COLON is
+# required and the demonstrative is excluded, because without both this pattern
+# flags the commonest sentence ending in Saudi regulatory drafting — «... المنصوص
+# عليها في الفقرة (1) من هذه المادة.» — and reports 300-odd well-formed articles
+# as damaged. A heading ends on a colon; a cross-reference ends on a full stop.
+TRAILING_ARTICLE_HEAD = re.compile(
+    r"(?<![ء-ي])ا?لمادة\s*(?:\(\s*[0-9٠-٩]{1,4}\s*\)|[^\s:()]{2,20})\s*[:：]\s*$")
+CROSS_REFERENCE_TAIL = re.compile(
+    r"(?:هذه|تلك|هذا|من|في|وفق|وفقا|بموجب|إلى|الى)\s+"
+    r"ا?ل?(?:مادة|باب|فصل|قسم|جزء|ملحق|جدول|مرفق)")
+
+# 4 — a fragment that cannot be a whole provision.
+# A repeal marker is the one short text that IS complete: «(ملغاة)» is the whole
+# of what the source says about that article, and flagging it as a fragment says
+# the corpus is missing words the source never printed.
+REPEAL_MARKER = re.compile(r"^\(?\s*(?:ملغاة|ملغى|محذوفة|محذوف)\s*\)?\.?$")
+FRAGMENT_WORDS = 4
+MID_CLAUSE_END = re.compile(r"(?:\b(?:و|أو|في|من|على|إلى|عن|مع|بين|أن|التي|الذي)\s*)$")
+
+# 5 — Which disclosures are article-bound?
+#
+# The first version of this check tried to recognise TRACK-level keys by a list
+# of substrings and to call everything else article-bound. That is guessing, and
+# it guessed wrong 1,349 times: «..._title_resembles_existing_track» is a
+# track-level note and was reported as naming a missing article. The test here
+# is structural instead. A key is article-bound only if it is SHAPED like this
+# corpus's article keys — «<something>_art_017» — and such a key is a real
+# finding only when the number it names is absent from the track. Every other
+# key is a track-level note by construction and cannot dangle.
+ARTICLE_BOUND_KEY = re.compile(r"_art_(\d{1,4})\b")
+
+
+def norm(s):
+    s = re.sub(r"[ً-ْـ]", "", s or "")
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def tracks():
+    """Every source artifact, under BOTH layouts the corpus uses.
+
+    449 tracks keep their artifact at sources/<id>/official_source/, and the
+    older ones nest it one level deeper under the component —
+    sources/<id>/law/official_source/. Globbing only the first layout examines
+    449 of 735 tracks and reports the result as if it covered the corpus, which
+    is the kind of silent under-coverage this audit exists to catch."""
+    seen = set()
+    for pattern in ("sources/*/official_source/*.json", "sources/*/*/official_source/*.json"):
+        for path in sorted(glob.glob(os.path.join(ROOT, pattern))):
+            if path in seen:
+                continue
+            seen.add(path)
+            rel = os.path.relpath(path, os.path.join(ROOT, "sources"))
+            tid = rel.split(os.sep)[0]
+            component = rel.split(os.sep)[-3] if rel.count(os.sep) == 3 else None
+            name = "%s/%s" % (tid, component) if component else tid
+            try:
+                yield name, json.load(open(path, encoding="utf-8"))
+            except Exception as exc:                               # noqa: BLE001
+                yield name, {"_unreadable": str(exc)}
+
+
+def normalise_articles(arts):
+    """Two artifacts map an article number straight to its text instead of to a
+    record («gtpl», «gtpl_regulation»). Wrap those so every check below sees one
+    shape; the wrapper carries no `text_complete`, so check 4 stays silent on
+    them rather than inventing an assertion they never made."""
+    if not isinstance(arts, dict) or not arts:
+        return {}
+    out = {}
+    for key, val in arts.items():
+        if isinstance(val, dict):
+            out[key] = val
+        elif isinstance(val, str):
+            try:
+                num = int(str(key).strip())
+            except ValueError:
+                num = None
+            out[key] = {"text": val, "article_number": num}
+    return out
+
+
+def main():
+    leaked, gap_drift, repeated, false_complete, dangling = [], [], [], [], []
+    n_tracks = n_records = 0
+
+    for tid, src in tracks():
+        if "_unreadable" in src:
+            dangling.append({"track_id": tid, "problem": "artifact unreadable",
+                             "detail": src["_unreadable"]})
+            continue
+        arts = normalise_articles(src.get("articles"))
+        if not arts:
+            continue
+        n_tracks += 1
+        n_records += len(arts)
+
+        # 1 — structure leaked into a provision's tail
+        for key, a in sorted(arts.items()):
+            t = norm(a.get("text", ""))
+            if not t:
+                continue
+            tail = t[-60:]
+            if CROSS_REFERENCE_TAIL.search(tail):
+                # «... المبينة في المرفق (1)» points AT a structure; it is not one.
+                continue
+            m = TRAILING_STRUCTURE.search(t) or TRAILING_ARTICLE_HEAD.search(t)
+            if m:
+                leaked.append({"track_id": tid, "article_key": key,
+                               "trailing": t[-70:], "chars": len(t)})
+
+        # 2 — declared gaps vs derived gaps
+        nums = sorted(a.get("article_number") for a in arts.values()
+                      if isinstance(a.get("article_number"), int))
+        derived = [n for n in range(1, (max(nums) if nums else 0) + 1) if n not in set(nums)]
+        declared = src.get("missing_article_numbers") or []
+        if sorted(declared) != derived:
+            gap_drift.append({"track_id": tid, "declared": sorted(declared),
+                              "derived_from_stored_records": derived})
+
+        # 3 — the same text twice inside one instrument
+        seen = defaultdict(list)
+        for key, a in sorted(arts.items()):
+            t = norm(a.get("text", ""))
+            if len(t) >= 60:
+                seen[t].append(key)
+        for t, keys in seen.items():
+            if len(keys) > 1:
+                repeated.append({"track_id": tid, "article_keys": keys,
+                                 "chars": len(t), "text_head": t[:110]})
+
+        # 4 — text_complete asserted over a fragment
+        for key, a in sorted(arts.items()):
+            if not a.get("text_complete", False):
+                continue
+            t = norm(a.get("text", ""))
+            if REPEAL_MARKER.match(t):
+                continue
+            words = len(t.split())
+            if words <= FRAGMENT_WORDS or MID_CLAUSE_END.search(t):
+                false_complete.append({"track_id": tid, "article_key": key,
+                                       "words": words, "text": t[:120]})
+
+        # 5 — a disclosure naming an article the track does not have
+        keys = set(arts)
+        have = {n for n in nums}
+        for d in src.get("known_unresolved_discrepancies", []) or []:
+            # Older artifacts write a discrepancy as a bare sentence rather than
+            # as {article_key, description}. A free-text note names no article by
+            # construction, so it cannot dangle and is not a finding here.
+            if not isinstance(d, dict):
+                continue
+            k = d.get("article_key", "")
+            if k in keys:
+                continue
+            m = ARTICLE_BOUND_KEY.search(k)
+            if not m or int(m.group(1)) in have:
+                continue
+            dangling.append({"track_id": tid, "article_key": k,
+                             "article_number_named": int(m.group(1)),
+                             "description_head": (d.get("description") or "")[:110]})
+
+    report = {
+        "generated_note": (
+            "Asks the text questions that sit between 'the file parses' and 'the law is right'. "
+            "Each finding is phrased as a defect a reader could point at: a chapter heading "
+            "absorbed into a provision's tail, a declared numbering gap that the stored records "
+            "contradict, one instrument carrying the same text twice, a `text_complete: true` "
+            "over a fragment, a disclosure naming an article that does not exist. None of these "
+            "is visible to a count-based validator, and all of them change what a model reading "
+            "the corpus would say. Read-only; writes only this report."),
+        "tracks_examined": n_tracks,
+        "records_examined": n_records,
+        "1_structure_leaked_into_a_provision": {
+            "count": len(leaked),
+            "by_track": Counter(x["track_id"] for x in leaked).most_common(20),
+            "entries": leaked[:120],
+        },
+        "2_declared_numbering_gaps_that_the_records_contradict": {
+            "count": len(gap_drift), "entries": gap_drift[:120],
+        },
+        "3_same_text_held_twice_in_one_instrument": {
+            "count": len(repeated),
+            "by_track": Counter(x["track_id"] for x in repeated).most_common(20),
+            "entries": repeated[:80],
+        },
+        "4_text_complete_asserted_over_a_fragment": {
+            "count": len(false_complete),
+            "by_track": Counter(x["track_id"] for x in false_complete).most_common(20),
+            "entries": false_complete[:120],
+        },
+        "5_disclosures_naming_an_article_that_does_not_exist": {
+            "count": len(dangling), "entries": dangling[:120],
+        },
+    }
+    os.makedirs(OUT_DIR, exist_ok=True)
+    with open(os.path.join(OUT_DIR, "corpus_text_quality_audit.json"), "w",
+              encoding="utf-8") as fh:
+        json.dump(report, fh, ensure_ascii=False, indent=1)
+
+    print("tracks %d / records %d" % (n_tracks, n_records))
+    print("  1 structure leaked into a provision      %d" % len(leaked))
+    print("  2 declared gaps contradicted by records  %d" % len(gap_drift))
+    print("  3 same text twice in one instrument      %d" % len(repeated))
+    print("  4 text_complete over a fragment          %d" % len(false_complete))
+    print("  5 disclosures naming no such article     %d" % len(dangling))
+    print("\nwrote reports/corpus_text_quality_audit/corpus_text_quality_audit.json")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
